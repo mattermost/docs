@@ -4,7 +4,7 @@ About user roles
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-There are six types of user roles with different permission levels in Mattermost: System Admins, Team Admins, Channel Admins, Members, Guests, and Inactive accounts. To view a list of users on the team and what their roles are, Team Admins can open the Team menu and select **Manage Members**.
+There are six types of user roles with different permission levels in Mattermost: System Admins, Team Admins, Channel Admins, Members, Guests, and Inactive accounts. To view a list of users on the team and what their roles are, Team Admins using Mattermost in a web browser or the desktop app can open the Team menu and select **Manage Members**.
 
 System Admin
 ------------

@@ -11,7 +11,7 @@ Set a custom status
 
 Set a custom status to display a descriptive status message and optional emoji next to your name in Mattermost. Other members can see your status anywhere they can see your name, such as the channel sidebar and in conversations. 
 
-To set a custom status:
+To set a custom status in Mattermost:
 
 .. tabs::
 

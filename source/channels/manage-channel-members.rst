@@ -1,13 +1,15 @@
 Manage channel members
 =======================
 
+.. The Add People option on mobile isn't yet supported, so this page doesn't yet include mobile app details.
+
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 Add members to a channel
 ------------------------
 
-Any member of a channel can add other members to public or private channels, unless your System Admin has restricted access to do so. 
+Using Mattermost in a web browser or the desktop app, any member of a channel can add other members to public or private channels, unless your System Admin has restricted access to do so. 
 
 1. Select the channel name at the top of the center pane to access the drop-down menu, then select **Add Members**. 
 
@@ -17,7 +19,7 @@ Any member of a channel can add other members to public or private channels, unl
 2. Search for users, select users, then select **Add** to add users to the current channel. Mattermost notifies you when a user is already a member of the channel.
  
 Add users from their profile
-----------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You can also add users to channels within their profile pop-over.
 
@@ -32,7 +34,7 @@ You can also add users to channels within their profile pop-over.
 Remove members from a channel
 -----------------------------
 
-Any member of a channel can remove other members from a channel. 
+Using Mattermost in a web browser or the desktop app, any member of a channel can remove other members from a channel. 
 
 Select the channel name at the top of the center pane to access the drop-down menu, then select **Manage Members**. Select the member's `user role </welcome/about-user-roles.html>`__, then select **Remove from Channel**.
 

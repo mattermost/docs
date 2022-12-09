@@ -23,17 +23,17 @@ You must be a system admin, team admin, or channel admin to convert public chann
   
   .. tab:: Mobile app
 
-    To convert a public channel to a private channel in the mobile app:
+    To convert a public channel to a private channel:
     
-    1. Select the channel you want to convert.
-    2. Select the **More** |more-icon| icon located in the top right corner of the app.
-    3. Select **View info**.
-    4. Select **Convert to private channel**.
-    5. Select **Yes** to confirm.
+    1. Tap the channel you want to convert.
+    2. Tap the **More** |more-icon| icon located in the top right corner of the app.
+    3. Tap **View info**.
+    4. Tap **Convert to private channel**.
+    5. Tap **Yes** to confirm.
 
 Convert private channels to public channels
 -------------------------------------------
 
 Due to potential security concerns with sharing private channel history, only system admins can convert private channels to public channels via **System Console > Channels > Edit (Channel Configuration)**. 
 
-Alternatively, System Admins can perform this action using the `mmctl channel modify command </manage/mmctl-command-line-tool.html?highlight=mmctl#mmctl-channel-modify>`__.
+Alternatively, System Admins can perform this action using the `mmctl channel modify command </manage/mmctl-command-line-tool.html#mmctl-channel-modify>`__.

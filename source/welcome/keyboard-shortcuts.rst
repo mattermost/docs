@@ -4,7 +4,7 @@ Mattermost keyboard shortcuts
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Mattermost keyboard shortcuts help you make a more efficient use of your keyboard.
+Mattermost keyboard shortcuts help you make a more efficient use of your keyboard when using Mattermost in a web browser or the desktop app.
 
 .. tip::
 

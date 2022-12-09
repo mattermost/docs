@@ -4,7 +4,7 @@ Team settings
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Team settings enable you to adjust settings applied to a specific team. Select the team name to access additional team options, including **Team Settings**. 
+Team settings enable you to adjust settings applied to a specific team. Using Mattermost in a web browser or the desktop app, select the team name to access additional team options, including **Team Settings**. 
 
 .. image:: ../images/team-settings.png
     :alt: Access team settings from the team name. 

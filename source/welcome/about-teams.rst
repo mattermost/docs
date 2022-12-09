@@ -37,7 +37,7 @@ If you belong to more than one team, a team sidebar displays to the left of the 
 Create a team
 --------------
 
-If team creation is enabled by the System Admin, teams can be created from the team sidebar or the channel sidebar using the web or the desktop app. The person who creates a team is automatically  assigned the Team Admin role for that team.
+If team creation is enabled by the system admin, teams can be created from the team sidebar or the channel sidebar using a web browser or the desktop app. The person who creates a team is automatically  assigned the Team Admin role for that team.
 
 If you have appropriate permissions, select the |plus| icon at the top of the team sidebar, then select **Create a New Team** on the team selection page, which guides you through the rest of the team creation steps. If this option is not visible on the web page, then the System Admin has disabled team creation.
 

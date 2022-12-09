@@ -4,7 +4,7 @@ Get started with Mattermost Channels
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Access Mattermost Channels by selecting **Channels** from the **product menu** |product-list|.
+Using a web browser or the desktop app, you can access Mattermost Channels by selecting **Channels** from the **product menu** |product-list|. On mobile, you log in directly to Mattermost Channels.
 
 .. |product-list| image:: ../images/products_E82F.svg
   :alt: Navigate between Channels, Playbooks, and Boards using the Product list icon.
@@ -26,7 +26,7 @@ Everyone who joins a Mattermost workspace is automatically added to two default 
 
 Direct messages are private conversations between two people. 
 Group messages are private conversations for small groups of up to seven people. 
-Start a new direct or group message by selecting the **Plus** |plus| icon next to **Direct Messages** in the channel sidebar.
+Start a new direct or group message by selecting the **Plus** |plus| icon.
 
 .. tip:: 
     Direct and group messages are also channels in Mattermost, so many of the `preferences available for channels </channels/set-channel-preferences.html>`__ are also available for direct messages. 
@@ -45,27 +45,31 @@ Channels are either **public** or **private**.
 .. |lock| image:: ../images/lock-outline_F0341.svg
   :alt: Private channels are identified with a Lock icon.
 
-See the following documentation to learn more:
+See the following documentation to learn more about working with channels:
 
 - `Create channels </channels/create-channels.html>`__
 - `Join and leave channels </channels/join-leave-channels.html>`__
 - `Find channels </channels/find-channels.html>`__
 
-As your channel sidebar fills up with channels you've joined, you can organize your channels into categories based on how you work. See `Customize Your Channel Sidebar </channels/customize-your-channel-sidebar.html>`__ for details.
+As your channel sidebar fills up with channels you've joined, you can organize your channels into categories based on how you work. See the `customize your channel sidebar </channels/customize-your-channel-sidebar.html>`__ documentation for details.
 
 Invite people to the team
 -------------------------
 
-You can invite members of your organization, as well as external guests such as vendors or project partners, to a Mattermost team. Anyone can invite people to the team, unless the system admin has `disabled this option </configure/configuration-settings.html#enable-account-creation>`__ or `restricted permissions </onboard/advanced-permissions.html>`__ to do so. See the `About teams </welcome/about-teams.html>`__ documentation to learn more about team invitations.
+You can invite members of your organization, as well as external guests such as vendors or project partners, to a Mattermost team. Anyone can invite people to the team, unless the system admin has `disabled this option </configure/configuration-settings.html#enable-account-creation>`__ or `restricted permissions </onboard/advanced-permissions.html>`__ to do so. See the `about teams </welcome/about-teams.html>`__ documentation to learn more about team invitations.
 
 Send messages
 -------------
 
-Enter your message in the text field, then press :kbd:`Enter` on Windows or Linux or press :kbd:`↵` on Mac to send the message, or select the **Send** icon in the mobile app. Your messages can also include images and file attachments.
+.. |send-icon| image:: ../images/send_F048A.svg
+  :alt: Select the Send icon to post your message.
 
-- Copy and paste images or drag-and-drop image files into the text field to add them to your message.
-- Select the **Attachment** |attachment| icon to attach documents or other files to your message.
-  
+Enter a message in the text field, then select **Send** |send-icon| to send the message. You can include images and file attachments to your messages by:
+
+- copying and pasting images.
+- dragging-and-drop image files into the text field.
+- selecting the **Attachment** |attachment| icon.
+
 .. |attachment| image:: ../images/paperclip_F03E2.svg
   :alt: Use the Attachment icon to add images or files to your messages.
 

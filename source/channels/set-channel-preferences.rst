@@ -4,6 +4,9 @@ Set channel preferences
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
+.. |more-icon| image:: ../images/dots-horizontal_F01D8.svg
+    :alt: Use the More icon to access additional message options.
+
 You can set notification preferences as well as the channel's header, purpose, and name for each channel you're a member of. See the documentation for details on :doc:`renaming channels </channels/rename-channels>` and :doc:`channel naming convention recommendations </channels/channel-naming-conventions>`.
 
 .. image:: ../images/channel-preferences.png
@@ -39,9 +42,11 @@ Once a channel is muted:
   
   .. tab:: Mobile app
 
-    To mute a channel in the mobile app, select the channel you want to mute, then select **Mute**.
+    1. Tap the channel you want to mute.
+    2. Tap the **More** |more-icon| icon located in the top right corner of the app.
+    3. Tap **Mute**.
 
-    To unmute the channel, clear the **Mute** option.
+    To unmute the channel, tap **Mute** again.
 
 Ignore mentions for @channel, @here, and @all
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -56,12 +61,10 @@ By default, you'll receive mention notifications every time someone on your team
   
   .. tab:: Mobile app
 
-    To stop receiving mention notifications in the mobile app:
-
-    1. Select the channel where you want to mute mention notifications.
-    2. Select the **More** |more-icon| icon located in the top right corner of the app.
-    3. Select **View info**.
-    4. Select **Ignore @channel, @here, @all**.
+    1. Tap the channel where you want to mute mention notifications.
+    2. Tap the **More** |more-icon| icon located in the top right corner of the app.
+    3. Tap **View info**.
+    4. Tap **Ignore @channel, @here, @all** to disable the option.
 
 Send desktop notifications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -86,7 +89,7 @@ To customize desktop notifications per channel, edit **Send desktop notification
 Send mobile push notifications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Mattermost push notifications `must be enabled </configure/configuration-settings.html#enable-push-notifications>`__ by a System Admin. Once enabled, your `mobile push notification preferences </messaging/manage-channels-settings.html#mobile-push-notifications>`__ configured in **Settings** apply to all channels by default.
+Mattermost push notifications `must be enabled </configure/configuration-settings.html#enable-push-notifications>`__ by a system admin. Once enabled, your `mobile push notification preferences </messaging/manage-channels-settings.html#mobile-push-notifications>`__ configured in **Settings** apply to all channels by default.
 
 To customize mobile push notifications per channel, edit **Send mobile push notifications**, choose one of the following options, then select **Save**:
 
@@ -108,7 +111,7 @@ Channel header
 
 A channel header refers to text that displays under a channel name at the top of the screen. A channel header can be up to 1024 characters in length and is often used to summarize the channel's focus or to provide links to frequently accessed documents, tools, or websites.
 
-Change the channel header by selecting **Edit Channel Header**. You can use Markdown to `format channel header text </messaging/formatting-text.html>`__ using the same Markdown for messages. Any channel member can change a channel header, unless the System Admin has `restricted permissions to do so </configure/configuration-settings.html#enable-public-channel-renaming-for>`__.
+Change the channel header by selecting **Edit Channel Header**. You can use Markdown to `format channel header text </messaging/formatting-text.html>`__ using the same Markdown for messages. Any channel member can change a channel header, unless the system admin has `restricted permissions to do so </configure/configuration-settings.html#enable-public-channel-renaming-for>`__.
 
 .. image:: ../images/channel-header.png
     :alt: Channel headers can include links to documents, tools, or websites.
@@ -118,7 +121,7 @@ Channel purpose
 
 A channel purpose refers to text that displays when users select **View Info** for a channel. A channel purpose can be up to 250 characters in length and is often used to help users decide whether to join the channel.
 
-Change the channel purpose by selecting **Edit Channel Purpose**. Any channel member can change a channel purpose, unless the System Admin has `restricted permissions to do so using advanced permissions </onboard/advanced-permissions.html>`__.
+Change the channel purpose by selecting **Edit Channel Purpose**. Any channel member can change a channel purpose, unless the system admin has `restricted permissions to do so using advanced permissions </onboard/advanced-permissions.html>`__.
 
 .. image:: ../images/channel-purpose.png
     :alt: Channel purpose helps users decide if they want to join the channel based on its scope or focus.
@@ -128,4 +131,4 @@ Channel name
 
 A channel name must be at least two characters, and can be up to 64 characters in length. `Some unicode characters <https://www.w3.org/TR/unicode-xml/#Charlist>`_ aren't supported.
 
-Change the channel name by selecting **Rename Channel**. Changing the name of the channel also changes the channel URL. Any channel member can change a channel name, unless the System Admin has `restricted permissions to do so using advanced permissions </onboard/advanced-permissions.html>`__.
+Change the channel name by selecting **Rename Channel**. Changing the name of the channel also changes the channel URL. Any channel member can change a channel name, unless the system admin has `restricted permissions to do so using advanced permissions </onboard/advanced-permissions.html>`__.

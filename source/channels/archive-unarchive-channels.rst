@@ -10,7 +10,7 @@ Archive and unarchive channels
 Archive a channel
 -----------------
 
-Anyone using Mattermost can archive the public channels or private channels they belong to, unless the System Admin has restricted the permissions to do so. System Admins can archive channels in the System Console without needing to be a channel member. When a channel is archived, it's removed from the user interface, but a copy exists on the server in case it's needed for audit reasons at a later stage. 
+Anyone using Mattermost can archive the public channels or private channels they belong to, unless the system admin has restricted the permissions to do so. system admins can archive channels in the System Console without needing to be a channel member. When a channel is archived, it's removed from the user interface, but a copy exists on the server in case it's needed for audit reasons at a later stage. 
 
 .. note:: 
   
@@ -24,13 +24,13 @@ Anyone using Mattermost can archive the public channels or private channels they
 
   .. tab:: Mobile app
 
-    To archive a channel in the mobile app:
+    To archive a channel:
     
-    1. Select the channel you want to archive.
-    2. Select the **More** |more-icon| icon located in the top right corner of the app.
-    3. Select **View info**.
-    4. Select **Archive Channel**.
-    5. Select **Yes** to confirm.
+    1. Tap the channel you want to archive.
+    2. Tap the **More** |more-icon| icon located in the top right corner of the app.
+    3. Tap **View info**.
+    4. Tap **Archive Channel**.
+    5. Tap **Yes** to confirm.
 
 .. tip::
 
@@ -39,7 +39,7 @@ Anyone using Mattermost can archive the public channels or private channels they
 Unarchive a channel
 -------------------
 
-System Admins and Team Admins can unarchive public channels or private channels they belonged to before they were archived. When a channel is unarchived, channel membership and all its content is restored, unless messages and files have been deleted based on the `data retention policy </configure/configuration-settings.html#data-retention-policies>`__.
+System admins and Team admins can unarchive public channels or private channels they belonged to before they were archived. When a channel is unarchived, channel membership and all its content is restored, unless messages and files have been deleted based on the `data retention policy </configure/configuration-settings.html#data-retention-policies>`__.
 
 .. tabs::
 
@@ -52,14 +52,14 @@ System Admins and Team Admins can unarchive public channels or private channels 
 
   .. tab:: Mobile app
 
-    To unarchive a channel in the mobile app:
+    To unarchive a channel:
     
-    1. Select the channel you want to archive.
-    2. Select the **More** |more-icon| icon located in the top right corner of the app.
-    3. Select **View info**.
-    4. Select **Unarchive Channel**.
-    5. Select **Yes** to confirm.
+    1. Tap the channel you want to unarchive.
+    2. Tap the **More** |more-icon| icon located in the top right corner of the app.
+    3. Tap **View info**.
+    4. Tap **Unarchive Channel**.
+    5. Tap **Yes** to confirm.
 
 .. tip::
 
-  Alternatively, System Admins can unarchive channels `via the CLI </manage/command-line-tools.html#mattermost-channel-restore>`__, or via the `mmctl </manage/mmctl-command-line-tool.html#mmctl-channel-unarchive>`__. Team Admins can unarchive channels `via the API <https://api.mattermost.com/#operation/RestoreChannel>`__.
+  Alternatively, system admins can unarchive channels `via the CLI </manage/command-line-tools.html#mattermost-channel-restore>`__, or via the `mmctl </manage/mmctl-command-line-tool.html#mmctl-channel-unarchive>`__. Team admins can unarchive channels `via the API <https://api.mattermost.com/#operation/RestoreChannel>`__.

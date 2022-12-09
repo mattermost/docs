@@ -14,7 +14,7 @@ Here's how your sidebar is set up by default:
 What can you customize?
 -----------------------
 
-You can customize your sidebar in the following ways:
+Using Mattermost in a web browser or the desktop app, you can customize your sidebar in the following ways:
 
 - `Create custom categories <#create-custom-categories>`__.
 - `Group and order channels into your categories <#organize-channels-in-categories>`__.

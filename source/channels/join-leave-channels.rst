@@ -4,12 +4,13 @@ Join and leave channels
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
+.. |more-icon| image:: ../images/dots-horizontal_F01D8.svg
+    :alt: Use the More icon to access additional message options.
+
 Join a channel
 --------------
 
 To join a private channel, you need to be added to the channel by a member of that channel.
-
-To join a public channel:
 
 .. tabs::
 
@@ -27,13 +28,14 @@ To join a public channel:
 
   .. tab:: Mobile app
 
-    1. Select the **+** symbol in the top right corner the app, then select **Browse Channels** at the bottom. 
-    2. Select the public channel you want to join.
+    1. Tap the **+** symbol located in the top right corner the app.
+    2. Tap **Browse Channels**. 
+    3. Tap the public channel you want to join.
 
 .. tip::
   
   When you join channels, depending on the `channel actions configured </channels/create-channels.html>`__, you may see a welcome message, and channels may be added to `a category in your channel sidebar </channels/customize-your-channel-sidebar.html>`__ automatically. 
-  Access **Channel Actions** from the channel name drop-down menu in the center pane to see what automatic actions have been configured.
+  Using Mattermost in a web browser or the desktop app, access **Channel Actions** from the channel name drop-down menu in the center pane to see what automatic actions have been configured.
 
 Leave a channel
 ---------------
@@ -51,6 +53,6 @@ When you leave a private channel, you must be re-added by another channel member
 
   .. tab:: Mobile app
 
-    1. Select the channel you want to leave.
-    2. Select the **More** |more-icon| icon located in the top right corner of the app.
-    3. Select **Leave channel**.
+    1. Tap the channel you want to leave.
+    2. Tap the **More** |more-icon| icon located in the top right corner of the app.
+    3. Tap **Leave channel**.

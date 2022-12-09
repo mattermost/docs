@@ -130,11 +130,11 @@ See the following table to learn how to configure your password, view access his
 |                      | as well as your password.                                                                              |
 |                      |                                                                                                        |
 |                      | **Tip**: If scanning the QR code using your device doesn't work, you can manually enter the **Secret** |
-|                      |  provided on the Mattermost screen into the Google Authenticator app as a **Manual Entry** instead.    |
+|                      | provided on the Mattermost screen into the Google Authenticator app as a **Manual Entry** instead.     |
 +----------------------+--------------------------------------------------------------------------------------------------------+
 | Sign-in method       | This option allows you to switch your `login method </welcome/log-in.html>`__ from                     |
 |                      | `email/username and password </welcome/log-in.html#email-address-or-username>`__                       |
-|                      |  to a `single sign-on option </welcome/log-in.html#single-sign-on-sso>`__, and back again.             |
+|                      | to a `single sign-on option </welcome/log-in.html#single-sign-on-sso>`__, and back again.              |
 |                      |                                                                                                        |
 |                      | You can configure this setting using Mattermost in a browser or using the desktop app.                 |
 |                      |                                                                                                        |

@@ -9,13 +9,14 @@ Mark channels as favorites
 
 You can mark public channels, private channels, and direct messages as Favorite so they appear in the **Favorites** category in the channel sidebar.
 
-To mark a channel as a **Favorite**, open the channel:
+To mark a channel as a **Favorite**:
 
 .. tabs::
 
   .. tab:: Web browser/desktop app
 
-    At the top of the page, select on the star icon next to the channel name.
+    1. Open a channel.
+    2. Select on the star icon next to the channel name.
 
     .. image:: ../images/favorite-channel-desktop.png
       :alt: Mark a channel as a favorite.
@@ -27,7 +28,8 @@ To mark a channel as a **Favorite**, open the channel:
 
   .. tab:: Mobile app
 
-    1. Select the **More** |more-icon| icon located in the top right corner of the app.
-    2. Select **Favorite**.
+    1. Tap the channel you want to mark as a favorite.
+    2. Tap the **More** (...) icon located in the top right corner of the app.
+    3. Tap **Favorite**.
     
-    To remove a channel from the **Favorites** list, clear the **Favorited** option.
+    To remove a channel from the **Favorites** list, tap the **Favorited** option.

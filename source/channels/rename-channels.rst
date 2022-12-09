@@ -22,10 +22,10 @@ Anyone can rename the channels they belong to, unless the System Admin has `rest
 
   .. tab:: Mobile app
 
-    1. Select the channel you want to rename.
-    2. Select the **More** |more-icon| icon located in the top right corner of the app.
-    3. Select **View info**.
-    4. Select **Edit Channel**.
+    1. Tap the channel you want to rename.
+    2. Tap the **More** |more-icon| icon located in the top right corner of the app.
+    3. Tap **View info**.
+    4. Tap **Edit Channel**.
     5. You're prompted to provide three pieces of information:
 
       - **Name:** This appears in the Mattermost user interface.

@@ -46,6 +46,9 @@ Format messages
 .. |settings-icon| image:: ../images/settings-outline_F08BB.svg
   :alt: Access and manage your Channels settings using the Gear icon.
 
+.. |message-priority-icon| image:: ../images/Priority-Message-Icon.svg
+  :alt: Mark a message as important or urgent using the Priority Message icon.
+
 Use the messaging formatting toolbar
 ------------------------------------
 
@@ -57,24 +60,26 @@ From Mattermost v7.0, you can format your messages in Mattermost using the messa
 
 The message formatting toolbar offers the following formatting options:
 
-+------------------------------------------------------------+--------------------+
-| **Formatting option**                                      | **Icon**           | 
-+============================================================+====================+
-| Bold, italicize, or strike out text                        | |bold-icon|        |
-|                                                            | |italics-icon|     | 
-|                                                            | |strikeout-icon|   | 
-+------------------------------------------------------------+--------------------+
-| Add headings, links, or attachments                        | |headings-icon|    |
-|                                                            | |links-icon|       | 
-|                                                            | |attachments-icon| |
-+------------------------------------------------------------+--------------------+
-| Format a numbered list, a bulleted list, quoted text, or   | |numbered-icon|    | 
-| text as code                                               | |bullets-icon|     | 
-|                                                            | |quotes-icon|      |
-|                                                            | |code-icon|        | 
-+------------------------------------------------------------+--------------------+
-| Add emojis or GIFs                                         | |emoji-icon|       | 
-+------------------------------------------------------------+--------------------+
++--------------------------------------------------------------+-------------------------+
+| **Formatting option**                                        | **Icon**                | 
++==============================================================+=========================+
+| Bold, italicize, or strike out text                          | |bold-icon|             |
+|                                                              | |italics-icon|          | 
+|                                                              | |strikeout-icon|        | 
++--------------------------------------------------------------+-------------------------+
+| Add headings, links, or attachments                          | |headings-icon|         |
+|                                                              | |links-icon|            | 
+|                                                              | |attachments-icon|      |
++--------------------------------------------------------------+-------------------------+
+| Format a numbered list, a bulleted list, quoted text, or     | |numbered-icon|         |
+| text as code                                                 | |bullets-icon|          |
+|                                                              | |quotes-icon|           |
+|                                                              | |code-icon|             |
++--------------------------------------------------------------+-------------------------+
+| Add emojis or GIFs                                           | |emoji-icon|            |
++--------------------------------------------------------------+-------------------------+
+| `Set message priority </channels/message-priority.html>`__   | |message-priority-icon| |
++--------------------------------------------------------------+-------------------------+
 
 Review how your message formatting will look when the message is sent by selecting the **Show/Hide Preview** |preview-icon| icon. Return to your draft message by selecting the icon again.
 
@@ -431,7 +436,7 @@ Math Formulas
 
     .. note::
 
-      This feature is `disabled by default </configure/configuration-settings.html#enable-inline-latex-rendering>`__. Contact your System Admin to enable this setting in **System Console > Site Configuration > Posts** to use this feature.
+      This feature is `disabled by default </configure/configuration-settings.html#enable-inline-latex-rendering>`__. Contact your system admin to enable this setting in **System Console > Site Configuration > Posts** to use this feature.
 
     .. code-block:: none
 
@@ -448,7 +453,7 @@ Math Formulas
 
     .. note::
 
-      This feature is `disabled by default </configure/configuration-settings.html#enable-latex-code-block-rendering>`__. Contact your System Admin to enable this setting in **System Console > Site Configuration > Posts** to use this feature.
+      This feature is `disabled by default </configure/configuration-settings.html#enable-latex-code-block-rendering>`__. Contact your system admin to enable this setting in **System Console > Site Configuration > Posts** to use this feature.
 
     .. code-block:: none
 

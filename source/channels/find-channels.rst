@@ -11,11 +11,17 @@ Find channels to join
 
   .. tab:: Web browser/desktop app
 
-    To see all available public channels you can join that you're not already a member of, select the **+** icon at the top of the channel sidebar, then select **Browse Channels**. Search for channels by name or scroll through the list. Select **Join** next to any channel to become a member of that channel.
+    1. Select the **+** icon at the top of the channel sidebar to see all available public channels you can join that you're not already a member of.
+    2. Select **Browse Channels**. 
+    3. Search for channels by name or scroll through the list. 
+    4. Select **Join** next to any channel to become a member of that channel.
 
   .. tab:: Mobile app
 
-    To see all available public channels you can join that you're not already a member of, select the **+** icon located in the top right corner of the app, then select **Browse Channels**. Search for channels by name or filter the list of channels to show only public or archived channels. Select a channel to become a member of that channel. 
+    1. Tap the **+** icon located in the top right corner of the app to see all available public channels you can join that you're not already a member of. 
+    2. Tap **Browse Channels**. 
+    3. Search for channels by name or filter the list of channels to show only public or archived channels. 
+    4. Tap a channel to become a member of that channel. 
 
 .. tip:: 
   
