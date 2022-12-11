@@ -53,7 +53,7 @@ You can move both sidebar categories and boards and change the order of both to 
 - Set the position of a board within a category.
 - Drag a board out of one category and drop it into another category.
 
-To do this, select and hold the cursor over the category or board name. Then move the category or board around as needed. Boards moved into a category are sorted on top of the category by default unless you specifically position the board before releasing the cursor.
+To do this, select and hold the cursor over the category or board name. Then move the category or board around as needed. Boards moved into a category are sorted to the top of the category by default unless you specifically position the board before releasing the cursor.
 
 Bulk drag and drop boards
 ~~~~~~~~~~~~~~~~~~~~~~~~~
