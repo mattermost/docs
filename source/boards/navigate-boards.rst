@@ -58,7 +58,7 @@ To do this, select and hold the cursor over the category or board name. Then mov
 Bulk drag and drop boards
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-You can select multiple boards on the sidebar and drag them into a new category or position. Bulk select only applies to boards and not categories
+You can select multiple boards on the sidebar and drag them into a new category or position. Bulk select only applies to boards and not categories.
 
 There are two options available:
 
