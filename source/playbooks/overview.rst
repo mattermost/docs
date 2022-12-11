@@ -25,6 +25,20 @@ For participants, it prescribes processes such as task checklists, status update
 
 Playbooks also allow teams to incorporate learnings from the retrospective to tweak and improve the playbook with every iteration.
 
+What's a playbook?
+------------------
+
+A playbook is a repeatable process that is refined over time. For example, the steps you follow when dealing with an outage, a software release, or welcoming a new member of your team can all be made into a playbook.
+
+Playbook usage can be measured and adapted, and you can follow a playbook each time it's run.
+
+What's a run?
+-------------
+
+A run is the execution of the steps in a playbook. When a playbook is run, the process begins in a channel. Members of a playbook can view the run's progress in the run details page or they can participate in the run channel.
+
+When the process is completed, the run is ended. A retrospective can be run and the channel can be archived.
+
 Keywords
 --------
 
