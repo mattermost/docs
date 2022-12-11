@@ -27,6 +27,9 @@ Status updates ensure that stakeholders remain informed about the playbook runâ€
 If the playbook has a defined broadcast channel, status updates are copied to the broadcast channel as a message from the Playbooks bot.
 The most recent status post will also appear in the right-hand sidebar of the run channel. To correct or remove a status post, edit or delete the post as needed. Note that status updates that are broadcast to another channel wonâ€™t be updated or removed if the original post is edited or deleted.
 
+Request an update
+-----------------
+
 Follow runs and playbooks
 -------------------------
 
@@ -42,12 +45,6 @@ To help you keep track of your runs, tasks, and statuses, a daily digest is sent
 Running playbooks in multiple channels can be overwhelming. The daily digest is sent once a day, in the morning. It lists the actionable items for each run, as well as any outstanding tasks or status updates required. Select the run name to move to that channel.
 
 The digest is on by default. To turn it off, use the slash command ``/playbook settings digest off``.
-
-Task inbox
-----------
-
-In addition to the daily digest, you also have access to a task inbox. To view it, open Playbooks. In the header, select the message icon. In the RHS, every task assigned to you from every run that's in progress is listed into one view. You can check off, change due dates, and reassign tasks in this view.
-
 
 Playbook to do
 --------------

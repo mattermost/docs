@@ -23,6 +23,11 @@ When you’re in a channel with an active run, select the **Toggle Run Details**
 
 Some run actions can be edited while the run is in progress. This increases visibility into the run's progress and can improve accountability.
 
+Runs and channel behavior
+-------------------------
+
+When you configure your playbook, you can decide whether each run starts in a new channel or uses the same channel. You can also decide this when you start a run.
+
 Change broadcast channels
 -------------------------
 
