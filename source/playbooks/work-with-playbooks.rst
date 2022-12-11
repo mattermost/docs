@@ -1,21 +1,21 @@
 Work with playbooks
-=======================
+===================
 
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Playbooks are highly customizable to align with your workflow.
+A playbook is a checklist of the tasks that make up your processes. Playbooks allow you to take codified knowledge and processes and make them accessible and editable by your organization and team.
 
-What’s a playbook?
-^^^^^^^^^^^^^^^^^^
+Playbook configuration applies both to the execution of the playbook as well as to its management and improvement.
 
-A playbook is a checklist of the tasks that make up your processes. These tasks can range from at-mentioning a team member, to using a slash command to start a Zoom call. Tasks can be assigned to users, they can be given due dates.
+When you're setting up your playbook, you'll be able to break tasks down, and assign actions to them - such as using a slash command to start a Zoom call. You can also decide whether to use the same channel every time your playbook is run, or a new one.
 
 There are other parts of a playbook, such as automation settings, and metrics. But the very first thing you’ll want to set up is a checklist.
 
-Each time you use the process you’ve documented, such as onboarding a new customer, the playbook is used to start a run - a discrete single use of the process - and that run is captured in a dedicated channel. 
+Each time you use the process you’ve documented, such as onboarding a new customer, the playbook is used to start a run - a discrete single use of the process - and that run is captured in a channel (either a dedicated one or a new one every time you run the playbook). 
 
 Setting up a playbook includes configuring how the playbook manages the creation of its channel as well as how stakeholders are notified.
+
 To open a playbook and view its statistics, select the playbook name. To begin a run using a specific playbook, select **Run** beside that playbook’s name.
 
 Templates
@@ -81,7 +81,7 @@ When setting up your playbook:
 
 To access this setting, open the playbooks tab. Select the playbook you want to edit, then select the **Outline** tab. Select **Actions** in the left-hand menu and make your selection under the **When a run starts** heading.
 
-Assign tasks and due dates
+Tasks and due dates
 --------------------------
 
 In some workflows, there are time constraints on tasks and others may have more flexible timeframes. Associating tasks with deliverable dates provides visibility into workloads and helps everyone stay accountable during the run.
