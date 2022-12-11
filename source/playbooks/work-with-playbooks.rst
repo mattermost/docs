@@ -19,14 +19,14 @@ Setting up a playbook includes configuring how the playbook manages the creation
 To open a playbook and view its statistics, select the playbook name. To begin a run using a specific playbook, select **Run** beside that playbook’s name.
 
 Templates
-~~~~~~~~~
+----------
 
 Creating a playbook from scratch can be daunting, even if you have the process mapped out. One way to get started quickly is to use one of the pre-configured templates available. These templates are populated with content and settings to provide guidance and are customizable.
 
 Playbook templates are basic workflows that you can use to get started quickly. As you learn more about your workflows, you can customize them into specific playbooks.
 
 Choose a template
------------------
+~~~~~~~~~~~~~~~~~
 
 The first step is to choose the right template for your use case. There are pre-configured templates for specific scenarios. The checklists, actions, status updates, and retrospective settings for these templates may already be filled in and, where appropriate, enabled. You can always edit and adjust these settings - they're there to guide you - removing them doesn't negatively affect the playbook run.
 
