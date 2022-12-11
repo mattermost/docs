@@ -16,7 +16,7 @@ This Mattermost Playbooks User Guide is for anyone who needs help using Mattermo
 
    Overview </playbooks/overview>
    Work with playbooks </playbooks/work-with-playbooks>
-   Work with runs <playbooks/work-with-runs>
+   Work with runs </playbooks/work-with-runs>
    Work with notifications and updates </playbooks/notifications-and-updates>
    Work with metrics and goals </playbooks/metrics-and-goals>
    Share and collaborate </playbooks/share-and-collaborate>
@@ -24,7 +24,7 @@ This Mattermost Playbooks User Guide is for anyone who needs help using Mattermo
    
 * :doc:`Overview </playbooks/overview>` - Learn about Mattermost Playbooks features.
 * :doc:`Work with playbooks </playbooks/work-with-playbooks>` - Customize a playbook for successful runs.
-* :doc:`Work with runs <playbooks/work-with-runs>` - Edit triggers and actions in an active run.
+* :doc:`Work with runs </playbooks/work-with-runs>` - Edit triggers and actions in an active run.
 * :doc:`Work with notifications and updates </playbooks/notifications-and-updates>` - Keep track of all your active runs and tasks.
 * :doc:`Work with Metrics and goals </playbooks/metrics-and-goals>` - Use retrospectives to improve your workflows and provide detailed insight into your Playbooks.
 * :doc:`Share and collaborate </playbooks/share-and-collaborate>` - Reuse and share playbooks with your organization.
