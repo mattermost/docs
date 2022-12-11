@@ -48,7 +48,7 @@ Categories are organized per-user, so you can arrange your boards under categori
 Drag and drop
 -------------
 
-You can move both sidebar categories and boards and change their order to suit your preference. You can:
+You can move both sidebar categories and boards and change the order of both to suit your preference. You can:
 
 - Set the position of a board within a category.
 - Drag a board out of one category and drop it into another category.
