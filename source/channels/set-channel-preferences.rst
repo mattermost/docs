@@ -43,7 +43,7 @@ To unmute the channel, select the channel name again to access the drop-down men
 
   You can also quickly mute or unmute any channel any time:
   
-  - Selecting the channel name, then selecting **Mute Channel** or **Unmute Channel** from the list of options.
+  - Select the channel name, then select **Mute Channel** or **Unmute Channel** from the list of options.
   - Selecting the **More Options** |vertical-3-dots| icon for a channel in the channel sidebar.
   - Select the **View Info** |channel-info| icon, then select **Mute** or **Muted** in the right pane. 
 
