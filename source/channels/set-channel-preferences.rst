@@ -45,7 +45,7 @@ To unmute the channel, select the channel name again to access the drop-down men
   
   - Selecting the channel name, then selecting **Mute Channel** or **Unmute Channel** from the list of options.
   - Selecting the **More Options** |vertical-3-dots| icon for a channel in the channel sidebar.
-  - Selecting the **View Info** |channel-info| icon, then selecting **Mute** or **Muted** in the right pane. 
+  - Select the **View Info** |channel-info| icon, then select **Mute** or **Muted** in the right pane. 
 
 Ignore mentions for @channel, @here, and @all
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
