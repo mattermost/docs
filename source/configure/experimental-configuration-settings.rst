@@ -18,6 +18,13 @@ Experimental System Console configuration settings
 
 Access the following experimental configuration settings in the System Console by going to **Experimental > Features**.
 
+.. config:setting:: exp-ldaploginbuttoncolor
+  :displayname: AD/LDAP login button color (Experimental)
+  :systemconsole: Experimental > Features
+  :configjson: LoginButtonColor
+  :environment: N/A
+  :description: Specify the color of the AD/LDAP login button for white labeling purposes. Use a hex code with a #-sign before the code.
+
 AD/LDAP login button color
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -26,6 +33,13 @@ Specify the color of the AD/LDAP login button for white labeling purposes. Use a
 +-------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"LoginButtonColor": ""`` with string input.                                       |
 +-------------------------------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: exp-ldaploginbuttonbordercolor
+  :displayname: AD/LDAP login button border color (Experimental)
+  :systemconsole: Experimental > Features
+  :configjson: LoginButtonBorderColor
+  :environment: N/A
+  :description: Specify the color of the AD/LDAP login button border for white labeling purposes. Use a hex code with a #-sign before the code.
 
 AD/LDAP login button border color
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -39,6 +53,13 @@ Specify the color of the AD/LDAP login button border for white labeling purposes
 | This feature's ``config.json`` setting is ``"LoginButtonBorderColor": ""`` with string input.                                 |
 +-------------------------------------------------------------------------------------------------------------------------------+
 
+.. config:setting:: exp-ldaploginbuttontextcolor
+  :displayname: AD/LDAP login button text color (Experimental)
+  :systemconsole: Experimental > Features
+  :configjson: LoginButtonTextColor
+  :environment: N/A
+  :description: Specify the color of the AD/LDAP login button text for white labeling purposes. Use a hex code with a #-sign before the code.
+
 AD/LDAP login button text color
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -50,6 +71,15 @@ Specify the color of the AD/LDAP login button text for white labeling purposes. 
 +-------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"LoginButtonTextColor": ""`` with string input.                                   |
 +-------------------------------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: exp-enableauthenticationtransfer
+  :displayname: Change authentication method (Experimental)
+  :systemconsole: Experimental > Features
+  :configjson: ExperimentalEnableAuthenticationTransfer
+  :environment: N/A
+
+  - **true**: **(Default)** Users can change their sign-in method to any that is enabled on the server, either via their Profile or the APIs.
+  - **false**: Users cannot change their sign-in method, regardless of which authentication options are enabled.
 
 Change authentication method
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -65,14 +95,12 @@ Change authentication method
 | This feature's ``config.json`` setting is ``"ExperimentalEnableAuthenticationTransfer": true`` with options ``true`` and ``false``. |
 +-------------------------------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: experimental-linkmetadatatimeout
+.. config:setting:: exp-linkmetadatatimeout
   :displayname: Link metadata timeout (Experimental)
-  :systemconsole: N/A
+  :systemconsole: Experimental > Features
   :configjson: LinkMetadataTimeoutMilliseconds
   :environment: N/A
-
-  Adds a configurable timeout for requests made to return link metadata. If the metadata is not returned before this timeout expires, the message will post without requiring metadata.
-  This timeout covers the failure cases of broken URLs and bad content types on slow network connections. Default is 5000 milliseconds.
+  :description: Adds a configurable timeout for requests made to return link metadata. Default is **5000** milliseconds.
 
 Link metadata timeout
 ~~~~~~~~~~~~~~~~~~~~~
@@ -83,6 +111,13 @@ Adds a configurable timeout for requests made to return link metadata. If the me
 | This feature's ``config.json`` setting is ``"LinkMetadataTimeoutMilliseconds": 5000`` with numerical input.                     |
 +---------------------------------------------------------------------------------------------------------------------------------+
 
+.. config:setting:: exp-emailbatchbuffersize
+  :displayname: Email batching buffer size (Experimental)
+  :systemconsole: Experimental > Features
+  :configjson: EmailBatchingBufferSize
+  :environment: N/A
+  :description: Specify the maximum number of notifications batched into a single email. Default is **256** notifications.
+
 Email batching buffer size
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -91,6 +126,13 @@ Specify the maximum number of notifications batched into a single email.
 +--------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``EmailBatchingBufferSize": 256`` with numerical input.                        |
 +--------------------------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: exp-emailbatchinterval
+  :displayname: Email batching interval (Experimental)
+  :systemconsole: Experimental > Features
+  :configjson: EmailBatchingInterval
+  :environment: N/A
+  :description: Specify the maximum frequency, in seconds, which the batching job checks for new notifications. Default is **30** seconds.
 
 Email batching interval
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -101,6 +143,13 @@ Specify the maximum frequency, in seconds, which the batching job checks for new
 | This feature's ``config.json`` setting is ``EmailBatchingInterval": 30`` with numerical input.                        |
 +-----------------------------------------------------------------------------------------------------------------------+
 
+.. config:setting:: exp-emailloginbuttoncolor
+  :displayname: Email login button color (Experimental)
+  :systemconsole: Experimental > Features
+  :configjson: LoginButtonColor
+  :environment: N/A
+  :description: Specify the color of the email login button for white labeling purposes. Use a hex code with a #-sign before the code.
+
 Email login button color
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -109,6 +158,13 @@ Specify the color of the email login button for white labeling purposes. Use a h
 +-------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"LoginButtonColor": ""`` with string input.                                       |
 +-------------------------------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: exp-emailloginbuttonbordercolor
+  :displayname: Email login button border color (Experimental)
+  :systemconsole: Experimental > Features
+  :configjson: LoginButtonBorderColor
+  :environment: N/A
+  :description: Specify the color of the email login button border for white labeling purposes. Use a hex code with a #-sign before the code.
 
 Email login button border color
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -119,6 +175,13 @@ Specify the color of the email login button border for white labeling purposes. 
 | This feature's ``config.json`` setting is ``"LoginButtonBorderColor": ""`` with string input.                                 |
 +-------------------------------------------------------------------------------------------------------------------------------+
 
+.. config:setting:: exp-emailloginbuttontextcolor
+  :displayname: Email login button text color (Experimental)
+  :systemconsole: Experimental > Features
+  :configjson: LoginButtonTextColor
+  :environment: N/A
+  :description: Specify the color of the email login button text for white labeling purposes. Use a hex code with a #-sign before the code.
+
 Email login button text color
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -127,6 +190,15 @@ Specify the color of the email login button text for white labeling purposes. Us
 +-------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"LoginButtonTextColor": ""`` with string input.                                   |
 +-------------------------------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: exp-enableaccountdeactivation
+  :displayname: Enable account deactivation (Experimental)
+  :systemconsole: Experimental > Features
+  :configjson: EnableUserDeactivation
+  :environment: N/A
+
+  - **true**: Ability for users to deactivate their own account from **Settings > Advanced** is enabled.
+  - **false**: **(Default)** Ability for users to deactivate their own account is disabled.
 
 Enable account deactivation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -139,6 +211,15 @@ Enable account deactivation
 | This feature's ``config.json`` setting is ``"EnableUserDeactivation": false`` with options ``true`` and ``false``. |
 +--------------------------------------------------------------------------------------------------------------------+
 
+.. config:setting:: exp-enableautoreplies
+  :displayname: Enable automatic replies
+  :systemconsole: Experimental > Features
+  :configjson: ExperimentalEnableAutomaticReplies
+  :environment: N/A
+
+  - **true**: Users can enable Automatic Replies in **Settings > Notifications**.
+  - **false**: **(Default)** Disables the Automatic Direct Message Replies feature and hides it from **Settings**.
+
 Enable automatic replies
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -150,6 +231,13 @@ Enable automatic replies
 | This feature's ``config.json`` setting is ``"ExperimentalEnableAutomaticReplies": false`` with options ``true`` and ``false``. |
 +--------------------------------------------------------------------------------------------------------------------------------+
 
+.. config:setting:: exp-enablechannelviewedmessages
+  :displayname: Enable channel viewed websocket messages (Experimental)
+  :systemconsole: Experimental > Features
+  :configjson: EnableChannelViewedMessages
+  :environment: N/A
+  :description: This setting determines whether ``channel_viewed WebSocket`` events are sent, which synchronize unread notifications across clients and devices. Default is **true**.
+
 Enable channel viewed websocket messages
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -158,6 +246,16 @@ This setting determines whether ``channel_viewed WebSocket`` events are sent, wh
 +------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableChannelViewedMessages": true`` with options ``true`` and ``false``. |
 +------------------------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: exp-enabledefaultchannelleavejoinmessages
+  :displayname: Enable default channel leave/join system messages (Experimental)
+  :systemconsole: Experimental > Features
+  :configjson: ExperimentalEnableDefaultChannelLeaveJoinMessages
+  :environment: N/A
+  :description: This setting determines whether team leave/join system messages are posted in the default ``town-square`` channel.
+
+  - **true**: **(Default)** Enables leave/join system messages in the default ``town-square`` channel.
+  - **false**: Disables leave/join messages from the default ``town-square`` channel.
 
 Enable default channel leave/join system messages
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -171,6 +269,15 @@ This setting determines whether team leave/join system messages are posted in th
 +----------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ExperimentalEnableDefaultChannelLeaveJoinMessages": true`` with options ``true`` and ``false``. |
 +----------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: exp-hardenedmode
+  :displayname: Enable hardened mode (Experimental)
+  :systemconsole: Experimental > Features
+  :configjson: ExperimentalEnableHardenedMode
+  :environment: N/A
+
+  - **true**: Enables a hardened mode for Mattermost that makes user experience trade-offs in the interest of security.
+  - **false**: **(Default)** Disables hardened mode.
 
 Enable hardened mode
 ~~~~~~~~~~~~~~~~~~~~
@@ -190,6 +297,15 @@ Changes made when hardened mode is enabled:
 | This feature's ``config.json`` setting is ``"ExperimentalEnableHardenedMode": false`` with options ``true`` and ``false``. |
 +----------------------------------------------------------------------------------------------------------------------------+
 
+.. config:setting:: exp-enablepreviewfeatures
+  :displayname: Enable preview features (Experimental)
+  :systemconsole: Experimental > Features
+  :configjson: EnablePreviewFeatures
+  :environment: N/A
+
+  - **true**: **(Default)** Preview features can be enabled from **Settings > Advanced > Preview Pre-release features**.
+  - **false**: Disables and hides preview features from **Settings > Advanced > Preview Pre-release features**.
+
 Enable preview features
 ~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -200,6 +316,15 @@ Enable preview features
 +------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnablePreviewFeatures": true`` with options ``true`` and ``false``. |
 +------------------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: exp-enablethemeselection
+  :displayname: Enable theme selection (Experimental)
+  :systemconsole: Experimental > Features
+  :configjson: EnableThemeSelection
+  :environment: N/A
+
+  - **true**: **(Default)** Enables the **Display > Theme** tab in **Settings** so users can select their theme.
+  - **false**: Users cannot select a different theme. The **Display > Theme** tab is hidden in **Settings**.
 
 Enable theme selection
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -217,6 +342,15 @@ Enable theme selection
 | This feature's ``config.json`` setting is ``"EnableThemeSelection": true`` with options ``true`` and ``false``. |
 +-----------------------------------------------------------------------------------------------------------------+
 
+.. config:setting:: exp-allowcustomthemes
+  :displayname: Allow custom themes (Experimental)
+  :systemconsole: Experimental > Features
+  :configjson: AllowCustomThemes
+  :environment: N/A
+
+  - **true**: **(Default)** Enables the **Display > Theme > Custom Theme** section in **Settings**.
+  - **false**: Users cannot use a custom theme. The **Display > Theme > Custom Theme** section is hidden in **Settings**.
+
 Allow custom themes
 ~~~~~~~~~~~~~~~~~~~
 
@@ -233,6 +367,13 @@ Allow custom themes
 | This feature's ``config.json`` setting is ``"AllowCustomThemes": true`` with options ``true`` and ``false``. |
 +--------------------------------------------------------------------------------------------------------------+
 
+.. config:setting:: exp-defaulttheme
+  :displayname: Default theme (Experimental)
+  :systemconsole: Experimental > Features
+  :configjson: DefaultTheme
+  :environment: N/A
+  :description: Set a default theme that applies to all new users on the system. Default is **default**.
+
 Default theme
 ~~~~~~~~~~~~~
 
@@ -247,6 +388,15 @@ Set a default theme that applies to all new users on the system.
 | This feature's ``config.json`` setting is ``"DefaultTheme": "default"`` with options ``"default"``, ``"organization"``, ``"mattermostDark"``, and ``"windows10"``. |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+.. config:setting:: exp-enabletutorial
+  :displayname: Enable tutorial (Experimental)
+  :systemconsole: Experimental > Features
+  :configjson: EnableTutorial
+  :environment: N/A
+
+  - **true**: **(Default)** Users are prompted with a tutorial when they open Mattermost for the first time after account creation.
+  - **false**: The tutorial is disabled. Users are placed in Town Square when they open Mattermost for the first time after account creation.
+
 Enable tutorial
 ~~~~~~~~~~~~~~~
 
@@ -257,6 +407,15 @@ Enable tutorial
 +--------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableTutorial": true`` with options ``true`` and ``false``.                                  |
 +--------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: exp-enableonboarding
+  :displayname: Enable onboarding (Experimental)
+  :systemconsole: Experimental > Features
+  :configjson: EnableOnboarding
+  :environment: N/A
+
+  - **true**: **(Default)** New Mattermost users are shown key tasks to complete as part of initial onboarding.
+  - **false**: User onboarding tasks are disabled. Users are placed in Town Square when they open Mattermost for the first time after account creation.
 
 Enable onboarding
 ~~~~~~~~~~~~~~~~~
@@ -269,6 +428,13 @@ Enable onboarding
 | This feature's ``config.json`` setting is ``"EnableOnboarding": true`` with options ``true`` and ``false``.                                |
 +--------------------------------------------------------------------------------------------------------------------------------------------+
 
+.. config:setting:: exp-enableusertypingmessages
+  :displayname: Enable user typing messages (Experimental)
+  :systemconsole: Experimental > Features
+  :configjson: EnableUserTypingMessages
+  :environment: N/A
+  :description: This setting determines whether "user is typing..." messages are displayed below the message box. Default is **true**.
+
 Enable user typing messages
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -278,12 +444,12 @@ This setting determines whether "user is typing..." messages are displayed below
 | This feature's ``config.json`` setting is ``"EnableUserTypingMessages": true`` with options ``true`` and ``false``. |
 +---------------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: experimental-usertypingtimeout
+.. config:setting:: exp-usertypingtimeout
   :displayname: User typing timeout (Experimental)
-  :systemconsole: N/A
+  :systemconsole: Experimental > Features
   :configjson: TimeBetweenUserTypingUpdatesMilliseconds
   :environment: N/A
-  :description: This setting defines how frequently "user is typing..." messages are updated, measured in milliseconds. Default is 5000 milliseconds.
+  :description: This setting defines how frequently "user is typing..." messages are updated, measured in milliseconds. Default is **5000** milliseconds.
 
 User typing timeout
 ~~~~~~~~~~~~~~~~~~~
@@ -293,6 +459,13 @@ This setting defines how frequently "user is typing..." messages are updated, me
 +----------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"TimeBetweenUserTypingUpdatesMilliseconds": 5000`` with numerical input. |
 +----------------------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: exp-primaryteam
+  :displayname: Primary team (Experimental)
+  :systemconsole: Experimental > Features
+  :configjson: ExperimentalPrimaryTeam
+  :environment: N/A
+  :description: The primary team of which users on the server are members. When a primary team is set, the options to join other teams or leave the primary team are disabled.
 
 Primary team
 ~~~~~~~~~~~~
@@ -304,6 +477,13 @@ If the team URL of the primary team is https://example.mattermost.com/myteam/, t
 +-----------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ExperimentalPrimaryTeam": ""`` with string input.                  |
 +-----------------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: exp-samlloginbuttoncolor
+  :displayname: SAML login button color (Experimental)
+  :systemconsole: Experimental > Features
+  :configjson: LoginButtonColor
+  :environment: N/A
+  :description: Specify the color of the SAML login button for white labeling purposes. Use a hex code with a #-sign before the code.
 
 SAML login button color
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -319,6 +499,13 @@ Specify the color of the SAML login button for white labeling purposes. Use a he
 | This feature's ``config.json`` setting is ``"LoginButtonColor": ""`` with string input.                                       |
 +-------------------------------------------------------------------------------------------------------------------------------+
 
+.. config:setting:: exp-samlloginbuttonbordercolor
+  :displayname: SAML login button border color (Experimental)
+  :systemconsole: Experimental > Features
+  :configjson: LoginButtonBorderColor
+  :environment: N/A
+  :description: Specify the color of the SAML login button border for white labeling purposes. Use a hex code with a #-sign before the code.
+
 SAML login button border color
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -332,6 +519,13 @@ Specify the color of the SAML login button border for white labeling purposes. U
 +-------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"LoginButtonBorderColor": ""`` with string input.                                 |
 +-------------------------------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: exp-samlloginbuttontextcolor
+  :displayname: SAML login button text color (Experimental)
+  :systemconsole: Experimental > Features
+  :configjson: LoginButtonTextColor
+  :environment: N/A
+  :description: Specify the color of the SAML login button text for white labeling purposes. Use a hex code with a #-sign before the code.
 
 SAML login button text color
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -347,6 +541,15 @@ Specify the color of the SAML login button text for white labeling purposes. Use
 | This feature's ``config.json`` setting is ``"LoginButtonTextColor": ""`` with string input.                                   |
 +-------------------------------------------------------------------------------------------------------------------------------+
 
+.. config:setting:: exp-usechannelinemailnotifications
+  :displayname: Use channel name in email notifications (Experimental)
+  :systemconsole: Experimental > Features
+  :configjson: UseChannelInEmailNotifications
+  :environment: N/A
+
+  - **true**: Channel and team name appears in email notification subject lines.
+  - **false**: **(Default)** Only team name appears in email notification subject line.
+
 Use channel name in email notifications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -358,12 +561,12 @@ Use channel name in email notifications
 | This feature's ``config.json`` setting is ``"UseChannelInEmailNotifications": false`` with options ``true`` and ``false``. |
 +----------------------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: experimental-userstatusawaytimeout
+.. config:setting:: exp-userstatusawaytimeout
   :displayname: User status away timeout (Experimental)
-  :systemconsole: N/A
+  :systemconsole: Experimental > Features
   :configjson: UserStatusAwayTimeout
   :environment: N/A
-  :description: This setting defines the number of seconds after which the user's status indicator changes to "Away", when they are away from Mattermost. Default is 300 seconds.
+  :description: This setting defines the number of seconds after which the user's status indicator changes to "Away", when they are away from Mattermost. Default is **300** seconds.
 
 User status away timeout
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -373,6 +576,15 @@ This setting defines the number of seconds after which the user's status indicat
 +--------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"UserStatusAwayTimeout": 300`` with numerical input. |
 +--------------------------------------------------------------------------------------------------+
+
+.. config:setting:: exp-enablesharedchannels
+  :displayname: Enable shared channels (Experimental)
+  :systemconsole: Experimental > Features
+  :configjson: ExperimentalSettings:EnableSharedChannels, ExperimentalSettings:EnableRemoteClusterService
+  :environment: N/A
+
+  Shared channels enables the ability to establish secure connections between Mattermost instances, and invite secured connections to shared channels where secure connections can participate as they would in any public and private channel.
+  Both configuration settings must be enabled in order to share channels with secure connections. Only the **Enable Shared Channels** configuration option is available through the System Console. Default value of both settings is **false**.
 
 Enable shared channels
 ~~~~~~~~~~~~~~~~~~~~~~
