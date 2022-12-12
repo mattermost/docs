@@ -245,6 +245,72 @@ Dedicated service
 
 For Enterprise customers we offer a way to offload performance costs through a `dedicated service <https://github.com/mattermost/rtcd>`_ that can be used to further scale up calls. 
 
+Load testing
+~~~~~~~~~~~~
+
+We provide a `load-test tool <https://github.com/mattermost/mattermost-plugin-calls/tree/main/lt>`_ that can be used to simulate and measure the performance impact of calls.
+
+Monitoring
+~~~~~~~~~~
+
+Both the plugin and the external ``rtcd`` service expose some Prometheus metrics to monitor performance. You can refer to `Performance monitoring </scale/performance-monitoring.html>`_ for information on how to set up Prometheus and visualize metrics through Grafana.
+
+Calls plugin metrics
+^^^^^^^^^^^^^^^^^^^^
+
+Metrics for Calls plugin are exposed through the public ``/plugins/com.mattermost.calls/metrics`` API endpoint.
+
+**Process**
+
+- ``mattermost_plugin_calls_process_cpu_seconds_total``: Total user and system CPU time spent in seconds.
+- ``mattermost_plugin_calls_process_max_fds``: Maximum number of open file descriptors.
+- ``mattermost_plugin_calls_process_open_fds``: Number of open file descriptors.
+- ``mattermost_plugin_calls_process_resident_memory_bytes``: Resident memory size in bytes.
+- ``mattermost_plugin_calls_process_virtual_memory_bytes``: Virtual memory size in bytes.
+
+**WebRTC Connection**
+
+- ``mattermost_plugin_calls_rtc_conn_states_total``: Total number of RTC connection state changes.
+- ``mattermost_plugin_calls_rtc_errors_total``: Total number of RTC errors.
+- ``mattermost_plugin_calls_rtc_rtp_bytes_total``: Total number of sent/received RTP packets in bytes.
+- ``mattermost_plugin_calls_rtc_rtp_packets_total``: Total number of sent/received RTP packets.
+- ``mattermost_plugin_calls_rtc_sessions_total``: Total number of active RTC sessions.
+
+**Database**
+
+- ``mattermost_plugin_calls_store_ops_total``: Total number of db store operations.
+
+**WebSocket**
+
+- ``mattermost_plugin_calls_websocket_connections_total``: Total number of active WebSocket connections.
+- ``mattermost_plugin_calls_websocket_events_total``: Total number of WebSocket events.
+
+WebRTC service metrics
+^^^^^^^^^^^^^^^^^^^^^^
+
+Metrics for ``rtcd`` service are exposed through the ``/metrics`` API endpoint.
+
+**Process**
+
+- ``rtcd_process_cpu_seconds_total``:  Total user and system CPU time spent in seconds.
+- ``rtcd_plugin_calls_process_max_fds``: Maximum number of open file descriptors.
+- ``rtcd_plugin_calls_process_open_fds``: Number of open file descriptors.
+- ``rtcd_plugin_calls_process_resident_memory_bytes``: Resident memory size in bytes.
+- ``rtcd_plugin_calls_process_virtual_memory_bytes``: Virtual memory size in bytes.
+
+**WebRTC Connection**
+
+- ``rtcd_rtc_conn_states_total``: Total number of RTC connection state changes.
+- ``rtcd_rtc_errors_total``: Total number of RTC errors.
+- ``rtcd_rtc_rtp_bytes_total``: Total number of sent/received RTP packets in bytes.
+- ``rtcd_rtc_rtp_packets_total``: Total number of sent/received RTP packets.
+- ``rtcd_rtc_sessions_total``: Total number of active RTC sessions.
+
+**WebSocket**
+
+- ``rtcd_ws_connections_total``: Total number of active WebSocket connections.
+- ``rtcd_ws_messages_total``: Total number of received/sent WebSocket messages.
+
 System tunings
 ~~~~~~~~~~~~~~
 
