@@ -22,7 +22,7 @@ From Mattermost v7.6, you can add a message priority label to root messages to m
 Set message priority
 --------------------
 
-Using Mattermost in a browser or in the desktop app, you can add one of three priority labels when sending a new message: Standard, Important, or Urgent. Priority labels are visible in mobile, and mobile support for setting message priority is coming in a future release. 
+You can add one of three priority labels when sending a new message: Standard, Important, or Urgent. 
 
 To set the priority of a new message:
 
