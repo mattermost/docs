@@ -1,4 +1,4 @@
-Set message priority (Beta)
+Set message priority (beta)
 ===========================
 
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
