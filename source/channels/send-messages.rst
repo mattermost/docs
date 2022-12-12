@@ -29,6 +29,17 @@ Compose a message by typing into the text box at the bottom of Mattermost. Press
 
       In Mattermost versions up to v5.39, you can configure Mattermost to press :kbd:`Enter` on Windows or Linux, or :kbd:`↵` on Mac to insert new lines, and press :kbd:`Ctrl` :kbd:`Enter` on Windows or Linux, or :kbd:`⌘` :kbd:`↵` on Mac to send messages instead. Select the three horizontal lines at the top of the channel sidebar (also known as a hamburger menu) to go to **Account Settings**, then select **Advanced > Send messages on CTRL+ENTER**.
   
+Draft messages
+--------------
+
+From Mattermost v7.6, when composing new messages, it's easy to return to a message in progress later. Draft messages are added to a **Drafts** view available at the top of the channel sidebar unless your system admin `disables global draft functionality </configure/experimental-configuration-settings.html#allow-synchronized-drafts>`__.
+
+By default, message drafts are synchronized on the Mattermost server AND accessible everywhere you access Mattermost, including a web browser or the desktop app with mobile support coming in a future release. 
+
+.. Tip::
+  
+  You can disable server-synchronized drafts and limit drafts to your current Mattermost client only by going to **Settings > Advanced > Allow message drafts to sync with the server**.
+
 Edit or delete messages
 -----------------------
 

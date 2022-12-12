@@ -12,6 +12,10 @@ Reply to messages by selecting the **Reply** |reply-arrow| icon next to the mess
 .. image:: ../images/reply-to-message.png
    :alt: Reply to Mattermost messages
 
+.. tip::
+
+  It's easy to return to a message in progress with global message drafts. Find all of your draft messages in the **Drafts** view available at the top of the channel sidebar. See the `draft messages </channels/send-messages.html#draft-messages>`__ documentation for details.
+
 Organize conversations into threads
 -----------------------------------
 
