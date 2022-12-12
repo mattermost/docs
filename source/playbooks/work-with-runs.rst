@@ -26,14 +26,16 @@ Some run actions can be edited while the run is in progress. This increases visi
 Runs and channel behavior
 -------------------------
 
-When you configure your playbook, you can decide whether each run starts in a new channel or uses the same channel. You can also decide this when you start a run.
+When you configure your playbook, you can decide whether each run of that playbook starts in a new channel or uses the same channel. You can run multiple playbooks in the same channel, simultaneously. Each playbook in use is listed in the RHS of the run channel.
+
+If you decide to run a playbook in a new channel, you can do this when you start the run. In the channel RHS, select **Start run**. Then select how you'd like it to be executed.
 
 Send outgoing webhooks
 ----------------------
 
 1. In your run, select **Toggle Run Details** to open the right-hand sidebar.
 2. Select **Run details**.
-3. Next to the **In Progress** indicator, select **Run Actions**.
+3. In the **Run details** page, scroll down to **Actions**.
 4. Add your webhook URLs in the field provided.
     - You can turn off this option using the togggle.
 5. Select **Save**.
