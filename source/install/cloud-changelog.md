@@ -29,7 +29,7 @@ Latest Mattermost Cloud releases:
  
 #### Playbooks
  - Added an option to run playbooks without creating a new channel every time in order to reduce the unnecessary overhead.
- - In addition to the daily digest, users can now also view a task inbox from the global header bar while in Playbooks.
+ - In addition to the daily digest, users can now also view [a task inbox](https://docs.mattermost.com/playbooks/work-with-tasks.html#task-inbox) from the global header bar while in Playbooks.
  
 #### Calls
  - [Audio calling and screen sharing](https://docs.mattermost.com/configure/calls-deployment.html) in channels is now generally available to all Mattermost customers.
