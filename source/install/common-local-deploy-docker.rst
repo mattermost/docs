@@ -21,3 +21,5 @@ You can install Mattermost server in **Preview Mode** using the `Mattermost Dock
     docker run --name mattermost-preview -d --publish 8065:8065 mattermost/mattermost-preview
 
 3. When Docker is done fetching the image, navigate to ``http://localhost:8065/`` in your browser to preview Mattermost.
+4. Select **Don't have an account** in the top right corner of the screen to create an account for your preview instance.
+5. Log in to your preview instance with your user credentials.
