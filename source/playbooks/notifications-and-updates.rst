@@ -3,6 +3,9 @@ Notifications and updates
 
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
+  
+.. |vertical-3-dots| image:: ../images/dots-vertical_F01D9.svg
+  :alt: Select the More icon to access additional channel management options.
 
 There are multiple ways to receive updates and notifications.
 
@@ -32,7 +35,7 @@ The most recent status post will also appear in the right-hand sidebar of the ru
 Request an update
 -----------------
 
-To request a status update, open the playbooks tab in Mattermost. Select the run you want an update for. In the run details page, select the **...** menu next to **Post update** and select **Request update**.
+To request a status update, open the playbooks tab in Mattermost. Select the run you want an update for. In the run details page, select the |vertical-3-dots| menu next to **Post update** and select **Request update**.
 
 Follow runs and playbooks
 -------------------------
