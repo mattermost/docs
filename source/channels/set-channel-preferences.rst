@@ -22,7 +22,7 @@ To manage channel notification preferences, select the channel name at the top o
 
 .. tip::
 
-  Alternatively, you can manage channel notification preferences by selecting the channel name, selecting the **View Info** |channel-info| icon, then selecting **Notification Preferences** in the right pane.
+  Alternatively, to manage channel notification preferences select the channel name, select the **View Info** |channel-info| icon, then select **Notification Preferences** in the right pane.
 
 Mute channel
 ~~~~~~~~~~~~~
