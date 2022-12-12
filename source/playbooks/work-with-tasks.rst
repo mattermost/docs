@@ -15,4 +15,6 @@ Due dates can be entered in text (e.g., "two minutes ago") or numerically (e.g.,
 Task inbox
 ----------
 
-In addition to the daily digest, you also have access to a task inbox. To view it, open Playbooks. In the header, select the message icon. In the RHS, every task assigned to you from every run that's in progress is listed into one view. You can check off, change due dates, and reassign tasks in this view.
+In addition to the daily digest, you also have access to a task inbox. To view it, open the playbooks tab. 
+
+In the header, next to your profile photo, select the message icon. A list of every task assigned to you from every run that's in progress is displayed. You can check off, change due dates, and reassign tasks in this view.
