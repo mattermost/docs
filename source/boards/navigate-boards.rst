@@ -55,16 +55,6 @@ You can move both sidebar categories and boards and change the order of both to 
 
 To do this, select and hold the cursor over the category or board name. Then move the category or board around as needed. Boards moved into a category are sorted to the top of the category by default unless you specifically position the board before releasing the cursor.
 
-Bulk drag and drop boards
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-You can select multiple boards on the sidebar and drag them into a new category or position. Bulk select only applies to boards and not categories.
-
-There are two options available:
-
-- **Sequentially:** Select and hold the cursor, then press the SHIFT key. This selects boards sequentially below the first select board.
-- **Individually:** Select and hold the cursor, then press the CMD/CTRL key. This allows you to select multiple boards individually.
-
 Manage boards on the sidebar
 ----------------------------
 
