@@ -131,4 +131,4 @@ To change the channel name, select **Rename Channel**. Changing the name of the 
 
 .. tip::
 
-  Alternatively, you can provide or update a channel name by selecting the channel name, then selecting **Rename Channel** from the list of options.
+  Alternatively, to provide or update a channel name, select the channel name, then select **Rename Channel** from the list of options.
