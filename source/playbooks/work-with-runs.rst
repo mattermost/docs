@@ -28,16 +28,6 @@ Runs and channel behavior
 
 When you configure your playbook, you can decide whether each run starts in a new channel or uses the same channel. You can also decide this when you start a run.
 
-Change broadcast channels
--------------------------
-
-1. In your run, select **Toggle Run Details** to open the right-hand sidebar.
-2. Select **Run details**.
-3. Next to the **In Progress** indicator, select **Run Actions**.
-4. You can delete the current channel or add additional ones. To find channels, start typing the channel name and select it from the list.
-    - You can turn off channel broadcast using the togggle.
-5. Select **Save**.
-
 Send outgoing webhooks
 ----------------------
 

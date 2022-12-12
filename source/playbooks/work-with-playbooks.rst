@@ -81,12 +81,12 @@ When setting up your playbook:
 
 To access this setting, open the playbooks tab. Select the playbook you want to edit, then select the **Outline** tab. Select **Actions** in the left-hand menu and make your selection under the **When a run starts** heading.
 
-Broadcast channels
+Status updates
 ------------------
 
 There may be multiple active runs on any given day.
 
-Setting up a dedicated broadcast channel is an easy way to centralize status updates, decrease noise, and remember where everything is. Configure a broadcast channel to which status updates will be copied. If you're not a member of the configured broadcast channel, **Unknown Channel** is displayed instead of the channel name.
+Configuring an update cadence is an easy way to centralize status updates, decrease noise, and remember where everything is. You can do this when you're setting up your playbook. Navigate to the **Usage** section and set the parameters based on expected update cycles and where the updates should be published.
 
 Keywords
 --------
