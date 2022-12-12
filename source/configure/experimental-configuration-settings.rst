@@ -605,6 +605,16 @@ Shared channels enables the ability to establish secure connections between Matt
    - Both configuration settings must be enabled in order to share channels with secure connections. Only the **Enable Shared Channels** configuration option is available through the System Console.
    - System Admins for Cloud deployments can submit a request to have the ``EnableRemoteClusterService`` configuration setting enabled in their Cloud instance.
 
+.. config:setting:: exp-enableappbar
+  :displayname: Enable app bar (Experimental)
+  :systemconsole: Experimental > Features
+  :configjson: EnableAppBar
+  :environment: N/A
+  :description: This setting enables the Apps Bar and moves all Mattermost integration icons from the channel header to a vertical pane on the far right side of the screen.
+
+  - **true**: All integration icons in the channel header move to the Apps Bar with the exception of the calls beta feature.
+  - **false**: **(Default)** All integration icons in the channel header display in the channel header.
+
 Enable app bar
 ~~~~~~~~~~~~~~
 
@@ -632,6 +642,15 @@ Experimental Bleve configuration settings
 
 Access the following configuration settings in the System Console by going to **Experimental > Bleve**, or by editing the ``config.json`` file as described in the following tables:
 
+.. config:setting:: exp-bleveenable
+  :displayname: Enable Bleve indexing (Experimental)
+  :systemconsole: Experimental > Bleve
+  :configjson: EnableIndexing
+  :environment: N/A
+
+  - **true**: The indexing of new posts occurs automatically.
+  - **false**: **(Default)** The indexing of new posts does not occur automatically.
+
 Enable Bleve indexing
 ~~~~~~~~~~~~~~~~~~~~~
 
@@ -642,6 +661,13 @@ Enable Bleve indexing
 +------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableIndexing": false`` with options ``true`` and ``false``. |
 +------------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: exp-bleveindexdir
+  :displayname: Index directory (Experimental)
+  :systemconsole: Experimental > Bleve
+  :configjson: IndexDir
+  :environment: N/A
+  :description: Directory path to use for storing bleve indexes.
 
 Index directory
 ~~~~~~~~~~~~~~~
@@ -668,6 +694,15 @@ Purge indexes
 
 Select **Purge Index** to remove the contents of the Bleve index directory. Search results may be incomplete until a bulk index of the existing database is rebuilt.
 
+.. config:setting:: exp-bleveenablesearch
+  :displayname: Enable Bleve for search queries (Experimental)
+  :systemconsole: Experimental > Bleve
+  :configjson: EnableSearching
+  :environment: N/A
+
+  - **true**: Search queries will use bleve search.
+  - **false**: **(Default)** Search queries will not use bleve search.
+
 Enable Bleve for search queries
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -678,6 +713,15 @@ Enable Bleve for search queries
 +--------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableSearching": false`` with options ``true`` and ``false``.  |
 +--------------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: exp-bleveenableautocomplete
+  :displayname: Enable Bleve for autocomplete queries (Experimental)
+  :systemconsole: Experimental > Bleve
+  :configjson: EnableAutocomplete
+  :environment: N/A
+
+  - **true**: Autocomplete queries will use bleve search.
+  - **false**: **(Default)** Autocomplete queries will not use bleve search.
 
 Enable Bleve for autocomplete queries
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -703,6 +747,13 @@ Access the following self-hosted configuration settings by editing the ``config.
 .. include:: common-config-settings-notation.rst
     :start-after: :nosearch:
 
+.. config:setting:: exp-allowedthemes
+  :displayname: Allowed themes (Experimental)
+  :systemconsole: N/A
+  :configjson: AllowedThemes
+  :environment: N/A
+  :description: Select the themes that can be chosen by users when ``EnableThemeSelection`` is set to ``true``.
+
 Allowed themes
 ~~~~~~~~~~~~~~
 
@@ -718,6 +769,13 @@ Select the themes that can be chosen by users when ``EnableThemeSelection`` is s
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"AllowedThemes": []`` with string array input consisting of the options ``"default"``, ``"organization"``, ``"mattermostDark"``, and ``"windows10"``, such as ``["mattermostDark", "windows10"]``.     |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: exp-maxusersforstatistics
+  :displayname: Maximum users for statistics (Experimental)
+  :systemconsole: N/A
+  :configjson: MaxUsersForStatistics
+  :environment: N/A
+  :description: Sets the maximum number of users on the server before statistics for total posts, total hashtag posts, total file posts, posts per day, and active users with posts per day are disabled. Default is **2500** users.
 
 Maximum users for statistics
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -737,6 +795,13 @@ This setting is used to maximize performance for large Enterprise deployments.
 | This feature's ``config.json`` setting is ``"MaxUsersForStatistics": 2500`` with numerical input. |
 +---------------------------------------------------------------------------------------------------+
 
+.. config:setting:: exp-latestandroidversion
+  :displayname: Latest Android version (Experimental)
+  :systemconsole: N/A
+  :configjson: AndroidLatestVersion
+  :environment: N/A
+  :description: The latest version of the Android React Native app that is recommended for use.
+
 Latest Android version
 ~~~~~~~~~~~~~~~~~~~~~~
 
@@ -747,6 +812,13 @@ The latest version of the Android React Native app that is recommended for use.
 +----------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"AndroidLatestVersion": ""`` with string input corresponding to a version string, such as ``"1.2.0"``. |
 +----------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: exp-minimumandroidversion
+  :displayname: Minimum Android version (Experimental)
+  :systemconsole: N/A
+  :configjson: AndroidMinVersion
+  :environment: N/A
+  :description: The minimum version of the Android React Native app that is required to be used.
 
 Minimum Android version
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -759,6 +831,13 @@ The minimum version of the Android React Native app that is required to be used.
 | This feature's ``config.json`` setting is ``"AndroidMinVersion": ""`` with string input corresponding to a version string, such as ``"1.2.0"``. |
 +-------------------------------------------------------------------------------------------------------------------------------------------------+
 
+.. config:setting:: exp-latestiosversion
+  :displayname: Latest iOS version (Experimental)
+  :systemconsole: N/A
+  :configjson: IosLatestVersion
+  :environment: N/A
+  :description: The latest version of the iOS app that is recommended for use.
+
 Latest iOS version
 ~~~~~~~~~~~~~~~~~~
 
@@ -770,6 +849,13 @@ The latest version of the iOS app that is recommended for use.
 | This feature's ``config.json`` setting is ``"IosLatestVersion": ""`` with string input corresponding to a version string, such as ``"1.2.0"``. |
 +------------------------------------------------------------------------------------------------------------------------------------------------+
 
+.. config:setting:: exp-minimumiosversion
+  :displayname: Minimum iOS version (Experimental)
+  :systemconsole: N/A
+  :configjson: IosMinVersion
+  :environment: N/A
+  :description: The minimum version of the iOS React Native app that is required to be used.
+
 Minimum iOS version
 ~~~~~~~~~~~~~~~~~~~
 
@@ -780,6 +866,13 @@ The minimum version of the iOS React Native app that is required to be used.
 +---------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"IosMinVersion": ""`` with string input corresponding to a version string, such as ``"1.2.0"``. |
 +---------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: exp-batchsize
+  :displayname: Batch size (Experimental)
+  :systemconsole: N/A
+  :configjson: BatchSize
+  :environment: N/A
+  :description: Determines how many new posts are batched together to a compliance export file. Default is **10000** posts.
 
 Batch size
 ~~~~~~~~~~
@@ -797,6 +890,13 @@ Determines how many new posts are batched together to a compliance export file.
 | This feature's ``config.json`` setting is ``"BatchSize": 10000`` with numerical input. |
 +----------------------------------------------------------------------------------------+
 
+.. config:setting:: exp-filelocation
+  :displayname: File location (Experimental)
+  :systemconsole: N/A
+  :configjson: FileLocation
+  :environment: N/A
+  :description: Set the file location of the compliance exports. Default value is **export**.
+
 File Location
 ~~~~~~~~~~~~~
 
@@ -813,6 +913,13 @@ Set the file location of the compliance exports. By default, they are written to
 | This feature's ``config.json`` setting is ``"FileLocation": "export"`` with string input. |
 +-------------------------------------------------------------------------------------------+
 
+.. config:setting:: exp-pushnotificationbuffer
+  :displayname: Push notification buffer (Experimental)
+  :systemconsole: N/A
+  :configjson: PushNotificationBuffer
+  :environment: N/A
+  :description: Used to control the buffer of outstanding Push Notification messages to be sent. Default is **1000** notifications.
+
 Push notification buffer
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -824,6 +931,13 @@ Used to control the buffer of outstanding Push Notification messages to be sent.
 | This feature’s ``config.json`` setting is ``"PushNotificationBuffer": 1000"`` with numerical input.                                         |
 +---------------------------------------------------------------------------------------------------------------------------------------------+
 
+.. config:setting:: exp-disableinactivityemail
+  :displayname: Disable inactive server email notifications (Experimental)
+  :systemconsole: N/A
+  :configjson: EnableInactivityEmail
+  :environment: N/A
+  :description: This configuration setting disables the ability to send inactivity email notifications to Mattermost System Admins. Default value is **true**.
+
 Disable inactive server email notifications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -834,6 +948,13 @@ This configuration setting disables the ability to send inactivity email notific
 +-------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableInactivityEmail": true`` with options ``true`` and ``false``.  |
 +-------------------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: exp-enableauditfiles
+  :displayname: File configuration options (Experimental)
+  :systemconsole: N/A
+  :configjson: FileEnabled
+  :environment: N/A
+  :description: Enable this setting to write audit files locally, specifying size, backup interval, compression, maximum age to manage file rotation, and timestamps. Default value is **false**.
 
 File configuration options
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -850,6 +971,13 @@ Enable this setting to write audit files locally, specifying size, backup interv
 | This feature's ``config.json`` setting is ``"FileEnabled": false`` with options ``true`` and ``false``. |
 +---------------------------------------------------------------------------------------------------------+
 
+.. config:setting:: exp-auditfilename
+  :displayname: File name (Experimental)
+  :systemconsole: N/A
+  :configjson: FileName
+  :environment: N/A
+  :description: This is the path to the output file location.
+
 File name
 ~~~~~~~~~
 
@@ -860,6 +988,13 @@ This is the path to the output file location.
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"FileName": ""`` with string input consisting of a user-defined path (e.g. ``/var/log/mattermost_audit.log``).                                    |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: exp-filemaxsize
+  :displayname: File max size MB (Experimental)
+  :systemconsole: N/A
+  :configjson: FileMaxSizeMB
+  :environment: N/A
+  :description: This is the maximum size (measured in megabytes) that the file can grow before triggering rotation. The default setting is **100** MB.
 
 File max size MB
 ~~~~~~~~~~~~~~~~
@@ -872,6 +1007,13 @@ This is the maximum size (measured in megabytes) that the file can grow before t
 | This feature's ``config.json`` setting is ``"FileMaxSizeMB": 100`` with numerical input. |
 +------------------------------------------------------------------------------------------+
 
+.. config:setting:: exp-filemaxage
+  :displayname: File max age days (Experimental)
+  :systemconsole: N/A
+  :configjson: FileMaxAgeDays
+  :environment: N/A
+  :description: This is the maximum age in days a file can reach before triggering rotation. The default value is **0**, indicating no limit on the age.
+
 File max age days
 ~~~~~~~~~~~~~~~~~
 
@@ -882,6 +1024,13 @@ This is the maximum age in days a file can reach before triggering rotation. The
 +-----------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"FileMaxAgeDays": 0`` with numerical input. |
 +-----------------------------------------------------------------------------------------+
+
+.. config:setting:: exp-filemaxbackups
+  :displayname: File max backups
+  :systemconsole: N/A
+  :configjson: FileMaxBackups
+  :environment: N/A
+  :description: This is the maximum number of rotated files kept; the oldest is deleted first. The default value is **0**, indicating no limit on the number of backups.
 
 File max backups
 ~~~~~~~~~~~~~~~~
@@ -894,6 +1043,13 @@ This is the maximum number of rotated files kept; the oldest is deleted first. T
 | This feature's ``config.json`` setting is ``"FileMaxBackups": 0`` with numerical input. |
 +-----------------------------------------------------------------------------------------+
 
+.. config:setting:: exp-filecompress
+  :displayname: File compress (Experimental)
+  :systemconsole: N/A
+  :configjson: FileCompress
+  :environment: N/A
+  :description: When ``true``, rotated files are compressed using ``gzip``. Default value is **false**.
+
 File compress
 ~~~~~~~~~~~~~
 
@@ -904,6 +1060,13 @@ When ``true``, rotated files are compressed using ``gzip``.
 +----------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"FileCompress": false`` with options ``true`` and ``false``. |
 +----------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: exp-filemaxqueuesize
+  :displayname: File max queue size (Experimental)
+  :systemconsole: N/A
+  :configjson: FileMaxQueueSize
+  :environment: N/A
+  :description: This setting determines how many audit records can be queued/buffered at any point in time when writing to a file. The default is **1000** records.
 
 File max queue size
 ~~~~~~~~~~~~~~~~~~~
@@ -916,6 +1079,13 @@ This setting can be left as default unless you are seeing audit write failures i
 +----------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"FileMaxQueueSize": 1000`` with numerical input. |
 +----------------------------------------------------------------------------------------------+
+
+.. config:setting:: exp-enablesyslog
+  :displayname: Syslog configuration options (Experimental)
+  :systemconsole: N/A
+  :configjson: SysLogEnabled
+  :environment: N/A
+  :description: Enable this setting to write audit records to a local or remote syslog, specifying the IP, port, user-generated fields, and certificate settings. Default value is **false**.
 
 Syslog configuration options
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -932,6 +1102,13 @@ Enable this setting to write audit records to a local or remote syslog, specifyi
 | This feature's ``config.json`` setting is ``"SysLogEnabled": false`` with options ``true`` and ``false``. |
 +-----------------------------------------------------------------------------------------------------------+
 
+.. config:setting:: exp-syslogip
+  :displayname: Syslog IP (Experimental)
+  :systemconsole: N/A
+  :configjson: SysLogIP
+  :environment: N/A
+  :description: The IP address or domain of the syslog server. Default value is **localhost**.
+
 Syslog IP
 ~~~~~~~~~
 
@@ -942,6 +1119,13 @@ The IP address or domain of the syslog server. Use ``localhost`` for local syslo
 +-------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"SysLogIP": "localhost"`` with string input consisting of an IP address or domain name. |
 +-------------------------------------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: exp-syslogport
+  :displayname: Syslog port (Experimental)
+  :systemconsole: N/A
+  :configjson: SysLogPort
+  :environment: N/A
+  :description: The port that the syslog server is listening on. The default port is **6514**.
 
 Syslog port
 ~~~~~~~~~~~
@@ -954,6 +1138,13 @@ The port that the syslog server is listening on. The default port is 6514.
 | This feature's ``config.json`` setting is ``"SysLogPort": 6514`` with numeric input consisting of a port number. |
 +------------------------------------------------------------------------------------------------------------------+
 
+.. config:setting:: exp-syslogtag
+  :displayname: Syslog tag (Experimental)
+  :systemconsole: N/A
+  :configjson: SysLogTag
+  :environment: N/A
+  :description: The syslog metadata tag field.
+
 Syslog tag
 ~~~~~~~~~~
 
@@ -965,6 +1156,13 @@ The syslog metadata tag field.
 | This feature's ``config.json`` setting is ``"SysLogTag": ""`` with string input consisting of a user-defined tag field. |
 +-------------------------------------------------------------------------------------------------------------------------+
 
+.. config:setting:: exp-syslogcert
+  :displayname: Syslog cert (Experimental)
+  :systemconsole: N/A
+  :configjson: SysLogCert
+  :environment: N/A
+  :description: This is the path to the syslog server certificate for TLS connections (``.crt`` or ``.pem``).
+
 Syslog cert
 ~~~~~~~~~~~
 
@@ -975,6 +1173,13 @@ This is the path to the syslog server certificate for TLS connections (``.crt`` 
 +-----------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"SysLogCert": ""`` with string input consisting of the path to the certificate. |
 +-----------------------------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: exp-sysloginsecure
+  :displayname: Syslog insecure (Experimental)
+  :systemconsole: N/A
+  :configjson: SysLogInsecure
+  :environment: N/A
+  :description: This setting controls whether a client verifies the server's certificate chain and host name. Default value is **false**.
 
 Syslog insecure
 ~~~~~~~~~~~~~~~
@@ -990,6 +1195,13 @@ This setting controls whether a client verifies the server's certificate chain a
 | This feature's ``config.json`` setting is ``"SysLogInsecure": false`` with options ``true`` and ``false``. |
 +------------------------------------------------------------------------------------------------------------+
 
+.. config:setting:: exp-syslogmaxqueuesize
+  :displayname: Syslog max queue size (Experimental)
+  :systemconsole: N/A
+  :configjson: SysLogMaxQueueSize
+  :environment: N/A
+  :description: This setting determines how many audit records can be queued/buffered at any point in time when writing to syslog. The default is **1000** records.
+
 Syslog max queue size
 ~~~~~~~~~~~~~~~~~~~~~
 
@@ -1001,6 +1213,15 @@ This setting can be left as default unless you are seeing audit write failures i
 +------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"SysLogMaxQueueSize": 1000`` with numerical input. |
 +------------------------------------------------------------------------------------------------+
+
+.. config:setting:: exp-restrictsystemadmin
+  :displayname: Restrict system admin (Experimental)
+  :systemconsole: N/A
+  :configjson: RestrictSystemAdmin
+  :environment: N/A
+
+  - **true**: Restricts the System Admin from viewing and modifying a subset of server configuration settings from the System Console.
+  - **false**: **(Default)** No restrictions are applied to the System Admin role.
 
 Restrict system admin
 ~~~~~~~~~~~~~~~~~~~~~
@@ -1014,6 +1235,15 @@ This setting isn't available in the System Console and can only be set in ``conf
 +-------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"RestrictSystemAdmin": "false"`` with options ``true`` and ``false``. |
 +-------------------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: exp-remoteclusters
+  :displayname: Remote clusters (Experimental)
+  :systemconsole: N/A
+  :configjson: RemoteClusters
+  :environment: N/A
+
+  - **true**: System Admins can manage remote clusters using the System Console.
+  - **false**: **(Default)** Remote cluster management is disabled.
 
 Remote clusters
 ~~~~~~~~~~~~~~~
@@ -1035,6 +1265,15 @@ Enable this setting to add, remove, and view remote clusters for shared channels
 | This feature's ``config.json`` setting is ``"RemoteClusters": false`` with options ``true`` and ``false``. |
 +------------------------------------------------------------------------------------------------------------+
 
+.. config:setting:: exp-enableclientcert
+  :displayname: Enable client-side certification (Experimental)
+  :systemconsole: N/A
+  :configjson: ClientSideCertEnable
+  :environment: N/A
+
+  - **true**: Enables client-side certification for your Mattermost server.
+  - **false**: **(Default)** Client-side certification is disabled.
+
 Enable client-side certification
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -1050,6 +1289,15 @@ Enable client-side certification
 +------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ClientSideCertEnable": false`` with options ``true`` and ``false``. |
 +------------------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: exp-clientcertcheck
+  :displayname: Client-side certification login method
+  :systemconsole: N/A
+  :configjson: ClientSideCertCheck
+  :environment: N/A
+
+  - **primary**: After the client side certificate is verified, user's email is retrieved from the certificate and is used to log in without a password.
+  - **secondary**: **(Default)** After the client side certificate is verified, user's email is retrieved from the certificate and matched against the one supplied by the user. If they match, the user logs in with regular email/password credentials.
 
 Client-side certification login method
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
