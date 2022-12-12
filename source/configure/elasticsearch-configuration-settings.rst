@@ -5,6 +5,16 @@ Elasticsearch provides enterprise-scale deployments with optimized search perfor
 
 Configure the Elasticsearch environment in which Mattermost is deployed by going to **System Console > Environment > Elasticsearch**, or by editing the ``config.json`` file as described in the following tables. Changes to configuration settings in this section require a server restart before taking effect.
 
+.. config:setting:: elastic-enableindexing
+  :displayname: Enable Elasticsearch indexing (Elasticsearch)
+  :systemconsole: Environment > Elasticsearch
+  :configjson: .Elasticsearchsettings.EnableIndexing
+  :environment: MM_ELASTICSEARCHSETTINGS_ENABLEINDEXING
+  :description: Configure Mattermost to index new posts automatically.
+
+  - **true**: Indexing of new posts occurs automatically.
+  - **false**: **(Default)** Elasticsearch indexing is disabled and new posts are not indexed.
+
 Enable Elasticsearch indexing
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -24,6 +34,13 @@ Enable Elasticsearch indexing
 | - Search queries will use database search until Elasticsearch for search queries is enabled.                                                   |
 +----------------------------------------------------------------------+-------------------------------------------------------------------------+
 
+.. config:setting:: elastic-serverconnectionaddress
+  :displayname: Server connection address (Elasticsearch)
+  :systemconsole: Environment > Elasticsearch
+  :configjson: .Elasticsearchsettings.ConnectionUrl
+  :environment: MM_ELASTICSEARCHSETTINGS_CONNECTIONURL
+  :description: The address of the Elasticsearch server.
+
 Server connection address
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -34,6 +51,16 @@ Server connection address
 |                                                               | - ``config.json`` setting: ``".Elasticsearchsettings.ConnectionUrl",``   |
 |                                                               | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_CONNECTIONURL``       |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
+
+.. config:setting:: elastic-skiptlsverification
+  :displayname: Skip TLS verification (Elasticsearch)
+  :systemconsole: Environment > Elasticsearch
+  :configjson: .Elasticsearchsettings.SkipTLSVerification
+  :environment: MM_ELASTICSEARCHSETTINGS_SKIPTLSVERIFICATION
+  :description: The certificate step for TLS connections can be skipped.
+
+  - **true**: Skips the certificate verification step for TLS connections.
+  - **false**: **(Default)** Mattermost does not skip certificate verification.
 
 Skip TLS verification
 ~~~~~~~~~~~~~~~~~~~~~
@@ -49,6 +76,13 @@ Skip TLS verification
 |   certificate verification.                                   |                                                                                     |
 +---------------------------------------------------------------+-------------------------------------------------------------------------------------+
 
+.. config:setting:: elastic-serverusername
+  :displayname: Server username (Elasticsearch)
+  :systemconsole: Environment > Elasticsearch
+  :configjson: .Elasticsearchsettings.UserName
+  :environment: MM_ELASTICSEARCHSETTINGS_USERNAME
+  :description: (Optional) The username to authenticate to the Elasticsearch server.
+
 Server username
 ~~~~~~~~~~~~~~~
 
@@ -60,6 +94,13 @@ Server username
 |                                                               | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_USERNAME``            |
 | String input.                                                 |                                                                          |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
+
+.. config:setting:: elastic-serverpassword
+  :displayname: Server password (Elasticsearch)
+  :systemconsole: Environment > Elasticsearch
+  :configjson: .Elasticsearchsettings.Password
+  :environment: MM_ELASTICSEARCHSETTINGS_PASSWORD
+  :description: (Optional) The password to authenticate to the Elasticsearch server.
 
 Server password
 ~~~~~~~~~~~~~~~
@@ -73,6 +114,16 @@ Server password
 | String input.                                                 |                                                                          |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 
+.. config:setting:: elastic-enablesniffing
+  :displayname: Enable cluster sniffing
+  :systemconsole: Environment > Elasticsearch
+  :configjson: .Elasticsearchsettings.Sniff
+  :environment: MM_ELASTICSEARCHSETTINGS_SNIFF
+  :description: Configure Mattermost to automatically find and connect to all data nodes in a cluster.
+
+  - **true**: Sniffing finds and connects to all data nodes in your cluster automatically.
+  - **false**: **(Default)** Cluster sniffing is disabled.
+
 Enable cluster sniffing
 ~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -84,7 +135,7 @@ Enable cluster sniffing
 |                                                                | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_SNIFF``               |
 | - **true**: Sniffing finds and connects to all data nodes      |                                                                          |
 |   in your cluster automatically.                               |                                                                          |
-| - **false**: **(Default)** Cluster sniffing is disabled .      |                                                                          |
+| - **false**: **(Default)** Cluster sniffing is disabled.       |                                                                          |
 +----------------------------------------------------------------+--------------------------------------------------------------------------+
 | Select the **Test Connection** button in the System Console to validate the connection between Mattermost and the Elasticsearch server.   |
 +----------------------------------------------------------------+--------------------------------------------------------------------------+
@@ -117,6 +168,16 @@ Purge indexes
 | After purging the index, create a new index by selecting the **Index Now** button.                                          |
 +---------------------------------------------------------------+-------------------------------------------------------------+
 
+.. config:setting:: elastic-enablesearch
+  :displayname: Enable Elasticsearch for search queries (Elasticsearch)
+  :systemconsole: Environment > Elasticsearch
+  :configjson: .Elasticsearchsettings.EnableSearching
+  :environment: MM_ELASTICSEARCHSETTINGS_ENABLESEARCHING
+  :description: Configure Mattermost to use Elasticsearch for all search queries using the latest index.
+
+  - **true**: Elasticsearch will be used for all search queries using the latest index. Search results may be incomplete until a bulk index of the existing post database is finished.
+  - **false**: **(Default)** Database search is used for search queries.
+
 Enable Elasticsearch for search queries
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -133,6 +194,16 @@ Enable Elasticsearch for search queries
 | - **false**: **(Default)** Database search is used for        |                                                                                 |
 |   search queries.                                             |                                                                                 |
 +---------------------------------------------------------------+---------------------------------------------------------------------------------+
+
+.. config:setting:: elastic-enableautocomplete
+  :displayname: Enable Elasticsearch for autocomplete queries (Elasticsearch)
+  :systemconsole: Environment > Elasticsearch
+  :configjson: .Elasticsearchsettings.EnableAutocomplete
+  :environment: MM_ELASTICSEARCHSETTINGS_ENABLEAUTOCOMPLETE
+  :description: Configure Mattermost to use Elasticsearch for all autocompletion queries on users and channels using the latest index.
+
+  - **true**: Elasticsearch will be used for all autocompletion queries on users and channels using the latest index.
+  - **false**: **(Default)** Database autocomplete is used.
 
 Enable Elasticsearch for autocomplete queries
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -151,6 +222,13 @@ Enable Elasticsearch for autocomplete queries
 | **Note**: Autocompletion results may be incomplete until a bulk index of the existing users and channels database is finished.                     |
 +---------------------------------------------------------------+------------------------------------------------------------------------------------+
 
+.. config:setting:: elastic-postindexreplicas
+  :displayname: Post index replicas (Elasticsearch)
+  :systemconsole: N/A
+  :configjson: .Elasticsearchsettings.PostIndexReplicas
+  :environment: MM_ELASTICSEARCHSETTINGS_POSTINDEXREPLICAS
+  :description: The number of replicas to use for each post index. Default is **1**.
+
 Post index replicas
 ~~~~~~~~~~~~~~~~~~~
 
@@ -159,11 +237,18 @@ Post index replicas
 +---------------------------------------------------------------+-------------------------------------------------------------------------------+
 | The number of replicas to use for each post index.            | - System Config path: N/A                                                     |
 |                                                               | - ``config.json`` setting: ``".Elasticsearchsettings.PostIndexReplicas: 1",`` |
-| Numerical input. Default is 1.                                | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_POSTINDEXREPLICAS``        |
+| Numerical input. Default is **1**.                            | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_POSTINDEXREPLICAS``        |
 +---------------------------------------------------------------+-------------------------------------------------------------------------------+
 | **Important note**: If this setting is changed, the changed configuration only applies to newly-created indexes. To apply the change to       |
 | existing indexes, purge and rebuild the index after changing this setting.                                                                    |
 +---------------------------------------------------------------+-------------------------------------------------------------------------------+
+
+.. config:setting:: elastic-postindexshards
+  :displayname: Post index shards (Elasticsearch)
+  :systemconsole: N/A
+  :configjson: .Elasticsearchsettings.PostIndexShards
+  :environment: MM_ELASTICSEARCHSETTINGS_POSTINDEXSHARDS
+  :description: The number of shards to use for each post index. Default is **1**.
 
 Post index shards
 ~~~~~~~~~~~~~~~~~
@@ -179,6 +264,13 @@ Post index shards
 | existing indexes, purge and rebuild the index after changing this setting.                                                                    |
 +---------------------------------------------------------------+-------------------------------------------------------------------------------+
 
+.. config:setting:: elastic-channelindexreplicas
+  :displayname: Channel index replicas (Elasticsearch)
+  :systemconsole: N/A
+  :configjson: .Elasticsearchsettings.ChannelIndexReplicas
+  :environment: MM_ELASTICSEARCHSETTINGS_CHANNELINDEXREPLICAS
+  :description: The number of replicas to use for each channel index. Default is **1**.
+
 Channel index replicas
 ~~~~~~~~~~~~~~~~~~~~~~
 
@@ -189,6 +281,13 @@ Channel index replicas
 |                                                               | - ``config.json`` setting: ``".Elasticsearchsettings.ChannelIndexReplicas: 1",`` |
 | Numerical input. Default is **1**.                            | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_CHANNELINDEXREPLICAS``        |
 +---------------------------------------------------------------+----------------------------------------------------------------------------------+
+
+.. config:setting:: elastic-channelindexshards
+  :displayname: Channel index shards (Elasticsearch)
+  :systemconsole: N/A
+  :configjson: .Elasticsearchsettings.ChannelIndexShards
+  :environment: MM_ELASTICSEARCHSETTINGS_CHANNELINDEXSHARDS
+  :description: The number of shards to use for each channel index. Default is **1**.
 
 Channel index shards
 ~~~~~~~~~~~~~~~~~~~~
@@ -201,6 +300,13 @@ Channel index shards
 | Numerical input. Default is **1**.                            | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_CHANNELINDEXSHARDS``          |
 +---------------------------------------------------------------+----------------------------------------------------------------------------------+
 
+.. config:setting:: elastic-userindexreplicas
+  :displayname: User index replicas (Elasticsearch)
+  :systemconsole: N/A
+  :configjson: .Elasticsearchsettings.UserIndexReplicas
+  :environment: MM_ELASTICSEARCHSETTINGS_USERINDEXREPLICAS
+  :description: The number of replicas to use for each user index. Default is **1**.
+
 User index replicas
 ~~~~~~~~~~~~~~~~~~~
 
@@ -212,6 +318,13 @@ User index replicas
 | Numerical input. Default is **1**.                            | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_USERINDEXREPLICAS``        |
 +---------------------------------------------------------------+-------------------------------------------------------------------------------+
 
+.. config:setting:: elastic-userindexshards
+  :displayname: User index shards (Elasticsearch)
+  :systemconsole: N/A
+  :configjson: .Elasticsearchsettings.UserIndexShards
+  :environment: MM_ELASTICSEARCHSETTINGS_USERINDEXSHARDS
+  :description: The number of shards to use for each user index. Default is **1**.
+
 User index shards
 ~~~~~~~~~~~~~~~~~
 
@@ -222,6 +335,13 @@ User index shards
 |                                                               | - ``config.json`` setting: ``".Elasticsearchsettings.UserIndexShards: 1",``      |
 | Numerical input. Default is **1**.                            | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_USERINDEXSHARDS``             |
 +---------------------------------------------------------------+----------------------------------------------------------------------------------+
+
+.. config:setting:: elastic-aggregatesearchindexes
+  :displayname: Aggregate search indexes (Elasticsearch)
+  :systemconsole: N/A
+  :configjson: .Elasticsearchsettings.AggregatePostsAfterDays
+  :environment: MM_ELASTICSEARCHSETTINGS_AGGREGATEPOSTSAFTERDAYS
+  :description: Elasticsearch indexes older than the age specified by this setting, in days, will be aggregated during the daily scheduled job. Default is **365** days.
 
 Aggregate search indexes
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -239,6 +359,13 @@ Aggregate search indexes
 | `Elasticsearch </scale/elasticsearch.html>`__, configure this with a value greater than your data retention policy.                                    |
 +---------------------------------------------------------------+----------------------------------------------------------------------------------------+
 
+.. config:setting:: elastic-postaggregatorstarttime
+  :displayname: Post aggregator start time (Elasticsearch)
+  :systemconsole: N/A
+  :configjson: .Elasticsearchsettings.PostsAggregatorJobStartTime
+  :environment: MM_ELASTICSEARCHSETTINGS_POSTSAGGREGATORJOBSTARTTIME
+  :description: The start time of the daily scheduled aggregator job. Must be a 24-hour time stamp in the form ``HH:MM`` based on the local time of the server. Default is **03:00** (3 AM).
+
 Post aggregator start time
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -252,6 +379,13 @@ Post aggregator start time
 |                                                               |                                                                                             |
 | Default is **03:00** (3 AM)                                   |                                                                                             |
 +---------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+
+.. config:setting:: elastic-indexprefix
+  :displayname: Index prefix (Elasticsearch)
+  :systemconsole: N/A
+  :configjson: .Elasticsearchsettings.IndexPrefix
+  :environment: MM_ELASTICSEARCHSETTINGS_INDEXPREFIX
+  :description: The prefix added to the Elasticsearch index name.
 
 Index prefix
 ~~~~~~~~~~~~
@@ -267,6 +401,13 @@ Index prefix
 | prefixes so that multiple Mattermost deployments can share an Elasticsearch cluster without the index names colliding.                   |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 
+.. config:setting:: elastic-liveindexingbatchsize
+  :displayname: Live indexing batch size (Elasticsearch)
+  :systemconsole: N/A
+  :configjson: .Elasticsearchsettings.LiveIndexingBatchSize
+  :environment: MM_ELASTICSEARCHSETTINGS_LIVEINDEXINGBATCHSIZE
+  :description: The number of new posts batched together before they're added to the Elasticsearch index. Default is **1**.
+
 Live indexing batch size
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -281,6 +422,16 @@ Live indexing batch size
 | **Note**: It may be necessary to increase this value to avoid hitting the rate limit of your Elasticsearch cluster on installs handling           |
 | multiple messages per second.                                                                                                                     |
 +---------------------------------------------------------------+-----------------------------------------------------------------------------------+
+
+.. config:setting:: elastic-bulkindexingtimewindow
+  :displayname: Bulk indexing time window (Elasticsearch)
+  :systemconsole: Environment > Elasticsearch
+  :configjson: .Elasticsearchsettings.BulkIndexingTimeWindowSeconds
+  :environment: MM_ELASTICSEARCHSETTINGS_BULKINDEXINGTIMEWINDOWSECONDS
+
+  The maximum time window, in seconds, for a batch of posts being indexed by the Bulk Indexer.
+  This setting serves as a performance optimization for installs with over ~10 million posts in the database.
+  Default is **3600** seconds (1 hour).
 
 Bulk indexing time window
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -301,7 +452,7 @@ Bulk indexing time window
 | **Note**: Setting this value too low will cause bulk indexing jobs to run slowly.                                                                            |
 +---------------------------------------------------------------+----------------------------------------------------------------------------------------------+
 
-.. config:setting:: elasticsearch-requesttimeout
+.. config:setting:: elastic-requesttimeout
   :displayname: Request timeout (Elasticsearch)
   :systemconsole: N/A
   :configjson: .Elasticsearchsettings.RequestTimeoutSeconds
@@ -319,7 +470,7 @@ Request timeout
 | Numerical input in seconds. Default is **30** seconds.        | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_REQUESTTIMEOUTSECONDS``         |
 +---------------------------------------------------------------+------------------------------------------------------------------------------------+
 
-.. config:setting:: elasticsearch-trace
+.. config:setting:: elastic-trace
   :displayname: Trace (ElasticSearch)
   :systemconsole: N/A
   :configjson: .Elasticsearchsettings.Trace
