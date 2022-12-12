@@ -64,7 +64,7 @@ To narrow search results further, in the Search Results pane, select the **File 
 .. image:: ../images/file-search-filter.png
 
 .. tip::
-  You can access files recently shared in a channel by:
+  To access files recently shared in a channel:
   
   - Selecting the |channel-files-icon| icon below the channel name to access files recently shared in that channel. 
   - Selecting the channel name, selecting the **View Info** |channel-info| icon, then selecting **Files** in the right pane.
