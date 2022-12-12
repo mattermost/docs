@@ -39,7 +39,7 @@ Latest Mattermost Releases:
  
 #### Playbooks
  - Added an option to run playbooks without creating a new channel every time in order to reduce the unnecessary overhead.
- - In addition to the daily digest, users can now also view a task inbox from the global header bar while in Playbooks.
+ - In addition to the daily digest, users can now also view [a task inbox](https://docs.mattermost.com/playbooks/work-with-tasks.html#task-inbox) from the global header bar while in Playbooks.
 
 #### Message Priority and Acknowledgments
  - Added [message priority labels](https://docs.mattermost.com/channels/message-priority.html) to the Threads view.
