@@ -4,6 +4,12 @@ Set channel preferences
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
+.. |channel-info| image:: ../images/information-outline_F02FD.svg
+  :alt: Use the Channel Info icon to access additional channel management options.
+
+.. |vertical-3-dots| image:: ../images/dots-vertical_F01D9.svg
+  :alt: Select the More icon to access additional channel management options.
+
 For each channel you're a member of, you can set notification preferences as well as the channel's header, purpose, and name. See the documentation for details on :doc:`renaming channels </channels/rename-channels>` and :doc:`channel naming convention recommendations </channels/channel-naming-conventions>`.
 
 .. image:: ../images/channel-preferences.png
@@ -13,6 +19,10 @@ Channel notification preferences
 --------------------------------
 
 To manage channel notification preferences, select the channel name at the top of the screen to access channel-specific settings, then select **Notification Preferences**.
+
+.. tip::
+
+  Alternatively, to manage channel notification preferences select the channel name, select the **View Info** |channel-info| icon, then select **Notification Preferences** in the right pane.
 
 Mute channel
 ~~~~~~~~~~~~~
@@ -31,7 +41,11 @@ To unmute the channel, select the channel name again to access the drop-down men
 
 .. tip::
 
-  Quickly mute or unmute any channel any time by selecting **Mute Channel** or **Unmute Channel** from the channel name at the top of the screen, or by selecting **More Options** for a channel in the Channel Sidebar.
+  You can also quickly mute or unmute any channel any time:
+  
+  - Select the channel name, then select **Mute Channel** or **Unmute Channel** from the list of options.
+  - Select the **More Options** |vertical-3-dots| icon for a channel in the channel sidebar.
+  - Select the **View Info** |channel-info| icon, then select **Mute** or **Muted** in the right pane. 
 
 Ignore mentions for @channel, @here, and @all
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -90,19 +104,31 @@ Change the channel header by selecting **Edit Channel Header**. You can use Mark
 .. image:: ../images/channel-header.png
     :alt: Channel headers can include links to documents, tools, or websites.
 
+.. tip::
+
+  Alternatively, to provide or update a channel header, select the channel name, then select **Edit Channel Header** from the list of options.
+
 Channel purpose
 ---------------
 
 A channel purpose refers to text that displays when users select **View Info** for a channel. A channel purpose can be up to 250 characters in length and is often used to help users decide whether to join the channel.
 
-Change the channel purpose by selecting **Edit Channel Purpose**. Any channel member can change a channel purpose, unless the System Admin has `restricted permissions to do so using advanced permissions </onboard/advanced-permissions.html>`__.
+To add a channel purpose, select **Edit Channel Purpose**. Any channel member can change a channel purpose, unless the System Admin has `restricted permissions to do so using advanced permissions </onboard/advanced-permissions.html>`__.
 
 .. image:: ../images/channel-purpose.png
     :alt: Channel purpose helps users decide if they want to join the channel based on its scope or focus.
+
+.. tip::
+
+  Alternatively, to provide or update a channel purpose, select the channel name, then select **Edit Channel Purpose** from the list of options.
 
 Channel name
 ------------
 
 A channel name must be at least two characters, and can be up to 64 characters in length. `Some unicode characters <https://www.w3.org/TR/unicode-xml/#Charlist>`_ aren't supported.
 
-Change the channel name by selecting **Rename Channel**. Changing the name of the channel also changes the channel URL. Any channel member can change a channel name, unless the System Admin has `restricted permissions to do so using advanced permissions </onboard/advanced-permissions.html>`__.
+To change the channel name, select **Rename Channel**. Changing the name of the channel also changes the channel URL. Any channel member can change a channel name, unless the System Admin has `restricted permissions to do so using advanced permissions </onboard/advanced-permissions.html>`__.
+
+.. tip::
+
+  Alternatively, to provide or update a channel name, select the channel name, then select **Rename Channel** from the list of options.
