@@ -184,7 +184,7 @@ There are three AD/LDAP attributes that apear to be similar but serve a differen
 How do I deactivate users?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If a user has logged into Mattermost through AD/LDAP or SAML you can choose how they are deactivated, whether manually or automatically.
+If a user has logged into Mattermost through AD/LDAP or SAML, you can choose how they are deactivated, whether manually or automatically.
 
 There are three main ways to do this:
 
