@@ -34,6 +34,10 @@ Draft messages
 
 From Mattermost v7.6, when composing new messages, it's easy to return to a message in progress later. Draft messages are added to a **Drafts** view available at the top of the channel sidebar unless your system admin `disables global draft functionality </configure/experimental-configuration-settings.html#allow-synchronized-drafts>`__.
 
+.. image:: ../images/Global-Drafts-Animated-GIF.gif
+  :width: 700
+  :alt: Global drafts makes it easy for you to find all messages in progress.
+
 By default, message drafts are synchronized on the Mattermost server AND accessible everywhere you access Mattermost, including a web browser or the desktop app with mobile support coming in a future release. 
 
 .. Tip::
