@@ -5,14 +5,15 @@ Search for messages
   :start-after: :nosearch:
 
 .. |product-list| image:: ../images/products_E82F.svg
-  :height: 24px
-  :width: 24px
   :alt: Navigate between Channels, Playbooks, and Boards using the product menu icon.
 
-Use the Mattermost search field to find messages, replies, and the contents of files shared across all channels you're a member of in your team's conversation history. File content search is available in Mattermost Server from v5.35 and in Mattermost Cloud, with mobile support coming soon.
+.. |channel-info| image:: ../images/information-outline_F02FD.svg
+  :alt: Use the Channel Info icon to access additional channel management options.
 
-.. image:: ../images/ui_search.png
-   :alt: Use Search to find messages, replies, and the contents of files shared across channels.
+.. |channel-files-icon| image:: ../images/file-text-outline_F09EE.svg
+  :alt: Use the Channel Files icon to search for files attached to messages in a given channel.
+  
+From Mattermost v5.35, use the Mattermost search field to find messages, replies, and the contents of files shared across all channels you're a member of in your team's conversation history. Mobile support is coming in a future release. 
 
 You can also do more advanced search using `search modifiers <#search-modifiers>`__.
 
@@ -63,9 +64,10 @@ To narrow search results further, in the Search Results pane, select the **File 
 .. image:: ../images/file-search-filter.png
 
 .. tip::
-  Select the **Channel Files** icon below the channel name to access files recently shared in that channel. 
+  To access files recently shared in a channel:
   
-  .. image:: ../images/channel-files-icon.png
+  - Select the |channel-files-icon| icon below the channel name to access files recently shared in that channel. 
+  - Select the channel name, select the **View Info** |channel-info| icon, then select **Files** in the right pane.
 
 Search modifiers
 ----------------
