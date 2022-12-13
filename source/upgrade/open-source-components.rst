@@ -86,7 +86,7 @@ Mobile
 Server
 ------------------------------
 
- - Mattermost Enterprise Edition v7.6.0 - `View Open Source Components <https://github.com/mattermost/mattermost-server/blob/release-7.6/NOTICE.txt>`_.
+ - Mattermost Enterprise Edition v7.7.0 - `View Open Source Components <https://github.com/mattermost/mattermost-server/blob/release-7.7/NOTICE.txt>`_.
  - Mattermost Enterprise Edition v7.5.0 - `View Open Source Components <https://github.com/mattermost/mattermost-server/blob/release-7.5/NOTICE.txt>`_.
  - Mattermost Enterprise Edition v7.4.0 - `View Open Source Components <https://github.com/mattermost/mattermost-server/blob/release-7.4/NOTICE.txt>`_.
  - Mattermost Enterprise Edition v7.3.0 - `View Open Source Components <https://github.com/mattermost/mattermost-server/blob/release-7.3/NOTICE.txt>`_.
@@ -166,7 +166,7 @@ Server
 Webapp
 ------------------------------
 
- - Mattermost Enterprise Edition v7.6.0 - `View Open Source Components <https://github.com/mattermost/mattermost-webapp/blob/release-7.6/NOTICE.txt>`_.
+ - Mattermost Enterprise Edition v7.7.0 - `View Open Source Components <https://github.com/mattermost/mattermost-webapp/blob/release-7.7/NOTICE.txt>`_.
  - Mattermost Enterprise Edition v7.5.0 - `View Open Source Components <https://github.com/mattermost/mattermost-webapp/blob/release-7.5/NOTICE.txt>`_.
  - Mattermost Enterprise Edition v7.4.0 - `View Open Source Components <https://github.com/mattermost/mattermost-webapp/blob/release-7.4/NOTICE.txt>`_.
  - Mattermost Enterprise Edition v7.3.0 - `View Open Source Components <https://github.com/mattermost/mattermost-webapp/blob/release-7.3/NOTICE.txt>`_.
