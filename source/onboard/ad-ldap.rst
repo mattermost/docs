@@ -190,7 +190,7 @@ There are three main ways to do this:
 
 1. **User deletion:** If the user is completely removed from the AD/LDAP server, they will be deactivated in Mattermost on the next synchronization.
 2. **User filter:** Set the `user filter </configure/configuration-settings.html#user-filter>`__ to only select the subset of AD/LDAP users you want to have access to Mattermost. When someone is removed from the selected group, they will be deactivated in Mattermost on the next synchronization.
-3. **Manually deactivating**: Navigate to the System Console > User Management > Users page and on the dropdown for that user select ``deactivate``.
+3. **Manually deactivating**: Navigate to the System Console > User Management > Users page and on the dropdown for that user select ``deactivate``. Note, when you manually deactivate someone they can reactivate themselves by logging back in.
 
 For Active Directory, to filter out deactivated users you must set the user filter to:
 
