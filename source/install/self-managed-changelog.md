@@ -108,6 +108,8 @@ Latest Mattermost Releases:
  - Fixed an issue where the OAuth 2.0 deprecation notice was still displayed in the system console.
  - Fixed an issue where clicking on a reply post time stamp in the global threads inbox opened two right-hand side panels.
  - Fixed an issue where batch notifications failed while rendering.
+ - Prevented browsers and CDNs from caching remote entrypoint files.
+ - Fixed an issue where the unreads button in the channel sidebar was missing alternative text for screen readers.
 
 ### config.json
 Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
