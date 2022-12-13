@@ -6,8 +6,8 @@ See the [changelog in progress](https://bit.ly/2nK3cVf) for the upcoming release
 
 Latest Mattermost Releases:
 - [Release v7.7 - Feature Release](#release-v7-7-feature-release)
-- [Release v7.6 - Feature Release](#release-v7-6-feature-release)
 - [Release v7.5 - Feature Release](#release-v7-5-feature-release)
+- [Release v7.4 - Feature Release](#release-v7-4-feature-release)
 - [Release v7.1 - Extended Support Release](#release-v7-1-extended-support-release)
 
 ## Release v7.7 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
@@ -17,7 +17,7 @@ Latest Mattermost Releases:
 ### Important Upgrade Notes
 
  - Plugins with a webapp component may need to be updated to work with Mattermost v7.7 release and the updated ``React v17`` dependency. 
- 	- This is to avoid plugins crashing with an error about ``findDOMNode`` being called on an unmounted component. While our [starter template](https://github.com/mattermost/mattermost-plugin-starter-template) depended on an external version of ``React``, it did not do the same for ``ReactDOM``. Plugins need to update their ``webpack.config.js`` directives to externalize ``ReactDOM``. For reference, see https://github.com/mattermost/mattermost-plugin-playbooks/pull/1489. Server-side only plugins are unaffected. This change can be done for existing plugins any time prior to upgrading to Mattermost v7.6 and is backwards compatible with older versions of Mattermost. If you run into issues, you can either enable ``ExperimentalSettings.PatchPluginsReactDOM`` or just disable the affected plugin while it's updated.
+ 	- This is to avoid plugins crashing with an error about ``findDOMNode`` being called on an unmounted component. While our [starter template](https://github.com/mattermost/mattermost-plugin-starter-template) depended on an external version of ``React``, it did not do the same for ``ReactDOM``. Plugins need to update their ``webpack.config.js`` directives to externalize ``ReactDOM``. For reference, see https://github.com/mattermost/mattermost-plugin-playbooks/pull/1489. Server-side only plugins are unaffected. This change can be done for existing plugins any time prior to upgrading to Mattermost v7.7 and is backwards compatible with older versions of Mattermost. If you run into issues, you can either enable ``ExperimentalSettings.PatchPluginsReactDOM`` or just disable the affected plugin while it's updated.
  - Denormalized ``Threads table`` by adding the ``TeamId`` column. See details for schema changes in the [Important Upgrade Notes](/upgrade/important-upgrade-notes.html).
 
 **IMPORTANT:** If you upgrade from a release earlier than v7.5, please read the other [Important Upgrade Notes](/upgrade/important-upgrade-notes.html).
@@ -141,7 +141,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - Added new websocket events ``post_acknowledgement_added`` and ``post_acknowledgement_removed``.
 
 ### Go Version
- - v7.6 is built with Go ``v1.18.1``.
+ - v7.7 is built with Go ``v1.18.1``.
 
 ### Known Issues
  - Main channel placeholder text sometimes persists when pasting text [MM-48670](https://mattermost.atlassian.net/browse/MM-48670).
