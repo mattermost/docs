@@ -994,7 +994,7 @@ This is the path to the output file location.
   :systemconsole: N/A
   :configjson: FileMaxSizeMB
   :environment: N/A
-  :description: This is the maximum size (measured in megabytes) that the file can grow before triggering rotation. The default setting is **100** MB.
+  :description: This is the maximum size (measured in megabytes) that the file can grow before triggering rotation. Default is **100** MB.
 
 File max size MB
 ~~~~~~~~~~~~~~~~
@@ -1066,7 +1066,7 @@ When ``true``, rotated files are compressed using ``gzip``.
   :systemconsole: N/A
   :configjson: FileMaxQueueSize
   :environment: N/A
-  :description: This setting determines how many audit records can be queued/buffered at any point in time when writing to a file. The default is **1000** records.
+  :description: This setting determines how many audit records can be queued/buffered at any point in time when writing to a file. Default is **1000** records.
 
 File max queue size
 ~~~~~~~~~~~~~~~~~~~
@@ -1125,7 +1125,7 @@ The IP address or domain of the syslog server. Use ``localhost`` for local syslo
   :systemconsole: N/A
   :configjson: SysLogPort
   :environment: N/A
-  :description: The port that the syslog server is listening on. The default port is **6514**.
+  :description: The port that the syslog server is listening on. Default value is **6514**.
 
 Syslog port
 ~~~~~~~~~~~
@@ -1200,7 +1200,7 @@ This setting controls whether a client verifies the server's certificate chain a
   :systemconsole: N/A
   :configjson: SysLogMaxQueueSize
   :environment: N/A
-  :description: This setting determines how many audit records can be queued/buffered at any point in time when writing to syslog. The default is **1000** records.
+  :description: This setting determines how many audit records can be queued/buffered at any point in time when writing to syslog. Default is **1000** records.
 
 Syslog max queue size
 ~~~~~~~~~~~~~~~~~~~~~
@@ -1291,7 +1291,7 @@ Enable client-side certification
 +------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: exp-clientcertcheck
-  :displayname: Client-side certification login method
+  :displayname: Client-side certification login method (Experimental)
   :systemconsole: N/A
   :configjson: ClientSideCertCheck
   :environment: N/A
@@ -1317,6 +1317,13 @@ Used in combination with the ``ClientSideCertEnable`` configuration setting.
 | This feature's ``config.json`` setting is ``"ClientSideCertCheck": "secondary"`` with options ``"primary"`` and ``"secondary"``. |
 +----------------------------------------------------------------------------------------------------------------------------------+
 
+.. config:setting:: exp-outputdirectory
+  :displayname: Export output directory (Experimental)
+  :systemconsole: N/A
+  :configjson: .ExportSettings.Directory
+  :environment: N/A
+  :description: The directory where the exported files are stored. The path is relative to the ``FileSettings`` directory. Default value is **./export**.
+
 Export output directory
 ~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -1327,6 +1334,13 @@ The directory where the exported files are stored. The path is relative to the `
 +---------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting under the ``ExportSettings`` section is ``Directory: ./export`` with string input. |
 +---------------------------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: exp-exportretentiondays
+  :displayname: Export retention days (Experimental)
+  :systemconsole: N/A
+  :configjson: .ExportSettings.RetentionDays
+  :environment: N/A
+  :description: The number of days to retain the exported files before deleting them. Default value is **30** days.
 
 Export retention days
 ~~~~~~~~~~~~~~~~~~~~~
@@ -1339,6 +1353,13 @@ The number of days to retain the exported files before deleting them.
 | This feature's ``config.json`` setting under the ``ExportSettings`` section is ``RetentionDays: 30`` with numerical input. |
 +----------------------------------------------------------------------------------------------------------------------------+
 
+.. config:setting:: exp-maximageresolution
+  :displayname: Maximum image resolution (Experimental)
+  :systemconsole: N/A
+  :configjson: MaxImageResolution
+  :environment: N/A
+  :description: Maximum image resolution size for message attachments in pixels. Default value is **33177600** pixels.
+
 Maximum image resolution
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -1349,6 +1370,13 @@ Maximum image resolution size for message attachments in pixels.
 +--------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"MaxImageResolution": 33177600`` with numerical input.     |
 +--------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: exp-maximagedecoderconcurrency
+  :displayname: Maximum image decoder concurrency (Experimental)
+  :systemconsole: N/A
+  :configjson: MaxImageDecoderConcurrency
+  :environment: N/A
+  :description: Indicates how many images can be decoded concurrently at once. The default value of **-1** configures Mattermost to automatically use the number of CPUs present.
 
 Maximum image decoder concurrency
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1365,6 +1393,13 @@ Indicates how many images can be decoded concurrently at once. The default value
 | This feature's ``config.json`` setting is ``"MaxImageDecoderConcurrency": "-1"`` with numerical input. |
 +--------------------------------------------------------------------------------------------------------+
 
+.. config:setting:: exp-initialfont
+  :displayname: Initial font (Experimental)
+  :systemconsole: N/A
+  :configjson: InitialFont
+  :environment: N/A
+  :description: Font used in auto-generated profile pics with colored backgrounds. Default value is **luximbi.ttf**.
+
 Initial font
 ~~~~~~~~~~~~
 
@@ -1375,6 +1410,15 @@ Font used in auto-generated profile pics with colored backgrounds.
 +-----------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"InitialFont": "luximbi.ttf"`` with string input. |
 +-----------------------------------------------------------------------------------------------+
+
+.. config:setting:: exp-amazons3signv2
+  :displayname: Amazon S3 signature v2 (Experimental)
+  :systemconsole: N/A
+  :configjson: AmazonS3SignV2
+  :environment: N/A
+
+  - **true**: Use Signature Version 2 Signing Process.
+  - **false**: **(Default)** Use Signature Version 4 Signing Process.
 
 Amazon S3 signature v2
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -1391,6 +1435,13 @@ By default, Mattermost uses Signature V4 to sign API calls to AWS, but under som
 | This feature's ``config.json`` setting is ``"AmazonS3SignV2": false`` with options ``true`` and ``false``. |
 +------------------------------------------------------------------------------------------------------------+
 
+.. config:setting:: exp-amazons3pathprefix
+  :displayname: Amazon S3 path (Experimental)
+  :systemconsole: N/A
+  :configjson: AmazonS3PathPrefix
+  :environment: N/A
+  :description: Allows using the same S3 bucket for multiple deployments.
+
 Amazon S3 path
 ~~~~~~~~~~~~~~
 
@@ -1401,6 +1452,13 @@ Allows using the same S3 bucket for multiple deployments.
 +------------------------------------------------------------------------------------------------------------+
 | This feature’s ``config.json`` setting is ``"AmazonS3PathPrefix: ""`` with string input.                   |
 +------------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: exp-gitlabscope
+  :displayname: GitLab scope (Experimental)
+  :systemconsole: N/A
+  :configjson: Scope
+  :environment: N/A
+  :description: Standard setting for OAuth to determine the scope of information shared with OAuth client. Not currently supported by GitLab OAuth.
 
 GitLab scope
 ~~~~~~~~~~~~
@@ -1415,12 +1473,12 @@ Standard setting for OAuth to determine the scope of information shared with OAu
 | This feature's ``config.json`` setting is ``"Scope": ""`` with string input. |
 +------------------------------------------------------------------------------+
 
-.. config:setting:: experimental-globalrelaysmtptimeout
+.. config:setting:: exp-globalrelaysmtptimeout
   :displayname: Global relay SMTP server timeout (Experimental)
   :systemconsole: N/A
   :configjson: GlobalRelaySettings.SMTPServerTimeout
   :environment: N/A
-  :description: The number of seconds that can elapse before the connection attempt to the SMTP server is abandoned. Default is 1800 seconds.
+  :description: The number of seconds that can elapse before the connection attempt to the SMTP server is abandoned. Default is **1800** seconds.
 
 Global relay SMTP server timeout
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1438,6 +1496,13 @@ The number of seconds that can elapse before the connection attempt to the SMTP 
 | This feature's ``config.json`` setting is ``"GlobalRelaySettings.SMTPServerTimeout": "1800"`` with numerical input.   |
 +-----------------------------------------------------------------------------------------------------------------------+
 
+.. config:setting:: exp-googlescope
+  :displayname: Google scope (Experimental)
+  :systemconsole: N/A
+  :configjson: Scope
+  :environment: N/A
+  :description: Standard setting for OAuth to determine the scope of information shared with OAuth client. Default value is **profile email**.
+
 Google scope
 ~~~~~~~~~~~~
 
@@ -1454,6 +1519,13 @@ Standard setting for OAuth to determine the scope of information shared with OAu
 | This feature's ``config.json`` setting is ``"Scope": "profile email"`` with string input. |
 +-------------------------------------------------------------------------------------------+
 
+.. config:setting:: exp-importinputdirectory
+  :displayname: Import input directory (Experimental)
+  :systemconsole: N/A
+  :configjson: ImportSettings.Directory
+  :environment: N/A
+  :description: The directory where the imported files are stored. The path is relative to the ``FileSettings`` directory. Default value is **./import**.
+
 Import input directory
 ~~~~~~~~~~~~~~~~~~~~~~
 
@@ -1464,6 +1536,13 @@ The directory where the imported files are stored. The path is relative to the `
 +---------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting under the ``ImportSettings`` section is ``Directory: ./import`` with string input. |
 +---------------------------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: exp-importretentiondays
+  :displayname: Import retention days (Experimental)
+  :systemconsole: N/A
+  :configjson: ImportSettings.RetentionDays
+  :environment: N/A
+  :description: The number of days to retain the imported files before deleting them. Default is **30** days.
 
 Import retention days
 ~~~~~~~~~~~~~~~~~~~~~
