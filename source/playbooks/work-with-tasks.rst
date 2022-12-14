@@ -11,3 +11,10 @@ To assign a due date to a task, select the **Toggle Run Details** icon to open t
 When a due date is assigned to a task, and the task is overdue or due today, a reminder is added to the Playbooks daily digest along with tasks that don't have an assigned due date. As tasks are completed, they're removed from the daily digest reminders. You can refresh the list of assigned tasks at any time using the ``/playbooks to-do`` slash command.
 
 Due dates can be entered in text (e.g., "two minutes ago") or numerically (e.g., "15 March 2023").
+
+Task inbox
+----------
+
+In addition to the daily digest, you also have access to a task inbox. To view it, open the playbooks tab. 
+
+In the header, next to your profile photo, select the message icon. A list of every task assigned to you from every run that's in progress is displayed. You can check off, change due dates, and reassign tasks in this view.
