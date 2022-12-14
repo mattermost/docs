@@ -45,7 +45,7 @@ The default Playbooks settings are completely open which enable all members to p
 Create read-only playbooks
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In the following example, only Playbook Admins can edit playbooks. Other users can view public playbooks and private playbooks of which they are a member, but can't edit any playbook or change playbook memberships.
+In the following example, only playbook admins can edit playbooks. Other users can view public playbooks and private playbooks of which they are a member, but can't edit any playbook or change playbook memberships.
 
 1. Go to **System Console > User Management > Permissions**.
 2. In the **All Members** section, uncheck **Manage Public Playbooks** and uncheck **Manage Private Playbooks**.
