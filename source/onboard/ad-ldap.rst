@@ -184,12 +184,13 @@ There are three AD/LDAP attributes that apear to be similar but serve a differen
 How do I deactivate users?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-When AD/LDAP authentication is used in Mattermost, user deactivation must be done via the AD/LDAP server.
+If a user has logged into Mattermost through AD/LDAP or SAML, you can choose how they are deactivated, whether manually or automatically.
 
-There are two main ways to do this:
+There are three main ways to do this:
 
 1. **User deletion:** If the user is completely removed from the AD/LDAP server, they will be deactivated in Mattermost on the next synchronization.
 2. **User filter:** Set the `user filter </configure/configuration-settings.html#user-filter>`__ to only select the subset of AD/LDAP users you want to have access to Mattermost. When someone is removed from the selected group, they will be deactivated in Mattermost on the next synchronization.
+3. **Manually deactivate**: Go to **System Console > User Management > Users**, select a user's role, and select **Deactivate**. When you manually deactivate a user, they can reactivate themselves by logging back in.
 
 For Active Directory, to filter out deactivated users you must set the user filter to:
 
@@ -201,7 +202,7 @@ Filters can also be used for excluding users who belong to certain groups. For A
 
 ``(!(memberof=cn=DEV_OPS,ou=Users,dc=sademo,dc=com)))``
 
-When a user is deactivated in Mattermost, all the user's current sessions are revoked and they will be unable to log in or access Mattermost.
+When a user is deactivated in Mattermost via options one or two above, all the user's current sessions are revoked and they will be unable to log in or access Mattermost.
 
 Can I connect to multiple Active Directory servers?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
