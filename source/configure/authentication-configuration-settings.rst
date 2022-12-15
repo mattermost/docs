@@ -1227,8 +1227,8 @@ Google
 .. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Enable authentication with Google
-''''''''''''''''''''''''''''''''''
+Enable OAuth 2.0 authentication with Google
+'''''''''''''''''''''''''''''''''''''''''''
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
 | - **true**: Allows team and account creation using Google OAuth authentication. Input the **Client ID** and **Client Secret** credentials to configure. | - System Config path: **Authentication > OAuth 2.0**         |
@@ -1237,27 +1237,27 @@ Enable authentication with Google
 | See `Google Single Sign-On <https://docs.mattermost.com/onboard/sso-google.html>`__ for more information.                                               |                                                              |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
 
-Client ID
-'''''''''
+Google OAuth 2.0 Client ID
+''''''''''''''''''''''''''
 
 *Available in legacy Enterprise Edition E20*
 
-Obtain this value by registering Mattermost as an application in your Google account.
++-----------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------+
+| This setting stores the OAuth Client ID from Google. Generate the ID by registering Mattermost as an application through the Google Cloud Platform. | - System Config path: **Authentication > OAuth 2.0** |
+|                                                                                                                                                     | - ``config.json`` setting: ``.GoogleSettings.Id``    |
+| String input.                                                                                                                                       | - Environment variable: ``MM_GOOGLESETTINGS_ID``     |
++-----------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------+
 
-+---------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Id": ""`` with string input. |
-+---------------------------------------------------------------------------+
-
-Client secret
-'''''''''''''
+Google OAuth 2.0 Client secret
+''''''''''''''''''''''''''''''
 
 *Available in legacy Enterprise Edition E20*
 
-Obtain this value by registering Mattermost as an application in your Google account.
-
-+-------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Secret": ""`` with string input. |
-+-------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------+
+| This setting stores the OAuth Client Secret from Google. Generate the Secret by registering Mattermost as an application through the Google Cloud Platform. | - System Config path: **Authentication > OAuth 2.0**  |
+|                                                                                                                                                             | - ``config.json`` setting: ``.GoogleSettings.Secret`` |
+| String input.                                                                                                                                               | - Environment variable: ``MM_GOOGLESETTINGS_SECRET``  |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------+
 
 User API endpoint
 ''''''''''''''''''
@@ -1266,9 +1266,9 @@ User API endpoint
 
 We recommend you use ``https://people.googleapis.com/v1/people/me?personFields=names,emailAddresses,nicknames,metadata`` as the User API Endpoint. Otherwise, enter a custom endpoint in ``config.json`` with HTTP or HTTPS depending on how your server is configured.
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"UserApiEndpoint": "https://people.googleapis.com/v1/people/me?personFields=names,emailAddresses,nicknames,metadata"``   |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"UserApiEndpoint": "https://people.googleapis.com/v1/people/me?personFields=names,emailAddresses,nicknames,metadata"`` |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Auth endpoint
 '''''''''''''
