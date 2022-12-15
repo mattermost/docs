@@ -20,7 +20,8 @@ Latest Mattermost Releases:
 - **v7.5.2, released **
   - Mattermost v7.5.2 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Fixed an issue where email notifications looked broken when email batching was enabled [MM-48521](https://mattermost.atlassian.net/browse/MM-48521).
-  - Updated prepackaged Boards version to 7.5.2.
+  - Updated prepackaged Boards version to 7.5.4.
+  - Updated prepackaged NPS version to 1.3.1.
 - **v7.5.1, released 2022-11-16**
   - Fixed an upgrade issue affecting servers on Ubuntu v18.04.
 - **v7.5.0, released 2022-11-16**
