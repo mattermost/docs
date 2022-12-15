@@ -1227,15 +1227,15 @@ Google
 .. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Enable authentication with Google by selecting ``Google Apps`` from **OAuth 2.0 > Select OAuth 2.0 service provider**.
+Enable authentication with Google
+''''''''''''''''''''''''''''''''''
 
-**True**: Allow team creation and account signup using Google OAuth. To configure, input the **Client ID** and **Client Secret** credentials. See `the documentation <https://docs.mattermost.com/onboard/sso-google.html>`__ for more detail.
-
-**False**: Google OAuth cannot be used for team creation or account signup.
-
-+----------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Enable": false`` with options ``true`` and ``false``. |
-+----------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
+| - **true**: Allows team and account creation using Google OAuth authentication. Input the **Client ID** and **Client Secret** credentials to configure. | - System Config path: **Authentication > OAuth 2.0**         |
+| - **false**: (Default) Disables Google OAuth authentication.                                                                                            | - ``config.json`` setting: ``.GoogleSettings.Enable: false`` |
+|                                                                                                                                                         | - Environment variable: ``MM_GOOGLESETTINGS_ENABLE``         |
+| See `Google Single Sign-On <https://docs.mattermost.com/onboard/sso-google.html>`__ for more information.                                               |                                                              |
++---------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
 
 Client ID
 '''''''''
