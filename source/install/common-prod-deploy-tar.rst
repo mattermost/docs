@@ -23,6 +23,7 @@ These instructions outline how to install Mattermost Server on a 64-bit Linux ho
 
    - `Ubuntu </install/installing-ubuntu-2004-LTS.html#install-a-database>`__
    - `Debian </install/install-debian.html#install-a-database>`__
+   - `RHEL </install/install-rhel-8.html#install-a-database>`__
 
 2. Log in to the server that will host Mattermost Server and open a terminal window.
 
