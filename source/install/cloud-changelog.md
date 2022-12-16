@@ -40,6 +40,8 @@ Latest Mattermost Cloud releases:
 #### User Interface (UI)
  - Updated prepackaged version of plugins affected by React 17 upgrade.
  - Updated the **Remove license and download** text in-product to clarify that server will be downgraded to Mattermost Free as a result.
+ - Corrected in-product System Console legacy link to the Cloud Administrator's Guide.
+ - Updated prepackaged NPS version to 1.3.1.
 
 #### Administration
  - The export file now contains the server version and a creation timestamp.
@@ -47,10 +49,13 @@ Latest Mattermost Cloud releases:
  - Added ``acknowledgements`` field to the post's metadata.
  - Added the ability for customers to view their upcoming invoice at the **System Console > Billing & Account > Subscriptions** page.
  - **Total Activated Users** was changed back to **Total Active Users** in **System Console > Reporting > Site Statistics**.
+ - The import job now logs the progress of the import.
+ - Exports to S3 no longer time out.
 
 ### API Changes
  - Added new API endpoint ``GET /api/v4/posts/:post_id/info`` to allow checking if the post that a permalink is pointing to is accessible by joining teams or channels.
  - Added validity checks for role related parameters in ``GET /users``.
+ - Added an allowed value ``sort=display_name`` to ``GET /api/v4/users?in_group=<groupid>``.
 
 ### Bug Fixes
  - Fixed an issue where batch notifications failed while rendering.
@@ -68,6 +73,10 @@ Latest Mattermost Cloud releases:
  - Fixed an issue where profile pictures, usernames, and full names did not update instantly in Insights.
  - Fixed an issue where the metrics server restarted for every config change.
  - Prevented browsers and CDNs from caching remote entrypoint files.
+ - Fixed a potential read-after-write issue when uploading data through the resumable uploads API.
+ - Fixed the position of the Boards icon in the app bar when Boards is running without a plugin.
+ - Fixed ability to create a board when Boards is running without a plugin.
+ - Fixed Boards tour tips not appearing when Boards is running without a plugin.
 
 ### Known Issues
  - Boards linked to a channel you're a member of don't automatically appear on your sidebar unless you're an explicit member of the board. As a workaround, you can access the board from the channel RHS, or by searching for the board via the board switcher (Ctrl/Cmd+K). Alternatively, you can ask the board admin to add you to the board as an explicit member. See the [issue-focalboard-4179](https://github.com/mattermost/focalboard/issues/4179) for more details.
