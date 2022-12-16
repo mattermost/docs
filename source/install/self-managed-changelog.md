@@ -54,6 +54,7 @@ Latest Mattermost Releases:
 ### Improvements
 
 #### User Interface (UI)
+ - Self-hosted admins can now purchase licenses in-app when service setting ``SelfHostedPurchase`` is true.
  - Implemented progressive image loading in the webapp.
  - When the "Custom Brand Text" is left blank with custom branding enabled, the default text is now hidden.
  - The **Mark as Unread** option was added to the **More** (...) menu for channels in the left-hand side sidebar. Pressing Alt while selecting a channel on the left-hand side now also marks the last post in the channel as unread.
@@ -64,6 +65,7 @@ Latest Mattermost Releases:
  - Keyboard and focus handling was improved in profile popovers and @mentions.
  - Updated prepackaged version of plugins affected by React 17 upgrade.
  - Updated the **Remove license and download** text in-product to clarify that server will be downgraded to Mattermost Free as a result.
+ - Updated prepackaged NPS version to 1.3.1.
 
 #### Administration
  - If an Admin encounters an invitation error “SMTP is not configured in System Console", a link to the SMTP configuration within the **System Console** is now included in the error message.
@@ -78,6 +80,8 @@ Latest Mattermost Releases:
  - Added a new menu item on the **System Console > Users** page that re-adds users to all of their default teams and channels associated with the groups they're a member of.
  - Added ``acknowledgements`` field to the post's metadata.
  - Added support for product websocket messages on high availability instances.
+ - The import job now logs the progress of the import.
+ - Exports to S3 no longer time out.
 
 ### Bug Fixes
  - Fixed an issue where custom group actions were appearing in the user interface even when the user didn't have the permissions for them.
@@ -110,6 +114,12 @@ Latest Mattermost Releases:
  - Fixed an issue where batch notifications failed while rendering.
  - Prevented browsers and CDNs from caching remote entrypoint files.
  - Fixed an issue where the unreads button in the channel sidebar was missing alternative text for screen readers.
+ - Fixed a potential read-after-write issue when uploading data through the resumable uploads API.
+ - Removed duplicate text in the self-hosted pricing modal.
+ - Fixed the position of the Boards icon in the app bar when Boards is running without a plugin.
+ - Fixed ability to create a board when Boards is running without a plugin.
+ - Fixed Boards tour tips not appearing when Boards is running without a plugin.
+ - Fixed an issue where a confusing System Console banner was displayed when a license was set to expire.
 
 ### config.json
 Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
@@ -118,6 +128,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - Under ``ServiceSettings`` in the ``config.json``:
     - ``PostPriority``, to add an option to select a message priority label for root posts.
     - ``AllowSyncedDrafts``, to add an option to display a centralized page for draft messages.
+    - ``SelfHostedPurchase``, to add an option for self-hosted admins to purchase licenses in-app.
  - Under ``ExperimentalSettings`` in the ``config.json``:
     - ``PatchPluginsReactDOM``, to enable the patching of the React DOM library when loading web app plugins so that the plugin uses the version matching the web app.
 
@@ -127,6 +138,8 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - Added two new URL parameters to the ``GET /api/v4/groups`` endpoint to get the ``ChannelMemberCount`` for a group.
  - Added new API endpoints ``POST /api/v4/users/:user_id/posts/:post_id/ack`` and ``DELETE /api/v4/users/:user_id/posts/:post_id/ack``.
  - Added a new API endpoint ``POST /api/v4/groups/:group_id:/restore``.
+ - Added an allowed value ``sort=display_name`` to ``GET /api/v4/users?in_group=<groupid>``.
+ - Added a new endpoint ``api/v4/cloud/products/selfhosted``.
  - A new API method ``RegisterCollectionAndTopic(collectionType, topicType string) (error)`` was added to the Plugin API and the following hooks. This API method is in beta, subject to change, and not covered by our backwards compatibility guarantee.
     - ``UserHasPermissionToCollection(c *Context, userID, collectionType, collectionId string, permission *model.Permission) (bool, error)``
     - ``GetAllCollectionIDsForUser(c *Context, userID, collectionType string) ([]string, error)``
