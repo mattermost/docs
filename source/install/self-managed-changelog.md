@@ -46,7 +46,7 @@ Latest Mattermost Releases:
  - Added support for enterprise users to request acknowledgements on posts and to acknowledge posts (Professional).
 
 #### Global Drafts
- - Added a centralized Drafts view for draft messages.
+ - Added [a centralized Drafts view](https://docs.mattermost.com/channels/send-messages.html#draft-messages) for draft messages.
  
 #### ServiceNow Integration
  - ServiceNow customers can now access and share their ServiceNow data from within Mattermost.
