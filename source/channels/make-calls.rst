@@ -4,7 +4,7 @@ Start a call
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Mattermost introduces voice calling and screen sharing functionality in channels, group messages, and direct messages from Mattermost v7.0 for Mattermost Cloud and Mattermost self-hosted deployments.
+Mattermost supports voice calling and screen sharing functionality in channels, group messages, and direct messages from Mattermost v7.0 for Mattermost Cloud and Mattermost self-hosted deployments.
 
 - `Features <#features>`__
 - `Record call <#record-calls>`__
@@ -26,7 +26,10 @@ Starting from Mattermost v7.0, you can:
 - Share screen (not available on mobile), raise hands, chat in a thread, and even switch between products in the Mattermost suite (i.e., Channels, Boards, and Playbooks) while on a call.
 - React using emojis.
 - Start a call using the ``/call start`` slash command or **Start call** in the channel header.
-- Record calls (from v7.6 and Mattermost Enterprise only).
+
+Starting from Mattermost v7.7 you can:
+
+- Record calls (Mattermost Enterprise only).
 
 Mattermost Cloud users can start calling right out of the box. For Mattermost self-hosted deployments, System Admins need to enable the plugin and adjust configurations `in the System Console </configure/configuration-settings.html#calls-beta>`_.
 
