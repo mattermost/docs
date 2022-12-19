@@ -210,6 +210,10 @@ The location of the Mattermost desktop app configuration file depends on the pla
 - macOS App Store: ``/Users/<username>/Library/Containers/Mattermost/Data/Library/Application Support/Mattermost``
 - Linux: ``~/.config/Mattermost``
 
+.. note::
+
+  If you choose to uninstall the desktop app, you must manually remove local configuration data from the applicable location noted above.
+
 "Installation has failed" dialog
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
