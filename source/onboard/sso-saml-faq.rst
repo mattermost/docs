@@ -29,6 +29,11 @@ Yes. IWA is supported on the browser, with support added to iOS and Android mobi
 
 However, IWA is not supported on the Mattermost Desktop Apps due to a limitation in Electron. As a workaround you may create a browser desktop shortcut for quick access to Mattermost, just like a Desktop App.
 
+Can I provision and deprovision users who log in via SAML?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Yes, but this relies on AD/LDAP to do so. Currently, we do not support SCIM. See `"How do I deactivate users?" </onboard/ad-ldap.html#how-do-i-deactivate-users>`__ for more information. 
+
+
 How do I migrate users from one authentication method (e.g. email) to SAML?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
