@@ -19,27 +19,33 @@ These instructions outline how to install Mattermost Server on a 64-bit Linux ho
 
 **Deploy Generic Linux**
 
-1. Log in to the server that will host Mattermost Server and open a terminal window.
+1. Install and configure a MySQL or PostgreSQL database. Refer to one of the guides below to deploy the database based on your operating system:
 
-2. Download `the latest version of the Mattermost Server <https://mattermost.com/deploy/>`__. In the following command, replace ``X.X.X`` with the version that you want to download:
+   - `Ubuntu </install/installing-ubuntu-2004-LTS.html#install-a-database>`__
+   - `Debian </install/install-debian.html#install-a-database>`__
+   - `RHEL </install/install-rhel-8.html#install-a-database>`__
+
+2. Log in to the server that will host Mattermost Server and open a terminal window.
+
+3. Download `the latest version of the Mattermost Server <https://mattermost.com/deploy/>`__. In the following command, replace ``X.X.X`` with the version that you want to download:
   
    .. code:: bash
 
     wget https://releases.mattermost.com/X.X.X/mattermost-X.X.X-linux-amd64.tar.gz
 
-3. Extract the Mattermost Server files.
+4. Extract the Mattermost Server files.
   
    .. code:: bash
             
     tar -xvzf mattermost*.gz
 
-4. Move the extracted file to the ``/opt`` directory.
+5. Move the extracted file to the ``/opt`` directory.
   
    .. code:: bash
             
     sudo mv mattermost /opt
 
-5. Create the storage directory for files.
+6. Create the storage directory for files.
 
    .. code:: bash
             
@@ -49,7 +55,7 @@ These instructions outline how to install Mattermost Server on a 64-bit Linux ho
     
   The storage directory will contain all the files and images that your users post to Mattermost, so you need to make sure that the drive is large enough to hold the anticipated number of uploaded files and images.
 
-6. Set up a system user and group called ``mattermost`` that will run this service, and set the ownership and permissions.
+7. Set up a system user and group called ``mattermost`` that will run this service, and set the ownership and permissions.
   
   a. Create the Mattermost user and group.
         
@@ -69,7 +75,7 @@ These instructions outline how to install Mattermost Server on a 64-bit Linux ho
             
         sudo chmod -R g+w /opt/mattermost
 
-7. Set up the database driver in the file ``/opt/mattermost/config/config.json``. Open the file in a text editor and make the following changes:
+8. Set up the database driver in the file ``/opt/mattermost/config/config.json``. Open the file in a text editor and make the following changes:
   
    **If you're using PostgreSQL:**
 
@@ -81,7 +87,7 @@ These instructions outline how to install Mattermost Server on a 64-bit Linux ho
    Set ``"DriverName"`` to ``"mysql"``
    Set ``"DataSource"`` to the following value, replacing ``<mmuser-password>``  and ``<host-name-or-IP>`` with the appropriate values. Also make sure that the database name is ``mattermost`` instead of ``mattermost_test``: ``"mmuser:<mmuser-password>@tcp(<host-name-or-IP>:3306)/mattermost?charset=utf8mb4,utf8&writeTimeout=30s"``
 
-8. Test the Mattermost server to make sure everything works.
+9. Test the Mattermost server to make sure everything works.
     
   a. Change to the Mattermost directory.
             
@@ -97,7 +103,7 @@ These instructions outline how to install Mattermost Server on a 64-bit Linux ho
   
     When the server starts, it shows some log information and the text ``Server is listening on :8065``. You can stop the server by pressing :kbd:`Ctrl` :kbd:`C` on Windows or Linux, or :kbd:`⌘` :kbd:`C` on Mac, in the terminal window.
 
-9. Set up Mattermost to use *systemd* for starting and stopping.
+10. Set up Mattermost to use *systemd* for starting and stopping.
   
   a. Create a *systemd* unit file.
     

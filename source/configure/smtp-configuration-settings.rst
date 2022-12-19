@@ -1,7 +1,7 @@
 :orphan:
 :nosearch:
 
-Configure SMTP email server settings by going to **System Console > Environment > SMTP**, or by editing the ``config.json`` file as described in the following tables. 
+Configure SMTP email server settings by going to **System Console > Environment > SMTP**, or by editing the ``config.json`` file as described in the following tables.
 
 SMTP server
 ~~~~~~~~~~~
@@ -74,7 +74,7 @@ SMTP connection security
 | - **TLS**: Communication between Mattermost and your email      |                                                                       |
 |   server is encrypted.                                          |                                                                       |
 | - **STARTTLS**: Attempts to upgrade an existing insecure        |                                                                       |
-|   connection to a secure connection using TLS.                  |                                                                       | 
+|   connection to a secure connection using TLS.                  |                                                                       |
 +-----------------------------------------------------------------+-----------------------------------------------------------------------+
 
 Skip server certificate verification
@@ -84,7 +84,7 @@ Skip server certificate verification
 
 +-----------------------------------------------------------------------+----------------------------------------------------------------------------------------------+
 | Configure Mattermost to skip the verification of the email server     | - System Config path: **Environment > SMTP**                                                 |
-| certificate.                                                          | - ``config.json setting``: ``".EmailSettings.SkipServerCertificateVerification": false",``   | 
+| certificate.                                                          | - ``config.json setting``: ``".EmailSettings.SkipServerCertificateVerification": false",``   |
 |                                                                       | - Environment variable: ``MM_EMAILSETTINGS_SKIPSERVERCERTIFICATEVERIFICATION``               |
 | - **true**: Mattermost won't verify the email server certificate.     |                                                                                              |
 | - **false**: **(Default)** Mattermost verifies the email              |                                                                                              |
@@ -104,7 +104,7 @@ Enable security alerts
 |   to be enabled.                                                |                                                                                  |
 | - **false**: Security alerts are disabled.                      |                                                                                  |
 +-----------------------------------------------------------------+----------------------------------------------------------------------------------+
-| See the `Telemetry </manage/telemetry.html#security-update-check-feature>`__ documentation to learn more.               |
+| See the `Telemetry </manage/telemetry.html#security-update-check-feature>`__ documentation to learn more.                                          |
 +-----------------------------------------------------------------+----------------------------------------------------------------------------------+
 
 SMTP server timeout

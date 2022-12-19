@@ -40,7 +40,8 @@ extensions = [
     # https://pypi.org/project/sphinx-sitemap/
     "sitemap",
     "sphinx_tabs.tabs",
-    "sphinx_copybutton"
+    "sphinx_copybutton",
+    "compass-icons"
 ]
 
 sphinx_tabs_disable_tab_closing = True
@@ -129,7 +130,11 @@ redirects = {
 "administration/compliance-export.html":
         "https://docs.mattermost.com/comply/compliance-export.html",
 "administration/config-in-database.html":
-        "https://docs.mattermost.com/configure/configuation-in-mattermost-database.html",
+        "https://docs.mattermost.com/configure/configuation-in-a-database.html",
+"administration/config-in-database.html#configuration-in-a-database.html":
+        "https://docs.mattermost.com/configure/configuation-in-a-database.html",
+"administration/config-in-database.html#configuration-in-the-mattermost-database":
+        "https://docs.mattermost.com/configure/configuation-in-a-database.html",
 "administration/data-retention.html":
         "https://docs.mattermost.com/comply/data-retention-policy.html",
 "administration/devops-command-center.html":
@@ -229,7 +234,7 @@ redirects = {
 "administration/config-settings.html#ad-ldap":
         "https://docs.mattermost.com/configure/configuration-settings.html#ad-ldap",
 "administration/config-in-database.html":
-	"https://docs.mattermost.com/configure/configuation-in-mattermost-database.html#create-an-environment-file",
+	"https://docs.mattermost.com/configure/configuation-in-a-database.html",
 "administration/config-settings.html#customization":
         "https://docs.mattermost.com/configure/configuration-settings.html#customization",
 "administration/config-settings.html#default-channels-experimental":
@@ -256,6 +261,8 @@ redirects = {
         "https://docs.mattermost.com/configure/deprecated-configuration-settings.html#enable-public-channel-renaming-for",
 "administration/config-settings.html#enable-public-channel-creation-for":
         "https://docs.mattermost.com/configure/configuration-settings.html#enable-public-channel-creation-for",
+"administration/config-settings.html#enable-users-to-open-direct-message-channels-with":
+	"https://docs.mattermost.com/configure/site-configuration-settings.html#enable-users-to-open-direct-message-channels-with",
 "administration/config-settings.html#enable-x-to-leave-channels-from-left-hand-sidebar-experimental":
         "https://docs.mattermost.com/configure/deprecated-configuration-settings.html#enable-x-to-leave-channels-from-left-hand-sidebar",
 "administration/config-settings.html#environment":
@@ -348,6 +355,8 @@ redirects = {
         "https://docs.mattermost.com/comply/cloud-data-retention-policy.html",
 "cloud/cloud-administration/saml-technical.html":
 	"https://docs.mattermost.com/onboard/cloud-sso-saml-technical.html",
+"cloud/cloud-administration/sso-openid-connect.html":
+        "https://docs.mattermost.com/onboard/convert-oauth20-service-providers-to-openidconnect.html",
 "cloud/cloud-administration/sso-saml.html":
 	"https://docs.mattermost.com/onboard/cloud-sso-saml.html",
 "cloud/cloud-billing/cloud-billing.html":
@@ -379,6 +388,8 @@ redirects = {
 
 
 # Configuration settings redirects
+"configure/configuration-in-mattermost-database.html":
+        "https://docs.mattermost.com/configure/configuation-in-a-database.html",
 "configure/configuration-settings.html#channels":
         "https://docs.mattermost.com/configure/user-management-configuration-settings.html#channels",
 "configure/configuration-settings.html#allow-use-of-api-v3-endpoints":
@@ -1291,7 +1302,20 @@ redirects = {
         "https://docs.mattermost.com/configure/site-configuration-settings.html#enable-admin-notices",
 "configure/configuration-settings.html#enable-end-user-notices": 
         "https://docs.mattermost.com/configure/site-configuration-settings.html#enable-end-user-notices",
-
+"configure/experimental-configuration-settings.html#import-settings-default-directory":
+        "https://docs.mattermost.com/configure/experimental-configuration-settings.html#import-input-directory",
+"configure/experimental-confguration-settings.html#import-settings-default-retention-days":
+        "https://docs.mattermost.com/configure/experimental-configuration-settings.html#import-retention-days",
+"configure/experimental-configuration-settings.html#export-settings-default-directory":
+        "https://docs.mattermost.com/configure/experimental-configuration-settings.html#export-output-directory",
+"configure/experimental-configuration-settings.html#export-settings-default-retention-days":
+        "https://docs.mattermost.com/configure/experimental-configuration-settings.html#export-retention-days",
+"configure/authentication-configuration-settings.html#gitlab":
+	"https://docs.mattermost.com/configure/authentication-configuration-settings.html#gitlab-oauth-2-0-settings",
+"configure/authentication-configuration-settings.html#google":
+	"https://docs.mattermost.com/configure/authentication-configuration-settings.html#google-oauth-2-0-settings",
+"configure/authentication-configuration-settings.html#office-365":
+	"https://docs.mattermost.com/configure/authentication-configuration-settings.html#office-365-oauth-2-0-settings",
 
 # Deploy redirects
 "deploy/mobile-apps-faq.html":
@@ -2297,9 +2321,9 @@ author = "Mattermost"
 # built documents.
 #
 # The short X.Y version.
-# version = '7.4'
+# version = '7.6'
 # The full version, including alpha/beta/rc tags.
-# release = '7.4'
+# release = '7.6'
 
 # The language for content autogenerated by Sphinx. Refer to documentation
 # for a list of supported languages.
@@ -2413,7 +2437,7 @@ html_static_path = ["_static"]
 # A list of CSS files. The entry must be a filename string or a tuple containing the filename string and the attributes
 # dictionary. The filename must be relative to the html_static_path, or a full URI with scheme like
 # https://example.org/style.css. The attributes is used for attributes of <link> tag. It defaults to an empty list.
-html_css_files = ["mytheme.css"]
+html_css_files = ["mytheme.css", "css/compass-icons.css"]
 
 # A list of JavaScript filenames. The entry must be a filename string or a tuple containing the filename string and the
 # attributes dictionary. The filename must be relative to the html_static_path, or a full URI with scheme like
@@ -2506,6 +2530,10 @@ linkcheck_rate_limit_timeout = 1.0
 linkcheck_anchors = False
 
 # Variables
+# rst_prolog = """
+# .. |plans-image| image:: ../_static/images/badges/flag_icon.svg
+# .. |deployment-image| image:: ../_static/images/badges/deployment_icon.svg
+# """
 # rst_epilog = """
 # .. |mm_badge_version| replace:: 7.2
 # .. _mm_badge_version: https://mattermost.com/blog/mattermost-v7-2-is-now-available/

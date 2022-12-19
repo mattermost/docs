@@ -53,7 +53,9 @@ What are the current supported Extended Support Release versions?
 +-------------+----------------+------------------+------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------+
 | Version     | Type           | Release Date     | End of Support   | Latest Dot Release Download link                                                           | Upgrade Notes                                       |
 +=============+================+==================+==================+============================================================================================+=====================================================+
-| 7.1         | Feature        | July 15, 2022    | April 15, 2023   | `7.1.4 <https://releases.mattermost.com/7.1.4/mattermost-7.1.4-linux-amd64.tar.gz>`_       |                                                     |
+| 7.8         | Feature        | February 16, 2023| November 15, 2023|                                                                                            |                                                     |
++-------------+----------------+------------------+------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------+
+| 7.1         | Feature        | July 15, 2022    | May 15, 2023     | `7.1.4 <https://releases.mattermost.com/7.1.4/mattermost-7.1.4-linux-amd64.tar.gz>`_       |                                                     |
 +-------------+----------------+------------------+------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------+
 | 6.3         | Feature        | January 16, 2022 | October 15, 2022 | `6.3.10 <https://releases.mattermost.com/6.3.10/mattermost-6.3.10-linux-amd64.tar.gz>`_    |                                                     |
 +-------------+----------------+------------------+------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------+
@@ -119,3 +121,11 @@ Please review the `Desktop App changelog </install/desktop-app-changelog.html>`_
 +-------------+------------------+-----------------------------------------+----------------------------------------+
 
 See more details in our `release lifecycle documentation </upgrade/release-lifecycle.html#desktop-and-mobile-app-server-compatibility>`_.
+
+
+Mobile App v1.55.1 extended support release (ESR)
+------------------------------------------------
+
+The latest version of the mobile app released in September (v1.55.1) is our first mobile extended support release. We are very excited about the upcoming general availability of the v2.0 mobile app in December. We recognize that some customers may have a custom build of Mattermost mobile and need more time to test or implement their custom changes on mobile v2.0. The mobile ESR will be supported until July 2023.
+
+The mobile v1.55.1 (ESR) will be smoke tested monthly with every new server release until the mobile ESR reaches end-of-life (July 2023). The ESR version will receive critical security fixes only and be released as needed via unsigned builds to our mobile Github repository.

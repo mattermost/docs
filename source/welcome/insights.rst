@@ -20,6 +20,9 @@ To access insights, go to Channels, then select **Insights** located at the top 
 - Show insights for the current day or the last 28 days.
 - Select insights to go directly to that channel, thread, or board.
 
+.. note::
+  From Mattermost v7.5, Insights for top channels and thread counts don't include messages posted by plugins and OAuth apps.
+
 My insights
 -----------
 
@@ -61,3 +64,8 @@ Team insights
 +-----------------------+-----------------------------------------------+
 | Top playbooks         | Playbooks with the most runs across the team. |
 +-----------------------+-----------------------------------------------+
+
+.. note:: 
+
+  - Team insights are based on all public channels available as well as private channel membership. System Admins must be a member of private channels to see threads from those channels.
+  - System Admins who can't see public threads without joining them first indicates that compliance export is enabled for the Mattermost deployment. When enabled, compliance export requires a record of every user having joined a channel so that a compliance system knows who has access to messages.
