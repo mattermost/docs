@@ -141,7 +141,7 @@ Enable account creation with email
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
 | - **true**: **(Default)** Allows creation of team and user accounts with email and password.                                                        | - System Config path: **Authentication > Email**                    |
-| - **false**: Disables creation of team and user accounts with email and password. This requires a single sign-on service to create accounts.        | - ``config.json`` setting: ``.EmailSettings.EnableSignUpWithEmail`` |
+| - **false**: Disables creation of team and user accounts with email and password. This requries a single sign-on service to create accounts.        | - ``config.json`` setting: ``.EmailSettings.EnableSignUpWithEmail`` |
 |                                                                                                                                                     | - Environment variable: ``MM_EMAILSETTINGS_ENABLESIGNUPWITHEMAIL``  |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
 
@@ -193,11 +193,11 @@ Enable sign-in with email
 Enable sign-in with username
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------+
-| - **true**: **(Default)** Allows authentication with a username and password for accounts created with an email address. This setting does not affect AD/LDAP sign-in. | - System Config path: **Authentication > Email**                               |
-| - **false**: Disables authenticaton with a username and removes the option from the login screen.                                                                      | - ``config.json`` setting: ``.EmailSettings.EnableSignInWithUsername``         |
-|                                                                                                                                                                        | - Environment variable: ``MM_EMAILSETTINGS_ENABLESIGNINWITHUSERNAME``          |
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
+| - **true**: **(Default)** Allows authentication with a username and password for accounts created with an email address. This setting does not affect AD/LDAP sign-in. | - System Config path: **Authentication > Email**                       |
+| - **false**: Disables authenticaton with a username and removes the option from the login screen.                                                                      | - ``config.json`` setting: ``.EmailSettings.EnableSignInWithUsername`` |
+|                                                                                                                                                                        | - Environment variable: ``MM_EMAILSETTINGS_ENABLESIGNINWITHUSERNAME``  |
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
 
 ----
 
@@ -466,13 +466,13 @@ Connection security
 
 *Available in legacy Enterprise Edition E10 and E20*
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
-| This setting controls the type of security Mattermost uses to connect to the AD/LDAP server, with these options:                                                                                             | - System Config path: **Authentication > AD/LDAP**              |
-|                                                                                                                                                                                                              | - ``config.json`` setting: ``.LdapSettings.ConnectionSecurity`` |
-| - **None**: **(Default)** No encryption. With this option, it is **highly recommended** that the connection be secured outside of Mattermost, such as by a stunnel proxy. ``config.json`` option: ``"none"`` | - Environment variable: ``MM_LDAPSETTINGS_CONNECTIONSECURITY``  |
-| - **TLS**: Encrypts communication with TLS. ``config.json`` option: ``"TLS"``                                                                                                                                |                                                                 |
-| - **STARTTLS**: Attempts to upgrade an existing insecure connection to a secure connection with TLS. ``config.json`` option: ``"STARTTLS"``                                                                  |                                                                 |
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
+| This setting controls the type of security Mattermost uses to connect to the AD/LDAP server, with these options:                                                                                         | - System Config path: **Authentication > AD/LDAP**              |
+|                                                                                                                                                                                                          | - ``config.json`` setting: ``.LdapSettings.ConnectionSecurity`` |
+| - **None**: **(Default)** No encryption. With this option, it is **highly recommended** that the connection be secured outside of Mattermost, such as by a stunnel proxy. ``config.json`` option: ``""`` | - Environment variable: ``MM_LDAPSETTINGS_CONNECTIONSECURITY``  |
+| - **TLS**: Encrypts communication with TLS. ``config.json`` option: ``"TLS"``                                                                                                                            |                                                                 |
+| - **STARTTLS**: Attempts to upgrade an existing insecure connection to a secure connection with TLS. ``config.json`` option: ``"STARTTLS"``                                                              |                                                                 |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
 
 .. config:setting:: ldap-skipcertverification
   :displayname: Skip certificate verification (AD/LDAP)
@@ -1072,13 +1072,11 @@ Enable login with SAML
 
 *Available in legacy Enterprise Edition E20*
 
-**True**: Mattermost allows login using SAML. Please see `documentation <https://docs.mattermost.com/onboard/sso-saml.html>`__ to learn more about configuring SAML for Mattermost.
-
-**False**: Login with SAML is disabled.
-
-+----------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Enable": false`` with options ``true`` and ``false``. |
-+----------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------+
+| - **true**: Enables sign-in with SAML. See `SAML Single Sign-On <https://docs.mattermost.com/onboard/sso-saml.html>`__ to learn more. | - System Config path: **Authentication > SAML 2.0**        |
+| - **false**: **(Default)** Disables sign-in with SAML.                                                                                | - ``config.json`` setting: ``.SamlSettings.Enable: false`` |
+|                                                                                                                                       | - Environment variable: ``MM_SAMLSETTINGS_ENABLE``         |
++---------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------+
 
 .. config:setting:: saml-enablesyncwithldap
   :displayname: Enable synchronizing SAML accounts with AD/LDAP (SAML)
@@ -1097,13 +1095,12 @@ Enable synchronizing SAML accounts with AD/LDAP
 
 *Available in legacy Enterprise Edition E20*
 
-**True**: Mattermost periodically synchronizes SAML user attributes, including user deactivation and removal, with AD/LDAP. Enable and configure synchronization settings at **Authentication > AD/LDAP**. See `documentation <https://docs.mattermost.com/onboard/ad-ldap.html>`__ to learn more.
-
-**False**: Synchronization of SAML accounts with AD/LDAP is disabled.
-
-+----------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableSyncWithLdap": false`` with options ``true`` and ``false``. |
-+----------------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
+| - **true**: Mattermost updates configured Mattermost user attributes (ex. FirstName, Position, Email) with their values from AD/LDAP. This synchronization may deactivate Mattermost users or remove them from groups, teams, or channels. AD/LDAP synchronization must be enabled and configured through the settings under **Authentication > AD/LDAP**. | - System Config path: **Authentication > SAML 2.0**                    |
+| - **false**: **(Default)** Disables syncing of SAML-authenticated Mattermost users with AD/LDAP.                                                                                                                                                                                                                                                           | - ``config.json`` setting: ``.SamlSettings.EnableSyncWithLdap: false`` |
+|                                                                                                                                                                                                                                                                                                                                                            | - Environment variable: ``MM_SAMLSETTINGS_ENABLESYNCWITHLDAP``         |
+| See `AD/LDAP Setup <https://docs.mattermost.com/onboard/ad-ldap.html>`__ and `Advanced User Management <https://docs.mattermost.com/guides/administration.html#advanced-user-management>`__ to learn more.                                                                                                                                                 |                                                                        |
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
 
 .. config:setting:: saml-ignoreguestsldapsync
   :displayname: Ignore guest users when synchronizing with AD/LDAP (SAML)
@@ -1124,15 +1121,13 @@ Ignore guest users when synchronizing with AD/LDAP
 
 *Available in legacy Enterprise Edition E20*
 
-Available when ``Enable Synchronizing SAML Accounts With AD/LDAP`` is set to ``true``.
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| - **true**: When syncing with the AD/LDAP server, Mattermost does not sync any information about SAML-authenticated Guest Users from the AD/LDAP server. Manage guest deactivation manually via **System Console > Users**.  | - System Config path: **Authentication > SAML 2.0**                      |
+| - **false**: **(Default)** Syncing Mattermost with the AD/LDAP server updates Guest User attributes and deactivates and removes SAML-authenticated accounts for Guest Users that are no longer active on the AD/LDAP server. | - ``config.json`` setting: ``.SamlSettings.IgnoreGuestsLdapSync: false`` |
+|                                                                                                                                                                                                                              | - Environment variable: ``MM_SAMLSETTINGS_IGNOREGUESTSLDAPSYNC``         |
+| For more information, see `AD/LDAP Setup <https://docs.mattermost.com/onboard/ad-ldap.html>`__ and `Advanced User Management <https://docs.mattermost.com/guides/administration.html#advanced-user-management>`__.           |                                                                          |
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
-**True**: Mattermost ignores Guest Users identified by the Guest Attribute when synchronizing with AD/LDAP on user deactivation and removal. Manage guest deactivation manually via **System Console > Users**. See `documentation <https://docs.mattermost.com/onboard/ad-ldap.html>`__ to learn more.
-
-**False**: Synchronization of SAML deactivates and removes Guest Users when synchronizing with AD/LDAP.
-
-+------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"IgnoreGuestsLdapSync": false`` with options ``true`` and ``false``. |
-+------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: saml-overridebindwithldap
   :displayname: Override SAML bind data with AD/LDAP information (SAML)
@@ -1151,16 +1146,17 @@ Override SAML bind data with AD/LDAP information
 
 *Available in legacy Enterprise Edition E20*
 
-**True**: Mattermost overrides the SAML ID attribute with the AD/LDAP ID attribute if configured or overrides the SAML Email attribute with the AD/LDAP Email attribute if SAML ID attribute is not present. See `documentation <https://docs.mattermost.com/onboard/ad-ldap.html>`__ to learn more.
-
-**False**: Mattermost uses the email attribute to bind users to SAML.
-
-.. note::
-  Moving from ``true`` to ``false`` will prevent the override from happening. To prevent the disabling of user accounts, SAML IDs must match the LDAP IDs when this feature is enabled. This setting should be set to ``false`` unless LDAP sync is enabled.
-
-+---------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableSyncWithLdapIncludeAuth": false`` with options ``true`` and ``false``. |
-+---------------------------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------+
+| - **true**: If the SAML ID attribute is configured, Mattermost overrides the SAML ID attribute with the AD/LDAP ID attribute. If the SAML ID attribute is not present, Mattermost overrides the SAML Email attribute with the AD/LDAP Email attribute. | - System Config path: **Authentication > SAML 2.0**                               |
+| - **false**: **(Default)** Mattermost uses the email attribute to bind users to SAML.                                                                                                                                                                  | - ``config.json`` setting: ``.SamlSettings.EnableSyncWithLdapIncludeAuth: false`` |
+|                                                                                                                                                                                                                                                        | - Environment variable: ``MM_SAMLSETTINGS_ENABLESYNCWITHLDAPINCLUDEAUTH``         |
+| For more information, see `AD/LDAP Setup <https://docs.mattermost.com/onboard/ad-ldap.html>`__ and `Advanced User Management <https://docs.mattermost.com/guides/administration.html#advanced-user-management>`__.                                     |                                                                                   |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------+
+| **Notes**:                                                                                                                                                                                                                                                                                                                                 |
+|  - This setting should be **false** unless LDAP sync is enabled.                                                                                                                                                                                                                                                                           |
+|  - Changing this setting from **true** to **false** will disable the override.                                                                                                                                                                                                                                                             |
+|  - SAML IDs must match LDAP IDs when the override is enabled.                                                                                                                                                                                                                                                                              |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: saml-providermetadataurl
   :displayname: Identity provider metadata URL (SAML)
@@ -1177,11 +1173,11 @@ Identity provider metadata URL
 
 *Available in legacy Enterprise Edition E20*
 
-The URL where Mattermost sends a request to obtain setup metadata from the provider.
-
-+---------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"IdpMetadataUrl": ""`` with string input. |
-+---------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
+| This setting is the URL from which Mattermost requests setup metadata from the provider. | - System Config path: **Authentication > SAML 2.0**             |
+|                                                                                          | - ``config.json`` setting: ``.SamlSettings.IdpMetadataURL``     |
+| String input.                                                                            | - Environment variable: ``MM_SAMLSETTINGS_IDPMETADATAURL``      |
++------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
 
 .. config:setting:: saml-ssourl
   :displayname: SAML SSO URL (SAML)
@@ -1198,11 +1194,11 @@ SAML SSO URL
 
 *Available in legacy Enterprise Edition E20*
 
-The URL where Mattermost sends a SAML request to start login sequence.
-
-+-------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"IdpURL": ""`` with string input. |
-+-------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------+---------------------------------------------------------+
+| This setting is the URL where Mattermost sends a SAML request to start the login sequence. | - System Config path: **Authentication > SAML 2.0**     |
+|                                                                                            | - ``config.json`` setting: ``.SamlSettings.IdpURL``     |
+| String input.                                                                              | - Environment variable: ``MM_SAMLSETTINGS_IDPURL``      |
++--------------------------------------------------------------------------------------------+---------------------------------------------------------+
 
 .. config:setting:: saml-providerissuerurl
   :displayname: Identity provider issuer URL (SAML)
@@ -1219,11 +1215,11 @@ Identity provider issuer URL
 
 *Available in legacy Enterprise Edition E20*
 
-The issuer URL for the Identity Provider you use for SAML requests.
-
-+-----------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"IdpDescriptorUrl": ""`` with string input. |
-+-----------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------+-------------------------------------------------------------------+
+| This setting is the issuer URL for the Identity Provider for SAML requests. | - System Config path: **Authentication > SAML 2.0**               |
+|                                                                             | - ``config.json`` setting: ``.SamlSettings.IdpDescriptorURL``     |
+| String input.                                                               | - Environment variable: ``MM_SAMLSETTINGS_IDPDESCRIPTORURL``      |
++-----------------------------------------------------------------------------+-------------------------------------------------------------------+
 
 .. config:setting:: saml-providerpubliccert
   :displayname: Identity provider public certificate (SAML)
@@ -1240,11 +1236,11 @@ Identity provider public certificate
 
 *Available in legacy Enterprise Edition E20*
 
-The public authentication certificate issued by your Identity Provider.
-
-+-------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"IdpCertificateFile": ""`` with string input. |
-+-------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------+---------------------------------------------------------------------+
+| The public authentication certificate issued by your Identity Provider. | - System Config path: **Authentication > SAML 2.0**                 |
+|                                                                         | - ``config.json`` setting: ``.SamlSettings.IdpCertificateFile``     |
+| String input.                                                           | - Environment variable: ``MM_SAMLSETTINGS_IDPCERTIFICATEFILE``      |
++-------------------------------------------------------------------------+---------------------------------------------------------------------+
 
 .. config:setting:: saml-verifysignature
   :displayname: Verify signature (SAML)
@@ -1263,13 +1259,11 @@ Verify signature
 
 *Available in legacy Enterprise Edition E20*
 
-**True**: Mattermost verifies that the signature sent from the SAML Response matches the Service Provider Login URL.
-
-**False**: Not recommended for production environments. For testing only.
-
-+---------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Verify": true`` with options ``true`` and ``false``. |
-+---------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+
+| - **true**: **(Default)** Mattermost checks that the SAML Response signature matches the Service Provider Login URL.      | - System Config path: **Authentication > SAML 2.0**       |
+| - **false**: The signature is not verified. This is **not recommended** for production. Use this option for testing only. | - ``config.json`` setting: ``.SamlSettings.Verify: true`` |
+|                                                                                                                           | - Environment variable: ``MM_SAMLSETTINGS_VERIFY``        |
++---------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+
 
 .. config:setting:: saml-providerloginurl
   :displayname: Service provider login URL (SAML)
@@ -1289,11 +1283,13 @@ Service provider login URL
 
 *Available in legacy Enterprise Edition E20*
 
-Enter ``https://<your-mattermost-url>/login/sso/saml`` (example: ``https://example.com/login/sso/saml``). Make sure you use HTTP or HTTPS in your URL depending on your server configuration. This field is also known as the Assertion Consumer Service URL.
-
-+----------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"AssertionConsumerServiceURL": ""`` with string input. |
-+----------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+| Enter the URL of your Mattermost server, followed by ``/login/sso/saml``, i.e. ``https://example.com/login/sso/saml``. | - System Config path: **Authentication > SAML 2.0**                          |
+|                                                                                                                        | - ``config.json`` setting: ``.SamlSettings.AssertionConsumerServiceURL``     |
+| Use HTTP or HTTPS depending on the configuration of the server.                                                        | - Environment variable: ``MM_SAMLSETTINGS_ASSERTIONCONSUMERSERVICEURL``      |
+|                                                                                                                        |                                                                              |
+| This setting is also known as the Assertion Consumer Service URL.                                                      |                                                                              |
++------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
 
 .. config:setting:: saml-provideridentifier
   :displayname: Service provider identifier (SAML)
@@ -1310,11 +1306,11 @@ Service provider identifier
 
 *Available in legacy Enterprise Edition E20*
 
-The unique identifier for the Service Provider, usually the same as Service Provider Login URL. In ADFS, this must match the Relying Party Identifier.
-
-+--------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ServiceProviderIdentifier": ""`` with string input. |
-+--------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| This setting is the unique identifier for the Service Provider, which in most cases is the same as the Service Provider Login URL. In ADFS, this must match the Relying Party Identifier. | - System Config path: **Authentication > SAML 2.0**                        |
+|                                                                                                                                                                                           | - ``config.json`` setting: ``.SamlSettings.ServiceProviderIdentifier``     |
+| String input.                                                                                                                                                                             | - Environment variable: ``MM_SAMLSETTINGS_SERVICEPROVIDERIDENTIFIER``      |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
 
 .. config:setting:: saml-encryption
   :displayname: Enable encryption (SAML)
@@ -1333,13 +1329,11 @@ Enable encryption
 
 *Available in legacy Enterprise Edition E20*
 
-**True**: Mattermost will decrypt SAML Assertions encrypted with your Service Provider Public Certificate.
-
-**False**: Not recommended for production environments. For testing only.
-
-+----------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Encrypt": true`` with options ``true`` and ``false``. |
-+----------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------+
+| - **true**: **(Default)** Mattermost will decrypt SAML Assertions that are encrypted with your Service Provider Public Certificate.   | - System Config path: **Authentication > SAML 2.0**        |
+| - **false**: Mattermost does not decrypt SAML Assertions. Use this option for testing only. It is **not recommended** for production. | - ``config.json`` setting: ``.SamlSettings.Encrypt: true`` |
+|                                                                                                                                       | - Environment variable: ``MM_SAMLSETTINGS_ENCRYPT``        |
++---------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------+
 
 .. config:setting:: saml-providerprivatekey
   :displayname: Service provider private key (SAML)
@@ -1356,11 +1350,11 @@ Service provider private key
 
 *Available in legacy Enterprise Edition E20*
 
-The private key used to decrypt SAML Assertions from the Identity Provider.
-
-+---------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"PrivateKeyFile": ""`` with string input. |
-+---------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
+| This setting stores the private key used to decrypt SAML Assertions from the Identity Provider. | - System Config path: **Authentication > SAML 2.0**             |
+|                                                                                                 | - ``config.json`` setting: ``.SamlSettings.PrivateKeyFile``     |
+| String input.                                                                                   | - Environment variable: ``MM_SAMLSETTINGS_PRIVATEKEYFILE``      |
++-------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
 
 .. config:setting:: saml-serviceproviderpubliccert
   :displayname: Service provider public certificate (SAML)
@@ -1377,11 +1371,11 @@ Service provider public certificate
 
 *Available in legacy Enterprise Edition E20*
 
-The certificate file used to generate the signature on a SAML request to the Identity Provider for a service provider initiated SAML login, when Mattermost is the Service Provider.
-
-+----------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"PublicCertificateFile": ""`` with string input. |
-+----------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
+| This setting stores the certificate file used to sign a SAML request to the Identity Provider for a SAML login when Mattermost is initiating the login as the Service Provider. | - System Config path: **Authentication > SAML 2.0**                    |
+|                                                                                                                                                                                 | - ``config.json`` setting: ``.SamlSettings.PublicCertificateFile``     |
+| String input.                                                                                                                                                                   | - Environment variable: ``MM_SAMLSETTINGS_PUBLICCERTIFICATEFILE``      |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
 
 .. config:setting:: saml-signrequest
   :displayname: Sign request (SAML)
@@ -1398,11 +1392,11 @@ Sign request
 
 *Available in legacy Enterprise Edition E20*
 
-When ``true``, Mattermost signs the SAML request using your Service Provider Private Key. When ``false``, Mattermost does not sign the SAML request.
-
-+------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"SignRequest": ""`` with string input. |
-+------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------+------------------------------------------------------------+
+| - **true**: Mattermost signs the SAML request with the Service Provider Private Key. | - System Config path: **Authentication > SAML 2.0**        |
+| - **false**: Mattermost does not sign the SAML request.                              | - ``config.json`` setting: ``.SamlSettings.SignRequest: `` |
+|                                                                                      | - Environment variable: ``MM_SAMLSETTINGS_SIGNREQUEST``    |
++--------------------------------------------------------------------------------------+------------------------------------------------------------+
 
 .. config:setting:: saml-signaturealgo
   :displayname: Signature algorithm
@@ -1423,11 +1417,11 @@ Signature algorithm
 
 *Available in legacy Enterprise Edition E20*
 
-The signature algorithm used to sign the request. Supported options are `RSAwithSHA1 <https://www.w3.org/2000/09/xmldsig#rsa-sha1>`__, `RSAwithSHA256 <https://www.w3.org/2000/09/xmldsig#rsa-sha1>`__, and `RSAwithSHA512 <https://www.w3.org/2001/04/xmldsig-more#rsa-sha512>`__.
-
-+-------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"SignatureAlgorithm": ""`` with string input. |
-+-------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| This setting determines the signature algorithm used to sign the SAML request. Options are: ``RSAwithSHA1``, ``RSAwithSHA256``, ``RSAwithSHA512``. | - System Config path: **Authentication > SAML 2.0**                 |
+|                                                                                                                                                    | - ``config.json`` setting: ``.SamlSettings.SignatureAlgorithm``     |
+| String input.                                                                                                                                      | - Environment variable: ``MM_SAMLSETTINGS_SIGNATUREALGORITHM``      |
++----------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
 
 .. config:setting:: saml-canonicalalgo
   :displayname: Canonical algorithm (SAML)
@@ -1447,11 +1441,14 @@ Canonical algorithm
 
 *Available in legacy Enterprise Edition E20*
 
-The canonicalization algorithm. Supported options are ``Canonical1.0`` for `Exclusive XML Canonicalization 1.0 (omit comments) <https://www.w3.org/TR/2002/REC-xml-exc-c14n-20020718/>`__ (``http://www.w3.org/2001/10/xml-exc-c14n#``) and ``Canonical1.1`` for `Canonical XML 1.1 (omit comments) <https://www.w3.org/TR/2008/REC-xml-c14n11-20080502/>`__ (``http://www.w3.org/2006/12/xml-c14n11``).
-
-+-------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"CanonicalAlgorithm": "Canonical1.0"`` with string input. |
-+-------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------+
+| This setting determines the canonicalization algorithm. With these options:                                                                                                                                                                | - System Config path: **Authentication > SAML 2.0**                             |
+|                                                                                                                                                                                                                                            | - ``config.json`` setting: ``.SamlSettings.CanonicalAlgorithm``                 |
+| - **Canonical1.0**: **(Default)** `Exclusive XML Canonicalization 1.0 (omit comments) <https://www.w3.org/TR/2002/REC-xml-exc-c14n-20020718/>`__ (``http://www.w3.org/2001/10/xml-exc-c14n#``). ``config.json`` setting: ``Canonical1.0``. | - Environment variable: ``MM_SAMLSETTINGS_CANONICALALGORITHM``                  |
+| - **Canonical1.1**:  `Canonical XML 1.1 (omit comments) <https://www.w3.org/TR/2008/REC-xml-c14n11-20080502/>`__ (``http://www.w3.org/2006/12/xml-c14n11``). ``config.json`` setting: ``Canonical1.1``.                                    |                                                                                 |
+|                                                                                                                                                                                                                                            |                                                                                 |
+| String input.                                                                                                                                                                                                                              |                                                                                 |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------+
 
 .. config:setting:: saml-emailattribute
   :displayname: Email attribute (SAML)
@@ -1468,13 +1465,13 @@ Email attribute
 
 *Available in legacy Enterprise Edition E20*
 
-The attribute in the SAML Assertion that will be used to populate the email addresses of users in Mattermost.
-
-Email notifications will be sent to this email address, and this email address may be viewable by other Mattermost users depending on privacy settings chosen by the System Admin.
-
-+---------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EmailAttribute": ""`` with string input. |
-+---------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
+| This setting determines the attribute from the SAML Assertion that populates the user email address field in Mattermost.                                   | - System Config path: **Authentication > SAML 2.0**             |
+|                                                                                                                                                            | - ``config.json`` setting: ``.SamlSettings.EmailAttribute``     |
+| Notifications are sent to this email address. This email address may be visible to other users, depending on how the System Admin has set-up user privacy. | - Environment variable: ``MM_SAMLSETTINGS_EMAILATTRIBUTE``      |
+|                                                                                                                                                            |                                                                 |
+| String input.                                                                                                                                              |                                                                 |
++------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
 
 .. config:setting:: saml-usernameattribute
   :displayname: Username attribute (SAML)
@@ -1491,11 +1488,13 @@ Username attribute
 
 *Available in legacy Enterprise Edition E20*
 
-The attribute in the SAML Assertion that will be used to populate the username field in Mattermost user interface. This attribute will be used within the Mattermost user interface to identify and mention users. For example, if a Username Attribute is set to **john.smith** a user typing ``@john`` will see ``@john.smith`` in their auto-complete options and posting a message with ``@john.smith`` will send a notification to that user that they've been mentioned.
-
-+------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"UsernameAttribute": ""`` with string input. |
-+------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------+
+| This setting determines the SAML Assertion attribute that populates the username field in the Mattermost UI.                                                                                                                                             | - System Config path: **Authentication > SAML 2.0**                |
+|                                                                                                                                                                                                                                                          | - ``config.json`` setting: ``.SamlSettings.UsernameAttribute``     |
+| This attribute identifies users in the UI. For example, if a username is set to ``john.smith``, typing ``@john`` will show ``@john.smith`` as an auto-complete option, and posting a message with ``@john.smith`` will send a notification to that user. | - Environment variable: ``MM_SAMLSETTINGS_USERNAMEATTRIBUTE``      |
+|                                                                                                                                                                                                                                                          |                                                                    |
+| String input.                                                                                                                                                                                                                                            |                                                                    |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------+
 
 .. config:setting:: saml-idattribute
   :displayname: Id attribute (SAML)
@@ -1512,11 +1511,11 @@ Id attribute
 
 *Available in legacy Enterprise Edition E20*
 
-(Optional) The attribute in the SAML Assertion used to bind users from SAML to users in Mattermost.
-
-+------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"IdAttribute": ""`` with string input. |
-+------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
+| (Optional) This setting determines the SAML Assertion attribute used to bind users from SAML to users in Mattermost. | - System Config path: **Authentication > SAML 2.0**          |
+|                                                                                                                      | - ``config.json`` setting: ``.SamlSettings.IdAttribute``     |
+| String input.                                                                                                        | - Environment variable: ``MM_SAMLSETTINGS_IDATTRIBUTE``      |
++----------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
 
 .. config:setting:: saml-guestattribute
   :displayname: Guest attribute (SAML)
@@ -1533,13 +1532,13 @@ Guest attribute
 
 *Available in legacy Enterprise Edition E20*
 
-(Optional) The attribute in the SAML Assertion used to apply a Guest role to users in Mattermost.
-
-See the `Guest Accounts documentation <https://docs.mattermost.com/onboard/guest-accounts.html>`__ for more information.
-
-+---------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"GuestAttribute": ""`` with string input. |
-+---------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
+| (Optional) This setting determines the SAML Assertion attribute used to apply a Guest role to users in Mattermost.       | - System Config path: **Authentication > SAML 2.0**             |
+|                                                                                                                          | - ``config.json`` setting: ``.SamlSettings.GuestAttribute``     |
+| See the `Guest Accounts documentation <https://docs.mattermost.com/onboard/guest-accounts.html>`__ for more information. | - Environment variable: ``MM_SAMLSETTINGS_GUESTATTRIBUTE``      |
+|                                                                                                                          |                                                                 |
+| String input.                                                                                                            |                                                                 |
++--------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
 
 Enable admin attribute
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -1549,9 +1548,11 @@ Enable admin attribute
 
 *Available in legacy Enterprise Edition E20*
 
-**True**: Enables System Admins to configure the SAML Assertion.
-
-**False**: Disables the ability for System Admins to configure the SAML Assertion.
++-----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| - **true**: System Admin status is determined by the SAML Assertion attribute set in **Admin attribute**. | - System Config path: **Authentication > SAML 2.0**                      |
+| - **false**: **(Default)** System Admin status is **not** determined by the SAML Assertion attribute.     | - ``config.json`` setting: ``.SamlSettings.EnableAdminAttribute: false`` |
+|                                                                                                           | - Environment variable: ``MM_SAMLSETTINGS_ENABLEADMINATTRIBUTE``         |
++-----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 Admin attribute
 ~~~~~~~~~~~~~~~
@@ -1561,13 +1562,15 @@ Admin attribute
 
 *Available in legacy Enterprise Edition E20*
 
-(Optional) The attribute in the SAML Assertion for designating System Admins. The user is automatically promoted to this role on their next login. If the Admin Attribute is removed, users who are currently logged in retain their Admin role. When they log out this is revoked and on their next login they will no longer have Admin privileges.
-
-This attribute's default is ``false`` and must be set to ``true`` in order for the Admin Attribute to be used.
-
-+------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableAdminAttribute": false`` with options ``true`` and ``false``. |
-+------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
+| (Optional) This setting determines the attribute in the SAML Assertion for designating System Admins.                         | - System Config path: **Authentication > SAML 2.0**             |
+|                                                                                                                               | - ``config.json`` setting: ``.SamlSettings.AdminAttribute``     |
+| Users are automatically promoted to this role when logging in to Mattermost.                                                  | - Environment variable: ``MM_SAMLSETTINGS_ADMINATTRIBUTE``      |
+|                                                                                                                               |                                                                 |
+| If the Admin attribute is removed, users that are logged in retain Admin status. The role is revoked only when users log out. |                                                                 |
+|                                                                                                                               |                                                                 |
+| String input.                                                                                                                 |                                                                 |
++-------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
 
 .. config:setting:: saml-firstnameattribute
   :displayname: First name attribute (SAML)
@@ -1584,11 +1587,12 @@ First name attribute
 
 *Available in legacy Enterprise Edition E20*
 
-(Optional) The attribute in the SAML Assertion that will be used to populate the first name of users in Mattermost.
-
-+-------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"FirstNameAttribute": ""`` with string input. |
-+-------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| (Optional) This setting determines the SAML Assertion attribute that populates the first name of users in Mattermost. | - System Config path: **Authentication > SAML 2.0**                 |
+|                                                                                                                       | - ``config.json`` setting: ``.SamlSettings.FirstNameAttribute``     |
+|                                                                                                                       | - Environment variable: ``MM_SAMLSETTINGS_FIRSTNAMEATTRIBUTE``      |
+| String input.                                                                                                         |                                                                     |
++-----------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
 
 .. config:setting:: saml-lastnameattribute
   :displayname: Last name attribute (SAML)
@@ -1605,11 +1609,12 @@ Last name attribute
 
 *Available in legacy Enterprise Edition E20*
 
-(Optional) The attribute in the SAML Assertion that will be used to populate the last name of users in Mattermost.
-
-+------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"LastNameAttribute": ""`` with string input. |
-+------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------+
+| (Optional) This setting determines the SAML Assertion attribute that populates the last name of users in Mattermost. | - System Config path: **Authentication > SAML 2.0**                |
+|                                                                                                                      | - ``config.json`` setting: ``.SamlSettings.LastNameAttribute``     |
+|                                                                                                                      | - Environment variable: ``MM_SAMLSETTINGS_LASTNAMEATTRIBUTE``      |
+| String input.                                                                                                        |                                                                    |
++----------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------+
 
 .. config:setting:: saml-nicknameattribute
   :displayname: Nickname attribute (SAML)
@@ -1626,11 +1631,12 @@ Nickname attribute
 
 *Available in legacy Enterprise Edition E20*
 
-(Optional) The attribute in the SAML Assertion that will be used to populate the nickname of users in Mattermost.
-
-+------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"NicknameAttribute": ""`` with string input. |
-+------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------+
+| (Optional) This setting determines the SAML Assertion attribute that populates the nickname of users in Mattermost. | - System Config path: **Authentication > SAML 2.0**                |
+|                                                                                                                     | - ``config.json`` setting: ``.SamlSettings.NicknameAttribute``     |
+|                                                                                                                     | - Environment variable: ``MM_SAMLSETTINGS_NICKNAMEATTRIBUTE``      |
+| String input.                                                                                                       |                                                                    |
++---------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------+
 
 .. config:setting:: saml-positionattribute
   :displayname: Position atribute (SAML)
@@ -1647,11 +1653,12 @@ Position attribute
 
 *Available in legacy Enterprise Edition E20*
 
-(Optional) The attribute in the SAML Assertion that will be used to populate the position field for users in Mattermost (typically used to describe a person's job title or role at the company).
-
-+------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"PositionAttribute": ""`` with string input. |
-+------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------+
+| (Optional) This setting determines the SAML Assertion attribute that populates the position (job title or role at company) of users in Mattermost. | - System Config path: **Authentication > SAML 2.0**                |
+|                                                                                                                                                    | - ``config.json`` setting: ``.SamlSettings.PositionAttribute``     |
+|                                                                                                                                                    | - Environment variable: ``MM_SAMLSETTINGS_POSITIONATTRIBUTE``      |
+| String input.                                                                                                                                      |                                                                    |
++----------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------+
 
 .. config:setting:: saml-localeattribute
   :displayname: Preferred language attribute (SAML)
@@ -1668,11 +1675,12 @@ Preferred language attribute
 
 *Available in legacy Enterprise Edition E20*
 
-(Optional) The attribute in the SAML Assertion that will be used to populate the language of users in Mattermost.
-
-+----------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"LocaleAttribute": ""`` with string input. |
-+----------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
+| (Optional) This setting determines the SAML Assertion attribute that populates the language preference of users in Mattermost. | - System Config path: **Authentication > SAML 2.0**              |
+|                                                                                                                                | - ``config.json`` setting: ``.SamlSettings.LocaleAttribute``     |
+|                                                                                                                                | - Environment variable: ``MM_SAMLSETTINGS_LOCALEATTRIBUTE``      |
+| String input.                                                                                                                  |                                                                  |
++--------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
 
 .. config:setting:: saml-loginbuttontext
   :displayname: Login button text (SAML)
@@ -1689,11 +1697,11 @@ Login button text
 
 *Available in legacy Enterprise Edition E20*
 
-(Optional) The text that appears in the login button on the login page. Defaults to **SAML**.
-
-+----------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"LoginButtonText": ""`` with string input. |
-+----------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------+--------------------------------------------------------------+
+| (Optional) The text that appears in the login button on the sign-in page. | - System Config path: **Authentication > SAML 2.0**          |
+|                                                                           | - ``config.json`` setting: ``.SamlSettings.LoginButtonText`` |
+| String input. Default is **SAML**.                                        | - Environment variable: ``MM_SAMLSETTINGS_LOGINBUTTONTEXT``  |
++---------------------------------------------------------------------------+--------------------------------------------------------------+
 
 ----
 
