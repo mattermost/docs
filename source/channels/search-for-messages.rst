@@ -12,6 +12,14 @@ Search for messages
 
 Use Mattermost search to find messages, replies, and the contents of files shared across all channels you're a member of in your team's conversation history. You can also search by `hashtags <#hashtags>`__ or perform more advanced searches using `search modifiers <#search-modifiers>`__
 
+.. |channel-info| image:: ../images/information-outline_F02FD.svg
+  :alt: Use the Channel Info icon to access additional channel management options.
+
+.. |channel-files-icon| image:: ../images/file-text-outline_F09EE.svg
+  :alt: Use the Channel Files icon to search for files attached to messages in a given channel.
+  
+From Mattermost v5.35, use the Mattermost search field to find messages, replies, and the contents of files shared across all channels you're a member of in your team's conversation history. Mobile support is coming in a future release. 
+
 Search for message and files 
 -----------------------------
 
@@ -70,6 +78,12 @@ Search for message and files
     2. To the right of search options, tap to select which team to search.
     3. Enter your search criteria, including applicable `hashtags <#hashtags>`__.
     4. Tap to apply `search modifiers <#search-modifiers>`__ to your search.
+
+.. tip::
+  To access files recently shared in a channel:
+  
+  - Select the |channel-files-icon| icon below the channel name to access files recently shared in that channel. 
+  - Select the channel name, select the **View Info** |channel-info| icon, then select **Files** in the right pane.
 
 Search modifiers
 ----------------

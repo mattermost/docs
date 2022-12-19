@@ -4,7 +4,7 @@ Compliance configuration settings
 .. include:: ../_static/badges/ent-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Access the following configuration settings in the System Console by going to **Compliance**, or by editing the ``config.json`` file as described in the following tables:
+Both self-hosted and Cloud admins can access the following configuration settings in **System Console > Compliance**. Self-hosted admins can also edit the ``config.json`` file as described in the following tables. 
 
 - `Data Retention Policies <#data-retention-policies>`__
 - `Compliance Export <#compliance-export>`__

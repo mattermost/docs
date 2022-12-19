@@ -7,7 +7,7 @@ Environment configuration settings
 .. include:: common-config-settings-notation.rst
     :start-after: :nosearch:
 
-Access the following configuration settings in the System Console by going to **Environment**, or by editing the ``config.json`` file as described in the following tables. 
+Both self-hosted and Cloud admins can access the following configuration settings in **System Console > Environment**. Self-hosted admins can also edit the ``config.json`` file as described in the following tables. 
 
 - `Web server <#web-server>`__
 - `Database <#database>`__

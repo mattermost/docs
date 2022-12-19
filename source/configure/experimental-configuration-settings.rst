@@ -1,7 +1,7 @@
 Experimental configuration settings
 =====================================
 
-Access the following experimental configuration settings:
+Both self-hosted and Cloud admins can access the following configuration settings in the System Console. Self-hosted admins can also edit the ``config.json`` file as described in the following tables. 
 
 - `Experimental System Console configuration settings <#experimental-system-console-configuration-settings>`__
 - `Experimental Bleve configuration settings <#experimental-bleve-configuration-settings>`__
@@ -379,9 +379,9 @@ This setting enables the Apps Bar and moves all Mattermost integration icons fro
   
   Integrations currently registered to the channel header will move to the Apps Bar automatically; however, we strongly encourage Mattermost integrators to update their integrations to provide the best user experience. See the `channel header plugin changes <https://forum.mattermost.com/t/channel-header-plugin-changes/13551>`__ user forum discussion for details on how to register integrations with the Apps Bar.
 
-**True**: All integration icons in the channel header move to the Apps Bar with the exception of the calls beta feature.
+**True**: **(Default for Cloud deployments)** All integration icons in the channel header move to the Apps Bar with the exception of the calls beta feature.
 
-**False**: All integration icons in the channel header display in the channel header.
+**False**: **(Default for self-hosted deployments)** All integration icons in the channel header display in the channel header.
 
 +----------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableAppBar": false`` with options ``true`` and ``false``. |
@@ -772,9 +772,9 @@ Restrict system admin
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-**True**: Restricts the System Admin from viewing and modifying a subset of server configuration settings from the System Console. Not recommended for use in on-prem installations. This is intended to support Mattermost Private Cloud in giving the System Admin role to users but restricting certain actions only for Cloud Admins.
+**True**: **(Default for Cloud deployments)** Restricts the System Admin from viewing and modifying a subset of server configuration settings from the System Console. Not recommended for use in on-prem installations. This is intended to support Mattermost Private Cloud in giving the System Admin role to users but restricting certain actions only for Cloud Admins.
 
-**False**: No restrictions are applied to the System Admin role.
+**False**: **(Default for self-host deployments)** No restrictions are applied to the System Admin role.
 
 +-------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"RestrictSystemAdmin": "false"`` with options ``true`` and ``false``. |

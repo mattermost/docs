@@ -261,6 +261,8 @@ redirects = {
         "https://docs.mattermost.com/configure/deprecated-configuration-settings.html#enable-public-channel-renaming-for",
 "administration/config-settings.html#enable-public-channel-creation-for":
         "https://docs.mattermost.com/configure/configuration-settings.html#enable-public-channel-creation-for",
+"administration/config-settings.html#enable-users-to-open-direct-message-channels-with":
+	"https://docs.mattermost.com/configure/site-configuration-settings.html#enable-users-to-open-direct-message-channels-with",
 "administration/config-settings.html#enable-x-to-leave-channels-from-left-hand-sidebar-experimental":
         "https://docs.mattermost.com/configure/deprecated-configuration-settings.html#enable-x-to-leave-channels-from-left-hand-sidebar",
 "administration/config-settings.html#environment":
@@ -2138,6 +2140,36 @@ redirects = {
         "https://docs.mattermost.com/onboard/ad-ldap.html#active-directory-ldap-setup",
 "onboard/migrating-from-hipchat-to-mattermost.html":
         "https://docs.mattermost.com/onboard/migrating-to-mattermost.html#migrating-from-slack",
+"onboard/ad-ldap-groups-synchronization.html#enabling-ad-ldap-group-synchronization": 
+        "https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html#enable-ad-ldap-group-synchronization",
+"onboard/ad-ldap-groups-synchronization.html#using-ad-ldap-group-synchronization":
+        "https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html#synchronize-ad-ldap-groups-to-mattermost",
+"onboard/ad-ldap-groups-synchronization.html#linking-ad-ldap-groups-to-mattermost-groups": 
+        "https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html#link-ad-ldap-groups-to-mattermost-groups",
+"onboard/ad-ldap-groups-synchronization.html#configuring-the-group": 
+        "https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html#configure-the-linked-group",
+"onboard/ad-ldap-groups-synchronization.html#adding-default-teams-or-channels-for-the-group": 
+        "https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html#add-default-teams-or-channels-for-the-group",
+"onboard/ad-ldap-groups-synchronization.html#synchronizing-teams-and-channels": 
+        "https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html#synchronize-teams-and-channels",
+"onboard/ad-ldap-groups-synchronization.html#removing-configured-teams-and-channels-from-a-group": 
+        "https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html#remove-configured-teams-and-channels-from-a-group",
+"onboard/ad-ldap-groups-synchronization.html#viewing-users-belonging-to-the-group": 
+        "https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html#view-users-belonging-to-the-group",
+"onboard/ad-ldap-groups-synchronization.html#disabling-and-re-activating-ad-ldap-users": 
+        "https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html#disable-and-re-activate-ad-ldap-users",
+"onboard/ad-ldap-groups-synchronization.html#managing-groups": 
+        "https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html#manage-groups",
+"onboard/ad-ldap-groups-synchronization.html#deleting-groups": 
+        "https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html#delete-groups",
+"onboard/ad-ldap-groups-synchronization.html#managing-membership-of-a-team-or-channel-with-synchronized-groups": 
+        "https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html#use-ad-ldap-synchronized-groups-to-manage-team-or-private-channel-membership",
+"onboard/ad-ldap-groups-synchronization.html#assigning-roles-to-group-members": 
+        "https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html#assign-roles-to-group-members",
+"onboard/ad-ldap-groups-synchronization.html#managing-members": 
+        "https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html#manage-members",
+"onboard/ad-ldap-groups-synchronization.html#disabling-group-synchronized-management-of-teams-and-private-channels": 
+        "https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html#disable-group-synchronized-management-of-teams-and-private-channels",
 
 # Overview redirects
 "overview/architecture.html":

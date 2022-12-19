@@ -10,7 +10,7 @@ Share links to messages
 .. |more-icon| image:: ../images/dots-horizontal_F01D8.svg
   :alt: Use the More icon to access additional message options.
 
-You can share links to Mattermost messages with other Mattermost users. Sharing message links displays a preview of the message in the post. 
+You can share links to Mattermost messages with other Mattermost users. Sharing message links displays a preview of the message in the post. The timestamp next to the username of any message also functions as a permanent link to that conversation.
 
 .. note::
   
@@ -41,3 +41,6 @@ You can share links to Mattermost messages with other Mattermost users. Sharing 
   .. tab:: Mobile app
 
     Long press a message, and then tap **Copy Link** to copy the link to the clipboard. Long press to paste the link as a message or reply. Sharing links to messages generates a preview of the message.
+    
+    
+

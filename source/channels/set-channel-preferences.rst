@@ -9,6 +9,14 @@ Set channel preferences
 
 You can set notification preferences as well as the channel's header, purpose, and name for each channel you're a member of. See the documentation for details on :doc:`renaming channels </channels/rename-channels>` and :doc:`channel naming convention recommendations </channels/channel-naming-conventions>`.
 
+.. |channel-info| image:: ../images/information-outline_F02FD.svg
+  :alt: Use the Channel Info icon to access additional channel management options.
+
+.. |vertical-3-dots| image:: ../images/dots-vertical_F01D9.svg
+  :alt: Select the More icon to access additional channel management options.
+
+For each channel you're a member of, you can set notification preferences as well as the channel's header, purpose, and name. See the documentation for details on :doc:`renaming channels </channels/rename-channels>` and :doc:`channel naming convention recommendations </channels/channel-naming-conventions>`.
+
 .. image:: ../images/channel-preferences.png
     :alt: Select the channel name at the top of the screen to set preferences for each channel you belong to.
 
@@ -16,6 +24,10 @@ Channel notification preferences
 --------------------------------
 
 To manage channel notification preferences, select the channel name at the top of the screen to access channel-specific settings, then select **Notification Preferences**.
+
+.. tip::
+
+  Alternatively, to manage channel notification preferences select the channel name, select the **View Info** |channel-info| icon, then select **Notification Preferences** in the right pane.
 
 Mute channel
 ~~~~~~~~~~~~~
@@ -115,6 +127,10 @@ Change the channel header by selecting **Edit Channel Header**. You can use Mark
 
 .. image:: ../images/channel-header.png
     :alt: Channel headers can include links to documents, tools, or websites.
+
+.. tip::
+
+  Alternatively, to provide or update a channel header, select the channel name, then select **Edit Channel Header** from the list of options.
 
 Channel purpose
 ---------------
