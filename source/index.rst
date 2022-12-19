@@ -26,3 +26,4 @@ Mattermost product documentation
    Get help with Mattermost <guides/get-help>
    Community chat <guides/community-chat>
    Mattermost Handbook <https://handbook.mattermost.com/>
+   Contribute to this site <guides/contribute-to-documentation>
