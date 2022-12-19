@@ -66,6 +66,7 @@ Work with messages
    :hidden:
 
    Send messages </channels/send-messages>
+   Set message priority </channels/message-priority>
    Reply to messages </channels/reply-to-messages>
    Organize conversations </channels/organize-conversations>
    React to messages using emojis </channels/react-to-messages>
@@ -79,6 +80,7 @@ Work with messages
    Search for messages </channels/search-for-messages>
 
 * :doc:`Send messages </channels/send-messages>` - Send messages to other Mattermost users.
+* :doc:`Set message priority </channels/message-priority>` - Ensure important and urgent messages stand out clearly by adding priority labels, and requesting message acknowledgements.
 * :doc:`Reply to messages </channels/reply-to-messages>` - Communicate with your team in Mattermost.
 * :doc:`Organize conversations with Collapsed Reply Threads </channels/organize-conversations>` - An enhanced communication thread experience is available in Mattermost.
 * :doc:`React to messages using emojis </channels/react-to-messages>` - Use emojis to express concepts, emotions, and physical gestures in your messages.

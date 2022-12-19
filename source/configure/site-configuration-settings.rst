@@ -674,6 +674,21 @@ Collapsed reply threads
 | - **Disabled**: Users cannot enable Collapsed Reply Threads. ``config.json`` setting: ``"disabled"``                                                                                                                                                                                                                                                                 |                                                                    |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------+
 
+Message priority
+~~~~~~~~~~~~~~~~~
+
++-----------------------------------------------------------------------------+------------------------------------------------------------------------+
+| - **true**: **(Default)** Enables message priority for all users which      | - System Config path: **Site Configuration > Posts**                   |
+|   enables them to set a visual indiciator for important or urgent root      | | - ``config.json`` setting: ``.ServiceSettings.PostPriority: true``   |
+|   messages.                                                                 | - Environment variable: ``MM_SERVICESETTINGS_POSTPRIORITY``            |
+| - **false**: Disables the ability to set message priority and request       |                                                                        |
+|   acknowledgements.                                                         |                                                                        |
++-----------------------------------------------------------------------------+------------------------------------------------------------------------+
+| **Note**: `Mattermost Professional or Enterprise <https://mattermost.com/pricing>`__ customers can additionally request message acknowledgements to  |
+| track that specific, time-sensitive messages have been seen and actioned. See the                                                                    |
+| `message priority <https://docs.mattermost.com/channels/message-priority>`__ documentation to learn more.                                            |
++-----------------------------------------------------------------------------+------------------------------------------------------------------------+
+
 Enable website link previews
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
