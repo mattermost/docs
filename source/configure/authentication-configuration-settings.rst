@@ -1241,70 +1241,71 @@ Google OAuth 2.0 settings
 .. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Enable authentication with Google by selecting ``Google Apps`` from **OAuth 2.0 > Select OAuth 2.0 service provider**.
+Enable OAuth 2.0 authentication with Google
+'''''''''''''''''''''''''''''''''''''''''''
 
-**True**: Allow team creation and account signup using Google OAuth. To configure, input the **Client ID** and **Client Secret** credentials. See `the documentation <https://docs.mattermost.com/onboard/sso-google.html>`__ for more detail.
++---------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
+| - **true**: Allows team and account creation using Google OAuth authentication. Input the **Client ID** and **Client Secret** credentials to configure. | - System Config path: **Authentication > OAuth 2.0**         |
+| - **false**: **(Default)** Disables Google OAuth authentication.                                                                                        | - ``config.json`` setting: ``.GoogleSettings.Enable: false`` |
+|                                                                                                                                                         | - Environment variable: ``MM_GOOGLESETTINGS_ENABLE``         |
++---------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
 
-**False**: Google OAuth cannot be used for team creation or account signup.
-
-+----------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Enable": false`` with options ``true`` and ``false``. |
-+----------------------------------------------------------------------------------------------------+
-
-Client ID
-'''''''''
-
-*Available in legacy Enterprise Edition E20*
-
-Obtain this value by registering Mattermost as an application in your Google account.
-
-+---------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Id": ""`` with string input. |
-+---------------------------------------------------------------------------+
-
-Client secret
-'''''''''''''
+Google OAuth 2.0 Client ID
+''''''''''''''''''''''''''
 
 *Available in legacy Enterprise Edition E20*
 
-Obtain this value by registering Mattermost as an application in your Google account.
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------+
+| This setting stores the OAuth Client ID from Google. Generate the ID by going to the **Credentials** section of the Google Cloud Platform APIs & Services menu and selecting **Create Credentials > OAuth client ID**. | - System Config path: **Authentication > OAuth 2.0** |
+|                                                                                                                                                                                                                        | - ``config.json`` setting: ``.GoogleSettings.Id``    |
+| See `Google Single Sign-On <https://docs.mattermost.com/onboard/sso-google.html>`__  for instructions that can be used to implement Google OAuth or OpenID authentication.                                             | - Environment variable: ``MM_GOOGLESETTINGS_ID``     |
+|                                                                                                                                                                                                                        |                                                      |
+| String input.                                                                                                                                                                                                          |                                                      |
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------+
 
-+-------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Secret": ""`` with string input. |
-+-------------------------------------------------------------------------------+
-
-User API endpoint
-''''''''''''''''''
-
-*Available in legacy Enterprise Edition E20*
-
-We recommend you use ``https://people.googleapis.com/v1/people/me?personFields=names,emailAddresses,nicknames,metadata`` as the User API Endpoint. Otherwise, enter a custom endpoint in ``config.json`` with HTTP or HTTPS depending on how your server is configured.
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"UserApiEndpoint": "https://people.googleapis.com/v1/people/me?personFields=names,emailAddresses,nicknames,metadata"``   |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Auth endpoint
-'''''''''''''
+Google OAuth 2.0 Client secret
+''''''''''''''''''''''''''''''
 
 *Available in legacy Enterprise Edition E20*
 
-We recommend you use ``https://accounts.google.com/o/oauth2/v2/auth`` as the Auth Endpoint. Otherwise, enter a custom endpoint in ``config.json`` with HTTP or HTTPS depending on how your server is configured.
++---------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------+
+| This setting stores the OAuth Client Secret from Google. The Secret is generated at the same time as the Client ID. | - System Config path: **Authentication > OAuth 2.0**  |
+|                                                                                                                     | - ``config.json`` setting: ``.GoogleSettings.Secret`` |
+| String input.                                                                                                       | - Environment variable: ``MM_GOOGLESETTINGS_SECRET``  |
++---------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------+
 
-+---------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"AuthEndpoint": "https://accounts.google.com/o/oauth2/v2/auth"`` with string input. |
-+---------------------------------------------------------------------------------------------------------------------------------+
-
-Token endpoint
-'''''''''''''''
+Google OAuth 2.0 User API endpoint
+''''''''''''''''''''''''''''''''''
 
 *Available in legacy Enterprise Edition E20*
 
-We recommend that you use ``https://www.googleapis.com/oauth2/v4/token`` as the Token Endpoint. Otherwise, enter a custom endpoint in ``config.json`` with HTTP or HTTPS depending on how your server is configured.
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------+
+| We recommend ``https://people.googleapis.com/v1/people/me?personFields=names,emailAddresses,nicknames,metadata`` as the User API Endpoint. Otherwise, enter a custom endpoint in ``config.json`` with HTTP, or HTTPS, if available on the API server. | - System Config path: **Authentication > OAuth 2.0**           |
+|                                                                                                                                                                                                                                                       | - ``config.json`` setting: ``.GoogleSettings.UserAPIEndpoint`` |
+| String input.                                                                                                                                                                                                                                         | - Environment variable: ``MM_GOOGLESETTINGS_USERAPIENDPOINT``  |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------+
 
-+--------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"TokenEndpoint": "https://www.googleapis.com/oauth2/v4/token"`` with string input. |
-+--------------------------------------------------------------------------------------------------------------------------------+
+Google OAuth 2.0 Auth endpoint
+''''''''''''''''''''''''''''''
+
+*Available in legacy Enterprise Edition E20*
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------+
+| We recommend ``https://accounts.google.com/o/oauth2/v2/auth`` as the Auth Endpoint. Otherwise, enter a custom endpoint in ``config.json`` with HTTP, or HTTPS, if available on the server. | - System Config path: **Authentication > OAuth 2.0**        |
+|                                                                                                                                                                                            | - ``config.json`` setting: ``.GoogleSettings.AuthEndpoint`` |
+| String input.                                                                                                                                                                              | - Environment variable: ``MM_GOOGLESETTINGS_AUTHENDPOINT``  |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------+
+
+Google OAuth 2.0 Token endpoint
+'''''''''''''''''''''''''''''''
+
+*Available in legacy Enterprise Edition E20*
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
+| We recommend ``https://www.googleapis.com/oauth2/v4/token`` as the Token Endpoint. Otherwise, enter a custom endpoint in ``config.json`` with HTTP, or HTTPS, if available on the server. | - System Config path: **Authentication > OAuth 2.0**         |
+|                                                                                                                                                                                           | - ``config.json`` setting: ``.GoogleSettings.TokenEndpoint`` |
+| String input.                                                                                                                                                                             | - Environment variable: ``MM_GOOGLESETTINGS_TOKENENDPOINT``  |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
 
 Office 365 OAuth 2.0 settings
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
