@@ -13,7 +13,7 @@ Set message priority (beta)
 .. |acknowledged-icon| image:: ../images/Ack-Button-Active.svg
   :alt: Hover over the Acknowledged icon to see who has read and actioned the message. Select the icon to remove your acknowledgement within five minutes.
 
-From Mattermost v7.6, you can add a message priority label to root messages to make important messages requiring timely action or response more visible and less likely to be overlooked.
+From Mattermost v7.7, you can add a message priority label to root messages to make important messages requiring timely action or response more visible and less likely to be overlooked.
 
 .. image:: ../images/Message-Priority-Animated-optimized.gif
   :width: 700
