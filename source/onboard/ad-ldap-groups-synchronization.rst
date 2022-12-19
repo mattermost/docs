@@ -153,7 +153,7 @@ Disable and re-activate AD/LDAP users
 
 From Mattermost v5.36, if a member is removed from an AD/LDAP group, deactivated in AD/LDAP, or filtered from the AD/LDAP user filter, that member loses access to Mattermost.
 
-From Mattermost v7.6, system admins can add members back to all of the member's default teams and channels in the System Console by going to **User Management > Users**, selecting the user's role, then selecting the **Re-sync user via LDAP groups** option.
+From Mattermost v7.7, system admins can add members back to all of the member's default teams and channels in the System Console by going to **User Management > Users**, selecting the user's role, then selecting the **Re-sync user via LDAP groups** option.
 
 .. tip::
 
