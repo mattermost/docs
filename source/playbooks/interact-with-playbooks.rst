@@ -7,11 +7,11 @@ Interact with playbooks
 Slash commands
 --------------
 
-Slash commands are available for playbooks. The ``/playbook`` slash command allows interaction with incidents via the post textbox on desktop, browser, and mobile. To run a playbook use the ``/playbook start`` slash command from any channel.
+Slash commands are available for playbooks. The ``/playbook`` slash command allows interaction with incidents via the post textbox on desktop, browser, and mobile. To run a playbook use the ``/playbook run`` slash command from any channel.
 
 Available slash commands include:
 
-- ``/playbook start`` - Start a playbook run.
+- ``/playbook run`` - Start a playbook run.
 - ``/playbook end`` - End a playbook run.
 - ``/playbook update`` - Update the current playbook run's status.
 - ``/playbook restart`` - Restart an ended playbook run.
