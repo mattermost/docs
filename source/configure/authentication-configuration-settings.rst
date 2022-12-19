@@ -1058,11 +1058,11 @@ Access the following configuration settings in the System Console by going to **
 .. config:setting:: saml-enablelogin
   :displayname: Enable login with SAML (SAML)
   :systemconsole: Authentication > SAML 2.0
-  :configjson: Enable
-  :environment: N/A
+  :configjson: .SamlSettings.Enable
+  :environment: MM_SAMLSETTINGS_ENABLE
 
-  - **true**: Mattermost allows login using SAML. Please see `documentation <https://docs.mattermost.com/onboard/sso-saml.html>`__ to learn more about configuring SAML for Mattermost.
-  - **false**: **(Default)** Login with SAML is disabled.
+  - **true**: Enables sign-in with SAML. See `SAML Single Sign-On <https://docs.mattermost.com/onboard/sso-saml.html>`__ to learn more.
+  - **false**: **(Default)** Disables sign-in with SAML.
 
 Enable login with SAML
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -1081,11 +1081,11 @@ Enable login with SAML
 .. config:setting:: saml-enablesyncwithldap
   :displayname: Enable synchronizing SAML accounts with AD/LDAP (SAML)
   :systemconsole: Authentication > SAML 2.0
-  :configjson: EnableSyncWithLdap
-  :environment: N/A
+  :configjson: .SamlSettings.EnableSyncWithLdap
+  :environment: MM_SAMLSETTINGS_ENABLESYNCWITHLDAP
 
-  - **true**: Mattermost periodically synchronizes SAML user attributes, including user deactivation and removal, with AD/LDAP.
-  - **false**: **(Default)** Synchronization of SAML accounts with AD/LDAP is disabled.
+  - **true**: Mattermost updates configured Mattermost user attributes (ex. FirstName, Position, Email) with their values from AD/LDAP.
+  - **false**: **(Default)** Disables syncing of SAML-authenticated Mattermost users with AD/LDAP.
 
 Enable synchronizing SAML accounts with AD/LDAP
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1105,13 +1105,11 @@ Enable synchronizing SAML accounts with AD/LDAP
 .. config:setting:: saml-ignoreguestsldapsync
   :displayname: Ignore guest users when synchronizing with AD/LDAP (SAML)
   :systemconsole: Authentication > SAML 2.0
-  :configjson: IgnoreGuestsLdapSync
-  :environment: N/A
+  :configjson: .SamlSettings.IgnoreGuestsLdapSync
+  :environment: MM_SAMLSETTINGS_IGNOREGUESTSLDAPSYNC
 
-  Available when ``Enable Synchronizing SAML Accounts With AD/LDAP`` is set to ``true``.
-
-  - **true**: Mattermost ignores Guest Users identified by the Guest Attribute when synchronizing with AD/LDAP on user deactivation and removal.
-  - **false**: Synchronization of SAML deactivates and removes Guest Users when synchronizing with AD/LDAP.
+  - **true**: When syncing with the AD/LDAP server, Mattermost does not sync any information about SAML-authenticated Guest Users from the AD/LDAP server.
+  - **false**: **(Default)** Syncing Mattermost with the AD/LDAP server updates Guest User attributes and deactivates and removes SAML-authenticated accounts for Guest Users that are no longer active on the AD/LDAP server.
 
 Ignore guest users when synchronizing with AD/LDAP
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1128,14 +1126,13 @@ Ignore guest users when synchronizing with AD/LDAP
 | For more information, see `AD/LDAP Setup <https://docs.mattermost.com/onboard/ad-ldap.html>`__ and `Advanced User Management <https://docs.mattermost.com/guides/administration.html#advanced-user-management>`__.           |                                                                          |
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
-
 .. config:setting:: saml-overridebindwithldap
   :displayname: Override SAML bind data with AD/LDAP information (SAML)
   :systemconsole: Authentication > SAML 2.0
-  :configjson: EnableSyncWithLdapIncludeAuth
-  :environment: N/A
+  :configjson: .SamlSettings.EnableSyncWithLdapIncludeAuth
+  :environment: MM_SAMLSETTINGS_ENABLESYNCWITHLDAPINCLUDEAUTH
 
-  - **true**: Mattermost overrides the SAML ID attribute with the AD/LDAP ID attribute if configured or overrides the SAML Email attribute with the AD/LDAP Email attribute if SAML ID attribute is not present.
+  - **true**: If the SAML ID attribute is configured, Mattermost overrides the SAML ID attribute with the AD/LDAP ID attribute.
   - **false**: **(Default)** Mattermost uses the email attribute to bind users to SAML.
 
 Override SAML bind data with AD/LDAP information
@@ -1161,9 +1158,9 @@ Override SAML bind data with AD/LDAP information
 .. config:setting:: saml-providermetadataurl
   :displayname: Identity provider metadata URL (SAML)
   :systemconsole: Authentication > SAML 2.0
-  :configjson: IdpMetadataUrl
-  :environment: N/A
-  :description: The URL where Mattermost sends a request to obtain setup metadata from the provider.
+  :configjson: .SamlSettings.IdpMetadataURL
+  :environment: MM_SAMLSETTINGS_IDPMETADATAURL
+  :description: This setting is the URL from which Mattermost requests setup metadata from the provider.
 
 Identity provider metadata URL
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1182,9 +1179,9 @@ Identity provider metadata URL
 .. config:setting:: saml-ssourl
   :displayname: SAML SSO URL (SAML)
   :systemconsole: Authentication > SAML 2.0
-  :configjson: IdpURL
-  :environment: N/A
-  :description: The URL where Mattermost sends a SAML request to start login sequence.
+  :configjson: .SamlSettings.IdpURL
+  :environment: MM_SAMLSETTINGS_IDPURL
+  :description: This setting is the URL where Mattermost sends a SAML request to start the login sequence.
 
 SAML SSO URL
 ~~~~~~~~~~~~
@@ -1203,9 +1200,9 @@ SAML SSO URL
 .. config:setting:: saml-providerissuerurl
   :displayname: Identity provider issuer URL (SAML)
   :systemconsole: Authentication > SAML 2.0
-  :configjson: IdpDescriptorUrl
-  :environment: N/A
-  :description: The issuer URL for the Identity Provider you use for SAML requests.
+  :configjson: .SamlSettings.IdpDescriptorURL
+  :environment: MM_SAMLSETTINGS_IDPDESCRIPTORURL
+  :description: This setting is the issuer URL for the Identity Provider for SAML requests.
 
 Identity provider issuer URL
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1224,8 +1221,8 @@ Identity provider issuer URL
 .. config:setting:: saml-providerpubliccert
   :displayname: Identity provider public certificate (SAML)
   :systemconsole: Authentication > SAML 2.0
-  :configjson: IdpCertificateFile
-  :environment: N/A
+  :configjson: .SamlSettings.IdpCertificateFile
+  :environment: MM_SAMLSETTINGS_IDPCERTIFICATEFILE
   :description: The public authentication certificate issued by your Identity Provider.
 
 Identity provider public certificate
@@ -1245,11 +1242,11 @@ Identity provider public certificate
 .. config:setting:: saml-verifysignature
   :displayname: Verify signature (SAML)
   :systemconsole: Authentication > SAML 2.0
-  :configjson: Verify
-  :environment: N/A
+  :configjson: .SamlSettings.Verify
+  :environment: MM_SAMLSETTINGS_VERIFY
 
-  - **true**: **(Default)** Mattermost verifies that the signature sent from the SAML Response matches the Service Provider Login URL.
-  - **false**: Not recommended for production environments. For testing only.
+  - **true**: **(Default)** Mattermost checks that the SAML Response signature matches the Service Provider Login URL.
+  - **false**: The signature is not verified. This is **not recommended** for production. Use this option for testing only.
 
 Verify signature
 ~~~~~~~~~~~~~~~~
@@ -1268,12 +1265,11 @@ Verify signature
 .. config:setting:: saml-providerloginurl
   :displayname: Service provider login URL (SAML)
   :systemconsole: Authentication > SAML 2.0
-  :configjson: AssertionConsumerServiceURL
-  :environment: N/A
+  :configjson: .SamlSettings.AssertionConsumerServiceURL
+  :environment: MM_SAMLSETTINGS_ASSERTIONCONSUMERSERVICEURL
 
-  This field is also known as the Assertion Consumer Service URL.
-  Enter ``https://<your-mattermost-url>/login/sso/saml`` (example: ``https://example.com/login/sso/saml``).
-  Make sure you use HTTP or HTTPS in your URL depending on your server configuration.
+  Enter the URL of your Mattermost server, followed by ``/login/sso/saml``, i.e. ``https://example.com/login/sso/saml``.
+  This setting is also known as the Assertion Consumer Service URL.
 
 Service provider login URL
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1294,9 +1290,9 @@ Service provider login URL
 .. config:setting:: saml-provideridentifier
   :displayname: Service provider identifier (SAML)
   :systemconsole: Authentication > SAML 2.0
-  :configjson: ServiceProviderIdentifier
-  :environment: N/A
-  :description: The unique identifier for the Service Provider, usually the same as Service Provider Login URL. In ADFS, this must match the Relying Party Identifier.
+  :configjson: .SamlSettings.ServiceProviderIdentifier
+  :environment: MM_SAMLSETTINGS_SERVICEPROVIDERIDENTIFIER
+  :description: This setting is the unique identifier for the Service Provider, which in most cases is the same as the Service Provider Login URL. In ADFS, this must match the Relying Party Identifier.
 
 Service provider identifier
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1315,11 +1311,11 @@ Service provider identifier
 .. config:setting:: saml-encryption
   :displayname: Enable encryption (SAML)
   :systemconsole: Authentication > SAML 2.0
-  :configjson: Encrypt
-  :environment: N/A
+  :configjson: .SamlSettings.Encrypt
+  :environment: MM_SAMLSETTINGS_ENCRYPT
 
-  - **true**: **(Default)** Mattermost will decrypt SAML Assertions encrypted with your Service Provider Public Certificate.
-  - **false**: Not recommended for production environments. For testing only.
+  - **true**: **(Default)** Mattermost will decrypt SAML Assertions that are encrypted with your Service Provider Public Certificate.
+  - **false**: Mattermost does not decrypt SAML Assertions. Use this option for testing only. It is **not recommended** for production.
 
 Enable encryption
 ~~~~~~~~~~~~~~~~~
@@ -1338,9 +1334,9 @@ Enable encryption
 .. config:setting:: saml-providerprivatekey
   :displayname: Service provider private key (SAML)
   :systemconsole: Authentication > SAML 2.0
-  :configjson: PrivateKeyFile
-  :environment: N/A
-  :description: The private key used to decrypt SAML Assertions from the Identity Provider.
+  :configjson: .SamlSettings.PrivateKeyFile
+  :environment: MM_SAMLSETTINGS_PRIVATEKEYFILE
+  :description: This setting stores the private key used to decrypt SAML Assertions from the Identity Provider.
 
 Service provider private key
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1359,9 +1355,9 @@ Service provider private key
 .. config:setting:: saml-serviceproviderpubliccert
   :displayname: Service provider public certificate (SAML)
   :systemconsole: Authentication > SAML 2.0
-  :configjson: PublicCertificateFile
-  :environment: N/A
-  :description: The certificate file used to generate the signature on a SAML request to the Identity Provider for a service provider initiated SAML login, when Mattermost is the Service Provider.
+  :configjson: .SamlSettings.PublicCertificateFile
+  :environment: MM_SAMLSETTINGS_PUBLICCERTIFICATEFILE
+  :description: This setting stores the certificate file used to sign a SAML request to the Identity Provider for a SAML login when Mattermost is initiating the login as the Service Provider.
 
 Service provider public certificate
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1380,9 +1376,11 @@ Service provider public certificate
 .. config:setting:: saml-signrequest
   :displayname: Sign request (SAML)
   :systemconsole: Authentication > SAML 2.0
-  :configjson: SignRequest
-  :environment: N/A
-  :description: When ``true``, Mattermost signs the SAML request using your Service Provider Private Key. When ``false``, Mattermost does not sign the SAML request.
+  :configjson: .SamlSettings.SignRequest
+  :environment: MM_SAMLSETTINGS_SIGNREQUEST
+
+  - **true**: Mattermost signs the SAML request with the Service Provider Private Key.
+  - **false**: Mattermost does not sign the SAML request.
 
 Sign request
 ~~~~~~~~~~~~
@@ -1394,20 +1392,16 @@ Sign request
 
 +--------------------------------------------------------------------------------------+------------------------------------------------------------+
 | - **true**: Mattermost signs the SAML request with the Service Provider Private Key. | - System Config path: **Authentication > SAML 2.0**        |
-| - **false**: Mattermost does not sign the SAML request.                              | - ``config.json`` setting: ``.SamlSettings.SignRequest: `` |
+| - **false**: Mattermost does not sign the SAML request.                              | - ``config.json`` setting: ``.SamlSettings.SignRequest``   |
 |                                                                                      | - Environment variable: ``MM_SAMLSETTINGS_SIGNREQUEST``    |
 +--------------------------------------------------------------------------------------+------------------------------------------------------------+
 
 .. config:setting:: saml-signaturealgo
   :displayname: Signature algorithm
   :systemconsole: Authentication > SAML 2.0
-  :configjson: SignatureAlgorithm
-  :environment: N/A
-
-  The signature algorithm used to sign the request. Supported options are:
-  - `RSAwithSHA1 <https://www.w3.org/2000/09/xmldsig#rsa-sha1>`__
-  - `RSAwithSHA256 <https://www.w3.org/2000/09/xmldsig#rsa-sha1>`__
-  - `RSAwithSHA512 <https://www.w3.org/2001/04/xmldsig-more#rsa-sha512>`__
+  :configjson: .SamlSettings.SignatureAlgorithm
+  :environment: MM_SAMLSETTINGS_SIGNATUREALGORITHM
+  :description: This setting determines the signature algorithm used to sign the SAML request. Options are: ``RSAwithSHA1``, ``RSAwithSHA256``, ``RSAwithSHA512``.
 
 Signature algorithm
 ~~~~~~~~~~~~~~~~~~~
@@ -1426,10 +1420,10 @@ Signature algorithm
 .. config:setting:: saml-canonicalalgo
   :displayname: Canonical algorithm (SAML)
   :systemconsole: Authentication > SAML 2.0
-  :configjson: CanonicalAlgorithm
-  :environment: N/A
+  :configjson: .SamlSettings.CanonicalAlgorithm
+  :environment: MM_SAMLSETTINGS_CANONICALALGORITHM
 
-  The canonicalization algorithm. Supported options are:
+  This setting determines the canonicalization algorithm. With these options:
   - ``Canonical1.0`` **(Default)** for `Exclusive XML Canonicalization 1.0 (omit comments) <https://www.w3.org/TR/2002/REC-xml-exc-c14n-20020718/>`__ (``http://www.w3.org/2001/10/xml-exc-c14n#``)
   - ``Canonical1.1`` for `Canonical XML 1.1 (omit comments) <https://www.w3.org/TR/2008/REC-xml-c14n11-20080502/>`__ (``http://www.w3.org/2006/12/xml-c14n11``)
 
@@ -1453,9 +1447,9 @@ Canonical algorithm
 .. config:setting:: saml-emailattribute
   :displayname: Email attribute (SAML)
   :systemconsole: Authentication > SAML 2.0
-  :configjson: EmailAttribute
-  :environment: N/A
-  :description: The attribute in the SAML Assertion that will be used to populate the email addresses of users in Mattermost.
+  :configjson: .SamlSettings.EmailAttribute
+  :environment: MM_SAMLSETTINGS_EMAILATTRIBUTE
+  :description: This setting determines the attribute from the SAML Assertion that populates the user email address field in Mattermost.
 
 Email attribute
 ~~~~~~~~~~~~~~~
@@ -1476,9 +1470,9 @@ Email attribute
 .. config:setting:: saml-usernameattribute
   :displayname: Username attribute (SAML)
   :systemconsole: Authentication > SAML 2.0
-  :configjson: UsernameAttribute
-  :environment: N/A
-  :description: The attribute in the SAML Assertion that will be used to populate the username field in Mattermost user interface.
+  :configjson: .SamlSettings.UsernameAttribute
+  :environment: MM_SAMLSETTINGS_USERNAMEATTRIBUTE
+  :description: This setting determines the SAML Assertion attribute that populates the username field in the Mattermost UI.
 
 Username attribute
 ~~~~~~~~~~~~~~~~~~
@@ -1499,9 +1493,9 @@ Username attribute
 .. config:setting:: saml-idattribute
   :displayname: Id attribute (SAML)
   :systemconsole: Authentication > SAML 2.0
-  :configjson: IdAttribute
-  :environment: N/A
-  :description: (Optional) The attribute in the SAML Assertion used to bind users from SAML to users in Mattermost.
+  :configjson: .SamlSettings.IdAttribute
+  :environment: MM_SAMLSETTINGS_IDATTRIBUTE
+  :description: (Optional) This setting determines the SAML Assertion attribute used to bind users from SAML to users in Mattermost.
 
 Id attribute
 ~~~~~~~~~~~~
@@ -1520,9 +1514,9 @@ Id attribute
 .. config:setting:: saml-guestattribute
   :displayname: Guest attribute (SAML)
   :systemconsole: Authentication > SAML 2.0
-  :configjson: GuestAttribute
-  :environment: N/A
-  :description: (Optional) The attribute in the SAML Assertion used to apply a Guest role to users in Mattermost.
+  :configjson: .SamlSettings.GuestAttribute
+  :environment: MM_SAMLSETTINGS_GUESTATTRIBUTE
+  :description: (Optional) This setting determines the SAML Assertion attribute used to apply a Guest role to users in Mattermost.
 
 Guest attribute
 ~~~~~~~~~~~~~~~
@@ -1540,6 +1534,15 @@ Guest attribute
 | String input.                                                                                                            |                                                                 |
 +--------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
 
+.. config:setting:: saml-enableadminattribute
+  :displayname: Enable admin attribute (SAML)
+  :systemconsole: Authentication > SAML 2.0
+  :configjson: .SamlSettings.EnableAdminAttribute
+  :environment: MM_SAMLSETTINGS_ENABLEADMINATTRIBUTE
+
+  - **true**: System Admin status is determined by the SAML Assertion attribute set in **Admin attribute**.
+  - **false**: **(Default)** System Admin status is **not** determined by the SAML Assertion attribute
+
 Enable admin attribute
 ~~~~~~~~~~~~~~~~~~~~~~
 
@@ -1553,6 +1556,13 @@ Enable admin attribute
 | - **false**: **(Default)** System Admin status is **not** determined by the SAML Assertion attribute.     | - ``config.json`` setting: ``.SamlSettings.EnableAdminAttribute: false`` |
 |                                                                                                           | - Environment variable: ``MM_SAMLSETTINGS_ENABLEADMINATTRIBUTE``         |
 +-----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+
+.. config:setting:: saml-adminattribute
+  :displayname: Admin attribute (SAML)
+  :systemconsole: Authentication > SAML 2.0
+  :configjson: .SamlSettings.AdminAttribute
+  :environment: MM_SAMLSETTINGS_ADMINATTRIBUTE
+  :description: (Optional) This setting determines the attribute in the SAML Assertion for designating System Admins.
 
 Admin attribute
 ~~~~~~~~~~~~~~~
@@ -1575,9 +1585,9 @@ Admin attribute
 .. config:setting:: saml-firstnameattribute
   :displayname: First name attribute (SAML)
   :systemconsole: Authentication > SAML 2.0
-  :configjson: FirstNameAttribute
-  :environment: N/A
-  :description: (Optional) The attribute in the SAML Assertion that will be used to populate the first name of users in Mattermost.
+  :configjson: .SamlSettings.FirstNameAttribute
+  :environment: MM_SAMLSETTINGS_FIRSTNAMEATTRIBUTE
+  :description: (Optional) This setting determines the SAML Assertion attribute that populates the first name of users in Mattermost.
 
 First name attribute
 ~~~~~~~~~~~~~~~~~~~~
@@ -1597,9 +1607,9 @@ First name attribute
 .. config:setting:: saml-lastnameattribute
   :displayname: Last name attribute (SAML)
   :systemconsole: Authentication > SAML 2.0
-  :configjson: LastNameAttribute
-  :environment: N/A
-  :description: (Optional) The attribute in the SAML Assertion that will be used to populate the last name of users in Mattermost.
+  :configjson: .SamlSettings.LastNameAttribute
+  :environment: MM_SAMLSETTINGS_LASTNAMEATTRIBUTE
+  :description: (Optional) This setting determines the SAML Assertion attribute that populates the last name of users in Mattermost.
 
 Last name attribute
 ~~~~~~~~~~~~~~~~~~~
@@ -1619,9 +1629,9 @@ Last name attribute
 .. config:setting:: saml-nicknameattribute
   :displayname: Nickname attribute (SAML)
   :systemconsole: Authentication > SAML 2.0
-  :configjson: NicknameAttribute
-  :environment: N/A
-  :description: (Optional) The attribute in the SAML Assertion that will be used to populate the nickname of users in Mattermost.
+  :configjson: .SamlSettings.NicknameAttribute
+  :environment: MM_SAMLSETTINGS_NICKNAMEATTRIBUTE
+  :description: (Optional) This setting determines the SAML Assertion attribute that populates the nickname of users in Mattermost.
 
 Nickname attribute
 ~~~~~~~~~~~~~~~~~~
@@ -1641,9 +1651,9 @@ Nickname attribute
 .. config:setting:: saml-positionattribute
   :displayname: Position atribute (SAML)
   :systemconsole: Authentication > SAML 2.0
-  :configjson: PositionAttribute
-  :environment: N/A
-  :description: (Optional) The attribute in the SAML Assertion that will be used to populate the position field for users in Mattermost.
+  :configjson: .SamlSettings.PositionAttribute
+  :environment: MM_SAMLSETTINGS_POSITIONATTRIBUTE
+  :description: (Optional) This setting determines the SAML Assertion attribute that populates the position (job title or role at company) of users in Mattermost.
 
 Position attribute
 ~~~~~~~~~~~~~~~~~~
@@ -1663,9 +1673,9 @@ Position attribute
 .. config:setting:: saml-localeattribute
   :displayname: Preferred language attribute (SAML)
   :systemconsole: Authentication > SAML 2.0
-  :configjson: LocaleAttribute
-  :environment: N/A
-  :description: (Optional) The attribute in the SAML Assertion that will be used to populate the language of users in Mattermost.
+  :configjson: .SamlSettings.LocaleAttribute
+  :environment: MM_SAMLSETTINGS_LOCALEATTRIBUTE
+  :description: (Optional) This setting determines the SAML Assertion attribute that populates the language preference of users in Mattermost.
 
 Preferred language attribute
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1685,9 +1695,9 @@ Preferred language attribute
 .. config:setting:: saml-loginbuttontext
   :displayname: Login button text (SAML)
   :systemconsole: Authentication > SAML 2.0
-  :configjson: LoginButtonText
-  :environment: N/A
-  :description: (Optional) The text that appears in the login button on the login page. Defaults to **SAML**.
+  :configjson: .SamlSettings.LoginButtonText
+  :environment: MM_SAMLSETTINGS_LOGINBUTTONTEXT
+  :description: (Optional) The text that appears in the login button on the login page. Default is **SAML**.
 
 Login button text
 ~~~~~~~~~~~~~~~~~
@@ -1724,7 +1734,7 @@ Use these settings to configure OAuth 2.0 for account creation and login.
   :systemconsole: Authentication > OAuth 2.0
   :configjson: N/A
   :environment: N/A
-  :description: Choose whether OAuth can be used for account creation and login.
+  :description: Use this setting to enable OAuth and specify the service provider.
 
 Select OAuth 2.0 service provider
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1746,11 +1756,17 @@ GitLab OAuth 2.0 settings
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
+.. note::
+   For Enterprise subscriptions, GitLab settings can be found under **OAuth 2.0**
+
 .. config:setting:: oauth-gitlabenable
-  :displayname: Enable authentication with GitLab (OAuth - GitLab)
-  :systemconsole: Authentication > OAuth 2.0
-  :configjson: Enable
-  :environment: N/A
+  :displayname: Enable OAuth 2.0 authentication with GitLab (OAuth - GitLab)
+  :systemconsole: Authentication > OAuth 2.0 (or GitLab)
+  :configjson: .GitLabSettings.Enable
+  :environment: MM_GITLABSETTINGS_ENABLE
+
+  - **true**: Allows team and account creation using GitLab OAuth authentication. Input the **Secret** and **ID** credentials to configure.
+  - **false**: **(Default)** Disables GitLab OAuth authentication.
 
 Enable OAuth 2.0 authentication with GitLab
 '''''''''''''''''''''''''''''''''''''''''''
@@ -1761,15 +1777,12 @@ Enable OAuth 2.0 authentication with GitLab
 |                                                                                                                                           | - Environment variable: ``MM_GITLABSETTINGS_ENABLE``             |
 +-------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
 
-.. note:: 
-   For Enterprise subscriptions, GitLab settings can be found under **OAuth 2.0**
-
 .. config:setting:: oauth-gitlabappid
-  :displayname: Application ID (OAuth - GitLab)
-  :systemconsole: Authentication > OAuth 2.0
-  :configjson: Id
-  :environment: N/A
-  :description: Obtain this value by logging into your GitLab account.
+  :displayname: GitLab OAuth 2.0 Application ID (OAuth - GitLab)
+  :systemconsole: Authentication > OAuth 2.0 (or GitLab)
+  :configjson: .GitLabSettings.Id
+  :environment: MM_GITLABSETTINGS_ID
+  :description: This setting holds the OAuth Application ID from GitLab.
 
 GitLab OAuth 2.0 Application ID
 '''''''''''''''''''''''''''''''
@@ -1787,6 +1800,13 @@ GitLab OAuth 2.0 Application ID
 | Note: GitLab provides the `Application Secret Key <#gitlab-oauth-2-0-application-secret-key>`__ along with the the ID.                                                                                                  |
 +------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
 
+.. config:setting:: oauth-gitlabappsecretkey
+  :displayname: GitLab OAuth 2.0 Application secret key (OAuth - GitLab)
+  :systemconsole: Authentication > OAuth 2.0 (or GitLab)
+  :configjson: .GitLabSettings.Secret
+  :environment: MM_GITLABSETTINGS_SECRET
+  :description: This setting holds the OAuth Application Secret Key from GitLab.
+
 GitLab OAuth 2.0 Application secret key
 '''''''''''''''''''''''''''''''''''''''
 
@@ -1798,6 +1818,13 @@ GitLab OAuth 2.0 Application secret key
 | String input.                                                                                                                                                                                                  |                                                                  |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
 
+.. config:setting:: oauth-gitlabsiteurl
+  :displayname: GitLab OAuth 2.0 site URL (OAuth - GitLab)
+  :systemconsole: Authentication > OAuth 2.0 (or GitLab)
+  :configjson: N/A
+  :environment: N/A
+  :description: This setting holds the URL of your GitLab instance, e.g. ``https://example.com:3000``.
+
 GitLab OAuth 2.0 site URL
 '''''''''''''''''''''''''
 
@@ -1808,11 +1835,11 @@ GitLab OAuth 2.0 site URL
 +-------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
 
 .. config:setting:: oauth-gitlabuserapiendpoint
-  :displayname: User API endpoint (OAuth - GitLab)
-  :systemconsole: Authentication > OAuth 2.0
-  :configjson: UserApiEndpoint
-  :environment: N/A
-  :description: Enter ``https://<your-gitlab-url>/api/v3/user`` (example: ``https://example.com:3000/api/v3/user``).
+  :displayname: GitLab OAuth 2.0 User API endpoint (OAuth - GitLab)
+  :systemconsole: Authentication > OAuth 2.0 (or GitLab)
+  :configjson: .GitLabSettings.UserAPIEndpoint
+  :environment: MM_GITLABSETTINGS_USERAPIENDPOINT
+  :description: This setting holds the URL of your GitLab User API endpoint, e.g. ``https://<your-gitlab-url>/api/v3/user``.
 
 GitLab OAuth 2.0 User API endpoint
 ''''''''''''''''''''''''''''''''''
@@ -1826,11 +1853,11 @@ GitLab OAuth 2.0 User API endpoint
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
 
 .. config:setting:: oauth-gitlabauthendpoint
-  :displayname: Auth endpoint (OAuth - GitLab)
-  :systemconsole: Authentication > OAuth 2.0
-  :configjson: AuthEndpoint
-  :environment: N/A
-  :description: Enter ``https://<your-gitlab-url>/oauth/authorize`` (example: ``https://example.com:3000/oauth/authorize``).
+  :displayname: GitLab OAuth 2.0 Auth endpoint (OAuth - GitLab)
+  :systemconsole: Authentication > OAuth 2.0 (or GitLab)
+  :configjson: .GitLabSettings.AuthEndpoint
+  :environment: MM_GITLABSETTINGS_AUTHENDPOINT
+  :description: This setting holds the URL of your GitLab Auth endpoint, e.g. ``https://<your-gitlab-url>/oauth/authorize``.
 
 GitLab OAuth 2.0 Auth endpoint
 ''''''''''''''''''''''''''''''
@@ -1844,11 +1871,11 @@ GitLab OAuth 2.0 Auth endpoint
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
 
 .. config:setting:: oauth-gitlabtokenendpoint
-  :displayname: Token endpoint (OAuth - GitLab)
-  :systemconsole: Authentication > OAuth 2.0
-  :configjson: TokenEndpoint
-  :environment: N/A
-  :description: Enter ``https://<your-gitlab-url>/oauth/token`` (example: ``https://example.com:3000/oauth/token``).
+  :displayname: GitLab OAuth 2.0 Token endpoint (OAuth - GitLab)
+  :systemconsole: Authentication > OAuth 2.0 (or GitLab)
+  :configjson: .GitLabSettings.TokenEndpoint
+  :environment: MM_GITLABSETTINGS_TOKENENDPOINT
+  :description: This setting holds the URL of your GitLab OAuth Token endpoint, e.g. ``https://<your-gitlab-url>/oauth/token``.
 
 GitLab OAuth 2.0 Token endpoint
 '''''''''''''''''''''''''''''''
@@ -1868,13 +1895,13 @@ Google OAuth 2.0 settings
   :start-after: :nosearch:
 
 .. config:setting:: oauth-googleenable
-  :displayname: Enable (OAuth - Google)
+  :displayname: Enable OAuth 2.0 authentication with Google (OAuth - Google)
   :systemconsole: Authentication > OAuth 2.0
-  :configjson: Enable
-  :environment: N/A
+  :configjson: .GoogleSettings.Enable
+  :environment: MM_GOOGLESETTINGS_ENABLE
 
-  - **True**: Allow team creation and account signup using Google OAuth.
-  - **False**: **(Default)** Google OAuth cannot be used for team creation or account signup.
+  - **true**: Allows team and account creation using Google OAuth authentication.
+  - **false**: **(Default)** Disables Google OAuth authentication.
 
 Enable OAuth 2.0 authentication with Google
 '''''''''''''''''''''''''''''''''''''''''''
@@ -1886,11 +1913,11 @@ Enable OAuth 2.0 authentication with Google
 +---------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
 
 .. config:setting:: oauth-googleclientid
-  :displayname: Client ID (OAuth - Google)
+  :displayname: Google OAuth 2.0 Client ID (OAuth - Google)
   :systemconsole: Authentication > OAuth 2.0
-  :configjson: Id
-  :environment: N/A
-  :description: Obtain this value by registering Mattermost as an application in your Google account.
+  :configjson: .GoogleSettings.Id
+  :environment: MM_GOOGLESETTINGS_ID
+  :description: This setting stores the OAuth Client ID from Google.
 
 Google OAuth 2.0 Client ID
 ''''''''''''''''''''''''''
@@ -1906,11 +1933,11 @@ Google OAuth 2.0 Client ID
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------+
 
 .. config:setting:: oauth-googleclientsecret
-  :displayname: Client secret (OAuth - Google)
+  :displayname: Google OAuth 2.0 Client secret (OAuth - Google)
   :systemconsole: Authentication > OAuth 2.0
-  :configjson: Secret
-  :environment: N/A
-  :description: Obtain this value by registering Mattermost as an application in your Google account.
+  :configjson: .GoogleSettings.Secret
+  :environment: MM_GOOGLESETTINGS_SECRET
+  :description: This setting stores the OAuth Client Secret from Google. The Secret is generated at the same time as the Client ID.
 
 Google OAuth 2.0 Client secret
 ''''''''''''''''''''''''''''''
@@ -1924,11 +1951,11 @@ Google OAuth 2.0 Client secret
 +---------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------+
 
 .. config:setting:: oauth-googleuserapiendpoint
-  :displayname: User API endpoint (OAuth - Google)
+  :displayname: Google OAuth 2.0 User API endpoint (OAuth - Google)
   :systemconsole: Authentication > OAuth 2.0
-  :configjson: UserApiEndpoint
-  :environment: N/A
-  :description: We recommend you use ``https://people.googleapis.com/v1/people/me?personFields=names,emailAddresses,nicknames,metadata`` as the User API Endpoint. It is the default value.
+  :configjson: .GoogleSettings.UserApiEndpoint
+  :environment: MM_GOOGLESETTINGS_USERAPIENDPOINT
+  :description: We recommend ``https://people.googleapis.com/v1/people/me?personFields=names,emailAddresses,nicknames,metadata`` as the User API Endpoint.
 
 Google OAuth 2.0 User API endpoint
 ''''''''''''''''''''''''''''''''''
@@ -1942,11 +1969,11 @@ Google OAuth 2.0 User API endpoint
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------+
 
 .. config:setting:: oauth-googleauthendpoint
-  :displayname: Auth endpoint (OAuth - Google)
+  :displayname: Google OAuth 2.0 Auth endpoint (OAuth - Google)
   :systemconsole: Authentication > OAuth 2.0
-  :configjson: AuthEndpoint
-  :environment: N/A
-  :description: We recommend you use ``https://accounts.google.com/o/oauth2/v2/auth`` as the Auth Endpoint. It is the default value.
+  :configjson: .GoogleSettings.AuthEndpoint
+  :environment: MM_GOOGLESETTINGS_AUTHENDPOINT
+  :description: We recommend ``https://accounts.google.com/o/oauth2/v2/auth`` as the Auth Endpoint.
 
 Google OAuth 2.0 Auth endpoint
 ''''''''''''''''''''''''''''''
@@ -1960,11 +1987,11 @@ Google OAuth 2.0 Auth endpoint
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------+
 
 .. config:setting:: oauth-googletokenendpoint
-  :displayname: Token endpoint (OAuth - Google)
+  :displayname: Google OAuth 2.0 Token endpoint (OAuth - Google)
   :systemconsole: Authentication > OAuth 2.0
-  :configjson: TokenEndpoint
-  :environment: N/A
-  :description: We recommend that you use ``https://www.googleapis.com/oauth2/v4/token`` as the Token Endpoint. It is the default value.
+  :configjson: .GoogleSettings.TokenEndpoint
+  :environment: MM_GOOGLESETTINGS_TOKENENDPOINT
+  :description: We recommend ``https://www.googleapis.com/oauth2/v4/token`` as the Token Endpoint.
 
 Google OAuth 2.0 Token endpoint
 '''''''''''''''''''''''''''''''
@@ -1983,8 +2010,8 @@ Google OAuth 2.0 Token endpoint
   :configjson: Enable
   :environment: N/A
 
-  - **True**: Allow team creation and account signup using Office 365 OAuth.
-  - **False**: **(Default)** Office 365 OAuth cannot be used for team creation or account signup.
+  - **true**: Allow team creation and account signup using Office 365 OAuth.
+  - **false**: **(Default)** Office 365 OAuth cannot be used for team creation or account signup.
 
 Office 365 OAuth 2.0 settings
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
