@@ -1310,6 +1310,12 @@ redirects = {
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#export-output-directory",
 "configure/experimental-configuration-settings.html#export-settings-default-retention-days":
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#export-retention-days",
+"configure/authentication-configuration-settings.html#gitlab":
+	"https://docs.mattermost.com/configure/authentication-configuration-settings.html#gitlab-oauth-2-0-settings",
+"configure/authentication-configuration-settings.html#google":
+	"https://docs.mattermost.com/configure/authentication-configuration-settings.html#google-oauth-2-0-settings",
+"configure/authentication-configuration-settings.html#office-365":
+	"https://docs.mattermost.com/configure/authentication-configuration-settings.html#office-365-oauth-2-0-settings",
 
 # Deploy redirects
 "deploy/mobile-apps-faq.html":

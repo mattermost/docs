@@ -321,6 +321,9 @@ ICE host override
 
 An optional override to the host that gets advertised to clients when connecting to calls. Depending on the network infrastructure (e.g. instance behind a NAT device) it may be necessary to set this field to the client facing external IP in order to let clients connect successfully. When empty or unset, the RTC service will attempt to automatically find the instance's public IP through STUN.
 
+.. note::
+  This field also supports a hostname (e.g. domain name) although ultimately an IP address is passed to clients. This means that a DNS resolution happens on the Mattermost instance which, in certain cases, could result in the resolved IP to be different from the one the clients would see, causing connectivity to fail. When in doubt, we recommend using an IP address directly or making sure the resolution on the host side reflects the one on the client.
+
 This is an optional field. Changing this setting requires a plugin restart to take effect.
 
 ICE servers configurations
