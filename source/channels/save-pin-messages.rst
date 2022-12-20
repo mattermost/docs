@@ -24,7 +24,7 @@ Save messages
 .. tabs::
 
 
-  .. tab:: Web browser/Desktop app
+  .. tab:: Desktop
 
     Save messages for later follow up by selecting the **Save** |save-icon| icon next to a message. 
 
@@ -38,7 +38,7 @@ Save messages
     .. image:: ../images/remove-from-saved-posts.png
       :alt: Remove saved messages by toggling the Save option.
 
-  .. tab:: Mobile app
+  .. tab:: Mobile
 
     Long press a message, and then select **Save**.
 
@@ -53,7 +53,7 @@ All members of a channel can pin important or useful messages to that channel. T
 
 .. tabs::
 
-  .. tab:: Web browser/Desktop app
+  .. tab:: Desktop
 
     1. Hover over the message that you want to pin. The **More** |more-icon| icon link appears.
     2. Select the **More** option, then select **Pin to channel**.
@@ -84,7 +84,7 @@ All members of a channel can pin important or useful messages to that channel. T
     .. image:: ../images/unpin-message-from-channel.png
       :alt: You can unpin messages from a channel when they're no longer needed or become outdated.
 
-  .. tab:: Mobile app
+  .. tab:: Mobile
 
     Long press a message, and then select **Pin to Channel**.
 

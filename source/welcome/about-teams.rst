@@ -100,7 +100,7 @@ Direct invites are invitation emails sent from your team's server directly to th
 
 .. tabs::
 
-  .. tab:: Web browser/desktop app
+  .. tab:: Desktop
 
     1. Select the team name at the top of the channel sidebar, then select **Invite People**.
     2. Enter email address recipients for team invitations.
@@ -112,7 +112,7 @@ Direct invites are invitation emails sent from your team's server directly to th
       - If someone you want to add to your team already has an account on the server, you can add them to your team without sending an invitation by entering their username instead of an email address. If the person you want to add isn't visible, you can't invite them. 
       - System admins can view and add team membership to individual users on the user profile page (via **System Console > Users > User Profile**) by selecting **Add Team**. 
 
-  .. tab:: Mobile app
+  .. tab:: Mobile
 
     1. Tap the |plus| icon in the top right corner of the screen.
     2. Tap the **Invite people to the team** option.

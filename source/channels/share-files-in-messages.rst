@@ -17,7 +17,7 @@ With file attachments, you can share additional information that helps your team
 
 .. tabs::
 
-  .. tab:: Web browser/desktop app
+  .. tab:: Desktop
 
     You can share files with other Mattermost users or entire channels by:
 
@@ -41,7 +41,7 @@ With file attachments, you can share additional information that helps your team
 
     From Mattermost desktop app v5.2, you can review download status, access downloads, and clear the list of downloads from a new **Downloads** |desktop-download-icon| option located in the top-right corner of the desktop app window.
 
-  .. tab:: Mobile app
+  .. tab:: Mobile
        
     Tap the **Attachment** |attachment-icon| icon under the message input box.
       

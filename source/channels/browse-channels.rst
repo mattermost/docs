@@ -1,22 +1,19 @@
-Find channels
-=============
+Browse channels
+================
 
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Find channels to join
----------------------
-
 .. tabs::
 
-  .. tab:: Web browser/desktop app
+  .. tab:: Desktop
 
     1. Select the **+** icon at the top of the channel sidebar to see all available public channels you can join that you're not already a member of.
     2. Select **Browse Channels**. 
     3. Search for channels by name or scroll through the list. 
     4. Select **Join** next to any channel to become a member of that channel.
 
-  .. tab:: Mobile app
+  .. tab:: Mobile
 
     1. Tap the **+** icon located in the top right corner of the app to see all available public channels you can join that you're not already a member of. 
     2. Tap **Browse Channels**. 

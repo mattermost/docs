@@ -24,7 +24,7 @@ You can mark public and private channels, as well as direct and group messages a
 
 .. tabs::
 
-  .. tab:: Web browser/desktop app
+  .. tab:: Desktop
 
     1. Open a channel.
     2. Select on the star icon next to the channel name.
@@ -40,7 +40,7 @@ You can mark public and private channels, as well as direct and group messages a
 
       - Alternatively to mark channels as favorites, select the channel name, select the **View Info** |channel-info| icon, then select **Favorite** in the right pane. Select **Favorited** to remove the channel from your list of favorites.
 
-  .. tab:: Mobile app
+  .. tab:: Mobile
 
     1. Tap the channel you want to mark as a favorite.
     2. Tap the **More** (...) icon located in the top right corner of the app.

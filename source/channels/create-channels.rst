@@ -8,7 +8,7 @@ Anyone can create public channels, private channels, direct messages, and group 
   
 .. tabs::
 
-  .. tab:: Web browser/desktop app
+  .. tab:: Desktop
       
     **To create a public or private channel** 
         
@@ -39,7 +39,7 @@ Anyone can create public channels, private channels, direct messages, and group 
      - If you want to add more than seven users to a group message, create a private channel instead.
 
       
-  .. tab:: Mobile app
+  .. tab:: Mobile
    
     **To create a public or private channel**
         

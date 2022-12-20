@@ -18,11 +18,11 @@ Anyone using Mattermost can archive the public channels or private channels they
 
 .. tabs::
 
-  .. tab:: Web browser/desktop app
+  .. tab:: Desktop
 
     To archive a channel, select the channel name at the top of the center pane to access the drop-down menu, then select **Archive Channel**. 
 
-  .. tab:: Mobile app
+  .. tab:: Mobile
 
     To archive a channel:
     
@@ -43,14 +43,14 @@ System admins and Team admins can unarchive public channels or private channels 
 
 .. tabs::
 
-  .. tab:: Web browser/desktop app
+  .. tab:: Desktop
 
     Search for the channel if required. Then, open the channel, select the channel name at the top of the center pane to access the drop-down menu and select **Unarchive Channel**. 
 
     .. image:: ../images/unarchive-channel.png
       :alt: Unarchive a channel.
 
-  .. tab:: Mobile app
+  .. tab:: Mobile
 
     To unarchive a channel:
     

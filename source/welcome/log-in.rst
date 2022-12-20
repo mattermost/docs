@@ -16,7 +16,7 @@ Mattermost is accessible through a server link. You'll receive the server link f
 
 .. tabs::
 
-  .. tab:: Web browser/Desktop app
+  .. tab:: Desktop
 
     **Web browser**
 

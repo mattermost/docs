@@ -11,7 +11,7 @@ Using the Mattermost desktop or mobile app, you can connect to multiple Mattermo
 
 .. tabs::
 
-  .. tab:: Web browser/Desktop app
+  .. tab:: Desktop
   
     .. note::
 
@@ -55,7 +55,7 @@ Using the Mattermost desktop or mobile app, you can connect to multiple Mattermo
 
     2. Select **Remove** when prompted to confirm.
     
-  .. tab:: Mobile app
+  .. tab:: Mobile
   
     Tap the **Servers** |servers-icon| icon located in the top left corner of the window to access all available servers and to add new servers.
 

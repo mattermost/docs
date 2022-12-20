@@ -25,7 +25,7 @@ Search for message and files
 
 .. tabs::
 
-  .. tab:: Web browser/Desktop app
+  .. tab:: Desktop
 
     **Search for messages**
 
@@ -72,7 +72,7 @@ Search for message and files
       .. image:: ../images/channel-files-icon.png
         :alt: Use the Channel Files option to access recently shared files in the current channel.
 
-  .. tab:: Mobile app
+  .. tab:: Mobile
 
     1. Tap the **Search** |search-icon| icon at the bottom of the app to search for messages or files attached to messages.
     2. To the right of search options, tap to select which team to search.

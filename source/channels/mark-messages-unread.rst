@@ -11,7 +11,7 @@ If you read a message, but don't have time to address it right away, you can mar
 
 .. tabs::
 
-  .. tab:: Web browser/Desktop app
+  .. tab:: Desktop
 
     Hover over the message, select the **More** |more-actions-icon| option, then select **Mark as Unread**.
 
@@ -21,6 +21,6 @@ If you read a message, but don't have time to address it right away, you can mar
     .. image:: ../images/mark-message-as-unread.png
       :alt: You can mark messages as unread to return to them later.
 
-  .. tab:: Mobile app
+  .. tab:: Mobile
 
     Long press a message, and then tap **Mark as Unread**.

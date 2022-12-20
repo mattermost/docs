@@ -10,7 +10,7 @@ From Mattermost v6.1 and in Mattermost Cloud, you can react to messages quickly 
 
 .. tabs::
 
-  .. tab:: Web browser/desktop app
+  .. tab:: Desktop
               
     Select the **Smile** icon |smile-icon| inside the Mattermost message input box to open the emoji picker. If the existing emojis available in Mattermost don't cover what you want to express, you can also `upload your own custom emoji <#upload-custom-emojis>`__.
 
@@ -27,10 +27,10 @@ From Mattermost v6.1 and in Mattermost Cloud, you can react to messages quickly 
     .. image:: ../images/emojiautocomplete.png
       :alt: Emoji autocomplete
         
-  .. tab:: Mobile app
+  .. tab:: Mobile
    
-     Tap the **Smile** icon |smile-icon| to open the emoji picker. Long press on a message to access recently used emojis.
-
+    Long press on a message, and then select a recently used emoji, or select the |smile-icon| to add a different reaction.
+    
 Manage emojis
 -------------
 

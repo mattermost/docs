@@ -333,6 +333,8 @@ redirects = {
 	"https://docs.mattermost.com/boards/migrate-to-boards.html",
 
 # Channels redirects
+"channels/find-channels.html":
+        "https://docs.mattermost.com/channels/browse-channels.html",
 "channels/sign-in.html":
         "https://docs.mattermost.com/welcome/log-in.html",
 "channels/organize-conversations.html#enable-collapsed-reply-threads-beta":

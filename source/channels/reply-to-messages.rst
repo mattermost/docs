@@ -6,7 +6,7 @@ Reply to messages
 
 .. tabs::
 
-  .. tab:: Web browser/Desktop app
+  .. tab:: Desktop
 
     Reply to messages by selecting the **Reply** |reply-arrow| icon next to the message text. 
 
@@ -16,9 +16,9 @@ Reply to messages
     .. image:: ../images/reply-to-message.png
       :alt: Reply to Mattermost messages
 
-  .. tab:: Mobile app
+  .. tab:: Mobile
 
-    Tap on a message to reply to it.
+    Tap on a message to reply to it, or long press and select **Reply**.
 
 Depending on how the system admin has configured Mattermost, you may also be able to `edit and delete messages </channels/send-messages.html#edit-or-delete-messages>`__ after you've sent them. Your system admin may also restrict messaging actions, such as editing or deleting messages, by configuring `advanced permissions </onboard/advanced-permissions.html>`__, available in `Mattermost Enterprise and Professional subscription plans <https://mattermost.com/pricing>`__.
 

@@ -18,7 +18,7 @@ You can share links to Mattermost messages with other Mattermost users. Sharing 
 
 .. tabs::
 
-  .. tab:: Web browser/Desktop app
+  .. tab:: Desktop
 
     To share links to messages in Mattermost, select the **More** |more-icon| icon next to a message, then select **Copy Link**. 
 
@@ -38,7 +38,7 @@ You can share links to Mattermost messages with other Mattermost users. Sharing 
       - You can also hover over an image and select the |copy-link-icon| icon in the top right corner. 
       - The timestamp next to the username of any message is also a permanent link to that conversation.
   
-  .. tab:: Mobile app
+  .. tab:: Mobile
 
     Long press a message, and then tap **Copy Link** to copy the link to the clipboard. Long press to paste the link as a message or reply. Sharing links to messages generates a preview of the message.
     

@@ -11,7 +11,7 @@ Anyone can rename the channels they belong to, unless the System Admin has `rest
 
 .. tabs::
 
-  .. tab:: Web browser/desktop app
+  .. tab:: Desktop
 
         Select the channel name at the top of the center pane to access the drop-down menu, then select **Rename Channel**. You'll be prompted two provide two pieces of information:
 
@@ -20,7 +20,7 @@ Anyone can rename the channels they belong to, unless the System Admin has `rest
 
         For example, for the following channel, ``https://community.mattermost.com/core/channels/ux-design``, The channel display name would be ``UX Design``, and the channel handle would be ``ux-design``.
 
-  .. tab:: Mobile app
+  .. tab:: Mobile
 
     1. Tap the channel you want to rename.
     2. Tap the **More** |more-icon| icon located in the top right corner of the app.

@@ -42,7 +42,7 @@ Once a channel is muted:
 
 .. tabs::
 
-  .. tab:: Web browser/desktop app
+  .. tab:: Desktop
 
     To mute the current channel and disable notifications, select **Mute Channel** from the channel name at the top of the screen.
 
@@ -52,7 +52,7 @@ Once a channel is muted:
 
       Quickly mute or unmute any channel any time by selecting **Mute Channel** or **Unmute Channel** from the channel name at the top of the screen, or by selecting **More Options** for a channel in the Channel Sidebar.
   
-  .. tab:: Mobile app
+  .. tab:: Mobile
 
     1. Tap the channel you want to mute.
     2. Tap the **More** |more-icon| icon located in the top right corner of the app.
@@ -67,11 +67,11 @@ By default, you'll receive mention notifications every time someone on your team
 
 .. tabs::
 
-  .. tab:: Web browser/desktop app
+  .. tab:: Desktop
 
     To stop receiving mention notifications, enable the **Ignore mentions for @channel, @here and @all** option, then select **Save**. When enabled, mention notifications for channel-wide mentions are ignored, but the channel is marked as unread unless the channel is muted.
   
-  .. tab:: Mobile app
+  .. tab:: Mobile
 
     1. Tap the channel where you want to mute mention notifications.
     2. Tap the **More** |more-icon| icon located in the top right corner of the app.

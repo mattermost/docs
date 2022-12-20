@@ -20,11 +20,11 @@ To customize your Mattermost theme:
 
 .. tabs::
 
-  .. tab:: Web browser/desktop app
+  .. tab:: Desktop
 
     Select the **Settings** |gear-icon| icon, then go to **Display > Theme**.
       
-  .. tab:: Mobile app
+  .. tab:: Mobile
 
     Tap your profile picture, and select **Settings**, then go to **Display > Theme**.
 
