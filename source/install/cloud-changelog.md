@@ -15,7 +15,7 @@ Latest Mattermost Cloud releases:
 
 ### Bug Fixes
  - Fixed a deadlock in the export job which caused export jobs to hang forever.
- - Exports to S3 no longer time out.
+ - Uploading exports to S3 no longer times out.
 
 ## Release 2022-12-01
 
