@@ -212,7 +212,7 @@ The location of the Mattermost desktop app configuration file depends on the pla
 
 .. note::
 
-  If you choose to uninstall the desktop app, you must manually remove local configuration data from the applicable location noted above.
+  Local configuration data is not automatically removed when uninstalling the desktop app. If you wish to remove all data, you must manually remove the files from the applicable location noted above.
 
 "Installation has failed" dialog
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
