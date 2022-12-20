@@ -212,7 +212,8 @@ The location of the Mattermost desktop app configuration file depends on the pla
 
 .. note::
 
-  Local configuration data is not automatically removed when uninstalling the desktop app. If you wish to remove all data, you must manually remove the files from the applicable location noted above.
+  - Local configuration data is not automatically removed when uninstalling the desktop app. If you wish to remove all data, you must manually remove the files from the applicable location noted above.
+  - Prior to uninstalling, you can choose to log out of any active sessions. Active sessions may also be terminated from another Mattermost session by going to **Profile > Security > View and Logout of Active Sessions**, and selecting **Log Out**. Desktop app sessions are labeled as **Native Desktop App**.
 
 "Installation has failed" dialog
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
