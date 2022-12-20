@@ -50,7 +50,6 @@ Latest Mattermost Cloud releases:
  - Added the ability for customers to view their upcoming invoice at the **System Console > Billing & Account > Subscriptions** page.
  - **Total Activated Users** was changed back to **Total Active Users** in **System Console > Reporting > Site Statistics**.
  - The import job now logs the progress of the import.
- - Exports to S3 no longer time out.
 
 ### API Changes
  - Added new API endpoint ``GET /api/v4/posts/:post_id/info`` to allow checking if the post that a permalink is pointing to is accessible by joining teams or channels.
