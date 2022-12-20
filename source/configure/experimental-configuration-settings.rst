@@ -1555,6 +1555,13 @@ The number of days to retain the imported files before deleting them.
 | This feature's ``config.json`` setting under the ``ImportSettings`` section is ``RetentionDays: 30`` with numerical input. |
 +----------------------------------------------------------------------------------------------------------------------------+
 
+.. config:setting:: exp-exportfromtimestamp
+  :displayname: Export from timestamp (Experimental)
+  :systemconsole: N/A
+  :configjson: ExportFromTimestamp
+  :environment: N/A
+  :description: Set the Unix timestamp (seconds since epoch, UTC) to export data from. Default is **0**.
+
 Export from timestamp
 ~~~~~~~~~~~~~~~~~~~~~
 
@@ -1571,6 +1578,16 @@ Set the Unix timestamp (seconds since epoch, UTC) to export data from.
 | This feature's ``config.json`` setting is ``"ExportFromTimestamp": 0`` with numerical input. |
 +----------------------------------------------------------------------------------------------+
 
+.. config:setting:: exp-blockprofilerate
+  :displayname: Block profile rate (Experimental)
+  :systemconsole: N/A
+  :configjson: BlockProfileRate
+  :environment: N/A
+
+  Value that controls the `fraction of goroutine blocking events reported in the blocking profile <https://golang.org/pkg/runtime/#SetBlockProfileRate>`__.
+  To include every blocking event in the profile, set the rate to ``1``. To turn off profiling entirely, set the rate to ``0``.
+  Default is **0**.
+
 Block profile rate
 ~~~~~~~~~~~~~~~~~~
 
@@ -1586,6 +1603,13 @@ To include every blocking event in the profile, set the rate to ``1``. To turn o
 | This feature's ``config.json`` setting is ``"BlockProfileRate": 0`` with options ``0`` and ``1``. |
 +---------------------------------------------------------------------------------------------------+
 
+.. config:setting:: exp-appcustomurlschemes
+  :displayname: App custom URL schemes (Experimental)
+  :systemconsole: N/A
+  :configjson: .NativeAppSettings.AppCustomURLSchemes
+  :environment: N/A
+  :description: Define valid custom URL schemes for redirect links provided by custom-built mobile Mattermost apps.
+
 App custom URL schemes
 ~~~~~~~~~~~~~~~~~~~~~~
 
@@ -1598,6 +1622,13 @@ When configured, after OAuth or SAML user authentication is complete, custom URL
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"NativeAppSettings.AppCustomURLSchemes"`` with an array of strings as input. For example: ``[custom-app://, some-app://]``.                    |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: exp-o365scope
+  :displayname: Office 365 scope (Experimental)
+  :systemconsole: N/A
+  :configjson: Scope
+  :environment: N/A
+  :description: Standard setting for OAuth to determine the scope of information shared with OAuth client. Recommended setting is ``User.Read``.
 
 Office 365 Scope
 ~~~~~~~~~~~~~~~~
@@ -1615,6 +1646,15 @@ Standard setting for OAuth to determine the scope of information shared with OAu
 | This feature's ``config.json`` setting is ``"Scope": "User.Read"`` with string input. |
 +---------------------------------------------------------------------------------------+
 
+.. config:setting:: exp-enablepluginuploads
+  :displayname: Enable plugin uploads (Experimental)
+  :systemconsole: N/A
+  :configjson: EnableUploads
+  :environment: N/A
+
+  - **true**: Enables plugin uploads by System Admins at **Plugins > Management**.
+  - **false**: **(Default)** Disables plugin uploads on your Mattermost server.
+
 Enable plugin uploads
 ~~~~~~~~~~~~~~~~~~~~~
 
@@ -1627,6 +1667,15 @@ This setting isn't available in the System Console and can only be set in ``conf
 +-----------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableUploads": false`` with options ``true`` and ``false``. |
 +-----------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: exp-allowinsecuredownloadurl
+  :displayname: Allow insecure download URL (Experimental)
+  :systemconsole: N/A
+  :configjson: AllowInsecureDownloadUrl
+  :environment: N/A
+
+  - **true**: Enables downloading and installing a plugin from a remote URL.
+  - **false**: **(Default)** Disables downloading and installing a plugin from a remote URL.
 
 Allow insecure download URL
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1641,6 +1690,15 @@ This setting isn't available in the System Console and can only be set in ``conf
 | This feature's ``config.json`` setting is ``"AllowInsecureDownloadUrl": false`` with options ``true`` and ``false``.                    |
 +-----------------------------------------------------------------------------------------------------------------------------------------+
 
+.. config:setting:: exp-enablepluginhealthcheck
+  :displayname: Enable plugin health check (Experimental)
+  :systemconsole: N/A
+  :configjson: EnableHealthCheck
+  :environment: N/A
+
+  - **true**: **(Default)** Enables plugin health check to ensure all plugins are periodically monitored, and restarted or deactivated based on their health status.
+  - **false**: Disables plugin health check on your Mattermost server.
+
 Enable plugin health check
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -1654,6 +1712,13 @@ This setting isn't available in the System Console and can only be set in ``conf
 | This feature's ``config.json`` setting is ``"EnableHealthCheck": true`` with options ``true`` and ``false``. |
 +--------------------------------------------------------------------------------------------------------------+
 
+.. config:setting:: exp-plugindirectory
+  :displayname: Plugin directory (Experimental)
+  :systemconsole: N/A
+  :configjson: Directory
+  :environment: N/A
+  :description: The location of the plugin files. If blank, they are stored in the ``./plugins`` directory. Default value is **./plugins**.
+
 Plugin directory
 ~~~~~~~~~~~~~~~~
 
@@ -1665,6 +1730,13 @@ The location of the plugin files. If blank, they are stored in the ``./plugins``
 | This feature's ``config.json`` setting is ``"Directory": "./plugins"`` with string input.                       |
 +-----------------------------------------------------------------------------------------------------------------+
 
+.. config:setting:: exp-clientplugindirectory
+  :displayname: Client plugin directory (Experimental)
+  :systemconsole: N/A
+  :configjson: ClientDirectory
+  :environment: N/A
+  :description: The location of client plugin files. If blank, they are stored in the ``./client/plugins`` directory. Default value is **./client/plugins**.
+
 Client plugin directory
 ~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -1675,6 +1747,13 @@ The location of client plugin files. If blank, they are stored in the ``./client
 +-----------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ClientDirectory": "./client/plugins"`` with string input.          |
 +-----------------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: exp-scopingidpproviderid
+  :displayname: Scoping IDP provider ID (Experimental)
+  :systemconsole: N/A
+  :configjson: ScopingIDPProviderId
+  :environment: N/A
+  :description: Allows an authenticated user to skip the initial login page of their federated Azure AD server, and only require a password to log in.
 
 Scoping IDP provider ID
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -1691,6 +1770,13 @@ Allows an authenticated user to skip the initial login page of their federated A
 +---------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ScopingIDPProviderId": ""`` with string input. |
 +---------------------------------------------------------------------------------------------+
+
+.. config:setting:: exp-scopingidpprovidername
+  :displayname: Scoping IDP provider name (Experimental)
+  :systemconsole: N/A
+  :configjson: ScopingIDPName
+  :environment: N/A
+  :description: Adds the name associated with a user's Scoping Identity Provider ID.
 
 Scoping IDP provider name
 ~~~~~~~~~~~~~~~~~~~~~~~~~
