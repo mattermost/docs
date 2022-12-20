@@ -239,9 +239,6 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ## Release v7.3 - [Feature Release](/upgrade/release-definitions.html#feature-release)
 
-- **v7.3.2, released **
-  - Mattermost v7.3.2 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
-  - Added a new schema migration to ensure ``ParentId`` column is dropped from the ``Posts`` table. Depending on the table size, if the column is not dropped before, a significant spike in database CPU usage is expected on MySQL databases. Writes to the table will be limited during the migration.
 - **v7.3.1, released 2022-10-14**
   - Mattermost v7.3.1 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Reverted the new search of names in PostgreSQL using full text search introduced in v7.3.0 due to a performance regression.
