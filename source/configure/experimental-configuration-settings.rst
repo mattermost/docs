@@ -1794,6 +1794,15 @@ Adds the name associated with a user's Scoping Identity Provider ID.
 | This feature's ``config.json`` setting is ``"ScopingIDPName": ""`` with string input. |
 +---------------------------------------------------------------------------------------+
 
+.. config:setting:: exp-groupunreadchannels
+  :displayname: Group unread channels (Experimental)
+  :systemconsole: N/A
+  :configjson: ExperimentalGroupUnreadChannels
+  :environment: N/A
+
+  - **default_off**: **(Default)** Disables the unread channels sidebar section for all users by default. Users can enable it in **Settings > Sidebar > Group unread channels separately**.
+  - **default_on**: Enables the unread channels sidebar section for all users by default. Users can disable it in **Settings > Sidebar > Group unread channels separately**.
+
 Group unread channels
 ~~~~~~~~~~~~~~~~~~~~~
 
@@ -1809,6 +1818,15 @@ This setting applies to the new sidebar only. You must disable the `Enable Legac
 | This feature's ``config.json`` setting is ``"ExperimentalGroupUnreadChannels": "default_off"`` with options ``"default_off"`` and ``"default_on"``. |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------+
 
+.. config:setting:: exp-strictcsrftoken
+  :displayname: Strict CSRF token enforcement (Experimental)
+  :systemconsole: N/A
+  :configjson: ExperimentalStrictCSRFEnforcement
+  :environment: N/A
+
+  - **true**: Enables CSRF protection tokens for additional hardening compared to the currently used custom header.
+  - **false**: **(Default)** Disables CSRF protection tokens.
+
 Strict CSRF token enforcement
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -1821,6 +1839,13 @@ This setting isn't available in the System Console and can only be set in ``conf
 +-------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ExperimentalStrictCSRFEnforcement": false`` with options ``true`` and ``false``. |
 +-------------------------------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: exp-customusergroups
+  :displayname: Custom user groups (Experimental)
+  :systemconsole: N/A
+  :configjson: EnableCustomGroups
+  :environment: N/A
+  :description: This configuration setting controls the ability for users to create custom user groups. Default is **true**.
 
 Custom user groups
 ~~~~~~~~~~~~~~~~~~
@@ -1835,6 +1860,13 @@ This configuration setting controls the ability for users to create custom user 
 +----------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableCustomGroups": true`` with options ``true`` and ``false``.  |
 +----------------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: exp-developerflags
+  :displayname: Developer flags (Experimental)
+  :systemconsole: N/A
+  :configjson: DeveloperFlags
+  :environment: N/A
+  :description: This configuration setting specifies a list of strings where each string is a flag used to set the content security policy (CSP) for the Mattermost Web App.
 
 Developer flags
 ~~~~~~~~~~~~~~~
@@ -1854,6 +1886,13 @@ This configuration setting is disabled by default and requires `developer mode <
 | This feature's ``config.json`` setting is ``"DeveloperFlags": ""`` with string input.  |
 +----------------------------------------------------------------------------------------+
 
+.. config:setting:: exp-enablepostsearch
+  :displayname: Enable post search (Experimental)
+  :systemconsole: N/A
+  :configjson: EnablePostSearch
+  :environment: N/A
+  :description: If this setting is enabled, users can search messages. Default is **true**.
+
 Enable post search
 ~~~~~~~~~~~~~~~~~~
 
@@ -1864,6 +1903,13 @@ If this setting is enabled, users can search messages. Disabling search can resu
 +-------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnablePostSearch": true`` with options ``true`` and ``false``. |
 +-------------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: exp-enablefilesearch
+  :displayname: Enable file search (Experimental)
+  :systemconsole: N/A
+  :configjson: EnableFileSearch
+  :environment: N/A
+  :description: This configuration setting enables users to search documents attached to messages by filename. Default is **true**.
 
 Enable file search
 ~~~~~~~~~~~~~~~~~~
@@ -1880,6 +1926,13 @@ This configuration setting enables users to search documents attached to message
 | This feature's ``config.json`` setting is ``"EnableFileSearch": true`` with options ``true`` and ``false``. |
 +-------------------------------------------------------------------------------------------------------------+
 
+.. config:setting:: exp-enableuserstatusupdates
+  :displayname: Enable user status updates (Experimental)
+  :systemconsole: N/A
+  :configjson: EnableUserStatuses
+  :environment: N/A
+  :description: Turn status updates off to improve performance. Default is **true**.
+
 Enable user status updates
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -1890,6 +1943,13 @@ Turn status updates off to improve performance. When status updates are off, use
 +---------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableUserStatuses": true`` with options ``true`` and ``false``. |
 +---------------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: exp-websocketsecureport
+  :displayname: Websocket secure port (Experimental)
+  :systemconsole: N/A
+  :configjson: WebsocketSecurePort
+  :environment: N/A
+  :description: This setting defines the port on which the secured WebSocket will listen using the ``wss`` protocol. Default is **443**.
 
 Websocket secure port
 ~~~~~~~~~~~~~~~~~~~~~
@@ -1902,6 +1962,13 @@ This setting isn't available in the System Console and can only be set in ``conf
 | This feature's ``config.json`` setting is ``"WebsocketSecurePort": 443`` with numerical input. |
 +------------------------------------------------------------------------------------------------+
 
+.. config:setting:: exp-websocketport
+  :displayname: Websocket port (Experimental)
+  :systemconsole: N/A
+  :configjson: WebsocketPort
+  :environment: N/A
+  :description: This setting defines the port on which the unsecured WebSocket will listen using the ``ws`` protocol. Default is **80**.
+
 Websocket port
 ~~~~~~~~~~~~~~
 
@@ -1912,6 +1979,15 @@ This setting isn't available in the System Console and can only be set in ``conf
 +----------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``WebsocketPort": 80`` with numerical input. |
 +----------------------------------------------------------------------------------------+
+
+.. config:setting:: exp-enableapiteamdeletion
+  :displayname: Enable API team deletion (Experimental)
+  :systemconsole: N/A
+  :configjson: EnableAPITeamDeletion
+  :environment: N/A
+
+  - **true**: The ``api/v4/teams/{teamid}?permanent=true`` API endpoint can be called by Team and System Admins to permanently delete a team.
+  - **false**: **(Default)** The API endpoint cannot be called.
 
 Enable API team deletion
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1926,6 +2002,15 @@ This setting isn't available in the System Console and can only be set in ``conf
 | This feature's ``config.json`` setting is ``"EnableAPITeamDeletion": false`` with options ``true`` and ``false``. |
 +-------------------------------------------------------------------------------------------------------------------+
 
+.. config:setting:: exp-enableapiuserdeletion
+  :displayname: Enable API user deletion
+  :systemconsole: N/A
+  :configjson: EnableAPIUserDeletion
+  :environment: N/A
+
+  - **true**: The ``api/v4/users/{userid}?permanent=true`` API endpoint can be called by System Admins, or users with appropriate permissions, to permanently delete a user.
+  - **false**: **(Default)** The API endpoint cannot be called.
+
 Enable API user deletion
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -1939,6 +2024,15 @@ This setting isn't available in the System Console and can only be set in ``conf
 | This feature's ``config.json`` setting is ``"EnableAPIUserDeletion": false`` with options ``true`` and ``false``. |
 +-------------------------------------------------------------------------------------------------------------------+
 
+.. config:setting:: exp-enableapichanneldeletion
+  :displayname: Enable API channel deletion (Experimental)
+  :systemconsole: N/A
+  :configjson: EnableAPIChannelDeletion
+  :environment: N/A
+
+  - **true**: The ``api/v4/channels/{channelid}?permanent=true`` API endpoint can be called by System Admins, or users with appropriate permissions, to permanently delete a channel.
+  - **false**: **(Default)** The API endpoint cannot be called.
+
 Enable API channel deletion
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -1951,6 +2045,15 @@ This setting isn't available in the System Console and can only be set in ``conf
 +----------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableAPIChannelDeletion": false`` with options ``true`` and ``false``. |
 +----------------------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: exp-enableopentracing
+  :displayname: Enable OpenTracing (Experimental)
+  :systemconsole: N/A
+  :configjson: EnableOpenTracing
+  :environment: N/A
+
+  - **true**: A Jaeger client is instantiated and is used to trace each HTTP request as it goes through App and Store layers.
+  - **false**: **(Default)** OpenTracing is not enabled.
 
 Enable OpenTracing
 ~~~~~~~~~~~~~~~~~~
@@ -1966,6 +2069,15 @@ By default, in order to avoid leaking sensitive information, no method parameter
 +---------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableOpenTracing": false`` with options ``true`` and ``false``. |
 +---------------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: exp-enablelocalmode
+  :displayname: Enable local mode for mmctl (Experimental)
+  :systemconsole: N/A
+  :configjson: EnableLocalMode
+  :environment: N/A
+
+  - **true**: Enables local mode for mmctl.
+  - **false**: **(Default)** Prevents local mode for mmctl.
 
 Enable local mode for mmctl
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1984,6 +2096,13 @@ This setting isn't available in the System Console and can only be set in ``conf
 
   When trying to use local mode with mmctl, ensure you're using the same user when running the server and mmctl, or clean up the socket file before switching to a new user. If you encounter an error like ``socket file "/var/tmp/mattermost_local.socket" doesn't exists, please check the server configuration for local mode``, this can be resolved by setting this configuration setting to ``true``.
 
+.. config:setting:: exp-localmodesocketlocation
+  :displayname: Enable local mode socket location (Experimental)
+  :systemconsole: N/A
+  :configjson: LocalModeSocketLocation
+  :environment: N/A
+  :description: The path for the socket that the server will create for mmctl to connect and communicate through local mode. Default value is **/var/tmp/mattermost_local.socket**.
+
 Enable local mode socket location
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -1996,6 +2115,13 @@ If nothing is specified, the default path that both the server and mmctl assumes
 +--------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"LocalModeSocketLocation": "/var/tmp/mattermost_local.socket"`` with string input. |
 +--------------------------------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: exp-defaultchannels
+  :displayname: Default channels (Experimental)
+  :systemconsole: N/A
+  :configjson: ExperimentalDefaultChannels
+  :environment: N/A
+  :description: Default channels every user is added to automatically after joining a new team. Only applies to Public channels, but affects all teams on the server.
 
 Default channels
 ~~~~~~~~~~~~~~~~
@@ -2028,6 +2154,13 @@ When running Mattermost on a single machine, both ``RunJobs`` and ``RunScheduler
 
 When running Mattermost in High Availability mode, ``RunJobs`` should be enabled on one or more servers while ``RunScheduler`` should be enabled on all servers under normal circumstances. A High Availability cluster will have one Scheduler and one or more Workers. See the below sections for more information.
 
+.. config:setting:: exp-runjobs
+  :displayname: Run jobs (Experimental)
+  :systemconsole: N/A
+  :configjson: RunJobs
+  :environment: N/A
+  :description: Set whether or not this Mattermost server will handle tasks created by the Scheduler. Default is **true**.
+
 Run jobs
 ~~~~~~~~
 
@@ -2040,6 +2173,13 @@ When running Mattermost in `High Availablity mode <https://docs.mattermost.com/s
 +------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"RunJobs": true`` with options ``true`` and ``false``.                                 |
 +------------------------------------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: exp-runscheduler
+  :displayname: Run scheduler (Experimental)
+  :systemconsole: N/A
+  :configjson: RunScheduler
+  :environment: N/A
+  :description: Set whether or not this Mattermost server will schedule tasks that will be completed by a Worker. Default is **true**.
 
 Run scheduler
 ~~~~~~~~~~~~~
@@ -2058,16 +2198,30 @@ When running Mattermost in `High Availablity mode <https://docs.mattermost.com/s
 | This feature's ``config.json`` setting is ``"RunScheduler": true`` with options ``true`` and ``false``.                                 |
 +-----------------------------------------------------------------------------------------------------------------------------------------+
 
+.. config:setting:: exp-cleanupjobs
+  :displayname: Clean up old database jobs (Experimental)
+  :systemconsole: N/A
+  :configjson: .JobSettings.CleanupJobsThresholdDays
+  :environment: N/A
+  :description: Defines the threshold in hours beyond which older completed database jobs are removed. Must be set to a value greater than or equal to ``0`` to be enabled. Default value is **-1**
+
 Clean Up old database jobs
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-Defines the threshold in hours beyond which older completed database jobs are removed. This setting applies to both MySQL and PostgreSQL databases, is disabled by default, and must be set to a value greater than or equal to ``0`` to be enabled.
+Defines the threshold in days beyond which older completed database jobs are removed. This setting applies to both MySQL and PostgreSQL databases, is disabled by default, and must be set to a value greater than or equal to ``0`` to be enabled.
 
 +--------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"JobSettings.CleanupJobsThresholdDays": -1`` with numerical input.     |
 +--------------------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: exp-cleanupdatabaseentries
+  :displayname: Clean up outdated database entries (Experimental)
+  :systemconsole: N/A
+  :configjson: .JobSettings.CleanupConfigThresholdDays
+  :environment: N/A
+  :description: Defines the threshold in days beyond which outdated configurations are removed from the database. Default is **30** days.
 
 Clean up outdated database entries
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
