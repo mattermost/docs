@@ -4,14 +4,14 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 
 Latest Mattermost Cloud releases:
 
-- [Release 2022-12-15](#release-2022-12-15)
+- [Release 2023-01-12](#release-2023-01-12)
+- [Release 2022-12-20](#release-2022-12-20)
 - [Release 2022-12-01](#release-2022-12-01)
 - [Release 2022-11-24](#release-2022-11-24)
 - [Release 2022-11-17](#release-2022-11-17)
 - [Release 2022-11-10](#release-2022-11-10)
-- [Release 2022-10-27](#release-2022-10-27)
 
-## Release 2022-12-15
+## Release 2023-01-12
 
 ### Highlights
 
@@ -80,6 +80,12 @@ Latest Mattermost Cloud releases:
 ### Known Issues
  - Boards linked to a channel you're a member of don't automatically appear on your sidebar unless you're an explicit member of the board. As a workaround, you can access the board from the channel RHS, or by searching for the board via the board switcher (Ctrl/Cmd+K). Alternatively, you can ask the board admin to add you to the board as an explicit member. See the [issue-focalboard-4179](https://github.com/mattermost/focalboard/issues/4179) for more details.
  - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
+
+## Release 2022-12-20
+
+### Bug Fixes
+ - Fixed a deadlock in the export job which caused export jobs to hang forever.
+ - Uploading exports to S3 no longer times out.
 
 ## Release 2022-12-01
 
