@@ -38,6 +38,7 @@ Latest Mattermost Cloud releases:
  - Corrected in-product System Console legacy link to the Cloud Administrator's Guide.
  - Updated prepackaged NPS version to 1.3.1.
  - Added group members count to the group autocomplete.
+ - Clicking a group mention now displays group details and membership.
  - Improved the collapsed state of the post formatting toolbar.
 
 #### Administration
@@ -47,7 +48,7 @@ Latest Mattermost Cloud releases:
  - Added the ability for customers to view their upcoming invoice at the **System Console > Billing & Account > Subscriptions** page.
  - **Total Activated Users** was changed back to **Total Active Users** in **System Console > Reporting > Site Statistics**.
  - The import job now logs the progress of the import.
- - Added ``restore_group`` permission to the mmctl.
+ - Added ``restore_group`` permission to the mmctl and to the **System Console > Permissions**.
 
 ### API Changes
  - Added new API endpoint ``GET /api/v4/posts/:post_id/info`` to allow checking if the post that a permalink is pointing to is accessible by joining teams or channels.
