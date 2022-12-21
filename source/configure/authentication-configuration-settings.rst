@@ -1326,27 +1326,27 @@ Enable OAuth 2.0 Authentication with Office 365
 | See `Office 365 Single Sign-On <https://docs.mattermost.com/onboard/sso-office.html>`__ for instructions on how to implement OAuth or OpenID with Office 365.                  |                                                                |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------+
 
-Application ID
-''''''''''''''
+Office 365 OAuth 2.0 Application ID
+'''''''''''''''''''''''''''''''''''
 
 *Available in legacy Enterprise Edition E20*
 
-Obtain this value by registering Mattermost as an application in your Microsoft or Office account.
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------+
+| This setting holds the **Application ID** generated when configuring Office 365 as a Single Sign-On service through the Microsoft Azure Portal. See `Register an application in Azure Portal <https://docs.mattermost.com/onboard/sso-office.html#step-1-register-an-application-in-azure-portal>`__. | - System Config path: **Authentication > OAuth 2.0** |
+|                                                                                                                                                                                                                                                                                                       | - ``config.json`` setting: ``.Office365Settings.Id`` |
+| String input.                                                                                                                                                                                                                                                                                         | - Environment variable: ``MM_OFFICE365SETTINGS_ID``  |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------+
 
-+---------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Id": ""`` with string input. |
-+---------------------------------------------------------------------------+
-
-Application secret password
-'''''''''''''''''''''''''''
+Office 365 OAuth 2.0 Application secret password
+''''''''''''''''''''''''''''''''''''''''''''''''
 
 *Available in legacy Enterprise Edition E20*
 
-Obtain this value by registering Mattermost as an application in your Microsoft or Office account.
-
-+-------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Secret": ""`` with string input. |
-+-------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------+
+| This setting holds the **Application Secret Password** generated when configuring Office 365 as a Single Sign-On service through the Microsoft Azure Portal. See `Generate a new client secret in Azure Portal <https://docs.mattermost.com/onboard/sso-office.html#step-2-generate-a-new-client-secret-in-azure-portal>`__. | - System Config path: **Authentication > OAuth 2.0**     |
+|                                                                                                                                                                                                                                                                                                                              | - ``config.json`` setting: ``.Office365Settings.Secret`` |
+| String input.                                                                                                                                                                                                                                                                                                                | - Environment variable: ``MM_OFFICE365SETTINGS_SECRET``  |
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------+
 
 Directory (tenant) ID
 ''''''''''''''''''''''
