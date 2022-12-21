@@ -1348,27 +1348,27 @@ Office 365 OAuth 2.0 Application secret password
 | String input.                                                                                                                                                                                                                                                                                                                | - Environment variable: ``MM_OFFICE365SETTINGS_SECRET``  |
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------+
 
-Directory (tenant) ID
-''''''''''''''''''''''
+Office 365 OAuth 2.0 Directory (tenant) ID
+''''''''''''''''''''''''''''''''''''''''''
 
 *Available in legacy Enterprise Edition E20*
 
-This value is the ID of the application's AAD directory.
++-------------------------------------------------------------------------------------------+---------------------------------------------------------------+
+| This setting holds the Directory (tenant) ID set for Mattermost through the Azure Portal. | - System Config path: **Authentication > OAuth 2.0**          |
+|                                                                                           | - ``config.json`` setting: ``.Office365Settings.DirectoryId`` |
+| String input.                                                                             | - Environment variable: ``MM_OFFICE365SETTINGS_DIRECTORYID``  |
++-------------------------------------------------------------------------------------------+---------------------------------------------------------------+
 
-+------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"DirectoryId": ""`` with string input. |
-+------------------------------------------------------------------------------------+
-
-User API endpoint
+Office 365 OAuth 2.0 User API endpoint
 '''''''''''''''''
 
 *Available in legacy Enterprise Edition E20*
 
-We recommend using ``https://graph.microsoft.com/v1.0/me`` as the User API Endpoint. Otherwise, enter a custom endpoint in ``config.json`` with HTTP or HTTPS depending on how your server is configured.
-
-+---------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"UserApiEndpoint": "https://graph.microsoft.com/v1.0/me"`` with string input. |
-+---------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
+| We recommend ``https://graph.microsoft.com/v1.0/me`` as the User API Endpoint. Otherwise, enter a custom endpoint in ``config.json`` with HTTP, or HTTPS, if available on the server. | - System Config path: **Authentication > OAuth 2.0**              |
+|                                                                                                                                                                                       | - ``config.json`` setting: ``.Office365Settings.UserAPIEndpoint`` |
+| String input.                                                                                                                                                                         | - Environment variable: ``MM_OFFICE365SETTINGS_USERAPIENDPOINT``  |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
 
 Auth endpoint
 '''''''''''''
