@@ -181,6 +181,13 @@ Enable gossip compression
 |   remains uncompressed.                                         |                                                                                  |
 +-----------------------------------------------------------------+----------------------------------------------------------------------------------+
 
+.. config:setting:: ha-gossipport
+  :displayname: Gossip port (High Availability)
+  :systemconsole: Environment > High Availability
+  :configjson: .ClusterSettings.GossipPort
+  :environment: MM_CLUSTERSETTINGS_GOSSIPPORT
+  :description: The port used for the gossip protocol. Both UDP and TCP should be allowed on this port. Default value is **8074**.
+
 Gossip port
 ~~~~~~~~~~~
 
@@ -193,6 +200,13 @@ Gossip port
 | Numerical input. Default is **8074**.                           |                                                                     |
 +-----------------------------------------------------------------+---------------------------------------------------------------------+
 
+.. config:setting:: ha-streamingport
+  :displayname: Streaming port (High Availability)
+  :systemconsole: Environment > High Availability
+  :configjson: .ClusterSettings.StreamingPort
+  :environment: MM_CLUSTERSETTINGS_STREAMINGPORT
+  :description: The port used for streaming data between servers. Default value is **8075**.
+
 Streaming port
 ~~~~~~~~~~~~~~
 
@@ -203,6 +217,15 @@ Streaming port
 |                                                                 | - ``config.json`` setting: ``".ClusterSettings.StreamingPort: 8075",`` |
 | Numerical input. Default is **8075**.                           | - Environment variable: ``MM_CLUSTERSETTINGS_STREAMINGPORT``           |
 +-----------------------------------------------------------------+------------------------------------------------------------------------+
+
+.. config:setting:: ha-readonlyconfig
+  :displayname: Read only config (High Availability)
+  :systemconsole: N/A
+  :configjson: .ClusterSettings.ReadOnlyConfig
+  :environment: MM_CLUSTERSETTINGS_READONLYCONFIG
+
+  - **true**: **(Default)** Changes made to settings in the System Console are ignored.
+  - **false**: Changes made to settings in the System Console are written to ``config.json``.
 
 Read only config
 ~~~~~~~~~~~~~~~~
@@ -216,6 +239,13 @@ Read only config
 |   are written to ``config.json``.                               |                                                                        |
 +-----------------------------------------------------------------+------------------------------------------------------------------------+
 
+.. config:setting:: ha-networkinterface
+  :displayname: Network interface (High Availability)
+  :systemconsole: N/A
+  :configjson: .ClusterSettings.NetworkInterface
+  :environment: MM_CLUSTERSETTINGS_NETWORKINTERFACE
+  :description: An IP address used to identify the device that does automatic IP detection in high availability clusters.
+
 Network interface
 ~~~~~~~~~~~~~~~~~
 
@@ -227,6 +257,13 @@ Network interface
 |                                                                 | - Environment variable: ``MM_CLUSTERSETTINGS_NETWORKINTERFACE``        |
 | String input.                                                   |                                                                        |
 +-----------------------------------------------------------------+------------------------------------------------------------------------+
+
+.. config:setting:: ha-bindaddress
+  :displayname: Bind address (High Availability)
+  :systemconsole: N/A
+  :configjson: .ClusterSettings.BindAddress
+  :environment: MM_CLUSTERSETTINGS_BINDADDRESS
+  :description: An IP address used to bind cluster traffic to a specific network device.
 
 Bind address
 ~~~~~~~~~~~~
@@ -245,6 +282,13 @@ Bind address
 | String input.                                                   |                                                                    |
 +-----------------------------------------------------------------+--------------------------------------------------------------------+
 
+.. config:setting:: ha-advertiseaddress
+  :displayname: Advertise address (High Availability)
+  :systemconsole: N/A
+  :configjson: .ClusterSettings.AdvertiseAddress
+  :environment: MM_CLUSTERSETTINGS_ADVERTISEADDRESS
+  :description: The IP address used to access the server from other nodes.
+
 Advertise address
 ~~~~~~~~~~~~~~~~~
 
@@ -258,6 +302,13 @@ Advertise address
 | String input.                                                   |                                                                        |
 +-----------------------------------------------------------------+------------------------------------------------------------------------+
 
+.. config:setting:: ha-maxidleconnections
+  :displayname: Maximum idle connections for high availability (High Availability)
+  :systemconsole: N/A
+  :configjson: .ClusterSettings.MaxIdleConns
+  :environment: MM_CLUSTERSETTINGS_MAXIDLECONNS
+  :description: The maximum number of idle connections held open from one server to all others in the cluster. Default is **100** idle connections.
+
 Maximum idle connections for high availability
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -269,6 +320,13 @@ Maximum idle connections for high availability
 |                                                                 | - Environment variable: ``MM_CLUSTERSETTINGS_MAXIDLECONNS``            |
 | Numerical input. Default is **100**.                            |                                                                        |
 +-----------------------------------------------------------------+------------------------------------------------------------------------+
+
+.. config:setting:: ha-maxidleconnectionsperhost
+  :displayname: Maximum idle connections per host (High Availability)
+  :systemconsole: N/A
+  :configjson: .ClusterSettings.MaxIdleConnsPerHost
+  :environment: MM_CLUSTERSETTINGS_MAXIDLECONNSPERHOST
+  :description: The maximum number of idle connections held open from one server to another server in the cluster. Default is **128** idle connections.
 
 Maximum idle connections per host
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -282,12 +340,12 @@ Maximum idle connections per host
 | Numerical input. Default is **128**.                            |                                                                              |
 +-----------------------------------------------------------------+------------------------------------------------------------------------------+
 
-.. config:setting:: clustersettings-idleconnectiontimeout
+.. config:setting:: ha-idleconnectiontimeout
   :displayname: Idle connection timeout (High Availability)
   :systemconsole: N/A
   :configjson: .ClusterSettings.IdleConnTimeoutMilliseconds
   :environment: MM_CLUSTERSETTINGS_IDLECONNTIMEOUTMILLISECONDS
-  :description: The amount of time, in milliseconds, to leave an idle connection open between servers in the cluster. Default is **90000** seconds.
+  :description: The amount of time, in milliseconds, to leave an idle connection open between servers in the cluster. Default is **90000** milliseconds.
 
 Idle connection timeout
 ~~~~~~~~~~~~~~~~~~~~~~~
