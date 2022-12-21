@@ -1316,15 +1316,15 @@ Office 365 OAuth 2.0 settings
 .. note::
    In line with Microsoft ADFS guidance we recommend `configuring intranet forms-based authentication for devices that do not support WIA <https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configure-intranet-forms-based-authentication-for-devices-that-do-not-support-wia>`__.
 
-Enable authentication with Office 365 by selecting **Office 365** from **System Console > Authentication > OAuth 2.0 > Select OAuth 2.0 service provider**.
+Enable OAuth 2.0 Authentication with Office 365
+'''''''''''''''''''''''''''''''''''''''''''''''
 
-**True**: Allow team creation and account signup using Office 365 OAuth. To configure, input the **Application ID** and **Application Secret Password** credentials. See `the documentation <https://docs.mattermost.com/onboard/sso-office.html>`__ for more detail.
-
-**False**: Office 365 OAuth cannot be used for team creation or account signup.
-
-+----------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Enable": false`` with options ``true`` and ``false``. |
-+----------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------+
+| - **true**: Allows team and account creation using Office 365 OAuth authentication. Input the **Application ID** and **Application Secret Password** credentials to configure. | - System Config path: **Authentication > OAuth 2.0**           |
+| - **false**: **(Default)** Disables Office 365 OAuth authentication.                                                                                                           | - ``config.json`` setting: ``Office365Settings.Enable: false`` |
+|                                                                                                                                                                                | - Environment variable: ``MM_OFFICE365SETTINGS_ENABLE``        |
+| See `Office 365 Single Sign-On <https://docs.mattermost.com/onboard/sso-office.html>`__ for instructions on how to implement OAuth or OpenID with Office 365.                  |                                                                |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------+
 
 Application ID
 ''''''''''''''
