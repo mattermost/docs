@@ -6,6 +6,15 @@ You can configure Mattermost as a `high availability environment </scale/high-av
 
 In a Mattermost high availability cluster deployment, the System Console is set to read-only, and settings can only be changed by editing the ``config.json`` file directly. However, to test a high availability environment, you can disable ``ClusterSettings.ReadOnlyConfig`` in the ``config.json`` file by setting it to ``false``. This allows changes applied using the System Console to be saved back to the configuration file.
 
+.. config:setting:: ha-enable
+  :displayname: Enable high availability mode (High Availability)
+  :systemconsole: Environment > High Availability
+  :configjson: .ClusterSettings.Enable
+  :environment: MM_CLUSTERSETTINGS_ENABLE
+
+  - **true**: The Mattermost server will attempt inter-node communication with the other servers in the cluster that have the same cluster name.
+   **false**: **(Default)** Mattermost high availability mode is disabled.
+
 Enable high availability mode
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -23,6 +32,13 @@ Enable high availability mode
 |   is disabled.                                                  |                                                            |
 +-----------------------------------------------------------------+------------------------------------------------------------+
 
+.. config:setting:: ha-clustername
+  :displayname: Cluster name (High Availability)
+  :systemconsole: Environment > High Availability
+  :configjson: .ClusterSettings.ClusterName
+  :environment: MM_CLUSTERSETTINGS_CLUSTERNAME
+  :description: The cluster to join by name in a high availability environment.
+
 Cluster name
 ~~~~~~~~~~~~
 
@@ -35,6 +51,13 @@ Cluster name
 | This is to support blue-green deployments or staging pointing   |                                                                 |
 | to the same database.                                           |                                                                 |
 +-----------------------------------------------------------------+-----------------------------------------------------------------+
+
+.. config:setting:: ha-overridehostname
+  :displayname: Override hostname (High Availability)
+  :systemconsole: Environment > High Availability
+  :configjson: .ClusterSettings.OverrideHostname
+  :environment: MM_CLUSTERSETTINGS_OVERRIDEHOSTNAME
+  :description: Override the hostname of this server.
 
 Override hostname
 ~~~~~~~~~~~~~~~~~
@@ -53,6 +76,15 @@ Override hostname
 | See the `high availability cluster </scale/high-availability-cluster.html>`__ documentation for details.                               |
 +-----------------------------------------------------------------+----------------------------------------------------------------------+
 
+.. config:setting:: ha-useipaddress
+  :displayname: Use IP address (High Availability)
+  :systemconsole: Environment > High Availability
+  :configjson: .ClusterSettings.UseIPAddress
+  :environment: MM_CLUSTERSETTINGS_USEIPADDRESS
+
+  - **true**: **(Default)** The cluster attempts to communicate using the IP address specified.
+  - **false**: The cluster attempts to communicate using the hostname.
+
 Use IP address
 ~~~~~~~~~~~~~~
 
@@ -67,6 +99,15 @@ Use IP address
 | - **false**: The cluster attempts to communicate using the      |                                                                        |
 |   hostname.                                                     |                                                                        |
 +-----------------------------------------------------------------+------------------------------------------------------------------------+
+
+.. config:setting:: ha-usegossip
+  :displayname: Use gossip (High Availability)
+  :systemconsole: Environment > High Availability
+  :configjson: .ClusterSettings.UseExperimentalGossip
+  :environment: MM_CLUSTERSETTINGS_USEEXPERIMENTALGOSSIP
+
+  - **true**: **(Default)** The server attempts to communicate via the gossip protocol over the gossip port specified.
+  - **false**: The server attempts to communicate over the streaming port.
 
 Use gossip
 ~~~~~~~~~~
@@ -87,6 +128,15 @@ Use gossip
 | - The gossip port and gossip protocol are used to determine cluster health even when this setting is set to **false**.                           |
 +-----------------------------------------------------------------+--------------------------------------------------------------------------------+
 
+.. config:setting:: ha-gossipencryption
+  :displayname: Enable experimental gossip encryption (High Availability)
+  :systemconsole: Environment > High Availability
+  :configjson: .ClusterSettings.EnableExperimentalGossipEncryption
+  :environment: MM_CLUSTERSETTINGS_ENABLEEXPERIMENTALGOSSIPENCRYPTION
+
+  - **true**: All communication through the cluster using the gossip protocol will be encrypted.
+  - **false**: **(Default)** All communication using gossip protocol remains unencrypted.
+
 Enable experimental gossip encryption
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -105,6 +155,15 @@ Enable experimental gossip encryption
 | Set this value to either 16, 24, or 32 bytes to select AES-128, AES-192, or AES-256 respectively.                                                              |
 +-----------------------------------------------------------------+----------------------------------------------------------------------------------------------+
 
+.. config:setting:: ha-gossipcompression
+  :displayname: Enable gossip compression (High Availability)
+  :systemconsole: Environment > High Availability
+  :configjson: .ClusterSettings.EnableGossipCompression
+  :environment: MM_CLUSTERSETTINGS_ENABLEGOSSIPCOMPRESSION
+
+  - **true**: **(Default)** All communication through the cluster uses gossip compression.
+  - **false**: All communication using the gossip protocol remains uncompressed.
+
 Enable gossip compression
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -113,7 +172,7 @@ Enable gossip compression
 +-----------------------------------------------------------------+----------------------------------------------------------------------------------+
 | Once all servers in a cluster are upgraded to Mattermost v5.33  | - System Config path: **Environment > High Availability**                        |
 | or later, we recommend that you disable this configuration      | - ``config.json`` setting: ``".ClusterSettings.EnableGossipCompression: true”,`` |
-| setting for better performance.                                 | - Environment variable: ``MM_CLUSTERSETTINGS_ENABLE GOSSIPCOMPRESSION``          |
+| setting for better performance.                                 | - Environment variable: ``MM_CLUSTERSETTINGS_ENABLEGOSSIPCOMPRESSION``           |
 |                                                                 |                                                                                  |
 | - **true**: **(Default)** All communication through the         |                                                                                  |
 |   cluster uses gossip compression. This setting is enabled by   |                                                                                  |
