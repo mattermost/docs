@@ -42,6 +42,8 @@ Latest Mattermost Cloud releases:
  - Updated the **Remove license and download** text in-product to clarify that server will be downgraded to Mattermost Free as a result.
  - Corrected in-product System Console legacy link to the Cloud Administrator's Guide.
  - Updated prepackaged NPS version to 1.3.1.
+ - Added group members count to the group autocomplete.
+ - Improved the collapsed state of the post formatting toolbar.
 
 #### Administration
  - The export file now contains the server version and a creation timestamp.
@@ -50,6 +52,7 @@ Latest Mattermost Cloud releases:
  - Added the ability for customers to view their upcoming invoice at the **System Console > Billing & Account > Subscriptions** page.
  - **Total Activated Users** was changed back to **Total Active Users** in **System Console > Reporting > Site Statistics**.
  - The import job now logs the progress of the import.
+ - Added ``restore_group`` permission to the mmctl.
 
 ### API Changes
  - Added new API endpoint ``GET /api/v4/posts/:post_id/info`` to allow checking if the post that a permalink is pointing to is accessible by joining teams or channels.
@@ -76,6 +79,9 @@ Latest Mattermost Cloud releases:
  - Fixed the position of the Boards icon in the app bar when Boards is running without a plugin.
  - Fixed ability to create a board when Boards is running without a plugin.
  - Fixed Boards tour tips not appearing when Boards is running without a plugin.
+ - Fixed the slash command description help text.
+ - Fixed an issue where clicking **Contact Sales** didn't prefill the reason of contacting sales.
+ - Fixed an issue where the screen readers did not announce the selected state of the sidebar submenu items.
 
 ### Known Issues
  - Boards linked to a channel you're a member of don't automatically appear on your sidebar unless you're an explicit member of the board. As a workaround, you can access the board from the channel RHS, or by searching for the board via the board switcher (Ctrl/Cmd+K). Alternatively, you can ask the board admin to add you to the board as an explicit member. See the [issue-focalboard-4179](https://github.com/mattermost/focalboard/issues/4179) for more details.
