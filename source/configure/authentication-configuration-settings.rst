@@ -1370,27 +1370,27 @@ Office 365 OAuth 2.0 User API endpoint
 | String input.                                                                                                                                                                         | - Environment variable: ``MM_OFFICE365SETTINGS_USERAPIENDPOINT``  |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
 
-Auth endpoint
+Office 365 OAuth 2.0 Auth endpoint
 '''''''''''''
 
 *Available in legacy Enterprise Edition E20*
 
-We recommend using ``https://accounts.google.com/o/oauth2/v2/auth`` as the Auth Endpoint. Otherwise, enter a custom endpoint in ``config.json`` with HTTP or HTTPS depending on how your server is configured.
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------+
+| We recommend ``https://login.microsoftonline.com/common/oauth2/v2.0/authorize`` as the Auth Endpoint. Otherwise, enter a custom endpoint in ``config.json`` with HTTP, or HTTPS, if available on the server. | - System Config path: **Authentication > OAuth 2.0**           |
+|                                                                                                                                                                                                              | - ``config.json`` setting: ``.Office365Settings.AuthEndpoint`` |
+| String input.                                                                                                                                                                                                | - Environment variable: ``MM_OFFICE365SETTINGS_AUTHENDPOINT``  |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------+
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"AuthEndpoint": "https://login.microsoftonline.com/common/oauth2/v2.0/authorize"`` with string input.                    |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Token endpoint
-'''''''''''''''
+Office 365 OAuth 2.0 Token endpoint
+'''''''''''''''''''''''''''''''''''
 
 *Available in legacy Enterprise Edition E20*
 
-We recommend that you use ``https://login.microsoftonline.com/common/oauth2/v2.0/token`` as the Token Endpoint. Otherwise, enter a custom endpoint in ``config.json`` with HTTP or HTTPS depending on how your server is configured.
-
-+------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"TokenEndpoint": "https://login.microsoftonline.com/common/oauth2/v2.0/token"`` with string input. |
-+------------------------------------------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
+| We recommend ``https://login.microsoftonline.com/common/oauth2/v2.0/token`` as the Token Endpoint. Otherwise, enter a custom endpoint in ``config.json`` with HTTP, or HTTPS, if available on the server. | - System Config path: **Authentication > OAuth 2.0**            |
+|                                                                                                                                                                                                           | - ``config.json`` setting: ``.Office365Settings.TokenEndpoint`` |
+| String input.                                                                                                                                                                                             | - Environment variable: ``MM_OFFICE365SETTINGS_TOKENENDPOINT``  |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
 
 ----
 
