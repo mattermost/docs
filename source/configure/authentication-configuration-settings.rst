@@ -1377,9 +1377,9 @@ Auth endpoint
 
 We recommend using ``https://accounts.google.com/o/oauth2/v2/auth`` as the Auth Endpoint. Otherwise, enter a custom endpoint in ``config.json`` with HTTP or HTTPS depending on how your server is configured.
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"AuthEndpoint": "https://login.microsoftonline.com/common/oauth2/v2.0/authorize"`` with string input.                    |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"AuthEndpoint": "https://login.microsoftonline.com/common/oauth2/v2.0/authorize"`` with string input. |
++---------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Token endpoint
 '''''''''''''''
@@ -1407,18 +1407,18 @@ Select OpenID Connect service provider
 
 *Available in legacy Enterprise Edition E20*
 
-Choose whether OpenID Connect can be used for account creation and login. Options include:
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+
+| Use this setting to enable OpenID Connect and specify the service provider, with these options:                                                              | - System Config path: **Authentication > OpenID Connect** |
+|                                                                                                                                                              | - ``config.json`` setting: N/A                            |
+| - **Do not allow login via an OpenID provider**                                                                                                              | - Environment variable: N/A                               |
+| - **GitLab** (Available in all plans, except Cloud Free; see `GitLab OpenID settings <#gitlab-openid-settings>`__)                                           |                                                           |
+| - **Google Apps** (Available in Mattermost Enterprise and Professional; see `Google OpenID settings <#google-openid-settings>`__)                            |                                                           |
+| - **Office 365** (Available in Mattermost Enterprise and Professional; see `Office 365 OpenID settings <#office-365-openid-settings>`__)                     |                                                           |
+| - **OpenID Connect (Other)** (Available in Mattermost Enterprise and Professional; see `OpenID Connect (other) settings <#openid-connect-other-settings>`__) |                                                           |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+
 
-- **Do not allow login via an OpenID provider**
-- **GitLab** (available in all plans; see `GitLab Settings <https://docs.mattermost.com/configure/configuration-settings.html#gitlab-settings>`__ for details)
-- **Google Apps** (Available in Mattermost Enterprise and Professional; see `Google Settings <https://docs.mattermost.com/configure/configuration-settings.html#google-settings>`__ for details)
-- **Office 365** (Available in Mattermost Enterprise and Professional; see `Office 365 Settings <https://docs.mattermost.com/configure/configuration-settings.html#office-365-settings>`__ for details)
-- **OpenID Connect (Other)** (Available in Mattermost Enterprise and Professional; see `OpenID Connect Settings <https://docs.mattermost.com/configure/configuration-settings.html#openid-connect-other-settings>`__ for more detail)
-
-This feature's setting does not appear in ``config.json``.
-
-GitLab settings
-^^^^^^^^^^^^^^^
+GitLab OpenID settings
+^^^^^^^^^^^^^^^^^^^^^^
 
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
@@ -1454,8 +1454,8 @@ Client secret
 
 Obtain this value by registering Mattermost as an application in your Google account.
 
-Google Settings
-^^^^^^^^^^^^^^^
+Google OpenID settings
+^^^^^^^^^^^^^^^^^^^^^^
 
 .. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
   :start-after: :nosearch:
@@ -1503,8 +1503,8 @@ Obtain this value by registering Mattermost as an application in your Google acc
 | This feature's ``config.json`` setting is ``"Secret": ""`` with string input. |
 +-------------------------------------------------------------------------------+
 
-Office 365 Settings
-^^^^^^^^^^^^^^^^^^^
+Office 365 OpenID settings
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
   :start-after: :nosearch:
@@ -1550,8 +1550,8 @@ Client secret
 
 Obtain this value by registering Mattermost as an application in your Google account.
 
-OpenID Connect (other) 
-^^^^^^^^^^^^^^^^^^^^^^
+OpenID Connect (other) settings
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
   :start-after: :nosearch:
