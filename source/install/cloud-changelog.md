@@ -40,6 +40,7 @@ Latest Mattermost Cloud releases:
  - Added group members count to the group autocomplete.
  - Clicking a group mention now displays group details and membership.
  - Improved the collapsed state of the post formatting toolbar.
+ - App Framework - channel and user fields now support multiselect property, to allow users to select multiple values in the form.
 
 #### Administration
  - The export file now contains the server version and a creation timestamp.
