@@ -3,6 +3,15 @@
 
 Configure Mattermost to enable push notifications to Mattermost clients by going to **System Console > Environment > Push Notification Server**, or by editing the ``config.json`` file as described in the following tables. Changes to configuration settings in this section require a server restart before taking effect.
 
+.. config:setting:: push-enablenotifications
+  :displayname: Enable push notifications (Push Notifications)
+  :systemconsole: Environment > Push Notification Server
+  :configjson: .EmailSettings.SendPushNotifications
+  :environment: MM_EMAILSETTINGS_SENDPUSHNOTIFICATIONS
+
+  - **true**: **(Default)** Your Mattermost server sends mobile push notifications to the server specified.
+  - **false**: Mobile push notifications are disabled.
+
 Enable push notifications
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -15,6 +24,13 @@ Enable push notifications
 |   push notifications to the server specified.                   |                                                                                |
 | - **false**: Mobile push notifications are disabled.            |                                                                                |
 +-----------------------------------------------------------------+--------------------------------------------------------------------------------+
+
+.. config:setting:: push-serverlocation
+  :displayname: Push notification server location (Push Notifications)
+  :systemconsole: Environment > Push Notification Server
+  :configjson: .EmailSettings.PushNotificationServer
+  :environment: MM_EMAILSETTINGS_PUSHNOTIFICATIONSERVER
+  :description: The URL of the Mattermost Push Notification Service (MPNS), which re-sends push notifications from Mattermost to services like Apple Push Notification Service (APNS) and Google Cloud Messaging (GCM).
 
 Push notification server location
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -46,6 +62,13 @@ Push notification server location
 |   available on the App Store, or the `Mattermost Android App <https://play.google.com/store/apps/details?id=com.mattermost.rn>`__ available on   |
 |   Google Play.                                                                                                                                   |
 +-----------------------------------------------------------------+--------------------------------------------------------------------------------+
+
+.. config:setting:: push-maxnotificationsperchannel
+  :displayname: Maximum notifications per channel (Push Notifications)
+  :systemconsole: Environment > Push Notification Server
+  :configjson: .TeamSettings.MaxNotificationsPerChannel
+  :environment: MM_EMAILSETTINGS_MAXNOTIFICATIONSPERCHANNEL
+  :description: The maximum total number of users in a channel before @all, @here, and @channel no longer send desktop, email, or mobile push notifications to maximize performance. Default is **1000** users.
 
 Maximum notifications per channel
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
