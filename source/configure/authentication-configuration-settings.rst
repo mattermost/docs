@@ -1539,43 +1539,64 @@ Office 365 OpenID settings
 .. note::
    In line with Microsoft ADFS guidance, we recommend `configuring intranet forms-based authentication for devices that do not support WIA <https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configure-intranet-forms-based-authentication-for-devices-that-do-not-support-wia>`_.
 
-Enable authentication with Office 365 by selecting **Office 365** from **System Console > Authentication > OpenID Connect > Select service provider**.
++----------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------+
+| - **true**: Allows team and account creation using Office 365 OpenID Connect authentication.                         | - System Config path: **Authentication > OpenID Connect**      |
+| - **false**: **(Default)** Disables Office 365 OpenID Connect authentication.                                        | - ``config.json`` setting: ``Office365Settings.Enable: false`` |
+|                                                                                                                      | - Environment variable: ``MM_OFFICE365SETTINGS_ENABLE``        |
+| See `Office 365 Single Sign-On <https://docs.mattermost.com/onboard/sso-office.html>`__ implementation instructions. |                                                                |
++----------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------+
 
-**True**: Allow team creation and account signup using Office 365 OpenID Connect. To configure, input the **Application ID** and **Application Secret Password** credentials. See `the documentation <https://docs.mattermost.com/onboard/sso-office.html>`__ for more detail.
-
-**False**: Office 365 OpenID Connect cannot be used for team creation or account signup.
-
-+----------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Enable": false`` with options ``true`` and ``false``. |
-+----------------------------------------------------------------------------------------------------+
-
-Directory (tenant) ID
-'''''''''''''''''''''
+Office 365 OpenID Directory (tenant) ID
+'''''''''''''''''''''''''''''''''''''''
 
 *Available in legacy Enterprise Edition E20*
 
-This value is the ID of the application's AAD directory.
++----------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------+
+| This setting holds the Directory (tenant) ID set for Mattermost through the Azure Portal.                            | - System Config path: **Authentication > OpenID Connect**     |
+|                                                                                                                      | - ``config.json`` setting: ``.Office365Settings.DirectoryId`` |
+| See `Office 365 Single Sign-On <https://docs.mattermost.com/onboard/sso-office.html>`__ implementation instructions. | - Environment variable: ``MM_OFFICE365SETTINGS_DIRECTORYID``  |
+|                                                                                                                      |                                                               |
+| String input.                                                                                                        |                                                               |
++----------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------+
 
-Discovery endpoint
-''''''''''''''''''
-
-*Available in legacy Enterprise Edition E20*
-
-This value is prepopulated with https://login.microsoftonline.com/common/v2.0/.well-known/openid-configuration.
-
-Client ID
-''''''''''
-
-*Available in legacy Enterprise Edition E20*
-
-Obtain this value by registering Mattermost as an application in your Google account.
-
-Client secret
-'''''''''''''
+Office 365 OpenID Discovery endpoint
+''''''''''''''''''''''''''''''''''''
 
 *Available in legacy Enterprise Edition E20*
 
-Obtain this value by registering Mattermost as an application in your Google account.
++----------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| This setting is prepopulated with the Discovery Endpoint for Office 365 OpenID Connect.                              | - System Config path: **Authentication > OpenID Connect**           |
+|                                                                                                                      | - ``config.json`` setting: ``.Office365Settings.DiscoveryEndpoint`` |
+| See `Office 365 Single Sign-On <https://docs.mattermost.com/onboard/sso-office.html>`__ implementation instructions. | - Environment variable: ``MM_OFFICE365SETTINGS_DISCOVERYENDPOINT``  |
+|                                                                                                                      |                                                                     |
+| String input. Default is ``https://login.microsoftonline.com/common/v2.0/.well-known/openid-configuration``          |                                                                     |
++----------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+
+Office 365 Client ID
+''''''''''''''''''''
+
+*Available in legacy Enterprise Edition E20*
+
++----------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+
+| This setting stores the **Application (client) ID** generated through the Azure Portal.                              | - System Config path: **Authentication > OpenID Connect** |
+|                                                                                                                      | - ``config.json`` setting: ``.Office365Settings.Id``      |
+| See `Office 365 Single Sign-On <https://docs.mattermost.com/onboard/sso-office.html>`__ implementation instructions. | - Environment variable: ``MM_OFFICE365SETTINGS_ID``       |
+|                                                                                                                      |                                                           |
+| String input.                                                                                                        |                                                           |
++----------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+
+
+Office 365 Client secret
+''''''''''''''''''''''''
+
+*Available in legacy Enterprise Edition E20*
+
++----------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+
+| This setting stores the **Client Secret** generated through the Azure Portal.                                        | - System Config path: **Authentication > OpenID Connect** |
+|                                                                                                                      | - ``config.json`` setting: ``.Office365Settings.Secret``  |
+| See `Office 365 Single Sign-On <https://docs.mattermost.com/onboard/sso-office.html>`__ implementation instructions. | - Environment variable: ``MM_OFFICE365SETTINGS_SECRET``   |
+|                                                                                                                      |                                                           |
+| String input.                                                                                                        |                                                           |
++----------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+
 
 OpenID Connect (other) settings
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
