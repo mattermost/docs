@@ -1481,48 +1481,54 @@ Google OpenID settings
 .. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Enable authentication with Google by selecting ``Google Apps`` from **System Console > Authentication > OpenID Connect > Select service provider**.
+Enable OpenID Connect authentication with Google
+''''''''''''''''''''''''''''''''''''''''''''''''
 
-**True**: Allow team creation and account signup using Google OpenID Connect. To configure, input the **Client ID**, **Client Secret**, and **DiscoveryEndpoint** credentials. See `the documentation <https://docs.mattermost.com/onboard/sso-google.html>`__ for more detail.
++------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
+| - **true**: Allows team and account creation using Google OpenID authentication.                                 | - System Config path: **Authentication > OpenID Connect**    |
+| - **false**: **(Default)** Disables Google OpenID authentication.                                                | - ``config.json`` setting: ``.GoogleSettings.Enable: false`` |
+|                                                                                                                  | - Environment variable: ``MM_GOOGLESETTINGS_ENABLE``         |
+| See `Google Single Sign-On <https://docs.mattermost.com/onboard/sso-google.html>`__ implementation instructions. |                                                              |
++------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
 
-**False**: Google OpenID Connect cannot be used for team creation or account signup.
-
-+----------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Enable": false`` with options ``true`` and ``false``. |
-+----------------------------------------------------------------------------------------------------+
-
-Discovery endpoint
-'''''''''''''''''''
-
-*Available in legacy Enterprise Edition E20*
-
-This value is prepopulated with ``https://accounts.google.com/.well-known/openid-configuration``.
-
-+------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"DiscoveryEndpoint": ""`` with string input. |
-+------------------------------------------------------------------------------------------+
-
-Client ID
-'''''''''
+Google OpenID Discovery endpoint
+''''''''''''''''''''''''''''''''
 
 *Available in legacy Enterprise Edition E20*
 
-Obtain this value by registering Mattermost as an application in your Google account.
++---------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
+| This setting is prepopulated with the Discovery Endpoint for Google OpenID Connect.                                                                     | - System Config path: **Authentication > OpenID Connect**        |
+|                                                                                                                                                         | - ``config.json`` setting: ``.GoogleSettings.DiscoveryEndpoint`` |
+| See `Configure Mattermost for Google Apps SSO <https://docs.mattermost.com/onboard/sso-google.html#step-3-configure-mattermost-for-google-apps-sso>`__. | - Environment variable: ``MM_GOOGLESETTINGS_DISCOVERYENDPOINT``  |
+|                                                                                                                                                         |                                                                  |
+| String input. Default is ``https://accounts.google.com/.well-known/openid-configuration``                                                               |                                                                  |
++---------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
 
-+---------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Id": ""`` with string input. |
-+---------------------------------------------------------------------------+
-
-Client secret
-'''''''''''''
+Google OpenID Client ID
+'''''''''''''''''''''''
 
 *Available in legacy Enterprise Edition E20*
 
-Obtain this value by registering Mattermost as an application in your Google account.
++------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+
+| This setting stores the Client ID generated by Google.                                                           | - System Config path: **Authentication > OpenID Connect** |
+|                                                                                                                  | - ``config.json`` setting: ``.GoogleSettings.Id``         |
+| See `Google Single Sign-On <https://docs.mattermost.com/onboard/sso-google.html>`__ implementation instructions. | - Environment variable: ``MM_GOOGLESETTINGS_ID``          |
+|                                                                                                                  |                                                           |
+| String input.                                                                                                    |                                                           |
++------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+
 
-+-------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Secret": ""`` with string input. |
-+-------------------------------------------------------------------------------+
+Google Open ID Client secret
+''''''''''''''''''''''''''''
+
+*Available in legacy Enterprise Edition E20*
+
++-------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+
+| This setting stores the Client Secret generated by Google.                                                        | - System Config path: **Authentication > OpenID Connect** |
+|                                                                                                                   | - ``config.json`` setting: ``.GoogleSettings.Secret``     |
+| See `Google Single Sign-On <https://docs.mattermost.com/onboard/sso-google.html>`__  implementation instructions. | - Environment variable: ``MM_GOOGLESETTINGS_SECRET``      |
+|                                                                                                                   |                                                           |
+| String input.                                                                                                     |                                                           |
++-------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+
 
 Office 365 OpenID settings
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
