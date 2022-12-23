@@ -1530,8 +1530,8 @@ Google OpenID Client ID
 | String input.                                                                                                    |                                                           |
 +------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+
 
-Google Open ID Client secret
-''''''''''''''''''''''''''''
+Google OpenID Client secret
+'''''''''''''''''''''''''''
 
 *Available in legacy Enterprise Edition E20*
 
