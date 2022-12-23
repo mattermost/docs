@@ -1423,6 +1423,19 @@ GitLab OpenID settings
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
+Enable OpenID Connect authentication with GitLab
+''''''''''''''''''''''''''''''''''''''''''''''''
+
+*Available in legacy Enterprise Edition E10 and E20. Not available in Cloud Free.*
+
++------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
+| - **true**: Allows team and account creation using GitLab OpenID Connect authentication.                         | - System Config path: **Authentication > OpenID Connect**    |
+| - **false**: **(Default)** Disables GitLab OpenID Connect authentication.                                        | - ``config.json`` setting: ``.GitLabSettings.Enable: false`` |
+|                                                                                                                  | - Environment variable: ``MM_GITLABSETTINGS_ENABLE``         |
+| See `GitLab Single Sign-On <https://docs.mattermost.com/onboard/sso-gitlab.html>`__ implementation instructions. |                                                              |
++------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
+
+
 GitLab OpenID site URL
 ''''''''''''''''''''''
 
@@ -1674,7 +1687,7 @@ OpenID Connect (other) Client secret
 +---------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+
 | This setting stores the Client Secret from the OpenID provider.                                                                 | - System Config path: **Authentication > OpenID Connect** |
 |                                                                                                                                 | - ``config.json`` setting: ``.OpenIdSettings.Secret``     |
-| See `OpenID Connect Single Sign-On <https://docs.mattermost.com/onboard/sso-openidconnect.html>`__ implementation instructions. | - Environment variable: ``MM_OFFICE365SETTINGS_SECRET``   |
+| See `OpenID Connect Single Sign-On <https://docs.mattermost.com/onboard/sso-openidconnect.html>`__ implementation instructions. | - Environment variable: ``MM_OPENIDSETTINGS_SECRET``      |
 |                                                                                                                                 |                                                           |
 | String input.                                                                                                                   |                                                           |
 +---------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+
