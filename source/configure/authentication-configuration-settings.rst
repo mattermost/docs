@@ -1610,65 +1610,74 @@ OpenID Connect (other) settings
 Enable OpenID Connect authentication with other service providers
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-+---------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
-| - **true**: Allows team and account creation using other OpenID Connect service providers.              | - System Config path: **Authentication > OpenID Connect**    |
-| - **false**: **(Default)** Disables OpenID Connect authentication with other service providers.         | - ``config.json`` setting: ``.OpenIdSettings.Enable: false`` |
-|                                                                                                         | - Environment variable: ``MM_OPENIDSETTINGS_ENABLE``         |
-| See `the documentation <https://docs.mattermost.com/onboard/sso-openidconnect.html>`__ for more detail. |                                                              |
-+---------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
+| - **true**: Allows team and account creation using other OpenID Connect service providers.                                      | - System Config path: **Authentication > OpenID Connect**    |
+| - **false**: **(Default)** Disables OpenID Connect authentication with other service providers.                                 | - ``config.json`` setting: ``.OpenIdSettings.Enable: false`` |
+|                                                                                                                                 | - Environment variable: ``MM_OPENIDSETTINGS_ENABLE``         |
+| See `OpenID Connect Single Sign-On <https://docs.mattermost.com/onboard/sso-openidconnect.html>`__ implementation instructions. |                                                              |
++---------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
 
-Button name
-'''''''''''
-
-*Available in legacy Enterprise Edition E20*
-
-Specify the text that displays on the OpenID login button.
-
-+-----------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ButtonText": ""`` with string input. |
-+-----------------------------------------------------------------------------------+
-
-Button color
-''''''''''''
-
-Specify the color of the OpenID login button for white labeling purposes. Use a hex code with a #-sign before the code, for example ``#145DBF``.
-
-+------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ButtonColor": ""`` with string input. |
-+------------------------------------------------------------------------------------+
-
-Discovery endpoint
-''''''''''''''''''
+OpenID Connect (other) button name
+''''''''''''''''''''''''''''''''''
 
 *Available in legacy Enterprise Edition E20*
 
-Obtain this value by registering Mattermost as an application in your service provider account. Should be in the format ``https://myopenid.provider.com/{my_company}/.well-known/openid-configuration`` where the value of *{my_company}* is replaced with your organization.
++-------------------------------------------------------+-----------------------------------------------------------+
+| This setting is the text for the OpenID login button. | - System Config path: **Authentication > OpenID Connect** |
+|                                                       | - ``config.json`` setting: ``.OpenIdSettings.ButtonText`` |
+| String input.                                         | - Environment variable: ``MM_OPENIDSETTINGS_BUTTONTEXT``  |
++-------------------------------------------------------+-----------------------------------------------------------+
 
-+------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"DiscoveryEndpoint": ""`` with string input. |
-+------------------------------------------------------------------------------------------+
+OpenID Connect (other) Button color
+'''''''''''''''''''''''''''''''''''
 
-Client ID
+*Available in legacy Enterprise Edition E20*
+
++------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------+
+| This setting is the color of the OpenID login button. Use a hex code with a #-sign before the code, for example ``#145DBF``. | - System Config path: **Authentication > OpenID Connect**  |
+|                                                                                                                              | - ``config.json`` setting: ``.OpenIdSettings.ButtonColor`` |
+| String input.                                                                                                                | - Environment variable: ``MM_OPENIDSETTINGS_BUTTONCOLOR``  |
++------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------+
+
+OpenID Connect (other) Discovery endpoint
+'''''''''''''''''''''''''''''''''''''''''
+
+*Available in legacy Enterprise Edition E20*
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
+| This setting stores the Discovery Endpoint URL from the OpenID provider. The URL should be in the format of ``https://myopenid.provider.com/{my_organization}/.well-known/openid-configuration``. | - System Config path: **Authentication > OpenID Connect**        |
+|                                                                                                                                                                                                   | - ``config.json`` setting: ``.OpenIdSettings.DiscoveryEndpoint`` |
+| See `OpenID Connect Single Sign-On <https://docs.mattermost.com/onboard/sso-openidconnect.html>`__ implementation instructions.                                                                   | - Environment variable: ``MM_OPENIDSETTINGS_DISCOVERYENDPOINT``  |
+|                                                                                                                                                                                                   |                                                                  |
+| String input.                                                                                                                                                                                     |                                                                  |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
+
+
+OpenID Connect (other) Client ID
 '''''''''
 
 *Available in legacy Enterprise Edition E20*
 
-Obtain this value by registering Mattermost as an application in your service provider account.
-
-+---------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Id": ""`` with string input. |
-+---------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+
+| This setting stores the Client ID from the OpenID provider.                                                                     | - System Config path: **Authentication > OpenID Connect** |
+|                                                                                                                                 | - ``config.json`` setting: ``.OpenIdSettings.Id``         |
+| See `OpenID Connect Single Sign-On <https://docs.mattermost.com/onboard/sso-openidconnect.html>`__ implementation instructions. | - Environment variable: ``MM_OPENIDSETTINGS_ID``          |
+|                                                                                                                                 |                                                           |
+| String input.                                                                                                                   |                                                           |
++---------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+
 
 Client secret
 '''''''''''''
 
 *Available in legacy Enterprise Edition E20*
 
-Obtain this value by registering Mattermost as an application in your service provider account.
-
-+-------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Secret": ""`` with string input. |
-+-------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+
+| This setting stores the Client Secret from the OpenID provider.                                                                 | - System Config path: **Authentication > OpenID Connect** |
+|                                                                                                                                 | - ``config.json`` setting: ``.OpenIdSettings.Secret``     |
+| See `OpenID Connect Single Sign-On <https://docs.mattermost.com/onboard/sso-openidconnect.html>`__ implementation instructions. | - Environment variable: ``MM_OFFICE365SETTINGS_SECRET``   |
+|                                                                                                                                 |                                                           |
+| String input.                                                                                                                   |                                                           |
++---------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+
 
 ----
 
