@@ -1617,7 +1617,7 @@ Enable OpenID Connect authentication with other service providers
 | See `OpenID Connect Single Sign-On <https://docs.mattermost.com/onboard/sso-openidconnect.html>`__ implementation instructions. |                                                              |
 +---------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
 
-OpenID Connect (other) button name
+OpenID Connect (other) Button name
 ''''''''''''''''''''''''''''''''''
 
 *Available in legacy Enterprise Edition E20*
@@ -1654,7 +1654,7 @@ OpenID Connect (other) Discovery endpoint
 
 
 OpenID Connect (other) Client ID
-'''''''''
+''''''''''''''''''''''''''''''''
 
 *Available in legacy Enterprise Edition E20*
 
@@ -1666,8 +1666,8 @@ OpenID Connect (other) Client ID
 | String input.                                                                                                                   |                                                           |
 +---------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+
 
-Client secret
-'''''''''''''
+OpenID Connect (other) Client secret
+''''''''''''''''''''''''''''''''''''
 
 *Available in legacy Enterprise Edition E20*
 
