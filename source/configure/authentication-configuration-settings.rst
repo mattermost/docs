@@ -1539,6 +1539,9 @@ Office 365 OpenID settings
 .. note::
    In line with Microsoft ADFS guidance, we recommend `configuring intranet forms-based authentication for devices that do not support WIA <https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configure-intranet-forms-based-authentication-for-devices-that-do-not-support-wia>`_.
 
+Enable OpenID Connect authentication with Office 365
+''''''''''''''''''''''''''''''''''''''''''''''''''''
+
 +----------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------+
 | - **true**: Allows team and account creation using Office 365 OpenID Connect authentication.                         | - System Config path: **Authentication > OpenID Connect**      |
 | - **false**: **(Default)** Disables Office 365 OpenID Connect authentication.                                        | - ``config.json`` setting: ``Office365Settings.Enable: false`` |
@@ -1604,15 +1607,15 @@ OpenID Connect (other) settings
 .. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Enable authentication with a service provider by selecting ``OpenID Connect (Other)`` from **System Console > Authentication > OpenID Connect > Select service provider**.
+Enable OpenID Connect authentication with other service providers
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-**True**: Allow team creation and account signup using OpenID Connect. To configure, input the **Client ID**, **Client Secret**, and **DiscoveryEndpoint** credentials. See `the documentation <https://docs.mattermost.com/onboard/sso-openidconnect.html>`__ for more detail.
-
-**False**: OpenID Connect cannot be used for team creation or account signup.
-
-+----------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Enable": false`` with options ``true`` and ``false``. |
-+----------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
+| - **true**: Allows team and account creation using other OpenID Connect service providers.              | - System Config path: **Authentication > OpenID Connect**    |
+| - **false**: **(Default)** Disables OpenID Connect authentication with other service providers.         | - ``config.json`` setting: ``.OpenIdSettings.Enable: false`` |
+|                                                                                                         | - Environment variable: ``MM_OPENIDSETTINGS_ENABLE``         |
+| See `the documentation <https://docs.mattermost.com/onboard/sso-openidconnect.html>`__ for more detail. |                                                              |
++---------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
 
 Button name
 '''''''''''
