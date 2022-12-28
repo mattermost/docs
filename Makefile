@@ -17,7 +17,7 @@ help:
 # Install necessary dependencies for the CI build pipeline.
 python-deps:
 	pip install pipenv
-	pipenv install --clean --deploy --dev --python 3.9
+	pipenv install --clear --deploy --dev --python 3.9
 
 test:
 	pipenv run pytest
