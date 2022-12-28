@@ -112,9 +112,9 @@ class ConfigSettingDirective(SphinxDirective):
     }
 
     def run(self) -> List[Node]:
-        nodes: List[Node] = list()
+        replacement_nodes: List[Node] = list()
         # Add an anchor node, so we can refer to this section later
-        nodes.append(AnchorNode(self.arguments[0]))
+        replacement_nodes.append(AnchorNode(self.arguments[0]))
         # If there is content, then collect it into a string and append it to the short description
         long_description = ""
         for content_line in self.content:
@@ -124,8 +124,9 @@ class ConfigSettingDirective(SphinxDirective):
         short_description = ""
         if CONFIG_SETTING_DESCRIPTION in self.options:
             short_description = self.options[CONFIG_SETTING_DESCRIPTION]
+        # If the short description is non-empty, append two newlines so that it is treated as a new paragraph
         if short_description != "":
-            short_description += "\n"
+            short_description += "\n\n"
         # Parse RST content in the description into HTML, so it can be displayed richly on the browser side
         description = rst2html(short_description + long_description.rstrip())
         # Add a ConfigSettingNode that contains the metadata for the setting
@@ -137,12 +138,12 @@ class ConfigSettingDirective(SphinxDirective):
             CONFIG_SETTING_ENVIRONMENT: self.options[CONFIG_SETTING_ENVIRONMENT],
             CONFIG_SETTING_DESCRIPTION: description,
         }
-        nodes.append(ConfigSettingNode(config_setting))
+        replacement_nodes.append(ConfigSettingNode(config_setting))
         # Get the domain and add a reference to this config setting, so we can process XRefs
         config_domain = self.env.domains["config"]
         if isinstance(config_domain, ConfigSettingDomain):
             config_domain.add_config_setting(config_setting)
-        return nodes
+        return replacement_nodes
 
 
 class ConfigSettingDomain(Domain):
