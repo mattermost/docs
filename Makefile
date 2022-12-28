@@ -1,6 +1,7 @@
 # Minimal makefile for Sphinx documentation
 #
-.PHONY: help Makefile livehtml linkcheck python-deps test compass-icons
+.PHONY: Makefile help python-deps linkcheck livehtml python-deps test compass-icons
+#
 # You can set these variables from the command line, and also
 # from the environment for the last three.
 SOURCEDIR       = source
@@ -18,7 +19,7 @@ help:
 # NOTE: if the version of Python used to build the docs changes, update the `pipenv` command below accordingly.
 python-deps:
 	pip install pipenv==2022.12.19
-	pipenv install --clear --deploy --dev --python 3.9
+	pipenv install --dev --clear --deploy --python 3.9
 
 test:
 	pipenv run pytest
