@@ -763,7 +763,10 @@ class SearchClass {
         // Highlight search terms in the description cell
         const mark = new Mark(itemDescCell);
         for (const searchterm of searchterms) {
-            mark.mark(searchterm);
+            // Only highlight search terms longer than one character
+            if (searchterm.length > 1) {
+                mark.mark(searchterm);
+            }
         }
 
         // Find the results div and add this result to it
@@ -1111,7 +1114,10 @@ class SearchClass {
         // build the search summary node
         let rv = $('<p class="context"></p>').text(excerpt);
         for (const hlword of hlwords) {
-            rv = rv.highlightText(hlword, 'highlighted');
+            // Only highlight words longer than one character
+            if (hlword.length > 1) {
+                rv = rv.highlightText(hlword, 'highlighted');
+            }
         }
         return rv;
     }

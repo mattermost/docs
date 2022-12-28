@@ -16,7 +16,7 @@ from sphinx.util.docutils import SphinxTranslator, SphinxDirective
 from sphinx.util.nodes import make_refnode
 from typing import Optional, Iterable, Tuple, List, Dict, Any
 
-__version__ = "0.1.0"
+__version__ = "0.2.0"
 
 CONFIG_SETTING_ANCHOR = "anchor"
 CONFIG_SETTING_DOCNAME = "docname"
@@ -126,9 +126,8 @@ class ConfigSettingDirective(SphinxDirective):
             short_description = self.options[CONFIG_SETTING_DESCRIPTION]
         if short_description != "":
             short_description += "\n"
-        description = short_description + long_description.rstrip()
         # Parse RST content in the description into HTML, so it can be displayed richly on the browser side
-        description = rst2html(description)
+        description = rst2html(short_description + long_description.rstrip())
         # Add a ConfigSettingNode that contains the metadata for the setting
         config_setting = {
             CONFIG_SETTING_ID: self.arguments[0],
@@ -201,7 +200,8 @@ class ConfigSettingDomain(Domain):
             return make_refnode(builder, fromdocname, todocname, targ, contnode, targ)
         else:
             logger.warning(
-                "resolve_xref(): unable to resolve crossreference; fromdocname=%s, typ=%s, target=%s"
+                "ConfigSettingDomain: resolve_xref(): "
+                "unable to resolve crossreference; fromdocname=%s, typ=%s, target=%s"
                 % (fromdocname, typ, target)
             )
             return None
@@ -223,7 +223,8 @@ class ConfigSettingDomain(Domain):
             0,
         )
         logger.verbose(
-            "add_config_setting(): appending config: name=%s, dispname=%s, type=%s, docname=%s, anchor=%s, priority=%d"
+            "ConfigSettingDomain: add_config_setting(): "
+            "appending config: name=%s, dispname=%s, type=%s, docname=%s, anchor=%s, priority=%d"
             % config_setting
         )
         self.data["configs"].append(config_setting)
@@ -233,7 +234,8 @@ def env_purge_doc(app: Sphinx, env: BuildEnvironment, docname: str) -> None:
     if hasattr(env, "config_settings"):
         if docname in env.config_settings:
             logger.verbose(
-                "env_purge_doc(): removing doc %s from config_settings" % docname
+                "config-setting-v2: env_purge_doc(): removing doc %s from config_settings"
+                % docname
             )
             env.config_settings.pop(docname)
 
@@ -247,7 +249,7 @@ def env_merge_info(
         for docname in docnames:
             if docname in other.config_settings:
                 logger.verbose(
-                    "env_merge_info(): adding %d settings to config_settings[%s]"
+                    "config-setting-v2: env_merge_info(): adding %d settings to config_settings[%s]"
                     % (len(other.config_settings[docname]), docname)
                 )
                 if len(other.config_settings[docname]) > 0:
@@ -261,15 +263,15 @@ def doctree_read(app: Sphinx, doctree: nodes.document):
     if app.env.docname in app.env.metadata:
         if "nosearch" in app.env.metadata[app.env.docname]:
             logger.debug(
-                "doctree_read(): doc %s has :nosearch: attribute; skipping it"
+                "config-setting-v2: doctree_read(): doc %s has :nosearch: attribute; skipping it"
                 % app.env.docname
             )
             return
     config_nodes = doctree.traverse(ConfigSettingNode, False, True, False, False)
     if len(config_nodes) == 0:
         return
-    logger.info(
-        "doctree_read(): found %d ConfigSettingNodes in doc %s"
+    logger.verbose(
+        "config-setting-v2: doctree_read(): found %d ConfigSettingNodes in doc %s"
         % (len(config_nodes), app.env.docname)
     )
     doc_config_settings: List[Dict[str, str]] = list()
@@ -277,21 +279,24 @@ def doctree_read(app: Sphinx, doctree: nodes.document):
         doc_config_settings.append(config_node.config_settings)
     if len(doc_config_settings) > 0:
         logger.info(
-            "doctree_read(): adding %d settings to config_settings[%s]"
+            "config-setting-v2: %d config settings in %s"
             % (len(doc_config_settings), app.env.docname)
         )
         if app.env.docname not in app.env.config_settings:
             app.env.config_settings[app.env.docname] = list()
         app.env.config_settings[app.env.docname].extend(doc_config_settings)
     else:
-        logger.info("doctree_read(): no config settings in doc %s" % app.env.docname)
+        logger.verbose(
+            "config-setting-v2: doctree_read(): no config settings in doc %s"
+            % app.env.docname
+        )
 
 
 def build_finished(app: Sphinx, exception: Exception):
     if exception is not None:
         return
     if hasattr(app.env, "config_settings"):
-        logger.info(bold("writing config setting search index..."), nonl=True)
+        logger.info(bold("writing config setting search index... "), nonl=True)
         # create config setting search index
         settings_index: List[Dict[str, str]] = list()
         for docname in app.env.config_settings:

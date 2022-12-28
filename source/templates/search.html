@@ -11,6 +11,7 @@
 {% set title = _('Search') %}
 {% set display_vcs_links = False %}
 {%- block scripts %}
+    {# Load lunr.js and mark.js before anything else #}
     <script type="text/javascript" src="https://unpkg.com/lunr@2.3.9/lunr.js"></script>
     <script
             src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.es6.min.js"
@@ -23,6 +24,7 @@
 {%- endblock %}
 {% block footer %}
   <script type="text/javascript">
+    // Load both search indexes
     jQuery(() => {
         Search.loadIndex("{{ pathto('searchindex.js', 1) }}");
         Search.loadConfigSettingsIndex("{{ pathto('config-settings-index.json', 1) }}");
