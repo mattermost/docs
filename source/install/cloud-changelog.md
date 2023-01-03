@@ -41,6 +41,8 @@ Latest Mattermost Cloud releases:
  - Clicking a group mention now displays group details and membership.
  - Improved the collapsed state of the post formatting toolbar.
  - App Framework - channel and user fields now support multiselect property, to allow users to select multiple values in the form.
+ - Increased the notification length on Windows to 120 from 50.
+ - Prioritized members of recently viewed DMs/GMs when adding users to a channel.
 
 #### Administration
  - The export file now contains the server version and a creation timestamp.
@@ -50,6 +52,8 @@ Latest Mattermost Cloud releases:
  - **Total Activated Users** was changed back to **Total Active Users** in **System Console > Reporting > Site Statistics**.
  - The import job now logs the progress of the import.
  - Added ``restore_group`` permission to the mmctl and to the **System Console > Permissions**.
+ - Improved bulk export logging.
+ - Compliance export job can now cancel the SQL query execution during server shutdown which will allow the job to exit faster.
 
 ### API Changes
  - Added new API endpoint ``GET /api/v4/posts/:post_id/info`` to allow checking if the post that a permalink is pointing to is accessible by joining teams or channels.
@@ -79,6 +83,8 @@ Latest Mattermost Cloud releases:
  - Fixed the slash command description help text.
  - Fixed an issue where clicking **Contact Sales** didn't prefill the reason of contacting sales.
  - Fixed an issue where the screen readers did not announce the selected state of the sidebar submenu items.
+ - Fixed an issue where the metrics server was not prevented from starting while running export commands.
+ - Fixed an issue where long group mentions and user mentions didn't wrap properly. 
 
 ### Known Issues
  - Boards linked to a channel you're a member of don't automatically appear on your sidebar unless you're an explicit member of the board. As a workaround, you can access the board from the channel RHS, or by searching for the board via the board switcher (Ctrl/Cmd+K). Alternatively, you can ask the board admin to add you to the board as an explicit member. See the [issue-focalboard-4179](https://github.com/mattermost/focalboard/issues/4179) for more details.
