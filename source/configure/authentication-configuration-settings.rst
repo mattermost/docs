@@ -118,11 +118,11 @@ Enable sign-in with email
 Enable sign-in with username
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------+
-| - **true**: **(Default)** Allows authentication with a username and password for accounts created with an email address. This setting does not affect AD/LDAP sign-in. | - System Config path: **Authentication > Email**                               |
-| - **false**: Disables authenticaton with a username and removes the option from the login screen.                                                                      | - ``config.json`` setting: ``.EmailSettings.EnableSignInWithUsername``         |
-|                                                                                                                                                                        | - Environment variable: ``MM_EMAILSETTINGS_ENABLESIGNINWITHUSERNAME``          |
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
+| - **true**: **(Default)** Allows authentication with a username and password for accounts created with an email address. This setting does not affect AD/LDAP sign-in. | - System Config path: **Authentication > Email**                       |
+| - **false**: Disables authenticaton with a username and removes the option from the login screen.                                                                      | - ``config.json`` setting: ``.EmailSettings.EnableSignInWithUsername`` |
+|                                                                                                                                                                        | - Environment variable: ``MM_EMAILSETTINGS_ENABLESIGNINWITHUSERNAME``  |
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
 
 ----
 
@@ -334,8 +334,8 @@ Bind username
 |                                                                                                                                          |                                                           |
 | String input.                                                                                                                            |                                                           |
 +------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+
-| **Note**: This field is required. Anonymous bind is not currently supported.                                                                                                                         |
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Note**: This field is required. Anonymous bind is not currently supported.                                                             |                                                           |
++------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+ 
 
 Bind password
 ~~~~~~~~~~~~~
@@ -371,8 +371,8 @@ User filter
 |                                                                                                                                                                                                                                                                                                                                                                                                         |                                                         |
 | String input.                                                                                                                                                                                                                                                                                                                                                                                           |                                                         |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------+
-| **Note**: This filter uses the permissions of the **Bind Username** account to execute the search. This account should be specific to Mattermost and have read-only access to the portion of the AD/LDAP tree specified in the **Base DN** field.                                                                                                                                                                                                                 |
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Note**: This filter uses the permissions of the **Bind Username** account to execute the search. This account should be specific to Mattermost and have read-only access to the portion of the AD/LDAP tree specified in the **Base DN** field.                                                                                                                                                       |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Group filter
 ~~~~~~~~~~~~~
@@ -400,8 +400,8 @@ Enable admin filter
 | - **false**: **(Default)** Disables the **Admin Filter** setting.                                                                                                                                                           | - ``config.json`` setting: ``.LdapSettings.EnableAdminFilter: false`` |
 |                                                                                                                                                                                                                             | - Environment variable: ``MM_LDAPSETTINGS_ENABLEADMINFILTER``         |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------+
-| **Note**: If this setting is ``false``, no additional users are designated as System Admins by the filter. Users that were previously designated as System Admins retain this role unless the filter is changed or removed.                                                                         |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Note**: If this setting is ``false``, no additional users are designated as System Admins by the filter. Users that were previously designated as System Admins retain this role unless the filter is changed or removed. |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Admin filter
 ~~~~~~~~~~~~
@@ -692,13 +692,11 @@ Enable login with SAML
 
 *Available in legacy Enterprise Edition E20*
 
-**True**: Mattermost allows login using SAML. Please see `documentation <https://docs.mattermost.com/onboard/sso-saml.html>`__ to learn more about configuring SAML for Mattermost.
-
-**False**: Login with SAML is disabled.
-
-+----------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Enable": false`` with options ``true`` and ``false``. |
-+----------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------+
+| - **true**: Enables sign-in with SAML. See `SAML Single Sign-On <https://docs.mattermost.com/onboard/sso-saml.html>`__ to learn more. | - System Config path: **Authentication > SAML 2.0**        |
+| - **false**: **(Default)** Disables sign-in with SAML.                                                                                | - ``config.json`` setting: ``.SamlSettings.Enable: false`` |
+|                                                                                                                                       | - Environment variable: ``MM_SAMLSETTINGS_ENABLE``         |
++---------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------+
 
 Enable synchronizing SAML accounts with AD/LDAP
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -708,13 +706,12 @@ Enable synchronizing SAML accounts with AD/LDAP
 
 *Available in legacy Enterprise Edition E20*
 
-**True**: Mattermost periodically synchronizes SAML user attributes, including user deactivation and removal, with AD/LDAP. Enable and configure synchronization settings at **Authentication > AD/LDAP**. See `documentation <https://docs.mattermost.com/onboard/ad-ldap.html>`__ to learn more.
-
-**False**: Synchronization of SAML accounts with AD/LDAP is disabled.
-
-+----------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableSyncWithLdap": false`` with options ``true`` and ``false``. |
-+----------------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
+| - **true**: Mattermost updates configured Mattermost user attributes (ex. FirstName, Position, Email) with their values from AD/LDAP. This synchronization may deactivate Mattermost users or remove them from groups, teams, or channels. AD/LDAP synchronization must be enabled and configured through the settings under **Authentication > AD/LDAP**. | - System Config path: **Authentication > SAML 2.0**                    |
+| - **false**: **(Default)** Disables syncing of SAML-authenticated Mattermost users with AD/LDAP.                                                                                                                                                                                                                                                           | - ``config.json`` setting: ``.SamlSettings.EnableSyncWithLdap: false`` |
+|                                                                                                                                                                                                                                                                                                                                                            | - Environment variable: ``MM_SAMLSETTINGS_ENABLESYNCWITHLDAP``         |
+| See `AD/LDAP Setup <https://docs.mattermost.com/onboard/ad-ldap.html>`__ and `Advanced User Management <https://docs.mattermost.com/guides/administration.html#advanced-user-management>`__ to learn more.                                                                                                                                                 |                                                                        |
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
 
 Ignore guest users when synchronizing with AD/LDAP
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -724,15 +721,13 @@ Ignore guest users when synchronizing with AD/LDAP
 
 *Available in legacy Enterprise Edition E20*
 
-Available when ``Enable Synchronizing SAML Accounts With AD/LDAP`` is set to ``true``. 
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| - **true**: When syncing with the AD/LDAP server, Mattermost does not sync any information about SAML-authenticated Guest Users from the AD/LDAP server. Manage guest deactivation manually via **System Console > Users**.  | - System Config path: **Authentication > SAML 2.0**                      |
+| - **false**: **(Default)** Syncing Mattermost with the AD/LDAP server updates Guest User attributes and deactivates and removes SAML-authenticated accounts for Guest Users that are no longer active on the AD/LDAP server. | - ``config.json`` setting: ``.SamlSettings.IgnoreGuestsLdapSync: false`` |
+|                                                                                                                                                                                                                              | - Environment variable: ``MM_SAMLSETTINGS_IGNOREGUESTSLDAPSYNC``         |
+| For more information, see `AD/LDAP Setup <https://docs.mattermost.com/onboard/ad-ldap.html>`__ and `Advanced User Management <https://docs.mattermost.com/guides/administration.html#advanced-user-management>`__.           |                                                                          |
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
-**True**: Mattermost ignores Guest Users identified by the Guest Attribute when synchronizing with AD/LDAP on user deactivation and removal. Manage guest deactivation manually via **System Console > Users**. See `documentation <https://docs.mattermost.com/onboard/ad-ldap.html>`__ to learn more.
-
-**False**: Synchronization of SAML deactivates and removes Guest Users when synchronizing with AD/LDAP.
-
-+------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"IgnoreGuestsLdapSync": false`` with options ``true`` and ``false``. |
-+------------------------------------------------------------------------------------------------------------------+
 
 Override SAML bind data with AD/LDAP information
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -742,16 +737,18 @@ Override SAML bind data with AD/LDAP information
 
 *Available in legacy Enterprise Edition E20*
 
-**True**: Mattermost overrides the SAML ID attribute with the AD/LDAP ID attribute if configured or overrides the SAML Email attribute with the AD/LDAP Email attribute if SAML ID attribute is not present. See `documentation <https://docs.mattermost.com/onboard/ad-ldap.html>`__ to learn more.
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------+
+| - **true**: If the SAML ID attribute is configured, Mattermost overrides the SAML ID attribute with the AD/LDAP ID attribute. If the SAML ID attribute is not present, Mattermost overrides the SAML Email attribute with the AD/LDAP Email attribute. | - System Config path: **Authentication > SAML 2.0**                               |
+| - **false**: **(Default)** Mattermost uses the email attribute to bind users to SAML.                                                                                                                                                                  | - ``config.json`` setting: ``.SamlSettings.EnableSyncWithLdapIncludeAuth: false`` |
+|                                                                                                                                                                                                                                                        | - Environment variable: ``MM_SAMLSETTINGS_ENABLESYNCWITHLDAPINCLUDEAUTH``         |
+| For more information, see `AD/LDAP Setup <https://docs.mattermost.com/onboard/ad-ldap.html>`__ and `Advanced User Management <https://docs.mattermost.com/guides/administration.html#advanced-user-management>`__.                                     |                                                                                   |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------+
+| **Notes**:                                                                                                                                                                                                                                                                                                                                 |
+|  - This setting should be **false** unless LDAP sync is enabled.                                                                                                                                                                                                                                                                           |
+|  - Changing this setting from **true** to **false** will disable the override.                                                                                                                                                                                                                                                             |
+|  - SAML IDs must match LDAP IDs when the override is enabled.                                                                                                                                                                                                                                                                              |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-**False**: Mattermost uses the email attribute to bind users to SAML.
-
-.. note::
-  Moving from ``true`` to ``false`` will prevent the override from happening. To prevent the disabling of user accounts, SAML IDs must match the LDAP IDs when this feature is enabled. This setting should be set to ``false`` unless LDAP sync is enabled.
-
-+---------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableSyncWithLdapIncludeAuth": false`` with options ``true`` and ``false``. |
-+---------------------------------------------------------------------------------------------------------------------------+
 
 Identity provider metadata URL
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -761,11 +758,12 @@ Identity provider metadata URL
 
 *Available in legacy Enterprise Edition E20*
 
-The URL where Mattermost sends a request to obtain setup metadata from the provider.
++------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
+| This setting is the URL from which Mattermost requests setup metadata from the provider. | - System Config path: **Authentication > SAML 2.0**             |
+|                                                                                          | - ``config.json`` setting: ``.SamlSettings.IdpMetadataURL``     |
+| String input.                                                                            | - Environment variable: ``MM_SAMLSETTINGS_IDPMETADATAURL``      |
++------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
 
-+---------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"IdpMetadataUrl": ""`` with string input. |
-+---------------------------------------------------------------------------------------+
 
 SAML SSO URL
 ~~~~~~~~~~~~
@@ -775,11 +773,11 @@ SAML SSO URL
 
 *Available in legacy Enterprise Edition E20*
 
-The URL where Mattermost sends a SAML request to start login sequence.
-
-+-------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"IdpURL": ""`` with string input. |
-+-------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------+---------------------------------------------------------+
+| This setting is the URL where Mattermost sends a SAML request to start the login sequence. | - System Config path: **Authentication > SAML 2.0**     |
+|                                                                                            | - ``config.json`` setting: ``.SamlSettings.IdpURL``     |
+| String input.                                                                              | - Environment variable: ``MM_SAMLSETTINGS_IDPURL``      |
++--------------------------------------------------------------------------------------------+---------------------------------------------------------+
 
 Identity provider issuer URL
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -789,11 +787,11 @@ Identity provider issuer URL
 
 *Available in legacy Enterprise Edition E20*
 
-The issuer URL for the Identity Provider you use for SAML requests.
-
-+-----------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"IdpDescriptorUrl": ""`` with string input. |
-+-----------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------+-------------------------------------------------------------------+
+| This setting is the issuer URL for the Identity Provider for SAML requests. | - System Config path: **Authentication > SAML 2.0**               |
+|                                                                             | - ``config.json`` setting: ``.SamlSettings.IdpDescriptorURL``     |
+| String input.                                                               | - Environment variable: ``MM_SAMLSETTINGS_IDPDESCRIPTORURL``      |
++-----------------------------------------------------------------------------+-------------------------------------------------------------------+
 
 Identity provider public certificate
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -803,11 +801,11 @@ Identity provider public certificate
 
 *Available in legacy Enterprise Edition E20*
 
-The public authentication certificate issued by your Identity Provider.
-
-+-------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"IdpCertificateFile": ""`` with string input. |
-+-------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------+---------------------------------------------------------------------+
+| The public authentication certificate issued by your Identity Provider. | - System Config path: **Authentication > SAML 2.0**                 |
+|                                                                         | - ``config.json`` setting: ``.SamlSettings.IdpCertificateFile``     |
+| String input.                                                           | - Environment variable: ``MM_SAMLSETTINGS_IDPCERTIFICATEFILE``      |
++-------------------------------------------------------------------------+---------------------------------------------------------------------+
 
 Verify signature
 ~~~~~~~~~~~~~~~~
@@ -817,13 +815,11 @@ Verify signature
 
 *Available in legacy Enterprise Edition E20*
 
-**True**: Mattermost verifies that the signature sent from the SAML Response matches the Service Provider Login URL.
-
-**False**: Not recommended for production environments. For testing only.
-
-+---------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Verify": true`` with options ``true`` and ``false``. |
-+---------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+
+| - **true**: **(Default)** Mattermost checks that the SAML Response signature matches the Service Provider Login URL.      | - System Config path: **Authentication > SAML 2.0**       |
+| - **false**: The signature is not verified. This is **not recommended** for production. Use this option for testing only. | - ``config.json`` setting: ``.SamlSettings.Verify: true`` |
+|                                                                                                                           | - Environment variable: ``MM_SAMLSETTINGS_VERIFY``        |
++---------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+
 
 Service provider login URL
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -833,11 +829,13 @@ Service provider login URL
 
 *Available in legacy Enterprise Edition E20*
 
-Enter ``https://<your-mattermost-url>/login/sso/saml`` (example: ``https://example.com/login/sso/saml``). Make sure you use HTTP or HTTPS in your URL depending on your server configuration. This field is also known as the Assertion Consumer Service URL.
-
-+----------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"AssertionConsumerServiceURL": ""`` with string input. |
-+----------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+| Enter the URL of your Mattermost server, followed by ``/login/sso/saml``, i.e. ``https://example.com/login/sso/saml``. | - System Config path: **Authentication > SAML 2.0**                          |
+|                                                                                                                        | - ``config.json`` setting: ``.SamlSettings.AssertionConsumerServiceURL``     |
+| Use HTTP or HTTPS depending on the configuration of the server.                                                        | - Environment variable: ``MM_SAMLSETTINGS_ASSERTIONCONSUMERSERVICEURL``      |
+|                                                                                                                        |                                                                              |
+| This setting is also known as the Assertion Consumer Service URL.                                                      |                                                                              |
++------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
 
 Service provider identifier
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -847,11 +845,11 @@ Service provider identifier
 
 *Available in legacy Enterprise Edition E20*
 
-The unique identifier for the Service Provider, usually the same as Service Provider Login URL. In ADFS, this must match the Relying Party Identifier.
-
-+--------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ServiceProviderIdentifier": ""`` with string input. |
-+--------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| This setting is the unique identifier for the Service Provider, which in most cases is the same as the Service Provider Login URL. In ADFS, this must match the Relying Party Identifier. | - System Config path: **Authentication > SAML 2.0**                        |
+|                                                                                                                                                                                           | - ``config.json`` setting: ``.SamlSettings.ServiceProviderIdentifier``     |
+| String input.                                                                                                                                                                             | - Environment variable: ``MM_SAMLSETTINGS_SERVICEPROVIDERIDENTIFIER``      |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
 
 Enable encryption
 ~~~~~~~~~~~~~~~~~
@@ -861,13 +859,11 @@ Enable encryption
 
 *Available in legacy Enterprise Edition E20*
 
-**True**: Mattermost will decrypt SAML Assertions encrypted with your Service Provider Public Certificate.
-
-**False**: Not recommended for production environments. For testing only.
-
-+----------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Encrypt": true`` with options ``true`` and ``false``. |
-+----------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------+
+| - **true**: **(Default)** Mattermost will decrypt SAML Assertions that are encrypted with your Service Provider Public Certificate.   | - System Config path: **Authentication > SAML 2.0**        |
+| - **false**: Mattermost does not decrypt SAML Assertions. Use this option for testing only. It is **not recommended** for production. | - ``config.json`` setting: ``.SamlSettings.Encrypt: true`` |
+|                                                                                                                                       | - Environment variable: ``MM_SAMLSETTINGS_ENCRYPT``        |
++---------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------+
 
 Service provider private key
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -877,11 +873,11 @@ Service provider private key
 
 *Available in legacy Enterprise Edition E20*
 
-The private key used to decrypt SAML Assertions from the Identity Provider.
-
-+---------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"PrivateKeyFile": ""`` with string input. |
-+---------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
+| This setting stores the private key used to decrypt SAML Assertions from the Identity Provider. | - System Config path: **Authentication > SAML 2.0**             |
+|                                                                                                 | - ``config.json`` setting: ``.SamlSettings.PrivateKeyFile``     |
+| String input.                                                                                   | - Environment variable: ``MM_SAMLSETTINGS_PRIVATEKEYFILE``      |
++-------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
 
 Service provider public certificate
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -891,11 +887,11 @@ Service provider public certificate
 
 *Available in legacy Enterprise Edition E20*
 
-The certificate file used to generate the signature on a SAML request to the Identity Provider for a service provider initiated SAML login, when Mattermost is the Service Provider.
-
-+----------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"PublicCertificateFile": ""`` with string input. |
-+----------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
+| This setting stores the certificate file used to sign a SAML request to the Identity Provider for a SAML login when Mattermost is initiating the login as the Service Provider. | - System Config path: **Authentication > SAML 2.0**                    |
+|                                                                                                                                                                                 | - ``config.json`` setting: ``.SamlSettings.PublicCertificateFile``     |
+| String input.                                                                                                                                                                   | - Environment variable: ``MM_SAMLSETTINGS_PUBLICCERTIFICATEFILE``      |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
 
 Sign request
 ~~~~~~~~~~~~
@@ -905,11 +901,11 @@ Sign request
 
 *Available in legacy Enterprise Edition E20*
 
-When ``true``, Mattermost signs the SAML request using your Service Provider Private Key. When ``false``, Mattermost does not sign the SAML request.
-
-+------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"SignRequest": ""`` with string input. |
-+------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------+------------------------------------------------------------+
+| - **true**: Mattermost signs the SAML request with the Service Provider Private Key. | - System Config path: **Authentication > SAML 2.0**        |
+| - **false**: Mattermost does not sign the SAML request.                              | - ``config.json`` setting: ``.SamlSettings.SignRequest: `` |
+|                                                                                      | - Environment variable: ``MM_SAMLSETTINGS_SIGNREQUEST``    |
++--------------------------------------------------------------------------------------+------------------------------------------------------------+
 
 Signature algorithm
 ~~~~~~~~~~~~~~~~~~~~
@@ -919,11 +915,11 @@ Signature algorithm
 
 *Available in legacy Enterprise Edition E20*
 
-The signature algorithm used to sign the request. Supported options are `RSAwithSHA1 <https://www.w3.org/2000/09/xmldsig#rsa-sha1>`__, `RSAwithSHA256 <https://www.w3.org/2000/09/xmldsig#rsa-sha1>`__, and `RSAwithSHA512 <https://www.w3.org/2001/04/xmldsig-more#rsa-sha512>`__.
-
-+-------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"SignatureAlgorithm": ""`` with string input. |
-+-------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| This setting determines the signature algorithm used to sign the SAML request. Options are: ``RSAwithSHA1``, ``RSAwithSHA256``, ``RSAwithSHA512``. | - System Config path: **Authentication > SAML 2.0**                 |
+|                                                                                                                                                    | - ``config.json`` setting: ``.SamlSettings.SignatureAlgorithm``     |
+| String input.                                                                                                                                      | - Environment variable: ``MM_SAMLSETTINGS_SIGNATUREALGORITHM``      |
++----------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
 
 Canonical algorithm
 ~~~~~~~~~~~~~~~~~~~~
@@ -933,11 +929,14 @@ Canonical algorithm
 
 *Available in legacy Enterprise Edition E20*
 
-The canonicalization algorithm. Supported options are ``Canonical1.0`` for `Exclusive XML Canonicalization 1.0 (omit comments) <https://www.w3.org/TR/2002/REC-xml-exc-c14n-20020718/>`__ (``http://www.w3.org/2001/10/xml-exc-c14n#``) and ``Canonical1.1`` for `Canonical XML 1.1 (omit comments) <https://www.w3.org/TR/2008/REC-xml-c14n11-20080502/>`__ (``http://www.w3.org/2006/12/xml-c14n11``).
-
-+-------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"CanonicalAlgorithm": "Canonical1.0"`` with string input. |
-+-------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------+
+| This setting determines the canonicalization algorithm. With these options:                                                                                                                                                                | - System Config path: **Authentication > SAML 2.0**                             |
+|                                                                                                                                                                                                                                            | - ``config.json`` setting: ``.SamlSettings.CanonicalAlgorithm``                 |
+| - **Canonical1.0**: **(Default)** `Exclusive XML Canonicalization 1.0 (omit comments) <https://www.w3.org/TR/2002/REC-xml-exc-c14n-20020718/>`__ (``http://www.w3.org/2001/10/xml-exc-c14n#``). ``config.json`` setting: ``Canonical1.0``. | - Environment variable: ``MM_SAMLSETTINGS_CANONICALALGORITHM``                  |
+| - **Canonical1.1**:  `Canonical XML 1.1 (omit comments) <https://www.w3.org/TR/2008/REC-xml-c14n11-20080502/>`__ (``http://www.w3.org/2006/12/xml-c14n11``). ``config.json`` setting: ``Canonical1.1``.                                    |                                                                                 |
+|                                                                                                                                                                                                                                            |                                                                                 |
+| String input.                                                                                                                                                                                                                              |                                                                                 |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------+
 
 Email attribute
 ~~~~~~~~~~~~~~~
@@ -947,13 +946,13 @@ Email attribute
 
 *Available in legacy Enterprise Edition E20*
 
-The attribute in the SAML Assertion that will be used to populate the email addresses of users in Mattermost.
-
-Email notifications will be sent to this email address, and this email address may be viewable by other Mattermost users depending on privacy settings chosen by the System Admin.
-
-+---------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EmailAttribute": ""`` with string input. |
-+---------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
+| This setting determines the attribute from the SAML Assertion that populates the user email address field in Mattermost.                                   | - System Config path: **Authentication > SAML 2.0**             |
+|                                                                                                                                                            | - ``config.json`` setting: ``.SamlSettings.EmailAttribute``     |
+| Notifications are sent to this email address. This email address may be visible to other users, depending on how the System Admin has set-up user privacy. | - Environment variable: ``MM_SAMLSETTINGS_EMAILATTRIBUTE``      |
+|                                                                                                                                                            |                                                                 |
+| String input.                                                                                                                                              |                                                                 |
++------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
 
 Username attribute
 ~~~~~~~~~~~~~~~~~~
@@ -963,11 +962,13 @@ Username attribute
 
 *Available in legacy Enterprise Edition E20*
 
-The attribute in the SAML Assertion that will be used to populate the username field in Mattermost user interface. This attribute will be used within the Mattermost user interface to identify and mention users. For example, if a Username Attribute is set to **john.smith** a user typing ``@john`` will see ``@john.smith`` in their auto-complete options and posting a message with ``@john.smith`` will send a notification to that user that they've been mentioned.
-
-+------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"UsernameAttribute": ""`` with string input. |
-+------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------+
+| This setting determines the SAML Assertion attribute that populates the username field in the Mattermost UI.                                                                                                                                             | - System Config path: **Authentication > SAML 2.0**                |
+|                                                                                                                                                                                                                                                          | - ``config.json`` setting: ``.SamlSettings.UsernameAttribute``     |
+| This attribute identifies users in the UI. For example, if a username is set to ``john.smith``, typing ``@john`` will show ``@john.smith`` as an auto-complete option, and posting a message with ``@john.smith`` will send a notification to that user. | - Environment variable: ``MM_SAMLSETTINGS_USERNAMEATTRIBUTE``      |
+|                                                                                                                                                                                                                                                          |                                                                    |
+| String input.                                                                                                                                                                                                                                            |                                                                    |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------+
 
 Id attribute
 ~~~~~~~~~~~~
@@ -977,11 +978,11 @@ Id attribute
 
 *Available in legacy Enterprise Edition E20*
 
-(Optional) The attribute in the SAML Assertion used to bind users from SAML to users in Mattermost.
-
-+------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"IdAttribute": ""`` with string input. |
-+------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
+| (Optional) This setting determines the SAML Assertion attribute used to bind users from SAML to users in Mattermost. | - System Config path: **Authentication > SAML 2.0**          |
+|                                                                                                                      | - ``config.json`` setting: ``.SamlSettings.IdAttribute``     |
+| String input.                                                                                                        | - Environment variable: ``MM_SAMLSETTINGS_IDATTRIBUTE``      |
++----------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
 
 Guest attribute
 ~~~~~~~~~~~~~~~~
@@ -991,13 +992,13 @@ Guest attribute
 
 *Available in legacy Enterprise Edition E20*
 
-(Optional) The attribute in the SAML Assertion used to apply a Guest role to users in Mattermost.
-
-See the `Guest Accounts documentation <https://docs.mattermost.com/onboard/guest-accounts.html>`__ for more information.
-
-+---------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"GuestAttribute": ""`` with string input. |
-+---------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
+| (Optional) This setting determines the SAML Assertion attribute used to apply a Guest role to users in Mattermost.       | - System Config path: **Authentication > SAML 2.0**             |
+|                                                                                                                          | - ``config.json`` setting: ``.SamlSettings.GuestAttribute``     |
+| See the `Guest Accounts documentation <https://docs.mattermost.com/onboard/guest-accounts.html>`__ for more information. | - Environment variable: ``MM_SAMLSETTINGS_GUESTATTRIBUTE``      |
+|                                                                                                                          |                                                                 |
+| String input.                                                                                                            |                                                                 |
++--------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
 
 Enable admin attribute
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -1007,9 +1008,11 @@ Enable admin attribute
 
 *Available in legacy Enterprise Edition E20*
 
-**True**: Enables System Admins to configure the SAML Assertion.
-
-**False**: Disables the ability for System Admins to configure the SAML Assertion.
++-----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| - **true**: System Admin status is determined by the SAML Assertion attribute set in **Admin attribute**. | - System Config path: **Authentication > SAML 2.0**                      |
+| - **false**: **(Default)** System Admin status is **not** determined by the SAML Assertion attribute.     | - ``config.json`` setting: ``.SamlSettings.EnableAdminAttribute: false`` |
+|                                                                                                           | - Environment variable: ``MM_SAMLSETTINGS_ENABLEADMINATTRIBUTE``         |
++-----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 Admin attribute
 ~~~~~~~~~~~~~~~
@@ -1019,13 +1022,15 @@ Admin attribute
 
 *Available in legacy Enterprise Edition E20*
 
-(Optional) The attribute in the SAML Assertion for designating System Admins. The user is automatically promoted to this role on their next login. If the Admin Attribute is removed, users who are currently logged in retain their Admin role. When they log out this is revoked and on their next login they will no longer have Admin privileges.
-
-This attribute's default is ``false`` and must be set to ``true`` in order for the Admin Attribute to be used.
-
-+------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableAdminAttribute": false`` with options ``true`` and ``false``. |
-+------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
+| (Optional) This setting determines the attribute in the SAML Assertion for designating System Admins.                         | - System Config path: **Authentication > SAML 2.0**             |
+|                                                                                                                               | - ``config.json`` setting: ``.SamlSettings.AdminAttribute``     |
+| Users are automatically promoted to this role when logging in to Mattermost.                                                  | - Environment variable: ``MM_SAMLSETTINGS_ADMINATTRIBUTE``      |
+|                                                                                                                               |                                                                 |
+| If the Admin attribute is removed, users that are logged in retain Admin status. The role is revoked only when users log out. |                                                                 |
+|                                                                                                                               |                                                                 |
+| String input.                                                                                                                 |                                                                 |
++-------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
 
 First name attribute
 ~~~~~~~~~~~~~~~~~~~~
@@ -1035,11 +1040,12 @@ First name attribute
 
 *Available in legacy Enterprise Edition E20*
 
-(Optional) The attribute in the SAML Assertion that will be used to populate the first name of users in Mattermost.
-
-+-------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"FirstNameAttribute": ""`` with string input. |
-+-------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| (Optional) This setting determines the SAML Assertion attribute that populates the first name of users in Mattermost. | - System Config path: **Authentication > SAML 2.0**                 |
+|                                                                                                                       | - ``config.json`` setting: ``.SamlSettings.FirstNameAttribute``     |
+|                                                                                                                       | - Environment variable: ``MM_SAMLSETTINGS_FIRSTNAMEATTRIBUTE``      |
+| String input.                                                                                                         |                                                                     |
++-----------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
 
 Last name attribute
 ~~~~~~~~~~~~~~~~~~~
@@ -1049,11 +1055,12 @@ Last name attribute
 
 *Available in legacy Enterprise Edition E20*
 
-(Optional) The attribute in the SAML Assertion that will be used to populate the last name of users in Mattermost.
-
-+------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"LastNameAttribute": ""`` with string input. |
-+------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------+
+| (Optional) This setting determines the SAML Assertion attribute that populates the last name of users in Mattermost. | - System Config path: **Authentication > SAML 2.0**                |
+|                                                                                                                      | - ``config.json`` setting: ``.SamlSettings.LastNameAttribute``     |
+|                                                                                                                      | - Environment variable: ``MM_SAMLSETTINGS_LASTNAMEATTRIBUTE``      |
+| String input.                                                                                                        |                                                                    |
++----------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------+
 
 Nickname attribute
 ~~~~~~~~~~~~~~~~~~
@@ -1063,11 +1070,12 @@ Nickname attribute
 
 *Available in legacy Enterprise Edition E20*
 
-(Optional) The attribute in the SAML Assertion that will be used to populate the nickname of users in Mattermost.
-
-+------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"NicknameAttribute": ""`` with string input. |
-+------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------+
+| (Optional) This setting determines the SAML Assertion attribute that populates the nickname of users in Mattermost. | - System Config path: **Authentication > SAML 2.0**                |
+|                                                                                                                     | - ``config.json`` setting: ``.SamlSettings.NicknameAttribute``     |
+|                                                                                                                     | - Environment variable: ``MM_SAMLSETTINGS_NICKNAMEATTRIBUTE``      |
+| String input.                                                                                                       |                                                                    |
++---------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------+
 
 Position attribute
 ~~~~~~~~~~~~~~~~~~
@@ -1077,11 +1085,12 @@ Position attribute
 
 *Available in legacy Enterprise Edition E20*
 
-(Optional) The attribute in the SAML Assertion that will be used to populate the position field for users in Mattermost (typically used to describe a person's job title or role at the company).
-
-+------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"PositionAttribute": ""`` with string input. |
-+------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------+
+| (Optional) This setting determines the SAML Assertion attribute that populates the position (job title or role at company) of users in Mattermost. | - System Config path: **Authentication > SAML 2.0**                |
+|                                                                                                                                                    | - ``config.json`` setting: ``.SamlSettings.PositionAttribute``     |
+|                                                                                                                                                    | - Environment variable: ``MM_SAMLSETTINGS_POSITIONATTRIBUTE``      |
+| String input.                                                                                                                                      |                                                                    |
++----------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------+
 
 Preferred language attribute
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1091,11 +1100,12 @@ Preferred language attribute
 
 *Available in legacy Enterprise Edition E20*
 
-(Optional) The attribute in the SAML Assertion that will be used to populate the language of users in Mattermost.
-
-+----------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"LocaleAttribute": ""`` with string input. |
-+----------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
+| (Optional) This setting determines the SAML Assertion attribute that populates the language preference of users in Mattermost. | - System Config path: **Authentication > SAML 2.0**              |
+|                                                                                                                                | - ``config.json`` setting: ``.SamlSettings.LocaleAttribute``     |
+|                                                                                                                                | - Environment variable: ``MM_SAMLSETTINGS_LOCALEATTRIBUTE``      |
+| String input.                                                                                                                  |                                                                  |
++--------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
 
 Login button text
 ~~~~~~~~~~~~~~~~~~
@@ -1105,11 +1115,11 @@ Login button text
 
 *Available in legacy Enterprise Edition E20*
 
-(Optional) The text that appears in the login button on the login page. Defaults to **SAML**.
-
-+----------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"LoginButtonText": ""`` with string input. |
-+----------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------+--------------------------------------------------------------+
+| (Optional) The text that appears in the login button on the sign-in page. | - System Config path: **Authentication > SAML 2.0**          |
+|                                                                           | - ``config.json`` setting: ``.SamlSettings.LoginButtonText`` |
+| String input. Default is **SAML**.                                        | - Environment variable: ``MM_SAMLSETTINGS_LOGINBUTTONTEXT``  |
++---------------------------------------------------------------------------+--------------------------------------------------------------+
 
 ----
 
@@ -1119,171 +1129,186 @@ OAuth 2.0
 .. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Access the following configuration settings in the System Console by going to **Authentication > OAuth 2.0**.
+Access the following configuration settings in the System Console by going to **Authentication > OAuth 2.0**. Settings for GitLab OAuth authentication can also be accessed under **Authentication > GitLab** in self-hosted deployments.
 
 .. note::
   
   OAuth 2.0 is being deprecated and will be replaced by `OpenID Connect <https://docs.mattermost.com/configure/configuration-settings.html#openid-connect>`__ in a future release.
 
-Settings to configure OAuth login for account creation and login.
+Use these settings to configure OAuth 2.0 for account creation and login.
 
 Select OAuth 2.0 service provider
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *Available in legacy Enterprise Edition E20*
 
-Choose whether OAuth can be used for account creation and login. Options include:
++------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------+
+| Use this setting to enable OAuth and specify the service provider, with these options:                                                         | - System Config path: **Authentication > OAuth 2.0** |
+|                                                                                                                                                | - ``config.json`` setting: N/A                       |
+| - **Do not allow login via an OAuth 2.0 provider**                                                                                             | - Environment variable: N/A                          |
+| - **GitLab** (Available in all plans; see `GitLab 2.0 OAuth settings <#gitlab-oauth-2-0-settings>`__)                                          |                                                      |
+| - **Google Apps** (Available in Mattermost Enterprise and Professional; see `Google OAuth 2.0 settings <#google-oauth-2-0-settings>`__)        |                                                      |
+| - **Office 365** (Available in Mattermost Enterprise and Professional; see `Office 365 OAuth 2.0 settings <#office-365-oauth-2-0-settings>`__) |                                                      |
++------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------+
 
-- **Do not allow login via an OAuth 2.0 provider**
-- **GitLab** (available in all plans; see `GitLab Settings <https://docs.mattermost.com/configure/configuration-settings.html#gitlab-settings>`__ for details)
-- **Google Apps** (Available in Mattermost Enterprise and Professional; see `Google Settings <https://docs.mattermost.com/configure/configuration-settings.html#google-settings>`__ for details)
-- **Office 365** (Available in Mattermost Enterprise and Professional; see `Office 365 Settings <https://docs.mattermost.com/configure/configuration-settings.html#office-365-settings>`__ for details)
-
-This feature's setting does not appear in ``config.json``.
-
-GitLab
-^^^^^^
+GitLab OAuth 2.0 settings
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Enable authentication with GitLab
+Enable OAuth 2.0 authentication with GitLab
+'''''''''''''''''''''''''''''''''''''''''''
+
++-------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
+| - **true**: Allows team and account creation using GitLab OAuth authentication. Input the **Secret** and **ID** credentials to configure. | - System Config path: **Authentication > OAuth 2.0 (or GitLab)** |
+| - **false**: Disables GitLab OAuth authentication.                                                                                        | - ``config.json`` setting: ``.GitLabSettings.Enable: false``     |
+|                                                                                                                                           | - Environment variable: ``MM_GITLABSETTINGS_ENABLE``             |
++-------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
+
+GitLab OAuth 2.0 Application ID
+'''''''''''''''''''''''''''''''
+
++------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
+| This setting holds the OAuth Application ID from GitLab. Generate the ID by these steps:                                                             | - System Config path: **Authentication > OAuth 2.0 (or GitLab)** |
+|                                                                                                                                                      | - ``config.json`` setting: ``.GitLabSettings.Id``                |
+| 1. Login to your GitLab account.                                                                                                                     | - Environment variable: ``MM_GITLABSETTINGS_ID``                 |
+| 2. Go to **Profile Settings > Applications > New Application** and enter a name.                                                                     |                                                                  |
+| 3. Enter the Redirect URLs: ``https://<your-mattermost-url>/login/gitlab/complete`` and ``https://<your-mattermost-url>/signup/gitlab/complete``.    |                                                                  |
+| 4. Take the Application ID provided by GitLab and enter it in the Mattermost System Console field, ``config.json`` setting, or Environment variable. |                                                                  |
+|                                                                                                                                                      |                                                                  |
+| String input.                                                                                                                                        |                                                                  |
++------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
+| Note: GitLab provides the `Application Secret Key <#gitlab-oauth-2-0-application-secret-key>`__ along with the the ID.                                                                                                  |
++------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
+
+GitLab OAuth 2.0 Application secret key
+'''''''''''''''''''''''''''''''''''''''
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
+| This setting holds the OAuth Application Secret Key from GitLab. The key is generated at the same time as the **Application ID** (see `GitLab OAuth 2.0 Application ID <#gitlab-oauth-2-0-application-id>`__). | - System Config path: **Authentication > OAuth 2.0 (or GitLab)** |
+|                                                                                                                                                                                                                | - ``config.json`` setting: ``.GitLabSettings.Secret``            |
+| Enter the key provided by GitLab in the Mattermost System Console field, ``config.json`` setting, or Environment variable.                                                                                     | - Environment variable: ``MM_GITLABSETTINGS_SECRET``             |
+|                                                                                                                                                                                                                |                                                                  |
+| String input.                                                                                                                                                                                                  |                                                                  |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
+
+GitLab OAuth 2.0 site URL
+'''''''''''''''''''''''''
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
+| This setting holds the URL of your GitLab instance, e.g. ``https://example.com:3000``. Use ``http://`` if SSL is not enabled on your GitLab instance. | - System Config path: **Authentication > OAuth 2.0 (or GitLab)** |
+|                                                                                                                                                       | - ``config.json`` setting: N/A                                   |
+|                                                                                                                                                       | - Environment variable: N/A                                      |
++-------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
+
+GitLab OAuth 2.0 User API endpoint
 ''''''''''''''''''''''''''''''''''
 
-**True**: Allow team creation and account signup using GitLab OAuth. To configure, input the **Secret** and **Id** credentials.
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
+| This setting holds the URL of your GitLab User API endpoint, e.g. ``https://<your-gitlab-url>/api/v3/user``. Use ``http://`` if SSL is not enabled on your GitLab instance. | - System Config path: **Authentication > OAuth 2.0 (or GitLab)** |
+|                                                                                                                                                                             | - ``config.json`` setting: ``.GitLabSettings.UserAPIEndpoint``   |
+| Enter the URL in the Mattermost System Console field, ``config.json`` setting, or Environment variable.                                                                     | - Environment variable: ``MM_GITLABSETTINGS_USERAPIENDPOINT``    |
+|                                                                                                                                                                             |                                                                  |
+| String input.                                                                                                                                                               |                                                                  |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
 
-**False**: GitLab OAuth cannot be used for team creation or account signup.
+GitLab OAuth 2.0 Auth endpoint
+''''''''''''''''''''''''''''''
 
-.. note:: 
-   For Enterprise subscriptions, GitLab settings can be found under **OAuth 2.0**
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
+| This setting holds the URL of your GitLab Auth endpoint, e.g. ``https://<your-gitlab-url>/oauth/authorize``. Use ``http://`` if SSL is not enabled on your GitLab instance. | - System Config path: **Authentication > OAuth 2.0 (or GitLab)** |
+|                                                                                                                                                                             | - ``config.json`` setting: ``.GitLabSettings.AuthEndpoint``      |
+| Enter the URL in the Mattermost System Console field, ``config.json`` setting, or Environment variable.                                                                     | - Environment variable: ``MM_GITLABSETTINGS_AUTHENDPOINT``       |
+|                                                                                                                                                                             |                                                                  |
+| String input.                                                                                                                                                               |                                                                  |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
 
-+----------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Enable": false`` with options ``true`` and ``false``. |
-+----------------------------------------------------------------------------------------------------+
+GitLab OAuth 2.0 Token endpoint
+'''''''''''''''''''''''''''''''
 
-Application ID
-''''''''''''''
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
+| This setting holds the URL of your GitLab OAuth Token endpoint, e.g. ``https://<your-gitlab-url>/oauth/token``. Use ``http://`` if SSL is not enabled on your GitLab instance. | - System Config path: **Authentication > OAuth 2.0 (or GitLab)** |
+|                                                                                                                                                                                | - ``config.json`` setting: ``.GitLabSettings.TokenEndpoint``     |
+| Enter the URL in the Mattermost System Console field, ``config.json`` setting, or Environment variable.                                                                        | - Environment variable: ``MM_GITLABSETTINGS_TOKENENDPOINT``      |
+|                                                                                                                                                                                |                                                                  |
+| String input.                                                                                                                                                                  |                                                                  |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
 
-Obtain this value by logging into your GitLab account. Go to **Profile Settings > Applications > New Application**, enter a Name, then enter Redirect URLs ``https://<your-mattermost-url>/login/gitlab/complete`` (example: ``https://example.com:8065/login/gitlab/complete`` and ``https://<your-mattermost-url>/signup/gitlab/complete``.
-
-+---------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Id": ""`` with string input. |
-+---------------------------------------------------------------------------+
-
-Application secret key
-''''''''''''''''''''''
-
-Obtain this value by logging into your GitLab account. Go to **Profile Settings > Applications > New Application**, enter a Name, then enter Redirect URLs ``https://<your-mattermost-url>/login/gitlab/complete`` (example: ``https://example.com:8065/login/gitlab/complete`` and ``https://<your-mattermost-url>/signup/gitlab/complete``.
-
-+-------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Secret": ""`` with string input. |
-+-------------------------------------------------------------------------------+
-
-GitLab site URL
-''''''''''''''''
-
-Specify the URL of your GitLab instance (example ``https://example.com:3000``). If your GitLab instance is not set up with SSL, start the URL with ``http://`` instead of ``https://``.
-
-User API endpoint
-''''''''''''''''''
-
-Enter ``https://<your-gitlab-url>/api/v3/user`` (example: ``https://example.com:3000/api/v3/user``). Use HTTP or HTTPS depending on how your server is configured.
-
-+----------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"UserApiEndpoint": ""`` with string input. |
-+----------------------------------------------------------------------------------------+
-
-Auth endpoint
-'''''''''''''
-
-Enter ``https://<your-gitlab-url>/oauth/authorize`` (example: ``https://example.com:3000/oauth/authorize``). Use HTTP or HTTPS depending on how your server is configured.
-
-+-------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"AuthEndpoint": ""`` with string input. |
-+-------------------------------------------------------------------------------------+
-
-Token endpoint
-''''''''''''''
-
-Enter ``https://<your-gitlab-url>/oauth/token`` (example: ``https://example.com:3000/oauth/token``). Use HTTP or HTTPS depending on how your server is configured.
-
-+--------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"TokenEndpoint": ""`` with string input. |
-+--------------------------------------------------------------------------------------+
-
-Google
-^^^^^^
+Google OAuth 2.0 settings
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Enable authentication with Google by selecting ``Google Apps`` from **OAuth 2.0 > Select OAuth 2.0 service provider**.
+Enable OAuth 2.0 authentication with Google
+'''''''''''''''''''''''''''''''''''''''''''
 
-**True**: Allow team creation and account signup using Google OAuth. To configure, input the **Client ID** and **Client Secret** credentials. See `the documentation <https://docs.mattermost.com/onboard/sso-google.html>`__ for more detail.
++---------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
+| - **true**: Allows team and account creation using Google OAuth authentication. Input the **Client ID** and **Client Secret** credentials to configure. | - System Config path: **Authentication > OAuth 2.0**         |
+| - **false**: **(Default)** Disables Google OAuth authentication.                                                                                        | - ``config.json`` setting: ``.GoogleSettings.Enable: false`` |
+|                                                                                                                                                         | - Environment variable: ``MM_GOOGLESETTINGS_ENABLE``         |
++---------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
 
-**False**: Google OAuth cannot be used for team creation or account signup.
-
-+----------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Enable": false`` with options ``true`` and ``false``. |
-+----------------------------------------------------------------------------------------------------+
-
-Client ID
-'''''''''
-
-*Available in legacy Enterprise Edition E20*
-
-Obtain this value by registering Mattermost as an application in your Google account.
-
-+---------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Id": ""`` with string input. |
-+---------------------------------------------------------------------------+
-
-Client secret
-'''''''''''''
+Google OAuth 2.0 Client ID
+''''''''''''''''''''''''''
 
 *Available in legacy Enterprise Edition E20*
 
-Obtain this value by registering Mattermost as an application in your Google account.
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------+
+| This setting stores the OAuth Client ID from Google. Generate the ID by going to the **Credentials** section of the Google Cloud Platform APIs & Services menu and selecting **Create Credentials > OAuth client ID**. | - System Config path: **Authentication > OAuth 2.0** |
+|                                                                                                                                                                                                                        | - ``config.json`` setting: ``.GoogleSettings.Id``    |
+| See `Google Single Sign-On <https://docs.mattermost.com/onboard/sso-google.html>`__  for instructions that can be used to implement Google OAuth or OpenID authentication.                                             | - Environment variable: ``MM_GOOGLESETTINGS_ID``     |
+|                                                                                                                                                                                                                        |                                                      |
+| String input.                                                                                                                                                                                                          |                                                      |
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------+
 
-+-------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Secret": ""`` with string input. |
-+-------------------------------------------------------------------------------+
-
-User API endpoint
-''''''''''''''''''
-
-*Available in legacy Enterprise Edition E20*
-
-We recommend you use ``https://people.googleapis.com/v1/people/me?personFields=names,emailAddresses,nicknames,metadata`` as the User API Endpoint. Otherwise, enter a custom endpoint in ``config.json`` with HTTP or HTTPS depending on how your server is configured.
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"UserApiEndpoint": "https://people.googleapis.com/v1/people/me?personFields=names,emailAddresses,nicknames,metadata"``   |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Auth endpoint
-'''''''''''''
+Google OAuth 2.0 Client secret
+''''''''''''''''''''''''''''''
 
 *Available in legacy Enterprise Edition E20*
 
-We recommend you use ``https://accounts.google.com/o/oauth2/v2/auth`` as the Auth Endpoint. Otherwise, enter a custom endpoint in ``config.json`` with HTTP or HTTPS depending on how your server is configured.
++---------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------+
+| This setting stores the OAuth Client Secret from Google. The Secret is generated at the same time as the Client ID. | - System Config path: **Authentication > OAuth 2.0**  |
+|                                                                                                                     | - ``config.json`` setting: ``.GoogleSettings.Secret`` |
+| String input.                                                                                                       | - Environment variable: ``MM_GOOGLESETTINGS_SECRET``  |
++---------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------+
 
-+---------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"AuthEndpoint": "https://accounts.google.com/o/oauth2/v2/auth"`` with string input. |
-+---------------------------------------------------------------------------------------------------------------------------------+
-
-Token endpoint
-'''''''''''''''
+Google OAuth 2.0 User API endpoint
+''''''''''''''''''''''''''''''''''
 
 *Available in legacy Enterprise Edition E20*
 
-We recommend that you use ``https://www.googleapis.com/oauth2/v4/token`` as the Token Endpoint. Otherwise, enter a custom endpoint in ``config.json`` with HTTP or HTTPS depending on how your server is configured.
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------+
+| We recommend ``https://people.googleapis.com/v1/people/me?personFields=names,emailAddresses,nicknames,metadata`` as the User API Endpoint. Otherwise, enter a custom endpoint in ``config.json`` with HTTP, or HTTPS, if available on the API server. | - System Config path: **Authentication > OAuth 2.0**           |
+|                                                                                                                                                                                                                                                       | - ``config.json`` setting: ``.GoogleSettings.UserAPIEndpoint`` |
+| String input.                                                                                                                                                                                                                                         | - Environment variable: ``MM_GOOGLESETTINGS_USERAPIENDPOINT``  |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------+
 
-+--------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"TokenEndpoint": "https://www.googleapis.com/oauth2/v4/token"`` with string input. |
-+--------------------------------------------------------------------------------------------------------------------------------+
+Google OAuth 2.0 Auth endpoint
+''''''''''''''''''''''''''''''
 
-Office 365
-^^^^^^^^^^
+*Available in legacy Enterprise Edition E20*
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------+
+| We recommend ``https://accounts.google.com/o/oauth2/v2/auth`` as the Auth Endpoint. Otherwise, enter a custom endpoint in ``config.json`` with HTTP, or HTTPS, if available on the server. | - System Config path: **Authentication > OAuth 2.0**        |
+|                                                                                                                                                                                            | - ``config.json`` setting: ``.GoogleSettings.AuthEndpoint`` |
+| String input.                                                                                                                                                                              | - Environment variable: ``MM_GOOGLESETTINGS_AUTHENDPOINT``  |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------+
+
+Google OAuth 2.0 Token endpoint
+'''''''''''''''''''''''''''''''
+
+*Available in legacy Enterprise Edition E20*
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
+| We recommend ``https://www.googleapis.com/oauth2/v4/token`` as the Token Endpoint. Otherwise, enter a custom endpoint in ``config.json`` with HTTP, or HTTPS, if available on the server. | - System Config path: **Authentication > OAuth 2.0**         |
+|                                                                                                                                                                                           | - ``config.json`` setting: ``.GoogleSettings.TokenEndpoint`` |
+| String input.                                                                                                                                                                             | - Environment variable: ``MM_GOOGLESETTINGS_TOKENENDPOINT``  |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
+
+Office 365 OAuth 2.0 settings
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
   :start-after: :nosearch:
