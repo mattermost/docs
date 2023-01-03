@@ -85,6 +85,7 @@ Latest Mattermost Releases:
  - Added support for product websocket messages on high availability instances.
  - The import job now logs the progress of the import.
  - Exports to S3 no longer time out.
+ - Shared Channels (Experimental) was moved to Professional license.
 
 ### Bug Fixes
  - Fixed an issue where custom group actions were appearing in the user interface even when the user didn't have the permissions for them.
