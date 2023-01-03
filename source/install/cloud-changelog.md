@@ -55,6 +55,7 @@ Latest Mattermost Cloud releases:
  - Added ``restore_group`` permission to the mmctl and to the **System Console > Permissions**.
  - Improved bulk export logging.
  - Compliance export job can now cancel the SQL query execution during server shutdown which will allow the job to exit faster.
+ - Shared Channels (Experimental) was moved to Professional license.
 
 ### API Changes
  - Added new API endpoint ``GET /api/v4/posts/:post_id/info`` to allow checking if the post that a permalink is pointing to is accessible by joining teams or channels.
