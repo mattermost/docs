@@ -69,6 +69,7 @@ Latest Mattermost Releases:
  - Updated prepackaged version of plugins affected by React 17 upgrade.
  - Updated the **Remove license and download** text in-product to clarify that server will be downgraded to Mattermost Free as a result.
  - Updated prepackaged NPS version to 1.3.1.
+ - Updated in-product confirmation modal for ``@here`` mentions to clarify that people & timezone counts don't include the current user.  
 
 #### Administration
  - If an Admin encounters an invitation error “SMTP is not configured in System Console", a link to the SMTP configuration within the **System Console** is now included in the error message.
