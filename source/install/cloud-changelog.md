@@ -43,6 +43,7 @@ Latest Mattermost Cloud releases:
  - App Framework - channel and user fields now support multiselect property, to allow users to select multiple values in the form.
  - Increased the notification length on Windows to 120 from 50.
  - Prioritized members of recently viewed DMs/GMs when adding users to a channel.
+ - Updated in-product confirmation modal for ``@here`` mentions to clarify that people & timezone counts don't include the current user.  
 
 #### Administration
  - The export file now contains the server version and a creation timestamp.
