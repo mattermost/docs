@@ -125,6 +125,7 @@ Latest Mattermost Releases:
  - Fixed Boards tour tips not appearing when Boards is running without a plugin.
  - Fixed an issue where a confusing System Console banner was displayed when a license was set to expire.
  - Fixed an issue where screen readers did not announce selected state of the sidebar submenu items.
+ - Fixed an issue where servers with an encrypted key did not throw an error during startup.
 
 ### config.json
 Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
