@@ -87,7 +87,8 @@ Latest Mattermost Cloud releases:
  - Fixed an issue where the screen readers did not announce the selected state of the sidebar submenu items.
  - Fixed an issue where the metrics server was not prevented from starting while running export commands.
  - Fixed an issue where long group mentions and user mentions didn't wrap properly.
- - Fixed fetching first/last name for GitLab user using OpenID.
+ - Fixed an issue with fetching first/last name for GitLab user using OpenID.
+ - Fixed an issue where servers with an encrypted key did not throw an error during startup.
 
 ### Known Issues
  - Boards linked to a channel you're a member of don't automatically appear on your sidebar unless you're an explicit member of the board. As a workaround, you can access the board from the channel RHS, or by searching for the board via the board switcher (Ctrl/Cmd+K). Alternatively, you can ask the board admin to add you to the board as an explicit member. See the [issue-focalboard-4179](https://github.com/mattermost/focalboard/issues/4179) for more details.
