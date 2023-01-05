@@ -1634,34 +1634,33 @@ Enable guest access
 
 *Available in legacy Enterprise Edition E10 and E20*
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------+
-| - **true**: Enables the guest account feature. See `Guest Accounts <https://docs.mattermost.com/onboard/guest-accounts.html>`__.                                  | - System Config path: **Authentication > Guest Access**            |
-| - **false**: Disables the guest account feature. See `Disable Guest Accounts <https://docs.mattermost.com/onboard/guest-accounts.html#disable-guest-accounts>`__. | - ``config.json`` setting: ``GuestAccountsSettings.Enable: false`` |
-|                                                                                                                                                                   | - Environment variable: ``MM_GUESTACCOUNTSSETTINGS_ENABLE``        |
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| - **true**: Enables the guest account feature. See `Guest Accounts <https://docs.mattermost.com/onboard/guest-accounts.html>`__.                                                | - System Config path: **Authentication > Guest Access**             |
+| - **false**: **(Default)** Disables the guest account feature. See `Disable Guest Accounts <https://docs.mattermost.com/onboard/guest-accounts.html#disable-guest-accounts>`__. | - ``config.json`` setting: ``.GuestAccountsSettings.Enable: false`` |
+|                                                                                                                                                                                 | - Environment variable: ``MM_GUESTACCOUNTSSETTINGS_ENABLE``         |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
 
 Whitelisted guest domains
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *Available in legacy Enterprise Edition E10 and E20*
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------+
-| Use this setting to restrict the creation of guest accounts. When set, guest accounts require a verified email address from one of the listed domains. | - System Config path: **Authentication > Guest Access**                        |
-|                                                                                                                                                        | - ``config.json`` setting: ``GuestAccountsSettings.RestrictCreationToDomains`` |
-| String input of one or more domains, separated by commas.                                                                                              | - Environment variable: ``MM_GUESTACCOUNTSSETTINGS_RESTRICTCREATIONTODOMAINS`` |
-+--------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------+
+| Use this setting to restrict the creation of guest accounts. When set, guest accounts require a verified email address from one of the listed domains. | - System Config path: **Authentication > Guest Access**                         |
+|                                                                                                                                                        | - ``config.json`` setting: ``.GuestAccountsSettings.RestrictCreationToDomains`` |
+| String input of one or more domains, separated by commas.                                                                                              | - Environment variable: ``MM_GUESTACCOUNTSSETTINGS_RESTRICTCREATIONTODOMAINS``  |
++--------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------+
 
 Enforce multi-factor authentication
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *Available in legacy Enterprise Edition E10 and E20*
 
-This setting defaults to false and is read-only if multi-factor authentication is not enforced for regular users.
++---------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
+| - **true**: Guests must use MFA. Guests without MFA are redirected to the setup page until MFA is configured. | - System Config path: **Authentication > Guest Access**                                       |
+| - **false**: **(Default)** MFA is not required for guests.                                                    | - ``config.json`` setting: ``.GuestAccountsSettings.EnforceMultifactorAuthentication: false`` |
+|                                                                                                               | - Environment variable: ``MM_GUESTACCOUNTSSETTINGS_ENFORCEMULTIFACTORAUTHENTICATION``         |
++---------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
+| **Note**: This setting defaults to false and cannot be changed if MFA is not enforced for non-guest users.                                                                                                    |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-**True**: Multi-factor authentication (MFA) is required for login. New guest users will be required to configure MFA on sign-up. Logged in guest users without MFA configured are redirected to the MFA setup page until configuration is complete.
-
-**False**: Multi-factor authentication for guests is optional.
-
-+------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnforceMultifactorAuthentication": false`` with options ``true`` and ``false``. |
-+------------------------------------------------------------------------------------------------------------------------------+
