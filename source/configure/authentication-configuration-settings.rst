@@ -1645,11 +1645,11 @@ Whitelisted guest domains
 
 *Available in legacy Enterprise Edition E10 and E20*
 
-When populated, guest accounts can only be created by a verified email from this list of comma-separated domains.
-
-+--------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"RestrictCreationToDomains": ""`` with string input. |
-+--------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------+
+| Use this setting to restrict the creation of guest accounts. When set, guest accounts require a verified email address from one of the listed domains. | - System Config path: **Authentication > Guest Access**                        |
+|                                                                                                                                                        | - ``config.json`` setting: ``GuestAccountsSettings.RestrictCreationToDomains`` |
+| String input of one or more domains, separated by commas.                                                                                              | - Environment variable: ``MM_GUESTACCOUNTSSETTINGS_RESTRICTCREATIONTODOMAINS`` |
++--------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------+
 
 Enforce multi-factor authentication
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
