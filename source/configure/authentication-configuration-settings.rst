@@ -773,11 +773,11 @@ SAML SSO URL
 
 *Available in legacy Enterprise Edition E20*
 
-+--------------------------------------------------------------------------------------------+---------------------------------------------------------+
-| This setting is the URL where Mattermost sends a SAML request to start the login sequence. | - System Config path: **Authentication > SAML 2.0**     |
-|                                                                                            | - ``config.json`` setting: ``.SamlSettings.IdpURL``     |
-| String input.                                                                              | - Environment variable: ``MM_SAMLSETTINGS_IDPURL``      |
-+--------------------------------------------------------------------------------------------+---------------------------------------------------------+
++--------------------------------------------------------------------------------------------+-----------------------------------------------------+
+| This setting is the URL where Mattermost sends a SAML request to start the login sequence. | - System Config path: **Authentication > SAML 2.0** |
+|                                                                                            | - ``config.json`` setting: ``.SamlSettings.IdpURL`` |
+| String input.                                                                              | - Environment variable: ``MM_SAMLSETTINGS_IDPURL``  |
++--------------------------------------------------------------------------------------------+-----------------------------------------------------+
 
 Identity provider issuer URL
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1634,13 +1634,11 @@ Enable guest access
 
 *Available in legacy Enterprise Edition E10 and E20*
 
-**True**: Allow guest invitations to channels within teams. Please see `Guest Accounts documentation <https://docs.mattermost.com/onboard/guest-accounts.html>`__ for more information.
-
-**False**: Email signup is disabled. This limits signup to Single sign-on services like OAuth or AD/LDAP.
-
-+----------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Enable": false`` with options ``true`` and ``false``. |
-+----------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------+
+| - **true**: Enables the guest account feature. See `Guest Accounts <https://docs.mattermost.com/onboard/guest-accounts.html>`__.                                  | - System Config path: **Authentication > Guest Access**            |
+| - **false**: Disables the guest account feature. See `Disable Guest Accounts <https://docs.mattermost.com/onboard/guest-accounts.html#disable-guest-accounts>`__. | - ``config.json`` setting: ``GuestAccountsSettings.Enable: false`` |
+|                                                                                                                                                                   | - Environment variable: ``MM_GUESTACCOUNTSSETTINGS_ENABLE``        |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------+
 
 Whitelisted guest domains
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
