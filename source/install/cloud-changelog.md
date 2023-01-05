@@ -30,6 +30,12 @@ Latest Mattermost Cloud releases:
  - [Audio calling and screen sharing](https://docs.mattermost.com/configure/calls-deployment.html) in channels is now generally available to all Mattermost customers.
  - Updated [the keyboard shortcut](https://docs.mattermost.com/channels/keyboard-shortcuts-for-channels.html#calls-shortcuts) to start and join calls.
 
+#### ServiceNow Integration
+ - ServiceNow customers can now access and share their ServiceNow data from within Mattermost.
+ 
+#### ServiceNow Virtual Agent Integration
+ - The [Mattermost ServiceNow Virtual Agent Integration](https://www.loom.com/share/36f60299c6c349729160d6d8bce75c3c) makes it easy for employees and customers to resolve issues fast.
+
 ### Improvements
 
 #### User Interface (UI)
