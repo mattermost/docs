@@ -390,7 +390,7 @@ This setting enables the Apps Bar and moves all Mattermost integration icons fro
 Allow synchronized drafts
 -------------------------
 
-This setting saves in-progress message drafts in the Drafts view via the channel sidebar, and synchronizes draft messages across all supported Mattermost clients.
+This setting synchronizes draft messages across all supported Mattermost clients.
 
 **True**: **(Default)** Global drafts are enabled, synchronized across clients, and draft messages are accessible through the Drafts view. 
 
