@@ -4,9 +4,19 @@ Self-hosted subscriptions
 Buy a subscription
 ------------------
 
-You can buy a Mattermost subscription via the `Customer Portal page <https://customers.mattermost.com>`__. If you haven't created an account yet, follow the steps provided. Otherwise, you can log in with your existing credentials. When you buy a Mattermost subscription for a self-hosted deployment, you'll receive an activation license.
+From Mattermost v7.7 you can buy a Mattermost subscription from within Mattermost:
 
-Once you're logged in:
+1. In Mattermost, select **View Plans** in the global header or via **System Console > View plans**.
+2. Select **Upgrade**.
+3. Provide payment details. Note that user seats has to be greater than or equal to number of activated users.
+
+When your purchase is complete, a license is automatically applied to instance and your subscription is active immediately.
+
+.. note::
+
+If you're in an airgapped environment, this process won't work for you. Please contact our sales team for assistance.
+
+If you're using Mattermost v7.6 and below, you can buy a Mattermost subscription via the `Customer Portal page <https://customers.mattermost.com>`__. If you haven't created an account yet, follow the steps provided.
 
 1. Choose a subscription, and enter the number of users in the **Order summary** field. This indicates the number of users you can have on this subscription's instance. For more information about how users are defined, see our `FAQ <https://mattermost.com/pricing-self-managed/#faq>`__.
 2. (Optional for Enterprise subscriptions) You can add `Premier Support <https://mattermost.com/support/>`__. This is an additional cost and is automatically added to your order total.
