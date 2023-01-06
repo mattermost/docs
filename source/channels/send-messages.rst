@@ -38,7 +38,7 @@ From Mattermost v7.7, when composing new messages, it's easy to return to a mess
   :width: 700
   :alt: Global drafts makes it easy for you to find all messages in progress.
 
-By default, message drafts are synchronized on the Mattermost server AND accessible everywhere you access Mattermost, including a web browser or the desktop app with mobile support coming in a future release. 
+By default, message drafts are synchronized on the Mattermost server and are accessible everywhere you access Mattermost, including a web browser or the desktop app with mobile support coming in a future release. 
 
 .. Tip::
   
