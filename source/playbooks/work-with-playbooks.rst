@@ -1,10 +1,40 @@
-Customize your playbook
-=======================
+Work with playbooks
+===================
 
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Playbooks are highly customizable to align with your workflow.
+A playbook is a checklist of the tasks that make up your processes. Playbooks allow you to take codified knowledge and processes and make them accessible and editable by your organization and team.
+
+Playbook configuration applies both to the execution of the playbook as well as to its management and improvement.
+
+When you're setting up your playbook, you'll be able to break tasks down, and assign actions to them - such as using a slash command to start a Zoom call. You can also decide whether to use the same channel every time your playbook is run, or a new one.
+
+There are other parts of a playbook, such as automation settings, and metrics. But the very first thing you’ll want to set up is a checklist.
+
+Each time you use the process you’ve documented, such as onboarding a new customer, the playbook is used to start a run - a discrete single use of the process - and that run is captured in a channel (either a dedicated one or a new one every time you run the playbook). 
+
+Setting up a playbook includes configuring how the playbook manages the creation of its channel as well as how stakeholders are notified.
+
+To open a playbook and view its statistics, select the playbook name. To begin a run using a specific playbook, select **Run** beside that playbook’s name.
+
+Templates
+----------
+
+Creating a playbook from scratch can be daunting, even if you have the process mapped out. One way to get started quickly is to use one of the pre-configured templates available. These templates are populated with content and settings to provide guidance and are customizable.
+
+Playbook templates are basic workflows that you can use to get started quickly. As you learn more about your workflows, you can customize them into specific playbooks.
+
+Choose a template
+~~~~~~~~~~~~~~~~~
+
+The first step is to choose the right template for your use case. There are pre-configured templates for specific scenarios. The checklists, actions, status updates, and retrospective settings for these templates may already be filled in and, where appropriate, enabled. You can always edit and adjust these settings - they're there to guide you - removing them doesn't negatively affect the playbook run.
+
+.. tip:: 
+
+    Take a look at the **Learn how to use playbooks** template. This template breaks down the components of a playbook and you can also start a test run to see how everything fits together. If you're taking this option, you can stop reading here and enjoy the test run. You can also choose a blank template and start from scratch - this is a good option if your use case is unique.
+
+In the incident response template, the template contains items that are relevant to incident resolution. These are general items to help you get started.
 
 Edit a playbook
 ---------------
@@ -27,8 +57,8 @@ You can change a playbook’s configuration at any time, but changes will only b
 Make checklists
 ----------------
 
-1. Open Playbooks and select the **Playbooks** tab.
-2. Start a **Blank Playbook**, or use the built-in template.
+1. In channels, select **Toggle Playbook List** from the apps bar.
+2. Select an exiStart a **Blank Playbook**, or use the built-in template.
 3. Name your playbook and provide a description.
 4. Select the **Checklists** tab.
 
@@ -41,23 +71,22 @@ Make checklists
 
 5. Choose **Save**.
 
-Assign tasks and due dates
---------------------------
+Runs and channel behavior
+-------------------------
 
-In some workflows, there are time constraints on tasks and others may have more flexible timeframes. Associating tasks with deliverable dates provides visibility into workloads and helps everyone stay accountable during the run.
+When setting up your playbook:
 
-To assign a due date to a task, select the **Toggle Run Details** icon to open the **Run Details** screen. Hover over the task you’d like to edit and select the calendar icon to assign a due date. Due dates can be used to sort tasks in the run overview.
+- You can link it to an existing channel so that each run starts in that channel.
+- You can choose that each time the playbook is run, it creates a new channel.
 
-When a due date is assigned to a task, and the task is overdue or due today, a reminder is added to the Playbooks daily digest along with tasks that don't have an assigned due date. As tasks are completed, they're removed from the daily digest reminders. You can refresh the list of assigned tasks at any time using the ``/playbooks to-do`` slash command.
+To access this setting, open the playbooks tab. Select the playbook you want to edit, then select the **Outline** tab. Select **Actions** in the left-hand menu and make your selection under the **When a run starts** heading.
 
-Due dates can be entered in text (e.g., "two minutes ago") or numerically (e.g., "15 March 2023").
-
-Broadcast channels
+Status updates
 ------------------
 
 There may be multiple active runs on any given day.
 
-Setting up a dedicated broadcast channel is an easy way to centralize status updates, decrease noise, and remember where everything is. Configure a broadcast channel to which status updates will be copied. If you're not a member of the configured broadcast channel, **Unknown Channel** is displayed instead of the channel name.
+Configuring an update cadence is an easy way to centralize status updates, decrease noise, and remember where everything is. You can do this when you're setting up your playbook. Navigate to the **Usage** section and set the parameters based on expected update cycles and where the updates should be published.
 
 Keywords
 --------
@@ -74,6 +103,7 @@ You can customize actions associated with your playbook to ensure a smooth start
 Options include: Creating a channel when a run is started, inviting members to the run, sending outgoing webhooks, and automatically adding the run channel to a sidebar category.
 
 Actions such as channel creation and adding the channel to a sidebar category are set per-playbook and applied to each run that uses that playbook.
+
 If you’re a System Admin or Channel Admin of the run channel you can also edit these settings in the run channel, via the channel menu, in **Channel Actions**. Editing the settings in the run channel will only affect that channel and the changes aren’t applied to the playbook.
 
 Only Channel Admins can edit the **Channel Actions** items (such as the welcome message) but members who have access to the playbook can edit the welcome message and run behavior settings. Editing these won’t change the welcome message of a run that’s in progress - it only applies going forward.
