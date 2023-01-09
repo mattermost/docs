@@ -2187,6 +2187,14 @@ redirects = {
 	"https://docs.mattermost.com/playbooks/customize-a-playbook.html",
 "playbooks/refining-and-improving.html":
 	"https://docs.mattermost.com/playbooks/metrics-and-goals.html",
+"playbooks/customize-a-playbook":
+	"https://docs.mattermost.com/playbooks/work-with-playbooks.html",
+"playbooks/customize-a-run":
+	"https://docs.mattermost.com/playbooks/work-with-runs.html",
+"playbooks/reusing-and-sharing-playbooks":
+	"https://docs.mattermost.com/playbooks/share-and-collaborate.html",
+"playbooks/playbook-permissions":
+	"https://docs.mattermost.com/playbooks/share-and-collaborate.html#playbooks-permissions",
 
 # Process redirects
 # The process directory and its contents have been archived in FY23 Q2 and all applicable content has been moved from docs.mm.com to handbook.mm.com.
