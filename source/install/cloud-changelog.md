@@ -72,7 +72,7 @@ Latest Mattermost Cloud releases:
  - Fixed an issue where batch notifications failed while rendering.
  - Fixed an issue where the unreads button in the channel sidebar was missing alternative text for screen readers.
  - Fixed an issue where there was no feedback that a downgrade was in progress when selecting **Downgrade** under **System Console > Billing & Account > Subscriptions** page.
- - Fixed an issue where attempting to create a team with a duplicate URL printed the wrong error.
+ - Fixed an issue where attempting to create a team with a duplicate URL displayed the wrong error.
  - Fixed an issue where the custom status modal did not close when navigating to the custom emoji page.
  - Fixed an issue where selections within a code block were not properly copied to clipboard.
  - Fixed an issue where threads with 0 replies would show in all threads.
