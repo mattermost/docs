@@ -89,7 +89,7 @@ Latest Mattermost Cloud releases:
  - Fixed ability to create a board when Boards is running without a plugin.
  - Fixed Boards tour tips not appearing when Boards is running without a plugin.
  - Fixed the slash command description help text.
- - Fixed an issue where clicking **Contact Sales** didn't prefill the reason of contacting sales.
+ - Fixed an issue where selecting **Contact Sales** didn't pre-fill the reason for contacting sales.
  - Fixed an issue where the screen readers did not announce the selected state of the sidebar submenu items.
  - Fixed an issue where the metrics server was not prevented from starting while running export commands.
  - Fixed an issue where long group mentions and user mentions didn't wrap properly.
