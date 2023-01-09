@@ -40,7 +40,6 @@ Latest Mattermost Cloud releases:
 
 #### User Interface (UI)
  - Updated prepackaged version of plugins affected by React 17 upgrade.
- - Updated the **Remove license and download** text in-product to clarify that server will be downgraded to Mattermost Free as a result.
  - Corrected in-product System Console legacy link to the Cloud Administrator's Guide.
  - Updated prepackaged NPS version to 1.3.1.
  - Added group members count to the group autocomplete.
