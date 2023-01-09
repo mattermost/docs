@@ -70,6 +70,7 @@ Latest Mattermost Cloud releases:
  - Shared Channels (Experimental) was moved to Professional license.
  - Boards will be served as an in-built product from within Mattermost server instead of a plugin.
  - Added a new section in the **System Console** for products. For now, it only contains Boards-specific settings.
+ - Removed Cloud professional file storage limits.
 
 ### API Changes
  - Added new API endpoint ``GET /api/v4/posts/:post_id/info`` to allow checking if the post that a permalink is pointing to is accessible by joining teams or channels.
