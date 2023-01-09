@@ -184,7 +184,7 @@ Syslog target configuration options
 +----------+----------+---------------------------------------------------------------------------------------------------------------------------------+
 | cert     | string   | Path to a cert file (.pem) to be used when establishing a TLS connection to the server.                                         |
 +----------+----------+---------------------------------------------------------------------------------------------------------------------------------+
-| insecure | bool     | Mattermost Boards accepts any certificate presented by the server, and any host name in that certificate. Default is ``false``. |
+| insecure | bool     | Mattermost accepts any certificate presented by the server, and any host name in that certificate. Default is ``false``.        |
 |          |          | **Note**: Should only be used in testing environments, and shouldn’t be used in production environments.                        |
 +----------+----------+---------------------------------------------------------------------------------------------------------------------------------+
 
@@ -202,7 +202,7 @@ TCP target configuration options
 +----------+----------+---------------------------------------------------------------------------------------------------------------------------------+
 | cert     | string   | Path to a cert file (.pem) to be used when establishing a TLS connection to the server.                                         |
 +----------+----------+---------------------------------------------------------------------------------------------------------------------------------+
-| insecure | bool     | Mattermost Boards accepts any certificate presented by the server, and any host name in that certificate. Default is ``false``. |
+| insecure | bool     | Mattermost accepts any certificate presented by the server, and any host name in that certificate. Default is ``false``.        |
 |          |          | **Note**: Should only be used in testing environments, and shouldn’t be used in production environments.                        |
 +----------+----------+---------------------------------------------------------------------------------------------------------------------------------+
 | tag      | string   | Syslog tag field.                                                                                                               |
