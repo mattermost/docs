@@ -47,6 +47,7 @@ Latest Mattermost Cloud releases:
  - Updated prepackaged version of plugins affected by React 17 upgrade.
  - Corrected in-product System Console legacy link to the Cloud Administrator's Guide.
  - Updated prepackaged NPS version to 1.3.1.
+ - Updated prepackaged version of Apps plugin to 1.2.0.
  - Added group members count to the group autocomplete.
  - Clicking a group mention now displays group details and membership.
  - Improved the collapsed state of the post formatting toolbar.
