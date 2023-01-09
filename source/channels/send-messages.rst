@@ -32,7 +32,7 @@ Compose a message by typing into the text box at the bottom of Mattermost. Press
 Draft messages
 --------------
 
-From Mattermost v7.7, when composing new messages, it's easy to return to a message in progress later. Draft messages are added to a **Drafts** view available at the top of the channel sidebar unless your system admin `disables global draft functionality </configure/experimental-configuration-settings.html#allow-synchronized-drafts>`__.
+From Mattermost v7.7, when composing new messages, it's easy to return to a message in progress later. Draft messages are added to a **Drafts** view available at the top of the channel sidebar 
 
 .. image:: ../images/Global-Drafts-Animated-GIF.gif
   :width: 700
