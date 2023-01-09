@@ -135,6 +135,7 @@ This section of the guide is for system admins of self-hosted Mattermost servers
     :maxdepth: 1
     :hidden:
 
+    Mattermost self-hosted billing </manage/self-hosted-billing>
     Store configuration in the database </configure/configuation-in-a-database>
     Bulk loading data </onboard/bulk-loading-data>
     SMTP email setup </configure/smtp-email>
@@ -150,6 +151,7 @@ This section of the guide is for system admins of self-hosted Mattermost servers
     SSL client certificate setup </onboard/ssl-client-certificate>
     Certificate-based authentication </onboard/certificate-based-authentication>
 
+* :doc:`Mattermost self-hosted billing </manage/self-hosted-billing>` - Manage your Mattermost subscription.
 * :doc:`Include configuration in the Mattermost database </configure/configuation-in-a-database>` - Store Mattermost configuration information in your database rather than as a JSON file. We recommend this for High Availability environments.
 * :doc:`Bulk loading data </onboard/bulk-loading-data>` - Import bulk data into Mattermost for teams, channels, users, post content, and more.
 * :doc:`SMTP email setup </configure/smtp-email>` - Connect to an email server to send emails for password resets and system notifications.
