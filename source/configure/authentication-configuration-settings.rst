@@ -1129,171 +1129,186 @@ OAuth 2.0
 .. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Access the following configuration settings in the System Console by going to **Authentication > OAuth 2.0**.
+Access the following configuration settings in the System Console by going to **Authentication > OAuth 2.0**. Settings for GitLab OAuth authentication can also be accessed under **Authentication > GitLab** in self-hosted deployments.
 
 .. note::
   
   OAuth 2.0 is being deprecated and will be replaced by `OpenID Connect <https://docs.mattermost.com/configure/configuration-settings.html#openid-connect>`__ in a future release.
 
-Settings to configure OAuth login for account creation and login.
+Use these settings to configure OAuth 2.0 for account creation and login.
 
 Select OAuth 2.0 service provider
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *Available in legacy Enterprise Edition E20*
 
-Choose whether OAuth can be used for account creation and login. Options include:
++------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------+
+| Use this setting to enable OAuth and specify the service provider, with these options:                                                         | - System Config path: **Authentication > OAuth 2.0** |
+|                                                                                                                                                | - ``config.json`` setting: N/A                       |
+| - **Do not allow login via an OAuth 2.0 provider**                                                                                             | - Environment variable: N/A                          |
+| - **GitLab** (Available in all plans; see `GitLab 2.0 OAuth settings <#gitlab-oauth-2-0-settings>`__)                                          |                                                      |
+| - **Google Apps** (Available in Mattermost Enterprise and Professional; see `Google OAuth 2.0 settings <#google-oauth-2-0-settings>`__)        |                                                      |
+| - **Office 365** (Available in Mattermost Enterprise and Professional; see `Office 365 OAuth 2.0 settings <#office-365-oauth-2-0-settings>`__) |                                                      |
++------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------+
 
-- **Do not allow login via an OAuth 2.0 provider**
-- **GitLab** (available in all plans; see `GitLab Settings <https://docs.mattermost.com/configure/configuration-settings.html#gitlab-settings>`__ for details)
-- **Google Apps** (Available in Mattermost Enterprise and Professional; see `Google Settings <https://docs.mattermost.com/configure/configuration-settings.html#google-settings>`__ for details)
-- **Office 365** (Available in Mattermost Enterprise and Professional; see `Office 365 Settings <https://docs.mattermost.com/configure/configuration-settings.html#office-365-settings>`__ for details)
-
-This feature's setting does not appear in ``config.json``.
-
-GitLab
-^^^^^^
+GitLab OAuth 2.0 settings
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Enable authentication with GitLab
+Enable OAuth 2.0 authentication with GitLab
+'''''''''''''''''''''''''''''''''''''''''''
+
++-------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
+| - **true**: Allows team and account creation using GitLab OAuth authentication. Input the **Secret** and **ID** credentials to configure. | - System Config path: **Authentication > OAuth 2.0 (or GitLab)** |
+| - **false**: Disables GitLab OAuth authentication.                                                                                        | - ``config.json`` setting: ``.GitLabSettings.Enable: false``     |
+|                                                                                                                                           | - Environment variable: ``MM_GITLABSETTINGS_ENABLE``             |
++-------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
+
+GitLab OAuth 2.0 Application ID
+'''''''''''''''''''''''''''''''
+
++------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
+| This setting holds the OAuth Application ID from GitLab. Generate the ID by these steps:                                                             | - System Config path: **Authentication > OAuth 2.0 (or GitLab)** |
+|                                                                                                                                                      | - ``config.json`` setting: ``.GitLabSettings.Id``                |
+| 1. Login to your GitLab account.                                                                                                                     | - Environment variable: ``MM_GITLABSETTINGS_ID``                 |
+| 2. Go to **Profile Settings > Applications > New Application** and enter a name.                                                                     |                                                                  |
+| 3. Enter the Redirect URLs: ``https://<your-mattermost-url>/login/gitlab/complete`` and ``https://<your-mattermost-url>/signup/gitlab/complete``.    |                                                                  |
+| 4. Take the Application ID provided by GitLab and enter it in the Mattermost System Console field, ``config.json`` setting, or Environment variable. |                                                                  |
+|                                                                                                                                                      |                                                                  |
+| String input.                                                                                                                                        |                                                                  |
++------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
+| Note: GitLab provides the `Application Secret Key <#gitlab-oauth-2-0-application-secret-key>`__ along with the the ID.                                                                                                  |
++------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
+
+GitLab OAuth 2.0 Application secret key
+'''''''''''''''''''''''''''''''''''''''
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
+| This setting holds the OAuth Application Secret Key from GitLab. The key is generated at the same time as the **Application ID** (see `GitLab OAuth 2.0 Application ID <#gitlab-oauth-2-0-application-id>`__). | - System Config path: **Authentication > OAuth 2.0 (or GitLab)** |
+|                                                                                                                                                                                                                | - ``config.json`` setting: ``.GitLabSettings.Secret``            |
+| Enter the key provided by GitLab in the Mattermost System Console field, ``config.json`` setting, or Environment variable.                                                                                     | - Environment variable: ``MM_GITLABSETTINGS_SECRET``             |
+|                                                                                                                                                                                                                |                                                                  |
+| String input.                                                                                                                                                                                                  |                                                                  |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
+
+GitLab OAuth 2.0 site URL
+'''''''''''''''''''''''''
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
+| This setting holds the URL of your GitLab instance, e.g. ``https://example.com:3000``. Use ``http://`` if SSL is not enabled on your GitLab instance. | - System Config path: **Authentication > OAuth 2.0 (or GitLab)** |
+|                                                                                                                                                       | - ``config.json`` setting: N/A                                   |
+|                                                                                                                                                       | - Environment variable: N/A                                      |
++-------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
+
+GitLab OAuth 2.0 User API endpoint
 ''''''''''''''''''''''''''''''''''
 
-**True**: Allow team creation and account signup using GitLab OAuth. To configure, input the **Secret** and **Id** credentials.
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
+| This setting holds the URL of your GitLab User API endpoint, e.g. ``https://<your-gitlab-url>/api/v3/user``. Use ``http://`` if SSL is not enabled on your GitLab instance. | - System Config path: **Authentication > OAuth 2.0 (or GitLab)** |
+|                                                                                                                                                                             | - ``config.json`` setting: ``.GitLabSettings.UserAPIEndpoint``   |
+| Enter the URL in the Mattermost System Console field, ``config.json`` setting, or Environment variable.                                                                     | - Environment variable: ``MM_GITLABSETTINGS_USERAPIENDPOINT``    |
+|                                                                                                                                                                             |                                                                  |
+| String input.                                                                                                                                                               |                                                                  |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
 
-**False**: GitLab OAuth cannot be used for team creation or account signup.
+GitLab OAuth 2.0 Auth endpoint
+''''''''''''''''''''''''''''''
 
-.. note:: 
-   For Enterprise subscriptions, GitLab settings can be found under **OAuth 2.0**
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
+| This setting holds the URL of your GitLab Auth endpoint, e.g. ``https://<your-gitlab-url>/oauth/authorize``. Use ``http://`` if SSL is not enabled on your GitLab instance. | - System Config path: **Authentication > OAuth 2.0 (or GitLab)** |
+|                                                                                                                                                                             | - ``config.json`` setting: ``.GitLabSettings.AuthEndpoint``      |
+| Enter the URL in the Mattermost System Console field, ``config.json`` setting, or Environment variable.                                                                     | - Environment variable: ``MM_GITLABSETTINGS_AUTHENDPOINT``       |
+|                                                                                                                                                                             |                                                                  |
+| String input.                                                                                                                                                               |                                                                  |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
 
-+----------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Enable": false`` with options ``true`` and ``false``. |
-+----------------------------------------------------------------------------------------------------+
+GitLab OAuth 2.0 Token endpoint
+'''''''''''''''''''''''''''''''
 
-Application ID
-''''''''''''''
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
+| This setting holds the URL of your GitLab OAuth Token endpoint, e.g. ``https://<your-gitlab-url>/oauth/token``. Use ``http://`` if SSL is not enabled on your GitLab instance. | - System Config path: **Authentication > OAuth 2.0 (or GitLab)** |
+|                                                                                                                                                                                | - ``config.json`` setting: ``.GitLabSettings.TokenEndpoint``     |
+| Enter the URL in the Mattermost System Console field, ``config.json`` setting, or Environment variable.                                                                        | - Environment variable: ``MM_GITLABSETTINGS_TOKENENDPOINT``      |
+|                                                                                                                                                                                |                                                                  |
+| String input.                                                                                                                                                                  |                                                                  |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
 
-Obtain this value by logging into your GitLab account. Go to **Profile Settings > Applications > New Application**, enter a Name, then enter Redirect URLs ``https://<your-mattermost-url>/login/gitlab/complete`` (example: ``https://example.com:8065/login/gitlab/complete`` and ``https://<your-mattermost-url>/signup/gitlab/complete``.
-
-+---------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Id": ""`` with string input. |
-+---------------------------------------------------------------------------+
-
-Application secret key
-''''''''''''''''''''''
-
-Obtain this value by logging into your GitLab account. Go to **Profile Settings > Applications > New Application**, enter a Name, then enter Redirect URLs ``https://<your-mattermost-url>/login/gitlab/complete`` (example: ``https://example.com:8065/login/gitlab/complete`` and ``https://<your-mattermost-url>/signup/gitlab/complete``.
-
-+-------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Secret": ""`` with string input. |
-+-------------------------------------------------------------------------------+
-
-GitLab site URL
-''''''''''''''''
-
-Specify the URL of your GitLab instance (example ``https://example.com:3000``). If your GitLab instance is not set up with SSL, start the URL with ``http://`` instead of ``https://``.
-
-User API endpoint
-''''''''''''''''''
-
-Enter ``https://<your-gitlab-url>/api/v3/user`` (example: ``https://example.com:3000/api/v3/user``). Use HTTP or HTTPS depending on how your server is configured.
-
-+----------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"UserApiEndpoint": ""`` with string input. |
-+----------------------------------------------------------------------------------------+
-
-Auth endpoint
-'''''''''''''
-
-Enter ``https://<your-gitlab-url>/oauth/authorize`` (example: ``https://example.com:3000/oauth/authorize``). Use HTTP or HTTPS depending on how your server is configured.
-
-+-------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"AuthEndpoint": ""`` with string input. |
-+-------------------------------------------------------------------------------------+
-
-Token endpoint
-''''''''''''''
-
-Enter ``https://<your-gitlab-url>/oauth/token`` (example: ``https://example.com:3000/oauth/token``). Use HTTP or HTTPS depending on how your server is configured.
-
-+--------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"TokenEndpoint": ""`` with string input. |
-+--------------------------------------------------------------------------------------+
-
-Google
-^^^^^^
+Google OAuth 2.0 settings
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Enable authentication with Google by selecting ``Google Apps`` from **OAuth 2.0 > Select OAuth 2.0 service provider**.
+Enable OAuth 2.0 authentication with Google
+'''''''''''''''''''''''''''''''''''''''''''
 
-**True**: Allow team creation and account signup using Google OAuth. To configure, input the **Client ID** and **Client Secret** credentials. See `the documentation <https://docs.mattermost.com/onboard/sso-google.html>`__ for more detail.
++---------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
+| - **true**: Allows team and account creation using Google OAuth authentication. Input the **Client ID** and **Client Secret** credentials to configure. | - System Config path: **Authentication > OAuth 2.0**         |
+| - **false**: **(Default)** Disables Google OAuth authentication.                                                                                        | - ``config.json`` setting: ``.GoogleSettings.Enable: false`` |
+|                                                                                                                                                         | - Environment variable: ``MM_GOOGLESETTINGS_ENABLE``         |
++---------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
 
-**False**: Google OAuth cannot be used for team creation or account signup.
-
-+----------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Enable": false`` with options ``true`` and ``false``. |
-+----------------------------------------------------------------------------------------------------+
-
-Client ID
-'''''''''
-
-*Available in legacy Enterprise Edition E20*
-
-Obtain this value by registering Mattermost as an application in your Google account.
-
-+---------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Id": ""`` with string input. |
-+---------------------------------------------------------------------------+
-
-Client secret
-'''''''''''''
+Google OAuth 2.0 Client ID
+''''''''''''''''''''''''''
 
 *Available in legacy Enterprise Edition E20*
 
-Obtain this value by registering Mattermost as an application in your Google account.
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------+
+| This setting stores the OAuth Client ID from Google. Generate the ID by going to the **Credentials** section of the Google Cloud Platform APIs & Services menu and selecting **Create Credentials > OAuth client ID**. | - System Config path: **Authentication > OAuth 2.0** |
+|                                                                                                                                                                                                                        | - ``config.json`` setting: ``.GoogleSettings.Id``    |
+| See `Google Single Sign-On <https://docs.mattermost.com/onboard/sso-google.html>`__  for instructions that can be used to implement Google OAuth or OpenID authentication.                                             | - Environment variable: ``MM_GOOGLESETTINGS_ID``     |
+|                                                                                                                                                                                                                        |                                                      |
+| String input.                                                                                                                                                                                                          |                                                      |
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------+
 
-+-------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Secret": ""`` with string input. |
-+-------------------------------------------------------------------------------+
-
-User API endpoint
-''''''''''''''''''
-
-*Available in legacy Enterprise Edition E20*
-
-We recommend you use ``https://people.googleapis.com/v1/people/me?personFields=names,emailAddresses,nicknames,metadata`` as the User API Endpoint. Otherwise, enter a custom endpoint in ``config.json`` with HTTP or HTTPS depending on how your server is configured.
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"UserApiEndpoint": "https://people.googleapis.com/v1/people/me?personFields=names,emailAddresses,nicknames,metadata"``   |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Auth endpoint
-'''''''''''''
+Google OAuth 2.0 Client secret
+''''''''''''''''''''''''''''''
 
 *Available in legacy Enterprise Edition E20*
 
-We recommend you use ``https://accounts.google.com/o/oauth2/v2/auth`` as the Auth Endpoint. Otherwise, enter a custom endpoint in ``config.json`` with HTTP or HTTPS depending on how your server is configured.
++---------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------+
+| This setting stores the OAuth Client Secret from Google. The Secret is generated at the same time as the Client ID. | - System Config path: **Authentication > OAuth 2.0**  |
+|                                                                                                                     | - ``config.json`` setting: ``.GoogleSettings.Secret`` |
+| String input.                                                                                                       | - Environment variable: ``MM_GOOGLESETTINGS_SECRET``  |
++---------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------+
 
-+---------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"AuthEndpoint": "https://accounts.google.com/o/oauth2/v2/auth"`` with string input. |
-+---------------------------------------------------------------------------------------------------------------------------------+
-
-Token endpoint
-'''''''''''''''
+Google OAuth 2.0 User API endpoint
+''''''''''''''''''''''''''''''''''
 
 *Available in legacy Enterprise Edition E20*
 
-We recommend that you use ``https://www.googleapis.com/oauth2/v4/token`` as the Token Endpoint. Otherwise, enter a custom endpoint in ``config.json`` with HTTP or HTTPS depending on how your server is configured.
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------+
+| We recommend ``https://people.googleapis.com/v1/people/me?personFields=names,emailAddresses,nicknames,metadata`` as the User API Endpoint. Otherwise, enter a custom endpoint in ``config.json`` with HTTP, or HTTPS, if available on the API server. | - System Config path: **Authentication > OAuth 2.0**           |
+|                                                                                                                                                                                                                                                       | - ``config.json`` setting: ``.GoogleSettings.UserAPIEndpoint`` |
+| String input.                                                                                                                                                                                                                                         | - Environment variable: ``MM_GOOGLESETTINGS_USERAPIENDPOINT``  |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------+
 
-+--------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"TokenEndpoint": "https://www.googleapis.com/oauth2/v4/token"`` with string input. |
-+--------------------------------------------------------------------------------------------------------------------------------+
+Google OAuth 2.0 Auth endpoint
+''''''''''''''''''''''''''''''
 
-Office 365
-^^^^^^^^^^
+*Available in legacy Enterprise Edition E20*
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------+
+| We recommend ``https://accounts.google.com/o/oauth2/v2/auth`` as the Auth Endpoint. Otherwise, enter a custom endpoint in ``config.json`` with HTTP, or HTTPS, if available on the server. | - System Config path: **Authentication > OAuth 2.0**        |
+|                                                                                                                                                                                            | - ``config.json`` setting: ``.GoogleSettings.AuthEndpoint`` |
+| String input.                                                                                                                                                                              | - Environment variable: ``MM_GOOGLESETTINGS_AUTHENDPOINT``  |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------+
+
+Google OAuth 2.0 Token endpoint
+'''''''''''''''''''''''''''''''
+
+*Available in legacy Enterprise Edition E20*
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
+| We recommend ``https://www.googleapis.com/oauth2/v4/token`` as the Token Endpoint. Otherwise, enter a custom endpoint in ``config.json`` with HTTP, or HTTPS, if available on the server. | - System Config path: **Authentication > OAuth 2.0**         |
+|                                                                                                                                                                                           | - ``config.json`` setting: ``.GoogleSettings.TokenEndpoint`` |
+| String input.                                                                                                                                                                             | - Environment variable: ``MM_GOOGLESETTINGS_TOKENENDPOINT``  |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
+
+Office 365 OAuth 2.0 settings
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
   :start-after: :nosearch:

@@ -80,7 +80,9 @@ Deploy Mattermost on Docker for production use
 Upgrade from ``mattermost-docker``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-For an in-depth guide to upgrading from the deprecated `mattermost-docker repository <https://github.com/mattermost/mattermost-docker>`__, please refer to `this document <https://github.com/mattermost/docker/blob/main/scripts/UPGRADE.md>`__. For additional help or questions, please refer to `this issue <https://github.com/mattermost/mattermost-docker/issues/489>`__.
+To migrate from the deprecated `mattermost-docker repository <https://github.com/mattermost/mattermost-docker>`__ running with the image ``mattermost/mattermost-prod-app``, we recommend migrating either to ``mattermost/mattermost-enterprise-edition`` or ``mattermost/mattermost-team-edition`` images, which are the official images supported by Mattermost. These images support Postgres 10+ databases, which we know has been a long-running challenge for the community, and you will not lose any features or functionality by moving to these new images.
+
+For additional help or questions, please refer to `this issue <https://github.com/mattermost/mattermost-docker/issues/489>`__.
 
 Installing a different version of Mattermost
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -89,7 +91,7 @@ Installing a different version of Mattermost
 
 2. Run ``git pull`` to fetch any recent changes to the repository, paying attention to any potential ``env.example`` changes.
 
-3. Adjust the ``MATTERMOST_IMAGE_TAG`` in the ``.env`` file to point your desired `enterprise <(https://hub.docker.com/r/mattermost/mattermost-enterprise-edition/tags?page=1&ordering=last_updated>`__ or `team <https://hub.docker.com/r/mattermost/mattermost-team-edition/tags?page=1&ordering=last_updated>`__ image version.
+3. Adjust the ``MATTERMOST_IMAGE_TAG`` in the ``.env`` file to point your desired `enterprise <https://hub.docker.com/r/mattermost/mattermost-enterprise-edition/tags?page=1&ordering=last_updated>`__ or `team <https://hub.docker.com/r/mattermost/mattermost-team-edition/tags?page=1&ordering=last_updated>`__ image version.
 
 4. Redeploy Mattermost.
 
