@@ -29,6 +29,11 @@ Latest Mattermost Cloud releases:
 #### Calls
  - [Audio calling and screen sharing](https://docs.mattermost.com/configure/calls-deployment.html) in channels is now generally available to all Mattermost customers.
  - Updated [the keyboard shortcut](https://docs.mattermost.com/channels/keyboard-shortcuts-for-channels.html#calls-shortcuts) to start and join calls.
+ 
+#### Boards
+ - Boards now supports file attachments, including PDFs, images, videos, and any other file types.
+ - Users can now [drag and drop boards and categories](https://docs.mattermost.com/boards/navigate-boards.html#manage-boards-on-the-sidebar) on the sidebar and organize them in any order they prefer.
+ - The [template picker](https://docs.mattermost.com/boards/work-with-boards.html#choose-a-board-template) has been improved to make it easier for users to find the best template for their project.
 
 #### ServiceNow Integration
  - ServiceNow customers can now access and share their ServiceNow data from within Mattermost.
@@ -50,6 +55,7 @@ Latest Mattermost Cloud releases:
  - Prioritized members of recently viewed DMs/GMs when adding users to a channel.
  - Updated in-product confirmation modal for ``@here`` mentions to clarify that people & timezone counts don't include the current user.
  - Added support for multiple users and channels to the ``/invite`` slash command.
+ - Downgraded French language support to Beta.
 
 #### Administration
  - The export file now contains the server version and a creation timestamp.
@@ -62,6 +68,8 @@ Latest Mattermost Cloud releases:
  - Improved bulk export logging.
  - Compliance export job can now cancel the SQL query execution during server shutdown which will allow the job to exit faster.
  - Shared Channels (Experimental) was moved to Professional license.
+ - Boards will be served as an in-built product from within Mattermost server instead of a plugin.
+ - Added a new section in the **System Console** for products. For now, it only contains Boards-specific settings.
 
 ### API Changes
  - Added new API endpoint ``GET /api/v4/posts/:post_id/info`` to allow checking if the post that a permalink is pointing to is accessible by joining teams or channels.
