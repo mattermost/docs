@@ -412,7 +412,7 @@ Enable call recordings (beta)
 .. include:: ../_static/badges/ent-selfhosted-only.rst
   :start-after: :nosearch:
 
-**True**: Allow call hosts to record meeting video and audio on the cloud. Recordings include the entire call window view along with participants' audio track and any shared screen video.
+**True**: Allow call hosts to record meeting video and audio. Recordings include the entire call window view along with participants' audio track and any shared screen video. Recordings are stored in Mattermost.
 
 **False**: (Default) Call recording functionality is not available to hosts.
 
