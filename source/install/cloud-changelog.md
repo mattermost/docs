@@ -73,6 +73,9 @@ Latest Mattermost Cloud releases:
  - Boards will be served as an in-built product from within Mattermost server instead of a plugin.
  - Added a new section in the **System Console** for products. For now, it only contains Boards-specific settings.
  - Removed Cloud professional file storage limits.
+ - The message export compliance job can now survive server restarts. The job will pause and save state when the server is shutting down, and resume from the previously saved state when the server starts back up.
+ - Only one instance of the job will be automatically scheduled to run as per the ``MessageExportSettings.DailyRunTime`` config value.
+ - Mattermost will throw an error if it detects an Elasticsearch version greater than 7.
 
 ### API Changes
  - Added new API endpoint ``GET /api/v4/posts/:post_id/info`` to allow checking if the post that a permalink is pointing to is accessible by joining teams or channels.
@@ -106,6 +109,7 @@ Latest Mattermost Cloud releases:
  - Fixed an issue where long group mentions and user mentions didn't wrap properly.
  - Fixed an issue with fetching first/last name for GitLab user using OpenID.
  - Fixed an issue where servers with an encrypted key did not throw an error during startup.
+ - Fixed an issue where the **Test Connection** button in **System Console > Environment > Elasticsearch** did not correctly take the right config settings specified in the page. Earlier, it would always take the previously saved config.
 
 ### Known Issues
  - Boards linked to a channel you're a member of don't automatically appear on your sidebar unless you're an explicit member of the board. As a workaround, you can access the board from the channel RHS, or by searching for the board via the board switcher (Ctrl/Cmd+K). Alternatively, you can ask the board admin to add you to the board as an explicit member. See the [issue-focalboard-4179](https://github.com/mattermost/focalboard/issues/4179) for more details.
