@@ -32,6 +32,8 @@ Users now gain a more reliable and feature-rich application, improving their exp
 ### Known Issues
  - Users are unable to adjust the font size via the OS font size setting.
  - **Add Members** and **Manage Members** modals are not yet added.
+ - Posts may remain in the local device database after data retention job has been run.
+ - Badge number on app icon may be inaccurate when connected to multiple servers.
 
 ## 1.55.1 Release
 - Release Date: September 15, 2022
