@@ -27,6 +27,7 @@ Latest Mattermost Cloud releases:
  - In addition to the daily digest, users can now also view [a task inbox](https://docs.mattermost.com/playbooks/work-with-tasks.html#task-inbox) from the global header bar while in Playbooks.
  
 #### Calls
+ - An important change was made to calls participants limits. The Cloud free plan now supports up to 8 participants per call in either Group Messages, public or private channels (it was previously Direct Messages only).
  - [Audio calling and screen sharing](https://docs.mattermost.com/configure/calls-deployment.html) in channels is now generally available to all Mattermost customers.
  - Updated [the keyboard shortcut](https://docs.mattermost.com/channels/keyboard-shortcuts-for-channels.html#calls-shortcuts) to start and join calls.
  
