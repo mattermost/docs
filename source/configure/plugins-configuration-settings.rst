@@ -424,7 +424,7 @@ Job service URL
 .. include:: ../_static/badges/ent-selfhosted-only.rst
   :start-after: :nosearch:
 
-The URL to the instance where call recordings will be stored.
+The URL to a running job service where all the processing related to recordings happens. The recorded files produced are ultimately stored in Mattermost, through the existing file attachment mechanism.
 
 This is a required field.
 
