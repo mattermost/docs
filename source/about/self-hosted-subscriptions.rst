@@ -75,8 +75,6 @@ When you subscribe to an annual plan with Mattermost, you agree to provide quart
 
 We'll send you an email notice around the end of the quarter reminding you to send us your report. 
 
-From Mattermost v7.7, you can send us this information from **System Console > License and Edition > True-up Review**. 
-
 If your deployment doesn't have internet access, you'll need to export a bundle and email it to your Customer Success Manager. You can create the bundle in **System Console > True-up Review**, select **Export Bundle**.
 
 For Mattermost v7.6 and below, to send this report, take a screenshot of **System Console > Site Statistics** and send in a reply email back to us. Please ensure your screenshot is taken from the top of the page and includes the **Total Active Users** metric.
