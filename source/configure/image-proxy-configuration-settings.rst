@@ -3,6 +3,15 @@
 
 An image proxy is used by Mattermost apps to prevent them from connecting directly to remote self-hosted servers. Configure an image proxy by going to **System Console > Environment > Image Proxy**, or by editing the ``config.json`` file as described in the following tables.
 
+.. config:setting:: image-enableproxy
+  :displayname: Enable image proxy (Image Proxy)
+  :systemconsole: Environment > Image Proxy
+  :configjson: .ImageProxySettings.Enable
+  :environment: MM_IMAGEPROXYSETTINGS_ENABLE
+
+  - **true**: **(Default)** Enables an image proxy for loading external images.
+  - **false**: Disables the image proxy.
+
 Enable image proxy
 ~~~~~~~~~~~~~~~~~~
 
@@ -19,6 +28,16 @@ Enable image proxy
 | See the `image proxy </deploy/image-proxy.html>`__ documentation to learn more.                                                     |
 +---------------------------------------------------------------+---------------------------------------------------------------------+
 
+.. config:setting:: image-proxytype
+  :displayname: Image proxy type (Image Proxy)
+  :systemconsole: Environment > Image Proxy
+  :configjson: .ImageProxySettings.ImageProxyType
+  :environment: MM_IMAGEPROXYSETTINGS_IMAGEPROXYTYPE
+  :description: The type of image proxy used by Mattermost.
+
+  - **local**: **(Default)** The Mattermost server itself acts as the image proxy.
+  - **atmos/camo**: An external atmos/camo image proxy is used.
+
 Image proxy type
 ~~~~~~~~~~~~~~~~
 
@@ -34,6 +53,13 @@ Image proxy type
 | See the `image proxy </deploy/image-proxy.html>`__ documentation to learn more.                                                               |
 +---------------------------------------------------------------+-------------------------------------------------------------------------------+
 
+.. config:setting:: image-remoteimageproxyurl
+  :displayname: Remote image proxy URL (Image Proxy)
+  :systemconsole: Environment > Image Proxy
+  :configjson: .ImageProxySettings.RemoteImageProxyURL
+  :environment: MM_IMAGEPROXYSETTINGS_REMOTEIMAGEPROXYURL
+  :description: The URL of the atmos/camo proxy.
+
 Remote image proxy URL
 ~~~~~~~~~~~~~~~~~~~~~~
 
@@ -44,6 +70,13 @@ Remote image proxy URL
 | when using the **local** image proxy.                         | - ``config.json setting``: ``".ImageProxySettings.RemoteImageProxyURL",`` |
 |                                                               | - Environment variable: ``MM_IMAGEPROXYSETTINGS_REMOTEIMAGEPROXYURL``     |
 +---------------------------------------------------------------+---------------------------------------------------------------------------+
+
+.. config:setting:: image-remoteimageproxyoptions
+  :displayname: Remote image proxy options (Image Proxy)
+  :systemconsole: Environment > Image Proxy
+  :configjson: .ImageProxySettings.RemoteImageProxyOptions
+  :environment: MM_IMAGEPROXYSETTINGS_REMOTEIMAGEPROXYOPTIONS
+  :description: The URL signing key passed to an atmos/camo image proxy.
 
 Remote image proxy options
 ~~~~~~~~~~~~~~~~~~~~~~~~~~

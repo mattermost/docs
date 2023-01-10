@@ -8,11 +8,11 @@ Bulk export data
   .. tab:: Use mmctl
 
     1. Create a full export file including attachments by running the `mmctl export create -- attachments </manage/mmctl-command-line-tool.html#mmctl-export-create>`__ command. See the `Mattermost workspace migration </manage/cloud-data-export.html#create-the-export>`__ documentation for details.
-    
+
     2. While the job is running, you can check its status by running the `mmctl export job show </manage/mmctl-command-line-tool.html#mmctl-export-job-show>`__ command.
 
     3. When the export job status is successful:
-    
+
       a. Identify the name of the completed export file by running the `mmctl export list </manage/mmctl-command-line-tool.html#mmctl-export-list>`__ command.
       b. Download the export file to your local machine by running the `mmctl export download </manage/mmctl-command-line-tool.html#mmctl-export-download>`__ command.
 
@@ -24,11 +24,11 @@ Bulk export data
 
     1.  Navigate to the directory where the Mattermost server is installed. On a default install of Mattermost, the directory is ``/opt/mattermost``.
     2.  Run the following command to extract data from all teams on the server. Note that you can change the file name and specify an absolute or relative path to dictate where the file is exported:
-  
+
         ``sudo -u mattermost bin/mattermost export bulk file.json --all-teams``
 
         ``sudo -u mattermost bin/mattermost export bulk /home/user/bulk_data.json --all-teams``
-  
+
     3.  Retrieve your file from the location you specified.
 
 At this time, the export supports attributes of the objects listed below. All Mattermost bulk export data files will begin with a ``Version`` object as the first line of the file. This indicates the version of the Mattermost bulk import file format with which the exported data is compatible.
@@ -51,7 +51,7 @@ You can export the following data types:
 .. note::
 
    Configuration for data types such as exporting specific areas of the server, exporting additional types of posts, permissions schemes, file attachments, webhooks, and bot messages is not yet supported. Deleted objects are also not yet supported.
-  
+
    For requests to add additional attributes or objects to our exporter, please add a feature request on our `feature idea forum <https://mattermost.uservoice.com/forums/306457-general>`__.
 
 Version object
@@ -83,7 +83,7 @@ Version object
   </table>
 
 VersionInfo object
---------------
+------------------
 
 .. raw:: html
 
@@ -215,7 +215,7 @@ Channel object
       <td>The name of the permissions scheme that applies to this team.</td>
     </tr>
   </table>
-  
+
 User object
 -----------
 
@@ -302,7 +302,7 @@ User object
       <td valign="middle">show_unread_section</td>
       <td valign="middle">string</td>
       <td><kbd>"true"</kbd> if the user has enabled showing unread messages at top of channel sidebar.</td>
-    </tr> 
+    </tr>
     <tr class="row-odd">
       <td valign="middle">theme</td>
       <td valign="middle">string</td>
@@ -322,7 +322,7 @@ User object
       <td valign="middle">message_display</td>
       <td valign="middle">string</td>
       <td>The style the user prefers for displayed messages. Options are <kbd>"clean"</kbd> if the user uses the standard style or <kbd>"compact"</kbd> if the user uses compact style.</td>
-    </tr> 
+    </tr>
     <tr class="row-odd">
       <td valign="middle">channel_display_mode</td>
       <td valign="middle">string</td>
@@ -342,7 +342,7 @@ User object
       <td valign="middle">delete_at</td>
       <td valign="middle">int64</td>
       <td>Timestamp of when the user was deactivated.</td>
-    </tr>    
+    </tr>
     <tr class="row-odd">
       <td valign="middle">teams</td>
       <td valign="middle">array</td>
@@ -583,7 +583,7 @@ Post object
       <td valign="middle">array</td>
       <td>The emoji reactions to this post. Will be an array of Reaction objects.</td>
   </table>
-  
+
 Reply object
 ------------
 
@@ -611,7 +611,7 @@ Reply object
       <td>The timestamp for the reply, in milliseconds since the Unix epoch.</td>
     </tr>
   </table>
-  
+
 Reaction object
 ---------------
 
@@ -664,7 +664,7 @@ Emoji object
       <td>The path (either absolute or relative to the current working directory) to the image file for this emoji.</td>
     </tr>
   </table>
-  
+
 DirectChannel object
 --------------------
 
@@ -692,7 +692,7 @@ DirectChannel object
       <td>The channel header.</td>
     </tr>
   </table>
-  
+
 DirectPost object
 -----------------
 
