@@ -130,6 +130,7 @@ Latest Mattermost Releases:
  - Fixed an issue where a confusing System Console banner was displayed when a license was set to expire.
  - Fixed an issue where screen readers did not announce selected state of the sidebar submenu items.
  - Fixed an issue where servers with an encrypted key did not throw an error during startup.
+ - Fixed an issue where the **Test Connection** button in **System Console > Environment > Elasticsearch** did not correctly take the right config settings specified in the page. Earlier, it would always take the previously saved config.
 
 ### config.json
 Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
