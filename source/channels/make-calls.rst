@@ -42,7 +42,7 @@ The call link is valid for long as the channel is active. When a channel is arch
 Record calls
 ------------
 
-The host of a meeting can record the call. The recording includes audio as well as any screen sharing during the call. The default setting for a recording is 60 minutes, but your system admin may adjust that as needed. Ten minutes before the time limit, you'll receive a reminder that the recording limit will be reached soon.
+The host of a meeting can record the call. The recording includes audio as well as any screen sharing during the call. The default setting for a recording is 60 minutes, but your system admin may adjust that as needed. Ten minutes before the time limit, the host will receive a reminder that the recording limit will be reached soon.
 
 If your call is going to continue and you still want to record, once the first recording is complete you can start a new one immediately after.
 
