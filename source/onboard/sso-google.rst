@@ -1,7 +1,7 @@
 Google Single Sign-On
 =====================
 
-.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+.. include:: ../_static/badges/entpro-cloud-free.rst
   :start-after: :nosearch:
 
 *Available in legacy Mattermost Enterprise Edition E20*
