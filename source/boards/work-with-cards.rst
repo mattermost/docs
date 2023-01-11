@@ -115,7 +115,7 @@ Once you have card properties defined, you have full control over which properti
 Attach files
 ------------
 
-From Mattermost v7.7 you can attach files to your cards, which viewers can view and download. There are no limitations to the file types that you can upload.
+From Mattermost v7.7 you can attach files to your cards, which other board members can download. There are no limitations to the file types that you can upload.
 
 To upload a file to a card, select **Attach** in the top-right corner of the card. Then select the file you'd like to upload. When your file has been uploaded, you can find it in the **Attachments** section of the card. Select the **+** sign to add additional files to your card.
 
