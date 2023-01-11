@@ -1791,6 +1791,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - Migrated the extraction command to mmctl.
  - Removed the convert channel endpoint to use ``/channels/{channel_id}/privacy`` instead.
  - Removed deprecated ``Posts.ParentId`` in favor of the semantically equivalent ``Posts.RootId``. Also removed ``CommandWebhook.ParentId`` and ``CompliancePost.ParentId`` for the same reason.
+ - Added a field to each of the compliance export formats (CSV, Global Relay, and Actiance) to indicate that a post was viewable via the new permalink preview feature.
  - Removed the following deprecated CLI commands in favor of [mmctl](/manage/mmctl-command-line-tool.html):
    - channel
    - command

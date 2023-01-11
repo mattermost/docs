@@ -19,6 +19,10 @@ Drag cards from one column to another to change their group-by property. For exa
 
 For sorted boards, dragging a card to a column will auto-sort it using the specified sort settings.
 
+.. note::
+
+  It's not currently possible to move cards between boards. This functionality will be supported in a future release.
+
 Our standard board templates provide some default card properties that can be customized or removed. In the Roadmap template, we include **Type** property, whereas in the Project Tasks template, we include an **Estimated Hours** property. These properties are not exclusive to any template and can be easily re-created in any of the templates provided.
 
 Card descriptions
