@@ -17,17 +17,17 @@ Latest Mattermost Cloud releases:
 
 #### Message Priority and Acknowledgments
  - Added [message priority labels](https://docs.mattermost.com/channels/message-priority.html) to the Threads view.
- - Added support for enterprise users to request acknowledgements on posts and to acknowledge posts (Professional).
+ - Added support for Enterprise customers to request acknowledgements on posts and to acknowledge posts (Professional).
 
 #### Global Drafts
  - Added a centralized Drafts view for draft messages.
  
 #### Playbooks
  - Added an option to run playbooks without creating a new channel every time in order to reduce the unnecessary overhead.
- - In addition to the daily digest, users can now also view [a task inbox](https://docs.mattermost.com/playbooks/work-with-tasks.html#task-inbox) from the global header bar while in Playbooks.
+ - In addition to the daily digest, users can now also view [a task inbox](https://docs.mattermost.com/playbooks/work-with-tasks.html#task-inbox) from the global header while in Playbooks.
  
 #### Calls
- - An important change was made to calls participants limits. The Cloud free plan now supports up to 8 participants per call in either Group Messages, public or private channels (it was previously Direct Messages only).
+ - An important change was made to calls participants limits. The Cloud free plan now supports up to 8 participants per call in group messages, public, or private channels (it was previously direct messages only).
  - [Audio calling and screen sharing](https://docs.mattermost.com/configure/calls-deployment.html) in channels is now generally available to all Mattermost customers.
  - Updated [the keyboard shortcut](https://docs.mattermost.com/channels/keyboard-shortcuts-for-channels.html#calls-shortcuts) to start and join calls.
  
@@ -45,34 +45,34 @@ Latest Mattermost Cloud releases:
 ### Improvements
 
 #### User Interface (UI)
- - Updated prepackaged version of plugins affected by React 17 upgrade.
+ - Updated prepackaged version of plugins affected by React v17 upgrade.
  - Corrected in-product System Console legacy link to the Cloud Administrator's Guide.
  - Updated prepackaged NPS version to 1.3.1.
  - Updated prepackaged version of Apps plugin to 1.2.0.
  - Added group members count to the group autocomplete.
  - Clicking a group mention now displays group details and membership.
  - Improved the collapsed state of the post formatting toolbar.
- - App Framework - channel and user fields now support multiselect property, to allow users to select multiple values in the form.
+ - App Framework channel and user fields now support multi-select properties to allow users to select multiple values in a form.
  - Increased the notification length on Windows to 120 from 50.
- - Prioritized members of recently viewed DMs/GMs when adding users to a channel.
+ - Prioritized members of recently viewed direct or group messages when adding users to a channel.
  - Updated in-product confirmation modal for ``@here`` mentions to clarify that people & timezone counts don't include the current user.
  - Added support for multiple users and channels to the ``/invite`` slash command.
  - Downgraded French language support to Beta.
 
 #### Administration
  - The export file now contains the server version and a creation timestamp.
- - Plugins with a webapp component may need to be updated to work with Mattermost and the updated ``React v17`` dependency. This is to avoid plugins crashing with an error about ``findDOMNode`` being called on an unmounted component. While our `starter template <https://github.com/mattermost/mattermost-plugin-starter-template>`_ depended on an external version of ``React``, it did not do the same for ``ReactDOM``. Plugins need to update their ``webpack.config.js`` directives to externalize ``ReactDOM``. For reference, see https://github.com/mattermost/mattermost-plugin-playbooks/pull/1489. Server-side only plugins are unaffected. This change can be done for existing plugins any time prior to upgrading to Mattermost and is backwards compatible with older versions of Mattermost.
+ - Plugins with a webapp component may need to be updated to work with Mattermost and the updated React v17 dependency. This is to avoid plugins crashing with an error about ``findDOMNode`` being called on an unmounted component. While our `starter template <https://github.com/mattermost/mattermost-plugin-starter-template>`_ depended on an external version of ``React``, it did not do the same for ``ReactDOM``. Plugins need to update their ``webpack.config.js`` directives to externalize ``ReactDOM``. For reference, see https://github.com/mattermost/mattermost-plugin-playbooks/pull/1489. Server-side only plugins are unaffected. This change can be done for existing plugins any time prior to upgrading Mattermost and is backwards compatible with older versions of Mattermost.
  - Added ``acknowledgements`` field to the post's metadata.
- - Added the ability for customers to view their upcoming invoice at the **System Console > Billing & Account > Subscriptions** page.
- - **Total Activated Users** was changed back to **Total Active Users** in **System Console > Reporting > Site Statistics**.
+ - Added the ability for customers to view their upcoming invoice on the **System Console > Billing & Account > Subscriptions** page.
+ - **Total Activated Users** was changed back to **Total Active Users** on the **System Console > Reporting > Site Statistics** page.
  - The import job now logs the progress of the import.
  - Added ``restore_group`` permission to the mmctl and to the **System Console > Permissions**.
  - Improved bulk export logging.
  - Compliance export job can now cancel the SQL query execution during server shutdown which will allow the job to exit faster.
- - Shared Channels (Experimental) was moved to Professional license.
+ - Shared Channels (Experimental) is now available with a Professional license.
  - Boards will be served as an in-built product from within Mattermost server instead of a plugin.
  - Added a new section in the **System Console** for products. For now, it only contains Boards-specific settings.
- - Removed Cloud professional file storage limits.
+ - Removed Cloud Professional file storage limits.
  - The message export compliance job can now survive server restarts. The job will pause and save state when the server is shutting down, and resume from the previously saved state when the server starts back up.
  - Only one instance of the job will be automatically scheduled to run as per the ``MessageExportSettings.DailyRunTime`` config value.
  - Mattermost will throw an error if it detects an Elasticsearch version greater than 7.
