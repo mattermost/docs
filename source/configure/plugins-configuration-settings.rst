@@ -426,7 +426,7 @@ Job service URL
 
 The URL to a running job service where all the processing related to recordings happens. The recorded files produced are stored in Mattermost.
 
-This is a required field.
+This is a required field. Changing this setting requires a plugin restart to take effect.
 
 Maximum call recording duration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
