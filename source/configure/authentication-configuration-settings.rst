@@ -2159,7 +2159,7 @@ We recommend that you use ``https://login.microsoftonline.com/common/oauth2/v2.0
 OpenID Connect
 ---------------
 
-.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+.. include:: ../_static/badges/entpro-cloud-free.rst
   :start-after: :nosearch:
 
 Access the following configuration settings in the System Console by going to **Authentication > OpenID Connect**.
@@ -2416,9 +2416,6 @@ Obtain this value by registering Mattermost as an application in your Google acc
 
 OpenID Connect (other)
 ^^^^^^^^^^^^^^^^^^^^^^
-
-.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
-  :start-after: :nosearch:
 
 .. config:setting:: oidc-enable
   :displayname: Enable (OpenID Connect)
