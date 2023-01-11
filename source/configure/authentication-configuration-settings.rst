@@ -108,6 +108,8 @@ Enable email invitations
 | - **false**: **(Default for self-hosted deployments)** | - Environment variable: ``MM_SERVICESETTINGS_ENABLEEMAILINVITATIONS``         |
 |   Disables email invitations.                          |                                                                               |
 +--------------------------------------------------------+-------------------------------------------------------------------------------+
+| **Note**: Cloud admins can't modify this configuration setting.                                                                        |
++--------------------------------------------------------+-------------------------------------------------------------------------------+
 
 Invalidate pending email invites
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -140,11 +142,13 @@ Access the following configuration settings in the System Console by going to **
 Enable account creation with email
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
-| - **true**: **(Default)** Allows creation of team and user accounts with email and password.                                                        | - System Config path: **Authentication > Email**                    |
-| - **false**: Disables creation of team and user accounts with email and password. This requries a single sign-on service to create accounts.        | - ``config.json`` setting: ``.EmailSettings.EnableSignUpWithEmail`` |
-|                                                                                                                                                     | - Environment variable: ``MM_EMAILSETTINGS_ENABLESIGNUPWITHEMAIL``  |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| - **true**: **(Default)** Allows creation of team and user accounts with email and password.  | - System Config path: **Authentication > Email**                    |
+| - **false**: Disables creation of team and user accounts with email and password. Requires    | - ``config.json`` setting: ``.EmailSettings.EnableSignUpWithEmail`` |
+|   a single sign-on (SSO) service to create accounts.                                          | - Environment variable: ``MM_EMAILSETTINGS_ENABLESIGNUPWITHEMAIL``  |
++-----------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| **Note**: Cloud admins can't modify this configuration setting.                                                                                                     |
++-----------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
 
 .. config:setting:: email-requireverification
   :displayname: Require email verification (Signup)

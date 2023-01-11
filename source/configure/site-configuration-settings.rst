@@ -529,6 +529,8 @@ Allow users to view archived channels
 | - **false**: Users are unable to access content in archived channels.                                          | - ``config.json`` setting: ``.TeamSettings.ExperimentalViewArchivedChannels: true`` |
 |                                                                                                                | - Environment variable: ``MM_TEAMSETTINGS_EXPERIMENTALVIEWARCHIVEDCHANNELS``        |
 +----------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| **Note**: Cloud admins can't modify this configuration setting.                                                                                                                                      |
++----------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
 
 .. config:setting:: users-showemailaddress
   :displayname: Show email address (Users and teams)
@@ -667,8 +669,9 @@ Enable email notifications
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
 | **Notes**:                                                                                                                                                                                                                                                |
 |                                                                                                                                                                                                                                                           |
+| - Cloud admins can't modify this configuration setting.                                                                                                                                                                                                   |
 | - If this setting is **false**, and the SMTP server is set up, account-related emails (such as authentication messages) will be sent regardless of this setting.                                                                                          |
-| - Email invitations and account deactivation emails are not affected by this setting.                                                                                                                                                                     |
+| - Email invitations and account deactivation emails aren't affected by this setting.                                                                                                                                                                      |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: notification-enablepreviewbanner
@@ -690,6 +693,8 @@ Enable preview mode banner
 | - **false**: Preview Mode banner does not appear.                                                                                                                            | - ``config.json`` setting: ``.EmailSettings.EnablePreviewModeBanner: true`` |
 |                                                                                                                                                                              | - Environment variable: ``MM_EMAILSETTINGS_ENABLEPREVIEWMODEBANNER``        |
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
+| **Note**: Cloud admins can't modify this configuration setting.                                                                                                                                                                                            |
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
 
 .. config:setting:: notification-enableemailbatching
   :displayname: Enable email batching (Notifications)
@@ -710,6 +715,7 @@ Enable email batching
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 | **Notes**:                                                                                                                                                                                                                                                                                                                                              |
 |                                                                                                                                                                                                                                                                                                                                                         |
+| - Cloud admins can't modify this configuration setting.                                                                                                                                                                                                                                                                                                 |
 | - Regardless of this setting, a user can turn off these notifications under **Settings > Notifications**.                                                                                                                                                                                                                                               |
 | - The `Site Url <https://docs.mattermost.com/configure/environment-configuration-settings.html#site-url>`__ and `SMTP Email Server <https://docs.mattermost.com/configure/environment-configuration-settings.html#smtp-server>`__ must be configured to allow email batching.                                                                           |
 | - Email batching in `High Availability Mode <https://docs.mattermost.com/configure/environment-configuration-settings.html#enable-high-availability-mode>`__ is planned, but not yet supported.                                                                                                                                                         |
