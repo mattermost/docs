@@ -71,18 +71,28 @@ Make checklists
 
 5. Choose **Save**.
 
-Runs and channel behavior
--------------------------
+Create fewer channels
+---------------------
 
-When setting up your playbook:
+From Mattermost v7.7, you can choose to start each run in a new channel or re-use the same channel.
+
+Here are some scenarios where you might want to start each run in the same channel:
+
+- Short, frequently-used processes benefit from being in the same channel - it keeps the process streamlined.
+- Teams with multiple independent workflows, such as release teams, benefit from having them in one place.
+- Cutting down on the number of new channels created makes it easier to find run channels again.
+
+When you're configuring your playbook:
 
 - You can link it to an existing channel so that each run starts in that channel.
 - You can choose that each time the playbook is run, it creates a new channel.
 
 To access this setting, open the playbooks tab. Select the playbook you want to edit, then select the **Outline** tab. Select **Actions** in the left-hand menu and make your selection under the **When a run starts** heading.
 
+When you start a run, your selection is the default but can be changed for each run.
+
 Status updates
-------------------
+--------------
 
 There may be multiple active runs on any given day.
 
