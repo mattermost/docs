@@ -15,27 +15,27 @@ Latest Mattermost Cloud releases:
 
 ### Highlights
 
-#### Message Priority and Acknowledgments
- - Added [message priority labels](https://docs.mattermost.com/channels/message-priority.html) to the Threads view.
- - Added support for Enterprise customers to request acknowledgements on posts and to acknowledge posts (Professional).
-
-#### Global Drafts
- - Added a centralized Drafts view for draft messages.
- 
-#### Playbooks
- - Added an option to run playbooks without creating a new channel every time in order to reduce the unnecessary overhead.
- - In addition to the daily digest, users can now also view [a task inbox](https://docs.mattermost.com/playbooks/work-with-tasks.html#task-inbox) from the global header while in Playbooks.
- 
 #### Calls
  - An important change was made to calls participants limits. The Cloud free plan now supports up to 8 participants per call in group messages, public, or private channels (it was previously direct messages only).
  - [Audio calling and screen sharing](https://docs.mattermost.com/configure/calls-deployment.html) in channels is now generally available to all Mattermost customers.
  - Updated [the keyboard shortcut](https://docs.mattermost.com/channels/keyboard-shortcuts-for-channels.html#calls-shortcuts) to start and join calls.
- 
+
 #### Boards
- - Boards now supports file attachments, including PDFs, images, videos, and any other file types.
+ - Boards now supports [file attachments](https://docs.mattermost.com/boards/work-with-cards.html#attach-files), including PDFs, images, videos, and any other file types.
  - Users can now [drag and drop boards and categories](https://docs.mattermost.com/boards/navigate-boards.html#manage-boards-on-the-sidebar) on the sidebar and organize them in any order they prefer.
  - The [template picker](https://docs.mattermost.com/boards/work-with-boards.html#choose-a-board-template) has been improved to make it easier for users to find the best template for their project.
+ 
+#### Playbooks
+ - Added an option to [run playbooks](https://docs.mattermost.com/playbooks/work-with-playbooks.html#runs-and-channel-behavior) without creating a new channel every time in order to reduce the unnecessary overhead.
+ - In addition to the daily digest, users can now also view [a task inbox](https://docs.mattermost.com/playbooks/work-with-tasks.html#task-inbox) from the global header bar while in Playbooks.
 
+#### Message Priority and Acknowledgments
+ - Added [message priority labels](https://docs.mattermost.com/channels/message-priority.html) to the Threads view.
+ - Added support for enterprise users to request acknowledgements on posts and to acknowledge posts (Professional).
+
+#### Global Drafts
+ - Added [a centralized Drafts view](https://docs.mattermost.com/channels/send-messages.html#draft-messages) for draft messages.
+ 
 #### ServiceNow Integration
  - ServiceNow customers can now access and share their ServiceNow data from within Mattermost.
  
