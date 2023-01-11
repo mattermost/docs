@@ -43,17 +43,17 @@ Client
 Network
 ~~~~~~~
 
-+---------------------------------+-------------------+-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Service name                    | Ports (defaults)  | Protocols                     | Notes                                                                                                                                                                                                                                                                                                                                        |
-+=================================+===================+===============================+==============================================================================================================================================================================================================================================================================================================================================+
-| API (plugin)                    | 80, 443           | TCP (incoming) HTTP(s)/WS(s)  | This API is exposed on the same connection as Mattermost, so there’s no need to change anything.                                                                                                                                                                                                                                             |
-+---------------------------------+-------------------+-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| RTC (plugin or ``rtcd``)        | 8443              | UDP (incoming)                | Public/client facing. This should be open on any network component (e.g. NAT, firewalls) in between the instance running the plugin (or ``rtcd``) and the clients joining calls so that UDP traffic is correctly routed both ways (from/to clients). This is the connection that transports all the calls related media (e.g. audio, video)  |
-+---------------------------------+-------------------+-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| API (``rtcd``)                  | 8045              | TCP (incoming)                | Internal, private network. Only needs to be reachable by the instances running the Mattermost server.                                                                                                                                                                                                                                        |
-+---------------------------------+-------------------+-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| STUN/TURN (plugin or ``rtcd``)  | 3478              | UDP (outgoing)                | Public/client facing. Only needed if configuring STUN/TURN servers. This requirement does not apply when manually setting an IP/hostname through the ICE Host Override config option.                                                                                                                                                        |
-+---------------------------------+-------------------+-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------+--------+-----------------+------------------------------------------------------------+------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Service                         | Ports  | Protocols       | Source                                                     | Target                                   | Purpose                                                                                                                                                                                                                                                                                                                           |
++=================================+========+=================+============================================================+==========================================+===================================================================================================================================================================================================================================================================================================================================+
+| API (Calls plugin)              | 80,443 | TCP (incoming)  | Mattermost clients (web/desktop/mobile)                    | Mattermost instance (Calls plugin)       | To allow for HTTP and WebSocket connectivity from clients to Calls plugin. This API is exposed on the same connection as Mattermost, so there’s likely no need to change anything.                                                                                                                                                |
++---------------------------------+--------+-----------------+------------------------------------------------------------+------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| RTC (Calls plugin or ``rtcd``)  | 8443   | UDP (incoming)  | Mattermost clients (Web/Desktop/Mobile)                    | Mattermost instance or ``rtcd`` service  | To allow clients to establish connections that transport calls related media (e.g. audio, video). This should be open on any network component (e.g. NAT, firewalls) in between the instance running the plugin (or ``rtcd``) and the clients joining calls so that UDP traffic is correctly routed both ways (from/to clients).  |
++---------------------------------+--------+-----------------+------------------------------------------------------------+------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| API (``rtcd``)                  | 8045   | TCP (incoming)  | Mattermost instance(s) (Calls plugin)                      | ``rtcd`` service                         | To allow for HTTP/WebSocket connectivity from Calls plugin to ``rtcd`` service. Can be expose internally as the service only needs to be reachable by the instance(s) running the Mattermost server.                                                                                                                              |
++---------------------------------+--------+-----------------+------------------------------------------------------------+------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| STUN (Calls plugin or ``rtcd``) | 3478   | UDP (outgoing)  | Mattermost Instance(s) (Calls plugin) or ``rtcd`` service  | Configured STUN servers                  | (Optional) To allow for either Calls plugin or ``rtcd`` service to discover their instance public IP. Only needed if configuring STUN/TURN servers. This requirement does not apply when manually setting an IP or hostname through the ICE Host Override config option.                                                          |
++---------------------------------+--------+-----------------+------------------------------------------------------------+------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Limitations
 -----------
@@ -64,7 +64,7 @@ Limitations
 Configuration
 -------------
 
-For Mattermost self-hosted customers, the calls plugin is pre-packaged, installed, and enabled. Configuration to allow end-users to use it can be found in the `System Console </configure/configuration-settings.html#calls-beta>`_.
+For Mattermost self-hosted customers, the calls plugin is pre-packaged, installed, and enabled. Configuration to allow end-users to use it can be found in the `System Console </configure/plugins-configuration-settings.html#calls-beta>`_.
 
 Modes of operation
 ------------------
@@ -244,6 +244,72 @@ Dedicated service
 ~~~~~~~~~~~~~~~~~
 
 For Enterprise customers we offer a way to offload performance costs through a `dedicated service <https://github.com/mattermost/rtcd>`_ that can be used to further scale up calls. 
+
+Load testing
+~~~~~~~~~~~~
+
+We provide a `load-test tool <https://github.com/mattermost/mattermost-plugin-calls/tree/main/lt>`_ that can be used to simulate and measure the performance impact of calls.
+
+Monitoring
+~~~~~~~~~~
+
+Both the plugin and the external ``rtcd`` service expose some Prometheus metrics to monitor performance. You can refer to `Performance monitoring </scale/performance-monitoring.html>`_ for information on how to set up Prometheus and visualize metrics through Grafana.
+
+Calls plugin metrics
+^^^^^^^^^^^^^^^^^^^^
+
+Metrics for Calls plugin are exposed through the public ``/plugins/com.mattermost.calls/metrics`` API endpoint.
+
+**Process**
+
+- ``mattermost_plugin_calls_process_cpu_seconds_total``: Total user and system CPU time spent in seconds.
+- ``mattermost_plugin_calls_process_max_fds``: Maximum number of open file descriptors.
+- ``mattermost_plugin_calls_process_open_fds``: Number of open file descriptors.
+- ``mattermost_plugin_calls_process_resident_memory_bytes``: Resident memory size in bytes.
+- ``mattermost_plugin_calls_process_virtual_memory_bytes``: Virtual memory size in bytes.
+
+**WebRTC Connection**
+
+- ``mattermost_plugin_calls_rtc_conn_states_total``: Total number of RTC connection state changes.
+- ``mattermost_plugin_calls_rtc_errors_total``: Total number of RTC errors.
+- ``mattermost_plugin_calls_rtc_rtp_bytes_total``: Total number of sent/received RTP packets in bytes.
+- ``mattermost_plugin_calls_rtc_rtp_packets_total``: Total number of sent/received RTP packets.
+- ``mattermost_plugin_calls_rtc_sessions_total``: Total number of active RTC sessions.
+
+**Database**
+
+- ``mattermost_plugin_calls_store_ops_total``: Total number of db store operations.
+
+**WebSocket**
+
+- ``mattermost_plugin_calls_websocket_connections_total``: Total number of active WebSocket connections.
+- ``mattermost_plugin_calls_websocket_events_total``: Total number of WebSocket events.
+
+WebRTC service metrics
+^^^^^^^^^^^^^^^^^^^^^^
+
+Metrics for ``rtcd`` service are exposed through the ``/metrics`` API endpoint.
+
+**Process**
+
+- ``rtcd_process_cpu_seconds_total``:  Total user and system CPU time spent in seconds.
+- ``rtcd_plugin_calls_process_max_fds``: Maximum number of open file descriptors.
+- ``rtcd_plugin_calls_process_open_fds``: Number of open file descriptors.
+- ``rtcd_plugin_calls_process_resident_memory_bytes``: Resident memory size in bytes.
+- ``rtcd_plugin_calls_process_virtual_memory_bytes``: Virtual memory size in bytes.
+
+**WebRTC Connection**
+
+- ``rtcd_rtc_conn_states_total``: Total number of RTC connection state changes.
+- ``rtcd_rtc_errors_total``: Total number of RTC errors.
+- ``rtcd_rtc_rtp_bytes_total``: Total number of sent/received RTP packets in bytes.
+- ``rtcd_rtc_rtp_packets_total``: Total number of sent/received RTP packets.
+- ``rtcd_rtc_sessions_total``: Total number of active RTC sessions.
+
+**WebSocket**
+
+- ``rtcd_ws_connections_total``: Total number of active WebSocket connections.
+- ``rtcd_ws_messages_total``: Total number of received/sent WebSocket messages.
 
 System tunings
 ~~~~~~~~~~~~~~

@@ -1,6 +1,7 @@
 # Minimal makefile for Sphinx documentation
 #
-
+.PHONY: Makefile help python-deps linkcheck livehtml python-deps test compass-icons
+#
 # You can set these variables from the command line, and also
 # from the environment for the last three.
 SOURCEDIR       = source
@@ -14,16 +15,16 @@ SPHINXAUTOBUILD ?= pipenv run sphinx-autobuild
 help:
 	@$(SPHINXBUILD) -M help "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
-.PHONY: help Makefile livehtml python-deps test compass-icons
-
+# Install necessary dependencies for the CI build pipeline.
+# NOTE: if the version of Python used to build the docs changes, update the `pipenv` command below accordingly.
 python-deps:
-	pip install pipenv
-	pipenv install --dev
+	pip install pipenv==2022.12.19
+	pipenv install --dev --clear --deploy --python 3.9
 
 test:
 	pipenv run pytest
 
-# Run `make livehtml` to start sphinx-autobuild
+# Run `make livehtml` to start sphinx-autobuild.
 livehtml:
 	@mkdir -p "$(BUILDDIR)"
 	@$(SPHINXAUTOBUILD) "$(SOURCEDIR)" "$(BUILDDIR)/html" -d "$(BUILDDIR)/doctrees" $(SPHINXOPTS) $(O)
@@ -35,7 +36,7 @@ linkcheck:
 	@mkdir -p "$(BUILDDIR)"
 	@$(SPHINXBUILD) -M $@ -D exclude_patterns=archive/*,process/* "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O) 2>>"$(WARNINGSFILE)"
 
-# Download the latest Compass Icon assets
+# Download the latest Compass Icon assets.
 compass-icons:
 	mkdir -p source/_static/css
 	mkdir -p source/_static/font

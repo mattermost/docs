@@ -4,12 +4,18 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 
 Latest Mattermost Cloud releases:
 
+- [Release 2022-12-20](#release-2022-12-20)
 - [Release 2022-12-01](#release-2022-12-01)
 - [Release 2022-11-24](#release-2022-11-24)
 - [Release 2022-11-17](#release-2022-11-17)
 - [Release 2022-11-10](#release-2022-11-10)
 - [Release 2022-10-27](#release-2022-10-27)
-- [Release 2022-10-20](#release-2022-10-20)
+
+## Release 2022-12-20
+
+### Bug Fixes
+ - Fixed a deadlock in the export job which caused export jobs to hang forever.
+ - Uploading exports to S3 no longer times out.
 
 ## Release 2022-12-01
 

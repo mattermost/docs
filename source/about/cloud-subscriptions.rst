@@ -10,7 +10,10 @@ You can also start a free, 30-day trial of Mattermost Enterprise to explore addi
 
 1. Select **Subscribe now**.
 2. Provide your credit card details.
-  - Your credit card will be verified and you'll be charged at the end of the billing period. If you'd prefer an annual Cloud subscription, please contact our Sales team for a quote.
+
+.. note::
+  
+  Your credit card will be verified and you'll be charged at the end of the billing period. If you'd prefer an annual Cloud subscription, please contact our `Sales team <mailto:sales@mattermost.com>`_ for a quote.
 3. Provide your billing address.
 4. (Optional) Select a subscription plan.
 5. Select **Subscribe**.
@@ -195,3 +198,8 @@ These offerings are deployed in the following ways:
  - **Professional**: Single application layer, shared infrastructure, shared network, professional group ring.
  - **Enterprise**: Single application layer, shared infrastructure, shared network, enterprise group ring.
  - **Enterprise plus dedicated add-on**: Single application layer, dedicated network via VPC (Virtual Private Cloud), dedicated infrastructure, enterprise group ring.
+
+Can I cancel and delete my Cloud workspace?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Yes. Please contact our Mattermost `Support team <mailto:support@mattermost.com>`_ with the subject **Mattermost Cloud Workspace Deletion Request** for assistance.

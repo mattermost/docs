@@ -35,3 +35,11 @@ Instead of using the System Console, you can add the Google settings directly to
   }
 
 3. Save your changes, then restart your Mattermost server. After the server restarts, users must change their login method before they can log in with Google Apps.
+
+Frequently Asked Questions
+--------------------------
+
+How can I use LDAP attributes or Groups with OpenID?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+At this time, LDAP data isn't compatible with OpenID. If you currently rely on LDAP to manage your users' teams, channels, groups, or attributes, you won't be able to do this automatically with users who have logged in with OpenID. If you need LDAP synced to each user, we suggest using SAML or LDAP as the login provider. Some OpenID providers can use SAML instead, like Keycloak.

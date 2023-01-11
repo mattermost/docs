@@ -56,7 +56,6 @@ Standard board templates include:
 - **Personal Tasks**: Organize your life and track your personal tasks.
 - **Project Tasks**: Stay on top of your project tasks, track progress, and set priorities.
 - **Roadmap**: Plan your roadmap and manage your releases more efficiently.
-- **Sales Pipeline CRM**: Grow and keep track of your sales opportunities.
 - **Sprint Planner**: Plan your sprints and releases more efficiently.
 - **Team Retrospective**: Identify what worked well and what can be improved for the future.
 - **User Research Sessions**: Manage and keep track of all your user research sessions.

@@ -5,14 +5,23 @@
 See the [changelog in progress](https://bit.ly/2nK3cVf) for the upcoming release. See the [Legacy Self-Hosted Mattermost Changelog](legacy-self-hosted-changelog) for details on all Mattermost self-hosted releases prior to v6.0.
 
 Latest Mattermost Releases:
+- [Release v7.6 - Feature Release](#release-v7-6-feature-release)
 - [Release v7.5 - Feature Release](#release-v7-5-feature-release)
 - [Release v7.4 - Feature Release](#release-v7-4-feature-release)
 - [Release v7.3 - Feature Release](#release-v7-3-feature-release)
-- [Release v7.2 - Feature Release](#release-v7-2-feature-release)
 - [Release v7.1 - Extended Support Release](#release-v7-1-extended-support-release)
+
+## Release v7.6 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
+
+  - The Mattermost v7.6 release has been cancelled as we are working on investigating performance issues. The next scheduled release is v7.7 in January 16th, 2023.
 
 ## Release v7.5 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
 
+- **v7.5.2, released 2022-12-21**
+  - Mattermost v7.5.2 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Fixed an issue where email notifications looked broken when email batching was enabled [MM-48521](https://mattermost.atlassian.net/browse/MM-48521).
+  - Updated prepackaged Boards version to 7.5.4.
+  - Updated prepackaged NPS version to 1.3.1.
 - **v7.5.1, released 2022-11-16**
   - Fixed an upgrade issue affecting servers on Ubuntu v18.04.
 - **v7.5.0, released 2022-11-16**
@@ -121,7 +130,6 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - v7.5 is built with Go ``v1.18.1``.
 
 ### Known Issues
- - Email notifications sometimes look broken when email batching is enabled [MM-48521](https://mattermost.atlassian.net/browse/MM-48521).
  - Guest users are unable to return to the login screen after being removed from all channels [MM-48438](https://mattermost.atlassian.net/browse/MM-48438).
  - Users are unable to open threads from recent mentions when switching to another team [MM-48399](https://mattermost.atlassian.net/browse/MM-48399).
  - When the right-hand side is expanded, an overlay is displayed with the Threads help text popup [MM-48412](https://mattermost.atlassian.net/browse/MM-48412).
@@ -144,7 +152,12 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ## Release v7.4 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
 
-**v7.4.0 release day: 2022-10-16**
+- **v7.4.1, released 2022-12-21**
+  - Mattermost v7.4.1 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Added a new schema migration to ensure ``ParentId`` column is dropped from the ``Posts`` table. Depending on the table size, if the column is not dropped before, a significant spike in database CPU usage is expected on MySQL databases. Writes to the table will be limited during the migration.
+  - Updated prepackaged Boards version to 7.4.3.
+- **v7.4.0, released 2022-10-16**
+  - Original 7.4.0 release
 
 Mattermost v7.4.0 contains a medium severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
 
@@ -235,7 +248,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 Mattermost v7.3.0 contains a medium severity level security fix. [Upgrading](/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
 
 ### Important Upgrade Notes
- - Boards is moving from a channel-based to a role-based permissions system. The migration will happen automatically, but your administrator should perform a backup prior to the upgrade. We removed workspaces, so if you were a member of many boards prior to migration, they will now all appear under the same sidebar. Please see [this document](/welcome/whats-new-in-v72.html) for more details.
+ - Boards is moving from a channel-based to a role-based permissions system. The migration will happen automatically, but your administrator should perform a backup prior to the upgrade. We removed workspaces, so if you were a member of many boards prior to migration, they will now all appear under the same sidebar. Please see [this document](https://docs.mattermost.com/welcome/whats-new-in-v72.html) for more details.
 
 **IMPORTANT:** If you upgrade from a release earlier than v7.2, please read the other [Important Upgrade Notes](/upgrade/important-upgrade-notes.html).
 
@@ -459,6 +472,19 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ## Release v7.1 - [Extended Support Release](/upgrade/release-definitions.html#extended-support-release-esr)
 
+- **v7.1.5, released 2022-12-21**
+  - Mattermost v7.1.5 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Added a new schema migration to ensure ``ParentId`` column is dropped from the ``Posts`` table. Depending on the table size, if the column is not dropped before, a significant spike in database CPU usage is expected on MySQL databases. Writes to the table will be limited during the migration.
+  - Fixed an issue where **Renew Now** option was not available in-product for self-serve eligible licenses [MM-47045](https://mattermost.atlassian.net/browse/MM-47045).
+  - ``getPostSince`` now properly returns deleted posts when Collapsed Reply Threads is enabled.
+  - Fixed an issue where the ``Enterprise license is expired`` banner was undismissable [MM-47396](https://mattermost.atlassian.net/browse/MM-47396).
+  - Fixed an issue where screen readers did not announce search results in the "Invite members to channel" modal [MM-44859](https://mattermost.atlassian.net/browse/MM-44859).
+  - Fixed an issue where screen readers did not announce emojis in the autocomplete list [MM-44877](https://mattermost.atlassian.net/browse/MM-44877).
+  - Fixed an issue where screen readers did not announce successful logins [MM-46596](https://mattermost.atlassian.net/browse/MM-46596).
+  - Fixed an issue where screen readers incorrectly announced the **Settings > Display > Language > Change interface language** field [MM-44114](https://mattermost.atlassian.net/browse/MM-44114).
+  - Fixed an issue where the search dropdown options did not allow focusing with a tab [MM-34969](https://mattermost.atlassian.net/browse/MM-34969).
+  - Fixed an issue where screen readers failed to announce "no results found" in the **Direct Message** modal [MM-44858](https://mattermost.atlassian.net/browse/MM-44858).
+  - Fixed an issue where the **Test Connection** button in **System Console > Environment > Elasticsearch** did not correctly take the right config settings specified in the page. Earlier, it would always take the previously saved config [MM-47154](https://mattermost.atlassian.net/browse/MM-47154).
 - **v7.1.4, released 2022-10-14**
   - Mattermost v7.1.4 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
 - **v7.1.3, released 2022-08-23**
@@ -1765,6 +1791,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - Migrated the extraction command to mmctl.
  - Removed the convert channel endpoint to use ``/channels/{channel_id}/privacy`` instead.
  - Removed deprecated ``Posts.ParentId`` in favor of the semantically equivalent ``Posts.RootId``. Also removed ``CommandWebhook.ParentId`` and ``CompliancePost.ParentId`` for the same reason.
+ - Added a field to each of the compliance export formats (CSV, Global Relay, and Actiance) to indicate that a post was viewable via the new permalink preview feature.
  - Removed the following deprecated CLI commands in favor of [mmctl](/manage/mmctl-command-line-tool.html):
    - channel
    - command

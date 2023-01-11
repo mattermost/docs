@@ -36,6 +36,7 @@ Work with channels
    Find channels </channels/find-channels> 
    Navigate between channels </channels/navigate-between-channels>
    Mark channels as favorites </channels/favorite-channels>
+   Mark channels as unread </channels/mark-channels-unread>
    Customize your channel sidebar </channels/customize-your-channel-sidebar>
    Archive and unarchive channels </channels/archive-unarchive-channels>
    Set channel preferences </channels/set-channel-preferences>
@@ -52,6 +53,7 @@ Work with channels
 * :doc:`Find channels </channels/find-channels>` - Find all available public channels you can join, and all channels you're a member of.
 * :doc:`Navigate between channels </channels/navigate-between-channels>` - Learn how to navigate between channels.
 * :doc:`Mark channels as favorites </channels/favorite-channels>` - Mark commonly visited channels as favorites.
+* :doc:`Mark channels as unread </channels/mark-channels-unread>` - Mark channels unread to return to messages later.
 * :doc:`Customize your channel sidebar </channels/customize-your-channel-sidebar>` - Organize conversations in the sidebar to keep your workspace efficient.
 * :doc:`Archive and unarchive channels </channels/archive-unarchive-channels>` - Keep the number of available channels manageable. 
 * :doc:`Set Channel preferences </channels/set-channel-preferences>` - Customize notifications, headers, names, and channel descriptions.
@@ -64,6 +66,7 @@ Work with messages
    :hidden:
 
    Send messages </channels/send-messages>
+   Set message priority </channels/message-priority>
    Reply to messages </channels/reply-to-messages>
    Organize conversations </channels/organize-conversations>
    React to messages using emojis </channels/react-to-messages>
@@ -77,6 +80,7 @@ Work with messages
    Search for messages </channels/search-for-messages>
 
 * :doc:`Send messages </channels/send-messages>` - Send messages to other Mattermost users.
+* :doc:`Set message priority </channels/message-priority>` - Ensure important and urgent messages stand out clearly by adding priority labels, and requesting message acknowledgements.
 * :doc:`Reply to messages </channels/reply-to-messages>` - Communicate with your team in Mattermost.
 * :doc:`Organize conversations with Collapsed Reply Threads </channels/organize-conversations>` - An enhanced communication thread experience is available in Mattermost.
 * :doc:`React to messages using emojis </channels/react-to-messages>` - Use emojis to express concepts, emotions, and physical gestures in your messages.

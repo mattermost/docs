@@ -32,3 +32,4 @@ Previews respect channel membership permissions, so they’re only visible to us
 .. tip::
 
     The timestamp next to the username of any message also functions as a permanent link to that conversation.
+

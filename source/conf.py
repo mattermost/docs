@@ -41,7 +41,8 @@ extensions = [
     "sitemap",
     "sphinx_tabs.tabs",
     "sphinx_copybutton",
-    "compass-icons"
+    "compass-icons",
+    "config-setting-v2",
 ]
 
 sphinx_tabs_disable_tab_closing = True
@@ -1310,6 +1311,12 @@ redirects = {
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#export-output-directory",
 "configure/experimental-configuration-settings.html#export-settings-default-retention-days":
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#export-retention-days",
+"configure/authentication-configuration-settings.html#gitlab":
+	"https://docs.mattermost.com/configure/authentication-configuration-settings.html#gitlab-oauth-2-0-settings",
+"configure/authentication-configuration-settings.html#google":
+	"https://docs.mattermost.com/configure/authentication-configuration-settings.html#google-oauth-2-0-settings",
+"configure/authentication-configuration-settings.html#office-365":
+	"https://docs.mattermost.com/configure/authentication-configuration-settings.html#office-365-oauth-2-0-settings",
 
 # Deploy redirects
 "deploy/mobile-apps-faq.html":
@@ -2140,6 +2147,36 @@ redirects = {
         "https://docs.mattermost.com/onboard/ad-ldap.html#active-directory-ldap-setup",
 "onboard/migrating-from-hipchat-to-mattermost.html":
         "https://docs.mattermost.com/onboard/migrating-to-mattermost.html#migrating-from-slack",
+"onboard/ad-ldap-groups-synchronization.html#enabling-ad-ldap-group-synchronization": 
+        "https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html#enable-ad-ldap-group-synchronization",
+"onboard/ad-ldap-groups-synchronization.html#using-ad-ldap-group-synchronization":
+        "https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html#synchronize-ad-ldap-groups-to-mattermost",
+"onboard/ad-ldap-groups-synchronization.html#linking-ad-ldap-groups-to-mattermost-groups": 
+        "https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html#link-ad-ldap-groups-to-mattermost-groups",
+"onboard/ad-ldap-groups-synchronization.html#configuring-the-group": 
+        "https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html#configure-the-linked-group",
+"onboard/ad-ldap-groups-synchronization.html#adding-default-teams-or-channels-for-the-group": 
+        "https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html#add-default-teams-or-channels-for-the-group",
+"onboard/ad-ldap-groups-synchronization.html#synchronizing-teams-and-channels": 
+        "https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html#synchronize-teams-and-channels",
+"onboard/ad-ldap-groups-synchronization.html#removing-configured-teams-and-channels-from-a-group": 
+        "https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html#remove-configured-teams-and-channels-from-a-group",
+"onboard/ad-ldap-groups-synchronization.html#viewing-users-belonging-to-the-group": 
+        "https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html#view-users-belonging-to-the-group",
+"onboard/ad-ldap-groups-synchronization.html#disabling-and-re-activating-ad-ldap-users": 
+        "https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html#disable-and-re-activate-ad-ldap-users",
+"onboard/ad-ldap-groups-synchronization.html#managing-groups": 
+        "https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html#manage-groups",
+"onboard/ad-ldap-groups-synchronization.html#deleting-groups": 
+        "https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html#delete-groups",
+"onboard/ad-ldap-groups-synchronization.html#managing-membership-of-a-team-or-channel-with-synchronized-groups": 
+        "https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html#use-ad-ldap-synchronized-groups-to-manage-team-or-private-channel-membership",
+"onboard/ad-ldap-groups-synchronization.html#assigning-roles-to-group-members": 
+        "https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html#assign-roles-to-group-members",
+"onboard/ad-ldap-groups-synchronization.html#managing-members": 
+        "https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html#manage-members",
+"onboard/ad-ldap-groups-synchronization.html#disabling-group-synchronized-management-of-teams-and-private-channels": 
+        "https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html#disable-group-synchronized-management-of-teams-and-private-channels",
 
 # Overview redirects
 "overview/architecture.html":
@@ -2180,6 +2217,14 @@ redirects = {
 	"https://docs.mattermost.com/playbooks/customize-a-playbook.html",
 "playbooks/refining-and-improving.html":
 	"https://docs.mattermost.com/playbooks/metrics-and-goals.html",
+"playbooks/customize-a-playbook":
+	"https://docs.mattermost.com/playbooks/work-with-playbooks.html",
+"playbooks/customize-a-run":
+	"https://docs.mattermost.com/playbooks/work-with-runs.html",
+"playbooks/reusing-and-sharing-playbooks":
+	"https://docs.mattermost.com/playbooks/share-and-collaborate.html",
+"playbooks/playbook-permissions":
+	"https://docs.mattermost.com/playbooks/share-and-collaborate.html#playbooks-permissions",
 
 # Process redirects
 # The process directory and its contents have been archived in FY23 Q2 and all applicable content has been moved from docs.mm.com to handbook.mm.com.
@@ -2315,9 +2360,9 @@ author = "Mattermost"
 # built documents.
 #
 # The short X.Y version.
-# version = '7.6'
+# version = '7.7'
 # The full version, including alpha/beta/rc tags.
-# release = '7.6'
+# release = '7.7'
 
 # The language for content autogenerated by Sphinx. Refer to documentation
 # for a list of supported languages.

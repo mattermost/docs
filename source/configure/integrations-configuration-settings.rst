@@ -4,7 +4,7 @@ Integrations configuration settings
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Access the following configuration settings in the System Console by going to **Integrations**, or by editing the ``config.json`` file as described in the following tables:
+Both self-hosted and Cloud admins can access the following configuration settings in **System Console > Integrations**. Self-hosted admins can also edit the ``config.json`` file as described in the following tables. 
 
 - `Integrations management <#integrations-management>`__
 - `Bot Accounts <#bot-acocunts>`__
@@ -14,12 +14,21 @@ Access the following configuration settings in the System Console by going to **
 ----
 
 Integrations management
-------------------------
+-----------------------
 
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 Access the following configuration settings in the System Console by going to **Integrations > Integration Management**.
+
+.. config:setting:: integrate-enableincomingwebhooks
+  :displayname: Enable incoming webhooks (Integrations)
+  :systemconsole: Integrations > Integration Management
+  :configjson: EnableIncomingWebhooks
+  :environment: N/A
+
+  - **true**: **(Default)** Incoming webhooks are allowed. To manage incoming webhooks, select **Integrations** from the Mattermost Product menu.
+  - **false**: The **Integrations > Incoming Webhooks** section of the Mattermost Product menu is hidden and all incoming webhooks are disabled.
 
 Enable incoming webhooks
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -37,6 +46,15 @@ Developers building integrations can create webhook URLs for Public channels and
 | This feature's ``config.json`` setting is ``"EnableIncomingWebhooks": true`` with options ``true`` and ``false``. |
 +-------------------------------------------------------------------------------------------------------------------+
 
+.. config:setting:: integrate-enableoutgoingwebhooks
+  :displayname: Enable outgoing webhooks (Integrations)
+  :systemconsole: Integrations > Integration Management
+  :configjson: EnableOutgoingWebhooks
+  :environment: N/A
+
+  - **true**: **(Default)** Outgoing webhooks will be allowed. To manage outgoing webhooks, select **Integrations** from the Mattermost Product menu.
+  - **false**: The **Integrations > Outgoing Webhooks** of the Mattermost Product menu is hidden and all outgoing webhooks are disabled.
+
 Enable outgoing webhooks
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -46,15 +64,24 @@ Developers building integrations can create webhook tokens for Public channels. 
 
 **False**: The **Integrations > Outgoing Webhooks** of the Mattermost Product menu is hidden and all outgoing webhooks are disabled.
 
-.. important:: 
+.. important::
    Security note: By enabling this feature, users may be able to perform `phishing attacks <https://en.wikipedia.org/wiki/Phishing>`__ by attempting to impersonate other users. To combat these attacks, a BOT tag appears next to all posts from a webhook. Enable at your own risk.
 
 +-------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableOutgoingWebhooks": true`` with options ``true`` and ``false``. |
 +-------------------------------------------------------------------------------------------------------------------+
 
+.. config:setting:: integrate-enablecustomslashcommands
+  :displayname: Enable custom slash commands (Integrations)
+  :systemconsole: Integrations > Integration Management
+  :configjson: EnableCommands
+  :environment: N/A
+
+  - **true**: Allow users to create custom slash commands from **Main Menu > Integrations > Commands**.
+  - **false**: **(Default)** Slash commands are hidden in the **Integrations** user interface.
+
 Enable custom slash commands
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Slash commands send events to external integrations that send a response back to Mattermost.
 
@@ -65,6 +92,15 @@ Slash commands send events to external integrations that send a response back to
 +------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableCommands": false`` with options ``true`` and ``false``. |
 +------------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: integrate-enableoauthserviceprovider
+  :displayname: Enable OAuth 2.0 service provider (Integrations)
+  :systemconsole: Integrations > Integration Management
+  :configjson: EnableOAuthServiceProvider
+  :environment: N/A
+
+  - **true**: Mattermost acts as an OAuth 2.0 service provider allowing Mattermost to authorize API requests from external applications.
+  - **false**: **(Default)** Mattermost does not function as an OAuth 2.0 service provider.
 
 Enable OAuth 2.0 service provider
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -77,8 +113,17 @@ Enable OAuth 2.0 service provider
 | This feature's ``config.json`` setting is ``"EnableOAuthServiceProvider": false`` with options ``true`` and ``false``. |
 +------------------------------------------------------------------------------------------------------------------------+
 
+.. config:setting:: integrate-enableusernameoverride
+  :displayname: Enable integrations to override usernames (Integrations)
+  :systemconsole: Integrations > Integration Management
+  :configjson: EnablePostUsernameOverride
+  :environment: N/A
+
+  - **true**: Webhooks, slash commands, OAuth 2.0 apps, and other integrations such as `Zapier <https://docs.mattermost.com/integrations/zapier.html>`__, will be allowed to change the username they are posting as.
+  - **false**: **(Default)** Custom slash commands can only post as the username of the user who used the slash command.
+
 Enable integrations to override usernames
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **True**: Webhooks, slash commands, OAuth 2.0 apps, and other integrations such as `Zapier <https://docs.mattermost.com/integrations/zapier.html>`__, will be allowed to change the username they are posting as. If no username is present, the username for the post is the same as it would be for a setting of ``False``.
 
@@ -87,6 +132,15 @@ Enable integrations to override usernames
 +------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnablePostUsernameOverride": false`` with options ``true`` and ``false``. |
 +------------------------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: integrate-enableiconoverride
+  :displayname: Enable integrations to override profile picture icons (Integrations)
+  :systemconsole: Integrations > Integration Management
+  :configjson: EnablePostIconOverride
+  :environment: N/A
+
+  - **True**: Webhooks, slash commands, and other integrations, such as `Zapier <https://docs.mattermost.com/integrations/zapier.html>`__, will be allowed to change the profile picture they post with.
+  - **False**: Webhooks, slash commands, and OAuth 2.0 apps can only post with the profile picture of the account they were set up with.
 
 Enable integrations to override profile picture icons
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -98,6 +152,15 @@ Enable integrations to override profile picture icons
 +--------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnablePostIconOverride": false`` with options ``true`` and ``false``. |
 +--------------------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: integrate-enableuseraccesstokens
+  :displayname: Enable personal access tokens (Integrations)
+  :systemconsole: Integrations > Integration Management
+  :configjson: EnableUserAccessTokens
+  :environment: N/A
+
+  - **true**: Users can create `personal access tokens <https://developers.mattermost.com/integrate/admin-guide/admin-personal-access-token/>`__ for integrations in **Profile > Security**.
+  - **false**: **(Default)** Personal access tokens are disabled on the server.
 
 Enable personal access tokens
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -122,19 +185,37 @@ Bot accounts
 
 Access the following configuration settings in the System Console by going to **Integrations > Bot Accounts**.
 
+.. config:setting:: integrate-enablebotaccounts
+  :displayname: Enable bot account creation (Integrations)
+  :systemconsole: Integrations > Bot Accounts
+  :configjson: EnableBotAccountCreation
+  :environment: N/A
+
+  - **true**: Users can create bot accounts for integrations in **Integrations > Bot Accounts**.
+  - **false**: **(Default)** Bot accounts cannot be created through the user interface or the RESTful API.
+
 Enable bot account creation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**True**: Users can create bot accounts for integrations in **Integrations > Bot Accounts**. Bot accounts are similar to user accounts except they cannot be used to log in. See `documentation <https://developers.mattermost.com/integrate/admin-guide/admin-bot-accounts/>`__ to learn more.
+**True**: **(Default for Cloud deployments)** Users can create bot accounts for integrations in **Integrations > Bot Accounts**. Bot accounts are similar to user accounts except they cannot be used to log in. See `documentation <https://developers.mattermost.com/integrate/admin-guide/admin-bot-accounts/>`__ to learn more.
 
-**False**: Bot accounts cannot be created through the user interface or the RESTful API. Plugins can still create and manage bot accounts.
+**False**: **(Default for self-hosted deployments)** Bot accounts cannot be created through the user interface or the RESTful API. Plugins can still create and manage bot accounts.
 
 +----------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableBotAccountCreation": false`` with options ``true`` and ``false``. |
 +----------------------------------------------------------------------------------------------------------------------+
 
+.. config:setting:: integrate-disablebotswhenownerisdeactivated
+  :displayname: Disable bot accounts when owner is deactivated (Integrations)
+  :systemconsole: Integrations > Bot Accounts
+  :configjson: DisableBotsWhenOwnerIsDeactivated
+  :environment: N/A
+
+  - **true**: When a user is deactivated, disables all bot accounts managed by the user.
+  - **false**: **(Default)** When a user is deactivated, all bot accounts managed by the user remain active.
+
 Disable bot accounts when owner is deactivated
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **True**: When a user is deactivated, disables all bot accounts managed by the user. To re-enable bot accounts, go to **Integrations > Bot Accounts**.
 
@@ -154,6 +235,15 @@ GIF (Beta)
 
 Access the following configuration settings in the System Console by going to **Integrations > GIF (Beta)**.
 
+.. config:setting:: integrate-enablegifpicker
+  :displayname: Enable GIF picker (Integrations)
+  :systemconsole: Integrations > GIF (Beta)
+  :configjson: EnableGifPicker
+  :environment: N/A
+
+  - **true**: **(Default)** Allow users to select GIFs from the emoji picker via a Gfycat integration.
+  - **false**: GIFs cannot be selected in the emoji picker.
+
 Enable GIF picker
 ~~~~~~~~~~~~~~~~~
 
@@ -168,6 +258,13 @@ Enable GIF picker
 .. note::
    `Link previews <https://docs.mattermost.com/configure/configuration-settings.html#enable-link-previews>`__ must be enabled in order to display GIF link previews. Mattermost deployments restricted to access behind a firewall must open port 443 to both https://api.gfycat.com/v1 and https://gfycat.com/<id> (for all request types) for this feature to work.
 
+.. config:setting:: integrate-gfycatapikey
+  :displayname: Gfycat API key (Integrations)
+  :systemconsole: Integrations > GIF (Beta)
+  :configjson: GfycatApiKey
+  :environment: N/A
+  :description: The Gfycat API key. Default value is **2_KtH_W5**.
+
 Gfycat API key
 ~~~~~~~~~~~~~~
 
@@ -176,6 +273,13 @@ When blank, uses the default API key provided by Gfycat. Alternatively, a unique
 +-----------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"GfycatApiKey": "2_KtH_W5"`` with string input.   |
 +-----------------------------------------------------------------------------------------------+
+
+.. config:setting:: integrate-gfycatapisecret
+  :displayname: Gfycat API secret (Integrations)
+  :systemconsole: Integrations > GIF (Beta)
+  :configjson: GfycatApiSecret
+  :environment: N/A
+  :description: The API secret generated by Gfycat for your API key. Default value is **3wLVZPiswc3DnaiaFoLkDvB4X0IV6CpMkj4tf2inJRsBY6-FnkT08zGmppWFgeof**.
 
 Gfycat API secret
 ~~~~~~~~~~~~~~~~~
@@ -189,12 +293,19 @@ The API secret generated by Gfycat for your API key. When blank, uses the defaul
 ----
 
 CORS
------
+----
 
 .. include:: ../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
 
 Access the following configuration settings in the System Console by going to **Integrations > CORS**.
+
+.. config:setting:: integrate-allowcorsfrom
+  :displayname: Enable cross-origin requests from (Integrations)
+  :systemconsole: Integrations > CORS
+  :configjson: AllowCorsFrom
+  :environment: N/A
+  :description: Enable HTTP cross-origin requests from specific domains separated by spaces. Type ``*`` to allow CORS from any domain or leave it blank to disable it.
 
 Enable cross-origin requests from
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -208,6 +319,13 @@ Enable HTTP cross-origin requests from specific domains separated by spaces. Typ
 | This feature's ``config.json`` setting is ``"AllowCorsFrom": ""`` with string input. |
 +--------------------------------------------------------------------------------------+
 
+.. config:setting:: integrate-corsexposedheaders
+  :displayname: CORS exposed headers (Integrations)
+  :systemconsole: Integrations > CORS
+  :configjson: CorsExposedHeaders
+  :environment: N/A
+  :description: Whitelist of headers that will be accessible to the requester.
+
 CORS exposed headers
 ~~~~~~~~~~~~~~~~~~~~
 
@@ -216,6 +334,15 @@ Whitelist of headers that will be accessible to the requester.
 +-------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"CorsExposedHeaders": ""`` with string input. |
 +-------------------------------------------------------------------------------------------+
+
+.. config:setting:: integrate-corsallowcredentials
+  :displayname: CORS allow credentials (Integrations)
+  :systemconsole: Integrations > CORS
+  :configjson: CorsAllowCredentials
+  :environment: N/A
+
+  - **true**: Requests that pass validation will include the ``Access-Control-Allow-Credentials`` header.
+  - **false**: **(Default)** Requests won't include the ``Access-Control-Allow-Credentials`` header.
 
 CORS allow credentials
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -227,6 +354,15 @@ CORS allow credentials
 +------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"CorsAllowCredentials": false`` with options ``true`` and ``false``. |
 +------------------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: integrate-corsdebug
+  :displayname: CORS debug (Integrations)
+  :systemconsole: Integrations > CORS
+  :configjson: CorsDebug
+  :environment: N/A
+
+  - **true**: Prints messages to the logs to help when developing an integration that uses CORS.
+  - **false**: **(Default)** Debug messages not printed to the logs.
 
 CORS debug
 ~~~~~~~~~~
