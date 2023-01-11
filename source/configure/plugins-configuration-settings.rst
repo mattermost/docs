@@ -285,25 +285,15 @@ The UDP port the RTC server will listen on. All calls traffic will be served thr
 
 Changing this setting requires a plugin restart to take effect.
 
-Enable on specific channels
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Test mode
+~~~~~~~~~
 
 .. include:: ../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
-**True**: Allow channel admins to enable or disable calls on specific channels. It also allows participants in DMs/GMs to enable or disable calls.
+**True**: When test mode is enabled, only system admins are able to start calls in channels. This allows testing to confirm calls are working as expected.
 
-**False**: Only system admins will be able to enable or disable calls on specific channels.
-
-Enable on all channels
-~~~~~~~~~~~~~~~~~~~~~~~
-
-.. include:: ../_static/badges/selfhosted-only.rst
-  :start-after: :nosearch:
-
-**True**: Enable calls by default on all channels.
-
-**False**: Calls have to be explicitly enabled on channels.
+**False**: All team members can start calls in channels.
 
 Max call participants
 ~~~~~~~~~~~~~~~~~~~~~~
