@@ -70,7 +70,7 @@ Latest Mattermost Cloud releases:
  - Improved bulk export logging.
  - Compliance export job can now cancel the SQL query execution during server shutdown which will allow the job to exit faster.
  - Shared Channels (Experimental) is now available with a Professional license.
- - Boards will be served as an in-built product from within Mattermost server instead of a plugin.
+ - Boards is delivered as an official product vertical instead of a plugin.
  - Added a new section in the **System Console** for products. For now, it only contains Boards-specific settings.
  - Removed Cloud Professional file storage limits.
  - The message export compliance job can now survive server restarts. The job will pause and save state when the server is shutting down, and resume from the previously saved state when the server starts back up.
