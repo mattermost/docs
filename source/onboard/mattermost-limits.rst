@@ -31,7 +31,6 @@ Mattermost Free limits
 - Up to 8 participants per group call.
 
 
-- Maximum 5 saved views per board.
 
 .. note::
    
