@@ -35,12 +35,12 @@ Latest Mattermost Releases:
  - Updated [the keyboard shortcut](https://docs.mattermost.com/channels/keyboard-shortcuts-for-channels.html#calls-shortcuts) to start and join calls.
 
 #### Boards
- - Boards now supports file attachments, including PDFs, images, videos, and any other file types.
+ - Boards now supports [file attachments](https://docs.mattermost.com/boards/work-with-cards.html#attach-files), including PDFs, images, videos, and any other file types.
  - Users can now [drag and drop boards and categories](https://docs.mattermost.com/boards/navigate-boards.html#manage-boards-on-the-sidebar) on the sidebar and organize them in any order they prefer.
  - The [template picker](https://docs.mattermost.com/boards/work-with-boards.html#choose-a-board-template) has been improved to make it easier for users to find the best template for their project.
  
 #### Playbooks
- - Added an option to run playbooks without creating a new channel every time in order to reduce the unnecessary overhead.
+ - Added an option to [run playbooks](https://docs.mattermost.com/playbooks/work-with-playbooks.html#runs-and-channel-behavior) without creating a new channel every time in order to reduce the unnecessary overhead.
  - In addition to the daily digest, users can now also view [a task inbox](https://docs.mattermost.com/playbooks/work-with-tasks.html#task-inbox) from the global header bar while in Playbooks.
 
 #### Message Priority and Acknowledgments
@@ -72,7 +72,7 @@ Latest Mattermost Releases:
  - Updated the **Remove license and download** text in-product to clarify that server will be downgraded to Mattermost Free as a result.
  - Updated prepackaged NPS version to 1.3.1.
  - Updated in-product confirmation modal for ``@here`` mentions to clarify that people & timezone counts don't include the current user.
- - Downgraded French language support to Beta. 
+ - Downgraded French language support to Beta.
 
 #### Administration
  - If an Admin encounters an invitation error “SMTP is not configured in System Console", a link to the SMTP configuration within the **System Console** is now included in the error message.
