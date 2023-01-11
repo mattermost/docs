@@ -113,6 +113,7 @@ Latest Mattermost Cloud releases:
 
 ### Known Issues
  - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
+ - Publicly shared boards lead to a "Team not found" error page. See [issue-focalboard-4450](https://github.com/mattermost/focalboard/issues/4450) for more details.
 
 ## Release 2022-12-20
 
