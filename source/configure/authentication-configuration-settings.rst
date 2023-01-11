@@ -1737,10 +1737,6 @@ OAuth 2.0
 
 Access the following configuration settings in the System Console by going to **Authentication > OAuth 2.0**. Settings for GitLab OAuth authentication can also be accessed under **Authentication > GitLab** in self-hosted deployments.
 
-.. note::
-
-  OAuth 2.0 is being deprecated and will be replaced by `OpenID Connect <https://docs.mattermost.com/configure/configuration-settings.html#openid-connect>`__ in a future release.
-
 Use these settings to configure OAuth 2.0 for account creation and login.
 
 .. config:setting:: oauth-selectprovider
