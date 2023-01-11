@@ -53,7 +53,7 @@ Latest Mattermost Cloud releases:
  - Clicking a group mention now displays group details and membership.
  - Improved the collapsed state of the post formatting toolbar.
  - App Framework channel and user fields now support multi-select properties to allow users to select multiple values in a form.
- - Increased the notification length on Windows to 120 from 50.
+ - Increased the character count for desktop notifications on Windows to 120 from 50.
  - Prioritized members of recently viewed direct or group messages when adding users to a channel.
  - Updated in-product confirmation modal for ``@here`` mentions to clarify that people & timezone counts don't include the current user.
  - Added support for multiple users and channels to the ``/invite`` slash command.
