@@ -20,7 +20,7 @@ Mattermost Free limits
 **Platform limits**
 
 - Maximum 1 team. Any additional teams created during a trial or on a paid plan will be archived.
-- 10 GB file storage across the platform, with 100 MB upload limit. The oldest files that exceed this limit will be archived. Card attachments are counted toward this limit.
+- 1GB file storage across the platform, with 100 MB upload limit. The oldest files that exceed this limit will be archived. Card attachments are counted toward this limit.
 
 **Channels limits**
 
