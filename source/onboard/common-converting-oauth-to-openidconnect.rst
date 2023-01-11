@@ -5,5 +5,4 @@ Using the System Console, Mattermost Enterprise and Professional customers can m
 Select **Convert to OpenID Connect** to migrate your active service provider configuration to the new standard. No further changes are required. 
 
 .. note::
-  - Inactive service providers configured for OAuth 2.0 are also migrated to the new OpenID Connect standard. 
-  - Converting to OpenID Connect removes the **OAuth 2.0** option from the System Console menu.
+  - Inactive service providers configured for OAuth 2.0 are also migrated to the new OpenID Connect standard.
