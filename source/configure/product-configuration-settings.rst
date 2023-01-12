@@ -10,7 +10,7 @@ Boards
 ------
 
 .. config:setting:: products-enablepubliclysharedboards
-  :displayname: Enable publicly-shared boards (Products > Boards)
+  :displayname: Enable publicly-shared boards (Products - Boards)
   :systemconsole: Products > Boards
   :configjson: .ProductSettings.EnablePublicSharedBoards
   :environment: MM_PRODUCTSETTINGS_ENABLEPUBLICSHAREDBOARDS
@@ -21,7 +21,7 @@ Enable publicly-shared boards
 
 +------------------------------------------------------+--------------------------------------------------------------------------------------+
 | Enable or disable the ability to share               | - System Config path: **Products > Boards**                                          |
-| links to Mattermost boards with other users.         | - ``config.json`` setting: ``".ProductSettings.EnablePublicSharedBoards: false”, ``  |
+| links to Mattermost boards with other users.         | - ``config.json`` setting: ``".ProductSettings.EnablePublicSharedBoards: false”,``   |
 |                                                      | - Environment variable: ``MM_PRODUCTSETTINGS_ENABLEPUBLICSHAREDBOARDS``              |
 | - **true**: Enables the ability to share links to    |                                                                                      |
 |   Mattermost boards with other users.                |                                                                                      |

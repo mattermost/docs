@@ -941,7 +941,7 @@ Enables board owners and editors to share links to Mattermost boards with other 
 
   - This configuration setting applies to Mattermost Boards when installed as a Mattermost plugin. See the `products configuration settings </configure/product-configuration-settings.html#enable-publicly-shared-boards>`__ documentation for details on configuring the Mattermost Suite setting.
   - See the `Mattermost Boards <guides/boards.html>`__ end user documentation for details on `sharing boards links with other users <boards/share-and-collaborate.html#share-a-board-publicly>`__.
-- Cloud admins can't modify this configuration setting.
+  - Cloud admins can't modify this configuration setting.
 
 ----
 
