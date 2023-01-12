@@ -20,7 +20,7 @@ In addition to the daily digest, you also have access to a task inbox. The task 
 You can:
 
 - Access each task directly, without having to visit the individual runs.
-- You can mark tasks as complete or skip them.
+- Mark tasks as complete or skip them.
 - Change the task assignee from yourself to another team member. The task will then be removed from your inbox.
 - You can change the due date of tasks to manage priorities and urgency.
 
