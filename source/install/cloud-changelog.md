@@ -4,12 +4,117 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 
 Latest Mattermost Cloud releases:
 
+- [Release 2023-01-12](#release-2023-01-12)
 - [Release 2022-12-20](#release-2022-12-20)
 - [Release 2022-12-01](#release-2022-12-01)
 - [Release 2022-11-24](#release-2022-11-24)
 - [Release 2022-11-17](#release-2022-11-17)
 - [Release 2022-11-10](#release-2022-11-10)
-- [Release 2022-10-27](#release-2022-10-27)
+
+## Release 2023-01-12
+
+### Highlights
+
+#### Calls
+ - An important change was made to calls participants limits. The Cloud free plan now supports up to 8 participants per call in group messages, public, or private channels (it was previously direct messages only).
+ - [Audio calling and screen sharing](https://docs.mattermost.com/configure/calls-deployment.html) in channels is now generally available to all Mattermost customers.
+ - Updated [the keyboard shortcut](https://docs.mattermost.com/channels/keyboard-shortcuts-for-channels.html#calls-shortcuts) to start and join calls.
+
+#### Boards
+ - Boards is now delivered as an official in-product vertical instead of a plugin and is now always enabled.
+ - Boards now supports [file attachments](https://docs.mattermost.com/boards/work-with-cards.html#attach-files), including PDFs, images, videos, and any other file types.
+ - Users can now [drag and drop boards and categories](https://docs.mattermost.com/boards/navigate-boards.html#manage-boards-on-the-sidebar) on the sidebar and organize them in any order they prefer.
+ - The [template picker](https://docs.mattermost.com/boards/work-with-boards.html#choose-a-board-template) has been improved to make it easier for users to find the best template for their project.
+ 
+#### Playbooks
+ - Added an option to [run playbooks](https://docs.mattermost.com/playbooks/work-with-playbooks.html#runs-and-channel-behavior) without creating a new channel every time in order to reduce the unnecessary overhead.
+ - In addition to the daily digest, users can now also view [a task inbox](https://docs.mattermost.com/playbooks/work-with-tasks.html#task-inbox) from the global header bar while in Playbooks.
+
+#### Message Priority and Acknowledgments
+ - Added [message priority labels](https://docs.mattermost.com/channels/message-priority.html) to the Threads view.
+ - Added support for enterprise users to request acknowledgements on posts and to acknowledge posts (Professional).
+
+#### Global Drafts
+ - Added [a centralized Drafts view](https://docs.mattermost.com/channels/send-messages.html#draft-messages) for draft messages.
+ 
+#### ServiceNow Integration
+ - ServiceNow customers can now access and share their ServiceNow data from within Mattermost.
+ 
+#### ServiceNow Virtual Agent Integration
+ - The [Mattermost ServiceNow Virtual Agent Integration](https://www.loom.com/share/36f60299c6c349729160d6d8bce75c3c) makes it easy for employees and customers to resolve issues fast.
+
+### Improvements
+
+#### User Interface (UI)
+ - Updated prepackaged version of plugins affected by React v17 upgrade.
+ - Corrected in-product System Console legacy link to the Cloud Administrator's Guide.
+ - Updated prepackaged NPS version to 1.3.1.
+ - Updated prepackaged version of Apps plugin to 1.2.0.
+ - Added group members count to the group autocomplete.
+ - Clicking a group mention now displays group details and membership.
+ - Improved the collapsed state of the post formatting toolbar.
+ - App Framework channel and user fields now support multi-select properties to allow users to select multiple values in a form.
+ - Increased the character count for desktop notifications on Windows to 120 from 50.
+ - Prioritized members of recently viewed direct or group messages when adding users to a channel.
+ - Updated in-product confirmation modal for ``@here`` mentions to clarify that people & timezone counts don't include the current user.
+ - Added support for multiple users and channels to the ``/invite`` slash command.
+ - Downgraded French language support to Beta.
+
+#### Administration
+ - The export file now contains the server version and a creation timestamp.
+ - Plugins with a webapp component may need to be updated to work with Mattermost and the updated React v17 dependency. This is to avoid plugins crashing with an error about ``findDOMNode`` being called on an unmounted component. While our `starter template <https://github.com/mattermost/mattermost-plugin-starter-template>`_ depended on an external version of ``React``, it did not do the same for ``ReactDOM``. Plugins need to update their ``webpack.config.js`` directives to externalize ``ReactDOM``. For reference, see https://github.com/mattermost/mattermost-plugin-playbooks/pull/1489. Server-side only plugins are unaffected. This change can be done for existing plugins any time prior to upgrading Mattermost and is backwards compatible with older versions of Mattermost.
+ - Added ``acknowledgements`` field to the post's metadata.
+ - Added the ability for customers to view their upcoming invoice on the **System Console > Billing & Account > Subscriptions** page.
+ - **Total Activated Users** was changed back to **Total Active Users** on the **System Console > Reporting > Site Statistics** page.
+ - The import job now logs the progress of the import.
+ - Added ``restore_group`` permission to the mmctl and to the **System Console > Permissions**.
+ - Improved bulk export logging.
+ - Compliance export job can now cancel the SQL query execution during server shutdown which will allow the job to exit faster.
+ - Shared Channels (Experimental) is now available with a Professional license.
+ - Added a new section in the **System Console** for products. For now, it only contains Boards-specific settings.
+ - Removed Cloud Professional file storage limits.
+ - The message export compliance job can now survive server restarts. The job will pause and save state when the server is shutting down, and resume from the previously saved state when the server starts back up.
+ - Only one instance of the job will be automatically scheduled to run as per the ``MessageExportSettings.DailyRunTime`` config value.
+ - Mattermost will throw an error if it detects an Elasticsearch version greater than 7.
+
+### API Changes
+ - Added new API endpoint ``GET /api/v4/posts/:post_id/info`` to allow checking if the post that a permalink is pointing to is accessible by joining teams or channels.
+ - Added validity checks for role related parameters in ``GET /users``.
+ - Added an allowed value ``sort=display_name`` to ``GET /api/v4/users?in_group=<groupid>``.
+
+### Bug Fixes
+ - Fixed an issue where batch notifications failed while rendering.
+ - Fixed an issue where the unreads button in the channel sidebar was missing alternative text for screen readers.
+ - Fixed an issue where there was no feedback that a downgrade was in progress when selecting **Downgrade** under **System Console > Billing & Account > Subscriptions** page.
+ - Fixed an issue where attempting to create a team with a duplicate URL displayed the wrong error.
+ - Fixed an issue where the custom status modal did not close when navigating to the custom emoji page.
+ - Fixed an issue where selections within a code block were not properly copied to clipboard.
+ - Fixed an issue where threads with 0 replies would show in all threads.
+ - Fixed an issue with the styling of date pickers.
+ - Fixed an issue with fetching the latest user's profile picture in Insights.
+ - Fixed an issue where ``--center-channel-text`` CSS variable was used instead of ``--center-channel-color``.
+ - Fixed an issue where the screen reader timestamp announcement was too long.
+ - Fixed an issue where upgrade emails were still sent when downgrading to the Cloud Starter plan.
+ - Fixed an issue where profile pictures, usernames, and full names did not update instantly in Insights.
+ - Fixed an issue where the metrics server restarted for every config change.
+ - Prevented browsers and CDNs from caching remote entrypoint files.
+ - Fixed a potential read-after-write issue when uploading data through the resumable uploads API.
+ - Fixed the position of the Boards icon in the app bar when Boards is running without a plugin.
+ - Fixed ability to create a board when Boards is running without a plugin.
+ - Fixed Boards tour tips not appearing when Boards is running without a plugin.
+ - Fixed the slash command description help text.
+ - Fixed an issue where selecting **Contact Sales** didn't pre-fill the reason for contacting sales.
+ - Fixed an issue where the screen readers did not announce the selected state of the sidebar submenu items.
+ - Fixed an issue where the metrics server was not prevented from starting while running export commands.
+ - Fixed an issue where long group mentions and user mentions didn't wrap properly.
+ - Fixed an issue with fetching first/last name for GitLab user using OpenID.
+ - Fixed an issue where servers with an encrypted key did not throw an error during startup.
+ - Fixed an issue where the **Test Connection** button in **System Console > Environment > Elasticsearch** did not correctly take the right config settings specified in the page. Earlier, it would always take the previously saved config.
+
+### Known Issues
+ - The message box flashes controls while typing in the right-hand side [MM-49266](https://mattermost.atlassian.net/browse/MM-49266).
+ - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
+ - Publicly shared boards lead to a "Team not found" error page. See [issue-focalboard-4450](https://github.com/mattermost/focalboard/issues/4450) for more details.
 
 ## Release 2022-12-20
 
