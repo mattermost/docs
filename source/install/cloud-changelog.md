@@ -22,7 +22,7 @@ Latest Mattermost Cloud releases:
  - The max size of uploaded emojis is now reduced to 512KiB to reduce image download bandwidth.
  - Users can now monitor the progress of the bulk export job via its metadata field. It is available at ``mmctl export job show <jobID>``.
  - Compliance exports no longer timeout when uploading to S3.
- - Users can now supply a CA file and client certificates for the Elasticsearch client.
+ - Users can now supply a certificate authority (CA) file and client certificates for the Elasticsearch client.
  - Grafana metrics are now available for database connection metrics. They are:
     - ``max_open_connections``
     - ``open_connections``
