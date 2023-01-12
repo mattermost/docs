@@ -71,18 +71,29 @@ Make checklists
 
 5. Choose **Save**.
 
-Runs and channel behavior
--------------------------
+Create fewer channels
+---------------------
 
-When setting up your playbook:
+From Mattermost v7.7, you can choose to start each run in a new channel or re-use an already existing channel.
+
+Here are some scenarios why you might want to start each run in the same channel:
+
+- Short, frequently-used processes benefit from being in the same channel - it keeps the process streamlined.
+- Teams with multiple independent workflows, such as release teams, benefit from having them in one place.
+- Cutting down on the number of new channels created makes it easier to find run channels again.
+- The run name isn't linked to the the channel's name so you can tell multiple workflows apart.
+
+When you're configuring your playbook:
 
 - You can link it to an existing channel so that each run starts in that channel.
 - You can choose that each time the playbook is run, it creates a new channel.
 
 To access this setting, open the playbooks tab. Select the playbook you want to edit, then select the **Outline** tab. Select **Actions** in the left-hand menu and make your selection under the **When a run starts** heading.
 
+When you start a run, your selection is the default but can be changed for each run. Additionally, it's also possible to move a started run to another channel, so you're not locked into whichever option you select.
+
 Status updates
-------------------
+--------------
 
 There may be multiple active runs on any given day.
 
@@ -104,9 +115,9 @@ Options include: Creating a channel when a run is started, inviting members to t
 
 Actions such as channel creation and adding the channel to a sidebar category are set per-playbook and applied to each run that uses that playbook.
 
-If you’re a System Admin or Channel Admin of the run channel you can also edit these settings in the run channel, via the channel menu, in **Channel Actions**. Editing the settings in the run channel will only affect that channel and the changes aren’t applied to the playbook.
+If you’re a system admin or channel admin of the run channel you can also edit these settings in the run channel, via the channel menu, in **Channel Actions**. Editing the settings in the run channel will only affect that channel and the changes aren’t applied to the playbook.
 
-Only Channel Admins can edit the **Channel Actions** items (such as the welcome message) but members who have access to the playbook can edit the welcome message and run behavior settings. Editing these won’t change the welcome message of a run that’s in progress - it only applies going forward.
+Only channel admins can edit the **Channel Actions** items (such as the welcome message) but members who have access to the playbook can edit the welcome message and run behavior settings. Editing these won’t change the welcome message of a run that’s in progress - it only applies going forward.
 
 If you want to change the behavior of all future runs associated with the playbook, edit the playbook directly in the **Actions** menu.
 
