@@ -69,7 +69,9 @@ Subscription and licenses not purchased via the Customer Portal won't be listed.
 Add more users to a subscription
 --------------------------------
 
-To add more users to your existing subscription, `contact us <https://mattermost.com/contact-us/>`__.
+From Mattermost v7.7, you can add additional users to your subscription via the Customer Portal.
+
+If you're using Mattermost v7.6 and below, to add more users to your existing subscription, `contact us <https://mattermost.com/contact-us/>`__.
 
 When you subscribe to an annual plan with Mattermost, you agree to provide quarterly reports of the actual number of registered users within your system if you're above the amount you subscribed in your purchase order. A registered user is a user who has an account in a workspace and does not show as *Inactive* in **System Console > User Management > Users**.
 
