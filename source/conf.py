@@ -41,7 +41,8 @@ extensions = [
     "sitemap",
     "sphinx_tabs.tabs",
     "sphinx_copybutton",
-    "compass-icons"
+    "compass-icons",
+    "config-setting-v2",
 ]
 
 sphinx_tabs_disable_tab_closing = True
