@@ -66,7 +66,7 @@ Manage boards on the sidebar
 In addition to moving boards to other categories, from the |options-icon| menu next to each board name you can perform the following actions:
 
 - **Delete board**: If you're an admin of the board, you will see an option to delete the board. Deleting the board permanently removes the board from the sidebar of all board members.
-- **Duplicate board**: Creates a copy of the board and all the cards on the board. The duplicated board will appear under the same category as the original board. Board members from the original board aren't migrated to the new board.
+- **Duplicate board**: Creates a copy of the board and all the cards on the board. The duplicated board will appear under the same category as the original board. Board members and comments from the original board aren't migrated to the new board.
 - **New template from board**: Creates a custom board template of the board and all the cards on the board.
 - **Hide board**: Hides the board from your sidebar only. The board will still remain visible on the sidebar for other board members. You can add the board back to your sidebar using the search box (CMD+K/CTRL+K).
 
