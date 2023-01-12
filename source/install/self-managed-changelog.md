@@ -55,6 +55,9 @@ Latest Mattermost Releases:
  
 #### ServiceNow Virtual Agent Integration
  - The [Mattermost ServiceNow Virtual Agent Integration](https://www.loom.com/share/36f60299c6c349729160d6d8bce75c3c) makes it easy for employees and customers to resolve issues fast.
+ 
+#### GitLab Playbooks Integration
+ - Through the updated [GitLab integration and playbook task actions](https://mattermost.com/marketplace/gitlab-plugin/), teams can automate release management processes to help increase efficiency and reduce errors.
 
 ### Improvements
 
