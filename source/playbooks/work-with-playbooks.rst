@@ -90,7 +90,7 @@ When you're configuring your playbook:
 
 To access this setting, open the playbooks tab. Select the playbook you want to edit, then select the **Outline** tab. Select **Actions** in the left-hand menu and make your selection under the **When a run starts** heading.
 
-When you start a run, your selection is the default but can be changed for each run.
+When you start a run, your selection is the default but can be changed for each run. Additionally, it's also possible to move a started run to another channel, so you're not locked into whichever option you select.
 
 Status updates
 --------------
