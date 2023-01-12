@@ -13,10 +13,16 @@ Latest Mattermost Cloud releases:
 
 ## Release 2023-01-19
 
+### Highlights
+
+#### GitLab Playbooks Integration
+ - Through the updated [GitLab integration and playbook task actions](https://mattermost.com/marketplace/gitlab-plugin/), teams can automate release management processes to help increase efficiency and reduce errors.
+
 ### Improvements
 
 #### User Interface (UI)
  - Insights and drafts are now included when navigating through channels in the channel sidebar using ALT+UP/DOWN arrow keyboard keys.
+ - Prepackaged Calls version 0.12.1.
 
 #### Administration
  - The max size of uploaded emojis is now reduced to 512KiB to reduce image download bandwidth.
