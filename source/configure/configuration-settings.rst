@@ -20,6 +20,7 @@ Mattermost configuration settings are organized into the following categories wi
 - :doc:`Site configuration settings </configure/site-configuration-settings>`
 - :doc:`Authentication configuration settings </configure/authentication-configuration-settings>`
 - :doc:`Plugins configuration settings </configure/plugins-configuration-settings>`
+- :doc:`Product configuration settings <configuration/product-configuration-settings>`
 - :doc:`Integrations configuration settings </configure/integrations-configuration-settings>`
 - :doc:`Compliance configuration settings </configure/compliance-configuration-settings>`
 - :doc:`Experimental configuration settings </configure/experimental-configuration-settings>`

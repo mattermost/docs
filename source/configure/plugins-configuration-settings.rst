@@ -921,6 +921,28 @@ Enable plugin
 
 **False**: Disables the Mattermost Boards plugin on your Mattermost workspace.
 
+.. config:setting:: plugins-boardsenablepubliclysharedboards
+  :displayname: Enable publicly-shared boards (Plugins - Mattermost Boards)
+  :systemconsole: Plugins > Mattermost Boards
+  :configjson: N/A
+  :environment: N/A
+  :description: Enable the ability to share links to boards publicly with other users.
+
+Enable publicly-shared boards
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Enables board owners and editors to share links to Mattermost boards with other users.
+
+**True**: Enables the ability to share links to boards with other users.
+
+**False**: **(Default)** Disables the ability to share links to boards with other users.
+
+.. note::
+
+  - This configuration setting applies to Mattermost Boards when installed as a Mattermost plugin. See the `products configuration settings </configure/product-configuration-settings.html#enable-publicly-shared-boards>`__ documentation for details on configuring the Mattermost Suite setting.
+  - See the `Mattermost Boards <guides/boards.html>`__ end user documentation for details on `sharing boards links with other users <boards/share-and-collaborate.html#share-a-board-publicly>`__.
+- Cloud admins can't modify this configuration setting.
+
 ----
 
 Mattermost Playbooks

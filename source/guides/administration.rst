@@ -29,6 +29,7 @@ Get started
     Site configuration settings </configure/site-configuration-settings>
     Authentication configuration settings </configure/authentication-configuration-settings>
     Plugins configuration settings </configure/plugins-configuration-settings>
+    Product configuration settings </configure/product-configuration-settings>
     Integrations configuration settings </configure/integrations-configuration-settings>
     Compliance configuration settings </configure/compliance-configuration-settings>
     Experimental configuration settings </configure/experimental-configuration-settings>
