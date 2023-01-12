@@ -4,12 +4,44 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 
 Latest Mattermost Cloud releases:
 
+- [Release 2023-01-19](#release-2023-01-19)
 - [Release 2023-01-12](#release-2023-01-12)
 - [Release 2022-12-20](#release-2022-12-20)
 - [Release 2022-12-01](#release-2022-12-01)
 - [Release 2022-11-24](#release-2022-11-24)
 - [Release 2022-11-17](#release-2022-11-17)
-- [Release 2022-11-10](#release-2022-11-10)
+
+## Release 2023-01-19
+
+### Improvements
+
+#### User Interface (UI)
+ - Insights and drafts are now included when navigating through channels on the left-hand side using ALT+up/down arrows.
+
+#### Administration
+ - The max size of uploaded emojis is now reduced to 512KiB to reduce image download bandwidth.
+ - Users can now monitor the progress of the bulk export job via its metadata field. It is available at ``mmctl export job show <jobID>``.
+ - Compliance exports no longer timeout when uploading to S3.
+ - Users can now supply a CA file and client certificates for the Elasticsearch client.
+ - Grafana metrics are now available for database connection metrics. They are:
+    - ``max_open_connections``
+    - ``open_connections``
+    - ``in_use_connections``
+    - ``idle_connections``
+    - ``wait_count_total``
+    - ``wait_duration_seconds_total``
+    - ``max_idle_closed_total``
+    - ``max_idle_time_closed_total``
+    - ``max_lifetime_closed_total``
+
+### Bug Fixes
+ - Fixed an issue with the plugin ``/public`` handling for subpaths.
+ - Fixed an issue where clicking **Pinned** on a post in the Threads view would result in the right-hand side being stuck in a loading state.
+
+### Known Issues
+ - The message box flashes controls while typing in the right-hand side [MM-49266](https://mattermost.atlassian.net/browse/MM-49266).
+ - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
+ - Publicly shared boards lead to a "Team not found" error page. See [issue-focalboard-4450](https://github.com/mattermost/focalboard/issues/4450) for more details.
 
 ## Release 2023-01-12
 
