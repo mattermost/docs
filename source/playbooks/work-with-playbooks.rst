@@ -74,7 +74,7 @@ Make checklists
 Create fewer channels
 ---------------------
 
-From Mattermost v7.7, you can choose to start each run in a new channel or re-use the same channel.
+From Mattermost v7.7, you can choose to start each run in a new channel or re-use an already existing channel.
 
 Here are some scenarios why you might want to start each run in the same channel:
 
