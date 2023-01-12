@@ -1,5 +1,5 @@
 Desktop managed resources
-==========================
+=========================
 
 .. include:: ../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
@@ -15,7 +15,7 @@ In addition to customizing the Mattermost Desktop App, the `Managed Resource Pat
 
 In the below example we add the managed resource ``/video``.
 
-.. code-block:: json
+.. code-block:: text
 
     [...]
     managedResources: ['trusted', 'video'],
@@ -40,5 +40,5 @@ Here are two example server URLs each with valid and invalid managed resource UR
   - A valid conference service: ``https://my.org/conference``
 
   - An invalid video service using a different protocol: ``http://my.org/video``
-  
+
   - An invalid conference service having a different origin: ``https://conference.my.org``
