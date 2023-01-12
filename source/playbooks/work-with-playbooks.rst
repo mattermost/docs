@@ -71,8 +71,8 @@ Make checklists
 
 5. Choose **Save**.
 
-Create fewer channels
----------------------
+Multiple runs in a channel
+--------------------------
 
 From Mattermost v7.7, you can choose to start each run in a new channel or re-use an already existing channel.
 
