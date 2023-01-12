@@ -16,7 +16,7 @@ Latest Mattermost Cloud releases:
 ### Improvements
 
 #### User Interface (UI)
- - Insights and drafts are now included when navigating through channels on the left-hand side using ALT+up/down arrows.
+ - Insights and drafts are now included when navigating through channels in the channel sidebar using ALT+UP/DOWN arrow keyboard keys.
 
 #### Administration
  - The max size of uploaded emojis is now reduced to 512KiB to reduce image download bandwidth.
@@ -36,7 +36,7 @@ Latest Mattermost Cloud releases:
 
 ### Bug Fixes
  - Fixed an issue with the plugin ``/public`` handling for subpaths.
- - Fixed an issue where clicking **Pinned** on a post in the Threads view would result in the right-hand side being stuck in a loading state.
+ - Fixed an issue where selecting **Pinned** on a post in the Threads view would result in the right-hand side being stuck in a loading state.
 
 ### Known Issues
  - The message box flashes controls while typing in the right-hand side [MM-49266](https://mattermost.atlassian.net/browse/MM-49266).
