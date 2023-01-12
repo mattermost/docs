@@ -17,4 +17,4 @@ Task inbox
 
 In addition to the daily digest, you also have access to a task inbox. The task inbox provides you with a cross-run overview of the tasks you're accountable for, sorted by due date. You can access and complete each task directly, without having to visit the individual runs.
 
-To view it, open the playbooks tab. In the header, next to your profile photo, select the message icon. A list of every task assigned to you from every run that's in progress is displayed. You can check off, change due dates, and reassign tasks in this view.
+To view it, open the playbooks tab. In the header, next to your profile photo, select the tasks list icon. A list of every task assigned to you from every run that's in progress is displayed. You can check off, change due dates, and reassign tasks in this view.
