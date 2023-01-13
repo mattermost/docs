@@ -106,23 +106,7 @@ Earlier 4.x versions of Mattermost Desktop App and earlier v1.x versions of the 
 
 Please review the `Desktop App changelog </install/desktop-app-changelog.html>`_ and the `Mobile App changelog </deploy/mobile-app-changelog.html>`_ notes for any self-hosted version requirements for features and functionalities, as well as notes on security fixes.
 
-+-------------+------------------+-----------------------------------------+------------------------------------------+
-| ESR Version | Release Date     | Desktop App Supported Version           | Mobile App Supported Versions            |
-+=============+==================+=========================================+==========================================+
-| 7.1         | July 15, 2022    | Minimum supported version: v5.1.0       | Minimum supported version: v1.54.0       |
-|             |                  |                                         | Supported versions: v2.0                 |
-+-------------+------------------+-----------------------------------------+------------------------------------------+
-| 6.3         | January 16, 2022 | Minimum supported version: v5.0.0       | Minimum supported version: v1.48.0       |
-|             |                  |                                         | Supported versions: v1.51 - v1.55        |
-|             |                  |                                         | `(ESR) <#mobile-app-v1-55-1-extended-    |
-|             |                  |                                         | support-release-esr>`__                  |
-+-------------+------------------+-----------------------------------------+------------------------------------------+
-| 5.37        | July 16, 2021    | Minimum supported version: v4.7.0       | Minimum supported version: v1.45.0       |
-|             |                  |                                         | Supported versions: v1.47 - v1.50        |
-+-------------+------------------+-----------------------------------------+------------------------------------------+
-
 See more details in our `release lifecycle documentation </upgrade/release-lifecycle.html#desktop-and-mobile-app-server-compatibility>`_.
-
 
 Mobile App v1.55.1 extended support release (ESR)
 ------------------------------------------------
