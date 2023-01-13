@@ -467,32 +467,31 @@ The UDP port the RTC server will listen on. All calls traffic will be served thr
 
 Changing this setting requires a plugin restart to take effect.
 
+.. config:setting:: plugins-enableonspecificchannels
+  :displayname: Enable on specific channels (Plugins - Calls)
+  :systemconsole: Plugins > Calls
+  :configjson: N/A
+  :environment: N/A
+  :description: Manage who enable or disable calls on specific channels (deprecated from Mattermost v7.7)
+
+Enable on specific channels
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+*This setting is not configurable from Mattermost v7.7; it is hidden and always true*
+
+.. include:: ../_static/badges/selfhosted-only.rst
+  :start-after: :nosearch:
+
+**True**: Allow channel admins to enable or disable calls on specific channels. It also allows participants in DMs/GMs to enable or disable calls.
+
+**False**: Only system admins will be able to enable or disable calls on specific channels.
+
 .. config:setting:: plugins-testmode
   :displayname: Test mode (Plugins - Calls)
   :systemconsole: Plugins > Calls
   :configjson: N/A
   :environment: N/A
-
-Enable on specific channels
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-*This setting is not configurable from Mattermost v7.7; it is hidden and always **true***
-
-.. include:: ../_static/badges/selfhosted-only.rst
-  :start-after: :nosearch:
-
-**True**: Allow Channel Admins to enable or disable calls on specific channels. It also allows participants in DMs/GMs to enable or disable calls.
-
-**False**: Only System Admins will be able to enable or disable calls on specific channels.
-
-.. config:setting:: plugins-callsallchannels
-  :displayname: Enable on all channels (Plugins - Calls)
-  :systemconsole: Plugins > Calls
-  :configjson: N/A
-  :environment: N/A
-
-  - **true**: Enable calls by default on all channels.
-  - **false**: Calls have to be explicitly enabled on channels.
+  :description: A setting to allow system admins to test calls before making them available across the deployment. This setting was called **Enable on all channels** up until Mattermost v7.7.
 
 Test mode
 ~~~~~~~~~
