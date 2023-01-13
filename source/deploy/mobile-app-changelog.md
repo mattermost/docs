@@ -35,6 +35,7 @@ Users now gain a more reliable and feature-rich application, improving their exp
  - Posts may remain in the local device database after data retention job has been run [MM-47548](https://mattermost.atlassian.net/browse/MM-47548).
  - Drafts are lost when following a notification [MM-47373](https://mattermost.atlassian.net/browse/MM-47373).
  - Moving posts with the Wrangler plugin causes database "Unique key" errors [MM-44960](https://mattermost.atlassian.net/browse/MM-44960).
+ - In some Android 12 and 13 devices, the app may freeze when logging in. A device restart solves the issue.
 
 ## 1.55.1 Release
 - Release Date: September 15, 2022
