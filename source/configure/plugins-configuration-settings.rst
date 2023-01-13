@@ -473,13 +473,38 @@ Changing this setting requires a plugin restart to take effect.
   :configjson: N/A
   :environment: N/A
 
-Test mode
-~~~~~~~~~
+Enable on specific channels
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+*This setting is deprecated from Mattermost v7.7*
 
 .. include:: ../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
-**True**: When test mode is enabled, only system admins are able to start calls in channels. This allows testing to confirm calls are working as expected.
+**True**: Allow Channel Admins to enable or disable calls on specific channels. It also allows participants in DMs/GMs to enable or disable calls.
+
+**False**: Only System Admins will be able to enable or disable calls on specific channels.
+
+.. config:setting:: plugins-callsallchannels
+  :displayname: Enable on all channels (Plugins - Calls)
+  :systemconsole: Plugins > Calls
+  :configjson: N/A
+  :environment: N/A
+
+  - **true**: Enable calls by default on all channels.
+  - **false**: Calls have to be explicitly enabled on channels.
+
+Test mode
+~~~~~~~~~
+
+*This setting called Enable on all channels up until Mattermost v7.7*
+
+.. include:: ../_static/badges/selfhosted-only.rst
+  :start-after: :nosearch:
+
+**True**: When test mode is enabled, only system admins are able to start calls in channels. 
+
+This allows testing to confirm calls are working as expected. When a user tries to start a call, they'll be prompted to ask their admin to complete the setup and switch to live mode in the System Console. Additionally, when a system admin starts a call, they're asked to confirm that calls are working as expected before switching to live mode in the System Console.
 
 **False**: All team members can start calls in channels.
 
