@@ -1,7 +1,7 @@
 Insights
 ========
 
-.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 Insights offer you visibility into top activities by surfacing the most important events happening within each team within your Mattermost workspace. 
@@ -46,6 +46,9 @@ My insights
 
 Team insights
 -------------
+
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
 
 +-----------------------+-----------------------------------------------+
 | **Insight category**  | **Description**                               |

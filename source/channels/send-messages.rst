@@ -46,3 +46,14 @@ Select the **More** |more-icon| icon next to a message that you've sent.
 Select **Edit** to edit your own messages. Editing a message won't trigger new @mention notifications, desktop notifications, or notification sounds.
 
 Select **Delete** to delete your own messages. Select **Delete** again to confirm.
+
+Do more with your messages
+--------------------------
+
+Express yourself your way using the following message features:
+
+- `Set message priority </channels/message-priority.html>`__
+- `Format messages </channels/format-messages.html>`__
+- `Mention people </channels/mention-people.html>`__
+- `Share files </channels/share-files-in-messages.html>`__
+- `Share links </channels/share-links.html>`__

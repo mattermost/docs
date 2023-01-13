@@ -1,5 +1,5 @@
-Workspace limits
-================
+Cloud Workspace limits
+=======================
 
 .. include:: ../_static/badges/allplans-cloud.rst
   :start-after: :nosearch:
@@ -14,34 +14,26 @@ In addition to these limits, visit our pricing page to see a complete list of fe
 
    These limits do not apply to self-hosted deployments. 
 
-Mattermost Free limits
-----------------------
+Mattermost Cloud Free limits
+----------------------------
 
 **Platform limits**
 
-- Maximum 1 team. Any additional teams created during a trial or on a paid plan will be archived.
-- 10 GB file storage across the platform, with 100 MB upload limit. The oldest files that exceed this limit will be archived.
 - Unlimited plugins can be installed but only 5 can be enabled at one time. Core plugins such as Boards, Calls, and Playbooks do not count toward this limit.
+- 1 GB file storage across the platform, with 100 MB upload limit. The oldest files that exceed this limit will be archived.
+- Maximum 1 team. Any additional teams created during a trial or on a paid plan will be archived.
 
 **Channels limits**
 
 - 10,000 message history limit. The oldest messages that exceed this limit will be archived.
 
-**Boards limits**
+**Calls limits**
 
-- Maximum 5 saved views per board.
-- Only the 500 most recently updated cards on the server are displayed.
+- Up to 8 participants per channel can join calls that last up to 40 minutes.
 
 .. note::
    
    Mattermost reserves the right to archive or delete messages and establish or change (1) limits as to how many messages can be stored, (2) how long such messages will be stored, and (3) charges for storing such messages. Mattermost further reserves the right to establish or change limits on periods of inactivity that may result in the termination of your messages cloud storage and deletion or archiving of any stored messages.
-
-Mattermost Professional limits
-------------------------------
-
-**Platform limits**
-
-- 250GB file storage limit.
 
 Frequently asked questions
 --------------------------

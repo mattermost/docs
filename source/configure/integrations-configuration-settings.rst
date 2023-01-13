@@ -113,6 +113,10 @@ Enable OAuth 2.0 service provider
 | This feature's ``config.json`` setting is ``"EnableOAuthServiceProvider": false`` with options ``true`` and ``false``. |
 +------------------------------------------------------------------------------------------------------------------------+
 
+.. note::
+
+  Cloud admins can't modify this configuration setting.
+
 .. config:setting:: integrate-enableusernameoverride
   :displayname: Enable integrations to override usernames (Integrations)
   :systemconsole: Integrations > Integration Management

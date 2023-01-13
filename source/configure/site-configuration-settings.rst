@@ -529,6 +529,8 @@ Allow users to view archived channels
 | - **false**: Users are unable to access content in archived channels.                                          | - ``config.json`` setting: ``.TeamSettings.ExperimentalViewArchivedChannels: true`` |
 |                                                                                                                | - Environment variable: ``MM_TEAMSETTINGS_EXPERIMENTALVIEWARCHIVEDCHANNELS``        |
 +----------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| **Note**: Cloud admins can't modify this configuration setting.                                                                                                                                      |
++----------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
 
 .. config:setting:: users-showemailaddress
   :displayname: Show email address (Users and teams)
@@ -667,8 +669,9 @@ Enable email notifications
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
 | **Notes**:                                                                                                                                                                                                                                                |
 |                                                                                                                                                                                                                                                           |
+| - Cloud admins can't modify this configuration setting.                                                                                                                                                                                                   |
 | - If this setting is **false**, and the SMTP server is set up, account-related emails (such as authentication messages) will be sent regardless of this setting.                                                                                          |
-| - Email invitations and account deactivation emails are not affected by this setting.                                                                                                                                                                     |
+| - Email invitations and account deactivation emails aren't affected by this setting.                                                                                                                                                                      |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: notification-enablepreviewbanner
@@ -690,6 +693,8 @@ Enable preview mode banner
 | - **false**: Preview Mode banner does not appear.                                                                                                                            | - ``config.json`` setting: ``.EmailSettings.EnablePreviewModeBanner: true`` |
 |                                                                                                                                                                              | - Environment variable: ``MM_EMAILSETTINGS_ENABLEPREVIEWMODEBANNER``        |
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
+| **Note**: Cloud admins can't modify this configuration setting.                                                                                                                                                                                            |
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
 
 .. config:setting:: notification-enableemailbatching
   :displayname: Enable email batching (Notifications)
@@ -710,6 +715,7 @@ Enable email batching
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 | **Notes**:                                                                                                                                                                                                                                                                                                                                              |
 |                                                                                                                                                                                                                                                                                                                                                         |
+| - Cloud admins can't modify this configuration setting.                                                                                                                                                                                                                                                                                                 |
 | - Regardless of this setting, a user can turn off these notifications under **Settings > Notifications**.                                                                                                                                                                                                                                               |
 | - The `Site Url <https://docs.mattermost.com/configure/environment-configuration-settings.html#site-url>`__ and `SMTP Email Server <https://docs.mattermost.com/configure/environment-configuration-settings.html#smtp-server>`__ must be configured to allow email batching.                                                                           |
 | - Email batching in `High Availability Mode <https://docs.mattermost.com/configure/environment-configuration-settings.html#enable-high-availability-mode>`__ is planned, but not yet supported.                                                                                                                                                         |
@@ -1069,6 +1075,21 @@ Collapsed reply threads
 | - **Default Off**: Enables Collapsed Reply Threads on the server but **not** for users. Users can choose to `enable Collapsed Reply Threads <https://docs.mattermost.com/channels/channels-settings.html#collapsed-reply-threads>`__ for their Mattermost account in **Settings > Display > Collapsed Reply Threads**. ``config.json`` setting: ``"default_off"``    | - Environment variable: ``MM_SERVICESETTINGS_COLLAPSEDTHREADS``    |
 | - **Disabled**: Users cannot enable Collapsed Reply Threads. ``config.json`` setting: ``"disabled"``                                                                                                                                                                                                                                                                 |                                                                    |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------+
+
+Message priority
+~~~~~~~~~~~~~~~~~
+
++-----------------------------------------------------------------------------+------------------------------------------------------------------------+
+| - **true**: **(Default)** Enables message priority for all users which      | - System Config path: **Site Configuration > Posts**                   |
+|   enables them to set a visual indiciator for important or urgent root      | | - ``config.json`` setting: ``.ServiceSettings.PostPriority: true``   |
+|   messages.                                                                 | - Environment variable: ``MM_SERVICESETTINGS_POSTPRIORITY``            |
+| - **false**: Disables the ability to set message priority and request       |                                                                        |
+|   acknowledgements.                                                         |                                                                        |
++-----------------------------------------------------------------------------+------------------------------------------------------------------------+
+| **Note**: `Mattermost Professional or Enterprise <https://mattermost.com/pricing>`__ customers can additionally request message acknowledgements to  |
+| track that specific, time-sensitive messages have been seen and actioned. See the                                                                    |
+| `message priority <https://docs.mattermost.com/channels/message-priority>`__ documentation to learn more.                                            |
++-----------------------------------------------------------------------------+------------------------------------------------------------------------+
 
 .. config:setting:: posts-enablelinkpreviews
   :displayname: Enable website link previews (Posts)

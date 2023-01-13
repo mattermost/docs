@@ -41,6 +41,3 @@ You can share links to Mattermost messages with other Mattermost users. Sharing 
   .. tab:: Mobile
 
     Long press a message, and then tap **Copy Link** to copy the link to the clipboard. Long press to paste the link as a message or reply. Sharing links to messages generates a preview of the message.
-    
-    
-

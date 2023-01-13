@@ -7,8 +7,6 @@ Set channel preferences
 .. |more-icon| image:: ../images/dots-horizontal_F01D8.svg
     :alt: Use the More icon to access additional message options.
 
-You can set notification preferences as well as the channel's header, purpose, and name for each channel you're a member of. See the documentation for details on :doc:`renaming channels </channels/rename-channels>` and :doc:`channel naming convention recommendations </channels/channel-naming-conventions>`.
-
 .. |channel-info| image:: ../images/information-outline_F02FD.svg
   :alt: Use the Channel Info icon to access additional channel management options.
 
@@ -141,6 +139,10 @@ Change the channel purpose by selecting **Edit Channel Purpose**. Any channel me
 
 .. image:: ../images/channel-purpose.png
     :alt: Channel purpose helps users decide if they want to join the channel based on its scope or focus.
+
+.. tip::
+
+  Alternatively, to provide or update a channel purpose, select the channel name, then select **Edit Channel Purpose** from the list of options.
 
 Channel name
 ------------
