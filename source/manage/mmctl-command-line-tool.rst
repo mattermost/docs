@@ -45,7 +45,7 @@ For more information on what's changed in mmctl for Mattermost v6.0, see the `Ma
    </div>
 
 .. note::
-   
+
    You can continue to use existing options available from Mattermost v5.38 and earlier releases. However, we strongly recommend that customers upgrading to Mattermost v6.0 or later make use of the latest option syntax to take full advantage of the security and scaleability improvements available.
 
 mmctl usage notes
@@ -165,7 +165,7 @@ To use local mode, the Mattermost server first needs to `have local mode enabled
 
 .. tip::
 
-  When trying to use local mode with mmctl, ensure you're using the same user when running the server and mmctl, or clean up the socket file before switching to a new user. If you encounter an error like ``socket file "/var/tmp/mattermost_local.socket" doesn't exists, please check the server configuration for local mode``, this can be resolved by setting this configuration setting to ``true``. 
+  When trying to use local mode with mmctl, ensure you're using the same user when running the server and mmctl, or clean up the socket file before switching to a new user. If you encounter an error like ``socket file "/var/tmp/mattermost_local.socket" doesn't exists, please check the server configuration for local mode``, this can be resolved by setting this configuration setting to ``true``.
 
 Using local mode
 ~~~~~~~~~~~~~~~~
@@ -180,7 +180,7 @@ Running mmctl tests
 .. include:: ../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
-mmctl has two types of tests: unit tests and end to end tests. 
+mmctl has two types of tests: unit tests and end to end tests.
 
 To run the unit tests, you need to execute:
 
@@ -207,8 +207,8 @@ mmctl auth
 **Description**
 
 Manage the credentials and authentication methods of remote Mattermost instances.
-  
-   Child Commands   
+
+   Child Commands
 
       - `mmctl auth clean`_ - Clean credentials
       - `mmctl auth current`_ - Display current credentials
@@ -340,7 +340,7 @@ Delete a named credential.
    --quiet                        prevent mmctl to generate output for the commands
    --strict                       will only run commands if the mmctl version matches the server one
    --suppress-warnings            disables printing warning messages
-   
+
 mmctl auth list
 ~~~~~~~~~~~~~~~~
 
@@ -404,7 +404,7 @@ Log in to an instance and store credentials.
 
 **Options**
 
-.. code-block:: sh
+.. code-block:: text
 
    -t, --access-token-file string   Access token file to be read to use instead of username/password
    -h, --help                       help for login
@@ -427,7 +427,7 @@ Log in to an instance and store credentials.
    --quiet                        prevent mmctl to generate output for the commands
    --strict                       will only run commands if the mmctl version matches the server one
    --suppress-warnings            disables printing warning messages
-   
+
 mmctl auth renew
 ~~~~~~~~~~~~~~~~
 
@@ -684,7 +684,6 @@ Create a bot.
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
-   --local                        allows communicating with the server through a unix socket
    --quiet                        prevent mmctl to generate output for the commands
    --strict                       will only run commands if the mmctl version matches the server one
    --suppress-warnings            disables printing warning messages
@@ -939,7 +938,7 @@ Create a channel.
 **Options**
 
 .. code-block:: sh
-   
+
    --display-name string   Channel Display Name
    --header string         Channel header
    -h, --help              help for create
@@ -1298,7 +1297,7 @@ Unarchive a previously archived channel. Channels can be specified by ``[team]:[
 .. code-block:: sh
 
    mmctl channel unarchive [channels] [flags]
-  
+
 **Examples**
 
 .. code-block:: sh
@@ -1337,7 +1336,7 @@ Manage channel users.
 .. code-block:: sh
 
    -h, --help   help for users
-  
+
 **Options inherited from parent commands**
 
 .. code-block:: sh
@@ -1417,7 +1416,7 @@ Remove users from a channel.
 
    --all-users  Remove all users from the indicated channel
    -h, --help   help for remove
-  
+
 **Options inherited from parent commands**
 
 .. code-block:: sh
@@ -1512,7 +1511,7 @@ Create a custom slash command for the specified team.
 
 **Options**
 
-.. code-block:: sh
+.. code-block:: text
 
    --autocomplete               Show Command in autocomplete list
    --autocompleteDesc string    Short Command Description for autocomplete list
@@ -1637,7 +1636,7 @@ Modify a slash command. Commands can be specified by command ID.
 
 **Options**
 
-.. code-block:: sh
+.. code-block:: text
 
    --autocomplete               Show Command in autocomplete list
    --autocompleteDesc string    Short Command Description for autocomplete list
@@ -1721,7 +1720,7 @@ Show a custom slash command. Commands can be specified by command ID. Returns co
 **Examples**
 
 .. code-block:: sh
-   
+
    mmctl command show commandID
 
 **Options**
@@ -1946,10 +1945,10 @@ mmctl config migrate
 
 **Description**
 
-Migrate a file-based configuration to (or from) a database-based configuration. Point the Mattermost server at the target configuration to start using it. This command only migrates the configuration data from one type to another. 
+Migrate a file-based configuration to (or from) a database-based configuration. Point the Mattermost server at the target configuration to start using it. This command only migrates the configuration data from one type to another.
 
 .. note::
-  
+
    To change the store type to use the database, a System Admin needs to set a ``MM_CONFIG`` `environment variable </configure/configuation-in-a-database.html#create-an-environment-file>`_ and restart the Mattermost server.
 
 **Format**
@@ -2276,7 +2275,7 @@ Manage exports.
       -  `mmctl export job list`_ - List export jobs
       -  `mmctl export job show`_ - Show export job
       -  `mmctl export list`_ - List export files
-  
+
 **Options**
 
 .. code-block:: sh
@@ -3244,7 +3243,7 @@ List all import files.
    --local                        allows communicating with the server through a unix socket
    --quiet                        prevent mmctl to generate output for the commands
    --strict                       will only run commands if the mmctl version matches the server one
-   --suppress-warnings            disables printing warning messages 
+   --suppress-warnings            disables printing warning messages
 
 mmctl import list available
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -3257,7 +3256,7 @@ List available import files.
 
 .. code-block:: sh
 
-     mmctl import list available [flags] 
+     mmctl import list available [flags]
 
 **Examples**
 
@@ -3283,7 +3282,7 @@ List available import files.
    --local                        allows communicating with the server through a unix socket
    --quiet                        prevent mmctl to generate output for the commands
    --strict                       will only run commands if the mmctl version matches the server one
-   --suppress-warnings            disables printing warning messages 
+   --suppress-warnings            disables printing warning messages
 
 mmctl import list incomplete
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -3335,7 +3334,7 @@ Start an import job.
 
 .. code-block:: sh
 
-     mmctl import process [importname] [flags] 
+     mmctl import process [importname] [flags]
 
 **Examples**
 
@@ -3361,7 +3360,7 @@ Start an import job.
    --local                        allows communicating with the server through a unix socket
    --quiet                        prevent mmctl to generate output for the commands
    --strict                       will only run commands if the mmctl version matches the server one
-   --suppress-warnings            disables printing warning messages 
+   --suppress-warnings            disables printing warning messages
 
 mmctl import upload
 ~~~~~~~~~~~~~~~~~~~
@@ -3374,7 +3373,7 @@ Upload import files.
 
 .. code-block:: sh
 
-     mmctl import upload [filepath] [flags] 
+     mmctl import upload [filepath] [flags]
 
 **Examples**
 
@@ -3402,7 +3401,7 @@ Upload import files.
    --local                        allows communicating with the server through a unix socket
    --quiet                        prevent mmctl to generate output for the commands
    --strict                       will only run commands if the mmctl version matches the server one
-   --suppress-warnings            disables printing warning messages 
+   --suppress-warnings            disables printing warning messages
 
 mmctl integrity
 ---------------
@@ -3569,7 +3568,7 @@ Remove the current license and use Mattermost Team Edition.
 **Examples**
 
 .. code-block:: sh
-   
+
    mmctl license remove
 
 **Options**
@@ -3695,7 +3694,7 @@ mmctl permissions add
 
 **Description**
 
-Add one or more permissions to an existing role. 
+Add one or more permissions to an existing role.
 
 **Format**
 
@@ -3709,7 +3708,7 @@ Add one or more permissions to an existing role.
 
    mmctl permissions add system_user list_open_teams
    mmctl permissions add system_manager sysconsole_read_user_management_channels
-   
+
 **Options**
 
 .. code-block:: sh
@@ -3740,7 +3739,7 @@ mmctl permissions remove
 
 **Description**
 
-Remove one or more permissions from an existing role. 
+Remove one or more permissions from an existing role.
 
 **Format**
 
@@ -3785,7 +3784,7 @@ mmctl permissions reset
 
 **Description**
 
-Reset the given role's permissions to the default settings and overwrite custom settings. 
+Reset the given role's permissions to the default settings and overwrite custom settings.
 
 **Format**
 
@@ -3844,7 +3843,7 @@ Assign users to a role by username.
 
    # Assign users with usernames 'john.doe' and 'jane.doe' to the role named 'system_admin'.
    mmctl permissions role assign system_admin john.doe jane.doe
-    
+
    # Examples using other system roles
    mmctl permissions role assign system_manager john.doe jane.doe
    mmctl permissions role assign system_user_manager john.doe jane.doe
@@ -3937,7 +3936,7 @@ Unassign users from a role by username. Available in Mattermost Professional and
 **Options**
 
 .. code-block:: sh
-   
+
    -h, --help   help for unassign
 
 **Options inherited from parent commands**
@@ -4130,7 +4129,7 @@ Enable plugins for use on your Mattermost server.
    --quiet                        prevent mmctl to generate output for the commands
    --strict                       will only run commands if the mmctl version matches the server one
    --suppress-warnings            disables printing warning messages
-   
+
 mmctl plugin install-url
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -4174,7 +4173,7 @@ Supply URLs to plugins compressed in a ``.tar.gz`` file. Plugins must be enabled
    --quiet                        prevent mmctl to generate output for the commands
    --strict                       will only run commands if the mmctl version matches the server one
    --suppress-warnings            disables printing warning messages
-   
+
 mmctl plugin list
 ~~~~~~~~~~~~~~~~~~
 
@@ -4280,7 +4279,7 @@ Get all plugins available from the Plugin Marketplace server, merging data from 
 .. code-block:: sh
 
    mmctl plugin marketplace list [flags]
-    
+
 **Examples**
 
 .. code-block:: sh
@@ -5702,7 +5701,7 @@ mmctl user delete
 
 **Description**
 
-Permanently delete users along with all related information including posts from the database. 
+Permanently delete users along with all related information including posts from the database.
 
 .. note::
    Requires the `Enable API User Deletion </configure/configuration-settings.html#enable-api-user-deletion>`__ configuration setting to be enabled. If this configuration setting is disabled, attempting to delete the user using mmctl fails.
@@ -5797,7 +5796,7 @@ Demote a user to a guest.
 
 .. code-block:: sh
 
-  mmctl user demote user1 user2  
+  mmctl user demote user1 user2
 
 **Options**
 
@@ -5818,7 +5817,7 @@ Demote a user to a guest.
    --quiet                        prevent mmctl to generate output for the commands
    --strict                       will only run commands if the mmctl version matches the server one
    --suppress-warnings            disables printing warning messages
-   
+
 mmctl user email
 ~~~~~~~~~~~~~~~~
 
@@ -6177,7 +6176,7 @@ Change the username of the user.
    --quiet                        prevent mmctl to generate output for the commands
    --strict                       will only run commands if the mmctl version matches the server one
    --suppress-warnings            disables printing warning messages
-   
+
 mmctl user verify
 ~~~~~~~~~~~~~~~~~
 

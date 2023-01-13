@@ -248,7 +248,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 Mattermost v7.3.0 contains a medium severity level security fix. [Upgrading](/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
 
 ### Important Upgrade Notes
- - Boards is moving from a channel-based to a role-based permissions system. The migration will happen automatically, but your administrator should perform a backup prior to the upgrade. We removed workspaces, so if you were a member of many boards prior to migration, they will now all appear under the same sidebar. Please see [this document](/welcome/whats-new-in-v72.html) for more details.
+ - Boards is moving from a channel-based to a role-based permissions system. The migration will happen automatically, but your administrator should perform a backup prior to the upgrade. We removed workspaces, so if you were a member of many boards prior to migration, they will now all appear under the same sidebar. Please see [this document](https://docs.mattermost.com/welcome/whats-new-in-v72.html) for more details.
 
 **IMPORTANT:** If you upgrade from a release earlier than v7.2, please read the other [Important Upgrade Notes](/upgrade/important-upgrade-notes.html).
 
@@ -1791,6 +1791,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - Migrated the extraction command to mmctl.
  - Removed the convert channel endpoint to use ``/channels/{channel_id}/privacy`` instead.
  - Removed deprecated ``Posts.ParentId`` in favor of the semantically equivalent ``Posts.RootId``. Also removed ``CommandWebhook.ParentId`` and ``CompliancePost.ParentId`` for the same reason.
+ - Added a field to each of the compliance export formats (CSV, Global Relay, and Actiance) to indicate that a post was viewable via the new permalink preview feature.
  - Removed the following deprecated CLI commands in favor of [mmctl](/manage/mmctl-command-line-tool.html):
    - channel
    - command

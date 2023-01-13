@@ -210,6 +210,11 @@ The location of the Mattermost desktop app configuration file depends on the pla
 - macOS App Store: ``/Users/<username>/Library/Containers/Mattermost/Data/Library/Application Support/Mattermost``
 - Linux: ``~/.config/Mattermost``
 
+.. note::
+
+  - Local configuration data is not automatically removed when uninstalling the desktop app. If you wish to remove all data, you must manually remove the files from the applicable location noted above.
+  - Prior to uninstalling, you can choose to log out of any active sessions. You can terminate active sessions from another Mattermost session in **Profile > Security > View and Logout of Active Sessions**, then select **Log Out**. Desktop app sessions are labeled as **Native Desktop App**.
+
 "Installation has failed" dialog
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

@@ -3,6 +3,16 @@
 
 Configure developer mode by going to **System Console > Environment > Developer**, or by editing the ``config.json`` file as described in the following tables. Changes to configuration settings in this section require a server restart before taking effect.
 
+.. config:setting:: dev-enabletesting
+  :displayname: Enable testing commands (Developer)
+  :systemconsole: Environment > Developer
+  :configjson: .ServiceSettings.EnableTesting
+  :environment: MM_SERVICESETTINGS_ENABLETESTING
+  :description: Enable or disable the ``/test`` slash command.
+
+  - **true**: **(Default)** The ``/test`` slash command is enabled to load test accounts and test data.
+  - **false**:  The ``/test`` slash command is disabled.
+
 Enable testing commands
 ~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -17,6 +27,16 @@ Enable testing commands
 | - **false**:  The ``/test`` slash command is      |                                                                          |
 |   disabled.                                       |                                                                          |
 +---------------------------------------------------+--------------------------------------------------------------------------+
+
+.. config:setting:: dev-enabledeveloper
+  :displayname: Enable developer mode (Developer)
+  :systemconsole: Environment > Developer
+  :configjson: .ServiceSettings.EnableDeveloper
+  :environment: MM_SERVICESETTINGS_ENABLEDEVELOPER
+  :description: Enable or disable developer mode.
+
+  - **true**: **(Default)** Javascript errors are shown in a banner at the top of Mattermost the user interface. Not recommended for use in production.
+  - **false**: Users are not alerted to Javascript errors.
 
 Enable developer mode
 ~~~~~~~~~~~~~~~~~~~~~
@@ -34,8 +54,18 @@ Enable developer mode
 |   Javascript errors.                          |                                                                           |
 +-----------------------------------------------+---------------------------------------------------------------------------+
 
+.. config:setting:: dev-enableclientdebugging
+  :displayname: Enable client debugging (Developer)
+  :systemconsole: Environment > Developer
+  :configjson: .ServiceSettings.EnableClientPerformanceDebugging
+  :environment: MM_SERVICESETTINGS_ENABLECLIENTPERFORMANCEDEBUGGING
+  :description: Enable or disable client-side debugging settings found in *Settings > Advanced > Debugging* for individual users.
+
+  - **true**: Those settings are visible and can be enabled by users.
+  - **false**: **(Default)** Those settings are hidden and disabled.
+
 Enable client debugging
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
 
 *Available in legacy Enterprise Edition E10/E20*
 
@@ -44,13 +74,20 @@ Enable client debugging
 | found in *Settings > Advanced > Debugging* for    | - ``config.json setting``: ``".ServiceSettings.EnableClientPerformanceDebugging": false",`` |
 | individual users.                                 | - Environment variable: ``MM_SERVICESETTINGS_ENABLECLIENTPERFORMANCEDEBUGGING``             |
 |                                                   |                                                                                             |
-| - **false**: Those settings are visible and can   |                                                                                             |
+| - **true**: Those settings are visible and can    |                                                                                             |
 |   be enabled by users.                            |                                                                                             |
 | - **false**: **(Default)** Those settings are     |                                                                                             |
 |   hidden and disabled.                            |                                                                                             |
 +---------------------------------------------------+---------------------------------------------------------------------------------------------+
 | See the `client debugging <https://docs.mattermost.com/channels/channels-settings.html#client-debugging>`__ documentation to learn more.        |
 +---------------------------------------------------+---------------------------------------------------------------------------------------------+
+
+.. config:setting:: dev-allowuntrustedinternalconnections
+  :displayname: Allow untrusted internal connections (Developer)
+  :systemconsole: Environment > Developer
+  :configjson: .ServiceSettings.AllowedUntrustedInternalConnections
+  :environment: MM_SERVICESETTINGS_ALLOWUNTRUSTEDINTERNALCONNECTIONS
+  :description: This setting is a whitelist of local network addresses that can be requested by the Mattermost server.
 
 Allow untrusted internal connections
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -86,7 +123,7 @@ Allow untrusted internal connections
 | - If your network is configured in such a way that publicly-accessible web pages or images are accessed by the Mattermost server using        |
 |   their internal IP address, the hostnames for those servers must be added to this list.                                                      |
 +-----------------------------------------------+-----------------------------------------------------------------------------------------------+
-| **Warning**: This setting is intended to prevent users located outside your local network from using the Mattermost server to request         |    
+| **Warning**: This setting is intended to prevent users located outside your local network from using the Mattermost server to request         |
 | confidential data from inside your network. Care should be used when configuring this setting to prevent unintended access to your local      |
 | network.                                                                                                                                      |
 +-----------------------------------------------+-----------------------------------------------------------------------------------------------+

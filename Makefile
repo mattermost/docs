@@ -24,7 +24,7 @@ python-deps:
 test:
 	pipenv run pytest
 
-# Run `make livehtml` to start sphinx-autobuild
+# Run `make livehtml` to start sphinx-autobuild.
 livehtml:
 	@mkdir -p "$(BUILDDIR)"
 	@$(SPHINXAUTOBUILD) "$(SOURCEDIR)" "$(BUILDDIR)/html" -d "$(BUILDDIR)/doctrees" $(SPHINXOPTS) $(O)
@@ -36,7 +36,7 @@ linkcheck:
 	@mkdir -p "$(BUILDDIR)"
 	@$(SPHINXBUILD) -M $@ -D exclude_patterns=archive/*,process/* "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O) 2>>"$(WARNINGSFILE)"
 
-# Download the latest Compass Icon assets
+# Download the latest Compass Icon assets.
 compass-icons:
 	mkdir -p source/_static/css
 	mkdir -p source/_static/font
