@@ -21,7 +21,6 @@ Latest Mattermost Releases:
  	- This is to avoid plugins crashing with an error about ``findDOMNode`` being called on an unmounted component. While our [starter template](https://github.com/mattermost/mattermost-plugin-starter-template) depended on an external version of ``React``, it did not do the same for ``ReactDOM``. Plugins need to update their ``webpack.config.js`` directives to externalize ``ReactDOM``. For reference, see https://github.com/mattermost/mattermost-plugin-playbooks/pull/1489. Server-side only plugins are unaffected. This change can be done for existing plugins any time prior to upgrading to Mattermost v7.7 and is backwards compatible with older versions of Mattermost. If you run into issues, you can either enable ``ExperimentalSettings.PatchPluginsReactDOM`` or just disable the affected plugin while it's updated.
  - Denormalized ``Threads table`` by adding the ``TeamId`` column. See details for schema changes in the [Important Upgrade Notes](/upgrade/important-upgrade-notes.html).
  - Starting with the Calls version shipping with v7.7, there's now a minimum version requirement when using the external RTCD service. This means that if Calls is configured to use the external service, customers need to upgrade RTCD first to at least version 0.8.0 or the plugin will fail to start.
- - Boards will be served as an in-built product from within Mattermost server instead of a plugin. If you want to disable this, please set the ``MM_FEATUREFLAGS_BoardsProduct`` env var to "false" (without the quotes). While running in product mode, the boards plugin will remain disabled.
 
 **IMPORTANT:** If you upgrade from a release earlier than v7.5, please read the other [Important Upgrade Notes](/upgrade/important-upgrade-notes.html).
 
@@ -62,7 +61,6 @@ Latest Mattermost Releases:
 ### Improvements
 
 #### User Interface (UI)
- - Self-hosted admins can now purchase licenses in-app when service setting ``SelfHostedPurchase`` is true.
  - Implemented progressive image loading in the webapp.
  - When the "Custom Brand Text" is left blank with custom branding enabled, the default text is now hidden.
  - The **Mark as Unread** option was added to the **More** (...) menu for channels in the left-hand side sidebar. Pressing Alt while selecting a channel on the left-hand side now also marks the last post in the channel as unread.
@@ -92,7 +90,6 @@ Latest Mattermost Releases:
  - The import job now logs the progress of the import.
  - Exports to S3 no longer time out.
  - Shared Channels (Experimental) was moved to Professional license.
- - Added a new section in the **System Console** for products. For now, it only contains Boards-specific settings.
 
 ### Bug Fixes
  - Fixed an issue where custom group actions were appearing in the user interface even when the user didn't have the permissions for them.
@@ -145,7 +142,6 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
     - ``SelfHostedPurchase``, to add an option for self-hosted admins to purchase licenses in-app.
  - Under ``ExperimentalSettings`` in the ``config.json``:
     - ``PatchPluginsReactDOM``, to enable the patching of the React DOM library when loading web app plugins so that the plugin uses the version matching the web app.
-  - Added a new config setting section ``ProductSettings``.
 
 ### API Changes
  - The resumable uploads API was exposed to plugins.
