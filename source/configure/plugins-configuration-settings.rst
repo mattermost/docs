@@ -476,7 +476,7 @@ Changing this setting requires a plugin restart to take effect.
 Enable on specific channels
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-*This setting is deprecated from Mattermost v7.7*
+*This setting is not configurable from Mattermost v7.7; it is hidden and always **true***
 
 .. include:: ../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
@@ -497,7 +497,7 @@ Enable on specific channels
 Test mode
 ~~~~~~~~~
 
-*This setting called Enable on all channels up until Mattermost v7.7*
+*This setting was called Enable on all channels up until Mattermost v7.7*
 
 .. include:: ../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
