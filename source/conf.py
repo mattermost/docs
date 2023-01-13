@@ -41,7 +41,8 @@ extensions = [
     "sitemap",
     "sphinx_tabs.tabs",
     "sphinx_copybutton",
-    "compass-icons"
+    "compass-icons",
+    "config-setting-v2",
 ]
 
 sphinx_tabs_disable_tab_closing = True
@@ -1312,6 +1313,12 @@ redirects = {
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#export-output-directory",
 "configure/experimental-configuration-settings.html#export-settings-default-retention-days":
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#export-retention-days",
+"configure/authentication-configuration-settings.html#gitlab":
+	"https://docs.mattermost.com/configure/authentication-configuration-settings.html#gitlab-oauth-2-0-settings",
+"configure/authentication-configuration-settings.html#google":
+	"https://docs.mattermost.com/configure/authentication-configuration-settings.html#google-oauth-2-0-settings",
+"configure/authentication-configuration-settings.html#office-365":
+	"https://docs.mattermost.com/configure/authentication-configuration-settings.html#office-365-oauth-2-0-settings",
 
 # Deploy redirects
 "deploy/mobile-apps-faq.html":
@@ -2212,6 +2219,14 @@ redirects = {
 	"https://docs.mattermost.com/playbooks/customize-a-playbook.html",
 "playbooks/refining-and-improving.html":
 	"https://docs.mattermost.com/playbooks/metrics-and-goals.html",
+"playbooks/customize-a-playbook":
+	"https://docs.mattermost.com/playbooks/work-with-playbooks.html",
+"playbooks/customize-a-run":
+	"https://docs.mattermost.com/playbooks/work-with-runs.html",
+"playbooks/reusing-and-sharing-playbooks":
+	"https://docs.mattermost.com/playbooks/share-and-collaborate.html",
+"playbooks/playbook-permissions":
+	"https://docs.mattermost.com/playbooks/share-and-collaborate.html#playbooks-permissions",
 
 # Process redirects
 # The process directory and its contents have been archived in FY23 Q2 and all applicable content has been moved from docs.mm.com to handbook.mm.com.

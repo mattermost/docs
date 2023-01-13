@@ -64,7 +64,7 @@ Limitations
 Configuration
 -------------
 
-For Mattermost self-hosted customers, the calls plugin is pre-packaged, installed, and enabled. Configuration to allow end-users to use it can be found in the `System Console </configure/configuration-settings.html#calls-beta>`_.
+For Mattermost self-hosted customers, the calls plugin is pre-packaged, installed, and enabled. Configuration to allow end-users to use it can be found in the `System Console </configure/plugins-configuration-settings.html#calls-beta>`_.
 
 Modes of operation
 ------------------
