@@ -671,6 +671,13 @@ The URL to a running `rtcd <https://github.com/mattermost/rtcd>`__ service insta
 
 This is an optional field. Changing this setting requires a plugin restart to take effect.
 
+.. config:setting:: plugins-enablecallrecordings
+  :displayname: Enable call recordings (Plugins - Calls)
+  :systemconsole: Plugins > Calls
+  :configjson: N/A
+  :environment: N/A
+  :description: Allow call hosts to record meeting video and audio. 
+
 Enable call recordings (beta)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -683,6 +690,13 @@ Enable call recordings (beta)
 
 Changing this setting requires a plugin restart to take effect.
 
+.. config:setting:: plugins-jobserviceurl
+  :displayname: Job service URL (Plugins - Calls)
+  :systemconsole: Plugins > Calls
+  :configjson: N/A
+  :environment: N/A
+  :description: The URL to a running job service where all the processing related to recordings happens.
+  
 Job service URL
 ~~~~~~~~~~~~~~~
 
@@ -693,6 +707,13 @@ The URL to a running job service where all the processing related to recordings 
 
 This is a required field. Changing this setting requires a plugin restart to take effect.
 
+.. config:setting:: plugins-maximumcallrecordingduration
+  :displayname: Maximum call recording duration (Plugins - Calls)
+  :systemconsole: Plugins > Calls
+  :configjson: N/A
+  :environment: N/A
+  :description: The maximum duration of a call recording in minutes.
+  
 Maximum call recording duration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
