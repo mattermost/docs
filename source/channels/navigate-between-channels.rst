@@ -7,7 +7,7 @@ Navigate channels
 Navigate between channels
 --------------------------
 
-Use the **Find channel** option in the channel sidebar, or press :kbd:`Ctrl` :kbd:`K` on Windows or Linux, or :kbd:`⌘` :kbd:`K` on Mac to visit other channels, or to review `member availability </welcome/set-your-status-availability.html>`__ at a glance.
+Using Mattermost in a web browser or the desktop app, you can navigate between channels by selecting the **Find channel** option in the channel sidebar, or by pressing :kbd:`Ctrl` :kbd:`K` on Windows or Linux, or :kbd:`⌘` :kbd:`K` on Mac. The Find channels screen also displays `member availability </welcome/set-your-status-availability.html>`__ at a glance.
 
     .. image:: ../images/switch-channels.png
         :alt: Navigate between channels and review member availability.
@@ -15,7 +15,7 @@ Use the **Find channel** option in the channel sidebar, or press :kbd:`Ctrl` :kb
 Return to recently viewed channels
 -----------------------------------
 
-Use the **History** arrows at the top of the sidebar to move back and forth through your channel history. 
+Using a web browser or the desktop app, use the **History** arrows at the top of the sidebar to move back and forth through your channel history. 
 
 - Select the left arrow to go back one page. 
 - Select the right arrow to go forward one page.

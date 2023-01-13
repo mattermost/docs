@@ -8,7 +8,7 @@ Anyone can create public channels, private channels, direct messages, and group 
   
 .. tabs::
 
-  .. tab:: Web browser/desktop app
+  .. tab:: Desktop
       
     **To create a public or private channel** 
         
@@ -39,21 +39,21 @@ Anyone can create public channels, private channels, direct messages, and group 
      - If you want to add more than seven users to a group message, create a private channel instead.
 
       
-  .. tab:: Mobile app
+  .. tab:: Mobile
    
-    **To create a public or private channel in the mobile app**
+    **To create a public or private channel**
         
-        Select the **+** symbol in the top right corner of the app, then select **Create New Channel**. Channels are created as public by default. If you want to make the channel private select the **Make Private** option.
+    Tap the **+** symbol in the top right corner of the app, then select **Create New Channel**. Channels are created as public by default. If you want to create a private channel, tap the **Make Private** option.
 
-    **To start a direct or group message in the mobile app**
+    **To start a direct or group message**
     
-        Select the **+** symbol in the top right corner of the app, then select **Open a Direct Message**. You can select one person for a direct message or multiple people for a group message. Select **Start** to start the conversation.
+    Tap the **+** symbol in the top right corner of the app, then select **Open a Direct Message**. You can select one person for a direct message or up to seven people for a group message. Tap **Start** to start the conversation.
 
 .. tip::
 
   **Automate with channel actions**
   
-  The person who creates a channel automatically becomes the channel admin. Channel admins can access **Channel Actions** from the channel name drop-down menu in the center pane to set up automatic actions when users `join the channel </channels/join-leave-channels.html#join-a-channel>`__ or `post a message </channels/send-messages.html>`__ to the channel.
+  The person who creates a channel automatically becomes the channel admin. Channel admins using Mattermost in a web browser or the desktop app can access **Channel Actions** from the channel name drop-down menu in the center pane to set up automatic actions when users `join the channel </channels/join-leave-channels.html#join-a-channel>`__ or `post a message </channels/send-messages.html>`__ to the channel.
   
   Automatic actions include:
   

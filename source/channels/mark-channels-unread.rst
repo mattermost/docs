@@ -1,4 +1,4 @@
-Mark channels as unread
+Mark messages as unread
 =======================
 
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst

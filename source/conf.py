@@ -334,6 +334,8 @@ redirects = {
 	"https://docs.mattermost.com/boards/migrate-to-boards.html",
 
 # Channels redirects
+"channels/find-channels.html":
+        "https://docs.mattermost.com/channels/browse-channels.html",
 "channels/sign-in.html":
         "https://docs.mattermost.com/welcome/log-in.html",
 "channels/organize-conversations.html#enable-collapsed-reply-threads-beta":
@@ -2341,7 +2343,11 @@ redirects = {
 "upgrade/upgrading-mattermost-server.html#upgrade-from-releases-older-than-v5-35":
         "https://docs.mattermost.com/upgrade/prepare-to-upgrade-mattermost.html#upgrade-from-releases-older-than-v5-35",
 "upgrade/upgrading-mattermost-server.html#upgrade-high-availability-deployments":
-        "https://docs.mattermost.com/upgrade/prepare-to-upgrade-mattermost.html#upgrade-high-availability-deployments"
+        "https://docs.mattermost.com/upgrade/prepare-to-upgrade-mattermost.html#upgrade-high-availability-deployments",
+
+# Welcome redirects
+"welcome/manage-desktop-app-server-connections.html":
+        "https://docs.mattermost.com/welcome/manage-multiple-server-connections.html"
 
 # End of redirects. The last redirect above should NOT end in a comma.
 

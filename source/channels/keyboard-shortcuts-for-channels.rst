@@ -4,7 +4,7 @@ Keyboard shortcuts for Channels
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Keyboard shortcuts for Mattermost Channels help you make a more efficient use of your keyboard.
+Keyboard shortcuts for Mattermost Channels help you make more efficient use of your keyboard in a web browser or the desktop app.
 
 .. tip::
 

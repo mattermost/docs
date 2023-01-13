@@ -59,13 +59,13 @@ Customize your Mattermost experience
    Set your status and availability </welcome/set-your-status-availability>
    Customize your Mattermost theme </welcome/customize-your-theme>
    Customize your desktop app experience </welcome/customize-desktop-app-experience>
-   Manage desktop app server connections </welcome/manage-desktop-app-server-connections>
+   Manage multiple app server connections </welcome/manage-multiple-server-connections>
 
 * :doc:`Manage your Mattermost profile </welcome/manage-your-profile>` - Configure your Mattermost profile and security preferences.
 * :doc:`Set your status and availability </welcome/set-your-status-availability>` - Let your team know whether you're available.
 * :doc:`Customize your Mattermost theme </welcome/customize-your-theme>` - Customize your Mattermost user interface to suit your preferences. 
 * :doc:`Customize your desktop app experience </welcome/customize-desktop-app-experience>` - Learn about additional options in the desktop app you can customize.
-* :doc:`Manage desktop app server connections </welcome/manage-desktop-app-server-connections>` - Learn how to connect to multiple Mattermost servers using the Mattermost desktop app. 
+* :doc:`Manage multiple app server connections </welcome/manage-multiple-server-connections>` - Learn how to connect to multiple Mattermost servers using the Mattermost desktop app. 
 
 Mattermost interface changes
 ----------------------------

@@ -33,7 +33,7 @@ Work with channels
    Join and leave channels </channels/join-leave-channels>
    Start a call </channels/make-calls>
    Manage channel members </channels/manage-channel-members>
-   Find channels </channels/find-channels> 
+   Browse channels </channels/browse-channels> 
    Navigate between channels </channels/navigate-between-channels>
    Mark channels as favorites </channels/favorite-channels>
    Mark channels as unread </channels/mark-channels-unread>
@@ -50,7 +50,7 @@ Work with channels
 * :doc:`Join and leave channels </channels/join-leave-channels>` - Learn how to start or stop being a channel member.
 * :doc:`Start a call </channels/make-calls>` - Start a call that channel participants can join.
 * :doc:`Manage channel members </channels/manage-channel-members>` - Add and remove users from channels.
-* :doc:`Find channels </channels/find-channels>` - Find all available public channels you can join, and all channels you're a member of.
+* :doc:`Browse channels </channels/browse-channels>` - Browse all available public channels you can join, and all channels you're a member of.
 * :doc:`Navigate between channels </channels/navigate-between-channels>` - Learn how to navigate between channels.
 * :doc:`Mark channels as favorites </channels/favorite-channels>` - Mark commonly visited channels as favorites.
 * :doc:`Mark channels as unread </channels/mark-channels-unread>` - Mark channels unread to return to messages later.
