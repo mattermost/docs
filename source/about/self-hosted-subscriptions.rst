@@ -4,11 +4,23 @@ Self-hosted subscriptions
 Buy a subscription
 ------------------
 
-You can buy a Mattermost subscription via the `Customer Portal page <https://customers.mattermost.com>`__. If you haven't created an account yet, follow the steps provided. Otherwise, you can log in with your existing credentials. When you buy a Mattermost subscription for a self-hosted deployment, you'll receive an activation license.
+From Mattermost v7.7 you can buy a Mattermost subscription from within Mattermost:
 
-Once you're logged in:
+1. In Mattermost, select **View Plans** in the global header or via **System Console > View plans**.
+2. Select **Upgrade**.
+3. Provide payment details. 
+4. Enter the number of user seats you're purchasing. This number has to be equal to, or greater than, the current number of active users in your Mattermost deployment.
+5. Select **Upgrade**.
 
-1. Choose a subscription, and enter the number of users in the **Order summary** field. This indicates the number of users you can have on this subscription's instance. For more information about how users are defined, see our `FAQ <https://mattermost.com/pricing-self-managed/#faq>`__.
+When your purchase is complete, a license is automatically applied to instance and your subscription is active immediately.
+
+.. note::
+
+If your deployment doesn't have internet access, please continue to use the Customer Portal or, contact our sales team for assistance.
+
+If you're using Mattermost v7.6 and below, you can buy a Mattermost subscription via the `Customer Portal page <https://customers.mattermost.com>`__. If you haven't created an account yet, follow the steps provided.
+
+1. Choose a subscription, and enter the number of users in the **Order summary** field. This indicates the number of active users you can have in your deployment. For more information about how users are defined, see our `FAQ <https://mattermost.com/pricing-self-managed/#faq>`__.
 2. (Optional for Enterprise subscriptions) You can add `Premier Support <https://mattermost.com/support/>`__. This is an additional cost and is automatically added to your order total.
 3. Select **Next Step**.
 4. Enter your billing and payment information.
@@ -17,14 +29,13 @@ Once you're logged in:
 7. Choose **Download the license key**.
 
 .. note::
+   
    If you experience any problems with your transaction, please contact our Support team via the Customer Portal. If possible, keep the error message/number that you received on hand as it may help with their investigation.
 
-Once downloaded, your Mattermost license is ready to use and is applied via the Mattermost System Console.
+Once downloaded, your Mattermost license is ready to use and is applied via the Mattermost System Console. System Admin access is required in order to apply the license. If you're not a Mattermost System Admin, contact your organization's Mattermost System Admin for assistance.
 
 .. image:: ../images/mattermost_enterprise_license.png
 	:alt: Apply the Mattermost Enterprise license using the System Console.
-
-System Admin access is required in order to apply the license. If you're not a Mattermost System Admin, contact your organization's Mattermost System Admin for assistance.
 
 **If you already have Mattermost installed**
 
@@ -34,7 +45,7 @@ You can also use the `mmctl </manage/mmctl-command-line-tool.html#mmctl-license>
 
 **If you don't have Mattermost installed**
 
-If you haven't yet installed and deployed a Mattermost instance, visit the `Deployment Guide </deploy/deployment-overview.html>`__ to get started. For information on creating a System Admin account, visit our `Administrator Tasks </getting-started/admin-onboarding-tasks.html>`__ documentation.
+If you haven't yet installed and deployed Mattermost, visit the `Deployment Guide </deploy/deployment-overview.html>`__ to get started. For information on creating a System Admin account, visit our `Administrator Tasks </getting-started/admin-onboarding-tasks.html>`__ documentation.
 
 View subscription information
 -----------------------------
@@ -58,7 +69,9 @@ Subscription and licenses not purchased via the Customer Portal won't be listed.
 Add more users to your subscription
 -----------------------------------
 
-To add more users to your existing subscription, `contact us <https://mattermost.com/contact-us/>`__.
+From Mattermost v7.7, you can add additional users to your subscription via the Customer Portal.
+
+If you're using Mattermost v7.6 and below, to add more users to your existing subscription, `contact us <https://mattermost.com/contact-us/>`__.
 
 When you subscribe to an annual plan with Mattermost, you agree to provide quarterly reports of the actual number of registered users within your system if you're above the amount you subscribed in your purchase order. A registered user is a user who has an account in a workspace and does not show as *Inactive* in **System Console > User Management > Users**.
 
