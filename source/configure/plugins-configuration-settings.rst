@@ -12,7 +12,7 @@ Both self-hosted and Cloud admins can access the following configuration setting
 - `Apps <#apps>`__
 - `Autolink <#autolink>`__
 - `AWS SNS <#aws-sns>`__
-- `Calls (beta) <#calls-beta>`__
+- `Calls <#calls>`__
 - `Channel Export <#channel-export>`__
 - `Demo Plugin <#demo-plugin>`__
 - `GIF commands <#gif-commands>`__
@@ -100,9 +100,9 @@ Automatic prepackaged plugins
 Enable Marketplace
 ~~~~~~~~~~~~~~~~~~
 
-**True**: Enables Plugin Marketplace on your Mattermost server for all System Admins.
+**True**: Enables Plugin Marketplace on your Mattermost server for all system admins.
 
-**False**: Disables Plugin Marketplace on your Mattermost server for all System Admins.
+**False**: Disables Plugin Marketplace on your Mattermost server for all system admins.
 
 +--------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableMarketplace": true`` with options ``true`` and ``false``. |
@@ -131,7 +131,7 @@ Enable remote Marketplace
 This setting only takes effect when ``"EnableMarketplace": true``.
 
 .. note::
-   For the Remote Marketplace to operate, each host running the Mattermost service requires network access to the marketplace service endpoint (hosted at ``https://api.integrations.mattermost.com``, see `Marketplace URL <#marketplace-url>`__ ).
+   For the remote marketplace to operate, each host running the Mattermost service requires network access to the marketplace service endpoint (hosted at ``https://api.integrations.mattermost.com``, see `Marketplace URL <#marketplace-url>`__ ).
 
 .. config:setting:: plugins-marketplaceurl
   :displayname: Marketplace URL (Plugins - Management)
@@ -357,7 +357,7 @@ Apply plugin to updated posts as well as new posts
 Admin user IDs
 ~~~~~~~~~~~~~~
 
-Specify users authorized to administer the plugin in addition to System Admins. Separate multiple user IDs with commas.
+Specify users authorized to administer the plugin in addition to system admins. Separate multiple user IDs with commas.
 
 .. tip::
 
@@ -426,8 +426,8 @@ Generate a token to validate incoming requests from AWS SNS by selecting ``Regen
 
 ----
 
-Calls (Beta)
-------------
+Calls
+-----
 
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
@@ -467,43 +467,45 @@ The UDP port the RTC server will listen on. All calls traffic will be served thr
 
 Changing this setting requires a plugin restart to take effect.
 
-.. config:setting:: plugins-callsspecificchannels
+.. config:setting:: plugins-enableonspecificchannels
   :displayname: Enable on specific channels (Plugins - Calls)
   :systemconsole: Plugins > Calls
   :configjson: N/A
   :environment: N/A
-
-  - **true**: Allow Channel Admins to enable or disable calls on specific channels.
-  - **false**: Only System Admins will be able to enable or disable calls on specific channels.
+  :description: Manage who can enable or disable calls on specific channels (deprecated from Mattermost v7.7)
 
 Enable on specific channels
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+*Admins can't configure this setting from Mattermost v7.7; it's hidden and always enabled*
+
 .. include:: ../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
-**True**: Allow Channel Admins to enable or disable calls on specific channels. It also allows participants in DMs/GMs to enable or disable calls.
+**True**: Allow channel admins to enable or disable calls on specific channels. It also allows participants in DMs/GMs to enable or disable calls.
 
-**False**: Only System Admins will be able to enable or disable calls on specific channels.
+**False**: Only system admins will be able to enable or disable calls on specific channels.
 
-.. config:setting:: plugins-callsallchannels
-  :displayname: Enable on all channels (Plugins - Calls)
+.. config:setting:: plugins-testmode
+  :displayname: Test mode (Plugins - Calls)
   :systemconsole: Plugins > Calls
   :configjson: N/A
   :environment: N/A
+  :description: A setting to allow system admins to test calls before making them available across the deployment. This setting was called **Enable on all channels** up until Mattermost v7.7.
 
-  - **true**: Enable calls by default on all channels.
-  - **false**: Calls have to be explicitly enabled on channels.
+Test mode
+~~~~~~~~~
 
-Enable on all channels
-~~~~~~~~~~~~~~~~~~~~~~
+*This setting was called Enable on all channels up until Mattermost v7.7*
 
 .. include:: ../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
-**True**: Enable calls by default on all channels.
+**True**: When test mode is enabled, only system admins are able to start calls in channels. 
 
-**False**: Calls have to be explicitly enabled on channels.
+This allows testing to confirm calls are working as expected. When a user tries to start a call, they'll be prompted to ask their admin to complete the setup and switch to live mode in the System Console. Additionally, when a system admin starts a call, they're asked to confirm that calls are working as expected before switching to live mode in the System Console.
+
+**False**: All team members can start calls in channels.
 
 .. config:setting:: plugins-callsmaxcallparticipants
   :displayname: Max call participants (Plugins - Calls)
@@ -669,6 +671,59 @@ The URL to a running `rtcd <https://github.com/mattermost/rtcd>`__ service insta
 
 This is an optional field. Changing this setting requires a plugin restart to take effect.
 
+.. config:setting:: plugins-enablecallrecordings
+  :displayname: Enable call recordings (Plugins - Calls)
+  :systemconsole: Plugins > Calls
+  :configjson: N/A
+  :environment: N/A
+  :description: Allow call hosts to record meeting video and audio. 
+
+Enable call recordings (beta)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: ../_static/badges/ent-selfhosted-only.rst
+  :start-after: :nosearch:
+
+**True**: Allow call hosts to record meeting video and audio. Recordings include the entire call window view along with participants' audio track and any shared screen video. Recordings are stored in Mattermost.
+
+**False**: (Default) Call recording functionality is not available to hosts.
+
+Changing this setting requires a plugin restart to take effect.
+
+.. config:setting:: plugins-jobserviceurl
+  :displayname: Job service URL (Plugins - Calls)
+  :systemconsole: Plugins > Calls
+  :configjson: N/A
+  :environment: N/A
+  :description: The URL to a running job service where all the processing related to recordings happens.
+  
+Job service URL
+~~~~~~~~~~~~~~~
+
+.. include:: ../_static/badges/ent-selfhosted-only.rst
+  :start-after: :nosearch:
+
+The URL to a running job service where all the processing related to recordings happens. The recorded files produced are stored in Mattermost.
+
+This is a required field. Changing this setting requires a plugin restart to take effect.
+
+.. config:setting:: plugins-maximumcallrecordingduration
+  :displayname: Maximum call recording duration (Plugins - Calls)
+  :systemconsole: Plugins > Calls
+  :configjson: N/A
+  :environment: N/A
+  :description: The maximum duration of a call recording in minutes.
+  
+Maximum call recording duration
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: ../_static/badges/ent-selfhosted-only.rst
+  :start-after: :nosearch:
+
+The maximum duration of a call recording in minutes. The default is 60 with a maximum of 180. A recording of a 60-minute call will result in a file of about 700 MB.
+
+This is a required value.
+
 ----
 
 Channel export
@@ -813,7 +868,7 @@ Specify the GIF provider as GIPHY, Tenor, or Gfycat.
 Giphy/Tenor API key
 ~~~~~~~~~~~~~~~~~~~
 
-Configure your own API Key when specifying the GIF Provider as GIPHY or Tenor. An API key is not required for Gfycat.
+Configure your own API key when specifying the GIF Provider as GIPHY or Tenor. An API key is not required for Gfycat.
 
 To get your own API key, see the `GIPHY Developers Quick Start <https://developers.giphy.com/docs/api/#quick-start-guide>`__ documentation, or the `Tenor Developer <https://tenor.com/developer/keyregistration>`__ documentation for details.
 
@@ -1032,7 +1087,8 @@ Zoom
 This plugin allows team members to initiate a Zoom meeting with a single click. All participants in a channel can easily join the Zoom meeting and the shared link is updated when the meeting is over. See the `Zoom Conferencing Plugin <https://mattermost.gitbook.io/plugin-zoom/>`__ product documentation for details.
 
 .. note::
-  To set up this plugin, you need to create a Zoom App using a Zoom Administrator account. See the `Zoom Configuration <https://mattermost.gitbook.io/plugin-zoom/installation/zoom-configuration>`__ documentation for details.
+
+  To set up this plugin, you need to create a Zoom App using a Zoom Administrator account. See the `Zoom configuration <https://mattermost.gitbook.io/plugin-zoom/installation/zoom-configuration>`__ documentation for details. 
 
 Access the following configuration settings in the System Console by going to **Plugins > Zoom**.
 
@@ -1074,7 +1130,7 @@ Specify the URL for a self-hosted private cloud or on-premise Zoom server. For e
 Zoom API URL
 ~~~~~~~~~~~~
 
-Specify the API URL for a self-hosted private cloud or on-premise Zoom server. For example, ``https://api.yourzoom.com/v2``. Leave blank if you're using Zoom's vendor-hosted SaaS service.
+Specify the API URL for a self-hosted private cloud or on-premises Zoom server. For example, ``https://api.yourzoom.com/v2``. Leave blank if you're using Zoom's vendor-hosted SaaS service.
 
 .. config:setting:: plugins-zoomoauth
   :displayname: Enable OAuth (Plugins - Zoom)
@@ -1108,9 +1164,9 @@ Enable OAuth
 OAuth by account level app (Beta)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**True**: Only an account administrator has to log in. The rest of the users will use their e-mail to log in.
+**True**: Only an account administrator has to log in. The rest of the users will use their email to log in.
 
-**False**: All users must use their e-mail to log in.
+**False**: All users must use their email to log in.
 
 .. config:setting:: plugins-zoomoauthclientid
   :displayname: Zoom OAuth client ID (Plugins - Zoom)
