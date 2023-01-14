@@ -472,7 +472,7 @@ Changing this setting requires a plugin restart to take effect.
   :systemconsole: Plugins > Calls
   :configjson: N/A
   :environment: N/A
-  :description: Manage who enable or disable calls on specific channels (deprecated from Mattermost v7.7)
+  :description: Manage who can enable or disable calls on specific channels (deprecated from Mattermost v7.7)
 
 Enable on specific channels
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
