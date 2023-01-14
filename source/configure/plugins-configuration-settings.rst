@@ -477,7 +477,7 @@ Changing this setting requires a plugin restart to take effect.
 Enable on specific channels
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-*This setting is not configurable from Mattermost v7.7; it is hidden and always true*
+*Admins can't configure this setting from Mattermost v7.7; it's hidden and always enabled*
 
 .. include:: ../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
