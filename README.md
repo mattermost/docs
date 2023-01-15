@@ -57,17 +57,26 @@ Once the review process is complete, and depending on the type of issue it is (e
 
 ## Build locally
 
-If you've downloaded the `mattermost/docs` repository and are editing Mattermost documentation on your local machine, you can generate the HTML files from markdown in the `/source` directory. You can review your changes before you commit them or create pull requests.
+If you've downloaded the `mattermost/docs` repository and are editing Mattermost documentation on your local machine, you can generate the HTML files from markdown in the `source` directory. You can review your changes before you commit them or create pull requests.
 
-**Note:** Terminal commands can be executed on Linux, Mac, and Windows (using Powershell).
+**Note:** Terminal commands can be executed on Linux, Mac, and Windows (using PowerShell).
+
+### Build prerequisites
+
+The following software is required to build the documentation:
+
+- Git [[download]](https://git-scm.com/downloads)
+- Python 3.9 or later [[download]](https://www.python.org/downloads/)
+
+### Build instructions
 
 1. Open a terminal window, then clone a forked copy of the documentation repository:
-    ```sh
+    ```shell
     git clone https://github.com/mattermost/docs.git
     ```
 
 2. In the terminal window, navigate into the cloned repository:
-    ```sh
+    ```shell
     cd docs
     ```
 
@@ -75,12 +84,12 @@ If you've downloaded the `mattermost/docs` repository and are editing Mattermost
 
     For Mac users where Homebrew is installed:
     ```shell
-    brew install pipenv  
+    brew install pipenv
     ```
 
     For other operating systems:
     ```shell
-    pip install --user pipenv 
+    pip install --user pipenv
     ```
 
 4. Install required Python packages:
@@ -94,10 +103,15 @@ If you've downloaded the `mattermost/docs` repository and are editing Mattermost
     - Use `make clean html` to delete all static HTML output in the `/build` directory and re-build all files. This command is particularly useful when you're making changes to the LHS navigation pane and want to ensure you're not reviewing cached results.
     - Use `make livehtml` to review a live preview published to `http://127.0.0.1:8000` that automatically updates as new changes are saved in your local IDE.
 
-6. When working with static build results, navigate to the `/build` directory:
-    ```sh
-    cd /build
-    ```
-7. Then, preview your changes by opening the `/source/html/index.html` file.
+   Windows users will require [GNU Make](https://gnuwin32.sourceforge.net/packages/make.htm) installed for the above commands to work correctly. If GNU Make is not installed, please substitute `CMD /C make.bat` for `make` in the above commands to use the Windows command interpreter. For example `make html` will become `CMD /C make.bat html` on Windows.
 
-Build errors are written to the `/build/warning.log`. 
+   Note: When using the `CMD /C make.bat` substitution, only a single target may be specified. Instead of running `CMD /C make.bat clean html`, each target must be run seperately. For example, `CMD /C make.bat clean` followed by `CMD /C make.bat html`. 
+
+6. When working with static build results, navigate to the `build` directory:
+    ```sh
+    cd build
+    ```
+   
+7. Then, preview your changes by opening the `source/html/index.html` file.
+
+Build errors are written to the `build/warnings.log` file. 
