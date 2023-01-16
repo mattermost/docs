@@ -84,7 +84,7 @@ Mattermost v7.7.0 contains low severity level security fixes. [Upgrading](https:
  - Crashing jobs now sets the job status to "failed".
  - Optimized ``ThreadStore.MarkAllAsUnreadByTeam``.
  - SQL migrations for PostgreSQL will now filter by the current schema name when checking for information from the ``information_schema.columns`` view. This does not affect anything because usually there's only one installation in a given database, but this gives flexibility to users to store multiple Mattermost instances under a single database.
- - **My Insights** and OpenId Connect were added to the Free plan.
+ - **My Insights** was added to the Free plan.
  - Team scheme APIs are now allowed to be administered with a Professional plan.
  - A global banner as well as a notice banner are displayed to admins on the **Invite** modal and on **System Console > Site Statistics > Total Activated Users** page when the workspace exceeds the maximum number of users allowed. If the number of actual users exceeds the number of paid users by less than 5%, the banner is dismissible. If the number of actual users exceeds the number of paid users by more than 10%, the banner is non-dismissible until the license seat count has been updated.
  - For admins to see if the amount of users exceeds the license seats, a warning is now shown in the **System Console > Team Statistics** page.
