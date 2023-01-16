@@ -32,7 +32,7 @@ Desktop apps
     :header: "Operating System", "Self-Hosted Technical Requirement", "Cloud Technical Requirement"
 
     "Windows", "Windows 8.1+", "Windows 8.1+"
-    "Mac", "macOS 10.14+", "macOS 11+"
+    "Mac", "macOS 11+", "macOS 11+"
     "Linux", "Ubuntu LTS releases 18.04 or later", "Ubuntu LTS releases 18.04 or later"
 
 Though not officially supported, the Linux desktop app also runs on RHEL/CentOS 7+.

@@ -4,7 +4,7 @@ Keyboard shortcuts for Channels
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Keyboard shortcuts for Mattermost Channels help you make a more efficient use of your keyboard.
+Keyboard shortcuts for Mattermost Channels help you make more efficient use of your keyboard in a web browser or the desktop app.
 
 .. tip::
 
@@ -29,6 +29,8 @@ The following keyboard shortcuts are supported in all `supported browsers </inst
 +-------------------------------------+------------------------------+----------------------------------------------------------------------------------+
 | :kbd:`Alt` :kbd:`Shift` :kbd:`↓`    | :kbd:`⌥` :kbd:`⇧` :kbd:`↓`   | Next channel or direct message in the channel sidebar with unread messages.      |
 +-------------------------------------+------------------------------+----------------------------------------------------------------------------------+
+| :kbd:`Alt` + select channel         | :kbd:`⌥` + select channel    | Mark the last post in the channel as unread.                                     |
++-------------------------------------+------------------------------+----------------------------------------------------------------------------------+
 | :kbd:`Ctrl` :kbd:`K`                | :kbd:`⌘` :kbd:`K`            | Open the **Find Channels** dialog.                                               |
 +-------------------------------------+------------------------------+----------------------------------------------------------------------------------+
 | :kbd:`Ctrl` :kbd:`Shift` :kbd:`K`   | :kbd:`⌘` :kbd:`⇧` :kbd:`K`   | Open the **Direct Messages** dialog.                                             |
@@ -46,6 +48,8 @@ The following keyboard shortcuts are supported in all `supported browsers </inst
 | :kbd:`Ctrl` :kbd:`Shift` :kbd:`F`   | :kbd:`⌘` :kbd:`⇧` :kbd:`F`   | Move focus to the **Search** field and search the current channel.               |
 +-------------------------------------+------------------------------+----------------------------------------------------------------------------------+
 | :kbd:`Ctrl` :kbd:`Shift` :kbd:`U`   | :kbd:`⌘` :kbd:`⇧` :kbd:`U`   | Find unread channels or search through all channels.                             |
++-------------------------------------+------------------------------+----------------------------------------------------------------------------------+
+| :kbd:`Ctrl` :kbd:`Shift` :kbd:`I`   | :kbd:`⌘` :kbd:`⇧` :kbd:`I`   | Open or close **Channel Info** details in the right-hand sidebar.                |
 +-------------------------------------+------------------------------+----------------------------------------------------------------------------------+
 
 File upload shortcuts

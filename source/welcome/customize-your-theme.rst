@@ -6,21 +6,27 @@ Customize your Mattermost theme
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-The colors of the Mattermost user interface are customizable. 
+.. |gear-icon| image:: ../images/settings-outline_F08BB.svg
+  :alt: Use the Settings icon to customize your Mattermost user experience.
+
+The colors of the Mattermost user interface are customizable. You can `import your theme colors from a Slack instance <#import-theme-from-slack>`__, design your own `custom theme <#custom-themes>`__ colors, or choose from `five standard themes <#standard-themes>`__ designed by the Mattermost team. Your theme changes apply to all teams you're a member of, and are visible across all Mattermost clients.
+
+.. tip::
+  
+  With Mattermost Enterprise, you can choose to have a different theme per team.
+
+
+To customize your Mattermost theme:
 
 .. tabs::
 
-  .. tab:: Mattermost v6.0 onwards
+  .. tab:: Desktop
 
-      In Mattermost v6.0, navigate to **Settings > Display > Theme**.
+    Select the **Settings** |gear-icon| icon, then go to **Display > Theme**.
       
-  .. tab:: Mattermost v5.39 and earlier
+  .. tab:: Mobile
 
-      In Mattermost versions up to 5.39, navigate to **Settings > Display > Theme**.
-     
-You can import your theme colors from Slack, customize the colors yourself, or choose from four standard themes designed by the Mattermost team.
-
-Any color changes you make are applied to all teams that you belong to. In Mattermost Enterprise, you can choose to apply the theme to the current team only, allowing you to have a different theme for each team.
+    Tap your profile picture, and select **Settings**, then go to **Display > Theme**.
 
 Import theme from Slack
 -----------------------
@@ -39,7 +45,9 @@ Your custom theme changes are applied in Mattermost as you make them. Select **S
 Standard themes
 ---------------
 
-Select **Theme Colors** to choose from four standard themes designed by the Mattermost team. To make custom adjustments on the four standard theme colors, select a standard theme, then select **Custom Theme** to further customize that standard theme based on your preferences. Select **Save** to confirm your theme changes.
+Select **Theme Colors** to choose from five standard themes designed by the Mattermost team. 
+
+Using Mattermost in a browser or the desktop app, you can make custom adjustments to the five standard theme colors by selecting a standard theme, then selecting **Custom Theme** to further customize that standard theme based on your preferences. Select **Save** to confirm your theme changes.
 
 Sidebar styles
 ~~~~~~~~~~~~~~
@@ -104,34 +112,12 @@ Button Text
 Export a custom theme
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-You can export a theme from Mattermost by copying the theme values from the Custom Theme menu.
-
-.. tabs::
-
-  .. tab:: Mattermost v6.0 onwards
-
-      In Mattermost v6.0, navigate to **Settings > Display > Theme**, select **Custom Theme** and then select **Copy Theme Colors**.
-      
-  .. tab:: Mattermost v5.39 and earlier
-
-      In Mattermost versions up to 5.39, navigate to **Settings > Display > Custom Theme**, then select **Copy Theme Colors** to export the theme's color values.
+Export a theme from Mattermost by copying the theme values from the Custom Theme menu.
   
 Import a custom theme
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-You can import a theme into Mattermost by pasting the theme values into the Custom Theme menu.
-
-Copy existing theme values, then go to: 
-
-.. tabs::
-
-  .. tab:: Mattermost v6.0 onwards
-
-      In Mattermost v6.0, navigate to **Settings > Display > Theme**, select **Custom Theme** and paste the theme values into the **Copy and paste to share theme colors** field. 
-
-  .. tab:: Mattermost v5.39 and earlier
-
-      In Mattermost versions up to 5.39, navigate to **Settings > Display > Custom Theme** to paste the theme values into the **Copy and paste to share theme colors** field. Select **Save** to confirm your theme changes.
+Import a theme into Mattermost by pasting the theme values into the Custom Theme menu. Copy existing theme values, then paste the theme values into the **Copy and paste to share theme colors** field. Select **Save** to confirm your theme changes.
   
 Custom theme examples
 ~~~~~~~~~~~~~~~~~~~~~

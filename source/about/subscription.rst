@@ -10,7 +10,7 @@ Mattermost Cloud is a software-as-a-service product. You can sign up for free, f
 Mattermost Nonprofit License program
 --------------------------------------
 
-The Mattermost Nonprofit License enables nonprofit organizations who are unable to afford our commercial licenses to apply the benefits of the self-hosted :doc:`Mattermost Professional offering <about/editions-and-offerings.html#mattermost-professional>` towards advancing their missions with special nonprofit pricing.
+The Mattermost Nonprofit License enables nonprofit organizations who are unable to afford our commercial licenses to apply the benefits of the self-hosted `Mattermost Professional offering </about/editions-and-offerings.html#mattermost-professional>`__ towards advancing their missions with special nonprofit pricing.
 
 What's included?
 ~~~~~~~~~~~~~~~~~

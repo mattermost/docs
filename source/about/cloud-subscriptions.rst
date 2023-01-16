@@ -1,8 +1,8 @@
 Cloud subscriptions
 ===================
 
-Purchase a Cloud subscription
-------------------------------
+Buy a Cloud subscription
+------------------------
 
 Mattermost Cloud can be used free forever with Mattermost Free.
 
@@ -10,7 +10,10 @@ You can also start a free, 30-day trial of Mattermost Enterprise to explore addi
 
 1. Select **Subscribe now**.
 2. Provide your credit card details.
-  - Your credit card will be verified and you'll be charged at the end of the billing period. If you'd prefer an annual Cloud subscription, please contact our Sales team for a quote.
+
+.. note::
+  
+  Your credit card will be verified and you'll be charged at the end of the billing period. If you'd prefer an annual Cloud subscription, please contact our `Sales team <mailto:sales@mattermost.com>`_ for a quote.
 3. Provide your billing address.
 4. (Optional) Select a subscription plan.
 5. Select **Subscribe**.
@@ -19,8 +22,8 @@ Alternatively, if you'd like to continue with Mattermost Enterprise, please cont
 
 If you choose not to upgrade at the end of your 30-day trial, your subscription will revert to Mattermost Free.
 
-View subscription details
--------------------------
+View subscription information
+-----------------------------
 
 The subscription screen outlines the details of your Mattermost Cloud account, including the cost per user per month and the number of users currently registered in your workspace. You can also find a summary of your last invoice in the same page, and any `workspace limits </onboard/mattermost-limits.html>`__ set for your subscription.
 
@@ -106,8 +109,8 @@ After your first month, the billing period begins at 12 AM UTC on the first day 
 - Similarly, if you end your subscription in the middle of a billing period, charges will be prorated. For example, if you cancel your account on 6/15, we'll charge you on 7/1 for the period 6/1 - 6/15.
 - If you upgrade in the middle of a billing period, charges will also be prorated. For example, if you upgrade from Professional to Enterprise on 6/15, we'll charge you 7/1. This will be a single charge for Professional for the period 6/1 - 6/14, then a separate charge for Enterprise for the period 6/15 - 6/30.
 
-What happens if I decide to purchase a subscription to Mattermost Enterprise during my trial?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+What happens if I decide to buy a subscription to Mattermost Enterprise during my trial?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Your plan immediately changes to the plan you've upgraded to. Your trial will continue and on day 31 billing will commence. You won't incur any charges of your new plan until the trial period is over. Depending on what day of the month this is, you'll be billed prorata. You'll receive your bill at the end of the calendar month for this month and going forward.
 
@@ -122,8 +125,8 @@ If you're on Cloud Professional and want to move to Cloud Free:
 2. Select **View Plans**.
 3. Select **Downgrade**.
 
-Can I purchase an annual Mattermost Cloud subscription?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Can I buy an annual Mattermost Cloud subscription?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Yes. Contact sales@mattermost.com to learn more about annual Cloud subscription options.
 
@@ -195,3 +198,8 @@ These offerings are deployed in the following ways:
  - **Professional**: Single application layer, shared infrastructure, shared network, professional group ring.
  - **Enterprise**: Single application layer, shared infrastructure, shared network, enterprise group ring.
  - **Enterprise plus dedicated add-on**: Single application layer, dedicated network via VPC (Virtual Private Cloud), dedicated infrastructure, enterprise group ring.
+
+Can I cancel and delete my Cloud workspace?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Yes. Please contact our Mattermost `Support team <mailto:support@mattermost.com>`_ with the subject **Mattermost Cloud Workspace Deletion Request** for assistance.
