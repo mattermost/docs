@@ -13,6 +13,9 @@ Send messages
 .. |send-icon| image:: ../images/send_F048A.svg
   :alt: Select the Send icon to post your message.
 
+.. |smile-icon| image:: ../images/smile-icon.png
+  :alt: Use the Smile icon to add emojis to your message.
+
 Compose a message by typing into the text box at the bottom of Mattermost. Send your message by selecting the **Send** |send-icon| icon.
 
 .. tabs::

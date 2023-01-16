@@ -39,7 +39,7 @@ With file attachments, you can share additional information that helps your team
 
     .. tip::
 
-    From Mattermost desktop app v5.2, you can review download status, access downloads, and clear the list of downloads from a new **Downloads** |desktop-download-icon| option located in the top-right corner of the desktop app window.
+      From Mattermost desktop app v5.2, you can review download status, access downloads, and clear the list of downloads from a new **Downloads** |desktop-download-icon| option located in the top-right corner of the desktop app window.
 
   .. tab:: Mobile
        

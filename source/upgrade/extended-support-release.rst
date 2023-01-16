@@ -109,7 +109,7 @@ Please review the `Desktop App changelog </install/desktop-app-changelog.html>`_
 See more details in our `release lifecycle documentation </upgrade/release-lifecycle.html#desktop-and-mobile-app-server-compatibility>`_.
 
 Mobile App v1.55.1 extended support release (ESR)
-------------------------------------------------
+--------------------------------------------------
 
 The latest version of the mobile app released in September (v1.55.1) is our first mobile extended support release. We are very excited about the upcoming general availability of the v2.0 mobile app in December. We recognize that some customers may have a custom build of Mattermost mobile and need more time to test or implement their custom changes on mobile v2.0. The mobile ESR will be supported until July 2023.
 
