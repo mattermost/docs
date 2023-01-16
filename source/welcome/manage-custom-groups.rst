@@ -10,6 +10,8 @@ Custom groups (beta) reduce noise and improve focus by notifying the right peopl
 
 For example, perhaps you want to @mention a cross-functional team about a bug fixes needed for an upcoming feature release, without notifying everyone else in the channel. Using a custom group notifies the cross-functional team immediately, while keeping important stakeholders in the loop on the status of the feature release.
 
+Or perhaps you want to add a group of users to a channel. When you @mention a custom group in a channel, Mattermost prompts you to add anyone from that custom group who isn't already a channel member.
+
 Once a custom user group has been created, you can mention that group the same way you @mention another Mattermost member. See the `mention people in messages </channels/mention-people.html>`__ documentation for details.
 
 .. note::
