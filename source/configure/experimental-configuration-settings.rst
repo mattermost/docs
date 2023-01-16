@@ -392,7 +392,7 @@ Allow synchronized drafts
 
 This setting synchronizes draft messages across all supported Mattermost clients.
 
-**True**: **(Default)** Global drafts are enabled, synchronized across clients, and draft messages are accessible through the Drafts view. 
+**True**: **(Default)** Message drafts are saved on the server and may be accessed from different clients. Users may still disable server synchronization of draft messages by going to **Settings > Advanced Settings**. 
 
 **False**: Draft messages are only stored locally on each user's device.
 
