@@ -3,7 +3,7 @@
 
 Elasticsearch provides enterprise-scale deployments with optimized search performance and prevents performance degradation and timeouts. Learn more about `Elasticsearch </scale/elasticsearch.html>`__ in our product documentation.
 
-Configure the Elasticsearch environment in which Mattermost is deployed by going to **System Console > Environment > Elasticsearch**, or by editing the ``config.json`` file as described in the following tables. Changes to configuration settings in this section require a server restart before taking effect.
+You can configure the Elasticsearch environment in which Mattermost is deployed in **System Console > Environment > Elasticsearch**. You can also edit the ``config.json`` file as described in the following tables. Changes to configuration settings in this section require a server restart before taking effect.
 
 .. config:setting:: elastic-enableindexing
   :displayname: Enable Elasticsearch indexing (Elasticsearch)

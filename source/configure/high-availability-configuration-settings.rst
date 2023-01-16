@@ -146,9 +146,11 @@ Enable experimental gossip encryption
 | Gossip encryption uses AES-256 by default, and this value isn’t | - System Config path: **Environment > High Availability**                                    |
 | configurable by design.                                         | - ``config.json`` setting: ``".ClusterSettings.EnableExperimentalGossipEncryption: false”,`` |
 |                                                                 | - Environment variable: ``MM_CLUSTERSETTINGS_ENABLEEXPERIMENTALGOSSIPENCRYPTION``            |
-| - **true**: All communication through the cluster using the     |                                                                                              |
-|   gossip protocol will be encrypted.                            |                                                                                              |
-| - **false**: **(Default)** All communication using gossip       |                                                                                              |
+| - **true**: **(Default for Cloud deployments)**                 |                                                                                              |
+|   All communication through the cluster using the gossip        |                                                                                              |
+|   protocol will be encrypted.                                   |                                                                                              |
+| - **false**: **(Default for self-hosted deployments)**          |                                                                                              |
+|   All communication using gossip protocol remains unchanged.    |                                                                                              |
 |   protocol remains unencrypted.                                 |                                                                                              |
 +-----------------------------------------------------------------+----------------------------------------------------------------------------------------------+
 | **Note**: Alternatively, you can manually set the ``ClusterEncryptionKey`` row value in the **Systems** table. A key is a byte array converted to base64.      |
@@ -174,11 +176,13 @@ Enable gossip compression
 | or later, we recommend that you disable this configuration      | - ``config.json`` setting: ``".ClusterSettings.EnableGossipCompression: true”,`` |
 | setting for better performance.                                 | - Environment variable: ``MM_CLUSTERSETTINGS_ENABLEGOSSIPCOMPRESSION``           |
 |                                                                 |                                                                                  |
-| - **true**: **(Default)** All communication through the         |                                                                                  |
-|   cluster uses gossip compression. This setting is enabled by   |                                                                                  |
-|   default to maintain compatibility with older servers.         |                                                                                  |
-| - **false**: All communication using the gossip protocol        |                                                                                  |
-|   remains uncompressed.                                         |                                                                                  |
+| - **true**: **(Default for self-hosted deployments)**           |                                                                                  |
+|   All communication through the cluster uses gossip             |                                                                                  |
+|   compression. This setting is enabled by default to maintain   |                                                                                  |
+|   compatibility with older servers.                             |                                                                                  |
+| - **false**: **(Default for Cloud deployments)**                |                                                                                  |
+|   All communication using the gossip protocol remains           |                                                                                  |
+|   uncompressed.                                                 |                                                                                  |
 +-----------------------------------------------------------------+----------------------------------------------------------------------------------+
 
 .. config:setting:: ha-gossipport

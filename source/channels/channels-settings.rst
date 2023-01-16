@@ -11,21 +11,9 @@ You can customize your Channels experience in the following ways in **Settings**
 - `Sidebar <#sidebar>`__
 - `Advanced <#advanced>`__
 
-.. tabs::
-
-  .. tab:: Mattermost v6.0 onwards
-
-      In Mattermost v6.0, **Account Settings** have moved.
-
-      - Access **Profile** and **Security** settings from your profile picture in the Global Header.
-      - Access **Notifications**, **Display**, **Sidebar**, and **Advanced Settings** by selecting the gear |gear-icon| icon in the Global Header.
-
-      .. |gear-icon| image:: ../images/settings-outline_F08BB.svg
-        :alt: Select the gear icon to open the Settings dialog.
-
-  .. tab:: Mattermost v5.39 and earlier
-
-      In Mattermost versions up to v5.39, access all of your user settings in **Account Settings** from the **Main Menu** by selecting the three horizontal lines (also known as a hamburger menu) at the top of the channel sidebar.
+.. tip::
+  
+  How you access settings depends on the version of Mattermost you’re using. See the `what’s changed in Mattermost v6.0 </welcome/what-changed-in-v60.html#account-settings>`__ documentation for details.
 
 Notifications
 -------------
