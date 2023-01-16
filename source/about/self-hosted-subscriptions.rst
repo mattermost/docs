@@ -80,7 +80,7 @@ Once you have your updated license, upload it via **System Console > License and
 
 This process adds additional users to your existing subscription and is not a new license. Your license renewal date doesn't change when you add additional users and receive an updated license. Billing is pro-rated based on the time left in your billing cycle.
 
-If you are using Mattermost v7.6 and below, to add more users to your existing subscription, `contact us <https://mattermost.com/contact-us/>`__.
+If you don't have a self-hosted license in the Customer Portal and want to add users, `contact us <https://mattermost.com/contact-us/>`__.
 
 Quarterly report
 ^^^^^^^^^^^^^^^^
