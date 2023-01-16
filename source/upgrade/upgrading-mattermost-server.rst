@@ -13,7 +13,7 @@ Before you begin
 
 **Read these instructions carefully from start to finish.** 
 
-Make sure that you understand how to `prepare for your upgrade </upgrade/prepare-to-upgrade-mattermost.html>`__, familiarize yourself with all `software and hardware requirements </install/software-hardware-requirements.html>`__, and that you understand each step of the upgrade process documented below before starting a Mattermost upgrade. If you have questions or concerns, you can ask on the Mattermost forum at https://forum.mattermost.com/.
+Make sure that you understand how to `prepare for your upgrade </upgrade/prepare-to-upgrade-mattermost.html>`__, familiarize yourself with all `software and hardware requirements </install/software-hardware-requirements.html>`__, read the `important upgrade notes </upgrade/important-upgrade-notes.html>`__ and that you understand each step of the upgrade process documented below before starting a Mattermost upgrade. If you have questions or concerns, you can ask on the Mattermost forum at https://forum.mattermost.com/.
 
 **Gather the following information before starting the upgrade:**
 
