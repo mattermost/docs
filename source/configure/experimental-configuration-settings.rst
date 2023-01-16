@@ -394,7 +394,7 @@ This setting synchronizes draft messages across all supported Mattermost clients
 
 **True**: **(Default)** Global drafts are enabled, synchronized across clients, and draft messages are accessible through the Drafts view. 
 
-**False**: Global drafts are disabled.
+**False**: Draft messages are only stored locally on each user's device.
 
 +------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ServiceSettings.AllowSyncedDrafts": true`` with options ``true`` and ``false``. |
