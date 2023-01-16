@@ -4,7 +4,19 @@ Self-hosted subscriptions
 Buy a subscription
 ------------------
 
-You can buy a Mattermost subscription via the `Customer Portal page <https://customers.mattermost.com>`__. If you haven't created an account yet, follow the steps provided. Otherwise, you can log in with your existing credentials. When you buy a Mattermost subscription for a self-hosted deployment, you'll receive an activation license.
+From Mattermost v7.7 you can buy a Mattermost subscription from within Mattermost:
+
+1. In Mattermost, select **View Plans** in the global header or via **System Console > View plans**.
+2. Select **Upgrade**.
+3. Provide payment details.
+4. Enter the number of user seats you're purchasing. This number has to be equal to, or greater than, the current number of active users in your Mattermost deployment.
+5. Select **Upgrade**.
+
+When your purchase is complete, a license is automatically applied to instance and your subscription is active immediately.
+
+If your deployment doesn't have internet access, please continue to use the Customer Portal or, contact our sales team for assistance.
+
+If you're using Mattermost v7.6 and below, you can buy a Mattermost subscription via the `Customer Portal page <https://customers.mattermost.com>`__. If you haven't created an account yet, follow the steps provided. Otherwise, you can log in with your existing credentials. When you buy a Mattermost subscription for a self-hosted deployment, you'll receive an activation license.
 
 Once you're logged in:
 
@@ -58,7 +70,20 @@ Subscription and licenses not purchased via the Customer Portal won't be listed.
 Add more users to your subscription
 -----------------------------------
 
-To add more users to your existing subscription, `contact us <https://mattermost.com/contact-us/>`__.
+From Mattermost v7.7, you can add additional users to your subscription via the `Customer Portal page <https://customers.mattermost.com>`__.
+
+1. Select **Purchase additional seats**.
+2. Enter your account and billing details.
+3. When the transaction is complete, select whether you'd like to download your updated license or having it emailed to you.completes, they will have to either
+
+Once you have your updated license, upload it via **System Console > License and Edition**.
+
+This process adds additional users to your existing subscription and is not a new license. Your license renewal date doesn't change when you add additional users and receive an updated license. Billing is pro-rated based on the time left in your billing cycle.
+
+If you are using Mattermost v7.6 and below, to add more users to your existing subscription, `contact us <https://mattermost.com/contact-us/>`__.
+
+Quarterly report
+^^^^^^^^^^^^^^^^
 
 When you subscribe to an annual plan with Mattermost, you agree to provide quarterly reports of the actual number of registered users within your system if you're above the amount you subscribed in your purchase order. A registered user is a user who has an account in a workspace and does not show as *Inactive* in **System Console > User Management > Users**.
 
