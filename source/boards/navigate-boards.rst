@@ -4,6 +4,11 @@ Navigate boards
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
   
+.. |options-icon| image:: ../images/dots-horizontal_F01D8.svg
+  :height: 24px
+  :width: 24px
+  :alt: Access additional message actions using the More actions icon.
+  
 If you've already created a board, you can open Boards using the App Bar. If you don't see the Apps Bar to the right of your screen, you can access boards using the product menu in the top left corner of Mattermost.
 
 Link a board to a channel
@@ -24,16 +29,14 @@ Open the boards App Bar icon, and select **Create a Board** to create a new boar
 Unlink a board from a channel
 -----------------------------
 
-If you're a board admin and want to unlink a board from a channel you're in, open the Boards Apps Bar, select the options menu **(...)** and select **Unlink**. Alternatively, you can open the **Share** dialog on the board, open the **Role** drop-down menu next to the channel's name and select **Unlink**.
+If you're a board admin and want to unlink a board from a channel you're in, open the Boards Apps Bar, select the |options-icon| menu and select **Unlink**. Alternatively, you can open the **Share** dialog on the board, open the **Role** drop-down menu next to the channel's name and select **Unlink**.
 
 Sidebar categories
 ------------------
 
-From Mattermost Boards v7.2, you can organize your boards on the left-hand sidebar using custom categories. By default, all boards will appear under the **Boards** category.
+From Mattermost Boards v7.2, you can organize your boards in the left-hand sidebar using custom categories. By default, all boards will appear under the **Boards** category. To manage your categories, open the |options-icon| menu next to the category to create, delete, or rename a category. With the exception to the default **Boards** category, all other categories can be renamed or deleted.
 
-To manage your categories, open the options menu **(...)** next to the category to create, delete, or rename a category. With the exception to the default **Boards** category, all other categories can be renamed or deleted.
-
-After creating categories, you can move your boards to those categories by opening the options menu **(...)** next to the board and selecting **Move To…** to select the category where you want the board to be moved.
+After creating categories, you can move your boards to those categories by opening the |options-icon| menu next to the board and selecting **Move To…** to select the category where you want the board to be moved.
 
 If you delete a category with boards in it, then those boards will return to the default **Boards** category.
 
@@ -41,16 +44,26 @@ Categories are organized per-user, so you can arrange your boards under categori
 
 .. note::
 
-  If you're upgrading to Mattermost Boards v7.2 onwards: If you belonged to a workspace prior to v7.2, then you’ll see that the workspaces have been migrated to custom categories in the sidebar. All boards from a workspace are listed under a category of the same name. Boards from direct messages and group messages appear under the default **Boards** category.
+  Upgrading to Mattermost Boards v7.2 onwards: If you belonged to a workspace prior to v7.2, you’ll see that the workspaces have been migrated to custom categories in the sidebar. All boards from a workspace are listed under a category of the same name. Boards from direct messages and group messages appear under the default **Boards** category.
   
   Categories are per-user, and can be renamed or deleted by each user after migration. New users won’t have default categories, and boards they join will appear under the default **Boards** category.
 
   Boards that you create after the migration won’t be linked to a workspace and will always appear under the default **Boards** category unless you move or hide the boards.
+  
+Drag and drop
+-------------
+
+You can move both sidebar categories and boards and change the order of both to suit your preference. You can:
+
+- Set the position of a board within a category.
+- Drag a board out of one category and drop it into another category.
+
+To do this, select and hold the cursor over the category or board name. Then move the category or board around as needed. Boards moved into a category are sorted to the top of the category by default unless you specifically position the board before releasing the cursor.
 
 Manage boards on the sidebar
 ----------------------------
 
-In addition to moving boards to other categories, from the options menu **(...)** next to each board name you can perform the following actions:
+In addition to moving boards to other categories, from the |options-icon| menu next to each board name you can perform the following actions:
 
 - **Delete board**: If you're an admin of the board, you will see an option to delete the board. Deleting the board permanently removes the board from the sidebar of all board members.
 - **Duplicate board**: Creates a copy of the board and all the cards on the board. The duplicated board will appear under the same category as the original board. Board members and comments from the original board aren't migrated to the new board.

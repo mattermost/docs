@@ -4,7 +4,7 @@ Integrations configuration settings
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Access the following configuration settings in the System Console by going to **Integrations**, or by editing the ``config.json`` file as described in the following tables:
+Both self-hosted and Cloud admins can access the following configuration settings in **System Console > Integrations**. Self-hosted admins can also edit the ``config.json`` file as described in the following tables. 
 
 - `Integrations management <#integrations-management>`__
 - `Bot Accounts <#bot-acocunts>`__
@@ -113,6 +113,10 @@ Enable OAuth 2.0 service provider
 | This feature's ``config.json`` setting is ``"EnableOAuthServiceProvider": false`` with options ``true`` and ``false``. |
 +------------------------------------------------------------------------------------------------------------------------+
 
+.. note::
+
+  Cloud admins can't modify this configuration setting.
+
 .. config:setting:: integrate-enableusernameoverride
   :displayname: Enable integrations to override usernames (Integrations)
   :systemconsole: Integrations > Integration Management
@@ -197,9 +201,9 @@ Access the following configuration settings in the System Console by going to **
 Enable bot account creation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**True**: Users can create bot accounts for integrations in **Integrations > Bot Accounts**. Bot accounts are similar to user accounts except they cannot be used to log in. See `documentation <https://developers.mattermost.com/integrate/admin-guide/admin-bot-accounts/>`__ to learn more.
+**True**: **(Default for Cloud deployments)** Users can create bot accounts for integrations in **Integrations > Bot Accounts**. Bot accounts are similar to user accounts except they cannot be used to log in. See `documentation <https://developers.mattermost.com/integrate/admin-guide/admin-bot-accounts/>`__ to learn more.
 
-**False**: Bot accounts cannot be created through the user interface or the RESTful API. Plugins can still create and manage bot accounts.
+**False**: **(Default for self-hosted deployments)** Bot accounts cannot be created through the user interface or the RESTful API. Plugins can still create and manage bot accounts.
 
 +----------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableBotAccountCreation": false`` with options ``true`` and ``false``. |
