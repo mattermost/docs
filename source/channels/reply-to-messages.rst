@@ -22,6 +22,10 @@ Reply to messages
 
 Depending on how the system admin has configured Mattermost, you may also be able to `edit and delete messages </channels/send-messages.html#edit-or-delete-messages>`__ after you've sent them. Your system admin may also restrict messaging actions, such as editing or deleting messages, by configuring `advanced permissions </onboard/advanced-permissions.html>`__, available in `Mattermost Enterprise and Professional subscription plans <https://mattermost.com/pricing>`__.
 
+.. tip::
+
+  It's easy to return to a message in progress with global message drafts. Find all of your draft messages in the **Drafts** view available at the top of the channel sidebar. See the `draft messages </channels/send-messages.html#draft-messages>`__ documentation for details.
+
 Organize conversations into threads
 -----------------------------------
 
