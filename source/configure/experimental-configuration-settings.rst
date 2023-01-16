@@ -628,9 +628,22 @@ This setting enables the Apps Bar and moves all Mattermost integration icons fro
 
 **False**: **(Default for self-hosted deployments)** All integration icons in the channel header display in the channel header.
 
-+----------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableAppBar": false`` with options ``true`` and ``false``. |
-+----------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ExperimentalSettings.EnableAppBar": false`` with options ``true`` and ``false``. |
++-------------------------------------------------------------------------------------------------------------------------------+
+
+Allow synchronized drafts
+-------------------------
+
+This setting synchronizes draft messages across all supported Mattermost clients.
+
+**True**: **(Default)** Message drafts are saved on the server and may be accessed from different clients. Users may still disable server synchronization of draft messages by going to **Settings > Advanced Settings**. 
+
+**False**: Draft messages are only stored locally on each user's device.
+
++------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ServiceSettings.AllowSyncedDrafts": true`` with options ``true`` and ``false``. |
++------------------------------------------------------------------------------------------------------------------------------+
 
 ----
 

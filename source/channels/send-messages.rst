@@ -35,6 +35,21 @@ Compose a message by typing into the text box at the bottom of Mattermost. Send 
   - Using a RTL plugin, Mattermost can automatically detect and display messages written using right-to-left scripts, such as Arabic, Hebrew, or Persian. Your System Admin must install the `RTL Plugin <https://github.com/QueraTeam/mattermost-rtl>`__ to enable this functionality.
   - `Mattermost Professional or Enterprise <https://mattermost.com/pricing>`__ customers can `edit or delete messages <#edit-or-delete-messages>`__ after sending them if the System Admin hasn't restricted the ability to do so using `advanced permissions </onboard/advanced-permissions.html>`__.
   
+Draft messages
+--------------
+
+From Mattermost v7.7, when composing new messages, it's easy to return to a message in progress later. Draft messages are added to a **Drafts** view available at the top of the channel sidebar 
+
+.. image:: ../images/Global-Drafts-Animated-GIF.gif
+  :width: 700
+  :alt: Global drafts makes it easy for you to find all messages in progress.
+
+By default, message drafts are synchronized on the Mattermost server and are accessible everywhere you access Mattermost, including a web browser or the desktop app with mobile support coming in a future release. 
+
+.. Tip::
+  
+  You can disable server-synchronized drafts and limit drafts to your current Mattermost client only by going to **Settings > Advanced > Allow message drafts to sync with the server**.
+
 Edit or delete messages
 -----------------------
 
