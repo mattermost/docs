@@ -70,7 +70,7 @@ Subscription and licenses not purchased via the Customer Portal won't be listed.
 Add more users to your subscription
 -----------------------------------
 
-From Mattermost v7.7, you can add additional users to your subscription via the `Customer Portal page <https://customers.mattermost.com>`__.
+If you have a self-hosted license in the Customer Portal, you can add additional users to your subscription via the `Customer Portal page <https://customers.mattermost.com>`__.
 
 1. Select **Purchase additional seats**.
 2. Enter your account and billing details.
