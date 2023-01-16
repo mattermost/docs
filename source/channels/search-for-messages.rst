@@ -193,7 +193,6 @@ Other database-specific differences include:
 
 PostgreSQL:
 
-- Email addresses don't return results.
 - URLs don’t return results.
 - Hashtags or recent mentions of usernames containing a dash don't return results.
 - Terms containing a dash return incorrect results since dashes are ignored in the search engine.
