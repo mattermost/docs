@@ -55,7 +55,7 @@ Installation
   1) Create a new user account and use that account to create a new team and post to Town Square channel.
   2) Create a second user account and join the newly created team and reply to first user's post in Town Square.
   3) Go back to first user account and post reply with an image attached.
-  4) Confirm there are no errors and no blue bar at the top of the screen with "Mattermost unreachable error" (which would indicate websocket configuration error).
+  4) Confirm there are no errors and no red alert bar at the top of the screen with "Mattermost unreachable error" (which would indicate a websocket configuration error).
 
 Documentation 
 ~~~~~~~~~~~~~

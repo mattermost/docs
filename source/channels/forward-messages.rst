@@ -4,7 +4,7 @@ Forward messages
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-From Mattermost v7.2, you can forward messages in Mattermost to another channel by selecting the **More** |more-icon| icon next to a message, then selecting **Forward**. From Mattermost v7.5, you can also forward messages from bots and webhooks.
+From Mattermost v7.2, using a web browser or the desktop app, you can forward messages in Mattermost to another channel by selecting the **More** |more-icon| icon next to a message, then selecting **Forward**. From Mattermost v7.5, you can also forward messages from bots and webhooks.
 
 .. |more-icon| image:: ../images/dots-horizontal_F01D8.svg
   :alt: When you hover over messages, you can access more message options from the More icon.

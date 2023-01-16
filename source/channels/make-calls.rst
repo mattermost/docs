@@ -1,12 +1,13 @@
-Start a call (beta)
-===================
+Start a call 
+============
 
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Mattermost introduces beta voice calling and screen sharing functionality in channels, group messages, and direct messages from Mattermost v7.0 for Mattermost Cloud and Mattermost self-hosted deployments.
+Mattermost supports voice calling and screen sharing functionality in channels, group messages, and direct messages from Mattermost v7.0 for Mattermost Cloud and Mattermost self-hosted deployments.
 
-- `Features available in Mattermost 7.0 <#features-available-in-mattermost-7.0>`__
+- `Features <#features>`__
+- `Record calls <#record-calls>`__
 - `Frequently asked questions <#frequently_asked_questions>`__
 - `Troubleshooting <#troubleshooting>`__
 
@@ -16,22 +17,36 @@ Mattermost introduces beta voice calling and screen sharing functionality in cha
 
 - `Debugging <#debugging>`__
 
-Features available in Mattermost 7.0
-------------------------------------
+Features 
+--------
 
-From 7.0, you can:
+Starting from Mattermost v7.0, you can:
 
 - Start or join a call from desktop and mobile apps in addition to web browsers.
 - Share screen (not available on mobile), raise hands, chat in a thread, and even switch between products in the Mattermost suite (i.e., Channels, Boards, and Playbooks) while on a call.
 - Start a call using the ``/call start`` slash command or **Start call** in the channel header.
 
-Mattermost Cloud users can start calling right out of the box. For Mattermost self-hosted deployments, System Admins need to enable the plugin and adjust configurations `in the System Console </configure/configuration-settings.html#calls-beta>`_.
+Starting from Mattermost v7.7 you can:
 
-To start a call, select **Start call** in the channel header. Any active team member in the channel can join a call, whether it's a public or private channel. If someone from outside of the organization wants to join a call, you'll need to provide them with a guest account, and add them to the channel. Users who are archived or not registered won't be able to join a call.
+- Record calls (Mattermost Enterprise only).
+- React using emojis.
+
+Mattermost Cloud users can start calling right out of the box. For Mattermost self-hosted deployments, System Admins need to enable the plugin and adjust configurations `in the System Console </configure/plugins-configuration-settings.html#calls>`_.
+
+To start a call, select **Start call** in the channel header. Any active team member in the channel can join a call, whether it's a public or private channel. If someone from outside of the organization wants to join a call, you'll need to provide them with a guest account, and add them to the channel. Users who are archived or not registered can't join a call.
 
 You can share a call's link to use in a meeting request or share with other team mates. The link is unique to each channel, and contains the channel's ID, so it doesn't change between calls. Use the ``/call link`` slash command to generate a shareable link.
 
 The call link is valid for long as the channel is active. When a channel is archived or deleted the link will become invalid.
+
+Record calls
+------------
+
+The host of a meeting can record the call. The recording includes audio as well as any screen sharing during the call. The default setting for a recording is 60 minutes, but your system admin may adjust that as needed. Ten minutes before the time limit, the host will receive a reminder that the recording limit will be reached soon.
+
+If your call is going to continue and you still want to record, once the first recording is complete you can start a new one immediately after.
+
+Call recordings are posted by the Calls bot directly in the call thread as normal file attachment and can be accessed by all users in the channel.
 
 Frequently asked questions
 --------------------------
@@ -39,7 +54,7 @@ Frequently asked questions
 Is video supported?
 ~~~~~~~~~~~~~~~~~~~
 
-The integration currently supports only voice calling and screen sharing. We are considering video support as well for the upcoming future.
+The integration currently supports only voice calling and screen sharing. We're considering video support in the future.
 
 Can I password-protect a call?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -64,7 +79,7 @@ My call is disconnected after a few seconds
 
 My call is disconnected after a few seconds and I can't transmit voice nor hear anything.
 
-This is usually a sign that the underlying UDP channel has not been established and the connection times out after ~10 seconds. When the connection has been established correctly an ``rtc connected`` line should appear in the client-side logs (JS console). There isn't a single solution as it depends on the infrastructure/deployment specifics. However, if you're a System or Network Admin, you may need to open up the UDP port or configure the network accordingly.
+This is usually a sign that the underlying UDP channel has not been established and the connection times out after ~10 seconds. When the connection has been established correctly an ``rtc connected`` line should appear in the client-side logs (JS console). There isn't a single solution as it depends on the infrastructure/deployment specifics. However, if you're a system or network admin, you may need to open up the UDP port or configure the network accordingly.
 
 I can't screen share using Mattermost desktop on macOS
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -83,7 +98,7 @@ Debugging
 
 If you experience issues with calls, collecting information is helpful as you can share it with us for debugging purposes.
 
-As with any other issue, but more importantly with calls, it’s very useful to provide date and time of when some problem occurred, with as much detail as possible so that information can be cross-checked with server logs as well. Also please include any reproduction steps if applicable. Other important information include:
+As with any other issue, but more importantly with calls, it’s very useful to provide date and time of when some problem occurred, with as much detail as possible so that information can be cross-checked with server logs as well. Also please include any reproduction steps if applicable. Other important information includes:
 
 - Browser/app version
 - Operating system type and version
