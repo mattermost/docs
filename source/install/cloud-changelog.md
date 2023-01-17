@@ -31,7 +31,7 @@ Latest Mattermost Cloud releases:
 
 #### Message Priority and Acknowledgments
  - Added [message priority labels](https://docs.mattermost.com/channels/message-priority.html) to the Threads view.
- - Added support for enterprise users to request acknowledgements on posts and to acknowledge posts (Professional).
+ - Added support for users to request acknowledgements on posts and to acknowledge posts (Professional license).
 
 #### Global Drafts
  - Added [a centralized Drafts view](https://docs.mattermost.com/channels/send-messages.html#draft-messages) for draft messages.
