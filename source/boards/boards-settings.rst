@@ -2,8 +2,6 @@ Settings
 ========
 
 .. |gear-icon| image:: ../images/settings-outline_F08BB.svg
-  :height: 24px
-  :width: 24px
   :alt: Access settings using the gear icon.
 
 Set language
