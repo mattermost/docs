@@ -48,7 +48,7 @@ Mattermost v7.7.0 contains low severity level security fixes. [Upgrading](https:
 
 #### Message Priority and Acknowledgments
  - Added [message priority labels](https://docs.mattermost.com/channels/message-priority.html) to the Threads view.
- - Added support for enterprise users to request acknowledgements on posts and to acknowledge posts (Professional).
+ - Added support for users to request acknowledgements on posts and to acknowledge posts (Professional license).
 
 #### Global Drafts
  - Added [a centralized Drafts view](https://docs.mattermost.com/channels/send-messages.html#draft-messages) for draft messages.
@@ -173,7 +173,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - v7.7 is built with Go ``v1.18.1``.
 
 ### Known Issues
- - Main channel placeholder text sometimes persists when pasting text [MM-48670](https://mattermost.atlassian.net/browse/MM-48670).
+ - After a fresh installation of v7.7, an admin user cannot be added [MM-49706](https://mattermost.atlassian.net/browse/MM-49706).
  - The new Insights feature has some performance costs that we are working to optimize. This feature can be disabled by setting the ``MM_FEATUREFLAGS_INSIGHTSENABLED`` environment variable to ``false``.
  - Adding an @mention at the start of a post draft and pressing the left or right arrow key can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
  - Google login fails on the Classic mobile apps.
