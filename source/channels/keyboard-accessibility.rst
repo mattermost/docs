@@ -4,7 +4,7 @@ Keyboard accessibility
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Navigational keyboard shortcuts help you use Mattermost without requiring a mouse. Below is a list of supported accessibility shortcuts. Elements in focus have a colored outline, as shown here:
+Navigational keyboard shortcuts help you use Mattermost in a web browser or the desktop app without needing a mouse. Below is a list of supported accessibility shortcuts. Elements in focus have a colored outline, as shown here:
 
 .. image:: ../images/focus.png
   :alt: Navigate Mattermost using a keyboard.
