@@ -87,7 +87,7 @@ To delete properties you no longer need, select the property, then choose **Dele
   Properties are displayed in the order they were created and cannot be re-ordered at this time.
 
 Define a "Select" or "Multi-select" property
-------------------------------------------------
+--------------------------------------------
 
 The options on a **Select** and **Multi-select** property type appear as color-coded tags on a card. To add and configure the options on these types:
 
@@ -115,6 +115,15 @@ Toggle properties shown on a board
 ----------------------------------
 
 Once you have card properties defined, you have full control over which properties are shown on the board as a preview without having to open the card. Select **Properties** at the top of the board, then enable all properties you want to see at a glance, and hide all properties you don’t want to see.
+
+Attach files
+------------
+
+From Mattermost v7.7 you can attach files to your cards, which other board members can download. There are no limitations to the file types that you can upload.
+
+To upload a file to a card, select **Attach** in the top-right corner of the card. Then select the file you'd like to upload. When your file has been uploaded, you can find it in the **Attachments** section of the card. Select the **+** sign to add additional files to your card.
+
+To delete a file, hover over it and select the vertical menu. Then select **Delete**. To download the file, select the download icon.
 
 Card badges
 -----------

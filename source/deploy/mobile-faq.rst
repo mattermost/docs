@@ -5,17 +5,22 @@ Mobile apps FAQ
   :backlinks: top
   :local:
 
+What versions of Mattermost support the mobile v2 app?
+------------------------------------------------------
+
+We strongly recommend running the latest version of the Mattermost Server and the Mattermost Push Notification Service (MPNS) as they contain the most recent features and applicable security updates. If this isn’t possible, we encourage you to be on the most recent `Extended Support Release version </upgrade/extended-support-release.html>`__ of Mattermost Server. The extended support releases contain critical feature updates that will ensure compatibility in a number of areas, including, but not limited to, the Mattermost Push Notification Service (MPNS).
+
+See our `Supported Devices/Mobile Device Requirements </install/software-hardware-requirements.html#mobile-apps>`__ documentation for basic mobile device requirements, and our `Supported Mattermost Server Versions </deploy/mobile-app-changelog.html>`__ documentation for details on Mattermost Server minimum requirements.
+
 Can I connect to multiple Mattermost servers using the mobile apps?
 -------------------------------------------------------------------
 
-At the moment, we only support connecting to one server at a time; however, we are aware that this is one of the `top feature requests <https://mattermost.uservoice.com/forums/306457-general/suggestions/10975938-ios-and-android-apps-should-allow-multiple-server>`__ for the mobile app. We are currently investigating some technical challenges, such as how to handle push notifications coming from multiple servers. To follow our progress on this feature, you can join the `RN: Multi-Server <https://community.mattermost.com/core/channels/rn-multi-server-suppot>`_ channel on our community server.
-
-As a workaround, you can install the released Mattermost mobile app and sign up to be a `tester <https://github.com/mattermost/mattermost-mobile/blob/master/README.md#testing>`__ for the Mattermost Beta mobile app. This allows you to connect and log in to a different server from each app.
+Yes when using Mattermost mobile app v2.0. Mobile v1.x only supports connecting to one server at a time.
 
 Is there a tablet version of the mobile apps?
 ---------------------------------------------
 
-Mattermost Classic mobile apps support tablets. Our second generation Mattermost mobile apps include beta support for tablets.
+Mattermost Classic mobile apps support tablets.
 
 Can the permanent sidebar on tablet devices be disabled?
 --------------------------------------------------------
@@ -65,7 +70,7 @@ This means if you use the Mattermost apps from the Apple App Store or Google Pla
 Is TLS v1.3 supported?
 ----------------------
 
-No. TLS v1.3 doesn't work with the Mattermost Mobile app websocket. This limitation will be addressed in a future release. We recommend that you continue using TLS v1.2.
+Yes. Mattermost mobile app v2.0 supports both TLS v1.2 and TLS v1.3 for websocket connections.
 
 What post metadata is sent in mobile push notifications?
 --------------------------------------------------------

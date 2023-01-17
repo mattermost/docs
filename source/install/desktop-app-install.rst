@@ -115,7 +115,7 @@ You can `download the desktop app directly from our Downloads page <https://matt
     2. Run Mattermost as a desktop app.
 
     .. tip:: 
-      You can review the current version of your Desktop App by selecting the **More** |more-icon-vertical| icon located in the top left corner of the Mattermost window, then selecting **Help > Version...**.
+      You can review the current version of your Desktop App by selecting the **More** |more-icon-vertical| icon located in the top left corner of the desktop app, then selecting **Help > Version...**.
 
   .. tab:: CentOS/RHEL
 
@@ -159,7 +159,7 @@ You can `download the desktop app directly from our Downloads page <https://matt
         sudo rpm -u mattermost-desktop-5.2.2-linux-i686.rpm
 
     .. tip:: 
-      You can review the current version of your desktop app by selecting the **More** |more-icon-vertical| icon located in the top left corner of the Mattermost window, then selecting **Help > Version...**.
+      You can review the current version of your desktop app by selecting the **More** |more-icon-vertical| icon located in the top left corner of the desktop app, then selecting **Help > Version...**.
 
   .. tab:: Generic Linux
 

@@ -4,7 +4,11 @@ Configuration settings
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-System Admins for both self-hosted and Cloud Mattermost workspaces can manage Mattermost configuration using the System Console. Mattermost requires write permissions to ``config.json``, otherwise configuration changes made within the System Console will have no effect.
+System Admins for both self-hosted and Cloud Mattermost workspaces can manage Mattermost configuration using the System Console. For self-hosted deployments, admins can additionally edit the ``config.json`` file. 
+
+.. note::
+  
+  Mattermost requires write permissions to the ``config.json`` file; otherwise, configuration changes made within the System Console will have no effect.
 
 Mattermost configuration settings are organized into the following categories within the System Console:
 
