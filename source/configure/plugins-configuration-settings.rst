@@ -40,13 +40,11 @@ Access the following configuration settings in the System Console by going to **
 Enable plugins
 ~~~~~~~~~~~~~~
 
-**True**: Enables plugins on your Mattermost server. Use plugins to integrate with third-party systems, extend functionality, or customize the user interface of your Mattermost server. See `documentation <https://developers.mattermost.com/integrate/admin-guide/admin-plugins-beta/>`__ to learn more.
-
-**False**: Disables plugins on your Mattermost server.
-
-+---------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Enable": true`` with options ``true`` and ``false``. |
-+---------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------+
+| - **true**: **(Default)** Enables plugins on your Mattermost server. See `Use plugins with Mattermost <https://developers.mattermost.com/integrate/plugins/using-and-managing-plugins/>`__. | - System Config path: **Plugins > Plugin Management**       |
+| - **false**: Disables plugins on your Mattermost server.                                                                                                                                    | - ``config.json`` setting: ``.PluginSettings.Enable: true`` |
+|                                                                                                                                                                                             | - Environment variable: ``MM_PLUGINSETTINGS_ENABLE``        |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------+
 
 .. config:setting:: plugins-requiresignature
   :displayname: Require plugin signature (Plugins - Management)
