@@ -2054,7 +2054,7 @@ Office 365 OAuth 2.0 Application ID
   :systemconsole: Authentication > OAuth 2.0
   :configjson: Id
   :environment: N/A
-  :description: Obtain this value by registering Mattermost as an application in your Microsoft or Office account.
+  :description: This setting holds the Application ID generated when configuring Office 365 as a Single Sign-On service through the Microsoft Azure Portal.
 
 *Available in legacy Enterprise Edition E20*
 
@@ -2072,7 +2072,7 @@ Office 365 OAuth 2.0 Application secret password
   :systemconsole: Authentication > OAuth 2.0
   :configjson: Secret
   :environment: N/A
-  :description: Obtain this value by registering Mattermost as an application in your Microsoft or Office account.
+  :description: This setting holds the Application Secret Password generated when configuring Office 365 as a Single Sign-On service through the Microsoft Azure Portal.
 
 *Available in legacy Enterprise Edition E20*
 
@@ -2090,7 +2090,7 @@ Office 365 OAuth 2.0 Directory (tenant) ID
   :systemconsole: Authentication > OAuth 2.0
   :configjson: DirectoryId
   :environment: N/A
-  :description: This value is the ID of the application's AAD directory.
+  :description: This setting holds the Directory (tenant) ID set for Mattermost through the Azure Portal.
 
 *Available in legacy Enterprise Edition E20*
 
@@ -2126,7 +2126,7 @@ Office 365 OAuth 2.0 Auth endpoint
   :systemconsole: Authentication > OAuth 2.0
   :configjson: AuthEndpoint
   :environment: N/A
-  :description: We recommend using ``https://accounts.google.com/o/oauth2/v2/auth`` as the Auth Endpoint. It is the default value.
+  :description: We recommend ``https://login.microsoftonline.com/common/oauth2/v2.0/authorize`` as the Auth Endpoint.
 
 *Available in legacy Enterprise Edition E20*
 
