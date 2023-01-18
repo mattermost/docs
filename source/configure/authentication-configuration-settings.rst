@@ -2409,12 +2409,12 @@ Office 365 OpenID Directory (tenant) ID
   :systemconsole: Authentication > OpenID Connect
   :configjson: N/A
   :environment: N/A
-  :description: This value is the ID of the application's AAD directory.
+  :description: This setting holds the Directory (tenant) ID set for Mattermost through the Microsoft Azure Portal.
 
 *Available in legacy Enterprise Edition E20*
 
 +----------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------+
-| This setting holds the Directory (tenant) ID set for Mattermost through the Azure Portal.                            | - System Config path: **Authentication > OpenID Connect**     |
+| This setting holds the Directory (tenant) ID set for Mattermost through the Microsoft Azure Portal.                  | - System Config path: **Authentication > OpenID Connect**     |
 |                                                                                                                      | - ``config.json`` setting: ``.Office365Settings.DirectoryId`` |
 | See `Office 365 Single Sign-On <https://docs.mattermost.com/onboard/sso-office.html>`__ implementation instructions. | - Environment variable: ``MM_OFFICE365SETTINGS_DIRECTORYID``  |
 |                                                                                                                      |                                                               |
@@ -2449,12 +2449,12 @@ Office 365 Client ID
   :systemconsole: Authentication > OpenID Connect
   :configjson: N/A
   :environment: N/A
-  :description: Obtain this value by registering Mattermost as an application in your Google account.
+  :description: This setting stores the Application (client) ID  generated through the Microsoft Azure Portal.
 
 *Available in legacy Enterprise Edition E20*
 
 +----------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+
-| This setting stores the **Application (client) ID** generated through the Azure Portal.                              | - System Config path: **Authentication > OpenID Connect** |
+| This setting stores the **Application (client) ID** generated through the Microsoft Azure Portal.                    | - System Config path: **Authentication > OpenID Connect** |
 |                                                                                                                      | - ``config.json`` setting: ``.Office365Settings.Id``      |
 | See `Office 365 Single Sign-On <https://docs.mattermost.com/onboard/sso-office.html>`__ implementation instructions. | - Environment variable: ``MM_OFFICE365SETTINGS_ID``       |
 |                                                                                                                      |                                                           |
@@ -2469,12 +2469,12 @@ Office 365 Client secret
   :systemconsole: Authentication > OpenID Connect
   :configjson: N/A
   :environment: N/A
-  :description: Obtain this value by registering Mattermost as an application in your Google account.
+  :description: This setting stores the Client Secret generated through the Microsoft Azure Portal.
 
 *Available in legacy Enterprise Edition E20*
 
 +----------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+
-| This setting stores the **Client Secret** generated through the Azure Portal.                                        | - System Config path: **Authentication > OpenID Connect** |
+| This setting stores the **Client Secret** generated through the Microsoft Azure Portal.                              | - System Config path: **Authentication > OpenID Connect** |
 |                                                                                                                      | - ``config.json`` setting: ``.Office365Settings.Secret``  |
 | See `Office 365 Single Sign-On <https://docs.mattermost.com/onboard/sso-office.html>`__ implementation instructions. | - Environment variable: ``MM_OFFICE365SETTINGS_SECRET``   |
 |                                                                                                                      |                                                           |
