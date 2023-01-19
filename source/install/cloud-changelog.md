@@ -4,14 +4,14 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 
 Latest Mattermost Cloud releases:
 
-- [Release 2023-01-19](#release-2023-01-19)
+- [Release 2023-01-26](#release-2023-01-26)
 - [Release 2023-01-12](#release-2023-01-12)
 - [Release 2022-12-20](#release-2022-12-20)
 - [Release 2022-12-01](#release-2022-12-01)
 - [Release 2022-11-24](#release-2022-11-24)
 - [Release 2022-11-17](#release-2022-11-17)
 
-## Release 2023-01-19
+## Release 2023-01-26
 
 ### Highlights
 
@@ -22,7 +22,8 @@ Latest Mattermost Cloud releases:
 
 #### User Interface (UI)
  - Insights and drafts are now included when navigating through channels in the channel sidebar using ALT+UP/DOWN arrow keyboard keys.
- - Prepackaged Calls version 0.12.1.
+ - Improvements were added to the sidebar category menus including the Direct Messages category.
+ - Added an onboarding tour point for Global Drafts.
 
 #### Administration
  - The max size of uploaded emojis is now reduced to 512KiB to reduce image download bandwidth.
@@ -39,10 +40,28 @@ Latest Mattermost Cloud releases:
     - ``max_idle_closed_total``
     - ``max_idle_time_closed_total``
     - ``max_lifetime_closed_total``
+ - Boards are served as an in-built product from within Mattermost server instead of a plugin. While running in product mode, the boards plugin will remain disabled.
+ - Added a new section in the **System Console** for products. For now, it only contains Boards-specific settings.
+ - Boards is now delivered as an official in-product vertical instead of a plugin and is now always enabled.
+ - Made ``registerChannelIntroButtonAction`` plugin API usable by plugins other than Boards.
+ - The following new HTTP headers and values are now written on all responses. These default values should make sense in most installations and can be overridden by a reverse proxy or ingress configuration. Note that the empty ``Permissions-Policy`` does not have any other effect than be present, to suggest changing it to a more restrictive value based on actual needs.
+
+	```
+	Permissions-Policy: 
+	Referrer-Policy: no-referrer
+	X-Content-Type-Options: nosniff
+	```
 
 ### Bug Fixes
  - Fixed an issue with the plugin ``/public`` handling for subpaths.
  - Fixed an issue where selecting **Pinned** on a post in the Threads view would result in the right-hand side being stuck in a loading state.
+ - Fixed an issue where the profile popover did not dismiss when opening a modal through a shortcut.
+ - Fixed an issue where the "Run Deletion Job Now" button for Data Retention wasn’t disabled when all policies were set to "keep forever".
+ - Fixed an issue that prevented the creation of the initial admin user for new servers.
+ - Fixed an issue where making a channel non-read-only required a refresh of the client to see the change.
+ - Fixed an issue where Top Channels for Insights didn't show results if the current user's configured timezone wasn't present in MySQL's ``mysql.time_zone_name table``.
+ - Fixed an issue where a white screen appeared when a guest was removed from the last channel while on Threads.
+ - Fixed an issue where a Direct Message thread did not get disabled when a user was deactivated.
 
 ### Known Issues
  - The message box flashes controls while typing in the right-hand side [MM-49266](https://mattermost.atlassian.net/browse/MM-49266).
