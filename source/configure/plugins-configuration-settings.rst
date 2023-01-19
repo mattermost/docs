@@ -90,19 +90,17 @@ Automatic prepackaged plugins
   :configjson: EnableMarketplace
   :environment: N/A
 
-  - **true**: **(Default)** Enables Plugin Marketplace on your Mattermost server for all System Admins.
-  - **false**: Disables Plugin Marketplace on your Mattermost server for all System Admins.
+  - **true**: **(Default)** Enables the plugin Marketplace on your Mattermost server for all System Admins.
+  - **false**: Disables the plugin Marketplace on your Mattermost server for all System Admins.
 
 Enable Marketplace
 ~~~~~~~~~~~~~~~~~~
 
-**True**: Enables Plugin Marketplace on your Mattermost server for all system admins.
-
-**False**: Disables Plugin Marketplace on your Mattermost server for all system admins.
-
-+--------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableMarketplace": true`` with options ``true`` and ``false``. |
-+--------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
+| - **true**: **(Default)** Enables the plugin Marketplace on your Mattermost server for all System Admins. | - System Config path: **Plugins > Plugin Management**                  |
+| - **false**: Disables the plugin Marketplace on your Mattermost server for all System Admins.             | - ``config.json`` setting: ``.PluginSettings.EnableMarketplace: true`` |
+|                                                                                                           | - Environment variable: ``MM_PLUGINSETTINGS_ENABLEMARKETPLACE``        |
++-----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
 
 .. config:setting:: plugins-enableremotemarketplace
   :displayname: Enable remote marketplace (Plugins - Management)
