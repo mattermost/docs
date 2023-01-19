@@ -73,18 +73,16 @@ Require plugin signature
   :environment: N/A
 
   - **true**: **(Default)** Any pre-packaged plugins enabled in the configuration will be installed or upgraded automatically.
-  - **false**: Pre-packaged plugins aren't installed or upgraded automatically but may be installed manually from the Plugin Marketplace, even when offline.
+  - **false**: Pre-packaged plugins are not installed or upgraded automatically, but may be installed manually from the Marketplace, even when offline.
 
 Automatic prepackaged plugins
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**True**: Any pre-packaged plugins enabled in the configuration will be installed or upgraded automatically. If a newer version is already installed, no changes are made.
-
-**False**: Pre-packaged plugins aren't installed or upgraded automatically but may be installed manually from the Plugin Marketplace, even when offline.
-
-+------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"AutomaticPrepackagedPlugins": true`` with options ``true`` and ``false``. |
-+------------------------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
+| - **true**: **(Default)** Pre-packaged plugins that are enabled will be installed or upgraded automatically. If a newer version is installed, no changes are made. | - System Config path: **Plugins > Plugin Management**                            |
+| - **false**: Pre-packaged plugins are not installed or upgraded automatically, but may be installed manually from the Marketplace, even when offline.              | - ``config.json`` setting: ``.PluginSettings.AutomaticPrepackagedPlugins: true`` |
+|                                                                                                                                                                    | - Environment variable: ``MM_PLUGINSETTINGS_AUTOMATICPREPACKAGEDPLUGINS``        |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
 
 .. config:setting:: plugins-enablemarketplace
   :displayname: Enable marketplace (Plugins - Management)
