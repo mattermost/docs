@@ -13,7 +13,11 @@ Latest Mattermost Releases:
 
 ## Release v7.7 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
 
-**Release Day: January 16, 2023**
+- **v7.7.1, released **
+  - Fixed an issue that prevented the creation of the initial admin user for new servers [MM-49720](https://mattermost.atlassian.net/browse/MM-49720).
+  - Fixed an issue where the Top Channels for Insights didn't show results if the current user's configured timezone wasn't present in MySQL's ``mysql.time_zone_name table`` [MM-49688](https://mattermost.atlassian.net/browse/MM-49688).
+- **v7.7.0, released 2023-01-16**
+  - Original 7.7.0 release
 
 Mattermost v7.7.0 contains low severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
 
@@ -23,7 +27,6 @@ Mattermost v7.7.0 contains low severity level security fixes. [Upgrading](https:
  	- This is to avoid plugins crashing with an error about ``findDOMNode`` being called on an unmounted component. While our [starter template](https://github.com/mattermost/mattermost-plugin-starter-template) depended on an external version of ``React``, it did not do the same for ``ReactDOM``. Plugins need to update their ``webpack.config.js`` directives to externalize ``ReactDOM``. For reference, see https://github.com/mattermost/mattermost-plugin-playbooks/pull/1489. Server-side only plugins are unaffected. This change can be done for existing plugins any time prior to upgrading to Mattermost v7.7 and is backwards compatible with older versions of Mattermost. If you run into issues, you can either enable ``ExperimentalSettings.PatchPluginsReactDOM`` or just disable the affected plugin while it's updated.
  - Denormalized ``Threads table`` by adding the ``TeamId`` column. See details for schema changes in the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
  - Starting with the Calls version shipping with v7.7, there's now a minimum version requirement when using the external RTCD service. This means that if Calls is configured to use the external service, customers need to upgrade RTCD first to at least version 0.8.0 or the plugin will fail to start.
- - An error may occur on servers using MySQL if the server is set to ``SYSTEM`` timezone and doesn't support named timezones. These errors can be fixed by populating the timezone tables on the server. Please see [the docs](https://dev.mysql.com/doc/refman/8.0/en/time-zone-support.html#:~:text=%3A%20%27UTC%27-,Populating%20the%20Time%20Zone%20Tables,-Several%20tables%20in) for more details.
 
 **IMPORTANT:** If you upgrade from a release earlier than v7.5, please read the other [Important Upgrade Notes](/upgrade/important-upgrade-notes.html).
 
@@ -173,7 +176,6 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - v7.7 is built with Go ``v1.18.1``.
 
 ### Known Issues
- - After a fresh installation of v7.7, an admin user cannot be added [MM-49706](https://mattermost.atlassian.net/browse/MM-49706).
  - The new Insights feature has some performance costs that we are working to optimize. This feature can be disabled by setting the ``MM_FEATUREFLAGS_INSIGHTSENABLED`` environment variable to ``false``.
  - Adding an @mention at the start of a post draft and pressing the left or right arrow key can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
  - Google login fails on the Classic mobile apps.
