@@ -22,7 +22,6 @@ Latest Mattermost Cloud releases:
 
 #### User Interface (UI)
  - Insights and drafts are now included when navigating through channels in the channel sidebar using ALT+UP/DOWN arrow keyboard keys.
- - Improvements were added to the sidebar category menus including the Direct Messages category.
  - Added an onboarding tour point for Global Drafts.
 
 #### Administration
