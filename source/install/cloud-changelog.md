@@ -16,7 +16,7 @@ Latest Mattermost Cloud releases:
 ### Highlights
 
 #### GitLab Playbooks Integration
- - Through the updated [GitLab integration and playbook task actions](https://mattermost.com/marketplace/gitlab-plugin/), teams can automate release management processes to help increase efficiency and reduce errors.
+ - Using the updated [GitLab integration and task actions in Mattermost Playbooks](https://mattermost.com/marketplace/gitlab-plugin/), teams can automate release management processes to help increase efficiency and reduce errors.
 
 ### Improvements
 
@@ -26,9 +26,9 @@ Latest Mattermost Cloud releases:
  - Added an onboarding tour point for Global Drafts.
 
 #### Administration
- - The max size of uploaded emojis is now reduced to 512KiB to reduce image download bandwidth.
+ - The maximum size of uploaded emojis is reduced to 512KB to reduce image download bandwidth.
  - Users can now monitor the progress of the bulk export job via its metadata field. It is available at ``mmctl export job show <jobID>``.
- - Compliance exports no longer timeout when uploading to S3.
+ - Compliance exports no longer time out when uploading to S3.
  - Users can now supply a certificate authority (CA) file and client certificates for the Elasticsearch client.
  - Grafana metrics are now available for database connection metrics. They are:
     - ``max_open_connections``
@@ -40,7 +40,7 @@ Latest Mattermost Cloud releases:
     - ``max_idle_closed_total``
     - ``max_idle_time_closed_total``
     - ``max_lifetime_closed_total``
- - Boards are served as an in-built product from within Mattermost server instead of a plugin. While running in product mode, the boards plugin will remain disabled.
+ - Boards are served as an in-built product from within Mattermost server instead of a plugin. While running in product mode, the Boards plugin will remain disabled.
  - Added a new section in the **System Console** for products. For now, it only contains Boards-specific settings.
  - Boards is now delivered as an official in-product vertical instead of a plugin and is now always enabled.
  - Made ``registerChannelIntroButtonAction`` plugin API usable by plugins other than Boards.
@@ -56,7 +56,7 @@ Latest Mattermost Cloud releases:
  - Fixed an issue with the plugin ``/public`` handling for subpaths.
  - Fixed an issue where selecting **Pinned** on a post in the Threads view would result in the right-hand side being stuck in a loading state.
  - Fixed an issue where the profile popover did not dismiss when opening a modal through a shortcut.
- - Fixed an issue where the "Run Deletion Job Now" button for Data Retention wasn’t disabled when all policies were set to "keep forever".
+ - Fixed an issue where the **Run Deletion Job Now** button for Data Retention wasn’t disabled when all policies were set to **keep forever**.
  - Fixed an issue that prevented the creation of the initial admin user for new servers.
  - Fixed an issue where making a channel non-read-only required a refresh of the client to see the change.
  - Fixed an issue where Top Channels for Insights didn't show results if the current user's configured timezone wasn't present in MySQL's ``mysql.time_zone_name table``.
