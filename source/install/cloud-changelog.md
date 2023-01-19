@@ -42,7 +42,6 @@ Latest Mattermost Cloud releases:
     - ``max_lifetime_closed_total``
  - Boards are served as an in-built product from within Mattermost server instead of a plugin. While running in product mode, the Boards plugin will remain disabled.
  - Added a new section in the **System Console** for products. For now, it only contains Boards-specific settings.
- - Boards is now delivered as an official in-product vertical instead of a plugin and is now always enabled.
  - Made ``registerChannelIntroButtonAction`` plugin API usable by plugins other than Boards.
  - The following new HTTP headers and values are now written on all responses. These default values should make sense in most installations and can be overridden by a reverse proxy or ingress configuration. Note that the empty ``Permissions-Policy`` does not have any other effect than be present, to suggest changing it to a more restrictive value based on actual needs.
 
