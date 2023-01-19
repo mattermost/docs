@@ -78,7 +78,6 @@ Latest Mattermost Cloud releases:
  - Updated [the keyboard shortcut](https://docs.mattermost.com/channels/keyboard-shortcuts-for-channels.html#calls-shortcuts) to start and join calls.
 
 #### Boards
- - Boards is now delivered as an official in-product vertical instead of a plugin and is now always enabled.
  - Boards now supports [file attachments](https://docs.mattermost.com/boards/work-with-cards.html#attach-files), including PDFs, images, videos, and any other file types.
  - Users can now [drag and drop boards and categories](https://docs.mattermost.com/boards/navigate-boards.html#manage-boards-on-the-sidebar) on the sidebar and organize them in any order they prefer.
  - The [template picker](https://docs.mattermost.com/boards/work-with-boards.html#choose-a-board-template) has been improved to make it easier for users to find the best template for their project.
@@ -89,7 +88,7 @@ Latest Mattermost Cloud releases:
 
 #### Message Priority and Acknowledgments
  - Added [message priority labels](https://docs.mattermost.com/channels/message-priority.html) to the Threads view.
- - Added support for enterprise users to request acknowledgements on posts and to acknowledge posts (Professional).
+ - Added support for users to request acknowledgements on posts and to acknowledge posts (Professional license).
 
 #### Global Drafts
  - Added [a centralized Drafts view](https://docs.mattermost.com/channels/send-messages.html#draft-messages) for draft messages.
@@ -128,7 +127,6 @@ Latest Mattermost Cloud releases:
  - Improved bulk export logging.
  - Compliance export job can now cancel the SQL query execution during server shutdown which will allow the job to exit faster.
  - Shared Channels (Experimental) is now available with a Professional license.
- - Added a new section in the **System Console** for products. For now, it only contains Boards-specific settings.
  - Removed Cloud Professional file storage limits.
  - The message export compliance job can now survive server restarts. The job will pause and save state when the server is shutting down, and resume from the previously saved state when the server starts back up.
  - Only one instance of the job will be automatically scheduled to run as per the ``MessageExportSettings.DailyRunTime`` config value.
@@ -171,7 +169,6 @@ Latest Mattermost Cloud releases:
 ### Known Issues
  - The message box flashes controls while typing in the right-hand side [MM-49266](https://mattermost.atlassian.net/browse/MM-49266).
  - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
- - Publicly shared boards lead to a "Team not found" error page. See [issue-focalboard-4450](https://github.com/mattermost/focalboard/issues/4450) for more details.
 
 ## Release 2022-12-20
 
