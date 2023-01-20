@@ -60,6 +60,7 @@ Latest Mattermost Cloud releases:
  - Fixed an issue where Top Channels for Insights didn't show results if the current user's configured timezone wasn't present in MySQL's ``mysql.time_zone_name table``.
  - Fixed an issue where a white screen appeared when a guest was removed from the last channel while on Threads.
  - Fixed an issue where a Direct Message thread did not get disabled when a user was deactivated.
+ - Fixed an issue where email notifications for Direct Messages from Playbooks contained broken URLs.
 
 ### Known Issues
  - The message box flashes controls while typing in the right-hand side [MM-49266](https://mattermost.atlassian.net/browse/MM-49266).
