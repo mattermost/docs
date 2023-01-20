@@ -108,24 +108,19 @@ Enable Marketplace
   :configjson: EnableRemoteMarketplace
   :environment: N/A
 
-  - **true**: **(Default)** The server will attempt to connect to the configured Plugin Marketplace to show the latest plugins.
-  - **false**: The server won't attempt to connect to a remote marketplace, and will show only pre-packaged and already installed plugins.
+  - **true**: **(Default)** Mattermost attempts to connect to the endpoint set in MarketplaceURL.
+  - **false**: Mattermost does not attempt to connect to a remote Marketplace, and will show only pre-packaged and installed plugins.
 
 Enable remote Marketplace
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**True**: The server will attempt to connect to the configured Plugin Marketplace to show the latest plugins. If the connection fails, the Plugin Marketplace shows only pre-packaged and already installed plugins alongside a connection error.
-
-**False**: The server won't attempt to connect to a remote marketplace, and will show only pre-packaged and already installed plugins. Use this setting if your server can't connect to the internet.
-
-+--------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableRemoteMarketplace": true`` with options ``true`` and ``false``. |
-+--------------------------------------------------------------------------------------------------------------------+
-
-This setting only takes effect when ``"EnableMarketplace": true``.
-
-.. note::
-   For the remote marketplace to operate, each host running the Mattermost service requires network access to the marketplace service endpoint (hosted at ``https://api.integrations.mattermost.com``, see `Marketplace URL <#marketplace-url>`__ ).
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+| - **true**: **(Default)** Mattermost attempts to connect to the endpoint set in ``MarketplaceURL``. If the connection fails, an error is displayed, and the Marketplace only shows pre-packaged and installed plugins.     | - System Config path: **Plugins > Plugin Management**                        |
+| - **false**: Mattermost does not attempt to connect to a remote Marketplace. The Marketplace will only show pre-packaged and installed plugins. Use this setting if your Mattermost server cannot connect to the Internet. | - ``config.json`` setting: ``.PluginSettings.EnableRemoteMarketplace: true`` |
+|                                                                                                                                                                                                                            | - Environment variable: ``MM_PLUGINSETTINGS_ENABLEREMOTEMARKETPLACE``        |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+| **Note**: To connect to a remote Marketplace, ``EnableMarketplace`` must be ``true`` and each Mattermost host must have network access to the endpoint set in ``MarketplaceURL``.                                                                                                                         |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
 
 .. config:setting:: plugins-marketplaceurl
   :displayname: Marketplace URL (Plugins - Management)
