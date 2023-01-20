@@ -119,8 +119,8 @@ Enable remote Marketplace
 | - **false**: Mattermost does not attempt to connect to a remote Marketplace. The Marketplace will only show pre-packaged and installed plugins. Use this setting if your Mattermost server cannot connect to the Internet. | - ``config.json`` setting: ``.PluginSettings.EnableRemoteMarketplace: true`` |
 |                                                                                                                                                                                                                            | - Environment variable: ``MM_PLUGINSETTINGS_ENABLEREMOTEMARKETPLACE``        |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
-| **Note**: To connect to a remote Marketplace, ``EnableMarketplace`` must be ``true`` and each Mattermost host must have network access to the endpoint set in ``MarketplaceURL``.                                          |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Note**: To connect to a remote Marketplace, ``EnableMarketplace`` must be ``true`` and each Mattermost host must have network access to the endpoint set in ``MarketplaceURL``.                                                                                                                         |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
 
 .. config:setting:: plugins-marketplaceurl
   :displayname: Marketplace URL (Plugins - Management)
