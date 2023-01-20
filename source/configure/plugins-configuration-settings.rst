@@ -72,17 +72,17 @@ Require plugin signature
   :configjson: AutomaticPrepackagedPlugins
   :environment: N/A
 
-  - **true**: **(Default)** Any pre-packaged plugins enabled in the configuration will be installed or upgraded automatically.
-  - **false**: Pre-packaged plugins are not installed or upgraded automatically, but may be installed manually from the Marketplace, even when offline.
+  - **true**: **(Default)** Mattermost automatically installs and upgrades any enabled pre-packaged plugins.
+  - **false**: Mattermost does not automatically install or upgrade pre-packaged plugins.
 
 Automatic prepackaged plugins
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
-| - **true**: **(Default)** Pre-packaged plugins that are enabled will be installed or upgraded automatically. If a newer version is installed, no changes are made. | - System Config path: **Plugins > Plugin Management**                            |
-| - **false**: Pre-packaged plugins are not installed or upgraded automatically, but may be installed manually from the Marketplace, even when offline.              | - ``config.json`` setting: ``.PluginSettings.AutomaticPrepackagedPlugins: true`` |
-|                                                                                                                                                                    | - Environment variable: ``MM_PLUGINSETTINGS_AUTOMATICPREPACKAGEDPLUGINS``        |
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
+| - **true**: **(Default)** Mattermost automatically installs and upgrades any enabled pre-packaged plugins. If a newer version is installed, no changes are made.                | - System Config path: **Plugins > Plugin Management**                            |
+| - **false**: Mattermost does not automatically install or upgrade pre-packaged plugins. Pre-packaged plugins may be installed manually from the Marketplace, even when offline. | - ``config.json`` setting: ``.PluginSettings.AutomaticPrepackagedPlugins: true`` |
+|                                                                                                                                                                                 | - Environment variable: ``MM_PLUGINSETTINGS_AUTOMATICPREPACKAGEDPLUGINS``        |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
 
 .. config:setting:: plugins-enablemarketplace
   :displayname: Enable marketplace (Plugins - Management)
