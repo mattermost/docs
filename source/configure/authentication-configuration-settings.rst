@@ -2540,8 +2540,8 @@ Access the following configuration settings in the System Console by going to **
   :configjson: Enable
   :environment: N/A
 
-  - **true**: Allow guest invitations to channels within teams.
-  - **false**: **(Default)** Email signup is disabled. This limits signup to Single sign-on services like OAuth or AD/LDAP.
+  - **true**: Enables the guest account feature.
+  - **false**: **(Default)** Disables the guest account feature.
 
 Enable guest access
 ~~~~~~~~~~~~~~~~~~~
