@@ -119,24 +119,24 @@ Enable remote Marketplace
 | - **false**: Mattermost does not attempt to connect to a remote Marketplace. The Marketplace will only show pre-packaged and installed plugins. Use this setting if your Mattermost server cannot connect to the Internet. | - ``config.json`` setting: ``.PluginSettings.EnableRemoteMarketplace: true`` |
 |                                                                                                                                                                                                                            | - Environment variable: ``MM_PLUGINSETTINGS_ENABLEREMOTEMARKETPLACE``        |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
-| **Note**: To connect to a remote Marketplace, ``EnableMarketplace`` must be ``true`` and each Mattermost host must have network access to the endpoint set in ``MarketplaceURL``.                                                                                                                         |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+| **Note**: To connect to a remote Marketplace, ``EnableMarketplace`` must be ``true`` and each Mattermost host must have network access to the endpoint set in ``MarketplaceURL``.                                          |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: plugins-marketplaceurl
   :displayname: Marketplace URL (Plugins - Management)
   :systemconsole: Plugins > Plugin Management
   :configjson: MarketplaceUrl
   :environment: N/A
-  :description: If the Marketplace is enabled, this setting specifies which URL should be used to query for new Marketplace plugins. Default is **https://api.integrations.mattermost.com**.
+  :description: This setting stores the URL for the remote Marketplace. Default is **https://api.integrations.mattermost.com**.
 
 Marketplace URL
 ~~~~~~~~~~~~~~~
 
-If the Marketplace is enabled, this setting specifies which URL should be used to query for new Marketplace plugins.
-
-+------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"MarketplaceUrl": "https://api.integrations.mattermost.com"`` with string input. |
-+------------------------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------+---------------------------------------------------------------+
+| This setting stores the URL for the remote Markeplace.               | - System Config path: **Plugins > Plugin Management**         |
+|                                                                      | - ``config.json`` setting: ``.PluginSettings.MarketplaceURL`` |
+| String input. Default is ``https://api.integrations.mattermost.com`` | - Environment variable: ``MM_PLUGINSETTINGS_MARKETPLACEURL``  |
++----------------------------------------------------------------------+---------------------------------------------------------------+
 
 .. config:setting:: plugins-installedpluginstates
   :displayname: Installed plugin state (Plugins - Management)
