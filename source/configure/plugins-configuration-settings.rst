@@ -143,16 +143,16 @@ Marketplace URL
   :systemconsole: Plugins > Plugin Management
   :configjson: PluginStates
   :environment: N/A
-  :description: Lists installed plugins on your Mattermost server and whether they are enabled. Pre-packaged plugins are installed by default and can be deactivated, but not removed.
+  :description: This setting is a list of installed plugins and their status as enabled or disabled.
 
 Installed plugin state
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Lists installed plugins on your Mattermost server and whether they are enabled. Pre-packaged plugins are installed by default and can be deactivated, but not removed.
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"PluginStates": {}`` with object input mapping plugin IDs as keys to objects, each of which contains a key ``"Enable": false`` with options ``true`` or ``false``. |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------+
+| This setting is a list of installed plugins and their status as enabled or disabled.                                                                                                     | - System Config path: **Plugins > Plugin Management**       |
+|                                                                                                                                                                                          | - ``config.json`` setting: ``.PluginSettings.PluginStates`` |
+| The ``config.json`` setting is an object. The object keys are plugin IDs, e.g. ``com.mattermost.apps``. Each plugin contains an ``Enable`` key that can be set as ``true`` or ``false``. | - Environment variable: ``MM_PLUGINSETTINGS_PLUGINSTATES``  |
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------+
 
 .. config:setting:: plugins-pluginsettings
   :displayname: Plugin settings (Plugins - Management)
