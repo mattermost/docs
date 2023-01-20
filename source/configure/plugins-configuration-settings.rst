@@ -148,27 +148,27 @@ Marketplace URL
 Installed plugin state
 ~~~~~~~~~~~~~~~~~~~~~~
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------+
-| This setting is a list of installed plugins and their status as enabled or disabled.                                                                                                     | - System Config path: **Plugins > Plugin Management**       |
-|                                                                                                                                                                                          | - ``config.json`` setting: ``.PluginSettings.PluginStates`` |
-| The ``config.json`` setting is an object. The object keys are plugin IDs, e.g. ``com.mattermost.apps``. Each plugin contains an ``Enable`` key that can be set as ``true`` or ``false``. | - Environment variable: ``MM_PLUGINSETTINGS_PLUGINSTATES``  |
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------+
+| This setting is a list of installed plugins and their status as enabled or disabled.                                                                                                                         | - System Config path: **Plugins > Plugin Management**       |
+|                                                                                                                                                                                                              | - ``config.json`` setting: ``.PluginSettings.PluginStates`` |
+| The ``config.json`` setting is an object. The object keys are plugin IDs, e.g. ``com.mattermost.apps``. Each key maps to an object that contains an ``Enable`` key that can be set as ``true`` or ``false``. | - Environment variable: ``MM_PLUGINSETTINGS_PLUGINSTATES``  |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------+
 
 .. config:setting:: plugins-pluginsettings
   :displayname: Plugin settings (Plugins - Management)
   :systemconsole: Plugins > Plugin Management
   :configjson: Plugins
   :environment: N/A
-  :description: Settings specific to each Mattermost plugin.
+  :description: This setting contains plugin-specific data.
 
 Plugin settings
 ~~~~~~~~~~~~~~~
 
-Settings specific to each Mattermost plugin.
-
-+------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Plugins": {}`` with object input mapping plugin IDs as keys to objects containing plugin-specific data. |
-+------------------------------------------------------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------+
+| This setting contains plugin-specific data.                                                                                                                            | - System Config path: **Plugins > Plugin Management**  |
+|                                                                                                                                                                        | - ``config.json`` setting: ``.PluginSettings.Plugins`` |
+| The ``config.json`` setting is an object. The object keys are plugin IDs, e.g. ``com.mattermost.apps``. Each key maps to an object that contains plugin-specific data. | - Environment variable: ``MM_PLUGINSETTINGS_PLUGINS``  |
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------+
 
 ----
 
