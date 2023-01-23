@@ -20,7 +20,7 @@ Set up a connection app for Mattermost SSO
 
 1. Log in to Keycloak as an administrator.
 
-2. Click **Clients** then **Create** and save. You'll use this client ID in a later step.
+2. Select **Clients**, then **Create** and **Save**. You'll use this client ID in a later step.
 
     - **Client ID**: ``mattermost``
     - **Client Protocol**: ``saml``
