@@ -27,6 +27,12 @@ Users
 | their role is on a team.                                      |                                                             |
 +---------------------------------------------------------------+-------------------------------------------------------------+
 
+Manage users :
+------
+Admins can view all users by navigating to **System Console > User management > User**. Every user's action can be managed in the user tab.
+By going to user status and selecting the relevant options from the drop down menu, admins can also see other admins, inactive and active users, and guests.
+If admins need to remove or revoke any user, they can do so by going to the member option and then selecting relevant options from the drop down menu.
+
 ----
 
 Groups
