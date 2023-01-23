@@ -13,6 +13,11 @@ The following process provides steps to configure SAML with Keycloak for Matterm
 Set up a connection app for Mattermost SSO
 -------------------------------------------
 
+.. note:: 
+    This was tested with Keycloak v18.0.0.
+
+    Additionally, you do not typically have to make a realm dedicated to Mattermost. We recommend adding Mattermost as a client to your primary realm.
+
 1. Log in to Keycloak as an administrator.
 
 2. Click **Clients** then **Create** and save. You'll use this client ID in a later step.
@@ -38,12 +43,16 @@ Set up a connection app for Mattermost SSO
 
 6. Select **Generate new keys**.
 
-7. Select **Export**, use the values below, and then select **Download**.
+7. Select **Export**, use the values below, and then select **Download**. Once you've downloaded it navigate back to the Mattermost Client in Keycloak for the next steps. 
 
     - **Archive Format**: ``PKCS12``
     - **Key Alias**: ``mattermost``
     - **Key Password**: ``mattermost``
     - **Store Password**: ``mattermost``
+
+    .. note::
+        In the below picture we used `Mattermost` for the `Realm Certificate Alias`. You can use any value that you would like here, as it's designed to identify what this certificate is within your Keycloak realm.
+
 
 .. image:: ../../source/images/keycloak_2_saml_keys.png
    :alt: In Keycloak, on the Keys tab, generate new keys, export using the values documented, then select Download.
@@ -60,6 +69,8 @@ Set up a connection app for Mattermost SSO
 
 9. Add the username and ID attribute.
 
+    If you're planning to sync your SAML users with LDAP within Mattermost the ID value used here must match with your Mattermost LDAP ``ID Attribute``.
+
     a. With the **Mappers** section of your client, select **Create**.
     b. Set **Name** to ``Username``.
     c. Under Mapper Type select **User Property**.
@@ -70,6 +81,10 @@ Set up a connection app for Mattermost SSO
 
 .. image:: ../../source/images/keycloak_4_create_username_attribute.png
    :alt: In Keycloak, on the Mappers tab, create a protocol mapper, then save your changes.
+
+    Once done your Mappers should look like this:
+.. image:: ../../source/images/keycloak_4_create_username_attribute_finished.png
+
 
 10. Get the metadata URL from Keycloak:
 
@@ -125,7 +140,9 @@ Configure SAML for Mattermost
 .. image:: ../../source/images/keycloak_7_mattermost_request_signing.png
    :alt: In the System Console, you can optionally request signing with configured parameters.
 
-6. Set attributes for the SAML Assertions, which will update user information in Mattermost. Attributes for email and username are required to match the values you configured in Keycloak in steps 9 and 10. See `documentation on SAML configuration settings </configure/configuration-settings.html#saml>`__ for more detail.
+6. Set attributes for the SAML Assertions, which will update user information in Mattermost. 
+    
+    The below are from step 8 and 9 above. These values must be the **SAML Attribute Name** within Keycloak. See `documentation on SAML configuration settings </configure/configuration-settings.html#saml>`__ for more detail.
 
     - **Email Attribute**: ``email``
     - **Username Attribute**:  ``username``
