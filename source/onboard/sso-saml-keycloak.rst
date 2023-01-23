@@ -43,7 +43,7 @@ Set up a connection app for Mattermost SSO
 
 6. Select **Generate new keys**.
 
-7. Select **Export**, use the values below, and then select **Download**. Once you've downloaded it navigate back to the Mattermost Client in Keycloak for the next steps. 
+7. Select **Export**, use the values below, and then select **Download**. Once you've downloaded it, navigate back to the Mattermost client in Keycloak for the next steps. 
 
     - **Archive Format**: ``PKCS12``
     - **Key Alias**: ``mattermost``
