@@ -51,7 +51,7 @@ Set up a connection app for Mattermost SSO
     - **Store Password**: ``mattermost``
 
     .. note::
-        In the below picture we used `Mattermost` for the `Realm Certificate Alias`. You can use any value that you would like here, as it's designed to identify what this certificate is within your Keycloak realm.
+        In the image below, we used `Mattermost` for the `Realm Certificate Alias`. You can use any value that you would like here, as it's designed to identify what this certificate is within your Keycloak realm.
 
 
 .. image:: ../../source/images/keycloak_2_saml_keys.png
