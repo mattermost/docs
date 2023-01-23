@@ -143,7 +143,7 @@ Configure SAML for Mattermost
 
 6. Set attributes for the SAML Assertions, which will update user information in Mattermost. 
     
-    The below are from step 8 and 9 above. These values must be the **SAML Attribute Name** within Keycloak. See `documentation on SAML configuration settings </configure/configuration-settings.html#saml>`__ for more detail.
+    The attributes below are from steps 8 and 9 above. These values must be the **SAML Attribute Name** within Keycloak. See `documentation on SAML configuration settings </configure/configuration-settings.html#saml>`__ for more details.
 
     - **Email Attribute**: ``email``
     - **Username Attribute**:  ``username``
