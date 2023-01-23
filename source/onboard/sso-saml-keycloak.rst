@@ -16,7 +16,7 @@ Set up a connection app for Mattermost SSO
 .. note:: 
     This was tested with Keycloak v18.0.0.
 
-    Additionally, you do not typically have to make a realm dedicated to Mattermost. We recommend adding Mattermost as a client to your primary realm.
+    Additionally, you don't typically need to make a realm dedicated to Mattermost. We recommend adding Mattermost as a client to your primary realm.
 
 1. Log in to Keycloak as an administrator.
 
