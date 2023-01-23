@@ -31,18 +31,18 @@ Bulk export data
 
     3.  Retrieve your file from the location you specified.
 
-At this time, the export supports attributes of the objects listed below. All Mattermost bulk export data files will begin with a `Version` object as the first line of the file. This indicates the version of the Mattermost bulk import file format with which the exported data is compatible.
+At this time, the export supports attributes of the objects listed below. All Mattermost bulk export data files will begin with a ``Version`` object as the first line of the file. This indicates the version of the Mattermost bulk import file format with which the exported data is compatible.
 
 You can export the following data types:
 
 - Teams
-- Channels (public and private)
+- Channels (public, private, and direct)
 - Users
 - Users' team memberships
 - Users' channel memberships
 - Users' notification preferences
-- Posts (regular, non-reply posts)
-- Posts' replies
+- Posts (regular, non-reply messages)
+- Posts' replies and threads
 - Posts' reactions
 - Custom emoji
 - Direct message channels
@@ -52,7 +52,7 @@ You can export the following data types:
 
    Configuration for data types such as exporting specific areas of the server, exporting additional types of posts, permissions schemes, file attachments, webhooks, and bot messages is not yet supported. Deleted objects are also not yet supported.
 
-   For requests to add additional attributes or objects to our exporter, please add a feature request on our `feature idea forum <https://mattermost.uservoice.com/forums/306457-general>`__.
+   For requests to add additional attributes or objects to our exporter, please add a feature request on our `feature idea forum <https://portal.productboard.com/mattermost/33-what-matters-to-you>`__.
 
 Version object
 --------------
@@ -680,6 +680,11 @@ DirectChannel object
       <td valign="middle">members</td>
       <td valign="middle">array</td>
       <td>List of channel members.</td>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">favorited_by</td>
+      <td valign="middle">array</td>
+      <td>List of channel members who have favorited the direct channel.</td>
     </tr>
     <tr class="row-odd">
       <td valign="middle">header</td>

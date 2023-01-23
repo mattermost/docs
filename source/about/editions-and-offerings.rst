@@ -62,7 +62,7 @@ Features include:
 - Pre-packaged integrations with most common developer tools, including Jira, Confluence, GitHub, GitLab, CircleCI, Zoom, Jitsi, and more.
 - Tools for `custom branding </configure/custom-branding-tools.html>`__ and `themes </messaging/customizing-theme-colors.html>`__.
 - `Multi-factor authentication </onboard/multi-factor-authentication.html>`__.
-- `Single Sign-on with GitLab </onboard/sso-gitlab.html>`__ (Self-hosted only).
+- `Single Sign-on with GitLab </onboard/sso-gitlab.html>`, `Google </onboard/sso-google.html>`, or `OpenID Connect </onboard/sso-openidconnect.html>`__.
 - `Granular system permissions </onboard/advanced-permissions.html>`__.
 - Highly customizable `third-party bots, integrations <https://mattermost.com/marketplace/#publicApps>`__, and `command line tools </manage/mmctl-command-line-tool.html>`__.
 - Extensive integration support via `webhooks, APIs, drivers <https://developers.mattermost.com/integrate/other-integrations/>`__, and `third-party extensions <https://mattermost.com/marketplace/>`__.
@@ -78,14 +78,14 @@ Mattermost Professional
 Mattermost Professional is the set of collaboration features that enables you to build and scale your sophisticated developer workflows across multiple cross-functional teams to deliver mission-critical software.
 
 * *Self-hosted deployments* - **Mattermost Professional** is available to our self-hosted community who either run, or upgrade to, our self-hosted commercial Mattermost Enterprise Edition (see `deployment guides </guides/deployment.html#install-guides>`__), who purchase the appropriate subscription license key either through `online purchase </about/self-hosted-subscriptions.html>`__, through a `channel reseller <https://mattermost.com/partners/#resellers>`__ or by contacting `the Mattermost sales organization <https://mattermost.com/contact-sales/>`__, and who then install the license key onto their Mattermost server. A 30-day free trial to preview the features in this subscription can be activated either in-product (**System Console > Edition and License > Start trial**) or via an online request at https://mattermost.com/trial/.
-* *Cloud deployments* - For our cloud community, the Mattermost Professional feature set is available through `online purchase </about/self-hosted-subscriptions.html>`__. Some `workspace limits </onboard/mattermost-limits.html>`_ may apply.
+* *Cloud deployments* - For our cloud community, the Mattermost Professional feature set is available through `online purchase </about/self-hosted-subscriptions.html>`__. Some `workspace limits </onboard/mattermost-limits.html>`__ may apply.
 
 This offering includes all the features of Mattermost Free, plus: 
 
 - `Guest access </onboard/guest-accounts.html>`__.
 - Unlimited playbooks, retrospective reports, and timelines.
 - `Active Directory/LDAP Single Sign-on and user synchronization </onboard/ad-ldap.html>`__.
-- Single Sign-on with SAML, `Google </onboard/sso-google.html>`__, `Office365 </onboard/sso-office.html>`__ or `OpenID Connect </onboard/sso-openidconnect.html>`__.
+- Single Sign-on with `SAML </onboard/sso-saml.html>` or `Office365 </onboard/sso-office.html>`__.
 - `MFA enforcement </onboard/multi-factor-authentication.html#enforcing-mfa-e10>`__.
 - `Advanced team permissions </onboard/advanced-permissions.html#team-override-schemes-e20>`__.
 - `Read-only announcement channels </manage/team-channel-members.html#channel-moderation-e20>`__.
@@ -151,4 +151,4 @@ As the platform matures and new features are added, they're evaluated to be incl
 
 We recognize there aren't any features that are only useful to managers, directors, and executives. Individual practitioners may want certain features; however, we think that other buyers are relatively more likely to care about it. We also recognize that there may be some features that are put into an edition to find later there is much demand for it by individuals or a singular team; we will not hesitate to move that feature. We value feedback from our community and iterate based on that feedback. Simultaneously, we also need to offer commercial products that hold value and do our best to find the right balance. We believe the more of Mattermost that you use, the more likely it is that you benefit from the advanced editions we offer.
 
-You can provide us with feedback via `our forum <https://mattermost.uservoice.com/>`__, where ideas and input influences the future of the platform.
+You can provide us with feedback via `our idea portal <https://portal.productboard.com/mattermost/33-what-matters-to-you>`__, where ideas and input influences the future of the platform.
