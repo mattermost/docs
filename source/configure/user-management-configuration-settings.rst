@@ -29,7 +29,7 @@ Users
 
 There are a lot of things that an Admin can do.
 
-Find users
+Find users :
 ~~~~~~~~~~
 
 admins also can narrow down search results by filtering by team or user status
