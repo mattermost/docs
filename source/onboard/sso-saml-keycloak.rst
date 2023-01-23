@@ -69,7 +69,7 @@ Set up a connection app for Mattermost SSO
 
 9. Add the username and ID attribute.
 
-    If you're planning to sync your SAML users with LDAP within Mattermost the ID value used here must match with your Mattermost LDAP ``ID Attribute``.
+    If you're planning to sync your SAML users with LDAP within Mattermost, the ID value used here must match with your Mattermost LDAP ``ID Attribute``.
 
     a. With the **Mappers** section of your client, select **Create**.
     b. Set **Name** to ``Username``.
