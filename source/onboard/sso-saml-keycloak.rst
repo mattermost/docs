@@ -84,6 +84,7 @@ Set up a connection app for Mattermost SSO
 
     Once done your Mappers should look like this:
 .. image:: ../../source/images/keycloak_4_create_username_attribute_finished.png
+   :alt: Example of protocol mapper configuration. 
 
 
 10. Get the metadata URL from Keycloak:
