@@ -30,6 +30,7 @@ Mattermost mobile v2.0 is a major update to the iOS and Android apps bringing su
 Users now gain a more reliable and feature-rich application, improving their experience for collaborating with their teams on the go.
 
 ### Known Issues
+ - Landscape mode doesn't work on Android and some iOS devices.
  - Users are unable to adjust the font size via the OS font size setting.
  - **Add Members** and **Manage Members** modals are not yet added [MM-48489](https://mattermost.atlassian.net/browse/MM-48489).
  - Posts may remain in the local device database after data retention job has been run [MM-47548](https://mattermost.atlassian.net/browse/MM-47548).
