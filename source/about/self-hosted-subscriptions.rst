@@ -96,9 +96,12 @@ We'll send you an email notice around the end of the quarter reminding you to se
 .. tip:: 
    
    Not sure where to take the screenshot? Please reach out to your account executive, Customer Success Manager, orders@mattermost.com, or support@mattermost.com for help.
-
+   
 .. image:: ../images/Site_Statistics.png
 	:alt: Take a screenshot from the System Console > Site Statistics page.
+	
+.. image:: ../images/true-up-schedule.png
+      :alt: The timeframes followed for the true up notifications.
 
 If you have more total active users than you purchased in your annual subscription, your account executive will provide you with a true-up quote for the new users added.
 
