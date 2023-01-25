@@ -82,17 +82,27 @@ This process adds additional users to your existing subscription and is not a ne
 
 If you don't have a self-hosted license in the Customer Portal and want to add users, `contact us <https://mattermost.com/contact-us/>`__.
 
-Quarterly report
-^^^^^^^^^^^^^^^^
+Quarterly true-up report
+^^^^^^^^^^^^^^^^^^^^^^^^
 
-When you subscribe to an annual plan with Mattermost, you agree to provide quarterly reports of the actual number of registered users within your system if you're above the amount you subscribed in your purchase order. A registered user is a user who has an account in a workspace and does not show as *Inactive* in **System Console > User Management > Users**.
+When you subscribe to an annual plan with Mattermost, you agree to provide quarterly reports of the actual number of registered users within your system. A registered user is a user who has an account in a workspace and does not show as *Inactive* in **System Console > User Management > Users**.
 
-We'll send you an email notice around the end of the quarter reminding you to send us your report. To send this report, take a screenshot of **System Console > Site Statistics** and send in a reply email back to us. Please ensure your screenshot is taken from the top of the page and includes the **Total Active Users** metric.
+We'll send you an email notice around the end of the quarter reminding you to send us your report. To send this report, take a screenshot of **System Console > Site Statistics** and send in a reply email back to us. 
+
+- Please ensure your screenshot is taken from the top of the page and includes the **Total Active Users** metric. 
+- Please include the date of the screenshot in the file name.
+- We don't need your server address, so if it appears on your screenshot, you can redact it from the image.
+
+.. tip:: 
+   
+   Not sure where to take the screenshot? Please reach out to your Account Executive, CSM, orders@mattermost.com, or support@mattermost.com for help.
 
 .. image:: ../images/Site_Statistics.png
 	:alt: Take a screenshot from the System Console > Site Statistics page.
 
-If you have more total active users than you purchased in your annual subscription, we'll provide you with an invoice and an amendment to your purchase order for the new users added. The additional invoice will be pro-rated based on the number of months left in your subscription term, including the months for the calendar quarter for the time you pull the report. We will not provide downward adjustments. Mattermost will invoice based on Mattermost’s `current list prices <https://mattermost.com/pricing/>`__.
+If you have more total active users than you purchased in your annual subscription, your account executive will provide you with a true-up quote, invoice, and an amendment to your purchase order for the new users added. 
+
+The additional invoice will be pro-rated based on the number of months left in your subscription term, including the months for the calendar quarter for the time you pull the report. We will not provide downward adjustments. Mattermost will invoice based on Mattermost’s `current list prices <https://mattermost.com/pricing/>`__.
 
 Renew your subscription
 -----------------------
@@ -130,6 +140,25 @@ You can watch a video overview of the renewal process on `YouTube <https://www.y
 
 Frequently asked questions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Why is the True Up Notice necessary? What is a True Up?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Mattermost needs to have insight into where your license seat count stands so that we can charge you appropriately for your on-prem license usage. Additionally, we don’t want to over estimate/charge for your license seat count at your renewal time. Requesting that a screenshot be sent to Mattermost from our on-prem customers on a quarterly basis allows for us to have clarity on your seat count while still only reaching out a few times a year. A True Up is our quarterly request for you to provide a screenshot of your instance data to determine if you are over deployed on your license seat count.
+
+When you receive the quarterly true up notice from Mattermost, please take a screenshot of your instance user data (Located at System Console -> Site Statistics) and reply to the email with the attached screenshot.
+
+
+3. Q: If I cannot locate where to take the screenshot, who can I reach out to for assistance?
+A: Your Account Executive, CSM, orders@mattermost.com, and support@mattermost.com are here to help.
+
+
+4. Q: What if I don’t want to share my server address?
+A: If your server address appears on your screenshot, you can redact it from the image.
+
+5.Q: What should I expect if my license is over deployed?
+A: Your Account rep will be in contact with you and they will provide a true-up quote.
+
 
 How do I renew my subscription if I don't have internet access?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
