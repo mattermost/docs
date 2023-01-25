@@ -141,24 +141,14 @@ You can watch a video overview of the renewal process on `YouTube <https://www.y
 Frequently asked questions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Why is the True Up Notice necessary? What is a True Up?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+What is a true up and why is the true up notice necessary? 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Mattermost needs to have insight into where your license seat count stands so that we can charge you appropriately for your on-prem license usage. Additionally, we don’t want to over estimate/charge for your license seat count at your renewal time. Requesting that a screenshot be sent to Mattermost from our on-prem customers on a quarterly basis allows for us to have clarity on your seat count while still only reaching out a few times a year. A True Up is our quarterly request for you to provide a screenshot of your instance data to determine if you are over deployed on your license seat count.
+A true up is our quarterly request for you to provide a screenshot of your instance data to determine if you have more active users now than when you bought your subscription.
 
-When you receive the quarterly true up notice from Mattermost, please take a screenshot of your instance user data (Located at System Console -> Site Statistics) and reply to the email with the attached screenshot.
+As your organization grows, you may need to add additional users during your subscription period. Mattermost needs to have insight into changes in your active user count so that we can charge you appropriately for your self-hosted license usage. Additionally, we don’t want to over estimate/charge active users at your renewal time. 
 
-
-3. Q: If I cannot locate where to take the screenshot, who can I reach out to for assistance?
-A: Your Account Executive, CSM, orders@mattermost.com, and support@mattermost.com are here to help.
-
-
-4. Q: What if I don’t want to share my server address?
-A: If your server address appears on your screenshot, you can redact it from the image.
-
-5.Q: What should I expect if my license is over deployed?
-A: Your Account rep will be in contact with you and they will provide a true-up quote.
-
+When you receive the quarterly true up notice from Mattermost, please take a screenshot of your active user count which you can find in **System Console > Site Statistics**. Then reply to the email with the attached screenshot.
 
 How do I renew my subscription if I don't have internet access?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
