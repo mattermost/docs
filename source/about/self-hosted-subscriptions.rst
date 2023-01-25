@@ -95,7 +95,7 @@ We'll send you an email notice around the end of the quarter reminding you to se
 
 .. tip:: 
    
-   Not sure where to take the screenshot? Please reach out to your Account Executive, CSM, orders@mattermost.com, or support@mattermost.com for help.
+   Not sure where to take the screenshot? Please reach out to your account executive, Customer Success Manager, orders@mattermost.com, or support@mattermost.com for help.
 
 .. image:: ../images/Site_Statistics.png
 	:alt: Take a screenshot from the System Console > Site Statistics page.
