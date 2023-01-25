@@ -83,9 +83,9 @@ This process adds additional users to your existing subscription and is not a ne
 If you don't have a self-hosted license in the Customer Portal and want to add users, `contact us <https://mattermost.com/contact-us/>`__.
 
 Quarterly true-up report
-^^^^^^^^^^^^^^^^^^^^^^^^
+------------------------
 
-When you subscribe to an annual plan with Mattermost, you agree to provide quarterly reports of the actual number of registered users within your system. A registered user is a user who has an account in a workspace and does not show as *Inactive* in **System Console > User Management > Users**.
+When you buy an annual Mattermost subscription, you agree to provide quarterly reports of the actual number of registered users within your system. A registered user is a user who has an account in a workspace and does not show as *Inactive* in **System Console > User Management > Users**.
 
 We'll send you an email notice around the end of the quarter reminding you to send us your report. To send this report, take a screenshot of **System Console > Site Statistics** and send in a reply email back to us. 
 
