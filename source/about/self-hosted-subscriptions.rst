@@ -87,7 +87,12 @@ Quarterly true-up report
 
 When you buy an annual Mattermost subscription, you agree to provide quarterly reports of the actual number of registered users within your system. A registered user is a user who has an account in a workspace and does not show as *Inactive* in **System Console > User Management > Users**.
 
-We'll send you an email notice around the end of the quarter reminding you to send us your report. To send this report, take a screenshot of **System Console > Site Statistics** and send in a reply email back to us. 
+We'll send you an email notice around the end of the quarter reminding you to send us your report. 
+
+.. image:: ../images/true-up-schedule.png
+      :alt: The timeframes followed for the true up notifications.
+
+To send this report, take a screenshot of **System Console > Site Statistics** and send in a reply email back to us. 
 
 - Please ensure your screenshot is taken from the top of the page and includes the **Total Active Users** metric. 
 - Please include the date of the screenshot in the file name.
@@ -97,12 +102,6 @@ We'll send you an email notice around the end of the quarter reminding you to se
    
    Not sure where to take the screenshot? Please reach out to your account executive, Customer Success Manager, orders@mattermost.com, or support@mattermost.com for help.
    
-.. image:: ../images/Site_Statistics.png
-	:alt: Take a screenshot from the System Console > Site Statistics page.
-	
-.. image:: ../images/true-up-schedule.png
-      :alt: The timeframes followed for the true up notifications.
-
 If you have more total active users than you purchased in your annual subscription, your account executive will provide you with a true-up quote for the new users added.
 
 The additional invoice will be pro-rated based on the number of months left in your subscription term, including the months for the calendar quarter for the time you pull the report. We will not provide downward adjustments. Mattermost will invoice based on Mattermost’s `current list prices <https://mattermost.com/pricing/>`__.
