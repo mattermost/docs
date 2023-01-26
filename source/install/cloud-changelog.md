@@ -17,7 +17,7 @@ Latest Mattermost Cloud releases:
 
 #### Annual Cloud Subscriptions
  - On the purchase modal, admins are now able to buy an annual cloud subscription for a user count that exceeds the current user count.
- - The **System Console > Billing & Account > Subscriptions** page now reflects if the plan is monthly or annual.
+ - The **System Console > Billing & Account > Subscriptions** page now reflects whether the plan is monthly or annual.
  - Added the ability to migrate from a monthly to an annual Cloud Professional plan.
 
 ### Improvements
@@ -35,7 +35,7 @@ Latest Mattermost Cloud releases:
  - 
 
 ### Known Issues
- - Bot and guest tags truncated on suggestion autocomplete [MM-49973](https://mattermost.atlassian.net/browse/MM-49973).
+ - Bot and guest tags are truncated on suggestion autocomplete [MM-49973](https://mattermost.atlassian.net/browse/MM-49973).
  - Horizontal scroll displays in the Threads list due to a new tags component [MM-49854](https://mattermost.atlassian.net/browse/MM-49854).
  - Login/create account screen layout breaks when Javascript error banner displays [MM-49587](https://mattermost.atlassian.net/browse/MM-49587).
  - Spacing in the channel switcher is incorrect [MM-49853](https://mattermost.atlassian.net/browse/MM-49853).
