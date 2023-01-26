@@ -2219,13 +2219,14 @@ GitLab OpenID site URL
 
 *Available in legacy Enterprise Edition E10 and E20. Not available in Cloud Free.*
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+
-| This setting stores the URL of your GitLab instance, e.g. ``https://example.com:3000``. Use ``http://`` if SSL is not enabled on your GitLab instance. | - System Config path: **Authentication > OpenID Connect** |
-|                                                                                                                                                        | - ``config.json`` setting: N/A                            |
-| See `Configure Mattermost for GitLab SSO <https://docs.mattermost.com/onboard/sso-gitlab.html#step-2-configure-mattermost-for-gitlab-sso>`__.          | - Environment variable: N/A                               |
-|                                                                                                                                                        |                                                           |
-| String input.                                                                                                                                          |                                                           |
-+--------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+
++-----------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------+
+| This setting stores the URL of your GitLab instance, e.g. **https://example.com:3000**. | - System Config path: **Authentication > OpenID Connect**                         |
+|                                                                                         | - ``config.json`` setting: N/A                                                    |
+|                                                                                         | - Environment variable: N/A                                                       |
+| String input.                                                                           |                                                                                   |
++-----------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------+
+| See the `Configure Mattermost for GitLab SSO <https://docs.mattermost.com/onboard/sso-gitlab.html#step-2-configure-mattermost-for-gitlab-sso>`__ documentation for details. |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 GitLab OpenID Discovery endpoint
 ''''''''''''''''''''''''''''''''
