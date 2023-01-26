@@ -72,7 +72,7 @@ Reporting Frequency
 - When starting the server for the first time: Every 10 minutes for the first hour, then every hour for the first 12 hours.
 - At the 24 hour mark and every 24 hours thereafter.
 
-Deployment Configuration Information
+Deployment configuration information
 
   Basic information including Mattermost server version, database and operating system type and version, and count of System Administrator accounts.
 
