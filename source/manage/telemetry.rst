@@ -76,7 +76,7 @@ Deployment configuration information
 
   Basic information including Mattermost server version, database and operating system type and version, and count of system admin accounts.
 
-Deployment Type
+Deployment type
 
 - Manual install (includes ``wget`` installs)
 - Docker
