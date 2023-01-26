@@ -57,7 +57,7 @@ Mattermost error and diagnostic data is collected for the following purposes:
 
 .. note:: 
 
-  Error and diagnostic reporting is sent by the client to the endpoint ``api.segment.io``. From Mattermost v5.23, the segment endpoint is being deprecated in favor of ``https://pdat.matterlytics.com``, a custom Rudder domain. From Mattermost v5.26, when this feature is enabled, any 500 errors will be automatically sent to the Mattermost-hosted `Sentry <https://sentry.io/welcome/>`_ endpoint.
+  Error and diagnostic reporting is sent by Mattermost to the endpoint ``api.segment.io``. From Mattermost v5.23, the segment endpoint is being deprecated in favor of ``https://pdat.matterlytics.com``, a custom Rudder domain. From Mattermost v5.26, when this feature is enabled, any 500 errors will automatically be sent to the Mattermost-hosted `Sentry <https://sentry.io/welcome/>`_ endpoint.
   
 Opt out
 ~~~~~~~
