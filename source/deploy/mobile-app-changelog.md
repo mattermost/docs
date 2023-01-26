@@ -25,6 +25,7 @@ Latest Mattermost Mobile Apps releases:
  - Added support to rotate iPads in all orientations.
  - Calls: Calls now start in speaker mode by default.
  - Calls: Calls now show the call thread in root calls posts.
+ - Calls: updated ``react-native-webrtc`` to the most recent version.
  - Implemented Data Retention for mobile.
  - Added support for Android tablets and foldables.
 
