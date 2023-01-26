@@ -74,7 +74,7 @@ Reporting frequency
 
 Deployment configuration information
 
-  Basic information including Mattermost server version, database and operating system type and version, and count of System Administrator accounts.
+  Basic information including Mattermost server version, database and operating system type and version, and count of system admin accounts.
 
 Deployment Type
 
