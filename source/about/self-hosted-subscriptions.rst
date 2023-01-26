@@ -85,7 +85,7 @@ If you don't have a self-hosted license in the Customer Portal and want to add u
 Quarterly true-up report
 ------------------------
 
-When you buy an annual Mattermost subscription, you agree to provide quarterly reports of the actual number of registered users within your system. A registered user is a user who has an account in a workspace and does not show as *Inactive* in **System Console > User Management > Users**.
+When you buy an annual Mattermost subscription, you agree to provide quarterly reports of the actual number of registered users within your system. A registered user is a user who has an account in a workspace and does not show as **Inactive** in **System Console > User Management > Users**.
 
 We'll send you an email notice around the end of the quarter reminding you to send us your report. 
 
@@ -102,7 +102,7 @@ To send this report, take a screenshot of **System Console > Site Statistics** a
    
    Not sure where to take the screenshot? Please reach out to your account executive, Customer Success Manager, orders@mattermost.com, or support@mattermost.com for help.
    
-If you have more total active users than you purchased in your annual subscription, your account executive will provide you with a true-up quote for the new users added.
+If you have more total active users than you purchased in your annual subscription, your Customer Success Manager will provide you with a true-up quote for the new users added.
 
 The additional invoice will be pro-rated based on the number of months left in your subscription term, including the months for the calendar quarter for the time you pull the report. We will not provide downward adjustments. Mattermost will invoice based on Mattermost’s `current list prices <https://mattermost.com/pricing/>`__.
 
