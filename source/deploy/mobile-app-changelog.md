@@ -26,6 +26,7 @@ Latest Mattermost Mobile Apps releases:
  - Calls: Calls now start in speaker mode by default.
  - Calls: Calls now show the call thread in root calls posts.
  - Implemented Data Retention for mobile.
+ - Added support for Android tablets and foldables.
 
 ### Bug Fixes
  - Fixed an issue where the keyboard changed on iOS when a code block was started.
