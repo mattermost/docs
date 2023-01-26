@@ -71,6 +71,7 @@ Latest Mattermost Cloud releases:
  - The message box flashes controls while typing in the right-hand side [MM-49266](https://mattermost.atlassian.net/browse/MM-49266).
  - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
  - Publicly shared boards lead to a "Team not found" error page. See [issue-focalboard-4450](https://github.com/mattermost/focalboard/issues/4450) for more details.
+ - Users might see a 400 error when trying to close out a Playbook run.
 
 ## Release 2023-01-12
 
