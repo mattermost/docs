@@ -6,10 +6,103 @@ See the [changelog in progress](https://bit.ly/2nK3cVf) for the upcoming release
 
 Latest Mattermost Releases:
 
+- [Release v7.8 - Feature Release](#release-v7-8-feature-release)
 - [Release v7.7 - Feature Release](#release-v7-7-feature-release)
 - [Release v7.5 - Feature Release](#release-v7-5-feature-release)
 - [Release v7.4 - Feature Release](#release-v7-4-feature-release)
 - [Release v7.1 - Extended Support Release](#release-v7-1-extended-support-release)
+
+## Release v7.8 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
+
+**Release Day: February 16, 2023**
+
+### Important Upgrade Notes
+
+ - Boards will be served as an in-built product from within Mattermost server instead of a plugin. If you want to disable this, please set the ``MM_FEATUREFLAGS_BoardsProduct`` env var to "false" (without the quotes). While running in product mode, the boards plugin will remain disabled.
+
+**IMPORTANT:** If you upgrade from a release earlier than v7.7, please read the other [Important Upgrade Notes](/upgrade/important-upgrade-notes.html).
+
+### Compatibility
+ - 
+
+### Highlights
+
+#### Calls
+ - 
+
+#### Boards
+ - 
+
+#### Playbooks
+ - 
+
+### Improvements
+
+#### User Interface (UI)
+ - Updated prepackaged version of Apps plugin to 1.2.0.
+ - Added group members count to the group autocomplete.
+ - Clicking a group mention now displays group details and membership.
+ - Improved the collapsed state of the post formatting toolbar.
+ - App Framework channel and user fields now support multi-select properties to allow users to select multiple values in a form.
+ - Increased the character count for desktop notifications on Windows to 120 from 50.
+ - Prioritized members of recently viewed direct or group messages when adding users to a channel.
+ - Added support for multiple users and channels to the /invite slash command.
+
+#### Administration
+ - Endpoint to portal to detect if a license is suitable to self-expand. Overage users can expand their license seats.
+ - The export file now contains the server version and a creation timestamp.
+ - Added the ability for customers to view their upcoming invoice on the System Console > Billing & Account > Subscriptions page.
+ - Total Activated Users was changed back to Total Active Users on the System Console > Reporting > Site Statistics page.
+ - Added restore_group permission to the mmctl and to the System Console > Permissions.
+ - Improved bulk export logging.
+ - Compliance export job can now cancel the SQL query execution during server shutdown which will allow the job to exit faster.
+ - The message export compliance job can now survive server restarts. The job will pause and save state when the server is shutting down, and resume from the previously saved state when the server starts back up.
+ - Only one instance of the job will be automatically scheduled to run as per the ``MessageExportSettings.DailyRunTime`` config value.
+ - Mattermost will throw an error if it detects an Elasticsearch version greater than 7.
+ - Added new API endpoint GET /api/v4/posts/:post_id/info to allow checking if the post that a permalink is pointing to is accessible by joining teams or channels.
+ - Added validity checks for role related parameters in GET /users.
+
+### Bug Fixes
+ - Fixed an issue where if a self-hosted purchase was not available, an air-gapped modal was shown instead of going to the CWS purchase portal experience directly.
+ - Fixed small visual issues with self-hosted purchase modal. Tweak wording for admins trying to purchase when a purchase is already in progress.
+ - Fixed an issue where there was no feedback that a downgrade was in progress when selecting Downgrade under System Console > Billing & Account > Subscriptions page.
+ - Fixed an issue where attempting to create a team with a duplicate URL displayed the wrong error.
+
+### config.json
+Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
+
+#### Changes to Team Edition and Enterprise Edition:
+ - Added a new config setting section ``ProductSettings``.
+
+### API Changes
+ - 
+
+### Database Changes
+ - 
+ 
+### Websocket Event Changes
+ - 
+
+### Go Version
+ - v7.8 is built with Go ``v1.18.1``.
+
+### Known Issues
+ - Your profile image moves up when changing your status manually [MM-49159](https://mattermost.atlassian.net/browse/MM-49159).
+ - The new Insights feature has some performance costs that we are working to optimize. This feature can be disabled by setting the ``MM_FEATUREFLAGS_INSIGHTSENABLED`` environment variable to ``false``.
+ - Adding an @mention at the start of a post draft and pressing the left or right arrow key can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
+ - Google login fails on the Classic mobile apps.
+ - Status may sometimes get stuck as **Away** or **Offline** in high availability mode with IP Hash turned off.
+ - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
+ - The team sidebar on the desktop app does not update when channels have been read on mobile.
+ - Slack import through the CLI fails if email notifications are enabled.
+ - Push notifications don't always clear on iOS when running Mattermost in high availability mode.
+ - Boards are not refreshing on creation. See the [GitHub discussion](https://github.com/mattermost/focalboard/discussions/1971) for more information.
+ - Boards export and reimport results in duplicates boards because all IDs are replaced by new ones on the server. See the [GitHub issue](https://github.com/mattermost/focalboard/issues/1924) for more information.
+ - Boards linked to a channel you're a member of do not automatically appear on your sidebar unless you're an explicit member of the board. As a workaround, you can access the board from the channel RHS or by searching for the board via the board switcher (Ctrl/Cmd+K). Alternatively, you can ask the board admin to add you to the board as an explicit member. See the [issue-focalboard-4179](https://github.com/mattermost/focalboard/issues/4179) for more details.
+ - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
+ 
+### Contributors
+
 
 ## Release v7.7 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
 
