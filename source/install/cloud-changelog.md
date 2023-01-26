@@ -4,12 +4,45 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 
 Latest Mattermost Cloud releases:
 
+- [Release 2023-02-02](#release-2023-02-02)
 - [Release 2023-01-26](#release-2023-01-26)
 - [Release 2023-01-12](#release-2023-01-12)
 - [Release 2022-12-20](#release-2022-12-20)
 - [Release 2022-12-01](#release-2022-12-01)
 - [Release 2022-11-24](#release-2022-11-24)
-- [Release 2022-11-17](#release-2022-11-17)
+
+## Release 2023-02-02
+
+### Highlights
+
+#### Annual Cloud Subscriptions
+ - On the purchase modal, admins are now able to buy an annual cloud subscription for a user count that exceeds the current user count.
+ - The **System Console > Billing & Account > Subscriptions** page now reflects if the plan is monthly or annual.
+ - Added the ability to migrate from a monthly to an annual Cloud Professional plan.
+
+### Improvements
+
+#### User Interface (UI)
+ - Improved the user interface of the user profile popover.
+
+#### Administration
+ - Added a dynamic call-to-action under the **System Console > True Up Review System** subsection for air-gapped and non-air-gapped systems.
+ - GraphQL APIs are now correctly counted when measuring performance telemetry.
+ - Boards cards are no longer mentioned as being limited in the **System Console**, the limits usage modal, the downgrade modal, or the left-hand side menu.
+ - Removed an unused ``ProductLimits.Integrations``.
+
+### Bug Fixes
+ - 
+
+### Known Issues
+ - Bot and guest tags truncated on suggestion autocomplete [MM-49973](https://mattermost.atlassian.net/browse/MM-49973).
+ - Horizontal scroll displays in the Threads list due to a new tags component [MM-49854](https://mattermost.atlassian.net/browse/MM-49854).
+ - Login/create account screen layout breaks when Javascript error banner displays [MM-49587](https://mattermost.atlassian.net/browse/MM-49587).
+ - Spacing in the channel switcher is incorrect [MM-49853](https://mattermost.atlassian.net/browse/MM-49853).
+ - Spacing issue is displayed between the Global Drafts tour point title and “New” tag [MM-49866](https://mattermost.atlassian.net/browse/MM-49866).
+ - The message box flashes controls while typing in the right-hand side [MM-49266](https://mattermost.atlassian.net/browse/MM-49266).
+ - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
+ - Publicly shared boards lead to a "Team not found" error page. See [issue-focalboard-4450](https://github.com/mattermost/focalboard/issues/4450) for more details.
 
 ## Release 2023-01-26
 
