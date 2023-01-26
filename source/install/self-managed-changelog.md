@@ -6,13 +6,13 @@ See the [changelog in progress](https://bit.ly/2nK3cVf) for the upcoming release
 
 Latest Mattermost Releases:
 
-- [Release v7.8 - Feature Release](#release-v7-8-feature-release)
+- [Release v7.8 - Extended Support Release](#release-v7-8-extended-support-release)
 - [Release v7.7 - Feature Release](#release-v7-7-feature-release)
 - [Release v7.5 - Feature Release](#release-v7-5-feature-release)
 - [Release v7.4 - Feature Release](#release-v7-4-feature-release)
 - [Release v7.1 - Extended Support Release](#release-v7-1-extended-support-release)
 
-## Release v7.8 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
+## Release v7.8 - [Extended Support Release](https://docs.mattermost.com/upgrade/release-definitions.html#extended-support-release-esr)
 
 **Release Day: February 16, 2023**
 
