@@ -2176,15 +2176,17 @@ Select OpenID Connect service provider
 
 *Available in legacy Enterprise Edition E20*
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+
-| Use this setting to enable OpenID Connect and specify the service provider, with these options:                                                                                                                                                                 | - System Config path: **Authentication > OpenID Connect** |
-|                                                                                                                                                                                                                                                                 | - ``config.json`` setting: N/A                            |
-| - **Do not allow login via an OpenID provider**                                                                                                                                                                                                                 | - Environment variable: N/A                               |
-| - **GitLab** (Available in all plans, except Cloud Free; see `GitLab Single Sign-On <https://docs.mattermost.com/onboard/sso-gitlab.html>`__ and `GitLab OpenID settings <#gitlab-openid-settings>`__)                                                          |                                                           |
-| - **Google Apps** (Available in Mattermost Enterprise and Professional; see `Google Single Sign-On <https://docs.mattermost.com/onboard/sso-google.html>`__ and `Google OpenID settings <#google-openid-settings>`__)                                           |                                                           |
-| - **Office 365** (Available in Mattermost Enterprise and Professional; see `Office 365 Single Sign-On <https://docs.mattermost.com/onboard/sso-office.html>`__ and `Office 365 OpenID settings <#office-365-openid-settings>`__)                                |                                                           |
-| - **OpenID Connect (Other)** (Available in Mattermost Enterprise and Professional; see `OpenID Connect Single Sign-On <https://docs.mattermost.com/onboard/sso-openidconnect.html>`__ and `OpenID Connect (other) settings <#openid-connect-other-settings>`__) |                                                           |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+
++-------------------------------------------------------------------------------+---------------------------------------------------------------+
+| Use this setting to enable OpenID Connect, with these options:                | - System Config path: **Authentication > OpenID Connect**     | 
+|                                                                               | - ``config.json`` setting: N/A                                |
+| - **Do not allow login via an OpenID provider**                               | - Environment variable: N/A                                   |
+| - **GitLab** `(settings) <#gitlab-openid-settings>`__                         |                                                               |
+| - **Google Apps** (`settings <#google-openid-settings>`__)                    |                                                               |
+| - **Office 365** (`settings <#office-365-openid-settings>`__)                 |                                                               |
+| - **OpenID Connect (Other)** `(settings) <#openid-connect-other-settings>`__  |                                                               |
++-------------------------------------------------------------------------------+---------------------------------------------------------------+
+| **Note**: **GitLab** OpenID is available in all plans, except Cloud Free. All other providers require Mattermost Enterprise or Professional.  |
++-----------------------------------------------------------------------------------------------------------------------------------------------+
 
 GitLab OpenID settings
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -2197,12 +2199,13 @@ Enable OpenID Connect authentication with GitLab
 
 *Available in legacy Enterprise Edition E10 and E20. Not available in Cloud Free.*
 
-+------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
-| - **true**: Allows team and account creation using GitLab OpenID Connect authentication.                         | - System Config path: **Authentication > OpenID Connect**    |
-| - **false**: **(Default)** Disables GitLab OpenID Connect authentication.                                        | - ``config.json`` setting: ``.GitLabSettings.Enable: false`` |
-|                                                                                                                  | - Environment variable: ``MM_GITLABSETTINGS_ENABLE``         |
-| See `GitLab Single Sign-On <https://docs.mattermost.com/onboard/sso-gitlab.html>`__ implementation instructions. |                                                              |
-+------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
++------------------------------------------------------------------------------------------+--------------------------------------------------------------+
+| - **true**: Allows team and account creation using GitLab OpenID Connect authentication. | - System Config path: **Authentication > OpenID Connect**    |
+| - **false**: **(Default)** Disables GitLab OpenID Connect authentication.                | - ``config.json`` setting: ``.GitLabSettings.Enable: false`` |
+|                                                                                          | - Environment variable: ``MM_GITLABSETTINGS_ENABLE``         |
++------------------------------------------------------------------------------------------+--------------------------------------------------------------+
+| **Note**: See the `GitLab Single Sign-On <https://docs.mattermost.com/onboard/sso-gitlab.html>`__ documentation for details.                            |
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 GitLab OpenID site URL
 ''''''''''''''''''''''
