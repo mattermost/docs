@@ -2,12 +2,52 @@
 
 Latest Mattermost Mobile Apps releases:
 
+- [2.1.0 Release](#release)
 - [2.0.0 Release](#release)
 - [1.55.1 Release](#id1)
 - [1.55.0 Release](#id4)
 - [1.54.0 Release](#id8)
 - [1.53.0 Release](#id13)
-- [1.52.0 Release](#id17)
+
+## 2.1.0 Release
+- Release Date: February 16, 2023
+- Server Versions Supported: Server v7.1.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
+
+### Compatibility
+ - Please [see here](https://mattermost.com/blog/preparing-for-mobile-v2-0/) for more details on preparing for the mobile v2 release.
+ - **Upgrade to server version v7.1.0 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/upgrade/extended-support-release.html) (ESR) 6.3.0 has ended and upgrading to server ESR v7.1.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
+ - iPhone 5s devices and later with iOS 12.1+ is required.
+
+### Improvements
+ - Added the option in **Profile > Settings > Display** settings to enable/disable Collapsed Reply Threads.
+ - Added functionality to invite users by email or invite users from other teams on the server.
+ - Improved the mobile emoji picker user interface and interaction.
+ - Added support to rotate iPad's in all orientations.
+ - Calls: Calls now start in speaker mode by default.
+ - Calls: Calls now show the call thread in root calls posts.
+ - Implemented Data Retention for mobile.
+
+### Bug Fixes
+ - Fixed an issue where the keyboard changed on iOS when a code block was started.
+ - Fixed an issue where the EMM configuration for VPN timeouts were in `seconds` instead of in `ms`.
+ - Fixed an issue with markdown bolded strings.
+ - Fixed an issue where the markdown for mentions did not inherit heading fonts.
+ - Fixed an issue where a crash occurred when attempting to download a profile image.
+ - Fixed an issue with opening a link when the server is hosted on a subpath.
+ - Calls: Fixed an issue with displaying recording messages.
+ - Fixed an issue where a long team name wasn’t wrapped and pushed the  "+ icon " next to it.
+ - Fixed an issue where user avatars were shown in notifications instead of webhook avatars on Android.
+ - Fixed an issue where the file menu remained open after the option to "open in channel" was selected.
+
+### Known Issues
+ - Users are unable to adjust the font size via the OS font size setting.
+ - **Manage Members** modal is not yet added [MM-48489](https://mattermost.atlassian.net/browse/MM-48489).
+ - Posts may remain in the local device database after data retention job has been run [MM-47548](https://mattermost.atlassian.net/browse/MM-47548).
+ - Drafts are lost when following a notification [MM-47373](https://mattermost.atlassian.net/browse/MM-47373).
+ - Moving posts with the Wrangler plugin causes database "Unique key" errors [MM-44960](https://mattermost.atlassian.net/browse/MM-44960).
+ - Some pixel phones on Android 12+ might not go past the login screen. This is a known issue with the OS and the current workaround is to restart the device.
+ - The app crashes when uploading a PDF file [MM-49707](https://mattermost.atlassian.net/browse/MM-49707).
 
 ## 2.0.0 Release
 - Release Date: January 16, 2023
