@@ -67,7 +67,7 @@ To opt out, you can disable the error and diagnostics reporting feature for self
 Deployment and server configuration data
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Reporting Frequency
+Reporting frequency
 
 - When starting the server for the first time: Every 10 minutes for the first hour, then every hour for the first 12 hours.
 - At the 24 hour mark and every 24 hours thereafter.
