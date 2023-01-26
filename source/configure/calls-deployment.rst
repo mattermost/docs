@@ -330,6 +330,16 @@ If you wish to host many calls or calls with a large number of participants, tak
 Frequently asked questions
 --------------------------
 
+Is there encryption?
+~~~~~~~~~~~~~~~~~~~~
+
+Media (audio/video) is encrypted using security standards as part of WebRTC. It's mainly a combination of DTLS and SRTP. It's not e2e encrypted in the sense that in the current design all media needs to go through Mattermost which acts as a media router and has complete access to it. Media is then encrypted back to the clients so it's secured during transit. In short: only the participant clients and the Mattermost server have access to unencrypted call data.
+
+Are there any third-party services involved?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The only external service used is Mattermost official STUN server (``stun.global.calls.mattermost.com``) which is configured as default. This is primarily used to find the public address of the Mattermost instance. The only information sent to this service is the IP addresses of clients connecting as no other traffic goes through it. It can be removed in case the ``ICE Host Override`` setting is provided.
+
 Is using UDP a requirement?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -356,3 +366,58 @@ Can the traffic between Mattermost and ``rtcd``  be kept internal or should it b
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When possible, it's recommended to keep communication between the Mattermost cluster and the dedicated ``rtcd`` service under the same private network as this can greatly simplify deployment and security. There's no requirement to expose ``rtcd``'s HTTP API to the public internet.
+
+Debugging
+---------
+
+If you experience issues with calls, collecting information is helpful as you can share it with us for debugging purposes.
+
+As with any other issue, but more importantly with calls, it’s very useful to provide date and time of when some problem occurred, with as much detail as possible so that information can be cross-checked with server logs as well. Also please include any reproduction steps if applicable. Other important information includes:
+
+- Browser/app version
+- Operating system type and version
+
+JS console logs
+~~~~~~~~~~~~~~~
+
+Web app
+^^^^^^^
+
+- **Chrome**: CMD+OPTION+J (macOS)/CTRL+SHIFT+J (Windows, Linux, ChromeOS)
+- **Firefox**: CMD+SHIFT+J (macOS)/CTRL+SHIFT+J (Windows, Linux, ChromeOS).
+- **Safari**: Enable Developer Menu in **Safari > Preferences > Advanced > Show Develop Menu in Menu Bar**. Then **Develop > Show Javascript Console**. Right-click on the console and select **Save to file** to download the logs.
+
+Desktop app
+^^^^^^^^^^^
+
+In the top menu bar of the app, select **View > Developer Tools for Current Tab**. In the logs that are generated, right-click and select **Save as** to download the logs.
+
+Call stats dump
+~~~~~~~~~~~~~~~
+
+In cases where there are audio/video issues, difficulty in hearing other participants, and/or stuttering video and/or choppy audio, run the ``/call stats`` slash command in the channel where the call is currently active. This returns a JSON object via an ephemeral message.
+
+You can run this command in an active call or after leaving the call in question. However, we will only save data for the last joined call so joining again will delete the previous call's feedback.
+
+WebRTC internals (Chrome + Firefox only)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This is an additional method for Chrome and Firefox users in cases where there are audio/video issues, difficulty in hearing other participants, and/or stuttering video and/or choppy audio.
+
+Chrome browser (recommended)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Open ``chrome://webrtc-internals/`` in the browser that you're using for the active call.
+
+Firefox browser
+^^^^^^^^^^^^^^^
+
+Open ``about://webrtc`` in the browser that you're using for the active call.
+
+Share information
+~~~~~~~~~~~~~~~~~
+
+Debug information is helpful to our community as there may be other community members having the same issue as you. We recommend that debug information be shared in either of the two options below:
+
+- Post in `Developers: Calls <https://community.mattermost.com/core/channels/developers-channel-call>`_ channel:  prefer this method when possible but keep in mind the channel is public.
+- Post in `Team: Calls <https://community.mattermost.com/private-core/channels/calls-team>`_ channel: use this channel if posting sensitive information.
