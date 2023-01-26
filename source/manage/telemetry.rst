@@ -50,7 +50,7 @@ Error and diagnostics reporting feature
 
 Mattermost error and diagnostic data is collected for the following purposes:
 
-- To add improvements that are specific to your usage and deployment patterns, including identifying security and reliability issues.
+- To add improvements that are specific to your usage, upgrade, and deployment patterns, including identifying security and reliability issues.
 - To analyze and fix software problems.
 - To help improve the quality of Mattermost software and related services.
 - To make design decisions for future releases.
