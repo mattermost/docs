@@ -114,8 +114,8 @@ Slack offers two ways to `export your data from their product <https://get.slack
 
   As a proprietary SaaS service, Slack is able to change its export format quickly and without notice. If you encounter issues not mentioned in the following documentation, please let the Mattermost Product Team know by `filing an issue <https://handbook.mattermost.com/contributors/contributors/ways-to-contribute>`__.
 
-Migrate from Slack using the Mattermost mmetl tool and bulk import
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Use the Mattermost mmetl tool and bulk import
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
   
@@ -219,8 +219,8 @@ Debugging imports
 
 The ``mmctl import job show`` shows a detailed error message. If you run into problems which the error message does not help to resolve, your best bet is to use the ``mattermost bulk import`` command. The ``mmctl`` import process does not give you any additional debugging information, even in the Mattermost server logs.
 
-Migrating from Slack using the Mattermost Web App
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Use the Mattermost Web App
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. important::
   In Mattermost v6.0, the ability to migrate from Slack using the Mattermost Web App has been deprecated and removed in favor of using the Mattermost mmetl tool with bulk import.
@@ -233,8 +233,8 @@ Migrating from Slack using the Mattermost Web App
 2. In Mattermost go to **Main Menu > Team Settings > Import > Import from Slack**. Team Admin or System Admin permission is required to access this menu option.
 3. Choose **Select file** to upload the Slack export file and select **Import**.
 
-Migrating from Slack using the Mattermost CLI
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Migrate from Slack using the Mattermost CLI
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. note::
   In Mattermost v6.0, the CLI has been deprecated in favor of the mmctl `CLI </manage/mmctl-command-line-tool.html>`__.
@@ -248,15 +248,15 @@ Migrating from Slack using the Mattermost CLI
 
   To run the CLI command, you must be in the directory that contains the Mattermost installation. On a default installation of Mattermost, the directory is ``/opt/mattermost/``. Also, if you followed our `installation process </guides/install-deploy-upgrade-scale.html#install-mattermost>`__, you must run the command as the user *mattermost*. The executable is in the ``bin`` subdirectory and is called ``mattermost``.
 
-Using the imported team
-^^^^^^^^^^^^^^^^^^^^^^^
+Use the imported team
+^^^^^^^^^^^^^^^^^^^^^^
 
 * During the import process, the emails and usernames from Slack are used to create new Mattermost accounts. If emails are not present in the Slack export archive, then placeholder values will be generated and the System Admin will need to update these manually.
 * Slack users can activate their new Mattermost accounts by using Mattermost's **Password Reset** screen with their email addresses from Slack to set new passwords for their Mattermost accounts.
 * Once logged in, Mattermost users will have access to previous Slack messages in the public channels imported from Slack.
 
-Migrating from Bitnami
-~~~~~~~~~~~~~~~~~~~~~~
+Migrate from Bitnami
+~~~~~~~~~~~~~~~~~~~~
 
 Bitnami uses MySQL, and renames the Mattermost database tables by converting the names to all lower case. For example, in non-Bitnami installations, the Users table is named "Users", but in Bitnami, the table is "users". As a result, when you migrate your data from Bitnami to a non-Bitnami installation, you must modify the MySQL startup script so that it starts MySQL in lowercase table mode.
 
@@ -264,19 +264,19 @@ You can modify the script by adding the ``--lower-case-table-names=1`` switch to
 
 For more information about letter case in MySQL table names and the ``--lower-case-table-names`` switch, see the `Identifier Case Sensitivity <https://dev.mysql.com/doc/refman/5.7/en/identifier-case-sensitivity.html>`__ topic in the MySQL documentation.
 
-Migrating from HipChat Server and HipChat Data Center to Mattermost
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Migrate from HipChat Server and HipChat Data Center to Mattermost
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Please see `HipChat Migration Guide </onboard/migrating-from-hipchat-to-mattermost.html>`__.
 
-Migrating from Jabber to Mattermost
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Migrate from Jabber to Mattermost
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 BrightScout helped a major U.S. Federal Agency rapidly migrate from Jabber to Mattermost and open sourced their Extract, Transform and Load (ETL) tool at https://github.com/Brightscout/mattermost-etl.
 
 Read more about their `case study <https://mattermost.com/blog/u-s-federal-agency-migrates-from-jabber-to-mattermost-the-open-source-way/>`__ online.
 
-Migrating from Pidgin to Mattermost
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Migrate from Pidgin to Mattermost
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In some cases people are using Pidgin clients with different backends to communicate. To continue using Pidgin with a Mattermost backend consider using `Mattermost ETL tool <https://github.com/Brightscout/mattermost-etl>`__ created by BrightScout to migrate data from your existing backend into Mattermost, then use the `Pidgin-Mattermost plugin <https://github.com/EionRobb/purple-mattermost>`__ (complete with an installer for end user machines) to continue to support legacy Pidgin users while offering a whole new Mattermost experience on web, mobile, and PC.
