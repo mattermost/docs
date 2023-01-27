@@ -25,6 +25,7 @@ Latest Mattermost Mobile Apps releases:
  - Fixed opening a link when the server is hosted on a subpath.
  - Fixed an issue with uploading certain files.
  - Fixed an issue with downloading certain files from the search results.
+ - Disabled top domain level verification.
  
 ### Known Issues
  - Users are unable to adjust the font size via the OS font size setting.
