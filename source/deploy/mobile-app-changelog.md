@@ -41,6 +41,7 @@ Latest Mattermost Mobile Apps releases:
  - Fixed an issue where a long team name wasn’t wrapped and pushed the  "+ icon " next to it.
  - Fixed an issue on Android where user avatars instead of webhook avatars were shown in notifications.
  - Fixed an issue where the file menu remained open after the option to "open in channel" was selected.
+ - Fixed the ability to mark a post as unread if the post was created from a webhook.
 
 ### Open Source Components
 
