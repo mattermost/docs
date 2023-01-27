@@ -53,6 +53,7 @@ Latest Mattermost Mobile Apps releases:
  - Moving posts with the Wrangler plugin causes database "Unique key" errors [MM-44960](https://mattermost.atlassian.net/browse/MM-44960).
  - Some pixel phones on Android 12+ might not go past the login screen. This is a known issue with the OS and the current workaround is to restart the device.
  - The app crashes when uploading a PDF file [MM-49707](https://mattermost.atlassian.net/browse/MM-49707).
+ - Repeated and persistent signals of ANRs (hangs) are seen when typing into a multiline TextInput on Samsung phones. See https://github.com/facebook/react-native/issues/35936 for more details.
 
 ## 2.0.0 Release
 - Release Date: January 16, 2023
@@ -84,6 +85,7 @@ Users now gain a more reliable and feature-rich application, improving their exp
  - Some pixel phones on Android 12+ might not go past the login screen. This is a known issue with the OS and the current workaround is to restart the device.
  - The app crashes when uploading a PDF file [MM-49707](https://mattermost.atlassian.net/browse/MM-49707).
  - The ``timeoutVPN`` values are not converted from milliseconds to seconds in v2 [MM-49722](https://mattermost.atlassian.net/browse/MM-49722).
+ - Repeated and persistent signals of ANRs (hangs) are seen when typing into a multiline TextInput on Samsung phones. See https://github.com/facebook/react-native/issues/35936 for more details.
 
 ## 1.55.1 Release
 - Release Date: September 15, 2022
