@@ -92,19 +92,18 @@ We'll send you an email notice around the end of the quarter reminding you to se
 .. image:: ../images/true-up-schedule.png
       :alt: The timeframes followed for the true up notifications.
 
-To send this report, take a screenshot of **System Console > Site Statistics** and send in a reply email back to us. 
+To send this report, a System Admin must navigate to the **System Console** and open either the **Site Statistic** or **Team Statistics** pages.
+If the current date is within the range of a true-up review's availability window, a panel will be visible at the top of the page with a button to share your systems statistics directly to Mattermost.
 
-- Please ensure your screenshot is taken from the top of the page and includes the **Total Active Users** metric. 
-- Please include the date of the screenshot in the file name.
-- We don't need your server address, so if it appears on your screenshot, you can redact it from the image.
+If your system is air-gapped (meaning it does not have access to the external internet), the System Admin will be given the option to download the system statistcs which can then be shared with your Customer Success Manager from a device that has access to the external internet.
 
 .. tip:: 
    
-   Not sure where to take the screenshot? Please reach out to your account executive, Customer Success Manager, orders@mattermost.com, or support@mattermost.com for help.
+   Not sure where to find the true-up review section? Please reach out to your account executive, Customer Success Manager, orders@mattermost.com, or support@mattermost.com for help.
    
 If you have more total active users than you purchased in your annual subscription, your Customer Success Manager will provide you with a true-up quote for the new users added.
 
-The additional invoice will be pro-rated based on the number of months left in your subscription term, including the months for the calendar quarter for the time you pull the report. We will not provide downward adjustments. Mattermost will invoice based on Mattermost’s `current list prices <https://mattermost.com/pricing/>`__.
+The additional invoice will be pro-rated based on the number of months left in your subscription term, including the months for the calendar quarter for the time you send the report. We will not provide downward adjustments. Mattermost will invoice based on Mattermost’s `current list prices <https://mattermost.com/pricing/>`__.
 
 Renew your subscription
 -----------------------
