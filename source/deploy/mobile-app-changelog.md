@@ -23,6 +23,8 @@ Latest Mattermost Mobile Apps releases:
  - Fixed a crash when dismissing a notification on android.
  - Fixed a potential crash when trying access non existent database records.
  - Fixed opening a link when the server is hosted on a subpath.
+ - Fixed an issue with uploading certain files.
+ - Fixed an issue with downloading certain files from the search results.
 
 ## 2.0.0 Release
 - Release Date: January 16, 2023
