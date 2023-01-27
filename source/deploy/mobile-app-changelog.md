@@ -30,8 +30,6 @@ Latest Mattermost Mobile Apps releases:
  - Added support for Android tablets and foldables.
 
 ### Bug Fixes
- - Fixed an issue with uploading certain files.
- - Fixed an issue with downloading certain files from the search results.
  - Fixed an issue where the keyboard changed on iOS when a code block was started.
  - Fixed an issue where the EMM configuration for VPN timeouts were in ``seconds` instead of in ``ms``.
  - Fixed an issue with markdown bolded strings.
