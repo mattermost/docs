@@ -37,7 +37,6 @@ Latest Mattermost Mobile Apps releases:
  - Fixed an issue with markdown bolded strings.
  - Fixed an issue where the markdown for mentions did not inherit heading fonts.
  - Fixed an issue where a crash occurred when attempting to download a profile image.
- - Fixed an issue with opening a link when the server is hosted on a subpath.
  - Calls: fixed an issue with displaying recording messages.
  - Fixed an issue where a long team name wasn’t wrapped and pushed the  "+ icon " next to it.
  - Fixed an issue on Android where user avatars instead of webhook avatars were shown in notifications.
