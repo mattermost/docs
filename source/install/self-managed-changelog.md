@@ -111,6 +111,8 @@ Latest Mattermost Releases:
  - Fixed an issue where a white screen appeared when a guest was removed from the last channel while on Threads.
  - Fixed an issue where a Direct Message thread did not get disabled when a user was deactivated.
  - Fixed an issue where email notifications for Direct Messages from Playbooks contained broken URLs.
+ - Fixed an issue where bulk import crashed with invalid memory address or nil pointer dereference.
+ - Fixed an issue with special characters in the System Console log filename causing logging configuration to break.
 
 ### config.json
 Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
