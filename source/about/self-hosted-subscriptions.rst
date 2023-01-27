@@ -82,17 +82,29 @@ This process adds additional users to your existing subscription and is not a ne
 
 If you don't have a self-hosted license in the Customer Portal and want to add users, `contact us <https://mattermost.com/contact-us/>`__.
 
-Quarterly report
-^^^^^^^^^^^^^^^^
+Quarterly true-up report
+------------------------
 
-When you subscribe to an annual plan with Mattermost, you agree to provide quarterly reports of the actual number of registered users within your system if you're above the amount you subscribed in your purchase order. A registered user is a user who has an account in a workspace and does not show as *Inactive* in **System Console > User Management > Users**.
+When you buy an annual Mattermost subscription, you agree to provide quarterly reports of the actual number of registered users within your system. A registered user is a user who has an account in a workspace and does not show as **Inactive** in **System Console > User Management > Users**.
 
-We'll send you an email notice around the end of the quarter reminding you to send us your report. To send this report, take a screenshot of **System Console > Site Statistics** and send in a reply email back to us. Please ensure your screenshot is taken from the top of the page and includes the **Total Active Users** metric.
+We'll send you an email notice around the end of the quarter reminding you to send us your report. 
 
-.. image:: ../images/Site_Statistics.png
-	:alt: Take a screenshot from the System Console > Site Statistics page.
+.. image:: ../images/true-up-schedule.png
+      :alt: The timeframes followed for the true up notifications.
 
-If you have more total active users than you purchased in your annual subscription, we'll provide you with an invoice and an amendment to your purchase order for the new users added. The additional invoice will be pro-rated based on the number of months left in your subscription term, including the months for the calendar quarter for the time you pull the report. We will not provide downward adjustments. Mattermost will invoice based on Mattermost’s `current list prices <https://mattermost.com/pricing/>`__.
+To send this report, take a screenshot of **System Console > Site Statistics** and send in a reply email back to us. 
+
+- Please ensure your screenshot is taken from the top of the page and includes the **Total Active Users** metric. 
+- Please include the date of the screenshot in the file name.
+- We don't need your server address, so if it appears on your screenshot, you can redact it from the image.
+
+.. tip:: 
+   
+   Not sure where to take the screenshot? Please reach out to your account executive, Customer Success Manager, orders@mattermost.com, or support@mattermost.com for help.
+   
+If you have more total active users than you purchased in your annual subscription, your Customer Success Manager will provide you with a true-up quote for the new users added.
+
+The additional invoice will be pro-rated based on the number of months left in your subscription term, including the months for the calendar quarter for the time you pull the report. We will not provide downward adjustments. Mattermost will invoice based on Mattermost’s `current list prices <https://mattermost.com/pricing/>`__.
 
 Renew your subscription
 -----------------------
@@ -130,6 +142,15 @@ You can watch a video overview of the renewal process on `YouTube <https://www.y
 
 Frequently asked questions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+What is a true up and why is the true up notice necessary? 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+A true up is our quarterly request for you to provide a screenshot of your instance data to determine if you have more active users now than when you bought your subscription.
+
+As your organization grows, you may need to add additional users during your subscription period. Mattermost needs to have insight into changes in your active user count so that we can charge you appropriately for your self-hosted license usage. Additionally, we don’t want to over estimate/charge active users at your renewal time. 
+
+When you receive the quarterly true up notice from Mattermost, please take a screenshot of your active user count which you can find in **System Console > Site Statistics**. Then reply to the email with the attached screenshot.
 
 How do I renew my subscription if I don't have internet access?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
