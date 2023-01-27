@@ -92,8 +92,8 @@ We'll send you an email notice around the end of the quarter reminding you to se
 .. image:: ../images/true-up-schedule.png
       :alt: The timeframes followed for the true up notifications.
 
-To send this report, a System Admin must navigate to the **System Console** and open either the **Site Statistic** or **Team Statistics** pages.
-If the current date is within the range of a true-up review's availability window, a panel will be visible at the top of the page with a button to share your systems statistics directly to Mattermost.
+To send this report, a System Admin must navigate to the **System Console** and open either the **Site Statistics** or **Team Statistics** pages.
+If the current date is within the True-Up reporting period, a panel will be visible at the top of the page with a button to share your systems statistics directly to Mattermost.
 
 If your system is air-gapped (meaning it does not have access to the external internet), the System Admin will be given the option to download the system statistcs which can then be shared with your Customer Success Manager from a device that has access to the external internet.
 
