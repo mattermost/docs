@@ -2219,14 +2219,14 @@ GitLab OpenID site URL
 
 *Available in legacy Enterprise Edition E10 and E20. Not available in Cloud Free.*
 
-+-----------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------+
-| This setting stores the URL of your GitLab instance, e.g. **https://example.com:3000**. | - System Config path: **Authentication > OpenID Connect**                         |
-|                                                                                         | - ``config.json`` setting: N/A                                                    |
-|                                                                                         | - Environment variable: N/A                                                       |
-| String input.                                                                           |                                                                                   |
-+-----------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------+
-| See the `Configure Mattermost for GitLab SSO <https://docs.mattermost.com/onboard/sso-gitlab.html#step-2-configure-mattermost-for-gitlab-sso>`__ documentation for details. |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| This setting stores the URL of your GitLab instance, e.g. **https://example.com:3000**. | - System Config path: **Authentication > OpenID Connect**                                   |
+|                                                                                         | - ``config.json`` setting: N/A                                                              |
+|                                                                                         | - Environment variable: N/A                                                                 |
+| String input.                                                                           |                                                                                             |
++-----------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| **Note**: See the `Configure Mattermost for GitLab SSO <https://docs.mattermost.com/onboard/sso-gitlab.html#step-2-configure-mattermost-for-gitlab-sso>`__ documentation for details. |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 GitLab OpenID Discovery endpoint
 ''''''''''''''''''''''''''''''''
@@ -2240,13 +2240,15 @@ GitLab OpenID Discovery endpoint
 
 *Available in legacy Enterprise Edition E10 and E20. Not available in Cloud Free*
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
-| This setting is prepopulated with the Discovery Endpoint for GitLab OpenID Connect.                                                           | - System Config path: **Authentication > OpenID Connect**       |
-|                                                                                                                                               | - ``config.json`` setting: ``GitLabSettings.DiscoveryEndpoint`` |
-| See `Configure Mattermost for GitLab SSO <https://docs.mattermost.com/onboard/sso-gitlab.html#step-2-configure-mattermost-for-gitlab-sso>`__. | - Environment variable: ``MM_GITLABSETTINGS_DISCOVERYENDPOINT`` |
-|                                                                                                                                               |                                                                 |
-| String input. Default is ``https://gitlab.com/.well-known/openid-configuration``                                                              |                                                                 |
-+-----------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
++-------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| This setting is prepopulated with the Discovery Endpoint for GitLab OpenID Connect. | - System Config path: **Authentication > OpenID Connect**                                       |       
+|                                                                                     | - ``config.json`` setting: ``GitLabSettings.DiscoveryEndpoint``                                 |
+|                                                                                     | - Environment variable: ``MM_GITLABSETTINGS_DISCOVERYENDPOINT``                                 |
+|                                                                                     |                                                                                                 |
+| String input. Default is ``https://gitlab.com/.well-known/openid-configuration``    |                                                                                                 |
++-------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| **Note**: See the `Configure Mattermost for GitLab SSO <https://docs.mattermost.com/onboard/sso-gitlab.html#step-2-configure-mattermost-for-gitlab-sso>`__ documentation for details. |
++-------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 
 GitLab OpenID Client ID
 '''''''''''''''''''''''
