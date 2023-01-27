@@ -95,7 +95,7 @@ We'll send you an email notice around the end of the quarter reminding you to se
 To send this report, a System Admin must navigate to the **System Console** and open either the **Site Statistics** or **Team Statistics** pages.
 If the current date is within the True-Up reporting period, a panel will be visible at the top of the page with a button to share your systems statistics directly to Mattermost.
 
-If your system is air-gapped (meaning it does not have access to the external internet), the System Admin will be given the option to download the system statistcs which can then be shared with your Customer Success Manager from a device that has access to the external internet.
+If your system is air-gapped (meaning it does not have access to the external internet), the System Admin will be given the option to download the system statistcs which can then be shared with your Customer Success Manager from a device that is not air-gapped.
 
 .. tip:: 
    
