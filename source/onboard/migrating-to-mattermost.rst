@@ -43,7 +43,7 @@ Migrate to Mattermost from other messaging solutions
 -----------------------------------------------------
 
 Migrate from bespoke messaging solutions to Mattermost
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Many enterprises run bespoke, unsupported, lightly documented messaging systems driven by the initial excitement of the product's promise.
 
@@ -82,13 +82,13 @@ In addition, IT teams prefer Mattermost for its specific `security assurances </
 5. A `Responsible Disclosure Policy <https://mattermost.com/security-vulnerability-report/>`__ is available to supplement internal security reviews with confidential reports from external security researchers, with a recognition program for security research contributions after the security patch is properly released.
 
 Bring data from bespoke solutions into Mattermost 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Migrating from bespoke messengers to Mattermost can be challenging. Because of the difficulty of upgrading and maintaining bespoke solutions, the format for storing data is unpredictable, and the community around any single legacy release is small.
 
 If your data in the bespoke messenger is vital, consider:
 
-1. `Mattermost Bulk Load tool </onboard/bulk-loading-data.html>`__: Use the Mattermost Bulk Load tool to ETL from your bespoke system to Mattermost.
+1. `Mattermost bulk load tool </onboard/bulk-loading-data.html>`__: Use the Mattermost bulk load tool to ETL from your bespoke system to Mattermost.
 2. `Mattermost ETL framework from BrightScout <https://github.com/Brightscout/mattermost-etl>`__: Consider the Mattermost ETL framework from BrightScout to custom-configure an adapter to plug in to the Bulk Load tool mentioned above.
 3. **Legacy Slack import:** If you only recently switched from Slack to a bespoke tool, consider going back to import the data and users from the old Slack instance directly into Mattermost, leveraging the extensive support for Slack-import provided.
 4. **Export to Slack, then import to Mattermost:** `Export HipChat, Flowdock, Campfire, Chatwork, Hall, or CSV files to Slack <https://get.slack.help/hc/en-us/articles/201748703-Import-message-history>`__ and then export to a Slack export file and import the file into Mattermost.
@@ -115,7 +115,7 @@ Slack offers two ways to `export your data from their product <https://get.slack
   As a proprietary SaaS service, Slack is able to change its export format quickly and without notice. If you encounter issues not mentioned in the following documentation, please let the Mattermost Product Team know by `filing an issue <https://handbook.mattermost.com/contributors/contributors/ways-to-contribute>`__.
 
 Use the Mattermost mmetl tool and bulk import
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
   
@@ -127,7 +127,7 @@ Use the Mattermost mmetl tool and bulk import
 We recommend you create a new team in Mattermost to hold the imported Slack data. You can import this into an existing team, but ensure there are no channel name collisions. Also, make sure that all users in Mattermost have the same username as in Slack, otherwise the import will fail. Also, system administrator roles will be overwritten if the usernames match and the user isn't an admin on the Slack workspace.
 
 2. Generate a Slack import
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The first step is to generate a `Slack export <https://slack.com/help/articles/201658943-Export-your-workspace-data>`_.
 
@@ -166,7 +166,7 @@ Once it's installed, run these commands. Replace ``<SLACK TOKEN>`` with the Slac
 
 The file ``export-with-emails-and-attachments.zip`` now contains all the information necessary to be imported into Mattermost.
 
-4. Convert Slack Import to Mattermost Bulk Export Format
+4. Convert Slack import to Mattermost bulk export format
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Now that you have a Slack export file with emails and attachments you have to convert it to the Mattermost format using ``mmetl``. Download the latest release of ``mmetl`` for your OS and architecture `here <https://github.com/mattermost/mmetl/releases/>`__ and extract it to your $PATH like with ``slack-advanced-exporter``. The same caveat applies.
@@ -219,18 +219,18 @@ Debugging imports
 
 The ``mmctl import job show`` shows a detailed error message. If you run into problems which the error message does not help to resolve, your best bet is to use the ``mattermost bulk import`` command. The ``mmctl`` import process does not give you any additional debugging information, even in the Mattermost server logs.
 
-Use the Mattermost Web App
+Use the Mattermost web app
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. important::
-  In Mattermost v6.0, the ability to migrate from Slack using the Mattermost Web App has been deprecated and removed in favor of using the Mattermost mmetl tool with bulk import.
+  In Mattermost v6.0, the ability to migrate from Slack using the Mattermost web app has been deprecated and removed in favor of using the Mattermost mmetl tool with bulk import.
 
 .. note::
   
   For larger imports, particularly those where you have used the `slack-advanced-exporter tool` to add Slack post attachments to the archive or the Corporate Export file, it is recommended to import the Slack data using the `mmetl tool and bulk loading tool </onboard/migrating-to-mattermost.html#migrating-from-slack-using-the-mattermost-mmetl-tool-and-bulk-import>`__.
 
 1. Generate a Slack export file from **Slack > Administration > Workspace Settings > Import/Export Data > Export > Start Export**. Alternatively, use the Slack Corporate Export file after receiving it from Slack.
-2. In Mattermost go to **Main Menu > Team Settings > Import > Import from Slack**. Team Admin or System Admin permission is required to access this menu option.
+2. In Mattermost go to **Main Menu > Team Settings > Import > Import from Slack**. Team admin or system admin permission is required to access this menu option.
 3. Choose **Select file** to upload the Slack export file and select **Import**.
 
 Migrate from Slack using the Mattermost CLI
@@ -251,7 +251,7 @@ Migrate from Slack using the Mattermost CLI
 Use the imported team
 ^^^^^^^^^^^^^^^^^^^^^^
 
-* During the import process, the emails and usernames from Slack are used to create new Mattermost accounts. If emails are not present in the Slack export archive, then placeholder values will be generated and the System Admin will need to update these manually.
+* During the import process, the emails and usernames from Slack are used to create new Mattermost accounts. If emails are not present in the Slack export archive, then placeholder values will be generated and the system admin will need to update these manually.
 * Slack users can activate their new Mattermost accounts by using Mattermost's **Password Reset** screen with their email addresses from Slack to set new passwords for their Mattermost accounts.
 * Once logged in, Mattermost users will have access to previous Slack messages in the public channels imported from Slack.
 
