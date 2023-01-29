@@ -134,7 +134,7 @@ When you select **Renew license now**, you're taken to the renewal page in the C
 
 An email with the new license key and information on how to upload the license in the System Console will be sent to the email address provided.
 
-You can watch a video overview of the renewal process on `YouTube <https://www.youtube.com/watch?v=Sz_1nhVufHY>`__.
+You can watch a video overview of the renewal process on YouTube:
 
 .. raw:: html
   
