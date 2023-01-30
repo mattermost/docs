@@ -27,6 +27,7 @@ Latest Mattermost Mobile Apps releases:
  - Fixed an issue with downloading certain files from the search results.
  - Disabled top domain level verification.
  - Fixed some potential crashes in the iOS Share Extension and Notification Service.
+ - Fixed some screens in the login flow not showing the content when animations are turned off in the device settings.
  
 ### Known Issues
  - Users are unable to adjust the font size via the OS font size setting.
