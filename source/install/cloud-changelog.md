@@ -18,7 +18,8 @@ Latest Mattermost Cloud releases:
 #### Annual Cloud Subscriptions
  - On the purchase modal, admins are now able to buy an annual cloud subscription for a user count that exceeds the current user count.
  - The **System Console > Billing & Account > Subscriptions** page now reflects whether the plan is monthly or annual.
- - Added the ability to migrate from a monthly to an annual Cloud Professional plan.
+ - Cloud Professional monthly will no longer be offered to new customers starting February 2, 2023.
+ - Added the option to migrate from a monthly to an annual Cloud Professional plan for existing Cloud Professional monthly customers.
 
 ### Improvements
 
