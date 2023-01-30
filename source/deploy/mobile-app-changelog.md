@@ -30,12 +30,15 @@ Mattermost mobile v2.0 is a major update to the iOS and Android apps bringing su
 Users now gain a more reliable and feature-rich application, improving their experience for collaborating with their teams on the go.
 
 ### Known Issues
+ - Landscape mode doesn't work on Android tablets.
  - Users are unable to adjust the font size via the OS font size setting.
  - **Add Members** and **Manage Members** modals are not yet added [MM-48489](https://mattermost.atlassian.net/browse/MM-48489).
  - Posts may remain in the local device database after data retention job has been run [MM-47548](https://mattermost.atlassian.net/browse/MM-47548).
  - Drafts are lost when following a notification [MM-47373](https://mattermost.atlassian.net/browse/MM-47373).
  - Moving posts with the Wrangler plugin causes database "Unique key" errors [MM-44960](https://mattermost.atlassian.net/browse/MM-44960).
  - Some pixel phones on Android 12+ might not go past the login screen. This is a known issue with the OS and the current workaround is to restart the device.
+ - The app crashes when uploading a PDF file [MM-49707](https://mattermost.atlassian.net/browse/MM-49707).
+ - The ``timeoutVPN`` values are not converted from milliseconds to seconds in v2 [MM-49722](https://mattermost.atlassian.net/browse/MM-49722).
 
 ## 1.55.1 Release
 - Release Date: September 15, 2022
