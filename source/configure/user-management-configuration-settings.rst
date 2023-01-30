@@ -30,7 +30,7 @@ Users
 Find users
 ~~~~~~~~~~
 
-- admins also can narrow down search results by filtering by team or user status
+admins also can narrow down search results by filtering by team or user status
 
 1. select the dot icon from the top left corner, then select **System Console** option.
 2. Go to **User Management** option then select **Users** option.
