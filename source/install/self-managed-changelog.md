@@ -16,6 +16,12 @@ Latest Mattermost Releases:
 
 **Release Day: February 16, 2023**
 
+### Important Upgrade Notes
+
+ - Before upgrading, we recommend checking for duplicate data in ``focalboard_category_boards`` table and deleting all but one copy of duplicate data. This is to ensure that the new plugin version startup doesn't lock the table, preventing users from using Boards. We recommend de-duplicating the data at a time of low user activity. See more details in the [Important Upgrade Notes](/upgrade/important-upgrade-notes.html).
+
+**IMPORTANT:** If you upgrade from a release earlier than v7.5, please read the other [Important Upgrade Notes](/upgrade/important-upgrade-notes.html).
+
 ### Highlights
 
 #### Calls
