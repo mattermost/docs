@@ -26,7 +26,6 @@ Latest Mattermost Cloud releases:
  - Improved the user interface of the user profile popover.
 
 #### Administration
- - Added a dynamic call-to-action under the **System Console > True Up Review System** subsection for air-gapped and non-air-gapped systems.
  - GraphQL APIs are now correctly counted when measuring performance telemetry.
  - Boards cards are no longer mentioned as being limited in the **System Console**, the limits usage modal, the downgrade modal, or the left-hand side menu.
  - Removed an unused ``ProductLimits.Integrations``.
