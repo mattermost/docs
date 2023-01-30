@@ -23,6 +23,7 @@ Latest Mattermost Cloud releases:
 ### Improvements
 
 #### User Interface (UI)
+ - Boards was reverted from an in-built product back to a plugin.
  - Improved the user interface of the user profile popover.
 
 #### Administration
