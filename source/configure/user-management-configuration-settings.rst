@@ -27,6 +27,15 @@ Users
 | their role is on a team.                                      |                                                             |
 +---------------------------------------------------------------+-------------------------------------------------------------+
 
+There are a lot of things that an Admin can do.
+
+Find users :
+~~~~~~~~~~
+
+admins also can narrow down search results by filtering by team or user status
+by selecting System Console > User Management > User, system administrators can access the User option and search for any user or team member by choosing the required parameters.
+
+
 ----
 
 Groups
