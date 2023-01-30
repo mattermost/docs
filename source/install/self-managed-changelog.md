@@ -16,12 +16,6 @@ Latest Mattermost Releases:
 
 **Release Day: February 16, 2023**
 
-### Important Upgrade Notes
-
- - Boards is served as an in-built product from within Mattermost server instead of a plugin. If you want to disable this, please set the ``MM_FEATUREFLAGS_BoardsProduct`` env var to "false" (without the quotes). While running in product mode, the boards plugin will remain disabled.
-
-**IMPORTANT:** If you upgrade from a release earlier than v7.7, please read the other [Important Upgrade Notes](/upgrade/important-upgrade-notes.html).
-
 ### Highlights
 
 #### Calls
@@ -51,7 +45,7 @@ Latest Mattermost Releases:
  - Endpoint to portal to detect if a license is suitable to self-expand. Overage users can expand their license seats.
  - The export file now contains the server version and a creation timestamp.
  - Total Activated Users was changed back to Total Active Users on the **System Console > Reporting > Site Statistics** page.
- - Added restore_group permission to the mmctl and to the **System Console > Permissions**.
+ - Added ``restore_group`` permission to the mmctl and to the **System Console > Permissions**.
  - Improved bulk export logging.
  - Compliance export job can now cancel the SQL query execution during server shutdown which will allow the job to exit faster.
  - The message export compliance job can now survive server restarts. The job will pause and save state when the server is shutting down, and resume from the previously saved state when the server starts back up.
@@ -71,8 +65,6 @@ Latest Mattermost Releases:
     - ``max_idle_closed_total``
     - ``max_idle_time_closed_total``
     - ``max_lifetime_closed_total``
- - Boards are served as an in-built product from within Mattermost server instead of a plugin and is now always enabled. While running in product mode, the Boards plugin will remain disabled. 
- - Added a new section in the **System Console** for products. For now, it only contains Boards-specific settings.
  - Made ``registerChannelIntroButtonAction`` plugin API usable by plugins other than Boards.
  - The following new HTTP headers and values are now written on all responses. These default values should make sense in most installations and can be overridden by a reverse proxy or ingress configuration. Note that the empty ``Permissions-Policy`` header does not have any actual effect. Users are recommended to change it to a more restrictive value based on their use case. For more information, see the [W3C Reference](https://www.w3.org/TR/permissions-policy/) or [this article](https://developer.mozilla.org/en-US/docs/Web/HTTP/Permissions_Policy).
 
@@ -114,12 +106,6 @@ Latest Mattermost Releases:
  - Fixed an issue where bulk import crashed with invalid memory address or nil pointer dereference.
  - Fixed an issue with special characters in the System Console log filename causing logging configuration to break.
  - Fixed an issue where the PDF renderer was not rendering all the pages.
-
-### config.json
-Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
-
-#### Changes to Team Edition and Enterprise Edition:
- - Added a new config setting section ``ProductSettings``.
 
 ### API Changes
  - Added new API endpoint ``GET /api/v4/posts/:post_id/info`` to allow checking if the post that a permalink is pointing to is accessible by joining teams or channels.
