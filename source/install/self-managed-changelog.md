@@ -126,7 +126,6 @@ Latest Mattermost Releases:
  - Boards are not refreshing on creation. See the [GitHub discussion](https://github.com/mattermost/focalboard/discussions/1971) for more information.
  - Boards export and reimport results in duplicates boards because all IDs are replaced by new ones on the server. See the [GitHub issue](https://github.com/mattermost/focalboard/issues/1924) for more information.
  - Boards linked to a channel you're a member of do not automatically appear on your sidebar unless you're an explicit member of the board. As a workaround, you can access the board from the channel RHS or by searching for the board via the board switcher (Ctrl/Cmd+K). Alternatively, you can ask the board admin to add you to the board as an explicit member. See the [issue-focalboard-4179](https://github.com/mattermost/focalboard/issues/4179) for more details.
- - Publicly shared boards lead to a "Team not found" error page. See [issue-focalboard-4450](https://github.com/mattermost/focalboard/issues/4450) for more details.
  - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
  
 ### Contributors
