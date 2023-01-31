@@ -28,7 +28,8 @@ Latest Mattermost Releases:
  - 
 
 #### Boards
- - 
+ - Added support for person, multi-person, and date property filters in Boards.
+ - Added support for person property groups in Boards.
 
 #### Playbooks
  - 
@@ -129,9 +130,7 @@ Latest Mattermost Releases:
  - The team sidebar on the desktop app does not update when channels have been read on mobile.
  - Slack import through the CLI fails if email notifications are enabled.
  - Push notifications don't always clear on iOS when running Mattermost in high availability mode.
- - Boards are not refreshing on creation. See the [GitHub discussion](https://github.com/mattermost/focalboard/discussions/1971) for more information.
  - Boards export and reimport results in duplicates boards because all IDs are replaced by new ones on the server. See the [GitHub issue](https://github.com/mattermost/focalboard/issues/1924) for more information.
- - Boards linked to a channel you're a member of do not automatically appear on your sidebar unless you're an explicit member of the board. As a workaround, you can access the board from the channel RHS or by searching for the board via the board switcher (Ctrl/Cmd+K). Alternatively, you can ask the board admin to add you to the board as an explicit member. See the [issue-focalboard-4179](https://github.com/mattermost/focalboard/issues/4179) for more details.
  - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
  
 ### Contributors
