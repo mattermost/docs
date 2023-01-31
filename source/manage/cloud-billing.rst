@@ -4,10 +4,15 @@ Mattermost Cloud billing
 .. include:: ../_static/badges/allplans-cloud.rst
   :start-after: :nosearch:
 
-Mattermost Cloud is offered as a pay-as-you-go subscription service.
+Mattermost Cloud Professional and Enterprise plans are offered as an annual subscription service.
 
-You will be billed for registered users in your workspace. A registered user is a user who has an account in a workspace and does not show as *Inactive* in **System Console > User Management > Users**. Registered users will count towards your monthly invoice each day as long as they are not deactivated in the billing period.
+You can upgrade to a Professional plan in the product self-serve. For Enterprise plans, you need to [contact sales](https://mattermost.com/contact-sales/). 
+When you upgrade, you can indicate how many number of user seats you'd like to purchase, which cannot be less than the current total number of active users in your workspace. You will be billed immediately for the cost of the annual subscription.
 
-Mattermost Cloud workspaces can be used free forever with Cloud Free. You can upgrade to a monthly per-user subscription, with Mattermost Professional and Mattermost Enterprise. 
+Your subscription renews automatically unless you choose to opt-out of renewing.
+
+
+
+Mattermost Cloud workspaces can be used free forever with Cloud Free.
 
 Please see the `Cloud subscriptions </about/cloud-subscriptions.html>`__ documentation for more detailed information on the Cloud billing process.
