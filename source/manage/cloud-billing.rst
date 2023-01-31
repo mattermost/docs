@@ -10,9 +10,9 @@ To upgrade to a Professional plan within Mattermost, select **View plans** in th
 
 When you upgrade, you'll need to indicate the number of user seats you have - these are active users who'll be using Mattermost. This can't be less than the current total number of active users in your workspace. You'll be billed immediately for the cost of the annual subscription.
 
-As this is an annual subscription, it renews automatically. You'll be notified of the renewal ahead of time.
+As this is an annual subscription, it renews automatically. You'll be reminded of the renewal ahead of time.
 
-You can choose to opt-out of automatic renewal. In this case, you'll be reminded close to the end of your subscription and have an opportunity to renew.
+You can choose to opt-out of automatic renewal. In this case, you'll be notified ahead of time, so that your subscription doesn't lapse.
 
 Mattermost Cloud workspaces can be used free forever with Cloud Free.
 
