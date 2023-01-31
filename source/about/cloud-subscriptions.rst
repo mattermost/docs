@@ -1,19 +1,22 @@
 Cloud subscriptions
 ===================
 
+From February 2023, Mattermost Cloud subscriptions are switching from a monthly subscription to an annual subscription. However, existing Cloud Professional monthly customers can maintain their monthly subscription.
+
 Buy a Cloud subscription
 ------------------------
 
 Mattermost Cloud can be used free forever with Mattermost Free.
 
-You can also start a free, 30-day trial of Mattermost Enterprise to explore additional features. When you're near the end of your trial, a banner within Mattermost will notify you to upgrade to a subscription plan:
+You can also start a free, 30-day trial of Mattermost Enterprise to explore additional features. When you're near the end of your trial, a banner within Mattermost will notify you to upgrade to an annual subscription plan:
 
 1. Select **Subscribe now**.
 2. Provide your credit card details.
 
 .. note::
   
-  Your credit card will be verified and you'll be charged at the end of the billing period. If you'd prefer an annual Cloud subscription, please contact our `Sales team <mailto:sales@mattermost.com>`_ for a quote.
+  Your credit card will be verified and you'll be charged immediately.
+  
 3. Provide your billing address.
 4. (Optional) Select a subscription plan.
 5. Select **Subscribe**.
@@ -25,33 +28,14 @@ If you choose not to upgrade at the end of your 30-day trial, your subscription 
 View subscription information
 -----------------------------
 
-The subscription screen outlines the details of your Mattermost Cloud account, including the cost per user per month and the number of users currently registered in your workspace. You can also find a summary of your last invoice in the same page, and any `workspace limits </onboard/mattermost-limits.html>`__ set for your subscription.
+The subscription screen outlines the details of your Mattermost Cloud account, including the annual cost per user and the number of users currently registered in your workspace. You can also find a summary of your last invoice in the same page, and any `workspace limits </onboard/mattermost-limits.html>`__ set for your subscription.
 
 Billing period
 --------------
 
-After you begin your Mattermost Cloud paid subscription, your first charge is applied at the end of the calendar month. Subsequent billing periods begin at 12 AM UTC on the first day of each calendar month and end at 11:59 PM UTC on the final day of the same calendar month. Per-user pricing for each billing period will be based on the number of registered users.
-
-Invoices appear immediately after the billing period ends.
-
-It may take up to a day for our billing systems to calculate, charge your credit card, and issue your invoice. Once charges are completed, the invoice will show as *Paid*. The invoice is a downloadable PDF file.
+After you begin your Mattermost Cloud paid subscription, your credit card is billed immediately. Your subscription automatically renews annually, however you can opt-out of auto-renewal.
 
 If there's a payment failure, your invoice will show *Payment Failed*. Please review the accuracy of your credit card information in **Payment Information**. Unresolved failed payments may result in a delinquency and an interruption to your subscription.
-
-Adding and removing users in the middle of a billing period
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-If you add new users in the middle of a billing cycle, you'll only be charged for the days that the user is registered.
-
-Here's an example:
-
-Your organization has a Mattermost Cloud workspace, and you're on a monthly subscription at the rate of $10 USD per user per month. You add a new user on the 11th day of a 30-day billing period, and that user remains registered for the remainder of the billing period.
-
-The prorated subscription cost for this user is determined by multiplying the monthly amount ($10 USD) by the number of days they are actively registered in the billing period (20) and dividing by the number of days in the month (30).
-
-The prorated subscription cost for the user added on day 11 is $6.67 USD.
-
-Similarly, if you make a registered user inactive in the middle of a billing cycle, we'll calculate the prorated amount using the formula above to determine the prorated charge.
 
 Payment information
 ~~~~~~~~~~~~~~~~~~~
@@ -70,14 +54,12 @@ Mattermost reserves the right to assess applicable taxes as required by local la
 Failed or late payments
 -----------------------
 
-You'll be notified immediately of failed payments both in-product, with a banner, and via email. The notifications provide directions on how to update payment information. Once payment information is updated, you'll be charged right away for the amount owing from the previous billing period.
+You'll be notified immediately of failed payments both in-product, with a banner, and via email. The notifications provide directions on how to update payment information. Once payment information is updated, you'll be charged right away for the amount owing.
 
 If you have not paid or resolved the failed payment after 90 days, your workspace will be downgraded to Mattermost Free and subject to the data limits of that plan. If there is no activity on your workspace 60 days after the downgrade, your workspace will be deleted.
 
 Add more users to your subscription
 -----------------------------------
-
-If you're on a monthly Cloud subscription, you can add more users to your instance which will be reflected on your monthly invoice. If you add new users in the middle of a billing cycle, you’ll only be charged for the days that the user is registered.
 
 When you subscribe to an annual plan with Mattermost, you may incur retroactive charges on a quarterly basis for the actual number of registered users within your system if you are above the amount you subscribed in your purchase order. A registered user is a user who has an account in a workspace and does not show as *Inactive* in **System Console > User Management > Users**.
 
@@ -86,7 +68,7 @@ If you have more total active users than the number purchased in your annual sub
 Renew your subscription
 -----------------------
 
-Monthly Cloud subscriptions renew automatically.
+Monthly Cloud annual subscriptions renew automatically.
 
 Frequently asked questions
 ---------------------------
@@ -94,20 +76,14 @@ Frequently asked questions
 What happens when my 30-day Mattermost Enterprise trial period ends?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-At the end of the 30-day trial, you can opt to purchase a monthly subscription to Mattermost Professional via the prompts provided in Mattermost. 
+At the end of the 30-day trial, you can opt to purchase an annual subscription to Mattermost Professional via the prompts provided in Mattermost. 
 
 If you choose not to continue, your subscription will revert to Mattermost Free and you will not be billed. In this case, Mattermost Enterprise features will no longer be available to use. Any data you may have that exceeds the `data limits </onboard/mattermost-limits.html>`_ for Mattermost Free will be auto-archived.
 
-How am I billed for my Cloud monthly subscription?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+How am I billed for my annual Cloud subscription?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Your first Cloud subscription charge is at the end of the calendar month, and all monthly charges are billed in arrears on the first day of each month, e.g., June billing will be done on 7/1 for the period 6/1 - 6/30. 
-
-After your first month, the billing period begins at 12 AM UTC on the first day of each calendar month and ends at 11:59 PM UTC on the final day of the same calendar month. Per-user pricing for each billing period will be based on the number of registered users.
-
-- If you begin your subscription in the middle of a billing period, charges will be prorated. For example, if you signed up 6/15, we'll charge you on 7/1 for the period 6/15 - 6/30.
-- Similarly, if you end your subscription in the middle of a billing period, charges will be prorated. For example, if you cancel your account on 6/15, we'll charge you on 7/1 for the period 6/1 - 6/15.
-- If you upgrade in the middle of a billing period, charges will also be prorated. For example, if you upgrade from Professional to Enterprise on 6/15, we'll charge you 7/1. This will be a single charge for Professional for the period 6/1 - 6/14, then a separate charge for Enterprise for the period 6/15 - 6/30.
+When you purchase your subscription, your credit card is charged immediately. Thereafter, your subscription auto-renews every year. You can opt-out of auto-renewal in the System Console. You'll still receive reminders when your subscription is due for renewal.
 
 What happens if I decide to buy a subscription to Mattermost Enterprise during my trial?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -124,13 +100,6 @@ If you're on Cloud Professional and want to move to Cloud Free:
 1. Open **System Console > Billing & Account > Subscription**.
 2. Select **View Plans**.
 3. Select **Downgrade**.
-
-Can I buy an annual Mattermost Cloud subscription?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Yes. Contact sales@mattermost.com to learn more about annual Cloud subscription options.
-
-If you upgrade during a monthly billing cycle, charges will be prorated. For example, if you upgrade from monthly Professional to an annual term of Mattermost Enterprise on 6/15, we'll charge you on 7/1 for Professional for the period 6/1 - 6/14. A separate invoice will be provided for the annual Mattermost Enterprise subscription period starting 6/15.
 
 How do I cancel my subscription? 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
