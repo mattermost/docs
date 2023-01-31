@@ -28,6 +28,7 @@ Latest Mattermost Mobile Apps releases:
  - Disabled top domain level verification.
  - Fixed some potential crashes in the iOS Share Extension and Notification Service.
  - Fixed some screens in the login flow not showing the content when animations are turned off in the device settings.
+ - Fixed an issue where new Direct and Group Messages sometimes did not appear in the channel list until reopening the app.
  
 ### Known Issues
  - Users are unable to adjust the font size via the OS font size setting.
