@@ -6,12 +6,13 @@ Mattermost Cloud billing
 
 Mattermost Cloud Professional and Enterprise plans are offered as an annual subscription service.
 
-You can upgrade to a Professional plan in the product self-serve. For Enterprise plans, you need to [contact sales](https://mattermost.com/contact-sales/). 
-When you upgrade, you can indicate how many number of user seats you'd like to purchase, which cannot be less than the current total number of active users in your workspace. You will be billed immediately for the cost of the annual subscription.
+To upgrade to a Professional plan within Mattermost, select **View plans** in the header. For Enterprise plans, you need to [contact sales](https://mattermost.com/contact-sales/).
 
-Your subscription renews automatically unless you choose to opt-out of renewing.
+When you upgrade, you'll need to indicate the number of user seats you have - these are active users who'll be using Mattermost. This can't be less than the current total number of active users in your workspace. You'll be billed immediately for the cost of the annual subscription.
 
+As this is an annual subscription, it renews automatically. You'll be notified of the renewal ahead of time.
 
+You can choose to opt-out of automatic renewal. In this case, you'll be reminded close to the end of your subscription and have an opportunity to renew.
 
 Mattermost Cloud workspaces can be used free forever with Cloud Free.
 
