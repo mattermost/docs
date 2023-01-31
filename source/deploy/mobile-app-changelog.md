@@ -31,7 +31,7 @@ Latest Mattermost Mobile Apps releases:
 
 ### Bug Fixes
  - Fixed an issue where the keyboard changed on iOS when a code block was started.
- - Fixed an issue where the EMM configuration for VPN timeouts were in ``seconds` instead of in ``ms``.
+ - Fixed an issue where the EMM configuration for VPN timeouts were in ``seconds`` instead of in ``ms``.
  - Fixed an issue with markdown bolded strings.
  - Fixed an issue where the markdown for mentions did not inherit heading fonts.
  - Fixed an issue where a crash occurred when attempting to download a profile image.
