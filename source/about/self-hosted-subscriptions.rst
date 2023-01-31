@@ -106,8 +106,8 @@ If you have more total active users than you purchased in your annual subscripti
 
 The additional invoice will be pro-rated based on the number of months left in your subscription term, including the months for the calendar quarter for the time you pull the report. We will not provide downward adjustments. Mattermost will invoice based on Mattermost’s `current list prices <https://mattermost.com/pricing/>`__.
 
-Quarterly true-up reports in version 7.9
------------------------------------------
+Quarterly true-up reports in version 7.9 or newer
+-------------------------------------------------
 
 Quarterly true-up reports have changed in Mattermost version 7.9.
 The reporting period is still the same, but we've introduced a process that is much easier than taking screenshots.
