@@ -1,7 +1,7 @@
 Cloud subscriptions
 ===================
 
-From February 2023, Mattermost Cloud subscriptions are switching from a monthly subscription to an annual subscription. However, existing Cloud Professional monthly customers can maintain their monthly subscription.
+From 2 February 2023, Mattermost Cloud subscriptions are switching from a monthly subscription to an annual subscription. However, existing Cloud Professional monthly customers can maintain their monthly subscription.
 
 Buy a Cloud subscription
 ------------------------
