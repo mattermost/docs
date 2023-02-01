@@ -101,6 +101,7 @@ Latest Mattermost Cloud releases:
  - The message box flashes controls while typing in the right-hand side [MM-49266](https://mattermost.atlassian.net/browse/MM-49266).
  - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
  - Publicly shared boards lead to a "Team not found" error page. See [issue-focalboard-4450](https://github.com/mattermost/focalboard/issues/4450) for more details.
+ - If a user is not a member of a configured broadcast channel, posting a status update might fail without any error feedback. As a temporary workaround, join the configured broadcast channels or remove those channels from the run configuration.
 
 ## Release 2023-01-12
 
