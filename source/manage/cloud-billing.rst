@@ -4,7 +4,7 @@ Mattermost Cloud billing
 .. include:: ../_static/badges/allplans-cloud.rst
   :start-after: :nosearch:
 
-From February 2023, Mattermost Cloud Professional and Enterprise plans are offered as an annual subscription service.
+From February 2, 2023, Mattermost Cloud Professional and Enterprise plans are offered as an annual subscription service.
 
 .. note:: 
    
