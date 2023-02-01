@@ -41,20 +41,20 @@ Latest Mattermost Releases:
  - Added an onboarding tour point for Global Drafts.
  - Updated prepackaged version of Apps plugin to 1.2.0.
  - Added group members count to the group autocomplete.
- - Clicking a group mention now displays group details and membership.
- - Improved the collapsed state of the post formatting toolbar.
+ - Selecting a group mention now displays group details and membership.
+ - Improved the collapsed state of the message formatting toolbar.
  - App Framework channel and user fields now support multi-select properties to allow users to select multiple values in a form.
  - Increased the character count for desktop notifications on Windows to 120 from 50.
  - Prioritized members of recently viewed direct or group messages when adding users to a channel.
  - Added support for multiple users and channels to the ``/invite`` slash command.
 
 #### Administration
- - Endpoint to portal to detect if a license is suitable to self-expand. Overage users can expand their license seats.
+ - Endpoint to portal added to detect whether a license is suitable for self-expansion. Customers over their seat limit can expand their license seats.
  - The export file now contains the server version and a creation timestamp.
  - Total Activated Users was changed back to Total Active Users on the **System Console > Reporting > Site Statistics** page.
  - Added ``restore_group`` permission to the mmctl and to the **System Console > Permissions**.
  - Improved bulk export logging.
- - Compliance export job can now cancel the SQL query execution during server shutdown which will allow the job to exit faster.
+ - Compliance export jobs can now cancel the SQL query execution during server shutdown which will allow the job to exit faster.
  - The message export compliance job can now survive server restarts. The job will pause and save state when the server is shutting down, and resume from the previously saved state when the server starts back up.
  - Only one instance of the job will be automatically scheduled to run as per the ``MessageExportSettings.DailyRunTime`` config value.
  - Mattermost will throw an error if it detects an Elasticsearch version greater than 7.
@@ -72,7 +72,7 @@ Latest Mattermost Releases:
     - ``max_idle_closed_total``
     - ``max_idle_time_closed_total``
     - ``max_lifetime_closed_total``
- - Made ``registerChannelIntroButtonAction`` plugin API usable by plugins other than Boards.
+ - Made the ``registerChannelIntroButtonAction`` plugin API usable by plugins other than Boards.
  - The following new HTTP headers and values are now written on all responses. These default values should make sense in most installations and can be overridden by a reverse proxy or ingress configuration. Note that the empty ``Permissions-Policy`` header does not have any actual effect. Users are recommended to change it to a more restrictive value based on their use case. For more information, see the [W3C Reference](https://www.w3.org/TR/permissions-policy/) or [this article](https://developer.mozilla.org/en-US/docs/Web/HTTP/Permissions_Policy).
 
 	```
@@ -83,7 +83,7 @@ Latest Mattermost Releases:
 
 ### Bug Fixes
  - Fixed an issue where if a self-hosted purchase was not available, an air-gapped modal was shown instead of going to the CWS purchase portal experience directly.
- - Fixed small visual issues with self-hosted purchase modal. Tweak wording for admins trying to purchase when a purchase is already in progress.
+ - Fixed small visual issues with self-hosted purchase modal. Adjusted wording for admins trying to purchase when a purchase is already in progress.
  - Fixed an issue where attempting to create a team with a duplicate URL displayed the wrong error.
  - Fixed an issue where the custom status modal did not close when navigating to the custom emoji page.
  - Fixed an issue where selections within a code block were not properly copied to clipboard.
