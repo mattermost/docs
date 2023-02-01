@@ -9,7 +9,7 @@ From February 2023, Mattermost Cloud Professional and Enterprise plans are offer
 .. note:: 
    
    If you have an existing Cloud Professional monthly subscription you can keep it as is and are not required to switch to an annual subscription. If you'd like to switch, please follow these steps:
-   1. Go to **System Console > Subscription**. In the **Switch to annual plan today** section select **Learn More**. 
+   1. Go to **System Console > Subscription**. In the **Switch to an annual plan today** section select **Learn More**. 
    2. Fill in your payment information.
    3. Select **Switch to annual billing**
 
