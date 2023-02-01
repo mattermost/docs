@@ -2176,17 +2176,17 @@ Select OpenID Connect service provider
 
 *Available in legacy Enterprise Edition E20*
 
-+-------------------------------------------------------------------------------+---------------------------------------------------------------+
-| Use this setting to enable OpenID Connect, with these options:                | - System Config path: **Authentication > OpenID Connect**     | 
-|                                                                               | - ``config.json`` setting: N/A                                |
-| - **Do not allow login via an OpenID provider**                               | - Environment variable: N/A                                   |
-| - **GitLab** `(settings) <#gitlab-openid-settings>`__                         |                                                               |
-| - **Google Apps** (`settings <#google-openid-settings>`__)                    |                                                               |
-| - **Office 365** (`settings <#office-365-openid-settings>`__)                 |                                                               |
-| - **OpenID Connect (Other)** `(settings) <#openid-connect-other-settings>`__  |                                                               |
-+-------------------------------------------------------------------------------+---------------------------------------------------------------+
-| **Note**: **GitLab** OpenID is available in all plans, except Cloud Free. All other providers require Mattermost Enterprise or Professional.  |
-+-----------------------------------------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------+-----------------------------------------------------------+
+| Use this setting to enable OpenID Connect, with these options:                   | - System Config path: **Authentication > OpenID Connect** |
+|                                                                                  | - ``config.json`` setting: N/A                            |
+| - **Do not allow login via an OpenID provider**                                  | - Environment variable: N/A                               |
+| - **GitLab** (`see settings <#gitlab-openid-settings>`__)                        |                                                           |
+| - **Google Apps** (`see settings <#google-openid-settings>`__)                   |                                                           |
+| - **Office 365** (`see settings <#office-365-openid-settings>`__)                |                                                           |
+| - **OpenID Connect (Other)** (`see settings <#openid-connect-other-settings>`__) |                                                           |
++----------------------------------------------------------------------------------+-----------------------------------------------------------+
+| **Note**: **GitLab** OpenID is available in all plans, except Cloud Free. All other providers require Mattermost Enterprise or Professional. |
++----------------------------------------------------------------------------------------------------------------------------------------------+
 
 GitLab OpenID settings
 ^^^^^^^^^^^^^^^^^^^^^^
