@@ -8,20 +8,19 @@ Buy a Cloud subscription
 
 Mattermost Cloud can be used free forever with Mattermost Free.
 
-You can also start a free, 30-day trial of Mattermost Enterprise to explore additional features. When you're near the end of your trial, a banner within Mattermost will notify you to upgrade to an annual subscription plan:
+You can also start a free, 30-day trial of Mattermost Enterprise to explore additional features. During or after the trial, you can choose to upgrade to Mattermost Professional in-product or Enterprise by `contacting sales <https://mattermost.com/contact-sales/>`__.
 
-1. Select **Subscribe now**.
-2. Provide your credit card details.
+For Professional, follow the steps below:
+
+1. Select **View Plans**.
+2. Select Professional by clicking **Upgrade**.
+3. Provide your credit card details.
 
 .. note::
   
   Your credit card will be verified and you'll be charged immediately.
   
-3. Provide your billing address.
-4. (Optional) Select a subscription plan.
-5. Select **Subscribe**.
-
-Alternatively, if you'd like to continue with Mattermost Enterprise, please contact our `Sales team <mailto:sales@mattermost.com>`_. 
+4. Click **Upgrade** to confirm.
 
 If you choose not to upgrade at the end of your 30-day trial, your subscription will revert to Mattermost Free.
 
@@ -58,12 +57,19 @@ You'll be notified immediately of failed payments both in-product, with a banner
 
 If you have not paid or resolved the failed payment after 90 days, your workspace will be downgraded to Mattermost Free and subject to the data limits of that plan. If there is no activity on your workspace 60 days after the downgrade, your workspace will be deleted.
 
-Add more users to your subscription
+Add more users to your Cloud Professional subscription
 -----------------------------------
 
-When you subscribe to an annual plan with Mattermost, you may incur retroactive charges on a quarterly basis for the actual number of registered users within your system if you are above the amount you subscribed in your purchase order. A registered user is a user who has an account in a workspace and does not show as *Inactive* in **System Console > User Management > Users**.
+When you subscribe to an annual plan with Mattermost, you can add users to your workspace anytime. You may incur retroactive charges during renewal or at the end of your annual subscriptionon. You can view any upcoming charges in **System Console > Subscriptions**.
 
-If you have more total active users than the number purchased in your annual subscription, we'll provide you with an invoice and an amendment to your purchase order for the new users added. The additional invoice will be pro-rated based on the number of months left in your subscription term, including the months for the calendar quarter at the time we review your user counts. We will not provide downward adjustments. Mattermost will invoice based on Mattermost’s `current list prices <https://mattermost.com/pricing/>`__.
+- If the number of users is less than 10% of initial number of users when you subscribed to your annual plan, you won't be billed for the cost of additional users retroactively
+- If the number of users is greater than 10% of the initial number of users when you subscribed to your annual plan, you will be billed the cost of additional users, pro-rated during renewal or at the end of your annual subcsription.
+
+Example:
+
+- You subscribed to Cloud Professional on January 2023 for 100 users. Throughout your subscription term, you add 8 users. You will not be retroactively billed for the cost of additional users.
+- You subscribed to Cloud Professional on January 2023 for 100 users. On March 2023, you add 5 users. On September 2023, you add another 10 users for a total of 15 users during your subscription term. You will be billed pro-rated for the cost of additional users incurred in March and September.
+
 
 Renew your subscription
 -----------------------
@@ -76,7 +82,7 @@ Frequently asked questions
 What happens when my 30-day Mattermost Enterprise trial period ends?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-At the end of the 30-day trial, you can opt to purchase an annual subscription to Mattermost Professional via the prompts provided in Mattermost. 
+At the end of the 30-day trial, you can opt to purchase an annual subscription to Mattermost Professional via the prompts provided in Mattermost. If you wish to opt for Mattermost Enterprise, `contact sales <https://mattermost.com/contact-sales/>`__. 
 
 If you choose not to continue, your subscription will revert to Mattermost Free and you will not be billed. In this case, Mattermost Enterprise features will no longer be available to use. Any data you may have that exceeds the `data limits </onboard/mattermost-limits.html>`_ for Mattermost Free will be auto-archived.
 
@@ -88,7 +94,7 @@ When you purchase your subscription, your credit card is charged immediately. Th
 What happens if I decide to buy a subscription to Mattermost Enterprise during my trial?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Your plan immediately changes to the plan you've upgraded to. Your trial will continue and on day 31 billing will commence. You won't incur any charges of your new plan until the trial period is over. Depending on what day of the month this is, you'll be billed prorata. You'll receive your bill at the end of the calendar month for this month and going forward.
+Your plan immediately changes to the plan you've upgraded to. You will be invoiced as per your agreement with our sales team.
 
 How do I change my subscription to Cloud Free?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
