@@ -150,6 +150,7 @@ This section of the guide is for system admins of self-hosted Mattermost servers
     JSON audit log schema </comply/embedded-json-audit-log-schema>
     SSL client certificate setup </onboard/ssl-client-certificate>
     Certificate-based authentication </onboard/certificate-based-authentication>
+    Manage telemetry </manage/telemetry>
 
 * :doc:`Mattermost self-hosted billing </manage/self-hosted-billing>` - Manage your Mattermost subscription.
 * :doc:`Include configuration in the Mattermost database </configure/configuation-in-a-database>` - Store Mattermost configuration information in your database rather than as a JSON file. We recommend this for High Availability environments.
@@ -166,6 +167,7 @@ This section of the guide is for system admins of self-hosted Mattermost servers
 * :doc:`JSON audit log schema </comply/embedded-json-audit-log-schema>` - Learn how to configure Mattermost audit logging using a JSON object.
 * :doc:`SSL client certificate setup </onboard/ssl-client-certificate>` - Configure SSL client certificates for Mattermost Desktop and Web Apps.
 * :doc:`Certificate-Based Authentication </onboard/certificate-based-authentication>` - Set up certificate-based authentication for Mattermost.
+* :doc:`Manage telemetry </manage/telemetry>` - Self-hosted system admins can opt out of sharing telemetry data with Mattermost.
 
 Other resources
 ---------------
