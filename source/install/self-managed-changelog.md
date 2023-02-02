@@ -62,6 +62,7 @@ Latest Mattermost Releases:
  - Users can now monitor the progress of the bulk export job via its metadata field. It is available at ``mmctl export job show <jobID>``.
  - Compliance exports no longer time out when uploading to S3.
  - Users can now supply a certificate authority (CA) file and client certificates for the Elasticsearch client.
+ - Enabled ``EnableOAuthServiceProvider`` by default.
  - Grafana metrics are now available for database connection metrics. They are:
     - ``max_open_connections``
     - ``open_connections``
