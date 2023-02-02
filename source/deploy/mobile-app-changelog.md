@@ -19,6 +19,11 @@ Latest Mattermost Mobile Apps releases:
  - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
  - iPhone 5s devices and later with iOS 12.1+ is required.
 
+### Improvements
+ - Added support for Android tablets and foldables.
+ - Added support to rotate iPads in all orientations.
+ - Improved the mobile emoji picker user interface and interaction.
+
 ### Bug Fixes
  - Fixed a crash when dismissing a notification on Android.
  - Fixed a potential crash when trying access non existent database records.
@@ -31,6 +36,11 @@ Latest Mattermost Mobile Apps releases:
  - Fixed an issue where new Direct and Group Messages sometimes did not appear in the channel list until reopening the app.
  - The permissions required to receive push notifications is now always requested if needed.
  - Fixed ANRs found with some Android devices.
+ - Fixed an issue where the keyboard changed on iOS when a code block was started.
+ - Fixed an issue where the EMM configuration for VPN timeouts were in ``seconds`` instead of in ``ms``.
+ - Fixed an issue with markdown bolded strings.
+ - Fixed an issue where the markdown for mentions did not inherit heading fonts.
+ - Fixed an issue where a crash occurred when attempting to download a profile image.
  
 ### Known Issues
  - Users are unable to adjust the font size via the OS font size setting.
