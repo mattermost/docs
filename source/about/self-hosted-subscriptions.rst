@@ -100,7 +100,7 @@ To send this report, take a screenshot of **System Console > Site Statistics** a
 
 .. tip:: 
 
-   Not sure where to find the true-up review section? Please reach out to your account executive, Customer Success Manager, orders@mattermost.com, or support@mattermost.com for help.
+   Not sure where to take the screenshot? Please reach out to your account executive, Customer Success Manager, orders@mattermost.com, or support@mattermost.com for help.
 
 If you have more total active users than you purchased in your annual subscription, your Customer Success Manager will provide you with a true-up quote for the new users added.
 
@@ -117,6 +117,11 @@ To send the report, a System Admin must navigate to the **System Console** and o
 If the current date is within the True-Up reporting period, a panel will be visible at the top of the page with a button to share your systems statistics directly to Mattermost.
 
 If your system is air-gapped (meaning it does not have access to the external internet), the System Admin will be given the option to download the system statistcs which can then be shared with your Customer Success Manager from a device that is not air-gapped.
+
+.. tip::
+   
+   Not sure where to find the site statistics or team statistics? Please reach out to your account executive, Customer Success Manager, orders@mattermost.com, or support@mattermost.com for help.
+   
 
 Renew your subscription
 -----------------------
