@@ -23,7 +23,6 @@ Latest Mattermost Mobile Apps releases:
  - Added functionality to invite users by email and to invite users from other teams on the server.
  - Calls: Calls now start in speaker mode by default.
  - Calls: Calls now show the call thread in root calls posts.
- - Calls: updated ``react-native-webrtc`` to the most recent version.
  - Implemented Data Retention for mobile.
 
 ### Bug Fixes
