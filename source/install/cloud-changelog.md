@@ -4,12 +4,56 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 
 Latest Mattermost Cloud releases:
 
+- [Release 2023-02-09](#release-2023-02-09)
 - [Release 2023-02-02](#release-2023-02-02)
 - [Release 2023-01-26](#release-2023-01-26)
 - [Release 2023-01-12](#release-2023-01-12)
 - [Release 2022-12-20](#release-2022-12-20)
 - [Release 2022-12-01](#release-2022-12-01)
-- [Release 2022-11-24](#release-2022-11-24)
+
+## Release 2023-02-09
+
+### Improvements
+
+#### User Interface (UI)
+ - Pre-packaged Playbooks v1.36.0.
+ - All post components were removed in favor of a unified approach.
+ - App bindings are now refreshed when a App plugin enabled event gets triggered.
+ - Improvements were added to the sidebar channel and category menus.
+ - Removed right-click hijacking on code blocks in messages.
+ - The order of the Leave Channel and Archive Channel channel settings were changed to be the same as in mobile.
+ - Added the condition to remove unread styling for archived channels and to filter archived channels from local data.
+
+#### Administration
+ - The invoice is now sent attached when an Admin upgrades to Cloud annual subscription.
+ - Removed Boards limits from Cloud Starter subscription.
+ - Enabled ``EnableOAuthServiceProvider`` by default.
+ - Export files now contain the read and unread status for channels.
+ - While upgrading a High Availability installation with rolling upgrades, there might be a situation where after upgrading all nodes, the System Console will show up as just one plugin is there and in disabled state. This is expected, and upon another restart of the first node which was upgraded, it should not show any plugins. That is the correct state. This happens due to the way plugins are initialized by copying over from prepackaged plugins to the plugins directory, and is an harmless artifact of that.
+
+#### Performance
+ - Reduced the rate that unreads are resynced when the window is focused from 10 seconds to 2 minutes.
+ - The center channel is no longer shown as loading when switching teams.
+Added logging fixes: empty ``short_message`` for Gelf formatter is no longer allowed and ``params.Host`` is now used over ``params.IP`` for syslog config.
+
+### API Changes
+ - Added an ``exclude_files_count`` parameter to exclude file counts from the channel stats API.
+
+### Bug Fixes
+ - Fixed new teams to use the updated translation for default channels after a config change.
+ - Fixed a layout issue in the System Console for smaller-sized tablets.
+ - Fixed an issue where a "plugin configured with a nil SecureConfig" warning was logged when starting each plugin.
+ - Fixed an issue where portal availability was checked when not on enterprise edition.
+
+### Known Issues
+ - Clicking on a user profile picture throws a console error [MM-49961](https://mattermost.atlassian.net/browse/MM-49961).
+ - Bot and guest tags are truncated on suggestion autocomplete [MM-49973](https://mattermost.atlassian.net/browse/MM-49973).
+ - Horizontal scroll displays in the Threads list due to a new tags component [MM-49854](https://mattermost.atlassian.net/browse/MM-49854).
+ - Login/create account screen layout breaks when Javascript error banner displays [MM-49587](https://mattermost.atlassian.net/browse/MM-49587).
+ - Spacing in the channel switcher is incorrect [MM-49853](https://mattermost.atlassian.net/browse/MM-49853).
+ - Spacing issue is displayed between the Global Drafts tour point title and “New” tag [MM-49866](https://mattermost.atlassian.net/browse/MM-49866).
+ - The message box flashes controls while typing in the right-hand side [MM-49266](https://mattermost.atlassian.net/browse/MM-49266).
+ - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
 
 ## Release 2023-02-02
 
