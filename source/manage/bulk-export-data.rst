@@ -52,7 +52,7 @@ You can export the following data types:
 
    Configuration for data types such as exporting specific areas of the server, exporting additional types of posts, permissions schemes, file attachments, webhooks, and bot messages is not yet supported. Deleted objects are also not yet supported.
 
-   For requests to add additional attributes or objects to our exporter, please add a feature request on our `feature idea forum <https://portal.productboard.com/mattermost/33-what-matters-to-you>`__.
+   For requests to add additional attributes or objects to our exporter, please add a feature request on our `feature idea forum <https://mattermost.com/suggestions/>`__.
 
 Version object
 --------------
