@@ -1,11 +1,11 @@
 Mattermost overview
 ===================
 
-**Mattermost** is an open source platform for secure communication, collaboration, and orchestration of work across teams and tools.
+**Mattermost** is an open source platform tht provides secure collaboration for technical and operational teams that work in environments with complex nation-state level security and trust requirements.
 
-Mattermost is built specifically for software development and engineering use cases and integrates deeply with a rich ecosystem of third-party developer tools. Mattermost gives companies full control over their data; with self-hosted and private cloud deployment options and access to the source code, developers can contribute directly to a shared, flexible, and extensible platform built just for them.
+Mattermost is built specifically for technical and operational use cases, including software development and engineering workflows, and integrates deeply with a rich ecosystem of third-party developer tools. Mattermost gives companies full control over their data; with self-hosted and private cloud deployment options and access to the source code, developers can contribute directly to a shared, flexible, and extensible platform built just for them.
 
-We support key developer collaboration use cases:
+We support key technical and operational collaboration use cases:
 
 - **Agile software development** for developers who build and operate software to provide higher productivity. Technical features and deep integrations with the tools developers use support all phases of agile software development including planning, building, releasing, and operating.
 
