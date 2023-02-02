@@ -110,6 +110,10 @@ Quarterly true-up reports in version 7.9 or newer
 -------------------------------------------------
 
 Quarterly true-up reports have changed in Mattermost version 7.9.
+
+.. image:: ../images/true-up-schedule.png
+      :alt: The timeframes followed for the true up notifications.
+
 The reporting period is still the same, but we've introduced a process that is much easier than taking screenshots.
 
 To send the report, a System Admin must navigate to the **System Console** and open either the **Site Statistics** or **Team Statistics** pages.
