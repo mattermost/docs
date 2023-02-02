@@ -20,7 +20,7 @@ Latest Mattermost Mobile Apps releases:
  - iPhone 5s devices and later with iOS 12.1+ is required.
 
 ### Bug Fixes
- - Fixed a crash when dismissing a notification on android.
+ - Fixed a crash when dismissing a notification on Android.
  - Fixed a potential crash when trying access non existent database records.
  - Fixed opening a link when the server is hosted on a subpath.
  - Fixed an issue with uploading certain files.
@@ -30,6 +30,7 @@ Latest Mattermost Mobile Apps releases:
  - Fixed some screens in the login flow not showing the content when animations are turned off in the device settings.
  - Fixed an issue where new Direct and Group Messages sometimes did not appear in the channel list until reopening the app.
  - The permissions required to receive push notifications is now always requested if needed.
+ - Fixed ANRs found with some Android devices.
  
 ### Known Issues
  - Users are unable to adjust the font size via the OS font size setting.
@@ -38,7 +39,6 @@ Latest Mattermost Mobile Apps releases:
  - Drafts are lost when following a notification [MM-47373](https://mattermost.atlassian.net/browse/MM-47373).
  - Moving posts with the Wrangler plugin causes database "Unique key" errors [MM-44960](https://mattermost.atlassian.net/browse/MM-44960).
  - Some pixel phones on Android 12+ might not go past the login screen. This is a known issue with the OS and the current workaround is to restart the device.
- - Repeated and persistent signals of ANRs (hangs) are seen when typing into a multiline TextInput on Samsung phones. See https://github.com/facebook/react-native/issues/35936 for more details.
 
 ## 2.0.0 Release
 - Release Date: January 16, 2023
