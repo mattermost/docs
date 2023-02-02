@@ -21,20 +21,12 @@ Latest Mattermost Mobile Apps releases:
 ### Improvements
  - Added the option in **Profile > Settings > Display** settings to enable/disable Collapsed Reply Threads.
  - Added functionality to invite users by email and to invite users from other teams on the server.
- - Improved the mobile emoji picker user interface and interaction.
- - Added support to rotate iPads in all orientations.
  - Calls: Calls now start in speaker mode by default.
  - Calls: Calls now show the call thread in root calls posts.
  - Calls: updated ``react-native-webrtc`` to the most recent version.
  - Implemented Data Retention for mobile.
- - Added support for Android tablets and foldables.
 
 ### Bug Fixes
- - Fixed an issue where the keyboard changed on iOS when a code block was started.
- - Fixed an issue where the EMM configuration for VPN timeouts were in ``seconds`` instead of in ``ms``.
- - Fixed an issue with markdown bolded strings.
- - Fixed an issue where the markdown for mentions did not inherit heading fonts.
- - Fixed an issue where a crash occurred when attempting to download a profile image.
  - Calls: fixed an issue with displaying recording messages.
  - Fixed an issue where a long team name wasn’t wrapped and pushed the  "+ icon " next to it.
  - Fixed an issue on Android where user avatars instead of webhook avatars were shown in notifications.
