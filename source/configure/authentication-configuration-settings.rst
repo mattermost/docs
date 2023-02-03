@@ -2417,6 +2417,9 @@ Obtain this value by registering Mattermost as an application in your Google acc
 OpenID Connect (other)
 ^^^^^^^^^^^^^^^^^^^^^^
 
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
+
 .. config:setting:: oidc-enable
   :displayname: Enable (OpenID Connect)
   :systemconsole: Authentication > OpenID Connect
