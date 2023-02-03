@@ -4,7 +4,7 @@ Site configuration settings
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Access the following configuration settings in the System Console by going to **Site Configuration**, or by editing the ``config.json`` file as described in the following tables:
+Both self-hosted and Cloud admins can access the following configuration settings in the System Console by going to **Site Configuration**. Self-hosted admins can also edit the ``config.json`` file as described in the following tables. 
 
 - `Customization <#customization>`__
 - `Localization <#localization>`__
@@ -400,15 +400,23 @@ Access the following configuration settings in the System Console by going to **
 Max users per team
 ~~~~~~~~~~~~~~~~~~
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
-| The **Max users per team** is the maximum total number of users per team, including active and inactive users.                                                                                                                                                                                                                                                                | - System Config path: **Site Configuration > Users and teams**   |
-|                                                                                                                                                                                                                                                                                                                                                                               | - ``config.json`` setting: ``.TeamSettings.MaxUsersPerTeam: 50`` |
-| In Mattermost, a team of people should be a small organization with a specific goal. In the physical world, a team could sit around a single table. The default maximum (50) should be enough for most teams, but with appropriate `hardware <https://docs.mattermost.com/install/software-hardware-requirements.html>`__, this limit can be increased to thousands of users. | - Environment variable: ``MM_TEAMSETTINGS_MAXUSERSPERTEAM``      |
-|                                                                                                                                                                                                                                                                                                                                                                               |                                                                  |
-| `Channels <https://docs.mattermost.com/guides/channels.html>`__ are another way of organizing communications within teams on different topics.                                                                                                                                                                                                                                |                                                                  |
-|                                                                                                                                                                                                                                                                                                                                                                               |                                                                  |
-| Numerical input. Default is 50.                                                                                                                                                                                                                                                                                                                                               |                                                                  |
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
++------------------------------------------------------------------------------+-------------------------------------------------------------------+
+| The **Max users per team** is the maximum total number of users per team,    | - System Config path: **Site Configuration > Users and teams**    |
+| including active and inactive users.                                         | - ``config.json`` setting: ``.TeamSettings.MaxUsersPerTeam: 50``  |
+|                                                                              | - Environment variable: ``MM_TEAMSETTINGS_MAXUSERSPERTEAM``       |
+| In Mattermost, a team of people should be a small organization with a        |                                                                   |
+| specific goal. In the physical world, a team could sit around a single       |                                                                   |
+| table. The default maximum (50) should be enough for most teams, but         |                                                                   |
+| with appropriate `hardware <https://docs.mattermost.com/install/             |                                                                   |
+| software-hardware-requirements.html>`__, this limit can be increased to      |                                                                   |
+| thousands of users.                                                          |                                                                   |
+|                                                                              |                                                                   |
+| `Channels <https://docs.mattermost.com/guides/channels.html>`__ are          |                                                                   |
+| another way of organizing communications within teams on different topics.   |                                                                   |
+|                                                                              |                                                                   |
+| Numerical input. Default is **50** self-hosted deployments, and **10000**    |                                                                   |
+| for Cloud deployments.                                                       |                                                                   |
++------------------------------------------------------------------------------+-------------------------------------------------------------------+
 
 .. config:setting:: users-maxchannelsperteam
   :displayname: Max channels per team (Users and teams)
@@ -423,7 +431,8 @@ Max channels per team
 +---------------------------------------------------------------------------------------+-----------------------------------------------------------------------+
 | The maximum number of channels per team, including both active and archived channels. | - System Config path: **Site Configuration > Users and teams**        |
 |                                                                                       | - ``config.json`` setting: ``.TeamSettings.MaxChannelsPerTeam: 2000`` |
-| Numerical input. Default is 2000.                                                     | - Environment variable: ``MM_TEAMSETTINGS_MAXCHANNELSPERTEAM``        |
+| Numerical input. Default is **2000** for self-hosted deployments, and **10000**       | - Environment variable: ``MM_TEAMSETTINGS_MAXCHANNELSPERTEAM``        |
+| for Cloud deployments.                                                                |                                                                       |
 +---------------------------------------------------------------------------------------+-----------------------------------------------------------------------+
 
 .. config:setting:: users-restrictdirectmessage
@@ -461,15 +470,23 @@ Enable users to open direct message channels with
 Teammate name display
 ~~~~~~~~~~~~~~~~~~~~~
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
-| This setting determines how names appear in posts and under the **Direct Messages** list. Users can change this setting in their interface under **Settings > Display > Teammate Name Display**, unless this setting is locked by a System Admin (see **Lock teammate name display...**).                                                                                                            | - System Config path: **Site Configuration > Users and teams**   |
-|                                                                                                                                                                                                                                                                                                                                                                                                      | - ``config.json`` setting: ``.TeamSettings.TeammateNameDisplay`` |
-| - **Show username**: **(Default)** Displays usernames. ``config.json`` option: ``"username"``.                                                                                                                                                                                                                                                                                                       | - Environment variable: ``MM_TEAMSETTINGS_TEAMMATENAMEDISPLAY``  |
-|                                                                                                                                                                                                                                                                                                                                                                                                      |                                                                  |
-| - **Show nickname if one exists...**: Displays the user’s nickname. If the user does not have a nickname, their full name is displayed. If the user does not have a full name, their username is displayed. ``config.json`` option: ``"nickname_full_name"``.                                                                                                                                        |                                                                  |
-|                                                                                                                                                                                                                                                                                                                                                                                                      |                                                                  |
-| - **Show first and last name**: Displays the user’s full name. If the user does not have a full name, their username is displayed. This option is recommended when using `SAML <https://docs.mattermost.com/onboard/sso-saml.html>`__ or `LDAP <https://docs.mattermost.com/onboard/ad-ldap.html>`__ if first name and last name attributes are configured. ``config.json`` option: ``"full_name"``. |                                                                  |
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| This setting determines how names appear in posts and under the **Direct Messages** list.       | - System Config path: **Site Configuration > Users and teams**             |
+| Users can change this setting in their interface under **Settings > Display >                   | - ``config.json`` setting: ``.TeamSettings.TeammateNameDisplay: username`` |
+| Teammate Name Display**, unless this setting is locked by a System Admin                        | - Environment variable: ``MM_TEAMSETTINGS_TEAMMATENAMEDISPLAY``            |
+| via the **Lock teammate name display for all users** configuration setting.                     |                                                                            |
+|                                                                                                 |                                                                            |
+| - **Show username**: **(Default for self-hosted deployments)** Displays usernames.              |                                                                            |
+|   ``config.json`` option: ``"username"``.                                                       |                                                                            |
+| - **Show nickname if one exists...**: Displays the user’s nickname. If the user doesn't have a  |                                                                            |
+|   nickname, their full name is displayed. If the user doesn't have a full name, their username  |                                                                            |
+|   is displayed. ``config.json`` option: ``"nickname_full_name"``.                               |                                                                            |
+| - **Show first and last name**: **(Default for Cloud deployments)** Displays user’s full name.  |                                                                            |
+|   If the user doesn't have a full name, their username is displayed. Recommended when using     |                                                                            |
+|   `SAML <https://docs.mattermost.com/onboard/sso-saml.html>`__ or                               |                                                                            |
+|   `LDAP <https://docs.mattermost.com/onboard/ad-ldap.html>`__ if first name and last name       |                                                                            |
+|   attributes are configured. ``config.json`` option: ``"full_name"``.                           |                                                                            |
++-------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
 
 .. config:setting:: users-lockteammatenamedisplay
   :displayname: Lock teammate name display for all users (Users and teams)
@@ -511,6 +528,8 @@ Allow users to view archived channels
 | - **true**: **(Default)** Allows users to access the content of archived channels of which they were a member. | - System Config path: **Site Configuration > Users and teams**                      |
 | - **false**: Users are unable to access content in archived channels.                                          | - ``config.json`` setting: ``.TeamSettings.ExperimentalViewArchivedChannels: true`` |
 |                                                                                                                | - Environment variable: ``MM_TEAMSETTINGS_EXPERIMENTALVIEWARCHIVEDCHANNELS``        |
++----------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| **Note**: Cloud admins can't modify this configuration setting.                                                                                                                                      |
 +----------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
 
 .. config:setting:: users-showemailaddress
@@ -650,8 +669,9 @@ Enable email notifications
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
 | **Notes**:                                                                                                                                                                                                                                                |
 |                                                                                                                                                                                                                                                           |
+| - Cloud admins can't modify this configuration setting.                                                                                                                                                                                                   |
 | - If this setting is **false**, and the SMTP server is set up, account-related emails (such as authentication messages) will be sent regardless of this setting.                                                                                          |
-| - Email invitations and account deactivation emails are not affected by this setting.                                                                                                                                                                     |
+| - Email invitations and account deactivation emails aren't affected by this setting.                                                                                                                                                                      |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: notification-enablepreviewbanner
@@ -673,6 +693,8 @@ Enable preview mode banner
 | - **false**: Preview Mode banner does not appear.                                                                                                                            | - ``config.json`` setting: ``.EmailSettings.EnablePreviewModeBanner: true`` |
 |                                                                                                                                                                              | - Environment variable: ``MM_EMAILSETTINGS_ENABLEPREVIEWMODEBANNER``        |
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
+| **Note**: Cloud admins can't modify this configuration setting.                                                                                                                                                                                            |
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
 
 .. config:setting:: notification-enableemailbatching
   :displayname: Enable email batching (Notifications)
@@ -693,6 +715,7 @@ Enable email batching
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 | **Notes**:                                                                                                                                                                                                                                                                                                                                              |
 |                                                                                                                                                                                                                                                                                                                                                         |
+| - Cloud admins can't modify this configuration setting.                                                                                                                                                                                                                                                                                                 |
 | - Regardless of this setting, a user can turn off these notifications under **Settings > Notifications**.                                                                                                                                                                                                                                               |
 | - The `Site Url <https://docs.mattermost.com/configure/environment-configuration-settings.html#site-url>`__ and `SMTP Email Server <https://docs.mattermost.com/configure/environment-configuration-settings.html#smtp-server>`__ must be configured to allow email batching.                                                                           |
 | - Email batching in `High Availability Mode <https://docs.mattermost.com/configure/environment-configuration-settings.html#enable-high-availability-mode>`__ is planned, but not yet supported.                                                                                                                                                         |
@@ -983,13 +1006,14 @@ Enable emoji picker
 Enable custom emoji
 ~~~~~~~~~~~~~~~~~~~
 
-+------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
-| - **true**: Allows users to add emojis through a **Custom Emoji** option in the emoji picker. Emojis can be GIF, PNG, or JPG files up to 1 MB. | - System Config path: **Site Configuration > Emoji**                     |
-| - **false**: **(Default)** Disables custom emojis.                                                                                             | - ``config.json`` setting: ``.ServiceSettings.EnableCustomEmoji: false`` |
-|                                                                                                                                                | - Environment variable: ``MM_SERVICESETTINGS_ENABLECUSTOMEMOJI``         |
-+------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
-| **Note**: Too many custom emojis can slow your server’s performance.                                                                                                                                                      |
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| - **true**: **(Default)** Allows users to add emojis through a                | - System Config path: **Site Configuration > Emoji**                     |
+|   **Custom Emoji** option in the emoji picker. Emojis can be GIF, PNG, or     | - ``config.json`` setting: ``.ServiceSettings.EnableCustomEmoji: true``  |
+|   JPG files up to 1 MB.                                                       | - Environment variable: ``MM_SERVICESETTINGS_ENABLECUSTOMEMOJI``         |
+| - **false**:  Disables custom emojis.                                         |                                                                          |
++-------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| **Note**: Too many custom emojis can slow your server’s performance.          |                                                                          |
++-------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 ----
 
@@ -1051,6 +1075,21 @@ Collapsed reply threads
 | - **Default Off**: Enables Collapsed Reply Threads on the server but **not** for users. Users can choose to `enable Collapsed Reply Threads <https://docs.mattermost.com/channels/channels-settings.html#collapsed-reply-threads>`__ for their Mattermost account in **Settings > Display > Collapsed Reply Threads**. ``config.json`` setting: ``"default_off"``    | - Environment variable: ``MM_SERVICESETTINGS_COLLAPSEDTHREADS``    |
 | - **Disabled**: Users cannot enable Collapsed Reply Threads. ``config.json`` setting: ``"disabled"``                                                                                                                                                                                                                                                                 |                                                                    |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------+
+
+Message priority
+~~~~~~~~~~~~~~~~~
+
++-----------------------------------------------------------------------------+------------------------------------------------------------------------+
+| - **true**: **(Default)** Enables message priority for all users which      | - System Config path: **Site Configuration > Posts**                   |
+|   enables them to set a visual indiciator for important or urgent root      | | - ``config.json`` setting: ``.ServiceSettings.PostPriority: true``   |
+|   messages.                                                                 | - Environment variable: ``MM_SERVICESETTINGS_POSTPRIORITY``            |
+| - **false**: Disables the ability to set message priority and request       |                                                                        |
+|   acknowledgements.                                                         |                                                                        |
++-----------------------------------------------------------------------------+------------------------------------------------------------------------+
+| **Note**: `Mattermost Professional or Enterprise <https://mattermost.com/pricing>`__ customers can additionally request message acknowledgements to  |
+| track that specific, time-sensitive messages have been seen and actioned. See the                                                                    |
+| `message priority <https://docs.mattermost.com/channels/message-priority>`__ documentation to learn more.                                            |
++-----------------------------------------------------------------------------+------------------------------------------------------------------------+
 
 .. config:setting:: posts-enablelinkpreviews
   :displayname: Enable website link previews (Posts)

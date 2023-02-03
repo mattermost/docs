@@ -2,12 +2,43 @@
 
 Latest Mattermost Mobile Apps releases:
 
-- [1.55.1 Release](#release)
-- [1.55.0 Release](#id1)
-- [1.54.0 Release](#id5)
-- [1.53.0 Release](#id10)
-- [1.52.0 Release](#id14)
-- [1.51.2 Release](#id18)
+- [2.0.0 Release](#release)
+- [1.55.1 Release](#id1)
+- [1.55.0 Release](#id4)
+- [1.54.0 Release](#id8)
+- [1.53.0 Release](#id13)
+- [1.52.0 Release](#id17)
+
+## 2.0.0 Release
+- Release Date: January 16, 2023
+- Server Versions Supported: Server v7.1.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
+
+### Compatibility
+ - Please [see here](https://mattermost.com/blog/preparing-for-mobile-v2-0/) for more details on preparing for the mobile v2 release.
+ - **Upgrade to server version v7.1.0 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/upgrade/extended-support-release.html) (ESR) 6.3.0 has ended and upgrading to server ESR v7.1.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
+ - iPhone 5s devices and later with iOS 12.1+ is required.
+
+### Highlights
+
+Mattermost mobile v2.0 is a major update to the iOS and Android apps bringing support for multiple workspaces and a more stable and performant user experience that includes:
+
+ - Support for collaborating in multiple workspaces with a redesigned channel and team sidebar for easier navigation. 
+ - Improved app responsiveness to user input, faster launch, and less memory consumed when running.
+ - Improved app stability so users encounter fewer crashes and bugs, as well as reduced app hang and errors if internet connectivity becomes unstable. 
+
+Users now gain a more reliable and feature-rich application, improving their experience for collaborating with their teams on the go.
+
+### Known Issues
+ - Landscape mode doesn't work on Android tablets.
+ - Users are unable to adjust the font size via the OS font size setting.
+ - **Add Members** and **Manage Members** modals are not yet added [MM-48489](https://mattermost.atlassian.net/browse/MM-48489).
+ - Posts may remain in the local device database after data retention job has been run [MM-47548](https://mattermost.atlassian.net/browse/MM-47548).
+ - Drafts are lost when following a notification [MM-47373](https://mattermost.atlassian.net/browse/MM-47373).
+ - Moving posts with the Wrangler plugin causes database "Unique key" errors [MM-44960](https://mattermost.atlassian.net/browse/MM-44960).
+ - Some pixel phones on Android 12+ might not go past the login screen. This is a known issue with the OS and the current workaround is to restart the device.
+ - The app crashes when uploading a PDF file [MM-49707](https://mattermost.atlassian.net/browse/MM-49707).
+ - The ``timeoutVPN`` values are not converted from milliseconds to seconds in v2 [MM-49722](https://mattermost.atlassian.net/browse/MM-49722).
 
 ## 1.55.1 Release
 - Release Date: September 15, 2022
