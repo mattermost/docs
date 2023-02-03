@@ -19,6 +19,7 @@ Latest Mattermost Mobile Apps releases:
  - iPhone 5s devices and later with iOS 12.1+ is required.
 
 ### Improvements
+ - Added the ability to manage channel members.
  - Added the option in **Profile > Settings > Display** settings to enable/disable Collapsed Reply Threads.
  - Added functionality to invite users by email and to invite users from other teams on the server.
  - Calls: Calls now start in speaker mode by default.
@@ -38,7 +39,6 @@ Latest Mattermost Mobile Apps releases:
 
 ### Known Issues
  - Users are unable to adjust the font size via the OS font size setting.
- - **Manage Members** modal is not yet added [MM-48489](https://mattermost.atlassian.net/browse/MM-48489).
  - Posts may remain in the local device database after data retention job has been run [MM-47548](https://mattermost.atlassian.net/browse/MM-47548).
  - Drafts are lost when following a notification [MM-47373](https://mattermost.atlassian.net/browse/MM-47373).
  - Moving posts with the Wrangler plugin causes database "Unique key" errors [MM-44960](https://mattermost.atlassian.net/browse/MM-44960).
