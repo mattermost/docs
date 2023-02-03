@@ -2159,7 +2159,7 @@ We recommend that you use ``https://login.microsoftonline.com/common/oauth2/v2.0
 OpenID Connect
 ---------------
 
-.. include:: ../_static/badges/entpro-cloud-free.rst
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 Access the following configuration settings in the System Console by going to **Authentication > OpenID Connect**.
