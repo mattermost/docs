@@ -24,15 +24,9 @@ Latest Mattermost Releases:
 
 ### Highlights
 
-#### Calls
- - 
-
 #### Boards
  - Added support for person, multi-person, and date property filters in Boards.
  - Added support for person property groups in Boards.
-
-#### Playbooks
- - 
 
 ### Improvements
 
