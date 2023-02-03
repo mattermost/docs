@@ -2044,7 +2044,7 @@ Enable OAuth 2.0 Authentication with Office 365
 | - **false**: **(Default)** Disables Office 365 OAuth authentication.                | - ``config.json`` setting: ``Office365Settings.Enable: false`` |
 |                                                                                     | - Environment variable: ``MM_OFFICE365SETTINGS_ENABLE``        |
 +-------------------------------------------------------------------------------------+----------------------------------------------------------------+
-| See the `Office 365 Single Sign-On <https://docs.mattermost.com/onboard/sso-office.html>`__ documentation for details.                               |
+| **Note**: See the `Office 365 Single Sign-On <https://docs.mattermost.com/onboard/sso-office.html>`__ documentation for details.                     |
 +------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Office 365 OAuth 2.0 Application ID
@@ -2064,7 +2064,7 @@ Office 365 OAuth 2.0 Application ID
 |                                                                                                                                                 | - ``config.json`` setting: ``.Office365Settings.Id`` |
 | String input.                                                                                                                                   | - Environment variable: ``MM_OFFICE365SETTINGS_ID``  |
 +-------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------+
-| See the `Office 365 Single Sign-On <https://docs.mattermost.com/onboard/sso-office.html>`__ documentation for details.                                                                                 |
+| **Note**: See the `Office 365 Single Sign-On <https://docs.mattermost.com/onboard/sso-office.html>`__ documentation for details.                                                                       |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Office 365 OAuth 2.0 Application secret password
@@ -2084,7 +2084,7 @@ Office 365 OAuth 2.0 Application secret password
 |                                                                                                                                                              | - ``config.json`` setting: ``.Office365Settings.Secret`` |
 | String input.                                                                                                                                                | - Environment variable: ``MM_OFFICE365SETTINGS_SECRET``  |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------+
-| See the `Office 365 Single Sign-On <https://docs.mattermost.com/onboard/sso-office.html>`__ documentation for details.                                                                                                  |
+| **Note**: See the `Office 365 Single Sign-On <https://docs.mattermost.com/onboard/sso-office.html>`__ documentation for details.                                                                                        |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------+
 
 Office 365 OAuth 2.0 Directory (tenant) ID
@@ -2104,7 +2104,7 @@ Office 365 OAuth 2.0 Directory (tenant) ID
 |                                                                                               | - ``config.json`` setting: ``.Office365Settings.DirectoryId`` |
 | String input.                                                                                 | - Environment variable: ``MM_OFFICE365SETTINGS_DIRECTORYID``  |
 +-----------------------------------------------------------------------------------------------+---------------------------------------------------------------+
-| See the `Office 365 Single Sign-On <https://docs.mattermost.com/onboard/sso-office.html>`__ documentation for details.                                        |
+| **Note**: See the `Office 365 Single Sign-On <https://docs.mattermost.com/onboard/sso-office.html>`__ documentation for details.                              |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
