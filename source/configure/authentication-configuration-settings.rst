@@ -2497,6 +2497,9 @@ OpenID Connect (other) settings
 Enable OpenID Connect authentication with other service providers
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
+
 .. config:setting:: oidc-enable
   :displayname: Enable (OpenID Connect)
   :systemconsole: Authentication > OpenID Connect
