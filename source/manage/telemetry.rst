@@ -9,12 +9,16 @@ As described in the privacy policy in each Mattermost server, telemetry data opt
 
 Telemetry data is encrypted in transit, does not include personally identifiable information or message contents, and details of how the information is used and processed is available in our `Privacy Policy <https://mattermost.com/privacy-policy/>`__.
 
-We use the data for the following purposes:
+We use the data for the following purposes to:
 
-- To identify security and reliability issues.
-- To analyze and fix software problems.
-- To help improve the quality of Mattermost software and related services.
-- To make design decisions for future releases.
+- Identify security and reliability issues.
+- Analyze and fix software problems.
+- Help improve the quality of Mattermost software and related services.
+- Make design decisions for future releases.
+
+.. note::
+
+  Telemetry data collection is enabled by default for all Mattermost deployments. Self-hosted system admins can opt out of sharing telemetry data from Mattermost self-hosted servers within the System Console. Cloud system admins can't disable telemetry for Mattermost Cloud workspaces.
 
 Security update check feature
 -----------------------------
@@ -36,32 +40,44 @@ The following data is collected once every 24 hours:
 - Date and time of the last check for security updates
 - The location of the Amazon Cloudfront server used for telemetry data
 
-To opt out, disable the feature in **System Console > Environment > SMTP**. When the feature is disabled, you will not receive any security alerts.
+Opt out
+~~~~~~~
+
+To opt out, you can disable this security update check feature for self-hosted deployments in the System Console by going to **Environment > SMTP > Enable Security Alerts**. See the `enable security alerts </configure/environment-configuration-settings.html#enable-security-alerts>`__ documentation for details. When this feature is disabled, you will not receive any security alerts.
 
 Error and diagnostics reporting feature
 ---------------------------------------
 
 Mattermost error and diagnostic data is collected for the following purposes:
-- To add improvements that are specific to your usage and deployment patterns, including identifying security and reliability issues.
+
+- To add improvements that are specific to your usage, upgrade, and deployment patterns, including identifying security and reliability issues.
 - To analyze and fix software problems.
 - To help improve the quality of Mattermost software and related services.
 - To make design decisions for future releases.
 
 .. note:: 
 
-  Error and diagnostic reporting is sent by the client to the endpoint ``api.segment.io``. From Mattermost v5.23 the segment endpoint is being deprecated in favor of ``https://pdat.matterlytics.com``, a custom Rudder domain. To opt out, you can disable the feature in **System Console > Environment > Logging > Enable Diagnostics and Error Reporting**. Starting in Mattermost v5.26, when this feature is enabled, any 500 errors will be automatically sent to the Mattermost-hosted `Sentry <https://sentry.io/welcome/>`_ endpoint.
+  Error and diagnostic reporting is sent by Mattermost to the endpoint ``api.segment.io``. From Mattermost v5.23, the segment endpoint is being deprecated in favor of ``https://pdat.matterlytics.com``, a custom Rudder domain. From Mattermost v5.26, when this feature is enabled, any 500 errors will automatically be sent to the Mattermost-hosted `Sentry <https://sentry.io/welcome/>`_ endpoint.
+  
+Opt out
+~~~~~~~
+
+To opt out, you can disable the error and diagnostics reporting feature for self-hosted deployments in the System Console by going to **Environment > Logging > Enable Diagnostics and Error Reporting**. See the `enable diagnostics and error reporting </configure/environment-configuration-settings.html#enable-diagnostics-and-error-reporting>`__ documentation for details.
 
 Deployment and server configuration data
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Reporting Frequency
+Reporting frequency
+
 - When starting the server for the first time: Every 10 minutes for the first hour, then every hour for the first 12 hours.
 - At the 24 hour mark and every 24 hours thereafter.
 
-Deployment Configuration Information
-  Basic information including Mattermost server version, database and operating system type and version, and count of System Administrator accounts.
+Deployment configuration information
 
-Deployment Type
+  Basic information including Mattermost server version, database and operating system type and version, and count of system admin accounts.
+
+Deployment type
+
 - Manual install (includes ``wget`` installs)
 - Docker
 - Mattermost Omnibus
