@@ -13,6 +13,12 @@ Latest Mattermost Cloud releases:
 
 ## Release 2023-02-09
 
+### Highlights
+
+#### Boards
+ - Added support for person, multi-person, and date property filters in Boards.
+ - Added support for person property groups in Boards.
+
 ### Improvements
 
 #### User Interface (UI)
