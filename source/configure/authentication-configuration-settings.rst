@@ -2551,11 +2551,13 @@ Enable guest access
 
 *Available in legacy Enterprise Edition E10 and E20*
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
-| - **true**: Enables the guest account feature. See `Guest Accounts <https://docs.mattermost.com/onboard/guest-accounts.html>`__.                                                | - System Config path: **Authentication > Guest Access**             |
-| - **false**: **(Default)** Disables the guest account feature. See `Disable Guest Accounts <https://docs.mattermost.com/onboard/guest-accounts.html#disable-guest-accounts>`__. | - ``config.json`` setting: ``.GuestAccountsSettings.Enable: false`` |
-|                                                                                                                                                                                 | - Environment variable: ``MM_GUESTACCOUNTSSETTINGS_ENABLE``         |
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
++----------------------------------------------------------------+---------------------------------------------------------------------+
+| - **true**: Enables the guest account feature.                 | - System Config path: **Authentication > Guest Access**             |
+| - **false**: **(Default)** Disables the guest account feature. | - ``config.json`` setting: ``.GuestAccountsSettings.Enable: false`` |
+|                                                                | - Environment variable: ``MM_GUESTACCOUNTSSETTINGS_ENABLE``         |
++----------------------------------------------------------------+---------------------------------------------------------------------+
+| **Note**: See the `Guest Accounts <https://docs.mattermost.com/onboard/guest-accounts.html>`__ documentation for details.            |
++--------------------------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: guest-whitelistdomains
   :displayname: Whitelisted guest domains (Guest Access)
@@ -2594,6 +2596,6 @@ Enforce multi-factor authentication
 | - **false**: **(Default)** MFA is not required for guests.                                                    | - ``config.json`` setting: ``.GuestAccountsSettings.EnforceMultifactorAuthentication: false`` |
 |                                                                                                               | - Environment variable: ``MM_GUESTACCOUNTSSETTINGS_ENFORCEMULTIFACTORAUTHENTICATION``         |
 +---------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
-| **Note**: This setting defaults to false and cannot be changed if MFA is not enforced for non-guest users.                                                                                                    |
+| **Note**: This setting defaults to false and cannot be changed if MFA isn't enforced for non-guest users.                                                                                                     |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
