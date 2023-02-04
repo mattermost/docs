@@ -4,12 +4,105 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 
 Latest Mattermost Cloud releases:
 
+- [Release 2023-02-02](#release-2023-02-02)
+- [Release 2023-01-26](#release-2023-01-26)
 - [Release 2023-01-12](#release-2023-01-12)
 - [Release 2022-12-20](#release-2022-12-20)
 - [Release 2022-12-01](#release-2022-12-01)
 - [Release 2022-11-24](#release-2022-11-24)
-- [Release 2022-11-17](#release-2022-11-17)
-- [Release 2022-11-10](#release-2022-11-10)
+
+## Release 2023-02-02
+
+### Highlights
+
+#### Annual Cloud Subscriptions
+ - On the purchase modal, admins are now able to buy an annual cloud subscription starting from their current user count.
+ - The **System Console > Billing & Account > Subscriptions** page now reflects whether the plan is monthly or annual.
+ - Cloud Professional monthly will no longer be offered to new customers starting February 2, 2023.
+ - Added the option to migrate from a monthly to an annual Cloud Professional plan for existing Cloud Professional monthly customers.
+
+### Improvements
+
+#### User Interface (UI)
+ - Boards was reverted from an in-built product back to a plugin.
+ - Improved the user interface of the user profile popover.
+
+#### Administration
+ - GraphQL APIs are now correctly counted when measuring performance telemetry.
+ - Boards cards are no longer mentioned as being limited in the **System Console**, the limits usage modal, the downgrade modal, or the left-hand side menu.
+ - Removed an unused ``ProductLimits.Integrations``.
+
+### Known Issues
+ - Clicking on a user profile picture throws a console error [MM-49961](https://mattermost.atlassian.net/browse/MM-49961).
+ - Bot and guest tags are truncated on suggestion autocomplete [MM-49973](https://mattermost.atlassian.net/browse/MM-49973).
+ - Horizontal scroll displays in the Threads list due to a new tags component [MM-49854](https://mattermost.atlassian.net/browse/MM-49854).
+ - Login/create account screen layout breaks when Javascript error banner displays [MM-49587](https://mattermost.atlassian.net/browse/MM-49587).
+ - Spacing in the channel switcher is incorrect [MM-49853](https://mattermost.atlassian.net/browse/MM-49853).
+ - Spacing issue is displayed between the Global Drafts tour point title and “New” tag [MM-49866](https://mattermost.atlassian.net/browse/MM-49866).
+ - The message box flashes controls while typing in the right-hand side [MM-49266](https://mattermost.atlassian.net/browse/MM-49266).
+ - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
+
+## Release 2023-01-26
+
+### Highlights
+
+#### GitLab Playbooks Integration
+ - Using the updated [GitLab integration and task actions in Mattermost Playbooks](https://mattermost.com/marketplace/gitlab-plugin/), teams can automate release management processes to help increase efficiency and reduce errors.
+
+### Improvements
+
+#### User Interface (UI)
+ - Insights and drafts are now included when navigating through channels in the channel sidebar using ALT+UP/DOWN arrow keyboard keys.
+ - Added an onboarding tour point for Global Drafts.
+
+#### Administration
+ - The maximum size of uploaded emojis is reduced to 512KB to reduce image download bandwidth.
+ - Users can now monitor the progress of the bulk export job via its metadata field. It is available at ``mmctl export job show <jobID>``.
+ - Compliance exports no longer time out when uploading to S3.
+ - Users can now supply a certificate authority (CA) file and client certificates for the Elasticsearch client.
+ - Grafana metrics are now available for database connection metrics. They are:
+    - ``max_open_connections``
+    - ``open_connections``
+    - ``in_use_connections``
+    - ``idle_connections``
+    - ``wait_count_total``
+    - ``wait_duration_seconds_total``
+    - ``max_idle_closed_total``
+    - ``max_idle_time_closed_total``
+    - ``max_lifetime_closed_total``
+ - Boards are served as an in-built product from within Mattermost server instead of a plugin and is now always enabled. While running in product mode, the Boards plugin will remain disabled. 
+ - Added a new section in the **System Console** for products. For now, it only contains Boards-specific settings.
+ - Made ``registerChannelIntroButtonAction`` plugin API usable by plugins other than Boards.
+ - The following new HTTP headers and values are now written on all responses. These default values should make sense in most installations and can be overridden by a reverse proxy or ingress configuration. Note that the empty ``Permissions-Policy`` header does not have any actual effect. Users are recommended to change it to a more restrictive value based on their use case. For more information, see the [W3C Reference](https://www.w3.org/TR/permissions-policy/) or [this article](https://developer.mozilla.org/en-US/docs/Web/HTTP/Permissions_Policy).
+
+	```
+	Permissions-Policy: 
+	Referrer-Policy: no-referrer
+	X-Content-Type-Options: nosniff
+	```
+
+### Bug Fixes
+ - Fixed an issue with the plugin ``/public`` handling for subpaths.
+ - Fixed an issue where selecting **Pinned** on a post in the Threads view would result in the right-hand side being stuck in a loading state.
+ - Fixed an issue where the profile popover did not dismiss when opening a modal through a shortcut.
+ - Fixed an issue where the **Run Deletion Job Now** button for Data Retention wasn’t disabled when all policies were set to **keep forever**.
+ - Fixed an issue that prevented the creation of the initial admin user for new servers.
+ - Fixed an issue where making a channel non-read-only required a refresh of the client to see the change.
+ - Fixed an issue where Top Channels for Insights didn't show results if the current user's configured timezone wasn't present in MySQL's ``mysql.time_zone_name table``.
+ - Fixed an issue where a white screen appeared when a guest was removed from the last channel while on Threads.
+ - Fixed an issue where a Direct Message thread did not get disabled when a user was deactivated.
+ - Fixed an issue where email notifications for Direct Messages from Playbooks contained broken URLs.
+
+### Known Issues
+ - Bot and guest tags truncated on suggestion autocomplete [MM-49973](https://mattermost.atlassian.net/browse/MM-49973).
+ - Horizontal scroll displays in the Threads list due to a new tags component [MM-49854](https://mattermost.atlassian.net/browse/MM-49854).
+ - Login/create account screen layout breaks when Javascript error banner displays [MM-49587](https://mattermost.atlassian.net/browse/MM-49587).
+ - Spacing in the channel switcher is incorrect [MM-49853](https://mattermost.atlassian.net/browse/MM-49853).
+ - Spacing issue is displayed between the Global Drafts tour point title and “New” tag [MM-49866](https://mattermost.atlassian.net/browse/MM-49866).
+ - The message box flashes controls while typing in the right-hand side [MM-49266](https://mattermost.atlassian.net/browse/MM-49266).
+ - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
+ - Publicly shared boards lead to a "Team not found" error page. See [issue-focalboard-4450](https://github.com/mattermost/focalboard/issues/4450) for more details.
+ - If a user is not a member of a configured broadcast channel, posting a status update might fail without any error feedback. As a temporary workaround, join the configured broadcast channels or remove those channels from the run configuration.
 
 ## Release 2023-01-12
 
