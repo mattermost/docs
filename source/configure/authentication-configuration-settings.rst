@@ -2159,7 +2159,7 @@ We recommend that you use ``https://login.microsoftonline.com/common/oauth2/v2.0
 OpenID Connect
 ---------------
 
-.. include:: ../_static/badges/entpro-cloud-free.rst
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 Access the following configuration settings in the System Console by going to **Authentication > OpenID Connect**.
@@ -2182,7 +2182,7 @@ Choose whether OpenID Connect can be used for account creation and login. Option
 - **GitLab** (available in all plans; see `GitLab Settings <https://docs.mattermost.com/configure/configuration-settings.html#gitlab-settings>`__ for details)
 - **Google Apps** (Available in Mattermost Enterprise and Professional; see `Google Settings <https://docs.mattermost.com/configure/configuration-settings.html#google-settings>`__ for details)
 - **Office 365** (Available in Mattermost Enterprise and Professional; see `Office 365 Settings <https://docs.mattermost.com/configure/configuration-settings.html#office-365-settings>`__ for details)
-- **OpenID Connect (Other)** (Available in Mattermost Enterprise and Professional; see `OpenID Connect Settings <https://docs.mattermost.com/configure/configuration-settings.html#openid-connect-other-settings>`__ for more detail)
+- **OpenID Connect (Other)** (Available in Mattermost Enterprise and Professional; see `OpenID Connect Settings <https://docs.mattermost.com/configure/authentication-configuration-settings.html#openid-connect-other>`__ for more detail)
 
 This feature's setting does not appear in ``config.json``.
 
@@ -2416,6 +2416,9 @@ Obtain this value by registering Mattermost as an application in your Google acc
 
 OpenID Connect (other)
 ^^^^^^^^^^^^^^^^^^^^^^
+
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 .. config:setting:: oidc-enable
   :displayname: Enable (OpenID Connect)
