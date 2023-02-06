@@ -62,6 +62,7 @@ WHERE duplicates.rownum > 1;
 #### Boards
  - Added support for person, multi-person, and date property filters in Boards.
  - Added support for person property groups in Boards.
+ - See [the docs](https://docs.mattermost.com/boards/groups-filter-sort.html#work-with-groups-filter-and-sort) for more details.
 
 ### Improvements
 
