@@ -62,7 +62,7 @@ Features include:
 - Pre-packaged integrations with most common developer tools, including Jira, Confluence, GitHub, GitLab, CircleCI, Zoom, Jitsi, and more.
 - Tools for `custom branding </configure/custom-branding-tools.html>`__ and `themes </messaging/customizing-theme-colors.html>`__.
 - `Multi-factor authentication </onboard/multi-factor-authentication.html>`__.
-- `Single Sign-on with GitLab </onboard/sso-gitlab.html>`, `Google </onboard/sso-google.html>`, or `OpenID Connect </onboard/sso-openidconnect.html>`__.
+- `Single Sign-on with GitLab </onboard/sso-gitlab.html>`__ or `OpenID Connect </onboard/sso-openidconnect.html>`__.
 - `Granular system permissions </onboard/advanced-permissions.html>`__.
 - Highly customizable `third-party bots, integrations <https://mattermost.com/marketplace/#publicApps>`__, and `command line tools </manage/mmctl-command-line-tool.html>`__.
 - Extensive integration support via `webhooks, APIs, drivers <https://developers.mattermost.com/integrate/other-integrations/>`__, and `third-party extensions <https://mattermost.com/marketplace/>`__.
