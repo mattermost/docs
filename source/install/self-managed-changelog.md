@@ -145,6 +145,7 @@ WHERE duplicates.rownum > 1;
  - Fixed an issue with special characters in the System Console log filename causing logging configuration to break.
  - Fixed an issue where the PDF renderer was not rendering all the pages.
  - Fixed a 404 error from requests to ``/api/v4/system/notices/`` on page load.
+ - Fixed an issue where file uploading appeared "stuck" in processing state.
 
 ### API Changes
  - Added new API endpoint ``GET /api/v4/posts/:post_id/info`` to allow checking if the post that a permalink is pointing to is accessible by joining teams or channels.
