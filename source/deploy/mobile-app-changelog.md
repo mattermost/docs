@@ -37,6 +37,7 @@ Latest Mattermost Mobile Apps releases:
  - Added ``@gorhom/bottom-sheet`` and ``react-native-walkthrough-tooltip`` https://github.com/mattermost/mattermost-mobile.
 
 ### Known Issues
+ - Selecting an item from autocomplete doubles tilde and slash characters [MM-50351](https://mattermost.atlassian.net/browse/MM-50351).
  - Users are unable to adjust the font size via the OS font size setting.
  - Posts may remain in the local device database after data retention job has been run [MM-47548](https://mattermost.atlassian.net/browse/MM-47548).
  - Drafts are lost when following a notification [MM-47373](https://mattermost.atlassian.net/browse/MM-47373).
