@@ -34,7 +34,6 @@ Latest Mattermost Mobile Apps releases:
  - Fixed the ability to mark a post as unread if the post was created from a webhook.
 
 ### Open Source Components
-
  - Added ``@gorhom/bottom-sheet`` and ``react-native-walkthrough-tooltip`` https://github.com/mattermost/mattermost-mobile.
 
 ### Known Issues
