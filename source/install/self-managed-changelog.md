@@ -18,7 +18,7 @@ Latest Mattermost Releases:
 
 ### Important Upgrade Notes
 
- - Before upgrading, we recommend checking for duplicate data in the ``focalboard_category_boards`` table, and deleting all but one copy of duplicate data. This is to ensure that the new plugin version startup doesn't lock the table, and prevent users from using Boards. We recommend de-duplicating the data at a time of low user activity.
+Before upgrading, we recommend checking for duplicate data in the ``focalboard_category_boards`` table, and deleting all but one copy of duplicate data. This is to ensure that the new plugin version startup doesn't lock the table, and prevent users from using Boards. We recommend de-duplicating the data at a time of low user activity.
 
 SQL to check the presence of duplicate data:                                                                                                             
 
