@@ -9,6 +9,6 @@ Get the help you need with Mattermost via robust documentation, extensive commun
 - `Community chat server: <https://community.mattermost.com/login>`__ Chat directly with the Mattermost community in chat channels tailored to share knowledge and expertise.
 - `Forums: <https://forum.mattermost.org/>`__ Search past discussions for helpful information, or start your own thread.
 - `Report an issue: <https://handbook.mattermost.com/contributors/contributors/ways-to-contribute#report-a-bug>`__ Report bugs or other issues you encounter when using Mattermost to our development team.
-- `Propose a feature: <https://portal.productboard.com/mattermost/33-what-matters-to-you>`__ Vote for feature proposals or submit your ideas.
+- `Propose a feature: <https://mattermost.com/suggestions/>`__ Vote for feature proposals or submit your ideas.
 
 Mattermost also offers `support services <https://mattermost.com/support/>`__ to our Enterprise customers, and Mattermost customers can make a `support request <https://support.mattermost.com/hc/en-us/requests/new>`__ to get help from our team.

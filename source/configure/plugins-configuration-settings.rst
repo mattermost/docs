@@ -40,13 +40,11 @@ Access the following configuration settings in the System Console by going to **
 Enable plugins
 ~~~~~~~~~~~~~~
 
-**True**: Enables plugins on your Mattermost server. Use plugins to integrate with third-party systems, extend functionality, or customize the user interface of your Mattermost server. See `documentation <https://developers.mattermost.com/integrate/admin-guide/admin-plugins-beta/>`__ to learn more.
-
-**False**: Disables plugins on your Mattermost server.
-
-+---------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Enable": true`` with options ``true`` and ``false``. |
-+---------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------+
+| - **true**: **(Default)** Enables plugins on your Mattermost server. See the `Use plugins with Mattermost <https://developers.mattermost.com/integrate/plugins/using-and-managing-plugins/>`__ documentation for details. | - System Config path: **Plugins > Plugin Management**       |
+| - **false**: Disables plugins on your Mattermost server.                                                                                                                                                                  | - ``config.json`` setting: ``.PluginSettings.Enable: true`` |
+|                                                                                                                                                                                                                           | - Environment variable: ``MM_PLUGINSETTINGS_ENABLE``        |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------+
 
 .. config:setting:: plugins-requiresignature
   :displayname: Require plugin signature (Plugins - Management)
@@ -54,19 +52,19 @@ Enable plugins
   :configjson: RequirePluginSignature
   :environment: N/A
 
-  - **true**: **(Default)** Require valid plugin signatures before starting managed or unmanaged plugins.
-  - **false**: Don't require valid plugin signatures before starting managed or unmanaged plugins.
+  - **true**: **(Default)** Enables plugin signature validation for managed and unmanaged plugins.
+  - **false**: Disables plugin signature validation for managed and unmanaged plugins.
 
 Require plugin signature
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-**True**: Require valid plugin signatures before starting managed or unmanaged plugins. Pre-packaged plugins are not subject to plugin signature verification. Plugins installed through the Plugin Marketplace are always subject to plugin signature verification at the time of download.
-
-**False**: Don't require valid plugin signatures before starting managed or unmanaged plugins. Pre-packaged plugins are not subject to plugin signature verification. Plugins installed through the Plugin Marketplace are always subject to plugin signature verification at the time of download.
-
-+---------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"RequirePluginSignature": true`` with options ``true`` and ``false``.   |
-+---------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+| - **true**: **(Default)** Enables plugin signature validation for managed and unmanaged plugins.                                                                                      | - System Config path: **Plugins > Plugin Management**                        |
+| - **false**: Disables plugin signature validation for managed and unmanaged plugins.                                                                                                  | -  ``config.json`` setting: ``.PluginSettings.RequirePluginSignature: true`` |
+|                                                                                                                                                                                       | - Environment variable: ``MM_PLUGINSETTINGS_REQUIREPLUGINSIGNATURE``         |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+| **Note**: Pre-packaged plugins are not subject to signature validation. Plugins installed through the Marketplace are always subject to signature validation at the time of download.                                                                                |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
 
 .. config:setting:: plugins-automaticprepackagedplugins
   :displayname: Automatic prepackaged plugins (Plugins - Management)
@@ -74,19 +72,17 @@ Require plugin signature
   :configjson: AutomaticPrepackagedPlugins
   :environment: N/A
 
-  - **true**: **(Default)** Any pre-packaged plugins enabled in the configuration will be installed or upgraded automatically.
-  - **false**: Pre-packaged plugins aren't installed or upgraded automatically but may be installed manually from the Plugin Marketplace, even when offline.
+  - **true**: **(Default)** Mattermost automatically installs and upgrades any enabled pre-packaged plugins.
+  - **false**: Mattermost does not automatically install or upgrade pre-packaged plugins.
 
 Automatic prepackaged plugins
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**True**: Any pre-packaged plugins enabled in the configuration will be installed or upgraded automatically. If a newer version is already installed, no changes are made.
-
-**False**: Pre-packaged plugins aren't installed or upgraded automatically but may be installed manually from the Plugin Marketplace, even when offline.
-
-+------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"AutomaticPrepackagedPlugins": true`` with options ``true`` and ``false``. |
-+------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
+| - **true**: **(Default)** Mattermost automatically installs and upgrades any enabled pre-packaged plugins. If a newer version is installed, no changes are made.                | - System Config path: **Plugins > Plugin Management**                            |
+| - **false**: Mattermost does not automatically install or upgrade pre-packaged plugins. Pre-packaged plugins may be installed manually from the Marketplace, even when offline. | - ``config.json`` setting: ``.PluginSettings.AutomaticPrepackagedPlugins: true`` |
+|                                                                                                                                                                                 | - Environment variable: ``MM_PLUGINSETTINGS_AUTOMATICPREPACKAGEDPLUGINS``        |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
 
 .. config:setting:: plugins-enablemarketplace
   :displayname: Enable marketplace (Plugins - Management)
@@ -94,19 +90,17 @@ Automatic prepackaged plugins
   :configjson: EnableMarketplace
   :environment: N/A
 
-  - **true**: **(Default)** Enables Plugin Marketplace on your Mattermost server for all System Admins.
-  - **false**: Disables Plugin Marketplace on your Mattermost server for all System Admins.
+  - **true**: **(Default)** Enables the plugin Marketplace on your Mattermost server for all System Admins.
+  - **false**: Disables the plugin Marketplace on your Mattermost server for all System Admins.
 
 Enable Marketplace
 ~~~~~~~~~~~~~~~~~~
 
-**True**: Enables Plugin Marketplace on your Mattermost server for all system admins.
-
-**False**: Disables Plugin Marketplace on your Mattermost server for all system admins.
-
-+--------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableMarketplace": true`` with options ``true`` and ``false``. |
-+--------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
+| - **true**: **(Default)** Enables the plugin Marketplace on your Mattermost server for all System Admins. | - System Config path: **Plugins > Plugin Management**                  |
+| - **false**: Disables the plugin Marketplace on your Mattermost server for all System Admins.             | - ``config.json`` setting: ``.PluginSettings.EnableMarketplace: true`` |
+|                                                                                                           | - Environment variable: ``MM_PLUGINSETTINGS_ENABLEMARKETPLACE``        |
++-----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
 
 .. config:setting:: plugins-enableremotemarketplace
   :displayname: Enable remote marketplace (Plugins - Management)
@@ -114,72 +108,67 @@ Enable Marketplace
   :configjson: EnableRemoteMarketplace
   :environment: N/A
 
-  - **true**: **(Default)** The server will attempt to connect to the configured Plugin Marketplace to show the latest plugins.
-  - **false**: The server won't attempt to connect to a remote marketplace, and will show only pre-packaged and already installed plugins.
+  - **true**: **(Default)** Mattermost attempts to connect to the endpoint set in MarketplaceURL.
+  - **false**: Mattermost does not attempt to connect to a remote Marketplace, and will show only pre-packaged and installed plugins.
 
 Enable remote Marketplace
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**True**: The server will attempt to connect to the configured Plugin Marketplace to show the latest plugins. If the connection fails, the Plugin Marketplace shows only pre-packaged and already installed plugins alongside a connection error.
-
-**False**: The server won't attempt to connect to a remote marketplace, and will show only pre-packaged and already installed plugins. Use this setting if your server can't connect to the internet.
-
-+--------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableRemoteMarketplace": true`` with options ``true`` and ``false``. |
-+--------------------------------------------------------------------------------------------------------------------+
-
-This setting only takes effect when ``"EnableMarketplace": true``.
-
-.. note::
-   For the remote marketplace to operate, each host running the Mattermost service requires network access to the marketplace service endpoint (hosted at ``https://api.integrations.mattermost.com``, see `Marketplace URL <#marketplace-url>`__ ).
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+| - **true**: **(Default)** Mattermost attempts to connect to the endpoint set in **Marketplace URL**. If the connection fails, an error is displayed, and the Marketplace only shows pre-packaged and installed plugins.    | - System Config path: **Plugins > Plugin Management**                        |
+| - **false**: Mattermost does not attempt to connect to a remote Marketplace. The Marketplace will only show pre-packaged and installed plugins. Use this setting if your Mattermost server cannot connect to the Internet. | - ``config.json`` setting: ``.PluginSettings.EnableRemoteMarketplace: true`` |
+|                                                                                                                                                                                                                            | - Environment variable: ``MM_PLUGINSETTINGS_ENABLEREMOTEMARKETPLACE``        |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+| **Note**: To connect to a remote Marketplace, **Enable Marketplace** must be **true** and each Mattermost host must have network access to the endpoint set in **Marketplace URL**.                                                                                                                       |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: plugins-marketplaceurl
   :displayname: Marketplace URL (Plugins - Management)
   :systemconsole: Plugins > Plugin Management
   :configjson: MarketplaceUrl
   :environment: N/A
-  :description: If the Marketplace is enabled, this setting specifies which URL should be used to query for new Marketplace plugins. Default is **https://api.integrations.mattermost.com**.
+  :description: This setting stores the URL for the remote Marketplace. Default is **https://api.integrations.mattermost.com**.
 
 Marketplace URL
 ~~~~~~~~~~~~~~~
 
-If the Marketplace is enabled, this setting specifies which URL should be used to query for new Marketplace plugins.
-
-+------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"MarketplaceUrl": "https://api.integrations.mattermost.com"`` with string input. |
-+------------------------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------+---------------------------------------------------------------+
+| This setting stores the URL for the remote Markeplace.               | - System Config path: **Plugins > Plugin Management**         |
+|                                                                      | - ``config.json`` setting: ``.PluginSettings.MarketplaceURL`` |
+| String input. Default is **https://api.integrations.mattermost.com** | - Environment variable: ``MM_PLUGINSETTINGS_MARKETPLACEURL``  |
++----------------------------------------------------------------------+---------------------------------------------------------------+
 
 .. config:setting:: plugins-installedpluginstates
   :displayname: Installed plugin state (Plugins - Management)
   :systemconsole: Plugins > Plugin Management
   :configjson: PluginStates
   :environment: N/A
-  :description: Lists installed plugins on your Mattermost server and whether they are enabled. Pre-packaged plugins are installed by default and can be deactivated, but not removed.
+  :description: This setting is a list of installed plugins and their status as enabled or disabled.
 
 Installed plugin state
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Lists installed plugins on your Mattermost server and whether they are enabled. Pre-packaged plugins are installed by default and can be deactivated, but not removed.
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"PluginStates": {}`` with object input mapping plugin IDs as keys to objects, each of which contains a key ``"Enable": false`` with options ``true`` or ``false``. |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------+
+| This setting is a list of installed plugins and their status as enabled or disabled.                                                                                                                         | - System Config path: **Plugins > Plugin Management**       |
+|                                                                                                                                                                                                              | - ``config.json`` setting: ``.PluginSettings.PluginStates`` |
+| The ``config.json`` setting is an object. The object keys are plugin IDs, e.g. ``com.mattermost.apps``. Each key maps to an object that contains an ``Enable`` key that can be set as ``true`` or ``false``. | - Environment variable: ``MM_PLUGINSETTINGS_PLUGINSTATES``  |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------+
 
 .. config:setting:: plugins-pluginsettings
   :displayname: Plugin settings (Plugins - Management)
   :systemconsole: Plugins > Plugin Management
   :configjson: Plugins
   :environment: N/A
-  :description: Settings specific to each Mattermost plugin.
+  :description: This setting contains plugin-specific data.
 
 Plugin settings
 ~~~~~~~~~~~~~~~
 
-Settings specific to each Mattermost plugin.
-
-+------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Plugins": {}`` with object input mapping plugin IDs as keys to objects containing plugin-specific data. |
-+------------------------------------------------------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------+
+| This setting contains plugin-specific data.                                                                                                                            | - System Config path: **Plugins > Plugin Management**  |
+|                                                                                                                                                                        | - ``config.json`` setting: ``.PluginSettings.Plugins`` |
+| The ``config.json`` setting is an object. The object keys are plugin IDs, e.g. ``com.mattermost.apps``. Each key maps to an object that contains plugin-specific data. | - Environment variable: ``MM_PLUGINSETTINGS_PLUGINS``  |
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------+
 
 ----
 
