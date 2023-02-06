@@ -42,6 +42,7 @@ Latest Mattermost Mobile Apps releases:
  - Fixed an issue where a crash occurred when attempting to download a profile image.
  
 ### Known Issues
+ - Selecting an item from autocomplete doubles tilde and slash characters [MM-50351](https://mattermost.atlassian.net/browse/MM-50351).
  - Users are unable to adjust the font size via the OS font size setting.
  - **Manage Members** modal is not yet added [MM-48489](https://mattermost.atlassian.net/browse/MM-48489).
  - Posts may remain in the local device database after data retention job has been run [MM-47548](https://mattermost.atlassian.net/browse/MM-47548).
