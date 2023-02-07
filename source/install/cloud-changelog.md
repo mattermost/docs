@@ -18,6 +18,7 @@ Latest Mattermost Cloud releases:
 #### Boards
  - Added support for person, multi-person, and date property filters in Boards.
  - Added support for person property groups in Boards.
+ - See [the docs](https://docs.mattermost.com/boards/groups-filter-sort.html#work-with-groups-filter-and-sort) for more details.
 
 ### Improvements
 
@@ -54,13 +55,6 @@ Added logging fixes: empty ``short_message`` for Gelf formatter is no longer all
  - Fixed an issue where OpenId Connect was configurable for Cloud Starter licenses.
 
 ### Known Issues
- - Clicking on a user profile picture throws a console error [MM-49961](https://mattermost.atlassian.net/browse/MM-49961).
- - Bot and guest tags are truncated on suggestion autocomplete [MM-49973](https://mattermost.atlassian.net/browse/MM-49973).
- - Horizontal scroll displays in the Threads list due to a new tags component [MM-49854](https://mattermost.atlassian.net/browse/MM-49854).
- - Login/create account screen layout breaks when Javascript error banner displays [MM-49587](https://mattermost.atlassian.net/browse/MM-49587).
- - Spacing in the channel switcher is incorrect [MM-49853](https://mattermost.atlassian.net/browse/MM-49853).
- - Spacing issue is displayed between the Global Drafts tour point title and “New” tag [MM-49866](https://mattermost.atlassian.net/browse/MM-49866).
- - The message box flashes controls while typing in the right-hand side [MM-49266](https://mattermost.atlassian.net/browse/MM-49266).
  - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
 
 ## Release 2023-02-02
