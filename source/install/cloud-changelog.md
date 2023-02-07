@@ -51,6 +51,7 @@ Added logging fixes: empty ``short_message`` for Gelf formatter is no longer all
  - Fixed an issue where a "plugin configured with a nil SecureConfig" warning was logged when starting each plugin.
  - Fixed an issue where portal availability was checked when not on enterprise edition.
  - Fixed a 404 error from requests to ``/api/v4/system/notices/`` on page load.
+ - Fixed an issue where OpenId Connect was configurable for Cloud Starter licenses.
 
 ### Known Issues
  - Clicking on a user profile picture throws a console error [MM-49961](https://mattermost.atlassian.net/browse/MM-49961).
