@@ -2,12 +2,53 @@
 
 Latest Mattermost Mobile Apps releases:
 
-- [2.0.0 Release](#release)
-- [1.55.1 Release](#id1)
-- [1.55.0 Release](#id4)
-- [1.54.0 Release](#id8)
-- [1.53.0 Release](#id13)
-- [1.52.0 Release](#id17)
+- [2.0.1 Release](#release)
+- [2.0.0 Release](#id1)
+- [1.55.1 Release](#id4)
+- [1.55.0 Release](#id8)
+- [1.54.0 Release](#id13)
+- [1.53.0 Release](#id18)
+
+## 2.0.1 Release
+- Release Date: February 7, 2023
+- Server Versions Supported: Server v7.1.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
+
+### Compatibility
+ - **Upgrade to server version v7.1.0 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/upgrade/extended-support-release.html) (ESR) 6.3.0 has ended and upgrading to server ESR v7.1.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
+ - iPhone 5s devices and later with iOS 12.1+ is required.
+
+### Improvements
+ - Added support for Android tablets and foldables.
+ - Added support to rotate iPads in all orientations.
+ - Improved the mobile emoji picker user interface and interaction.
+
+### Bug Fixes
+ - Fixed a crash when dismissing a notification on Android.
+ - Fixed a potential crash when trying access non existent database records.
+ - Fixed opening a link when the server is hosted on a subpath.
+ - Fixed an issue with uploading certain files.
+ - Fixed an issue with downloading certain files from the search results.
+ - Disabled top domain level verification.
+ - Fixed some potential crashes in the iOS Share Extension and Notification Service.
+ - Fixed some screens in the login flow not showing the content when animations are turned off in the device settings.
+ - Fixed an issue where new Direct and Group Messages sometimes did not appear in the channel list until reopening the app.
+ - The permissions required to receive push notifications is now always requested if needed.
+ - Fixed ANRs found with some Android devices.
+ - Fixed an issue where the keyboard changed on iOS when a code block was started.
+ - Fixed an issue where the EMM configuration for VPN timeouts were in ``seconds`` instead of in ``ms``.
+ - Fixed an issue with markdown bolded strings.
+ - Fixed an issue where the markdown for mentions did not inherit heading fonts.
+ - Fixed an issue where a crash occurred when attempting to download a profile image.
+ 
+### Known Issues
+ - Selecting an item from autocomplete doubles tilde and slash characters [MM-50351](https://mattermost.atlassian.net/browse/MM-50351).
+ - Users are unable to adjust the font size via the OS font size setting.
+ - **Manage Members** modal is not yet added [MM-48489](https://mattermost.atlassian.net/browse/MM-48489).
+ - Posts may remain in the local device database after data retention job has been run [MM-47548](https://mattermost.atlassian.net/browse/MM-47548).
+ - Drafts are lost when following a notification [MM-47373](https://mattermost.atlassian.net/browse/MM-47373).
+ - Moving posts with the Wrangler plugin causes database "Unique key" errors [MM-44960](https://mattermost.atlassian.net/browse/MM-44960).
+ - Some pixel phones on Android 12+ might not go past the login screen. This is a known issue with the OS and the current workaround is to restart the device.
 
 ## 2.0.0 Release
 - Release Date: January 16, 2023
