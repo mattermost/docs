@@ -4,7 +4,7 @@ Calls self-hosted deployment
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-This document provides information on how to successfully make the Calls plugin work on self-hosted deployments. It also outlines some of the most common deployment strategies with example diagrams.
+This document provides information on how to successfully make the Calls plugin work on self-hosted deployments. It also outlines some of the most common deployment strategies with example diagrams, and also provides the deployment guidelines for the recording service.
 
 Terminology
 -----------
@@ -16,8 +16,8 @@ Terminology
 - `STUN (Session Traversal Utilities for NAT) <https://bloggeek.me/webrtcglossary/stun/>`_: A protocol/service used by WebRTC clients to help traversing NATs. On the server side it's mainly used to figure out the public IP of the instance. 
 - `TURN (Traversal Using Relays around NAT) <https://bloggeek.me/webrtcglossary/turn/>`_: A protocol/service used to help WebRTC clients behind strict firewalls connect to a call through media relay. 
 
-Components
-----------
+Plugin components
+-----------------
 
 - **Calls plugin**: This is the main entry point and a requirement to enable channel calls.
 
@@ -37,6 +37,7 @@ Server
 
 Client
 ~~~~~~
+
 - Clients need to be able to connect (send and receive data) to the instance hosting the calls through the UDP port configured as ``RTC Server Port``. If this is not possible a TURN server should be used to achieve connectivity.
 - Depending on the platform or operating system, clients may need to grant additional permissions to the application (e.g., browser, desktop app) to  allow them to capture audio inputs or share the screen.
 
@@ -216,7 +217,6 @@ After having the values above, to deploy the ``rtcd`` helm chart run:
 .. code-block:: none
 
   helm upgrade mattermost-rtcd mattermost/mattermost-rtcd -f /Users/myuser/rtcd_values.yaml --namespace mattermost-rtcd --create-namespace --install --debug
-  
 
 Performance
 -----------
@@ -228,6 +228,7 @@ As an example, a single call with 10 participants of which two are unmuted (tran
 
 Benchmarks
 ~~~~~~~~~~
+
 Here are some results from internally conducted performance tests on a dedicated instance:
 
  ======== ============= =============== ================ ================= 
@@ -243,7 +244,7 @@ Here are some results from internally conducted performance tests on a dedicated
 Dedicated service
 ~~~~~~~~~~~~~~~~~
 
-For Enterprise customers we offer a way to offload performance costs through a `dedicated service <https://github.com/mattermost/rtcd>`_ that can be used to further scale up calls. 
+For Enterprise customers we offer a way to offload performance costs through a `dedicated service <https://github.com/mattermost/rtcd>`_ that can be used to further scale up calls.
 
 Load testing
 ~~~~~~~~~~~~
@@ -258,7 +259,7 @@ Both the plugin and the external ``rtcd`` service expose some Prometheus metrics
 Calls plugin metrics
 ^^^^^^^^^^^^^^^^^^^^
 
-Metrics for Calls plugin are exposed through the public ``/plugins/com.mattermost.calls/metrics`` API endpoint.
+Metrics for the calls plugin are exposed through the public ``/plugins/com.mattermost.calls/metrics`` API endpoint.
 
 **Process**
 
@@ -288,7 +289,7 @@ Metrics for Calls plugin are exposed through the public ``/plugins/com.mattermos
 WebRTC service metrics
 ^^^^^^^^^^^^^^^^^^^^^^
 
-Metrics for ``rtcd`` service are exposed through the ``/metrics`` API endpoint.
+Metrics for the ``rtcd`` service are exposed through the ``/metrics`` API endpoint.
 
 **Process**
 
@@ -326,6 +327,11 @@ If you wish to host many calls or calls with a large number of participants, tak
 
   # Allow to allocate more memory as needed for more control messages that need to be sent for each socket connected
   net.core.optmem_max = 16777216
+
+Configuring recording
+---------------------
+
+Before you can start recording calls, you need to configure the ``calls-offloader`` service. You can read about how to do that `here <https://github.com/mattermost/calls-offloader/blob/master/docs/getting_started.md>`_.
 
 Frequently asked questions
 --------------------------
