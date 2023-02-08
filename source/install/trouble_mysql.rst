@@ -212,7 +212,7 @@ Server is set to SYSTEM timezone
 
 Mattermost customers using v7.7 or earlier may see an errors occur on servers using MySQL in cases where the server is set to SYSTEM timezone and doesn’t support named timezones. These errors can be fixed by populating the ``timezone`` tables on the server. Refer to the following docs for more information on loading the timezone table:
 
-- `Linux <https://dev.mysql.com/doc/refman/5.7/en/mysql-tzinfo-to-sql.html>`__`
+- `Linux <https://dev.mysql.com/doc/refman/5.7/en/mysql-tzinfo-to-sql.html>`__
 - `Windows <https://dev.mysql.com/downloads/timezones.html>`__
 
 .. note::
