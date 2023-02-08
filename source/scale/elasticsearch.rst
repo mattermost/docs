@@ -47,6 +47,10 @@ Follow these steps to connect your Elasticsearch server to Mattermost and to gen
   c. (Optional) Enter **Server Password** associated with the username. For AWS Elasticsearch, leave this field blank.
   d. Set **Enable Cluster Sniffing** (Optional). Sniffing finds and connects to all data nodes in your cluster automatically. For AWS Elasticsearch, this field should be set to ``false``.
 
+.. tip::
+
+  From Mattermost v7.8, optional CA and client certificate configuration settings are available for use with basic auth credentials or to replace them. See the `Elasticsearch configuration settings <configure/environment-configuration-settings.html#elasticsearch>`__ documentation for details.
+
 4. Select **Test Connection** and then select **Save**. If the server connection is unsuccessful you won't be able to save the configuration or enable searching with Elasticsearch.
 
 5. Select **Build Index** to build the post index of existing posts. This process can take up to a few hours depending on the size of the post database and number of messages. The progress percentage can be seen as the index is created. To avoid downtime, set **Enable Elasticsearch for search queries** to ``false`` so that database search is available during the indexing process.
@@ -61,7 +65,7 @@ Follow these steps to connect your Elasticsearch server to Mattermost and to gen
 
 .. note::
 
-   - Additional advanced Elasticsearch settings for large deployments can be configured outside the System Console in the ``config.json`` file. Read the `documentation to learn more </configure/configuration-settings.html#elasticsearch>`__.
+   - Additional advanced Elasticsearch settings for large deployments can be configured outside the System Console in the ``config.json`` file. Read the `Elasticsearch configuration settings </configure/configuration-settings.html#elasticsearch>`__ documentation to learn more.
    - If your deployment has a large number of posts (typically in excess of one million but not strictly defined), the reindexing progress percentage may stay at 99% for a long time. The size of the data to be indexed is estimated, and on large databases, estimations can become inaccurate. While progress estimates may be inaccurate, and the progress percentage may appear stuck at near completion, indexing will continue behind the scenes until complete.
    - Search results for files shared before upgrading to Mattermost Server v5.35 may be incomplete until an extraction command is run using the `CLI </manage/command-line-tools.html#mattermost-extract-documents-content>`__, or using the `mmctl </manage/mmctl-command-line-tool.html#mmctl-extract>`__. After running this command, the search index must be rebuilt. Go to **System Console > Environment > Elasticsearch > Bulk Indexing**, then select **Index Now** to rebuild the search index to include older file contents.
     
