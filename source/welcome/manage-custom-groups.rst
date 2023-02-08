@@ -29,6 +29,11 @@ Create a custom group
 
 3. Search for and select members to add to the custom user group, then select **Create Group**.
 
+Review group members
+--------------------
+
+From Mattermost v7.8, using Mattermost in a web browser or the desktop app, select a group mention in a thread to display a list of group members.
+
 Manage custom user groups
 -------------------------
 
