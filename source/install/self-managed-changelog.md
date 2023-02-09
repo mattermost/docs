@@ -18,7 +18,9 @@ Latest Mattermost Releases:
 
 ### Important Upgrade Notes
 
-Before upgrading, we recommend checking for duplicate data in the ``focalboard_category_boards`` table, and deleting all but one copy of duplicate data. This is to ensure that the new plugin version startup doesn't lock the table, and prevent users from using Boards. We recommend de-duplicating the data at a time of low user activity.
+ - [Message Priority & Acknowledgement](https://docs.mattermost.com/configure/site-configuration-settings.html#message-priority) is now enabled by default for all instances. You may disable this feature in the System Console by going to **Posts > Message Priority** or via the config ``PostPriority`` setting.
+
+ - Before upgrading, we recommend checking for duplicate data in the ``focalboard_category_boards`` table, and deleting all but one copy of duplicate data. This is to ensure that the new plugin version startup doesn't lock the table, and prevent users from using Boards. We recommend de-duplicating the data at a time of low user activity.
 
 SQL to check the presence of duplicate data:                                                                                                             
 
