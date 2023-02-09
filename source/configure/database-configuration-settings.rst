@@ -109,8 +109,8 @@ Maximum open connections
 *Available in legacy Enterprise Edition E10/E20*
 
 +--------------------------------------------------------+------------------------------------------------------------------+
-| The maximum number of idle connections held open       | - System Config path: **Environment > Database**                 |
-| to the database.                                       | - ``config.json`` setting: ``".SqlSettings.MaxOpenConns": 300,`` |
+| The maximum number of open connections to the          | - System Config path: **Environment > Database**                 |
+| database.                                              | - ``config.json`` setting: ``".SqlSettings.MaxOpenConns": 300,`` |
 |                                                        | - Environment variable: ``MM_SQLSETTINGS_MAXOPENCONNS``          |
 | Numerical input. Default is **300** for self-hosted    |                                                                  |
 | deployments, and **100** for Cloud deployments.        |                                                                  |
