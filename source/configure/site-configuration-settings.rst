@@ -1009,10 +1009,10 @@ Enable custom emoji
 +-------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 | - **true**: **(Default)** Allows users to add emojis through a                | - System Config path: **Site Configuration > Emoji**                     |
 |   **Custom Emoji** option in the emoji picker. Emojis can be GIF, PNG, or     | - ``config.json`` setting: ``.ServiceSettings.EnableCustomEmoji: true``  |
-|   JPG files up to 1 MB.                                                       | - Environment variable: ``MM_SERVICESETTINGS_ENABLECUSTOMEMOJI``         |
+|   JPG files up to 512 KB in size.                                             | - Environment variable: ``MM_SERVICESETTINGS_ENABLECUSTOMEMOJI``         |
 | - **false**:  Disables custom emojis.                                         |                                                                          |
 +-------------------------------------------------------------------------------+--------------------------------------------------------------------------+
-| **Note**: Too many custom emojis can slow your server’s performance.          |                                                                          |
+| **Note**: Too many custom emojis can slow your server’s performance.                                                                                     |
 +-------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 ----
