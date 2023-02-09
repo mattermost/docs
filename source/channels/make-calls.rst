@@ -124,7 +124,7 @@ Web app
 ^^^^^^^
 
 +---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Service                         | Ports                                                                                                                                                                                                                 | 
+| Browser                         | Action                                                                                                                                                                                                               | 
 +=================================+=======================================================================================================================================================================================================================+
 | **Chrome**                      | CMD+OPTION+J (macOS)                                                                                                                                                                                                  |
 |                                 | CTRL+SHIFT+J (Windows, Linux, ChromeOS)                                                                                                                                                                               | 
@@ -146,8 +146,8 @@ In cases where there are audio/video issues, difficulty in hearing other partici
 
 You can run this command in an active call or after leaving the call in question. However, we will only save data for the last joined call so joining again will delete the previous call's feedback.
 
-WebRTC internals (Chrome + Firefox only)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+WebRTC internals (Chrome and Firefox only)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This is an additional method for Chrome and Firefox users in cases where there are audio/video issues, difficulty in hearing other participants, and/or stuttering video and/or choppy audio.
 
