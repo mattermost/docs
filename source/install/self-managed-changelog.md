@@ -79,6 +79,7 @@ WHERE duplicates.rownum > 1;
  - Added support for multiple users and channels to the ``/invite`` slash command.
 
 #### Administration
+ - Self-hosted admins can now purchase licenses in-app when service setting ``SelfHostedPurchase`` is true.
  - Endpoint to portal added to detect whether a license is suitable for self-expansion. Customers over their seat limit can expand their license seats.
  - Airgapped purchase experience is now shown only when appropriate and a simplified authentication flow is now used for the self-hosted purchase.
  - The export file now contains the server version and a creation timestamp.
