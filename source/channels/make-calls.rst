@@ -10,11 +10,6 @@ From Mattermost v7.0, you can make voice calls and share your screen in channels
 - `Record calls <#record-calls>`__
 - `Frequently asked questions <#frequently_asked_questions>`__
 - `Troubleshooting <#troubleshooting>`__
-
-   - `My call is disconnected after a few seconds <#my-call-is-disconnected-after-a-few-seconds>`__
-
-   - `I can't screen share using Mattermost desktop on macOS <#i-cant-screen-share-using-mattermost-desktop-on-macos>`__
-
 - `Debugging <#debugging>`__
 
 Features 
