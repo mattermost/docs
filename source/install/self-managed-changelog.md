@@ -69,6 +69,8 @@ WHERE duplicates.rownum > 1;
 ### Improvements
 
 #### User Interface (UI)
+ - Pre-packaged Calls v0.13.0.
+ - Pre-packaged Playbooks v1.36.0.
  - Insights and drafts are now included when navigating through channels in the channel sidebar using ALT+UP/DOWN arrow keyboard keys.
  - Added an onboarding tour point for Global Drafts.
  - Updated prepackaged version of Apps plugin to 1.2.0.
