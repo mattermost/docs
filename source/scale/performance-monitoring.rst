@@ -158,7 +158,7 @@ Database connection metrics
 - ``idle_connections``: The number of idle connections.
 - ``wait_count_total``: The total number of connections waited for.
 - ``wait_duration_seconds_total``: The total time blocked waiting for a new connection.
-- ``max_idle_closed_total``: The total number of connections closed due to the maximum idle connections being configured being reached.
+- ``max_idle_closed_total``: The total number of connections closed due to the maximum idle connections being reached.
 - ``max_idle_time_closed_total``: The total number of connections closed due to the connection maximum idle time configured.
 - ``max_lifetime_closed_total``: The total number of connections closed due to the connection maximum lifetime configured.
 
