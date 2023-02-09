@@ -6,6 +6,16 @@ Calls self-hosted deployment
 
 This document provides information on how to successfully make the Calls plugin work on self-hosted deployments. It also outlines some of the most common deployment strategies with example diagrams, and also provides the deployment guidelines for the recording service.
 
+- `Terminology <#terminology>`__
+- `Plugin components <#plugin-components>`__
+- `Requirements <#requirements>`__
+- `Limitations <#limitations>`__
+- `Configuration <#configuration>`__
+- `Kubernetes deployments <#kubernetes-deployments>`_
+- `Performance <#performance>`_
+- `Configure recording <#configure-recording>`_
+- `Frequently asked questions <#frequently-asked-questions>`_
+
 Terminology
 -----------
 
@@ -328,8 +338,8 @@ If you wish to host many calls or calls with a large number of participants, tak
   # Allow to allocate more memory as needed for more control messages that need to be sent for each socket connected
   net.core.optmem_max = 16777216
 
-Configuring recording
----------------------
+Configure recording
+-------------------
 
 Before you can start recording calls, you need to configure the ``calls-offloader`` service. You can read about how to do that `here <https://github.com/mattermost/calls-offloader/blob/master/docs/getting_started.md>`_.
 
