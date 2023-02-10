@@ -131,7 +131,7 @@ This is a fallback mode to only let one node in the cluster to host calls. While
 .. image:: ../images/calls-deployment-image5.png
   :alt: A diagram of a clustered calls deployment.
 
-rtcd in HA
+rtcd (HA)
 ^^^^^^^^^^
 
 .. image:: ../images/calls-deployment-image2.png
@@ -352,9 +352,9 @@ The rtcd Service
 .. include:: ./calls-rtcd-ent-only.rst
   :start-after: :nosearch:
 
-The Calls plugin has a built-in `Selective Forwarding Unit (SFU) <https://bloggeek.me/webrtcglossary/sfu/>`__ to route audio and screensharing data. But this SFU functionality can be split from the Calls plugin and hosted on its own, e.g., on its own node in a `kubernetes deployment <#kubernetes-deployments>`__, its own dedicated server `alongside Mattermost instances <#rtcd-in-ha>`__` in a cloud provider, etc.
+The Calls plugin has a built-in `Selective Forwarding Unit (SFU) <https://bloggeek.me/webrtcglossary/sfu/>`__ to route audio and screensharing data. But this SFU functionality can be split from the Calls plugin and hosted on its own, e.g., on its own node in a `kubernetes deployment <#kubernetes-deployments>`__, or its own dedicated server `alongside Mattermost instances <#modes-of-operation>`__ in a cloud service or on-prem.
 
-But it helps to know when and why one would want to use ``rtcd`` as it's own service.
+It helps to understand when and why your organization would want to use ``rtcd``.
 
 First of all, ``rtcd`` is a standalone service, which adds operational complexity. For many small instances of Mattermost there is no need to use ``rtcd``. Instead, use the Calls plugin until performance or reliability becomes an issue.
 
