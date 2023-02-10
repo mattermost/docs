@@ -20,12 +20,12 @@ This document provides information on how to successfully make the Calls plugin 
 Terminology
 -----------
 
-- `WebRTC <https://bloggeek.me/webrtcglossary/webrtc-2/>`__: The set of underlying protocols/specifications on top of which calls are implemented. 
+- `WebRTC <https://bloggeek.me/webrtcglossary/webrtc-2/>`__: The set of underlying protocols/specifications on top of which calls are implemented.
 - **RTC (Real Time Connection)**: The real-time connection. This is the channel used to send media tracks (audio/video/screen).
 - **WS (WebSocket)**: The WebSocket connection. This is the channel used to set up a connection (signaling process).
-- `NAT (Network Address Translation) <https://bloggeek.me/webrtcglossary/nat/>`__: A networking technique to map IP addresses. 
-- `STUN (Session Traversal Utilities for NAT) <https://bloggeek.me/webrtcglossary/stun/>`_: A protocol/service used by WebRTC clients to help traversing NATs. On the server side it's mainly used to figure out the public IP of the instance. 
-- `TURN (Traversal Using Relays around NAT) <https://bloggeek.me/webrtcglossary/turn/>`_: A protocol/service used to help WebRTC clients behind strict firewalls connect to a call through media relay. 
+- `NAT (Network Address Translation) <https://bloggeek.me/webrtcglossary/nat/>`__: A networking technique to map IP addresses.
+- `STUN (Session Traversal Utilities for NAT) <https://bloggeek.me/webrtcglossary/stun/>`_: A protocol/service used by WebRTC clients to help traversing NATs. On the server side it's mainly used to figure out the public IP of the instance.
+- `TURN (Traversal Using Relays around NAT) <https://bloggeek.me/webrtcglossary/turn/>`_: A protocol/service used to help WebRTC clients behind strict firewalls connect to a call through media relay.
 
 Plugin components
 -----------------
@@ -70,7 +70,7 @@ Network
 Limitations
 -----------
 
-- In Mattermost Cloud, up to 200 participants per channel can join a call. 
+- In Mattermost Cloud, up to 200 participants per channel can join a call.
 - In Mattermost self-hosted deployments, the default maximum number of participants is unlimited. The recommended maximum number of participants per call is 200. This setting can be changed in **System Console > Plugin Management > Calls > Max call participants**. There's no limit to the total number of participants across all calls as the supported value greatly depends on instance resources. For more details, refer to the `performance section </configure/calls-deployment.html#performance>`_ below.
 
 Configuration
@@ -81,10 +81,17 @@ For Mattermost self-hosted customers, the calls plugin is pre-packaged, installe
 Modes of operation
 ------------------
 
-Depending on how the Mattermost server is running, there are several modes under which the Calls plugin can operate.
+Depending on how the Mattermost server is running, there are several modes under which the Calls plugin can operate. Please refer to the section below on the `rtcd service <#rtcd:-when-and-why>`_ to learn about the ``rtcd`` and the Selective Forwarding Unit (SFU).
 
-.. image:: ../images/calls-deployment-image1.png
-  :alt: A diagram of the calls deployment modes and their dependencies.
++---------------------------+---------------+----------------+
+| Mattermost Deployment     | SFU           | SFU Deployment |
++===========================+===============+================+
+| Single Instance           | integrated    |                |
+| Single instance           | rtcd          |                |
+| High Availability Cluster | integrated    | clustered      |
+| High Availability Cluster | integrated    | single handler |
+| High Availability Cluster | rtcd          |                |
++---------------------------+---------------+----------------|
 
 Single instance
 ~~~~~~~~~~~~~~~
@@ -113,16 +120,16 @@ Clustered
 
 This is the default mode when running the plugin in a HA cluster. Every Mattermost node will run an instance of the plugin that includes a WebRTC service. Calls are distributed across all available nodes through the existing load-balancer: a call is hosted on the instance where the initiating websocket connection (first client to join) is made. A single call will be hosted on a single cluster node.
 
-.. image:: ../images/calls-deployment-image5.png
-  :alt: A diagram of a clustered calls deployment.
+.. image:: ../images/calls-deployment-image4.png
+  :alt: A diagram of a single handler deployment.
 
 Single handler
 ^^^^^^^^^^^^^^
 
 This is a fallback mode to only let one node in the cluster to host calls. While the plugin would still run on all nodes, all calls will be routed through the handler node. This mode must be enabled by running the instance with a special environment variable set (MM_CALLS_IS_HANDLER=true).
 
-.. image:: ../images/calls-deployment-image4.png
-  :alt: A diagram of a single handler deployment.
+.. image:: ../images/calls-deployment-image5.png
+  :alt: A diagram of a clustered calls deployment.
 
 rtcd (HA)
 ^^^^^^^^^
@@ -135,7 +142,7 @@ Kubernetes deployments
 
 .. image:: ../images/calls-deployment-kubernetes.png
   :alt: A diagram of calls deployed in a Kubernetes cluster.
-  
+
 If Mattermost is not deployed in a Kubernetes cluster, and you want to use this deployment type, visit the `Kubernetes operator guide </install/mattermost-kubernetes-operator.html>`_.
 
 ``rtcd`` is deployed with a Helm chart. To install this Helm chart run:
@@ -173,11 +180,11 @@ An example with sample values:
   daemonset:
     environmentVariables:
       RTCD_API_SECURITY_ALLOWSELFREGISTRATION: "\"true\""
-      RTCD_RTC_ICESERVERS: 
+      RTCD_RTC_ICESERVERS:
     "\'[{\"urls\":[\"stun:stun.global.calls.mattermost.com:3478\"]}]\'"
       RTCD_LOGGER_CONSOLELEVEL: "\"DEBUG\""
       RTCD_LOGGER_ENABLEFILE: "\"false\""
-    maxUnavailable: 1 # Only used when updateStrategy is set to 
+    maxUnavailable: 1 # Only used when updateStrategy is set to
    "RollingUpdate"
     updateStrategy: RollingUpdate
     terminationGracePeriod: 18000 # 5 hours, used to gracefully draining the instance.
@@ -196,7 +203,7 @@ An example with sample values:
       - host: mattermost-rtcd.local
         paths:
           - "/"
-          
+
  resources:
     limits:
       cpu: 7800m # Values for c5.2xlarge in AWS
@@ -242,15 +249,15 @@ Benchmarks
 
 Here are some results from internally conducted performance tests on a dedicated instance:
 
- ======== ============= =============== ================ ================= 
-  Calls    Users/call    Unmuted/call    Screensharing    Instance (EC2)   
- ======== ============= =============== ================ ================= 
-  100      4             1               100              c5.xlarge        
-  200      8             2               25               c5.xlarge        
-  200      8             2               0                c5.xlarge        
-  50       20            2               50               c5.2xlarge       
-  100      8             4               100              c5.2xlarge       
- ======== ============= =============== ================ ================= 
+ ======== ============= =============== ================ =================
+  Calls    Users/call    Unmuted/call    Screensharing    Instance (EC2)
+ ======== ============= =============== ================ =================
+  100      4             1               100              c5.xlarge
+  200      8             2               25               c5.xlarge
+  200      8             2               0                c5.xlarge
+  50       20            2               50               c5.2xlarge
+  100      8             4               100              c5.2xlarge
+ ======== ============= =============== ================ =================
 
 Dedicated service
 ~~~~~~~~~~~~~~~~~
@@ -265,7 +272,7 @@ We provide a `load-test tool <https://github.com/mattermost/mattermost-plugin-ca
 Monitoring
 ~~~~~~~~~~
 
-Both the plugin and the external ``rtcd`` service expose some Prometheus metrics to monitor performance. We provide an `official dashboard <https://github.com/mattermost/mattermost-performance-assets/blob/master/grafana/mattermost-calls-performance-monitoring.json>`_ that can be imported in Grafana. You can refer to `Performance monitoring </scale/performance-monitoring.html>`_ for more information on how to set up Prometheus and visualize metrics through Grafana. 
+Both the plugin and the external ``rtcd`` service expose some Prometheus metrics to monitor performance. We provide an `official dashboard <https://github.com/mattermost/mattermost-performance-assets/blob/master/grafana/mattermost-calls-performance-monitoring.json>`_ that can be imported in Grafana. You can refer to `Performance monitoring </scale/performance-monitoring.html>`_ for more information on how to set up Prometheus and visualize metrics through Grafana.
 
 Calls plugin metrics
 ^^^^^^^^^^^^^^^^^^^^
