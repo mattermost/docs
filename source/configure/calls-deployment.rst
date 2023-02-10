@@ -11,11 +11,11 @@ This document provides information on how to successfully make the Calls plugin 
 - `Requirements <#requirements>`__
 - `Limitations <#limitations>`__
 - `Configuration <#configuration>`__
-- `Kubernetes deployments <#kubernetes-deployments>`_
-- `Performance <#performance>`_
-- `RTCD Service <#the-rtcd-service>`_
-- `Configure recording <#configure-recording>`_
-- `Frequently asked questions <#frequently-asked-questions>`_
+- `Kubernetes deployments <#kubernetes-deployments>`__
+- `Performance <#performance>`__
+- `RTCD Service <#the-rtcd-service>`__
+- `Configure recording <#configure-recording>`__
+- `Frequently asked questions <#frequently-asked-questions>`__
 
 Terminology
 -----------
@@ -24,15 +24,15 @@ Terminology
 - **RTC (Real Time Connection)**: The real-time connection. This is the channel used to send media tracks (audio/video/screen).
 - **WS (WebSocket)**: The WebSocket connection. This is the channel used to set up a connection (signaling process).
 - `NAT (Network Address Translation) <https://bloggeek.me/webrtcglossary/nat/>`__: A networking technique to map IP addresses.
-- `STUN (Session Traversal Utilities for NAT) <https://bloggeek.me/webrtcglossary/stun/>`_: A protocol/service used by WebRTC clients to help traversing NATs. On the server side it's mainly used to figure out the public IP of the instance.
-- `TURN (Traversal Using Relays around NAT) <https://bloggeek.me/webrtcglossary/turn/>`_: A protocol/service used to help WebRTC clients behind strict firewalls connect to a call through media relay.
+- `STUN (Session Traversal Utilities for NAT) <https://bloggeek.me/webrtcglossary/stun/>`__: A protocol/service used by WebRTC clients to help traversing NATs. On the server side it's mainly used to figure out the public IP of the instance.
+- `TURN (Traversal Using Relays around NAT) <https://bloggeek.me/webrtcglossary/turn/>`__: A protocol/service used to help WebRTC clients behind strict firewalls connect to a call through media relay.
 
 Plugin components
 -----------------
 
 - **Calls plugin**: This is the main entry point and a requirement to enable channel calls.
 
-- **rtcd**: This is an optional service that can be deployed to offload all the functionality and data processing involved with the WebRTC connections. Read more about when and why to use `rctd <#the-rtcd-service>`_ below.
+- **rtcd**: This is an optional service that can be deployed to offload all the functionality and data processing involved with the WebRTC connections. Read more about when and why to use `rctd <#the-rtcd-service>`__ below.
 
 .. include:: ./calls-rtcd-ent-only.rst
   :start-after: :nosearch:
@@ -43,8 +43,8 @@ Requirements
 Server
 ~~~~~~
 
-- Run Mattermost server on a secure (HTTPs) connection. This is a necessary requirement on the client to allow capturing devices (e.g., microphone, screen). See the `config TLS </install/config-tls-mattermost.html>`_ section for more info.
-- See `network requirements </configure/calls-deployment.html#network>`_ below.
+- Run Mattermost server on a secure (HTTPs) connection. This is a necessary requirement on the client to allow capturing devices (e.g., microphone, screen). See the `config TLS </install/config-tls-mattermost.html>`__ section for more info.
+- See `network requirements </configure/calls-deployment.html#network>`__ below.
 
 Client
 ~~~~~~
@@ -71,27 +71,27 @@ Limitations
 -----------
 
 - In Mattermost Cloud, up to 200 participants per channel can join a call.
-- In Mattermost self-hosted deployments, the default maximum number of participants is unlimited. The recommended maximum number of participants per call is 200. This setting can be changed in **System Console > Plugin Management > Calls > Max call participants**. There's no limit to the total number of participants across all calls as the supported value greatly depends on instance resources. For more details, refer to the `performance section </configure/calls-deployment.html#performance>`_ below.
+- In Mattermost self-hosted deployments, the default maximum number of participants is unlimited. The recommended maximum number of participants per call is 200. This setting can be changed in **System Console > Plugin Management > Calls > Max call participants**. There's no limit to the total number of participants across all calls as the supported value greatly depends on instance resources. For more details, refer to the `performance section </configure/calls-deployment.html#performance>`__ below.
 
 Configuration
 -------------
 
-For Mattermost self-hosted customers, the calls plugin is pre-packaged, installed, and enabled. Configuration to allow end-users to use it can be found in the `System Console </configure/plugins-configuration-settings.html#calls-beta>`_.
+For Mattermost self-hosted customers, the calls plugin is pre-packaged, installed, and enabled. Configuration to allow end-users to use it can be found in the `System Console </configure/plugins-configuration-settings.html#calls-beta>`__.
 
 Modes of operation
 ------------------
 
-Depending on how the Mattermost server is running, there are several modes under which the Calls plugin can operate. Please refer to the section below on `the rtcd service <#the-rtcd-service>`_ to learn about the ``rtcd`` and the Selective Forwarding Unit (SFU).
+Depending on how the Mattermost server is running, there are several modes under which the Calls plugin can operate. Please refer to the section below on `the rtcd service <#the-rtcd-service>`__ to learn about the ``rtcd`` and the Selective Forwarding Unit (SFU).
 
-+---------------------------+---------------+----------------+
-| Mattermost Deployment     | SFU           | SFU Deployment |
-+===========================+===============+================+
-| Single Instance           | integrated    |                |
-| Single instance           | rtcd          |                |
-| High Availability Cluster | integrated    | clustered      |
-| High Availability Cluster | integrated    | single handler |
-| High Availability Cluster | rtcd          |                |
-+---------------------------+---------------+----------------+
+============================ =============== =================
+ Mattermost Deployment       SFU             SFU Deployment
+============================ =============== =================
+ Single Instance             integrated
+ Single instance             rtcd
+ High Availability Cluster   integrated      clustered
+ High Availability Cluster   integrated      single handler
+ High Availability Cluster   rtcd
+============================ =============== =================
 
 Single instance
 ~~~~~~~~~~~~~~~
@@ -143,7 +143,7 @@ Kubernetes deployments
 .. image:: ../images/calls-deployment-kubernetes.png
   :alt: A diagram of calls deployed in a Kubernetes cluster.
 
-If Mattermost is not deployed in a Kubernetes cluster, and you want to use this deployment type, visit the `Kubernetes operator guide </install/mattermost-kubernetes-operator.html>`_.
+If Mattermost is not deployed in a Kubernetes cluster, and you want to use this deployment type, visit the `Kubernetes operator guide </install/mattermost-kubernetes-operator.html>`__.
 
 ``rtcd`` is deployed with a Helm chart. To install this Helm chart run:
 
@@ -262,17 +262,17 @@ Here are some results from internally conducted performance tests on a dedicated
 Dedicated service
 ~~~~~~~~~~~~~~~~~
 
-For Enterprise customers we offer a way to offload performance costs through a `dedicated service <https://github.com/mattermost/rtcd>`_ that can be used to further scale up calls.
+For Enterprise customers we offer a way to offload performance costs through a `dedicated service <https://github.com/mattermost/rtcd>`__ that can be used to further scale up calls.
 
 Load testing
 ~~~~~~~~~~~~
 
-We provide a `load-test tool <https://github.com/mattermost/mattermost-plugin-calls/tree/main/lt>`_ that can be used to simulate and measure the performance impact of calls.
+We provide a `load-test tool <https://github.com/mattermost/mattermost-plugin-calls/tree/main/lt>`__ that can be used to simulate and measure the performance impact of calls.
 
 Monitoring
 ~~~~~~~~~~
 
-Both the plugin and the external ``rtcd`` service expose some Prometheus metrics to monitor performance. We provide an `official dashboard <https://github.com/mattermost/mattermost-performance-assets/blob/master/grafana/mattermost-calls-performance-monitoring.json>`_ that can be imported in Grafana. You can refer to `Performance monitoring </scale/performance-monitoring.html>`_ for more information on how to set up Prometheus and visualize metrics through Grafana.
+Both the plugin and the external ``rtcd`` service expose some Prometheus metrics to monitor performance. We provide an `official dashboard <https://github.com/mattermost/mattermost-performance-assets/blob/master/grafana/mattermost-calls-performance-monitoring.json>`__ that can be imported in Grafana. You can refer to `Performance monitoring </scale/performance-monitoring.html>`__ for more information on how to set up Prometheus and visualize metrics through Grafana.
 
 Calls plugin metrics
 ^^^^^^^^^^^^^^^^^^^^
@@ -352,7 +352,7 @@ The rtcd Service
 .. include:: ./calls-rtcd-ent-only.rst
   :start-after: :nosearch:
 
-The Calls plugin has a built-in `Selective Forwarding Unit (SFU) <https://bloggeek.me/webrtcglossary/sfu/>`_ to route audio and screensharing data. But this SFU functionality can be split from the Calls plugin and hosted on its own, e.g., on its own node in a kubernetes cluster, its own dedicated server alongside Mattermost instances in the cloud provider, etc. This is what was diagrammed in the sections above `rtcd <#rtcd>` and_ `rtcd <#rtcd-(ha)>`_.
+The Calls plugin has a built-in `Selective Forwarding Unit (SFU) <https://bloggeek.me/webrtcglossary/sfu/>`__ to route audio and screensharing data. But this SFU functionality can be split from the Calls plugin and hosted on its own, e.g., on its own node in a kubernetes cluster, its own dedicated server alongside Mattermost instances in the cloud provider, etc. This is what was diagrammed in the sections above `rtcd <#rtcd>` and_ `rtcd <#rtcd-(ha)>`__.
 
 But it helps to know when and why one would want to use ``rtcd`` as it's own service.
 
@@ -371,7 +371,7 @@ In general, ``rtcd`` is the preferred solution for a performant and scalable dep
 Configure recording
 -------------------
 
-Before you can start recording calls, you need to configure the ``calls-offloader`` service. You can read about how to do that `here <https://github.com/mattermost/calls-offloader/blob/master/docs/getting_started.md>`_.
+Before you can start recording calls, you need to configure the ``calls-offloader`` service. You can read about how to do that `here <https://github.com/mattermost/calls-offloader/blob/master/docs/getting_started.md>`__.
 
 Frequently asked questions
 --------------------------
@@ -396,7 +396,7 @@ Do I need a TURN server?
 
 TURN becomes necessary when you expect to have clients that are unable to connect through the configured UDP port. This can happen due to very restrictive firewalls that either block non standard ports even in the outgoing direction or don't allow the use of the UDP protocol altogether (e.g. some corporate firewalls). In such cases TURN is needed to allow connectivity.
 
-We officially support and recommend using `coturn <https://github.com/coturn/coturn>`_ for a stable and performance TURN service implementation.
+We officially support and recommend using `coturn <https://github.com/coturn/coturn>`__ for a stable and performance TURN service implementation.
 
 How will this work with an existing reverse proxy sitting in front of Mattermost?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
