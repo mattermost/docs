@@ -34,9 +34,6 @@ Plugin components
 
 - **rtcd**: This is an optional service that can be deployed to offload all the functionality and data processing involved with the WebRTC connections. Read more about when and why to use `rctd <#the-rtcd-service>`__ below.
 
-.. include:: ./calls-rtcd-ent-only.rst
-  :start-after: :nosearch:
-
 Requirements
 ------------
 
@@ -84,13 +81,13 @@ Modes of operation
 Depending on how the Mattermost server is running, there are several modes under which the Calls plugin can operate. Please refer to the section below on `the rtcd service <#the-rtcd-service>`__ to learn about the ``rtcd`` and the Selective Forwarding Unit (SFU).
 
 ============================ =============== =================
- Mattermost Deployment       SFU             SFU Deployment
+ Mattermost deployment       SFU             SFU deployment
 ============================ =============== =================
- Single Instance             integrated
+ Single instance             integrated
  Single instance             rtcd
- High Availability Cluster   integrated      clustered
- High Availability Cluster   integrated      single handler
- High Availability Cluster   rtcd
+ High availability cluster   integrated      clustered
+ High availability cluster   integrated      single handler
+ High availability cluster   rtcd
 ============================ =============== =================
 
 Single instance
@@ -118,7 +115,7 @@ High availability cluster
 Clustered
 ^^^^^^^^^
 
-This is the default mode when running the plugin in a HA cluster. Every Mattermost node will run an instance of the plugin that includes a WebRTC service. Calls are distributed across all available nodes through the existing load-balancer: a call is hosted on the instance where the initiating websocket connection (first client to join) is made. A single call will be hosted on a single cluster node.
+This is the default mode when running the plugin in a high availability cluster. Every Mattermost node will run an instance of the plugin that includes a WebRTC service. Calls are distributed across all available nodes through the existing load-balancer: a call is hosted on the instance where the initiating websocket connection (first client to join) is made. A single call will be hosted on a single cluster node.
 
 .. image:: ../images/calls-deployment-image4.png
   :alt: A diagram of a single handler deployment.
@@ -143,7 +140,7 @@ Kubernetes deployments
 .. image:: ../images/calls-deployment-kubernetes.png
   :alt: A diagram of calls deployed in a Kubernetes cluster.
 
-If Mattermost is not deployed in a Kubernetes cluster, and you want to use this deployment type, visit the `Kubernetes operator guide </install/mattermost-kubernetes-operator.html>`__.
+If Mattermost isn't deployed in a Kubernetes cluster, and you want to use this deployment type, visit the `Kubernetes operator guide </install/mattermost-kubernetes-operator.html>`__.
 
 ``rtcd`` is deployed with a Helm chart. To install this Helm chart run:
 
@@ -239,8 +236,7 @@ After having the values above, to deploy the ``rtcd`` helm chart run:
 Performance
 -----------
 
-Calls performance primarily depends on two resources: CPU and bandwidth (both network latency and overall throughput).
-The final consumption exhibits quadratic growth with the number of clients transmitting and receiving media.
+Calls performance primarily depends on two resources: CPU and bandwidth (both network latency and overall throughput). The final consumption exhibits quadratic growth with the number of clients transmitting and receiving media.
 
 As an example, a single call with 10 participants of which two are unmuted (transmitting voice data) will generally consume double the resources than the same call with a single participant unmuted. What ultimately counts towards performance is the overall number of concurrent media flows (in/out) across the server.
 
@@ -287,7 +283,7 @@ Metrics for the calls plugin are exposed through the public ``/plugins/com.matte
 - ``mattermost_plugin_calls_process_resident_memory_bytes``: Resident memory size in bytes.
 - ``mattermost_plugin_calls_process_virtual_memory_bytes``: Virtual memory size in bytes.
 
-**WebRTC Connection**
+**WebRTC connection**
 
 - ``mattermost_plugin_calls_rtc_conn_states_total``: Total number of RTC connection state changes.
 - ``mattermost_plugin_calls_rtc_errors_total``: Total number of RTC errors.
@@ -333,7 +329,7 @@ Metrics for the ``rtcd`` service are exposed through the ``/metrics`` API endpoi
 System tunings
 ~~~~~~~~~~~~~~
 
-If you wish to host many calls or calls with a large number of participants, take a look at the following platform specific (Linux) tunings (this is the only officially supported target for the plugin right now):
+If you want to host many calls or calls with a large number of participants, take a look at the following platform specific (Linux) tunings (this is the only officially supported target for the plugin right now):
 
 .. code::
 
@@ -346,25 +342,28 @@ If you wish to host many calls or calls with a large number of participants, tak
   # Allow to allocate more memory as needed for more control messages that need to be sent for each socket connected
   net.core.optmem_max = 16777216
 
-The rtcd Service
+The rtcd service
 ----------------
 
 .. include:: ./calls-rtcd-ent-only.rst
   :start-after: :nosearch:
 
-The Calls plugin has a built-in `Selective Forwarding Unit (SFU) <https://bloggeek.me/webrtcglossary/sfu/>`__ to route audio and screensharing data. But this SFU functionality can be split from the Calls plugin and hosted on its own, e.g., on its own node in a `kubernetes deployment <#kubernetes-deployments>`__, or its own dedicated server `alongside Mattermost instances <#modes-of-operation>`__ in a cloud service or on-prem.
+The Calls plugin has a built-in `Selective Forwarding Unit (SFU) <https://bloggeek.me/webrtcglossary/sfu/>`__ to route audio and screensharing data. But this SFU functionality can be split from the Calls plugin and hosted on its own, e.g., on its own node in a `kubernetes deployment <#kubernetes-deployments>`__, or its own dedicated server `alongside Mattermost instances <#modes-of-operation>`__ in a cloud service or self-hosted.
+
+Reasons to use the ``rtcd`` service
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 It helps to understand when and why your organization would want to use ``rtcd``.
 
 First of all, ``rtcd`` is a standalone service, which adds operational complexity. For most small instances of Mattermost there is no need to use ``rtcd``. Instead, use the Calls plugin until performance or reliability becomes an issue.
 
-Reasons to use the ``rtcd`` service
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- **Performance and stability of the main Mattermost server(s).** Letting the Calls plugin run the SFU means that calls traffic is being processed by the server that's also processing the rest of the Mattermost data (Channels, Boards, Playbooks, etc). If the Calls traffic spikes, it can affect the responsiveness of the rest of the Mattermost services. Using an ``rtcd`` service isolates the calls traffic processing to those ``rtcd`` instances.
+- **Performance, scalability, and stability of the Calls product.** If Calls traffic spikes, or more overall capacity is needed, ``rtcd`` servers can be added to balance the load. As an added benefit, if the Mattermost traffic spikes, or if a Mattermost instance needs to be restarted, those people in a current call will not be affected - current calls won't be dropped. 
 
-#. Performance and stability of the main Mattermost server(s). Letting the Calls plugin run the SFU means that calls traffic is being processed by the server that is also processing the rest of the Mattermost data (Channels, Boards, Playbooks, etc). If the Calls traffic spikes, it can affect the responsiveness of the rest of the Mattermost services. Using an ``rtcd`` service isolates the calls traffic processing to those ``rtcd`` instances.
-#. Performance, scalability, and stability of the Calls product. If Calls traffic spikes, or more overall capacity is needed, ``rtcd`` servers can be added to balance the load. As an added benefit, if the Mattermost traffic spikes, or if a Mattermost instance needs to be restarted, those people in a current call will not be affected -- current calls will not be dropped. (Note: Some caveats apply here, for example emoji reactions will not be transmitted while the main Mattermost server is down. But the call itself will be resilient to main server restarts.)
-#. Kubernetes deployments. In a Kubernetes deployment, ``rtcd`` is essentially required; it is the only officially supported way to run Calls.
-#. Technical benefits. The dedicated ``rtcd`` service has been optimized and tuned at the system/network level for real-time audio/video traffic, where latency is generally more important than throughput.
+Some caveats apply here, for example emoji reactions will not be transmitted while the main Mattermost server is down. But the call itself will be resilient to main server restarts.
+
+- **Kubernetes deployments.** In a Kubernetes deployment, ``rtcd`` is essentially required; it is the only officially supported way to run Calls.
+- **Technical benefits.** The dedicated ``rtcd`` service has been optimized and tuned at the system/network level for real-time audio/video traffic, where latency is generally more important than throughput.
 
 In general, ``rtcd`` is the preferred solution for a performant and scalable deployment. With ``rtcd``, the Mattermost server will be minimally impacted when hosting a high number of calls.
 
