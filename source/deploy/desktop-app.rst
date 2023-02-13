@@ -1,28 +1,14 @@
 Desktop App deployment guide
 =============================
 
-|all-plans| |cloud| |self-hosted|
-
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/sign-up
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 Mattermost desktop applications are available for Windows, macOS, and Linux operating systems.
 
-You can `download the apps directly from our download page <https://mattermost.com/apps>`__ and visit our `installation guides <https://docs.mattermost.com/install/desktop-app-install.html>`__ for help during setup and for troubleshooting tips.
+You can `download the apps directly from our download page <https://mattermost.com/apps>`__ and visit our `installation guides </install/desktop-app-install.html>`__ for help during setup and for troubleshooting tips.
 
-This page provides a guide on how to customize and distribute your own Mattermost Desktop App, and how to distribute the official Windows Desktop App silently to end users, pre-configured with the server URL and other app settings.
+This page provides a guide on how to customize and distribute your own Mattermost desktop app, and how to distribute the official Windows desktop app silently to end users, pre-configured with the server URL and other app settings.
 
 .. contents::
   :depth: 1
@@ -32,15 +18,15 @@ This page provides a guide on how to customize and distribute your own Mattermos
 Custom build configuration
 --------------------------
 
-You can customize and distribute your own Mattermost Desktop application by configuring `src/common/config/buildConfig.js <https://github.com/mattermost/desktop/blob/master/src/common/config/buildConfig.js>`__.
+You can customize and distribute your own Mattermost desktop application by configuring `src/common/config/buildConfig.js <https://github.com/mattermost/desktop/blob/master/src/common/config/buildConfig.js>`__.
 
-1. Configure the Desktop App's ``buildConfig.js`` file. There are multiple parameters you can configure to customize the user experience:
+1. Configure the desktop app's ``buildConfig.js`` file. There are multiple parameters you can configure to customize the user experience:
 
 ``defaultTeams``
 ~~~~~~~~~~~~~~~~
 
   Description
-    List of server URLs and their display names added to the desktop app by default, which the user cannot modify. Users can still add servers `through the Server Management page <https://docs.mattermost.com/deploy/desktop-app.html#enableservermanagement>`__ unless ``enableServerManagement`` is set to ``false``. 
+    List of server URLs and their display names added to the desktop app by default, which the user cannot modify. Users can still add servers `through the Server Management page </deploy/desktop-app.html#enableservermanagement>`__ unless ``enableServerManagement`` is set to ``false``. 
     
     Expects an array of key-value pairs.
 
@@ -88,12 +74,12 @@ You can customize and distribute your own Mattermost Desktop application by conf
 
       enableServerManagement: true
 
-2. To build the application, follow the `Mattermost Desktop Development Guide <https://github.com/mattermost/desktop/blob/master/docs/development.md>`__.
+2. To build the application, follow the `Mattermost Desktop Development Guide <https://developers.mattermost.com/contribute/more-info/desktop/developer-setup/>`__.
 
 Windows App: Pre-configuration and silent deployment
 -----------------------------------------------------
 
-You can distribute the official Windows Desktop App silently to end users, pre-configured with the server URL. You can also set all the `app settings <https://docs.mattermost.com/messaging/managing-desktop-app-options.html>`__ except for the **Start app on login** option.
+You can distribute the official Windows desktop app silently to end users, pre-configured with the server URL. You can also set all the `app settings </messaging/managing-desktop-app-options.html>`__ except for the **Start app on login** option.
 
 1. Download the latest Windows installer from the `Mattermost download page <https://mattermost.com/apps>`__.
 
@@ -106,7 +92,7 @@ You can distribute the official Windows Desktop App silently to end users, pre-c
 
 .. code-block:: none
 
-      rem "Step 1: Install Mattermost Desktop App silently into user's local disk"
+      rem "Step 1: Install Mattermost desktop app silently into user's local disk"
       start \\SERVER\shared_folder\mattermost-setup-4.6.2-win.exe --silent
 
       if not exist "%APPDATA%\Mattermost" mkdir %APPDATA%\Mattermost
@@ -141,12 +127,12 @@ You can distribute the official Windows Desktop App silently to end users, pre-c
 
 .. note::
 
-  Instead of using this command to install the Desktop App into a shared folder, you can also copy the executable to the folder before running it. This allows the shared folder to only require read-only permissions.
+  Instead of using this command to install the desktop app into a shared folder, you can also copy the executable to the folder before running it. This allows the shared folder to only require read-only permissions.
 
 4. Save the text file with the extension ``.bat``. For instance, ``mattermost-app-install.bat``.
 5. Use standard software asset management tools to distribute and deploy the batch file to each user.
 
-Once run, the Desktop App is added to the user’s local directory, along with the pre-configured ``config.json`` file. The installer creates a shortcut for the Desktop App in the user's start menu; if a zip version is used, you need to create the shortcut manually.
+Once run, the desktop app is added to the user’s local directory, along with the pre-configured ``config.json`` file. The installer creates a shortcut for the desktop app in the user's start menu; if a zip version is used, you need to create the shortcut manually.
 
 Windows App: Silently removing the app
 ---------------------------------------

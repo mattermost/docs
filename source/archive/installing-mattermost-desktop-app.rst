@@ -8,7 +8,7 @@ Install the Mattermost Desktop App
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
+  :alt: Available in Mattermost Free.
 
 .. |cloud| image:: ../images/cloud-badge.png
   :scale: 30
@@ -24,7 +24,7 @@ The Mattermost Desktop App is available for Windows, macOS, and Linux operating 
 
 .. image:: ../images/desktop.png
 
-You can `download the Desktop App directly from our Download page <https://mattermost.com/download/#mattermostApps>`__, and visit our `installation guides <https://docs.mattermost.com/install/desktop-app-install.html>`__ for help during setup and for troubleshooting tips.
+You can `download the Desktop App directly from our Download page <https://mattermost.com/download/#mattermostApps>`__, and visit our `installation guides </install/desktop-app-install.html>`__ for help during setup and for troubleshooting tips.
 
 .. include:: ../upgrade/upgrading-to-v60.rst
     :start-after: :nosearch:

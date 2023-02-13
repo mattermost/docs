@@ -8,7 +8,7 @@ About Teams, Channels, and Messages
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
+  :alt: Available in Mattermost Free subscription plans.
 
 .. |cloud| image:: ../images/cloud-badge.png
   :scale: 30
@@ -73,7 +73,7 @@ Direct and Group Messages
 
 Direct Messages (DMs) are for conversations between two people. Group Messages (GMs) are Direct Messages that have conversations among three or more people. Both are visible only to the people involved.
 
-See our `Managing Channels documentation <https://docs.mattermost.com/messaging/managing-channels.html>`__ for more information on Channels and how to manage them. 
+See our `Managing Channels documentation </messaging/managing-channels.html>`__ for more information on Channels and how to manage them. 
 
 Messages
 --------
@@ -87,9 +87,9 @@ In this example, a release manager is notifying teams about an upcoming release 
 
 Since messaging is at the core of Mattermost Channels, here are more examples of what you can do:
 
-- `Mention teammates so they get notified <https://docs.mattermost.com/messaging/mentioning-teammates.html>`__
-- `Formatting text (styling, emojis, code, and so on) <https://docs.mattermost.com/messaging/formatting-text.html>`__
-- `Share files <https://docs.mattermost.com/messaging/sharing-files.html>`__
-- `Execute commands <https://docs.mattermost.com/messaging/executing-slash-commands.html>`__
-- `Save <https://docs.mattermost.com/messaging/saving-messages.html>`__ and `pin <https://docs.mattermost.com/messaging/pinning-messages.html>`__ messages
-- `Keyboard shortcuts <https://docs.mattermost.com/messaging/keyboard-shortcuts.html>`__
+- `Mention teammates so they get notified </messaging/mentioning-teammates.html>`__
+- `Formatting text (styling, emojis, code, and so on) </messaging/formatting-text.html>`__
+- `Share files </messaging/sharing-files.html>`__
+- `Execute commands </messaging/executing-slash-commands.html>`__
+- `Save </messaging/saving-messages.html>`__ and `pin </messaging/pinning-messages.html>`__ messages
+- `Keyboard shortcuts </messaging/keyboard-shortcuts.html>`__

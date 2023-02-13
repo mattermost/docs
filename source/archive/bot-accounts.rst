@@ -138,7 +138,7 @@ If the user is an existing user account you want to preserve, change its usernam
 How do I convert an existing account to a bot account?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-You can use the `mmctl command line tool <https://docs.mattermost.com/manage/mmctl-command-line-tool.html>`_ to convert a user to a bot, with the following command:
+You can use the `mmctl command line tool </manage/mmctl-command-line-tool.html>`_ to convert a user to a bot, with the following command:
 
 .. code-block:: text
 
@@ -197,7 +197,7 @@ Yes. By default, bot accounts can update their own posts.
 If you find yourself unable to edit posts as a bot, check the following:
 
 1. Instead of using a slash command to respond directly, use an an API call for the initial interaction with a user to enable message edits.
-2. If your system is using `advanced permissions <https://docs.mattermost.com/deployment/advanced-permissions.html>`_, then post edits could be disabled for users.
+2. If your system is using `advanced permissions </deployment/advanced-permissions.html>`_, then post edits could be disabled for users.
 
 If neither of the above help resolve your issue, you also have the option to choose what role the bot account has. If System Admin is chosen, then the bot can update any posts in the system. Note that giving the System Admin role to a bot account enables the bot with other System Admin privileges so this should be done with care.
 

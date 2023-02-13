@@ -30,7 +30,7 @@ App data is wiped from the device when a user logs out of the app. If the user i
 Do I need to compile the mobile apps to host my own push notification server?
 ------------------------------------------------------------------------------
 
-Yes. To host your own push notification server, you'll need to compile the mobile apps. See `documentation <https://docs.mattermost.com/mobile/mobile-compile-yourself.html>`__ to learn how to compile your own mobile apps.
+Yes. To host your own push notification server, you'll need to compile the mobile apps. See `documentation </deploy/build-custom-mobile-apps.html>`__ to learn how to compile your own mobile apps.
 
 How do push notifications work?
 -------------------------------
@@ -58,7 +58,7 @@ This means if you use the Mattermost apps from the Apple App Store or Google Pla
 
 .. note:: 
 
-  The use of push notifications with iOS and Android applications will require a moment where the contents of push notifications are visible and unencrypted by a server controlled by either Apple or Google. This is standard for any iOS or Android app. For this reason, there is an `option to omit the contents of Mattermost messages from push notifications <https://docs.mattermost.com/configure/configuration-settings.html#push-notification-contents>`_, or `to configure message content to be fetched from the server <https://docs.mattermost.com/configure/configuration-settings.html#push-notification-contents>`_ when the notification reaches the device (*available in Enterprise Edition E20*) in order to meet certain compliance requirements.
+  The use of push notifications with iOS and Android applications will require a moment where the contents of push notifications are visible and unencrypted by a server controlled by either Apple or Google. This is standard for any iOS or Android app. For this reason, there is an `option to omit the contents of Mattermost messages from push notifications </configure/configuration-settings.html#push-notification-contents>`_, or `to configure message content to be fetched from the server </configure/configuration-settings.html#push-notification-contents>`_ when the notification reaches the device (*available in Enterprise Edition E20*) in order to meet certain compliance requirements.
 
 What post metadata is sent in mobile push notifications?
 --------------------------------------------------------
@@ -75,7 +75,7 @@ The following post metadata is sent in all push notifications:
 - ``Category`` (iOS only, determines if the notifications can be replied to)
 - ``Badge number`` (what the notification badge on the app icon should be set to when the notification is received)
 
-Additional metadata may be sent depending on the System Console setting for `Push Notification Contents <https://docs.mattermost.com/configure/configuration-settings.html#push-notification-contents>`__:
+Additional metadata may be sent depending on the System Console setting for `Push Notification Contents </configure/configuration-settings.html#push-notification-contents>`__:
 
 - **Generic description with sender and channel names:** ``Channel name`` metadata will be included.
 - **Full message content sent in the notification payload:** ``Post content`` and ``Channel name`` metadata will be included.
@@ -88,7 +88,7 @@ When it comes to mobile data privacy, many organizations prioritize secure handl
 
 To solve this, we offer an option for greater protection for Mattermost push notification message data by only sending a unique message ID in the notification payload rather than the full message data (*available in Enterprise Edition E20*). Once the device receives the ID, it then fetches the message content directly from the server and displays the notification per usual. External entities, such as APNS and FCM, handle only the ID and are unable to read any part of the message itself. 
 
-If your organization has strict privacy or compliance needs, the `ID-Only Push Notification <https://docs.mattermost.com/configure/configuration-settings.html#push-notification-contents>`_ setting offers a high level of privacy while still allowing your team members to benefit from mobile push notifications.
+If your organization has strict privacy or compliance needs, the `ID-Only Push Notification </configure/configuration-settings.html#push-notification-contents>`_ setting offers a high level of privacy while still allowing your team members to benefit from mobile push notifications.
 
 What are my options for securing the mobile apps?
 -------------------------------------------------
@@ -108,7 +108,7 @@ What are my options for securing push notifications?
 The following options are available for securing your push notification service:
 
 1.  Protecting notification contents
-  - You can `choose what type of information to include in push notifications <https://docs.mattermost.com/configure/configuration-settings.html#push-notification-contents>`__, such as excluding the message contents if your compliance policies require it. Default server settings have message contents turned off.
+  - You can `choose what type of information to include in push notifications </configure/configuration-settings.html#push-notification-contents>`__, such as excluding the message contents if your compliance policies require it. Default server settings have message contents turned off.
 
 2. Disabling push notifications
   - Push notifications can also be disabled entirely depending on security requirements. Default server settings have push notifications disabled.
@@ -197,7 +197,7 @@ After the above, your ``/assets/override/config.json`` file would look something
         "ExperimentalUsernamePressIsMention": true
     }
 
-7. Finally, `compile your own version <https://docs.mattermost.com/mobile/mobile-compile-yourself.html>`__ of the Mattermost mobile app and Mattermost push proxy server.
+7. Finally, `compile your own version </mobile/mobile-compile-yourself.html>`__ of the Mattermost mobile app and Mattermost push proxy server.
 
 How can I get Google SSO to work with the Mattermost mobile app?
 -----------------------------------------------------------------
@@ -244,6 +244,6 @@ How do I connect users across internal and external networks?
 By setting up global network traffic management, you can send a user to an internal or external network when connecting with a mobile app. Moreover, you can have two separate layers of restrictions on internal and external traffic, such as:
 
  - In the internal network, deploy on a private network via per device VPN.
- - In the external network, deploy with `TLS mutual auth <https://docs.mattermost.com/onboard/ssl-client-certificate.html>`__ with an NGINX proxy, and `client-side certificates <https://docs.mattermost.com/onboard/certificate-based-authentication.html>`__ for desktop and iOS.
+ - In the external network, deploy with `TLS mutual auth </onboard/ssl-client-certificate.html>`__ with an NGINX proxy, and `client-side certificates </onboard/certificate-based-authentication.html>`__ for desktop and iOS.
  
 Many services such as Microsoft Azure provide options for `managing network traffic <https://docs.microsoft.com/en-us/azure/traffic-manager/traffic-manager-overview>`__, or you can engage a services partner to assist.

@@ -1,22 +1,8 @@
 Certificate-based authentication (experimental)
 ===============================================
 
-|enterprise| |cloud| |self-hosted|
-
-.. |enterprise| image:: ../images/enterprise-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in the Mattermost Enterprise subscription plan.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/sign-up
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
+.. include:: ../_static/badges/ent-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available as an experimental feature in legacy Mattermost Enterprise Edition E20.*
 
@@ -24,7 +10,7 @@ Certificate-based authentication (CBA) is available as an experimental feature t
 
 Follow these steps to configure user CBA for your browser and Mattermost Desktop Apps. Support for the Mattermost iOS and Android Apps is planned. It is expected that you can manage certificate distribution for each personal device (BYOD) and their lifecycle management with a service like `OpenSSL <https://www.openssl.org/>`__.
 
-Before you begin, follow the `official guides to install Mattermost <https://docs.mattermost.com/guides/deployment.html#install-guides>`__ on your system, including NGINX configuration as a proxy with SSL and HTTP/2, and a valid SSL certificate such as Let's Encrypt.
+Before you begin, follow the `official guides to install Mattermost </guides/deployment.html#install-guides>`__ on your system, including NGINX configuration as a proxy with SSL and HTTP/2, and a valid SSL certificate such as Let's Encrypt.
 
 .. contents::
   :backlinks: top
@@ -34,7 +20,7 @@ Before you begin, follow the `official guides to install Mattermost <https://doc
 Set up mutual TLS authentication for the Web App
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This is the first step for setting up certificate-based authentication. If you haven't set up mutual TLS authentication yet, `see our documentation to learn more <https://docs.mattermost.com/onboard/ssl-client-certificate.html>`__.
+This is the first step for setting up certificate-based authentication. If you haven't set up mutual TLS authentication yet, `see our documentation to learn more </onboard/ssl-client-certificate.html>`__.
 
 Set up Mattermost server to log in with a client certificate
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

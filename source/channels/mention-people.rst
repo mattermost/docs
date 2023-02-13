@@ -1,27 +1,8 @@
 Mention people in messages
 ==========================
 
-|all-plans| |cloud| |self-hosted|
-
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/sign-up
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
-
-.. |enterprise| image:: ../images/enterprise-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in the Mattermost Enterprise subscription plan.
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 When you want to get the attention of specific Mattermost users, you can use @mentions. Mattermost supports the following types of @mentions:
 
@@ -33,16 +14,19 @@ When you want to get the attention of specific Mattermost users, you can use @me
 
 .. note::
 
-  If you forget to mention someone in a message, editing the existing message to add an @mention won't trigger new @mention notifications, desktop notifications, or notification sounds.
+  - If you forget to mention someone in a message, editing the existing message to add an @mention won't trigger new @mention notifications, desktop notifications, or notification sounds.
+  - Mattermost supports mentions for names that include accents (also known as diacritics). Names like Zoë, Jesús, Sørina, François, André, Jokūbas, Siân, KŠthe, or Fañch are returned in autocomplete results.
 
 @username
 ---------
 
-|all-plans| |cloud| |self-hosted|
-
 You can mention a teammate by using the *@* symbol plus their username to send them a mention notification.
 
-Type *@* to bring up a list of team members who can be mentioned. To filter the list, type the first few letters of any username, first name, last name, or nickname. Press the :kbd:`↑` and :kbd:`↓` arrow keys to scroll through entries in the list, and then press :kbd:`ENTER` on Windows or Linux, or :kbd:`↵` on Mac, to select the person to mention. When selected, the username replaces the full name or nickname.
+Type *@* to bring up a list of team members who can be mentioned. To filter the list, type the first few letters of any username, first name, last name, or nickname. 
+
+.. tip::
+  
+  Using Mattermost in a web browser or the desktop app, you can also press the :kbd:`↑` and :kbd:`↓` arrow keys to scroll through entries in the list, and press :kbd:`ENTER` on Windows or Linux, or :kbd:`↵` on Mac, to select the person to mention. When selected, the username replaces the full name or nickname.
 
 The following example sends a special mention notification to Alice, whose username is **alice**. The notification alerts her of the channel and message where she was mentioned. If Alice is away from Mattermost and has email notifications turned on, she'll receive an email alert of her mention along with the message text.
 
@@ -54,8 +38,6 @@ If the person you mentioned doesn't belong to the channel, a system message is p
 
 @channel and @all
 -----------------
-
-|all-plans| |cloud| |self-hosted|
 
 You can mention an entire channel by typing ``@channel`` or ``@all``. All members of the channel receive a mention notification that behaves the same way as if the members had been mentioned personally. If used in Town Square, it notifies all members of your team.
 
@@ -70,8 +52,6 @@ If a channel has five or more members, you may be prompted to confirm that you w
 @here
 -----
 
-|all-plans| |cloud| |self-hosted|
-
 You can mention everyone who is online in a channel by typing ``@here``. This sends a desktop notification and push notification to members of the channel who are online. It's counted as a mention in the sidebar. Members who are offline don't receive a notification. When they return to Mattermost they won't see a mention counted in the channel sidebar. Members who are away receive a desktop notification only if they have notifications set to **For all activity**, and they won't see a mention counted in the sidebar.
 
 .. code-block:: none
@@ -85,9 +65,10 @@ You can ignore channel-wide mentions in specific channels by enabling the **Chan
 @groupname
 ----------
 
-|enterprise| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-only.rst
+  :start-after: :nosearch:
 
-This feature enables System Admins to configure custom mentions for `LDAP synced groups <https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html>`__ via the Group Configuration page. This functionality is also supported on the mobile app (from v1.34) if the AD/LDAP groups feature is enabled. The mobile app supports auto-suggesting groups, highlights group member mentions, and also provides a warning dialog when a mention will notify more than five users.
+This feature enables system admins to configure custom mentions for `LDAP synced groups </onboard/ad-ldap-groups-synchronization.html>`__ via the Group Configuration page. This functionality is also supported on the mobile app (from v1.34) if the AD/LDAP groups feature is enabled. The mobile app supports auto-suggesting groups, highlights group member mentions, and also provides a warning dialog when a mention will notify more than five users.
 
 Once enabled for a specific group, users can mention and notify the entire group in a channel (similar to ``@channel`` or ``@all``). Members of the group in that channel will receive a notification. If members of the group mentioned aren't members of the channel, the user who posted the mention is prompted to invite them.
 
@@ -107,16 +88,12 @@ As with ``@username`` mentions, use *@* to bring up a list of groups that can be
 Words that trigger mentions
 ---------------------------
 
-|all-plans| |cloud| |self-hosted|
-
 You can customize words that trigger mention notifications in **Settings > Notifications > Words That Trigger Mentions**. By default, you receive mention notifications for your username and for ``@channel``, ``@all`` and ``@here``. You can choose to have your first name be a word that triggers mentions.
 
 You can add a list of customized words to get mention notifications for by typing them into the input box, separated by commas. This is useful if you want to be notified of all posts on certain topics, such as "interviewing" or "marketing".
 
 See all recent mentions
 -----------------------
-
-|all-plans| |cloud| |self-hosted|
 
 Select **@** to the right of the **Search** box to query for your most recent @mentions and words that trigger mentions (excluding LDAP group mentions).
 
@@ -138,16 +115,12 @@ Select **Jump** next to a search result in the right-hand sidebar to jump the ce
 Confirmation dialog warnings
 ----------------------------
 
-|all-plans| |cloud| |self-hosted|
+When your system admin has configured Mattermost to require confirmations for @messages, you must confirm any mention that will trigger notifications for more than five users before sending the notification.
 
-When your System Admin has configured Mattermost to require confirmations for @messages, you must confirm any mention that will trigger notifications for more than five users before sending the notification.
-
-This confirmation dialog only appears when your System Admin has configured this setting in the System Console. See our `configuration settings <https://docs.mattermost.com/configure/configuration-settings.html#show-channel-all-or-here-confirmation-dialog>`__ product documentation for details. This configuration setting is supported on the Mattermost Mobile App (from v1.34) if the `AD/LDAP groups <https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html>`__ feature is enabled.
+This confirmation dialog only appears when your system admin has configured this setting in the System Console. See our `configuration settings </configure/configuration-settings.html#show-channel-all-or-here-confirmation-dialog>`__ product documentation for details. This configuration setting is supported on the Mattermost Mobile App (from v1.34) if the `AD/LDAP groups </onboard/ad-ldap-groups-synchronization.html>`__ feature is enabled.
 
 Mention highlights
 ------------------
-
-|all-plans| |cloud| |self-hosted|
 
 Valid mentions will have highlighted font text with some exceptions, for example if mentions are disabled at the channel level. The highlighted text becomes a hyperlink when a username is displayed. When the username is selected, the profile popover is displayed.
 

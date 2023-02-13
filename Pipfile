@@ -9,6 +9,9 @@ name = "pypi"
 # Release notes: https://github.com/aws/aws-cli/blob/develop/CHANGELOG.rst
 # Repo: https://github.com/aws/aws-cli
 awscli = "==1.20.11"
+#
+# PyTest testing framework (https://docs.pytest.org/en/7.2.x/)
+pytest = "==7.2.0"
 
 [packages]
 #
@@ -27,12 +30,18 @@ sphinx-rtd-theme = "==0.5.2"
 # Repo: https://github.com/executablebooks/myst-parser
 myst-parser = "==0.15.1"
 #
-# Python `typing` package extensions (https://github.com/python/typing/blob/master/typing_extensions/README.rst)
-# Supports MyST Parser on macOS with Python 3.7
-# Repo: https://github.com/python/typing/tree/master/typing_extensions
-typing-extensions = "==3.10.0.0"
-#
 # Sphinx Autobuild (https://github.com/executablebooks/sphinx-autobuild)
+# Repo: https://github.com/executablebooks/sphinx-autobuild
 sphinx-autobuild = "==2021.3.14"
+#
+# Tabbed views for Sphinx (https://sphinx-tabs.readthedocs.io/)
+# Repo: https://github.com/executablebooks/sphinx-tabs
 sphinx-tabs = "3.2.0"
+#
+# Add a "copy" button to code blocks in Sphinx (https://sphinx-copybutton.readthedocs.io/en/latest/)
+# Repo: https://github.com/executablebooks/sphinx-copybutton
 sphinx-copybutton = "0.5.0"
+#
+# Python importlib metadata library; used by Sphinx
+# Repo: https://github.com/python/importlib_metadata
+importlib-metadata = "==4.12.0"

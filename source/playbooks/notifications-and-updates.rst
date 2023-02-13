@@ -1,32 +1,22 @@
 Notifications and updates
 =========================
 
-|all-plans| |cloud| |self-hosted|
-
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/sign-up
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
+  
+.. |vertical-3-dots| image:: ../images/dots-vertical_F01D9.svg
+  :alt: Select the More icon to access additional channel management options.
 
 There are multiple ways to receive updates and notifications.
 
 Status updates
 --------------
 
-Status updates ensure that stakeholders remain informed about the playbook run’s progress. To post a status update:
+Status updates ensure that stakeholders remain informed about the playbook run’s progress. 
 
-1. Select **Toggle Playbook List** from the channel header.
-2. Select **Post update**.
+You can post a status update from the run channel and you can also configure the playbook to send a reminder to post a status update.
+
+To post a status update, open the playbooks tab in Mattermost. Select the run you want to post the update for. In the run details page, select **Post update**.
 
    - If this is the first status update and the playbook has a defined template, that template will be pre-populated here.
    - If this is a subsequent status update, the message from the last status update will be pre-populated here.
@@ -39,7 +29,13 @@ Status updates ensure that stakeholders remain informed about the playbook run�
 4. Select **Post update** to post your status update.
 
 If the playbook has a defined broadcast channel, status updates are copied to the broadcast channel as a message from the Playbooks bot.
-The most recent status post will also appear in the right-hand sidebar of the run channel. To correct or remove a status post, edit or delete the post as needed. Note that status updates that are broadcast to another channel won’t be updated or removed if the original post is edited or deleted.
+
+The most recent status post will also appear in the right-hand sidebar of the run channel and in the timeline. To correct or remove a status post, edit or delete the post as needed. Note that status updates that are broadcast to another channel won’t be updated or removed if the original post is edited or deleted.
+
+Request an update
+-----------------
+
+To request a status update, open the playbooks tab in Mattermost. Select the run you want an update for. In the run details page, select the |vertical-3-dots| menu next to **Post update** and select **Request update**.
 
 Follow runs and playbooks
 -------------------------

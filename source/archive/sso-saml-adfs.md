@@ -172,7 +172,7 @@ You’re now about to finish configuring SAML for Mattermost!
 
 ![adfs_24_mattermost_encryption.png](../../source/images/adfs_24_mattermost_encryption.png)
 
-33 - Set attributes for the SAML Assertions, which will be used to update user information in Mattermost. Attributes for email and username are required and should match the values you entered in ADFS in step 15. See [documentation on SAML configuration settings](https://docs.mattermost.com/configure/configuration-settings.html#saml) for more detail.
+33 - Set attributes for the SAML Assertions, which will be used to update user information in Mattermost. Attributes for email and username are required and should match the values you entered in ADFS in step 15. See [documentation on SAML configuration settings](/configure/configuration-settings.html#saml) for more detail.
 
 For Mattermost servers running 3.3 and earlier, the first name and last name attributes are also required fields.
 
@@ -188,7 +188,7 @@ You’re done! If you’d like to confirm SAML SSO is successfully enabled, swit
 
 It is also recommended to post an announcement about how the migration will work to users.
 
-You may also configure SAML for ADFS by editing `config.json`. Before starting the Mattermost server, edit `config.json` to enable SAML based on [SAML configuration settings](https://docs.mattermost.com/configure/configuration-settings.html#saml). You must restart Mattermost server for the changes to take effect.
+You may also configure SAML for ADFS by editing `config.json`. Before starting the Mattermost server, edit `config.json` to enable SAML based on [SAML configuration settings](/configure/configuration-settings.html#saml). You must restart Mattermost server for the changes to take effect.
 
 ### Troubleshooting
 
@@ -196,7 +196,7 @@ The following are troubleshooting suggestions on common error messages and issue
 
 #### 1. System Administrator locks themselves out of the system
 
-If the System Administrator is locked out of the system during SAML configuration process, they can set an existing account to System Administrator using [a commandline tool](https://docs.mattermost.com/getting-started/admin-onboarding-tasks.html#common-tasks). 
+If the System Administrator is locked out of the system during SAML configuration process, they can set an existing account to System Administrator using [a commandline tool](/getting-started/admin-onboarding-tasks.html#common-tasks). 
 
 #### 2. Received error message: `An account with that username already exists. Please contact your Administrator.`
 

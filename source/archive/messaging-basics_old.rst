@@ -20,7 +20,7 @@ You can use either ``_`` or ``*`` for italics and bold text. See the table below
 .. image:: ../images/messagesTable1.png
    :alt: markdown
 
-**Quickly add emojis** by typing ":" followed by two characters, which will open an emoji autocomplete. If the existing emojis don't cover what you want to express, you can also create your own `Custom Emoji <https://docs.mattermost.com/help/settings/custom-emoji.html>`__.
+**Quickly add emojis** by typing ":" followed by two characters, which will open an emoji autocomplete. If the existing emojis don't cover what you want to express, you can also create your own `Custom Emoji </help/settings/custom-emoji.html>`__.
 
 **Attach files** by dragging and dropping them into Mattermost or clicking the attachment icon in the text input box.
 
@@ -31,8 +31,8 @@ You can use either ``_`` or ``*`` for italics and bold text. See the table below
 
 Learn more about:
 
-* `Composing Messages and Replies <https://docs.mattermost.com/help/messaging/sending-messages.html>`__
-* `Mentioning Teammates <https://docs.mattermost.com/help/messaging/mentioning-teammates.html>`__
-* `Formatting Messages using Markdown <https://docs.mattermost.com/help/messaging/formatting-text.html>`__
-* `Sharing Files <https://docs.mattermost.com/help/messaging/attaching-files.html>`__
-* `Executing Commands <https://docs.mattermost.com/help/messaging/executing-commands.html>`__
+* `Composing Messages and Replies </help/messaging/sending-messages.html>`__
+* `Mentioning Teammates </help/messaging/mentioning-teammates.html>`__
+* `Formatting Messages using Markdown </help/messaging/formatting-text.html>`__
+* `Sharing Files </help/messaging/attaching-files.html>`__
+* `Executing Commands </help/messaging/executing-commands.html>`__

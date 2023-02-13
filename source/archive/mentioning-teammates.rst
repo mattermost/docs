@@ -13,7 +13,7 @@ Mentioning Teammates
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
+  :alt: Available in Mattermost Free.
   
 .. |enterprise| image:: ../images/enterprise-badge.png
   :scale: 30
@@ -88,7 +88,7 @@ You can ignore channel-wide mentions in specific channels by enabling the **Chan
 
 |enterprise| |cloud| |self-hosted|
 
-System Admins can enable mentions for `LDAP synced groups <https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html>`__ via the Group Configuration page. This is supported on the mobile app (from v1.34) if the AD/LDAP Groups feature is enabled. The mobile app supports auto-suggesting groups, highlights group member mentions, and also provides a warning dialog when a mention will notify more than five users.
+System Admins can enable mentions for `LDAP synced groups </onboard/ad-ldap-groups-synchronization.html>`__ via the Group Configuration page. This is supported on the mobile app (from v1.34) if the AD/LDAP Groups feature is enabled. The mobile app supports auto-suggesting groups, highlights group member mentions, and also provides a warning dialog when a mention will notify more than five users.
 
 Once enabled for a specific group, users can mention and notify the entire group in a channel (similar to ``@channel`` or ``@all``). Members of the group in that channel will receive a notification. If members of the group mentioned are not members of the channel, the user who posted the mention is prompted to invite them.
 
@@ -143,7 +143,7 @@ Confirmation dialog warnings
 
 For any mention that will trigger notifications for more than five users, the user posting the mention must confirm the action before sending the notifications.
 
-This confirmation dialog only appears when your System Admin has configured this setting in the System Console. See our `Configuration Settings <https://docs.mattermost.com/configure/configuration-settings.html#show-channel-all-or-here-confirmation-dialog>`__ product documentation for details. This configuration setting is supported on the Mattermost Mobile App (from v1.34) if the `AD/LDAP Groups <https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html>`__ feature is enabled.
+This confirmation dialog only appears when your System Admin has configured this setting in the System Console. See our `Configuration Settings </configure/configuration-settings.html#show-channel-all-or-here-confirmation-dialog>`__ product documentation for details. This configuration setting is supported on the Mattermost Mobile App (from v1.34) if the `AD/LDAP Groups </onboard/ad-ldap-groups-synchronization.html>`__ feature is enabled.
 
 Highlighting
 ------------

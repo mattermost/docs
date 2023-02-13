@@ -19,7 +19,7 @@ Teams
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
+  :alt: Available in Mattermost Free.
 
 .. |enterprise| image:: ../images/enterprise-badge.png
   :scale: 30
@@ -61,7 +61,7 @@ Archiving a team
 
 Select **Archive Team**, then select **Save**. Select **Archive** when prompted to confirm the team archive.
 
-Alternatively, System Admins can use the mmctl ``mmctl team archive`` to archive teams. See the `mmctl product documentation <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-team-archive>`__ for details.
+Alternatively, System Admins can use the mmctl ``mmctl team archive`` to archive teams. See the `mmctl product documentation </manage/mmctl-command-line-tool.html#mmctl-team-archive>`__ for details.
 
 Unarchiving a team
 ^^^^^^^^^^^^^^^^^^
@@ -70,7 +70,7 @@ Unarchiving a team
 
 Select **Unarchive Team**, then select **Save**.
 
-Alternatively, System Admins can use the mmctl ``mmctl team restore`` to unarchive teams. See the `mmctl product documentation <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-team-restore>`__ for details.
+Alternatively, System Admins can use the mmctl ``mmctl team restore`` to unarchive teams. See the `mmctl product documentation </manage/mmctl-command-line-tool.html#mmctl-team-restore>`__ for details.
 
 Team management
 ~~~~~~~~~~~~~~~

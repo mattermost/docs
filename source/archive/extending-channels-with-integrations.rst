@@ -20,7 +20,7 @@ Office 365 Calendar
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
+  :alt: Available in Mattermost Free.
 
 .. |enterprise| image:: ../images/enterprise-badge.png
   :scale: 30
@@ -240,6 +240,6 @@ Slash commands
 
 |all-plans| |cloud| |self-hosted|
 
-Slash commands allow users to interact with external applications by typing ``/`` followed by a command. See the `Executing Slash Commands <https://docs.mattermost.com/messaging/executing-slash-commands.html>`__ product documentation for a list of built-in commands. 
+Slash commands allow users to interact with external applications by typing ``/`` followed by a command. See the `Executing Slash Commands </messaging/executing-slash-commands.html>`__ product documentation for a list of built-in commands. 
 
 Learn more about setting up custom slash commands in our `developer documentation <https://developers.mattermost.com/integrate/other-integrations/slash-commands/>`__.

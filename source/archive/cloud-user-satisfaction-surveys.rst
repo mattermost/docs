@@ -8,7 +8,7 @@ User satisfaction surveys
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
+  :alt: Available in Mattermost Free.
 
 .. |cloud| image:: ../images/cloud-badge.png
   :scale: 30
@@ -28,7 +28,7 @@ Administration
 Is the survey enabled by default?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The user satisfaction survey is a pre-packaged plugin, and surveys are enabled by default. However, the plugin will not be activated on any workspaces that have `Error and Diagnostic Reporting <https://docs.mattermost.com/manage/telemetry.html>`__ disabled, meaning no surveys or data collection occurs.
+The user satisfaction survey is a pre-packaged plugin, and surveys are enabled by default. However, the plugin will not be activated on any workspaces that have `Error and Diagnostic Reporting </manage/telemetry.html>`__ disabled, meaning no surveys or data collection occurs.
 
 How can surveys be disabled?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~

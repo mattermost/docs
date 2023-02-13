@@ -3,27 +3,27 @@
 [Mattermost](https://mattermost.com) is an open source platform for secure collaboration across the entire software development lifecycle. This changelog summarizes updates for all self-hosted versions of Mattermost prior to v6.0.
 
 ## Latest Mattermost releases
-See [changelog in progress](https://bit.ly/2nK3cVf) for the upcoming release, and see the [Mattermost Self-Hosted Changelog](self-hosted-changelog) for details on the latest self-hosted versions of Mattermost including the most recent [Extended Support Release (ESR)](https://docs.mattermost.com/upgrade/extended-support-release.html).
+See [changelog in progress](https://bit.ly/2nK3cVf) for the upcoming release, and see the [Mattermost Self-Hosted Changelog](self-hosted-changelog) for details on the latest self-hosted versions of Mattermost including the most recent [Extended Support Release (ESR)](/upgrade/extended-support-release.html).
 
-## Release v5.39 - [Quality Release](https://docs.mattermost.com/upgrade/release-definitions.html#quality-release)
+## Release v5.39 - [Quality Release](/upgrade/release-definitions.html#quality-release)
 
 - **v5.39.3, released 2021-12-17**
-  - Mattermost v5.39.3 contains medium level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Mattermost v5.39.3 contains medium level security fixes. [Upgrading](/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Added a general performance fix for loading the web application and typing.
   - Improved performance while typing by moving some autocomplete layout calculations.
   - Improved performance by reducing DOM usage during render.
   - Removed real-time updates of a couple of features to prevent overloading servers on user updates. The "This channel contains guests" indicator and the number of timezones displayed when notifying members of a group will only be updated on channel change now.
   - Fixed an issue where v5.39 reported an incorrect mmctl version.
 - **v5.39.2, released 2021-11-15**
-  - Mattermost v5.39.1 contains a medium level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Mattermost v5.39.1 contains a medium level security fix. [Upgrading](/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
 - **v5.39.1, released 2021-10-27**
-  - Mattermost v5.39.1 contains a medium level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Mattermost v5.39.1 contains a medium level security fix. [Upgrading](/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Fixed an issue with fetching threads upon websocket reconnection.
   - Fixed a race condition in telemetry IDs on High Availability servers [MM-39343](https://mattermost.atlassian.net/browse/MM-39343).
 - **5.39.0, released 2021-09-16**
   - Original 5.39 release
 
-Mattermost v5.39.0 contains a low level security fix. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+Mattermost v5.39.0 contains a low level security fix. [Upgrading](/administration/upgrade.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
 
 ### Improvements
 
@@ -67,9 +67,9 @@ Mattermost v5.39.0 contains a low level security fix. [Upgrading](https://docs.m
 
 The following deprecations are planned for the Mattermost v6.0 release, which is scheduled for 2021/10/13. This list is subject to change prior to the release.
 
-1. [Legacy Command Line Tools](https://docs.mattermost.com/manage/command-line-tools.html). All commands have been fully replaced by [mmctl](https://docs.mattermost.com/manage/mmctl-command-line-tool.html) and new commands have been added over the last few months, making this tool a full and robust replacement. 
+1. [Legacy Command Line Tools](/manage/command-line-tools.html). All commands have been fully replaced by [mmctl](/manage/mmctl-command-line-tool.html) and new commands have been added over the last few months, making this tool a full and robust replacement. 
 
-2. [Slack Import via the web app](https://docs.mattermost.com/onboard/migrating-to-mattermost.html#migrating-from-slack-using-the-mattermost-web-app). The Slack import tool accessible via the Team Setting menu is being replaced by the [mmetl](https://docs.mattermost.com/onboard/migrating-to-mattermost.html#migrating-from-slack-using-the-mattermost-mmetl-tool-and-bulk-import) tool that is much more comprehensive for the types of data it can assist in uploading. 
+2. [Slack Import via the web app](/onboard/migrating-to-mattermost.html#migrating-from-slack-using-the-mattermost-web-app). The Slack import tool accessible via the Team Setting menu is being replaced by the [mmetl](/onboard/migrating-to-mattermost.html#migrating-from-slack-using-the-mattermost-mmetl-tool-and-bulk-import) tool that is much more comprehensive for the types of data it can assist in uploading. 
 
 3. MySQL versions below 5.7.7. Minimum support will now be for 5.7.12. This version introduced a native JSON data type that lets us improve performance and scalability of several database fields (most notably Users and Posts props). Additionally, version 5.6 (our current minimum version) reached [EOL in February 2021](https://www.mysql.com/support/eol-notice.html).
 
@@ -77,26 +77,26 @@ The following deprecations are planned for the Mattermost v6.0 release, which is
 
 5. Windows 7 reached [EOL in January 2020](https://support.microsoft.com/en-us/windows/windows-7-support-ended-on-january-14-2020-b75d4580-2cc7-895a-2c9c-1466d9a53962). We will no longer provide support for Mattermost Desktop App issues on Windows 7.
 
-6. [DisableLegacyMFAEndpoint](https://docs.mattermost.com/configure/configuration-settings.html#disable-legacy-mfa-api-endpoint) configuration setting.
+6. [DisableLegacyMFAEndpoint](/configure/configuration-settings.html#disable-legacy-mfa-api-endpoint) configuration setting.
 
-7. [ExperimentalTimezone](https://docs.mattermost.com/configure/configuration-settings.html#timezone) configuration setting. The config setting will be removed and the feature will be promoted to general availability.
+7. [ExperimentalTimezone](/configure/configuration-settings.html#timezone) configuration setting. The config setting will be removed and the feature will be promoted to general availability.
 
 8. All legacy channel sidebar experimental configuration settings. We encourage customers using these settings to upgrade to v5.32 or later to access [custom, collapsible channel categories](https://mattermost.com/blog/custom-collapsible-channel-categories/) among many other channel organization features. The settings being deprecated include:
 
-   - [EnableLegacySidebar](https://docs.mattermost.com/configure/configuration-settings.html#enable-legacy-sidebar)
-   - [ExperimentalTownSquareIsReadOnly](https://docs.mattermost.com/configure/configuration-settings.html#town-square-is-read-only-experimental)
-   - [ExperimentalHideTownSquareinLHS](https://docs.mattermost.com/configure/configuration-settings.html#town-square-is-hidden-in-left-hand-sidebar-experimental)
-   - [EnableXToLeaveChannelsFromLHS](https://docs.mattermost.com/configure/configuration-settings.html#enable-x-to-leave-channels-from-left-hand-sidebar-experimental)
-   - [CloseUnusedDirectMessages](https://docs.mattermost.com/configure/configuration-settings.html#autoclose-direct-messages-in-sidebar-experimental)
-   - [ExperimentalChannelOrganization](https://docs.mattermost.com/configure/configuration-settings.html#sidebar-organization)
-   - [ExperimentalChannelSidebarOrganization](https://docs.mattermost.com/configure/configuration-settings.html#experimental-sidebar-features)
+   - [EnableLegacySidebar](/configure/configuration-settings.html#enable-legacy-sidebar)
+   - [ExperimentalTownSquareIsReadOnly](/configure/configuration-settings.html#town-square-is-read-only-experimental)
+   - [ExperimentalHideTownSquareinLHS](/configure/configuration-settings.html#town-square-is-hidden-in-left-hand-sidebar-experimental)
+   - [EnableXToLeaveChannelsFromLHS](/configure/configuration-settings.html#enable-x-to-leave-channels-from-left-hand-sidebar-experimental)
+   - [CloseUnusedDirectMessages](/configure/configuration-settings.html#autoclose-direct-messages-in-sidebar-experimental)
+   - [ExperimentalChannelOrganization](/configure/configuration-settings.html#sidebar-organization)
+   - [ExperimentalChannelSidebarOrganization](/configure/configuration-settings.html#experimental-sidebar-features)
 
-9. [All configuration settings previously marked as “Deprecated”](https://docs.mattermost.com/configure/configuration-settings.html#deprecated-configuration-settings).
+9. [All configuration settings previously marked as “Deprecated”](/configure/configuration-settings.html#deprecated-configuration-settings).
 
 10. Changes to ``mattermost-server/model`` for naming consistency.
 
 ### Known Issues
- - [Collapsed Reply Threads](https://docs.mattermost.com/messaging/organizing-conversations.html) is currently in beta. Before enabling the feature, please ensure you are well versed in the [known issues](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues),  particularly relating to database resource requirements and server performance implications. If you cannot easily scale up your database size, or are running the Mattermost application server and database server on the same machine, we recommended waiting to enable Collapsed Reply Threads until it is [promoted to general availability in Q2 2022](https://mattermost.com/blog/collapsed-reply-threads-ga/). Learn more about these [performance considerations here](https://support.mattermost.com/hc/en-us/articles/4413183568276).
+ - [Collapsed Reply Threads](/messaging/organizing-conversations.html) is currently in beta. Before enabling the feature, please ensure you are well versed in the [known issues](/messaging/organizing-conversations.html#known-issues),  particularly relating to database resource requirements and server performance implications. If you cannot easily scale up your database size, or are running the Mattermost application server and database server on the same machine, we recommended waiting to enable Collapsed Reply Threads until it is [promoted to general availability in Q2 2022](https://mattermost.com/blog/collapsed-reply-threads-ga/). Learn more about these [performance considerations here](https://support.mattermost.com/hc/en-us/articles/4413183568276).
  - Experimental timezones and custom statuses can cause an increase in CPU usage and database connections for servers with an E20 license. A current workaround is to disable custom statuses or to disable experimental timezones.
  - Adding an at-mention at the start of a post draft and pressing the leftwards or rightwards arrow can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
  - Pinned posts are no longer highlighted [MM-34870](https://mattermost.atlassian.net/browse/MM-34870).
@@ -110,12 +110,12 @@ The following deprecations are planned for the Mattermost v6.0 release, which is
 ### Contributors
  - [aaronrothschild](https://github.com/aaronrothschild), [adammorawski1](https://github.com/adammorawski1), [Adovenmuehle](https://github.com/Adovenmuehle), [aeomin](https://github.com/aeomin), [agarciamontoro](https://github.com/agarciamontoro), [AGMETEOR](https://github.com/AGMETEOR), [agnivade](https://github.com/agnivade), [amirmoyousefi](https://github.com/amirmoyousefi), [amyblais](https://github.com/amyblais), [amynicol1985](https://github.com/amynicol1985), [anurag6713](https://github.com/anurag6713), [arjitc](https://github.com/arjitc), [ArmanChand](https://github.com/ArmanChand), [asaadmahmood](https://github.com/asaadmahmood), [ashishbhate](https://github.com/ashishbhate), [AshishDhama](https://github.com/AshishDhama), [asimsedhain](https://github.com/asimsedhain), [aspleenic](https://github.com/aspleenic), [BenCookie95](https://github.com/BenCookie95), [BenLloydPearson](https://github.com/BenLloydPearson), [calebroseland](https://github.com/calebroseland), [chenilim](https://github.com/chenilim), [chikei](https://github.com/chikei), [chitramdasgupta](https://github.com/chitramdasgupta), [cobenash](https://github.com/cobenash), [coltoneshaw](https://github.com/coltoneshaw), [cpanato](https://github.com/cpanato), [cpoile](https://github.com/cpoile), [crspeller](https://github.com/crspeller), [ctlaltdieliet](https://github.com/ctlaltdieliet), [cvockrodt](https://github.com/cvockrodt), [cwarnermm](https://github.com/cwarnermm), [dbpolito](https://github.com/dbpolito), [deanwhillier](https://github.com/deanwhillier), [devinbinnie](https://github.com/devinbinnie), [DeviousLab](https://github.com/DeviousLab), [DjMagicFingers](https://github.com/DjMagicFingers), [Duaard](https://github.com/Duaard), [elyscape](https://github.com/elyscape), [emilyacook](https://github.com/emilyacook), [enahum](https://github.com/enahum), [enelson720](https://github.com/enelson720), [engineereng](https://github.com/engineereng), [ewwollesen](https://github.com/ewwollesen), [fksu](https://github.com/fksu), [flynbit](https://github.com/flynbit), [Francois-D](https://github.com/Francois-D), [furqanmlk](https://github.com/furqanmlk), [gabrieljackson](https://github.com/gabrieljackson), [gigawhitlocks](https://github.com/gigawhitlocks), [gozeloglu](https://github.com/gozeloglu), [gruceqq](https://translate.mattermost.com/user/gruceqq/), [haalcala](https://github.com/haalcala), [haardikdharma10](https://github.com/haardikdharma10), [hahmadia](https://github.com/hahmadia), [hanzei](https://github.com/hanzei), [harshilsharma63](https://github.com/harshilsharma63), [hectorskypl](https://github.com/hectorskypl), [hmhealey](https://github.com/hmhealey), [icelander](https://github.com/icelander), [iomodo](https://github.com/iomodo), [isacikgoz](https://github.com/isacikgoz), [it33](https://github.com/it33), [ivanaairenee](https://github.com/ivanaairenee), [jadrales](https://github.com/jadrales), [jamiehurewitz](https://github.com/jamiehurewitz), [jasonblais](https://github.com/jasonblais), [jayaddison-collabora](https://github.com/jayaddison-collabora), [jespino](https://github.com/jespino), [jfrerich](https://github.com/jfrerich), [Johennes](https://github.com/Johennes), [johnsonbrothers](https://github.com/johnsonbrothers), [josephbaylon](https://github.com/josephbaylon), [JtheBAB](https://github.com/JtheBAB), [jufab](https://github.com/jufab), [jupenur](https://github.com/jupenur), [justinegeffen](https://github.com/justinegeffen), [jwilander](https://github.com/jwilander), [kaakaa](https://github.com/kaakaa), [kamre](https://github.com/kamre), [kayazeren](https://github.com/kayazeren), [KobeBergmans](https://github.com/KobeBergmans), [koox00](https://github.com/koox00), [krutarththakkar](https://github.com/krutarththakkar), [kscheel](https://github.com/kscheel), [larkox](https://github.com/larkox), [LauSam09](https://github.com/LauSam09), [levb](https://github.com/levb), [lieut-data](https://github.com/lieut-data), [lindalumitchell](https://github.com/lindalumitchell), [maisnamrajusingh](https://github.com/maisnamrajusingh), [majidsajadi](https://github.com/majidsajadi), [maliur](https://github.com/maliur), [manojmalik20](https://github.com/manojmalik20), [marianunez](https://github.com/marianunez), [mattermod](https://github.com/mattermod), [matthewbirtch](https://github.com/matthewbirtch), [matthew.williams](https://translate.mattermost.com/user/matthew-w/), [metanerd](https://github.com/metanerd), [mgdelacroix](https://github.com/mgdelacroix), [michelengelen](https://github.com/michelengelen), [mickmister](https://github.com/mickmister), [migbot](https://github.com/migbot), [mkraft](https://github.com/mkraft), [mlongo4290](https://github.com/mlongo4290), [mmskv](https://github.com/mmskv), [mrckndt](https://github.com/mrckndt), [Mshahidtaj](https://github.com/Mshahidtaj), [nat-gunner](https://github.com/nat-gunner), [neallred](https://github.com/neallred), [nevyangelova](https://github.com/nevyangelova), [nikolaizah](https://github.com/nikolaizah), [Nog-Frog](https://github.com/Nog-Frog), [pablovelezvidal](https://github.com/pablovelezvidal), [Prassud](https://github.com/Prassud), [rbradleyhaas](https://github.com/rbradleyhaas), [redrru](https://github.com/redrru), [rodcorsi](https://github.com/rodcorsi), [roopakv](https://github.com/roopakv), [rrey](https://github.com/rrey), [Rutam21](https://github.com/Rutam21), [sakaitsu](https://translate.mattermost.com/user/sakaitsu/), [saturninoabril](https://github.com/saturninoabril), [Sayanta66](https://github.com/Sayanta66), [sbishel](https://github.com/sbishel), [Shahzayb](https://github.com/Shahzayb), [Shaz-25](https://github.com/Shaz-25), [sibasankarnayak](https://github.com/sibasankarnayak), [sonereker](https://github.com/sonereker), [spirosoik](https://github.com/spirosoik), [srkgupta](https://github.com/srkgupta), [stafot](https://github.com/stafot), [streamer45](https://github.com/streamer45), [stylianosrigas](https://github.com/stylianosrigas), [Szymongib](https://github.com/Szymongib), [talesmc](https://github.com/talesmc), [thePanz](https://github.com/thePanz), [tsabi](https://translate.mattermost.com/user/tsabi/), [VA2XJM](https://github.com/VA2XJM), [vadimasadchi](https://github.com/vadimasadchi), [vinod-demansol](https://github.com/vinod-demansol), [wget](https://github.com/wget), [WietseWind](https://github.com/WietseWind), [wiggin77](https://github.com/wiggin77), [Willyfrog](https://github.com/Willyfrog), [yedamao](https://github.com/yedamao), [YJSoft](https://github.com/YJSoft), [zefhemel](https://github.com/zefhemel), [Ziggiz](https://github.com/Ziggiz)
 
-## Release v5.38 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
+## Release v5.38 - [Feature Release](/administration/release-definitions.html#feature-release)
 
 - **v5.38.4, released 2021-11-15**
-  - Mattermost v5.38.4 contains a medium level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Mattermost v5.38.4 contains a medium level security fix. [Upgrading](/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
 - **v5.38.3, released 2021-10-27**
-  - Mattermost v5.38.3 contains a medium level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Mattermost v5.38.3 contains a medium level security fix. [Upgrading](/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Fixed a race condition in telemetry IDs on High Availability servers [MM-39343](https://mattermost.atlassian.net/browse/MM-39343).
 - **v5.38.2, released 2021-08-26**
   - Upgraded Go version to 1.16.7 to fix an application crash issue.
@@ -125,7 +125,7 @@ The following deprecations are planned for the Mattermost v6.0 release, which is
 - **v5.38.0, released 2021-08-16**
   - Original 5.38.0 release
 
-Mattermost v5.38.0 contains low to medium level security fixes. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+Mattermost v5.38.0 contains low to medium level security fixes. [Upgrading](/administration/upgrade.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
 
 ### Deprecations
  - The “config watcher” (the mechanism that automatically reloads the ``config.json`` file) has been removed in favor of the ``mmctl config reload`` command, which must be run to apply configuration changes after they are made on disk. This change improves configuration performance and robustness.
@@ -134,7 +134,7 @@ Mattermost v5.38.0 contains low to medium level security fixes. [Upgrading](http
  - v5.38 adds fixes for some of the incorrect mention counts and unreads around threads and channels since the introduction of Collapsed Reply Threads (Beta). This fix is done through a SQL migration, and it may take several minutes to complete for large databases. The ``fixCRTChannelMembershipCounts`` fix takes 1 minute and 20 seconds for a database containing approximately 4 million channel memberships and about 130,000 channels. The ``fixCRTThreadCountsAndUnreads`` fix takes about 3 minutes and 30 seconds for a database containing 56367 threads, 124587 thread memberships, and 220801 channel memberships. These are on MySQL v5.6.51.
  - Focalboard v0.8.2 (released with Mattermost v5.38.0) requires Mattermost v5.37+ due to the new database connection system.
 
-**IMPORTANT:** If you upgrade from a release earlier than v5.37, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
+**IMPORTANT:** If you upgrade from a release earlier than v5.37, please read the other [Important Upgrade Notes](/upgrade/important-upgrade-notes.html).
 
 ### Highlights
 
@@ -222,9 +222,9 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 The following deprecations are planned for the Mattermost v6.0 release, which is scheduled for 2021/10/15. This list is subject to change prior to the release.
 
-1. [Legacy Command Line Tools](https://docs.mattermost.com/manage/command-line-tools.html). All commands have been fully replaced by [mmctl](https://docs.mattermost.com/manage/mmctl-command-line-tool.html) and new commands have been added over the last few months, making this tool a full and robust replacement. 
+1. [Legacy Command Line Tools](/manage/command-line-tools.html). All commands have been fully replaced by [mmctl](/manage/mmctl-command-line-tool.html) and new commands have been added over the last few months, making this tool a full and robust replacement. 
 
-2. [Slack Import via the web app](https://docs.mattermost.com/onboard/migrating-to-mattermost.html#migrating-from-slack-using-the-mattermost-web-app). The Slack import tool accessible via the Team Setting menu is being replaced by the [mmetl](https://docs.mattermost.com/onboard/migrating-to-mattermost.html#migrating-from-slack-using-the-mattermost-mmetl-tool-and-bulk-import) tool that is much more comprehensive for the types of data it can assist in uploading. 
+2. [Slack Import via the web app](/onboard/migrating-to-mattermost.html#migrating-from-slack-using-the-mattermost-web-app). The Slack import tool accessible via the Team Setting menu is being replaced by the [mmetl](/onboard/migrating-to-mattermost.html#migrating-from-slack-using-the-mattermost-mmetl-tool-and-bulk-import) tool that is much more comprehensive for the types of data it can assist in uploading. 
 
 3. MySQL versions below 5.7.7. Minimum support will now be for 5.7.12. This version introduced a native JSON data type that lets us improve performance and scalability of several database fields (most notably Users and Posts props). Additionally, version 5.6 (our current minimum version) reached [EOL in February 2021](https://www.mysql.com/support/eol-notice.html).
 
@@ -232,26 +232,26 @@ The following deprecations are planned for the Mattermost v6.0 release, which is
 
 5. Windows 7 reached [EOL in January 2020](https://support.microsoft.com/en-us/windows/windows-7-support-ended-on-january-14-2020-b75d4580-2cc7-895a-2c9c-1466d9a53962). We will no longer provide support for Mattermost Desktop App issues on Windows 7.
 
-6. [DisableLegacyMFA](https://docs.mattermost.com/configure/configuration-settings.html#disable-legacy-mfa-api-endpoint) configuration setting.
+6. [DisableLegacyMFA](/configure/configuration-settings.html#disable-legacy-mfa-api-endpoint) configuration setting.
 
-7. [ExperimentalTimezone](https://docs.mattermost.com/configure/configuration-settings.html#timezone) configuration setting.
+7. [ExperimentalTimezone](/configure/configuration-settings.html#timezone) configuration setting.
 
 8. All legacy channel sidebar experimental configuration settings. We encourage customers using these settings to upgrade to v5.32 or later to access [custom, collapsible channel categories](https://mattermost.com/blog/custom-collapsible-channel-categories/) among many other channel organization features. The settings being deprecated include:
 
-   - [EnableLegacySidebar](https://docs.mattermost.com/configure/configuration-settings.html#enable-legacy-sidebar)
-   - [ExperimentalTownSquareIsReadOnly](https://docs.mattermost.com/configure/configuration-settings.html#town-square-is-read-only-experimental)
-   - [ExperimentalHideTownSquareinLHS](https://docs.mattermost.com/configure/configuration-settings.html#town-square-is-hidden-in-left-hand-sidebar-experimental)
-   - [EnableXToLeaveChannelsFromLHS](https://docs.mattermost.com/configure/configuration-settings.html#enable-x-to-leave-channels-from-left-hand-sidebar-experimental)
-   - [CloseUnusedDirectMessages](https://docs.mattermost.com/configure/configuration-settings.html#autoclose-direct-messages-in-sidebar-experimental)
-   - [ExperimentalChannelOrganization](https://docs.mattermost.com/configure/configuration-settings.html#sidebar-organization)
-   - [ExperimentalChannelSidebarOrganization](https://docs.mattermost.com/configure/configuration-settings.html#experimental-sidebar-features)
+   - [EnableLegacySidebar](/configure/configuration-settings.html#enable-legacy-sidebar)
+   - [ExperimentalTownSquareIsReadOnly](/configure/configuration-settings.html#town-square-is-read-only-experimental)
+   - [ExperimentalHideTownSquareinLHS](/configure/configuration-settings.html#town-square-is-hidden-in-left-hand-sidebar-experimental)
+   - [EnableXToLeaveChannelsFromLHS](/configure/configuration-settings.html#enable-x-to-leave-channels-from-left-hand-sidebar-experimental)
+   - [CloseUnusedDirectMessages](/configure/configuration-settings.html#autoclose-direct-messages-in-sidebar-experimental)
+   - [ExperimentalChannelOrganization](/configure/configuration-settings.html#sidebar-organization)
+   - [ExperimentalChannelSidebarOrganization](/configure/configuration-settings.html#experimental-sidebar-features)
 
-9. [All configuration settings previously marked as “Deprecated”](https://docs.mattermost.com/configure/configuration-settings.html#deprecated-configuration-settings).
+9. [All configuration settings previously marked as “Deprecated”](/configure/configuration-settings.html#deprecated-configuration-settings).
 
 10. Changes to ``mattermost-server/model`` for naming consistency.
 
 ### Known Issues
- - [Collapsed Reply Threads](https://docs.mattermost.com/messaging/organizing-conversations.html) is currently in beta. Before enabling the feature, please ensure you are well versed in the [known issues](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues),  particularly relating to database resource requirements and server performance implications. If you cannot easily scale up your database size, or are running the Mattermost application server and database server on the same machine, we recommended waiting to enable Collapsed Reply Threads until it is [promoted to general availability in Q2 2022](https://mattermost.com/blog/collapsed-reply-threads-ga/). Learn more about these [performance considerations here](https://support.mattermost.com/hc/en-us/articles/4413183568276).
+ - [Collapsed Reply Threads](/messaging/organizing-conversations.html) is currently in beta. Before enabling the feature, please ensure you are well versed in the [known issues](/messaging/organizing-conversations.html#known-issues),  particularly relating to database resource requirements and server performance implications. If you cannot easily scale up your database size, or are running the Mattermost application server and database server on the same machine, we recommended waiting to enable Collapsed Reply Threads until it is [promoted to general availability in Q2 2022](https://mattermost.com/blog/collapsed-reply-threads-ga/). Learn more about these [performance considerations here](https://support.mattermost.com/hc/en-us/articles/4413183568276).
  - The server version for v5.38.2 for Team Edition is reported as ``5.39.2``.
  - Deleted posts get displayed in channels without new activity after the data retention job is run [MM-36574](https://mattermost.atlassian.net/browse/MM-36574).
  - Adding an at-mention at the start of a post draft and pressing the leftwards or rightwards arrow can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
@@ -268,21 +268,24 @@ The following deprecations are planned for the Mattermost v6.0 release, which is
 ### Contributors
  - [Adovenmuehle](https://github.com/Adovenmuehle), [aeomin](https://github.com/aeomin), [agarciamontoro](https://github.com/agarciamontoro), [AGMETEOR](https://github.com/AGMETEOR), [agnivade](https://github.com/agnivade), [ahmaddanialmohd](https://github.com/ahmaddanialmohd), [aileenpalafox](https://github.com/aileenpalafox), [amyblais](https://github.com/amyblais), [amynicol1985](https://github.com/amynicol1985), [angeloskyratzakos](https://github.com/angeloskyratzakos), [anurag6713](https://github.com/anurag6713), [arjitc](https://github.com/arjitc), [arvinDarmawan](https://github.com/arvinDarmawan), [asaadmahmood](https://github.com/asaadmahmood), [ashishbhate](https://github.com/ashishbhate), [AshishDhama](https://github.com/AshishDhama), [aspleenic](https://github.com/aspleenic), [avinashlng1080](https://github.com/avinashlng1080), [bakurits](https://github.com/bakurits), [bbodenmiller](https://github.com/bbodenmiller), [BenCookie95](https://github.com/BenCookie95), [calebroseland](https://github.com/calebroseland), [chenilim](https://github.com/chenilim), [chikei](https://github.com/chikei), [cognvn](https://github.com/cognvn), [colorfusion](https://github.com/colorfusion), [coltoneshaw](https://github.com/coltoneshaw), [cpanato](https://github.com/cpanato), [cpoile](https://github.com/cpoile), [crspeller](https://github.com/crspeller), [ctlaltdieliet](https://github.com/ctlaltdieliet), [cwarnermm](https://github.com/cwarnermm), [darkLord19](https://github.com/darkLord19), [deanwhillier](https://github.com/deanwhillier), [devinbinnie](https://github.com/devinbinnie), [ditsemto](https://github.com/ditsemto), [DSchalla](https://github.com/DSchalla), [enahum](https://github.com/enahum), [enelson720](https://github.com/enelson720), [engineereng](https://github.com/engineereng), [esethna](https://github.com/esethna), [evelikov](https://github.com/evelikov), [ewwollesen](https://github.com/ewwollesen), [flynbit](https://github.com/flynbit), [furqanmlk](https://github.com/furqanmlk), [gabrieljackson](https://github.com/gabrieljackson), [gbonnefille](https://github.com/gbonnefille), [gigawhitlocks](https://github.com/gigawhitlocks), [gruceqq](https://translate.mattermost.com/user/gruceqq/), [hackercat3211](https://github.com/hackercat3211), [hahmadia](https://github.com/hahmadia), [hanzei](https://github.com/hanzei), [harshilsharma63](https://github.com/harshilsharma63), [hectorskypl](https://github.com/hectorskypl), [hmhealey](https://github.com/hmhealey), [iomodo](https://github.com/iomodo), [isacikgoz](https://github.com/isacikgoz), [it33](https://github.com/it33), [jasonblais](https://github.com/jasonblais), [jayaddison-collabora](https://github.com/jayaddison-collabora), [jespino](https://github.com/jespino), [jfrerich](https://github.com/jfrerich), [johnsonbrothers](https://github.com/johnsonbrothers), [josephbaylon](https://github.com/josephbaylon), [jprusch](https://github.com/jprusch), [justinegeffen](https://github.com/justinegeffen), [jwilander](https://github.com/jwilander), [kaakaa](https://github.com/kaakaa), [kamre](https://github.com/kamre), [kayazeren](https://github.com/kayazeren), [Konghuy](https://github.com/Konghuy), [koox00](https://github.com/koox00), [larkox](https://github.com/larkox), [levb](https://github.com/levb), [lieut-data](https://github.com/lieut-data), [lindalumitchell](https://github.com/lindalumitchell), [lordinkavu](https://github.com/lordinkavu), [lynn915](https://github.com/lynn915), [madhavhugar](https://github.com/madhavhugar), [maisnamrajusingh](https://github.com/maisnamrajusingh), [majidsajadi](https://github.com/majidsajadi), [manojmalik20](https://github.com/manojmalik20), [marianunez](https://github.com/marianunez), [matthewbirtch](https://github.com/matthewbirtch), [matthew.williams](https://translate.mattermost.com/user/matthew-w/), [metanerd](https://github.com/metanerd), [mgdelacroix](https://github.com/mgdelacroix), [michaelgamble](https://github.com/michaelgamble), [michelengelen](https://github.com/michelengelen), [mickmister](https://github.com/mickmister), [mkraft](https://github.com/mkraft), [mlongo4290](https://github.com/mlongo4290), [mrckndt](https://github.com/mrckndt), [Mshahidtaj](https://github.com/Mshahidtaj), [N3rdP1um23](https://github.com/N3rdP1um23), [nat-gunner](https://github.com/nat-gunner), [natalie-hub](https://github.com/natalie-hub), [neallred](https://github.com/neallred), [nevyangelova](https://github.com/nevyangelova), [nickboldt](https://github.com/nickboldt), [nickmisasi](https://github.com/nickmisasi), [nika-begiashvili](https://github.com/nika-begiashvili), [nikolaizah](https://github.com/nikolaizah), [ogi-m](https://github.com/ogi-m), [oh6hay](https://github.com/oh6hay), [pablovelezvidal](https://github.com/pablovelezvidal), [papanireal](https://github.com/papanireal), [petrmifek](https://github.com/petrmifek), [Pezhvak](https://github.com/Pezhvak), [robinmetral](https://github.com/robinmetral), [rodcorsi](https://github.com/rodcorsi), [Roy-Orbison](https://github.com/Roy-Orbison), [sakaitsu](https://translate.mattermost.com/user/sakaitsu/), [saturninoabril](https://github.com/saturninoabril), [Sayanta66](https://github.com/Sayanta66), [source-punk](https://github.com/source-punk), [stafot](https://github.com/stafot), [stevemudie](https://github.com/stevemudie), [streamer45](https://github.com/streamer45), [stylianosrigas](https://github.com/stylianosrigas), [Szymongib](https://github.com/Szymongib), [thePanz](https://github.com/thePanz), [thierrymarianne](https://github.com/thierrymarianne), [tronginc](https://github.com/tronginc), [tsabi](https://translate.mattermost.com/user/tsabi/), [VA2XJM](https://github.com/VA2XJM), [wget](https://github.com/wget), [wiersgallak](https://github.com/wiersgallak), [wiggin77](https://github.com/wiggin77), [Willyfrog](https://github.com/Willyfrog), [xlanor](https://github.com/xlanor), [xuanvi26](https://github.com/xuanvi26), [yedamao](https://github.com/yedamao), [zefhemel](https://github.com/zefhemel)
 
-## Release v5.37 - [Extended Support Release](https://docs.mattermost.com/administration/extended-support-release.html)
+## Release v5.37 - [Extended Support Release](/administration/extended-support-release.html)
 
+- **5.37.10, released 2022-08-31**
+  - Improved groups query performance by not counting deleted members.
+  - Prevented the request for counting channel members in a group when the feature is disabled to prevent performance problems at scale.
 - **v5.37.9, released 2022-03-10**
-  - Mattermost v5.37.9 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Mattermost v5.37.9 contains medium severity level security fixes. [Upgrading](/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
 - **v5.37.8, released 2022-02-03**
-  - Mattermost v5.37.8 contains medium level security fixes. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Mattermost v5.37.8 contains medium level security fixes. [Upgrading](/administration/upgrade.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - The default for ``ThreadAutoFollow`` has been changed to ``false``. This does not affect existing configurations where this value is already set to ``true`` [MM-41351](https://mattermost.atlassian.net/browse/MM-41351). 
   - Prevented some instances where operations relating to Collapsed Reply Threads added load to the database server even when the ``ThreadAutoFollow`` and ``CollapsedThreads`` config settings were disabled [MM-41350](https://mattermost.atlassian.net/browse/MM-41350).
   - ``.pages`` content search is no longer available due to technical difficulties.
   - Fixed an issue where Actiance compliance jobs caused the Mattermost server process to crash with a panic [MM-41245](https://mattermost.atlassian.net/browse/MM-41245).
 - **v5.37.7, released 2022-01-21**
-  - Mattermost v5.37.7 contains a medium level security fix. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Mattermost v5.37.7 contains a medium level security fix. [Upgrading](/administration/upgrade.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Added support for channel moderation for Professional-licensed servers [MM-40824](https://mattermost.atlassian.net/browse/MM-40824). 
 - **v5.37.6, released 2021-12-17**
-  - Mattermost v5.37.6 contains medium level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Mattermost v5.37.6 contains medium level security fixes. [Upgrading](/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Added a general performance fix for loading the web application and typing.
   - Improved performance while typing by moving some autocomplete layout calculations.
   - Improved performance by reducing DOM usage during render.
@@ -291,12 +294,12 @@ The following deprecations are planned for the Mattermost v6.0 release, which is
   - Fixed an issue where OpenID redirect did not work when hosting Mattermost on a subdirectory [MM-40151](https://mattermost.atlassian.net/browse/MM-40151).
   - Fixed an issue where v5.37 reported an incorrect mmctl version.
 - **v5.37.4, released 2021-11-15**
-  - Mattermost v5.37.4 contains a medium level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Mattermost v5.37.4 contains a medium level security fix. [Upgrading](/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Fixed a potential panic during the message export job [MM-39521](https://mattermost.atlassian.net/browse/MM-39521).
   - Fixed some sentry crashes [MM-38565](https://mattermost.atlassian.net/browse/MM-38565), [MM-39208](https://mattermost.atlassian.net/browse/MM-39208).
   - Updated in-product help documentation to fix broken links and to correct outdated information.
 - **v5.37.3, released 2021-10-27**
-  - Mattermost v5.37.3 contains a medium level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Mattermost v5.37.3 contains a medium level security fix. [Upgrading](/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Fixed a race condition in telemetry IDs on High Availability servers [MM-39343](https://mattermost.atlassian.net/browse/MM-39343).
   - Fixed import process for imports with attachments [MM-38375](https://mattermost.atlassian.net/browse/MM-38375).
   - Fixed an issue that kept message attachment fields unaligned [MM-36943](https://mattermost.atlassian.net/browse/MM-36943).
@@ -307,7 +310,7 @@ The following deprecations are planned for the Mattermost v6.0 release, which is
   - Fixed a panic in the ``getPrevTrialLicense`` API request when loading the System Console on Team Edition. [MM-37108](https://mattermost.atlassian.net/browse/MM-37108)
   - Fixed an issue where screen readers read “user object” instead of reading the username or channel in the **Switch Channels** modal.
 - **v5.37.1, released 2021-08-04**
-  - Mattermost v5.37.1 contains a medium level security fix. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Mattermost v5.37.1 contains a medium level security fix. [Upgrading](/administration/upgrade.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Improved typing performance in affected environments by reducing the frequency at which drafts are saved.
   - Fixed an issue in clustering where a mutex would fail to be unlocked when a timeout happened. [MM-37246](https://mattermost.atlassian.net/browse/MM-37246)
 - **v5.37.0, released 2021-07-16**
@@ -317,18 +320,18 @@ The following deprecations are planned for the Mattermost v6.0 release, which is
  - The ``platform`` binary and “--platform” flag have been removed. If you are using the “--platform” flag or are using the ``platform`` binary directly to run the Mattermost server application via a systemd file or custom script, you will be required to use only the mattermost binary.
 
 ### Important Upgrade Notes
- - [Collapsed Reply Threads](https://mattermost.com/blog/collapsed-reply-threads-beta/) are available as beta in Mattermost Server v5.37 and later. It’s expected that you may experience bugs as we stabilize the feature. In particular, please be aware of [the known issues documented here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
+ - [Collapsed Reply Threads](https://mattermost.com/blog/collapsed-reply-threads-beta/) are available as beta in Mattermost Server v5.37 and later. It’s expected that you may experience bugs as we stabilize the feature. In particular, please be aware of [the known issues documented here](/messaging/organizing-conversations.html#known-issues).
  - v5.37 adds support for emoji standard v13.0. If you have added a custom emoji in the past that uses one of the new system names, then that custom emoji is going to get overwritten by the system emoji. The workaround is to change the custom emoji name.
  - Parts of Incident Collaboration are now available to all Mattermost editions. As part of this update, Incident Collaboration will require a minimum server version of v5.37. To learn more about what is available in each edition, visit [our pricing page](https://mattermost.com/pricing-self-managed/).
- - Support for Mattermost Server v5.31 [Extended Support Release](https://docs.mattermost.com/administration/extended-support-release.html) will come to the end of its life cycle on October 15, 2021. Upgrading to Mattermost Server v5.37 or later is required.
- - [Collapsed Reply Threads](https://docs.mattermost.com/messaging/organizing-conversations.html), available in beta, are known to have a negative impact on server performance. If you cannot easily scale up and tune your database, or if you are running the Mattermost application server and database server on the same machine, we recommended disabling [``ThreadAutoFollow``](https://docs.mattermost.com/configure/configuration-settings.html#automatically-follow-threads) and [``CollapsedThreads``](https://docs.mattermost.com/configure/configuration-settings.html#collapsed-reply-threads-beta) until Collapsed Reply Threads is promoted to general availability in Q2 2022. Learn more about these [performance considerations here](https://support.mattermost.com/hc/en-us/articles/4413183568276).
+ - Support for Mattermost Server v5.31 [Extended Support Release](/administration/extended-support-release.html) will come to the end of its life cycle on October 15, 2021. Upgrading to Mattermost Server v5.37 or later is required.
+ - [Collapsed Reply Threads](/messaging/organizing-conversations.html), available in beta, are known to have a negative impact on server performance. If you cannot easily scale up and tune your database, or if you are running the Mattermost application server and database server on the same machine, we recommended disabling [``ThreadAutoFollow``](/configure/configuration-settings.html#automatically-follow-threads) and [``CollapsedThreads``](/configure/configuration-settings.html#collapsed-reply-threads-beta) until Collapsed Reply Threads is promoted to general availability in Q2 2022. Learn more about these [performance considerations here](https://support.mattermost.com/hc/en-us/articles/4413183568276).
 
-**IMPORTANT:** If you upgrade from a release earlier than v5.36, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html).
+**IMPORTANT:** If you upgrade from a release earlier than v5.36, please read the other [Important Upgrade Notes](/administration/important-upgrade-notes.html).
 
 ### Highlights
 
 #### Collapsed Reply Threads (Beta)
- - We're excited to give you early access to Collapsed Reply Threads (Beta). It can be enabled in the **System Console > Experimental > Collapsed Reply Threads (Beta)**. Learn more about the features and known issues in [our documentation](https://docs.mattermost.com/help/messaging/organizing-conversations.html).
+ - We're excited to give you early access to Collapsed Reply Threads (Beta). It can be enabled in the **System Console > Experimental > Collapsed Reply Threads (Beta)**. Learn more about the features and known issues in [our documentation](/help/messaging/organizing-conversations.html).
 
 #### Emoji Enhancements with Skin Tone Selection
  - Added support for emoji standard v13.0. Users now have the ability to choose various skin tones using the Mattermost emoji picker. Mobile support is included in v1.45 Mobile App release (July 16th).
@@ -402,9 +405,9 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 The following deprecations are planned for the Mattermost v6.0 release, which is scheduled for 2021/10/15. This list is subject to change prior to the release.
 
-1. [Legacy Command Line Tools](https://docs.mattermost.com/administration/command-line-tools.html). All commands have been fully replaced by [mmctl](https://docs.mattermost.com/administration/mmctl-cli-tool.html) and new commands have been added over the last few months, making this tool a full and robust replacement. 
+1. [Legacy Command Line Tools](/administration/command-line-tools.html). All commands have been fully replaced by [mmctl](/administration/mmctl-cli-tool.html) and new commands have been added over the last few months, making this tool a full and robust replacement. 
 
-2. [Slack Import via the web app](https://docs.mattermost.com/administration/migrating.html?highlight=mmetl#migrating-from-slack-using-the-mattermost-web-app). The Slack import tool accessible via the Team Setting menu is being replaced by the [mmetl](https://docs.mattermost.com/administration/migrating.html#migrating-from-slack-using-the-mattermost-mmetl-tool-and-bulk-import) tool that is much more comprehensive for the types of data it can assist in uploading. 
+2. [Slack Import via the web app](/administration/migrating.html?highlight=mmetl#migrating-from-slack-using-the-mattermost-web-app). The Slack import tool accessible via the Team Setting menu is being replaced by the [mmetl](/administration/migrating.html#migrating-from-slack-using-the-mattermost-mmetl-tool-and-bulk-import) tool that is much more comprehensive for the types of data it can assist in uploading. 
 
 3. MySQL versions below 5.7.7. Minimum support will now be for 5.7.12. This version introduced a native JSON data type that lets us improve performance and scalability of several database fields (most notably Users and Posts props). Additionally, version 5.6 (our current minimum version) reached [EOL in February 2021](https://www.mysql.com/support/eol-notice.html).
 
@@ -412,26 +415,26 @@ The following deprecations are planned for the Mattermost v6.0 release, which is
 
 5. Windows 7 reached [EOL in January 2020](https://support.microsoft.com/en-us/windows/windows-7-support-ended-on-january-14-2020-b75d4580-2cc7-895a-2c9c-1466d9a53962). We will no longer provide support for the Desktop App issues on Windows 7.
 
-6. [DisableLegacyMFA](https://docs.mattermost.com/configure/configuration-settings.html#disable-legacy-mfa-api-endpoint) configuration setting.
+6. [DisableLegacyMFA](/configure/configuration-settings.html#disable-legacy-mfa-api-endpoint) configuration setting.
 
-7. [ExperimentalTimezone](https://docs.mattermost.com/configure/configuration-settings.html#timezone) configuration setting.
+7. [ExperimentalTimezone](/configure/configuration-settings.html#timezone) configuration setting.
 
 8. All legacy channel sidebar experimental configuration settings. We encourage customers using these settings to upgrade to v5.32 or later to access [custom, collapsible channel categories](https://mattermost.com/blog/custom-collapsible-channel-categories/) among many other channel organization features. The settings being deprecated include:
 
-   - [EnableLegacySidebar](https://docs.mattermost.com/administration/config-settings.html#enable-legacy-sidebar)
-   - [ExperimentalTownSquareIsReadOnly](https://docs.mattermost.com/administration/config-settings.html#town-square-is-read-only-experimental)
-   - [ExperimentalHideTownSquareinLHS](https://docs.mattermost.com/administration/config-settings.html#town-square-is-hidden-in-left-hand-sidebar-experimental)
-   - [EnableXToLeaveChannelsFromLHS](https://docs.mattermost.com/administration/config-settings.html#enable-x-to-leave-channels-from-left-hand-sidebar-experimental)
-   - [CloseUnusedDirectMessages](https://docs.mattermost.com/administration/config-settings.html#autoclose-direct-messages-in-sidebar-experimental)
-   - [ExperimentalChannelOrganization](https://docs.mattermost.com/administration/config-settings.html#sidebar-organization)
-   - [ExperimentalChannelSidebarOrganization](https://docs.mattermost.com/administration/config-settings.html#experimental-sidebar-features)
+   - [EnableLegacySidebar](/administration/config-settings.html#enable-legacy-sidebar)
+   - [ExperimentalTownSquareIsReadOnly](/administration/config-settings.html#town-square-is-read-only-experimental)
+   - [ExperimentalHideTownSquareinLHS](/administration/config-settings.html#town-square-is-hidden-in-left-hand-sidebar-experimental)
+   - [EnableXToLeaveChannelsFromLHS](/administration/config-settings.html#enable-x-to-leave-channels-from-left-hand-sidebar-experimental)
+   - [CloseUnusedDirectMessages](/administration/config-settings.html#autoclose-direct-messages-in-sidebar-experimental)
+   - [ExperimentalChannelOrganization](/administration/config-settings.html#sidebar-organization)
+   - [ExperimentalChannelSidebarOrganization](/administration/config-settings.html#experimental-sidebar-features)
 
-9. [All configuration settings previously marked as “Deprecated”](https://docs.mattermost.com/administration/config-settings.html#deprecated-configuration-settings).
+9. [All configuration settings previously marked as “Deprecated”](/administration/config-settings.html#deprecated-configuration-settings).
 
 10. Changes to ``mattermost-server/model`` for naming consistency.
 
 ### Known Issues
- - [Collapsed Reply Threads](https://docs.mattermost.com/messaging/organizing-conversations.html) is currently in beta. Before enabling the feature, please ensure you are well versed in the [known issues](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues),  particularly relating to database resource requirements and server performance implications. If you cannot easily scale up your database size, or are running the Mattermost application server and database server on the same machine, we recommended waiting to enable Collapsed Reply Threads until it is [promoted to general availability in Q2 2022](https://mattermost.com/blog/collapsed-reply-threads-ga/). Learn more about these [performance considerations here](https://support.mattermost.com/hc/en-us/articles/4413183568276).
+ - [Collapsed Reply Threads](/messaging/organizing-conversations.html) is currently in beta. Before enabling the feature, please ensure you are well versed in the [known issues](/messaging/organizing-conversations.html#known-issues),  particularly relating to database resource requirements and server performance implications. If you cannot easily scale up your database size, or are running the Mattermost application server and database server on the same machine, we recommended waiting to enable Collapsed Reply Threads until it is [promoted to general availability in Q2 2022](https://mattermost.com/blog/collapsed-reply-threads-ga/). Learn more about these [performance considerations here](https://support.mattermost.com/hc/en-us/articles/4413183568276).
  - When upgrading to 5.37.0, the Incident Collaboration plugin may not be automatically installed in some cases.
  - Add Members modal is incorrectly themed on the Mattermost Dark theme [MM-37220](https://mattermost.atlassian.net/browse/MM-37220).
  - ``config.json`` can reset when running the command ``systemctl restart mattermost``, and when running any commands that write to the config (e.g. ``config`` or ``plugin``) [MM-33752](https://mattermost.atlassian.net/browse/MM-33752), [MM-32390](https://mattermost.atlassian.net/browse/MM-32390).
@@ -449,22 +452,22 @@ The following deprecations are planned for the Mattermost v6.0 release, which is
 ### Contributors
  - [aaronrothschild](https://github.com/aaronrothschild), [Aashimalik](https://github.com/Aashimalik), [Adovenmuehle](https://github.com/Adovenmuehle), [aedott](https://github.com/aedott), [aeomin](https://github.com/aeomin), [agarciamontoro](https://github.com/agarciamontoro), [AGMETEOR](https://github.com/AGMETEOR), [agnivade](https://github.com/agnivade), [ahmaddanialmohd](https://github.com/ahmaddanialmohd), [ahmadkarlam](https://github.com/ahmadkarlam), [amyblais](https://github.com/amyblais), [amynicol1985](https://github.com/amynicol1985), [angeloskyratzakos](https://github.com/angeloskyratzakos), [anurag6713](https://github.com/anurag6713), [arvinDarmawan](https://github.com/arvinDarmawan), [asaadmahmood](https://github.com/asaadmahmood), [ashishbhate](https://github.com/ashishbhate), [AshishDhama](https://github.com/AshishDhama), [aspleenic](https://github.com/aspleenic), [balan2010](https://github.com/balan2010), [BenCookie95](https://github.com/BenCookie95), [berkeka](https://github.com/berkeka), [calebroseland](https://github.com/calebroseland), [catalintomai](https://github.com/catalintomai), [cedricziel](https://github.com/cedricziel), [chenilim](https://github.com/chenilim), [chetanyakan](https://github.com/chetanyakan), [chikei](https://github.com/chikei), [cognvn](https://github.com/cognvn), [coltoneshaw](https://github.com/coltoneshaw), [cpanato](https://github.com/cpanato), [cpoile](https://github.com/cpoile), [crspeller](https://github.com/crspeller), [ctlaltdieliet](https://github.com/ctlaltdieliet), [cwarnermm](https://github.com/cwarnermm), [danielsischy](https://github.com/danielsischy), [darkLord19](https://github.com/darkLord19), [dbpolito](https://github.com/dbpolito), [devinbinnie](https://github.com/devinbinnie), [elsiehupp](https://github.com/elsiehupp), [elyscape](https://github.com/elyscape), [emilyacook](https://github.com/emilyacook), [enahum](https://github.com/enahum), [enelson720](https://github.com/enelson720), [esethna](https://github.com/esethna), [EugenMayer](https://github.com/EugenMayer), [ewwollesen](https://github.com/ewwollesen), [flynbit](https://github.com/flynbit), [furqanmlk](https://github.com/furqanmlk), [gabrieljackson](https://github.com/gabrieljackson), [gigawhitlocks](https://github.com/gigawhitlocks), [gruceqq](https://translate.mattermost.com/user/gruceqq/), [haardikdharma10](https://github.com/haardikdharma10), [hahmadia](https://github.com/hahmadia), [hanzei](https://github.com/hanzei), [harshilsharma63](https://github.com/harshilsharma63), [hason](https://github.com/hason), [hectorskypl](https://github.com/hectorskypl), [hmhealey](https://github.com/hmhealey), [ialorro](https://github.com/ialorro), [icelander](https://github.com/icelander), [iomodo](https://github.com/iomodo), [isacikgoz](https://github.com/isacikgoz), [it33](https://github.com/it33), [itao](https://github.com/itao), [jamiehurewitz](https://github.com/jamiehurewitz), [jasonblais](https://github.com/jasonblais), [jayaddison-collabora](https://github.com/jayaddison-collabora), [jespino](https://github.com/jespino), [jfrerich](https://github.com/jfrerich), [JoelRummel](https://github.com/JoelRummel), [Johennes](https://github.com/Johennes), [johnsonbrothers](https://github.com/johnsonbrothers), [josephbaylon](https://github.com/josephbaylon), [jplda23](https://github.com/jplda23), [jprusch](https://github.com/jprusch), [jufab](https://github.com/jufab), [justinegeffen](https://github.com/justinegeffen), [jwilander](https://github.com/jwilander), [kaakaa](https://github.com/kaakaa), [kamre](https://github.com/kamre), [kayazeren](https://github.com/kayazeren), [koox00](https://github.com/koox00), [larkox](https://github.com/larkox), [levb](https://github.com/levb), [lieut-data](https://github.com/lieut-data), [lindalumitchell](https://github.com/lindalumitchell), [lynn915](https://github.com/lynn915), [M-ZubairAhmed](https://github.com/M-ZubairAhmed), [madhavhugar](https://github.com/madhavhugar), [maisnamrajusingh](https://github.com/maisnamrajusingh), [majidsajadi](https://github.com/majidsajadi), [manojmalik20](https://github.com/manojmalik20), [matheusmosca](https://github.com/matheusmosca), [matt-w99](https://github.com/matt-w99), [matthewbirtch](https://github.com/matthewbirtch), [maxerenberg](https://github.com/maxerenberg), [metanerd](https://github.com/metanerd), [mgdelacroix](https://github.com/mgdelacroix), [michelengelen](https://github.com/michelengelen), [mickmister](https://github.com/mickmister), [migbot](https://github.com/migbot), [mkraft](https://github.com/mkraft), [mlongo4290](https://github.com/mlongo4290), [moussetc](https://github.com/moussetc), [MrLemur](https://github.com/MrLemur), [msal4](https://github.com/msal4), [MusiCode1](https://github.com/MusiCode1), [naderm11](https://github.com/naderm11), [neallred](https://github.com/neallred), [nevyangelova](https://github.com/nevyangelova), [ogi-m](https://github.com/ogi-m), [pablovelezvidal](https://github.com/pablovelezvidal), [parsaakbari1209](https://github.com/parsaakbari1209), [prakharporwal](https://github.com/prakharporwal), [prathers](https://github.com/prathers), [rbradleyhaas](https://github.com/rbradleyhaas), [rodcorsi](https://github.com/rodcorsi), [rohit1101](https://github.com/rohit1101), [sadohert](https://github.com/sadohert), [sakaitsu](https://github.com/sakaitsu), [saturninoabril](https://github.com/saturninoabril), [Sayanta66](https://github.com/Sayanta66), [sbishel](https://github.com/sbishel), [senylove1403](https://github.com/senylove1403), [srkgupta](https://github.com/srkgupta), [stafot](https://github.com/stafot), [streamer45](https://github.com/streamer45), [stylianosrigas](https://github.com/stylianosrigas), [Szymongib](https://github.com/Szymongib), [teresa-novoa](https://github.com/teresa-novoa), [thePanz](https://github.com/thePanz), [tsabi](https://translate.mattermost.com/user/tsabi), [txeli](https://github.com/txeli), [wget](https://github.com/wget), [wiersgallak](https://github.com/wiersgallak), [wiggin77](https://github.com/wiggin77), [Willyfrog](https://github.com/Willyfrog), [yulyanaR](https://github.com/yulyanaR)
 
-## Release v5.36 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
+## Release v5.36 - [Feature Release](/administration/release-definitions.html#feature-release)
 
 - **v5.36.2, released 2021-08-04**
-  - Mattermost v5.36.2 contains a medium level security fix. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+  - Mattermost v5.36.2 contains a medium level security fix. [Upgrading](/administration/upgrade.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
 - **v5.36.1, released 2021-06-21**
-  - Mattermost v5.36.1 contains a high level security fix. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+  - Mattermost v5.36.1 contains a high level security fix. [Upgrading](/administration/upgrade.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
   - Added performance improvements by reducing the time taken to re-render when a post is received.
 - **v5.36.0, released 2021-06-16**
   - Original 5.36.0 release
 
-Mattermost v5.36.0 contains a high level security fix. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+Mattermost v5.36.0 contains a high level security fix. [Upgrading](/administration/upgrade.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
 
 ### Important Upgrade Notes
  - Gossip clustering mode is now in General Availability and is no longer available as an option. All cluster traffic will always use the gossip protocol. The config setting ``UseExperimentalGossip`` has no effect and has only been kept for compatibility purposes. The setting to use gossip has been removed from the System Console. **Note:** For High Availability upgrades, all nodes in the cluster must use a single protocol. If an existing system is not currently using gossip, one node in a cluster can't be upgraded while other nodes in the cluster use an older version. Customers must either use gossip for their High Availability upgrade, or customers must shut down all nodes, perform the upgrade, and then bring all nodes back up.
 
-**IMPORTANT:** If you upgrade from a release earlier than v5.35, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html).
+**IMPORTANT:** If you upgrade from a release earlier than v5.35, please read the other [Important Upgrade Notes](/administration/important-upgrade-notes.html).
 
 ### Highlights
 
@@ -496,7 +499,7 @@ Mattermost v5.36.0 contains a high level security fix. [Upgrading](https://docs.
 #### Administration
  - ``TCP_NO_DELAY`` is disabled for Websocket connections to allow for higher throughput.
  - Compliance Monitoring CSV files are no longer limited to 30,000 rows.
- - The default value of the [Support Email](https://docs.mattermost.com/administration/config-settings.html#support-email) (previously ``_feedback@mattermost.com_``) has been removed. Admin Advisor will now prompt System Admins about missing configuration for the [Support Email](https://docs.mattermost.com/administration/config-settings.html#support-email). This value is required, and it ensures Mattermost account requests are sent to the correct team for resolution.
+ - The default value of the [Support Email](/administration/config-settings.html#support-email) (previously ``_feedback@mattermost.com_``) has been removed. Admin Advisor will now prompt System Admins about missing configuration for the [Support Email](/administration/config-settings.html#support-email). This value is required, and it ensures Mattermost account requests are sent to the correct team for resolution.
  - The **Marketplace** button in the **Main Menu** is now displayed if the user has the ``sysconsole_write_plugins`` permission.
  - Added new feature discoveries in the System Console, including Data Retention Policy and OpenID Connect.
  - Added basic intra-cluster communication support for plugins.
@@ -582,9 +585,9 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 The following deprecations are planned for the Mattermost v6.0 release, which is scheduled for 2021/10/15. This list is subject to change prior to the release.
 
-1. [Legacy Command Line Tools](https://docs.mattermost.com/administration/command-line-tools.html). All commands have been fully replaced by [mmctl](https://docs.mattermost.com/administration/mmctl-cli-tool.html) and new commands have been added over the last few months, making this tool a full and robust replacement. 
+1. [Legacy Command Line Tools](/administration/command-line-tools.html). All commands have been fully replaced by [mmctl](/administration/mmctl-cli-tool.html) and new commands have been added over the last few months, making this tool a full and robust replacement. 
 
-2. [Slack Import via the web app](https://docs.mattermost.com/administration/migrating.html?highlight=mmetl#migrating-from-slack-using-the-mattermost-web-app). The Slack import tool accessible via the Team Setting menu is being replaced by the [mmetl](https://docs.mattermost.com/administration/migrating.html#migrating-from-slack-using-the-mattermost-mmetl-tool-and-bulk-import) tool that is much more comprehensive for the types of data it can assist in uploading. 
+2. [Slack Import via the web app](/administration/migrating.html?highlight=mmetl#migrating-from-slack-using-the-mattermost-web-app). The Slack import tool accessible via the Team Setting menu is being replaced by the [mmetl](/administration/migrating.html#migrating-from-slack-using-the-mattermost-mmetl-tool-and-bulk-import) tool that is much more comprehensive for the types of data it can assist in uploading. 
 
 3. MySQL versions below 5.7.7. Minimum support will now be for 5.7.12. This version introduced a native JSON data type that lets us improve performance and scalability of several database fields (most notably Users and Posts props). Additionally, version 5.6 (our current minimum version) reached [EOL in February 2021](https://www.mysql.com/support/eol-notice.html).
 
@@ -592,21 +595,21 @@ The following deprecations are planned for the Mattermost v6.0 release, which is
 
 5. Windows 7 reached [EOL in January 2020](https://support.microsoft.com/en-us/windows/windows-7-support-ended-on-january-14-2020-b75d4580-2cc7-895a-2c9c-1466d9a53962). We will no longer provide support for the Desktop App issues on Windows 7.
 
-6. [DisableLegacyMFA](https://docs.mattermost.com/configure/configuration-settings.html#disable-legacy-mfa-api-endpoint) configuration setting.
+6. [DisableLegacyMFA](/configure/configuration-settings.html#disable-legacy-mfa-api-endpoint) configuration setting.
 
-7. [ExperimentalTimezone](https://docs.mattermost.com/configure/configuration-settings.html#timezone) configuration setting.
+7. [ExperimentalTimezone](/configure/configuration-settings.html#timezone) configuration setting.
 
 8. All legacy channel sidebar experimental configuration settings. We encourage customers using these settings to upgrade to v5.32 or later to access [custom, collapsible channel categories](https://mattermost.com/blog/custom-collapsible-channel-categories/) among many other channel organization features. The settings being deprecated include:
 
-   - [EnableLegacySidebar](https://docs.mattermost.com/administration/config-settings.html#enable-legacy-sidebar)
-   - [ExperimentalTownSquareIsReadOnly](https://docs.mattermost.com/administration/config-settings.html#town-square-is-read-only-experimental)
-   - [ExperimentalHideTownSquareinLHS](https://docs.mattermost.com/administration/config-settings.html#town-square-is-hidden-in-left-hand-sidebar-experimental)
-   - [EnableXToLeaveChannelsFromLHS](https://docs.mattermost.com/administration/config-settings.html#enable-x-to-leave-channels-from-left-hand-sidebar-experimental)
-   - [CloseUnusedDirectMessages](https://docs.mattermost.com/administration/config-settings.html#autoclose-direct-messages-in-sidebar-experimental)
-   - [ExperimentalChannelOrganization](https://docs.mattermost.com/administration/config-settings.html#sidebar-organization)
-   - [ExperimentalChannelSidebarOrganization](https://docs.mattermost.com/administration/config-settings.html#experimental-sidebar-features)
+   - [EnableLegacySidebar](/administration/config-settings.html#enable-legacy-sidebar)
+   - [ExperimentalTownSquareIsReadOnly](/administration/config-settings.html#town-square-is-read-only-experimental)
+   - [ExperimentalHideTownSquareinLHS](/administration/config-settings.html#town-square-is-hidden-in-left-hand-sidebar-experimental)
+   - [EnableXToLeaveChannelsFromLHS](/administration/config-settings.html#enable-x-to-leave-channels-from-left-hand-sidebar-experimental)
+   - [CloseUnusedDirectMessages](/administration/config-settings.html#autoclose-direct-messages-in-sidebar-experimental)
+   - [ExperimentalChannelOrganization](/administration/config-settings.html#sidebar-organization)
+   - [ExperimentalChannelSidebarOrganization](/administration/config-settings.html#experimental-sidebar-features)
 
-9. [All configuration settings previously marked as “Deprecated”](https://docs.mattermost.com/administration/config-settings.html#deprecated-configuration-settings).
+9. [All configuration settings previously marked as “Deprecated”](/administration/config-settings.html#deprecated-configuration-settings).
 
 10. Changes to ``mattermost-server/model`` for naming consistency.
  
@@ -626,14 +629,14 @@ The following deprecations are planned for the Mattermost v6.0 release, which is
 ### Contributors
  - [aaronrothschild](https://github.com/aaronrothschild), [abdulsmapara](https://github.com/abdulsmapara), [adamjclarkson](https://github.com/adamjclarkson), [Adovenmuehle](https://github.com/Adovenmuehle), [aeomin](https://github.com/aeomin), [agarciamontoro](https://github.com/agarciamontoro), [agnivade](https://github.com/agnivade), [ahmaddanialmohd](https://github.com/ahmaddanialmohd), [ali-farooq0](https://github.com/ali-farooq0), [amyblais](https://github.com/amyblais), [angeloskyratzakos](https://github.com/angeloskyratzakos), [arjitc](https://github.com/arjitc), [asaadmahmood](https://github.com/asaadmahmood), [ashishbhate](https://github.com/ashishbhate), [avasconcelos114](https://github.com/avasconcelos114), [avddvd](https://github.com/avddvd), [awerries](https://github.com/awerries), [bbodenmiller](https://github.com/bbodenmiller), [bbuehrle](https://github.com/bbuehrle), [bradjcoughlin](https://github.com/bradjcoughlin), [cadavre](https://github.com/cadavre), [calebroseland](https://github.com/calebroseland), [catalintomai](https://github.com/catalintomai), [CEOehis](https://github.com/CEOehis), [chenilim](https://github.com/chenilim), [chikei](https://github.com/chikei), [chuttam](https://github.com/chuttam), [coltoneshaw](https://github.com/coltoneshaw), [cpanato](https://github.com/cpanato), [cpoile](https://github.com/cpoile), [craigwillis-mm](https://github.com/craigwillis-mm), [craph](https://github.com/craph), [crspeller](https://github.com/crspeller), [ctlaltdieliet](https://github.com/ctlaltdieliet), [cwarnermm](https://github.com/cwarnermm), [dantepippi](https://github.com/dantepippi), [dbejanishvili](https://github.com/dbejanishvili), [devinbinnie](https://github.com/devinbinnie), [ejose19](https://github.com/ejose19), [emilyhollinger](https://github.com/emilyhollinger), [enahum](https://github.com/enahum), [enelson720](https://github.com/enelson720), [esethna](https://github.com/esethna), [ethervoid](https://github.com/ethervoid), [ewwollesen](https://github.com/ewwollesen), [faase](https://github.com/faase), [fakela](https://github.com/fakela), [FlaviaBastos](https://github.com/FlaviaBastos), [flynbit](https://github.com/flynbit), [fmunshi](https://github.com/fmunshi), [Francois-D](https://github.com/Francois-D), [funkytwig](https://github.com/funkytwig), [gabrieljackson](https://github.com/gabrieljackson), [gigawhitlocks](https://github.com/gigawhitlocks), [gnello](https://github.com/gnello), [GrigalashviliT](https://github.com/GrigalashviliT), [gruceqq](https://translate.mattermost.com/user/gruceqq/), [grundleborg](https://github.com/grundleborg), [haardikdharma10](https://github.com/haardikdharma10), [hahmadia](https://github.com/hahmadia), [hannaparks](https://github.com/hannaparks), [hanzei](https://github.com/hanzei), [harshilsharma63](https://github.com/harshilsharma63), [hectorskypl](https://github.com/hectorskypl), [hmhealey](https://github.com/hmhealey), [hzeroo](https://github.com/hzeroo), [ialorro](https://github.com/ialorro), [iamsayantan](https://github.com/iamsayantan), [ikeohachidi](https://github.com/ikeohachidi), [iomodo](https://github.com/iomodo), [isacikgoz](https://github.com/isacikgoz), [it33](https://github.com/it33), [jasonblais](https://github.com/jasonblais), [jaydeland](https://github.com/jaydeland), [jespino](https://github.com/jespino), [jfrerich](https://github.com/jfrerich), [jgilliam17](https://github.com/jgilliam17), [Johennes](https://github.com/Johennes), [johnsonbrothers](https://github.com/johnsonbrothers), [josephbaylon](https://github.com/josephbaylon), [jprusch](https://github.com/jprusch), [JtheBAB](https://github.com/JtheBAB), [jupenur](https://github.com/jupenur), [justinegeffen](https://github.com/justinegeffen), [jwilander](https://github.com/jwilander), [kaakaa](https://github.com/kaakaa), [kayazeren](https://github.com/kayazeren), [khos2ow](https://github.com/khos2ow), [kosgrz](https://github.com/kosgrz), [l0r3zz](https://github.com/l0r3zz), [larkox](https://github.com/larkox), [levb](https://github.com/levb), [lieut-data](https://github.com/lieut-data), [liusy182](https://github.com/liusy182), [lynn915](https://github.com/lynn915), [maciejnems](https://github.com/maciejnems), [marianunez](https://github.com/marianunez), [mbecca](https://github.com/mbecca), [metanerd](https://github.com/metanerd), [mgdelacroix](https://github.com/mgdelacroix), [michaelschiffmm](https://github.com/michaelschiffmm), [mickmister](https://github.com/mickmister), [migbot](https://github.com/migbot), [mkraft](https://github.com/mkraft), [mlongo4290](https://github.com/mlongo4290), [mterhar](https://github.com/mterhar), [nadalfederer](https://github.com/nadalfederer), [NassimBounouas](https://github.com/NassimBounouas), [natalie-hub](https://github.com/natalie-hub), [nathanaelhoun](https://github.com/nathanaelhoun), [nevyangelova](https://github.com/nevyangelova), [pankajhirway](https://github.com/pankajhirway), [petya-v](https://github.com/petya-v), [pradeepmurugesan](https://github.com/pradeepmurugesan), [prapti](https://github.com/prapti), [psy-q](https://github.com/psy-q), [Qujja](https://github.com/Qujja), [reflog](https://github.com/reflog), [rodcorsi](https://github.com/rodcorsi), [sakaitsu](https://github.com/sakaitsu), [saturninoabril](https://github.com/saturninoabril), [sbishel](https://github.com/sbishel), [shibasisp](https://github.com/shibasisp), [Shivam010](https://github.com/Shivam010), [shred86](https://github.com/shred86), [spirosoik](https://github.com/spirosoik), [streamer45](https://github.com/streamer45), [stylianosrigas](https://github.com/stylianosrigas), [sudheerDev](https://github.com/sudheerDev), [thefactremains](https://github.com/thefactremains), [TheoVitkovskiy](https://github.com/TheoVitkovskiy), [thePanz](https://github.com/thePanz), [ThiefMaster](https://github.com/ThiefMaster), [tomasmik](https://github.com/tomasmik), [tsabi](https://translate.mattermost.com/user/tsabi), [uhlhosting](https://github.com/uhlhosting), [vesari](https://github.com/vesari), [wget](https://github.com/wget), [wiersgallak](https://github.com/wiersgallak), [wiggin77](https://github.com/wiggin77), [Willyfrog](https://github.com/Willyfrog)
 
-## Release v5.35 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
+## Release v5.35 - [Feature Release](/administration/release-definitions.html#feature-release)
 
 - **v5.35.5, released 2021-08-04**
-  - Mattermost v5.35.5 contains a medium level security fix. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+  - Mattermost v5.35.5 contains a medium level security fix. [Upgrading](/administration/upgrade.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
 - **v5.35.4, released 2021-06-21**
-  - Mattermost v5.35.4 contains a high level security fix. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+  - Mattermost v5.35.4 contains a high level security fix. [Upgrading](/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
 - **v5.35.3, released 2021-06-11**
-  - Mattermost v5.35.3 contains a high level security fix. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+  - Mattermost v5.35.3 contains a high level security fix. [Upgrading](/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
   - Fixed an issue where missing query parameters in the datasource could cause MySQL servers to crash on startup. [MM-36236](https://mattermost.atlassian.net/browse/MM-36236)
   - Added performance improvements to the emoji picker overlay to improve typing performance and reduced the time taken to re-render when a post is received.
 - **v5.35.2, released 2021-06-03**
@@ -647,15 +650,15 @@ The following deprecations are planned for the Mattermost v6.0 release, which is
 - **v5.35.0, released 2021-05-16**
   - Original 5.35.0 release
 
-Mattermost v5.35.0 contains low and medium level security fixes. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+Mattermost v5.35.0 contains low and medium level security fixes. [Upgrading](/administration/upgrade.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
 
 #### Important Upgrade Notes
    - Due to the introduction of backend database architecture required for upcoming new features, including Shared Channels and Collapsed Reply Threads, the performance of the migration process for the v5.35 release (May 16, 2021) has been noticeably affected. Depending on the size, type, and version of the database, longer than usual upgrade times should be expected. This can vary from a couple of minutes (average case) to hours (worst case, MySQL 5.x only). A moderate to significant spike in database CPU usage should also be expected during this process. [More details on the performance impact of the migration and possible mitigation strategies are provided here](https://gist.github.com/streamer45/9aee4906639a49ebde68b2f3c0f924c1).
-   - v5.35.0 introduces a new feature to search for files. Search results for files shared in the past may be incomplete until a [content extraction command](https://docs.mattermost.com/administration/command-line-tools.html#mattermost-extract-documents-content) is executed to extract and index the content of files already in the database. Instances running Elasticsearch or Bleve search backends will also need to execute a Bulk Indexing after the content extraction is complete. Please see more details in [this blog post](https://mattermost.com/blog/file-search/).
+   - v5.35.0 introduces a new feature to search for files. Search results for files shared in the past may be incomplete until a [content extraction command](/administration/command-line-tools.html#mattermost-extract-documents-content) is executed to extract and index the content of files already in the database. Instances running Elasticsearch or Bleve search backends will also need to execute a Bulk Indexing after the content extraction is complete. Please see more details in [this blog post](https://mattermost.com/blog/file-search/).
    - The existing password generation logic used during the bulk user import process was comparatively weak. Hence it's advised for admins to immediately reset the passwords for all the users who were generated during the bulk import process and whose password has not been changed even once.
    - In the v5.38 release (August 16, 2021), we will deprecate "config watcher" (the mechanism that automatically reloads the ``config.json file``), in favor of an mmctl command that will need to be run to apply configuration changes after they are made. This change will improve configuration performance and robustness.
 
-**IMPORTANT:** If you upgrade from a release earlier than v5.34, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html).
+**IMPORTANT:** If you upgrade from a release earlier than v5.34, please read the other [Important Upgrade Notes](/administration/important-upgrade-notes.html).
 
 ### Highlights
 
@@ -767,12 +770,12 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 ### Contributors
  - [Adovenmuehle](https://github.com/Adovenmuehle), [aedott](https://github.com/aedott), [aeomin](https://github.com/aeomin), [agarciamontoro](https://github.com/agarciamontoro), [AGMETEOR](https://github.com/AGMETEOR), [agnivade](https://github.com/agnivade), [albatrosef](https://github.com/albatrosef), [amyblais](https://github.com/amyblais), [amynicol1985](https://github.com/amynicol1985), [angeloskyratzakos](https://github.com/angeloskyratzakos), [anurag6713](https://github.com/anurag6713), [arvinDarmawan](https://github.com/arvinDarmawan), [asaadmahmood](https://github.com/asaadmahmood), [avinashdhinwa](https://github.com/avinashdhinwa), [bbodenmiller](https://github.com/bbodenmiller), [benarent](https://github.com/benarent), [BenCookie95](https://github.com/BenCookie95), [BharatKalluri](https://github.com/BharatKalluri), [calebroseland](https://github.com/calebroseland), [catalintomai](https://github.com/catalintomai), [chenilim](https://github.com/chenilim), [chetanyakan](https://github.com/chetanyakan), [chikei](https://github.com/chikei), [chrisfromredfin](https://github.com/chrisfromredfin), [codingthat](https://github.com/codingthat), [coltoneshaw](https://github.com/coltoneshaw), [courtneypattison](https://github.com/courtneypattison), [cpanato](https://github.com/cpanato), [cpoile](https://github.com/cpoile), [crspeller](https://github.com/crspeller), [ctlaltdieliet](https://github.com/ctlaltdieliet), [cwarnermm](https://github.com/cwarnermm), [darkLord19](https://github.com/darkLord19), [deanwhillier](https://github.com/deanwhillier), [devinbinnie](https://github.com/devinbinnie), [djanda97](https://github.com/djanda97), [elyscape](https://github.com/elyscape), [enahum](https://github.com/enahum), [enelson720](https://github.com/enelson720), [EricMontague](https://github.com/EricMontague), [esethna](https://github.com/esethna), [ethervoid](https://github.com/ethervoid), [flynbit](https://github.com/flynbit), [furqanmlk](https://github.com/furqanmlk), [gea-ecobricks](https://github.com/gea-ecobricks), [gigawhitlocks](https://github.com/gigawhitlocks), [girish17](https://github.com/girish17), [gruceqq](https://translate.mattermost.com/user/gruceqq/), [grundleborg](https://github.com/grundleborg), [haardikdharma10](https://github.com/haardikdharma10), [hahmadia](https://github.com/hahmadia), [Hampusholmstrom](https://github.com/Hampusholmstrom), [hanzei](https://github.com/hanzei), [harshilsharma63](https://github.com/harshilsharma63), [hastadhana](https://github.com/hastadhana), [hectorskypl](https://github.com/hectorskypl), [hmhealey](https://github.com/hmhealey), [ialorro](https://github.com/ialorro), [icelander](https://github.com/icelander), [IndushaS](https://github.com/IndushaS), [iomodo](https://github.com/iomodo), [isacikgoz](https://github.com/isacikgoz), [it33](https://github.com/it33), [jamiehurewitz](https://github.com/jamiehurewitz), [jasonblais](https://github.com/jasonblais), [jecepeda](https://github.com/jecepeda), [jespino](https://github.com/jespino), [jfrerich](https://github.com/jfrerich), [JoelRummel](https://github.com/JoelRummel), [Johennes](https://github.com/Johennes), [johnsonbrothers](https://github.com/johnsonbrothers), [josephbaylon](https://github.com/josephbaylon), [justinegeffen](https://github.com/justinegeffen), [jwilander](https://github.com/jwilander), [kaakaa](https://github.com/kaakaa), [kayazeren](https://github.com/kayazeren), [komik966](https://github.com/komik966), [larkox](https://github.com/larkox), [leblanc-simon](https://github.com/leblanc-simon), [levb](https://github.com/levb), [lieut-data](https://github.com/lieut-data), [M-ZubairAhmed](https://github.com/M-ZubairAhmed), [majidsajadi](https://github.com/majidsajadi), [manojmalik20](https://github.com/manojmalik20), [marianunez](https://github.com/marianunez), [matt-w99](https://github.com/matt-w99), [matthewbirtch](https://github.com/matthewbirtch), [maxerenberg](https://github.com/maxerenberg), [metanerd](https://github.com/metanerd), [mgdelacroix](https://github.com/mgdelacroix), [michaelgamble](https://github.com/michaelgamble), [michelengelen](https://github.com/michelengelen), [mickmister](https://github.com/mickmister), [microolapshare](https://github.com/microolapshare), [migbot](https://github.com/migbot), [mjnagel](https://github.com/mjnagel), [mkraft](https://github.com/mkraft), [mlongo4290](https://github.com/mlongo4290), [mrckndt](https://github.com/mrckndt), [muratbayan](https://github.com/muratbayan), [natalie-hub](https://github.com/natalie-hub), [Ndawakh](https://github.com/Ndawakh), [nevyangelova](https://github.com/nevyangelova), [nickmisasi](https://github.com/nickmisasi), [ogi-m](https://github.com/ogi-m), [pablovelezvidal](https://github.com/pablovelezvidal), [prapti](https://github.com/prapti), [qunabu](https://github.com/qunabu), [rbradleyhaas](https://github.com/rbradleyhaas), [reflog](https://github.com/reflog), [rodcorsi](https://github.com/rodcorsi), [sakaitsu](https://github.com/sakaitsu), [saturninoabril](https://github.com/saturninoabril), [sbishel](https://github.com/sbishel), [shazm](https://github.com/shazm), [signalwerk](https://github.com/signalwerk), [spirosoik](https://github.com/spirosoik), [stafot](https://github.com/stafot), [streamer45](https://github.com/streamer45), [stylianosrigas](https://github.com/stylianosrigas), [Szymongib](https://github.com/Szymongib), [teresa-novoa](https://github.com/teresa-novoa), [thebestwj](https://github.com/thebestwj), [TheDarkestDay](https://github.com/TheDarkestDay), [thePanz](https://github.com/thePanz), [uhlhosting](https://github.com/uhlhosting), [wget](https://github.com/wget), [wiersgallak](https://github.com/wiersgallak), [wiggin77](https://github.com/wiggin77), [Willyfrog](https://github.com/Willyfrog), [xlanor](https://github.com/xlanor), [yashjohar](https://github.com/yashjohar), [YJSoft](https://github.com/YJSoft), [YoheiZuho](https://github.com/YoheiZuho), [zefhemel](https://github.com/zefhemel), [ziprandom](https://github.com/ziprandom), [Zukerherr](https://github.com/Zukerherr)
 
-## Release v5.34 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
+## Release v5.34 - [Feature Release](/administration/release-definitions.html#feature-release)
 
 - **v5.34.5, released 2021-06-21**
-  - Mattermost v5.34.5 contains a high level security fix. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+  - Mattermost v5.34.5 contains a high level security fix. [Upgrading](/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
 - **v5.34.4, released 2021-06-11**
-  - Mattermost v5.34.4 contains a high level security fix. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+  - Mattermost v5.34.4 contains a high level security fix. [Upgrading](/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
   - Fixed an issue where missing query parameters in the datasource could cause MySQL servers to crash on startup. [MM-36236](https://mattermost.atlassian.net/browse/MM-36236)
   - Fixed an issue where plugin icons were displaying as a column instead of as a row on the left-hand side. [MM-36199](https://mattermost.atlassian.net/browse/MM-36199)
 - **v5.34.3, released 2021-06-03**
@@ -870,10 +873,10 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 ### Contributors
 [abdullahceylan](https://github.com/abdullahceylan), [aconitumnapellus](https://github.com/aconitumnapellus), [Adovenmuehle](https://github.com/Adovenmuehle), [aeomin](https://github.com/aeomin), [agarciamontoro](https://github.com/agarciamontoro), [aggmoulik](https://github.com/aggmoulik), [AGMETEOR](https://github.com/AGMETEOR), [agnivade](https://github.com/agnivade), [amyblais](https://github.com/amyblais), [amynicol1985](https://github.com/amynicol1985), [angeloskyratzakos](https://github.com/angeloskyratzakos), [anurag6713](https://github.com/anurag6713), [appleboy](https://github.com/appleboy), [asaadmahmood](https://github.com/asaadmahmood), [asimsedhain](https://github.com/asimsedhain), [bbodenmiller](https://github.com/bbodenmiller), [BenCookie95](https://github.com/BenCookie95), [berkeka](https://github.com/berkeka), [BharatKalluri](https://github.com/BharatKalluri), [calebroseland](https://github.com/calebroseland), [catalintomai](https://github.com/catalintomai), [chenilim](https://github.com/chenilim), [chetanyakan](https://github.com/chetanyakan), [chikei](https://github.com/chikei), [christian-lim](https://github.com/christian-lim), [coltoneshaw](https://github.com/coltoneshaw), [cpanato](https://github.com/cpanato), [cpoile](https://github.com/cpoile), [Crimson-riot](https://github.com/Crimson-riot), [crspeller](https://github.com/crspeller), [ctlaltdieliet](https://github.com/ctlaltdieliet), [cwarnermm](https://github.com/cwarnermm), [CyrilLD](https://github.com/CyrilLD), [danielsischy](https://github.com/danielsischy), [deanwhillier](https://github.com/deanwhillier), [devinbinnie](https://github.com/devinbinnie), [djanda97](https://github.com/djanda97), [ebati](https://github.com/ebati), [enahum](https://github.com/enahum), [enelson720](https://github.com/enelson720), [esethna](https://github.com/esethna), [ethervoid](https://github.com/ethervoid), [firasm](https://github.com/firasm), [flexo3001](https://github.com/flexo3001), [flynbit](https://github.com/flynbit), [furqanmlk](https://github.com/furqanmlk), [gabrieljackson](https://github.com/gabrieljackson), [gigawhitlocks](https://github.com/gigawhitlocks), [gruceqq](https://translate.mattermost.com/user/gruceqq/), [haardikdharma10](https://github.com/haardikdharma10), [hahmadia](https://github.com/hahmadia), [hanzei](https://github.com/hanzei), [haonm](https://github.com/haonm), [hastadhana](https://github.com/hastadhana), [hectorskypl](https://github.com/hectorskypl), [hmhealey](https://github.com/hmhealey), [ianatha](https://github.com/ianatha), [icelander](https://github.com/icelander), [IndushaS](https://github.com/IndushaS), [iomodo](https://github.com/iomodo), [isacikgoz](https://github.com/isacikgoz), [it33](https://github.com/it33), [jamiehurewitz](https://github.com/jamiehurewitz), [jasonblais](https://github.com/jasonblais), [jaydeland](https://github.com/jaydeland), [jbutler992](https://github.com/jbutler992), [jbutlerdev](https://github.com/jbutlerdev), [jespino](https://github.com/jespino), [jfrerich](https://github.com/jfrerich), [jials](https://github.com/jials), [johnsonbrothers](https://github.com/johnsonbrothers), [josephbaylon](https://github.com/josephbaylon), [jp0707](https://github.com/jp0707), [JtheBAB](https://github.com/JtheBAB), [justinegeffen](https://github.com/justinegeffen), [jwilander](https://github.com/jwilander), [kaakaa](https://github.com/kaakaa), [kayazeren](https://github.com/kayazeren), [khos2ow](https://github.com/khos2ow), [larkox](https://github.com/larkox), [lawrencejohnson](https://github.com/lawrencejohnson), [levb](https://github.com/levb), [lieut-data](https://github.com/lieut-data), [lindalumitchell](https://github.com/lindalumitchell), [lucievr](https://github.com/lucievr), [lutfuahmet](https://github.com/lutfuahmet), [Maekes](https://github.com/Maekes), [mahmud2011](https://github.com/mahmud2011), [mantlecurve](https://github.com/mantlecurve), [matt-w99](https://github.com/matt-w99), [matthewbirtch](https://github.com/matthewbirtch), [maxerenberg](https://github.com/maxerenberg), [metanerd](https://github.com/metanerd), [mgdelacroix](https://github.com/mgdelacroix), [michelengelen](https://github.com/michelengelen), [mickmister](https://github.com/mickmister), [microolapshare](https://github.com/microolapshare), [migbot](https://github.com/migbot), [minecraftchest1](https://github.com/minecraftchest1), [mistikel](https://github.com/mistikel), [mkdbns](https://github.com/mkdbns), [mkraft](https://github.com/mkraft), [mlongo4290](https://github.com/mlongo4290), [mrtpcet](https://github.com/mrtpcet), [msal4](https://github.com/msal4), [Mshahidtaj](https://github.com/Mshahidtaj), [natalie-hub](https://github.com/natalie-hub), [nathanaelhoun](https://github.com/nathanaelhoun), [nevyangelova](https://github.com/nevyangelova), [nronas](https://github.com/nronas), [ogi-m](https://github.com/ogi-m), [opr77](https://github.com/opr77), [pablovelezvidal](https://github.com/pablovelezvidal), [pat-s](https://github.com/pat-s), [phntom](https://github.com/phntom), [pidgelar](https://github.com/pidgelar), [potatogim](https://github.com/potatogim), [prapti](https://github.com/prapti), [Prescise](https://github.com/Prescise), [proffalken](https://github.com/proffalken), [r-52](https://github.com/r-52), [rakhi2104](https://github.com/rakhi2104), [rbradleyhaas](https://github.com/rbradleyhaas), [reflog](https://github.com/reflog), [renjithgr](https://github.com/renjithgr), [rodcorsi](https://github.com/rodcorsi), [saf6260](https://github.com/saf6260), [sakaitsu](https://github.com/sakaitsu), [saturninoabril](https://github.com/saturninoabril), [sbishel](https://github.com/sbishel), [shazm](https://github.com/shazm), [spirosoik](https://github.com/spirosoik), [stafot](https://github.com/stafot), [streamer45](https://github.com/streamer45), [stylianosrigas](https://github.com/stylianosrigas), [svelle](https://github.com/svelle), [Szymongib](https://github.com/Szymongib), [thePanz](https://github.com/thePanz), [toto6038](https://github.com/toto6038), [tsabi](https://github.com/tsabi), [uhlhosting](https://github.com/uhlhosting), [wget](https://github.com/wget), [wiersgallak](https://github.com/wiersgallak), [wiggin77](https://github.com/wiggin77), [Willyfrog](https://github.com/Willyfrog), [xlanor](https://github.com/xlanor), [YoheiZuho](https://github.com/YoheiZuho), [youtsumi](https://github.com/youtsumi), [zefhemel](https://github.com/zefhemel), [Zukerherr](https://github.com/Zukerherr)
 
-## Release v5.33 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
+## Release v5.33 - [Feature Release](/administration/release-definitions.html#feature-release)
 
 - **v5.33.5, released 2021-06-11**
-  - Mattermost v5.33.5 contains a high level security fix. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+  - Mattermost v5.33.5 contains a high level security fix. [Upgrading](/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
 - **v5.33.4, released 2021-06-03**
   - Fixed an issue where subsequent migrations failed to run after running a dot release on new installations. [MM-35931](https://mattermost.atlassian.net/browse/MM-35931)
   - Added a performance improvement to the emoji picker overlay to improve typing performance.
@@ -889,13 +892,13 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 - **v5.33.0, released 2021-03-17**
   - Original 5.33.0 release
 
-Mattermost v5.33.0 contains low-level security fixes. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+Mattermost v5.33.0 contains low-level security fixes. [Upgrading](/administration/upgrade.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
 
 ### Important Upgrade Notes
  - Deleting a reaction is now a soft delete in the ``Reactions`` table. A schema update is required and may take up to 15 seconds on first run with large data sets.
  - WebSocket handshakes done with an HTTP version lower than 1.1 will result in a warning, and the server will transparently upgrade the version to 1.1 to comply with the WebSocket RFC. This is done to work around incorrect Nginx (and other proxy) configs that do not set the ``proxy_http_version`` directive to 1.1. This facility will be removed in a future Mattermost version. It is strongly recommended to fix the proxy configuration to correctly use the WebSocket protocol.
  
-**IMPORTANT:** If you upgrade from a release earlier than v5.32, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html).
+**IMPORTANT:** If you upgrade from a release earlier than v5.32, please read the other [Important Upgrade Notes](/administration/important-upgrade-notes.html).
 
 ### Highlights
 
@@ -1011,14 +1014,14 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 ### Contributors
 [a-c-sreedhar-reddy](https://github.com/a-c-sreedhar-reddy), [aaronrothschild](https://github.com/aaronrothschild), [aeomin](https://github.com/aeomin), [agarciamontoro](https://github.com/agarciamontoro), [AGMETEOR](https://github.com/AGMETEOR), [agnivade](https://github.com/agnivade), [Ampit](https://github.com/Ampit), [amyblais](https://github.com/amyblais), [amynicol1985](https://github.com/amynicol1985), [angeloskyratzakos](https://github.com/angeloskyratzakos), [anurag6713](https://github.com/anurag6713), [arjunagl](https://github.com/arjunagl), [ashishbhate](https://github.com/ashishbhate), [aspleenic](https://github.com/aspleenic), [BenCookie95](https://github.com/BenCookie95), [berkeka](https://github.com/berkeka), [bjorge82](https://github.com/bjorge82), [calebroseland](https://github.com/calebroseland), [carantunes](https://github.com/carantunes), [catalintomai](https://github.com/catalintomai), [chenilim](https://github.com/chenilim), [chetanyakan](https://github.com/chetanyakan), [chikei](https://github.com/chikei), [coltoneshaw](https://github.com/coltoneshaw), [cpanato](https://github.com/cpanato), [cpoile](https://github.com/cpoile), [crspeller](https://github.com/crspeller), [ctlaltdieliet](https://github.com/ctlaltdieliet), [cupakob](https://github.com/cupakob), [cwarnermm](https://github.com/cwarnermm), [daniron26](https://github.com/daniron26), [devinbinnie](https://github.com/devinbinnie), [djanda97](https://github.com/djanda97), [DSchalla](https://github.com/DSchalla), [elyscape](https://github.com/elyscape), [enelson720](https://github.com/enelson720), [esethna](https://github.com/esethna), [ethervoid](https://github.com/ethervoid), [flynbit](https://github.com/flynbit), [furqanmlk](https://github.com/furqanmlk), [gabrieljackson](https://github.com/gabrieljackson), [gruceqq](https://translate.mattermost.com/user/gruceqq/), [haardikdharma10](https://github.com/haardikdharma10), [hahmadia](https://github.com/hahmadia), [hanzei](https://github.com/hanzei), [harryfromwork](https://github.com/harryfromwork), [hectorskypl](https://github.com/hectorskypl), [helios1101](https://github.com/helios1101), [hmhealey](https://github.com/hmhealey), [icelander](https://github.com/icelander), [IndushaS](https://github.com/IndushaS), [iomodo](https://github.com/iomodo), [isacikgoz](https://github.com/isacikgoz), [jasonblais](https://github.com/jasonblais), [jatinjtg](https://github.com/jatinjtg), [jaydeland](https://github.com/jaydeland), [jespino](https://github.com/jespino), [jfrerich](https://github.com/jfrerich), [johnsonbrothers](https://github.com/johnsonbrothers), [jomaxro](https://github.com/jomaxro), [josephbaylon](https://github.com/josephbaylon), [jp0707](https://github.com/jp0707), [justinegeffen](https://github.com/justinegeffen), [jwilander](https://github.com/jwilander), [kaakaa](https://github.com/kaakaa), [kashifsoofi](https://github.com/kashifsoofi), [kayazeren](https://github.com/kayazeren), [kojiGit55](https://github.com/kojiGit55), [komik966](https://github.com/komik966), [koox00](https://github.com/koox00), [kristinakvn](https://github.com/kristinakvn), [larkox](https://github.com/larkox), [LauSam09](https://github.com/LauSam09), [lawrencejohnson](https://github.com/lawrencejohnson), [Leats](https://github.com/Leats), [levb](https://github.com/levb), [lieut-data](https://github.com/lieut-data), [lucievr](https://github.com/lucievr), [lynn915](https://github.com/lynn915), [mahmud2011](https://github.com/mahmud2011), [matthewbirtch](https://github.com/matthewbirtch), [metanerd](https://github.com/metanerd), [mgdelacroix](https://github.com/mgdelacroix), [michelengelen](https://github.com/michelengelen), [mickmister](https://github.com/mickmister), [migbot](https://github.com/migbot), [mkraft](https://github.com/mkraft), [mlongo4290](https://github.com/mlongo4290), [natalie-hub](https://github.com/natalie-hub), [neilharris123](https://github.com/neilharris123), [nevyangelova](https://github.com/nevyangelova), [nronas](https://github.com/nronas), [nurefexc](https://github.com/nurefexc), [ogi-m](https://github.com/ogi-m), [onoklin](https://github.com/onoklin), [pablovelezvidal](https://github.com/pablovelezvidal), [petermcj](https://github.com/petermcj), [Quaqmre](https://github.com/Quaqmre), [rbradleyhaas](https://github.com/rbradleyhaas), [reflog](https://github.com/reflog), [rodcorsi](https://github.com/rodcorsi), [rvillablanca](https://github.com/rvillablanca), [saf6260](https://github.com/saf6260), [saturninoabril](https://github.com/saturninoabril), [sbishel](https://github.com/sbishel), [SezalAgrawal](https://github.com/SezalAgrawal), [SimonSimonB](https://github.com/SimonSimonB), [Soriyyx](https://github.com/Soriyyx), [stafot](https://github.com/stafot), [streamer45](https://github.com/streamer45), [stylianosrigas](https://github.com/stylianosrigas), [sudheerDev](https://github.com/sudheerDev), [Szymongib](https://github.com/Szymongib), [thePanz](https://github.com/thePanz), [TQuock](https://github.com/TQuock), [uhlhosting](https://github.com/uhlhosting), [ultra1394](https://github.com/ultra1394), [vpecinka](https://github.com/vpecinka), [wget](https://github.com/wget), [wiersgallak](https://github.com/wiersgallak)
 
-## Release v5.32 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
+## Release v5.32 - [Feature Release](/administration/release-definitions.html#feature-release)
 
 - **v5.32.1, released 2021-02-17**
   - Fixed an issue where any search containing an underscore failed on PostgreSQL databases. This was fixed by reverting a v5.32.0 feature that added support for searching for terms on PostgreSQL that contain underscores.
 - **v5.32.0, released 2021-02-16**
   - Original 5.32.0 release
 
-Mattermost v5.32.0 contains low level security fixes. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+Mattermost v5.32.0 contains low level security fixes. [Upgrading](/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
 
 ### Compatibility
  - TLS versions 1.0 and 1.1 have been deprecated by browser vendors. Starting in Mattermost Server v5.32 (February 16), mmctl returns an error when connected to Mattermost servers deployed with these TLS versions and System Admins will need to explicitly add a flag in their commands to continue to use them. We recommend upgrading to TLS version 1.2 or higher.
@@ -1029,7 +1032,7 @@ Mattermost v5.32.0 contains low level security fixes. [Upgrading](https://docs.m
  - Breaking changes to the Golang client API were introduced: ``GetPostThread``, ``GetPostsForChannel``, ``GetPostsSince``, ``GetPostsAfter``, ``GetPostsBefore``, and ``GetPostsAroundLastUnread`` now require an additional collapsedThreads parameter to be passed. Any client making use of these functions will need to update them when upgrading its dependencies.
  - [A breaking change was introduced when upgrading the Go version to v1.15.5](https://golang.org/doc/go1.15#commonname) where user logins fail with AD/LDAP Sync when the certificate of the LDAP Server has no Subject Alternative Name (SAN) in it. Creating a new certificate on the AD/LDAP Server with the SAN inside fixes this.
  
-**IMPORTANT:** If you upgrade from a release earlier than v5.31, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html).
+**IMPORTANT:** If you upgrade from a release earlier than v5.31, please read the other [Important Upgrade Notes](/administration/important-upgrade-notes.html).
 
 ### Highlights
 
@@ -1128,10 +1131,10 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 ### Contributors
 [aaronrothschild](https://github.com/aaronrothschild), [Aeiyko](https://github.com/Aeiyko), [aeomin](https://github.com/aeomin), [AGMETEOR](https://github.com/AGMETEOR), [agnivade](https://github.com/agnivade), [ahmaddanialmohd](https://github.com/ahmaddanialmohd), [Ampit](https://github.com/Ampit), [amwolff](https://github.com/amwolff), [amyblais](https://github.com/amyblais), [angeloskyratzakos](https://github.com/angeloskyratzakos), [antwigambrah](https://github.com/antwigambrah), [anurag6713](https://github.com/anurag6713), [arjunagl](https://github.com/arjunagl), [asaadmahmood](https://github.com/asaadmahmood), [ashishbhate](https://github.com/ashishbhate), [aspleenic](https://github.com/aspleenic), [Ayanrocks](https://github.com/Ayanrocks), [balan2010](https://github.com/balan2010), [bbodenmiller](https://github.com/bbodenmiller), [BenCookie95](https://github.com/BenCookie95), [ByeongsuPark](https://github.com/ByeongsuPark), [camgraff](https://github.com/camgraff), [chenilim](https://github.com/chenilim), [chikei](https://github.com/chikei), [chrisfromredfin](https://github.com/chrisfromredfin), [coltoneshaw](https://github.com/coltoneshaw), [compiledsound](https://github.com/compiledsound), [coreyhulen](https://github.com/coreyhulen), [cpanato](https://github.com/cpanato), [cpoile](https://github.com/cpoile), [crspeller](https://github.com/crspeller), [ctlaltdieliet](https://github.com/ctlaltdieliet), [cwarnermm](https://github.com/cwarnermm), [darkLord19](https://github.com/darkLord19), [deanwhillier](https://github.com/deanwhillier), [devinbinnie](https://github.com/devinbinnie), [dmpichugin](https://github.com/dmpichugin), [ebroda](https://github.com/ebroda), [emilyhollinger](https://github.com/emilyhollinger), [emskaplann](https://github.com/emskaplann), [enahum](https://github.com/enahum), [enelson720](https://github.com/enelson720), [esethna](https://github.com/esethna), [FlipEnergy](https://github.com/FlipEnergy), [flynbit](https://github.com/flynbit), [gabrieljackson](https://github.com/gabrieljackson), [gigawhitlocks](https://github.com/gigawhitlocks), [gruceqq](https://translate.mattermost.com/user/gruceqq/), [haardikdharma10](https://github.com/haardikdharma10), [hahmadia](https://github.com/hahmadia), [hanzei](https://github.com/hanzei), [Hassall](https://github.com/Hassall), [hectorskypl](https://github.com/hectorskypl), [hmhealey](https://github.com/hmhealey), [ialorro](https://github.com/ialorro), [iomodo](https://github.com/iomodo), [isacikgoz](https://github.com/isacikgoz), [it33](https://github.com/it33), [jasonblais](https://github.com/jasonblais), [jaydeland](https://github.com/jaydeland), [jespino](https://github.com/jespino), [jfrerich](https://github.com/jfrerich), [johnsonbrothers](https://github.com/johnsonbrothers), [josephbaylon](https://github.com/josephbaylon), [jp0707](https://github.com/jp0707), [justinegeffen](https://github.com/justinegeffen), [jwilander](https://github.com/jwilander), [kaakaa](https://github.com/kaakaa), [kashifsoofi](https://github.com/kashifsoofi), [kayazeren](https://github.com/kayazeren), [khos2ow](https://github.com/khos2ow), [koox00](https://github.com/koox00), [kristinakvn](https://github.com/kristinakvn), [larkox](https://github.com/larkox), [lawrencejohnson](https://github.com/lawrencejohnson), [levb](https://github.com/levb), [lieut-data](https://github.com/lieut-data), [lindalumitchell](https://github.com/lindalumitchell), [lmammino](https://github.com/lmammino), [lucievr](https://github.com/lucievr), [lynn915](https://github.com/lynn915), [madhavhugar](https://github.com/madhavhugar), [marianunez](https://github.com/marianunez), [maxerenberg](https://github.com/maxerenberg), [metanerd](https://github.com/metanerd), [mgdelacroix](https://github.com/mgdelacroix), [mickmister](https://github.com/mickmister), [migbot](https://github.com/migbot), [mlongo4290](https://github.com/mlongo4290), [moschlar](https://github.com/moschlar), [natalie-hub](https://github.com/natalie-hub), [nathanaelhoun](https://github.com/nathanaelhoun), [nevyangelova](https://github.com/nevyangelova), [nickmisasi](https://github.com/nickmisasi), [nikkinagar](https://github.com/nikkinagar), [nronas](https://github.com/nronas), [ogi-m](https://github.com/ogi-m), [onoklin](https://github.com/onoklin), [pablovelezvidal](https://github.com/pablovelezvidal), [prapti](https://github.com/prapti), [R8s6](https://github.com/R8s6), [rbradleyhaas](https://github.com/rbradleyhaas), [reflog](https://github.com/reflog), [rodcorsi](https://github.com/rodcorsi), [rolwin100](https://github.com/rolwin100), [sadohert](https://github.com/sadohert), [saturninoabril](https://github.com/saturninoabril), [sbishel](https://github.com/sbishel), [schunka](https://github.com/schunka), [shazm](https://github.com/shazm), [shuang2411](https://github.com/shuang2411), [SimonSimonB](https://github.com/SimonSimonB), [srkgupta](https://github.com/srkgupta), [stafot](https://github.com/stafot), [streamer45](https://github.com/streamer45), [stylianosrigas](https://github.com/stylianosrigas), [svenseeberg](https://github.com/svenseeberg), [Szymongib](https://github.com/Szymongib), [thePanz](https://github.com/thePanz), [uhlhosting](https://github.com/uhlhosting), [vpecinka](https://github.com/vpecinka), [vraravam](https://github.com/vraravam), [wf6DJd8a3xSSCZbn](https://github.com/wf6DJd8a3xSSCZbn), [wget](https://github.com/wget), [wiersgallak](https://github.com/wiersgallak), [wiggin77](https://github.com/wiggin77), [Willyfrog](https://github.com/Willyfrog), [yukiisbored](https://github.com/yukiisbored)
 
-## Release v5.31 - [ESR](https://docs.mattermost.com/administration/extended-support-release.html)
+## Release v5.31 - [ESR](/administration/extended-support-release.html)
 
 - **v5.31.9, released 2021-08-04**
-  - Mattermost v5.31.9 contains a medium level security fix. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+  - Mattermost v5.31.9 contains a medium level security fix. [Upgrading](/administration/upgrade.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
   - Improved typing performance in affected environments by reducing the frequency at which drafts are saved.
 - **v5.31.8, released 2021-07-21**
   - Fixed an issue in clustering where a mutex would fail to be unlocked when a timeout happened. [MM-37246](https://mattermost.atlassian.net/browse/MM-37246)
@@ -1159,11 +1162,11 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 - **v5.31.0, released 2021-01-16**
   - Original 5.31.0 release
 
-Mattermost v5.31.0 contains a low level security fix. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+Mattermost v5.31.0 contains a low level security fix. [Upgrading](/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
 
 ### Compatibility
 
- - Support for Mattermost Server v5.25 [Extended Support Release](https://docs.mattermost.com/administration/extended-support-release.html) is coming to the end of its life cycle on April 16, 2021. Upgrading to Mattermost Server v5.31 [Extended Support Release](https://docs.mattermost.com/administration/extended-support-release.html) or later is highly recommended.
+ - Support for Mattermost Server v5.25 [Extended Support Release](/administration/extended-support-release.html) is coming to the end of its life cycle on April 16, 2021. Upgrading to Mattermost Server v5.31 [Extended Support Release](/administration/extended-support-release.html) or later is highly recommended.
 
 ### Highlights
 
@@ -1223,7 +1226,7 @@ Mattermost v5.31.0 contains a low level security fix. [Upgrading](https://docs.m
 ### Contributors
  - [a-c-sreedhar-reddy](https://github.com/a-c-sreedhar-reddy), [aeomin](https://github.com/aeomin), [agnivade](https://github.com/agnivade), [akshaychhajed](https://github.com/akshaychhajed), [amwsis](https://github.com/amwsis), [amyblais](https://github.com/amyblais), [anurag6713](https://github.com/anurag6713), [ashishbhate](https://github.com/ashishbhate), [avinashlng1080](https://github.com/avinashlng1080), [Ayanrocks](https://github.com/Ayanrocks), [calebroseland](https://github.com/calebroseland), [CandyZack](https://github.com/CandyZack), [catalintomai](https://github.com/catalintomai), [chikei](https://github.com/chikei), [cinlloc](https://github.com/cinlloc), [cpanato](https://github.com/cpanato), [CrHasher](https://github.com/CrHasher), [crspeller](https://github.com/crspeller), [ctlaltdieliet](https://github.com/ctlaltdieliet), [cwarnermm](https://github.com/cwarnermm), [daniel-shuy](https://github.com/daniel-shuy), [der-test](https://github.com/der-test), [devinbinnie](https://github.com/devinbinnie), [DigasNikas](https://github.com/DigasNikas), [edtrist](https://github.com/edtrist), [enahum](https://github.com/enahum), [ethervoid](https://github.com/ethervoid), [flynbit](https://github.com/flynbit), [furqanmlk](https://github.com/furqanmlk), [gabrieljackson](https://github.com/gabrieljackson), [girish17](https://github.com/girish17), [gruceqq](https://translate.mattermost.com/user/gruceqq/), [haardikdharma10](https://github.com/haardikdharma10), [hahmadia](https://github.com/hahmadia), [hanzei](https://github.com/hanzei), [hectorskypl](https://github.com/hectorskypl), [HeroicHitesh](https://github.com/HeroicHitesh), [hmhealey](https://github.com/hmhealey), [iomodo](https://github.com/iomodo), [isacikgoz](https://github.com/isacikgoz), [it33](https://github.com/it33), [jakaya123](https://github.com/jakaya123), [jakubnovak998](https://github.com/jakubnovak998), [jasonblais](https://github.com/jasonblais), [JeremyShih](https://github.com/JeremyShih), [jespino](https://github.com/jespino), [josephbaylon](https://github.com/josephbaylon), [justinegeffen](https://github.com/justinegeffen), [jwilander](https://github.com/jwilander), [kaakaa](https://github.com/kaakaa), [kayazeren](https://github.com/kayazeren), [kcc343](https://github.com/kcc343), [KevinMarioGerard](https://github.com/KevinMarioGerard), [larkox](https://github.com/larkox), [lawrencejohnson](https://github.com/lawrencejohnson), [Leryan](https://github.com/Leryan), [lieut-data](https://github.com/lieut-data), [marianunez](https://github.com/marianunez), [meilon](https://github.com/meilon), [metanerd](https://github.com/metanerd), [mgdelacroix](https://github.com/mgdelacroix), [michelengelen](https://github.com/michelengelen), [mickmister](https://github.com/mickmister), [migbot](https://github.com/migbot), [MikeworX](https://github.com/MikeworX), [mkraft](https://github.com/mkraft), [mlongo4290](https://github.com/mlongo4290), [msal4](https://github.com/msal4), [nevyangelova](https://github.com/nevyangelova), [nickmisasi](https://github.com/nickmisasi), [nronas](https://github.com/nronas), [pablovelezvidal](https://github.com/pablovelezvidal), [reflog](https://github.com/reflog), [rodcorsi](https://github.com/rodcorsi), [sadohert](https://github.com/sadohert), [saturninoabril](https://github.com/saturninoabril), [SBagaria2710](https://github.com/SBagaria2710), [sbishel](https://github.com/sbishel), [sbley](https://github.com/sbley), [snhardin](https://github.com/snhardin), [streamer45](https://github.com/streamer45), [sudheerDev](https://github.com/sudheerDev), [thePanz](https://github.com/thePanz), [tweichart](https://github.com/tweichart), [Tzunhei](https://github.com/Tzunhei), [uhlhosting](https://github.com/uhlhosting), [vraravam](https://github.com/vraravam), [wget](https://github.com/wget), [wiggin77](https://github.com/wiggin77), [Willyfrog](https://github.com/Willyfrog)
 
-## Release v5.30 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
+## Release v5.30 - [Feature Release](/administration/release-definitions.html#feature-release)
 
 - **v5.30.3, released 2021-02-02**
   - Fixed an issue where the **Edition** diagnostics field was reporting as "null" for Team Edition servers on 5.30.
@@ -1353,17 +1356,17 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
   - Original 5.29.0 release
 
 ### Compatibility
- - A new configuration setting ``ThreadAutoFollow`` has been added to support [Collapsed Reply Threads](https://docs.google.com/presentation/d/1QSrPws3N8AMSjVyOKp15FKT7O0fGMSx8YidjSDS4Wng/edit#slide=id.g2f0aecc189_0_245) releasing in beta in Q1 2021. This setting is enabled by default and may affect server performance. It is recommended to review our [documentation on hardware requirements](https://docs.mattermost.com/install/requirements.html#hardware-requirements) to ensure your servers are appropriately scaled for the size of your user base.
+ - A new configuration setting ``ThreadAutoFollow`` has been added to support [Collapsed Reply Threads](https://docs.google.com/presentation/d/1QSrPws3N8AMSjVyOKp15FKT7O0fGMSx8YidjSDS4Wng/edit#slide=id.g2f0aecc189_0_245) releasing in beta in Q1 2021. This setting is enabled by default and may affect server performance. It is recommended to review our [documentation on hardware requirements](/install/requirements.html#hardware-requirements) to ensure your servers are appropriately scaled for the size of your user base.
 
-**IMPORTANT:** If you upgrade from a release earlier than v5.28, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html).
+**IMPORTANT:** If you upgrade from a release earlier than v5.28, please read the other [Important Upgrade Notes](/administration/important-upgrade-notes.html).
 
 ### Highlights
 
 #### Channel Moderation Settings now generally available (E20)
- - [Channel moderation](https://docs.mattermost.com/deployment/team-channel-management.html#channels) feature was moved out of beta to general availability.
+ - [Channel moderation](/deployment/team-channel-management.html#channels) feature was moved out of beta to general availability.
 
 #### Mattermost Omnibus now generally available
- - [Mattermost Omnibus](https://docs.mattermost.com/help/getting-started/light-install.html) feature was moved out of beta to general availability.
+ - [Mattermost Omnibus](/help/getting-started/light-install.html) feature was moved out of beta to general availability.
 
 ### Improvements
 
@@ -1433,7 +1436,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 ### Contributors
  - [7quantumphysics](https://github.com/7quantumphysics), [93lykevin](https://github.com/93lykevin), [abdusabri](https://github.com/abdusabri), [Adovenmuehle](https://github.com/Adovenmuehle), [aedott](https://github.com/aedott), [aeomin](https://github.com/aeomin), [agarciamontoro](https://github.com/agarciamontoro), [agnivade](https://github.com/agnivade), [akshaychhajed](https://github.com/akshaychhajed), [akwanmaroso](https://github.com/akwanmaroso), [alexpjohnson](https://github.com/alexpjohnson), [ali-farooq0](https://github.com/ali-farooq0), [altmas5](https://github.com/altmas5), [amsjavan](https://github.com/amsjavan), [amwolff](https://github.com/amwolff), [amyblais](https://github.com/amyblais), [anchepiece](https://github.com/anchepiece), [angeloskyratzakos](https://github.com/angeloskyratzakos), [Ant0wan](https://github.com/Ant0wan), [arc9693](https://github.com/arc9693), [ArcaneDiver](https://github.com/ArcaneDiver), [ArturBa](https://github.com/ArturBa), [ashishbhate](https://github.com/ashishbhate), [AshishMhrzn10](https://github.com/AshishMhrzn10), [asimsedhain](https://github.com/asimsedhain), [aspleenic](https://github.com/aspleenic), [ataboo](https://github.com/ataboo), [attiss](https://github.com/attiss), [AugustasV](https://github.com/AugustasV), [AugustinJose1221](https://github.com/AugustinJose1221), [avasconcelos114](https://github.com/avasconcelos114), [avinashdhinwa](https://github.com/avinashdhinwa), [Ayanrocks](https://github.com/Ayanrocks), [bhargav50](https://github.com/bhargav50), [ByeongsuPark](https://github.com/ByeongsuPark), [calebroseland](https://github.com/calebroseland), [camgraff](https://github.com/camgraff), [carantunes](https://github.com/carantunes), [catalintomai](https://github.com/catalintomai), [CEOehis](https://github.com/CEOehis), [chetanyakan](https://github.com/chetanyakan), [chikei](https://github.com/chikei), [chrisfromredfin](https://github.com/chrisfromredfin), [cinlloc](https://github.com/cinlloc), [cjmartian](https://github.com/cjmartian), [clarmso](https://github.com/clarmso), [coltoneshaw](https://github.com/coltoneshaw), [cpanato](https://github.com/cpanato), [cpoile](https://github.com/cpoile), [crspeller](https://github.com/crspeller), [ctlaltdieliet](https://github.com/ctlaltdieliet), [daniloff200](https://github.com/daniloff200), [deanwhillier](https://github.com/deanwhillier), [der-test](https://github.com/der-test), [devinbinnie](https://github.com/devinbinnie), [devius](https://github.com/devius), [didithilmy](https://github.com/didithilmy), [DigasNikas](https://github.com/DigasNikas), [diode](https://github.com/diode), [dudupopkhadze](https://github.com/dudupopkhadze), [edtrist](https://github.com/edtrist), [emilyacook](https://github.com/emilyacook), [emilyhollinger](https://github.com/emilyhollinger), [enahum](https://github.com/enahum), [enelson720](https://github.com/enelson720), [EnzoBtv](https://github.com/EnzoBtv), [erezo9](https://github.com/erezo9), [ericjaystevens](https://github.com/ericjaystevens), [esethna](https://github.com/esethna), [ethervoid](https://github.com/ethervoid), [evilghostgirl](https://github.com/evilghostgirl), [fakela](https://github.com/fakela), [filipghorbani](https://github.com/filipghorbani), [fireynis](https://github.com/fireynis), [flynbit](https://github.com/flynbit), [fmunshi](https://github.com/fmunshi), [gabrieljackson](https://github.com/gabrieljackson), [Ganzabahl](https://github.com/Ganzabahl), [GodlikePenguin](https://github.com/GodlikePenguin), [goldsziggy](https://github.com/goldsziggy), [gruceqq](https://translate.mattermost.com/user/gruceqq/), [grundleborg](https://github.com/grundleborg), [gupsho](https://github.com/gupsho), [haardikdharma10](https://github.com/haardikdharma10), [hahmadia](https://github.com/hahmadia), [hanzei](https://github.com/hanzei), [hardikmodi1](https://github.com/hardikmodi1), [hectorgabucio](https://github.com/hectorgabucio), [hectorskypl](https://github.com/hectorskypl), [hiendinhngoc](https://github.com/hiendinhngoc), [hirenchauhan2](https://github.com/hirenchauhan2), [hmhealey](https://github.com/hmhealey), [icy-meteor](https://github.com/icy-meteor), [imakish](https://github.com/imakish), [isacikgoz](https://github.com/isacikgoz), [it33](https://github.com/it33), [jasimmons](https://github.com/jasimmons), [jasonblais](https://github.com/jasonblais), [jaydeland](https://github.com/jaydeland), [jaypitroda12](https://github.com/jaypitroda12), [jecepeda](https://github.com/jecepeda), [jekill](https://github.com/jekill), [jespino](https://github.com/jespino), [jfrerich](https://github.com/jfrerich), [jgilliam17](https://github.com/jgilliam17), [jmakhack](https://github.com/jmakhack), [johnsonbrothers](https://github.com/johnsonbrothers), [Jonany](https://github.com/Jonany), [josephbaylon](https://github.com/josephbaylon), [joshuabezaleel](https://github.com/joshuabezaleel), [jufab](https://github.com/jufab), [justinegeffen](https://github.com/justinegeffen), [kaakaa](https://github.com/kaakaa), [kashifsoofi](https://github.com/kashifsoofi), [kayazeren](https://github.com/kayazeren), [khos2ow](https://github.com/khos2ow), [khushijindal](https://github.com/khushijindal), [KrishnaSindhur](https://github.com/KrishnaSindhur), [KuSh](https://github.com/KuSh), [larkox](https://github.com/larkox), [Leryan](https://github.com/Leryan), [lestgabo](https://github.com/lestgabo), [levb](https://github.com/levb), [lieut-data](https://github.com/lieut-data), [lindalumitchell](https://github.com/lindalumitchell), [lindy65](https://github.com/lindy65), [lipmem](https://github.com/lipmem), [lucianomagrao](https://github.com/lucianomagrao), [lushan01](https://github.com/lushan01), [lynn915](https://github.com/lynn915), [M-Buntoro](https://github.com/M-Buntoro), [Manimaran11](https://github.com/Manimaran11), [marcelo-cardozo](https://github.com/marcelo-cardozo), [marianunez](https://github.com/marianunez), [mathiasvr](https://github.com/mathiasvr), [maticbasle](https://github.com/maticbasle), [mattermod](https://github.com/mattermod), [mbouzada](https://github.com/mbouzada), [mdabydeen](https://github.com/mdabydeen), [meilon](https://github.com/meilon), [metanerd](https://github.com/metanerd), [mgdelacroix](https://github.com/mgdelacroix), [michelengelen](https://github.com/michelengelen), [mickmister](https://github.com/mickmister), [migbot](https://github.com/migbot), [MikeworX](https://github.com/MikeworX), [mishkaowner](https://github.com/mishkaowner), [mkraft](https://github.com/mkraft), [mlongo4290](https://github.com/mlongo4290), [MohanSha](https://github.com/MohanSha), [moussetc](https://github.com/moussetc), [n-thumann](https://github.com/n-thumann), [natalie-hub](https://github.com/natalie-hub), [nathanaelhoun](https://github.com/nathanaelhoun), [nbolender](https://github.com/nbolender), [NCC-1031](https://github.com/NCC-1031), [nevyangelova](https://github.com/nevyangelova), [NexWeb](https://github.com/NexWeb), [ng29](https://github.com/ng29), [nickmisasi](https://github.com/nickmisasi), [nikolaizah](https://github.com/nikolaizah), [nizarmah](https://github.com/nizarmah), [ogi-m](https://github.com/ogi-m), [Oppodelldog](https://github.com/Oppodelldog), [outofgamut](https://github.com/outofgamut), [ozdemirburak](https://github.com/ozdemirburak), [palcodes](https://github.com/palcodes), [paulussujono](https://github.com/paulussujono), [Phizzard](https://github.com/Phizzard), [pikami](https://github.com/pikami), [Poussinette](https://github.com/Poussinette), [pranavtharoor](https://github.com/pranavtharoor), [prapti](https://github.com/prapti), [prazolpp](https://github.com/prazolpp), [promulo](https://github.com/promulo), [radoslavius](https://github.com/radoslavius), [Raj-Datta-Manohar](https://github.com/Raj-Datta-Manohar), [RanadeepPolavarapu](https://github.com/RanadeepPolavarapu), [rbradleyhaas](https://github.com/rbradleyhaas), [reflog](https://github.com/reflog), [Revanth47](https://github.com/Revanth47), [rishabh710](https://github.com/rishabh710), [rodcorsi](https://github.com/rodcorsi), [rvillablanca](https://github.com/rvillablanca), [sakaitsu](https://github.com/sakaitsu), [saturninoabril](https://github.com/saturninoabril), [sbishel](https://github.com/sbishel), [seongwon-kang](https://github.com/seongwon-kang), [SezalAgrawal](https://github.com/SezalAgrawal), [ShajithaMohammed](https://github.com/ShajithaMohammed), [shazm](https://github.com/shazm), [shieldsjared](https://github.com/shieldsjared), [shihanng](https://github.com/shihanng), [Shivam7-1](https://github.com/Shivam7-1), [shred86](https://github.com/shred86), [shtelzerartem](https://github.com/shtelzerartem), [sikloidz](https://github.com/sikloidz), [simross](https://github.com/simross), [singh-sarabjeet](https://github.com/singh-sarabjeet), [SinithH](https://github.com/SinithH), [sirMackk](https://github.com/sirMackk), [sowmiyamuthuraman](https://github.com/sowmiyamuthuraman), [spielers](https://github.com/spielers), [spiritbro1](https://github.com/spiritbro1), [sridhar02](https://github.com/sridhar02), [srkgupta](https://github.com/srkgupta), [streamer45](https://github.com/streamer45), [stylianosrigas](https://github.com/stylianosrigas), [sudheerDev](https://github.com/sudheerDev), [sudiptog81](https://github.com/sudiptog81), [Sumindar](https://github.com/Sumindar), [svelle](https://github.com/svelle), [Szymongib](https://github.com/Szymongib), [Tak-Iwamoto](https://github.com/Tak-Iwamoto), [talentedunicorn](https://github.com/talentedunicorn), [tasdomas](https://github.com/tasdomas), [tellustheguru](https://github.com/tellustheguru), [teresa-novoa](https://github.com/teresa-novoa), [thefactremains](https://github.com/thefactremains), [TheoVitkovskiy](https://github.com/TheoVitkovskiy), [thePanz](https://github.com/thePanz), [TQuock](https://github.com/TQuock), [tsabi](https://github.com/tsabi), [tw-ayush](https://github.com/tw-ayush), [uhlhosting](https://github.com/uhlhosting), [utkuufuk](https://github.com/utkuufuk), [vaibhav111tandon](https://github.com/vaibhav111tandon), [vanya829](https://github.com/vanya829), [varunks99](https://github.com/varunks99), [vipul08](https://github.com/vipul08), [vladimirdotk](https://github.com/vladimirdotk), [VolatianaYuliana](https://github.com/VolatianaYuliana), [wget](https://github.com/wget), [wiersgallak](https://github.com/wiersgallak), [wijayaerick](https://github.com/wijayaerick), [Willyfrog](https://github.com/Willyfrog), [yash2189](https://github.com/yash2189)
 
-## Release v5.28 - [Feature Release](https://docs.mattermost.com/process/release-faq.html#release-overview)
+## Release v5.28 - [Feature Release](/process/release-faq.html#release-overview)
 
 - **v5.28.2, released 2020-12-03**
   - Disabled the xmlsec1-based SAML library in favor of the re-enabled and improved SAML library.
@@ -1445,13 +1448,13 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ### Compatibility
  - PostgreSQL ended long-term support for [version 9.4 in February 2020](https://www.postgresql.org/support/versioning). Mattermost is officially supporting PostgreSQL version 10 with v5.26 release as PostgreSQL 9.4 is no longer supported. New installs will require PostgreSQL 10+. Previous Mattermost versions, including our current ESR, will continue to be compatible with PostgreSQL 9.4. We plan on fully deprecating PostgreSQL 9.4 and all 9.x versions in our v5.30 release (December 16, 2020). Please follow the instructions under the Upgrading Section within [the PostgreSQL documentation](https://www.postgresql.org/support/versioning/).
- - Support for Mattermost Server [Extended Support Release](https://docs.mattermost.com/administration/extended-support-release.html) (ESR) 5.19 has come to the end of its lifecycle. Upgrading to Mattermost Server v5.25 or later is required.
+ - Support for Mattermost Server [Extended Support Release](/administration/extended-support-release.html) (ESR) 5.19 has come to the end of its lifecycle. Upgrading to Mattermost Server v5.25 or later is required.
  - TLS versions 1.0 and 1.1 have been deprecated by browser vendors. Starting in v5.31 (January 16, 2021) mmctl will return an error when connected to Mattermost servers deployed with these TLS versions and System Admins will need to explicitly add a flag in their commands to continue to use them. We recommend upgrading to TLS version 1.2 or higher.
 
 ### Breaking Changes
  - Now when the service crashes, it will generate a coredump instead of just dumping the stack trace to the console. This allows us to preserve the full information of the crash to help with debugging it. For more information about coredumps, please see: https://man7.org/linux/man-pages/man5/core.5.html.  
 
-**IMPORTANT:** If you upgrade from a release earlier than v5.27, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html).
+**IMPORTANT:** If you upgrade from a release earlier than v5.27, please read the other [Important Upgrade Notes](/administration/important-upgrade-notes.html).
 
 ### Highlights
 
@@ -1462,7 +1465,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - You can now improve the security of your AD/LDAP authentication with certificate-based AD/LDAP authentication.
 
 #### Stay current with in-product notices
- - With in-product notices, users and Admins will be made aware of the newest product enhancements from within Mattermost. [Learn more about in-product notices here](https://docs.mattermost.com/administration/notices.html).
+ - With in-product notices, users and Admins will be made aware of the newest product enhancements from within Mattermost. [Learn more about in-product notices here](/administration/notices.html).
 
 ### Improvements
 
@@ -1584,7 +1587,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 ### Contributors
  - [aaronrothschild](https://github.com/aaronrothschild), [aedott](https://github.com/aedott), [aeomin](https://github.com/aeomin), [agarciamontoro](https://github.com/agarciamontoro), [agnivade](https://github.com/agnivade), [ali-farooq0](https://github.com/ali-farooq0), [amwolff](https://github.com/amwolff), [amyblais](https://github.com/amyblais), [angeloskyratzakos](https://github.com/angeloskyratzakos), [apollo13](https://github.com/apollo13), [archit-p](https://github.com/archit-p), [arshchimni](https://github.com/arshchimni), [asaadmahmood](https://github.com/asaadmahmood), [ashishbhate](https://github.com/ashishbhate), [asimsedhain](https://github.com/asimsedhain), [avasconcelos114](https://github.com/avasconcelos114), [Ayanrocks](https://github.com/Ayanrocks), [bbodenmiller](https://github.com/bbodenmiller), [bhargav50](https://github.com/bhargav50), [calebroseland](https://github.com/calebroseland), [catalintomai](https://github.com/catalintomai), [chikei](https://github.com/chikei), [clarmso](https://github.com/clarmso), [colorfusion](https://github.com/colorfusion), [cpanato](https://github.com/cpanato), [cpoile](https://github.com/cpoile), [crspeller](https://github.com/crspeller), [ctlaltdieliet](https://github.com/ctlaltdieliet), [der-test](https://github.com/der-test), [devinbinnie](https://github.com/devinbinnie), [devius](https://github.com/devius), [DylanWard14](https://github.com/DylanWard14), [elaine-mattermost](https://github.com/elaine-mattermost), [elyscape](https://github.com/elyscape), [emilyhollinger](https://github.com/emilyhollinger), [enahum](https://github.com/enahum), [enelson720](https://github.com/enelson720), [esethna](https://github.com/esethna), [ethervoid](https://github.com/ethervoid), [fakoor](https://github.com/fakoor), [flynbit](https://github.com/flynbit), [fmunshi](https://github.com/fmunshi), [furqanmlk](https://github.com/furqanmlk), [gabrieljackson](https://github.com/gabrieljackson), [gigawhitlocks](https://github.com/gigawhitlocks), [gracion](https://github.com/gracion), [gruceqq](https://translate.mattermost.com/user/gruceqq/), [grundleborg](https://github.com/grundleborg), [hahmadia](https://github.com/hahmadia), [hanzei](https://github.com/hanzei), [hectorskypl](https://github.com/hectorskypl), [hmhealey](https://github.com/hmhealey), [iomodo](https://github.com/iomodo), [isacikgoz](https://github.com/isacikgoz), [it33](https://github.com/it33), [jakubnovak998](https://github.com/jakubnovak998), [jasonblais](https://github.com/jasonblais), [jaydeland](https://github.com/jaydeland), [jecepeda](https://github.com/jecepeda), [JeremyShih](https://github.com/JeremyShih), [jespino](https://github.com/jespino), [jfrerich](https://github.com/jfrerich), [jgilliam17](https://github.com/jgilliam17), [johnsonbrothers](https://github.com/johnsonbrothers), [josephbaylon](https://github.com/josephbaylon), [josephk96](https://github.com/josephk96), [jp0707](https://github.com/jp0707), [JtheBAB](https://github.com/JtheBAB), [jupenur](https://github.com/jupenur), [justinegeffen](https://github.com/justinegeffen), [jwilander](https://github.com/jwilander), [kaakaa](https://github.com/kaakaa), [kashifsoofi](https://github.com/kashifsoofi), [kayazeren](https://github.com/kayazeren), [khos2ow](https://github.com/khos2ow), [kosgrz](https://github.com/kosgrz), [lanjp](https://github.com/lanjp), [larkox](https://github.com/larkox), [levb](https://github.com/levb), [lieut-data](https://github.com/lieut-data), [lindalumitchell](https://github.com/lindalumitchell), [Lumexralph](https://github.com/Lumexralph), [luryus](https://github.com/luryus), [lynn915](https://github.com/lynn915), [M-ZubairAhmed](https://github.com/M-ZubairAhmed), [marianunez](https://github.com/marianunez), [MathewtheCoder](https://github.com/MathewtheCoder), [mathiusjohnson](https://github.com/mathiusjohnson), [meilon](https://github.com/meilon), [metanerd](https://github.com/metanerd), [mgdelacroix](https://github.com/mgdelacroix), [mickmister](https://github.com/mickmister), [migbot](https://github.com/migbot), [mkraft](https://github.com/mkraft), [mlongo4290](https://github.com/mlongo4290), [mozkomor05](https://github.com/mozkomor05), [natalie-hub](https://github.com/natalie-hub), [nevyangelova](https://github.com/nevyangelova), [nickmisasi](https://github.com/nickmisasi), [nikolaizah](https://github.com/nikolaizah), [ogi-m](https://github.com/ogi-m), [openmohan](https://github.com/openmohan), [prapti](https://github.com/prapti), [rbradleyhaas](https://github.com/rbradleyhaas), [reflog](https://github.com/reflog), [rodcorsi](https://github.com/rodcorsi), [RohitJain13](https://github.com/RohitJain13), [rvillablanca](https://github.com/rvillablanca), [saturninoabril](https://github.com/saturninoabril), [sbishel](https://github.com/sbishel), [shieldsjared](https://github.com/shieldsjared), [sridhar02](https://github.com/sridhar02), [srkgupta](https://github.com/srkgupta), [StevenPhan](https://github.com/StevenPhan), [streamer45](https://github.com/streamer45), [stylianosrigas](https://github.com/stylianosrigas), [sudheerDev](https://github.com/sudheerDev), [Tak-Iwamoto](https://github.com/Tak-Iwamoto), [tasdomas](https://github.com/tasdomas), [teresa-novoa](https://github.com/teresa-novoa), [thefactremains](https://github.com/thefactremains), [thePanz](https://github.com/thePanz), [TQuock](https://github.com/TQuock), [txeli](https://github.com/txeli), [uhlhosting](https://github.com/uhlhosting), [vladimirdotk](https://github.com/vladimirdotk), [wget](https://github.com/wget), [wiersgallak](https://github.com/wiersgallak), [wiggin77](https://github.com/wiggin77), [Willyfrog](https://github.com/Willyfrog)
 
-## Release v5.27 - [Quality Release](https://docs.mattermost.com/process/release-faq.html#release-overview)
+## Release v5.27 - [Quality Release](/process/release-faq.html#release-overview)
 
 - **v5.27.2, released 2020-12-03**
   - Disabled the xmlsec1-based SAML library in favor of the re-enabled and improved SAML library.
@@ -1593,7 +1596,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 - **v5.27.0, released 2020-09-16**
   - Original 5.27.0 release
 
-Mattermost v5.27.0 contains a low level security fix. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+Mattermost v5.27.0 contains a low level security fix. [Upgrading](/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
 
 ### Improvements
  - Added the ability to upgrade Mattermost from Team Edition to Enterprise Edition directly from the System Console.
@@ -1662,12 +1665,12 @@ Mattermost v5.27.0 contains a low level security fix. [Upgrading](https://docs.m
 ### Contributors
  - [abdulsmapara](https://github.com/abdulsmapara), [abdusabri](https://github.com/abdusabri), [Adovenmuehle](https://github.com/Adovenmuehle), [aeomin](https://github.com/aeomin), [agarciamontoro](https://github.com/agarciamontoro), [agnivade](https://github.com/agnivade), [aidapira](https://github.com/aidapira), [ali-farooq0](https://github.com/ali-farooq0), [amyblais](https://github.com/amyblais), [amynicol1985](https://github.com/amynicol1985), [angeloskyratzakos](https://github.com/angeloskyratzakos), [ankallio](https://github.com/ankallio), [asaadmahmood](https://github.com/asaadmahmood), [ashishbhate](https://github.com/ashishbhate), [AugustasV](https://github.com/AugustasV), [avasconcelos114](https://github.com/avasconcelos114), [BaaaZen](https://github.com/BaaaZen), [bbodenmiller](https://github.com/bbodenmiller), [bill2004158](https://github.com/bill2004158), [bradjcoughlin](https://github.com/bradjcoughlin), [calebroseland](https://github.com/calebroseland), [catalintomai](https://github.com/catalintomai), [chakatz](https://github.com/chakatz), [chikei](https://github.com/chikei), [corey-robinson](https://github.com/corey-robinson), [cpanato](https://github.com/cpanato), [cpoile](https://github.com/cpoile), [crspeller](https://github.com/crspeller), [ctlaltdieliet](https://github.com/ctlaltdieliet), [danielhelfand](https://github.com/danielhelfand), [DanielSz50](https://github.com/DanielSz50), [dantepippi](https://github.com/dantepippi), [Dartui](https://github.com/Dartui), [dbejanishvili](https://github.com/dbejanishvili), [deanwhillier](https://github.com/deanwhillier), [denniskamp](https://github.com/denniskamp), [der-test](https://github.com/der-test), [devinbinnie](https://github.com/devinbinnie), [djanda97](https://github.com/djanda97), [dpanic](https://github.com/dpanic), [emilyhollinger](https://github.com/emilyhollinger), [enahum](https://github.com/enahum), [enelson720](https://github.com/enelson720), [ericjaystevens](https://github.com/ericjaystevens), [esadur](https://github.com/esadur), [esethna](https://github.com/esethna), [ethervoid](https://github.com/ethervoid), [faase](https://github.com/faase), [fakela](https://github.com/fakela), [flexo3001](https://github.com/flexo3001), [flynbit](https://github.com/flynbit), [fmunshi](https://github.com/fmunshi), [Francois-D](https://github.com/Francois-D), [gabrieljackson](https://github.com/gabrieljackson), [ghasrfakhri](https://github.com/ghasrfakhri), [gigawhitlocks](https://github.com/gigawhitlocks), [grubbins](https://github.com/grubbins), [gruceqq](https://translate.mattermost.com/user/gruceqq/), [hahmadia](https://github.com/hahmadia), [hannaparks](https://github.com/hannaparks), [hanzei](https://github.com/hanzei), [hectorskypl](https://github.com/hectorskypl), [hhhhugi](https://github.com/hhhhugi), [hmhealey](https://github.com/hmhealey), [hryuk](https://github.com/hryuk), [ialorro](https://github.com/ialorro), [icelander](https://github.com/icelander), [iomodo](https://github.com/iomodo), [isacikgoz](https://github.com/isacikgoz), [it33](https://github.com/it33), [jakubnovak998](https://github.com/jakubnovak998), [jasonblais](https://github.com/jasonblais), [javimox](https://github.com/javimox), [jaydeland](https://github.com/jaydeland), [jespino](https://github.com/jespino), [jfrerich](https://github.com/jfrerich), [johnsonbrothers](https://github.com/johnsonbrothers), [josephbaylon](https://github.com/josephbaylon), [joshuabezaleel](https://github.com/joshuabezaleel), [jseiser](https://github.com/jseiser), [JtheBAB](https://github.com/JtheBAB), [Jukie](https://github.com/Jukie), [jupenur](https://github.com/jupenur), [justinegeffen](https://github.com/justinegeffen), [jwilander](https://github.com/jwilander), [kaakaa](https://github.com/kaakaa), [kayazeren](https://github.com/kayazeren), [kayron8](https://github.com/kayron8), [khos2ow](https://github.com/khos2ow), [kirkjaa](https://github.com/kirkjaa), [larkox](https://github.com/larkox), [levb](https://github.com/levb), [lfbrock](https://github.com/lfbrock), [lieut-data](https://github.com/lieut-data), [lindalumitchell](https://github.com/lindalumitchell), [lindy65](https://github.com/lindy65), [liusy182](https://github.com/liusy182), [Lyimmi](https://github.com/Lyimmi), [lynn915](https://github.com/lynn915), [M-ZubairAhmed](https://github.com/M-ZubairAhmed), [marianunez](https://github.com/marianunez), [meilon](https://github.com/meilon), [metanerd](https://github.com/metanerd), [mgdelacroix](https://github.com/mgdelacroix), [michaelschiffmm](https://github.com/michaelschiffmm), [mickmister](https://github.com/mickmister), [migbot](https://github.com/migbot), [mlongo4290](https://github.com/mlongo4290), [moussetc](https://github.com/moussetc), [mustafayildirim](https://github.com/mustafayildirim), [natalie-hub](https://github.com/natalie-hub), [nathanaelhoun](https://github.com/nathanaelhoun), [nevyangelova](https://github.com/nevyangelova), [nickmisasi](https://github.com/nickmisasi), [nicolailang](https://github.com/nicolailang), [nikolaizah](https://github.com/nikolaizah), [nperera](https://github.com/nperera), [ofpiyush](https://github.com/ofpiyush), [openmohan](https://github.com/openmohan), [phommasy](https://github.com/phommasy), [prapti](https://github.com/prapti), [qerosi](https://github.com/qerosi), [rahulchheda](https://github.com/rahulchheda), [rbradleyhaas](https://github.com/rbradleyhaas), [reflog](https://github.com/reflog), [rmatev](https://github.com/rmatev), [rodcorsi](https://github.com/rodcorsi), [ruzaq](https://github.com/ruzaq), [rvillablanca](https://github.com/rvillablanca), [saturninoabril](https://github.com/saturninoabril), [sbishel](https://github.com/sbishel), [scottjr632](https://github.com/scottjr632), [ShehryarShoukat96](https://github.com/ShehryarShoukat96), [shred86](https://github.com/shred86), [skaramanlis](https://github.com/skaramanlis), [sowmiyamuthuraman](https://github.com/sowmiyamuthuraman), [sridhar02](https://github.com/sridhar02), [srkgupta](https://github.com/srkgupta), [streamer45](https://github.com/streamer45), [stylianosrigas](https://github.com/stylianosrigas), [sudheerDev](https://github.com/sudheerDev), [svelle](https://github.com/svelle), [Szymongib](https://github.com/Szymongib), [TheoVitkovskiy](https://github.com/TheoVitkovskiy), [thePanz](https://github.com/thePanz), [TQuock](https://github.com/TQuock), [TRUNGTar](https://github.com/TRUNGTar), [uhlhosting](https://github.com/uhlhosting), [utkuufuk](https://github.com/utkuufuk), [Vars-07](https://github.com/Vars-07), [Venhaus](https://github.com/Venhaus), [vijaynag-bs](https://github.com/vijaynag-bs), [webchick](https://github.com/webchick), [wget](https://github.com/wget), [wiersgallak](https://github.com/wiersgallak), [wiggin77](https://github.com/wiggin77), [Willyfrog](https://github.com/Willyfrog), [Yohannesseifu](https://github.com/Yohannesseifu), [YushiOMOTE](https://github.com/YushiOMOTE)
 
-## Release v5.26 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
+## Release v5.26 - [Feature Release](/administration/release-definitions.html#feature-release)
 
 - **v5.26.2, released 2020-09-03**
   - Forcefully disabled the SAML Setting "Use Improved SAML Library (Beta)", as we have identified some issues in this feature. Please follow instructions at https://docs.mattermost.com/deployment/sso-saml-before-you-begin.html for enabling SAML using the feature-equivalent ``xmlsec1`` utility.
 - **v5.26.1, released 2020-08-25**
-  - Fixed an issue where users were unable to use the [``PictureAttribute`` setting](https://docs.mattermost.com/administration/config-settings.html#profile-picture-attribute) with SAML authentication. [MM-27852](https://mattermost.atlassian.net/browse/MM-27852)
+  - Fixed an issue where users were unable to use the [``PictureAttribute`` setting](/administration/config-settings.html#profile-picture-attribute) with SAML authentication. [MM-27852](https://mattermost.atlassian.net/browse/MM-27852)
   - Fixed an issue where users got unexpectedly logged out from the mobile app when ``ExtendSessionLengthWithActivity`` was enabled as opening the mobile app called an API that overrode session extension triggers of typing, channel change, and posts. [MM-27184](https://mattermost.atlassian.net/browse/MM-27184)
   - Fixed an issue where users experienced a kernel panic during LDAP sync when AuthData value was null. [MM-27965](https://mattermost.atlassian.net/browse/MM-27965)
 - **v5.26.0, released 2020-08-16**
@@ -1680,7 +1683,7 @@ Mattermost v5.27.0 contains a low level security fix. [Upgrading](https://docs.m
  - In v5.26, Elasticsearch indexes needed to be recreated. Admins should re-index Elasticsearch using the **Purge index** and then **Index now** button so that all the changes will be included in the index. Systems may be left with a limited search during the indexing, so it should be done during a time when there is little to no activity because it may take several hours.
  - An ``EnableExperimentalGossipEncryption`` option was added under ``ClusterSettings``. If this is set to ``true``, and ``UseExperimentalGossip`` is also ``true``, all communication through the cluster using the gossip protocol will be encrypted. The encryption uses ``AES-256`` by default, and it is not kept configurable by design. However, if one wishes, they can set the value in Systems table manually for the ``ClusterEncryptionKey`` row. A key is a byte array converted to base64. It should be either 16, 24, or 32 bytes to select AES-128, AES-192, or AES-256. To update the key, one can execute ``UPDATE Systems SET Value='<value>' WHERE Name='ClusterEncryptionKey';`` in MySQL and ``UPDATE systems SET value='<value>' WHERE name='ClusterEncryptionKey'`` for PostgreSQL. For any change in this config setting to take effect, the whole cluster must be shutdown first. Then the config change made, and then restarted. In a cluster, all servers either will completely use encryption or not. There cannot be any partial usage.
 
-**IMPORTANT:** If you upgrade from a release earlier than 5.25, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html).
+**IMPORTANT:** If you upgrade from a release earlier than 5.25, please read the other [Important Upgrade Notes](/administration/important-upgrade-notes.html).
 
 ### Highlights
 
@@ -1821,7 +1824,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Twitter link previews do not work in Mattermost.
  - Pasted unicode emojis fail to appear once posted.
  - ``CMD+SHIFT+V`` does not paste copied text on MacOS on Safari 12 (Catalina) and Firefox.
- - Enabling Bleve search engine makes the Command Line Interface (CLI) mutually exclusive with the running server. This issue does not apply when using [mmctl Command Line Tool](https://docs.mattermost.com/administration/mmctl-cli-tool.html). 
+ - Enabling Bleve search engine makes the Command Line Interface (CLI) mutually exclusive with the running server. This issue does not apply when using [mmctl Command Line Tool](/administration/mmctl-cli-tool.html). 
  - On a server using a subpath, the URL opens a blank page if the System Admin changes the Site URL in the System Console UI. To fix, the System Admin should restart the server.
  - Login does not work when Custom Terms of Service is enabled and MFA is enforced.
  - Google login fails on the Classic mobile apps.
@@ -1835,7 +1838,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 ### Contributors
  - [abdulsmapara](https://github.com/abdulsmapara), [abdusabri](https://github.com/abdusabri), [Adovenmuehle](https://github.com/Adovenmuehle), [aeomin](https://github.com/aeomin), [agarciamontoro](https://github.com/agarciamontoro), [agnivade](https://github.com/agnivade), [aidapira](https://github.com/aidapira), [amyblais](https://github.com/amyblais), [amynicol1985](https://github.com/amynicol1985), [angeloskyratzakos](https://github.com/angeloskyratzakos), [ankallio](https://github.com/ankallio), [asaadmahmood](https://github.com/asaadmahmood), [ashishbhate](https://github.com/ashishbhate), [AugustasV](https://github.com/AugustasV), [avasconcelos114](https://github.com/avasconcelos114), [BaaaZen](https://github.com/BaaaZen), [bbodenmiller](https://github.com/bbodenmiller), [bill2004158](https://github.com/bill2004158), [bradjcoughlin](https://github.com/bradjcoughlin), [calebroseland](https://github.com/calebroseland), [catalintomai](https://github.com/catalintomai), [chakatz](https://github.com/chakatz), [chikei](https://github.com/chikei), [cpanato](https://github.com/cpanato), [cpoile](https://github.com/cpoile), [crspeller](https://github.com/crspeller), [ctlaltdieliet](https://github.com/ctlaltdieliet), [danielhelfand](https://github.com/danielhelfand), [DanielSz50](https://github.com/DanielSz50), [dantepippi](https://github.com/dantepippi), [Dartui](https://github.com/Dartui), [dbejanishvili](https://github.com/dbejanishvili), [deanwhillier](https://github.com/deanwhillier), [denniskamp](https://github.com/denniskamp), [der-test](https://github.com/der-test), [devinbinnie](https://github.com/devinbinnie), [djanda97](https://github.com/djanda97), [dpanic](https://github.com/dpanic), [emilyhollinger](https://github.com/emilyhollinger), [enahum](https://github.com/enahum), [enelson720](https://github.com/enelson720), [ericjaystevens](https://github.com/ericjaystevens), [esadur](https://github.com/esadur), [esethna](https://github.com/esethna), [ethervoid](https://github.com/ethervoid), [faase](https://github.com/faase), [fakela](https://github.com/fakela), [flexo3001](https://github.com/flexo3001), [flynbit](https://github.com/flynbit), [fmunshi](https://github.com/fmunshi), [Francois-D](https://github.com/Francois-D), [gabrieljackson](https://github.com/gabrieljackson), [ghasrfakhri](https://github.com/ghasrfakhri), [gigawhitlocks](https://github.com/gigawhitlocks), [grubbins](https://github.com/grubbins), [gruceqq](https://translate.mattermost.com/user/gruceqq/), [hahmadia](https://github.com/hahmadia), [hannaparks](https://github.com/hannaparks), [hanzei](https://github.com/hanzei), [hectorskypl](https://github.com/hectorskypl), [hhhhugi](https://github.com/hhhhugi), [hmhealey](https://github.com/hmhealey), [hryuk](https://github.com/hryuk), [ialorro](https://github.com/ialorro), [icelander](https://github.com/icelander), [iomodo](https://github.com/iomodo), [isacikgoz](https://github.com/isacikgoz), [it33](https://github.com/it33), [jakubnovak998](https://github.com/jakubnovak998), [jasonblais](https://github.com/jasonblais), [javimox](https://github.com/javimox), [jaydeland](https://github.com/jaydeland), [jespino](https://github.com/jespino), [jfrerich](https://github.com/jfrerich), [johnsonbrothers](https://github.com/johnsonbrothers), [josephbaylon](https://github.com/josephbaylon), [joshuabezaleel](https://github.com/joshuabezaleel), [jseiser](https://github.com/jseiser), [JtheBAB](https://github.com/JtheBAB), [Jukie](https://github.com/Jukie), [jupenur](https://github.com/jupenur), [justinegeffen](https://github.com/justinegeffen), [jwilander](https://github.com/jwilander), [kaakaa](https://github.com/kaakaa), [kayazeren](https://github.com/kayazeren), [kayron8](https://github.com/kayron8), [khos2ow](https://github.com/khos2ow), [kirkjaa](https://github.com/kirkjaa), [larkox](https://github.com/larkox), [levb](https://github.com/levb), [lfbrock](https://github.com/lfbrock), [lieut-data](https://github.com/lieut-data), [lindalumitchell](https://github.com/lindalumitchell), [lindy65](https://github.com/lindy65), [liusy182](https://github.com/liusy182), [Lyimmi](https://github.com/Lyimmi), [lynn915](https://github.com/lynn915), [M-ZubairAhmed](https://github.com/M-ZubairAhmed), [meilon](https://github.com/meilon), [metanerd](https://github.com/metanerd), [mgdelacroix](https://github.com/mgdelacroix), [michaelschiffmm](https://github.com/michaelschiffmm), [mickmister](https://github.com/mickmister), [migbot](https://github.com/migbot), [mlongo4290](https://github.com/mlongo4290), [mustafayildirim](https://github.com/mustafayildirim), [natalie-hub](https://github.com/natalie-hub), [nathanaelhoun](https://github.com/nathanaelhoun), [nevyangelova](https://github.com/nevyangelova), [nickmisasi](https://github.com/nickmisasi), [nicolailang](https://github.com/nicolailang), [nikolaizah](https://github.com/nikolaizah), [ofpiyush](https://github.com/ofpiyush), [openmohan](https://github.com/openmohan), [phommasy](https://github.com/phommasy), [prapti](https://github.com/prapti), [qerosi](https://github.com/qerosi), [rahulchheda](https://github.com/rahulchheda), [rbradleyhaas](https://github.com/rbradleyhaas), [reflog](https://github.com/reflog), [rmatev](https://github.com/rmatev), [rodcorsi](https://github.com/rodcorsi), [ruzaq](https://github.com/ruzaq), [rvillablanca](https://github.com/rvillablanca), [saturninoabril](https://github.com/saturninoabril), [sbishel](https://github.com/sbishel), [scottjr632](https://github.com/scottjr632), [ShehryarShoukat96](https://github.com/ShehryarShoukat96), [shred86](https://github.com/shred86), [skaramanlis](https://github.com/skaramanlis), [sowmiyamuthuraman](https://github.com/sowmiyamuthuraman), [sridhar02](https://github.com/sridhar02), [srkgupta](https://github.com/srkgupta), [streamer45](https://github.com/streamer45), [stylianosrigas](https://github.com/stylianosrigas), [sudheerDev](https://github.com/sudheerDev), [svelle](https://github.com/svelle), [Szymongib](https://github.com/Szymongib), [TheoVitkovskiy](https://github.com/TheoVitkovskiy), [thePanz](https://github.com/thePanz), [TQuock](https://github.com/TQuock), [TRUNGTar](https://github.com/TRUNGTar), [uhlhosting](https://github.com/uhlhosting), [utkuufuk](https://github.com/utkuufuk), [Vars-07](https://github.com/Vars-07), [Venhaus](https://github.com/Venhaus), [vijaynag-bs](https://github.com/vijaynag-bs), [webchick](https://github.com/webchick), [weblate](https://github.com/weblate), [wget](https://github.com/wget), [wiersgallak](https://github.com/wiersgallak), [wiggin77](https://github.com/wiggin77), [Willyfrog](https://github.com/Willyfrog), [Yohannesseifu](https://github.com/Yohannesseifu), [YushiOMOTE](https://github.com/YushiOMOTE)
 
-## Release v5.25 - [ESR](https://docs.mattermost.com/administration/release-definitions.html#extended-support-release-esr)
+## Release v5.25 - [ESR](/administration/release-definitions.html#extended-support-release-esr)
 
 - **v5.25.7, released 2020-12-03**
   - Disabled the xmlsec1-based SAML library in favor of the re-enabled and improved SAML library.
@@ -1845,7 +1848,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 - **v5.25.5, released 2020-09-03**
   - Forcefully disabled the SAML Setting "Use Improved SAML Library (Beta)", as we have identified some issues in this feature. Please follow instructions at https://docs.mattermost.com/deployment/sso-saml-before-you-begin.html for enabling SAML using the feature-equivalent ``xmlsec1`` utility. 
 - **v5.25.4, released 2020-08-25**
-  - Fixed an issue where users were unable to use the [``PictureAttribute`` setting](https://docs.mattermost.com/administration/config-settings.html#profile-picture-attribute) with SAML authentication. [MM-27852](https://mattermost.atlassian.net/browse/MM-27852)
+  - Fixed an issue where users were unable to use the [``PictureAttribute`` setting](/administration/config-settings.html#profile-picture-attribute) with SAML authentication. [MM-27852](https://mattermost.atlassian.net/browse/MM-27852)
   - Fixed an issue where users got unexpectedly logged out from the mobile app when ``ExtendSessionLengthWithActivity`` was enabled as opening the mobile app called an API that overrode session extension triggers of typing, channel change, and posts. [MM-27184](https://mattermost.atlassian.net/browse/MM-27184)
   - Fixed an issue where users experienced a kernel panic during LDAP sync when AuthData value was null. [MM-27965](https://mattermost.atlassian.net/browse/MM-27965)
   - Fixed an issue where users experienced the Mattermost server crashing on ``(Status).ToClusterJson`` calls. [MM-24544](https://mattermost.atlassian.net/browse/MM-24544)
@@ -1865,16 +1868,16 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 - **v5.25.0, released 2020-07-16**
   - Original 5.25.0 release
 
-Mattermost v5.25.0 contains a low level security fix. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+Mattermost v5.25.0 contains a low level security fix. [Upgrading](/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
 
 ### Breaking Changes
- - Some incorrect instructions regarding SAML setup with Active Directory ADFS for setting the “Relying party trust identifier” were corrected. Although the settings will continue to work, it is encouraged to [modify those settings](https://docs.mattermost.com/deployment/sso-saml-adfs-msws2016.html#add-a-relying-party-trust).
+ - Some incorrect instructions regarding SAML setup with Active Directory ADFS for setting the “Relying party trust identifier” were corrected. Although the settings will continue to work, it is encouraged to [modify those settings](/deployment/sso-saml-adfs-msws2016.html#add-a-relying-party-trust).
  
-**IMPORTANT:** If you upgrade from a release earlier than 5.24, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html).
+**IMPORTANT:** If you upgrade from a release earlier than 5.24, please read the other [Important Upgrade Notes](/administration/important-upgrade-notes.html).
 
 ### Improvements
  - Added the ability for admins to request a 30-day E20 trial license directly in the System Console.
- - [AD/LDAP Group Sync (E20)](https://docs.mattermost.com/deployment/ldap-group-sync.html) feature was moved out of Beta to General Availability.
+ - [AD/LDAP Group Sync (E20)](/deployment/ldap-group-sync.html) feature was moved out of Beta to General Availability.
 
 ### Bug Fixes
  - Fixed an issue where the ability to run a command to export data was erroneously available in Team Edition.
@@ -1922,7 +1925,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Twitter link previews do not work in Mattermost.
  - Highlight is missing when at-mentioning yourself, followed by period, underscore, or hyphen.
  - Ctrl+Enter doesn't post an edited message with "Send messages on Ctrl+Enter" enabled for all messages.
- - Enabling Bleve search engine makes the Command Line Interface (CLI) mutually exclusive with the running server. This issue does not apply when using [mmctl Command Line Tool](https://docs.mattermost.com/administration/mmctl-cli-tool.html). 
+ - Enabling Bleve search engine makes the Command Line Interface (CLI) mutually exclusive with the running server. This issue does not apply when using [mmctl Command Line Tool](/administration/mmctl-cli-tool.html). 
  - On a server using a subpath, the URL opens a blank page if the System Admin changes the Site URL in the System Console UI. To fix, the System Admin should restart the server.
  - Login does not work when Custom Terms of Service is enabled and MFA is enforced.
  - Google login fails on the Classic mobile apps.
@@ -1936,7 +1939,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 ### Contributors
  - [aaronrothschild](https://github.com/aaronrothschild), [Adovenmuehle](https://github.com/Adovenmuehle), [aeomin](https://github.com/aeomin), [agarciamontoro](https://github.com/agarciamontoro), [agnivade](https://github.com/agnivade), [ahmaddanialmohd](https://github.com/ahmaddanialmohd), [ali-farooq0](https://github.com/ali-farooq0), [amyblais](https://github.com/amyblais), [angeloskyratzakos](https://github.com/angeloskyratzakos), [asaadmahmood](https://github.com/asaadmahmood), [ashishbhate](https://github.com/ashishbhate), [Ashniu123](https://github.com/Ashniu123), [attilamolnar](https://github.com/attilamolnar), [avasconcelos114](https://github.com/avasconcelos114), [bbodenmiller](https://github.com/bbodenmiller), [bradjcoughlin](https://github.com/bradjcoughlin), [brunoro](https://github.com/brunoro), [CEOehis](https://github.com/CEOehis), [checkaayush](https://github.com/checkaayush), [chikei](https://github.com/chikei), [chuttam](https://github.com/chuttam), [clarmso](https://github.com/clarmso), [corey-robinson](https://github.com/corey-robinson), [cpanato](https://github.com/cpanato), [cpoile](https://github.com/cpoile), [craigwillis-mm](https://github.com/craigwillis-mm), [crspeller](https://github.com/crspeller), [ctlaltdieliet](https://github.com/ctlaltdieliet), [danger89](https://github.com/danger89), [DanielSz50](https://github.com/DanielSz50), [dantepippi](https://github.com/dantepippi), [davebarkerxyz](https://github.com/davebarkerxyz), [deanwhillier](https://github.com/deanwhillier), [der-test](https://github.com/der-test), [devinbinnie](https://github.com/devinbinnie), [DHaussermann](https://github.com/DHaussermann), [dpanic](https://github.com/dpanic), [emilyhollinger](https://github.com/emilyhollinger), [enahum](https://github.com/enahum), [enelson720](https://github.com/enelson720), [ericjaystevens](https://github.com/ericjaystevens), [esethna](https://github.com/esethna), [ethervoid](https://github.com/ethervoid), [Extazx2](https://github.com/Extazx2), [faase](https://github.com/faase), [fakela](https://github.com/fakela), [farah](https://github.com/farah), [fedealconada](https://github.com/fedealconada), [FlaviaBastos](https://github.com/FlaviaBastos), [flynbit](https://github.com/flynbit), [fmunshi](https://github.com/fmunshi), [gabrieljackson](https://github.com/gabrieljackson), [gigawhitlocks](https://github.com/gigawhitlocks), [GrigalashviliT](https://github.com/GrigalashviliT), [GrSto](https://github.com/GrSto), [gruceqq](https://translate.mattermost.com/user/gruceqq/), [grundleborg](https://github.com/grundleborg), [gsagula](https://github.com/gsagula), [hahmadia](https://github.com/hahmadia), [hanzei](https://github.com/hanzei), [harshilsharma63](https://github.com/harshilsharma63), [hectorgabucio](https://github.com/hectorgabucio), [hectorskypl](https://github.com/hectorskypl), [HilaryClarke](https://github.com/HilaryClarke), [hmhealey](https://github.com/hmhealey), [iomodo](https://github.com/iomodo), [isacikgoz](https://github.com/isacikgoz), [it33](https://github.com/it33), [jasonblais](https://github.com/jasonblais), [jespino](https://github.com/jespino), [jfrerich](https://github.com/jfrerich), [johnthompson365](https://github.com/johnthompson365), [josephbaylon](https://github.com/josephbaylon), [jseiser](https://github.com/jseiser), [jupenur](https://github.com/jupenur), [justinegeffen](https://github.com/justinegeffen), [jwilander](https://github.com/jwilander), [kaakaa](https://github.com/kaakaa), [kadir96](https://github.com/kadir96), [kayazeren](https://github.com/kayazeren), [khos2ow](https://github.com/khos2ow), [larkox](https://github.com/larkox), [levb](https://github.com/levb), [lfbrock](https://github.com/lfbrock), [lieut-data](https://github.com/lieut-data), [lindalumitchell](https://github.com/lindalumitchell), [liusy182](https://github.com/liusy182), [lynn915](https://github.com/lynn915), [marianunez](https://github.com/marianunez), [meilon](https://github.com/meilon), [metanerd](https://github.com/metanerd), [mgdelacroix](https://github.com/mgdelacroix), [michaelschiffmm](https://github.com/michaelschiffmm), [mickmister](https://github.com/mickmister), [migbot](https://github.com/migbot), [mitchellroe](https://github.com/mitchellroe), [mkraft](https://github.com/mkraft), [mlongo4290](https://github.com/mlongo4290), [natalie-hub](https://github.com/natalie-hub), [nathanaelhoun](https://github.com/nathanaelhoun), [nevyangelova](https://github.com/nevyangelova), [nickmisasi](https://github.com/nickmisasi), [nperera](https://github.com/nperera), [octoquad](https://github.com/octoquad), [prapti](https://github.com/prapti), [promehul](https://github.com/promehul), [Qovaros](https://github.com/Qovaros), [rahimrahman](https://github.com/rahimrahman), [rbradleyhaas](https://github.com/rbradleyhaas), [reflog](https://github.com/reflog), [rodcorsi](https://github.com/rodcorsi), [Roy-Orbison](https://github.com/Roy-Orbison), [rvillablanca](https://github.com/rvillablanca), [saturninoabril](https://github.com/saturninoabril), [sbishel](https://github.com/sbishel), [srkgupta](https://github.com/srkgupta), [streamer45](https://github.com/streamer45), [stylianosrigas](https://github.com/stylianosrigas), [sudheerDev](https://github.com/sudheerDev), [svelle](https://github.com/svelle), [TheDarkestDay](https://github.com/TheDarkestDay), [thefactremains](https://github.com/thefactremains), [thePanz](https://github.com/thePanz), [uhlhosting](https://github.com/uhlhosting), [waqasraz](https://github.com/waqasraz), [weblate](https://github.com/weblate), [wget](https://github.com/wget), [wiersgallak](https://github.com/wiersgallak), [wiggin77](https://github.com/wiggin77), [will7200](https://github.com/will7200), [Willyfrog](https://github.com/Willyfrog), [ztrayner](https://github.com/ztrayner)
 
-## Release v5.24 - [Feature Release](https://docs.mattermost.com/process/release-faq.html#release-overview)
+## Release v5.24 - [Feature Release](/process/release-faq.html#release-overview)
 
 - **v5.24.3, released 2020-07-23**
   - Smoothed the database query load while syncing teams and channel roles by fetching data in batches. [MM-27114](https://mattermost.atlassian.net/browse/MM-27114)
@@ -1950,15 +1953,15 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 - **v5.24.0, released 2020-06-16**
   - Original 5.24.0 release
 
-Mattermost v5.24.0 contains low level security fixes. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+Mattermost v5.24.0 contains low level security fixes. [Upgrading](/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
 
 ### Breaking Changes
  - A new configuration setting, ``ExtendSessionLengthWithActivity`` automatically extends sessions to keep users logged in if they are active in their Mattermost apps. It is recommended to enable this setting to improve user experience if compliant with your organizations policies. [Learn more here](https://mattermost.com/blog/session-expiry-experience).
  - The ``mattermost_http_request_duration_seconds`` histogram metric (in Enterprise Edition) has been removed. This information was already captured by ``mattermost_api_time``, which also contains the api handler name, HTTP method, and the response code. As an example, if you are using ``rate(mattermost_http_request_duration_seconds_sum{server=~"$var"}[5m]) /   rate(mattermost_http_request_duration_seconds_count{server=~"$var"}[5m])`` to measure average call duration, it needs to be replaced with ``sum(rate(mattermost_api_time_sum{server=~"$var"}[5m])) by (instance) /   sum(rate(mattermost_api_time_count{server=~"$var"}[5m])) by (instance)``.
- - Due to fixing performance issues related to emoji reactions, the performance of the upgrade has been affected in that the schema upgrade now takes more time in environments with lots of reactions in their database. These environments are recommended to perform the schema migration during low usage times and potentially in advance of the upgrade. Since this migration happens before the Mattermost Server is fully launched, non-High Availability installs will be unreachable during this time. Please see the [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html) for full details.
+ - Due to fixing performance issues related to emoji reactions, the performance of the upgrade has been affected in that the schema upgrade now takes more time in environments with lots of reactions in their database. These environments are recommended to perform the schema migration during low usage times and potentially in advance of the upgrade. Since this migration happens before the Mattermost Server is fully launched, non-High Availability installs will be unreachable during this time. Please see the [Important Upgrade Notes](/administration/important-upgrade-notes.html) for full details.
  - On mobile apps, users will not be able to see LDAP group mentions (E20 feature) in the autocomplete dropdown. Users will still receive notifications if they are part of an LDAP group. However, the group mention keyword will not be highlighted.
  
-**IMPORTANT:** If you upgrade from a release earlier than 5.23, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html).
+**IMPORTANT:** If you upgrade from a release earlier than 5.23, please read the other [Important Upgrade Notes](/administration/important-upgrade-notes.html).
 
 ### Highlights
 
@@ -2087,7 +2090,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Profile image of a user is not displayed correctly when searching for Direct Message channels.
  - "Email verified" banner is red instead of green.
  - Command+K search results disappear when the input field loses focus when Mattermost window is made unfocused.
- - Enabling Bleve search engine makes the Command Line Interface (CLI) mutually exclusive with the running server. This issue does not apply when using [mmctl Command Line Tool](https://docs.mattermost.com/administration/mmctl-cli-tool.html). 
+ - Enabling Bleve search engine makes the Command Line Interface (CLI) mutually exclusive with the running server. This issue does not apply when using [mmctl Command Line Tool](/administration/mmctl-cli-tool.html). 
  - On a server using a subpath, the URL opens a blank page if the System Admin changes the Site URL in the System Console UI. To fix, the System Admin should restart the server.
  - Login does not work when Custom Terms of Service is enabled and MFA is enforced.
  - Google login fails on the Classic mobile apps.
@@ -2101,7 +2104,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 ### Contributors
  - [aaronrothschild](https://github.com/aaronrothschild), [abdulsmapara](https://github.com/abdulsmapara), [adamjclarkson](https://github.com/adamjclarkson), [Adovenmuehle](https://github.com/Adovenmuehle), [aeomin](https://translate.mattermost.com/user/aeomin/), [agarciamontoro](https://github.com/agarciamontoro), [agnivade](https://github.com/agnivade), [ali-farooq0](https://github.com/ali-farooq0), [amyblais](https://github.com/amyblais), [angeloskyratzakos](https://github.com/angeloskyratzakos), [asaadmahmood](https://github.com/asaadmahmood), [ashishbhate](https://github.com/ashishbhate), [avasconcelos114](https://github.com/avasconcelos114), [avddvd](https://github.com/avddvd), [awerries](https://github.com/awerries), [bbodenmiller](https://github.com/bbodenmiller), [bbuehrle](https://github.com/bbuehrle), [bradjcoughlin](https://github.com/bradjcoughlin), [cadavre](https://github.com/cadavre), [calebroseland](https://github.com/calebroseland), [catalintomai](https://github.com/catalintomai), [CEOehis](https://github.com/CEOehis), [chikei](https://github.com/chikei), [chuttam](https://github.com/chuttam), [corey-robinson](https://github.com/corey-robinson), [cpanato](https://github.com/cpanato), [cpoile](https://github.com/cpoile), [craigwillis-mm](https://github.com/craigwillis-mm), [craph](https://github.com/craph), [crspeller](https://github.com/crspeller), [ctlaltdieliet](https://github.com/ctlaltdieliet), [dantepippi](https://github.com/dantepippi), [dbejanishvili](https://github.com/dbejanishvili), [der-test](https://github.com/der-test), [devinbinnie](https://github.com/devinbinnie), [DSchalla](https://github.com/DSchalla), [ejose19](https://github.com/ejose19), [emilyhollinger](https://github.com/emilyhollinger), [enahum](https://github.com/enahum), [enelson720](https://github.com/enelson720), [esethna](https://github.com/esethna), [ethervoid](https://github.com/ethervoid), [faase](https://github.com/faase), [fakela](https://github.com/fakela), [fedealconada](https://github.com/fedealconada), [FlaviaBastos](https://github.com/FlaviaBastos), [flynbit](https://github.com/flynbit), [fmunshi](https://github.com/fmunshi), [Francois-D](https://github.com/Francois-D), [funkytwig](https://github.com/funkytwig), [gabrieljackson](https://github.com/gabrieljackson), [gigawhitlocks](https://github.com/gigawhitlocks), [gnello](https://github.com/gnello), [GrigalashviliT](https://github.com/GrigalashviliT), [gruceqq](https://translate.mattermost.com/user/gruceqq/), [grundleborg](https://github.com/grundleborg), [gsagula](https://github.com/gsagula), [hahmadia](https://github.com/hahmadia), [hannaparks](https://github.com/hannaparks), [hanzei](https://github.com/hanzei), [harshilsharma63](https://github.com/harshilsharma63), [hectorskypl](https://github.com/hectorskypl), [hmhealey](https://github.com/hmhealey), [hzeroo](https://github.com/hzeroo), [ialorro](https://github.com/ialorro), [iamsayantan](https://github.com/iamsayantan), [ikeohachidi](https://github.com/ikeohachidi), [iomodo](https://github.com/iomodo), [isacikgoz](https://github.com/isacikgoz), [it33](https://github.com/it33), [jasonblais](https://github.com/jasonblais), [jaydeland](https://github.com/jaydeland), [jespino](https://github.com/jespino), [jfrerich](https://github.com/jfrerich), [josephbaylon](https://github.com/josephbaylon), [JtheBAB](https://github.com/JtheBAB), [jupenur](https://github.com/jupenur), [justinegeffen](https://github.com/justinegeffen), [jwilander](https://github.com/jwilander), [kaakaa](https://github.com/kaakaa), [Kaya_Zeren](https://twitter.com/kaya_zeren), [khos2ow](https://github.com/khos2ow), [kosgrz](https://github.com/kosgrz), [l0r3zz](https://github.com/l0r3zz), [larkox](https://github.com/larkox), [levb](https://github.com/levb), [lieut-data](https://github.com/lieut-data), [lindalumitchell](https://github.com/lindalumitchell), [liusy182](https://github.com/liusy182), [lynn915](https://github.com/lynn915), [marianunez](https://github.com/marianunez), [mbecca](https://github.com/mbecca), [meilon](https://github.com/meilon), [metanerd](https://github.com/metanerd), [mgdelacroix](https://github.com/mgdelacroix), [michaelschiffmm](https://github.com/michaelschiffmm), [mickmister](https://github.com/mickmister), [migbot](https://github.com/migbot), [mkraft](https://github.com/mkraft), [mlongo4290](https://github.com/mlongo4290), [mterhar](https://github.com/mterhar), [muratbayan](https://github.com/muratbayan), [nadalfederer](https://github.com/nadalfederer), [NassimBounouas](https://github.com/NassimBounouas), [natalie-hub](https://github.com/natalie-hub), [nathanaelhoun](https://github.com/nathanaelhoun), [nevyangelova](https://github.com/nevyangelova), [nperera](https://github.com/nperera), [octoquad](https://github.com/octoquad), [pankajhirway](https://github.com/pankajhirway), [petya-v](https://github.com/petya-v), [pradeepmurugesan](https://github.com/pradeepmurugesan), [prapti](https://github.com/prapti), [psy-q](https://github.com/psy-q), [Qovaros](https://github.com/Qovaros), [Qujja](https://github.com/Qujja), [rbradleyhaas](https://github.com/rbradleyhaas), [reflog](https://github.com/reflog), [rodcorsi](https://github.com/rodcorsi), [saturninoabril](https://github.com/saturninoabril), [sbishel](https://github.com/sbishel), [shibasisp](https://github.com/shibasisp), [Shivam010](https://github.com/Shivam010), [shred86](https://github.com/shred86), [streamer45](https://github.com/streamer45), [stylianosrigas](https://github.com/stylianosrigas), [sudheerDev](https://github.com/sudheerDev), [thefactremains](https://github.com/thefactremains), [TheoVitkovskiy](https://github.com/TheoVitkovskiy), [thePanz](https://github.com/thePanz), [ThiefMaster](https://github.com/ThiefMaster), [tomasmik](https://github.com/tomasmik), [uhlhosting](https://github.com/uhlhosting), [vesari](https://github.com/vesari), [wget](https://github.com/wget), [wiersgallak](https://github.com/wiersgallak), [wiggin77](https://github.com/wiggin77), [Willyfrog](https://github.com/Willyfrog), [ztrayner](https://github.com/ztrayner)
 
-## Release v5.23 - [Quality Release](https://docs.mattermost.com/process/release-faq.html#release-overview)
+## Release v5.23 - [Quality Release](/process/release-faq.html#release-overview)
 
 - **v5.23.2, released 2020-07-23**
   - Smoothed the database query load while syncing teams and channel roles by fetching data in batches. [MM-27114](https://mattermost.atlassian.net/browse/MM-27114)
@@ -2112,7 +2115,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 - **v5.23.0, released 2020-05-16**
   - Original 5.23.0 release
 
-Mattermost v5.23.0 contains a low level security fix. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+Mattermost v5.23.0 contains a low level security fix. [Upgrading](/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
 
 ### Compatibility
 PostgreSQL ended long-term support for [version 9.4 in February 2020](https://www.postgresql.org/support/versioning). Mattermost will officially be supporting PostgreSQL version 10 with the Mattermost v5.26 release as PostgreSQL 9.4 is no longer supported. New installs will require PostgreSQL version 10. Previous Mattermost versions, including our current ESR, will continue to be compatible with PostgreSQL version 9.4. In our 6.0 release (date to be announced), we plan on fully deprecating PostgreSQL 9.4. 
@@ -2171,12 +2174,12 @@ We highly recommend upgrading to PostgreSQL version 10+. Please follow the instr
 
  - [aaronrothschild](https://github.com/aaronrothschild), [adamjclarkson](https://github.com/adamjclarkson), [Adovenmuehle](https://github.com/Adovenmuehle), [aeomin](https://translate.mattermost.com/user/aeomin/), [agarciamontoro](https://github.com/agarciamontoro), [AGMETEOR](https://github.com/AGMETEOR), [agnivade](https://github.com/agnivade), [ahmaddanialmohd](https://github.com/ahmaddanialmohd), [akarikuu](https://github.com/akarikuu), [Akendo](https://github.com/Akendo), [ali-farooq0](https://github.com/ali-farooq0), [amyblais](https://github.com/amyblais), [angeloskyratzakos](https://github.com/angeloskyratzakos), [AninditaBasu](https://github.com/AninditaBasu), [asaadmahmood](https://github.com/asaadmahmood), [attilamolnar](https://github.com/attilamolnar), [avasconcelos114](https://github.com/avasconcelos114), [avddvd](https://github.com/avddvd), [bakurits](https://github.com/bakurits), [bbodenmiller](https://github.com/bbodenmiller), [bolariin](https://github.com/bolariin), [bradjcoughlin](https://github.com/bradjcoughlin), [cadavre](https://github.com/cadavre), [calebroseland](https://github.com/calebroseland), [catalintomai](https://github.com/catalintomai), [chikei](https://github.com/chikei), [chuttam](https://github.com/chuttam), [ckavili](https://github.com/ckavili), [clarmso](https://github.com/clarmso), [cpanato](https://github.com/cpanato), [cpurta](https://github.com/cpurta), [craigwillis-mm](https://github.com/craigwillis-mm), [crspeller](https://github.com/crspeller), [ctlaltdieliet](https://github.com/ctlaltdieliet), [curiousercreative](https://github.com/curiousercreative), [danger89](https://github.com/danger89), [Danziger](https://github.com/Danziger), [deanwhillier](https://github.com/deanwhillier), [der-test](https://github.com/der-test), [devinbinnie](https://github.com/devinbinnie), [dhadiseputro](https://github.com/dhadiseputro), [DHaussermann](https://github.com/DHaussermann), [ebaker](https://github.com/ebaker), [emilyhollinger](https://github.com/emilyhollinger), [enahum](https://github.com/enahum), [enelson720](https://github.com/enelson720), [esethna](https://github.com/esethna), [ethervoid](https://github.com/ethervoid), [fedealconada](https://github.com/fedealconada), [FlaviaBastos](https://github.com/FlaviaBastos), [flynbit](https://github.com/flynbit), [fmunshi](https://github.com/fmunshi), [Francois-D](https://github.com/Francois-D), [gabrieljackson](https://github.com/gabrieljackson), [gigawhitlocks](https://github.com/gigawhitlocks), [gnello](https://github.com/gnello), [gramakri](https://github.com/gramakri), [gruceqq](https://translate.mattermost.com/user/gruceqq/), [grundleborg](https://github.com/grundleborg), [gsagula](https://github.com/gsagula), [hahmadia](https://github.com/hahmadia), [hajowieland](https://github.com/hajowieland), [hanzei](https://github.com/hanzei), [haydenhw](https://github.com/haydenhw), [hectorskypl](https://github.com/hectorskypl), [hmhealey](https://github.com/hmhealey), [ialorro](https://github.com/ialorro), [iamsayantan](https://github.com/iamsayantan), [icelander](https://github.com/icelander), [igor47](https://github.com/igor47), [iomodo](https://github.com/iomodo), [isacikgoz](https://github.com/isacikgoz), [it33](https://github.com/it33), [jasonblais](https://github.com/jasonblais), [jaydeland](https://github.com/jaydeland), [jespino](https://github.com/jespino), [jfrerich](https://github.com/jfrerich), [johnthompson365](https://github.com/johnthompson365), [josephbaylon](https://github.com/josephbaylon), [jupenur](https://github.com/jupenur), [justinegeffen](https://github.com/justinegeffen), [justledbetter](https://github.com/justledbetter), [jwilander](https://github.com/jwilander), [kaakaa](https://github.com/kaakaa), [Kaya_Zeren](https://twitter.com/kaya_zeren), [larkox](https://github.com/larkox), [levb](https://github.com/levb), [lfbrock](https://github.com/lfbrock), [lieut-data](https://github.com/lieut-data), [lindalumitchell](https://github.com/lindalumitchell), [lynn915](https://github.com/lynn915), [marianunez](https://github.com/marianunez), [MatthewDorner](https://github.com/MatthewDorner), [mbecca](https://github.com/mbecca), [meilon](https://github.com/meilon), [metanerd](https://github.com/metanerd), [mgdelacroix](https://github.com/mgdelacroix), [michaelschiffmm](https://github.com/michaelschiffmm), [mickmister](https://github.com/mickmister), [migbot](https://github.com/migbot), [mkraft](https://github.com/mkraft), [mlongo4290](https://github.com/mlongo4290), [mo2menelzeiny](https://github.com/mo2menelzeiny), [moussetc](https://github.com/moussetc), [natalie-hub](https://github.com/natalie-hub), [nevyangelova](https://github.com/nevyangelova), [Nirei](https://github.com/Nirei), [nvjacobo](https://github.com/nvjacobo), [oguera](https://github.com/oguera), [Pafzedog](https://github.com/Pafzedog), [popstr](https://github.com/popstr), [promulo](https://github.com/promulo), [Qovaros](https://github.com/Qovaros), [rahimrahman](https://github.com/rahimrahman), [rajeshkp](https://github.com/rajeshkp), [rakhi2104](https://github.com/rakhi2104), [rbradleyhaas](https://github.com/rbradleyhaas), [reflog](https://github.com/reflog), [rodcorsi](https://github.com/rodcorsi), [saturninoabril](https://github.com/saturninoabril), [sbishel](https://github.com/sbishel), [shred86](https://github.com/shred86), [srkgupta](https://github.com/srkgupta), [streamer45](https://github.com/streamer45), [stylianosrigas](https://github.com/stylianosrigas), [sudheerDev](https://github.com/sudheerDev), [svelle](https://github.com/svelle), [syuo7](https://github.com/syuo7), [T0biii](https://github.com/T0biii), [theo-o](https://github.com/theo-o), [TheoVitkovskiy](https://github.com/TheoVitkovskiy), [thePanz](https://github.com/thePanz), [uhlhosting](https://github.com/uhlhosting), [vesari](https://github.com/vesari), [vespian](https://github.com/vespian), [VishalSwarnkar](https://github.com/VishalSwarnkar), [wget](https://github.com/wget), [wiersgallak](https://github.com/wiersgallak), [wiggin77](https://github.com/wiggin77), [Willyfrog](https://github.com/Willyfrog), [ztrayner](https://github.com/ztrayner)
 
-## Release v5.22 - [Feature Release](https://docs.mattermost.com/process/release-faq.html#release-overview)
+## Release v5.22 - [Feature Release](/process/release-faq.html#release-overview)
 
 - **v5.22.3, released 2020-05-11**
-  - Fixed an issue where channels were shown as read-only when [Channel Moderation feature](https://docs.mattermost.com/deployment/advanced-permissions.html#channel-moderation-beta-e20) was used in High Availability environments. [MM-24987](https://mattermost.atlassian.net/browse/MM-24987)
+  - Fixed an issue where channels were shown as read-only when [Channel Moderation feature](/deployment/advanced-permissions.html#channel-moderation-beta-e20) was used in High Availability environments. [MM-24987](https://mattermost.atlassian.net/browse/MM-24987)
 - **v5.22.2, released 2020-05-05**
-  - Fixed an issue where message reply threads did not get correctly imported via [bulk loading tool](https://docs.mattermost.com/deployment/bulk-loading.html). [MM-24707](https://mattermost.atlassian.net/browse/MM-24707)
+  - Fixed an issue where message reply threads did not get correctly imported via [bulk loading tool](/deployment/bulk-loading.html). [MM-24707](https://mattermost.atlassian.net/browse/MM-24707)
 - **v5.22.1, released 2020-04-23**
   - Fixed an issue where Amazon S3 file storage with IAM credentials failed due to a bug in the ``minio-go`` library. [MM-24388](https://mattermost.atlassian.net/browse/MM-24388)
 - **v5.22.0, released 2020-04-16**
@@ -2184,7 +2187,7 @@ We highly recommend upgrading to PostgreSQL version 10+. Please follow the instr
 
 **Release day: 2020-04-16**
 
-Mattermost v5.22.0 contains a low level security fix. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+Mattermost v5.22.0 contains a low level security fix. [Upgrading](/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
 
 ### Compatibility
 
@@ -2196,7 +2199,7 @@ Mattermost v5.22.0 contains a low level security fix. [Upgrading](https://docs.m
  - The Channel Moderation Settings feature is supported on mobile app versions v1.30 and later. In earlier versions of the mobile app, users who attempt to post or react to posts without proper permissions will see an error.
  - Direct access to the ``Props`` field in the ``model.Post`` structure has been deprecated. The available ``GetProps()`` and ``SetProps()`` methods should now be used. Also, direct copy of the ``model.Post`` structure must be avoided in favor of the provided ``Clone()`` method.
 
-**IMPORTANT:** If you upgrade from a release earlier than 5.21, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html).
+**IMPORTANT:** If you upgrade from a release earlier than 5.21, please read the other [Important Upgrade Notes](/administration/important-upgrade-notes.html).
 
 ### Highlights
 
@@ -2308,11 +2311,11 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
  - [abdulsmapara](https://github.com/abdulsmapara), [Adovenmuehle](https://github.com/Adovenmuehle), [aeomin](https://translate.mattermost.com/user/aeomin/), [agarciamontoro](https://github.com/agarciamontoro), [AGMETEOR](https://github.com/AGMETEOR), [agnivade](https://github.com/agnivade), [ali-farooq0](https://github.com/ali-farooq0), [allenlai18](https://github.com/allenlai18), [ami9000](https://github.com/ami9000), [amyblais](https://github.com/amyblais), [amynicol1985](https://github.com/amynicol1985), [angeloskyratzakos](https://github.com/angeloskyratzakos), [AninditaBasu](https://github.com/AninditaBasu), [apoxa](https://github.com/apoxa), [asaadmahmood](https://github.com/asaadmahmood), [ashishbhate](https://github.com/ashishbhate), [ashwanisng](https://github.com/ashwanisng), [avasconcelos114](https://github.com/avasconcelos114), [bakurits](https://github.com/bakurits), [Better-Boy](https://github.com/Better-Boy), [bhuvana-guna](https://github.com/bhuvana-guna), [bolariin](https://github.com/bolariin), [bradjcoughlin](https://github.com/bradjcoughlin), [catalintomai](https://github.com/catalintomai), [caugner](https://github.com/caugner), [checkaayush](https://github.com/checkaayush), [chetanyakan](https://github.com/chetanyakan), [chikei](https://github.com/chikei), [chuttam](https://github.com/chuttam), [cometkim](https://github.com/cometkim), [comharris](https://github.com/comharris), [compiledsound](https://github.com/compiledsound), [cpanato](https://github.com/cpanato), [cpoile](https://github.com/cpoile), [crspeller](https://github.com/crspeller), [ctlaltdieliet](https://github.com/ctlaltdieliet), [deanwhillier](https://github.com/deanwhillier), [der-test](https://github.com/der-test), [devinbinnie](https://github.com/devinbinnie), [DHaussermann](https://github.com/DHaussermann), [DSchalla](https://github.com/DSchalla), [Durgaprasad-Budhwani](https://github.com/Durgaprasad-Budhwani), [ebiiim](https://github.com/ebiiim), [enahum](https://github.com/enahum), [enelson720](https://github.com/enelson720), [ericjaystevens](https://github.com/ericjaystevens), [ethervoid](https://github.com/ethervoid), [faase](https://github.com/faase), [fedealconada](https://github.com/fedealconada), [flynbit](https://github.com/flynbit), [fm2munsh](https://github.com/fm2munsh), [gabrieljackson](https://github.com/gabrieljackson), [gruceqq](https://translate.mattermost.com/user/gruceqq/), [grundleborg](https://github.com/grundleborg), [gsagula](https://github.com/gsagula), [hahmadia](https://github.com/hahmadia), [hannaparks](https://github.com/hannaparks), [hanzei](https://github.com/hanzei), [haydenhw](https://github.com/haydenhw), [hectorskypl](https://github.com/hectorskypl), [hiendinhngoc](https://github.com/hiendinhngoc), [HilaryClarke](https://github.com/HilaryClarke), [hmhealey](https://github.com/hmhealey), [iamsayantan](https://github.com/iamsayantan), [iomodo](https://github.com/iomodo), [isacikgoz](https://github.com/isacikgoz), [it33](https://github.com/it33), [JanhaviC15](https://github.com/JanhaviC15), [jasonblais](https://github.com/jasonblais), [jaydeland](https://github.com/jaydeland), [jespino](https://github.com/jespino), [jfrerich](https://github.com/jfrerich), [joewaitye](https://github.com/joewaitye), [johnthompson365](https://github.com/johnthompson365), [josephbaylon](https://github.com/josephbaylon), [josephk96](https://github.com/josephk96), [JtheBAB](https://github.com/JtheBAB), [jupenur](https://github.com/jupenur), [justinegeffen](https://github.com/justinegeffen), [jwilander](https://github.com/jwilander), [kaakaa](https://github.com/kaakaa), [kajumito](https://github.com/kajumito), [Kaya_Zeren](https://twitter.com/kaya_zeren), [kosgrz](https://github.com/kosgrz), [larkox](https://github.com/larkox), [levb](https://github.com/levb), [lfbrock](https://github.com/lfbrock), [lieut-data](https://github.com/lieut-data), [lindalumitchell](https://github.com/lindalumitchell), [Lumexralph](https://github.com/Lumexralph), [M-ZubairAhmed](https://github.com/M-ZubairAhmed), [MarcoAlejandro](https://github.com/MarcoAlejandro), [marianunez](https://github.com/marianunez), [MatthewDorner](https://github.com/MatthewDorner), [meilon](https://github.com/meilon), [metanerd](https://github.com/metanerd), [mgdelacroix](https://github.com/mgdelacroix), [michaelschiffmm](https://github.com/michaelschiffmm), [mickmister](https://github.com/mickmister), [migbot](https://github.com/migbot), [mkraft](https://github.com/mkraft), [mlongo4290](https://github.com/mlongo4290), [mo2menelzeiny](https://github.com/mo2menelzeiny), [msvbhat](https://github.com/msvbhat), [MuLx10](https://github.com/MuLx10), [nadalfederer](https://github.com/nadalfederer), [natalie-hub](https://github.com/natalie-hub), [NeroBurner](https://github.com/NeroBurner), [nevyangelova](https://github.com/nevyangelova), [phillipahereza](https://github.com/phillipahereza), [Pomyk](https://github.com/Pomyk), [potaito](https://github.com/potaito), [prasoonmayank](https://github.com/prasoonmayank), [promulo](https://github.com/promulo), [rakhi2104](https://github.com/rakhi2104), [rbradleyhaas](https://github.com/rbradleyhaas), [reflog](https://github.com/reflog), [rodcorsi](https://github.com/rodcorsi), [RohitJain13](https://github.com/RohitJain13), [sadohert](https://github.com/sadohert), [saturninoabril](https://github.com/saturninoabril), [sbis04](https://github.com/sbis04), [sbishel](https://github.com/sbishel), [shadabk96](https://github.com/shadabk96), [shibasisp](https://github.com/shibasisp), [sibashisbishi](https://github.com/sibashisbishi), [someone-somenet-org](https://github.com/someone-somenet-org), [sowmiyamuthuraman](https://github.com/sowmiyamuthuraman), [srkgupta](https://github.com/srkgupta), [streamer45](https://github.com/streamer45), [stylianosrigas](https://github.com/stylianosrigas), [sudheerDev](https://github.com/sudheerDev), [svelle](https://github.com/svelle), [teyotan](https://github.com/teyotan), [TheoVitkovskiy](https://github.com/TheoVitkovskiy), [thePanz](https://github.com/thePanz), [thnat1234](https://github.com/thnat1234), [Ths2-9Y-LqJt6](https://github.com/Ths2-9Y-LqJt6), [TQuock](https://github.com/TQuock), [uhlhosting](https://github.com/uhlhosting), [upwell](https://github.com/upwell), [vespian](https://github.com/vespian), [wget](https://github.com/wget), [wiersgallak](https://github.com/wiersgallak), [wiggin77](https://github.com/wiggin77), [Willyfrog](https://github.com/Willyfrog)
 
-## Release v5.21 - [Quality Release](https://docs.mattermost.com/process/release-faq.html#release-overview)
+## Release v5.21 - [Quality Release](/process/release-faq.html#release-overview)
 
 **Release day: 2020-03-16**
 
-Mattermost v5.21.0 contains low level security fixes. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+Mattermost v5.21.0 contains low level security fixes. [Upgrading](/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
 
 ### Compatibility
  - Honour key value expiry in KVCompareAndSet, KVCompareAndDelete and KVList. We also improved handling of plugin key value race conditions and deleted keys in Postgres.
@@ -2350,7 +2353,7 @@ Mattermost v5.21.0 contains low level security fixes. [Upgrading](https://docs.m
 ### Contributors
  - [adamjclarkson](https://github.com/adamjclarkson), [Adovenmuehle](https://github.com/Adovenmuehle), [aeomin](https://translate.mattermost.com/user/aeomin/), [AGMETEOR](https://github.com/AGMETEOR), [agnivade](https://github.com/agnivade), [ajh3](https://github.com/ajh3), [ali-farooq0](https://github.com/ali-farooq0), [allenlai18](https://github.com/allenlai18), [ami9000](https://github.com/ami9000), [amyblais](https://github.com/amyblais), [andreiavrammsd](https://github.com/andreiavrammsd), [AninditaBasu](https://github.com/AninditaBasu), [Apollo9999](https://github.com/Apollo9999), [asaadmahmood](https://github.com/asaadmahmood), [ashishbhate](https://github.com/ashishbhate), [asutosh97](https://github.com/asutosh97), [avasconcelos114](https://github.com/avasconcelos114), [bbodenmiller](https://github.com/bbodenmiller), [bolariin](https://github.com/bolariin), [bradjcoughlin](https://github.com/bradjcoughlin), [catalintomai](https://github.com/catalintomai), [checkaayush](https://github.com/checkaayush), [chikei](https://github.com/chikei), [chuttam](https://github.com/chuttam), [comharris](https://github.com/comharris), [cpanato](https://github.com/cpanato), [cpoile](https://github.com/cpoile), [crspeller](https://github.com/crspeller), [ctlaltdieliet](https://translate.mattermost.com/user/ctlaltdieliet/), [ctmusicnz](https://github.com/ctmusicnz), [darkdebo](https://github.com/darkdebo), [deanwhillier](https://github.com/deanwhillier), [der-test](https://github.com/der-test), [devinbinnie](https://github.com/devinbinnie), [DHaussermann](https://github.com/DHaussermann), [dkbhadeshiya](https://github.com/dkbhadeshiya), [dlclark](https://github.com/dlclark), [DSchalla](https://github.com/DSchalla), [emilioicai](https://github.com/emilioicai), [enahum](https://github.com/enahum), [enelson720](https://github.com/enelson720), [esethna](https://github.com/esethna), [ethervoid](https://github.com/ethervoid), [faase](https://github.com/faase), [flynbit](https://translate.mattermost.com/user/flynbit/), [fm2munsh](https://github.com/fm2munsh), [gabrieljackson](https://github.com/gabrieljackson), [gigawhitlocks](https://github.com/gigawhitlocks), [gruceqq](https://translate.mattermost.com/user/gruceqq/), [grundleborg](https://github.com/grundleborg), [hahmadia](https://github.com/hahmadia), [hanzei](https://github.com/hanzei), [hectorskypl](https://github.com/hectorskypl), [hmhealey](https://github.com/hmhealey), [ikeohachidi](https://github.com/ikeohachidi), [iomodo](https://github.com/iomodo), [isacikgoz](https://github.com/isacikgoz), [it33](https://github.com/it33), [J35u527](https://github.com/J35u527), [jasonblais](https://github.com/jasonblais), [jasonlanderson](https://github.com/jasonlanderson), [jaydeland](https://github.com/jaydeland), [jespino](https://github.com/jespino), [jfrerich](https://github.com/jfrerich), [johnthompson365](https://github.com/johnthompson365), [josephbaylon](https://github.com/josephbaylon), [joshuabezaleel](https://github.com/joshuabezaleel), [justinegeffen](https://github.com/justinegeffen), [jwilander](https://github.com/jwilander), [kaakaa](https://github.com/kaakaa), [Kaya_Zeren](https://twitter.com/kaya_zeren), [khos2ow](https://github.com/khos2ow), [larkox](https://github.com/larkox), [lawikip](https://github.com/lawikip), [Lena](https://translate.mattermost.com/user/Lena/), [levb](https://github.com/levb), [lieut-data](https://github.com/lieut-data), [lindalumitchell](https://github.com/lindalumitchell), [M-ZubairAhmed](https://github.com/M-ZubairAhmed), [marianunez](https://github.com/marianunez), [matthewbirtch](https://github.com/matthewbirtch), [meilon](https://github.com/meilon), [metanerd](https://github.com/metanerd), [mgdelacroix](https://github.com/mgdelacroix), [michaelschiffmm](https://github.com/michaelschiffmm), [mickmister](https://github.com/mickmister), [migbot](https://github.com/migbot), [mkraft](https://github.com/mkraft), [mlongo4290](https://github.com/mlongo4290), [nadalfederer](https://github.com/nadalfederer), [natalie-hub](https://github.com/natalie-hub), [nevyangelova](https://github.com/nevyangelova), [njkevlani](https://github.com/njkevlani), [nmlc](https://github.com/nmlc), [opllama2](https://github.com/opllama2), [phillipahereza](https://github.com/phillipahereza), [promulo](https://github.com/promulo), [RajatVaryani](https://github.com/RajatVaryani), [ramkumarrn](https://github.com/ramkumarrn), [rbradleyhaas](https://github.com/rbradleyhaas), [reflog](https://github.com/reflog), [rodcorsi](https://github.com/rodcorsi), [Rulikkk](https://github.com/Rulikkk), [RyanCommits](https://github.com/RyanCommits), [s3than](https://github.com/s3than), [saturninoabril](https://github.com/saturninoabril), [sbishel](https://github.com/sbishel), [sowmiyamuthuraman](https://github.com/sowmiyamuthuraman), [srkgupta](https://github.com/srkgupta), [streamer45](https://github.com/streamer45), [strtw](https://github.com/strtw), [stylianosrigas](https://github.com/stylianosrigas), [sudheerDev](https://github.com/sudheerDev), [svelle](https://github.com/svelle), [thePanz](https://github.com/thePanz), [theriverman](https://github.com/theriverman), [Ths2-9Y-LqJt6](https://github.com/Ths2-9Y-LqJt6), [TQuock](https://github.com/TQuock), [uhlhosting](https://github.com/uhlhosting), [Unkn0wnCat](https://github.com/Unkn0wnCat), [vesari](https://github.com/vesari), [vespian](https://github.com/vespian), [vovapi](https://github.com/vovapi), [wget](https://github.com/wget), [wiersgallak](https://github.com/wiersgallak), [Willyfrog](https://github.com/Willyfrog)
 
-## Release v5.20 - [Feature Release](https://docs.mattermost.com/process/release-faq.html#release-overview)
+## Release v5.20 - [Feature Release](/process/release-faq.html#release-overview)
 
 - **v5.20.2, released 2020-03-12**
   - Fixed an issue where Mattermost server crashed when running a compliance export. [MM-23157](https://mattermost.atlassian.net/browse/MM-23157)
@@ -2360,15 +2363,15 @@ Mattermost v5.21.0 contains low level security fixes. [Upgrading](https://docs.m
 - **v5.20.0, released 2020-02-16**
   - Original 5.20.0 release
 
-Mattermost v5.20.0 contains a low level security fix. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+Mattermost v5.20.0 contains a low level security fix. [Upgrading](/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
 
 ### Compatibility
 
 ### Breaking Changes
- - Any [pre-packaged plugin](https://docs.mattermost.com/administration/plugins.html#pre-packaged-plugins) that is not enabled in the ``config.json`` will no longer install automatically, but can continue to be installed via the [plugin marketplace](https://docs.mattermost.com/administration/plugins.html#plugin-marketplace).
+ - Any [pre-packaged plugin](/administration/plugins.html#pre-packaged-plugins) that is not enabled in the ``config.json`` will no longer install automatically, but can continue to be installed via the [plugin marketplace](/administration/plugins.html#plugin-marketplace).
  - Boolean elements from interactive dialogs are no longer serialized as strings. While we try to avoid breaking changes, this change was necessary to allow both the web and mobile apps to work with the boolean elements introduced with v5.16.
  
-**IMPORTANT:** If you upgrade from a release earlier than 5.19, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html).
+**IMPORTANT:** If you upgrade from a release earlier than 5.19, please read the other [Important Upgrade Notes](/administration/important-upgrade-notes.html).
 
 ### Highlights
 
@@ -2489,9 +2492,9 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 ### Contributors
 [abdusabri](https://github.com/abdusabri), [aeomin](https://translate.mattermost.com/user/aeomin/), [agarciamontoro](https://github.com/agarciamontoro), [AGMETEOR](https://github.com/AGMETEOR), [agnivade](https://github.com/agnivade), [ali-farooq0](https://github.com/ali-farooq0), [allenlai18](https://github.com/allenlai18), [amyblais](https://github.com/amyblais), [andylibrian](https://github.com/andylibrian), [anidok](https://github.com/anidok), [AninditaBasu](https://github.com/AninditaBasu), [anon6789](https://github.com/anon6789), [asaadmahmood](https://github.com/asaadmahmood), [ashishbhate](https://github.com/ashishbhate), [atulya-pandey](https://github.com/atulya-pandey), [avasconcelos114](https://github.com/avasconcelos114), [bbodenmiller](https://github.com/bbodenmiller), [bolariin](https://github.com/bolariin), [bpietraga](https://github.com/bpietraga), [bradjcoughlin](https://github.com/bradjcoughlin), [c-yan](https://github.com/c-yan), [calebroseland](https://github.com/calebroseland), [catalintomai](https://github.com/catalintomai), [CEOehis](https://github.com/CEOehis), [chikei](https://github.com/chikei), [ChrisDobby](https://github.com/ChrisDobby), [chuttam](https://github.com/chuttam), [cjohannsen81](https://github.com/cjohannsen81), [comharris](https://github.com/comharris), [cpanato](https://github.com/cpanato), [crspeller](https://github.com/crspeller), [ctmusicnz](https://github.com/ctmusicnz), [davidjwilkins](https://github.com/davidjwilkins), [DE-mbecker](https://github.com/DE-mbecker), [deanwhillier](https://github.com/deanwhillier), [der-test](https://github.com/der-test), [devinbinnie](https://github.com/devinbinnie), [dlclark](https://github.com/dlclark), [dra](https://github.com/dra), [DSchalla](https://github.com/DSchalla), [emilioicai](https://github.com/emilioicai), [enahum](https://github.com/enahum), [enelson720](https://github.com/enelson720), [enolal826](https://github.com/enolal826), [esdrasbeleza](https://github.com/esdrasbeleza), [ethervoid](https://github.com/ethervoid), [faase](https://github.com/faase), [flexo3001](https://github.com/flexo3001), [fm2munsh](https://github.com/fm2munsh), [gabrieljackson](https://github.com/gabrieljackson), [gigawhitlocks](https://github.com/gigawhitlocks), [gopheros](https://github.com/gopheros), [grubbins](https://github.com/grubbins), [gruceqq](https://translate.mattermost.com/user/gruceqq/), [gsagula](https://github.com/gsagula), [gupsho](https://github.com/gupsho), [hahmadia](https://github.com/hahmadia), [hanzei](https://github.com/hanzei), [hector2](https://github.com/hector2), [hectorskypl](https://github.com/hectorskypl), [hmhealey](https://github.com/hmhealey), [hunterlester](https://github.com/hunterlester), [ikeohachidi](https://github.com/ikeohachidi), [imisshtml](https://github.com/imisshtml), [iomodo](https://github.com/iomodo), [isacikgoz](https://github.com/isacikgoz), [itao](https://github.com/itao), [jasonblais](https://github.com/jasonblais), [jasonlanderson](https://github.com/jasonlanderson), [jaydeland](https://github.com/jaydeland), [jespino](https://github.com/jespino), [jfrerich](https://github.com/jfrerich), [jomaxro](https://github.com/jomaxro), [josephbaylon](https://github.com/josephbaylon), [JtheBAB](https://github.com/JtheBAB), [jupenur](https://github.com/jupenur), [justinegeffen](https://github.com/justinegeffen), [JustinReynolds-MM](https://github.com/JustinReynolds-MM), [jwilander](https://github.com/jwilander), [kaakaa](https://github.com/kaakaa), [karlmarxlopez](https://github.com/karlmarxlopez), [Kaya_Zeren](https://twitter.com/kaya_zeren), [khos2ow](https://github.com/khos2ow), [kosgrz](https://github.com/kosgrz), [larkox](https://github.com/larkox), [lawikip](https://github.com/lawikip), [Lena](https://translate.mattermost.com/user/Lena/), [levb](https://github.com/levb), [lfbrock](https://github.com/lfbrock), [lieut-data](https://github.com/lieut-data), [lindalumitchell](https://github.com/lindalumitchell), [lindy65](https://github.com/lindy65), [lukewest](https://github.com/lukewest), [lurcio](https://github.com/lurcio), [M-ZubairAhmed](https://github.com/M-ZubairAhmed), [marianunez](https://github.com/marianunez), [meilon](https://github.com/meilon), [metanerd](https://github.com/metanerd), [mgdelacroix](https://github.com/mgdelacroix), [michaelschiffmm](https://github.com/michaelschiffmm), [mickmister](https://github.com/mickmister), [migbot](https://github.com/migbot), [mitchellroe](https://github.com/mitchellroe), [mjthomp95](https://github.com/mjthomp95), [mkraft](https://github.com/mkraft), [mlongo4290](https://github.com/mlongo4290), [nadalfederer](https://github.com/nadalfederer), [natalie-hub](https://github.com/natalie-hub), [niklabh](https://github.com/niklabh), [NiroshaV](https://github.com/NiroshaV), [nmlc](https://github.com/nmlc), [opllama2](https://github.com/opllama2), [phillipahereza](https://github.com/phillipahereza), [Pomyk](https://github.com/Pomyk), [popstr](https://github.com/popstr), [RajatVaryani](https://github.com/RajatVaryani), [rajudev](https://github.com/rajudev), [rascasoft](https://github.com/rascasoft), [rbradleyhaas](https://github.com/rbradleyhaas), [reflog](https://github.com/reflog), [rodcorsi](https://github.com/rodcorsi), [rvillablanca](https://github.com/rvillablanca), [RyanCommits](https://github.com/RyanCommits), [saturninoabril](https://github.com/saturninoabril), [sbishel](https://github.com/sbishel), [scottjr632](https://github.com/scottjr632), [sij507](https://github.com/sij507), [somenet](https://github.com/somenet), [sowmiyamuthuraman](https://github.com/sowmiyamuthuraman), [streamer45](https://github.com/streamer45), [stylianosrigas](https://github.com/stylianosrigas), [sudheerDev](https://github.com/sudheerDev), [svelle](https://github.com/svelle), [tasdomas](https://github.com/tasdomas), [thapakazi](https://github.com/thapakazi), [thefactremains](https://github.com/thefactremains), [themaverikk](https://github.com/themaverikk), [thePanz](https://github.com/thePanz), [TQuock](https://github.com/TQuock), [uhlhosting](https://github.com/uhlhosting), [vesari](https://github.com/vesari), [VishalSwarnkar](https://github.com/VishalSwarnkar), [wget](https://github.com/wget), [wiersgallak](https://github.com/wiersgallak), [wiggin77](https://github.com/wiggin77), [Willyfrog](https://github.com/Willyfrog), [xalkan](https://github.com/xalkan)
 
-## Release v5.19 - [ESR](https://docs.mattermost.com/administration/extended-support-release.html)
+## Release v5.19 - [ESR](/administration/extended-support-release.html)
 
-Mattermost v5.19.0 contains low to high level security fixes. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+Mattermost v5.19.0 contains low to high level security fixes. [Upgrading](/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
 
 - **v5.19.3, released 2020-06-19**
   - Fixed an issue with the Plugin Tooltip implementation that caused links to be truncated when rendered. This issue occured if you are using the recent GitHub plugin v1.0.0 release. All links were affected, regardless if they were related to GitHub. [MM-25808]
@@ -2508,7 +2511,7 @@ Mattermost v5.19.0 contains low to high level security fixes. [Upgrading](https:
 #### Breaking Changes
  - ``LockTeammateNameDisplay`` setting was moved to Enterprise Edition E20 as it was erroneously available in Team Edition and Enterprise Edition E10.
  
-**IMPORTANT:** If you upgrade from a release earlier than 5.18, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html).
+**IMPORTANT:** If you upgrade from a release earlier than 5.18, please read the other [Important Upgrade Notes](/administration/important-upgrade-notes.html).
 
 ### Bug Fixes
  - Fixed an issue where email notifications were still sent in some cases while disabled in the user interface.
@@ -2556,14 +2559,14 @@ Mattermost v5.19.0 contains low to high level security fixes. [Upgrading](https:
 ### Contributors
 [aaronrothschild](https://github.com/aaronrothschild), [abdusabri](https://github.com/abdusabri), [abhisek](https://github.com/abhisek), [aeomin](https://translate.mattermost.com/user/aeomin/), [AGMETEOR](https://github.com/AGMETEOR), [agnivade](https://github.com/agnivade), [ali-farooq0](https://github.com/ali-farooq0), [allenlai18](https://github.com/allenlai18), [alxsah](https://github.com/alxsah), [amyblais](https://github.com/amyblais), [anidok](https://github.com/anidok), [AninditaBasu](https://github.com/AninditaBasu), [asaadmahmood](https://github.com/asaadmahmood), [ashishbhate](https://github.com/ashishbhate), [avegrv](https://github.com/avegrv), [benbhall](https://github.com/benbhall), [bpietraga](https://github.com/bpietraga), [bradjcoughlin](https://github.com/bradjcoughlin), [calebroseland](https://github.com/calebroseland), [catalintomai](https://github.com/catalintomai), [chikei](https://github.com/chikei), [ChrisDobby](https://github.com/ChrisDobby), [comharris](https://github.com/comharris), [cpanato](https://github.com/cpanato), [cpoile](https://github.com/cpoile), [crspeller](https://github.com/crspeller), [darkestofdans](https://github.com/darkestofdans), [der-test](https://github.com/der-test), [devinbinnie](https://github.com/devinbinnie), [DSchalla](https://github.com/DSchalla), [enahum](https://github.com/enahum), [ethervoid](https://github.com/ethervoid), [faase](https://github.com/faase), [fm2munsh](https://github.com/fm2munsh), [gabrieljackson](https://github.com/gabrieljackson), [gigawhitlocks](https://github.com/gigawhitlocks), [gopheros](https://github.com/gopheros), [gruceqq](https://translate.mattermost.com/user/gruceqq/), [gsagula](https://github.com/gsagula), [gupsho](https://github.com/gupsho), [hahmadia](https://github.com/hahmadia), [hannaparks](https://github.com/hannaparks), [hanzei](https://github.com/hanzei), [hectorskypl](https://github.com/hectorskypl), [hmhealey](https://github.com/hmhealey), [icelander](https://github.com/icelander), [igomonov88](https://github.com/igomonov88), [ilgooz](https://github.com/ilgooz), [imisshtml](https://github.com/imisshtml), [iomodo](https://github.com/iomodo), [isacikgoz](https://github.com/isacikgoz), [jasonblais](https://github.com/jasonblais), [jaydeland](https://github.com/jaydeland), [jespino](https://github.com/jespino), [jfrerich](https://github.com/jfrerich), [jimiolaniyan](https://github.com/jimiolaniyan), [JtheBAB](https://github.com/JtheBAB), [justinegeffen](https://github.com/justinegeffen), [jwilander](https://github.com/jwilander), [kaakaa](https://github.com/kaakaa), [Kaya_Zeren](https://twitter.com/kaya_zeren), [kop](https://github.com/kop), [kosgrz](https://github.com/kosgrz), [larkox](https://github.com/larkox), [Lena](https://translate.mattermost.com/user/Lena/), [lenucksi](https://github.com/lenucksi), [levb](https://github.com/levb), [lieut-data](https://github.com/lieut-data), [lindalumitchell](https://github.com/lindalumitchell), [lurcio](https://github.com/lurcio), [M-ZubairAhmed](https://github.com/M-ZubairAhmed), [MariadeAnton](https://github.com/MariadeAnton), [marianunez](https://github.com/marianunez), [mavegaf](https://github.com/mavegaf), [meilon](https://github.com/meilon), [metanerd](https://github.com/metanerd), [mgdelacroix](https://github.com/mgdelacroix), [michaelschiffmm](https://github.com/michaelschiffmm), [mickmister](https://github.com/mickmister), [migbot](https://github.com/migbot), [mkraft](https://github.com/mkraft), [mlongo4290](https://github.com/mlongo4290), [Mycobee](https://github.com/Mycobee), [nadalfederer](https://github.com/nadalfederer), [natalie-hub](https://github.com/natalie-hub), [nevyangelova](https://github.com/nevyangelova), [nick-brady](https://github.com/nick-brady), [phillipahereza](https://github.com/phillipahereza), [Pomyk](https://github.com/Pomyk), [RajatVaryani](https://github.com/RajatVaryani), [ramkumarvenkat](https://github.com/ramkumarvenkat), [reflog](https://github.com/reflog), [renilJoseph](https://github.com/renilJoseph), [rodcorsi](https://github.com/rodcorsi), [saneletm](https://github.com/saneletm), [saturninoabril](https://github.com/saturninoabril), [sbishel](https://github.com/sbishel), [sij507](https://github.com/sij507), [smacgregor](https://github.com/smacgregor), [src-r-r](https://github.com/src-r-r), [srkgupta](https://github.com/srkgupta), [streamer45](https://github.com/streamer45), [stylianosrigas](https://github.com/stylianosrigas), [sudheerDev](https://github.com/sudheerDev), [sunsingerus](https://github.com/sunsingerus), [svelle](https://github.com/svelle), [themaverikk](https://github.com/themaverikk), [thePanz](https://github.com/thePanz), [tomasmik](https://github.com/tomasmik), [TQuock](https://github.com/TQuock), [uhlhosting](https://github.com/uhlhosting), [valentijnnieman](https://github.com/valentijnnieman), [wget](https://github.com/wget), [wiersgallak](https://github.com/wiersgallak), [wiggin77](https://github.com/wiggin77), [Willyfrog](https://github.com/Willyfrog), [zujko](https://github.com/zujko)
 
-## Release v5.18 - [Feature Release](https://docs.mattermost.com/process/release-faq.html#release-overview)
+## Release v5.18 - [Feature Release](/process/release-faq.html#release-overview)
 
-Mattermost v5.18.0 contains low to high level security fixes. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+Mattermost v5.18.0 contains low to high level security fixes. [Upgrading](/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
 
 - **v5.18.2, released 2020-01-16**
   - Fixed an issue where server crashed when a user updated their Account Settings in a high availability cluster environment, and the corresponding ``user_updated`` event did not reach a guest user. [MM-21481](https://mattermost.atlassian.net/browse/MM-21481)
 - **v5.18.1, released 2020-01-08**
-  - Mattermost v5.18.1 contains a high level security fix. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+  - Mattermost v5.18.1 contains a high level security fix. [Upgrading](/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
   - Fixed an issue where migrating accounts from email to SAML failed. [MM-21472](https://mattermost.atlassian.net/browse/MM-21472)
 - **v5.18.0, released 2019-12-16**
   - Original 5.18.0 release
@@ -2578,7 +2581,7 @@ Mattermost v5.18.0 contains low to high level security fixes. [Upgrading](https:
  - Removed ``Team.InviteId`` from the related Websocket event and sanitized it on all team API endpoints for users without invite permissions.
  - Removed the ability to change the type of a channel using the ``PUT /channels/{channel_id}`` API endpoint. The new ``PUT /channels/{channel_id}/privacy`` endpoint should be used for that purpose.
  
-**IMPORTANT:** If you upgrade from a release earlier than 5.17, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html).
+**IMPORTANT:** If you upgrade from a release earlier than 5.17, please read the other [Important Upgrade Notes](/administration/important-upgrade-notes.html).
 
 ### Highlights
  
@@ -2595,7 +2598,7 @@ Mattermost v5.18.0 contains low to high level security fixes. [Upgrading](https:
  - Allows a system admin to run commands when conventional access to the server via SSH isn't possible.
 
 #### View Archived Channels (Beta)
- - View, share and search for content of archived channels. See more details [here](https://docs.mattermost.com/administration/config-settings.html#allow-users-to-view-archived-channels-beta).
+ - View, share and search for content of archived channels. See more details [here](/administration/config-settings.html#allow-users-to-view-archived-channels-beta).
 
 #### Guest Account SAML & LDAP Support (EE)
  - Provision Guests directly from AD/LDAP or SAML upon login. Guests will have no access to any teams or channels until they are assigned.
@@ -2649,7 +2652,7 @@ Mattermost v5.18.0 contains low to high level security fixes. [Upgrading](https:
 ### Bug Fixes
  - Fixed an issue where modifying config files caused compliance exports to run twice.
  - Fixed an issue where admins were not able to create LDAP user via /api/v4/users.
- - Fixed some bugs related to the [keyboard accessibility](https://docs.mattermost.com/help/getting-started/accessibility.html) feature.
+ - Fixed some bugs related to the [keyboard accessibility](/help/getting-started/accessibility.html) feature.
  - Fixed issues with Guest Accounts feature, such as an issue where the option to make guest users as team admins was erroneously provided in Manage Teams dialog on **System Console > Users**.
  - Fixed an issue where an opened emoji picker floated while the user scrolled in the channel.
  - Fixed an issue where "Your message is too long" warning on the right-hand side reply thread overlapped the Preview button.
@@ -2720,15 +2723,15 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 ### Contributors
 [3mard](https://github.com/3mard), [a8uhnf](https://github.com/a8uhnf), [aaronrothschild](https://github.com/aaronrothschild), [abdusabri](https://github.com/abdusabri), [aeomin](https://translate.mattermost.com/user/aeomin/), [AGMETEOR](https://github.com/AGMETEOR), [agnivade](https://github.com/agnivade), [akshaychhajed](https://github.com/akshaychhajed), [ali-farooq0](https://github.com/ali-farooq0), [allenlai18](https://github.com/allenlai18), [alxsah](https://github.com/alxsah), [amyblais](https://github.com/amyblais), [andresoro](https://github.com/andresoro), [anindha](https://github.com/anindha), [AninditaBasu](https://github.com/AninditaBasu), [arjitc](https://github.com/arjitc), [asaadmahmood](https://github.com/asaadmahmood), [ashishbhate](https://github.com/ashishbhate), [avasconcelos114](https://github.com/avasconcelos114), [bradjcoughlin](https://github.com/bradjcoughlin), [brewsterbhg](https://github.com/brewsterbhg), [bvineyar](https://github.com/bvineyar), [cardoso](https://github.com/cardoso), [catalintomai](https://github.com/catalintomai), [chapa](https://github.com/chapa), [chetanyakan](https://github.com/chetanyakan), [chikei](https://github.com/chikei), [chuttam](https://github.com/chuttam), [cinlloc](https://github.com/cinlloc), [cjohannsen81](https://github.com/cjohannsen81), [cometkim](https://github.com/cometkim), [comharris](https://github.com/comharris), [cpanato](https://github.com/cpanato), [cpoile](https://github.com/cpoile), [cpurta](https://github.com/cpurta), [crspeller](https://github.com/crspeller), [deanwhillier](https://github.com/deanwhillier), [der-test](https://github.com/der-test), [devinbinnie](https://github.com/devinbinnie), [DHaussermann](https://github.com/DHaussermann), [drekar](https://github.com/drekar), [DSchalla](https://github.com/DSchalla), [enahum](https://github.com/enahum), [enolal826](https://github.com/enolal826), [ethervoid](https://github.com/ethervoid), [etoaster](https://github.com/etoaster), [FlaviaBastos](https://github.com/FlaviaBastos), [fm2munsh](https://github.com/fm2munsh), [focusonmx](https://github.com/focusonmx), [g3rv4](https://github.com/g3rv4), [gabrieljackson](https://github.com/gabrieljackson), [gigawhitlocks](https://github.com/gigawhitlocks), [goku321](https://github.com/goku321), [gruceqq](https://translate.mattermost.com/user/gruceqq/), [grundleborg](https://github.com/grundleborg), [gupsho](https://github.com/gupsho), [hahmadia](https://github.com/hahmadia), [hanzei](https://github.com/hanzei), [harshilsharma63](https://github.com/harshilsharma63), [hectorskypl](https://github.com/hectorskypl), [HilalNazli](https://github.com/HilalNazli), [hmhealey](https://github.com/hmhealey), [icelander](https://github.com/icelander), [ilgooz](https://github.com/ilgooz), [imisshtml](https://github.com/imisshtml), [iomodo](https://github.com/iomodo), [ishanray](https://github.com/ishanray), [ivanvc](https://github.com/ivanvc), [jabshire](https://github.com/jabshire), [jasonblais](https://github.com/jasonblais), [jaydeland](https://github.com/jaydeland), [jespino](https://github.com/jespino), [jfrerich](https://github.com/jfrerich), [jgbaylon](https://github.com/jgbaylon), [jimiolaniyan](https://github.com/jimiolaniyan), [johnthompson365](https://github.com/johnthompson365), [joshuabezaleel](https://github.com/joshuabezaleel), [jozuenoon](https://github.com/jozuenoon), [justinegeffen](https://github.com/justinegeffen), [jwilander](https://github.com/jwilander), [kaakaa](https://github.com/kaakaa), [kanozec](https://github.com/kanozec), [karlmarxlopez](https://github.com/karlmarxlopez), [Kaya_Zeren](https://twitter.com/kaya_zeren), [kdenz](https://github.com/kdenz), [kosgrz](https://github.com/kosgrz), [KuSh](https://github.com/KuSh), [larkox](https://github.com/larkox), [last-partizan](https://github.com/last-partizan), [Lena](https://translate.mattermost.com/user/Lena/), [levb](https://github.com/levb), [lieut-data](https://github.com/lieut-data), [lindalumitchell](https://github.com/lindalumitchell), [M-ZubairAhmed](https://github.com/M-ZubairAhmed), [m4ver1k](https://github.com/m4ver1k), [malaDev](https://github.com/malaDev), [manland](https://github.com/manland), [marianunez](https://github.com/marianunez), [MathewtheCoder](https://github.com/MathewtheCoder), [meilon](https://github.com/meilon), [mgdelacroix](https://github.com/mgdelacroix), [michaelschiffmm](https://github.com/michaelschiffmm), [mickmister](https://github.com/mickmister), [migbot](https://github.com/migbot), [mkraft](https://github.com/mkraft), [mlongo4290](https://github.com/mlongo4290), [natalie-hub](https://github.com/natalie-hub), [nathanmkaya](https://github.com/nathanmkaya), [niklabh](https://github.com/niklabh), [nrekretep](https://github.com/nrekretep), [Pomyk](https://github.com/Pomyk), [pqzx](https://github.com/pqzx), [pradeepmurugesan](https://github.com/pradeepmurugesan), [promulo](https://github.com/promulo), [PunitGr](https://github.com/PunitGr), [r4zorgeek](https://github.com/r4zorgeek), [RajatVaryani](https://github.com/RajatVaryani), [reflog](https://github.com/reflog), [rfoyard](https://github.com/rfoyard), [rodcorsi](https://github.com/rodcorsi), [rvillablanca](https://github.com/rvillablanca), [SamWolfs](https://github.com/SamWolfs), [saneletm](https://github.com/saneletm), [saturninoabril](https://github.com/saturninoabril), [sbishel](https://github.com/sbishel), [scottleedavis](https://github.com/scottleedavis), [Sheshagiri](https://github.com/Sheshagiri), [sij507](https://github.com/sij507), [sphr](https://github.com/sphr), [srkgupta](https://github.com/srkgupta), [sstaszkiewicz-copperleaf](https://github.com/sstaszkiewicz-copperleaf), [steevsachs](https://github.com/steevsachs), [streamer45](https://github.com/streamer45), [stylianosrigas](https://github.com/stylianosrigas), [sudheerDev](https://github.com/sudheerDev), [sunsingerus](https://github.com/sunsingerus), [svelle](https://github.com/svelle), [thePanz](https://github.com/thePanz), [TonPC64](https://github.com/TonPC64), [TQuock](https://github.com/TQuock), [uhlhosting](https://github.com/uhlhosting), [unlikelygeek](https://github.com/unlikelygeek), [valentijnnieman](https://github.com/valentijnnieman), [ventz](https://github.com/ventz), [vinicio](https://github.com/vinicio), [wget](https://github.com/wget), [wiersgallak](https://github.com/wiersgallak), [wiggin77](https://github.com/wiggin77), [Willyfrog](https://github.com/Willyfrog), [wlsf82](https://github.com/wlsf82), [YuikoTakada](https://github.com/YuikoTakada)
 
-## Release v5.17 - [Quality Release](https://docs.mattermost.com/process/release-faq.html#release-overview)
+## Release v5.17 - [Quality Release](/process/release-faq.html#release-overview)
 
-Mattermost v5.17.0 contains medium to high level security fixes. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+Mattermost v5.17.0 contains medium to high level security fixes. [Upgrading](/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
 
 - **v5.17.3, released 2020-01-08**
-  - Mattermost v5.17.3 contains a high level security fix. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+  - Mattermost v5.17.3 contains a high level security fix. [Upgrading](/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
   - Fixed an issue where migrating accounts from email to SAML failed. [MM-21472](https://mattermost.atlassian.net/browse/MM-21472)
 - **v5.17.2, released 2019-12-18**
-  - Mattermost v5.17.2 contains high level security fixes. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+  - Mattermost v5.17.2 contains high level security fixes. [Upgrading](/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
 - **v5.17.1, released 2019-11-25**
   - Fixed an issue where leaving a channel does not work in some cases if the channel was open in another webapp or desktop client. [MM-20206](https://mattermost.atlassian.net/browse/MM-20206)
 - **v5.17.0, released 2019-11-16**
@@ -2787,20 +2790,20 @@ A setting option was added to `config.json`. Below is a list of the additions an
 ### Contributors
 [a-arias](https://github.com/a-arias), [A-Hilaly](https://github.com/A-Hilaly), [a8uhnf](https://github.com/a8uhnf), [aaronrothschild](https://github.com/aaronrothschild), [abadojack](https://github.com/abadojack), [abdusabri](https://github.com/abdusabri), [abelharisov](https://github.com/abelharisov), [aeomin](https://translate.mattermost.com/user/aeomin/), [AGMETEOR](https://github.com/AGMETEOR), [agnivade](https://github.com/agnivade), [agusl88](https://github.com/agusl88), [akantsevoi](https://github.com/akantsevoi), [akpark](https://github.com/akpark), [akshaychhajed](https://github.com/akshaychhajed), [aladhims](https://github.com/aladhims), [ali-farooq0](https://github.com/ali-farooq0), [amyblais](https://github.com/amyblais), [ananichev](https://github.com/ananichev), [anchepiece](https://github.com/anchepiece), [andresoro](https://github.com/andresoro), [anindha](https://github.com/anindha), [aqche](https://github.com/aqche), [arjitc](https://github.com/arjitc), [asaadmahmood](https://github.com/asaadmahmood), [avasconcelos114](https://github.com/avasconcelos114), [bensooraj](https://github.com/bensooraj), [boonwj](https://github.com/boonwj), [bradjcoughlin](https://github.com/bradjcoughlin), [brewsterbhg](https://github.com/brewsterbhg), [bryanculver](https://github.com/bryanculver), [catalintomai](https://github.com/catalintomai), [cedrickring](https://github.com/cedrickring), [chahat-arora](https://github.com/chahat-arora), [chikei](https://github.com/chikei), [ChrisDobby](https://github.com/ChrisDobby), [chuttam](https://github.com/chuttam), [cinlloc](https://github.com/cinlloc), [codevbus](https://github.com/codevbus), [comharris](https://github.com/comharris), [cpanato](https://github.com/cpanato), [cpoile](https://github.com/cpoile), [crspeller](https://github.com/crspeller), [CSBatchelor](https://github.com/CSBatchelor), [dailos2coders](https://github.com/dailos2coders), [DaKeiser](https://github.com/DaKeiser), [deanwhillier](https://github.com/deanwhillier), [dedifferentiator](https://github.com/dedifferentiator), [der-test](https://github.com/der-test), [devinbinnie](https://github.com/devinbinnie), [DHaussermann](https://github.com/DHaussermann), [dnguy078](https://github.com/dnguy078), [drekar](https://github.com/drekar), [DropNib](https://github.com/DropNib), [enahum](https://github.com/enahum), [esethna](https://github.com/esethna), [FlaviaBastos](https://github.com/FlaviaBastos), [gabrieljackson](https://github.com/gabrieljackson), [gfelixc](https://github.com/gfelixc), [gigawhitlocks](https://github.com/gigawhitlocks), [goku321](https://github.com/goku321), [gruceqq](https://translate.mattermost.com/user/gruceqq/), [grundleborg](https://github.com/grundleborg), [guigui64](https://github.com/guigui64), [gupsho](https://github.com/gupsho), [hahmadia](https://github.com/hahmadia), [hanzei](https://github.com/hanzei), [hector2](https://github.com/hector2), [hectorskypl](https://github.com/hectorskypl), [HelioStrike](https://github.com/HelioStrike), [heowc](https://github.com/heowc), [hmhealey](https://github.com/hmhealey), [hypnoglow](https://github.com/hypnoglow), [iDevoid](https://github.com/iDevoid), [imavroukakis](https://github.com/imavroukakis), [imisshtml](https://github.com/imisshtml), [iomodo](https://github.com/iomodo), [isacikgoz](https://github.com/isacikgoz), [italolelis](https://github.com/italolelis), [iwataka](https://github.com/iwataka), [jairojj](https://github.com/jairojj), [jasminexie](https://github.com/jasminexie), [jasonblais](https://github.com/jasonblais), [jatinjtg](https://github.com/jatinjtg), [JeewhanR](https://github.com/JeewhanR), [jesperhansen17](https://github.com/jesperhansen17), [jespino](https://github.com/jespino), [jfrerich](https://github.com/jfrerich), [jkl5616](https://github.com/jkl5616), [joebordes](https://github.com/joebordes), [johnthompson365](https://github.com/johnthompson365), [jordeguevara](https://github.com/jordeguevara), [jorgeruvalcaba](https://github.com/jorgeruvalcaba), [josephk96](https://github.com/josephk96), [JosephSamela](https://github.com/JosephSamela), [joshuabezaleel](https://github.com/joshuabezaleel), [jozuenoon](https://github.com/jozuenoon), [JtheBAB](https://github.com/JtheBAB), [justinegeffen](https://github.com/justinegeffen), [jwilander](https://github.com/jwilander), [kaakaa](https://github.com/kaakaa), [karanrn](https://github.com/karanrn), [karlmarxlopez](https://github.com/karlmarxlopez), [kashifsoofi](https://github.com/kashifsoofi), [Kaya_Zeren](https://twitter.com/kaya_zeren), [kethinov](https://github.com/kethinov), [kgeorgiou](https://github.com/kgeorgiou), [larkox](https://github.com/larkox), [laurapareja](https://github.com/laurapareja), [Lena](https://translate.mattermost.com/user/Lena/), [levb](https://github.com/levb), [lieut-data](https://github.com/lieut-data), [lindalumitchell](https://github.com/lindalumitchell), [LK4D4](https://github.com/LK4D4), [lucianomagrao](https://github.com/lucianomagrao), [Lumexralph](https://github.com/Lumexralph), [lurcio](https://github.com/lurcio), [malaDev](https://github.com/malaDev), [manland](https://github.com/manland), [marianunez](https://github.com/marianunez), [mauricio](https://github.com/mauricio), [MayMeow](https://github.com/MayMeow), [mbluemer](https://github.com/mbluemer), [meilon](https://github.com/meilon), [Menelion](https://github.com/Menelion), [mgdelacroix](https://github.com/mgdelacroix), [mhartenbower](https://github.com/mhartenbower), [mickmister](https://github.com/mickmister), [migbot](https://github.com/migbot), [mistikel](https://github.com/mistikel), [mjthomp95](https://github.com/mjthomp95), [mkraft](https://github.com/mkraft), [mlongo4290](https://github.com/mlongo4290), [Mrigank11](https://github.com/Mrigank11), [Muscaw](https://github.com/Muscaw), [Mycobee](https://github.com/Mycobee), [nfriend](https://github.com/nfriend), [nicnicknicky](https://github.com/nicnicknicky), [niklabh](https://github.com/niklabh), [njkevlani](https://github.com/njkevlani), [octoquad](https://github.com/octoquad), [oksmelnik](https://github.com/oksmelnik), [pbitty](https://github.com/pbitty), [Pensu](https://github.com/Pensu), [phillipahereza](https://github.com/phillipahereza), [Phizzard](https://github.com/Phizzard), [pikami](https://github.com/pikami), [Pomyk](https://github.com/Pomyk), [pqzx](https://github.com/pqzx), [pradeepmurugesan](https://github.com/pradeepmurugesan), [ptisserand](https://github.com/ptisserand), [pushkyn](https://github.com/pushkyn), [raghuiamsingh](https://github.com/raghuiamsingh), [RajatVaryani](https://github.com/RajatVaryani), [reflog](https://github.com/reflog), [rfoyard](https://github.com/rfoyard), [rodcorsi](https://github.com/rodcorsi), [rohanjulka19](https://github.com/rohanjulka19), [rv404674](https://github.com/rv404674), [sahilsharma011](https://github.com/sahilsharma011), [SamWolfs](https://github.com/SamWolfs), [sascha-andres](https://github.com/sascha-andres), [saturninoabril](https://github.com/saturninoabril), [sbishel](https://github.com/sbishel), [scottleedavis](https://github.com/scottleedavis), [sdesani](https://github.com/sdesani), [SezalAgrawal](https://github.com/SezalAgrawal), [shahbour](https://github.com/shahbour), [Sheshagiri](https://github.com/Sheshagiri), [simonfrey](https://github.com/simonfrey), [simross](https://github.com/simross), [sourabkumarkeshri](https://github.com/sourabkumarkeshri), [sowmiyamuthuraman](https://github.com/sowmiyamuthuraman), [srkgupta](https://github.com/srkgupta), [steevsachs](https://github.com/steevsachs), [stefan-malcek](https://github.com/stefan-malcek), [streamer45](https://github.com/streamer45), [stylianosrigas](https://github.com/stylianosrigas), [sudheerDev](https://github.com/sudheerDev), [svelle](https://github.com/svelle), [tgkouras](https://github.com/tgkouras), [thekiiingbob](https://github.com/thekiiingbob), [thePanz](https://github.com/thePanz), [ThiefMaster](https://github.com/ThiefMaster), [tpaschalis](https://github.com/tpaschalis), [uhlhosting](https://github.com/uhlhosting), [Vaelor](https://github.com/Vaelor), [valentijnnieman](https://github.com/valentijnnieman), [vdepatla](https://github.com/vdepatla), [VictorAvelar](https://github.com/VictorAvelar), [wget](https://github.com/wget), [wiersgallak](https://github.com/wiersgallak), [willdot](https://github.com/willdot), [Willyfrog](https://github.com/Willyfrog), [wyze](https://github.com/wyze), [xrav3nz](https://github.com/xrav3nz)
 
-## Release v5.16 - [Feature Release](https://docs.mattermost.com/process/release-faq.html#release-overview)
+## Release v5.16 - [Feature Release](/process/release-faq.html#release-overview)
 
 - **v5.16.5, released 2020-01-08**
-  - Mattermost v5.16.5 contains a high level security fix. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+  - Mattermost v5.16.5 contains a high level security fix. [Upgrading](/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
   - Fixed an issue where migrating accounts from email to SAML failed. [MM-21472](https://mattermost.atlassian.net/browse/MM-21472)
 - **v5.16.4, released 2019-12-18**
-  - Mattermost v5.16.4 contains high level security fixes. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+  - Mattermost v5.16.4 contains high level security fixes. [Upgrading](/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
 - **v5.16.3, released 2019-11-06**
   - (Accessibility) Fixed an issue where keyboard navigation within the right-hand side did not navigate in expected order. [MM-19901](https://mattermost.atlassian.net/browse/MM-19901)
 - **v5.16.2, released 2019-10-30**
   - Fixed an issue where Permission Schemes was not working properly on an E10 license. [MM-19556](https://mattermost.atlassian.net/browse/MM-19556)
   - Fixed an issue where switching to an unread channel sometimes got stuck at "Loading...". [MM-19091](https://mattermost.atlassian.net/browse/MM-19091)
 - **v5.16.1, released 2019-10-24**
-  - Mattermost v5.16.1 contains a high level security fix. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+  - Mattermost v5.16.1 contains a high level security fix. [Upgrading](/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
   - (Accessibility) Fixed an issue where "Click here to jump to recent messages" was not accessible via keyboard. [MM-19498](https://mattermost.atlassian.net/browse/MM-19498)
   - (Accessibility) Fixed an issue where post options were skipped when tabbing through a post in search results. [MM-19497](https://mattermost.atlassian.net/browse/MM-19497)
   - (Accessibility) Fixed an issue where F6 did not allow navigating to the right-hand side when a thread wasn't open. [MM-18117](https://mattermost.atlassian.net/browse/MM-18117)
@@ -2808,7 +2811,7 @@ A setting option was added to `config.json`. Below is a list of the additions an
 - **v5.16.0, released 2019-10-16**
   - Original 5.16.0 release
 
-Mattermost v5.16.0 contains a low level security fix. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+Mattermost v5.16.0 contains a low level security fix. [Upgrading](/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
 
 ### Compatibility
 
@@ -2818,7 +2821,7 @@ Mattermost v5.16.0 contains a low level security fix. [Upgrading](https://docs.m
  
 ### Breaking Changes
  - The Mattermost Desktop v4.3.0 release includes a change to how desktop notifications are sent from non-secure URLs (http://). Organizations using non-secure Mattermost Servers (http://) will need to update to Mattermost Server versions 5.16.0+, 5.15.1, 5.14.4 or 5.9.5 (ESR) to continue receiving desktop notifications when using Mattermost Desktop v4.3.0 or later.
- - When enabling [Guest Accounts](https://docs.mattermost.com/deployment/guest-accounts.html), all users who have the ability to invite users will be able to invite guests by default.  System admins will need to remove this permission on each role via **System Console > Permissions Schemes**.  In Mattermost Server version 5.17, the System admin will be the only role to automatically get the invite guest permission, however the fix will not be applicable in 5.16 due to database migration processes.
+ - When enabling [Guest Accounts](/deployment/guest-accounts.html), all users who have the ability to invite users will be able to invite guests by default.  System admins will need to remove this permission on each role via **System Console > Permissions Schemes**.  In Mattermost Server version 5.17, the System admin will be the only role to automatically get the invite guest permission, however the fix will not be applicable in 5.16 due to database migration processes.
 
 ### Highlights
 
@@ -2871,7 +2874,7 @@ Mattermost v5.16.0 contains a low level security fix. [Upgrading](https://docs.m
 
 #### Administration
  - Added the ability for System Administrators to revoke all sessions from all users.
- - Added support for System Administrators to make public channels private and private channels public within the **System Console > User Management > Channel Configuration** page when [Experimental Groups feature](https://docs.mattermost.com/administration/config-settings.html#groups-experimental) is enabled.
+ - Added support for System Administrators to make public channels private and private channels public within the **System Console > User Management > Channel Configuration** page when [Experimental Groups feature](/administration/config-settings.html#groups-experimental) is enabled.
  - Added user Id information in the **System Console > Users** page.
  - Updated System Console plugin settings page to expose enable/disable setting.
  - Added ability for System Administrators to view a user's team memberships and add users to additional teams within **System Console > User Management > User Configuration**.
@@ -2885,7 +2888,7 @@ Mattermost v5.16.0 contains a low level security fix. [Upgrading](https://docs.m
  - Fixed an issue where clicking "Edit" of another sub-section in Account Settings appeared to save the setting that was currently being edited in an open sub-section in the same modal.
  - Fixed an issue where the System Console user menu did not show all inactive users.
  - Fixed an issue where a JS console error appeared when uploading an image from the right-hand side.
- - Fixed some bugs related to the new [keyboard accessibility](https://docs.mattermost.com/help/getting-started/accessibility.html) feature.
+ - Fixed some bugs related to the new [keyboard accessibility](/help/getting-started/accessibility.html) feature.
  - Fixed an issue where the ``/leave`` slash command was not working on direct message channels.
  - Fixed an issue where the quick channel switcher box opened behind the header attachment expansion.
  - Fixed an issue on mobile web view where emoji reaction modal was cut off when adding a second reaction via "+" icon.
@@ -2955,17 +2958,17 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 ### Contributors
 [a-arias](https://github.com/a-arias), [aaronrothschild](https://github.com/aaronrothschild), [abdusabri](https://github.com/abdusabri), [adarj](https://github.com/adarj), [aeomin](https://translate.mattermost.com/user/aeomin/), [AGMETEOR](https://github.com/AGMETEOR), [agusl88](https://github.com/agusl88), [ali-farooq0](https://github.com/ali-farooq0), [amyblais](https://github.com/amyblais), [aneeeshp](https://github.com/aneeeshp), [ankitrgadiya](https://github.com/ankitrgadiya), [anuragbhd](https://github.com/anuragbhd), [arjitc](https://github.com/arjitc), [arshchimni](https://github.com/arshchimni), [asaadmahmood](https://github.com/asaadmahmood), [avasconcelos114](https://github.com/avasconcelos114), [bradjcoughlin](https://github.com/bradjcoughlin), [cardoso](https://github.com/cardoso), [carlosasj](https://github.com/carlosasj), [chikei](https://github.com/chikei), [chuttam](https://github.com/chuttam), [comharris](https://github.com/comharris), [cpanato](https://github.com/cpanato), [cpoile](https://github.com/cpoile), [crspeller](https://github.com/crspeller), [DarrellRichards](https://github.com/DarrellRichards), [deanwhillier](https://github.com/deanwhillier), [der-test](https://github.com/der-test), [devinbinnie](https://github.com/devinbinnie), [dhadiseputro](https://github.com/dhadiseputro), [DHaussermann](https://github.com/DHaussermann), [enahum](https://github.com/enahum), [esdrasbeleza](https://github.com/esdrasbeleza), [esethna](https://github.com/esethna), [freerider7777](https://github.com/freerider7777), [gabrieljackson](https://github.com/gabrieljackson), [gigawhitlocks](https://github.com/gigawhitlocks), [gruceqq](https://translate.mattermost.com/user/gruceqq/), [grundleborg](https://github.com/grundleborg), [hanzei](https://github.com/hanzei), [hector2](https://github.com/hector2), [hectorskypl](https://github.com/hectorskypl), [hmhealey](https://github.com/hmhealey), [hvhallmann](https://github.com/hvhallmann), [imisshtml](https://github.com/imisshtml), [iomodo](https://github.com/iomodo), [it33](https://github.com/it33), [janvt](https://github.com/janvt), [jasonblais](https://github.com/jasonblais), [jespino](https://github.com/jespino), [jfrerich](https://github.com/jfrerich), [jkl5616](https://github.com/jkl5616), [justinegeffen](https://github.com/justinegeffen), [jwilander](https://github.com/jwilander), [kaakaa](https://github.com/kaakaa), [Kaya_Zeren](https://twitter.com/kaya_zeren), [Lena](https://translate.mattermost.com/user/Lena/), [levb](https://github.com/levb), [lfbrock](https://github.com/lfbrock), [lieut-data](https://github.com/lieut-data), [lindalumitchell](https://github.com/lindalumitchell), [lindy65](https://github.com/lindy65), [liusy182](https://github.com/liusy182), [Lumexralph](https://github.com/Lumexralph), [lurcio](https://github.com/lurcio), [manland](https://github.com/manland), [marianunez](https://github.com/marianunez), [MatthewDorner](https://github.com/MatthewDorner), [mcrwfrd](https://github.com/mcrwfrd), [meilon](https://github.com/meilon), [metanerd](https://github.com/metanerd), [mgdelacroix](https://github.com/mgdelacroix), [mickmister](https://github.com/mickmister), [migbot](https://github.com/migbot), [mjthomp95](https://github.com/mjthomp95), [mkraft](https://github.com/mkraft), [mlongo4290](https://github.com/mlongo4290), [nfriend](https://github.com/nfriend), [niklabh](https://github.com/niklabh), [OCram85](https://github.com/OCram85), [paddatrapper](https://github.com/paddatrapper), [patrickkang](https://github.com/patrickkang), [pbitty](https://github.com/pbitty), [phillipahereza](https://github.com/phillipahereza), [QamarFarooq](https://github.com/QamarFarooq), [RajatVaryani](https://github.com/RajatVaryani), [reflog](https://github.com/reflog), [renilJoseph](https://github.com/renilJoseph), [rodcorsi](https://github.com/rodcorsi), [rohanjulka19](https://github.com/rohanjulka19), [rvillablanca](https://github.com/rvillablanca), [saturninoabril](https://github.com/saturninoabril), [sbishel](https://github.com/sbishel), [scottleedavis](https://github.com/scottleedavis), [Selimix](https://github.com/Selimix), [sij507](https://github.com/sij507), [sowmiyamuthuraman](https://github.com/sowmiyamuthuraman), [srkgupta](https://github.com/srkgupta), [stoerchl](https://github.com/stoerchl), [streamer45](https://github.com/streamer45), [stylianosrigas](https://github.com/stylianosrigas), [sudheerDev](https://github.com/sudheerDev), [tejashreecd](https://github.com/tejashreecd), [tekminewe](https://github.com/tekminewe), [tgkouras](https://github.com/tgkouras), [thekiiingbob](https://github.com/thekiiingbob), [thePanz](https://github.com/thePanz), [threepwood-mm](https://github.com/threepwood-mm), [tnir](https://github.com/tnir), [ulhosting](https://github.com/uhlhosting), [valentijnnieman](https://github.com/valentijnnieman), [wget](https://github.com/wget), [wiersgallak](https://github.com/wiersgallak), [Willyfrog](https://github.com/Willyfrog), [yuya-oc](https://github.com/yuya-oc)
 
-## Release v5.15 - [Quality Release](https://docs.mattermost.com/process/release-faq.html#release-overview)
+## Release v5.15 - [Quality Release](/process/release-faq.html#release-overview)
 
 - **v5.15.5, released 2020-01-08**
   - Fixed an issue where migrating accounts from email to SAML failed. [MM-21472](https://mattermost.atlassian.net/browse/MM-21472)
 - **v5.15.4, released 2019-12-18**
-  - Mattermost v5.15.4 contains high level security fixes. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+  - Mattermost v5.15.4 contains high level security fixes. [Upgrading](/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
 - **v5.15.3, released 2019-11-06**
   - (Accessibility) Fixed an issue where keyboard navigation within the right-hand side did not navigate in expected order. [MM-19901](https://mattermost.atlassian.net/browse/MM-19901)
   - Fixed an issue where switching to an unread channel sometimes got stuck at "Loading...". [MM-19091](https://mattermost.atlassian.net/browse/MM-19091)
 - **v5.15.2, released 2019-10-24**
-  - Mattermost v5.15.2 contains a high level security fix. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+  - Mattermost v5.15.2 contains a high level security fix. [Upgrading](/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
   - (Accessibility) Fixed an issue where "Click here to jump to recent messages" was not accessible via keyboard. [MM-19498](https://mattermost.atlassian.net/browse/MM-19498)
   - (Accessibility) Fixed an issue where post options were skipped when tabbing through a post in search results. [MM-19497](https://mattermost.atlassian.net/browse/MM-19497)
   - (Accessibility) Fixed an issue where F6 did not allow navigating to the right-hand side when a thread wasn't open. [MM-18117](https://mattermost.atlassian.net/browse/MM-18117)
@@ -2975,7 +2978,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 - **v5.15.0, released 2019-09-16**
   - Original 5.15.0 release
 
-Mattermost v5.15.0 contains low level security fixes. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+Mattermost v5.15.0 contains low level security fixes. [Upgrading](/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
 
 ### Bug Fixes
  - Fixed an issue where an invalid locale caused a white screen.
@@ -2986,7 +2989,7 @@ Mattermost v5.15.0 contains low level security fixes. [Upgrading](https://docs.m
  - Fixed an issue where deleting the last post in a channel caused the channel to only display a loading spinner.
  - Fixed an issue with an absence of unread badges on private channels on mobile apps.
  - Fixed an issue where at-sign was missing in front of usernames in push notifications.
- - Fixed some bugs related to the new [keyboard accessibility](https://docs.mattermost.com/help/getting-started/accessibility.html) feature.
+ - Fixed some bugs related to the new [keyboard accessibility](/help/getting-started/accessibility.html) feature.
  - Fixed an issue where the "@" sign was replaced with keyboard accessibility feature on Italian keyboard.
  - Fixed an issue where joining a new channel with few posts sometimes did not take the user to the bottom of the channel.
  - Fixed an issue where scroll pop sometimes occured with embedded Youtube links.
@@ -3042,10 +3045,10 @@ Mattermost v5.15.0 contains low level security fixes. [Upgrading](https://docs.m
 
  - [a-arias](https://github.com/a-arias), [aaronrothschild](https://github.com/aaronrothschild), [accxiagmbh](https://github.com/accxiagmbh), [aeomin](https://translate.mattermost.com/user/aeomin/), [Akito13](https://github.com/Akito13), [ali-farooq0](https://github.com/ali-farooq0), [Amonith](https://github.com/Amonith), [amyblais](https://github.com/amyblais), [angelbarrera92](https://github.com/angelbarrera92), [ankitrgadiya](https://github.com/ankitrgadiya), [asaadmahmood](https://github.com/asaadmahmood), [atpons](https://github.com/atpons), [bradjcoughlin](https://github.com/bradjcoughlin), [cardoso](https://github.com/cardoso), [cdncat](https://github.com/cdncat), [chikei](https://github.com/chikei), [comharris](https://github.com/comharris), [cpanato](https://github.com/cpanato), [cpoile](https://github.com/cpoile), [crspeller](https://github.com/crspeller), [deanwhillier](https://github.com/deanwhillier), [der-test](https://github.com/der-test), [devinbinnie](https://github.com/devinbinnie), [DHaussermann](https://github.com/DHaussermann), [DSchalla](https://github.com/DSchalla), [eilgin](https://github.com/eilgin), [ejachang](https://github.com/ejachang), [elyscape](https://github.com/elyscape), [enahum](https://github.com/enahum), [esethna](https://github.com/esethna), [eshyong](https://github.com/eshyong), [ethervoid](https://github.com/ethervoid), [g3rv4](https://github.com/g3rv4), [gabrieljackson](https://github.com/gabrieljackson), [gigawhitlocks](https://github.com/gigawhitlocks), [goku321](https://github.com/goku321), [gruceqq](https://translate.mattermost.com/user/gruceqq/), [grundleborg](https://github.com/grundleborg), [hahmadia](https://github.com/hahmadia), [hanzei](https://github.com/hanzei), [healthchecks](https://github.com/healthchecks), [hectorskypl](https://github.com/hectorskypl), [hmhealey](https://github.com/hmhealey), [iomodo](https://github.com/iomodo), [irbrad](https://github.com/irbrad), [it33](https://github.com/it33), [ivenk](https://github.com/ivenk), [janvt](https://github.com/janvt), [jasonblais](https://github.com/jasonblais), [jesperhansen17](https://github.com/jesperhansen17), [jespino](https://github.com/jespino), [jfrerich](https://github.com/jfrerich), [jozuenoon](https://github.com/jozuenoon), [jwilander](https://github.com/jwilander), [kaakaa](https://github.com/kaakaa), [Kaya_Zeren](https://twitter.com/kaya_zeren), [kdenz](https://github.com/kdenz), [kosgrz](https://github.com/kosgrz), [krjn](https://github.com/krjn), [Lena](https://translate.mattermost.com/user/Lena/), [levb](https://github.com/levb), [lfbrock](https://github.com/lfbrock), [lieut-data](https://github.com/lieut-data), [lindalumitchell](https://github.com/lindalumitchell), [Lisenish](https://github.com/Lisenish), [liusy182](https://github.com/liusy182), [lurcio](https://github.com/lurcio), [manland](https://github.com/manland), [marianunez](https://github.com/marianunez), [MatthewDorner](https://github.com/MatthewDorner), [matthewshirley](https://github.com/matthewshirley), [meilon](https://github.com/meilon), [metanerd](https://github.com/metanerd), [mgdelacroix](https://github.com/mgdelacroix), [michaelgamble](https://github.com/michaelgamble), [mickmister](https://github.com/mickmister), [migbot](https://github.com/migbot), [mjthomp95](https://github.com/mjthomp95), [mkraft](https://github.com/mkraft), [mlongo4290](https://github.com/mlongo4290), [pichouk](https://github.com/pichouk), [Rajakavitha1](https://github.com/Rajakavitha1), [reflog](https://github.com/reflog), [rodcorsi](https://github.com/rodcorsi), [Roy-Orbison](https://github.com/Roy-Orbison), [sadohert](https://github.com/sadohert), [saturninoabril](https://github.com/saturninoabril), [scottleedavis](https://github.com/scottleedavis), [sij507](https://github.com/sij507), [streamer45](https://github.com/streamer45), [stylianosrigas](https://github.com/stylianosrigas), [sudheerDev](https://github.com/sudheerDev), [thekiiingbob](https://github.com/thekiiingbob), [thePanz](https://github.com/thePanz), [threepwood-mm](https://github.com/threepwood-mm), [tnir](https://github.com/tnir), [ulhosting](https://github.com/uhlhosting), [uusijani](https://github.com/uusijani), [wget](https://github.com/wget), [wiersgallak](https://github.com/wiersgallak), [Willyfrog](https://github.com/Willyfrog), [wyze](https://github.com/wyze)
 
-## Release v5.14 - [Feature Release](https://docs.mattermost.com/process/release-faq.html#release-overview)
+## Release v5.14 - [Feature Release](/process/release-faq.html#release-overview)
 
 - **v5.14.5, released 2019-10-24**
-  - Mattermost v5.14.5 contains a high level security fix. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+  - Mattermost v5.14.5 contains a high level security fix. [Upgrading](/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
 - **v5.14.4, released 2019-10-11**
   - Fixed an issue that will be introduced with a change in upcoming server v5.16 and desktop app v4.3 releases where desktop notifications will be broken as the desktop app will no longer be able to directly interact with the web app. [MM-18819](https://mattermost.atlassian.net/browse/MM-18819)
   - Fixed an issue where server-side telemetry was not reporting back after 5.14 release. [MM-18115](https://mattermost.atlassian.net/browse/MM-18115)
@@ -3054,11 +3057,11 @@ Mattermost v5.15.0 contains low level security fixes. [Upgrading](https://docs.m
 - **v5.14.2, released 2019-08-30**
   - Fixed an issue where Mattermost crashed when date-related search terms `on:` `before:` and `after:` were used in search. [MM-18143](https://mattermost.atlassian.net/browse/MM-18143)
 - **v5.14.1, released 2019-08-28**
-  - Fixed issues with [keyboard accessibility](https://docs.mattermost.com/help/getting-started/accessibility.html) where post and search textboxes did not read characters when using the arrow keys to move back and forth through the text. [MM-17964](https://mattermost.atlassian.net/browse/MM-17964) and [MM-17974](https://mattermost.atlassian.net/browse/MM-17974)
+  - Fixed issues with [keyboard accessibility](/help/getting-started/accessibility.html) where post and search textboxes did not read characters when using the arrow keys to move back and forth through the text. [MM-17964](https://mattermost.atlassian.net/browse/MM-17964) and [MM-17974](https://mattermost.atlassian.net/browse/MM-17974)
 - **v5.14.0, released 2019-08-16**
   - Original 5.14.0 release
 
-Mattermost v5.14.0 contains a medium level security fix. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+Mattermost v5.14.0 contains a medium level security fix. [Upgrading](/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
 
 ### Compatibility
 
@@ -3069,9 +3072,9 @@ Mattermost v5.14.0 contains a medium level security fix. [Upgrading](https://doc
 ### Breaking Changes
 
  - Webhooks are now only displayed if the user is the creator of the webhook or a system administrator.
- - With the update from Google+ to Google People, system admins need to ensure the ``GoogleSettings.Scope`` config.json setting is set to ``profile email`` and ``UserAPIEndpoint`` setting should be set to ``https://people.googleapis.com/v1/people/me?personFields=names,emailAddresses,nicknames,metadata`` per [updated documentation](https://docs.mattermost.com/deployment/sso-google.html).
+ - With the update from Google+ to Google People, system admins need to ensure the ``GoogleSettings.Scope`` config.json setting is set to ``profile email`` and ``UserAPIEndpoint`` setting should be set to ``https://people.googleapis.com/v1/people/me?personFields=names,emailAddresses,nicknames,metadata`` per [updated documentation](/deployment/sso-google.html).
 
-**IMPORTANT:** If you upgrade from a release earlier than 5.13, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html).
+**IMPORTANT:** If you upgrade from a release earlier than 5.13, please read the other [Important Upgrade Notes](/administration/important-upgrade-notes.html).
 
 ### Highlights
 
@@ -3079,7 +3082,7 @@ Mattermost v5.14.0 contains a medium level security fix. [Upgrading](https://doc
 
  - New keyboard navigation improvements enable you to move between app regions—like the post list, channel sidebar, and header—using F6 on the Desktop App and CTRL-F6 on a web browser. You can also use TAB, arrow keys, and ENTER to interact with buttons, links, and other elements in Mattermost.
  - Screen readers are now much more compatible with Mattermost. Buttons, links, and app regions now have accurate readouts that enable visually impaired users to use Mattermost productively with screen readers.
- - [Learn more](https://docs.mattermost.com/help/getting-started/accessibility.html)
+ - [Learn more](/help/getting-started/accessibility.html)
 
 #### Bidirectional scrolling to land on oldest unread post
  - No more scrolling required to get to the oldest unread post. Now when the channel opens when there are unreads it opens at the new messages line, regardless of how many unreads exist since the last time the user viewed the channel.
@@ -3234,12 +3237,12 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
  - [a-arias](https://github.com/a-arias), [aaronrothschild](https://github.com/aaronrothschild), [aayushbisen](https://github.com/aayushbisen), [adzimzf](https://github.com/adzimzf), [aeomin](https://translate.mattermost.com/user/aeomin/), [AGMETEOR](https://github.com/AGMETEOR), [alejandrosame](https://github.com/alejandrosame), [ali-farooq0](https://github.com/ali-farooq0), [alxsah](https://github.com/alxsah), [amyblais](https://github.com/amyblais), [asaadmahmood](https://github.com/asaadmahmood), [bbodenmiller](https://github.com/bbodenmiller), [bnoggle](https://github.com/bnoggle), [bradjcoughlin](https://github.com/bradjcoughlin), [chikei](https://github.com/chikei), [comharris](https://github.com/comharris), [cpanato](https://github.com/cpanato), [cpoile](https://github.com/cpoile), [crspeller](https://github.com/crspeller), [deanwhillier](https://github.com/deanwhillier), [der-test](https://github.com/der-test), [devinbinnie](https://github.com/devinbinnie), [DSchalla](https://github.com/DSchalla), [elyscape](https://github.com/elyscape), [enahum](https://github.com/enahum), [esethna](https://github.com/esethna), [eshyong](https://github.com/eshyong), [gabrieljackson](https://github.com/gabrieljackson), [gruceqq](https://translate.mattermost.com/user/gruceqq/), [grundleborg](https://github.com/grundleborg), [gupsho](https://github.com/gupsho), [hanzei](https://github.com/hanzei), [hectorskypl](https://github.com/hectorskypl), [hmhealey](https://github.com/hmhealey), [hvhallmann](https://github.com/hvhallmann), [Hyaxia](https://github.com/Hyaxia), [Inconnu08](https://github.com/Inconnu08), [irbrad](https://github.com/irbrad), [it33](https://github.com/it33), [jasonblais](https://github.com/jasonblais), [jesperhansen17](https://github.com/jesperhansen17), [jespino](https://github.com/jespino), [jfrerich](https://github.com/jfrerich), [johnthompson365](https://github.com/johnthompson365), [Jonany](https://github.com/Jonany), [joshuabezaleel](https://github.com/joshuabezaleel), [justinegeffen](https://github.com/justinegeffen), [jwilander](https://github.com/jwilander), [kaakaa](https://github.com/kaakaa), [Kaya_Zeren](https://twitter.com/kaya_zeren), [keaton185](https://github.com/keaton185), [kosgrz](https://github.com/kosgrz), [krjn](https://github.com/krjn), [Lena](https://translate.mattermost.com/user/Lena/), [levb](https://github.com/levb), [lfbrock](https://github.com/lfbrock), [lieut-data](https://github.com/lieut-data), [lindalumitchell](https://github.com/lindalumitchell), [lpadgett](https://github.com/lpadgett), [lurcio](https://github.com/lurcio), [manland](https://github.com/manland), [marianunez](https://github.com/marianunez), [meilon](https://github.com/meilon), [mgdelacroix](https://github.com/mgdelacroix), [mickmister](https://github.com/mickmister), [migbot](https://github.com/migbot), [mjthomp95](https://github.com/mjthomp95), [mkraft](https://github.com/mkraft), [mlongo4290](https://github.com/mlongo4290), [mounicapaladugu](https://github.com/mounicapaladugu), [mzaks](https://github.com/mzaks), [noxer](https://github.com/noxer), [ollykel](https://github.com/ollykel), [PeterDaveHello](https://github.com/PeterDaveHello), [phillipahereza](https://github.com/phillipahereza), [piperRyan](https://github.com/piperRyan), [Rajakavitha1](https://github.com/Rajakavitha1), [RajatVaryani](https://github.com/RajatVaryani), [rajiv-k](https://github.com/rajiv-k), [reflog](https://github.com/reflog), [rexredinger](https://github.com/rexredinger), [rodcorsi](https://github.com/rodcorsi), [rvillablanca](https://github.com/rvillablanca), [saturninoabril](https://github.com/saturninoabril), [scottleedavis](https://github.com/scottleedavis), [Selimix](https://github.com/Selimix), [SezalAgrawal](https://github.com/SezalAgrawal), [srkgupta](https://github.com/srkgupta), [steevsachs](https://github.com/steevsachs), [streamer45](https://github.com/streamer45), [stylianosrigas](https://github.com/stylianosrigas), [sudheerDev](https://github.com/sudheerDev), [svelle](https://github.com/svelle), [tapaswenipathak](https://github.com/tapaswenipathak), [tekminewe](https://github.com/tekminewe), [thekiiingbob](https://github.com/thekiiingbob), [thePanz](https://github.com/thePanz), [ulhosting](https://github.com/uhlhosting), [VolatianaYuliana](https://github.com/VolatianaYuliana), [wget](https://github.com/wget), [wiersgallak](https://github.com/wiersgallak), [Willyfrog](https://github.com/Willyfrog)
 
-## Release v5.13 - [Quality Release](https://docs.mattermost.com/process/release-faq.html#release-overview)
+## Release v5.13 - [Quality Release](/process/release-faq.html#release-overview)
 
-Mattermost v5.13.0 contains low level security fixes. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+Mattermost v5.13.0 contains low level security fixes. [Upgrading](/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
 
 - **v5.13.3, released 2019-08-22**
-  - Mattermost v5.13.3 contains a medium level security fix. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+  - Mattermost v5.13.3 contains a medium level security fix. [Upgrading](/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
 - **v5.13.2, released 2019-07-24**
   - Fixed performance issues in channels with large message history due to a change made to posts query. [MM-16936](https://mattermost.atlassian.net/browse/MM-16936)
   - Fixed an issue where some settings were not visible in the System Console. [MM-17114](https://mattermost.atlassian.net/browse/MM-17114)
@@ -3305,7 +3308,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - ``plugins`` type entries in the ``Jobs`` table will be purged on upgrade. This job was incorrectly configured to run every minute, spamming the table with mostly useless records. All old records will be removed on upgrade, and the job will run daily instead.
 
 ### Known Issues
- - Cannot leave any team when a default [primary team](https://docs.mattermost.com/administration/config-settings.html#primary-team-experimental) is set.
+ - Cannot leave any team when a default [primary team](/administration/config-settings.html#primary-team-experimental) is set.
  - Titles for webhooks, commands and OAuth apps are no longer bolded in the System Console.
  - Users can get logged out of server without a session expiry notification.
  - Desktop app hangs on opening emoji picker.
@@ -3330,10 +3333,10 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 ## Release v5.12 - Feature Release
 
-Mattermost v5.12.0 contains low to medium level security fixes. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+Mattermost v5.12.0 contains low to medium level security fixes. [Upgrading](/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
 
 - **v5.12.6, released 2019-08-22**
-  - Mattermost v5.12.6 contains a medium level security fix. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+  - Mattermost v5.12.6 contains a medium level security fix. [Upgrading](/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
 - **v5.12.5, released 2019-07-19**
   - Fixed an issue with Jira plugin where creating or attaching to Jira issues failed due to GDPR changes released by Atlassian. Affected Jira Cloud only, not Jira Server or Jira Data Center. [MM-17060](https://mattermost.atlassian.net/browse/MM-17060)
 - **v5.12.4, released 2019-07-15**
@@ -3341,7 +3344,7 @@ Mattermost v5.12.0 contains low to medium level security fixes. [Upgrading](http
 - **v5.12.3, released 2019-07-09**
   - Fixed an issue where setting the MM_SQLSETTINGS_DATASOURCEREPLICAS environment variable broke the server startup. [MM-16719](https://mattermost.atlassian.net/browse/MM-16719)
 - **v5.12.2, released 2019-07-03**
-  - Fixed an issue where Net Promoter Score (NPS) went into a loop when [Experimental Enable Automatic Replies feature](https://docs.mattermost.com/administration/config-settings.html#enable-automatic-replies-experimental) was turned on in Account Settings.
+  - Fixed an issue where Net Promoter Score (NPS) went into a loop when [Experimental Enable Automatic Replies feature](/administration/config-settings.html#enable-automatic-replies-experimental) was turned on in Account Settings.
 - **v5.12.1, released 2019-06-28** 
   - Fixed an issue where messages were sometimes missing after reconnecting the network. [MM-16423](https://mattermost.atlassian.net/browse/MM-16423)
   - Fixed an issue where the client sometimes crashed while viewing a direct message channel. [MM-16480](https://mattermost.atlassian.net/browse/MM-16480)
@@ -3353,10 +3356,10 @@ Mattermost v5.12.0 contains low to medium level security fixes. [Upgrading](http
 ### Breaking changes since last release
 
  - If your plugin uses the ``DeleteEphemeralMessage`` plugin API, update it to accept a ``postId string`` parameter. See [documentation](https://developers.mattermost.com/extend/plugins/server/reference/#API.DeleteEphemeralPost) to learn more.
- - Image link and YouTube previews do not display unless **System Console > Enable Link Previews** is enabled. Please ensure that your Mattermost server is connected to the internet and has network access to the websites from which previews are expected to appear. [Learn more here](https://docs.mattermost.com/administration/config-settings.html#enable-link-previews).
+ - Image link and YouTube previews do not display unless **System Console > Enable Link Previews** is enabled. Please ensure that your Mattermost server is connected to the internet and has network access to the websites from which previews are expected to appear. [Learn more here](/administration/config-settings.html#enable-link-previews).
  - ``ExperimentalEnablePostMetadata`` setting was removed. Post metadata, including post dimensions, is now stored in the database to correct scroll position and eliminate scroll jumps as content loads in a channel.
 
-**IMPORTANT:** If you upgrade from a release earlier than 5.11, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html).
+**IMPORTANT:** If you upgrade from a release earlier than 5.11, please read the other [Important Upgrade Notes](/administration/important-upgrade-notes.html).
 
 ### Highlights
 
@@ -3393,7 +3396,7 @@ Mattermost v5.12.0 contains low to medium level security fixes. [Upgrading](http
  - System Admins can manage the membership of private teams and channels with AD/LDAP groups, eliminating the need to individually add and remove members. Users in the groups are automatically removed from the team or channel when removed from an associated group.
  
 #### User/Channel Search & Autocomplete in Elasticsearch (Enterprise Edition E20)
- - Added new settings in **System Console > Elasticsearch** to enable [Elasticsearch](https://docs.mattermost.com/deployment/elasticsearch.html) for autocompletion queries. When enabled, Elasticsearch uses its indexed data for user/channel search queries and autocomplete queries.
+ - Added new settings in **System Console > Elasticsearch** to enable [Elasticsearch](/deployment/elasticsearch.html) for autocompletion queries. When enabled, Elasticsearch uses its indexed data for user/channel search queries and autocomplete queries.
 
 ### Improvements
 
@@ -3506,10 +3509,10 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 ## Release v5.11 - Quality Release
 
-Mattermost v5.11.0 contains low level security fixes. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+Mattermost v5.11.0 contains low level security fixes. [Upgrading](/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
 
 - **v5.11.1, released 2019-06-20** 
-  - Mattermost v5.11.1 contains a medium level security fix. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+  - Mattermost v5.11.1 contains a medium level security fix. [Upgrading](/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
 - **v5.11.0, released 2019-05-16**
   - Original 5.11.0 release
 
@@ -3517,7 +3520,7 @@ Mattermost v5.11.0 contains low level security fixes. [Upgrading](https://docs.m
 
  - If your integration uses ``Update.Props == nil`` to clear ``Props``, this will no longer work in 5.11+. Instead, use ``Update.Props == {}`` to clear properties. This change was made because ``Update.Props == nil`` unintentionally cleared all ``Props``, such as the profile picture, instead of preserving them.
 
-**IMPORTANT:** If you upgrade from a release earlier than 5.10, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html).
+**IMPORTANT:** If you upgrade from a release earlier than 5.10, please read the other [Important Upgrade Notes](/administration/important-upgrade-notes.html).
 
 ### Bug Fixes
  - Fixed an issue where plugin settings link didn't appear until refresh after uploading a plugin in the System Console.
@@ -3564,10 +3567,10 @@ Thank you to everyone who contributed to the Mattermost project in April 2019!
 
 ## Release v5.10 - Feature Release
 
-Mattermost v5.10.0 contains medium to high level security fixes. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+Mattermost v5.10.0 contains medium to high level security fixes. [Upgrading](/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
 
 - **v5.10.2, released 2019-06-20** 
-  - Mattermost v5.10.2 contains a medium level security fix. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+  - Mattermost v5.10.2 contains a medium level security fix. [Upgrading](/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
 - **v5.10.1, released 2019-05-16** 
   - Fixed an issue on Internet Explorer (IE11) where the system console opened a blank page.
 - **v5.10.0, released 2019-04-16**
@@ -3575,14 +3578,14 @@ Mattermost v5.10.0 contains medium to high level security fixes. [Upgrading](htt
 
 ### Breaking changes since last release
 
- - ``SupportedTimezonesPath`` setting in config.json and changes to timezones in the UI based on the timezones.json file was removed. This was made to support [storing configurations in the database](https://docs.mattermost.com/administration/config-in-database.html#configuration-in-the-mattermost-database).
+ - ``SupportedTimezonesPath`` setting in config.json and changes to timezones in the UI based on the timezones.json file was removed. This was made to support [storing configurations in the database](/administration/config-in-database.html#configuration-in-a-database).
 
-**IMPORTANT:** If you upgrade from a release earlier than 5.9, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html).
+**IMPORTANT:** If you upgrade from a release earlier than 5.9, please read the other [Important Upgrade Notes](/administration/important-upgrade-notes.html).
 
 ### Highlights
  
 #### Interactive Ephemeral Messages
- - Added support for [message actions and buttons](https://docs.mattermost.com/developer/interactive-messages.html) in ephemeral messages.
+ - Added support for [message actions and buttons](/developer/interactive-messages.html) in ephemeral messages.
 
 #### Configuration in Database
  - Added experimental support for storing ``config.json`` in the database, improving the system console experience on read-only filesystems. Storing the configuration in the database is optional, as the existing ``config.json`` remains fully supported.
@@ -3707,36 +3710,36 @@ Thank you to everyone who contributed to the Mattermost project in March 2019!
 
 - [7-plus-t](https://github.com/7-plus-t), [aeomin](https://translate.mattermost.com/user/aeomin/), [ali-farooq0](https://github.com/ali-farooq0), [amaddio](https://github.com/amaddio), [amyblais](https://github.com/amyblais), [asaadmahmood](https://github.com/asaadmahmood), [avasconcelos114](https://github.com/avasconcelos114), [bcalik](https://github.com/bcalik), [benschuster788](https://github.com/benschuster788), [bradjcoughlin](https://github.com/bradjcoughlin), [checkaayush](https://github.com/checkaayush), [chetanyakan](https://github.com/chetanyakan), [chikei](https://github.com/chikei), [comharris](https://github.com/comharris), [courtneypattison](https://github.com/courtneypattison), [cpanato](https://github.com/cpanato), [cpoile](https://github.com/cpoile), [crspeller](https://github.com/crspeller), [csduarte](https://github.com/csduarte), [d28park](https://github.com/d28park), [danmaas](https://github.com/danmaas), [dchukmasov](https://github.com/dchukmasov), [deanwhillier](https://github.com/deanwhillier), [der-test](https://github.com/der-test), [DHaussermann](https://github.com/DHaussermann), [DSchalla](https://github.com/DSchalla), [enahum](https://github.com/enahum), [esethna](https://github.com/esethna), [fcorrea](https://github.com/fcorrea), [gnufede](https://github.com/gnufede), [grundleborg](https://github.com/grundleborg), [gruceqq](https://translate.mattermost.com/user/gruceqq/), [gulhe](https://github.com/gulhe), [gupsho](https://github.com/gupsho), [hanzei](https://github.com/hanzei), [harshilsharma](https://github.com/harshilsharma), [hectorskypl](https://github.com/hectorskypl), [hmhealey](https://github.com/hmhealey), [Hobby-Student](https://github.com/Hobby-Student), [it33](https://github.com/it33), [j8r](https://github.com/j8r), [jasonblais](https://github.com/jasonblais), [jespino](https://github.com/jespino), [jk2K](https://github.com/jk2K), [johnsenner](https://github.com/johnsenner), [JtheBAB](https://github.com/JtheBAB), [jwilander](https://github.com/jwilander), [kaakaa](https://github.com/kaakaa), [Kaya_Zeren](https://twitter.com/kaya_zeren), [kelvintyb](https://github.com/kelvintyb), [kjkeane](https://github.com/kjkeane), [kosgrz](https://github.com/kosgrz), [Lena](https://translate.mattermost.com/user/Lena/), [letsila](https://github.com/letsila), [levb](https://github.com/levb), [lieut-data](https://github.com/lieut-data), [lindalumitchell](https://github.com/lindalumitchell), [m3phistopheles](https://github.com/m3phistopheles), [MartB](https://github.com/MartB), [meilon](https://github.com/meilon), [mgdelacroix](https://github.com/mgdelacroix), [mickmister](https://github.com/mickmister), [migbot](https://github.com/migbot), [MirlanMaksv](https://github.com/MirlanMaksv), [mkraft](https://github.com/mkraft), [mlongo4290](https://github.com/mlongo4290), [nadaa](https://github.com/nadaa), [oliverJurgen](https://github.com/oliverJurgen), [pesintta](https://github.com/pesintta), [reflog](https://github.com/reflog), [rodcorsi](https://github.com/rodcorsi), [Roy-Orbison](https://github.com/Roy-Orbison), [sadohert](https://github.com/sadohert), [sandlis](https://github.com/sandlis), [saturninoabril](https://github.com/saturninoabril), [stylianosrigas](https://github.com/stylianosrigas), [sudheerDev](https://github.com/sudheerDev), [svelle](https://github.com/svelle), [tejasbubane](https://github.com/tejasbubane), [thekiiingbob](https://github.com/thekiiingbob), [thePanz](https://github.com/thepanz), [ulhosting](https://github.com/uhlhosting), [wbernest](https://github.com/wbernest), [wget](https://github.com/wget), [wiersgallak](https://github.com/wiersgallak), [yuya-oc](https://github.com/yuya-oc)
 
-## Release v5.9 - [ESR](https://docs.mattermost.com/administration/extended-support-release.html)
+## Release v5.9 - [ESR](/administration/extended-support-release.html)
 
-Mattermost v5.9.0 contains low to medium level security fixes. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+Mattermost v5.9.0 contains low to medium level security fixes. [Upgrading](/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
 
 - **v5.9.8, released 2020-01-08**
-  - Mattermost v5.9.8 contains a high level security fix. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+  - Mattermost v5.9.8 contains a high level security fix. [Upgrading](/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
   - Fixed an issue where migrating accounts from email to SAML failed. [MM-21472](https://mattermost.atlassian.net/browse/MM-21472)
 - **v5.9.7, released 2019-12-18** 
-  - Mattermost v5.9.7 contains high level security fixes. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+  - Mattermost v5.9.7 contains high level security fixes. [Upgrading](/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
 - **v5.9.6, released 2019-10-24** 
-  - Mattermost v5.9.6 contains a high level security fix. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+  - Mattermost v5.9.6 contains a high level security fix. [Upgrading](/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
 - **v5.9.5, released 2019-10-12**  
   - Fixed an issue that will be introduced with a change in upcoming server v5.16 and desktop app v4.3 releases where desktop notifications will be broken as the desktop app will no longer be able to directly interact with the web app. [MM-18819](https://mattermost.atlassian.net/browse/MM-18819)
 - **v5.9.4, released 2019-08-22** 
-  - Mattermost v5.9.4 contains a medium level security fix. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+  - Mattermost v5.9.4 contains a medium level security fix. [Upgrading](/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
 - **v5.9.3, released 2019-07-19** 
   - Fixed an issue with unauthenticated LDAP bind. [MM-17055](https://mattermost.atlassian.net/browse/MM-17055)
 - **v5.9.2, released 2019-06-20** 
-  - Mattermost v5.9.2 contains a medium level security fix. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+  - Mattermost v5.9.2 contains a medium level security fix. [Upgrading](/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
 - **v5.9.1, released 2019-04-24** 
-  - Mattermost v5.9.1 contains a high level security fix. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+  - Mattermost v5.9.1 contains a high level security fix. [Upgrading](/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
 - **v5.9.0, released 2019-03-16**
   - Original 5.9.0 release
   
 ### Breaking Changes since last release
 
- - If **DisableLegacyMfa** setting in ``config.json`` is set to ``true`` and multi-factor authentication is enabled, ensure your users have upgraded to mobile app version 1.17 or later. Otherwise, users who have MFA enabled may not be able to log in successfully. See [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html) for more details.
- - The public IP of the Mattermost application server is considered a reserved IP for additional security hardening in the context of untrusted external requests such as Open Graph metadata, webhooks or slash commands. See [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html) for more details.
+ - If **DisableLegacyMfa** setting in ``config.json`` is set to ``true`` and multi-factor authentication is enabled, ensure your users have upgraded to mobile app version 1.17 or later. Otherwise, users who have MFA enabled may not be able to log in successfully. See [Important Upgrade Notes](/administration/important-upgrade-notes.html) for more details.
+ - The public IP of the Mattermost application server is considered a reserved IP for additional security hardening in the context of untrusted external requests such as Open Graph metadata, webhooks or slash commands. See [Important Upgrade Notes](/administration/important-upgrade-notes.html) for more details.
 
-**IMPORTANT:** If you upgrade from another release than 5.8, please read the [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html).
+**IMPORTANT:** If you upgrade from another release than 5.8, please read the [Important Upgrade Notes](/administration/important-upgrade-notes.html).
 
 ### Bug Fixes
 
@@ -3763,9 +3766,9 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  
 #### Changes to Team Edition and Enterprise Edition:
  
- - **Enable Image Proxy** setting is now ``false`` by default. See [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html) for more details.
+ - **Enable Image Proxy** setting is now ``false`` by default. See [Important Upgrade Notes](/administration/important-upgrade-notes.html) for more details.
  - Under ``"ServiceSettings"`` in ``config.json``:
-    - Added ``"DisableLegacyMFA": false,`` to keep the legacy checkMfa endpoint enabled to support mobile versions 1.16 and earlier. See [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html) for more details.
+    - Added ``"DisableLegacyMFA": false,`` to keep the legacy checkMfa endpoint enabled to support mobile versions 1.16 and earlier. See [Important Upgrade Notes](/administration/important-upgrade-notes.html) for more details.
 
 ### Known Issues
 
@@ -3791,33 +3794,33 @@ Thank you to everyone who contributed to the Mattermost project in February 2019
 
 ## Release v5.8 - Feature Release
 
-Mattermost v5.8.0 contains low to high level security fixes. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+Mattermost v5.8.0 contains low to high level security fixes. [Upgrading](/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
 
 - **v5.8.2, released 2019-04-24** 
-  - Mattermost v5.8.2 contains a high level security fix. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+  - Mattermost v5.8.2 contains a high level security fix. [Upgrading](/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
 - **v5.8.1, released 2019-03-16** 
-  - Mattermost v5.8.1 contains a medium level security fix. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
-  - Turned image proxy off by default, unless a server already had it enabled (including new installs). Also, warnings about not getting embedded content for a post were downgraded or removed. See [important upgrade notes](https://docs.mattermost.com/administration/important-upgrade-notes.html) for more details.
+  - Mattermost v5.8.1 contains a medium level security fix. [Upgrading](/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+  - Turned image proxy off by default, unless a server already had it enabled (including new installs). Also, warnings about not getting embedded content for a post were downgraded or removed. See [important upgrade notes](/administration/important-upgrade-notes.html) for more details.
 - **v5.8.0, released 2019-02-16**
   - Original 5.8.0 release
 
 ### Breaking Changes since last release
 
-- The local image proxy has been added, and images displayed within the client are now affected by the ``AllowUntrustedInternalConnections`` setting. See [documentation](https://docs.mattermost.com/administration/image-proxy.html#local-image-proxy) for more details if you have trouble loading images.
+- The local image proxy has been added, and images displayed within the client are now affected by the ``AllowUntrustedInternalConnections`` setting. See [documentation](/administration/image-proxy.html#local-image-proxy) for more details if you have trouble loading images.
 
-**IMPORTANT:** If you upgrade from another release than 5.7, please read the [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html).
+**IMPORTANT:** If you upgrade from another release than 5.7, please read the [Important Upgrade Notes](/administration/important-upgrade-notes.html).
 
 ### Highlights
 
 #### Added support for LDAP Group Sync
- - Lets admins set default team and channel membership based on LDAP groups. See more details [in the documentation](https://docs.mattermost.com/deployment/ldap-group-sync.html).
+ - Lets admins set default team and channel membership based on LDAP groups. See more details [in the documentation](/deployment/ldap-group-sync.html).
 
 #### Added multi-factor authentication support to Team Edition
  - See more details on [this Forum post](https://forum.mattermost.org/t/multi-factor-authentication-mfa-in-team-edition/6287).
  
 #### Enhanced image performance
  - Improved performance for images by adding support for image proxy servers, which are now integrated into the server and switched on by default.
- - Note that this may cause problems loading images from within your local network due to security settings. See [here](https://docs.mattermost.com/administration/image-proxy.html#local-image-proxy) for more information.
+ - Note that this may cause problems loading images from within your local network due to security settings. See [here](/administration/image-proxy.html#local-image-proxy) for more information.
 
 ### Improvements
 
@@ -3901,14 +3904,14 @@ Thank you to everyone who contributed to the Mattermost project in January 2019!
  
 ## Release v5.7 - Quality Release
 
-Mattermost v5.7.0 contains low to medium level security fixes. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+Mattermost v5.7.0 contains low to medium level security fixes. [Upgrading](/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
 
 - **v5.7.3, released 2019-03-16** 
-  - Mattermost v5.7.3 contains a medium level security fix. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+  - Mattermost v5.7.3 contains a medium level security fix. [Upgrading](/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
 - **v5.7.2, released 2019-02-16** 
-  - Mattermost v5.7.2 contains low to medium level security fixes. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+  - Mattermost v5.7.2 contains low to medium level security fixes. [Upgrading](/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
 - **v5.7.1, released 2019-02-01** 
-  - Mattermost v5.7.1 contains a high level security fix. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+  - Mattermost v5.7.1 contains a high level security fix. [Upgrading](/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
 - **v5.7.0, released 2019-01-16**
   - Original 5.7.0 release
 
@@ -3953,11 +3956,11 @@ Mattermost v5.7.0 contains low to medium level security fixes. [Upgrading](https
 ## Release v5.6 - Feature Release
 
 - **v5.6.5, released 2019-02-16** 
-  - Mattermost v5.6.5 contains low to medium level security fixes. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+  - Mattermost v5.6.5 contains low to medium level security fixes. [Upgrading](/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
 - **v5.6.4, released 2019-02-01** 
-  - Mattermost v5.6.4 contains a high level security fix. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+  - Mattermost v5.6.4 contains a high level security fix. [Upgrading](/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
 - **v5.6.3, released 2019-01-16**
-  - Mattermost v5.6.3 contains medium level security fixes. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+  - Mattermost v5.6.3 contains medium level security fixes. [Upgrading](/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
 - **v5.6.2, released 2018-12-22** 
   - Fixed JIRA plugin not sending messages back to Mattermost channels.
 - **v5.6.1, released 2018-12-20** 
@@ -3970,16 +3973,16 @@ Mattermost v5.7.0 contains low to medium level security fixes. [Upgrading](https
 
 ### Breaking Changes since the last release
 
- - Replaced WebRTC prototype with other video and audio calling solutions. [Learn more here](https://docs.mattermost.com/deployment/video-and-audio-calling.html).
+ - Replaced WebRTC prototype with other video and audio calling solutions. [Learn more here](/deployment/video-and-audio-calling.html).
  - Removed support for IE11 Mobile View due to low usage and instability in order to invest that effort in maintaining a high quality experience on other more used browsers. End users on IE11 will thus have an increased minimum screen size.
- - If EnablePublicChannelsMaterialization setting in config.json is set to false, an offline migration prior to upgrade may be required to synchronize the materialized table for public channels to increase channel search performance in the channel switcher (CTRL/CMD+K), channel autocomplete (~) and elsewhere in the UI. See [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html) for more details.
+ - If EnablePublicChannelsMaterialization setting in config.json is set to false, an offline migration prior to upgrade may be required to synchronize the materialized table for public channels to increase channel search performance in the channel switcher (CTRL/CMD+K), channel autocomplete (~) and elsewhere in the UI. See [Important Upgrade Notes](/administration/important-upgrade-notes.html) for more details.
  
-**IMPORTANT:** If you upgrade from another release than 5.5, please read the [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html).
+**IMPORTANT:** If you upgrade from another release than 5.5, please read the [Important Upgrade Notes](/administration/important-upgrade-notes.html).
 
 ### Highlights
 
 #### Interactive Dialogs
- - Added support for interactive dialogs to more easily collect structured information from users to perform an action or submit a request via an integration. [Learn more here](https://docs.mattermost.com/developer/interactive-dialogs.html)
+ - Added support for interactive dialogs to more easily collect structured information from users to perform an action or submit a request via an integration. [Learn more here](/developer/interactive-dialogs.html)
 
 #### Languages
  - Added support for Ukrainian language, bringing the number of supported languages to 16.
@@ -4134,9 +4137,9 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 ## Release v5.5 - Quality Release
 
 - **v5.5.3, released 2019-02-01** 
-  - Mattermost v5.5.3 contains a high level security fix. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+  - Mattermost v5.5.3 contains a high level security fix. [Upgrading](/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
 - **v5.5.2, released 2019-01-16**
-  - Mattermost v5.5.2 contains medium level security fixes. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+  - Mattermost v5.5.2 contains medium level security fixes. [Upgrading](/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
 - **v5.5.1, released 2018-12-06** 
   - Fixed a bug preventing Elasticsearch v6.0+ from working in Mattermost server versions 5.4 and 5.5.
 - **v5.5.0, released 2018-11-16**
@@ -4186,14 +4189,14 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 Release date: 2018-10-16
 
-- Mattermost v5.4.0 contains a low level security fix. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+- Mattermost v5.4.0 contains a low level security fix. [Upgrading](/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
 
 ### Breaking Changes since the last release
 
  - Mattermost mobile app version 1.13+ is required. File uploads will fail on earlier mobile app versions.
  - In certain upgrade scenarios the new Allow Team Administrators to edit others posts setting under General then Users and Teams may be set to True while the Mattermost default in 5.1 and earlier and with new 5.4+ installations is False.
 
-**IMPORTANT:** If you upgrade from another release than 5.3, please read the [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html).
+**IMPORTANT:** If you upgrade from another release than 5.3, please read the [Important Upgrade Notes](/administration/important-upgrade-notes.html).
 
 ### Highlights
 
@@ -4297,7 +4300,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 ## Release v5.3 - Feature Release
 
-Mattermost v5.3.0 contains a high level security fix. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+Mattermost v5.3.0 contains a high level security fix. [Upgrading](/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
 
 - **v5.3.1, released 2018-09-19**
   - Fixed an issue where HTML elements such as links did not display correctly for non-English languages.
@@ -4308,7 +4311,7 @@ Mattermost v5.3.0 contains a high level security fix. [Upgrading](https://docs.m
 
  - Those servers with Elasticsearch enabled will notice that hashtag search is case-sensitive.
 
-**IMPORTANT:** If you upgrade from another release than 5.2, please read the [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html).
+**IMPORTANT:** If you upgrade from another release than 5.2, please read the [Important Upgrade Notes](/administration/important-upgrade-notes.html).
 
 ### Highlights
 
@@ -4334,7 +4337,7 @@ Mattermost v5.3.0 contains a high level security fix. [Upgrading](https://docs.m
 
 #### Administration
 - Created a telemetry event for when telemetry is turned off from the System Console.
-- Added support for attachments in Direct Message channels to the [bulk import tool](https://docs.mattermost.com/deployment/bulk-loading.html).
+- Added support for attachments in Direct Message channels to the [bulk import tool](/deployment/bulk-loading.html).
 
 ### Bug Fixes
 - Fixed an issue where closing an archived channel did not redirect users to the last viewed channel.
@@ -4381,7 +4384,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 ## Release v5.2 - Feature Release
 
  - **v5.2.2, released 2018-09-16**
-   - Mattermost v5.2.2 contains a high level security fix. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+   - Mattermost v5.2.2 contains a high level security fix. [Upgrading](/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
 - **v5.2.1, released 2018-08-23**
   - Disabled the ability to search archived channels by default, given multiple issues were raised after v5.2.0 was released. The feature can be enabled in v5.2.1 via ``ExperimentalViewArchivedChannels`` setting.
 - **v5.2.0, released 2018-08-16**
@@ -4389,13 +4392,13 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 ### Security Update
 
-- Mattermost v5.2.0 contains medium level security fixes. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+- Mattermost v5.2.0 contains medium level security fixes. [Upgrading](/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
 
 ### Breaking Changes since the last release
 
  - Those servers upgrading from v4.1 - v4.4 directly to v5.2 or later and have JIRA enabled will need to re-enable the JIRA plugin after an upgrade.
 
-**IMPORTANT:** If you upgrade from another release than 5.1, please read the [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html).
+**IMPORTANT:** If you upgrade from another release than 5.1, please read the [Important Upgrade Notes](/administration/important-upgrade-notes.html).
 
 ### Highlights
 
@@ -4427,7 +4430,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 #### Plugins (All Beta)
  - New [antivirus plugin](https://github.com/mattermost/mattermost-plugin-antivirus) to scan for viruses before uploading a file to Mattermost. Supports [ClamAV anti-virus software](https://www.clamav.net/) across browser, Desktop Apps and the Mobile Apps.
  - New [GitHub plugin](https://github.com/mattermost/mattermost-plugin-github) to subscribe to notifications, and to keep track of unread GitHub messages and open pull requests requiring your attention.
- - [Zoom plugin](https://docs.mattermost.com/integrations/zoom.html) now has one option to start a meeting rather than three separate ones to simplify the user experience.
+ - [Zoom plugin](/integrations/zoom.html) now has one option to start a meeting rather than three separate ones to simplify the user experience.
 
 #### Server Plugins: Release Candidate
  - A release candidate (RC) is released for server plugins. Stable release is expected in v5.3 or v5.4.
@@ -4509,21 +4512,21 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 ## Release v5.1 - Feature Release
 
  - **v5.1.2, released 2018-09-16**
-   - Mattermost v5.1.2 contains a high level security fix. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+   - Mattermost v5.1.2 contains a high level security fix. [Upgrading](/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
  - **v5.1.1, released 2018-08-07**
-   - Mattermost v5.1.1 contains medium level security fixes. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+   - Mattermost v5.1.1 contains medium level security fixes. [Upgrading](/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
  - **v5.1.0, released 2018-07-16**
    - Original 5.1.0 release
 
 ### Security Update
 
-- Mattermost v5.1.0 contains multiple security fixes ranging from low to high severity. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+- Mattermost v5.1.0 contains multiple security fixes ranging from low to high severity. [Upgrading](/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
 
 ### Breaking Changes since the last release
 
  - ``mattermost export`` CLI command is renamed to ``mattermost export schedule``. Make sure to update your scripts if you use this command.
 
-**IMPORTANT:** If you upgrade from another release than 5.0, please read the [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html).
+**IMPORTANT:** If you upgrade from another release than 5.0, please read the [Important Upgrade Notes](/administration/important-upgrade-notes.html).
 
 ### Highlights
 
@@ -4537,13 +4540,13 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Added support for hosting Mattermost at any route (e.g., https://www.example.com/mattermost) with newly added subpath support.
 
 #### CSV Compliance Export ([Enterprise Edition E20](https://mattermost.com/pricing-self-managed/))
- - Extended compliance export feature with CSV format. See [documentation](https://docs.mattermost.com/administration/compliance-export.html) to learn more.
+ - Extended compliance export feature with CSV format. See [documentation](/administration/compliance-export.html) to learn more.
 
 ### Improvements
 
 #### Web User Interface
  - Added highlighting for Elasticsearch results.
- - Renamed "Delete Channel" to "Archive Channel". Channels can be unarchived [from the commandline](https://docs.mattermost.com/administration/command-line-tools.html#mattermost-channel-restore).
+ - Renamed "Delete Channel" to "Archive Channel". Channels can be unarchived [from the commandline](/administration/command-line-tools.html#mattermost-channel-restore).
  - Added Channel Purpose as a searchable field in the "More Channels" menu.
 
 #### Administration
@@ -4557,14 +4560,14 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Running the CLI outside of the bin directory is now less error prone.
 
 #### Enterprise Edition E20
- - Added experimental support for certificate-based authentication (CBA) to identify a user or a device before granting access to Mattermost. See [documentation](https://docs.mattermost.com/deployment/certificate-based-authentication.html) to learn more.
+ - Added experimental support for certificate-based authentication (CBA) to identify a user or a device before granting access to Mattermost. See [documentation](/deployment/certificate-based-authentication.html) to learn more.
 
 ### Bug Fixes
 
  - Fixed an issue where users could not reply to push notifications on iOS.
  - Fixed an issue with an incorrect system message after converting a public channel to private.
  - Fixed an issue with being unable to add emoji reactions after expanding the message details sidebar.
- - Fixed an issue where [rate limiting settings](https://docs.mattermost.com/administration/config-settings.html#rate-limiting) could not be edited in the System Console, and weren't displayed in the User Interface if configured via `config.json`.
+ - Fixed an issue where [rate limiting settings](/administration/config-settings.html#rate-limiting) could not be edited in the System Console, and weren't displayed in the User Interface if configured via `config.json`.
  - Fixed an issue where deleted users shown as "Someone" in the Favorite Channels section could not be removed.
 
 ### config.json
@@ -4610,9 +4613,9 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 ## Release v5.0 - Feature Release
 
  - **v5.0.3, released 2018-08-07**
-   - Mattermost v5.0.3 contains a medium level security fix. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+   - Mattermost v5.0.3 contains a medium level security fix. [Upgrading](/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
  - **v5.0.2, released 2018-07-16**
-   - Mattermost v5.0.2 contains a high severity security fix. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+   - Mattermost v5.0.2 contains a high severity security fix. [Upgrading](/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
  - **v5.0.1, released 2018-07-09**
    - Fixed an issue where large Global Relay exports could cause export jobs to fail completely.
  - **v5.0.0, released 2018-06-16**
@@ -4628,7 +4631,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 - A new `config.json` setting to disable the [permanent APIv4 delete team parameter](https://api.mattermost.com/#tag/teams%2Fpaths%2F~1teams~1%7Bteam_id%7D%2Fput) has been added. The setting is off by default for all new and existing installs, except those deployed on GitLab Omnibus. A System Administrator can enable the API v4 endpoint from the config.json file. [Ticket #9916](https://mattermost.atlassian.net/browse/MM-9916).
 - An unused `ExtraUpdateAt` field has been removed from the channel model. [Ticket #9739](https://mattermost.atlassian.net/browse/MM-9739).
 
-**IMPORTANT:** If you upgrade from another release than 4.10, please read the [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html).
+**IMPORTANT:** If you upgrade from another release than 4.10, please read the [Important Upgrade Notes](/administration/important-upgrade-notes.html).
 
 ### Highlights
 
@@ -4642,7 +4645,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 #### Increased Character Limit on Posts
  - Increased character limit to 16,383 on new deployments to allow posting long messages and to allow better Markdown formatting, including tables.
- - For existing deployments, read [how to migrate your system](https://docs.mattermost.com/administration/important-upgrade-notes.html) to support the increased character limit.
+ - For existing deployments, read [how to migrate your system](/administration/important-upgrade-notes.html) to support the increased character limit.
 
 #### Combined Join/Leave Messages
  - System messages related to joining, leaving, adding and removing people from channels and teams are combined into a single message to save space in channels.
@@ -4725,7 +4728,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 ### Known Issues
 
- - [Image proxy](https://docs.mattermost.com/administration/image-proxy.html) cannot be saved in the System Console UI. Configure the settings in your `config.json` file instead.
+ - [Image proxy](/administration/image-proxy.html) cannot be saved in the System Console UI. Configure the settings in your `config.json` file instead.
  - Google login fails on the Classic mobile apps.
  - User can receive a video call from another browser tab while already on a call.
  - Jump link in search results does not always jump to display the expected post.
@@ -4742,30 +4745,30 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 [aeomin](https://translate.mattermost.com/user/aeomin/), [amyblais](https://github.com/amyblais), [AndersonWebStudio](https://github.com/AndersonWebStudio), [asaadmahmood](https://github.com/asaadmahmood), [balasankarc](https://github.com/balasankarc), [chclaus](https://github.com/chclaus), [chikei](https://github.com/chikei), [comharris](https://github.com/comharris), [compilenix](https://github.com/compilenix), [coreyhulen](https://github.com/coreyhulen), [cpanato](https://github.com/cpanato), [crspeller](https://github.com/crspeller), [csduarte](https://github.com/csduarte), [cvitter](https://github.com/cvitter), [der-test](https://github.com/der-test), [dkadioglu](https://github.com/dkadioglu), [DSchalla](https://github.com/DSchalla), [enahum](https://github.com/enahum), [esethna](https://github.com/esethna), [fbartels](https://github.com/fbartels), [gnufede](https://github.com/gnufede), [grundleborg](https://github.com/grundleborg), [haraldkubota](https://github.com/haraldkubota), [hmhealey](https://github.com/hmhealey), [icelander](https://github.com/icelander), [it33](https://github.com/it33), [jasonblais](https://github.com/jasonblais), [jespino](https://github.com/jespino), [jordanbuchman](https://github.com/jordanbuchman), [jwilander](https://github.com/jwilander), [kaakaa](https://github.com/kaakaa), [kayazeren](https://github.com/kayazeren), [lfbrock](https://github.com/lfbrock), [lieut-data](https://github.com/lieut-data), [lindalumitchell](https://github.com/lindalumitchell), [lindy65](https://github.com/lindy65), [lisakycho](https://github.com/lisakycho), [meilon](https://github.com/meilon), [mkraft](https://github.com/mkraft), [mlongo4290](https://github.com/mlongo4290), [odontomachus](https://github.com/odontomachus), [pichouk](https://github.com/pichouk), [pjgrizel](https://github.com/pjgrizel), [rodcorsi](https://github.com/rodcorsi), [Roy-Orbison](https://github.com/Roy-Orbison), [ryoon](https://github.com/ryoon), [R-Wang97](https://github.com/R-Wang97), [saturninoabril](https://github.com/saturninoabril), [sudheerDev](https://github.com/sudheerDev), [thePanz](https://github.com/thepanz), [uturkdogan](https://github.com/uturkdogan), [wget](https://github.com/wget), [wiersgallak](https://github.com/wiersgallak), [yuya-oc](https://github.com/yuya-oc)
 
-## Release v4.10 - [ESR](https://docs.mattermost.com/administration/extended-support-release.html)
+## Release v4.10 - [ESR](/administration/extended-support-release.html)
 
  - **v4.10.10, released 2019-06-20** 
-   - Mattermost v4.10.10 contains a medium level security fix. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+   - Mattermost v4.10.10 contains a medium level security fix. [Upgrading](/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
  - **v4.10.9, released 2019-04-24** 
-   - Mattermost v4.10.9 contains a medium level security fix. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+   - Mattermost v4.10.9 contains a medium level security fix. [Upgrading](/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
  - **v4.10.8, released 2019-03-16** 
-   - Mattermost v4.10.8 contains a medium level security fix. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+   - Mattermost v4.10.8 contains a medium level security fix. [Upgrading](/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
  - **v4.10.7, released 2019-02-16** 
-   - Mattermost v4.10.7 contains low to medium level security fixes. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+   - Mattermost v4.10.7 contains low to medium level security fixes. [Upgrading](/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
  - **v4.10.6, released 2019-02-01** 
-   - Mattermost v4.10.6 contains a high level security fix. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+   - Mattermost v4.10.6 contains a high level security fix. [Upgrading](/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
  - **v4.10.5, released 2019-01-16**
-   - Mattermost v4.10.5 contains medium level security fixes. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+   - Mattermost v4.10.5 contains medium level security fixes. [Upgrading](/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
  - **v4.10.4, released 2018-09-16**
-   - Mattermost v4.10.4 contains a high level security fix. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+   - Mattermost v4.10.4 contains a high level security fix. [Upgrading](/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
  - **v4.10.3, released 2018-08-07**
-   - Mattermost v4.10.3 contains a medium level security fix. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+   - Mattermost v4.10.3 contains a medium level security fix. [Upgrading](/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
  - **v4.10.2, released 2018-07-16**
-   - Mattermost v4.10.2 contains a high severity security fix. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+   - Mattermost v4.10.2 contains a high severity security fix. [Upgrading](/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
  - **v4.10.1, released 2018-06-04**
-   - Mattermost v4.10.1 contains a moderate severity security fix. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+   - Mattermost v4.10.1 contains a moderate severity security fix. [Upgrading](/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
    - Fixed an issue where the Mattermost screen went blank when viewing "Manage Members" list while another user was added to the channel.
-   - Fixed an issue where [automatic replies](https://docs.mattermost.com/administration/config-settings.html#enable-automatic-replies-experimental) weren't properly posting or suppressing emails.
+   - Fixed an issue where [automatic replies](/administration/config-settings.html#enable-automatic-replies-experimental) weren't properly posting or suppressing emails.
    - Fixed an issue where a member's roles for a team wasn't properly deleted when the team was deleted via the API, causing crashing issues.
  - **v4.10.0, released 2018-05-16**
    - Original 4.10.0 release
@@ -4773,7 +4776,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 ### Highlights
 
 #### Convert Public Channels to Private
- - Team and System Admins can now convert a channel to private from the user interface. System Admins can also convert channels back to public [via the commandline](https://docs.mattermost.com/administration/command-line-tools.html#platform-channel-modify).
+ - Team and System Admins can now convert a channel to private from the user interface. System Admins can also convert channels back to public [via the commandline](/administration/command-line-tools.html#platform-channel-modify).
 
 #### Performance Improvements
  - Decreased loading time by up to 90% for users with lots of direct and group message channels.
@@ -4806,7 +4809,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Added `/platform team list` command to list all teams on the server..
 
 #### Enterprise Edition E20
- - Added cluster event types to [Performance Monitoring](https://docs.mattermost.com/deployment/metrics.html).
+ - Added cluster event types to [Performance Monitoring](/deployment/metrics.html).
 
 ### Bug Fixes
 
@@ -4889,7 +4892,7 @@ The following deprecations are planned for the Mattermost v5.0 release, which is
 ## Release v4.9 - Feature Release
 
  - **v4.9.4, released 2018-06-04**
-   - Mattermost v4.9.4 contains a moderate severity security fix. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+   - Mattermost v4.9.4 contains a moderate severity security fix. [Upgrading](/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
  - **v4.9.3, released 2018-05-15**
    - Fixed an issue where plugin configuration got corrupted upon saving the configuration via the System Console.
  - **v4.9.2, released 2018-05-04**
@@ -4939,7 +4942,7 @@ The following deprecations are planned for the Mattermost v5.0 release, which is
 
 #### Enterprise Edition
  - When `ExperimentalTownSquareIsReadOnly` is set to `true`, non-admins can no longer react to messages, pin messages or update channel information.
- - Added cache invalidation totals to [Performance Monitoring](https://docs.mattermost.com/deployment/metrics.html).
+ - Added cache invalidation totals to [Performance Monitoring](/deployment/metrics.html).
 
 ### Bug Fixes
 
@@ -4961,7 +4964,7 @@ The following deprecations are planned for the Mattermost v5.0 release, which is
 
 ### Compatibility
 
- - IE11 Compatibility View now shows an "Unsupported Browser" error page, [given it's not a supported version](https://docs.mattermost.com/install/requirements.html#pc-web-experience).
+ - IE11 Compatibility View now shows an "Unsupported Browser" error page, [given it's not a supported version](/install/requirements.html#pc-web-experience).
 
 #### Removed and Deprecated Features
 
@@ -5049,16 +5052,16 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 ## Release v4.8 - Feature Release
 
  - **v4.8.2, released 2018-06-04**
-   - Mattermost v4.8.2 contains a moderate severity security fix. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+   - Mattermost v4.8.2 contains a moderate severity security fix. [Upgrading](/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
  - **v4.8.1, released 2018-04-09**
-   - Mattermost v4.8.1 contains multiple security fixes ranging from low to high severity. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+   - Mattermost v4.8.1 contains multiple security fixes ranging from low to high severity. [Upgrading](/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
    - Fixed a performance issue by removing the `DisplayName` index on the Channels table.
  - **v4.8.0, released 2018-03-16**
    - Original 4.8.0 release
 
 ### Security Update
 
-- Mattermost v4.8.0 contains multiple security fixes ranging from low to high severity. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+- Mattermost v4.8.0 contains multiple security fixes ranging from low to high severity. [Upgrading](/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
 
 ### Highlights
 
@@ -5188,10 +5191,10 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 ## Release v4.7 - Feature Release
 
  - **v4.7.4, released 2018-04-09**
-   - Mattermost v4.7.4 contains multiple security fixes ranging from low to high severity. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+   - Mattermost v4.7.4 contains multiple security fixes ranging from low to high severity. [Upgrading](/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
    - Fixed a performance issue by removing the `DisplayName` index on the Channels table.
  - **v4.7.3, released 2018-03-09**
-   - Mattermost v4.7.3 contains a moderate severity security fix. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+   - Mattermost v4.7.3 contains a moderate severity security fix. [Upgrading](/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
  - **v4.7.2, released 2018-02-23**
    - Fixed an issue where message attachments didn’t render emojis.
    - Fixed an issue where channels with a name 26 characters long were inaccessible with a 404 error.
@@ -5200,13 +5203,13 @@ Multiple setting options were added to `config.json`. Below is a list of the add
    - Fixed an issue where clicking on "Send Message" from a user's profile popover redirected to Town Square instead of the user's direct message channel.
    - Fixed an issue where links to direct and group message channels opened in a new tab.
  - **v4.7.1, released 2018-02-20**
-   - Fixed an issue with [compliance export](https://docs.mattermost.com/administration/compliance-export.html) outputs, resulting in `Failed to update ChannelMemberHistory table` error  messages in the log when a user joins or leaves a channel. Issue updates [posted here](https://mattermost.atlassian.net/browse/MM-9633).
+   - Fixed an issue with [compliance export](/administration/compliance-export.html) outputs, resulting in `Failed to update ChannelMemberHistory table` error  messages in the log when a user joins or leaves a channel. Issue updates [posted here](https://mattermost.atlassian.net/browse/MM-9633).
  - **v4.7.0, released 2018-02-16**
    - Original 4.7.0 release
 
 ### Security Update
 
-- Mattermost v4.7.0 contains multiple security fixes ranging from low to high severity. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+- Mattermost v4.7.0 contains multiple security fixes ranging from low to high severity. [Upgrading](/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
 
 ### Highlights
 
@@ -5228,7 +5231,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 #### Experimental Setting for Unreads Sidebar Section
 
- - Added an experimental setting to group unread channels in the channel sidebar. The setting [must first be enabled by the System Admin](https://docs.mattermost.com/administration/config-settings.html#group-unread-channels-experimental), by replacing `disabled` with either `default_off` or `default_on` in config.json.
+ - Added an experimental setting to group unread channels in the channel sidebar. The setting [must first be enabled by the System Admin](/administration/config-settings.html#group-unread-channels-experimental), by replacing `disabled` with either `default_off` or `default_on` in config.json.
 
 ### Improvements
 
@@ -5374,11 +5377,11 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 ## Release v4.6 - Feature Release
 
  - **v4.6.3, release date 2018-04-09**
-   - Mattermost v4.6.3 contains a low severity security fix. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+   - Mattermost v4.6.3 contains a low severity security fix. [Upgrading](/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
  - **v4.6.2, release date 2018-02-23**
-   - Mattermost v4.6.2 contains multiple security fixes ranging from low to high severity. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+   - Mattermost v4.6.2 contains multiple security fixes ranging from low to high severity. [Upgrading](/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
  - **v4.6.1, release date 2018-01-30**
-   - Fixed an issue where Let's Encrypt certificates were broken on Mattermost servers. The cache will be deleted upon upgrade so your certificate will be immediately renewed. Moreover, port 80 must be forwarded through a firewall, with [Forward80To443](https://docs.mattermost.com/administration/config-settings.html#forward-port-80-to-443) `config.json` setting set to `true`, to complete the Let's Encrypt certification.
+   - Fixed an issue where Let's Encrypt certificates were broken on Mattermost servers. The cache will be deleted upon upgrade so your certificate will be immediately renewed. Moreover, port 80 must be forwarded through a firewall, with [Forward80To443](/administration/config-settings.html#forward-port-80-to-443) `config.json` setting set to `true`, to complete the Let's Encrypt certification.
  - **v4.6.0, released 2018-01-16**
    - Original 4.6.0 release
 
@@ -5522,7 +5525,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 ## Release v4.5 - Feature Release
 
  - **v4.5.2, release date 2018-02-23**
-   - Mattermost v4.5.2 contains multiple security fixes ranging from low to high severity. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+   - Mattermost v4.5.2 contains multiple security fixes ranging from low to high severity. [Upgrading](/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
  - **v4.5.1, released 2018-01-16**
    - Fixed an issue where Mattermost wouldn't load on certain versions of Firefox, including v52-54 and v57 in private mode.
  - **v4.5.0, released 2017-12-16**
@@ -5532,7 +5535,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 #### Zoom Plugin (Beta)
 
-- [Zoom](https://www.zoom.us/) video calling and screensharing plugin. Learn more [here](https://docs.mattermost.com/integrations/zoom.html).
+- [Zoom](https://www.zoom.us/) video calling and screensharing plugin. Learn more [here](/integrations/zoom.html).
 - Manage plugins from the **System Console > Plugins (Beta)** section.
 
 #### Actiance Support (Beta) ([Enterprise Edition E20](https://mattermost.com/pricing-self-managed/) Add-On)
@@ -5738,11 +5741,11 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 ## Release v4.4.5 - Feature Release
 
  - **v4.4.5, release date 2017-12-11**
-   - Mattermost v4.4.5 contains a medium severity security fix. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+   - Mattermost v4.4.5 contains a medium severity security fix. [Upgrading](/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
  - **v4.4.4, release date 2017-12-06**
    - Added a config.json setting, `ClientDirectory`, to set the directory to write web app plugins to. Added to better support plugins in GitLab Omnibus.
  - **v4.4.3, released 2017-12-05**
-   - Fixed a medium level security issue affecting servers with [EnableOAuthServiceProvider](https://docs.mattermost.com/administration/config-settings.html#enable-oauth-2-0-service-provider) set to `true` and  [EnableOnlyAdminIntegrations](https://docs.mattermost.com/administration/config-settings.html#restrict-managing-integrations-to-admins) set to `false`. If you're affected, [upgrading](https://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+   - Fixed a medium level security issue affecting servers with [EnableOAuthServiceProvider](/administration/config-settings.html#enable-oauth-2-0-service-provider) set to `true` and  [EnableOnlyAdminIntegrations](/administration/config-settings.html#restrict-managing-integrations-to-admins) set to `false`. If you're affected, [upgrading](/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
  - **v4.4.2, released 2017-11-23**
    - Fixed an issue where AD/LDAP accounts get deactivated following an AD/LDAP sync if their email address between the AD/LDAP server and Mattermost don't match case.
    - Fixed synchronization of SAML accounts with AD/LDAP.
@@ -5769,7 +5772,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 #### Web User Interface
 - Added an experimental feature to hide direct and group message channels after 7 days with no new messages. To enable it set `CloseUnusedDirectMessages` in `config.json` to `true`.
-- Moved website previews out of beta, configurable in **Account Settings > Display**. Enable link previews in the [System Console](https://docs.mattermost.com/administration/config-settings.html#enable-link-previews).
+- Moved website previews out of beta, configurable in **Account Settings > Display**. Enable link previews in the [System Console](/administration/config-settings.html#enable-link-previews).
 - Made it easier to add a user to channel if mentioned user is not already a channel member.
 - Added "Edit Account Settings" link to the bottom of your own profile popover to more easily edit your settings.
 - URL address for internal links such as when hovering over the flag icon, is now hidden for better user experience.
@@ -5832,7 +5835,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 - Fixed webhook message attachments longer than 8000 characters failing to post by truncating them, or splitting to multiple posts if the message has multiple attachments.
 - Fixed `/msg` command arbitrarily switching teams.
 - Fixed mentions not appearing linked in message drafts when in preview mode.
-- Fixed an issue where an existing account could change their email address to one not in the [restricted domain list](https://docs.mattermost.com/administration/config-settings.html#restrict-account-creation-to-specified-email-domains).
+- Fixed an issue where an existing account could change their email address to one not in the [restricted domain list](/administration/config-settings.html#restrict-account-creation-to-specified-email-domains).
 - Fixed emoji reactions being added to system messages when using the `+:emoji:` command.
 - Fixed an issue where message retention policy didn't work in Postgres databases if there were emoji reactions to delete.
 
@@ -5981,22 +5984,22 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 ## Release v4.3.4 - Feature Release
 
  - **v4.3.4, release date 2017-12-11**
-   - Mattermost v4.3.4 contains a medium severity security fix. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+   - Mattermost v4.3.4 contains a medium severity security fix. [Upgrading](/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
  - **v4.3.3, released 2017-12-05**
-   - Fixed a medium level security issue affecting servers with [EnableOAuthServiceProvider](https://docs.mattermost.com/administration/config-settings.html#enable-oauth-2-0-service-provider) set to `true` and  [EnableOnlyAdminIntegrations](https://docs.mattermost.com/administration/config-settings.html#restrict-managing-integrations-to-admins) set to `false`. If you're affected, [upgrading](https://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+   - Fixed a medium level security issue affecting servers with [EnableOAuthServiceProvider](/administration/config-settings.html#enable-oauth-2-0-service-provider) set to `true` and  [EnableOnlyAdminIntegrations](/administration/config-settings.html#restrict-managing-integrations-to-admins) set to `false`. If you're affected, [upgrading](/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
  - **v4.3.2, released 2017-11-10**
    - Fixed an issue where after creating a new direct message channel via channel switcher (CTRL/CMD+K), all messages fail to post until a page refresh.
  - **v4.3.1, released 2017-10-20**
    - Fixed an upgrade issue where the database schema would appear to be out of date and throw a log warning.
    - Fixed the Idle Timeout setting in `config.json` by changing the setting title from `SessionIdleTimeout` to `SessionIdleTimeoutInMinutes`.
    - Fixed a regression where slash commands were not functional in Direct or Group Messages.
-   - Mattermost v4.3.1 contains a low severity security fix. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+   - Mattermost v4.3.1 contains a low severity security fix. [Upgrading](/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
  - **v4.3.0, released 2017-10-16**
    - Original 4.3.0 release
 
 ### Security Update
 
-- Mattermost v4.3.0 contains multiple security fixes ranging from low to high severity. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+- Mattermost v4.3.0 contains multiple security fixes ranging from low to high severity. [Upgrading](/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
 
 ### Highlights
 
@@ -6174,15 +6177,15 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 ## Release v4.2.2 - Feature Release
 
  - **v4.2.2, release date 2017-12-11**
-   - Mattermost v4.2.2 contains a medium severity security fix. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+   - Mattermost v4.2.2 contains a medium severity security fix. [Upgrading](/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
  - **v4.2.1, released 2017-10-20**
-   - Mattermost v4.2.1 contains multiple security fixes ranging from low to high severity. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+   - Mattermost v4.2.1 contains multiple security fixes ranging from low to high severity. [Upgrading](/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
  - **v4.2.0, released 2017-09-16**
    - Original 4.2.0 release
 
 ### Security Update
 
-- Mattermost v4.2.0 contains multiple security fixes ranging from low to moderate severity. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+- Mattermost v4.2.0 contains multiple security fixes ranging from low to moderate severity. [Upgrading](/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
 
 ### Highlights
 
@@ -6190,7 +6193,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 - Added message buttons to support user interactions with posts made by incoming webhooks and custom slash commands.
 
 #### Mobile Support for AppConfig
-- iOS and Android mobile apps now support Enterprise Mobility Management (EMM) solutions through integration with [App Config](https://www.appconfig.org/). See [documentation](https://docs.mattermost.com/mobile/mobile-appconfig.html) to learn more.
+- iOS and Android mobile apps now support Enterprise Mobility Management (EMM) solutions through integration with [App Config](https://www.appconfig.org/). See [documentation](/mobile/mobile-appconfig.html) to learn more.
 
 ### Improvements
 
@@ -6270,7 +6273,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 This change may cause private integrations to break in testing environments, which may point to a URL such as http://127.0.0.1:1021/my-command.
 
-If you point private integrations to such URLs, you may whitelist such domains, IP addresses, or CIDR notations via the [AllowedUntrustedInternalConnections config setting](https://docs.mattermost.com/administration/config-settings.html#allow-untrusted-internal-connections-to) in your local environment. Although not recommended, you may also whitelist the addresses in your production environments. See [documentation to learn more](https://docs.mattermost.com/administration/config-settings.html#allow-untrusted-internal-connections-to).
+If you point private integrations to such URLs, you may whitelist such domains, IP addresses, or CIDR notations via the [AllowedUntrustedInternalConnections config setting](/administration/config-settings.html#allow-untrusted-internal-connections-to) in your local environment. Although not recommended, you may also whitelist the addresses in your production environments. See [documentation to learn more](/administration/config-settings.html#allow-untrusted-internal-connections-to).
 
 Push notification, OAuth 2.0 and WebRTC server URLs are trusted and not affected by this setting.
 
@@ -6390,15 +6393,15 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 ## Release v4.1.2 - Feature Release
 
  - **v4.1.2, released 2017-10-20**
-   - Mattermost v4.1.2 contains multiple security fixes ranging from low to high severity. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+   - Mattermost v4.1.2 contains multiple security fixes ranging from low to high severity. [Upgrading](/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
  - **v4.1.1, released 2017-09-16**
-   - Mattermost v4.1.1 contains multiple security fixes ranging from low to medium severity. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+   - Mattermost v4.1.1 contains multiple security fixes ranging from low to medium severity. [Upgrading](/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
  - **v4.1.0, released 2017-08-16**
    - Original 4.1.0 release
 
 ### Security Update
 
-- Mattermost v4.1.0 contains multiple security fixes ranging from low to high severity. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+- Mattermost v4.1.0 contains multiple security fixes ranging from low to high severity. [Upgrading](/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
 
 ### Highlights
 
@@ -6413,7 +6416,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 #### Elasticsearch Beta ([Enterprise Edition E20](https://mattermost.com/pricing-self-managed/))
 - Connect your Elasticsearch server to Mattermost, then build and manage your post index via the System Console interface.
-- [Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html) is a distributed, RESTful search engine supporting highly efficient database searches in a [cluster environment](https://docs.mattermost.com/deployment/cluster.html).
+- [Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html) is a distributed, RESTful search engine supporting highly efficient database searches in a [cluster environment](/deployment/cluster.html).
 
 ### Improvements
 
@@ -6631,9 +6634,9 @@ Many thanks to all our contributors. In alphabetical order:
 ## Release v4.0.5 - Feature Release
 
  - **v4.0.5, released 2017-09-16**
-   - Mattermost v4.0.5 contains multiple security fixes ranging from low to medium severity. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+   - Mattermost v4.0.5 contains multiple security fixes ranging from low to medium severity. [Upgrading](/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
  - **v4.0.4, released 2017-08-18**
-   - Mattermost v4.0.4 contains multiple security fixes ranging from low to high severity. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+   - Mattermost v4.0.4 contains multiple security fixes ranging from low to high severity. [Upgrading](/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
    - Fixed issue when using single-sign-on with GitLab where using a non-English language option in **System Console > Localization** sometimes resulted in a login failure.
  - **v4.0.3, released 2017-08-10**
    - Fixed issue with `AmazonS3Region` config setting being ignored in Minio file storage setup.
@@ -6652,7 +6655,7 @@ Many thanks to all our contributors. In alphabetical order:
 
 ### Security Update
 
-- Mattermost v4.0.0 contains multiple security fixes ranging from low to high severity. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+- Mattermost v4.0.0 contains multiple security fixes ranging from low to high severity. [Upgrading](/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
 
 ### Highlights
 
@@ -6721,10 +6724,10 @@ Many thanks to all our contributors. In alphabetical order:
 - If a message starts with a / but fails to send (either due to timeout or invalid command), the message is put back to the input box.
 
 #### Bulk Import Tool
-- Added support for Direct Message channels and posts to the [bulk import tool](https://docs.mattermost.com/deployment/bulk-loading.html).
+- Added support for Direct Message channels and posts to the [bulk import tool](/deployment/bulk-loading.html).
 
 #### Authentication
-- User creation via OAuth (GitLab/Google/Office365) properly restricted to accepted domains, [if specified](https://docs.mattermost.com/administration/config-settings.html#restrict-account-creation-to-specified-email-domains).
+- User creation via OAuth (GitLab/Google/Office365) properly restricted to accepted domains, [if specified](/administration/config-settings.html#restrict-account-creation-to-specified-email-domains).
 - **Invite New Member** dialog validates email addresses against accepted domains, if set.
 
 #### New URL Routes
@@ -6764,7 +6767,7 @@ Many thanks to all our contributors. In alphabetical order:
 
 #### Breaking Changes
 
-- If you are using NGINX as a proxy for the Mattermost Server, replace the `location /api/v3/users/websocket {` line with `location ~ /api/v[0-9]+/(users/)?websocket$ {` in the `/etc/nginx/sites-available/mattermost` NGINX configuration file. [See documentation to learn more](https://docs.mattermost.com/install/install-ubuntu-1404.html#configuring-nginx-as-a-proxy-for-mattermost-server).
+- If you are using NGINX as a proxy for the Mattermost Server, replace the `location /api/v3/users/websocket {` line with `location ~ /api/v[0-9]+/(users/)?websocket$ {` in the `/etc/nginx/sites-available/mattermost` NGINX configuration file. [See documentation to learn more](/install/install-ubuntu-1404.html#configuring-nginx-as-a-proxy-for-mattermost-server).
 - If you are upgrading a High Availability Cluster: When upgrading from 3.10 or earlier to 4.0 or later, you must manually add new items to the *ClusterSettings* section of your existing ``config.json``. For more information about this, see the *Upgrading to Version 4.0 and Later* section of :doc:`../deployment/cluster`.
  - Microsoft Edge v39 and earlier (EdgeHTML v14 and earlier) has [an issue](https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/8546263/) that may case errors during account creation, login and if MFA is enforced. We recommend upgrading to Edge v40 (or EdgeHTML v15).
 
@@ -6908,12 +6911,12 @@ Many thanks to all our contributors. In alphabetical order:
 ## Release v3.10.3
 
  - **v3.10.3, released 2017-08-18**
-   - Mattermost v3.10.3 contains multiple security fixes ranging from low to high severity. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+   - Mattermost v3.10.3 contains multiple security fixes ranging from low to high severity. [Upgrading](/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
    - Fixed issue when using single-sign-on with GitLab where using a non-English language option in **System Console > Localization** sometimes resulted in a login failure.
  - **v3.10.2, released 2017-07-18**
-   - Mattermost v3.10.2 contains low severity security fixes. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+   - Mattermost v3.10.2 contains low severity security fixes. [Upgrading](/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
  - **v3.10.1, released 2017-07-16**
-   - Mattermost v3.10.1 contains a high severity security fix for an OAuth SSO vulnerability and two additional fixes for low severity security issues. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+   - Mattermost v3.10.1 contains a high severity security fix for an OAuth SSO vulnerability and two additional fixes for low severity security issues. [Upgrading](/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
  - **v3.10.0, released 2017-06-16**
    - Original 3.10 release
 
@@ -7113,15 +7116,15 @@ Many thanks to all our contributors. In alphabetical order:
 ## Release v3.9.2
 
  - **v3.9.2, released 2017-07-18**
-   - Mattermost v3.9.2 contains low severity security fixes. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+   - Mattermost v3.9.2 contains low severity security fixes. [Upgrading](/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
  - **v3.9.1, released 2017-07-16**
-   - Mattermost v3.9.1 contains a high severity security fix for an OAuth SSO vulnerability and two additional fixes for low severity security issues. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+   - Mattermost v3.9.1 contains a high severity security fix for an OAuth SSO vulnerability and two additional fixes for low severity security issues. [Upgrading](/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
  - **v3.9.0, released 2017-05-16**
    - Original 3.9 release
 
 ### Security Update
 
-- Mattermost v3.9.0 contains a low severity [security update](https://mattermost.com/security-updates/). [Upgrading to Mattermost v3.9.0](https://docs.mattermost.com/administration/upgrade.html) is highly recommended.
+- Mattermost v3.9.0 contains a low severity [security update](https://mattermost.com/security-updates/). [Upgrading to Mattermost v3.9.0](/administration/upgrade.html) is highly recommended.
 
 ### Highlights
 
@@ -7154,7 +7157,7 @@ Many thanks to all our contributors. In alphabetical order:
 #### Performance
 - Added the ability to isolate searches to specific read-replicas for full text search queries for higher performance.
 - Added default read and write timeouts for MySQL datasource to prevent hub processing deadlock.
-- Added password field to the [bulk import tool](https://docs.mattermost.com/deployment/bulk-loading.html).
+- Added password field to the [bulk import tool](/deployment/bulk-loading.html).
 - Added the ability to disable full text search queries and statuses via `config.json` for higher performance.
 
 #### Emoji Picker (Beta)
@@ -7194,7 +7197,7 @@ Many thanks to all our contributors. In alphabetical order:
  - Added a setting to disable file and image uploads on messages.
 
 #### Enterprise Edition
- - Added new [performance monitoring metrics](https://docs.mattermost.com/deployment/metrics.html) for
+ - Added new [performance monitoring metrics](/deployment/metrics.html) for
      - The total number of connections to all the search replica databases
      - The total number of WebSocket broadcasts sent
 
@@ -7232,7 +7235,7 @@ Many thanks to all our contributors. In alphabetical order:
 
 #### Breaking changes:
 
-- If you're using NGINX as a proxy for the Mattermost Server, replace the `location /api/v3/users/websocket {` line with `location ~ /api/v[0-9]+/(users/)?websocket$ {` in the `/etc/nginx/sites-available/mattermost` NGINX configuration file. [See documentation to learn more](https://docs.mattermost.com/install/install-ubuntu-1404.html#configuring-nginx-as-a-proxy-for-mattermost-server).
+- If you're using NGINX as a proxy for the Mattermost Server, replace the `location /api/v3/users/websocket {` line with `location ~ /api/v[0-9]+/(users/)?websocket$ {` in the `/etc/nginx/sites-available/mattermost` NGINX configuration file. [See documentation to learn more](/install/install-ubuntu-1404.html#configuring-nginx-as-a-proxy-for-mattermost-server).
 - Existing email invite links, password reset links, and email verification links in emails generated by your Mattermost server will be invalidated after upgrading to v3.9.0.
 - Firefox ESR 45 has an [end-of-life scheduled for June 13](https://en.wikipedia.org/wiki/Firefox_version_history) and is therefore no longer supported. We recommend upgrading to [Firefox ESR 52](https://www.mozilla.org/en-US/firefox/organizations/all/).
 
@@ -7357,12 +7360,12 @@ Many thanks to all our contributors. In alphabetical order:
 ### Notes on Patch Release
 
  - **v3.8.3, released 2017-07-16**
-   - Mattermost v3.8.3 contains a high severity security fix for an OAuth SSO vulnerability and two additional fixes for low severity security issues. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+   - Mattermost v3.8.3 contains a high severity security fix for an OAuth SSO vulnerability and two additional fixes for low severity security issues. [Upgrading](/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
  - **v3.8.2, released 2017-04-21**
    - Changed the client to use `window.location.origin` instead of siteURL, fixing WebSocket connection issues with Mattermost 3.8 upgrade.
    - Fixed a few APIv4 endpoints in support of the next [React Native mobile app](https://github.com/mattermost/mattermost-mobile) release.
  - **v3.8.1, released 2017-04-19**
-   - Mattermost v3.8.1 contains a security update and [upgrading](https://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+   - Mattermost v3.8.1 contains a security update and [upgrading](/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
    - Fixed an issue with Site URL sometimes breaking the OAuth2 login flow, including login using GitLab.
    - Reverted a change preventing LDAP usernames from beginning with a number.
    - Fixed a permission issue with group message channel creation.
@@ -7371,7 +7374,7 @@ Many thanks to all our contributors. In alphabetical order:
 
 ### Security Update
 
-- Mattermost v3.8.0 contains multiple [security updates](https://mattermost.com/security-updates/). [Upgrading to Mattermost v3.8.0](https://docs.mattermost.com/administration/upgrade.html) is highly recommended.
+- Mattermost v3.8.0 contains multiple [security updates](https://mattermost.com/security-updates/). [Upgrading to Mattermost v3.8.0](/administration/upgrade.html) is highly recommended.
 
 ### Highlights
 
@@ -7463,7 +7466,7 @@ Many thanks to all our contributors. In alphabetical order:
 - Server logs are now written to the `mattermost.log` file located in the directory specified in **System Console > Logging > [File Log Directory](../../administration/config-settings.html#file-log-directory)**. Set the directory name in the System Console, or in the `gitlab.rb` file if you are using GitLab Mattermost.
 
 #### Removed and deprecated features
-- Backwards compatibility with the old CLI tool is removed in v3.8. See [documentation to learn more about the new CLI tool](https://docs.mattermost.com/administration/command-line-tools.html).
+- Backwards compatibility with the old CLI tool is removed in v3.8. See [documentation to learn more about the new CLI tool](/administration/command-line-tools.html).
 - Deprecated APIv3 routes removed in v3.8:
    - `GET` at `/channels/more` (replaced by /`channels/more/{offset}/{limit}`)
    - `POST` at `/channels/update_last_viewed_at` (replaced by `/channels/view`)
@@ -7583,23 +7586,23 @@ Many thanks to all our contributors. In alphabetical order:
 ### Notes on Patch Release
 
  - **v3.7.5, released 2017-04-27**
-   - Fixed a number of low to moderate severity security issues, and [upgrading](https://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/)
+   - Fixed a number of low to moderate severity security issues, and [upgrading](/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/)
      - Note: The **System Console > Configuration > [Site URL](../../administration/config-settings.html#site-url)** field is now mandatory. Set the Site URL in the System Console, or in the `gitlab.rb` file if you are using GitLab Mattermost.
  - **v3.7.4, released 2017-04-13**
-   - Fixed a number of low to high severity security issues, and [upgrading](https://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/)
+   - Fixed a number of low to high severity security issues, and [upgrading](/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/)
  - **v3.7.3, released 2017-03-23**
-   - Fixed a high severity security issue, and [upgrading](https://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/)
+   - Fixed a high severity security issue, and [upgrading](/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/)
    - Fixed an issue with telemetry data collection
  - **v3.7.2, released 2017-03-17**
    - Fixed an issue with LDAP, SAML, and OAuth logins where 1 and 2 character usernames displayed incorrectly
  - **v3.7.1, released 2017-03-16**
-   - Fixed an issue where some [System Console > Policy settings](https://docs.mattermost.com/administration/config-settings.html#policy) were incorrectly applied to Team Edition, breaking the System Console UI
+   - Fixed an issue where some [System Console > Policy settings](/administration/config-settings.html#policy) were incorrectly applied to Team Edition, breaking the System Console UI
  - **v3.7.0, released 2017-03-16**
    - Original 3.7 release
 
 ### Security Update
 
-- Mattermost v3.7.0 contains a [security update](https://mattermost.com/security-updates/). [Upgrading to Mattermost v3.7.0](https://docs.mattermost.com/administration/upgrade.html) is highly recommended.
+- Mattermost v3.7.0 contains a [security update](https://mattermost.com/security-updates/). [Upgrading to Mattermost v3.7.0](/administration/upgrade.html) is highly recommended.
 
 ### Highlights
 
@@ -7752,7 +7755,7 @@ Many thanks to all our contributors. In alphabetical order:
 #### Removed and deprecated features
 
  - Removed `ServiceSettings: "SegmentDeveloperKey"` setting in `config.json`
- - Backwards compatibility with the old CLI tool will be removed in Mattermost v3.8 April/2017 release. See [documentation to learn more about the new CLI tool](https://docs.mattermost.com/administration/command-line-tools.html).
+ - Backwards compatibility with the old CLI tool will be removed in Mattermost v3.8 April/2017 release. See [documentation to learn more about the new CLI tool](/administration/command-line-tools.html).
  - Deprecated APIv3 routes to be removed in Mattermost v3.8 April/2017 release:
    - `GET` at `/channels/more` (replaced by /`channels/more/{offset}/{limit}`)
    - `POST` at `/channels/update_last_viewed_at` (replaced by `/channels/view`)
@@ -7781,7 +7784,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
    - Added `"RestrictPostDelete": all` to set who can delete messages
    - Added `"AllowEditPost": always` to set whether messages can be edited
    - Added `"PostEditTimeLimit": 300` to set how long messages can be edited, if `"AllowEditPost": time_limit` is specified
-   - Added `"ClusterLogTimeoutMilliseconds": 2000` to control frequency of cluster request time logging for [performance monitoring](https://docs.mattermost.com/deployment/metrics.html)
+   - Added `"ClusterLogTimeoutMilliseconds": 2000` to control frequency of cluster request time logging for [performance monitoring](/deployment/metrics.html)
 
 ### Database Changes from v3.6 to v3.7
 
@@ -7871,20 +7874,20 @@ Many thanks to all our contributors. In alphabetical order:
 ### Notes on Patch Release
 
  - **v3.6.7, released 2017-04-27**
-   - Fixed a number of low to moderate severity security issues, and [upgrading](https://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/)
+   - Fixed a number of low to moderate severity security issues, and [upgrading](/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/)
      - Note: The **System Console > Configuration > [Site URL](../../administration/config-settings.html#site-url)** field is now mandatory. Set the Site URL in the System Console, or in the `gitlab.rb` file if you are using GitLab Mattermost.
  - **v3.6.6, released 2017-04-13**
-   - Fixed a number of low to high severity security issues, and [upgrading](https://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/)
+   - Fixed a number of low to high severity security issues, and [upgrading](/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/)
    - Fixed an issue where Direct Messages list didn't always properly update in the left-hand sidebar
    - Upgraded MySQL driver for better performance
  - **v3.6.5, released 2017-03-23**
-   - Fixed a high severity security issue, and [upgrading](https://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/)
+   - Fixed a high severity security issue, and [upgrading](/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/)
  - **v3.6.4, released 2017-03-16**
-   - Fixed an issue where some [System Console > Policy settings](https://docs.mattermost.com/administration/config-settings.html#policy) were incorrectly applied to Team Edition, breaking the System Console UI
+   - Fixed an issue where some [System Console > Policy settings](/administration/config-settings.html#policy) were incorrectly applied to Team Edition, breaking the System Console UI
  - **v3.6.3, released 2017-03-16**
-   - Fixed a security issue, and [upgrading](https://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/)
+   - Fixed a security issue, and [upgrading](/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/)
  - **v3.6.2, released 2017-01-31**
-   - Fixed a high severity security issue, and [upgrading](https://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/)
+   - Fixed a high severity security issue, and [upgrading](/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/)
    - Improved performance of web sockets and typing messages
    - Note: Some deployments using multiple URLs to reach Mattermost via proxy forwarding are reporting issues with the security fix in 3.6.2. [The issue is being tracked in our ticketing system](https://mattermost.atlassian.net/browse/PLT-5635).
  - **v3.6.1, released 2017-01-19**
@@ -7897,7 +7900,7 @@ Many thanks to all our contributors. In alphabetical order:
 
 ### Security Update
 
-- Mattermost v3.6.0 contains a [security update](https://mattermost.com/security-updates/). [Upgrading to Mattermost v3.6.0](https://docs.mattermost.com/administration/upgrade.html) is highly recommended. Thanks to Julien Ahrens for contributing the security report through the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+- Mattermost v3.6.0 contains a [security update](https://mattermost.com/security-updates/). [Upgrading to Mattermost v3.6.0](/administration/upgrade.html) is highly recommended. Thanks to Julien Ahrens for contributing the security report through the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
 
 ### Highlights
 
@@ -7910,10 +7913,10 @@ Many thanks to all our contributors. In alphabetical order:
 
 #### Performance Monitoring ([Enterprise E20](https://mattermost.com/pricing-self-managed/))
 - Added support for performance monitoring in large-scale deployments to help optimize systems for maximum performance using integrations with [Prometheus](https://github.com/prometheus/prometheus) and [Grafana](https://grafana.org/)
-- Includes metrics for caching, database connections, processing, logins and messaging. See [documentation to learn more](https://docs.mattermost.com/deployment/metrics.html)
+- Includes metrics for caching, database connections, processing, logins and messaging. See [documentation to learn more](/deployment/metrics.html)
 
 #### Improved Command Line Interface
-- New version of CLI with a more intuitive interface, interactive help documentation, and some added functionality. See [documentation to learn more](https://docs.mattermost.com/administration/command-line-tools.html)
+- New version of CLI with a more intuitive interface, interactive help documentation, and some added functionality. See [documentation to learn more](/administration/command-line-tools.html)
 
 ### Improvements
 
@@ -7983,7 +7986,7 @@ Many thanks to all our contributors. In alphabetical order:
 - XML file preview no longer throws a JavaScript error
 - User autocomplete in message box no longer matches against email
 - Channel linking (with ~ shortcut) now works for channels you don't belong to
-- Fixed statistics for websockets and database connections in **System Console** > **Site Statistics** to work in [High Availability mode](https://docs.mattermost.com/deployment/cluster.html)
+- Fixed statistics for websockets and database connections in **System Console** > **Site Statistics** to work in [High Availability mode](/deployment/cluster.html)
 - Slash commands now work in newly created private channels without requiring a refresh
 - Zapier app channel dropdown selector works again
 - Fixed sign in errors for non-admin accounts when custom emojis are restricted to Team and System Admins
@@ -8196,7 +8199,7 @@ Thanks also to those who reported bugs that benefited the release, in alphabetic
 
 ### Security Update
 
-- Mattermost v3.5.1 contains multiple [security updates](https://mattermost.com/security-updates/). [Upgrading to Mattermost v3.5.1](https://docs.mattermost.com/administration/upgrade.html) is highly recommended. Thanks to Alyssa Milburn and Harrison Healey for contributing security reports through the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+- Mattermost v3.5.1 contains multiple [security updates](https://mattermost.com/security-updates/). [Upgrading to Mattermost v3.5.1](/administration/upgrade.html) is highly recommended. Thanks to Alyssa Milburn and Harrison Healey for contributing security reports through the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
 
 ### Highlights
 
@@ -8214,7 +8217,7 @@ Thanks also to those who reported bugs that benefited the release, in alphabetic
  - Added server-side in-memory caching to reduce DB reads/writes.
 
 #### Connection Security
-- TLS is now supported directly on the Mattermost server. Learn more in our [documentation](https://docs.mattermost.com/install/config-tls-mattermost.html).
+- TLS is now supported directly on the Mattermost server. Learn more in our [documentation](/install/config-tls-mattermost.html).
 - Support for automatically fetching certificates through Let's Encrypt.
 
 #### Minio File Storage
@@ -8503,10 +8506,10 @@ Release date: 2016-09-16
 ### Highlights
 
 #### Zapier Integration
-- Integrate over [700 public cloud applications](https://zapier.com/zapbook/) using [Zapier](https://zapier.com), with full support for Markdown formatting. To start, [click here to accept an invitation to Zapier](https://zapier.com/developer/invite/47050/902cde1eb8e0b3eb1223a2cf05331abd/), then [follow the setup guide](https://docs.mattermost.com/integrations/zapier.html).
+- Integrate over [700 public cloud applications](https://zapier.com/zapbook/) using [Zapier](https://zapier.com), with full support for Markdown formatting. To start, [click here to accept an invitation to Zapier](https://zapier.com/developer/invite/47050/902cde1eb8e0b3eb1223a2cf05331abd/), then [follow the setup guide](/integrations/zapier.html).
 
 #### OAuth 2.0 Service Provider
-- Users with an account on a Mattermost server can securely sign in to third-party applications with an OAuth 2.0 protocol. See [documentation](https://docs.mattermost.com/developer/oauth-2-0-applications.html) to learn more.
+- Users with an account on a Mattermost server can securely sign in to third-party applications with an OAuth 2.0 protocol. See [documentation](/developer/oauth-2-0-applications.html) to learn more.
 
 #### Improved Notifications and Status Indicators
 - Users can now control how often email notifications are sent
@@ -8528,7 +8531,7 @@ Release date: 2016-09-16
 #### System Console
 - Added connection security option `PLAIN` for SMTP
 - Salt settings in the config.json now ship blank and are autogenerated after install
-- Added [Error and Diagnostics Reporting option](https://docs.mattermost.com/administration/config-settings.html#enable-diagnostics-and-error-reporting) to help Mattermost, Inc. improve reliability and performance for your deployment configuration.
+- Added [Error and Diagnostics Reporting option](/administration/config-settings.html#enable-diagnostics-and-error-reporting) to help Mattermost, Inc. improve reliability and performance for your deployment configuration.
 
 #### Slack Import
 - Slack import now imports @mentions mapped to user names
@@ -8575,7 +8578,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
     - Added `"EmailBatchingInterval": 30` to specify the maximum frequency, in seconds, which the batching job checks for new notifications.
 
  - Under `LogSettings` in `config.json`:
-    - Added `"EnableDiagnostics": true` to increase reliability and performance of Mattermost for your deployment configuration by sending encrypted [error reporting and diagnostic information](https://docs.mattermost.com/administration/config-settings.html#enable-diagnostics-and-error-reporting) to Mattermost, Inc.
+    - Added `"EnableDiagnostics": true` to increase reliability and performance of Mattermost for your deployment configuration by sending encrypted [error reporting and diagnostic information](/administration/config-settings.html#enable-diagnostics-and-error-reporting) to Mattermost, Inc.
 
 **Additional Changes to Enterprise Edition:**
 
@@ -8660,7 +8663,7 @@ Expected release date: 2016-08-16
 
 ### Security Update
 
-- Mattermost v3.3.0 contains [security updates](https://mattermost.com/security-updates/). [Upgrading to Mattermost v3.3.0](https://docs.mattermost.com/administration/upgrade.html) is highly recommended.
+- Mattermost v3.3.0 contains [security updates](https://mattermost.com/security-updates/). [Upgrading to Mattermost v3.3.0](/administration/upgrade.html) is highly recommended.
 - Thanks to Bastian Ike for contributing security reports through the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
 
 ### Highlights
@@ -8684,7 +8687,7 @@ Expected release date: 2016-08-16
 - Users can sign in to Mattermost with their Office 365 credentials and new Mattermost user accounts are automatically created on first login.
 
 #### High Availability Mode (Beta) ([Enterprise E20](https://mattermost.com/pricing-self-managed/))
-- Support for highly available application servers configurable in the System Console and configuration files. See [documentation](https://docs.mattermost.com/deployment/cluster.html) for more details.
+- Support for highly available application servers configurable in the System Console and configuration files. See [documentation](/deployment/cluster.html) for more details.
 
 ### Improvements
 
@@ -8928,7 +8931,7 @@ Release date: 2016-07-16
 
 ### Security Update
 
-- Mattermost v3.2.0 contains [multiple security updates](https://mattermost.com/security-updates/). [Upgrading to Mattermost v3.2.0](https://docs.mattermost.com/administration/upgrade.html) is highly recommended.
+- Mattermost v3.2.0 contains [multiple security updates](https://mattermost.com/security-updates/). [Upgrading to Mattermost v3.2.0](/administration/upgrade.html) is highly recommended.
 - Thanks to Bastian Ike, Mohammad Razavi, Steve MacQuiddy, Christer Mjellem Strand and Jonas Arneberg for contributing security reports through the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
 
 ### Highlights
@@ -8989,7 +8992,7 @@ Release date: 2016-07-16
 
 **[Enterprise E10, E20](https://mattermost.com/pricing-self-managed/)**
 
--  [New command line tools](https://docs.mattermost.com/administration/command-line-tools.html) added, such as adding and removing users from channels, and restoring previously deleted channels.
+-  [New command line tools](/administration/command-line-tools.html) added, such as adding and removing users from channels, and restoring previously deleted channels.
 - Added a button to manually trigger AD/LDAP synchronization.
 - Updating AD/LDAP Synchronization Interval to no longer require a server restart to take effect.
 - Improved logging for AD/LDAP synchronization.
@@ -9026,7 +9029,7 @@ Release date: 2016-07-16
 - Direct Messages modal loads faster since it is no longer cleared from memory each time it closes.
 - Graphs in the **System Console > Site Statistics** now have the same start date for comparison.
 - Fixed an issue where new languages are not added by default. Any server which is upgraded to Mattermost v3.1 will need to manually set **System Console > Localization > Available Languages** blank to have new languages added by default.
-- Previously, a few shortcuts that used CTRL were overwriting existing messaging shortcuts in Mac. This has been changed so they only work with CMD. See [documentation](https://docs.mattermost.com/help/messaging/keyboard-shortcuts.html) for more details.
+- Previously, a few shortcuts that used CTRL were overwriting existing messaging shortcuts in Mac. This has been changed so they only work with CMD. See [documentation](/help/messaging/keyboard-shortcuts.html) for more details.
 - Email body now contains the `siteURL` when inviting a user by email via CLI (command line interface)
 - YouTube videos now stop playing when collapsed.
 - Fixed error when adding an incoming webhook to a public channel the user is currently not in.
@@ -9067,7 +9070,7 @@ The following config settings will only work on servers with an Enterprise Licen
    - Added `"RestrictCustomEmojiCreation": "all"` to set the permissions required to create custom emoji.
 
 - Under `SamlSettings` in `config.json`:
-   - Added `"Enable": false` to allow login using SAML. See [documentation](https://docs.mattermost.com/deployment/sso-saml.html) to learn more about configuring SAML for Mattermost.
+   - Added `"Enable": false` to allow login using SAML. See [documentation](/deployment/sso-saml.html) to learn more about configuring SAML for Mattermost.
    - Added `"Verify": false` to control whether Mattermost verifies the signature sent from the SAML Response matches the Service Provider Login URL.
    - Added `"Encrypt": false`to control whether Mattermost will decrypt SAML Assertions encrypted with your Service Provider Public Certificate.
    - Added `"IdpUrl": ""` to set the SAML SSO URL where Mattermost sends a SAML request to start login sequence.
@@ -9147,7 +9150,7 @@ Release date: 2016-06-16
 
 ### Security Update
 
-- Mattermost v3.1.0 contains [multiple security updates](https://mattermost.com/security-updates/). [Upgrading to Mattermost v3.1.0](https://docs.mattermost.com/administration/upgrade.html) is highly recommended.
+- Mattermost v3.1.0 contains [multiple security updates](https://mattermost.com/security-updates/). [Upgrading to Mattermost v3.1.0](/administration/upgrade.html) is highly recommended.
 - Thanks to Uchida Taishi for contributing security reports through the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
 
 ### Highlights
@@ -9156,7 +9159,7 @@ Release date: 2016-06-16
 
 - Added keyboard shortcuts for navigation, messages and files
 - Added channel switcher available from CTRL+K in Windows and CMD+K on Mac.
-- See [shortcut documentation](https://docs.mattermost.com/help/messaging/keyboard-shortcuts.html) or use the `/shortcuts` slash command for details.
+- See [shortcut documentation](/help/messaging/keyboard-shortcuts.html) or use the `/shortcuts` slash command for details.
 
 #### Upgraded System Console
 
@@ -9213,11 +9216,11 @@ Messaging
 Localization
 
 - New settings to configure localization options for teams, including default language.
-- [Mattermost Translation Server](https://translate.mattermost.com/) upgraded to better support [localization process](https://docs.mattermost.com/developer/localization.html).
+- [Mattermost Translation Server](https://translate.mattermost.com/) upgraded to better support [localization process](/developer/localization.html).
 
 Integrations
 
-- Integrations now support advanced formatting through [message attachments](https://docs.mattermost.com/developer/message-attachments.html).
+- Integrations now support advanced formatting through [message attachments](/developer/message-attachments.html).
 - Added support for sending `@channel` notifications by using `<!channel>`.
 - Added support for raw new lines in the text payload.
 - Added validation for command trigger words.
@@ -9229,7 +9232,7 @@ Onboarding
 Enterprise
 
 - (E10 and higher): Added AD/LDAP synchronization to automatically deactivate Mattermost accounts after AD/LDAP accounts are deactivated. Previous behavior only checked AD/LDAP credentials on sign-in. Synchronization time defaults to one hour and is configurable from **System Console** > **Synchronization Interval**.
-- (E20 and higher): Added support for [high availability database configurations](https://docs.mattermost.com/deployment/ha.html) using read replicas and a manual failover process to deploy database reconfigurations without stopping the Mattermost server.
+- (E20 and higher): Added support for [high availability database configurations](/deployment/ha.html) using read replicas and a manual failover process to deploy database reconfigurations without stopping the Mattermost server.
 
 ### Bug Fixes
 
@@ -9345,7 +9348,7 @@ Notes on patch releases:
 
 ### Security Update
 
-- Mattermost v3.0.3 contains multiple security updates. [Upgrading to Mattermost v3.0.3](https://docs.mattermost.com/administration/upgrade.html#upgrading-to-team-edition-3-0-x-from-2-x) is highly recommended.
+- Mattermost v3.0.3 contains multiple security updates. [Upgrading to Mattermost v3.0.3](/administration/upgrade.html#upgrading-to-team-edition-3-0-x-from-2-x) is highly recommended.
 - Thanks to Yoni Ramon from the Tesla security team, Andreas Lindh and Uchida Ta for contributing security reports through the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
 
 ### Major Version Release
@@ -9541,7 +9544,7 @@ Release date: 2016-04-16
 
 ### Security Update
 
-- Mattermost v2.2.0 contains multiple security updates. [Upgrading to Mattermost v2.2.0](https://docs.mattermost.com/administration/upgrade.html#upgrading-team-edition) is highly recommended.
+- Mattermost v2.2.0 contains multiple security updates. [Upgrading to Mattermost v2.2.0](/administration/upgrade.html#upgrading-team-edition) is highly recommended.
 - Thanks to Jim Hebert from Fitbit Security, Andreas Lindh, and Uchida Taishi for contributing security reports through the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
 
 ### Highlights
@@ -9557,7 +9560,7 @@ Release date: 2016-04-16
 
 #### TPNS and EAS options
 
-- [Enterprise App Store](https://docs.mattermost.com/deployment/push.html#enterprise-app-store-eas) (EAS) and [Test Push Notification Service](https://docs.mattermost.com/deployment/push.html#test-push-notifications-service-tpns) (TPNS) option are now included in **System Console** > **Email Settings** > **Push Notification Settings** as built-in options.
+- [Enterprise App Store](/deployment/push.html#enterprise-app-store-eas) (EAS) and [Test Push Notification Service](/deploy/mobile-hpns.html#hosted-push-notifications-service-hpns) (TPNS) option are now included in **System Console** > **Email Settings** > **Push Notification Settings** as built-in options.
 
 ### Languages
 
@@ -9567,7 +9570,7 @@ Release date: 2016-04-16
 
 User Interface
 
-- New themes can be imported into Mattermost user interface from [production documentation](https://docs.mattermost.com/help/settings/theme-colors.html#custom-theme-examples).
+- New themes can be imported into Mattermost user interface from [production documentation](/help/settings/theme-colors.html#custom-theme-examples).
 
 ### Bug Fixes
 
@@ -9612,7 +9615,7 @@ Release date: 2016-03-16
 
 ### Security Update
 
-Mattermost v2.1.0 contains a security update for a cross-site scripting vulnerability in Mattermost v1.2, v1.3, v1.4 and v2.0. [Upgrading to Mattermost v2.1.0](https://docs.mattermost.com/administration/upgrade.html#upgrading-team-edition) is highly recommended. Thanks to Luke Arntson for the [RPD report](https://mattermost.org/responsible-disclosure-policy/).
+Mattermost v2.1.0 contains a security update for a cross-site scripting vulnerability in Mattermost v1.2, v1.3, v1.4 and v2.0. [Upgrading to Mattermost v2.1.0](/administration/upgrade.html#upgrading-team-edition) is highly recommended. Thanks to Luke Arntson for the [RPD report](https://mattermost.org/responsible-disclosure-policy/).
 
 ### New Features
 
@@ -9762,7 +9765,7 @@ Localization
 
 Slash Commands
 
-- Added [Slack-compatible slash commands](https://docs.mattermost.com/developer/slash-commands.html) to integrate with external systems
+- Added [Slack-compatible slash commands](/developer/slash-commands.html) to integrate with external systems
 
 iOS
 
@@ -10153,13 +10156,13 @@ Many thanks to our external contributors. In no particular order:
 
 Mattermost v1.2.1 is a Quality Release addressing a security issue in v1.2.0 affecting a newly introduced outgoing webhooks feature. Specifically, in v1.2.0 there was a check missing from outgoing webhooks, so a team member creating outgoing webhooks could in theory find a way to listen to messages in private channels containing popular words like "a", "the", "at", etc. For added security, Mattermost v1.2.1 now installs with incoming and outgoing webhooks disabled by default.
 
-To limit the impact of this security issue, Mattermost v1.2.0 has been removed from the source repo. It is recommended that anyone who's installed v1.2.0 upgrade to v1.2.1 via [the procedure described in the Mattermost Upgrade Guide](https://docs.mattermost.com/administration/upgrade.html#upgrade-team-edition-for-2-2-x-and-earlier).
+To limit the impact of this security issue, Mattermost v1.2.0 has been removed from the source repo. It is recommended that anyone who's installed v1.2.0 upgrade to v1.2.1 via [the procedure described in the Mattermost Upgrade Guide](/administration/upgrade.html#upgrade-team-edition-for-2-2-x-and-earlier).
 
 ### Release Highlights
 
 #### Outgoing webhooks
 
-- Mattermost users can now interact with external applications using [outgoing webhooks](https://docs.mattermost.com/developer/webhooks-outgoing.html)
+- Mattermost users can now interact with external applications using [outgoing webhooks](/developer/webhooks-outgoing.html)
 - An [application template](https://github.com/mattermost/mattermost-integration-giphy) demonstrating user queries sent to the Giphy search engine via Mattermost webhooks now available
 - A community application, [Matterbridge](https://github.com/42wim/matterbridge?files=1), shows how to use webhooks to connect Mattermost with IRC
 
@@ -10199,7 +10202,7 @@ Search
 
 Integrations
 
-- [Outgoing webhooks](https://docs.mattermost.com/developer/webhooks-outgoing.html) now available
+- [Outgoing webhooks](/developer/webhooks-outgoing.html) now available
 - Made available [application template showing outgoing webhooks working with Mattermost and external application](https://github.com/mattermost/mattermost-integration-giphy)
 
 User Interface
@@ -10304,7 +10307,7 @@ Released 2015-10-20
 
 This is a Quality Release (v1.1.1) and recommended only for users needing a fix to the specific issue listed below. All other users should use the most recent major stable build release (v1.1.0).
 
-[View more information on Mattermost release numbering](https://docs.mattermost.com/process/release-process.html#release-numbering).
+[View more information on Mattermost release numbering](/process/release-process.html#release-numbering).
 
 ### Release Purpose
 
@@ -10316,7 +10319,7 @@ This was problematic for installing Mattermost with GitLab omnibus since GitLab 
 
 Therefore Mattermost v1.1.1 was created that can upgrade the database in Mattermost v0.7 to Mattermost v1.1 directly.
 
-Users who configured Mattermost v0.7 within GitLab via the `config.json` file should consult [documentation on upgrading configurations from Mattermost v0.7 to Mattermost v1.1](https://docs.mattermost.com/administration/upgrade.html#upgrade-team-edition-for-2-2-x-and-earlier).
+Users who configured Mattermost v0.7 within GitLab via the `config.json` file should consult [documentation on upgrading configurations from Mattermost v0.7 to Mattermost v1.1](/administration/upgrade.html#upgrade-team-edition-for-2-2-x-and-earlier).
 
 #### Removes 32-char limit on salts
 
@@ -10412,7 +10415,7 @@ Markdown support is now available across messages, comments and channel descript
 - **Tables** - for keeping things organized
 - **Emoticons** - translation of emoji codes to images like :sheep: :boom: :rage1: :+1:
 
-See [documentation](https://docs.mattermost.com/help/messaging/formatting-text.html) for full details.
+See [documentation](/help/messaging/formatting-text.html) for full details.
 
 #### Themes
 

@@ -15,7 +15,7 @@ If you are still having trouble with configuration, see further troubleshooting 
 
 2. System Administrator locks themselves out of the system
 
-  If the System Administrator is locked out of the system during SAML configuration process, they can set an existing account to System Administrator using `a command line tool <https://docs.mattermost.com/getting-started/admin-onboarding-tasks.html#common-tasks>`__.
+  If the System Administrator is locked out of the system during SAML configuration process, they can set an existing account to System Administrator using `a command line tool </getting-started/admin-onboarding-tasks.html#common-tasks>`__.
 
 3. Received error message: `An account with that username already exists. Please contact your Administrator.`
 

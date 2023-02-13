@@ -1,17 +1,8 @@
 Enterprise roll out checklist
 ==============================
 
-|all-plans| |self-hosted|
-
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
+.. include:: ../_static/badges/ent-selfhosted.rst
+  :start-after: :nosearch:
 
 This checklist is intended to serve as a guide to Enterprises who are rolling out Mattermost to thousands of users. 
 
@@ -114,8 +105,8 @@ Much of the preparation work is focused on ensuring the environment is deployed 
 
 - Evaluate external network access requirements
  
- - The `Mattermost Marketplace <https://mattermost.com/marketplace>`__ is a service hosted by Mattermost that functions as a central place to store the current versions of available Mattermost integrations.  See `Enable Remote Marketplace <https://docs.mattermost.com/configure/configuration-settings.html?#enable-remote-marketplace>`__ documentation for details about required external network access.
- - Mattermost supports external GIF providers. See `GIF Commands <https://docs.mattermost.com/configure/configuration-settings.html?#gif-commands>`__ configuration documentation for details about required external network access.
+ - The `Mattermost Marketplace <https://mattermost.com/marketplace>`__ is a service hosted by Mattermost that functions as a central place to store the current versions of available Mattermost integrations.  See `Enable Remote Marketplace </configure/configuration-settings.html?#enable-remote-marketplace>`__ documentation for details about required external network access.
+ - Mattermost supports external GIF providers. See `GIF Commands </configure/configuration-settings.html?#gif-commands>`__ configuration documentation for details about required external network access.
 
 3. Create development, staging, and production environments
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -149,7 +140,7 @@ Much of the preparation work is focused on ensuring the environment is deployed 
 
   - (Optional) Set up configuration management via the database instead of a config file for high available environments
 
-   - Resource: https://docs.mattermost.com/configure/configuation-in-mattermost-database.html
+   - Resource: https://docs.mattermost.com/configure/configuation-in-a-database.html
 
  - Install and configure File Storage
 
@@ -286,7 +277,7 @@ Now that you have an environment in place, we recommend working through the foll
 4. Deploy client apps
 ^^^^^^^^^^^^^^^^^^^^^
 
-- Roll out Desktop App 
+- Roll out desktop app 
 
  - Resource: https://docs.mattermost.com/install/desktop-app-install.html
  - Resource: https://docs.mattermost.com/deploy/desktop-app.html
@@ -294,7 +285,7 @@ Now that you have an environment in place, we recommend working through the foll
 
   - Resource: https://docs.mattermost.com/install/desktop-msi-installer-and-group-policy-install.html
 
-- Roll out Mobile App
+- Roll out mobile app
 
  - Resource: https://docs.mattermost.com/deploy/mobile-overview.html
  - (Optional) Use an EMM provider

@@ -1,17 +1,8 @@
 Installing Mattermost on CentOS, Oracle Linux, and Scientific Linux
 ===================================================================
 
-|all-plans| |self-hosted|
-
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 To install Mattermost on CentOS, Oracle Linux, and Scientific Linux, you can use the instructions for installing Mattermost on RHEL. With the exception of the operating system that you install, the process is identical.
 

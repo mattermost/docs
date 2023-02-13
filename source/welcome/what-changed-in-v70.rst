@@ -1,32 +1,8 @@
 What changed in Mattermost v7.0?
 ================================
 
-|all-plans| |cloud| |self-hosted|
-
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |enterprise| image:: ../images/enterprise-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in the Mattermost Enterprise subscription plan.
-
-.. |professional| image:: ../images/professional-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in the Mattermost Professional subscription plan.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/sign-up
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 .. |view-info-icon| image:: ../images/information-outline_F02FD.svg
   :height: 24px
@@ -49,27 +25,27 @@ What changed in Mattermost v7.0?
   :alt: Access additional message actions using the More actions icon.
 
 
-In Mattermost v7.0, we've changed where you can find channel information, where you can access your Mattermost integrations and their related actions, and we've made it easier to format your messages. Whether you're new to Mattermost, or a long-time user, this document will help you start using these new features and introduce you to new ways of navigating the product.
+In Mattermost v7.0 self-hosted deployments, we've changed where you can find channel information, where you can access your Mattermost integrations and their related actions, and we've made it easier to format your messages. Whether you're new to Mattermost, or a long-time user, this document will help you start using these new features and introduce you to new ways of navigating the product.
 
 Channel information
 -------------------
 
 When creating channels, you're prompted to provide context that helps other users understand the focus of the channel. From Mattermost v7.0, these channel details appear in both the center pane under the channel name and in a new channel information pane on the right. 
 
-You can show or hide channel information in the right pane by selecting the **View Info** |view-info-icon| icon located in the top right corner of the center pane, or by using the keyboard shortcut CMD/CTRL+ALT+I.
+You can show or hide channel information in the right pane by selecting the **View Info** |view-info-icon| icon located in the top right corner of the center pane, or by pressing :kbd:`Ctrl` :kbd:`Alt` :kbd:`I` on Windows or Linux, or by pressing :kbd:`⌘` :kbd:`⌥` :kbd:`I`. on Mac.
 
 .. image:: ../images/channel-info.png
-    :alt: Access channel information by using the View Info icon.
+    :alt: Access channel information by using the View Info icon or by using keyboard shortcuts.
 
 Apps bar (beta)
 ---------------
 
-We're moving access to your enabled Mattermost integrations, including the icons for Playbooks and Boards, from the channel header in the center pane. Their new home is a vertical pane located to far right of the Mattermost screen called the Apps Bar.
+We've moving access to your enabled Mattermost integrations, including the icons for Playbooks and Boards, from the channel header in the center pane. Their new home is a vertical pane located to the far right of the Mattermost screen called the Apps Bar.
 
 .. image:: ../images/app-bar.png
     :alt: You can access your Mattermost integrations from the Apps Bar when your System Admin enables this feature in the System Console.
 
-In self-hosted Mattermost v7.0 deployments, the Apps Bar is hidden and integrations continue to display in the channel header by default. Your System Admin can `enable the Apps Bar in the System Console <https://docs.mattermost.com/configure/configuration-settings.html#enable-app-bar>`__. When enabled, access to all Mattermost integrations, with the exception of calls beta functionality, moves to the far right pane.
+In self-hosted Mattermost v7.0 deployments, the Apps Bar is hidden and integrations continue to display in the channel header by default. Your System Admin can `enable the Apps Bar in the System Console </configure/configuration-settings.html#enable-app-bar>`__. When enabled, access to all Mattermost integrations, with the exception of calls beta functionality, moves to the far right pane.
 
 .. note:: 
     
@@ -90,7 +66,7 @@ We’ve moved message actions for Mattermost integrations to their own dedicated
 Message formatting toolbar
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Formatting your messages is easier with the introduction of an message formatting toolbar that includes shortcuts to preview messages, react with emojis, strike out text, add headings, format numbered steps, add bullets, format content as code, and hide the formatting options. See the `format messages <https://docs.mattermost.com/channels/format-messages.html>`__ documentation to learn more about the many ways you can format your messages in Mattermost using both Markdown and using the new message formatting toolbar.
+Formatting your messages is easier with the introduction of an message formatting toolbar that includes shortcuts to preview messages, react with emojis, strike out text, add headings, format numbered steps, add bullets, format content as code, and hide the formatting options. See the `format messages </channels/format-messages.html>`__ documentation to learn more about the many ways you can format your messages in Mattermost using both Markdown and using the new message formatting toolbar.
 
 .. image:: ../images/message-formatting-toolbar.png
     :alt: Use the message formatting editor to format your messages without having to use Markdown syntax.

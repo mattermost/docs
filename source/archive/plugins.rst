@@ -73,7 +73,7 @@ There are two settings in **System Console > Plugin Management**:
 - **Enable Marketplace:** Turns the Plugin Marketplace user interface on or off for System Administrators (end users cannot see the Plugin Marketplace).
 - **Marketplace URL:** The location of the Marketplace server to query for new plugins. Mattermost hosts a Plugin Marketplace for the community and this is the default value for this field. You can also set up your own Marketplace server.
 
-When you first access the Marketplace, your Mattermost server will attempt to contact the Mattermost Plugin Marketplace server and return a list of available plugins that are appropriate based on the server version that is currently running. Only your server version and search query is passed over to the Mattermost Plugin Marketplace; we retain an anonymized record for product analytics whenever a new plugin is installed, unless you have opted out of `Telemetry <https://docs.mattermost.com/manage/telemetry.html>`__.
+When you first access the Marketplace, your Mattermost server will attempt to contact the Mattermost Plugin Marketplace server and return a list of available plugins that are appropriate based on the server version that is currently running. Only your server version and search query is passed over to the Mattermost Plugin Marketplace; we retain an anonymized record for product analytics whenever a new plugin is installed, unless you have opted out of `Telemetry </manage/telemetry.html>`__.
 
 The `Plugin Marketplace server code <https://github.com/mattermost/mattermost-marketplace>`__ is available as an open source project and can be used to set up your own private Marketplace if desired.
 
@@ -287,14 +287,14 @@ With plugin uploads enabled, navigate to **System Console > Plugins > Management
 
   When ``RequirePluginSignature`` is ``true``, plugin uploads cannot be enabled, and may only be installed via the Plugin Marketplace (which verifies Plugin Code Signatures).
 
-Custom plugins may also be installed via the `command line interface <https://docs.mattermost.com/manage/command-line-tools.html#mattermost-plugin>`__.
+Custom plugins may also be installed via the `command line interface </manage/command-line-tools.html#mattermost-plugin>`__.
 
 While no longer recommended, plugins may also be installed manually by unpacking the plugin bundle inside the ``plugins`` directory of a Mattermost installation.
 
 Plugin uploads in High Availability mode
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Prior to Mattermost 5.14, Mattermost servers configured for `High Availability mode <https://docs.mattermost.com/scale/high-availability-cluster.html>`_ required plugins to be installed manually. As of Mattermost 5.14, plugins uploaded via the System Console or the command line interface are persisted to the configured file store and automatically installed on all servers that join the cluster.
+Prior to Mattermost 5.14, Mattermost servers configured for `High Availability mode </scale/high-availability-cluster.html>`_ required plugins to be installed manually. As of Mattermost 5.14, plugins uploaded via the System Console or the command line interface are persisted to the configured file store and automatically installed on all servers that join the cluster.
 
 Manually installed plugins remain supported, but must be individually installed on each server in the cluster.
 

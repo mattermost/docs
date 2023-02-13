@@ -2,19 +2,153 @@
 
 Latest Mattermost Mobile Apps releases:
 
-- [1.53.0 Release](#release)
-- [1.52.0 Release](#id1)
-- [1.51.2 Release](#id5)
-- [1.51.1 Release](#id7)
-- [1.51.0 Release](#id11)
-- [1.50.1 Release](#id17)
+- [2.0.1 Release](#release)
+- [2.0.0 Release](#id1)
+- [1.55.1 Release](#id4)
+- [1.55.0 Release](#id8)
+- [1.54.0 Release](#id13)
+- [1.53.0 Release](#id18)
+
+## 2.0.1 Release
+- Release Date: February 7, 2023
+- Server Versions Supported: Server v7.1.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
+
+### Compatibility
+ - **Upgrade to server version v7.1.0 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/upgrade/extended-support-release.html) (ESR) 6.3.0 has ended and upgrading to server ESR v7.1.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
+ - iPhone 5s devices and later with iOS 12.1+ is required.
+
+### Improvements
+ - Added support for Android tablets and foldables.
+ - Added support to rotate iPads in all orientations.
+ - Improved the mobile emoji picker user interface and interaction.
+
+### Bug Fixes
+ - Fixed a crash when dismissing a notification on Android.
+ - Fixed a potential crash when trying access non existent database records.
+ - Fixed opening a link when the server is hosted on a subpath.
+ - Fixed an issue with uploading certain files.
+ - Fixed an issue with downloading certain files from the search results.
+ - Disabled top domain level verification.
+ - Fixed some potential crashes in the iOS Share Extension and Notification Service.
+ - Fixed some screens in the login flow not showing the content when animations are turned off in the device settings.
+ - Fixed an issue where new Direct and Group Messages sometimes did not appear in the channel list until reopening the app.
+ - The permissions required to receive push notifications is now always requested if needed.
+ - Fixed ANRs found with some Android devices.
+ - Fixed an issue where the keyboard changed on iOS when a code block was started.
+ - Fixed an issue where the EMM configuration for VPN timeouts were in ``seconds`` instead of in ``ms``.
+ - Fixed an issue with markdown bolded strings.
+ - Fixed an issue where the markdown for mentions did not inherit heading fonts.
+ - Fixed an issue where a crash occurred when attempting to download a profile image.
+ 
+### Known Issues
+ - Selecting an item from autocomplete doubles tilde and slash characters [MM-50351](https://mattermost.atlassian.net/browse/MM-50351).
+ - Users are unable to adjust the font size via the OS font size setting.
+ - **Manage Members** modal is not yet added [MM-48489](https://mattermost.atlassian.net/browse/MM-48489).
+ - Posts may remain in the local device database after data retention job has been run [MM-47548](https://mattermost.atlassian.net/browse/MM-47548).
+ - Drafts are lost when following a notification [MM-47373](https://mattermost.atlassian.net/browse/MM-47373).
+ - Moving posts with the Wrangler plugin causes database "Unique key" errors [MM-44960](https://mattermost.atlassian.net/browse/MM-44960).
+ - Some pixel phones on Android 12+ might not go past the login screen. This is a known issue with the OS and the current workaround is to restart the device.
+
+## 2.0.0 Release
+- Release Date: January 16, 2023
+- Server Versions Supported: Server v7.1.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
+
+### Compatibility
+ - Please [see here](https://mattermost.com/blog/preparing-for-mobile-v2-0/) for more details on preparing for the mobile v2 release.
+ - **Upgrade to server version v7.1.0 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/upgrade/extended-support-release.html) (ESR) 6.3.0 has ended and upgrading to server ESR v7.1.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
+ - iPhone 5s devices and later with iOS 12.1+ is required.
+
+### Highlights
+
+Mattermost mobile v2.0 is a major update to the iOS and Android apps bringing support for multiple workspaces and a more stable and performant user experience that includes:
+
+ - Support for collaborating in multiple workspaces with a redesigned channel and team sidebar for easier navigation. 
+ - Improved app responsiveness to user input, faster launch, and less memory consumed when running.
+ - Improved app stability so users encounter fewer crashes and bugs, as well as reduced app hang and errors if internet connectivity becomes unstable. 
+
+Users now gain a more reliable and feature-rich application, improving their experience for collaborating with their teams on the go.
+
+### Known Issues
+ - Landscape mode doesn't work on Android tablets.
+ - Users are unable to adjust the font size via the OS font size setting.
+ - **Add Members** and **Manage Members** modals are not yet added [MM-48489](https://mattermost.atlassian.net/browse/MM-48489).
+ - Posts may remain in the local device database after data retention job has been run [MM-47548](https://mattermost.atlassian.net/browse/MM-47548).
+ - Drafts are lost when following a notification [MM-47373](https://mattermost.atlassian.net/browse/MM-47373).
+ - Moving posts with the Wrangler plugin causes database "Unique key" errors [MM-44960](https://mattermost.atlassian.net/browse/MM-44960).
+ - Some pixel phones on Android 12+ might not go past the login screen. This is a known issue with the OS and the current workaround is to restart the device.
+ - The app crashes when uploading a PDF file [MM-49707](https://mattermost.atlassian.net/browse/MM-49707).
+ - The ``timeoutVPN`` values are not converted from milliseconds to seconds in v2 [MM-49722](https://mattermost.atlassian.net/browse/MM-49722).
+
+## 1.55.1 Release
+- Release Date: September 15, 2022
+- Server Versions Supported: Server v6.3.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
+
+### Compatibility
+ - Mobile App v1.55.1 is our first extended support release (ESR). We are very excited about the upcoming general availability of the v2.0 mobile app in December. We recognize that some customers may have a custom build of Mattermost mobile and need more time to test or implement their custom changes on mobile v2.0. The mobile ESR will be supported until July 2023. v1.55.1 will receive critical security fixes only and will be released as needed via unsigned builds to our mobile GitHub repository.
+ - **Upgrade to server version v6.3.0 or later is required.** Support for server [Extended Support Release](/upgrade/extended-support-release.html) (ESR) 5.37 has ended and upgrading to server ESR v6.3.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
+ - iPhone 5s devices and later with iOS 12.1+ is required.
+
+### Bug Fixes
+ - Fixed an issue where users were unable to convert public channels to private.
+ - Fixed an issue where selected boxes in app forms and interactive dialogs could not be cleared.
+
+### Known Issues
+ - Channel sidebar disappears sometimes when the channel categories are not fetched from the server.
+ - Posts sometimes get stuck behind the post textbox on iPad.
+
+## 1.55.0 Release
+- Release Date: August 16, 2022
+- Server Versions Supported: Server v6.3.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
+
+### Compatibility
+ - **Upgrade to server version v6.3.0 or later is required.** Support for server [Extended Support Release](/upgrade/extended-support-release.html) (ESR) 5.37 has ended and upgrading to server ESR v6.3.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
+ - iPhone 5s devices and later with iOS 12.1+ is required.
+
+### Improvements
+ - Calls: Implemented WebSocket reconnection support.
+
+### Bug Fixes
+ - Calls: Fixed a crash on "cannot replaceTrack after peer is destroyed" error.
+ - Fixed an issue with sharing of text alongside an image on Android.
+ - Fixed an issue on Android where clicking on a hashtag from the Saved Posts modal returned the user to the channel instead of taking the user to the search results.
+ - Fixed an issue where the select modal value was not getting populated.
+
+### Known Issues
+ - Channel sidebar disappears sometimes when the channel categories are not fetched from the server.
+ - Posts sometimes get stuck behind the post textbox on iPad.
+
+## 1.54.0 Release
+- Release Date: July 15, 2022
+- Server Versions Supported: Server v6.3.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
+
+### Compatibility
+ - **Upgrade to server version v6.3.0 or later is required.** Support for server [Extended Support Release](/upgrade/extended-support-release.html) (ESR) 5.37 has ended and upgrading to server ESR v6.3.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
+ - iPhone 5s devices and later with iOS 12.1+ is required.
+
+### Improvements
+ - Calls: Added support for accepting advanced ICE server configurations through the config.
+ - Calls: Added support for using Calls when the Mattermost installation is served under a subpath.
+ - Calls: Added support for generating short-lived TURN credentials.
+
+### Bug Fixes
+ - Fixed an issue where Latex in root posts crashed the global Threads screen.
+
+### Known Issues
+ - The app crashes when the session length for mobile is changed via webapp.
+ - Channel sidebar disappears sometimes when the channel categories are not fetched from the server.
+ - Posts sometimes get stuck behind the post textbox on iPad.
 
 ## 1.53.0 Release
 - Release Date: June 15, 2022
 - Server Versions Supported: Server v6.3.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
 
 ### Compatibility
- - **Upgrade to server version v6.3.0 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/upgrade/extended-support-release.html) (ESR) 5.37 has ended and upgrading to server ESR v6.3.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - **Upgrade to server version v6.3.0 or later is required.** Support for server [Extended Support Release](/upgrade/extended-support-release.html) (ESR) 5.37 has ended and upgrading to server ESR v6.3.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
  - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
  - iPhone 5s devices and later with iOS 12.1+ is required.
 
@@ -32,7 +166,7 @@ Latest Mattermost Mobile Apps releases:
 - Server Versions Supported: Server v6.3.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
 
 ### Compatibility
- - **Upgrade to server version v6.3.0 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/upgrade/extended-support-release.html) (ESR) 5.37 has ended and upgrading to server ESR v6.3.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - **Upgrade to server version v6.3.0 or later is required.** Support for server [Extended Support Release](/upgrade/extended-support-release.html) (ESR) 5.37 has ended and upgrading to server ESR v6.3.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
  - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
  - iPhone 5s devices and later with iOS 12.1+ is required.
 
@@ -49,7 +183,7 @@ Latest Mattermost Mobile Apps releases:
 - Server Versions Supported: Server v6.3.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
 
 ### Compatibility
- - **Upgrade to server version v6.3.0 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/upgrade/extended-support-release.html) (ESR) 5.37 has ended and upgrading to server ESR v6.3.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - **Upgrade to server version v6.3.0 or later is required.** Support for server [Extended Support Release](/upgrade/extended-support-release.html) (ESR) 5.37 has ended and upgrading to server ESR v6.3.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
  - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
  - iPhone 5s devices and later with iOS 12.1+ is required.
 
@@ -63,7 +197,7 @@ Latest Mattermost Mobile Apps releases:
 - Server Versions Supported: Server v6.3.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
 
 ### Compatibility
- - **Upgrade to server version v6.3.0 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/upgrade/extended-support-release.html) (ESR) 5.37 has ended and upgrading to server ESR v6.3.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - **Upgrade to server version v6.3.0 or later is required.** Support for server [Extended Support Release](/upgrade/extended-support-release.html) (ESR) 5.37 has ended and upgrading to server ESR v6.3.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
  - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
  - iPhone 5s devices and later with iOS 12.1+ is required.
 
@@ -77,7 +211,7 @@ Latest Mattermost Mobile Apps releases:
 - Server Versions Supported: Server v6.3.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
 
 ### Compatibility
- - **Upgrade to server version v6.3.0 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/upgrade/extended-support-release.html) (ESR) 5.37 has ended and upgrading to server ESR v6.3.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - **Upgrade to server version v6.3.0 or later is required.** Support for server [Extended Support Release](/upgrade/extended-support-release.html) (ESR) 5.37 has ended and upgrading to server ESR v6.3.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
  - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
  - iPhone 5s devices and later with iOS 12.1+ is required.
 
@@ -113,7 +247,7 @@ Latest Mattermost Mobile Apps releases:
 - Server Versions Supported: Server v5.37.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
 
 ### Compatibility
- - **Upgrading to server version v5.37.0 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/upgrade/extended-support-release.html) (ESR) v5.31 has ended and upgrading to server ESR v5.37.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - **Upgrading to server version v5.37.0 or later is required.** Support for server [Extended Support Release](/upgrade/extended-support-release.html) (ESR) v5.31 has ended and upgrading to server ESR v5.37.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
  - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
  - iPhone 5s devices and later with iOS 12.1+ is required.
 
@@ -127,7 +261,7 @@ Latest Mattermost Mobile Apps releases:
 - Server Versions Supported: Server v5.37.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
 
 ### Compatibility
- - **Upgrade to server version v5.37.0 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/upgrade/extended-support-release.html) (ESR) 5.31 has ended and upgrading to server ESR v5.37.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - **Upgrade to server version v5.37.0 or later is required.** Support for server [Extended Support Release](/upgrade/extended-support-release.html) (ESR) 5.31 has ended and upgrading to server ESR v5.37.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
  - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
  - iPhone 5s devices and later with iOS 12.1+ is required.
 
@@ -151,7 +285,7 @@ Latest Mattermost Mobile Apps releases:
 - Server Versions Supported: Server v5.37.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
 
 ### Compatibility
- - **Upgrade to server version v5.37.0 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/administration/extended-support-release.html) (ESR) 5.31 has ended and upgrading to server ESR v5.37.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - **Upgrade to server version v5.37.0 or later is required.** Support for server [Extended Support Release](/administration/extended-support-release.html) (ESR) 5.31 has ended and upgrading to server ESR v5.37.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
  - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
  - iPhone 5s devices and later with iOS 12.1+ is required.
 
@@ -165,7 +299,7 @@ Latest Mattermost Mobile Apps releases:
 - Server Versions Supported: Server v5.37.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
 
 ### Compatibility
- - **Upgrade to server version v5.37.0 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/administration/extended-support-release.html) (ESR) 5.31 has ended and upgrading to server ESR v5.37.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - **Upgrade to server version v5.37.0 or later is required.** Support for server [Extended Support Release](/administration/extended-support-release.html) (ESR) 5.31 has ended and upgrading to server ESR v5.37.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
  - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
  - iPhone 5s devices and later with iOS 12.1+ is required.
 
@@ -193,7 +327,7 @@ Latest Mattermost Mobile Apps releases:
 - Server Versions Supported: Server v5.37.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
 
 ### Compatibility
- - **Upgrade to server version v5.37.0 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/upgrade/extended-support-release.html) (ESR) 5.31 has ended and upgrading to server ESR v5.37.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - **Upgrade to server version v5.37.0 or later is required.** Support for server [Extended Support Release](/upgrade/extended-support-release.html) (ESR) 5.31 has ended and upgrading to server ESR v5.37.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
  - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
  - iPhone 5s devices and later with iOS 12.1+ is required.
 
@@ -215,7 +349,7 @@ Latest Mattermost Mobile Apps releases:
 - Server Versions Supported: Server v5.37.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
 
 ### Compatibility
- - **Upgrade to server version v5.37.0 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/upgrade/extended-support-release.html) (ESR) 5.31 has ended and upgrading to server ESR v5.37.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - **Upgrade to server version v5.37.0 or later is required.** Support for server [Extended Support Release](/upgrade/extended-support-release.html) (ESR) 5.31 has ended and upgrading to server ESR v5.37.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
  - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
  - iPhone 5s devices and later with iOS 12.1+ is required.
 
@@ -239,7 +373,7 @@ Latest Mattermost Mobile Apps releases:
 - Server Versions Supported: Server v5.37.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
 
 ### Compatibility
- - **Upgrade to server version v5.37.0 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/upgrade/extended-support-release.html) (ESR) 5.31 has ended and upgrading to server ESR v5.37.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - **Upgrade to server version v5.37.0 or later is required.** Support for server [Extended Support Release](/upgrade/extended-support-release.html) (ESR) 5.31 has ended and upgrading to server ESR v5.37.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
  - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
  - iPhone 5s devices and later with iOS 12.1+ is required.
 
@@ -278,7 +412,7 @@ Latest Mattermost Mobile Apps releases:
 - Server Versions Supported: Server v5.37.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
 
 ### Compatibility
- - **Upgrade to server version v5.37.0 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/upgrade/extended-support-release.html) (ESR) 5.31 has ended and upgrading to server ESR v5.37.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - **Upgrade to server version v5.37.0 or later is required.** Support for server [Extended Support Release](/upgrade/extended-support-release.html) (ESR) 5.31 has ended and upgrading to server ESR v5.37.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
  - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
  - iPhone 5s devices and later with iOS 12.1+ is required.
 
@@ -296,7 +430,7 @@ Latest Mattermost Mobile Apps releases:
 - Server Versions Supported: Server v5.37.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
 
 ### Compatibility
- - **Upgrade to server version v5.37.0 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/upgrade/extended-support-release.html) (ESR) 5.31 has ended and upgrading to server ESR v5.37.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - **Upgrade to server version v5.37.0 or later is required.** Support for server [Extended Support Release](/upgrade/extended-support-release.html) (ESR) 5.31 has ended and upgrading to server ESR v5.37.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
  - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
  - iPhone 5s devices and later with iOS 12.1+ is required.
 
@@ -315,7 +449,7 @@ Latest Mattermost Mobile Apps releases:
 - Server Versions Supported: Server v5.37.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
 
 ### Compatibility
- - **Upgrade to server version v5.37.0 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/upgrade/extended-support-release.html) (ESR) 5.31 has ended and upgrading to server ESR v5.37.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - **Upgrade to server version v5.37.0 or later is required.** Support for server [Extended Support Release](/upgrade/extended-support-release.html) (ESR) 5.31 has ended and upgrading to server ESR v5.37.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
  - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
  - iPhone 5s devices and later with iOS 12.1+ is required.
 
@@ -324,7 +458,7 @@ Latest Mattermost Mobile Apps releases:
 #### Branding Changes
  - Updated the Splash Screen, app icons, and Threads illustration to align with new branding.
  - Added a new default brand theme named "Denim".
- - The existing theme names and colors, including "Mattermost", "Organization", "Mattermost Dark", and "Windows Dark" have been updated to the new "Denim", "Sapphire", "Indigo", and "Onyx" theme names and colors, respectively. Anyone using the existing themes will see slightly modified theme colors after their server or workspace is upgraded. The theme variables for the existing "Mattermost", "Organization", "Mattermost Dark", and "Windows Dark" themes will still be accessible in [our documentation](https://docs.mattermost.com/messaging/customizing-theme-colors.html#custom-theme-examples), so a custom theme can be created with these theme variables if desired. Custom themes are unaffected by this change.
+ - The existing theme names and colors, including "Mattermost", "Organization", "Mattermost Dark", and "Windows Dark" have been updated to the new "Denim", "Sapphire", "Indigo", and "Onyx" theme names and colors, respectively. Anyone using the existing themes will see slightly modified theme colors after their server or workspace is upgraded. The theme variables for the existing "Mattermost", "Organization", "Mattermost Dark", and "Windows Dark" themes will still be accessible in [our documentation](/messaging/customizing-theme-colors.html#custom-theme-examples), so a custom theme can be created with these theme variables if desired. Custom themes are unaffected by this change.
  - Added a new light theme named "Quartz" to the default available list of themes.
 
 #### Deprecations
@@ -381,7 +515,7 @@ Latest Mattermost Mobile Apps releases:
 - Server Versions Supported: Server v5.31.3+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
 
 ### Compatibility
- - **Upgrade to server version v5.31.3 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/upgrade/extended-support-release.html) (ESR) 5.25 has ended and upgrading to server ESR v5.31.3 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - **Upgrade to server version v5.31.3 or later is required.** Support for server [Extended Support Release](/upgrade/extended-support-release.html) (ESR) 5.25 has ended and upgrading to server ESR v5.31.3 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
  - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
  - iPhone 5s devices and later with iOS 11+ is required.
 
@@ -440,7 +574,7 @@ Latest Mattermost Mobile Apps releases:
 - Server Versions Supported: Server v5.31.3+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
 
 ### Compatibility
- - **Upgrade to server version v5.31.3 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/upgrade/extended-support-release.html) (ESR) 5.25 has ended and upgrading to server ESR v5.31.3 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - **Upgrade to server version v5.31.3 or later is required.** Support for server [Extended Support Release](/upgrade/extended-support-release.html) (ESR) 5.25 has ended and upgrading to server ESR v5.31.3 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
  - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
  - iPhone 5s devices and later with iOS 11+ is required.
 
@@ -457,7 +591,7 @@ Latest Mattermost Mobile Apps releases:
 - Server Versions Supported: Server v5.31.3+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
 
 ### Compatibility
- - **Upgrade to server version v5.31.3 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/upgrade/extended-support-release.html) (ESR) 5.25 has ended and upgrading to server ESR v5.31.3 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - **Upgrade to server version v5.31.3 or later is required.** Support for server [Extended Support Release](/upgrade/extended-support-release.html) (ESR) 5.25 has ended and upgrading to server ESR v5.31.3 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
  - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
  - iPhone 5s devices and later with iOS 11+ is required.
 
@@ -500,7 +634,7 @@ Latest Mattermost Mobile Apps releases:
 - Server Versions Supported: Server v5.31.3+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
 
 ### Compatibility
- - **Upgrade to server version v5.31.3 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/upgrade/extended-support-release.html) (ESR) 5.25 has ended and upgrading to server ESR v5.31.3 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - **Upgrade to server version v5.31.3 or later is required.** Support for server [Extended Support Release](/upgrade/extended-support-release.html) (ESR) 5.25 has ended and upgrading to server ESR v5.31.3 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
  - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
  - iPhone 5s devices and later with iOS 11+ is required.
 
@@ -522,7 +656,7 @@ Latest Mattermost Mobile Apps releases:
 - Server Versions Supported: Server v5.31.3+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
 
 ### Compatibility
- - **Upgrade to server version v5.31.3 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/upgrade/extended-support-release.html) (ESR) 5.25 has ended and upgrading to server ESR v5.31.3 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - **Upgrade to server version v5.31.3 or later is required.** Support for server [Extended Support Release](/upgrade/extended-support-release.html) (ESR) 5.25 has ended and upgrading to server ESR v5.31.3 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
  - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
  - iPhone 5s devices and later with iOS 11+ is required.
 
@@ -550,7 +684,7 @@ Latest Mattermost Mobile Apps releases:
 
 ### Known Issues
  - When changing the custom status from the webapp while the Mobile App is in the background, the custom status does not get reflected on the Mobile App until you close and re-open the Mobile App.
- - Users will need to be on v5.31.3 for the "Unsupported server version" in-app notice to go away as [5.31.3 fixes an issue](https://docs.mattermost.com/install/self-managed-changelog.html#release-v5-31-esr) where the server version was reported as v5.30.0.
+ - Users will need to be on v5.31.3 for the "Unsupported server version" in-app notice to go away as [5.31.3 fixes an issue](/install/self-managed-changelog.html#release-v5-31-esr) where the server version was reported as v5.30.0.
  - On iOS, a YouTube playback error may appear when clicking the thumbnail of a linked YouTube video. A workaround is to tap on the link to open the video in YouTube.
 
 ## 1.43.0 Release
@@ -558,7 +692,7 @@ Latest Mattermost Mobile Apps releases:
 - Server Versions Supported: Server v5.31.3+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
 
 ### Compatibility
- - **Upgrade to server version v5.31.3 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/upgrade/extended-support-release.html) (ESR) 5.25 has ended and upgrading to server ESR v5.31.3 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - **Upgrade to server version v5.31.3 or later is required.** Support for server [Extended Support Release](/upgrade/extended-support-release.html) (ESR) 5.25 has ended and upgrading to server ESR v5.31.3 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
  - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
  - iPhone 5s devices and later with iOS 11+ is required.
 
@@ -589,7 +723,7 @@ Latest Mattermost Mobile Apps releases:
  - Fixed an issue where the **Automatic replies** setting's **Done** button on the keyboard added a new line.
 
 ### Known Issues
- - Users will need to be on v5.31.3 for the "Unsupported server version" in-app notice to go away as [5.31.3 fixes an issue](https://docs.mattermost.com/install/self-managed-changelog.html#release-v5-31-esr) where the server version was reported as v5.30.0.
+ - Users will need to be on v5.31.3 for the "Unsupported server version" in-app notice to go away as [5.31.3 fixes an issue](/install/self-managed-changelog.html#release-v5-31-esr) where the server version was reported as v5.30.0.
  - On iOS, a YouTube playback error may appear when clicking the thumbnail of a linked YouTube video. A workaround is to tap on the link to open the video in YouTube.
  - The app has been reported to perform slowly on Android devices that run at 120fps instead of the normal 60fps.
 
@@ -598,14 +732,14 @@ Latest Mattermost Mobile Apps releases:
 - Server Versions Supported: Server v5.31.3+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
 
 ### Compatibility
- - **Upgrade to server version v5.31.3 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/upgrade/extended-support-release.html) (ESR) 5.25 has ended and upgrading to server ESR v5.31.3 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - **Upgrade to server version v5.31.3 or later is required.** Support for server [Extended Support Release](/upgrade/extended-support-release.html) (ESR) 5.25 has ended and upgrading to server ESR v5.31.3 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
  - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
  - iPhone 5s devices and later with iOS 11+ is required.
 
 ### Bug Fixes
 
 #### All apps
- - Set the minimum server version to 5.31.3 instead of 5.31.0 for the "Unsupported server version" in-app notice. Servers will need to be on v5.31.3 for the in-app notice to go away as [5.31.3 fixes an issue](https://docs.mattermost.com/install/self-managed-changelog.html#release-v5-31-esr) where the server version was reported as v5.30.0.
+ - Set the minimum server version to 5.31.3 instead of 5.31.0 for the "Unsupported server version" in-app notice. Servers will need to be on v5.31.3 for the in-app notice to go away as [5.31.3 fixes an issue](/install/self-managed-changelog.html#release-v5-31-esr) where the server version was reported as v5.30.0.
 
 #### iOS specific
  - Fixed an issue where the app crashed on launch.
@@ -615,7 +749,7 @@ Latest Mattermost Mobile Apps releases:
 - Server Versions Supported: Server v5.31.3+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
 
 ### Compatibility
- - **Upgrade to server version v5.31.3 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/upgrade/extended-support-release.html) (ESR) 5.25 has ended and upgrading to server ESR v5.31.3 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - **Upgrade to server version v5.31.3 or later is required.** Support for server [Extended Support Release](/upgrade/extended-support-release.html) (ESR) 5.25 has ended and upgrading to server ESR v5.31.3 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
  - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
  - iPhone 5s devices and later with iOS 11+ is required.
 
@@ -641,7 +775,7 @@ Latest Mattermost Mobile Apps releases:
  - Fixed an issue where the image gallery view had a weird behaviour and did not close smoothly.
 
 ### Known Issues
- - Users will need to be on v5.31.3 for the "Unsupported server version" in-app notice to go away as [5.31.3 fixes an issue](https://docs.mattermost.com/install/self-managed-changelog.html#release-v5-31-esr) where the server version was reported as v5.30.0.
+ - Users will need to be on v5.31.3 for the "Unsupported server version" in-app notice to go away as [5.31.3 fixes an issue](/install/self-managed-changelog.html#release-v5-31-esr) where the server version was reported as v5.30.0.
  - The app has been reported to perform slowly on Android devices that run at 120fps instead of the normal 60fps.
  - The last message in a channel is sometimes rendered behind the message box on iPad devices.
 
@@ -650,7 +784,7 @@ Latest Mattermost Mobile Apps releases:
 - Server Versions Supported: Server v5.25+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
 
 ### Compatibility
- - **Upgrade to server version v5.25 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/upgrade/extended-support-release.html) (ESR) 5.19 has ended and upgrading to server ESR v5.25 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - **Upgrade to server version v5.25 or later is required.** Support for server [Extended Support Release](/upgrade/extended-support-release.html) (ESR) 5.19 has ended and upgrading to server ESR v5.25 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
  - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).
  - iPhone 5s devices and later with iOS 11+ is required.
 
@@ -662,7 +796,7 @@ Latest Mattermost Mobile Apps releases:
 - Server Versions Supported: Server v5.25+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
 
 ### Compatibility
- - **Upgrade to server version v5.25 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/upgrade/extended-support-release.html) (ESR) 5.19 has ended and upgrading to server ESR v5.25 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - **Upgrade to server version v5.25 or later is required.** Support for server [Extended Support Release](/upgrade/extended-support-release.html) (ESR) 5.19 has ended and upgrading to server ESR v5.25 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
  - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
  - iPhone 5s devices and later with iOS 11+ is required.
 
@@ -690,7 +824,7 @@ Latest Mattermost Mobile Apps releases:
 - Server Versions Supported: Server v5.25+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
 
 ### Compatibility
- - **Upgrade to server version v5.25 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/upgrade/extended-support-release.html) (ESR) 5.19 has ended and upgrading to server ESR v5.25 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - **Upgrade to server version v5.25 or later is required.** Support for server [Extended Support Release](/upgrade/extended-support-release.html) (ESR) 5.19 has ended and upgrading to server ESR v5.25 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
  - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
  - iPhone 5s devices and later with iOS 11+ is required.
  
@@ -726,7 +860,7 @@ Latest Mattermost Mobile Apps releases:
 - Server Versions Supported: Server v5.25+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
 
 ### Compatibility
- - **Upgrade to server version v5.25 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/upgrade/extended-support-release.html) (ESR) 5.19 has ended and upgrading to server ESR v5.25 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - **Upgrade to server version v5.25 or later is required.** Support for server [Extended Support Release](/upgrade/extended-support-release.html) (ESR) 5.19 has ended and upgrading to server ESR v5.25 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
  - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).
  - iPhone 5s devices and later with iOS 11+ is required.
 
@@ -758,7 +892,7 @@ Latest Mattermost Mobile Apps releases:
 - Server Versions Supported: Server v5.25+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
 
 ### Compatibility
- - **Upgrade to server version v5.25 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/upgrade/extended-support-release.html) (ESR) 5.19 has ended and upgrading to server ESR v5.25 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - **Upgrade to server version v5.25 or later is required.** Support for server [Extended Support Release](/upgrade/extended-support-release.html) (ESR) 5.19 has ended and upgrading to server ESR v5.25 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
  - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).
  - iPhone 5s devices and later with iOS 11+ is required.
 
@@ -771,7 +905,7 @@ Latest Mattermost Mobile Apps releases:
 - Server Versions Supported: Server v5.25+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
 
 ### Compatibility
- - **Upgrade to server version v5.25 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/upgrade/extended-support-release.html) (ESR) 5.19 has ended and upgrading to server ESR v5.25 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - **Upgrade to server version v5.25 or later is required.** Support for server [Extended Support Release](/upgrade/extended-support-release.html) (ESR) 5.19 has ended and upgrading to server ESR v5.25 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
  - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).
  - iPhone 5s devices and later with iOS 11+ is required.
  
@@ -805,7 +939,7 @@ Latest Mattermost Mobile Apps releases:
 - Server Versions Supported: Server v5.25+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
 
 ### Compatibility
- - **Upgrade to server version v5.25 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/upgrade/extended-support-release.html) (ESR) 5.19 has ended and upgrading to server ESR v5.25 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - **Upgrade to server version v5.25 or later is required.** Support for server [Extended Support Release](/upgrade/extended-support-release.html) (ESR) 5.19 has ended and upgrading to server ESR v5.25 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
  - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).
  - iPhone 5s devices and later with iOS 11+ is required.
 
@@ -833,7 +967,7 @@ Latest Mattermost Mobile Apps releases:
 - Server Versions Supported: Server v5.25+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
 
 ### Compatibility
- - **Upgrade to server version v5.25 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/upgrade/extended-support-release.html) (ESR) 5.19 has ended and upgrading to server ESR v5.25 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - **Upgrade to server version v5.25 or later is required.** Support for server [Extended Support Release](/upgrade/extended-support-release.html) (ESR) 5.19 has ended and upgrading to server ESR v5.25 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
  - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).
  - iPhone 5s devices and later with iOS 11+ is required.
 
@@ -867,7 +1001,7 @@ Latest Mattermost Mobile Apps releases:
 - Server Versions Supported: Server v5.19+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
 
 ### Compatibility
- - **Upgrade to server version v5.19 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/upgrade/extended-support-release.html) (ESR) 5.9 has ended and upgrading to server ESR v5.19 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app. See [this blog post](https://mattermost.com/blog/support-for-esr-5-9-has-ended/) for more details.
+ - **Upgrade to server version v5.19 or later is required.** Support for server [Extended Support Release](/upgrade/extended-support-release.html) (ESR) 5.9 has ended and upgrading to server ESR v5.19 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app. See [this blog post](https://mattermost.com/blog/support-for-esr-5-9-has-ended/) for more details.
  - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).
  - iPhone 5s devices and later with iOS 11+ is required.
 
@@ -879,7 +1013,7 @@ Latest Mattermost Mobile Apps releases:
 - Server Versions Supported: Server v5.19+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
 
 ### Compatibility
- - **Upgrade to server version v5.19 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/upgrade/extended-support-release.html) (ESR) 5.9 has ended and upgrading to server ESR v5.19 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app. See [this blog post](https://mattermost.com/blog/support-for-esr-5-9-has-ended/) for more details.
+ - **Upgrade to server version v5.19 or later is required.** Support for server [Extended Support Release](/upgrade/extended-support-release.html) (ESR) 5.9 has ended and upgrading to server ESR v5.19 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app. See [this blog post](https://mattermost.com/blog/support-for-esr-5-9-has-ended/) for more details.
  - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).
  - iPhone 5s devices and later with iOS 11+ is required.
 
@@ -919,7 +1053,7 @@ Latest Mattermost Mobile Apps releases:
 - Server Versions Supported: Server v5.19+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
 
 ### Compatibility
- - **Upgrade to server version v5.19 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/upgrade/extended-support-release.html) (ESR) 5.9 has ended and upgrading to server ESR v5.19 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app. See [this blog post](https://mattermost.com/blog/support-for-esr-5-9-has-ended/) for more details.
+ - **Upgrade to server version v5.19 or later is required.** Support for server [Extended Support Release](/upgrade/extended-support-release.html) (ESR) 5.9 has ended and upgrading to server ESR v5.19 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app. See [this blog post](https://mattermost.com/blog/support-for-esr-5-9-has-ended/) for more details.
  - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).
  - iPhone 5s devices and later with iOS 11+ is required.
 
@@ -933,13 +1067,13 @@ Latest Mattermost Mobile Apps releases:
 - Server Versions Supported: Server v5.19+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
 
 ### Compatibility
- - **Upgrade to server version v5.19 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/upgrade/extended-support-release.html) (ESR) 5.9 has ended and upgrading to server ESR v5.19 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app. See [this blog post](https://mattermost.com/blog/support-for-esr-5-9-has-ended/) for more details.
+ - **Upgrade to server version v5.19 or later is required.** Support for server [Extended Support Release](/upgrade/extended-support-release.html) (ESR) 5.9 has ended and upgrading to server ESR v5.19 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app. See [this blog post](https://mattermost.com/blog/support-for-esr-5-9-has-ended/) for more details.
  - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).
  - iPhone 5s devices and later with iOS 11+ is required.
  
 ### Highlights
  - End users will now receive an in-app notification to contact their System Admin to upgrade the server version if they are running versions v5.18 and below.
- - Added support for [LDAP group mentions (E20 feature)](https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html) for mobile apps.
+ - Added support for [LDAP group mentions (E20 feature)](/onboard/ad-ldap-groups-synchronization.html) for mobile apps.
  - Added support for non-cached slash command autocomplete for mobile apps.
 
 ### Improvements
@@ -972,7 +1106,7 @@ Latest Mattermost Mobile Apps releases:
 - Server Versions Supported: Server v5.19+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
 
 ### Compatibility
- - **Upgrade to server version v5.19 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/upgrade/extended-support-release.html) (ESR) 5.9 has ended and upgrading to server ESR v5.19 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app. See [this blog post](https://mattermost.com/blog/support-for-esr-5-9-has-ended/) for more details.
+ - **Upgrade to server version v5.19 or later is required.** Support for server [Extended Support Release](/upgrade/extended-support-release.html) (ESR) 5.9 has ended and upgrading to server ESR v5.19 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app. See [this blog post](https://mattermost.com/blog/support-for-esr-5-9-has-ended/) for more details.
  - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).
  - iPhone 5s devices and later with iOS 11+ is required.
  
@@ -984,7 +1118,7 @@ Latest Mattermost Mobile Apps releases:
 - Server Versions Supported: Server v5.19+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
 
 ### Compatibility
- - **Upgrade to server version v5.19 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/upgrade/extended-support-release.html) (ESR) 5.9 has ended and upgrading to server ESR v5.19 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app. See [this blog post](https://mattermost.com/blog/support-for-esr-5-9-has-ended/) for more details.
+ - **Upgrade to server version v5.19 or later is required.** Support for server [Extended Support Release](/upgrade/extended-support-release.html) (ESR) 5.9 has ended and upgrading to server ESR v5.19 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app. See [this blog post](https://mattermost.com/blog/support-for-esr-5-9-has-ended/) for more details.
  - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).
  - iPhone 5s devices and later with iOS 11+ is required.
  
@@ -1033,7 +1167,7 @@ Latest Mattermost Mobile Apps releases:
 - Server Versions Supported: Server v5.19+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
 
 ### Compatibility
- - **Upgrade to server version v5.19 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/upgrade/extended-support-release.html) (ESR) 5.9 has ended and upgrading to server ESR v5.19 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app. See [this blog post](https://mattermost.com/blog/support-for-esr-5-9-has-ended/) for more details.
+ - **Upgrade to server version v5.19 or later is required.** Support for server [Extended Support Release](/upgrade/extended-support-release.html) (ESR) 5.9 has ended and upgrading to server ESR v5.19 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app. See [this blog post](https://mattermost.com/blog/support-for-esr-5-9-has-ended/) for more details.
  - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).
  - iPhone 5s devices and later with iOS 11+ is required.
 
@@ -1046,7 +1180,7 @@ Latest Mattermost Mobile Apps releases:
 - Server Versions Supported: Server v5.19+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
 
 ### Compatibility
- - **Upgrade to server version v5.19 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/upgrade/extended-support-release.html) (ESR) 5.9 has ended and upgrading to server ESR v5.19 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app. See [this blog post](https://mattermost.com/blog/support-for-esr-5-9-has-ended/) for more details.
+ - **Upgrade to server version v5.19 or later is required.** Support for server [Extended Support Release](/upgrade/extended-support-release.html) (ESR) 5.9 has ended and upgrading to server ESR v5.19 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app. See [this blog post](https://mattermost.com/blog/support-for-esr-5-9-has-ended/) for more details.
  - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).
  - iPhone 5s devices and later with iOS 11+ is required.
 
@@ -1058,7 +1192,7 @@ Latest Mattermost Mobile Apps releases:
 - Server Versions Supported: Server v5.19+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
 
 ### Compatibility
- - **Upgrade to server version v5.19 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/upgrade/extended-support-release.html) (ESR) 5.9 has ended and upgrading to server ESR v5.19 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app. See [this blog post](https://mattermost.com/blog/support-for-esr-5-9-has-ended/) for more details.
+ - **Upgrade to server version v5.19 or later is required.** Support for server [Extended Support Release](/upgrade/extended-support-release.html) (ESR) 5.9 has ended and upgrading to server ESR v5.19 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app. See [this blog post](https://mattermost.com/blog/support-for-esr-5-9-has-ended/) for more details.
  - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).
  - iPhone 5s devices and later with iOS 11+ is required.
 
@@ -1105,11 +1239,11 @@ Latest Mattermost Mobile Apps releases:
 - Server Versions Supported: Server v5.19+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
 
 ### Compatibility
- - **Upgrade to server version v5.19 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/upgrade/extended-support-release.html) (ESR) 5.9 has ended and upgrading to server ESR v5.19 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app. See [this blog post](https://mattermost.com/blog/support-for-esr-5-9-has-ended/) for more details.
+ - **Upgrade to server version v5.19 or later is required.** Support for server [Extended Support Release](/upgrade/extended-support-release.html) (ESR) 5.9 has ended and upgrading to server ESR v5.19 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app. See [this blog post](https://mattermost.com/blog/support-for-esr-5-9-has-ended/) for more details.
  - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).
  - iPhone 5s devices and later with iOS 11+ is required.
  
-Mattermost Mobile App v1.31.2 contains a high level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+Mattermost Mobile App v1.31.2 contains a high level security fix. [Upgrading](/upgrade/upgrading-mattermost-server.html) is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
  
 ### Bug Fixes
  - Fixed an issue where file uploads failed due to a time out when the [Antivirus plugin](https://github.com/mattermost/mattermost-plugin-antivirus) was enabled.
@@ -1119,7 +1253,7 @@ Mattermost Mobile App v1.31.2 contains a high level security fix. [Upgrading](ht
 - Server Versions Supported: Server v5.19+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
 
 ### Compatibility
- - **Upgrade to server version v5.19 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/upgrade/extended-support-release.html) (ESR) 5.9 has ended and upgrading to server ESR v5.19 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app. See [this blog post](https://mattermost.com/blog/support-for-esr-5-9-has-ended/) for more details.
+ - **Upgrade to server version v5.19 or later is required.** Support for server [Extended Support Release](/upgrade/extended-support-release.html) (ESR) 5.9 has ended and upgrading to server ESR v5.19 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app. See [this blog post](https://mattermost.com/blog/support-for-esr-5-9-has-ended/) for more details.
  - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).
  - iPhone 5s devices and later with iOS 11+ is required.
  
@@ -1131,7 +1265,7 @@ Mattermost Mobile App v1.31.2 contains a high level security fix. [Upgrading](ht
 - Server Versions Supported: Server v5.19+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
 
 ### Compatibility
- - **Upgrade to server version v5.19 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/upgrade/extended-support-release.html) (ESR) 5.9 has ended and upgrading to server ESR v5.19 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app. See [this blog post](https://mattermost.com/blog/support-for-esr-5-9-has-ended/) for more details.
+ - **Upgrade to server version v5.19 or later is required.** Support for server [Extended Support Release](/upgrade/extended-support-release.html) (ESR) 5.9 has ended and upgrading to server ESR v5.19 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app. See [this blog post](https://mattermost.com/blog/support-for-esr-5-9-has-ended/) for more details.
  - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).
  - iPhone 5s devices and later with iOS 11+ is required.
 
@@ -1189,11 +1323,11 @@ Mattermost Mobile App v1.31.2 contains a high level security fix. [Upgrading](ht
  - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).
  - iPhone 5s devices and later with iOS 11+ is required.
  
-Mattermost Mobile App v1.30.0 contains a high level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+Mattermost Mobile App v1.30.0 contains a high level security fix. [Upgrading](/upgrade/upgrading-mattermost-server.html) is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
  
 **Note:** v5.9.0 as our Extended Support Release (ESR) is coming to the end of its lifecycle and upgrading to 5.19.0 ESR or a later version is highly recommended. v5.19.0 will continue to be our current ESR until October 15, 2020. [Learn more in our forum post](https://forum.mattermost.com/t/upcoming-extended-support-release-updates/8526>).
 
-**Note:** [The Channel Moderation Settings feature](https://docs.mattermost.com/manage/team-channel-members.html#channel-moderation-e20) released in v5.22.0 is supported on mobile app versions v1.30 and later. In earlier versions of the mobile app, users who attempt to post or react to posts without proper permissions will see an error.
+**Note:** [The Channel Moderation Settings feature](/manage/team-channel-members.html#channel-moderation-e20) released in v5.22.0 is supported on mobile app versions v1.30 and later. In earlier versions of the mobile app, users who attempt to post or react to posts without proper permissions will see an error.
  
 ### Improvements
  - Significantly improved Android performance, including how quickly posts in the center screen are displayed.
@@ -1366,7 +1500,7 @@ Mattermost Mobile App v1.30.0 contains a high level security fix. [Upgrading](ht
  - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).
  - iPhone 5s devices and later with iOS 11+ is required.
  
-Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgrading](/upgrade/upgrading-mattermost-server.html) is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
 
 ### Highlights
 
@@ -1702,7 +1836,7 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
  - If the keyboard is open, swiping down past it now closes it.
  
 #### Profile Telemetry for Android Beta Builds
- - To improve Android app performance, we are collecting trace events and device information, collectively known as metrics, to identify slow performing key areas. Those metrics will be sent only from users using Android app beta build starting in version v1.20, who are logged in to servers that allow sending [diagnostic information](https://docs.mattermost.com/configure/configuration-settings.html#enable-diagnostics-and-error-reporting).
+ - To improve Android app performance, we are collecting trace events and device information, collectively known as metrics, to identify slow performing key areas. Those metrics will be sent only from users using Android app beta build starting in version v1.20, who are logged in to servers that allow sending [diagnostic information](/configure/configuration-settings.html#enable-diagnostics-and-error-reporting).
 
 ### Improvements
  - Increased the double tap delay for post action buttons.
@@ -1795,7 +1929,7 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
  - Fixed an issue where opening a single or group notification did not take the user into the channel where the notification came from.
  - Fixed an issue where timezone did not automatically update on Android when travelling to another timezone.
  - Fixed an issue where the user mention autocomplete drop-down was case sensitive.
- - Fixed an issue where system admininistrators were able to see the full long press menu when long pressing a system message.
+ - Fixed an issue where system administrators were able to see the full long press menu when long pressing a system message.
  - Fixed an issue where users were not able to unflag posts from "Flagged Posts" when opened from a read-only channel.
  - Fixed an issue where users were unable to create channel names of two byte characters.
  
@@ -1807,8 +1941,8 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
 - Server Versions Supported: Server v4.10+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
 
 ### Compatibility
- - If **DisableLegacyMfa** setting in ``config.json`` is set to ``true`` and [multi-factor authentication](https://docs.mattermost.com/onboard/multi-factor-authentication.html) is enabled, ensure your users have upgraded to mobile app version 1.17 or later. See [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) for more details.
- - If you are using an EMM provider via AppConfig, make sure to add two new settings, `useVPN` and `timeoutVPN`, to your AppConfig file. The settings were added for EMM connections using VPN on-demand - one to indicate if every request should wait for the VPN connection to be established, and another to set the timeout in seconds. See docs for more details on [setting AppConfig values](https://docs.mattermost.com/deploy/mobile-appconfig.html#mattermost-appconfig-values) for VPN support.
+ - If **DisableLegacyMfa** setting in ``config.json`` is set to ``true`` and [multi-factor authentication](/onboard/multi-factor-authentication.html) is enabled, ensure your users have upgraded to mobile app version 1.17 or later. See [Important Upgrade Notes](/upgrade/important-upgrade-notes.html) for more details.
+ - If you are using an EMM provider via AppConfig, make sure to add two new settings, `useVPN` and `timeoutVPN`, to your AppConfig file. The settings were added for EMM connections using VPN on-demand - one to indicate if every request should wait for the VPN connection to be established, and another to set the timeout in seconds. See docs for more details on [setting AppConfig values](/deploy/mobile-appconfig.html#mattermost-appconfig-values) for VPN support.
  - Mobile App v1.13+ is required for Mattermost Server v5.4+.
  - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).
  - iPhone 5s devices and later with iOS 11+ is required.
@@ -1817,7 +1951,7 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
  - iOS Share Extension now supports large file sizes and improved performance
 
 ### Bug Fixes
- - Fixed support for EMM connections using VPN on-demand. See docs for more details on [setting AppConfig values](https://docs.mattermost.com/deploy/mobile-appconfig.html#mattermost-appconfig-values) for VPN support.
+ - Fixed support for EMM connections using VPN on-demand. See docs for more details on [setting AppConfig values](/deploy/mobile-appconfig.html#mattermost-appconfig-values) for VPN support.
  - Fixed several Android app crash / fatal error issues.
  - Fixed an issue on Android where the app crashed intermittently when selecting a link.
  - Fixed an issue where email notifications setting was out of sync with the webapp until the setting was edited.
@@ -2040,7 +2174,7 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
 - Added ability to search for archived channels. Requires Mattermost server v5.2 or later.
 
 #### Deep Linking
-- Added the ability for custom builds to open Mattermost links directly in the app rather than the default mobile browser. Learn more in our [documentation](https://docs.mattermost.com/deploy/mobile-faq.html#how-do-i-configure-deep-linking)
+- Added the ability for custom builds to open Mattermost links directly in the app rather than the default mobile browser. Learn more in our [documentation](/deploy/mobile-faq.html#how-do-i-configure-deep-linking)
 
 ### Improvements
 - Added profile pop-up to combined system messages.
@@ -2084,7 +2218,7 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
 ### Improvements
 
  - Combined consecutive messages from the same user.
- - Added experimental support for certificate-based authentication (CBA) for iOS to identify a user or a device before granting access to Mattermost. See [documentation](https://docs.mattermost.com/onboard/certificate-based-authentication.html) to learn more.
+ - Added experimental support for certificate-based authentication (CBA) for iOS to identify a user or a device before granting access to Mattermost. See [documentation](/onboard/certificate-based-authentication.html) to learn more.
  - Added support for the experimental automatic direct message replies feature.
  - Added support for the experimental timezone feature.
  - Changed post textbox to not be a connected component.
@@ -2538,7 +2672,7 @@ Many thanks to all our contributors. In alphabetical order:
 - Release Date: March 29, 2017
 - Server Versions Supported: Server v3.7+ is required, Self-Signed SSL Certificates are not yet supported
 
-Note: If you need an SSL certificate, consider using [Let's Encrypt](https://docs.mattermost.com/install/config-ssl-http2-nginx.html) instead of a self-signed one.
+Note: If you need an SSL certificate, consider using [Let's Encrypt](/install/config-ssl-http2-nginx.html) instead of a self-signed one.
 
 ### Highlights
 

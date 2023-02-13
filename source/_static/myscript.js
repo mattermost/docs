@@ -13,15 +13,19 @@ $(document).ready(function () {
 		<div class='c-thermometer-modal__container'> \
 			<div> \
 				<div class='c-thermometer-modal__content'> \
-				<h3>Share your thoughts</h3> \
-				<p>Your feedback helps us improve. Have a request? <a href='https://mattermost.uservoice.com/forums/306457-general' target='blank'> Share product feature requests here.</a></p> \
-				<textarea maxlength='186' rows='4' placeholder='Share your documentation feedback here'></textarea> \
+				<h3>Tell us more!</h3> \
+				<p>Your feedback helps us improve the Mattermost product documentation.</br> \
+				<p><b>How can we make this page more helpful? </b></br> \
+				</br> \
+				<textarea maxlength='186' rows='4' placeholder='Share your feedback here'></textarea> \
 					<div class='c-thermometer-modal__textarea-footer'> \
 						<div></div> \
 						<div class='c-thermometer-modal__counter'> \
 							<span>0</span>/186	\
 						</div> \
 					</div> \
+					<p>Have a feature request? <a href='https://mattermost.com/suggestions' target='blank'> Share it here.</a></p> \
+					<p>Having issues? <a href='https://community.mattermost.com' target='blank'> Join our Community server. </a></p> \
 					<div class='c-thermometer-modal__footer'> \
 						<button class='btn btn-link'>Cancel</button> \
 						<button class='btn btn-primary'>Submit</button> \
@@ -31,7 +35,7 @@ $(document).ready(function () {
 		</div> \
 		<div class='c-thermometer'> \
 			<div class='c-thermometer__trigger'> \
-				<p class='c-thermometer__paragraph'>Was this page helpful?</p> \
+				<p class='c-thermometer__paragraph'>Did you find what you were looking for?</p> \
 				<div class='c-thermometer__emojis'> \
 					<a href='javascript:void(0);' class='rate-this-page-action' data-rating='Yes'> \
 						<span class='c-thermometer__emoji'>😀</span> \
@@ -39,11 +43,11 @@ $(document).ready(function () {
 					</a> \
 					<a href='javascript:void(0);' class='rate-this-page-action' data-rating='Somewhat'> \
 						<span class='c-thermometer__emoji'>😐</span> \
-						<p>Somewhat</p> \
+						<p>Mostly</p> \
 					</a> \
 					<a href='javascript:void(0);' class='rate-this-page-action' data-rating='No'> \
 						<span class='c-thermometer__emoji'>🙁</span> \
-						<p>No</p> \
+						<p>No!</p> \
 					</a> \
 				</div> \
 			</div> \

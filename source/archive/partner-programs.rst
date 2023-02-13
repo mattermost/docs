@@ -86,7 +86,7 @@ If a partner has registered a deal, received approval and the customer purchases
 Mattermost Deployment Solutions Partner Program
 -----------------------------------------------
 
-Commercial and open source organizations who demonstrate the ability to automate the deployment and maintenance of Mattermost systems per our `Deployment Solution Program guidelines <https://docs.mattermost.com/guides/orchestration.html>`__ are offered a co-marketing partnership, which may include:
+Commercial and open source organizations who demonstrate the ability to automate the deployment and maintenance of Mattermost systems per our `Deployment Solution Program guidelines </guides/orchestration.html>`__ are offered a co-marketing partnership, which may include:
 
 - Listings in the Mattermost partner directory.
 - Guest writer opportunities on the Mattermost blog.

@@ -1,24 +1,15 @@
 About teams
 ===========
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
+.. |plus| image:: ../images/plus_F0415.svg
+  :alt: The Plus icon provides access to channel and direct message functionality.
 
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/sign-up
-  :alt: Available for Mattermost Cloud deployments.
+A team is a digital workspace where you and your teammates can collaborate in Mattermost. Depending on how Mattermost is set up in your organization, you can belong to one team or multiple teams. 
 
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
-
-A team is a digital workspace where you and your teammates can collaborate in Mattermost. Depending on how Mattermost is set up in your organization, you can belong to one team or multiple teams. New teams can be created if the System Admin sets **Enable Team Creation** to **true** in the System Console.
+Only users with the **Create Teams** permission can `create new teams <#create-a-team>`__ and `manage team settings </welcome/team-settings.html>`__ for existing teams.
 
 Single team versus multiple teams
 ----------------------------------
@@ -46,23 +37,23 @@ If you belong to more than one team, a team sidebar displays to the left of the 
 Create a team
 --------------
 
-If team creation is enabled by the System Admin, teams can be created from the team sidebar or the channel sidebar. The person who creates a team is automatically  assigned the Team Admin role for that team.
+If team creation is enabled by the system admin, teams can be created from the team sidebar or the channel sidebar using a web browser or the desktop app. The person who creates a team is automatically  assigned the Team Admin role for that team.
 
-If you have appropriate permissions, select the **Plus** icon at the top of the team sidebar, then select **Create a New Team** on the team selection page, which guides you through the rest of the team creation steps. If this option is not visible on the web page, then the System Admin has disabled team creation.
+If you have appropriate permissions, select the |plus| icon at the top of the team sidebar, then select **Create a New Team** on the team selection page, which guides you through the rest of the team creation steps. If this option is not visible on the web page, then the System Admin has disabled team creation.
 
-If you have no other teams to join, selecting the **Plus** icon takes you directly to the team creation page if team creation is enabled.
+If you have no other teams to join, selecting the |plus| icon takes you directly to the team creation page if team creation is enabled.
 
 .. tip::
 
   From your current Mattermost team, you can also select your team name, then select **Create a Team**. If this option is not visible in the menu, then the System Admin has disabled team creation.
 
 Team name and URL selection
----------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 There are a few details and restrictions to consider when selecting a team name and team URL.
 
 Team name
-~~~~~~~~~
+^^^^^^^^^
 
 This is the display name of your team that appears in menus and headings.
 
@@ -71,14 +62,26 @@ This is the display name of your team that appears in menus and headings.
 - Team names must be 2 - 64 characters in length.
 
 Team URL
-~~~~~~~~
+^^^^^^^^
 
-The team URL is part of the web address that navigates to your team on the system domain, https://domain.com/teamurl/.
+The team URL is part of the web address that navigates to your team on the system domain, ``https://domain.com/teamurl/``.
 
-- Teams may contain only lowercase letters, numbers and dashes.
+- Teams may contain only lowercase letters, numbers, and dashes.
 - Teams must start with a letter and cannot end in a dash.
 - Teams must be 2 - 64 characters in length.
 - Team names cannot start with the following restricted words: admin, api, channel, claim, error, files, help, landing, login, mfa, oauth, plug, plugins, post, signup, playbooks, or boards.
+
+Join a team
+-----------
+
+You can join any team configured to `"allow any user with an account on this server to join this team" </welcome/team-settings.html#allow-anyone-to-join-this-team>`__, or when you receive an invitation to join.
+
+If you haven't yet joined any teams in Mattermost, you're prompted to join available teams when you `log in </welcome/log-in.html>`__.
+
+You can be a member of multiple teams at the same time. To join additional teams, select the current team name, choose **Join Another Team**, and select the name of the team you want to join.
+
+.. image:: ../images/join-team.png
+  :alt: Select a team name to join another team.
 
 Invite people to teams
 ----------------------
@@ -95,46 +98,37 @@ Direct invites are invitation emails sent from your team's server directly to th
 .. note::
   A System Admin can invalidate all active invitation links via **System Console > Authentication > Signup > Invalidate pending email invites**.
 
-1. Select the Team menu at the top of the Navigation Panel.
-2. Select **Invite People**.
-3. If there's an option to invite members and guests, choose **Invite Members**.
-4. In the **Invite People** field, enter the email address of the person you want to add. You can add multiple email addresses at a time.
-5. When sending a direct invite to a guest, you must specify the channels the guest can access, and your invitation can include an optional custom message.
-6. Select **Invite Members** or **Invite Guests**.
+.. tabs::
+
+  .. tab:: Desktop
+
+    1. Select the team name at the top of the channel sidebar, then select **Invite People**.
+    2. Enter email address recipients for team invitations.
+    3. Specify whether the invited users are members or guests. When adding a guest, you must specify the channels the guest can access.
+    4. Select **Invite**.
+
+    .. tip::
+      
+      - If someone you want to add to your team already has an account on the server, you can add them to your team without sending an invitation by entering their username instead of an email address. If the person you want to add isn't visible, you can't invite them. 
+      - System admins can view and add team membership to individual users on the user profile page (via **System Console > Users > User Profile**) by selecting **Add Team**. 
+
+  .. tab:: Mobile
+
+    1. Tap the |plus| icon in the top right corner of the screen.
+    2. Tap the **Invite people to the team** option.
+    3. Select people to share a `team invite link <#send-a-team-invite-link>`__ with.
 
 .. note::
 
-  - If you aren't able to see the **Invite Guests** option, confirm with your System Admin that you have the correct permissions.
-  - If you don't see the **Send Email Invite** option, confirm with your System Admin that **System Console > Authentication > Signup > Enable Email Invitations** is set to **true**.
+  If you can't invite others to the team, contact your system admin for assitance. You may not have sufficent permissions to do so, or email invitations may not be enabled. 
 
 Send a team invite link
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-The team invite link is a unique URL that directs people to an account creation page for a team. A team invite link can be used by anyone and does not change unless it is re-generated by a System Admin or Team Admin via **Team Settings > General > Invite Code**. For example, the team invite link can be included in a company-wide email to invite all employees to join a Mattermost team.
+Using Mattermost in a web browser or the desktop app, you can share aunique URL that takes users to a Mattermost account creation page to join the current team. A team invite link can be used by anyone and doesn't change unless it's re-generated by a system admin or team admin via **Team Settings > General > Invite Code**. For example, the team invite link can be included in a company-wide email to invite all employees to join a Mattermost team.
 
-1. Select the Team menu at the top of the Navigation Panel.
-2. Select **Invite People**.
-3. If there's an option to invite members and guests, choose **Invite Members**.
-4. Select the **Copy Link** button to save the URL to your clipboard and share it with those you want to invite to the team.
-
-Adding someone to your team
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-If someone you want to add to your team already has an account on the server, you can add them to your team without sending an invitation.
-
-**Add someone to your team**
-
-1. Select the Team menu at the top of the Navigation Panel.
-2. Select **Invite People**.
-3. Choose **Invite Members** or **Invite Guests**.
-4. Search for the person you want to add. If the people you want to add are not on the list, then they do not have an account on your server.
-5. When adding a guest, you must specify the channels the guest can access.
-6. Select **Invite Members** or **Invite Guests**.
-
-.. note:: 
-   
-   - If you aren't able to see the **Invite Guests** option, confirm with your System Admin that you have the correct permissions.
-   - System Admins can view and add team membership to individual users on the user profile page (via **System Console > Users > User Profile**) by selecting **Add Team**.
+1. Select the team name at the top of the channel sidebar, then select **Invite People**.
+2. Select the **Copy Link** button to save the URL to your clipboard and share it with those you want to invite to the team.
 
 Remove people from teams
 ------------------------
@@ -143,7 +137,7 @@ A Team Admin can remove a user from a team via **Team menu > Manage Members > Re
 
 When a user is removed from a team, the team will no longer show up in their team sidebar. If they currently have the team open, they are redirected to the first team that appears on their team sidebar. If they didn't belong to any other teams, the user is sent to the team selection page.
 
-Removing a user from the team does not deactivate the account. The user will still be able to log in to the site, and join other teams. They will also be able to rejoin the team they were removed from if they receive another invite, or if the team is set to `"Allow any user with an account on this server to join this team" <https://docs.mattermost.com/welcome/team-settings.html#allow-anyone-to-join-this-team>`__. If the user does rejoin the team, they will no longer belong to the channels they were previously a part of, and they will lose all Admin privileges if they had them previously.
+Removing a user from the team does not deactivate the account. The user will still be able to log in to the site, and join other teams. They will also be able to rejoin the team they were removed from if they receive another invite, or if the team is set to `"Allow any user with an account on this server to join this team" </welcome/team-settings.html#allow-anyone-to-join-this-team>`__. If the user does rejoin the team, they will no longer belong to the channels they were previously a part of, and they will lose all Admin privileges if they had them previously.
 
 A System Admin can also remove users from teams via **System Console > Users**, and selecting the dropdown beside a user entry and selecting **Manage Teams**. The list of teams an individual user belongs to can be viewed on the user's profile page via **System Console > Users** and selecting the member's name from the list provided in the **User Configuration** screen.
 
@@ -152,4 +146,4 @@ Leave a team
 
 Users can also choose to remove themselves from a team, from **Team menu > Leave Team**. This will remove the user from the team, and from all public channels and private channels on the team.
 
-They will only be able to rejoin the team if it is set to `"Allow any user with an account on this server to join this team" <https://docs.mattermost.com/welcome/team-settings.html#allow-anyone-to-join-this-team>`__ team, or if they receive a new invite. If they do rejoin, they will no longer be a part of their old channels.
+They will only be able to rejoin the team if it is set to `"Allow any user with an account on this server to join this team" </welcome/team-settings.html#allow-anyone-to-join-this-team>`__ team, or if they receive a new invite. If they do rejoin, they will no longer be a part of their old channels.

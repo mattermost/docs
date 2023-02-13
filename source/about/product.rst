@@ -1,11 +1,11 @@
 Mattermost overview
 ===================
 
-**Mattermost** is an open source platform for secure communication, collaboration, and orchestration of work across teams and tools.
+**Mattermost** is an open source platform that provides secure collaboration for technical and operational teams that work in environments with complex nation-state level security and trust requirements.
 
-Mattermost is built specifically for software development and engineering use cases and integrates deeply with a rich ecosystem of third-party developer tools. Mattermost gives companies full control over their data; with self-hosted and private cloud deployment options and access to the source code, developers can contribute directly to a shared, flexible, and extensible platform built just for them.
+Mattermost is built specifically for technical and operational use cases, including software development and engineering workflows, and integrates deeply with a rich ecosystem of third-party developer tools. Mattermost gives companies full control over their data; with self-hosted and private cloud deployment options and access to the source code, developers can contribute directly to a shared, flexible, and extensible platform built just for them.
 
-We support key developer collaboration use cases:
+We support key technical and operational collaboration use cases:
 
 - **Agile software development** for developers who build and operate software to provide higher productivity. Technical features and deep integrations with the tools developers use support all phases of agile software development including planning, building, releasing, and operating.
 
@@ -32,7 +32,7 @@ Use Channels to stay connected and support your communication workflows
 
 Channel-based communication workflows require real-time information sharing, flexibility, and ad hoc activities where the life cycle of communication workflows is typically measured in seconds to hours.
 
-`Channels <https://docs.mattermost.com/guides/channels.html>`__ enable you to organize your team’s real-time 1:1 and group communications with an unlimited and fully searchable message history. Share materials such as files, images, links; share sentiments with emojis and GIFs; and express ideas with rich markdown formatting, code syntax highlighting, and multi-language support. Facilitate face-to-face connections with integrated voice/video conferencing. Channels are ideal for bug triage, daily standups, posting announcements, and team conversations.
+`Channels </guides/channels.html>`__ enable you to organize your team’s real-time 1:1 and group communications with an unlimited and fully searchable message history. Share materials such as files, images, links; share sentiments with emojis and GIFs; and express ideas with rich markdown formatting, code syntax highlighting, and multi-language support. Facilitate face-to-face connections with integrated voice/video conferencing. Channels are ideal for bug triage, daily standups, posting announcements, and team conversations.
 
 .. image:: ../images/Channels_Hero.png
    :alt: An example of the Mattermost Channels screen that includes teams, the channel sidebar, an active conversation in the center pane, reply threads in the right-hand pane.
@@ -42,7 +42,7 @@ Use Playbooks to support your prescribed workflows and trust the process
 
 Structured workflows are specific scenarios and use cases that require a reliable and repeatable process. These use cases lend themselves well to shared checklists, automation, and retrospectives where the life cycle is measured in hours to weeks. Some examples include incident collaboration and software releases.
 
-`Playbooks <https://docs.mattermost.com/guides/playbooks.html>`__ streamline complex, recurring processes that enable teams to achieve a specific and predictable outcome. Orchestrate prescribed workflows with built-in checklists, triggers, automation, tool integrations, and retrospectives. Increase stakeholder visibility with status updates and cumulative statistics. Customize a playbook to align with organizational practices, and adjust on the fly to respond quickly in highly dynamic situations. Playbooks are critical in incident collaboration to avoid and minimize costly business disruptions, and in software release processes to ship high-quality software on time. 
+`Playbooks </guides/playbooks.html>`__ streamline complex, recurring processes that enable teams to achieve a specific and predictable outcome. Orchestrate prescribed workflows with built-in checklists, triggers, automation, tool integrations, and retrospectives. Increase stakeholder visibility with status updates and cumulative statistics. Customize a playbook to align with organizational practices, and adjust on the fly to respond quickly in highly dynamic situations. Playbooks are critical in incident collaboration to avoid and minimize costly business disruptions, and in software release processes to ship high-quality software on time. 
 
 .. image:: ../images/Playbooks_Hero.png
    :alt: An example of the Mattermost Playbooks screen that includes active run details in the right-hand pane.
@@ -52,7 +52,7 @@ Use Boards to hit your milestones and support your project workflows
 
 Project workflows include use cases driving milestone achievement such as project planning, execution, and task management where teams require alignment on a shared set of tasks, milestones, and goals. Typical life cycles for project workflows are measured in weeks to months. Project workflows can include various scopes, from introducing a new product or feature to planning a team offsite.
 
-`Boards <https://docs.mattermost.com/guides/boards.html>`__ is a deliverable and task management solution to help teams achieve project milestones using a familiar kanban board structure. Align work across the organization, and invest time and effort into what matters most. Stay on schedule with clearly defined tasks, owners, checklists, and deadlines. Increase transparency and keep all resources available including documents, images, and links. Additionally, boards are perfect for tracking tasks for sprints and features in roadmap planning.
+`Boards </guides/boards.html>`__ is a deliverable and task management solution to help teams achieve project milestones using a familiar kanban board structure. Align work across the organization, and invest time and effort into what matters most. Stay on schedule with clearly defined tasks, owners, checklists, and deadlines. Increase transparency and keep all resources available including documents, images, and links. Additionally, boards are perfect for tracking tasks for sprints and features in roadmap planning.
 
 .. image:: ../images/Boards_Hero.png
    :alt: An example of the Mattermost Boards screen that includes a project status board and cards organized by status.

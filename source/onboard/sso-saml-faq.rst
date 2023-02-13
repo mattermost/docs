@@ -4,7 +4,7 @@ Frequently Asked Questions
 --------------------------
 
 How to bind authentication to ``Id`` attribute instead of email
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Alternatively, you can use an ``Id`` attribute instead of email to bind the user.  We recommend choosing an ID that is unique and will not change over time.  
 
@@ -29,10 +29,15 @@ Yes. IWA is supported on the browser, with support added to iOS and Android mobi
 
 However, IWA is not supported on the Mattermost Desktop Apps due to a limitation in Electron. As a workaround you may create a browser desktop shortcut for quick access to Mattermost, just like a Desktop App.
 
+Can I provision and deprovision users who log in via SAML?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Yes, but this relies on AD/LDAP to do so. Currently, we do not support SCIM. See `"How do I deactivate users?" </onboard/ad-ldap.html#how-do-i-deactivate-users>`__ for more information. 
+
 How do I migrate users from one authentication method (e.g. email) to SAML?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-See the `user migrate_auth CLI command <https://docs.mattermost.com/manage/command-line-tools.html#mattermost-user-migrate-auth>`__ documentation, or see the `mmctl user migrate_auth command <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-user-migrate-auth>`__ for details.
+See the `user migrate_auth CLI command </manage/command-line-tools.html#mattermost-user-migrate-auth>`__ documentation, or see the `mmctl user migrate_auth command </manage/mmctl-command-line-tool.html#mmctl-user-migrate-auth>`__ for details.
 
 How is SAML different from OAuth 2.0 and OpenId Connect?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -1,5 +1,4 @@
 :orphan:
-
 :nosearch:
 
 .. _manage_kubernetes:

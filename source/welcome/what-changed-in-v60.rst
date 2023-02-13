@@ -1,11 +1,17 @@
 What changed in Mattermost v6.0?
 ================================
 
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
+
 In Mattermost v6.0, we introduced changes in how to navigate Mattermost with the introduction of the Global Header. Whether you're new to Mattermost, or a long-time user, this document will help you start using these new Global Header features as well as introduce you to some new ways of navigating the product.
+
+What's the global header?
+-------------------------
 
 The Global Header introduces a new way of navigating and using Mattermost, and offers shared functionality available across the Mattermost platform in a single place. If you’ve recently installed or upgraded to v6.0, you’ll notice that Account Settings options have been split up, the Search bar is now front and center, and we’ve introduced a Product Menu button for easy navigation between Channels, Boards, and Playbooks. You'll notice that going forward, when you open Playbooks and Boards, they display as tabs in the window header for easier access.
 
-We've also changed how you access multiple servers. Previously, multiple servers were displayed in tabs across the top of Mattermost. They're now folded into a single menu which supports drag and drop for reordering. Notifications across servers work the same way as before, so you won't miss any important conversations.
+We've also changed how you access multiple servers when using Mattermost in a web browser or the desktop app. Previously, multiple servers were displayed in tabs across the top of Mattermost. They're now folded into a single menu which supports drag and drop for reordering. Notifications across servers work the same way as before, so you won't miss any important conversations.
 
 .. image:: ../images/server-menu.png
   :alt: Mattermost server list
@@ -24,19 +30,20 @@ In addition to this documentation, take a look at the Mattermost onboarding tips
 Account settings
 ----------------
 
-The Account Settings menu has been split into **Profile** and **Settings**.
+In Mattermost versions up to v5.39, you can access your profile and security settings in **Account Settings** from the **Main Menu** by selecting the three horizontal lines (also known as a hamburger menu) at the top of the channel sidebar.
 
-Your **Profile** and **Security** settings can be found in **Profile**. Select your avatar in the top-right corner of Mattermost, then choose **Profile**.
+From Mattermost v6.0, **Account Settings** have moved. The Account Settings menu has been split into **Profile** and **Settings**.
 
-Channel-specific options for **Notifications**, **Display**, **Sidebar**, and **Advanced** settings are found in **Settings**. In Channels, select the |gear-icon| in the Global Header, to the left of your avatar, to access Channels settings. 
+- Access **Profile** and **Security** settings from your profile picture.
+- Access **Notifications**, **Display**, **Sidebar**, and **Advanced Settings** by selecting the Gear |gear-icon| icon in the global header.
 
 .. |gear-icon| image:: ../images/settings-outline_F08BB.svg
-  :alt: Select the Gear icon to access Channel settings.
+    :alt: Select the Gear icon to open the Settings dialog.
 
 Status and availability
 -----------------------
 
-Let your team know your online status using `custom status and availability settings <https://docs.mattermost.com/welcome/set-your-status-availability.html>`_, which include emojis. Select your avatar in the top-right corner to change your status and availability.
+Let your team know your online status using `custom status and availability settings </welcome/set-your-status-availability.html>`_, which include emojis. Select your profile picture to change your status and availability.
 
 Product menu
 ------------
@@ -53,7 +60,7 @@ Use the arrows to the right of the Product menu to show the last channel/next ch
 Server list
 -----------
 
-If you're using multiple servers (e.g., you're running community, community-release, and a Cloud test server) the Mattermost menu is where your servers are located. To change servers, select the menu and then select the server you want to use.
+If you're using multiple servers (e.g., you're running community, community-release, and a Cloud test server) the Mattermost menu is where your servers are. To change servers, select the menu and then select the server you want to use.
 
 What else has changed?
 ----------------------

@@ -8,7 +8,7 @@ Formatting Text
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
+  :alt: Available in Mattermost Free.
 
 .. |cloud| image:: ../images/cloud-badge.png
   :scale: 30
@@ -219,7 +219,7 @@ Renders as: ``monospace``.
 In-line Images
 --------------
 
-In-line images are images added within lines of text. From Mattermost Server v5.35 and in Mattermost Cloud, you can control whether all in-line images over 100px in height are automatically collapsed or expanded in messages by setting a `user preference <https://docs.mattermost.com/messaging/managing-account-settings.html#website-link-previews>`__, or by using the ``/collapse`` and ``/expand`` slash commands.
+In-line images are images added within lines of text. From Mattermost Server v5.35 and in Mattermost Cloud, you can control whether all in-line images over 100px in height are automatically collapsed or expanded in messages by setting a `user preference </messaging/managing-account-settings.html#website-link-previews>`__, or by using the ``/collapse`` and ``/expand`` slash commands.
 
 To add in-line images to text, use an exclamation mark ``!`` followed by the ``alt text`` in square brackets ``[ ]``, then the ``image URL`` in round brackets ``( )``. You can add hover text after the link by placing the text in quotes ``" "``.
 
@@ -349,7 +349,7 @@ Math Formulas
 
     .. note::
 
-      This feature is `disabled by default <https://docs.mattermost.com/configure/configuration-settings.html#enable-inline-latex-rendering>`__. Contact your System Admin to enable this setting in **System Console > Site Configuration > Posts** to use this feature.
+      This feature is `disabled by default </configure/configuration-settings.html#enable-inline-latex-rendering>`__. Contact your System Admin to enable this setting in **System Console > Site Configuration > Posts** to use this feature.
 
     .. code-block:: none
 
@@ -366,7 +366,7 @@ Math Formulas
 
     .. note::
 
-      This feature is `disabled by default <https://docs.mattermost.com/configure/configuration-settings.html#enable-latex-code-block-rendering>`__. Contact your System Admin to enable this setting in **System Console > Site Configuration > Posts** to use this feature.
+      This feature is `disabled by default </configure/configuration-settings.html#enable-latex-code-block-rendering>`__. Contact your System Admin to enable this setting in **System Console > Site Configuration > Posts** to use this feature.
 
     .. code-block:: none
 

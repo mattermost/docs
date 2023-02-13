@@ -8,7 +8,7 @@ Keyboard Shortcuts
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
+  :alt: Available in Mattermost Free.
 
 .. |cloud| image:: ../images/cloud-badge.png
   :scale: 30
@@ -20,7 +20,7 @@ Keyboard Shortcuts
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-Keyboard shortcuts perform operations in Mattermost to help you navigate through channels and make a more efficient use of your keyboard. See the `Executing Slash Commands <https://docs.mattermost.com/messaging/executing-slash-commands.html>`__ documentation for alternate ways to help carry out actions with a keyboard instead of a mouse.
+Keyboard shortcuts perform operations in Mattermost to help you navigate through channels and make a more efficient use of your keyboard. See the `Executing Slash Commands </messaging/executing-slash-commands.html>`__ documentation for alternate ways to help carry out actions with a keyboard instead of a mouse.
 
 To display a list of available keyboard shortcuts, press CTRL+/ (CMD+/ on Mac), or use the ``/shortcuts`` slash command.
 
@@ -35,7 +35,7 @@ General Mattermost navigation
 The following keyboard shortcuts are supported in all supported browsers and in the Mattermost Desktop App.
 
 .. note::
-  See our `Keyboard Accessibility <https://docs.mattermost.com/messaging/keyboard-accessibility.html>`__ documentation for additional navigation keyboard shortcuts for screen reader users.
+  See our `Keyboard Accessibility </messaging/keyboard-accessibility.html>`__ documentation for additional navigation keyboard shortcuts for screen reader users.
 
 +----------------------------+---------------------------+----------------------------------------------------------------------------------+
 | On Windows                 | On Mac                    | Description                                                                      |

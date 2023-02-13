@@ -4,12 +4,816 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 
 Latest Mattermost Cloud releases:
 
-- [Release 2022-06-22](#release-2022-06-22)
-- [Release 2022-06-15](#release-2022-06-15)
-- [Release 2022-06-14](#release-2022-06-14)
-- [Release 2022-05-26](#release-2022-05-26)
-- [Release 2022-05-12](#release-2022-05-12)
-- [Release 2022-04-28](#release-2022-04-28)
+- [Release 2023-02-02](#release-2023-02-02)
+- [Release 2023-01-26](#release-2023-01-26)
+- [Release 2023-01-12](#release-2023-01-12)
+- [Release 2022-12-20](#release-2022-12-20)
+- [Release 2022-12-01](#release-2022-12-01)
+- [Release 2022-11-24](#release-2022-11-24)
+
+## Release 2023-02-02
+
+### Highlights
+
+#### Annual Cloud Subscriptions
+ - On the purchase modal, admins are now able to buy an annual cloud subscription starting from their current user count.
+ - The **System Console > Billing & Account > Subscriptions** page now reflects whether the plan is monthly or annual.
+ - Cloud Professional monthly will no longer be offered to new customers starting February 2, 2023.
+ - Added the option to migrate from a monthly to an annual Cloud Professional plan for existing Cloud Professional monthly customers.
+
+### Improvements
+
+#### User Interface (UI)
+ - Boards was reverted from an in-built product back to a plugin.
+ - Improved the user interface of the user profile popover.
+
+#### Administration
+ - GraphQL APIs are now correctly counted when measuring performance telemetry.
+ - Boards cards are no longer mentioned as being limited in the **System Console**, the limits usage modal, the downgrade modal, or the left-hand side menu.
+ - Removed an unused ``ProductLimits.Integrations``.
+
+### Known Issues
+ - Clicking on a user profile picture throws a console error [MM-49961](https://mattermost.atlassian.net/browse/MM-49961).
+ - Bot and guest tags are truncated on suggestion autocomplete [MM-49973](https://mattermost.atlassian.net/browse/MM-49973).
+ - Horizontal scroll displays in the Threads list due to a new tags component [MM-49854](https://mattermost.atlassian.net/browse/MM-49854).
+ - Login/create account screen layout breaks when Javascript error banner displays [MM-49587](https://mattermost.atlassian.net/browse/MM-49587).
+ - Spacing in the channel switcher is incorrect [MM-49853](https://mattermost.atlassian.net/browse/MM-49853).
+ - Spacing issue is displayed between the Global Drafts tour point title and “New” tag [MM-49866](https://mattermost.atlassian.net/browse/MM-49866).
+ - The message box flashes controls while typing in the right-hand side [MM-49266](https://mattermost.atlassian.net/browse/MM-49266).
+ - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
+
+## Release 2023-01-26
+
+### Highlights
+
+#### GitLab Playbooks Integration
+ - Using the updated [GitLab integration and task actions in Mattermost Playbooks](https://mattermost.com/marketplace/gitlab-plugin/), teams can automate release management processes to help increase efficiency and reduce errors.
+
+### Improvements
+
+#### User Interface (UI)
+ - Insights and drafts are now included when navigating through channels in the channel sidebar using ALT+UP/DOWN arrow keyboard keys.
+ - Added an onboarding tour point for Global Drafts.
+
+#### Administration
+ - The maximum size of uploaded emojis is reduced to 512KB to reduce image download bandwidth.
+ - Users can now monitor the progress of the bulk export job via its metadata field. It is available at ``mmctl export job show <jobID>``.
+ - Compliance exports no longer time out when uploading to S3.
+ - Users can now supply a certificate authority (CA) file and client certificates for the Elasticsearch client.
+ - Grafana metrics are now available for database connection metrics. They are:
+    - ``max_open_connections``
+    - ``open_connections``
+    - ``in_use_connections``
+    - ``idle_connections``
+    - ``wait_count_total``
+    - ``wait_duration_seconds_total``
+    - ``max_idle_closed_total``
+    - ``max_idle_time_closed_total``
+    - ``max_lifetime_closed_total``
+ - Boards are served as an in-built product from within Mattermost server instead of a plugin and is now always enabled. While running in product mode, the Boards plugin will remain disabled. 
+ - Added a new section in the **System Console** for products. For now, it only contains Boards-specific settings.
+ - Made ``registerChannelIntroButtonAction`` plugin API usable by plugins other than Boards.
+ - The following new HTTP headers and values are now written on all responses. These default values should make sense in most installations and can be overridden by a reverse proxy or ingress configuration. Note that the empty ``Permissions-Policy`` header does not have any actual effect. Users are recommended to change it to a more restrictive value based on their use case. For more information, see the [W3C Reference](https://www.w3.org/TR/permissions-policy/) or [this article](https://developer.mozilla.org/en-US/docs/Web/HTTP/Permissions_Policy).
+
+	```
+	Permissions-Policy: 
+	Referrer-Policy: no-referrer
+	X-Content-Type-Options: nosniff
+	```
+
+### Bug Fixes
+ - Fixed an issue with the plugin ``/public`` handling for subpaths.
+ - Fixed an issue where selecting **Pinned** on a post in the Threads view would result in the right-hand side being stuck in a loading state.
+ - Fixed an issue where the profile popover did not dismiss when opening a modal through a shortcut.
+ - Fixed an issue where the **Run Deletion Job Now** button for Data Retention wasn’t disabled when all policies were set to **keep forever**.
+ - Fixed an issue that prevented the creation of the initial admin user for new servers.
+ - Fixed an issue where making a channel non-read-only required a refresh of the client to see the change.
+ - Fixed an issue where Top Channels for Insights didn't show results if the current user's configured timezone wasn't present in MySQL's ``mysql.time_zone_name table``.
+ - Fixed an issue where a white screen appeared when a guest was removed from the last channel while on Threads.
+ - Fixed an issue where a Direct Message thread did not get disabled when a user was deactivated.
+ - Fixed an issue where email notifications for Direct Messages from Playbooks contained broken URLs.
+
+### Known Issues
+ - Bot and guest tags truncated on suggestion autocomplete [MM-49973](https://mattermost.atlassian.net/browse/MM-49973).
+ - Horizontal scroll displays in the Threads list due to a new tags component [MM-49854](https://mattermost.atlassian.net/browse/MM-49854).
+ - Login/create account screen layout breaks when Javascript error banner displays [MM-49587](https://mattermost.atlassian.net/browse/MM-49587).
+ - Spacing in the channel switcher is incorrect [MM-49853](https://mattermost.atlassian.net/browse/MM-49853).
+ - Spacing issue is displayed between the Global Drafts tour point title and “New” tag [MM-49866](https://mattermost.atlassian.net/browse/MM-49866).
+ - The message box flashes controls while typing in the right-hand side [MM-49266](https://mattermost.atlassian.net/browse/MM-49266).
+ - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
+ - Publicly shared boards lead to a "Team not found" error page. See [issue-focalboard-4450](https://github.com/mattermost/focalboard/issues/4450) for more details.
+ - If a user is not a member of a configured broadcast channel, posting a status update might fail without any error feedback. As a temporary workaround, join the configured broadcast channels or remove those channels from the run configuration.
+
+## Release 2023-01-12
+
+### Highlights
+
+#### Calls
+ - An important change was made to calls participants limits. The Cloud free plan now supports up to 8 participants per call in group messages, public, or private channels (it was previously direct messages only).
+ - [Audio calling and screen sharing](https://docs.mattermost.com/configure/calls-deployment.html) in channels is now generally available to all Mattermost customers.
+ - Updated [the keyboard shortcut](https://docs.mattermost.com/channels/keyboard-shortcuts-for-channels.html#calls-shortcuts) to start and join calls.
+
+#### Boards
+ - Boards now supports [file attachments](https://docs.mattermost.com/boards/work-with-cards.html#attach-files), including PDFs, images, videos, and any other file types.
+ - Users can now [drag and drop boards and categories](https://docs.mattermost.com/boards/navigate-boards.html#manage-boards-on-the-sidebar) on the sidebar and organize them in any order they prefer.
+ - The [template picker](https://docs.mattermost.com/boards/work-with-boards.html#choose-a-board-template) has been improved to make it easier for users to find the best template for their project.
+ 
+#### Playbooks
+ - Added an option to [run playbooks](https://docs.mattermost.com/playbooks/work-with-playbooks.html#runs-and-channel-behavior) without creating a new channel every time in order to reduce the unnecessary overhead.
+ - In addition to the daily digest, users can now also view [a task inbox](https://docs.mattermost.com/playbooks/work-with-tasks.html#task-inbox) from the global header bar while in Playbooks.
+
+#### Message Priority and Acknowledgments
+ - Added [message priority labels](https://docs.mattermost.com/channels/message-priority.html) to the Threads view.
+ - Added support for users to request acknowledgements on posts and to acknowledge posts (Professional license).
+
+#### Global Drafts
+ - Added [a centralized Drafts view](https://docs.mattermost.com/channels/send-messages.html#draft-messages) for draft messages.
+ 
+#### ServiceNow Integration
+ - ServiceNow customers can now access and share their ServiceNow data from within Mattermost.
+ 
+#### ServiceNow Virtual Agent Integration
+ - The [Mattermost ServiceNow Virtual Agent Integration](https://www.loom.com/share/36f60299c6c349729160d6d8bce75c3c) makes it easy for employees and customers to resolve issues fast.
+
+### Improvements
+
+#### User Interface (UI)
+ - Updated prepackaged version of plugins affected by React v17 upgrade.
+ - Corrected in-product System Console legacy link to the Cloud Administrator's Guide.
+ - Updated prepackaged NPS version to 1.3.1.
+ - Updated prepackaged version of Apps plugin to 1.2.0.
+ - Added group members count to the group autocomplete.
+ - Clicking a group mention now displays group details and membership.
+ - Improved the collapsed state of the post formatting toolbar.
+ - App Framework channel and user fields now support multi-select properties to allow users to select multiple values in a form.
+ - Increased the character count for desktop notifications on Windows to 120 from 50.
+ - Prioritized members of recently viewed direct or group messages when adding users to a channel.
+ - Updated in-product confirmation modal for ``@here`` mentions to clarify that people & timezone counts don't include the current user.
+ - Added support for multiple users and channels to the ``/invite`` slash command.
+ - Downgraded French language support to Beta.
+
+#### Administration
+ - The export file now contains the server version and a creation timestamp.
+ - Plugins with a webapp component may need to be updated to work with Mattermost and the updated React v17 dependency. This is to avoid plugins crashing with an error about ``findDOMNode`` being called on an unmounted component. While our `starter template <https://github.com/mattermost/mattermost-plugin-starter-template>`_ depended on an external version of ``React``, it did not do the same for ``ReactDOM``. Plugins need to update their ``webpack.config.js`` directives to externalize ``ReactDOM``. For reference, see https://github.com/mattermost/mattermost-plugin-playbooks/pull/1489. Server-side only plugins are unaffected. This change can be done for existing plugins any time prior to upgrading Mattermost and is backwards compatible with older versions of Mattermost.
+ - Added ``acknowledgements`` field to the post's metadata.
+ - Added the ability for customers to view their upcoming invoice on the **System Console > Billing & Account > Subscriptions** page.
+ - **Total Activated Users** was changed back to **Total Active Users** on the **System Console > Reporting > Site Statistics** page.
+ - The import job now logs the progress of the import.
+ - Added ``restore_group`` permission to the mmctl and to the **System Console > Permissions**.
+ - Improved bulk export logging.
+ - Compliance export job can now cancel the SQL query execution during server shutdown which will allow the job to exit faster.
+ - Shared Channels (Experimental) is now available with a Professional license.
+ - Removed Cloud Professional file storage limits.
+ - The message export compliance job can now survive server restarts. The job will pause and save state when the server is shutting down, and resume from the previously saved state when the server starts back up.
+ - Only one instance of the job will be automatically scheduled to run as per the ``MessageExportSettings.DailyRunTime`` config value.
+ - Mattermost will throw an error if it detects an Elasticsearch version greater than 7.
+
+### API Changes
+ - Added new API endpoint ``GET /api/v4/posts/:post_id/info`` to allow checking if the post that a permalink is pointing to is accessible by joining teams or channels.
+ - Added validity checks for role related parameters in ``GET /users``.
+ - Added an allowed value ``sort=display_name`` to ``GET /api/v4/users?in_group=<groupid>``.
+
+### Bug Fixes
+ - Fixed an issue where batch notifications failed while rendering.
+ - Fixed an issue where the unreads button in the channel sidebar was missing alternative text for screen readers.
+ - Fixed an issue where there was no feedback that a downgrade was in progress when selecting **Downgrade** under **System Console > Billing & Account > Subscriptions** page.
+ - Fixed an issue where attempting to create a team with a duplicate URL displayed the wrong error.
+ - Fixed an issue where the custom status modal did not close when navigating to the custom emoji page.
+ - Fixed an issue where selections within a code block were not properly copied to clipboard.
+ - Fixed an issue where threads with 0 replies would show in all threads.
+ - Fixed an issue with the styling of date pickers.
+ - Fixed an issue with fetching the latest user's profile picture in Insights.
+ - Fixed an issue where ``--center-channel-text`` CSS variable was used instead of ``--center-channel-color``.
+ - Fixed an issue where the screen reader timestamp announcement was too long.
+ - Fixed an issue where upgrade emails were still sent when downgrading to the Cloud Starter plan.
+ - Fixed an issue where profile pictures, usernames, and full names did not update instantly in Insights.
+ - Fixed an issue where the metrics server restarted for every config change.
+ - Prevented browsers and CDNs from caching remote entrypoint files.
+ - Fixed a potential read-after-write issue when uploading data through the resumable uploads API.
+ - Fixed the position of the Boards icon in the app bar when Boards is running without a plugin.
+ - Fixed ability to create a board when Boards is running without a plugin.
+ - Fixed Boards tour tips not appearing when Boards is running without a plugin.
+ - Fixed the slash command description help text.
+ - Fixed an issue where selecting **Contact Sales** didn't pre-fill the reason for contacting sales.
+ - Fixed an issue where the screen readers did not announce the selected state of the sidebar submenu items.
+ - Fixed an issue where the metrics server was not prevented from starting while running export commands.
+ - Fixed an issue where long group mentions and user mentions didn't wrap properly.
+ - Fixed an issue with fetching first/last name for GitLab user using OpenID.
+ - Fixed an issue where servers with an encrypted key did not throw an error during startup.
+ - Fixed an issue where the **Test Connection** button in **System Console > Environment > Elasticsearch** did not correctly take the right config settings specified in the page. Earlier, it would always take the previously saved config.
+
+### Known Issues
+ - The message box flashes controls while typing in the right-hand side [MM-49266](https://mattermost.atlassian.net/browse/MM-49266).
+ - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
+
+## Release 2022-12-20
+
+### Bug Fixes
+ - Fixed a deadlock in the export job which caused export jobs to hang forever.
+ - Uploading exports to S3 no longer times out.
+
+## Release 2022-12-01
+
+### Improvements
+
+#### User Interface (UI)
+ - Removed video check to allow the browser to decide what video types it can play.
+ - Added a tooltip to the right-hand side files filter icon.
+ - The number of users that can be added to a user group at once was increased to 256.
+ - Keyboard and focus handling was improved in profile popovers and @mentions.
+ - If a channel has a draft message, the pencil icon is now displayed on the right side of the channel name in the channel sidebar.
+ - Pre-packaged Boards v7.5.2.
+
+#### Administration
+ - Updated macOS supported version to 11+.
+ - **My Insights** and OpenId Connect were added to the Mattermost Free plan.
+ - All integration limits and usage limit components were removed.
+ - Team scheme APIs are now allowed to be administered with a Professional plan.
+ - Added a new menu item on the **System Console > Users** page that re-adds users to all of their default teams and channels associated with the groups they're a member of.
+ - Changing the license in a cloud environment will now force an update of the subscription and kick the cache for all cluster members.
+ - Added support for product websocket messages on high availability instances.
+
+### API Changes
+ - The resumable uploads API was exposed to plugins.
+ - Added a new API endpoint ``POST /api/v4/ldap/users/:user_id/group_sync_memberships`` to add (or re-add) users to all of their default teams and channels for all of the groups they're a member of.
+ - Added two new URL parameters to the ``GET /api/v4/groups`` endpoint to get the ``ChannelMemberCount`` for a group.
+ - Added new API endpoints ``POST /api/v4/users/:user_id/posts/:post_id/ack`` and ``DELETE /api/v4/users/:user_id/posts/:post_id/ack``.
+
+### Bug Fixes
+ - Fixed an issue where a blank message was displayed in threads if the leave/join messages were disabled.
+ - Fixed an issue where threads would appear duplicated in the Threads view after leaving a channel.
+ - Fixed an issue with email search when using a PostgreSQL database.
+ - Fixed an issue where message drafts were not saved after pasting them into the post textbox.
+ - Fixed an issue where the team name in the channel sidebar header wasn't accessible.
+ - Fixed an issue where users were unable to open the user's profile popover from the channel members list in the right panel.
+ - Fixed an issue where the OAuth 2.0 deprecation notice was still displayed in the System Console.
+ - Fixed an issue where clicking on a reply post time stamp in the global threads inbox opened two right-hand side panels.
+
+### Known Issues
+ - Boards linked to a channel you're a member of don't automatically appear on your sidebar unless you're an explicit member of the board. As a workaround, you can access the board from the channel RHS, or by searching for the board via the board switcher (Ctrl/Cmd+K). Alternatively, you can ask the board admin to add you to the board as an explicit member. See the [issue-focalboard-4179](https://github.com/mattermost/focalboard/issues/4179) for more details.
+ - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
+
+## Release 2022-11-24
+
+### Improvements
+
+#### User Interface (UI)
+ - Changed Cloud defaults for ``MaxUsersPerTeam`` and ``MaxChannelsPerTeam`` to 10000.
+ - Added a Monthly versus Annual pricing toggle to the pricing modal.
+
+#### API Changes
+ - Added a new API endpoint ``POST /api/v4/groups/:group_id:/restore``.
+
+### Bug Fixes
+ - Fixed an issue where special characters weren't allowed in group mention names.
+ - Fixed an issue where screen readers didn't read the **Switch Channels** modal header.
+ - Fixed an issue in OAuth services where malformed redirect URLs were generated if the registered callback URLs already had static query parameters.
+ - Fixed an issue where suggestion dividers were displayed as undefined.
+
+### Known Issues
+ - Boards linked to a channel you're a member of doesn't automatically appear on your sidebar unless you're an explicit member of the board. As a workaround, you can access the board from the channel RHS, or by searching for the board via the board switcher (Ctrl/Cmd+K). Alternatively, you can ask the board admin to add you to the board as an explicit member. See the [issue-focalboard-4179](https://github.com/mattermost/focalboard/issues/4179) for more details.
+ - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
+
+## Release 2022-11-17
+
+### Highlights
+
+#### Calls
+ - Added new message threads with emoji reactions and at-mentions to Calls. After joining a call, expand the widget to the window mode and then select the comment button to access the real-time message thread in the right-hand sidebar.
+
+#### Boards
+ - Added additional standard board templates to help users kick-off their next projects.
+ - Filters now support all text properties.
+ - Added two new tiles for System Console Boards metrics under **System Console > Site Statistics**.
+
+### Improvements
+
+#### User Interface (UI)
+ - The **Mark as Unread** option was added to the ``…`` menu for channels in the left-hand side sidebar. Pressing Alt while selecting a channel on the left-hand side now also marks the last post in the channel as unread.
+ - Channel members are now able to remove themselves from a channel via the right-hand side channel members list.
+ - Downgraded Bulgarian, Persian, and Simplified Chinese language support to Alpha.
+
+#### Administration
+ - The **System Console > File Sharing and Download** setting is now unhidden and honored in Cloud.
+ - **Total Active Users** was renamed to **Total Activated Users** in **System Console > Reporting > Site Statistics**.
+ - Optimized ``ThreadStore.MarkAllAsUnreadByTeam``.
+ - SQL migrations for PostgreSQL will now filter by the current schema name when checking for information from the ``information_schema.columns`` view. This does not affect anything because usually there's only one installation in a given database, but this gives flexibility to users to store multiple Mattermost instances under a single database.
+
+### API Changes
+ - A new API method ``RegisterCollectionAndTopic(collectionType, topicType string) (error)`` was added to the Plugin API and the following hooks. This API method is in beta, subject to change, and not covered by our backwards compatibility guarantee.
+    - ``UserHasPermissionToCollection(c *Context, userID, collectionType, collectionId string, permission *model.Permission) (bool, error)``
+    - ``GetAllCollectionIDsForUser(c *Context, userID, collectionType string) ([]string, error)``
+    - ``GetAllUserIdsForCollection(c *Context, collectionType, collectionID string) ([]string, error)``
+    - ``GetTopicRedirect(c *Context, topicType, topicID string) (string, error)``
+    - ``GetCollectionMetadataByIds(c *Context, collectionType string, collectionIds []string) (map[string]model.CollectionMetadata, error)``
+    - ``GetTopicMetadataByIds(c *Context, topicType string, topicIds []string) (map[string]*model.TopicMetadata, error)``
+
+### Bug Fixes
+ - Fixed an issue where exports did not contain favorited Direct Message channels.
+ - Fixed an issue where screen readers did not announce search results on the **Invite members to channel** modal.
+ - Fixed an issue where screen readers did not announce the status of the user when hovering over the user status icon.
+ - Fixed an issue where users with narrow screens could not see the **Profile Settings** section within the **Settings** modal.
+ - Fixed an issue where users were unable to access the **Create an account** option on narrow screens.
+ - Fixed an issue where users on desktop were unable to grab the vertical scroll bar without accidently resizing the window.
+
+### Known Issues
+ - Boards linked to a channel you're a member of do not automatically appear on your sidebar unless you're an explicit member of the board. As a workaround, you can access the board from the channel RHS or by searching for the board via the board switcher (Ctrl/Cmd+K). Alternatively, you can ask the board Admin to add you to the board as an explicit member. See the [issue-focalboard-4179](https://github.com/mattermost/focalboard/issues/4179) for more details.
+ - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
+
+## Release 2022-11-10
+
+### Improvements
+
+#### User Interface (UI)
+ - Implemented progressive image loading in the webapp.
+ - Renamed "Starter" plan to "Free" plan in product.
+ - Updated NPS plugin to version 1.3.0.
+ - Removed the user interface for the legacy "Mattermost Cloud" plan (removal effective on November 1st).
+ - When the "Custom Brand Text" is left blank with custom branding enabled, the default text is now hidden.
+
+#### Administration
+ - If an Admin encounters an invitation error “SMTP is not configured in System Console", a link to the SMTP configuration within the **System Console** is now included in the error message.
+ - Crashing jobs now sets the job status to "failed".
+ - Added the ability for Cloud customers to submit their feedback for wire transfers to buy a monthly subscription. 
+ - Added logic to package product version of Boards with production builds.
+ - **System Console** settings that Cloud Admins cannot configure are now hidden.
+
+### Bug Fixes
+ - Fixed an issue where custom group actions were appearing in the user interface even when the user didn't have the permissions for them.
+ - Fixed issues with branding in email notifications.
+ - Fixed an issue where text could be dragged and dropped into input-fields.
+ - Fixed an issue where the profile popover failed to dismiss when selecting one of the options from the popover.
+ - Fixed an issue where imports containing the team name with the wrong capitalization crashed the import job.
+ - Fixed an issue where ``getPostSince`` didn't properly return deleted posts when Collapsed Reply Threads was enabled.
+ - Fixed an issue where the screen reader did not announce emojis from the autocomplete list.
+ - Fixed an issue where the scroll position in a channel was not maintained when opening reply message permalinks.
+ - Fixed an issue where ``OwnerId`` was not set for bots created via ``EnsureBotUser``.
+
+### Known Issues
+ - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
+
+## Release 2022-10-27
+
+### Improvements
+
+#### User Interface (UI)
+ - Added the ability to create a new channel along with a new board associated with the created channel.
+ - Added the ability for end users to notify their Admins to reactivate a paid plan during the delinquency period by selecting “Notify admin to update billing”.
+ - Added markdown formatting for hyperlinks when pasted into the text editor.
+ - Email notifications from new messages now also support displaying Slack attachments from the channel post.
+ - Updated prepackaged Boards version to v7.4.3.
+
+#### Administration
+ - Autocompletion results using Elasticsearch or Bleve will correctly show a user as a channel member in Direct Message and Group Message channels. To force this change to appear, a re-indexing will be necessary.
+ 
+#### API Changes
+ - Added new plugin endpoints to ``PermissionService`` interface.
+
+### Bug Fixes
+ - Fixed an issue with incorrect mention counts in unread channels.
+ - Fixed an issue where the cursor displayed as a pointer instead of as an arrow in embedded Youtube preview images.
+ - Fixed an issue where formatting was applied to selected spaces after a word.
+ - Fixed an issue where an error with an option to refetch data was not displayed and instead a blank screen was shown when there was a failure fetching Cloud data.
+ - Fixed an issue where screen readers did not announce that the channel interface language dropdown in **Settings > Display > Language > Change** is a dropdown.
+ - Fixed a bug where role filters weren't being applied for ``GetProfilesInChannel``.
+ - Fixed an issue where the guest onboarding checklist contained an “Invite team members” link as a tour point.
+
+### Known Issues
+ - Users cannot be added to teams from the **System Console** [MM-47667](https://mattermost.atlassian.net/browse/MM-47667).
+ - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
+
+## Release 2022-10-20
+
+### Compatibility
+ - Updated the minimum version of Chrome to v106+ and the minimum version of Edge to 95+.
+
+### Improvements
+
+#### User Interface (UI)
+ - A confirmation modal is now displayed before a user marks all threads as read.
+ - Added the ability to hide the “required” asterisk in the App Field.
+ - Added a fading effect to the Apps Modal body while an Apps Modal is refreshing.
+
+### Bug Fixes
+ - Fixed an issue where "Multi-server licensing support (Self-hosted)" feature appeared in the Cloud pricing modal.
+ - Fixed an issue where Enterprise features labeled as "Professional Feature" appeared in the **System Console** sidebar.
+ - Fixed an issue where the transparency for PNG images in image previews and thumbnails was not preserved.
+ - Fixed an issue where no success screen was displayed after upgrading to Cloud Professional.
+ - Fixed an issue where screen readers failed to announce “No results found” in the Direct Message modal.
+ - Fixed an issue where minipreview data was not generated nor stored for images imported from Slack.
+ - Fixed the error message that appears on the **Reset Password** page when inputting a password with fewer than 5 characters.
+ - Fixed an issue where ``Get categories`` with the "exclude" option did not return categories for deleted teams a user was no longer a member of.
+
+### Known Issues
+ - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
+
+## Release 2022-10-13
+
+### Highlights
+
+#### Boards
+ - Added new board roles, **Commenter** and **Viewer**.
+ - Added minimum default board roles to reduce permissioning ambiguity and to prevent security loopholes.
+ - Added support for guest accounts.
+ - Added the ability to add a team member to a board by selecting their name from an autocomplete list.
+ - Added channel notifications for linked boards.
+ - Added a new multi-person property to easily set multiple assignees or owners on a card.
+
+#### Calls
+ - Added new keyboard shortcuts for Calls.
+
+### Improvements
+
+#### User Interface (UI)
+ - Insights now filters out posts made by plugins and OAuth apps.
+ - Added a “Last active” status to the profile popover and to the **Direct Message** channel header that indicates when a user was last online. This status only displays for users who are Away, Offline, or DND.
+ - Added a shortcut ``Ctrl/Cmd + Shift + U`` to filter channels by unread.
+ - The default number of **Direct Message** channels shown in the sidebar is now 40.
+ - Updated the company name in the **About Modal** to use the company name of the cloud customer instead of the company name in the cloud license.
+ - Downgraded Brazilian Portuguese and Romanian language support to Alpha.
+ - Pre-packaged Playbooks v1.32.6.
+ 
+#### Administration
+ - After 90 days since the day of missing a payment, Admins will see a modal where they can choose between updating the billing status or staying on the Starter subscription.
+ - A banner is now shown to legacy Enterprise Mattermost Cloud Admins informing them that they need to change their workspace soon.
+
+### Bug Fixes
+ - Fixed an issue where a randomly generated default message-ID was not added for every outgoing email.
+ - Fixed an issue where custom groups could be created with at-mention names that are reserved words (@channel, @here, @all).
+ - Fixed an issue where 404 errors were shown when APIv4 had an incorrect content-type header.
+ - Fixed an issue where messages from bots and webhooks could not be forwarded.
+ - Fixed an issue where the **Integrations limit** warning modal stated "You're getting closer to the 5 enabled integrations limit" even when 5 plugins were already enabled.
+ - Fixed an issue where inline images did not appear in the channel header.
+ - Fixed an issue with the emoji skin tone selector animation.
+ - Fixed an issue where attempting to access a post from the channel **Files** view caused a crash if the Cloud account had reached the message limit.
+ - Fixed an issue where the screen reader did not announce a successful login when logging in.
+ - Fixed a few broken links at **System Console > User Management > Permission Schemes**.
+ - Fixed an issue where users were able to forward messages to users who are deactivated.
+ - Fixed an issue where "Threads" were not shown in the unread filter view even if there weren't unread threads.
+ - Fixed an issue where the user’s full name was not shown when adding people to a channel via the ``Add people`` modal.
+ - Reverted the new search of names in PostgreSQL using full text search introduced in v7.3.0 due to a performance regression.
+
+### Known Issues
+ - "More" menu for Pinned posts on the right-hand side is cut-off [MM-46987](https://mattermost.atlassian.net/browse/MM-46987).
+ - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
+
+## Release 2022-10-06
+
+### Improvements
+
+#### User Interface (UI)
+ - Added Insights to the channel switcher.
+ - Added a button to easily copy the content of text or code files in file previews.
+ - The team unread icon for muted channels is now hidden in the sidebar.
+ - Updated the designs for the “payment failed” email notifications.
+
+#### Administration
+ - A ``batchSize`` option has been added to the ``mattermost export`` CLI command to limit the number of items exported. By default, if it is not included, it exports all posts.
+ - Added a credit card update modal that communicates arrears for Admins.
+
+#### API Changes
+ - Updated the Files search and GET APIs to filter out files beyond the Cloud plan's configured limit.
+ - Added a new response-header ``First-Inaccessible-File-Time`` to the APIs fetching single file info.
+ - Added a new query parameter to include deleted posts as long as it's requested by a System Admin in ``/api/v4/channels/{channel_id}/posts``.
+
+### Bug Fixes
+ - Fixed an issue with the badge count on the mobile app when a channel/thread was viewed.
+ - Fixed an issue where typing ``@`` in the right-hand side rendered a cut-off user suggestion list.
+ - Fixed an issue where an error screen was briefly flashed when the first Admin signed up into a new server.
+ - Fixed an issue where users were unable to add Japanese comments correctly in the message **Forward** modal.
+ - Fixed an issue where unsaved edits to a post were lost when switching channels or threads.
+ - Fixed an issue on larger screen sizes where the Insights widgets were pushed to the side when the right-hand side was open.
+ - Fixed an issue where the ability to forward messages from public channels wasn't possible when messaging someone directly for the first time.
+ - Fixed an issue where custom emojis were sometimes not visible in **Insights > Top Reactions**.
+ - Fixed an issue where channels with no posts within a particular timeframe didn't show in **Insights > Least Active Channel**.
+ - Fixed an issue where the Channel Info right-hand side shortcut was not disabled in the Insights view.
+ - Fixed an issue where formatting keyboard shortcuts were conflicting with existing shortcuts.
+ - Fixed an issue where the markdown style for horizontal rules was too thick.
+ - Fixed an issue where the emoji reaction overlay blocked part of the message it belonged to in compact view.
+ - Fixed an issue where an in-product link was missing from **Integrations > Bot Accounts > Add Bot Account**.
+
+### Known Issues
+ - Clicking "Back to team" link from the **System Console** causes a white screen if the righ-hand side was open [MM-47226](https://mattermost.atlassian.net/browse/MM-47226).
+ - "More" menu for Pinned posts on the right-hand side is cut-off [MM-46987](https://mattermost.atlassian.net/browse/MM-46987).
+ - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
+ - On the new Boards RHS from the channel Apps Bar, channel members who are not board Admins are incorrectly able to see the **Unlink** board button. However, selecting the button doesn't actually unlink the board unless the user is a board Admin [issue-focalboard-3600](https://github.com/mattermost/focalboard/issues/3600).
+
+## Release 2022-09-15
+
+### Highlights
+
+#### Notify Admin v2
+ - Added more context to the “Notify admin” feature to help Admins, such as who asked to upgrade, why they requested the upgrade, and how many people requested it.
+
+### Improvements
+
+#### User Interface (UI)
+ - Added a new Top Playbooks Insights widget.
+ - Added Calls keyboard shortcuts to the **Keyboard shortcuts** help modal.
+ - Pre-packaged Playbooks v1.32.3.
+ - Pre-packaged Calls v0.8.1.
+ - Downgraded Bulgarian language support to Beta.
+
+#### Administration
+ - If ``EnableConfirmNotificationsToChannel`` is disabled, channel member counts by group API are no longer called.
+ - Added ``OmitConnection`` to the websocket broadcast parameters.
+
+### Bug Fixes
+ - Fixed an issue with a nil point exception error during imports.
+ - Fixed an issue where users were unable to download a [Support Packet](/manage/generating-support-packet.html) using the Desktop App.
+ - Fixed an issue with the **Message forward** modal where the auto-complete in the comment box moved with the text cursor.
+ - Fixed typos in some translations strings that caused some in-product links to be broken.
+
+### Known Issues
+ - On larger screens, the Insights widgets are pushed to the side when the right-hand side is open [MM-46886](https://mattermost.atlassian.net/browse/MM-46886).
+ - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
+ - On the new Boards RHS from the channel Apps Bar, channel members who are not board admins are incorrectly able to see the **Unlink** board button. However, selecting the button doesn't actually unlink the board unless the user is a board admin [issue-focalboard-3600](https://github.com/mattermost/focalboard/issues/3600).
+
+## Release 2022-09-08
+
+### Improvements
+
+#### User Interface (UI)
+ - Added a red destructive action color to the **Leave Channel** button in the channel header.
+ - The "limits reached" modal is now shown to Admins who are doing a fresh login on Cloud instances that hit the message history limit.
+
+### Bug Fixes
+ - Fixed an issue where muted channels with an at-mention were displayed under the **Unreads** section of the channel switcher.
+ - Fixed an issue where the Collapsed Reply Threads setting was displayed in the **System Console > Experimental Features** section.
+
+### Known Issues
+ - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
+ - The runs and playbooks in the Playbooks left-hand sidebar don't have dot-menus that allow interaction with each item [MM-44752](https://mattermost.atlassian.net/browse/MM-44752).
+ - On the new Boards RHS from the channel Apps Bar, channel members who are not board admins are incorrectly able to see the **Unlink** board button. However, selecting the button doesn't actually unlink the board unless the user is a board admin [issue-focalboard-3600](https://github.com/mattermost/focalboard/issues/3600).
+
+## Release 2022-09-01
+
+### Improvements
+
+#### Boards
+ - Added indexes to improve performance.
+ - Fixed a bug where the **New** button in Kanban columns didn't always work [issue-focalboard-3600](https://github.com/mattermost/focalboard/issues/3600).
+ - Fixed issues with 'single-user' mode.
+
+#### User Interface (UI)
+ - Added new Insights widgets: Most Active Direct Messages, Least Active Channels, and New Team Members.
+ - Introduced a new ``/marketplace command`` that brings up the marketplace modal for the Admin, and changed the ``/help`` command so that it now keeps the user internal to Mattermost.
+ - Team unreads are now calculated based on the channel membership and threads only. Team membership is no longer taken into account.
+ - For introducing Boards and Playbooks to new users, an “explore other tools in platform” item was added to the end user onboarding checklist.
+ 
+#### API Changes
+ - Added new API endpoints:
+ 
+	  - ``GET /api/v4/users/me/top/dms``
+	  - ``GET /api/v4/users/me/top/threads``
+	  - ``GET /api/v4/teams/:team_id/top/team_members``
+	  - ``GET /api/v4/teams/:team_id:/top/threads``
+
+### Bug Fixes
+ - Fixed an issue in **System Console > Subscription** where the completed Company Information screen read "Provide your company name and address".
+ - Fixed an issue where reading a thread on the mobile app caused a negative mention count to display on the web app.
+ - Fixed an issue where the user profile image persisted after user account deletion.
+
+### Known Issues
+ - Known issues related to the new Insights widgets, such as that pagination displays for 10 items or less [MM-46595](https://mattermost.atlassian.net/browse/MM-46595).
+ - ``/marketplace`` slash command opens the Marketplace with an error displayed [MM-46663](https://mattermost.atlassian.net/browse/MM-46663).
+ - Alt+click does not mark a root post as unread on global threads inbox [MM-46683](https://mattermost.atlassian.net/browse/MM-46683).
+ - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
+ - The runs and playbooks in the Playbooks left-hand sidebar don't have dot-menus that allow interaction with each item [MM-44752](https://mattermost.atlassian.net/browse/MM-44752).
+ - On the new Boards RHS from the channel Apps Bar, channel members who are not board admins are incorrectly able to see the **Unlink** board button. However, selecting the button doesn't actually unlink the board unless the user is a board admin [issue-focalboard-3600](https://github.com/mattermost/focalboard/issues/3600).
+
+## Release 2022-08-25
+
+### Improvements
+
+#### User Interface (UI)
+ - Added the **Save** option to the post menu.
+ - Added a banner to communicate delinquency to Cloud Customers.
+ - Cloud instances with a file limit (Starter and Professional subscriptions) now display icons notifying that the limit has been hit and that archived files are unavailable until upgrade.
+
+#### Administration
+ - Started tracking the join time of team members and added a new API endpoint to retrieve information about team members who have joined during a given time.
+ - Introduced an optional ``shouldRender`` function parameter to ``registerchannelHeaderMenuAction`` plugin function. This allows menu items to conditionally render depending on the current state prior to rendering.
+
+### Bug Fixes
+ - Fixed an issue where exports generated via mmctl without attachments still included the file properties in the post, so they couldn't be imported.
+ - Fixed an issue that caused a crash when unread posts were fetched.
+
+### Known Issues
+ - Mentions incorrectly show users as not in a channel [MM-44157](https://mattermost.atlassian.net/browse/MM-44157).
+ - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
+ - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
+ - The runs and playbooks in the Playbooks left-hand sidebar does not have dot-menus that allow interaction with each item [MM-44752](https://mattermost.atlassian.net/browse/MM-44752).
+ - On the new Boards RHS from the channel Apps Bar, channel members who are not board admins are incorrectly able to see the **Unlink** board button. However, selecting the button doesn't actually unlink the board unless the user is a board admin [issue-focalboard-3600](https://github.com/mattermost/focalboard/issues/3600).
+ - On Boards, selecting the **+ New** button below a column on the Kanban view doesn't always create a new card. As a workaround, set a new default card template by going to the dropdown menu from the blue **New** button on the header of the board, opening the **Options** menu on any card template, and selecting **Set as default** [issue-focalboard-3676](https://github.com/mattermost/focalboard/issues/3676).
+
+## Release 2022-08-18
+
+### Highlights
+
+### Playbooks
+ - Navigate between teams in Playbooks with the new team switcher.
+ - Manage playbooks and runs in the new left-hand sidebar.
+ - View the runs you're participating in or following in the **Runs** sidebar category, and view the playbooks you're a member of in the **Playbooks** sidebar category.
+ - Favorite runs or playbooks to prioritize them in the **Favorites** category.
+ - Participants now have access to every run feature on the new run details page.
+ - In Cloud Professional and Enterprise plans, stakeholders can request status updates from runs.
+
+### Boards
+ - All the boards you’re currently a member of from your current team will appear on the sidebar without needing to switch workspaces.
+ - Organize boards on the sidebar with custom categories.
+ - Press CTRL+K/CMD+K to find additional boards.
+ - Navigate between teams in Boards with the new team switcher.
+ - Set board and template permissions in the new **Share** setting.
+ - Link boards to channels to automatically grant board permissions to channel members.
+ - See [the documentation](/welcome/whats-new-in-v72.html) for more details.
+
+### Improvements
+
+#### User Interface (UI)
+ - Only the most recent message is now marked as unread when marking a thread as unread from the Threads list.
+ - Insights filters now persist instead of being reset to default when switching to channels and returning back to the Insights view.
+ - Code blocks now have better support for language filetype extensions and are a smaller bundle size.
+
+### Bug Fixes
+ - Fixed an issue where updating a profile image and creating new emojis used multipart uploads when using S3 storage.
+ - Fixed an issue where the input legend on the custom group modal was cut off in Chrome.
+ - Fixed an issue where the **Disable post formatting** setting was hidden when the advanced text editor was enabled.
+ - Fixed an issue where we didn’t fall back to the user's default picture if a profile picture failed to load.
+ - Fixed an issue where disabling a WebApp plugin from its configuration page resulted in the radio button reverting to ``true``.
+
+### Known Issues
+ - Mentions incorrectly shows users as not in a channel [MM-44157](https://mattermost.atlassian.net/browse/MM-44157).
+ - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
+ - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
+ - The runs and playbooks in the Playbooks left-hand sidebar does not have dot-menus that allow interaction with each item [MM-44752](https://mattermost.atlassian.net/browse/MM-44752).
+ - On the new Boards RHS from the channel Apps Bar, channel members who are not admins of the board are incorrectly able to see the "unlink" board button. However, clicking on the button will not actually unlink the board unless the user is a board admin [issue-focalboard-3600](https://github.com/mattermost/focalboard/issues/3600).
+ - On Boards, clicking on `+ New` button below a column on the Kanban view does not always create a new card. As a workaround, set a new default card template by going to the dropdown menu from the blue `New` button on the header of the board, then open the Options Menu on any card template and select "Set as default" [issue-focalboard-3676](https://github.com/mattermost/focalboard/issues/3676).
+
+## Release 2022-08-10
+
+### Improvements
+
+#### User Interface (UI)
+ - A Desktop App prompt is now always shown on first visit to a Mattermost server from an email notification.
+
+### Bug Fixes
+ - Fixed an issue where the cursor sometimes jumped to the center channel textbox when the right-hand side was open.
+ - Fixed an issue where closing the right-hand side also closed the edited post in the center channel.
+ - Fixed an issue where clicking "Try free now" opened the top 3 enterprise features instead of the "Your trial has started" modal.
+ - Fixed an issue where the Threads view displayed as unread even if there were no unread threads.
+
+### Known Issues
+ - Mentions incorrectly shows users as not in a channel [MM-44157](https://mattermost.atlassian.net/browse/MM-44157).
+ - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
+
+## Release 2022-08-03
+
+### Improvements
+
+#### User Interface (UI)
+ - Search dropdown options now allow focusing with tab.
+
+#### Administration
+ - Plugins can now hide plugin settings based on the server's hosting environment.
+ - For Cloud instances, when messages limit is reached, a notification is shown in a channel if the limit is being hit in that channel.
+ - Customers who are on a 30-day free trial are now notified 3 days before the trial ends.
+
+### API Changes
+ - Added ``first_inaccessible_post_time`` to post API responses.
+ - Updated permissions of the ``api/v4/posts/{post_id:[A-Za-z0-9]+}/thread`` endpoint. If compliance is enabled, a user can on longer view threads in a public channel they are not a member of.
+ - Adds query parameter 'include_deleted' to endpoint: {{[http://your-mattermost-url.com/api/v4/posts/{post_id}/files/info}}](http://your-mattermost-url.com/api/v4/posts/%7Bpost_id%7D/files/info%7D%7D).
+
+### Bug Fixes
+ - Fixed an issue where configuration changes could not be saved in the **System Console** in some cases.
+ - Custom Brand Text is now centered and the Site Description configuration now doesn't show a placeholder.
+ - Removed a bug where the group permissions had an extra level of nesting in the UI. The permissions checkboxes were also split out into their individual custom group permissions for a greater granularity of control.
+
+### Known Issues
+ - Mentions incorrectly shows users as not in a channel [MM-44157](https://mattermost.atlassian.net/browse/MM-44157).
+ - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
+
+## Release 2022-07-28
+
+### Improvements
+
+#### User Interface (UI)
+ - Added the ability to quickly and easily forward posts as permalinks with their respective permalink previews.
+ - Added a red destructive action color to ``Archive Channel`` and ``Leave Channel`` menu actions.
+ - Plugin activation errors now show in the plugin management page and marketplace.
+ - Added accessibility to the emoji picker skin tone selector and reversed the order of the skin tone selections in the emoji selector.
+
+#### Administration
+ - A new schema and API for audit logs was defined. Contrary to the previous audit log implementation, all audit log records now have the same schema.
+ - Added a new static system-level role called Custom Group Manager. This role has permissions to create, edit, and delete custom user groups via User Groups in the Products menu. It can be used to assign individual users this ability when Custom Groups permissions are removed for All Members via the **System Console** (**System Console > Permissions > Edit Scheme > Custom Groups**).
+ - Export file names now contain the ID of the job they were generated by.
+
+### Bug Fixes
+ - Fixed an issue where a users were unable to remove themselves from a custom role.
+ - Fixed an issue where some images in link previews overflowed.
+ - Fixed an issue where accessing the **System Console** and then exiting changed the user's status to "Offline".
+ - Fixed an issue where the **New Messages** line sometimes appeared when viewing a channel that was previously read.
+ - Fixed an issue with incorrectly formatted text in the **System Console**.
+
+### Known Issues
+ - Mentions incorrectly shows users as not in a channel [MM-44157](https://mattermost.atlassian.net/browse/MM-44157).
+ - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
+
+## Release 2022-07-20
+
+### Improvements
+
+#### User Interface (UI)
+- Added **Save** and **Cancel** buttons for post inline editing.
+- Enterprise trial details are now displayed for end users in the product switcher menu.
+- Updated the Edit Header modal text description to be applicable to channels, direct messages, and group messages.
+
+#### Administration
+ - Admins are now able to search for channel IDs via **System Console > User Management > Channels** page.
+ - In the **System Console** left-hand side, paid features icons are now displayed on the menu entries to indicate enterprise features.
+ - Cloud usage rounding for posts and messages is now precise enough to know when a limit has been reached or exceeded.
+ - Added ``webSocketClient`` to ``Pluggable`` and ``PostWillRenderEmbed`` plugin registered components.
+
+### Performance
+ - Removed ``getLastPostPerChannel`` selector for improved performance in channel sorting.
+
+### Bug Fixes
+ - Fixed an issue where users were able to attempt to edit the channel header of an archived channel on the right-hand side.
+ - Decreased flakiness of requesting a Cloud trial.
+ - Fixed an issue where the “Your Trial Ended” banner hid the product switcher menu.
+ - Fixed an issue where the custom status date format was not set to ``yyyy-MM-dd``.
+
+### Known Issues
+ - Custom status does not appear until refresh [MM-45334](https://mattermost.atlassian.net/browse/MM-45334).
+ - Mentions incorrectly shows users as not in a channel [MM-44157](https://mattermost.atlassian.net/browse/MM-44157).
+ - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
+
+## Release 2022-07-13
+
+### Highlights
+
+#### Insights (Beta) (Enterprise and Professional subscriptions)
+ - Added workplace insights consisting of usage and behavior data, which helps Enterprises further increase productivity of their employees through Mattermost functionality.
+
+### Improvements
+
+#### User Interface (UI)
+
+ - Added the option to colorize usernames in compact display mode when **Account Settings > Display > Message Display > Compact** is selected.
+ - Added a setting to always land users at the newest messages in a channel via **Account settings > Advanced > Scroll position when viewing an unread channel**.
+ - Added email headers to notification emails so they can be threaded by email clients.
+
+#### Administration
+ - Added the ability to start a trial from the **Invite People** modal.
+ - Added the ability for end users to notify Admins to upgrade their workspace.
+ - Updated the Posts search and get APIs to filter out posts beyond the Cloud plan's limit.
+ - The claim of 10 GB storage per user is no longer shown for grandfathered Cloud plan.
+
+### API Changes
+ - Added a new response-header ``Has-Inaccessible-Posts`` for ``getPost`` and ``getPostByIDs`` APIs.
+
+### Bug Fixes
+ - Fixed an issue with pasting a GitHub code snippet in the message box when text is selected.
+ - Fixed an issue where fully typed emojis that contained a capital letter were not correctly displayed.
+ - Fixed an issue where the archived icon did not display correctly in dark themes.
+ - Fixed an issue where password requirements were not enforced when Development Mode was enabled.
+
+### Known Issues
+ - The Top Boards widget in Insights is slow to load.
+ - Custom status does not appear until refresh [MM-45334](https://mattermost.atlassian.net/browse/MM-45334).
+ - Mentions incorrectly shows users as not in a channel [MM-44157](https://mattermost.atlassian.net/browse/MM-44157).
+ - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
+
+## Release 2022-06-29
+
+### Improvements
+
+#### User Interface (UI)
+- Added support for syntax highlighting for 1C:Enterprise (BSL) language.
+
+#### Administration
+ - The System Console now also searches and returns channels based on the channel ID. A new parameter ``IncludeSearchById`` was added to the channel search endpoint, allowing requests to include searches that match IDs in response.
+ - Admins now have the ability to downgrade from Professional to Starter subscription via **System Console > Subscription**.
+ - The setting ``ServiceSettings.EnableInsecureOutgoingConnections`` is now applicable to S3 clients as well. If this setting is set, S3 clients will skip the TLS verification.
+ - Changed the "Enable Authentication Transfer" to be configurable in Cloud by the System Admin.
+ - Search results in PostgreSQL will now respect the ``default_text_search_config`` value instead of being hardcoded to English. System Admins are requested to check this value in case of any discrepancies with what is expected.
+
+### API Changes
+ - Added new API endpoints ``GET /api/v4/teams/:team_id/top/threads`` and ``GET /api/v4/users/me/top/threads`` to get top threads for a team and user.
+
+### Bug Fixes
+ - Fixed an issue where duplicated emojis sometimes displayed as recently used emojis.
+ - Fixed an issue where autocomplete "@" search for names did not normalize UTF-8 characters.
+ - Fixed an issue where **Group Messages** with long display names didn't have a tooltip in the left-hand sidebar.
+ - Fixed an issue where the file icon was sometimes unresponsive.
+
+### Known Issues
+ - Custom status does not appear until refresh [MM-45334](https://mattermost.atlassian.net/browse/MM-45334).
+ - Images in OpenGraph previews appear broken [MM-45164](https://mattermost.atlassian.net/browse/MM-45164).
+ - Channels sometimes don't get marked as read [MM-44900](https://mattermost.atlassian.net/browse/MM-44900).
+ - After server upgrade, usage limit warning may stay in the Main Menu until page refresh [MM-45056](https://mattermost.atlassian.net/browse/MM-45056).
+ - Mentions incorrectly shows users as not in a channel [MM-44157](https://mattermost.atlassian.net/browse/MM-44157).
+ - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
 ## Release 2022-06-22
 
@@ -59,10 +863,10 @@ Latest Mattermost Cloud releases:
     - Maximum 5 saved views per board.
 
 #### Calls (Beta)
- - [Native voice calling and screen sharing](https://docs.mattermost.com/channels/make-calls.html) is now available. This is a Channels-specific integration.
+ - [Native voice calling and screen sharing](/channels/make-calls.html) is now available. This is a Channels-specific integration.
 
 #### Collapsed Reply Threads (General Availability)
- - [Collapsed Reply Threads](https://docs.mattermost.com/channels/organize-conversations.html) is now generally available and enabled by default for all Cloud users. Administrators may disable it in **System Console > Posts**.
+ - [Collapsed Reply Threads](/channels/organize-conversations.html) is now generally available and enabled by default for all Cloud users. Administrators may disable it in **System Console > Posts**.
 
 #### Apps Bar (Beta)
  - The channel header is now decluttered to make it more obvious how to access Calls, Playbooks, and Boards when viewing a channel. All channel header icons registered by plugins are moved to the new Apps Bar, while Calls remains in the channel header.
@@ -76,7 +880,7 @@ Latest Mattermost Cloud releases:
  - Romanian language support was downgraded to Beta.
 
 #### Administration
- - For all Cloud Workspaces, the default value for Collapsed Reply Threads in **System Console > Posts** is now set to **Always On**. You may choose a different [configuration](https://docs.mattermost.com/configure/configuration-settings.html#collapsed-reply-threads) as desired.
+ - For all Cloud Workspaces, the default value for Collapsed Reply Threads in **System Console > Posts** is now set to **Always On**. You may choose a different [configuration](/configure/configuration-settings.html#collapsed-reply-threads) as desired.
  - Mattermost Cloud Professional plan now includes a 250GB file storage limit.
  - Default password requirements have been loosened to eight characters and no numeric, casing, or special characters required by default. These requirements can be configured by the System Admin as needed via **System Console > Password**.
  - The Collapsed Reply Threads configuration option was moved in the **System Console** from **Experimental** to **Site Configuration > Posts**.
@@ -141,7 +945,7 @@ Latest Mattermost Cloud releases:
  - Mentions incorrectly show users as not in a channel [MM-44157](https://mattermost.atlassian.net/browse/MM-44157).
  - Channel switcher does not show cross team unreads on refresh [MM-44073](https://mattermost.atlassian.net/browse/MM-44073).
  - File upload might fail for SVG files [MM-38982](https://mattermost.atlassian.net/browse/MM-38982).
- - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
+ - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](/messaging/organizing-conversations.html#known-issues).
  - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
 ## Release 2022-05-12
@@ -166,7 +970,7 @@ Latest Mattermost Cloud releases:
 
 ### Known Issues
  - File upload might fail for SVG files [MM-38982](https://mattermost.atlassian.net/browse/MM-38982).
- - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
+ - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](/messaging/organizing-conversations.html#known-issues).
  - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
 ## Release 2022-04-28
@@ -201,7 +1005,7 @@ Latest Mattermost Cloud releases:
  - Shortcut keys for **Add Reaction** and **Save** are missing in mobile web view [MM-42715](https://mattermost.atlassian.net/browse/MM-42715).
  - Image link previews may show a blank space [MM-40448](https://mattermost.atlassian.net/browse/MM-40448).
  - File upload might fail for SVG files [MM-38982](https://mattermost.atlassian.net/browse/MM-38982).
- - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
+ - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](/messaging/organizing-conversations.html#known-issues).
  - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
 ## Release 2022-04-13
@@ -232,7 +1036,7 @@ Latest Mattermost Cloud releases:
  - Shortcut keys for **Add Reaction** and **Save** are missing in mobile web view [MM-42715](https://mattermost.atlassian.net/browse/MM-42715).
  - Image link previews may show a blank space [MM-40448](https://mattermost.atlassian.net/browse/MM-40448).
  - File upload might fail for SVG files [MM-38982](https://mattermost.atlassian.net/browse/MM-38982).
- - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
+ - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](/messaging/organizing-conversations.html#known-issues).
  - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
 ## Release 2022-03-30
@@ -268,7 +1072,7 @@ Latest Mattermost Cloud releases:
  - Shortcut keys for **Add Reaction** and **Save** are missing in mobile web view [MM-42715](https://mattermost.atlassian.net/browse/MM-42715).
  - Image link previews may show a blank space [MM-40448](https://mattermost.atlassian.net/browse/MM-40448).
  - File upload might fail for SVG files [MM-38982](https://mattermost.atlassian.net/browse/MM-38982).
- - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
+ - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](/messaging/organizing-conversations.html#known-issues).
  - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
 ## Release 2022-03-16
@@ -318,7 +1122,7 @@ Latest Mattermost Cloud releases:
  - In compact message view, the inline post edit help text and emoji picker are not aligned [MM-42402](https://mattermost.atlassian.net/browse/MM-42402).
  - Image link previews may show a blank space [MM-40448](https://mattermost.atlassian.net/browse/MM-40448).
  - File upload might fail for SVG files [MM-38982](https://mattermost.atlassian.net/browse/MM-38982).
- - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
+ - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](/messaging/organizing-conversations.html#known-issues).
  - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
 ## Release 2022-03-08
@@ -366,7 +1170,7 @@ Latest Mattermost Cloud releases:
  - Image link previews may show a blank space [MM-40448](https://mattermost.atlassian.net/browse/MM-40448).
  - File upload might fail for SVG files [MM-38982](https://mattermost.atlassian.net/browse/MM-38982).
  - ``CMD+/`` does not close the shortcuts modal [MM-38971](https://mattermost.atlassian.net/browse/MM-38971).
- - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
+ - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](/messaging/organizing-conversations.html#known-issues).
  - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
 ## Release 2022-02-16
@@ -413,7 +1217,7 @@ Latest Mattermost Cloud releases:
  - File upload might fail for SVG files [MM-38982](https://mattermost.atlassian.net/browse/MM-38982).
  - ``CMD+/`` does not close the shortcuts modal [MM-38971](https://mattermost.atlassian.net/browse/MM-38971).
  - ``CTRL/CMD + SHIFT + A`` shortcut does not open **Settings** [MM-38236](https://mattermost.atlassian.net/browse/MM-38236).
- - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
+ - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](/messaging/organizing-conversations.html#known-issues).
  - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
 ## Release 2022-02-10
@@ -449,7 +1253,7 @@ Latest Mattermost Cloud releases:
  - File upload might fail for SVG files [MM-38982](https://mattermost.atlassian.net/browse/MM-38982).
  - ``CMD+/`` does not close the shortcuts modal [MM-38971](https://mattermost.atlassian.net/browse/MM-38971).
  - ``CTRL/CMD + SHIFT + A`` shortcut does not open **Settings** [MM-38236](https://mattermost.atlassian.net/browse/MM-38236).
- - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
+ - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](/messaging/organizing-conversations.html#known-issues).
  - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
 ## Release 2022-01-27
@@ -493,7 +1297,7 @@ Latest Mattermost Cloud releases:
  - File upload might fail for SVG files [MM-38982](https://mattermost.atlassian.net/browse/MM-38982).
  - ``CMD+/`` does not close the shortcuts modal [MM-38971](https://mattermost.atlassian.net/browse/MM-38971).
  - ``CTRL/CMD + SHIFT + A`` shortcut does not open **Settings** [MM-38236](https://mattermost.atlassian.net/browse/MM-38236).
- - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
+ - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](/messaging/organizing-conversations.html#known-issues).
  - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
 ## Release 2022-01-11
@@ -528,7 +1332,7 @@ Latest Mattermost Cloud releases:
  - File upload might fail for SVG files [MM-38982](https://mattermost.atlassian.net/browse/MM-38982).
  - ``CMD+/`` does not close the shortcuts modal [MM-38971](https://mattermost.atlassian.net/browse/MM-38971).
  - ``CTRL/CMD + SHIFT + A`` shortcut does not open **Settings** [MM-38236](https://mattermost.atlassian.net/browse/MM-38236).
- - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
+ - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](/messaging/organizing-conversations.html#known-issues).
  - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
 ## Release 2021-12-01
@@ -554,7 +1358,7 @@ Latest Mattermost Cloud releases:
  - File upload might fail for SVG files [MM-38982](https://mattermost.atlassian.net/browse/MM-38982).
  - ``CMD+/`` does not close the shortcuts modal [MM-38971](https://mattermost.atlassian.net/browse/MM-38971).
  - ``CTRL/CMD + SHIFT + A`` shortcut does not open **Settings** [MM-38236](https://mattermost.atlassian.net/browse/MM-38236).
- - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
+ - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](/messaging/organizing-conversations.html#known-issues).
  - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
 ## Release 2021-11-23
@@ -586,7 +1390,7 @@ Latest Mattermost Cloud releases:
  - File upload might fail for SVG files [MM-38982](https://mattermost.atlassian.net/browse/MM-38982).
  - ``CMD+/`` does not close the shortcuts modal [MM-38971](https://mattermost.atlassian.net/browse/MM-38971).
  - ``Ctrl/Cmd+Shift+A`` shortcut does not open **Account Settings** [MM-38236](https://mattermost.atlassian.net/browse/MM-38236).
- - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
+ - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](/messaging/organizing-conversations.html#known-issues).
  - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
 ## Release 2021-11-11
@@ -619,7 +1423,7 @@ Latest Mattermost Cloud releases:
  - ``CMD+/`` does not close the shortcuts modal [MM-38971](https://mattermost.atlassian.net/browse/MM-38971).
  - ``Ctrl/Cmd+Shift+A`` shortcut does not open **Account Settings** [MM-38236](https://mattermost.atlassian.net/browse/MM-38236).
  - Close button on the Invite People page is incorrectly themed [MM-37852](https://mattermost.atlassian.net/browse/MM-37852).
- - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
+ - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](/messaging/organizing-conversations.html#known-issues).
  - **Cloud > "Tips & Next Steps"** should not show an "Explore channels" section for guest users.
  - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
@@ -674,7 +1478,7 @@ Latest Mattermost Cloud releases:
  - ``Ctrl/Cmd+Shift+A`` shortcut does not open **Account Settings** [MM-38236](https://mattermost.atlassian.net/browse/MM-38236).
  - Close button on the Invite People page is incorrectly themed [MM-37852](https://mattermost.atlassian.net/browse/MM-37852).
  - Indigo theme glitch may occur when returning from Playbooks [MM-38910](https://mattermost.atlassian.net/browse/MM-38910).
- - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
+ - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](/messaging/organizing-conversations.html#known-issues).
  - **Cloud > "Tips & Next Steps"** should not show an "Explore channels" section for guest users.
  - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
@@ -748,7 +1552,7 @@ Latest Mattermost Cloud releases:
  - ``Ctrl/Cmd+Shift+A`` shortcut does not open **Account Settings** [MM-38236](https://mattermost.atlassian.net/browse/MM-38236).
  - Close button on invite people page is incorrectly themed [MM-37852](https://mattermost.atlassian.net/browse/MM-37852).
  - Indigo theme glitch may occur when returning from Playbooks [MM-38910](https://mattermost.atlassian.net/browse/MM-38910).
- - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
+ - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](/messaging/organizing-conversations.html#known-issues).
  - **Cloud > "Tips & Next Steps"** should not show an "Explore channels" section for guest users.
  - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
@@ -765,7 +1569,7 @@ Latest Mattermost Cloud releases:
 
 #### Branding Changes
  - Added a new default brand theme named "Denim".
- - The existing theme names and colors, including "Mattermost", "Organization", "Mattermost Dark", and "Windows Dark" have been updated to the new "Denim", "Sapphire", "Indigo", & "Onyx" theme names and colours, respectively. Anyone using the existing themes will see slightly modified theme colors after their server or workspace is upgraded. The theme variables for the existing "Mattermost", "Organization", "Mattermost Dark", and "Windows Dark" themes will still be accessible in [our documentation](https://docs.mattermost.com/messaging/customizing-theme-colors.html#custom-theme-examples), so a custom theme can be created with these theme variables if desired. Custom themes are unaffected by this change.
+ - The existing theme names and colors, including "Mattermost", "Organization", "Mattermost Dark", and "Windows Dark" have been updated to the new "Denim", "Sapphire", "Indigo", & "Onyx" theme names and colours, respectively. Anyone using the existing themes will see slightly modified theme colors after their server or workspace is upgraded. The theme variables for the existing "Mattermost", "Organization", "Mattermost Dark", and "Windows Dark" themes will still be accessible in [our documentation](/messaging/customizing-theme-colors.html#custom-theme-examples), so a custom theme can be created with these theme variables if desired. Custom themes are unaffected by this change.
  - Added a new light theme named "Quartz" to the default available list of themes.
  - Updated email templates to the new branding.
 
@@ -816,7 +1620,7 @@ Latest Mattermost Cloud releases:
 
 ### Known Issues
  - To exit Playbooks, uers can press the **Back** button or use a keyboard shortcut to go back.
- - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
+ - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](/messaging/organizing-conversations.html#known-issues).
  - Sometimes an "Unable to get role" error appears when changing a channel member role in **System Console > User Management > Channels**.
  - **Cloud > "Tips & Next Steps"** should not show an "Explore channels" section for guest users.
  - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
@@ -858,7 +1662,7 @@ Latest Mattermost Cloud releases:
  - Fixed an issue with Collapsed Reply Threads (Beta) where replying to a thread caused users to re-follow the previously unfollowed thread.
 
 ### Known Issues
- - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
+ - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](/messaging/organizing-conversations.html#known-issues).
  - Sometimes an "Unable to get role" error appears when changing a channel member role in **System Console > User Management > Channels**.
  - **Cloud > "Tips & Next Steps"** should not show an "Explore channels" section for guest users.
  - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
@@ -902,7 +1706,7 @@ Latest Mattermost Cloud releases:
    - Fixed an issue where the app crashed when switching to the Threads view after leaving a channel.
 
 ### Known Issues
- - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
+ - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](/messaging/organizing-conversations.html#known-issues).
  - Sometimes an "Unable to get role" error appears when changing a channel member role in **System Console > User Management > Channels**.
  - **Cloud > "Tips & Next Steps"** should not show an "Explore channels" section for guest users.
  - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
@@ -926,7 +1730,7 @@ Latest Mattermost Cloud releases:
  - Added support for markdown in apps forms, interactive dialogs field descriptions, errors, and slash commands.
 
 ### Known Issues
- - Known issues related to the new collapsed reply threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
+ - Known issues related to the new collapsed reply threads (Beta) are [listed here](/messaging/organizing-conversations.html#known-issues).
  - Sometimes an "Unable to get role" error appears when changing a channel member role in **System Console > User Management > Channels**.
  - **Cloud > "Tips & Next Steps"** should not show an "Explore channels" section for guest users.
  - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
@@ -937,7 +1741,7 @@ Latest Mattermost Cloud releases:
 
 #### Collapsed Reply Threads (Early Beta Access)
 
- - We're excited to give you early access to Collapsed Reply Threads (Beta). It can be enabled in the **System Console > Experimental > Collapsed Reply Threads (Beta)**. Learn more about the features and known issues in [our documentation](https://docs.mattermost.com/help/messaging/organizing-conversations.html).
+ - We're excited to give you early access to Collapsed Reply Threads (Beta). It can be enabled in the **System Console > Experimental > Collapsed Reply Threads (Beta)**. Learn more about the features and known issues in [our documentation](/help/messaging/organizing-conversations.html).
 
 #### Emoji Enhancements with Skin Tone Selection
  - Added support for emoji standard v13.0. Users now have the ability to choose various skin tones using the Mattermost emoji picker. Mobile support is planned for v1.45 Mobile App release (July 16th), so some emojis selected on desktop won't be visible on mobile apps.
@@ -1029,7 +1833,7 @@ Latest Mattermost Cloud releases:
  - Redesigned message notification emails.
 
 #### Administration
- - The default value of the [Support Email](https://docs.mattermost.com/administration/config-settings.html#support-email) (previously ``_feedback@mattermost.com_``) has been removed. Admin Advisor will now prompt System Admins about missing configuration for the [Support Email](https://docs.mattermost.com/administration/config-settings.html#support-email). This value is required, and it ensures Mattermost account requests are sent to the correct team for resolution.
+ - The default value of the [Support Email](/administration/config-settings.html#support-email) (previously ``_feedback@mattermost.com_``) has been removed. Admin Advisor will now prompt System Admins about missing configuration for the [Support Email](/administration/config-settings.html#support-email). This value is required, and it ensures Mattermost account requests are sent to the correct team for resolution.
  - The **Marketplace** button in the **Main Menu** is now displayed if the user has the ``sysconsole_write_plugins`` permission.
  - Added new feature discoveries in the System Console, including Data Retention Policy and OpenID Connect.
  - Added basic intra-cluster communication support for plugins.

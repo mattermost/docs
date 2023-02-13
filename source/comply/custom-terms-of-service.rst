@@ -3,22 +3,8 @@
 Custom terms of service
 =======================
 
-|enterprise| |cloud| |self-hosted|
-
-.. |enterprise| image:: ../images/enterprise-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in the Mattermost Enterprise subscription plan.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
+.. include:: ../_static/badges/ent-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Mattermost Enterprise Edition E20*
 
@@ -41,7 +27,7 @@ Once saved, all users must accept the terms of service by clicking **I Agree** n
  
  If you make an update to your Terms of Service, make sure to update your terms of service link at **System Console > Site Configuration > Customization > Terms of Service link**. This link is presented to all users when they log in, and it's easily accessible to end users after accepting the terms.
 
-Frequently Asked Questions
+Frequently asked questions
 --------------------------
 
 What happens if I update my terms of service text?

@@ -1,31 +1,115 @@
 Desktop application changelog
 ==============================
 
-|all-plans| |cloud| |self-hosted|
-
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/sign-up
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 Latest Mattermost Desktop App releases:
 
-- `Release v5.1 <#id1>`_
-- `Release v5.0 <#id6>`_
-- `Release v4.7 <#id22>`_
-- `Release v4.6 <#id40>`_
-- `Release v4.5 <#id52>`_
-- `Release v4.4 <#id69>`_
+- `Release v5.2 <#id1>`_
+- `Release v5.1 <#id5>`_
+- `Release v5.0 <#id19>`_
+- `Release v4.7 <#id34>`_
+- `Release v4.6 <#id51>`_
+- `Release v4.5 <#id63>`_
+
+Release v5.2
+--------------
+
+- **v5.2.2, released 2022-12-06**
+ - Added ARM64 build (beta) for Windows/Linux.
+ - Fixed an issue on Windows installers where the onboarding screen was displayed even when there was a preconfigured server list `MM-48079 <https://mattermost.atlassian.net/browse/MM-48079>`_.
+ - Fixed an issue where a crash could occur when a download list included corrupt data `MM-48483 <https://mattermost.atlassian.net/browse/MM-48483>`_.
+ - Fixed an issue where ``AppImageLauncher`` still created a bad shortcut that caused the app not to launch `MM-48557 <https://mattermost.atlassian.net/browse/MM-48557>`_.
+ - Fixed an issue where notifications were not displayed on Windows v8 and v8.1 `MM-48397 <https://mattermost.atlassian.net/browse/MM-48397>`_.
+ - Fixed an issue where users could get stuck after finished the Getting Started flow `MM-48682 <https://mattermost.atlassian.net/browse/MM-48682>`_.
+ - Fixed an issue where the window resize did not work on some windows machines `MM-48574 <https://mattermost.atlassian.net/browse/MM-48574>`_.
+ - Fixed an issue on Windows where the three-dot menu remained focused after clicking elsewhere `MM-46424 <https://mattermost.atlassian.net/browse/MM-46424>`_.
+- **v5.2.1, released 2022-11-15**
+ - Fixed an issue on ``.exe`` installers where the onboarding screen was still displayed even when there was a preconfigured server list `MM-48079 <https://mattermost.atlassian.net/browse/MM-48079>`_.
+ - Fixed an issue where the default downloads location was not set on macOS `MM-48167 <https://mattermost.atlassian.net/browse/MM-48167>`_.
+ - Fixed an issue where users were able to edit or remove a pre-configured server provided by GPO on Windows `MM-48184 <https://mattermost.atlassian.net/browse/MM-48184>`_.
+ - Fixed an issue where the tray icon colour on Windows didn't obey the setting `MM-48080 <https://mattermost.atlassian.net/browse/MM-48080>`_.
+- **v5.2.0, released 2022-10-31**
+ - Original v5.2.0 release
+
+**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/latest>`_
+
+Compatibility
+~~~~~~~~~~~~~~~
+
+- Desktop App is supported on any supported Extended Support Release or a newer Mattermost server version.
+
+Highlights
+~~~~~~~~~~~~~~~
+
+- Onboarding screen improvements: Added new **Configure Server** and first user onboarding screens when starting the app without servers configured.
+- Added a Downloads dropdown menu that displays file upload progress and recently downloaded files.
+
+Improvements
+~~~~~~~~~~~~~~~
+
+Linux
+^^^^^^
+
+- Dropped support for Linux IA32 (Linux 32-bit builds).
+
+All Platforms
+^^^^^^^^^^^^^
+
+- The Desktop App configured URL is now forced to be changed to the SiteURL configured by the system adminstrator.
+- Added localization support to the Desktop App (Beta).
+- Zoom in/out now works when ``CTRL/CMD+SHIFT+=`` is pressed.
+- Changed the order of fields in the Add Server modal so that the server URL is filled in first and the display name after.
+- The app window now reloads only when the URL changes, not when a server's name changes.
+- Updated the default window size to 1280x800, so that users can now see other login options as well on first load.
+- Swapped the dark and light theme tray icons on Linux and Windows to the expected behavior.
+- Disabled the auto-update functionality explicitly for all MSI installers except the Windows EXE installer and the Linux AppImage.
+- Dropped support for asterisk-based unreads in Mattermost Self-Hosted versions older than v5.28.
+- Improved the performance of window resizing.
+
+Architectural Changes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Major version upgrade of Electron to v21.2.0. Electron is the underlying technology used to build the Desktop App.
+
+Bug Fixes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Linux
+^^^^^^
+
+- To fix notification issues for Linux users, the configuration setting ``notifications.flashWindow`` default value was changed to ``0`` for Linux.
+
+All Platforms
+^^^^^^^^^^^^^
+
+- Fixed an issue where an Operating System could register Mattermost as the default web browser / mail app.
+- Fixed an issue where the download notification showed the wrong file name.
+- Fixed an issue where it was possible to drag the Minimize/Close buttons.
+- Fixed an issue where a misleading error message from a remote certificate would imply that the Mattermost server had an issue.
+- Fixed an issue where users still received notifications when their status was set to **Do Not Disturb**.
+- Fixed an issue where users could not replace files in the **Downloads** folder.
+- Fixed improper reporting of app version when the ``--version`` or ``-v`` command-line flags were passed.
+- Fixed an issue where MAS users couldn't easily replace files.
+
+Open Source Components
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Added ``macos-notification-state``, ``windows-focus-assist``, and ``react-intl`` to https://github.com/mattermost/desktop.
+
+Known Issues
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Users seeing an endless "Loading..." screen when attempting to log in to the app may need to manually remove their cache directory. For MacOS it is located in ``/Users/<username>/Library/Containers/Mattermost/Data/Library/Application Support/Mattermost`` and for Windows it is located in ``Users/<username>/AppData/Roaming/Mattermost``.
+- On Linux, a left click on the tray icon doesn't open the app window but opens the tray menu.
+- Crashes might be be experienced in some Linux desktop clients. This is an upstream bug in the ``libnotifyapp`` library. A recommended workaround is to disable the system tray icon in the Desktop settings.
+- On apps using GPO configurations, when adding a second server tab, it's possible to drag and drop tabs, but they'll jump back to the original position when releasing the mouse.
+
+Contributors
+~~~~~~~~~~~~~~
+
+- `devinbinnie <https://github.com/devinbinnie>`_, `julmondragon <https://github.com/julmondragon>`_, `m1lt0n <https://github.com/m1lt0n>`_, `saturninoabril <https://github.com/saturninoabril>`_, `tboulis <https://github.com/tboulis>`_, `vaaas <https://github.com/vaaas>`_.
 
 Release v5.1
 --------------
@@ -40,19 +124,19 @@ Release v5.1
 - **v5.1.0, released 2022-05-16**
  - Original v5.1.0 release
 
-**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/latest>`_
+**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v5.1.1>`_
 
 **Note:** Mattermost v5.1.0 contains a low severity level security fix. Upgrading is highly recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.com/security-vulnerability-report//>`__.
 
 Compatibility
 ~~~~~~~~~~~~~~~
 
-- Desktop Apps are required to be used with any `supported Extended Support Release or a newer Mattermost server version <https://docs.mattermost.com/upgrade/release-lifecycle.html>`_.
+- Desktop Apps is supported on any supported Extended Support Release or a newer Mattermost server version.
 
 Highlights
 ~~~~~~~~~~~~~~~
 
-- Added `a Desktop App auto-updater <https://docs.mattermost.com/install/desktop-app-install.html>`_. The app now automatically checks for new updates on app start up. Note that the Mac builds provided on GitHub do not support auto-updates.
+- Added `a Desktop App auto-updater </install/desktop-app-install.html>`_. The app now automatically checks for new updates on app start up. Note that the Mac builds provided on GitHub do not support auto-updates.
 
 Improvements
 ~~~~~~~~~~~~~~~
@@ -114,6 +198,7 @@ All Platforms
 Known Issues
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+- On Linux, a left click on the tray icon doesn't open the app window but opens the tray menu.
 - Mattermost Desktop App v5.1.0 cannot be launched twice on Windows servers with the role "Remote Desktop Session Host".
 - Desktop App may become unresponsive and crash when initiating a screen reader `MM-44058 <https://mattermost.atlassian.net/browse/MM-44058>`_.
 - Crashes might be be experienced in some Linux desktop clients. This is an upstream bug in the ``libnotifyapp`` library. A recommended workaround is to disable the system tray icon in the Desktop settings.
@@ -150,14 +235,14 @@ Release v5.0
 - **v5.0.0, released 2021-10-13**
  - Original v5.0.0 release
 
-**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/latest>`_
+**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v5.0.4>`_
 
 **Note:** Mattermost v5.0.0 contains a low level security fix. Upgrading is highly recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.com/security-vulnerability-report//>`__.
 
 Compatibility
 ~~~~~~~~~~~~~~~
 
-- Desktop Apps are required to be used with any `supported Extended Support Release or a newer Mattermost server version <https://docs.mattermost.com/upgrade/release-lifecycle.html>`_.
+- Desktop Apps is supported on any supported Extended Support Release or a newer Mattermost server version.
 
 Breaking Changes / Upgrade Notes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -227,7 +312,7 @@ Contributors
 Release v4.7
 --------------
 
-**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/latest>`_
+**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v4.7.2>`_
 
 - **v4.7.2, released 2021-09-13**
  - Upgraded to Electron v12.0.16.
@@ -249,7 +334,7 @@ Release v4.7
 Compatibility
 ~~~~~~~~~~~~~~~
 
-- Desktop Apps are required to be used with any `supported Extended Support Release or a newer Mattermost server version <https://docs.mattermost.com/upgrade/release-lifecycle.html>`_.
+- Desktop Apps is supported on any supported Extended Support Release or a newer Mattermost server version.
 
 Highlights
 ~~~~~~~~~~~~~~~
@@ -334,7 +419,7 @@ Contributors
 Release v4.6
 ----------------------------
 
-**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/latest>`_
+**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v4.6.2>`_
 
 - **v4.6.2, released 2021-01-25**
 
@@ -410,7 +495,7 @@ Release v4.5
 
 - **v4.5.1, released 2020-07-13**
 
- - Mattermost v4.5.1 contains a high level security fix. `Upgrading <https://docs.mattermost.com/administration/upgrade.html>`__ is highly recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.com/security-vulnerability-report/>`__.
+ - Mattermost v4.5.1 contains a high level security fix. `Upgrading </administration/upgrade.html>`__ is highly recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.com/security-vulnerability-report/>`__.
 
 - **v4.5.0, released 2020-06-16**
 
@@ -506,7 +591,7 @@ Release v4.4
 
  - Original v4.4.0 release
 
-**Note:** Mattermost v4.4.0 contains low to medium level security fixes. `Upgrading <https://docs.mattermost.com/administration/upgrade.html>`__ is highly recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.com/security-vulnerability-report/>`__.
+**Note:** Mattermost v4.4.0 contains low to medium level security fixes. `Upgrading </administration/upgrade.html>`__ is highly recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.com/security-vulnerability-report/>`__.
 
 **Breaking Changes** 
 
@@ -580,7 +665,7 @@ Release v4.3
 
 - **v4.3.2, released 2019-11-29**
 
- - Mattermost v4.3.0 contains a low level security fix. `Upgrading <https://docs.mattermost.com/administration/upgrade.html>`__ is highly recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.com/security-vulnerability-report/>`_.
+ - Mattermost v4.3.0 contains a low level security fix. `Upgrading </administration/upgrade.html>`__ is highly recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.com/security-vulnerability-report/>`_.
  - Fixed an issue where the app started into white screen after a system reboot on Windows. `MM-19649 <https://mattermost.atlassian.net/browse/MM-19649>`_
  - Fixed an issue where `CMD+Z` didn't undo on the Mac desktop app. `MM-19198 <https://mattermost.atlassian.net/browse/MM-19198>`_
  - Fixed an issue where users were unable to zoom in/out except on the first server tab. `MM-19032 <https://mattermost.atlassian.net/browse/MM-19032>`_
@@ -595,7 +680,7 @@ Release v4.3
 
  - Original v4.3.0 release
 
-**Note:** Mattermost v4.3.0 contains medium level security fixes. `Upgrading <https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html>`__ is highly recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.com/security-vulnerability-report/>`__.
+**Note:** Mattermost v4.3.0 contains medium level security fixes. `Upgrading </upgrade/upgrading-mattermost-server.html>`__ is highly recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.com/security-vulnerability-report/>`__.
 
 **Breaking Change** 
 
@@ -726,7 +811,7 @@ Bug Fixes
 All Platforms
 ^^^^^^^^^^^^^
 
-- Fixed an issue where some links opened in a smaller window in the Mattermost app. This issue only affected installations with a `Site URL <https://docs.mattermost.com/administration/config-settings.html#site-url>`_ configured to use a subpath.
+- Fixed an issue where some links opened in a smaller window in the Mattermost app. This issue only affected installations with a `Site URL </administration/config-settings.html#site-url>`_ configured to use a subpath.
 
 Release v4.2.0
 ----------------------------
@@ -735,7 +820,7 @@ Release v4.2.0
 - **Download Binary:** `Windows 32-bit <https://releases.mattermost.com/desktop/4.2.0/mattermost-setup-4.2.0-win32.exe>`__ | `Windows 64-bit <https://releases.mattermost.com/desktop/4.2.0/mattermost-setup-4.2.0-win64.exe>`__ | `Mac <https://releases.mattermost.com/desktop/4.2.0/mattermost-desktop-4.2.0-mac.dmg>`__ | `Linux 64-bit <https://releases.mattermost.com/desktop/4.2.0/mattermost-desktop-4.2.0-linux-x64.tar.gz>`__ 
 - **View Source Code:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v4.2.0>`__
 
-**Note:** Mattermost v4.2.0 contains a high level security fix. `Upgrading <https://docs.mattermost.com/administration/upgrade.html>`__ is highly recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.com/security-vulnerability-report/>`__.
+**Note:** Mattermost v4.2.0 contains a high level security fix. `Upgrading </administration/upgrade.html>`__ is highly recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.com/security-vulnerability-report/>`__.
 
 Improvements
 ~~~~~~~~~~~~~~~

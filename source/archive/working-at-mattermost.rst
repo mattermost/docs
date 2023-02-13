@@ -79,7 +79,7 @@ When working on problems, make sure to be clear about next steps, and either fol
 
 4) Hang Out
 ~~~~~~~~~~~
-We have `warm-ups <https://docs.mattermost.com/process/training.html#warm-ups>`__ in some meetings to learn more about each other. It's part of a culture where we get to know each other.
+We have `warm-ups </process/training.html#warm-ups>`__ in some meetings to learn more about each other. It's part of a culture where we get to know each other.
 
 Find time after meetings and video conferences to get to know your teammates. Ask them about their weekends and how their life is outside of work.
 
@@ -89,7 +89,7 @@ When you meet in person at off-sites and events, build on those relationships.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 When something's not clearly documented, take the initiative to figure out what's going on and update the documentation for the people who come after you.
 
-`Learn, Master, Teach <https://docs.mattermost.com/process/training.html#learn-master-teach>`__ is a model we use to pass on training after you've been trained to help grow everyone at the company.
+`Learn, Master, Teach </process/training.html#learn-master-teach>`__ is a model we use to pass on training after you've been trained to help grow everyone at the company.
 
 
 -------------
@@ -166,11 +166,11 @@ For most roles, we require the ability to join meetings between 8am and 1pm Cali
 
 **2. Work from anywhere (with good internet)** 
 
-The comfort of home, freedom to travel, no commute--learn more about our `work anywhere policies <https://docs.mattermost.com/process/working-at-mattermost.html#work-anywhere>`__.
+The comfort of home, freedom to travel, no commute--learn more about our `work anywhere policies </process/working-at-mattermost.html#work-anywhere>`__.
 
 **3. Paid time off**
 
-Just as flexible as our working hours, learn more about our `paid time off policies <https://docs.mattermost.com/process/working-at-mattermost.html#paid-time-off>`__.
+Just as flexible as our working hours, learn more about our `paid time off policies </process/working-at-mattermost.html#paid-time-off>`__.
 
 **4. Additional US and Canadian employee benefits**
 

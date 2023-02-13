@@ -62,7 +62,7 @@ To access Mattermost Incident Collaboration:
 Playbooks and Incidents
 -----------------------
 
-Playbooks and incidents are associated with teams in Mattermost. Starting an incident prompts for a playbook and incident name. The selected playbook defines the process, communication options, channel permissions, and automation. You can read more about `channel permissions (Public and Private channels) <https://docs.mattermost.com/help/getting-started/organizing-conversations.html>`_.
+Playbooks and incidents are associated with teams in Mattermost. Starting an incident prompts for a playbook and incident name. The selected playbook defines the process, communication options, channel permissions, and automation. You can read more about `channel permissions (Public and Private channels) </help/getting-started/organizing-conversations.html>`_.
 
 System Admins can configure Incident Collaboration access permissions in the System Console. This allows for specific teams to better manage who can create playbooks, start incidents, and access potentially sensitive information.
 

@@ -3,38 +3,30 @@
 Customize your Mattermost theme
 ===============================
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
+.. |gear-icon| image:: ../images/settings-outline_F08BB.svg
+  :alt: Use the Settings icon to customize your Mattermost user experience.
 
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/sign-up
-  :alt: Available for Mattermost Cloud deployments.
+The colors of the Mattermost user interface are customizable. You can `import your theme colors from a Slack instance <#import-theme-from-slack>`__, design your own `custom theme <#custom-themes>`__ colors, or choose from `five standard themes <#standard-themes>`__ designed by the Mattermost team. Your theme changes apply to all teams you're a member of, and are visible across all Mattermost clients.
 
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
+.. tip::
+  
+  With Mattermost Enterprise, you can choose to have a different theme per team.
 
-The colors of the Mattermost user interface are customizable. 
+
+To customize your Mattermost theme:
 
 .. tabs::
 
-  .. tab:: Mattermost v6.0 onwards
+  .. tab:: Desktop
 
-      In Mattermost v6.0, navigate to **Settings > Display > Theme**.
+    Select the **Settings** |gear-icon| icon, then go to **Display > Theme**.
       
-  .. tab:: Mattermost v5.39 and earlier
+  .. tab:: Mobile
 
-      In Mattermost versions up to 5.39, navigate to **Settings > Display > Theme**.
-     
-You can import your theme colors from Slack, customize the colors yourself, or choose from four standard themes designed by the Mattermost team.
-
-Any color changes you make are applied to all teams that you belong to. In Mattermost Enterprise, you can choose to apply the theme to the current team only, allowing you to have a different theme for each team.
+    Tap your profile picture, and select **Settings**, then go to **Display > Theme**.
 
 Import theme from Slack
 -----------------------
@@ -46,14 +38,16 @@ In Mattermost, select **Import theme colors from Slack**, then paste the color v
 Custom themes
 -------------
 
-Select **Custom Theme**, then expand the `Sidebar Styles <https://docs.mattermost.com/welcome/customize-your-theme.html#sidebar-styles>`__, `Center Channel Styles <https://docs.mattermost.com/welcome/customize-your-theme.html#center-channel-styles>`__, and `Link and Button Styles <https://docs.mattermost.com/welcome/customize-your-theme.html#link-and-button-styles>`__ options to customize individual interface colors, such as backgrounds, links, text, and borders. 
+Select **Custom Theme**, then expand the `Sidebar Styles </welcome/customize-your-theme.html#sidebar-styles>`__, `Center Channel Styles </welcome/customize-your-theme.html#center-channel-styles>`__, and `Link and Button Styles </welcome/customize-your-theme.html#link-and-button-styles>`__ options to customize individual interface colors, such as backgrounds, links, text, and borders. 
 
 Your custom theme changes are applied in Mattermost as you make them. Select **Save** to confirm your theme changes. Discard your changes by exiting the **Display Settings** window and selecting **Yes, Discard**.
 
 Standard themes
 ---------------
 
-Select **Theme Colors** to choose from four standard themes designed by the Mattermost team. To make custom adjustments on the four standard theme colors, select a standard theme, then select **Custom Theme** to further customize that standard theme based on your preferences. Select **Save** to confirm your theme changes.
+Select **Theme Colors** to choose from five standard themes designed by the Mattermost team. 
+
+Using Mattermost in a browser or the desktop app, you can make custom adjustments to the five standard theme colors by selecting a standard theme, then selecting **Custom Theme** to further customize that standard theme based on your preferences. Select **Save** to confirm your theme changes.
 
 Sidebar styles
 ~~~~~~~~~~~~~~
@@ -77,11 +71,11 @@ Sidebar Text Active Border
 Sidebar Text Active Color
 	Text color of the active channel or tab in the Channels pane or Settings sidebar.
 Online Indicator
-	Color of the online indicator appearing next to team members names in the Direct Messages list.
+	Color of the online indicator appearing next to team members names in the direct messages list.
 Away Indicator
-	Color of the away indicator appearing next to team members names in the Direct Messages list when they have had no browser activity for 5 minutes.
+	Color of the away indicator appearing next to team members names in the direct messages list when they have had no browser activity for 5 minutes.
 Do Not Disturb Indicator
-	Color of the do not disturb indicator appearing next to team members names in the Direct Messages list.
+	Color of the do not disturb indicator appearing next to team members names in the direct messages list.
 Mention Jewel BG
 	Background color of the jewel indicating unread mentions that appears to the right of the channel name. This is also the background color of the “Unread Posts Below/Above” indicator appearing at the top or bottom of the Channels pane on shorter browser windows.
 Mention Jewel Text
@@ -118,34 +112,12 @@ Button Text
 Export a custom theme
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-You can export a theme from Mattermost by copying the theme values from the Custom Theme menu.
-
-.. tabs::
-
-  .. tab:: Mattermost v6.0 onwards
-
-      In Mattermost v6.0, navigate to **Settings > Display > Theme**, select **Custom Theme** and then select **Copy Theme Colors**.
-      
-  .. tab:: Mattermost v5.39 and earlier
-
-      In Mattermost versions up to 5.39, navigate to **Settings > Display > Custom Theme**, then select **Copy Theme Colors** to export the theme's color values.
+Export a theme from Mattermost by copying the theme values from the Custom Theme menu.
   
 Import a custom theme
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-You can import a theme into Mattermost by pasting the theme values into the Custom Theme menu.
-
-Copy existing theme values, then go to: 
-
-.. tabs::
-
-  .. tab:: Mattermost v6.0 onwards
-
-      In Mattermost v6.0, navigate to **Settings > Display > Theme**, select **Custom Theme** and paste the theme values into the **Copy and paste to share theme colors** field. 
-
-  .. tab:: Mattermost v5.39 and earlier
-
-      In Mattermost versions up to 5.39, navigate to **Settings > Display > Custom Theme** to paste the theme values into the **Copy and paste to share theme colors** field. Select **Save** to confirm your theme changes.
+Import a theme into Mattermost by pasting the theme values into the Custom Theme menu. Copy existing theme values, then paste the theme values into the **Copy and paste to share theme colors** field. Select **Save** to confirm your theme changes.
   
 Custom theme examples
 ~~~~~~~~~~~~~~~~~~~~~
@@ -266,7 +238,12 @@ Night Owl Dark Theme
 
   {"sidebarBg":"#011627","sidebarText":"#d6deeb","sidebarUnreadText":"#d6deeb","sidebarTextHoverBg":"#1d3b53","sidebarTextActiveBorder":"#ff2c83","sidebarTextActiveColor":"#82aaff","sidebarHeaderBg":"#1d3b53","sidebarHeaderTextColor":"#d6deeb","onlineIndicator":"#addb67","awayIndicator":"#ffbc42","dndIndicator":"#f74343","mentionBg":"#d6deeb","mentionBg":"#d6deeb","mentionColor":"#145dbf","centerChannelBg":"#011627","centerChannelColor":"#d6deeb","newMessageSeparator":"#ff8800","linkColor":"#2389d7","buttonBg":"#166de0","buttonColor":"#011627","errorTextColor":"#fd5960","mentionHighlightBg":"#0b2942","mentionHighlightLink":"#82aaff","codeTheme":"solarized-dark"}
 
-Dark Theme (Desktop app only)
+Dark Theme (desktop app only)
 -----------------------------
 
-The Mattermost Desktop App applies Light or Dark Mode based on the System Preferences appearance setting of your computer's operating system to your Mattermost instance.
+On Windows and macOS, the system display preference that you set on your computer (e.g., Light Mode or Dark Mode) is also applied to the Mattermost desktop app.
+
+.. image:: ../images/dark-theme-via-os.gif
+  :alt: The system preference you set for Light Mode or Dark Mode on your computer is automatically applied to the Mattermost Desktop App.
+
+On Linux, you can manage this manually via the **View** menu.

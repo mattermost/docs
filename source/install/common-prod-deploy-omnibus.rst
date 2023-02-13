@@ -1,8 +1,20 @@
+:orphan:
 :nosearch:
+.. This page is intentionally not accessible via the LHS navigation pane because it's common content included on other docs pages.
 
-.. important::
+Mattermost bundles the components of a Mattermost deployment into a single installation, called **Omnibus**. Mattermost Omnibus currently supports Ubuntu's ``bionic`` (18.04), ``focal`` (20.04) and ``jammy`` (22.04) distributions. The package bundles the free, unlicensed Mattermost Enterprise version of Mattermost, and leverages the `apt package manager <https://ubuntu.com/server/docs/package-management>`__ to install and update the platform components. A custom CLI and ansible recipes link the components together and configures them.
 
-    Mattermost bundles the components of a Mattermost deployment into a single installation, called **Omnibus**. Mattermost Omnibus currently supports Ubuntu's ``bionic`` and ``focal`` distributions. The package bundles the free, unlicensed Mattermost Enterprise version of Mattermost, and leverages the `apt package manager <https://ubuntu.com/server/docs/package-management>`__ to install and update the platform components. A custom CLI and ansible recipes link the components together and configures them.
+**Minimum system requirements**
+
+- Hardware: 2 vCPUs/cores with 4GB RAM (support for 1,000-2,000 users)
+- Database: MySQL v8+ or PostgreSQL v12+
+- Network ports required: 
+
+  - Application ports 80/443, TLS, TCP Inbound
+  - Administrator Console port 8065, TLS, TCP Inbound
+  - SMTP port 10025, TCP/UDP Outbound
+
+**Deploy Omnibus**
 
 1. In a terminal window, run the following command to configure the repositories needed for a PostgreSQL database, configure an NGINX web server to act as a proxy, configure certbot to issue and renew the SSL certificate, and configure the Mattermost Omnibus repository so that you can run the install command.
 
@@ -30,7 +42,7 @@
 
 3. Open a browser and navigate to your Mattermost domain either by domain name (e.g. ``mymattermostserver.com``), or by the server's IP address if you're not using a domain name. 
 
-4. Create your first Mattermost user, `invite more users <https://docs.mattermost.com/channels/manage-channel-members.html>`__, and explore the Mattermost platform. 
+4. Create your first Mattermost user, `invite more users </channels/manage-channel-members.html>`__, and explore the Mattermost platform. 
 
    .. note:: 
 

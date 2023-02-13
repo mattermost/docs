@@ -1,39 +1,28 @@
 Interact with playbooks
 =======================
 
-|all-plans| |cloud| |self-hosted|
-
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/sign-up
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 Slash commands
 --------------
 
-Slash commands are available for playbooks. The ``/playbook`` slash command allows interaction with incidents via the post textbox on desktop, browser, and mobile. To run a playbook use the ``/playbook start`` slash command from any channel.
+Slash commands are available for playbooks. The ``/playbook`` slash command allows interaction with incidents via the post textbox on desktop, browser, and mobile. To run a playbook use the ``/playbook run`` slash command from any channel.
 
 Available slash commands include:
 
-- ``/playbook start`` - Start a playbook run.
-- ``/playbook end`` - End a playbook run.
-- ``/playbook update`` - Update the current playbook run's status.
-- ``/playbook restart`` - Restart an ended playbook run.
-- ``/playbook check [checklist item]`` - Check/uncheck the specified task.
-- ``/playbook announce ~[channels]`` - Announce the current playbook run in other channels.
-- ``/playbook list`` - List all your ongoing playbook runs.
-- ``/playbook owner [@username]`` - Show or change the current playbook run owner.
-- ``/playbook info`` - Show a summary of the current playbook's activities.
+- ``/playbook run`` - Run a playbook.
+- ``/playbook finish`` - Finish the playbook run in this channel.
+- ``/playbook update`` - Provide a status update.
+- ``/playbook check [checklist #] [item #]`` - Check/uncheck the checklist item.
+- ``/playbook checkadd [checklist #] [item text]`` - Add a checklist item.
+- ``/playbook checkremove [checklist #] [item #]`` - Remove a checklist item.
+- ``/playbook owner [@username]`` - Show or change the current owner.
+- ``/playbook info`` - Show a summary of the current playbook run.
+- ``/playbook timeline`` - Show the timeline for the current playbook run.
+- ``/playbook todo`` - Get a list of your assigned tasks.
+- ``/playbook settings digest [on/off]`` - Turn daily digest on/off.
+- ``/playbook settings weekly-digest [on/off]`` - Turn weekly digest on/off.
 
 API documentation
 -----------------

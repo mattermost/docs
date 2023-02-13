@@ -1,27 +1,8 @@
 SAML Single Sign-On
 ===================
 
-|enterprise| |professional| |cloud| |self-hosted|
-
-.. |enterprise| image:: ../images/enterprise-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in the Mattermost Enterprise subscription plan.
-
-.. |professional| image:: ../images/professional-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in the Mattermost Professional subscription plan.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/sign-up
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Mattermost Enterprise Edition E20*
 
@@ -50,7 +31,7 @@ Mattermost officially supports Okta, OneLogin, and Microsoft ADFS as the identit
   Microsoft ADFS SAML Configuration for Windows Server 2016 <sso-saml-adfs-msws2016>
   Keycloak SAML Configuration <sso-saml-keycloak>
 
-In addition to the officially supported identity providers, you can also configure SAML for a custom IdP. For instance, customers have successfully set up Azure AD, DUO, PingFederate, Keycloak, and SimpleSAMLphp as a custom IdPs. Because we do not test against these identity providers, it is important that you test new versions of Mattermost in a staging environment to confirm it will work with your identity provider. You can also set up MFA on top of your SAML provider for additional security.
+In addition to the officially supported identity providers, you can also configure SAML for a custom IdP. For instance, customers have successfully set up miniOrange, Azure AD, DUO, PingFederate, Keycloak, and SimpleSAMLphp as a custom IdPs. Because we do not test against these identity providers, it is important that you test new versions of Mattermost in a staging environment to confirm it will work with your identity provider. You can also set up MFA on top of your SAML provider for additional security.
 
 Using SAML attributes to apply roles
 -------------------------------------
@@ -82,7 +63,7 @@ If a Mattermost guest user has the guest role removed in the SAML system, the sy
 
 When a guest logs in for the first time they are presented with a default landing page until they are added to channels.
 
-See the `Guest accounts documentation <https://docs.mattermost.com/onboard/guest-accounts.html>`_ for more information about this feature.
+See the `Guest accounts documentation </onboard/guest-accounts.html>`_ for more information about this feature.
 
 Admin attribute
 ~~~~~~~~~~~~~~~
@@ -99,16 +80,6 @@ Existing members that are identified by this attribute will be promoted from mem
 .. note:: 
     If the ``admin`` attribute is set to ``false`` the member's role as System Admin is retained. However if the attribute is removed/changed, System Admins that were promoted via the attribute will be demoted to members and will not retain access to the System Console. When this attribute is not in use, System Admins can be manually promoted/demoted in **System Console > User Management**.
 
-Roadmap
--------
-
-From Mattermost v5.14, you can optionally configure Mattermost to sign the SAML request using a private key to meet InfoSec requirements at your organization.
-
-In the future roadmap, the main consideration is an integration with SCIM, via plugin. Such an integration allows system administrators to create SAML-provisioned users before their first login, and sync them against Mattermost permissions.
-
-Currently user provisioning and deprovisioning can be handled with SAML sync, but relies on AD/LDAP. SCIM enables admins to control user provisioning and deprovisioning within the IdP itself.
-
-For examples, see `Microsoft Azure AD integration with SCIM <https://docs.microsoft.com/en-us/azure/active-directory/app-provisioning/use-scim-to-provision-users-and-groups>`__ and `Okta user provisioning with SCIM <https://help.okta.com/en/prod/Content/Topics/Apps/Provisioning_Deprovisioning_Overview.htm>`__.
 
 Configuration assistance
 ------------------------
@@ -119,4 +90,4 @@ For technical documentation on SAML, see :doc:`sso-saml-technical`.
 
 To assist with the process of getting a user file for your custom IdP, see this `documentation <https://github.com/icelander/mattermost_generate_user_file>`_.
 
-Please note that we may not be able to guarantee that your connection will work with Mattermost, however we will consider improvements to our feature as we are able. You can see more information on getting support `here <https://mattermost.com/support/>`_ and submit requests for official support of a particular provider on our `feature idea forum <https://mattermost.uservoice.com>`_.
+Please note that we may not be able to guarantee that your connection will work with Mattermost, however we will consider improvements to our feature as we are able. You can see more information on getting support `here <https://mattermost.com/support/>`_ and submit requests for official support of a particular provider on our `feature idea portal <https://mattermost.com/suggestions/>`_.

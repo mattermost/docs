@@ -10,7 +10,7 @@ Collapsed Reply Threads (Beta) offers an enhanced experience for users communica
 .. image:: ../../images/collapsed-reply-threads.gif
   :alt: Organize conversations using Collapsed Reply Threads.
 
-Your System Admin must enable the Collapsed Reply Threads feature in the System Console. See our `Configuration Settings <https://docs.mattermost.com/configure/configuration-settings.html#collapsed-reply-threads-beta>`__ documentation for details. You can `enable this feature for your Mattermost account <https://docs.mattermost.com/messaging/manage-channels-settings.html#collapsed-reply-threads-beta>`__ by going to **Account Settings > Display > Collapsed Reply Threads (Beta)**.
+Your System Admin must enable the Collapsed Reply Threads feature in the System Console. See our `Configuration Settings </configure/configuration-settings.html#collapsed-reply-threads-beta>`__ documentation for details. You can `enable this feature for your Mattermost account </messaging/manage-channels-settings.html#collapsed-reply-threads-beta>`__ by going to **Account Settings > Display > Collapsed Reply Threads (Beta)**.
 
 Known Issues
 ------------
@@ -75,5 +75,5 @@ For additional details about working with the Beta release of Collapsed Reply Th
 .. raw:: html
 
    <div style="position: relative; padding-bottom: 50%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
-      <iframe src="https://www.youtube.com/embed/hnD0Zj-mIbs" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 95%;"></iframe>
+      <iframe src="https://www.youtube.com/embed/hnD0Zj-mIbs" alt="A video tutorial about collapsed reply threads in Mattermost" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 95%;"></iframe>
    </div>

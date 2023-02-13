@@ -3,9 +3,12 @@
 Chinese, Japanese, and Korean search
 ======================================
 
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
+
 Enabling search for Chinese, Japanese and Korean (CJK) requires special configuration, since these languages do not contain spaces.
 
-- See `database requirements documentation <https://docs.mattermost.com/install/software-hardware-requirements.html>`__ for how to set up search for these languages.
+- See `database requirements documentation </install/software-hardware-requirements.html>`__ for how to set up search for these languages.
 
 .. contents::
     :backlinks: top
@@ -15,7 +18,7 @@ Below is additional information on how to configure the database for different l
 中文 / Chinese
 --------------
 
-数据库版本请参考： `配置要求 <https://docs.mattermost.com/install/software-hardware-requirements.html#database-software>`__ 。
+数据库版本请参考： `配置要求 </install/software-hardware-requirements.html#database-software>`__ 。
 其中MySQL的ngram配置可以参考 `Cannot search CJK contents <https://github.com/mattermost/mattermost-server/issues/2033#issuecomment-182336690>`__ 。
 
 更多中文相关问题讨论请访问 `中文讨论组 <https://forum.mattermost.com/c/international/chinese>`__ 。
@@ -85,7 +88,7 @@ Below is additional information on how to configure the database for different l
 
 Mattermost で日本語検索をするためにはデータベースの設定変更が必要です
 
-- `MySQL <https://docs.mattermost.com/install/requirements.html#database-software>`__
+- `MySQL </install/requirements.html#database-software>`__
 
 - `Postgres <https://github.com/mattermost/mattermost-server/issues/2159#issuecomment-206444074>`__
 

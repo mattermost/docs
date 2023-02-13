@@ -43,7 +43,7 @@ If at any point you need additional help, please reach out using the methods bel
 **Community**
     Our entire team is active within the `public instance of Mattermost <https://community.mattermost.com>`_, plus you will have the support of one of the best open source communities around.
 **Documentation**
-    We link to a lot of `mobile-specific documentation <https://docs.mattermost.com/mobile/mobile-overview.html>`_ within this guide, but we encourage you to check `all of our documentation <https://docs.mattermost.com/>`_.
+    We link to a lot of `mobile-specific documentation </mobile/mobile-overview.html>`_ within this guide, but we encourage you to check `all of our documentation </>`_.
 **Forums**
     For more troubleshooting help, `open a new topic in our forums <https://forum.mattermost.com/c/trouble-shoot>`_ with steps to reproduce your issue.
 **GitHub**
@@ -80,7 +80,7 @@ Below, we have added some key questions to ask yourself, your team, and any othe
 
 We recommend setting at least one achievable and time-based outcome.
 
-At the same time, you should begin thinking about technical and security requirements. A great place to start is with an implementation plan. So, feel free to `use our template available <https://docs.mattermost.com/getting-started/implementation_plan.html>`_ in the Mattermost documentation. Also, begin by engaging with your technical and security teams with questions like those below.
+At the same time, you should begin thinking about technical and security requirements. A great place to start is with an implementation plan. So, feel free to `use our template available </getting-started/implementation_plan.html>`_ in the Mattermost documentation. Also, begin by engaging with your technical and security teams with questions like those below.
 
 - Are there any known security or access requirements?
 - Is a VPN connection required?
@@ -112,9 +112,9 @@ Technical requirements
     Minimum requirements for the Mattermost Server are maintained in our documentation (link above). 
     **However, we do recommend running the latest version** of the Mattermost Server as it contains the most recent features and any applicable security updates.
 
-    If this is not possible, we encourage you to be on the most recent `Extended Support Release version <https://docs.mattermost.com/upgrade/extended-support-release.html>`_ of the Mattermost Server. This release has a number of critical feature updates that will ensure compatibility in a number of areas, including the Mattermost Push Notification Service (MPNS).
+    If this is not possible, we encourage you to be on the most recent `Extended Support Release version </upgrade/extended-support-release.html>`_ of the Mattermost Server. This release has a number of critical feature updates that will ensure compatibility in a number of areas, including the Mattermost Push Notification Service (MPNS).
 
-`Supported Devices/Mobile Device Requirements <https://docs.mattermost.com/install/requirements.html#mobile-apps>`_
+`Supported Devices/Mobile Device Requirements </install/requirements.html#mobile-apps>`_
     Basic mobile device requirements are provided in the link above.
 
 *******************************************
@@ -178,7 +178,7 @@ Our Hosted Push Notification Service offers:
 
 \* *When using our publicly-available app store applications and the AppConfig standard.*
 
-Hosting your own version of the MPNS is an option, but requires you to build the Mattermost app yourself. The `Choosing the Right Mobile Deployment Model`_ section of this guide, as well as our `Mobile App Admin Documentation <https://docs.mattermost.com/mobile/mobile-hpns.html>`_ are the best places to start.
+Hosting your own version of the MPNS is an option, but requires you to build the Mattermost app yourself. The `Choosing the Right Mobile Deployment Model`_ section of this guide, as well as our `Mobile App Admin Documentation </mobile/mobile-hpns.html>`_ are the best places to start.
 
 ********************************************
 Enterprise Mobile Management (EMM) Providers
@@ -242,7 +242,7 @@ There are VPN options which depend on the requirements of your organization. You
 
 For the Mattermost mobile application, we will discuss two options: a device VPN or per-app VPN.
 
-    **Note:** We suggest `following our recommended steps <https://docs.mattermost.com/mobile/mobile-appstore-install.html>`_ to secure your deployment.
+    **Note:** We suggest `following our recommended steps </mobile/mobile-appstore-install.html>`_ to secure your deployment.
 
 **Device VPN**
     This is not as common, especially in the case of Bring Your Own Device (BYOD) scenarios. In this option, all internet traffic routes through the VPN specified in the profile. This could cause issues for personal applications.
@@ -252,7 +252,7 @@ For the Mattermost mobile application, we will discuss two options: a device VPN
 
 Regardless of the commonness of either option above, Mattermost provides support for both. Because Mattermost supports the AppConfig standard, both options are compatible with EMM providers.
 
-    **Note:** Will you be connecting via a corporate proxy server? If so, `review our FAQ <https://docs.mattermost.com/mobile/mobile-faq.html#how-do-i-receive-mobile-push-notification-if-my-it-policy-requires-the-use-of-a-corporate-proxy-server>`_ covering architecture, troubleshooting, and best practices.
+    **Note:** Will you be connecting via a corporate proxy server? If so, `review our FAQ </mobile/mobile-faq.html#how-do-i-receive-mobile-push-notification-if-my-it-policy-requires-the-use-of-a-corporate-proxy-server>`_ covering architecture, troubleshooting, and best practices.
 
 ----
 
@@ -276,8 +276,8 @@ Using the public app stores (recommended)
 We recommend either of these options if you are:
 
 - Testing out the mobile applications
-- Deploying Team Edition servers using no push notifications, or push notifications from Mattermost’s `TPNS <https://docs.mattermost.com/overview/faq.html#tpns>`_ (Test Push Notification Service)
-- Deploying Enterprise Edition servers using push notifications from Mattermost’s `HPNS <https://docs.mattermost.com/mobile/mobile-hpns.html>`_ (Hosted Push Notification Service)
+- Deploying Team Edition servers using no push notifications, or push notifications from Mattermost’s `TPNS </overview/faq.html#tpns>`_ (Test Push Notification Service)
+- Deploying Enterprise Edition servers using push notifications from Mattermost’s `HPNS </mobile/mobile-hpns.html>`_ (Hosted Push Notification Service)
 
 The mobile applications provided by Mattermost work with our hosted version of the Mattermost Push Notification Service (MPNS). This represents the easier path. The Mattermost mobile applications can be deployed with or without an EMM provider. These options are explained in more detail below. 
 
@@ -339,14 +339,14 @@ To proceed you must have a Mattermost Server installed and accessible. This is a
 Accessing the mobile applications
 *********************************
 
-The Mattermost mobile application is available for both Android and iOS devices. At this point, it is as simple as having your users download the application and `point to your Mattermost Server URL <https://docs.mattermost.com/help/getting-started/signing-in.html#ios-setup>`_.
+The Mattermost mobile application is available for both Android and iOS devices. At this point, it is as simple as having your users download the application and `point to your Mattermost Server URL </help/getting-started/signing-in.html#ios-setup>`_.
 
     **Note:** The Mattermost mobile apps are signed and have certificates associated with Mattermost and the public app stores. This means they will not work if you are privately hosting the Mattermost Push Proxy Service.
 
 `Mattermost for Android Devices <https://play.google.com/store/apps/details?id=com.mattermost.rn&hl=en_US>`_ (via Google Play)
 `Mattermost of iOS Devices <https://apps.apple.com/us/app/mattermost/id1257222717>`_ (via Apple App Store)
 
-If you do not desire (or require) additional security provided via an EMM Provider, your deployment is complete. Feel free to point your users to the `available documentation <https://docs.mattermost.com/guides/user.html>`_.
+If you do not desire (or require) additional security provided via an EMM Provider, your deployment is complete. Feel free to point your users to the `available documentation </guides/user.html>`_.
 
 The sub-sections below serve as a high-level guide to understanding this deployment model. When necessary, we point to the documentation for technical instruction.
 
@@ -356,7 +356,7 @@ The sub-sections below serve as a high-level guide to understanding this deploym
 Using an EMM Provider with public store apps
 ********************************************
 
-EMM providers help extend security parameters to the Mattermost mobile applications. The AppConfig standard makes this possible. `Review the Mattermost AppConfig Values Documentation <https://docs.mattermost.com/mobile/mobile-appconfig.html#mattermost-appconfig-values>`_ for a complete list of available parameters.  
+EMM providers help extend security parameters to the Mattermost mobile applications. The AppConfig standard makes this possible. `Review the Mattermost AppConfig Values Documentation </mobile/mobile-appconfig.html#mattermost-appconfig-values>`_ for a complete list of available parameters.  
 
 When going this route, you should consider:
 
@@ -369,7 +369,7 @@ When going this route, you should consider:
 Configuring Mattermost to use HPNS
 **********************************
 
-Configuring your Mattermost Server to use the Mattermost HPNS is a single configuration item. This is covered in our `Hosted Push Notification Service documentation <https://docs.mattermost.com/mobile/mobile-hpns.html>`_. 
+Configuring your Mattermost Server to use the Mattermost HPNS is a single configuration item. This is covered in our `Hosted Push Notification Service documentation </mobile/mobile-hpns.html>`_. 
 
 Next your users would need to install the mobile application on their device. If desired, you can further configure security capabilities using an EMM provider.
 
@@ -388,7 +388,7 @@ For example we recommend you:
 
 It is often easier to upgrade the mobile apps. However, not all provided updates are compatible with all previous versions of the Mattermost server.
 
-Consult the `Mattermost mobile app changelog <https://github.com/mattermost/mattermost-mobile/blob/master/CHANGELOG.md>`_ and `Mattermsot server changelog <https://docs.mattermost.com/install/self-managed-changelog.html>`_ for more information.
+Consult the `Mattermost mobile app changelog <https://github.com/mattermost/mattermost-mobile/blob/master/CHANGELOG.md>`_ and `Mattermsot server changelog </install/self-managed-changelog.html>`_ for more information.
 
     **Note:** Only updating the mobile apps, or updating the mobile apps before the Mattermost server, can result in incompatibility.
 
@@ -439,7 +439,7 @@ In some instances, there is an incompatibility with app wrapping and React Nativ
 
 App wrapping is still often an option during the EMM configuration. Again, AppConfig is the only supported method for securing Mattermost mobile applications via an EMM provider.
 
-AppConfig options will vary by EMM Provider and the associated device. You can review the available options in our `AppConfig Values documentation <https://docs.mattermost.com/mobile/mobile-appconfig.html#mattermost-appconfig-values>`_.
+AppConfig options will vary by EMM Provider and the associated device. You can review the available options in our `AppConfig Values documentation </mobile/mobile-appconfig.html#mattermost-appconfig-values>`_.
 
     **Note:** In Appendix B we have provided a list of popular EMM providers as well as example documentation where available.
 
@@ -463,8 +463,8 @@ Once that is complete you can proceed with deployment of your MPNS instance.
 The documentation topics listed below guide installation and configuration for your MPNS.
 
 - `Push Notification Service Installation <https://developers.mattermost.com/contribute/mobile/push-notifications/service/>`_
-- `Admin Configuration for Push Notifications <https://docs.mattermost.com/configure/configuration-settings.html>`_
-- `Additional FAQs <https://docs.mattermost.com/mobile/mobile-faq.html#>`_
+- `Admin Configuration for Push Notifications </configure/configuration-settings.html>`_
+- `Additional FAQs </mobile/mobile-faq.html#>`_
 
 ************************************
 Updating your custom Mattermost apps
@@ -480,26 +480,26 @@ While not part of your initial mobile deployment, you should consider a strategy
 Appendix A: Troubleshooting and FAQs
 ####################################
 
-We highly recommend you check out our `Mobile FAQ <https://docs.mattermost.com/mobile/mobile-faq.html>`_ and `Mobile Troubleshooting documentation <https://docs.mattermost.com/mobile/mobile-troubleshoot.html>`_. The most common questions we've received have been answered there. However, it’s important to call out a few common items customers run into.
+We highly recommend you check out our `Mobile FAQ </mobile/mobile-faq.html>`_ and `Mobile Troubleshooting documentation </mobile/mobile-troubleshoot.html>`_. The most common questions we've received have been answered there. However, it’s important to call out a few common items customers run into.
 
 *******************************
 Data Security on Mobile Devices
 *******************************
 
-- `How is data handled on a device after an account is deleted? <https://docs.mattermost.com/mobile/mobile-faq.html#how-is-data-handled-on-mobile-devices-after-a-user-account-is-deactivated>`_
-- `What post metadata is sent in mobile push notifications? <https://docs.mattermost.com/mobile/mobile-faq.html#what-post-metadata-is-sent-in-mobile-push-notifications>`_
-- `What are my options for securing the mobile apps? <https://docs.mattermost.com/mobile/mobile-faq.html#what-are-my-options-for-securing-the-mobile-apps>`_
-- `What are my options for securing push notifications? <https://docs.mattermost.com/mobile/mobile-faq.html#what-are-my-options-for-securing-push-notifications>`_
+- `How is data handled on a device after an account is deleted? </mobile/mobile-faq.html#how-is-data-handled-on-mobile-devices-after-a-user-account-is-deactivated>`_
+- `What post metadata is sent in mobile push notifications? </mobile/mobile-faq.html#what-post-metadata-is-sent-in-mobile-push-notifications>`_
+- `What are my options for securing the mobile apps? </mobile/mobile-faq.html#what-are-my-options-for-securing-the-mobile-apps>`_
+- `What are my options for securing push notifications? </mobile/mobile-faq.html#what-are-my-options-for-securing-push-notifications>`_
 
 ***********************
 Corporate Proxy Servers
 ***********************
 
-`How do I receive mobile push notifications if my IT policy requires the use of a corporate proxy server? <https://docs.mattermost.com/mobile/mobile-faq.html#how-do-i-receive-mobile-push-notification-if-my-it-policy-requires-the-use-of-a-corporate-proxy-server>`_
+`How do I receive mobile push notifications if my IT policy requires the use of a corporate proxy server? </mobile/mobile-faq.html#how-do-i-receive-mobile-push-notification-if-my-it-policy-requires-the-use-of-a-corporate-proxy-server>`_
 
-- `Deploy Mattermost with connection restricted post-proxy relay in DMZ or a trusted cloud environment <https://docs.mattermost.com/mobile/mobile-faq.html#deploy-mattermost-with-connection-restricted-post-proxy-relay-in-dmz-or-a-trusted-cloud-environment>`_
-- `Whitelist Mattermost push notification proxy to bypass your corporate proxy server <https://docs.mattermost.com/mobile/mobile-faq.html#whitelist-mattermost-push-notification-proxy-to-bypass-your-corporate-proxy-server>`_
-- `Run App Store versions of the Mattermost mobile apps <https://docs.mattermost.com/mobile/mobile-faq.html#run-app-store-versions-of-the-mattermost-mobile-apps>`_
+- `Deploy Mattermost with connection restricted post-proxy relay in DMZ or a trusted cloud environment </mobile/mobile-faq.html#deploy-mattermost-with-connection-restricted-post-proxy-relay-in-dmz-or-a-trusted-cloud-environment>`_
+- `Whitelist Mattermost push notification proxy to bypass your corporate proxy server </mobile/mobile-faq.html#whitelist-mattermost-push-notification-proxy-to-bypass-your-corporate-proxy-server>`_
+- `Run App Store versions of the Mattermost mobile apps </mobile/mobile-faq.html#run-app-store-versions-of-the-mattermost-mobile-apps>`_
 
 ----
 
@@ -516,7 +516,7 @@ Blackberry Dynamics (Blackberry UEM)
 "BlackBerry UEM is a multiplatform EMM solution that provides comprehensive device, app, and content management with integrated security and connectivity, and helps you manage iOS, macOS, Android, Windows 10, and BlackBerry 10 devices for your organization. BlackBerry UEM is included in the `BlackBerry Secure UEM & Productivity Suites <https://www.blackberry.com/us/en/products/blackberry-secure-uem-suites.html>`_ - Choice Suite, Freedom Suite, and Limitless Suite."
 
 - `BlackBerry Website <https://www.blackberry.com/us/en/products/blackberry-uem>`_
-- `BlackBerry Mattermost Documentation <https://docs.mattermost.com/mobile/mobile-blackberry.html>`_
+- `BlackBerry Mattermost Documentation </mobile/mobile-blackberry.html>`_
 - `Blackberry Documentation and Help Materials <https://docs.blackberry.com/en/endpoint-management/blackberry-uem/12_11>`_
 
 **********
@@ -526,7 +526,7 @@ MobileIron
 "MobileIron Unified Endpoint Management (UEM) provides the foundation for the industry’s first mobile-centric, zero trust enterprise security framework. Unlike other UEM solutions, MobileIron UEM puts enterprise mobile security at the center of your enterprise and allows you to build upon it with enabling technologies such as `zero sign-on (ZSO) <https://www.mobileiron.com/en/products/access>`_ user and device authentication, multi-factor authentication (MFA), and `mobile threat detection (MTD) <https://www.mobileiron.com/en/products/mobile-threat-defense>`_."
 
 - `MobileIron Website <https://www.mobileiron.com/en/products/uem>`_
-- `MobileIron Mattermost Documentation <https://docs.mattermost.com/mobile/mobile-mobileiron.html>`_ 
+- `MobileIron Mattermost Documentation </mobile/mobile-mobileiron.html>`_ 
 - `MobileIron Support (requires login) <https://help.mobileiron.com/s/login/?startURL=%2Fs%2F&ec=302>`_
 
 ****

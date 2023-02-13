@@ -3,28 +3,56 @@
 Bulk export data
 ----------------
 
-At this time, the export supports attributes of the objects listed below. All Mattermost Bulk Export data files will begin with a `Version` object as the first line of the file. This indicates the version of the Mattermost Bulk Import file format with which the exported data is compatible.
+.. tabs::
+
+  .. tab:: Use mmctl
+
+    1. Create a full export file including attachments by running the `mmctl export create -- attachments </manage/mmctl-command-line-tool.html#mmctl-export-create>`__ command. See the `Mattermost workspace migration </manage/cloud-data-export.html#create-the-export>`__ documentation for details.
+
+    2. While the job is running, you can check its status by running the `mmctl export job show </manage/mmctl-command-line-tool.html#mmctl-export-job-show>`__ command.
+
+    3. When the export job status is successful:
+
+      a. Identify the name of the completed export file by running the `mmctl export list </manage/mmctl-command-line-tool.html#mmctl-export-list>`__ command.
+      b. Download the export file to your local machine by running the `mmctl export download </manage/mmctl-command-line-tool.html#mmctl-export-download>`__ command.
+
+  .. tab:: Use CLI
+
+    The export command runs in the `CLI </manage/command-line-tools.html>`__.  It has permissions to access all information in the Mattermost database.
+
+    To run the export command:
+
+    1.  Navigate to the directory where the Mattermost server is installed. On a default install of Mattermost, the directory is ``/opt/mattermost``.
+    2.  Run the following command to extract data from all teams on the server. Note that you can change the file name and specify an absolute or relative path to dictate where the file is exported:
+
+        ``sudo -u mattermost bin/mattermost export bulk file.json --all-teams``
+
+        ``sudo -u mattermost bin/mattermost export bulk /home/user/bulk_data.json --all-teams``
+
+    3.  Retrieve your file from the location you specified.
+
+At this time, the export supports attributes of the objects listed below. All Mattermost bulk export data files will begin with a ``Version`` object as the first line of the file. This indicates the version of the Mattermost bulk import file format with which the exported data is compatible.
 
 You can export the following data types:
 
 - Teams
-- Channels (Public and Private)
+- Channels (public, private, and direct)
 - Users
-- Users' Team memberships
-- Users' Channel memberships
+- Users' team memberships
+- Users' channel memberships
 - Users' notification preferences
-- Posts (regular, non-reply posts)
-- Posts' Replies
-- Posts' Reactions
-- Custom Emoji
-- Direct Message Channels
-- Direct Message Posts
+- Posts (regular, non-reply messages)
+- Posts' replies and threads
+- Posts' reactions
+- Custom emoji
+- Direct message channels
+- Direct message posts
 
 .. note::
 
    Configuration for data types such as exporting specific areas of the server, exporting additional types of posts, permissions schemes, file attachments, webhooks, and bot messages is not yet supported. Deleted objects are also not yet supported.
-  
-   For requests to add additional attributes or objects to our exporter, please add a feature request on our `feature idea forum <https://mattermost.uservoice.com/forums/306457-general>`__.
+
+   For requests to add additional attributes or objects to our exporter, please add a feature request on our `feature idea forum <https://mattermost.com/suggestions/>`__.
 
 Version object
 --------------
@@ -47,8 +75,50 @@ Version object
       <td valign="middle">number</td>
       <td>The number 1.</td>
     </tr>
+    <tr class="row-odd">
+      <td valign="middle">info</td>
+      <td valign="middle">object</td>
+      <td>Optional VersionInfo object</td>
+    </tr>
   </table>
-  
+
+VersionInfo object
+------------------
+
+.. raw:: html
+
+  <table width="100%" border="1" cellpadding="5px" style="margin-bottom:20px;">
+    <tr class="row-odd">
+      <th class="head">Field name</th>
+      <th class="head">Type</th>
+      <th class="head">Description</th>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">generator</td>
+      <td valign="middle">string</td>
+      <td>The name of the tool this export was generated with. Well known tools are:<br>
+          <kbd>"mattermost-server"</kbd> for the Mattermost Server.<br>
+          <kbd>"mmetl"</kbd> for the Slack export converter "mmetl".</td>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">version</td>
+      <td valign="middle">string</td>
+      <td>The version of the tool this export was generated with. This may contain multiple pieces of version info, separated by spaces. The first one should be a semantic version.<br>
+      <kbd>"7.6.0 (29bb1e53ef5a439c73065f47de2972f9bbcb09a4, enterprise: true)"</kbd> is an example of such a version string.</td>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">created</td>
+      <td valign="middle">string</td>
+      <td>The timestamp of the file creation. This should be formatted as an RFC 3339 timestamp. The nanosecond part is optional.<br>
+      <kbd>"2022-11-22T16:40:51.019582328+01:00"</kbd></td>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">additional</td>
+      <td valign="middle">any</td>
+      <td>Any additional information the generator wants to include into the file header. May be omitted. Be aware that the size of each line is limited to a few MiB.</td>
+    </tr>
+  </table>
+
 Team object
 -----------
 
@@ -145,7 +215,7 @@ Channel object
       <td>The name of the permissions scheme that applies to this team.</td>
     </tr>
   </table>
-  
+
 User object
 -----------
 
@@ -232,7 +302,7 @@ User object
       <td valign="middle">show_unread_section</td>
       <td valign="middle">string</td>
       <td><kbd>"true"</kbd> if the user has enabled showing unread messages at top of channel sidebar.</td>
-    </tr> 
+    </tr>
     <tr class="row-odd">
       <td valign="middle">theme</td>
       <td valign="middle">string</td>
@@ -252,7 +322,7 @@ User object
       <td valign="middle">message_display</td>
       <td valign="middle">string</td>
       <td>The style the user prefers for displayed messages. Options are <kbd>"clean"</kbd> if the user uses the standard style or <kbd>"compact"</kbd> if the user uses compact style.</td>
-    </tr> 
+    </tr>
     <tr class="row-odd">
       <td valign="middle">channel_display_mode</td>
       <td valign="middle">string</td>
@@ -272,7 +342,7 @@ User object
       <td valign="middle">delete_at</td>
       <td valign="middle">int64</td>
       <td>Timestamp of when the user was deactivated.</td>
-    </tr>    
+    </tr>
     <tr class="row-odd">
       <td valign="middle">teams</td>
       <td valign="middle">array</td>
@@ -513,7 +583,7 @@ Post object
       <td valign="middle">array</td>
       <td>The emoji reactions to this post. Will be an array of Reaction objects.</td>
   </table>
-  
+
 Reply object
 ------------
 
@@ -541,7 +611,7 @@ Reply object
       <td>The timestamp for the reply, in milliseconds since the Unix epoch.</td>
     </tr>
   </table>
-  
+
 Reaction object
 ---------------
 
@@ -594,7 +664,7 @@ Emoji object
       <td>The path (either absolute or relative to the current working directory) to the image file for this emoji.</td>
     </tr>
   </table>
-  
+
 DirectChannel object
 --------------------
 
@@ -612,12 +682,17 @@ DirectChannel object
       <td>List of channel members.</td>
     </tr>
     <tr class="row-odd">
+      <td valign="middle">favorited_by</td>
+      <td valign="middle">array</td>
+      <td>List of channel members who have favorited the direct channel.</td>
+    </tr>
+    <tr class="row-odd">
       <td valign="middle">header</td>
       <td valign="middle">string</td>
       <td>The channel header.</td>
     </tr>
   </table>
-  
+
 DirectPost object
 -----------------
 

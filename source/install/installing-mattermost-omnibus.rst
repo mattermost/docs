@@ -1,19 +1,7 @@
 Install Mattermost Omnibus
 ==========================
 
-|all-plans| |self-hosted|
-
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
-
-.. include:: common-prod-deploy-omnibus.rst
+.. include:: ../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
 
 Configure Mattermost Omnibus
@@ -23,7 +11,7 @@ Configure Mattermost Omnibus
   
   Plugin uploads, local mode, and HTTPS are enabled by default. These settings are modified in the ``yaml`` file as described below.
 
-With Mattermost Omnibus, the ``config.json`` file is no longer used as `Omnibus stores the Mattermost configuration in the database <https://docs.mattermost.com/configure/configuation-in-mattermost-database.html>`__. The Omnibus platform itself requires of a configuration of its own, that is stored in ``/etc/mattermost/mmomni.yml``. This file contains the data that Omnibus needs to configure the platform and connect all the services together. So you’ll need to use mmctl to make changes to your Mattermost server configuration using ``mmctl --local config edit``.
+With Mattermost Omnibus, the ``config.json`` file is no longer used as `Omnibus stores the Mattermost configuration in the database </configure/configuation-in-a-database.html>`__. The Omnibus platform itself requires of a configuration of its own, that is stored in ``/etc/mattermost/mmomni.yml``. This file contains the data that Omnibus needs to configure the platform and connect all the services together. So you’ll need to use mmctl to make changes to your Mattermost server configuration using ``mmctl --local config edit``.
 
 For Omnibus to work properly, there are some configuration parameters that are fixed and cannot be changed through the web interface - for example, the port that Mattermost uses to run. Other parameters need to be configured directly in the ``mmomni.yml`` file instead of in the Mattermost web interface or the ``config.json`` file.
 
@@ -100,7 +88,7 @@ Although the recommended way to install and configure Omnibus is with SSL enable
 What happened to ``config.json``?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Mattermost Omnibus `stores the configuration of the Mattermost server into the database <https://docs.mattermost.com/configure/configuation-in-mattermost-database.html>`__. You can edit your config by running the following mmctl command after connecting mmctl to the instance: ``mmctl config edit``. If you're logged into the machine as the ``mattermost`` user, you can use ``mmctl --local config edit`` as well.
+Mattermost Omnibus `stores the configuration of the Mattermost server into the database </configure/configuation-in-a-database.html>`__. You can edit your config by running the following mmctl command after connecting mmctl to the instance: ``mmctl config edit``. If you're logged into the machine as the ``mattermost`` user, you can use ``mmctl --local config edit`` as well.
 
 Are there plans to add other packages to the Omnibus?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -135,4 +123,4 @@ Yes. The SSL certificate automatically updated and renewed. Omnibus installs the
 Where can I get help?
 ~~~~~~~~~~~~~~~~~~~~~
 
-If you have any problems installing Mattermost Omnibus, see the `troubleshooting guide <https://docs.mattermost.com/install/troubleshooting.html>`__ for common error messages, or `join the Mattermost user community for troubleshooting help <https://mattermost.com/pl/default-ask-mattermost-community/>`_.
+If you have any problems installing Mattermost Omnibus, see the `troubleshooting guide </install/troubleshooting.html>`__ for common error messages, or `join the Mattermost user community for troubleshooting help <https://mattermost.com/pl/default-ask-mattermost-community/>`_.

@@ -75,8 +75,8 @@ After the server is upgraded, users might need to refresh their browsers to expe
 
 5. If public links are enabled, upgrading from `v3.3.x` and earlier to `v3.4.x` and later will invalidate existing public links due to a security upgrade allowing admins to invalidate links by resetting a public link salt from the System Console.
 
-6. RHEL6 and Ubuntu installations must verify the line `limit nofile 50000 50000` is included in `/etc/init/mattermost.conf` file. See the [installation guide](https://docs.mattermost.com/guides/administrator.html#install-guides) for your operating system for more details.
-7. RHEL7 and Ubuntu installations must verify the line `LimitNOFILE=49152` is included in the `/etc/systemd/system/mattermost.service` file. See the [installation guide](https://docs.mattermost.com/guides/administrator.html#install-guides) for your operating system for more details.
+6. RHEL6 and Ubuntu installations must verify the line `limit nofile 50000 50000` is included in `/etc/init/mattermost.conf` file. See the [installation guide](/guides/administrator.html#install-guides) for your operating system for more details.
+7. RHEL7 and Ubuntu installations must verify the line `LimitNOFILE=49152` is included in the `/etc/systemd/system/mattermost.service` file. See the [installation guide](/guides/administrator.html#install-guides) for your operating system for more details.
 
 **Upgrading from 3.0.0 and later**
 
@@ -112,7 +112,7 @@ In Mattermost 3.0 users can maintain a single account across multiple teams on a
 If your Mattermost server has duplicate accounts (users with multiple accounts in multiple teams with the same email address or username), you need to understand the 3.0 upgrade process in detail and take special steps to upgrade successfully.
 
 1. Download Mattermost Team Edition 3.0.3:
-      1. Run `platform -version` to confirm the current version of your Mattermost server is `v2.2.0`, `v2.1.0`, or `v2.0.0`. If not, please [upgrade to `v2.0.0`](https://docs.mattermost.com/administration/legacy-upgrade.html#upgrade-team-edition-to-2-2-x-and-earlier).
+      1. Run `platform -version` to confirm the current version of your Mattermost server is `v2.2.0`, `v2.1.0`, or `v2.0.0`. If not, please [upgrade to `v2.0.0`](/administration/legacy-upgrade.html#upgrade-team-edition-to-2-2-x-and-earlier).
       2. Run `wget https://releases.mattermost.com/X.X.X/mattermost-team-X.X.X-linux-amd64.tar.gz` to download the appropriate new version.
 2. Stop the Mattermost server
       1. Consider posting an announcement to active teams about stopping the Mattermost server for an upgrade
@@ -164,8 +164,8 @@ If your Mattermost server has duplicate accounts (users with multiple accounts i
           - Mattermost `v1.2.x` must upgrade to Mattermost `v1.3.x` before further upgrades.
           - Mattermost `v1.1.x` must upgrade to Mattermost `v1.2.x` before further upgrades.
           - Mattermost `v1.0.x` must upgrade to Mattermost `v1.1.x` before further upgrades.
-      3. Use the [Version Archive List](https://docs.mattermost.com/administration/upgrade.html#version-archive) to find the `[RELEASE URL]` for your desired version and enter `wget {RELEASE URL}` to download. For example, to download `vX.X.X`, use `wget https://releases.mattermost.com/X.X.X/mattermost-team-X.X.X-linux-amd64.tar.gz`.
-      4. Review the **Compatibility** section in [CHANGELOG](https://docs.mattermost.com/administration/changelog.html) for the version downloaded and make sure to follow any instructions.
+      3. Use the [Version Archive List](/administration/upgrade.html#version-archive) to find the `[RELEASE URL]` for your desired version and enter `wget {RELEASE URL}` to download. For example, to download `vX.X.X`, use `wget https://releases.mattermost.com/X.X.X/mattermost-team-X.X.X-linux-amd64.tar.gz`.
+      4. Review the **Compatibility** section in [CHANGELOG](/administration/changelog.html) for the version downloaded and make sure to follow any instructions.
 2. Stop the Mattermost server
       1. Consider posting an announcement to active teams about stopping the Mattermost server for an upgrade.
       2. To stop the server run `sudo stop mattermost`.
@@ -191,7 +191,7 @@ In Mattermost 3.0 users can maintain a single account across multiple teams on a
 If your Mattermost server has duplicate accounts (users with multiple accounts in multiple teams with the same email address or username), you need to understand the 3.0 upgrade process in detail and take special steps to upgrade successfully.
 
 1. Download Mattermost Enterprise Edition 3.0.3
-      1. Run `platform -version` to confirm the current version of your Mattermost server is `v2.2.0`, `v2.1.1`, or `v2.0.0` of either Mattermost Enterprise Edition or Mattermost Team Edition. If not, please [upgrade to at least Mattermost Enterprise Edition `v2.0.0`](https://docs.mattermost.com/administration/legacy-upgrade.html#upgrade-enterprise-edition-to-2-2-x-and-earlier).
+      1. Run `platform -version` to confirm the current version of your Mattermost server is `v2.2.0`, `v2.1.1`, or `v2.0.0` of either Mattermost Enterprise Edition or Mattermost Team Edition. If not, please [upgrade to at least Mattermost Enterprise Edition `v2.0.0`](/administration/legacy-upgrade.html#upgrade-enterprise-edition-to-2-2-x-and-earlier).
       2. Run `wget https://releases.mattermost.com/X.X.X/mattermost-X.X.X-linux-amd64.tar.gz` to download the appropriate new version.
 2. Stop the Mattermost server
       1. Consider posting an announcement to active teams about stopping the Mattermost server for an upgrade.
@@ -244,8 +244,8 @@ For any issues, Mattermost Enterprise Edition subscribers and trial license user
           - Mattermost `v1.2.x` must upgrade to Mattermost `v1.3.x` before further upgrades.
           - Mattermost `v1.1.x` must upgrade to Mattermost `v1.2.x` before further upgrades.
           - Mattermost `v1.0.x` must upgrade to Mattermost `v1.1.x` before further upgrades.
-      3. Use the [Version Archive List](https://docs.mattermost.com/administration/upgrade.html#version-archive) to find the `[RELEASE URL]` for your desired version and enter `wget {RELEASE URL}` to download. For example, to download `vX.X.X`, use `wget https://releases.mattermost.com/X.X.X/mattermost-X.X.X-linux-amd64.tar.gz`.
-      4. Review the **Compatibility** section in [CHANGELOG](https://docs.mattermost.com/administration/changelog.html) for the version downloaded and make sure to follow any instructions.
+      3. Use the [Version Archive List](/administration/upgrade.html#version-archive) to find the `[RELEASE URL]` for your desired version and enter `wget {RELEASE URL}` to download. For example, to download `vX.X.X`, use `wget https://releases.mattermost.com/X.X.X/mattermost-X.X.X-linux-amd64.tar.gz`.
+      4. Review the **Compatibility** section in [CHANGELOG](/administration/changelog.html) for the version downloaded and make sure to follow any instructions.
 2. Stop the Mattermost server
       1. Consider posting an announcement to active teams about stopping the Mattermost server for an upgrade.
       2. To stop the server run `sudo stop mattermost`.

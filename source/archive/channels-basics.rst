@@ -8,7 +8,7 @@ Channels Basics
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
+  :alt: Available in Mattermost Free.
 
 .. |cloud| image:: ../images/cloud-badge.png
   :scale: 30
@@ -66,7 +66,7 @@ You can use either ``_`` or ``*`` for italics and bold text.
 .. image:: ../images/messagesTable1.png
    :alt: Formatting markdown controls the look and feel of text messages.
 
-See our `Formatting Text <https://docs.mattermost.com/messaging/formatting-text.html>`__ documentation for more details and examples.
+See our `Formatting Text </messaging/formatting-text.html>`__ documentation for more details and examples.
 
 React to messages
 -----------------
@@ -76,7 +76,7 @@ React to messages quickly by selecting the |smile-icon| icon inside the Mattermo
 .. |smile-icon| image:: ../images/smile-icon.png
   :alt: Smile icon.
 
-Or, react to messages by typing ":" followed by two characters, which will open an emoji autocomplete. If the existing emojis don't cover what you want to express, you can also create your own `Custom Emoji <https://docs.mattermost.com/messaging/using-emoji.html#creating-custom-emojis>`__.
+Or, react to messages by typing ":" followed by two characters, which will open an emoji autocomplete. If the existing emojis don't cover what you want to express, you can also create your own `Custom Emoji </messaging/using-emoji.html#creating-custom-emojis>`__.
 
 Share files
 -----------
@@ -99,8 +99,8 @@ Save messages for later follow up by selecting the |save-icon| icon next to the 
 
 Learn more about:
 
-* `Composing Messages and Replies <https://docs.mattermost.com/messaging/sending-receiving-messages.html>`__
-* `Mentioning Teammates <https://docs.mattermost.com/messaging/mentioning-teammates.html>`__
-* `Formatting Messages using Markdown <https://docs.mattermost.com/messaging/formatting-text.html>`__
-* `Sharing Files <https://docs.mattermost.com/messaging/sharing-files.html>`__
-* `Executing Commands <https://docs.mattermost.com/messaging/executing-slash-commands.html>`__
+* `Composing Messages and Replies </messaging/sending-receiving-messages.html>`__
+* `Mentioning Teammates </messaging/mentioning-teammates.html>`__
+* `Formatting Messages using Markdown </messaging/formatting-text.html>`__
+* `Sharing Files </messaging/sharing-files.html>`__
+* `Executing Commands </messaging/executing-slash-commands.html>`__

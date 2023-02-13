@@ -1,35 +1,41 @@
 :nosearch:
 .. _bulk-loading-data:
 
-Running the bulk loading command
---------------------------------
+Bulk load data
+---------------
 
-Before running the bulk loading command, you must first create a `JSONL
-<https://jsonlines.org>`__ file that contains the data that you want to import. After you create the file, run the bulk load command in validation mode. In this mode, the data is checked for correctness, but is not written to the database. After validating, run the command in apply mode, which saves the data to the database.
+Before running the bulk loading command, you must first create a `JSONL <https://jsonlines.org>`__ file that contains the data that you want to import in your Mattermost directory. The file can have any name, but in this example it's called ``data.jsonl``. The format of the file is described in the :ref:`data-format` section.
 
-**To bulk load data**:
+.. tabs::
 
-1. Create the `JSONL
-<https://jsonlines.org>`__ data file in your Mattermost directory. The file can have any name, but in this procedure it's called ``data.jsonl``. The format of the file is described in the :ref:`data-format` section.
+  .. tab:: Use mmctl
 
-2. Validate that the file is correct:
+    1. After you create the file, upload the file to the database by running the `mmctl import upload </manage/mmctl-command-line-tool.html#mmctl-import-upload>`__ command. For example: ``mmctl import upload data.jsonl``.
 
-  a. Change to the Mattermost directory.
+    2. Confirm that the file is uploaded and ready for use by running the `mmctl import list available </manage/mmctl-command-line-tool.html#mmctl-import-list-available>`__ command. 
 
-    ``cd /opt/mattermost`` (the location might be different on your system)
+    3. Import your uploaded file by running the `mmctl import process </manage/mmctl-command-line-tool.html#mmctl-import-process>`__ command. For example: ``mmctl import process data.jsonl``.
 
-  b. Run the following command:
+  .. tab:: Use CLI
 
-    ``sudo -u mattermost bin/mattermost import bulk data.jsonl --validate``
+    After you create the file, validate that the file is correct by running the bulk load command in validation mode. In this mode, the data is checked for correctness, but is not written to the database. After validating, run the command in apply mode, which saves the data to the database.
 
-3. Resolve any errors that are reported, and validate the file again. Do not go to the next step until you can run the validate command without errors.
+    1. Change to the Mattermost directory.
 
-4. Run the bulk load command in apply mode:
+       ``cd /opt/mattermost`` (the location might be different on your system)
 
-  ``sudo -u mattermost bin/mattermost import bulk data.jsonl --apply``
+    2. Run the following command:
 
-5. When the bulk load command completes, clear all caches by going to **System Console > Environment > Web Server**.
+       ``sudo -u mattermost bin/mattermost import bulk data.jsonl --validate``
 
-.. important::
+    3. Resolve any errors that are reported, and validate the file again. Do not go to the next step until you can run the validate command without errors.
 
-  After the import tool has run, all files created in the ``data`` directory are owned by *root* as the tool was run as *sudo*. The owner of the ``data`` directory and all its content has to change to *mattermost* user, otherwise, Mattermost can't fetch the files created in the ``data`` directory after the import tool has run.
+    4. Run the bulk load command in apply mode:
+
+       ``sudo -u mattermost bin/mattermost import bulk data.jsonl --apply``
+
+    5. When the bulk load command completes, clear all caches in the System Console by going to **System Console > Environment > Web Server**.
+
+    .. important::
+
+      After the import tool has run, all files created in the ``data`` directory are owned by *root* as the tool was run as *sudo*. The owner of the ``data`` directory and all its content has to change to *mattermost* user, otherwise, Mattermost can't fetch the files created in the ``data`` directory after the import tool has run.

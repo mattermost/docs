@@ -398,7 +398,7 @@ Procedure:
 ::
 
    #### @channel A reminder to prepare your items for R&D meeting [DATE]:
-   1. @[name], @[name] and @[name] - you're up for `ice-breaker <https://docs.mattermost.com/process/training.html#ice-breaker>`__.
+   1. @[name], @[name] and @[name] - you're up for `ice-breaker </process/training.html#ice-breaker>`__.
    2. If you'll be giving a demo, please queue it [in the meeting notes](link).
    ##### Everyone is encouraged to bring up items for discussion. If the discussion is `time-copped` during the meeting, please be sure to add a `next step` to the notes and post a link to where the conversation can be continued. ~platform channel is usually a good place to continue discussions.
 

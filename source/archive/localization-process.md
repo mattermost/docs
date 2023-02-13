@@ -1,3 +1,3 @@
 :nosearch:
 
-Please see [updated localization guides](https://docs.mattermost.com/developer/localization.html).
+Please see [updated localization guides](/developer/localization.html).

@@ -1,24 +1,13 @@
 Team settings
 =============
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
+Team settings enable you to adjust settings applied to a specific team. Using Mattermost in a web browser or the desktop app, select the team name to access additional team options, including **Team Settings**. 
 
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/sign-up
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
-
-The Team Settings menu offers Team Admins and System Admins the ability to adjust settings applied to a specific team. To access the settings, open the channel menu at the top of the channel sidebar and select **Team Settings**. 
+.. image:: ../images/team-settings.png
+    :alt: Access team settings from the team name. 
 
 General
 -------
@@ -30,7 +19,7 @@ Team name
 
 Your **Team Name** is displayed on the login screen, and in the top of the channel sidebar for your team. 
 
-You can enter a name up to 15 characters in length. Please note that `some unicode characters <https://www.w3.org/TR/unicode-xml/#Charlist>`_ are not supported. The length of team names is limited to ensure readability.
+Team names can contain any letters, numbers, or symbols, must be 2 - 64 characters in length, and are case-sensitive. `Some unicode characters <https://www.w3.org/TR/unicode-xml/#Charlist>`_ aren't supported in team names. 
 
 Team description
 ~~~~~~~~~~~~~~~~
@@ -42,9 +31,21 @@ You can enter a description up to 50 characters in length. Please note that `som
 Team icon
 ~~~~~~~~~
 
-Your **Team Icon** appears in the team sidebar, visible if users are members of more than one team.
+Your **Team Icon** appears in the team sidebar, and it's visible if you're a member of more than one team. By default, teams display an icon containing the first two letters of the team name. You can customize the team icon.
 
-You can upload a team icon in BMP, JPG or PNG format. Square images with a solid background color are recommended, since transparency in PNG icons fills with a white background in the team sidebar. Removing the team icon resets it to the default icon that contains the first two letters of the team name.
+1. Select **Team Settings**.
+
+2. Edit the **Team Icon** option.
+
+.. image:: ../images/edit-team-icon.png
+  :alt: Manage the team icon from Team Settings.
+
+3. Upload an icon image in BMP, JPG, or PNG format. We recommend using square images with a solid background color since transparency in PNG icons fills with a white background in the team sidebar. 
+
+.. image:: ../images/upload-team-icon.png
+  :alt: Upload a team icon from Team Settings.
+
+Removing the team icon resets it to the default icon that contains the first two letters of the team name.
 
 Allow only users with a specific email domain to join this team
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -71,4 +72,4 @@ Import
 Import from Slack
 ~~~~~~~~~~~~~~~~~
 
-From v6.0, this feature has been deprecated. See our `Migration Guide <https://docs.mattermost.com/onboard/migrating-to-mattermost.html>`__ for details on migrating to Mattermost from other solutions, including `Slack <https://docs.mattermost.com/onboard/migrating-to-mattermost.html#migrating-from-slack>`__. 
+From v6.0, this feature has been deprecated. See our `Migration Guide </onboard/migrating-to-mattermost.html>`__ for details on migrating to Mattermost from other solutions, including `Slack </onboard/migrating-to-mattermost.html#migrating-from-slack>`__. 

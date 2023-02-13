@@ -1,20 +1,14 @@
 MySQL installation troubleshooting
 ==================================
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
+Before you can run the Mattermost server, you must first install and configure a database. You can start Mattermost by navigating to the ``/opt/mattermost`` directory and entering the command ``sudo -u mattermost bin/mattermost``. If the Mattermost server can't connect to the database, it will fail to start. This section deals with MySQL database issues that you may encounter when you start up Mattermost for the first time.
 
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
+.. note::
 
-Before you can run the Mattermost server, you must first install and configure a database. You can start Mattermost by navigating to the ``/opt/mattermost`` directory and entering the command
-``sudo -u mattermost bin/mattermost``. If the Mattermost server cannot connect to the database, it will fail to start. This section deals with MySQL database issues that you may encounter when you start up Mattermost for the first time.
+    Additional database tuning guidance is available for specific Mattermost releases. See the `important upgrade notes </upgrade/important-upgrade-notes.html>`__ documentation for more details.
 
 How you install MySQL varies depending upon which Linux distribution you use. However, once MySQL is installed, the configuration instructions are the
 same. For all distributions you must create a ``mattermost`` database and a ``mattermost`` database user. Failure to create these database

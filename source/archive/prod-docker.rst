@@ -11,7 +11,7 @@ Deploy Mattermost on Docker
 
 Deploy Mattermost using a multi-node configuration with `Docker Compose <https://docs.docker.com/compose/>`__. Experience with Docker Compose is recommended.
 
-For a single-node preview of Mattermost (without email) see `Local Machine Setup using Docker <https://docs.mattermost.com/install/docker-local-machine.html>`__.
+For a single-node preview of Mattermost (without email) see `Local Machine Setup using Docker </install/docker-local-machine.html>`__.
 
 If you have any problems installing, see the `troubleshooting guide <https://forum.mattermost.com/c/trouble-shoot>`__. To submit an improvement or correction, click **Edit** at the top of this page.
 
@@ -81,11 +81,11 @@ To verify the current Docker network use the following command to list it (you c
 
 4. **Configure TLS** by following `the instructions <https://github.com/mattermost/mattermost-docker#install-with-ssl-certificate>`__.
 
-5. **Configure Email** by following the `SMTP email setup guide <https://docs.mattermost.com/install/smtp-email-setup.html>`__.
+5. **Configure Email** by following the `SMTP email setup guide </install/smtp-email-setup.html>`__.
 
 6. (Optional) To enable enterprise features, go to **System Console > Edition and License** and select **Start trial**.
 
-7. **Configure your Server** based on the `configuration settings documentation <https://docs.mattermost.com/configure/configuration-settings.html>`__.
+7. **Configure your Server** based on the `configuration settings documentation </configure/configuration-settings.html>`__.
 
 Once you've saved your configurations, start an Enterprise E20 trial via **Main Menu > System Console > Edition and License > Start trial**.
 

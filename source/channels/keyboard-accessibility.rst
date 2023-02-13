@@ -1,24 +1,10 @@
 Keyboard accessibility
 =======================
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/sign-up
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
-
-Navigational keyboard shortcuts help you use Mattermost without requiring a mouse. Below is a list of supported accessibility shortcuts. Elements in focus have a colored outline, as shown here:
+Navigational keyboard shortcuts help you use Mattermost in a web browser or the desktop app without needing a mouse. Below is a list of supported accessibility shortcuts. Elements in focus have a colored outline, as shown here:
 
 .. image:: ../images/focus.png
   :alt: Navigate Mattermost using a keyboard.

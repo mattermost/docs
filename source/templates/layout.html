@@ -237,6 +237,34 @@
             title="{% trans docstitle=docstitle|e %}Search within {{ docstitle }}{% endtrans %}"
             href="{{ pathto('_static/opensearch.xml', 1) }}"/>
       {%- endif %}
+
+      {# Fragment redirects #}
+      {%- if has_fragment_redirects %}
+      <script>
+        const FRAGMENT_REGEX = new RegExp("^([-?/:@._~!$&'()*+,;=a-zA-Z0-9]|%[0-9a-fA-F]{2})*$");
+        {{ fragment_redirects }}
+        const url = new URL(window.location.href);
+        if (url.hash !== "" && url.hash !== "#") {
+          let fragment = url.hash.substring(1);
+          if (!FRAGMENT_REGEX.test(fragment)) {
+              console.error("invalid fragment: " + fragment);
+              fragment = "";
+          }
+          if (fragment !== "" && fragment in fragment_redirects) {
+            let redirecturl = fragment_redirects[fragment];
+            if (redirecturl.startsWith("/")) {
+                redirecturl = window.location.origin + redirecturl;
+            }
+            console.log("redirecting to " + redirecturl);
+            window.location = redirecturl;
+          } else {
+            if (fragment !== "") {
+              console.error("unknown fragment: " + fragment);
+            }
+          }
+        }
+      </script>
+      {%- endif %}
     {%- endif %}
   {%- endblock %}
 

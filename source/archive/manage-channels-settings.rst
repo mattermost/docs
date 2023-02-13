@@ -8,7 +8,7 @@ Manage Channels Settings
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
+  :alt: Available in Mattermost Free.
 
 .. |cloud| image:: ../images/cloud-badge.png
   :scale: 30
@@ -57,7 +57,7 @@ When `Desktop App <https://mattermost.com/download/#mattermostApps>`__ notificat
 
 - An empty red circle is displayed over the upper right corner of the Mattermost dock icon when any message without an at-mention is received. 
 - A solid red circle with a post count is displayed when a message with an at-mention is received.
-- And when `Collapsed Reply Threads (Beta) <https://docs.mattermost.com/messaging/manage-channels-settings.html#collapsed-reply-threads-beta>`__ is enabled, you can choose to receive desktop notifications about `threads you're following <https://docs.mattermost.com/messaging/organizing-conversations.html#start-or-reply-to-threads>`__.
+- And when `Collapsed Reply Threads (Beta) </messaging/manage-channels-settings.html#collapsed-reply-threads-beta>`__ is enabled, you can choose to receive desktop notifications about `threads you're following </messaging/organizing-conversations.html#start-or-reply-to-threads>`__.
 
 Notification Sound
 ^^^^^^^^^^^^^^^^^^
@@ -76,14 +76,14 @@ Email Notifications
 
 Email notifications are sent for mentions and direct messages after you’ve been offline for more than 60 seconds or away from Mattermost for more than five minutes. Change the email where notifications are sent by selecting **Profile > Profile Settings > Email**.
 
-If your System Admin has enabled `Email Batching <https://docs.mattermost.com/configure/configuration-settings.html#enable-email-batching>`__, you'll have additional options under this settings to select how often email notifications will be sent. All notifications received over this time period are combined and sent in a single email.
+If your System Admin has enabled `Email Batching </configure/configuration-settings.html#enable-email-batching>`__, you'll have additional options under this settings to select how often email notifications will be sent. All notifications received over this time period are combined and sent in a single email.
 
 Mobile Push Notifications
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Push notifications can be sent to your mobile device if you have the Android or iOS app installed. You can choose the type of activity that will send a notification. 
 
-By default, push notifications are sent "For mentions and direct messages". If push notifications are sent "Never", the Mattermost setting to trigger push notifications depending on your `Mattermost availability <https://docs.mattermost.com/messaging/setting-your-status-availability.html>`__ is hidden. If your System Admin has not set up push notifications, this setting will be disabled.
+By default, push notifications are sent "For mentions and direct messages". If push notifications are sent "Never", the Mattermost setting to trigger push notifications depending on your `Mattermost availability </messaging/setting-your-status-availability.html>`__ is hidden. If your System Admin has not set up push notifications, this setting will be disabled.
 
 If you're actively viewing a channel (Public or Private), Direct Message, or Group Message using the Desktop App or a browser, no push notifications will be sent for that channel. If a notification is viewed using the Desktop App or a browser, the lockscreen notification will clear on Android, and on iOS the badge on the Mattermost app icon will count down accordingly.
 
@@ -100,10 +100,10 @@ By default, you receive notifications when someone posts a message that contains
 Reply Notifications
 ~~~~~~~~~~~~~~~~~~~
 
-When `Collapsed Reply Threads (Beta) <https://docs.mattermost.com/messaging/manage-channels-settings.html#collapsed-reply-threads-beta>`__ is disabled, you can choose to receive mention notifications when someone replies to a thread you have started or have participated in. 
+When `Collapsed Reply Threads (Beta) </messaging/manage-channels-settings.html#collapsed-reply-threads-beta>`__ is disabled, you can choose to receive mention notifications when someone replies to a thread you have started or have participated in. 
 
 - You are considered to start a thread when you post a message to which other members of your team reply. 
-- You are considered to participate in a thread when you post a message using the `Reply button <https://docs.mattermost.com/messaging/messaging-basics.html>`__ in an pre-existing thread.
+- You are considered to participate in a thread when you post a message using the `Reply button </messaging/messaging-basics.html>`__ in an pre-existing thread.
 
 .. note::
   This setting is hidden when Collapsed Reply Threads (Beta) is enabled.
@@ -111,7 +111,7 @@ When `Collapsed Reply Threads (Beta) <https://docs.mattermost.com/messaging/mana
 Automatic Direct Message Replies
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Set an automated custom message that will be sent once per day in response to Direct Messages. Mentions in Public and Private Channels won't trigger the automated reply. Enabling Automatic Replies sets your availability to **Out of Office** and disables desktop, email, and push notifications. This setting is experimental and `must be enabled by your System Admin <https://docs.mattermost.com/configure/configuration-settings.html#enable-automatic-replies>`__.
+Set an automated custom message that will be sent once per day in response to Direct Messages. Mentions in Public and Private Channels won't trigger the automated reply. Enabling Automatic Replies sets your availability to **Out of Office** and disables desktop, email, and push notifications. This setting is experimental and `must be enabled by your System Admin </configure/configuration-settings.html#enable-automatic-replies>`__.
 
 Display
 -------
@@ -127,7 +127,7 @@ Select **Custom Theme** to customize your theme colors and share them with other
 
 In Enterprise Edition, if you belong to multiple teams, you can optionally select the checkbox "Apply new theme to all my teams" to have the theme show up across teams. Otherwise, the changes will only apply to the current team.
 
-Learn more about the custom theme color selectors `here <https://docs.mattermost.com/messaging/customizing-theme-colors.html>`__.
+Learn more about the custom theme color selectors `here </messaging/customizing-theme-colors.html>`__.
 
 Select **Import theme colors from Slack** to import a Slack theme. In Slack, go to **Preferences > Sidebar Theme** and open the custom theme option. From there, copy the theme color vector and then paste it into the *Input Slack Theme* input box in Mattermost. Any theme settings that are not customizable in Slack will default to the “Sapphire” standard theme settings.
 
@@ -146,7 +146,7 @@ Choose a 12-hour or 24-hour time preference that appears on the time stamp for a
 Teammate Name Display
 ~~~~~~~~~~~~~~~~~~~~~
 
-Configure how names are displayed in the user interface: nickname, username or full name. The default for this setting is dependent on the `configuration set by the System Admin <https://docs.mattermost.com/configure/configuration-settings.html#teammate-name-display>`__.
+Configure how names are displayed in the user interface: nickname, username or full name. The default for this setting is dependent on the `configuration set by the System Admin </configure/configuration-settings.html#teammate-name-display>`__.
 
 Show online availability on profile images
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -160,17 +160,17 @@ Select the timezone used for timestamps in the user interface and for email noti
 
 .. note::
   
-  In Mattermost v5.38 or earlier, timezone functionality `must first be enabled by the System Admin <https://docs.mattermost.com/configure/configuration-settings.html#timezone>`__ by replacing ``false`` with ``true`` in ``config.json``. Timezone is enabled by default from Mattermost v6.0.
+  In Mattermost v5.38 or earlier, timezone functionality `must first be enabled by the System Admin </configure/configuration-settings.html#timezone>`__ by replacing ``false`` with ``true`` in ``config.json``. Timezone is enabled by default from Mattermost v6.0.
 
 Website Link Previews
 ~~~~~~~~~~~~~~~~~~~~~
 
-When available, the first web link in a message will show a preview of the website content below the message. This `setting must be enabled by your System Admin <https://docs.mattermost.com/configure/configuration-settings.html#enable-link-previews>`__.
+When available, the first web link in a message will show a preview of the website content below the message. This `setting must be enabled by your System Admin </configure/configuration-settings.html#enable-link-previews>`__.
 
 Default Appearance of Image Previews
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-When messages in Mattermost include images, an image preview can display directly below the message for image attachments, image link previews, and `in-line images <https://docs.mattermost.com/messaging/formatting-text.html#in-line-images>`__ over 100px in height. You can set this preference to **Expanded** or **Collapsed**.
+When messages in Mattermost include images, an image preview can display directly below the message for image attachments, image link previews, and `in-line images </messaging/formatting-text.html#in-line-images>`__ over 100px in height. You can set this preference to **Expanded** or **Collapsed**.
 
 .. tip::
   This setting can also be controlled using the slash commands ``/expand`` and ``/collapse``.
@@ -185,7 +185,7 @@ Collapsed Reply Threads (Beta)
 
 Collapsed Reply Threads (Beta) offers an enhanced experience for users communicating in threads and replying to messages. Collapsed Reply Threads are available in Mattermost Cloud and from self-hosted Mattermost v5.37 as an early access beta, and are disabled by default. If your System Admin has enabled **Collapsed Reply Threads** for your workspace, you can enable them in your Mattermost instance to start being notified about threads you're following in a new **Threads** option at the top of the channel sidebar.
 
-See our `Organizing Conversations using Collapsed Reply Threads (Beta) <https://docs.mattermost.com/messaging/organizing-conversations.html>`__ documentation to learn more about this feature.
+See our `Organizing Conversations using Collapsed Reply Threads (Beta) </messaging/organizing-conversations.html>`__ documentation to learn more about this feature.
 
 Click to open threads
 ~~~~~~~~~~~~~~~~~~~~~
@@ -231,18 +231,18 @@ Select what language Mattermost displays in the user interface. Options include:
 Sidebar
 -------
 
-The channel sidebar includes `enhanced sidebar features <https://docs.mattermost.com/messaging/organizing-your-sidebar.html>`__, including custom, collapsible channel categories, drag and drop, unread filtering, channel sorting options, and more.
+The channel sidebar includes `enhanced sidebar features </messaging/organizing-your-sidebar.html>`__, including custom, collapsible channel categories, drag and drop, unread filtering, channel sorting options, and more.
 
 The following sidebar settings apply to your current sidebar only:
 
 **Group unread channels separately**
 
-This feature groups unread channels at the top of the channel sidebar in an **Unreads** category. System Admins can `set the default of this setting <https://docs.mattermost.com/configure/configuration-settings.html#group-unread-channels-experimental>`__ for you. 
+This feature groups unread channels at the top of the channel sidebar in an **Unreads** category. System Admins can `set the default of this setting </configure/configuration-settings.html#group-unread-channels-experimental>`__ for you. 
 
 Legacy sidebar settings
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-The legacy sidebar `must be enabled by your System Admin <https://docs.mattermost.com/configure/configuration-settings.html#enable-legacy-sidebar>`__. The following sidebar settings apply only to the legacy sidebar:
+The legacy sidebar `must be enabled by your System Admin </configure/configuration-settings.html#enable-legacy-sidebar>`__. The following sidebar settings apply only to the legacy sidebar:
 
 Channel grouping
 ^^^^^^^^^^^^^^^^
@@ -262,7 +262,7 @@ Hide the channel switcher used to jump between channels quickly. The channel swi
 Autoclose Direct Messages
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Hide Direct Message conversations with no activity for seven days. These conversations can be reopened with the **+** button in the channel sidebar, or by using the Channel Switcher (CTRL+K). This setting is experimental and `must be enabled by your System Admin <https://docs.mattermost.com/configure/configuration-settings.html#autoclose-direct-messages-in-sidebar-experimental>`__.
+Hide Direct Message conversations with no activity for seven days. These conversations can be reopened with the **+** button in the channel sidebar, or by using the Channel Switcher (CTRL+K). This setting is experimental and `must be enabled by your System Admin </configure/configuration-settings.html#autoclose-direct-messages-in-sidebar-experimental>`__.
 
 Advanced
 --------
@@ -277,7 +277,7 @@ If **On for all messages** is enabled, pressing ENTER inserts a new line and pre
 Enable Post Formatting
 ~~~~~~~~~~~~~~~~~~~~~~
 
-This setting controls whether post formatting is rendered. When "On", posts will be rendered with `markdown formatting <https://docs.mattermost.com/messaging/formatting-text.html>`__, emoji, autolinked URLs, and line breaks. When "Off", the raw text will be shown.
+This setting controls whether post formatting is rendered. When "On", posts will be rendered with `markdown formatting </messaging/formatting-text.html>`__, emoji, autolinked URLs, and line breaks. When "Off", the raw text will be shown.
 
 Enable Join/Leave Messages
 ~~~~~~~~~~~~~~~~~~~~~~~~~~

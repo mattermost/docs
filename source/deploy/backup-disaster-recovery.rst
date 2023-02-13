@@ -1,17 +1,8 @@
 Backup and disaster recovery 
 =============================
 
-|all-plans| |self-hosted|
-
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 Options to protect your Mattermost server from different types of failures range from simple backup to sophisticated disaster recovery deployments and automation.
 
@@ -63,7 +54,7 @@ Recovering from a failure using a backup is typically a manual process and will 
 High Availability deployment 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Deploying Mattermost in `High Availability mode <https://docs.mattermost.com/scale/high-availability-cluster.html>`__ allows for fast, automated recovery from component failure, such as a specific server running out of disk space or having a hardware issue, by running on redundant servers. Options include:
+Deploying Mattermost in `High Availability mode </scale/high-availability-cluster.html>`__ allows for fast, automated recovery from component failure, such as a specific server running out of disk space or having a hardware issue, by running on redundant servers. Options include:
 
 - Deploying redundant Mattermost servers, to protect against failures in the Mattermost server.
 - Deploying redundant databases, to protect against failures in the database.
@@ -110,6 +101,6 @@ When users are unable to reach your organization's SSO provider during an outage
 
 Once IT is contacted about an SSO outage issue, they can temporarily change a user's account from SSO to email-password using the System Console, and the end user can use password to claim the account, until the SSO outage is over and the account can be converted back to SSO.
 
-If the System Admin is unable to log into the System Console because of the SSO outage, they can switch their authentication method to email-password to gain access using the `command line tool <https://docs.mattermost.com/manage/command-line-tools.html>`__.
+If the System Admin is unable to log into the System Console because of the SSO outage, they can switch their authentication method to email-password to gain access using the `command line tool </manage/command-line-tools.html>`__.
 
 When the outage is over, it's critical to switch everyone back to SSO from email-password to maintain consistency and security.

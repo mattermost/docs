@@ -1,6 +1,6 @@
 :nosearch:
 
-Configuring Notifications
+Configuring notifications
 =========================
 
 |all-plans| |cloud| |self-hosted|
@@ -8,7 +8,7 @@ Configuring Notifications
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
+  :alt: Available in Mattermost Free.
 
 .. |cloud| image:: ../images/cloud-badge.png
   :scale: 30
@@ -32,11 +32,11 @@ You can configure your Mattermost account for how and when you want to be notifi
 - Mentions your username or first name in a channel
 - Notifies a channel you're in using ``@channel``, ``@all``, or ``@here``
 - Responds to a thread you're following
-- Uses any `keywords you've configured <https://docs.mattermost.com/messaging/managing-account-settings.html#words-that-trigger-mentions>`__ 
+- Uses any `keywords you've configured </messaging/managing-account-settings.html#words-that-trigger-mentions>`__ 
 
 .. tip::
 
-  Not getting a notification? See our `FAQ to view the notification flow chart <https://docs.mattermost.com/about/faq-notifications.html>`__ to see what other factors can influence whether a notification gets triggered.
+  Not getting a notification? See our `FAQ to view the notification flow chart </about/faq-notifications.html>`__ to see what other factors can influence whether a notification gets triggered.
 
 Desktop notifications
 ----------------------
@@ -59,7 +59,7 @@ Desktop notifications are pop-ups that appear in the corner of your main monitor
     | **For all activity**      | Desktop notifications for all channel activity.                                                                                                                                                                                                  |
     +---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
     | **Only for mentions**     | - Desktop notifications for @mentions and Direct Messages/Group Messages only.                                                                                                                                                                   |
-    |                           | - When you've `enabled Collapsed Reply Threads <https://docs.mattermost.com/messaging/manage-channels-settings.html#collapsed-reply-threads-beta>`__, receive reply thread notifications by enabling **Notify me about threads I'm following**.  |
+    |                           | - When you've `enabled Collapsed Reply Threads </messaging/manage-channels-settings.html#collapsed-reply-threads-beta>`__, receive reply thread notifications by enabling **Notify me about threads I'm following**.  |
     |                           | - Choose your notification sound preference.                                                                                                                                                                                                     |
     +---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
     | **Never**                 | No desktop notifications.                                                                                                                                                                                                                        |
@@ -100,7 +100,7 @@ Open messages from email notifications in the Mattermost Desktop App, Mobile App
     +===========================+=================================================================================================================================================================================================================================================+
     | **Immediately**           | - Email notifications for @mentions and direct messages/group messages when you're                                                                                                                                                              |
     |                           |   offline or away for more than five minutes.                                                                                                                                                                                                   |
-    |                           | - When you've `enabled Collapsed Reply Threads <https://docs.mattermost.com/messaging/manage-channels-settings.html#collapsed-reply-threads-beta>`__, receive reply thread notifications by enabling **Notify me about threads I'm following**. |
+    |                           | - When you've `enabled Collapsed Reply Threads </messaging/manage-channels-settings.html#collapsed-reply-threads-beta>`__, receive reply thread notifications by enabling **Notify me about threads I'm following**. |
     +---------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
     | **Never**                 | No email notifications.                                                                                                                                                                                                                         |
     +---------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -135,7 +135,7 @@ Mobile push notifications appear on the lock screen of your mobile device if the
       | **For all activity**                   | - Mobile notifications for all activity.                                                                                                                                                                                                         |
       +----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
       | **For mentions and Direct Messages**   | - Mobile notifications for @mentions and Direct Messages/Group Messages only.                                                                                                                                                                    |
-      |                                        | - When you've `enabled Collapsed Reply Threads <https://docs.mattermost.com/messaging/manage-channels-settings.html#collapsed-reply-threads-beta>`__, receive reply thread notifications by enabling **Notify me about threads I'm following**.  |
+      |                                        | - When you've `enabled Collapsed Reply Threads </messaging/manage-channels-settings.html#collapsed-reply-threads-beta>`__, receive reply thread notifications by enabling **Notify me about threads I'm following**.  |
       +----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
       | **Never**                              | No mobile notifications.                                                                                                                                                                                                                         |
       +----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -161,7 +161,7 @@ Mobile push notifications appear on the lock screen of your mobile device if the
   
 .. tip::
 
-  Learn more about how Mattermost detects your `availability <https://docs.mattermost.com/help/getting-started/setting-your-status-availability.html>`__ as **Online**, **Away** or **Offline**.
+  Learn more about how Mattermost detects your `availability </help/getting-started/setting-your-status-availability.html>`__ as **Online**, **Away** or **Offline**.
 
 Browser tab notifications
 -------------------------
@@ -181,7 +181,7 @@ To mute a channel, select the channel name and select **Mute Channel**. To unmut
 
 .. tip:: 
 
-  Mentions are triggered by `selected keywords <https://docs.mattermost.com/help/settings/account-settings.html#words-that-trigger-mentions>`__. Learn more about `mentioning teammates <https://docs.mattermost.com/help/messaging/mentioning-teammates.html>`__.
+  Mentions are triggered by `selected keywords </help/settings/account-settings.html#words-that-trigger-mentions>`__. Learn more about `mentioning teammates </help/messaging/mentioning-teammates.html>`__.
 
 Ignoring mentions
 -----------------

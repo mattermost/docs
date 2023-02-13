@@ -33,7 +33,7 @@ Support
 If at any point you need additional help, we are ready to assist, just reach out using any of these methods:
 
 - `Community <https://community.mattermost.com/>`_ - Our entire organization uses Mattermost, plus you’ll have the support of one of the best open source communities around.
-- Documentation - We link to many parts of our `Administrator documentation <https://docs.mattermost.com/guides/administrator.html>`_ in this guide but encourage you to take a look at `all our documentation <https://docs.mattermost.com>`_.
+- Documentation - We link to many parts of our `Administrator documentation </guides/administrator.html>`_ in this guide but encourage you to take a look at `all our documentation <https://docs.mattermost.com>`_.
 - Enterprise Support  - If you are an Enterprise Edition subscriber, you may open a support ticket in the Enterprise Edition Support portal.
 
 .. Recommendation::
@@ -63,9 +63,9 @@ Taking this further, because Mattermost is an open source application, it can be
 Mattermost Scaling
 ------------------
 
-Growing your Mattermost installation from supporting a team to supporting an enterprise requires two types of `scaling <https://docs.mattermost.com/scale/scaling-for-enterprise.html>`_.
+Growing your Mattermost installation from supporting a team to supporting an enterprise requires two types of `scaling </scale/scaling-for-enterprise.html>`_.
 
-**Technical Scaling:** Whether used for teams or enterprises, the Mattermost server is designed to support tens of thousands of users on a single server with appropriate hardware. We officially support running Mattermost Server on multiple `Linux distributions and on-premises cloud solutions <https://docs.mattermost.com/guides/deployment.html>`_.
+**Technical Scaling:** Whether used for teams or enterprises, the Mattermost server is designed to support tens of thousands of users on a single server with appropriate hardware. We officially support running Mattermost Server on multiple `Linux distributions and on-premises cloud solutions </guides/deployment.html>`_.
 
 **Functional Scaling:** Scaling from a team to an enterprise is like going from a "virtual office" to a "virtual campus". Advanced features like enterprise authentication, granular permissions, compliance and auditing, and advanced reporting become increasingly important as organizations grow beyond teams.
 
@@ -84,7 +84,7 @@ Once you have installed and deployed Mattermost, activate your Enterprise E20 tr
 Client Usage
 ------------
 
-Depending on your environment and your users, you have several options when deploying Mattermost: web browser, `desktop <https://docs.mattermost.com/install/desktop.html>`_, `mobile <https://docs.mattermost.com/mobile/mobile-overview.html>`_, or all three. We `provide binaries <https://mattermost.com/download/#mattermostApps>`_ for MS Windows, macOS, Linux, iOS, and Android. However, depending on your organization policies deployment on these platforms can vary.
+Depending on your environment and your users, you have several options when deploying Mattermost: web browser, `desktop </install/desktop.html>`_, `mobile </mobile/mobile-overview.html>`_, or all three. We `provide binaries <https://mattermost.com/download/#mattermostApps>`_ for MS Windows, macOS, Linux, iOS, and Android. However, depending on your organization policies deployment on these platforms can vary.
 
 Deployment First Steps
 ----------------------
@@ -109,12 +109,12 @@ Planning Your Deployment
 Technical Requirements
 ~~~~~~~~~~~~~~~~~~~~~~
 
-The hardware requirements for the Mattermost server and database `grow based on the number of users <https://docs.mattermost.com/install/requirements.html>`_.
+The hardware requirements for the Mattermost server and database `grow based on the number of users </install/requirements.html>`_.
 
 Depending on which clients your users will work with additional reading can be necessary:
 - You are going to use the web app - no further reading required.
-- You are going to use the desktop app - please also read `Desktop Application Install Guides <https://docs.mattermost.com/install/desktop.html>`_.
-- You are going to use the mobile app - please also read `Mobile App Deployment Guide <https://docs.mattermost.com/deploy/mobile-overview.html>`_.
+- You are going to use the desktop app - please also read `Desktop Application Install Guides </install/desktop.html>`_.
+- You are going to use the mobile app - please also read `Mobile App Deployment Guide </deploy/mobile-overview.html>`_.
 
 Migration
 ---------
@@ -123,13 +123,13 @@ When migrating from an existing solution it is important to plan ahead. We recom
 
 We provide our customers with easy to use migration solutions for many scenarios:
 
-- Mattermost - Migrating from Mattermost Team Edition is common and only requires you to `upgrade to the most recent Enterprise Edition <https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html#upgrading-team-edition-to-enterprise-edition>`_ and add your license key.
+- Mattermost - Migrating from Mattermost Team Edition is common and only requires you to `upgrade to the most recent Enterprise Edition </upgrade/upgrading-mattermost-server.html#upgrading-team-edition-to-enterprise-edition>`_ and add your license key.
 - Slack - There is support for two methods of importing data from Slack.
-    - For small datasets with few users and without post attachments the `Mattermost web app can be used <https://docs.mattermost.com/onboard/migrating-to-mattermost.html>`_.
-    - If at all possible we recommend the use of `Mattermost CLI for the migration process <https://docs.mattermost.com/onboard/migrating-to-mattermost.html#migrating-from-slack-using-the-mattermost-cli>`_.
-- HipChat - We recommend using `Group Export Dashboard <https://docs.mattermost.com/onboard/migrating-from-hipchat-to-mattermost.html>`_ to export your data in combination with the `Mattermost Bulk Load Tool <https://docs.mattermost.com/onboard/bulk-loading-data.html>`_.
+    - For small datasets with few users and without post attachments the `Mattermost web app can be used </onboard/migrating-to-mattermost.html>`_.
+    - If at all possible we recommend the use of `Mattermost CLI for the migration process </onboard/migrating-to-mattermost.html#migrating-from-slack-using-the-mattermost-cli>`_.
+- HipChat - We recommend using `Group Export Dashboard </onboard/migrating-from-hipchat-to-mattermost.html>`_ to export your data in combination with the `Mattermost Bulk Load Tool </onboard/bulk-loading-data.html>`_.
 - Jabber - You can use `BrightScout’s Extract, Transform and Load (ETL) <https://github.com/Brightscout/mattermost-etl>`_ tool to migrate from Jabber.
-- Bespoke Messaging Solutions - Mattermost is designed to replace bespoke messaging solutions and provide additional `security features <https://docs.mattermost.com/about/security.html>`_, but migrating from bespoke messengers can prove to be challenging, because the data format of such tools is unpredictable. Nonetheless we provide `multiple tools <https://docs.mattermost.com/onboard/migrating-to-mattermost.html#migrating-from-bespoke-messaging-solutions-to-mattermost>`_ to attempt migration and have had many successful migrations with our customers.
+- Bespoke Messaging Solutions - Mattermost is designed to replace bespoke messaging solutions and provide additional `security features </about/security.html>`_, but migrating from bespoke messengers can prove to be challenging, because the data format of such tools is unpredictable. Nonetheless we provide `multiple tools </onboard/migrating-to-mattermost.html#migrating-from-bespoke-messaging-solutions-to-mattermost>`_ to attempt migration and have had many successful migrations with our customers.
 
 .. Note::
     If your data in the bespoke messenger is not vital we recommend a hard switch after a period of running both systems in parallel.
@@ -137,28 +137,28 @@ We provide our customers with easy to use migration solutions for many scenarios
 Single Sign-On
 --------------
 
-Mattermost can act as a `SAML 2.0 <https://docs.mattermost.com/onboard/sso-saml.html>`_ provider so setting up Single sign-on is a straightforward matter.
+Mattermost can act as a `SAML 2.0 </onboard/sso-saml.html>`_ provider so setting up Single sign-on is a straightforward matter.
 
 We support these SSO services:
 
-- `OneLogin <https://docs.mattermost.com/onboard/sso-saml-onelogin.html>`_
-- `Okta <https://docs.mattermost.com/onboard/sso-saml-okta.html>`_
-- `GitLab <https://docs.mattermost.com/onboard/sso-gitlab.html>`_
-- `Google People API <https://docs.mattermost.com/onboard/sso-google.html>`_
-- `AD/LDAP <https://docs.mattermost.com/onboard/ad-ldap.html>`_
-- `Azure Active Directory and Office 365 <https://docs.mattermost.com/onboard/sso-office.html>`_
-- `Microsoft ADFS <https://docs.mattermost.com/onboard/sso-saml-adfs-msws2016.html>`_
+- `OneLogin </onboard/sso-saml-onelogin.html>`_
+- `Okta </onboard/sso-saml-okta.html>`_
+- `GitLab </onboard/sso-gitlab.html>`_
+- `Google People API </onboard/sso-google.html>`_
+- `AD/LDAP </onboard/ad-ldap.html>`_
+- `Azure Active Directory and Office 365 </onboard/sso-office.html>`_
+- `Microsoft ADFS </onboard/sso-saml-adfs-msws2016.html>`_
 
 Compliance
 ----------
 
 When you have to meet compliance requirements - especially when working with proxies - make sure to plan ahead to avoid infrastructure redesign while deploying Mattermost. Here is how Mattermost supports your compliance needs:
 
-- Outbound Proxy - In some scenarios, like monitoring outbound traffic or controlling which websites can appear in link previews, you may wish to `use Mattermost behind a proxy <https://docs.mattermost.com/install/outbound-proxy.html>`_.
-- Electronic Discovery - Electronic Discovery (eDiscovery) is the process of searching electronic data to be used as evidence in a legal case. We have put together the `eDiscovery documentation <https://docs.mattermost.com/comply/electronic-discovery.html>`_ to help.
-- Compliance Export - This feature enables `Compliance Exports <https://docs.mattermost.com/comply/compliance-export.html>`_ to be produced from the System Console, containing all messages.
-- Data Retention - By default, Mattermost provides unlimited search history storing all messages without an expiration date. These defaults can be `changed by setting Message Retention and File Retention <https://docs.mattermost.com/comply/data-retention-policy.html>`_ to a specific duration in the System Console.
-- Custom Terms of Service - If your organization requires the use of `custom ToS <https://docs.mattermost.com/comply/custom-terms-of-service.html>`_, this can be done in the System Console.
+- Outbound Proxy - In some scenarios, like monitoring outbound traffic or controlling which websites can appear in link previews, you may wish to `use Mattermost behind a proxy </install/outbound-proxy.html>`_.
+- Electronic Discovery - Electronic Discovery (eDiscovery) is the process of searching electronic data to be used as evidence in a legal case. We have put together the `eDiscovery documentation </comply/electronic-discovery.html>`_ to help.
+- Compliance Export - This feature enables `Compliance Exports </comply/compliance-export.html>`_ to be produced from the System Console, containing all messages.
+- Data Retention - By default, Mattermost provides unlimited search history storing all messages without an expiration date. These defaults can be `changed by setting Message Retention and File Retention </comply/data-retention-policy.html>`_ to a specific duration in the System Console.
+- Custom Terms of Service - If your organization requires the use of `custom ToS </comply/custom-terms-of-service.html>`_, this can be done in the System Console.
 
 Security
 --------
@@ -171,10 +171,10 @@ Security is a major concern with regard to selecting the right tools. Mattermost
 - Integrity and audit controls
 - Authentication safeguards
 - Access Control Policy
-- More details on this topic are available at the `Mattermost security <https://docs.mattermost.com/overview/security.html>`_ section in our documentation.
-- HIPAA und FINRA - Mattermost can be deployed `Health Insurance Portability and Accountability Act - HIPAA <https://docs.mattermost.com/overview/security.html#hipaa-compliance>`_ and `Financial Industry Regulatory Authority - FINRA <https://docs.mattermost.com/overview/security.html#finra-compliance>`_ compliant.
-- Certificate-Based Authentication - `Certificate-Based Authentication <https://docs.mattermost.com/onboard/certificate-based-authentication.html>`_ is available as an experimental feature.
-- Multi-factor Authentication - Mattermost supports `multi factor authentication <https://docs.mattermost.com/onboard/multi-factor-authentication.html>`_.
+- More details on this topic are available at the `Mattermost security </overview/security.html>`_ section in our documentation.
+- HIPAA und FINRA - Mattermost can be deployed `Health Insurance Portability and Accountability Act - HIPAA </overview/security.html#hipaa-compliance>`_ and `Financial Industry Regulatory Authority - FINRA </overview/security.html#finra-compliance>`_ compliant.
+- Certificate-Based Authentication - `Certificate-Based Authentication </onboard/certificate-based-authentication.html>`_ is available as an experimental feature.
+- Multi-factor Authentication - Mattermost supports `multi factor authentication </onboard/multi-factor-authentication.html>`_.
 
 User Onboarding and Adoption
 ----------------------------
@@ -194,7 +194,7 @@ Notifications have gained importance in our daily lives. Modern operating system
 - Direct Messages.
 - Your username or first name is mentioned in a channel.
 - A channel you’re in is notified with @channel, @here, or @all.
-- Any of `your configured keywords <https://docs.mattermost.com/help/settings/account-settings.html#words-that-trigger-mentions>`_ are used.
+- Any of `your configured keywords </help/settings/account-settings.html#words-that-trigger-mentions>`_ are used.
 
 .. note::
     

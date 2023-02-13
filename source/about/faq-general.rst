@@ -14,7 +14,7 @@ The commercial version of Mattermost is designed to never lock-in your data. Por
 Does Mattermost support 508 Compliance?
 ---------------------------------------
 
-Yes, please see our `VPAT <https://docs.mattermost.com/about/vpat.html>`__ form for details. Mattermost Enterprise Edition has been purchased by multiple US public sector organizations, including US federal agencies and the Department of Defense.
+Yes, please see our `VPAT </about/vpat.html>`__ form for details. Mattermost Enterprise Edition has been purchased by multiple US public sector organizations, including US federal agencies and the Department of Defense.
 
 What's the largest Mattermost deployment you have?
 --------------------------------------------------
@@ -32,7 +32,7 @@ The open source Mattermost Team Edition is functionally identical to the commerc
 
 We generally recommend installing Enterprise Edition, even if you don't currently need a license. This provides the flexibility to unlock Enterprise features seamlessly should you need them. However, if you only want to install software with a fully open source code base, then Team Edition is the best choice for you.
 
-To deploy the Team Edition, download the `Mattermost Team Edition binary <https://docs.mattermost.com/upgrade/version-archive.html#mattermost-team-edition>`_, and follow our standard install guides. The same applies to server upgrades.
+To deploy the Team Edition, download the `Mattermost Team Edition binary </upgrade/version-archive.html#mattermost-team-edition>`_, and follow our standard install guides. The same applies to server upgrades.
 
 What are the limitations for embargoed countries?
 -------------------------------------------------

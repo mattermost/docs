@@ -13,7 +13,7 @@ Site statistics
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
+  :alt: Available in Mattermost Free.
 
 .. |cloud| image:: ../images/cloud-badge.png
   :scale: 30
@@ -91,13 +91,13 @@ If the statistics page is loading endlessly and you get an error message saying 
 Can Team Admins review their own team's statistics?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-System Admins can designate the **Viewer** `System Admin Role <https://docs.mattermost.com/onboard/system-admin-roles.html>`__ to enable Team Admin to see team statistics.
+System Admins can designate the **Viewer** `System Admin Role </onboard/system-admin-roles.html>`__ to enable Team Admin to see team statistics.
 
 Once Team Admins are assigned to the **Viewer** role, they can access all statistics for all teams.
 
-System Admins must then `edit the privileges <https://docs.mattermost.com/onboard/system-admin-roles.html#editing-privileges-of-admin-roles-advanced>`__ of the **Viewer** role. Only the **Reporting** privileges need to be enabled to allow Team Admins to see statistics for their teams.
+System Admins must then `edit the privileges </onboard/system-admin-roles.html#editing-privileges-of-admin-roles-advanced>`__ of the **Viewer** role. Only the **Reporting** privileges need to be enabled to allow Team Admins to see statistics for their teams.
 
-Once the **Viewer** role is set up for reporting access only, System Admins can then `assign <https://docs.mattermost.com/onboard/system-admin-roles.html#assigning-admin-roles>`__ the **Viewer** role to Team Admins.
+Once the **Viewer** role is set up for reporting access only, System Admins can then `assign </onboard/system-admin-roles.html#assigning-admin-roles>`__ the **Viewer** role to Team Admins.
 
 .. note::
   - System Admins must manually add or remove members from the **Viewer** role to address Team Admin changes, such as promotions or demotions.

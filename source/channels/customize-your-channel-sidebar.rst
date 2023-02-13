@@ -1,24 +1,10 @@
 Customize your channel sidebar
 ==============================
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/sign-up
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
-
-Conversations in Mattermost are crucial to company productivity and success. Keeping conversations organized in the sidebar creates an efficient workplace. You can customize your channel sidebar based on how you use Mattermost. Customizations you make are only visible to you and won't affect what your teammates see in their sidebars.
+Conversations in Mattermost are crucial to company productivity and success. Keeping conversations organized in the sidebar creates an efficient workplace. You can customize your channel sidebar in a browser or using the desktop app based on how you use Mattermost. Customizations you make are only visible to you, are visible when using the mobile app, and won't affect what your teammates see in their sidebars.
 
 Here's how your sidebar is set up by default:
 
@@ -28,7 +14,7 @@ Here's how your sidebar is set up by default:
 What can you customize?
 -----------------------
 
-You can customize your sidebar in the following ways:
+Using Mattermost in a web browser or the desktop app, you can customize your sidebar in the following ways:
 
 - `Create custom categories <#create-custom-categories>`__.
 - `Group and order channels into your categories <#organize-channels-in-categories>`__.
@@ -46,7 +32,7 @@ Create custom categories to group channels together for quicker and easier navig
 
 To create categories, select the **+** symbol at the top of the sidebar. Or, select the **More options...** icon in the sidebar on any category header, then select **Create New Category**.
 
-Next, type a category name, select **Create**, then drag any channels or direct messages into this new category. You can also multi-select channels and direct messages to drag them together as a group by pressing :kbd:`Ctrl` or :kbd:`Shift` and selecting on Windows or Linux, or :kbd:`⌘` or :kbd:`⇧` and selecting on Mac. See **Dragging and dropping selections** below for details.
+Next, type a category name, select **Create**, then drag any channels or direct messages into this new category. You can also multi-select channels and direct messages to drag them together as a group by pressing :kbd:`Ctrl` or :kbd:`Shift` and selecting on Windows or Linux, or :kbd:`⌘` or :kbd:`⇧` and selecting on Mac. See the section `drag and drop selections <#drag-and-drop-selections>`__ below for details.
 
 Make categories work for you
 ----------------------------
@@ -99,6 +85,7 @@ Using the Mattermost web or desktop app, drag selected channels and/or direct me
   Multi-selected channels and direct messages move together as a group in the order they originally appeared. 
 
 .. image:: ../images/multi-select-drag.gif
+   :alt: Move a group of selected channels by dragging them to a new location in the channel sidebar.
 
 Move selections
 ~~~~~~~~~~~~~~~
@@ -106,6 +93,7 @@ Move selections
 In addition to selecting and dragging, you can specify a category destination for selected channels and/or direct messages. To do this, select the **Channel options** icon in the sidebar and then select **Move to**.
 
 .. image:: ../images/multi-select-move.gif
+   :alt: Move a group of selected channels to a specified category destination. 
 
 From Mattermost v6.1, you can also specify a category destination for the current channel or conversation using the **Move to** option directly from the channel header. Channels that have been moved a category will display a checkmark next to the category name.
 
@@ -128,6 +116,7 @@ Once a category is muted:
 To unmute the category, select the **Category options** icon in the sidebar, then select **Unmute Category**.
 
 .. image:: ../images/mute-categories.gif
+   :alt: Mute or unmute a category to mute or unmute all channels within that category. You can also selectively unmute specific channels within a muted category.
 
 Sort channels in categories
 ----------------------------
@@ -135,6 +124,7 @@ Sort channels in categories
 Select the **Category options** icon in the sidebar, then select **Sort** and choose from **Alphabetically**, **Recent Activity**, or **Manually**.
 
 .. image:: ../images/sort-categories.gif
+   :alt: Sort channels within a category alphabetically, by recent activity, or manually.
 
 Group unread channels separately
 --------------------------------
@@ -148,7 +138,8 @@ Go to **Settings > Sidebar**, set **Group unread channels separately** to **On**
 
 When enabled, unread channels with mentions will sort to the top of the category.
 
-    .. image:: ../images/unreads.gif
+.. image:: ../images/unreads.gif
+   :alt: The Unreads filter only shows channels with unread activity. You can also group unread channels into their own category at the top of the channel sidebar.
 
 .. tip::
   
@@ -169,6 +160,7 @@ To configure the number of direct messages to display, go to **Settings > Sideba
 Choose from **All direct messages**, or choose to show **10**, **15**, **20**, or **40** messages. Once you exceed the number of direct messages configured, older messages are hidden from the **Direct Messages** category. You can always increase the number of conversations displayed to see older direct messages.
 
 .. image:: ../images/dm-display.gif
+   :alt: alt: Control the number of direct message conversations to display under the Direct Messages category by showing all messages or a fixed number of messages.
 
 .. note::
   Direct message conversations that you add to custom categories don't count against the maximum number of conversations shown in the **Direct Messages** category.

@@ -8,7 +8,7 @@ Creating Teams
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
+  :alt: Available in Mattermost Free.
 
 .. |cloud| image:: ../images/cloud-badge.png
   :scale: 30
@@ -32,7 +32,7 @@ If team creation is enabled by the System Admin, teams can be created from the t
 Team sidebar
 ~~~~~~~~~~~~
 
-If you belong to more than one team, a team sidebar will appear to the left of your channel list. You can drag teams to reorder them in the sidebar. You can also use `keyboard shortcuts <https://docs.mattermost.com/messaging/keyboard-shortcuts.html>`_ to navigate between teams.
+If you belong to more than one team, a team sidebar will appear to the left of your channel list. You can drag teams to reorder them in the sidebar. You can also use `keyboard shortcuts </messaging/keyboard-shortcuts.html>`_ to navigate between teams.
 
 .. image:: ../images/team-sidebar.gif
 
@@ -84,4 +84,4 @@ However, some Mattermost customers prefer multiple team deployments for the foll
 
 * Teams are useful when there is a purpose for each of them. For example, one team is used for staff members and another team for external users.
 * Performance is better when users are scattered across multiple teams instead of all in the same one. With multiple teams, there is less content to load per team or channel switch and database queries are faster.
-* Creating a shared team for all users, and using `advanced permissions <https://docs.mattermost.com/onboard/advanced-permissions.html#recipes>`__ to control who can create channels and add members to the shared team, improves cross-team collaboration when using multiple teams. Additionally, an `annoucement banner <https://docs.mattermost.com/manage/announcement-banner.html>`__ can be used to provide system-wide announcements.
+* Creating a shared team for all users, and using `advanced permissions </onboard/advanced-permissions.html#recipes>`__ to control who can create channels and add members to the shared team, improves cross-team collaboration when using multiple teams. Additionally, an `annoucement banner </manage/announcement-banner.html>`__ can be used to provide system-wide announcements.

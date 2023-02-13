@@ -3,25 +3,16 @@
 Electronic discovery
 =====================
 
-|enterprise| |self-hosted|
-
-.. |enterprise| image:: ../images/enterprise-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in the Mattermost Enterprise subscription plan.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
+.. include:: ../_static/badges/ent-selfhosted.rst
+  :start-after: :nosearch:
 
 Electronic discovery (also known as eDiscovery) refers to a process where where electronic data is searched with the intent to use it as evidence in a legal case.
 
 This page describes how to extract data from Mattermost for eDiscovery. There are three primary methods that can be used to accomplish the goal of extracting user post data from Mattermost:
 
-- `Mattermost Compliance Exports <https://docs.mattermost.com/comply/compliance-export.html>`__
-- `Mattermost RESTful API <https://docs.mattermost.com/comply/electronic-discovery.html#mattermost-restful-api>`__
-- `Mattermost database using standard SQL queries <https://docs.mattermost.com/comply/electronic-discovery.html#mattermost-database>`__
+- `Mattermost Compliance Exports </comply/compliance-export.html>`__
+- `Mattermost RESTful API </comply/electronic-discovery.html#mattermost-restful-api>`__
+- `Mattermost database using standard SQL queries </comply/electronic-discovery.html#mattermost-database>`__
 
 Each of the options is discussed in detail below.
 
@@ -35,7 +26,7 @@ Mattermost Enterprise has compliance report export capabilities.
 
 Mattermost can export compliance related data, including the content of messages and who might have seen those messages, in three formats: Actiance XML, Global Relay EML, and generic CSV. Reports can be configured to run on a delay basis and stored in a shared location.
 
-For more information about the exports feature and how to set up reporting, see `our documentation <https://docs.mattermost.com/comply/compliance-export.html>`__.
+For more information about the exports feature and how to set up reporting, see `our documentation </comply/compliance-export.html>`__.
 
 Mattermost RESTful API
 ----------------------
@@ -44,15 +35,15 @@ The Mattermost API can be used to export a user's posts in CSV compliance format
 
 To use the API, you must first authenticate `as described here <https://api.mattermost.com/#tag/authentication>`__. The account you are authenticating with must have ``manage_system`` permissions. If you are using curl, you can authenticate using the following command:
 
-.. code-block:: json
+.. code-block:: text
 
   curl -i -d '{"login_id": "username", "password": "password"}' https://yourmattermosturl/api/v4/users/login
 
 Mattermost will return a response that looks like this:
 
-.. code-block:: json
+.. code-block:: text
 
-  HTTP/2 200 
+  HTTP/2 200
   server: nginx/1.10.3 (Ubuntu)
   date: Thu, 12 Jul 2018 14:43:45 GMT
   content-type: application/json
@@ -65,7 +56,7 @@ Mattermost will return a response that looks like this:
 
 Include the ``token`` value sent in the response as part of the Authorization header on your future API requests with the Bearer method, e.g.:
 
-.. code-block:: json
+.. code-block:: text
 
   curl -i -H 'Authorization: Bearer yi94pwci6ibjfc9phbikhqutbe http://yourmattermosturl/api/v4/users/me
 
@@ -75,7 +66,7 @@ Once you're authenticated into Mattermost, you can use the `Compliance API to cr
 
   The data in the JSON payload must be formatted as Unix Epoch. A tool like https://www.epochconverter.com/ can be useful when converting to and from the required format.
 
-.. code-block:: json
+.. code-block:: text
 
   curl --header "Content-Type: application/json" \
   --request POST \
@@ -91,7 +82,7 @@ If the post is successful, Mattermost will return a message that looks like the 
 
 When the export process is complete (the execution time is based on the number of records to return and the current server load), you will need to send another HTTP Post request to Mattermost to retrieve and download a zip file containing the report that looks like the following curl request:
 
-.. code-block:: json
+.. code-block:: text
 
   curl --request GET \
   -H 'Authorization: Bearer p9o1qx457fbc9gdrn39z9ah59o' \
@@ -107,14 +98,14 @@ Mattermost database
 Selecting messages from the Mattermost database using standard SQL is quite easy. If you know the username, the following query can be used to select all messages for the specified user:
 
 .. code-block:: sql
-  
+
   SELECT * FROM mattermost.Posts WHERE UserId = (SELECT Id FROM mattermost.Users WHERE Username = 'username');
 
 If you want to limit the results of the query based on the date and time that the messages were posted, you can modify the above query to:
 
 .. code-block:: sql
-  
+
   SELECT * FROM mattermost.Posts WHERE UserId = (SELECT Id FROM mattermost.Users WHERE Username = 'username' AND CreateAt > 1530405832000 AND CreateAt < 1532997832000);
 
-.. note:: 
+.. note::
   The Mattermost database stores date and time stamps in the `Unix Epoch <https://en.wikipedia.org/wiki/Unix_time>`__ format. A tool like the `Epoch Converter <https://www.epochconverter.com/>`__ can be useful in converting to and from the required format.

@@ -10,7 +10,7 @@ Two permission schemes are provided in Mattermost:
 * System Scheme: Applies permissions universally across all teams and channels.
 * Team Override Schemes: Allow admins to customize permissions for each team.
 
-This document describes the types of permissions that can be given to users of Mattermost using schemes as well as channel settings and roles. The `permissions backend documentation <https://docs.mattermost.com/deployment/permissions-backend.html>`_ provides additional technical details around permissions.
+This document describes the types of permissions that can be given to users of Mattermost using schemes as well as channel settings and roles. The `permissions backend documentation </deployment/permissions-backend.html>`_ provides additional technical details around permissions.
 
 
 .. contents::
@@ -41,7 +41,7 @@ You can access the System Scheme interface in **System Console > User Management
 Team override schemes 
 ^^^^^^^^^^^^^^^^^^^^^
 
-On systems with multiple `Mattermost teams <https://docs.mattermost.com/help/getting-started/creating-teams.html>`_, each team may operate and collaborate in a unique way. Team Override Schemes give Admins the flexibility to tailor permissions to the needs of each team.
+On systems with multiple `Mattermost teams </help/getting-started/creating-teams.html>`_, each team may operate and collaborate in a unique way. Team Override Schemes give Admins the flexibility to tailor permissions to the needs of each team.
 
 When you use this permission scheme:
 
@@ -171,7 +171,7 @@ Example: As the default for the entire system, restrict deleting posts to only T
 
 1. Navigate to **System Console > User Management > Permissions**.
 2. Select **Edit Scheme**.
-3. In the **All Members** and **Channel Admininistrators** panels, in the **Delete Posts** section, uncheck the boxes for **Delete Own Posts** and **Delete Others' Posts**.
+3. In the **All Members** and **Channel Administrators** panels, in the **Delete Posts** section, uncheck the boxes for **Delete Own Posts** and **Delete Others' Posts**.
 4. In the **Channel Administrators** and **Team Administrators** panels, in the **Delete Posts** section, check the boxes for **Delete Own Posts** and **Delete Others' Posts**.
 
 **Restrict who can edit posts**
@@ -185,7 +185,7 @@ Example: As the default for the entire system, only allow users to edit their ow
 
 .. note::
 
-  The post edit time limit is a `global config variable <https://docs.mattermost.com/administration/config-settings.html#post-edit-time-limit>`__ ``PostEditTimeLimit``, so setting a post edit time limit applies system-wide to all teams and roles.
+  The post edit time limit is a `global config variable </administration/config-settings.html#post-edit-time-limit>`__ ``PostEditTimeLimit``, so setting a post edit time limit applies system-wide to all teams and roles.
 
 Integration management
 ^^^^^^^^^^^^^^^^^^^^^^

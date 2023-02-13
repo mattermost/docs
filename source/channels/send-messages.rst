@@ -1,56 +1,77 @@
 Send messages
 =============
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
+.. |gear-icon| image:: ../images/settings-outline_F08BB.svg
+  :alt: Select the Gear icon to open the Settings dialog.
 
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/sign-up
-  :alt: Available for Mattermost Cloud deployments.
+.. |more-icon| image:: ../images/dots-horizontal_F01D8.svg
+  :alt: Select the More icon to access additional message actions.
 
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
+.. |send-icon| image:: ../images/send_F048A.svg
+  :alt: Select the Send icon to post your message.
 
-Compose a message by typing into the text box at the bottom of Mattermost. Press :kbd:`Enter` on Windows or Linux, or :kbd:`↵` on Mac, to send a message. Pressing pressing :kbd:`Shift` :kbd:`Enter` on Windows or Linux, or pressing :kbd:`⇧` :kbd:`↵` on Mac creates a new line without sending a message. You can also `edit and delete messages <#edit-or-delete-messages>`__ after you've sent them.
+.. |smile-icon| image:: ../images/smile-icon.png
+  :alt: Use the Smile icon to add emojis to your message.
 
-.. tip::
-  
-  When you send messages in a channel, depending on the `channel actions configured <https://docs.mattermost.com/channels/create-channels.html>`__, specific words in the post can trigger a prompt to run a playbook. Access **Channel Actions** from the channel name drop-down menu in the center pane to see what automatic actions have been configured.
-
-Mattermost can automatically detect and display messages written using right-to-left scripts, such as Arabic, Hebrew, or Persian. Your System Admin must install the `RTL Plugin <https://github.com/QueraTeam/mattermost-rtl>`__ to enable this functionality.
-
-.. note::
-  
-  Your System Admin may restrict messaging actions, such as editing or deleting messages, by configuring `advanced permissions <https://docs.mattermost.com/onboard/advanced-permissions.html>`__, available in `Mattermost Enterprise and Professional subscription plans <https://mattermost.com/pricing>`__.
+Compose a message by typing into the text box at the bottom of Mattermost. Send your message by selecting the **Send** |send-icon| icon.
 
 .. tabs::
 
-  .. tab:: Mattermost v6.0 onwards
+  .. tab:: Desktop
+
+    Press :kbd:`Enter` on Windows or Linux, or :kbd:`↵` on Mac, to send the message. To create a new line without sending the message, press :kbd:`Shift` :kbd:`Enter` on Windows or Linux, or press :kbd:`⇧` :kbd:`↵` on Mac. 
+
+    .. tip::
 
       If you prefer to press :kbd:`Enter` on Windows or Linux, or :kbd:`↵` on Mac to insert new lines, and press :kbd:`Ctrl` :kbd:`Enter` on Windows or Linux, or :kbd:`⌘` :kbd:`↵` on Mac to send messages instead, select the **gear** |gear-icon| icon to go to **Settings**, then select **Advanced > Send messages on CTRL+ENTER**.
 
-      .. |gear-icon| image:: ../images/settings-outline_F08BB.svg
-        :alt: Select the Gear icon to open the Settings dialog.
+  .. tab:: Mobile
 
-  .. tab:: Mattermost v5.39 and earlier
+    Tap the **Smile** icon |smile-icon| to add emojis while composing your message.
 
-      In Mattermost versions up to v5.39, you can configure Mattermost to press :kbd:`Enter` on Windows or Linux, or :kbd:`↵` on Mac to insert new lines, and press :kbd:`Ctrl` :kbd:`Enter` on Windows or Linux, or :kbd:`⌘` :kbd:`↵` on Mac to send messages instead. Select the three horizontal lines at the top of the channel sidebar (also known as a hamburger menu) to go to **Account Settings**, then select **Advanced > Send messages on CTRL+ENTER**.
+.. tip::
   
+  - When you send messages in a channel, depending on the `channel actions configured </channels/create-channels.html>`__, specific words in the post can trigger a prompt to run a playbook. Access **Channel Actions** from the channel name drop-down menu in the center pane to see what automatic actions have been configured.
+  - Using a RTL plugin, Mattermost can automatically detect and display messages written using right-to-left scripts, such as Arabic, Hebrew, or Persian. Your System Admin must install the `RTL Plugin <https://github.com/QueraTeam/mattermost-rtl>`__ to enable this functionality.
+  - `Mattermost Professional or Enterprise <https://mattermost.com/pricing>`__ customers can `edit or delete messages <#edit-or-delete-messages>`__ after sending them if the System Admin hasn't restricted the ability to do so using `advanced permissions </onboard/advanced-permissions.html>`__.
+  
+Draft messages
+--------------
+
+From Mattermost v7.7, when composing new messages, it's easy to return to a message in progress later. Draft messages are added to a **Drafts** view available at the top of the channel sidebar 
+
+.. image:: ../images/Global-Drafts-Animated-GIF.gif
+  :width: 700
+  :alt: Global drafts makes it easy for you to find all messages in progress.
+
+By default, message drafts are synchronized on the Mattermost server and are accessible everywhere you access Mattermost, including a web browser or the desktop app with mobile support coming in a future release. 
+
+.. Tip::
+  
+  You can disable server-synchronized drafts and limit drafts to your current Mattermost client only by going to **Settings > Advanced > Allow message drafts to sync with the server**.
+
 Edit or delete messages
 -----------------------
 
-Select the **More Actions** link next to a message that you've sent.
+Select the **More** |more-icon| icon next to a message that you've sent.
 
 .. image:: ../images/more-actions.png
-   :alt: More actions you can take with your messages
+   :alt: Select the More option to edit or delete a sent message.
 
-Select **Edit** to edit your own messages. Message edits do not trigger new @mention notifications, desktop notifications, or notification sounds.
+Select **Edit** to edit your own messages. Editing a message won't trigger new @mention notifications, desktop notifications, or notification sounds.
 
 Select **Delete** to delete your own messages. Select **Delete** again to confirm.
+
+Do more with your messages
+--------------------------
+
+Express yourself your way using the following message features:
+
+- `Set message priority </channels/message-priority.html>`__
+- `Format messages </channels/format-messages.html>`__
+- `Mention people </channels/mention-people.html>`__
+- `Share files </channels/share-files-in-messages.html>`__
+- `Share links </channels/share-links.html>`__

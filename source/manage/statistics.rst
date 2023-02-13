@@ -1,38 +1,19 @@
 Statistics
 ==========
 
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
+
 Statistics on users, posts, and channels are tracked for each system and team. Enterprise Editions have access to advanced system statistics.
 
 .. note::
 
-  To maximize performance for large Enterprise deployments, statistics for total posts, total hashtag posts, total file posts, posts per day, and active users with posts per day are disabled. You can re-enable them by changing the ``MaxUsersForStatistics`` value `in config.json <https://docs.mattermost.com/configure/configuration-settings.html#maximum-users-for-statistics>`__.
+  To maximize performance for large Enterprise deployments, statistics for total posts, total hashtag posts, total file posts, posts per day, and active users with posts per day are disabled. You can re-enable them by changing the ``MaxUsersForStatistics`` value `in config.json </configure/configuration-settings.html#maximum-users-for-statistics>`__.
 
-For advanced metrics for Enterprise deployments, `see performance monitoring documentation to learn more <https://docs.mattermost.com/scale/performance-monitoring.html>`__.
+For advanced metrics for Enterprise deployments, `see performance monitoring documentation to learn more </scale/performance-monitoring.html>`__.
 
 Site statistics
 ---------------
-
-|all-plans| |cloud| |self-hosted|
-
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |enterprise| image:: ../images/enterprise-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in the Mattermost Enterprise subscription plan.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/sign-up
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
 
 System statistics are viewable under **System Console > Reporting**. The data shown here is a cumulative sum across all teams on the system.
 
@@ -66,7 +47,8 @@ Active Users with Posts (graph)
 Advanced system statistics
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|enterprise| |self-hosted|
+.. include:: ../_static/badges/ent-selfhosted-only.rst
+  :start-after: :nosearch:
 
 Mattermost Enterprise includes additional system statistics.
 
@@ -89,7 +71,7 @@ Master DB Conns
     The number of active connections currently on your master database.
 
 Replica DB Conns
-    The number of active connections currently on one or more of `your read replica databases <https://docs.mattermost.com/scale/high-availability-cluster.html#database-configuration>`__.
+    The number of active connections currently on one or more of `your read replica databases </scale/high-availability-cluster.html#database-configuration>`__.
 
 Total Playbooks
     The total number of playbooks on this server.
@@ -105,8 +87,6 @@ Posts, Files and Hashtags
 
 Team statistics
 ---------------
-
-|all-plans| |cloud| |self-hosted|
 
 Team Statistics are viewable under **System Console > Team Statistics**. The data shown here is a cumulative sum across this team only, and excludes posts made in Direct Message channels, which are not tied to a team.
 
@@ -145,9 +125,10 @@ If the statistics page is loading endlessly and you get an error message saying 
 Can Team Admins review their own team's statistics?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|enterprise| |self-hosted|
+.. include:: ../_static/badges/ent-selfhosted-only.rst
+  :start-after: :nosearch:
 
-Yes. In Mattermost Enterprise, you can enable Team Admins to see their team's statistics by modifying available System Admin roles. Learn more about System Admin roles, including how to manage privileges and assign roles, in the `Additional System Admin Roles <https://docs.mattermost.com/onboard/system-admin-roles.html>`__ documentation.
+Yes. In Mattermost Enterprise, you can enable Team Admins to see their team's statistics by modifying available System Admin roles. Learn more about System Admin roles, including how to manage privileges and assign roles, in the `Additional System Admin Roles </onboard/system-admin-roles.html>`__ documentation.
 
 To enable Team Admins to access their team's statistics:
 

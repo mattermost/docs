@@ -8,7 +8,7 @@ Installing Mattermost on RHEL 7
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
+  :alt: Available in Mattermost Free.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30

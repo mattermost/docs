@@ -9,9 +9,9 @@ Using Zapier you can integrate over 700 apps into Mattermost, including `Email <
 
 This documentation includes:
 
-- `Zapier Setup Guide <https://docs.mattermost.com/integrations/zapier.html#id1>`__: Instructions on registering the Zapier app on your server and creating a zap.
-- `Message Formatting Tips <https://docs.mattermost.com/integrations/zapier.html#id6>`__: Tips from the Mattermost team on formatting Zapier integration messages.
-- `Troubleshooting Guide <https://docs.mattermost.com/integrations/zapier.html#id8>`__: Advice on troubleshooting common setup issues.
+- `Zapier Setup Guide </integrations/zapier.html#id1>`__: Instructions on registering the Zapier app on your server and creating a zap.
+- `Message Formatting Tips </integrations/zapier.html#id6>`__: Tips from the Mattermost team on formatting Zapier integration messages.
+- `Troubleshooting Guide </integrations/zapier.html#id8>`__: Advice on troubleshooting common setup issues.
 
 Zapier setup guide
 -------------------
@@ -23,7 +23,7 @@ Enable Zapier on your Mattermost instance
 
 The first time you set up Zapier on your Mattermost instance you will be required to enable an OAuth 2.0 application which can be used by everyone on your server. Your System Admin must execute these steps.
 
-To learn more about OAuth 2.0 applications, including what permissions they have access to, see the `OAuth 2.0 documentation <https://docs.mattermost.com/developer/oauth-2-0-applications.html>`__.
+To learn more about OAuth 2.0 applications, including what permissions they have access to, see the `OAuth 2.0 documentation </developer/oauth-2-0-applications.html>`__.
 
 Enable OAuth 2.0
 ^^^^^^^^^^^^^^^^
@@ -31,8 +31,8 @@ Enable OAuth 2.0
 1. Open **Main Menu > System Console**.
 2. Under **Integrations > Integration Management** (or **Integrations > Custom Integrations** in versions prior to 5.12):
 
-  a. Set `Enable OAuth 2.0 Service Provider <https://docs.mattermost.com/administration/config-settings.html#enable-oauth-2-0-service-provider>`__ to **True**.
-  b. If you’d like to allow Zapier integrations to post with customizable usernames and profile pictures, then set `Enable integrations to override usernames <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-usernames>`__ and `Enable integrations to override profile picture icons <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-profile-picture-iconss>`__ to **True**.
+  a. Set `Enable OAuth 2.0 Service Provider </administration/config-settings.html#enable-oauth-2-0-service-provider>`__ to **True**.
+  b. If you’d like to allow Zapier integrations to post with customizable usernames and profile pictures, then set `Enable integrations to override usernames </administration/config-settings.html#enable-integrations-to-override-usernames>`__ and `Enable integrations to override profile picture icons </administration/config-settings.html#enable-integrations-to-override-profile-picture-iconss>`__ to **True**.
 
 Register Zapier as an OAuth 2.0 application
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -77,19 +77,19 @@ Create a zap
 
     1. **Mattermost URL**: This is the URL you use to access your Mattermost site. Don't include a slash at the end of the URL and don't append a team to the end of the server URL. For example, ``https://community.mattermost.com/core`` is the entire URL to the Contributors team on our community server. The **Mattermost URL** entered here would be ``https://community.mattermost.com``.
     2. **Client ID/Secret**: If Zapier has been enabled as an OAuth application as per the steps above, then these values can be found by navigating to one of your Mattermost teams, then **Main Menu > Integrations > OAuth 2.0 Applications**. Click **Show Secret** next to the Zapier app, then obtain the Client ID and Client Secret.
-    3. **Log in to Mattermost**. After completing the above fields you will be prompted to log in to your Mattermost account if you're not logged in already. If you’re having trouble connecting then please read our `troubleshooting guide <https://docs.mattermost.com/integrations/zapier.html#id6>`__.
+    3. **Log in to Mattermost**. After completing the above fields you will be prompted to log in to your Mattermost account if you're not logged in already. If you’re having trouble connecting then please read our `troubleshooting guide </integrations/zapier.html#id6>`__.
     4. You'll then be prompted to allow Zapier to access your Mattermost account. Click **Allow**.
 
   d. **Message Post Details**: Specify the formatting of the messages and the team/channel where messages will be posted.
 
     1. **Team**: Choose the team where new messages will post. The dropdown should contain all teams you have access to on Mattermost.
     2. **Channel**: Choose the channel where new messages will post. The dropdown contains all channels that you belong to. Zapier cannot post into Direct Message channels.
-    3. **Message Text**: Enter the message text that will post to Mattermost. This text can be formatted using `Markdown <https://docs.mattermost.com/help/messaging/formatting-text.html>`__ and include the dynamic fields offered by your selected trigger app. Read our `message formatting tips <https://docs.mattermost.com/integrations/zapier.html#id4>`__ below.
+    3. **Message Text**: Enter the message text that will post to Mattermost. This text can be formatted using `Markdown </help/messaging/formatting-text.html>`__ and include the dynamic fields offered by your selected trigger app. Read our `message formatting tips </integrations/zapier.html#id4>`__ below.
 
       .. image:: ../images/zapier-dynamic-fields.png
 
-    4. **Username**: This is the username that Zapier will post as. Zapier integrations will always appear with a ``BOT`` tag next to the username. In order for bots to override the username of the authorized user, your System Admin must set `Enable integrations to override usernames <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-usernames>`__ to **True**.
-    5. **Icon URL**: This is the profile picture of the bot that Zapier will post as. In order for bots to override the profile picture of the authorized user, your System Admin must set `Enable integrations to override profile picture icons <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-profile-picture-iconss>`__ to **True**.
+    4. **Username**: This is the username that Zapier will post as. Zapier integrations will always appear with a ``BOT`` tag next to the username. In order for bots to override the username of the authorized user, your System Admin must set `Enable integrations to override usernames </administration/config-settings.html#enable-integrations-to-override-usernames>`__ to **True**.
+    5. **Icon URL**: This is the profile picture of the bot that Zapier will post as. In order for bots to override the profile picture of the authorized user, your System Admin must set `Enable integrations to override profile picture icons </administration/config-settings.html#enable-integrations-to-override-profile-picture-iconss>`__ to **True**.
 
   e. **Test the Zap**: You may want to test your zap formatting in a Private Channel before posting in a channel that is visible to your entire team.
 
@@ -98,10 +98,10 @@ Message formatting tips
 
 Here are some useful tips we recommend to get the most out of Zapier integration:
 
-- **Markdown:** Mattermost supports the use of `Markdown. <https://docs.mattermost.com/help/messaging/formatting-text.html>`__ in Zapier integrations. For example, use `heading markdown <https://docs.mattermost.com/help/messaging/formatting-text.html#headings>`__ for Jira issue titles.
+- **Markdown:** Mattermost supports the use of `Markdown. </help/messaging/formatting-text.html>`__ in Zapier integrations. For example, use `heading markdown </help/messaging/formatting-text.html#headings>`__ for Jira issue titles.
 - **Custom Icons:** Use different icons for different services and Zapier integrations.
 - **Hashtags:** Use hashtags to make your Zapier posts searchable. Use different hashtags for different services and Zapier integrations. For example, use the dynamic fields available in Zapier to include ticket a Jira ticket number in hashtags. This makes all conversation on a specific ticket instantly searchable by clicking the hashtag.
-- **Quick Links:** Link back to the service that fired the zap through the use of Markdown `embedded links <https://docs.mattermost.com/help/messaging/formatting-text.html#links>`__. For example, in our zaps we embed a link back to the service within the timestamp so it’s easy to take action on any zap.
+- **Quick Links:** Link back to the service that fired the zap through the use of Markdown `embedded links </help/messaging/formatting-text.html#links>`__. For example, in our zaps we embed a link back to the service within the timestamp so it’s easy to take action on any zap.
 
 Examples
 ~~~~~~~~

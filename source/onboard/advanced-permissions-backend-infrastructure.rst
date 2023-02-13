@@ -1,48 +1,34 @@
 Advanced permissions: backend infrastructure
-=============================================
+============================================
 
-|all-plans| |cloud| |self-hosted|
-
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/sign-up
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 This document outlines the backend server infrastructure for permissions in Mattermost and is recommended only for technical Admins or developers looking to make modifications to their installation.
 
 .. note::
 
-  The contents of this document apply from Mattermost Server v5.0. 
+  The contents of this document apply from Mattermost Server v5.0.
 
 .. contents::
   :backlinks: top
   :local:
-  
+
 Entity definitions
 ------------------
 
 Permissions
-~~~~~~~~~~~~
+~~~~~~~~~~~
 
 A **permission** describes a permitted action which may be carried out on an object. It describes the action that users may perform in the context in which they have been assigned the role granting the permission.
 
 Roles
-~~~~~~
+~~~~~
 
 A **role** is something to which permissions are granted, that is then assigned to users in contexts in order to grant them the assigned permissions in that context. One user may end up with different sets of permissions granted by different roles in different contexts.
 
 Scope
-~~~~~~
+~~~~~
 
 Permissions live within a given scope. There are three scopes in the Mattermost system: System, Team and Channel. Permissions cascade down the scopes from the context in which they are applied. For example, if a “Channel” scoped permission is applied to a “Team” context, the permission applies to any channels within that team. A permission is considered,
 
@@ -51,7 +37,7 @@ Permissions live within a given scope. There are three scopes in the Mattermost 
 - **Channel scope** if it makes sense at channel, team and system level. For example, ``manage_public_channel_properties``.
 
 Context
-~~~~~~~~
+~~~~~~~
 
 A **context** is an instance of a scope. For example, a channel called "Developers Hangout" is an instance of channel scope. Contexts have hierarchical relationships between them that reflect the hierarchical ordering of scopes. Each context has one parent, and may have multiple children, with the ultimate parent context being the system context:
 
@@ -65,13 +51,13 @@ Schemes
 
 Schemes describe the default roles applied to users in a context, and all child contexts. Schemes are either defined specifically for a context, or if they are not specified, the relevant parts of the parent context’s scheme are applied, ultimately climbing the hierarchy to the System Scheme, which serves the purpose of providing the system-wide defaults. For example, if Team A does not have a team-scoped scheme defined, the System Scheme will provide the defaults for all contexts in Team A.
 
-Additionally, the lowest-scoped scheme always takes precedence in the context. For example, if Team B has a team-scoped scheme, that scheme takes precedence over the System Scheme defaults for all contexts in Team B. 
+Additionally, the lowest-scoped scheme always takes precedence in the context. For example, if Team B has a team-scoped scheme, that scheme takes precedence over the System Scheme defaults for all contexts in Team B.
 
 Data structure
 --------------
 
 Permissions
-~~~~~~~~~~~~
+~~~~~~~~~~~
 
 Permissions in Mattermost are a property of the server code base and are not created or modified dynamically. The current set of permissions are as described in the table below.
 
@@ -174,7 +160,7 @@ Permissions in Mattermost are a property of the server code base and are not cre
 +----------------------------------------------+---------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | create_post_ephermal                         | channel | Create an ephemeral message within a channel.                                                                                                                                                         |
 +----------------------------------------------+---------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| edit_post                                    | channel | Authors edit their own posts. Edit post time limit is controlled by the ``"PostEditTimeLimit"`` `config <https://docs.mattermost.com/configure/configuration-settings.html#post-edit-time-limit>`__.  |
+| edit_post                                    | channel | Authors edit their own posts. Edit post time limit is controlled by the ``"PostEditTimeLimit"`` `config </configure/configuration-settings.html#post-edit-time-limit>`__.                             |
 +----------------------------------------------+---------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | edit_others_posts                            | channel | Edit other users' posts.                                                                                                                                                                              |
 +----------------------------------------------+---------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -232,14 +218,14 @@ Permissions in Mattermost are a property of the server code base and are not cre
 +----------------------------------------------+---------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ``Roles`` field
-~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~
 
 Roles are applied to objects that represents that user’s membership in a context. These are referenced in the ``Roles`` field of the ``User``, ``TeamMember``, ``ChannelMember`` and ``Schemes`` Tables.
 
 In the ``TeamMember`` and ``ChannelMember`` tables, it's the ``Roles`` field that contains custom roles and the ``SchemeAdmin`` and ``SchemeUser`` booleans that indicate the member object should inherit the respective roles from the relevant scheme, either the default or custom scheme assigned to the relevant team.
 
 ``Roles`` table
-~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~
 
 Roles are dynamic and user configurable, necessitating a database table with the following fields:
 
@@ -254,7 +240,7 @@ Roles are dynamic and user configurable, necessitating a database table with the
 Built-in roles
 ~~~~~~~~~~~~~~
 
-The System Scheme is built-in to the product, and its roles are defined as ``BuiltIn: true`` in the ``Roles`` table. You can use the Mattermost API to `retrieve a list of permissions by role name <https://api.mattermost.com/#tag/roles/paths/~1roles~1names/post>`__. 
+The System Scheme is built-in to the product, and its roles are defined as ``BuiltIn: true`` in the ``Roles`` table. You can use the Mattermost API to `retrieve a list of permissions by role name <https://api.mattermost.com/#tag/roles/paths/~1roles~1names/post>`__.
 
 The following built-in roles and associated permissions are available:
 
@@ -420,6 +406,13 @@ The following built-in roles and associated permissions are available:
 - manage_team_roles
 - sysconsole_read_compliance
 - create_emojis
+
+*system_custom_group_admin*
+
+- create
+- edit
+- delete
+- manage members
 
 *system_guest*
 
@@ -616,7 +609,7 @@ The following built-in roles and associated permissions are available:
 - create_private_channel
 
 ``Schemes`` table
-~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~
 
 Schemes are dynamic and user configurable, necessitating a database table with the following fields:
 

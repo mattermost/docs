@@ -1,40 +1,32 @@
 Deploy Mattermost
 =================
 
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
+
 Learn how to install, deploy, and scale Mattermost for teams and organizations of any size.
 
 Deploy Mattermost for production use
 ------------------------------------
 
-|all-plans| |self-hosted|
-
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
-
-
 When you're ready to install Mattermost server for production use, you have four options: deploy using Kubernetes, deploy from a compressed tarball, deploy using a Ubuntu option called Omnibus, or deploy using Docker.
+
+Learn how to install, deploy, and scale Mattermost for teams and organizations of any size using one of four options: deploy using Kubernetes, deploy from a compressed tarball, deploy using a Ubuntu option called Omnibus, or deploy using Docker.
 
 .. tip::
 
-  * See the `configuration settings <https://docs.mattermost.com/configure/configuration-settings.html>`__ documentation to learn more about customizing your production deployment.
+  * See the `configuration settings </configure/configuration-settings.html>`__ documentation to learn more about customizing your production deployment.
   
-  * Encountering issues with your deployment? See the `Deployment Troubleshooting <https://docs.mattermost.com/install/troubleshooting.html#deployment-troubleshooting>`__ documentation for details.
+  * Encountering issues with your deployment? See the `Deployment Troubleshooting </install/troubleshooting.html#deployment-troubleshooting>`__ documentation for details.
 
 .. tabs::
 
-    .. tab:: Ubuntu
+    .. tab:: Ubuntu/Debian
 
       .. include:: ../install/common-prod-deploy-omnibus.rst
         :start-after: :nosearch:
         
-    .. tab:: Tar
+    .. tab:: Generic Linux (Tarball)
 
       .. include:: ../install/common-prod-deploy-tar.rst
         :start-after: :nosearch: 
@@ -56,7 +48,6 @@ Prepare for your Mattermost deployment
     :maxdepth: 1
     :hidden:
 
-    Quick install guide </getting-started/light-install>
     Preview Mattermost via Docker </install/install-docker>
     Administrator tasks </getting-started/admin-onboarding-tasks>
     Architecture </getting-started/architecture-overview>
@@ -66,8 +57,7 @@ Prepare for your Mattermost deployment
 
 These guides will help you prepare for your Mattermost deployment.
 
-* :doc:`Quick install guide </getting-started/light-install>` - Deploy in minutes via Mattermost Omnibus on Ubuntu.
-* :doc:`Preview Mattermost via Docker </install/install-docker>` - Preview Mattermost instantly or deploy via Docker for production use.
+* `Preview Mattermost via Docker </install/install-docker.html#preview-mattermost-using-docker>`__ - Preview Mattermost instantly or deploy via Docker for production use.
 * :doc:`Administrator tasks </getting-started/admin-onboarding-tasks>` - Learn about the standard configurations and settings you’ll encounter.
 * :doc:`Architecture </getting-started/architecture-overview>` - Learn the basics of user authentication, notifications, data management services, network connectivity, and high availability.
 * :doc:`Implement Mattermost </getting-started/implementation-plan>` - Get a detailed breakdown of the technical requirements to deploy Mattermost for your team or organization.
@@ -106,7 +96,6 @@ Server installation
 * :doc:`Debian Buster </install/install-debian>`
 * :doc:`RHEL 8 </install/install-rhel-8>`
 * :doc:`CentOS, Oracle Linux, and Scientific Linux </install/install-centos-oracle-scientific>`
-* `More server install guides <https://docs.mattermost.com/guides/deployment.html#other-resources>`__
 
 Desktop and Mobile App installation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -117,12 +106,12 @@ These guides will get you up and running with Mattermost desktop and mobile apps
     :maxdepth: 1
     :hidden:
 
-    Desktop App install guides </install/desktop-app-install>
+    Desktop app install guides </install/desktop-app-install>
     iOS setup </install/install-ios-app>
     Android setup </install/install-android-app>
     Testing push notifications </deploy/mobile-testing-notifications>
 
-* :doc:`Desktop App install guides </install/desktop-app-install>`
+* :doc:`Desktop app install guides </install/desktop-app-install>`
 * :doc:`iOS setup </install/install-ios-app>`
 * :doc:`Android setup </install/install-android-app>`
 * :doc:`Testing push notifications </deploy/mobile-testing-notifications>`
@@ -160,27 +149,27 @@ Desktop and Mobile App deployment
     :maxdepth: 1
     :hidden:
 
-    Desktop App deployment guide </deploy/desktop-app>
+    Desktop app deployment guide </deploy/desktop-app>
     Desktop MSI installer and group policy installation guides (beta) </install/desktop-msi-installer-and-group-policy-install>
     Desktop App custom dictionaries </install/desktop-custom-dictionaries>
     Desktop managed resources </install/desktop-app-managed-resources>
-    Using Mattermost’s pre-built Mobile Apps </deploy/use-prebuilt-mobile-apps>
-    Deploy Mattermost Mobile Apps </deploy/mobile-overview>
+    Using Mattermost’s pre-built mobile apps </deploy/use-prebuilt-mobile-apps>
+    Deploy Mattermost mobile apps </deploy/mobile-overview>
     Mobile push notifications </deploy/mobile-hpns>
     Building and distributing your own custom Mattermost mobile apps </deploy/build-custom-mobile-apps>
     Deploying mobile apps using an EMM provider </deploy/deploy-mobile-apps-using-emm-provider>
     AppConfig for EMM solutions with Mattermost Mobile Apps </deploy/mobile-appconfig> 
     Mobile VPN options </deploy/consider-mobile-vpn-options>
-    Mobile Apps FAQ </deploy/mobile-faq>
+    Mobile apps FAQ </deploy/mobile-faq>
     Client-side data storage FAQ </deploy/client-side-data>
 
 Customize the Mattermost desktop and mobile apps to meet any deployment needs.
 
 **Desktop Apps**
 
-* :doc:`Desktop App deployment guide </deploy/desktop-app>` - Customize and distribute the Mattermost desktop app with pre-configured settings.
+* :doc:`Desktop app deployment guide </deploy/desktop-app>` - Customize and distribute the Mattermost desktop app with pre-configured settings.
 * :doc:`Desktop MSI installer and group policy installation guides (beta) </install/desktop-msi-installer-and-group-policy-install>` - Use the Mattermost MSI installer and Group Policy definitions for Windows deployment.
-* :doc:`Desktop App custom dictionaries </install/desktop-custom-dictionaries>` - Create custom dictionaries for Mattermost spellcheck.
+* :doc:`Desktop app custom dictionaries </install/desktop-custom-dictionaries>` - Create custom dictionaries for Mattermost spellcheck.
 * :doc:`Desktop managed resources </install/desktop-app-managed-resources>` - Configure resource management for services running on the same domain as your Mattermost instance.
 
 **Mobile Apps**
@@ -201,6 +190,7 @@ Upgrade Mattermost
     :maxdepth: 1
     :hidden:
 
+    Prepare to upgrade Mattermost </upgrade/prepare-to-upgrade-mattermost>
     Upgrade Mattermost Server </upgrade/upgrading-mattermost-server>
     Enterprise install and upgrade </install/enterprise-install-upgrade>
     Install a license key </upgrade/installing-license-key>
@@ -213,6 +203,7 @@ Upgrade Mattermost
 
 Stay up to date with the latest features and improvements.
 
+* :doc:`Prepare to upgrade Mattermost </upgrade/prepare-to-upgrade-mattermost>` - Learn how to prepare for a Mattermost upgrade.
 * :doc:`Upgrade Mattermost Server </upgrade/upgrading-mattermost-server>` - Learn the basics of upgrading your Mattermost server to the latest version.
 * :doc:`Enterprise install and upgrade </install/enterprise-install-upgrade>` - Learn how to upgrade your Mattermost server to premium versions.
 * :doc:`Install a license key </upgrade/installing-license-key>` - Learn how to add or change a Mattermost license key.
@@ -230,7 +221,7 @@ Scale Mattermost
     :hidden:
 
     Scale for Enterprise </scale/scaling-for-enterprise>
-    High Availability cluster </scale/high-availability-cluster>
+    High availability cluster </scale/high-availability-cluster>
     Elasticsearch </scale/elasticsearch>
     Performance monitoring </scale/performance-monitoring>
     Mattermost performance alerting guide </scale/performance-alerting>
@@ -238,7 +229,7 @@ Scale Mattermost
 Scale and monitor your Mattermost deployment.
 
 * :doc:`Scale for Enterprise </scale/scaling-for-enterprise>` - Scale Mattermost to tens of thousands of users and beyond.
-* :doc:`High Availability cluster </scale/high-availability-cluster>` - Maintain Mattermost service during outages and hardware failures with redundant infrastructure.
+* :doc:`High availability cluster </scale/high-availability-cluster>` - Maintain Mattermost service during outages and hardware failures with redundant infrastructure.
 * :doc:`Elasticsearch </scale/elasticsearch>` - Enhance search performance with Elasticsearch.
 * :doc:`Performance monitoring </scale/performance-monitoring>` - Use Prometheus and Grafana to monitor the health and performance of your Mattermost cluster.
 * :doc:`Mattermost performance alerting guide </scale/performance-alerting>` - Learn strategies and best practices for monitoring your Mattermost cluster. 
@@ -266,15 +257,15 @@ Changelogs
     Mattermost self-hosted </install/self-managed-changelog>
     Mattermost legacy self-hosted </install/legacy-self-hosted-changelog>
     Mattermost Cloud </install/cloud-changelog>
-    Mobile Apps </deploy/mobile-app-changelog>
-    Desktop Apps </install/desktop-app-changelog>
+    Mobile apps </deploy/mobile-app-changelog>
+    Desktop apps </install/desktop-app-changelog>
     Deprecated features </install/deprecated-features>
 
 * :doc:`Mattermost self-hosted </install/self-managed-changelog>`
 * :doc:`Mattermost legacy self-hosted </install/legacy-self-hosted-changelog>`
 * :doc:`Mattermost Cloud </install/cloud-changelog>`
-* :doc:`Mobile Apps </deploy/mobile-app-changelog>`
-* :doc:`Desktop Apps </install/desktop-app-changelog>`
+* :doc:`Mobile apps </deploy/mobile-app-changelog>`
+* :doc:`Desktop apps </install/desktop-app-changelog>`
 * :doc:`Deprecated features </install/deprecated-features>`
 
 Additional server install guides

@@ -2,17 +2,8 @@
 Configuring transport encryption
 =================================
 
-|enterprise| |self-hosted|
-
-.. |enterprise| image:: ../images/enterprise-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in the Mattermost Enterprise subscription plan.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Managed deployments.
+.. include:: ../_static/badges/ent-selfhosted.rst
+  :start-after: :nosearch:
 
 The components of the Mattermost setup are shown in the following diagram, including the transport encryption used. Aside from the encryption between the nodes of the Mattermost cluster, all transports rely on TLS encryption.
 

@@ -18,18 +18,18 @@ Mattermost offers a host of features to help keep your private cloud communicati
 Private Cloud deployment with secure mobile apps
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- Mattermost can run entirely behind your firewall as a single Linux binary, as a Docker container, or on your Kubernetes cluster with MySQL or PostgreSQL as database. Remote access can be enabled through the use of `VPN clients on PC and mobile devices <https://docs.mattermost.com/deploy/deployment-overview.html#behind-a-vpn>`__ so that Mattermost can be used outside your private network.
-- Mattermost mobile apps can be deployed to an `internal Enterprise App Store <https://docs.mattermost.com/deploy/deploy-mobile-apps-using-emm-provider.html>`__ by using source code available for Mattermost mobile apps and push notification service. 
-- Optionally, the provided Mattermost Mobile Apps can be used when the Mattermost server is reachable through the internet on port 443. In this configuration, you have the option of using compiled `iOS and Android applications in iTunes and Google Play provided by Mattermost, Inc. <https://docs.mattermost.com/deploy/mobile-hpns.html>`__ (Mattermost Enterprise and Mattermost Professional).
-- User sessions across web, PC, and mobile can be `remotely revoked through profile settings <https://docs.mattermost.com/messaging/manage-profile-settings.html#view-and-logout-of-active-sessions>`__, or via the System Console by deactivating accounts.
+- Mattermost can run entirely behind your firewall as a single Linux binary, as a Docker container, or on your Kubernetes cluster with MySQL or PostgreSQL as database. Remote access can be enabled through the use of `VPN clients on PC and mobile devices </deploy/deployment-overview.html#behind-a-vpn>`__ so that Mattermost can be used outside your private network.
+- Mattermost mobile apps can be deployed to an `internal Enterprise App Store </deploy/deploy-mobile-apps-using-emm-provider.html>`__ by using source code available for Mattermost mobile apps and push notification service. 
+- Optionally, the provided Mattermost Mobile Apps can be used when the Mattermost server is reachable through the internet on port 443. In this configuration, you have the option of using compiled `iOS and Android applications in iTunes and Google Play provided by Mattermost, Inc. </deploy/mobile-hpns.html>`__ (Mattermost Enterprise and Mattermost Professional).
+- User sessions across web, PC, and mobile can be `remotely revoked through profile settings </messaging/manage-profile-settings.html#view-and-logout-of-active-sessions>`__, or via the System Console by deactivating accounts.
 - Mattermost apps can be packaged into leading Enterprise Mobility Management solutions including AirWatch and Blackberry through `AppDome <https://www.appdome.com/>`__.
 
 Centralized security and administration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- Manage users, teams, access control, and system settings in a web-based `System Console user interface <https://docs.mattermost.com/configure/configuration-settings.html>`__.
+- Manage users, teams, access control, and system settings in a web-based `System Console user interface </configure/configuration-settings.html>`__.
 - Centralized authentication through AD/LDAP and SAML (Mattermost Enterprise and Mattermost Professional).
-- Synchronize users and groups through the built-in `AD/LDAP integration <https://docs.mattermost.com/onboard/ad-ldap.html>`_ (Mattermost Enterprise).
+- Synchronize users and groups through the built-in `AD/LDAP integration </onboard/ad-ldap.html>`_ (Mattermost Enterprise).
 
 Transmission security
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -38,30 +38,30 @@ Transmission security
 - Connections to Active Directory/LDAP can be optionally secured with TLS or stunnel (Mattermost Enterprise and Mattermost Professional).
 - Encryption-at-rest is available for messages via hardware and software disk encryption solutions applied to the Mattermost database, which resides on its own server within your infrastructure. To enable end user search and compliance reporting of message histories, Mattermost does not offer encryption within the database.
 - Encryption-at-rest is available for files stored via hardware and software disk encryption solutions applied to the server used for local storage or storage via MinIO.
-- Encryption-at-rest is available for files stored in Amazon's proprietary S3 system using server-side encryption with `Amazon S3-managed keys <https://docs.mattermost.com/configure/configuration-settings.html#enable-server-side-encryption-for-amazon-s3>`__ (Mattermost Enterprise) when users choose not to use open source options.
-- Option to `exclude message contents from push notifications <https://docs.mattermost.com/configure/configuration-settings.html#push-notification-contents>`__ to comply with strict compliance policies, such as US HIPAA standards.
-- Ability to exclude or include the `contents of messages in push notifications <https://docs.mattermost.com/configure/configuration-settings.html#push-notification-contents>`__ to avoid disclosure on locked mobile screens, and via relay servers from Apple and Google when sending notifications to iOS or Android mobile apps (relevant to compliance standards such as HIPAA).
+- Encryption-at-rest is available for files stored in Amazon's proprietary S3 system using server-side encryption with `Amazon S3-managed keys </configure/configuration-settings.html#enable-server-side-encryption-for-amazon-s3>`__ (Mattermost Enterprise) when users choose not to use open source options.
+- Option to `exclude message contents from push notifications </configure/configuration-settings.html#push-notification-contents>`__ to comply with strict compliance policies, such as US HIPAA standards.
+- Ability to exclude or include the `contents of messages in push notifications </configure/configuration-settings.html#push-notification-contents>`__ to avoid disclosure on locked mobile screens, and via relay servers from Apple and Google when sending notifications to iOS or Android mobile apps (relevant to compliance standards such as HIPAA).
 
 Integrity and audit controls
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - By default, Mattermost stores a complete history of messages, including edits and deletes, along with all files uploaded. User interface actions for "deleting" messages and channels remove the data only from the user interface; the data is retained within your database. If your compliance guidelines require it, you can turn off users' ability to edit and delete their messages after they are posted.
 - Use an `antivirus plugin <https://github.com/mattermost/mattermost-plugin-antivirus>`__ to scan for viruses before uploading a file to Mattermost. Supports `ClamAV anti-virus software <https://www.clamav.net/>`__ across browser, Desktop App, and Mobile Apps.
-- Custom `data retention policies on messages and file uploads <https://docs.mattermost.com/comply/data-retention-policy.html>`__ is available (Mattermost Enterprise). A daily data deletion job can be scheduled that deletes messages from the database and user interface, and file uploads from local file storage or Amazon S3, which exceed the specified retention period.
-- The `output and archives of server logs <https://docs.mattermost.com/configure/configuration-settings.html#file-log-directory>`__ can be saved to a directory of your choice. Mattermost server logs plus logs from your web proxy can provide an end-to-end history of system usage.
-- `Ad hoc compliance reports of messaging by user, date range, and keyword, including edited and deleted messages <https://docs.mattermost.com/comply/compliance-reporting-oversight.html>`__ are available (Mattermost Enterprise). To protect against unauthorized use, all ad hoc report requests are logged.
-- Daily compliance reports compatible with third-party compliance solutions such as `Global Relay and Actiance <https://docs.mattermost.com/comply/compliance-export.html>`__ are also available (Mattermost Enterprise).
+- Custom `data retention policies on messages and file uploads </comply/data-retention-policy.html>`__ is available (Mattermost Enterprise). A daily data deletion job can be scheduled that deletes messages from the database and user interface, and file uploads from local file storage or Amazon S3, which exceed the specified retention period.
+- The `output and archives of server logs </configure/configuration-settings.html#file-log-directory>`__ can be saved to a directory of your choice. Mattermost server logs plus logs from your web proxy can provide an end-to-end history of system usage.
+- `Ad hoc compliance reports of messaging by user, date range, and keyword, including edited and deleted messages </comply/compliance-reporting-oversight.html>`__ are available (Mattermost Enterprise). To protect against unauthorized use, all ad hoc report requests are logged.
+- Daily compliance reports compatible with third-party compliance solutions such as `Global Relay and Actiance </comply/compliance-export.html>`__ are also available (Mattermost Enterprise).
 
 Authentication safeguards
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- To protect against brute force attacks, you can set `rate limiting on APIs <https://docs.mattermost.com/configure/configuration-settings.html#rate-limiting>`__, varied by query frequency, memory store size, remote address, and headers.
-- Session length, session cache, and idle timeout can be `configured according to your internal policies <https://docs.mattermost.com/configure/configuration-settings.html#session-lengths>`__, automatically forcing a user to re-login after a specified period of time.
-- Remotely `revoke user sessions <https://docs.mattermost.com/messaging/managing-account-settings.html#view-and-logout-of-active-sessions>`__ across web, mobile devices, and native desktop apps. User sessions can also be revoked remotely by a System Admin in **System Console > Users**.
+- To protect against brute force attacks, you can set `rate limiting on APIs </configure/configuration-settings.html#rate-limiting>`__, varied by query frequency, memory store size, remote address, and headers.
+- Session length, session cache, and idle timeout can be `configured according to your internal policies </configure/configuration-settings.html#session-lengths>`__, automatically forcing a user to re-login after a specified period of time.
+- Remotely `revoke user sessions </messaging/managing-account-settings.html#view-and-logout-of-active-sessions>`__ across web, mobile devices, and native desktop apps. User sessions can also be revoked remotely by a System Admin in **System Console > Users**.
 - Session fixation, where an attacker can trick the user to authenticate with a known session cookie, does not affect Mattermost users as a new session cookie is set at each login.
-- Remotely reset user passwords via the System Console or via the `command line <https://docs.mattermost.com/manage/command-line-tools.html#mattermost-user-password>`__.
-- Mattermost supports integrated authentication with `Active Directory and LDAP <https://docs.mattermost.com/onboard/ad-ldap.html>`__ (Mattermost Enterprise and Mattermost Professional) as well as `SAML 2.0 SSO integration <https://docs.mattermost.com/onboard/sso-saml.html>`__ with providers including `Active Directory Federation Services <https://docs.mattermost.com/onboard/ad-ldap.html#configure-ad-ldap-deployments-with-multiple-domains>`__,  `Okta <https://docs.mattermost.com/onboard/sso-saml-okta.html>`__, among others (Mattermost Enterprise and Mattermost Professional).
-- The ability to require `multi-factor authentication <https://docs.mattermost.com/onboard/multi-factor-authentication.html>`__ is also available (Mattermost Enterprise and Mattermost Professional).
+- Remotely reset user passwords via the System Console or via the `command line </manage/command-line-tools.html#mattermost-user-password>`__.
+- Mattermost supports integrated authentication with `Active Directory and LDAP </onboard/ad-ldap.html>`__ (Mattermost Enterprise and Mattermost Professional) as well as `SAML 2.0 SSO integration </onboard/sso-saml.html>`__ with providers including `Active Directory Federation Services </onboard/ad-ldap.html#configure-ad-ldap-deployments-with-multiple-domains>`__,  `Okta </onboard/sso-saml-okta.html>`__, among others (Mattermost Enterprise and Mattermost Professional).
+- The ability to require `multi-factor authentication </onboard/multi-factor-authentication.html>`__ is also available (Mattermost Enterprise and Mattermost Professional).
 
 Access control policy
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -77,11 +77,11 @@ When Mattermost is deployed outside a firewall, Admins must be aware that their 
 Mattermost undergoes extensive penetration testing, security reviews, and `security updates <https://mattermost.com/security-updates/>`__. You can find further details and previous discussion `in our GitHub thread <https://github.com/mattermost/platform/issues/4321#issuecomment-258832013>`__. In addition, the following policies are provided:
 
 - Limit communications to specific users, private channels, or team-wide public channels.
-- Increase system security `by restricting email-based account creation to email addresses from a list of specific domains, <https://docs.mattermost.com/configure/configuration-settings.html#restrict-account-creation-to-specified-email-domains>`__ e.g. "corp.mattermost.com", "mattermost.com", etc."
-- Choose whether to restrict or enable `cross-origin requests <https://docs.mattermost.com/configure/configuration-settings.html#enable-cross-origin-requests-from>`__.
-- If sharing of public links for account creation or sharing of files and images are enabled, links can be invalidated via the System Console by `regenerating salts <https://docs.mattermost.com/configure/configuration-settings.html#public-link-salt>`__.
-- Optionally add `advanced passwords requirements <https://docs.mattermost.com/configure/configuration-settings.html#password-requirements>`__ with minimum numbers of symbols, numbers, lower, and uppercase letters.
-- Optionally restrict `creation, renaming, archiving of channels, Private channels, and integrations to Team Admins, System Admins, or end users <https://docs.mattermost.com/administration/config-settings.html#policy-enterprise>`__ (Mattermost Enterprise and Mattermost Professional).
+- Increase system security `by restricting email-based account creation to email addresses from a list of specific domains, </configure/configuration-settings.html#restrict-account-creation-to-specified-email-domains>`__ e.g. "corp.mattermost.com", "mattermost.com", etc."
+- Choose whether to restrict or enable `cross-origin requests </configure/configuration-settings.html#enable-cross-origin-requests-from>`__.
+- If sharing of public links for account creation or sharing of files and images are enabled, links can be invalidated via the System Console by `regenerating salts </configure/configuration-settings.html#public-link-salt>`__.
+- Optionally add `advanced passwords requirements </configure/configuration-settings.html#password-requirements>`__ with minimum numbers of symbols, numbers, lower, and uppercase letters.
+- Optionally restrict `creation, renaming, archiving of channels, Private channels, and integrations to Team Admins, System Admins, or end users </administration/config-settings.html#policy-enterprise>`__ (Mattermost Enterprise and Mattermost Professional).
 
 Security updates
 -----------------
@@ -110,17 +110,17 @@ Deploying Mattermost as part of a HIPAA-compliant IT infrastructure requires a d
 
 - Mattermost offers HIPAA-relevant **Technical Safeguards** including:
 
-   - `Integrity Controls <https://docs.mattermost.com/about/security.html#integrity-and-audit-controls>`__
-   - `Access Control <https://docs.mattermost.com/about/security.html#access-control-policy>`__
-   - `Transmission Security <https://docs.mattermost.com/about/security.html#transmission-security>`__
-   - `Audit Controls <https://docs.mattermost.com/about/security.html#integrity-and-audit-controls>`__
+   - `Integrity Controls </about/security.html#integrity-and-audit-controls>`__
+   - `Access Control </about/security.html#access-control-policy>`__
+   - `Transmission Security </about/security.html#transmission-security>`__
+   - `Audit Controls </about/security.html#integrity-and-audit-controls>`__
 
 - HIPAA-compliant deployments commonly consider the following:
 
    - Omitting the contents of messages from mobile push and email notifications:
 
-      - If your `Push Notifications Contents <https://docs.mattermost.com/configure/configuration-settings.html#push-notification-contents>`__ option is set to ``Send full message snippet`` there is a chance Personal Health Information (PHI) contained in messages could be displayed on a user's locked phone as a notification. To avoid this, set the option to ``Send generic description with user and channel names`` or ``Send generic description with only sender name``.
-      - Similarly, setting `Email Notifications Contents <https://docs.mattermost.com/configure/configuration-settings.html#email-notification-contents>`__ to ``Send generic description with only sender name`` will only send the team name and name of the person who sent the message, with no information about channel name or message contents included in email notifications.
+      - If your `Push Notifications Contents </configure/configuration-settings.html#push-notification-contents>`__ option is set to ``Send full message snippet`` there is a chance Personal Health Information (PHI) contained in messages could be displayed on a user's locked phone as a notification. To avoid this, set the option to ``Send generic description with user and channel names`` or ``Send generic description with only sender name``.
+      - Similarly, setting `Email Notifications Contents </configure/configuration-settings.html#email-notification-contents>`__ to ``Send generic description with only sender name`` will only send the team name and name of the person who sent the message, with no information about channel name or message contents included in email notifications.
 
 - Beyond Technical Safeguards, HIPAA compliance deployments also require:
 

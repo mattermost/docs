@@ -3,17 +3,8 @@
 SMTP email setup
 ================
 
-|all-plans| |self-hosted|
-
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 To run in production, Mattermost requires SMTP email to be enabled for email notifications and password reset for systems using email-based authentication.
 
@@ -179,11 +170,7 @@ Checking your SMTP server is reachable
        250-PIPELINING
        250 8BITMIME
        
-
 .. note:: 
    
-   As we're not installing telnet by default on the official docker images you either need to use ``ping`` on those or install telnet yourself either directly or by modifying the Dockerfile.
-
-.. note::
-   
-   For further assistance, review the `Troubleshooting forum <https://forum.mattermost.com/c/trouble-shoot>`__ for previously reported errors, or `join the Mattermost user community for troubleshooting help <https://mattermost.com/ask-mattermost-community>`__. To submit an improvement or correction to this page, select **Edit** in the top-right corner of the page.
+   - As we're not installing telnet by default on the official docker images, you either need to use ``ping`` on those or install telnet yourself either directly or by modifying the Dockerfile.
+   - For further assistance, review the `Troubleshooting forum <https://forum.mattermost.com/c/trouble-shoot>`__ for previously reported errors, or `join the Mattermost user community for troubleshooting help <https://mattermost.com/ask-mattermost-community>`__. To submit an improvement or correction to this page, select **Edit** in the top-right corner of the page.

@@ -8,7 +8,7 @@ Organizing Your Sidebar
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
+  :alt: Available in Mattermost Free.
 
 .. |cloud| image:: ../images/cloud-badge.png
   :scale: 30
@@ -33,7 +33,7 @@ Public channels are open to everyone on a team. New team members are automatical
 Private channels
 ~~~~~~~~~~~~~~~~
 
-Private channels are for sensitive topics and are only visible to select team members. In Team Edition, any member of a Private channel can add or remove other members from Private channels, but in Enterprise Edition `these permissions can be restricted to the Channel Admins and System Admins <https://docs.mattermost.com/help/getting-started/managing-members.html#user-roles>`__.
+Private channels are for sensitive topics and are only visible to select team members. In Team Edition, any member of a Private channel can add or remove other members from Private channels, but in Enterprise Edition `these permissions can be restricted to the Channel Admins and System Admins </help/getting-started/managing-members.html#user-roles>`__.
 
 Direct Messages and Group Messages
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -57,12 +57,12 @@ What can you customize?
 
 You can customize your sidebar in the following ways:
 
-- `Create custom categories <https://docs.mattermost.com/help/getting-started/organizing-your-sidebar.html#creating-custom-categories>`_.
-- `Group and order channels into your categories <https://docs.mattermost.com/help/getting-started/organizing-your-sidebar.html#organizing-channels-in-categories>`_.
-- `Mute and unmute entire categories <https://docs.mattermost.com/help/getting-started/organizing-your-sidebar.html#muting-and-unmuting-categories>`_.
-- `Sort channels in each category <https://docs.mattermost.com/help/getting-started/organizing-your-sidebar.html#sorting-channels-in-categories>`_ manually, alphabetically, or by recent activity.
-- `Filter your sidebar to view unread channels only <https://docs.mattermost.com/help/getting-started/organizing-your-sidebar.html#group-unread-channels-separately>`_, or choose to group unread messages into an **Unreads** category.
-- `Manage your Direct Messages <https://docs.mattermost.com/help/getting-started/organizing-your-sidebar.html#managing-direct-messages>`_ by sorting them alphabetically or by recent activity, and by setting how many to display in your sidebar.
+- `Create custom categories </help/getting-started/organizing-your-sidebar.html#creating-custom-categories>`_.
+- `Group and order channels into your categories </help/getting-started/organizing-your-sidebar.html#organizing-channels-in-categories>`_.
+- `Mute and unmute entire categories </help/getting-started/organizing-your-sidebar.html#muting-and-unmuting-categories>`_.
+- `Sort channels in each category </help/getting-started/organizing-your-sidebar.html#sorting-channels-in-categories>`_ manually, alphabetically, or by recent activity.
+- `Filter your sidebar to view unread channels only </help/getting-started/organizing-your-sidebar.html#group-unread-channels-separately>`_, or choose to group unread messages into an **Unreads** category.
+- `Manage your Direct Messages </help/getting-started/organizing-your-sidebar.html#managing-direct-messages>`_ by sorting them alphabetically or by recent activity, and by setting how many to display in your sidebar.
 
   .. image:: ../images/channel_sidebar_updates.gif
 

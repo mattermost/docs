@@ -3,23 +3,14 @@
 Troubleshooting Mattermost issues
 =================================
 
-|all-plans| |self-hosted|
-
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 This document summarizes common troubleshooting issues and techniques.
 
 Depending on the type of error or problem you're experiencing, refer to the sections below for troubleshooting guidance. If you're a new user, it might help to go over the installation steps again to confirm the process.
 
-If you have a `paid subscription to a Mattermost offering <https://docs.mattermost.com/about/editions-and-offerings.html>`_, such as `Mattermost Professional <https://docs.mattermost.com/about/editions-and-offerings.html#mattermost-professional>`_ or `Mattermost Enterprise <https://docs.mattermost.com/about/editions-and-offerings.html#mattermost-enterprise>`_, you're entitled to open support tickets via our `online support portal <https://support.mattermost.com/hc/en-us/requests/new>`_. 
+If you have a `paid subscription to a Mattermost offering </about/editions-and-offerings.html>`_, such as `Mattermost Professional </about/editions-and-offerings.html#mattermost-professional>`_ or `Mattermost Enterprise </about/editions-and-offerings.html#mattermost-enterprise>`_, you're entitled to open support tickets via our `online support portal <https://support.mattermost.com/hc/en-us/requests/new>`_. 
 
 Additionally, peer-to-peer support is available for all Mattermost users in our `troubleshooting forum <https://forum.mattermost.com/c/trouble-shoot>`__ and on our `community server <https://community.mattermost.com/core/channels/peer-to-peer-help>`_. 
 
@@ -36,7 +27,7 @@ Deployment troubleshooting
 Docker deployments
 ~~~~~~~~~~~~~~~~~~
 
-If you're deploying the Mattermost server using Docker on an M1 Mac and encountering permission issues in the Docker container, `re-create the required directories and set their permissions <https://docs.mattermost.com/guides/deployment.html#deploy-mattermost-for-production-use>`__, then skip the following command:
+If you're deploying the Mattermost server using Docker on an M1 Mac and encountering permission issues in the Docker container, `re-create the required directories and set their permissions </guides/deployment.html#deploy-mattermost-for-production-use>`__, then skip the following command:
 
 .. code:: bash
 
@@ -90,7 +81,7 @@ Some of these suggestions can be done directly, and others may need consultation
 Review Mattermost logs
 ----------------------
 
-You can access logs for Mattermost and use them for troubleshooting. These steps assume that you have `System Admin permissions <https://docs.mattermost.com/help/getting-started/managing-members.html#system-admin>`__.
+You can access logs for Mattermost and use them for troubleshooting. These steps assume that you have `System Admin permissions </help/getting-started/managing-members.html#system-admin>`__.
 
 Mattermost Server logs 
 ----------------------
@@ -105,7 +96,7 @@ The resulting server log file is called ``mattermost.log`` and can be opened wit
 
 If filesystem access is not possible, navigate to **System Console > Reporting > Server Logs** to locate the current system logs which can be copied to a file.
 
-You can find more on logging settings `here <https://docs.mattermost.com/configure/configuration-settings.html#standard-logging>`__.
+You can find more on logging settings `here </configure/configuration-settings.html#standard-logging>`__.
 
 Mattermost Desktop App logs
 ---------------------------
@@ -114,7 +105,7 @@ The desktop app log file can be found in the user directory:
 
 - **Windows:** ``%userprofile%\AppData\Roaming\Mattermost\logs``
 - **Linux:** ``~/.local/share/Mattermost/logs`` OR ``~/.config/Mattermost/logs``
-- **MacOS:** ``~/Library/Logs/Mattermost``
+- **MacOS:** ``~/Library/Logs/Mattermost`` (DMG installation) OR ``~Library/Containers/Mattermost.Desktop/Data/Library/Logs/Mattermost`` (Appstore installation)
 
 Mattermost Browser App logs
 ---------------------------
@@ -159,7 +150,7 @@ Connect with another device
 Opening a support ticket for self-hosted deployments
 ----------------------------------------------------
 
-If you have a `paid subscription to a Mattermost offering <https://docs.mattermost.com/about/editions-and-offerings.html>`_, such as `Mattermost Professional <https://docs.mattermost.com/about/editions-and-offerings.html#mattermost-professional>`_ or `Mattermost Enterprise <https://docs.mattermost.com/about/editions-and-offerings.html#mattermost-enterprise>`_, you're entitled to open support tickets via our `online support portal <https://support.mattermost.com/hc/en-us/requests/new>`_. 
+If you have a `paid subscription to a Mattermost offering </about/editions-and-offerings.html>`_, such as `Mattermost Professional </about/editions-and-offerings.html#mattermost-professional>`_ or `Mattermost Enterprise </about/editions-and-offerings.html#mattermost-enterprise>`_, you're entitled to open support tickets via our `online support portal <https://support.mattermost.com/hc/en-us/requests/new>`_. 
 
 When opening a Support ticket as part of your paid subscription, it's important that you provide us with as much information as you can in a timely manner. Knowing what information is relevant can be confusing. We use the anagram C.L.U.E.S. to remember what we need:
 

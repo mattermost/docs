@@ -1,22 +1,26 @@
 Mattermost Cloud billing
 ========================
 
-|all-plans| |cloud|
+.. include:: ../_static/badges/allplans-cloud.rst
+  :start-after: :nosearch:
 
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
+From February 2, 2023, Mattermost Cloud Professional and Enterprise plans are offered as an annual subscription service.
 
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/sign-up
-  :alt: Available for Mattermost Cloud deployments.
+.. note:: 
+   
+   If you have an existing Cloud Professional monthly subscription you can keep it as is and are not required to switch to an annual subscription. If you'd like to switch, please follow these steps:
+   1. Go to **System Console > Subscription**. In the **Switch to an annual plan today** section select **Learn More**. 
+   2. Fill in your payment information.
+   3. Select **Switch to annual billing**
 
-Mattermost Cloud is offered as a pay-as-you-go subscription service.
+To upgrade to a Professional plan within Mattermost, select **View plans** in the header or in the System Console. For Enterprise plans, you need to `contact sales </https://mattermost.com/contact-sales/>`__.
 
-You will be billed for registered users in your workspace. A registered user is a user who has an account in a workspace and does not show as *Inactive* in **System Console > User Management > Users**. Registered users will count towards your monthly invoice each day as long as they are not deactivated in the billing period.
+When you upgrade, you'll need to indicate the number of user seats you have - these are active users who'll be using Mattermost. This can't be less than the current total number of active users in your workspace but you can buy more seats to accommodate active user growth. You'll be billed immediately for the cost of the annual subscription.
 
-Mattermost Cloud workspaces can be used free forever with Cloud Starter. You can upgrade to a monthly per-user subscription, with Mattermost Professional and Mattermost Enterprise. 
+As this is an annual subscription, it renews automatically. You'll be reminded of the renewal ahead of time.
 
-Please see the `Cloud subscriptions <https://docs.mattermost.com/about/cloud-subscriptions.html>`__ documentation for more detailed information on the Cloud billing process.
+You can choose to opt-out of automatic renewal. In this case, you'll be notified ahead of time, so that your subscription doesn't lapse.
+
+Mattermost Cloud workspaces can be used free forever with Cloud Free.
+
+Please see the `Cloud subscriptions </about/cloud-subscriptions.html>`__ documentation for more detailed information on the Cloud billing process.

@@ -3,12 +3,8 @@
 How to install Mattermost Team Edition Helm Chart in a GitLab Helm Chart deployment
 =====================================================================================
 
-|self-hosted|
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
+.. include:: ../_static/badges/ent-selfhosted.rst
+  :start-after: :nosearch:
 
 This document describes how to use Mattermost Team Edition Helm Chart in proximity with an existing GitLab Helm Chart deployment. Once the Mattermost Team Edition Helm Chart is installed, GitLab SSO integration is configured which utilizes shared configurations to streamline authentication, storage, encryption, and traffic routing.
 
@@ -19,7 +15,7 @@ Prerequisites
 
 - A running Kubernetes cluster.
 - `Helm v2 <https://helm.sh/docs/intro/install/)>`_.
-- `Tiller <https://rancher.com/docs/rancher/v2.x/en/installation/ha/helm-init/>`_ (the Helm server-side component) installed on the cluster.
+- `Tiller <https://docs.ranchermanager.rancher.io/v2.0-v2.4/pages-for-subheaders/helm2-helm-init>`_ (the Helm server-side component) installed on the cluster.
 
 .. note::
 
@@ -48,7 +44,7 @@ Create an OAuth application with GitLab
 
 The next part of the process is setting up the GitLab SSO integration.
 
-To create the OAuth application to allow Mattermost to use GitLab as the authentication provider, please follow the instructions `here <https://docs.mattermost.com/onboard/sso-gitlab.html>`__.
+To create the OAuth application to allow Mattermost to use GitLab as the authentication provider, please follow the instructions `here </onboard/sso-gitlab.html>`__.
 
 Please take note of the ``Application ID``, ``Application Secret Key``, ``User API Endpoint``, ``Auth Endpoint`` and ``Token Endpoint`` settings, as these values will be used later.
 
@@ -79,7 +75,7 @@ Here's a light way to install it:
 
 Once you've deployed the GitLab instance, follow the instructions for the `initial login <https://docs.gitlab.com/charts/installation/deployment.html#initial-login>`__.
 
-If you're following a process other than the one provided and experience authentication and/or deployment issues, let us know in our `Troubleshooting forum <https://docs.mattermost.com/install/troubleshooting.html>`__ and we'll be happy to help.
+If you're following a process other than the one provided and experience authentication and/or deployment issues, let us know in our `Troubleshooting forum </install/troubleshooting.html>`__ and we'll be happy to help.
 
 Deploy Mattermost Team Edition Helm Chart with GitLab Helm Chart
 ----------------------------------------------------------------
@@ -98,7 +94,7 @@ Prerequisites:
   
 To deploy Mattermost Team Edition with GitLab Helm Chart, disable the running ``MySql`` chart and configure ``InitContainer`` and ``Environment variables`` in ``values.yaml``. The list below indicates the values that should be changed. Note that we assume the GitLab chart name is ``gitlab``.
 
-- ``<your-mattermost-domain>``: URL that users will use to access Mattermost, matching the `Site URL field <https://docs.mattermost.com/configure/configuration-settings.html#site-url>`__, e.g. ``mattermost.gitlab.example.com``.
+- ``<your-mattermost-domain>``: URL that users will use to access Mattermost, matching the `Site URL field </configure/configuration-settings.html#site-url>`__, e.g. ``mattermost.gitlab.example.com``.
 - ``<name-of-your-tls-secret>``: A name to store the TLS certificate for your domains, e.g. ``mattermost-tls``.
 - ``<ingress-class>``: The ingress class. In a basic GitLab deployment, this is ``gitlab-nginx``.
 - ``<ingress-provider>``: The ingress provider. In a basic GitLab deployment, this is ``nginx``.

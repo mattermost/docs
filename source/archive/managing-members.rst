@@ -10,7 +10,7 @@ Managing Members
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
+  :alt: Available in Mattermost Free.
 
 .. |cloud| image:: ../images/cloud-badge.png
   :scale: 30
@@ -27,7 +27,7 @@ Inviting team members
 
 If you have the required permissions, you can add people to your team via a direct invite, a public team invite link, or if they already have an account on the server, you can add them to the team yourself.
 
-From Mattermost v5.16, System Admins can `enable guest access <https://docs.mattermost.com/onboard/guest-accounts.html>`_. A guest is a special role that is restricted to only the channels they have been invited to. When guest access is enabled, you can invite guests or users external to the organization, such as vendors or customers.
+From Mattermost v5.16, System Admins can `enable guest access </onboard/guest-accounts.html>`_. A guest is a special role that is restricted to only the channels they have been invited to. When guest access is enabled, you can invite guests or users external to the organization, such as vendors or customers.
 
 Direct invites
 ~~~~~~~~~~~~~~
@@ -196,7 +196,7 @@ A Team Admin can remove a user from a team via **Team menu > Manage Members > Re
 
 When a user is removed from a team, the team will no longer show up in their team sidebar. If they currently have the team open, they are redirected to the first team that appears on their team sidebar. If they didn't belong to any other teams, the user is sent to the team selection page.
 
-Removing a user from the team does not deactivate the account. The user will still be able to sign in to the site, and join other teams. They will also be able to rejoin the team they were removed from if they receive another invite, or if the team is set to `"Allow any user with an account on this server to join this team" <https://docs.mattermost.com/welcome/team-settings.html#allow-anyone-to-join-this-team>`__. If the user does rejoin the team, they will no longer belong to the channels they were previously a part of, and they will lose all Admin privileges if they had them previously.
+Removing a user from the team does not deactivate the account. The user will still be able to sign in to the site, and join other teams. They will also be able to rejoin the team they were removed from if they receive another invite, or if the team is set to `"Allow any user with an account on this server to join this team" </welcome/team-settings.html#allow-anyone-to-join-this-team>`__. If the user does rejoin the team, they will no longer belong to the channels they were previously a part of, and they will lose all Admin privileges if they had them previously.
 
 A System Admin can also remove users from teams via **System Console > Users**, and selecting the dropdown beside a user entry and selecting **Manage Teams**. The list of teams an individual user belongs to can be viewed on the user's profile page via **System Console > Users** and selecting the member's name from the list provided in the **User Configuration** screen.
 
@@ -205,7 +205,7 @@ Leaving a Team
 
 Users can also choose to remove themselves from a team, from **Team menu > Leave Team**. This will remove the user from the team, and from all Public channels and Private channels on the team.
 
-They will only be able to rejoin the team if it is set to `"Allow any user with an account on this server to join this team" <https://docs.mattermost.com/welcome/team-settings.html#allow-anyone-to-join-this-team>`__ team, or if they receive a new invite. If they do rejoin, they will no longer be a part of their old channels.
+They will only be able to rejoin the team if it is set to `"Allow any user with an account on this server to join this team" </welcome/team-settings.html#allow-anyone-to-join-this-team>`__ team, or if they receive a new invite. If they do rejoin, they will no longer be a part of their old channels.
 
 Obtaining User ID
 ~~~~~~~~~~~~~~~~~

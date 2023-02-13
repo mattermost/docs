@@ -1,27 +1,8 @@
 Google Single Sign-On
 =====================
 
-|enterprise| |professional| |cloud| |self-hosted|
-
-.. |enterprise| image:: ../images/enterprise-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in the Mattermost Enterprise subscription plan.
-
-.. |professional| image:: ../images/professional-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in the Mattermost Professional subscription plan.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/sign-up
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
+.. include:: ../_static/badges/entpro-cloud-free.rst
+  :start-after: :nosearch:
 
 *Available in legacy Mattermost Enterprise Edition E20*
 
@@ -31,7 +12,8 @@ Google Single Sign-On
 Configure Mattermost ``config.json`` for Google Apps SSO
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|self-hosted|
+.. include:: ../_static/badges/selfhosted-only.rst
+  :start-after: :nosearch:
 
 Instead of using the System Console, you can add the Google settings directly to the ``config.json`` file directly on your Mattermost server.
 
@@ -53,3 +35,11 @@ Instead of using the System Console, you can add the Google settings directly to
   }
 
 3. Save your changes, then restart your Mattermost server. After the server restarts, users must change their login method before they can log in with Google Apps.
+
+Frequently Asked Questions
+--------------------------
+
+How can I use LDAP attributes or Groups with OpenID?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+At this time, LDAP data isn't compatible with OpenID. If you currently rely on LDAP to manage your users' teams, channels, groups, or attributes, you won't be able to do this automatically with users who have logged in with OpenID. If you need LDAP synced to each user, we suggest using SAML or LDAP as the login provider. Some OpenID providers can use SAML instead, like Keycloak.

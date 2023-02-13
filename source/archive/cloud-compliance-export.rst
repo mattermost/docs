@@ -14,7 +14,7 @@ The exports include information on channel member history at the time the messag
 
 Entries for deleted messages and files are included in CSV and Actiance reports. The deleted content is included in the compliance export. Global Relay reports include file deletion entries but message deletion entries are excluded.
 
-By default, Mattermost stores all message history providing an unlimited search history to admins and end users. You may set a `custom data retention policy <https://docs.mattermost.com/comply/data-retention-policy.html>`__ for how long messages and file uploads are kept in Mattermost channels and direct messages.
+By default, Mattermost stores all message history providing an unlimited search history to admins and end users. You may set a `custom data retention policy </comply/data-retention-policy.html>`__ for how long messages and file uploads are kept in Mattermost channels and direct messages.
 
 Enterprise deployments with a requirement to archive history beyond the data retention period can enable this add-on to export compliance reports to third-party systems. Integration with Actiance Vantage and Global Relay are currently supported, with integrations with other systems in the roadmap.
 
@@ -89,7 +89,7 @@ What happens if I export data manually?
 
 If the compliance export job is run automatically, manually via the System Console, it exports all posts that were made since the last post that the previous execution of the job exported. If this is the first time that the job has ever run, all posts that were made since the feature was enabled will be exported.
 
-When run manually via the System Console, CSV and Actiance XML files are written to the `exports` subdirectory of the configured `Local Storage Directory <https://docs.mattermost.com/configure/configuration-settings.html#local-storage-directory>`__. Files will be written to a folder with names based on an epoch time range. Global Relay EML export format will be mailed to the configured email address when run manually.
+When run manually via the System Console, CSV and Actiance XML files are written to the `exports` subdirectory of the configured `Local Storage Directory </configure/configuration-settings.html#local-storage-directory>`__. Files will be written to a folder with names based on an epoch time range. Global Relay EML export format will be mailed to the configured email address when run manually.
 
 Is there a maximum row limit for CSV files?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

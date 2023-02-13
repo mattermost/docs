@@ -1,13 +1,10 @@
 :orphan:
-
 :nosearch:
-
 .. _install-debian-server:
-
-Installing Debian Buster
-------------------------
-
 .. This page is intentionally not accessible via the LHS navigation pane because it's common content included on other docs pages.
+
+Install Debian Buster
+----------------------
 
 Install the 64-bit version of Debian on each machine that hosts one or more of the components.
 
@@ -21,12 +18,8 @@ Install the 64-bit version of Debian on each machine that hosts one or more of t
 
   ``apt-get upgrade``
 
-3. Install *sudo* and *curl* for use later in the installation:
+3. Install *sudo* and *curl* for use later in the installation: ``apt-get install sudo curl gnupg``.
 
-  ``apt-get install sudo curl gnupg``
+4. Add your username to the sudo group. In the following command, replace {username} with your own username: ``usermod -a -G sudo {username}``.
 
-4. Add your username to the sudo group. In the following command, replace {username} with your own username.
-
-  ``usermod -a -G sudo {username}``
-
-Now that the system is up to date and our user is in the sudo group, you can start installing the components that make up a Mattermost system.
+Now that the system is up to date and your user is in the sudo group, you can start installing the components that make up a Mattermost system.

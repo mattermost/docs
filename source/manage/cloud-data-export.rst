@@ -1,6 +1,9 @@
 Mattermost workspace migration
 ==============================
 
+.. include:: ../_static/badges/allplans-cloud.rst
+  :start-after: :nosearch:
+
 This document outlines the process for migrating from Mattermost Cloud to a Mattermost self-hosted instance. In the future, a process for migrating from Mattermost self-hosted to Mattermost Cloud will also be documented and provided here.
 
 Migrating between two installations follows the same process that's documented below, regardless as to whether the source or destination of the migration is in the Cloud or self-hosted. **These steps will work for any Mattermost instance**, as long as the instances are running Mattermost v5.33 or later.
@@ -13,11 +16,11 @@ You can migrate your Cloud workspace data to a self-hosted deployment at any tim
 How does the process work?
 --------------------------
 
-Before you export and migrate your data, you must `install Mattermost <https://docs.mattermost.com/guides/deployment.html#install-guides>`_ on the server you’ll be using to run Mattermost. The migration is done using the mmctl CLI tool, which is a remote CLI tool for Mattermost that's installed locally and uses the Mattermost API. From Mattermost v6.0 onwards, mmctl is pre-installed. For versions prior to 6.0, first download the newest release from `the releases page <https://github.com/mattermost/mmctl/releases/tag/v6.1.0>`_, `install mmctl <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#install-mmctl>`_, and place the binary on your ``PATH``.
+Before you export and migrate your data, you must `install Mattermost </guides/deployment.html#install-guides>`_ on the server you’ll be using to run Mattermost. The migration is done using the mmctl CLI tool, which is a remote CLI tool for Mattermost that's installed locally and uses the Mattermost API. From Mattermost v6.0 onwards, mmctl is pre-installed. For versions prior to 6.0, first download the newest release from `the releases page <https://github.com/mattermost/mmctl/releases/tag/v6.1.0>`_, `install mmctl </manage/mmctl-command-line-tool.html#install-mmctl>`_, and place the binary on your ``PATH``.
 
-The `mmctl usage notes <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-usage-notes>`_ provide some additional context and information which you can reference before and during the process.
+The `mmctl usage notes </manage/mmctl-command-line-tool.html#mmctl-usage-notes>`_ provide some additional context and information which you can reference before and during the process.
 
-You'll be using the `mmctl export <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-export>`__ commands to export your Cloud data for channels, messages, users, etc. The export file is downloaded to a location specified in the export commands. Once the export is complete, you'll import the data into your self-hosted instance.
+You'll be using the `mmctl export </manage/mmctl-command-line-tool.html#mmctl-export>`__ commands to export your Cloud data for channels, messages, users, etc. The export file is downloaded to a location specified in the export commands. Once the export is complete, you'll import the data into your self-hosted instance.
 
 .. note::
   
@@ -137,6 +140,8 @@ Then extract the export file to use it by running the following mmctl command:
 
 Once your migration is complete and you’ve imported your data into your self-hosted instance we recommend that you take a few days to validate your data and ensure everything is working as expected before taking down your Cloud instance.
 
+.. note:: If you are using email/password authentication, your users must reset their passwords.
+
 If you encounter any issues or problems, please contact our Support team via https://customers.mattermost.com/cloud/contact-us, or through the `Mattermost Help Center <https://support.mattermost.com/>`_.
 
 Migrate from self-hosted to Cloud
@@ -150,7 +155,7 @@ Before you begin your migration, ensure you’re on Mattermost version 6.5 (or l
 
 **User Authentication**
 
-If you’re using a login method other than email, you’ll need to make the required changes to your infrastructure so that you can continue your existing authentication method in the cloud. Examples of these methods are LDAP and GitLab SSO.
+If you are using the email login method, users will need to reset their passwords after the migration has been completed. Other authentication methods, such as LDAP and GitLab SSO, required changes to your infrastructure allowing the specific authentication method to function in Mattermost cloud.
 
 **Plugins**
 

@@ -1,4 +1,7 @@
+:orphan:
 :nosearch:
+.. This page is intentionally not accessible via the LHS navigation pane because it's common content included on other docs pages.
+
 .. _config-ssl-http2-nginx:
 
 Configure NGINX with SSL and HTTP/2
@@ -13,24 +16,21 @@ Although you can configure HTTP/2 without SSL, both Firefox and Chrome browsers 
 You can use any certificate that you want, but these instructions show you how to download and install certificates from `Let's Encrypt <https://letsencrypt.org/>`__, a free certificate authority.
 
 .. note::
-   If Let’s Encrypt is enabled, forward port 80 through a firewall, with `Forward80To443 <https://docs.mattermost.com/configure/configuration-settings.html#forward-port-80-to-443>`__ ``config.json`` setting set to ``true`` to complete the Let’s Encrypt certification.
-
-**To configure NGINX as a proxy with SSL and HTTP/2**
-
-See the `Let's Encrypt/Certbot documentation <https://certbot.eff.org>`_ for additional assistance.
+   
+   If Let’s Encrypt is enabled, forward port 80 through a firewall, with `Forward80To443 </configure/configuration-settings.html#forward-port-80-to-443>`__ ``config.json`` setting set to ``true`` to complete the Let’s Encrypt certification. See the `Let's Encrypt/Certbot documentation <https://certbot.eff.org>`_ for additional assistance.
 
 1. Log in to the server that hosts NGINX and open a terminal window.
 
 2. Open the your Mattermost ``nginx.conf`` file as *root* in a text editor, then update the ``{ip}`` address in the ``upstream backend`` to point towards Mattermost (such as ``127.0.0.1:8065``), and update the ``server_name`` to be your domain for Mattermost.
 
-.. note::
+  .. note::
    
    - On Ubuntu this file is located at ``/etc/nginx/sites-available/``. If you don't have this file, run ``sudo touch /etc/nginx/sites-available/mattermost``.
    - On CentOS/RHEL this file is located at ``/etc/nginx/conf.d/``. If you don't have this file, run ``sudo touch /etc/nginx/conf.d/mattermost``.
    - Note that the IP address included in the examples in this documentation may not match your network configuration. 
    - If you're running NGINX on the same machine as Mattermost, and NGINX resolves ``localhost`` to more than one IP address (IPv4 or IPv6), we recommend using ``127.0.0.1`` instead of ``localhost``. 
    
-.. code-block:: none
+  .. code-block:: none
 
    upstream backend {
        server {ip}:8065;
@@ -85,63 +85,35 @@ See the `Let's Encrypt/Certbot documentation <https://certbot.eff.org>`_ for add
    }
 
 
-3. Remove the existing default sites-enabled file.
+3. Remove the existing default sites-enabled file by running ``sudo rm /etc/nginx/sites-enabled/default`` (Ubuntu) or ``sudo rm /etc/nginx/conf.d/default`` (RHEL 8).
 
-  ``sudo rm /etc/nginx/sites-enabled/default``
-
-   On RHEL 7+: ``sudo rm /etc/nginx/conf.d/default``
-
-4. Enable the Mattermost configuration.
-
-  ``sudo ln -s /etc/nginx/sites-available/mattermost /etc/nginx/sites-enabled/mattermost``
-
-   On RHEL 7+: ``sudo ln -s /etc/nginx/conf.d/mattermost /etc/nginx/conf.d/default.conf``
+4. Enable the Mattermost configuration by running ``sudo ln -s /etc/nginx/sites-available/mattermost /etc/nginx/sites-enabled/mattermost`` (Ubuntu) or ``sudo ln -s /etc/nginx/conf.d/mattermost /etc/nginx/conf.d/default.conf`` (RHEL 8).
    
 5. Run ``sudo nginx -t`` to ensure your configuration is done properly. If you get an error, look into the NGINX config and make the needed changes to the file under ``/etc/nginx/sites-available/mattermost``.
 
-6. Restart NGINX.
+6. Restart NGINX by running ``sudo systemctl start nginx``.
 
-  On Ubuntu 18.04+, RHEL 7+:
-
-  ``sudo systemctl start nginx``
-
-7. Verify that you can see Mattermost through the proxy.
-
-  ``curl http://localhost``
+7. Verify that you can see Mattermost through the proxy by running ``curl http://localhost``.
 
   If everything is working, you will see the HTML for the Mattermost signup page. You will see invalid certificate when accessing through the IP or localhost. Use the full FQDN domain to verify if the SSL certificate has pinned properly and is valid.
 
-8. Install and update Snap.
+8. Install and update Snap by running ``sudo snap install core; sudo snap refresh core``.
 
-  ``sudo snap install core; sudo snap refresh core``
+9. Install the Certbot package by running ``sudo snap install --classic certbot``.
 
-9. Install the Certbot package.
+10. Add a symbolic link to ensure Certbot can run by running ``sudo ln -s /snap/bin/certbot /usr/bin/certbot``.
 
-  ``sudo snap install --classic certbot``
-
-10. Add a symbolic link to ensure Certbot can run.
-
-  ``sudo ln -s /snap/bin/certbot /usr/bin/certbot``
-
-11. Run the Let's Encrypt installer dry-run to ensure your DNS is configured properly.
-
-  ``sudo certbot certonly --dry-run``
+11. Run the Let's Encrypt installer dry-run to ensure your DNS is configured properly by running ``sudo certbot certonly --dry-run``.
 
   This will prompt you to enter your email, accept the TOS, share your email, and select the domain you're activating certbot for. This will validate that your DNS points to this server properly and you are able to successfully generate a certificate. If this finishes successfully, proceed to step 12.
   
-12. Run the Let's Encrypt installer.
-
-  ``sudo certbot``
-
-  This will run certbot and will automatically edit your NGINX config file for the site(s) selected.
+12. Run the Let's Encrypt installer by running ``sudo certbot``. This will run certbot and will automatically edit your NGINX config file for the site(s) selected.
   
-13. Ensure your SSL is configured properly by running:
-
-   ``curl https://{your domain here}``
+13. Ensure your SSL is configured properly by running ``curl https://{your domain here}``
 
 14. Finally, we suggest editing your config file again to increase your SSL security settings above the default Let's Encrypt. This is the same file from Step 2 above. Edit it to look like the below:
 
-.. code-block:: none
+  .. code-block:: none
 
    upstream backend {
        server {ip}:8065;
@@ -235,12 +207,12 @@ See the `Let's Encrypt/Certbot documentation <https://certbot.eff.org>`_ for add
 
    }
 
-1.  Check that your SSL certificate is set up correctly.
+15.  Check that your SSL certificate is set up correctly.
 
   * Test the SSL certificate by visiting a site such as https://www.ssllabs.com/ssltest/index.html.
   * If there’s an error about the missing chain or certificate path, there is likely an intermediate certificate missing that needs to be included.
 
-NGINX Configuration FAQ
+NGINX configuration FAQ
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 Why are Websocket connections returning a 403 error?
@@ -267,7 +239,7 @@ Then in ``config.json`` set the ``AllowCorsFrom`` setting to match the domain be
   "AllowCorsFrom": "domain.com domain.com:443 im.domain.com",
   "SessionLengthWebInDays": 30,
 
-For other troubleshooting tips for WebSocket errors, see `potential solutions here <https://docs.mattermost.com/install/troubleshooting.html#please-check-connection-mattermost-unreachable-if-issue-persists-ask-administrator-to-check-websocket-port>`__.
+For other troubleshooting tips for WebSocket errors, see `potential solutions here </install/troubleshooting.html#please-check-connection-mattermost-unreachable-if-issue-persists-ask-administrator-to-check-websocket-port>`__.
 
 How do I setup an NGINX proxy with the Mattermost Docker installation?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -276,16 +248,16 @@ How do I setup an NGINX proxy with the Mattermost Docker installation?
 
 .. code-block:: none
 
-    docker network ls
-    # Grep the name of your Mattermost network like "mymattermost_default".
-    docker network connect mymattermost_default nginx-proxy
+  docker network ls
+  # Grep the name of your Mattermost network like "mymattermost_default".
+  docker network connect mymattermost_default nginx-proxy
 
 2. Restart the Mattermost Docker containers.
 
 .. code-block:: none
 
-    docker-compose stop app
-    docker-compose start app
+  docker-compose stop app
+  docker-compose start app
 
 .. tip::
 
@@ -295,15 +267,15 @@ How do I setup an NGINX proxy with the Mattermost Docker installation?
 
 .. code-block:: none
 
-    environment:
-      # set same as db credentials and dbname
-      - MM_USERNAME=mmuser
-      - MM_PASSWORD=mmuser-password
-      - MM_DBNAME=mattermost
-      - VIRTUAL_HOST=mymattermost.tld
-    expose:
-      - "80"
-      - "443"
+  environment:
+    # set same as db credentials and dbname
+    - MM_USERNAME=mmuser
+    - MM_PASSWORD=mmuser-password
+    - MM_DBNAME=mattermost
+    - VIRTUAL_HOST=mymattermost.tld
+  expose:
+    - "80"
+    - "443"
 
 Why does NGINX fail when installing Gitlab CE with Mattermost on Azure?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -322,22 +294,22 @@ Why does Certbot fail the http-01 challenge?
 
 .. code-block:: none
 
-      Requesting a certificate for yourdomain.com
-      Performing the following challenges:
-      http-01 challenge for yourdomain.com
-      Waiting for verification...
-      Challenge failed for domain yourdomain.com
-      http-01 challenge for yourdomain.com
-      Cleaning up challenges
-      Some challenges have failed.
+  Requesting a certificate for yourdomain.com
+  Performing the following challenges:
+  http-01 challenge for yourdomain.com
+  Waiting for verification...
+  Challenge failed for domain yourdomain.com
+  http-01 challenge for yourdomain.com
+  Cleaning up challenges
+  Some challenges have failed.
    
-If you see the above errors this is typically because certbot was not able to access port 80. This can be due to a firewall or other DNS configuration. Ensure that your A/AAAA records are pointing to this server and your ``server_name`` within the NGINX config does not have a redirect.
+If you see the above errors this is typically because Certbot wasn't able to access port 80. This can be due to a firewall or other DNS configuration. Make sure that your A/AAAA records are pointing to this server and your ``server_name`` within the NGINX config doesn't have a redirect.
 
 .. note::
    If you're using Cloudflare you'll need to disable ``force traffic to https``.
 
 Certbot rate limiting
-^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^
 
 If you're running certbot as stand-alone you'll see this error:
 
@@ -357,6 +329,6 @@ If you're running Let's Encrypt within Mattermost you'll see this error:
 
 .. code-block:: none
 
-      {"level":"error","ts":1609092001.752515,"caller":"http/server.go:3088","msg":"http: TLS handshake error from ip:port: 429 urn:ietf:params:acme:error:rateLimited: Error creating new order :: too many failed authorizations recently: see https://letsencrypt.org/docs/rate-limits/","source":"httpserver"}
+    {"level":"error","ts":1609092001.752515,"caller":"http/server.go:3088","msg":"http: TLS handshake error from ip:port: 429 urn:ietf:params:acme:error:rateLimited: Error creating new order :: too many failed authorizations recently: see https://letsencrypt.org/docs/rate-limits/","source":"httpserver"}
 
 This means that you've attempted to generate a cert too many times. You can find more information `here <https://letsencrypt.org/docs/rate-limits>`_.

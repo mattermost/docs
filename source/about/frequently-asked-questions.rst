@@ -10,7 +10,7 @@ Frequently asked questions (FAQ)
     Notifications <faq-notifications>
     Video, audio, and screen sharing <faq-video-audio-screensharing>
     Enterprise questions <faq-enterprise>
-    Mattermost source available license <faq-mattermost-source-available-license>
+    License questions <faq-license>
     Integrations <faq-integrations>
     Use cases <faq-use-cases>
     Product questions <faq-product>
@@ -26,7 +26,7 @@ The following pages will answer many of your frequently asked questions about Ma
 * :doc:`Notifications <faq-notifications>` - What determines whether notifications are triggered?
 * :doc:`Video, audio, and screen sharing <faq-video-audio-screensharing>` - What's available for video and audio calling and screen sharing?
 * :doc:`Enterprise questions <faq-enterprise>` - Learn about Mattermost Enterprise Edition.
-* :doc:`Mattermost Source Available License <faq-mattermost-source-available-license>` - Learn more about the Mattermost Source Available License.
+* :doc:`License questions <faq-license>` - Learn more about Mattermost licenses.
 * :doc:`Integrations <faq-integrations>` - Can messaging functionality be added to a propietary SaaS service? 
 * :doc:`Use cases <faq-use-cases>` - Learn how Mattermost supports various use cases.
 * :doc:`Product questions <faq-product>` - Which features are available on different Mattermost clients?

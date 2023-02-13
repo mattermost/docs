@@ -1,22 +1,8 @@
 Customizing Mattermost
 ======================
 
-|all-plans| |cloud| |self-hosted|
-
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/sign-up
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 There are several ways to customize your Mattermost server. 
 
@@ -34,9 +20,10 @@ The Mattermost webapp is licensed under the Apache 2.0 license. To modify and us
 3. Make your changes 
 4. Run ``make package`` to create ``mattermost-webapp.tar.gz``
 5. Copy ``mattermost-webapp-tar.gz`` to the location Mattermost was installed in Step 1
-6. Remove the existing ``client`` folder
+6. Rename the existing ``client`` folder to ``client-original``
 7. Run ``tar -xvf mattermost-webapp.tar.gz`` to extract your new customized ``client`` folder
-8. Restart your Mattermost server
+8. If you're installing Mattermost 7.5 or newer, copy the ``products`` folder from ``client-original`` into ``client``
+9. Restart your Mattermost server
 
 It is possible to customize certain parts of the webapp without forking by using our :doc:`Custom Branding <../configure/custom-branding-tools>` settings. 
 
@@ -48,7 +35,7 @@ Mattermost Server
 There are a few things you can customize in the Mattermost server without forking:
 
 1. Modify text in the Mattermost interface by modifying the ``en.json`` file.
-2. Customize or hide help and support links by modifying your `configuration settings <https://docs.mattermost.com/configure/configuration-settings.html#customization>`__.
+2. Customize or hide help and support links by modifying your `configuration settings </configure/configuration-settings.html#customization>`__.
 3. Customize the email notifications by editing the HTML files in ``/templates``.
 
 Mattermost mobile apps

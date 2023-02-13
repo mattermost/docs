@@ -757,7 +757,7 @@ header .header__searchbar {
 	display: none;
 	float: left;
 	padding: 0 5px 0 0;
-} 
+}
 
 @media (max-width: 768px){
 	.wy-nav-side {
@@ -1839,7 +1839,7 @@ pre {
 @media (max-width: 767px) {
     .mm-button-outline--thin.mm-button-outline--thin-blue:hover,
     .mm-button-outline--thin.mm-button-outline--thin-blue:focus {
-        color: #043cb5 !important; 
+        color: #043cb5 !important;
     }
 }
 @media (min-width: 768px) {
@@ -1864,4 +1864,83 @@ kbd {
     margin: 0 0.2em;
     box-shadow: 0 1px 0px rgba(0, 0, 0, 0.2), 0 0 0 2px #fff inset;
     background-color: #f7f7f7;
+}
+
+/* 2022 Badges */
+.mm-badge {
+    display: inline-block;
+    border: 1px solid rgba(63, 67, 80, 0.2);
+    border-radius: 6px;
+    padding: 14px;
+    margin-bottom: 30px;
+}
+
+.mm-badge p {
+    font-size: 12px;
+    margin: 0;
+}
+/* Version */
+.mm-badge p:first-child {
+    font-style: italic;
+    margin-bottom: 5px;
+}
+
+.mm-badge p:last-child {
+    margin-top: 2px;
+}
+
+.mm-badge a {
+    font-weight: bold;
+}
+
+.mm-badge img {
+    width: 16px;
+    height: auto;
+}
+
+.mm-badge.mm-badge--note {
+    border: 1px solid rgba(255, 188, 31, 1);
+    background-color:rgba(255, 212, 112, 0.25);
+}
+
+.mm-badge.mm-badge--note p:first-child {
+    font-style: normal;
+    font-weight: bold;
+}
+
+img.mm-badge-flag {
+    width: 13px;
+    margin-right: 3px;
+}
+
+.config-setting-result-item {
+	display: flex;
+	flex-direction: column;
+	border-bottom: 1px solid #e1e4e5;
+	padding-bottom: 12px;
+	padding-top: 12px;
+}
+
+.config-setting-result-item:first-child {
+	border-top: 1px solid #e1e4e5;
+}
+
+.config-setting-result-item:last-child {
+	border-top: 1px solid #e1e4e5;
+	margin-bottom: 12px;
+}
+
+.config-setting-result-item_link {
+	font-size: 120%;
+	padding-bottom: 12px;
+}
+
+/* Config setting description highlighting for search results */
+mark {
+	background: #F1C40F;
+	color: grey;
+	font-size: 90%;
+	font-weight: 700;
+	box-shadow: 0 0 0 2px #F1C40F;
+	font-style: unset;
 }

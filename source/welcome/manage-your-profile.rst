@@ -1,125 +1,162 @@
 Manage your Mattermost profile
 ==============================
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
+You can configure your `profile <#profile>`__ and `security <#security>`__ preferences by selecting **Profile** from your profile picture. 
 
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/sign-up
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
-
-You can configure your profile and security preferences by selecting **Profile** from your avatar in the global header.
-
-.. tabs::
-
-  .. tab:: Mattermost v6.0 onwards
-
-      In Mattermost v6.0, **Account Settings** have moved.
-
-      - Access **Profile** and **Security** settings from your Avatar in the Global Header.
-      - Access **Notifications**, **Display**, **Sidebar**, and **Advanced Settings** by selecting the Gear |gear-icon| icon in the Global Header.
-
-      .. |gear-icon| image:: ../images/settings-outline_F08BB.svg
-        :alt: Select the Gear icon to open the Settings dialog.
-
-  .. tab:: Mattermost v5.39 and earlier
-
-      In Mattermost versions up to v5.39, access all of your profile and security settings in **Account Settings** from the **Main Menu** by selecting the three horizontal lines (also known as a hambuger menu) at the top of the channel sidebar.
+.. tip::
+  
+  How you access your profile settings depends on the version of Mattermost you're using. See the `what's changed in Mattermost v6.0 </welcome/what-changed-in-v60.html#account-settings>`__ documentation for details. 
 
 Profile
 -------
 
-Settings to configure name, username, nickname, email, and profile picture.
+See the following table to learn how to configure your name, username, nickname, email, and profile picture.
 
-Full name
-~~~~~~~~~
-
-Full names appear in the Direct Messages member list and team management modal. By default, you will receive mention notifications when someone types your first name. Entering a full name is optional. 
-
-Username
-~~~~~~~~
-
-Usernames are unique identifiers appearing next to all posts. Pick something easy for teammates to recognize and recall. By default, you will receive mention notifications when someone types your username. In order to maintain message integrity, changing your username does not update @mentions in messages already posted. Username must begin with a letter, and contain between 3 to 22 lowercase characters made up of numbers, letters, and the symbols '.', '-', and '_'. 
-
-Nickname
-~~~~~~~~
-
-Nicknames appear in the Direct Messages member list and team management modal. You will not receive mention notifications when someone types your nickname unless you add it to the *Words That Trigger Mentions* notifications list in **Notifications**.
-
-Position
-~~~~~~~~~
-
-Position can be used to describe your role or job title. It appears in the profile popup that shows up when you select a user's name in the center channel or right-hand sidebar.
-
-Email
-~~~~~
-
-Email is used for signing in, notifications, and password reset. Email requires verification if changed. If you are signing in using a single sign-on service, the email field is not editable and you will receive email notifications to the email you used to sign up to your SSO service.
-
-Profile picture
-~~~~~~~~~~~~~~~
-
-Profile pictures appear next to all posts and at the top of the channel sidebar next to your name. To change your profile picture, choose **Select**, then choose an image. For best results, choose an image that's at least 128 x 128 pixels in size. Supported image formats include: BMP, JPG, JPEG, and PNG. The GIF file format is not supported.
++---------------------+-------------------------------------------------------------------------------------------------+
+| **Profile setting** | **Description**                                                                                 |
++=====================+=================================================================================================+
+| Full, first, and    | Your name appears in the direct messages member list and team management modal.                 |
+| last name           | By default, you'll receive mention notifications when someone types your first name             |
+|                     | in a message.                                                                                   |
+|                     |                                                                                                 |
+|                     | **Note**: If your name is configured through a login provider, you'll need to manage name       |
+|                     | changes through the login provider.                                                             |
++---------------------+-------------------------------------------------------------------------------------------------+
+| Username            | Usernames are unique identifiers appearing next to all posts.                                   |
+|                     | Usernames must begin with a letter, and contain between 3 to 22                                 |
+|                     | lowercase characters made up of numbers, letters, and the                                       |
+|                     | symbols '.', '-', and '_'.                                                                      |
+|                     |                                                                                                 |
+|                     | Pick something easy for teammates to recognize and recall.                                      |
+|                     | By default, you will receive mention notifications when someone                                 |
+|                     | types your username.                                                                            |
+|                     |                                                                                                 |
+|                     | **Notes**:                                                                                      |
+|                     |                                                                                                 |
+|                     | - To maintain message integrity, changing your username doesn't update @mentions                |
+|                     |   in posted messages.                                                                           |
+|                     | - If your username is configured through a login provider, you'll need to manage                |
+|                     |   username changes through the login provider.                                                  |
++---------------------+-------------------------------------------------------------------------------------------------+
+| Nickname            | (Optional) Nicknames appear in the direct messages member list and team management modal.       |
+|                     | You won't receive mention notifications when someone types your nickname unless you add         |
+|                     | it to the **Words That Trigger Mentions** notifications list as a `Notifications                |
+|                     | </channels/channels-settings.html#notifications>`__ preference.                                 |
++---------------------+-------------------------------------------------------------------------------------------------+
+| Position            | (Optional) Position can be used to describe your role or job title.                             |
+|                     | Your position appears in the profile popup that displays when you select                        |
+|                     | a user's name in the center channel or right-hand sidebar.                                      |
+|                     |                                                                                                 |
+|                     | **Note**: If your position is configured through a login provider, you'll need to manage        |
+|                     | position changes through the login provider.                                                    |
++---------------------+-------------------------------------------------------------------------------------------------+
+| Email               | Email is used for signing in, notifications, and password reset.                                |
+|                     |                                                                                                 |
+|                     | **Note**: If your email is configured through an SSO service, you can't edit your               |
+|                     | email address, and you'll receive email notifications to the email you used to                  |
+|                     | sign up to your SSO service.                                                                    |
++---------------------+-------------------------------------------------------------------------------------------------+
+| Profile picture     | Profile pictures appear next to all posts, and you can select your                              |
+|                     | profile picture to access your profile settings. To change your profile picture:                |
+|                     |                                                                                                 |
+|                     | **Using the web or the desktop app**                                                            |
+|                     |                                                                                                 |
+|                     | 1. Select **Edit** next to the **Profile Picture** option.                                      |
+|                     | 2. Choose **Select**, pick the profile image you want to use, and select **Save**.              |
+|                     |                                                                                                 |
+|                     | **Using the mobile app**                                                                        |
+|                     |                                                                                                 |
+|                     | 1. Tap your current profile picture.                                                            |
+|                     | 2. Take a photo using your device, or select an image to use.                                   |
+|                     |                                                                                                 |
+|                     | **Tip**: For best results, choose an image that's at least 128 x 128 pixels in size.            |
+|                     | Supported image formats include: BMP, JPG, JPEG, and PNG. The GIF file format is not supported. |
++---------------------+-------------------------------------------------------------------------------------------------+
 
 Security
 --------
 
-Settings to configure your password, view access history, and view or logout of active sessions.
+See the following table to learn how to configure your password, view access history, and view or logout of active sessions.
 
-Password
-~~~~~~~~
-
-You may change your password if you've logged in by email. If you are signing in using a single sign-on service, the password field is not editable, and you must access your SSO service's account settings to update your password.
-
-Multi-factor authentication
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-When your System Admin enables `multi-factor authentication <https://docs.mattermost.com/configure/configuration-settings.html#enable-multi-factor-authentication>`__ in Mattermost, you can choose to set up your Mattermost account to require a phone-based passcode generated by Google Authenticator, in addition to your password, when signing in.
-
-Download Google Authenticator from `iTunes <https://itunes.apple.com/us/app/google-authenticator/id388497605?mt=8>`__ or `Google Play <https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2&hl=en>`__ for your device, then:
-
-1. In Mattermost, select your avatar, then select **Profile > Security**.
-2. Under **Multi-factor Authentication**, select **Edit**.
-
-.. image:: ../images/multi-factor-authentication.png
-  :alt: Enable multi-factor authentication through your Mattermost user profile.
-
-3. Select **Add MFA to Account**.
-
-.. image:: ../images/add-mfa-to-account.png
-  :alt: Add multi-factor authentication to your Mattermost user profile.
-
-4. On your device, use the Google Authenticator app to scan the QR code that displays in Mattermost.
-5. Enter the **MFA Code** generated by the authentication app, then select **Save**.
-
-Once you've set up multi-factor authentication for your Mattermost account, when you log in to Mattermost you'll be asked to enter a code generated by Google Authenticator as well as your password.
-
-.. tip::
-  If scanning the QR code using your device doesn't work, you can manually enter the **Secret** provided on the Mattermost screen into the Google Authenticator app as a **Manual Entry** instead.
-
-Login method
-~~~~~~~~~~~~~~
-
-This option allows you to switch your login method from email/password to a single sign-on option, and back again.
-
-For example, if AD/LDAP single sign-on is enabled, users can select a **Switch to using AD/LDAP** button and enter their AD/LDAP credentials to switch login over to AD/LDAP. They also need to enter the password for their email account to verify their existing credentials. Following the change, users receive an email to confirm the action.
-
-View access history
-~~~~~~~~~~~~~~~~~~~
-
-Access history displays a chronological list of the last 20 login and logout attempts, channel creations and deletions, account settings changes, or channel setting modifications made on your account. The details of the Session ID (unique identifier for each Mattermost browser session) and IP Address of the action is recorded for audit log purposes.
-
-View and logout of active sessions
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Sessions are created when you log in with your email and password to a new browser on a device. Sessions let you use Mattermost for up to 30 days without having to log in again. Select **Logout** on an active session if you want to revoke automatic login privileges for a specific browser or device. Select **More Info** to view details on browser and operating system.
++----------------------+--------------------------------------------------------------------------------------------------------+
+| **Security setting** | **Description**                                                                                        |
++======================+========================================================================================================+
+| Password             | You may change your password if you've logged in by email using Mattermost in                          |
+|                      | a web browser or using the desktop app.                                                                |
+|                      |                                                                                                        |
+|                      | **Note**: If you sign in to Mattermost using a single sign-on                                          |
+|                      | service, you must update your password through your SSO                                                |
+|                      | service account.                                                                                       |
++----------------------+--------------------------------------------------------------------------------------------------------+
+| Multi-factor         | If your system admin has enabled `multi-factor authentication                                          |
+| authentication (MFA) | </configure/configuration-settings.html#enable-multi-factor-authentication>`__                         |
+|                      | (MFA), you can choose to set up your Mattermost account to require a generated                         |
+|                      | passcode in addition to your password when you log in to Mattermost.                                   |
+|                      |                                                                                                        |
+|                      | You'll need to download a passcode generation app, and then enable MFA                                 |
+|                      | for your Mattermost account.                                                                           |
+|                      |                                                                                                        |
+|                      | **Download a passcode generation app**                                                                 |
+|                      |                                                                                                        |
+|                      | - Download Google Authenticator for an Apple device from                                               |
+|                      | `iTunes <https://itunes.apple.com/us/app/google-authenticator/id388497605?mt=8>`__                     |
+|                      | - Download Google Authenticator for an Android device from                                             |
+|                      | `Google Play <https://play.google.com/store/apps/details?id=com.google.                                |
+|                      | android.apps.authenticator2&hl=en>`__                                                                  |
+|                      |                                                                                                        |
+|                      | **Enable MFA in Mattermost**                                                                           |
+|                      |                                                                                                        |
+|                      | 1. Open Mattermost in a web browser or the desktop app.                                                |
+|                      | 2. In Mattermost, from your profile picture, select **Profile > Security**.                            |
+|                      | 3. Under **Multi-factor Authentication**, select **Edit**.                                             |
+|                      |                                                                                                        |
+|                      | .. image:: ../images/multi-factor-authentication.png                                                   |
+|                      |   :alt: Enable multi-factor authentication through your Mattermost user profile.                       |
+|                      |                                                                                                        |
+|                      | 4. Select **Add MFA to Account**.                                                                      |
+|                      |                                                                                                        |
+|                      | .. image:: ../images/add-mfa-to-account.png                                                            |
+|                      |   :alt: Add multi-factor authentication to your Mattermost user profile.                               |
+|                      |                                                                                                        |
+|                      | 5. On your device, use the Google Authenticator app to scan the QR code that displays in Mattermost.   |
+|                      | 6. Enter the **MFA Code** generated by Google Authenticator in Mattermost where prompted.              |
+|                      | 7. Select **Save**.                                                                                    |
+|                      |                                                                                                        |
+|                      | Once you've set up multi-factor authentication for your Mattermost account,                            |
+|                      | when you log in to Mattermost you'll be asked to enter a code generated by Google Authenticator        |
+|                      | as well as your password.                                                                              |
+|                      |                                                                                                        |
+|                      | **Tip**: If scanning the QR code using your device doesn't work, you can manually enter the **Secret** |
+|                      | provided on the Mattermost screen into the Google Authenticator app as a **Manual Entry** instead.     |
++----------------------+--------------------------------------------------------------------------------------------------------+
+| Sign-in method       | This option allows you to switch your `login method </welcome/log-in.html>`__ from                     |
+|                      | `email/username and password </welcome/log-in.html#email-address-or-username>`__                       |
+|                      | to a `single sign-on option </welcome/log-in.html#single-sign-on-sso>`__, and back again.              |
+|                      |                                                                                                        |
+|                      | You can configure this setting using Mattermost in a browser or using the desktop app.                 |
+|                      |                                                                                                        |
+|                      | **Note**: While you can choose to log in with either set of credentials, you can only enable           |
+|                      | one login method at a time. For example, if AD/LDAP single sign-on is enabled, you can select          |
+|                      | **Switch to using AD/LDAP**, and enter your AD/LDAP credentials to switch login over to AD/LDAP.       |
+|                      | You'll need to enter the password for your email account to verify your existing credentials.          |
+|                      | Following the change, you'll receive an email to confirm the action.                                   |
++----------------------+--------------------------------------------------------------------------------------------------------+
+| View access history  | Using Mattermost in a browser or using the desktop app, you can access a chronological list            |
+|                      | of the last 20 login and logout attempts, channel creations and deletions, account settings changes,   |
+|                      | or channel setting modifications made with your account.                                               |
+|                      |                                                                                                        |
+|                      | The details of the Session ID, which is a unique identifier for each Mattermost browser session,       |
+|                      | and IP Address of the action is recorded for audit log purposes.                                       |
++----------------------+--------------------------------------------------------------------------------------------------------+
+| View and log out     | Sessions are created when you log in with your credentials a new browser on a device.                  |
+| of active sessions   | Sessions let you use Mattermost for up to 30 days without having to log in again.                      |
+|                      |                                                                                                        |
+|                      | Using Mattermost in a browser or using the desktop app:                                                |
+|                      |                                                                                                        |
+|                      | - Select **Logout** during an active session if you want to revoke automatic login privileges          |
+|                      |   for a specific browser or device.                                                                    |
+|                      | - Select **More Info** to view browser and system details.                                             |
++----------------------+--------------------------------------------------------------------------------------------------------+

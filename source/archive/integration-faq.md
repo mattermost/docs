@@ -51,7 +51,7 @@ See [bot accounts documentation](https://developers.mattermost.com/integrate/adm
 In version 5.11 and earlier, follow these steps to create a bot account with personal access tokens:
 
 1. Create a bot account using any authentication method, including email and password, AD/LDAP, or SAML.
-2. Create a personal access token for the account [using the steps here](https://docs.mattermost.com/developer/personal-access-tokens.html#creating-a-personal-access-token).
+2. Create a personal access token for the account [using the steps here](/developer/personal-access-tokens.html#creating-a-personal-access-token).
    - The steps also outline how to give the account permissions to post to any channel in your Mattermost server, including direct messages, or to any public channel.
 3. Include the personal access token from step 2 as part of the `Authorization` header on API requests from your integration.
    - To confirm the token works, you can have your bot make a simple `GET` request to `/api/v4/users/me` with the `Authorization: bearer <yourtokenhere>` in the header. If it returns a `200` with the bot's user object in the response, the API request was made successfully.
@@ -62,7 +62,7 @@ In version 5.11 and earlier, follow these steps to create a bot account with per
      ```
 ## How do I create a bot account without personal access tokens or webhooks?
 
-Deployments that cannot create bot accounts via webhooks due to security reasons and do not want to use [personal access tokens](https://docs.mattermost.com/developer/personal-access-tokens.html) with no expiry time, can use the following approach:
+Deployments that cannot create bot accounts via webhooks due to security reasons and do not want to use [personal access tokens](/developer/personal-access-tokens.html) with no expiry time, can use the following approach:
 
 1. Create a bot account using a secure email and strong password.
 2. Manually add the account to all teams and channels it needs access to. If your deployment has a lot of teams or channels, you may create a CLI script to automate the process.
@@ -116,9 +116,9 @@ Deployments that cannot create bot accounts via webhooks due to security reasons
 
 Automating Mattermost installation within another application:
 
-1. Review the [Mattermost installation guides](https://docs.mattermost.com/guides/administrator.html#installing-mattermost) to understand configuration steps of the production deployment.
+1. Review the [Mattermost installation guides](/guides/administrator.html#installing-mattermost) to understand configuration steps of the production deployment.
 2. Install Mattermost files to a dedicated `/opt/mattermost` directory by decompressing the `tar.gz` file of the latest release for your target platform (for example `linux-amd64`).
-3. Review [Configuration Settings](https://docs.mattermost.com/configure/configuration-settings.html) in `config.json` and set your automation to customize your Mattermost deployment based on your requirements.
+3. Review [Configuration Settings](/configure/configuration-settings.html) in `config.json` and set your automation to customize your Mattermost deployment based on your requirements.
 4. For directory locations defined in `config.json`, such as the location of the local file storage directory (`./data/`) or logs directory (`./logs`), you can redefine those locations in your `config.json` settings and move the directories.
    - All other directories should remain as they are in `/mattermost`.
 5. Test that your Mattermost server is running with your new configuration.
@@ -126,7 +126,7 @@ Automating Mattermost installation within another application:
 
 Automating Mattermost upgrade within another application:
 
-1. Review the [upgrade guide](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) for an overview of the upgrade procedure.
+1. Review the [upgrade guide](/upgrade/upgrading-mattermost-server.html) for an overview of the upgrade procedure.
 2. Create automation to upgrade to the next Mattermost versions:
     - Back up the `config.json` file to preserve any settings a user may have made.
     - Back up the `./data` directory if local storage is used for files.

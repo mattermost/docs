@@ -1,17 +1,8 @@
 Light install guide
 ===================
 
-|all-plans| |self-hosted|
-
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 Mattermost is a collaboration platform. With Mattermost, you can integrate the tools you use every day into one place and never miss a notification or task. 
 
@@ -24,7 +15,7 @@ Before you get started you'll need:
 Installation
 -------------
 
-Install Mattermost using `Mattermost Omnibus <https://docs.mattermost.com/install/installing-mattermost-omnibus.html>`_.
+Install Mattermost using `Mattermost Omnibus </install/installing-mattermost-omnibus.html>`_.
 
 Open a terminal window and enter:
 
@@ -48,7 +39,7 @@ Then, to install the Omnibus package, run:
 
 When your server is up and running, navigate to it via the domain name (e.g. ``mymattermostserver.com``) that points to your server (or the server’s IP address if you’re not using a domain name). Next, create a team and invite people to join your Mattermost server.
 
-If you have any problems installing Mattermost Omnibus, see the `troubleshooting guide <https://docs.mattermost.com/install/troubleshooting.html>`__ for common error messages, or `join the Mattermost user community for troubleshooting help <https://mattermost.com/pl/default-ask-mattermost-community/>`_.
+If you have any problems installing Mattermost Omnibus, see the `troubleshooting guide </install/troubleshooting.html>`__ for common error messages, or `join the Mattermost user community for troubleshooting help <https://mattermost.com/pl/default-ask-mattermost-community/>`_.
 
 Add users
 ---------
@@ -59,7 +50,7 @@ Next, add people to your team by sending them an invitation:
 2. Select **Invite People** and enter the email addresses of the people you want to add.
 3. Select **Invite Members**.
 
-When the invitee receives the email with the link, it’s a single click to join your server, chat to you in the channel you’ve created, or create their own channels. More information about adding users is available `here <https://docs.mattermost.com/messaging/managing-members.html#managing-members>`_.
+When the invitee receives the email with the link, it’s a single click to join your server, chat to you in the channel you’ve created, or create their own channels. More information about adding users is available `here </messaging/managing-members.html#managing-members>`_.
 
 Create a notifications hub
 --------------------------
@@ -74,4 +65,4 @@ Get started with GitHub, Jira, and Jenkins:
 * Connect your Jira account to Mattermost and set up a channel for the bot to post issues so your team is always up to date. Visit the `configuration guide <https://mattermost.gitbook.io/plugin-jira/setting-up/configuration>`_ to get started. Once configured, share the `end user documentation <https://mattermost.gitbook.io/plugin-jira/end-user-guide/getting-started>`_ with your team so they can start receiving notifications.
 * Connect your Jenkins server to Mattermost to centralize your workflows and manage builds. Visit the `installation guide <https://github.com/mattermost/mattermost-plugin-jenkins#installation>`_ to get started. Share the `features list <https://github.com/mattermost/mattermost-plugin-jenkins#features>`_ with your team so they can ramp up quickly.
 
-**Next:** `Learn more about organizing conversations <https://docs.mattermost.com/messaging/organizing-conversations.html>`_ and setting up `Mattermost on your mobile device <https://docs.mattermost.com/deploy/mobile-overview.html>`_.
+**Next:** `Learn more about organizing conversations </messaging/organizing-conversations.html>`_ and setting up `Mattermost on your mobile device </deploy/mobile-overview.html>`_.

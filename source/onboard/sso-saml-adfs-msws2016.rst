@@ -47,11 +47,11 @@ If you would like to set up encryption for your SAML connection, select **Browse
 
 	.. image:: ../../source/images/SSO-SAML-ADFS_add-new-relying-party-trust_005.png
 
-6. On the **Configure URL** screen, select **Enable Support for the SAML 2.0 WebSSO protocol**, then enter the **SAML 2.0 SSO service URL** in the following format:``https://<your-mattermost-url>/login/sso/saml`` where ``<your-mattermost-url>`` should typically match the `Mattermost Site URL <https://docs.mattermost.com/configure/configuration-settings.html#site-url>`__.
+6. On the **Configure URL** screen, select **Enable Support for the SAML 2.0 WebSSO protocol**, then enter the **SAML 2.0 SSO service URL** in the following format:``https://<your-mattermost-url>/login/sso/saml`` where ``<your-mattermost-url>`` should typically match the `Mattermost Site URL </configure/configuration-settings.html#site-url>`__.
 
 	.. image:: ../../source/images/SSO-SAML-ADFS_add-new-relying-party-trust_006.png
 
-7. On the **Configure Identifiers** screen, enter the **Relying party trust identifier**. This identifies the claims being requested. The **SAML 2.0 SSO service URL** format should be ``https://<your-mattermost-url>/login/sso/saml`` where ``<your-mattermost-url>`` matches your `Mattermost Site URL <https://docs.mattermost.com/configure/configuration-settings.html#site-url>`_. Then choose **Next**. 
+7. On the **Configure Identifiers** screen, enter the **Relying party trust identifier**. This identifies the claims being requested. The **SAML 2.0 SSO service URL** format should be ``https://<your-mattermost-url>/login/sso/saml`` where ``<your-mattermost-url>`` matches your `Mattermost Site URL </configure/configuration-settings.html#site-url>`_. Then choose **Next**. 
 
 	.. image:: ../../source/images/SSO-SAML-ADFS_add-new-relying-party-trust_007.png
 
@@ -204,7 +204,7 @@ For Mattermost servers running 3.3 and earlier, the first name and last name att
 
 6. (Optional) If you configured ``First Name`` Attribute and the ``Last Name`` Attribute, go to **System Console > Site Configuration > Users and Teams**, then set **Teammate Name Display** to **Show first and last name**. This is recommended for a better user experience.
 
-You’re done! If you’d like to confirm SAML SSO is successfully enabled, switch your System Administrator account from email to SAML-based authentication from your avatar via **Profile > Security > Sign-in Method > Switch to SAML SSO**, then log in with your SAML credentials to complete the switch.
+You’re done! If you’d like to confirm SAML SSO is successfully enabled, switch your System Administrator account from email to SAML-based authentication from your profile picture via **Profile > Security > Sign-in Method > Switch to SAML SSO**, then log in with your SAML credentials to complete the switch.
 
 We also recommend that you post an announcement about how the migration will work to your users.
 

@@ -7,9 +7,9 @@ Slash commands
 
   This is the admin documentation for slash commands. If you're a developer looking to build an integration, see `our developer documentation <https://developers.mattermost.com/integrate/getting-started/>`__.
 
-Mattermost supports slash commands to easily integrate external applications into the workspace. They function similarly to `outgoing webhooks <https://docs.mattermost.com/integrations/cloud-outgoing-webhooks.html>`_, except they can be used in any channel - including Private channels and direct messages.
+Mattermost supports slash commands to easily integrate external applications into the workspace. They function similarly to `outgoing webhooks </integrations/cloud-outgoing-webhooks.html>`_, except they can be used in any channel - including Private channels and direct messages.
 
-Messages that begin with ``/`` are interpreted as slash commands. The commands will send an HTTP POST request to a web service, and process a response back to Mattermost. Mattermost supports both `built-in <https://docs.mattermost.com/integrations/cloud-slash-commands.html#built-in-commands>`__ and `custom slash commands <https://docs.mattermost.com/integrations/cloud-slash-commands.html#custom-slash-command>`__.
+Messages that begin with ``/`` are interpreted as slash commands. The commands will send an HTTP POST request to a web service, and process a response back to Mattermost. Mattermost supports both `built-in </integrations/cloud-slash-commands.html#built-in-commands>`__ and `custom slash commands </integrations/cloud-slash-commands.html#custom-slash-command>`__.
 
 .. note::
   
@@ -31,8 +31,8 @@ Each Mattermost installation comes with some built-in slash commands that are re
     "/online", "Set your status online", "/online"
     "/dnd", "Set your status to Do Not Disturb", "/dnd"
     "/code *{text}*", "Display text as a code block", "/code File bugs"
-    "/collapse", "Turn on auto-collapsing of image link previews, image attachments, as well as `in-line images <https://docs.mattermost.com/help/messaging/formatting-text.html#in-line-images>`__ over 100px in height", "/collapse"
-    "/expand", "Turn off auto-collapsing of image previews, image attachments, as well as `in-line images <https://docs.mattermost.com/help/messaging/formatting-text.html#in-line-images>`__ over 100px in height", "/expand"
+    "/collapse", "Turn on auto-collapsing of image link previews, image attachments, as well as `in-line images </help/messaging/formatting-text.html#in-line-images>`__ over 100px in height", "/collapse"
+    "/expand", "Turn off auto-collapsing of image previews, image attachments, as well as `in-line images </help/messaging/formatting-text.html#in-line-images>`__ over 100px in height", "/expand"
     "/echo *{message}* *{delay in seconds}*", "Echo back text from your account", "/echo Hello World 5"
     "/header *{text}*", "Edit the channel header", "/header File bugs here"
     "/invite *@{user}* *~{channel-name}*", "Invite user to the channel","/invite @john ~sampleChannel"
@@ -63,13 +63,13 @@ You can follow these general guidelines to set up a custom Mattermost slash comm
 
 1. Open **Main Menu > Integrations > Slash Commands**. If you don't have the **Integrations** option in your Main Menu, slash commands may not be enabled or may be disabled for non-admins. Enable them from **System Console > Integrations > Integration Management** or ask your Mattermost System Admin to do so.
 2. Select **Add Slash Command**, then add a name and description for the command.
-3. Set the **Command Trigger Word**. The trigger word must be unique and cannot begin with a slash or contain any spaces. It also cannot be one of the `built-in commands <https://docs.mattermost.com/cloud/cloud-integrations/cloud-slash-commands.html#built-in-commands>`__.
+3. Set the **Command Trigger Word**. The trigger word must be unique and cannot begin with a slash or contain any spaces. It also cannot be one of the `built-in commands </cloud/cloud-integrations/cloud-slash-commands.html#built-in-commands>`__.
 4. Set the **Request URL** and **Request Method**. The request URL is the endpoint that Mattermost hits to reach your application, and the request method is either POST or GET and specifies the type of request sent to the request URL.
 5. (Optional) Set the response username and icon the command will post messages as in Mattermost. If not set, the command will use your username and profile picture.
 
 .. note::
   
-    `Enable integrations to override usernames <https://docs.mattermost.com/configure/configuration-settings.html#enable-integrations-to-override-usernames>`__ must be set to ``true`` in ``config.json`` to override usernames, and `similarly for profile picture icons <https://docs.mattermost.com/configure/configuration-settings.html#enable-integrations-to-override-profile-picture-icons>`__. Enable them from **System Console > Integrations > Integration Management** or ask your Mattermost System Admin.
+    `Enable integrations to override usernames </configure/configuration-settings.html#enable-integrations-to-override-usernames>`__ must be set to ``true`` in ``config.json`` to override usernames, and `similarly for profile picture icons </configure/configuration-settings.html#enable-integrations-to-override-profile-picture-icons>`__. Enable them from **System Console > Integrations > Integration Management** or ask your Mattermost System Admin.
 
 6. (Optional) Include the slash command in the command autocomplete list, displayed when typing ``/`` in an empty input box. Use it to make your command easier to discover by your teammates. You can also provide a hint listing the arguments of your command and a short description displayed in the autocomplete list.
 7. Select **Save**. On the next page, copy the **Token** value. This will be used in a later step.
@@ -138,16 +138,16 @@ Messages with advanced formatting can be created by including an `attachment arr
 
 .. note::
   
-  `Enable integrations to override usernames <https://docs.mattermost.com/configure/configuration-settings.html#enable-integrations-to-override-usernames>`__ must be set to ``true`` in ``config.json`` to override usernames. Enable them from **System Console > Integrations > Integration Management** or ask your Mattermost System Admin. If not enabled, the username is set to ``webhook``.
+  `Enable integrations to override usernames </configure/configuration-settings.html#enable-integrations-to-override-usernames>`__ must be set to ``true`` in ``config.json`` to override usernames. Enable them from **System Console > Integrations > Integration Management** or ask your Mattermost System Admin. If not enabled, the username is set to ``webhook``.
   
-  Similarly, `Enable integrations to override profile picture icons <https://docs.mattermost.com/configure/configuration-settings.html#enable-integrations-to-override-profile-picture-icons>`__ must be set to ``true`` in ``config.json`` to override usernames. Enable them from **System Console > Integrations > Integration Management** or ask your Mattermost System Admin. If not enabled, the icon of the creator of the webhook URL is used to post messages.
+  Similarly, `Enable integrations to override profile picture icons </configure/configuration-settings.html#enable-integrations-to-override-profile-picture-icons>`__ must be set to ``true`` in ``config.json`` to override usernames. Enable them from **System Console > Integrations > Integration Management** or ask your Mattermost System Admin. If not enabled, the icon of the creator of the webhook URL is used to post messages.
 
 Tips and best practices
 ------------------------
 
 1. Slash commands are designed to easily allow you to post messages. For other actions such as channel creation, you must also use the `Mattermost APIs <https://api.mattermost.com>`__.
-2. You can restrict who can create slash commands in `System Console > Integrations > Integration Management <https://docs.mattermost.com/configure/configuration-settings.html#restrict-managing-integrations-to-admins>`__.
-3. Mattermost outgoing webhooks are Slack-compatible. You can copy-and-paste code used for a Slack outgoing webhook to create Mattermost integrations. Mattermost `automatically translates Slack's JSON format <https://docs.mattermost.com/integrations/cloud-slash-commands.html#translate-slack-s-data-format-to-mattermost>`__.
+2. You can restrict who can create slash commands in `System Console > Integrations > Integration Management </configure/configuration-settings.html#restrict-managing-integrations-to-admins>`__.
+3. Mattermost outgoing webhooks are Slack-compatible. You can copy-and-paste code used for a Slack outgoing webhook to create Mattermost integrations. Mattermost `automatically translates Slack's JSON format </integrations/cloud-slash-commands.html#translate-slack-s-data-format-to-mattermost>`__.
 4. The external application may be written in any programming language. It needs to provide a URL which receives the request sent by your Mattermost workspace and responds with in the required JSON format.
 
 Share your integration

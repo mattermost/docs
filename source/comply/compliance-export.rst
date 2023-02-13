@@ -1,22 +1,8 @@
 Compliance export
 =================
 
-|enterprise| |cloud| |self-hosted|
-
-.. |enterprise| image:: ../images/enterprise-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in the Mattermost Enterprise subscription plan.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
+.. include:: ../_static/badges/ent-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Mattermost Enterprise Edition E20*
 
@@ -31,7 +17,7 @@ The exports include information on channel member history at the time the messag
 
 From Mattermost v5.18 and in Mattermost Cloud, entries for deleted messages and files are included in CSV and Actiance reports. The deleted content is included in the compliance export. Global Relay reports include file deletion entries but message deletion entries are excluded.
 
-By default, Mattermost stores all message history providing an unlimited search history to admins and end users. In Mattermost Enterprise, you may set a `custom data retention policy <https://docs.mattermost.com/comply/data-retention-policy.html>`__ for how long messages and file uploads are kept in Mattermost channels and direct messages.
+By default, Mattermost stores all message history providing an unlimited search history to admins and end users. In Mattermost Enterprise, you may set a `custom data retention policy </comply/data-retention-policy.html>`__ for how long messages and file uploads are kept in Mattermost channels and direct messages.
 
 Enterprise deployments with a requirement to archive history beyond the data retention period can enable this add-on to export compliance reports to third-party systems. Integration with Actiance Vantage and Global Relay are currently supported, with integrations with other systems in the roadmap.
 
@@ -44,7 +30,7 @@ Set up guide
 
 Use the following guides to configure exports for CSV, Actiance XML, or Global Relay EML. \
 
-For self-hosted deployments, compliance exports are written to the ``exports`` subdirectory of the configured `Local Storage directory <https://docs.mattermost.com/configure/configuration-settings.html>`__ in the chosen format. If you've configured Mattermost to use S3 storage, the exports are written to the ``exports`` directory in the Mattermost bucket.
+For self-hosted deployments, compliance exports are written to the ``exports`` subdirectory of the configured `Local Storage directory </configure/configuration-settings.html>`__ in the chosen format. If you've configured Mattermost to use S3 storage, the exports are written to the ``exports`` directory in the Mattermost bucket.
 
 .. note::
    
@@ -112,7 +98,7 @@ If the compliance export job is run automatically, manually via the System Conso
 
 If the ``--exportFrom`` option is specified with the CLI command, all posts that have been made since the supplied timestamp will be exported.
 
-When run manually via the System Console, ``.csv`` and Actiance XML files are written to the ``exports`` subdirectory of the configured `Local Storage Directory <https://docs.mattermost.com/configure/configuration-settings.html#local-storage-directory>`__.  Files will be written to a folder with names based on an epoch time range. Global Relay EML export format files will be mailed to the configured email address when run manually.
+When run manually via the System Console, ``.csv`` and Actiance XML files are written to the ``exports`` subdirectory of the configured `Local Storage Directory </configure/configuration-settings.html#local-storage-directory>`__.  Files will be written to a folder with names based on an epoch time range. Global Relay EML export format files will be mailed to the configured email address when run manually.
 
 Is there a maximum row limit for CSV files?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

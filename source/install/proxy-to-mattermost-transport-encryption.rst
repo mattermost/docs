@@ -2,17 +2,8 @@
 Configuring proxy to Mattermost transport encryption
 ====================================================
 
-|enterprise| |self-hosted|
-
-.. |enterprise| image:: ../images/enterprise-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in the Mattermost Enterprise subscription plan.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Managed deployments.
+.. include:: ../_static/badges/ent-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Mattermost Enterprise Edition E20*
 
@@ -35,7 +26,7 @@ In this scenario there is one Mattermost application server and one NGINX server
 Configuring NGINX
 -----------------
 
-On the NGINX server, connect to both servers with a sudo or root user. Open the Mattermost proxy configuration (Refer to `Configuring NGINX with SSL and HTTP/2 (End-User - Proxy) <https://docs.mattermost.com/install/install-rhel-6.html#configuring-nginx-with-ssl-and-http-2>`__ for additional information) and search for the following line twice:
+On the NGINX server, connect to both servers with a sudo or root user. Open the Mattermost proxy configuration (Refer to `Configuring NGINX with SSL and HTTP/2 (End-User - Proxy) </install/install-rhel-6.html#configuring-nginx-with-ssl-and-http-2>`__ for additional information) and search for the following line twice:
 
 .. code-block:: none
 

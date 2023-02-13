@@ -1,17 +1,8 @@
 Implementation plan
 ===================
 
-|all-plans| |self-hosted|
-
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 1 Introduction
 --------------
@@ -57,7 +48,7 @@ A Mattermost Enterprise implementation consists of the following system componen
 - **Mattermost Server**
   - The Mattermost Server is a single binary that includes the RESTful JSON web service, authentication client, authentication provider, notification service, and data management service. The Mattermost Server can be deployed in stand-alone or high availability mode where two or more servers are clustered together using gossip protocol and a proxy server that routes traffic from client applications to healthy servers in the cluster.
 - **Mattermost Database**
-  - A MySQL or PostgreSQL database in stand-alone or high-availability configurations (master with read replicas). When choosing the database, consider the `inherent search limitations of the database type <https://docs.mattermost.com/install/requirements.html#database-software>`__ and whether `Elasticsearch <https://docs.mattermost.com/scale/elasticsearch.html>`__ is most appropriate for your deployment.
+  - A MySQL or PostgreSQL database in stand-alone or high-availability configurations (master with read replicas). When choosing the database, consider the `inherent search limitations of the database type </install/requirements.html#database-software>`__ and whether `Elasticsearch </scale/elasticsearch.html>`__ is most appropriate for your deployment.
 - **Mattermost Push Notification Service**
   - Hosted or on-premise service that pushes notifications to Mattermost Android and Mattermost iOS mobile applications.
 - **Mattermost Client Applications**
@@ -87,7 +78,7 @@ A recommended installation of Mattermost Enterprise E20 configured with a redund
 +-------------------+---------+---------------+--------+----------+
 
 .. note::
-  See the `Mattermost hardware sizing guidance <https://docs.mattermost.com/install/software-hardware-requirements.html#hardware-requirements>`__ documentation for details. 
+  See the `Mattermost hardware sizing guidance </install/software-hardware-requirements.html#hardware-requirements>`__ documentation for details. 
 
 2.3 Project references
 ~~~~~~~~~~~~~~~~~~~~~~

@@ -8,7 +8,7 @@ Welcome to Mattermost Channels!
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
+  :alt: Available in Mattermost Free.
 
 .. |cloud| image:: ../images/cloud-badge.png
   :scale: 30
@@ -30,4 +30,4 @@ Some of the major benefits of using Channels include:
 - Markdown and code syntax highlighting.
 - Persistent communication history.
 
-Take a look at the `Mattermost demo video  <https://www.youtube.com/watch?v=FuDvrkrqRzg>`__ and browse through our `channel documentation <https://docs.mattermost.com/guides/messaging.html>`__ for more information on how to use Mattermost Channels!
+Take a look at the `Mattermost demo video  <https://www.youtube.com/watch?v=FuDvrkrqRzg>`__ and browse through our `channel documentation </guides/messaging.html>`__ for more information on how to use Mattermost Channels!

@@ -55,7 +55,7 @@ Installation
   1) Create a new user account and use that account to create a new team and post to Town Square channel.
   2) Create a second user account and join the newly created team and reply to first user's post in Town Square.
   3) Go back to first user account and post reply with an image attached.
-  4) Confirm there are no errors and no blue bar at the top of the screen with "Mattermost unreachable error" (which would indicate websocket configuration error).
+  4) Confirm there are no errors and no red alert bar at the top of the screen with "Mattermost unreachable error" (which would indicate a websocket configuration error).
 
 Documentation 
 ~~~~~~~~~~~~~
@@ -88,4 +88,4 @@ Branding
 Upgrade 
 ~~~~~~~
 
-1. **Support upgrade of Mattermost**. Enable user interface or command line upgrade of a Mattermost deployment to latest version based on `upgrade procedure when Mattermost is embedded <https://docs.mattermost.com/developer/integration-faq.html#how-should-i-automate-the-install-and-upgrade-of-mattermost-when-included-in-another-application>`__
+1. **Support upgrade of Mattermost**. Enable user interface or command line upgrade of a Mattermost deployment to latest version based on `upgrade procedure when Mattermost is embedded </developer/integration-faq.html#how-should-i-automate-the-install-and-upgrade-of-mattermost-when-included-in-another-application>`__

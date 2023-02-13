@@ -1,22 +1,8 @@
 In-product notices
 ==================
 
-|all-plans| |cloud| |self-hosted|
-
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/sign-up
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 Mattermost in-product notices keep users and administrators informed of the newest product improvements, features, and releases.
 
@@ -31,12 +17,12 @@ Administrator notices inform System Admins when a new server version is availabl
 .. image:: ../images/notices_admin.png
    :alt: An example of an in-product administrator notice announcing that a new server version of Mattermost is available. Admin notices also announce when external dependencies are being deprecated, or when server upgrades or optimizations are recommended.
    
-Administrator notices can be disabled in the **System Console > Notices** page.
+Administrator notices can be disabled in the **System Console > Site Configuration > Notices** page.
 
 End user notices
 ----------------
 
-End user notices are used to inform users and Admins of new feature enhancements and when new desktop versions are available. They can be disabled in **System Console > Notices**.
+End user notices are used to inform users and Admins of new feature enhancements and when new desktop versions are available. They can be disabled in **System Console > Site Configuration > Notices**.
 
 .. image:: ../images/notices.png
    :alt: An example of an end user in-product notice announcing that a new Mattermost Desktop App version is available. End user notices announce when new features and versions are available, and can be disabled.
@@ -47,7 +33,7 @@ Frequently asked questions (FAQs)
 Are notices enabled by default?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Notices are enabled by default for all Mattermost users. System Admins may choose to disable administrator or end user notices in **System Console > Notices**.
+Notices are enabled by default for all Mattermost users. System Admins may choose to disable administrator or end user notices in **System Console > Site Configuration > Notices**.
 
 Will I still receive notices if my server is air-gapped?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

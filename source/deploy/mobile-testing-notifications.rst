@@ -1,24 +1,10 @@
 Testing push notifications
 ==========================
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/sign-up
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
-
-Make sure to configure push notifications for your `pre-built mobile apps <https://docs.mattermost.com/deploy/use-prebuilt-mobile-apps.html>`__, or for `your custom built mobile apps <https://docs.mattermost.com/deploy/build-custom-mobile-apps.html>`__. 
+Make sure to configure push notifications for your `pre-built mobile apps </deploy/use-prebuilt-mobile-apps.html>`__, or for `your custom built mobile apps </deploy/build-custom-mobile-apps.html>`__. 
 
 Then use the following instructions to confirm push notifications are working properly.
 
@@ -35,22 +21,22 @@ Then use the following instructions to confirm push notifications are working pr
   A. Go to the notification settings menu in the mobile app.
 
   .. image:: ../images/mobile_notification_settings.png
-    :alt: Ensure push notifications are enabled by selecting the Settings icon located in the top-right corner of the screen.
+    :alt: Access notification settings by selecting your profile picture to access Settings > Notifications.
 
   B. Check that the mobile push notifications are set to send.
 
   .. image:: ../images/mobile_push_send_for.png
-    :alt: Select the type of activity you want push notifications for by going to Settings > Notifications > Mobile Push Notifications.
+    :alt: Select Push Notifications to confirm when mobile push notifications will be sent.
     :width: 300 px
 
   .. image:: ../images/mobile_push_send_when.png
-    :alt: Select when you want push notifications by going to Settings > Notifications > Mobile Push Notifications for all Mattermost activity or mentions and direct messages only.
+    :alt: Specify whether all new messages or only mentions and direct messages send push notifications. 
     :width: 300 px
 
 4. Have “Account A” put the app to background or close the app.
 
 5. Using a browser, log in to “Account B” on the same Mattermost Server.
 
-6. Open a Direct Message with “Account A”, and send a message.
+6. Open a direct message with “Account A”, and send a message.
 
 7. A push notification with the message should appear on the mobile device of “Account A”. If the push notification does not appear, follow :doc:`troubleshooting steps <mobile-troubleshoot-notifications>` to look for issues.

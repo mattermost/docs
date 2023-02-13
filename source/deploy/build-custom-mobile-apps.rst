@@ -1,19 +1,10 @@
 Building and distributing your own custom Mattermost mobile apps
 ================================================================
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
-.. |all-plans| image:: ../images/enterprise-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Managed deployments.
-
-You can build and distribute custom versions of the Mattermost Mobile App. Choosing this approach means `you've decided not to use the mobile app Mattermost has made available <https://docs.mattermost.com/deploy/use-prebuilt-mobile-apps.html>`__ through public app stores. This also means that you've decided to `host your own push proxy service <https://docs.mattermost.com/deploy/mobile-hpns.html#host-your-own-push-proxy-service>`__.
+You can build and distribute custom versions of the Mattermost mobile app. Choosing this approach means `you've decided not to use the mobile app Mattermost has made available </deploy/use-prebuilt-mobile-apps.html>`__ through public app stores. This also means that you've decided to `host your own push proxy service </deploy/mobile-hpns.html#host-your-own-push-proxy-service>`__.
 
 This approach is recommended for:
 
@@ -21,8 +12,10 @@ This approach is recommended for:
 - Customers using self-hosted Mattermost Team Edition, Professional or Enterprise Edition that prefer to host their own push proxy server instead of using one of Mattermostâ€™s hosted versions.
 
 .. note::
-   A Mattermost Enterprise subscription plan (or a legacy Enterprise Edition license) is required to request assistance or troubleshooting help from `Mattermost Customer Support <https://mattermost.com/support/>`__ when building and deploying custom mobile apps. Customers on other Mattermost subscription plans can develop and deploy custom mobile apps, but can't request technical support assistance through Mattermost Customer Support.
-  
+   
+   - A Mattermost Enterprise subscription plan (or a legacy Enterprise Edition license) is required to request assistance or troubleshooting help from `Mattermost Customer Support <https://mattermost.com/support/>`__ when building and deploying custom mobile apps. Customers on other Mattermost subscription plans can develop and deploy custom mobile apps, but can't request technical support assistance through Mattermost Customer Support.
+   - With the release of Mattermost mobile app v2.0, `mobile app v1.55 becomes the official extended support mobile release </upgrade/extended-support-release.html#mobile-app-v1-55-1-extended-support-release-esr>`__, and will be supported for an extended timeframe.
+
 Deployment options
 ------------------
 
@@ -36,7 +29,7 @@ When you decide to build your own Mattermost mobile apps, you have multiple ways
 Setting up push notifications
 -----------------------------
 
-See our `Mobile Push Notifications <https://docs.mattermost.com/deploy/mobile-hpns.html>`__ documentation to learn about setting up push notifications for custom-built mobile apps.
+See our `Mobile Push Notifications </deploy/mobile-hpns.html>`__ documentation to learn about setting up push notifications for custom-built mobile apps.
 
 Developing and maintaining your custom app
 ------------------------------------------
@@ -78,8 +71,8 @@ Alternatively, you can use an EMM provider to push the application to the userâ€
 
 For additional details, see the following documentation:
 
-- `Deployment Using an EMM provider <https://docs.mattermost.com/deploy/deploy-mobile-apps-using-emm-provider.html>`__ to learn more about deploying your custom Mattermost Mobile apps through an EMM provider.
-- `Manage app configuration using AppConfig <https://docs.mattermost.com/deploy/mobile-appconfig.html>`__  to learn more about managing your app configuration using App Config, and the configuration options that can be sent from the EMM provider to Mattermost mobile apps.
+- `Deployment Using an EMM provider </deploy/deploy-mobile-apps-using-emm-provider.html>`__ to learn more about deploying your custom Mattermost Mobile apps through an EMM provider.
+- `Manage app configuration using AppConfig </deploy/mobile-appconfig.html>`__  to learn more about managing your app configuration using App Config, and the configuration options that can be sent from the EMM provider to Mattermost mobile apps.
 
 Using public app stores
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -95,7 +88,7 @@ This update strategy should include:
 - Updating Mattermost Server.
 - Updating Mattermost mobile apps.
 
-We highly recommend you update your custom Mattermost mobile apps to incorporate any security or service releases. Prior to distribution, check any compatibility requirements for the mobile apps and the Mattermost server. Consult the `Mattermost mobile app changelog <https://docs.mattermost.com/deploy/mobile-app-changelog.html>`__ and the `Mattermost server changelog <https://docs.mattermost.com/install/self-managed-changelog.html>`__ for details.
+We highly recommend you update your custom Mattermost mobile apps to incorporate any security or service releases. Prior to distribution, check any compatibility requirements for the mobile apps and the Mattermost server. Consult the `Mattermost mobile app changelog </deploy/mobile-app-changelog.html>`__ and the `Mattermost server changelog </install/self-managed-changelog.html>`__ for details.
 
 .. important::
 

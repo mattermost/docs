@@ -74,9 +74,9 @@ Messages with advanced formatting can be created by including an :doc:`attachmen
 
 .. note::
 
-  `Enable integrations to override usernames <https://docs.mattermost.com/configure/configuration-settings.html#enable-integrations-to-override-usernames>`__ must be set to ``true`` in ``config.json`` to override usernames. Enable them from **System Console > Integrations > Integration Management** or ask your System Admin to do so. If not enabled, the username is set to ``webhook``.
+  `Enable integrations to override usernames </configure/configuration-settings.html#enable-integrations-to-override-usernames>`__ must be set to ``true`` in ``config.json`` to override usernames. Enable them from **System Console > Integrations > Integration Management** or ask your System Admin to do so. If not enabled, the username is set to ``webhook``.
   
-  Similarly, `Enable integrations to override profile picture icons <https://docs.mattermost.com/configure/configuration-settings.html#enable-integrations-to-override-profile-picture-icons>`__ must be set to ``true`` in ``config.json`` to override profile picture icons. Enable them from **System Console > Integrations > Integration Management** or ask your System Admin to do so. If not enabled, the icon of the creator of the webhook URL is used to post messages.
+  Similarly, `Enable integrations to override profile picture icons </configure/configuration-settings.html#enable-integrations-to-override-profile-picture-icons>`__ must be set to ``true`` in ``config.json`` to override profile picture icons. Enable them from **System Console > Integrations > Integration Management** or ask your System Admin to do so. If not enabled, the icon of the creator of the webhook URL is used to post messages.
 
 Tips and best practices
 ------------------------
@@ -85,9 +85,9 @@ Tips and best practices
 
 2. If the text is longer than the allowable character limit per post, the message is split into multiple consecutive posts, each within the character limit. Posts up to 16383 characters are supported.
 
-3. You can restrict who can create incoming webhooks in `System Console > Integrations > Integration Management <https://docs.mattermost.com/configure/configuration-settings#restrict-managing-integrations-to-admins>`__.
+3. You can restrict who can create incoming webhooks in `System Console > Integrations > Integration Management </configure/configuration-settings#restrict-managing-integrations-to-admins>`__.
 
-4. Mattermost incoming webhooks are Slack-compatible. You can copy and paste code used for a Slack incoming webhook to create Mattermost integrations. Mattermost `automatically translates the Slack's proprietary JSON payload format <https://docs.mattermost.com/developer/webhooks-incoming.html?highlight=translate%20slack%20data%20format%20mattermost#translate-slack-s-data-format-to-mattermost>`__.
+4. Mattermost incoming webhooks are Slack-compatible. You can copy and paste code used for a Slack incoming webhook to create Mattermost integrations. Mattermost `automatically translates the Slack's proprietary JSON payload format </developer/webhooks-incoming.html?highlight=translate%20slack%20data%20format%20mattermost#translate-slack-s-data-format-to-mattermost>`__.
 
 5. The external application may be written in any programming language as long as it supports sending an HTTP POST request in the required JSON format to a specified Mattermost URL.
 
@@ -180,7 +180,7 @@ To send a message to a direct message channel, add an "@" symbol followed by the
 
 This will send a message from the account that has set up the incoming webhook to the username after the "@" symbol. For example, if you create a webhook with the user ``alice`` and send a direct message to ``bob`` using a webhook, it will show up as a direct message from ``alice`` to ``bob`` regardless of other settings such as username.
 
-To send a message to a different direct message channel between two other users, you can specify the channel with the user IDs for the users separated with two underscore (_) symbols. To find the user ID you can `use the ``mattermost`` command - see details `here <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-user-search>`__.
+To send a message to a different direct message channel between two other users, you can specify the channel with the user IDs for the users separated with two underscore (_) symbols. To find the user ID you can `use the ``mattermost`` command - see details `here </administration/command-line-tools.html#mattermost-user-search>`__.
 
 .. code-block:: text
 

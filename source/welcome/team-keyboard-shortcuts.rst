@@ -1,24 +1,10 @@
 Team keyboard shortcuts
 =======================
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/sign-up
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
-
-Keyboard shortcuts for Mattermost teams help you make a more efficient use of your keyboard.
+Keyboard shortcuts for Mattermost teams help you make a more efficient use of your keyboard when using Mattermost in a web browser or the desktop app.
 
 .. tip::
 
@@ -27,7 +13,7 @@ Keyboard shortcuts for Mattermost teams help you make a more efficient use of yo
 Navigation shortcuts for Mattermost Channels
 --------------------------------------------
 
-The following keyboard shortcuts are supported in all `supported browsers <https://docs.mattermost.com/install/software-hardware-requirements.html#software-requirements>`__ and in the Mattermost Desktop App.
+The following keyboard shortcuts are supported in all `supported browsers </install/software-hardware-requirements.html#software-requirements>`__ and in the Mattermost Desktop App.
 
 +-------------------------------------------+--------------------------------------+----------------------------------------------+
 | On Windows & Linux                        | On Mac                               | Description                                  |

@@ -1,100 +1,53 @@
 Format messages
 ===============
 
-|all-plans| |cloud| |self-hosted|
-
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/sign-up
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 .. |bold-icon| image:: ../images/format-bold_F0264.svg
-  :height: 24px
-  :width: 24px
-  :target: https://mattermost.com/deploy
   :alt: Bold message text using the Bold icon in the message formatting toolbar.
 
 .. |italics-icon| image:: ../images/format-italic_F0277.svg
-  :height: 24px
-  :width: 24px
-  :target: https://mattermost.com/deploy
   :alt: Italicize message text using the Italic icon in the message formatting toolbar.
 
 .. |strikeout-icon| image:: ../images/format-strikethrough-variant_F0281.svg
-  :height: 24px
-  :width: 24px
-  :target: https://mattermost.com/deploy
   :alt: Strike out message text using the Strikethrough icon in the message formatting toolbar.
 
 .. |headings-icon| image:: ../images/format-header_E81D.svg
-  :height: 24px
-  :width: 24px
-  :target: https://mattermost.com/deploy
   :alt: Format message text as a heading using the Heading icon in the message formatting toolbar. Headings 1 through 6 are supported.
 
 .. |links-icon| image:: ../images/link-variant_F0339.svg
-  :height: 24px
-  :width: 24px
-  :target: https://mattermost.com/deploy
   :alt: Add a message link using the Link icon in the message formatting toolbar.
 
 .. |attachments-icon| image:: ../images/paperclip_F03E2.svg
-  :height: 24px
-  :width: 24px
-  :target: https://mattermost.com/deploy
   :alt: Add a message attachment using the Upload files icon in the message formatting toolbar.
 
 .. |numbered-icon| image:: ../images/format-list-numbered_F027B.svg
-  :height: 24px
-  :width: 24px
-  :target: https://mattermost.com/deploy
   :alt: Format message text as a numbered list using the Numbered list icon in the message formatting toolbar.
 
 .. |bullets-icon| image:: ../images/format-list-bulleted_F0279.svg
-  :height: 24px
-  :width: 24px
-  :target: https://mattermost.com/deploy
   :alt: Format message text as a bulleted list using the Bulleted list icon in the message formatting toolbar.
 
 .. |quotes-icon| image:: ../images/format-quote-open_F0757.svg
-  :height: 24px
-  :width: 24px
-  :target: https://mattermost.com/deploy
   :alt: Format message text as a quotation using the Quote icon in the message formatting toolbar.
 
 .. |code-icon| image:: ../images/code-tags_F0174.svg
-  :height: 24px
-  :width: 24px
-  :target: https://mattermost.com/deploy
   :alt: Format message text as code using the Code icon in the message formatting toolbar.
 
 .. |emoji-icon| image:: ../images/emoticon-outline_F01F2.svg
-  :height: 24px
-  :width: 24px
-  :target: https://mattermost.com/deploy
   :alt: Add emojis or GIFs to message text using the Emoji/Gif picker icon in the message formatting toolbar.
 
 .. |hide-formatting-icon| image:: ../images/format-letter-case_F0B34.svg
-  :height: 24px
-  :width: 24px
-  :target: https://mattermost.com/deploy
   :alt: Hide formatting options in the message formatting toolbar using the Show/Hide Formatting icon.
 
 .. |preview-icon| image:: ../images/eye-outline_F06D0.svg
-  :height: 24px
-  :width: 24px
-  :target: https://mattermost.com/deploy
   :alt: Review your message text formatting using the Show/Hide preview icon in the message formatting toolbar.
+
+.. |settings-icon| image:: ../images/settings-outline_F08BB.svg
+  :alt: Access and manage your Channels settings using the Gear icon.
+
+.. |message-priority-icon| image:: ../images/Priority-Message-Icon.svg
+  :alt: Mark a message as important or urgent using the Priority Message icon.
 
 Use the messaging formatting toolbar
 ------------------------------------
@@ -107,29 +60,34 @@ From Mattermost v7.0, you can format your messages in Mattermost using the messa
 
 The message formatting toolbar offers the following formatting options:
 
-+------------------------------------------------------------+--------------------+
-| **Formatting option**                                      | **Icon**           | 
-+============================================================+====================+
-| Bold, italicize, or strike out text                        | |bold-icon|        |
-|                                                            | |italics-icon|     | 
-|                                                            | |strikeout-icon|   | 
-+------------------------------------------------------------+--------------------+
-| Add headings, links, or attachments                        | |headings-icon|    |
-|                                                            | |links-icon|       | 
-|                                                            | |attachments-icon| |
-+------------------------------------------------------------+--------------------+
-| Format a numbered list, a bulleted list, quoted text, or   | |numbered-icon|    | 
-| text as code                                               | |bullets-icon|     | 
-|                                                            | |quotes-icon|      |
-|                                                            | |code-icon|        | 
-+------------------------------------------------------------+--------------------+
-| Add emojis or GIFs                                         | |emoji-icon|       | 
-+------------------------------------------------------------+--------------------+
++--------------------------------------------------------------+-------------------------+
+| **Formatting option**                                        | **Icon**                | 
++==============================================================+=========================+
+| Bold, italicize, or strike out text                          | |bold-icon|             |
+|                                                              | |italics-icon|          | 
+|                                                              | |strikeout-icon|        | 
++--------------------------------------------------------------+-------------------------+
+| Add headings, links, or attachments                          | |headings-icon|         |
+|                                                              | |links-icon|            | 
+|                                                              | |attachments-icon|      |
++--------------------------------------------------------------+-------------------------+
+| Format a numbered list, a bulleted list, quoted text, or     | |numbered-icon|         |
+| text as code                                                 | |bullets-icon|          |
+|                                                              | |quotes-icon|           |
+|                                                              | |code-icon|             |
++--------------------------------------------------------------+-------------------------+
+| Add emojis or GIFs                                           | |emoji-icon|            |
++--------------------------------------------------------------+-------------------------+
+| `Set message priority </channels/message-priority.html>`__   | |message-priority-icon| |
++--------------------------------------------------------------+-------------------------+
 
 Review how your message formatting will look when the message is sent by selecting the **Show/Hide Preview** |preview-icon| icon. Return to your draft message by selecting the icon again.
 
-You can hide the formatting options by selecting the **Show/Hide Formatting** |hide-formatting-icon| icon. Select the icon again to show the formatting options.
+.. tip::
 
+  - Hide the formatting options by selecting the **Show/Hide Formatting** |hide-formatting-icon| icon. Select the icon again to show the formatting options. 
+  - You can control whether post formatting is rendered within the message formatting editor. When disabled, raw text is shown. See the `Channels customization </channels/channels-settings.html#enable-post-formatting>`__ documentation for details. 
+ 
 Use Markdown
 -------------
 
@@ -348,7 +306,7 @@ Renders as: ``monospace``.
 In-line images
 ~~~~~~~~~~~~~~
 
-In-line images are images added within lines of text. From Mattermost Server v5.35 and in Mattermost Cloud, you can control whether all in-line images over 100px in height are automatically collapsed or expanded in messages by setting a `user preference <https://docs.mattermost.com/channels/channels-settings.html#website-link-previews>`__, or by using the ``/collapse`` and ``/expand`` slash commands.
+In-line images are images added within lines of text. From Mattermost Server v5.35 and in Mattermost Cloud, you can control whether all in-line images over 100px in height are automatically collapsed or expanded in messages by setting a `user preference </channels/channels-settings.html#website-link-previews>`__, or by using the ``/collapse`` and ``/expand`` slash commands.
 
 To add in-line images to text, use an exclamation mark ``!`` followed by the ``alt text`` in square brackets ``[ ]``, then the ``image URL`` in round brackets ``( )``. You can add hover text after the link by placing the text in quotes ``" "``.
 
@@ -478,7 +436,7 @@ Math Formulas
 
     .. note::
 
-      This feature is `disabled by default <https://docs.mattermost.com/configure/configuration-settings.html#enable-inline-latex-rendering>`__. Contact your System Admin to enable this setting in **System Console > Site Configuration > Posts** to use this feature.
+      This feature is `disabled by default </configure/configuration-settings.html#enable-inline-latex-rendering>`__. Contact your system admin to enable this setting in **System Console > Site Configuration > Posts** to use this feature.
 
     .. code-block:: none
 
@@ -495,7 +453,7 @@ Math Formulas
 
     .. note::
 
-      This feature is `disabled by default <https://docs.mattermost.com/configure/configuration-settings.html#enable-latex-code-block-rendering>`__. Contact your System Admin to enable this setting in **System Console > Site Configuration > Posts** to use this feature.
+      This feature is `disabled by default </configure/configuration-settings.html#enable-latex-code-block-rendering>`__. Contact your system admin to enable this setting in **System Console > Site Configuration > Posts** to use this feature.
 
     .. code-block:: none
 

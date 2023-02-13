@@ -1,5 +1,18 @@
+:orphan:
+
 Business questions
 ==================
+
+How do I fork Mattermost?
+-------------------------
+
+If you wish to create a forked version of the Mattermost source code, you must comply with the applicable licenses under which the source code is made available. Historically, this was made clear via this link: https://docs.mattermost.com/about/faq-business.html#copyright-and-licensing-of-mattermost-server-open-source-code.
+ 
+For example, the Mattermost server source code is and always has been made available under the AGPLv2 license. Therefore, all third-party open source forks of the Mattermost server source code must comply with the AGPLv2 license in both source code and compiled versions. If you encounter a third-party fork of the publicly available source code of Mattermost server that claims to be licensed under an alternate license, it is incorrect.
+
+For clarity, this license information regarding forking the source specifically refers to the use (and compilation) of the Mattermost source code by third parties. Third parties are obligated to comply with the open source licenses referenced above in connection with their derivative works. Compiled versions and derivative works of Mattermost prepared by third parties may not be made available under any license other than those under which the applicable source code is made available.
+
+In contrast, Mattermost, as the copyright holder to the collection of the Mattermost source code, has exercised its exclusive right to make compiled versions of the Mattermost source code available under various other licenses (such as the MIT license and the Mattermost Commercial Enterprise License, as more specifically made clear in the table here: https://docs.mattermost.com/about/faq-enterprise.html#what-are-mattermost-s-policies-around-licensing-terms-of-use-and-privacy).
 
 How can I create an open source derivative work of Mattermost?
 --------------------------------------------------------------
@@ -17,18 +30,18 @@ Rebranding
 ~~~~~~~~~~
 
 - When you create a derivative version of Mattermost and share it with others as a product, you need to replace the Mattermost name and logo from the system, among other requirements, per the `Mattermost trademark policy <https://mattermost.com/trademark-standards-of-use/>`__.
-- You can rebrand your system using convenience tools for `custom branding <https://docs.mattermost.com/configure/configuration-settings.html#customization>`__.
+- You can rebrand your system using convenience tools for `custom branding </configure/configuration-settings.html#customization>`__.
 - For advanced whitelabelling, and to whitelabel in Team Edition under MIT license without Enterprise Edition branding tools, you can manually update files on the Mattermost server `per product documentation. <https://github.com/mattermost/docs/issues/1006>`__ This can also be done without forking.
 
 Copyright and Licensing of ``/mattermost-server`` open source code
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- Compiling and distributing your own version of the open source Mattermost ``/mattermost-server`` repo requires a) compliance with licenses in the repo, including `NOTICE.txt <https://github.com/mattermost/mattermost-server/blob/master/NOTICE.txt>`__, and b) the compiled version of the ``/mattermost-server`` source code should have the same open source license as the source code, `per our licensing policy <https://docs.mattermost.com/about/subscription.html/>`__.
+- Compiling and distributing your own version of the open source Mattermost ``/mattermost-server`` repo requires a) compliance with licenses in the repo, including `NOTICE.txt <https://github.com/mattermost/mattermost-server/blob/master/NOTICE.txt>`__, and b) the compiled version of the ``/mattermost-server`` source code should have the same open source license as the source code, `per our licensing policy </about/subscription.html/>`__.
 
 Other considerations
 ~~~~~~~~~~~~~~~~~~~~
 
-- Mattermost has a default `Terms of Use <https://docs.mattermost.com/configure/configuration-settings.html#terms-of-use-link>`__ agreement for the Terms of Use link at the bottom of login screen that should be incorporated into any additional Terms of Use you may add.
+- Mattermost has a default `Terms of Use </configure/configuration-settings.html#terms-of-use-link>`__ agreement for the Terms of Use link at the bottom of login screen that should be incorporated into any additional Terms of Use you may add.
 
 - The Mattermost copyright notices on the user interface should remain.
 - There may be additional legal and regulatory issues to consider and we recommend you employ legal counsel to fully understand what's involved in creating and selling a derivative work.
@@ -43,7 +56,7 @@ Why does Mattermost have a discount for certain kinds of non-profits but not for
 
 While we welcome anyone to use the open source version of Mattermost Team Edition free of charge, Mattermost, Inc., like any software company, has specific discounting programs for its commercial Mattermost Enterprise Edition based on business objectives. Objectives of the discounting programs include the suitability of potential case studies, references, word-of-mouth promotion and public promotion of solutions, among many other factors.
 
-See our `License and Subscription <https://docs.mattermost.com/about/license-and-subscription.html#do-you-have-a-program-for-official-non-profits-open-source-projects-and-charities>`__ documentation for details.
+See our `License and Subscription </about/license-and-subscription.html#do-you-have-a-program-for-official-non-profits-open-source-projects-and-charities>`__ documentation for details.
 
 Can I create a derivative work of the Mattermost /mattermost-server repository that is not open source?
 -------------------------------------------------------------------------------------------------------

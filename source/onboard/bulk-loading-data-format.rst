@@ -58,10 +58,10 @@ The following fragment is from a file that imports two teams, each with two chan
   { "type": "version", ... }
   { "type": "team", "team": { "name": "TeamA", ...} }
   { "type": "team", "team": { "name": "TeamB", ...} }
-  { "type": "channel", "channel": { "team": "TeamA", "name": "ChannelA1", ...} }
-  { "type": "channel", "channel": { "team": "TeamA", "name": "ChannelA2", ...} }
-  { "type": "channel", "channel": { "team": "TeamB", "name": "ChannelB1", ...} }
-  { "type": "channel", "channel": { "team": "TeamB", "name": "ChannelB1", ...} }
+  { "type": "channel", "channel": { "team": "TeamA", "name": "channel_a1", ...} }
+  { "type": "channel", "channel": { "team": "TeamA", "name": "channel_a2", ...} }
+  { "type": "channel", "channel": { "team": "TeamB", "name": "channel_b1", ...} }
+  { "type": "channel", "channel": { "team": "TeamB", "name": "channel_b2", ...} }
   { "type": "user", "user": { "username": "user001", ...} }
   { "type": "user", "user": { "username": "user002", ...} }
   { "type": "user", "user": { "username": "user003", ...} }
@@ -71,9 +71,9 @@ The following fragment is from a file that imports two teams, each with two chan
   .
   .
   .
-  { "type": "post", { "team": "TeamA", "name": "ChannelA1", "user": "user001", ...} }
-  { "type": "post", { "team": "TeamA", "name": "ChannelA1", "user": "user001", ...} }
-  { "type": "post", { "team": "TeamA", "name": "ChannelA1", "user": "user001", ...} }
+  { "type": "post", { "team": "TeamA", "name": "channel_a1", "user": "user001", ...} }
+  { "type": "post", { "team": "TeamA", "name": "channel_a1", "user": "user001", ...} }
+  { "type": "post", { "team": "TeamA", "name": "channel_a1", "user": "user001", ...} }
   .
   .
   .
@@ -186,7 +186,7 @@ Fields of the Scheme object
     <tr class="row-odd">
       <td valign="middle">name</td>
       <td valign="middle">string</td>
-      <td>The scheme name.</td>
+      <td>The scheme name. Must start with and contain only lowercase letters <kbd>([a-z0-9])</kbd> or <kbd>_</kbd>, and must be between 2-64 characters in length.</td>
       <td align="center" valign="middle">Yes</td>
       <td align="center" valign="middle">Yes</td>
     </tr>
@@ -390,8 +390,8 @@ Fields of the Team object
       <td valign="middle">type</td>
       <td valign="middle">string</td>
       <td>The type of team. Can have one the following values:<br>
-          <kbd>"O"</kbd> for an open team<br>
-          <kbd>"I"</kbd> for an invite-only team.</td>
+          <kbd>O</kbd> for an open team<br>
+          <kbd>I</kbd> for an invite-only team.</td>
       <td align="center" valign="middle">Yes</td>
       <td align="center" valign="middle">Yes</td>
     </tr>
@@ -469,7 +469,7 @@ Fields of the Channel object
     <tr class="row-odd">
       <td valign="middle">name</td>
       <td valign="middle">string</td>
-      <td>The name of the channel.</td>
+      <td>The name of the channel. Must start with and contain only lowercase letters <kbd>([a-z0-9])</kbd> or <kbd>-</kbd> or <kbd>_</kbd>.</td>
       <td align="center" valign="middle">Yes</td>
       <td align="center" valign="middle">Yes</td>
     </tr>
@@ -484,8 +484,8 @@ Fields of the Channel object
       <td valign="middle">type</td>
       <td valign="middle">string</td>
       <td>The type of channel. Can have one the following values:<br>
-          <kbd>"O"</kbd> for a public channel.<br>
-          <kbd>"P"</kbd> for a private channel.</td>
+          <kbd>O</kbd> for a public channel.<br>
+          <kbd>P</kbd> for a private channel.</td>
       <td align="center" valign="middle">Yes</td>
       <td align="center" valign="middle">Yes</td>
     </tr>
@@ -527,7 +527,7 @@ For clarity, the object is shown using regular JSON formatting, but in the data 
   {
     "type": "user",
     "user": {
-      "profile_image": "avatar.png",
+      "profile_image": "profile-picture.png",
       "username": "username",
       "email": "email@example.com",
       "auth_service": "",

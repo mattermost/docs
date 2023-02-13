@@ -1,28 +1,14 @@
 Shared channels (experimental)
 ==============================
 
-|enterprise| |cloud| |self-hosted|
-
-.. |enterprise| image:: ../images/enterprise-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in the Mattermost Enterprise subscription plan.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/sign-up
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 Shared channels is an experimental feature that brings people together from multiple Mattermost installations. For example, teams collaborating with external partners and customers using multiple Mattermost instances in a federated architecture.
 
 Mattermost System Admins use slash commands to establish secure connections between Mattermost instances, then invite secured connections to shared channels.
 
-Shared channels behave like regular channels, offering the same user experience and functionality as public and private channels. All members using secure connections, including local members and remote members, can `send and receive messages <https://docs.mattermost.com/messaging/sending-receiving-messages.html>`__, `use emojis <https://docs.mattermost.com/help/messaging/emoji.html>`__ to react to messages, `share files <https://docs.mattermost.com/messaging/sharing-files.html>`__, and `search message history <https://docs.mattermost.com/messaging/searching-in-mattermost.html>`__. Content is synchronized in real-time across all participating Mattermost instances.
+Shared channels behave like regular channels, offering the same user experience and functionality as public and private channels. All members using secure connections, including local members and remote members, can `send and receive messages </messaging/sending-receiving-messages.html>`__, `use emojis </help/messaging/emoji.html>`__ to react to messages, `share files </messaging/sharing-files.html>`__, and `search message history </messaging/searching-in-mattermost.html>`__. Content is synchronized in real-time across all participating Mattermost instances.
 
 A channel’s permissions and access continues to be governed by each server separately. Channel moderation permissions can be applied to a shared channel and be in effect on the local Mattermost server while not being in effect on a remote Mattermost server.
 
@@ -31,13 +17,13 @@ Set up shared channels
 
 The process of sharing channels involves the following three steps:
 
-1. System Admins must enable shared channels functionality for their Mattermost instance. See our `Configuration Settings <https://docs.mattermost.com/configure/configuration-settings.html#enable-shared-channels-experimental>`__ documentation for details.
+1. System Admins must enable shared channels functionality for their Mattermost instance. See our `Configuration Settings </configure/configuration-settings.html#enable-shared-channels-experimental>`__ documentation for details.
 
-2. System Admins `use a slash command <https://docs.mattermost.com/messaging/executing-slash-commands.html>`__ to establish a secure and trusted relationship between other Mattermost Enterprise instances. This process involves creating a password-protected, encrypted invitation, creating a strong decryption password, then sending the invitation and password to the System Admin of a remote Mattermost instance. We strongly recommend that you share an invitation separately from its password to ensure that someone doesn't have all of the data necessary to take action if the message were compromised.
+2. System Admins `use a slash command </messaging/executing-slash-commands.html>`__ to establish a secure and trusted relationship between other Mattermost Enterprise instances. This process involves creating a password-protected, encrypted invitation, creating a strong decryption password, then sending the invitation and password to the System Admin of a remote Mattermost instance. We strongly recommend that you share an invitation separately from its password to ensure that someone doesn't have all of the data necessary to take action if the message were compromised.
 
 3. The remote System Admin receiving the invitation uses a slash command to `accept the invitation <#accept-a-secure-connection-invitation>`_.
 
-Once a trusted relationship is established between Mattermost servers, System Admins can `share specific Public or Private channels <#share-channels-with-secure-connections>`_ with secure connections.
+Once a trusted relationship is established between Mattermost servers, System Admins can `share specific public or private channels <#share-channels-with-secure-connections>`_ with secure connections.
 
 .. note:: 
 
@@ -196,7 +182,7 @@ No. ``--displayname`` is optional. When omitted, ``--name`` is displayed and use
 Do connection interruptions affect message synchronization?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Yes. A System message is posted in the channel visible to all channel members when message synchronization is interrupted for more than five minutes.
+Yes. A System message is posted in the channel visible to all channel members when message synchronization is interrupted for more than five minutes. Once connectivity is restored, a full sync will happen for all missed messages, including direct messages and channel links.
 
 What happens if two secure connections share the same usernames?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
