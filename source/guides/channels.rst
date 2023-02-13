@@ -41,6 +41,7 @@ Work with channels
    Archive and unarchive channels </channels/archive-unarchive-channels>
    Set channel preferences </channels/set-channel-preferences>
    Channels settings </channels/channels-settings>
+   Interact with channels </channels/interact-with-channels>
 
 * :doc:`Channel types </channels/channel-types>` - Learn more about the types of channels available in Mattermost.
 * :doc:`Create channels </channels/create-channels>`  - Create channels to organize discussion by topic, project, or focus.
@@ -58,6 +59,7 @@ Work with channels
 * :doc:`Archive and unarchive channels </channels/archive-unarchive-channels>` - Keep the number of available channels manageable. 
 * :doc:`Set Channel preferences </channels/set-channel-preferences>` - Customize notifications, headers, names, and channel descriptions.
 * :doc:`Customize Your Mattermost Channels experience </channels/channels-settings>` - Learn how to customize Mattermost Channels based on your preferences.
+* :doc:`Interact with channels using built-in slash commands </channels/interact-with-channels>` - Learn about available slash commands.
 
 Work with messages
 ------------------
