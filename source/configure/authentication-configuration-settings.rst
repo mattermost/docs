@@ -1905,7 +1905,7 @@ GitLab OAuth 2.0 Token endpoint
 Google OAuth 2.0 settings
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+.. include:: ../_static/badges/entpro-cloud-free.rst
   :start-after: :nosearch:
 
 .. config:setting:: oauth-googleenable
@@ -2030,7 +2030,7 @@ Google OAuth 2.0 Token endpoint
 Office 365 OAuth 2.0 settings
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+.. include:: ../_static/badges/entpro-cloud-free.rst
   :start-after: :nosearch:
 
 .. note::
@@ -2191,7 +2191,7 @@ Select OpenID Connect service provider
 GitLab OpenID settings
 ^^^^^^^^^^^^^^^^^^^^^^
 
-.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../_static/badges/entpro-cloud-free.rst
   :start-after: :nosearch:
 
 Enable OpenID Connect authentication with GitLab
@@ -2294,7 +2294,7 @@ GitLab OpenID Client secret
 Google OpenID settings
 ^^^^^^^^^^^^^^^^^^^^^^
 
-.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+.. include:: ../_static/badges/entpro-cloud-free.rst
   :start-after: :nosearch:
 
 Enable OpenID Connect authentication with Google
@@ -2381,7 +2381,7 @@ Google OpenID Client secret
 Office 365 OpenID settings
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+.. include:: ../_static/badges/entpro-cloud-free.rst
   :start-after: :nosearch:
 
 .. note::

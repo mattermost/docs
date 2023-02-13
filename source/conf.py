@@ -136,6 +136,8 @@ redirects = {
         "https://docs.mattermost.com/configure/configuation-in-a-database.html",
 "administration/config-in-database.html#configuration-in-the-mattermost-database":
         "https://docs.mattermost.com/configure/configuation-in-a-database.html",
+"administration/config-settings.html#enable-hardened-mode-experimental":
+	"https://docs.mattermost.com/configure/experimental-configuration-settings.html#enable-hardened-mode",
 "administration/data-retention.html":
         "https://docs.mattermost.com/comply/data-retention-policy.html",
 "administration/devops-command-center.html":
