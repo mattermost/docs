@@ -21,7 +21,7 @@ A System Admin can configure the following system roles:
 
 - **System Manager:** The System Manager role has read/write permissions for management areas of the System Console, such as user management and integrations (excluding permissions). This role has read only access to authentication, reporting, and license interfaces.
 - **User Manager:** The User Manager role is able to read/write to all the user management areas (excluding permissions). The authentication interface is read-only.
-- **Custom Group Manager** The Custom Group Manager role has permissions to `create, edit, and delete custom user groups </welcome/manage-custom-groups.html>`__ via **User Groups** in the **Products menu**. It can be used to assign individual users this ability when **Custom Groups** permissions are removed for **All Members** via **System Console > Permissions > Edit Scheme > Custom Groups**.
+- **Custom Group Manager** The Custom Group Manager role has permissions to `create, edit, restore, and delete custom user groups </welcome/manage-custom-groups.html>`__ via **User Groups** in the **Products menu**. It can be used to assign individual users this ability when **Custom Groups** permissions are removed for **All Members** via **System Console > Permissions > Edit Scheme > Custom Groups**.
 - **Viewer:** The Viewer role is able to view all pages of the System Console, but has no write access to any pages.
 
 When a user is assigned a system role, they have role-based access to the System Console. Each role has a different set of default permissions, and what users can access or view depends on the role they've been assigned.

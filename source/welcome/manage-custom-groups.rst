@@ -17,7 +17,7 @@ Once a custom user group has been created, you can mention that group the same w
 .. note::
   
   - System admins need to enable this feature. See our `Mattermost Configuration Settings </configure/configuration-settings.html#custom-user-groups>`__ documentation for details. 
-  - From Mattermost v7.2, system admins can limit who can manage custom user groups through a system admin role, instead of all users being able to manage custom user groups. See the `system roles </onboard/system-admin-roles.html>`__ documentation for details.
+  - From Mattermost v7.2, system admins can limit who can manage custom user groups through the Custom Group Manager system admin role. See the `system roles </onboard/system-admin-roles.html>`__ documentation for details.
   - The ability to create custom user groups on mobile will be available in a future release. @mentions for custom user groups on mobile work the same as `LDAP-synced groups </channels/mention-people.html#groupname>`__.
 
 Create a custom group
