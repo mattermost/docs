@@ -362,7 +362,7 @@ First of all, ``rtcd`` is a standalone service, which adds operational complexit
 
 Some caveats apply here, for example emoji reactions will not be transmitted while the main Mattermost server is down. But the call itself will be resilient to main server restarts.
 
-- **Kubernetes deployments.** In a Kubernetes deployment, ``rtcd`` is essentially required; it is the only officially supported way to run Calls.
+- **Kubernetes deployments.** In a Kubernetes deployment, ``rtcd`` is strongly recommended; it is currently the only officially supported way to run Calls.
 - **Technical benefits.** The dedicated ``rtcd`` service has been optimized and tuned at the system/network level for real-time audio/video traffic, where latency is generally more important than throughput.
 
 In general, ``rtcd`` is the preferred solution for a performant and scalable deployment. With ``rtcd``, the Mattermost server will be minimally impacted when hosting a high number of calls.
