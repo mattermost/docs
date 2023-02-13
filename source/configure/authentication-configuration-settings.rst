@@ -1209,11 +1209,11 @@ SAML SSO URL
 
 *Available in legacy Enterprise Edition E20*
 
-+--------------------------------------------------------------------------------------------+---------------------------------------------------------+
-| This setting is the URL where Mattermost sends a SAML request to start the login sequence. | - System Config path: **Authentication > SAML 2.0**     |
-|                                                                                            | - ``config.json`` setting: ``.SamlSettings.IdpURL``     |
-| String input.                                                                              | - Environment variable: ``MM_SAMLSETTINGS_IDPURL``      |
-+--------------------------------------------------------------------------------------------+---------------------------------------------------------+
++--------------------------------------------------------------------------------------------+-----------------------------------------------------+
+| This setting is the URL where Mattermost sends a SAML request to start the login sequence. | - System Config path: **Authentication > SAML 2.0** |
+|                                                                                            | - ``config.json`` setting: ``.SamlSettings.IdpURL`` |
+| String input.                                                                              | - Environment variable: ``MM_SAMLSETTINGS_IDPURL``  |
++--------------------------------------------------------------------------------------------+-----------------------------------------------------+
 
 .. config:setting:: saml-providerissuerurl
   :displayname: Identity provider issuer URL (SAML)
@@ -2551,21 +2551,21 @@ Access the following configuration settings in the System Console by going to **
   :configjson: Enable
   :environment: N/A
 
-  - **true**: Allow guest invitations to channels within teams.
-  - **false**: **(Default)** Email signup is disabled. This limits signup to Single sign-on services like OAuth or AD/LDAP.
+  - **true**: Enables the guest account feature.
+  - **false**: **(Default)** Disables the guest account feature.
 
 Enable guest access
 ~~~~~~~~~~~~~~~~~~~
 
 *Available in legacy Enterprise Edition E10 and E20*
 
-**True**: **(Default for Cloud deployments)** Allow guest invitations to channels within teams. Please see `Guest Accounts documentation <https://docs.mattermost.com/onboard/guest-accounts.html>`__ for more information.
-
-**False**: **(Default for self-hosted deployments)** Email signup is disabled. This limits signup to Single sign-on services like OAuth or AD/LDAP.
-
-+----------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Enable": false`` with options ``true`` and ``false``. |
-+----------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------+---------------------------------------------------------------------+
+| - **true**: Enables the guest account feature.                 | - System Config path: **Authentication > Guest Access**             |
+| - **false**: **(Default)** Disables the guest account feature. | - ``config.json`` setting: ``.GuestAccountsSettings.Enable: false`` |
+|                                                                | - Environment variable: ``MM_GUESTACCOUNTSSETTINGS_ENABLE``         |
++----------------------------------------------------------------+---------------------------------------------------------------------+
+| **Note**: See the `Guest Accounts <https://docs.mattermost.com/onboard/guest-accounts.html>`__ documentation for details.            |
++--------------------------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: guest-whitelistdomains
   :displayname: Whitelisted guest domains (Guest Access)
@@ -2579,11 +2579,11 @@ Whitelisted guest domains
 
 *Available in legacy Enterprise Edition E10 and E20*
 
-When populated, guest accounts can only be created by a verified email from this list of comma-separated domains.
-
-+--------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"RestrictCreationToDomains": ""`` with string input. |
-+--------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------+
+| Use this setting to restrict the creation of guest accounts. When set, guest accounts require a verified email address from one of the listed domains. | - System Config path: **Authentication > Guest Access**                         |
+|                                                                                                                                                        | - ``config.json`` setting: ``.GuestAccountsSettings.RestrictCreationToDomains`` |
+| String input of one or more domains, separated by commas.                                                                                              | - Environment variable: ``MM_GUESTACCOUNTSSETTINGS_RESTRICTCREATIONTODOMAINS``  |
++--------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------+
 
 .. config:setting:: guest-enforcemultifactorauth
   :displayname: Enforce multi-factor authentication (Guest Access)
@@ -2599,12 +2599,11 @@ Enforce multi-factor authentication
 
 *Available in legacy Enterprise Edition E10 and E20*
 
-This setting defaults to false and is read-only if multi-factor authentication is not enforced for regular users.
++---------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
+| - **true**: Guests must use MFA. Guests without MFA are redirected to the setup page until MFA is configured. | - System Config path: **Authentication > Guest Access**                                       |
+| - **false**: **(Default)** MFA is not required for guests.                                                    | - ``config.json`` setting: ``.GuestAccountsSettings.EnforceMultifactorAuthentication: false`` |
+|                                                                                                               | - Environment variable: ``MM_GUESTACCOUNTSSETTINGS_ENFORCEMULTIFACTORAUTHENTICATION``         |
++---------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
+| **Note**: This setting defaults to false and cannot be changed if MFA isn't enforced for non-guest users.                                                                                                     |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-**True**: Multi-factor authentication (MFA) is required for login. New guest users will be required to configure MFA on sign-up. Logged in guest users without MFA configured are redirected to the MFA setup page until configuration is complete.
-
-**False**: Multi-factor authentication for guests is optional.
-
-+------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnforceMultifactorAuthentication": false`` with options ``true`` and ``false``. |
-+------------------------------------------------------------------------------------------------------------------------------+
