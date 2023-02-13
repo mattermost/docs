@@ -1905,7 +1905,7 @@ GitLab OAuth 2.0 Token endpoint
 Google OAuth 2.0 settings
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+.. include:: ../_static/badges/entpro-cloud-free.rst
   :start-after: :nosearch:
 
 .. config:setting:: oauth-googleenable
@@ -2030,7 +2030,7 @@ Google OAuth 2.0 Token endpoint
 Office 365 OAuth 2.0 settings
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+.. include:: ../_static/badges/entpro-cloud-free.rst
   :start-after: :nosearch:
 
 .. note::
@@ -2197,7 +2197,7 @@ This feature's setting does not appear in ``config.json``.
 GitLab settings
 ^^^^^^^^^^^^^^^
 
-.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../_static/badges/entpro-cloud-free.rst
   :start-after: :nosearch:
 
 .. config:setting:: oidc-gitlabsiteurl
@@ -2262,7 +2262,7 @@ Obtain this value by registering Mattermost as an application in your service pr
 Google Settings
 ^^^^^^^^^^^^^^^
 
-.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+.. include:: ../_static/badges/entpro-cloud-free.rst
   :start-after: :nosearch:
 
 .. config:setting:: oidc-googleenable
@@ -2341,7 +2341,7 @@ Obtain this value by registering Mattermost as an application in your Google acc
 Office 365 Settings
 ^^^^^^^^^^^^^^^^^^^
 
-.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+.. include:: ../_static/badges/entpro-cloud-free.rst
   :start-after: :nosearch:
 
 .. config:setting:: oidc-o365enable
