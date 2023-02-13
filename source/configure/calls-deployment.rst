@@ -395,7 +395,7 @@ Do I need a TURN server?
 
 TURN becomes necessary when you expect to have clients that are unable to connect through the configured UDP port. This can happen due to very restrictive firewalls that either block non standard ports even in the outgoing direction or don't allow the use of the UDP protocol altogether (e.g. some corporate firewalls). In such cases TURN is needed to allow connectivity.
 
-We officially support and recommend using `coturn <https://github.com/coturn/coturn>`__ for a stable and performance TURN service implementation.
+We officially support and recommend using `coturn <https://github.com/coturn/coturn>`__ for a stable and performant TURN service implementation.
 
 How will this work with an existing reverse proxy sitting in front of Mattermost?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
