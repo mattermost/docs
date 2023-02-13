@@ -353,7 +353,7 @@ The Calls plugin has a built-in `Selective Forwarding Unit (SFU) <https://blogge
 Reasons to use the ``rtcd`` service
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-It helps to understand when and why your organization would want to use ``rtcd``.
+This section will help you understand when and why your organization would want to use ``rtcd``.
 
 First of all, ``rtcd`` is a standalone service, which adds operational complexity. For most small instances of Mattermost there is no need to use ``rtcd``. Instead, use the Calls plugin until performance or reliability becomes an issue.
 
