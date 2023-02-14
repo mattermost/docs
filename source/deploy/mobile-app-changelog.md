@@ -32,6 +32,7 @@ Latest Mattermost Mobile Apps releases:
  - Fixed an issue on Android where user avatars instead of webhook avatars were shown in notifications.
  - Fixed an issue where the file menu remained open after the option to "open in channel" was selected.
  - Fixed the ability to mark a post as unread if the post was created from a webhook.
+ - Fixed a crash on iOS versions lower than 16.x when opening an item in the gallery.
 
 ### Open Source Components
  - Added ``@gorhom/bottom-sheet`` and ``react-native-walkthrough-tooltip`` https://github.com/mattermost/mattermost-mobile.
