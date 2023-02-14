@@ -17,7 +17,7 @@ Task actions
 
 You can automatically complete tasks in a playbook run using keyword triggers. When the keywords you've entered are mentioned in the run, the task is marked as completed.
 
-For this to work accurately you should use a string of text rather than individual words. The search is an ``ANY`` search, meaning that if you used the individual words "target" and "completed", either of those words will trigger the action to be marked as complete.
+For this to work accurately you should use a string of text rather than individual words. The search is an ``ANY`` search, meaning that if you used the individual words "target" and "completed", either of those words will trigger the action to be marked as complete. If you're using phrases that have formatting, make sure you use the Markdown formatting in the text field.
 
 When you edit a task, you'll see the following: 
 
@@ -25,6 +25,8 @@ When you edit a task, you'll see the following:
 - Ability to limit this for posts from a specific user (or bot)
 - Option to mark the task as done (or not).
 
+.. image:: ../images/task-actions.png
+  :alt: Configure tasks to be automatically marked as complete.
 
 Task inbox
 ----------
