@@ -12,7 +12,7 @@ You can group cards on your board if they utilize the **Select** or **Person** p
 
 .. note:: 
 
-  Card grouping is only available in board and table views and you must have at least one **Select** property on your board for grouping to work.
+  Card grouping is only available in board and table views and you must have at least one **Select** or **Person** property on your board for grouping to work.
 
 Apply a group
 ~~~~~~~~~~~~~
