@@ -348,19 +348,21 @@ The rtcd service
 .. include:: ./calls-rtcd-ent-only.rst
   :start-after: :nosearch:
 
-The Calls plugin has a built-in `Selective Forwarding Unit (SFU) <https://bloggeek.me/webrtcglossary/sfu/>`__ to route audio and screensharing data. But this SFU functionality can be split from the Calls plugin and hosted on its own, e.g., on its own node in a `kubernetes deployment <#kubernetes-deployments>`__, or its own dedicated server `alongside Mattermost instances <#modes-of-operation>`__ in a cloud service or self-hosted.
+The Calls plugin has a built-in `Selective Forwarding Unit (SFU) <https://bloggeek.me/webrtcglossary/sfu/>`__ to route audio and screensharing data. This is the ``integrated`` option described in the `<#modes-of-operation>`__ section above. But this SFU functionality can be deployed separately as an external ``rtcd`` instance.
 
 Reasons to use the ``rtcd`` service
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This section will help you understand when and why your organization would want to use ``rtcd``.
 
-First of all, ``rtcd`` is a standalone service, which adds operational complexity. For most small instances of Mattermost there is no need to use ``rtcd``. Instead, use the Calls plugin until performance or reliability becomes an issue.
+To be clear, ``rtcd`` is a standalone service, which adds operational complexity, maintenance costs, and requires an enterprise licence. For those who are evaluating Calls, and for many small instances of Mattermost, the integrated SFU (the one included in the Calls plugin) may be sufficient.
 
-- **Performance and stability of the main Mattermost server(s).** Letting the Calls plugin run the SFU means that calls traffic is being processed by the server that's also processing the rest of the Mattermost data (Channels, Boards, Playbooks, etc). If the Calls traffic spikes, it can affect the responsiveness of the rest of the Mattermost services. Using an ``rtcd`` service isolates the calls traffic processing to those ``rtcd`` instances.
-- **Performance, scalability, and stability of the Calls product.** If Calls traffic spikes, or more overall capacity is needed, ``rtcd`` servers can be added to balance the load. As an added benefit, if the Mattermost traffic spikes, or if a Mattermost instance needs to be restarted, those people in a current call will not be affected - current calls won't be dropped. 
+Having said that, the ``rtcd`` service provides many benefits and is the recommended way to host Calls for the following reasons.
 
-Some caveats apply here, for example emoji reactions will not be transmitted while the main Mattermost server is down. But the call itself will be resilient to main server restarts.
+- **Performance and stability of the main Mattermost server(s).** Letting the Calls plugin run the SFU means that calls traffic is being processed by the server that's also processing the rest of the Mattermost data (Channels, Boards, Playbooks, etc). In addition to the raw traffic, as the number of simultaneous screen sharing and voice sessions increase, so too will the CPU processing and memory requirements. If the Calls traffic spikes, it can affect the responsiveness of the rest of the Mattermost services. Using an ``rtcd`` service isolates the calls traffic processing to those ``rtcd`` instances.
+- **Performance, scalability, and stability of the Calls product.** If Calls traffic spikes, or more overall capacity is needed, ``rtcd`` servers can be added to balance the load. As an added benefit, if the Mattermost traffic spikes, or if a Mattermost instance needs to be restarted, those people in a current call will not be affected - current calls won't be dropped.
+
+Some caveats apply here. Web socket events (for example: emoji reactions, hand raising, muting/unmuting) will not be transmitted while the main Mattermost server is down. But the call itself will continue while the main server restarts.
 
 - **Kubernetes deployments.** In a Kubernetes deployment, ``rtcd`` is strongly recommended; it is currently the only officially supported way to run Calls.
 - **Technical benefits.** The dedicated ``rtcd`` service has been optimized and tuned at the system/network level for real-time audio/video traffic, where latency is generally more important than throughput.
