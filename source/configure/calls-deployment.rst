@@ -355,9 +355,11 @@ Reasons to use the ``rtcd`` service
 
 This section will help you understand when and why your organization would want to use ``rtcd``.
 
-To be clear, ``rtcd`` is a standalone service, which adds operational complexity, maintenance costs, and requires an enterprise licence. For those who are evaluating Calls, and for many small instances of Mattermost, the integrated SFU (the one included in the Calls plugin) may be sufficient.
+.. note::
 
-Having said that, the ``rtcd`` service provides many benefits and is the recommended way to host Calls for the following reasons.
+  ``rtcd`` is a standalone service, which adds operational complexity, maintenance costs, and requires an enterprise licence. For those who are evaluating  Calls, and for many small instances of Mattermost, the integrated SFU (the one included in the Calls plugin) may be sufficient initially.
+
+The ``rtcd`` service is the recommended way to host Calls for the following reasons:
 
 - **Performance of the main Mattermost server(s).** When the Calls plugin runs the SFU, calls traffic is added to the processing load of the server running the rest of your Mattermost services. If Calls traffic spikes, it can negatively affect the responsiveness of these services. Using an rtcd service isolates the calls traffic processing to those rtcd instances, and also reduces costs by minimizing CPU usage spikes.
 
