@@ -38,8 +38,8 @@ Admins also can narrow down search results by filtering by team or user status
 
 Active or deactivate users
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
- 
- When necessary, admin can also activate or deactivate people on the channel.
+
+When necessary, admin can also activate or deactivate people on the channel.
  
 1. Select the **User** option under the **User Management** tab.
 2. Admin can choose one person from the **Mattermost User** page and then choose the **Member** option.
