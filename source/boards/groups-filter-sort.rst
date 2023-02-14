@@ -3,7 +3,7 @@ Work with groups, filter, and sort
 
 Your board can be grouped, filtered, and sorted into different views using a range of properties. This gives you a powerful way to track work from various perspectives. When used in conjunction with `saved views </boards/work-with-views.html#work-with-saved-views>`_, you can create multiple views with different groupings and filters for quick access without having to reapply the groupings and filters every time.
 
-Easily find tasks assigned to you or a team member. You can now filter by the person and multi-person properties! Need to find tasks due soon or within a certain date period? No problem. You can also filter by date properties! 
+For example, easily find tasks assigned to you or a team member using the person or multi-person filters, and keep track of upcoming tasks with date filters.
 
 Group cards
 -----------
