@@ -2036,69 +2036,80 @@ Office 365 OAuth 2.0 settings
 .. note::
    In line with Microsoft ADFS guidance we recommend `configuring intranet forms-based authentication for devices that do not support WIA <https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configure-intranet-forms-based-authentication-for-devices-that-do-not-support-wia>`__.
 
-Enable authentication with Office 365 by selecting **Office 365** from **System Console > Authentication > OAuth 2.0 > Select OAuth 2.0 service provider**.
+Enable OAuth 2.0 Authentication with Office 365
+'''''''''''''''''''''''''''''''''''''''''''''''
 
-**True**: Allow team creation and account signup using Office 365 OAuth. To configure, input the **Application ID** and **Application Secret Password** credentials. See `the documentation <https://docs.mattermost.com/onboard/sso-office.html>`__ for more detail.
++-------------------------------------------------------------------------------------+----------------------------------------------------------------+
+| - **true**: Allows team and account creation using Office 365 OAuth authentication. | - System Config path: **Authentication > OAuth 2.0**           |
+| - **false**: **(Default)** Disables Office 365 OAuth authentication.                | - ``config.json`` setting: ``Office365Settings.Enable: false`` |
+|                                                                                     | - Environment variable: ``MM_OFFICE365SETTINGS_ENABLE``        |
++-------------------------------------------------------------------------------------+----------------------------------------------------------------+
+| **Note**: See the `Office 365 Single Sign-On <https://docs.mattermost.com/onboard/sso-office.html>`__ documentation for details.                     |
++------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-**False**: Office 365 OAuth cannot be used for team creation or account signup.
-
-+----------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Enable": false`` with options ``true`` and ``false``. |
-+----------------------------------------------------------------------------------------------------+
+Office 365 OAuth 2.0 Application ID
+'''''''''''''''''''''''''''''''''''
 
 .. config:setting:: oauth-o365appid
   :displayname: Application ID (OAuth - Office 365)
   :systemconsole: Authentication > OAuth 2.0
   :configjson: Id
   :environment: N/A
-  :description: Obtain this value by registering Mattermost as an application in your Microsoft or Office account.
-
-Application ID
-''''''''''''''
+  :description: This setting holds the Application ID generated when configuring Office 365 as a Single Sign-On service through the Microsoft Azure Portal.
 
 *Available in legacy Enterprise Edition E20*
 
-Obtain this value by registering Mattermost as an application in your Microsoft or Office account.
++-------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------+
+| This setting holds the **Application ID** generated when configuring Office 365 as a Single Sign-On service through the Microsoft Azure Portal. | - System Config path: **Authentication > OAuth 2.0** |
+|                                                                                                                                                 | - ``config.json`` setting: ``.Office365Settings.Id`` |
+| String input.                                                                                                                                   | - Environment variable: ``MM_OFFICE365SETTINGS_ID``  |
++-------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------+
+| **Note**: See the `Office 365 Single Sign-On <https://docs.mattermost.com/onboard/sso-office.html>`__ documentation for details.                                                                       |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-+---------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Id": ""`` with string input. |
-+---------------------------------------------------------------------------+
+Office 365 OAuth 2.0 Application secret password
+''''''''''''''''''''''''''''''''''''''''''''''''
 
 .. config:setting:: oauth-o365appsecret
   :displayname: Application secret password (OAuth - Office 365)
   :systemconsole: Authentication > OAuth 2.0
   :configjson: Secret
   :environment: N/A
-  :description: Obtain this value by registering Mattermost as an application in your Microsoft or Office account.
-
-Application secret password
-'''''''''''''''''''''''''''
+  :description: This setting holds the Application Secret Password generated when configuring Office 365 as a Single Sign-On service through the Microsoft Azure Portal.
 
 *Available in legacy Enterprise Edition E20*
 
-Obtain this value by registering Mattermost as an application in your Microsoft or Office account.
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------+
+| This setting holds the **Application Secret Password** generated when configuring Office 365 as a Single Sign-On service through the Microsoft Azure Portal. | - System Config path: **Authentication > OAuth 2.0**     |
+|                                                                                                                                                              | - ``config.json`` setting: ``.Office365Settings.Secret`` |
+| String input.                                                                                                                                                | - Environment variable: ``MM_OFFICE365SETTINGS_SECRET``  |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------+
+| **Note**: See the `Office 365 Single Sign-On <https://docs.mattermost.com/onboard/sso-office.html>`__ documentation for details.                                                                                        |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------+
 
-+-------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Secret": ""`` with string input. |
-+-------------------------------------------------------------------------------+
+Office 365 OAuth 2.0 Directory (tenant) ID
+''''''''''''''''''''''''''''''''''''''''''
 
 .. config:setting:: oauth-o365directoryid
   :displayname: Directory ID (OAuth - Office 365)
   :systemconsole: Authentication > OAuth 2.0
   :configjson: DirectoryId
   :environment: N/A
-  :description: This value is the ID of the application's AAD directory.
-
-Directory (tenant) ID
-'''''''''''''''''''''
+  :description: This setting holds the Directory (tenant) ID set for Mattermost through the Azure Portal.
 
 *Available in legacy Enterprise Edition E20*
 
-This value is the ID of the application's AAD directory.
++-----------------------------------------------------------------------------------------------+---------------------------------------------------------------+
+| This setting holds the **Directory (tenant) ID** set for Mattermost through the Azure Portal. | - System Config path: **Authentication > OAuth 2.0**          |
+|                                                                                               | - ``config.json`` setting: ``.Office365Settings.DirectoryId`` |
+| String input.                                                                                 | - Environment variable: ``MM_OFFICE365SETTINGS_DIRECTORYID``  |
++-----------------------------------------------------------------------------------------------+---------------------------------------------------------------+
+| **Note**: See the `Office 365 Single Sign-On <https://docs.mattermost.com/onboard/sso-office.html>`__ documentation for details.                              |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-+------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"DirectoryId": ""`` with string input. |
-+------------------------------------------------------------------------------------+
+
+Office 365 OAuth 2.0 User API endpoint
+''''''''''''''''''''''''''''''''''''''
 
 .. config:setting:: oauth-o365userapiendpoint
   :displayname: User API endpoint (OAuth - Office 365)
@@ -2107,34 +2118,34 @@ This value is the ID of the application's AAD directory.
   :environment: N/A
   :description: We recommend using ``https://graph.microsoft.com/v1.0/me`` as the User API Endpoint. It is the default value.
 
-User API endpoint
-'''''''''''''''''
-
 *Available in legacy Enterprise Edition E20*
 
-We recommend using ``https://graph.microsoft.com/v1.0/me`` as the User API Endpoint. Otherwise, enter a custom endpoint in ``config.json`` with HTTP or HTTPS depending on how your server is configured.
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
+| We recommend ``https://graph.microsoft.com/v1.0/me`` as the User API Endpoint. Otherwise, enter a custom endpoint in ``config.json`` with ``http``, or ``https``, if available on the server. | - System Config path: **Authentication > OAuth 2.0**              |
+|                                                                                                                                                                                               | - ``config.json`` setting: ``.Office365Settings.UserAPIEndpoint`` |
+| String input.                                                                                                                                                                                 | - Environment variable: ``MM_OFFICE365SETTINGS_USERAPIENDPOINT``  |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
 
-+---------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"UserApiEndpoint": "https://graph.microsoft.com/v1.0/me"`` with string input. |
-+---------------------------------------------------------------------------------------------------------------------------+
+Office 365 OAuth 2.0 Auth endpoint
+''''''''''''''''''''''''''''''''''
 
 .. config:setting:: oauth-o365authendpoint
   :displayname: Auth endpoint (OAuth - Office 365)
   :systemconsole: Authentication > OAuth 2.0
   :configjson: AuthEndpoint
   :environment: N/A
-  :description: We recommend using ``https://accounts.google.com/o/oauth2/v2/auth`` as the Auth Endpoint. It is the default value.
-
-Auth endpoint
-'''''''''''''
+  :description: We recommend ``https://login.microsoftonline.com/common/oauth2/v2.0/authorize`` as the Auth Endpoint.
 
 *Available in legacy Enterprise Edition E20*
 
-We recommend using ``https://accounts.google.com/o/oauth2/v2/auth`` as the Auth Endpoint. Otherwise, enter a custom endpoint in ``config.json`` with HTTP or HTTPS depending on how your server is configured.
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------+
+| We recommend ``https://login.microsoftonline.com/common/oauth2/v2.0/authorize`` as the Auth Endpoint. Otherwise, enter a custom endpoint in ``config.json`` with ``http``, or ``https``, if available on the server. | - System Config path: **Authentication > OAuth 2.0**           |
+|                                                                                                                                                                                                                      | - ``config.json`` setting: ``.Office365Settings.AuthEndpoint`` |
+| String input.                                                                                                                                                                                                        | - Environment variable: ``MM_OFFICE365SETTINGS_AUTHENDPOINT``  |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------+
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"AuthEndpoint": "https://login.microsoftonline.com/common/oauth2/v2.0/authorize"`` with string input. |
-+---------------------------------------------------------------------------------------------------------------------------------------------------+
+Office 365 OAuth 2.0 Token endpoint
+'''''''''''''''''''''''''''''''''''
 
 .. config:setting:: oauth-o365tokenendpoint
   :displayname: Token endpoint (OAuth - Office 365)
@@ -2143,16 +2154,13 @@ We recommend using ``https://accounts.google.com/o/oauth2/v2/auth`` as the Auth 
   :environment: N/A
   :description: We recommend that you use ``https://login.microsoftonline.com/common/oauth2/v2.0/token`` as the Token Endpoint. It is the default value.
 
-Token endpoint
-''''''''''''''
-
 *Available in legacy Enterprise Edition E20*
 
-We recommend that you use ``https://login.microsoftonline.com/common/oauth2/v2.0/token`` as the Token Endpoint. Otherwise, enter a custom endpoint in ``config.json`` with HTTP or HTTPS depending on how your server is configured.
-
-+------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"TokenEndpoint": "https://login.microsoftonline.com/common/oauth2/v2.0/token"`` with string input. |
-+------------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
+| We recommend ``https://login.microsoftonline.com/common/oauth2/v2.0/token`` as the Token Endpoint. Otherwise, enter a custom endpoint in ``config.json`` with ``http``, or ``https``, if available on the server. | - System Config path: **Authentication > OAuth 2.0**            |
+|                                                                                                                                                                                                                   | - ``config.json`` setting: ``.Office365Settings.TokenEndpoint`` |
+| String input.                                                                                                                                                                                                     | - Environment variable: ``MM_OFFICE365SETTINGS_TOKENENDPOINT``  |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
 
 ----
 
