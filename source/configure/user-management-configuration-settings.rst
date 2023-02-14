@@ -54,33 +54,6 @@ Admin can change any user's role from admin to member by managing their roles.
 2. Select **Manage Roles** from the dropdown menu in the **Member** section.
 3. Then admin can select the appropriate options
 
-Update team membership
-~~~~~~~~~~~~~~~~~~~~~~
-
-1.
-2.
-3.
-
-Reset user's password
-~~~~~~~~~~~~~~~~~~~~~
-
-1.
-2.
-3.
-
-Update user's email
-~~~~~~~~~~~~~~~~~~~~
-
-1.
-2.
-3.
-
-Revoke user sessions
-~~~~~~~~~~~~~~~~~~~~~
-
-1.
-2.
-3.
 
 
 
