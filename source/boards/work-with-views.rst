@@ -9,7 +9,7 @@ You can change board views to adjust how your cards are represented. To add a ne
 Board view
 ----------
 
-This is a kanban view where cards are grouped into columns. Column groups only work with the **Select** property and display all cards that share the same value from the specified **Select** property. The column names are editable, and any changes to the column names are also applied to the value from the **Select** property. Cards can be dragged between columns, which will automatically update the property’s assigned value on the card.
+This is a kanban view where cards are grouped into columns. Column groups only work with the **Select** or **Person** properties and display all cards that share the same value from the specified property. The column names are editable, and any changes to the column names are also applied to the value from the property. Cards can be dragged between columns, which will automatically update the property’s assigned value on the card.
 
 Table view
 ----------
