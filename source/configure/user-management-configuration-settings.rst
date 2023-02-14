@@ -30,11 +30,57 @@ Users
 Find users
 ~~~~~~~~~~
 
-admins also can narrow down search results by filtering by team or user status
+Admins also can narrow down search results by filtering by team or user status
 
-1. select the dot icon from the top left corner, then select **System Console** option.
-2. Go to **User Management** option then select **Users** option.
-3. Go to **Search** field and type the user name and select appropriate options from **Team** and **User Status**
+1. select **System Console** from the menu that appears after clicking the dot icon in the upper left corner.
+2. Select the **Users** option from the **User Management** menu.
+3. Enter the user name in the **Search** field and then choose the proper settings from **Team** and **User Status**.
+
+Active or deactivate users
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 
+ When necessary, admin can also activate or deactivate people on the channel.
+ 
+1. Select the **User** option under the **User Management** tab.
+2. Admin can choose one person from the **Mattermost User** page and then choose the **Member** option.
+3. Select **Deactive** user to deactivate and **Activate** user to activate from the dropdown menu under the **Member** option.
+
+Manage user roles
+~~~~~~~~~~~~~~~~~~
+
+Admin can change any user's role from admin to member by managing their roles.
+
+1. Select the **Member** option in the **Mattermost User** section.
+2. Select **Manage Roles** from the dropdown menu in the **Member** section.
+3. Then admin can select the appropriate options
+
+Update team membership
+~~~~~~~~~~~~~~~~~~~~~~
+
+1.
+2.
+3.
+
+Reset user's password
+~~~~~~~~~~~~~~~~~~~~~
+
+1.
+2.
+3.
+
+Update user's email
+~~~~~~~~~~~~~~~~~~~~
+
+1.
+2.
+3.
+
+Revoke user sessions
+~~~~~~~~~~~~~~~~~~~~~
+
+1.
+2.
+3.
 
 
 
