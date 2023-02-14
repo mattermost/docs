@@ -46,6 +46,10 @@ You can filter cards on your board if they utilize any of the following property
 - Date
 - Person
 - Multi-person
+- Created time
+- Created by
+- Last updated time
+- Last updated by
 
 .. note:: 
   
