@@ -44,7 +44,7 @@ Notification sounds fire for any activity that would trigger a desktop notificat
 Email notifications
 ~~~~~~~~~~~~~~~~~~~
 
-Email notifications are sent for mentions and direct messages after you’ve been offline for more than 60 seconds or away from Mattermost for more than five minutes. Using Mattermost in a web browser or the desktop app, you can change the email where notifications are sent by selecting **Profile > Profile Settings > Email**.
+Email notifications are sent for mentions and direct messages after you’ve been offline for more than 60 seconds or away from Mattermost for more than five minutes. Using Mattermost in a web browser or the desktop app, you can change the email address where notifications are sent by selecting **Profile > Profile Settings > Email**.
 
 If your System Admin has enabled `email batching </configure/configuration-settings.html#enable-email-batching>`__, you'll have additional options under this settings to select how often email notifications will be sent. All notifications received over this time period are combined and sent in a single email.
 
