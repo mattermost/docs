@@ -271,6 +271,14 @@ Select which language Mattermost displays in the user interface. Options include
 - 中文 (繁體) - Traditional Chinese
 - 日本語 - Japanese
 
+Advanced settings
+~~~~~~~~~~~~~~~~~
+
+Using the Mattermost mobile app, you can delete local Mattermost files from your device. Access **Settings** by tapping on your profile picture.
+
+  1. Tap **Advanced Settings**.
+  2. Tap **Delete local files**. Only data specific to the current server is removed from your device. You'll need to repeat this process for each server you've configured on the mobile app.
+
 Sidebar
 -------
 
