@@ -7,6 +7,8 @@ Start a call
 From Mattermost v7.0, you can make voice calls and share your screen in channels, group messages, and direct messages in both Mattermost Cloud and Mattermost self-hosted deployments.
 
 - `Start a call <#start-a-call>`__
+- `Emojis <#emojis>`__
+- `Chat in a call <#chat-in-a-call>`__
 - `Record a call <#record-a-call>`__
 - `Frequently asked questions <#frequently-asked-questions>`__
 - `Troubleshooting <#troubleshooting>`__
@@ -47,7 +49,7 @@ The call link is valid for long as the channel is active. When a channel is arch
 Emojis
 ------
 
-You can use emojis during a call.
+You can use emojis to react during a call.
 
 .. tabs::
 
