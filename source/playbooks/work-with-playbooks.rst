@@ -44,7 +44,7 @@ You can change a playbook’s configuration at any time, but changes will only b
 1. Go to **product menu > Playbooks**.
 2. Find the playbook you want to edit.
 
-   - Only public playbooks and private playbooks of which you are a member are listed. System Admins have unrestricted access to all playbooks on the team.
+   - Only public playbooks and private playbooks that you're a member of are listed. System admins have unrestricted access to all playbooks on the team.
 
 3. Select the name of the playbook.
 
