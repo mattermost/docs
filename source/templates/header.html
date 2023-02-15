@@ -39,65 +39,11 @@
 								</svg>
 							</span>
 						</a>
-						<!-- <div class="sub-menu sub-menu__products">
-							<figure class="sub-menu__block">
-								<a href="https://mattermost.com/channels/" data-ol-has-click-handler="">
-									<div class="sub-menu__block--icon">
-										<img src="{{ pathto('_static/images/nav/channels-icon.svg', 1) }}">
-									</div>
-									<div class="sub-menu__block--text">
-										<span class="sub-menu__block--text_title">Channels</span>
-										<span class="sub-menu__block--text_learnmore">Learn More</span>
-									</div>
-								</a>
-							</figure>
-							<div class="sub-menu__block">
-								<a href="https://mattermost.com/playbooks/" data-ol-has-click-handler="">
-									<div class="sub-menu__block--icon">
-										<img src="{{ pathto('_static/images/nav/playbooks-icon.svg', 1) }}">
-									</div>
-									<div class="sub-menu__block--text">
-										<span class="sub-menu__block--text_title">Playbooks</span>
-										<span class="sub-menu__block--text_learnmore">Learn More</span>
-									</div>
-								</a>
-							</div>
-							<figure class="sub-menu__block">
-								<a href="https://mattermost.com/boards/" data-ol-has-click-handler="">
-									<div class="sub-menu__block--icon">
-										<img src="{{ pathto('_static/images/nav/boards-icon.svg', 1) }}">
-									</div>
-									<div class="sub-menu__block--text">
-										<span class="sub-menu__block--text_title">Boards</span>
-										<span class="sub-menu__block--text_learnmore">Learn More</span>
-									</div>
-								</a>
-							</figure>
-							<figure class="sub-menu__links">
-								<ul>
-									<li class="sub-menu__links--single">
-										<a href="https://mattermost.com/platform-overview/" data-ol-has-click-handler="">
-											<span class="sub-menu__links--icon"><img src="{{ pathto('_static/images/nav/ProductOverview.svg', 1) }}"></span>Product Overview
-										</a>
-									</li>
-									<li class="sub-menu__links--single">
-										<a href="https://mattermost.com/integrations-overview/" data-ol-has-click-handler="">
-											<span class="sub-menu__links--icon"><img src="{{ pathto('_static/images/nav/Integrations.svg', 1) }}"></span>Integrations
-										</a>
-									</li>
-									<li class="sub-menu__links--single">
-										<a href="https://mattermost.com/security/" data-ol-has-click-handler="">
-											<span class="sub-menu__links--icon"><img src="{{ pathto('_static/images/nav/Security.svg', 1) }}"></span>Security
-										</a>
-									</li>
-								</ul>
-							</figure>
-						</div> -->
 						<div class="sub-menu sub-menu__products">
 							<div class="sub-menu__products__main">
 								<div class="sub-menu__header">
 									<a class="sub-menu__platform-mobile" href="https://mattermost.com/platform-overview/" data-ol-has-click-handler="">
-										<img class="sub-menu--sm-visible" src="https://mattermost.com/wp-content/themes/mattermost-2021/frontend/dist/img/header/ProductOverview.svg">
+										<img class="sub-menu--sm-visible" src="{{ pathto('_static/images/nav/ProductOverview.svg', 1) }}">
 										<div class="sub-menu__block--text">
 											<span class="sub-menu__header-title">Platform Overview</span>
 											<span class=" sub-menu__header-subhead">See Overview</span>
@@ -116,7 +62,7 @@
 										<ul>
 											<li class="sub-menu__links--single">
 												<a href="https://mattermost.com/channels/" data-ol-has-click-handler="">
-													<span class="sub-menu__links--icon"><img src="https://mattermost.com/wp-content/themes/mattermost-2021/frontend/dist/img/header/channels-icon.svg"></span>
+													<span class="sub-menu__links--icon"><img src="{{ pathto('_static/images/nav/channels-icon.svg', 1) }}"></span>
 													<div>
 														<p class="sub-menu__links-heading">Channels</p>
 														<span class="sub-menu__links-cta">Learn More</span>
@@ -125,7 +71,7 @@
 											</li>	
 											<li class="sub-menu__links--single">
 												<a href="https://mattermost.com/playbooks/" data-ol-has-click-handler="">
-													<span class="sub-menu__links--icon"><img src="https://mattermost.com/wp-content/themes/mattermost-2021/frontend/dist/img/header/playbooks-icon.svg"></span>
+													<span class="sub-menu__links--icon"><img src="{{ pathto('_static/images/nav/playbooks-icon.svg', 1) }}"></span>
 													<div>
 														<p class="sub-menu__links-heading">Playbooks</p>
 														<span class="sub-menu__links-cta">Learn More</span>
@@ -134,7 +80,7 @@
 											</li>
 											<li class="sub-menu__links--single">
 												<a href="https://mattermost.com/boards/" data-ol-has-click-handler="">
-													<span class="sub-menu__links--icon"><img src="https://mattermost.com/wp-content/themes/mattermost-2021/frontend/dist/img/header/boards-icon.svg"></span>
+													<span class="sub-menu__links--icon"><img src="{{ pathto('_static/images/nav/boards-icon.svg', 1) }}"></span>
 													<div>
 														<p class="sub-menu__links-heading">Boards</p>
 														<span class="sub-menu__links-cta">Learn More</span>
@@ -143,7 +89,7 @@
 											</li>
 											<li class="sub-menu__links--single">
 												<a href="https://mattermost.com/integrations-overview/" data-ol-has-click-handler="">
-													<span class="sub-menu__links--icon sub-menu__links--icon-integration"><img src="https://mattermost.com/wp-content/themes/mattermost-2021/frontend/dist/img/header/Integrations.svg"></span>
+													<span class="sub-menu__links--icon sub-menu__links--icon-integration"><img src="{{ pathto('_static/images/nav/Integrations.svg', 1) }}"></span>
 													<div>
 														<p class="sub-menu__links-heading">Integrations</p>
 														<span class="sub-menu__links-cta">Learn More</span>
@@ -152,7 +98,7 @@
 											</li>
 											<li class="sub-menu__links--single">
 												<a href="https://mattermost.com/security/" data-ol-has-click-handler="">
-													<span class="sub-menu__links--icon sub-menu__links--icon-security"><img src="https://mattermost.com/wp-content/themes/mattermost-2021/frontend/dist/img/header/Security.svg"></span>
+													<span class="sub-menu__links--icon sub-menu__links--icon-security"><img src="{{ pathto('_static/images/nav/Security.svg', 1) }}"></span>
 													<div>
 														<p class="sub-menu__links-heading">Security</p>
 														<span class="sub-menu__links-cta">Learn More</span>
@@ -168,13 +114,13 @@
 								<p class="promo-subhead">Our most popular content.</p>
 								<a href="https://mattermost.com/mattermost-overview/" class="promo-block" id="platform-promo-1" data-ol-has-click-handler="">
 									<div class="promo-block__image">
-										<img src="https://mattermost.com/wp-content/themes/mattermost-2021/frontend/dist/img/header/promo/promo-mattermost-overview-guide.png" alt="">
+										<img src="{{ pathto('_static/images/nav/promo/promo-mattermost-overview-guide.png', 1) }}" alt="">
 									</div>
 									<div class="promo-block__copy"><span>Mattermost Overview Guide »</span></div>
 								</a>
 								<a href="https://mattermost.com/mattermost-product-overview-video/" class="promo-block" id="platform-promo-2" data-ol-has-click-handler="">
 									<div class="promo-block__image">
-										<img src="https://mattermost.com/wp-content/themes/mattermost-2021/frontend/dist/img/header/promo/promo-mattermost-platform-overview-video.png" alt="">
+										<img src="{{ pathto('_static/images/nav/promo/promo-mattermost-platform-overview-video.png', 1) }}" alt="">
 									</div>
 									<div class="promo-block__copy">Platform Overview Video »</div>
 								</a>
@@ -189,113 +135,12 @@
 								</svg>
 							</span>
 						</a>
-						<!-- <div class="sub-menu sub-menu__solutions">
-							<div class="sub-menu__col sub-menu__solutions--leftcol">
-								<figure class="sub-menu__block">
-									<a href="https://mattermost.com/solutions/" data-ol-has-click-handler="">
-										<div class="sub-menu__block--icon">
-											<img src="{{ pathto('_static/images/nav/SolutionsOverview.svg', 1) }}">
-										</div>
-										<div class="sub-menu__block--text">
-											<span class="sub-menu__block--text_title">Solutions Overview</span>
-											<span class="sub-menu__block--text_learnmore">Read More</span>
-										</div>
-									</a>
-								</figure>
-								<p class="sub-menu__col--title">
-									USE CASES
-								</p>
-								<div class="sub-menu__links">
-									<ul>
-										<li class="sub-menu__links--single">
-											<a href="https://mattermost.com/solutions/use-cases/secure-collaboration/" data-ol-has-click-handler="">
-												<span class="sub-menu__links--icon"><img src="{{ pathto('_static/images/nav/SecureCollaboration.svg', 1) }}"></span>Secure Collaboration
-											</a>
-										</li>
-										<li class="sub-menu__links--single">
-											<a href="https://mattermost.com/solutions/use-cases/devops/" data-ol-has-click-handler="">
-												<span class="sub-menu__links--icon"><img src="{{ pathto('_static/images/nav/DevOps.svg', 1) }}"></span>DevOps
-											</a>
-										</li>
-										<li class="sub-menu__links--single">
-											<a href="https://mattermost.com/solutions/use-cases/workflow-orchestration/" data-ol-has-click-handler="">
-												<span class="sub-menu__links--icon"><img src="{{ pathto('_static/images/nav/WorkflowOrchestration.svg', 1) }}"></span>Workflow Orchestration
-											</a>
-										</li>
-										<li class="sub-menu__links--single">
-											<a href="https://mattermost.com/solutions/use-cases/incident-resolution/" data-ol-has-click-handler="">
-												<span class="sub-menu__links--icon"><img src="{{ pathto('_static/images/nav/IncidentCollaboration.svg', 1) }}"></span>Incident Resolution
-											</a>
-										</li>
-										<li class="sub-menu__links--single">
-											<a href="https://mattermost.com/solutions/use-cases/ci-cd/" data-ol-has-click-handler="">
-												<span class="sub-menu__links--icon"><img src="{{ pathto('_static/images/nav/CICD.svg', 1) }}"></span>CI/CD
-											</a>
-										</li>
-										<li class="sub-menu__links--single">
-											<a href="https://mattermost.com/solutions/use-cases/test-qa/" data-ol-has-click-handler="">
-												<span class="sub-menu__links--icon"><img src="{{ pathto('_static/images/nav/TestQA.svg', 1) }}"></span>Test/QA
-											</a>
-										</li>
-										<li class="sub-menu__links--single">
-											<a href="https://mattermost.com/solutions/use-cases/it-service-desk/" data-ol-has-click-handler="">
-												<span class="sub-menu__links--icon"><img src="{{ pathto('_static/images/nav/ITServiceDesk.svg', 1) }}"></span>IT Service Desk
-											</a>
-										</li>
-										<li class="sub-menu__links--single">
-											<a href="https://mattermost.com/solutions/use-cases/apm-npm/" data-ol-has-click-handler="">
-												<span class="sub-menu__links--icon"><img src="{{ pathto('_static/images/nav/APM_NPM.svg', 1) }}"></span>APM/NPM
-											</a>
-										</li>
-									</ul>
-								</div>
-								<div class="sub-menu__bar">
-									<a href="https://mattermost.com/solutions/" data-ol-has-click-handler="">
-										Solutions Overview »
-									</a>
-								</div>
-							</div>
-							<div class="sub-menu__col sub-menu__solutions--rightcol">
-								<p class="sub-menu__col--title">
-									INDUSTRIES
-								</p>
-								<div class="sub-menu__links">
-									<ul>
-										<li class="sub-menu__links--single">
-											<a href="https://mattermost.com/solutions/industries/government/" data-ol-has-click-handler="">
-												<span class="sub-menu__links--icon"><img src="{{ pathto('_static/images/nav/Government.svg', 1) }}"></span>Government
-											</a>
-										</li>
-										<li class="sub-menu__links--single">
-											<a href="https://mattermost.com/solutions/industries/financial-services/" data-ol-has-click-handler="">
-												<span class="sub-menu__links--icon"><img src="{{ pathto('_static/images/nav/FinancialServices.svg', 1) }}"></span>Financial Services
-											</a>
-										</li>
-										<li class="sub-menu__links--single">
-											<a href="https://mattermost.com/solutions/industries/media-entertainment/" data-ol-has-click-handler="">
-												<span class="sub-menu__links--icon"><img src="{{ pathto('_static/images/nav/MediaEntertainment.svg', 1) }}"></span>Media &amp; Entertainment
-											</a>
-										</li>
-										<li class="sub-menu__links--single">
-											<a href="https://mattermost.com/solutions/industries/legal/" data-ol-has-click-handler="">
-												<span class="sub-menu__links--icon"><img src="{{ pathto('_static/images/nav/Legal.svg', 1) }}"></span>Legal
-											</a>
-										</li>
-										<li class="sub-menu__links--single">
-											<a href="https://mattermost.com/solutions/industries/healthcare/" data-ol-has-click-handler="">
-												<span class="sub-menu__links--icon"><img src="{{ pathto('_static/images/nav/Healthcare.svg', 1) }}"></span>Healthcare
-											</a>
-										</li>
-									</ul>
-								</div>
-							</div>
-						</div> -->
 						<div class="sub-menu sub-menu__solutions">
 							<div class="sub-menu__solutions__main">
 								<div class="sub-menu__solutions__main-wrapper">
 									<div class="sub-menu__header">
 										<a class="sub-menu__solutions-mobile" href="https://mattermost.com/solutions/" data-ol-has-click-handler="">
-											<img src="https://mattermost.com/wp-content/themes/mattermost-2021/frontend/dist/img/header/SolutionsOverview.svg">
+											<img src="{{ pathto('_static/images/nav/SolutionsOverview.svg', 1) }}">
 											<div class="sub-menu__block--text">
 												<span class="sub-menu__header-title">Solutions Overview</span>
 												<span class=" sub-menu__header-subhead">See Overview</span>
@@ -318,22 +163,22 @@
 												<ul>
 													<li class="sub-menu__links--single">
 														<a href="https://mattermost.com/solutions/use-cases/secure-collaboration/" data-ol-has-click-handler="">
-															<span class="sub-menu__links--icon"><img src="https://mattermost.com/wp-content/themes/mattermost-2021/frontend/dist/img/header/SecureCollaboration.svg"></span>Secure Collaboration
+															<span class="sub-menu__links--icon"><img src="{{ pathto('_static/images/nav/SecureCollaboration.svg', 1) }}"></span>Secure Collaboration
 														</a>
 													</li>
 													<li class="sub-menu__links--single">
 														<a href="https://mattermost.com/solutions/use-cases/accelerate-productivity/" data-ol-has-click-handler="">
-															<span class="sub-menu__links--icon"><img src="https://mattermost.com/wp-content/themes/mattermost-2021/frontend/dist/img/header/Rocket.svg"></span>Accelerate Productivity
+															<span class="sub-menu__links--icon"><img src="{{ pathto('_static/images/nav/Rocket.svg', 1) }}"></span>Accelerate Productivity
 														</a>
 													</li>
 													<li class="sub-menu__links--single">
 														<a href="https://mattermost.com/solutions/use-cases/error-reduction/" data-ol-has-click-handler="">
-															<span class="sub-menu__links--icon"><img src="https://mattermost.com/wp-content/themes/mattermost-2021/frontend/dist/img/header/TestQA.svg"></span>Error Reduction
+															<span class="sub-menu__links--icon"><img src="{{ pathto('_static/images/nav/TestQA.svg', 1) }}"></span>Error Reduction
 														</a>
 													</li>
 													<li class="sub-menu__links--single">
 														<a href="https://mattermost.com/solutions/use-cases/incident-resolution/" data-ol-has-click-handler="">
-															<span class="sub-menu__links--icon"><img src="https://mattermost.com/wp-content/themes/mattermost-2021/frontend/dist/img/header/fire.svg"></span>Incident Resolution
+															<span class="sub-menu__links--icon"><img src="{{ pathto('_static/images/nav/fire.svg', 1) }}"></span>Incident Resolution
 														</a>
 													</li>
 												</ul>
@@ -347,22 +192,22 @@
 												<ul>
 													<li class="sub-menu__links--single">
 														<a href="https://mattermost.com/solutions/industries/government/" data-ol-has-click-handler="">
-															<span class="sub-menu__links--icon"><img src="https://mattermost.com/wp-content/themes/mattermost-2021/frontend/dist/img/header/Government.svg"></span>Government
+															<span class="sub-menu__links--icon"><img src="{{ pathto('_static/images/nav/Government.svg', 1) }}"></span>Government
 														</a>
 													</li>
 													<li class="sub-menu__links--single">
 														<a href="https://mattermost.com/solutions/industries/financial-services/" data-ol-has-click-handler="">
-															<span class="sub-menu__links--icon"><img src="https://mattermost.com/wp-content/themes/mattermost-2021/frontend/dist/img/header/FinancialServices.svg"></span>Financial Services
+															<span class="sub-menu__links--icon"><img src="{{ pathto('_static/images/nav/FinancialServices.svg', 1) }}"></span>Financial Services
 														</a>
 													</li>
 													<li class="sub-menu__links--single">
 														<a href="https://mattermost.com/solutions/industries/media-entertainment/" data-ol-has-click-handler="">
-															<span class="sub-menu__links--icon"><img src="https://mattermost.com/wp-content/themes/mattermost-2021/frontend/dist/img/header/MediaEntertainment.svg"></span>Media &amp; Entertainment
+															<span class="sub-menu__links--icon"><img src="{{ pathto('_static/images/nav/MediaEntertainment.svg', 1) }}"></span>Media &amp; Entertainment
 														</a>
 													</li>
 													<li class="sub-menu__links--single">
 														<a href="https://mattermost.com/solutions/industries/healthcare/" data-ol-has-click-handler="">
-															<span class="sub-menu__links--icon"><img src="https://mattermost.com/wp-content/themes/mattermost-2021/frontend/dist/img/header/Healthcare.svg"></span>Healthcare
+															<span class="sub-menu__links--icon"><img src="{{ pathto('_static/images/nav/Healthcare.svg', 1) }}"></span>Healthcare
 														</a>
 													</li>
 												</ul>
@@ -397,40 +242,42 @@
 								</svg>
 							</span>
 						</a>
-						<!-- <div class="sub-menu sub-menu__community">
-							<figure class="sub-menu__block">
-								<a href="https://mattermost.com/deploy/" data-ol-has-click-handler="">
-									<div class="sub-menu__block--icon">
-										<img src="{{ pathto('_static/images/nav/Server.svg', 1) }}">
-									</div>
-									<div class="sub-menu__block--text">
-										<span class="sub-menu__block--text_title">Deploy</span>
-										<span class="sub-menu__block--text_learnmore">Run Your Server Now</span>
-									</div>
-								</a>
-							</figure>
-							<figure class="sub-menu__block">
-								<a href="https://developers.mattermost.com/integrate/getting-started/" data-ol-has-click-handler="">
-									<div class="sub-menu__block--icon">
-										<img src="{{ pathto('_static/images/nav/Integrate.svg', 1) }}">
-									</div>
-									<div class="sub-menu__block--text">
-										<span class="sub-menu__block--text_title">Integrate</span>
-										<span class="sub-menu__block--text_learnmore">Learn More</span>
-									</div>
-								</a>
-							</figure>
-							<figure class="sub-menu__block">
-								<a href="https://mattermost.com/contribute/" data-ol-has-click-handler="">
-									<div class="sub-menu__block--icon">
-										<img src="{{ pathto('_static/images/nav/Contribute.svg', 1) }}">
-									</div>
-									<div class="sub-menu__block--text">
-										<span class="sub-menu__block--text_title">Contribute</span>
-										<span class="sub-menu__block--text_learnmore">Learn More</span>
-									</div>
-								</a>
-							</figure>
+						<div class="sub-menu sub-menu__developers">
+							<div class="sub-menu__blocks-list">
+								<figure class="sub-menu__block--mini">
+									<a href="https://mattermost.com/deploy/" data-ol-has-click-handler="">
+										<div class="sub-menu__block--icon">
+											<img src="{{ pathto('_static/images/nav/Server.svg', 1) }">
+										</div>
+										<div class="sub-menu__block--text">
+											<span class="sub-menu__block--text_title">Deploy</span>
+											<span class="sub-menu__block--text_learnmore">Run Your Server Now</span>
+										</div>
+									</a>
+								</figure>
+								<figure class="sub-menu__block--mini">
+									<a href="https://developers.mattermost.com/integrate/getting-started/" data-ol-has-click-handler="">
+										<div class="sub-menu__block--icon">
+											<img src="{{ pathto('_static/images/nav/Integrate.svg', 1) }}">
+										</div>
+										<div class="sub-menu__block--text">
+											<span class="sub-menu__block--text_title">Integrate</span>
+											<span class="sub-menu__block--text_learnmore">Learn More</span>
+										</div>
+									</a>
+								</figure>
+								<figure class="sub-menu__block--mini">
+									<a href="https://mattermost.com/contribute/" data-ol-has-click-handler="">
+										<div class="sub-menu__block--icon">
+											<img src="{{ pathto('_static/images/nav/Contribute.svg', 1) }}">
+										</div>
+										<div class="sub-menu__block--text">
+											<span class="sub-menu__block--text_title">Contribute</span>
+											<span class="sub-menu__block--text_learnmore">Learn More</span>
+										</div>
+									</a>
+								</figure>
+							</div>
 							<div class="sub-menu__links">
 								<ul>
 									<li class="sub-menu__links--single">
@@ -453,7 +300,7 @@
 							<div class="sub-menu__links">
 								<ul>
 									<li class="sub-menu__links--single">
-										<a href="/" data-ol-has-click-handler="">
+										<a href="https://docs.mattermost.com/" data-ol-has-click-handler="">
 											<span class="sub-menu__links--icon"><img src="{{ pathto('_static/images/nav/Docs.svg', 1) }}"></span>Docs
 										</a>
 									</li>
@@ -463,83 +310,8 @@
 										</a>
 									</li>
 									<li class="sub-menu__links--single">
-										<a href="/install/self-managed-changelog.html" data-ol-has-click-handler="">
-											<span class="sub-menu__links--icon"><img src="{{ pathto('_static/images/nav/ReleaseNotes.svg', 1) }}"></span>Release Notes
-										</a>
-									</li>
-								</ul>
-							</div>
-						</div> -->
-						<div class="sub-menu sub-menu__developers">
-							<div class="sub-menu__blocks-list">
-								<figure class="sub-menu__block--mini">
-									<a href="https://mattermost.com/deploy/" data-ol-has-click-handler="">
-										<div class="sub-menu__block--icon">
-											<img src="https://mattermost.com/wp-content/themes/mattermost-2021/frontend/dist/img/header/Server.svg">
-										</div>
-										<div class="sub-menu__block--text">
-											<span class="sub-menu__block--text_title">Deploy</span>
-											<span class="sub-menu__block--text_learnmore">Run Your Server Now</span>
-										</div>
-									</a>
-								</figure>
-								<figure class="sub-menu__block--mini">
-									<a href="https://developers.mattermost.com/integrate/getting-started/" data-ol-has-click-handler="">
-										<div class="sub-menu__block--icon">
-											<img src="https://mattermost.com/wp-content/themes/mattermost-2021/frontend/dist/img/header/Integrate.svg">
-										</div>
-										<div class="sub-menu__block--text">
-											<span class="sub-menu__block--text_title">Integrate</span>
-											<span class="sub-menu__block--text_learnmore">Learn More</span>
-										</div>
-									</a>
-								</figure>
-								<figure class="sub-menu__block--mini">
-									<a href="https://mattermost.com/contribute/" data-ol-has-click-handler="">
-										<div class="sub-menu__block--icon">
-											<img src="https://mattermost.com/wp-content/themes/mattermost-2021/frontend/dist/img/header/Contribute.svg">
-										</div>
-										<div class="sub-menu__block--text">
-											<span class="sub-menu__block--text_title">Contribute</span>
-											<span class="sub-menu__block--text_learnmore">Learn More</span>
-										</div>
-									</a>
-								</figure>
-							</div>
-							<div class="sub-menu__links">
-								<ul>
-									<li class="sub-menu__links--single">
-										<a href="https://mattermost.com/blog/" data-ol-has-click-handler="">
-											<span class="sub-menu__links--icon"><img src="https://mattermost.com/wp-content/themes/mattermost-2021/frontend/dist/img/header/Blog.svg"></span>Blog
-										</a>
-									</li>
-									<li class="sub-menu__links--single">
-										<a href="https://mattermost.com/resources/" data-ol-has-click-handler="">
-											<span class="sub-menu__links--icon"><img src="https://mattermost.com/wp-content/themes/mattermost-2021/frontend/dist/img/header/Resources.svg"></span>Resources
-										</a>
-									</li>
-									<li class="sub-menu__links--single">
-										<a href="https://mattermost.com/community/" data-ol-has-click-handler="">
-											<span class="sub-menu__links--icon"><img src="https://mattermost.com/wp-content/themes/mattermost-2021/frontend/dist/img/header/Community.svg"></span>Community
-										</a>
-									</li>
-								</ul>
-							</div>
-							<div class="sub-menu__links">
-								<ul>
-									<li class="sub-menu__links--single">
-										<a href="https://docs.mattermost.com/" data-ol-has-click-handler="">
-											<span class="sub-menu__links--icon"><img src="https://mattermost.com/wp-content/themes/mattermost-2021/frontend/dist/img/header/Docs.svg"></span>Docs
-										</a>
-									</li>
-									<li class="sub-menu__links--single">
-										<a href="https://api.mattermost.com/" data-ol-has-click-handler="">
-											<span class="sub-menu__links--icon"><img src="https://mattermost.com/wp-content/themes/mattermost-2021/frontend/dist/img/header/APIReference.svg"></span>API Reference
-										</a>
-									</li>
-									<li class="sub-menu__links--single">
 										<a href="https://docs.mattermost.com/administration/changelog.html" data-ol-has-click-handler="">
-											<span class="sub-menu__links--icon"><img src="https://mattermost.com/wp-content/themes/mattermost-2021/frontend/dist/img/header/ReleaseNotes.svg"></span>Release Notes
+											<span class="sub-menu__links--icon"><img src="{{ pathto('_static/images/nav/ReleaseNotes.svg', 1) }}"></span>Release Notes
 										</a>
 									</li>
 								</ul>
@@ -549,13 +321,13 @@
 								<p class="promo-subhead">Our most popular content.</p>
 								<a href="https://mattermost.com/guide-to-developer-productivity-2023/" class="promo-block" id="developers-promo-1" data-ol-has-click-handler="">
 									<div class="promo-block__image">
-										<img src="https://mattermost.com/wp-content/themes/mattermost-2021/frontend/dist/img/header/promo/Developer_Productivity_Guide_2023.png" alt="">
+										<img src="{{ pathto('_static/images/nav/promo/Developer_Productivity_Guide_2023.png', 1) }}" alt="">
 									</div>
 									<div class="promo-block__copy"><span>The 2023 Guide to Developer Productivity »</span></div>
 								</a>
 								<a href="https://mattermost.com/best-practices-for-software-development-with-mattermost/" class="promo-block" id="developers-promo-2" data-ol-has-click-handler="">
 									<div class="promo-block__image">
-										<img src="https://mattermost.com/wp-content/themes/mattermost-2021/frontend/dist/img/header/promo/promo-mattermost-best-practices-sw-dev.png" alt="">
+										<img src="{{ pathto('_static/images/nav/promo/promo-mattermost-best-practices-sw-dev.png', 1) }}" alt="">
 									</div>
 									<div class="promo-block__copy">Best Practices for Software Development »</div>
 								</a>
@@ -595,7 +367,7 @@
 								</svg>
 							</span>
 						</a>
-						<!-- <div class="sub-menu sub-menu__login">
+						<div class="sub-menu sub-menu__login">
 							<figure class="sub-menu__block">
 								<a href="https://customers.mattermost.com/cloud/connect-workspace" data-ol-has-click-handler="">
 									<div class="sub-menu__block--icon">
@@ -613,13 +385,13 @@
 										<img src="{{ pathto('_static/images/nav/my-account.svg', 1) }}">
 									</div>
 									<div class="sub-menu__block--text">
-										<span class="sub-menu__block--text_title">My Account</span>
+										<span class="sub-menu__block--text_title">Admin Portal</span>
 										<span class="sub-menu__block--text_learnmore">Login</span>
 									</div>
 								</a>
 							</figure>
 							<figure class="sub-menu__block">
-								<a href="https://mattermost.com/apps/" data-ol-has-click-handler="">
+								<a href="https://mattermost.com/download/" data-ol-has-click-handler="">
 									<div class="sub-menu__block--icon">
 										<img src="{{ pathto('_static/images/nav/apps.svg', 1) }}">
 									</div>
@@ -633,52 +405,6 @@
 								<a href="https://support.mattermost.com/hc/en-us/" data-ol-has-click-handler="">
 									<div class="sub-menu__block--icon">
 										<img src="{{ pathto('_static/images/nav/support.svg', 1) }}">
-									</div>
-									<div class="sub-menu__block--text">
-										<span class="sub-menu__block--text_title">Support</span>
-										<span class="sub-menu__block--text_learnmore">Help Center</span>
-									</div>
-								</a>
-							</figure>
-						</div> -->
-						<div class="sub-menu sub-menu__login">
-							<figure class="sub-menu__block">
-								<a href="https://customers.mattermost.com/cloud/connect-workspace" data-ol-has-click-handler="">
-									<div class="sub-menu__block--icon">
-										<img src="https://mattermost.com/wp-content/themes/mattermost-2021/frontend/dist/img/header/my-workspace.svg">
-									</div>
-									<div class="sub-menu__block--text">
-										<span class="sub-menu__block--text_title">My Workspace</span>
-										<span class="sub-menu__block--text_learnmore">Login</span>
-									</div>
-								</a>
-							</figure>
-							<figure class="sub-menu__block">
-								<a href="https://customers.mattermost.com/login/" data-ol-has-click-handler="">
-									<div class="sub-menu__block--icon">
-										<img src="https://mattermost.com/wp-content/themes/mattermost-2021/frontend/dist/img/header/my-account.svg">
-									</div>
-									<div class="sub-menu__block--text">
-										<span class="sub-menu__block--text_title">Admin Portal</span>
-										<span class="sub-menu__block--text_learnmore">Login</span>
-									</div>
-								</a>
-							</figure>
-							<figure class="sub-menu__block">
-								<a href="https://mattermost.com/download/" data-ol-has-click-handler="">
-									<div class="sub-menu__block--icon">
-										<img src="https://mattermost.com/wp-content/themes/mattermost-2021/frontend/dist/img/header/apps.svg">
-									</div>
-									<div class="sub-menu__block--text">
-										<span class="sub-menu__block--text_title">Apps</span>
-										<span class="sub-menu__block--text_learnmore">Download</span>
-									</div>
-								</a>
-							</figure>
-							<figure class="sub-menu__block">
-								<a href="https://support.mattermost.com/hc/en-us/" data-ol-has-click-handler="">
-									<div class="sub-menu__block--icon">
-										<img src="https://mattermost.com/wp-content/themes/mattermost-2021/frontend/dist/img/header/support.svg">
 									</div>
 									<div class="sub-menu__block--text">
 										<span class="sub-menu__block--text_title">Support</span>
