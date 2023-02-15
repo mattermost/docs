@@ -13,6 +13,13 @@ Latest Mattermost Cloud releases:
 
 ## Release 2023-02-09
 
+### Compatibility
+ - Updated Firefox minimum supported version to 102+.
+ - Updated Safari minimum supported version to 16.2+.
+ - Updated Windows minimum supported version to 10+.
+ - Updated Chromium minimum supported version to 110+.
+ - Updated Edge minimum supported version to 110+.
+
 ### Highlights
 
 #### Boards
@@ -23,6 +30,7 @@ Latest Mattermost Cloud releases:
 ### Improvements
 
 #### User Interface (UI)
+ - Pre-packaged Calls v0.13.0.
  - Pre-packaged Playbooks v1.36.0.
  - All post components were removed in favor of a unified approach.
  - App bindings are now refreshed when a App plugin enabled event gets triggered.
@@ -30,6 +38,8 @@ Latest Mattermost Cloud releases:
  - Removed right-click hijacking on code blocks in messages.
  - The order of the Leave Channel and Archive Channel channel settings were changed to be the same as in mobile.
  - Added the condition to remove unread styling for archived channels and to filter archived channels from local data.
+ - Changed the collapsed post fade out effect to be less buggy.
+ - Users now have the ability to see the history of edited messages and to restore an old message version with the current version.
 
 #### Administration
  - The invoice is now sent attached when an Admin upgrades to Cloud annual subscription.
@@ -37,6 +47,16 @@ Latest Mattermost Cloud releases:
  - Enabled ``EnableOAuthServiceProvider`` by default.
  - Export files now contain the read and unread status for channels.
  - While upgrading a High Availability installation with rolling upgrades, there might be a situation where after upgrading all nodes, the System Console will show up as just one plugin is there and in disabled state. This is expected, and upon another restart of the first node which was upgraded, it should not show any plugins. That is the correct state. This happens due to the way plugins are initialized by copying over from prepackaged plugins to the plugins directory, and is an harmless artifact of that.
+ - Added the ``SentAt`` column to ``NotifyAdmin``.
+ - Updated ``NotifyAdmin.RequiredFeature`` column type to ``varchar(255)``.
+ - Updated ``NotifyAdmin.RequiredPlan`` column type to ``varchar(100)``.
+ - [Message Priority & Acknowledgement](https://docs.mattermost.com/configure/site-configuration-settings.html#message-priority) is now enabled by default for all instances.
+ - Added the ability to delete a workspace from the **System Console**.
+ - Added an error message when running an LDAP sync with ``SyncEnabled`` set to ``false``.
+ - Added Admin log table filtering and sorting.
+ - Boards are served as an in-built product from within Mattermost server instead of a plugin and is now always enabled. While running in product mode, the Boards plugin will remain disabled. 
+ - Added a new section in the **System Console** for products. For now, it only contains Boards-specific settings.
+ - Go version was bumped to v1.19.
 
 #### Performance
  - Reduced the rate that unreads are resynced when the window is focused from 10 seconds to 2 minutes.
@@ -45,6 +65,7 @@ Added logging fixes: empty ``short_message`` for Gelf formatter is no longer all
 
 ### API Changes
  - Added an ``exclude_files_count`` parameter to exclude file counts from the channel stats API.
+ - Added a new API endpoint ``GET api/v4/posts/[POST_ID]/edit_history``. Add upgrade notes from here.
 
 ### Bug Fixes
  - Fixed new teams to use the updated translation for default channels after a config change.
@@ -53,6 +74,9 @@ Added logging fixes: empty ``short_message`` for Gelf formatter is no longer all
  - Fixed an issue where portal availability was checked when not on enterprise edition.
  - Fixed a 404 error from requests to ``/api/v4/system/notices/`` on page load.
  - Fixed an issue where OpenId Connect was configurable for Cloud Starter licenses.
+ - Fixed an issue where C# syntax highlighting was not working.
+ - Fixed an issue where incoming webhooks changed the user's activity while the user was offline/away.
+ - Fixed an issue where usernames were not clickable in the right-hand side.
 
 ### Known Issues
  - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
