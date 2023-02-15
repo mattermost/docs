@@ -6,16 +6,13 @@ Start a call
 
 From Mattermost v7.0, you can make voice calls and share your screen in channels, group messages, and direct messages in both Mattermost Cloud and Mattermost self-hosted deployments.
 
-- `Features <#features>`__
-- `Record calls <#record-calls>`__
-- `Frequently asked questions <#frequently_asked_questions>`__
+- `Start a call <#start-a-call>`__
+- `Record a call <#record-a-call>`__
+- `Frequently asked questions <#frequently-asked-questions>`__
 - `Troubleshooting <#troubleshooting>`__
 - `Debugging <#debugging>`__
 
-Features 
---------
-
-Starting from Mattermost v7.0, you can:
+From Mattermost v7.0, you can:
 
 - Start or join a call from desktop and mobile apps in addition to web browsers.
 - Share screen (not available on mobile), raise hands, chat in a thread, and even switch between products in the Mattermost suite (i.e., Channels, Boards, and Playbooks) while on a call.
@@ -28,16 +25,59 @@ Starting from Mattermost v7.7 you can:
 
 Mattermost Cloud users can start calling right out of the box. For Mattermost self-hosted deployments, System Admins need to enable the plugin and adjust configurations `in the System Console </configure/plugins-configuration-settings.html#calls>`_.
 
-To start a call, select **Start call** in the channel header. Any active team member in the channel can join a call, whether it's a public or private channel. If someone from outside of the organization wants to join a call, you'll need to provide them with a guest account, and add them to the channel. Users who are archived or not registered can't join a call.
+Start a call
+------------
+
+.. tabs::
+
+  .. tab:: Desktop
+
+    To start a call, select **Start call** in the channel or message header. 
+
+  .. tab:: Mobile
+     
+     To start a call, select the three horizontal dots at the top right-corner of your device. Then select **Start Call**.
+
+Any active team member in the channel can join a call, whether it's a public or private channel. If someone from outside of the organization wants to join a call, you'll need to provide them with a guest account, and add them to the channel. Users who are archived or not registered can't join a call.
 
 You can share a call's link to use in a meeting request or share with other team mates. The link is unique to each channel, and contains the channel's ID, so it doesn't change between calls. Use the ``/call link`` slash command to generate a shareable link.
 
 The call link is valid for long as the channel is active. When a channel is archived or deleted the link will become invalid.
 
-Record calls
-------------
+Emojis
+------
 
-From Mattermost v7.7 if you're the host of a meeting, you can record the call. 
+You can use emojis during a call.
+
+.. tabs::
+
+  .. tab:: Desktop
+
+    To do this, expand the call window using the arrows in the top-right of the call widget. From there, select the emoji icon to access frequently-used emojis or select additional emojis from the emoji picker.
+
+  .. tab:: Mobile
+  
+    To do this, expand the call window using the arrows in the top-right of the active call banner. From there, select **React**.
+      
+Chat in a call
+--------------
+
+You can create a chat thread during a call, which is associated with that call. 
+
+.. tabs::
+
+  .. tab:: Desktop
+
+    To do this, expand the call window using the arrows in the top-right of the call widget. From there, select the emoji icon to access frequently-used emojis or select additional emojis from the emoji picker.
+
+  .. tab:: Mobile
+  
+    To do this, expand the call window using the arrows in the top-right of the active call banner. The select **More > Call Thread**.
+    
+Record a call
+-------------
+
+From Mattermost v7.7 if you're the host of a meeting, you can record the call.
 
 The recording includes audio as well as any screen sharing during the call. The default setting for a recording is 60 minutes, but your system admin may adjust that as needed. Ten minutes before the time limit is reached, you'll receive a reminder that the recording limit will be reached soon.
 
