@@ -49,7 +49,7 @@ Follow these steps to connect your Elasticsearch server to Mattermost and to gen
 
 .. tip::
 
-  From Mattermost v7.8, optional CA and client certificate configuration settings are available for use with basic auth credentials or to replace them. See the `Elasticsearch configuration settings <configure/environment-configuration-settings.html#elasticsearch>`__ documentation for details.
+  From Mattermost v7.8, optional CA and client certificate configuration settings are available for use with basic auth credentials or to replace them. See the `Elasticsearch configuration settings </configure/environment-configuration-settings.html#elasticsearch>`__ documentation for details.
 
 4. Select **Test Connection** and then select **Save**. If the server connection is unsuccessful you won't be able to save the configuration or enable searching with Elasticsearch.
 
