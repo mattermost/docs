@@ -79,6 +79,7 @@ Added logging fixes: empty ``short_message`` for Gelf formatter is no longer all
  - Fixed an issue where usernames were not clickable in the right-hand side.
 
 ### Known Issues
+ - Channel links to Boards are broken https://github.com/mattermost/focalboard/issues/4571.
  - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
 
 ## Release 2023-02-02
