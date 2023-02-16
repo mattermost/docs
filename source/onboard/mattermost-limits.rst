@@ -53,7 +53,3 @@ If I have more than one team and I downgrade, which teams are archived?
 
 The first team you created is retained. The rest, if any, are archived.
 
-What happens to additional boards views that I create?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Views created during a trial or on a paid plan are retained on downgrading to Mattermost Free. However, new views can't be created until any additional views are deleted to bring the number of views back to the limit of five.

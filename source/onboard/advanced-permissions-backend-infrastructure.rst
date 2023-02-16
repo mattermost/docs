@@ -413,6 +413,7 @@ The following built-in roles and associated permissions are available:
 - edit
 - delete
 - manage members
+- restore
 
 *system_guest*
 
