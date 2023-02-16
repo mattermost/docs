@@ -186,7 +186,7 @@ If the database exists and the username and password are correct, the ``mmuser``
 
 .. note::
 
-    Examine the error message closely. The user name displayed in the error message is the user identified in the ``DataSource`` element of the ``/opt/mattermost/config/config.json`` file. For example, if the error message reads``Access denied for user 'muser'@'%' ...`` you will know that you have misidentified the user as ``muser`` in the ``config.json`` file.
+    Examine the error message closely. The user name displayed in the error message is the user identified in the ``DataSource`` element of the ``/opt/mattermost/config/config.json`` file. For example, if the error message reads ``Access denied for user 'muser'@'%' ...``, you will know that you have misidentified the user as ``muser`` in the ``config.json`` file.
 
 You can check if the user ``mmuser`` has access to the ``mattermost`` database by logging in to MySQL as ``mmuser`` and issuing the command: ``show databases;``. If this user does not have rights to view the ``mattermost`` database, you will not see it in the output.
 
@@ -206,3 +206,14 @@ You can check if the user ``mmuser`` has access to the ``mattermost`` database b
 If the ``mattermost`` database exists and ``mmuser`` cannot view it, exit from MySQL and then log in again as root. Issue the command ``grant all privileges on mattermost.* to 'mmuser'@'%';`` to grant all rights on ``mattermost`` to ``mmuser``.
 
 Restart the Mattermost server by navigating to the ``/opt/mattermost`` directory and entering the command ``sudo -u mattermost bin/mattermost``.
+
+Server is set to SYSTEM timezone
+--------------------------------
+
+Mattermost customers using v7.7 or earlier may see an errors occur on servers using MySQL in cases where the server is set to SYSTEM timezone and doesn’t support named timezones. These errors can be fixed by populating the ``timezone`` tables on the server. Refer to the following docs for more information on loading the timezone table:
+
+- `Linux <https://dev.mysql.com/doc/refman/5.7/en/mysql-tzinfo-to-sql.html>`__
+- `Windows <https://dev.mysql.com/downloads/timezones.html>`__
+
+.. note::
+    This issue has been addressed from Mattermost v7.8.
