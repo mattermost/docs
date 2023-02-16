@@ -16,6 +16,10 @@ If you want to check that the version of Mattermost you are installing is the of
 Mattermost Enterprise Edition
 ------------------------------
 
+Mattermost Enterprise Edition v7.8.0 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v7-8-extended-support-release>`__ - `Download <https://releases.mattermost.com/7.8.0/mattermost-7.8.0-linux-amd64.tar.gz?src=arc>`__
+  - ``https://releases.mattermost.com/7.8.0/mattermost-7.8.0-linux-amd64.tar.gz``
+  - SHA-256 Checksum: ``daed14bed1dfc44e82bb394a13748dc39a1da0ee8af2fb9ae93f3393f08f15c3``
+  - GPG Signature: https://releases.mattermost.com/7.8.0/mattermost-7.8.0-linux-amd64.tar.gz.sig
 Mattermost Enterprise Edition v7.7.1 - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v7-7-feature-release>`__ - `Download <https://releases.mattermost.com/7.7.1/mattermost-7.7.1-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/7.7.1/mattermost-7.7.1-linux-amd64.tar.gz``
   - SHA-256 Checksum: ``e05aef29074629fc0933b39ce37920d48ab8a3f393dbf925f3d6d32813b811d4``
@@ -317,6 +321,10 @@ The open source Mattermost Team Edition is functionally identical to the commerc
 
 We generally recommend installing Enterprise Edition, even if you don't currently need a license. This provides the flexibility to seamlessly unlock Enterprise features should you need them. However, if you only want to install software with a fully open source code base, then Team Edition is the best choice for you.
 
+Mattermost Team Edition v7.8.0 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v7-8-extended-support-release>`__ - `Download <https://releases.mattermost.com/7.8.0/mattermost-team-7.8.0-linux-amd64.tar.gz?src=arc>`__
+  - ``https://releases.mattermost.com/7.8.0/mattermost-team-7.8.0-linux-amd64.tar.gz``
+  - SHA-256 Checksum: ``18fced8f23b2a7383534af39594c178d2fc93298316a12c65d67508b07ed1bf3``
+  - GPG Signature: https://releases.mattermost.com/7.8.0/mattermost-team-7.8.0-linux-amd64.tar.gz.sig
 Mattermost Team Edition v7.7.1 - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v7-7-feature-release>`__ - `Download <https://releases.mattermost.com/7.7.1/mattermost-team-7.7.1-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/7.7.1/mattermost-team-7.7.1-linux-amd64.tar.gz``
   - SHA-256 Checksum: ``8f0e54dee6d2a340cb9848a5e28a69aae48b311e6e3e9d47a99647087bc564c0``
