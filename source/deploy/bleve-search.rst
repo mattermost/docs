@@ -1,7 +1,7 @@
 Bleve search (experimental)
 ===========================
 
-.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
 
 Bleve is a search engine that uses Lucene-style full-text search and indexing. This style of search and indexing helps overcome limitations of the default database search such as challenges with characters and advanced search capabilities.

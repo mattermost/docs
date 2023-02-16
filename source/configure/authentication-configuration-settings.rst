@@ -406,6 +406,11 @@ Enable synchronization with AD/LDAP
 | - **false**: **(Default)** Disables AD/LDAP synchronization.  | - ``config.json`` setting: ``.LdapSettings.EnableSync: false`` |
 |                                                               | - Environment variable: ``MM_LDAPSETTINGS_ENABLESYNC``         |
 +---------------------------------------------------------------+----------------------------------------------------------------+
+| **Note**: Synchronization with AD/LDAP settings in the System Console can be used to determine the connectivity and            |
+| availability of arbitrary hosts. System admins concerned about this can use custom admin roles to limit access to              |
+| modifying these settings. See the `system admin roles </onboard/system-admin-roles.html#edit-privileges-of-system-             |
+| admin-roles-advanced>`__ documentation for details.                                                                            |
++---------------------------------------------------------------+----------------------------------------------------------------+
 
 .. config:setting:: ldap-loginfieldname
   :displayname: Login field name (AD/LDAP)
@@ -441,6 +446,11 @@ AD/LDAP server
 | This is the domain name or IP address of the AD/LDAP server. | - System Config path: **Authentication > AD/LDAP**      |
 |                                                              | - ``config.json`` setting: ``.LdapSettings.LdapServer`` |
 | String input.                                                | - Environment variable: ``MM_LDAPSETTINGS_LDAPSERVER``  |
++--------------------------------------------------------------+---------------------------------------------------------+
+| **Note**: Synchronization with AD/LDAP settings in the System Console can be used to determine the connectivity and    |
+| availability of arbitrary hosts. System admins concerned about this can use custom admin roles to limit access to      |
+| modifying these settings. See the `system admin roles </onboard/system-admin-roles.html#edit-privileges-of-system-     |
+| admin-roles-advanced>`__ documentation for details.                                                                    |
 +--------------------------------------------------------------+---------------------------------------------------------+
 
 .. config:setting:: ldap-port

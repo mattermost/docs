@@ -1,14 +1,14 @@
 Audit logging (beta)
 ====================
 
-.. include:: ../_static/badges/ent-selfhosted.rst
+.. include:: ../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
 
 *Available in legacy Mattermost Enterprise Edition E20*
 
 .. warning::
 
-  - The audit logging beta is a **breaking change** from previous releases.
+  - Audit logging beta from Mattermost v7.2 is a **breaking change** from previous releases.
   - The format and content of an audit log record has changed to become standardized for all events.
   - Existing tools which ingest or parse audit log records may need to be modified.
 
@@ -138,8 +138,8 @@ Log records can be sent to any combination of console, local file, syslog, and T
 
 - Console targets can be either ``stdout`` or ``stderr``.
 - File targets support rotation and compression triggered by size and/or duration. See the `file target configuration <#file-target-configuration-options>`__ documentation for supported options.
-- Syslog targets support local and remote syslog servers, with or without TLS transport. See the `syslog target configuration <#syslog-target-configuration-options>`__ documentation for supported options.
-- The TCP socket target can be configured with an IP address or domain name, port, and optional TLS certificate. See the `TCP target configuration <#tcp-target-configuration-options>`__ documentation for supported options.
+- Syslog targets support local and remote syslog servers, with or without TLS transport. Syslog target support is available with Mattermost Enterprise. See the `syslog target configuration <#syslog-target-configuration-options>`__ documentation for supported options.
+- The TCP socket targets can be configured with an IP address or domain name, port, and optional TLS certificate. TCP socket target support is available with Mattermost Enterprise. See the `TCP target configuration <#tcp-target-configuration-options>`__ documentation for supported options.
 
 
 Console target configuration options
@@ -173,6 +173,9 @@ File target configuration options
 Syslog target configuration options
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+.. include:: ../_static/badges/ent-only.rst
+  :start-after: :nosearch:
+
 +----------+----------+---------------------------------------------------------------------------------------------------------------------------------+
 | **Key**  | **Type** | **Description**                                                                                                                 |
 +----------+----------+---------------------------------------------------------------------------------------------------------------------------------+
@@ -190,6 +193,9 @@ Syslog target configuration options
 
 TCP target configuration options
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: ../_static/badges/ent-only.rst
+  :start-after: :nosearch:
 
 +----------+----------+---------------------------------------------------------------------------------------------------------------------------------+
 | **Key**  | **Type** | **Description**                                                                                                                 |
