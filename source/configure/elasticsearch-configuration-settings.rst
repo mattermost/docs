@@ -46,11 +46,66 @@ Server connection address
 
 *Available in legacy Enterprise Edition E10/E20*
 
-+---------------------------------------------------------------+--------------------------------------------------------------------------+
-| The address of the Elasticsearch server.                      | - System Config path: **Environment > Elasticsearch**                    |
-|                                                               | - ``config.json`` setting: ``".Elasticsearchsettings.ConnectionUrl",``   |
-|                                                               | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_CONNECTIONURL``       |
-+---------------------------------------------------------------+--------------------------------------------------------------------------+
++----------------------------------------------------+--------------------------------------------------------------------------+
+| The address of the Elasticsearch server.           | - System Config path: **Environment > Elasticsearch**                    |
+|                                                    | - ``config.json`` setting: ``".Elasticsearchsettings.ConnectionUrl",``   |
+|                                                    | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_CONNECTIONURL``       |
++----------------------------------------------------+--------------------------------------------------------------------------+
+
+.. config:setting:: elastic-CApath
+  :displayname: CA path (Elasticsearch)
+  :systemconsole: Environment > Elasticsearch
+  :configjson: .Elasticsearchsettings.CA
+  :environment: MM_ELASTICSEARCHSETTINGS_CA
+  :description: Optional path to the Custom Certificate Authority certificates for the Elasticsearch server.
+
+CA path
+~~~~~~~
+
++----------------------------------------------------+--------------------------------------------------------------------------+
+| Optional path to the Custom Certificate Authority  | - System Config path: **Environment > Elasticsearch**                    |
+| certificates for the Elasticsearch server.         | - ``config.json`` setting: ``".Elasticsearchsettings.CA",``              |
+|                                                    | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_CA``                  |
++----------------------------------------------------+--------------------------------------------------------------------------+
+| **Note**: Available from Mattermost v7.8. Can be used in conjunction with basic auth credentials or to replace them.          |
+| Leave this setting blank to use the default Certificate Authority certificates for the operating system.                      |
++----------------------------------------------------+--------------------------------------------------------------------------+
+
+.. config:setting:: elastic-clientcertificatepath
+  :displayname: Client certificate path (Elasticsearch)
+  :systemconsole: Environment > Elasticsearch
+  :configjson: .Elasticsearchsettings.ClientCert
+  :environment: MM_ELASTICSEARCHSETTINGS_CLIENTCERT
+  :description: Optional client certificate for the connection to the Elasticsearch server in PEM format.
+
+Client certificate path
+~~~~~~~~~~~~~~~~~~~~~~~
+
++----------------------------------------------------+--------------------------------------------------------------------------+
+| Optional client certificate for the connection to  | - System Config path: **Environment > Elasticsearch**                    |
+| the Elasticsearch server in the PEM format.        | - ``config.json`` setting: ``".Elasticsearchsettings.ClientCert",``      |
+|                                                    | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_CLIENTCERT``          |
++----------------------------------------------------+--------------------------------------------------------------------------+
+| **Note**: Available from Mattermost v7.8. Can be used in conjunction with basic auth credentials or to replace them.          |
++----------------------------------------------------+--------------------------------------------------------------------------+
+
+.. config:setting:: elastic-clientcertificatekeypath
+  :displayname: Client certificate key path (Elasticsearch)
+  :systemconsole: Environment > Elasticsearch
+  :configjson: .Elasticsearchsettings.ClientKey
+  :environment: MM_ELASTICSEARCHSETTINGS_CLIENTKEY
+  :description: Optional key for the client certificate in PEM format.
+
+Client certificate key path
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++----------------------------------------------------+--------------------------------------------------------------------------+
+| Optional key for the client certificate in the PEM | - System Config path: **Environment > Elasticsearch**                    |
+| format.                                            | - ``config.json`` setting: ``".Elasticsearchsettings.ClientKey",``       |
+|                                                    | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_CLIENTKEY``           |
++----------------------------------------------------+--------------------------------------------------------------------------+
+| **Note**: Available from Mattermost v7.8. Can be used in conjunction with basic auth credentials or to replace them.          |
++----------------------------------------------------+--------------------------------------------------------------------------+
 
 .. config:setting:: elastic-skiptlsverification
   :displayname: Skip TLS verification (Elasticsearch)

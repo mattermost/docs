@@ -99,8 +99,8 @@ Slash commands send events to external integrations that send a response back to
   :configjson: EnableOAuthServiceProvider
   :environment: N/A
 
-  - **true**: Mattermost acts as an OAuth 2.0 service provider allowing Mattermost to authorize API requests from external applications.
-  - **false**: **(Default)** Mattermost does not function as an OAuth 2.0 service provider.
+  - **true**: **(Default)** Mattermost acts as an OAuth 2.0 service provider allowing Mattermost to authorize API requests from external applications.
+  - **false**: Mattermost does not function as an OAuth 2.0 service provider.
 
 Enable OAuth 2.0 service provider
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -110,7 +110,7 @@ Enable OAuth 2.0 service provider
 **False**: Mattermost does not function as an OAuth 2.0 service provider.
 
 +------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableOAuthServiceProvider": false`` with options ``true`` and ``false``. |
+| This feature's ``config.json`` setting is ``"EnableOAuthServiceProvider": true`` with options ``true`` and ``false``.  |
 +------------------------------------------------------------------------------------------------------------------------+
 
 .. note::
