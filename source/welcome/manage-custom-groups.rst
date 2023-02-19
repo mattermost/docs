@@ -17,7 +17,7 @@ Once a custom user group has been created, you can mention that group the same w
 .. note::
   
   - System admins need to enable this feature. See our `Mattermost Configuration Settings </configure/configuration-settings.html#custom-user-groups>`__ documentation for details. 
-  - From Mattermost v7.2, system admins can limit who can manage custom user groups through a system admin role, instead of all users being able to manage custom user groups. See the `system roles </onboard/system-admin-roles.html>`__ documentation for details.
+  - From Mattermost v7.2, system admins can limit who can manage custom user groups through the Custom Group Manager system admin role. See the `system roles </onboard/system-admin-roles.html>`__ documentation for details.
   - The ability to create custom user groups on mobile will be available in a future release. @mentions for custom user groups on mobile work the same as `LDAP-synced groups </channels/mention-people.html#groupname>`__.
 
 Create a custom group
@@ -28,6 +28,11 @@ Create a custom group
 2. Specify a name and mention. The mention is the handle you use to @mention a notification to the group. Group names must be unique across the Mattermost workspace. If a name is in use as a channel name, display name, or another custom group's name, it won't be available.
 
 3. Search for and select members to add to the custom user group, then select **Create Group**.
+
+Review group members
+--------------------
+
+From Mattermost v7.8, using Mattermost in a web browser or the desktop app, select a group mention in a thread to display a list of group members.
 
 Manage custom user groups
 -------------------------

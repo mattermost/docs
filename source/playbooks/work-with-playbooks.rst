@@ -44,7 +44,7 @@ You can change a playbook’s configuration at any time, but changes will only b
 1. Go to **product menu > Playbooks**.
 2. Find the playbook you want to edit.
 
-   - Only public playbooks and private playbooks of which you are a member are listed. System Admins have unrestricted access to all playbooks on the team.
+   - Only public playbooks and private playbooks that you're a member of are listed. System admins have unrestricted access to all playbooks on the team.
 
 3. Select the name of the playbook.
 
@@ -111,13 +111,16 @@ Actions
 
 You can customize actions associated with your playbook to ensure a smooth start when starting a run. Select the **Actions** tab to view the automation options available.
 
-Options include: Creating a channel when a run is started, inviting members to the run, sending outgoing webhooks, and automatically adding the run channel to a sidebar category.
+Options include: 
+
+- Create a channel when a run is started
+- Invite members to the run
+- Send outgoing webhooks
+- Automatically add the run channel to a sidebar category
 
 Actions such as channel creation and adding the channel to a sidebar category are set per-playbook and applied to each run that uses that playbook.
 
-If you’re a system admin or channel admin of the run channel you can also edit these settings in the run channel, via the channel menu, in **Channel Actions**. Editing the settings in the run channel will only affect that channel and the changes aren’t applied to the playbook.
-
-Only channel admins can edit the **Channel Actions** items (such as the welcome message) but members who have access to the playbook can edit the welcome message and run behavior settings. Editing these won’t change the welcome message of a run that’s in progress - it only applies going forward.
+If you’re a system admin or channel admin of the run channel you can also edit these settings in the run channel, via the channel menu, in **Channel Actions**. Editing the settings in the run channel will only affect that channel and the changes aren’t applied to the playbook. Only channel admins can edit the **Channel Actions** items (such as the welcome message) but members who have access to the playbook can edit the welcome message and run behavior settings. Editing these won’t change the welcome message of a run that’s in progress - it only applies going forward.
 
 If you want to change the behavior of all future runs associated with the playbook, edit the playbook directly in the **Actions** menu.
 
