@@ -5,11 +5,11 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 Latest Mattermost Cloud releases:
 
 - [Release 2023-03-02](#release-2023-03-02)
-- [Release 2023-02-02](#release-2023-02-02)
 - [Release 2023-01-26](#release-2023-01-26)
 - [Release 2023-01-12](#release-2023-01-12)
 - [Release 2022-12-20](#release-2022-12-20)
 - [Release 2022-12-01](#release-2022-12-01)
+- [Release 2022-11-24](#release-2022-11-24)
 
 ## Release 2023-03-02
 
@@ -21,6 +21,12 @@ Latest Mattermost Cloud releases:
  - Updated Edge minimum supported version to 110+.
 
 ### Highlights
+
+#### Annual Cloud Subscriptions
+ - On the purchase modal, admins are now able to buy an annual cloud subscription starting from their current user count.
+ - The **System Console > Billing & Account > Subscriptions** page now reflects whether the plan is monthly or annual.
+ - Cloud Professional monthly will no longer be offered to new customers starting February 2, 2023.
+ - Added the option to migrate from a monthly to an annual Cloud Professional plan for existing Cloud Professional monthly customers.
 
 #### Boards
  - Added support for person, multi-person, and date property filters in Boards.
@@ -40,6 +46,7 @@ Latest Mattermost Cloud releases:
  - Added the condition to remove unread styling for archived channels and to filter archived channels from local data.
  - Changed the collapsed post fade out effect to be less buggy.
  - Users now have the ability to see the history of edited messages and to restore an old message version with the current version.
+ - Improved the user interface of the user profile popover.
 
 #### Administration
  - The invoice is now sent attached when an Admin upgrades to Cloud annual subscription.
@@ -57,6 +64,9 @@ Latest Mattermost Cloud releases:
  - Boards are served as an in-built product from within Mattermost server instead of a plugin and is now always enabled. While running in product mode, the Boards plugin will remain disabled. 
  - Added a new section in the **System Console** for products. For now, it only contains Boards-specific settings.
  - Go version was bumped to v1.19.
+ - GraphQL APIs are now correctly counted when measuring performance telemetry.
+ - Boards cards are no longer mentioned as being limited in the **System Console**, the limits usage modal, the downgrade modal, or the left-hand side menu.
+ - Removed an unused ``ProductLimits.Integrations``.
 
 #### Performance
  - Reduced the rate that unreads are resynced when the window is focused from 10 seconds to 2 minutes.
@@ -81,37 +91,6 @@ Added logging fixes: empty ``short_message`` for Gelf formatter is no longer all
 
 ### Known Issues
  - Channel links to Boards are broken https://github.com/mattermost/focalboard/issues/4571.
- - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
-
-## Release 2023-02-02
-
-### Highlights
-
-#### Annual Cloud Subscriptions
- - On the purchase modal, admins are now able to buy an annual cloud subscription starting from their current user count.
- - The **System Console > Billing & Account > Subscriptions** page now reflects whether the plan is monthly or annual.
- - Cloud Professional monthly will no longer be offered to new customers starting February 2, 2023.
- - Added the option to migrate from a monthly to an annual Cloud Professional plan for existing Cloud Professional monthly customers.
-
-### Improvements
-
-#### User Interface (UI)
- - Boards was reverted from an in-built product back to a plugin.
- - Improved the user interface of the user profile popover.
-
-#### Administration
- - GraphQL APIs are now correctly counted when measuring performance telemetry.
- - Boards cards are no longer mentioned as being limited in the **System Console**, the limits usage modal, the downgrade modal, or the left-hand side menu.
- - Removed an unused ``ProductLimits.Integrations``.
-
-### Known Issues
- - Clicking on a user profile picture throws a console error [MM-49961](https://mattermost.atlassian.net/browse/MM-49961).
- - Bot and guest tags are truncated on suggestion autocomplete [MM-49973](https://mattermost.atlassian.net/browse/MM-49973).
- - Horizontal scroll displays in the Threads list due to a new tags component [MM-49854](https://mattermost.atlassian.net/browse/MM-49854).
- - Login/create account screen layout breaks when Javascript error banner displays [MM-49587](https://mattermost.atlassian.net/browse/MM-49587).
- - Spacing in the channel switcher is incorrect [MM-49853](https://mattermost.atlassian.net/browse/MM-49853).
- - Spacing issue is displayed between the Global Drafts tour point title and “New” tag [MM-49866](https://mattermost.atlassian.net/browse/MM-49866).
- - The message box flashes controls while typing in the right-hand side [MM-49266](https://mattermost.atlassian.net/browse/MM-49266).
  - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
 
 ## Release 2023-01-26
