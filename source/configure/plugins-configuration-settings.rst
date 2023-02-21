@@ -270,11 +270,13 @@ Apps
 Enable plugin
 ~~~~~~~~~~~~~
 
-**True**: Enables the Apps plugin on your Mattermost server.
-
-**False**: Disables the Apps plugin on your Mattermost server.
-
-To create your own Mattermost App, see the `Mattermost Apps <https://developers.mattermost.com/integrate/apps/>`__ developer documentation.
++------------------------------------------------------------------+-------------------------------------------------------------+
+| - **true**: Enables the Apps plugin on your Mattermost server.   | - System Config path: **Plugins > Apps**                    |
+| - **false**: Disables the Apps plugin on your Mattermost server. | - ``config.json`` setting: N/A                              |
+|                                                                  | - Environment variable: N/A                                 |
++------------------------------------------------------------------+-------------------------------------------------------------+
+| **Note**: See the `Mattermost Apps <https://developers.mattermost.com/integrate/apps/>`__ developer documentation for details. |
++--------------------------------------------------------------------------------------------------------------------------------+
 
 ----
 
