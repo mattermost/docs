@@ -66,6 +66,7 @@ Added logging fixes: empty ``short_message`` for Gelf formatter is no longer all
 ### API Changes
  - Added an ``exclude_files_count`` parameter to exclude file counts from the channel stats API.
  - Added a new API endpoint ``GET api/v4/posts/[POST_ID]/edit_history``. Add upgrade notes from here.
+ - Added a new API endpoint ``DELETE /api/v4/cloud/delete-workspace``.
 
 ### Bug Fixes
  - Fixed new teams to use the updated translation for default channels after a config change.
