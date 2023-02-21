@@ -84,8 +84,7 @@ Known Issues
 Contributors
 ~~~~~~~~~~~~~~
 
-- 
-
+- `cpoile <https://github.com/cpoile>`_, `cs4p <https://github.com/cs4p>`_, `devinbinnie <https://github.com/devinbinnie>`_, `JtheBAB <https://github.com/JtheBAB>`_, `kevfocke <https://github.com/kevfocke>`_, `kyeongsoosoo <https://github.com/kyeongsoosoo>`_, `m1lt0n <https://github.com/m1lt0n>`_, `streamer45 <https://github.com/streamer45>`_, `tboulis <https://github.com/tboulis>`_.
 
 Release v5.2
 --------------
