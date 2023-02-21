@@ -6,12 +6,85 @@ Desktop application changelog
 
 Latest Mattermost Desktop App releases:
 
+- `Release v5.3 <#id1>`_
 - `Release v5.2 <#id1>`_
 - `Release v5.1 <#id5>`_
 - `Release v5.0 <#id19>`_
 - `Release v4.7 <#id34>`_
 - `Release v4.6 <#id51>`_
-- `Release v4.5 <#id63>`_
+
+Release v5.3
+--------------
+
+Release Date: 
+
+**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/latest>`_
+
+Compatibility
+~~~~~~~~~~~~~~~
+
+- Desktop App is supported on any supported Extended Support Release or a newer Mattermost server version.
+- Support for Windows v8 and v8.1 has been dropped.
+
+Highlights
+~~~~~~~~~~~~~~~
+
+- Added application diagnostics.
+- Implemented a global calls widget window.
+
+Improvements
+~~~~~~~~~~~~~~~
+
+All Platforms
+^^^^^^^^^^^^^
+
+- Added support for Gnome's "do-not-disturb"
+- Added a menu item for showing the logs folder.
+- Improved performance by reducing the number of calls for URL detection.
+- Changed tray behavior on left click. Left-clicking on the system tray symbol now hides the application to system tray, if it is already visible.
+- Default to opening a file when it is clicked from the download list.
+
+Architectural Changes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Major version upgrade of Electron to v23.0.0. Electron is the underlying technology used to build the Desktop App.
+
+Bug Fixes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+All Platforms
+^^^^^^^^^^^^^
+
+- Fixed an issue where a user could open a blank Electron window using the main window.
+- Fixed an issue where image thumbnails did not always display in the downloads for MAS builds.
+- Fixed an issue where sometimes the Boards/Playbooks tabs wouldn't appear automatically when a server was added.
+- Fixed RPM conflict with other electron based applications.
+- Fix - Trust websocket certificate along with https certificate for the same origin.
+- Fixed an issue where opening the app with a deeplink may cause the app not to redirect to the correct URL.
+- Fix - Close downloads dropdown menu when clicking "Show in folder".
+- Fix - Maximize main window when monitor removed
+- Fixed issue with special characters in server name causing the top bar to disappear
+- Fixed an issue where OneLogin users wouldn't have their credentials remembered.
+- Fixed issue with plugin navigation displaying white empty bar
+
+Open Source Components
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- 
+
+Known Issues
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Users seeing an endless "Loading..." screen when attempting to log in to the app may need to manually remove their cache directory. For MacOS it is located in ``/Users/<username>/Library/Containers/Mattermost/Data/Library/Application Support/Mattermost`` and for Windows it is located in ``Users/<username>/AppData/Roaming/Mattermost``.
+- On Linux, a left click on the tray icon doesn't open the app window but opens the tray menu.
+- Crashes might be be experienced in some Linux desktop clients. This is an upstream bug in the ``libnotifyapp`` library. A recommended workaround is to disable the system tray icon in the Desktop settings.
+- On apps using GPO configurations, when adding a second server tab, it's possible to drag and drop tabs, but they'll jump back to the original position when releasing the mouse.
+
+Contributors
+~~~~~~~~~~~~~~
+
+- 
+
 
 Release v5.2
 --------------
