@@ -2448,7 +2448,8 @@ pre {
     font-weight: 700;
     line-height: 150%;
     margin-top: 0;
-    flex: 0 0 100%
+    flex: 0 0 100%;
+    text-transform: uppercase;
 }
 @media (max-width:991.98px) {
     .site-header__col--menu .site-nav__hassubnav .sub-menu__col--title {
