@@ -1612,7 +1612,7 @@ pre {
 @media (min-width:992px) {
     .site-header__col--menu .site-nav__hassubnav .sub-menu__block {
         margin-bottom: 0;
-        padding: 0 1.10px
+        padding: 0 11px
     }
 }
 .site-header__col--menu .site-nav__hassubnav .sub-menu__block a {
@@ -2215,7 +2215,7 @@ pre {
 }
 @media (min-width:1200px) {
     .site-header__col--menu .site-nav__hassubnav .sub-menu__solutions .sub-menu__solutions__main-wrapper {
-        padding: 30px 30px 30px50px
+        padding: 30px 30px 30px 50px
     }
 }
 @media (min-width:992px) {
@@ -2354,21 +2354,23 @@ pre {
 }
 .site-header__col--menu .site-nav__hassubnav .sub-menu__developers .sub-menu__block--mini {
     background-color: #ebebef;
-    padding: 5px 20px
+    padding: 5px 20px;
+    margin-bottom: 10px;
 }
 .site-header__col--menu .site-nav__hassubnav .sub-menu__developers .sub-menu__block--mini:hover {
     background-color: #e8edf8
 }
 @media (min-width:992px) and (max-width:1599.98px) {
     .site-header__col--menu .site-nav__hassubnav .sub-menu__developers .sub-menu__block--mini {
-        min-width: 300px
+        min-width: 300px;
+        margin-bottom: 10px
     }
 }
 @media (min-width:992px) {
     .site-header__col--menu .site-nav__hassubnav .sub-menu__developers .sub-menu__block--mini .sub-menu__block--text {
         display: flex;
         flex-direction: row;
-        align-items: center
+        align-items: center;
     }
     .site-header__col--menu .site-nav__hassubnav .sub-menu__developers .sub-menu__block--mini .sub-menu__block--text_title {
         margin-right: 20px
@@ -2376,7 +2378,8 @@ pre {
 }
 @media (min-width:1600px) {
     .site-header__col--menu .site-nav__hassubnav .sub-menu__developers .sub-menu__block--mini {
-        min-width: 340px
+        min-width: 340px;
+        margin-bottom: 10px;
     }
 }
 .site-header__col--menu .site-nav__hassubnav .sub-menu__developers .sub-menu__block--mini:last-child {
@@ -2402,7 +2405,7 @@ pre {
 }
 @media (min-width:992px) {
     .site-header__col--menu .site-nav__hassubnav .sub-menu__enterprise {
-        padding: 40px50px;
+        padding: 40px 50px;
         right: unset;
         margin-left: -3rem
     }
@@ -2541,7 +2544,7 @@ pre {
         font-size: 24px;
         color: #1b1d22;
         font-weight: 700;
-        margin: 0
+        margin-bottom: 10px;
     }
     .site-header__col--menu .site-nav__hassubnav .sub-menu__platform-desktop .sub-menu__body-copy,
     .site-header__col--menu .site-nav__hassubnav .sub-menu__solutions-desktop .sub-menu__body-copy {
