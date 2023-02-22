@@ -59,7 +59,7 @@ You can use emojis to react during a call.
 
   .. tab:: Mobile
   
-    To do this, expand the call window using the arrows in the top-right of the active call banner. From there, select **React**.
+    Expand the call window using the arrows in the top-right of the active call banner. From there, select **React**.
       
 Chat in a call
 --------------
