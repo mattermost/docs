@@ -55,7 +55,7 @@ You can use emojis to react during a call.
 
   .. tab:: Desktop
 
-    To do this, expand the call window using the arrows in the top-right of the call widget. From there, select the emoji icon to access frequently-used emojis or select additional emojis from the emoji picker.
+    Expand the call window using the arrows in the top-right of the call widget. From there, select the emoji icon to access frequently-used emojis or select additional emojis from the emoji picker.
 
   .. tab:: Mobile
   
