@@ -58,7 +58,7 @@ Latest Mattermost Cloud releases:
  - Updated ``NotifyAdmin.RequiredFeature`` column type to ``varchar(255)``.
  - Updated ``NotifyAdmin.RequiredPlan`` column type to ``varchar(100)``.
  - [Message Priority & Acknowledgement](https://docs.mattermost.com/configure/site-configuration-settings.html#message-priority) is now enabled by default for all instances.
- - Added the ability to delete a workspace from the **System Console**.
+ - Added the ability to delete a workspace via **System Console > Billing & Account > Subscription**.
  - Added an error message when running an LDAP sync with ``SyncEnabled`` set to ``false``.
  - Added Admin log table filtering and sorting.
  - Boards are served as an in-built product from within Mattermost server instead of a plugin and is now always enabled. While running in product mode, the Boards plugin will remain disabled. 
@@ -75,7 +75,7 @@ Latest Mattermost Cloud releases:
 
 ### API Changes
  - Added an ``exclude_files_count`` parameter to exclude file counts from the channel stats API.
- - Added a new API endpoint ``GET api/v4/posts/[POST_ID]/edit_history``. Add upgrade notes from here.
+ - Added a new API endpoint ``GET api/v4/posts/[POST_ID]/edit_history``.
  - Added a new API endpoint ``DELETE /api/v4/cloud/delete-workspace``.
 
 ### Bug Fixes
