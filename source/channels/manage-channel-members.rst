@@ -23,7 +23,8 @@ Using Mattermost in a web browser or the desktop app, any member of a channel ca
 
 .. tip::
 
-  Alternatively, to add members to a channel, select the channel name, select the **View Info** |channel-info| icon, select **Members** in the right pane, and then select **Add**.
+  - From Mattermost v7.8, people you've messaged directly are listed first, followed by all users in alphabetical order. 
+  - Alternatively, to add members to a channel, select the channel name, select the **View Info** |channel-info| icon, select **Members** in the right pane, and then select **Add**.
  
 Add users from their profile
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -52,7 +53,7 @@ Remove members from a channel
 Using Mattermost in a web browser or the desktop app, any member of a channel can remove other members from a channel using one of the following options:
 
 - Select the channel name at the top of the center pane to access the drop-down menu, then select **Manage Members**. Select the member's `user role </welcome/about-user-roles.html>`__, then select **Remove from Channel**.
-- Select the channel's **View Info** |channel-info| icon, and select **Members** in the right pane. From there, select **Manage**, select a user's role, then select **Remove from Channel**.
+- From Mattermost v7.7, you can alternatively select the channel's **View Info** |channel-info| icon, and select **Members** in the right pane. From there, select **Manage**, select a user's role, then select **Remove from Channel**.
 
 .. image:: ../images/remove-member-from-channel.png
     :alt: Use options available through the channel name to remove a member from a channel.

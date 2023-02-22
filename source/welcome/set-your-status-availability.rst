@@ -31,7 +31,7 @@ To set a custom status in Mattermost:
 
 .. tip::
 
-  If custom statuses aren't available from your profile picture, you can request your System Admin to enable this feature within the System Console via **Site Configuration > Users and Teams > Enable Custom Statuses**.
+  - Custom statuses are enabled by default in Mattermost. System admins can disable this feature by going to **System Console > Site Configuration > Users and Teams > Enable Custom Statuses**. Disabling this feature also removes the "Update your status" prompts in Mattermost.
 
 Clear a custom status
 ------------------------
