@@ -64,7 +64,7 @@ You can use emojis to react during a call.
 Chat in a call
 --------------
 
-You can create a chat thread during a call, which is associated with that call. 
+A chat thread is created automatically for every new call.
 
 .. tabs::
 
