@@ -38,7 +38,7 @@ Start a call
 
   .. tab:: Mobile
      
-     To start a call, select the three horizontal dots at the top right-corner of your device. Then select **Start Call**. The call starts in speaker mode by default.
+     To start a call, select the channel info menu. Then select **Start Call**. The call starts in speaker mode by default.
 
 Any active team member in the channel can join a call, whether it's a public or private channel. If someone from outside of the organization wants to join a call, you'll need to provide them with a guest account, and add them to the channel. Users who are archived or not registered can't join a call.
 
