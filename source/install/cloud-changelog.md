@@ -6,7 +6,7 @@ Latest Mattermost Cloud releases:
 
 - [Release 2023-03-02](#release-2023-03-02)
 - [Release 2023-01-26](#release-2023-01-26)
-- [Release 2023-01-12](#release-2023-01-12)
+- [Release 2023-01-16](#release-2023-01-16)
 - [Release 2022-12-20](#release-2022-12-20)
 - [Release 2022-12-01](#release-2022-12-01)
 - [Release 2022-11-24](#release-2022-11-24)
@@ -155,7 +155,7 @@ Latest Mattermost Cloud releases:
  - Publicly shared boards lead to a "Team not found" error page. See [issue-focalboard-4450](https://github.com/mattermost/focalboard/issues/4450) for more details.
  - If a user is not a member of a configured broadcast channel, posting a status update might fail without any error feedback. As a temporary workaround, join the configured broadcast channels or remove those channels from the run configuration.
 
-## Release 2023-01-12
+## Release 2023-01-16
 
 ### Highlights
 
