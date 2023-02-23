@@ -1,104 +1,78 @@
-Deploy Mattermost
-=================
+Install Mattermost Server
+=========================
 
 .. include:: ../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
 
-Learn how to install, deploy, and scale Mattermost for teams and organizations of any size.
+Learn how to install Mattermost Server for teams and organizations of any size.
 
-Deploy Mattermost for production use
-------------------------------------
+.. toctree::
+    :maxdepth: 1
+    :hidden:
 
-When you're ready to install Mattermost server for production use, you have four options: deploy using Kubernetes, deploy from a compressed tarball, deploy using a Ubuntu option called Omnibus, or deploy using Docker.
+    Software requirements </install/software-hardware-requirements>
+    Omnibus install </install/omnibus-install>
+    Ubuntu install </install/ubuntu-install>
+    Red Hat install </install/red-hat-install>
+    Kubernetes install </install/kubernetes-install>
+    Docker install </install/docker-install>
+    AlmaLinux, Rocky Linux, and CentOS install </install/almalinux-rocky-linux-centos-install>
 
-Learn how to install, deploy, and scale Mattermost for teams and organizations of any size using one of four options: deploy using Kubernetes, deploy from a compressed tarball, deploy using a Ubuntu option called Omnibus, or deploy using Docker.
+* :doc:`Software requirements </install/software-hardware-requirements>` - 
+* :doc:`Omnibus install </install/omnibus-install>` - Install Mattermost Server using Omnibus.
+* :doc:`Ubuntu install </install/ubuntu-install>` - Install Mattermost Server on Ubuntu.
+* :doc:`Red Hat install </install/red-hat-install>` - Install Mattermost Server on Red Hat.
+* :doc:`Kubernetes install </install/kubernetes-install>` - Install Mattermost Server using Kubernetes.
+* :doc:`Docker install </install/docker-install>` - Install Mattermost Server using Docker.
+* :doc:`AlmaLinux, Rocky Linux, and CentOS install </install/almalinux-rocky-linux-centos-install>` - Install Mattermost Server on AlmaLinux, Rocky Linux, or CentOS.
 
 .. tip::
 
   * See the `configuration settings </configure/configuration-settings.html>`__ documentation to learn more about customizing your production deployment.
-  
   * Encountering issues with your deployment? See the `Deployment Troubleshooting </install/troubleshooting.html#deployment-troubleshooting>`__ documentation for details.
 
-.. tabs::
-
-    .. tab:: Ubuntu/Debian
-
-      .. include:: ../install/common-prod-deploy-omnibus.rst
-        :start-after: :nosearch:
-        
-    .. tab:: Generic Linux (Tarball)
-
-      .. include:: ../install/common-prod-deploy-tar.rst
-        :start-after: :nosearch: 
-        
-    .. tab:: Kubernetes
-
-      .. include:: ../install/common-prod-deploy-kubernetes.rst
-        :start-after: :nosearch:
-    
-    .. tab:: Docker
-
-      .. include:: ../install/common-prod-deploy-docker.rst
-        :start-after: :nosearch:
-    
-Prepare for your Mattermost deployment
---------------------------------------
+Server administration
+---------------------
 
 .. toctree::
     :maxdepth: 1
     :hidden:
 
-    Preview Mattermost via Docker </install/install-docker>
-    Administrator tasks </getting-started/admin-onboarding-tasks>
+    Deployment overview </deploy/deployment-overview>
     Architecture </getting-started/architecture-overview>
-    Implement Mattermost </getting-started/implementation-plan>
-    Enterprise roll out checklist </getting-started/enterprise-roll-out-checklist>
-    Welcome email template </getting-started/welcome-email-to-end-users>
+    Install a database </install/install-database>
+    Set up a socket-based Mattermost database </install/setting-up-socket-based-mattermost-database>
+    Include configuration in the Mattermost database </configure/configuation-in-a-database>
+    Configure TLS on Mattermost Server </install/configure-tls>
+    Install NGINX proxy server </install/install-nginx-proxy-server>
+    SMTP email setup </configure/smtp-email>
+    SSL client certificate setup </onboard/ssl-client-certificate>
+    Set up an image proxy </deploy/image-proxy>
+    Encryption options </deploy/encryption-options>
+    Configure transport encryption </install/transport-encryption>
+    Set up full-text Bleve search </deploy/bleve-search>
+    Backup and disaster recovery </deploy/backup-disaster-recovery>
 
-These guides will help you prepare for your Mattermost deployment.
+* :doc:`Deployment overview </deploy/deployment-overview>` - Learn about the Mattermost user experience, communication protocols, network access, data storage, and deployment options.
+* :doc:`Architecture </getting-started/architecture-overview>` - Learn about user authentication, notifications, data management services, network connectivity, and high availability.
+* :doc:`Install a database </install/install-database>` - Mattermost requires either a MySQL or PostgreSQL database.
+* :doc:`Set up a socket-based Mattermost database </install/setting-up-socket-based-mattermost-database>` - Connect your Mattermost server to your database service.
+* :doc:`Include configuration in the Mattermost database </configure/configuation-in-a-database>` - Store Mattermost configuration information in your database rather than as a JSON file. Recommended for High Availability environments.
+* :doc:`Configure TLS on Mattermost Server </install/configure-tls>`
+* :doc:`Install NGINX proxy server </install/install-nginx-proxy-server>`
+* :doc:`SMTP email setup </configure/smtp-email>` - Connect to an email server to send emails for password resets and system notifications.
+* :doc:`SSL client certificate setup </onboard/ssl-client-certificate>` - Configure SSL client certificates for Mattermost Desktop and Web Apps.
+* :doc:`Set up an image proxy </deploy/image-proxy>` - Set up and configure an image proxy to make loading images faster and more reliable and prevent pixel tracking.
+* :doc:`Encryption options </deploy/encryption-options>` - Set up encryption for data in transit and at rest.
+* :doc:`Configure transport encryption </install/transport-encryption>` - Use transport encryption between Mattermost clusters and your proxy and database.
+* :doc:`Set up full-text Bleve search </deploy/bleve-search>` - Use the Bleve search engine to provide Lucene-style full-text search.
+* :doc:`Backup and disaster recovery </deploy/backup-disaster-recovery>` - Implement data backups, disaster recovery, and high availability deployment.
 
-* `Preview Mattermost via Docker </install/install-docker.html#preview-mattermost-using-docker>`__ - Preview Mattermost instantly or deploy via Docker for production use.
-* :doc:`Administrator tasks </getting-started/admin-onboarding-tasks>` - Learn about the standard configurations and settings you’ll encounter.
-* :doc:`Architecture </getting-started/architecture-overview>` - Learn the basics of user authentication, notifications, data management services, network connectivity, and high availability.
-* :doc:`Implement Mattermost </getting-started/implementation-plan>` - Get a detailed breakdown of the technical requirements to deploy Mattermost for your team or organization.
-* :doc:`Enterprise roll out checklist </getting-started/enterprise-roll-out-checklist>` - Learn how to roll Mattermost out to thousands of users.
-* :doc:`Welcome email template </getting-started/welcome-email-to-end-users>` - Use our sample email template when you’re ready to invite users to your server.
 
-Install guides
---------------
 
-The Mattermost server and client apps can run on all of the most popular platforms. Here’s a list of the most popular installation methods.
 
-Server installation
-^^^^^^^^^^^^^^^^^^^
-.. toctree::
-    :maxdepth: 1
-    :hidden:
 
-    Software and hardware requirements </install/software-hardware-requirements>
-    Install Mattermost via Docker </install/install-docker>
-    Mattermost Omnibus </install/installing-mattermost-omnibus>
-    Install Mattermost from Tar </install/install-tar>
-    Ubuntu 20.04 LTS </install/installing-ubuntu-2004-LTS>
-    Kubernetes </install/install-kubernetes>
-    About the Mattermost Kubernetes Operator </install/mattermost-kubernetes-operator>
-    Debian Buster </install/install-debian>
-    RHEL 8 </install/install-rhel-8>
-    CentOS, Oracle Linux, and Scientific Linux </install/install-centos-oracle-scientific>
-
-* :doc:`Software and hardware requirements </install/software-hardware-requirements>`
-* :doc:`Deploy Mattermost on Docker </install/install-docker>`
-* :doc:`Mattermost Omnibus </install/installing-mattermost-omnibus>`
-* :doc:`Install Mattermost from Tar </install/install-tar>`
-* :doc:`Ubuntu 20.04 LTS </install/installing-ubuntu-2004-LTS>`
-* :doc:`Kubernetes </install/install-kubernetes>`
-* :doc:`About the Mattermost Kubernetes Operator </install/mattermost-kubernetes-operator>`
-* :doc:`Debian Buster </install/install-debian>`
-* :doc:`RHEL 8 </install/install-rhel-8>`
-* :doc:`CentOS, Oracle Linux, and Scientific Linux </install/install-centos-oracle-scientific>`
-
-Desktop and Mobile App installation
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+IGNORE Desktop and Mobile App installation
 
 These guides will get you up and running with Mattermost desktop and mobile apps in minutes.
 
@@ -116,13 +90,12 @@ These guides will get you up and running with Mattermost desktop and mobile apps
 * :doc:`Android setup </install/install-android-app>`
 * :doc:`Testing push notifications </deploy/mobile-testing-notifications>`
 
-Deployment guide
-----------------
+IGNORE Deployment guide
 
 The deployment guide is for administrators who are ready to integrate Mattermost with their organization’s IT infrastructure. 
 
-Server deployment
-^^^^^^^^^^^^^^^^^
+IGNORE Server deployment
+
 .. toctree::
     :titlesonly:
     :hidden:
@@ -143,8 +116,8 @@ Server deployment
 * :doc:`Configure transport encryption </install/transport-encryption>` - Use transport encryption between Mattermost clusters and your proxy and database.
 * :doc:`Bleve search </deploy/bleve-search>` - Use the Bleve search engine to provide Lucene-style full-text search.
 
-Desktop and Mobile App deployment
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+IGNORE Desktop and Mobile App deployment
+
 .. toctree::
     :maxdepth: 1
     :hidden:
@@ -183,107 +156,3 @@ Customize the Mattermost desktop and mobile apps to meet any deployment needs.
 * :doc:`Mobile VPN options </deploy/consider-mobile-vpn-options>` - Learn how to use the Mattermost mobile apps with Mobile VPNs.
 * :doc:`Mobile apps frequently asked questions </deploy/mobile-faq>`
 * :doc:`Client-side data storage frequently asked questions </deploy/client-side-data>`
-
-Upgrade Mattermost
-------------------
-.. toctree::
-    :maxdepth: 1
-    :hidden:
-
-    Prepare to upgrade Mattermost </upgrade/prepare-to-upgrade-mattermost>
-    Upgrade Mattermost Server </upgrade/upgrading-mattermost-server>
-    Enterprise install and upgrade </install/enterprise-install-upgrade>
-    Install a license key </upgrade/installing-license-key>
-    Release definitions </upgrade/release-definitions>
-    Important upgrade notes </upgrade/important-upgrade-notes>
-    Release lifecycle </upgrade/release-lifecycle>
-    Extended Support Release </upgrade/extended-support-release>
-    Downgrade Mattermost Server </upgrade/downgrading-mattermost-server>
-    Version archive </upgrade/version-archive>
-
-Stay up to date with the latest features and improvements.
-
-* :doc:`Prepare to upgrade Mattermost </upgrade/prepare-to-upgrade-mattermost>` - Learn how to prepare for a Mattermost upgrade.
-* :doc:`Upgrade Mattermost Server </upgrade/upgrading-mattermost-server>` - Learn the basics of upgrading your Mattermost server to the latest version.
-* :doc:`Enterprise install and upgrade </install/enterprise-install-upgrade>` - Learn how to upgrade your Mattermost server to premium versions.
-* :doc:`Install a license key </upgrade/installing-license-key>` - Learn how to add or change a Mattermost license key.
-* :doc:`Release definitions </upgrade/release-definitions>` - Get details on the Mattermost release schedule and the types of releases.
-* :doc:`Important upgrade notes </upgrade/important-upgrade-notes>` - Find version-specific upgrade considerations.
-* :doc:`Release lifecycle </upgrade/release-lifecycle>` - See critical release lifecycle dates.
-* :doc:`Extended Support Release </upgrade/extended-support-release>` - Get information about releases that have extended release support.
-* :doc:`Downgrade Mattermost Server </upgrade/downgrading-mattermost-server>` - Find out how to roll back to older versions of Mattermost.
-* :doc:`Version archive </upgrade/version-archive>` - Download binaries for every release.
-
-Scale Mattermost
-----------------
-.. toctree::
-    :maxdepth: 1
-    :hidden:
-
-    Scale for Enterprise </scale/scaling-for-enterprise>
-    High availability cluster </scale/high-availability-cluster>
-    Elasticsearch </scale/elasticsearch>
-    Performance monitoring </scale/performance-monitoring>
-    Mattermost performance alerting guide </scale/performance-alerting>
-
-Scale and monitor your Mattermost deployment.
-
-* :doc:`Scale for Enterprise </scale/scaling-for-enterprise>` - Scale Mattermost to tens of thousands of users and beyond.
-* :doc:`High availability cluster </scale/high-availability-cluster>` - Maintain Mattermost service during outages and hardware failures with redundant infrastructure.
-* :doc:`Elasticsearch </scale/elasticsearch>` - Enhance search performance with Elasticsearch.
-* :doc:`Performance monitoring </scale/performance-monitoring>` - Use Prometheus and Grafana to monitor the health and performance of your Mattermost cluster.
-* :doc:`Mattermost performance alerting guide </scale/performance-alerting>` - Learn strategies and best practices for monitoring your Mattermost cluster. 
-
-Troubleshooting guides
-----------------------
-.. toctree::
-    :maxdepth: 1
-    :hidden:
-
-    General troubleshooting </install/troubleshooting>
-    Troubleshooting mobile applications </deploy/mobile-troubleshoot>
-    MySQL installation troubleshooting </install/trouble_mysql>
-
-* :doc:`General troubleshooting </install/troubleshooting>`
-* :doc:`Troubleshooting mobile applications </deploy/mobile-troubleshoot>`
-* :doc:`MySQL installation troubleshooting </install/trouble_mysql>`
-
-Changelogs
-----------
-.. toctree::
-    :maxdepth: 1
-    :hidden:
-
-    Mattermost self-hosted </install/self-managed-changelog>
-    Mattermost legacy self-hosted </install/legacy-self-hosted-changelog>
-    Mattermost Cloud </install/cloud-changelog>
-    Mobile apps </deploy/mobile-app-changelog>
-    Desktop apps </install/desktop-app-changelog>
-    Deprecated features </install/deprecated-features>
-
-* :doc:`Mattermost self-hosted </install/self-managed-changelog>`
-* :doc:`Mattermost legacy self-hosted </install/legacy-self-hosted-changelog>`
-* :doc:`Mattermost Cloud </install/cloud-changelog>`
-* :doc:`Mobile apps </deploy/mobile-app-changelog>`
-* :doc:`Desktop apps </install/desktop-app-changelog>`
-* :doc:`Deprecated features </install/deprecated-features>`
-
-Additional server install guides
---------------------------------
-.. toctree::
-    :maxdepth: 1
-    :hidden:
-
-    Install on Ubuntu 18.04 LTS </install/installing-ubuntu-1804-LTS>
-    Install on RHEL 7 </install/install-rhel-7>
-    Deploy Mattermost on Bitnami </install/deploying-team-edition-on-bitnami>
-    AWS Elastic Beanstalk Docker setup </install/setting-up-aws-elastic-beanstalk-docker>
-    Install Mattermost Team Edition in GitLab Helm Chart </install/installing-team-edition-helm-chart>
-    Open source components </upgrade/open-source-components>
-
-* :doc:`Install on Ubuntu 18.04 LTS </install/installing-ubuntu-1804-LTS>`
-* :doc:`Install on RHEL 7 </install/install-rhel-7>`
-* :doc:`Deploy Mattermost on Bitnami </install/deploying-team-edition-on-bitnami>`
-* :doc:`AWS Elastic Beanstalk Docker setup </install/setting-up-aws-elastic-beanstalk-docker>`
-* :doc:`Install on GitLab Helm Chart </install/installing-team-edition-helm-chart>`
-* :doc:`Open source components </upgrade/open-source-components>`

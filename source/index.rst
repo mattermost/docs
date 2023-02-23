@@ -7,17 +7,12 @@
 Mattermost product documentation
 --------------------------------
 
-.. _`mattermost.org/download`: https://mattermost.com/download/
-.. _contacting Mattermost, Inc.: https://mattermost.com/contact-us/
-.. _download and try it today.: /install/enterprise-install-upgrade.html
-
 .. toctree::
    :maxdepth: 1
    :glob:
 
    About Mattermost <overview/index>
-   Deploy Mattermost <guides/deployment>
-   Mattermost administration <guides/administration>
+   Mattermost for admins <guides/mattermost-for-admins>
    Welcome to Mattermost <guides/welcome-to-mattermost>
    Mattermost Channels <guides/channels>
    Mattermost Playbooks <guides/playbooks>
