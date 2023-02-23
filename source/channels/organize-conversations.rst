@@ -24,7 +24,7 @@ Start or reply to threads
 .. tip:: 
     
     - When replying to a thread in a web browser or the desktop app, you can also select the reply count if a thread already exists.
-    - Select anywhere on a message in a channel in the center pane to view it, or reply to it on the right-hand side.
+    - Select anywhere on a message in a channel in the center pane to view it, or reply to it.
     - In channels, a dot next to the thread participants indicates there are unread replies. You'll only see unreads for threads you're following.
 
 .. image:: ../images/crt-new-unread-threads.jpg
