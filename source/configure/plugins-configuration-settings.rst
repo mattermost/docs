@@ -288,7 +288,7 @@ Autolink
 .. include:: ../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
 
-This plugin creates regular expression (regexp) patterns that are reformatted into a Markdown link before the message is saved into the database. System Admins can configure this plugin in the ``config.json`` file, using the ``/autolink`` slash command (when enabled), or through using the System Console. See the `Autolink Plugin <https://github.com/mattermost/mattermost-plugin-autolink/blob/master/README.md>`__ documentation for details.
+This plugin creates regular expression patterns that are reformatted into a Markdown link before the message is saved into the database. This plugin can be configured through the System Console, ``config.json`` file, or ``/autolink`` slash command. See the `Autolink Plugin <https://github.com/mattermost/mattermost-plugin-autolink/blob/master/README.md>`__ documentation for details.
 
 Access the following configuration settings in the System Console by going to **Plugins > Autolink**.
 
@@ -304,9 +304,11 @@ Access the following configuration settings in the System Console by going to **
 Enable plugin
 ~~~~~~~~~~~~~
 
-**True**: Enables the Autolink plugin on your Mattermost server.
-
-**False**: Disables the Autolink plugin on your Mattermost server.
++----------------------------------------------------------------------+----------------------------------------------+
+| - **true**: Enables the Autolink plugin on your Mattermost server.   | - System Config path: **Plugins > Autolink** |
+| - **false**: Disables the Autolink plugin on your Mattermost server. | - ``config.json`` setting: N/A               |
+|                                                                      | - Environment variable: N/A                  |
++----------------------------------------------------------------------+----------------------------------------------+
 
 .. config:setting:: plugins-autolinkenableadmin
   :displayname: Enable administration with /autolink command (Plugins - Autolink)
@@ -320,9 +322,11 @@ Enable plugin
 Enable administration with /autolink command
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**True**: Enables the ability to configure the Apps plugin using the ``/autolink`` slash command.
-
-**False**: Disables the ability to use the slash command to configure the plugin.
++-----------------------------------------------------------------------------------------------------+----------------------------------------------+
+| - **true**: Enables administration of the Autolinks plugin using the ``/autolink`` slash command.   | - System Config path: **Plugins > Autolink** |
+| - **false**: Disables administration of the Autolinks plugin using the ``/autolink`` slash command. | - ``config.json`` setting: N/A               |
+|                                                                                                     | - Environment variable: N/A                  |
++-----------------------------------------------------------------------------------------------------+----------------------------------------------+
 
 .. config:setting:: plugins-autolinkapplytoupdatedposts
   :displayname: Apply plugin to updated posts as well as new posts (Plugins - Autolink)
@@ -336,9 +340,11 @@ Enable administration with /autolink command
 Apply plugin to updated posts as well as new posts
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**True**: Applies the plugin to updated posts as well as new posts.
-
-**False**: Applies the plugin to new posts only.
++-----------------------------------------------------------------------+----------------------------------------------+
+| - **true**: Applies the plugin to updated posts as well as new posts. | - System Config path: **Plugins > Autolink** |
+| - **false**: Applies the plugin to new posts only.                    | - ``config.json`` setting: N/A               |
+|                                                                       | - Environment variable: N/A                  |
++-----------------------------------------------------------------------+----------------------------------------------+
 
 .. config:setting:: plugins-autolinkadminuserids
   :displayname: Admin user IDs (Plugins - Autolink)
@@ -350,7 +356,11 @@ Apply plugin to updated posts as well as new posts
 Admin user IDs
 ~~~~~~~~~~~~~~
 
-Specify users authorized to administer the plugin in addition to system admins. Separate multiple user IDs with commas.
++----------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------+
+| This setting specifies users, in addtion to System Admins, who are authorized to administer the Autolink plugin. Separate multiple user IDs with commas. | - System Config path: **Plugins > Autolink** |
+|                                                                                                                                                          | - ``config.json`` setting: N/A               |
+|                                                                                                                                                          | - Environment variable: N/A                  |
++----------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------+
 
 .. tip::
 
@@ -380,21 +390,27 @@ Access the following configuration settings in the System Console by going to **
 Enable plugin
 ~~~~~~~~~~~~~
 
-**True**: Enables the AWS SNS plugin on your Mattermost server.
-
-**False**: Disables the AWS SNS plugin on your Mattermost server.
++---------------------------------------------------------------------+---------------------------------------------+
+| - **true**: Enables the AWS SNS plugin on your Mattermost server.   | - System Config path: **Plugins > AWS SNS** |
+| - **false**: Disables the AWS SNS plugin on your Mattermost server. | - ``config.json`` setting: N/A              |
+|                                                                     | - Environment variable: N/A                 |
++---------------------------------------------------------------------+---------------------------------------------+
 
 .. config:setting:: plugins-awssnsnotificationchannel
   :displayname: Channel to send notifications to (Plugins - AWS SNS)
   :systemconsole: Plugins > AWS SNS
   :configjson: N/A
   :environment: N/A
-  :description: Specify the channel to send notifications to in the format ``teamname,channelname``.
+  :description: Use this setting to specify the channel that will receive AWS SNS notifications in the format, **teamname,channelname**. 
 
 Channel to send notifications to
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Specify the channel to send notifications to in the format ``teamname,channelname``. For example, for a channel with a URL of ``https://example.com/myteam/channels/mychannel``, set the value to ``myteam,mychannel``. If the specified channel does not exist, the plugin creates the channel for you.
++----------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------+
+| Use this setting to specify the channel that will receive AWS SNS notifications in the format, **teamname,channelname**.         | - System Config path: **Plugins > AWS SNS** |
+| For example, if the channel URL is https://example.com/**myteam**/channels/**mychannel**, set the value to **myteam,mychannel**. | - ``config.json`` setting: N/A              |
+| If the specified channel does not exist, the plugin creates the channel for you.                                                 | - Environment variable: N/A                 |
++----------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------+
 
 .. config:setting:: plugins-awssnsauthorizeduserids
   :displayname: Authorized user IDs (Plugins - AWS SNS)
@@ -406,16 +422,31 @@ Specify the channel to send notifications to in the format ``teamname,channelnam
 Authorized user IDs
 ~~~~~~~~~~~~~~~~~~~
 
-Specify users authorized to accept AWS SNS subscriptions to a Mattermost channel. Separate multiple user IDs with commas.
++-----------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------+
+| Use this setting to specify users authorized to accept AWS SNS subscriptions to a Mattermost channel. Separate multiple user IDs with commas. | - System Config path: **Plugins > AWS SNS** |
+|                                                                                                                                               | - ``config.json`` setting: N/A              |
+|                                                                                                                                               | - Environment variable: N/A                 |
++-----------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------+
 
 .. tip::
 
   Find user IDs by going to **System Console > User Management > Users**.
 
+.. config:setting:: plugins-awssnstoken
+  :displayname: Token (Plugins - AWS SNS)
+  :systemconsole: Plugins > AWS SNS
+  :configjson: N/A
+  :environment: N/A
+  :description: Generate a token to validate incoming requests from AWS SNS by selecting **Regenerate**.
+
 Token
 ~~~~~
 
-Generate a token to validate incoming requests from AWS SNS by selecting ``Regenerate``.
++------------------------------------------------------------------------------------------+---------------------------------------------+
+| Generate a token to validate incoming requests from AWS SNS by selecting **Regenerate**. | - System Config path: **Plugins > AWS SNS** |
+|                                                                                          | - ``config.json`` setting: N/A              |
+|                                                                                          | - Environment variable: N/A                 |
++------------------------------------------------------------------------------------------+---------------------------------------------+
 
 ----
 
