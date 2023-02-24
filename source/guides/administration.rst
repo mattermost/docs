@@ -1,8 +1,11 @@
-Mattermost administration guide
-===============================
+Mattermost administration
+==========================
 
 Getting started with Mattermost
 -------------------------------
+
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 .. toctree::
     :maxdepth: 1
@@ -24,9 +27,11 @@ Getting started with Mattermost
 * :doc:`Welcome email template </getting-started/welcome-email-to-end-users>` - Use our sample email template when you’re ready to invite users to your server.
 * :doc:`Enterprise roll out checklist </getting-started/enterprise-roll-out-checklist>` - Learn how to roll Mattermost out to thousands of users.
 
-
 Self-hosted server administration
 ----------------------------------
+
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 .. toctree::
     :maxdepth: 1
@@ -45,7 +50,6 @@ Self-hosted server administration
     Set up full-text Bleve search </deploy/bleve-search>
     Backup and disaster recovery </deploy/backup-disaster-recovery>
 
-
 * :doc:`Install a database </install/install-database>` - Mattermost requires either a MySQL or PostgreSQL database.
 * :doc:`Set up a socket-based Mattermost database </install/setting-up-socket-based-mattermost-database>` - Connect your Mattermost server to your database service.
 * :doc:`Include configuration in the Mattermost database </configure/configuation-in-a-database>` - Store Mattermost configuration information in your database rather than as a JSON file. Recommended for High Availability environments.
@@ -59,33 +63,71 @@ Self-hosted server administration
 * :doc:`Set up full-text Bleve search </deploy/bleve-search>` - Use the Bleve search engine to provide Lucene-style full-text search.
 * :doc:`Backup and disaster recovery </deploy/backup-disaster-recovery>` - Implement data backups, disaster recovery, and high availability deployment.
 
+Configure your deployment
+-------------------------
 
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
+.. toctree::
+    :maxdepth: 1
+    :hidden:
 
+    Optimize your workspace </configure/optimize-your-workspace>
+    Mattermost configuration settings </configure/configuration-settings>
+    Self-hosted edition and license </configure/self-hosted-account-settings>
+    Reporting configuration settings </configure/reporting-configuration-settings>
+    User management configuration settings </configure/user-management-configuration-settings>
+    Environment configuration settings </configure/environment-configuration-settings>
+    Site configuration settings </configure/site-configuration-settings>
+    Authentication configuration settings </configure/authentication-configuration-settings>
+    Plugins configuration settings </configure/plugins-configuration-settings>
+    Integrations configuration settings </configure/integrations-configuration-settings>
+    Compliance configuration settings </configure/compliance-configuration-settings>
+    Experimental configuration settings </configure/experimental-configuration-settings>
+    Deprecated configuration settings </configure/deprecated-configuration-settings>
 
+The following documentation applies to both self-hosted and Cloud-based Mattermost deployments. 
 
+* :doc:`Optimize your workspace </configure/optimize-your-workspace>` - Review health and growth scores for your workspace, and take necessary action.
+* **Configure your workspace** - Mattermost offers extensive configuration options for both `self-hosted Mattermost servers and Mattermost Cloud workspaces </configure/configuration-settings.html>`__, and provides a list of :doc:`deprecated configuration settings </configure/deprecated-configuration-settings>` no longer supported.
 
+User management
+---------------
 
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
+.. toctree::
+    :maxdepth: 1
+    :hidden:
 
+    System admin roles </onboard/system-admin-roles>
+    Manage team and channel members </manage/team-channel-members>
+    Advanced permissions </onboard/advanced-permissions>
+    Advanced permissions infrastructure </onboard/advanced-permissions-backend-infrastructure>
+    Provisioning workflows </onboard/user-provisioning-workflows>
+    Multi-factor authentication </onboard/multi-factor-authentication>
+    Active Directory/LDAP </onboard/ad-ldap>
+    AD/LDAP groups </onboard/ad-ldap-groups-synchronization>
+    Use AD/LDAP synchronized groups to manage team or private channel membership </onboard/managing-team-channel-membership-using-ad-ldap-sync-groups>
+    GitLab SSO </onboard/sso-gitlab>
+    OpenID SSO </onboard/sso-openidconnect>
+    Google SSO </onboard/sso-google>
+    Office 365 SSO </onboard/sso-office>
+    SAML SSO </onboard/sso-saml>
+    SAML SSO: technical documentation </onboard/sso-saml-technical>
+    Guest accounts </onboard/guest-accounts>
 
+The following documentation applies to both self-hosted and Cloud-based Mattermost deployments. 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+* :doc:`System Admin roles </onboard/system-admin-roles>` - Grant admins from your organization access to specific areas of the Mattermost System Console.
+* :doc:`Manage team and channel members </manage/team-channel-members>` synchronization, moderation, and membership settings.
+* **User permissions** - All versions of Mattermost offer standard user permissions control. Professional and Enterprise versions also include :doc:`advanced permissions control </onboard/advanced-permissions>` to customize which users can perform specific actions, 
+* :doc:`Provisioning workflows </onboard/user-provisioning-workflows>` Learn how to provision and de-provision user accounts.
+* **User authentication** - All versions of Mattermost provide basic authentication and offer :doc:`multi-factor authentication </onboard/multi-factor-authentication>` out of the box. Professional and Enterprise versions of Mattermost also include :doc:`Active Directory/LDAP </onboard/ad-ldap>` and SSO for :doc:`GitLab SSO </onboard/sso-gitlab>`, :doc:`OpenID </onboard/sso-openidconnect>`, :doc:`Google </onboard/sso-google>`, and :doc:`Office365 </onboard/sso-office>`.
+* :doc:`AD/LDAP groups </onboard/ad-ldap-groups-synchronization>` - Sync AD/LDAP groups with Mattermost roles and teams.
+* :doc:`Use AD/LDAP synchronized groups to manage team or private channel membership </onboard/managing-team-channel-membership-using-ad-ldap-sync-groups>` - Synchronize your AD/LDAP group with private Mattermost channels and teams.
+* :doc:`SAML SSO </onboard/sso-saml>` - Configure Mattermost to be a SAML 2.0 service provider.
+* :doc:`SAML SSO: technical documentation </onboard/sso-saml-technical>` - SAML 2.0 reference documentation for Mattermost.
+* :doc:`Guest accounts </onboard/guest-accounts>` - Create guest accounts to collaborate with individuals outside your organization.
