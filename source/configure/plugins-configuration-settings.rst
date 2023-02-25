@@ -356,11 +356,12 @@ Apply plugin to updated posts as well as new posts
 Admin user IDs
 ~~~~~~~~~~~~~~
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------+
-| This setting specifies users, in addtion to System Admins, who are authorized to administer the Autolink plugin. Separate multiple user IDs with commas. | - System Config path: **Plugins > Autolink** |
-|                                                                                                                                                          | - ``config.json`` setting: N/A               |
-|                                                                                                                                                          | - Environment variable: N/A                  |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------+
++-----------------------------------------------------------------------------------------+----------------------------------------------+
+| Use this setting to authorize non-System Admin users to administer the Autolink plugin. | - System Config path: **Plugins > Autolink** |
+|                                                                                         | - ``config.json`` setting: N/A               |
+| Separate multiple user IDs with commas.                                                 | - Environment variable: N/A                  |
+|                                                                                         |                                              |
++-----------------------------------------------------------------------------------------+----------------------------------------------+
 
 .. tip::
 
@@ -406,11 +407,13 @@ Enable plugin
 Channel to send notifications to
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+----------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------+
-| Use this setting to specify the channel that will receive AWS SNS notifications in the format, **teamname,channelname**.         | - System Config path: **Plugins > AWS SNS** |
-| For example, if the channel URL is https://example.com/**myteam**/channels/**mychannel**, set the value to **myteam,mychannel**. | - ``config.json`` setting: N/A              |
-| If the specified channel does not exist, the plugin creates the channel for you.                                                 | - Environment variable: N/A                 |
-+----------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------+
+| Use this setting to specify the channel that will receive AWS SNS notifications by entering the team name and channel name as: **teamname,channelname**. | - System Config path: **Plugins > AWS SNS** |
+|                                                                                                                                                          | - ``config.json`` setting: N/A              |
+| For example, if the channel URL is https://example.com/**myteam**/channels/**mychannel**, enter: **myteam,mychannel**.                                   | - Environment variable: N/A                 |
+|                                                                                                                                                          |                                             |
+| If the channel does not exist, the plugin creates the channel for you.                                                                                   |                                             |
++----------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------+
 
 .. config:setting:: plugins-awssnsauthorizeduserids
   :displayname: Authorized user IDs (Plugins - AWS SNS)
@@ -422,11 +425,11 @@ Channel to send notifications to
 Authorized user IDs
 ~~~~~~~~~~~~~~~~~~~
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------+
-| Use this setting to specify users authorized to accept AWS SNS subscriptions to a Mattermost channel. Separate multiple user IDs with commas. | - System Config path: **Plugins > AWS SNS** |
-|                                                                                                                                               | - ``config.json`` setting: N/A              |
-|                                                                                                                                               | - Environment variable: N/A                 |
-+-----------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------+
++----------------------------------------------------------------------------------------------+---------------------------------------------+
+| Use this setting to authorize users to accept AWS SNS subscriptions to a Mattermost channel. | - System Config path: **Plugins > AWS SNS** |
+|                                                                                              | - ``config.json`` setting: N/A              |
+| Separate multiple user IDs with commas.                                                      | - Environment variable: N/A                 |
++----------------------------------------------------------------------------------------------+---------------------------------------------+
 
 .. tip::
 
