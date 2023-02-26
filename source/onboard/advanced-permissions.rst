@@ -37,7 +37,7 @@ You can access the System Scheme interface by going to **System Console > User M
 Team override scheme
 ~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/ent-only.rst
+.. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10 and E20*

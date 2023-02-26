@@ -4,7 +4,7 @@ Keyboard accessibility
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Navigational keyboard shortcuts help you use Mattermost without requiring a mouse. Below is a list of supported accessibility shortcuts. Elements in focus have a colored outline, as shown here:
+Navigational keyboard shortcuts help you use Mattermost in a web browser or the desktop app without needing a mouse. Below is a list of supported accessibility shortcuts. Elements in focus have a colored outline, as shown here:
 
 .. image:: ../images/focus.png
   :alt: Navigate Mattermost using a keyboard.
@@ -72,7 +72,7 @@ For example, a message read by a screen reader may sound like the following:
 Channel sidebar navigation
 --------------------------
 
-When the channel sidebar region is focused, use the :kbd:`↑` or :kbd:`↓` arrow keys to focus individual sidebar sections, such as Favorites, public channels, private channels, and direct messages. Press :kbd:`Tab` to navigate through channels or other buttons within a sidebar section.
+When the channel sidebar region is focused, use the :kbd:`↑` or :kbd:`↓` arrow keys to focus individual sidebar sections, such as Insights, Threads, Favorites, custom categories, public channels, private channels, and direct messages. Press :kbd:`Tab` to navigate through channels or other buttons within a sidebar section.
 
 .. image:: ../images/channel-sidebar-navigation.gif
   :alt: Navigate the Mattermost channel sidebar using a keyboard.

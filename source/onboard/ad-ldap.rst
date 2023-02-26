@@ -207,7 +207,7 @@ When a user is deactivated in Mattermost via options one or two above, all the u
 Can I connect to multiple Active Directory servers?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-There is currently no built-in way to connect to multiple AD servers. You will need to connect the instances in a forest before connecting to Mattermost. Consider upvoting the `feature request <https://mattermost.uservoice.com/forums/306457-general/suggestions/13589904-add-the-abilitiry>`__ on our forum.
+There is currently no built-in way to connect to multiple AD servers. You will need to connect the instances in a forest before connecting to Mattermost. Consider upvoting the `feature request <https://mattermost.com/suggestions/>`__ on our forum.
 
 When trying to log in, I see the error ``AD/LDAP not available on this server``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

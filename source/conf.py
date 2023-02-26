@@ -41,7 +41,8 @@ extensions = [
     "sitemap",
     "sphinx_tabs.tabs",
     "sphinx_copybutton",
-    "compass-icons"
+    "compass-icons",
+    "config-setting-v2",
 ]
 
 sphinx_tabs_disable_tab_closing = True
@@ -135,6 +136,8 @@ redirects = {
         "https://docs.mattermost.com/configure/configuation-in-a-database.html",
 "administration/config-in-database.html#configuration-in-the-mattermost-database":
         "https://docs.mattermost.com/configure/configuation-in-a-database.html",
+"administration/config-settings.html#enable-hardened-mode-experimental":
+	"https://docs.mattermost.com/configure/experimental-configuration-settings.html#enable-hardened-mode",
 "administration/data-retention.html":
         "https://docs.mattermost.com/comply/data-retention-policy.html",
 "administration/devops-command-center.html":
@@ -333,6 +336,8 @@ redirects = {
 	"https://docs.mattermost.com/boards/migrate-to-boards.html",
 
 # Channels redirects
+"channels/find-channels.html":
+        "https://docs.mattermost.com/channels/browse-channels.html",
 "channels/sign-in.html":
         "https://docs.mattermost.com/welcome/log-in.html",
 "channels/organize-conversations.html#enable-collapsed-reply-threads-beta":
@@ -2146,6 +2151,36 @@ redirects = {
         "https://docs.mattermost.com/onboard/ad-ldap.html#active-directory-ldap-setup",
 "onboard/migrating-from-hipchat-to-mattermost.html":
         "https://docs.mattermost.com/onboard/migrating-to-mattermost.html#migrating-from-slack",
+"onboard/ad-ldap-groups-synchronization.html#enabling-ad-ldap-group-synchronization": 
+        "https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html#enable-ad-ldap-group-synchronization",
+"onboard/ad-ldap-groups-synchronization.html#using-ad-ldap-group-synchronization":
+        "https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html#synchronize-ad-ldap-groups-to-mattermost",
+"onboard/ad-ldap-groups-synchronization.html#linking-ad-ldap-groups-to-mattermost-groups": 
+        "https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html#link-ad-ldap-groups-to-mattermost-groups",
+"onboard/ad-ldap-groups-synchronization.html#configuring-the-group": 
+        "https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html#configure-the-linked-group",
+"onboard/ad-ldap-groups-synchronization.html#adding-default-teams-or-channels-for-the-group": 
+        "https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html#add-default-teams-or-channels-for-the-group",
+"onboard/ad-ldap-groups-synchronization.html#synchronizing-teams-and-channels": 
+        "https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html#synchronize-teams-and-channels",
+"onboard/ad-ldap-groups-synchronization.html#removing-configured-teams-and-channels-from-a-group": 
+        "https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html#remove-configured-teams-and-channels-from-a-group",
+"onboard/ad-ldap-groups-synchronization.html#viewing-users-belonging-to-the-group": 
+        "https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html#view-users-belonging-to-the-group",
+"onboard/ad-ldap-groups-synchronization.html#disabling-and-re-activating-ad-ldap-users": 
+        "https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html#disable-and-re-activate-ad-ldap-users",
+"onboard/ad-ldap-groups-synchronization.html#managing-groups": 
+        "https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html#manage-groups",
+"onboard/ad-ldap-groups-synchronization.html#deleting-groups": 
+        "https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html#delete-groups",
+"onboard/ad-ldap-groups-synchronization.html#managing-membership-of-a-team-or-channel-with-synchronized-groups": 
+        "https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html#use-ad-ldap-synchronized-groups-to-manage-team-or-private-channel-membership",
+"onboard/ad-ldap-groups-synchronization.html#assigning-roles-to-group-members": 
+        "https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html#assign-roles-to-group-members",
+"onboard/ad-ldap-groups-synchronization.html#managing-members": 
+        "https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html#manage-members",
+"onboard/ad-ldap-groups-synchronization.html#disabling-group-synchronized-management-of-teams-and-private-channels": 
+        "https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html#disable-group-synchronized-management-of-teams-and-private-channels",
 
 # Overview redirects
 "overview/architecture.html":
@@ -2310,7 +2345,11 @@ redirects = {
 "upgrade/upgrading-mattermost-server.html#upgrade-from-releases-older-than-v5-35":
         "https://docs.mattermost.com/upgrade/prepare-to-upgrade-mattermost.html#upgrade-from-releases-older-than-v5-35",
 "upgrade/upgrading-mattermost-server.html#upgrade-high-availability-deployments":
-        "https://docs.mattermost.com/upgrade/prepare-to-upgrade-mattermost.html#upgrade-high-availability-deployments"
+        "https://docs.mattermost.com/upgrade/prepare-to-upgrade-mattermost.html#upgrade-high-availability-deployments",
+
+# Welcome redirects
+"welcome/manage-desktop-app-server-connections.html":
+        "https://docs.mattermost.com/welcome/manage-multiple-server-connections.html"
 
 # End of redirects. The last redirect above should NOT end in a comma.
 
@@ -2329,9 +2368,9 @@ author = "Mattermost"
 # built documents.
 #
 # The short X.Y version.
-# version = '7.6'
+# version = '7.8'
 # The full version, including alpha/beta/rc tags.
-# release = '7.6'
+# release = '7.8'
 
 # The language for content autogenerated by Sphinx. Refer to documentation
 # for a list of supported languages.
@@ -2445,7 +2484,7 @@ html_static_path = ["_static"]
 # A list of CSS files. The entry must be a filename string or a tuple containing the filename string and the attributes
 # dictionary. The filename must be relative to the html_static_path, or a full URI with scheme like
 # https://example.org/style.css. The attributes is used for attributes of <link> tag. It defaults to an empty list.
-html_css_files = ["mytheme.css", "css/compass-icons.css"]
+html_css_files = ["mytheme.css?v=v7", "css/compass-icons.css"]
 
 # A list of JavaScript filenames. The entry must be a filename string or a tuple containing the filename string and the
 # attributes dictionary. The filename must be relative to the html_static_path, or a full URI with scheme like
@@ -2459,7 +2498,7 @@ html_favicon = "_static/favicon.ico"
 # Add any extra paths that contain custom files (such as robots.txt or
 # .htaccess) here, relative to this directory. These files are copied
 # directly to the root of the documentation.
-html_extra_path = ["_static/robots.txt"]
+html_extra_path = ["_static/robots.txt", "_static/favicon.ico"]
 
 # If not '', a 'Last updated on:' timestamp is inserted at every page bottom,
 # using the given strftime format.

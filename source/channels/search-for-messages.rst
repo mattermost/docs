@@ -5,72 +5,92 @@ Search for messages
   :start-after: :nosearch:
 
 .. |product-list| image:: ../images/products_E82F.svg
-  :height: 24px
-  :width: 24px
   :alt: Navigate between Channels, Playbooks, and Boards using the product menu icon.
 
-Use the Mattermost search field to find messages, replies, and the contents of files shared across all channels you're a member of in your team's conversation history. File content search is available in Mattermost Server from v5.35 and in Mattermost Cloud, with mobile support coming soon.
+.. |search-icon| image:: ../images/magnify_F0349.svg
+  :alt: Navigate between Channels, Playbooks, and Boards using the product menu icon.
+  
+.. |channel-info| image:: ../images/information-outline_F02FD.svg
+  :alt: Use the Channel Info icon to access additional channel management options.
 
-.. image:: ../images/ui_search.png
-   :alt: Use Search to find messages, replies, and the contents of files shared across channels.
+.. |channel-files-icon| image:: ../images/file-text-outline_F09EE.svg
+  :alt: Use the Channel Files icon to search for files attached to messages in a given channel.
 
-You can also do more advanced search using `search modifiers <#search-modifiers>`__.
+Use Mattermost search to find messages, replies, and the contents of files shared across all channels you're a member of in your team's conversation history. You can also search by `hashtags <#hashtags>`__ or perform more advanced searches using `search modifiers <#search-modifiers>`__
+
+Search for message and files 
+-----------------------------
 
 .. tabs::
+
+  .. tab:: Desktop
+
+    **Search for messages**
+
+    1. Select the Search field, select **Messages**, then enter your search criteria. 
+
+      .. image:: ../images/search-messages.png
+        :alt: Use the Search field to search for messages.
+
+    2. When message results display in the Search Results pane, select **Jump** to view a full message in context.
+
+      .. image:: ../images/jump-to-message.png
+        :alt: From search results, you can go to the full message by selecting Jump.
+
+    **Search for files**
+
+    File content search is available in Mattermost Server from v5.35 and in Mattermost Cloud. Select the **Search** field, select **Files**, then type your search criteria. 
+
+      .. image:: ../images/search-files.png
+        :alt: Use the Search field to serach for files attached to messages.
+
+    File contents that match on file name, or contain matching text content within supported document types, are returned in the Search Results pane. Each search result includes file name, extension, and size details, as well as details about when and where the file was originally shared.
+
+    - For Mattermost Cloud workspaces, supported document file formats include PDF, PPTX, DOCX, ODT, HTML, and plain text documents. DOC, RTF, and PAGES file formats, as well as the contents of ZIP files, are not supported.
+    - For Mattermost self-hosted deployments, supported document file formats include PDF, PPTX, DOCX, ODT, HTML, and plain text documents. 
+
+    .. note::
+      
+      System admins can extend file content search support for self-hosted deployments to include:
   
-  .. tab:: Mattermost v6.1 onwards
+      - `files shared before upgrading to Mattermost Server v5.35 </manage/command-line-tools.html#mattermost-extract-documents-content>`__.
+      - `DOC, RTF, and PAGES file formats </configure/configuration-settings.html#enable-document-search-by-content>`__.
+      - `documents within ZIP files </configure/configuration-settings.html#enable-searching-content-of-documents-within-zip-files>`__.
 
-    From Mattermost v6.1, your search results include messages from all of your teams.
+    **Filter results by file type**
+    
+    To narrow search results further, in the Search Results pane, select the **File Type Filter** option, then select specific file types, such as documents, spreadsheets, or images.
+  
+    .. image:: ../images/file-search-filter.png
+      :alt: You can filter search results by file type.
 
-  .. tab:: Mattermost v6.0 and earlier
+    .. tip::
+      Select the **Channel Files** icon below the channel name to access files recently shared in the current channel. 
+  
+      .. image:: ../images/channel-files-icon.png
+        :alt: Use the Channel Files option to access recently shared files in the current channel.
 
-    In Mattermost versions up to v6.0, your search results include messages from your current team only.
+  .. tab:: Mobile
 
-Search for message contents 
----------------------------
-
-Select the Search field, then type your search criteria. 
-
-.. image:: ../images/search-messages.png
-
-When message results display in the Search Results pane, select **Jump** to view the full message in context.
-
-.. image:: ../images/jump-to-message.png
+    1. Tap the **Search** |search-icon| icon at the bottom of the app to search for messages or files attached to messages.
+    2. To the right of search options, tap to select which team to search.
+    3. Enter your search criteria, including applicable `hashtags <#hashtags>`__.
+    4. Tap to apply `search modifiers <#search-modifiers>`__ to your search.
 
 .. tip::
-  Message results return first automatically if a message search isn't specified. In the Search Results pane, select **Messages** or **Files** to toggle between results.
+  To access files recently shared in a channel:
   
-Search for file contents
-------------------------
-
-Select the **Search** field, select **Files**, then type your search criteria. 
-
-.. image:: ../images/search-files.png
-
-File contents that match on file name, or contain matching text content within supported document types, are returned in the Search Results pane. Each search result includes file name, extension, and size details, as well as details about when and where the file was originally shared.
-
-- For Mattermost Cloud workspaces, supported document file formats include PDF, PPTX, DOCX, ODT, HTML, and plain text documents. DOC, RTF, and PAGES file formats, as well as the contents of ZIP files, are not supported.
-- For Mattermost self-hosted deployments, supported document file formats include PDF, PPTX, DOCX, ODT, HTML, and plain text documents. 
-
-  - System Admins can extend file content search support for self-hosted deployments to include:
-  
-    - `files shared before upgrading to Mattermost Server v5.35 </manage/command-line-tools.html#mattermost-extract-documents-content>`__.
-    - `DOC, RTF, and PAGES file formats </configure/configuration-settings.html#enable-document-search-by-content>`__.
-    - `documents within ZIP files </configure/configuration-settings.html#enable-searching-content-of-documents-within-zip-files>`__.
-
-To narrow search results further, in the Search Results pane, select the **File Type Filter** option, then select specific file types, such as documents, spreadsheets, or images.
-  
-.. image:: ../images/file-search-filter.png
-
-.. tip::
-  Select the **Channel Files** icon below the channel name to access files recently shared in that channel. 
-  
-  .. image:: ../images/channel-files-icon.png
+  - Select the |channel-files-icon| icon below the channel name to access files recently shared in that channel. 
+  - Select the channel name, select the **View Info** |channel-info| icon, then select **Files** in the right pane.
 
 Search modifiers
 ----------------
 
 You can apply search modifiers to any search to reduce the number of results returned. Select a search modifier to add it to the Search field. Supported modifiers are described below.
+
+.. note::
+
+  In Mattermost versions up to v6.0, your search results include messages from your current team only. From Mattermost v6.1, your search results include messages from all of your teams.
 
 .. image:: ../images/search-modifiers.png
 
@@ -145,10 +165,10 @@ Notes about all searches
 ------------------------
 
 - Multiple-word searches return results that contain *all* of your search criteria.
-- Search modifiers can help narrow down searches. See the `Search Modifiers <#search-modifiers>`__ section for details.
+- Search modifiers can help narrow down searches. See the `search modifiers <#search-modifiers>`__ section for details.
 - You can search Archived channels as long as you're a member of that channel.
 
-  - If you're unable to see messages or files in archived channels in your search results, ask your System Admin if **Allow users to view archived channels** has been disabled under **System Console > Site Configuration > Users and Teams**.
+  - If you're unable to see messages or files in archived channels in your search results, ask your system admin if **Allow users to view archived channels** has been disabled under **System Console > Site Configuration > Users and Teams**.
   - To remove archived channels from your search results, you can leave the Archived channels.
 - Like many search engines, common words such as ``the``, ``which``, and ``are`` (known as "stop words"), as well as two-letter and one-letter search terms, are not shown in search results because they typically return too many results. See the `Technical notes about searching <#technical-notes-about-searching>`__ section below for details.
 - IP addresses (e.g. ``10.100.200.101``) don't return results.
@@ -173,7 +193,6 @@ Other database-specific differences include:
 
 PostgreSQL:
 
-- Email addresses don't return results.
 - URLs don’t return results.
 - Hashtags or recent mentions of usernames containing a dash don't return results.
 - Terms containing a dash return incorrect results since dashes are ignored in the search engine.

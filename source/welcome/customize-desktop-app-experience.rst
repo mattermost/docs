@@ -13,7 +13,7 @@ In addition to your `personal profile settings </welcome/manage-your-profile.htm
 
     .. tab:: Linux
 
-        Access additional Desktop App customization settings from the **More** |more-icon-vertical| icon located in the top left corner of the Mattermost window by selecting **File > Settings...**
+        Access additional Desktop App customization settings from the **More** |more-icon-vertical| icon located in the top left corner of the desktop app by selecting **File > Settings...**
 
         .. image:: ../images/desktop-app-settings.jpg
             :alt: Access Desktop App customization settings by selecting More in the top left corner, then selecting File > Settings.
@@ -102,7 +102,7 @@ In addition to your `personal profile settings </welcome/manage-your-profile.htm
 
     .. tab:: Windows
 
-        Access additional Desktop App customization settings from the **More** |more-icon-vertical| icon located in the top left corner of the Mattermost window by selecting **File > Settings...**
+        Access additional Desktop App customization settings from the **More** |more-icon-vertical| icon located in the top left corner of the desktop app by selecting **File > Settings...**
 
         .. image:: ../images/desktop-app-settings.jpg
             :alt: Access Desktop App customization settings by selecting More in the top left corner, then selecting File > Settings.

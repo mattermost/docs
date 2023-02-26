@@ -2,8 +2,6 @@ Settings
 ========
 
 .. |gear-icon| image:: ../images/settings-outline_F08BB.svg
-  :height: 24px
-  :width: 24px
   :alt: Access settings using the gear icon.
 
 Set language
@@ -15,8 +13,8 @@ To set your language on boards, select the gear icon |gear-icon| next to your pr
   
   Language settings in Boards are independent from language settings in Channels.
 
-Emoji icons
------------
+Random emoji icons
+------------------
 
 To enable or disable random emoji icons for your board and cards, select the gear icon |gear-icon| next to your profile picture, then toggle **Random icons on or off**.
 

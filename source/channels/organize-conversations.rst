@@ -19,11 +19,12 @@ Collapsed Reply Threads offers an enhanced experience for users communicating in
 Start or reply to threads
 -------------------------
 
-Replies are collapsed under the first message of a thread. To reply to a thread, select the **Reply** icon, or select the reply count if a thread already exists.
+`Replies to messages </channels/reply-to-messages.html>`__ are collapsed under the first message of a thread. 
 
 .. tip:: 
     
-    - Select anywhere on a message in a channel in the center pane to view it, or reply to it on the right-hand side.
+    - When replying to a thread in a web browser or the desktop app, you can also select the reply count if a thread already exists.
+    - Select anywhere on a message in a channel in the center pane to view it, or reply to it.
     - In channels, a dot next to the thread participants indicates there are unread replies. You'll only see unreads for threads you're following.
 
 .. image:: ../images/crt-new-unread-threads.jpg
@@ -61,7 +62,7 @@ Enable Collapsed Reply Threads
 
 See our `configuration settings </configure/configuration-settings.html#collapsed-reply-threads>`__ documentation for details on configuring the default availability of collapsed reply threads. From Mattermost v7.0, Collapsed Reply Threads are enabled by default for all new Mattermost deployments.
 
-Depending on how your System Admin has configured **Collapsed Reply Threads** for your workspace, it may already be enabled for you, or you may be able to `enable this feature for your account </channels/channels-settings.html#collapsed-reply-threads>`__ by going to **Settings > Display > Collapsed Reply Threads**. 
+Depending on how your system admin has configured **Collapsed Reply Threads** for your workspace, it may already be enabled for you, or you may be able to `enable this feature for your account </channels/channels-settings.html#collapsed-reply-threads>`__ by going to **Settings > Display > Collapsed Reply Threads**. 
 
 Tutorial video
 ---------------
@@ -75,7 +76,7 @@ Tutorial video
 Known issues
 ------------
 
-Collapsed Reply Threads was released as generally available in Mattermost v7.0, including significant server performance improvements and more flexible configuration options for System Admins to enable the feature by default. We highly recommended `upgrading to Mattermost v7.0 </upgrade/upgrading-mattermost-server.html>`__ to take advantage of these configuration and performance enhancements.
+Collapsed Reply Threads was released as generally available in Mattermost v7.0, including significant server performance improvements and more flexible configuration options for system admins to enable the feature by default. We highly recommended `upgrading to Mattermost v7.0 </upgrade/upgrading-mattermost-server.html>`__ to take advantage of these configuration and performance enhancements.
 
 Customers running Collapsed Reply Threads in beta on Mattermost v6.7 or earlier will likely experience bugs and unoptimized server performance. Learn more about the `beta release performance considerations <https://support.mattermost.com/hc/en-us/articles/4413183568276>`__ applicable only to Mattermost v5.37 through v6.7 deployments.
 

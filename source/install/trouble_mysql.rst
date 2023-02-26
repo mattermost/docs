@@ -4,8 +4,11 @@ MySQL installation troubleshooting
 .. include:: ../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
 
-Before you can run the Mattermost server, you must first install and configure a database. You can start Mattermost by navigating to the ``/opt/mattermost`` directory and entering the command
-``sudo -u mattermost bin/mattermost``. If the Mattermost server cannot connect to the database, it will fail to start. This section deals with MySQL database issues that you may encounter when you start up Mattermost for the first time.
+Before you can run the Mattermost server, you must first install and configure a database. You can start Mattermost by navigating to the ``/opt/mattermost`` directory and entering the command ``sudo -u mattermost bin/mattermost``. If the Mattermost server can't connect to the database, it will fail to start. This section deals with MySQL database issues that you may encounter when you start up Mattermost for the first time.
+
+.. note::
+
+    Additional database tuning guidance is available for specific Mattermost releases. See the `important upgrade notes </upgrade/important-upgrade-notes.html>`__ documentation for more details.
 
 How you install MySQL varies depending upon which Linux distribution you use. However, once MySQL is installed, the configuration instructions are the
 same. For all distributions you must create a ``mattermost`` database and a ``mattermost`` database user. Failure to create these database
@@ -183,7 +186,7 @@ If the database exists and the username and password are correct, the ``mmuser``
 
 .. note::
 
-    Examine the error message closely. The user name displayed in the error message is the user identified in the ``DataSource`` element of the ``/opt/mattermost/config/config.json`` file. For example, if the error message reads``Access denied for user 'muser'@'%' ...`` you will know that you have misidentified the user as ``muser`` in the ``config.json`` file.
+    Examine the error message closely. The user name displayed in the error message is the user identified in the ``DataSource`` element of the ``/opt/mattermost/config/config.json`` file. For example, if the error message reads ``Access denied for user 'muser'@'%' ...``, you will know that you have misidentified the user as ``muser`` in the ``config.json`` file.
 
 You can check if the user ``mmuser`` has access to the ``mattermost`` database by logging in to MySQL as ``mmuser`` and issuing the command: ``show databases;``. If this user does not have rights to view the ``mattermost`` database, you will not see it in the output.
 
@@ -203,3 +206,14 @@ You can check if the user ``mmuser`` has access to the ``mattermost`` database b
 If the ``mattermost`` database exists and ``mmuser`` cannot view it, exit from MySQL and then log in again as root. Issue the command ``grant all privileges on mattermost.* to 'mmuser'@'%';`` to grant all rights on ``mattermost`` to ``mmuser``.
 
 Restart the Mattermost server by navigating to the ``/opt/mattermost`` directory and entering the command ``sudo -u mattermost bin/mattermost``.
+
+Server is set to SYSTEM timezone
+--------------------------------
+
+Mattermost customers using v7.7 or earlier may see an errors occur on servers using MySQL in cases where the server is set to SYSTEM timezone and doesn’t support named timezones. These errors can be fixed by populating the ``timezone`` tables on the server. Refer to the following docs for more information on loading the timezone table:
+
+- `Linux <https://dev.mysql.com/doc/refman/5.7/en/mysql-tzinfo-to-sql.html>`__
+- `Windows <https://dev.mysql.com/downloads/timezones.html>`__
+
+.. note::
+    This issue has been addressed from Mattermost v7.8.
