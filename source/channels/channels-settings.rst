@@ -44,9 +44,16 @@ Notification sounds fire for any activity that would trigger a desktop notificat
 Email notifications
 ~~~~~~~~~~~~~~~~~~~
 
-Email notifications are sent for mentions and direct messages after you’ve been offline for more than 60 seconds or away from Mattermost for more than five minutes. Change the email where notifications are sent by selecting **Profile > Profile Settings > Email**.
+Email notifications are sent for mentions and direct messages after you’ve been offline for more than 60 seconds or away from Mattermost for more than five minutes. Using Mattermost in a web browser or the desktop app, you can change the email address where notifications are sent by selecting **Profile > Profile Settings > Email**.
 
 If your System Admin has enabled `email batching </configure/configuration-settings.html#enable-email-batching>`__, you'll have additional options under this settings to select how often email notifications will be sent. All notifications received over this time period are combined and sent in a single email.
+
+.. note::
+
+  In Mattermost mobile, access **Settings** by tapping on your profile picture.
+
+  1. Tap **Notifications**.
+  2. Tap **Email Notifications**.
 
 Mobile push notifications
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -54,6 +61,13 @@ Mobile push notifications
 Push notifications can be sent to your mobile device if you have the Android or iOS app installed. You can choose the type of activity that will send a notification.
 
 By default, push notifications are sent **For mentions and direct messages**. If push notifications are sent **Never**, the Mattermost setting to trigger push notifications depending on your `Mattermost availability </welcome/set-your-status-availability.html>`__ is hidden. If your System Admin hasn't set up push notifications, this setting will be disabled.
+
+.. note::
+
+  In Mattermost mobile, access **Settings** by tapping on your profile picture.
+
+  1. Tap **Notifications**.
+  2. Tap **Push Notifications**.
 
 If you're actively viewing a channel (public or private), direct message, or group message using the Desktop App or a browser, no push notifications will be sent for that channel. If a notification is viewed using the Desktop App or a browser, the lockscreen notification will clear on Android, and on iOS the badge on the Mattermost app icon will count down accordingly.
 
@@ -74,6 +88,13 @@ Words that trigger mentions
 
 By default, you receive notifications when someone posts a message that contains your non-case sensitive username or @username. You also receive notifications when someone uses the @channel, @all, and @here mentions. You can customize the words that trigger mentions by typing them into the input box. This is useful if you want to be notified of all posts on a certain topic, for example, "marketing".
 
+.. note::
+
+  In Mattermost mobile, access **Settings** by tapping on your profile picture.
+
+  1. Tap **Notifications**.
+  2. Tap **Mentions**.
+
 Reply notifications
 ~~~~~~~~~~~~~~~~~~~
 
@@ -90,6 +111,13 @@ Automatic direct message replies
 
 Set an automated custom message that will be sent once per day in response to direct messages. Mentions in public and private channels won't trigger the automated reply. Enabling Automatic Replies sets your availability to **Out of Office** and disables desktop, email, and push notifications. This setting is experimental and `must be enabled by your System Admin </configure/configuration-settings.html#enable-automatic-replies>`__.
 
+.. note::
+
+  In Mattermost mobile, access **Settings** by tapping on your profile picture.
+
+  1. Tap **Notifications**.
+  2. Tap **Automatic replies**.
+
 Display
 -------
 
@@ -98,20 +126,43 @@ Settings to configure clock and teammate name display preferences.
 Theme
 ~~~~~
 
-Select **Theme Colors** to select from four standard themes designed by the Mattermost team. To make custom adjustments on the four standard theme colours, select a standard theme and then select **Custom Theme** to load the standard theme into the custom theme color selectors.
+Select **Theme Colors** to select one of five standard themes designed by the Mattermost team. 
 
-Select **Custom Theme** to customize your theme colors and share them with others by copying and pasting theme vectors into the input box. Observe a live preview as you customize theme colors, then select **Save** to confirm your changes. Discard your changes by selecting **Cancel**, or by exiting the settings modal and selecting **Yes, Discard**.
+.. note::
 
-In Enterprise edition, if you belong to multiple teams, you can optionally select the checkbox **Apply new theme to all my teams** to have the theme show up across teams. Otherwise, the changes will only apply to the current team.
+  In Mattermost mobile, access **Settings** by tapping on your profile picture.
 
-Learn more about the custom theme color selectors `here </welcome/customize-your-theme.html>`__.
+  1. Tap **Display**.
+  2. Tap **Theme**.
 
-Select **Import theme colors from Slack** to import a Slack theme. In Slack, go to **Preferences > Sidebar Theme** and open the custom theme option. From there, copy the theme color vector and then paste it into the **Input Slack Theme** input box in Mattermost. Any theme settings that are not customizable in Slack will default to the “Sapphire” standard theme settings.
+Customize a theme
+^^^^^^^^^^^^^^^^^
+
+Using Mattermost in a web browser or the desktop app, you can customize any of the standard themes by selecting a standard theme and then selecting **Custom Theme** to load the standard theme into the custom theme color selectors.
+
+Select **Custom Theme** to customize your theme colors and share them with others by copying and pasting theme vectors into the input box. Observe a live preview as you customize theme colors, then select **Save** to confirm your changes. Discard your changes by selecting **Cancel**, or by exiting the settings modal and selecting **Yes, Discard**. See the `customize your theme </welcome/customize-your-theme.html>`__ documentation to learn more about working with the custom theme color selectors.
+
+.. tip::
+  In Enterprise edition, if you belong to multiple teams, you can optionally select the checkbox **Apply new theme to all my teams** to have the theme show up across teams. Otherwise, the changes will only apply to the current team.
+
+Import a Slack theme
+^^^^^^^^^^^^^^^^^^^^
+
+Using Mattermost in a web browser or the desktop app, you can select **Import theme colors from Slack** to import a Slack theme. 
+
+In Slack, go to **Preferences > Sidebar Theme** and open the custom theme option. From there, copy the theme color vector and then paste it into the **Input Slack Theme** input box in Mattermost. Any theme settings that are not customizable in Slack will default to the “Sapphire” standard theme settings.
 
 Clock display
 ~~~~~~~~~~~~~
 
 Choose a 12-hour or 24-hour time preference that appears on the time stamp for all posts.
+
+.. note::
+
+  In Mattermost mobile, access **Settings** by tapping on your profile picture.
+
+  1. Tap **Display**.
+  2. Tap **Clock Display**.
 
 Teammate name display
 ~~~~~~~~~~~~~~~~~~~~~
@@ -134,13 +185,20 @@ Timezone
 Select the timezone used for timestamps in the user interface and for email notifications.
 
 .. note::
+
+  In Mattermost mobile, access **Settings** by tapping on your profile picture.
+
+  1. Tap **Display**.
+  2. Tap **Timezone**.
+
+.. note::
   
-  Timezone is enabled by default from Mattermost v6.0. In Mattermost v5.38 or earlier, timezone functionality `must first be enabled by the System Admin </configure/deprecated-configuration-settings.html#timezone>`__.
+  Timezone is enabled by default from Mattermost v6.0. In Mattermost v5.38 or earlier, timezone functionality `must first be enabled by the system admin </configure/deprecated-configuration-settings.html#timezone>`__.
 
 Website link previews
 ~~~~~~~~~~~~~~~~~~~~~
 
-When available, the first web link in a message will show a preview of the website content below the message. This `setting must be enabled by your System Admin </configure/configuration-settings.html#enable-link-previews>`__.
+When available, the first web link in a message will show a preview of the website content below the message. This `setting must be enabled by the system admin </configure/configuration-settings.html#enable-link-previews>`__.
 
 Default appearance of image previews
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -163,6 +221,13 @@ Collapsed Reply Threads
 Collapsed Reply Threads offers an enhanced experience for users communicating in threads and replying to messages. Collapsed Reply Threads are generally available in Mattermost Cloud and from self-hosted Mattermost v7.0, and are enabled by default for all new Mattermost deployments. 
 
 Depending on how your System Admin has enabled **Collapsed Reply Threads** for your workspace, it may already be enabled for you, or you may be able to enable this feature for your account. See our `organize conversations using Collapsed Reply Threads </channels/organize-conversations.html>`__ documentation to learn more about working with Collapsed Reply Threads.
+
+.. note::
+
+  In Mattermost mobile, access **Settings** by tapping on your profile picture.
+
+  1. Tap **Display**.
+  2. Tap **Collapsed Reply Threads**.
 
 Click to open threads
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -205,6 +270,14 @@ Select which language Mattermost displays in the user interface. Options include
 - 中文 (简体) - Simplified Chinese
 - 中文 (繁體) - Traditional Chinese
 - 日本語 - Japanese
+
+Advanced settings
+~~~~~~~~~~~~~~~~~
+
+Using the Mattermost mobile app, you can delete local Mattermost files from your device. Access **Settings** by tapping on your profile picture.
+
+  1. Tap **Advanced Settings**.
+  2. Tap **Delete local files**. Only data specific to the current server is removed from your device. You'll need to repeat this process for each server you've configured on the mobile app.
 
 Sidebar
 -------

@@ -9,6 +9,9 @@ Manage channel members
 .. |channel-info| image:: ../images/information-outline_F02FD.svg
   :alt: Use the Channel Info icon to access additional channel management options.
 
+.. |options-icon| image:: ../images/dots-horizontal_F01D8.svg
+  :alt: Access additional message actions using the More actions icon.
+
 Add members to a channel
 ------------------------
 
@@ -50,10 +53,25 @@ To remove yourself from a channel, you can:
 Remove members from a channel
 -----------------------------
 
-Using Mattermost in a web browser or the desktop app, any member of a channel can remove other members from a channel using one of the following options:
+Any member of a channel can remove other members from a channel.
 
-- Select the channel name at the top of the center pane to access the drop-down menu, then select **Manage Members**. Select the member's `user role </welcome/about-user-roles.html>`__, then select **Remove from Channel**.
-- From Mattermost v7.7, you can alternatively select the channel's **View Info** |channel-info| icon, and select **Members** in the right pane. From there, select **Manage**, select a user's role, then select **Remove from Channel**.
+.. tabs::
 
-.. image:: ../images/remove-member-from-channel.png
-    :alt: Use options available through the channel name to remove a member from a channel.
+  .. tab:: Desktop
+
+    You have two ways to remove members from a channel:
+
+    - Select the channel name at the top of the center pane to access the drop-down menu, then select **Manage Members**. Select the member's `user role </welcome/about-user-roles.html>`__, then select **Remove from Channel**.
+    - Select the channel's **View Info** |channel-info| icon, and select **Members** in the right pane. From there, select **Manage**, select a user's role, then select **Remove from Channel**.
+
+    .. image:: ../images/remove-member-from-channel.png
+      :alt: Use options available through the channel name to remove a member from a channel.
+
+  .. tab:: Mobile
+
+    1. In a channel, tap |options-icon| in the top right corner.
+    2. Tap **View Info**.
+    3. Tap **Members**.
+    4. Tap **Manage**.
+    5. Tap a `user role </welcome/about-user-roles.html>`__ to change it, and tap **Remove from Channel**.
+    6. Tap **Done**.

@@ -192,9 +192,11 @@ Access the following configuration settings in the System Console by going to **
 Enable plugin
 ~~~~~~~~~~~~~
 
-**True**: Enables the Agenda plugin on your Mattermost server.
-
-**False**: Disables the Agenda plugin on your Mattermost server.
++--------------------------------------------------------------------+--------------------------------------------+
+| - **true**: Enables the Agenda plugin on your Mattermost server.   | - System Config path: **Plugins > Agenda** |
+| - **false**: Disables the Agenda plugin on your Mattermost server. | - ``config.json`` setting: N/A             |
+|                                                                    | - Environment variable: N/A                |
++--------------------------------------------------------------------+--------------------------------------------+
 
 ----
 
@@ -222,9 +224,11 @@ Access the following configuration settings in the System Console by going to **
 Enable plugin
 ~~~~~~~~~~~~~
 
-**True**: Enables the Antivirus plugin on your Mattermost server.
-
-**False**: Disables the Antivirus plugin on your Mattermost server.
++-----------------------------------------------------------------------+-----------------------------------------------+
+| - **true**: Enables the Antivirus plugin on your Mattermost server.   | - System Config path: **Plugins > Antivirus** |
+| - **false**: Disables the Antivirus plugin on your Mattermost server. | - ``config.json`` setting: N/A                |
+|                                                                       | - Environment variable: N/A                   |
++-----------------------------------------------------------------------+-----------------------------------------------+
 
 .. config:setting:: plugins-antivirusclamavhostport
   :displayname: ClamAV - host and port (Plugins - Antivirus)
@@ -236,19 +240,27 @@ Enable plugin
 ClamAV - host and port
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Specify the hostname and port to connect to the ClamAV server.
++---------------------------------------------------------------------+-----------------------------------------------+
+| Sets the **hostname** and **port** to connect to the ClamAV server. | - System Config path: **Plugins > Antivirus** |
+|                                                                     | - ``config.json`` setting: N/A                |
+|                                                                     | - Environment variable: N/A                   |
++---------------------------------------------------------------------+-----------------------------------------------+
 
 .. config:setting:: plugins-antivirusscantimeout
   :displayname: Scan timeout (Plugins - Antivirus)
   :systemconsole: Plugins > Antivirus
   :configjson: N/A
   :environment: N/A
-  :description: Specify how long, in seconds, the virus scan can take before timing out.
+  :description: Specifies the length of time, in seconds, before the virus scan times out.
 
 Scan timeout (seconds)
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Specify how long the virus scan can take before timing out.
++-----------------------------------------------------------------------+-----------------------------------------------+
+| Sets the length of time, in seconds, before the virus scan times out. | - System Config path: **Plugins > Antivirus** |
+|                                                                       | - ``config.json`` setting: N/A                |
+|                                                                       | - Environment variable: N/A                   |
++-----------------------------------------------------------------------+-----------------------------------------------+
 
 ----
 
