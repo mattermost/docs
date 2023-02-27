@@ -447,9 +447,11 @@ Access the following configuration settings in the System Console by going to **
 Enable plugin
 ~~~~~~~~~~~~~
 
-**True**: Enables the calls plugin on your Mattermost workspace.
-
-**False**: Disables the calls plugin on your Mattermost workspace.
++----------------------------------------------------------------------+-------------------------------------------+
+| - **true**: Enables the Calls plugin on your Mattermost workspace.   | - System Config path: **Plugins > Calls** |
+| - **false**: Disables the Calls plugin on your Mattermost workspace. | - ``config.json`` setting: N/A            |
+|                                                                      | - Environment variable: N/A               |
++----------------------------------------------------------------------+-------------------------------------------+
 
 .. config:setting:: plugins-callsrtcserverport
   :displayname: RTC server port (Plugins - Calls)
