@@ -90,6 +90,8 @@ Latest Mattermost Cloud releases:
  - Fixed an issue where usernames were not clickable in the right-hand side.
 
 ### Known Issues
+ - Users are unable to type in the emoji picker to search for a custom status [MM-50798](https://mattermost.atlassian.net/browse/MM-50798).
+ - Users are unable to see other users' custom status in the centre channel when Collapsed Reply Threads is disabled [MM-50321](https://mattermost.atlassian.net/browse/MM-50321).
  - Channel links to Boards are broken https://github.com/mattermost/focalboard/issues/4571.
  - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
 
