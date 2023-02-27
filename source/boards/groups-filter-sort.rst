@@ -3,22 +3,24 @@ Work with groups, filter, and sort
 
 Your board can be grouped, filtered, and sorted into different views using a range of properties. This gives you a powerful way to track work from various perspectives. When used in conjunction with `saved views </boards/work-with-views.html#work-with-saved-views>`_, you can create multiple views with different groupings and filters for quick access without having to reapply the groupings and filters every time.
 
+For example, easily find tasks assigned to you or a team member using the person or multi-person filters, and keep track of upcoming tasks with date filters.
+
 Group cards
 -----------
 
-You can group cards on your board if they utilize the **Select** property.
+You can group cards on your board if they utilize the **Select** or **Person** property.
 
 .. note:: 
 
-  Card grouping is only available in boards and table views and you must have at least one **Select** property on your board for grouping to work.
+  Card grouping is only available in board and table views and you must have at least one **Select** or **Person** property on your board for grouping to work.
 
 Apply a group
 ~~~~~~~~~~~~~
 
-To apply a group, select the **Group by** option at the top of the board, then select any available **Select** property to group your cards by.
+To apply a group, select the **Group by** option at the top of the board, then select any available **Select** or **Person** property to group your cards by.
 
-- In the `boards view </boards/work-with-views.html#board-view>`_, cards are automatically grouped into columns by the values from the specified **Select** **property.**
-- In the `table view </boards/work-with-views.html#board-view>`_, grouped cards will appear in individual sections based on the values from the specified **Select** property. Select the arrow to the left of the group name to expand or collapse cards in the group.
+- In the `boards view </boards/work-with-views.html#board-view>`_, cards are automatically grouped into columns by the values from the specified property.
+- In the `table view </boards/work-with-views.html#board-view>`_, grouped cards will appear in individual sections based on the values from the specified property. Select the arrow to the left of the group name to expand or collapse cards in the group.
 
 Hide and unhide groups
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -41,10 +43,19 @@ You can filter cards on your board if they utilize any of the following property
 - Email
 - Phone
 - URL
+- Date
+- Person
+- Multi-person
+- Created time
+- Created by
+- Last updated time
+- Last updated by
 
 .. note:: 
   
-   You must have at least one of the property types listed above on your board for filtering to work. Filtering by other property types such as **Person** or **Date** is not yet supported.
+   You must have at least one of the property types listed above on your board for filtering to work.
+   
+To use filters, you must have the above property types already added to your board. Go to **Filter > Add filter**, and select the property you wish to filter by. You can use the modifiers to get even more granular results.
 
 Add filters
 ~~~~~~~~~~~

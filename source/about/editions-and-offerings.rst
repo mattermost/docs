@@ -62,7 +62,7 @@ Features include:
 - Pre-packaged integrations with most common developer tools, including Jira, Confluence, GitHub, GitLab, CircleCI, Zoom, Jitsi, and more.
 - Tools for `custom branding </configure/custom-branding-tools.html>`__ and `themes </messaging/customizing-theme-colors.html>`__.
 - `Multi-factor authentication </onboard/multi-factor-authentication.html>`__.
-- `Single Sign-on with GitLab </onboard/sso-gitlab.html>`, `Google </onboard/sso-google.html>`, or `OpenID Connect </onboard/sso-openidconnect.html>`__.
+- `Single Sign-on with GitLab </onboard/sso-gitlab.html>`__ or `OpenID Connect </onboard/sso-openidconnect.html>`__.
 - `Granular system permissions </onboard/advanced-permissions.html>`__.
 - Highly customizable `third-party bots, integrations <https://mattermost.com/marketplace/#publicApps>`__, and `command line tools </manage/mmctl-command-line-tool.html>`__.
 - Extensive integration support via `webhooks, APIs, drivers <https://developers.mattermost.com/integrate/other-integrations/>`__, and `third-party extensions <https://mattermost.com/marketplace/>`__.
@@ -150,4 +150,4 @@ As the platform matures and new features are added, they're evaluated to be incl
 
 We recognize there aren't any features that are only useful to managers, directors, and executives. Individual practitioners may want certain features; however, we think that other buyers are relatively more likely to care about it. We also recognize that there may be some features that are put into an edition to find later there is much demand for it by individuals or a singular team; we will not hesitate to move that feature. We value feedback from our community and iterate based on that feedback. Simultaneously, we also need to offer commercial products that hold value and do our best to find the right balance. We believe the more of Mattermost that you use, the more likely it is that you benefit from the advanced editions we offer.
 
-You can provide us with feedback via `our idea portal <https://portal.productboard.com/mattermost/33-what-matters-to-you>`__, where ideas and input influences the future of the platform.
+You can provide us with feedback via `our idea portal <https://mattermost.com/suggestions/>`__, where ideas and input influences the future of the platform.

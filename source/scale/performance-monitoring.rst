@@ -149,6 +149,19 @@ Database metrics
 - ``mattermost_db_replica_lag_abs``: Absolute lag time based on binlog distance/transaction queue length.
 - ``mattermost_db_replica_lag_time``: The time taken for the replica to catch up.
 
+Database connection metrics
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+- ``max_open_connections``: The maximum number of open connections to the database.
+- ``open_connections``: The number of established connections both in use and idle.
+- ``in_use_connections``: The number of connections currently in use.
+- ``idle_connections``: The number of idle connections.
+- ``wait_count_total``: The total number of connections waited for.
+- ``wait_duration_seconds_total``: The total time blocked waiting for a new connection.
+- ``max_idle_closed_total``: The total number of connections closed due to the maximum idle connections being reached.
+- ``max_idle_time_closed_total``: The total number of connections closed due to the connection maximum idle time configured.
+- ``max_lifetime_closed_total``: The total number of connections closed due to the connection maximum lifetime configured.
+
 HTTP metrics
 ^^^^^^^^^^^^
 

@@ -406,6 +406,11 @@ Enable synchronization with AD/LDAP
 | - **false**: **(Default)** Disables AD/LDAP synchronization.  | - ``config.json`` setting: ``.LdapSettings.EnableSync: false`` |
 |                                                               | - Environment variable: ``MM_LDAPSETTINGS_ENABLESYNC``         |
 +---------------------------------------------------------------+----------------------------------------------------------------+
+| **Note**: Synchronization with AD/LDAP settings in the System Console can be used to determine the connectivity and            |
+| availability of arbitrary hosts. System admins concerned about this can use custom admin roles to limit access to              |
+| modifying these settings. See the `system admin roles </onboard/system-admin-roles.html#edit-privileges-of-system-             |
+| admin-roles-advanced>`__ documentation for details.                                                                            |
++---------------------------------------------------------------+----------------------------------------------------------------+
 
 .. config:setting:: ldap-loginfieldname
   :displayname: Login field name (AD/LDAP)
@@ -441,6 +446,11 @@ AD/LDAP server
 | This is the domain name or IP address of the AD/LDAP server. | - System Config path: **Authentication > AD/LDAP**      |
 |                                                              | - ``config.json`` setting: ``.LdapSettings.LdapServer`` |
 | String input.                                                | - Environment variable: ``MM_LDAPSETTINGS_LDAPSERVER``  |
++--------------------------------------------------------------+---------------------------------------------------------+
+| **Note**: Synchronization with AD/LDAP settings in the System Console can be used to determine the connectivity and    |
+| availability of arbitrary hosts. System admins concerned about this can use custom admin roles to limit access to      |
+| modifying these settings. See the `system admin roles </onboard/system-admin-roles.html#edit-privileges-of-system-     |
+| admin-roles-advanced>`__ documentation for details.                                                                    |
 +--------------------------------------------------------------+---------------------------------------------------------+
 
 .. config:setting:: ldap-port
@@ -1209,11 +1219,11 @@ SAML SSO URL
 
 *Available in legacy Enterprise Edition E20*
 
-+--------------------------------------------------------------------------------------------+---------------------------------------------------------+
-| This setting is the URL where Mattermost sends a SAML request to start the login sequence. | - System Config path: **Authentication > SAML 2.0**     |
-|                                                                                            | - ``config.json`` setting: ``.SamlSettings.IdpURL``     |
-| String input.                                                                              | - Environment variable: ``MM_SAMLSETTINGS_IDPURL``      |
-+--------------------------------------------------------------------------------------------+---------------------------------------------------------+
++--------------------------------------------------------------------------------------------+-----------------------------------------------------+
+| This setting is the URL where Mattermost sends a SAML request to start the login sequence. | - System Config path: **Authentication > SAML 2.0** |
+|                                                                                            | - ``config.json`` setting: ``.SamlSettings.IdpURL`` |
+| String input.                                                                              | - Environment variable: ``MM_SAMLSETTINGS_IDPURL``  |
++--------------------------------------------------------------------------------------------+-----------------------------------------------------+
 
 .. config:setting:: saml-providerissuerurl
   :displayname: Identity provider issuer URL (SAML)
@@ -1905,7 +1915,7 @@ GitLab OAuth 2.0 Token endpoint
 Google OAuth 2.0 settings
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+.. include:: ../_static/badges/entpro-cloud-free.rst
   :start-after: :nosearch:
 
 .. config:setting:: oauth-googleenable
@@ -2030,75 +2040,86 @@ Google OAuth 2.0 Token endpoint
 Office 365 OAuth 2.0 settings
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+.. include:: ../_static/badges/entpro-cloud-free.rst
   :start-after: :nosearch:
 
 .. note::
    In line with Microsoft ADFS guidance we recommend `configuring intranet forms-based authentication for devices that do not support WIA <https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configure-intranet-forms-based-authentication-for-devices-that-do-not-support-wia>`__.
 
-Enable authentication with Office 365 by selecting **Office 365** from **System Console > Authentication > OAuth 2.0 > Select OAuth 2.0 service provider**.
+Enable OAuth 2.0 Authentication with Office 365
+'''''''''''''''''''''''''''''''''''''''''''''''
 
-**True**: Allow team creation and account signup using Office 365 OAuth. To configure, input the **Application ID** and **Application Secret Password** credentials. See `the documentation <https://docs.mattermost.com/onboard/sso-office.html>`__ for more detail.
++-------------------------------------------------------------------------------------+----------------------------------------------------------------+
+| - **true**: Allows team and account creation using Office 365 OAuth authentication. | - System Config path: **Authentication > OAuth 2.0**           |
+| - **false**: **(Default)** Disables Office 365 OAuth authentication.                | - ``config.json`` setting: ``Office365Settings.Enable: false`` |
+|                                                                                     | - Environment variable: ``MM_OFFICE365SETTINGS_ENABLE``        |
++-------------------------------------------------------------------------------------+----------------------------------------------------------------+
+| **Note**: See the `Office 365 Single Sign-On <https://docs.mattermost.com/onboard/sso-office.html>`__ documentation for details.                     |
++------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-**False**: Office 365 OAuth cannot be used for team creation or account signup.
-
-+----------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Enable": false`` with options ``true`` and ``false``. |
-+----------------------------------------------------------------------------------------------------+
+Office 365 OAuth 2.0 Application ID
+'''''''''''''''''''''''''''''''''''
 
 .. config:setting:: oauth-o365appid
   :displayname: Application ID (OAuth - Office 365)
   :systemconsole: Authentication > OAuth 2.0
   :configjson: Id
   :environment: N/A
-  :description: Obtain this value by registering Mattermost as an application in your Microsoft or Office account.
-
-Application ID
-''''''''''''''
+  :description: This setting holds the Application ID generated when configuring Office 365 as a Single Sign-On service through the Microsoft Azure Portal.
 
 *Available in legacy Enterprise Edition E20*
 
-Obtain this value by registering Mattermost as an application in your Microsoft or Office account.
++-------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------+
+| This setting holds the **Application ID** generated when configuring Office 365 as a Single Sign-On service through the Microsoft Azure Portal. | - System Config path: **Authentication > OAuth 2.0** |
+|                                                                                                                                                 | - ``config.json`` setting: ``.Office365Settings.Id`` |
+| String input.                                                                                                                                   | - Environment variable: ``MM_OFFICE365SETTINGS_ID``  |
++-------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------+
+| **Note**: See the `Office 365 Single Sign-On <https://docs.mattermost.com/onboard/sso-office.html>`__ documentation for details.                                                                       |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-+---------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Id": ""`` with string input. |
-+---------------------------------------------------------------------------+
+Office 365 OAuth 2.0 Application secret password
+''''''''''''''''''''''''''''''''''''''''''''''''
 
 .. config:setting:: oauth-o365appsecret
   :displayname: Application secret password (OAuth - Office 365)
   :systemconsole: Authentication > OAuth 2.0
   :configjson: Secret
   :environment: N/A
-  :description: Obtain this value by registering Mattermost as an application in your Microsoft or Office account.
-
-Application secret password
-'''''''''''''''''''''''''''
+  :description: This setting holds the Application Secret Password generated when configuring Office 365 as a Single Sign-On service through the Microsoft Azure Portal.
 
 *Available in legacy Enterprise Edition E20*
 
-Obtain this value by registering Mattermost as an application in your Microsoft or Office account.
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------+
+| This setting holds the **Application Secret Password** generated when configuring Office 365 as a Single Sign-On service through the Microsoft Azure Portal. | - System Config path: **Authentication > OAuth 2.0**     |
+|                                                                                                                                                              | - ``config.json`` setting: ``.Office365Settings.Secret`` |
+| String input.                                                                                                                                                | - Environment variable: ``MM_OFFICE365SETTINGS_SECRET``  |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------+
+| **Note**: See the `Office 365 Single Sign-On <https://docs.mattermost.com/onboard/sso-office.html>`__ documentation for details.                                                                                        |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------+
 
-+-------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Secret": ""`` with string input. |
-+-------------------------------------------------------------------------------+
+Office 365 OAuth 2.0 Directory (tenant) ID
+''''''''''''''''''''''''''''''''''''''''''
 
 .. config:setting:: oauth-o365directoryid
   :displayname: Directory ID (OAuth - Office 365)
   :systemconsole: Authentication > OAuth 2.0
   :configjson: DirectoryId
   :environment: N/A
-  :description: This value is the ID of the application's AAD directory.
-
-Directory (tenant) ID
-'''''''''''''''''''''
+  :description: This setting holds the Directory (tenant) ID set for Mattermost through the Azure Portal.
 
 *Available in legacy Enterprise Edition E20*
 
-This value is the ID of the application's AAD directory.
++-----------------------------------------------------------------------------------------------+---------------------------------------------------------------+
+| This setting holds the **Directory (tenant) ID** set for Mattermost through the Azure Portal. | - System Config path: **Authentication > OAuth 2.0**          |
+|                                                                                               | - ``config.json`` setting: ``.Office365Settings.DirectoryId`` |
+| String input.                                                                                 | - Environment variable: ``MM_OFFICE365SETTINGS_DIRECTORYID``  |
++-----------------------------------------------------------------------------------------------+---------------------------------------------------------------+
+| **Note**: See the `Office 365 Single Sign-On <https://docs.mattermost.com/onboard/sso-office.html>`__ documentation for details.                              |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-+------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"DirectoryId": ""`` with string input. |
-+------------------------------------------------------------------------------------+
+
+Office 365 OAuth 2.0 User API endpoint
+''''''''''''''''''''''''''''''''''''''
 
 .. config:setting:: oauth-o365userapiendpoint
   :displayname: User API endpoint (OAuth - Office 365)
@@ -2107,34 +2128,34 @@ This value is the ID of the application's AAD directory.
   :environment: N/A
   :description: We recommend using ``https://graph.microsoft.com/v1.0/me`` as the User API Endpoint. It is the default value.
 
-User API endpoint
-'''''''''''''''''
-
 *Available in legacy Enterprise Edition E20*
 
-We recommend using ``https://graph.microsoft.com/v1.0/me`` as the User API Endpoint. Otherwise, enter a custom endpoint in ``config.json`` with HTTP or HTTPS depending on how your server is configured.
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
+| We recommend ``https://graph.microsoft.com/v1.0/me`` as the User API Endpoint. Otherwise, enter a custom endpoint in ``config.json`` with ``http``, or ``https``, if available on the server. | - System Config path: **Authentication > OAuth 2.0**              |
+|                                                                                                                                                                                               | - ``config.json`` setting: ``.Office365Settings.UserAPIEndpoint`` |
+| String input.                                                                                                                                                                                 | - Environment variable: ``MM_OFFICE365SETTINGS_USERAPIENDPOINT``  |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
 
-+---------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"UserApiEndpoint": "https://graph.microsoft.com/v1.0/me"`` with string input. |
-+---------------------------------------------------------------------------------------------------------------------------+
+Office 365 OAuth 2.0 Auth endpoint
+''''''''''''''''''''''''''''''''''
 
 .. config:setting:: oauth-o365authendpoint
   :displayname: Auth endpoint (OAuth - Office 365)
   :systemconsole: Authentication > OAuth 2.0
   :configjson: AuthEndpoint
   :environment: N/A
-  :description: We recommend using ``https://accounts.google.com/o/oauth2/v2/auth`` as the Auth Endpoint. It is the default value.
-
-Auth endpoint
-'''''''''''''
+  :description: We recommend ``https://login.microsoftonline.com/common/oauth2/v2.0/authorize`` as the Auth Endpoint.
 
 *Available in legacy Enterprise Edition E20*
 
-We recommend using ``https://accounts.google.com/o/oauth2/v2/auth`` as the Auth Endpoint. Otherwise, enter a custom endpoint in ``config.json`` with HTTP or HTTPS depending on how your server is configured.
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------+
+| We recommend ``https://login.microsoftonline.com/common/oauth2/v2.0/authorize`` as the Auth Endpoint. Otherwise, enter a custom endpoint in ``config.json`` with ``http``, or ``https``, if available on the server. | - System Config path: **Authentication > OAuth 2.0**           |
+|                                                                                                                                                                                                                      | - ``config.json`` setting: ``.Office365Settings.AuthEndpoint`` |
+| String input.                                                                                                                                                                                                        | - Environment variable: ``MM_OFFICE365SETTINGS_AUTHENDPOINT``  |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------+
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"AuthEndpoint": "https://login.microsoftonline.com/common/oauth2/v2.0/authorize"`` with string input.                    |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+Office 365 OAuth 2.0 Token endpoint
+'''''''''''''''''''''''''''''''''''
 
 .. config:setting:: oauth-o365tokenendpoint
   :displayname: Token endpoint (OAuth - Office 365)
@@ -2143,23 +2164,20 @@ We recommend using ``https://accounts.google.com/o/oauth2/v2/auth`` as the Auth 
   :environment: N/A
   :description: We recommend that you use ``https://login.microsoftonline.com/common/oauth2/v2.0/token`` as the Token Endpoint. It is the default value.
 
-Token endpoint
-''''''''''''''
-
 *Available in legacy Enterprise Edition E20*
 
-We recommend that you use ``https://login.microsoftonline.com/common/oauth2/v2.0/token`` as the Token Endpoint. Otherwise, enter a custom endpoint in ``config.json`` with HTTP or HTTPS depending on how your server is configured.
-
-+------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"TokenEndpoint": "https://login.microsoftonline.com/common/oauth2/v2.0/token"`` with string input. |
-+------------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
+| We recommend ``https://login.microsoftonline.com/common/oauth2/v2.0/token`` as the Token Endpoint. Otherwise, enter a custom endpoint in ``config.json`` with ``http``, or ``https``, if available on the server. | - System Config path: **Authentication > OAuth 2.0**            |
+|                                                                                                                                                                                                                   | - ``config.json`` setting: ``.Office365Settings.TokenEndpoint`` |
+| String input.                                                                                                                                                                                                     | - Environment variable: ``MM_OFFICE365SETTINGS_TOKENENDPOINT``  |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
 
 ----
 
 OpenID Connect
 ---------------
 
-.. include:: ../_static/badges/entpro-cloud-free.rst
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 Access the following configuration settings in the System Console by going to **Authentication > OpenID Connect**.
@@ -2182,14 +2200,14 @@ Choose whether OpenID Connect can be used for account creation and login. Option
 - **GitLab** (available in all plans; see `GitLab Settings <https://docs.mattermost.com/configure/configuration-settings.html#gitlab-settings>`__ for details)
 - **Google Apps** (Available in Mattermost Enterprise and Professional; see `Google Settings <https://docs.mattermost.com/configure/configuration-settings.html#google-settings>`__ for details)
 - **Office 365** (Available in Mattermost Enterprise and Professional; see `Office 365 Settings <https://docs.mattermost.com/configure/configuration-settings.html#office-365-settings>`__ for details)
-- **OpenID Connect (Other)** (Available in Mattermost Enterprise and Professional; see `OpenID Connect Settings <https://docs.mattermost.com/configure/configuration-settings.html#openid-connect-other-settings>`__ for more detail)
+- **OpenID Connect (Other)** (Available in Mattermost Enterprise and Professional; see `OpenID Connect Settings <https://docs.mattermost.com/configure/authentication-configuration-settings.html#openid-connect-other>`__ for more detail)
 
 This feature's setting does not appear in ``config.json``.
 
 GitLab settings
 ^^^^^^^^^^^^^^^
 
-.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../_static/badges/entpro-cloud-free.rst
   :start-after: :nosearch:
 
 .. config:setting:: oidc-gitlabsiteurl
@@ -2254,7 +2272,7 @@ Obtain this value by registering Mattermost as an application in your service pr
 Google Settings
 ^^^^^^^^^^^^^^^
 
-.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+.. include:: ../_static/badges/entpro-cloud-free.rst
   :start-after: :nosearch:
 
 .. config:setting:: oidc-googleenable
@@ -2333,7 +2351,7 @@ Obtain this value by registering Mattermost as an application in your Google acc
 Office 365 Settings
 ^^^^^^^^^^^^^^^^^^^
 
-.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+.. include:: ../_static/badges/entpro-cloud-free.rst
   :start-after: :nosearch:
 
 .. config:setting:: oidc-o365enable
@@ -2416,6 +2434,9 @@ Obtain this value by registering Mattermost as an application in your Google acc
 
 OpenID Connect (other)
 ^^^^^^^^^^^^^^^^^^^^^^
+
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 .. config:setting:: oidc-enable
   :displayname: Enable (OpenID Connect)
@@ -2540,21 +2561,21 @@ Access the following configuration settings in the System Console by going to **
   :configjson: Enable
   :environment: N/A
 
-  - **true**: Allow guest invitations to channels within teams.
-  - **false**: **(Default)** Email signup is disabled. This limits signup to Single sign-on services like OAuth or AD/LDAP.
+  - **true**: Enables the guest account feature.
+  - **false**: **(Default)** Disables the guest account feature.
 
 Enable guest access
 ~~~~~~~~~~~~~~~~~~~
 
 *Available in legacy Enterprise Edition E10 and E20*
 
-**True**: **(Default for Cloud deployments)** Allow guest invitations to channels within teams. Please see `Guest Accounts documentation <https://docs.mattermost.com/onboard/guest-accounts.html>`__ for more information.
-
-**False**: **(Default for self-hosted deployments)** Email signup is disabled. This limits signup to Single sign-on services like OAuth or AD/LDAP.
-
-+----------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Enable": false`` with options ``true`` and ``false``. |
-+----------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------+---------------------------------------------------------------------+
+| - **true**: Enables the guest account feature.                 | - System Config path: **Authentication > Guest Access**             |
+| - **false**: **(Default)** Disables the guest account feature. | - ``config.json`` setting: ``.GuestAccountsSettings.Enable: false`` |
+|                                                                | - Environment variable: ``MM_GUESTACCOUNTSSETTINGS_ENABLE``         |
++----------------------------------------------------------------+---------------------------------------------------------------------+
+| **Note**: See the `Guest Accounts <https://docs.mattermost.com/onboard/guest-accounts.html>`__ documentation for details.            |
++--------------------------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: guest-whitelistdomains
   :displayname: Whitelisted guest domains (Guest Access)
@@ -2568,11 +2589,11 @@ Whitelisted guest domains
 
 *Available in legacy Enterprise Edition E10 and E20*
 
-When populated, guest accounts can only be created by a verified email from this list of comma-separated domains.
-
-+--------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"RestrictCreationToDomains": ""`` with string input. |
-+--------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------+
+| Use this setting to restrict the creation of guest accounts. When set, guest accounts require a verified email address from one of the listed domains. | - System Config path: **Authentication > Guest Access**                         |
+|                                                                                                                                                        | - ``config.json`` setting: ``.GuestAccountsSettings.RestrictCreationToDomains`` |
+| String input of one or more domains, separated by commas.                                                                                              | - Environment variable: ``MM_GUESTACCOUNTSSETTINGS_RESTRICTCREATIONTODOMAINS``  |
++--------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------+
 
 .. config:setting:: guest-enforcemultifactorauth
   :displayname: Enforce multi-factor authentication (Guest Access)
@@ -2588,12 +2609,11 @@ Enforce multi-factor authentication
 
 *Available in legacy Enterprise Edition E10 and E20*
 
-This setting defaults to false and is read-only if multi-factor authentication is not enforced for regular users.
++---------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
+| - **true**: Guests must use MFA. Guests without MFA are redirected to the setup page until MFA is configured. | - System Config path: **Authentication > Guest Access**                                       |
+| - **false**: **(Default)** MFA is not required for guests.                                                    | - ``config.json`` setting: ``.GuestAccountsSettings.EnforceMultifactorAuthentication: false`` |
+|                                                                                                               | - Environment variable: ``MM_GUESTACCOUNTSSETTINGS_ENFORCEMULTIFACTORAUTHENTICATION``         |
++---------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
+| **Note**: This setting defaults to false and cannot be changed if MFA isn't enforced for non-guest users.                                                                                                     |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-**True**: Multi-factor authentication (MFA) is required for login. New guest users will be required to configure MFA on sign-up. Logged in guest users without MFA configured are redirected to the MFA setup page until configuration is complete.
-
-**False**: Multi-factor authentication for guests is optional.
-
-+------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnforceMultifactorAuthentication": false`` with options ``true`` and ``false``. |
-+------------------------------------------------------------------------------------------------------------------------------+

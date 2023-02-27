@@ -17,8 +17,17 @@ Make sure that you understand how to `prepare for your upgrade </upgrade/prepare
 
 **Gather the following information before starting the upgrade:**
 
-- **Existing install directory - {install-path}**: If you don't know where Mattermost Server is installed, use the ``whereis mattermost`` command to find standard binary places and $PATH (which won't return anything if ``/opt/mattermost/bin`` wasn't added to the PATH), or use the ``find / -executable -type f -iname mattermost 2> /dev/null`` command to find the ``mattermost`` binary. The output should be similar to ``/opt/mattermost/bin/mattermost``. The install directory is everything before the first occurrence of the string ``/mattermost``. In this example, the ``{install-path}`` is ``/opt``. If that command doesn't produce any results, it's likely because your version is older; try ``whereis platform`` instead.
-- **Location of your local storage directory**: The local storage directory contains all the files that users have attached to their messages. If you don't know its location, open the System Console and go to **Environment > File Storage**, then read the value in **Local Storage Directory**. Paths are relative to the ``mattermost`` directory. For example, if the local storage directory is ``./data/`` then the absolute path is ``{install-path}/mattermost/data``.
+- **Existing install directory - {install-path}**: If you don't know where Mattermost Server is installed, use the ``whereis mattermost`` command to find standard binary places and $PATH. 
+
+  - This command won't won't return anything if ``/opt/mattermost/bin`` wasn't added to the PATH. 
+  - Alternatively, you can use the ``find / -executable -type f -iname mattermost 2> /dev/null`` command to find the ``mattermost`` binary. 
+  - The output should be similar to ``/opt/mattermost/bin/mattermost``. 
+  - The install directory is everything before the first occurrence of the string ``/mattermost``. In this example, the ``{install-path}`` is ``/opt``. 
+  - If that command doesn't produce any results, it's likely because your version is older; try ``whereis platform`` instead.
+- **Location of your local storage directory**: The local storage directory contains all the files that users have attached to their messages.
+
+  - If you don't know its location, open the System Console and go to **Environment > File Storage**, then read the value in **Local Storage Directory**. 
+  - Paths are relative to the ``mattermost`` directory. For example, if the local storage directory is ``./data/`` then the absolute path is ``{install-path}/mattermost/data``.
 
 Upgrade Mattermost Server
 --------------------------
@@ -33,7 +42,11 @@ Upgrade Mattermost Server
 
    .. code-block:: sh
 
+     # Enterprise Edition
      wget https://releases.mattermost.com/X.X.X/mattermost-X.X.X-linux-amd64.tar.gz
+     
+     # Team Edition
+     wget https://releases.mattermost.com/X.X.X/mattermost-team-X.X.X-linux-amd64.tar.gz
 
 3. Confirm no other Mattermost zip folders exist in your ``/tmp`` directory. If another version's zip file does exist, delete or rename the file.
 
@@ -68,53 +81,51 @@ Upgrade Mattermost Server
         cd {install-path}
         sudo cp -ra mattermost/ mattermost-back-$(date +'%F-%H-%M')/
 
-7. Remove all files **except** data and custom directories from within the current ``mattermost`` directory. 
+7. Remove all files **except** data and custom directories from within the current ``mattermost`` directory. We strongly recommend reading the important note below before executing the following command.
 
    .. code-block:: sh
 
      sudo find mattermost/ mattermost/client/ -mindepth 1 -maxdepth 1 \! \( -type d \( -path mattermost/client -o -path mattermost/client/plugins -o -path mattermost/config -o -path mattermost/logs -o -path mattermost/plugins -o -path mattermost/data \) -prune \) | sort | sudo xargs rm -r
 
-   **What's preserved on upgrade?**
+.. important::
   
-   By default, the following subdirectories will be preserved:``config``, ``logs``, ``plugins``, ``client/plugins``, and ``data`` (unless you have a different directory configured for local storage). Custom directories are any directories that you've added to Mattermost and are not preserved by default. Generally, these are TLS keys or other custom information.
+  By default, the following subdirectories will be preserved on upgrade:``config``, ``logs``, ``plugins``, ``client/plugins``, and ``data``. Custom directories and ANY other directories that you've added to Mattermost are NOT preserved by default. Generally, these are TLS keys or other custom information, but can also include a different directories configured for local storage other than ``data``, as well as custom directories used to store attachments.
 
-   Run ``ls`` on your Mattermost install directory to identify what default folders exist.
+  Before continuing with your upgrade, we strongly recommend that you:
       
-   **A default Mattermost installation has the following files and directories:**
+  a. Run ``ls`` on your Mattermost install directory to identify all default folders that exist prior to upgrading.
 
-   .. code-block:: sh
+    A default Mattermost installation has the following files and directories:
 
-     $ ls /opt/mattermost
-     ENTERPRISE-EDITION-LICENSE.txt README.md  client  data   i18n  manifest.txt  prepackaged_plugins
-     NOTICE.txt                      bin        config  fonts  logs  plugins       templates
+    .. code-block:: sh
 
-   **Clear the Mattermost folder**
+      $ ls /opt/mattermost
+      ENTERPRISE-EDITION-LICENSE.txt README.md  client  data   i18n  manifest.txt  prepackaged_plugins
+      NOTICE.txt                      bin        config  fonts  logs  plugins       templates
 
-   Dry-run the following command to delete the contents of the ``mattermost`` folder, preserving only the specified directories and their contents: 
+  b. Perform a dry run of deleting the contents of the ``mattermost`` folder and preserving only the specified directories and their contents by running the following command. It's the same command listed above, but it omits ``sudo xargs rm -r``:
+
+    .. code-block:: sh
+    
+      sudo find mattermost/ mattermost/client/ -mindepth 1 -maxdepth 1 \! \( -type d \( -path mattermost/client -o -path mattermost/client/plugins -o -path mattermost/config -o -path mattermost/logs -o -path mattermost/plugins -o -path mattermost/data \) -prune \) | sort
+    
+  c. If you store TLSCert/TLSKey files or other information within your ``/opt/mattermost`` folder, you need to append ``-o -path mattermost/yourFolderHere`` to the command above to avoid having to manually copy the TLSCert/TLSKey files from the backup into the new install.
+ 
+    .. code-block:: sh
+ 
+      sudo find mattermost/ mattermost/client/ -mindepth 1 -maxdepth 1 \! \( -type d \( -path mattermost/client -o -path mattermost/client/plugins -o -path mattermost/config -o -path mattermost/logs -o -path mattermost/plugins -o -path mattermost/data -o -path  mattermost/yourFolderHere \) -prune \) | sort
+    
+  d. If you're using `Bleve search </deploy/bleve-search.html>`__, and the directory exists *within* the ``mattermost`` directory, the index directory path won't be preserved using the command above. 
   
-   .. code-block:: sh
-    
-     sudo find mattermost/ mattermost/client/ -mindepth 1 -maxdepth 1 \! \( -type d \( -path mattermost/client -o -path mattermost/client/plugins -o -path mattermost/config -o -path mattermost/logs -o -path mattermost/plugins -o -path mattermost/data \) -prune \) | sort
-    
-   If you store TLSCert/TLSKey files or other information within your ``/opt/mattermost`` folder, you need to append ``-o -path mattermost/yourFolderHere`` to the command above to avoid having to manually copy the TLSCert/TLSKey files from the backup into the new install.
- 
-  .. code-block:: sh
- 
-    sudo find mattermost/ mattermost/client/ -mindepth 1 -maxdepth 1 \! \( -type d \( -path mattermost/client -o -path mattermost/client/plugins -o -path mattermost/config -o -path mattermost/logs -o -path mattermost/plugins -o -path mattermost/data -o -path  mattermost/yourFolderHere \) -prune \) | sort
-    
-  When you're ready to execute the command, append ``xargs rm -r`` to the command above to delete the files. Note that the following example includes ``-o -path mattermost/yourFolderHere``:
+    - You can either move the bleve index directory out from the ``mattermost`` directory before upgrading or, following an upgrade, you can copy the contents of the bleve index directory from the ``backup`` directory. 
+    - You can then store that directory or re-index as preferred. 
+    - The bleve indexes can be migrated without reindexing between Mattermost versions. See our `Configuration Settings </configure/configuration-settings.html#bleve-settings-experimental>`__ documentation for details on configuring the bleve index directory.
+  
+  Once you've completed all of the steps above (where applicable), you're ready to execute the full command that includes ``xargs rm -r`` to delete the files. Note that the following example includes ``-o -path mattermost/yourFolderHere``:
   
   .. code-block:: sh
   
     sudo find mattermost/ mattermost/client/ -mindepth 1 -maxdepth 1 \! \( -type d \( -path mattermost/client -o -path mattermost/client/plugins -o -path mattermost/config -o -path mattermost/logs -o -path mattermost/plugins -o -path mattermost/data -o -path  mattermost/yourFolderHere \) -prune \) | sort | sudo xargs rm -r
-  
-  **Using Bleve search**
-
-  If using `Bleve search </deploy/bleve-search.html>`__, and the directory exists *within* the ``mattermost`` directory, the index directory path won't be preserved using the command above. 
-  
-  - You can either move the bleve index directory out from the ``mattermost`` directory before upgrading or, following an upgrade, you can copy the contents of the bleve index directory from the ``backup`` directory. 
-  - You can then store that directory or re-index as preferred. 
-  - The bleve indexes can be migrated without reindexing between Mattermost versions. See our `Configuration Settings </configure/configuration-settings.html#bleve-settings-experimental>`__ documentation for details on configuring the bleve index directory.
 
 8. Copy the new files to your install directory.
 
