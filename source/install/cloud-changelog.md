@@ -90,6 +90,8 @@ Latest Mattermost Cloud releases:
  - Fixed an issue where usernames were not clickable in the right-hand side.
 
 ### Known Issues
+ - Channel and Team name is missing in the right-hand side for Saved Posts [MM-50775](https://mattermost.atlassian.net/browse/MM-50775).
+ - Combined activity broken when compact message display is enabled [MM-50475](https://mattermost.atlassian.net/browse/MM-50475).
  - Users are unable to type in the emoji picker to search for a custom status [MM-50798](https://mattermost.atlassian.net/browse/MM-50798).
  - Users are unable to see other users' custom status in the centre channel when Collapsed Reply Threads is disabled [MM-50321](https://mattermost.atlassian.net/browse/MM-50321).
  - Channel links to Boards are broken https://github.com/mattermost/focalboard/issues/4571.
