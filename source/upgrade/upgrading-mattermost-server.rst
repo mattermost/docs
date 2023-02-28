@@ -42,7 +42,11 @@ Upgrade Mattermost Server
 
    .. code-block:: sh
 
+     # Enterprise Edition
      wget https://releases.mattermost.com/X.X.X/mattermost-X.X.X-linux-amd64.tar.gz
+     
+     # Team Edition
+     wget https://releases.mattermost.com/X.X.X/mattermost-team-X.X.X-linux-amd64.tar.gz
 
 3. Confirm no other Mattermost zip folders exist in your ``/tmp`` directory. If another version's zip file does exist, delete or rename the file.
 
