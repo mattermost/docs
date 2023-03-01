@@ -43,9 +43,6 @@ Latest Mattermost Mobile Apps releases:
  - Fixed a crash when toggling Collapsed Reply Thread on/off.
  - Fixed an issue with the push notification display when push notifications were set as a generic message with sender only.
 
-### Open Source Components
- - 
-
 ### Known Issues
  - Users are unable to adjust the font size via the OS font size setting.
  - Moving posts with the Wrangler plugin causes database "Unique key" errors [MM-44960](https://mattermost.atlassian.net/browse/MM-44960).
