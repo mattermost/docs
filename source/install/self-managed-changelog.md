@@ -6,11 +6,119 @@ See the [changelog in progress](https://bit.ly/2nK3cVf) for the upcoming release
 
 Latest Mattermost Releases:
 
+- [Release v7.9 - Feature Release](#release-v7-9-feature-release)
 - [Release v7.8 - Extended Support Release](#release-v7-8-extended-support-release)
 - [Release v7.7 - Feature Release](#release-v7-7-feature-release)
-- [Release v7.5 - Feature Release](#release-v7-5-feature-release)
-- [Release v7.4 - Feature Release](#release-v7-4-feature-release)
 - [Release v7.1 - Extended Support Release](#release-v7-1-extended-support-release)
+
+## Release v7.9 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
+
+**Release day: March 16th, 2023**
+
+### Important Upgrade Notes
+
+ - Added a new API endpoint ``GET api/v4/posts/[POST_ID]/edit_history``. Add upgrade notes from here.
+ - Boards is served as an in-built product from within the Mattermost server instead of a plugin. If you want to disable this, please set the ``MM_FEATUREFLAGS_BoardsProduct`` env var to "false" (without the quotes). While running in product mode, the boards plugin will remain disabled.
+
+**IMPORTANT:** If you upgrade from a release earlier than v7.8, please read the other [Important Upgrade Notes](/upgrade/important-upgrade-notes.html).
+
+### Compatibility
+ - Updated Firefox minimum supported version to 102+.
+ - Updated Safari minimum supported version to 16.2+.
+ - Updated Windows minimum supported version to 10+.
+ - Updated Chromium minimum supported version to 110+.
+ - Updated Edge minimum supported version to 110+.
+
+### Highlights
+
+#### Calls
+ - 
+
+#### Boards
+ - 
+ 
+#### Playbooks
+ - 
+
+### Improvements
+
+#### User Interface (UI)
+ - All post components were removed in favor of a unified approach.
+ - App bindings are now refreshed when a App plugin enabled event gets triggered.
+ - Improvements were added to the sidebar channel and category menus.
+ - Removed right-click hijacking on code blocks in messages.
+ - The order of the Leave Channel and Archive Channel settings were updated to match the mobile app.
+ - Added the condition to remove unread styling for archived channels and to filter archived channels from local data.
+ - Changed the collapsed post fade out effect to be less buggy.
+ - Users now have the ability to see the history of edited messages and to restore an old message version with the current version.
+ - Improved the user interface of the user profile popover.
+
+#### Administration
+ - Boards cards are no longer mentioned as being limited in the **System Console**, the limits usage modal, the downgrade modal, or the left-hand side menu.
+ - Removed an unused ``ProductLimits.Integrations``.
+ - Export files now contain the read and unread status for channels.
+ - While upgrading a High Availability installation with rolling upgrades, after upgrading all nodes, the System Console may display a single disabled plugin. This is expected due to the way plugins are initialized. Prepackaged plugins are copied over to the plugins directory. Following another restart of the first node upgraded, the System Console should no longer show any plugins present or enabled.
+ - Added an error message when running an LDAP sync with ``SyncEnabled`` set to ``false``.
+ - Added Admin log table filtering and sorting.
+ - GraphQL APIs are now correctly counted when measuring performance telemetry.
+ - Added a dynamic call-to-action under the **System Console > True Up Review System** subsection for air-gapped and non-air-gapped systems.
+ - Screened self-hosted purchases now block the Admin from re-attempting a purchase for 3 days.
+ - Added a new section in the **System Console** for products. For now, it only contains Boards-specific settings.
+
+#### Performance
+ - Reduced the rate that unreads are resynced when the window is focused from 10 seconds to 2 minutes.
+ - The center channel is no longer shown as loading when switching teams.
+ - Added logging fixes: empty ``short_message`` for Gelf formatter is no longer allowed and ``params.Host`` is now used over ``params.IP`` for syslog config.
+
+### Bug Fixes
+ - Fixed an issue where the System Console link to purchase a self hosted license would get stuck showing the in-product purchase progress modal.
+ - Fixed an issue where the true-up notification in the invite modal did not render the call-to-action correctly.
+ - Fixed new teams to use the updated translation for default channels after a config change.
+ - Fixed a layout issue in the System Console for smaller-sized tablets.
+ - Fixed an issue where a "plugin configured with a nil SecureConfig" warning was logged when starting each plugin.
+ - Fixed an issue where portal availability was checked when not on enterprise edition.
+ - Fixed an issue where C# syntax highlighting was not working.
+ - Fixed an issue where incoming webhooks changed the user's activity while the user was offline/away.
+ - Fixed an issue where usernames were not clickable in the right-hand side.
+
+### config.json
+Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
+
+#### Changes to Team Edition and Enterprise Edition:
+ - Added a new config setting section ``ProductSettings``.
+
+### API Changes
+ - Added a new API endpoint ``GET api/v4/posts/[POST_ID]/edit_history``.
+ - Added an ``exclude_files_count`` parameter to exclude file counts from the channel stats API.
+ - Added a new API endpoint ``GET api/v4/posts/[POST_ID]/edit_history``.
+ - Added a new API endpoint ``DELETE /api/v4/cloud/delete-workspace``.
+
+### Database Changes
+ - Added the ``SentAt`` column to ``NotifyAdmin``.
+ - Updated ``NotifyAdmin.RequiredFeature`` column type to ``varchar(255)``.
+ - Updated ``NotifyAdmin.RequiredPlan`` column type to ``varchar(100)``.
+
+### Go Version
+ - v7.9 is built with Go ``v1.19.0``.
+
+### Known Issues
+ - Your profile image moves up when changing your status manually [MM-49159](https://mattermost.atlassian.net/browse/MM-49159).
+ - The new Insights feature has some performance costs that we are working to optimize. This feature can be disabled by setting the ``MM_FEATUREFLAGS_INSIGHTSENABLED`` environment variable to ``false``.
+ - Adding an @mention at the start of a post draft and pressing the left or right arrow key can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
+ - Google login fails on the Classic mobile apps.
+ - Status may sometimes get stuck as **Away** or **Offline** in high availability mode with IP Hash turned off.
+ - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
+ - The team sidebar on the desktop app does not update when channels have been read on mobile.
+ - Slack import through the CLI fails if email notifications are enabled.
+ - Push notifications don't always clear on iOS when running Mattermost in high availability mode.
+ - Boards are not refreshing on creation. See the [GitHub discussion](https://github.com/mattermost/focalboard/discussions/1971) for more information.
+ - Boards export and reimport results in duplicates boards because all IDs are replaced by new ones on the server. See the [GitHub issue](https://github.com/mattermost/focalboard/issues/1924) for more information.
+ - Boards linked to a channel you're a member of do not automatically appear on your sidebar unless you're an explicit member of the board. As a workaround, you can access the board from the channel RHS or by searching for the board via the board switcher (Ctrl/Cmd+K). Alternatively, you can ask the board admin to add you to the board as an explicit member. See the [issue-focalboard-4179](https://github.com/mattermost/focalboard/issues/4179) for more details.
+ - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
+ - If a user is not a member of a configured broadcast channel, posting a status update might fail without any error feedback. As a temporary workaround, join the configured broadcast channels or remove those channels from the run configuration.
+ 
+### Contributors
+ - 
 
 ## Release v7.8 - [Extended Support Release](https://docs.mattermost.com/upgrade/release-definitions.html#extended-support-release-esr)
 
