@@ -10,7 +10,7 @@ What is an Extended Support Release?
 During each monthly release, Mattermost backports high severity or high impact security fixes to the previous three monthly releases. Extended Support Releases (ESRs) are releases that will receive backports for security fixes and major bug fixes for the length of their life cycle.
 
 .. important::
-  Support for Mattermost Server v6.3 Extended Support Release has come to the end of its life cycle on October 15, 2022. Upgrading to Mattermost Server v7.1 Extended Support Release or later is required.
+  Support for Mattermost Server v7.1 Extended Support Release is coming to the end of its life cycle on May 15, 2023. Upgrading to Mattermost Server v7.8 Extended Support Release or later is required.
 
 What is the life cycle of an Extended Support Release?
 ------------------------------------------------------
