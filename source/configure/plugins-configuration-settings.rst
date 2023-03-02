@@ -469,7 +469,7 @@ RTC server port
 +-----------------------------------------------------------------------------------------------------------------------+-------------------------------------------+
 | This setting controls the UDP port listened on by the RTC server. All Calls traffic will be served through this port. | - System Config path: **Plugins > Calls** |
 |                                                                                                                       | - ``config.json`` setting: N/A            |
-| For changes to take effect, you must restart the plugin.                                                              | - Environment variable: N/A               |
+| Changing this setting requires a plugin restart to take effect.                                                       | - Environment variable: N/A               |
 |                                                                                                                       |                                           |
 | Default is **8443**.                                                                                                  |                                           |
 +-----------------------------------------------------------------------------------------------------------------------+-------------------------------------------+
@@ -687,11 +687,12 @@ Allow screen sharing
 .. include:: ../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
-**True**: Call participants will be allowed to share their screen.
-
-**False**: Call participants won't be allowed to share their screen.
-
-Changing this setting requires a plugin restart to take effect.
++------------------------------------------------------------------------+-------------------------------------------+
+| - **true**: Call participants will be allowed to share their screen.   | - System Config path: **Plugins > Calls** |
+| - **false**: Call participants won't be allowed to share their screen. | - ``config.json`` setting: N/A            |
+|                                                                        | - Environment variable: N/A               |
+| Changing this setting requires a plugin restart to take effect.        |                                           |
++------------------------------------------------------------------------+-------------------------------------------+
 
 .. config:setting:: plugins-callsrtcdserviceurl
   :displayname: RTCD service URL (Plugins - Calls)
