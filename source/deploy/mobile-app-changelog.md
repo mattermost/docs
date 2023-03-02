@@ -28,7 +28,7 @@ Latest Mattermost Mobile Apps releases:
 
 ### Bug Fixes
  - Calls: Fixed a rare case where the Join Call banner showed that a call started "53 years ago".
- - Calls: fixed a crash on joining calls.
+ - Calls: Fixed a crash on joining calls.
  - Fixed an issue where tapping "Send Message" in a user’s profile pop-over did not open a Direct Message channel.
  - Fixed an issue where an incorrect skin tone was applied to emojis selected in the emoji picker.
  - Fixed an issue where the channel list displayed Direct Messages with users that had been deactivated.
