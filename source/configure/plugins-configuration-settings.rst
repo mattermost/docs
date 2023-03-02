@@ -665,11 +665,12 @@ Server side TURN
 .. include:: ../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
-**True**: The RTC server will use the configured TURN candidates for server-initiated connections.
-
-**False**: TURN will be used only on the client-side.
-
-Changing this setting requires a plugin restart to take effect.
++------------------------------------------------------------------------------------------------------+-------------------------------------------+
+| - **true**: The RTC server will use the configured TURN candidates for server-initiated connections. | - System Config path: **Plugins > Calls** |
+| - **false**: TURN will be used only on the client-side.                                              | - ``config.json`` setting: N/A            |
+|                                                                                                      | - Environment variable: N/A               |
+| Changing this setting requires a plugin restart to take effect.                                      |                                           |
++------------------------------------------------------------------------------------------------------+-------------------------------------------+
 
 .. config:setting:: plugins-callsallowscreensharing
   :displayname: Allow screen sharing (Plugins - Calls)
