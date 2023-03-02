@@ -489,9 +489,13 @@ Enable on specific channels
 .. include:: ../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
-**True**: Allow channel admins to enable or disable calls on specific channels. It also allows participants in DMs/GMs to enable or disable calls.
-
-**False**: Only system admins will be able to enable or disable calls on specific channels.
++----------------------------------------------------------------------------------------------------------------------------------------+--------------------------------+
+| - **true**: Channel admins can enable or disable calls on specific channels. Participants in DMs/GMs can also enable or disable calls. | - System Config path: N/A      |
+| - **false**: Only System Admins can enable or disable calls on specific channels.                                                      | - ``config.json`` setting: N/A |
+|                                                                                                                                        | - Environment variable: N/A    |
+|                                                                                                                                        |                                |
+|                                                                                                                                        |                                |
++----------------------------------------------------------------------------------------------------------------------------------------+--------------------------------+
 
 .. config:setting:: plugins-testmode
   :displayname: Test mode (Plugins - Calls)
