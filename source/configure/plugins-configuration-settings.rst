@@ -535,7 +535,14 @@ Max call participants
 .. include:: ../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
-The maximum number of participants that can join a single call. This is an optional field and default is 0 (unlimited). The maximum recommended setting is 200.
++-----------------------------------------------------------------------------+-------------------------------------------+
+| This setting limits the number of participants that can join a single call. | - System Config path: **Plugins > Calls** |
+|                                                                             | - ``config.json`` setting: N/A            |
+|                                                                             | - Environment variable: N/A               |
+| Default is **0** (no limit).                                                |                                           |
++-----------------------------------------------------------------------------+-------------------------------------------+
+| **Note**: This setting is optional, but the recommended maximum number of participants is **200**.                      |
++-------------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: plugins-callsicehost
   :displayname: ICE host override (Plugins - Calls)
