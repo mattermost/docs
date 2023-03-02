@@ -18,7 +18,7 @@ Latest Mattermost Releases:
 ### Important Upgrade Notes
 
  - Added a new API endpoint ``GET api/v4/posts/[POST_ID]/edit_history``. Users can run "CREATE INDEX CONCURRENTLY" before doing the upgrade to allow PostgreSQL to create the index without locking the table.
- - Boards is served as an in-built product from within the Mattermost server instead of a plugin. If you want to disable this, please set the ``MM_FEATUREFLAGS_BoardsProduct`` environment varariable to ``false``. While running in product mode, the boards plugin will remain disabled.
+ - Boards is served as an in-built product from within the Mattermost server instead of a plugin. If you want to disable this, please set the ``MM_FEATUREFLAGS_BoardsProduct`` environment variable to ``false``. While running in product mode, the boards plugin will remain disabled.
 
 **IMPORTANT:** If you upgrade from a release earlier than v7.8, please read the other [Important Upgrade Notes](/upgrade/important-upgrade-notes.html).
 
