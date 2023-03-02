@@ -466,9 +466,13 @@ RTC server port
 .. include:: ../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
-The UDP port the RTC server will listen on. All calls traffic will be served through this port. The Default setting is 8443.
-
-Changing this setting requires a plugin restart to take effect.
++-----------------------------------------------------------------------------------------------------------------------+-------------------------------------------+
+| This setting controls the UDP port listened on by the RTC server. All Calls traffic will be served through this port. | - System Config path: **Plugins > Calls** |
+|                                                                                                                       | - ``config.json`` setting: N/A            |
+| For changes to take effect, you must restart the plugin.                                                              | - Environment variable: N/A               |
+|                                                                                                                       |                                           |
+| Default is **8443**.                                                                                                  |                                           |
++-----------------------------------------------------------------------------------------------------------------------+-------------------------------------------+
 
 .. config:setting:: plugins-enableonspecificchannels
   :displayname: Enable on specific channels (Plugins - Calls)
