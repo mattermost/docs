@@ -625,9 +625,11 @@ TURN static auth secret
 .. include:: ../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
-A static secret used to generate short-lived credentials for TURN servers.
-
-This is an optional field.
++----------------------------------------------------------------------------+-------------------------------------------+
+| A static secret used to generate short-lived credentials for TURN servers. | - System Config path: **Plugins > Calls** |
+|                                                                            | - ``config.json`` setting: N/A            |
+| This is an optional field.                                                 | - Environment variable: N/A               |
++----------------------------------------------------------------------------+-------------------------------------------+
 
 .. config:setting:: plugins-callsturncredentialsexpiration
   :displayname: TURN credentials expiration (Plugins - Calls)
