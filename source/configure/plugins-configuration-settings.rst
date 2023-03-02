@@ -489,13 +489,13 @@ Enable on specific channels
 .. include:: ../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
-+----------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------+
-| - **true**: Channel admins can enable or disable calls on specific channels. Participants in DMs/GMs can also enable or disable calls. | - System Config path: N/A                        |
-| - **false**: Only System Admins can enable or disable calls on specific channels.                                                      | - ``config.json`` setting: N/A                   |
-|                                                                                                                                        | - Environment variable: N/A                      |
-|                                                                                                                                        |                                                  |
-|                                                                                                                                        |                                                  |
-+----------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------+
+| - **true**: Channel admins can enable or disable calls on specific channels. Participants in DMs/GMs can also enable or disable calls. | - System Config path: **Plugins > Calls** |
+| - **false**: Only System Admins can enable or disable calls on specific channels.                                                      | - ``config.json`` setting: N/A            |
+|                                                                                                                                        | - Environment variable: N/A               |
+|                                                                                                                                        |                                           |
+|                                                                                                                                        |                                           |
++----------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------+
 
 .. config:setting:: plugins-testmode
   :displayname: Test mode (Plugins - Calls)
@@ -583,30 +583,34 @@ ICE servers configurations
 .. include:: ../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
-A list of ICE servers (STUN/TURN) to be used by the service. Value should be valid JSON.
-
-Default is ``[{"urls": ["stun:stun.global.calls.mattermost.com:3478"]}]``
-
-**Example**
-
-.. code-block:: json
-
-  [
-   {
-      "urls":[
-         "stun:stun.global.calls.mattermost.com:3478"
-      ]
-   },
-   {
-      "urls":[
-         "turn:turn.example.com:3478"
-      ],
-      "username":"webrtc",
-      "credentials":"turnpassword"
-   }
-  ]
-
-This is an optional field. Changing this setting may require a plugin restart to take effect.
++-------------------------------------------------------------------------------------------------+-------------------------------------------+
+| This setting stores a list of ICE servers (STUN/TURN) in JSON format to be used by the service. | - System Config path: **Plugins > Calls** |
+|                                                                                                 | - ``config.json`` setting: N/A            |
+| This is an optional field. Changing this setting may require a plugin restart to take effect.   | - Environment variable: N/A               |
+|                                                                                                 |                                           |
+| Default is **[{"urls": ["stun:stun.global.calls.mattermost.com:3478"]}]**                       |                                           |
++-------------------------------------------------------------------------------------------------+-------------------------------------------+
+ 
+ **Example**
+ 
+ .. code-block:: json
+ 
+   [
+    {
+       "urls":[
+          "stun:stun.global.calls.mattermost.com:3478"
+       ]
+    },
+    {
+       "urls":[
+          "turn:turn.example.com:3478"
+       ],
+       "username":"webrtc",
+       "credentials":"turnpassword"
+    }
+   ]
+ 
+ 
 
 .. config:setting:: plugins-callsturnauthsecret
   :displayname: TURN static auth secret (Plugins - Calls)
