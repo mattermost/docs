@@ -489,13 +489,13 @@ Enable on specific channels
 .. include:: ../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
-+----------------------------------------------------------------------------------------------------------------------------------------+--------------------------------+
-| - **true**: Channel admins can enable or disable calls on specific channels. Participants in DMs/GMs can also enable or disable calls. | - System Config path: N/A      |
-| - **false**: Only System Admins can enable or disable calls on specific channels.                                                      | - ``config.json`` setting: N/A |
-|                                                                                                                                        | - Environment variable: N/A    |
-|                                                                                                                                        |                                |
-|                                                                                                                                        |                                |
-+----------------------------------------------------------------------------------------------------------------------------------------+--------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------+
+| - **true**: Channel admins can enable or disable calls on specific channels. Participants in DMs/GMs can also enable or disable calls. | - System Config path: N/A                        |
+| - **false**: Only System Admins can enable or disable calls on specific channels.                                                      | - ``config.json`` setting: N/A                   |
+|                                                                                                                                        | - Environment variable: N/A                      |
+|                                                                                                                                        |                                                  |
+|                                                                                                                                        |                                                  |
++----------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------+
 
 .. config:setting:: plugins-testmode
   :displayname: Test mode (Plugins - Calls)
@@ -512,11 +512,15 @@ Test mode
 .. include:: ../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
-**True**: When test mode is enabled, only system admins are able to start calls in channels. 
-
-This allows testing to confirm calls are working as expected. When a user tries to start a call, they'll be prompted to ask their admin to complete the setup and switch to live mode in the System Console. Additionally, when a system admin starts a call, they're asked to confirm that calls are working as expected before switching to live mode in the System Console.
-
-**False**: All team members can start calls in channels.
++--------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+| - **true**: Only System Admins can start calls in channels.                                                                                | - System Config path: **Plugins > Calls**                                                                                                          |
+| - **false**: All team members can start calls in channels.                                                                                 | - ``config.json`` setting: N/A                                                                                                                     |
+|                                                                                                                                            | - Environment variable: N/A                                                                                                                        |
+|                                                                                                                                            |                                                                                                                                                    |
+|                                                                                                                                            |                                                                                                                                                    |
++--------------------------------------------------------------+-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Note**: Use this setting to confirm calls work as expected. When **true**, users attempting to start calls are referred to System Admins. System Admins are prompted to confirm that calls are working as expected before switching to live mode.                                             |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: plugins-callsmaxcallparticipants
   :displayname: Max call participants (Plugins - Calls)
