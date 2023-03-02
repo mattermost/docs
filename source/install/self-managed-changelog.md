@@ -99,6 +99,9 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ### Go Version
  - v7.9 is built with Go ``v1.19.0``.
+ 
+### Open Source Components
+ - Added ``@mui/base``, ``@mui/material`` and ``@mui/styled-engine-sc``, and removed ``form-data`` from https://github.com/mattermost/mattermost-webapp/.
 
 ### Known Issues
  - Your profile image moves up when changing your status manually [MM-49159](https://mattermost.atlassian.net/browse/MM-49159).
