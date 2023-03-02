@@ -644,7 +644,11 @@ TURN credentials expiration
 .. include:: ../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
-The expiration, in minutes, of the short-lived credentials generated for TURN servers.
++----------------------------------------------------------------------------------------+-------------------------------------------+
+| The expiration, in minutes, of the short-lived credentials generated for TURN servers. | - System Config path: **Plugins > Calls** |
+|                                                                                        | - ``config.json`` setting: N/A            |
+|                                                                                        | - Environment variable: N/A               |
++----------------------------------------------------------------------------------------+-------------------------------------------+
 
 .. config:setting:: plugins-callsserversideturn
   :displayname: Server side TURN (Plugins - Calls)
