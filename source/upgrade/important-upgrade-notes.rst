@@ -17,7 +17,7 @@ Important Upgrade Notes
 |                                                    | create the index without locking the table.                                                                                                                      |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | Boards is served as an in-built product from within the Mattermost server instead of a plugin. If you want to disable this, please set the                       |
-|                                                    | ``MM_FEATUREFLAGS_BoardsProduct`` env var to "false" (without the quotes). While running in product mode, the boards plugin will remain disabled.                |
+|                                                    | ``MM_FEATUREFLAGS_BoardsProduct`` environment variable to ``false``. While running in product mode, the boards plugin will remain disabled.                      |
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v7.8                                               | `Message Priority & Acknowledgement <https://docs.mattermost.com/configure/site-configuration-settings.html#message-priority>`__ is now enabled by default       |
 |                                                    | for all instances. You may disable this feature in the System Console by going to **Posts > Message Priority** or via the config ``PostPriority`` setting.       |
