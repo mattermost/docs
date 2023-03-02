@@ -21,7 +21,7 @@ Latest Mattermost Mobile Apps releases:
 ### Improvements
  - Added the ability to set the mobile notifications preferences per channel.
  - Calls: Added slash commands to start/stop call recordings (``/call recording [start|stop]``).
- - Calls: Implemented a glare free negotiation.
+ - Calls: Implemented glare free negotiation.
  - The Help link now is not converted to lowercase.
  - Added minor performance improvements on sending a message.
  - Archived channels show a more detailed warning.
