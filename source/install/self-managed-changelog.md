@@ -17,7 +17,7 @@ Latest Mattermost Releases:
 
 ### Important Upgrade Notes
 
- - Added a new API endpoint ``GET api/v4/posts/[POST_ID]/edit_history``. Users can run "CREATE INDEX CONCURRENTLY" before doing the upgrade to allow PostgreSQL to create the index without locking the table.
+ - Added a new index on ``Posts(OriginalId)``. For a database with 11.8 million posts, on a machine with a i7-11800H CPU (8 cores, 16 threads), 32GiB of RAM and SSD, the index creation takes 98.51s on MYSQL and 2.6s on PostgreSQL. To avoid any table locking, servers using PostgreSQL are recommended to create the index online before performing the upgrade using the ``CONCURRENTLY`` option, as in ``CREATE INDEX CONCURRENTLY idx_posts_original_id ON Posts(OriginalId);``.
  - Boards is served as an in-built product from within the Mattermost server instead of a plugin. If you want to disable this, please set the ``MM_FEATUREFLAGS_BoardsProduct`` environment variable to ``false``. While running in product mode, the boards plugin will remain disabled.
 
 **IMPORTANT:** If you upgrade from a release earlier than v7.8, please read the other [Important Upgrade Notes](/upgrade/important-upgrade-notes.html).
@@ -88,7 +88,6 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - Added a new config setting section ``ProductSettings``.
 
 ### API Changes
- - Added a new API endpoint ``GET api/v4/posts/[POST_ID]/edit_history``.
  - Added an ``exclude_files_count`` parameter to exclude file counts from the channel stats API.
  - Added a new API endpoint ``GET api/v4/posts/[POST_ID]/edit_history``.
  - Added a new API endpoint ``DELETE /api/v4/cloud/delete-workspace``.
