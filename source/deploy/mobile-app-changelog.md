@@ -22,7 +22,7 @@ Latest Mattermost Mobile Apps releases:
  - Added the ability to set the mobile notifications preferences per channel.
  - Added support for connecting the WebSocket over TLS1.3.
  - Calls: Added slash commands to start/stop call recordings (``/call recording [start|stop]``).
- - Calls: Implemented glare free negotiation.
+ - Calls: Implemented glare free negotiation. This fix prevents potential negotiation problems when two clients try to connect simultaneously.
  - The Help link now is not converted to lowercase.
  - Added minor performance improvements on sending a message.
  - Archived channels show a more detailed warning.
