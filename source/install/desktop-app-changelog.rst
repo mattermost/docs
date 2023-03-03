@@ -48,7 +48,7 @@ All Platforms
 Architectural Changes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- Major version upgrade of Electron to v23.0.0. Electron is the underlying technology used to build the Desktop App.
+- Major version upgrade of Electron to v23.1.2. Electron is the underlying technology used to build the Desktop App.
 
 Bug Fixes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
