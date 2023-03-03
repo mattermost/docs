@@ -19,7 +19,7 @@ Latest Mattermost Mobile Apps releases:
  - iPhone 5s devices and later with iOS 12.1+ is required.
 
 ### Improvements
- - Added the ability to set the mobile notifications preferences per channel.
+ - Added the ability to set mobile notifications preferences per channel.
  - Added support for connecting the WebSocket over TLS1.3.
  - Calls: Added slash commands to start/stop call recordings (``/call recording [start|stop]``).
  - Calls: Implemented glare free negotiation. This fix prevents potential negotiation problems when two clients try to connect simultaneously.
@@ -30,14 +30,14 @@ Latest Mattermost Mobile Apps releases:
 ### Bug Fixes
  - Calls: Fixed a rare case where the Join Call banner showed that a call started "53 years ago".
  - Calls: Fixed a crash on joining calls.
- - Fixed an issue where tapping "Send Message" in a user’s profile pop-over did not open a Direct Message channel.
+ - Fixed an issue where tapping **Send Message** in a user’s profile pop-over did not open a Direct Message channel.
  - Fixed an issue where an incorrect skin tone was applied to emojis selected in the emoji picker.
- - Fixed an issue where the channel list displayed Direct Messages with users that had been deactivated.
- - Fixed an issue with searching for channels and users with non-Latin characters.
+ - Fixed an issue where the channel list displayed Direct Messages with user accounts that had been deactivated.
+ - Fixed an issue with searching for channels and users that contain non-Latin characters.
  - Fixed an issue where selecting an item from the autocomplete doubled tilde and slash characters.
  - Fixed an "Unable to reset your password" issue.
  - Fixed an issue where the Group Message member count showed as 0 on GraphQL enabled instances.
- - Fixed an issue with missing posts in a thread when a post got deleted.
+ - Fixed an issue with missing posts in a thread when a post gets deleted.
  - Fixed an issue with saving a draft when navigating away from a thread or channel screens.
  - Fixed an issue with running the app in a Stage Manager on iPad.
  - Fixed an issue with the timing of showing the tutorial for the skin tone selector in the emoji picker.
