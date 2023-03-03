@@ -170,20 +170,24 @@ $(document).ready(function () {
 		}
 	});
 	// Notification Banner
-	if (localStorage.getItem("docsFeedback") === null) {
-		localStorage.setItem('docsFeedback', true);
-		$('.notification-bar').addClass('flex');
-		$('body').addClass('with-notification');
-	} else {
-		const docsFeedbackItem = localStorage.getItem('docsFeedback');
 
-		if (docsFeedbackItem == 'false') {
-			$('.notification-bar').remove();
-			$('body').removeClass('with-notification');
-		} else {
-			$('body').addClass('with-notification');
-		}
-	}
+	// For when we want to show the notification banner for feedback link
+	// if (localStorage.getItem("docsFeedback") === null) {
+	// 	localStorage.setItem('docsFeedback', true);
+	// 	$('.notification-bar').addClass('flex');
+	// 	$('body').addClass('with-notification');
+	// } else {
+	// 	const docsFeedbackItem = localStorage.getItem('docsFeedback');
+
+	// 	if (docsFeedbackItem == 'false') {
+	// 		$('.notification-bar').remove();
+	// 		$('body').removeClass('with-notification');
+	// 	} else {
+	// 		$('body').addClass('with-notification');
+	// 	}
+	// }
+
+
 	$('body').on('click', '.notification-bar__close', function(){
 		$('.notification-bar').remove();
 		$('body').removeClass('with-notification');
