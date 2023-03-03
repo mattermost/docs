@@ -4,14 +4,14 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 
 Latest Mattermost Cloud releases:
 
-- [Release 2023-02-28](#release-2023-02-28)
+- [Release 2023-03-01](#release-2023-03-01)
 - [Release 2023-01-26](#release-2023-01-26)
 - [Release 2023-01-16](#release-2023-01-16)
 - [Release 2022-12-20](#release-2022-12-20)
 - [Release 2022-12-01](#release-2022-12-01)
 - [Release 2022-11-24](#release-2022-11-24)
 
-## Release 2023-02-28
+## Release 2023-03-01
 
 ### Compatibility
  - Updated Firefox minimum supported version to 102+.
@@ -67,6 +67,7 @@ Latest Mattermost Cloud releases:
  - GraphQL APIs are now correctly counted when measuring performance telemetry.
  - Boards cards are no longer mentioned as being limited in the **System Console**, the limits usage modal, the downgrade modal, or the left-hand side menu.
  - Removed an unused ``ProductLimits.Integrations``.
+ - Added support to override plugins state (enable/disable) through environment variables (e.g. `MM_PLUGINSETTINGS_PLUGINSTATES_PLAYBOOKS=true`). Note: the state will be persisted in the configuration so it should not be used for temporary overrides.
 
 #### Performance
  - Reduced the rate that unreads are resynced when the window is focused from 10 seconds to 2 minutes.
