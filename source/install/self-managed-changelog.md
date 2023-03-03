@@ -55,6 +55,7 @@ Latest Mattermost Releases:
  - Improved the user interface of the user profile popover.
 
 #### Administration
+ - Added support to override plugins state (enable/disable) through environment variables (e.g. `MM_PLUGINSETTINGS_PLUGINSTATES_PLAYBOOKS=true`). Note: the state will be persisted in the configuration so it should not be used for temporary overrides.
  - Boards cards are no longer mentioned as being limited in the **System Console**, the limits usage modal, the downgrade modal, or the left-hand side menu.
  - Removed unused ``ProductLimits.Integrations``.
  - Export files now contain the read and unread status for channels.
