@@ -36,6 +36,7 @@ Latest Mattermost Releases:
 
 #### Boards
  - System and team admins are now able to join any board on the team as a board admin via the board URL.
+ - Additional Compliance APIs to return the history of boards and blocks, including deleted items (available in Mattermost Enterprise Edition and above).
  
 #### Playbooks
  - 
