@@ -43,6 +43,7 @@ Latest Mattermost Releases:
 ### Improvements
 
 #### User Interface (UI)
+ - Added use case templates to help users quickly and easily set up all the tools they need to accomplish their work by use cases. Each use case template contains a channel, a Board and/or a playbook, and integrations.
  - All post components were removed in favor of a unified approach.
  - App bindings are now refreshed when a App plugin-enabled event gets triggered.
  - Improvements were added to the sidebar channel and category menus.
