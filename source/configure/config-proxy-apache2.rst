@@ -16,11 +16,11 @@ On a Debian-based operating system such as Ubuntu, Apache2 reverse proxy configu
 3. Create the above mentioned configuration file. It is often helpful to start with a copy of ``000-default.conf`` or ``default-ssl.conf`` (on Ubuntu).
 4. Edit your configuration using the guide below:
 
-    1. If you're not setting up a subdomain, your ``ServerName`` will simply be set to ``mymattermost.tld``.
-    2. ``ServerAlias`` can been added too if you want to capture any other (sub)domains.
-    3. Remember to change the values to match your server's name, etc.
-    4. If you have enabled TLS in the Mattermost settings, you must also enable the SSL module in Apache (usually with ``a2enmod ssl``) and change the ``http://`` part of the proxy destination to ``https://`` additionally to enabling the ``SSLProxyEngine``.
-    5. To serve requests on a different port (such as 8443), in addition to setting the port in the VirtualHost element, add ``Listen 8443`` on a separate line before the VirtualHost line.
+    a. If you're not setting up a subdomain, your ``ServerName`` will simply be set to ``mymattermost.tld``.
+    b. ``ServerAlias`` can been added too if you want to capture any other (sub)domains.
+    c. Remember to change the values to match your server's name, etc.
+    d. If you have enabled TLS in the Mattermost settings, you must also enable the SSL module in Apache (usually with ``a2enmod ssl``) and change the ``http://`` part of the proxy destination to ``https://`` additionally to enabling the ``SSLProxyEngine``.
+    e. To serve requests on a different port (such as 8443), in addition to setting the port in the VirtualHost element, add ``Listen 8443`` on a separate line before the VirtualHost line.
 
 .. code-block:: apacheconf
 
@@ -55,7 +55,7 @@ On a Debian-based operating system such as Ubuntu, Apache2 reverse proxy configu
           # SSLProxyEngine On
         </VirtualHost>
 
-6. Restart Apache2.
+5. Restart Apache2.
 
     - On Ubuntu 14.04 and RHEL 6: ``sudo service apache2 restart``
     - On Ubuntu 16.04+ and RHEL 7+: ``sudo systemctl restart apache2``
@@ -110,4 +110,4 @@ You should be all set! Ensure that your Mattermost config file is pointing to th
           # SSLProxyEngine On
         </VirtualHost>
 
- 3. If you have enabled TLS in the Mattermost settings, you must also enable the SSL module in Apache (usually with ``a2enmod ssl``) and change the ``http://`` part of the proxy destination to ``https://`` and the websocket protocol from ``ws://`` to ``wss://`` additionally to enabling the ``SSLProxyEngine``.
+3. If you have enabled TLS in the Mattermost settings, you must also enable the SSL module in Apache (usually with ``a2enmod ssl``) and change the ``http://`` part of the proxy destination to ``https://`` and the websocket protocol from ``ws://`` to ``wss://`` additionally to enabling the ``SSLProxyEngine``.
