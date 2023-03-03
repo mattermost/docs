@@ -14,7 +14,6 @@ The Mattermost mobile app is available for `iOS </install/install-ios-app>` and 
     Install Mattermost’s pre-built mobile apps </deploy/use-prebuilt-mobile-apps>
     Mobile push notifications </deploy/mobile-hpns>
     Develop your enterprise mobile deployment </deploy/mobile-overview>
-    Troubleshooting mobile apps </deploy/mobile-troubleshoot>
     Build a custom mobile app </deploy/build-custom-mobile-apps>
     Deploy mobile apps using an EMM provider </deploy/deploy-mobile-apps-using-emm-provider>
     Appconfig for EMM solutions </deploy/mobile-appconfig>
@@ -26,7 +25,6 @@ The Mattermost mobile app is available for `iOS </install/install-ios-app>` and 
 * :doc:`Install Mattermost’s pre-built mobile apps </deploy/use-prebuilt-mobile-apps>` - Connect users to your Mattermost server with our prebuilt apps for Android and iOS.
 * :doc:`Mobile push notifications </deploy/mobile-hpns>` - Set up mobile push notifications. 
 * :doc:`Develop your enterprise mobile deployment </deploy/mobile-overview>` - Learn the basics of how to customize and deploy Mattermost to the Enterprise.
-* :doc:`Troubleshooting mobile apps </deploy/mobile-troubleshoot>` - Troubleshooting tips for the mobile app.
 * :doc:`Build a own custom mobile app </deploy/build-custom-mobile-apps>` - Build custom mobile Mattermost apps.
 * :doc:`Deploy mobile apps using an EMM provider </deploy/deploy-mobile-apps-using-emm-provider>` - Deploy with Enterprise Mobile Management software to enforce security policies and enforce specific versions of the Mattermost mobile apps.
 * :doc:`AppConfig for EMM solutions </deploy/mobile-appconfig>` - Learn how AppConfig provides an easy way to configure enterprise mobile applications.

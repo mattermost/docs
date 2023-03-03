@@ -4,7 +4,7 @@ Install the desktop app
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-The Mattermost desktop app is available for Linux, Mac, and Windows operating systems. You can connect the desktop app to both self-hosted and cloud-based Mattermost workspaces.
+The Mattermost desktop app is available for Linux, Mac, and Windows operating systems. You can connect the Mattermost desktop app to both self-hosted and cloud-based Mattermost workspaces.
 
 .. toctree::
     :maxdepth: 1

@@ -9,8 +9,33 @@ This documentation is for system admins who manage an existing Mattermost instan
 
 If you’re looking for resources to help you install, configure, upgrade, and scale your self-hosted Mattermost server, see the :doc:`Mattermost Deployment Guide </guides/deployment>`.
 
-Advanced Mattermost tools
--------------------------
+.. toctree::
+    :maxdepth: 1
+    :hidden:
+
+    Advanced permissions infrastructure </onboard/advanced-permissions-backend-infrastructure>
+    SAML SSO: technical documentation </onboard/sso-saml-technical>
+    Use AD/LDAP synchronized groups to manage team or private channel membership </onboard/managing-team-channel-membership-using-ad-ldap-sync-groups>
+    Administrator tasks </getting-started/admin-onboarding-tasks>
+    Mattermost configuration settings </configure/configuration-settings>
+    Reporting configuration settings </configure/reporting-configuration-settings>
+    User management configuration settings </configure/user-management-configuration-settings>
+    Environment configuration settings </configure/environment-configuration-settings>
+    Site configuration settings </configure/site-configuration-settings>
+    Authentication configuration settings </configure/authentication-configuration-settings>
+    Plugins configuration settings </configure/plugins-configuration-settings>
+    Integrations configuration settings </configure/integrations-configuration-settings>
+    Compliance configuration settings </configure/compliance-configuration-settings>
+    Experimental configuration settings </configure/experimental-configuration-settings>
+    Deprecated configuration settings </configure/deprecated-configuration-settings>
+
+The following documentation applies to both self-hosted and Cloud-based Mattermost deployments. 
+
+* **User permissions** - Professional and Enterprise versions also include :doc:`advanced permissions control </onboard/advanced-permissions>` to customize which users can perform specific actions. 
+* :doc:`SAML SSO: technical documentation </onboard/sso-saml-technical>` - SAML 2.0 reference documentation for Mattermost.
+* :doc:`Use AD/LDAP synchronized groups to manage team or private channel membership </onboard/managing-team-channel-membership-using-ad-ldap-sync-groups>` - Synchronize your AD/LDAP group with private Mattermost channels and teams.
+* :doc:`Administrator tasks </getting-started/admin-onboarding-tasks>` - Learn about the standard configurations and settings you’ll encounter.
+* **Configure your workspace** - Mattermost offers extensive configuration options for both `self-hosted Mattermost servers and Mattermost Cloud workspaces </configure/configuration-settings.html>`__, and provides a list of :doc:`deprecated configuration settings </configure/deprecated-configuration-settings>` no longer supported.
 
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
@@ -57,6 +82,8 @@ This section of the guide is for system admins mangaging self-hosted Mattermost 
     :maxdepth: 1
     :hidden:
 
+    Mattermost self-hosted billing </manage/self-hosted-billing>
+    Self-hosted edition and license </configure/self-hosted-account-settings>
     Environment variables </configure/environment-variables>
     Bulk loading data </onboard/bulk-loading-data>
     Email templates </configure/email-templates>
@@ -71,6 +98,7 @@ This section of the guide is for system admins mangaging self-hosted Mattermost 
     Certificate-based authentication </onboard/certificate-based-authentication>
     Manage telemetry </manage/telemetry>
 
+* :doc:`Mattermost self-hosted billing </manage/self-hosted-billing>` - Manage your Mattermost subscription, billing, and `license </configure/self-hosted-account-settings>`__.
 * :doc:`Environment variables </configure/environment-variables>` Learn how to manage configuration using environment variables.
 * :doc:`Bulk loading data </onboard/bulk-loading-data>` - Import bulk data into Mattermost for teams, channels, users, post content, and more.
 * :doc:`Email templates </configure/email-templates>` - Alter the transactional emails Mattermost sends to your users.

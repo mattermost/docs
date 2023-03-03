@@ -6,9 +6,6 @@ Architecture overview
 
 This page provides an overview of the Mattermost architecture with reference architecture. For a more detailed deployment overview, `check out our deployment wiki </deploy/deployment-overview.html>`__.
 
-.. toctree::
-    :maxdepth: 2
-
 Basics
 ------
 

@@ -23,21 +23,21 @@ This section is for Mattermost administrators who want to:
     Server administration </guides/administration>
     Upgrade Mattermost Server </guides/upgrade>
     Scale Mattermost </guides/scale>
-    Troubleshooting guides </guides/troubleshooting-deployment>
-    Changelogs </guides/changelogs>
     Advanced server administration </guides/advanced-server-administration>
     Install Mattermost desktop app </guides/install-mattermost-desktop-app>
     Install Mattermost mobile app </guides/install-mattermost-mobile-app>
+    Troubleshooting guides </guides/troubleshooting-deployment>
+    Changelogs </guides/changelogs>
   
 * :doc:`Install Mattermost Server </guides/deployment>` - Install Mattermost Server on supported Linux platforms, with Kubernetes, with Docker, or using Omnibus.
 * :doc:`Server administration </guides/administration>` - Administer your Mattermost self-hosted deployment.
 * :doc:`Upgrade Mattermost Server </guides/upgrade>` - Upgrade your Mattermost self-hosted deployment.
 * :doc:`Scale Mattermost </guides/scale>` - Learn how to scale your Mattermost self-hosted deployment.
-* :doc:`Troubleshooting guides </guides/troubleshooting-deployment>` - Troubleshoot your Mattermost self-hosted deployment.
-* :doc:`Changelogs </guides/changelogs>` - Learn what's new and changed in each self-hosted Mattermost release.
 * :doc:`Advanced server administration </guides/advanced-server-administration>` - Learn about advanced functionality available for your self-hosted  
 * :doc:`Install Mattermost desktop app </guides/install-mattermost-desktop-app>` - Install the Mattermost desktop app for your self-hosted or Cloud-based instance.
 * :doc:`Install Mattermost mobile app </guides/install-mattermost-mobile-app>` - Install the Mattermost mobile app for your self-hosted or Cloud-based instance.
+* :doc:`Troubleshooting guides </guides/troubleshooting-deployment>` - Troubleshoot your Mattermost self-hosted deployment.
+* :doc:`Changelogs </guides/changelogs>` - Learn what's new and changed in each self-hosted Mattermost release.
 
 **Administer your Cloud instance**
 
