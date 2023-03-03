@@ -67,7 +67,6 @@ Latest Mattermost Cloud releases:
  - GraphQL APIs are now correctly counted when measuring performance telemetry.
  - Boards cards are no longer mentioned as being limited in the **System Console**, the limits usage modal, the downgrade modal, or the left-hand side menu.
  - Removed an unused ``ProductLimits.Integrations``.
- - Added support to override plugins state (enable/disable) through environment variables (e.g. `MM_PLUGINSETTINGS_PLUGINSTATES_PLAYBOOKS=true`). Note: the state will be persisted in the configuration so it should not be used for temporary overrides.
 
 #### Performance
  - Reduced the rate that unreads are resynced when the window is focused from 10 seconds to 2 minutes.
