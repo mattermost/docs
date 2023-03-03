@@ -191,7 +191,7 @@ $(document).ready(function () {
 	$('body').on('click', '.notification-bar__close', function(){
 		$('.notification-bar').remove();
 		$('body').removeClass('with-notification');
-		localStorage.setItem('docsFeedback', false);
+		// localStorage.setItem('docsFeedback', false);
 	});
 
 });
