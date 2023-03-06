@@ -6,13 +6,192 @@ See the [changelog in progress](https://bit.ly/2nK3cVf) for the upcoming release
 
 Latest Mattermost Releases:
 
+- [Release v7.8 - Extended Support Release](#release-v7-8-extended-support-release)
 - [Release v7.7 - Feature Release](#release-v7-7-feature-release)
 - [Release v7.5 - Feature Release](#release-v7-5-feature-release)
 - [Release v7.4 - Feature Release](#release-v7-4-feature-release)
 - [Release v7.1 - Extended Support Release](#release-v7-1-extended-support-release)
 
+## Release v7.8 - [Extended Support Release](https://docs.mattermost.com/upgrade/release-definitions.html#extended-support-release-esr)
+
+- **v7.8.1, released 2023-03-01**
+  - Mattermost v7.8.1 contains a medium level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Fixed an issue where the Shared Channels feature wasn't properly included in the Professional license.
+- **v7.8.0, released 2023-02-16**
+  - Original 7.8.0 release
+
+Mattermost v7.8.0 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+
+### Important Upgrade Notes
+
+ - [Message Priority & Acknowledgement](https://docs.mattermost.com/configure/site-configuration-settings.html#message-priority) is now enabled by default for all instances. You may disable this feature in the System Console by going to **Posts > Message Priority** or via the config ``PostPriority`` setting.
+
+ - Before upgrading, we recommend checking for duplicate data in the ``focalboard_category_boards`` table, and deleting all but one copy of duplicate data. This is to ensure that the new plugin version startup doesn't lock the table, and prevent users from using Boards. We recommend de-duplicating the data at a time of low user activity.
+
+SQL to check the presence of duplicate data:                                                                                                             
+
+``SELECT user_id, board_id, count(*) AS count FROM focalboard_category_boards WHERE delete_at = 0 GROUP BY user_id, board_id HAVING count(*) > 1;``       
+
+SQL to delete duplicate data:                                                                                                                             
+
+PostgreSQL:                                                                                                                                               
+
+```
+WITH duplicates AS (
+  SELECT id, ROW_NUMBER() OVER(
+    PARTITION BY user_id, board_id
+  ) AS rownum
+  FROM focalboard_category_boards
+)
+DELETE FROM focalboard_category_boards
+USING duplicates
+WHERE focalboard_category_boards.id = duplicates.id AND duplicates.rownum > 1;
+```
+
+MySQL:
+
+```
+WITH duplicates AS (
+  SELECT id, ROW_NUMBER() OVER(
+    PARTITION BY user_id, board_id
+  ) AS rownum
+  FROM focalboard_category_boards
+)
+DELETE focalboard_category_boards
+FROM focalboard_category_boards
+JOIN duplicates USING(id)
+WHERE duplicates.rownum > 1;
+```
+
+**IMPORTANT:** If you upgrade from a release earlier than v7.5, please read the other [Important Upgrade Notes](http://mattermost-docs-preview-pulls.s3-website-us-east-1.amazonaws.com/6187/upgrade/important-upgrade-notes.html).
+
+### Highlights
+
+#### Boards
+ - Added support for person, multi-person, and date property filters in Boards.
+ - Added support for person property groups in Boards.
+ - See [the docs](https://docs.mattermost.com/boards/groups-filter-sort.html#work-with-groups-filter-and-sort) for more details.
+
+### Improvements
+
+#### User Interface (UI)
+ - Pre-packaged Calls v0.13.0.
+ - Pre-packaged Playbooks v1.36.0.
+ - Insights and drafts are now included when navigating through channels in the channel sidebar using ALT+UP/DOWN arrow keyboard keys.
+ - Added an onboarding tour point for Global Drafts.
+ - Updated prepackaged version of Apps plugin to 1.2.0.
+ - Added group members count to the group autocomplete.
+ - Selecting a group mention now displays group details and membership.
+ - Improved the collapsed state of the message formatting toolbar.
+ - App Framework channel and user fields now support multi-select properties to allow users to select multiple values in a form.
+ - Increased the character count for desktop notifications on Windows to 120 from 50.
+ - Prioritized members of recently viewed direct or group messages when adding users to a channel.
+ - Added support for multiple users and channels to the ``/invite`` slash command.
+
+#### Administration
+ - Self-hosted admins can now purchase licenses in-app when service setting ``SelfHostedPurchase`` is true.
+ - Endpoint to portal added to detect whether a license is suitable for self-expansion. Customers over their seat limit can expand their license seats.
+ - Airgapped purchase experience is now shown only when appropriate and a simplified authentication flow is now used for the self-hosted purchase.
+ - The export file now contains the server version and a creation timestamp.
+ - Total Activated Users was changed back to Total Active Users on the **System Console > Reporting > Site Statistics** page.
+ - Added ``restore_group`` permission to the mmctl and to the **System Console > Permissions**.
+ - Improved bulk export logging.
+ - Compliance export jobs can now cancel the SQL query execution during server shutdown which will allow the job to exit faster.
+ - The message export compliance job can now survive server restarts. The job will pause and save state when the server is shutting down, and resume from the previously saved state when the server starts back up.
+ - Only one instance of the job will be automatically scheduled to run as per the ``MessageExportSettings.DailyRunTime`` config value.
+ - Mattermost will throw an error if it detects an Elasticsearch version greater than 7.
+ - The maximum size of uploaded emojis is reduced to 512KB to reduce image download bandwidth.
+ - Users can now monitor the progress of the bulk export job via its metadata field. It is available at ``mmctl export job show <jobID>``.
+ - Compliance exports no longer time out when uploading to S3.
+ - Users can now supply a certificate authority (CA) file and client certificates for the Elasticsearch client.
+ - Enabled ``EnableOAuthServiceProvider`` by default.
+ - Grafana metrics are now available for database connection metrics. They are:
+    - ``max_open_connections``
+    - ``open_connections``
+    - ``in_use_connections``
+    - ``idle_connections``
+    - ``wait_count_total``
+    - ``wait_duration_seconds_total``
+    - ``max_idle_closed_total``
+    - ``max_idle_time_closed_total``
+    - ``max_lifetime_closed_total``
+ - Made the ``registerChannelIntroButtonAction`` plugin API usable by plugins other than Boards.
+ - The following new HTTP headers and values are now written on all responses. These default values should make sense in most installations and can be overridden by a reverse proxy or ingress configuration. Note that the empty ``Permissions-Policy`` header does not have any actual effect. Users are recommended to change it to a more restrictive value based on their use case. For more information, see the [W3C Reference](https://www.w3.org/TR/permissions-policy/) or [this article](https://developer.mozilla.org/en-US/docs/Web/HTTP/Permissions_Policy).
+
+	```
+	Permissions-Policy: 
+	Referrer-Policy: no-referrer
+	X-Content-Type-Options: nosniff
+	```
+
+### Bug Fixes
+ - Fixed an issue where if a self-hosted purchase was not available, an air-gapped modal was shown instead of going to the CWS purchase portal experience directly.
+ - Fixed small visual issues with self-hosted purchase modal. Adjusted wording for admins trying to purchase when a purchase is already in progress.
+ - Fixed an issue where attempting to create a team with a duplicate URL displayed the wrong error.
+ - Fixed an issue where the custom status modal did not close when navigating to the custom emoji page.
+ - Fixed an issue where selections within a code block were not properly copied to clipboard.
+ - Fixed an issue where threads with 0 replies would show in all threads.
+ - Fixed an issue with the styling of date pickers.
+ - Fixed an issue with fetching the latest user's profile picture in Insights.
+ - Fixed an issue where ``--center-channel-text`` CSS variable was used instead of ``--center-channel-color``.
+ - Fixed an issue where the screen reader timestamp announcement was too long.
+ - Fixed an issue where profile pictures, usernames, and full names did not update instantly in Insights.
+ - Fixed an issue where the metrics server restarted for every config change.
+ - Fixed the slash command description help text.
+ - Fixed an issue where selecting **Contact Sales** didn't pre-fill the reason for contacting sales.
+ - Fixed an issue where the screen readers did not announce the selected state of the sidebar submenu items.
+ - Fixed an issue where the metrics server was not prevented from starting while running export commands.
+ - Fixed an issue where long group mentions and user mentions didn't wrap properly.
+ - Fixed an issue with fetching first/last name for GitLab user using OpenID.
+ - Fixed an issue with the plugin ``/public`` handling for subpaths.
+ - Fixed an issue where selecting **Pinned** on a post in the Threads view would result in the right-hand side being stuck in a loading state.
+ - Fixed an issue where the profile popover did not dismiss when opening a modal through a shortcut.
+ - Fixed an issue where the **Run Deletion Job Now** button for Data Retention wasn’t disabled when all policies were set to **keep forever**.
+ - Fixed an issue that prevented the creation of the initial admin user for new servers.
+ - Fixed an issue where making a channel non-read-only required a refresh of the client to see the change.
+ - Fixed an issue where Top Channels for Insights didn't show results if the current user's configured timezone wasn't present in MySQL's ``mysql.time_zone_name table``.
+ - Fixed an issue where a white screen appeared when a guest was removed from the last channel while on Threads.
+ - Fixed an issue where a Direct Message thread did not get disabled when a user was deactivated.
+ - Fixed an issue where email notifications for Direct Messages from Playbooks contained broken URLs.
+ - Fixed an issue where bulk import crashed with invalid memory address or nil pointer dereference.
+ - Fixed an issue with special characters in the System Console log filename causing logging configuration to break.
+ - Fixed an issue where the PDF renderer was not rendering all the pages.
+ - Fixed a 404 error from requests to ``/api/v4/system/notices/`` on page load.
+ - Fixed an issue where file uploading appeared "stuck" in processing state.
+ - Fixed an issue where archived channels appeared as unread in the channel switcher.
+
+### API Changes
+ - Added new API endpoint ``GET /api/v4/posts/:post_id/info`` to allow checking if the post that a permalink is pointing to is accessible by joining teams or channels.
+ - Added validity checks for role related parameters in ``GET /users``.
+
+### Go Version
+ - v7.8 is built with Go ``v1.18.1``.
+
+### Known Issues
+ - The new Insights feature has some performance costs that we are working to optimize. This feature can be disabled by setting the ``MM_FEATUREFLAGS_INSIGHTSENABLED`` environment variable to ``false``.
+ - Adding an @mention at the start of a post draft and pressing the left or right arrow key can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
+ - Google login fails on the Classic mobile apps.
+ - Status may sometimes get stuck as **Away** or **Offline** in high availability mode with IP Hash turned off.
+ - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
+ - The team sidebar on the desktop app does not update when channels have been read on mobile.
+ - Slack import through the CLI fails if email notifications are enabled.
+ - Push notifications don't always clear on iOS when running Mattermost in high availability mode.
+ - Boards export and reimport results in duplicates boards because all IDs are replaced by new ones on the server. See the [GitHub issue](https://github.com/mattermost/focalboard/issues/1924) for more information.
+ - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
+ 
+### Contributors
+ - [AbhinavVihan](https://github.com/AbhinavVihan), [adityash1](https://github.com/adityash1), [Afsoon](https://github.com/Afsoon), [agarciamontoro](https://github.com/agarciamontoro), [AGMETEOR](https://github.com/AGMETEOR), [agnivade](https://github.com/agnivade), [amayasova](https://github.com/amayasova), [amyblais](https://github.com/amyblais), [andrewbrown00](https://github.com/andrewbrown00), [andrleite](https://github.com/andrleite), [anurag6713](https://github.com/anurag6713), [anx-ag](https://github.com/anx-ag), [asaadmahmood](https://github.com/asaadmahmood), [ashishbhate](https://github.com/ashishbhate), [AshishDhama](https://github.com/AshishDhama), [avinashlng1080](https://github.com/avinashlng1080), [BenCookie95](https://github.com/BenCookie95), [BenLloydPearson](https://github.com/BenLloydPearson), [bobf7](https://github.com/bobf7), [calebroseland](https://github.com/calebroseland), [cedricstocke](https://github.com/cedricstocke), [CI-YU](https://github.com/CI-YU), [coltoneshaw](https://github.com/coltoneshaw), [ConorMacpherson](https://github.com/ConorMacpherson), [core](https://translate.mattermost.com/user/core), [cpoile](https://github.com/cpoile), [creeper-0910](https://github.com/creeper-0910), [crspeller](https://github.com/crspeller), [ctlaltdieliet](https://github.com/ctlaltdieliet), [cwarnermm](https://github.com/cwarnermm), [cybersmurf](https://github.com/cybersmurf), [d-wierdsma](https://github.com/d-wierdsma), [david.mach@mdsystem.cz](https://translate.mattermost.com/user/david.mach@mdsystem.cz), [devinbinnie](https://github.com/devinbinnie), [dfun90](https://github.com/dfun90), [dontoisme](https://github.com/dontoisme), [Eleferen](https://translate.mattermost.com/user/Eleferen), [emdecr](https://github.com/emdecr), [enahum](https://github.com/enahum), [exbu](https://github.com/exbu), [florian-busch](https://github.com/florian-busch), [fmartingr](https://github.com/fmartingr), [fr0mdual](https://github.com/fr0mdual), [furqanmlk](https://github.com/furqanmlk), [gabrieljackson](https://github.com/gabrieljackson), [gbochora](https://github.com/gbochora), [geonmo](https://github.com/geonmo), [hamzaMM](https://github.com/hamzaMM), [hannaparks](https://github.com/hannaparks), [hanzei](https://github.com/hanzei), [harshilsharma63](https://github.com/harshilsharma63), [hmhealey](https://github.com/hmhealey), [icq4ever](https://translate.mattermost.com/user/icq4ever), [ifoukarakis](https://github.com/ifoukarakis), [iomodo](https://github.com/iomodo), [isacikgoz](https://github.com/isacikgoz), [ivenkwan](https://github.com/ivenkwan), [jasonblais](https://github.com/jasonblais), [javaguirre](https://github.com/javaguirre), [jespino](https://github.com/jespino), [jfrerich](https://github.com/jfrerich), [jgilliam17](https://github.com/jgilliam17), [johndavidlugtu](https://github.com/johndavidlugtu), [johnsonbrothers](https://github.com/johnsonbrothers), [josephbaylon](https://github.com/josephbaylon), [jprusch](https://github.com/jprusch), [JtheBAB](https://github.com/JtheBAB), [JulienTant](https://github.com/JulienTant), [julmondragon](https://github.com/julmondragon), [justinegeffen](https://github.com/justinegeffen), [jwilander](https://github.com/jwilander), [kaakaa](https://github.com/kaakaa), [kayazeren](https://github.com/kayazeren), [KazminM](https://github.com/KazminM), [kevfocke](https://github.com/kevfocke), [koox00](https://github.com/koox00), [kostaspt](https://github.com/kostaspt), [krisfremen](https://github.com/krisfremen), [krmh04](https://github.com/krmh04), [Kshitij-Katiyar](https://github.com/Kshitij-Katiyar), [kwiersgalla](https://github.com/kwiersgalla), [kyeongsoosoo](https://github.com/kyeongsoosoo), [larkox](https://github.com/larkox), [levb](https://github.com/levb), [li11amy](https://github.com/li11amy), [lieut-data](https://github.com/lieut-data), [luc-ass](https://github.com/luc-ass), [lynn915](https://github.com/lynn915), [m-ripper](https://github.com/m-ripper), [M-ZubairAhmed](https://github.com/M-ZubairAhmed), [m1lt0n](https://github.com/m1lt0n), [majo](https://translate.mattermost.com/user/majo), [manojmalik20](https://github.com/manojmalik20), [maruTA-bis5](https://github.com/maruTA-bis5), [master7](https://translate.mattermost.com/user/master7), [matt-w99](https://github.com/matt-w99), [matthew-src](https://github.com/matthew-src), [matthew-w](https://translate.mattermost.com/user/matthew-w), [mdsystem](https://github.com/mdsystem), [mhd-sln](https://github.com/mhd-sln), [michelengelen](https://github.com/michelengelen), [mickmister](https://github.com/mickmister), [milotype](https://github.com/milotype), [mirshahriar](https://github.com/mirshahriar), [misaka10843](https://github.com/misaka10843), [mkraft](https://github.com/mkraft), [munish7771](https://github.com/munish7771), [mylonsuren](https://github.com/mylonsuren), [neallred](https://github.com/neallred), [neflyte](https://github.com/neflyte), [nevyangelova](https://github.com/nevyangelova), [nickmisasi](https://github.com/nickmisasi), [Nityanand13](https://github.com/Nityanand13), [noxer](https://github.com/noxer), [NuriInfos_JSK](https://translate.mattermost.com/user/NuriInfos_JSK), [nydhy](https://github.com/nydhy), [ogi-m](https://github.com/ogi-m), [oh6hay](https://github.com/oh6hay), [okias](https://github.com/okias), [oleksandr-kucheriavyi](https://github.com/oleksandr-kucheriavyi), [phuoc94](https://github.com/phuoc94), [pjenicot](https://github.com/pjenicot), [plant99](https://github.com/plant99), [potatogim](https://github.com/potatogim), [pvev](https://github.com/pvev), [Rajat-Dabade](https://github.com/Rajat-Dabade), [rimakan](https://github.com/rimakan), [ronzim](https://github.com/ronzim), [Roy-Orbison](https://github.com/Roy-Orbison), [sadohert](https://github.com/sadohert), [safakkizkin](https://github.com/safakkizkin), [saturninoabril](https://github.com/saturninoabril), [sbishel](https://github.com/sbishel), [SeoJoonsoo](https://github.com/SeoJoonsoo), [seoyeongeun](https://github.com/seoyeongeun), [Sharuru](https://github.com/Sharuru), [simcard0000](https://github.com/simcard0000), [sinansonmez](https://github.com/sinansonmez), [Sjazz](https://github.com/Sjazz), [sonichigo](https://github.com/sonichigo), [spirosoik](https://github.com/spirosoik), [sri-byte](https://github.com/sri-byte), [stafot](https://github.com/stafot), [stevemudie](https://github.com/stevemudie), [streamer45](https://github.com/streamer45), [stylianosrigas](https://github.com/stylianosrigas), [tboulis](https://github.com/tboulis), [tintou](https://github.com/tintou), [trilopin](https://github.com/trilopin), [tsabi](https://github.com/tsabi), [varghesejose2020](https://github.com/varghesejose2020), [vish9812](https://github.com/vish9812), [wgshtg](https://github.com/wgshtg), [wiggin77](https://github.com/wiggin77), [witjem](https://github.com/witjem), [worldworm](https://github.com/worldworm), [wuwinson](https://github.com/wuwinson), [yasserfaraazkhan](https://github.com/yasserfaraazkhan), [zeraussiul](https://github.com/zeraussiul), [zygfryd](https://github.com/zygfryd)
+
 ## Release v7.7 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
 
+- **v7.7.2, released 2023-03-01**
+  - Mattermost v7.7.2 contains medium to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - [Message Priority & Acknowledgement](https://docs.mattermost.com/configure/site-configuration-settings.html#message-priority) is now enabled by default for all instances. You may disable this feature in the System Console by going to **Posts > Message Priority** or via the config ``PostPriority`` setting.
+  - Fixed an issue where threads were not marked as unread in the Threads view.
+  - Fixed an issue where the server sent a wrong badge number when marking a message as unread in a Direct Message channel.
+  - Fixed an issue where the Team edition returned a 400 Bad request for attempts to check CWS availability.
+  - Fixed an issue where file uploading would appear "stuck" in processing state.
+  - Fixed an issue where the Shared Channels feature wasn't properly included in the Professional license.
 - **v7.7.1, released 2023-01-20**
   - Fixed an issue that prevented the creation of the initial admin user for new servers [MM-49720](https://mattermost.atlassian.net/browse/MM-49720).
   - Fixed an issue where the Top Channels for Insights didn't show results if the current user's configured timezone wasn't present in MySQL's ``mysql.time_zone_name table`` [MM-49688](https://mattermost.atlassian.net/browse/MM-49688).
@@ -654,6 +833,10 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ## Release v7.1 - [Extended Support Release](/upgrade/release-definitions.html#extended-support-release-esr)
 
+- **v7.1.6, released 2023-03-01**
+  - Mattermost v7.1.6 contains medium to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Fixed an issue where threads were not marked as unread in the Threads view.
+  - Fixed an issue where the server sent a wrong badge number when marking a message as unread in a Direct Message channel.
 - **v7.1.5, released 2022-12-21**
   - Mattermost v7.1.5 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Added a new schema migration to ensure ``ParentId`` column is dropped from the ``Posts`` table. Depending on the table size, if the column is not dropped before, a significant spike in database CPU usage is expected on MySQL databases. Writes to the table will be limited during the migration.

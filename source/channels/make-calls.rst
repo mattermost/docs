@@ -4,23 +4,17 @@ Start a call
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Mattermost supports voice calling and screen sharing functionality in channels, group messages, and direct messages from Mattermost v7.0 for Mattermost Cloud and Mattermost self-hosted deployments.
+From Mattermost v7.0, you can make voice calls and share your screen in channels, group messages, and direct messages in both Mattermost Cloud and Mattermost self-hosted deployments.
 
-- `Features <#features>`__
-- `Record calls <#record-calls>`__
-- `Frequently asked questions <#frequently_asked_questions>`__
+- `Start a call <#start-a-call>`__
+- `Emojis <#emojis>`__
+- `Chat in a call <#chat-in-a-call>`__
+- `Record a call <#record-a-call>`__
+- `Frequently asked questions <#frequently-asked-questions>`__
 - `Troubleshooting <#troubleshooting>`__
-
-   - `My call is disconnected after a few seconds <#my-call-is-disconnected-after-a-few-seconds>`__
-
-   - `I can't screen share using Mattermost desktop on macOS <#i-cant-screen-share-using-mattermost-desktop-on-macos>`__
-
 - `Debugging <#debugging>`__
 
-Features 
---------
-
-Starting from Mattermost v7.0, you can:
+From Mattermost v7.0, you can:
 
 - Start or join a call from desktop and mobile apps in addition to web browsers.
 - Share screen (not available on mobile), raise hands, chat in a thread, and even switch between products in the Mattermost suite (i.e., Channels, Boards, and Playbooks) while on a call.
@@ -33,20 +27,72 @@ Starting from Mattermost v7.7 you can:
 
 Mattermost Cloud users can start calling right out of the box. For Mattermost self-hosted deployments, System Admins need to enable the plugin and adjust configurations `in the System Console </configure/plugins-configuration-settings.html#calls>`_.
 
-To start a call, select **Start call** in the channel header. Any active team member in the channel can join a call, whether it's a public or private channel. If someone from outside of the organization wants to join a call, you'll need to provide them with a guest account, and add them to the channel. Users who are archived or not registered can't join a call.
+Start a call
+------------
+
+.. tabs::
+
+  .. tab:: Desktop
+
+    To start a call, select **Start call** in the channel or message header. When you start a call in a channel, you're muted by default. In a direct or group message you're unmuted by default.
+
+  .. tab:: Mobile
+     
+     To start a call, select the channel info menu. Then select **Start Call**. The call starts in speaker mode by default.
+
+Any active team member in the channel can join a call, whether it's a public or private channel. If someone from outside of the organization wants to join a call, you'll need to provide them with a guest account, and add them to the channel. Users who are archived or not registered can't join a call.
 
 You can share a call's link to use in a meeting request or share with other team mates. The link is unique to each channel, and contains the channel's ID, so it doesn't change between calls. Use the ``/call link`` slash command to generate a shareable link.
 
 The call link is valid for long as the channel is active. When a channel is archived or deleted the link will become invalid.
 
-Record calls
-------------
+Emojis
+------
 
-The host of a meeting can record the call. The recording includes audio as well as any screen sharing during the call. The default setting for a recording is 60 minutes, but your system admin may adjust that as needed. Ten minutes before the time limit, the host will receive a reminder that the recording limit will be reached soon.
+You can use emojis to react during a call.
+
+.. tabs::
+
+  .. tab:: Desktop
+
+    Expand the call window using the arrows in the top-right of the call widget. From there, select the emoji icon to access frequently-used emojis or select additional emojis from the emoji picker.
+
+  .. tab:: Mobile
+  
+    Expand the call window using the arrows in the top-right of the active call banner. From there, select **React**.
+      
+Chat in a call
+--------------
+
+A chat thread is created automatically for every new call.
+
+.. tabs::
+
+  .. tab:: Desktop
+
+    To do this, expand the call window using the arrows in the top-right of the call widget. From there, select the emoji icon to access frequently-used emojis or select additional emojis from the emoji picker.
+
+  .. tab:: Mobile
+  
+    To do this, expand the call window using the arrows in the top-right of the active call banner. The select **More > Call Thread**.
+    
+Record a call
+-------------
+
+From Mattermost v7.7 if you're the host of a meeting, you can record the call.
+
+The recording includes audio as well as any screen sharing during the call. The default setting for a recording is 60 minutes, but your system admin may adjust that as needed. Ten minutes before the time limit is reached, you'll receive a reminder that the recording limit will be reached soon.
 
 If your call is going to continue and you still want to record, once the first recording is complete you can start a new one immediately after.
 
-Call recordings are posted by the Calls bot directly in the call thread as normal file attachment and can be accessed by all users in the channel.
+When you stop recording, the recording is posted in the call thread as a file attachment. It's available to all users in the channel both during the call, and when the call has ended.
+
+To record a call:
+
+1. Select **Start call** in the header of the channel, group message, or direct message.
+2. Select the pop-out icon.
+3. In the pop-out screen, select the record button.
+4. To stop recording, select the record button again.
 
 Frequently asked questions
 --------------------------
@@ -59,7 +105,7 @@ The integration currently supports only voice calling and screen sharing. We're 
 Can I password-protect a call?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-No. Any member with sufficient permission to access the channel will be able to join the call.
+No. Any member with sufficient permission to access the channel can join the call.
 
 Is there encryption?
 ~~~~~~~~~~~~~~~~~~~~
@@ -69,36 +115,41 @@ Media (audio/video) is encrypted using security standards as part of WebRTC. It'
 Are there any third-party services involved?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The only external service used is Mattermost official STUN server (``stun.global.calls.mattermost.com``) which is configured as default. This is primarily used to find the public address of the Mattermost instance. The only information sent to this service is the IP addresses of clients connecting as no other traffic goes through it. It can be removed in case the ``ICE Host Override`` setting is provided.
+The only external service used is Mattermost official STUN server (``stun.global.calls.mattermost.com``) which is configured as default. This is primarily used to find the public address of the Mattermost server. The only information sent to this service is the IP addresses of clients connecting as no other traffic goes through it. It can be removed in the System Console if you want to provide an ``ICE Host Override`` setting instead.
 
 Troubleshooting
 ---------------
 
+My audio doesn't work when I join a call
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If you can hear the other participants in the call but they can't hear you, select the horizontal dots next to the call end button in the widget. From there, you can check and change your audio output and microphone settings. Select the horizontal dots again to close the menu.
+
 My call is disconnected after a few seconds
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-My call is disconnected after a few seconds and I can't transmit voice nor hear anything.
-
-This is usually a sign that the underlying UDP channel has not been established and the connection times out after ~10 seconds. When the connection has been established correctly an ``rtc connected`` line should appear in the client-side logs (JS console). There isn't a single solution as it depends on the infrastructure/deployment specifics. However, if you're a system or network admin, you may need to open up the UDP port or configure the network accordingly.
+This is usually a sign that the underlying UDP channel has not been established and the connection times out after ~10 seconds. When the connection has been established correctly an ``rtc connected`` line should appear in the client-side logs (JS console). There isn't a single solution as it depends on your infrastructure/deployment specifics. However, if you're a system or network admin, you may need to open up the UDP port or configure the network accordingly.
 
 I can't screen share using Mattermost desktop on macOS
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-There is a known bug on macOS with some versions of Chrome (which is used by Mattermost desktop). If you've given screen sharing permissions to Mattermost desktop, and are still unable to screen share, do the following:
+There's a known bug on macOS with some versions of Chrome (which is used by Mattermost desktop). If you've given screen sharing permissions to Mattermost desktop, and are still unable to screen share, do the following:
 
 1. Quit Mattermost.
 2. Open Terminal.
 3. In terminal, run: ``tccutil reset ScreenCapture Mattermost.Desktop``
 4. Restart Mattermost and start a call.
 5. Select **Screen share** and give it permissions again.
-6. Restart Mattermost.
+6. Restart Mattermost again.
+
+If the issue persists please post in the public calls channel.
 
 Debugging
 ---------
 
 If you experience issues with calls, collecting information is helpful as you can share it with us for debugging purposes.
 
-As with any other issue, but more importantly with calls, it’s very useful to provide date and time of when some problem occurred, with as much detail as possible so that information can be cross-checked with server logs as well. Also please include any reproduction steps if applicable. Other important information includes:
+As with any other issue, but more importantly with calls, it’s very useful to let us know the date and time that the problem occurred, with as much detail as possible so that information can be cross-checked with server logs. Also please include any reproduction steps if applicable. Other important information includes:
 
 - Browser/app version
 - Operating system type and version
@@ -109,9 +160,16 @@ JS console logs
 Web app
 ^^^^^^^
 
-- **Chrome**: CMD+OPTION+J (macOS)/CTRL+SHIFT+J (Windows, Linux, ChromeOS)
-- **Firefox**: CMD+SHIFT+J (macOS)/CTRL+SHIFT+J (Windows, Linux, ChromeOS).
-- **Safari**: Enable Developer Menu in **Safari > Preferences > Advanced > Show Develop Menu in Menu Bar**. Then **Develop > Show Javascript Console**. Right-click on the console and select **Save to file** to download the logs.
++---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Browser                         | Action                                                                                                                                                                                                                | 
++=================================+=======================================================================================================================================================================================================================+
+| **Chrome**                      | CMD+OPTION+J (macOS)                                                                                                                                                                                                  |
+|                                 | CTRL+SHIFT+J (Windows, Linux, ChromeOS)                                                                                                                                                                               | 
++---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Firefox**                     | CMD+SHIFT+J (macOS)/CTRL+SHIFT+J (Windows, Linux, ChromeOS)                                                                                                                                                           | 
++---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Safari**                      | Enable Developer Menu in **Safari > Preferences > Advanced > Show Develop Menu in Menu Bar**. Then **Develop > Show Javascript Console**. Right-click on the console and select **Save to file** to download the logs.|
++---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Desktop app
 ^^^^^^^^^^^
@@ -125,8 +183,8 @@ In cases where there are audio/video issues, difficulty in hearing other partici
 
 You can run this command in an active call or after leaving the call in question. However, we will only save data for the last joined call so joining again will delete the previous call's feedback.
 
-WebRTC internals (Chrome + Firefox only)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+WebRTC internals (Chrome and Firefox only)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This is an additional method for Chrome and Firefox users in cases where there are audio/video issues, difficulty in hearing other participants, and/or stuttering video and/or choppy audio.
 

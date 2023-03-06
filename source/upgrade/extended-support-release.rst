@@ -21,7 +21,7 @@ When an ESR is at the end of its life cycle, there will be announcements ahead o
 
 To receive updates about Extended Support Releases, sign up for our mailing list `here <https://eepurl.com/dCKn2P>`__.
 
-.. image:: ../images/esr.graphic.2.png
+.. image:: ../images/esr.png
    :alt: Timeline-based chart showing the lifecycle of Mattermost Extended Support Releases and feature releases from last year and this year.
 
 What is included in an Extended Support Release dot release? 
@@ -49,9 +49,9 @@ What are the current supported Extended Support Release versions?
 +-------------+----------------+------------------+------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------+
 | Version     | Type           | Release Date     | End of Support   | Latest Dot Release Download link                                                           | Upgrade Notes                                       |
 +=============+================+==================+==================+============================================================================================+=====================================================+
-| 7.8         | Feature        | February 16, 2023| November 15, 2023|                                                                                            |                                                     |
+| 7.8         | Feature        | February 16, 2023| November 15, 2023| `7.8.1 <https://releases.mattermost.com/7.8.1/mattermost-7.8.1-linux-amd64.tar.gz>`_       |                                                     |
 +-------------+----------------+------------------+------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------+
-| 7.1         | Feature        | July 15, 2022    | May 15, 2023     | `7.1.5 <https://releases.mattermost.com/7.1.5/mattermost-7.1.5-linux-amd64.tar.gz>`_       |                                                     |
+| 7.1         | Feature        | July 15, 2022    | May 15, 2023     | `7.1.6 <https://releases.mattermost.com/7.1.6/mattermost-7.1.6-linux-amd64.tar.gz>`_       |                                                     |
 +-------------+----------------+------------------+------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------+
 | 6.3         | Feature        | January 16, 2022 | October 15, 2022 | `6.3.10 <https://releases.mattermost.com/6.3.10/mattermost-6.3.10-linux-amd64.tar.gz>`_    |                                                     |
 +-------------+----------------+------------------+------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------+
