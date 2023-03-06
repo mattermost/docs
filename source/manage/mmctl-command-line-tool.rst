@@ -6010,7 +6010,7 @@ Migrate accounts from one authentication provider to another. For example, you c
 
 **Arguments**
 
-   **from_auth:**
+  **from_auth:**
       The authentication service to migrate users accounts from.
       Supported options: email, gitlab, google, ldap, office365, saml.
 
@@ -6027,7 +6027,7 @@ Migrate accounts from one authentication provider to another. For example, you c
       **users_file:**
          The path of a json file with the usernames and emails of all users to migrate to SAML. The username and email must be the same that the SAML service provider store. And the email must match with the email in mattermost database.
 
-.. code-block:: json
+.. code-block:: javascript
             Example json content:
             {
                "usr1@email.com": "usr.one",
