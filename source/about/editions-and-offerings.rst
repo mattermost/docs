@@ -84,7 +84,7 @@ This offering includes all the features of Mattermost Free, plus:
 
 - `Guest access </onboard/guest-accounts.html>`__ and `custom user groups </welcome/manage-custom-groups.html>`__.
 - `Active Directory/LDAP Single Sign-on and user synchronization </onboard/ad-ldap.html>`__.
-- Single Sign-on with `SAML </onboard/sso-saml.html>`_ or `Office365 </onboard/sso-office.html>`__.
+- Single Sign-on with `SAML </onboard/sso-saml.html>`__ or `Office365 </onboard/sso-office.html>`__.
 - `MFA enforcement </onboard/multi-factor-authentication.html#enforcing-mfa-e10>`__.
 - `Advanced team permissions </onboard/advanced-permissions.html#team-override-schemes-e20>`__.
 - `Read-only announcement channels </manage/team-channel-members.html#channel-moderation-e20>`__.
