@@ -53,7 +53,6 @@ Latest Mattermost Cloud releases:
  - Removed Boards limits from Cloud Starter subscription.
  - Enabled ``EnableOAuthServiceProvider`` by default.
  - Export files now contain the read and unread status for channels.
- - While upgrading a High Availability installation with rolling upgrades, after upgrading all nodes, the System Console may display a single disabled plugin. This is expected due to the way plugins are initialized. Prepackaged plugins are copied over to the plugins directory. Following another restart of the first node upgraded, the System Console should no longer show any plugins present or enabled.
  - Added the ``SentAt`` column to ``NotifyAdmin``.
  - Updated ``NotifyAdmin.RequiredFeature`` column type to ``varchar(255)``.
  - Updated ``NotifyAdmin.RequiredPlan`` column type to ``varchar(100)``.
@@ -61,8 +60,6 @@ Latest Mattermost Cloud releases:
  - Added the ability to delete a workspace via **System Console > Billing & Account > Subscription**.
  - Added an error message when running an LDAP sync with ``SyncEnabled`` set to ``false``.
  - Added Admin log table filtering and sorting.
- - Boards are served as an in-built product from within Mattermost server instead of a plugin and is now always enabled. While running in product mode, the Boards plugin will remain disabled. 
- - Added a new section in the **System Console** for products. For now, it only contains Boards-specific settings.
  - Go version was bumped to v1.19.
  - GraphQL APIs are now correctly counted when measuring performance telemetry.
  - Boards cards are no longer mentioned as being limited in the **System Console**, the limits usage modal, the downgrade modal, or the left-hand side menu.
@@ -94,7 +91,6 @@ Latest Mattermost Cloud releases:
  - The combined activity is broken when compact message display is enabled [MM-50475](https://mattermost.atlassian.net/browse/MM-50475).
  - Users are unable to type in the emoji picker to search for a custom status [MM-50798](https://mattermost.atlassian.net/browse/MM-50798).
  - Users are unable to see other users' custom status in the centre channel when Collapsed Reply Threads is disabled [MM-50321](https://mattermost.atlassian.net/browse/MM-50321).
- - Channel links to Boards are broken https://github.com/mattermost/focalboard/issues/4571.
  - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
 
 ## Release 2023-01-26
