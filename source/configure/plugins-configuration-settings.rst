@@ -568,8 +568,6 @@ ICE host override
 |   - A hostname (e.g. domain name) can be specified in this setting, but an IP address will be passed to clients. This means that a DNS resolution happens on the Mattermost instance which could result in a different IP address from the one the clients would see, causing connectivity to fail. When in doubt, we recommend using an IP address directly or confirming that the resolution on the host side reflects the one on the client.                           |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
-
 .. config:setting:: plugins-callsiceservers
   :displayname: ICE server configurations (Plugins - Calls)
   :systemconsole: Plugins > Calls
@@ -769,9 +767,11 @@ Maximum call recording duration
 .. include:: ../_static/badges/ent-selfhosted-only.rst
   :start-after: :nosearch:
 
-The maximum duration of a call recording in minutes. The default is 60 with a maximum of 180. A recording of a 60-minute call will result in a file of about 700 MB.
-
-This is a required value.
+ +------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------+
+ | The maximum duration of a call recording in minutes.  A recording of a 60-minute call will result in a file of about 700 MB. | - System Config path: **Plugins > Calls** |
+ |                                                                                                                              | - ``config.json`` setting: N/A            |
+ | The default is **60**. The maximum is **180**. This is a required value.                                                     | - Environment variable: N/A               |
+ +------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------+
 
 ----
 
