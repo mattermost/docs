@@ -750,9 +750,11 @@ Job service URL
 .. include:: ../_static/badges/ent-selfhosted-only.rst
   :start-after: :nosearch:
 
-The URL to a running job service where all the processing related to recordings happens. The recorded files produced are stored in Mattermost.
-
-This is a required field. Changing this setting requires a plugin restart to take effect.
++------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------+
+| The URL to a running job service where all the processing related to recordings happens. The recorded files produced are stored in Mattermost. | - System Config path: **Plugins > Calls** |
+|                                                                                                                                                | - ``config.json`` setting: N/A            |
+| This is a required field. Changing this setting requires a plugin restart to take effect.                                                      | - Environment variable: N/A               |
++------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------+
 
 .. config:setting:: plugins-maximumcallrecordingduration
   :displayname: Maximum call recording duration (Plugins - Calls)
