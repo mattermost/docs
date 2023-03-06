@@ -86,7 +86,7 @@ If you don't have a self-hosted license in the Customer Portal and want to add u
 Quarterly true-up report prior to v7.9
 --------------------------------------
 
-When you buy an annual Mattermost subscription, you agree to provide quarterly reports of the actual number of registered users within your system. A registered user is a user who has an account in a workspace and does not show as **Inactive** in **System Console > User Management > Users**.
+When you buy an annual Mattermost subscription, you agree to provide quarterly reports of the actual number of active users within your system. An active user is a user who has an account in a workspace and does not show as **Inactive** in **System Console > User Management > Users**.
 
 We'll send you an email notice around the end of the quarter reminding you to send us your report. 
 
