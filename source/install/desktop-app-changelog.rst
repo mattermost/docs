@@ -68,11 +68,6 @@ All Platforms
 - Fixed an issue where OneLogin users wouldn't have their credentials remembered.
 - Fixed an issue with plugin navigation displaying a white empty bar.
 
-Open Source Components
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-- 
-
 Known Issues
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
