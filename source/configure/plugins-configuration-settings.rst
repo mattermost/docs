@@ -707,9 +707,13 @@ RTCD service URL
 .. include:: ../_static/badges/ent-selfhosted-only.rst
   :start-after: :nosearch:
 
-The URL to a running `rtcd <https://github.com/mattermost/rtcd>`__ service instance that will host the calls. When set (non empty) all the calls will be handled by this external service.
-
-This is an optional field. Changing this setting requires a plugin restart to take effect.
++---------------------------------------------------------------------------------------------------------------+-------------------------------------------+
+| The URL to a running `rtcd <https://github.com/mattermost/rtcd>`__ service instance that will host the calls. | - System Config path: **Plugins > Calls** |
+|                                                                                                               | - ``config.json`` setting: N/A            |
+| When set (non empty) all the calls will be handled by this external service.                                  | - Environment variable: N/A               |
+|                                                                                                               |                                           |
+| This is an optional field. Changing this setting requires a plugin restart to take effect.                    |                                           |
++---------------------------------------------------------------------------------------------------------------+-------------------------------------------+
 
 .. config:setting:: plugins-enablecallrecordings
   :displayname: Enable call recordings (Plugins - Calls)
