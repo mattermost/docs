@@ -14,7 +14,11 @@ Latest Mattermost Releases:
 
 ## Release v7.8 - [Extended Support Release](https://docs.mattermost.com/upgrade/release-definitions.html#extended-support-release-esr)
 
-**Release Day: February 16, 2023**
+- **v7.8.1, released 2023-03-01**
+  - Mattermost v7.8.1 contains a medium level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Fixed an issue where the Shared Channels feature wasn't properly included in the Professional license.
+- **v7.8.0, released 2023-02-16**
+  - Original 7.8.0 release
 
 Mattermost v7.8.0 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
 
@@ -180,6 +184,14 @@ WHERE duplicates.rownum > 1;
 
 ## Release v7.7 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
 
+- **v7.7.2, released 2023-03-01**
+  - Mattermost v7.7.2 contains medium to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - [Message Priority & Acknowledgement](https://docs.mattermost.com/configure/site-configuration-settings.html#message-priority) is now enabled by default for all instances. You may disable this feature in the System Console by going to **Posts > Message Priority** or via the config ``PostPriority`` setting.
+  - Fixed an issue where threads were not marked as unread in the Threads view.
+  - Fixed an issue where the server sent a wrong badge number when marking a message as unread in a Direct Message channel.
+  - Fixed an issue where the Team edition returned a 400 Bad request for attempts to check CWS availability.
+  - Fixed an issue where file uploading would appear "stuck" in processing state.
+  - Fixed an issue where the Shared Channels feature wasn't properly included in the Professional license.
 - **v7.7.1, released 2023-01-20**
   - Fixed an issue that prevented the creation of the initial admin user for new servers [MM-49720](https://mattermost.atlassian.net/browse/MM-49720).
   - Fixed an issue where the Top Channels for Insights didn't show results if the current user's configured timezone wasn't present in MySQL's ``mysql.time_zone_name table`` [MM-49688](https://mattermost.atlassian.net/browse/MM-49688).
@@ -821,6 +833,10 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ## Release v7.1 - [Extended Support Release](/upgrade/release-definitions.html#extended-support-release-esr)
 
+- **v7.1.6, released 2023-03-01**
+  - Mattermost v7.1.6 contains medium to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Fixed an issue where threads were not marked as unread in the Threads view.
+  - Fixed an issue where the server sent a wrong badge number when marking a message as unread in a Direct Message channel.
 - **v7.1.5, released 2022-12-21**
   - Mattermost v7.1.5 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Added a new schema migration to ensure ``ParentId`` column is dropped from the ``Posts`` table. Depending on the table size, if the column is not dropped before, a significant spike in database CPU usage is expected on MySQL databases. Writes to the table will be limited during the migration.
