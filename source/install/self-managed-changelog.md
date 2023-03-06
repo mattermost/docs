@@ -18,7 +18,6 @@ Latest Mattermost Releases:
 ### Important Upgrade Notes
 
  - Added a new index on ``Posts(OriginalId)``. For a database with 11.8 million posts, on a machine with a i7-11800H CPU (8 cores, 16 threads), 32GiB of RAM and SSD, the index creation takes 98.51s on MYSQL and 2.6s on PostgreSQL. To avoid any table locking, servers using PostgreSQL are recommended to create the index online before performing the upgrade using the ``CONCURRENTLY`` option, as in ``CREATE INDEX CONCURRENTLY idx_posts_original_id ON Posts(OriginalId);``.
- - Boards is served as an in-built product from within the Mattermost server instead of a plugin. If you want to disable this, please set the ``MM_FEATUREFLAGS_BoardsProduct`` environment variable to ``false``. While running in product mode, the boards plugin will remain disabled.
 
 **IMPORTANT:** If you upgrade from a release earlier than v7.8, please read the other [Important Upgrade Notes](/upgrade/important-upgrade-notes.html).
 
@@ -59,13 +58,11 @@ Latest Mattermost Releases:
  - Boards cards are no longer mentioned as being limited in the **System Console**, the limits usage modal, the downgrade modal, or the left-hand side menu.
  - Removed unused ``ProductLimits.Integrations``.
  - Export files now contain the read and unread status for channels.
- - While upgrading a High Availability installation with rolling upgrades, after upgrading all nodes, the System Console may display a single disabled plugin. This is expected due to the way plugins are initialized. Prepackaged plugins are copied over to the plugins directory. Following another restart of the first node upgraded, the System Console should no longer show any plugins present or enabled.
  - Added an error message when running an LDAP sync with ``SyncEnabled`` set to ``false``.
  - Added Admin log table filtering and sorting.
  - GraphQL APIs are now correctly counted when measuring performance telemetry.
  - Added a dynamic call-to-action under the **System Console > True Up Review System** subsection for air-gapped and non-air-gapped systems.
  - Screened self-hosted purchases now block the Admin from re-attempting a purchase for three days.
- - Added a new section in the **System Console** for products. For now, it only contains Boards-specific settings.
 
 #### Performance
  - Reduced the rate that unreads are resynced when the window is focused from ten seconds to two minutes.
@@ -82,12 +79,6 @@ Latest Mattermost Releases:
  - Fixed an issue where C# syntax highlighting was not working.
  - Fixed an issue where incoming webhooks changed the user's activity while the user was offline/away.
  - Fixed an issue where usernames were not clickable in the right-hand side.
-
-### config.json
-Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
-
-#### Changes to Team Edition and Enterprise Edition:
- - Added a new config setting section ``ProductSettings``.
 
 ### API Changes
  - Added an ``exclude_files_count`` parameter to exclude file counts from the channel stats API.
