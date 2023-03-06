@@ -728,11 +728,14 @@ Enable call recordings (beta)
 .. include:: ../_static/badges/ent-selfhosted-only.rst
   :start-after: :nosearch:
 
-**True**: Allow call hosts to record meeting video and audio. Recordings include the entire call window view along with participants' audio track and any shared screen video. Recordings are stored in Mattermost.
-
-**False**: (Default) Call recording functionality is not available to hosts.
-
-Changing this setting requires a plugin restart to take effect.
++-------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------+
+| - **true**: Allows call hosts to record meeting video and audio.                                                                                      | - System Config path: **Plugins > Calls** |
+| - **false**: **(Default)** Call recording functionality is not available to hosts.                                                                    | - ``config.json`` setting: N/A            |
+|                                                                                                                                                       | - Environment variable: N/A               |
+| Recordings include the entire call window view along with participants' audio track and any shared screen video. Recordings are stored in Mattermost. |                                           |
+|                                                                                                                                                       |                                           |
+| Changing this setting requires a plugin restart to take effect.                                                                                       |                                           |
++-------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------+
 
 .. config:setting:: plugins-jobserviceurl
   :displayname: Job service URL (Plugins - Calls)
