@@ -61,7 +61,7 @@ Latest Mattermost Releases:
  - Added an error message when running an LDAP sync with ``SyncEnabled`` set to ``false``.
  - Added Admin log table filtering and sorting.
  - GraphQL APIs are now correctly counted when measuring performance telemetry.
- - Added a dynamic call-to-action under the **System Console > True Up Review System** subsection for air-gapped and non-air-gapped systems.
+ - Added a dynamic call-to-action under **System Console > Site Statistics and > Team Statistics** for air-gapped and non-air-gapped systems. The banner reminding about true-up follows the schedule [outlined here](https://docs.mattermost.com/about/self-hosted-subscriptions.html#quarterly-true-up-report).
  - Screened self-hosted purchases now block the Admin from re-attempting a purchase for three days.
 
 #### Performance
