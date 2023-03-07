@@ -60,13 +60,13 @@ All Platforms
 - Fixed an issue where image thumbnails did not always display in the downloads for MAS builds.
 - Fixed an issue where the Boards/Playbooks tabs sometimes didn't appear automatically when a server was added.
 - Fixed an issue where RPM conflicted with other Electron-based applications.
-- Fixed an issue where a websocket certificate wasn't trusted along with a HTTPS certificate for the same origin.
+- Fixed an issue where a custom certificate wasn't applied to the WebSocket connection along with the HTTP connection.
 - Fixed an issue where opening the app with a deeplink could cause the app not to redirect to the correct URL.
 - Fixed an issue with closing the Downloads drop-down menu when selecting **Show in folder**.
 - Fixed an issue with maximizing the main window when a monitor is removed.
 - Fixed an issue where special characters in the server name caused the top bar of the Desktop App to disappear.
 - Fixed an issue where OneLogin users wouldn't have their credentials remembered.
-- Fixed an issue with plugin navigation displaying a white empty bar.
+- Fixed an issue with plugin navigation displaying a white empty bar between the plugin UI and the Desktop app bar.
 
 Known Issues
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
