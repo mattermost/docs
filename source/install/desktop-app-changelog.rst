@@ -42,8 +42,8 @@ All Platforms
 - Added support for Gnome's "do-not-disturb" status.
 - Added a menu item for showing the logs folder.
 - Improved performance by reducing the number of calls for URL detection.
-- Changed the tray behavior on left click. Left-clicking on the system tray symbol now hides the application to system tray if it is already visible.
-- Defaulted to opening a file when it is clicked from the download list.
+- Changed the tray behavior on left-click. Left-clicking on the system tray Mattermost icon now hides the application to system tray if it's already visible.
+- Defaulted to opening a file when it's selected from the download list.
 
 Architectural Changes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -59,12 +59,12 @@ All Platforms
 - Fixed an issue where a user could open a blank Electron window using the main window.
 - Fixed an issue where image thumbnails did not always display in the downloads for MAS builds.
 - Fixed an issue where the Boards/Playbooks tabs sometimes didn't appear automatically when a server was added.
-- Fixed an issue where RPM conflicted with other Electron based applications.
+- Fixed an issue where RPM conflicted with other Electron-based applications.
 - Fixed an issue where a websocket certificate wasn't trusted along with a HTTPS certificate for the same origin.
 - Fixed an issue where opening the app with a deeplink could cause the app not to redirect to the correct URL.
-- Fixed an issue with closing the downloads dropdown menu when clicking "Show in folder".
-- Fixed an issue with maximizing the main window when a monitor removed.
-- Fixed an issue where special characters in the server name caused the top bar to disappear.
+- Fixed an issue with closing the Downloads drop-down menu when selecting **Show in folder**.
+- Fixed an issue with maximizing the main window when a monitor is removed.
+- Fixed an issue where special characters in the server name caused the top bar of the Desktop App to disappear.
 - Fixed an issue where OneLogin users wouldn't have their credentials remembered.
 - Fixed an issue with plugin navigation displaying a white empty bar.
 
@@ -72,8 +72,8 @@ Known Issues
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - Users seeing an endless "Loading..." screen when attempting to log in to the app may need to manually remove their cache directory. For MacOS it is located in ``/Users/<username>/Library/Containers/Mattermost/Data/Library/Application Support/Mattermost`` and for Windows it is located in ``Users/<username>/AppData/Roaming/Mattermost``.
-- On Linux, a left click on the tray icon doesn't open the app window but opens the tray menu.
-- Crashes might be be experienced in some Linux desktop clients. This is an upstream bug in the ``libnotifyapp`` library. A recommended workaround is to disable the system tray icon in the Desktop settings.
+- On Linux, a left-click on the Mattermost tray icon doesn't open the app window but opens the tray menu.
+- Crashes might be be experienced in some Linux desktop clients due to an upstream bug in the ``libnotifyapp`` library. A recommended workaround is to disable the Mattermost system tray icon via Desktop Settings.
 - On apps using GPO configurations, when adding a second server tab, it's possible to drag and drop tabs, but they'll jump back to the original position when releasing the mouse.
 
 Contributors
