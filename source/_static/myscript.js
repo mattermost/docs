@@ -173,7 +173,7 @@ $(document).ready(function () {
 	// Notification Banner
 
 	// NOTE: Change the notification_banner_key to something unique everytime it changes
-	const notification_banner_key = 'mmmst';
+	const notification_banner_key = 'mm_notification_banner__mst';
 
 	if (localStorage.getItem(notification_banner_key) === null) {
 		localStorage.setItem(notification_banner_key, true);
