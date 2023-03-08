@@ -169,32 +169,35 @@ $(document).ready(function () {
 				break;
 		}
 	});
+	
 	// Notification Banner
 
-	// For when we want to show the notification banner for feedback link
-	// if (localStorage.getItem("docsFeedback") === null) {
-	// 	localStorage.setItem('docsFeedback', true);
-	// 	$('.notification-bar').addClass('flex');
-	// 	$('body').addClass('with-notification');
-	// } else {
-	// 	const docsFeedbackItem = localStorage.getItem('docsFeedback');
+	// NOTE: Change the notification_banner_key to something unique everytime it changes
+	const notification_banner_key = 'mmmst';
 
-	// 	if (docsFeedbackItem == 'false') {
-	// 		$('.notification-bar').remove();
-	// 		$('body').removeClass('with-notification');
-	// 	} else {
-	// 		$('body').addClass('with-notification');
-	// 	}
-	// }
+	if (localStorage.getItem(notification_banner_key) === null) {
+		localStorage.setItem(notification_banner_key, true);
+		$('.notification-bar').addClass('flex');
+		$('body').addClass('with-notification');
+	} else {
+		const banner_state = localStorage.getItem(notification_banner_key);
 
+		if (banner_state == 'false') {
+			$('.notification-bar').remove();
+			$('body').removeClass('with-notification');
+		} else {
+			$('body').addClass('with-notification');
+		}
+	}
 
 	$('body').on('click', '.notification-bar__close', function(){
 		$('.notification-bar').remove();
 		$('body').removeClass('with-notification');
-		// localStorage.setItem('docsFeedback', false);
+		localStorage.setItem(notification_banner_key, false);
 	});
 
 });
+
 // Redesign - Navigation
 document.addEventListener("DOMContentLoaded", function(event) {     
     const hamburger = document.getElementById('hamburger');
