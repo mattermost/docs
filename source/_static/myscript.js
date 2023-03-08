@@ -173,6 +173,9 @@ $(document).ready(function () {
 	// Notification Banner
 
 	// NOTE: Change the notification_banner_key to something unique everytime it changes
+	// So it will show up for new announcements
+	// Keep "mm_notification_banner__" at the beginning of the key
+	// Add system to clean out storage items that are no longer needed
 	const notification_banner_key = 'mm_notification_banner__mst';
 
 	if (localStorage.getItem(notification_banner_key) === null) {
