@@ -911,9 +911,11 @@ This plugin is used to post GIFs from Gfycat, Giphy, or Tenor using slash comman
 Enable plugin
 ~~~~~~~~~~~~~
 
-**True**: Enables the GIF commands plugin on your Mattermost server.
-
-**False**: Disables the GIF commands plugin on your Mattermost server.
++--------------------------------------------------------------------------+--------------------------------------------------+
+| - **true**: Enables the GIF commands plugin on your Mattermost server.   | - System Config path: **Plugins > GIF commands** |
+| - **false**: Disables the GIF commands plugin on your Mattermost server. | - ``config.json`` setting: N/A                   |
+|                                                                          | - Environment variable: N/A                      |
++--------------------------------------------------------------------------+--------------------------------------------------+
 
 .. config:setting:: plugins-gifdisplayas
   :displayname: Display the GIF as (Plugins - GIF)
@@ -925,10 +927,15 @@ Enable plugin
 Display the GIF as
 ~~~~~~~~~~~~~~~~~~
 
-Display the GIF as an embedded image where the GIF can't be collapsed, or as a collapsible image preview where the full URL displays.
-
-.. note::
-   `Link previews <https://docs.mattermost.com/configure/configuration-settings.html#enable-link-previews>`__ must be enabled in order to display GIF link previews. Mattermost deployments restricted to access behind a firewall must open port 443 to both ``https://api.gfycat.com/v1`` and ``https://gfycat.com/<id>`` (for all request types) for this feature to work.
++---------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------+
+| Display the GIF as an embedded image where the GIF can't be collapsed, or as a collapsible image preview where the full URL displays. | - System Config path: **Plugins > GIF commands** |
+|                                                                                                                                       | - ``config.json`` setting: N/A                   |
+|                                                                                                                                       | - Environment variable: N/A                      |
++---------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------+
+| **Note**:                                                                                                                                                                                | 
+|  - `Link previews <https://docs.mattermost.com/configure/site-configuration-settings.html#enable-website-link-previews>`__ must be enabled to display GIF previews.                      |
+|  -  Mattermost deployments behind a firewall must open port 443 to both ``https://api.gfycat.com/v1`` and ``https://gfycat.com/<id>`` for all request types.                             |
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: plugins-gifprovider
   :displayname: GIF provider (Plugins - GIF)
