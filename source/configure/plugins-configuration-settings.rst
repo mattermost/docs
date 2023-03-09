@@ -861,9 +861,11 @@ Access the following configuration settings in the System Console by going to **
 Enable plugin
 ~~~~~~~~~~~~~
 
-**True**: Enables the Demo plugin on your Mattermost workspace.
-
-**False**: Disables the Demo plugin on your Mattermost workspace.
++---------------------------------------------------------------------+-------------------------------------------------+
+| - **true**: Enables the Demo plugin on your Mattermost workspace.   | - System Config path: **Plugins > Demo Plugin** |
+| - **false**: Disables the Demo plugin on your Mattermost workspace. | - ``config.json`` setting: N/A                  |
+|                                                                     | - Environment variable: N/A                     |
++---------------------------------------------------------------------+-------------------------------------------------+
 
 .. config:setting:: plugins-demochannelname
   :displayname: Channel name (Plugins - Demo)
