@@ -965,11 +965,12 @@ GIF provider
 Giphy/Tenor API key
 ~~~~~~~~~~~~~~~~~~~
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------+
-| Configure your own API key when specifying the GIF Provider as GIPHY or Tenor. An API key is not required for Gfycat.                                              | - System Config path: **Plugins > GIF commands** |
-|                                                                                                                                                                    | - ``config.json`` setting: N/A                   |
-| See the `GIPHY <https://developers.giphy.com/docs/api/#quick-start-guide>`__ or `Tenor <https://tenor.com/developer/keyregistration>`__ documentation for details. | - Environment variable: N/A                      |
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------+--------------------------------------------------+
+| Configure your own API key when specifying the GIF Provider as GIPHY or Tenor. An API key is not required for Gfycat. | - System Config path: **Plugins > GIF commands** |
+|                                                                                                                       | - ``config.json`` setting: N/A                   |
+| See the `GIPHY <https://developers.giphy.com/docs/api/#quick-start-guide>`__                                          | - Environment variable: N/A                      |
+| or `Tenor <https://tenor.com/developer/keyregistration>`__ documentation for details.                                 |                                                  |
++-----------------------------------------------------------------------------------------------------------------------+--------------------------------------------------+
 
 .. config:setting:: plugins-gifcontentrating
   :displayname: Content rating (GIPHY & Tenor only) (Plugins - GIF)
@@ -981,7 +982,11 @@ Giphy/Tenor API key
 Content rating (GIPHY & Tenor only)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Select an `MPAA-style content rating <https://en.wikipedia.org/wiki/Motion_Picture_Association_film_rating_system>`__ for GIFs from GIPHY or Tenor. Leave this field empty to disable content filtering.
++-----------------------------------------------------------------------------------------------------------------------+--------------------------------------------------+
+| Select an `MPAA-style content rating <https://en.wikipedia.org/wiki/Motion_Picture_Association_film_rating_system>`__ | - System Config path: **Plugins > GIF commands** |
+| for GIFs from GIPHY or Tenor.                                                                                         | - ``config.json`` setting: N/A                   |
+| Leave this field empty to disable content filtering.                                                                  | - Environment variable: N/A                      |
++-----------------------------------------------------------------------------------------------------------------------+--------------------------------------------------+
 
 .. config:setting:: plugins-gifgfycatdisplaystyle
   :displayname: Gfycat display style (Plugins - GIF)
