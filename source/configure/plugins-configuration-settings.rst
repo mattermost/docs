@@ -965,9 +965,11 @@ GIF provider
 Giphy/Tenor API key
 ~~~~~~~~~~~~~~~~~~~
 
-Configure your own API key when specifying the GIF Provider as GIPHY or Tenor. An API key is not required for Gfycat.
-
-To get your own API key, see the `GIPHY Developers Quick Start <https://developers.giphy.com/docs/api/#quick-start-guide>`__ documentation, or the `Tenor Developer <https://tenor.com/developer/keyregistration>`__ documentation for details.
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------+
+| Configure your own API key when specifying the GIF Provider as GIPHY or Tenor. An API key is not required for Gfycat.                                              | - System Config path: **Plugins > GIF commands** |
+|                                                                                                                                                                    | - ``config.json`` setting: N/A                   |
+| See the `GIPHY <https://developers.giphy.com/docs/api/#quick-start-guide>`__ or `Tenor <https://tenor.com/developer/keyregistration>`__ documentation for details. | - Environment variable: N/A                      |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------+
 
 .. config:setting:: plugins-gifcontentrating
   :displayname: Content rating (GIPHY & Tenor only) (Plugins - GIF)
