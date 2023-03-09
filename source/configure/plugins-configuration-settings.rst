@@ -1087,9 +1087,11 @@ Access the following configuration settings in the System Console by going to **
 Enable plugin
 ~~~~~~~~~~~~~
 
-**True**: Enables the Mattermost Playbooks plugin on your Mattermost workspace.
-
-**False**: Disables the Mattermost Playbooks plugin on your Mattermost workspace.
++-------------------------------------------------------------------------------------+-----------------------------------------------+
+| - **true**: Enables the Mattermost Playbooks plugin on your Mattermost workspace.   | - System Config path: **Plugins > Playbooks** |
+| - **false**: Disables the Mattermost Playbooks plugin on your Mattermost workspace. | - ``config.json`` setting: N/A                |
+|                                                                                     | - Environment variable: N/A                   |
++-------------------------------------------------------------------------------------+-----------------------------------------------+
 
 .. config:setting:: plugins-playbooksenabledteams
   :displayname: Enabled teams (Plugins - Playbooks)
