@@ -1123,9 +1123,11 @@ Enabled teams
 Enable experimental features
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**True**: Enables experimental Playbooks features on your Mattermost workspace.
-
-**False**: Disables experimental Playbooks features on your Mattermost workspace.
++-------------------------------------------------------------------------------------+-----------------------------------------------+
+| - **true**: Enables experimental Playbooks features on your Mattermost workspace.   | - System Config path: **Plugins > Playbooks** |
+| - **false**: Disables experimental Playbooks features on your Mattermost workspace. | - ``config.json`` setting: N/A                |
+|                                                                                     | - Environment variable: N/A                   |
++-------------------------------------------------------------------------------------+-----------------------------------------------+
 
 ----
 
