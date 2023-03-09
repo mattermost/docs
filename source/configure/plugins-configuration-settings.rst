@@ -1165,15 +1165,19 @@ Enable plugin
   :configjson: N/A
   :environment: N/A
 
-  - **true**: A user satisfaction survey will be sent out to all users on a quarterly basis.
+  - **true**: A user satisfaction survey is sent to all users every quarter.
   - **false**: User satisfaction surveys are disabled.
 
 Enable user satisfaction survey
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**True**: A user satisfaction survey will be sent out to all users on a quarterly basis. The survey results will be used by Mattermost, Inc. to improve the quality and user experience of the product. Please refer to the `Mattermost Privacy Policy <https://mattermost.com/privacy-policy/>`__ for more information on the collection and use of information received through Mattermost services.
-
-**False**: User satisfaction surveys are disabled.
++-----------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------+
+| - **true**: A survey is sent to all users every quarter. Results are used by Mattermost, Inc. to improve the product. | - System Config path: **Plugins > User Satisfaction Surveys** |
+|                                                                                                                       | - ``config.json`` setting: N/A                                |
+| - **false**: User satisfaction surveys are disabled.                                                                  | - Environment variable: N/A                                   |
++-----------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------+
+| **Note**: See the `Mattermost Privacy Policy <https://mattermost.com/privacy-policy/>`__ for more information on the collection and use of information by Mattermost.                 |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ----
 
