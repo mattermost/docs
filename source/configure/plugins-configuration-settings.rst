@@ -1058,15 +1058,17 @@ Language
   :configjson: N/A
   :environment: N/A
 
-  - **true**: Enabled by default to prevent accidental posting of inappropriate GIFs from a provider that does not support content rating filtering.
+  - **true**: Prevents accidental posting of inappropriate GIFs from a provider that does not support content rating filtering.
   - **false**: Both ``/gif`` and ``/gifs`` slash commands are available for the GIF commands plugin on your Mattermost server.
 
 Force GIF preview before posting (force /gifs)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**True**: Enabled by default to prevent accidental posting of inappropriate GIFs from a provider that does not support content rating filtering.
-
-**False**: Both ``/gif`` and ``/gifs`` slash commands are available for the GIF commands plugin on your Mattermost server.
++---------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------+
+| - **true**: **(Default)** Prevents accidental posting of inappropriate GIFs from a provider that does not support content rating filtering. | - System Config path: **Plugins > GIF commands** |
+| - **false**: Both ``/gif`` and ``/gifs`` slash commands are available for the GIF commands plugin on your Mattermost server.                | - ``config.json`` setting: N/A                   |
+|                                                                                                                                             | - Environment variable: N/A                      |
++---------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------+
 
 ----
 
