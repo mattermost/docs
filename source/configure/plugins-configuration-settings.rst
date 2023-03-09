@@ -1105,7 +1105,11 @@ Enable plugin
 Enabled teams
 ~~~~~~~~~~~~~
 
-Enable Playbooks for all Mattermost teams, or for only selected teams.
++------------------------------------------------------------------------+-----------------------------------------------+
+| Enable Playbooks for all Mattermost teams, or for only selected teams. | - System Config path: **Plugins > Playbooks** |
+|                                                                        | - ``config.json`` setting: N/A                |
+|                                                                        | - Environment variable: N/A                   |
++------------------------------------------------------------------------+-----------------------------------------------+
 
 .. config:setting:: plugins-playbooksexperimentalfeatures
   :displayname: Enable experimental features (Plugins - Playbooks)
