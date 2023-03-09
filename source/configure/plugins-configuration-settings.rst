@@ -1059,9 +1059,11 @@ Access the following configuration settings in the System Console by going to **
 Enable plugin
 ~~~~~~~~~~~~~
 
-**True**: Enables the Mattermost Boards plugin on your Mattermost workspace.
-
-**False**: Disables the Mattermost Boards plugin on your Mattermost workspace.
++----------------------------------------------------------------------------------+-------------------------------------------------------+
+| - **true**: Enables the Mattermost Boards plugin on your Mattermost workspace.   | - System Config path: **Plugins > Mattermost Boards** |
+| - **false**: Disables the Mattermost Boards plugin on your Mattermost workspace. | - ``config.json`` setting: N/A                        |
+|                                                                                  | - Environment variable: N/A                           |
++----------------------------------------------------------------------------------+-------------------------------------------------------+
 
 ----
 
