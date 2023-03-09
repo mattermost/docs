@@ -37,6 +37,7 @@ Latest Mattermost Releases:
 ### Improvements
 
 #### User Interface (UI)
+ - Prepackaged Calls v0.14.0.
  - All post components were removed in favor of a unified approach.
  - App bindings are now refreshed when a App plugin-enabled event gets triggered.
  - Improvements were added to the sidebar channel and category menus.
