@@ -998,7 +998,11 @@ Content rating (GIPHY & Tenor only)
 Gfycat display style
 ~~~~~~~~~~~~~~~~~~~~
 
-Specify the display style for GIFs from Gfycat. See the `Gfycat Developer API <https://developers.gfycat.com/api/>`__ documentation for details.
++-------------------------------------------------------------------------------+--------------------------------------------------+
+| Specify the display style for GIFs from Gfycat. See the `Gfycat Developer API | - System Config path: **Plugins > GIF commands** |
+| <https://developers.gfycat.com/api/>`__ documentation for details.            | - ``config.json`` setting: N/A                   |
+|                                                                               | - Environment variable: N/A                      |
++-------------------------------------------------------------------------------+--------------------------------------------------+
 
 .. config:setting:: plugins-gifgiphydisplaystyle
   :displayname: GIPHY display style (Plugins - GIF)
@@ -1010,7 +1014,11 @@ Specify the display style for GIFs from Gfycat. See the `Gfycat Developer API <h
 GIPHY display style
 ~~~~~~~~~~~~~~~~~~~
 
-Specify the display style for GIFs from GIPHY. See the `GIPHY Developers Rendition Guide <https://developers.giphy.com/docs/optional-settings/>`__ for details.
++----------------------------------------------------------------------------------------+--------------------------------------------------+
+| Specify the display style for GIFs from GIPHY. See the `GIPHY Developers               | - System Config path: **Plugins > GIF commands** |
+| Rendition Guide <https://developers.giphy.com/docs/optional-settings/>`__ for details. | - ``config.json`` setting: N/A                   |
+|                                                                                        | - Environment variable: N/A                      |
++----------------------------------------------------------------------------------------+--------------------------------------------------+
 
 .. config:setting:: plugins-giftenordisplaystyle
   :displayname: Tenor display style (Plugins - GIF)
@@ -1022,7 +1030,11 @@ Specify the display style for GIFs from GIPHY. See the `GIPHY Developers Renditi
 Tenor display style
 ~~~~~~~~~~~~~~~~~~~
 
-Specify the display style for GIFs from Tenor. See the `Tenor API <https://tenor.com/gifapi/documentation#responseobjects-gifformat>`__ documentation for details.
++--------------------------------------------------------------------------------------------------+--------------------------------------------------+
+| Specify the display style for GIFs from Tenor. See the `Tenor API                                | - System Config path: **Plugins > GIF commands** |
+| <https://tenor.com/gifapi/documentation#responseobjects-gifformat>`__ documentation for details. | - ``config.json`` setting: N/A                   |
+|                                                                                                  | - Environment variable: N/A                      |
++--------------------------------------------------------------------------------------------------+--------------------------------------------------+
 
 .. config:setting:: plugins-giflanguage
   :displayname: Language (Plugins - GIF)
@@ -1034,7 +1046,11 @@ Specify the display style for GIFs from Tenor. See the `Tenor API <https://tenor
 Language
 ~~~~~~~~
 
-Specify the language used to search GIFs from GIPHY. See the `GIPHY Developers Language Support <https://developers.giphy.com/docs/optional-settings/#language-support>`__ documentation for details.
++-----------------------------------------------------------------------------------------+--------------------------------------------------+
+| Specify the language used to search GIFs from GIPHY. See the `GIPHY Developers Language | - System Config path: **Plugins > GIF commands** |
+| Support <https://developers.giphy.com/docs/optional-settings/#language-support>`__      | - ``config.json`` setting: N/A                   |
+| documentation for details.                                                              | - Environment variable: N/A                      |
++-----------------------------------------------------------------------------------------+--------------------------------------------------+
 
 .. config:setting:: plugins-gifforcepreview
   :displayname: Force GIF preview before posting (force /gifs) (Plugins - GIF)
