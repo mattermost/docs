@@ -942,15 +942,18 @@ Display the GIF as
   :systemconsole: Plugins > GIF commands
   :configjson: N/A
   :environment: N/A
-  :description: Specify the GIF provider as GIPHY, Tenor, or Gfycat.
+  :description: Specify the GIF provider as **GIPHY**, **Tenor**, or **Gfycat**.
 
 GIF provider
 ~~~~~~~~~~~~
 
-Specify the GIF provider as GIPHY, Tenor, or Gfycat.
-
-.. note::
-  Selecting GIPHY or Tenor requires an API Key for this feature to work. An API key is not required for Gfycat.
++-------------------------------------------------------------------+-----------------------------------------------------+
+| Specify the GIF provider as **GIPHY**, **Tenor**, or **Gfycat**.  | - System Config path: **Plugins > GIF commands**    |
+|                                                                   | - ``config.json`` setting: N/A                      |
+|                                                                   | - Environment variable: N/A                         |
++-------------------------------------------------------------------+-----------------------------------------------------+
+| **Note**: Selecting GIPHY or Tenor requires an API key. A key is not required for Gfycat.                               |
++-------------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: plugins-gifgiphytenorapikey
   :displayname: Giphy/Tenor API key (Plugins - GIF)
