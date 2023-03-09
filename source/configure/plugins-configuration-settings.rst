@@ -877,7 +877,11 @@ Enable plugin
 Channel name
 ~~~~~~~~~~~~
 
-Specify the channel to use as part of the demo plugin. If the specified channel does not exist, the plugin creates the channel for you.
++----------------------------------------------------------------------------------+-------------------------------------------------+
+| Specify the channel to use as part of the demo plugin.                           | - System Config path: **Plugins > Demo Plugin** |
+|                                                                                  | - ``config.json`` setting: N/A                  |
+| If the specified channel does not exist, the plugin creates the channel for you. | - Environment variable: N/A                     |
++----------------------------------------------------------------------------------+-------------------------------------------------+
 
 .. config:setting:: plugins-demousername
   :displayname: Username (Plugins - Demo)
@@ -889,7 +893,11 @@ Specify the channel to use as part of the demo plugin. If the specified channel 
 Username
 ~~~~~~~~
 
-Specify the user to use as part of the demo plugin. If the specified user does not exist, the plugin creates the user for you.
++----------------------------------------------------------------------------+-------------------------------------------------+
+| Specify the user for the demo plugin.                                      | - System Config path: **Plugins > Demo Plugin** |
+|                                                                            | - ``config.json`` setting: N/A                  |
+| If the specified user does not exist, the plugin creates the user for you. | - Environment variable: N/A                     |
++----------------------------------------------------------------------------+-------------------------------------------------+
 
 ----
 
