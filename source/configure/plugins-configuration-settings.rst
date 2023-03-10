@@ -824,8 +824,8 @@ Access the following configuration settings in the System Console by going to **
 .. config:setting:: plugins-channelexportenable
   :displayname: Enable plugin (Plugins - Channel Export)
   :systemconsole: Plugins > Channel Export
-  :configjson: N/A
-  :environment: N/A
+  :configjson: 
+  :environment: 
 
   - **true**: Enables the Channel Export plugin on your Mattermost workspace.
   - **false**: Disables the Channel Export plugin on your Mattermost workspace.
@@ -835,8 +835,8 @@ Enable Plugin
 
 +-------------------------------------------------------------------------------+----------------------------------------------------+
 | - **true**: Enables the Channel Export plugin on your Mattermost workspace.   | - System Config path: **Plugins > Channel Export** |
-| - **false**: Disables the Channel Export plugin on your Mattermost workspace. | - ``config.json`` setting: N/A                     |
-|                                                                               | - Environment variable: N/A                        |
+| - **false**: Disables the Channel Export plugin on your Mattermost workspace. | - ``config.json`` setting:                         |
+|                                                                               | - Environment variable:                            |
 +-------------------------------------------------------------------------------+----------------------------------------------------+
 
 ----
@@ -852,8 +852,8 @@ Access the following configuration settings in the System Console by going to **
 .. config:setting:: plugins-demoenable
   :displayname: Enable plugin (Plugins - Demo)
   :systemconsole: Plugins > Demo Plugin
-  :configjson: N/A
-  :environment: N/A
+  :configjson: 
+  :environment: 
 
   - **true**: Enables the Demo plugin on your Mattermost workspace.
   - **false**: Disables the Demo plugin on your Mattermost workspace.
@@ -863,15 +863,15 @@ Enable plugin
 
 +---------------------------------------------------------------------+-------------------------------------------------+
 | - **true**: Enables the Demo plugin on your Mattermost workspace.   | - System Config path: **Plugins > Demo Plugin** |
-| - **false**: Disables the Demo plugin on your Mattermost workspace. | - ``config.json`` setting: N/A                  |
-|                                                                     | - Environment variable: N/A                     |
+| - **false**: Disables the Demo plugin on your Mattermost workspace. | - ``config.json`` setting:                      |
+|                                                                     | - Environment variable:                         |
 +---------------------------------------------------------------------+-------------------------------------------------+
 
 .. config:setting:: plugins-demochannelname
   :displayname: Channel name (Plugins - Demo)
   :systemconsole: Plugins > Demo Plugin
-  :configjson: N/A
-  :environment: N/A
+  :configjson: 
+  :environment: 
   :description: Specify the channel to use as part of the demo plugin. If the specified channel does not exist, the plugin creates the channel for you.
 
 Channel name
@@ -879,15 +879,15 @@ Channel name
 
 +----------------------------------------------------------------------------------+-------------------------------------------------+
 | Specify the channel to use as part of the demo plugin.                           | - System Config path: **Plugins > Demo Plugin** |
-|                                                                                  | - ``config.json`` setting: N/A                  |
-| If the specified channel does not exist, the plugin creates the channel for you. | - Environment variable: N/A                     |
+|                                                                                  | - ``config.json`` setting:                      |
+| If the specified channel does not exist, the plugin creates the channel for you. | - Environment variable:                         |
 +----------------------------------------------------------------------------------+-------------------------------------------------+
 
 .. config:setting:: plugins-demousername
   :displayname: Username (Plugins - Demo)
   :systemconsole: Plugins > Demo Plugin
-  :configjson: N/A
-  :environment: N/A
+  :configjson: 
+  :environment: 
   :description: Specify the user to use as part of the demo plugin. If the specified user does not exist, the plugin creates the user for you.
 
 Username
@@ -895,8 +895,8 @@ Username
 
 +----------------------------------------------------------------------------+-------------------------------------------------+
 | Specify the user for the demo plugin.                                      | - System Config path: **Plugins > Demo Plugin** |
-|                                                                            | - ``config.json`` setting: N/A                  |
-| If the specified user does not exist, the plugin creates the user for you. | - Environment variable: N/A                     |
+|                                                                            | - ``config.json`` setting:                      |
+| If the specified user does not exist, the plugin creates the user for you. | - Environment variable:                         |
 +----------------------------------------------------------------------------+-------------------------------------------------+
 
 ----
