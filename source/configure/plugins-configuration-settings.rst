@@ -88,16 +88,13 @@ Automatic prepackaged plugins
   :displayname: Upload Plugin (Plugins - Management)
   :systemconsole: Plugins > Plugin Management
   :configjson: EnableUploads
-  :environment: N/A
-
-  - **true**:  Enables uploading of plugins from your local computer to your Mattermost server for all System Admins.
-  - **false**: **(Default)** Disables uploading of plugins from your local computer to your Mattermost server for all System Admins.
+  :environment: MM_PLUGINSETTINGS_ENABLEUPLOADS
 
 Upload Plugin
 ~~~~~~~~~~~~~
 
 +------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
-| - **true**:  Enables uploading of plugins from your local computer to your Mattermost server for all System Admins.                | - System Config path: **Plugins > Plugin Management**                  |
+| - **true**:  Enables uploading of plugins from your local computer to your Mattermost server for all system admins.                | - System Config path: **Plugins > Plugin Management**                  |
 | - **false**: **(Default)** Disables uploading of plugins from your local computer to your Mattermost server for all system admins. | - ``config.json`` setting: ``.PluginSettings.EnableUploads: false``    |
 |                                                                                                                                    | - Environment variable: ``MM_PLUGINSETTINGS_ENABLEUPLOADS``            |
 +------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
