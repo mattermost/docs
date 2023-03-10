@@ -2484,12 +2484,12 @@ html_static_path = ["_static"]
 # A list of CSS files. The entry must be a filename string or a tuple containing the filename string and the attributes
 # dictionary. The filename must be relative to the html_static_path, or a full URI with scheme like
 # https://example.org/style.css. The attributes is used for attributes of <link> tag. It defaults to an empty list.
-html_css_files = ["mytheme.css?v=v7", "css/compass-icons.css"]
+html_css_files = ["mytheme.css?version=v8", "css/compass-icons.css"]
 
 # A list of JavaScript filenames. The entry must be a filename string or a tuple containing the filename string and the
 # attributes dictionary. The filename must be relative to the html_static_path, or a full URI with scheme like
 # https://example.org/script.js. The attributes is used for attributes of <script> tag. It defaults to an empty list.
-html_js_files = ["myscript.js?v=v2"]
+html_js_files = ["myscript.js?version=v3"]
 
 # The name of an image file, relative to the configuration directory, to use as favicon of the docs.  This file should
 # be a Windows icon file (.ico) being 16x16 or 32x32 pixels in size.
