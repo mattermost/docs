@@ -30,7 +30,7 @@ Mattermost v7.8.0 contains low to high severity level security fixes. [Upgrading
 
 SQL to check the presence of duplicate data:                                                                                                             
 
-``SELECT user_id, board_id, count(*) AS count FROM focalboard_category_boards WHERE delete_at = 0 GROUP BY user_id, board_id HAVING count(*) > 1;``       
+``SELECT user_id, board_id, count(*) AS count FROM focalboard_category_boards GROUP BY user_id, board_id HAVING count(*) > 1;``
 
 SQL to delete duplicate data:                                                                                                                             
 
