@@ -84,6 +84,25 @@ Automatic prepackaged plugins
 |                                                                                                                                                                                 | - Environment variable: ``MM_PLUGINSETTINGS_AUTOMATICPREPACKAGEDPLUGINS``        |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
 
+.. config:setting:: plugins-enableuploads
+  :displayname: Upload Plugin (Plugins - Management)
+  :systemconsole: Plugins > Plugin Management
+  :configjson: EnableUploads
+  :environment: N/A
+
+  - **true**:  Enables uploading of plugins from your local computer to your Mattermost server for all System Admins.
+  - **false**: **(Default)** Disables uploading of plugins from your local computer to your Mattermost server for all System Admins.
+
+Upload Plugin
+~~~~~~~~~~~~~
+
++------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
+| - **true**:  Enables uploading of plugins from your local computer to your Mattermost server for all System Admins.                | - System Config path: **Plugins > Plugin Management**                  |
+| - **false**: **(Default)** Disables uploading of plugins from your local computer to your Mattermost server for all System Admins. | - ``config.json`` setting: ``.PluginSettings.EnableUploads: false``    |
+|                                                                                                                                    | - Environment variable: ``MM_PLUGINSETTINGS_ENABLEUPLOADS``            |
++------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
+
+
 .. config:setting:: plugins-enablemarketplace
   :displayname: Enable marketplace (Plugins - Management)
   :systemconsole: Plugins > Plugin Management
