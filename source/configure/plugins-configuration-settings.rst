@@ -98,7 +98,7 @@ Upload Plugin
 
 +------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
 | - **true**:  Enables uploading of plugins from your local computer to your Mattermost server for all System Admins.                | - System Config path: **Plugins > Plugin Management**                  |
-| - **false**: **(Default)** Disables uploading of plugins from your local computer to your Mattermost server for all System Admins. | - ``config.json`` setting: ``.PluginSettings.EnableUploads: false``    |
+| - **false**: **(Default)** Disables uploading of plugins from your local computer to your Mattermost server for all system admins. | - ``config.json`` setting: ``.PluginSettings.EnableUploads: false``    |
 |                                                                                                                                    | - Environment variable: ``MM_PLUGINSETTINGS_ENABLEUPLOADS``            |
 +------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
 
