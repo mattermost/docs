@@ -923,14 +923,12 @@ header .header__searchbar {
 }
 
 .notification-bar__content {
-    /* padding: 0.5rem 1rem; */
+    padding: 0.5rem 3rem 0.5rem 1rem;
 	font-family: "trade-gothic-next","Lato","Helvetica Neue","Arial",sans-serif;
 	font-weight: 700;
     font-size: 15px;
 	line-height: 1.2;
     width: 100%;
-    /* TEMP FOR LONG COPY */
-    padding: 0.5rem 3rem 0.5rem 1rem;
 }
 
 .notification-bar__content > div {
@@ -939,6 +937,11 @@ header .header__searchbar {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+}
+
+.notification-bar__wrapper {
+    display: flex;
+    align-items: center;
 }
 
 .notification-bar__content > div img {
@@ -1141,6 +1144,8 @@ pre {
     .notification-bar__content > div img {
 		display: inline-block;
 		margin-right: 10px;
+        width: auto;
+        height: 25px;
 	}
 	.site-header--not-home .nav-container {
 		padding-left: 50px;

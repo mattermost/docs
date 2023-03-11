@@ -169,28 +169,38 @@ $(document).ready(function () {
 				break;
 		}
 	});
+	
 	// Notification Banner
-	if (localStorage.getItem("docsFeedback") === null) {
-		localStorage.setItem('docsFeedback', true);
+
+	// NOTE: Change the notification_banner_key to something unique everytime it changes
+	// So it will show up for new announcements
+	// Keep "mm_notification_banner__" at the beginning of the key
+	// Add system to clean out storage items that are no longer needed
+	const notification_banner_key = 'mm_notification_banner__mst';
+
+	if (localStorage.getItem(notification_banner_key) === null) {
+		localStorage.setItem(notification_banner_key, true);
 		$('.notification-bar').addClass('flex');
 		$('body').addClass('with-notification');
 	} else {
-		const docsFeedbackItem = localStorage.getItem('docsFeedback');
+		const banner_state = localStorage.getItem(notification_banner_key);
 
-		if (docsFeedbackItem == 'false') {
+		if (banner_state == 'false') {
 			$('.notification-bar').remove();
 			$('body').removeClass('with-notification');
 		} else {
 			$('body').addClass('with-notification');
 		}
 	}
+
 	$('body').on('click', '.notification-bar__close', function(){
 		$('.notification-bar').remove();
 		$('body').removeClass('with-notification');
-		localStorage.setItem('docsFeedback', false);
+		localStorage.setItem(notification_banner_key, false);
 	});
 
 });
+
 // Redesign - Navigation
 document.addEventListener("DOMContentLoaded", function(event) {     
     const hamburger = document.getElementById('hamburger');

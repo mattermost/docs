@@ -270,6 +270,10 @@ Apps
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
+Access the following configuration settings in the System Console by going to **Plugins > Apps**.
+
+To create your own Mattermost App, see the `Mattermost Apps <https://developers.mattermost.com/integrate/apps/>`__ developer documentation.
+
 .. config:setting:: plugins-appsenable
   :displayname: Enable plugin (Plugins - Apps)
   :systemconsole: Plugins > Apps
@@ -282,11 +286,11 @@ Apps
 Enable plugin
 ~~~~~~~~~~~~~
 
-**True**: Enables the Apps plugin on your Mattermost server.
-
-**False**: Disables the Apps plugin on your Mattermost server.
-
-To create your own Mattermost App, see the `Mattermost Apps <https://developers.mattermost.com/integrate/apps/>`__ developer documentation.
++------------------------------------------------------------------+-------------------------------------------------------------+
+| - **true**: Enables the Apps plugin on your Mattermost server.   | - System Config path: **Plugins > Apps**                    |
+| - **false**: Disables the Apps plugin on your Mattermost server. | - ``config.json`` setting: N/A                              |
+|                                                                  | - Environment variable: N/A                                 |
++------------------------------------------------------------------+-------------------------------------------------------------+
 
 ----
 
@@ -296,7 +300,7 @@ Autolink
 .. include:: ../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
 
-This plugin creates regular expression (regexp) patterns that are reformatted into a Markdown link before the message is saved into the database. System Admins can configure this plugin in the ``config.json`` file, using the ``/autolink`` slash command (when enabled), or through using the System Console. See the `Autolink Plugin <https://github.com/mattermost/mattermost-plugin-autolink/blob/master/README.md>`__ documentation for details.
+This plugin creates regular expression patterns that are reformatted into a Markdown link before the message is saved into the database. This plugin can be configured through the System Console, ``config.json`` file, or ``/autolink`` slash command. See the `Autolink Plugin <https://github.com/mattermost/mattermost-plugin-autolink/blob/master/README.md>`__ documentation for details.
 
 Access the following configuration settings in the System Console by going to **Plugins > Autolink**.
 
@@ -312,9 +316,11 @@ Access the following configuration settings in the System Console by going to **
 Enable plugin
 ~~~~~~~~~~~~~
 
-**True**: Enables the Autolink plugin on your Mattermost server.
-
-**False**: Disables the Autolink plugin on your Mattermost server.
++----------------------------------------------------------------------+----------------------------------------------+
+| - **true**: Enables the Autolink plugin on your Mattermost server.   | - System Config path: **Plugins > Autolink** |
+| - **false**: Disables the Autolink plugin on your Mattermost server. | - ``config.json`` setting: N/A               |
+|                                                                      | - Environment variable: N/A                  |
++----------------------------------------------------------------------+----------------------------------------------+
 
 .. config:setting:: plugins-autolinkenableadmin
   :displayname: Enable administration with /autolink command (Plugins - Autolink)
@@ -328,9 +334,11 @@ Enable plugin
 Enable administration with /autolink command
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**True**: Enables the ability to configure the Apps plugin using the ``/autolink`` slash command.
-
-**False**: Disables the ability to use the slash command to configure the plugin.
++-----------------------------------------------------------------------------------------------------+----------------------------------------------+
+| - **true**: Enables administration of the Autolinks plugin using the ``/autolink`` slash command.   | - System Config path: **Plugins > Autolink** |
+| - **false**: Disables administration of the Autolinks plugin using the ``/autolink`` slash command. | - ``config.json`` setting: N/A               |
+|                                                                                                     | - Environment variable: N/A                  |
++-----------------------------------------------------------------------------------------------------+----------------------------------------------+
 
 .. config:setting:: plugins-autolinkapplytoupdatedposts
   :displayname: Apply plugin to updated posts as well as new posts (Plugins - Autolink)
@@ -344,9 +352,11 @@ Enable administration with /autolink command
 Apply plugin to updated posts as well as new posts
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**True**: Applies the plugin to updated posts as well as new posts.
-
-**False**: Applies the plugin to new posts only.
++-----------------------------------------------------------------------+----------------------------------------------+
+| - **true**: Applies the plugin to updated posts as well as new posts. | - System Config path: **Plugins > Autolink** |
+| - **false**: Applies the plugin to new posts only.                    | - ``config.json`` setting: N/A               |
+|                                                                       | - Environment variable: N/A                  |
++-----------------------------------------------------------------------+----------------------------------------------+
 
 .. config:setting:: plugins-autolinkadminuserids
   :displayname: Admin user IDs (Plugins - Autolink)
@@ -358,7 +368,12 @@ Apply plugin to updated posts as well as new posts
 Admin user IDs
 ~~~~~~~~~~~~~~
 
-Specify users authorized to administer the plugin in addition to system admins. Separate multiple user IDs with commas.
++-----------------------------------------------------------------------------------------+----------------------------------------------+
+| Use this setting to authorize non-System Admin users to administer the Autolink plugin. | - System Config path: **Plugins > Autolink** |
+|                                                                                         | - ``config.json`` setting: N/A               |
+| Separate multiple user IDs with commas.                                                 | - Environment variable: N/A                  |
+|                                                                                         |                                              |
++-----------------------------------------------------------------------------------------+----------------------------------------------+
 
 .. tip::
 
@@ -388,21 +403,29 @@ Access the following configuration settings in the System Console by going to **
 Enable plugin
 ~~~~~~~~~~~~~
 
-**True**: Enables the AWS SNS plugin on your Mattermost server.
-
-**False**: Disables the AWS SNS plugin on your Mattermost server.
++---------------------------------------------------------------------+---------------------------------------------+
+| - **true**: Enables the AWS SNS plugin on your Mattermost server.   | - System Config path: **Plugins > AWS SNS** |
+| - **false**: Disables the AWS SNS plugin on your Mattermost server. | - ``config.json`` setting: N/A              |
+|                                                                     | - Environment variable: N/A                 |
++---------------------------------------------------------------------+---------------------------------------------+
 
 .. config:setting:: plugins-awssnsnotificationchannel
   :displayname: Channel to send notifications to (Plugins - AWS SNS)
   :systemconsole: Plugins > AWS SNS
   :configjson: N/A
   :environment: N/A
-  :description: Specify the channel to send notifications to in the format ``teamname,channelname``.
+  :description: Use this setting to specify the channel that will receive AWS SNS notifications in the format, **teamname,channelname**. 
 
 Channel to send notifications to
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Specify the channel to send notifications to in the format ``teamname,channelname``. For example, for a channel with a URL of ``https://example.com/myteam/channels/mychannel``, set the value to ``myteam,mychannel``. If the specified channel does not exist, the plugin creates the channel for you.
++----------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------+
+| Use this setting to specify the channel that will receive AWS SNS notifications by entering the team name and channel name as: **teamname,channelname**. | - System Config path: **Plugins > AWS SNS** |
+|                                                                                                                                                          | - ``config.json`` setting: N/A              |
+| For example, if the channel URL is https://example.com/**myteam**/channels/**mychannel**, enter: **myteam,mychannel**.                                   | - Environment variable: N/A                 |
+|                                                                                                                                                          |                                             |
+| If the channel does not exist, the plugin creates the channel for you.                                                                                   |                                             |
++----------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------+
 
 .. config:setting:: plugins-awssnsauthorizeduserids
   :displayname: Authorized user IDs (Plugins - AWS SNS)
@@ -414,16 +437,31 @@ Specify the channel to send notifications to in the format ``teamname,channelnam
 Authorized user IDs
 ~~~~~~~~~~~~~~~~~~~
 
-Specify users authorized to accept AWS SNS subscriptions to a Mattermost channel. Separate multiple user IDs with commas.
++----------------------------------------------------------------------------------------------+---------------------------------------------+
+| Use this setting to authorize users to accept AWS SNS subscriptions to a Mattermost channel. | - System Config path: **Plugins > AWS SNS** |
+|                                                                                              | - ``config.json`` setting: N/A              |
+| Separate multiple user IDs with commas.                                                      | - Environment variable: N/A                 |
++----------------------------------------------------------------------------------------------+---------------------------------------------+
 
 .. tip::
 
   Find user IDs by going to **System Console > User Management > Users**.
 
+.. config:setting:: plugins-awssnstoken
+  :displayname: Token (Plugins - AWS SNS)
+  :systemconsole: Plugins > AWS SNS
+  :configjson: N/A
+  :environment: N/A
+  :description: Generate a token to validate incoming requests from AWS SNS by selecting **Regenerate**.
+
 Token
 ~~~~~
 
-Generate a token to validate incoming requests from AWS SNS by selecting ``Regenerate``.
++------------------------------------------------------------------------------------------+---------------------------------------------+
+| Generate a token to validate incoming requests from AWS SNS by selecting **Regenerate**. | - System Config path: **Plugins > AWS SNS** |
+|                                                                                          | - ``config.json`` setting: N/A              |
+|                                                                                          | - Environment variable: N/A                 |
++------------------------------------------------------------------------------------------+---------------------------------------------+
 
 ----
 
@@ -447,9 +485,11 @@ Access the following configuration settings in the System Console by going to **
 Enable plugin
 ~~~~~~~~~~~~~
 
-**True**: Enables the calls plugin on your Mattermost workspace.
-
-**False**: Disables the calls plugin on your Mattermost workspace.
++----------------------------------------------------------------------+-------------------------------------------+
+| - **true**: Enables the Calls plugin on your Mattermost workspace.   | - System Config path: **Plugins > Calls** |
+| - **false**: Disables the Calls plugin on your Mattermost workspace. | - ``config.json`` setting: N/A            |
+|                                                                      | - Environment variable: N/A               |
++----------------------------------------------------------------------+-------------------------------------------+
 
 .. config:setting:: plugins-callsrtcserverport
   :displayname: RTC server port (Plugins - Calls)
@@ -464,9 +504,13 @@ RTC server port
 .. include:: ../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
-The UDP port the RTC server will listen on. All calls traffic will be served through this port. The Default setting is 8443.
-
-Changing this setting requires a plugin restart to take effect.
++-----------------------------------------------------------------------------------------------------------------------+-------------------------------------------+
+| This setting controls the UDP port listened on by the RTC server. All Calls traffic will be served through this port. | - System Config path: **Plugins > Calls** |
+|                                                                                                                       | - ``config.json`` setting: N/A            |
+| Changing this setting requires a plugin restart to take effect.                                                       | - Environment variable: N/A               |
+|                                                                                                                       |                                           |
+| Default is **8443**.                                                                                                  |                                           |
++-----------------------------------------------------------------------------------------------------------------------+-------------------------------------------+
 
 .. config:setting:: plugins-enableonspecificchannels
   :displayname: Enable on specific channels (Plugins - Calls)
@@ -483,9 +527,13 @@ Enable on specific channels
 .. include:: ../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
-**True**: Allow channel admins to enable or disable calls on specific channels. It also allows participants in DMs/GMs to enable or disable calls.
-
-**False**: Only system admins will be able to enable or disable calls on specific channels.
++----------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------+
+| - **true**: Channel admins can enable or disable calls on specific channels. Participants in DMs/GMs can also enable or disable calls. | - System Config path: **Plugins > Calls** |
+| - **false**: Only System Admins can enable or disable calls on specific channels.                                                      | - ``config.json`` setting: N/A            |
+|                                                                                                                                        | - Environment variable: N/A               |
+|                                                                                                                                        |                                           |
+|                                                                                                                                        |                                           |
++----------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------+
 
 .. config:setting:: plugins-testmode
   :displayname: Test mode (Plugins - Calls)
@@ -502,11 +550,15 @@ Test mode
 .. include:: ../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
-**True**: When test mode is enabled, only system admins are able to start calls in channels. 
-
-This allows testing to confirm calls are working as expected. When a user tries to start a call, they'll be prompted to ask their admin to complete the setup and switch to live mode in the System Console. Additionally, when a system admin starts a call, they're asked to confirm that calls are working as expected before switching to live mode in the System Console.
-
-**False**: All team members can start calls in channels.
++--------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+| - **true**: Only System Admins can start calls in channels.                                                                                | - System Config path: **Plugins > Calls**                                                                                                          |
+| - **false**: All team members can start calls in channels.                                                                                 | - ``config.json`` setting: N/A                                                                                                                     |
+|                                                                                                                                            | - Environment variable: N/A                                                                                                                        |
+|                                                                                                                                            |                                                                                                                                                    |
+|                                                                                                                                            |                                                                                                                                                    |
++--------------------------------------------------------------+-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Note**: Use this setting to confirm calls work as expected. When **true**, users attempting to start calls are prompted to contact System Admins. System Admins are prompted to confirm that calls are working as expected before switching to live mode.                                     |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: plugins-callsmaxcallparticipants
   :displayname: Max call participants (Plugins - Calls)
@@ -521,7 +573,14 @@ Max call participants
 .. include:: ../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
-The maximum number of participants that can join a single call. This is an optional field and default is 0 (unlimited). The maximum recommended setting is 200.
++-----------------------------------------------------------------------------+-------------------------------------------+
+| This setting limits the number of participants that can join a single call. | - System Config path: **Plugins > Calls** |
+|                                                                             | - ``config.json`` setting: N/A            |
+|                                                                             | - Environment variable: N/A               |
+| Default is **0** (no limit).                                                |                                           |
++-----------------------------------------------------------------------------+-------------------------------------------+
+| **Note**: This setting is optional, but the recommended maximum number of participants is **200**.                      |
++-------------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: plugins-callsicehost
   :displayname: ICE host override (Plugins - Calls)
@@ -536,12 +595,16 @@ ICE host override
 .. include:: ../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
-An optional override to the host that gets advertised to clients when connecting to calls. Depending on the network infrastructure (e.g. instance behind a NAT device) it may be necessary to set this field to the client facing external IP in order to let clients connect successfully. When empty or unset, the RTC service will attempt to automatically find the instance's public IP through STUN.
-
-.. note::
-  This field also supports a hostname (e.g. domain name) although ultimately an IP address is passed to clients. This means that a DNS resolution happens on the Mattermost instance which, in certain cases, could result in the resolved IP to be different from the one the clients would see, causing connectivity to fail. When in doubt, we recommend using an IP address directly or making sure the resolution on the host side reflects the one on the client.
-
-This is an optional field. Changing this setting requires a plugin restart to take effect.
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This setting overrides the host advertised to clients when connecting to calls.                                                                                          | - System Config path: **Plugins > Calls**                                                                                                                                                                                                                                                      |
+|                                                                                                                                                                          | - ``config.json`` setting: N/A                                                                                                                                                                                                                                                                 |
+| This is an optional field. Changing this setting requires a plugin restart to take effect.                                                                               | - Environment variable: N/A                                                                                                                                                                                                                                                                    |
+|                                                                                                                                                                          |                                                                                                                                                                                                                                                                                                |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Note**:                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+|   - Depending on the network infrastructure (e.g. instance behind a NAT device) it may be necessary to set this field to the client facing external IP for clients to connect. When empty or unset, the RTC service will attempt to find the instance's public IP through STUN.                                                                                                                                                                                           |
+|   - A hostname (e.g. domain name) can be specified in this setting, but an IP address will be passed to clients. This means that a DNS resolution happens on the Mattermost instance which could result in a different IP address from the one the clients would see, causing connectivity to fail. When in doubt, we recommend using an IP address directly or confirming that the resolution on the host side reflects the one on the client.                           |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: plugins-callsiceservers
   :displayname: ICE server configurations (Plugins - Calls)
@@ -556,30 +619,34 @@ ICE servers configurations
 .. include:: ../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
-A list of ICE servers (STUN/TURN) to be used by the service. Value should be valid JSON.
-
-Default is ``[{"urls": ["stun:stun.global.calls.mattermost.com:3478"]}]``
-
-**Example**
-
-.. code-block:: json
-
-  [
-   {
-      "urls":[
-         "stun:stun.global.calls.mattermost.com:3478"
-      ]
-   },
-   {
-      "urls":[
-         "turn:turn.example.com:3478"
-      ],
-      "username":"webrtc",
-      "credentials":"turnpassword"
-   }
-  ]
-
-This is an optional field. Changing this setting may require a plugin restart to take effect.
++-------------------------------------------------------------------------------------------------+-------------------------------------------+
+| This setting stores a list of ICE servers (STUN/TURN) in JSON format to be used by the service. | - System Config path: **Plugins > Calls** |
+|                                                                                                 | - ``config.json`` setting: N/A            |
+| This is an optional field. Changing this setting may require a plugin restart to take effect.   | - Environment variable: N/A               |
+|                                                                                                 |                                           |
+| Default is **[{"urls": ["stun:stun.global.calls.mattermost.com:3478"]}]**                       |                                           |
++-------------------------------------------------------------------------------------------------+-------------------------------------------+
+ 
+ **Example**
+ 
+ .. code-block:: json
+ 
+   [
+    {
+       "urls":[
+          "stun:stun.global.calls.mattermost.com:3478"
+       ]
+    },
+    {
+       "urls":[
+          "turn:turn.example.com:3478"
+       ],
+       "username":"webrtc",
+       "credentials":"turnpassword"
+    }
+   ]
+ 
+ 
 
 .. config:setting:: plugins-callsturnauthsecret
   :displayname: TURN static auth secret (Plugins - Calls)
@@ -594,9 +661,11 @@ TURN static auth secret
 .. include:: ../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
-A static secret used to generate short-lived credentials for TURN servers.
-
-This is an optional field.
++----------------------------------------------------------------------------+-------------------------------------------+
+| A static secret used to generate short-lived credentials for TURN servers. | - System Config path: **Plugins > Calls** |
+|                                                                            | - ``config.json`` setting: N/A            |
+| This is an optional field.                                                 | - Environment variable: N/A               |
++----------------------------------------------------------------------------+-------------------------------------------+
 
 .. config:setting:: plugins-callsturncredentialsexpiration
   :displayname: TURN credentials expiration (Plugins - Calls)
@@ -611,7 +680,11 @@ TURN credentials expiration
 .. include:: ../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
-The expiration, in minutes, of the short-lived credentials generated for TURN servers.
++----------------------------------------------------------------------------------------+-------------------------------------------+
+| The expiration, in minutes, of the short-lived credentials generated for TURN servers. | - System Config path: **Plugins > Calls** |
+|                                                                                        | - ``config.json`` setting: N/A            |
+|                                                                                        | - Environment variable: N/A               |
++----------------------------------------------------------------------------------------+-------------------------------------------+
 
 .. config:setting:: plugins-callsserversideturn
   :displayname: Server side TURN (Plugins - Calls)
@@ -628,11 +701,12 @@ Server side TURN
 .. include:: ../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
-**True**: The RTC server will use the configured TURN candidates for server-initiated connections.
-
-**False**: TURN will be used only on the client-side.
-
-Changing this setting requires a plugin restart to take effect.
++------------------------------------------------------------------------------------------------------+-------------------------------------------+
+| - **true**: The RTC server will use the configured TURN candidates for server-initiated connections. | - System Config path: **Plugins > Calls** |
+| - **false**: TURN will be used only on the client-side.                                              | - ``config.json`` setting: N/A            |
+|                                                                                                      | - Environment variable: N/A               |
+| Changing this setting requires a plugin restart to take effect.                                      |                                           |
++------------------------------------------------------------------------------------------------------+-------------------------------------------+
 
 .. config:setting:: plugins-callsallowscreensharing
   :displayname: Allow screen sharing (Plugins - Calls)
@@ -649,11 +723,12 @@ Allow screen sharing
 .. include:: ../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
-**True**: Call participants will be allowed to share their screen.
-
-**False**: Call participants won't be allowed to share their screen.
-
-Changing this setting requires a plugin restart to take effect.
++------------------------------------------------------------------------+-------------------------------------------+
+| - **true**: Call participants will be allowed to share their screen.   | - System Config path: **Plugins > Calls** |
+| - **false**: Call participants won't be allowed to share their screen. | - ``config.json`` setting: N/A            |
+|                                                                        | - Environment variable: N/A               |
+| Changing this setting requires a plugin restart to take effect.        |                                           |
++------------------------------------------------------------------------+-------------------------------------------+
 
 .. config:setting:: plugins-callsrtcdserviceurl
   :displayname: RTCD service URL (Plugins - Calls)
@@ -668,9 +743,13 @@ RTCD service URL
 .. include:: ../_static/badges/ent-selfhosted-only.rst
   :start-after: :nosearch:
 
-The URL to a running `rtcd <https://github.com/mattermost/rtcd>`__ service instance that will host the calls. When set (non empty) all the calls will be handled by this external service.
-
-This is an optional field. Changing this setting requires a plugin restart to take effect.
++---------------------------------------------------------------------------------------------------------------+-------------------------------------------+
+| The URL to a running `rtcd <https://github.com/mattermost/rtcd>`__ service instance that will host the calls. | - System Config path: **Plugins > Calls** |
+|                                                                                                               | - ``config.json`` setting: N/A            |
+| When set (non empty) all the calls will be handled by this external service.                                  | - Environment variable: N/A               |
+|                                                                                                               |                                           |
+| This is an optional field. Changing this setting requires a plugin restart to take effect.                    |                                           |
++---------------------------------------------------------------------------------------------------------------+-------------------------------------------+
 
 .. config:setting:: plugins-enablecallrecordings
   :displayname: Enable call recordings (Plugins - Calls)
@@ -685,11 +764,14 @@ Enable call recordings (beta)
 .. include:: ../_static/badges/ent-selfhosted-only.rst
   :start-after: :nosearch:
 
-**True**: Allow call hosts to record meeting video and audio. Recordings include the entire call window view along with participants' audio track and any shared screen video. Recordings are stored in Mattermost.
-
-**False**: (Default) Call recording functionality is not available to hosts.
-
-Changing this setting requires a plugin restart to take effect.
++-------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------+
+| - **true**: Allows call hosts to record meeting video and audio.                                                                                      | - System Config path: **Plugins > Calls** |
+| - **false**: **(Default)** Call recording functionality is not available to hosts.                                                                    | - ``config.json`` setting: N/A            |
+|                                                                                                                                                       | - Environment variable: N/A               |
+| Recordings include the entire call window view along with participants' audio track and any shared screen video. Recordings are stored in Mattermost. |                                           |
+|                                                                                                                                                       |                                           |
+| Changing this setting requires a plugin restart to take effect.                                                                                       |                                           |
++-------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------+
 
 .. config:setting:: plugins-jobserviceurl
   :displayname: Job service URL (Plugins - Calls)
@@ -704,9 +786,11 @@ Job service URL
 .. include:: ../_static/badges/ent-selfhosted-only.rst
   :start-after: :nosearch:
 
-The URL to a running job service where all the processing related to recordings happens. The recorded files produced are stored in Mattermost.
-
-This is a required field. Changing this setting requires a plugin restart to take effect.
++------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------+
+| The URL to a running job service where all the processing related to recordings happens. The recorded files produced are stored in Mattermost. | - System Config path: **Plugins > Calls** |
+|                                                                                                                                                | - ``config.json`` setting: N/A            |
+| This is a required field. Changing this setting requires a plugin restart to take effect.                                                      | - Environment variable: N/A               |
++------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------+
 
 .. config:setting:: plugins-maximumcallrecordingduration
   :displayname: Maximum call recording duration (Plugins - Calls)
@@ -721,9 +805,11 @@ Maximum call recording duration
 .. include:: ../_static/badges/ent-selfhosted-only.rst
   :start-after: :nosearch:
 
-The maximum duration of a call recording in minutes. The default is 60 with a maximum of 180. A recording of a 60-minute call will result in a file of about 700 MB.
-
-This is a required value.
++-----------------------------------------------------------------------------------------------------------------------------+-------------------------------------------+
+| The maximum duration of a call recording in minutes. A recording of a 60-minute call will result in a file of about 700 MB. | - System Config path: **Plugins > Calls** |
+|                                                                                                                             | - ``config.json`` setting: N/A            |
+| The default is **60**. The maximum is **180**. This is a required value.                                                    | - Environment variable: N/A               |
++-----------------------------------------------------------------------------------------------------------------------------+-------------------------------------------+
 
 ----
 
