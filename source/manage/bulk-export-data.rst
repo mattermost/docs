@@ -495,6 +495,36 @@ UserChannelMembership object
           <kbd>"false"</kbd> - No.</td>
       </td>
     </tr>
+      <tr class="row-odd">
+      <td valign="middle">mention_count</td>
+      <td valign="middle">int64</td>
+      <td>The mention preferences for this user in this channel as defined by the <b>ChannelMentionCount</b> object.</td>
+    </tr>
+      <tr class="row-odd">
+      <td valign="middle">mention_count_root</td>
+      <td valign="middle">int64</td>
+      <td>The mention preferences for this user in this channel as defined by the <b>ChannelMentionCountRoot</b> object.</td>
+    </tr>
+      <tr class="row-odd">
+      <td valign="middle">urgent_mention_count</td>
+      <td valign="middle">int64</td>
+      <td>The mention preferences for this user in this channel as defined by the <b>UrgendMentionCount</b> object.</td>
+    </tr>
+      <tr class="row-odd">
+      <td valign="middle">msg_count</td>
+      <td valign="middle">int64</td>
+      <td>The mention preferences for this user in this channel as defined by the <b>MsgCount</b> object.</td>
+    </tr>
+      <tr class="row-odd">
+      <td valign="middle">msg_count_root</td>
+      <td valign="middle">int64</td>
+      <td>The mention preferences for this user in this channel as defined by the <b>MsgCountRoot</b> object.</td>
+    </tr>
+      <tr class="row-odd">
+      <td valign="middle">last_viewed_at</td>
+      <td valign="middle">int64</td>
+      <td>The mention preferences for this user in this channel as defined by the <b>LastViewedAt</b> object.</td>
+    </tr>
   </table>
 
 ChannelNotifyProps object
