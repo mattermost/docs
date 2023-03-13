@@ -1182,8 +1182,8 @@ Access the following configuration settings in the System Console by going to **
 .. config:setting:: plugins-zoomenable
   :displayname: Enable plugin (Plugins - Zoom)
   :systemconsole: Plugins > Zoom
-  :configjson: N/A
-  :environment: N/A
+  :configjson:
+  :environment:
 
   - **true**: Enables the Zoom plugin on your Mattermost server.
   - **false**: Disables the Zoom plugin on your Mattermost server.
@@ -1191,9 +1191,11 @@ Access the following configuration settings in the System Console by going to **
 Enable plugin
 ~~~~~~~~~~~~~
 
-**True**: Enables the Zoom plugin on your Mattermost server.
-
-**False**: Disables the Zoom plugin on your Mattermost server.
++------------------------------------------------------------------+------------------------------------------+
+| - **true**: Enables the Zoom plugin on your Mattermost server.   | - System Config path: **Plugins > Zoom** |
+| - **false**: Disables the Zoom plugin on your Mattermost server. | - ``config.json`` setting:               |
+|                                                                  | - Environment variable:                  |
++------------------------------------------------------------------+------------------------------------------+
 
 .. config:setting:: plugins-zoomurl
   :displayname: Zoom URL (Plugins - Zoom)
