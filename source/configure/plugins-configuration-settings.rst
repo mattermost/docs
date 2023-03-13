@@ -87,8 +87,8 @@ Automatic prepackaged plugins
 .. config:setting:: plugins-enablemarketplace
   :displayname: Enable marketplace (Plugins - Management)
   :systemconsole: Plugins > Plugin Management
-  :configjson: EnableMarketplace
-  :environment: N/A
+  :configjson: .PluginSettings.EnableMarketplace
+  :environment: MM_PLUGINSETTINGS_ENABLEMARKETPLACE
 
   - **true**: **(Default)** Enables the plugin Marketplace on your Mattermost server for all System Admins.
   - **false**: Disables the plugin Marketplace on your Mattermost server for all System Admins.
