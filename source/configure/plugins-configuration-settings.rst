@@ -31,8 +31,8 @@ Access the following configuration settings in the System Console by going to **
 .. config:setting:: plugins-enable
   :displayname: Enable plugins (Plugins - Management)
   :systemconsole: Plugins > Plugin Management
-  :configjson: Enable
-  :environment: N/A
+  :configjson: .PluginSettings.Enable
+  :environment: MM_PLUGINSETTINGS_ENABLE
 
   - **true**: **(Default)** Enables plugins on your Mattermost server.
   - **false**: Disables plugins on your Mattermost server.
