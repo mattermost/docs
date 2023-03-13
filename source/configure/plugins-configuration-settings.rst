@@ -157,8 +157,8 @@ Installed plugin state
 .. config:setting:: plugins-pluginsettings
   :displayname: Plugin settings (Plugins - Management)
   :systemconsole: Plugins > Plugin Management
-  :configjson: Plugins
-  :environment: N/A
+  :configjson: .PluginSettings.Plugins
+  :environment: MM_PLUGINSETTINGS_PLUGINS
   :description: This setting contains plugin-specific data.
 
 Plugin settings
