@@ -1200,14 +1200,18 @@ Enable plugin
 .. config:setting:: plugins-zoomurl
   :displayname: Zoom URL (Plugins - Zoom)
   :systemconsole: Plugins > Zoom
-  :configjson: N/A
-  :environment: N/A
+  :configjson: 
+  :environment:
   :description: Specify the URL for a self-hosted private cloud or on-premise Zoom server. Leave blank if you're using Zoom's vendor-hosted SaaS service.
 
 Zoom URL
 ~~~~~~~~
 
-Specify the URL for a self-hosted private cloud or on-premise Zoom server. For example, ``https://yourzoom.com``. Leave blank if you're using Zoom's vendor-hosted SaaS service.
++-------------------------------------------------------------------------------------------------------+------------------------------------------+
+| Specify the URL for a self-hosted private cloud or on-premise Zoom server.                            | - System Config path: **Plugins > Zoom** |
+| For example, **https://yourzoom.com**. Leave blank if you're using Zoom's vendor-hosted SaaS service. | - ``config.json`` setting:               |
+|                                                                                                       | - Environment variable:                  |
++-------------------------------------------------------------------------------------------------------+------------------------------------------+
 
 .. config:setting:: plugins-zoomapiurl
   :displayname: Zoom API URL (Plugins - Zoom)
