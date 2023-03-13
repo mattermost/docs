@@ -125,8 +125,8 @@ Enable remote Marketplace
 .. config:setting:: plugins-marketplaceurl
   :displayname: Marketplace URL (Plugins - Management)
   :systemconsole: Plugins > Plugin Management
-  :configjson: MarketplaceUrl
-  :environment: N/A
+  :configjson: .PluginSettings.MarketplaceURL
+  :environment: MM_PLUGINSETTINGS_MARKETPLACEURL
   :description: This setting stores the URL for the remote Marketplace. Default is **https://api.integrations.mattermost.com**.
 
 Marketplace URL
