@@ -183,8 +183,8 @@ Access the following configuration settings in the System Console by going to **
 .. config:setting:: plugins-agendaenable
   :displayname: Enable plugin (Plugins - Agenda)
   :systemconsole: Plugins > Agenda
-  :configjson: N/A
-  :environment: N/A
+  :configjson: 
+  :environment: 
 
   - **true**: Enables the Agenda plugin on your Mattermost server.
   - **false**: Disables the Agenda plugin on your Mattermost server.
@@ -194,8 +194,8 @@ Enable plugin
 
 +--------------------------------------------------------------------+--------------------------------------------+
 | - **true**: Enables the Agenda plugin on your Mattermost server.   | - System Config path: **Plugins > Agenda** |
-| - **false**: Disables the Agenda plugin on your Mattermost server. | - ``config.json`` setting: N/A             |
-|                                                                    | - Environment variable: N/A                |
+| - **false**: Disables the Agenda plugin on your Mattermost server. | - ``config.json`` setting:                 |
+|                                                                    | - Environment variable:                    |
 +--------------------------------------------------------------------+--------------------------------------------+
 
 ----
@@ -215,8 +215,8 @@ Access the following configuration settings in the System Console by going to **
 .. config:setting:: plugins-antivirusenable
   :displayname: Enable plugin (Plugins - Antivirus)
   :systemconsole: Plugins > Antivirus
-  :configjson: N/A
-  :environment: N/A
+  :configjson: 
+  :environment: 
 
   - **true**: Enables the Antivirus plugin on your Mattermost server.
   - **false**: Disables the Antivirus plugin on your Mattermost server.
@@ -226,15 +226,15 @@ Enable plugin
 
 +-----------------------------------------------------------------------+-----------------------------------------------+
 | - **true**: Enables the Antivirus plugin on your Mattermost server.   | - System Config path: **Plugins > Antivirus** |
-| - **false**: Disables the Antivirus plugin on your Mattermost server. | - ``config.json`` setting: N/A                |
-|                                                                       | - Environment variable: N/A                   |
+| - **false**: Disables the Antivirus plugin on your Mattermost server. | - ``config.json`` setting:                    |
+|                                                                       | - Environment variable:                       |
 +-----------------------------------------------------------------------+-----------------------------------------------+
 
 .. config:setting:: plugins-antivirusclamavhostport
   :displayname: ClamAV - host and port (Plugins - Antivirus)
   :systemconsole: Plugins > Antivirus
-  :configjson: N/A
-  :environment: N/A
+  :configjson: 
+  :environment: 
   :description: Specify the hostname and port to connect to the ClamAV server.
 
 ClamAV - host and port
@@ -242,15 +242,15 @@ ClamAV - host and port
 
 +---------------------------------------------------------------------+-----------------------------------------------+
 | Sets the **hostname** and **port** to connect to the ClamAV server. | - System Config path: **Plugins > Antivirus** |
-|                                                                     | - ``config.json`` setting: N/A                |
-|                                                                     | - Environment variable: N/A                   |
+|                                                                     | - ``config.json`` setting:                    |
+|                                                                     | - Environment variable:                       |
 +---------------------------------------------------------------------+-----------------------------------------------+
 
 .. config:setting:: plugins-antivirusscantimeout
   :displayname: Scan timeout (Plugins - Antivirus)
   :systemconsole: Plugins > Antivirus
-  :configjson: N/A
-  :environment: N/A
+  :configjson: 
+  :environment: 
   :description: Specifies the length of time, in seconds, before the virus scan times out.
 
 Scan timeout (seconds)
@@ -258,8 +258,8 @@ Scan timeout (seconds)
 
 +-----------------------------------------------------------------------+-----------------------------------------------+
 | Sets the length of time, in seconds, before the virus scan times out. | - System Config path: **Plugins > Antivirus** |
-|                                                                       | - ``config.json`` setting: N/A                |
-|                                                                       | - Environment variable: N/A                   |
+|                                                                       | - ``config.json`` setting:                    |
+|                                                                       | - Environment variable:                       |
 +-----------------------------------------------------------------------+-----------------------------------------------+
 
 ----
@@ -277,8 +277,8 @@ To create your own Mattermost App, see the `Mattermost Apps <https://developers.
 .. config:setting:: plugins-appsenable
   :displayname: Enable plugin (Plugins - Apps)
   :systemconsole: Plugins > Apps
-  :configjson: N/A
-  :environment: N/A
+  :configjson: 
+  :environment:
 
   - **true**: Enables the Apps plugin on your Mattermost server.
   - **false**: Disables the Apps plugin on your Mattermost server.
@@ -288,8 +288,8 @@ Enable plugin
 
 +------------------------------------------------------------------+-------------------------------------------------------------+
 | - **true**: Enables the Apps plugin on your Mattermost server.   | - System Config path: **Plugins > Apps**                    |
-| - **false**: Disables the Apps plugin on your Mattermost server. | - ``config.json`` setting: N/A                              |
-|                                                                  | - Environment variable: N/A                                 |
+| - **false**: Disables the Apps plugin on your Mattermost server. | - ``config.json`` setting:                                  |
+|                                                                  | - Environment variable:                                     |
 +------------------------------------------------------------------+-------------------------------------------------------------+
 
 ----
@@ -307,8 +307,8 @@ Access the following configuration settings in the System Console by going to **
 .. config:setting:: plugins-autolinkenable
   :displayname: Enable plugin (Plugins - Autolink)
   :systemconsole: Plugins > Autolink
-  :configjson: N/A
-  :environment: N/A
+  :configjson:
+  :environment:
 
   - **true**: Enables the Autolink plugin on your Mattermost server.
   - **false**: Disables the Autolink plugin on your Mattermost server.
@@ -318,15 +318,15 @@ Enable plugin
 
 +----------------------------------------------------------------------+----------------------------------------------+
 | - **true**: Enables the Autolink plugin on your Mattermost server.   | - System Config path: **Plugins > Autolink** |
-| - **false**: Disables the Autolink plugin on your Mattermost server. | - ``config.json`` setting: N/A               |
-|                                                                      | - Environment variable: N/A                  |
+| - **false**: Disables the Autolink plugin on your Mattermost server. | - ``config.json`` setting:                   |
+|                                                                      | - Environment variable:                      |
 +----------------------------------------------------------------------+----------------------------------------------+
 
 .. config:setting:: plugins-autolinkenableadmin
   :displayname: Enable administration with /autolink command (Plugins - Autolink)
   :systemconsole: Plugins > Autolink
-  :configjson: N/A
-  :environment: N/A
+  :configjson: 
+  :environment:
 
   - **true**: Enables the ability to configure the Apps plugin using the ``/autolink`` slash command.
   - **false**: Disables the ability to use the slash command to configure the plugin.
@@ -336,15 +336,15 @@ Enable administration with /autolink command
 
 +-----------------------------------------------------------------------------------------------------+----------------------------------------------+
 | - **true**: Enables administration of the Autolinks plugin using the ``/autolink`` slash command.   | - System Config path: **Plugins > Autolink** |
-| - **false**: Disables administration of the Autolinks plugin using the ``/autolink`` slash command. | - ``config.json`` setting: N/A               |
-|                                                                                                     | - Environment variable: N/A                  |
+| - **false**: Disables administration of the Autolinks plugin using the ``/autolink`` slash command. | - ``config.json`` setting:                   |
+|                                                                                                     | - Environment variable:                      |
 +-----------------------------------------------------------------------------------------------------+----------------------------------------------+
 
 .. config:setting:: plugins-autolinkapplytoupdatedposts
   :displayname: Apply plugin to updated posts as well as new posts (Plugins - Autolink)
   :systemconsole: Plugins > Autolink
-  :configjson: N/A
-  :environment: N/A
+  :configjson: 
+  :environment:
 
   - **true**: Applies the plugin to updated posts as well as new posts.
   - **false**: Applies the plugin to new posts only.
@@ -354,15 +354,15 @@ Apply plugin to updated posts as well as new posts
 
 +-----------------------------------------------------------------------+----------------------------------------------+
 | - **true**: Applies the plugin to updated posts as well as new posts. | - System Config path: **Plugins > Autolink** |
-| - **false**: Applies the plugin to new posts only.                    | - ``config.json`` setting: N/A               |
-|                                                                       | - Environment variable: N/A                  |
+| - **false**: Applies the plugin to new posts only.                    | - ``config.json`` setting:                   |
+|                                                                       | - Environment variable:                      |
 +-----------------------------------------------------------------------+----------------------------------------------+
 
 .. config:setting:: plugins-autolinkadminuserids
   :displayname: Admin user IDs (Plugins - Autolink)
   :systemconsole: Plugins > Autolink
-  :configjson: N/A
-  :environment: N/A
+  :configjson:
+  :environment:
   :description: Specify users authorized to administer the plugin in addition to System Admins. Separate multiple user IDs with commas.
 
 Admin user IDs
@@ -370,9 +370,8 @@ Admin user IDs
 
 +-----------------------------------------------------------------------------------------+----------------------------------------------+
 | Use this setting to authorize non-System Admin users to administer the Autolink plugin. | - System Config path: **Plugins > Autolink** |
-|                                                                                         | - ``config.json`` setting: N/A               |
-| Separate multiple user IDs with commas.                                                 | - Environment variable: N/A                  |
-|                                                                                         |                                              |
+|                                                                                         | - ``config.json`` setting:                   |
+| Separate multiple user IDs with commas.                                                 | - Environment variable:                      |
 +-----------------------------------------------------------------------------------------+----------------------------------------------+
 
 .. tip::
@@ -394,8 +393,8 @@ Access the following configuration settings in the System Console by going to **
 .. config:setting:: plugins-awssnsenable
   :displayname: Enable plugin (Plugins - AWS SNS)
   :systemconsole: Plugins > AWS SNS
-  :configjson: N/A
-  :environment: N/A
+  :configjson:
+  :environment:
 
   - **true**: Enables the AWS SNS plugin on your Mattermost server.
   - **false**: Disables the AWS SNS plugin on your Mattermost server.
@@ -405,15 +404,15 @@ Enable plugin
 
 +---------------------------------------------------------------------+---------------------------------------------+
 | - **true**: Enables the AWS SNS plugin on your Mattermost server.   | - System Config path: **Plugins > AWS SNS** |
-| - **false**: Disables the AWS SNS plugin on your Mattermost server. | - ``config.json`` setting: N/A              |
-|                                                                     | - Environment variable: N/A                 |
+| - **false**: Disables the AWS SNS plugin on your Mattermost server. | - ``config.json`` setting:                  |
+|                                                                     | - Environment variable:                     |
 +---------------------------------------------------------------------+---------------------------------------------+
 
 .. config:setting:: plugins-awssnsnotificationchannel
   :displayname: Channel to send notifications to (Plugins - AWS SNS)
   :systemconsole: Plugins > AWS SNS
-  :configjson: N/A
-  :environment: N/A
+  :configjson:
+  :environment:
   :description: Use this setting to specify the channel that will receive AWS SNS notifications in the format, **teamname,channelname**. 
 
 Channel to send notifications to
@@ -421,8 +420,8 @@ Channel to send notifications to
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------+
 | Use this setting to specify the channel that will receive AWS SNS notifications by entering the team name and channel name as: **teamname,channelname**. | - System Config path: **Plugins > AWS SNS** |
-|                                                                                                                                                          | - ``config.json`` setting: N/A              |
-| For example, if the channel URL is https://example.com/**myteam**/channels/**mychannel**, enter: **myteam,mychannel**.                                   | - Environment variable: N/A                 |
+|                                                                                                                                                          | - ``config.json`` setting:                  |
+| For example, if the channel URL is https://example.com/**myteam**/channels/**mychannel**, enter: **myteam,mychannel**.                                   | - Environment variable:                     |
 |                                                                                                                                                          |                                             |
 | If the channel does not exist, the plugin creates the channel for you.                                                                                   |                                             |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------+
@@ -430,8 +429,8 @@ Channel to send notifications to
 .. config:setting:: plugins-awssnsauthorizeduserids
   :displayname: Authorized user IDs (Plugins - AWS SNS)
   :systemconsole: Plugins > AWS SNS
-  :configjson: N/A
-  :environment: N/A
+  :configjson:
+  :environment:
   :description: Specify users authorized to accept AWS SNS subscriptions to a Mattermost channel. Separate multiple user IDs with commas.
 
 Authorized user IDs
@@ -439,8 +438,8 @@ Authorized user IDs
 
 +----------------------------------------------------------------------------------------------+---------------------------------------------+
 | Use this setting to authorize users to accept AWS SNS subscriptions to a Mattermost channel. | - System Config path: **Plugins > AWS SNS** |
-|                                                                                              | - ``config.json`` setting: N/A              |
-| Separate multiple user IDs with commas.                                                      | - Environment variable: N/A                 |
+|                                                                                              | - ``config.json`` setting:                  |
+| Separate multiple user IDs with commas.                                                      | - Environment variable:                     |
 +----------------------------------------------------------------------------------------------+---------------------------------------------+
 
 .. tip::
@@ -450,8 +449,8 @@ Authorized user IDs
 .. config:setting:: plugins-awssnstoken
   :displayname: Token (Plugins - AWS SNS)
   :systemconsole: Plugins > AWS SNS
-  :configjson: N/A
-  :environment: N/A
+  :configjson:
+  :environment:
   :description: Generate a token to validate incoming requests from AWS SNS by selecting **Regenerate**.
 
 Token
@@ -459,8 +458,8 @@ Token
 
 +------------------------------------------------------------------------------------------+---------------------------------------------+
 | Generate a token to validate incoming requests from AWS SNS by selecting **Regenerate**. | - System Config path: **Plugins > AWS SNS** |
-|                                                                                          | - ``config.json`` setting: N/A              |
-|                                                                                          | - Environment variable: N/A                 |
+|                                                                                          | - ``config.json`` setting:                  |
+|                                                                                          | - Environment variable:                     |
 +------------------------------------------------------------------------------------------+---------------------------------------------+
 
 ----
