@@ -1,7 +1,7 @@
 Audit logging (beta)
 ====================
 
-.. include:: ../_static/badges/ent-cloud-selfhosted.rst
+.. include:: ../_static/badges/ent-selfhosted.rst
   :start-after: :nosearch:
 
 *Available in legacy Mattermost Enterprise Edition E20*
