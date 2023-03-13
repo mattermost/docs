@@ -141,8 +141,8 @@ Marketplace URL
 .. config:setting:: plugins-installedpluginstates
   :displayname: Installed plugin state (Plugins - Management)
   :systemconsole: Plugins > Plugin Management
-  :configjson: PluginStates
-  :environment: N/A
+  :configjson: .PluginSettings.PluginStates
+  :environment: MM_PLUGINSETTINGS_PLUGINSTATES
   :description: This setting is a list of installed plugins and their status as enabled or disabled.
 
 Installed plugin state
