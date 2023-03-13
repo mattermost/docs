@@ -49,8 +49,8 @@ Enable plugins
 .. config:setting:: plugins-requiresignature
   :displayname: Require plugin signature (Plugins - Management)
   :systemconsole: Plugins > Plugin Management
-  :configjson: RequirePluginSignature
-  :environment: N/A
+  :configjson: .PluginSettings.RequirePluginSignature
+  :environment: MM_PLUGINSETTINGS_REQUIREPLUGINSIGNATURE
 
   - **true**: **(Default)** Enables plugin signature validation for managed and unmanaged plugins.
   - **false**: Disables plugin signature validation for managed and unmanaged plugins.
