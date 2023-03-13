@@ -1207,23 +1207,27 @@ Enable plugin
 Zoom URL
 ~~~~~~~~
 
-+-------------------------------------------------------------------------------------------------------+------------------------------------------+
-| Specify the URL for a self-hosted private cloud or on-premise Zoom server.                            | - System Config path: **Plugins > Zoom** |
-| For example, **https://yourzoom.com**. Leave blank if you're using Zoom's vendor-hosted SaaS service. | - ``config.json`` setting:               |
-|                                                                                                       | - Environment variable:                  |
-+-------------------------------------------------------------------------------------------------------+------------------------------------------+
++----------------------------------------------------------------------------+------------------------------------------+
+| Specify the URL for a self-hosted private cloud or on-premise Zoom server. | - System Config path: **Plugins > Zoom** |
+| For example, **https://yourzoom.com**.                                     | - ``config.json`` setting:               |
+| Leave blank if you're using Zoom's vendor-hosted SaaS service.             | - Environment variable:                  |
++----------------------------------------------------------------------------+------------------------------------------+
 
 .. config:setting:: plugins-zoomapiurl
   :displayname: Zoom API URL (Plugins - Zoom)
   :systemconsole: Plugins > Zoom
-  :configjson: N/A
-  :environment: N/A
+  :configjson: 
+  :environment:
   :description: Specify the API URL for a self-hosted private cloud or on-premise Zoom server. Leave blank if you're using Zoom's vendor-hosted SaaS service.
 
 Zoom API URL
 ~~~~~~~~~~~~
 
-Specify the API URL for a self-hosted private cloud or on-premises Zoom server. For example, ``https://api.yourzoom.com/v2``. Leave blank if you're using Zoom's vendor-hosted SaaS service.
++---------------------------------------------------------------------------------+------------------------------------------+
+| Specify the API URL for a self-hosted private cloud or on-premises Zoom server. | - System Config path: **Plugins > Zoom** |
+| For example, **https://api.yourzoom.com/v2**.                                   | - ``config.json`` setting:               |
+| Leave blank if you're using Zoom's vendor-hosted SaaS service.                  | - Environment variable:                  |
++---------------------------------------------------------------------------------+------------------------------------------+
 
 .. config:setting:: plugins-zoomoauth
   :displayname: Enable OAuth (Plugins - Zoom)
