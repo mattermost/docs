@@ -105,8 +105,8 @@ Enable Marketplace
 .. config:setting:: plugins-enableremotemarketplace
   :displayname: Enable remote marketplace (Plugins - Management)
   :systemconsole: Plugins > Plugin Management
-  :configjson: EnableRemoteMarketplace
-  :environment: N/A
+  :configjson: .PluginSettings.EnableRemoteMarketplace
+  :environment: MM_PLUGINSETTINGS_ENABLEREMOTEMARKETPLACE
 
   - **true**: **(Default)** Mattermost attempts to connect to the endpoint set in MarketplaceURL.
   - **false**: Mattermost does not attempt to connect to a remote Marketplace, and will show only pre-packaged and installed plugins.
