@@ -69,8 +69,8 @@ Require plugin signature
 .. config:setting:: plugins-automaticprepackagedplugins
   :displayname: Automatic prepackaged plugins (Plugins - Management)
   :systemconsole: Plugins > Plugin Management
-  :configjson: AutomaticPrepackagedPlugins
-  :environment: N/A
+  :configjson: .PluginSettings.AutomaticPrepackagedPlugins
+  :environment: MM_PLUGINSETTINGS_AUTOMATICPREPACKAGEDPLUGINS
 
   - **true**: **(Default)** Mattermost automatically installs and upgrades any enabled pre-packaged plugins.
   - **false**: Mattermost does not automatically install or upgrade pre-packaged plugins.
