@@ -100,7 +100,7 @@ To record a call:
 
   .. tab:: Mobile
   
-    Use the ``/call recording [start|stop]`` slash command.
+    To start recording, use the ``/call recording start`` slash command. When you're finished recording, use the ``/call recording stop`` slash command. 
 
 Frequently asked questions
 --------------------------
