@@ -65,6 +65,11 @@ Select **Edit** to edit your own messages. Editing a message won't trigger new @
 
 Select **Delete** to delete your own messages. Select **Delete** again to confirm.
 
+From Mattermost v7.9, you can view the edit history of an edited message and restore a previous version of an edited message.
+
+- **To view edit history:** Hover over the word *Edited* next to your edited message. In the right-hand sidebar, you'll see all previous versions of the message.
+- **To restore a message:** Select the icon in the top-right corner of the message you want to restore and confirm the action.
+
 Do more with your messages
 --------------------------
 
