@@ -1257,7 +1257,7 @@ Enable OAuth
   :configjson: 
   :environment:
 
-  - **true**: Only an account administrator has to log in. The rest of the users will use their e-mail to log in.
+  - **true**: Only an account administrator must log in. The rest of the users will use their e-mail to log in.
   - **false**: All users must use their e-mail to log in.
 
 OAuth by account level app (Beta)
