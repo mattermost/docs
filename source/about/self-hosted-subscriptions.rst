@@ -117,9 +117,9 @@ From Mattermost v7.9, the reporting period is still the same, but we've introduc
 
 To send the report, a system admin must navigate to the **System Console** and open either the **Site Statistics** or **Team Statistics** pages.
 
-If the current date is within the true-up reporting period, a panel will be visible at the top of the page with a button to share your systems statistics directly to Mattermost.
+If the current date is within the true-up reporting period, a panel will be visible at the top of the page with a button to share your system's statistics directly to Mattermost.
 
-If your system is air-gapped (meaning it does not have access to the external internet), the system admin will be given the option to download the system statistcs which can then be shared with your Customer Success Manager from a device that's not air-gapped.
+If your system is air-gapped (meaning it doesn't have access to the internet), the system admin can download the system statistcs which can then be shared with your Customer Success Manager from a device that's not air-gapped.
 
 .. tip::
    
