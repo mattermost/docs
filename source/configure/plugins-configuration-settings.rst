@@ -1254,8 +1254,8 @@ Enable OAuth
 .. config:setting:: plugins-zoomoauthbyaccountlevel
   :displayname: OAuth by account level app (Beta) (Plugins - Zoom)
   :systemconsole: Plugins > Zoom
-  :configjson: N/A
-  :environment: N/A
+  :configjson: 
+  :environment:
 
   - **true**: Only an account administrator has to log in. The rest of the users will use their e-mail to log in.
   - **false**: All users must use their e-mail to log in.
@@ -1263,9 +1263,11 @@ Enable OAuth
 OAuth by account level app (Beta)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**True**: Only an account administrator has to log in. The rest of the users will use their email to log in.
-
-**False**: All users must use their email to log in.
++-----------------------------------------------------------------------------------------------------------------+------------------------------------------+
+| - **true**: Only an account administrator has to log in. The rest of the users will use their e-mail to log in. | - System Config path: **Plugins > Zoom** |
+| - **false**: All users must use their e-mail to log in.                                                         | - ``config.json`` setting:               |
+|                                                                                                                 | - Environment variable:                  |
++-----------------------------------------------------------------------------------------------------------------+------------------------------------------+
 
 .. config:setting:: plugins-zoomoauthclientid
   :displayname: Zoom OAuth client ID (Plugins - Zoom)
