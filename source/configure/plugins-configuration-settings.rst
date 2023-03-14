@@ -1306,12 +1306,16 @@ Zoom OAuth client secret
   :systemconsole: Plugins > Zoom
   :configjson: 
   :environment:
-  :description: Generate an AES encryption key for Zoom OAuth Token used to encrypt stored access tokens by selecting ``Regenerate``. 
+  :description: Generate an AES encryption key for the Zoom OAuth Token used to encrypt stored access tokens by selecting **Regenerate**. 
 
 At rest token encryption key
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Generate an AES encryption key for Zoom OAuth Token used to encrypt stored access tokens by selecting ``Regenerate``. Regenerating the key invalidates your existing Zoom OAuth.
++---------------------------------------------------------------------------------------------------------------------------+------------------------------------------+
+| Generate an AES encryption key for the Zoom OAuth Token used to encrypt stored access tokens by selecting **Regenerate**. | - System Config path: **Plugins > Zoom** |
+| Regenerating the key invalidates your existing Zoom OAuth.                                                                | - ``config.json`` setting:               |
+|                                                                                                                           | - Environment variable:                  |
++---------------------------------------------------------------------------------------------------------------------------+------------------------------------------+
 
 .. config:setting:: plugins-zoomapikey
   :displayname: API key (Plugins - Zoom)
