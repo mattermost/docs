@@ -1301,6 +1301,13 @@ Zoom OAuth client secret
 |                                                                                                   | - Environment variable:                  |
 +---------------------------------------------------------------------------------------------------+------------------------------------------+
 
+.. config:setting:: plugins-atresttokenencryptionkey 
+  :displayname: At rest token encryption key (Plugins - Zoom)
+  :systemconsole: Plugins > Zoom
+  :configjson: 
+  :environment:
+  :description: Generate an AES encryption key for Zoom OAuth Token used to encrypt stored access tokens by selecting ``Regenerate``. 
+
 At rest token encryption key
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
