@@ -1085,8 +1085,8 @@ Access the following configuration settings in the System Console by going to **
 .. config:setting:: plugins-boardsenable
   :displayname: Enable plugin (Plugins - Boards)
   :systemconsole: Plugins > Mattermost Boards
-  :configjson: N/A
-  :environment: N/A
+  :configjson: 
+  :environment: 
 
   - **true**: Enables the Mattermost Boards plugin on your Mattermost workspace.
   - **false**: Disables the Mattermost Boards plugin on your Mattermost workspace.
@@ -1094,9 +1094,11 @@ Access the following configuration settings in the System Console by going to **
 Enable plugin
 ~~~~~~~~~~~~~
 
-**True**: Enables the Mattermost Boards plugin on your Mattermost workspace.
-
-**False**: Disables the Mattermost Boards plugin on your Mattermost workspace.
++----------------------------------------------------------------------------------+-------------------------------------------------------+
+| - **true**: Enables the Mattermost Boards plugin on your Mattermost workspace.   | - System Config path: **Plugins > Mattermost Boards** |
+| - **false**: Disables the Mattermost Boards plugin on your Mattermost workspace. | - ``config.json`` setting:                            |
+|                                                                                  | - Environment variable:                               |
++----------------------------------------------------------------------------------+-------------------------------------------------------+
 
 ----
 
@@ -1113,8 +1115,8 @@ Access the following configuration settings in the System Console by going to **
 .. config:setting:: plugins-playbooksenable
   :displayname: Enable plugin (Plugins - Playbooks)
   :systemconsole: Plugins > Playbooks
-  :configjson: N/A
-  :environment: N/A
+  :configjson: 
+  :environment: 
 
   - **true**: Enables the Mattermost Playbooks plugin on your Mattermost workspace.
   - **false**: Disables the Mattermost Playbooks plugin on your Mattermost workspace.
@@ -1122,27 +1124,33 @@ Access the following configuration settings in the System Console by going to **
 Enable plugin
 ~~~~~~~~~~~~~
 
-**True**: Enables the Mattermost Playbooks plugin on your Mattermost workspace.
-
-**False**: Disables the Mattermost Playbooks plugin on your Mattermost workspace.
++-------------------------------------------------------------------------------------+-----------------------------------------------+
+| - **true**: Enables the Mattermost Playbooks plugin on your Mattermost workspace.   | - System Config path: **Plugins > Playbooks** |
+| - **false**: Disables the Mattermost Playbooks plugin on your Mattermost workspace. | - ``config.json`` setting:                    |
+|                                                                                     | - Environment variable:                       |
++-------------------------------------------------------------------------------------+-----------------------------------------------+
 
 .. config:setting:: plugins-playbooksenabledteams
   :displayname: Enabled teams (Plugins - Playbooks)
   :systemconsole: Plugins > Playbooks
-  :configjson: N/A
-  :environment: N/A
+  :configjson: 
+  :environment: 
   :description: Enable Playbooks for all Mattermost teams, or for only selected teams.
 
 Enabled teams
 ~~~~~~~~~~~~~
 
-Enable Playbooks for all Mattermost teams, or for only selected teams.
++------------------------------------------------------------------------+-----------------------------------------------+
+| Enable Playbooks for all Mattermost teams, or for only selected teams. | - System Config path: **Plugins > Playbooks** |
+|                                                                        | - ``config.json`` setting:                    |
+|                                                                        | - Environment variable:                       |
++------------------------------------------------------------------------+-----------------------------------------------+
 
 .. config:setting:: plugins-playbooksexperimentalfeatures
   :displayname: Enable experimental features (Plugins - Playbooks)
   :systemconsole: Plugins > Playbooks
-  :configjson: N/A
-  :environment: N/A
+  :configjson: 
+  :environment: 
 
   - **true**: Enables experimental Playbooks features on your Mattermost workspace.
   - **false**: Disables experimental Playbooks features on your Mattermost workspace.
@@ -1150,9 +1158,11 @@ Enable Playbooks for all Mattermost teams, or for only selected teams.
 Enable experimental features
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**True**: Enables experimental Playbooks features on your Mattermost workspace.
-
-**False**: Disables experimental Playbooks features on your Mattermost workspace.
++-------------------------------------------------------------------------------------+-----------------------------------------------+
+| - **true**: Enables experimental Playbooks features on your Mattermost workspace.   | - System Config path: **Plugins > Playbooks** |
+| - **false**: Disables experimental Playbooks features on your Mattermost workspace. | - ``config.json`` setting:                    |
+|                                                                                     | - Environment variable:                       |
++-------------------------------------------------------------------------------------+-----------------------------------------------+
 
 ----
 
@@ -1169,8 +1179,8 @@ Access the following configuration settings in the System Console by going to **
 .. config:setting:: plugins-surveysenable
   :displayname: Enable plugin (Plugins - User Satisfaction Surveys)
   :systemconsole: Plugins > User Satisfaction Surveys
-  :configjson: N/A
-  :environment: N/A
+  :configjson: 
+  :environment: 
 
   - **true**: Enables the Mattermost User Satisfaction Surveys plugin on your Mattermost workspace.
   - **false**: Disables the Mattermost User Satisfaction Surveys plugin on your Mattermost workspace.
@@ -1178,25 +1188,31 @@ Access the following configuration settings in the System Console by going to **
 Enable plugin
 ~~~~~~~~~~~~~
 
-**True**: Enables the Mattermost User Satisfaction Surveys plugin on your Mattermost workspace.
-
-**False**: Disables the Mattermost User Satisfaction Surveys plugin on your Mattermost workspace.
++-----------------------------------------------------------------------------------------------------+---------------------------------------------------------------+
+| - **true**: Enables the Mattermost User Satisfaction Surveys plugin on your Mattermost workspace.   | - System Config path: **Plugins > User Satisfaction Surveys** |
+| - **false**: Disables the Mattermost User Satisfaction Surveys plugin on your Mattermost workspace. | - ``config.json`` setting:                                    |
+|                                                                                                     | - Environment variable:                                       |
++-----------------------------------------------------------------------------------------------------+---------------------------------------------------------------+
 
 .. config:setting:: plugins-surveysenablesend
   :displayname: Enable user satisfaction survey (Plugins - User Satisfaction Surveys)
   :systemconsole: Plugins > User Satisfaction Surveys
-  :configjson: N/A
-  :environment: N/A
+  :configjson: 
+  :environment:
 
-  - **true**: A user satisfaction survey will be sent out to all users on a quarterly basis.
+  - **true**: A user satisfaction survey is sent to all users every quarter.
   - **false**: User satisfaction surveys are disabled.
 
 Enable user satisfaction survey
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**True**: A user satisfaction survey will be sent out to all users on a quarterly basis. The survey results will be used by Mattermost, Inc. to improve the quality and user experience of the product. Please refer to the `Mattermost Privacy Policy <https://mattermost.com/privacy-policy/>`__ for more information on the collection and use of information received through Mattermost services.
-
-**False**: User satisfaction surveys are disabled.
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------+
+| - **true**: A survey is sent to all users every quarter. Results are used by Mattermost, Inc. to improve the product.                                                 | - System Config path: **Plugins > User Satisfaction Surveys** |
+| - **false**: User satisfaction surveys are disabled.                                                                                                                  | - ``config.json`` setting:                                    |
+|                                                                                                                                                                       | - Environment variable:                                       |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------+
+| **Note**: See the `Mattermost Privacy Policy <https://mattermost.com/privacy-policy/>`__ for more information on the collection and use of information by Mattermost.                                                                 |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ----
 
