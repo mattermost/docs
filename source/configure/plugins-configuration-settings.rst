@@ -1288,14 +1288,18 @@ Zoom OAuth client ID
 .. config:setting:: plugins-zoomoauthclientsecret
   :displayname: Zoom OAuth client secret (Plugins - Zoom)
   :systemconsole: Plugins > Zoom
-  :configjson: N/A
-  :environment: N/A
+  :configjson: 
+  :environment:
   :description: Specify the Client Secret for the OAuth app registered with Zoom. Leave blank if not using OAuth.
 
 Zoom OAuth client secret
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-Specify the Client Secret for the OAuth app registered with Zoom. Leave blank if not using OAuth.
++---------------------------------------------------------------------------------------------------+------------------------------------------+
+| Specify the Client Secret for the OAuth app registered with Zoom. Leave blank if not using OAuth. | - System Config path: **Plugins > Zoom** |
+|                                                                                                   | - ``config.json`` setting:               |
+|                                                                                                   | - Environment variable:                  |
++---------------------------------------------------------------------------------------------------+------------------------------------------+
 
 At rest token encryption key
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
