@@ -32,6 +32,10 @@ jobs:
         if: github.event.pull_request.head.repo.full_name == github.repository
         run: make SPHINXOPTS="-j auto -D mm_url_path_prefix=/${{ steps.pr.outputs.id }}" html
 
+      - name: Test
+        if: github.event.pull_request.head.repo.full_name == github.repository
+        run: make test
+
       - uses: shallwefootball/s3-upload-action@master
         name: Upload Preview Env
         if: github.event.pull_request.head.repo.full_name == github.repository
