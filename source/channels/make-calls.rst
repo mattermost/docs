@@ -89,10 +89,18 @@ When you stop recording, the recording is posted in the call thread as a file at
 
 To record a call:
 
-1. Select **Start call** in the header of the channel, group message, or direct message.
-2. Select the pop-out icon.
-3. In the pop-out screen, select the record button.
-4. To stop recording, select the record button again.
+.. tabs::
+
+  .. tab:: Desktop
+
+    1. Select **Start call** in the header of the channel, group message, or direct message.
+    2. Select the pop-out icon.
+    3. In the pop-out screen, select the record button.
+    4. To stop recording, select the record button again.
+
+  .. tab:: Mobile
+  
+    Use the ``/call recording [start|stop]`` slash command.
 
 Frequently asked questions
 --------------------------
