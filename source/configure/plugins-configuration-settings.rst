@@ -897,8 +897,8 @@ This plugin is used to post GIFs from Gfycat, Giphy, or Tenor using slash comman
 .. config:setting:: plugins-gifenable
   :displayname: Enable plugins (Plugins - GIF)
   :systemconsole: Plugins > GIF commands
-  :configjson: N/A
-  :environment: N/A
+  :configjson: 
+  :environment: 
 
   - **true**: Enables the GIF commands plugin on your Mattermost server.
   - **false**: Disables the GIF commands plugin on your Mattermost server.
@@ -906,129 +906,164 @@ This plugin is used to post GIFs from Gfycat, Giphy, or Tenor using slash comman
 Enable plugin
 ~~~~~~~~~~~~~
 
-**True**: Enables the GIF commands plugin on your Mattermost server.
-
-**False**: Disables the GIF commands plugin on your Mattermost server.
++--------------------------------------------------------------------------+--------------------------------------------------+
+| - **true**: Enables the GIF commands plugin on your Mattermost server.   | - System Config path: **Plugins > GIF commands** |
+| - **false**: Disables the GIF commands plugin on your Mattermost server. | - ``config.json`` setting:                       |
+|                                                                          | - Environment variable:                          |
++--------------------------------------------------------------------------+--------------------------------------------------+
 
 .. config:setting:: plugins-gifdisplayas
   :displayname: Display the GIF as (Plugins - GIF)
   :systemconsole: Plugins > GIF commands
-  :configjson: N/A
-  :environment: N/A
+  :configjson: 
+  :environment: 
   :description: Display the GIF as an embedded image where the GIF can't be collapsed, or as a collapsible image preview where the full URL displays.
 
 Display the GIF as
 ~~~~~~~~~~~~~~~~~~
 
-Display the GIF as an embedded image where the GIF can't be collapsed, or as a collapsible image preview where the full URL displays.
-
-.. note::
-   `Link previews <https://docs.mattermost.com/configure/configuration-settings.html#enable-link-previews>`__ must be enabled in order to display GIF link previews. Mattermost deployments restricted to access behind a firewall must open port 443 to both ``https://api.gfycat.com/v1`` and ``https://gfycat.com/<id>`` (for all request types) for this feature to work.
++---------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------+
+| Display the GIF as an embedded image where the GIF can't be collapsed, or as a collapsible image preview where the full URL displays. | - System Config path: **Plugins > GIF commands** |
+|                                                                                                                                       | - ``config.json`` setting:                       |
+|                                                                                                                                       | - Environment variable:                          |
++---------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------+
+| **Note**:                                                                                                                                                                                | 
+|  - `Link previews <https://docs.mattermost.com/configure/site-configuration-settings.html#enable-website-link-previews>`__ must be enabled to display GIF previews.                      |
+|  -  Mattermost deployments behind a firewall must open port 443 to both ``https://api.gfycat.com/v1`` and ``https://gfycat.com/<id>`` for all request types.                             |
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: plugins-gifprovider
   :displayname: GIF provider (Plugins - GIF)
   :systemconsole: Plugins > GIF commands
-  :configjson: N/A
-  :environment: N/A
-  :description: Specify the GIF provider as GIPHY, Tenor, or Gfycat.
+  :configjson: 
+  :environment: 
+  :description: Specify the GIF provider as **GIPHY**, **Tenor**, or **Gfycat**.
 
 GIF provider
 ~~~~~~~~~~~~
 
-Specify the GIF provider as GIPHY, Tenor, or Gfycat.
-
-.. note::
-  Selecting GIPHY or Tenor requires an API Key for this feature to work. An API key is not required for Gfycat.
++-------------------------------------------------------------------+-----------------------------------------------------+
+| Specify the GIF provider as **GIPHY**, **Tenor**, or **Gfycat**.  | - System Config path: **Plugins > GIF commands**    |
+|                                                                   | - ``config.json`` setting:                          |
+|                                                                   | - Environment variable:                             |
++-------------------------------------------------------------------+-----------------------------------------------------+
+| **Note**: Selecting GIPHY or Tenor requires an API key. A key is not required for Gfycat.                               |
++-------------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: plugins-gifgiphytenorapikey
   :displayname: Giphy/Tenor API key (Plugins - GIF)
   :systemconsole: Plugins > GIF commands
-  :configjson: N/A
-  :environment: N/A
+  :configjson: 
+  :environment: 
   :description: Configure your own API Key when specifying the GIF Provider as GIPHY or Tenor. An API key is not required for Gfycat.
 
 Giphy/Tenor API key
 ~~~~~~~~~~~~~~~~~~~
 
-Configure your own API key when specifying the GIF Provider as GIPHY or Tenor. An API key is not required for Gfycat.
-
-To get your own API key, see the `GIPHY Developers Quick Start <https://developers.giphy.com/docs/api/#quick-start-guide>`__ documentation, or the `Tenor Developer <https://tenor.com/developer/keyregistration>`__ documentation for details.
++-----------------------------------------------------------------------------------------------------------------------+--------------------------------------------------+
+| Configure your own API key when specifying the GIF Provider as GIPHY or Tenor. An API key is not required for Gfycat. | - System Config path: **Plugins > GIF commands** |
+|                                                                                                                       | - ``config.json`` setting:                       |
+| See the `GIPHY <https://developers.giphy.com/docs/api/#quick-start-guide>`__                                          | - Environment variable:                          |
+| or `Tenor <https://tenor.com/developer/keyregistration>`__ documentation for details.                                 |                                                  |
++-----------------------------------------------------------------------------------------------------------------------+--------------------------------------------------+
 
 .. config:setting:: plugins-gifcontentrating
   :displayname: Content rating (GIPHY & Tenor only) (Plugins - GIF)
   :systemconsole: Plugins > GIF commands
-  :configjson: N/A
-  :environment: N/A
+  :configjson: 
+  :environment: 
   :description: Select an `MPAA-style content rating <https://en.wikipedia.org/wiki/Motion_Picture_Association_film_rating_system>`__ for GIFs from GIPHY or Tenor. Leave this field empty to disable content filtering.
 
 Content rating (GIPHY & Tenor only)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Select an `MPAA-style content rating <https://en.wikipedia.org/wiki/Motion_Picture_Association_film_rating_system>`__ for GIFs from GIPHY or Tenor. Leave this field empty to disable content filtering.
++-----------------------------------------------------------------------------------------------------------------------+--------------------------------------------------+
+| Select an `MPAA-style content rating <https://en.wikipedia.org/wiki/Motion_Picture_Association_film_rating_system>`__ | - System Config path: **Plugins > GIF commands** |
+| for GIFs from GIPHY or Tenor.                                                                                         | - ``config.json`` setting:                       |
+| Leave this field empty to disable content filtering.                                                                  | - Environment variable:                          |
++-----------------------------------------------------------------------------------------------------------------------+--------------------------------------------------+
 
 .. config:setting:: plugins-gifgfycatdisplaystyle
   :displayname: Gfycat display style (Plugins - GIF)
   :systemconsole: Plugins > GIF commands
-  :configjson: N/A
-  :environment: N/A
+  :configjson: 
+  :environment: 
   :description: Specify the display style for GIFs from Gfycat. See the `Gfycat Developer API <https://developers.gfycat.com/api/>`__ documentation for details.
 
 Gfycat display style
 ~~~~~~~~~~~~~~~~~~~~
 
-Specify the display style for GIFs from Gfycat. See the `Gfycat Developer API <https://developers.gfycat.com/api/>`__ documentation for details.
++-------------------------------------------------------------------------------+--------------------------------------------------+
+| Specify the display style for GIFs from Gfycat. See the `Gfycat Developer API | - System Config path: **Plugins > GIF commands** |
+| <https://developers.gfycat.com/api/>`__ documentation for details.            | - ``config.json`` setting:                       |
+|                                                                               | - Environment variable:                          |
++-------------------------------------------------------------------------------+--------------------------------------------------+
 
 .. config:setting:: plugins-gifgiphydisplaystyle
   :displayname: GIPHY display style (Plugins - GIF)
   :systemconsole: Plugins > GIF commands
-  :configjson: N/A
-  :environment: N/A
+  :configjson: 
+  :environment: 
   :description: Specify the display style for GIFs from GIPHY. See the `GIPHY Developers Rendition Guide <https://developers.giphy.com/docs/optional-settings/>`__ for details.
 
 GIPHY display style
 ~~~~~~~~~~~~~~~~~~~
 
-Specify the display style for GIFs from GIPHY. See the `GIPHY Developers Rendition Guide <https://developers.giphy.com/docs/optional-settings/>`__ for details.
++----------------------------------------------------------------------------------------+--------------------------------------------------+
+| Specify the display style for GIFs from GIPHY. See the `GIPHY Developers               | - System Config path: **Plugins > GIF commands** |
+| Rendition Guide <https://developers.giphy.com/docs/optional-settings/>`__ for details. | - ``config.json`` setting:                       |
+|                                                                                        | - Environment variable:                          |
++----------------------------------------------------------------------------------------+--------------------------------------------------+
 
 .. config:setting:: plugins-giftenordisplaystyle
   :displayname: Tenor display style (Plugins - GIF)
   :systemconsole: Plugins > GIF commands
-  :configjson: N/A
-  :environment: N/A
+  :configjson: 
+  :environment: 
   :description: Specify the display style for GIFs from Tenor. See the `Tenor API <https://tenor.com/gifapi/documentation#responseobjects-gifformat>`__ documentation for details.
 
 Tenor display style
 ~~~~~~~~~~~~~~~~~~~
 
-Specify the display style for GIFs from Tenor. See the `Tenor API <https://tenor.com/gifapi/documentation#responseobjects-gifformat>`__ documentation for details.
++--------------------------------------------------------------------------------------------------+--------------------------------------------------+
+| Specify the display style for GIFs from Tenor. See the `Tenor API                                | - System Config path: **Plugins > GIF commands** |
+| <https://tenor.com/gifapi/documentation#responseobjects-gifformat>`__ documentation for details. | - ``config.json`` setting:                       |
+|                                                                                                  | - Environment variable:                          |
++--------------------------------------------------------------------------------------------------+--------------------------------------------------+
 
 .. config:setting:: plugins-giflanguage
   :displayname: Language (Plugins - GIF)
   :systemconsole: Plugins > GIF commands
-  :configjson: N/A
-  :environment: N/A
+  :configjson: 
+  :environment: 
   :description: Specify the language used to search GIFs from GIPHY. See the `GIPHY Developers Language Support <https://developers.giphy.com/docs/optional-settings/#language-support>`__ documentation for details.
 
 Language
 ~~~~~~~~
 
-Specify the language used to search GIFs from GIPHY. See the `GIPHY Developers Language Support <https://developers.giphy.com/docs/optional-settings/#language-support>`__ documentation for details.
++-----------------------------------------------------------------------------------------+--------------------------------------------------+
+| Specify the language used to search GIFs from GIPHY. See the `GIPHY Developers Language | - System Config path: **Plugins > GIF commands** |
+| Support <https://developers.giphy.com/docs/optional-settings/#language-support>`__      | - ``config.json`` setting:                       |
+| documentation for details.                                                              | - Environment variable:                          |
++-----------------------------------------------------------------------------------------+--------------------------------------------------+
 
 .. config:setting:: plugins-gifforcepreview
   :displayname: Force GIF preview before posting (force /gifs) (Plugins - GIF)
   :systemconsole: Plugins > GIF commands
-  :configjson: N/A
-  :environment: N/A
+  :configjson: 
+  :environment: 
 
-  - **true**: Enabled by default to prevent accidental posting of inappropriate GIFs from a provider that does not support content rating filtering.
+  - **true**: Prevents accidental posting of inappropriate GIFs from a provider that does not support content rating filtering.
   - **false**: Both ``/gif`` and ``/gifs`` slash commands are available for the GIF commands plugin on your Mattermost server.
 
 Force GIF preview before posting (force /gifs)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**True**: Enabled by default to prevent accidental posting of inappropriate GIFs from a provider that does not support content rating filtering.
-
-**False**: Both ``/gif`` and ``/gifs`` slash commands are available for the GIF commands plugin on your Mattermost server.
++---------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------+
+| - **true**: **(Default)** Prevents accidental posting of inappropriate GIFs from a provider that does not support content rating filtering. | - System Config path: **Plugins > GIF commands** |
+| - **false**: Both ``/gif`` and ``/gifs`` slash commands are available for the GIF commands plugin on your Mattermost server.                | - ``config.json`` setting:                       |
+|                                                                                                                                             | - Environment variable:                          |
++---------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------+
 
 ----
 
