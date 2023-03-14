@@ -1301,7 +1301,7 @@ Zoom OAuth client secret
 |                                                                                                   | - Environment variable:                  |
 +---------------------------------------------------------------------------------------------------+------------------------------------------+
 
-.. config:setting:: plugins-atresttokenencryptionkey 
+.. config:setting:: plugins-zoomatresttokenencryptionkey 
   :displayname: At rest token encryption key (Plugins - Zoom)
   :systemconsole: Plugins > Zoom
   :configjson: 
