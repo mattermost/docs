@@ -1263,23 +1263,27 @@ Enable OAuth
 OAuth by account level app (Beta)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+-----------------------------------------------------------------------------------------------------------------+------------------------------------------+
-| - **true**: Only an account administrator has to log in. The rest of the users will use their e-mail to log in. | - System Config path: **Plugins > Zoom** |
-| - **false**: All users must use their e-mail to log in.                                                         | - ``config.json`` setting:               |
-|                                                                                                                 | - Environment variable:                  |
-+-----------------------------------------------------------------------------------------------------------------+------------------------------------------+
++---------------------------------------------------------------------------------------------------------------+------------------------------------------+
+| - **true**: Only an account administrator must log in. The rest of the users will use their e-mail to log in. | - System Config path: **Plugins > Zoom** |
+| - **false**: All users must use their e-mail to log in.                                                       | - ``config.json`` setting:               |
+|                                                                                                               | - Environment variable:                  |
++---------------------------------------------------------------------------------------------------------------+------------------------------------------+
 
 .. config:setting:: plugins-zoomoauthclientid
   :displayname: Zoom OAuth client ID (Plugins - Zoom)
   :systemconsole: Plugins > Zoom
-  :configjson: N/A
-  :environment: N/A
+  :configjson: 
+  :environment:
   :description: Specify the Client ID for the OAuth app registered with Zoom. Leave blank if not using OAuth.
 
 Zoom OAuth client ID
 ~~~~~~~~~~~~~~~~~~~~
 
-Specify the Client ID for the OAuth app registered with Zoom. Leave blank if not using OAuth.
++-----------------------------------------------------------------------------------------------+------------------------------------------+
+| Specify the Client ID for the OAuth app registered with Zoom. Leave blank if not using OAuth. | - System Config path: **Plugins > Zoom** |
+|                                                                                               | - ``config.json`` setting:               |
+|                                                                                               | - Environment variable:                  |
++-----------------------------------------------------------------------------------------------+------------------------------------------+
 
 .. config:setting:: plugins-zoomoauthclientsecret
   :displayname: Zoom OAuth client secret (Plugins - Zoom)
