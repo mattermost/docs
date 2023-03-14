@@ -1232,8 +1232,8 @@ Zoom API URL
 .. config:setting:: plugins-zoomoauth
   :displayname: Enable OAuth (Plugins - Zoom)
   :systemconsole: Plugins > Zoom
-  :configjson: N/A
-  :environment: N/A
+  :configjson:
+  :environment:
 
   - **true**: OAuth will be used as the authentication means with Zoom.
   - **false**: JWT will be used as the authentication means with Zoom.
@@ -1241,9 +1241,11 @@ Zoom API URL
 Enable OAuth
 ~~~~~~~~~~~~
 
-**True**: OAuth will be used as the authentication means with Zoom.
-
-**False**: JWT will be used as the authentication means with Zoom.
++-----------------------------------------------------------------------+------------------------------------------+
+| - **true**: OAuth will be used as the authentication means with Zoom. | - System Config path: **Plugins > Zoom** |
+| - **false**: JWT will be used as the authentication means with Zoom.  | - ``config.json`` setting:               |
+|                                                                       | - Environment variable:                  |
++-----------------------------------------------------------------------+------------------------------------------+
 
 .. note::
 
