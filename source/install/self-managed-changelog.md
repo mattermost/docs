@@ -15,6 +15,8 @@ Latest Mattermost Releases:
 
 **Release day: March 16th, 2023**
 
+Mattermost v7.9.0 contains a low severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+
 ### Important Upgrade Notes
 
  - Added a new index on ``Posts(OriginalId)``. For a database with 11.8 million posts, on a machine with a i7-11800H CPU (8 cores, 16 threads), 32GiB of RAM and SSD, the index creation takes 98.51s on MYSQL and 2.6s on PostgreSQL. To avoid any table locking, servers using PostgreSQL are recommended to create the index online before performing the upgrade using the ``CONCURRENTLY`` option, as in ``CREATE INDEX CONCURRENTLY idx_posts_original_id ON Posts(OriginalId);``.
