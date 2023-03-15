@@ -74,7 +74,7 @@ A chat thread is created automatically for every new call.
 
   .. tab:: Mobile
   
-    To do this, expand the call window using the arrows in the top-right of the active call banner. The select **More > Call Thread**.
+    To do this, expand the call window using the arrows in the top-right of the active call banner. Then select **More > Call Thread**.
     
 Record a call
 -------------
@@ -100,8 +100,8 @@ To record a call:
 
   .. tab:: Mobile
   
-    To start recording, use the ``/call recording start`` slash command. When you're finished recording, use the ``/call recording stop`` slash command. 
-
+    To start recording, use the ``/call recording start`` slash command. When you're finished recording, use the ``/call recording stop`` slash command. Alternatively, expand the call window using the arrows in the top-right of the active call banner. Then select the record button. To finish, select the button again.
+    
 Frequently asked questions
 --------------------------
 
