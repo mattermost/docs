@@ -31,8 +31,8 @@ Access the following configuration settings in the System Console by going to **
 .. config:setting:: plugins-enable
   :displayname: Enable plugins (Plugins - Management)
   :systemconsole: Plugins > Plugin Management
-  :configjson: Enable
-  :environment: N/A
+  :configjson: .PluginSettings.Enable
+  :environment: MM_PLUGINSETTINGS_ENABLE
 
   - **true**: **(Default)** Enables plugins on your Mattermost server.
   - **false**: Disables plugins on your Mattermost server.
@@ -49,8 +49,8 @@ Enable plugins
 .. config:setting:: plugins-requiresignature
   :displayname: Require plugin signature (Plugins - Management)
   :systemconsole: Plugins > Plugin Management
-  :configjson: RequirePluginSignature
-  :environment: N/A
+  :configjson: .PluginSettings.RequirePluginSignature
+  :environment: MM_PLUGINSETTINGS_REQUIREPLUGINSIGNATURE
 
   - **true**: **(Default)** Enables plugin signature validation for managed and unmanaged plugins.
   - **false**: Disables plugin signature validation for managed and unmanaged plugins.
@@ -69,8 +69,8 @@ Require plugin signature
 .. config:setting:: plugins-automaticprepackagedplugins
   :displayname: Automatic prepackaged plugins (Plugins - Management)
   :systemconsole: Plugins > Plugin Management
-  :configjson: AutomaticPrepackagedPlugins
-  :environment: N/A
+  :configjson: .PluginSettings.AutomaticPrepackagedPlugins
+  :environment: MM_PLUGINSETTINGS_AUTOMATICPREPACKAGEDPLUGINS
 
   - **true**: **(Default)** Mattermost automatically installs and upgrades any enabled pre-packaged plugins.
   - **false**: Mattermost does not automatically install or upgrade pre-packaged plugins.
@@ -87,8 +87,8 @@ Automatic prepackaged plugins
 .. config:setting:: plugins-enablemarketplace
   :displayname: Enable marketplace (Plugins - Management)
   :systemconsole: Plugins > Plugin Management
-  :configjson: EnableMarketplace
-  :environment: N/A
+  :configjson: .PluginSettings.EnableMarketplace
+  :environment: MM_PLUGINSETTINGS_ENABLEMARKETPLACE
 
   - **true**: **(Default)** Enables the plugin Marketplace on your Mattermost server for all System Admins.
   - **false**: Disables the plugin Marketplace on your Mattermost server for all System Admins.
@@ -105,8 +105,8 @@ Enable Marketplace
 .. config:setting:: plugins-enableremotemarketplace
   :displayname: Enable remote marketplace (Plugins - Management)
   :systemconsole: Plugins > Plugin Management
-  :configjson: EnableRemoteMarketplace
-  :environment: N/A
+  :configjson: .PluginSettings.EnableRemoteMarketplace
+  :environment: MM_PLUGINSETTINGS_ENABLEREMOTEMARKETPLACE
 
   - **true**: **(Default)** Mattermost attempts to connect to the endpoint set in MarketplaceURL.
   - **false**: Mattermost does not attempt to connect to a remote Marketplace, and will show only pre-packaged and installed plugins.
@@ -125,8 +125,8 @@ Enable remote Marketplace
 .. config:setting:: plugins-marketplaceurl
   :displayname: Marketplace URL (Plugins - Management)
   :systemconsole: Plugins > Plugin Management
-  :configjson: MarketplaceUrl
-  :environment: N/A
+  :configjson: .PluginSettings.MarketplaceURL
+  :environment: MM_PLUGINSETTINGS_MARKETPLACEURL
   :description: This setting stores the URL for the remote Marketplace. Default is **https://api.integrations.mattermost.com**.
 
 Marketplace URL
@@ -141,8 +141,8 @@ Marketplace URL
 .. config:setting:: plugins-installedpluginstates
   :displayname: Installed plugin state (Plugins - Management)
   :systemconsole: Plugins > Plugin Management
-  :configjson: PluginStates
-  :environment: N/A
+  :configjson: .PluginSettings.PluginStates
+  :environment: MM_PLUGINSETTINGS_PLUGINSTATES
   :description: This setting is a list of installed plugins and their status as enabled or disabled.
 
 Installed plugin state
@@ -157,8 +157,8 @@ Installed plugin state
 .. config:setting:: plugins-pluginsettings
   :displayname: Plugin settings (Plugins - Management)
   :systemconsole: Plugins > Plugin Management
-  :configjson: Plugins
-  :environment: N/A
+  :configjson: .PluginSettings.Plugins
+  :environment: MM_PLUGINSETTINGS_PLUGINS
   :description: This setting contains plugin-specific data.
 
 Plugin settings
@@ -183,8 +183,8 @@ Access the following configuration settings in the System Console by going to **
 .. config:setting:: plugins-agendaenable
   :displayname: Enable plugin (Plugins - Agenda)
   :systemconsole: Plugins > Agenda
-  :configjson: N/A
-  :environment: N/A
+  :configjson: 
+  :environment: 
 
   - **true**: Enables the Agenda plugin on your Mattermost server.
   - **false**: Disables the Agenda plugin on your Mattermost server.
@@ -194,8 +194,8 @@ Enable plugin
 
 +--------------------------------------------------------------------+--------------------------------------------+
 | - **true**: Enables the Agenda plugin on your Mattermost server.   | - System Config path: **Plugins > Agenda** |
-| - **false**: Disables the Agenda plugin on your Mattermost server. | - ``config.json`` setting: N/A             |
-|                                                                    | - Environment variable: N/A                |
+| - **false**: Disables the Agenda plugin on your Mattermost server. | - ``config.json`` setting:                 |
+|                                                                    | - Environment variable:                    |
 +--------------------------------------------------------------------+--------------------------------------------+
 
 ----
@@ -215,8 +215,8 @@ Access the following configuration settings in the System Console by going to **
 .. config:setting:: plugins-antivirusenable
   :displayname: Enable plugin (Plugins - Antivirus)
   :systemconsole: Plugins > Antivirus
-  :configjson: N/A
-  :environment: N/A
+  :configjson: 
+  :environment: 
 
   - **true**: Enables the Antivirus plugin on your Mattermost server.
   - **false**: Disables the Antivirus plugin on your Mattermost server.
@@ -226,15 +226,15 @@ Enable plugin
 
 +-----------------------------------------------------------------------+-----------------------------------------------+
 | - **true**: Enables the Antivirus plugin on your Mattermost server.   | - System Config path: **Plugins > Antivirus** |
-| - **false**: Disables the Antivirus plugin on your Mattermost server. | - ``config.json`` setting: N/A                |
-|                                                                       | - Environment variable: N/A                   |
+| - **false**: Disables the Antivirus plugin on your Mattermost server. | - ``config.json`` setting:                    |
+|                                                                       | - Environment variable:                       |
 +-----------------------------------------------------------------------+-----------------------------------------------+
 
 .. config:setting:: plugins-antivirusclamavhostport
   :displayname: ClamAV - host and port (Plugins - Antivirus)
   :systemconsole: Plugins > Antivirus
-  :configjson: N/A
-  :environment: N/A
+  :configjson: 
+  :environment: 
   :description: Specify the hostname and port to connect to the ClamAV server.
 
 ClamAV - host and port
@@ -242,15 +242,15 @@ ClamAV - host and port
 
 +---------------------------------------------------------------------+-----------------------------------------------+
 | Sets the **hostname** and **port** to connect to the ClamAV server. | - System Config path: **Plugins > Antivirus** |
-|                                                                     | - ``config.json`` setting: N/A                |
-|                                                                     | - Environment variable: N/A                   |
+|                                                                     | - ``config.json`` setting:                    |
+|                                                                     | - Environment variable:                       |
 +---------------------------------------------------------------------+-----------------------------------------------+
 
 .. config:setting:: plugins-antivirusscantimeout
   :displayname: Scan timeout (Plugins - Antivirus)
   :systemconsole: Plugins > Antivirus
-  :configjson: N/A
-  :environment: N/A
+  :configjson: 
+  :environment: 
   :description: Specifies the length of time, in seconds, before the virus scan times out.
 
 Scan timeout (seconds)
@@ -258,8 +258,8 @@ Scan timeout (seconds)
 
 +-----------------------------------------------------------------------+-----------------------------------------------+
 | Sets the length of time, in seconds, before the virus scan times out. | - System Config path: **Plugins > Antivirus** |
-|                                                                       | - ``config.json`` setting: N/A                |
-|                                                                       | - Environment variable: N/A                   |
+|                                                                       | - ``config.json`` setting:                    |
+|                                                                       | - Environment variable:                       |
 +-----------------------------------------------------------------------+-----------------------------------------------+
 
 ----
@@ -277,8 +277,8 @@ To create your own Mattermost App, see the `Mattermost Apps <https://developers.
 .. config:setting:: plugins-appsenable
   :displayname: Enable plugin (Plugins - Apps)
   :systemconsole: Plugins > Apps
-  :configjson: N/A
-  :environment: N/A
+  :configjson: 
+  :environment:
 
   - **true**: Enables the Apps plugin on your Mattermost server.
   - **false**: Disables the Apps plugin on your Mattermost server.
@@ -288,8 +288,8 @@ Enable plugin
 
 +------------------------------------------------------------------+-------------------------------------------------------------+
 | - **true**: Enables the Apps plugin on your Mattermost server.   | - System Config path: **Plugins > Apps**                    |
-| - **false**: Disables the Apps plugin on your Mattermost server. | - ``config.json`` setting: N/A                              |
-|                                                                  | - Environment variable: N/A                                 |
+| - **false**: Disables the Apps plugin on your Mattermost server. | - ``config.json`` setting:                                  |
+|                                                                  | - Environment variable:                                     |
 +------------------------------------------------------------------+-------------------------------------------------------------+
 
 ----
@@ -307,8 +307,8 @@ Access the following configuration settings in the System Console by going to **
 .. config:setting:: plugins-autolinkenable
   :displayname: Enable plugin (Plugins - Autolink)
   :systemconsole: Plugins > Autolink
-  :configjson: N/A
-  :environment: N/A
+  :configjson:
+  :environment:
 
   - **true**: Enables the Autolink plugin on your Mattermost server.
   - **false**: Disables the Autolink plugin on your Mattermost server.
@@ -318,15 +318,15 @@ Enable plugin
 
 +----------------------------------------------------------------------+----------------------------------------------+
 | - **true**: Enables the Autolink plugin on your Mattermost server.   | - System Config path: **Plugins > Autolink** |
-| - **false**: Disables the Autolink plugin on your Mattermost server. | - ``config.json`` setting: N/A               |
-|                                                                      | - Environment variable: N/A                  |
+| - **false**: Disables the Autolink plugin on your Mattermost server. | - ``config.json`` setting:                   |
+|                                                                      | - Environment variable:                      |
 +----------------------------------------------------------------------+----------------------------------------------+
 
 .. config:setting:: plugins-autolinkenableadmin
   :displayname: Enable administration with /autolink command (Plugins - Autolink)
   :systemconsole: Plugins > Autolink
-  :configjson: N/A
-  :environment: N/A
+  :configjson: 
+  :environment:
 
   - **true**: Enables the ability to configure the Apps plugin using the ``/autolink`` slash command.
   - **false**: Disables the ability to use the slash command to configure the plugin.
@@ -336,15 +336,15 @@ Enable administration with /autolink command
 
 +-----------------------------------------------------------------------------------------------------+----------------------------------------------+
 | - **true**: Enables administration of the Autolinks plugin using the ``/autolink`` slash command.   | - System Config path: **Plugins > Autolink** |
-| - **false**: Disables administration of the Autolinks plugin using the ``/autolink`` slash command. | - ``config.json`` setting: N/A               |
-|                                                                                                     | - Environment variable: N/A                  |
+| - **false**: Disables administration of the Autolinks plugin using the ``/autolink`` slash command. | - ``config.json`` setting:                   |
+|                                                                                                     | - Environment variable:                      |
 +-----------------------------------------------------------------------------------------------------+----------------------------------------------+
 
 .. config:setting:: plugins-autolinkapplytoupdatedposts
   :displayname: Apply plugin to updated posts as well as new posts (Plugins - Autolink)
   :systemconsole: Plugins > Autolink
-  :configjson: N/A
-  :environment: N/A
+  :configjson: 
+  :environment:
 
   - **true**: Applies the plugin to updated posts as well as new posts.
   - **false**: Applies the plugin to new posts only.
@@ -354,15 +354,15 @@ Apply plugin to updated posts as well as new posts
 
 +-----------------------------------------------------------------------+----------------------------------------------+
 | - **true**: Applies the plugin to updated posts as well as new posts. | - System Config path: **Plugins > Autolink** |
-| - **false**: Applies the plugin to new posts only.                    | - ``config.json`` setting: N/A               |
-|                                                                       | - Environment variable: N/A                  |
+| - **false**: Applies the plugin to new posts only.                    | - ``config.json`` setting:                   |
+|                                                                       | - Environment variable:                      |
 +-----------------------------------------------------------------------+----------------------------------------------+
 
 .. config:setting:: plugins-autolinkadminuserids
   :displayname: Admin user IDs (Plugins - Autolink)
   :systemconsole: Plugins > Autolink
-  :configjson: N/A
-  :environment: N/A
+  :configjson:
+  :environment:
   :description: Specify users authorized to administer the plugin in addition to System Admins. Separate multiple user IDs with commas.
 
 Admin user IDs
@@ -370,9 +370,8 @@ Admin user IDs
 
 +-----------------------------------------------------------------------------------------+----------------------------------------------+
 | Use this setting to authorize non-System Admin users to administer the Autolink plugin. | - System Config path: **Plugins > Autolink** |
-|                                                                                         | - ``config.json`` setting: N/A               |
-| Separate multiple user IDs with commas.                                                 | - Environment variable: N/A                  |
-|                                                                                         |                                              |
+|                                                                                         | - ``config.json`` setting:                   |
+| Separate multiple user IDs with commas.                                                 | - Environment variable:                      |
 +-----------------------------------------------------------------------------------------+----------------------------------------------+
 
 .. tip::
@@ -394,8 +393,8 @@ Access the following configuration settings in the System Console by going to **
 .. config:setting:: plugins-awssnsenable
   :displayname: Enable plugin (Plugins - AWS SNS)
   :systemconsole: Plugins > AWS SNS
-  :configjson: N/A
-  :environment: N/A
+  :configjson:
+  :environment:
 
   - **true**: Enables the AWS SNS plugin on your Mattermost server.
   - **false**: Disables the AWS SNS plugin on your Mattermost server.
@@ -405,15 +404,15 @@ Enable plugin
 
 +---------------------------------------------------------------------+---------------------------------------------+
 | - **true**: Enables the AWS SNS plugin on your Mattermost server.   | - System Config path: **Plugins > AWS SNS** |
-| - **false**: Disables the AWS SNS plugin on your Mattermost server. | - ``config.json`` setting: N/A              |
-|                                                                     | - Environment variable: N/A                 |
+| - **false**: Disables the AWS SNS plugin on your Mattermost server. | - ``config.json`` setting:                  |
+|                                                                     | - Environment variable:                     |
 +---------------------------------------------------------------------+---------------------------------------------+
 
 .. config:setting:: plugins-awssnsnotificationchannel
   :displayname: Channel to send notifications to (Plugins - AWS SNS)
   :systemconsole: Plugins > AWS SNS
-  :configjson: N/A
-  :environment: N/A
+  :configjson:
+  :environment:
   :description: Use this setting to specify the channel that will receive AWS SNS notifications in the format, **teamname,channelname**. 
 
 Channel to send notifications to
@@ -421,8 +420,8 @@ Channel to send notifications to
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------+
 | Use this setting to specify the channel that will receive AWS SNS notifications by entering the team name and channel name as: **teamname,channelname**. | - System Config path: **Plugins > AWS SNS** |
-|                                                                                                                                                          | - ``config.json`` setting: N/A              |
-| For example, if the channel URL is https://example.com/**myteam**/channels/**mychannel**, enter: **myteam,mychannel**.                                   | - Environment variable: N/A                 |
+|                                                                                                                                                          | - ``config.json`` setting:                  |
+| For example, if the channel URL is https://example.com/**myteam**/channels/**mychannel**, enter: **myteam,mychannel**.                                   | - Environment variable:                     |
 |                                                                                                                                                          |                                             |
 | If the channel does not exist, the plugin creates the channel for you.                                                                                   |                                             |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------+
@@ -430,8 +429,8 @@ Channel to send notifications to
 .. config:setting:: plugins-awssnsauthorizeduserids
   :displayname: Authorized user IDs (Plugins - AWS SNS)
   :systemconsole: Plugins > AWS SNS
-  :configjson: N/A
-  :environment: N/A
+  :configjson:
+  :environment:
   :description: Specify users authorized to accept AWS SNS subscriptions to a Mattermost channel. Separate multiple user IDs with commas.
 
 Authorized user IDs
@@ -439,8 +438,8 @@ Authorized user IDs
 
 +----------------------------------------------------------------------------------------------+---------------------------------------------+
 | Use this setting to authorize users to accept AWS SNS subscriptions to a Mattermost channel. | - System Config path: **Plugins > AWS SNS** |
-|                                                                                              | - ``config.json`` setting: N/A              |
-| Separate multiple user IDs with commas.                                                      | - Environment variable: N/A                 |
+|                                                                                              | - ``config.json`` setting:                  |
+| Separate multiple user IDs with commas.                                                      | - Environment variable:                     |
 +----------------------------------------------------------------------------------------------+---------------------------------------------+
 
 .. tip::
@@ -450,8 +449,8 @@ Authorized user IDs
 .. config:setting:: plugins-awssnstoken
   :displayname: Token (Plugins - AWS SNS)
   :systemconsole: Plugins > AWS SNS
-  :configjson: N/A
-  :environment: N/A
+  :configjson:
+  :environment:
   :description: Generate a token to validate incoming requests from AWS SNS by selecting **Regenerate**.
 
 Token
@@ -459,8 +458,8 @@ Token
 
 +------------------------------------------------------------------------------------------+---------------------------------------------+
 | Generate a token to validate incoming requests from AWS SNS by selecting **Regenerate**. | - System Config path: **Plugins > AWS SNS** |
-|                                                                                          | - ``config.json`` setting: N/A              |
-|                                                                                          | - Environment variable: N/A                 |
+|                                                                                          | - ``config.json`` setting:                  |
+|                                                                                          | - Environment variable:                     |
 +------------------------------------------------------------------------------------------+---------------------------------------------+
 
 ----
@@ -476,8 +475,8 @@ Access the following configuration settings in the System Console by going to **
 .. config:setting:: plugins-callsenable
   :displayname: Enable plugin (Plugins - Calls)
   :systemconsole: Plugins > Calls
-  :configjson: N/A
-  :environment: N/A
+  :configjson: 
+  :environment:
 
   - **true**: Enables the calls plugin on your Mattermost workspace.
   - **false**: Disables the calls plugin on your Mattermost workspace.
@@ -487,15 +486,15 @@ Enable plugin
 
 +----------------------------------------------------------------------+-------------------------------------------+
 | - **true**: Enables the Calls plugin on your Mattermost workspace.   | - System Config path: **Plugins > Calls** |
-| - **false**: Disables the Calls plugin on your Mattermost workspace. | - ``config.json`` setting: N/A            |
-|                                                                      | - Environment variable: N/A               |
+| - **false**: Disables the Calls plugin on your Mattermost workspace. | - ``config.json`` setting:                |
+|                                                                      | - Environment variable:                   |
 +----------------------------------------------------------------------+-------------------------------------------+
 
 .. config:setting:: plugins-callsrtcserverport
   :displayname: RTC server port (Plugins - Calls)
   :systemconsole: Plugins > Calls
-  :configjson: N/A
-  :environment: N/A
+  :configjson: 
+  :environment:
   :description: The UDP port the RTC server will listen on. All calls traffic will be served through this port. Default port is **8443**.
 
 RTC server port
@@ -506,8 +505,8 @@ RTC server port
 
 +-----------------------------------------------------------------------------------------------------------------------+-------------------------------------------+
 | This setting controls the UDP port listened on by the RTC server. All Calls traffic will be served through this port. | - System Config path: **Plugins > Calls** |
-|                                                                                                                       | - ``config.json`` setting: N/A            |
-| Changing this setting requires a plugin restart to take effect.                                                       | - Environment variable: N/A               |
+|                                                                                                                       | - ``config.json`` setting:                |
+| Changing this setting requires a plugin restart to take effect.                                                       | - Environment variable:                   |
 |                                                                                                                       |                                           |
 | Default is **8443**.                                                                                                  |                                           |
 +-----------------------------------------------------------------------------------------------------------------------+-------------------------------------------+
@@ -515,8 +514,8 @@ RTC server port
 .. config:setting:: plugins-enableonspecificchannels
   :displayname: Enable on specific channels (Plugins - Calls)
   :systemconsole: Plugins > Calls
-  :configjson: N/A
-  :environment: N/A
+  :configjson: 
+  :environment: 
   :description: Manage who can enable or disable calls on specific channels (deprecated from Mattermost v7.7)
 
 Enable on specific channels
@@ -529,17 +528,15 @@ Enable on specific channels
 
 +----------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------+
 | - **true**: Channel admins can enable or disable calls on specific channels. Participants in DMs/GMs can also enable or disable calls. | - System Config path: **Plugins > Calls** |
-| - **false**: Only System Admins can enable or disable calls on specific channels.                                                      | - ``config.json`` setting: N/A            |
-|                                                                                                                                        | - Environment variable: N/A               |
-|                                                                                                                                        |                                           |
-|                                                                                                                                        |                                           |
+| - **false**: Only System Admins can enable or disable calls on specific channels.                                                      | - ``config.json`` setting:                |
+|                                                                                                                                        | - Environment variable:                   |
 +----------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------+
 
 .. config:setting:: plugins-testmode
   :displayname: Test mode (Plugins - Calls)
   :systemconsole: Plugins > Calls
-  :configjson: N/A
-  :environment: N/A
+  :configjson: 
+  :environment: 
   :description: A setting to allow system admins to test calls before making them available across the deployment. This setting was called **Enable on all channels** up until Mattermost v7.7.
 
 Test mode
@@ -552,10 +549,8 @@ Test mode
 
 +--------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
 | - **true**: Only System Admins can start calls in channels.                                                                                | - System Config path: **Plugins > Calls**                                                                                                          |
-| - **false**: All team members can start calls in channels.                                                                                 | - ``config.json`` setting: N/A                                                                                                                     |
-|                                                                                                                                            | - Environment variable: N/A                                                                                                                        |
-|                                                                                                                                            |                                                                                                                                                    |
-|                                                                                                                                            |                                                                                                                                                    |
+| - **false**: All team members can start calls in channels.                                                                                 | - ``config.json`` setting:                                                                                                                         |
+|                                                                                                                                            | - Environment variable:                                                                                                                            |
 +--------------------------------------------------------------+-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
 | **Note**: Use this setting to confirm calls work as expected. When **true**, users attempting to start calls are prompted to contact System Admins. System Admins are prompted to confirm that calls are working as expected before switching to live mode.                                     |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -563,8 +558,8 @@ Test mode
 .. config:setting:: plugins-callsmaxcallparticipants
   :displayname: Max call participants (Plugins - Calls)
   :systemconsole: Plugins > Calls
-  :configjson: N/A
-  :environment: N/A
+  :configjson: 
+  :environment: 
   :description: The maximum number of participants that can join a single call. Default value is **0** (unlimited). The maximum recommended setting is 200.
 
 Max call participants
@@ -575,8 +570,8 @@ Max call participants
 
 +-----------------------------------------------------------------------------+-------------------------------------------+
 | This setting limits the number of participants that can join a single call. | - System Config path: **Plugins > Calls** |
-|                                                                             | - ``config.json`` setting: N/A            |
-|                                                                             | - Environment variable: N/A               |
+|                                                                             | - ``config.json`` setting:                |
+|                                                                             | - Environment variable:                   |
 | Default is **0** (no limit).                                                |                                           |
 +-----------------------------------------------------------------------------+-------------------------------------------+
 | **Note**: This setting is optional, but the recommended maximum number of participants is **200**.                      |
@@ -585,8 +580,8 @@ Max call participants
 .. config:setting:: plugins-callsicehost
   :displayname: ICE host override (Plugins - Calls)
   :systemconsole: Plugins > Calls
-  :configjson: N/A
-  :environment: N/A
+  :configjson: 
+  :environment: 
   :description: An optional override to the host that gets advertised to clients when connecting to calls. When empty or unset, the RTC service will attempt to automatically find the instance's public IP through STUN.
 
 ICE host override
@@ -597,8 +592,8 @@ ICE host override
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This setting overrides the host advertised to clients when connecting to calls.                                                                                          | - System Config path: **Plugins > Calls**                                                                                                                                                                                                                                                      |
-|                                                                                                                                                                          | - ``config.json`` setting: N/A                                                                                                                                                                                                                                                                 |
-| This is an optional field. Changing this setting requires a plugin restart to take effect.                                                                               | - Environment variable: N/A                                                                                                                                                                                                                                                                    |
+|                                                                                                                                                                          | - ``config.json`` setting:                                                                                                                                                                                                                                                                     |
+| This is an optional field. Changing this setting requires a plugin restart to take effect.                                                                               | - Environment variable:                                                                                                                                                                                                                                                                        |
 |                                                                                                                                                                          |                                                                                                                                                                                                                                                                                                |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | **Note**:                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
@@ -609,8 +604,8 @@ ICE host override
 .. config:setting:: plugins-callsiceservers
   :displayname: ICE server configurations (Plugins - Calls)
   :systemconsole: Plugins > Calls
-  :configjson: N/A
-  :environment: N/A
+  :configjson: 
+  :environment: 
   :description: A list of ICE servers (STUN/TURN) to be used by the service. Value should be valid JSON. Default value is **[{"urls": ["stun:stun.global.calls.mattermost.com:3478"]}]**.
 
 ICE servers configurations
@@ -621,8 +616,8 @@ ICE servers configurations
 
 +-------------------------------------------------------------------------------------------------+-------------------------------------------+
 | This setting stores a list of ICE servers (STUN/TURN) in JSON format to be used by the service. | - System Config path: **Plugins > Calls** |
-|                                                                                                 | - ``config.json`` setting: N/A            |
-| This is an optional field. Changing this setting may require a plugin restart to take effect.   | - Environment variable: N/A               |
+|                                                                                                 | - ``config.json`` setting:                |
+| This is an optional field. Changing this setting may require a plugin restart to take effect.   | - Environment variable:                   |
 |                                                                                                 |                                           |
 | Default is **[{"urls": ["stun:stun.global.calls.mattermost.com:3478"]}]**                       |                                           |
 +-------------------------------------------------------------------------------------------------+-------------------------------------------+
@@ -651,8 +646,8 @@ ICE servers configurations
 .. config:setting:: plugins-callsturnauthsecret
   :displayname: TURN static auth secret (Plugins - Calls)
   :systemconsole: Plugins > Calls
-  :configjson: N/A
-  :environment: N/A
+  :configjson: 
+  :environment:
   :description: A static secret used to generate short-lived credentials for TURN servers.
 
 TURN static auth secret
@@ -663,15 +658,15 @@ TURN static auth secret
 
 +----------------------------------------------------------------------------+-------------------------------------------+
 | A static secret used to generate short-lived credentials for TURN servers. | - System Config path: **Plugins > Calls** |
-|                                                                            | - ``config.json`` setting: N/A            |
-| This is an optional field.                                                 | - Environment variable: N/A               |
+|                                                                            | - ``config.json`` setting:                |
+| This is an optional field.                                                 | - Environment variable:                   |
 +----------------------------------------------------------------------------+-------------------------------------------+
 
 .. config:setting:: plugins-callsturncredentialsexpiration
   :displayname: TURN credentials expiration (Plugins - Calls)
   :systemconsole: Plugins > Calls
-  :configjson: N/A
-  :environment: N/A
+  :configjson: 
+  :environment:
   :description: The expiration, in minutes, of the short-lived credentials generated for TURN servers.
 
 TURN credentials expiration
@@ -682,15 +677,15 @@ TURN credentials expiration
 
 +----------------------------------------------------------------------------------------+-------------------------------------------+
 | The expiration, in minutes, of the short-lived credentials generated for TURN servers. | - System Config path: **Plugins > Calls** |
-|                                                                                        | - ``config.json`` setting: N/A            |
-|                                                                                        | - Environment variable: N/A               |
+|                                                                                        | - ``config.json`` setting:                |
+|                                                                                        | - Environment variable:                   |
 +----------------------------------------------------------------------------------------+-------------------------------------------+
 
 .. config:setting:: plugins-callsserversideturn
   :displayname: Server side TURN (Plugins - Calls)
   :systemconsole: Plugins > Calls
-  :configjson: N/A
-  :environment: N/A
+  :configjson: 
+  :environment: 
 
   - **true**: The RTC server will use the configured TURN candidates for server-initiated connections.
   - **false**: TURN will be used only on the client-side.
@@ -703,16 +698,16 @@ Server side TURN
 
 +------------------------------------------------------------------------------------------------------+-------------------------------------------+
 | - **true**: The RTC server will use the configured TURN candidates for server-initiated connections. | - System Config path: **Plugins > Calls** |
-| - **false**: TURN will be used only on the client-side.                                              | - ``config.json`` setting: N/A            |
-|                                                                                                      | - Environment variable: N/A               |
+| - **false**: TURN will be used only on the client-side.                                              | - ``config.json`` setting:                |
+|                                                                                                      | - Environment variable:                   |
 | Changing this setting requires a plugin restart to take effect.                                      |                                           |
 +------------------------------------------------------------------------------------------------------+-------------------------------------------+
 
 .. config:setting:: plugins-callsallowscreensharing
   :displayname: Allow screen sharing (Plugins - Calls)
   :systemconsole: Plugins > Calls
-  :configjson: N/A
-  :environment: N/A
+  :configjson: 
+  :environment: 
 
   - **true**: Call participants will be allowed to share their screen.
   - **false**: Call participants won't be allowed to share their screen.
@@ -725,16 +720,16 @@ Allow screen sharing
 
 +------------------------------------------------------------------------+-------------------------------------------+
 | - **true**: Call participants will be allowed to share their screen.   | - System Config path: **Plugins > Calls** |
-| - **false**: Call participants won't be allowed to share their screen. | - ``config.json`` setting: N/A            |
-|                                                                        | - Environment variable: N/A               |
+| - **false**: Call participants won't be allowed to share their screen. | - ``config.json`` setting:                |
+|                                                                        | - Environment variable:                   |
 | Changing this setting requires a plugin restart to take effect.        |                                           |
 +------------------------------------------------------------------------+-------------------------------------------+
 
 .. config:setting:: plugins-callsrtcdserviceurl
   :displayname: RTCD service URL (Plugins - Calls)
   :systemconsole: Plugins > Calls
-  :configjson: N/A
-  :environment: N/A
+  :configjson: 
+  :environment: 
   :description: The URL to a running `rtcd <https://github.com/mattermost/rtcd>`__ service instance that will host the calls. When set (non empty) all the calls will be handled by this external service.
 
 RTCD service URL
@@ -745,8 +740,8 @@ RTCD service URL
 
 +---------------------------------------------------------------------------------------------------------------+-------------------------------------------+
 | The URL to a running `rtcd <https://github.com/mattermost/rtcd>`__ service instance that will host the calls. | - System Config path: **Plugins > Calls** |
-|                                                                                                               | - ``config.json`` setting: N/A            |
-| When set (non empty) all the calls will be handled by this external service.                                  | - Environment variable: N/A               |
+|                                                                                                               | - ``config.json`` setting:                |
+| When set (non empty) all the calls will be handled by this external service.                                  | - Environment variable:                   |
 |                                                                                                               |                                           |
 | This is an optional field. Changing this setting requires a plugin restart to take effect.                    |                                           |
 +---------------------------------------------------------------------------------------------------------------+-------------------------------------------+
@@ -754,8 +749,8 @@ RTCD service URL
 .. config:setting:: plugins-enablecallrecordings
   :displayname: Enable call recordings (Plugins - Calls)
   :systemconsole: Plugins > Calls
-  :configjson: N/A
-  :environment: N/A
+  :configjson: 
+  :environment: 
   :description: Allow call hosts to record meeting video and audio. 
 
 Enable call recordings (beta)
@@ -766,8 +761,8 @@ Enable call recordings (beta)
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------+
 | - **true**: Allows call hosts to record meeting video and audio.                                                                                      | - System Config path: **Plugins > Calls** |
-| - **false**: **(Default)** Call recording functionality is not available to hosts.                                                                    | - ``config.json`` setting: N/A            |
-|                                                                                                                                                       | - Environment variable: N/A               |
+| - **false**: **(Default)** Call recording functionality is not available to hosts.                                                                    | - ``config.json`` setting:                |
+|                                                                                                                                                       | - Environment variable:                   |
 | Recordings include the entire call window view along with participants' audio track and any shared screen video. Recordings are stored in Mattermost. |                                           |
 |                                                                                                                                                       |                                           |
 | Changing this setting requires a plugin restart to take effect.                                                                                       |                                           |
@@ -776,8 +771,8 @@ Enable call recordings (beta)
 .. config:setting:: plugins-jobserviceurl
   :displayname: Job service URL (Plugins - Calls)
   :systemconsole: Plugins > Calls
-  :configjson: N/A
-  :environment: N/A
+  :configjson: 
+  :environment: 
   :description: The URL to a running job service where all the processing related to recordings happens.
   
 Job service URL
@@ -788,15 +783,15 @@ Job service URL
 
 +------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------+
 | The URL to a running job service where all the processing related to recordings happens. The recorded files produced are stored in Mattermost. | - System Config path: **Plugins > Calls** |
-|                                                                                                                                                | - ``config.json`` setting: N/A            |
-| This is a required field. Changing this setting requires a plugin restart to take effect.                                                      | - Environment variable: N/A               |
+|                                                                                                                                                | - ``config.json`` setting:                |
+| This is a required field. Changing this setting requires a plugin restart to take effect.                                                      | - Environment variable:                   |
 +------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------+
 
 .. config:setting:: plugins-maximumcallrecordingduration
   :displayname: Maximum call recording duration (Plugins - Calls)
   :systemconsole: Plugins > Calls
-  :configjson: N/A
-  :environment: N/A
+  :configjson: 
+  :environment: 
   :description: The maximum duration of a call recording in minutes.
   
 Maximum call recording duration
@@ -807,8 +802,8 @@ Maximum call recording duration
 
 +-----------------------------------------------------------------------------------------------------------------------------+-------------------------------------------+
 | The maximum duration of a call recording in minutes. A recording of a 60-minute call will result in a file of about 700 MB. | - System Config path: **Plugins > Calls** |
-|                                                                                                                             | - ``config.json`` setting: N/A            |
-| The default is **60**. The maximum is **180**. This is a required value.                                                    | - Environment variable: N/A               |
+|                                                                                                                             | - ``config.json`` setting:                |
+| The default is **60**. The maximum is **180**. This is a required value.                                                    | - Environment variable:                   |
 +-----------------------------------------------------------------------------------------------------------------------------+-------------------------------------------+
 
 ----
