@@ -1240,8 +1240,8 @@ Access the following configuration settings in the System Console by going to **
 .. config:setting:: plugins-zoomenable
   :displayname: Enable plugin (Plugins - Zoom)
   :systemconsole: Plugins > Zoom
-  :configjson: N/A
-  :environment: N/A
+  :configjson:
+  :environment:
 
   - **true**: Enables the Zoom plugin on your Mattermost server.
   - **false**: Disables the Zoom plugin on your Mattermost server.
@@ -1249,39 +1249,49 @@ Access the following configuration settings in the System Console by going to **
 Enable plugin
 ~~~~~~~~~~~~~
 
-**True**: Enables the Zoom plugin on your Mattermost server.
-
-**False**: Disables the Zoom plugin on your Mattermost server.
++------------------------------------------------------------------+------------------------------------------+
+| - **true**: Enables the Zoom plugin on your Mattermost server.   | - System Config path: **Plugins > Zoom** |
+| - **false**: Disables the Zoom plugin on your Mattermost server. | - ``config.json`` setting:               |
+|                                                                  | - Environment variable:                  |
++------------------------------------------------------------------+------------------------------------------+
 
 .. config:setting:: plugins-zoomurl
   :displayname: Zoom URL (Plugins - Zoom)
   :systemconsole: Plugins > Zoom
-  :configjson: N/A
-  :environment: N/A
+  :configjson: 
+  :environment:
   :description: Specify the URL for a self-hosted private cloud or on-premise Zoom server. Leave blank if you're using Zoom's vendor-hosted SaaS service.
 
 Zoom URL
 ~~~~~~~~
 
-Specify the URL for a self-hosted private cloud or on-premise Zoom server. For example, ``https://yourzoom.com``. Leave blank if you're using Zoom's vendor-hosted SaaS service.
++----------------------------------------------------------------------------+------------------------------------------+
+| Specify the URL for a self-hosted private cloud or on-premise Zoom server. | - System Config path: **Plugins > Zoom** |
+| For example, **https://yourzoom.com**.                                     | - ``config.json`` setting:               |
+| Leave blank if you're using Zoom's vendor-hosted SaaS service.             | - Environment variable:                  |
++----------------------------------------------------------------------------+------------------------------------------+
 
 .. config:setting:: plugins-zoomapiurl
   :displayname: Zoom API URL (Plugins - Zoom)
   :systemconsole: Plugins > Zoom
-  :configjson: N/A
-  :environment: N/A
+  :configjson: 
+  :environment:
   :description: Specify the API URL for a self-hosted private cloud or on-premise Zoom server. Leave blank if you're using Zoom's vendor-hosted SaaS service.
 
 Zoom API URL
 ~~~~~~~~~~~~
 
-Specify the API URL for a self-hosted private cloud or on-premises Zoom server. For example, ``https://api.yourzoom.com/v2``. Leave blank if you're using Zoom's vendor-hosted SaaS service.
++---------------------------------------------------------------------------------+------------------------------------------+
+| Specify the API URL for a self-hosted private cloud or on-premises Zoom server. | - System Config path: **Plugins > Zoom** |
+| For example, **https://api.yourzoom.com/v2**.                                   | - ``config.json`` setting:               |
+| Leave blank if you're using Zoom's vendor-hosted SaaS service.                  | - Environment variable:                  |
++---------------------------------------------------------------------------------+------------------------------------------+
 
 .. config:setting:: plugins-zoomoauth
   :displayname: Enable OAuth (Plugins - Zoom)
   :systemconsole: Plugins > Zoom
-  :configjson: N/A
-  :environment: N/A
+  :configjson:
+  :environment:
 
   - **true**: OAuth will be used as the authentication means with Zoom.
   - **false**: JWT will be used as the authentication means with Zoom.
@@ -1289,9 +1299,11 @@ Specify the API URL for a self-hosted private cloud or on-premises Zoom server. 
 Enable OAuth
 ~~~~~~~~~~~~
 
-**True**: OAuth will be used as the authentication means with Zoom.
-
-**False**: JWT will be used as the authentication means with Zoom.
++-----------------------------------------------------------------------+------------------------------------------+
+| - **true**: OAuth will be used as the authentication means with Zoom. | - System Config path: **Plugins > Zoom** |
+| - **false**: JWT will be used as the authentication means with Zoom.  | - ``config.json`` setting:               |
+|                                                                       | - Environment variable:                  |
++-----------------------------------------------------------------------+------------------------------------------+
 
 .. note::
 
@@ -1300,76 +1312,116 @@ Enable OAuth
 .. config:setting:: plugins-zoomoauthbyaccountlevel
   :displayname: OAuth by account level app (Beta) (Plugins - Zoom)
   :systemconsole: Plugins > Zoom
-  :configjson: N/A
-  :environment: N/A
+  :configjson: 
+  :environment:
 
-  - **true**: Only an account administrator has to log in. The rest of the users will use their e-mail to log in.
+  - **true**: Only an account administrator must log in. The rest of the users will use their e-mail to log in.
   - **false**: All users must use their e-mail to log in.
 
 OAuth by account level app (Beta)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**True**: Only an account administrator has to log in. The rest of the users will use their email to log in.
-
-**False**: All users must use their email to log in.
++---------------------------------------------------------------------------------------------------------------+------------------------------------------+
+| - **true**: Only an account administrator must log in. The rest of the users will use their e-mail to log in. | - System Config path: **Plugins > Zoom** |
+| - **false**: All users must use their e-mail to log in.                                                       | - ``config.json`` setting:               |
+|                                                                                                               | - Environment variable:                  |
++---------------------------------------------------------------------------------------------------------------+------------------------------------------+
 
 .. config:setting:: plugins-zoomoauthclientid
   :displayname: Zoom OAuth client ID (Plugins - Zoom)
   :systemconsole: Plugins > Zoom
-  :configjson: N/A
-  :environment: N/A
+  :configjson: 
+  :environment:
   :description: Specify the Client ID for the OAuth app registered with Zoom. Leave blank if not using OAuth.
 
 Zoom OAuth client ID
 ~~~~~~~~~~~~~~~~~~~~
 
-Specify the Client ID for the OAuth app registered with Zoom. Leave blank if not using OAuth.
++-----------------------------------------------------------------------------------------------+------------------------------------------+
+| Specify the Client ID for the OAuth app registered with Zoom. Leave blank if not using OAuth. | - System Config path: **Plugins > Zoom** |
+|                                                                                               | - ``config.json`` setting:               |
+|                                                                                               | - Environment variable:                  |
++-----------------------------------------------------------------------------------------------+------------------------------------------+
 
 .. config:setting:: plugins-zoomoauthclientsecret
   :displayname: Zoom OAuth client secret (Plugins - Zoom)
   :systemconsole: Plugins > Zoom
-  :configjson: N/A
-  :environment: N/A
+  :configjson: 
+  :environment:
   :description: Specify the Client Secret for the OAuth app registered with Zoom. Leave blank if not using OAuth.
 
 Zoom OAuth client secret
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-Specify the Client Secret for the OAuth app registered with Zoom. Leave blank if not using OAuth.
++---------------------------------------------------------------------------------------------------+------------------------------------------+
+| Specify the Client Secret for the OAuth app registered with Zoom. Leave blank if not using OAuth. | - System Config path: **Plugins > Zoom** |
+|                                                                                                   | - ``config.json`` setting:               |
+|                                                                                                   | - Environment variable:                  |
++---------------------------------------------------------------------------------------------------+------------------------------------------+
+
+.. config:setting:: plugins-zoomatresttokenencryptionkey 
+  :displayname: At rest token encryption key (Plugins - Zoom)
+  :systemconsole: Plugins > Zoom
+  :configjson: 
+  :environment:
+  :description: Generate an AES encryption key for the Zoom OAuth Token used to encrypt stored access tokens by selecting **Regenerate**. 
 
 At rest token encryption key
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Generate an AES encryption key for Zoom OAuth Token used to encrypt stored access tokens by selecting ``Regenerate``. Regenerating the key invalidates your existing Zoom OAuth.
++---------------------------------------------------------------------------------------------------------------------------+------------------------------------------+
+| Generate an AES encryption key for the Zoom OAuth Token used to encrypt stored access tokens by selecting **Regenerate**. | - System Config path: **Plugins > Zoom** |
+| Regenerating the key invalidates your existing Zoom OAuth.                                                                | - ``config.json`` setting:               |
+|                                                                                                                           | - Environment variable:                  |
++---------------------------------------------------------------------------------------------------------------------------+------------------------------------------+
 
 .. config:setting:: plugins-zoomapikey
   :displayname: API key (Plugins - Zoom)
   :systemconsole: Plugins > Zoom
-  :configjson: N/A
-  :environment: N/A
+  :configjson: 
+  :environment:
   :description: Specify the API Key generated by Zoom used to create meetings and pull user data.
 
 API key
 ~~~~~~~
 
-Specify the API Key generated by Zoom used to create meetings and pull user data.
++-----------------------------------------------------------------------------------+------------------------------------------+
+| Specify the API Key generated by Zoom used to create meetings and pull user data. | - System Config path: **Plugins > Zoom** |
+|                                                                                   | - ``config.json`` setting:               |
+|                                                                                   | - Environment variable:                  |
++-----------------------------------------------------------------------------------+------------------------------------------+
 
 .. config:setting:: plugins-zoomapisecret
   :displayname: API secret (Plugins - Zoom)
   :systemconsole: Plugins > Zoom
-  :configjson: N/A
-  :environment: N/A
+  :configjson:
+  :environment:
   :description: Specify the API Secret generated by Zoom for your API key.
 
 API secret
 ~~~~~~~~~~
 
-Specify the API Secret generated by Zoom for your API key.
++------------------------------------------------------------+------------------------------------------+
+| Specify the API Secret generated by Zoom for your API key. | - System Config path: **Plugins > Zoom** |
+|                                                            | - ``config.json`` setting:               |
+|                                                            | - Environment variable:                  |
++------------------------------------------------------------+------------------------------------------+
+
+.. config:setting:: plugins-zoomwebhooksecret
+  :displayname: API secret (Plugins - Zoom)
+  :systemconsole: Plugins > Zoom
+  :configjson:
+  :environment:
+  :description: Generate a secret for the webhook URL endpoint used to authenticate the webhook to Mattermost.
 
 Webhook secret
 ~~~~~~~~~~~~~~
 
-Generate a secret for the webhook URL endpoint used to authenticate the webhook to Mattermost. Regenerating the secret invalidates your existing Zoom plugin.
++------------------------------------------------------------------------------------------------+------------------------------------------+
+| Generate a secret for the webhook URL endpoint used to authenticate the webhook to Mattermost. | - System Config path: **Plugins > Zoom** |
+| Regenerating the secret invalidates your existing Zoom plugin.                                 | - ``config.json`` setting:               |
+|                                                                                                | - Environment variable:                  |
++------------------------------------------------------------------------------------------------+------------------------------------------+
 
 .. config:setting:: plugins-zoomsigpublickeyfile
   :displayname: Signature public key file (Plugins - Zoom)
