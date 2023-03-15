@@ -31,7 +31,7 @@ Using Mattermost in a web browser or the desktop app, any member of a channel ca
 
 .. note::
 
-   To add members to a channel when using the Mattermost mobile app, @mention them. If they're not a channel member, add them via the ephemeral post.
+   To add members to a channel when using the Mattermost mobile app, @mention them. If they're not a channel member, you're prompted to add them.
  
 Add users from their profile
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
