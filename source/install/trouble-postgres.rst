@@ -3,11 +3,7 @@ PostgreSQL installation troubleshooting
 
 Mattermost supports PostgreSQL v10+.
 
-PostgreSQL v15 introduces changes that may affect compatibility with previous releases. In order to ensure compatability, take note of the following recommendations:
-
-- Remove the ``PUBLIC`` creation permission on the public schema.
-- For existing databases, especially those having multiple users, consider revoking ``CREATE`` permission on the public schema to adopt this new default.
-- For new databases which have no need to defend against insider threats, granting ``CREATE`` permission will yield the behavior of prior releases.
+PostgreSQL v15 introduces changes that may affect compatibility with previous releases. If you're deploying a fresh installation of Postgres v15, run this command: ``GRANT CREATE ON SCHEMA public TO PUBLIC`` to ensure that you can use Mattermost.
 
 PostgresSQL full-text search fails to use indexes with non-english ``default_text_search_config``
 ------------------------------------------------------------------------------------------------
