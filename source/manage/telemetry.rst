@@ -119,6 +119,9 @@ Permissions Configuration Information (Enterprise Edition only)
 
 Aggregated Usage Statistics
   Non-personally identifiable summations of basic usage statistics: Number of enabled and disabled accounts, number of user logins in the last 24 hours and the last 30 days, number of users active in the last day/month, whether APIv3 endpoints were used in the last 24 hours, number of posts, channels, teams, guest accounts, bots, and file storage.
+  
+True Up Diagnostics
+  Requested help from sales with license true up; attempted to download true up packet.
 
 Event data
 ~~~~~~~~~~~
