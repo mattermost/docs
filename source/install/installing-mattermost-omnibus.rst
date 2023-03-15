@@ -27,7 +27,7 @@ In a terminal window, run the following command to configure the repositories ne
 
 ``curl -o- https://deb.packages.mattermost.com/repo-setup.sh | sudo bash``  |copy-to-clipboard|
 
-Step 2: Install Omnibus
+Step 2: Install Mattermost Omnibus
 -----------------------
 
 1. In a terminal window, run the following command to install Omnibus.  |copy-to-clipboard|
