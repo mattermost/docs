@@ -28,6 +28,10 @@ Using Mattermost in a web browser or the desktop app, any member of a channel ca
 
   - From Mattermost v7.8, people you've messaged directly are listed first, followed by all users in alphabetical order. 
   - Alternatively, to add members to a channel, select the channel name, select the **View Info** |channel-info| icon, select **Members** in the right pane, and then select **Add**.
+
+.. note::
+
+   To add members to a channel when using the Mattermost mobile app, @mention them. If they're not a channel member, add them via the ephemeral post.
  
 Add users from their profile
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
