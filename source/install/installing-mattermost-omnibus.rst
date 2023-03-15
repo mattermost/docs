@@ -45,7 +45,7 @@ Step 2: Install Mattermost Omnibus
 4. Create your first Mattermost user, invite more users, and explore the Mattermost platform.
 
 Step 3: Configure Mattermost Omnibus
--------------------------
+-----------------------------------
 
 .. note::
 
