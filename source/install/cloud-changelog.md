@@ -4,14 +4,14 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 
 Latest Mattermost Cloud releases:
 
-- [Release 2023-03-01](#release-2023-03-01)
+- [Release 2023-03-16](#release-2023-03-16)
 - [Release 2023-01-26](#release-2023-01-26)
 - [Release 2023-01-16](#release-2023-01-16)
 - [Release 2022-12-20](#release-2022-12-20)
 - [Release 2022-12-01](#release-2022-12-01)
 - [Release 2022-11-24](#release-2022-11-24)
 
-## Release 2023-03-01
+## Release 2023-03-16
 
 ### Compatibility
  - Updated Firefox minimum supported version to 102+.
@@ -25,18 +25,20 @@ Latest Mattermost Cloud releases:
 #### Annual Cloud Subscriptions
  - On the purchase modal, admins are now able to buy an annual cloud subscription starting from their current user count.
  - The **System Console > Billing & Account > Subscriptions** page now reflects whether the plan is monthly or annual.
- - Cloud Professional monthly will no longer be offered to new customers starting March 2, 2023.
+ - Cloud Professional monthly will no longer be offered to new customers starting March 16, 2023.
  - Added the option to migrate from a monthly to an annual Cloud Professional plan for existing Cloud Professional monthly customers.
 
 #### Boards
  - Added support for person, multi-person, and date property filters in Boards.
  - Added support for person property groups in Boards.
+ - System and team admins are now able to join any board on the team as a board admin via the board URL.
+ - Additional Compliance APIs to return the history of boards and blocks, including deleted items (available in Mattermost Enterprise Edition and above).
  - See [the Boards product documentation](https://docs.mattermost.com/boards/groups-filter-sort.html#work-with-groups-filter-and-sort) for more details.
 
 ### Improvements
 
 #### User Interface (UI)
- - Pre-packaged Calls v0.13.0.
+ - Pre-packaged Calls v0.14.0.
  - Pre-packaged Playbooks v1.36.0.
  - All post components were removed in favor of a unified approach.
  - App bindings are now refreshed when a App plugin enabled event gets triggered.
@@ -47,6 +49,14 @@ Latest Mattermost Cloud releases:
  - Changed the collapsed post fade out effect to be less buggy.
  - Users now have the ability to see the history of edited messages and to restore an old message version with the current version.
  - Improved the user interface of the user profile popover.
+ - Added the ability to set a reminder to read a post at a specific time via the “More” menu in posts.
+ - Mentions from muted channels are no longer shown or counted on the browser and desktop tabs.
+ - Updated **System Console** descriptions for **Environment > Developer configuration** settings in the **System Console** to clarify that changes require a server restart to take effect.
+ - The custom user status is now shown in the right-hand side and in the **System Console**.
+ - Added the ability to handle multiple emails at once when inviting users.
+ - Added accessibility support to the date picker.
+ - A feedback survey is displayed during a workspace downgrade process from Cloud Professional to Cloud Free.
+ - Migrated the post dot menu to a Material UI (MUI) menu.
 
 #### Administration
  - The invoice is now sent attached when an Admin upgrades to Cloud annual subscription.
@@ -68,7 +78,8 @@ Latest Mattermost Cloud releases:
 #### Performance
  - Reduced the rate that unreads are resynced when the window is focused from 10 seconds to 2 minutes.
  - The center channel is no longer shown as loading when switching teams.
-- Added logging fixes: empty ``short_message`` for Gelf formatter is no longer allowed and ``params.Host`` is now used over ``params.IP`` for syslog config.
+ - Added logging fixes: empty ``short_message`` for Gelf formatter is no longer allowed and ``params.Host`` is now used over ``params.IP`` for syslog config.
+ - Added minor performance improvements.
 
 ### API Changes
  - Added an ``exclude_files_count`` parameter to exclude file counts from the channel stats API.
@@ -85,12 +96,16 @@ Latest Mattermost Cloud releases:
  - Fixed an issue where C# syntax highlighting was not working.
  - Fixed an issue where incoming webhooks changed the user's activity while the user was offline/away.
  - Fixed an issue where usernames were not clickable in the right-hand side.
+ - Fixed issues with spacing in the channel categories and maintained the same spacing in the left-hand side.
+ - Fixed an issue where the setting `Restrict new system and team members to specified email domains` was not visible in Cloud Starter.
+ - Fixed disproportionate height issues for tall single images.
+ - Fixed an issue where a single WebSocket reconnect could be handled multiple times which would negatively affect performance.
+ - Fixed an issue in Top DM Insights, where a deleted participant caused DM Insights to fail.
+ - Fixed an issue where Cloud limits would briefly flash in the **System Console** before disappearing.
 
 ### Known Issues
- - Channel and Team name is missing in the right-hand side for Saved Posts [MM-50775](https://mattermost.atlassian.net/browse/MM-50775).
- - The combined activity is broken when compact message display is enabled [MM-50475](https://mattermost.atlassian.net/browse/MM-50475).
- - Users are unable to type in the emoji picker to search for a custom status [MM-50798](https://mattermost.atlassian.net/browse/MM-50798).
- - Users are unable to see other users' custom status in the centre channel when Collapsed Reply Threads is disabled [MM-50321](https://mattermost.atlassian.net/browse/MM-50321).
+ - The URL of the post in a reminder post for Direct and Group Messages have a double slash on mobile [MM-51026](https://mattermost.atlassian.net/browse/MM-51026).
+ - A user gets scrolled to the bottom of the post editor after pasting long text in the right-hand side [MM-51302](https://mattermost.atlassian.net/browse/MM-51302).
  - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
 
 ## Release 2023-01-26
