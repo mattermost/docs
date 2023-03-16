@@ -94,6 +94,7 @@ Mattermost v7.9.0 contains a low severity level security fix. [Upgrading](https:
 
 ### Known Issues
  - ``NotifyAdmin`` job reports an error for unlicensed servers [MM-51467](https://mattermost.atlassian.net/browse/MM-51467).
+ - Server logs screen does not show any errors [MM-51453](https://mattermost.atlassian.net/browse/MM-51453).
  - Checkmarks are missing from the left-hand side submenus [MM-51091](https://mattermost.atlassian.net/browse/MM-51091).
  - The new Insights feature has some performance costs that we are working to optimize. This feature can be disabled by setting the ``MM_FEATUREFLAGS_INSIGHTSENABLED`` environment variable to ``false``.
  - Adding an @mention at the start of a post draft and pressing the left or right arrow key can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
