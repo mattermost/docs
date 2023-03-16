@@ -5,14 +5,20 @@ Important Upgrade Notes
   :start-after: :nosearch:
 
 .. important::
-   - Support for Mattermost Server v6.3 :doc:`Extended Support Release </upgrade/extended-support-release>` has come to the end of its life cycle in October 15, 2022. Upgrading to Mattermost Server v7.1 :doc:`Extended Support Release </upgrade/extended-support-release>` or later is recommended.
+   - Support for Mattermost Server v7.1 :doc:`Extended Support Release </upgrade/extended-support-release>` is coming to the end of its life cycle in May 15, 2023. Upgrading to Mattermost Server v7.8 :doc:`Extended Support Release </upgrade/extended-support-release>` or later is recommended.
    - MySQL 8.0.22 contains an `issue with JSON column types <https://bugs.mysql.com/bug.php?id=101284>`__ changing string values to integers which is preventing Mattermost from working properly. Users are advised to avoid this database version.
    - Upgrading the Microsoft Teams Calling plugin to v2.0.0 requires users to reconnect their accounts.
    - When upgrading to 7.x from a 5.x release please make sure to upgrade to 5.37.10 first for the upgrade to complete successfully.
+   - Disable global header. Admins can set the feature flag ``MM_FEATUREFLAGS_GLOBALDRAFTS`` to ``false`` to disable server-wide. It can't be disabled on a per-user basis. The code is located `here <https://github.com/mattermost/mattermost-server/blob/master/model/feature_flags.go#L11>`__.
+   - Disable insights. Admins can set the feature flag ``MM_FEATUREFLAGS_INSGIHTSENABLED`` to ``false`` to disable server-wide. It can't be disabled on a per-user basis. The code is located `here <https://github.com/mattermost/mattermost-server/blob/master/model/feature_flags.go#L11>`__.
 
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | If you’re upgrading from a version earlier than... | Then...                                                                                                                                                          |
 +====================================================+==================================================================================================================================================================+
+| v7.9                                               | Added a new index on ``Posts(OriginalId)``. For a database with 11.8 million posts, on a machine with a i7-11800H CPU (8 cores, 16 threads), 32GiB of RAM and    |
+|                                                    | SSD, the index creation takes 98.51s on MYSQL and 2.6s on PostgreSQL. To avoid any table locking, servers using PostgreSQL are recommended to create the index   |
+|                                                    | online before performing the upgrade using the ``CONCURRENTLY`` option, as in ``CREATE INDEX CONCURRENTLY idx_posts_original_id ON Posts(OriginalId);``.         |
++----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v7.8                                               | `Message Priority & Acknowledgement <https://docs.mattermost.com/configure/site-configuration-settings.html#message-priority>`__ is now enabled by default       |
 |                                                    | for all instances. You may disable this feature in the System Console by going to **Posts > Message Priority** or via the config ``PostPriority`` setting.       |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
