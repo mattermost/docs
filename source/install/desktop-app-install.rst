@@ -220,8 +220,10 @@ How do I access logs?
 
 From Mattermost desktop v5.3, you can access logs via **Help > Show logs**, which opens the file manager window showing the location of the log file.
 
-How do I access and understand app diagnostics?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+How do I download app diagnostics?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+From Mattermost desktop v5.3, you can download a diagnostics text file via **Help > Run diagnostics**, which can be attached to a Support ticket.
 
 "Installation has failed" dialog
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
