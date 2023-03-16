@@ -52,6 +52,10 @@ By default, message drafts are synchronized on the Mattermost server and are acc
 .. Tip::
   
   You can disable server-synchronized drafts and limit drafts to your current Mattermost client only by going to **Settings > Advanced > Allow message drafts to sync with the server**.
+  
+.. note::
+
+  To disable global drafts, system admins can set the feature flag ``MM_FEATUREFLAGS_GLOBALDRAFTS`` to ``false`` to disable it server-wide. It can't be disabled on a per-user basis. The code is located `here <https://github.com/mattermost/mattermost-server/blob/master/model/feature_flags.go#L11>`_.
 
 Edit or delete messages
 -----------------------
@@ -64,6 +68,11 @@ Select the **More** |more-icon| icon next to a message that you've sent.
 Select **Edit** to edit your own messages. Editing a message won't trigger new @mention notifications, desktop notifications, or notification sounds.
 
 Select **Delete** to delete your own messages. Select **Delete** again to confirm.
+
+From Mattermost v7.9, you can view the edit history of an edited message and restore a previous version of an edited message.
+
+- **To view edit history:** Hover over the word *Edited* next to your edited message. In the right-hand sidebar, you'll see all previous versions of the message.
+- **To restore a message:** Select the icon in the top-right corner of the message you want to restore and confirm the action.
 
 Do more with your messages
 --------------------------

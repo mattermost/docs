@@ -10,6 +10,10 @@ From Mattermost v7.1, insights are available for all users using Mattermost in a
 
 .. image:: ../images/myinsights_teaminsights.gif
   :alt: An example of the Mattermost Insights page that includes top user and team-based activities and events.
+  
+.. note:: 
+    
+   To disable Insights, system admins can set the feature flag ``MM_FEATUREFLAGS_INSIGHTSENABLED`` to ``false`` to disable it server-wide. It can't be disabled on a per-user basis. The code is located `here <https://github.com/mattermost/mattermost-server/blob/master/model/feature_flags.go#L11>`_.
 
 Access insights
 ---------------
