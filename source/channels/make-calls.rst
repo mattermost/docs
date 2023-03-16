@@ -35,11 +35,15 @@ Start a call
   .. tab:: Desktop
 
     To start a call, select **Start call** in the channel or message header. When you start a call in a channel, you're muted by default. In a direct or group message you're unmuted by default.
+    
+      ..tip::
+        Select the call widget to move it to a different area of your screen.
 
   .. tab:: Mobile
      
      To start a call, select the channel info menu. Then select **Start Call**. The call starts in speaker mode by default.
-
+   
+        
 Any active team member in the channel can join a call, whether it's a public or private channel. If someone from outside of the organization wants to join a call, you'll need to provide them with a guest account, and add them to the channel. Users who are archived or not registered can't join a call.
 
 You can share a call's link to use in a meeting request or share with other team mates. The link is unique to each channel, and contains the channel's ID, so it doesn't change between calls. Use the ``/call link`` slash command to generate a shareable link.
