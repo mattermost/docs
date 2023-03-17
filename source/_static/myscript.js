@@ -204,12 +204,17 @@ $(document).ready(function () {
 		document.querySelectorAll('.mm-code-copy')
 	).map(clicker => {
 		const clickerInput = clicker.querySelector('.mm-code-copy__text');
-		const clickerTrigger = clicker.querySelector('.mm-code-copy__copy-trigger');
+		const clickerTrigger = clicker.querySelector('.mm-code-copy__trigger');
+		const clickerNotice = clicker.querySelector('.mm-code-copy__copied-notice');
 		const copyText = clickerInput.innerText;
 		clickerTrigger.addEventListener('click', (e) => {
 			e.preventDefault();
+			// The Clipboard API is only available in secure contexts (HTTPS), in some or all supporting browsers.
+			// https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API
+			// So this will not work on our current preview sites
+			// Building locally with `make livehtml` will work
 			navigator.clipboard.writeText(copyText).then(() => {
-				clicker.querySelector('.mm-code-copy-copied').classList.add('show');
+				clickerNotice.classList.add('show');
 
 				const copyCommand = clicker.dataset.clickCommand;
 				const copyMethod = clicker.dataset.clickMethod;
@@ -220,7 +225,7 @@ $(document).ready(function () {
 				});
 
 				setTimeout(function () {
-					clicker.querySelector('.mm-code-copy-copied').classList.remove("show");
+					clickerNotice.classList.remove("show");
 				}, 1000);
 			});
 		});

@@ -2690,19 +2690,35 @@ mark {
 .mm-code-copy {
     margin-top: 30px;
     margin-bottom: 50px;
+    display: flex;
+    flex-direction: column-reverse;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1000px) and (max-width: 1280px) {
+    .mm-code-copy.mm-code-copy--long {
+        display: grid;
+        column-gap: 20px;
+        grid-template-columns: 1fr 220px;
+    }
+
+    .mm-code-copy.mm-code-copy--long .mm-button {
+        margin-left: 0px;
+        line-height: 1.3;
+    }
+}
+
+@media (min-width: 960px) {
     .mm-code-copy {
-        display: flex;
+        flex-direction: row;
     }
 }
 
 .mm-code-copy__wrapper {
     position: relative;
+    align-self: flex-start;
 }
 
-.mm-code-copy-copied {
+.mm-code-copy__copied-notice {
     font-size: 16px;
     text-align: center;
     color: #fff;
@@ -2712,18 +2728,31 @@ mark {
     border-bottom-right-radius: 0.5rem;
     position: absolute;
     right: calc(50% - 100px);
-    top: 54px;
     z-index: 0;
     width: 200px;
     opacity: 0;
     visibility: hidden;
     transition: all .2s;
     font-family: trade-gothic-next,sans-serif;
+    bottom: -40px;
 }
 
-.mm-code-copy-copied.show {
+.mm-code-copy__copied-notice.show {
     opacity: 1;
     visibility: visible;
+    top: unset;
+    bottom: -40px;
+}
+
+@media (min-width: 960px) {
+    .mm-code-copy__copied-notice {
+        top: 50px;
+    }
+
+    .mm-code-copy__copied-notice.show {
+        top: 54px;
+        bottom: unset;
+    }
 }
 
 .install-hidden-field {
@@ -2738,23 +2767,48 @@ mark {
 .mm-code-copy code {
     background-color: #ECF0F9 !important;
     border-radius: 5px;
-    padding: 18px;
+    padding: 18px 10px;
     border: none !important;
     color: #1C58D9 !important;
-    font-size: 15px !important;
+    font-size: 13px !important;
     font-family: Fira Mono, monospace !important;
-    
     display: inline-block;
 }
 
+@media (min-width: 1400px) {
+    .mm-code-copy code {
+        padding: 18px;
+        font-size: 15px !important;
+    }
+}
+
 .mm-code-copy button.mm-button {
+    font-size: 13px;
     background-color: #4A69AB;
     display: flex;
     align-items: center;
     line-height: 1;
-    padding: 15px 25px;
+    padding: 13px 25px;
     align-self: flex-start;
-    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+@media (min-width: 960px) {
+    .mm-code-copy button.mm-button {
+        margin-left: 20px;
+        margin-bottom: 0px;
+    }
+}
+
+@media (min-width: 1400px) {
+    .mm-code-copy button.mm-button {
+        padding: 15px 25px;
+        font-size: 17px;
+    }
+}
+
+.mm-code-copy button.mm-button:hover {
+    background-color: #2C4987 !important;
 }
 
 .mm-code-copy button.mm-button svg {
@@ -2764,9 +2818,4 @@ mark {
 .mm-code-copy button.mm-button span {
     color: #ffffff;
     font-weight: 700;
-    line-height: 1;
-}
-
-.mm-code-copy button.mm-buttonn:hover {
-    background-color: #2C4987 !important;
 }
