@@ -2194,21 +2194,39 @@ Select OpenID Connect service provider
 
 *Available in legacy Enterprise Edition E20*
 
-Choose whether OpenID Connect can be used for account creation and login. Options include:
++----------------------------------------------------------------------------------+-----------------------------------------------------------+
+| Use this setting to enable OpenID Connect, with these options:                   | - System Config path: **Authentication > OpenID Connect** |
+|                                                                                  | - ``config.json`` setting: N/A                            |
+| - **Do not allow login via an OpenID provider**                                  | - Environment variable: N/A                               |
+| - **GitLab** (`see settings <#gitlab-openid-settings>`__)                        |                                                           |
+| - **Google Apps** (`see settings <#google-openid-settings>`__)                   |                                                           |
+| - **Office 365** (`see settings <#office-365-openid-settings>`__)                |                                                           |
+| - **OpenID Connect (Other)** (`see settings <#openid-connect-other-settings>`__) |                                                           |
++----------------------------------------------------------------------------------+-----------------------------------------------------------+
+| **Note**: **GitLab** OpenID is available in all plans, except Cloud Free. All other providers require Mattermost Enterprise or Professional. |
++----------------------------------------------------------------------------------------------------------------------------------------------+
 
-- **Do not allow login via an OpenID provider**
-- **GitLab** (available in all plans; see `GitLab Settings <https://docs.mattermost.com/configure/configuration-settings.html#gitlab-settings>`__ for details)
-- **Google Apps** (Available in Mattermost Enterprise and Professional; see `Google Settings <https://docs.mattermost.com/configure/configuration-settings.html#google-settings>`__ for details)
-- **Office 365** (Available in Mattermost Enterprise and Professional; see `Office 365 Settings <https://docs.mattermost.com/configure/configuration-settings.html#office-365-settings>`__ for details)
-- **OpenID Connect (Other)** (Available in Mattermost Enterprise and Professional; see `OpenID Connect Settings <https://docs.mattermost.com/configure/authentication-configuration-settings.html#openid-connect-other>`__ for more detail)
-
-This feature's setting does not appear in ``config.json``.
-
-GitLab settings
-^^^^^^^^^^^^^^^
+GitLab OpenID settings
+^^^^^^^^^^^^^^^^^^^^^^
 
 .. include:: ../_static/badges/entpro-cloud-free.rst
   :start-after: :nosearch:
+
+Enable OpenID Connect authentication with GitLab
+''''''''''''''''''''''''''''''''''''''''''''''''
+
+*Available in legacy Enterprise Edition E10 and E20. Not available in Cloud Free.*
+
++------------------------------------------------------------------------------------------+--------------------------------------------------------------+
+| - **true**: Allows team and account creation using GitLab OpenID Connect authentication. | - System Config path: **Authentication > OpenID Connect**    |
+| - **false**: **(Default)** Disables GitLab OpenID Connect authentication.                | - ``config.json`` setting: ``.GitLabSettings.Enable: false`` |
+|                                                                                          | - Environment variable: ``MM_GITLABSETTINGS_ENABLE``         |
++------------------------------------------------------------------------------------------+--------------------------------------------------------------+
+| **Note**: See the `GitLab Single Sign-On <https://docs.mattermost.com/onboard/sso-gitlab.html>`__ documentation for details.                            |
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+GitLab OpenID site URL
+''''''''''''''''''''''
 
 .. config:setting:: oidc-gitlabsiteurl
   :displayname: GitLab site URL (OpenID Connect - GitLab)
@@ -2217,12 +2235,19 @@ GitLab settings
   :environment: N/A
   :description: Specify the URL of your GitLab instance (example ``https://example.com:3000``).
 
-GitLab site URL
-'''''''''''''''
-
 *Available in legacy Enterprise Edition E10 and E20. Not available in Cloud Free.*
 
-Specify the URL of your GitLab instance (example ``https://example.com:3000``). If your GitLab instance is not set up with SSL, start the URL with ``http://`` instead of ``https://``.
++-----------------------------------------------------------------------------------------+-----------------------------------------------------------+
+| This setting stores the URL of your GitLab instance, e.g. **https://example.com:3000**. | - System Config path: **Authentication > OpenID Connect** |
+|                                                                                         | - ``config.json`` setting: N/A                            |
+|                                                                                         | - Environment variable: N/A                               |
+| String input.                                                                           |                                                           |
++-----------------------------------------------------------------------------------------+-----------------------------------------------------------+
+| **Note**: See **Step 2** of the `GitLab Single Sign-On <https://docs.mattermost.com/onboard/sso-gitlab.html>`__ documentation for details.          |
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+
+GitLab OpenID Discovery endpoint
+''''''''''''''''''''''''''''''''
 
 .. config:setting:: oidc-gitlabdiscoveryendpoint
   :displayname: Discovery endpoint (OpenID Connect - GitLab)
@@ -2231,13 +2256,19 @@ Specify the URL of your GitLab instance (example ``https://example.com:3000``). 
   :environment: N/A
   :description: Obtain this value by registering Mattermost as an application in your service provider account.
 
-Discovery endpoint
-''''''''''''''''''
+*Available in legacy Enterprise Edition E10 and E20. Not available in Cloud Free*
 
-*Available in legacy Enterprise Edition E10 and E20*
-*Not available in Cloud Free*
++-------------------------------------------------------------------------------------+-----------------------------------------------------------------+
+| This setting is prepopulated with the Discovery Endpoint for GitLab OpenID Connect. | - System Config path: **Authentication > OpenID Connect**       |
+|                                                                                     | - ``config.json`` setting: ``GitLabSettings.DiscoveryEndpoint`` |
+|                                                                                     | - Environment variable: ``MM_GITLABSETTINGS_DISCOVERYENDPOINT`` |
+| String input. Default is ``https://gitlab.com/.well-known/openid-configuration``    |                                                                 |
++-------------------------------------------------------------------------------------+-----------------------------------------------------------------+
+| **Note**: See **Step 2** of the `GitLab Single Sign-On <https://docs.mattermost.com/onboard/sso-gitlab.html>`__ documentation for details.            |
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Obtain this value by registering Mattermost as an application in your service provider account. Should be in the format ``https://myopenid.provider.com/{my_company}/.well-known/openid-configuration`` where the value of *{my_company}* is replaced with your organization.
+GitLab OpenID Client ID
+'''''''''''''''''''''''
 
 .. config:setting:: oidc-gitlabclientid
   :displayname: Client ID (OpenID Connect - GitLab)
@@ -2246,13 +2277,19 @@ Obtain this value by registering Mattermost as an application in your service pr
   :environment: N/A
   :description: Obtain this value by registering Mattermost as an application in your service provider account.
 
-Client ID
-'''''''''
+*Available in legacy Enterprise Edition E10 and E20. Not available in Cloud Free*
 
-*Available in legacy Enterprise Edition E10 and E20*
-*Not available in Cloud Free*
++-----------------------------------------------------------------+--------------------------------------------------------------------------+
+| This setting stores the **Application ID** generated by GitLab. | - System Config path: **Authentication > OpenID Connect**                |
+|                                                                 | - ``config.json`` setting: ``GitLabSettings.Id``                         |
+|                                                                 | - Environment variable: ``MM_GITLABSETTINGS_ID``                         |
+| String input.                                                   |                                                                          |
++-----------------------------------------------------------------+--------------------------------------------------------------------------+
+| **Note**: See **Step 2** of the `GitLab Single Sign-On <https://docs.mattermost.com/onboard/sso-gitlab.html>`__ documentation for details. |
++--------------------------------------------------------------------------------------------------------------------------------------------+
 
-Obtain this value by registering Mattermost as an application in your service provider account.
+GitLab OpenID Client secret
+'''''''''''''''''''''''''''
 
 .. config:setting:: oidc-gitlabclientsecret
   :displayname: Client secret (OpenID Connect - GitLab)
@@ -2261,19 +2298,25 @@ Obtain this value by registering Mattermost as an application in your service pr
   :environment: N/A
   :description: Obtain this value by registering Mattermost as an application in your service provider account.
 
-Client secret
-'''''''''''''
+*Available in legacy Enterprise Edition E10 and E20. Not available in Cloud Free*
 
-*Available in legacy Enterprise Edition E10 and E20*
-*Not available in Cloud Free*
++-------------------------------------------------------------------------+------------------------------------------------------------------+
+| This setting stores the **Application Secret Key** generated by GitLab. | - System Config path: **Authentication > OpenID Connect**        |
+|                                                                         | - ``config.json`` setting: ``.GitLabSettings.Secret``            |
+|                                                                         | - Environment variable: ``MM_GITLABSETTINGS_SECRET``             |
+| String input.                                                           |                                                                  |
++-------------------------------------------------------------------------+------------------------------------------------------------------+
+| **Note**: See **Step 2** of the `GitLab Single Sign-On <https://docs.mattermost.com/onboard/sso-gitlab.html>`__ documentation for details. |
++--------------------------------------------------------------------------------------------------------------------------------------------+
 
-Obtain this value by registering Mattermost as an application in your service provider account.
-
-Google Settings
-^^^^^^^^^^^^^^^
+Google OpenID settings
+^^^^^^^^^^^^^^^^^^^^^^
 
 .. include:: ../_static/badges/entpro-cloud-free.rst
   :start-after: :nosearch:
+
+Enable OpenID Connect authentication with Google
+''''''''''''''''''''''''''''''''''''''''''''''''
 
 .. config:setting:: oidc-googleenable
   :displayname: Enable Google Settings (OpenID Connect - Google)
@@ -2284,15 +2327,17 @@ Google Settings
   - **true**: Allow team creation and account signup using Google OpenID Connect.
   - **false**: **(Default)** Google OpenID Connect cannot be used for team creation or account signup.
 
-Enable authentication with Google by selecting ``Google Apps`` from **System Console > Authentication > OpenID Connect > Select service provider**.
+*Available in legacy Enterprise Edition E20*
 
-**True**: Allow team creation and account signup using Google OpenID Connect. To configure, input the **Client ID**, **Client Secret**, and **DiscoveryEndpoint** credentials. See `the documentation <https://docs.mattermost.com/onboard/sso-google.html>`__ for more detail.
++------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
+| - **true**: Allows team and account creation using Google OpenID authentication.                                 | - System Config path: **Authentication > OpenID Connect**    |
+| - **false**: **(Default)** Disables Google OpenID authentication.                                                | - ``config.json`` setting: ``.GoogleSettings.Enable: false`` |
+|                                                                                                                  | - Environment variable: ``MM_GOOGLESETTINGS_ENABLE``         |
+| See `Google Single Sign-On <https://docs.mattermost.com/onboard/sso-google.html>`__ implementation instructions. |                                                              |
++------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
 
-**False**: Google OpenID Connect cannot be used for team creation or account signup.
-
-+----------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Enable": false`` with options ``true`` and ``false``. |
-+----------------------------------------------------------------------------------------------------+
+Google OpenID Discovery endpoint
+''''''''''''''''''''''''''''''''
 
 .. config:setting:: oidc-googlediscoveryendpoint
   :displayname: Discovery endpoint (OpenID Connect - Google)
@@ -2301,16 +2346,18 @@ Enable authentication with Google by selecting ``Google Apps`` from **System Con
   :environment: N/A
   :description: This value is prepopulated with ``https://accounts.google.com/.well-known/openid-configuration``.
 
-Discovery endpoint
-''''''''''''''''''
-
 *Available in legacy Enterprise Edition E20*
 
-This value is prepopulated with ``https://accounts.google.com/.well-known/openid-configuration``.
++---------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
+| This setting is prepopulated with the Discovery Endpoint for Google OpenID Connect.                                                                     | - System Config path: **Authentication > OpenID Connect**        |
+|                                                                                                                                                         | - ``config.json`` setting: ``.GoogleSettings.DiscoveryEndpoint`` |
+| See `Configure Mattermost for Google Apps SSO <https://docs.mattermost.com/onboard/sso-google.html#step-3-configure-mattermost-for-google-apps-sso>`__. | - Environment variable: ``MM_GOOGLESETTINGS_DISCOVERYENDPOINT``  |
+|                                                                                                                                                         |                                                                  |
+| String input. Default is ``https://accounts.google.com/.well-known/openid-configuration``                                                               |                                                                  |
++---------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
 
-+------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"DiscoveryEndpoint": ""`` with string input. |
-+------------------------------------------------------------------------------------------+
+Google OpenID Client ID
+'''''''''''''''''''''''
 
 .. config:setting:: oidc-googleclientid
   :displayname: Client ID (OpenID Connect - Google)
@@ -2319,16 +2366,18 @@ This value is prepopulated with ``https://accounts.google.com/.well-known/openid
   :environment: N/A
   :description: Obtain this value by registering Mattermost as an application in your Google account.
 
-Client ID
-'''''''''
-
 *Available in legacy Enterprise Edition E20*
 
-Obtain this value by registering Mattermost as an application in your Google account.
++------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+
+| This setting stores the Client ID generated by Google.                                                           | - System Config path: **Authentication > OpenID Connect** |
+|                                                                                                                  | - ``config.json`` setting: ``.GoogleSettings.Id``         |
+| See `Google Single Sign-On <https://docs.mattermost.com/onboard/sso-google.html>`__ implementation instructions. | - Environment variable: ``MM_GOOGLESETTINGS_ID``          |
+|                                                                                                                  |                                                           |
+| String input.                                                                                                    |                                                           |
++------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+
 
-+---------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Id": ""`` with string input. |
-+---------------------------------------------------------------------------+
+Google OpenID Client secret
+'''''''''''''''''''''''''''
 
 .. config:setting:: oidc-googleclientsecret
   :displayname: Client secret (OpenID Connect - Google)
@@ -2337,22 +2386,27 @@ Obtain this value by registering Mattermost as an application in your Google acc
   :environment: N/a
   :description: Obtain this value by registering Mattermost as an application in your Google account.
 
-Client secret
-'''''''''''''
-
 *Available in legacy Enterprise Edition E20*
 
-Obtain this value by registering Mattermost as an application in your Google account.
++-------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+
+| This setting stores the Client Secret generated by Google.                                                        | - System Config path: **Authentication > OpenID Connect** |
+|                                                                                                                   | - ``config.json`` setting: ``.GoogleSettings.Secret``     |
+| See `Google Single Sign-On <https://docs.mattermost.com/onboard/sso-google.html>`__  implementation instructions. | - Environment variable: ``MM_GOOGLESETTINGS_SECRET``      |
+|                                                                                                                   |                                                           |
+| String input.                                                                                                     |                                                           |
++-------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+
 
-+-------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Secret": ""`` with string input. |
-+-------------------------------------------------------------------------------+
-
-Office 365 Settings
-^^^^^^^^^^^^^^^^^^^
+Office 365 OpenID settings
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. include:: ../_static/badges/entpro-cloud-free.rst
   :start-after: :nosearch:
+
+.. note::
+   In line with Microsoft ADFS guidance, we recommend `configuring intranet forms-based authentication for devices that do not support WIA <https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configure-intranet-forms-based-authentication-for-devices-that-do-not-support-wia>`_.
+
+Enable OpenID Connect authentication with Office 365
+''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 .. config:setting:: oidc-o365enable
   :displayname: Enable Office 365 Settings (OpenID Connect - Office 365)
@@ -2363,32 +2417,37 @@ Office 365 Settings
   - **true**: Allow team creation and account signup using Office 365 OpenID Connect.
   - **false**: **(Default)** Office 365 OpenID Connect cannot be used for team creation or account signup.
 
-.. note::
-   In line with Microsoft ADFS guidance, we recommend `configuring intranet forms-based authentication for devices that do not support WIA <https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configure-intranet-forms-based-authentication-for-devices-that-do-not-support-wia>`_.
+*Available in legacy Enterprise Edition E20*
 
-Enable authentication with Office 365 by selecting **Office 365** from **System Console > Authentication > OpenID Connect > Select service provider**.
++----------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------+
+| - **true**: Allows team and account creation using Office 365 OpenID Connect authentication.                         | - System Config path: **Authentication > OpenID Connect**      |
+| - **false**: **(Default)** Disables Office 365 OpenID Connect authentication.                                        | - ``config.json`` setting: ``Office365Settings.Enable: false`` |
+|                                                                                                                      | - Environment variable: ``MM_OFFICE365SETTINGS_ENABLE``        |
+| See `Office 365 Single Sign-On <https://docs.mattermost.com/onboard/sso-office.html>`__ implementation instructions. |                                                                |
++----------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------+
 
-**True**: Allow team creation and account signup using Office 365 OpenID Connect. To configure, input the **Application ID** and **Application Secret Password** credentials. See `the documentation <https://docs.mattermost.com/onboard/sso-office.html>`__ for more detail.
-
-**False**: Office 365 OpenID Connect cannot be used for team creation or account signup.
-
-+----------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Enable": false`` with options ``true`` and ``false``. |
-+----------------------------------------------------------------------------------------------------+
+Office 365 OpenID Directory (tenant) ID
+'''''''''''''''''''''''''''''''''''''''
 
 .. config:setting:: oidc-o365directoryid
   :displayname: Directory ID (OpenID Connect - Office 365)
   :systemconsole: Authentication > OpenID Connect
   :configjson: N/A
   :environment: N/A
-  :description: This value is the ID of the application's AAD directory.
-
-Directory (tenant) ID
-'''''''''''''''''''''
+  :description: This setting holds the Directory (tenant) ID set for Mattermost through the Microsoft Azure Portal.
 
 *Available in legacy Enterprise Edition E20*
 
-This value is the ID of the application's AAD directory.
++----------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------+
+| This setting holds the Directory (tenant) ID set for Mattermost through the Microsoft Azure Portal.                  | - System Config path: **Authentication > OpenID Connect**     |
+|                                                                                                                      | - ``config.json`` setting: ``.Office365Settings.DirectoryId`` |
+| See `Office 365 Single Sign-On <https://docs.mattermost.com/onboard/sso-office.html>`__ implementation instructions. | - Environment variable: ``MM_OFFICE365SETTINGS_DIRECTORYID``  |
+|                                                                                                                      |                                                               |
+| String input.                                                                                                        |                                                               |
++----------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------+
+
+Office 365 OpenID Discovery endpoint
+''''''''''''''''''''''''''''''''''''
 
 .. config:setting:: oidc-o365discoveryendpoint
   :displayname: Discovery endpoint (OpenID Connect - Office 365)
@@ -2397,43 +2456,64 @@ This value is the ID of the application's AAD directory.
   :environment: N/A
   :description: This value is prepopulated with ``https://login.microsoftonline.com/common/v2.0/.well-known/openid-configuration``.
 
-Discovery endpoint
-''''''''''''''''''
-
 *Available in legacy Enterprise Edition E20*
 
-This value is prepopulated with ``https://login.microsoftonline.com/common/v2.0/.well-known/openid-configuration``.
++----------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| This setting is prepopulated with the Discovery Endpoint for Office 365 OpenID Connect.                              | - System Config path: **Authentication > OpenID Connect**           |
+|                                                                                                                      | - ``config.json`` setting: ``.Office365Settings.DiscoveryEndpoint`` |
+| See `Office 365 Single Sign-On <https://docs.mattermost.com/onboard/sso-office.html>`__ implementation instructions. | - Environment variable: ``MM_OFFICE365SETTINGS_DISCOVERYENDPOINT``  |
+|                                                                                                                      |                                                                     |
+| String input. Default is ``https://login.microsoftonline.com/common/v2.0/.well-known/openid-configuration``          |                                                                     |
++----------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+
+Office 365 Client ID
+''''''''''''''''''''
 
 .. config:setting:: oidc-o365clientid
   :displayname: Client ID (OpenID Connect - Office 365)
   :systemconsole: Authentication > OpenID Connect
   :configjson: N/A
   :environment: N/A
-  :description: Obtain this value by registering Mattermost as an application in your Google account.
-
-Client ID
-'''''''''
+  :description: This setting stores the Application (client) ID  generated through the Microsoft Azure Portal.
 
 *Available in legacy Enterprise Edition E20*
 
-Obtain this value by registering Mattermost as an application in your Google account.
++----------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+
+| This setting stores the **Application (client) ID** generated through the Microsoft Azure Portal.                    | - System Config path: **Authentication > OpenID Connect** |
+|                                                                                                                      | - ``config.json`` setting: ``.Office365Settings.Id``      |
+| See `Office 365 Single Sign-On <https://docs.mattermost.com/onboard/sso-office.html>`__ implementation instructions. | - Environment variable: ``MM_OFFICE365SETTINGS_ID``       |
+|                                                                                                                      |                                                           |
+| String input.                                                                                                        |                                                           |
++----------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+
+
+Office 365 Client secret
+''''''''''''''''''''''''
 
 .. config:setting:: oidc-o365clientsecret
   :displayname: Client secret (OpenID Connect - Office 365)
   :systemconsole: Authentication > OpenID Connect
   :configjson: N/A
   :environment: N/A
-  :description: Obtain this value by registering Mattermost as an application in your Google account.
-
-Client secret
-'''''''''''''
+  :description: This setting stores the Client Secret generated through the Microsoft Azure Portal.
 
 *Available in legacy Enterprise Edition E20*
 
-Obtain this value by registering Mattermost as an application in your Google account.
++----------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+
+| This setting stores the **Client Secret** generated through the Microsoft Azure Portal.                              | - System Config path: **Authentication > OpenID Connect** |
+|                                                                                                                      | - ``config.json`` setting: ``.Office365Settings.Secret``  |
+| See `Office 365 Single Sign-On <https://docs.mattermost.com/onboard/sso-office.html>`__ implementation instructions. | - Environment variable: ``MM_OFFICE365SETTINGS_SECRET``   |
+|                                                                                                                      |                                                           |
+| String input.                                                                                                        |                                                           |
++----------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+
 
-OpenID Connect (other)
-^^^^^^^^^^^^^^^^^^^^^^
+OpenID Connect (other) settings
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
+
+Enable OpenID Connect authentication with other service providers
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 .. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
   :start-after: :nosearch:
@@ -2447,15 +2527,17 @@ OpenID Connect (other)
   - **True**: Allow team creation and account signup using OpenID Connect.
   - **False**: **(Default)** OpenID Connect cannot be used for team creation or account signup.
 
-Enable authentication with a service provider by selecting ``OpenID Connect (Other)`` from **System Console > Authentication > OpenID Connect > Select service provider**.
+*Available in legacy Enterprise Edition E20*
 
-**True**: Allow team creation and account signup using OpenID Connect. To configure, input the **Client ID**, **Client Secret**, and **DiscoveryEndpoint** credentials. See `the documentation <https://docs.mattermost.com/onboard/sso-openidconnect.html>`__ for more detail.
++---------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
+| - **true**: Allows team and account creation using other OpenID Connect service providers.                                      | - System Config path: **Authentication > OpenID Connect**    |
+| - **false**: **(Default)** Disables OpenID Connect authentication with other service providers.                                 | - ``config.json`` setting: ``.OpenIdSettings.Enable: false`` |
+|                                                                                                                                 | - Environment variable: ``MM_OPENIDSETTINGS_ENABLE``         |
+| See `OpenID Connect Single Sign-On <https://docs.mattermost.com/onboard/sso-openidconnect.html>`__ implementation instructions. |                                                              |
++---------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
 
-**False**: OpenID Connect cannot be used for team creation or account signup.
-
-+----------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Enable": false`` with options ``true`` and ``false``. |
-+----------------------------------------------------------------------------------------------------+
+OpenID Connect (other) Button name
+''''''''''''''''''''''''''''''''''
 
 .. config:setting:: oidc-buttonname
   :displayname: Button name (OpenID Connect)
@@ -2464,16 +2546,16 @@ Enable authentication with a service provider by selecting ``OpenID Connect (Oth
   :environment: N/A
   :description: Specify the text that displays on the OpenID login button.
 
-Button name
-'''''''''''
-
 *Available in legacy Enterprise Edition E20*
 
-Specify the text that displays on the OpenID login button.
++-------------------------------------------------------+-----------------------------------------------------------+
+| This setting is the text for the OpenID login button. | - System Config path: **Authentication > OpenID Connect** |
+|                                                       | - ``config.json`` setting: ``.OpenIdSettings.ButtonText`` |
+| String input.                                         | - Environment variable: ``MM_OPENIDSETTINGS_BUTTONTEXT``  |
++-------------------------------------------------------+-----------------------------------------------------------+
 
-+-----------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ButtonText": ""`` with string input. |
-+-----------------------------------------------------------------------------------+
+OpenID Connect (other) Button color
+'''''''''''''''''''''''''''''''''''
 
 .. config:setting:: oidc-buttoncolor
   :displayname: Button color
@@ -2482,14 +2564,16 @@ Specify the text that displays on the OpenID login button.
   :environment: N/A
   :description: Specify the color of the OpenID login button for white labeling purposes. Use a hex code with a #-sign before the code, for example ``#145DBF``.
 
-Button color
-''''''''''''
+*Available in legacy Enterprise Edition E20*
 
-Specify the color of the OpenID login button for white labeling purposes. Use a hex code with a #-sign before the code, for example ``#145DBF``.
++------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------+
+| This setting is the color of the OpenID login button. Use a hex code with a #-sign before the code, for example ``#145DBF``. | - System Config path: **Authentication > OpenID Connect**  |
+|                                                                                                                              | - ``config.json`` setting: ``.OpenIdSettings.ButtonColor`` |
+| String input.                                                                                                                | - Environment variable: ``MM_OPENIDSETTINGS_BUTTONCOLOR``  |
++------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------+
 
-+------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ButtonColor": ""`` with string input. |
-+------------------------------------------------------------------------------------+
+OpenID Connect (other) Discovery endpoint
+'''''''''''''''''''''''''''''''''''''''''
 
 .. config:setting:: oidc-discoveryendpoint
   :displayname: Discovery endpoint (OpenID Connect)
@@ -2498,16 +2582,18 @@ Specify the color of the OpenID login button for white labeling purposes. Use a 
   :environment: N/A
   :description: Obtain this value by registering Mattermost as an application in your service provider account.
 
-Discovery endpoint
-''''''''''''''''''
-
 *Available in legacy Enterprise Edition E20*
 
-Obtain this value by registering Mattermost as an application in your service provider account. Should be in the format ``https://myopenid.provider.com/{my_company}/.well-known/openid-configuration`` where the value of *{my_company}* is replaced with your organization.
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
+| This setting stores the Discovery Endpoint URL from the OpenID provider. The URL should be in the format of ``https://myopenid.provider.com/{my_organization}/.well-known/openid-configuration``. | - System Config path: **Authentication > OpenID Connect**        |
+|                                                                                                                                                                                                   | - ``config.json`` setting: ``.OpenIdSettings.DiscoveryEndpoint`` |
+| See `OpenID Connect Single Sign-On <https://docs.mattermost.com/onboard/sso-openidconnect.html>`__ implementation instructions.                                                                   | - Environment variable: ``MM_OPENIDSETTINGS_DISCOVERYENDPOINT``  |
+|                                                                                                                                                                                                   |                                                                  |
+| String input.                                                                                                                                                                                     |                                                                  |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
 
-+------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"DiscoveryEndpoint": ""`` with string input. |
-+------------------------------------------------------------------------------------------+
+OpenID Connect (other) Client ID
+''''''''''''''''''''''''''''''''
 
 .. config:setting:: oidc-clientid
   :displayname: Client ID (OpenID Connect)
@@ -2516,16 +2602,18 @@ Obtain this value by registering Mattermost as an application in your service pr
   :environment: N/A
   :description: Obtain this value by registering Mattermost as an application in your service provider account.
 
-Client ID
-'''''''''
-
 *Available in legacy Enterprise Edition E20*
 
-Obtain this value by registering Mattermost as an application in your service provider account.
++---------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+
+| This setting stores the Client ID from the OpenID provider.                                                                     | - System Config path: **Authentication > OpenID Connect** |
+|                                                                                                                                 | - ``config.json`` setting: ``.OpenIdSettings.Id``         |
+| See `OpenID Connect Single Sign-On <https://docs.mattermost.com/onboard/sso-openidconnect.html>`__ implementation instructions. | - Environment variable: ``MM_OPENIDSETTINGS_ID``          |
+|                                                                                                                                 |                                                           |
+| String input.                                                                                                                   |                                                           |
++---------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+
 
-+---------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Id": ""`` with string input. |
-+---------------------------------------------------------------------------+
+OpenID Connect (other) Client secret
+''''''''''''''''''''''''''''''''''''
 
 .. config:setting:: oidc-clientsecret
   :displayname: Client secret (OpenID Connect)
@@ -2534,16 +2622,15 @@ Obtain this value by registering Mattermost as an application in your service pr
   :environment: N/A
   :description: Obtain this value by registering Mattermost as an application in your service provider account.
 
-Client secret
-'''''''''''''
-
 *Available in legacy Enterprise Edition E20*
 
-Obtain this value by registering Mattermost as an application in your service provider account.
-
-+-------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Secret": ""`` with string input. |
-+-------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+
+| This setting stores the Client Secret from the OpenID provider.                                                                 | - System Config path: **Authentication > OpenID Connect** |
+|                                                                                                                                 | - ``config.json`` setting: ``.OpenIdSettings.Secret``     |
+| See `OpenID Connect Single Sign-On <https://docs.mattermost.com/onboard/sso-openidconnect.html>`__ implementation instructions. | - Environment variable: ``MM_OPENIDSETTINGS_SECRET``      |
+|                                                                                                                                 |                                                           |
+| String input.                                                                                                                   |                                                           |
++---------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+
 
 ----
 
