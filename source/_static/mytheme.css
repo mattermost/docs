@@ -2775,6 +2775,10 @@ mark {
     display: inline-block;
 }
 
+.mm-code-copy code:hover {
+    cursor: pointer;
+}
+
 @media (min-width: 1400px) {
     .mm-code-copy code {
         padding: 18px;

@@ -27,13 +27,13 @@ In a terminal window, run the following command to configure the repositories ne
   <div class="mm-code-copy mm-code-copy--long" data-click-method="Omnibus" data-click-command="Add the Mattermost PPA repositories">
 
     <div class="mm-code-copy__wrapper">
-      <code class="mm-code-copy__text">
+      <code class="mm-code-copy__text mm-code-copy__trigger" data-click-el="Snippet">
         curl -o- https://deb.packages.mattermost.com/repo-setup.sh | sudo bash
       </code>
       <span class="mm-code-copy__copied-notice">Copied to clipboard</span>
     </div>
 
-    <button class="mm-button mm-code-copy__trigger">
+    <button class="mm-button mm-code-copy__trigger" data-click-el="Button">
       <svg aria-hidden="true" width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="0.5" y="0.5" width="10.2972" height="10.8284" rx="0.5" stroke="white"/><rect x="6.1489" y="6.41418" width="10.2972" height="10.8284" rx="0.5" stroke="white"/></svg>
       <span>Copy to clipboard<span>
     </button>
@@ -51,13 +51,13 @@ Step 2: Install Mattermost Omnibus
   <div class="mm-code-copy" data-click-method="Omnibus" data-click-command="Install Mattermost Omnibus">
 
     <div class="mm-code-copy__wrapper">
-      <code class="mm-code-copy__text">
+      <code class="mm-code-copy__text mm-code-copy__trigger" data-click-el="Snippet">
         sudo apt install mattermost-omnibus -y
       </code>
       <span class="mm-code-copy__copied-notice">Copied to clipboard</span>
     </div>
 
-    <button class="mm-button mm-code-copy__trigger">
+    <button class="mm-button mm-code-copy__trigger" data-click-el="Button">
       <svg aria-hidden="true" width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="0.5" y="0.5" width="10.2972" height="10.8284" rx="0.5" stroke="white"/><rect x="6.1489" y="6.41418" width="10.2972" height="10.8284" rx="0.5" stroke="white"/></svg>
       <span>Copy to clipboard<span>
     </button>
@@ -111,13 +111,13 @@ Mattermost Omnibus is integrated with the apt package manager. When a new Matter
   <div class="mm-code-copy" data-click-method="Omnibus" data-click-command="Update Mattermost Omnibus">
 
     <div class="mm-code-copy__wrapper">
-      <code class="mm-code-copy__text">
+      <code class="mm-code-copy__text mm-code-copy__trigger" data-click-el="Snippet">
         sudo apt update && sudo apt upgrade
       </code>
       <span class="mm-code-copy__copied-notice">Copied to clipboard</span>
     </div>
 
-    <button class="mm-button mm-code-copy__trigger">
+    <button class="mm-button mm-code-copy__trigger" data-click-el="Button">
       <svg aria-hidden="true" width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="0.5" y="0.5" width="10.2972" height="10.8284" rx="0.5" stroke="white"/><rect x="6.1489" y="6.41418" width="10.2972" height="10.8284" rx="0.5" stroke="white"/></svg>
       <span>Copy to clipboard<span>
     </button>
