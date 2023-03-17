@@ -210,7 +210,7 @@ $(document).ready(function () {
 		clickerTrigger.addEventListener('click', (e) => {
 			e.preventDefault();
 			// The Clipboard API is only available in secure contexts (HTTPS), in some or all supporting browsers.
-			// https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API
+			// https://developer.mozilla.org/en-US/docs/Web/API/Clipboard
 			// So this will not work on our current preview sites
 			// Building locally with `make livehtml` will work
 			navigator.clipboard.writeText(copyText).then(() => {
