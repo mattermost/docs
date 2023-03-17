@@ -199,6 +199,33 @@ $(document).ready(function () {
 		localStorage.setItem(notification_banner_key, false);
 	});
 
+	// Installation Copy Buttons
+	Array.from(
+		document.querySelectorAll('.mm-code-copy')
+	).map(clicker => {
+		const clickerInput = clicker.querySelector('.mm-code-copy__text');
+		const clickerTrigger = clicker.querySelector('.mm-code-copy__copy-trigger');
+		const copyText = clickerInput.innerText;
+		clickerTrigger.addEventListener('click', (e) => {
+			e.preventDefault();
+			navigator.clipboard.writeText(copyText).then(() => {
+				clicker.querySelector('.mm-code-copy-copied').classList.add('show');
+
+				const copyCommand = clicker.dataset.clickCommand;
+				const copyMethod = clicker.dataset.clickMethod;
+				dataLayer.push({
+					event: 'copy.installation',
+					installMethod: copyMethod,
+					installCommand: copyCommand
+				});
+
+				setTimeout(function () {
+					clicker.querySelector('.mm-code-copy-copied').classList.remove("show");
+				}, 1000);
+			});
+		});
+	});
+
 });
 
 // Redesign - Navigation

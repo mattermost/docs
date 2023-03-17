@@ -25,14 +25,47 @@ Step 1: Add the Mattermost PPA repositories
 
 In a terminal window, run the following command to configure the repositories needed for a PostgreSQL database, configure an NGINX web server to act as a proxy, configure certbot to issue and renew the SSL certificate, and configure the Mattermost Omnibus repository so that you can run the install command.
 
-``curl -o- https://deb.packages.mattermost.com/repo-setup.sh | sudo bash``  |copy-to-clipboard|
+.. raw:: html
+
+  <div class="mm-code-copy" data-click-method="Omnibus" data-click-command="Add the Mattermost PPA repositories">
+
+    <div class="mm-code-copy__wrapper">
+      <code class="mm-code-copy__text">
+        curl -o- https://deb.packages.mattermost.com/repo-setup.sh | sudo bash
+      </code>
+      <span class="mm-code-copy-copied">Copied to clipboard</span>
+    </div>
+
+    <button class="mm-button mm-code-copy__copy-trigger">
+      <svg width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="0.5" y="0.5" width="10.2972" height="10.8284" rx="0.5" stroke="white"/><rect x="6.1489" y="6.41418" width="10.2972" height="10.8284" rx="0.5" stroke="white"/></svg>
+      <span>Copy to clipboard<span>
+    </button>
+
+  </div>
+
 
 Step 2: Install Mattermost Omnibus
 ---------------------------------------
 
-1. In a terminal window, run the following command to install Omnibus.  |copy-to-clipboard|
+1. In a terminal window, run the following command to install Omnibus.
 
-  ``sudo apt install mattermost-omnibus -y``
+.. raw:: html
+
+  <div class="mm-code-copy" data-click-method="Omnibus" data-click-command="Install Mattermost Omnibus">
+
+    <div class="mm-code-copy__wrapper">
+      <code class="mm-code-copy__text">
+        sudo apt install mattermost-omnibus -y
+      </code>
+      <span class="mm-code-copy-copied">Copied to clipboard</span>
+    </div>
+
+    <button class="mm-button mm-code-copy__copy-trigger">
+      <svg width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="0.5" y="0.5" width="10.2972" height="10.8284" rx="0.5" stroke="white"/><rect x="6.1489" y="6.41418" width="10.2972" height="10.8284" rx="0.5" stroke="white"/></svg>
+      <span>Copy to clipboard<span>
+    </button>
+
+  </div>
 
 .. note::
 
@@ -45,7 +78,7 @@ Step 2: Install Mattermost Omnibus
 4. Create your first Mattermost user, invite more users, and explore the Mattermost platform.
 
 Step 3: Configure Mattermost Omnibus
------------------------------------
+------------------------------------
 
 .. note::
 
@@ -76,7 +109,23 @@ Update Mattermost Omnibus
 
 Mattermost Omnibus is integrated with the apt package manager. When a new Mattermost version is released, run the following command to download and update your Mattermost instance:
 
-``sudo apt update && sudo apt upgrade``  |copy-to-clipboard|
+.. raw:: html
+
+  <div class="mm-code-copy" data-click-method="Omnibus" data-click-command="Update Mattermost Omnibus">
+
+    <div class="mm-code-copy__wrapper">
+      <code class="mm-code-copy__text">
+        sudo apt update && sudo apt upgrade
+      </code>
+      <span class="mm-code-copy-copied">Copied to clipboard</span>
+    </div>
+
+    <button class="mm-button mm-code-copy__copy-trigger">
+      <svg width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="0.5" y="0.5" width="10.2972" height="10.8284" rx="0.5" stroke="white"/><rect x="6.1489" y="6.41418" width="10.2972" height="10.8284" rx="0.5" stroke="white"/></svg>
+      <span>Copy to clipboard<span>
+    </button>
+
+  </div>
 
 .. note::
 
