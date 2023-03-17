@@ -13,8 +13,8 @@ Latest Mattermost Releases:
 
 ## Release v7.9 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
 
-- **v7.9.1, released **
-  - 
+- **v7.9.1, released 2023-03-17**
+  - Mattermost v7.9.1 contains a high severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
 - **v7.9.0, released 2023-03-16**
   - Original 7.9.0 release
 
@@ -116,7 +116,8 @@ Mattermost v7.9.0 contains a low severity level security fix. [Upgrading](https:
 
 ## Release v7.8 - [Extended Support Release](https://docs.mattermost.com/upgrade/release-definitions.html#extended-support-release-esr)
 
-- **v7.8.2, released **
+- **v7.8.2, released 2023-03-17**
+  - Mattermost v7.8.2 contains a high severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Added a ``exclude_files_count`` parameter to exclude file counts from channel stats API.
   - Excluded the file count on channel stats API call on from channel header.
   - Fixed an issue where the Shared Channels feature wasn't properly included in the Professional license.
@@ -289,6 +290,8 @@ WHERE duplicates.rownum > 1;
 
 ## Release v7.7 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
 
+- **v7.7.2, released 2023-03-17**
+  - Mattermost v7.7.2 contains a high severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
 - **v7.7.2, released 2023-03-01**
   - Mattermost v7.7.2 contains medium to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - [Message Priority & Acknowledgement](https://docs.mattermost.com/configure/site-configuration-settings.html#message-priority) is now enabled by default for all instances. You may disable this feature in the System Console by going to **Posts > Message Priority** or via the config ``PostPriority`` setting.
@@ -938,7 +941,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ## Release v7.1 - [Extended Support Release](/upgrade/release-definitions.html#extended-support-release-esr)
 
-- **v7.1.7, released **
+- **v7.1.7, released 2023-03-17**
   - Added a ``exclude_files_count`` parameter to exclude file counts from channel stats API.
   - Excluded the file count on channel stats API call on from channel header.
 - **v7.1.6, released 2023-03-01**
