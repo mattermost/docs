@@ -24,7 +24,7 @@ Latest Mattermost Cloud releases:
  - Added additional values to the support packet.
 
 #### Performance
- - Writes to websocket now take 13% less memory and also happens 22% faster per message.
+ - Writes to websocket now take 13% less memory and happen 22% faster per message.
 
 ### API Changes
  - Added a ``exclude_files_count`` parameter to exclude file counts from channel stats API.
