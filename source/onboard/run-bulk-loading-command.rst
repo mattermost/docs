@@ -10,11 +10,11 @@ Before running the bulk loading command, you must first create a `JSONL <https:/
 
   .. tab:: Use mmctl
 
-    1. After you create the file, upload the file to the database by running the `mmctl import upload </manage/mmctl-command-line-tool.html#mmctl-import-upload>`__ command. For example: ``mmctl import upload data.jsonl``.
+    1. After you created the JSONL file, you need to zip it (`zip -r data.zip data.jsonl`) and upload the ZIP file to the database by running the `mmctl import upload </manage/mmctl-command-line-tool.html#mmctl-import-upload>`__ command. For example: ``mmctl import upload data.zip``.
 
     2. Confirm that the file is uploaded and ready for use by running the `mmctl import list available </manage/mmctl-command-line-tool.html#mmctl-import-list-available>`__ command. 
 
-    3. Import your uploaded file by running the `mmctl import process </manage/mmctl-command-line-tool.html#mmctl-import-process>`__ command. For example: ``mmctl import process data.jsonl``.
+    3. Import your uploaded file by running the `mmctl import process </manage/mmctl-command-line-tool.html#mmctl-import-process>`__ command. For example: ``mmctl import process <importedid>_data.zip`` (use the name of the uploaded file from `mmctl import list available </manage/mmctl-command-line-tool.html#mmctl-import-list-available>`__ command).
 
   .. tab:: Use CLI
 
