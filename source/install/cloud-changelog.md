@@ -4,12 +4,38 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 
 Latest Mattermost Cloud releases:
 
+- [Release 2023-03-30](#release-2023-03-30)
 - [Release 2023-03-20](#release-2023-03-20)
 - [Release 2023-01-26](#release-2023-01-26)
 - [Release 2023-01-16](#release-2023-01-16)
 - [Release 2022-12-20](#release-2022-12-20)
 - [Release 2022-12-01](#release-2022-12-01)
-- [Release 2022-11-24](#release-2022-11-24)
+
+## Release 2023-03-30
+
+### Improvements
+
+#### User Interface (UI)
+ - The **Browser Channels** user interface has been updated. The modal now displays joined channels as well as an option to hide joined channels.
+
+#### Administration
+ - The ``ServiceSettings.PostEditTimeLimit`` config setting no longer affects Plugins, Shared Channels, Integration Actions, or Mattermost Products.
+ - The app server no longer starts if the telemetry ID in the systems table doesn't exist. Although there is no action required by the administrators, it may be good to be aware of this change.
+ - Added additional values to the support packet.
+
+#### Performance
+ - Writes to websocket now take 13% less memory and also happens 22% faster per message.
+
+### API Changes
+ - Added a ``exclude_files_count`` parameter to exclude file counts from channel stats API.
+
+### Bug Fixes
+ - Fixed an issue where Shared Channels wasn't properly added to the Professional license.
+
+### Known Issues
+ - The URL of the post in a reminder post for Direct and Group Messages have a double slash on mobile [MM-51026](https://mattermost.atlassian.net/browse/MM-51026).
+ - A user gets scrolled to the bottom of the post editor after pasting long text in the right-hand side [MM-51302](https://mattermost.atlassian.net/browse/MM-51302).
+ - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
 
 ## Release 2023-03-20
 
