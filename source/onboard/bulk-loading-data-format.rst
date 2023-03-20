@@ -531,7 +531,6 @@ For clarity, the object is shown using regular JSON formatting, but in the data 
       "username": "username",
       "email": "email@example.com",
       "auth_service": "",
-      "auth_data": "",
       "password": "passw0rd",
       "nickname": "bobuser",
       "first_name": "Bob",
