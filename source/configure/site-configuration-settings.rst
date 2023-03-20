@@ -1088,7 +1088,7 @@ Message priority
 +-----------------------------------------------------------------------------+------------------------------------------------------------------------+
 | **Note**: `Mattermost Professional or Enterprise <https://mattermost.com/pricing>`__ customers can additionally request message acknowledgements to  |
 | track that specific, time-sensitive messages have been seen and actioned. See the                                                                    |
-| `message priority <https://docs.mattermost.com/channels/message-priority>`__ documentation to learn more.                                            |
+| `message priority <https://docs.mattermost.com/channels/message-priority.html>`__ documentation to learn more.                                       |
 +-----------------------------------------------------------------------------+------------------------------------------------------------------------+
 
 .. config:setting:: posts-enablelinkpreviews
