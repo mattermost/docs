@@ -4,14 +4,14 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 
 Latest Mattermost Cloud releases:
 
-- [Release 2023-03-16](#release-2023-03-16)
+- [Release 2023-03-20](#release-2023-03-20)
 - [Release 2023-01-26](#release-2023-01-26)
 - [Release 2023-01-16](#release-2023-01-16)
 - [Release 2022-12-20](#release-2022-12-20)
 - [Release 2022-12-01](#release-2022-12-01)
 - [Release 2022-11-24](#release-2022-11-24)
 
-## Release 2023-03-16
+## Release 2023-03-20
 
 ### Compatibility
  - Updated Firefox minimum supported version to 102+.
@@ -25,7 +25,7 @@ Latest Mattermost Cloud releases:
 #### Annual Cloud Subscriptions
  - On the purchase modal, admins are now able to buy an annual cloud subscription starting from their current user count.
  - The **System Console > Billing & Account > Subscriptions** page now reflects whether the plan is monthly or annual.
- - Cloud Professional monthly will no longer be offered to new customers starting March 16, 2023.
+ - Cloud Professional monthly will no longer be offered to new customers starting March 20, 2023.
  - Added the option to migrate from a monthly to an annual Cloud Professional plan for existing Cloud Professional monthly customers.
 
 #### Boards
