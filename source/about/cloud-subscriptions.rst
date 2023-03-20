@@ -70,7 +70,6 @@ Example:
 - You subscribed to Cloud Professional on January 2023 for 100 users. Throughout your subscription term, you add 8 users. You will not be retroactively billed for the cost of additional users.
 - You subscribed to Cloud Professional on January 2023 for 100 users. On March 2023, you add 5 users. On September 2023, you add another 10 users for a total of 15 users during your subscription term. You will be billed pro-rated for the cost of additional users incurred in March and September.
 
-
 Renew your subscription
 -----------------------
 
@@ -177,4 +176,6 @@ These offerings are deployed in the following ways:
 Can I cancel and delete my Cloud workspace?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Yes. Please contact our Mattermost `Support team <mailto:support@mattermost.com>`_ with the subject **Mattermost Cloud Workspace Deletion Request** for assistance.
+Yes. If you have a Mattermost Free or a  monthly Mattermost Enterprise plan, you can delete your workspace via **System Console > Billing & Account > Subscription**.
+
+If you have an annual Mattermost Professional plan or a Mattermost Enterprise plan, please contact our Mattermost `Support team <mailto:support@mattermost.com>`_ with the subject **Mattermost Cloud Workspace Deletion Request** for assistance.
