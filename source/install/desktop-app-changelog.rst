@@ -41,6 +41,7 @@ Improvements
 All Platforms
 ^^^^^^^^^^^^^
 
+- Added support for starting a call from an existing thread through the ``/call start`` slash command.
 - Added support for Gnome's "do-not-disturb" status.
 - Added a menu item for showing the logs folder.
 - Improved performance by reducing the number of calls for URL detection.
