@@ -35,8 +35,8 @@ Install Mattermost Omnibus
 
 Mattermost bundles the components of a Mattermost deployment into a single installation, called Omnibus. Mattermost Omnibus packages the free, unlicensed Mattermost Enterprise version of Mattermost, a PostgreSQL database (Omnibus doesn't support MySQL databases) and, when required, NGINX as the application proxy. A custom CLI (``mmomni``) and ansible recipes link the components together and configures them.
 
-Step 1: Add the Mattermost PPA repositories
---------------------------------------------
+Add the Mattermost PPA repositories
+-----------------------------------
 
 In a terminal window, run the following command to configure the repositories needed for a PostgreSQL database, configure an NGINX web server to act as a proxy, configure certbot to issue and renew the SSL certificate, and configure the Mattermost Omnibus repository so that you can run the install command.
 
@@ -59,8 +59,8 @@ In a terminal window, run the following command to configure the repositories ne
   </div>
 
 
-Step 2: Install Mattermost Omnibus
----------------------------------------
+Install Mattermost Omnibus
+---------------------------
 
 1. In a terminal window, run the following command to install Omnibus.
 
@@ -92,8 +92,8 @@ Step 2: Install Mattermost Omnibus
 
 4. Create your first Mattermost user, invite more users, and explore the Mattermost platform.
 
-Step 3: Configure Mattermost Omnibus
-------------------------------------
+Configure Mattermost Omnibus
+-----------------------------
 
 .. note::
 
