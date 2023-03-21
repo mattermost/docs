@@ -62,7 +62,7 @@ In a terminal window, run the following command to configure the repositories ne
 Install Mattermost Omnibus
 ---------------------------
 
-1. In a terminal window, run the following command to install Omnibus.
+In a terminal window, run the following command to install Omnibus.
 
 .. raw:: html
 
@@ -86,11 +86,13 @@ Install Mattermost Omnibus
 
   We recommend installing and configuring Omnibus with SSL enabled; however, you can run the following command to disable SSL: ``sudo MMO_HTTPS=false apt install mattermost-omnibus``.
 
-2. To issue the certificate, the installer requests a domain name and an email address from you. These are used to generate the certificate and deliver any related communications. After all the packages are installed, Omnibus runs ansible scripts that configure all the platform components and starts the server.
+To issue the certificate, the installer requests a domain name and an email address from you. These are used to generate the certificate and deliver any related communications. After all the packages are installed, Omnibus runs ansible scripts that configure all the platform components and starts the server.
 
-3. Open a browser and navigate to your Mattermost domain either by domain name (e.g. mymattermostserver.com), or by the server’s IP address if you’re not using a domain name.
+Next steps:
 
-4. Create your first Mattermost user, invite more users, and explore the Mattermost platform.
+1. Open a browser and navigate to your Mattermost domain either by domain name (e.g. ``mymattermostserver.com``), or by the server’s IP address if you’re not using a domain name.
+
+2. Create your first Mattermost user, invite more users, and explore the Mattermost platform.
 
 Configure Mattermost Omnibus
 -----------------------------
