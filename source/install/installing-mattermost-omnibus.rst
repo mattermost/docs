@@ -1,21 +1,39 @@
 Install Mattermost Omnibus
 ==========================
 
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
+.. raw:: html
+
+  <div class="mm-badge mm-badge--combo">
+
+    <div class="mm-badge__plan-deploy">
+      <p>
+        <img src="../_static/images/badges/flag_icon.svg" alt="" />
+        <span>Available on <a href="https://mattermost.com/pricing/">all plans</a></span>
+      </p>
+      <p>
+        <img src="../_static/images/badges/deployment_icon.svg" alt="" />
+        <span><a href="https://mattermost.com/download/">Self-hosted</a> deployments</span>
+      </p>
+    </div>
+
+    <div class="mm-badge__reqs">
+      <h3>Minimum system requirements:</h3>
+      <ul>
+        <li>Hardware: 1 vCPU/core with 2GB RAM (support for up to 1,000 users)</li>
+        <li>Database: PostgreSQL v11+</li>
+        <li>Network ports required:
+          <ul>
+            <li>Application ports 80/443, TLS, TCP Inbound</li>
+            <li>Administrator Console port 8065, TLS, TCP Inbound</li>
+            <li>SMTP port 10025, TCP/UDP Outbound</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+  </div>
 
 Mattermost bundles the components of a Mattermost deployment into a single installation, called Omnibus. Mattermost Omnibus packages the free, unlicensed Mattermost Enterprise version of Mattermost, a PostgreSQL database (Omnibus doesn't support MySQL databases) and, when required, NGINX as the application proxy. A custom CLI (``mmomni``) and ansible recipes link the components together and configures them.
-
-Minimum system requirements
----------------------------
-
-* Hardware: 1 vCPU/core with 2GB RAM (support for up to 1,000 users)
-* Database: PostgreSQL v11+
-* Network ports required:
-
-  * Application ports 80/443, TLS, TCP Inbound
-  * Administrator Console port 8065, TLS, TCP Inbound
-  * SMTP port 10025, TCP/UDP Outbound
 
 Step 1: Add the Mattermost PPA repositories
 --------------------------------------------
