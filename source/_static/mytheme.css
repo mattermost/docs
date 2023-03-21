@@ -2705,7 +2705,7 @@ img.mm-badge-flag {
 @media (max-width: 959px) {
     .mm-badge__plan-deploy p {
         width: 45%;
-        margin-bottom: 0;
+        margin-bottom: 0 !important;
     }
 }
 
