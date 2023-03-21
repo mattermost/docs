@@ -2905,3 +2905,23 @@ mark {
     color: #ffffff;
     font-weight: 700;
 }
+
+/* mm-code-block */
+.mm-code-block .highlight {
+    background-color: #ECF0F9 !important;
+    border-radius: 5px;
+    padding: 18px 15px;
+    border: none !important;
+    color: #1C58D9 !important;
+    font-size: 13px !important;
+    font-family: Fira Mono, monospace !important;
+    display: inline-block;
+}
+
+.mm-code-block pre {
+    padding: 0 !important;
+}
+
+.mm-code-block pre span {
+    color: #1C58D9 !important;
+}
