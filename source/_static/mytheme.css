@@ -2912,10 +2912,25 @@ mark {
     border-radius: 5px;
     padding: 18px 15px;
     border: none !important;
-    color: #1C58D9 !important;
-    font-size: 13px !important;
-    font-family: Fira Mono, monospace !important;
     display: inline-block;
+}
+
+@media (min-width: 1400px) {
+    .mm-code-block .highlight {
+        padding: 18px;
+    }
+}
+
+.mm-code-block .highlight pre {
+    color: #1C58D9 !important;
+    font-family: Fira Mono, monospace !important;
+    font-size: 13px !important;
+}
+
+@media (min-width: 1400px) {
+    .mm-code-block .highlight pre {
+        font-size: 15px !important;
+    }
 }
 
 .mm-code-block pre {
@@ -2925,3 +2940,15 @@ mark {
 .mm-code-block pre span {
     color: #1C58D9 !important;
 }
+
+/* Inline code for install-mattermost-omnibus */
+/* Should be flooded across docs? */
+#install-mattermost-omnibus p code,
+#install-mattermost-omnibus h3 code {
+    background-color: #ECF0F9 !important;
+    color: #1C58D9 !important;
+    font-family: Fira Mono, monospace !important;
+    border: none;
+    border-radius: 3px;
+    font-size: 80%;
+} 
