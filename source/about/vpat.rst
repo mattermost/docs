@@ -7,7 +7,7 @@ Voluntary Product Accessibility Template (VPAT)
 
 The following Voluntary Product Accessibility Template for 508 Compliance is completed per `online guidelines from the United States Department of State <https://www.section508.gov/sell/vpat/>`__.
 
-- **Product Name**: Mattermost Enterprise Edition (including E10, E20 and all variants) 
+- **Product Name**: Mattermost Enterprise Edition (including E10, E20, and all variants) 
 - **Product Version Number**: Assessment applies to release 3.7 and later 
 - **Vendor Company Name**: Mattermost, Inc. 
 - **Vendor Contact Name**: Mattermost VPAT/508 Review Team
