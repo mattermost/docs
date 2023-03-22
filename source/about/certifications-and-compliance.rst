@@ -230,14 +230,13 @@ However, pursuant to Section (b) of Article 49 of GDPR, transfers of personal da
 ***DISCLAIMER:** MATTERMOST DOES NOT POSITION ITS PRODUCTS AS “GUARANTEED COMPLIANCE SOLUTIONS”. WE MAKE NO GUARANTEE THAT YOU WILL ACHIEVE REGULATORY COMPLIANCE USING MATTERMOST PRODUCTS. YOUR LEVEL OF SUCCESS IN ACHIEVING REGULATORY COMPLIANCE DEPENDS ON YOUR INTERPRETATION OF THE APPLICABLE REGULATION, AND THE ACTIONS YOU TAKE TO COMPLY WITH THEIR REQUIREMENTS. SINCE THESE FACTORS DIFFER ACCORDING TO INDIVIDUALS AND BUSINESSES, WE CANNOT GUARANTEE YOUR SUCCESS, NOR ARE WE RESPONSIBLE FOR ANY OF YOUR ACTIONS. NO GUARANTEES ARE MADE THAT YOU WILL ACHIEVE ANY SPECIFIC COMPLIANCE RESULTS FROM THE USE OF MATTERMOST OR FROM ANY RECOMMENDATIONS CONTAINED ON OUR WEBSITES, AND AS SUCH, THIS SHOULD NOT BE A SUBSTITUTE TO CONSULTING WITH YOUR OWN LEGAL AND COMPLIANCE REPRESENTATIVES ON THESE MATTERS.
 
 Are you IPv6 compliant?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
 
-Yes, the Mattermost platform is compliant with IPv6, both for our `Self-Hosted and Cloud offerings <https://docs.mattermost.com/about/editions-and-offerings.html>`_.
+Yes, the Mattermost platform is compliant with IPv6, both for our `self-hosted and Cloud offerings <https://docs.mattermost.com/about/editions-and-offerings.html>`_.
 
 Are you 508 compliant?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
 
 Yes, the Mattermost platform is compliant with 508.
 
 Learn more about our `VPAT Template for 508 compliance <https://docs.mattermost.com/about/vpat.html>`_, and `how Mattermost approaches accessibility in product development <https://mattermost.com/blog/mattermost-accessibility-for-the-visually-impaired/>`_.
-
