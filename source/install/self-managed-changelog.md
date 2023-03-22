@@ -22,7 +22,7 @@ Mattermost v7.9.0 contains a low severity level security fix. [Upgrading](https:
 
 ### Important Upgrade Notes
 
-- Added a new index on ``Posts(OriginalId)``. For a database with 11.8 million posts, on a machine with a i7-11800H CPU (8 cores, 16 threads), 32GiB of RAM and SSD, the index creation takes 98.51s on MYSQL and 2.6s on PostgreSQL. Database tables will be locked during index creation. To avoid locking the database tables, admins can create the index manually before performing the upgrade using the following non-blocking query: ``CREATE INDEX CONCURRENTLY idx_posts_original_id ON Posts(OriginalId);``. Admins managing servers with fewer posts may prefer that the migration process create the index, and accept that tables will be locked until the migration is complete.
+- Added a new index on ``Posts(OriginalId)``. For a database with 11.8 million posts, on a machine with a i7-11800H CPU (8 cores, 16 threads), 32GiB of RAM and SSD, the index creation takes 98.51s on MYSQL and 2.6s on PostgreSQL. The ``Posts`` database table will be locked during index creation. To avoid locking the ``Posts`` table in PostgreSQL databases, admins can create the index manually before performing the upgrade using the following non-blocking query: ``CREATE INDEX CONCURRENTLY idx_posts_original_id ON Posts(OriginalId);``. Admins managing servers with fewer posts may prefer that the migration process create the index, and accept that ``Post`` table will remain locked until the migration is complete.
 
 
 **IMPORTANT:** If you upgrade from a release earlier than v7.8, please read the other [Important Upgrade Notes](/upgrade/important-upgrade-notes.html).
