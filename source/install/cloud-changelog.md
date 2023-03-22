@@ -4,42 +4,108 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 
 Latest Mattermost Cloud releases:
 
-- [Release 2023-02-02](#release-2023-02-02)
+- [Release 2023-03-20](#release-2023-03-20)
 - [Release 2023-01-26](#release-2023-01-26)
-- [Release 2023-01-12](#release-2023-01-12)
+- [Release 2023-01-16](#release-2023-01-16)
 - [Release 2022-12-20](#release-2022-12-20)
 - [Release 2022-12-01](#release-2022-12-01)
 - [Release 2022-11-24](#release-2022-11-24)
 
-## Release 2023-02-02
+## Release 2023-03-20
+
+### Compatibility
+ - Updated Firefox minimum supported version to 102+.
+ - Updated Safari minimum supported version to 16.2+.
+ - Updated Windows minimum supported version to 10+.
+ - Updated Chromium minimum supported version to 110+.
+ - Updated Edge minimum supported version to 110+.
 
 ### Highlights
 
 #### Annual Cloud Subscriptions
  - On the purchase modal, admins are now able to buy an annual cloud subscription starting from their current user count.
  - The **System Console > Billing & Account > Subscriptions** page now reflects whether the plan is monthly or annual.
- - Cloud Professional monthly will no longer be offered to new customers starting February 2, 2023.
+ - Cloud Professional monthly will no longer be offered to new customers starting March 20, 2023.
  - Added the option to migrate from a monthly to an annual Cloud Professional plan for existing Cloud Professional monthly customers.
+
+#### Boards
+ - Added support for person, multi-person, and date property filters in Boards.
+ - Added support for person property groups in Boards.
+ - System and team admins are now able to join any board on the team as a board admin via the board URL.
+ - Additional Compliance APIs to return the history of boards and blocks, including deleted items (available in Mattermost Enterprise Edition and above).
+ - See [the Boards product documentation](https://docs.mattermost.com/boards/groups-filter-sort.html#work-with-groups-filter-and-sort) for more details.
 
 ### Improvements
 
 #### User Interface (UI)
- - Boards was reverted from an in-built product back to a plugin.
+ - Pre-packaged Calls v0.14.0.
+ - Pre-packaged Playbooks v1.36.0.
+ - All post components were removed in favor of a unified approach.
+ - App bindings are now refreshed when a App plugin enabled event gets triggered.
+ - Improvements were added to the sidebar channel and category menus.
+ - Removed right-click hijacking on code blocks in messages.
+ - The order of the Leave Channel and Archive Channel settings were updated to match the mobile app.
+ - Added the condition to remove unread styling for archived channels and to filter archived channels from local data.
+ - Changed the collapsed post fade out effect to be less buggy.
+ - Users now have the ability to see the history of edited messages and to restore an old message version with the current version.
  - Improved the user interface of the user profile popover.
+ - Added the ability to set a reminder to read a post at a specific time via the “More” menu in posts.
+ - Mentions from muted channels are no longer shown or counted on the browser and desktop tabs.
+ - Updated **System Console** descriptions for **Environment > Developer configuration** settings in the **System Console** to clarify that changes require a server restart to take effect.
+ - The custom user status is now shown in the right-hand side and in the **System Console**.
+ - Added the ability to handle multiple emails at once when inviting users.
+ - Added accessibility support to the date picker.
+ - A feedback survey is displayed during a workspace downgrade process from Cloud Professional to Cloud Free.
+ - Migrated the post dot menu to a Material UI (MUI) menu.
 
 #### Administration
+ - The invoice is now sent attached when an Admin upgrades to Cloud annual subscription.
+ - Removed Boards limits from Cloud Starter subscription.
+ - Enabled ``EnableOAuthServiceProvider`` by default.
+ - Export files now contain the read and unread status for channels.
+ - Added the ``SentAt`` column to ``NotifyAdmin``.
+ - Updated ``NotifyAdmin.RequiredFeature`` column type to ``varchar(255)``.
+ - Updated ``NotifyAdmin.RequiredPlan`` column type to ``varchar(100)``.
+ - [Message Priority & Acknowledgement](https://docs.mattermost.com/configure/site-configuration-settings.html#message-priority) is now enabled by default for all instances.
+ - Added the ability to delete a workspace via **System Console > Billing & Account > Subscription**.
+ - Added an error message when running an LDAP sync with ``SyncEnabled`` set to ``false``.
+ - Added Admin log table filtering and sorting.
+ - Go version was bumped to v1.19.
  - GraphQL APIs are now correctly counted when measuring performance telemetry.
  - Boards cards are no longer mentioned as being limited in the **System Console**, the limits usage modal, the downgrade modal, or the left-hand side menu.
  - Removed an unused ``ProductLimits.Integrations``.
 
+#### Performance
+ - Reduced the rate that unreads are resynced when the window is focused from 10 seconds to 2 minutes.
+ - The center channel is no longer shown as loading when switching teams.
+ - Added logging fixes: empty ``short_message`` for Gelf formatter is no longer allowed and ``params.Host`` is now used over ``params.IP`` for syslog config.
+ - Added minor performance improvements.
+
+### API Changes
+ - Added an ``exclude_files_count`` parameter to exclude file counts from the channel stats API.
+ - Added a new API endpoint ``GET api/v4/posts/[POST_ID]/edit_history``.
+ - Added a new API endpoint ``DELETE /api/v4/cloud/delete-workspace``.
+
+### Bug Fixes
+ - Fixed new teams to use the updated translation for default channels after a config change.
+ - Fixed a layout issue in the System Console for smaller-sized tablets.
+ - Fixed an issue where a "plugin configured with a nil SecureConfig" warning was logged when starting each plugin.
+ - Fixed an issue where portal availability was checked when not on enterprise edition.
+ - Fixed a 404 error from requests to ``/api/v4/system/notices/`` on page load.
+ - Fixed an issue where OpenID Connect was configurable for Cloud Starter licenses.
+ - Fixed an issue where C# syntax highlighting was not working.
+ - Fixed an issue where incoming webhooks changed the user's activity while the user was offline/away.
+ - Fixed an issue where usernames were not clickable in the right-hand side.
+ - Fixed issues with spacing in the channel categories and maintained the same spacing in the left-hand side.
+ - Fixed an issue where the setting `Restrict new system and team members to specified email domains` was not visible in Cloud Starter.
+ - Fixed disproportionate height issues for tall single images.
+ - Fixed an issue where a single WebSocket reconnect could be handled multiple times which would negatively affect performance.
+ - Fixed an issue in Top DM Insights, where a deleted participant caused DM Insights to fail.
+ - Fixed an issue where Cloud limits would briefly flash in the **System Console** before disappearing.
+
 ### Known Issues
- - Clicking on a user profile picture throws a console error [MM-49961](https://mattermost.atlassian.net/browse/MM-49961).
- - Bot and guest tags are truncated on suggestion autocomplete [MM-49973](https://mattermost.atlassian.net/browse/MM-49973).
- - Horizontal scroll displays in the Threads list due to a new tags component [MM-49854](https://mattermost.atlassian.net/browse/MM-49854).
- - Login/create account screen layout breaks when Javascript error banner displays [MM-49587](https://mattermost.atlassian.net/browse/MM-49587).
- - Spacing in the channel switcher is incorrect [MM-49853](https://mattermost.atlassian.net/browse/MM-49853).
- - Spacing issue is displayed between the Global Drafts tour point title and “New” tag [MM-49866](https://mattermost.atlassian.net/browse/MM-49866).
- - The message box flashes controls while typing in the right-hand side [MM-49266](https://mattermost.atlassian.net/browse/MM-49266).
+ - The URL of the post in a reminder post for Direct and Group Messages have a double slash on mobile [MM-51026](https://mattermost.atlassian.net/browse/MM-51026).
+ - A user gets scrolled to the bottom of the post editor after pasting long text in the right-hand side [MM-51302](https://mattermost.atlassian.net/browse/MM-51302).
  - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
 
 ## Release 2023-01-26
@@ -104,7 +170,7 @@ Latest Mattermost Cloud releases:
  - Publicly shared boards lead to a "Team not found" error page. See [issue-focalboard-4450](https://github.com/mattermost/focalboard/issues/4450) for more details.
  - If a user is not a member of a configured broadcast channel, posting a status update might fail without any error feedback. As a temporary workaround, join the configured broadcast channels or remove those channels from the run configuration.
 
-## Release 2023-01-12
+## Release 2023-01-16
 
 ### Highlights
 

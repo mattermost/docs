@@ -78,7 +78,7 @@ A chat thread is created automatically for every new call.
 
   .. tab:: Mobile
   
-    To do this, expand the call window using the arrows in the top-right of the active call banner. The select **More > Call Thread**.
+    To do this, expand the call window using the arrows in the top-right of the active call banner. Then select **More > Call Thread**.
     
 Record a call
 -------------
@@ -93,11 +93,19 @@ When you stop recording, the recording is posted in the call thread as a file at
 
 To record a call:
 
-1. Select **Start call** in the header of the channel, group message, or direct message.
-2. Select the pop-out icon.
-3. In the pop-out screen, select the record button.
-4. To stop recording, select the record button again.
+.. tabs::
 
+  .. tab:: Desktop
+
+    1. Select **Start call** in the header of the channel, group message, or direct message.
+    2. Select the pop-out icon.
+    3. In the pop-out screen, select the record button.
+    4. To stop recording, select the record button again.
+
+  .. tab:: Mobile
+  
+    To start recording, use the ``/call recording start`` slash command. When you're finished recording, use the ``/call recording stop`` slash command. Alternatively, expand the call window using the arrows in the top-right of the active call banner. Then select the record button. To finish, select the button again.
+    
 Frequently asked questions
 --------------------------
 

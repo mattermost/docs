@@ -76,6 +76,16 @@ By default, you'll receive mention notifications every time someone on your team
     3. Tap **View info**.
     4. Tap **Ignore @channel, @here, @all** to disable the option.
 
+Mobile notifications
+~~~~~~~~~~~~~~~~~~~~
+
+You can set the mobile notifications preferences per channel.
+
+1. Tap the channel where you want to mute mention notifications.
+2. Tap the **More** |more-icon| icon located in the top right corner of the app.
+3. Tap **View info**.
+4. Tap **All new**, **Mentions/DMs only**, or **Nothing** to determine how you'll be notified of new messages in a specific channel.
+
 Send desktop notifications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
