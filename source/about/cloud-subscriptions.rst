@@ -176,6 +176,6 @@ These offerings are deployed in the following ways:
 Can I cancel and delete my Cloud workspace?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Yes. If you have a Mattermost Free or a  monthly Mattermost Enterprise plan, you can delete your workspace via **System Console > Billing & Account > Subscription**.
+Yes. If you have a Mattermost Free or a monthly Mattermost Professional plan, you can delete your workspace via **System Console > Billing & Account > Subscription**.
 
 If you have an annual Mattermost Professional plan or a Mattermost Enterprise plan, please contact our Mattermost `Support team <mailto:support@mattermost.com>`_ with the subject **Mattermost Cloud Workspace Deletion Request** for assistance.
