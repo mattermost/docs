@@ -23,7 +23,8 @@ Learn how to install, deploy, and scale Mattermost for teams and organizations o
 
     .. tab:: Ubuntu/Debian
 
-      See the `Omnibus installation </install/installing-mattermost-omnibus>`__ documentation for details.
+      .. include:: ../install/common-prod-deploy-omnibus.rst
+        :start-after: :nosearch:
         
     .. tab:: Generic Linux (Tarball)
 
