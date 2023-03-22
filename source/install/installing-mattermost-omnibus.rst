@@ -153,19 +153,20 @@ Backup and restore
 
 The Mattermost Omnibus CLI tool ``mmomni`` is used for both backups and restores. Server and domain migration, as well as backup and restore, is now much easier. You can take snapshots of all content in your Mattermost server. This includes all content, users, plugins, configurations, and databases. You can restore on the same server, or move to another server at any time.
 
-Backup example:
+To back up the contents of your Mattermost server, run the following command:
 
 .. code-block:: sh
   :class: mm-code-block 
 
   mmomni backup -o /tmp/mm_backup_datetime.tgz
 
-Restore example:
+To restore the contents of your Mattermost server, run the following two commands:
 
 .. code-block:: sh
   :class: mm-code-block 
 
-  mmomni restore /tmp/mm_backup_datetime.tgz` and then run `mmomni reconfigure
+  mmomni restore /tmp/mm_backup_datetime.tgz
+  mmomni reconfigure
 
 Remove Mattermost Omnibus
 -------------------------
