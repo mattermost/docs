@@ -110,7 +110,15 @@ If you're on Cloud Professional and want to move to Cloud Free:
 How do I cancel my subscription? 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To cancel your subscription, please `contact us <https://customers.mattermost.com/cloud/contact-us>`__.
+If you are a monthly Mattermost Cloud Professional, or Mattermost Cloud Free customer, you can cancel your subscription through the system console. Please note that canceling your Mattermost Cloud subscription will **permanently delete** your Mattermost Cloud workspace.
+
+1. Navigate to **System Console > Billing & Account > Subscription**.
+2. Select **Cancel Subscription** near the bottom of the page.
+3. Enter in any details you wish to share on why you are canceling your subscription, and confirm.
+
+Once confirmed, your subscription will be canceled, and your Mattermost Cloud workspace will be **permanently deleted**
+
+If you have an annual subscription to Mattermost Cloud Professional, or Mattermost Cloud Enterprise and you wish to cancel, please `contact us <https://customers.mattermost.com/cloud/contact-us>`__.
 
 I'm no longer being billed for my Cloud Starter ($149/year) plan. Why is that?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
