@@ -114,7 +114,7 @@ If you are a monthly Mattermost Cloud Professional, or Mattermost Cloud Free cus
 
 1. Navigate to **System Console > Billing & Account > Subscription**.
 2. Select **Cancel Subscription** near the bottom of the page.
-3. Enter in any details you wish to share on why you are canceling your subscription, and confirm.
+3. (Optional) We'd appreciate your feedback about your experience and any areas we can improve on.
 
 Once confirmed, your subscription will be canceled, and your Mattermost Cloud workspace will be **permanently deleted**
 
