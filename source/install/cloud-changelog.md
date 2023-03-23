@@ -15,9 +15,6 @@ Latest Mattermost Cloud releases:
 
 ### Improvements
 
-#### User Interface (UI)
- - The **Browse Channels** user interface has been updated. The modal now displays joined channels as well as an option to hide joined channels.
-
 #### Administration
  - The ``ServiceSettings.PostEditTimeLimit`` config setting no longer affects Plugins, Shared Channels, Integration Actions, or Mattermost Products.
  - The app server no longer starts if the telemetry ID in the systems table doesn't exist. Although there is no action required by the administrators, it may be good to be aware of this change.
