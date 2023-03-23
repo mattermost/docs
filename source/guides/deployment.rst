@@ -9,8 +9,6 @@ Learn how to install, deploy, and scale Mattermost for teams and organizations o
 Deploy Mattermost for production use
 ------------------------------------
 
-When you're ready to install Mattermost server for production use, you have four options: deploy using Kubernetes, deploy from a compressed tarball, deploy using a Ubuntu option called Omnibus, or deploy using Docker.
-
 Learn how to install, deploy, and scale Mattermost for teams and organizations of any size using one of four options: deploy using Kubernetes, deploy from a compressed tarball, deploy using a Ubuntu option called Omnibus, or deploy using Docker.
 
 .. tip::
