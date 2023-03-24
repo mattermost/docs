@@ -154,8 +154,6 @@ Important Upgrade Notes
 |                                                    |                                                                                                                                                                  |
 |                                                    | Table locks - Threads table                                                                                                                                      |
 |                                                    |                                                                                                                                                                  |
-|                                                    | Zero downtime is possible when upgrading to this release.                                                                                                        |
-|                                                    |                                                                                                                                                                  |
 |                                                    | Queries posted above can be run prior to upgrading Mattermost for both MySQL and PostgreSQL. After schema changes migration becomes instantaneous (0.78 sec).    |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | Starting with the Calls version shipping with v7.7, there's now a minimum version requirement when using the external RTCD service. This means that if Calls is  |
