@@ -2915,6 +2915,12 @@ mark {
     display: inline-block;
 }
 
+@media (max-width: 720px) {
+    .mm-code-block .highlight {
+        width: 100%;
+    }
+}
+
 @media (min-width: 1400px) {
     .mm-code-block .highlight {
         padding: 18px;
@@ -2951,4 +2957,5 @@ mark {
     border: none;
     border-radius: 3px;
     font-size: 80%;
+    word-break: break-all;
 } 
