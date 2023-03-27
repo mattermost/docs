@@ -2931,6 +2931,7 @@ mark {
     color: #1C58D9 !important;
     font-family: Fira Mono, monospace !important;
     font-size: 13px !important;
+    white-space: pre-line !important;
 }
 
 @media (min-width: 1400px) {
