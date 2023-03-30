@@ -4,12 +4,41 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 
 Latest Mattermost Cloud releases:
 
+- [Release 2023-04-13](#release-2023-04-13)
 - [Release 2023-03-29](#release-2023-03-29)
 - [Release 2023-03-20](#release-2023-03-20)
 - [Release 2023-01-26](#release-2023-01-26)
 - [Release 2023-01-16](#release-2023-01-16)
 - [Release 2022-12-20](#release-2022-12-20)
-- [Release 2022-12-01](#release-2022-12-01)
+
+## Release 2023-04-13
+
+### Improvements
+
+#### User Interface (UI)
+ - Add marketplace button to apps bar
+ - add channels Cta button to the LHS sidebar
+
+#### Administration
+ - The following repositories have been merged into one: ``mattermost-server``, ``mattermost-webapp``, ``focalboard`` and ``mattermost-plugin-playbooks``. Developers should read the updated [Developer Guide](https://developers.mattermost.com/contribute/developer-setup/) for details. Playbooks and Boards are now core parts of the product that can't be disabled.
+ - The file info stats query is now optimized by denormalizing the ``channelID`` column into the table itself. This will speed up the query to get the file count for a channel on clicking the right-hand side. Migration times:
+
+   - On a MySQL 8.0.31 DB with 1405 rows in FileInfo and 11M posts, it took around 0.3s
+   - On a PostgreSQL 12.14 DB with
+   - 1731 rows in FileInfo and 11M posts, it took around 0.27s
+
+ - Added the ability to search by part of the first name, last name, nickname or username in **Sytem Console > Users** section.
+ - **Contact Support** now redirects to Zendesk and pre-fills known information.
+
+### Bug Fixes
+ - Fixed a scrolling issue in the purchase modals.
+ - Fixed an issue where the **Delete Category Dialog** message was not visible in Boards.
+ - Fixed an issue where the experimental Shared Channels feature failed to synchronize if a previously removed table column was still present.
+
+### Known Issues
+ - The URL of the post in a reminder post for Direct and Group Messages have a double slash on mobile [MM-51026](https://mattermost.atlassian.net/browse/MM-51026).
+ - A user gets scrolled to the bottom of the post editor after pasting long text in the right-hand side [MM-51302](https://mattermost.atlassian.net/browse/MM-51302).
+ - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
 
 ## Release 2023-03-29
 
