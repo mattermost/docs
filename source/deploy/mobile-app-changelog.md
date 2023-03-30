@@ -2,12 +2,44 @@
 
 Latest Mattermost Mobile Apps releases:
 
+- [2.3.0 Release](#release)
 - [2.2.0 Release](#release)
 - [2.1.0 Release](#id1)
 - [2.0.1 Release](#id6)
 - [2.0.0 Release](#id11)
 - [1.55.1 Release](#id14)
-- [1.55.0 Release](#id18)
+
+## 2.3.0 Release
+- Release Date: April 16, 2023
+- Server Versions Supported: Server v7.1.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
+
+### Compatibility
+ - **Upgrade to server version v7.1.0 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/upgrade/extended-support-release.html) (ESR) 6.3.0 has ended and upgrading to server ESR v7.1.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
+ - iPhone 5s devices and later with iOS 12.1+ is required.
+
+### Improvements
+ - Calls: raising a hand will now take precedence when ordering participants in the call screen.
+ - Calls: optimized screensharing in landscape mode for Android and iOS and unlocked landscape mode for iOS phone devices.
+ - Channel names are now tappable in threads and in recent mentions, search and saved posts screens.
+ - The ``ExperimentalGroupUnreadChannels`` server config is now respected.
+ - Added more information to the logs for better debugging.
+
+### Bug Fixes
+ - Calls: Fixed an issue with emoji rendering.
+ - Calls: Fixed an issue that caused a crash when the current presenter left the call without stopping the screenshare.
+ - Fixed an issue with guest badges not appearing on the channel member list.
+ - Added minor performance fixes to the channel member list screen.
+ - Fixed an issue where some notifications did not show when a channel sidebar category was collapsed.
+ - Fixed an issue where tapping on a custom status in the message list did not open the user's profile card.
+ - Fixed an issue where the channel members count did not get updated after removing users.
+
+### Open Source Components
+ - Added ``mattermost/calls-common`` to https://github.com/mattermost/mattermost-mobile.
+
+### Known Issues
+ - Users are unable to adjust the font size via the OS font size setting.
+ - Some pixel phones on Android 12+ might not go past the login screen. This is a known issue with the OS and the current workaround is to restart the device.
 
 ## 2.2.0 Release
 - Release Date: March 17, 2023
