@@ -16,8 +16,8 @@ Latest Mattermost Cloud releases:
 ### Improvements
 
 #### User Interface (UI)
- - Add marketplace button to apps bar
- - add channels Cta button to the LHS sidebar
+ - Added a marketplace button to the bottom of the apps bar. The button is visible if the marketplace is enabled and the user has ``SYSCONSOLE_WRITE_PLUGINS`` permissions.
+ - Added a "Add channels" button to the bottom of the left-hand sidebar to make it more obvious for users on how to create or join channels.
 
 #### Administration
  - The following repositories have been merged into one: ``mattermost-server``, ``mattermost-webapp``, ``focalboard`` and ``mattermost-plugin-playbooks``. Developers should read the updated [Developer Guide](https://developers.mattermost.com/contribute/developer-setup/) for details. Playbooks and Boards are now core parts of the product that can't be disabled.
@@ -28,7 +28,7 @@ Latest Mattermost Cloud releases:
    - 1731 rows in FileInfo and 11M posts, it took around 0.27s
 
  - Added the ability to search by part of the first name, last name, nickname or username in **Sytem Console > Users** section.
- - **Contact Support** now redirects to Zendesk and pre-fills known information.
+ - **Contact Support** now redirects users to Zendesk and pre-fills known information.
 
 ### Bug Fixes
  - Fixed a scrolling issue in the purchase modals.
