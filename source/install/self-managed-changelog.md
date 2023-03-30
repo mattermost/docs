@@ -11,6 +11,45 @@ Latest Mattermost Releases:
 - [Release v7.8 - Extended Support Release](#release-v7-8-extended-support-release)
 - [Release v7.1 - Extended Support Release](#release-v7-1-extended-support-release)
 
+## Release v7.10 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
+
+**Release day: April 14, 2023**
+
+### Improvements
+
+#### User Interface (UI)
+ - Added the ability to set a reminder to read a post at a specific time via the “More” menu in posts.
+ - Mentions from muted channels are no longer shown or counted on the browser and desktop tabs.
+ - Updated **System Console** descriptions for **Environment > Developer configuration** settings in the **System Console** to clarify that changes require a server restart to take effect.
+ - The custom user status is now shown in the right-hand side and in the **System Console**.
+ - Added the ability to handle multiple emails at once when inviting users.
+ - Added accessibility support to the date picker.
+ - A feedback survey is displayed during a workspace downgrade process from Cloud Professional to Cloud Free.
+ - Migrated the post dot menu to a Material UI (MUI) menu.
+
+#### Administration
+ - The ``ServiceSettings.PostEditTimeLimit`` config setting no longer affects Plugins, Shared Channels, Integration Actions, or Mattermost Products.
+ - The app server no longer starts if the telemetry ID in the systems table doesn't exist. Although there is no action required by the administrators, it may be good to be aware of this change.
+ - Added additional values to the support packet.
+ - Self-hosted instances can now request invoices for prior purchases.
+ 
+#### Performance
+ - Writes to websocket now take 13% less memory and happen 22% faster per message.
+
+### API Changes
+ - Added a ``exclude_files_count`` parameter to exclude file counts from channel stats API.
+
+### Bug Fixes
+ - Fixed an issue where Shared Channels wasn't properly added to the Professional license.
+ 
+### config.json
+ - ``SelfHostedExpansion`` config setting was added.
+
+### Known Issues
+ - The URL of the post in a reminder post for Direct and Group Messages have a double slash on mobile [MM-51026](https://mattermost.atlassian.net/browse/MM-51026).
+ - A user gets scrolled to the bottom of the post editor after pasting long text in the right-hand side [MM-51302](https://mattermost.atlassian.net/browse/MM-51302).
+ - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
+
 ## Release v7.9 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
 
 - **v7.9.1, released 2023-03-17**
