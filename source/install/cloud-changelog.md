@@ -16,6 +16,7 @@ Latest Mattermost Cloud releases:
 ### Improvements
 
 #### User Interface (UI)
+ - Enabled Work Templates in Onboarding checklist and `+` Menu.
  - Added a marketplace button to the bottom of the apps bar. The button is visible if the marketplace is enabled and the user has ``SYSCONSOLE_WRITE_PLUGINS`` permissions.
  - Added a "Add channels" button to the bottom of the left-hand sidebar to make it more obvious for users on how to create or join channels.
  - Removed Webapp Build Hash since it is now identical to Server Build Hash.
