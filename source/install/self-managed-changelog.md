@@ -48,7 +48,7 @@ Latest Mattermost Releases:
  - The ``ServiceSettings.PostEditTimeLimit`` config setting no longer affects Plugins, Shared Channels, Integration Actions, or Mattermost Products.
  - The app server no longer starts if the telemetry ID in the systems table doesn't exist. Although there is no action required by the administrators, it may be good to be aware of this change.
  - Added additional values to the support packet.
- - Self-hosted instances can now request invoices for prior purchases.
+ - Self-hosted instances will now show invoices in **System Console > Billing && Account > Billing History*** for prior self-serve purchases.
  - 404 is now returned if an invoice could not be fetched for self-hosted.
  
 #### Performance
