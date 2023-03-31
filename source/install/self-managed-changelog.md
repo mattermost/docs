@@ -17,6 +17,8 @@ Latest Mattermost Releases:
 
 ### Important Upgrade Notes
 
+ - In the next release, v7.11, the following repositories will be merged into one: ``mattermost-server``, ``mattermost-webapp``, ``focalboard`` and ``mattermost-plugin-playbooks``. Developers should read the updated [Developer Guide](https://developers.mattermost.com/contribute/developer-setup/) for details. Playbooks and Boards will be core parts of the product that cannot be disabled.
+
 **IMPORTANT:** If you upgrade from a release earlier than v7.9, please read the other [Important Upgrade Notes](/upgrade/important-upgrade-notes.html).
 
 ### Highlights
@@ -57,13 +59,19 @@ Latest Mattermost Releases:
 
 ### Bug Fixes
  - Fixed an issue where Shared Channels wasn't properly added to the Professional license.
+ - Fixed new teams to use the updated translation for default channels after a config change.
+ - Fixed issues with spacing in the channel categories and maintained the same spacing in the left-hand side.
+ - Fixed disproportionate height issues for tall single images.
+ - Fixed an issue where a single WebSocket reconnect could be handled multiple times which would negatively affect performance.
+ - Fixed an issue in **Top DM Insights**, where a deleted participant caused DM Insights to fail.
+ - Fixed an issue where Cloud limits would briefly flash in the System Console before disappearing.
  
 ### config.json
 Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
 
 #### Changes to Team Edition and Enterprise Edition:
  - Under ``ServiceSettings`` in the ``config.json``:
- - ``SelfHostedExpansion`` config setting was added to support incremental additions/changes to this feature.
+   - ``SelfHostedExpansion`` config setting was added to support incremental additions/changes to this feature.
  
 ### Go Version
  - v7.10 is built with Go ``v1.19.0``.
