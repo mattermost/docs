@@ -33,6 +33,8 @@ Latest Mattermost Mobile Apps releases:
  - Fixed an issue where some notifications did not show when a channel sidebar category was collapsed.
  - Fixed an issue where tapping on a custom status in the message list did not open the user's profile card.
  - Fixed an issue where the channel members count did not get updated after removing users.
+ - Fixed a crash on markdown table images and prevented image related crashes on other parts of the app.
+ - Fixed websocket not connecting on rare scenarios.
 
 ### Open Source Components
  - Added ``mattermost/calls-common`` to https://github.com/mattermost/mattermost-mobile.
