@@ -74,7 +74,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
    - ``SelfHostedExpansion`` config setting was added to support incremental additions/changes to this feature.
  
 ### Go Version
- - v7.10 is built with Go ``v1.19.0``.
+ - v7.10 is built with Go ``v1.19.5``.
  
 ### Open Source Components
  - Added ``date-fns`` to https://github.com/mattermost/mattermost-webapp/.
