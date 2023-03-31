@@ -16,7 +16,10 @@ Latest Mattermost Desktop App releases:
 Release v5.3
 --------------
 
-**Release Date: March 30, 2023**
+- **v5.3.1, released 2023-03-31**
+ - Calls: fixed an issue where, after opening the calls popout then closing it (without leaving the call), subsequent clicks would cause a crash.
+- **v5.3.0, released 2023-03-30**
+ - Original v5.3.0 release
 
 **Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/latest>`_
 
