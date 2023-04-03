@@ -19,15 +19,14 @@ Latest Mattermost Cloud releases:
  - Enabled Work Templates in the Onboarding checklist and the `+` Menu.
  - Added a **Mattermost Marketplace** option to the bottom of the apps bar. The option is visible when the Marketplace is enabled, and the user has ``SYSCONSOLE_WRITE_PLUGINS`` permissions.
  - Added an **Add channels** button to the bottom of the left-hand sidebar to make the action more obvious for users who want to create or join channels.
- - Removed Webapp Build Hash since it is now identical to Server Build Hash.
+ - Removed the Webapp Build Hash from **Main Menu > About Mattermost** since it is now identical to Server Build Hash.
 
 #### Administration
  - The following repositories have been merged into one: ``mattermost-server``, ``mattermost-webapp``, ``focalboard`` and ``mattermost-plugin-playbooks``. Developers should read the updated [Developer Guide](https://developers.mattermost.com/contribute/developer-setup/) for details. Playbooks and Boards are now core parts of the product that cannot be disabled.
  - The file info stats query is now optimized by denormalizing the ``channelID`` column into the table itself. This will speed up the query to get the file count for a channel when selecting the right-hand pane. Migration times:
 
    - On a MySQL 8.0.31 DB with 1405 rows in FileInfo and 11M posts, it took around 0.3s
-   - On a PostgreSQL 12.14 DB with
-   - 1731 rows in FileInfo and 11M posts, it took around 0.27s
+   - On a PostgreSQL 12.14 DB with 1731 rows in FileInfo and 11M posts, it took around 0.27s
 
  - Added the ability to search a partial first name, last name, nickname, or username on the **System Console > Users** page.
  - **Contact Support** now redirects users to Zendesk and pre-fills known information.
