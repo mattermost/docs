@@ -35,21 +35,21 @@ Latest Mattermost Releases:
 ### Improvements
 
 #### User Interface (UI)
- - Added the ability to set a reminder to read a post at a specific time via the “More” menu in posts.
+ - Added the ability to set a reminder to read a message at a specific time via the **More** menu in messages.
  - Mentions from muted channels are no longer shown or counted on the browser and desktop tabs.
- - Updated **System Console** descriptions for **Environment > Developer configuration** settings in the **System Console** to clarify that changes require a server restart to take effect.
+ - Updated descriptions for **Environment > Developer** settings in the **System Console** to clarify that changes require a server restart to take effect.
  - The custom user status is now shown in the right-hand side and in the **System Console**.
- - Added the ability to handle multiple emails at once when inviting users.
+ - Added the ability to invite multiple people at a time by email to a Mattermost instance.
  - Added accessibility support to the date picker.
- - A feedback survey is displayed during a workspace downgrade process from Cloud Professional to Cloud Free.
+ - System admins are prompted to complete a feedback survey during a workspace downgrade process from Cloud Professional to Cloud Free.
  - Migrated the post dot menu to a Material UI (MUI) menu.
 
 #### Administration
  - The ``ServiceSettings.PostEditTimeLimit`` config setting no longer affects Plugins, Shared Channels, Integration Actions, or Mattermost Products.
  - The app server no longer starts if the telemetry ID in the systems table doesn't exist. Although there is no action required by the administrators, it may be good to be aware of this change.
  - Added additional values to the support packet.
- - Self-hosted instances will now show invoices in **System Console > Billing && Account > Billing History*** for prior self-serve purchases.
- - 404 is now returned if an invoice could not be fetched for self-hosted.
+ - Self-hosted instances will now show invoices in **System Console > Billing & Account > Billing History*** for prior self-serve purchases.
+ - A 404 error is now returned if an invoice could not be fetched for a self-hosted deployment.
  
 #### Performance
  - Writes to websocket now take 13% less memory and happen 22% faster per message.
