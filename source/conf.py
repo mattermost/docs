@@ -2463,9 +2463,9 @@ html_theme = "sphinx_rtd_theme"
 html_theme_options = {
     "collapse_navigation": False,
     "sticky_navigation": True,
-    "navigation_depth": 3,
+    "navigation_depth": 4,
     "includehidden": True,
-    "titles_only": False,
+    "titles_only": True,
 }
 
 html_permalinks_icon = " "

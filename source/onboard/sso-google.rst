@@ -1,3 +1,5 @@
+.. _googlesso:
+
 Google Single Sign-On
 =====================
 

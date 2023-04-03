@@ -20,6 +20,7 @@ Mattermost administration
     Configure transport encryption </install/transport-encryption>
     Set up full-text Bleve search </deploy/bleve-search>
     Backup and disaster recovery </deploy/backup-disaster-recovery>
+    SSO </onboard/sso>
 
 * :doc:`Optimize your workspace </configure/optimize-your-workspace>` - Review health and growth scores for your workspace, and take necessary action.
 * :doc:`Install a database </install/install-database>` - Mattermost requires either a MySQL or PostgreSQL database.
@@ -34,6 +35,10 @@ Mattermost administration
 * :doc:`Configure transport encryption </install/transport-encryption>` - Use transport encryption between Mattermost clusters and your proxy and database.
 * :doc:`Set up full-text Bleve search </deploy/bleve-search>` - Use the Bleve search engine to provide Lucene-style full-text search.
 * :doc:`Backup and disaster recovery </deploy/backup-disaster-recovery>` - Implement data backups, disaster recovery, and high availability deployment.
+* :doc:`SSO </onboard/sso>` - text here
+
+other stuff
+-----------
 
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
@@ -50,11 +55,6 @@ Mattermost administration
     Multi-factor authentication </onboard/multi-factor-authentication>
     Active Directory/LDAP </onboard/ad-ldap>
     AD/LDAP groups </onboard/ad-ldap-groups-synchronization>
-    GitLab SSO </onboard/sso-gitlab>
-    OpenID SSO </onboard/sso-openidconnect>
-    Google SSO </onboard/sso-google>
-    Office 365 SSO </onboard/sso-office>
-    SAML SSO </onboard/sso-saml>
     Guest accounts </onboard/guest-accounts>
     Welcome email template </getting-started/welcome-email-to-end-users>
     Enterprise roll out checklist </getting-started/enterprise-roll-out-checklist>
