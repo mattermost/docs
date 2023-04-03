@@ -38,7 +38,7 @@ Latest Mattermost Releases:
  - Added the ability to set a reminder to read a message at a specific time via the **More** menu in messages.
  - Mentions from muted channels are no longer shown or counted on the browser and desktop tabs.
  - Updated descriptions for **Environment > Developer** settings in the **System Console** to clarify that changes require a server restart to take effect.
- - The custom user status is now shown in the right-hand side and in the **System Console**.
+ - The custom user status is now shown in the right-hand side **Members** pane and in **System Console > Users**.
  - Added the ability to invite multiple people at a time by email to a Mattermost instance.
  - Added accessibility support to the date picker.
  - System admins are prompted to complete a feedback survey during a workspace downgrade process from Cloud Professional to Cloud Free.
