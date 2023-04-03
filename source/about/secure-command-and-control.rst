@@ -9,7 +9,7 @@ The solution provides easy-to-use collaboration for technical teams, including t
 
 Features include:
 
- * `Private mobile communications <https://docs.mattermost.com/deploy/mobile-overview.html>`_ to provide secure mobile apps via encryption keys and certifications with custom mobile applications.
+ * `Private mobile communications </deploy/mobile-overview.html>`__ to provide secure mobile apps via encryption keys and certifications with custom mobile applications.
  * `Custom push notification service <https://docs.mattermost.com/deploy/mobile-hpns.html>`_ to ensure notifications are not intercepted or leaked to unsecured channels by transmitting push notifications within your private network.
  * `Remote user deactivation with data purge <https://docs.mattermost.com/deploy/client-side-data.html#mobile-app-experience>`_ to mitigate sensitive data from being stored on mobile devices after a user departs the organization.
  * (Professional & Enterprise) `Hosted push notifications service (HPNS) <https://docs.mattermost.com/deploy/mobile-hpns.html#hosted-push-notifications-service-hpns>`_ for production-level uptime SLAs and encrypted TLS connections between HPNS and Apple Push Notification Services, between HPNS and Google’s Firebase Cloud Messaging Service, and between HPNS and your Mattermost Server.
