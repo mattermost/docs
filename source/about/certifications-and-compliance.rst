@@ -228,3 +228,17 @@ Zendesk privacy and data protection safeguards notwithstanding, the provision of
 However, pursuant to Section (b) of Article 49 of GDPR, transfers of personal data which are "necessary for the performance of a contract between the data subject and the controller" may be transferred to a third country or international organization. Accordingly these transfers would be done in alignment with the requirements of GDPR. For more information, see our `Mattermost Privacy Policy <https://mattermost.com/privacy-policy/>`__ page.
 
 ***DISCLAIMER:** MATTERMOST DOES NOT POSITION ITS PRODUCTS AS “GUARANTEED COMPLIANCE SOLUTIONS”. WE MAKE NO GUARANTEE THAT YOU WILL ACHIEVE REGULATORY COMPLIANCE USING MATTERMOST PRODUCTS. YOUR LEVEL OF SUCCESS IN ACHIEVING REGULATORY COMPLIANCE DEPENDS ON YOUR INTERPRETATION OF THE APPLICABLE REGULATION, AND THE ACTIONS YOU TAKE TO COMPLY WITH THEIR REQUIREMENTS. SINCE THESE FACTORS DIFFER ACCORDING TO INDIVIDUALS AND BUSINESSES, WE CANNOT GUARANTEE YOUR SUCCESS, NOR ARE WE RESPONSIBLE FOR ANY OF YOUR ACTIONS. NO GUARANTEES ARE MADE THAT YOU WILL ACHIEVE ANY SPECIFIC COMPLIANCE RESULTS FROM THE USE OF MATTERMOST OR FROM ANY RECOMMENDATIONS CONTAINED ON OUR WEBSITES, AND AS SUCH, THIS SHOULD NOT BE A SUBSTITUTE TO CONSULTING WITH YOUR OWN LEGAL AND COMPLIANCE REPRESENTATIVES ON THESE MATTERS.
+
+Are you IPv6 compliant?
+~~~~~~~~~~~~~~~~~~~~~~~
+
+Yes, the Mattermost platform is compliant with IPv6 when Audio & Screen Sharing is disabled, both for our `self-hosted and Cloud offerings <https://docs.mattermost.com/about/editions-and-offerings.html>`_.
+
+We plan to add IPv6 compliance for `Audio & Screen Sharing <https://docs.mattermost.com/configure/calls-deployment.html>`_ in future.
+
+Are you 508 compliant?
+~~~~~~~~~~~~~~~~~~~~~~
+
+Yes, the Mattermost platform is compliant with 508.
+
+Learn more about our `VPAT Template for 508 compliance <https://docs.mattermost.com/about/vpat.html>`_, and `how Mattermost approaches accessibility in product development <https://mattermost.com/blog/mattermost-accessibility-for-the-visually-impaired/>`_.
