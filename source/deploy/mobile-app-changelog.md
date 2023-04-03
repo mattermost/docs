@@ -35,6 +35,7 @@ Latest Mattermost Mobile Apps releases:
  - Fixed an issue where the channel members count did not get updated after removing users.
  - Fixed a crash on markdown table images and prevented image-related crashes on other parts of the app.
  - Fixed websocket not connecting during rare scenarios.
+ - Fixed the sort order of the search results. Search results now display from newest to oldest.
 
 ### Open Source Components
  - Added ``mattermost/calls-common`` to https://github.com/mattermost/mattermost-mobile.
