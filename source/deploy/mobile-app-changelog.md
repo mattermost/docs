@@ -19,9 +19,9 @@ Latest Mattermost Mobile Apps releases:
  - iPhone 5s devices and later with iOS 12.1+ is required.
 
 ### Improvements
- - Calls: raising a hand will now take precedence when ordering participants in the call screen.
- - Calls: optimized screensharing in landscape mode for Android and iOS and unlocked landscape mode for iOS phone devices.
- - Channel names are now tappable in threads and in recent mentions, search and saved posts screens.
+ - Calls: Raising a hand will now take precedence when ordering participants in the call screen.
+ - Calls: Optimized screensharing in landscape mode for Android and iOS and unlocked landscape mode for iOS phone devices.
+ - Channel names are now tappable in threads and in recent mentions, search, and saved message screens.
  - The ``ExperimentalGroupUnreadChannels`` server config is now respected.
  - Added more information to the logs for better debugging.
 
@@ -33,15 +33,15 @@ Latest Mattermost Mobile Apps releases:
  - Fixed an issue where some notifications did not show when a channel sidebar category was collapsed.
  - Fixed an issue where tapping on a custom status in the message list did not open the user's profile card.
  - Fixed an issue where the channel members count did not get updated after removing users.
- - Fixed a crash on markdown table images and prevented image related crashes on other parts of the app.
- - Fixed websocket not connecting on rare scenarios.
+ - Fixed a crash on markdown table images and prevented image-related crashes on other parts of the app.
+ - Fixed websocket not connecting during rare scenarios.
 
 ### Open Source Components
  - Added ``mattermost/calls-common`` to https://github.com/mattermost/mattermost-mobile.
 
 ### Known Issues
  - Users are unable to adjust the font size via the OS font size setting.
- - Some pixel phones on Android 12+ might not go past the login screen. This is a known issue with the OS and the current workaround is to restart the device.
+ - Some Google Pixel phones on Android 12+ might not continue past the login screen. This is a known issue with the OS, and the current workaround is to restart the device.
 
 ## 2.2.0 Release
 - Release Date: March 17, 2023
