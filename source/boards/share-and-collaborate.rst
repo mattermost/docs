@@ -43,6 +43,16 @@ The level of access to a board is determined by a user’s assigned board role. 
 - **Commenter**: Can add comments to cards.
 - **Viewer**: Can view the board and its contents but can't comment or edit the board.
 
+System admin access
+~~~~~~~~~~~~~~~~~~~
+
+System admins can access any board across the server provided they have the board's URL without having to request permission or be manually added. When a system admin joins a board, their default role is admin. System admins will have an **Admin** label assigned to their name on the participants list.
+
+Team admin access
+~~~~~~~~~~~~~~~~~
+
+Team admins can access any board within their team provided they have the board's URL without having to request permission or be manually added. When a system admin joins a board, their default role is admin. Team admins will have a **Team admin** label assigned to their name on the participants list.
+
 Manage team access
 ~~~~~~~~~~~~~~~~~~~
 

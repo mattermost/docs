@@ -35,11 +35,15 @@ Start a call
   .. tab:: Desktop
 
     To start a call, select **Start call** in the channel or message header. When you start a call in a channel, you're muted by default. In a direct or group message you're unmuted by default.
+    
+      ..tip::
+        Select the call widget to move it to a different area of your screen.
 
   .. tab:: Mobile
      
      To start a call, select the channel info menu. Then select **Start Call**. The call starts in speaker mode by default.
-
+   
+        
 Any active team member in the channel can join a call, whether it's a public or private channel. If someone from outside of the organization wants to join a call, you'll need to provide them with a guest account, and add them to the channel. Users who are archived or not registered can't join a call.
 
 You can share a call's link to use in a meeting request or share with other team mates. The link is unique to each channel, and contains the channel's ID, so it doesn't change between calls. Use the ``/call link`` slash command to generate a shareable link.
@@ -74,7 +78,7 @@ A chat thread is created automatically for every new call.
 
   .. tab:: Mobile
   
-    To do this, expand the call window using the arrows in the top-right of the active call banner. The select **More > Call Thread**.
+    To do this, expand the call window using the arrows in the top-right of the active call banner. Then select **More > Call Thread**.
     
 Record a call
 -------------
@@ -89,11 +93,19 @@ When you stop recording, the recording is posted in the call thread as a file at
 
 To record a call:
 
-1. Select **Start call** in the header of the channel, group message, or direct message.
-2. Select the pop-out icon.
-3. In the pop-out screen, select the record button.
-4. To stop recording, select the record button again.
+.. tabs::
 
+  .. tab:: Desktop
+
+    1. Select **Start call** in the header of the channel, group message, or direct message.
+    2. Select the pop-out icon.
+    3. In the pop-out screen, select the record button.
+    4. To stop recording, select the record button again.
+
+  .. tab:: Mobile
+  
+    To start recording, use the ``/call recording start`` slash command. When you're finished recording, use the ``/call recording stop`` slash command. Alternatively, expand the call window using the arrows in the top-right of the active call banner. Then select the record button. To finish, select the button again.
+    
 Frequently asked questions
 --------------------------
 
