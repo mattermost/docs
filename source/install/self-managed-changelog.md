@@ -42,11 +42,11 @@ Latest Mattermost Releases:
  - Added the ability to invite multiple people at a time by email to a Mattermost instance.
  - Added accessibility support to the date picker.
  - System admins are prompted to complete a feedback survey during a workspace downgrade process from Cloud Professional to Cloud Free.
- - Migrated the post dot menu to a Material UI (MUI) menu.
+ - Migrated the message (...) **More** option to a Material UI (MUI) menu.
 
 #### Administration
  - The ``ServiceSettings.PostEditTimeLimit`` config setting no longer affects Plugins, Shared Channels, Integration Actions, or Mattermost Products.
- - The app server no longer starts if the telemetry ID in the systems table doesn't exist. Although there is no action required by the administrators, it may be good to be aware of this change.
+ - The app server no longer starts if the telemetry ID in the systems table doesn't exist. Although there is no action required by the administrators, it may be good to be aware of this change. If the ID doesn't exist, administrators can read the error log and take action against it.
  - Added additional values to the support packet.
  - Self-hosted instances will now show invoices in **System Console > Billing & Account > Billing History*** for prior self-serve purchases.
  - A 404 error is now returned if an invoice could not be fetched for a self-hosted deployment.
