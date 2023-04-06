@@ -55,6 +55,7 @@ Latest Mattermost Releases:
  - Fixed an issue where a single WebSocket reconnect could be handled multiple times which would negatively affect performance.
  - Fixed an issue in **Top DM Insights**, where a deleted participant caused DM Insights to fail.
  - Fixed an issue where Cloud limits would briefly flash in the System Console before disappearing.
+ - Fixed an issue with the compact message mode.
  
 ### config.json
 Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
@@ -70,9 +71,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - Added ``date-fns`` to https://github.com/mattermost/mattermost-webapp/.
 
 ### Known Issues
- - Compact display issues can be seen [MM-51489](https://mattermost.atlassian.net/browse/MM-51489).
  - Users are unexpectedly forced to enable JSON logging [MM-51453](https://mattermost.atlassian.net/browse/MM-51453).
- - Checkmarks are missing from the left-hand side submenus [MM-51091](https://mattermost.atlassian.net/browse/MM-51091).
  - The new Insights feature has some performance costs that we are working to optimize. This feature can be disabled by setting the ``MM_FEATUREFLAGS_INSIGHTSENABLED`` environment variable to ``false``.
  - Adding an @mention at the start of a post draft and pressing the left or right arrow key can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
  - Google login fails on the Classic mobile apps.
