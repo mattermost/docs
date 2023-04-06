@@ -36,6 +36,7 @@ Latest Mattermost Cloud releases:
  - Fixed an issue where the **Delete Category Dialog** message was not visible in Boards.
  - Fixed an issue where the experimental Shared Channels feature failed to synchronize if a previously removed table column was still present.
  - Fixed an innocuous panic in Boards Rest API when requesting files and an error other than ``not found`` is encountered.
+ - Fixed an issue with the compact message mode.
 
 ### Known Issues
  - The URL of the post in a reminder post for Direct and Group Messages have a double slash on mobile [MM-51026](https://mattermost.atlassian.net/browse/MM-51026).
