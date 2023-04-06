@@ -814,6 +814,8 @@ Post edit time limit
 
 When post editing is permitted, setting this to ``-1`` allows editing any time, and setting this to a positive integer restricts editing time in seconds. If post editing is disabled, this setting does not apply.
 
+**Note:** This setting does not affect plugins, shared channels, integration actions, or Mattermost products.
+
 +--------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"PostEditTimeLimit": -1`` with numerical input.      |
 +--------------------------------------------------------------------------------------------------+
