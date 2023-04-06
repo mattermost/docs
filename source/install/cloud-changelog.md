@@ -30,6 +30,7 @@ Latest Mattermost Cloud releases:
 
  - Added the ability to search a partial first name, last name, nickname, or username on the **System Console > Users** page.
  - **Contact Support** now redirects users to Zendesk and pre-fills known information.
+ - Added a mechanism for public routes on products and used it to support publicly shared Board links.
 
 ### Bug Fixes
  - Fixed a scrolling issue in the purchase modals.
