@@ -35,6 +35,12 @@ Transmission security
 ~~~~~~~~~~~~~~~~~~~~~~
 
 - Mattermost supports TLS encryption using AES-256 with 2048-bit RSA on all data transmissions between Mattermost client applications and the Mattermost server across both LAN and internet.
+- Connections to calls are secured with a combination of:
+
+  - TLS: the existing WebSocket channel is used to secure the signaling path.
+  - DTLS v1.2 (mandatory): used for initial key exchange. Supports ``TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256`` and ``TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA`` algorithms.
+  - SRTP (mandatory): used to encrypt all media packets (i.e. those containing voice or screen share). Supports ``AEAD_AES_128_GCM`` and ``AES128_CM_HMAC_SHA1_80`` algorithms. 
+
 - Connections to Active Directory/LDAP can be optionally secured with TLS or stunnel (Mattermost Enterprise and Mattermost Professional).
 - Encryption-at-rest is available for messages via hardware and software disk encryption solutions applied to the Mattermost database, which resides on its own server within your infrastructure. To enable end user search and compliance reporting of message histories, Mattermost does not offer encryption within the database.
 - Encryption-at-rest is available for files stored via hardware and software disk encryption solutions applied to the server used for local storage or storage via MinIO.
