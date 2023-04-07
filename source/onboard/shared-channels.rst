@@ -40,7 +40,7 @@ System Admins can use the following slash command to create a secure connection 
 
 For example:
 
-``/secure-connection create --name “AcmeUS” --displayname “AcmeUSA” --password examplepassword``
+``/secure-connection create --name AcmeUS --displayname “AcmeUSA” --password examplepassword``
 
 This slash command creates an invitation consisting of a password-protected AES 256-bit encrypted code blob for a remote Mattermost entity known locally as ``AcmeUS`` with a password of ``examplepassword``. Within Mattermost, this shared connection displays to the local System Admin based on the ``name`` and ``displayname`` provided.
 
