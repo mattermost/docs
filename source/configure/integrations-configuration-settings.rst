@@ -58,7 +58,7 @@ Developers building integrations can create webhook URLs for Public channels and
 Enable outgoing webhooks
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-Developers building integrations can create webhook tokens for Public channels. Trigger words are used to fire new message events to external integrations. For security reasons, outgoing webhooks are only available in Public channels. Please see our `documentation page <https://docs.mattermost.com/developer/webhooks-outgoing.html>`__ to learn about creating webhooks and viewing samples.
+Developers building integrations can create webhook tokens for Public channels. Trigger words are used to fire new message events to external integrations. For security reasons, outgoing webhooks are only available in Public channels. Please see our `documentation page <hhttps://developers.mattermost.com/integrate/webhooks/outgoing/>`__ to learn about creating webhooks and viewing samples.
 
 **True**: Outgoing webhooks will be allowed. To manage outgoing webhooks, select **Integrations** from the Mattermost Product menu.
 
