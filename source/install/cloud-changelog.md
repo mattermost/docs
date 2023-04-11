@@ -40,7 +40,7 @@ Latest Mattermost Cloud releases:
  - Fixed an issue with the compact message mode.
 
 ### Known Issues
- - The URL of the post in a reminder post for Direct and Group Messages have a double slash on mobile [MM-51026](https://mattermost.atlassian.net/browse/MM-51026).
+ - The URL of the post in a reminder post for direct and group messages have a double slash on mobile [MM-51026](https://mattermost.atlassian.net/browse/MM-51026).
  - A user gets scrolled to the bottom of the post editor after pasting long text in the right-hand pane [MM-51302](https://mattermost.atlassian.net/browse/MM-51302).
  - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
 
