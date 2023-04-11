@@ -10,7 +10,7 @@ Mattermost Boards (formerly known as Focalboard) is accessible from the Product 
    
   .. tab:: Mattermost v6.0 onwards
    
-      If you're using Mattermost 6.0, select the Product menu in the top left corner of Mattermost to open Boards. The Boards dashboard is where you can get
+      If you're using Mattermost 6.0, select the Product menu in the top left corner of Mattermost to open Boards.
       started, where you'll find all the boards you have access to, and also where you can navigate between workspaces. Once you've activated Boards, you'll see a tab at the top of Mattermost called **Boards**. Select that for quick access to your dashboard.
   
   .. tab:: Mattermost v5.39 and earlier
