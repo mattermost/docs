@@ -33,9 +33,9 @@ Access the following configuration settings in the System Console by going to **
 Enable incoming webhooks
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-Developers building integrations can create webhook URLs for Public channels and Private channels. Please see our `documentation page <https://developers.mattermost.com/integrate/webhooks/incoming/>`__ to learn about creating webhooks, viewing samples, and letting community know about integrations you've built.
+Developers building integrations can create webhook URLs for public channels and private channels. Please see our `documentation page <https://developers.mattermost.com/integrate/webhooks/incoming/>`__ to learn about creating webhooks, viewing samples, and letting community know about integrations you've built.
 
-**True**: Incoming webhooks are allowed. To manage incoming webhooks, select **Integrations** from the Mattermost Product menu. The webhook URLs created can be used by external applications to create posts in any Public or Private channels that you have access to.
+**True**: Incoming webhooks are allowed. To manage incoming webhooks, select **Integrations** from the Mattermost Product menu. The webhook URLs created can be used by external applications to create posts in any public or private channels that you have access to.
 
 **False**: The **Integrations > Incoming Webhooks** section of the Mattermost Product menu is hidden and all incoming webhooks are disabled.
 
