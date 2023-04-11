@@ -1,0 +1,12 @@
+Set a reminder
+==============
+
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
+
+.. |more-actions-icon| image:: ../images/dots-horizontal_F01D8.svg
+  :alt: Access additional message actions using the More actions icon.
+
+From Mattermost v7.10, you can set a timed reminder on posts made in channels, direct messages, and group messages.
+
+Hover over the message, select the **More** |more-actions-icon| option, then select **Remind**. Select a time period or enter a custom date and time.
