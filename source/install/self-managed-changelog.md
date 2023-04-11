@@ -32,7 +32,8 @@ Latest Mattermost Releases:
  - Added accessibility support to the date picker.
  - System admins are prompted to complete a feedback survey during a workspace downgrade process from Cloud Professional to Cloud Free.
  - Migrated the message (...) **More** option to a Material UI (MUI) menu.
- - Update pre-packaged Boards to v7.10.0.
+ - Updated pre-packaged Boards to v7.10.0.
+ - Updated pre-packaged Calls to v0.15.0.
 
 #### Administration
  - The ``ServiceSettings.PostEditTimeLimit`` config setting no longer affects Plugins, Shared Channels, Integration Actions, or Mattermost Products.
