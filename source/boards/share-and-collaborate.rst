@@ -117,7 +117,7 @@ Share a board publicly
 
 Sharing boards publicly is disabled by default. This means that the **Publish** tab is not available from the **Share** dialog. To enable public board sharing:
 
-1. Go to **Product menu > System Console > Plugins > Plugin Management > Mattermost Boards > Settings**.
+1. Go to **Product menu > System Console > Products > Boards > Settings**.
 2. Set **Enable Publicly-Shared Boards** to **true**.
 3. Select **Save**.
 
