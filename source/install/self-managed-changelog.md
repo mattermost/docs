@@ -15,6 +15,8 @@ Latest Mattermost Releases:
 
 **Release day: April 14, 2023**
 
+Mattermost v7.10.0 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+
 ### Important Upgrade Notes
 
  - In the next release, v7.11, the following repositories will be merged into one: ``mattermost-server``, ``mattermost-webapp``, ``focalboard`` and ``mattermost-plugin-playbooks``. Developers should read the updated [Developer Guide](https://developers.mattermost.com/contribute/developer-setup/) for details. **Playbooks and Boards will be core parts of the product that cannot be disabled**.
@@ -86,7 +88,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - If a user isn't a member of a configured broadcast channel, posting a status update might fail without any error feedback. As a temporary workaround, join the configured broadcast channels, or remove those channels from the run configuration.
  
 ### Contributors
- - 
+ - To be added.
 
 ## Release v7.9 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
 
