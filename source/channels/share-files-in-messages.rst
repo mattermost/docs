@@ -21,9 +21,9 @@ With file attachments, you can share additional information that helps your team
 
     You can share files with other Mattermost users or entire channels by:
 
-    - dragging and dropping files into Channels.
-    - selecting the **Attachment** |attachment-icon| icon in the message input box.
-    - pasting from the clipboard.
+    - Dragging and dropping files into Channels.
+    - Selecting the **Attachment** |attachment-icon| icon in the message input box.
+    - Pasting from the clipboard.
     
     **Share public links**
         
