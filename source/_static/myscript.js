@@ -176,7 +176,8 @@ $(document).ready(function () {
 	const dateInFuture = (today, anyDate) => today.setHours(0, 0, 0, 0) <= anyDate.setHours(0, 0, 0, 0);
 
 	const today = new Date();
-	const expiryDate = new Date('2023-04-27');
+	const expiryDate = new Date('1682625600'); 
+	// 2023-04-27 @ 3pm EST
 
 	const fallback_url = 'https://mattermost.com/solutions/mattermost-for-microsoft-teams/';
 	const fallback_text = 'Learn more about Mattermost for Microsoft Teams »';
