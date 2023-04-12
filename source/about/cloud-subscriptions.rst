@@ -181,8 +181,3 @@ These offerings are deployed in the following ways:
  - **Professional**: Single application layer, shared infrastructure, shared network, professional group ring.
  - **Enterprise**: Single application layer, shared infrastructure, shared network, enterprise group ring.
  - **Enterprise plus dedicated add-on**: Single application layer, dedicated network via VPC (Virtual Private Cloud), dedicated infrastructure, enterprise group ring.
-
-Can I cancel and delete my Cloud workspace?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Yes. Please contact our Mattermost `Support team <mailto:support@mattermost.com>`_ with the subject **Mattermost Cloud Workspace Deletion Request** for assistance.
