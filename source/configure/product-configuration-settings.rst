@@ -15,6 +15,9 @@ Boards
   :configjson: .ProductSettings.EnablePublicSharedBoards
   :environment: MM_PRODUCTSETTINGS_ENABLEPUBLICSHAREDBOARDS
   :description: Enable the ability to share links to boards publicly with other users.
+  
+    - **true**: Enables the ability to share links to Mattermost boards with other users.     
+    - **false**: **(Default)** Mattermost boards can't be shared with other users.    
 
 Enable publicly-shared boards
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
