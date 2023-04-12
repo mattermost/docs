@@ -13,6 +13,11 @@ Latest Mattermost Releases:
 
 ## Release v7.9 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
 
+- **v7.9.2, released 2023-04-12**
+  - Mattermost v7.9.2 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Updated prepackaged boards to v7.9.3.
+  - Fixed an issue with compact message mode.
+  - Fixed an issue where ``NotifyAdmin`` job reported an error for unlicensed servers.
 - **v7.9.1, released 2023-03-17**
   - Mattermost v7.9.1 contains a high severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
 - **v7.9.0, released 2023-03-16**
@@ -98,8 +103,6 @@ Mattermost v7.9.0 contains a low severity level security fix. [Upgrading](https:
  - Added ``@mui/base``, ``@mui/material`` and ``@mui/styled-engine-sc``, and removed ``form-data`` from https://github.com/mattermost/mattermost-webapp/.
 
 ### Known Issues
- - Compact display issues can be seen [MM-51489](https://mattermost.atlassian.net/browse/MM-51489).
- - ``NotifyAdmin`` job reports an error for unlicensed servers [MM-51467](https://mattermost.atlassian.net/browse/MM-51467).
  - Users are unexpectedly forced to enable JSON logging [MM-51453](https://mattermost.atlassian.net/browse/MM-51453).
  - Checkmarks are missing from the left-hand side submenus [MM-51091](https://mattermost.atlassian.net/browse/MM-51091).
  - The new Insights feature has some performance costs that we are working to optimize. This feature can be disabled by setting the ``MM_FEATUREFLAGS_INSIGHTSENABLED`` environment variable to ``false``.
@@ -119,6 +122,10 @@ Mattermost v7.9.0 contains a low severity level security fix. [Upgrading](https:
 
 ## Release v7.8 - [Extended Support Release](https://docs.mattermost.com/upgrade/release-definitions.html#extended-support-release-esr)
 
+- **v7.8.3, released 2023-04-12**
+  - Mattermost v7.8.3 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Updated prepackaged boards to v7.8.4.
+  - Added additional values to the support packet.
 - **v7.8.2, released 2023-03-17**
   - Mattermost v7.8.2 contains a high severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Added a ``exclude_files_count`` parameter to exclude file counts from channel stats API.
@@ -256,6 +263,8 @@ Mattermost v7.8.0 contains low to high severity level security fixes. [Upgrading
 
 ## Release v7.7 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
 
+- **v7.7.4, released 2023-04-12**
+  - Mattermost v7.7.4 contains medium level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
 - **v7.7.3, released 2023-03-17**
   - Mattermost v7.7.3 contains a high severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
 - **v7.7.2, released 2023-03-01**
@@ -907,6 +916,8 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ## Release v7.1 - [Extended Support Release](/upgrade/release-definitions.html#extended-support-release-esr)
 
+- **v7.1.8, released 2023-04-12**
+  - Mattermost v7.1.8 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
 - **v7.1.7, released 2023-03-17**
   - Added a ``exclude_files_count`` parameter to exclude file counts from channel stats API.
   - Excluded the file count on channel stats API call on from channel header.
