@@ -16,18 +16,18 @@ If you want to check that the version of Mattermost you are installing is the of
 Mattermost Enterprise Edition
 ------------------------------
 
-Mattermost Enterprise Edition v7.9.1 - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v7-9-feature-release>`__ - `Download <https://releases.mattermost.com/7.9.1/mattermost-7.9.1-linux-amd64.tar.gz?src=arc>`__
-  - ``https://releases.mattermost.com/7.9.1/mattermost-7.9.1-linux-amd64.tar.gz``
-  - SHA-256 Checksum: ``c0014b6ac458d9b8d0a513e4574d4c9ced2b6029c45a1a79e10f201de7d707aa``
-  - GPG Signature: https://releases.mattermost.com/7.9.1/mattermost-7.9.1-linux-amd64.tar.gz.sig
-Mattermost Enterprise Edition v7.8.2 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v7-8-extended-support-release>`__ - `Download <https://releases.mattermost.com/7.8.2/mattermost-7.8.2-linux-amd64.tar.gz?src=arc>`__
-  - ``https://releases.mattermost.com/7.8.2/mattermost-7.8.2-linux-amd64.tar.gz``
-  - SHA-256 Checksum: ``64c79c7f8c95f9e2a50933a7309f65fd12d5f395f1be10346d42d3aad4a32918``
-  - GPG Signature: https://releases.mattermost.com/7.8.2/mattermost-7.8.2-linux-amd64.tar.gz.sig
-Mattermost Enterprise Edition v7.7.3 - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v7-7-feature-release>`__ - `Download <https://releases.mattermost.com/7.7.3/mattermost-7.7.3-linux-amd64.tar.gz?src=arc>`__
-  - ``https://releases.mattermost.com/7.7.3/mattermost-7.7.3-linux-amd64.tar.gz``
-  - SHA-256 Checksum: ``2dc18bb6fa696965015a0ab26810dbbca4444c64993d68fd5eb8fa02de2f55da``
-  - GPG Signature: https://releases.mattermost.com/7.7.3/mattermost-7.7.3-linux-amd64.tar.gz.sig
+Mattermost Enterprise Edition v7.9.2 - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v7-9-feature-release>`__ - `Download <https://releases.mattermost.com/7.9.2/mattermost-7.9.2-linux-amd64.tar.gz?src=arc>`__
+  - ``https://releases.mattermost.com/7.9.2/mattermost-7.9.2-linux-amd64.tar.gz``
+  - SHA-256 Checksum: ``a9b7059795df5187b6cfba8473bcf141ebd1f5ca00d58b51ca77ea13888b29df``
+  - GPG Signature: https://releases.mattermost.com/7.9.2/mattermost-7.9.2-linux-amd64.tar.gz.sig
+Mattermost Enterprise Edition v7.8.3 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v7-8-extended-support-release>`__ - `Download <https://releases.mattermost.com/7.8.3/mattermost-7.8.3-linux-amd64.tar.gz?src=arc>`__
+  - ``https://releases.mattermost.com/7.8.3/mattermost-7.8.3-linux-amd64.tar.gz``
+  - SHA-256 Checksum: ``e153840eb08a648e474795369b8f437dbb3931cfa2f25e0de358c8cbcfb90f59``
+  - GPG Signature: https://releases.mattermost.com/7.8.3/mattermost-7.8.3-linux-amd64.tar.gz.sig
+Mattermost Enterprise Edition v7.7.4 - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v7-7-feature-release>`__ - `Download <https://releases.mattermost.com/7.7.4/mattermost-7.7.4-linux-amd64.tar.gz?src=arc>`__
+  - ``https://releases.mattermost.com/7.7.4/mattermost-7.7.4-linux-amd64.tar.gz``
+  - SHA-256 Checksum: ``942fa455b9f533ad191ea9404b34b4a5d9de7f90f966608fd06c66af2325b601``
+  - GPG Signature: https://releases.mattermost.com/7.7.4/mattermost-7.7.4-linux-amd64.tar.gz.sig
 Mattermost Enterprise Edition v7.5.2 - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v7-5-feature-release>`__ - `Download <https://releases.mattermost.com/7.5.2/mattermost-7.5.2-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/7.5.2/mattermost-7.5.2-linux-amd64.tar.gz``
   - SHA-256 Checksum: ``66fce67ba3a0fcb2ec4f85f2143010b1c3603be8c2c30cc30f2b583a8e2a3345``
@@ -44,10 +44,10 @@ Mattermost Enterprise Edition v7.2.1 - `View Changelog <https://docs.mattermost.
   - ``https://releases.mattermost.com/7.2.1/mattermost-7.2.1-linux-amd64.tar.gz``
   - SHA-256 Checksum: ``f074d167fc29d872b80d0754882db62e2b922139517227d43f7a8ba417a524ec``
   - GPG Signature: https://releases.mattermost.com/7.2.1/mattermost-7.2.1-linux-amd64.tar.gz.sig
-Mattermost Enterprise Edition v7.1.7 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v7-1-extended-support-release>`__ - `Download <https://releases.mattermost.com/7.1.7/mattermost-7.1.7-linux-amd64.tar.gz?src=arc>`__
-  - ``https://releases.mattermost.com/7.1.7/mattermost-7.1.7-linux-amd64.tar.gz``
-  - SHA-256 Checksum: ``af96293dbfaf5f4804649586189daadb413f3b29df39374b3bfbc9f7fc6088e7``
-  - GPG Signature: https://releases.mattermost.com/7.1.7/mattermost-7.1.7-linux-amd64.tar.gz.sig
+Mattermost Enterprise Edition v7.1.8 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v7-1-extended-support-release>`__ - `Download <https://releases.mattermost.com/7.1.8/mattermost-7.1.8-linux-amd64.tar.gz?src=arc>`__
+  - ``https://releases.mattermost.com/7.1.8/mattermost-7.1.8-linux-amd64.tar.gz``
+  - SHA-256 Checksum: ``28b646a7252a66ca5bf15496fe5239183db0a8c43f777acd71f5dfaaa6e07d16``
+  - GPG Signature: https://releases.mattermost.com/7.1.8/mattermost-7.1.8-linux-amd64.tar.gz.sig
 Mattermost Enterprise Edition v7.0.2 - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v7-0-major-release>`__ - `Download <https://releases.mattermost.com/7.0.2/mattermost-7.0.2-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/7.0.2/mattermost-7.0.2-linux-amd64.tar.gz``
   - SHA-256 Checksum: ``e7597ab12598c908e0b4b2c4c35e87cdbad5a1db54a676d35787d1c41481eb5b``
@@ -325,18 +325,18 @@ The open source Mattermost Team Edition is functionally identical to the commerc
 
 We generally recommend installing Enterprise Edition, even if you don't currently need a license. This provides the flexibility to seamlessly unlock Enterprise features should you need them. However, if you only want to install software with a fully open source code base, then Team Edition is the best choice for you.
 
-Mattermost Team Edition v7.9.1 - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v7-9-feature-release>`__ - `Download <https://releases.mattermost.com/7.9.1/mattermost-team-7.9.1-linux-amd64.tar.gz?src=arc>`__
-  - ``https://releases.mattermost.com/7.9.1/mattermost-team-7.9.1-linux-amd64.tar.gz``
-  - SHA-256 Checksum: ``fbad64313f66e0ad66a0aea3772150b2360c1fddaa1ba83ad63a84ba65b4860f``
-  - GPG Signature: https://releases.mattermost.com/7.9.1/mattermost-team-7.9.1-linux-amd64.tar.gz.sig
-Mattermost Team Edition v7.8.2 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v7-8-extended-support-release>`__ - `Download <https://releases.mattermost.com/7.8.2/mattermost-team-7.8.2-linux-amd64.tar.gz?src=arc>`__
-  - ``https://releases.mattermost.com/7.8.2/mattermost-team-7.8.2-linux-amd64.tar.gz``
-  - SHA-256 Checksum: ``9e53a3e30eed2c36b2b6b0dccd1bc18a59cb265385c7ee7974252239fc8c89ff``
-  - GPG Signature: https://releases.mattermost.com/7.8.2/mattermost-team-7.8.2-linux-amd64.tar.gz.sig
-Mattermost Team Edition v7.7.3 - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v7-7-feature-release>`__ - `Download <https://releases.mattermost.com/7.7.3/mattermost-team-7.7.3-linux-amd64.tar.gz?src=arc>`__
-  - ``https://releases.mattermost.com/7.7.3/mattermost-team-7.7.3-linux-amd64.tar.gz``
-  - SHA-256 Checksum: ``3ac38bfc6959d4a2ace8df84780fe19a7cf89427ddbe7ecedd9b4bd3642e43fc``
-  - GPG Signature: https://releases.mattermost.com/7.7.3/mattermost-team-7.7.3-linux-amd64.tar.gz.sig
+Mattermost Team Edition v7.9.2 - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v7-9-feature-release>`__ - `Download <https://releases.mattermost.com/7.9.2/mattermost-team-7.9.2-linux-amd64.tar.gz?src=arc>`__
+  - ``https://releases.mattermost.com/7.9.2/mattermost-team-7.9.2-linux-amd64.tar.gz``
+  - SHA-256 Checksum: ``f32d02679b15062b7d765514d2843096371d6df6df3c5ecf9a37963777ade418``
+  - GPG Signature: https://releases.mattermost.com/7.9.2/mattermost-team-7.9.2-linux-amd64.tar.gz.sig
+Mattermost Team Edition v7.8.3 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v7-8-extended-support-release>`__ - `Download <https://releases.mattermost.com/7.8.3/mattermost-team-7.8.3-linux-amd64.tar.gz?src=arc>`__
+  - ``https://releases.mattermost.com/7.8.3/mattermost-team-7.8.3-linux-amd64.tar.gz``
+  - SHA-256 Checksum: ``36363d0b21268653eb4f8b25255741bcfceb32ca619249783d4ad69fa92aaa79``
+  - GPG Signature: https://releases.mattermost.com/7.8.3/mattermost-team-7.8.3-linux-amd64.tar.gz.sig
+Mattermost Team Edition v7.7.4 - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v7-7-feature-release>`__ - `Download <https://releases.mattermost.com/7.7.4/mattermost-team-7.7.4-linux-amd64.tar.gz?src=arc>`__
+  - ``https://releases.mattermost.com/7.7.4/mattermost-team-7.7.4-linux-amd64.tar.gz``
+  - SHA-256 Checksum: ``74c86a5efa8b838f028ff8a435b4becaf46723c9b8f2d032de0ca15d128fb5cd``
+  - GPG Signature: https://releases.mattermost.com/7.7.4/mattermost-team-7.7.4-linux-amd64.tar.gz.sig
 Mattermost Team Edition v7.5.2 - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v7-5-feature-release>`__ - `Download <https://releases.mattermost.com/7.5.2/mattermost-team-7.5.2-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/7.5.2/mattermost-team-7.5.2-linux-amd64.tar.gz``
   - SHA-256 Checksum: ``b2162bc12b0b8763809f0795f429bc59018c712b14461db63158b453710fa885``
@@ -353,10 +353,10 @@ Mattermost Team Edition v7.2.1 - `View Changelog <https://docs.mattermost.com/in
   - ``https://releases.mattermost.com/7.2.1/mattermost-team-7.2.1-linux-amd64.tar.gz``
   - SHA-256 Checksum: ``42030c3b892b9428a653bb9a0a52f12dcef9b81535a0181e0456f7848203fce5``
   - GPG Signature: https://releases.mattermost.com/7.2.1/mattermost-team-7.2.1-linux-amd64.tar.gz.sig
-Mattermost Team Edition v7.1.7 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v7-1-extended-support-release>`__ - `Download <https://releases.mattermost.com/7.1.7/mattermost-team-7.1.7-linux-amd64.tar.gz?src=arc>`__
-  - ``https://releases.mattermost.com/7.1.7/mattermost-team-7.1.7-linux-amd64.tar.gz``
-  - SHA-256 Checksum: ``add736af3af4a80e06750ae278a675e2805554843724f03e98b9147d1614a747``
-  - GPG Signature: https://releases.mattermost.com/7.1.7/mattermost-team-7.1.7-linux-amd64.tar.gz.sig
+Mattermost Team Edition v7.1.8 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v7-1-extended-support-release>`__ - `Download <https://releases.mattermost.com/7.1.8/mattermost-team-7.1.8-linux-amd64.tar.gz?src=arc>`__
+  - ``https://releases.mattermost.com/7.1.8/mattermost-team-7.1.8-linux-amd64.tar.gz``
+  - SHA-256 Checksum: ``ec218abcd086db61277b0441aefb9ddb38722a741e8f9538dbefd2e9c2a8907d``
+  - GPG Signature: https://releases.mattermost.com/7.1.8/mattermost-team-7.1.8-linux-amd64.tar.gz.sig
 Mattermost Team Edition v7.0.2 - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v7-0-major-release>`__ - `Download <https://releases.mattermost.com/7.0.2/mattermost-team-7.0.2-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/7.0.2/mattermost-team-7.0.2-linux-amd64.tar.gz``
   - SHA-256 Checksum: ``95725aa1950d1165ed671fbc855bee386422c95c0cdfc71940bab2200002fcbe``
