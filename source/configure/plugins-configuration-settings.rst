@@ -16,7 +16,6 @@ Both self-hosted and Cloud admins can access the following configuration setting
 - `Channel Export <#channel-export>`__
 - `Demo Plugin <#demo-plugin>`__
 - `GIF commands <#gif-commands>`__
-- `Mattermost Boards <#mattermost-boards>`__
 - `Mattermost Playbooks <#mattermost-playbooks>`__
 - `User Satisfaction surveys <#user-satisfaction-surveys>`__
 - `Zoom <#zoom>`__
@@ -1092,36 +1091,6 @@ Force GIF preview before posting (force /gifs)
 | - **false**: Both ``/gif`` and ``/gifs`` slash commands are available for the GIF commands plugin on your Mattermost server.                | - ``config.json`` setting:                       |
 |                                                                                                                                             | - Environment variable:                          |
 +---------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------+
-
-----
-
-Mattermost Boards
------------------
-
-.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
-  :start-after: :nosearch:
-
-Mattermost Boards is an open source alternative to Trello, Notion, and Asana that's integrated from Mattermost v5.36. Boards is a project management tool that helps define, organize, track and manage work across teams, using a familiar kanban board view. See the `Mattermost Boards <https://docs.mattermost.com/guides/boards.html>`__ product documentation for details.
-
-Access the following configuration settings in the System Console by going to **Plugins > Mattermost Boards**.
-
-.. config:setting:: plugins-boardsenable
-  :displayname: Enable plugin (Plugins - Boards)
-  :systemconsole: Plugins > Mattermost Boards
-  :configjson: 
-  :environment: 
-
-  - **true**: Enables the Mattermost Boards plugin on your Mattermost workspace.
-  - **false**: Disables the Mattermost Boards plugin on your Mattermost workspace.
-
-Enable plugin
-~~~~~~~~~~~~~
-
-+----------------------------------------------------------------------------------+-------------------------------------------------------+
-| - **true**: Enables the Mattermost Boards plugin on your Mattermost workspace.   | - System Config path: **Plugins > Mattermost Boards** |
-| - **false**: Disables the Mattermost Boards plugin on your Mattermost workspace. | - ``config.json`` setting:                            |
-|                                                                                  | - Environment variable:                               |
-+----------------------------------------------------------------------------------+-------------------------------------------------------+
 
 ----
 
