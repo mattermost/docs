@@ -25,4 +25,4 @@ Mattermost Boards (formerly known as Focalboard) is accessible from the Product 
 Configuration
 -------------
 
-Board sharing is disabled by default. This means that the **Share Board** option is not available in the board menu. To enable board sharing open **Product menu > System Console > Plugins > Boards**.
+Board sharing is disabled by default. This means that the **Share Board** option is not available in the board menu. To enable board sharing open **Product menu > System Console > Products > Boards**.
