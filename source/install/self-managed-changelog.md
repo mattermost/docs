@@ -142,43 +142,6 @@ Mattermost v7.8.0 contains low to high severity level security fixes. [Upgrading
 
  - [Message Priority & Acknowledgement](https://docs.mattermost.com/configure/site-configuration-settings.html#message-priority) is now enabled by default for all instances. You may disable this feature in the System Console by going to **Posts > Message Priority** or via the config ``PostPriority`` setting.
 
- - Before upgrading, we recommend checking for duplicate data in the ``focalboard_category_boards`` table, and deleting all but one copy of duplicate data. This is to ensure that the new plugin version startup doesn't lock the table, and prevent users from using Boards. We recommend de-duplicating the data at a time of low user activity.
-
-SQL to check the presence of duplicate data:                                                                                                             
-
-``SELECT user_id, board_id, count(*) AS count FROM focalboard_category_boards WHERE delete_at = 0 GROUP BY user_id, board_id HAVING count(*) > 1;``       
-
-SQL to delete duplicate data:                                                                                                                             
-
-PostgreSQL:                                                                                                                                               
-
-```
-WITH duplicates AS (
-  SELECT id, ROW_NUMBER() OVER(
-    PARTITION BY user_id, board_id
-  ) AS rownum
-  FROM focalboard_category_boards
-)
-DELETE FROM focalboard_category_boards
-USING duplicates
-WHERE focalboard_category_boards.id = duplicates.id AND duplicates.rownum > 1;
-```
-
-MySQL:
-
-```
-WITH duplicates AS (
-  SELECT id, ROW_NUMBER() OVER(
-    PARTITION BY user_id, board_id
-  ) AS rownum
-  FROM focalboard_category_boards
-)
-DELETE focalboard_category_boards
-FROM focalboard_category_boards
-JOIN duplicates USING(id)
-WHERE duplicates.rownum > 1;
-```
-
 **IMPORTANT:** If you upgrade from a release earlier than v7.5, please read the other [Important Upgrade Notes](http://mattermost-docs-preview-pulls.s3-website-us-east-1.amazonaws.com/6187/upgrade/important-upgrade-notes.html).
 
 ### Highlights
