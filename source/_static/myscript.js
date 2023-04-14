@@ -172,11 +172,27 @@ $(document).ready(function () {
 	
 	// Notification Banner
 
+	// Fallback for when a notification CTA expires - ie. webinar happens
+	const dateInFuture = (value) => new Date().getTime() <= new Date(value).getTime();
+    const expiryDate = '2023-04-27T15:00:00-0500';
+    // 2023-04-27 @ 3pm EST
+    const fallback_url = 'https://mattermost.com/solutions/mattermost-for-microsoft-teams/';
+    const fallback_text = 'Learn more about Mattermost for Microsoft Teams »';
+    
+    if (!dateInFuture(expiryDate)) {
+        if ($(".notification-bar").length) {
+            // $('.notification-bar').remove();
+            // $('body').removeClass('with-notification');
+            $('.notification-bar__link').attr('href', fallback_url);
+            $('.notification-bar__link').text(fallback_text);
+        }
+    }
+
 	// NOTE: Change the notification_banner_key to something unique everytime it changes
 	// So it will show up for new announcements
 	// Keep "mm_notification_banner__" at the beginning of the key
 	// Add system to clean out storage items that are no longer needed
-	const notification_banner_key = 'mm_notification_banner__mst';
+	const notification_banner_key = 'mm_notification_banner__webinar-prod';
 
 	if (localStorage.getItem(notification_banner_key) === null) {
 		localStorage.setItem(notification_banner_key, true);
@@ -236,33 +252,29 @@ $(document).ready(function () {
 		});
 		
 	});
+	// Navigation
+	const hamburger = document.getElementById('hamburger');
+	const subMenus = document.querySelectorAll('.site-nav__hassubnav a');
 
-});
+	let multiEventSingleHandler = (elem, events, handler, use_capture) => {
+		events.forEach(ev => {
+			elem.addEventListener(ev, handler, typeof(use_capture) === 'undefined' ? false : use_capture);
+		});
+	}
 
-// Redesign - Navigation
-document.addEventListener("DOMContentLoaded", function(event) {     
-    const hamburger = document.getElementById('hamburger');
-    const subMenus = document.querySelectorAll('.site-nav__hassubnav a');
+	let clickTouch = (elem, handler, use_capture) => {
+		multiEventSingleHandler(elem, ['click', 'touch'], handler, typeof(use_capture) === 'undefined' ? false : use_capture);
+	}
 
-    let multiEventSingleHandler = (elem, events, handler, use_capture) => {
-        events.forEach(ev => {
-            elem.addEventListener(ev, handler, typeof(use_capture) === 'undefined' ? false : use_capture);
-        });
-    }
+	subMenus.forEach(snav => {
+		clickTouch(snav, () => {
+			snav.parentElement.classList.toggle('is-active');
+		}, false);
+	});
 
-    let clickTouch = (elem, handler, use_capture) => {
-        multiEventSingleHandler(elem, ['click', 'touch'], handler, typeof(use_capture) === 'undefined' ? false : use_capture);
-    }
-
-    subMenus.forEach(snav => {
-        clickTouch(snav, () => {
-            snav.parentElement.classList.toggle('is-active');
-        }, false);
-    });
-
-    clickTouch(hamburger, () => {
-        hamburger.classList.toggle('is-active');
-        document.body.classList.toggle('nav-open');
-        document.getElementById('navigation').classList.toggle('active');
-    });
+	clickTouch(hamburger, () => {
+		hamburger.classList.toggle('is-active');
+		document.body.classList.toggle('nav-open');
+		document.getElementById('navigation').classList.toggle('active');
+	});
 });

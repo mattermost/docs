@@ -36,7 +36,7 @@ Anyone can create public channels, private channels, direct messages, and group 
      - Alternatively, select the **+** symbol at the top of the channel sidebar, then select **Open a Direct Message**. In the **Direct Messages** list, you'll see your most recent conversations.
      - To add more people to the conversation select the channel name, then select **Add Members**. Adding members to a group message creates a new channel and starts a new conversation.
      - You can't remove members of a group message; however, you can start a new group channel and conversation with different members.
-     - If you want to add more than seven users to a group message, create a private channel instead.
+     - If you want to add more than 7 users to a group message, create a private channel instead.
 
       
   .. tab:: Mobile
@@ -61,4 +61,4 @@ Anyone can create public channels, private channels, direct messages, and group 
   - Automatically adding the channel to a `category in the user's channel sidebar </channels/customize-your-channel-sidebar.html>`__.
   - Prompting to run a playbook based on the contents of a message.
 
-  The `Playbooks plugin must be enabled </configure/plugins-configuration-settings.html#mattermost-playbooks>`__ for channel admins to use channel actions.
+  The `playbooks plugin must be enabled </configure/plugins-configuration-settings.html#mattermost-playbooks>`__ for channel admins to use channel actions. From Mattermost v7.11, playbooks is part of the core product, is enabled by default, and can't be disabled. 
