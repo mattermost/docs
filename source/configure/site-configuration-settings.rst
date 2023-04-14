@@ -1162,7 +1162,7 @@ Enable SVGs
 | - **false**: **(Default)** Disables previews of SVG files.                    | - ``config.json`` setting: ``.ServiceSettings.EnableSVGs: false``|
 |                                                                               | - Environment variable: ``MM_SERVICESETTINGS_ENABLESVGS``        |
 +-------------------------------------------------------------------------------+------------------------------------------------------------------+
-| **Warning: Enabling SVGs is not recommended in environments where not all users are trusted.                                                     |
+| **Warning**: Enabling SVGs is not recommended in environments where not all users are trusted.                                                   |
 +--------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: posts-enablelatex
@@ -1182,7 +1182,7 @@ Enable LaTeX code block rendering
 | - **false**: **(Default)** Disables rendering in blocks. Instead, LaTeX code is highlighted.                                                       | - ``config.json`` setting: ``.ServiceSettings.EnableLatex: false``|
 |                                                                                                                                                    | - Environment variable: ``MM_SERVICESETTINGS_ENABLELATEX``        |
 +----------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
-| **Warning**: Choose **false** to prevent Mattermost from crashing due to code outgrowing its assigned memory when it is rendered.                                                                                      |
+| **Warning**: Enabling LaTeX rendering is not recommended in environments where not all users are trusted.                                                                                                              |
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: posts-enableinlinelatex
@@ -1202,7 +1202,7 @@ Enable inline LaTeX rendering
 | - **false**: Disables inline rendering of LaTeX. Instead, LaTeX in message text is highlighted. LaTeX can also be rendered in a code block, if that feature is enabled. See **Enable LaTeX code block rendering**. | - ``config.json`` setting: ``.ServiceSettings.EnableInlineLatex: true`` |
 |                                                                                                                                                                                                                    | - Environment variable: ``MM_SERVICESETTINGS_ENABLEINLINELATEX``        |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
-| **Warning**: Choose **false** to prevent Mattermost from crashing due to code outgrowing its assigned memory when it is rendered.                                                                                                                                                            |
+| **Warning**: Enabling LaTeX rendering is not recommended in environments where not all users are trusted.                                                                                                                                                                                    |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: posts-customurlschemes
