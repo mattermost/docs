@@ -16,6 +16,10 @@ If you want to check that the version of Mattermost you are installing is the of
 Mattermost Enterprise Edition
 ------------------------------
 
+Mattermost Enterprise Edition v7.10.0 - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v7-10-feature-release>`__ - `Download <https://releases.mattermost.com/7.10.0/mattermost-7.10.0-linux-amd64.tar.gz?src=arc>`__
+  - ``https://releases.mattermost.com/7.10.0/mattermost-7.10.0-linux-amd64.tar.gz``
+  - SHA-256 Checksum: ``d15f8c946d54c2a127b22b887c2caaca4f17bf399224b5494c3727207383ead9``
+  - GPG Signature: https://releases.mattermost.com/7.10.0/mattermost-7.10.0-linux-amd64.tar.gz.sig
 Mattermost Enterprise Edition v7.9.2 - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v7-9-feature-release>`__ - `Download <https://releases.mattermost.com/7.9.2/mattermost-7.9.2-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/7.9.2/mattermost-7.9.2-linux-amd64.tar.gz``
   - SHA-256 Checksum: ``a9b7059795df5187b6cfba8473bcf141ebd1f5ca00d58b51ca77ea13888b29df``
@@ -325,6 +329,10 @@ The open source Mattermost Team Edition is functionally identical to the commerc
 
 We generally recommend installing Enterprise Edition, even if you don't currently need a license. This provides the flexibility to seamlessly unlock Enterprise features should you need them. However, if you only want to install software with a fully open source code base, then Team Edition is the best choice for you.
 
+Mattermost Team Edition v7.10.0 - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v7-10-feature-release>`__ - `Download <https://releases.mattermost.com/7.10.0/mattermost-team-7.10.0-linux-amd64.tar.gz?src=arc>`__
+  - ``https://releases.mattermost.com/7.10.0/mattermost-team-7.10.0-linux-amd64.tar.gz``
+  - SHA-256 Checksum: ``89ca4dab5a9a64d1c937b7ead16eba7491e193e8a07866242430b86cf225770e``
+  - GPG Signature: https://releases.mattermost.com/7.10.0/mattermost-team-7.10.0-linux-amd64.tar.gz.sig
 Mattermost Team Edition v7.9.2 - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v7-9-feature-release>`__ - `Download <https://releases.mattermost.com/7.9.2/mattermost-team-7.9.2-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/7.9.2/mattermost-team-7.9.2-linux-amd64.tar.gz``
   - SHA-256 Checksum: ``f32d02679b15062b7d765514d2843096371d6df6df3c5ecf9a37963777ade418``
