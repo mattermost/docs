@@ -1159,7 +1159,7 @@ Enable SVGs
 
 +-------------------------------------------------------------------------------+------------------------------------------------------------------+
 | - **true**: Enables previews of SVG files attached to messages.               | - System Config path: **Site Configuration > Posts**             |
-| - **false**: **(Default)** Disables previews of SVG files.                    | - ``config.json`` setting: ``.ServiceSettings.EnableSVGs: true`` |
+| - **false**: **(Default)** Disables previews of SVG files.                    | - ``config.json`` setting: ``.ServiceSettings.EnableSVGs: false``|
 |                                                                               | - Environment variable: ``MM_SERVICESETTINGS_ENABLESVGS``        |
 +-------------------------------------------------------------------------------+------------------------------------------------------------------+
 | **Warning: Enabling SVGs is not recommended in environments where not all users are trusted.                                                     |
@@ -1179,7 +1179,7 @@ Enable LaTeX code block rendering
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
 | - **true**: Enables rendering of `LaTeX in code blocks <https://docs.mattermost.com/channels/format-messages.html#math-formulas>`__.               | - System Config path: **Site Configuration > Posts**              |
-| - **false**: **(Default)** Disables rendering in blocks. Instead, LaTeX code is highlighted.                                                       | - ``config.json`` setting: ``.ServiceSettings.EnableLatex: true`` |
+| - **false**: **(Default)** Disables rendering in blocks. Instead, LaTeX code is highlighted.                                                       | - ``config.json`` setting: ``.ServiceSettings.EnableLatex: false``|
 |                                                                                                                                                    | - Environment variable: ``MM_SERVICESETTINGS_ENABLELATEX``        |
 +----------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
 | **Warning**: Choose **false** to prevent Mattermost from crashing due to code outgrowing its assigned memory when it is rendered.                                                                                      |
