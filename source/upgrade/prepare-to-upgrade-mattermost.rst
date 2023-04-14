@@ -13,7 +13,7 @@ In most cases, you can `upgrade Mattermost Server </upgrade/upgrading-mattermost
 Upgrade Best Practices
 ----------------------
 
-Mattermost will aim to have non-locking, backwards-compatible migrations in general. But the backwards compatibility guarantee extends to only the last ESR version. For example, if there are three ESR versions ESR1, ESR2, and ESR3, upgrading from ESR1 to ESR2, and then ESR2 to ESR3 will ensure backwards compatibility, but not from ESR1 to ESR3 directly.
+Mattermost will aim to have non-locking, backwards-compatible migrations in general. This backwards compatibility guarantee extends to only the last ESR version. For example, if there are three ESR versions ESR1, ESR2, and ESR3, upgrading from ESR1 to ESR2, and then ESR2 to ESR3 will ensure backwards compatibility, but not from ESR1 to ESR3 directly.
 
 Our recommendation is to upgrade often, so as to not fall behind on upgrades. And if you fall behind, upgrade to the closest ESR version first, and from there to the next ESR. Do not attempt to directly upgrade to the latest version as it might break backwards compatiblity of the older nodes in the cluster during the upgrade.
 
