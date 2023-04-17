@@ -32,7 +32,7 @@ Channel information
 
 When creating channels, you're prompted to provide context that helps other users understand the focus of the channel. From Mattermost v7.0, these channel details appear in both the center pane under the channel name and in a new channel information pane on the right. 
 
-You can show or hide channel information in the right pane by selecting the **View Info** |view-info-icon| icon located in the top right corner of the center pane, or by pressing :kbd:`Ctrl` :kbd:`Alt` :kbd:`I` on Windows or Linux, or by pressing :kbd:`⌘` :kbd:`⌥` :kbd:`I`. on Mac.
+You can show or hide channel information in the right pane by selecting the **View Info** |view-info-icon| icon located in the top right corner of the center pane, or by pressing :kbd:`Ctrl` :kbd:`Alt` :kbd:`I` on Windows or Linux, or by pressing :kbd:`⌘` :kbd:`⌥` :kbd:`I`. on macOS.
 
 .. image:: ../images/channel-info.png
     :alt: Access channel information by using the View Info icon or by using keyboard shortcuts.
