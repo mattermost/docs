@@ -2584,13 +2584,20 @@ OpenID Connect (other) Discovery endpoint
 
 *Available in legacy Enterprise Edition E20*
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
-| This setting stores the Discovery Endpoint URL from the OpenID provider. The URL should be in the format of ``https://myopenid.provider.com/{my_organization}/.well-known/openid-configuration``. | - System Config path: **Authentication > OpenID Connect**        |
-|                                                                                                                                                                                                   | - ``config.json`` setting: ``.OpenIdSettings.DiscoveryEndpoint`` |
-| See `OpenID Connect Single Sign-On <https://docs.mattermost.com/onboard/sso-openidconnect.html>`__ implementation instructions.                                                                   | - Environment variable: ``MM_OPENIDSETTINGS_DISCOVERYENDPOINT``  |
-|                                                                                                                                                                                                   |                                                                  |
-| String input.                                                                                                                                                                                     |                                                                  |
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
+| This setting stores the Discovery Endpoint URL from the OpenID provider.                               | - System Config path: **Authentication > OpenID Connect**        |
+| The URL should be in the format of ``https://myopenid.provider.com/{my_organization}/                  | - Environment variable: ``MM_OPENIDSETTINGS_DISCOVERYENDPOINT``  |
+| .well-known/openid-configuration``.                                                                    | - ``config.json`` setting: ``.OpenIdSettings.DiscoveryEndpoint`` |
+|                                                                                                        |                                                                  |
+| See `OpenID Connect Single Sign-On <https://docs.mattermost.com/onboard/sso-openidconnect.html>`__     |                                                                  |
+| implementation instructions.                                                                           |                                                                  |
+|                                                                                                        |                                                                  |
+| String input.                                                                                          |                                                                  |
++--------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
+| **Note**: The **Discovery Endpoint** setting can be used to determine the connectivity and availability of arbitrary hosts. System admins concerned about this can use    |
+| custom admin roles to limit access to modifying these settings. See the `system admin roles </onboard/system-admin-roles.html#edit-privileges-of-                         |
+| system-admin-roles-advanced>`__ documentation for details.                                                                                                                |
++--------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
 
 OpenID Connect (other) Client ID
 ''''''''''''''''''''''''''''''''
