@@ -45,11 +45,11 @@ We've moving access to your enabled Mattermost integrations, including the icons
 .. image:: ../images/app-bar.png
     :alt: You can access your Mattermost integrations from the Apps Bar when your System Admin enables this feature in the System Console.
 
-In self-hosted Mattermost v7.0 deployments, the Apps Bar is hidden and integrations continue to display in the channel header by default. Your System Admin can `enable the Apps Bar in the System Console </configure/configuration-settings.html#enable-app-bar>`__. When enabled, access to all Mattermost integrations, with the exception of calls beta functionality, moves to the far right pane.
+In self-hosted Mattermost v7.0 deployments, the Apps Bar is hidden and integrations continue to display in the channel header by default. Your system admin can `enable the Apps Bar in the System Console </configure/experimental-configuration-settings.html#enable-app-bar>`_. When enabled, access to all Mattermost integrations, with the exception of calls functionality, moves to the far right pane.
 
 .. note:: 
     
-    In Mattermost Cloud workspaces, enabled integrations automatically display in the Apps Bar on the far right. Cloud System Admins can't disable this feature or move the integration icons back to the channel header.
+    In Mattermost Cloud workspaces, enabled integrations automatically display in the Apps Bar on the far right. Cloud system admins can't disable this feature or move the integration icons back to the channel header.
 
     Integrations currently registered to the channel header will move to the Apps Bar automatically; however, we strongly encourage Mattermost integrators to update their integrations to provide the best user experience. See the developer documentation for details on registering integrations to the Apps Bar.
 
