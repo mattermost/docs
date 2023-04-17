@@ -1,7 +1,7 @@
 Shared channels (experimental)
 ==============================
 
-.. include:: ../_static/badges/ent-cloud-selfhosted.rst
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 Shared channels is an experimental feature that brings people together from multiple Mattermost installations. For example, teams collaborating with external partners and customers using multiple Mattermost instances in a federated architecture.
