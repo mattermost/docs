@@ -389,7 +389,7 @@ In general, ``rtcd`` is the preferred solution for a performant and scalable dep
 Configure recording
 -------------------
 
-Before you can start recording calls, you need to configure the ``calls-offloader`` service. You can read about how to do that `here <https://github.com/mattermost/calls-offloader/blob/master/docs/getting_started.md>`__.
+Before you can start recording calls, you need to configure the ``calls-offloader`` job service. You can read about how to do that `here <https://github.com/mattermost/calls-offloader/blob/master/docs/getting_started.md>`__. Performance and scalability recommendations related to this service can be found in `here <https://github.com/mattermost/calls-offloader/blob/master/docs/performance.md>`__.
 
 Frequently asked questions
 --------------------------
