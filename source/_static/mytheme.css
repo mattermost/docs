@@ -2268,6 +2268,18 @@ pre {
     .site-header__col--menu .site-nav__hassubnav .sub-menu__developers .sub-menu__links--icon {
         width: 24px
     }
+    .sub-menu__developers .sub-menu__links--single span {
+        width: 34px !important;
+    }
+    .sub-menu__developers .sub-menu__links--single-community img {
+        width: 25px;
+    }
+    .sub-menu__developers .sub-menu__links--single-academy span {
+        width: 43px !important;
+    }
+    .sub-menu__developers .sub-menu__links--single-academy a {
+        align-items: flex-start;
+    }
 }
 @media (min-width:1200px) {
     .site-header__col--menu .site-nav__hassubnav .sub-menu__developers .sub-menu__links:last-child {
