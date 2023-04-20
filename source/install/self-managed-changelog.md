@@ -92,7 +92,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ### Upcoming Deprecations and Breaking Changes in Mattermost v8.0
 
-The following deprecations and breaking changes are planned for the Mattermost v6.0 release, which is scheduled for 2021/10/13. This list is subject to change prior to the release.
+The following deprecations and breaking changes are planned for the Mattermost v8.0 release, which is scheduled for 2023/06/16. This list is subject to change prior to the release.
 
 1. Update module version to v8.0. Clients will have to change their module path to the new structure. Very minimal change. There are no API level breaking changes that would require code changes.
 2. Remove ``ExperimentalSettings.PatchPluginsReactDOM``.
