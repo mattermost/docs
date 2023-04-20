@@ -6,6 +6,11 @@ This page describes features that are removed from support for Mattermost, or wi
 Removed features in upcoming versions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+Mattermost Server v8.0.0
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+- Remove ExperimentalSettings.PatchPluginsReactDOM
+- Remove deprecated PermissionUseSlashCommands
 
 Removed features by Mattermost version
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
