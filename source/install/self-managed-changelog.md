@@ -98,6 +98,7 @@ The following deprecations and breaking changes are planned for the Mattermost v
 2. Remove ``ExperimentalSettings.PatchPluginsReactDOM``.
 3. Change advanced logging config format. Currently admins have to escape the JSON for advanced logging config in config.json, meaning it must be provided as a single line string.  The breaking change is to allow admins to use multi-line json for ease of composure and reading.  To achieve this the ``model.Config`` struct would have the ``AdvancedLoggingConfig`` fields changed from ``string`` to ``json.RawMessage``.  There are three places this would change: ``LogSettings``,  ``ExperimentalAuditSettings``, and ``NotificationLogSettings``. Existing config.json files with ther escaped string can still be supported;  code would detect the leading quote and treat it as escaped JSON. Unfortunately the field type change will break any code that imports model (plugins, plugin-api, etc).
 4. Remove deprecated ``PermissionUseSlashCommands``.
+5. Remove support for PostgreSQL v10.
 
 ## Release v7.9 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
 
