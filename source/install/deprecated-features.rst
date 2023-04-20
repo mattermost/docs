@@ -9,8 +9,8 @@ Removed features in upcoming versions
 Mattermost Server v8.0.0
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-- Remove ExperimentalSettings.PatchPluginsReactDOM
-- Remove deprecated PermissionUseSlashCommands
+- Removing ``ExperimentalSettings.PatchPluginsReactDOM``.
+- Removing deprecated ``PermissionUseSlashCommands``.
 
 Removed features by Mattermost version
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
