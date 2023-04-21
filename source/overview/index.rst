@@ -11,6 +11,7 @@ Below is an overview of our products, features, security, integrations, licensin
    :hidden:
 
    /about/product.rst
+   /about/secure-command-and-control.rst
    /about/security.rst
    /about/integrations.rst
    /about/subscription.rst
@@ -32,6 +33,7 @@ Mattermost contains three key tools:
 This section provides an overview of Mattermost products, features, security, integrations, licensing, subscriptions, authentication, and compliance support.
 
 * :doc:`Product overview </about/product>` - Learn about the Mattermost open source project, self-hosted vs. cloud, and premium Mattermost features.
+* :doc:`Secure command and control </about/secure-command-and-control>` - Learn about the Mattermost Secure Command and Control solution, designed to provide fast and secure mobile communications for technical teams.
 * :doc:`Security </about/security>` - Mattermost can meet the strictest security requirements and provides the highest level of control over user data.
 * :doc:`Integrations </about/integrations>` - Mattermost is extensible by design and supports a rich ecosystem of third-party apps and integrations.
 * :doc:`Subscription overview </about/subscription>` - Learn about Mattermost subscriptions.

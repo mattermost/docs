@@ -30,33 +30,33 @@ To manage channel notification preferences, select the channel name at the top o
 Mute channel
 ~~~~~~~~~~~~~
 
-Muting turns off desktop, email, and push notifications for a channel, and the channel will only be marked as unread in the channel sidebar if you're mentioned. By default, all channels are unmuted.
+Muting turns off desktop, email, and push notifications for a channel, direct message, or group message. The channel, direct message, or group message will only be marked as unread in the channel sidebar if you're mentioned. By default, all channels, direct messages, and group messages are unmuted.
 
 Once a channel is muted:
 
 - Email, desktop, and push notifications are disabled.
-- A mute icon displays next to the channel name.
-- The channel appears at reduced opacity in the channel sidebar, and the channel isn't marked as unread unless you're mentioned directly.
+- A mute icon displays next to the channel, direct message, or group message's name.
+- The channel, direct message, or group message appears at reduced opacity in the channel sidebar, and isn't marked as unread unless you're mentioned directly.
 
 .. tabs::
 
   .. tab:: Desktop
 
-    To mute the current channel and disable notifications, select **Mute Channel** from the channel name at the top of the screen.
+    To mute a channel and disable notifications, select **Mute Channel** from the channel name at the top of the screen. To mute a direct message or group message, select **Mute Conversation** from the conversation name at the top of the screen.
 
-    To unmute the channel, select the channel name again to access the drop-down menu, then select **Unmute Channel**.
+    To unmute the channel, select the channel name again to access the drop-down menu, then select **Unmute Channel**. To unmute a direct message or group message, select the conversation name again, then select **Unmute Conversation**.
 
     .. tip::
 
-      Quickly mute or unmute any channel any time by selecting **Mute Channel** or **Unmute Channel** from the channel name at the top of the screen, or by selecting **More Options** for a channel in the Channel Sidebar.
+      Quickly mute or unmute any channel any time by selecting **Mute Channel** or **Unmute Channel** from the channel name at the top of the screen, or by selecting **More Options** for a channel in the Channel Sidebar. You can mute conversations in the same way.
   
   .. tab:: Mobile
 
-    1. Tap the channel you want to mute.
+    1. Tap the channel or conversation you want to mute.
     2. Tap the **More** |more-icon| icon located in the top right corner of the app.
     3. Tap **Mute**.
 
-    To unmute the channel, tap **Mute** again.
+    To unmute the channel or conversation, tap **Mute** again.
 
 Ignore mentions for @channel, @here, and @all
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

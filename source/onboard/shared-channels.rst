@@ -1,7 +1,7 @@
 Shared channels (experimental)
 ==============================
 
-.. include:: ../_static/badges/ent-cloud-selfhosted.rst
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 Shared channels is an experimental feature that brings people together from multiple Mattermost installations. For example, teams collaborating with external partners and customers using multiple Mattermost instances in a federated architecture.
@@ -40,7 +40,7 @@ System Admins can use the following slash command to create a secure connection 
 
 For example:
 
-``/secure-connection create --name “AcmeUS” --displayname “AcmeUSA” --password examplepassword``
+``/secure-connection create --name AcmeUS --displayname “AcmeUSA” --password examplepassword``
 
 This slash command creates an invitation consisting of a password-protected AES 256-bit encrypted code blob for a remote Mattermost entity known locally as ``AcmeUS`` with a password of ``examplepassword``. Within Mattermost, this shared connection displays to the local System Admin based on the ``name`` and ``displayname`` provided.
 

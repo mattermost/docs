@@ -61,8 +61,10 @@ Network
 +---------------------------------+--------+-----------------+------------------------------------------------------------+------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | API (``rtcd``)                  | 8045   | TCP (incoming)  | Mattermost instance(s) (Calls plugin)                      | ``rtcd`` service                         | To allow for HTTP/WebSocket connectivity from Calls plugin to ``rtcd`` service. Can be expose internally as the service only needs to be reachable by the instance(s) running the Mattermost server.                                                                                                                              |
 +---------------------------------+--------+-----------------+------------------------------------------------------------+------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| STUN (Calls plugin or ``rtcd``) | 3478   | UDP (outgoing)  | Mattermost Instance(s) (Calls plugin) or ``rtcd`` service  | Configured STUN servers                  | (Optional) To allow for either Calls plugin or ``rtcd`` service to discover their instance public IP. Only needed if configuring STUN/TURN servers. This requirement does not apply when manually setting an IP or hostname through the ICE Host Override config option.                                                          |
+| STUN (Calls plugin or ``rtcd``) | 3478   | UDP (outgoing)  | Mattermost Instance(s) (Calls plugin) or ``rtcd`` service  | Configured STUN servers                  | (Optional) To allow for either Calls plugin or ``rtcd`` service to discover their instance public IP. Only needed if configuring STUN/TURN servers. This requirement does not apply when manually setting an IP or hostname through the |ice_host_override_link| config option.                                                   |
 +---------------------------------+--------+-----------------+------------------------------------------------------------+------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. |ice_host_override_link| replace:: `ICE Host Override <plugins-configuration-settings.html#ice-host-override>`__
 
 Limitations
 -----------
@@ -243,17 +245,31 @@ As an example, a single call with 10 participants of which two are unmuted (tran
 Benchmarks
 ~~~~~~~~~~
 
-Here are some results from internally conducted performance tests on a dedicated instance:
+Here are some results from internally conducted performance tests on a dedicated ``rtcd`` instance:
 
- ======== ============= =============== ================ =================
-  Calls    Users/call    Unmuted/call    Screensharing    Instance (EC2)
- ======== ============= =============== ================ =================
-  100      4             1               100              c5.xlarge
-  200      8             2               25               c5.xlarge
-  200      8             2               0                c5.xlarge
-  50       20            2               50               c5.2xlarge
-  100      8             4               100              c5.2xlarge
- ======== ============= =============== ================ =================
++-------+------------+--------------+----------------+-----------+--------------+--------------------+----------------+
+| Calls | Users/call | Unmuted/call | Screen sharing | CPU (avg) | Memory (avg) | Bandwidth (in/out) | Instance (EC2) |
++=======+============+==============+================+===========+==============+====================+================+
+| 100   | 8          | 2            | no             | 60%       | 0.5GB        | 22Mbps / 125Mbps   | c6i.xlarge     |
++-------+------------+--------------+----------------+-----------+--------------+--------------------+----------------+
+| 100   | 8          | 2            | no             | 30%       | 0.5GB        | 22Mbps / 125Mbps   | c6i.2xlarge    |
++-------+------------+--------------+----------------+-----------+--------------+--------------------+----------------+
+| 100   | 8          | 2            | yes            | 86%       | 0.7GB        | 280Mbps / 2.2Gbps  | c6i.2xlarge    |
++-------+------------+--------------+----------------+-----------+--------------+--------------------+----------------+
+| 10    | 50         | 2            | no             | 35%       | 0.3GB        | 5.25Mbps / 86Mbps  | c6i.xlarge     |
++-------+------------+--------------+----------------+-----------+--------------+--------------------+----------------+
+| 10    | 50         | 2            | no             | 16%       | 0.3GB        | 5.25Mbps / 86Mbps  | c6i.2xlarge    |
++-------+------------+--------------+----------------+-----------+--------------+--------------------+----------------+
+| 10    | 50         | 2            | yes            | 90%       | 0.3GB        | 32Mbps / 1.33Gbps  | c6i.xlarge     |
++-------+------------+--------------+----------------+-----------+--------------+--------------------+----------------+
+| 10    | 50         | 2            | yes            | 45%       | 0.3GB        | 32Mbps / 1.33Gbps  | c6i.2xlarge    |
++-------+------------+--------------+----------------+-----------+--------------+--------------------+----------------+
+| 5     | 200        | 2            | no             | 65%       | 0.6GB        | 8.2Mbps / 180Mbps  | c6i.xlarge     |
++-------+------------+--------------+----------------+-----------+--------------+--------------------+----------------+
+| 5     | 200        | 2            | no             | 30%       | 0.6GB        | 8.2Mbps / 180Mbps  | c6i.2xlarge    |
++-------+------------+--------------+----------------+-----------+--------------+--------------------+----------------+
+| 5     | 200        | 2            | yes            | 90%       | 0.7GB        | 31Mbps / 2.2Gbps   | c6i.2xlarge    |
++-------+------------+--------------+----------------+-----------+--------------+--------------------+----------------+
 
 Dedicated service
 ~~~~~~~~~~~~~~~~~
@@ -388,7 +404,7 @@ Media (audio/video) is encrypted using security standards as part of WebRTC. It'
 Are there any third-party services involved?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The only external service used is Mattermost official STUN server (``stun.global.calls.mattermost.com``) which is configured as default. This is primarily used to find the public address of the Mattermost instance. The only information sent to this service is the IP addresses of clients connecting as no other traffic goes through it. It can be removed in case the ``ICE Host Override`` setting is provided.
+The only external service used is Mattermost official STUN server (``stun.global.calls.mattermost.com``) which is configured as default. This is primarily used to find the public address of the Mattermost instance. The only information sent to this service is the IP addresses of clients connecting as no other traffic goes through it. It can be removed in case the |ice_host_override_link| setting is provided.
 
 Is using UDP a requirement?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
