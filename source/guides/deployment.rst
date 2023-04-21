@@ -242,8 +242,9 @@ Troubleshooting guides
     Troubleshooting mobile applications </deploy/mobile-troubleshoot>
     MySQL installation troubleshooting </install/trouble_mysql>
 
-* :doc:`General troubleshooting </install/troubleshooting>`
-* :doc:`Troubleshooting mobile applications </deploy/mobile-troubleshoot>`
+* :doc:`General deployment troubleshooting </install/troubleshooting>`
+* :doc:`High scale troubleshooting </install/troubleshooting>`
+* :doc:`Mobile applications troubleshooting </deploy/mobile-troubleshoot>`
 * :doc:`MySQL installation troubleshooting </install/trouble_mysql>`
 
 Changelogs
