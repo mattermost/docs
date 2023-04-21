@@ -229,24 +229,24 @@ An example with sample values:
 
   affinity:
     podAntiAffinity:
-    requiredDuringSchedulingIgnoredDuringExecution:
-      - labelSelector:
-          matchExpressions:
-            - key: app.kubernetes.io/name
-              operator: In
-              values:
-                - mattermost-rtcd
-        topologyKey: topology.kubernetes.io/zone
-    preferredDuringSchedulingIgnoredDuringExecution:
-      - weight: 100
-        podAffinityTerm:
-          labelSelector:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        - labelSelector:
             matchExpressions:
               - key: app.kubernetes.io/name
                 operator: In
                 values:
                   - mattermost-rtcd
           topologyKey: topology.kubernetes.io/zone
+      preferredDuringSchedulingIgnoredDuringExecution:
+        - weight: 100
+          podAffinityTerm:
+            labelSelector:
+              matchExpressions:
+                - key: app.kubernetes.io/name
+                  operator: In
+                  values:
+                    - mattermost-rtcd
+            topologyKey: topology.kubernetes.io/zone
 
 ``rtcd`` will be deployed as a Deployment, for that reason the sections of nodeSelector and tolerations are used so that ``rtcd`` to be deployed in specific nodes.
 
