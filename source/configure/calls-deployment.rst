@@ -159,7 +159,7 @@ An example with sample values:
  image:
    repository: mattermost/rtcd
    pullPolicy: IfNotPresent
-   tag: "v0.6.9"
+   tag: "v0.9.0"
 
  imagePullSecrets: []
  nameOverride: ""
@@ -176,7 +176,9 @@ An example with sample values:
 
   securityContext: {}
 
-  daemonset:
+  deployment:
+    replicas: 2
+
     environmentVariables:
       RTCD_API_SECURITY_ALLOWSELFREGISTRATION: "\"true\""
       RTCD_RTC_ICESERVERS:
@@ -225,9 +227,28 @@ An example with sample values:
     - name: ndots
       value: "1"
 
-  affinity: {}
+  affinity:
+    podAntiAffinity:
+    requiredDuringSchedulingIgnoredDuringExecution:
+      - labelSelector:
+          matchExpressions:
+            - key: app.kubernetes.io/name
+              operator: In
+              values:
+                - mattermost-rtcd
+        topologyKey: topology.kubernetes.io/zone
+    preferredDuringSchedulingIgnoredDuringExecution:
+      - weight: 100
+        podAffinityTerm:
+          labelSelector:
+            matchExpressions:
+              - key: app.kubernetes.io/name
+                operator: In
+                values:
+                  - mattermost-rtcd
+          topologyKey: topology.kubernetes.io/zone
 
-``rtcd`` will be deployed as DaemonSet, for that reason the sections of nodeSelector and tolerations are used so that ``rtcd`` to be deployed in specific nodes.
+``rtcd`` will be deployed as a Deployment, for that reason the sections of nodeSelector and tolerations are used so that ``rtcd`` to be deployed in specific nodes.
 
 After having the values above, to deploy the ``rtcd`` helm chart run:
 
