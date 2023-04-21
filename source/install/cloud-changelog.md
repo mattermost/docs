@@ -11,6 +11,38 @@ Latest Mattermost Cloud releases:
 - [Release 2023-01-26](#release-2023-01-26)
 - [Release 2023-01-16](#release-2023-01-16)
 
+## Release 2023-04-27
+
+### Improvements
+
+#### User Interface (UI)
+ - Replaced the compass-components icon component with compass-icons.
+ - Added “hours ahead” timezone details to the user profile popover.
+ - Pre-packaged Calls v0.15.1.
+
+#### Administration
+ - Removed the deprecated ``model.CommandArgs.Session``.
+ - The database section in the System Console now has an additional read-only section which shows the active search backend in use. This can be helpful to confirm which is the currently active search engine when there are multiple of them configured.
+ 
+#### Performance
+ - Improved the performance of webapp related to timezone calculations.
+ - Improved performance of code used for post list screen reader support.
+ 
+### API Changes
+ - An underscore is now used in the timeline API (``event-id`` -> ``event_id``) for consistency with other API arguments.
+
+### Bug Fixes
+ - Fixed a bug where a user would still see threads, in threads view, of channels they have left. Migration execution time in MySQL: Query OK, 2766769 rows affected (4 min 47.57 sec). Migration execution time in PostgreSQL: Execution time: 58.11 sec, DELETE 2766690.
+ - Fixed an issue where clicking on a channel link (for a channel the user was not a part of) caused the webapp to refresh, dropping the user from a call.
+ - Fixed an issue with PDF preview rendering for certain Japanese characters.
+ - Fixed an issue where the screen reader did not announce the link copied on copying the link in invite modal.
+ - Fixed an issue with post metadata not generating correctly for images due to missing content-type in response. This would result in certain embedded images not to display on mobile clients.
+ - Fixed an issue where edits to messages persisted after canceling.
+
+### Known Issues
+ - The URL of the post in a reminder post for direct and group messages have a double slash on mobile [MM-51026](https://mattermost.atlassian.net/browse/MM-51026).
+ - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
+
 ## Release 2023-04-21
 
 ### Improvements
