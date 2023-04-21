@@ -16,7 +16,7 @@ My system keeps hanging when I search for a message in Mattermost
 
 First, check how many messages have been posted on your system, including deleted posts and posts made using automations.
 
-Go to the **System Console > Reporting > Site Statistics** and review the **Total Posts** figure reported. If it is above 3,000,000 posts, we recommend deploying Elasticsearch alongside your Mattermost server for improved search performance. Follow our guides to `deploy an elasticsearch server <https://docs.mattermost.com/scale/elasticsearch.html>`_.
+Go to the **System Console > Reporting > Site Statistics** and review the **Total Posts** figure reported. If it is above 3,000,000 posts, we recommend deploying Elasticsearch alongside your Mattermost server for improved search performance. Follow our guides to `deploy an Elasticsearch server </scale/elasticsearch.html>`__.
 
 
 
