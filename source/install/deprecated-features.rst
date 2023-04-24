@@ -11,6 +11,7 @@ Mattermost Server v8.0.0
 
 - Removing ``ExperimentalSettings.PatchPluginsReactDOM``.
 - Removing deprecated ``PermissionUseSlashCommands``.
+- Removing deprecated ``model.CommandArgs.Session``.
 - Removing support for PostgreSQL v10.
 
 Removed features by Mattermost version
