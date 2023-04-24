@@ -232,7 +232,7 @@ An example with sample values:
 
   affinity: {}
 
-``rtcd`` will be deployed as a Deployment as show in the "deploymentType" field. For that reason the sections of deployment.replicas, nodeSelector and tolerations are used so that ``rtcd`` to be deployed in specific nodes.
+``rtcd`` will be deployed as a deployment as shown in the `deploymentType` field. For that reason the sections of `deployment.replicas`, `nodeSelector` and `tolerations` are used so that ``rtcd`` to be deployed in specific nodes.
 
 After having the values above, to deploy the ``rtcd`` helm chart run:
 
