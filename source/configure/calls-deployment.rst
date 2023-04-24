@@ -156,35 +156,40 @@ An example with sample values:
 
 .. code-block:: none
 
- image:
-   repository: mattermost/rtcd
-   pullPolicy: IfNotPresent
-   tag: "v0.6.9"
+  image:
+    repository: mattermost/rtcd
+    pullPolicy: IfNotPresent
+    tag: "v0.9.0"
 
- imagePullSecrets: []
- nameOverride: ""
- fullnameOverride: ""
+  imagePullSecrets: []
+  nameOverride: ""
+  fullnameOverride: ""
 
- serviceAccount:
+  serviceAccount:
     create: true
     annotations: {}
     name: ""
 
- podAnnotations: {}
+  podAnnotations: {}
 
- podSecurityContext: {}
+  podSecurityContext: {}
 
   securityContext: {}
 
-  daemonset:
+  # Which deployment method you'd like to use "deployment" or "daemonset"
+  deploymentType: "deployment"
+
+  configuration:
+    # Only needed if deploymentType is set to "deployment"
+    replicas: 2
+
     environmentVariables:
       RTCD_API_SECURITY_ALLOWSELFREGISTRATION: "\"true\""
       RTCD_RTC_ICESERVERS:
     "\'[{\"urls\":[\"stun:stun.global.calls.mattermost.com:3478\"]}]\'"
       RTCD_LOGGER_CONSOLELEVEL: "\"DEBUG\""
       RTCD_LOGGER_ENABLEFILE: "\"false\""
-    maxUnavailable: 1 # Only used when updateStrategy is set to
-   "RollingUpdate"
+    maxUnavailable: 1 # Only used when updateStrategy is set to "RollingUpdate"
     updateStrategy: RollingUpdate
     terminationGracePeriod: 18000 # 5 hours, used to gracefully draining the instance.
 
@@ -194,7 +199,7 @@ An example with sample values:
     # RTCport is the UDP port used to route all the calls related traffic.
     RTCport: 8443
 
- ingress:
+  ingress:
     enabled: false
     classname: nginx-calls
     annotations:
@@ -203,7 +208,7 @@ An example with sample values:
         paths:
           - "/"
 
- resources:
+  resources:
     limits:
       cpu: 7800m # Values for c5.2xlarge in AWS
       memory: 15Gi # Values for c5.2xlarge in AWS
@@ -211,7 +216,7 @@ An example with sample values:
       cpu: 100m
       memory: 32Mi
 
- nodeSelector:
+  nodeSelector:
     kops.k8s.io/instancegroup: rtcd
 
   tolerations:
@@ -227,7 +232,7 @@ An example with sample values:
 
   affinity: {}
 
-``rtcd`` will be deployed as DaemonSet, for that reason the sections of nodeSelector and tolerations are used so that ``rtcd`` to be deployed in specific nodes.
+``rtcd`` will be deployed as a Deployment as show in the "deploymentType" field. For that reason the sections of deployment.replicas, nodeSelector and tolerations are used so that ``rtcd`` to be deployed in specific nodes.
 
 After having the values above, to deploy the ``rtcd`` helm chart run:
 
