@@ -45,7 +45,7 @@ Learn about `Mattermost Hubot integration (hubot-matteruser on npm) <https://www
 Custom slash commands
 ---------------------
 
-A `slash commands <https://developers.mattermost.com/integrate/slash-commands/>`__ is similar to an `outgoing webhooks <https://developers.mattermost.com/integrate/webhooks/outgoing/>`__, but instead of listening to a channel, it's used as a command tool in a channel.
+A `slash command <https://developers.mattermost.com/integrate/slash-commands/>`__ is similar to an `outgoing webhooks <https://developers.mattermost.com/integrate/webhooks/outgoing/>`__, but instead of listening to a channel, it's used as a command tool in a channel.
 
 Slash commands enable users to trigger custom actions, such as creating Jira tickets or GitHub pull requests within Mattermost channels. See the `built-in slash commands <https://developers.mattermost.com/integrate/slash-commands/built-in/>`__ and the `custom slash command <https://developers.mattermost.com/integrate/slash-commands/custom/>`__ developer documentation to learn more.
 
