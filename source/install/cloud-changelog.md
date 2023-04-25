@@ -38,6 +38,7 @@ Latest Mattermost Cloud releases:
  - Fixed an issue where the screen reader did not announce the link copied on copying the link in invite modal.
  - Fixed an issue with post metadata not generating correctly for images due to missing content-type in response. This would result in certain embedded images not to display on mobile clients.
  - Fixed an issue where edits to messages persisted after canceling.
+ - Added a condition for bot tags for webhook posts when a bot account is used for webhooks.
 
 ### Known Issues
  - The URL of the post in a reminder post for direct and group messages have a double slash on mobile [MM-51026](https://mattermost.atlassian.net/browse/MM-51026).
