@@ -38,16 +38,16 @@ Bots
 
 You can deploy interactive bots to help users with processes and tasks with Mattermost by  issuing messages to users they can respond to using buttons and dropdown menus. Bots can be used together with apps and plugins. The Hubot open source project, created by GitHub, Inc., is among the most popular of the bot options.
 
-Prebuilt bots are available on the `Mattermost Marketplace <https://mattermost.com/marketplace/>`__, or you can `configure your own bots <https://developers.mattermost.com/integrate/admin-guide/admin-bot-accounts/>`__.
+Prebuilt bots are available on the `Mattermost Marketplace <https://mattermost.com/marketplace/>`__, or you can `configure your own bots <https://developers.mattermost.com/integrate/reference/bot-accounts/>`__.
 
 Learn about `Mattermost Hubot integration (hubot-matteruser on npm) <https://www.npmjs.com/package/hubot-matteruser>`__ and `other open source community bots available <https://integrations.mattermost.com/>`__ or you can `build your own </integrations/cloud-bot-accounts.html>`_.
 
 Custom slash commands
 ---------------------
 
-A `slash commands </channels/run-slash-commands.html>`__ is similar to an `outgoing webhooks <https://developers.mattermost.com/integrate/admin-guide/admin-webhooks-outgoing/>`__, but instead of listening to a channel, it's used as a command tool in a channel.
+A `slash commands <https://developers.mattermost.com/integrate/slash-commands/>`__ is similar to an `outgoing webhooks <https://developers.mattermost.com/integrate/webhooks/outgoing/>`__, but instead of listening to a channel, it's used as a command tool in a channel.
 
-Slash commands enable users to trigger custom actions, such as creating Jira tickets or GitHub pull requests within Mattermost channels. See the `built-in slash commands <https://developers.mattermost.com/integrate/admin-guide/admin-slash-commands/#built-in-commands>`__ and the `custom slash command <https://developers.mattermost.com/integrate/admin-guide/admin-slash-commands/#custom-slash-command>`__ developer documentation to learn more.
+Slash commands enable users to trigger custom actions, such as creating Jira tickets or GitHub pull requests within Mattermost channels. See the `built-in slash commands <https://developers.mattermost.com/integrate/slash-commands/built-in/>`__ and the `custom slash command <https://developers.mattermost.com/integrate/slash-commands/custom/>`__ developer documentation to learn more.
 
 .. tip::
     The Mattermost slash command format is compatible with Slack's format, so you can easily port commands from Slack. 
@@ -57,9 +57,9 @@ Learn about `Mattermost slash commands </messaging/extending-messaging-with-inte
 Webhooks
 --------
 
-A webhook is a way for one app to send real-time data to another app. In Mattermost, `incoming webhooks <https://developers.mattermost.com/integrate/admin-guide/admin-webhooks-incoming/>`__ receive data from external applications and make a post in a specified channel. They’re great for setting up notifications when something happens in an external application.
+A webhook is a way for one app to send real-time data to another app. In Mattermost, `incoming webhooks <https://developers.mattermost.com/integrate/webhooks/incoming/>`__ receive data from external applications and make a post in a specified channel. They’re great for setting up notifications when something happens in an external application.
 
-`Outgoing webhooks <https://developers.mattermost.com/integrate/admin-guide/admin-webhooks-outgoing/>`__ take data from Mattermost, and send it to an external application. Then the outgoing webhook can post a response back in Mattermost. They’re great for listening in on channels, and then notifying external applications when a trigger word is used.
+`Outgoing webhooks <https://developers.mattermost.com/integrate/webhooks/outgoing/>`__ take data from Mattermost, and send it to an external application. Then the outgoing webhook can post a response back in Mattermost. They’re great for listening in on channels, and then notifying external applications when a trigger word is used.
 
 .. tip::
 
