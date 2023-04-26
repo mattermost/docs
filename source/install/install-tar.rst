@@ -53,7 +53,7 @@ Download the latest release
 
 .. raw:: html
 
-  <div class="mm-code-copy" data-click-method="Tarball" data-click-command="Download the latest release">
+  <div class="mm-code-copy mm-code-copy--long" data-click-method="Tarball" data-click-command="Download the latest release">
 
     <div class="mm-code-copy__wrapper">
       <code class="mm-code-copy__text mm-code-copy__trigger" data-click-el="Snippet">
@@ -74,7 +74,7 @@ Download the current Extended Support Release (ESR)
 
 .. raw:: html
 
-  <div class="mm-code-copy" data-click-method="Tarball" data-click-command="Download the current ESR">
+  <div class="mm-code-copy mm-code-copy--long" data-click-method="Tarball" data-click-command="Download the current ESR">
 
     <div class="mm-code-copy__wrapper">
       <code class="mm-code-copy__text mm-code-copy__trigger" data-click-el="Snippet">
