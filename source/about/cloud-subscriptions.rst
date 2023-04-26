@@ -20,7 +20,7 @@ For Professional, follow the steps below:
   
 4. Select **Upgrade** to confirm.
 
-If you choose not to upgrade at the end of your 30-day trial, your subscription will revert to Mattermost Free.
+If you choose not to upgrade at the end of your 30-day trial, your workspace will be deleted.
 
 View subscription information
 -----------------------------
