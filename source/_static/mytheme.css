@@ -2815,6 +2815,7 @@ mark {
 .mm-code-copy__wrapper {
     position: relative;
     align-self: flex-start;
+    max-width: 670px;
 }
 
 .mm-code-copy__copied-notice {
