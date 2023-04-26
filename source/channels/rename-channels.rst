@@ -13,7 +13,7 @@ Anyone can rename the channels they belong to, unless the System Admin has `rest
 
   .. tab:: Desktop
 
-        Select the channel name at the top of the center pane to access the drop-down menu, then select **Rename Channel**. You'll be prompted two provide two pieces of information:
+        Select the channel name at the top of the center pane to access the drop-down menu, then select **Rename Channel**. You'll be prompted to provide two pieces of information:
 
         - **Channel display name:** This appears in the Mattermost user interface. 
         - **Channel handle:** This is part of the channel URL. You can also change the channel handle when renaming a channel, but changing channel handles may break existing links.

@@ -503,7 +503,6 @@ Enable plugin
 +----------------------------------------------------------------------+-------------------------------------------+
 | - **true**: Enables the Calls plugin on your Mattermost workspace.   | - System Config path: **Plugins > Calls** |
 | - **false**: Disables the Calls plugin on your Mattermost workspace. | - ``config.json`` setting:                |
-|                                                                      | - Environment variable:                   |
 +----------------------------------------------------------------------+-------------------------------------------+
 
 .. config:setting:: plugins-callsrtcserverport
@@ -522,7 +521,7 @@ RTC server port
 +-----------------------------------------------------------------------------------------------------------------------+-------------------------------------------+
 | This setting controls the UDP port listened on by the RTC server. All Calls traffic will be served through this port. | - System Config path: **Plugins > Calls** |
 |                                                                                                                       | - ``config.json`` setting:                |
-| Changing this setting requires a plugin restart to take effect.                                                       | - Environment variable:                   |
+| Changing this setting requires a plugin restart to take effect.                                                       |                                           |
 |                                                                                                                       |                                           |
 | Default is **8443**.                                                                                                  |                                           |
 +-----------------------------------------------------------------------------------------------------------------------+-------------------------------------------+
@@ -545,7 +544,7 @@ Enable on specific channels
 +----------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------+
 | - **true**: Channel admins can enable or disable calls on specific channels. Participants in DMs/GMs can also enable or disable calls. | - System Config path: **Plugins > Calls** |
 | - **false**: Only System Admins can enable or disable calls on specific channels.                                                      | - ``config.json`` setting:                |
-|                                                                                                                                        | - Environment variable:                   |
+|                                                                                                                                        |                                           |
 +----------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------+
 
 .. config:setting:: plugins-testmode
@@ -566,7 +565,7 @@ Test mode
 +--------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
 | - **true**: Only System Admins can start calls in channels.                                                                                | - System Config path: **Plugins > Calls**                                                                                                          |
 | - **false**: All team members can start calls in channels.                                                                                 | - ``config.json`` setting:                                                                                                                         |
-|                                                                                                                                            | - Environment variable:                                                                                                                            |
+|                                                                                                                                            |                                                                                                                                                    |
 +--------------------------------------------------------------+-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
 | **Note**: Use this setting to confirm calls work as expected. When **true**, users attempting to start calls are prompted to contact System Admins. System Admins are prompted to confirm that calls are working as expected before switching to live mode.                                     |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -587,7 +586,7 @@ Max call participants
 +-----------------------------------------------------------------------------+-------------------------------------------+
 | This setting limits the number of participants that can join a single call. | - System Config path: **Plugins > Calls** |
 |                                                                             | - ``config.json`` setting:                |
-|                                                                             | - Environment variable:                   |
+|                                                                             |                                           |
 | Default is **0** (no limit).                                                |                                           |
 +-----------------------------------------------------------------------------+-------------------------------------------+
 | **Note**: This setting is optional, but the recommended maximum number of participants is **200**.                      |
@@ -609,7 +608,7 @@ ICE host override
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This setting overrides the host advertised to clients when connecting to calls.                                                                                          | - System Config path: **Plugins > Calls**                                                                                                                                                                                                                                                      |
 |                                                                                                                                                                          | - ``config.json`` setting:                                                                                                                                                                                                                                                                     |
-| This is an optional field. Changing this setting requires a plugin restart to take effect.                                                                               | - Environment variable:                                                                                                                                                                                                                                                                        |
+| This is an optional field. Changing this setting requires a plugin restart to take effect.                                                                               |                                                                                                                                                                                                                                                                                                |
 |                                                                                                                                                                          |                                                                                                                                                                                                                                                                                                |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | **Note**:                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
@@ -633,7 +632,7 @@ ICE servers configurations
 +-------------------------------------------------------------------------------------------------+-------------------------------------------+
 | This setting stores a list of ICE servers (STUN/TURN) in JSON format to be used by the service. | - System Config path: **Plugins > Calls** |
 |                                                                                                 | - ``config.json`` setting:                |
-| This is an optional field. Changing this setting may require a plugin restart to take effect.   | - Environment variable:                   |
+| This is an optional field. Changing this setting may require a plugin restart to take effect.   |                                           |
 |                                                                                                 |                                           |
 | Default is **[{"urls": ["stun:stun.global.calls.mattermost.com:3478"]}]**                       |                                           |
 +-------------------------------------------------------------------------------------------------+-------------------------------------------+
@@ -675,7 +674,7 @@ TURN static auth secret
 +----------------------------------------------------------------------------+-------------------------------------------+
 | A static secret used to generate short-lived credentials for TURN servers. | - System Config path: **Plugins > Calls** |
 |                                                                            | - ``config.json`` setting:                |
-| This is an optional field.                                                 | - Environment variable:                   |
+| This is an optional field.                                                 |                                           |
 +----------------------------------------------------------------------------+-------------------------------------------+
 
 .. config:setting:: plugins-callsturncredentialsexpiration
@@ -694,7 +693,6 @@ TURN credentials expiration
 +----------------------------------------------------------------------------------------+-------------------------------------------+
 | The expiration, in minutes, of the short-lived credentials generated for TURN servers. | - System Config path: **Plugins > Calls** |
 |                                                                                        | - ``config.json`` setting:                |
-|                                                                                        | - Environment variable:                   |
 +----------------------------------------------------------------------------------------+-------------------------------------------+
 
 .. config:setting:: plugins-callsserversideturn
@@ -715,7 +713,7 @@ Server side TURN
 +------------------------------------------------------------------------------------------------------+-------------------------------------------+
 | - **true**: The RTC server will use the configured TURN candidates for server-initiated connections. | - System Config path: **Plugins > Calls** |
 | - **false**: TURN will be used only on the client-side.                                              | - ``config.json`` setting:                |
-|                                                                                                      | - Environment variable:                   |
+|                                                                                                      |                                           |
 | Changing this setting requires a plugin restart to take effect.                                      |                                           |
 +------------------------------------------------------------------------------------------------------+-------------------------------------------+
 
@@ -737,7 +735,7 @@ Allow screen sharing
 +------------------------------------------------------------------------+-------------------------------------------+
 | - **true**: Call participants will be allowed to share their screen.   | - System Config path: **Plugins > Calls** |
 | - **false**: Call participants won't be allowed to share their screen. | - ``config.json`` setting:                |
-|                                                                        | - Environment variable:                   |
+|                                                                        |                                           |
 | Changing this setting requires a plugin restart to take effect.        |                                           |
 +------------------------------------------------------------------------+-------------------------------------------+
 
@@ -757,7 +755,7 @@ RTCD service URL
 +---------------------------------------------------------------------------------------------------------------+-------------------------------------------+
 | The URL to a running `rtcd <https://github.com/mattermost/rtcd>`__ service instance that will host the calls. | - System Config path: **Plugins > Calls** |
 |                                                                                                               | - ``config.json`` setting:                |
-| When set (non empty) all the calls will be handled by this external service.                                  | - Environment variable:                   |
+| When set (non empty) all the calls will be handled by this external service.                                  |                                           |
 |                                                                                                               |                                           |
 | This is an optional field. Changing this setting requires a plugin restart to take effect.                    |                                           |
 +---------------------------------------------------------------------------------------------------------------+-------------------------------------------+
@@ -778,7 +776,7 @@ Enable call recordings (beta)
 +-------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------+
 | - **true**: Allows call hosts to record meeting video and audio.                                                                                      | - System Config path: **Plugins > Calls** |
 | - **false**: **(Default)** Call recording functionality is not available to hosts.                                                                    | - ``config.json`` setting:                |
-|                                                                                                                                                       | - Environment variable:                   |
+|                                                                                                                                                       |                                           |
 | Recordings include the entire call window view along with participants' audio track and any shared screen video. Recordings are stored in Mattermost. |                                           |
 |                                                                                                                                                       |                                           |
 | Changing this setting requires a plugin restart to take effect.                                                                                       |                                           |
@@ -800,7 +798,7 @@ Job service URL
 +------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------+
 | The URL to a running job service where all the processing related to recordings happens. The recorded files produced are stored in Mattermost. | - System Config path: **Plugins > Calls** |
 |                                                                                                                                                | - ``config.json`` setting:                |
-| This is a required field. Changing this setting requires a plugin restart to take effect.                                                      | - Environment variable:                   |
+| This is a required field. Changing this setting requires a plugin restart to take effect.                                                      |                                           |
 +------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------+
 
 .. config:setting:: plugins-maximumcallrecordingduration
@@ -817,10 +815,36 @@ Maximum call recording duration
   :start-after: :nosearch:
 
 +-----------------------------------------------------------------------------------------------------------------------------+-------------------------------------------+
-| The maximum duration of a call recording in minutes. A recording of a 60-minute call will result in a file of about 700 MB. | - System Config path: **Plugins > Calls** |
+| The maximum duration of a call recording in minutes.                                                                        | - System Config path: **Plugins > Calls** |
 |                                                                                                                             | - ``config.json`` setting:                |
-| The default is **60**. The maximum is **180**. This is a required value.                                                    | - Environment variable:                   |
+| The default is **60**. The maximum is **180**. This is a required value.                                                    |                                           |
 +-----------------------------------------------------------------------------------------------------------------------------+-------------------------------------------+
+
+.. config:setting:: plugins-recordingquality
+  :displayname: Call recording quality (Plugins - Calls)
+  :systemconsole: Plugins > Calls
+  :configjson:
+  :environment:
+  :description: The audio and video quality of call recordings.
+
+Call recording quality
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: ../_static/badges/ent-selfhosted-only.rst
+  :start-after: :nosearch:
+
++-----------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
+| The audio and video quality of call recordings. Available options are: *Low*, *Medium* and *High*.                          | - System Config path: **Plugins > Calls**                                                      |
+|                                                                                                                             | - ``config.json`` setting:                                                                     |
+| The default is **Medium**. This is a required value.                                                                        |                                                                                                |
++-----------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
+| **Note**:                                                                                                                                                                                                                    |
+|                                                                                                                                                                                                                              |
+| - The quality setting will affect the performance of the recording service and the file size of recordings. Refer to the `deployment section <configure/calls-deployment.html#configure-recording>`__ for more information.  |
+|                                                                                                                                                                                                                              |
++-----------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
+
+.. |note| replace:: .
 
 ----
 
