@@ -6,10 +6,6 @@ From 2 February 2023, Mattermost Cloud subscriptions are switching from a monthl
 Buy a Cloud subscription
 ------------------------
 
-To get started immediately visit the Mattermost `pricing page <https://mattermost.com/pricing/>`__ and select **Buy Now** in the Professional column. To get started with Mattermost Enterprise, contact our sales team using the link provided.
-
-You can also buy Mattermost Enterprise from within Mattermost.
-
 1. Select **View Plans** at the top of the Mattermost window.
 2. Select Professional by clicking **Upgrade**.
 3. Provide your credit card details.
@@ -19,6 +15,10 @@ You can also buy Mattermost Enterprise from within Mattermost.
   Your credit card will be verified and you'll be charged immediately.
 
 4. Click **Upgrade** to confirm.
+
+To upgrade to Mattermost Enterprise, `contact sales <https://mattermost.com/contact-sales/>`__.
+
+
 
 View subscription information
 -----------------------------
