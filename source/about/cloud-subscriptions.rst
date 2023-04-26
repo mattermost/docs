@@ -6,33 +6,19 @@ From 2 February 2023, Mattermost Cloud subscriptions are switching from a monthl
 Buy a Cloud subscription
 ------------------------
 
-You can explore Mattermost with a 30-day trial of Mattermost Enterprise.
-
-During or after the trial, you can choose to upgrade to Mattermost Professional in-product or Enterprise by `contacting sales <https://mattermost.com/contact-sales/>`__.
-
-For Professional, follow the steps below:
-
-1. Select **View Plans**.
-2. Select **Upgarde** to choose Professional.
-3. Provide your credit card details.
-
-.. note::
-  
-  Your credit card will be verified and you'll be charged immediately.
-  
-4. Select **Upgrade** to confirm.
+Visit the Mattermost `pricing page <https://mattermost.com/pricing/>`__ and select **Buy Now** in the Professional column.
 
 View subscription information
 -----------------------------
 
-The subscription screen outlines the details of your Mattermost Cloud account, including the annual cost per user and the number of users currently registered in your workspace. You can also find a summary of your last invoice in the same page.
+When you've purchased a subscription, you can view the details of your Mattermost Cloud account, including the annual cost per user and the number of users currently registered in your workspace. You can also find a summary of your last invoice in the same page.
 
 Billing period
 --------------
 
-After you begin your Mattermost Cloud subscription, your credit card is billed immediately. Your subscription automatically renews annually, however you can opt-out of auto-renewal.
+When you begin your Mattermost Cloud subscription, your credit card is billed immediately. Your subscription automatically renews annually, however you can opt-out of auto-renewal.
 
-If there's a payment failure, your invoice will show *Payment Failed*. Please review the accuracy of your credit card information in **Payment Information**. Unresolved failed payments may result in a delinquency and an interruption to your subscription.
+If there's a payment failure, your invoice will show **Payment Failed**. Please review the accuracy of your credit card information in **Payment Information**. Unresolved failed payments may result in a delinquency and an interruption to your subscription.
 
 Payment information
 ~~~~~~~~~~~~~~~~~~~
