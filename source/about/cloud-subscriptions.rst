@@ -74,13 +74,6 @@ Monthly Cloud annual subscriptions renew automatically.
 Frequently asked questions
 ---------------------------
 
-What happens when my 30-day Mattermost Enterprise trial period ends?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-At the end of the 30-day trial, you can opt to purchase an annual subscription to Mattermost Professional via the prompts provided in Mattermost. If you want to upgrade to Mattermost Enterprise, `contact sales <https://mattermost.com/contact-sales/>`__. 
-
-If you choose not to continue, your workspace will be deleted.
-
 How am I billed for my annual Cloud subscription?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
