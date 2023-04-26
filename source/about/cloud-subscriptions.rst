@@ -6,12 +6,14 @@ From 2 February 2023, Mattermost Cloud subscriptions are switching from a monthl
 Buy a Cloud subscription
 ------------------------
 
-You can start a free, 30-day trial of Mattermost Enterprise to explore additional features. During or after the trial, you can choose to upgrade to Mattermost Professional in-product or Enterprise by `contacting sales <https://mattermost.com/contact-sales/>`__.
+You can explore Mattermost with a 30-day trial of Mattermost Enterprise.
+
+During or after the trial, you can choose to upgrade to Mattermost Professional in-product or Enterprise by `contacting sales <https://mattermost.com/contact-sales/>`__.
 
 For Professional, follow the steps below:
 
 1. Select **View Plans**.
-2. Select Professional by clicking **Upgrade**.
+2. Select **Upgarde** to choose Professional.
 3. Provide your credit card details.
 
 .. note::
@@ -20,12 +22,10 @@ For Professional, follow the steps below:
   
 4. Select **Upgrade** to confirm.
 
-If you choose not to upgrade at the end of your 30-day trial, your workspace will be deleted.
-
 View subscription information
 -----------------------------
 
-The subscription screen outlines the details of your Mattermost Cloud account, including the annual cost per user and the number of users currently registered in your workspace. You can also find a summary of your last invoice in the same page, and any `workspace limits </onboard/mattermost-limits.html>`__ set for your subscription.
+The subscription screen outlines the details of your Mattermost Cloud account, including the annual cost per user and the number of users currently registered in your workspace. You can also find a summary of your last invoice in the same page.
 
 Billing period
 --------------
