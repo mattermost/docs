@@ -81,7 +81,7 @@ What happens when my 30-day Mattermost Enterprise trial period ends?
 
 At the end of the 30-day trial, you can opt to purchase an annual subscription to Mattermost Professional via the prompts provided in Mattermost. If you want to upgrade to Mattermost Enterprise, `contact sales <https://mattermost.com/contact-sales/>`__. 
 
-If you choose not to continue, your subscription will revert to Mattermost Free and you will not be billed. In this case, Mattermost Enterprise features will no longer be available to use. Any data you may have that exceeds the `data limits </onboard/mattermost-limits.html>`_ for Mattermost Free will be auto-archived.
+If you choose not to continue, your workspace will be deleted.
 
 How am I billed for my annual Cloud subscription?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
