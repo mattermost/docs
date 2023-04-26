@@ -2368,7 +2368,7 @@ master_doc = "index"
 
 # General information about the project.
 project = "Mattermost"
-copyright = "2015-2022 Mattermost"
+copyright = "2015-2023 Mattermost"
 author = "Mattermost"
 
 # The version info for the project you're documenting, acts as replacement for
@@ -2492,7 +2492,7 @@ html_static_path = ["_static"]
 # A list of CSS files. The entry must be a filename string or a tuple containing the filename string and the attributes
 # dictionary. The filename must be relative to the html_static_path, or a full URI with scheme like
 # https://example.org/style.css. The attributes is used for attributes of <link> tag. It defaults to an empty list.
-html_css_files = ["mytheme.css?version=v29", "css/compass-icons.css"]
+html_css_files = ["mytheme.css?version=v33", "css/compass-icons.css"]
 
 # A list of JavaScript filenames. The entry must be a filename string or a tuple containing the filename string and the
 # attributes dictionary. The filename must be relative to the html_static_path, or a full URI with scheme like
