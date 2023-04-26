@@ -120,11 +120,6 @@ This offering includes all the features of Mattermost Professional, plus:
 - `Eligibility for Premier Support add-on <https://mattermost.com/support/>`__.
 - 99% uptime SLA guarantee (Cloud only, via dedicated virtual secure Cloud add-on option).
 
-Limits
-------
-
-Some Mattermost plans have limits applied to functionality and features. Visit `our documentation </onboard/mattermost-limits.html>`_ for more information. These limits apply to Cloud environments only.
-
 Other Mattermost plans
 ----------------------
 
