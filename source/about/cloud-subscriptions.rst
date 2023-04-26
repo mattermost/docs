@@ -6,7 +6,7 @@ From 2 February 2023, Mattermost Cloud subscriptions are switching from a monthl
 Buy a Cloud subscription
 ------------------------
 
-Visit the Mattermost `pricing page <https://mattermost.com/pricing/>`__ and select **Buy Now** in the Professional column.
+To get started immediately visit the Mattermost `pricing page <https://mattermost.com/pricing/>`__ and select **Buy Now** in the Professional column. To get started with Mattermost Enterprise, contact our sales team using the link provided.
 
 View subscription information
 -----------------------------
