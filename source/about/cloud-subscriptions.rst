@@ -93,17 +93,6 @@ What happens if I decide to buy a subscription to Mattermost Enterprise during m
 
 Your plan immediately changes to the plan you've upgraded to. You will be invoiced as per your agreement with our sales team.
 
-How do I change my subscription to Cloud Free?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-If you're on the Cloud Enterprise plan and want to move to another plan, please contact your Customer Success Manager or our `Support team <mailto:support@mattermost.com>`_.
-
-If you're on Cloud Professional and want to move to Cloud Free:
-
-1. Open **System Console > Billing & Account > Subscription**.
-2. Select **View Plans**.
-3. Select **Downgrade**.
-
 How do I cancel my subscription? 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -116,13 +105,6 @@ If you're a monthly Mattermost Cloud Professional, or Mattermost Cloud Free cust
 Once confirmed, your subscription will be canceled, and your Mattermost Cloud workspace will be **permanently deleted**
 
 If you have an annual subscription to Mattermost Cloud Professional, or Mattermost Cloud Enterprise and you wish to cancel, please `contact us <https://customers.mattermost.com/cloud/contact-us>`__.
-
-I'm no longer being billed for my Cloud Starter ($149/year) plan. Why is that?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-If you created a Cloud Starter ($149/year) plan prior to June 15, 2022, your plan is now free with no data limits and is called Cloud Free. You have the option to `upgrade to Professional or Enterprise <https://mattermost.com/pricing/>`__, or continue using Cloud Free.
-
-Cloud Free workspaces created on or after June 15, 2022 are free forever with certain `workspace limits </onboard/mattermost-limits.html#workspace-limits>`__ such as message and file history.
 
 When will support for other regions be available?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
