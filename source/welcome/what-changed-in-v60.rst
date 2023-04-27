@@ -4,12 +4,12 @@ What changed in Mattermost v6.0?
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-In Mattermost v6.0, we introduced changes in how to navigate Mattermost with the introduction of the Global Header. Whether you're new to Mattermost, or a long-time user, this document will help you start using these new Global Header features as well as introduce you to some new ways of navigating the product.
+In Mattermost v6.0, we introduced changes in how to navigate Mattermost with the introduction of the global header. Whether you're new to Mattermost, or a long-time user, this document will help you start using these new global header features as well as introduce you to some new ways of navigating the product.
 
 What's the global header?
 -------------------------
 
-The Global Header introduces a new way of navigating and using Mattermost, and offers shared functionality available across the Mattermost platform in a single place. If you’ve recently installed or upgraded to v6.0, you’ll notice that Account Settings options have been split up, the Search bar is now front and center, and we’ve introduced a Product Menu button for easy navigation between Channels, Boards, and Playbooks. You'll notice that going forward, when you open Playbooks and Boards, they display as tabs in the window header for easier access.
+The global header introduces a new way of navigating and using Mattermost, and offers shared functionality available across the Mattermost platform in a single place. If you’ve recently installed or upgraded to v6.0, you’ll notice that Account Settings options have been split up, the Search bar is now front and center, and we’ve introduced a product menu button for easy navigation between Channels, Boards, and Playbooks. You'll notice that going forward, when you open Playbooks and Boards, they display as tabs in the window header for easier access.
 
 We've also changed how you access multiple servers when using Mattermost in a web browser or the desktop app. Previously, multiple servers were displayed in tabs across the top of Mattermost. They're now folded into a single menu which supports drag and drop for reordering. Notifications across servers work the same way as before, so you won't miss any important conversations.
 
@@ -19,7 +19,7 @@ We've also changed how you access multiple servers when using Mattermost in a we
 Where is everything?
 --------------------
 
-While Channels, Boards, and Playbooks feature unique functionality within the Global Header, the following features are shared across all three products:
+While Channels, Boards, and Playbooks feature unique functionality within the global header, the following features are shared across all three products:
 
 * Your user profile
 * Your status and availability
@@ -48,7 +48,7 @@ Let your team know your online status using `custom status and availability sett
 Product menu
 ------------
 
-In the top-left corner of the Global Header, select the Product menu button to navigate to Channels, Playbooks, and Boards.
+In the top-left corner of the global header, select the product menu button to navigate to Channels, Playbooks, and Boards.
 
 Depending on permissions set for your Mattermost, this is also where you would also find Mattermost Integrations, System Console, and Marketplace menu links. You’ll always be able to view the version information of your Mattermost workspace in this menu.
 
@@ -67,6 +67,6 @@ What else has changed?
 
 Some other menu items have moved around. For example:
 
-* Plugins are listed in the Product menu, in the top-left corner of Mattermost.
-* System Console is listed in the Product menu, in the top-left corner of Mattermost.
+* Plugins are listed in the product menu, in the top-left corner of Mattermost.
+* System Console is listed in the product menu, in the top-left corner of Mattermost.
 * Managing Custom Emojis can be done from the emoji picker now.

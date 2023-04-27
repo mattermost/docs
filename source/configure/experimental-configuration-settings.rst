@@ -1504,8 +1504,6 @@ Allows using the same S3 bucket for multiple deployments.
 GitLab scope
 ~~~~~~~~~~~~
 
-*Not available in Cloud Free*
-
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
 Standard setting for OAuth to determine the scope of information shared with OAuth client. Not currently supported by GitLab OAuth.
