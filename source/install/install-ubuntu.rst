@@ -137,4 +137,4 @@ If your database is on the same system as your Mattermost Server, we recommend e
 
 .. note::
 	
-	We recommend the `Mattermost Omnibus install method </install/installing-mattermost-omnibus.html>`__ over the ``deb`` signed package if you are running the Mattermost Server and database a single system as this greatly reduces setup and ongoing maintenance.
+	We recommend the `Mattermost Omnibus install method </install/installing-mattermost-omnibus.html>`__ over the ``deb`` signed package if you are running the Mattermost Server and database on a single system as this greatly reduces setup and ongoing maintenance.
