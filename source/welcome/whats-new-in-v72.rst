@@ -12,7 +12,7 @@ Overview of v7.2 and beyond
 
 1. All the boards you're currently a member of from your current team will appear on the sidebar without needing to switch workspaces.
 2. Organize boards on the sidebar with custom categories. 
-3. Press :kbd:`Ctrl` :kbd:`K` on Windows or Linux, pressing :kbd:`⌘` :kbd:`K` on macOS to find additional boards.
+3. Press :kbd:`Ctrl` :kbd:`K` on Windows or Linux, press :kbd:`⌘` :kbd:`K` on macOS to find additional boards.
 4. Navigate between teams in Boards with the new team switcher.
 5. Set board and template permissions in the new **Share** dialog.
 6. Link boards to channels to automatically grant board permissions to channel members.
@@ -23,7 +23,7 @@ Navigation
 Sidebar categories
 ~~~~~~~~~~~~~~~~~~~
 
-Navigation is simplified, and now works similarly to channels. No more switching between workspaces - and the dashboard page has been removed. All the boards you're currently a member of from your current team will appear on the sidebar without needing to switch workspaces. Use the search box (Ctrl+K / Cmd+K) to find additional boards.
+Navigation is simplified, and now works similarly to channels. No more switching between workspaces - and the dashboard page has been removed. All the boards you're currently a member of from your current team will appear on the sidebar without needing to switch workspaces. Use the search box (:kbd:`Ctrl` :kbd:`K`/:kbd:`⌘` :kbd:`K`) to find additional boards.
 
 .. image:: ../images/boards-whats-new-01.png
   :width: 303
@@ -160,7 +160,7 @@ We removed workspaces, so if you were a member of many boards prior to migration
 How do I find my boards now?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Use the search box (CMD+K/CTRL+K).
+Use the search box (:kbd:`Ctrl` :kbd:`K`/:kbd:`⌘` :kbd:`K`).
 
 How do I create a new sidebar category?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
