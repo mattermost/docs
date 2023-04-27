@@ -201,6 +201,10 @@ Mattermost v7.9.0 contains a low severity level security fix. [Upgrading](https:
 
 ## Release v7.8 - [Extended Support Release](https://docs.mattermost.com/upgrade/release-definitions.html#extended-support-release-esr)
 
+- **v7.8.4, released 2023-04-27**
+  - Mattermost v7.8.4 contains a medium severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Limited channel search results to 50 to fix a performance issue.
+  - Fixed an issue where true-up review submissions always failed.
 - **v7.8.3, released 2023-04-12**
   - Mattermost v7.8.3 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Updated prepackaged boards to v7.8.4.
