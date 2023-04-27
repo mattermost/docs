@@ -48,7 +48,7 @@ In a terminal window, run the following command to add the Mattermost Server rep
 
 .. code-block:: none
 
-    curl -o- https://deb.packages.mattermost.com/repo-setup.sh | sudo bash -s mattermost
+  curl -o- https://deb.packages.mattermost.com/repo-setup.sh | sudo bash -s mattermost
 
 Install
 -------
@@ -78,27 +78,27 @@ Setup
 
 Before you start the Mattermost Server, you need to edit the configuration file. A sample configuration file is located at ``/opt/mattermost/config/config.defaults.json``. 
 
-1. Rename this configuration file with correct permissions:
+Rename this configuration file with correct permissions:
 
-    .. code-block:: none
+.. code-block:: none
 
-        sudo install -C -m 600 -o mattermost -g mattermost /opt/mattermost/config/config.defaults.json /opt/mattermost/config/config.json
+  sudo install -C -m 600 -o mattermost -g mattermost /opt/mattermost/config/config.defaults.json /opt/mattermost/config/config.json
 
-2. Configure the following properties in this file:
+Configure the following properties in this file:
 
-    * Set ``DriverName`` to ``"postgres"``. This is the default and recommended database for all Mattermost installations.
-    * Set ``DataSource`` to ``"postgres://mmuser:<mmuser-password>@<host-name-or-IP>:5432/mattermost?sslmode=disable&connect_timeout=10"`` replacing ``mmuser``, ``<mmuser-password>``, ``<host-name-or-IP>`` and ``mattermost`` with your database name.
-    * Set ``"SiteURL"``: The domain name for the Mattermost application (e.g. ``https://mattermost.example.com``).
+* Set ``DriverName`` to ``"postgres"``. This is the default and recommended database for all Mattermost installations.
+* Set ``DataSource`` to ``"postgres://mmuser:<mmuser-password>@<host-name-or-IP>:5432/mattermost?sslmode=disable&connect_timeout=10"`` replacing ``mmuser``, ``<mmuser-password>``, ``<host-name-or-IP>`` and ``mattermost`` with your database name.
+* Set ``"SiteURL"``: The domain name for the Mattermost application (e.g. ``https://mattermost.example.com``).
 
-3. After modifying the ``config.json`` configuration file, you can now start the Mattermost Server:
+After modifying the ``config.json`` configuration file, you can now start the Mattermost Server:
 	
-    .. code-block:: none
+.. code-block:: none
 
-        sudo systemctl start mattermost
+  sudo systemctl start mattermost
 
-4. Verify that Mattermost is running: curl ``http://localhost:8065``. You should see the HTML that’s returned by the Mattermost Server.
+Verify that Mattermost is running: curl ``http://localhost:8065``. You should see the HTML that’s returned by the Mattermost Server.
 
-5. The final step, depending on your requirements, is to run sudo ``systemctl enable mattermost.service`` so that Mattermost will start on system boot. 
+The final step, depending on your requirements, is to run sudo ``systemctl enable mattermost.service`` so that Mattermost will start on system boot. 
 
 Updates
 -------
