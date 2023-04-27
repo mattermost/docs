@@ -1,0 +1,140 @@
+Install Mattermost Server on Ubuntu
+===================================
+
+.. raw:: html
+
+    <div class="mm-badge mm-badge--combo">
+
+    <div class="mm-badge__plan-deploy">
+      <p>
+        <img src="../_static/images/badges/flag_icon.svg" alt="" />
+        <span>Available on <a href="https://mattermost.com/pricing/">all plans</a></span>
+      </p>
+      <p>
+        <img src="../_static/images/badges/deployment_icon.svg" alt="" />
+        <span><a href="https://mattermost.com/download/">Self-hosted</a> deployments</span>
+      </p>
+    </div>
+
+    <div class="mm-badge__reqs">
+      <h3>Minimum system requirements:</h3>
+      <ul>
+        <li>Operating System: 18.04 LTS, 20.04 LTS, 22.04 LTS
+        <li>Hardware: 1 vCPU/core with 2GB RAM (support for up to 1,000 users)</li>
+        <li>Database: PostgreSQL v11+</li>
+        <li>Network:
+          <ul>
+            <li>Application 80/443, TLS, TCP Inbound</li>
+            <li>Administrator Console 8065, TLS, TCP Inbound</li>
+            <li>SMTP port 10025, TCP/UDP Outbound</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+You can install the Mattermost Server using our ``.deb`` signed packages using the Mattermost PPA (Personal Package Archive). Deployment includes 4 steps: `add the PPA repository <#add-the-mattermost-server-ppa-repository>`__, `install <#install>`__, `setup <#setup>`__, and `update <#updates>`__.
+
+.. important::
+    
+    - Using the Mattermost PPA not only provides the quickest way to install a Mattermost Server, but also provides automatic updates. Unlike the Mattermost Omnibus, this install method is used for both single and clustered installations. 
+    - If you are running the Mattermost Server and database a single system, we recommend the `Mattermost Omnibus install method </install/installing-mattermost-omnibus.html>`__ as this greatly reduces setup and ongoing maintenance.
+
+Add the Mattermost Server PPA repository
+----------------------------------------
+
+In a terminal window, run the following command to add the Mattermost Server repositories:
+
+.. code-block:: none
+
+    curl -o- https://deb.packages.mattermost.com/repo-setup.sh | sudo bash -s mattermost
+
+Install
+-------
+
+Ahead of installing the Mattermost Server, it's good practice to update all your repositories and, where required, update existing packages. Run the following command:
+
+.. code-block:: none
+
+    sudo apt update
+
+After any updates (and any system reboots) are complete, installing the Mattermost Server is now a single command:
+
+.. code-block:: none
+
+    sudo apt install mattermost -y
+
+You now have the latest Mattermost Server version installed on your system.
+
+The installation path is ``/opt/mattermost``. The package will have added a user and group named ``mattermost``. The required systemd unit file has also been created but will not be set to active.
+
+.. note::
+	
+	Since the signed package from the Mattermost repository is used for mulitple installation types, we don't add any dependencies in the systemd unit file. If you are installing the Mattermost server on the same system as your database, you may want to add both ``After=postgresql.service`` and ``BindsTo=postgresql.service`` to the ``[Unit]`` section of the systemd unit file.
+
+Setup
+-----
+
+Before you start the Mattermost Server, you need to edit the configuration file. A sample configuration file is located at ``/opt/mattermost/config/config.defaults.json``. 
+
+1. Rename this configuration file with correct permissions:
+
+    .. code-block:: none
+
+        sudo install -C -m 600 -o mattermost -g mattermost /opt/mattermost/config/config.defaults.json /opt/mattermost/config/config.json
+
+2. Configure the following properties in this file:
+
+    * Set ``DriverName`` to ``"postgres"``. This is the default and recommended database for all Mattermost installations.
+    * Set ``DataSource`` to ``"postgres://mmuser:<mmuser-password>@<host-name-or-IP>:5432/mattermost?sslmode=disable&connect_timeout=10"`` replacing ``mmuser``, ``<mmuser-password>``, ``<host-name-or-IP>`` and ``mattermost`` with your database name.
+    * Set ``"SiteURL"``: The domain name for the Mattermost application (e.g. ``https://mattermost.example.com``).
+
+3. After modifying the ``config.json`` configuration file, you can now start the Mattermost Server:
+	
+    .. code-block:: none
+
+        sudo systemctl start mattermost
+
+4. Verify that Mattermost is running: curl ``http://localhost:8065``. You should see the HTML that’s returned by the Mattermost Server.
+
+5. The final step, depending on your requirements, is to run sudo ``systemctl enable mattermost.service`` so that Mattermost will start on system boot. 
+
+Updates
+-------
+
+Mattermost Omnibus is integrated with the apt package manager. When a new Mattermost version is released, run: ``sudo apt update && sudo apt upgrade`` to download and update your Mattermost instance.
+
+.. note::
+	
+	When you run the ``sudo apt uprade`` command, ``mattermost-server`` will be updated along with any other packages. We strongly recommend you stop the Mattermost Server before running the ``apt`` command using ``sudo systemctl stop mattermost-server``.
+
+Remove Mattermost
+------------------
+
+If you wish to remove the Mattermost server for any reason, you can run this command:
+
+.. code-block:: none
+
+    sudo apt remove --purge mattermost
+
+Frequently asked questions
+--------------------------
+
+Why doesn't Mattermost start at system boot?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To have the Mattermost Server start at system boot, the systemd until file needs to be enabled. Run the following command:
+
+.. code-block:: none
+
+    sudo systemctl enable mattermost.service
+
+Why does Mattermost fail to start at system boot?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If your database is on the same system as your Mattermost Server, we recommend editing the default ``/lib/systemd/system/mattermost.service`` systemd unit file to add ``After=postgresql.service`` and ``BindsTo=postgresql.service`` to the ``[Unit]`` section.
+
+.. note::
+	
+	We recommend the `Mattermost Omnibus install method </install/installing-mattermost-omnibus.html>`__ over the ``deb`` signed package if you are running the Mattermost Server and database a single system as this greatly reduces setup and ongoing maintenance.
