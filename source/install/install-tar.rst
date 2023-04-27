@@ -229,7 +229,7 @@ If you wish to remove the Mattermost Server for any reason, you must stop the Ma
 .. code-block:: none
   :class: mm-code-block 
 
-        sudo rm /opt/mattermost
+   sudo rm /opt/mattermost
 
 .. note::
 	
