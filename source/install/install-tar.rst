@@ -224,7 +224,7 @@ Updating your Mattermost Server installation when using the tarball requires sev
 Remove Mattermost
 ------------------
 
-1. If you wish to remove the Mattermost Server for any reason, you must stop the Mattermost Server, back up all important files, and then run this command:
+If you wish to remove the Mattermost Server for any reason, you must stop the Mattermost Server, back up all important files, and then run this command:
 
     .. code-block:: none
       :class: mm-code-block 
