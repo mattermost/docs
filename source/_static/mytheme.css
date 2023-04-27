@@ -2978,5 +2978,13 @@ mark {
     border: none;
     border-radius: 3px;
     font-size: 80%;
-    /* word-break: break-all; */
 } 
+
+@media (max-width: 959px) {
+    #install-mattermost-omnibus p code,
+    #install-mattermost-omnibus h3 code,
+    #install-mattermost-server-using-the-tarball p code,
+    #install-mattermost-server-using-the-tarball h3 code {
+        word-break: break-all;
+    }
+}
