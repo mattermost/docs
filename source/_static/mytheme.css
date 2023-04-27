@@ -2978,5 +2978,5 @@ mark {
     border: none;
     border-radius: 3px;
     font-size: 80%;
-    word-break: break-all;
+    /* word-break: break-all; */
 } 
