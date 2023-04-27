@@ -39,7 +39,7 @@ You can install the Mattermost Server using our ``.deb`` signed packages using t
 .. important::
     
     - Using the Mattermost PPA not only provides the quickest way to install a Mattermost Server, but also provides automatic updates. Unlike the Mattermost Omnibus, this install method is used for both single and clustered installations. 
-    - If you are running the Mattermost Server and database a single system, we recommend the `Mattermost Omnibus install method </install/installing-mattermost-omnibus.html>`__ as this greatly reduces setup and ongoing maintenance.
+    - If you are running the Mattermost Server and database on a single system, we recommend the `Mattermost Omnibus install method </install/installing-mattermost-omnibus.html>`__ as this greatly reduces setup and ongoing maintenance.
 
 Add the Mattermost Server PPA repository
 ----------------------------------------
