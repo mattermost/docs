@@ -235,7 +235,7 @@ If you wish to remove the Mattermost Server for any reason, you must stop the Ma
 	
 	Depending on your configuration, there are several important folders in ``/opt/mattermost`` to backup. These are ``config``, ``logs``, ``plugins``, ``client/plugins``, and ``data``. We strongly recommend you back up these locations before running the ``rm`` command.
 	
-2. You may also remove the Mattermost systemd unit file and the user/group created for running the application.
+You may also remove the Mattermost systemd unit file and the user/group created for running the application.
 	
 
 Frequently asked questions
