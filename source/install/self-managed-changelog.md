@@ -92,7 +92,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ## Release v7.9 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
 
-- **v7.9.3, released **
+- **v7.9.3, released 2023-04-27**
   - Mattermost v7.9.3 contains a medium severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Fixed an issue where true-up review submissions always failed.
 - **v7.9.2, released 2023-04-12**
