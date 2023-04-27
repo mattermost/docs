@@ -31,7 +31,7 @@ Now, you can start using the OpenAI plugin in your Mattermost instance.
 Two other examples of ChatGPT integrations built by Sebastian Müller include:
 
 - `ChatGPT Mattermost Bot with OpenAI <https://github.com/yGuy/chatgpt-mattermost-bot>`__
-- `ChatGPT Mattermost Bot with LLaMa <https://github.com/yGuy/chatgpt-mattermost-bot/tree/llama>`_
+- `ChatGPT Mattermost Bot with LLaMa <https://github.com/yGuy/chatgpt-mattermost-bot/tree/llama>`__
 
 *The LLaMa version, however, is not available for commercial use due to licensing restrictions on the language model.*
 
