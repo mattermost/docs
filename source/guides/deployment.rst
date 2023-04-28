@@ -6,16 +6,21 @@ Deploy Mattermost
 
 Learn how to install, deploy, and scale Mattermost for teams and organizations of any size.
 
-Deploy Mattermost for production use
-------------------------------------
+.. toctree::
+    :maxdepth: 1
+    :hidden:
 
-Learn how to install, deploy, and scale Mattermost for teams and organizations of any size using one of four options: deploy using Kubernetes, deploy from a compressed tarball, deploy using a Ubuntu option called Omnibus, or deploy using Docker.
+    Deploy Mattermost using Omnibus </install/installing-mattermost-omnibus>
+    Install using the tarball </install/install-tar>
+
+* `Deploy Mattermost using Omnibus </install/installing-mattermost-omnibus>`__ - An entire Mattermost installation on a single server
+* `Install Mattermost Server using the tarball </install/install-tar>`__ - Support for any Linux distribution
 
 .. tip::
 
   * See the `configuration settings </configure/configuration-settings.html>`__ documentation to learn more about customizing your production deployment.
   
-  * Encountering issues with your deployment? See the `Deployment Troubleshooting </install/troubleshooting.html#deployment-troubleshooting>`__ documentation for details.
+  * Encountering issues with your deployment? See the `Deployment Troubleshooting </install/troubleshooting.html#deployment-troubleshooting>`__ or `high scale troubleshooting </deploy/high-scale-troubleshoot.html>`__ documentation for details.
 
 .. tabs::
 
@@ -23,11 +28,6 @@ Learn how to install, deploy, and scale Mattermost for teams and organizations o
 
       .. include:: ../install/common-prod-deploy-omnibus.rst
         :start-after: :nosearch:
-        
-    .. tab:: Generic Linux (Tarball)
-
-      .. include:: ../install/common-prod-deploy-tar.rst
-        :start-after: :nosearch: 
         
     .. tab:: Kubernetes
 
@@ -239,11 +239,13 @@ Troubleshooting guides
     :hidden:
 
     General troubleshooting </install/troubleshooting>
+    Troubleshooting your high scale deployment </deploy/high-scale-troubleshoot> 
     Troubleshooting mobile applications </deploy/mobile-troubleshoot>
     MySQL installation troubleshooting </install/trouble_mysql>
 
-* :doc:`General troubleshooting </install/troubleshooting>`
-* :doc:`Troubleshooting mobile applications </deploy/mobile-troubleshoot>`
+* :doc:`General deployment troubleshooting </install/troubleshooting>`
+* :doc:`High scale troubleshooting </deploy/high-scale-troubleshoot>`
+* :doc:`Mobile applications troubleshooting </deploy/mobile-troubleshoot>`
 * :doc:`MySQL installation troubleshooting </install/trouble_mysql>`
 
 Changelogs
