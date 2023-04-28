@@ -10,6 +10,13 @@ In most cases, you can `upgrade Mattermost Server </upgrade/upgrading-mattermost
   :backlinks: top
   :local:
 
+Upgrade Best Practices
+----------------------
+
+Mattermost will aim to have non-locking, backwards-compatible migrations in general. This backwards compatibility guarantee extends to only the last ESR version. For example, if there are three ESR versions ESR1, ESR2, and ESR3, upgrading from ESR1 to ESR2, and then ESR2 to ESR3 will ensure backwards compatibility, but not from ESR1 to ESR3 directly.
+
+In the case of delayed upgrades, we recommend upgrading to the closest ESR version first, and from there to the next ESR. Do not attempt to directly upgrade to the latest version as it might break backwards compatibility of the older nodes in the cluster during the upgrade.
+
 Upgrade to Mattermost v7.1
 --------------------------
 
@@ -169,8 +176,6 @@ In `high availability </scale/high-availability-cluster.html>`__ environments, y
 Ensure you review the `high availability cluster upgrade guide </scale/high-availability-cluster.html#upgrade-guide>`__, as well as the :doc:`important-upgrade-notes` to make sure you're aware of any actions you need to take before or after upgrading from your particular version.
 
 .. important::
-
-  We only support one minor version difference between server versions when performing a rolling upgrade. For example v5.27.1 + v5.27.2 or v5.26.4 + v5.27.1 is supported, whereas v5.25.5 + v5.27.0 is not supported. 
 
   Running two different versions of Mattermost in your cluster should not be done outside of an upgrade scenario. Due to a fundamental change to the clustering code in v6.0, nodes from different versions cannot be run, as noted in the :doc:`important-upgrade-notes` product documentation.
 

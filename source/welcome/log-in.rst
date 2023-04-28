@@ -8,10 +8,8 @@ Mattermost is accessible through a server link. You'll receive the server link f
 
 .. tip::
   
-  - If you're looking to create a Mattermost workspace, start a `free Cloud trial <https://mattermost.com/get-started/>`_ and then come back to this page.
   - Mattermost Cloud customers can log into their Cloud workspaces from the `Cloud Workspace Connection <https://customers.mattermost.com/cloud/connect-workspace>`__ page by specifying their company or domain name.
   - Can't find your Mattermost link? Ask your company's IT department or your Mattermost system admin for your organization's **Mattermost Site URL**. It'll look something like ``https://example.com/company/mattermost``, ``mattermost.yourcompanydomain.com``, or ``chat.yourcompanydomain.com``. These URLs could also end in ``.net``.
-
 
 
 .. tabs::
