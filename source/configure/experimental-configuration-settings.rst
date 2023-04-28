@@ -661,7 +661,7 @@ See the `Important Upgrade Notes <https://docs.mattermost.com/upgrade/important-
 +------------------------------------------------------------------------------------------------------------------+
 
 Delay channel autocomplete
-~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This setting controls whether or not the channel link autocomplete when making a post triggers immediately when after a tilde is typed.
 
