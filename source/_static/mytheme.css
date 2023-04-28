@@ -2840,17 +2840,17 @@ mark {
     opacity: 1;
     visibility: visible;
     top: unset;
-    bottom: -40px;
+    bottom: -35px;
 }
 
 @media (min-width: 960px) {
     .mm-code-copy__copied-notice {
-        top: 50px;
+        /* top: 50px; */
     }
 
     .mm-code-copy__copied-notice.show {
-        top: 54px;
-        bottom: unset;
+        /* top: 54px; */
+        /* bottom: unset; */
     }
 }
 
