@@ -13,6 +13,11 @@ Latest Mattermost Cloud releases:
 
 ## Release 2023-05-04
 
+### Highlights
+ - Added an improved Cloud trial experience in preparation for replacing the Cloud Free experience. See more details in these Forum posts:
+    - https://forum.mattermost.com/t/cloud-monthly-billing-deprecation/15804
+    - https://forum.mattermost.com/t/cloud-free-deprecation/15802
+
 ### Improvements
 
 #### User Interface (UI)
