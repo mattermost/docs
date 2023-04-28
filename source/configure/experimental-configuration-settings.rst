@@ -669,7 +669,7 @@ This setting controls whether or not the channel link autocomplete when making a
 
 **False**: **(Default)** The autocomplete appears immediately after the user types a tilde. For example, typing `~` will show the autocomplete.
 
-+------------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"DelayChannelAutocomplete": false`` with options ``true`` and ``false``. |
 +------------------------------------------------------------------------------------------------------------------+
 
