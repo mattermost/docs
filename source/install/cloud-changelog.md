@@ -27,7 +27,7 @@ Latest Mattermost Cloud releases:
 
 #### Administration
  - Removed the deprecated ``model.CommandArgs.Session``.
- - The database section in the **System Console** now has an additional read-only section which shows the active search backend in use. This can be helpful to confirm which search engine is currently active when there are multiple of them configured.
+ - The database section in the **System Console** now has an additional read-only section which shows the active search backend in use. This can be helpful to confirm which search engine is currently active when there are multiple configured.
  
 #### Performance
  - Improved the performance of webapp related to timezone calculations.
@@ -40,7 +40,7 @@ Latest Mattermost Cloud releases:
  - Fixed an issue where a user would still see threads in the threads view of channels they have left. Migration execution time in MySQL: Query OK, 2766769 rows affected (4 min 47.57 sec). Migration execution time in PostgreSQL: Execution time: 58.11 sec, DELETE 2766690.
  - Fixed an issue where clicking on a channel link (for a channel the user was not a part of) caused the webapp to refresh, dropping the user from a call.
  - Fixed an issue with PDF preview rendering for certain Japanese characters.
- - Fixed an issue where the screen reader did not announce the link copied on copying the link in invite modal.
+ - Fixed an issue where the screen reader did not announce the action of copying the link in the invite modal.
  - Fixed an issue with post metadata not generating correctly for images due to missing content-type in response. This would result in certain embedded images not to display on mobile clients.
  - Fixed an issue where edits to messages persisted after canceling.
  - Added a condition for bot tags for webhook posts when a bot account is used for webhooks.
