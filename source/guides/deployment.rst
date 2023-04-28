@@ -6,28 +6,25 @@ Deploy Mattermost
 
 Learn how to install, deploy, and scale Mattermost for teams and organizations of any size.
 
-Deploy Mattermost for production use
-------------------------------------
+.. toctree::
+    :maxdepth: 1
+    :hidden:
 
-Learn how to install, deploy, and scale Mattermost for teams and organizations of any size using one of four options: deploy using Kubernetes, deploy from a compressed tarball, deploy using a Ubuntu option called Omnibus, or deploy using Docker.
+    Deploy Mattermost on Ubuntu </install/install-ubuntu>
+    Deploy Mattermost using Omnibus </install/installing-mattermost-omnibus>
+    Install Mattermost using the tarball </install/install-tar>
+
+* `Deploy Mattermost Server on Ubuntu </install/install-ubuntu>`__ - Signed packages direct from Mattermost featuring a single command for install and upgrades.
+* `Deploy Mattermost Server using Omnibus </install/installing-mattermost-omnibus>`__ - An entire Mattermost installation on a single server.
+* `Install Mattermost Server using the tarball </install/install-tar>`__ - Support for any Linux distribution
 
 .. tip::
 
   * See the `configuration settings </configure/configuration-settings.html>`__ documentation to learn more about customizing your production deployment.
   
-  * Encountering issues with your deployment? See the `Deployment Troubleshooting </install/troubleshooting.html#deployment-troubleshooting>`__ documentation for details.
+  * Encountering issues with your deployment? See the `Deployment Troubleshooting </install/troubleshooting.html#deployment-troubleshooting>`__ or `high scale troubleshooting </deploy/high-scale-troubleshoot.html>`__ documentation for details.
 
 .. tabs::
-
-    .. tab:: Ubuntu/Debian
-
-      .. include:: ../install/common-prod-deploy-omnibus.rst
-        :start-after: :nosearch:
-        
-    .. tab:: Generic Linux (Tarball)
-
-      .. include:: ../install/common-prod-deploy-tar.rst
-        :start-after: :nosearch: 
         
     .. tab:: Kubernetes
 

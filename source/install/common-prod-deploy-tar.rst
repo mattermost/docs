@@ -1,6 +1,6 @@
 :orphan:
 :nosearch:
-.. This page is intentionally not accessible via the LHS navigation pane because it's common content included on other docs pages.
+.. This page is intentionally not accessible via the LHS navigation pane because it's being phased out in favor of a dedicated Tarball deploy page linked to the /download page of the website.
 
 .. include:: ../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:

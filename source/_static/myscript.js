@@ -231,12 +231,17 @@ $(document).ready(function () {
 				// https://developer.mozilla.org/en-US/docs/Web/API/Clipboard
 				// So this will not work on our current preview sites
 				// Building locally with `make livehtml` will work
-				navigator.clipboard.writeText(copyText).then(() => {
-					clickerNotice.classList.add('show');
+				clickerNotice.classList.add('show');
 	
-					const copyCommand = clicker.dataset.clickCommand;
-					const copyMethod = clicker.dataset.clickMethod;
-					const copyEl = trigger.dataset.clickEl;
+				const copyCommand = clicker.dataset.clickCommand;
+				const copyMethod = clicker.dataset.clickMethod;
+				const copyEl = trigger.dataset.clickEl;
+
+				setTimeout(function () {
+					clickerNotice.classList.remove("show");
+				}, 1000);
+
+				navigator.clipboard.writeText(copyText).then(() => {
 	
 					dataLayer.push({
 						event: 'copy.installation',
@@ -244,9 +249,6 @@ $(document).ready(function () {
 						copyAction: copyEl
 					});
 	
-					setTimeout(function () {
-						clickerNotice.classList.remove("show");
-					}, 1000);
 				});
 			});
 		});
