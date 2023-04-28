@@ -34,7 +34,7 @@ Centralized security and administration
 Transmission security
 ~~~~~~~~~~~~~~~~~~~~~~
 
-- Mattermost supports TLS encryption using AES-256 with 2048-bit RSA on all data transmissions between Mattermost client applications and the Mattermost server across both LAN and internet.
+- Mattermost supports TLS encryption using AES-256 with 2048-bit RSA between Mattermost client applications and the Mattermost server across both LAN and internet.
 - Connections to calls are secured with a combination of:
 
   - TLS: the existing WebSocket channel is used to secure the signaling path.
