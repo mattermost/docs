@@ -13,16 +13,16 @@ Using a web browser or the desktop app, you can access Mattermost Boards by sele
 
 Boards are used for planning projects collaboratively. You can access the list of channels and their boards from the drop-down menu in the left-hand sidebar. Boards are made up of cards, and cards can have a wide range of purposes.
 
-See our `Mattermost Boards </guides/boards.html>`__ documentation for details on the many ways you can use Boards to enable team collaboration.
+See our `Mattermost boards </guides/boards.html>`__ documentation for details on the many ways you can use Boards to enable team collaboration.
 
 Create a board
 --------------
 
-When you first start using Boards, you need to create a board. You can select a template from the options provided or you can create an empty board. The only difference is that a template will be populated with sample cards, properties, and views, and in an empty template you start from scratch.
+When you first start using boards, you need to create a board. You can select a template from the options provided or you can create an empty board. The only difference is that a template will be populated with sample cards, properties, and views, and in an empty template you start from scratch.
 
-To find a board, open Boards and select the drop-down menu in the sidebar. You can search for a workspace or browse through all existing workspaces. Each workspace is linked to the channel it was created in. This includes direct messages and group messages.
+To find a board, open boards and select the drop-down menu in the sidebar. You can search for a workspace or browse through all existing workspaces. Each workspace is linked to the channel it was created in. This includes direct messages and group messages.
 
-See the `Working with Boards </boards/working-with-boards.html>`_ and `templates </boards/templates.html>`_ documentation for more information.
+See the `working with boards </boards/working-with-boards.html>`_ and `templates </boards/templates.html>`_ documentation for more information.
 
 Create a card
 -------------
@@ -33,7 +33,7 @@ Once you've chosen a board template, you'll find pre-populated cards. You can us
 
 Select an existing card to open it or create a new card.
 
-See the `Work with Cards documentation </boards/work-with-cards.html>`_ for more information about working with cards.
+See the `work with cards documentation </boards/work-with-cards.html>`_ for more information about working with cards.
 
 Description
 -----------
@@ -54,7 +54,7 @@ You can create properties for your cards that suit the way you're using them. If
 
 Properties can be renamed and deleted.
 
-See the `Properties </boards/work-with-cards.html#add-and-manage-properties>`_ documentation for more information.
+See the `properties </boards/work-with-cards.html#add-and-manage-properties>`_ documentation for more information.
 
 Views
 -----
@@ -68,7 +68,7 @@ To add a new view, go to **Add a new view** from the view drop-down, then select
 - **Gallery**: Displays cards in a gallery format, so you can manage and organize cards with image attachments.
 - **Calendar**: Adds a calendar view to easily visualize your cards by dates and keep track of deadlines.
 
-See the `Working with Views </boards/working-with-boards.html#changing-views>`__ documentation for more information.
+See the `work with views </boards/working-with-boards.html#changing-views>`__ documentation for more information.
 
 Filters and sorting
 -------------------
