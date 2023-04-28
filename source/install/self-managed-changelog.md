@@ -100,6 +100,7 @@ The following deprecations and breaking changes are planned for the Mattermost v
 4. Remove deprecated ``PermissionUseSlashCommands``.
 5. Remove deprecated ``model.CommandArgs.Session``.
 6. Remove support for PostgreSQL v10.
+7. Enable Apps Bar by default.
 
 ## Release v7.9 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
 
