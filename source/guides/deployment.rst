@@ -13,10 +13,6 @@ Learn how to install, deploy, and scale Mattermost for teams and organizations o
     Deploy Mattermost on Ubuntu </install/install-ubuntu>
 
 * `Deploy Mattermost on Ubuntu </install/install-ubuntu>`__ - Signed packages direct from Mattermost featuring a single command for install and upgrades.
-
-    Deploy Mattermost using Omnibus </install/installing-mattermost-omnibus>
-    Install using the tarball </install/install-tar>
-
 * `Deploy Mattermost using Omnibus </install/installing-mattermost-omnibus>`__ - An entire Mattermost installation on a single server
 * `Install Mattermost Server using the tarball </install/install-tar>`__ - Support for any Linux distribution
 
