@@ -9,21 +9,13 @@ Install and set up the database for use by the Mattermost server. You can instal
 Install MySQL on Ubuntu Server 18.04
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. Log into the server that will host the database, and open a terminal window.
+1. Log into the server that will host the database, and install MySQL.
 
-2. Install MySQL.
-
-  ``sudo apt install mysql-server``
-
-3. Run ``mysql_secure_installation`` and follow the instructions.
-
-  ``sudo mysql_secure_installation``
-
-4. Log in to MySQL as root.
+2. Log in to MySQL as root.
 
   ``sudo mysql``
 
-5. Create the Mattermost user 'mmuser'.
+3. Create the Mattermost user 'mmuser'.
 
   ``mysql> create user 'mmuser'@'%' identified by 'mmuser-password';``
 
@@ -31,11 +23,11 @@ Install MySQL on Ubuntu Server 18.04
     1. Use a password that is more secure than 'mmuser-password'.
     2. The '%' means that mmuser can connect from any machine on the network. However, it's more secure to use the IP address of the machine that hosts Mattermost. For example, if you install Mattermost on the machine with IP address 10.10.10.2, then use the following command: ``mysql> create user 'mmuser'@'10.10.10.2' identified by 'mmuser-password';``
 
-6. Create the Mattermost database.
+4. Create the Mattermost database.
 
   ``mysql> create database mattermost;``
 
-7. Grant access privileges to the user 'mmuser'.
+5. Grant access privileges to the user 'mmuser'.
 
   ``mysql> grant all privileges on mattermost.* to 'mmuser'@'%';``
 
@@ -44,7 +36,7 @@ Install MySQL on Ubuntu Server 18.04
 
     ``mysql> GRANT ALTER, CREATE, DELETE, DROP, INDEX, INSERT, SELECT, UPDATE, REFERENCES ON mattermost.* TO 'mmuser'@'%';``
 
-8. Log out of MySQL.
+6. Log out of MySQL.
 
    ``mysql> exit``
 
