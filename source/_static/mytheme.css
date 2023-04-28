@@ -2971,7 +2971,9 @@ mark {
 #install-mattermost-omnibus p code,
 #install-mattermost-omnibus h3 code,
 #install-mattermost-server-using-the-tarball p code,
-#install-mattermost-server-using-the-tarball h3 code {
+#install-mattermost-server-using-the-tarball h3 code,
+#install-mattermost-server-on-ubuntu p code,
+#install-mattermost-server-on-ubuntu h3 code {
     background-color: #ECF0F9 !important;
     color: #1C58D9 !important;
     font-family: Fira Mono, monospace !important;
@@ -2984,7 +2986,9 @@ mark {
     #install-mattermost-omnibus p code,
     #install-mattermost-omnibus h3 code,
     #install-mattermost-server-using-the-tarball p code,
-    #install-mattermost-server-using-the-tarball h3 code {
+    #install-mattermost-server-using-the-tarball h3 code,
+    #install-mattermost-server-on-ubuntu p code,
+    #install-mattermost-server-on-ubuntu h3 code {
         word-break: break-all;
     }
 }
