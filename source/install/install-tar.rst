@@ -150,7 +150,7 @@ Give the ``mattermost`` group write permissions to the application folder:
         
     sudo chmod -R g+w /opt/mattermost
 
-You will now have the latest Mattermost Server version installed on your system. Managaging starting and stopping the Mattermost Server is done using ``systemd``. Create the systemd unit file:
+You will now have the latest Mattermost Server version installed on your system. Starting and stopping the Mattermost Server is done using ``systemd``. Create the systemd unit file:
 
 .. code-block:: none
   :class: mm-code-block 
