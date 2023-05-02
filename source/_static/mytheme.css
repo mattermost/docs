@@ -2815,6 +2815,7 @@ mark {
 .mm-code-copy__wrapper {
     position: relative;
     align-self: flex-start;
+    max-width: 670px;
 }
 
 .mm-code-copy__copied-notice {
@@ -2840,17 +2841,17 @@ mark {
     opacity: 1;
     visibility: visible;
     top: unset;
-    bottom: -40px;
+    bottom: -35px;
 }
 
 @media (min-width: 960px) {
     .mm-code-copy__copied-notice {
-        top: 50px;
+        /* top: 50px; */
     }
 
     .mm-code-copy__copied-notice.show {
-        top: 54px;
-        bottom: unset;
+        /* top: 54px; */
+        /* bottom: unset; */
     }
 }
 
@@ -2968,12 +2969,26 @@ mark {
 /* Inline code for install-mattermost-omnibus */
 /* Should be flooded across docs? */
 #install-mattermost-omnibus p code,
-#install-mattermost-omnibus h3 code {
+#install-mattermost-omnibus h3 code,
+#install-mattermost-server-using-the-tarball p code,
+#install-mattermost-server-using-the-tarball h3 code,
+#install-mattermost-server-on-ubuntu p code,
+#install-mattermost-server-on-ubuntu h3 code {
     background-color: #ECF0F9 !important;
     color: #1C58D9 !important;
     font-family: Fira Mono, monospace !important;
     border: none;
     border-radius: 3px;
     font-size: 80%;
-    word-break: break-all;
 } 
+
+@media (max-width: 959px) {
+    #install-mattermost-omnibus p code,
+    #install-mattermost-omnibus h3 code,
+    #install-mattermost-server-using-the-tarball p code,
+    #install-mattermost-server-using-the-tarball h3 code,
+    #install-mattermost-server-on-ubuntu p code,
+    #install-mattermost-server-on-ubuntu h3 code {
+        word-break: break-all;
+    }
+}
