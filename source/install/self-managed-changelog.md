@@ -6,10 +6,67 @@ See the [changelog in progress](https://bit.ly/2nK3cVf) for the upcoming release
 
 Latest Mattermost Releases:
 
+- [Release v7.11 - Feature Release](#release-v7-11-feature-release)
 - [Release v7.10 - Feature Release](#release-v7-10-feature-release)
 - [Release v7.9 - Feature Release](#release-v7-9-feature-release)
 - [Release v7.8 - Extended Support Release](#release-v7-8-extended-support-release)
-- [Release v7.1 - Extended Support Release](#release-v7-1-extended-support-release)
+
+## Release v7.11 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
+
+**Release day: May 16, 2023**
+
+### Important Upgrade Notes
+
+ - In the next release, v8.0, the following repositories will be merged into one: ``mattermost-server``, ``mattermost-webapp``, ``focalboard`` and ``mattermost-plugin-playbooks``. Developers should read the updated [Developer Guide](https://developers.mattermost.com/contribute/developer-setup/) for details. **Playbooks and Boards will be core parts of the product that cannot be disabled**.
+
+**IMPORTANT:** If you upgrade from a release earlier than v7.9, please read the other [Important Upgrade Notes](/upgrade/important-upgrade-notes.html).
+
+### Improvements
+
+#### User Interface (UI)
+ - 
+
+#### Administration
+ - 
+ 
+#### Performance
+ - 
+
+### API Changes
+ - 
+
+### Bug Fixes
+ - 
+ 
+### config.json
+Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
+
+#### Changes to Team Edition and Enterprise Edition:
+ - Under ``ServiceSettings`` in the ``config.json``:
+   - 
+ 
+### Go Version
+ - v7.11 is built with Go ``v1.19.5``.
+ 
+### Open Source Components
+ - 
+
+### Known Issues
+ - Users are unexpectedly forced to enable JSON logging [MM-51453](https://mattermost.atlassian.net/browse/MM-51453).
+ - The new Insights feature has some performance costs that we are working to optimize. This feature can be disabled by setting the ``MM_FEATUREFLAGS_INSIGHTSENABLED`` environment variable to ``false``.
+ - Adding an @mention at the start of a post draft and pressing the left or right arrow key can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
+ - Google login fails on the Classic mobile apps.
+ - Status may sometimes get stuck as **Away** or **Offline** in High Availability mode with IP Hash turned off.
+ - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
+ - The team sidebar on the desktop app does not update when channels have been read on mobile.
+ - Slack import through the CLI fails if email notifications are enabled.
+ - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
+ - Boards export and reimport results in duplicates boards because all IDs are replaced by new ones on the server. See the [GitHub issue](https://github.com/mattermost/focalboard/issues/1924) for more information.
+ - The Playbooks left-hand sidebar doesn't update when a user is added to a run or playbook without a refresh.
+ - If a user isn't a member of a configured broadcast channel, posting a status update might fail without any error feedback. As a temporary workaround, join the configured broadcast channels, or remove those channels from the run configuration.
+ 
+### Contributors
+ - 
 
 ## Release v7.10 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
 
