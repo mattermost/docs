@@ -12,10 +12,15 @@ Anyone can create public channels, private channels, direct messages, and group 
       
     **To create a public or private channel** 
         
-     1. Select the **+** symbol at the top of the channel sidebar, then select **Create New Channel**.
+     1. Select the **Add channels** button in the channel sidebar, then select **Create New Channel**.
+     
+       .. image:: ../images/add-channels-button.png
+           :alt: You can create a channel using the Add channels button
+     
+     You can also select the **+** symbol at the top of the channel sidebar, then select **Create New Channel**.
 
        .. image:: ../images/create-new-channel.png
-           :alt: Create a channel
+           :alt: You can also create a channel using the + symbol button
      
      2. Enter a channel name.
      3. Choose whether this is a public or private channel. See the `channel types </channels/channel-types.html>`__ documentation to learn more about public and private channels.
