@@ -46,6 +46,7 @@ Latest Mattermost Cloud releases:
  - Added a condition for bot tags for webhook posts when a bot account is used for webhooks.
 
 ### Known Issues
+ - Message Actions … ellipsis menu icon only displays rectangle when clicked on [MM-52444](https://mattermost.atlassian.net/browse/MM-52444).
  - The URL of the post in a reminder post for direct and group messages have a double slash on mobile [MM-51026](https://mattermost.atlassian.net/browse/MM-51026).
  - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
 
