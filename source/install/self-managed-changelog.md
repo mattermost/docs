@@ -17,33 +17,63 @@ Latest Mattermost Releases:
 
 ### Important Upgrade Notes
 
- - In the next release, v8.0, the following repositories will be merged into one: ``mattermost-server``, ``mattermost-webapp``, ``focalboard`` and ``mattermost-plugin-playbooks``. Developers should read the updated [Developer Guide](https://developers.mattermost.com/contribute/developer-setup/) for details. **Playbooks and Boards will be core parts of the product that cannot be disabled**.
+ - In v7.11, the following repositories are merged into one: ``mattermost-server``, ``mattermost-webapp``, ``focalboard`` and ``mattermost-plugin-playbooks``. Developers should read the updated [Developer Guide](https://developers.mattermost.com/contribute/developer-setup/) for details. **Playbooks and Boards are no longer core parts of the product and cannot be disabled**.
 
-**IMPORTANT:** If you upgrade from a release earlier than v7.9, please read the other [Important Upgrade Notes](/upgrade/important-upgrade-notes.html).
+**IMPORTANT:** If you upgrade from a release earlier than v7.10, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
 
 ### Improvements
 
 #### User Interface (UI)
- - 
+ - Enabled Work Templates in the Onboarding checklist and the `+` Menu.
+ - Added a **Mattermost Marketplace** option to the bottom of the apps bar. The option is visible when the Marketplace is enabled, and the user has ``SYSCONSOLE_WRITE_PLUGINS`` permissions.
+ - Added an **Add channels** button to the bottom of the left-hand sidebar to make the action more obvious for users who want to create or join channels.
+ - Removed the Webapp Build Hash from **Main Menu > About Mattermost** since it is now identical to Server Build Hash.
+ - Replaced the ``compass-components`` icon component with ``compass-icons``.
+ - Added “hours ahead” timezone details to the user profile popover.
 
 #### Administration
- - 
+ - Self-hosted admins can now choose a separate shipping address.
+ - Added updates to the trial request forms to allow for a more tailored trial experience.
+ - Added a form page to capture company name data and the invite members section to the preparing workspace screen for self-hosted installations.
+ - Adds the ability to expand seats in-product for self-hosted servers.
+ - Added a new section in the **System Console** for products.
+ - The file info stats query is now optimized by denormalizing the ``channelID`` column into the table itself. This will speed up the query to get the file count for a channel when selecting the right-hand pane. Migration times:
+
+   - On a MySQL 8.0.31 DB with 1405 rows in FileInfo and 11M posts, it took around 0.3s
+   - On a PostgreSQL 12.14 DB with 1731 rows in FileInfo and 11M posts, it took around 0.27s
+
+ - Added the ability to search a partial first name, last name, nickname, or username on the **System Console > Users** page.
+ - **Contact Support** now redirects users to Zendesk and pre-fills known information.
+ - Added a mechanism for public routes on products and used it to support publicly shared Board links.
+ - Removed the deprecated ``model.CommandArgs.Session``.
+ - The database section in the **System Console** now has an additional read-only section which shows the active search backend in use. This can be helpful to confirm which search engine is currently active when there are multiple configured.
  
 #### Performance
- - 
+ - Improved the performance of webapp related to timezone calculations.
+ - Improved performance of code used for post list screen reader support.
 
 ### API Changes
- - 
+ - An underscore is now used in the timeline API (``event-id`` -> ``event_id``) for consistency with other API arguments.
 
 ### Bug Fixes
- - 
+ - Fixed a scrolling issue in the purchase modals.
+ - Fixed an issue where the **Delete Category Dialog** message was not visible in Boards.
+ - Fixed an issue where the experimental Shared Channels feature failed to synchronize if a previously removed table column was still present.
+ - Fixed an innocuous panic in Boards Rest API when requesting files and an error other than ``not found`` is encountered.
+ - Fixed an issue where a user would still see threads in the threads view of channels they have left. Migration execution time in MySQL: Query OK, 2766769 rows affected (4 min 47.57 sec). Migration execution time in PostgreSQL: Execution time: 58.11 sec, DELETE 2766690.
+ - Fixed an issue where clicking on a channel link (for a channel the user was not a part of) caused the webapp to refresh, dropping the user from a call.
+ - Fixed an issue with PDF preview rendering for certain Japanese characters.
+ - Fixed an issue where the screen reader did not announce the action of copying the link in the invite modal.
+ - Fixed an issue with post metadata not generating correctly for images due to missing content-type in response. This would result in certain embedded images not to display on mobile clients.
+ - Fixed an issue where edits to messages persisted after canceling.
+ - Added a condition for bot tags for webhook posts when a bot account is used for webhooks.
  
 ### config.json
 Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
 
 #### Changes to Team Edition and Enterprise Edition:
- - Under ``ServiceSettings`` in the ``config.json``:
-   - 
+ - Removed ``EnableInactivityEmail`` config setting.
+ - Added a new config setting section ``ProductSettings``.
  
 ### Go Version
  - v7.11 is built with Go ``v1.19.5``.
@@ -53,7 +83,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ### Known Issues
  - Users are unexpectedly forced to enable JSON logging [MM-51453](https://mattermost.atlassian.net/browse/MM-51453).
- - The new Insights feature has some performance costs that we are working to optimize. This feature can be disabled by setting the ``MM_FEATUREFLAGS_INSIGHTSENABLED`` environment variable to ``false``.
+ - The new Insights feature has some performance costs that we are working to optimize. This feature can be disabled by setting the ``MM_FEATUREFLAGS_INSIGHTSENABLED`` environment variable to ``false``. See the [Insights](https://docs.mattermost.com/welcome/insights.html) documentation for details.
  - Adding an @mention at the start of a post draft and pressing the left or right arrow key can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
  - Google login fails on the Classic mobile apps.
  - Status may sometimes get stuck as **Away** or **Offline** in High Availability mode with IP Hash turned off.
@@ -66,7 +96,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - If a user isn't a member of a configured broadcast channel, posting a status update might fail without any error feedback. As a temporary workaround, join the configured broadcast channels, or remove those channels from the run configuration.
  
 ### Contributors
- - 
+ - [adj2908](https://github.com/adj2908), [agarciamontoro](https://github.com/agarciamontoro), [AGMETEOR](https://github.com/AGMETEOR), [agnivade](https://github.com/agnivade), [amyblais](https://github.com/amyblais), [andersonjeccel](https://translate.mattermost.com/user/andersonjeccel), [andriusbal](https://github.com/andriusbal), [andrleite](https://github.com/andrleite), [AshishDhama](https://github.com/AshishDhama), [avas27JTG](https://github.com/avas27JTG), [ayusht2810](https://github.com/ayusht2810), [bedo2991](https://github.com/bedo2991), [BenCookie95](https://github.com/BenCookie95), [calebroseland](https://github.com/calebroseland), [codyhall](https://github.com/codyhall), [collinewait](https://github.com/collinewait), [coltoneshaw](https://github.com/coltoneshaw), [ConorMacpherson](https://github.com/ConorMacpherson), [cpoile](https://github.com/cpoile), [cricrio](https://github.com/cricrio), [crspeller](https://github.com/crspeller), [ctlaltdieliet](https://github.com/ctlaltdieliet), [cwarnermm](https://github.com/cwarnermm), [d-wierdsma](https://github.com/d-wierdsma), [devinbinnie](https://github.com/devinbinnie), [Dismated](https://github.com/Dismated), [dsa-t](https://github.com/dsa-t), [DSchalla](https://github.com/DSchalla), [Eleferen](https://translate.mattermost.com/user/Eleferen), [emdecr](https://github.com/emdecr), [enahum](https://github.com/enahum), [esarafianou](https://github.com/esarafianou), [exbu](https://github.com/exbu), [fmartingr](https://github.com/fmartingr), [fnogcps](https://github.com/fnogcps), [fr0mdual](https://github.com/fr0mdual), [furqanmlk](https://github.com/furqanmlk), [gabrieljackson](https://github.com/gabrieljackson), [gitstart](https://github.com/gitstart), [gomessguii](https://github.com/gomessguii), [hanzei](https://github.com/hanzei), [harshilsharma63](https://github.com/harshilsharma63), [hmhealey](https://github.com/hmhealey), [ifoukarakis](https://github.com/ifoukarakis), [isacikgoz](https://github.com/isacikgoz), [jasonblais](https://github.com/jasonblais), [jespino](https://github.com/jespino), [johndavidlugtu](https://github.com/johndavidlugtu), [johnsonbrothers](https://github.com/johnsonbrothers), [jprusch](https://github.com/jprusch), [JulienTant](https://github.com/JulienTant), [julmondragon](https://github.com/julmondragon), [justinegeffen](https://github.com/justinegeffen), [kaakaa](https://github.com/kaakaa), [kayazeren](https://github.com/kayazeren), [komoon8934](https://github.com/komoon8934), [koox00](https://github.com/koox00), [korkoshko](https://github.com/korkoshko), [kostaspt](https://github.com/kostaspt), [krisfremen](https://translate.mattermost.com/user/krisfremen), [Kshitij-Katiyar](https://github.com/Kshitij-Katiyar), [larkox](https://github.com/larkox), [laurensramandt](https://github.com/laurensramandt), [LeonardJouve](https://github.com/LeonardJouve), [lieut-data](https://github.com/lieut-data), [lindalumitchell](https://github.com/lindalumitchell), [M-ZubairAhmed](https://github.com/M-ZubairAhmed), [m1lt0n](https://github.com/m1lt0n), [majo](https://translate.mattermost.com/user/majo), [manojmalik20](https://github.com/manojmalik20), [maruTA-bis5](https://github.com/maruTA-bis5), [master7](https://translate.mattermost.com/user/master7), [matt-w99](https://github.com/matt-w99), [matthew-src](https://github.com/matthew-src), [matthew-w](https://translate.mattermost.com/user/matthew-w), [matthewbirtch](https://github.com/matthewbirtch), [maxtrem271991](https://github.com/maxtrem271991), [mgdelacroix](https://github.com/mgdelacroix), [mickmister](https://github.com/mickmister), [milotype](https://translate.mattermost.com/user/milotype), [mirshahriar](https://github.com/mirshahriar), [morgancz](https://github.com/morgancz), [Mshahidtaj](https://github.com/Mshahidtaj), [munish7771](https://github.com/munish7771), [nab-77](https://github.com/nab-77), [neallred](https://github.com/neallred), [nevyangelova](https://github.com/nevyangelova), [nickmisasi](https://github.com/nickmisasi), [Nityanand13](https://github.com/Nityanand13), [oh6hay](https://github.com/oh6hay), [okanisildar](https://github.com/okanisildar), [panklobouk](https://translate.mattermost.com/user/panklobouk), [Partizann](https://github.com/Partizann), [phoinixgrr](https://github.com/phoinixgrr), [pjenicot](https://github.com/pjenicot), [potatogim](https://github.com/potatogim), [pvev](https://github.com/pvev), [qvarnstr0m](https://github.com/qvarnstr0m), [roadt](https://github.com/roadt), [Roy-Orbison](https://github.com/Roy-Orbison), [Rutboy](https://github.com/Rutboy), [saturninoabril](https://github.com/saturninoabril), [sbishel](https://github.com/sbishel), [sinansonmez](https://github.com/sinansonmez), [Sjazz](https://github.com/Sjazz), [spirosoik](https://github.com/spirosoik), [sri-byte](https://github.com/sri-byte), [srkgupta](https://github.com/srkgupta), [stafot](https://github.com/stafot), [stevemudie](https://github.com/stevemudie), [streamer45](https://github.com/streamer45), [stylianosrigas](https://github.com/stylianosrigas), [tanmay-des](https://github.com/tanmay-des), [tanmaydatta](https://github.com/tanmaydatta), [tanmaythole](https://github.com/tanmaythole), [thinkGeist](https://github.com/thinkGeist), [toninis](https://github.com/toninis), [trilopin](https://github.com/trilopin), [unode](https://github.com/unode), [varghesejose2020](https://github.com/varghesejose2020), [vish9812](https://github.com/vish9812), [wiggin77](https://github.com/wiggin77), [Willyfrog](https://github.com/Willyfrog), [wuwinson](https://github.com/wuwinson), [Yananeer](https://github.com/Yananeer), [yasserfaraazkhan](https://github.com/yasserfaraazkhan)
 
 ## Release v7.10 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
 
