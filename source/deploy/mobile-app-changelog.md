@@ -2,12 +2,51 @@
 
 Latest Mattermost Mobile Apps releases:
 
+- [2.4.0 Release](#release)
 - [2.3.0 Release](#release)
 - [2.2.0 Release](#id1)
 - [2.1.0 Release](#id6)
 - [2.0.1 Release](#id12)
 - [2.0.0 Release](#id17)
-- [1.55.1 Release](#id20)
+
+## 2.4.0 Release
+- Release Date: May 16, 2023
+- Server Versions Supported: Server v7.8.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
+
+### Compatibility
+ - **Upgrade to server version v7.8.0 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/upgrade/extended-support-release.html) (ESR) v7.1.0 has ended and upgrading to server ESR v7.8.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
+ - iPhone 5s devices and later with iOS 12.1+ is required.
+
+### Improvements
+ - Added mobile support for message acknowledgements and persistent notifications.
+ - Added the "Add members" screen.
+ - Increased the character limit in the nickname field in the user interface from 22 to 64 characters.
+ - Added localization support for iOS usage description strings in permission dialogs.
+ - Users can now follow or unfollow a thread and undo the action if needed.
+ - Added a channel files screen.
+ - Added support for ``ExperimentalSettings.DelayChannelAutocomplete``.
+ - Calls: Call threads are now auto-followed when joining from mobile.
+ - Calls, Android: Fixed an issue with bluetooth; added audio device selection menu.
+ - Added support for self-hosted Sentry URL parameters in build scripts.
+ - Added a ``files_count`` column to the ``ChannelInfo`` table and database migration.
+
+### Bug Fixes
+ - Fixed an issue where the app did not now show an error when adding servers without a diagnostic ID.
+ - Fixed an issue where users were unable to select several files when attaching files to a message.
+ - Fixed an issue where some channels would appear as if no messages were there.
+ - Fixed an issue with using the camera to capture photos/videos on Android versions 9 and below.
+ - Fixed a crash on iOS when attempting to open a Thread by tapping on the notification.
+ - Fixed an issue where channels would appear as empty.
+ - Fixed an incomplete setup of ``sentry-cli`` node package.
+ - Fixed an issue with out of order websocket event handling for posts.
+
+### Open Source Components
+ - 
+
+### Known Issues
+ - Users are unable to adjust the font size via the OS font size setting.
+ - Some Google Pixel phones on Android 12+ might not continue past the login screen. This is a known issue with the OS, and the current workaround is to restart the device.
 
 ## 2.3.0 Release
 - Release Date: April 14, 2023
