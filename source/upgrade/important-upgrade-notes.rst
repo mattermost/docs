@@ -5,8 +5,7 @@ Important Upgrade Notes
   :start-after: :nosearch:
 
 .. important::
-   - In the next release, v7.11, the following repositories will be merged into one: ``mattermost-server``, ``mattermost-webapp``, ``focalboard`` and ``mattermost-plugin-playbooks``. Developers should read the updated `Developer Guide <https://developers.mattermost.com/contribute/developer-setup/>`_ for details. Playbooks and Boards will be core parts of the product that cannot be disabled.
-   - Support for Mattermost Server v7.1 :doc:`Extended Support Release </upgrade/extended-support-release>` is coming to the end of its life cycle in May 15, 2023. Upgrading to Mattermost Server v7.8 :doc:`Extended Support Release </upgrade/extended-support-release>` or later is recommended.
+   - Support for Mattermost Server v7.1 :doc:`Extended Support Release </upgrade/extended-support-release>` has come to the end of its life cycle in May 15, 2023. Upgrading to Mattermost Server v7.8 :doc:`Extended Support Release </upgrade/extended-support-release>` or later is required.
    - MySQL 8.0.22 contains an `issue with JSON column types <https://bugs.mysql.com/bug.php?id=101284>`__ changing string values to integers which is preventing Mattermost from working properly. Users are advised to avoid this database version.
    - Upgrading the Microsoft Teams Calling plugin to v2.0.0 requires users to reconnect their accounts.
    - When upgrading to 7.x from a 5.x release please make sure to upgrade to 5.37.10 first for the upgrade to complete successfully.
@@ -16,6 +15,10 @@ Important Upgrade Notes
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | If you’re upgrading from a version earlier than... | Then...                                                                                                                                                          |
 +====================================================+==================================================================================================================================================================+
+| v7.11                                              | In v7.11 release, the following repositories are merged into one: ``mattermost-server``, ``mattermost-webapp``, ``focalboard`` and                               |
+|                                                    | ``mattermost-plugin-playbooks``. Developers should read the updated `Developer Guide <https://developers.mattermost.com/contribute/developer-setup/>`_ for       |
+|                                                    | details. Playbooks and Boards are now core parts of the product that cannot be disabled.                                                                         |
++----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v7.9                                               | Added a new index on ``Posts(OriginalId)``. For a database with 11.8 million posts, on a machine with a i7-11800H CPU (8 cores, 16 threads), 32GiB of RAM and    |
 |                                                    | SSD, the index creation takes 98.51s on MYSQL and 2.6s on PostgreSQL.                                                                                            |
 |                                                    |                                                                                                                                                                  |
