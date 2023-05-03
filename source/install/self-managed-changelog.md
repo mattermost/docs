@@ -95,7 +95,9 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 The following deprecations and breaking changes are planned for the Mattermost v8.0 release, which is scheduled for 2023/06/16. This list is subject to change prior to the release.
 
 1. Update module version to v8.0. Clients will have to change their module path to the new structure. Very minimal change. There are no API level breaking changes that would require code changes.
-2. Remove ``ExperimentalSettings.PatchPluginsReactDOM``.
+2. Remove ``ExperimentalSettings.PatchPluginsReactDOM``. If this setting was previously enabled, confirm that:
+    1. All Mattermost-supported plugins are updated to the latest versions.
+    2. Any other plugins have been updated to support React 17. See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) for v7.7 for more information.
 3. Change advanced logging config format. Currently admins have to escape the JSON for advanced logging config in config.json, meaning it must be provided as a single line string.  The breaking change is to allow admins to use multi-line json for ease of composure and reading.  To achieve this the ``model.Config`` struct would have the ``AdvancedLoggingConfig`` fields changed from ``string`` to ``json.RawMessage``.  There are three places this would change: ``LogSettings``,  ``ExperimentalAuditSettings``, and ``NotificationLogSettings``. Existing config.json files with ther escaped string can still be supported;  code would detect the leading quote and treat it as escaped JSON. Unfortunately the field type change will break any code that imports model (plugins, plugin-api, etc).
 4. Remove deprecated ``PermissionUseSlashCommands``.
 5. Remove deprecated ``model.CommandArgs.Session``.
