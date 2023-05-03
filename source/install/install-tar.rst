@@ -37,7 +37,7 @@ You can install the Mattermost Server on any 64-bit Linux system using the tarba
 
 .. important::
 
-    - This is the most flexible installation method, but it comes with the highest effort, normally favored by advanced system adminsitrators. 
+    - This is the most flexible installation method, but it comes with the highest effort, normally favored by advanced system administrators. 
     - If you are running the Mattermost Server and database on a single system, we recommend the `Mattermost Omnibus install method </install/installing-mattermost-omnibus.html>`__ as this greatly reduces setup and ongoing maintenance, and uses the Mattermost PPA for updates. More modern installation methods such as the Mattermost Helm Chart or Kubernetes Operator are available and are highly recommended.
 
 
@@ -150,7 +150,7 @@ Give the ``mattermost`` group write permissions to the application folder:
         
     sudo chmod -R g+w /opt/mattermost
 
-You will now have the latest Mattermost Server version installed on your system. Managaging starting and stopping the Mattermost Server is done using ``systemd``. Create the systemd unit file:
+You will now have the latest Mattermost Server version installed on your system. Starting and stopping the Mattermost Server is done using ``systemd``. Create the systemd unit file:
 
 .. code-block:: none
   :class: mm-code-block 
