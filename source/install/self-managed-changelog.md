@@ -78,9 +78,6 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  
 ### Go Version
  - v7.11 is built with Go ``v1.19.5``.
- 
-### Open Source Components
- - 
 
 ### Known Issues
  - Users are unexpectedly forced to enable JSON logging [MM-51453](https://mattermost.atlassian.net/browse/MM-51453).
