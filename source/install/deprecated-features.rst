@@ -9,7 +9,9 @@ Removed features in upcoming versions
 Mattermost Server v8.0.0
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-- Removing ``ExperimentalSettings.PatchPluginsReactDOM``.
+- Removing ``ExperimentalSettings.PatchPluginsReactDOM``. If this setting was previously enabled, confirm that:
+    1. All Mattermost-supported plugins are updated to the latest versions.
+    2. Any other plugins have been updated to support React 17. See the `Important Upgrade Notes <https://docs.mattermost.com/upgrade/important-upgrade-notes.html>`__ for v7.7 for more information.
 - Removing deprecated ``PermissionUseSlashCommands``.
 - Removing deprecated ``model.CommandArgs.Session``.
 - Removing support for PostgreSQL v10.
