@@ -15,7 +15,7 @@ Mattermost’s mission is to make the world safer and more productive by develop
    :hidden:
 
    /about/product.rst
-   /about/solutions*
+   /about/solutions.rst
    /about/security.rst
    /about/integrations.rst
    /about/editions-and-offerings.rst
