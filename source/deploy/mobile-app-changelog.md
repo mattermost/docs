@@ -3,11 +3,11 @@
 Latest Mattermost Mobile Apps releases:
 
 - [2.4.0 Release](#release)
-- [2.3.0 Release](#release)
-- [2.2.0 Release](#id1)
-- [2.1.0 Release](#id6)
-- [2.0.1 Release](#id12)
-- [2.0.0 Release](#id17)
+- [2.3.0 Release](#id1)
+- [2.2.0 Release](#id7)
+- [2.1.0 Release](#id12)
+- [2.0.1 Release](#id18)
+- [2.0.0 Release](#id23)
 
 ## 2.4.0 Release
 - Release Date: May 16, 2023
@@ -40,9 +40,6 @@ Latest Mattermost Mobile Apps releases:
  - Fixed an issue where channels would appear as empty.
  - Fixed an incomplete setup of ``sentry-cli`` node package.
  - Fixed an issue with out of order websocket event handling for posts.
-
-### Open Source Components
- - 
 
 ### Known Issues
  - Users are unable to adjust the font size via the OS font size setting.
