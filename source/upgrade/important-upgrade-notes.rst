@@ -20,7 +20,7 @@ Important Upgrade Notes
 |                                                    | details. Playbooks and Boards are now core parts of the product that cannot be disabled.                                                                         |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | Fixed an issue caused by a migration in the previous release. Query takes around 11ms on a PG 14 t3.medium RDS instance. Locks on the preferences table will     |
-|                                                    | only be acquired if there are rows to delete. But the time taken is negligible.                                                                                  |
+|                                                    | only be acquired if there are rows to delete, but the time taken is negligible.                                                                                  |
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v7.9                                               | Added a new index on ``Posts(OriginalId)``. For a database with 11.8 million posts, on a machine with a i7-11800H CPU (8 cores, 16 threads), 32GiB of RAM and    |
 |                                                    | SSD, the index creation takes 98.51s on MYSQL and 2.6s on PostgreSQL.                                                                                            |

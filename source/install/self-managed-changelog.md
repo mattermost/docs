@@ -18,7 +18,7 @@ Latest Mattermost Releases:
 ### Important Upgrade Notes
 
  - In v7.11, the following repositories are merged into one: ``mattermost-server``, ``mattermost-webapp``, ``focalboard`` and ``mattermost-plugin-playbooks``. Developers should read the updated [Developer Guide](https://developers.mattermost.com/contribute/developer-setup/) for details. **Playbooks and Boards are no longer core parts of the product and cannot be disabled**.
- - Fixed an issue caused by a migration in the previous release. Query takes around 11ms on a PG 14 t3.medium RDS instance. Locks on the preferences table will only be acquired if there are rows to delete. But the time taken is negligible.
+ - Fixed an issue caused by a migration in the previous release. Query takes around 11ms on a PostgreSQL 14 DB t3.medium RDS instance. Locks on the preferences table will only be acquired if there are rows to delete, but the time taken is negligible.
 
 **IMPORTANT:** If you upgrade from a release earlier than v7.10, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
 
@@ -33,9 +33,9 @@ Latest Mattermost Releases:
  - Added “hours ahead” timezone details to the user profile popover.
 
 #### Administration
- - Self-hosted admins can now choose a separate shipping address.
+ - Self-hosted admins can now define a separate shipping address.
  - Added updates to the trial request forms to allow for a more tailored trial experience.
- - Added a form page to capture company name data and the invite members section to the preparing workspace screen for self-hosted installations.
+ - Added a form page to capture company name data, and added the invite members section to the Preparing Workspace screen for self-hosted installations.
  - Adds the ability to expand seats in-product for self-hosted servers.
  - Added a new section in the **System Console** for products.
  - The file info stats query is now optimized by denormalizing the ``channelID`` column into the table itself. This will speed up the query to get the file count for a channel when selecting the right-hand pane. Migration times:
