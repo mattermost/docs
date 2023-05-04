@@ -2,7 +2,7 @@
 
 .. This page is intentionally not accessible via the LHS navigation pane because it's common content included on other docs pages.
 
-DevOps Collaboration
+DevOps collaboration
 --------------------
 
 In DevOps, teams work together to accelerate software development and deployment processes, reduce costs, and ensure their organization remains competitive in the fast-paced digital marketplace. DevOp practitioners include a variety of disciplines including product managers, designers, developers, operations, quality assurance, security, and project managers. 
