@@ -25,7 +25,7 @@ Latest Mattermost Mobile Apps releases:
  - Added localization support for iOS usage description strings in permission dialogs.
  - Users can now follow or unfollow a thread and undo the action if needed.
  - Added the ability to search for files posted in a channel.
- - Added support for ``ExperimentalSettings.DelayChannelAutocomplete``.
+ - Added support for ``ExperimentalSettings.DelayChannelAutocomplete`` to make the channel autocomplete only appear after typing a couple letters instead of immediately after a tilde.
  - Calls: Redesigned the Calls user interface.
  - Calls: Call threads are now auto-followed when joining from mobile.
  - Calls (Android): Fixed an issue with Bluetooth, and added audio device selection menu.
