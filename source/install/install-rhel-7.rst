@@ -27,10 +27,10 @@ You can also use these instructions to install Mattermost on CentOS 7, Oracle Li
 .. include:: install-rhel-7-server.rst
   :start-after: :nosearch:
 
-.. include:: install-rhel-7-mysql.rst
+.. include:: install-rhel-7-postgresql.rst
   :start-after: :nosearch:
 
-.. include:: install-rhel-7-postgresql.rst
+.. include:: install-rhel-7-mysql.rst
   :start-after: :nosearch:
 
 .. include:: install-rhel-7-mattermost.rst

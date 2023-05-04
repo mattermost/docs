@@ -26,7 +26,7 @@ Install a database
 
 .. tabs::
 
-    .. tab:: Install PostgreSQL
+  .. tab:: Install PostgreSQL
 
     Install and set up a PostgreSQL database for use by the Mattermost server. These instructions assume that the IP address of this server is ``10.10.10.1``.
 
