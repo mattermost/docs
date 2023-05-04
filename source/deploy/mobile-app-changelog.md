@@ -26,6 +26,7 @@ Latest Mattermost Mobile Apps releases:
  - Users can now follow or unfollow a thread and undo the action if needed.
  - Added a channel files screen.
  - Added support for ``ExperimentalSettings.DelayChannelAutocomplete``.
+ - Calls: redesigned the Calls user interface.
  - Calls: Call threads are now auto-followed when joining from mobile.
  - Calls, Android: Fixed an issue with bluetooth; added audio device selection menu.
  - Added support for self-hosted Sentry URL parameters in build scripts.
