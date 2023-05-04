@@ -20,11 +20,11 @@ Latest Mattermost Mobile Apps releases:
 
 ### Improvements
  - Added mobile support for message acknowledgements and persistent notifications.
- - Added the "Add members" screen.
+ - Added the ability to add members to channels.
  - Increased the character limit for the user's nickname from 22 to 64 characters.
  - Added localization support for iOS usage description strings in permission dialogs.
  - Users can now follow or unfollow a thread and undo the action if needed.
- - Added a channel files screen.
+ - Added the ability to search for files posted in a channel.
  - Added support for ``ExperimentalSettings.DelayChannelAutocomplete``.
  - Calls: Redesigned the Calls user interface.
  - Calls: Call threads are now auto-followed when joining from mobile.
