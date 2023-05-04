@@ -24,7 +24,7 @@ Latest Mattermost Cloud releases:
  - The "Channel Type" dropdown within the "Browse Channels" modal can now be focused.
  - Removed in-app help pages that were no longer accessible.
  - Removed system join/leave messages from thread replies and post them instead in the main channel.
- - Added a setting to make the channel autocomplete only appear after typing a couple letters instead of immediately after a tilde.
+ - Added an experimental setting to make the channel autocomplete only appear after typing two charactters instead of immediately after the tilde (~).
 
 #### Administration
  - The Go module has been upgraded to v8.0. All packages are now under the new path ``github.com/mattermost-server/server/v8``.
@@ -40,7 +40,7 @@ Latest Mattermost Cloud releases:
  - Fixed a potential crash when opening the user profile popover.
  - Fixed permalink and thread reply navigation between teams.
  - Fixed an issue with the installation of pre-packaged plugins that are not in the Marketplace.
- - Fixed an issue caused by a migration in a previous release. The query takes around 11ms on a PG 14 t3.medium RDS instance. Locks on the preferences table will only be acquired if there are rows to delete, but the time taken is negligible.
+ - Fixed an issue caused by a migration in a previous release. The query takes around 11ms on a PostgreSQL 14 DB t3.medium RDS instance. Locks on the preferences table will only be acquired if there are rows to delete, but the time taken is negligible.
  - Fixed an issue where modals did not close when clicking below them on certain screen sizes.
  - Fixed a few labels that couldn't be translated.
 
