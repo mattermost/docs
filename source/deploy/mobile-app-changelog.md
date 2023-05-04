@@ -21,14 +21,14 @@ Latest Mattermost Mobile Apps releases:
 ### Improvements
  - Added mobile support for message acknowledgements and persistent notifications.
  - Added the "Add members" screen.
- - Increased the character limit in the nickname field in the user interface from 22 to 64 characters.
+ - Increased the character limit for the user's nickname from 22 to 64 characters.
  - Added localization support for iOS usage description strings in permission dialogs.
  - Users can now follow or unfollow a thread and undo the action if needed.
  - Added a channel files screen.
  - Added support for ``ExperimentalSettings.DelayChannelAutocomplete``.
- - Calls: redesigned the Calls user interface.
+ - Calls: Redesigned the Calls user interface.
  - Calls: Call threads are now auto-followed when joining from mobile.
- - Calls, Android: Fixed an issue with bluetooth; added audio device selection menu.
+ - Calls (Android): Fixed an issue with Bluetooth, and added audio device selection menu.
  - Added support for self-hosted Sentry URL parameters in build scripts.
 
 ### Bug Fixes
