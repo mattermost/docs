@@ -29,7 +29,6 @@ Latest Mattermost Mobile Apps releases:
  - Calls: Call threads are now auto-followed when joining from mobile.
  - Calls, Android: Fixed an issue with bluetooth; added audio device selection menu.
  - Added support for self-hosted Sentry URL parameters in build scripts.
- - Added a ``files_count`` column to the ``ChannelInfo`` table and database migration.
 
 ### Bug Fixes
  - Fixed an issue where the app did not now show an error when adding servers without a diagnostic ID.
@@ -37,7 +36,6 @@ Latest Mattermost Mobile Apps releases:
  - Fixed an issue where some channels would appear as if no messages were there.
  - Fixed an issue with using the camera to capture photos/videos on Android versions 9 and below.
  - Fixed a crash on iOS when attempting to open a Thread by tapping on the notification.
- - Fixed an issue where channels would appear as empty.
  - Fixed an incomplete setup of ``sentry-cli`` node package.
  - Fixed an issue with out of order websocket event handling for posts.
 
