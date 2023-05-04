@@ -756,6 +756,14 @@ Enable simulcast for screen sharing (Experimental)
 | - **true**: Enables simulcast for screen sharing. This can help to improve screen sharing quality.                     | - System Config path: **Plugins > Calls** |
 | - **false**: Disables simulcast for screen sharing.                                                                    | - ``config.json`` setting:                |
 +------------------------------------------------------------------------------------------------------------------------+-------------------------------------------+
+|  **Note**:                                                                                                             |                                           |
+|                                                                                                                        |                                           |
+| This functionality has the following requirements:                                                                     |                                           |
+|                                                                                                                        |                                           |
+| - Calls plugin version >= v0.16.0                                                                                      |                                           |
+|                                                                                                                        |                                           |
+| - ``rtcd`` version >= v0.10.0 (if in use)                                                                              |                                           |
++------------------------------------------------------------------------------------------------------------------------+-------------------------------------------+
 
 .. config:setting:: plugins-callsrtcdserviceurl
   :displayname: RTCD service URL (Plugins - Calls)
