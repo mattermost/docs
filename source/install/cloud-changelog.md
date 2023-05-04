@@ -4,12 +4,50 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 
 Latest Mattermost Cloud releases:
 
+- [Release 2023-05-18](#release-2023-05-18)
 - [Release 2023-05-01](#release-2023-05-01)
 - [Release 2023-04-21](#release-2023-04-21)
 - [Release 2023-03-29](#release-2023-03-29)
 - [Release 2023-03-20](#release-2023-03-20)
 - [Release 2023-01-26](#release-2023-01-26)
-- [Release 2023-01-16](#release-2023-01-16)
+
+## Release 2023-05-18
+
+### Improvements
+
+#### User Interface (UI)
+ - Upgraded the pre-packaged GitHub plugin version to 2.1.5.
+ - Upgraded the pre-packaged Autolink plugin version to 1.4.0.
+ - Added an experimental feature to disable re-fetching of channel and channel members on browser focus.
+ - Bot users are now hidden in the user selector in apps forms.
+ - Removed the fetching of archived channels on page load.
+ - The "Channel Type" dropdown within the "Browse Channels" modal can now be focused.
+ - Removed in-app help pages that were no longer accessible.
+ - Removed system join/leave messages from thread replies and post them instead in the main channel.
+ - Added a setting to make the channel autocomplete only appear after typing a couple letters instead of immediately after a tilde.
+
+#### Administration
+ - The Go module has been upgraded to v8.0. All packages are now under the new path ``github.com/mattermost-server/server/v8``.
+ - Type-generated settings will now be generated (only for future generations) with a URL-safe version of base64 encoding.
+ - Mattermost is now resilient against database replica outages and will dynamically choose a replica if it's alive. Also a config parameter ``ReplicaMonitorIntervalSeconds`` was added and the default value is 5. This controls how frequently unhealthy replicas will be monitored for liveness check.
+ - Removed ``ExperimentalSettings.PatchPluginsReactDOM``.
+ - Added support for attachments when importing/exporting Boards.
+ - Updated Docker Base Image from Debian to Ubuntu 22.04 LTS.
+ - Removed deprecated ``PermissionUseSlashCommands``.
+
+### Bug Fixes
+ - Fixed the sorting value of categories in ``CreateSidebarCategoryForTeamForUser``.
+ - Fixed a potential crash when opening the user profile popover.
+ - Fixed permalink and thread reply navigation between teams.
+ - Fixed an issue with the installation of pre-packaged plugins that are not in the Marketplace.
+ - Fixed an issue caused by a migration in a previous release. The query takes around 11ms on a PG 14 t3.medium RDS instance. Locks on the preferences table will only be acquired if there are rows to delete, but the time taken is negligible.
+ - Fixed an issue where modals did not close when clicking below them on certain screen sizes.
+ - Fixed a few labels that couldn't be translated.
+
+### Known Issues
+ - Message Actions … ellipsis menu icon only displays rectangle when clicked on [MM-52444](https://mattermost.atlassian.net/browse/MM-52444).
+ - The URL of the post in a reminder post for direct and group messages have a double slash on mobile [MM-51026](https://mattermost.atlassian.net/browse/MM-51026).
+ - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
 
 ## Release 2023-05-01
 
