@@ -37,7 +37,7 @@ Latest Mattermost Releases:
  - Added updates to the trial request forms to allow for a more tailored trial experience.
  - First admins will now have an onboarding experience that includes first team creation based on company name and invite members link steps. 
  - Adds the ability to expand seats in-product for self-hosted servers.
- - Added a new section in the **System Console** for products.
+ - Added a new section in the **System Console > Products** for Boards.
  - The file info stats query is now optimized by denormalizing the ``channelID`` column into the table itself. This will speed up the query to get the file count for a channel when selecting the right-hand pane. Migration times:
 
    - On a MySQL 8.0.31 DB with 1405 rows in FileInfo and 11M posts, it took around 0.3s
