@@ -173,20 +173,20 @@ $(document).ready(function () {
 	// Notification Banner
 
 	// Fallback for when a notification CTA expires - ie. webinar happens
-	const dateInFuture = (value) => new Date().getTime() <= new Date(value).getTime();
-    const expiryDate = '2023-04-27T15:00:00-0500';
+	// const dateInFuture = (value) => new Date().getTime() <= new Date(value).getTime();
+    // const expiryDate = '2023-04-27T15:00:00-0500';
     // 2023-04-27 @ 3pm EST
-    const fallback_url = 'https://mattermost.com/solutions/mattermost-for-microsoft-teams/';
-    const fallback_text = 'Learn more about Mattermost for Microsoft Teams »';
+    // const fallback_url = 'https://mattermost.com/solutions/mattermost-for-microsoft-teams/';
+    // const fallback_text = 'Learn more about Mattermost for Microsoft Teams »';
     
-    if (!dateInFuture(expiryDate)) {
-        if ($(".notification-bar").length) {
-            // $('.notification-bar').remove();
-            // $('body').removeClass('with-notification');
-            $('.notification-bar__link').attr('href', fallback_url);
-            $('.notification-bar__link').text(fallback_text);
-        }
-    }
+    // if (!dateInFuture(expiryDate)) {
+    //     if ($(".notification-bar").length) {
+    //         // $('.notification-bar').remove();
+    //         // $('body').removeClass('with-notification');
+    //         $('.notification-bar__link').attr('href', fallback_url);
+    //         $('.notification-bar__link').text(fallback_text);
+    //     }
+    // }
 
 	// NOTE: Change the notification_banner_key to something unique everytime it changes
 	// So it will show up for new announcements
