@@ -19,6 +19,11 @@ Latest Mattermost Releases:
 
  - In v7.11, the following repositories are merged into one: ``mattermost-server``, ``mattermost-webapp``, ``focalboard`` and ``mattermost-plugin-playbooks``. Developers should read the updated [Developer Guide](https://developers.mattermost.com/contribute/developer-setup/) for details. **Playbooks and Boards are now core parts of the product and cannot be disabled**.
  - Fixed an issue caused by a migration in the previous release. Query takes around 11ms on a PostgreSQL 14 DB t3.medium RDS instance. Locks on the preferences table will only be acquired if there are rows to delete, but the time taken is negligible.
+ - Removed the deprecated ``model.CommandArgs.Session``.
+ - The file info stats query is now optimized by denormalizing the ``channelID`` column into the table itself. This will speed up the query to get the file count for a channel when selecting the right-hand pane. Migration times:
+
+   - On a MySQL 8.0.31 DB with 1405 rows in FileInfo and 11M posts, it took around 0.3s
+   - On a PostgreSQL 12.14 DB with 1731 rows in FileInfo and 11M posts, it took around 0.27s
 
 **IMPORTANT:** If you upgrade from a release earlier than v7.10, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
 
@@ -38,15 +43,9 @@ Latest Mattermost Releases:
  - First admins will now have an onboarding experience that includes first team creation based on company name and invite members link steps. 
  - Adds the ability to expand seats in-product for self-hosted servers.
  - Added a new section in the **System Console > Products** for Boards.
- - The file info stats query is now optimized by denormalizing the ``channelID`` column into the table itself. This will speed up the query to get the file count for a channel when selecting the right-hand pane. Migration times:
-
-   - On a MySQL 8.0.31 DB with 1405 rows in FileInfo and 11M posts, it took around 0.3s
-   - On a PostgreSQL 12.14 DB with 1731 rows in FileInfo and 11M posts, it took around 0.27s
-
  - Added the ability to search a partial first name, last name, nickname, or username on the **System Console > Users** page.
  - **Contact Support** now redirects users to Zendesk and pre-fills known information.
  - Added a mechanism for public routes on products and used it to support publicly shared Board links.
- - Removed the deprecated ``model.CommandArgs.Session``.
  - The database section in the **System Console** now has an additional read-only section which shows the active search backend in use. This can be helpful to confirm which search engine is currently active when there are multiple configured.
  - Updated Docker Base Image from Debian to Ubuntu 22.04 LTS.
  
