@@ -10,11 +10,13 @@ Learn how to install, deploy, and scale Mattermost for teams and organizations o
     :maxdepth: 1
     :hidden:
 
+    Deploy Mattermost on Ubuntu </install/install-ubuntu>
     Deploy Mattermost using Omnibus </install/installing-mattermost-omnibus>
-    Install using the tarball </install/install-tar>
+    Install Mattermost using the tarball </install/install-tar>
 
-* `Deploy Mattermost using Omnibus </install/installing-mattermost-omnibus>`__ - An entire Mattermost installation on a single server
-* `Install Mattermost Server using the tarball </install/install-tar>`__ - Support for any Linux distribution
+* `Deploy Mattermost Server on Ubuntu </install/install-ubuntu.html>`__ - Signed packages direct from Mattermost featuring a single command for install and upgrades.
+* `Deploy Mattermost Server using Omnibus </install/installing-mattermost-omnibus.html>`__ - An entire Mattermost installation on a single server.
+* `Install Mattermost Server using the tarball </install/install-tar.html>`__ - Support for any Linux distribution
 
 .. tip::
 
@@ -23,11 +25,6 @@ Learn how to install, deploy, and scale Mattermost for teams and organizations o
   * Encountering issues with your deployment? See the `Deployment Troubleshooting </install/troubleshooting.html#deployment-troubleshooting>`__ or `high scale troubleshooting </deploy/high-scale-troubleshoot.html>`__ documentation for details.
 
 .. tabs::
-
-    .. tab:: Ubuntu/Debian
-
-      .. include:: ../install/common-prod-deploy-omnibus.rst
-        :start-after: :nosearch:
         
     .. tab:: Kubernetes
 
