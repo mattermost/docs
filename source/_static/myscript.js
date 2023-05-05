@@ -254,6 +254,7 @@ $(document).ready(function () {
 		});
 		
 	});
+
 	// Navigation
 	const hamburger = document.getElementById('hamburger');
 	const subMenus = document.querySelectorAll('.site-nav__hassubnav a');
@@ -279,4 +280,5 @@ $(document).ready(function () {
 		document.body.classList.toggle('nav-open');
 		document.getElementById('navigation').classList.toggle('active');
 	});
+
 });
