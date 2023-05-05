@@ -103,6 +103,7 @@ The following deprecations and breaking changes are planned for the Mattermost v
 5. Remove deprecated ``model.CommandArgs.Session``.
 6. Remove support for PostgreSQL v10. The new minimum PostgreSQL version will be v11.
 7. Enable Apps Bar by default.
+8. Pass a ``context.Context`` to Client4 methods.
 
 ## Release v7.9 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
 
