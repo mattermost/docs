@@ -14,7 +14,7 @@ Mattermost Server v8.0.0
     2. Any other plugins have been updated to support React 17. See the `Important Upgrade Notes <https://docs.mattermost.com/upgrade/important-upgrade-notes.html>`__ for v7.7 for more information.
 - Removing deprecated ``PermissionUseSlashCommands``.
 - Removing deprecated ``model.CommandArgs.Session``.
-- Removing support for PostgreSQL v10.
+- Removing support for PostgreSQL v10. The new minimum PostgreSQL version will be v11.
 
 Removed features by Mattermost version
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
