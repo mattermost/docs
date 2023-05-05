@@ -18,7 +18,7 @@ const uswid_controller = {
     ],
 
     Init: () => {
-        console.log('Init - ' + uswid_controller.root_domain);
+        // console.log('Init - ' + uswid_controller.root_domain);
         uswid_controller.enabled = true; 
         uswid_controller.SetMMUSWIDCookie();
     },
