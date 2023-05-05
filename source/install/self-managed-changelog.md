@@ -33,9 +33,9 @@ Latest Mattermost Releases:
  - Added “hours ahead” timezone details to the user profile popover.
 
 #### Administration
- - Self-hosted admins can now define a separate shipping address.
+ - Self-hosted admins can now define a separate shipping address during in-product license purchase.
  - Added updates to the trial request forms to allow for a more tailored trial experience.
- - Added a form page to capture company name data, and added the invite members section to the Preparing Workspace screen for self-hosted installations.
+ - First admins will now have an onboarding experience that includes first team creation based on company name and invite members link steps. 
  - Adds the ability to expand seats in-product for self-hosted servers.
  - Added a new section in the **System Console** for products.
  - The file info stats query is now optimized by denormalizing the ``channelID`` column into the table itself. This will speed up the query to get the file count for a channel when selecting the right-hand pane. Migration times:
