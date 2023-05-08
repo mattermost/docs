@@ -1,4 +1,4 @@
-Solutions
+Use cases
 =========
 
 .. toctree::
