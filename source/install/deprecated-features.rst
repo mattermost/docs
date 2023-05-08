@@ -15,6 +15,7 @@ Mattermost Server v8.0.0
 - Removing deprecated ``PermissionUseSlashCommands``.
 - Removing deprecated ``model.CommandArgs.Session``.
 - Removing support for PostgreSQL v10. The new minimum PostgreSQL version will be v11.
+- Deprecating the ``AdvancedLoggingConfig`` fields.
 
 Removed features by Mattermost version
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
