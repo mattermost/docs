@@ -19,4 +19,4 @@ DevOps teams can experience the following collaboration pains:
 
 There are several different processes that DevOps teams need to effectively collaborate in order to deliver software reliably. Each requires a different set of procedures and tools, but they all share the common goal of shipping high-quality software to meet customer needs and expectations. Mattermost can help solve collaboration pains in many DevOps use cases. 
 
-- Learn how `Agile Software Development <https://academy.mattermost.com/courses/enrolled/2075064>`_ can help Technical teams work together to develop software or applications. Collaboration can include sharing code, working together on a common platform, and identifying and resolving technical issues.
+- Learn how `Agile Software Development <https://academy.mattermost.com/p/devops-in-mattermost>`_ can help Technical teams work together to develop software or applications. Collaboration can include sharing code, working together on a common platform, and identifying and resolving technical issues.
