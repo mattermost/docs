@@ -232,10 +232,12 @@ Recycle database connections
 
 +--------------------------------------------------------+------------------------------------------------------------------+
 | Select the **Recycle Database Connections** button to  | - System Config path: **Environment > Database**                 |
-| reconnect to the configured database.                  | - ``config.json`` setting: N/A                                   |
-| All old connections are closed after 20 seconds.       | - Environment variable: N/A                                      |
+| manually recycle the connection pool by closing the    | - ``config.json`` setting: N/A                                   |
+| current set of open connections to the database        | - Environment variable: N/A                                      |
+| within 20 seconds, and then creating a new set of      |                                                                  |
+| connections.                                           |                                                                  |
 |                                                        |                                                                  |
-| To fail over without downing the server, change the    |                                                                  |
+| To fail over without stopping the server, change the   |                                                                  |
 | database line in the ``config.json`` file, select      |                                                                  |
 | **Reload Configuration from Disk** via **Environment   |                                                                  |
 | > Web Server**, then select **Recycle Database         |                                                                  |
@@ -248,7 +250,7 @@ Recycle database connections
   :configjson: .SqlSettings.DisableDatabaseSearch
   :environment: MM_SQLSETTINGS_DISABLEDATABASESEARCH
 
-  - **true**: Disables the use of the database to perform earches. If another search engine isn't configured, setting this value to ``true`` will result in empty search results.
+  - **true**: Disables the use of the database to perform searches. If another search engine isn't configured, setting this value to ``true`` will result in empty search results.
   - **false**: **(Default)** Database search isn't disabled.
 
 Disable database search
