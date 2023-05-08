@@ -43,6 +43,7 @@ Latest Mattermost Cloud releases:
  - Fixed an issue caused by a migration in a previous release. The query takes around 11ms on a PostgreSQL 14 DB t3.medium RDS instance. Locks on the preferences table will only be acquired if there are rows to delete, but the time taken is negligible.
  - Fixed an issue where modals did not close when clicking below them on certain screen sizes.
  - Fixed an issue with a few translations labels that couldn't be translated.
+ - Fixed an issue where the server log UI for plain text formatting was unexpectedly removed in a previous release.
 
 ### Known Issues
  - Message Actions … ellipsis menu icon only displays rectangle when clicked on [MM-52444](https://mattermost.atlassian.net/browse/MM-52444).
