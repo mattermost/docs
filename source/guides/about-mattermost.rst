@@ -35,7 +35,7 @@ Mattermost contains three key tools:
 This section provides an overview of Mattermost products, features, security, integrations, licensing, subscriptions, authentication, and compliance support.
 
 * :doc:`Product overview </about/product>` - Learn about the Mattermost open source project, self-hosted vs. cloud, and premium Mattermost features.
-* :doc:`Solutions overview </about/solutions>` - Learn about product solutions.
+* :doc:`Use Cases overview </about/solutions>` - Learn about product use cases.
 * :doc:`Security </about/security>` - Mattermost can meet the strictest security requirements and provides the highest level of control over user data.
 * :doc:`Integrations </about/integrations>` - Mattermost is extensible by design and supports a rich ecosystem of third-party apps and integrations.
 * :doc:`Mattermost editions and offerings </about/editions-and-offerings>` - Learn more about Mattermost deployment options.
