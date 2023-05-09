@@ -16,6 +16,7 @@ Anyone can create public channels, private channels, direct messages, and group 
      
        .. image:: ../images/add-channels-button.png
            :alt: You can create a channel using the Add channels button
+           :width: 400
      
      You can also select the **+** symbol at the top of the channel sidebar, then select **Create New Channel**.
 
