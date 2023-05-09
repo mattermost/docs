@@ -190,14 +190,14 @@ Save the file and reload systemd using ``sudo systemctl daemon-reload``. Matterm
 Setup
 ------
 
-Before you start the Mattermost Server, you need to edit the configuration file. A sample configuration file is located at ``/opt/mattermost/config/config.defaults.json``. 
+Before you start the Mattermost Server, you need to edit the configuration file. A default configuration file is located at ``/opt/mattermost/config/config.json``. 
 
-Rename this configuration file with correct permissions:
+We recommend taking a backup of this default config ahead of making changes:
 
 .. code-block:: none
   :class: mm-code-block 
         
-    sudo install -C -m 600 -o mattermost -g mattermost /opt/mattermost/config/config.defaults.json /opt/mattermost/config/config.json
+    sudo cp /opt/mattermost/config/config.json /opt/mattermost/config/config.defaults.json 
 
 Configure the following properties in this file:
 
