@@ -505,10 +505,34 @@ Enable plugin
 | - **false**: Disables the Calls plugin on your Mattermost workspace. | - ``config.json`` setting:                |
 +----------------------------------------------------------------------+-------------------------------------------+
 
+.. config:setting:: plugins-callsrtcserveraddress
+  :displayname: RTC server port (Plugins - Calls)
+  :systemconsole: Plugins > Calls
+  :configjson:
+  :environment:
+  :description: The IP address used by the RTC server to listen on. By default the service listens on all the available interfaces.
+
+RTC server address
+~~~~~~~~~~~~~~~~~~
+
+.. include:: ../_static/badges/selfhosted-only.rst
+  :start-after: :nosearch:
+
++-----------------------------------------------------------------------------------------------------------------------+-------------------------------------------+
+| This setting controls the IP address listened on by the RTC server. All Calls traffic will be served through this IP. | - System Config path: **Plugins > Calls** |
+|                                                                                                                       | - ``config.json`` setting:                |
+| Changing this setting requires a plugin restart to take effect.                                                       |                                           |
+|                                                                                                                       |                                           |
+| If left unset (default value) the service will listen on all the available interfaces.                                |                                           |
++-----------------------------------------------------------------------------------------------------------------------+-------------------------------------------+
+| **Note**: This setting is only applicable when not running calls through the standalone ``rtcd`` service.             |                                           |
++-----------------------------------------------------------------------------------------------------------------------+-------------------------------------------+
+
+
 .. config:setting:: plugins-callsrtcserverport
   :displayname: RTC server port (Plugins - Calls)
   :systemconsole: Plugins > Calls
-  :configjson: 
+  :configjson:
   :environment:
   :description: The UDP port the RTC server will listen on. All calls traffic will be served through this port. Default port is **8443**.
 
@@ -531,7 +555,7 @@ RTC server port
 .. config:setting:: plugins-enableonspecificchannels
   :displayname: Enable on specific channels (Plugins - Calls)
   :systemconsole: Plugins > Calls
-  :configjson: 
+  :configjson:
   :environment: 
   :description: Manage who can enable or disable calls on specific channels (deprecated from Mattermost v7.7)
 
