@@ -664,7 +664,7 @@ ICE servers configurations
 | Default is **[{"urls": ["stun:stun.global.calls.mattermost.com:3478"]}]**                       |                                           |
 +-------------------------------------------------------------------------------------------------+-------------------------------------------+
  
- **Example**
+**Example**
  
  .. code-block:: json
  
@@ -684,6 +684,17 @@ ICE servers configurations
    ]
  
  
+**Example (Using generated TURN credentials)**
+
+.. code-block:: json
+
+   [{
+	   "urls": ["turn:turn.example.com:443"]
+   }]
+
++-----------------------------------------------------------------------------+-------------------------------------------------------+
+| **Note**: To get TURN generated credentials to work you must provide a secret through the *TURN static auth secret* setting below.  |
++-------------------------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: plugins-callsturnauthsecret
   :displayname: TURN static auth secret (Plugins - Calls)
