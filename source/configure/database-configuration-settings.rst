@@ -285,6 +285,19 @@ Applied schema migrations
 
 A list of all migrations that have been applied to the data store based on the version information available in the ``db_migrations`` table. Select **About Mattermost** from the product menu to review the current database schema version applied to your deployment.
 
+
+.. config:setting:: database-activesearchbackend
+  :displayname: Active search backend (Database)
+  :systemconsole: Environment > Database
+  :configjson: N/A
+  :environment: N/A
+  :description: Read-only display of the currently active backend used for search.
+
+Active Search Backend
+~~~~~~~~~~~~~~~~~~~~~
+
+Read-only display of the currently active backend used for search. Values can include ``none``, ``database``, ``elasticsearch``, or ``bleve``.
+
 .. config:setting:: database-readreplicas
   :displayname: Read replicas (Database)
   :systemconsole: N/A
