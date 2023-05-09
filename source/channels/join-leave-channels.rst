@@ -20,6 +20,7 @@ To join a private channel, you need to be added to the channel by a member of th
      
       .. image:: ../images/add-channels-button.png
         :alt: You can browse channels using the Add channels button
+        :width: 400
     
     You can also select the **+** symbol at the top of the channel sidebar, then select **Browse Channels**. 
 
