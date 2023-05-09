@@ -8,7 +8,7 @@ Use the System Console to generate a Mattermost Support Packet that includes con
 
 To generate a Support Packet:
 
-1. Go to System Console, then go to the menu (from the menu icon at upper left), and select **Commercial Support**.
+1. Go to System Console and select **Commercial Support** from the System Console menu. 
 2. Select **Download Support Packet**. A zip file is downloaded to the local machine.
 
 A Mattermost Support Packet can contain up to five files:
