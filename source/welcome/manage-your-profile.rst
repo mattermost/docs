@@ -42,8 +42,10 @@ See the following table to learn how to configure your name, username, nickname,
 |                     |   username changes through the login provider.                                                  |
 +---------------------+-------------------------------------------------------------------------------------------------+
 | Nickname            | (Optional) Nicknames appear in the direct messages member list and team management modal.       |
-|                     | You won't receive mention notifications when someone types your nickname unless you add         |
-|                     | it to the **Words That Trigger Mentions** notifications list as a `Notifications                |
+|                     | Your nickname can be up to 64 characters long.                                                  |
+|                     |                                                                                                 |
+|                     | **Note**: You won't receive mention notifications when someone types your nickname unless you   |
+|                     | add it to the **Words That Trigger Mentions** notifications list as a `Notifications            |
 |                     | </channels/channels-settings.html#notifications>`__ preference.                                 |
 +---------------------+-------------------------------------------------------------------------------------------------+
 | Position            | (Optional) Position can be used to describe your role or job title.                             |

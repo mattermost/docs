@@ -16,17 +16,20 @@ Send messages
 .. |smile-icon| image:: ../images/smile-icon.png
   :alt: Use the Smile icon to add emojis to your message.
 
-Compose a message by typing into the text box at the bottom of Mattermost. Send your message by selecting the **Send** |send-icon| icon.
+Compose a message by typing into the text box at the bottom of the Mattermost screen, then select the **Send** |send-icon| icon.
 
 .. tabs::
 
   .. tab:: Desktop
 
-    Press :kbd:`Enter` on Windows or Linux, or :kbd:`↵` on Mac, to send the message. To create a new line without sending the message, press :kbd:`Shift` :kbd:`Enter` on Windows or Linux, or press :kbd:`⇧` :kbd:`↵` on Mac. 
+    You can also use a keyboard to send messages:
+    
+    - Press :kbd:`Enter` on Windows or Linux, or :kbd:`↵` on Mac. 
+    - To create new text lines, press :kbd:`Shift` :kbd:`Enter` on Windows or Linux, or press :kbd:`⇧` :kbd:`↵` on Mac. 
 
     .. tip::
 
-      If you prefer to press :kbd:`Enter` on Windows or Linux, or :kbd:`↵` on Mac to insert new lines, and press :kbd:`Ctrl` :kbd:`Enter` on Windows or Linux, or :kbd:`⌘` :kbd:`↵` on Mac to send messages instead, select the **gear** |gear-icon| icon to go to **Settings**, then select **Advanced > Send messages on CTRL+ENTER**.
+      If you find you're accidentally sending messages too soon, you can configure Mattermost to require :kbd:`Shift` :kbd:`Enter` on Windows or Linux, or press :kbd:`⇧` :kbd:`↵` on Mac to send all messages. Select the **gear** |gear-icon| icon to go to **Settings**, then select **Advanced > Send messages on CTRL+ENTER**.
 
   .. tab:: Mobile
 
@@ -34,9 +37,9 @@ Compose a message by typing into the text box at the bottom of Mattermost. Send 
 
 .. tip::
   
-  - When you send messages in a channel, depending on the `channel actions configured </channels/create-channels.html>`__, specific words in the post can trigger a prompt to run a playbook. Access **Channel Actions** from the channel name drop-down menu in the center pane to see what automatic actions have been configured.
-  - Using a RTL plugin, Mattermost can automatically detect and display messages written using right-to-left scripts, such as Arabic, Hebrew, or Persian. Your System Admin must install the `RTL Plugin <https://github.com/QueraTeam/mattermost-rtl>`__ to enable this functionality.
-  - `Mattermost Professional or Enterprise <https://mattermost.com/pricing>`__ customers can `edit or delete messages <#edit-or-delete-messages>`__ after sending them if the System Admin hasn't restricted the ability to do so using `advanced permissions </onboard/advanced-permissions.html>`__.
+  - When you send messages in a channel, depending on the `channel actions configured </channels/create-channels.html>`__, specific words in the post can trigger a prompt to run a playbook. Access **Channel Actions** from the channel name drop-down menu in the center pane to see what automatic actions have been configured for the current channel.
+  - Using a RTL plugin, Mattermost can automatically detect and display messages written using right-to-left scripts, such as Arabic, Hebrew, or Persian. Your system admin must install the `RTL Plugin <https://github.com/QueraTeam/mattermost-rtl>`__ to enable this functionality.
+  - `Mattermost Professional or Enterprise <https://mattermost.com/pricing>`__ customers can `edit or delete messages <#edit-or-delete-messages>`__ after sending them if the system admin hasn't restricted the ability to do so using `advanced permissions </onboard/advanced-permissions.html>`__.
   
 Draft messages
 --------------
