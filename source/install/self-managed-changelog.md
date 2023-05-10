@@ -30,7 +30,6 @@ Latest Mattermost Releases:
 ### Improvements
 
 #### User Interface (UI)
- - Enabled Work Templates in the Onboarding checklist and the `+` Menu.
  - Added a **Mattermost Marketplace** option to the bottom of the apps bar. The option is visible when the Marketplace is enabled, and the user has ``SYSCONSOLE_WRITE_PLUGINS`` permissions.
  - Added an **Add channels** button to the bottom of the left-hand sidebar to make the action more obvious for users who want to create or join channels.
  - Removed the Webapp Build Hash from **Main Menu > About Mattermost** since it is now identical to Server Build Hash.
