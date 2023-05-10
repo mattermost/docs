@@ -9,9 +9,12 @@ Elasticsearch
 Elasticsearch provides enterprise-scale deployments with optimized search performance and prevents performance degradation and timeouts. The implementation uses `Elasticsearch <https://www.elastic.co/guide/en/elasticsearch/reference/7.17/setup.html>`__ as a distributed, RESTful search engine supporting highly efficient database searches in a `cluster environment </scale/high-availability-cluster.html>`__. 
 
 .. important::
-  The default Mattermost database search starts to show performance degradation at around 2.5 million posts, depending on the specifications for the database server. If you expect your Mattermost server to have more than 2.5 million posts, we recommend using Elasticsearch for optimum search performance. For deployments with over five million posts, Elasticsearch is required to avoid significant performance issues (such as timeouts) with search and at-mentions.
+  
+  - The default Mattermost database search starts to show performance degradation at around 2.5 million posts, depending on the specifications for the database server. If you expect your Mattermost server to have more than 2.5 million posts, we recommend using Elasticsearch for optimum search performance. For deployments with over five million posts, Elasticsearch is required to avoid significant performance issues (such as timeouts) with search and at-mentions.
 
-  From Mattermost v6.0, Elasticsearch v7.x is supported. Previous versions of Mattermost, including v5.38 and earlier releases, support Elasticsearch v5.x, v6.x, and v7.x. 
+  - From Mattermost v6.0, Elasticsearch v7.x is supported. Previous versions of Mattermost, including v5.38 and earlier releases, support Elasticsearch v5.x, v6.x, and v7.x. 
+
+  - We strongly recommend that you install Elasticsearch on a different machine than Mattermost Server. 
     
 Deployment guide
 ----------------
@@ -76,15 +79,7 @@ The set up process for the Elasticsearch server is documented in the `official E
 
   You should see the following ports, including  the ones listening on ports 9200 and 9300. Confirm these are listening on your server's IP address. 
 
-9. Create an Elasticsearch directory within the ``/data`` mount and give it the proper permissions by running the following commands:
-
-  .. code-block:: none
-
-    cd /data
-    mkdir -p ./elasticsearch/{data,logs}
-    sudo chown -R root:elasticsearch ./elasticsearch
-    sudo chmod -R g+w ./elasticsearch
-    vi /etc/elasticsearch/elasticsearch.yml
+9. Create an Elasticsearch directory and give it the proper permissions.
 
 10. Install the `icu-analyzer plugin <https://www.elastic.co/guide/en/elasticsearch/plugins/current/analysis-icu.html>`__ to the ``/usr/share/elasticsearch/plugins`` directory by running the following command:
 
@@ -153,6 +148,11 @@ Do I need to use Elasticsearch?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The Elasticsearch engine is designed for large Enterprise deployments to run highly efficient database searches in a cluster environment. The default Mattermost database search starts to show performance degradation at around 2.5 million posts, depending on the specifications for the database server. If you expect your Mattermost server to have more than 2.5 million posts, we recommend using Elasticsearch for optimum search performance.
+
+Should I install Elasticsearch on the same machine as Mattermost Server?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+No. We strongly recommend that you install Elasticsearch on a different machine than the Mattermost Server.
 
 What types of indexes are created?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
