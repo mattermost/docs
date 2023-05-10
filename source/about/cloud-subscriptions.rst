@@ -12,13 +12,12 @@ Buy a Cloud subscription
 
 .. note::
 
-  Your credit card will be verified and you'll be charged immediately.
+  - Your credit card will be verified and you'll be charged immediately.
+  - A minimum of ten users is required.
 
 4. Click **Upgrade** to confirm.
 
 To upgrade to Mattermost Enterprise, `contact sales <https://mattermost.com/contact-sales/>`__.
-
-
 
 View subscription information
 -----------------------------
