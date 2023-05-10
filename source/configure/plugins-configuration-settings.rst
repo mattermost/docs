@@ -500,10 +500,11 @@ Access the following configuration settings in the System Console by going to **
 Enable plugin
 ~~~~~~~~~~~~~
 
-+----------------------------------------------------------------------+-------------------------------------------+
-| - **true**: Enables the Calls plugin on your Mattermost workspace.   | - System Config path: **Plugins > Calls** |
-| - **false**: Disables the Calls plugin on your Mattermost workspace. | - ``config.json`` setting:                |
-+----------------------------------------------------------------------+-------------------------------------------+
++----------------------------------------------------------------------+----------------------------------------------------------------------------------------+
+| - **true**: Enables the Calls plugin on your Mattermost workspace.   | - System Config path: **Plugins > Calls**                                              |
+| - **false**: Disables the Calls plugin on your Mattermost workspace. | - ``config.json`` setting: ``PluginSettings.PluginStates.com.mattermost.calls.Enable`` |
+|                                                                      | - Environment variable: ``MM_PLUGINSETTINGS_PLUGINSTATES_COM_MATTERMOST_CALLS``        |
++----------------------------------------------------------------------+----------------------------------------------------------------------------------------+
 
 .. config:setting:: plugins-callsrtcserveraddress
   :displayname: RTC server port (Plugins - Calls)
@@ -518,16 +519,15 @@ RTC server address
 .. include:: ../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
-+-----------------------------------------------------------------------------------------------------------------------+-------------------------------------------+
-| This setting controls the IP address listened on by the RTC server. All Calls traffic will be served through this IP. | - System Config path: **Plugins > Calls** |
-|                                                                                                                       | - ``config.json`` setting:                |
-| Changing this setting requires a plugin restart to take effect.                                                       |                                           |
-|                                                                                                                       |                                           |
-| If left unset (default value) the service will listen on all the available interfaces.                                |                                           |
-+-----------------------------------------------------------------------------------------------------------------------+-------------------------------------------+
-| **Note**: This setting is only applicable when not running calls through the standalone ``rtcd`` service.             |                                           |
-+-----------------------------------------------------------------------------------------------------------------------+-------------------------------------------+
-
++-----------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+
+| This setting controls the IP address the RTC server listens to. All Calls traffic will be served through this IP.     | - System Config path: **Plugins > Calls**                                                                 |
+|                                                                                                                       | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.calls.udpserveraddress``               |
+| Changing this setting requires a plugin restart to take effect.                                                       | - Environment variable: N/A                                                                               |
+|                                                                                                                       |                                                                                                           |
+| If left unset (default value) the service will listen on all the available interfaces.                                |                                                                                                           |
++-----------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+
+| **Note**: This setting is only applicable when not running calls through the standalone ``rtcd`` service.             |                                                                                                           |
++-----------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: plugins-callsrtcserverport
   :displayname: RTC server port (Plugins - Calls)
@@ -542,15 +542,16 @@ RTC server port
 .. include:: ../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
-+-----------------------------------------------------------------------------------------------------------------------+-------------------------------------------+
-| This setting controls the UDP port listened on by the RTC server. All Calls traffic will be served through this port. | - System Config path: **Plugins > Calls** |
-|                                                                                                                       | - ``config.json`` setting:                |
-| Changing this setting requires a plugin restart to take effect.                                                       |                                           |
-|                                                                                                                       |                                           |
-| Default is **8443**.                                                                                                  |                                           |
-+-----------------------------------------------------------------------------------------------------------------------+-------------------------------------------+
-| **Note**: This setting is only applicable when not running calls through the standalone ``rtcd`` service.             |                                           |
-+-----------------------------------------------------------------------------------------------------------------------+-------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+| This setting controls the UDP port listened on by the RTC server. All Calls traffic will be served through this port. | - System Config path: **Plugins > Calls**                                                              |
+|                                                                                                                       | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.calls.udpserverport``               |
+|                                                                                                                       | - Environment variable: N/A                                                                            |
+| Changing this setting requires a plugin restart to take effect.                                                       |                                                                                                        |
+|                                                                                                                       |                                                                                                        |
+| Default is **8443**.                                                                                                  |                                                                                                        |
++-----------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+| **Note**: This setting is only applicable when not running calls through the standalone ``rtcd`` service.             |                                                                                                        |
++-----------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: plugins-enableonspecificchannels
   :displayname: Enable on specific channels (Plugins - Calls)
@@ -567,11 +568,12 @@ Enable on specific channels
 .. include:: ../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
-+----------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------+
-| - **true**: Channel admins can enable or disable calls on specific channels. Participants in DMs/GMs can also enable or disable calls. | - System Config path: **Plugins > Calls** |
-| - **false**: Only System Admins can enable or disable calls on specific channels.                                                      | - ``config.json`` setting:                |
-|                                                                                                                                        |                                           |
-+----------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+| - **true**: Channel admins can enable or disable calls on specific channels. Participants in DMs/GMs can also enable or disable calls. | - System Config path: **Plugins > Calls**                                                                  |
+| - **false**: Only System Admins can enable or disable calls on specific channels.                                                      | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.calls.allowenablecalls``                |
+|                                                                                                                                        | - Environment variable: N/A                                                                                |
+|                                                                                                                                        |                                                                                                            |
++----------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: plugins-testmode
   :displayname: Test mode (Plugins - Calls)
@@ -590,7 +592,8 @@ Test mode
 
 +--------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
 | - **true**: Only System Admins can start calls in channels.                                                                                | - System Config path: **Plugins > Calls**                                                                                                          |
-| - **false**: All team members can start calls in channels.                                                                                 | - ``config.json`` setting:                                                                                                                         |
+| - **false**: All team members can start calls in channels.                                                                                 | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.calls.defaultenabled``                                                          |
+|                                                                                                                                            | - Environment variable: N/A                                                                                                                        |
 |                                                                                                                                            |                                                                                                                                                    |
 +--------------------------------------------------------------+-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
 | **Note**: Use this setting to confirm calls work as expected. When **true**, users attempting to start calls are prompted to contact System Admins. System Admins are prompted to confirm that calls are working as expected before switching to live mode.                                     |
@@ -609,14 +612,14 @@ Max call participants
 .. include:: ../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
-+-----------------------------------------------------------------------------+-------------------------------------------+
-| This setting limits the number of participants that can join a single call. | - System Config path: **Plugins > Calls** |
-|                                                                             | - ``config.json`` setting:                |
-|                                                                             |                                           |
-| Default is **0** (no limit).                                                |                                           |
-+-----------------------------------------------------------------------------+-------------------------------------------+
-| **Note**: This setting is optional, but the recommended maximum number of participants is **200**.                      |
-+-------------------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+
+| This setting limits the number of participants that can join a single call. | - System Config path: **Plugins > Calls**                                                                     |
+|                                                                             | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.calls.maxcallparticipants``                |
+|                                                                             | - Environment variable: N/A                                                                                   |
+| Default is **0** (no limit).                                                |                                                                                                               |
++-----------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+
+| **Note**: This setting is optional, but the recommended maximum number of participants is **200**.                                                                                          |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: plugins-callsicehost
   :displayname: ICE host override (Plugins - Calls)
@@ -633,7 +636,7 @@ ICE host override
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This setting overrides the host advertised to clients when connecting to calls.                                                                                          | - System Config path: **Plugins > Calls**                                                                                                                                                                                                                                                      |
-|                                                                                                                                                                          | - ``config.json`` setting:                                                                                                                                                                                                                                                                     |
+|                                                                                                                                                                          | - ``config.json`` setting:  ``PluginSettings.Plugins.com.mattermost.calls.icehostoverride``                                                                                                                                                                                                    |
 | This is an optional field. Changing this setting requires a plugin restart to take effect.                                                                               |                                                                                                                                                                                                                                                                                                |
 |                                                                                                                                                                          |                                                                                                                                                                                                                                                                                                |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -656,13 +659,14 @@ ICE servers configurations
 .. include:: ../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
-+-------------------------------------------------------------------------------------------------+-------------------------------------------+
-| This setting stores a list of ICE servers (STUN/TURN) in JSON format to be used by the service. | - System Config path: **Plugins > Calls** |
-|                                                                                                 | - ``config.json`` setting:                |
-| This is an optional field. Changing this setting may require a plugin restart to take effect.   |                                           |
-|                                                                                                 |                                           |
-| Default is **[{"urls": ["stun:stun.global.calls.mattermost.com:3478"]}]**                       |                                           |
-+-------------------------------------------------------------------------------------------------+-------------------------------------------+
++-------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+
+| This setting stores a list of ICE servers (STUN/TURN) in JSON format to be used by the service. | - System Config path: **Plugins > Calls**                                                                   |
+|                                                                                                 | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.calls.iceserversconfigs``                |
+|                                                                                                 | - Environment variable: N/A                                                                                 |
+| This is an optional field. Changing this setting may require a plugin restart to take effect.   |                                                                                                             |
+|                                                                                                 |                                                                                                             |
+| Default is **[{"urls": ["stun:stun.global.calls.mattermost.com:3478"]}]**                       |                                                                                                             |
++-------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+
  
 **Example**
  
@@ -709,11 +713,12 @@ TURN static auth secret
 .. include:: ../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
-+----------------------------------------------------------------------------+-------------------------------------------+
-| A static secret used to generate short-lived credentials for TURN servers. | - System Config path: **Plugins > Calls** |
-|                                                                            | - ``config.json`` setting:                |
-| This is an optional field.                                                 |                                           |
-+----------------------------------------------------------------------------+-------------------------------------------+
++----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+
+| A static secret used to generate short-lived credentials for TURN servers. | - System Config path: **Plugins > Calls**                                                                      |
+|                                                                            | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.calls.turnstaticauthsecret``                |
+|                                                                            | - Environment variable: N/A                                                                                    |
+| This is an optional field.                                                 |                                                                                                                |
++----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: plugins-callsturncredentialsexpiration
   :displayname: TURN credentials expiration (Plugins - Calls)
@@ -728,10 +733,12 @@ TURN credentials expiration
 .. include:: ../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
-+----------------------------------------------------------------------------------------+-------------------------------------------+
-| The expiration, in minutes, of the short-lived credentials generated for TURN servers. | - System Config path: **Plugins > Calls** |
-|                                                                                        | - ``config.json`` setting:                |
-+----------------------------------------------------------------------------------------+-------------------------------------------+
++----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+| The expiration, in minutes, of the short-lived credentials generated for TURN servers. | - System Config path: **Plugins > Calls**                                                                                  |
+|                                                                                        | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.calls.turncredentialsexpirationminutes``                |
+|                                                                                        | - Environment variable: N/A                                                                                                |
+| Default is **1440** (one day).                                                         |                                                                                                                            |
++----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: plugins-callsserversideturn
   :displayname: Server side TURN (Plugins - Calls)
@@ -748,12 +755,12 @@ Server side TURN
 .. include:: ../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
-+------------------------------------------------------------------------------------------------------+-------------------------------------------+
-| - **true**: The RTC server will use the configured TURN candidates for server-initiated connections. | - System Config path: **Plugins > Calls** |
-| - **false**: TURN will be used only on the client-side.                                              | - ``config.json`` setting:                |
-|                                                                                                      |                                           |
-| Changing this setting requires a plugin restart to take effect.                                      |                                           |
-+------------------------------------------------------------------------------------------------------+-------------------------------------------+
++------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+
+| - **true**: The RTC server will use the configured TURN candidates for server-initiated connections. | - System Config path: **Plugins > Calls**                                                                |
+| - **false**: TURN will be used only on the client-side.                                              | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.calls.serversideturn``                |
+|                                                                                                      | - Environment variable: N/A                                                                              |
+| Changing this setting requires a plugin restart to take effect.                                      |                                                                                                          |
++------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: plugins-callsallowscreensharing
   :displayname: Allow screen sharing (Plugins - Calls)
@@ -770,12 +777,12 @@ Allow screen sharing
 .. include:: ../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
-+------------------------------------------------------------------------+-------------------------------------------+
-| - **true**: Call participants will be allowed to share their screen.   | - System Config path: **Plugins > Calls** |
-| - **false**: Call participants won't be allowed to share their screen. | - ``config.json`` setting:                |
-|                                                                        |                                           |
-| Changing this setting requires a plugin restart to take effect.        |                                           |
-+------------------------------------------------------------------------+-------------------------------------------+
++------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+
+| - **true**: Call participants will be allowed to share their screen.   | - System Config path: **Plugins > Calls**                                                                    |
+| - **false**: Call participants won't be allowed to share their screen. | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.calls.allowscreensharing``                |
+|                                                                        | - Environment variable: N/A                                                                                  |
+| Changing this setting requires a plugin restart to take effect.        |                                                                                                              |
++------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: plugins-callsrtcdserviceurl
   :displayname: RTCD service URL (Plugins - Calls)
@@ -790,13 +797,14 @@ RTCD service URL
 .. include:: ../_static/badges/ent-selfhosted-only.rst
   :start-after: :nosearch:
 
-+---------------------------------------------------------------------------------------------------------------+-------------------------------------------+
-| The URL to a running `rtcd <https://github.com/mattermost/rtcd>`__ service instance that will host the calls. | - System Config path: **Plugins > Calls** |
-|                                                                                                               | - ``config.json`` setting:                |
-| When set (non empty) all the calls will be handled by this external service.                                  |                                           |
-|                                                                                                               |                                           |
-| This is an optional field. Changing this setting requires a plugin restart to take effect.                    |                                           |
-+---------------------------------------------------------------------------------------------------------------+-------------------------------------------+
++---------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+
+| The URL to a running `rtcd <https://github.com/mattermost/rtcd>`__ service instance that will host the calls. | - System Config path: **Plugins > Calls**                                                               |
+|                                                                                                               | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.calls.rtcdserviceurl``               |
+|                                                                                                               | - Environment variable: N/A                                                                             |
+| When set (non empty) all the calls will be handled by this external service.                                  |                                                                                                         |
+|                                                                                                               |                                                                                                         |
+| This is an optional field. Changing this setting requires a plugin restart to take effect.                    |                                                                                                         |
++---------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: plugins-enablecallrecordings
   :displayname: Enable call recordings (Plugins - Calls)
@@ -811,14 +819,14 @@ Enable call recordings (beta)
 .. include:: ../_static/badges/ent-selfhosted-only.rst
   :start-after: :nosearch:
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------+
-| - **true**: Allows call hosts to record meeting video and audio.                                                                                      | - System Config path: **Plugins > Calls** |
-| - **false**: **(Default)** Call recording functionality is not available to hosts.                                                                    | - ``config.json`` setting:                |
-|                                                                                                                                                       |                                           |
-| Recordings include the entire call window view along with participants' audio track and any shared screen video. Recordings are stored in Mattermost. |                                           |
-|                                                                                                                                                       |                                           |
-| Changing this setting requires a plugin restart to take effect.                                                                                       |                                           |
-+-------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+| - **true**: Allows call hosts to record meeting video and audio.                                                                                      | - System Config path: **Plugins > Calls**                                                                  |
+| - **false**: **(Default)** Call recording functionality is not available to hosts.                                                                    | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.calls.enablerecordings``                |
+|                                                                                                                                                       |                                                                                                            |
+| Recordings include the entire call window view along with participants' audio track and any shared screen video. Recordings are stored in Mattermost. |                                                                                                            |
+|                                                                                                                                                       |                                                                                                            |
+| Changing this setting requires a plugin restart to take effect.                                                                                       |                                                                                                            |
++-------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: plugins-jobserviceurl
   :displayname: Job service URL (Plugins - Calls)
@@ -833,11 +841,11 @@ Job service URL
 .. include:: ../_static/badges/ent-selfhosted-only.rst
   :start-after: :nosearch:
 
-+------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------+
-| The URL to a running job service where all the processing related to recordings happens. The recorded files produced are stored in Mattermost. | - System Config path: **Plugins > Calls** |
-|                                                                                                                                                | - ``config.json`` setting:                |
-| This is a required field. Changing this setting requires a plugin restart to take effect.                                                      |                                           |
-+------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+
+| The URL to a running job service where all the processing related to recordings happens. The recorded files produced are stored in Mattermost. | - System Config path: **Plugins > Calls**                                                               |
+|                                                                                                                                                | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.calls.jobserviceurl``                |
+| This is a required field. Changing this setting requires a plugin restart to take effect.                                                      |                                                                                                         |
++------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: plugins-maximumcallrecordingduration
   :displayname: Maximum call recording duration (Plugins - Calls)
@@ -852,11 +860,12 @@ Maximum call recording duration
 .. include:: ../_static/badges/ent-selfhosted-only.rst
   :start-after: :nosearch:
 
-+-----------------------------------------------------------------------------------------------------------------------------+-------------------------------------------+
-| The maximum duration of a call recording in minutes.                                                                        | - System Config path: **Plugins > Calls** |
-|                                                                                                                             | - ``config.json`` setting:                |
-| The default is **60**. The maximum is **180**. This is a required value.                                                    |                                           |
-+-----------------------------------------------------------------------------------------------------------------------------+-------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+
+| The maximum duration of a call recording in minutes.                                                                        | - System Config path: **Plugins > Calls**                                                                      |
+|                                                                                                                             | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.calls.maxrecordingduration``                |
+|                                                                                                                             | - Environment variable: N/A                                                                                    |
+| The default is **60**. The maximum is **180**. This is a required value.                                                    |                                                                                                                |
++-----------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: plugins-recordingquality
   :displayname: Call recording quality (Plugins - Calls)
@@ -871,16 +880,13 @@ Call recording quality
 .. include:: ../_static/badges/ent-selfhosted-only.rst
   :start-after: :nosearch:
 
-+-----------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
-| The audio and video quality of call recordings. Available options are: *Low*, *Medium* and *High*.                          | - System Config path: **Plugins > Calls**                                                      |
-|                                                                                                                             | - ``config.json`` setting:                                                                     |
-| The default is **Medium**. This is a required value.                                                                        |                                                                                                |
-+-----------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
-| **Note**:                                                                                                                                                                                                                    |
-|                                                                                                                                                                                                                              |
-| - The quality setting will affect the performance of the recording service and the file size of recordings. Refer to the `deployment section <configure/calls-deployment.html#configure-recording>`__ for more information.  |
-|                                                                                                                                                                                                                              |
-+-----------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| The audio and video quality of call recordings. Available options are: *Low*, *Medium* and *High*.                          | - System Config path: **Plugins > Calls**                                                                                                                      |
+|                                                                                                                             | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.calls.recordingquality``                                                                    |
+| The default is **Medium**. This is a required value.                                                                        |                                                                                                                                                                |
++-----------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Note**: The quality setting will affect the performance of the recording service and the file size of recordings. Refer to the `deployment section <configure/calls-deployment.html#configure-recording>`__ for more information.                                                          |
++-----------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. |note| replace:: .
 
