@@ -104,7 +104,7 @@ The following deprecations and breaking changes are planned for the Mattermost v
 6. Remove support for PostgreSQL v10. The new minimum PostgreSQL version will be v11.
 7. Enable Apps Bar by default.
 8. Pass a ``context.Context`` to Client4 methods.
-9. Introduce ``public/`` API as discretely versioned submodule.
+9. The Mattermost public API for Go is now available as a distinctly versioned package. Instead of pinning a particular commit hash, use idiomatic Go to add this package as a dependency: go get github.com/mattermost/mattermost-server/server/public. This relocated Go API maintains backwards compatibility with Mattermost v7. Furthermore, the existing Go API previously at github.com/mattermost/mattermost-server/v6/model remains forward compatible with Mattermost v8, but may not contain newer features. Plugins do not need to be recompiled, but developers may opt in to using the new package to simplify their build process. The new public package is shipping alongside Mattermost v8 as version 0.5.0 to allow for some additional code refactoring before releasing as v1 later this year.
 
 ## Release v7.9 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
 
