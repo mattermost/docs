@@ -646,7 +646,7 @@ This setting synchronizes draft messages across all supported Mattermost clients
 +------------------------------------------------------------------------------------------------------------------------------+
 
 Patch React DOM used by plugins
-~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This setting enables the patching of the React DOM library when loading web app plugins so that the plugin uses the version matching the web app. This should only be needed temporarily after upgrading to Mattermost v7.7 for plugins that have not been updated yet. Changes to this setting require a server restart before taking effect.
 

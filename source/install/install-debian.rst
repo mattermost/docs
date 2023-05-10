@@ -15,7 +15,6 @@ Install a production-ready Mattermost system on up to three machines.
   :depth: 2
 
 .. include:: install-tar.rst
-  :start-after: :nosearch:
 
 Install a database
 ------------------
