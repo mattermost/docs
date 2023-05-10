@@ -491,8 +491,8 @@ Access the following configuration settings in the System Console by going to **
 .. config:setting:: plugins-callsenable
   :displayname: Enable plugin (Plugins - Calls)
   :systemconsole: Plugins > Calls
-  :configjson: 
-  :environment:
+  :configjson: PluginSettings.PluginStates.com.mattermost.calls.Enable
+  :environment: MM_PLUGINSETTINGS_PLUGINSTATES_COM_MATTERMOST_CALLS
 
   - **true**: Enables the calls plugin on your Mattermost workspace.
   - **false**: Disables the calls plugin on your Mattermost workspace.
@@ -509,8 +509,8 @@ Enable plugin
 .. config:setting:: plugins-callsrtcserveraddress
   :displayname: RTC server port (Plugins - Calls)
   :systemconsole: Plugins > Calls
-  :configjson:
-  :environment:
+  :configjson: PluginSettings.Plugins.com.mattermost.calls.udpserveraddress
+  :environment: N/A
   :description: The IP address used by the RTC server to listen on. By default the service listens on all the available interfaces.
 
 RTC server address
@@ -532,8 +532,8 @@ RTC server address
 .. config:setting:: plugins-callsrtcserverport
   :displayname: RTC server port (Plugins - Calls)
   :systemconsole: Plugins > Calls
-  :configjson:
-  :environment:
+  :configjson: PluginSettings.Plugins.com.mattermost.calls.udpserverport
+  :environment: N/A
   :description: The UDP port the RTC server will listen on. All calls traffic will be served through this port. Default port is **8443**.
 
 RTC server port
@@ -556,8 +556,8 @@ RTC server port
 .. config:setting:: plugins-enableonspecificchannels
   :displayname: Enable on specific channels (Plugins - Calls)
   :systemconsole: Plugins > Calls
-  :configjson:
-  :environment: 
+  :configjson: PluginSettings.Plugins.com.mattermost.calls.allowenablecalls
+  :environment: N/A
   :description: Manage who can enable or disable calls on specific channels (deprecated from Mattermost v7.7)
 
 Enable on specific channels
@@ -578,8 +578,8 @@ Enable on specific channels
 .. config:setting:: plugins-testmode
   :displayname: Test mode (Plugins - Calls)
   :systemconsole: Plugins > Calls
-  :configjson: 
-  :environment: 
+  :configjson: PluginSettings.Plugins.com.mattermost.calls.defaultenabled
+  :environment: N/A
   :description: A setting to allow system admins to test calls before making them available across the deployment. This setting was called **Enable on all channels** up until Mattermost v7.7.
 
 Test mode
@@ -602,8 +602,8 @@ Test mode
 .. config:setting:: plugins-callsmaxcallparticipants
   :displayname: Max call participants (Plugins - Calls)
   :systemconsole: Plugins > Calls
-  :configjson: 
-  :environment: 
+  :configjson: PluginSettings.Plugins.com.mattermost.calls.maxcallparticipants
+  :environment: N/A
   :description: The maximum number of participants that can join a single call. Default value is **0** (unlimited). The maximum recommended setting is 200.
 
 Max call participants
@@ -624,8 +624,8 @@ Max call participants
 .. config:setting:: plugins-callsicehost
   :displayname: ICE host override (Plugins - Calls)
   :systemconsole: Plugins > Calls
-  :configjson: 
-  :environment: 
+  :configjson: PluginSettings.Plugins.com.mattermost.calls.icehostoverride
+  :environment: N/A
   :description: An optional override to the host that gets advertised to clients when connecting to calls. When empty or unset, the RTC service will attempt to automatically find the instance's public IP through STUN.
 
 ICE host override
@@ -649,8 +649,8 @@ ICE host override
 .. config:setting:: plugins-callsiceservers
   :displayname: ICE server configurations (Plugins - Calls)
   :systemconsole: Plugins > Calls
-  :configjson: 
-  :environment: 
+  :configjson: PluginSettings.Plugins.com.mattermost.calls.iceserversconfigs
+  :environment: N/A
   :description: A list of ICE servers (STUN/TURN) to be used by the service. Value should be valid JSON. Default value is **[{"urls": ["stun:stun.global.calls.mattermost.com:3478"]}]**.
 
 ICE servers configurations
@@ -703,8 +703,8 @@ ICE servers configurations
 .. config:setting:: plugins-callsturnauthsecret
   :displayname: TURN static auth secret (Plugins - Calls)
   :systemconsole: Plugins > Calls
-  :configjson: 
-  :environment:
+  :configjson: PluginSettings.Plugins.com.mattermost.calls.turnstaticauthsecret
+  :environment: N/A
   :description: A static secret used to generate short-lived credentials for TURN servers.
 
 TURN static auth secret
@@ -723,8 +723,8 @@ TURN static auth secret
 .. config:setting:: plugins-callsturncredentialsexpiration
   :displayname: TURN credentials expiration (Plugins - Calls)
   :systemconsole: Plugins > Calls
-  :configjson: 
-  :environment:
+  :configjson: PluginSettings.Plugins.com.mattermost.calls.turncredentialsexpirationminutes
+  :environment: N/A
   :description: The expiration, in minutes, of the short-lived credentials generated for TURN servers.
 
 TURN credentials expiration
@@ -743,8 +743,8 @@ TURN credentials expiration
 .. config:setting:: plugins-callsserversideturn
   :displayname: Server side TURN (Plugins - Calls)
   :systemconsole: Plugins > Calls
-  :configjson: 
-  :environment: 
+  :configjson: PluginSettings.Plugins.com.mattermost.calls.serversideturn
+  :environment: N/A
 
   - **true**: The RTC server will use the configured TURN candidates for server-initiated connections.
   - **false**: TURN will be used only on the client-side.
@@ -765,8 +765,8 @@ Server side TURN
 .. config:setting:: plugins-callsallowscreensharing
   :displayname: Allow screen sharing (Plugins - Calls)
   :systemconsole: Plugins > Calls
-  :configjson: 
-  :environment: 
+  :configjson: PluginSettings.Plugins.com.mattermost.calls.allowscreensharing
+  :environment: N/A
 
   - **true**: Call participants will be allowed to share their screen.
   - **false**: Call participants won't be allowed to share their screen.
@@ -787,8 +787,8 @@ Allow screen sharing
 .. config:setting:: plugins-callsrtcdserviceurl
   :displayname: RTCD service URL (Plugins - Calls)
   :systemconsole: Plugins > Calls
-  :configjson: 
-  :environment: 
+  :configjson: PluginSettings.Plugins.com.mattermost.calls.rtcdserviceurl
+  :environment: N/A
   :description: The URL to a running `rtcd <https://github.com/mattermost/rtcd>`__ service instance that will host the calls. When set (non empty) all the calls will be handled by this external service.
 
 RTCD service URL
@@ -809,8 +809,8 @@ RTCD service URL
 .. config:setting:: plugins-enablecallrecordings
   :displayname: Enable call recordings (Plugins - Calls)
   :systemconsole: Plugins > Calls
-  :configjson: 
-  :environment: 
+  :configjson: PluginSettings.Plugins.com.mattermost.calls.enablerecordings
+  :environment: N/A
   :description: Allow call hosts to record meeting video and audio. 
 
 Enable call recordings (beta)
@@ -831,8 +831,8 @@ Enable call recordings (beta)
 .. config:setting:: plugins-jobserviceurl
   :displayname: Job service URL (Plugins - Calls)
   :systemconsole: Plugins > Calls
-  :configjson: 
-  :environment: 
+  :configjson: PluginSettings.Plugins.com.mattermost.calls.jobserviceurl
+  :environment: N/A
   :description: The URL to a running job service where all the processing related to recordings happens.
   
 Job service URL
@@ -850,8 +850,8 @@ Job service URL
 .. config:setting:: plugins-maximumcallrecordingduration
   :displayname: Maximum call recording duration (Plugins - Calls)
   :systemconsole: Plugins > Calls
-  :configjson: 
-  :environment: 
+  :configjson: PluginSettings.Plugins.com.mattermost.calls.maxrecordingduration
+  :environment: N/A
   :description: The maximum duration of a call recording in minutes.
   
 Maximum call recording duration
@@ -870,8 +870,8 @@ Maximum call recording duration
 .. config:setting:: plugins-recordingquality
   :displayname: Call recording quality (Plugins - Calls)
   :systemconsole: Plugins > Calls
-  :configjson:
-  :environment:
+  :configjson: PluginSettings.Plugins.com.mattermost.calls.recordingquality
+  :environment: N/A
   :description: The audio and video quality of call recordings.
 
 Call recording quality
