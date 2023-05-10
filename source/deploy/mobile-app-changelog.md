@@ -40,6 +40,7 @@ Latest Mattermost Mobile Apps releases:
  - Fixed an incomplete setup of ``sentry-cli`` node package.
  - Fixed an issue with out of order websocket event handling for posts.
  - Fixed a crash when opening a push notification for a thread when the Thread screen was already opened in the background.
+ - RN Image is now used on local images to avoid cache problems.
 
 ### Known Issues
  - Users are unable to adjust the font size via the OS font size setting.
