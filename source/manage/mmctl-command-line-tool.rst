@@ -6027,13 +6027,13 @@ Migrate accounts from one authentication provider to another. For example, you c
       **users_file:**
          The path of a json file with the usernames and emails of all users to migrate to SAML. The username and email must be the same that the SAML service provider store. And the email must match with the email in mattermost database.
 
-.. code-block:: javascript
+      .. code-block:: javascript
 
-    Example json content:
-    {
-      "usr1@email.com": "usr.one",
-      "usr2@email.com": "usr.two"
-    }
+         Example json content:
+         {
+            "usr1@email.com": "usr.one",
+            "usr2@email.com": "usr.two"
+         }
 
 **Examples**
 
