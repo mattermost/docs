@@ -15,6 +15,7 @@ Mattermost’s mission is to make the world safer and more productive by develop
    :hidden:
 
    /about/product.rst
+   /about/use-cases.rst
    /about/security.rst
    /about/integrations.rst
    /about/editions-and-offerings.rst
@@ -34,6 +35,7 @@ Mattermost contains three key tools:
 This section provides an overview of Mattermost products, features, security, integrations, licensing, subscriptions, authentication, and compliance support.
 
 * :doc:`Product overview </about/product>` - Learn about the Mattermost open source project, self-hosted vs. cloud, and premium Mattermost features.
+* :doc:`Use Cases overview </about/use-cases>` - Learn about product use cases.
 * :doc:`Security </about/security>` - Mattermost can meet the strictest security requirements and provides the highest level of control over user data.
 * :doc:`Integrations </about/integrations>` - Mattermost is extensible by design and supports a rich ecosystem of third-party apps and integrations.
 * :doc:`Mattermost editions and offerings </about/editions-and-offerings>` - Learn more about Mattermost deployment options.
