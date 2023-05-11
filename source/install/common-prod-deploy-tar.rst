@@ -1,6 +1,6 @@
 :orphan:
 :nosearch:
-.. This page is intentionally not accessible via the LHS navigation pane because it's common content included on other docs pages.
+.. This page is intentionally not accessible via the LHS navigation pane because it's being phased out in favor of a dedicated Tarball deploy page linked to the /download page of the website.
 
 .. include:: ../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
@@ -27,7 +27,7 @@ These instructions outline how to install Mattermost Server on a 64-bit Linux ho
 
 2. Log in to the server that will host Mattermost Server and open a terminal window.
 
-3. Download `the latest version of the Mattermost Server <https://mattermost.com/deploy/>`__. In the following command, replace ``X.X.X`` with the version that you want to download:
+3. Download `the latest version of the Mattermost Server <https://docs.mattermost.com/upgrade/version-archive.html>`__. In the following command, replace ``X.X.X`` with the version that you want to download:
   
    .. code:: bash
 

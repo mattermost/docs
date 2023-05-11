@@ -4,12 +4,84 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 
 Latest Mattermost Cloud releases:
 
+- [Release 2023-05-01](#release-2023-05-01)
+- [Release 2023-04-21](#release-2023-04-21)
 - [Release 2023-03-29](#release-2023-03-29)
 - [Release 2023-03-20](#release-2023-03-20)
 - [Release 2023-01-26](#release-2023-01-26)
 - [Release 2023-01-16](#release-2023-01-16)
-- [Release 2022-12-20](#release-2022-12-20)
-- [Release 2022-12-01](#release-2022-12-01)
+
+## Release 2023-05-01
+
+### Highlights
+ - Added an improved Cloud trial experience in preparation for replacing the Cloud Free experience. See more details in these Forum posts:
+    - https://forum.mattermost.com/t/cloud-monthly-billing-deprecation/15804
+    - https://forum.mattermost.com/t/cloud-free-deprecation/15802
+
+### Improvements
+
+#### User Interface (UI)
+ - Replaced the ``compass-components`` icon component with ``compass-icons``.
+ - Added “hours ahead” timezone details to the user profile popover.
+ - Pre-packaged Calls v0.15.1.
+
+#### Administration
+ - Removed the deprecated ``model.CommandArgs.Session``.
+ - The database section in the **System Console** now has an additional read-only section which shows the active search backend in use. This can be helpful to confirm which search engine is currently active when there are multiple configured.
+ 
+#### Performance
+ - Improved the performance of webapp related to timezone calculations.
+ - Improved performance of code used for post list screen reader support.
+ 
+### API Changes
+ - An underscore is now used in the timeline API (``event-id`` -> ``event_id``) for consistency with other API arguments.
+
+### Bug Fixes
+ - Fixed an issue where a user would still see threads in the threads view of channels they have left. Migration execution time in MySQL: Query OK, 2766769 rows affected (4 min 47.57 sec). Migration execution time in PostgreSQL: Execution time: 58.11 sec, DELETE 2766690.
+ - Fixed an issue where clicking on a channel link (for a channel the user was not a part of) caused the webapp to refresh, dropping the user from a call.
+ - Fixed an issue with PDF preview rendering for certain Japanese characters.
+ - Fixed an issue where the screen reader did not announce the action of copying the link in the invite modal.
+ - Fixed an issue with post metadata not generating correctly for images due to missing content-type in response. This would result in certain embedded images not to display on mobile clients.
+ - Fixed an issue where edits to messages persisted after canceling.
+ - Added a condition for bot tags for webhook posts when a bot account is used for webhooks.
+
+### Known Issues
+ - Message Actions … ellipsis menu icon only displays rectangle when clicked on [MM-52444](https://mattermost.atlassian.net/browse/MM-52444).
+ - The URL of the post in a reminder post for direct and group messages have a double slash on mobile [MM-51026](https://mattermost.atlassian.net/browse/MM-51026).
+ - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
+
+## Release 2023-04-21
+
+### Improvements
+
+#### User Interface (UI)
+ - Enabled Work Templates in the Onboarding checklist and the `+` Menu.
+ - Added a **Mattermost Marketplace** option to the bottom of the apps bar. The option is visible when the Marketplace is enabled, and the user has ``SYSCONSOLE_WRITE_PLUGINS`` permissions.
+ - Added an **Add channels** button to the bottom of the left-hand sidebar to make the action more obvious for users who want to create or join channels.
+ - Removed the Webapp Build Hash from **Main Menu > About Mattermost** since it is now identical to Server Build Hash.
+
+#### Administration
+ - The following repositories have been merged into one: ``mattermost-server``, ``mattermost-webapp``, ``focalboard`` and ``mattermost-plugin-playbooks``. Developers should read the updated [Developer Guide](https://developers.mattermost.com/contribute/developer-setup/) for details. Playbooks and Boards are now core parts of the product that cannot be disabled.
+ - The file info stats query is now optimized by denormalizing the ``channelID`` column into the table itself. This will speed up the query to get the file count for a channel when selecting the right-hand pane. Migration times:
+
+   - On a MySQL 8.0.31 DB with 1405 rows in FileInfo and 11M posts, it took around 0.3s
+   - On a PostgreSQL 12.14 DB with 1731 rows in FileInfo and 11M posts, it took around 0.27s
+
+ - Added the ability to search a partial first name, last name, nickname, or username on the **System Console > Users** page.
+ - **Contact Support** now redirects users to Zendesk and pre-fills known information.
+ - Added a mechanism for public routes on products and used it to support publicly shared Board links.
+
+### Bug Fixes
+ - Fixed a scrolling issue in the purchase modals.
+ - Fixed an issue where the **Delete Category Dialog** message was not visible in Boards.
+ - Fixed an issue where the experimental Shared Channels feature failed to synchronize if a previously removed table column was still present.
+ - Fixed an innocuous panic in Boards Rest API when requesting files and an error other than ``not found`` is encountered.
+ - Fixed an issue with the compact message mode.
+
+### Known Issues
+ - The URL of the post in a reminder post for direct and group messages have a double slash on mobile [MM-51026](https://mattermost.atlassian.net/browse/MM-51026).
+ - A user gets scrolled to the bottom of the post editor after pasting long text in the right-hand pane [MM-51302](https://mattermost.atlassian.net/browse/MM-51302).
+ - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
 
 ## Release 2023-03-29
 

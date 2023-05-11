@@ -5,7 +5,7 @@ Mattermost offers features through `Mattermost Professional and Mattermost Enter
 
 Mattermost self-hosted deployments require a license subscription key to be applied to access features in the Professional or Enterprise plans. Mattermost offers a `secure self-service Customer Portal <https://customers.mattermost.com>`__ where you can purchase and manage your Mattermost self-hosted subscription. When you complete the purchase process, a license key is generated. Please see :doc:`Self-hosted subscriptions </about/self-hosted-subscriptions>` for more details.
 
-Mattermost Cloud is a software-as-a-service product. You can sign up for free, forever, with Mattermost Free. Then, start a free 30-day Mattermost Enterprise trial, to explore paid features. Please see :doc:`Cloud subscriptions </about/cloud-subscriptions>` for more details.
+Mattermost Cloud is a software-as-a-service product. Start a free 30-day Mattermost Enterprise trial, to explore paid features. Please see :doc:`Cloud subscriptions </about/cloud-subscriptions>` for more details.
 
 Mattermost Nonprofit License program
 --------------------------------------
@@ -25,7 +25,7 @@ Who's eligible?
 Organizations applying for a non-profit license must meet **ALL** of the following requirements:
 
 - Be able to provide documentation that establishes the organization as a recognized nonprofit status.
-- Have no affiliation with government, academic, commercial, or religious entities.
+- Have no affiliation with government, academic, commercial, religious, or political entities.
 - Be unable to afford a commercial Mattermost license.
 - Be willing to let us use their logo for promotional purposes.
 - Be willing to pay a $250 processing fee for a three-year, self-hosted Professional license contract for up to 1000 users.

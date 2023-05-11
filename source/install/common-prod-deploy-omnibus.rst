@@ -1,6 +1,6 @@
 :orphan:
 :nosearch:
-.. This page is intentionally not accessible via the LHS navigation pane because it's common content included on other docs pages.
+.. This page is intentionally not accessible via the LHS navigation pane because it's being phased out in favor of a dedicated Tarball deploy page linked to the /download page of the website.
 
 Mattermost bundles the components of a Mattermost deployment into a single installation, called **Omnibus**. Mattermost Omnibus currently supports Ubuntu's ``bionic`` (18.04), ``focal`` (20.04) and ``jammy`` (22.04) distributions. The package bundles the free, unlicensed Mattermost Enterprise version of Mattermost, and leverages the `apt package manager <https://ubuntu.com/server/docs/package-management>`__ to install and update the platform components. A custom CLI and ansible recipes link the components together and configures them.
 
