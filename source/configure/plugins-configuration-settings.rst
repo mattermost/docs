@@ -664,7 +664,7 @@ ICE servers configurations
 |                                                                                                 | - Environment variable: N/A                                                                                 |
 | This is an optional field. Changing this setting may require a plugin restart to take effect.   |                                                                                                             |
 |                                                                                                 |                                                                                                             |
-| Default is **[{"urls": ["stun:stun.global.calls.mattermost.com:3478"]}]**                       |                                                                                                             |
+| Default is ``[{"urls": ["stun:stun.global.calls.mattermost.com:3478"]}]``                       |                                                                                                             |
 +-------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+
  
 **Example**
