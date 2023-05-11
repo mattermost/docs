@@ -7,7 +7,7 @@ Buy a subscription
 From Mattermost v7.7 you can buy a Mattermost subscription from within Mattermost:
 
 1. In Mattermost, select **View Plans** in the global header or via **System Console > View plans**.
-2. Select **Upgrade**.
+2. Select **Upgrade**. A minimum of ten users is required.
 3. Provide payment details.
 4. Enter the number of user seats you're purchasing. This number has to be equal to, or greater than, the current number of active users in your Mattermost deployment.
 5. Select **Upgrade**.
@@ -15,6 +15,9 @@ From Mattermost v7.7 you can buy a Mattermost subscription from within Mattermos
 When your purchase is complete, a license is automatically applied to instance and your subscription is active immediately.
 
 If your deployment doesn't have internet access, please continue to use the Customer Portal or, contact our sales team for assistance.
+
+Mattermost v7.6 and earlier releases
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you're using Mattermost v7.6 and below, you can buy a Mattermost subscription via the `Customer Portal page <https://customers.mattermost.com>`__. If you haven't created an account yet, follow the steps provided. Otherwise, you can log in with your existing credentials. When you buy a Mattermost subscription for a self-hosted deployment, you'll receive an activation license.
 
@@ -32,22 +35,27 @@ Once you're logged in:
 
    If you experience any problems with your transaction, please contact our Support team via the Customer Portal. If possible, keep the error message/number that you received on hand as it may help with their investigation.
 
+Apply your license
+------------------
+
 Once downloaded, your Mattermost license is ready to use and is applied via the Mattermost System Console.
 
 .. image:: ../images/mattermost_enterprise_license.png
 	:alt: Apply the Mattermost Enterprise license using the System Console.
 
-System Admin access is required in order to apply the license. If you're not a Mattermost System Admin, contact your organization's Mattermost System Admin for assistance.
+System admin access is required in order to apply the license. If you're not a Mattermost system admin, contact your organization's Mattermost system admin for assistance.
 
-**If you already have Mattermost installed**
+Mattermost installed
+~~~~~~~~~~~~~~~~~~~~
 
 On the Customer Portal **Subscriptions** page, select **Download License** to download the license key for your subscription. In Mattermost, follow the steps provided in **System Console > About > Edition and License** to apply your license key.
 
 You can also use the `mmctl </manage/mmctl-command-line-tool.html#mmctl-license>`__ to apply the license.
 
-**If you don't have Mattermost installed**
+Mattermost not yet installed
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you haven't yet installed and deployed a Mattermost instance, visit the `Deployment Guide </deploy/deployment-overview.html>`__ to get started. For information on creating a System Admin account, visit our `Administrator Tasks </getting-started/admin-onboarding-tasks.html>`__ documentation.
+If you haven't yet installed and deployed a Mattermost instance, visit the `Deployment Guide </deploy/deployment-overview.html>`__ to get started. For information on creating a system admin account, visit our `Administrator Tasks </getting-started/admin-onboarding-tasks.html>`__ documentation.
 
 View subscription information
 -----------------------------
@@ -83,8 +91,26 @@ This process adds additional users to your existing subscription and is not a ne
 
 If you don't have a self-hosted license in the Customer Portal and want to add users, `contact us <https://mattermost.com/contact-us/>`__.
 
+Quarterly true-up reports from v7.9
+-----------------------------------
+
+From Mattermost v7.9, the reporting period is still the same, but we've introduced a process that no longer requires you to take screenshots.
+
+.. image:: ../images/true-up-schedule.png
+      :alt: The timeframes followed for the true up notifications.
+
+To send the report, a system admin must navigate to the **System Console** and open either the **Site Statistics** or **Team Statistics** pages.
+
+If the current date is within the true-up reporting period, a panel will be visible at the top of the page with a button to share your system's statistics directly to Mattermost.
+
+If your system is air-gapped (meaning it doesn't have access to the internet), the system admin can download the system statistcs which can then be shared with your Customer Success Manager from a device that's not air-gapped.
+
+.. tip::
+   
+   Not sure where to find the site statistics or team statistics? Please reach out to your account executive, Customer Success Manager, orders@mattermost.com, or support@mattermost.com for help.
+
 Quarterly true-up report prior to v7.9
---------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When you buy an annual Mattermost subscription, you agree to provide quarterly reports of the actual number of active users within your system. An active user is a user who has an account in a workspace and does not show as **Inactive** in **System Console > User Management > Users**.
 
@@ -106,31 +132,13 @@ To send this report, take a screenshot of **System Console > Site Statistics** a
 If you have more total active users than you purchased in your annual subscription, your Customer Success Manager will provide you with a true-up quote for the new users added.
 
 The additional invoice will be pro-rated based on the number of months left in your subscription term, including the months for the calendar quarter for the time you pull the report. We will not provide downward adjustments. Mattermost will invoice based on Mattermost’s `current list prices <https://mattermost.com/pricing/>`__.
-
-Quarterly true-up reports from v7.9
------------------------------------
-
-From Mattermost v7.9, the reporting period is still the same, but we've introduced a process that no longer requires you to take screenshots.
-
-.. image:: ../images/true-up-schedule.png
-      :alt: The timeframes followed for the true up notifications.
-
-To send the report, a system admin must navigate to the **System Console** and open either the **Site Statistics** or **Team Statistics** pages.
-
-If the current date is within the true-up reporting period, a panel will be visible at the top of the page with a button to share your system's statistics directly to Mattermost.
-
-If your system is air-gapped (meaning it doesn't have access to the internet), the system admin can download the system statistcs which can then be shared with your Customer Success Manager from a device that's not air-gapped.
-
-.. tip::
-   
-   Not sure where to find the site statistics or team statistics? Please reach out to your account executive, Customer Success Manager, orders@mattermost.com, or support@mattermost.com for help.
    
 Renew your subscription
 -----------------------
 
-From Mattermost Server v5.32 and later, you can renew your self-hosted Mattermost subscription with a credit card if you have a standard Mattermost contract. When you renew your license, you can also increase the number of active users.
+From Mattermost Server v5.32, you can renew your self-hosted Mattermost subscription with a credit card if you have a standard Mattermost contract. When you renew your license, you can also increase the number of active users.
 
-If you haven't upgraded to v5.32, you can contact Mattermost Support at support@mattermost.com to renew your license.
+If you haven't upgraded to v5.32, contact Mattermost Support at support@mattermost.com to renew your license.
 
 If you're a reseller, have a non-standard contract, or want to adjust the number of active users on your license during the license period, please contact Mattermost Sales at sales@mattermost.com.
 
@@ -138,7 +146,8 @@ System Admins will be alerted 60 days prior to license expiry via a banner in Ma
 
 When you select **Renew license now**, you're taken to the renewal page in the Customer Portal, which lists your license information and account details. This is pre-populated based on the email address associated with your existing license subscription.
 
-**To process your license renewal**
+Process your license renewal
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. Enter your **Account Details**, **Additional Contact**, and **Payment Details**.
 2. Confirm the `Mattermost Edition <https://mattermost.com/pricing-self-managed>`_.
@@ -160,10 +169,10 @@ You can watch a video overview of the renewal process on YouTube:
    <iframe width="560" height="315" src="https://www.youtube.com/embed/Sz_1nhVufHY" alt="Video on self hosted subscription" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 Frequently asked questions
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------
 
 What is a true up and why is the true up notice necessary? 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 A true up is our quarterly request for you to provide a screenshot of your instance data to determine if you have more active users now than when you bought your subscription.
 
@@ -172,73 +181,73 @@ As your organization grows, you may need to add additional users during your sub
 When you receive the quarterly true up notice from Mattermost, please take a screenshot of your active user count which you can find in **System Console > Site Statistics**. Then reply to the email with the attached screenshot.
 
 How do I renew my subscription if I don't have internet access?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you don't have access to the internet, please email support@mattermost.com for assistance.
 
 Can I use the same license key on multiple self-hosted servers?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 License keys for unlocking the advanced features in Mattermost can only be applied to a single deployment. A deployment consists of either a single Mattermost server or multiple linked Mattermost servers in a High Availability configuration with access to a single database.
 
 Customers who are eligible to purchase the `Premier Support add-on <https://mattermost.com/support/>`__ are licensed to run with a single deployment of Mattermost license key in production and up to four non-production deployments of Mattermost (for example: development, staging, user acceptance testing, etc.)
 
 Is my license key available immediately?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Yes, once your payment is successfully processed your license is available to download immediately.
 
 How will I know when to renew my subscription?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-You'll be notified 60 days prior to your subscription expiry, via a blue banner displayed at the top of your Mattermost window. This banner is only visible to System Admins.
+You'll be notified 60 days prior to your subscription expiry, via a blue banner displayed at the top of your Mattermost window. This banner is only visible to system admins.
 
 You can select **Renew license now** to begin the renewal process. You can also select the **x** to dismiss the notification. The notification is reactivated when your browser is refreshed or you reload the Mattermost Desktop App.
 
 How long does it take to renew a subscription?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Once you’ve started the renewal process, we'll be in contact with you to confirm your order and send you the order form. There may be additional paperwork required. Once we have the signed order form and (if applicable) the necessary paperwork from you, we're able to process the renewal and issue your license key within 24 hours.
 
 What happens to my subscription if I don't renew in time?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you don't renew within the 60-day renewal period, a 10-day grace period is provided. During this period your Mattermost installation runs as normal, with full access to commercial features. During the grace period, the notification banner is not dismissable.
 
 When the grace period expires, your Professional or Enterprise plan is downgraded to the Free plan and other plan features are disabled.
  
 What happens when my subscription expires?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you don't renew within the 10-day grace period, your Mattermost version is automatically downgraded to Free plan so you can still access and use Mattermost. However, subscription features will no longer be available, and if you are currently using them, the functionality will no longer be accessible.
 
 When you renew, the subscription features will become available with the previous configuration (provided no action such as user migration has been taken).
 
 Why can't I dismiss the expiry notification banner?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If there's a red expiry announcement banner stating: "Enterprise license is expired and some features may be disabled. Please contact your System Administrator for details." it means your grace period has expired. This announcement banner persists until the license is renewed, and is visible to all users.
+If there's a red expiry announcement banner stating: "Enterprise license is expired and some features may be disabled. Please contact your system admin for details." it means your grace period has expired. This announcement banner persists until the license is renewed, and is visible to all users.
 
 Once a new license is applied, the banner will no longer be visible.
 
 If you don't plan to renew your subscription, revoke the expired license in **System Console > Edition and License**.
 
 Can other members of my organization use the Customer Portal account to manage our subscription?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 We currently support a single account/user per organization. The ability to add multiple users per organization will be available in a future release.
 
 Where can I find the license agreement for Mattermost Enterprise Edition?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Mattermost Enterprise Edition is the name for the binary of the Mattermost self-hosted Professional and Enterprise editions. This edition can be used for free without a license key as commercial software functionally equivalent to the open source Mattermost Team Edition licensed under MIT. When a license key is purchased and applied to Mattermost Enterprise Edition, additional features unlock. The license agreement for Mattermost Enterprise Edition is included in the software and also available `here <https://mattermost.com/enterprise-edition-license/>`__.
 
 How do I delete my Customer Portal account?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Please contact Mattermost Support for assistance with deleting your Customer Portal account.
 
 What happens to my subscription when I delete my account?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When an account is deleted, the license key remains valid. When the subscription is close to expiring, you'll need to create a new profile in order to renew it.
