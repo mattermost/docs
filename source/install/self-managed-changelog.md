@@ -35,6 +35,7 @@ Latest Mattermost Releases:
  - Removed the Webapp Build Hash from **Main Menu > About Mattermost** since it is now identical to Server Build Hash.
  - Replaced the ``compass-components`` icon component with ``compass-icons``.
  - Added “hours ahead” timezone details to the user profile popover.
+ - Pre-packaged Calls version 0.16.0.
 
 #### Administration
  - Self-hosted admins can now define a separate shipping address during in-product license purchase.
