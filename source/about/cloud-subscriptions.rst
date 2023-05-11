@@ -146,7 +146,6 @@ Mattermost Cloud provides `three offerings <https://mattermost.com/pricing/>`_: 
 
 These offerings are deployed in the following ways:
 
- - **Freemium**: Single application layer, shared infrastructure, shared network, starter group ring.
  - **Professional**: Single application layer, shared infrastructure, shared network, professional group ring.
  - **Enterprise**: Single application layer, shared infrastructure, shared network, enterprise group ring.
  - **Enterprise plus dedicated add-on**: Single application layer, dedicated network via VPC (Virtual Private Cloud), dedicated infrastructure, enterprise group ring.
