@@ -13,7 +13,7 @@ Buy a Cloud subscription
 .. note::
 
   - Your credit card will be verified and you'll be charged immediately.
-  - A minimum of ten users is required.
+  - A minimum of ten seats is required.
 
 4. Click **Upgrade** to confirm.
 
