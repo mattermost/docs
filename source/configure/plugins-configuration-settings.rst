@@ -523,7 +523,6 @@ RTC server address
 | This setting controls the IP address the RTC server listens to. All Calls traffic will be served through this IP.     | - System Config path: **Plugins > Calls**                                                                 |
 |                                                                                                                       | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.calls.udpserveraddress``               |
 | Changing this setting requires a plugin restart to take effect.                                                       | - Environment variable: N/A                                                                               |
-|                                                                                                                       |                                                                                                           |
 | If left unset (default value) the service will listen on all the available interfaces.                                |                                                                                                           |
 +-----------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+
 | **Note**: This setting is only applicable when not running calls through the standalone ``rtcd`` service.             |                                                                                                           |
@@ -690,11 +689,11 @@ ICE servers configurations
  
 **Example (Using generated TURN credentials)**
 
-.. code-block:: json
+  .. code-block:: json
 
-   [{
-	   "urls": ["turn:turn.example.com:443"]
-   }]
+    [{
+	    "urls": ["turn:turn.example.com:443"]
+    }]
 
 +-----------------------------------------------------------------------------+-------------------------------------------------------+
 | **Note**: To get TURN generated credentials to work you must provide a secret through the *TURN static auth secret* setting below.  |
