@@ -71,7 +71,7 @@ Site description
 Enable custom branding
 ~~~~~~~~~~~~~~~~~~~~~~
 
-*This feature was moved to Team Edition in Mattermost v5.0, released June 16th, 2018. Prior to v5.0, this feature is available in legacy Enterprise Edition E10 and E20.*
+*This feature is available in legacy Enterprise Edition E10 and E20.*
 
 +--------------------------------------------------------------------------------+-----------------------------------------------------------------------+
 | - **true**: Enables the display of a custom image and text on the login page   | - System Config path: **Site Configuration > Customization**          |
