@@ -15,7 +15,7 @@ This feature enables compliance exports to be produced from the System Console, 
 
 The exports include information on channel member history at the time the message was posted.
 
-From Mattermost v5.18 and in Mattermost Cloud, entries for deleted messages and files are included in CSV and Actiance reports. The deleted content is included in the compliance export. Global Relay reports include file deletion entries but message deletion entries are excluded.
+Entries for deleted messages and files are included in CSV and Actiance reports. The deleted content is included in the compliance export. Global Relay reports include file deletion entries but message deletion entries are excluded.
 
 By default, Mattermost stores all message history providing an unlimited search history to admins and end users. In Mattermost Enterprise, you may set a `custom data retention policy </comply/data-retention-policy.html>`__ for how long messages and file uploads are kept in Mattermost channels and direct messages.
 
