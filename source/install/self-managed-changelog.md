@@ -62,7 +62,6 @@ Latest Mattermost Releases:
  - Fixed an issue where the **Delete Category Dialog** message was not visible in Boards.
  - Fixed an issue where the experimental Shared Channels feature failed to synchronize if a previously removed table column was still present.
  - Fixed an innocuous panic in Boards Rest API when requesting files and an error other than ``not found`` is encountered.
- - Fixed an issue where a user would still see threads in the threads view of channels they have left. Migration execution time in MySQL: Query OK, 2766769 rows affected (4 min 47.57 sec). Migration execution time in PostgreSQL: Execution time: 58.11 sec, DELETE 2766690.
  - Fixed an issue where clicking on a channel link (for a channel the user was not a part of) caused the webapp to refresh, dropping the user from a call.
  - Fixed an issue with PDF preview rendering for certain Japanese characters.
  - Fixed an issue where the screen reader did not announce the action of copying the link in the invite modal.
