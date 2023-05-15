@@ -13,7 +13,7 @@ Latest Mattermost Releases:
 
 ## Release v7.11 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
 
-  - The Mattermost v7.11 release will be rescheduled due to ...
+  - The Mattermost v7.11 release is delayed and will be rescheduled to a later date (TBD).
 
 ## Release v7.10 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
 
