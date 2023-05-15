@@ -119,7 +119,7 @@ Use the Mattermost mmetl tool and bulk import
 
 .. note::
   
-  This method is the recommended way to import Slack's corporate export file, but will work with any Slack export file. It can be used for Mattermost v5.0+.
+  This method is the recommended way to import Slack's corporate export file, but will work with any Slack export file.
 
 1. Prepare your Mattermost server
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
