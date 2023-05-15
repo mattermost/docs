@@ -475,8 +475,6 @@ Trusted proxy IP header
 | - For environments that use a reverse proxy, this issue does not exist, provided that the headers are set by the reverse proxy.       |
 |   In those environments, only explicitly whitelist the header set by the reverse proxy and no additional values.                      |
 |                                                                                                                                       |
-|                                                                                                                                       |
-|                                                                                                                                       |
 +--------------------------------------------------------+------------------------------------------------------------------------------+
 
 .. config:setting:: web-enablehsts
