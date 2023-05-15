@@ -1925,6 +1925,8 @@ redirects = {
         "https://docs.mattermost.com/channels/channels-settings.html#advanced",
 "messaging/manage-profile-settings.html":
         "https://docs.mattermost.com/welcome/manage-your-profile.html",
+"messaging/manage-profile-settings.html#multi-factor-authentication":
+	"https://docs.mattermost.com/welcome/manage-your-profile.html#security",	
 "messaging/manage-profile-settings.html#profile":
         "https://docs.mattermost.com/welcome/manage-your-profile.html#profile",
 "messaging/manage-profile-settings.html#security":
