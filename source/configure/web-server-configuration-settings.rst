@@ -470,13 +470,13 @@ Trusted proxy IP header
 +--------------------------------------------------------+------------------------------------------------------------------------------+
 | **Notes**:                                                                                                                            |
 |                                                                                                                                       |
-| - From Mattermost v5.12, new deployments set this value to ``[]``, meaning that no header will be trusted. Prior to v5.12, the        |
-|   absence of this configuration setting entry will have it set to ``["X-Forwarded-For", "X-Real-Ip"]`` on upgrade to maintain         |
-|   backwards compatibility.                                                                                                            |
 | - We recommend keeping the default setting when Mattermost is running without a proxy to avoid the client sending the headers and     |
 |   bypassing rate limiting and/or the audit log.                                                                                       |
 | - For environments that use a reverse proxy, this issue does not exist, provided that the headers are set by the reverse proxy.       |
 |   In those environments, only explicitly whitelist the header set by the reverse proxy and no additional values.                      |
+|                                                                                                                                       |
+|                                                                                                                                       |
+|                                                                                                                                       |
 +--------------------------------------------------------+------------------------------------------------------------------------------+
 
 .. config:setting:: web-enablehsts
