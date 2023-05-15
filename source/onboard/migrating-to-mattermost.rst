@@ -219,21 +219,6 @@ Debugging imports
 
 The ``mmctl import job show`` shows a detailed error message. If you run into problems which the error message does not help to resolve, your best bet is to use the ``mattermost bulk import`` command. The ``mmctl`` import process does not give you any additional debugging information, even in the Mattermost server logs.
 
-Migrate from Slack using the Mattermost CLI
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. note::
-  In Mattermost v6.0, the CLI has been deprecated in favor of the mmctl `CLI </manage/mmctl-command-line-tool.html>`__.
-
-1. Generate a Slack export file from **Slack > Administration > Workspace Settings > Import/Export Data > Export > Start Export**.
-2. Run the following Mattermost CLI command, with the name of a team you've already created:
-
-   ``$ mattermost import slack team_name /path/to/your-slack-export.zip``
-   
-.. note::
-
-  To run the CLI command, you must be in the directory that contains the Mattermost installation. On a default installation of Mattermost, the directory is ``/opt/mattermost/``. Also, if you followed our `installation process </guides/install-deploy-upgrade-scale.html#install-mattermost>`__, you must run the command as the user *mattermost*. The executable is in the ``bin`` subdirectory and is called ``mattermost``.
-
 Use the imported team
 ^^^^^^^^^^^^^^^^^^^^^^
 
