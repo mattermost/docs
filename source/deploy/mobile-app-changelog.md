@@ -13,8 +13,6 @@ Latest Mattermost Mobile Apps releases:
 - Release Date: May 16, 2023
 - Server Versions Supported: Server v7.8.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
 
-Mattermost Mobile v2.4.0 contains a low severity level security fix. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
-
 ### Compatibility
  - **Upgrade to server version v7.8.0 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/upgrade/extended-support-release.html) (ESR) v7.1.0 has ended and upgrading to server ESR v7.8.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
  - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
