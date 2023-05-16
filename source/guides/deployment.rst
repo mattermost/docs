@@ -10,13 +10,19 @@ Learn how to install, deploy, and scale Mattermost for teams and organizations o
     :maxdepth: 1
     :hidden:
 
-    Deploy Mattermost on Ubuntu </install/install-ubuntu>
-    Deploy Mattermost using Omnibus </install/installing-mattermost-omnibus>
-    Install Mattermost using the tarball </install/install-tar>
+    Deploy on Ubuntu </install/install-ubuntu>
+    Deploy using Docker </install/install-docker>
+    Deploy with a tarball </install/install-tar>
+    Deploy using Omnibus </install/installing-mattermost-omnibus>
+    Deploy using Kubernetes </install/install-kubernetes>
+    Deploy on Red Hat </install/install-rhel-8>
 
-* `Deploy Mattermost Server on Ubuntu </install/install-ubuntu.html>`__ - Signed packages direct from Mattermost featuring a single command for install and upgrades.
-* `Deploy Mattermost Server using Omnibus </install/installing-mattermost-omnibus.html>`__ - An entire Mattermost installation on a single server.
-* `Install Mattermost Server using the tarball </install/install-tar.html>`__ - Support for any Linux distribution
+* :doc:`Deploy on Ubuntu </install/install-ubuntu>` - Signed packages direct from Mattermost featuring a single command for install and upgrades.
+* `Deploy using Docker </install/install-docker.html#deploy-mattermost-on-docker-for-production-use>`__ - The fastest way to try Mattermost and a great single server installation option.
+* :doc:`Deploy using Omnibus </install/installing-mattermost-omnibus>` - An entire Mattermost installation on a single server.
+* :doc:`Deploy with a tarball </install/install-tar>` - Support for any Linux distribution.
+* :doc:`Deploy using Kubernetes </install/install-kubernetes>` - Install using the Mattermost Helm Chart or Operator and simplified updates.
+* :doc:`Deploy on Red Hat </install/install-rhel-8>` - Support for all current Red Hat Enterprise Linux platforms with a tarball.
 
 .. tip::
 
@@ -24,18 +30,6 @@ Learn how to install, deploy, and scale Mattermost for teams and organizations o
   
   * Encountering issues with your deployment? See the `Deployment Troubleshooting </install/troubleshooting.html#deployment-troubleshooting>`__ or `high scale troubleshooting </deploy/high-scale-troubleshoot.html>`__ documentation for details.
 
-.. tabs::
-        
-    .. tab:: Kubernetes
-
-      .. include:: ../install/common-prod-deploy-kubernetes.rst
-        :start-after: :nosearch:
-    
-    .. tab:: Docker
-
-      .. include:: ../install/common-prod-deploy-docker.rst
-        :start-after: :nosearch:
-    
 Prepare for your Mattermost deployment
 --------------------------------------
 
@@ -43,78 +37,30 @@ Prepare for your Mattermost deployment
     :maxdepth: 1
     :hidden:
 
-    Preview Mattermost via Docker </install/install-docker>
+    Software and hardware requirements </install/software-hardware-requirements>
+    Prepare your Mattermost database </install/prepare-mattermost-database>
+    About the Mattermost Kubernetes Operator </install/mattermost-kubernetes-operator>
     Administrator tasks </getting-started/admin-onboarding-tasks>
-    Architecture </getting-started/architecture-overview>
-    Implement Mattermost </getting-started/implementation-plan>
+    Architecture overview </getting-started/architecture-overview>
+    Plan your Mattermost implementation </getting-started/implementation-plan>
     Enterprise roll out checklist </getting-started/enterprise-roll-out-checklist>
     Welcome email template </getting-started/welcome-email-to-end-users>
 
 These guides will help you prepare for your Mattermost deployment.
 
-* `Preview Mattermost via Docker </install/install-docker.html#preview-mattermost-using-docker>`__ - Preview Mattermost instantly or deploy via Docker for production use.
+* :doc:`Software and hardware requirements </install/software-hardware-requirements>` - Confirm software and hardware requirements for your Mattermost deployment.
+* :doc:`Prepare your Mattermost database </install/prepare-mattermost-database>` - Learn how to prepare and configure a database for Mattermost.
+* :doc:`About the Mattermost Kubernetes Operator </install/mattermost-kubernetes-operator>` - Learn more about the Mattermost Kubernetes Operator.
 * :doc:`Administrator tasks </getting-started/admin-onboarding-tasks>` - Learn about the standard configurations and settings you’ll encounter.
-* :doc:`Architecture </getting-started/architecture-overview>` - Learn the basics of user authentication, notifications, data management services, network connectivity, and high availability.
-* :doc:`Implement Mattermost </getting-started/implementation-plan>` - Get a detailed breakdown of the technical requirements to deploy Mattermost for your team or organization.
+* :doc:`Architecture overview </getting-started/architecture-overview>` - Learn the basics of user authentication, notifications, data management services, network connectivity, and high availability.
+* :doc:`Plan your Mattermost implementation </getting-started/implementation-plan>` - Get a detailed breakdown of the technical requirements to deploy Mattermost for your team or organization.
 * :doc:`Enterprise roll out checklist </getting-started/enterprise-roll-out-checklist>` - Learn how to roll Mattermost out to thousands of users.
 * :doc:`Welcome email template </getting-started/welcome-email-to-end-users>` - Use our sample email template when you’re ready to invite users to your server.
 
-Install guides
---------------
-
-The Mattermost server and client apps can run on all of the most popular platforms. Here’s a list of the most popular installation methods.
-
-Server installation
-^^^^^^^^^^^^^^^^^^^
-.. toctree::
-    :maxdepth: 1
-    :hidden:
-
-    Software and hardware requirements </install/software-hardware-requirements>
-    Install Mattermost via Docker </install/install-docker>
-    Mattermost Omnibus </install/installing-mattermost-omnibus>
-    Install Mattermost from Tar </install/install-tar>
-    Ubuntu 20.04 LTS </install/installing-ubuntu-2004-LTS>
-    Kubernetes </install/install-kubernetes>
-    About the Mattermost Kubernetes Operator </install/mattermost-kubernetes-operator>
-    Debian Buster </install/install-debian>
-    RHEL 8 </install/install-rhel-8>
-    CentOS, Oracle Linux, and Scientific Linux </install/install-centos-oracle-scientific>
-
-* :doc:`Software and hardware requirements </install/software-hardware-requirements>`
-* :doc:`Deploy Mattermost on Docker </install/install-docker>`
-* :doc:`Mattermost Omnibus </install/installing-mattermost-omnibus>`
-* :doc:`Install Mattermost from Tar </install/install-tar>`
-* :doc:`Ubuntu 20.04 LTS </install/installing-ubuntu-2004-LTS>`
-* :doc:`Kubernetes </install/install-kubernetes>`
-* :doc:`About the Mattermost Kubernetes Operator </install/mattermost-kubernetes-operator>`
-* :doc:`Debian Buster </install/install-debian>`
-* :doc:`RHEL 8 </install/install-rhel-8>`
-* :doc:`CentOS, Oracle Linux, and Scientific Linux </install/install-centos-oracle-scientific>`
-
-Desktop and Mobile App installation
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-These guides will get you up and running with Mattermost desktop and mobile apps in minutes.
-
-.. toctree::
-    :maxdepth: 1
-    :hidden:
-
-    Desktop app install guides </install/desktop-app-install>
-    iOS setup </install/install-ios-app>
-    Android setup </install/install-android-app>
-    Testing push notifications </deploy/mobile-testing-notifications>
-
-* :doc:`Desktop app install guides </install/desktop-app-install>`
-* :doc:`iOS setup </install/install-ios-app>`
-* :doc:`Android setup </install/install-android-app>`
-* :doc:`Testing push notifications </deploy/mobile-testing-notifications>`
-
-Deployment guide
+Deployment guides
 ----------------
 
-The deployment guide is for administrators who are ready to integrate Mattermost with their organization’s IT infrastructure. 
+These deployment guides are for administrators who are ready to integrate Mattermost with their organization’s IT infrastructure. 
 
 Server deployment
 ^^^^^^^^^^^^^^^^^
@@ -144,11 +90,15 @@ Desktop and Mobile App deployment
     :maxdepth: 1
     :hidden:
 
+    Desktop app install guides </install/desktop-app-install>
     Desktop app deployment guide </deploy/desktop-app>
     Desktop MSI installer and group policy installation guides (beta) </install/desktop-msi-installer-and-group-policy-install>
     Desktop App custom dictionaries </install/desktop-custom-dictionaries>
     Desktop managed resources </install/desktop-app-managed-resources>
     Using Mattermost’s pre-built mobile apps </deploy/use-prebuilt-mobile-apps>
+    iOS setup </install/install-ios-app>
+    Android setup </install/install-android-app>
+    Testing push notifications </deploy/mobile-testing-notifications>
     Deploy Mattermost mobile apps </deploy/mobile-overview>
     Mobile push notifications </deploy/mobile-hpns>
     Building and distributing your own custom Mattermost mobile apps </deploy/build-custom-mobile-apps>
@@ -162,6 +112,7 @@ Customize the Mattermost desktop and mobile apps to meet any deployment needs.
 
 **Desktop Apps**
 
+* :doc:`Desktop app install guides </install/desktop-app-install>`
 * :doc:`Desktop app deployment guide </deploy/desktop-app>` - Customize and distribute the Mattermost desktop app with pre-configured settings.
 * :doc:`Desktop MSI installer and group policy installation guides (beta) </install/desktop-msi-installer-and-group-policy-install>` - Use the Mattermost MSI installer and Group Policy definitions for Windows deployment.
 * :doc:`Desktop app custom dictionaries </install/desktop-custom-dictionaries>` - Create custom dictionaries for Mattermost spellcheck.
@@ -170,6 +121,9 @@ Customize the Mattermost desktop and mobile apps to meet any deployment needs.
 **Mobile Apps**
 
 * :doc:`Using Mattermost’s pre-built mobile apps </deploy/use-prebuilt-mobile-apps>` - Connect users to your Mattermost server with our prebuilt apps for Android and iOS.
+* :doc:`iOS setup </install/install-ios-app>` - Install the Mattermost mobile app for iOS.
+* :doc:`Android setup </install/install-android-app>` - Install the Mattermost mobile app for Android.
+* :doc:`Testing push notifications </deploy/mobile-testing-notifications>` - Learn how to test mobile push notifications.
 * :doc:`Deploy Mattermost mobile apps </deploy/mobile-overview>` - Learn the basics of how to customize and deploy Mattermost to the Enterprise.
 * :doc:`Mobile push notifications </deploy/mobile-hpns>` - Set up mobile push notifications. 
 * :doc:`Building and distributing your own custom Mattermost mobile apps </deploy/build-custom-mobile-apps>` - Build custom mobile Mattermost apps.
@@ -271,15 +225,11 @@ Additional server install guides
     :maxdepth: 1
     :hidden:
 
-    Install on Ubuntu 18.04 LTS </install/installing-ubuntu-1804-LTS>
-    Install on RHEL 7 </install/install-rhel-7>
     Deploy Mattermost on Bitnami </install/deploying-team-edition-on-bitnami>
     AWS Elastic Beanstalk Docker setup </install/setting-up-aws-elastic-beanstalk-docker>
     Install Mattermost Team Edition in GitLab Helm Chart </install/installing-team-edition-helm-chart>
     Open source components </upgrade/open-source-components>
 
-* :doc:`Install on Ubuntu 18.04 LTS </install/installing-ubuntu-1804-LTS>`
-* :doc:`Install on RHEL 7 </install/install-rhel-7>`
 * :doc:`Deploy Mattermost on Bitnami </install/deploying-team-edition-on-bitnami>`
 * :doc:`AWS Elastic Beanstalk Docker setup </install/setting-up-aws-elastic-beanstalk-docker>`
 * :doc:`Install on GitLab Helm Chart </install/installing-team-edition-helm-chart>`
