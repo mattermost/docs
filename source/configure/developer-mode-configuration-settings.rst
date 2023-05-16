@@ -97,7 +97,7 @@ Allow untrusted internal connections
 +-----------------------------------------------+-----------------------------------------------------------------------------------------------+
 | Limit the ability for the Mattermost server   | - System Config path: **Environment > Developer**                                             |
 | to make untrusted requests within its local   | - ``config.json setting``: ``".ServiceSettings.AllowedUntrustedInternalConnections": "",``    |
-| network. A request is considered “untrusted”  | - Environment variable: ``MM_SERVICESETTINGS_ALLOWUNTRUSTEDINTERNALCONNECTIONS``              |
+| network. A request is considered “untrusted”  | - Environment variable: ``MM_SERVICESETTINGS_ALLOWEDUNTRUSTEDINTERNALCONNECTIONS``            |
 | when it’s made on behalf of a client.         |                                                                                               |
 +-----------------------------------------------+-----------------------------------------------------------------------------------------------+
 | This setting is a whitelist of local network addresses that can be requested by the Mattermost server. It’s configured as a                   |
