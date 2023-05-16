@@ -8,7 +8,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3.3.0
         if: github.event.pull_request.head.repo.full_name == github.repository
         with:
           submodules: true
@@ -16,7 +16,7 @@ jobs:
 
       - name: Setup Python
         if: github.event.pull_request.head.repo.full_name == github.repository
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@db9987b4c1f10f0404fa60ee629f675fafbd6763 # v4.6.0
         with:
           python-version: '3.9'
 
@@ -32,7 +32,7 @@ jobs:
         if: github.event.pull_request.head.repo.full_name == github.repository
         run: make SPHINXOPTS="-j auto -D mm_url_path_prefix=/${{ steps.pr.outputs.id }}" html
 
-      - uses: shallwefootball/s3-upload-action@master
+      - uses: shallwefootball/s3-upload-action@4350529f410221787ccf424e50133cbc1b52704e # v1.3.3
         name: Upload Preview Env
         if: github.event.pull_request.head.repo.full_name == github.repository
         with:
@@ -44,7 +44,7 @@ jobs:
 
       - name: Add comment to PR
         if: github.event.pull_request.head.repo.full_name == github.repository
-        uses: peter-evans/create-or-update-comment@v1
+        uses: peter-evans/create-or-update-comment@7dfe4b0aa0c4bbd06d172692ff8a9e18381d6979 # v3.0.1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           issue-number: ${{ github.event.number }}
