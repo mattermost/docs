@@ -13,7 +13,7 @@ Latest Mattermost Releases:
 
 ## Release v7.11 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
 
-  - The Mattermost v7.11 release has been canceled.
+  - The Mattermost v7.11 release has been canceled as we are working on architectural changes for the Mattermost Suite (Channels, Playbooks, Boards, and Calls). The next scheduled release is v8.0 on June 16th.
 
 ## Release v7.10 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
 
