@@ -1,11 +1,11 @@
 .. _mattermost-customizable-chatgpt-bot-framework:
 
-Customizable ChatGPT Bot Framework
+Customizable AI Bot Framework
 ----------------------------------
 
 Mattermost is committed to providing an open source platform for secure collaboration and control, especially in strict security environments. 
 
-With a focus on AI augmentation and integration, Mattermost envisions providing an open source customizable ChatGPT bot framework with full control and data privacy for organizations that want to deploy AI solutions without sacrificing security.
+With a focus on AI augmentation and integration, Mattermost envisions providing an open source customizable AI bot framework with full control and data privacy for organizations that want to deploy AI solutions without sacrificing security.
 
 The vision is to allow users to integrate generative AI solutions like OpenAI's ChatGPT and private cloud LLMs (Large Language Models) into their Mattermost workflows. This integration can streamline communication, enhance decision-making, and automate tasks, enabling increased speed and efficiency in government, defense, and technology organizations.
 
