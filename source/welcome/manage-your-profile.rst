@@ -104,10 +104,10 @@ See the following table to learn how to configure your password, view access his
 |                      | **Download a passcode generation app**                                                                 |
 |                      |                                                                                                        |
 |                      | - Download Google Authenticator for an Apple device from                                               |
-|                      | `iTunes <https://itunes.apple.com/us/app/google-authenticator/id388497605?mt=8>`__                     |
+|                      |   `iTunes <https://itunes.apple.com/us/app/google-authenticator/id388497605?mt=8>`__                   |
 |                      | - Download Google Authenticator for an Android device from                                             |
-|                      | `Google Play <https://play.google.com/store/apps/details?id=com.google.                                |
-|                      | android.apps.authenticator2&hl=en>`__                                                                  |
+|                      |   `Google Play <https://play.google.com/store/apps/details?id=com.google.                              |
+|                      |   android.apps.authenticator2&hl=en>`__                                                                |
 |                      |                                                                                                        |
 |                      | **Enable MFA in Mattermost**                                                                           |
 |                      |                                                                                                        |
