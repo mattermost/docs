@@ -47,7 +47,7 @@ Select the **Skin tone** icon in the top right corner of the emoji picker to spe
 Upload custom emojis
 ~~~~~~~~~~~~~~~~~~~~
 
-Everyone in your Mattermost workspace can use the custom emojis you upload. From the emoji picker, select **Custom Emoji**. Small, square pictures work best when selecting an image to upload. The file can be any JPG, GIF, or PNG that's up to 512 KiB in size.
+Using Mattermost in a web browser or the desktop app, you can upload new emojis that everyone in your Mattermost workspace can access to react to messages. From the emoji picker, select **Custom Emoji**. Small, square pictures work best when selecting an image to upload. The file can be any JPG, GIF, or PNG that's up to 512 KiB in size.
 
 1. Enter a name for your custom emoji. This is the name that shows up in the emoji autocomplete.
 2. Choose **Select**, then select the image to use for the emoji.
@@ -63,9 +63,9 @@ Everyone in your Mattermost workspace can use the custom emojis you upload. From
   If you can't see the **Custom Emoji** option, your Mattermost system admin may have restricted access to upload custom emoji. Contact your Mattermost system admin for assistance.
   
 Remove custom emojis
-~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^
 
-You can remove custom emojis that you uploaded to Mattermost.
+Using Mattermost in a web browser or the desktop app, you can remove custom emojis that you uploaded to Mattermost.
 
 1. Open the emoji picker.
 2. Select **Custom Emoji**.

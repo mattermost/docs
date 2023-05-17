@@ -13,6 +13,9 @@ Share files in messages
 .. |desktop-download-icon| image:: ../images/arrow-down-bold-circle-outline_F0048.svg
   :alt: Use the desktop app download icon to review download status, as well as access and clear the list of downloaded files.
 
+.. |channel-files-icon| image:: ../images/channel-files-icon.svg
+  :alt: Use the Channel files icon to access all files shared in the current channel.
+
 With file attachments, you can share additional information that helps your team to visually understand your ideas. Sharing videos, voice recordings, screenshots, and photos can make your messages more effective and clear.
 
 .. tabs::
@@ -41,9 +44,20 @@ With file attachments, you can share additional information that helps your team
 
       From Mattermost desktop app v5.2, you can review download status, access downloads, and clear the list of downloads from a new **Downloads** |desktop-download-icon| option located in the top-right corner of the desktop app window.
 
+    **Access files**
+
+    Access all files shared in a channel by selecting the **Channel files** |channel-files-icon| icon in the channel header.
+
   .. tab:: Mobile
        
-    Tap the **Attachment** |attachment-icon| icon under the message input box.
+    You can share files with other Mattermost users or entire channels by tapping the **Attachment** |attachment-icon| icon under the message input box when composing a message.
+
+    **Access files**
+
+    1. Tap the channel name at the top of the screen.
+    2. Tap **Files**.
+    3. Tap a file to download it, open it, or copy a public link to the file.
+
       
 Attachment limits and sizes
 ---------------------------
