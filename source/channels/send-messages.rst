@@ -63,7 +63,7 @@ By default, message drafts are synchronized on the Mattermost server and are acc
 Edit or delete messages
 -----------------------
 
-Select the **More** |more-icon| icon next to a message that you've sent.
+Using Mattermost in a web browser or the desktop app, select the **More** |more-icon| icon next to a message that you've sent.
 
 .. image:: ../images/more-actions.png
    :alt: Select the More option to edit or delete a sent message.
