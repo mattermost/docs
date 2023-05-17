@@ -41,5 +41,5 @@ When you request acknowlegement of a message, an **Acknowledge** |acknowledge-bu
 
 .. tip::
 
-    - On mobile, you'll be notified every five minutes until you acknowledge or reply to the message.
+    - When you have push notifications enabled on mobile, you'll be notified every five minutes until you acknowledge or reply to the message.
     - After acknowledging a message, you have up to five minutes to change your mind. Select the **Acknowledged** |acknowledged-icon| button again to remove your name from the list of acknowledged users.
