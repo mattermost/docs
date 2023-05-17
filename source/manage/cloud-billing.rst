@@ -8,9 +8,9 @@ From February 2, 2023, Mattermost Cloud Professional and Enterprise plans are of
 
 .. note:: 
    
-   If you have an existing Cloud Professional monthly subscription, you have until July 27, 2023 to switch to annual billing.:
+   If you have an existing Cloud Professional monthly subscription, you have until July 27, 2023 to switch to annual billing:
    
-   1. Go to **System Console > Subscription**. In the **Switch to an annual plan today** section select **Learn More**. 
+   1. Go to **System Console > Subscription**. In the **Switch to an annual plan today** section select **Learn More**. A minimum of ten seats is required.
    2. Fill in your payment information.
    3. Select **Switch to annual billing**
 
