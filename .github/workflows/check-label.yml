@@ -17,8 +17,7 @@ jobs:
       run: |
         echo "$PR_NUMBER" > pr.txt
     - name: Save PR
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@65d862660abb392b8c4a3d1195a2108db131dd05 # v3.1.2
       with:
         name: pr.txt
-        path: |
-          pr.txt
+        path: pr.txt

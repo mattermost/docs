@@ -108,7 +108,7 @@ Install a database
 
     With the database installed and the initial setup complete, you can now install the Mattermost server.
 
-      .. tab:: Install MySQL
+  .. tab:: Install MySQL
 
     Install and set up a MySQL database for use by the Mattermost server.
 
