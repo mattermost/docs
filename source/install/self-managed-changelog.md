@@ -13,7 +13,7 @@ Latest Mattermost Releases:
 
 ## Release v7.11 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
 
-  - The Mattermost v7.11 release has been canceled as we are working on architectural changes for the Mattermost Suite (Channels, Playbooks, Boards, and Calls). The next scheduled release is v8.0 on June 16th.
+  - The Mattermost v7.11 release has been canceled as we are working on architectural changes for the Mattermost Suite (Channels, Playbooks, Boards, and Calls). The next scheduled release is v8.0 this summer.
 
 ## Release v7.10 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
 
@@ -104,7 +104,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ### Upcoming Deprecations and Breaking Changes in Mattermost v8.0
 
-The following deprecations and breaking changes are planned for the Mattermost v8.0 release, which is scheduled for 2023/06/16. This list is subject to change prior to the release.
+The following deprecations and breaking changes are planned for the Mattermost v8.0 release, which is scheduled for the summer of 2023. This list is subject to change prior to the release.
 
 1. Update module version to v8.0. Clients will have to change their module path to the new structure. Very minimal change. There are no API level breaking changes that would require code changes.
 2. Remove ``ExperimentalSettings.PatchPluginsReactDOM``. If this setting was previously enabled, confirm that:
