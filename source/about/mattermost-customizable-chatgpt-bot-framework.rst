@@ -16,7 +16,12 @@ Mattermost's open source platform provides verifiable privacy assurances, data c
 
 In the near term, this may involve integrating private-cloud AI with Mattermost, while in the long term, it could include training foundation models with an organization's data in a controlled environment.
 
-Sample open source OpenAI plugin
+Example open source Mattermost app AI framework
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The `mattermost/mattermost-ai-framework repository <https://github.com/mattermost/mattermost-ai-framework>`_ demonstrates a self-hosted AI app in a multi-user chat environment that can be fully private and off-grid AKA air-gapped. It can also be deployed and tested entirely in the browser via `Gitpod <https://github.com/mattermost/mattermost-ai-framework#gitpod>`_.
+
+Example open source OpenAI plugin
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 An example of an OpenAI integration is the  `open source OpenAI plugin for Mattermost <https://github.com/Brightscout/mattermost-plugin-openai>`_ developed by Brightscout:
