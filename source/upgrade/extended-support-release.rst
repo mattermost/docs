@@ -10,12 +10,12 @@ What is an Extended Support Release?
 During each monthly release, Mattermost backports high severity or high impact security fixes to the previous three monthly releases. Extended Support Releases (ESRs) are releases that will receive backports for security fixes and major bug fixes for the length of their life cycle.
 
 .. important::
-  Support for Mattermost Server v7.1 Extended Support Release is coming to the end of its life cycle on May 15, 2023. Upgrading to Mattermost Server v7.8 Extended Support Release or later is required.
+  Support for Mattermost Server v7.1 Extended Support Release has come to the end of its life cycle on May 15, 2023. Upgrading to Mattermost Server v7.8 Extended Support Release or later is required.
 
 What is the life cycle of an Extended Support Release?
 ------------------------------------------------------
 
-Mattermost provides an ESR when a significant number of new features and improvements have been added to the product, and have had sufficient time to stabilize. A new ESR is released twice a year, every January and July release. An ESR is supported for nine months to provide customers with enough time to test and upgrade to the next ESR.
+Mattermost provides an ESR when a significant number of new features and improvements have been added to the product, and have had sufficient time to stabilize. A new ESR is released twice a year, every February and August release. An ESR is supported for nine months to provide customers with enough time to test and upgrade to the next ESR.
 
 When an ESR is at the end of its life cycle, there will be announcements ahead of time to provide time for people to test, certify, and deploy a newer ESR version before support ends. There will be a clear upgrade path provided between ESR versions. After a release reaches its end-of-life, no further updates will be provided for that version. Please see `Release Lifecycle documentation </upgrade/release-lifecycle.html>`_ for a full list of lifecycles for each Mattermost release.
 
@@ -49,7 +49,7 @@ What are the current supported Extended Support Release versions?
 +-------------+----------------+------------------+------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------+
 | Version     | Type           | Release Date     | End of Support   | Latest Dot Release Download link                                                           | Upgrade Notes                                       |
 +=============+================+==================+==================+============================================================================================+=====================================================+
-| 7.8         | Feature        | February 16, 2023| November 15, 2023| `7.8.4 <https://releases.mattermost.com/7.8.4/mattermost-7.8.4-linux-amd64.tar.gz>`_       |                                                     |
+| 7.8         | Feature        | February 16, 2023| November 15, 2023| `7.8.5 <https://releases.mattermost.com/7.8.5/mattermost-7.8.5-linux-amd64.tar.gz>`_       |                                                     |
 +-------------+----------------+------------------+------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------+
 | 7.1         | Feature        | July 15, 2022    | May 15, 2023     | `7.1.9 <https://releases.mattermost.com/7.1.9/mattermost-7.1.9-linux-amd64.tar.gz>`_       |                                                     |
 +-------------+----------------+------------------+------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------+

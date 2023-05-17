@@ -11,7 +11,7 @@ jobs:
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
       - name: Download PR number artifact
-        uses: dawidd6/action-download-artifact@v2
+        uses: dawidd6/action-download-artifact@0c49384d39ceb023b8040f480a25596fd6cf441b # v2.26.0
         with:
           workflow: ${{ github.event.workflow_run.workflow_id }}
           name: pr.txt
@@ -20,7 +20,7 @@ jobs:
         run: |
           echo "::set-output name=id::$(<pr.txt)"
       - name: Check label
-        uses: actions/github-script@v4
+        uses: actions/github-script@6f00a0b667f9463337970371ccda9072ee86fb27 # v6.4.1
         id: label-checker
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
@@ -54,7 +54,7 @@ jobs:
             }
             return false;
 
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3.3.0
         if: ${{ steps.label-checker.outputs.result == 'true' }}
         with:
           ref: ${{ github.event.workflow_run.head_sha }}
@@ -64,7 +64,7 @@ jobs:
 
       - name: Setup Python
         if: ${{ steps.label-checker.outputs.result == 'true' }}
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@db9987b4c1f10f0404fa60ee629f675fafbd6763 # v4.6.0
         with:
           python-version: '3.9'
 
@@ -80,7 +80,7 @@ jobs:
         if: ${{ steps.label-checker.outputs.result == 'true' }}
         run: make SPHINXOPTS="-j auto -D mm_url_path_prefix=/${{ steps.pr.outputs.id }}" html
 
-      - uses: shallwefootball/s3-upload-action@master
+      - uses: shallwefootball/s3-upload-action@4350529f410221787ccf424e50133cbc1b52704e # v1.3.3
         name: Upload Preview Env
         if: ${{ steps.label-checker.outputs.result == 'true' }}
         with:
@@ -91,7 +91,7 @@ jobs:
           destination_dir: ${{ steps.pr.outputs.id }}
 
       - name: Add comment to PR
-        uses: peter-evans/create-or-update-comment@v1
+        uses: peter-evans/create-or-update-comment@7dfe4b0aa0c4bbd06d172692ff8a9e18381d6979 # v3.0.1
         if: ${{ success() && steps.label-checker.outputs.result == 'true' }}
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -101,7 +101,7 @@ jobs:
 
       - name: The job has failed
         if: ${{ failure() && steps.label-checker.outputs.result == 'true' }}
-        uses: peter-evans/create-or-update-comment@v1
+        uses: peter-evans/create-or-update-comment@7dfe4b0aa0c4bbd06d172692ff8a9e18381d6979 # v3.0.1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           issue-number: ${{ steps.pr.outputs.id }}
