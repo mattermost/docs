@@ -40,7 +40,7 @@ Two other examples of ChatGPT integrations built by Sebastian Müller include:
 
 *The LLaMa version, however, is not available for commercial use due to licensing restrictions on the language model.*
 
-Contact sales
+Join the discussion
 --------------
 
-To learn more about Mattermost's AI-enhanced secure collaboration platform, request a custom AI integration, or inquire about pricing and plans, `contact our Sales team <https://mattermost.com/contact-sales/>`_ or `join the community <https://community.mattermost.com/core/channels/ask-chatgpt>`_ to discuss today.
+To learn more about Mattermost's AI-enhanced secure collaboration platform, share ideas, and contribute to the development, join the `Mattermost community channel <https://community.mattermost.com/core/channels/ai-exchange>`_ today.
