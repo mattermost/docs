@@ -18,7 +18,7 @@ Mattermost Enterprise Edition
 
 Mattermost Enterprise Edition v7.10.2 - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v7-10-feature-release>`__ - `Download <https://releases.mattermost.com/7.10.2/mattermost-7.10.2-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/7.10.2/mattermost-7.10.2-linux-amd64.tar.gz``
-  - SHA-256 Checksum: ``ccbc367ccf0108118febf6c9dc1be22773b96a487bb7ca8de6c829fa12eb8f66``
+  - SHA-256 Checksum: ``4f697283806d02bc7cd77924e9e750ec05f766603b713b2b26e5acee4e9660f5``
   - GPG Signature: https://releases.mattermost.com/7.10.2/mattermost-7.10.2-linux-amd64.tar.gz.sig
 Mattermost Enterprise Edition v7.9.4 - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v7-9-feature-release>`__ - `Download <https://releases.mattermost.com/7.9.4/mattermost-7.9.4-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/7.9.4/mattermost-7.9.4-linux-amd64.tar.gz``
@@ -331,7 +331,7 @@ We generally recommend installing Enterprise Edition, even if you don't currentl
 
 Mattermost Team Edition v7.10.2 - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v7-10-feature-release>`__ - `Download <https://releases.mattermost.com/7.10.2/mattermost-team-7.10.2-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/7.10.2/mattermost-team-7.10.2-linux-amd64.tar.gz``
-  - SHA-256 Checksum: ``2c4da70db611e21bfbb47416e22d9ef262ca2e1701dc73757138a0e2f0861fdf``
+  - SHA-256 Checksum: ``47075ee215ec1abd3f81c67ce56a425ef37c2f41f114429d9bb3b6cc0b13915d``
   - GPG Signature: https://releases.mattermost.com/7.10.2/mattermost-team-7.10.2-linux-amd64.tar.gz.sig
 Mattermost Team Edition v7.9.4 - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v7-9-feature-release>`__ - `Download <https://releases.mattermost.com/7.9.4/mattermost-team-7.9.4-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/7.9.4/mattermost-team-7.9.4-linux-amd64.tar.gz``
