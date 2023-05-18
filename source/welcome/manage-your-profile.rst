@@ -42,8 +42,10 @@ See the following table to learn how to configure your name, username, nickname,
 |                     |   username changes through the login provider.                                                  |
 +---------------------+-------------------------------------------------------------------------------------------------+
 | Nickname            | (Optional) Nicknames appear in the direct messages member list and team management modal.       |
-|                     | You won't receive mention notifications when someone types your nickname unless you add         |
-|                     | it to the **Words That Trigger Mentions** notifications list as a `Notifications                |
+|                     | Your nickname can be up to 64 characters long.                                                  |
+|                     |                                                                                                 |
+|                     | **Note**: You won't receive mention notifications when someone types your nickname unless you   |
+|                     | add it to the **Words That Trigger Mentions** notifications list as a `Notifications            |
 |                     | </channels/channels-settings.html#notifications>`__ preference.                                 |
 +---------------------+-------------------------------------------------------------------------------------------------+
 | Position            | (Optional) Position can be used to describe your role or job title.                             |
@@ -98,7 +100,15 @@ See the following table to learn how to configure your password, view access his
 |                      | You'll need to download a MFA passcode generation app, such as Google Authenticator or a similar app,  |
 |                      | and then set-up MFA in your Mattermost account.                                                        |
 |                      |                                                                                                        |
-|                      | **Set-up MFA in Mattermost**                                                                           |
+|                      | **Download a passcode generation app**                                                                 |
+|                      |                                                                                                        |
+|                      | - Download Google Authenticator for an Apple device from                                               |
+|                      |   `iTunes <https://itunes.apple.com/us/app/google-authenticator/id388497605?mt=8>`__                   |
+|                      | - Download Google Authenticator for an Android device from                                             |
+|                      |   `Google Play <https://play.google.com/store/apps/details?id=com.google.                              |
+|                      |   android.apps.authenticator2&hl=en>`__                                                                |
+|                      |                                                                                                        |
+|                      | **Enable MFA in Mattermost**                                                                           |
 |                      |                                                                                                        |
 |                      | 1. Open Mattermost in a web browser or the desktop app.                                                |
 |                      | 2. In Mattermost, from your profile picture, select **Profile > Security**.                            |
