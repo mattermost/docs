@@ -15,30 +15,41 @@ Manage channel members
 Add members to a channel
 ------------------------
 
-Using Mattermost in a web browser or the desktop app, any member of a channel can add other members to public or private channels, unless your System Admin has restricted access to do so. 
+Using Mattermost in a web browser or the desktop app, any member of a channel can add other members to public or private channels, unless your System Admin has restricted access to do so.
 
-1. Select the channel name at the top of the center pane to access the drop-down menu, then select **Add Members**. 
+.. tabs::
 
-  .. image:: ../images/add-member-to-channel.png
-    :alt: Use options available through the channel name to add a member to a channel.
+  .. tab:: Desktop
 
-2. Search for users, select users, then select **Add** to add users to the current channel. Mattermost notifies you when a user is already a member of the channel.
+    1. Select the channel name at the top of the center pane to access the drop-down menu, then select **Add Members**. 
 
-.. tip::
+      .. image:: ../images/add-member-to-channel.png
+        :alt: Use options available through the channel name to add a member to a channel.
 
-  - From Mattermost v7.8, people you've messaged directly are listed first, followed by all users in alphabetical order. 
-  - Alternatively, to add members to a channel, select the channel name, select the **View Info** |channel-info| icon, select **Members** in the right pane, and then select **Add**.
+    2. Search for users, select users, then select **Add** to add users to the current channel. Mattermost notifies you when a user is already a member of the channel.
+
+    .. tip::
+
+      - From Mattermost v7.8, people you've messaged directly are listed first, followed by all users in alphabetical order. 
+      - Alternatively, to add members to a channel, select the channel name, select the **View Info** |channel-info| icon, select **Members** in the right pane, and then select **Add**.
+
+  .. tab:: Mobile
+
+    1. Tap the channel name at the top of the screen.
+    2. Tap **Add members**. 
+    3. Select members to add to the channel. You can scroll through the alphabetical list of members, or search for members in the Search field.
+    4. Tap **Add Members**.
 
 .. note::
 
-   To add members to a channel when using the Mattermost mobile app, @mention them. If they're not a channel member, you're prompted to add them.
+   You can also @mention users to add them to a channel. If they're not a channel member, Mattermost prompts you to add them.
  
 Add users from their profile
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-You can also add users to channels within their profile pop-over.
+Using a web browser or the desktop app, you can also add users to channels within their profile pop-over.
 
-1. Select a user's profile image to access their profile pop-over.
+1. Select a user's profile image.
 2. Select **Add to a Channel**.
 
   .. image:: ../images/add-member-pop.png
@@ -49,7 +60,7 @@ You can also add users to channels within their profile pop-over.
 Leave a channel
 ----------------
 
-To remove yourself from a channel, you can:
+Using a web browser or the desktop app, you can remove yourself from a channel, you can:
 
 - Select the channel name at the top of the center pane to access the drop-down menu, then select **Manage Members**. Select the member's `user role </welcome/about-user-roles.html>`__, then select **Remove from Channel**.
 - Select the channel's **View Info** |channel-info| icon, and select **Members** in the right pane. Select **Manage**, select a user's role, then select **Leave a Channel**.
