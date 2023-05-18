@@ -43,4 +43,4 @@ Two other examples of ChatGPT integrations built by Sebastian Müller include:
 Join the community
 --------------
 
-To learn more about Mattermost's AI-enhanced secure collaboration platform, share ideas, and contribute to the development, join the `Mattermost community channel <https://community.mattermost.com/core/channels/ai-exchange>`_ today.
+To learn more about Mattermost's AI bot framework, share ideas, and contribute to the development, join the `Mattermost community channel <https://community.mattermost.com/core/channels/ai-exchange>`_ or the `peer-to-peer forums <https://forum.mattermost.com/c/ai-frameworks/40>`_ today.
