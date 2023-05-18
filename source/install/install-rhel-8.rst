@@ -1,7 +1,7 @@
 .. _install-rhel-8:
 
-Install Mattermost on RHEL 8
-=============================
+Install Mattermost on RHEL
+==========================
 
 .. include:: ../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
