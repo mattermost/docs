@@ -10,11 +10,7 @@ Archive and unarchive channels
 Archive a channel
 -----------------
 
-Anyone using Mattermost can archive the public channels or private channels they belong to, unless the system admin has restricted the permissions to do so. system admins can archive channels in the System Console without needing to be a channel member. When a channel is archived, it's removed from the user interface, but a copy exists on the server in case it's needed for audit reasons at a later stage. 
-
-.. note:: 
-  
-  From Mattermost v5.28, users can view, share, and search for archived channel content. Because a copy of the channel exists on the server, you can't reuse the URL of an archived channel when creating a new channel.
+Anyone using Mattermost can archive the public channels or private channels they belong to, unless the system admin has restricted the permissions to do so. System admins can archive channels in the System Console without needing to be a channel member. When a channel is archived, it's removed from the user interface, but a copy exists on the server in case it's needed for audit reasons at a later stage. Because a copy of the channel exists on the server, you can't reuse the URL of an archived channel when creating a new channel.
 
 .. tabs::
 
