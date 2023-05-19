@@ -11,16 +11,13 @@ Elasticsearch provides enterprise-scale deployments with optimized search perfor
 .. important::
   The default Mattermost database search starts to show performance degradation at around 2.5 million posts, depending on the specifications for the database server. If you expect your Mattermost server to have more than 2.5 million posts, we recommend using Elasticsearch for optimum search performance. For deployments with over five million posts, Elasticsearch is required to avoid significant performance issues (such as timeouts) with search and at-mentions.
 
-  For Mattermost v6.0, Elasticsearch v7.x is supported. Previous versions of Mattermost, including v5.38 and earlier releases, support Elasticsearch v5.x, v6.x, and v7.x. 
+  For Mattermost v6.0, Elasticsearch v7.x is supported.
     
 Deployment guide
 ----------------
 
 Elasticsearch allows you to search large volumes of data quickly, in near real-time, by creating and managing an index of post data. The indexing process can be managed from the System Console after setting up and connecting an Elasticsearch server. The post index is stored on the Elasticsearch server and updated constantly after new posts are made. In order to index existing posts, a bulk index of the entire post database must be generated.
 
-.. note::
-    From Mattermost v5.26, you can filter inactive users, search by user role, and also search for terms inside links. This update introduces a breaking change which affects the "from" part of the search. To avoid this, reindex your Elasticsearch instance/cluster prior to upgrading to Mattermost v.5.26 or later.
-    
 Set up an Elasticsearch server
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
