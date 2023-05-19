@@ -40,6 +40,7 @@ Latest Mattermost Cloud releases:
  - Type-generated settings will now be generated (only for future generations) with a URL-safe version of base64 encoding.
  - Mattermost is now resilient against database replica outages and will dynamically choose a replica if it's alive. Also a config parameter ``ReplicaMonitorIntervalSeconds`` was added and the default value is 5. This controls how frequently unhealthy replicas will be monitored for liveness check.
  - Removed ``ExperimentalSettings.PatchPluginsReactDOM``.
+ - Removed deprecated ``PermissionUseSlashCommands``.
  - Added support for attachments when importing/exporting Boards.
  - Updated Docker Base Image from Debian to Ubuntu 22.04 LTS.
  - Remove support for PostgreSQL v10. The new minimum PostgreSQL version is now v11.
