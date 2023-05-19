@@ -334,9 +334,7 @@ For MySQL, we recommend the following configuration options for high performance
 Leader election
 ^^^^^^^^^^^^^^^^
 
-From Mattermost v4.2, a cluster leader election process assigns any scheduled task such as LDAP sync to run on a single node in a multi-node cluster environment.
-
-The process is based on a widely used `bully leader election algorithm <https://en.wikipedia.org/wiki/Bully_algorithm>`__ where the process with the lowest node ID number from amongst the non-failed processes is selected as the leader.
+A cluster leader election process assigns any scheduled task such as LDAP sync to run on a single node in a multi-node cluster environment. The process is based on a widely used `bully leader election algorithm <https://en.wikipedia.org/wiki/Bully_algorithm>`__ where the process with the lowest node ID number from amongst the non-failed processes is selected as the leader.
 
 Job server
 ^^^^^^^^^^^
@@ -359,11 +357,11 @@ In previous Mattermost Server versions, and this documentation, the instructions
 Plugins and High Availability
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-From Mattermost v5.14, when you install or upgrade a plugin, it's propagated across the servers in the cluster automatically. File storage is assumed to be shared between all the servers, using services such as NAS or Amazon S3.
+When you install or upgrade a plugin, it's propagated across the servers in the cluster automatically. File storage is assumed to be shared between all the servers, using services such as NAS or Amazon S3.
 
 If ``"DriverName": "local"`` is used then the directory at ``"FileSettings":`` ``"Directory": "./data/"`` is expected to be a NAS location mapped as a local directory. If this is not the case High Availability will not function correctly and may corrupt your file storage.
 
-Note a slight behavior change from Mattermost v5.15: When you reinstall a plugin in v5.14, the previous **Enabled** or **Disabled** state is retained. As of v5.15, a reinstalled plugin's initial state is **Disabled**.
+A reinstalled plugin's initial state is **Disabled**.
 
 CLI and High Availability
 ^^^^^^^^^^^^^^^^^^^^^^^^^
