@@ -7,13 +7,7 @@ Bleve search (experimental)
 Bleve is a search engine that uses Lucene-style full-text search and indexing. This style of search and indexing helps overcome limitations of the default database search such as challenges with characters and advanced search capabilities.
 
 The Bleve search engine works as a library integrated into the Mattermost codebase. As it generates indexes in the filesystem of the server that it is running on, it doesn’t require an external server to function. Because of this, Bleve should not be enabled in High Availability deployments.
-
-.. note::
-
-  From Mattermost v6.1, Bleve search uses the scorch index type on newly-created indexes. This new index type features efficiency improvements and indexes that use significantly less disk space.
   
-  To use this new type of index on your existing indexes, first upgrade Mattermost Server to version to v6.1 or later. Then go to **System Console > Experimental > Bleve** and select **Purge Index** to run a purge operation. When that's complete, select **Index Now** to reindex. Bleve remains compatible with existing indexes, so currently indexed data will continue to work if a purge and reindex isn't run.
-
 Configuring Bleve in Mattermost
 -------------------------------
 
