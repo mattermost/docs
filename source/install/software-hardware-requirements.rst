@@ -98,11 +98,6 @@ For Mattermost v6.0 and later:
 -  PostgreSQL 10.0+
 -  MySQL 5.7.12, 8.0.12+ (see note below on MySQL 8 support)
 
-For Mattermost v5.39 and previous releases:
-
-- PostgreSQL 10.0+
-- MySQL 5.6, 5.7, 8.0.12+ (see note below on MySQL 8 support)
-
 Amazon Aurora equivalents of both  PostgreSQL and MySQL are also supported.
 
 MariaDB v10+ no longer functions as a MySQL drop-in replacement, and it's not supported for Mattermost due to the requirement of MySQL 5.7.12. Prior versions of MariaDB were not officially supported but may have functioned in older Mattermost releases. If you are running MariaDB now, migrating from MariaDB to the MySQL equivalent is recommended.
