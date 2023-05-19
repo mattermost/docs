@@ -1,7 +1,7 @@
 .. _install-rhel-8:
 
-Install Mattermost on RHEL 8
-=============================
+Install Mattermost on RHEL
+==========================
 
 .. include:: ../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
@@ -22,53 +22,9 @@ Install a database
 
 .. note:: 
   
-  You only need one database: either MySQL or PostgreSQL. See the `database software </install/software-hardware-requirements.html#database-software>`__ documentation for details on database version support.
+  You only need one database: either PostgreSQL or MySQL. See the `database software </install/software-hardware-requirements.html#database-software>`__ documentation for details on database version support.
 
 .. tabs::
-
-  .. tab:: Install MySQL
-
-    Install and set up a MySQL database for use by the Mattermost server.
-
-    1. Log in to the server that will host the database, and open a terminal window.
-
-    2. Install MySQL.
-
-    3. Download and install the latest release package.
-
-    4. Disable the system MySQL by running ``sudo yum module disable mysql``, and install MySQL by running ``sudo yum install mysql-community-server``.
-
-    5. Start the MySQL server by running ``sudo systemctl start mysqld.service``.
-  
-        .. note::
-   
-            The first time that you start MySQL:
-        
-            - The superuser account ``'root'@'localhost'`` is created with a password. Get this password by running ``sudo grep 'temporary password' /var/log/mysqld.log``. 
-            - The ``validate_password`` plugin is installed. The plugin forces passwords to contain at least one upper case letter, one lower case letter, one digit, and one special character, and that the total password length is at least eight characters.
-
-    6. Change the root password. 
-
-    7. Set MySQL to start automatically when the machine starts by running ``sudo systemctl enable mysqld``.
-
-    8. Create the Mattermost user *mmuser* by running ``mysql> create user 'mmuser'@'%' identified by 'mmuser-password';``.
-
-        .. note::
-        
-            - Use a password that's more secure than ``mmuser-password``.
-            - The ``%`` means that mmuser can connect from any machine on the network. However, it's more secure to use the IP address of the machine that hosts Mattermost. For example, if you install Mattermost on the machine with IP address ``10.10.10.2``, then use the following command: ``mysql> create user 'mmuser'@'10.10.10.2' identified by 'mmuser-password';``.
-
-    9. Create the Mattermost database by running ``mysql> create database mattermost;``.
-
-    10. Grant access privileges to the user mmuser by running ``mysql> grant all privileges on mattermost.* to 'mmuser'@'%';``.
-  
-        .. note::
-    
-            This query grants the MySQL user all privileges on the database for convenience. If you need more security, you can use the following query to grant the user only the privileges necessary to run Mattermost: ``mysql> GRANT ALTER, CREATE, DELETE, DROP, INDEX, INSERT, SELECT, UPDATE, REFERENCES ON mattermost.* TO 'mmuser'@'%';``.
-    
-    11. Log out of MySQL by running ``mysql> exit``.
-
-    With the database installed and the initial setup complete, you can now install the Mattermost server.
 
   .. tab:: Install PostgreSQL
 
@@ -149,6 +105,50 @@ Install a database
             You might have to install the PostgreSQL client software to use the command.
 
     The PostgreSQL interactive terminal starts. To exit the PostgreSQL interactive terminal, type ``\q`` and press **Enter**.
+
+    With the database installed and the initial setup complete, you can now install the Mattermost server.
+
+  .. tab:: Install MySQL
+
+    Install and set up a MySQL database for use by the Mattermost server.
+
+    1. Log in to the server that will host the database, and open a terminal window.
+
+    2. Install MySQL.
+
+    3. Download and install the latest release package.
+
+    4. Disable the system MySQL by running ``sudo yum module disable mysql``, and install MySQL by running ``sudo yum install mysql-community-server``.
+
+    5. Start the MySQL server by running ``sudo systemctl start mysqld.service``.
+  
+        .. note::
+   
+            The first time that you start MySQL:
+        
+            - The superuser account ``'root'@'localhost'`` is created with a password. Get this password by running ``sudo grep 'temporary password' /var/log/mysqld.log``. 
+            - The ``validate_password`` plugin is installed. The plugin forces passwords to contain at least one upper case letter, one lower case letter, one digit, and one special character, and that the total password length is at least eight characters.
+
+    6. Change the root password. 
+
+    7. Set MySQL to start automatically when the machine starts by running ``sudo systemctl enable mysqld``.
+
+    8. Create the Mattermost user *mmuser* by running ``mysql> create user 'mmuser'@'%' identified by 'mmuser-password';``.
+
+        .. note::
+        
+            - Use a password that's more secure than ``mmuser-password``.
+            - The ``%`` means that mmuser can connect from any machine on the network. However, it's more secure to use the IP address of the machine that hosts Mattermost. For example, if you install Mattermost on the machine with IP address ``10.10.10.2``, then use the following command: ``mysql> create user 'mmuser'@'10.10.10.2' identified by 'mmuser-password';``.
+
+    9. Create the Mattermost database by running ``mysql> create database mattermost;``.
+
+    10. Grant access privileges to the user mmuser by running ``mysql> grant all privileges on mattermost.* to 'mmuser'@'%';``.
+  
+        .. note::
+    
+            This query grants the MySQL user all privileges on the database for convenience. If you need more security, you can use the following query to grant the user only the privileges necessary to run Mattermost: ``mysql> GRANT ALTER, CREATE, DELETE, DROP, INDEX, INSERT, SELECT, UPDATE, REFERENCES ON mattermost.* TO 'mmuser'@'%';``.
+    
+    11. Log out of MySQL by running ``mysql> exit``.
 
     With the database installed and the initial setup complete, you can now install the Mattermost server.
 
