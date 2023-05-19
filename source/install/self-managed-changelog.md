@@ -17,8 +17,8 @@ Latest Mattermost Releases:
 
 ## Release v7.10 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
 
-- **v7.10.2, release day TBD**
-  - Fixing an issue where v7.10.1 is reporting an incorrect mmctl version.
+- **v7.10.2, released 2023-05-18*
+  - Fixed an issue where v7.10 reported an incorrect mmctl version.
 - **v7.10.1, released 2023-05-16**
   - Mattermost v7.10.1 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Fixed an issue where a user would still see threads in the threads view of channels they have left. Migration execution time in MySQL: Query OK, 2766769 rows affected (4 min 47.57 sec). Migration execution time in PostgreSQL: 58.11 sec, DELETE 2766690.

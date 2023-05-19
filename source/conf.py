@@ -86,6 +86,8 @@ redirects = {
 	"https://docs.mattermost.com/about/faq-license.html#what-are-mattermost-s-policies-around-licensing-terms-of-use-and-privacy",
 "about/faq-mattermost-source-available-license.html":
 	"https://docs.mattermost.com/about/faq-license.html#source-available-licensing",
+"about/mattermost-customizable-chatgpt-bot-framework.html":
+        "https://docs.mattermost.com/about/mattermost-customizable-ai-bot-framework.html",
 
 # Administration redirects
 "administration/announcement-banner.html":
