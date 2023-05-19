@@ -4,19 +4,19 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 
 Latest Mattermost Cloud releases:
 
-- [Release 2023-05-18](#release-2023-05-18)
+- [Release 2023-06-01](#release-2023-06-01)
 - [Release 2023-05-01](#release-2023-05-01)
 - [Release 2023-04-21](#release-2023-04-21)
 - [Release 2023-03-29](#release-2023-03-29)
 - [Release 2023-03-20](#release-2023-03-20)
 - [Release 2023-01-26](#release-2023-01-26)
 
-## Release 2023-05-18
+## Release 2023-06-01
 
 ### Improvements
 
 #### User Interface (UI)
- - Upgraded the pre-packaged GitHub plugin version to 2.1.5.
+ - Added persistent-notification option when sending an urgent-priority post.
  - Upgraded the pre-packaged Autolink plugin version to 1.4.0.
  - Added an experimental feature to disable re-fetching of channel and channel members on browser focus.
  - Bot users are now hidden in the user selector in apps forms.
@@ -25,6 +25,15 @@ Latest Mattermost Cloud releases:
  - Removed in-app help pages that were no longer accessible.
  - Removed system join/leave messages from thread replies and post them instead in the main channel.
  - Added an experimental setting to make the channel autocomplete only appear after typing two charactters instead of immediately after the tilde (~).
+ - Users with default profile pictures will now regenerate a new picture when their username is changed.
+ - Implemented url auto generation on channel creation for when there's no url safe characters on its name.
+ - Added a new option to auto-follow all threads in the channel **Notification Preference** settings.
+ - ``CTRL/CMD + K`` shortcut can now be used to insert link formatting when text is selected.
+ - ``Pas`` and ``pascal`` code blocks are now higlighted.
+ - Language setting in Boards was removed. The main language setting under **Settings -> Display Settings** now covers Boards. Boards previously supported Catalan, Greek, Indonesian, and Occitan, but since these 4 languages were only partially translated (<40%; Boards-only), they have been removed until more areas of Mattermost are translated into these languages.
+ - Removed websocket state effects for the collapse/expand state of categories.
+ - Pre-packaged Calls version 0.16.0.
+ - Pre-packaged Jira v3.2.5 and GitHub v2.1.6.
 
 #### Administration
  - The Go module has been upgraded to v8.0. All packages are now under the new path ``github.com/mattermost-server/server/v8``.
@@ -33,7 +42,9 @@ Latest Mattermost Cloud releases:
  - Removed ``ExperimentalSettings.PatchPluginsReactDOM``.
  - Added support for attachments when importing/exporting Boards.
  - Updated Docker Base Image from Debian to Ubuntu 22.04 LTS.
- - Removed deprecated ``PermissionUseSlashCommands``.
+ - Bumped up the minimum PostgreSQL version to v11.
+ - Introduce public/ API as discretely versioned submodule.
+ - Three configuration fields have been added, `LogSettings.AdvancedLoggingJSON`, `ExperimentalAuditSettings.AdvancedLoggingJSON`, and `NotificationLogSettings.AdvancedLoggingJSON` which support multi-line JSON, escaped JSON as a string, or a filename that points to a file containing JSON.  The `AdvancedLoggingConfig` fields have been deprecated.
 
 ### Bug Fixes
  - Fixed the sorting value of categories in ``CreateSidebarCategoryForTeamForUser``.
@@ -44,6 +55,9 @@ Latest Mattermost Cloud releases:
  - Fixed an issue where modals did not close when clicking below them on certain screen sizes.
  - Fixed an issue with a few translations labels that couldn't be translated.
  - Fixed an issue where the server log UI for plain text formatting was unexpectedly removed in a previous release.
+ - Fixed an issue where combined system messages did not display in chronological order.
+ - Fixed an issue where the current user and status were not updated on WebSocket reconnect.
+ - Fixed an issue where certain hashtags were not searchable when using database search.
 
 ### Known Issues
  - Message Actions … ellipsis menu icon only displays rectangle when clicked on [MM-52444](https://mattermost.atlassian.net/browse/MM-52444).
