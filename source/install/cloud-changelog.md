@@ -16,24 +16,24 @@ Latest Mattermost Cloud releases:
 ### Improvements
 
 #### User Interface (UI)
- - Added persistent-notification option when sending an urgent-priority post.
- - Upgraded the pre-packaged Autolink plugin version to 1.4.0.
+ - Added a persistent-notification option when sending urgent priority posts.
  - Added an experimental feature to disable re-fetching of channel and channel members on browser focus.
  - Bot users are now hidden in the user selector in apps forms.
  - Removed the fetching of archived channels on page load.
  - The "Channel Type" dropdown within the "Browse Channels" modal can now be focused.
  - Removed in-app help pages that were no longer accessible.
  - Removed system join/leave messages from thread replies and post them instead in the main channel.
- - Added an experimental setting to make the channel autocomplete only appear after typing two charactters instead of immediately after the tilde (~).
+ - Added an experimental setting to make the channel autocomplete only appear after typing two characters instead of immediately after the tilde (~).
  - Users with default profile pictures will now regenerate a new picture when their username is changed.
- - Implemented url auto generation on channel creation for when there's no url safe characters on its name.
+ - Implemented URL auto generation on channel creation for when there's no URL safe characters on its name.
  - Added a new option to auto-follow all threads in the channel **Notification Preference** settings.
  - ``CTRL/CMD + K`` shortcut can now be used to insert link formatting when text is selected.
- - ``Pas`` and ``pascal`` code blocks are now higlighted.
+ - ``pas`` and ``pascal`` code blocks are now higlighted.
  - Language setting in Boards was removed. The main language setting under **Settings -> Display Settings** now covers Boards. Boards previously supported Catalan, Greek, Indonesian, and Occitan, but since these 4 languages were only partially translated (<40%; Boards-only), they have been removed until more areas of Mattermost are translated into these languages.
  - Removed websocket state effects for the collapse/expand state of categories.
  - Pre-packaged Calls version 0.16.0.
- - Pre-packaged Jira v3.2.5 and GitHub v2.1.6.
+ - Pre-packaged Jira plugin version 3.2.5 and GitHub plugin version 2.1.6.
+ - Pre-packaged Autolink plugin version 1.4.0.
 
 #### Administration
  - The Go module has been upgraded to v8.0. All packages are now under the new path ``github.com/mattermost-server/server/v8``.
@@ -42,9 +42,9 @@ Latest Mattermost Cloud releases:
  - Removed ``ExperimentalSettings.PatchPluginsReactDOM``.
  - Added support for attachments when importing/exporting Boards.
  - Updated Docker Base Image from Debian to Ubuntu 22.04 LTS.
- - Bumped up the minimum PostgreSQL version to v11.
- - Introduce public/ API as discretely versioned submodule.
- - Three configuration fields have been added, `LogSettings.AdvancedLoggingJSON`, `ExperimentalAuditSettings.AdvancedLoggingJSON`, and `NotificationLogSettings.AdvancedLoggingJSON` which support multi-line JSON, escaped JSON as a string, or a filename that points to a file containing JSON.  The `AdvancedLoggingConfig` fields have been deprecated.
+ - Remove support for PostgreSQL v10. The new minimum PostgreSQL version is now v11.
+ - The Mattermost public API for Go is now available as a distinctly versioned package. Instead of pinning a particular commit hash, use idiomatic Go to add this package as a dependency: go get github.com/mattermost/mattermost-server/server/public. This relocated Go API maintains backwards compatibility with Mattermost v7. Furthermore, the existing Go API previously at github.com/mattermost/mattermost-server/v6/model remains forward compatible with Mattermost v8, but may not contain newer features. Plugins do not need to be recompiled, but developers may opt in to using the new package to simplify their build process. The new public package is shipping alongside Mattermost v8 as version 0.5.0 to allow for some additional code refactoring before releasing as v1 later this year.
+ - Three configuration fields have been added, ``LogSettings.AdvancedLoggingJSON``, ``ExperimentalAuditSettings.AdvancedLoggingJSON``, and ``NotificationLogSettings.AdvancedLoggingJSON`` which support multi-line JSON, escaped JSON as a string, or a filename that points to a file containing JSON.  The ``AdvancedLoggingConfig`` fields have been deprecated.
 
 ### Bug Fixes
  - Fixed the sorting value of categories in ``CreateSidebarCategoryForTeamForUser``.
