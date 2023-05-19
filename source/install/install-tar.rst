@@ -33,6 +33,10 @@ Install Mattermost Server using the tarball
 
   </div>
 
+.. contents:: On this page:
+  :backlinks: top
+  :local:
+
 You can install the Mattermost Server on any 64-bit Linux system using the tarball. Deployment includes 3 steps: `download <#download-the-latest-mattermost-server-tarball>`__, `install <#install>`__, and `setup <#setup>`__.
 
 .. important::
@@ -57,7 +61,7 @@ Download the latest release
 
     <div class="mm-code-copy__wrapper">
       <code class="mm-code-copy__text mm-code-copy__trigger" data-click-el="Snippet">
-        wget https://releases.mattermost.com/7.10.0/mattermost-7.10.0-linux-amd64.tar.gz
+        wget https://releases.mattermost.com/7.10.2/mattermost-7.10.2-linux-amd64.tar.gz
       </code>
       <span class="mm-code-copy__copied-notice">Copied to clipboard</span>
     </div>
@@ -78,7 +82,7 @@ Download the current Extended Support Release (ESR)
 
     <div class="mm-code-copy__wrapper">
       <code class="mm-code-copy__text mm-code-copy__trigger" data-click-el="Snippet">
-        wget https://releases.mattermost.com/7.8.4/mattermost-7.8.4-linux-amd64.tar.gz
+        wget https://releases.mattermost.com/7.8.5/mattermost-7.8.5-linux-amd64.tar.gz
       </code>
       <span class="mm-code-copy__copied-notice">Copied to clipboard</span>
     </div>
@@ -190,14 +194,14 @@ Save the file and reload systemd using ``sudo systemctl daemon-reload``. Matterm
 Setup
 ------
 
-Before you start the Mattermost Server, you need to edit the configuration file. A sample configuration file is located at ``/opt/mattermost/config/config.defaults.json``. 
+Before you start the Mattermost Server, you need to edit the configuration file. A default configuration file is located at ``/opt/mattermost/config/config.json``. 
 
-Rename this configuration file with correct permissions:
+We recommend taking a backup of this default config ahead of making changes:
 
 .. code-block:: none
   :class: mm-code-block 
         
-    sudo install -C -m 600 -o mattermost -g mattermost /opt/mattermost/config/config.defaults.json /opt/mattermost/config/config.json
+    sudo cp /opt/mattermost/config/config.json /opt/mattermost/config/config.defaults.json 
 
 Configure the following properties in this file:
 
