@@ -52,7 +52,7 @@ Mattermost Enterprise Edition v7.1.9 *Extended Support Release (ESR)* - `View Ch
   - ``https://releases.mattermost.com/7.1.9/mattermost-7.1.9-linux-amd64.tar.gz``
   - SHA-256 Checksum: ``e9c1af69a8ff1e3340210801cc1cadee653e086edacc2e3247acc37d83762c51``
   - GPG Signature: https://releases.mattermost.com/7.1.9/mattermost-7.1.9-linux-amd64.tar.gz.sig
-Mattermost Enterprise Edition v7.0.2 - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v7-0-major-release>`__ - `Download <https://releases.mattermost.com/7.0.2/mattermost-7.0.2-linux-amd64.tar.gz?src=arc>`__
+Mattermost Enterprise Edition v7.0.2 - `View Changelog <https://docs.mattermost.com/install/legacy-self-hosted-changelog.html#release-v7-0-major-release>`__ - `Download <https://releases.mattermost.com/7.0.2/mattermost-7.0.2-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/7.0.2/mattermost-7.0.2-linux-amd64.tar.gz``
   - SHA-256 Checksum: ``e7597ab12598c908e0b4b2c4c35e87cdbad5a1db54a676d35787d1c41481eb5b``
   - GPG Signature: https://releases.mattermost.com/7.0.2/mattermost-7.0.2-linux-amd64.tar.gz.sig
@@ -365,7 +365,7 @@ Mattermost Team Edition v7.1.9 *Extended Support Release (ESR)* - `View Changelo
   - ``https://releases.mattermost.com/7.1.9/mattermost-team-7.1.9-linux-amd64.tar.gz``
   - SHA-256 Checksum: ``affd62133d3e3db55ae1b1ac723391dd7ed04a2f7814c98da8db3833ba61c0ff``
   - GPG Signature: https://releases.mattermost.com/7.1.9/mattermost-team-7.1.9-linux-amd64.tar.gz.sig
-Mattermost Team Edition v7.0.2 - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v7-0-major-release>`__ - `Download <https://releases.mattermost.com/7.0.2/mattermost-team-7.0.2-linux-amd64.tar.gz?src=arc>`__
+Mattermost Team Edition v7.0.2 - `View Changelog <https://docs.mattermost.com/install/legacy-self-hosted-changelog.html#release-v7-0-major-release>`__ - `Download <https://releases.mattermost.com/7.0.2/mattermost-team-7.0.2-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/7.0.2/mattermost-team-7.0.2-linux-amd64.tar.gz``
   - SHA-256 Checksum: ``95725aa1950d1165ed671fbc855bee386422c95c0cdfc71940bab2200002fcbe``
   - GPG Signature: https://releases.mattermost.com/7.0.2/mattermost-team-7.0.2-linux-amd64.tar.gz.sig
