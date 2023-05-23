@@ -16,11 +16,11 @@ Latest Mattermost Cloud releases:
 ### Improvements
 
 #### User Interface (UI)
- - Added a persistent-notification option when sending urgent priority posts.
+ - Added a persistent notification option when sending urgent priority posts.
  - Added an experimental feature to disable re-fetching of channel and channel members on browser focus.
  - Bot users are now hidden in the user selector in apps forms.
  - Removed the fetching of archived channels on page load.
- - The "Channel Type" dropdown within the "Browse Channels" modal can now be focused.
+ - The **Channel Type** dropdown within the **Browse Channels** modal can now be focused.
  - Removed in-app help pages that were no longer accessible.
  - Removed system join/leave messages from thread replies and post them instead in the main channel.
  - Added an experimental setting to make the channel autocomplete only appear after typing two characters instead of immediately after the tilde (~).
@@ -43,7 +43,7 @@ Latest Mattermost Cloud releases:
  - Removed deprecated ``PermissionUseSlashCommands``.
  - Added support for attachments when importing/exporting Boards.
  - Updated Docker Base Image from Debian to Ubuntu 22.04 LTS.
- - Remove support for PostgreSQL v10. The new minimum PostgreSQL version is now v11.
+ - Removed support for PostgreSQL v10. The new minimum PostgreSQL version is now v11.
  - The Mattermost public API for Go is now available as a distinctly versioned package. Instead of pinning a particular commit hash, use idiomatic Go to add this package as a dependency: go get github.com/mattermost/mattermost-server/server/public. This relocated Go API maintains backwards compatibility with Mattermost v7. Furthermore, the existing Go API previously at github.com/mattermost/mattermost-server/v6/model remains forward compatible with Mattermost v8, but may not contain newer features. Plugins do not need to be recompiled, but developers may opt in to using the new package to simplify their build process. The new public package is shipping alongside Mattermost v8 as version 0.5.0 to allow for some additional code refactoring before releasing as v1 later this year.
  - Three configuration fields have been added, ``LogSettings.AdvancedLoggingJSON``, ``ExperimentalAuditSettings.AdvancedLoggingJSON``, and ``NotificationLogSettings.AdvancedLoggingJSON`` which support multi-line JSON, escaped JSON as a string, or a filename that points to a file containing JSON.  The ``AdvancedLoggingConfig`` fields have been deprecated.
 
@@ -54,7 +54,7 @@ Latest Mattermost Cloud releases:
  - Fixed an issue with the installation of pre-packaged plugins that are not in the Marketplace.
  - Fixed an issue caused by a migration in a previous release. The query takes around 11ms on a PostgreSQL 14 DB t3.medium RDS instance. Locks on the preferences table will only be acquired if there are rows to delete, but the time taken is negligible.
  - Fixed an issue where modals did not close when clicking below them on certain screen sizes.
- - Fixed an issue with a few translations labels that couldn't be translated.
+ - Fixed an issue with a few translation labels that couldn't be translated.
  - Fixed an issue where the server log UI for plain text formatting was unexpectedly removed in a previous release.
  - Fixed an issue where combined system messages did not display in chronological order.
  - Fixed an issue where the current user and status were not updated on WebSocket reconnect.
