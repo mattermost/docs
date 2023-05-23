@@ -123,7 +123,7 @@ Links
 Channel links
 ^^^^^^^^^^^^^
 
-Create a link to a public channel in a message by typing ``~`` followed by the channel name (e.g. ``~roadmap``). From Mattermost v6.2, channel members also see private channel names returned.
+Create a link to a public channel in a message by typing ``~`` followed by the channel name (e.g. ``~roadmap``). Channel members see private channel names returned.
 
 Labeled links
 ^^^^^^^^^^^^^
@@ -432,7 +432,7 @@ Math Formulas
 
   .. tab:: Using Inline LaTeX
 
-    From Mattermost v6.1, you can create formulas that display inline using LaTeX. Use the dollar sign ($) symbol at the beginning and end of each formula.
+    You can create formulas that display inline using LaTeX. Use the dollar sign ($) symbol at the beginning and end of each formula.
 
     .. note::
 

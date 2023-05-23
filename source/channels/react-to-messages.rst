@@ -6,7 +6,7 @@ React to messages using emojis
 
 Emojis are small, digital images or icons you can use to communicate or express concepts such as emotions and physical gestures in your messages. 
 
-From Mattermost v6.1 and in Mattermost Cloud, you can react to messages quickly by selecting a recently used emoji. Recent emojis are sorted based on the number of times you've used the emoji. If your most recent reactions aren't visible, you can enable quick reactions by selecting **Settings > Display > Quick reactions on messages**.
+You can react to messages quickly by selecting a recently used emoji. Recent emojis are sorted based on the number of times you've used the emoji. If your most recent reactions aren't visible, you can enable quick reactions by selecting **Settings > Display > Quick reactions on messages**.
 
 .. tabs::
 
