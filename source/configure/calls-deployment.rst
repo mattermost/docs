@@ -230,7 +230,26 @@ An example with sample values:
     - name: ndots
       value: "1"
 
-  affinity: {}
+  affinity:
+    podAntiAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        - labelSelector:
+            matchExpressions:
+              - key: app.kubernetes.io/name
+                operator: In
+                values:
+                  - mattermost-rtcd
+          topologyKey: topology.kubernetes.io/zone
+      preferredDuringSchedulingIgnoredDuringExecution:
+        - weight: 100
+          podAffinityTerm:
+            labelSelector:
+              matchExpressions:
+                - key: app.kubernetes.io/name
+                  operator: In
+                  values:
+                    - mattermost-rtcd
+            topologyKey: topology.kubernetes.io/zone
 
 ``rtcd`` will be deployed as a deployment as shown in the `deploymentType` field. For that reason the sections of `deployment.replicas`, `nodeSelector` and `tolerations` are used so that ``rtcd`` to be deployed in specific nodes.
 
