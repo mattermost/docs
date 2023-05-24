@@ -194,7 +194,9 @@ Privacy Policy link
 |                                                                                                                                                                                                    | - ``config.json`` setting: ``.SupportSettings.PrivacyPolicyLink`` |
 | String input. Default is ``https://about.mattermost.com/default-privacy-policy/``.                                                                                                                 | - Environment variable: ``MM_SUPPORTSETTINGS_PRIVACYPOLICYLINK``  |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
-				
+| **Note**: From Mattermost v5.17, this setting does not change the **Privacy Policy** link in the **About Mattermost** window.                                                                                                                                          |
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 .. config:setting:: custom-aboutlink
   :displayname: About link (Customization)
   :systemconsole: Site Configuration > Customization
