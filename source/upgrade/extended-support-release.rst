@@ -39,7 +39,7 @@ If your organization prefers to have the newest features and improvements, Exten
 How do I install the Extended Support Release?
 ----------------------------------------------
 
-Follow our `install </guides/deployment.html#install-guides>`__ or `upgrade </upgrade/upgrading-mattermost-server.html>`__ guides. Please read the `best practices </upgrade/prepare-to-upgrade-mattermost.html#upgrade-best-practices)`_ for upgrading. Please also follow the `important upgrade notes </upgrade/important-upgrade-notes.html>`_ for all the versions since the current ESR version you have currently installed. Please see `the changelog </install/self-managed-changelog.html>`_ for list of database, API, and ``config.json`` updates for each release.
+Follow our `install </guides/deployment.html#install-guides>`__ or `upgrade </upgrade/upgrading-mattermost-server.html>`__ guides. Please read the `best practices </upgrade/prepare-to-upgrade-mattermost.html#upgrade-best-practices)>`__ for upgrading. Please also follow the `important upgrade notes </upgrade/important-upgrade-notes.html>`_ for all the versions since the current ESR version you have currently installed. Please see `the changelog </install/self-managed-changelog.html>`_ for list of database, API, and ``config.json`` updates for each release.
 
 When downloading the Mattermost version, choose an Extended Support Release from the list below.
 
