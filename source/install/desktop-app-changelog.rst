@@ -32,9 +32,9 @@ Improvements
 All Platforms
 ^^^^^^^^^^^^^
 
-- Improved URL validation and add/edit server experience.
+- Improved URL validation and the add/edit server experience.
 - Made ``ExtraBar`` dark when using dark mode.
-- Improved the tray icon click behaviour across Operating Systems.
+- Improved the tray icon click behaviour across operating systems.
 
 Architectural Changes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
