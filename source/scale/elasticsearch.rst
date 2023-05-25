@@ -6,35 +6,25 @@ Elasticsearch
 
 *Available in legacy Mattermost Enterprise Edition E20*
 
-Elasticsearch provides enterprise-scale deployments with optimized search performance and prevents performance degradation and timeouts. The implementation uses `Elasticsearch <https://www.elastic.co/guide/en/elasticsearch/reference/7.17/setup.html>`__ as a distributed, RESTful search engine supporting highly efficient database searches in a `cluster environment </scale/high-availability-cluster.html>`__. 
+Elasticsearch provides enterprise-scale deployments with optimized search performance and prevents performance degradation and timeouts. The implementation uses `Elasticsearch <https://www.elastic.co>`__ v7.x as a distributed, RESTful search engine supporting highly efficient database searches in a `cluster environment </scale/high-availability-cluster.html>`__. 
 
 .. important::
   
-  - The default Mattermost database search starts to show performance degradation at around 2.5 million posts, depending on the specifications for the database server. If you expect your Mattermost server to have more than 2.5 million posts, we recommend using Elasticsearch for optimum search performance. For deployments with over five million posts, Elasticsearch is required to avoid significant performance issues (such as timeouts) with search and at-mentions.
-
-  - From Mattermost v6.0, Elasticsearch v7.x is supported. Previous versions of Mattermost, including v5.38 and earlier releases, support Elasticsearch v5.x, v6.x, and v7.x. 
-
-  - We strongly recommend that you install Elasticsearch on a different machine than Mattermost Server. 
+  - The default Mattermost database search starts to show performance degradation at around 2 million posts, on a server with 32 GB RAM and 4 CPUs. We recommend using Elasticsearch for optimum search performance. If you anticipate your Mattermost server reaching more than 2.5 million posts, we recommend enabling Elasticsearch for optimum search performance before you reach 3 million posts. 
+  - For deployments with over 5 million posts, Elasticsearch is required to avoid significant performance issues (such as timeouts) with search and at-mentions.
+  - We highly recommend that you install Elasticsearch on a different machine than the Mattermost Server. 
     
 Deployment guide
 ----------------
 
 Elasticsearch allows you to search large volumes of data quickly, in near real-time, by creating and managing an index of post data. The indexing process can be managed from the System Console after setting up and connecting an Elasticsearch server. The post index is stored on the Elasticsearch server and updated constantly after new posts are made. In order to index existing posts, a bulk index of the entire post database must be generated.
 
-.. note::
-    From Mattermost v5.26, you can filter inactive users, search by user role, and also search for terms inside links. This update introduces a breaking change which affects the "from" part of the search. To avoid this, reindex your Elasticsearch instance/cluster prior to upgrading to Mattermost v.5.26 or later.
+Deploying Elasticsearch includes the following two steps: `setting up the Elasticsearch server <#set-up-an-elasticsearch-server>`_, and `configuring Elasticsearch in Mattermost <#configure-elasticsearch-in-mattermost>`_.
     
 Set up an Elasticsearch server
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The set up process for the Elasticsearch server is documented in the `official Elasticsearch documentation <https://www.elastic.co/guide/en/elasticsearch/reference/7.17/setup.html>`__.
-
-1. Download and install the RPM package manager by opening a terminal window and running the following command:
-
-  .. code-block:: none
-
-    wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.10.2-x86_64.rpm
-    sudo rpm --install elasticsearch-7.10.2-x86_64.rpm
+1. Download and install the latest release of Elasticsearch v7. See the `Elasticsearch <https://www.elastic.co/guide/en/elasticsearch/reference/7.17/install-elasticsearch.html>`__ documentation for details. 
 
 2. Set up Elasticsearch with systemd by running the following commands:
 
