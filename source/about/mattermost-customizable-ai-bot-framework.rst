@@ -19,7 +19,7 @@ In the near term, this may involve integrating private-cloud AI with Mattermost,
 Example open source Mattermost app AI framework
 ------------------------------------------------
 
-The `mattermost/mattermost-ai-framework repository <https://github.com/mattermost/mattermost-ai-framework>`__ demonstrates a self-hosted AI app in a multi-user chat environment that can be fully private and off-grid AKA air-gapped. For demo purposes, can be deployed locally or in the browser via `Gitpod <https://github.com/mattermost/mattermost-ai-framework#gitpod>`__.
+The `mattermost/mattermost-ai-framework repository <https://github.com/mattermost/mattermost-ai-framework>`__ demonstrates a self-hosted AI app in a multi-user chat environment that can be fully private and off-grid AKA air-gapped. For demo purposes, deploy locally or in the browser via `Gitpod <https://github.com/mattermost/mattermost-ai-framework#gitpod>`__.
 
 Example open source OpenAI plugin
 ---------------------------------
