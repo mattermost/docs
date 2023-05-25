@@ -27,6 +27,8 @@ Important Upgrade Notes
 |                                                    | Fixed an issue where a user would still see threads in the threads view of channels they have left. Migration execution time in MySQL: Query OK, 2766769 rows    |
 |                                                    | affected (4 min 47.57 sec). Migration execution time in PostgreSQL: Execution time: 58.11 sec, DELETE 2766690.                                                   |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                    | For servers wanting to allow websockets to connect from other origins, please set the ``ServiceSettings.AllowCorsFrom`` config setting.                          |
+|                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | The file info stats query is now optimized by denormalizing the ``channelID`` column into the table itself. This will speed up the query to get the file count   |
 |                                                    | for a channel when selecting the right-hand pane. Migration times:                                                                                               |
 |                                                    |                                                                                                                                                                  |
