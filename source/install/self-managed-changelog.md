@@ -49,6 +49,7 @@ Latest Mattermost Releases:
  - Added a mechanism for public routes on products and used it to support publicly shared Board links.
  - The database section in the **System Console** now has an additional read-only section which shows the active search backend in use. This can be helpful to confirm which search engine is currently active when there are multiple configured.
  - Updated Docker Base Image from Debian to Ubuntu 22.04 LTS.
+ - For servers wanting to allow websockets to connect from other origins, please set the ``ServiceSettings.AllowCorsFrom`` config setting.
  
 #### Performance
  - Improved the performance of webapp related to timezone calculations.
