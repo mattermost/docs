@@ -18,7 +18,7 @@ For scheduled data retention jobs to work, the `global retention policy for file
 Configure a global data retention policy
 -----------------------------------------
 
-To set a global data retention policy in Mattermost v5.38 and later:
+To set a global data retention policy:
 
 1. Go to **System Console > Compliance > Data Retention Policies**.
 2. Select **Edit** from the menu located to the right of the **Global retention policy** table. 
@@ -31,7 +31,7 @@ Select **Save**. Messages and files older than the duration you set will be dele
 Configure a custom data retention policy
 ----------------------------------------
 
-To set a custom data retention policy in Mattermost v5.38 and later:
+To set a custom data retention policy:
 
 1. Go to **System Console > Compliance > Data Retention Policies**.
 2. Select **Add policy** to the right of the **Custom retention policies** table. 
