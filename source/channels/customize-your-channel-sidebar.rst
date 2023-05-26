@@ -95,7 +95,7 @@ In addition to selecting and dragging, you can specify a category destination fo
 .. image:: ../images/multi-select-move.gif
    :alt: Move a group of selected channels to a specified category destination. 
 
-From Mattermost v6.1, you can also specify a category destination for the current channel or conversation using the **Move to** option directly from the channel header. Channels that have been moved a category will display a checkmark next to the category name.
+You can also specify a category destination for the current channel or conversation using the **Move to** option directly from the channel header. Channels that have been moved to a category will display a checkmark next to the category name.
 
 .. image:: ../images/channel-heading-categories.png
   :alt: Move channels or conversations directly from the channel header.

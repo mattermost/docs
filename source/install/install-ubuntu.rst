@@ -34,6 +34,10 @@ Install Mattermost Server on Ubuntu
 
   </div>
 
+.. contents:: On this page:
+  :backlinks: top
+  :local:
+
 You can install the Mattermost Server using our ``.deb`` signed packages using the Mattermost PPA (Personal Package Archive). Deployment includes 4 steps: `add the PPA repository <#add-the-mattermost-server-ppa-repository>`__, `install <#install>`__, `setup <#setup>`__, and `update <#updates>`__.
 
 .. important::
@@ -143,7 +147,7 @@ Mattermost Omnibus is integrated with the apt package manager. When a new Matter
 Remove Mattermost
 ------------------
 
-If you wish to remove the Mattermost server for any reason, you can run this command:
+If you wish to remove the Mattermost Server for any reason, you can run this command:
 
 .. code-block:: none
   :class: mm-code-block 
