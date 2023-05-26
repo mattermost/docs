@@ -645,6 +645,28 @@ ICE host override
 |   - A hostname (e.g. domain name) can be specified in this setting, but an IP address will be passed to clients. This means that a DNS resolution happens on the Mattermost instance which could result in a different IP address from the one the clients would see, causing connectivity to fail. When in doubt, we recommend using an IP address directly or confirming that the resolution on the host side reflects the one on the client.                           |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+.. config:setting:: plugins-callsrtcdserviceurl
+  :displayname: RTCD service URL (Plugins - Calls)
+  :systemconsole: Plugins > Calls
+  :configjson: PluginSettings.Plugins.com.mattermost.calls.rtcdserviceurl
+  :environment: N/A
+  :description: The URL to a running `rtcd <https://github.com/mattermost/rtcd>`__ service instance that will host the calls. When set (non empty) all the calls will be handled by this external service.
+
+RTCD service URL
+~~~~~~~~~~~~~~~~
+
+.. include:: ../_static/badges/ent-selfhosted-only.rst
+  :start-after: :nosearch:
+
++---------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+
+| The URL to a running `rtcd <https://github.com/mattermost/rtcd>`__ service instance that will host the calls. | - System Config path: **Plugins > Calls**                                                               |
+|                                                                                                               | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.calls.rtcdserviceurl``               |
+|                                                                                                               | - Environment variable: N/A                                                                             |
+| When set (non empty) all the calls will be handled by this external service.                                  |                                                                                                         |
+|                                                                                                               |                                                                                                         |
+| This is an optional field. Changing this setting requires a plugin restart to take effect.                    |                                                                                                         |
++---------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+
+
 .. config:setting:: plugins-callsiceservers
   :displayname: ICE server configurations (Plugins - Calls)
   :systemconsole: Plugins > Calls
@@ -786,8 +808,8 @@ Allow screen sharing
 .. config:setting:: plugins-callsenablesimulcast
   :displayname: Enable simulcast for screen sharing (Experimental) (Plugins - Calls)
   :systemconsole: Plugins > Calls
-  :configjson:
-  :environment:
+  :configjson: PluginSettings.Plugins.com.mattermost.calls.enablesimulcast
+  :environment: N/A
   :description: When set to true it enables simulcast for screen sharing. This can help to improve screen sharing quality.
 
 Enable simulcast for screen sharing (Experimental)
@@ -796,40 +818,17 @@ Enable simulcast for screen sharing (Experimental)
 .. include:: ../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
-+------------------------------------------------------------------------------------------------------------------------+-------------------------------------------+
-| - **true**: Enables simulcast for screen sharing. This can help to improve screen sharing quality.                     | - System Config path: **Plugins > Calls** |
-| - **false**: Disables simulcast for screen sharing.                                                                    | - ``config.json`` setting:                |
-+------------------------------------------------------------------------------------------------------------------------+-------------------------------------------+
-|  **Note**:                                                                                                             |                                           |
-|                                                                                                                        |                                           |
-| This functionality has the following requirements:                                                                     |                                           |
-|                                                                                                                        |                                           |
-| - Calls plugin version >= v0.16.0                                                                                      |                                           |
-|                                                                                                                        |                                           |
-| - ``rtcd`` version >= v0.10.0 (if in use)                                                                              |                                           |
-+------------------------------------------------------------------------------------------------------------------------+-------------------------------------------+
-
-.. config:setting:: plugins-callsrtcdserviceurl
-  :displayname: RTCD service URL (Plugins - Calls)
-  :systemconsole: Plugins > Calls
-  :configjson: PluginSettings.Plugins.com.mattermost.calls.rtcdserviceurl
-  :environment: N/A
-  :description: The URL to a running `rtcd <https://github.com/mattermost/rtcd>`__ service instance that will host the calls. When set (non empty) all the calls will be handled by this external service.
-
-RTCD service URL
-~~~~~~~~~~~~~~~~
-
-.. include:: ../_static/badges/ent-selfhosted-only.rst
-  :start-after: :nosearch:
-
-+---------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+
-| The URL to a running `rtcd <https://github.com/mattermost/rtcd>`__ service instance that will host the calls. | - System Config path: **Plugins > Calls**                                                               |
-|                                                                                                               | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.calls.rtcdserviceurl``               |
-|                                                                                                               | - Environment variable: N/A                                                                             |
-| When set (non empty) all the calls will be handled by this external service.                                  |                                                                                                         |
-|                                                                                                               |                                                                                                         |
-| This is an optional field. Changing this setting requires a plugin restart to take effect.                    |                                                                                                         |
-+---------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+
+| - **true**: Enables simulcast for screen sharing. This can help to improve screen sharing quality.                     | - System Config path: **Plugins > Calls**                                                                |
+| - **false**: Disables simulcast for screen sharing.                                                                    | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.calls.enablesimulcast``               |
+|                                                                                                                        | - Environment variable N/A                                                                               |
++------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+
+| **Note**: This functionality has the following requirements:                                                           |                                                                                                          |
+|                                                                                                                        |                                                                                                          |
+| - Calls plugin version >= v0.16.0                                                                                      |                                                                                                          |
+|                                                                                                                        |                                                                                                          |
+| - ``rtcd`` version >= v0.10.0 (if in use)                                                                              |                                                                                                          |
++------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: plugins-enablecallrecordings
   :displayname: Enable call recordings (Plugins - Calls)
