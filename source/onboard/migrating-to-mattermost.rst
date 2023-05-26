@@ -219,6 +219,20 @@ Debugging imports
 
 The ``mmctl import job show`` shows a detailed error message. If you run into problems which the error message does not help to resolve, your best bet is to use the ``mattermost bulk import`` command. The ``mmctl`` import process does not give you any additional debugging information, even in the Mattermost server logs.
 
+Use the Mattermost web app
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. important::
+  The ability to migrate from Slack using the Mattermost web app has been deprecated and removed in favor of using the Mattermost mmetl tool with bulk import.
+
+.. note::
+  
+  For larger imports, particularly those where you have used the `slack-advanced-exporter tool` to add Slack post attachments to the archive or the Corporate Export file, it is recommended to import the Slack data using the `mmetl tool and bulk loading tool </onboard/migrating-to-mattermost.html#migrating-from-slack-using-the-mattermost-mmetl-tool-and-bulk-import>`__.
+
+1. Generate a Slack export file from **Slack > Administration > Workspace Settings > Import/Export Data > Export > Start Export**. Alternatively, use the Slack Corporate Export file after receiving it from Slack.
+2. In Mattermost go to **Main Menu > Team Settings > Import > Import from Slack**. Team admin or system admin permission is required to access this menu option.
+3. Choose **Select file** to upload the Slack export file and select **Import**.
+
 Use the imported team
 ^^^^^^^^^^^^^^^^^^^^^^
 
