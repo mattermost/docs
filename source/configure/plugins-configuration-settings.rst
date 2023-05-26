@@ -739,6 +739,32 @@ Allow screen sharing
 | Changing this setting requires a plugin restart to take effect.        |                                           |
 +------------------------------------------------------------------------+-------------------------------------------+
 
+.. config:setting:: plugins-callsenablesimulcast
+  :displayname: Enable simulcast for screen sharing (Experimental) (Plugins - Calls)
+  :systemconsole: Plugins > Calls
+  :configjson:
+  :environment:
+  :description: When set to true it enables simulcast for screen sharing. This can help to improve screen sharing quality.
+
+Enable simulcast for screen sharing (Experimental)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: ../_static/badges/selfhosted-only.rst
+  :start-after: :nosearch:
+
++------------------------------------------------------------------------------------------------------------------------+-------------------------------------------+
+| - **true**: Enables simulcast for screen sharing. This can help to improve screen sharing quality.                     | - System Config path: **Plugins > Calls** |
+| - **false**: Disables simulcast for screen sharing.                                                                    | - ``config.json`` setting:                |
++------------------------------------------------------------------------------------------------------------------------+-------------------------------------------+
+|  **Note**:                                                                                                             |                                           |
+|                                                                                                                        |                                           |
+| This functionality has the following requirements:                                                                     |                                           |
+|                                                                                                                        |                                           |
+| - Calls plugin version >= v0.16.0                                                                                      |                                           |
+|                                                                                                                        |                                           |
+| - ``rtcd`` version >= v0.10.0 (if in use)                                                                              |                                           |
++------------------------------------------------------------------------------------------------------------------------+-------------------------------------------+
+
 .. config:setting:: plugins-callsrtcdserviceurl
   :displayname: RTCD service URL (Plugins - Calls)
   :systemconsole: Plugins > Calls
