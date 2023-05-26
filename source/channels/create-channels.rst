@@ -67,4 +67,4 @@ Anyone can create public channels, private channels, direct messages, and group 
   - Automatically adding the channel to a `category in the user's channel sidebar </channels/customize-your-channel-sidebar.html>`__.
   - Prompting to run a playbook based on the contents of a message.
 
-  The `playbooks plugin must be enabled </configure/plugins-configuration-settings.html#mattermost-playbooks>`__ for channel admins to use channel actions. From Mattermost v7.11, playbooks is part of the core product, is enabled by default, and can't be disabled. 
+  The `playbooks plugin must be enabled </configure/plugins-configuration-settings.html#mattermost-playbooks>`__ for channel admins to use channel actions.
