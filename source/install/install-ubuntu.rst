@@ -138,7 +138,7 @@ The final step, depending on your requirements, is to run sudo ``systemctl enabl
 Updates
 -------
 
-Mattermost Omnibus is integrated with the apt package manager. When a new Mattermost version is released, run: ``sudo apt update && sudo apt upgrade`` to download and update your Mattermost instance.
+When a new Mattermost version is released, run: ``sudo apt update && sudo apt upgrade`` to download and update your Mattermost instance.
 
 .. note::
 	
