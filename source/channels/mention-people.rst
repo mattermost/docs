@@ -100,16 +100,8 @@ Select **@** to the right of the **Search** box to query for your most recent @m
 .. image:: ../images/recent-mentions.png
    :alt: See your most recent @mentions
 
-.. tabs::
-  
-  .. tab:: Mattermost v6.1 onwards
-
-    From Mattermost v6.1, your recent mentions are shown for all of your teams.
-
-  .. tab:: Mattermost v6.0 and earlier
-
-    In Mattermost versions up to v6.0, your recent mentions are shown for your current team only.
-
+Your recent mentions are shown for all of your teams.
+    
 Select **Jump** next to a search result in the right-hand sidebar to jump the center pane to the channel and location of the message with the mention.
 
 Confirmation dialog warnings

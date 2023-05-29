@@ -27,9 +27,7 @@ The name of the environment variable for any setting can be derived from the nam
 Override Mattermost license file
 --------------------------------
 
-From Mattermost v5.26, you can use an environment variable to override any license in the database or file configuration without replacing those licenses.
-
-When starting the server, specify the license key as ``MM_LICENSE`` with the contents of a license file.
+You can use an environment variable to override any license in the database or file configuration without replacing those licenses. When starting the server, specify the license key as ``MM_LICENSE`` with the contents of a license file.
 
 .. note::
    If ``MM_LICENSE`` is set to a non-empty string, but the license specified is not valid, the Mattermost server will be started without a license.
@@ -39,7 +37,7 @@ When starting the server, specify the license key as ``MM_LICENSE`` with the con
 Load custom configuration defaults
 ----------------------------------
 
-Starting from Mattermost v5.30, you can load a set of custom configuration defaults using an environment variable. This custom configuration applies only if the values are not already present in the current server configuration.
+This custom configuration applies only if the values are not already present in the current server configuration.
 
 1. Create a JSON file that contains the custom configuration defaults. For example, ``custom.json``.
 2. When starting the server, point the custom defaults environment variable to the defaults file: ``MM_CUSTOM_DEFAULTS_PATH=custom.json``.
