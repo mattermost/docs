@@ -119,7 +119,7 @@ Use the Mattermost mmetl tool and bulk import
 
 .. note::
   
-  This method is the recommended way to import Slack's corporate export file, but will work with any Slack export file. It can be used for Mattermost v5.0+.
+  This method is the recommended way to import Slack's corporate export file, but will work with any Slack export file.
 
 1. Prepare your Mattermost server
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -223,7 +223,7 @@ Use the Mattermost web app
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. important::
-  In Mattermost v6.0, the ability to migrate from Slack using the Mattermost web app has been deprecated and removed in favor of using the Mattermost mmetl tool with bulk import.
+  The ability to migrate from Slack using the Mattermost web app has been deprecated and removed in favor of using the Mattermost mmetl tool with bulk import.
 
 .. note::
   
@@ -232,21 +232,6 @@ Use the Mattermost web app
 1. Generate a Slack export file from **Slack > Administration > Workspace Settings > Import/Export Data > Export > Start Export**. Alternatively, use the Slack Corporate Export file after receiving it from Slack.
 2. In Mattermost go to **Main Menu > Team Settings > Import > Import from Slack**. Team admin or system admin permission is required to access this menu option.
 3. Choose **Select file** to upload the Slack export file and select **Import**.
-
-Migrate from Slack using the Mattermost CLI
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. note::
-  In Mattermost v6.0, the CLI has been deprecated in favor of the mmctl `CLI </manage/mmctl-command-line-tool.html>`__.
-
-1. Generate a Slack export file from **Slack > Administration > Workspace Settings > Import/Export Data > Export > Start Export**.
-2. Run the following Mattermost CLI command, with the name of a team you've already created:
-
-   ``$ mattermost import slack team_name /path/to/your-slack-export.zip``
-   
-.. note::
-
-  To run the CLI command, you must be in the directory that contains the Mattermost installation. On a default installation of Mattermost, the directory is ``/opt/mattermost/``. Also, if you followed our `installation process </guides/install-deploy-upgrade-scale.html#install-mattermost>`__, you must run the command as the user *mattermost*. The executable is in the ``bin`` subdirectory and is called ``mattermost``.
 
 Use the imported team
 ^^^^^^^^^^^^^^^^^^^^^^

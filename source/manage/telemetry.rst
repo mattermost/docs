@@ -57,7 +57,7 @@ Mattermost error and diagnostic data is collected for the following purposes:
 
 .. note:: 
 
-  Error and diagnostic reporting is sent by Mattermost to the endpoint ``api.segment.io``. From Mattermost v5.23, the segment endpoint is being deprecated in favor of ``https://pdat.matterlytics.com``, a custom Rudder domain. From Mattermost v5.26, when this feature is enabled, any 500 errors will automatically be sent to the Mattermost-hosted `Sentry <https://sentry.io/welcome/>`_ endpoint.
+  Error and diagnostic reporting is sent by Mattermost to the endpoint ``https://pdat.matterlytics.com``, a custom Rudder domain. When this feature is enabled, any 500 errors will automatically be sent to the Mattermost-hosted `Sentry <https://sentry.io/welcome/>`_ endpoint.
   
 Opt out
 ~~~~~~~
@@ -112,7 +112,7 @@ Groups Configuration Information (Enterprise Edition only)
   Information related to AD/LDAP groups, including number of groups synced to Mattermost, teams and channels associated to groups, teams and channels synced with groups, and number of group members.
 
 Plugin Configuration Information
-  Basic information including number of active and inactive plugins, which are using webapp or backend portions, which `Mattermost plugins <https://github.com/mattermost/mattermost-server/blob/master/services/telemetry/telemetry.go#L1406>`__ are enabled along with their versions, and core plugins disabled count (including apps framework, calls, boards, playbooks, net promoter score/user satisfaction survey, and channel export). Some plugins may send summary data such as number of authenticated users of the plugin. From Mattermost v5.26, the list of plugins is obtained from the Marketplace. If the Marketplace can't be reached, the list of known plugins is used instead.
+  Basic information including number of active and inactive plugins, which are using webapp or backend portions, which `Mattermost plugins <https://github.com/mattermost/mattermost-server/blob/master/services/telemetry/telemetry.go#L1406>`__ are enabled along with their versions, and core plugins disabled count (including apps framework, calls, boards, playbooks, net promoter score/user satisfaction survey, and channel export). Some plugins may send summary data such as number of authenticated users of the plugin. The list of plugins is obtained from the Marketplace. If the Marketplace can't be reached, the list of known plugins is used instead.
 
 Permissions Configuration Information (Enterprise Edition only)
   Permissions configured for each role for the System Scheme and each Team Override Scheme created in the system. Scheme ID; Team Admin permissions; team user permissions; Channel Admin permissions; channel user permissions; number of teams the scheme is associated with; number of users assigned to each admin role; Number of admin roles not using default privileges; Changes to default privileges of each admin role.
@@ -131,7 +131,7 @@ Reporting Frequency
 
 .. note::
 
-  The majority of these events have been disabled since Mattermost v5.8. Refer to the source file for the `current list of events sent via telemetry <https://github.com/mattermost/mattermost-redux/blob/master/src/client/client4.ts#L3069>`__.
+  The majority of these events have been disabled. Refer to the source file for the `current list of events sent via telemetry <https://github.com/mattermost/mattermost-redux/blob/master/src/client/client4.ts#L3069>`__.
 
 Non-personally Identifiable Error Information, distinguished by end users and System Admins
   Boolean when the following events occur:
