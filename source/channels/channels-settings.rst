@@ -191,10 +191,6 @@ Select the timezone used for timestamps in the user interface and for email noti
   1. Tap **Display**.
   2. Tap **Timezone**.
 
-.. note::
-  
-  Timezone is enabled by default from Mattermost v6.0. In Mattermost v5.38 or earlier, timezone functionality `must first be enabled by the system admin </configure/deprecated-configuration-settings.html#timezone>`__.
-
 Website link previews
 ~~~~~~~~~~~~~~~~~~~~~
 
@@ -368,20 +364,3 @@ Use this setting to deactivate your account. Deactivating your account removes y
 To reactivate your account, contact your System Admin. This is only available for accounts with email login, and when `user deactivation </configure/configuration-settings.html#enable-account-deactivation>`__ is enabled.
 
 For accounts with other authentication methods such as AD/LDAP or SAML, or for accounts that do not have this setting available, contact your System Admin to deactivate your account.
-
-Deprecated settings
--------------------
-
-Notifications > Notification duration
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-*Removed in June 16th, 2018 release*
-
-In Mattermost v5.0 and later, desktop notifications will stay onscreen for five seconds when supported by the browser and operating system.
-
-Display > Display font
-~~~~~~~~~~~~~~~~~~~~~~
-
-*Removed in July 16th, 2017 release*
-
-Select what font is used.
