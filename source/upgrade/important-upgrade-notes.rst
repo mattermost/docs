@@ -10,7 +10,7 @@ Important Upgrade Notes
    - Upgrading the Microsoft Teams Calling plugin to v2.0.0 requires users to reconnect their accounts.
    - When upgrading to 7.x from a 5.x release please make sure to upgrade to 5.37.10 first for the upgrade to complete successfully.
    - Disable global drafts. Admins can set the feature flag ``MM_FEATUREFLAGS_GLOBALDRAFTS`` to ``false`` to disable server-wide. It can't be disabled on a per-user basis. The code is located `here <https://github.com/mattermost/mattermost-server/blob/master/server/public/model/feature_flags.go#L74>`__.
-   - Disable insights. Admins can set the feature flag ``MM_FEATUREFLAGS_INSGIHTSENABLED`` to ``false`` to disable server-wide. It can't be disabled on a per-user basis. The code is located `here <https://github.com/mattermost/mattermost-server/blob/master/server/public/model/feature_flags.go#L50>`__.
+   - Disable insights. Admins can set the feature flag ``MM_FEATUREFLAGS_INSIGHTSENABLED`` to ``false`` to disable server-wide. It can't be disabled on a per-user basis. The code is located `here <https://github.com/mattermost/mattermost-server/blob/master/server/public/model/feature_flags.go#L50>`__.
    - Please see the `the list <https://docs.mattermost.com/install/self-managed-changelog.html#upcoming-deprecations-and-breaking-changes-in-mattermost-v8-0>`_ of deprecations and breaking changes planned for the Mattermost v8.0 release, which is scheduled for the summer of 2023. This list is subject to change prior to the release.
 
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
