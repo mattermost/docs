@@ -328,7 +328,17 @@ Metrics for the calls plugin are exposed through the public ``/plugins/com.matte
 - ``mattermost_plugin_calls_rtc_conn_states_total``: Total number of RTC connection state changes.
 - ``mattermost_plugin_calls_rtc_errors_total``: Total number of RTC errors.
 - ``mattermost_plugin_calls_rtc_rtp_bytes_total``: Total number of sent/received RTP packets in bytes.
+
+  - Note: removed as of v0.16.0
+
 - ``mattermost_plugin_calls_rtc_rtp_packets_total``: Total number of sent/received RTP packets.
+
+  - Note: removed as of v0.16.0
+
+- ``mattermost_plugin_calls_rtc_rtp_tracks_total``: Total number of incoming/outgoing RTP tracks.
+
+  - Note: added as of v0.16.0
+
 - ``mattermost_plugin_calls_rtc_sessions_total``: Total number of active RTC sessions.
 
 **Database**
@@ -358,7 +368,17 @@ Metrics for the ``rtcd`` service are exposed through the ``/metrics`` API endpoi
 - ``rtcd_rtc_conn_states_total``: Total number of RTC connection state changes.
 - ``rtcd_rtc_errors_total``: Total number of RTC errors.
 - ``rtcd_rtc_rtp_bytes_total``: Total number of sent/received RTP packets in bytes.
+
+  - Note: removed as of v0.10.0
+
 - ``rtcd_rtc_rtp_packets_total``: Total number of sent/received RTP packets.
+
+  - Note: removed as of v0.10.0
+
+- ``rtcd_rtc_rtp_tracks_total``: Total number of incoming/outgoing RTP tracks.
+
+  - Note: added as of v0.10.0
+
 - ``rtcd_rtc_sessions_total``: Total number of active RTC sessions.
 
 **WebSocket**
