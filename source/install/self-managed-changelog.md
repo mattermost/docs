@@ -237,6 +237,8 @@ Mattermost v7.9.0 contains a low severity level security fix. [Upgrading](https:
 
 ## Release v7.8 - [Extended Support Release](https://docs.mattermost.com/upgrade/release-definitions.html#extended-support-release-esr)
 
+- **v7.8.7, released 2023-05-31**
+  - 
 - **v7.8.6, released 2023-05-31**
   - Fixed an issue where the total user count was fetched for every client connection. It is only necessary to fetch this once.
   - Prepackaged version 1.3.0 of the Welcomebot plugin.
