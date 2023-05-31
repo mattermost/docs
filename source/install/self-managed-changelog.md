@@ -22,8 +22,8 @@ Latest Mattermost Releases:
 - **v7.10.1, released 2023-05-16**
   - Mattermost v7.10.1 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Fixed an issue where a user would still see threads in the threads view of channels they have left. Migration execution time in MySQL: Query OK, 2766769 rows affected (4 min 47.57 sec). Migration execution time in PostgreSQL: 58.11 sec, DELETE 2766690.
-  - Pre-packaded version 1.2.1 of Apps plugin.
-  - Pre-packaded version 2.1.5 of GitHub plugin.
+  - Pre-packaded version 1.2.1 of the Apps plugin.
+  - Pre-packaded version 2.1.5 of the GitHub plugin.
   - Updated prepackaged Playbooks v1.36.1.
   - Fixed an issue where true-up review submissions always failed.
   - Fixed an issue caused by a migration in the previous release. Query takes around 11ms on a PostgreSQL 14 DB t3.medium RDS instance. Locks on the preferences table will only be acquired if there are rows to delete, but the time taken is negligible.
@@ -126,8 +126,8 @@ The following deprecations and breaking changes are planned for the Mattermost v
 - **v7.9.4, released 2023-05-16**
   - Mattermost v7.9.4 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Fixed an issue where a user would still see threads in the threads view of channels they have left. Migration execution time in MySQL: Query OK, 2766769 rows affected (4 min 47.57 sec). Migration execution time in PostgreSQL: 58.11 sec, DELETE 2766690.
-  - Pre-packaded version 1.2.1 of Apps plugin.
-  - Pre-packaded version 2.1.5 of GitHub plugin.
+  - Pre-packaded version 1.2.1 of the Apps plugin.
+  - Pre-packaded version 2.1.5 of the GitHub plugin.
   - Backporting fix for oauth 2. Query times depend on if you have rows to delete or not. Please see the [important upgrade notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) for more details.
 - **v7.9.3, released 2023-04-27**
   - Mattermost v7.9.3 contains a medium severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
@@ -135,7 +135,7 @@ The following deprecations and breaking changes are planned for the Mattermost v
 - **v7.9.2, released 2023-04-12**
   - Mattermost v7.9.2 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Updated prepackaged Boards to v7.9.3.
-  - Updated prepackaged Playbooks v1.36.1.
+  - Updated prepackaged Playbooks to v1.36.1.
   - Fixed an issue with compact message mode.
   - Fixed an issue where ``NotifyAdmin`` job reported an error for unlicensed servers.
 - **v7.9.1, released 2023-03-17**
