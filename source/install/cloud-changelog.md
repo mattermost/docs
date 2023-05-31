@@ -4,14 +4,14 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 
 Latest Mattermost Cloud releases:
 
-- [Release 2023-06-01](#release-2023-06-01)
+- [Release 2023-05-31](#release-2023-05-31)
 - [Release 2023-05-01](#release-2023-05-01)
 - [Release 2023-04-21](#release-2023-04-21)
 - [Release 2023-03-29](#release-2023-03-29)
 - [Release 2023-03-20](#release-2023-03-20)
 - [Release 2023-01-26](#release-2023-01-26)
 
-## Release 2023-06-01
+## Release 2023-05-31
 
 ### Improvements
 
