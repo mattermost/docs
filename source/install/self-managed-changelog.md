@@ -244,6 +244,7 @@ Mattermost v7.9.0 contains a low severity level security fix. [Upgrading](https:
   - Mattermost v7.8.5 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Fixed an issue where a user would still see threads in the threads view of channels they have left. Migration execution time in MySQL: Query OK, 2766769 rows affected (4 min 47.57 sec). Migration execution time in PostgreSQL: 58.11 sec, DELETE 2766690.
   - Prepackaged version 1.2.1 of Apps plugin.
+  - Prepackaged version 2.1.5 of the GitHub plugin.
   - Updated the Docker Base Image from Debian to Ubuntu 22.04 LTS.
   - Backported a fix related to Oauth 2. Query times depend on if you have rows to delete or not. Please see the [important upgrade notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) for more details.
 - **v7.8.4, released 2023-04-27**
@@ -252,7 +253,8 @@ Mattermost v7.9.0 contains a low severity level security fix. [Upgrading](https:
   - Fixed an issue where true-up review submissions always failed.
 - **v7.8.3, released 2023-04-12**
   - Mattermost v7.8.3 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
-  - Updated prepackaged boards to v7.8.4.
+  - Updated prepackaged Boards to v7.8.4.
+  - Updated prepackaged Playbooks to v1.36.1.
   - Added additional values to the support packet.
 - **v7.8.2, released 2023-03-17**
   - Mattermost v7.8.2 contains a high severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
