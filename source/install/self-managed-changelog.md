@@ -239,11 +239,11 @@ Mattermost v7.9.0 contains a low severity level security fix. [Upgrading](https:
 
 - **v7.8.6, released 2023-05-31**
   - Fixed an issue where the total user count was fetched for every client connection. It is only necessary to fetch this once.
-  - Pre-prepackaged version 1.3.0 of the Welcomebot plugin.
+  - Prepackaged version 1.3.0 of the Welcomebot plugin.
 - **v7.8.5, released 2023-05-17**
   - Mattermost v7.8.5 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Fixed an issue where a user would still see threads in the threads view of channels they have left. Migration execution time in MySQL: Query OK, 2766769 rows affected (4 min 47.57 sec). Migration execution time in PostgreSQL: 58.11 sec, DELETE 2766690.
-  - Pre-prepackaged version 1.2.1 of Apps plugin.
+  - Prepackaged version 1.2.1 of Apps plugin.
   - Updated the Docker Base Image from Debian to Ubuntu 22.04 LTS.
   - Backported a fix related to Oauth 2. Query times depend on if you have rows to delete or not. Please see the [important upgrade notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) for more details.
 - **v7.8.4, released 2023-04-27**
