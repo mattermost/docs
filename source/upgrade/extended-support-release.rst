@@ -15,9 +15,9 @@ During each monthly release, Mattermost backports high severity or high impact s
 What is the life cycle of an Extended Support Release?
 ------------------------------------------------------
 
-Mattermost provides an ESR when a significant number of new features and improvements have been added to the product, and have had sufficient time to stabilize. A new ESR is released twice a year, every January and July release. An ESR is supported for nine months to provide customers with enough time to test and upgrade to the next ESR.
+Mattermost provides an ESR when a significant number of new features and improvements have been added to the product, and have had sufficient time to stabilize. A new ESR is released twice a year, every February and August release. An ESR is supported for nine months to provide customers with enough time to test and upgrade to the next ESR.
 
-When an ESR is at the end of its life cycle, there will be announcements ahead of time to provide time for people to test, certify, and deploy a newer ESR version before support ends. There will be a clear upgrade path provided between ESR versions. After a release reaches its end-of-life, no further updates will be provided for that version. Please see `Release Lifecycle documentation </upgrade/release-lifecycle.html>`_ for a full list of lifecycles for each Mattermost release.
+When an ESR is at the end of its life cycle, there will be announcements ahead of time to provide time for people to test, certify, and deploy a newer ESR version before support ends. After a release reaches its end-of-life, no further updates will be provided for that version. Please see `Release Lifecycle documentation </upgrade/release-lifecycle.html>`_ for a full list of lifecycles for each Mattermost release.
 
 To receive updates about Extended Support Releases, sign up for our mailing list `here <https://eepurl.com/dCKn2P>`__.
 
@@ -39,7 +39,7 @@ If your organization prefers to have the newest features and improvements, Exten
 How do I install the Extended Support Release?
 ----------------------------------------------
 
-Follow our normal `install </guides/deployment.html#install-guides>`__ or `upgrade </upgrade/upgrading-mattermost-server.html>`__ guides. Please follow the `important upgrade notes </upgrade/important-upgrade-notes.html>`_ for all the versions since the current ESR version you have currently installed. Please also see `the changelog </install/self-managed-changelog.html>`_ for list of database, API and config.json updates for each release.
+Follow our `install </guides/deployment.html#install-guides>`__ or `upgrade </upgrade/upgrading-mattermost-server.html>`__ guides. Please read the `best practices </upgrade/prepare-to-upgrade-mattermost.html#upgrade-best-practices)>`__ for upgrading. Please also follow the `important upgrade notes </upgrade/important-upgrade-notes.html>`_ for all the versions since the current ESR version you have currently installed. Please see `the changelog </install/self-managed-changelog.html>`_ for list of database, API, and ``config.json`` updates for each release.
 
 When downloading the Mattermost version, choose an Extended Support Release from the list below.
 
@@ -49,7 +49,7 @@ What are the current supported Extended Support Release versions?
 +-------------+----------------+------------------+------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------+
 | Version     | Type           | Release Date     | End of Support   | Latest Dot Release Download link                                                           | Upgrade Notes                                       |
 +=============+================+==================+==================+============================================================================================+=====================================================+
-| 7.8         | Feature        | February 16, 2023| November 15, 2023| `7.8.4 <https://releases.mattermost.com/7.8.4/mattermost-7.8.4-linux-amd64.tar.gz>`_       |                                                     |
+| 7.8         | Feature        | February 16, 2023| November 15, 2023| `7.8.6 <https://releases.mattermost.com/7.8.6/mattermost-7.8.6-linux-amd64.tar.gz>`_       |                                                     |
 +-------------+----------------+------------------+------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------+
 | 7.1         | Feature        | July 15, 2022    | May 15, 2023     | `7.1.9 <https://releases.mattermost.com/7.1.9/mattermost-7.1.9-linux-amd64.tar.gz>`_       |                                                     |
 +-------------+----------------+------------------+------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------+

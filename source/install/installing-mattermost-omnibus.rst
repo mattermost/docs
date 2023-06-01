@@ -33,12 +33,17 @@ Install Mattermost Omnibus
 
   </div>
 
-Mattermost bundles the components of a Mattermost deployment into a single installation, called Omnibus. Mattermost Omnibus packages the free, unlicensed Mattermost Enterprise version of Mattermost, a PostgreSQL database (Omnibus doesn't support MySQL databases) and, when required, NGINX as the application proxy. A custom CLI (``mmomni``) and ansible recipes link the components together and configures them.
+.. contents:: On this page:
+  :backlinks: top
+  :local:
+  :depth: 1
+
+Mattermost Omnibus packages the free, unlicensed Mattermost Enterprise version of Mattermost, a PostgreSQL database, and when required, NGINX as the application proxy. A custom CLI (``mmomni``) and ansible recipes link the components together and configures them.
 
 Add the Mattermost PPA repositories
 -----------------------------------
 
-In a terminal window, run the following command to configure the repositories needed for a PostgreSQL database, configure an NGINX web server to act as a proxy, configure certbot to issue and renew the SSL certificate, and configure the Mattermost Omnibus repository so that you can run the install command.
+In a terminal window, run the following command 
 
 .. raw:: html
 
@@ -58,6 +63,7 @@ In a terminal window, run the following command to configure the repositories ne
 
   </div>
 
+This command configures the repositories needed for a PostgreSQL database, configures an NGINX web server to act as a proxy, configures certbot to issue and renew the SSL certificate, and configures the Mattermost Omnibus repository so that you can run the install command.
 
 Install Mattermost Omnibus
 ---------------------------
@@ -86,7 +92,7 @@ In a terminal window, run the following command to install Omnibus.
 
   We recommend installing and configuring Omnibus with SSL enabled; however, you can run the following command to disable SSL: ``sudo MMO_HTTPS=false apt install mattermost-omnibus``.
 
-To issue the certificate, the installer requests a domain name and an email address from you. These are used to generate the certificate and deliver any related communications. After all the packages are installed, Omnibus runs ansible scripts that configure all the platform components and starts the server.
+You're prompted to specify a domain name and email address to issue the certificate. This information is used to generate the certificate and deliver any related communications. After all the packages are installed, Omnibus runs ansible scripts that configure all the platform components and starts the server.
 
 Next steps:
 

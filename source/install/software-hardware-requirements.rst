@@ -37,7 +37,11 @@ Desktop apps
 
 Though not officially supported, the Linux desktop app also runs on RHEL/CentOS 7+.
 
-`*` Integrated Windows Authentication is not supported by Mattermost desktop apps. If you use ADFS we recommend `configuring intranet forms-based authentication for devices that do not support WIA <https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configure-intranet-forms-based-authentication-for-devices-that-do-not-support-wia>`_.
+.. note::
+
+    - `*` Integrated Windows Authentication is not supported by Mattermost desktop apps. If you use ADFS we recommend `configuring intranet forms-based authentication for devices that do not support WIA <https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configure-intranet-forms-based-authentication-for-devices-that-do-not-support-wia>`_.
+
+    - The minimum content size is 769 x 600 pixels. When the width is 768 pixels or less, the desktop app switches to mobile view. When the height is below 600 pixels, screen elements may become misplaced.
 
 PC web
 ^^^^^^
@@ -61,7 +65,10 @@ Mobile apps
     "iOS", "iPhone 5s devices and later with iOS 12.1+"
     "Android", "Android devices with Android 7+"
 
-`*` Integrated Windows Authentication is not supported by Mattermost mobile apps. If you use ADFS we recommend `configuring intranet forms-based authentication for devices that do not support WIA <https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configure-intranet-forms-based-authentication-for-devices-that-do-not-support-wia>`_.
+.. note::
+
+    - `*` Integrated Windows Authentication is not supported by Mattermost mobile apps. If you use ADFS we recommend `configuring intranet forms-based authentication for devices that do not support WIA <https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configure-intranet-forms-based-authentication-for-devices-that-do-not-support-wia>`_.
+    - The minimum and target content size is 320 x 460 pixels, matching the available space when the mobile app is opened in Safari on the minimum supported iOS device.
 
 Mobile web
 ^^^^^^^^^^
@@ -95,15 +102,15 @@ Database software
 
 For Mattermost v6.0 and later:
 
--  MySQL 5.7.12, 8.0.12+ (see note below on MySQL 8 support)
 -  PostgreSQL 10.0+
+-  MySQL 5.7.12, 8.0.12+ (see note below on MySQL 8 support)
 
 For Mattermost v5.39 and previous releases:
 
-- MySQL 5.6, 5.7, 8.0.12+ (see note below on MySQL 8 support)
 - PostgreSQL 10.0+
+- MySQL 5.6, 5.7, 8.0.12+ (see note below on MySQL 8 support)
 
-Amazon Aurora equivalents of both MySQL and PostgreSQL are also supported.
+Amazon Aurora equivalents of both  PostgreSQL and MySQL are also supported.
 
 MariaDB v10+ no longer functions as a MySQL drop-in replacement, and it's not supported for Mattermost due to the requirement of MySQL 5.7.12. Prior versions of MariaDB were not officially supported but may have functioned in older Mattermost releases. If you are running MariaDB now, migrating from MariaDB to the MySQL equivalent is recommended.
 

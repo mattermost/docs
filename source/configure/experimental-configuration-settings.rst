@@ -646,7 +646,7 @@ This setting synchronizes draft messages across all supported Mattermost clients
 +------------------------------------------------------------------------------------------------------------------------------+
 
 Patch React DOM used by plugins
-~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This setting enables the patching of the React DOM library when loading web app plugins so that the plugin uses the version matching the web app. This should only be needed temporarily after upgrading to Mattermost v7.7 for plugins that have not been updated yet. Changes to this setting require a server restart before taking effect.
 
@@ -958,24 +958,6 @@ Used to control the buffer of outstanding Push Notification messages to be sent.
 +---------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature’s ``config.json`` setting is ``"PushNotificationBuffer": 1000"`` with numerical input.                                         |
 +---------------------------------------------------------------------------------------------------------------------------------------------+
-
-.. config:setting:: exp-disableinactivityemail
-  :displayname: Disable inactive server email notifications (Experimental)
-  :systemconsole: N/A
-  :configjson: EnableInactivityEmail
-  :environment: N/A
-  :description: This configuration setting disables the ability to send inactivity email notifications to Mattermost System Admins. Default value is **true**.
-
-Disable inactive server email notifications
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-This configuration setting disables the ability to send inactivity email notifications to Mattermost System Admins.
-
-+-------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableInactivityEmail": true`` with options ``true`` and ``false``.  |
-+-------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: exp-enableauditfiles
   :displayname: File configuration options (Experimental)

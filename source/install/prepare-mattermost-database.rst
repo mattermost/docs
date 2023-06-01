@@ -1,28 +1,12 @@
-.. _install-ubuntu-2004:
-
-Install Mattermost on Ubuntu 20.04 LTS
-======================================
+Prepare your Mattermost database
+================================
 
 .. include:: ../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
 
-Install a production-ready Mattermost system on up to three machines.
-
-.. include:: install-common-intro.rst
-  :start-after: :nosearch:
-
-.. contents:: Install and configure the components in the following order. 
-  :depth: 2
-
-.. include:: install-ubuntu-2004-server.rst
-  :start-after: :nosearch:
-
-Install a database
-------------------
-
 .. note:: 
   
-  You only need one database: either PostgreSQL or MySQL. See the `database software </install/software-hardware-requirements.html#database-software>`__ documentation for details on database version support.
+  You need one database: either PostgreSQL or MySQL. See the `database software </install/software-hardware-requirements.html#database-software>`__ documentation for details on database version support.
 
 .. tabs::
 
@@ -123,21 +107,3 @@ Install a database
         This query grants the MySQL user we just created all privileges on the database for convenience. If you need more security, use the following query to grant the user only the privileges necessary to run Mattermost: ``mysql> GRANT ALTER, CREATE, DELETE, DROP, INDEX, INSERT, SELECT, UPDATE, REFERENCES ON mattermost.* TO 'mmuser'@'%';``
 
     8. Log out of MySQL by running ``mysql> exit``. Once the database is installed and the initial setup is complete, you can install the Mattermost server.
-
-.. include:: install-ubuntu-2004-mattermost.rst
-  :start-after: :nosearch:
-
-.. include:: config-mattermost-server.rst
-  :start-after: :nosearch:
-
-.. include:: config-tls-mattermost.rst
-  :start-after: :nosearch:
-
-.. include:: install-nginx.rst
-  :start-after: :nosearch:
-
-.. include:: config-proxy-nginx.rst
-  :start-after: :nosearch:
-
-.. include:: config-ssl-http2-nginx.rst
-  :start-after: :nosearch:

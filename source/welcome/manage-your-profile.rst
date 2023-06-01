@@ -42,8 +42,10 @@ See the following table to learn how to configure your name, username, nickname,
 |                     |   username changes through the login provider.                                                  |
 +---------------------+-------------------------------------------------------------------------------------------------+
 | Nickname            | (Optional) Nicknames appear in the direct messages member list and team management modal.       |
-|                     | You won't receive mention notifications when someone types your nickname unless you add         |
-|                     | it to the **Words That Trigger Mentions** notifications list as a `Notifications                |
+|                     | Your nickname can be up to 64 characters long.                                                  |
+|                     |                                                                                                 |
+|                     | **Note**: You won't receive mention notifications when someone types your nickname unless you   |
+|                     | add it to the **Words That Trigger Mentions** notifications list as a `Notifications            |
 |                     | </channels/channels-settings.html#notifications>`__ preference.                                 |
 +---------------------+-------------------------------------------------------------------------------------------------+
 | Position            | (Optional) Position can be used to describe your role or job title.                             |
@@ -93,19 +95,18 @@ See the following table to learn how to configure your password, view access his
 +----------------------+--------------------------------------------------------------------------------------------------------+
 | Multi-factor         | If your system admin has enabled `multi-factor authentication                                          |
 | authentication (MFA) | </configure/configuration-settings.html#enable-multi-factor-authentication>`__                         |
-|                      | (MFA), you can choose to set up your Mattermost account to require a generated                         |
-|                      | passcode in addition to your password when you log in to Mattermost.                                   |
+|                      | (MFA), you can require a passcode in addition to your password to log-in to your Mattermost account.   |
 |                      |                                                                                                        |
-|                      | You'll need to download a passcode generation app, and then enable MFA                                 |
-|                      | for your Mattermost account.                                                                           |
+|                      | You'll need to download a MFA passcode generation app, such as Google Authenticator or a similar app,  |
+|                      | and then set-up MFA in your Mattermost account.                                                        |
 |                      |                                                                                                        |
 |                      | **Download a passcode generation app**                                                                 |
 |                      |                                                                                                        |
 |                      | - Download Google Authenticator for an Apple device from                                               |
-|                      | `iTunes <https://itunes.apple.com/us/app/google-authenticator/id388497605?mt=8>`__                     |
+|                      |   `iTunes <https://itunes.apple.com/us/app/google-authenticator/id388497605?mt=8>`__                   |
 |                      | - Download Google Authenticator for an Android device from                                             |
-|                      | `Google Play <https://play.google.com/store/apps/details?id=com.google.                                |
-|                      | android.apps.authenticator2&hl=en>`__                                                                  |
+|                      |   `Google Play <https://play.google.com/store/apps/details?id=com.google.                              |
+|                      |   android.apps.authenticator2&hl=en>`__                                                                |
 |                      |                                                                                                        |
 |                      | **Enable MFA in Mattermost**                                                                           |
 |                      |                                                                                                        |
@@ -121,16 +122,9 @@ See the following table to learn how to configure your password, view access his
 |                      | .. image:: ../images/add-mfa-to-account.png                                                            |
 |                      |   :alt: Add multi-factor authentication to your Mattermost user profile.                               |
 |                      |                                                                                                        |
-|                      | 5. On your device, use the Google Authenticator app to scan the QR code that displays in Mattermost.   |
-|                      | 6. Enter the **MFA Code** generated by Google Authenticator in Mattermost where prompted.              |
+|                      | 5. Scan the QR code or enter the **Secret** provided by Mattermost into the authenticator app.         |
+|                      | 6. In Mattermost, enter the **MFA Code** generated by the authenticator app.                           |
 |                      | 7. Select **Save**.                                                                                    |
-|                      |                                                                                                        |
-|                      | Once you've set up multi-factor authentication for your Mattermost account,                            |
-|                      | when you log in to Mattermost you'll be asked to enter a code generated by Google Authenticator        |
-|                      | as well as your password.                                                                              |
-|                      |                                                                                                        |
-|                      | **Tip**: If scanning the QR code using your device doesn't work, you can manually enter the **Secret** |
-|                      | provided on the Mattermost screen into the Google Authenticator app as a **Manual Entry** instead.     |
 +----------------------+--------------------------------------------------------------------------------------------------------+
 | Sign-in method       | This option allows you to switch your `login method </welcome/log-in.html>`__ from                     |
 |                      | `email/username and password </welcome/log-in.html#email-address-or-username>`__                       |

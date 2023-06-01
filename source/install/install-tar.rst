@@ -33,13 +33,18 @@ Install Mattermost Server using the tarball
 
   </div>
 
-You can install the Mattermost Server on any 64-bit Linux system using the tarball. Deployment includes 3 steps: `download <#download-the-latest-mattermost-server-tarball>`__, `install <#install>`__, and `setup <#setup>`__.
+You can install the Mattermost Server on any 64-bit Linux system using the tarball. This is the most flexible installation method, but it comes with the highest effort, normally favored by advanced system administrators. 
 
-.. important::
+.. tip::
 
-    - This is the most flexible installation method, but it comes with the highest effort, normally favored by advanced system adminsitrators. 
-    - If you are running the Mattermost Server and database on a single system, we recommend the `Mattermost Omnibus install method </install/installing-mattermost-omnibus.html>`__ as this greatly reduces setup and ongoing maintenance, and uses the Mattermost PPA for updates. More modern installation methods such as the Mattermost Helm Chart or Kubernetes Operator are available and are highly recommended.
+  If you are running the Mattermost Server and database on a single system, we recommend the `Mattermost Omnibus install method </install/installing-mattermost-omnibus.html>`__ as this greatly reduces setup and ongoing maintenance, and uses the Mattermost PPA for updates. More modern installation methods such as the Mattermost Helm Chart or Kubernetes Operator are available and are highly recommended.
 
+.. contents:: On this page:
+  :backlinks: top
+  :local:
+  :depth: 1
+
+Deployment includes 3 steps: `download <#download-the-latest-mattermost-server-tarball>`__, `install <#install>`__, and `setup <#setup>`__.
 
 Download the latest Mattermost Server tarball
 ---------------------------------------------
@@ -48,52 +53,51 @@ In a terminal window, ssh onto the system that will host the Mattermost Server.
 
 Using ``wget``, download the Mattermost Server release you want to install.
 
-Download the latest release
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. tabs::
 
-.. raw:: html
+  .. tab:: Latest release
 
-  <div class="mm-code-copy mm-code-copy--long" data-click-method="Tarball" data-click-command="Download the latest release">
+    .. raw:: html
 
-    <div class="mm-code-copy__wrapper">
-      <code class="mm-code-copy__text mm-code-copy__trigger" data-click-el="Snippet">
-        wget https://releases.mattermost.com/7.10.0/mattermost-7.10.0-linux-amd64.tar.gz
-      </code>
-      <span class="mm-code-copy__copied-notice">Copied to clipboard</span>
-    </div>
+      <div class="mm-code-copy mm-code-copy--long" data-click-method="Tarball" data-click-command="Download the latest release">
 
-    <button class="mm-button mm-code-copy__trigger" data-click-el="Button">
-      <svg aria-hidden="true" width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="0.5" y="0.5" width="10.2972" height="10.8284" rx="0.5" stroke="white"/><rect x="6.1489" y="6.41418" width="10.2972" height="10.8284" rx="0.5" stroke="white"/></svg>
-      <span>Copy to clipboard<span>
-    </button>
+        <div class="mm-code-copy__wrapper">
+          <code class="mm-code-copy__text mm-code-copy__trigger" data-click-el="Snippet">
+          wget https://releases.mattermost.com/7.10.2/mattermost-7.10.2-linux-amd64.tar.gz
+          </code>
+          <span class="mm-code-copy__copied-notice">Copied to clipboard</span>
+        </div>
 
-  </div>
+        <button class="mm-button mm-code-copy__trigger" data-click-el="Button">
+        <svg aria-hidden="true" width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="0.5" y="0.5" width="10.2972" height="10.8284" rx="0.5" stroke="white"/><rect x="6.1489" y="6.41418" width="10.2972" height="10.8284" rx="0.5" stroke="white"/></svg>
+          <span>Copy to clipboard<span>
+        </button>
 
-Download the current Extended Support Release (ESR)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      </div>
 
-.. raw:: html
+  .. tab:: Current ESR
 
-  <div class="mm-code-copy mm-code-copy--long" data-click-method="Tarball" data-click-command="Download the current ESR">
+    .. raw:: html
 
-    <div class="mm-code-copy__wrapper">
-      <code class="mm-code-copy__text mm-code-copy__trigger" data-click-el="Snippet">
-        wget https://releases.mattermost.com/7.8.4/mattermost-7.8.4-linux-amd64.tar.gz
-      </code>
-      <span class="mm-code-copy__copied-notice">Copied to clipboard</span>
-    </div>
+      <div class="mm-code-copy mm-code-copy--long" data-click-method="Tarball" data-click-command="Download the current ESR">
 
-    <button class="mm-button mm-code-copy__trigger" data-click-el="Button">
-      <svg aria-hidden="true" width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="0.5" y="0.5" width="10.2972" height="10.8284" rx="0.5" stroke="white"/><rect x="6.1489" y="6.41418" width="10.2972" height="10.8284" rx="0.5" stroke="white"/></svg>
-      <span>Copy to clipboard<span>
-    </button>
+        <div class="mm-code-copy__wrapper">
+          <code class="mm-code-copy__text mm-code-copy__trigger" data-click-el="Snippet">
+            wget https://releases.mattermost.com/7.8.6/mattermost-7.8.6-linux-amd64.tar.gz
+          </code>
+          <span class="mm-code-copy__copied-notice">Copied to clipboard</span>
+        </div>
 
-  </div>
+        <button class="mm-button mm-code-copy__trigger" data-click-el="Button">
+          <svg aria-hidden="true" width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="0.5" y="0.5" width="10.2972" height="10.8284" rx="0.5" stroke="white"/><rect x="6.1489" y="6.41418" width="10.2972" height="10.8284" rx="0.5" stroke="white"/></svg>
+          <span>Copy to clipboard<span>
+        </button>
 
-Download an older release
-~~~~~~~~~~~~~~~~~~~~~~~~~
+      </div>
 
-If you are looking for an older release, these can be found in our `version archive </upgrade/version-archive.html>`__ documentation.
+  .. tab:: Older releases
+
+    If you are looking for an older release, these can be found in our `version archive </upgrade/version-archive.html>`__ documentation.
 
 Install
 -------
@@ -150,7 +154,7 @@ Give the ``mattermost`` group write permissions to the application folder:
         
     sudo chmod -R g+w /opt/mattermost
 
-You will now have the latest Mattermost Server version installed on your system. Managaging starting and stopping the Mattermost Server is done using ``systemd``. Create the systemd unit file:
+You will now have the latest Mattermost Server version installed on your system. Starting and stopping the Mattermost Server is done using ``systemd``. Create the systemd unit file:
 
 .. code-block:: none
   :class: mm-code-block 
@@ -190,14 +194,14 @@ Save the file and reload systemd using ``sudo systemctl daemon-reload``. Matterm
 Setup
 ------
 
-Before you start the Mattermost Server, you need to edit the configuration file. A sample configuration file is located at ``/opt/mattermost/config/config.defaults.json``. 
+Before you start the Mattermost Server, you need to edit the configuration file. A default configuration file is located at ``/opt/mattermost/config/config.json``. 
 
-Rename this configuration file with correct permissions:
+We recommend taking a backup of this default config ahead of making changes:
 
 .. code-block:: none
   :class: mm-code-block 
         
-    sudo install -C -m 600 -o mattermost -g mattermost /opt/mattermost/config/config.defaults.json /opt/mattermost/config/config.json
+    sudo cp /opt/mattermost/config/config.json /opt/mattermost/config/config.defaults.json 
 
 Configure the following properties in this file:
 

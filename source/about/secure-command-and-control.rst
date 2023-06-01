@@ -1,9 +1,7 @@
 Secure command and control
 ============================
 
-Mattermost's Secure Command and Control solution is designed to provide fast and secure mobile communications for technical teams. 
-
-It addresses the pain points of data leakage to unsecured channels, like SMS and WhatsApp, and the lack of control and compliance from vendor-hosted mobile applications that leaves technical teams struggling to collaborate securely.
+Mattermost's Secure Command and Control solution is designed to provide fast and secure mobile communications for technical teams. It addresses the pain points of data leakage to unsecured channels, like SMS and WhatsApp, and the lack of control and compliance from vendor-hosted mobile applications that leaves technical teams struggling to collaborate securely.
 
 The solution provides easy-to-use collaboration for technical teams, including team messaging, file sharing, audio and screen-share, and process automation directly from your mobile device on iOS or Android. The solution is specifically designed to address the challenges of enterprise-scale secure mobile communications.
 

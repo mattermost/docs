@@ -86,11 +86,7 @@ Search for message and files
 Search modifiers
 ----------------
 
-You can apply search modifiers to any search to reduce the number of results returned. Select a search modifier to add it to the Search field. Supported modifiers are described below.
-
-.. note::
-
-  In Mattermost versions up to v6.0, your search results include messages from your current team only. From Mattermost v6.1, your search results include messages from all of your teams.
+You can apply search modifiers to any search to reduce the number of results returned. Select a search modifier to add it to the Search field. Supported modifiers are described below. Your search results include messages from all of your teams.
 
 .. image:: ../images/search-modifiers.png
 

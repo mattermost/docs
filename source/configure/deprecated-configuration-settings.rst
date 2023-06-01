@@ -943,3 +943,14 @@ For more information on AD/LDAP Group Sync, please see the `AD/LDAP Group Sync d
 +-----------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ExperimentalLdapGroupSync": false`` with options ``true`` and ``false``. |
 +-----------------------------------------------------------------------------------------------------------------------+
+
+Disable inactive server email notifications
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
+This configuration setting disables the ability to send inactivity email notifications to Mattermost System Admins.
+
++-------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableInactivityEmail": true`` with options ``true`` and ``false``.  |
++-------------------------------------------------------------------------------------------------------------------+

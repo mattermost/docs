@@ -6,8 +6,13 @@ Install Mattermost via Docker
 .. include:: ../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
 
-Prerequisites
--------------
+.. contents:: On this page:
+  :backlinks: top
+  :local:
+  :depth: 1
+
+Install Docker
+---------------
 
 If you don't have Docker installed, follow the instructions below based on your operating system:
 
@@ -46,7 +51,7 @@ If you don't have Docker installed, follow the instructions below based on your 
   :start-after: :nosearch:
 
 Troubleshooting your preview deployment
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The **Preview Mode** Docker instance for Mattermost is designed for product evaluation, and sets ``SendEmailNotifications=false`` so the product can function without enabling email. See the `Configuration Settings </configure/configuration-settings.html>`__ documentation to customize your deployment.
 
@@ -78,14 +83,14 @@ Deploy Mattermost on Docker for production use
   :start-after: :nosearch:
 
 Upgrade from ``mattermost-docker``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-----------------------------------
 
-To migrate from the deprecated `mattermost-docker repository <https://github.com/mattermost/mattermost-docker>`__ running with the image ``mattermost/mattermost-prod-app``, we recommend migrating either to ``mattermost/mattermost-enterprise-edition`` or ``mattermost/mattermost-team-edition`` images, which are the official images supported by Mattermost. These images support Postgres 10+ databases, which we know has been a long-running challenge for the community, and you will not lose any features or functionality by moving to these new images.
+The `mattermost-docker <https://github.com/mattermost/mattermost-docker>`__ repository is deprecated. To migrate from the ``mattermost/mattermost-prod-app`` image, we recommend migrating to either ``mattermost/mattermost-enterprise-edition`` or ``mattermost/mattermost-team-edition`` images, which are the official images supported by Mattermost. These images support PostgreSQL 11+ databases, which we know has been a long-running challenge for the community, and you will not lose any features or functionality by moving to these new images.
 
 For additional help or questions, please refer to `this issue <https://github.com/mattermost/mattermost-docker/issues/489>`__.
 
 Installing a different version of Mattermost
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------------------------
 
 1. Shut down your deployment.
 
@@ -96,10 +101,10 @@ Installing a different version of Mattermost
 4. Redeploy Mattermost.
 
 Troubleshooting your production deployment
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------------
 
 Docker
-^^^^^^
+~~~~~~
 
 If deploying on an M1 Mac and encountering permission issues in the Docker container, `redo the third step <#create-the-required-directores-and-set-their-permissions>`__ and skip this command:
 
@@ -119,13 +124,13 @@ To remove all data and settings for your Mattermost deployment:
 
   sudo rm -rf ./volumes
 
-Postgres
-^^^^^^^^
+PostgreSQL
+~~~~~~~~~~~
 
 You can change the Postgres username and/or password (recommended) in the ``.env`` file.
 
-TLS & Nginx
-^^^^^^^^^^^
+TLS & NGINX
+~~~~~~~~~~~~
 
 For an in-depth guide to configuring the TLS certificate and key for Nginx, please refer to `this document in the repository <https://github.com/mattermost/docker/blob/main/docs/issuing-letsencrypt-certificate.md>`__.
 
