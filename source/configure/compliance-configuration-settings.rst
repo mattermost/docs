@@ -29,8 +29,8 @@ Access the following configuration settings in the System Console by going to **
 .. config:setting:: dataretention-globalmessagepolicy
   :displayname: Global retention policy for messages (Data Retention)
   :systemconsole: Compliance > Data Retention Policies
-  :configjson: MessageRetentionDays
-  :environment: N/A
+  :configjson: .DataRetentionSettings.MessageRetentionDays
+  :environment: MM_DATARETENTIONSETTINGS_MESSAGERETENTIONDAYS
   :description: Set how long Mattermost keeps messages across all teams and channels. Doesn't apply to custom retention policies. The minimum time is one day.
 
 Global retention policy for messages
@@ -49,8 +49,8 @@ By default, messages are kept forever. If **Days** or **Years** is chosen, set h
 .. config:setting:: dataretention-globalfilepolicy
   :displayname: Global retention policy for files (Data Retention)
   :systemconsole: Compliance > Data Retention Policies
-  :configjson: FileRetentionDays
-  :environment: N/A
+  :configjson: .DataRetentionSettings.FileRetentionDays
+  :environment: MM_DATARETENTIONSETTINGS_FILERETENTIONDAYS
   :description: Set how long Mattermost keeps files across all teams and channels. Doesn't apply to custom retention policies. The minimum time is one day.
 
 Global retention policy for files
@@ -76,8 +76,8 @@ Set how long Mattermost keeps messages and files across specific teams and chann
 .. config:setting:: dataretention-deletiontime
   :displayname: Data deletion time (Data Retention)
   :systemconsole: Compliance > Data Retention Policies
-  :configjson: DeletionJobStartTime
-  :environment: N/A
+  :configjson: .DataRetentionSettings.DeletionJobStartTime
+  :environment: MM_DATARETENTIONSETTINGS_DELETIONJOBSTARTTIME
   :description: Set the start time of the daily scheduled data retention job. Must be a 24-hour time stamp in the form ``HH:MM``. This setting is based on the local time of the server.
 
 Data deletion time
@@ -110,8 +110,8 @@ Access the following configuration settings in the System Console by going to **
 .. config:setting:: compliance-exportenable
   :displayname: Enable compliance export (Compliance Export)
   :systemconsole: Compliance > Compliance Export
-  :configjson: EnableExport
-  :environment: N/A
+  :configjson: .MessageExportSettings.EnableExport
+  :environment: MM_MESSAGEEXPORTSETTINGS_ENABLEEXPORT
 
   - **true**: Mattermost will generate a compliance export file that contains all messages that were posted in the last 24 hours.
   - **false**: **(Default)** Mattermost doesn't generate a compliance export file.
@@ -132,8 +132,8 @@ Enable compliance export
 .. config:setting:: compliance-exporttime
   :displayname: Compliance export time (Compliance Export)
   :systemconsole: Compliance > Compliance Export
-  :configjson: DailyRunTime
-  :environment: N/A
+  :configjson: .MessageExportSettings.DailyRunTime
+  :environment: MM_MESSAGEEXPORTSETTINGS_DAILYRUNTIME
   :description: Set the start time of the daily scheduled compliance export job. Must be a 24-hour time stamp in the form ``HH:MM``. This setting is based on the local time of the server.
 
 Compliance export time
@@ -152,8 +152,8 @@ This setting is based on the local time of the server.
 .. config:setting:: compliance-exportformat
   :displayname: Export file format (Compliance Export)
   :systemconsole: Compliance > Compliance Export
-  :configjson: N/A
-  :environment: N/A
+  :configjson: .MessageExportSettings.ExportFormat
+  :environment: MM_MESSAGEEXPORTSETTINGS_EXPORTFORMAT
   :description: File format of the compliance export. Currently supported formats are CSV, Actiance XML, and Global Relay EML.
 
 Export file format
@@ -170,8 +170,8 @@ If Global Relay is chosen, the following options will be presented:
 .. config:setting:: compliance-exportglobalrelaycustomertype
   :displayname: Global Relay customer account (Compliance Export - Global Relay EML)
   :systemconsole: Compliance > Compliance Export
-  :configjson: CustomerType
-  :environment: N/A
+  :configjson: .MessageExportSettings.GlobalRelaySettings.CustomerType
+  :environment: MM_MESSAGEEXPORTSETTINGS_GLOBALRELAYSETTINGS_CUSTOMERTYPE
   :description: Type of Global Relay customer account your organization has, either ``A9/Type 9`` or ``A10/Type 10``.
 
 Global Relay customer account
@@ -188,8 +188,8 @@ Type of Global Relay customer account your organization has, either ``A9/Type 9`
 .. config:setting:: compliance-exportglobalrelaysmtpuser
   :displayname: Global Relay SMTP username (Compliance Export - Global Relay EML)
   :systemconsole: Compliance > Compliance Export
-  :configjson: SmtpUsername
-  :environment: N/A
+  :configjson: .MessageExportSettings.GlobalRelaySettings.SmtpUsername
+  :environment: MM_MESSAGEEXPORTSETTINGS_GLOBALRELAYSETTINGS_SMTPUSERNAME
   :description: The username for authenticating to the Global Relay SMTP server.
 
 Global Relay SMTP username
@@ -206,8 +206,8 @@ The username for authenticating to the Global Relay SMTP server.
 .. config:setting:: compliance-exportglobalrelaysmtppassword
   :displayname: Global Relay SMTP password (Compliance Export - Global Relay EML)
   :systemconsole: Compliance > Compliance Export
-  :configjson: SmtpPassword
-  :environment: N/A
+  :configjson: .MessageExportSettings.GlobalRelaySettings.SMTPPassword
+  :environment: MM_MESSAGEEXPORTSETTINGS_GLOBALRELAYSETTINGS_SMTPPASSWORD
   :description: The password associated with the Global Relay SMTP username.
 
 Global Relay SMTP password
@@ -224,8 +224,8 @@ The password associated with the Global Relay SMTP username.
 .. config:setting:: compliance-exportglobalrelayemail
   :displayname: Global Relay emailaddress
   :systemconsole: Compliance > Compliance Export
-  :configjson: EmailAddress
-  :environment: N/A
+  :configjson: .MessageExportSettings.GlobalRelaySettings.EmailAddress
+  :environment: MM_MESSAGEEXPORTSETTINGS_GLOBALRELAYSETTINGS_EMAILADDRESS
   :description: The email address your Global Relay server monitors for incoming compliance exports.
 
 Global Relay email address
@@ -261,8 +261,8 @@ Access the following configuration settings in the System Console by going to **
 .. config:setting:: compliance-monitorenable
   :displayname: Enable compliance reporting (Compliance Monitoring)
   :systemconsole: Compliance > Compliance Monitoring
-  :configjson: Enable
-  :environment: N/A
+  :configjson: .ComplianceSettings.Enable
+  :environment: MM_COMPLIANCESETTINGS_ENABLE
 
   - **true**: Compliance reporting is enabled in Mattermost.
   - **false**: **(Default)** Compliance reporting is disabled.
@@ -283,8 +283,8 @@ Enable compliance reporting
 .. config:setting:: compliance-monitordirectory
   :displayname: Compliance report directory (Compliance Monitoring)
   :systemconsole: Compliance > Compliance Monitoring
-  :configjson: Directory
-  :environment: N/A
+  :configjson: .ComplianceSettings.Directory
+  :environment: MM_COMPLIANCESETTINGS_DIRECTORY
   :description: Sets the directory where compliance reports are written. The default value is ``./data/``.
 
 Compliance report directory
@@ -301,8 +301,8 @@ Sets the directory where compliance reports are written.
 .. config:setting:: compliance-monitorenabledaily
   :displayname: Enable daily report (Compliance Monitoring)
   :systemconsole: Compliance > Compliance Monitoring
-  :configjson: EnableDaily
-  :environment: N/A
+  :configjson: .ComplianceSettings.EnableDaily
+  :environment: MM_COMPLIANCESETTINGS_ENABLEDAILY
 
   - **true**: Mattermost generates a daily compliance report.
   - **false**: **(Default)** Daily reports are not generated.
@@ -323,8 +323,8 @@ Enable daily report
 .. config:setting:: compliance-monitorbatchsize
   :displayname: Batch size (Compliance Monitoring)
   :systemconsole: Compliance > Compliance Monitoring
-  :configjson: BatchSize
-  :environment: N/A
+  :configjson: .ComplianceSettings.BatchSize
+  :environment: MM_COMPLIANCESETTINGS_BATCHSIZE
   :description: Set the size of the batches in which posts will be read from the database to generate the compliance report. The default value is **30000**.
 
 Batch size
@@ -348,8 +348,8 @@ Access the following configuration settings in the System Console by going to **
 .. config:setting:: compliance-ctosenable
   :displayname: Enable custom terms of service (Custom Terms of Service)
   :systemconsole: Compliance > Custom Terms of Service
-  :configjson: N/A
-  :environment: N/A
+  :configjson: .SupportSettings.CustomTermsOfServiceEnabled
+  :environment: MM_SUPPORTSETTINGS_CUSTOMTERMSOFSERVICEENABLED
 
   - **True**: New users must accept the Terms of Service before accessing any Mattermost teams on desktop, web, or mobile. Existing users must accept them after login or a page refresh.
   - **False**: During account creation or login, users can review Terms of Service by accessing the link configured via **System Console > Legal and Support > Terms of Service link**.
@@ -383,8 +383,8 @@ Text that will appear in your custom Terms of Service. Supports Markdown-formatt
 .. config:setting:: compliance-ctosreacceptanceperiod
   :displayname: Re-acceptance period (Custom Terms of Service)
   :systemconsole: Compliance > Custom Terms of Service
-  :configjson: N/A
-  :environment: N/A
+  :configjson: .SupportSettings.CustomTermsOfServiceReAcceptancePeriod
+  :environment: MM_SUPPORTSETTINGS_CUSTOMTERMSOFSERVICEREACCEPTANCEPERIOD
   :description: The number of days before Terms of Service acceptance expires, and the terms must be re-accepted. The default value is **365**. A value of **0** indicates the terms do not expire.
 
 Re-acceptance period
