@@ -65,6 +65,7 @@ Latest Mattermost Cloud releases:
  - Fixed an issue where certain hashtags were not searchable when using database search.
 
 ### Known Issues
+ - Clicking on the **replies** button doesn't navigate to the thread when Collapsed Reply Threads is enabled. A workaround is to use the reply arrow in the post menu or to navigate to the Threads view when replying to messages [MM-52995](https://mattermost.atlassian.net/browse/MM-52995). 
  - In a cluster config save scenario, it is difficult to disinguish between a timeout and a semantic error in the config if a config save in one node gets stuck [MM-52968](https://mattermost.atlassian.net/browse/MM-52968).
  - Message Actions … ellipsis menu icon only displays rectangle when clicked on [MM-52444](https://mattermost.atlassian.net/browse/MM-52444).
  - The URL of the post in a reminder post for direct and group messages have a double slash on mobile [MM-51026](https://mattermost.atlassian.net/browse/MM-51026).
