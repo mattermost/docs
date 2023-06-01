@@ -4,12 +4,28 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 
 Latest Mattermost Cloud releases:
 
+- [Release 2023-06-15](#release-2023-06-15)
 - [Release 2023-05-31](#release-2023-05-31)
 - [Release 2023-05-01](#release-2023-05-01)
 - [Release 2023-04-21](#release-2023-04-21)
 - [Release 2023-03-29](#release-2023-03-29)
 - [Release 2023-03-20](#release-2023-03-20)
-- [Release 2023-01-26](#release-2023-01-26)
+
+## Release 2023-06-15
+
+### Improvements
+
+#### User Interface (UI)
+ - Reworked some of the components used for showing autocomplete results.
+
+### Bug Fixes
+ - Ensured users mentioned in message attachments are loaded by the web app.
+ - Fixed an issue where the reply bar did not get highlighted when a user was mentioned by a reply because of their Reply Notifications setting.
+ - Fixed an issue where the total user count was fetched for every client connection. It is only necessary to fetch this once.
+
+### Known Issues
+ - In a cluster config save scenario, it is difficult to disinguish between a timeout and a semantic error in the config if a config save in one node gets stuck [MM-52968](https://mattermost.atlassian.net/browse/MM-52968).
+ - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
 
 ## Release 2023-05-31
 
