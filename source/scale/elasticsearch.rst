@@ -23,7 +23,7 @@ Elasticsearch allows you to search large volumes of data quickly, in near real-t
 
 Deploying Elasticsearch includes the following two steps: `setting up the Elasticsearch server <#set-up-an-elasticsearch-server>`_, and `configuring Elasticsearch in Mattermost <#configure-elasticsearch-in-mattermost>`_.
 .. note::
-    You can filter inactive users, search by user role, and also search for terms inside links. Reindex your Elasticsearch instance/cluster prior to upgrading to Mattermost v.5.26 or later to address a breaking change which affects the "from" part of the search.
+    You can filter inactive users, search by user role, and also search for terms inside links. Reindex your Elasticsearch instance/cluster to address a breaking change which affects the "from" part of the search.
     
 Set up an Elasticsearch server
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
