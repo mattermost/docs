@@ -22,6 +22,7 @@ Latest Mattermost Cloud releases:
  - Ensured users mentioned in message attachments are loaded by the web app.
  - Fixed an issue where the reply bar did not get highlighted when a user was mentioned by a reply because of their Reply Notifications setting.
  - Fixed an issue where the total user count was fetched for every client connection. It is only necessary to fetch this once.
+ - Fixed an issue where the date separator displayed in the center channel for every post when the pinned posts right-hand side panel was open.
 
 ### Known Issues
  - In a cluster config save scenario, it is difficult to disinguish between a timeout and a semantic error in the config if a config save in one node gets stuck [MM-52968](https://mattermost.atlassian.net/browse/MM-52968).
@@ -79,7 +80,6 @@ Latest Mattermost Cloud releases:
  - Fixed an issue where combined system messages did not display in chronological order.
  - Fixed an issue where the current user and status were not updated on WebSocket reconnect.
  - Fixed an issue where certain hashtags were not searchable when using database search.
- - Fixed an issue where the date separator displayed in the center channel for every post when the pinned posts right-hand side panel was open.
 
 ### Known Issues
  - In a cluster config save scenario, it is difficult to disinguish between a timeout and a semantic error in the config if a config save in one node gets stuck [MM-52968](https://mattermost.atlassian.net/browse/MM-52968).
