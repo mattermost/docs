@@ -35,6 +35,8 @@ Latest Mattermost Mobile Apps releases:
  - Fixed theming issues in the login screen.
  - Fixed an issue where replies sometimes seemed to be attributed to the wrong person or the wrong thread.
  - Ensured users mentioned in message attachments are loaded by the app.
+ - Fixed issues with the user status sync.
+ - Fixed duplicated text for SSO login method when only SSO was available.
 
 ### Known Issues
  - Users are unable to adjust the font size via the OS font size setting.
