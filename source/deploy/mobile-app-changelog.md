@@ -31,11 +31,11 @@ Latest Mattermost Mobile Apps releases:
  - Fixed an issue where **Search** and **Recent Mentions** did not highlight saved posts.
  - Fixed the interactive dialog radio buttons style when using the light theme.
  - Fixed a small issue when marking threads as read.
- - Fixed an issue where the save button sometimes did not show on the edit post screen.
+ - Fixed an issue where the **Save** button sometimes did not show on the Edit Post screen.
  - Fixed theming issues in the login screen.
  - Fixed an issue where replies sometimes seemed to be attributed to the wrong person or the wrong thread.
  - Ensured users mentioned in message attachments are loaded by the app.
- - Fixed issues with the user status sync.
+ - Fixed issues with user status synchronization.
  - Fixed duplicated text for SSO login method when only SSO was available.
 
 ### Known Issues
