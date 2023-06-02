@@ -22,7 +22,6 @@ Deployment guide
 Elasticsearch allows you to search large volumes of data quickly, in near real-time, by creating and managing an index of post data. The indexing process can be managed from the System Console after setting up and connecting an Elasticsearch server. The post index is stored on the Elasticsearch server and updated constantly after new posts are made. In order to index existing posts, a bulk index of the entire post database must be generated.
 
 Deploying Elasticsearch includes the following two steps: `setting up the Elasticsearch server <#set-up-an-elasticsearch-server>`_, and `configuring Elasticsearch in Mattermost <#configure-elasticsearch-in-mattermost>`_.
-=======
 .. note::
     You can filter inactive users, search by user role, and also search for terms inside links. Reindex your Elasticsearch instance/cluster prior to upgrading to Mattermost v.5.26 or later to address a breaking change which affects the "from" part of the search.
     
