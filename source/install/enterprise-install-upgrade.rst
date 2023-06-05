@@ -28,10 +28,6 @@ Upgrading to Mattermost Enterprise Edition
 Checking your Mattermost edition and version
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you're already running Mattermost v5.39 or earlier, you can check the Mattermost edition and version from the command line using:
-
-`mattermost version`
-
 To check your edition and version from the web or desktop interface, open **Product menu > About Mattermost**.
 
 - **Mattermost Enterprise Edition** indicates you can apply a license key to enable Enterprise features.
@@ -79,7 +75,7 @@ Upgrade a previous version of Mattermost Enterprise Edition to a later version b
 Converting Team Edition to Enterprise Edition
 ----------------------------------------------
 
-From Mattermost v5.27 on, if you're running a Linux system with x86-64 architecture, you can convert Team Edition to Enterprise in the System Console using a built-in conversion utility. This tool is recommended if you'd like to run an Enterprise trial or want to upgrade to Enterprise or Professional on standalone servers.
+If you're running a Linux system with x86-64 architecture, you can convert Team Edition to Enterprise in the System Console using a built-in conversion utility. This tool is recommended if you'd like to run an Enterprise trial or want to upgrade to Enterprise or Professional on standalone servers.
 
 .. note::
 
