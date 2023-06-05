@@ -860,7 +860,7 @@ Manage channels.
       -  `mmctl channel create`_ - Create a channel
       -  `mmctl channel delete`_ - Delete a channel
       -  `mmctl channel list`_ - List all channels on specified teams
-      -  `mmctl channel make-private`_ - Set a channel's type to "private"
+      -  `mmctl channel make-private`_ - Set a channel's type to "private" (Deprecated)
       -  `mmctl channel modify`_ - Modify a channel's type (private/public)
       -  `mmctl channel move`_ - Move channels to the specified team
       -  `mmctl channel rename`_ - Rename a channel
@@ -1046,6 +1046,8 @@ List all Public, Private, and archived channels on specified teams. Archived cha
 
 mmctl channel make-private
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This command is deprecated in favour of using `mmctl channel modify </manage/mmctl-command-line-tool.html#mmctl-channel-modify>`__ and the ``--private`` flag instead.
 
 **Description**
 
@@ -2272,7 +2274,8 @@ Manage exports.
       -  `mmctl export create`_ - Create an export file
       -  `mmctl export delete`_ - Delete an export file
       -  `mmctl export download`_ - Download export files
-      -  `mmctl export job`_ - List and show export jobs
+      -  `mmctl export job`_ - List, show, and cancel export jobs
+      -  `mmctl export job cancel`_ - Cancel export job
       -  `mmctl export job list`_ - List export jobs
       -  `mmctl export job show`_ - Show export job
       -  `mmctl export list`_ - List export files
@@ -2300,8 +2303,8 @@ Create an export file.
 
 .. code-block:: sh
 
-   --attachments     Set to true to include file attachments in the export file.
-   -h, --help        help for create
+   --no-attachments     Set to true to include file attachments in the export file.
+   -h, --help           help for create
 
 **Options inherited from parent commands**
 
@@ -2383,8 +2386,8 @@ Download export files.
 
 .. code-block:: sh
 
-   -h, --help     help for download
-   --resume       Set to true to resume an export download.
+   -h, --help          help for download
+   --num-retries int   Number of retries to resume a download. (Default is 5)
     
 **Options inherited from parent commands**
 
@@ -2405,7 +2408,7 @@ mmctl export job
 
 **Description**
 
-List and show export jobs.
+List, show, and export jobs.
 
 **Options**
 
@@ -2413,6 +2416,45 @@ List and show export jobs.
 
    -h, --help   help for job
 
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+   --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
+   --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+   --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
+   --json                         the output format will be in json format
+   --local                        allows communicating with the server through a unix socket
+   --quiet                        prevent mmctl to generate output for the commands
+   --strict                       will only run commands if the mmctl version matches the server one
+   --suppress-warnings            disables printing warning messages
+
+mmctl export job cancel
+~~~~~~~~~~~~~~~~~~~~~~~
+
+**Description**
+
+Cancel an export job.
+
+**Format**
+
+.. code-block:: sh
+
+  mmctl export job cancel [exportJobID] [flags]
+
+**Example**
+
+.. code-block:: sh
+
+   export job cancel o98rj3ur83dp5dppfyk5yk6osy
+
+**Options**
+
+.. code-block:: sh
+
+   -h, --help     help for download
+    
 **Options inherited from parent commands**
 
 .. code-block:: sh
@@ -3152,6 +3194,7 @@ Manage imports.
       -  `mmctl import list incomplete`_ - List incomplete import files uploads
       -  `mmctl import process`_ - Start an import job
       -  `mmctl import upload`_ - Upload import files
+      -  `mmctl import validate`_ - Validate an import file
 
 **Options**
 
@@ -3458,6 +3501,47 @@ Upload import files.
    --strict                       will only run commands if the mmctl version matches the server one
    --suppress-warnings            disables printing warning messages
 
+mmctl import validate
+~~~~~~~~~~~~~~~~~~~~~
+
+**Description**
+
+Validate an import file.
+
+**Format**
+
+.. code-block:: sh
+
+     mmctl import validate [filepath] [flags]
+
+**Examples**
+
+.. code-block:: sh
+
+     import validate import_file.zip --team myteam --team myotherteam
+
+**Options**
+
+.. code-block:: sh
+
+      -h, --help              help for validate
+      --ignore-attachments    Don't check if the attached files are present in the archive
+      --team stringArray      Predefined team[s] to assume as already present on the destination server. Implies ``--check-missing-teams``. The flag can be repeated.
+
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+   --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
+   --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+   --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
+   --json                         the output format will be in json format
+   --local                        allows communicating with the server through a unix socket
+   --quiet                        prevent mmctl to generate output for the commands
+   --strict                       will only run commands if the mmctl version matches the server one
+   --suppress-warnings            disables printing warning messages
+
 mmctl integrity
 ---------------
 
@@ -3600,6 +3684,7 @@ Manage the Mattermost license.
    Child Commands
       -  `mmctl license remove`_ - Remove the current license
       -  `mmctl license upload`_ - Upload a new license
+      -  `mmctl license upload-string`_ - Upload a license from a string
 
 **Options**
 
@@ -3664,6 +3749,45 @@ Upload a license and replace the current license.
 .. code-block:: sh
 
    mmctl license upload /path/to/license/mylicensefile.mattermost-license
+
+**Options**
+
+.. code-block:: sh
+
+   -h, --help   help for upload
+
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+   --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
+   --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+   --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
+   --json                         the output format will be in json format
+   --local                        allows communicating with the server through a unix socket
+   --quiet                        prevent mmctl to generate output for the commands
+   --strict                       will only run commands if the mmctl version matches the server one
+   --suppress-warnings            disables printing warning messages
+
+mmctl license upload-string
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Description**
+
+Upload a license from a string. Replaces the current license.
+
+**Format**
+
+.. code-block:: sh
+
+   mmctl license upload-string [license] [flags]
+
+**Examples**
+
+.. code-block:: sh
+
+   license upload-string "mylicensestring"
 
 **Options**
 
