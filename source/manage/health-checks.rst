@@ -13,7 +13,7 @@ You can perform a health check with two methods:
 ``/ping`` APIv4 endpoint
 -------------------------
 
-From Mattermost v3.10 and later, you can use the `GET /system/ping APIv4 endpoint <https://api.mattermost.com/#tag/system%2Fpaths%2F~1system~1ping%2Fget>`__ to check for system health.
+You can use the `GET /system/ping APIv4 endpoint <https://api.mattermost.com/#tag/system%2Fpaths%2F~1system~1ping%2Fget>`__ to check for system health.
 
 A sample request is included below. The endpoint checks if the server is up and healthy based on the configuration setting ``GoRoutineHealthThreshold``.
 

@@ -124,7 +124,7 @@ Use gossip
 +-----------------------------------------------------------------+--------------------------------------------------------------------------------+
 | **Notes**:                                                                                                                                       |
 |                                                                                                                                                  |
-| - From Mattermost Server v5.36, gossip clustering can no longer be disabled.                                                                     |
+| - Gossip clustering can no longer be disabled.                                                                                                   |
 | - The gossip port and gossip protocol are used to determine cluster health even when this setting is set to **false**.                           |
 +-----------------------------------------------------------------+--------------------------------------------------------------------------------+
 

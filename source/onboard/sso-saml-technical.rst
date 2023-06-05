@@ -14,7 +14,7 @@ In simpler terms, it means you can use one set of credentials to log in to many 
 
 The main benefit is that it helps administrators centralize user management by controlling which sites users have access to with their SAML identity provider credentials.
 
-From v5.20 Mattermost supports using a single metadata URL to retrieve configuration information for the Identity Provider using your single sign-on URL to generate an IdP metadata URL. The IdP metadata XML file contains the IdP certificate, the entity ID, the redirect URL, and the logout URL. 
+Mattermost supports using a single metadata URL to retrieve configuration information for the Identity Provider using your single sign-on URL to generate an IdP metadata URL. The IdP metadata XML file contains the IdP certificate, the entity ID, the redirect URL, and the logout URL. 
 
 Using this URL populates the SAML SSO URL and the Identity Provider Issuer URL fields in the configuration process automatically and the Identity Provider Public Certificate is also downloaded from the server and set locally. 
 
@@ -46,7 +46,7 @@ When Mattermost initiates an SP-initiated SAML request flow, it generates a **HT
 
  bM441nuRIzAjKeMM8RhegMFjZ4L4xPBHhAfHYqgnYDQnSxC++Qn5IocWuzuBGz7JQmT9C57nxjxgbFIatiqUCQN17aYrLn/mWE09C5mJMYlcV68ibEkbR/JKUQ+2u/N+mSD4/C/QvFvuB6BcJaXaz0h7NwGhHROUte6MoGJKMPE=
 
-AuthNRequests can also be signed by Mattermost in v5.14 and later, in which case the XML payload is similar to:
+AuthNRequests can also be signed by Mattermost, in which case the XML payload is similar to:
 
 .. code-block:: XML
 
