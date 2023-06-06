@@ -113,6 +113,6 @@ See more details in our `release lifecycle documentation </upgrade/release-lifec
 Mobile App v1.55.1 extended support release (ESR)
 --------------------------------------------------
 
-The latest version of the mobile app released in September (v1.55.1) is our first mobile extended support release. We are very excited about the upcoming general availability of the v2.0 mobile app in December. We recognize that some customers may have a custom build of Mattermost mobile and need more time to test or implement their custom changes on mobile v2.0. The mobile ESR will be supported until July 2023.
+The latest version of the mobile app released in September 2022 (v1.55.1) is our first mobile extended support release. We are very excited about the upcoming general availability of the v2.0 mobile app in December 2022. We recognize that some customers may have a custom build of Mattermost mobile and need more time to test or implement their custom changes on mobile v2.0. The mobile ESR will be supported until July 2023.
 
 The mobile v1.55.1 (ESR) will be smoke tested monthly with every new server release until the mobile ESR reaches end-of-life (July 2023). The ESR version will receive critical security fixes only and be released as needed via unsigned builds to our mobile Github repository.
