@@ -71,7 +71,7 @@ Important Upgrade Notes
 |                                                    |                                                                                                                                                                  |
 |                                                    | Locks on the ``oauthaccessdata`` and sessions table will only be acquired if there are rows to delete.                                                           |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                                                    | In v7.9.4, for servers wanting to allow websockets to connect from other origins, please set the ``ServiceSettings.AllowCorsFrom`` config setting.               |
+|                                                    | In v7.9.5, for servers wanting to allow websockets to connect from other origins, please set the ``ServiceSettings.AllowCorsFrom`` config setting.               |
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v7.8                                               | `Message Priority & Acknowledgement <https://docs.mattermost.com/configure/site-configuration-settings.html#message-priority>`__ is now enabled by default       |
 |                                                    | for all instances. You may disable this feature in the System Console by going to **Posts > Message Priority** or via the config ``PostPriority`` setting.       |
