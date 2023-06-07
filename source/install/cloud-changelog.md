@@ -18,6 +18,9 @@ Latest Mattermost Cloud releases:
 #### User Interface (UI)
  - Reworked some of the components used for showing autocomplete results.
 
+#### Administration
+ - Added support for environment variable overrides of ``AdvancedLoggingConfigJSON`` fields.
+
 ### Bug Fixes
  - Ensured users mentioned in message attachments are loaded by the web app.
  - Fixed an issue where the reply bar did not get highlighted when a user was mentioned by a reply because of their Reply Notifications setting.
