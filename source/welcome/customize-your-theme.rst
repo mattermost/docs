@@ -59,7 +59,7 @@ Sidebar Text
 Sidebar Header BG
  	Background color of the header above the Channels pane and all dialog window headers.
 Team Sidebar BG
-	Background color of the Global Header (available from Mattermost v6.0).
+	Background color of the Global Header.
 Sidebar Header Text
  	Text color of the header above the Channels pane and all dialog window headers.
 Sidebar Unread Text
