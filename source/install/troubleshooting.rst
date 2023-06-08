@@ -339,11 +339,11 @@ What information to include
 
 Because of this, having a complete picture of the servers and network that the Mattermost server operates in is key to solving problems. This includes (but is not limited to):
 
-- Mattermost version (e.g. 5.28.0, 5.25.5)
+- Mattermost version (e.g. 7.3.0, 7.8.3)
 - Server OS and version (e.g. RHEL7, Ubuntu 18.04)
 - Any orchestration/automation used like Docker or Kubernetes
 - Reverse proxy and version (e.g. NGINX 1.16)
-- Database type and version (e.g. MySQL 5.7, PostgreSQL 12.4)
+- Database type and version (e.g. PostgreSQL 12.4)
 - SAML provider (e.g. Windows Server 2012 Active Directory, Okta, KeyCloak)
 - LDAP provider (e.g. Windows Server 2016 Active Directory, Okta, OpenLDAP)
 - The type and version of any proxies or VPNs on the network that the Mattermost server is connecting through
@@ -356,7 +356,7 @@ Mattermost server
 
  - External hostname: mattermost.example.com
  - Internal hostname: mattermost.lan
- - Mattermost v5.28.0
+ - Mattermost v7.3.0
  - Zoom plugin v1.4.1
  - NGINX v1.18.0
 
