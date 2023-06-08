@@ -6,7 +6,7 @@ See the [changelog in progress](https://bit.ly/2nK3cVf) for the upcoming release
 
 Latest Mattermost Releases:
 
-- [Release v8.0 - Feature Release](#release-v8-0-major-release)
+- [Release v8.0 - Major Release](#release-v8-0-major-release)
 - [Release v7.11 - Feature Release](#release-v7-11-feature-release)
 - [Release v7.10 - Feature Release](#release-v7-10-feature-release)
 - [Release v7.9 - Feature Release](#release-v7-9-feature-release)
@@ -18,7 +18,7 @@ Latest Mattermost Releases:
 
 ### Important Upgrade Notes
 
- - In v8.0, the following repositories are merged into one: ``mattermost-server``, ``mattermost-webapp``, ``focalboard`` and ``mattermost-plugin-playbooks``. Developers should read the updated [Developer Guide](https://developers.mattermost.com/contribute/developer-setup/) for details. **Playbooks and Boards are now core parts of the product and cannot be disabled**.
+ - In v8.0, the following repositories are merged into one: ``mattermost-server``, ``mattermost-webapp``, and ``mattermost-plugin-playbooks``. Developers should read the updated [Developer Guide](https://developers.mattermost.com/contribute/developer-setup/) for details.
  - Fixed an issue caused by a migration in the previous release. Query takes around 11ms on a PostgreSQL 14 DB t3.medium RDS instance. Locks on the preferences table will only be acquired if there are rows to delete, but the time taken is negligible.
  - Removed the deprecated ``model.CommandArgs.Session``.
  - Fixed an issue where a user would still see threads in the threads view of channels they have left. Migration execution time in MySQL: Query OK, 2766769 rows affected (4 min 47.57 sec). Migration execution time in PostgreSQL: Execution time: 58.11 sec, DELETE 2766690.
@@ -30,6 +30,11 @@ Latest Mattermost Releases:
 
 **IMPORTANT:** If you upgrade from a release earlier than v7.10, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
 
+### Highlights
+
+#### Persistent Notifications
+ - Added a persistent notification option when sending urgent priority posts.
+
 ### Improvements
 
 #### User Interface (UI)
@@ -38,7 +43,25 @@ Latest Mattermost Releases:
  - Removed the Webapp Build Hash from **Main Menu > About Mattermost** since it is now identical to Server Build Hash.
  - Replaced the ``compass-components`` icon component with ``compass-icons``.
  - Added “hours ahead” timezone details to the user profile popover.
- - Pre-packaged Calls version 0.16.0.
+ - Added an experimental feature to disable re-fetching of channel and channel members on browser focus.
+ - Bot users are now hidden in the user selector in apps forms.
+ - Removed the fetching of archived channels on page load.
+ - The **Channel Type** dropdown within the **Browse Channels** modal can now be focused.
+ - Removed in-app help pages that were no longer accessible.
+ - Removed system join/leave messages from thread replies and post them instead in the main channel.
+ - Added an experimental setting to make the channel autocomplete only appear after typing two characters instead of immediately after the tilde (~).
+ - Users with default profile pictures will now regenerate a new picture when their username is changed.
+ - Implemented URL auto generation on channel creation for when there's no URL safe characters on its name.
+ - Added a new option to auto-follow all threads in the channel **Notification Preference** settings.
+ - ``CTRL/CMD + K`` shortcut can now be used to insert link formatting when text is selected.
+ - ``pas`` and ``pascal`` code blocks are now higlighted.
+ - Language setting in Boards was removed. The main language setting under **Settings -> Display Settings** now covers Boards. Boards previously supported Catalan, Greek, Indonesian, and Occitan, but since these 4 languages were only partially translated (<40%; Boards-only), they have been removed until more areas of Mattermost are translated into these languages.
+ - Removed websocket state effects for the collapse/expand state of categories.
+ - Pre-packaged Calls version 0.16.1.
+ - Pre-packaged Jira plugin version 3.2.5.
+ - Pre-packaged GitHub plugin version 2.1.6.
+ - Pre-packaged Autolink plugin version 1.4.0.
+ - Pre-packaged Welcomebot plugin version 1.3.0.
 
 #### Administration
  - Self-hosted admins can now define a separate shipping address during in-product license purchase.
@@ -51,6 +74,18 @@ Latest Mattermost Releases:
  - Added a mechanism for public routes on products and used it to support publicly shared Board links.
  - The database section in the **System Console** now has an additional read-only section which shows the active search backend in use. This can be helpful to confirm which search engine is currently active when there are multiple configured.
  - Updated Docker Base Image from Debian to Ubuntu 22.04 LTS.
+ -  - The Go module has been upgraded to v8.0. All packages are now under the new path ``github.com/mattermost-server/server/v8``.
+ - Type-generated settings will now be generated (only for future generations) with a URL-safe version of base64 encoding.
+ - Mattermost is now resilient against database replica outages and will dynamically choose a replica if it's alive. Also a config parameter ``ReplicaMonitorIntervalSeconds`` was added and the default value is 5. This controls how frequently unhealthy replicas will be monitored for liveness check.
+ - Removed ``ExperimentalSettings.PatchPluginsReactDOM``.
+ - Removed deprecated ``PermissionUseSlashCommands``.
+ - Added support for attachments when importing/exporting Boards.
+ - Updated Docker Base Image from Debian to Ubuntu 22.04 LTS.
+ - Removed support for PostgreSQL v10. The new minimum PostgreSQL version is now v11.
+ - The Mattermost public API for Go is now available as a distinctly versioned package. Instead of pinning a particular commit hash, use idiomatic Go to add this package as a dependency: go get github.com/mattermost/mattermost-server/server/public. This relocated Go API maintains backwards compatibility with Mattermost v7. Furthermore, the existing Go API previously at github.com/mattermost/mattermost-server/v6/model remains forward compatible with Mattermost v8, but may not contain newer features. Plugins do not need to be recompiled, but developers may opt in to using the new package to simplify their build process. The new public package is shipping alongside Mattermost v8 as version 0.5.0 to allow for some additional code refactoring before releasing as v1 later this year.
+ - Three configuration fields have been added, ``LogSettings.AdvancedLoggingJSON``, ``ExperimentalAuditSettings.AdvancedLoggingJSON``, and ``NotificationLogSettings.AdvancedLoggingJSON`` which support multi-line JSON, escaped JSON as a string, or a filename that points to a file containing JSON.  The ``AdvancedLoggingConfig`` fields have been deprecated.
+ - The Go MySQL driver has changed the ``maxAllowedPacket`` size from 4MiB to 64MiB. This is to make it consistent with the change in the server side default value from MySQL 5.7 to MySQL 8.0. If your ``max_allowed_packet`` setting is not 64MiB, then please update the MySQL config DSN with an additional param of ``maxAllowedPacket`` to match with the server side value. Alternatively, a value of 0 can be set to to automatically fetch the server side value, on every new connection, which has a performance overhead.
+ - For servers wanting to allow websockets to connect from other origins, please set the ``ServiceSettings.AllowCorsFrom`` config setting.
  
 #### Performance
  - Improved the performance of webapp related to timezone calculations.
@@ -70,6 +105,17 @@ Latest Mattermost Releases:
  - Fixed an issue with post metadata not generating correctly for images due to missing content-type in response. This would result in certain embedded images not to display on mobile clients.
  - Fixed an issue where edits to messages persisted after canceling.
  - Added a condition for bot tags for webhook posts when a bot account is used for webhooks.
+ - Fixed the sorting value of categories in ``CreateSidebarCategoryForTeamForUser``.
+ - Fixed a potential crash when opening the user profile popover.
+ - Fixed permalink and thread reply navigation between teams.
+ - Fixed an issue with the installation of pre-packaged plugins that are not in the Marketplace.
+ - Fixed an issue caused by a migration in a previous release. The query takes around 11ms on a PostgreSQL 14 DB t3.medium RDS instance. Locks on the preferences table will only be acquired if there are rows to delete, but the time taken is negligible.
+ - Fixed an issue where modals did not close when clicking below them on certain screen sizes.
+ - Fixed an issue with a few translation labels that couldn't be translated.
+ - Fixed an issue where the server log UI for plain text formatting was unexpectedly removed in a previous release.
+ - Fixed an issue where combined system messages did not display in chronological order.
+ - Fixed an issue where the current user and status were not updated on WebSocket reconnect.
+ - Fixed an issue where certain hashtags were not searchable when using database search.
  
 ### config.json
 Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
@@ -82,8 +128,9 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - v8.0 is built with Go ``v1.19.5``.
 
 ### Known Issues
- - Users are unexpectedly forced to enable JSON logging [MM-51453](https://mattermost.atlassian.net/browse/MM-51453).
- - The new Insights feature has some performance costs that we are working to optimize. This feature can be disabled by setting the ``MM_FEATUREFLAGS_INSIGHTSENABLED`` environment variable to ``false``. See the [Insights](https://docs.mattermost.com/welcome/insights.html) documentation for details.
+ - Using the "link" button puts the URL after ``[url]`` instead of replacing ``[url]`` when pasting [MM-53006](https://mattermost.atlassian.net/browse/MM-53006).
+ - Saved posts in right-hand side show both the team and channel name in the post header [MM-53005](https://mattermost.atlassian.net/browse/MM-53005).
+ - In a cluster config save scenario, it is difficult to disinguish between a timeout and a semantic error in the config if a config save in one node gets stuck [MM-52968](https://mattermost.atlassian.net/browse/MM-52968).
  - Adding an @mention at the start of a post draft and pressing the left or right arrow key can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
  - Google login fails on the Classic mobile apps.
  - Status may sometimes get stuck as **Away** or **Offline** in High Availability mode with IP Hash turned off.
@@ -91,7 +138,6 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - The team sidebar on the desktop app does not update when channels have been read on mobile.
  - Slack import through the CLI fails if email notifications are enabled.
  - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
- - Boards export and reimport results in duplicates boards because all IDs are replaced by new ones on the server. See the [GitHub issue](https://github.com/mattermost/focalboard/issues/1924) for more information.
  - The Playbooks left-hand sidebar doesn't update when a user is added to a run or playbook without a refresh.
  - If a user isn't a member of a configured broadcast channel, posting a status update might fail without any error feedback. As a temporary workaround, join the configured broadcast channels, or remove those channels from the run configuration.
  
