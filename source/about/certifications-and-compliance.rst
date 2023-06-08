@@ -81,18 +81,18 @@ Mattermost, Inc. implements a number of controls and processes to comply with U.
 
 1. **IP blocking:** We use IP blocking to deny access from certain countries to our commercial systems, such as signing up for our commercial and proprietary offerings. 
 
-2. **Automated compliance scanning:** We use an automated export compliance tool called Descartes. In Salesforce account records there is a prominent **Descartes** box in the top right indicating safety levels. Accounts that are flagged need to be signed-off by Tim Quock, VP Finance, who is connected with our `export compliance counsel <https://docs.google.com/document/d/14KzrhszTlaibtM4APezTS8CFb1vaHxRsnkV9ZFef-Uc/edit>`_.
+2. **Automated compliance scanning:** We use an automated export compliance tool called Descartes. In Salesforce account records there is a prominent **Descartes** box in the top right indicating safety levels. Accounts that are flagged need to be released wtihin the Descartes System by Legal or their designate.
 
 3. **Manual compliance review:** At times announcements about changes to sanctions regulations happen faster than our export compliance tool can adapt. In the cases where sanctions have been announced, we can proactively review our business and make changes to enforce sanctions ahead of the automated solution being updated.
 
-4. **Legal restrictions:** Our commercial software contains legal terms that apply to both administrators and end users prohibiting use that would violate U.S. sanctions law. 
+4. **Legal restrictions:** Our commercial software contains legal terms that apply to both administrators and end users prohibiting use that would violate U.S. trade laws.
 
-U.S. trade laws referenced here can be found online at: https://www.bis.doc.gov/index.php/policy-guidance/lists-of-parties-of-concern/entity-list 
+U.S. trade laws referenced here can be found online at: https://www.bis.doc.gov/ and https://ofac.treasury.gov/.
 
-If you feel your organization is miscategorized under U.S. sanctions, please email compliance@mattermost.com. 
+If you feel your organization is miscategorized under U.S. trade laws or sanctions, please email compliance@mattermost.com. 
 
-What is the process to end a customer relationship due to new U.S. sanctions?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+What is the process to end a customer relationship due to new U.S. trade laws or sanctions?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The customer is contacted via email with either manually or through an automated process with compliance@mattermost.com cc'd and the communication is written back into SFDC for record keeping.
 
@@ -151,16 +151,15 @@ Although what is subject to the Export Administration Regulations is quite broad
 is required for every transaction. The foundation of understanding export controls related to hardware, software and
 technology can be found within the `Commerce Control List <https://www.bis.doc.gov/index.php/regulations/commerce-control-list-ccl>`__ (CCL), which has 10 categories, 0-9, and is set up as a positive list. The first step is determining if the item to be exported is subject to the EAR.
 
-At Mattermost, our Team Edition software is `outside the scope of the EAR <https://www.bis.doc.gov/index.php/policy-guidance/encryption/1-encryption-items-not-subject-to-the-ear>`__, as it is derived from publicly available encryption source code and the complete software package for both the source code (https://github.com/mattermost/) and binary versions are publicly available. Mattermost enterprise software is found in `Category 5, Part 2 <https://www.bis.doc.gov/index.php/documents/regulations-docs/federal-register-notices/federal-register-2014/951-ccl5-pt2/file>`__ of the CCL as Telecommunications and Information Security items (hardware, software and technology). Most items in this category have encryption.
+At Mattermost, our fully open source, publicly available software is `outside the scope of the EAR <https://www.bis.doc.gov/index.php/policy-guidance/encryption/1-encryption-items-not-subject-to-the-ear>`__, as it is derived from publicly available encryption source code and the complete software package for both the source code (https://github.com/mattermost/) and binary versions are publicly available. Mattermost enterprise software is found in `Category 5, Part 2 <https://www.bis.doc.gov/index.php/documents/regulations-docs/federal-register-notices/federal-register-2014/951-ccl5-pt2/file>`__ of the CCL as Telecommunications and Information Security items (hardware, software and technology). Most items in this category have encryption.
 
 Often a license exception under `Part 740 <https://www.bis.doc.gov/index.php/documents/regulation-docs/415-part-740-license-exceptions/file>`__ is available where a Commerce Control List item lists the available license exception(s) specific to an Export Control Classification Number (ECCN), based on a combination of factors.
 
-Mattermost Enterprise Edition software is found under `ECCN 5D002 <https://www.bis.doc.gov/index.php/documents/regulations-docs/federal-register-notices/federal-register-2014/951-ccl5-pt2/file>`__, with a license exception available from `“ENC” <https://www.bis.doc.gov/index.php/documents/regulation-docs/415-part-740-license-exceptions/file>`__ for our Enterprise and Professional software, with encryption features derived from open-source software. Encryption products, under the export regulations, have multiple levels of controls and requirements. BIS has a separate section of their website that has an overview, and many links, covering encryption under `Policy Guidelines <https://www.bis.doc.gov/index.php/policy-guidance/encryption>`__ that you may want to review. These guidelines include helpful flow charts for determining if an item is subject to encryption controls, tables and other details.
+Mattermost Professional and Enterprise software is found under `ECCN 5D002 <https://www.bis.doc.gov/index.php/documents/regulations-docs/federal-register-notices/federal-register-2014/951-ccl5-pt2/file>`__, with a license exception available from `“ENC” <https://www.bis.doc.gov/index.php/documents/regulation-docs/415-part-740-license-exceptions/file>`__ for our Enterprise and Professional software, with encryption features derived from open-source software. Encryption products, under the export regulations, have multiple levels of controls and requirements. BIS has a separate section of their website that has an overview, and many links, covering encryption under `Encryption and Export Administration Regulations (EAR)<https://www.bis.doc.gov/index.php/policy-guidance/encryption>`__ that you may want to review. These guidelines include helpful flow charts for determining if an item is subject to encryption controls, tables and other details.
 
 The other key areas to be aware of for an export of Mattermost software or technology are:
 
-**Sanctions**: There are comprehensive sanctions to Cuba, Iran, North Korea, Syria, and other countries/territories.
-with specific prohibitions, such as Venezuela. Details can be
+**Sanctions**: There are comprehensive sanctions to Cuba, Iran, North Korea, Syria, and other countries/territories with specific prohibitions, such as Crimea, Donetsk, and Luhansk regions of Ukraine, Belarus, Russia, Venezuela, Myanmar/Burma, and Cambodia. Details can be
 located at `BIS <https://www.bis.doc.gov/index.php/forms-documents/regulations-docs/federal-register-notices/federal-register-2014/1063-746-1/file>`__ and `OFAC <https://www.treasury.gov/resource-center/sanctions/Pages/default.aspx>`__. The countries and their sanctions are subject to change.
 
 **WMD (Weapons of Mass Destruction)**: Mattermost, its customers and its business partners may not export to parties involved
@@ -168,7 +167,7 @@ in `proliferation <https://www.bis.doc.gov/index.php/documents/regulation-docs/4
 
 **General Prohibitions**: Information on General Prohibitions under the EAR is located `here <https://www.bis.doc.gov/index.php/documents/regulations-docs/413-part-736-general-prohibitions/file>`__. Application of the applicability of these General Prohibitions is based on a combination of factors. These include: classification of the commodity, destination, end-user, end-use and conduct.
 
-**Restricted Parties**: You may not export to parties listed on the US government's `restricted parties lists <https://www.bis.doc.gov/index.php/policy-guidance/lists-of-parties-of-concern>`__, and should be screening against these prior to export. There is a `consolidated screening list <https://www.trade.gov/consolidated-screening-list>`__ provided by the U.S. government at export.gov at no charge that can be used for screening.
+**Restricted Parties**: You may not export to parties listed on the US government's `restricted parties lists <https://www.bis.doc.gov/index.php/policy-guidance/lists-of-parties-of-concern>`__, and should be screening against these prior to export. There is a `consolidated screening list <https://www.trade.gov/consolidated-screening-list>`__ provided by the U.S. government at export.gov at no charge that can be used for screening. Additionally, there are specific restrictions on export to military end-users and military intelligence end-users.
 
 **Deemed Exports**:  Release of controlled technology to foreign persons in the U.S. is "deemed" to be an export to the
 person’s country or countries of nationality and is found in `734.2(b) <https://www.bis.doc.gov/index.php/documents/regulation-docs/412-part-734-scope-of-the-export-administration-regulations/file>`__ of the EAR, which you can read about under the Export Administration Regulations on the BIS website.
