@@ -13,6 +13,9 @@ Latest Mattermost Cloud releases:
 
 ## Release 2023-06-15
 
+### Compatibility
+- Updated Chromium minimum supported version to 112+.
+
 ### Improvements
 
 #### User Interface (UI)
