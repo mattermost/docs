@@ -6,7 +6,7 @@ Mattermost workspace migration
 
 This document outlines the process for migrating from Mattermost Cloud to a Mattermost self-hosted instance. In the future, a process for migrating from Mattermost self-hosted to Mattermost Cloud will also be documented and provided here.
 
-Migrating between two installations follows the same process that's documented below, regardless as to whether the source or destination of the migration is in the Cloud or self-hosted. **These steps will work for any Mattermost instance**, as long as the instances are running Mattermost v5.33 or later.
+Migrating between two installations follows the same process that's documented below, regardless as to whether the source or destination of the migration is in the Cloud or self-hosted. **These steps will work for any Mattermost instance**.
 
 Migrate from Cloud to self-hosted
 ---------------------------------
@@ -16,7 +16,7 @@ You can migrate your Cloud workspace data to a self-hosted deployment at any tim
 How does the process work?
 --------------------------
 
-Before you export and migrate your data, you must `install Mattermost </guides/deployment.html#install-guides>`_ on the server you’ll be using to run Mattermost. The migration is done using the mmctl CLI tool, which is a remote CLI tool for Mattermost that's installed locally and uses the Mattermost API. From Mattermost v6.0 onwards, mmctl is pre-installed. For versions prior to 6.0, first download the newest release from `the releases page <https://github.com/mattermost/mmctl/releases/tag/v6.1.0>`_, `install mmctl </manage/mmctl-command-line-tool.html#install-mmctl>`_, and place the binary on your ``PATH``.
+Before you export and migrate your data, you must `install Mattermost </guides/deployment.html#install-guides>`_ on the server you’ll be using to run Mattermost. The migration is done using the mmctl CLI tool, which is a remote CLI tool for Mattermost that's installed locally and uses the Mattermost API. mmctl is pre-installed.
 
 The `mmctl usage notes </manage/mmctl-command-line-tool.html#mmctl-usage-notes>`_ provide some additional context and information which you can reference before and during the process.
 
@@ -151,7 +151,7 @@ When you migrate from self-hosted to Cloud, you'll need to open a ticket with th
 
 .. note:: This migration process is only available to customers using paid Mattermost editions.
 
-Before you begin your migration, ensure you’re on Mattermost version 6.5 (or later) as this contains the latest version of the server and the mmctl tool which is used to perform the export. You also need to take note of the following information before you begin:
+Before you begin your migration, take note of the following information before you begin:
 
 **User Authentication**
 

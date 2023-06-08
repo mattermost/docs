@@ -4,49 +4,11 @@ mmctl command line tool
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-The mmctl is a CLI tool for the Mattermost server which is installed locally and uses the Mattermost API, but may also be used remotely. Authentication is done with either login credentials or an authentication token. This mmctl tool is included from Mattermost v6.0, and it replaces the `CLI </manage/command-line-tools.html>`__. The mmctl can currently be used alongside the Mattermost CLI tool. The Mattermost CLI tool will be deprecated in a future release.
+The mmctl is a CLI tool for the Mattermost server which is installed locally and uses the Mattermost API, but may also be used remotely. Authentication is done with either login credentials or an authentication token. This mmctl tool is included and replaces the `CLI </manage/command-line-tools.html>`__. The mmctl can currently be used alongside the Mattermost CLI tool. The Mattermost CLI tool will be deprecated in a future release.
 
 Being installed locally enables System Admins for both self-hosted and Cloud Mattermost instances to run CLI commands even in instances where there's no access to the server (e.g., via SSH).
 
 This feature was developed to a large extent by community contributions and we'd like to extend our gratitude to the contributors who have worked on this project. We are currently accepting pull requests for Help Wanted issues in the `mattermost-server <https://github.com/mattermost/mattermost-server/issues?q=is%3Aissue+is%3Aopen+label%3A%22Help+Wanted%22+label%3AArea%2Fmmctl>`__ repo. You can learn more about the unit test coverage campaign for mmctl in the `Unit testing mmctl commands <https://mattermost.com/blog/unit-testing-mmctl-commands/>`__ blog post.
-
-What's new in Mattermost v6.0?
-------------------------------
-
-The following new mmctl functionality is available from Mattermost v6.0:
-
-- Output streaming that includes a progress indicator, easy navigation via paged output, output to file support, and basic piped output search support.
-- Report mmctl issues to Mattermost using the link provided when unhandled errors and exceptions are encountered.
-- Interactive user confirmations.
-
-For more information on what's new in mmctl for Mattermost v6.0, see the `Mattermost v6.0 mmctl demo video <https://www.youtube.com/watch?v=zITNaPWP-80>`_.
-
-.. raw:: html
-
-   <div style="position: relative; padding-bottom: 50%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
-      <iframe src="https://www.youtube.com/embed/zITNaPWP-80" alt="Video on what's new in the mmctl command line tool from Mattermost v6.0" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 95%;"></iframe>
-   </div>
-
-What's changed in Mattermost v6.0?
-----------------------------------
-
-The following mmctl changes are available from Mattermost v6.0:
-
-- The inherited option ``config-path`` has changed to ``config``.
-- The option ``password`` has changed to ``password-file``.
-- Option names that contained underscores have been updated to use hyphens for consistency.
-
-For more information on what's changed in mmctl for Mattermost v6.0, see the `Mattermost v6.0 mmctl changes video <https://www.youtube.com/watch?v=hmbSfSeWo4Y>`_.
-
-.. raw:: html
-
-   <div style="position: relative; padding-bottom: 50%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
-      <iframe src="https://www.youtube.com/embed/hmbSfSeWo4Y" alt="Video for more information on what's changed in mmctl for Mattermost v6.0" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 95%;"></iframe>
-   </div>
-
-.. note::
-
-   You can continue to use existing options available from Mattermost v5.38 and earlier releases. However, we strongly recommend that customers upgrading to Mattermost v6.0 or later make use of the latest option syntax to take full advantage of the security and scaleability improvements available.
 
 mmctl usage notes
 -----------------
@@ -115,29 +77,31 @@ mmctl commands
 Install mmctl
 -------------
 
-The mmctl tool comes bundled with the Mattermost package from v6.0. For customers that want to setup it independently from the package, or for versions prior to v6.0, there are different methods available to install mmctl.
+The mmctl tool comes bundled with Mattermost package. For customers that want to setup it independently from the package, the following methods are available to install mmctl.
 
-**Using brew (Linux, macOS)**
+.. tabs::
 
-Use this option on Linux and macOS if you have Homebrew installed.
+   .. tab:: Use brew (Linux, macOS)
 
-.. code-block:: sh
+      Use this option on Linux and macOS if you have Homebrew installed.
 
-   brew install mmctl
+      .. code-block:: sh
 
-**Using go install (Linux, macOS, Windows)**
+         brew install mmctl
 
-Use this option on Linux, macOS, and Windows if you have a ``go`` environment configured.
+   .. tab:: Using go install (Linux, macOS, Windows)
 
-To add the project in your `$GOPATH` run the following command:
+      Use this option on Linux, macOS, and Windows if you have a ``go`` environment configured.
 
-.. code-block:: sh
+      To add the project in your `$GOPATH` run the following command:
 
-   go install github.com/mattermost/mmctl@latest
+      .. code-block:: sh
 
-**Using release package (Linux, macOS, Windows)**
+         go install github.com/mattermost/mmctl@latest
 
-Vist the `mmctl releases page <https://github.com/mattermost/mmctl/releases>`__ and download the appropriate release for your OS, and install the binary.
+   .. tab:: Using release package (Linux, macOS, Windows)
+
+      Vist the `mmctl releases page <https://github.com/mattermost/mmctl/releases>`__ and download the appropriate release for your OS, and install the binary.
 
 Build mmctl
 ------------
@@ -172,8 +136,6 @@ Using local mode
 ~~~~~~~~~~~~~~~~
 
 You need to append ``--local`` to the command you want to use, or set the environment variable as ``MMCTL_LOCAL=true``. To use a socket file other than the default, you need to set the environment variable to ``MMCTL_LOCAL_SOCKET_PATH``. This file must match the `server configuration setting </configure/configuration-settings.html#enable-local-mode-socket-location>`_.
-
-In Mattermost versions prior to 5.26, only the commands ``config``, ``plugin``, and ``license`` are available.
 
 Running mmctl tests
 -------------------
