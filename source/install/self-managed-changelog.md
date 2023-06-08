@@ -130,6 +130,11 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 #### Changes to Team Edition and Enterprise Edition:
  - Removed ``EnableInactivityEmail`` config setting.
  - Added a new config setting section ``ProductSettings``.
+ - Added new confic settings ``AllowPersistentNotifications``, ``AllowPersistentNotificationsForGuests``, ``PersistentNotificationIntervalMinutes``, ``PersistentNotificationMaxCount``, ``PersistentNotificationMaxRecipients``, to add a persistent notification option when sending urgent priority posts.
+ - Under ``ExperimentalSettings`` in ``config.json``:
+   - Added ``DelayChannelAutocomplete``, to make the channel autocomplete only appear after typing a couple letters instead of immediately after a tilde.
+   - Added ``DisableRefetchingOnBrowserFocus``, to disable re-fetching of channel and channel members on browser focus.
+ - Three configuration fields have been added, ``LogSettings.AdvancedLoggingJSON``, ``ExperimentalAuditSettings.AdvancedLoggingJSON``, and ``NotificationLogSettings.AdvancedLoggingJSON`` which support multi-line JSON, escaped JSON as a string, or a filename that points to a file containing JSON.  The ``AdvancedLoggingConfig`` fields have been deprecated.
  
 ### Go Version
  - v8.0 is built with Go ``v1.19.5``.
