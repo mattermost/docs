@@ -4,7 +4,7 @@ Advanced permissions
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Mattermost system admins using Mattermost Cloud or Mattermost Server from v5.0 can use Advanced Permissions to customize which users can perform specific actions, such as creating teams, managing channels, and configuring webhooks. The Mattermost permission system is based on a modified RBAC (role-based access control) architecture, using roles to determine which users have the ability to perform various actions.
+Mattermost system admins using Mattermost Cloud or Mattermost Server can use Advanced Permissions to customize which users can perform specific actions, such as creating teams, managing channels, and configuring webhooks. The Mattermost permission system is based on a modified RBAC (role-based access control) architecture, using roles to determine which users have the ability to perform various actions.
 
 Two permission schemes are provided in Mattermost:
 
