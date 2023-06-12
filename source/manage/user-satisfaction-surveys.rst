@@ -4,7 +4,7 @@ User satisfaction surveys
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Mattermost introduced in-product feedback surveys from v5.12. Feedback is used to measure user satisfaction and improve product quality by hearing directly from users. Please refer to our `privacy policy <https://github.com/mattermost/mattermost-server/blob/master/build/PRIVACY_POLICY.md>`_ for more information on the collection and use of information received through our services.
+Feedback is used to measure user satisfaction and improve product quality by hearing directly from users. Please refer to our `privacy policy <https://github.com/mattermost/mattermost-server/blob/master/build/PRIVACY_POLICY.md>`_ for more information on the collection and use of information received through our services.
 
 .. contents::
   :depth: 2

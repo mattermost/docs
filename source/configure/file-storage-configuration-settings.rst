@@ -155,7 +155,7 @@ Enable searching content of documents within ZIP files
 | - **false**: **(Default)** The contents of documents within   |                                                                                        |
 |   ZIP files aren’t returned in search results.                |                                                                                        |
 +---------------------------------------------------------------+----------------------------------------------------------------------------------------+
-| **Note**: Document content search within ZIP files is available in Mattermost Server from v5.35, with mobile support coming soon.                      |
+| **Note**: Document content search within ZIP files is available, with mobile support coming soon.                                                      |
 | Searching document contents adds load to your server. For large deployments, or teams that share many large, text-heavy documents,                     |
 | we recommend you review our `hardware requirements </install/software-hardware-requirements.html#hardware-requirements>`__,                            |
 | and test enabling this feature in a staging environment before enabling it in a production environment.                                                |

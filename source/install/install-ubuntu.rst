@@ -34,16 +34,18 @@ Install Mattermost Server on Ubuntu
 
   </div>
 
+You can install the Mattermost Server using our ``.deb`` signed packages using the Mattermost PPA (Personal Package Archive). Using the Mattermost Personal Package Archive (PPA) not only provides the quickest way to install a Mattermost Server, but also provides automatic updates. This install method is used for both single and clustered installations.
+
+.. tip::
+
+  If you are running the Mattermost Server and database on a single system, we recommend the `Mattermost Omnibus install method </install/installing-mattermost-omnibus.html>`__ as this greatly reduces setup and ongoing maintenance.
+
 .. contents:: On this page:
   :backlinks: top
   :local:
+  :depth: 1
 
-You can install the Mattermost Server using our ``.deb`` signed packages using the Mattermost PPA (Personal Package Archive). Deployment includes 4 steps: `add the PPA repository <#add-the-mattermost-server-ppa-repository>`__, `install <#install>`__, `setup <#setup>`__, and `update <#updates>`__.
-
-.. important::
-    
-    - Using the Mattermost PPA not only provides the quickest way to install a Mattermost Server, but also provides automatic updates. Unlike the Mattermost Omnibus, this install method is used for both single and clustered installations. 
-    - If you are running the Mattermost Server and database on a single system, we recommend the `Mattermost Omnibus install method </install/installing-mattermost-omnibus.html>`__ as this greatly reduces setup and ongoing maintenance.
+Deployment includes 4 steps: `add the PPA repository <#add-the-mattermost-server-ppa-repository>`__, `install <#install>`__, `setup <#setup>`__, and `update <#updates>`__.
 
 Add the Mattermost Server PPA repository
 ----------------------------------------
@@ -71,14 +73,14 @@ In a terminal window, run the following command to add the Mattermost Server rep
 Install
 -------
 
-Ahead of installing the Mattermost Server, it's good practice to update all your repositories and, where required, update existing packages. Run the following command:
+Ahead of installing the Mattermost Server, it's good practice to update all your repositories and, where required, update existing packages by running the following command:
 
 .. code-block:: none
   :class: mm-code-block 
 
     sudo apt update
 
-After any updates (and any system reboots) are complete, installing the Mattermost Server is now a single command:
+After any updates, and any system reboots, are complete, installing the Mattermost Server is now a single command:
 
 .. raw:: html
 
@@ -133,12 +135,12 @@ After modifying the ``config.json`` configuration file, you can now start the Ma
 
 Verify that Mattermost is running: curl ``http://localhost:8065``. You should see the HTML that’s returned by the Mattermost Server.
 
-The final step, depending on your requirements, is to run sudo ``systemctl enable mattermost.service`` so that Mattermost will start on system boot. 
+The final step, depending on your requirements, is to run ``sudo systemctl enable mattermost.service`` so that Mattermost will start on system boot. 
 
 Updates
 -------
 
-Mattermost Omnibus is integrated with the apt package manager. When a new Mattermost version is released, run: ``sudo apt update && sudo apt upgrade`` to download and update your Mattermost instance.
+When a new Mattermost version is released, run: ``sudo apt update && sudo apt upgrade`` to download and update your Mattermost instance.
 
 .. note::
 	

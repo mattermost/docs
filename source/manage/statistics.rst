@@ -30,10 +30,10 @@ Total Posts
     The total number of posts made in all the teams on your system, including deleted posts and posts made using automation.
 
 Daily Active Users
-  The total number of users who viewed the Mattermost site in the last 24 hours. Excludes bot users as of v5.14.
+  The total number of users who viewed the Mattermost site in the last 24 hours. Excludes bot users.
 
 Monthly Active Users
-  The total number of users who viewed the Mattermost site in the last 30 days. Excludes bot users as of v5.14.
+  The total number of users who viewed the Mattermost site in the last 30 days. Excludes bot users.
 
 Total Posts (graph)
     The total number of posts made on a certain day in all the teams on your system, including deleted posts and posts made using automation.

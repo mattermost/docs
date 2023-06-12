@@ -50,7 +50,7 @@ PC web
     "Safari", "v16.2+", "v16.2+"
     "Edge", "v110+", "v110+"
 
-`*` Support for Internet Explorer (IE11) has been removed in Mattermost v5.16. We recommend using the `Mattermost desktop app <https://mattermost.com/apps/>`_ or another supported browser. See `this forum post <https://forum.mattermost.com/t/mattermost-is-dropping-support-for-internet-explorer-ie11-in-v5-16/7575>`__ to learn more.
+`*` Internet Explorer (IE11) is no longer supported. We recommend using the `Mattermost desktop app <https://mattermost.com/apps/>`_ or another supported browser. See `this forum post <https://forum.mattermost.com/t/mattermost-is-dropping-support-for-internet-explorer-ie11-in-v5-16/7575>`__ to learn more.
 
 Mobile apps
 ^^^^^^^^^^^
@@ -93,17 +93,10 @@ While community support exists for Fedora, FreeBSD, and Arch Linux, Mattermost d
 Database software
 ^^^^^^^^^^^^^^^^^
 
-For Mattermost v6.0 and later:
-
 -  PostgreSQL 10.0+
 -  MySQL 5.7.12, 8.0.12+ (see note below on MySQL 8 support)
 
-For Mattermost v5.39 and previous releases:
-
-- PostgreSQL 10.0+
-- MySQL 5.6, 5.7, 8.0.12+ (see note below on MySQL 8 support)
-
-Amazon Aurora equivalents of both  PostgreSQL and MySQL are also supported.
+Amazon Aurora equivalents of both PostgreSQL and MySQL are also supported.
 
 MariaDB v10+ no longer functions as a MySQL drop-in replacement, and it's not supported for Mattermost due to the requirement of MySQL 5.7.12. Prior versions of MariaDB were not officially supported but may have functioned in older Mattermost releases. If you are running MariaDB now, migrating from MariaDB to the MySQL equivalent is recommended.
 
@@ -119,7 +112,7 @@ Search limitations on PostgreSQL:
 Search limitations on MySQL:
 
 - Hashtags or recent mentions of usernames containing a dot do not return search results.
-- From Mattermost v6.4, the new migration system requires the MySQL database user to have additional `EXECUTE`, `CREATE ROUTINE`, `ALTER ROUTINE` and `REFERENCES` privileges to run schema migrations.
+- The migration system requires the MySQL database user to have additional `EXECUTE`, `CREATE ROUTINE`, `ALTER ROUTINE` and `REFERENCES` privileges to run schema migrations.
 
 **MySQL 8 Support**:
 
@@ -182,7 +175,7 @@ For Enterprise Edition deployments with a multi-server setup, we highly recommen
 
 - Prometheus to track system health of your Mattermost deployment, through `performance monitoring feature </scale/performance-monitoring.html>`__ available in Mattermost Enterprise.
 - Grafana to visualize the system health metrics collected by Prometheus with the `performance monitoring feature </scale/performance-monitoring.html>`__. Grafana 5.0.0 and later is recommended.
-- Elasticsearch to support highly efficient database searches in a cluster environment. Elasticsearch 7.x is supported in Mattermost v6.0. Previous Mattermost versions of Mattermost, including v5.39 and earlier releases, support Elasticsearch v5.x, v6.x, and v7.x. `Learn more here </scale/elasticsearch.html>`__.
+- Elasticsearch to support highly efficient database searches in a cluster environment. Elasticsearch 7.x is supported. `Learn more here </scale/elasticsearch.html>`__.
 - MinIO or AWS S3. Mattermost is compatible with object storage systems which implement the S3 API. Other S3-compatible systems may work, but are not officially supported. Learn more about file storage configuration options `in our documentation </configure/configuration-settings.html#file-storage>`__.
 
 Alternate storage calculations

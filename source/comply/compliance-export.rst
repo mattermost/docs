@@ -32,7 +32,7 @@ For self-hosted deployments, compliance exports are written to the ``exports`` s
 
 .. note::
    
-   The compliance exports do not contain posts sent before the feature was enabled. For self-hosted deployments, you can export past history via the ``export`` :doc:`command line tool <../manage/command-line-tools>`. However, posts made prior to upgrading to Mattermost v4.5 will have less accurate channel member history information.
+   The compliance exports do not contain posts sent before the feature was enabled. For self-hosted deployments, you can export past history via the ``export`` :doc:`command line tool <../manage/command-line-tools>`. 
 
 CSV
 ~~~~
@@ -101,7 +101,7 @@ When run manually via the System Console, ``.csv`` and Actiance XML files are wr
 Is there a maximum row limit for CSV files?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-No. From Mattermost Server v5.36, there's no limit to the number of rows within Compliance Monitoring CSV files.
+No. There's no limit to the number of rows within Compliance Monitoring CSV files.
 
 How do I know if a compliance export job fails?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
