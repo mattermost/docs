@@ -29,7 +29,7 @@ You can `download the desktop app directly from our Downloads page <https://matt
     **Install the Mattermost Desktop App**
 
     1. Download the latest version of the Mattermost desktop app: `32/64-bit version of Windows <https://releases.mattermost.com/desktop/5.4.0/mattermost-desktop-setup-5.4.0-win.exe>`__
-    2. From the **\Downloads** folder, right-click on the file ``mattermost-desktop-setup-5.3.1-win.exe``, then select **Open** to start an installer for the app. Once finished, the Mattermost desktop app opens automatically.
+    2. From the **\Downloads** folder, right-click on the file ``mattermost-desktop-setup-5.4.0-win.exe``, then select **Open** to start an installer for the app. Once finished, the Mattermost desktop app opens automatically.
 
     **MSI Installer and group policies (beta)**
 
