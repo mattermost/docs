@@ -99,6 +99,9 @@ Using ``wget``, download the Mattermost Server release you want to install.
 
     If you are looking for an older release, these can be found in our `version archive </upgrade/version-archive.html>`__ documentation.
 
+    - `Enterprise Edition releases </upgrade/version-archive.html#mattermost-enterprise-edition>`__
+    - `Team Edition releases </upgrade/version-archive.html#mattermost-team-edition>`__
+
 Install
 -------
 
