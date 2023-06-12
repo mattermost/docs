@@ -31,7 +31,7 @@ Latest Mattermost Cloud releases:
  - Fixed an issue where the date separator displayed in the center channel for every post when the pinned posts right-hand side panel was open.
 
 ### Known Issues
- - In a cluster config save scenario, it is difficult to disinguish between a timeout and a semantic error in the config if a config save in one node gets stuck [MM-52968](https://mattermost.atlassian.net/browse/MM-52968).
+ - Using the "link" button puts the URL after ``[url]`` instead of replacing ``[url]`` when pasting [MM-53006](https://mattermost.atlassian.net/browse/MM-53006).
  - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
 
 ## Release 2023-05-31
