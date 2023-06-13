@@ -408,3 +408,25 @@ Replica lag settings
 |                                                                                                                                           |
 |   select member_id, count_transactions_remote_in_applier_queue FROM performance_schema.replication_group_member_stats where member_id=<>  |
 +--------------------------------------------------------+----------------------------------------------------------------------------------+
+
+.. config:setting:: database-replicamonitorintervalseconds
+  :displayname: Replica monitor interval (Database)
+  :systemconsole: N/A
+  :configjson: .SqlSettings.ReplicaMonitorIntervalSeconds
+  :environment: MM_SQLSETTINGS_REPLICAMONITORINTERVALSECONDS
+
+  Specifies how frequently unhealthy replicas will be monitored for liveness check. Mattermost will dynamically choose a replica if it's alive.
+
+Replica monitor interval (seconds)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
+
++--------------------------------------------------------+---------------------------------------------------------------------------------+
+| Specifies how frequently unhealthy replicas will be    | - System Config path: N/A                                                       |
+| monitored for liveness check. Mattermost will          | - ``config.json`` setting: ``".SqlSettings.ReplicaMonitorIntervalSeconds": 5``  |
+| dynamically choose a replica if it's alive.            | - Environment variable: ``MM_SQLSETTINGS_REPLICAMONITORINTERVALSECONDS``        |
+|                                                        |                                                                                 |
+| Numerical input. Default is 5 seconds.                 |                                                                                 |
++--------------------------------------------------------+---------------------------------------------------------------------------------+
