@@ -423,6 +423,8 @@ redirects = {
         "https://docs.mattermost.com/configure/configuration-settings.html#enable-latex-code-block-rendering",
 "configure/configuration-settings.html#environment":
         "https://docs.mattermost.com/configure/web-server-configuration-settings.html",
+"configure/experimental-configuration-settings.html#allow-synchronized-drafts":
+        "https://docs.mattermost.com/configure/site-configuration-settings.html#enable-server-syncing-of-message-drafts",
 "configure/configuration-settings.html#forward-port-80-to-443":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#forward-port-80-to-443",
 "configure/configuration-settings.html#groups":
