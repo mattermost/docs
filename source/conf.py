@@ -423,8 +423,6 @@ redirects = {
         "https://docs.mattermost.com/configure/configuration-settings.html#enable-latex-code-block-rendering",
 "configure/configuration-settings.html#environment":
         "https://docs.mattermost.com/configure/web-server-configuration-settings.html",
-"configure/experimental-configuration-settings.html#allow-synchronized-drafts":
-        "https://docs.mattermost.com/configure/site-configuration-settings.html#enable-server-syncing-of-message-drafts",
 "configure/configuration-settings.html#forward-port-80-to-443":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#forward-port-80-to-443",
 "configure/configuration-settings.html#groups":
@@ -1319,6 +1317,8 @@ redirects = {
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#export-output-directory",
 "configure/experimental-configuration-settings.html#export-settings-default-retention-days":
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#export-retention-days",
+"configure/experimental-configuration-settings.html#allow-synchronized-drafts":
+        "https://docs.mattermost.com/configure/site-configuration-settings.html#enable-server-syncing-of-message-drafts",
 "configure/authentication-configuration-settings.html#gitlab":
 	"https://docs.mattermost.com/configure/authentication-configuration-settings.html#gitlab-oauth-2-0-settings",
 "configure/authentication-configuration-settings.html#google":
