@@ -448,7 +448,7 @@ Media (audio/video) is encrypted using security standards as part of WebRTC. It'
 Are there any third-party services involved?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The only external service used is Mattermost official STUN server (``stun.global.calls.mattermost.com``) which is configured as default. This is primarily used to find the public address of the Mattermost instance. The only information sent to this service is the IP addresses of clients connecting as no other traffic goes through it. It can be removed in case the |ice_host_override_link| setting is provided.
+The only external service used is a Mattermost official STUN server (``stun.global.calls.mattermost.com``) which is configured as default. This is primarily used to find the public address of the Mattermost instance if none is provided through the |ice_host_override_link| option. The only information sent to this service is the IP addresses of clients connecting as no other traffic goes through it. It can be removed in cases where the |ice_host_override_link| setting is provided.
 
 Is using UDP a requirement?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~

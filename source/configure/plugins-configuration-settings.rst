@@ -598,28 +598,6 @@ Test mode
 | **Note**: Use this setting to confirm calls work as expected. When **true**, users attempting to start calls are prompted to contact System Admins. System Admins are prompted to confirm that calls are working as expected before switching to live mode.                                     |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: plugins-callsmaxcallparticipants
-  :displayname: Max call participants (Plugins - Calls)
-  :systemconsole: Plugins > Calls
-  :configjson: PluginSettings.Plugins.com.mattermost.calls.maxcallparticipants
-  :environment: N/A
-  :description: The maximum number of participants that can join a single call. Default value is **0** (unlimited). The maximum recommended setting is 200.
-
-Max call participants
-~~~~~~~~~~~~~~~~~~~~~
-
-.. include:: ../_static/badges/selfhosted-only.rst
-  :start-after: :nosearch:
-
-+-----------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+
-| This setting limits the number of participants that can join a single call. | - System Config path: **Plugins > Calls**                                                                     |
-|                                                                             | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.calls.maxcallparticipants``                |
-|                                                                             | - Environment variable: N/A                                                                                   |
-| Default is **0** (no limit).                                                |                                                                                                               |
-+-----------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+
-| **Note**: This setting is optional, but the recommended maximum number of participants is **200**.                                                                                          |
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
 .. config:setting:: plugins-callsicehost
   :displayname: ICE host override (Plugins - Calls)
   :systemconsole: Plugins > Calls
@@ -645,6 +623,8 @@ ICE host override
 |   - A hostname (e.g. domain name) can be specified in this setting, but an IP address will be passed to clients. This means that a DNS resolution happens on the Mattermost instance which could result in a different IP address from the one the clients would see, causing connectivity to fail. When in doubt, we recommend using an IP address directly or confirming that the resolution on the host side reflects the one on the client.                           |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+.. |ice_host_override_link| replace:: `ICE Host Override <plugins-configuration-settings.html#ice-host-override>`__
+
 .. config:setting:: plugins-callsrtcdserviceurl
   :displayname: RTCD service URL (Plugins - Calls)
   :systemconsole: Plugins > Calls
@@ -667,6 +647,28 @@ RTCD service URL
 | This is an optional field. Changing this setting requires a plugin restart to take effect.                    |                                                                                                         |
 +---------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+
 
+.. config:setting:: plugins-callsmaxcallparticipants
+  :displayname: Max call participants (Plugins - Calls)
+  :systemconsole: Plugins > Calls
+  :configjson: PluginSettings.Plugins.com.mattermost.calls.maxcallparticipants
+  :environment: N/A
+  :description: The maximum number of participants that can join a single call. Default value is **0** (unlimited). The maximum recommended setting is 200.
+
+Max call participants
+~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: ../_static/badges/selfhosted-only.rst
+  :start-after: :nosearch:
+
++-----------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+
+| This setting limits the number of participants that can join a single call. | - System Config path: **Plugins > Calls**                                                                     |
+|                                                                             | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.calls.maxcallparticipants``                |
+|                                                                             | - Environment variable: N/A                                                                                   |
+| Default is **0** (no limit).                                                |                                                                                                               |
++-----------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+
+| **Note**: This setting is optional, but the recommended maximum number of participants is **200**.                                                                                          |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 .. config:setting:: plugins-callsiceservers
   :displayname: ICE server configurations (Plugins - Calls)
   :systemconsole: Plugins > Calls
@@ -680,15 +682,23 @@ ICE servers configurations
 .. include:: ../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
-+-------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+
-| This setting stores a list of ICE servers (STUN/TURN) in JSON format to be used by the service. | - System Config path: **Plugins > Calls**                                                                   |
-|                                                                                                 | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.calls.iceserversconfigs``                |
-|                                                                                                 | - Environment variable: N/A                                                                                 |
-| This is an optional field. Changing this setting may require a plugin restart to take effect.   |                                                                                                             |
-|                                                                                                 |                                                                                                             |
-| Default is ``[{"urls": ["stun:stun.global.calls.mattermost.com:3478"]}]``                       |                                                                                                             |
-+-------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+
- 
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+| This setting stores a list of ICE servers (STUN/TURN) in JSON format to be used by the service.                                                                                                                           | - System Config path: **Plugins > Calls**                                                        |
+|                                                                                                                                                                                                                           | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.calls.iceserversconfigs``     |
+|                                                                                                                                                                                                                           | - Environment variable: N/A                                                                      |
+| This is an optional field. Changing this setting may require a plugin restart to take effect.                                                                                                                             |                                                                                                  |
+|                                                                                                                                                                                                                           |                                                                                                  |
+| Default is ``[{"urls": ["stun:stun.global.calls.mattermost.com:3478"]}]``                                                                                                                                                 |                                                                                                  |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+| **Note**:                                                                                                                                                                                                                 |                                                                                                  |
+|                                                                                                                                                                                                                           |                                                                                                  |
+| - The configurations above, containing STUN and TURN servers, are sent to the clients and used to generate local candidates.                                                                                              |                                                                                                  |
+|                                                                                                                                                                                                                           |                                                                                                  |
+| - If hosting calls through the plugin (i.e. not using the |rtcd_service|) any configured STUN server may also be used to find the instance's public IP when none is provided through the |ice_host_override_link| option. |                                                                                                  |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+
+.. |rtcd_service| replace:: `rtcd service <calls-deployment.html#the-rtcd-service>`__
+
 **Example**
  
  .. code-block:: json
@@ -717,9 +727,10 @@ ICE servers configurations
 	    "urls": ["turn:turn.example.com:443"]
     }]
 
-+-----------------------------------------------------------------------------+-------------------------------------------------------+
-| **Note**: To get TURN generated credentials to work you must provide a secret through the *TURN static auth secret* setting below.  |
-+-------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Note**:                                                                                                                                                                     |
+| - To get TURN generated credentials to work you must provide a secret through the *TURN static auth secret* setting below.                                                    |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: plugins-callsturnauthsecret
   :displayname: TURN static auth secret (Plugins - Calls)
