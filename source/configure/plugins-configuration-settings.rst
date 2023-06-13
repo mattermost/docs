@@ -1325,11 +1325,11 @@ Zoom
 .. include:: ../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
 
-This plugin allows team members to initiate a Zoom meeting with a single click. All participants in a channel can easily join the Zoom meeting and the shared link is updated when the meeting is over. See the `Zoom Conferencing Plugin <https://mattermost.gitbook.io/plugin-zoom/>`__ product documentation for details.
+This plugin allows team members to initiate a Zoom meeting with a single click. All participants in a channel can easily join the Zoom meeting and the shared link is updated when the meeting is over. See the `Zoom Plugin <https://github.com/mattermost/mattermost-plugin-zoom/blob/master/README.md#installation>`__ documentation for details.
 
 .. note::
 
-  To set up this plugin, you need to create a Zoom App using a Zoom Administrator account. See the `Zoom configuration <https://mattermost.gitbook.io/plugin-zoom/installation/zoom-configuration>`__ documentation for details. 
+  To set up this plugin, you need to create a Zoom App using a Zoom Administrator account. See the `Zoom plugin <https://github.com/mattermost/mattermost-plugin-zoom/blob/master/README.md>`__ documentation for details. 
 
 Access the following configuration settings in the System Console by going to **Plugins > Zoom**.
 
@@ -1401,7 +1401,7 @@ Enable OAuth
 
 .. note::
 
-  If you are currently using a JWT Zoom application and switch to OAuth, all users will need to connect their Zoom account using OAuth the next time they try to start a meeting. See the `Zoom Configuration <https://mattermost.gitbook.io/plugin-zoom/installation/zoom-configuration>`__ documentation for details.
+  If you are currently using a JWT Zoom application and switch to OAuth, all users will need to connect their Zoom account using OAuth the next time they try to start a meeting. See the `Zoom plugin <https://github.com/mattermost/mattermost-plugin-zoom#readme>`__ documentation for details.
 
 .. config:setting:: plugins-zoomoauthbyaccountlevel
   :displayname: OAuth by account level app (Beta) (Plugins - Zoom)

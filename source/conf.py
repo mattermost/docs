@@ -1770,7 +1770,7 @@ redirects = {
 "integrations/integration-faq.html":
         "https://docs.mattermost.com/about/faq-integrations.html",
 "integrations/jira.html":
-        "https://mattermost.gitbook.io/plugin-jira/",
+        "https://github.com/mattermost/mattermost-plugin-jira#readme",
 "integrations/net-promoter-score.html":
         "https://docs.mattermost.com/manage/user-satisfaction-surveys.html",
 "integrations/webhook.html":
@@ -1778,7 +1778,7 @@ redirects = {
 "integrations/zapier.html":
         "https://developers.mattermost.com/integrate/admin-guide/admin-zapier-integration/",
 "integrations/zoom.html":
-        "https://mattermost.gitbook.io/plugin-zoom/",
+        "https://github.com/mattermost/mattermost-plugin-zoom/blob/master/README.md/",
 
 # Manage redirects
 "manage/scripts.html":
