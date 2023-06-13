@@ -633,7 +633,7 @@ This setting enables the Apps Bar and moves all Mattermost integration icons fro
 +-------------------------------------------------------------------------------------------------------------------------------+
 
 Allow synchronized drafts
--------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This setting synchronizes draft messages across all supported Mattermost clients.
 
@@ -659,6 +659,19 @@ See the `Important Upgrade Notes <https://docs.mattermost.com/upgrade/important-
 +------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"PatchPluginsReactDOM": false`` with options ``true`` and ``false``. |
 +------------------------------------------------------------------------------------------------------------------+
+
+Delay channel autocomplete
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This setting makes the channel autocomplete, such as ``~town-square`` less obtrusive for people who uses tildes ``~`` as punctuation. 
+
+**True**: The autocomplete for channel links only triggers after typing a tilde symbol followed by two or more characters. 
+
+**False**: (Default) The autocomplete for channel links appears as soon as the user types a tilde symbol.
+
++-------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ExperimentalSettings.DelayChannelAutocomplete": false`` with options ``true`` and ``false``. |
++-------------------------------------------------------------------------------------------------------------------------------------------+
 
 ----
 
