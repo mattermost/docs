@@ -24,11 +24,17 @@ Configure audit logging
 
 Configuring Mattermost to enable audit logging requires editing the ``config.json`` file directly. Audit logging can’t be managed using the System Console.
 
-In the ``config.json`` file, go to the ``ExperimentalAuditSettings`` section. Within the ``AdvancedLoggingConfig`` setting, you can specify an absolute or relative filespec to another configuration file or a JSON string. The process of configuring audit logging includes specifying destination targets, event names to include, and the verbosity of the audit log output.
+In the ``config.json`` file, go to the ``ExperimentalAuditSettings`` section. Within the ``AdvancedLoggingConfig`` setting, you can specify an absolute or relative filespec to another configuration file, embed multi-line JSON in the ``config.json`` file, or an environment variable. The process of configuring audit logging includes specifying destination targets, event names to include, and the verbosity of the audit log output.
 
-The example JSON configuration specifies two log targets: one outputs to the console using a plain text format with pipes delimiting fields, and the other outputs to a file using a JSON format with log file rotation. All audit log levels are enabled.
+The example JSON configuration below specifies two log targets: one outputs to the console using a plain text format with pipes delimiting fields, and the other outputs to a file using a JSON format with log file rotation. All audit log levels are enabled.
 
-.. code-block:: json
+Examples of values for the ``AdvancedLoggingConfig`` setting are:
+
+1. Filespec to another configuration file: ``"AdvancedLoggingConfig": "/path/to/audit_log_config.json"``
+
+   This file will contain a JSON object:
+
+  .. code-block:: json
 
     {
       "sample-console": {
@@ -68,18 +74,80 @@ The example JSON configuration specifies two log targets: one outputs to the con
       }
     }
 
-Examples of values for the ``AdvancedLoggingConfig`` setting are:
 
-1. Filespec to another configuration file; this file will contain a JSON object
+2. Multi-line JSON in the ``config.json`` file:
 
-  ``"AdvancedLoggingConfig": "/path/to/audit_log_config.json"``
+  .. code-block:: json
 
-2. JSON string
+        "AdvancedLoggingConfig": {
+            "file_1": {
+                "Type": "file",
+                "Format": "plain",
+                "Levels": [
+                    {"ID": 5, "Name": "debug", "Stacktrace": false},
+                    {"ID": 4, "Name": "info", "Stacktrace": false},
+                    {"ID": 3, "Name": "warn", "Stacktrace": false},
+                    {"ID": 2, "Name": "error", "Stacktrace": true},
+                    {"ID": 1, "Name": "fatal", "Stacktrace": true},
+                    {"ID": 0, "Name": "panic", "Stacktrace": true}
+                ],
+                "Options": {
+                    "Compress": true,
+                    "Filename": "mattermost_logr.log",
+                    "MaxAgeDays": 1,
+                    "MaxBackups": 10,
+                    "MaxSizeMB": 500 
+                },
+                "MaxQueueSize": 1000
+            }
+        }
 
-  ``"AdvancedLoggingConfig": "{\"sample-console\":{\"type\":\"console\",\"format\":\"plain\",\"format_options\":{\"delim\":\" | \"},\"levels\":[{\"id\":100,\"name\":\"audit-api\"},{\"id\":101,\"name\":\"audit-content\"},{\"id\":102,\"name\":\"audit-permissions\"},{\"id\":103,\"name\":\"audit-cli\"}],\"options\":{\"out\":\"stdout\"},\"maxqueuesize\":1000},\"sample-file\":{\"type\":\"file\",\"format\":\"json\",\"levels\":[{\"id\":100,\"name\":\"audit-api\"},{\"id\":101,\"name\":\"audit-content\"},{\"id\":102,\"name\":\"audit-permissions\"},{\"id\":103,\"name\":\"audit-cli\"}],\"options\":{\"compress\":true,\"filename\":\"audit.log\",\"max_age\":1,\"max_backups\":10,\"max_size\":500},\"maxqueuesize\":1000}}"``
+3. Environment variable:
 
-.. note::
-  When using a JSON string as the value of ``AdvancedLoggingConfig``, ensure you escape double quotes (``"``) in the string using a backslash (``\``). You can also use a free online tool, such as `Free Online JSON Escape <https://www.freeformatter.com/json-escape.html>`__ to format the value correctly.
+  .. code-block:: shell
+
+    export MM_LOGSETTINGS_ADVANCEDLOGGINGJSON=$(jq -n -c '{
+      "file1": {
+        "Type": "file",
+        "Format": "json",
+        "Levels": [
+          {"ID": 5, "Name": "debug", "Stacktrace": false},
+          {"ID": 4, "Name": "info", "Stacktrace": false},
+          {"ID": 3, "Name": "warn", "Stacktrace": false},
+          {"ID": 2, "Name": "error", "Stacktrace": true},
+          {"ID": 1, "Name": "fatal", "Stacktrace": true},
+          {"ID": 0, "Name": "panic", "Stacktrace": true}
+        ],
+        "Options": {
+          "Compress": true,
+          "Filename": "mattermost_logr.log",
+          "MaxAgeDays": 0,
+          "MaxBackups": 10,
+          "MaxSizeMB": 10 
+        },
+        "MaxQueueSize": 1000
+      }
+    }')
+    export MM_EXPERIMENTALAUDITSETTINGS_ADVANCEDLOGGINGJSON=$(jq -n -c '{
+      "file_1": {
+        "Type": "file",
+        "Format": "json",
+        "Levels": [
+          {"ID": 100, "Name": "audit-api"},
+          {"ID": 101, "Name": "audit-content"},
+          {"ID": 102, "Name": "audit-permissions"},
+          {"ID": 103, "Name": "audit-cli"}
+        ],
+        "Options": {
+          "Compress": true,
+          "Filename": "mattermost_audit.log",
+          "MaxAgeDays": 1,
+          "MaxBackups": 10,
+          "MaxSizeMB": 500 
+        },
+        "MaxQueueSize": 1000
+      }
+    }')
 
 Log level configuration options
 -------------------------------
