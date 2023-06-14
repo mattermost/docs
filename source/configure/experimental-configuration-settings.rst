@@ -663,7 +663,7 @@ See the `Important Upgrade Notes <https://docs.mattermost.com/upgrade/important-
 Delay channel autocomplete
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This setting makes the channel autocomplete, such as ``~town-square`` less obtrusive for people who uses tildes ``~`` as punctuation. 
+This setting controls whether or not the channel link autocomplete triggers immediately when after a tilde is typed when composing a message. This setting makes the channel autocomplete, such as ``~town-square``, less obtrusive for people who use tildes ``~`` as punctuation. 
 
 **True**: The autocomplete for channel links only triggers after typing a tilde symbol followed by two or more characters. 
 
