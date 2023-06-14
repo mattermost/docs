@@ -667,7 +667,7 @@ This setting makes the channel autocomplete, such as ``~town-square`` less obtru
 
 **True**: The autocomplete for channel links only triggers after typing a tilde symbol followed by two or more characters. 
 
-**False**: (Default) The autocomplete for channel links appears as soon as the user types a tilde symbol.
+**False**: **(Default)** The autocomplete appears immediately after the user types a tilde. For example, typing ``~`` will show the autocomplete.
 
 +-------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ExperimentalSettings.DelayChannelAutocomplete": false`` with options ``true`` and ``false``. |
