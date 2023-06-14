@@ -19,7 +19,7 @@ Latest Mattermost Releases:
 
 - **v7.10.3, released 2023-06-14**
   - Mattermost v7.10.3 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
-  - Updated prepackaged Boards to v7.10.2.
+  - Updated prepackaged Boards to v7.10.3.
   - Included prepackaged Welcomebot plugin v1.3.0.
   - For servers wanting to allow websockets to connect from other origins, please set the ``ServiceSettings.AllowCorsFrom`` [config setting](https://docs.mattermost.com/configure/integrations-configuration-settings.html#enable-cross-origin-requests-from).
 - **v7.10.2, released 2023-05-18**
@@ -130,7 +130,7 @@ The following deprecations and breaking changes are planned for the Mattermost v
 
 - **v7.9.5, released 2023-06-14**
   - Mattermost v7.9.5 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
-  - Updated prepackaged Boards to v7.9.5.
+  - Updated prepackaged Boards to v7.9.6.
   - For servers wanting to allow websockets to connect from other origins, please set the ``ServiceSettings.AllowCorsFrom`` [config setting](https://docs.mattermost.com/configure/integrations-configuration-settings.html#enable-cross-origin-requests-from).
 - **v7.9.4, released 2023-05-16**
   - Mattermost v7.9.4 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
@@ -253,7 +253,7 @@ Mattermost v7.9.0 contains a low severity level security fix. [Upgrading](https:
 
 - **v7.8.7, released 2023-06-14**
   - Mattermost v7.8.7 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
-  - Updated prepackaged Boards to v7.8.6.
+  - Updated prepackaged Boards to v7.8.7.
   - Fixed typo in the database migration scripts that broke idempotency.
   - For servers wanting to allow websockets to connect from other origins, please set the ``ServiceSettings.AllowCorsFrom`` [config setting](https://docs.mattermost.com/configure/integrations-configuration-settings.html#enable-cross-origin-requests-from).
 - **v7.8.6, released 2023-05-31**
