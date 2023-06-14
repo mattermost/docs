@@ -1245,6 +1245,29 @@ Google API key
 | - This key is used in client-side Javascript.                                                                                                                                                                                                                                                                                           |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+.. config:setting:: posts-AllowSyncedDrafts
+  :displayname: Enable server syncing of message drafts (Posts)
+  :systemconsole: Site Configuration > Posts
+  :configjson: .ServiceSettings.AllowSyncedDrafts
+  :environment: MM_SERVICESETTINGS_ALLOWSYNCEDDRAFTS
+  :description: Enable or disable the ability to synchronize draft messages across all supported Mattermost clients.
+
+Enable server syncing of message drafts
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++------------------------------------------------------+--------------------------------------------------------------------------------------+
+| Enable or disable the ability to synchronize draft   | - System Config path: **Site Configuration > Posts**                                 |
+| messages across all supported Mattermost clients.    | - ``config.json`` setting: ``".ServiceSettings.AllowSyncedDrafts: true,``            |
+|                                                      | - Environment variable: ``MM_SERVICESETTINGS_ALLOWSYNCEDDRAFTS``                     |
+| - **true**: **(Default)** Message drafts are saved   |                                                                                      |
+|   on the server and may be accessed from different   |                                                                                      |
+|   clients. Users may still disable server            |                                                                                      |
+|   synchronization of draft messages by going         |                                                                                      |
+|   to **Settings > Advanced Settings**.               |                                                                                      |
+| - **false**: Draft messages are stored locally       |                                                                                      |
+|   on each device.                                    |                                                                                      |
++------------------------------------------------------+--------------------------------------------------------------------------------------+
+
 ----
 
 File sharing and downloads
