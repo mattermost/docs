@@ -17,7 +17,7 @@ Self-hosted editions support deploying Mattermost within IT-controlled private e
 Mattermost Team Edition
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-Team Edition is a free-to-use, open source, self-hosted collaboration platform offering all the core productivity benefits of competing SaaS solutions. It deploys as a single Linux binary with MySQL or PostgreSQL under an MIT license.
+Team Edition is a free-to-use, open source, self-hosted collaboration platform offering all the core productivity benefits of competing SaaS solutions. It deploys as a single Linux binary with PostgreSQL or MySQL under an MIT license.
 
 Mattermost Team Edition is also bundled inside of the free Mattermost Enterprise Edition code base, which provides the same functionality as Mattermost Team Edition, with the additional benefit of being able to trial as well as upgrade into an expanded set of features available with paid subscription, including Mattermost Professional and Mattermost Enterprise. 
 

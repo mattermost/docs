@@ -250,7 +250,7 @@ The location of these depend on your proxy configuration, but a good place to st
 
 **Database**
 
-MySQL and PostgreSQL have different logs, and their location varies based on your configuration. If the issue is related to database connectivity, check the database documentation to locate the logs.
+PostgreSQL and MySQL have different logs, and their location varies based on your configuration. If the issue is related to database connectivity, check the database documentation to locate the logs.
 
 **SAML, LDAP, and other systems**
 
