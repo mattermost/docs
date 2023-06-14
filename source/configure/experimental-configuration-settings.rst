@@ -647,6 +647,19 @@ See the `Important Upgrade Notes <https://docs.mattermost.com/upgrade/important-
 | This feature's ``config.json`` setting is ``"PatchPluginsReactDOM": false`` with options ``true`` and ``false``. |
 +------------------------------------------------------------------------------------------------------------------+
 
+Delay channel autocomplete
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This setting controls whether or not the channel link autocomplete triggers immediately when after a tilde is typed when composing a message. This setting makes the channel autocomplete, such as ``~town-square``, less obtrusive for people who use tildes ``~`` as punctuation. 
+
+**True**: The autocomplete appears after the user types a tilde followed by two or more characters. For example, typing ``~to`` will show the autocomplete, but typing ``~`` will not. 
+
+**False**: **(Default)** The autocomplete appears immediately after the user types a tilde. For example, typing ``~`` will show the autocomplete.
+
++-------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ExperimentalSettings.DelayChannelAutocomplete": false`` with options ``true`` and ``false``. |
++-------------------------------------------------------------------------------------------------------------------------------------------+
+
 ----
 
 Experimental Bleve configuration settings
