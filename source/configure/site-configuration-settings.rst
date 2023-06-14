@@ -1076,12 +1076,21 @@ Collapsed reply threads
 | - **Disabled**: Users cannot enable Collapsed Reply Threads. ``config.json`` setting: ``"disabled"``                                                                                                                                                                                                                                                                 |                                                                    |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------+
 
+.. config:setting:: posts-messagepriority
+  :displayname: Message priority (Posts)
+  :systemconsole: Site Configuration > Posts
+  :configjson: .ServiceSettings.PostPriority
+  :environment: MM_SERVICESETTINGS_POSTPRIORITY
+
+  - **true**: **(Default)** Enables message priority for all users.
+  - **false**: Disables the ability to set message priority and request acknowlegements.
+
 Message priority
 ~~~~~~~~~~~~~~~~~
 
 +-----------------------------------------------------------------------------+------------------------------------------------------------------------+
 | - **true**: **(Default)** Enables message priority for all users which      | - System Config path: **Site Configuration > Posts**                   |
-|   enables them to set a visual indiciator for important or urgent root      | | - ``config.json`` setting: ``.ServiceSettings.PostPriority: true``   |
+|   enables them to set a visual indiciator for important or urgent root      | - ``config.json`` setting: ``.ServiceSettings.PostPriority: true``     |
 |   messages.                                                                 | - Environment variable: ``MM_SERVICESETTINGS_POSTPRIORITY``            |
 | - **false**: Disables the ability to set message priority and request       |                                                                        |
 |   acknowledgements.                                                         |                                                                        |
@@ -1090,6 +1099,94 @@ Message priority
 | track that specific, time-sensitive messages have been seen and actioned. See the                                                                    |
 | `message priority <https://docs.mattermost.com/channels/message-priority.html>`__ documentation to learn more.                                       |
 +-----------------------------------------------------------------------------+------------------------------------------------------------------------+
+
+.. config:setting:: posts-persistentnotifications
+  :displayname: Persistent notifications (Posts)
+  :systemconsole: Site Configuration > Posts
+  :configjson: .ServiceSettings.AllowPersistentNotifications
+  :environment: MM_SERVICESETTINGS_ALLOWPERSISTENTNOTIFICATIONS
+
+  - **true**: **(Default)** Users can trigger repeating notifications to mentioned recipients of urgent messages.
+  - **false**: Disables the ability to send repeating notifications.
+
+Persistent notifications
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
++--------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| - **true**: **(Default)** Users can trigger repeating notifications to   | - System Config path: **Site Configuration > Posts**                                |
+|   mentioned recipients of urgent messages.                               | - ``config.json`` setting: ``.ServiceSettings.AllowPersistentNotifications: true``  |
+| - **false**: Disables the ability to send repeating notifications.       | - Environment variable: ``MM_SERVICESETTINGS_ALLOWPERSISTENTNOTIFICATIONS``         |
++--------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+
+.. config:setting:: posts-maxnumberofrecipientsforpersistentnotifications
+  :displayname: Maximum number of recipients for persistent notifications (Posts)
+  :systemconsole: Site Configuration > Posts
+  :configjson: .ServiceSettings.PersistentNotificationMaxRecipients
+  :environment: MM_SERVICESETTINGS_PERSISTENTNOTIFICATIONSMAXRECIPIENTS
+  :description: The maximum number of recipients users may send persistent notifications to. Default is **5**.
+
+Maximum number of recipients for persistent notifications
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++---------------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| The maximum number of recipients users may send persistent    | - System Config path: **Site Configuration > Posts**                                    |
+| notifications to.                                             | - ``config.json`` setting: ``.ServiceSettings.PersistentNotificationMaxRecipients: 5``  |
+|                                                               | - Environment variable: ``MM_SERVICESETTINGS_PERSISTENTNOTIFICATIONSMAXRECIPIENTS``     |
+| Numerical input. Default is **5**.                            |                                                                                         |
++---------------------------------------------------------------+-----------------------------------------------------------------------------------------+
+
+.. config:setting:: posts-frequencyofpersistentnotifications
+  :displayname: Frequency of persistent notifications (Posts)
+  :systemconsole: Site Configuration > Posts
+  :configjson: .ServiceSettings.PersistentNotificationIntervalMinutes
+  :environment: MM_SERVICESETTINGS_PERSISTENTNOTIFICATIONINTERVALMINUTES
+  :description: The number of minutes between repeated notifications for urgent messages sent with persistent notifications. Default is **5**.
+
+Frequency of persistent notifications
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++---------------------------------------------------------------+-------------------------------------------------------------------------------------------+
+| The number of minutes between repeated notifications for      | - System Config path: **Site Configuration > Posts**                                      |
+| urgent messages sent with persistent notifications.           | - ``config.json`` setting: ``.ServiceSettings.PersistentNotificationIntervalMinutes: 5``  |
+|                                                               | - Environment variable: ``MM_SERVICESETTINGS_PERSISTENTNOTIFICATIONINTERVALMINUTES``      |
+| Numerical input. Default is **5**.                            |                                                                                           |
++---------------------------------------------------------------+-------------------------------------------------------------------------------------------+
+
+.. config:setting:: posts-totalnumberofpersistentnotificationsperpost
+  :displayname: Total number of persistent notifications per post (Posts)
+  :systemconsole: Site Configuration > Posts
+  :configjson: .ServiceSettings.PersistentNotificationMaxCount
+  :environment: MM_SERVICESETTINGS_PERSISTENTNOTIFICATIONMAXCOUNT
+  :description: The maximum number of times users may receive persistent notifications. Default is **6**.
+
+Total number of persistent notifications per post
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++-------------------------------------------------------------+------------------------------------------------------------------------------------+
+| The maximum number of times users may receive persistent    | - System Config path: **Site Configuration > Posts**                               |
+| notifications.                                              | - ``config.json`` setting: ``.ServiceSettings.PersistentNotificationMaxCount: 6``  |
+|                                                             | - Environment variable: ``MM_SERVICESETTINGS_PERSISTENTNOTIFICATIONMAXCOUNT``      |
+| Numerical input. Default is **6**.                          |                                                                                    |
++-------------------------------------------------------------+------------------------------------------------------------------------------------+
+
+.. config:setting:: posts-persistentnotificationsforguestusers
+  :displayname: Persistent notifications for guest users (Posts)
+  :systemconsole: Site Configuration > Posts
+  :configjson: .ServiceSettings.AllowPersistentNotificationsForGuests
+  :environment: MM_SERVICESETTINGS_ALLOWPERSISTENTNOTIFICATIONSFORGUESTS
+
+  - **true**:  Guest users can trigger repeating notifications to  mentioned recipients of urgent messages.
+  - **false**: **(Default)** Disables the ability for guest users to send repeating notifications.
+
+Persistent notifications for guest users
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
+| - **true**: Guest users can trigger repeating notifications to           | - System Config path: **Site Configuration > Posts**                                          |
+|   mentioned recipients of urgent messages.                               | - ``config.json`` setting: ``.ServiceSettings.AllowPersistentNotificationsForGuests: false``  |
+| - **false**: **(Default)** Disables the ability for guest users to       | - Environment variable: ``MM_SERVICESETTINGS_ALLOWPERSISTENTNOTIFICATIONSFORGUESTS``          |
+|   send repeating notifications.                                          |                                                                                               |
++--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
 
 .. config:setting:: posts-enablelinkpreviews
   :displayname: Enable website link previews (Posts)

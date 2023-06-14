@@ -28,6 +28,25 @@ To set the priority of a new message:
 
 1. Select the **Message Priority** |priority-icon| icon in the message formatting toolbar. 
 2. Select the priority for the message. Messages have a standard priority by default.
+3. Select **Apply**
+
+Send persistent notifications
+-----------------------------
+
+From Mattermost v8.0, when you add an urgent priority label, and your message @mentions at least one other user, you can enable persistent notifications which notify recipients every 5 minutes for up to 30 minutes until the recipient acknowledges or replies to the message.
+
+To enable persistent notifications for a message:
+
+1. Compose a message with at least one @mention.
+2. Select the **Message Priority** |priority-icon| icon in the message formatting toolbar. 
+3. Select **Urgent**.
+4. Select **Send persistent notifications**.
+5. Select **Apply**.
+
+.. note:: 
+
+  - Recipients must have Mattermost notifications enabled to receive persistent notifications.
+  - System admins can customize the maximum number of @mentions permitted, how frequently and how many persistent notifications are sent, as well as disable permsistent notifications for all users, if preferred. See the `configuration </configure/site-configuration-settings.html#persistent-notifications>`__ documentation for details.
 
 Request acknowledgements
 ------------------------
@@ -43,3 +62,6 @@ When you request acknowlegement of a message, an **Acknowledge** |acknowledge-bu
 
     - When you have push notifications enabled on mobile, you'll be notified every five minutes until you acknowledge or reply to the message.
     - After acknowledging a message, you have up to five minutes to change your mind. Select the **Acknowledged** |acknowledged-icon| button again to remove your name from the list of acknowledged users.
+
+
+
