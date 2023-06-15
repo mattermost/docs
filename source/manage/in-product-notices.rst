@@ -51,15 +51,15 @@ Admin Advisor notices
 Admin Advisor notices are designed to provide guidance and assist in choosing features to support your deployment as it scales.
 
 .. note::
-  Admin Advisor notices are disabled in v5.35 and later.
+  Admin Advisor notices are disabled.
 
 When these notices are triggered, System Admins receive a bot message notification and, for larger instances, a dismissable daily banner with quick access to contact support. The notices are triggered based on usage such as the number of registered users, posts, or channels in your deployment reaching a predefined threshold.
 
 .. image:: ../images/mattermost_admin_advisor_banner.png
-   :alt: An example of an Admin Advisor notice. Admin Advisor notices provide guidance as your deployment scales in size. Admin Advisor notices are disabled from Mattermost v5.35.
+   :alt: An example of an Admin Advisor notice. Admin Advisor notices provide guidance as your deployment scales in size. Admin Advisor notices are disabled.
 
 .. image:: ../images/mattermost_admin_advisor_bot.png
-   :alt: An example of an Admin Advisor notice that includes an option for System Admins to contact Mattermost Support. Admin Advisor notices are disabled from Mattermost v5.35.
+   :alt: An example of an Admin Advisor notice that includes an option for System Admins to contact Mattermost Support. Admin Advisor notices are disabled.
 
 System Admins can optionally contact support for additional assistance. There are also links to useful resources for user management and provisioning to support large systems.
 

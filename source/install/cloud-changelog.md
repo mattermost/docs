@@ -4,12 +4,35 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 
 Latest Mattermost Cloud releases:
 
+- [Release 2023-06-13](#release-2023-06-13)
 - [Release 2023-05-31](#release-2023-05-31)
 - [Release 2023-05-01](#release-2023-05-01)
 - [Release 2023-04-21](#release-2023-04-21)
 - [Release 2023-03-29](#release-2023-03-29)
 - [Release 2023-03-20](#release-2023-03-20)
-- [Release 2023-01-26](#release-2023-01-26)
+
+## Release 2023-06-13
+
+### Compatibility
+- Updated Chromium minimum supported version to 112+.
+
+### Improvements
+
+#### User Interface (UI)
+ - Reworked some of the components used for showing autocomplete results.
+
+#### Administration
+ - Added support for environment variable overrides of ``AdvancedLoggingConfigJSON`` configuration fields.
+
+### Bug Fixes
+ - Ensured users mentioned in message attachments are loaded by the web app.
+ - Fixed an issue where the reply bar did not get highlighted when a user was mentioned by a reply because of their Reply Notifications setting.
+ - Fixed an issue where the total user count was fetched for every client connection. It is only necessary to fetch this once.
+ - Fixed an issue where the date separator displayed in the center channel for every post when the pinned posts right-hand side panel was open.
+
+### Known Issues
+ - Using the "link" button puts the URL after ``[url]`` instead of replacing ``[url]`` when pasting [MM-53006](https://mattermost.atlassian.net/browse/MM-53006).
+ - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
 
 ## Release 2023-05-31
 
@@ -65,8 +88,10 @@ Latest Mattermost Cloud releases:
  - Fixed an issue where certain hashtags were not searchable when using database search.
 
 ### Known Issues
+ - Selecting the **replies** option for a thread doesn't navigate to the thread when Collapsed Reply Threads is enabled. A workaround is to use the reply arrow in the post menu, or to navigate to the **Threads** view when replying to messages [MM-52995](https://mattermost.atlassian.net/browse/MM-52995).
+ - Using the "link" button puts the URL after ``[url]`` instead of replacing ``[url]`` when pasting [MM-53006](https://mattermost.atlassian.net/browse/MM-53006).
+ - Saved posts in right-hand side show both the team and channel name in the post header [MM-53005](https://mattermost.atlassian.net/browse/MM-53005).
  - In a cluster config save scenario, it is difficult to disinguish between a timeout and a semantic error in the config if a config save in one node gets stuck [MM-52968](https://mattermost.atlassian.net/browse/MM-52968).
- - Message Actions … ellipsis menu icon only displays rectangle when clicked on [MM-52444](https://mattermost.atlassian.net/browse/MM-52444).
  - The URL of the post in a reminder post for direct and group messages have a double slash on mobile [MM-51026](https://mattermost.atlassian.net/browse/MM-51026).
  - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
 
