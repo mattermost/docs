@@ -19,7 +19,7 @@ Latest Mattermost Cloud releases:
  - Added support to specify different desktop notification sounds per channel.
  - Calls: Ringing sounds can be enabled/disabled and selected in the Desktop Notifications preferences panel.
  - Bumped the pre-packaged version of NPS to 1.3.2.
- - Apps Bar is now enabled by default for on-prem servers. See more details at:
+ - Apps Bar is now enabled by default for on-prem servers. ``ExperimentalSettings.EnableAppBar`` was also renamed to ``ExperimentalSettings.DisableAppBar``. See more details at:
     - https://docs.mattermost.com/welcome/what-changed-in-v70.html#apps-bar-beta
     - https://forum.mattermost.com/t/channel-header-plugin-changes/13551
 
