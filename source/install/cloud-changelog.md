@@ -28,11 +28,9 @@ Latest Mattermost Cloud releases:
  - Playbooks is again shipped as a prepackaged plugin, with version 1.36.1.
  - Removed setting the Channel Export and Apps plugins enabled by default.
  - Added a new ``ConfigurationWillBeSaved`` plugin hook which is invoked before the configuration object is committed to the backing store.
- - A ``context.Context`` is now passed to ``Client4`` methods.
  - Insights has been disabled for all new instances and for existing servers that upgrade to v8.0. The Insights feature flag can be enabled with environment variables via `MM_FEATUREFLAGS_INSIGHTSENABLED=true`.
  - Admins can now specify index names to ignore while purging indexes from Elasticsearch with the ``ElasticsearchSettings.IgnoredPurgeIndexes`` setting.
  - Added an option to use the German HPNS notification proxy.
- - Changed the Go module path from ``github.com/mattermost/mattermost-server/server/v8`` to ``github.com/mattermost/mattermost/server/v8``. For the public facing module, it's path is also changed from ``github.com/mattermost/mattermost-server/server/public`` to ``github.com/mattermost/mattermost/server/public``.
  - New flags were added to the database migrate command as following:
 
     - ``auto-recover``: If the migration plan receives an error during migrations, this command will try to rollback migrations already applied within the plan. This option is not recommended to be added without reviewing migration plan. You can review the plan by combining ``--save-plan`` and ``--dry-run`` flags.
@@ -41,6 +39,10 @@ Latest Mattermost Cloud releases:
 
  - A new database subcommand "downgrade" was added to be able to rollback database migrations. The command either requires an update plan to rollback, or comma separated version numbers.
  - Removed ``/api/v4/users/stats`` network request from ``InviteMembersButton``.
+
+### API Changes
+ - A ``context.Context`` is now passed to ``Client4`` methods.
+ - Changed the Go module path from ``github.com/mattermost/mattermost-server/server/v8`` to ``github.com/mattermost/mattermost/server/v8``. For the public facing module, it's path is also changed from ``github.com/mattermost/mattermost-server/server/public`` to ``github.com/mattermost/mattermost/server/public``.
 
 ### Bug Fixes
  - Fixed the **New Messages** line overlapping date lines in the post list.
