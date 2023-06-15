@@ -4,12 +4,53 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 
 Latest Mattermost Cloud releases:
 
+- [Release 2023-06-29](#release-2023-06-29)
 - [Release 2023-06-13](#release-2023-06-13)
 - [Release 2023-05-31](#release-2023-05-31)
 - [Release 2023-05-01](#release-2023-05-01)
 - [Release 2023-04-21](#release-2023-04-21)
 - [Release 2023-03-29](#release-2023-03-29)
-- [Release 2023-03-20](#release-2023-03-20)
+
+## Release 2023-06-29
+
+### Improvements
+
+#### User Interface (UI)
+ - Added support to specify different desktop notification sounds per channel.
+ - Calls: Ringing sounds can be enabled/disabled and selected in the Desktop Notifications preferences panel.
+ - Bumped the pre-packaged version of NPS to 1.3.2.
+
+#### Administration
+ - Boards has been moved from a product back to a plugin. Removed ``EnablePublicSharedBoards`` Boards product setting from the config and the **System Console**.
+ - Playbooks is again shipped as a prepackaged plugin, with version 1.36.1.
+ - Removed setting the Channel Export and Apps plugins enabled by default.
+ - Added a new ``ConfigurationWillBeSaved`` plugin hook which is invoked before the configuration object is committed to the backing store.
+ - A ``context.Context`` is now passed to ``Client4`` methods.
+ - Insights has been disabled for all new instances and for existing servers that upgrade to v8.0. The Insights feature flag can be enabled with environment variables via `MM_FEATUREFLAGS_INSIGHTSENABLED=true`.
+ - Admins can now specify index names to ignore while purging indexes from Elasticsearch with the ``ElasticsearchSettings.IgnoredPurgeIndexes`` setting.
+ - Added an option to use the German HPNS notification proxy.
+ - Changed the Go module path from ``github.com/mattermost/mattermost-server/server/v8`` to ``github.com/mattermost/mattermost/server/v8``. For the public facing module, it's path is also changed from ``github.com/mattermost/mattermost-server/server/public`` to ``github.com/mattermost/mattermost/server/public``.
+ - New flags were added to the database migrate command as following:
+
+    - ``auto-recover``: If the migration plan receives an error during migrations, this command will try to rollback migrations already applied within the plan. This option is not recommended to be added without reviewing migration plan. You can review the plan by combining ``--save-plan`` and ``--dry-run`` flags.
+    - ``save-plan``: The plan for the migration will be saved into the file store so that it can be used for reviewing the plan or to be used for downgrading
+    - ``dry-run``: Does not apply the migrations, but it validates how the migration would run with the given conditions.
+
+ - A new database subcommand "downgrade" was added to be able to rollback database migrations. The command either requires an update plan to rollback, or comma separated version numbers.
+ - Removed ``/api/v4/users/stats`` network request from ``InviteMembersButton``.
+
+### Bug Fixes
+ - Fixed the **New Messages** line overlapping date lines in the post list.
+ - Fixed an issue where post reactions disappeared when the search sidebar was open.
+ - Fixed an issue with broken "medical_symbol", "male_sign" and "female_sign" emojis.
+ - Fixed a panic where a JSON null value was passed as a channel update.
+ - Fixed an issue where the draft counter badge remained in case of a deleted parent post and its subsequent removal.
+ - Fixed an issue where posts were not fully sanitized for audit output when a link preview was included.
+
+### Known Issues
+ - Boards public links that follow the URL schema `/boards/public/...` will not work after this update. They can either be regenerated through the application, going to the board and using the "Share" button at the top right, or they can be obtained by replacing the `/boards/public/` part of the URL with `/plugins/focalboard/`.
+ - Using the "link" button puts the URL after ``[url]`` instead of replacing ``[url]`` when pasting [MM-53006](https://mattermost.atlassian.net/browse/MM-53006).
+ - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
 
 ## Release 2023-06-13
 
