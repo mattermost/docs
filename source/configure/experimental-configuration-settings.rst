@@ -632,21 +632,6 @@ This setting enables the Apps Bar and moves all Mattermost integration icons fro
 | This feature's ``config.json`` setting is ``"ExperimentalSettings.EnableAppBar": false`` with options ``true`` and ``false``. |
 +-------------------------------------------------------------------------------------------------------------------------------+
 
-Patch React DOM used by plugins
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-This setting enables the patching of the React DOM library when loading web app plugins so that the plugin uses the version matching the web app. This should only be needed temporarily after upgrading to Mattermost v7.7 for plugins that have not been updated yet. Changes to this setting require a server restart before taking effect.
-
-See the `Important Upgrade Notes <https://docs.mattermost.com/upgrade/important-upgrade-notes.html>`__ for more information.
-
-**True**: Web app plugins that package their own version of React DOM are patched to instead use the version of React DOM provided by the web app.
-
-**False**: Web app plugins are loaded as normal.
-
-+------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"PatchPluginsReactDOM": false`` with options ``true`` and ``false``. |
-+------------------------------------------------------------------------------------------------------------------+
-
 Delay channel autocomplete
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
