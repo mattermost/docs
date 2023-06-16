@@ -39,7 +39,7 @@ Search for message and files
 
     **Search for files**
 
-    File content search is available in Mattermost Server from v5.35 and in Mattermost Cloud. Select the **Search** field, select **Files**, then type your search criteria. 
+    File content search is available in Mattermost Server and in Mattermost Cloud. Select the **Search** field, select **Files**, then type your search criteria. 
 
       .. image:: ../images/search-files.png
         :alt: Use the Search field to serach for files attached to messages.

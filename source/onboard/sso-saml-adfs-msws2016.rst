@@ -92,7 +92,7 @@ Create claim rules
   - From the **LDAP Attribute column**, select ``Surname``. From the **Outgoing Claim Type**, type ``LastName``.
   - From the **LDAP Attribute column**, select ``SAM-Account-Name``. From the **Outgoing Claim Type**, type ``Username``.
 
-From Mattermost version 3.4, the ``FirstName`` and ``LastName`` attributes are optional.
+The ``FirstName`` and ``LastName`` attributes are optional.
 
 Select **Finish** to add the rule.
 
