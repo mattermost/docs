@@ -25,7 +25,6 @@ Latest Mattermost Mobile Apps releases:
  - Improved reaction time for the **Copy Text** option.
  - Improved behavior around "Maximum call stack size exceeded" errors.
  - Android: removed unneeded space after the list in the **Find Channels** screen.
- - Removed unneeded group calls that were appearing in the logs.
 
 ### Bug Fixes
  - Fixed an issue where **Search** and **Recent Mentions** did not highlight saved posts.
