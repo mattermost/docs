@@ -14,7 +14,7 @@ Prepare your Mattermost database
 
     Install and set up a PostgreSQL database for use by the Mattermost server. These instructions assume that the IP address of this server is ``10.10.10.1``.
 
-    1. Log in to the server that will host the database, and install PostgreSQL. See the `PostgreSQL <https://www.postgresql.org/download/linux/ubuntu/>`__ documentation for details. When the installation is complete, the PostgreSQL server is running, and a Linux user account called *postgres* has been created.
+    1. Log in to the server that will host the database, and install PostgreSQL. See the `PostgreSQL <https://www.postgresql.org/download/>`__ documentation for details. When the installation is complete, the PostgreSQL server is running, and a Linux user account called *postgres* has been created.
 
     2. Access PostgreSQL by running:
     
