@@ -53,7 +53,7 @@ Latest Mattermost Cloud releases:
  - Fixed an issue where posts were not fully sanitized for audit output when a link preview was included.
 
 ### Known Issues
- - Boards public links that follow the URL schema `/boards/public/...` will not work after this update. They can either be regenerated through the application, going to the board and using the "Share" button at the top right, or they can be obtained by replacing the `/boards/public/` part of the URL with `/plugins/focalboard/`.
+ - Boards public links that follow the URL schema `/boards/public/...` will not work after this update. They can either be regenerated through the application by going to the board and selecting the **Share** button at the top right, or they can be obtained by replacing the `/boards/public/` part of the URL with `/plugins/focalboard/`.
  - Using the "link" button puts the URL after ``[url]`` instead of replacing ``[url]`` when pasting [MM-53006](https://mattermost.atlassian.net/browse/MM-53006).
  - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
 
