@@ -2,12 +2,44 @@
 
 Latest Mattermost Mobile Apps releases:
 
-- [2.4.0 Release](#release)
-- [2.3.0 Release](#id1)
-- [2.2.0 Release](#id7)
-- [2.1.0 Release](#id12)
-- [2.0.1 Release](#id18)
-- [2.0.0 Release](#id23)
+- [2.5.0 Release](#release)
+- [2.4.0 Release](#id1)
+- [2.3.0 Release](#id6)
+- [2.2.0 Release](#id11)
+- [2.1.0 Release](#id16)
+- [2.0.1 Release](#id22)
+
+## 2.5.0 Release
+- Release Date: June 16, 2023
+- Server Versions Supported: Server v7.8.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
+
+### Compatibility
+ - **Upgrade to server version v7.8.0 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/upgrade/extended-support-release.html) (ESR) v7.1.0 has ended and upgrading to server ESR v7.8.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
+ - iPhone 5s devices and later with iOS 12.1+ is required.
+
+### Improvements
+ - Calls: Added call quality degradation logic and a banner to alert users when they are on unstable connections.
+ - Improved client error handling.
+ - Post editing now respects the ``message_source`` field.
+ - Improved reaction time for the **Copy Text** option.
+ - Improved behavior around "Maximum call stack size exceeded" errors.
+ - Android: removed unneeded space after the list in the **Find Channels** screen.
+
+### Bug Fixes
+ - Fixed an issue where **Search** and **Recent Mentions** did not highlight saved posts.
+ - Fixed the interactive dialog radio buttons style when using the light theme.
+ - Fixed a small issue when marking threads as read.
+ - Fixed an issue where the **Save** button sometimes did not show on the Edit Post screen.
+ - Fixed theming issues in the login screen.
+ - Fixed an issue where replies sometimes seemed to be attributed to the wrong person or the wrong thread.
+ - Ensured users mentioned in message attachments are loaded by the app.
+ - Fixed issues with user status synchronization.
+ - Fixed duplicated text for SSO login method when only SSO was available.
+
+### Known Issues
+ - Users are unable to adjust the font size via the OS font size setting.
+ - Some Google Pixel phones on Android 12+ might not continue past the login screen. This is a known issue with the OS, and the current workaround is to restart the device.
 
 ## 2.4.0 Release
 - Release Date: May 17, 2023

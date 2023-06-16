@@ -56,4 +56,4 @@ The lower half of the page shows a list of finished runs with metrics values. Yo
 Channel export
 ^^^^^^^^^^^^^^
 
-Exporting the contents of a channel requires the channel export plugin. See the `Channel Export plugin documentation <https://mattermost.gitbook.io/channel-export-plugin>`_ for more information.
+Exporting the contents of a channel requires the channel export plugin. See the `Channel Export plugin documentation <https://github.com/mattermost/mattermost-plugin-channel-export#readme>`_ for more information.
