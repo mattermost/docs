@@ -24,7 +24,7 @@ Latest Mattermost Cloud releases:
     - https://forum.mattermost.com/t/channel-header-plugin-changes/13551
 
 #### Administration
- - Boards has been moved from a product back to a plugin. Removed ``EnablePublicSharedBoards`` Boards product setting from the config and the **System Console**.
+ - Boards has been moved from a product back to a plugin and is now disabled by default. ``EnablePublicSharedBoards`` Boards product setting was removed from the config and the **System Console**.
  - Playbooks is again shipped as a prepackaged plugin, with version 1.36.1.
  - Removed setting the Channel Export and Apps plugins enabled by default.
  - Added a new ``ConfigurationWillBeSaved`` plugin hook which is invoked before the configuration object is committed to the backing store.
