@@ -632,33 +632,18 @@ This setting enables the Apps Bar and moves all Mattermost integration icons fro
 | This feature's ``config.json`` setting is ``"ExperimentalSettings.EnableAppBar": false`` with options ``true`` and ``false``. |
 +-------------------------------------------------------------------------------------------------------------------------------+
 
-Allow synchronized drafts
--------------------------
+Delay channel autocomplete
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This setting synchronizes draft messages across all supported Mattermost clients.
+This setting controls whether or not the channel link autocomplete triggers immediately when after a tilde is typed when composing a message. This setting makes the channel autocomplete, such as ``~town-square``, less obtrusive for people who use tildes ``~`` as punctuation. 
 
-**True**: **(Default)** Message drafts are saved on the server and may be accessed from different clients. Users may still disable server synchronization of draft messages by going to **Settings > Advanced Settings**. 
+**True**: The autocomplete appears after the user types a tilde followed by two or more characters. For example, typing ``~to`` will show the autocomplete, but typing ``~`` will not. 
 
-**False**: Draft messages are only stored locally on each user's device.
+**False**: **(Default)** The autocomplete appears immediately after the user types a tilde. For example, typing ``~`` will show the autocomplete.
 
-+------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ServiceSettings.AllowSyncedDrafts": true`` with options ``true`` and ``false``. |
-+------------------------------------------------------------------------------------------------------------------------------+
-
-Patch React DOM used by plugins
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-This setting enables the patching of the React DOM library when loading web app plugins so that the plugin uses the version matching the web app. This should only be needed temporarily after upgrading to Mattermost v7.7 for plugins that have not been updated yet. Changes to this setting require a server restart before taking effect.
-
-See the `Important Upgrade Notes <https://docs.mattermost.com/upgrade/important-upgrade-notes.html>`__ for more information.
-
-**True**: Web app plugins that package their own version of React DOM are patched to instead use the version of React DOM provided by the web app.
-
-**False**: Web app plugins are loaded as normal.
-
-+------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"PatchPluginsReactDOM": false`` with options ``true`` and ``false``. |
-+------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ExperimentalSettings.DelayChannelAutocomplete": false`` with options ``true`` and ``false``. |
++-------------------------------------------------------------------------------------------------------------------------------------------+
 
 Disable data refetching on browser refocus
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
