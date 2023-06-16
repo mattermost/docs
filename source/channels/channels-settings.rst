@@ -18,7 +18,7 @@ You can customize your Channels experience in the following ways in **Settings**
 Notifications
 -------------
 
-Settings to configure desktop notifications, desktop notification sounds, email notifications, mobile push notifications, and words that trigger mentions.
+Settings to configure desktop notifications and sounds, email notifications, mobile push notifications, words that trigger mentions, and automatic direct message replies.
 
 Desktop notifications
 ~~~~~~~~~~~~~~~~~~~~~
@@ -30,7 +30,7 @@ Send desktop notifications
 
 Choose what activity triggers a desktop notification. This setting applies globally, but this preference is customizable for each channel from the channel name drop-down menu. Desktop notifications are available on Chrome, Edge, Firefox, and Safari.
 
-When `desktop app <https://mattermost.com/apps>`__ notifications are set to "Only for mentions and direct messages":
+When `desktop app <https://mattermost.com/apps>`__ notifications are set to **Only for mentions and direct messages**, notifications trigger as follows:
 
 - An empty red circle is displayed over the upper right corner of the Mattermost dock icon when any message without an at-mention is received. 
 - A solid red circle with a post count is displayed when a message with an at-mention is received.
@@ -39,7 +39,7 @@ When `desktop app <https://mattermost.com/apps>`__ notifications are set to "Onl
 Notification sound
 ^^^^^^^^^^^^^^^^^^
 
-Notification sounds fire for any activity that would trigger a desktop notification. Notification sounds are available on Chrome, Edge, Firefox, and Safari in addition to the Mattermost Desktop App.
+When desktop app notifications are set to **For all activity** or **Only for mentions and direct messages**, you can configure Mattermost to notify you using a sound. Chooose from one of 6 preset notification sounds. Notification sounds are available on Chrome, Edge, Firefox, and Safari in addition to the Mattermost Desktop App.
 
 Email notifications
 ~~~~~~~~~~~~~~~~~~~
