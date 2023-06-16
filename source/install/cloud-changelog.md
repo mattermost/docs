@@ -49,7 +49,7 @@ Latest Mattermost Cloud releases:
  - Fixed an issue where post reactions disappeared when the search sidebar was open.
  - Fixed an issue with broken "medical_symbol", "male_sign", and "female_sign" emojis.
  - Fixed a panic where a JSON null value was passed as a channel update.
- - Fixed an issue where the draft counter badge remained in case of a deleted parent post and its subsequent removal.
+ - Fixed an issue where the draft counter badge remained in cases where a deleted parent post was removed.
  - Fixed an issue where posts were not fully sanitized for audit output when a link preview was included.
 
 ### Known Issues
