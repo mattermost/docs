@@ -34,7 +34,7 @@ Latest Mattermost Cloud releases:
  - New flags were added to the database migrate command as following:
 
     - ``auto-recover``: If the migration plan receives an error during migrations, this command will try to rollback migrations already applied within the plan. This option is not recommended to be added without reviewing migration plan. You can review the plan by combining ``--save-plan`` and ``--dry-run`` flags.
-    - ``save-plan``: The plan for the migration will be saved into the file store so that it can be used for reviewing the plan or to be used for downgrading
+    - ``save-plan``: The plan for the migration will be saved into the file store so that it can be used for reviewing the plan or to be used for downgrading.
     - ``dry-run``: Does not apply the migrations, but it validates how the migration would run with the given conditions.
 
  - A new database subcommand "downgrade" was added to be able to rollback database migrations. The command either requires an update plan to rollback, or comma separated version numbers.
@@ -47,7 +47,7 @@ Latest Mattermost Cloud releases:
 ### Bug Fixes
  - Fixed the **New Messages** line overlapping date lines in the post list.
  - Fixed an issue where post reactions disappeared when the search sidebar was open.
- - Fixed an issue with broken "medical_symbol", "male_sign" and "female_sign" emojis.
+ - Fixed an issue with broken "medical_symbol", "male_sign", and "female_sign" emojis.
  - Fixed a panic where a JSON null value was passed as a channel update.
  - Fixed an issue where the draft counter badge remained in case of a deleted parent post and its subsequent removal.
  - Fixed an issue where posts were not fully sanitized for audit output when a link preview was included.
