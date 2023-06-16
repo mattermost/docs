@@ -62,7 +62,7 @@ Data portability
 ^^^^^^^^^^^^^^^^^
 
 - **Data Import:** Use the `bulk loading tool </onboard/bulk-loading-data.html>`__ to migrate data from an existing messaging system, or for pre-populating a new installation with data. `Review this guide </onboard/migrating-from-hipchat-to-mattermost.html>`__ which summarizes the different approaches and meets the `Right to Data Portability <https://gdpr-info.eu/art-20-gdpr/>`__ principle.
-- **Data Export:** Use `compliance exports </comply/compliance-export.html>`__ to export conversations from public, private and direct message channels in XML or EML format. Those in Team Edition can export conversations directly from the database, both `in MySQL <https://www.itworld.com/article/2833078/it-management/3-ways-to-import-and-export-a-mysql-database.html>`__ and `in PostgreSQL <https://www.a2hosting.com/kb/developer-corner/postgresql/import-and-export-a-postgresql-database>`__.
+- **Data Export:** Use `compliance exports </comply/compliance-export.html>`__ to export conversations from public, private and direct message channels in XML or EML format. Those in Team Edition can export conversations directly from the database, both `in PostgreSQL <https://www.a2hosting.com/kb/developer-corner/postgresql/import-and-export-a-postgresql-database>`__ and `in MySQL <https://www.itworld.com/article/2833078/it-management/3-ways-to-import-and-export-a-mysql-database.html>`__.
 
 Accessibility compliance
 -------------------------
