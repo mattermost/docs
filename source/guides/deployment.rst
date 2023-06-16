@@ -10,6 +10,7 @@ Learn how to install, deploy, and scale Mattermost for teams and organizations o
     :maxdepth: 1
     :hidden:
 
+    Prepare your Mattermost database </install/prepare-mattermost-database>
     Deploy on Ubuntu </install/install-ubuntu>
     Deploy using Docker </install/install-docker>
     Deploy with a tarball </install/install-tar>
@@ -17,6 +18,7 @@ Learn how to install, deploy, and scale Mattermost for teams and organizations o
     Deploy using Kubernetes </install/install-kubernetes>
     Deploy on Red Hat </install/install-rhel-8>
 
+* :doc:`Prepare your Mattermost database </install/prepare-mattermost-database>` - Learn how to prepare and configure a database for Mattermost.
 * :doc:`Deploy on Ubuntu </install/install-ubuntu>` - Signed packages direct from Mattermost featuring a single command for install and upgrades.
 * `Deploy using Docker </install/install-docker.html#deploy-mattermost-on-docker-for-production-use>`__ - The fastest way to try Mattermost and a great single server installation option.
 * :doc:`Deploy with a tarball </install/install-tar>` - Support for any Linux distribution.
@@ -38,7 +40,6 @@ Prepare for your Mattermost deployment
     :hidden:
 
     Software and hardware requirements </install/software-hardware-requirements>
-    Prepare your Mattermost database </install/prepare-mattermost-database>
     About the Mattermost Kubernetes Operator </install/mattermost-kubernetes-operator>
     Administrator tasks </getting-started/admin-onboarding-tasks>
     Architecture overview </getting-started/architecture-overview>
@@ -49,7 +50,6 @@ Prepare for your Mattermost deployment
 These guides will help you prepare for your Mattermost deployment.
 
 * :doc:`Software and hardware requirements </install/software-hardware-requirements>` - Confirm software and hardware requirements for your Mattermost deployment.
-* :doc:`Prepare your Mattermost database </install/prepare-mattermost-database>` - Learn how to prepare and configure a database for Mattermost.
 * :doc:`About the Mattermost Kubernetes Operator </install/mattermost-kubernetes-operator>` - Learn more about the Mattermost Kubernetes Operator.
 * :doc:`Administrator tasks </getting-started/admin-onboarding-tasks>` - Learn about the standard configurations and settings you’ll encounter.
 * :doc:`Architecture overview </getting-started/architecture-overview>` - Learn the basics of user authentication, notifications, data management services, network connectivity, and high availability.
