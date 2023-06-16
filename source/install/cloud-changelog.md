@@ -13,6 +13,11 @@ Latest Mattermost Cloud releases:
 
 ## Release 2023-06-29
 
+### Highlights
+ - Insights has been disabled for all new instances and for existing servers that upgrade to v8.0. The Insights feature flag can be enabled with environment variables via `MM_FEATUREFLAGS_INSIGHTSENABLED=true`. See more details in [this forum post](https://forum.mattermost.com/t/proposal-to-revise-our-insights-feature-due-to-known-performance-issues/16212) on why Insights has been disabled.
+ - Boards has been moved from a product back to a plugin and is now disabled by default. ``EnablePublicSharedBoards`` Boards product setting was removed from the config and the **System Console**.
+ - The Channel Export and Apps plugins are now disabled by default.
+
 ### Improvements
 
 #### User Interface (UI)
@@ -24,11 +29,8 @@ Latest Mattermost Cloud releases:
     - https://forum.mattermost.com/t/channel-header-plugin-changes/13551
 
 #### Administration
- - Boards has been moved from a product back to a plugin and is now disabled by default. ``EnablePublicSharedBoards`` Boards product setting was removed from the config and the **System Console**.
  - Playbooks is again shipped as a prepackaged plugin, with version 1.36.1.
- - Removed setting the Channel Export and Apps plugins enabled by default.
  - Added a new ``ConfigurationWillBeSaved`` plugin hook which is invoked before the configuration object is committed to the backing store.
- - Insights has been disabled for all new instances and for existing servers that upgrade to v8.0. The Insights feature flag can be enabled with environment variables via `MM_FEATUREFLAGS_INSIGHTSENABLED=true`.
  - Admins can now specify index names to ignore while purging indexes from Elasticsearch with the ``ElasticsearchSettings.IgnoredPurgeIndexes`` setting.
  - Added an option to use the German HPNS notification proxy.
  - New flags were added to the database migrate command as following:
