@@ -199,20 +199,19 @@ Access the following configuration settings in the System Console by going to **
 .. config:setting:: plugins-agendaenable
   :displayname: Enable plugin (Plugins - Agenda)
   :systemconsole: Plugins > Agenda
-  :configjson: 
-  :environment: 
+  :configjson: N/A
+  :environment: N/A
 
   - **true**: Enables the Agenda plugin on your Mattermost server.
-  - **false**: Disables the Agenda plugin on your Mattermost server.
+  - **false**: (Default) Disables the Agenda plugin on your Mattermost server.
 
 Enable plugin
 ~~~~~~~~~~~~~
 
-+--------------------------------------------------------------------+--------------------------------------------+
-| - **true**: Enables the Agenda plugin on your Mattermost server.   | - System Config path: **Plugins > Agenda** |
-| - **false**: Disables the Agenda plugin on your Mattermost server. | - ``config.json`` setting:                 |
-|                                                                    | - Environment variable:                    |
-+--------------------------------------------------------------------+--------------------------------------------+
++------------------------------------------------------------------------------+--------------------------------------------+
+| - **true**: Enables the Agenda plugin on your Mattermost server.             | - System Config path: **Plugins > Agenda** |
+| - **false**: (Default) Disables the Agenda plugin on your Mattermost server. |                                            |
++------------------------------------------------------------------------------+--------------------------------------------+
 
 ----
 
@@ -231,51 +230,49 @@ Access the following configuration settings in the System Console by going to **
 .. config:setting:: plugins-antivirusenable
   :displayname: Enable plugin (Plugins - Antivirus)
   :systemconsole: Plugins > Antivirus
-  :configjson: 
-  :environment: 
+  :configjson: N/A
+  :environment: N/A
 
   - **true**: Enables the Antivirus plugin on your Mattermost server.
-  - **false**: Disables the Antivirus plugin on your Mattermost server.
+  - **false**: (Default) Disables the Antivirus plugin on your Mattermost server.
 
 Enable plugin
 ~~~~~~~~~~~~~
 
-+-----------------------------------------------------------------------+-----------------------------------------------+
-| - **true**: Enables the Antivirus plugin on your Mattermost server.   | - System Config path: **Plugins > Antivirus** |
-| - **false**: Disables the Antivirus plugin on your Mattermost server. | - ``config.json`` setting:                    |
-|                                                                       | - Environment variable:                       |
-+-----------------------------------------------------------------------+-----------------------------------------------+
++---------------------------------------------------------------------------------+-----------------------------------------------+
+| - **true**: Enables the Antivirus plugin on your Mattermost server.             | - System Config path: **Plugins > Antivirus** |
+| - **false**: (Default) Disables the Antivirus plugin on your Mattermost server. |                                               |
+|                                                                                 |                                               |
++---------------------------------------------------------------------------------+-----------------------------------------------+
 
 .. config:setting:: plugins-antivirusclamavhostport
   :displayname: ClamAV - host and port (Plugins - Antivirus)
   :systemconsole: Plugins > Antivirus
-  :configjson: 
-  :environment: 
+  :configjson: N/A
+  :environment: N/A
   :description: Specify the hostname and port to connect to the ClamAV server.
 
 ClamAV - host and port
 ~~~~~~~~~~~~~~~~~~~~~~
 
 +---------------------------------------------------------------------+-----------------------------------------------+
-| Sets the **hostname** and **port** to connect to the ClamAV server. | - System Config path: **Plugins > Antivirus** |
-|                                                                     | - ``config.json`` setting:                    |
-|                                                                     | - Environment variable:                       |
+| Sets the **hostname** and **port** to connect to the ClamAV server  | - System Config path: **Plugins > Antivirus** |
+| when the Antivirus plugin is enabled.                               |                                               |
 +---------------------------------------------------------------------+-----------------------------------------------+
 
 .. config:setting:: plugins-antivirusscantimeout
   :displayname: Scan timeout (Plugins - Antivirus)
   :systemconsole: Plugins > Antivirus
-  :configjson: 
-  :environment: 
+  :configjson: N/A
+  :environment: N/A
   :description: Specifies the length of time, in seconds, before the virus scan times out.
 
 Scan timeout (seconds)
 ~~~~~~~~~~~~~~~~~~~~~~
 
 +-----------------------------------------------------------------------+-----------------------------------------------+
-| Sets the length of time, in seconds, before the virus scan times out. | - System Config path: **Plugins > Antivirus** |
-|                                                                       | - ``config.json`` setting:                    |
-|                                                                       | - Environment variable:                       |
+| Sets the length of time, in seconds, before the virus scan times out  | - System Config path: **Plugins > Antivirus** |
+| when the Antivirus plugin is enabled.                                 |                                               |
 +-----------------------------------------------------------------------+-----------------------------------------------+
 
 ----
@@ -293,20 +290,20 @@ To create your own Mattermost App, see the `Mattermost Apps <https://developers.
 .. config:setting:: plugins-appsenable
   :displayname: Enable plugin (Plugins - Apps)
   :systemconsole: Plugins > Apps
-  :configjson: 
-  :environment:
+  :configjson: N/A
+  :environment: N/A
 
   - **true**: Enables the Apps plugin on your Mattermost server.
-  - **false**: Disables the Apps plugin on your Mattermost server.
+  - **false**: (Default) Disables the Apps plugin on your Mattermost server.
 
 Enable plugin
 ~~~~~~~~~~~~~
 
-+------------------------------------------------------------------+-------------------------------------------------------------+
-| - **true**: Enables the Apps plugin on your Mattermost server.   | - System Config path: **Plugins > Apps**                    |
-| - **false**: Disables the Apps plugin on your Mattermost server. | - ``config.json`` setting:                                  |
-|                                                                  | - Environment variable:                                     |
-+------------------------------------------------------------------+-------------------------------------------------------------+
++----------------------------------------------------------------------------+-------------------------------------------------------------+
+| - **true**: Enables the Apps plugin on your Mattermost server.             | - System Config path: **Plugins > Apps**                    |
+| - **false**: (Default) Disables the Apps plugin on your Mattermost server. |                                                             |
+|                                                                            |                                                             |
++----------------------------------------------------------------------------+-------------------------------------------------------------+
 
 ----
 
@@ -323,71 +320,69 @@ Access the following configuration settings in the System Console by going to **
 .. config:setting:: plugins-autolinkenable
   :displayname: Enable plugin (Plugins - Autolink)
   :systemconsole: Plugins > Autolink
-  :configjson:
-  :environment:
+  :configjson: N/A
+  :environment: N/A
 
   - **true**: Enables the Autolink plugin on your Mattermost server.
-  - **false**: Disables the Autolink plugin on your Mattermost server.
+  - **false**: (Default) Disables the Autolink plugin on your Mattermost server.
 
 Enable plugin
 ~~~~~~~~~~~~~
 
-+----------------------------------------------------------------------+----------------------------------------------+
-| - **true**: Enables the Autolink plugin on your Mattermost server.   | - System Config path: **Plugins > Autolink** |
-| - **false**: Disables the Autolink plugin on your Mattermost server. | - ``config.json`` setting:                   |
-|                                                                      | - Environment variable:                      |
-+----------------------------------------------------------------------+----------------------------------------------+
++--------------------------------------------------------------------------------+----------------------------------------------+
+| - **true**: Enables the Autolink plugin on your Mattermost server.             | - System Config path: **Plugins > Autolink** |
+| - **false**: (Default) Disables the Autolink plugin on your Mattermost server. |                                              |
+|                                                                                |                                              |
++--------------------------------------------------------------------------------+----------------------------------------------+
 
 .. config:setting:: plugins-autolinkenableadmin
   :displayname: Enable administration with /autolink command (Plugins - Autolink)
   :systemconsole: Plugins > Autolink
-  :configjson: 
-  :environment:
+  :configjson: N/A
+  :environment: N/A
 
   - **true**: Enables the ability to configure the Apps plugin using the ``/autolink`` slash command.
-  - **false**: Disables the ability to use the slash command to configure the plugin.
+  - **false**: (Default) Disables the ability to use the slash command to configure the plugin.
 
 Enable administration with /autolink command
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+-----------------------------------------------------------------------------------------------------+----------------------------------------------+
-| - **true**: Enables administration of the Autolinks plugin using the ``/autolink`` slash command.   | - System Config path: **Plugins > Autolink** |
-| - **false**: Disables administration of the Autolinks plugin using the ``/autolink`` slash command. | - ``config.json`` setting:                   |
-|                                                                                                     | - Environment variable:                      |
-+-----------------------------------------------------------------------------------------------------+----------------------------------------------+
++---------------------------------------------------------------------------------------------------------------+----------------------------------------------+
+| - **true**: Enables administration of the Autolinks plugin using the ``/autolink`` slash command.             | - System Config path: **Plugins > Autolink** |
+| - **false**: (Default) Disables administration of the Autolinks plugin using the ``/autolink`` slash command. |                                              |
++---------------------------------------------------------------------------------------------------------------+----------------------------------------------+
 
 .. config:setting:: plugins-autolinkapplytoupdatedposts
   :displayname: Apply plugin to updated posts as well as new posts (Plugins - Autolink)
   :systemconsole: Plugins > Autolink
-  :configjson: 
-  :environment:
+  :configjson: N/A
+  :environment: N/A
 
   - **true**: Applies the plugin to updated posts as well as new posts.
-  - **false**: Applies the plugin to new posts only.
+  - **false**: (Default) Applies the plugin to new posts only.
 
 Apply plugin to updated posts as well as new posts
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +-----------------------------------------------------------------------+----------------------------------------------+
 | - **true**: Applies the plugin to updated posts as well as new posts. | - System Config path: **Plugins > Autolink** |
-| - **false**: Applies the plugin to new posts only.                    | - ``config.json`` setting:                   |
-|                                                                       | - Environment variable:                      |
+| - **false**: (Default) Applies the plugin to new posts only.          |                                              |
+|                                                                       |                                              |
 +-----------------------------------------------------------------------+----------------------------------------------+
 
 .. config:setting:: plugins-autolinkadminuserids
   :displayname: Admin user IDs (Plugins - Autolink)
   :systemconsole: Plugins > Autolink
-  :configjson:
-  :environment:
+  :configjson: N/A
+  :environment: N/A
   :description: Specify users authorized to administer the plugin in addition to System Admins. Separate multiple user IDs with commas.
 
 Admin user IDs
 ~~~~~~~~~~~~~~
 
 +-----------------------------------------------------------------------------------------+----------------------------------------------+
-| Use this setting to authorize non-System Admin users to administer the Autolink plugin. | - System Config path: **Plugins > Autolink** |
-|                                                                                         | - ``config.json`` setting:                   |
-| Separate multiple user IDs with commas.                                                 | - Environment variable:                      |
+| Use this setting to authorize non-System Admin users to administer the Autolink plugin  | - System Config path: **Plugins > Autolink** |
+| when the Autolink plugin is enabled. Separate multiple user IDs with commas.            |                                              |
 +-----------------------------------------------------------------------------------------+----------------------------------------------+
 
 .. tip::
@@ -409,26 +404,26 @@ Access the following configuration settings in the System Console by going to **
 .. config:setting:: plugins-awssnsenable
   :displayname: Enable plugin (Plugins - AWS SNS)
   :systemconsole: Plugins > AWS SNS
-  :configjson:
-  :environment:
+  :configjson: N/A
+  :environment: N/A
 
   - **true**: Enables the AWS SNS plugin on your Mattermost server.
-  - **false**: Disables the AWS SNS plugin on your Mattermost server.
+  - **false**: (Default) Disables the AWS SNS plugin on your Mattermost server.
 
 Enable plugin
 ~~~~~~~~~~~~~
 
-+---------------------------------------------------------------------+---------------------------------------------+
-| - **true**: Enables the AWS SNS plugin on your Mattermost server.   | - System Config path: **Plugins > AWS SNS** |
-| - **false**: Disables the AWS SNS plugin on your Mattermost server. | - ``config.json`` setting:                  |
-|                                                                     | - Environment variable:                     |
-+---------------------------------------------------------------------+---------------------------------------------+
++-------------------------------------------------------------------------------+---------------------------------------------+
+| - **true**: Enables the AWS SNS plugin on your Mattermost server.             | - System Config path: **Plugins > AWS SNS** |
+| - **false**: (Default) Disables the AWS SNS plugin on your Mattermost server. |                                             |
+|                                                                               |                                             |
++-------------------------------------------------------------------------------+---------------------------------------------+
 
 .. config:setting:: plugins-awssnsnotificationchannel
   :displayname: Channel to send notifications to (Plugins - AWS SNS)
   :systemconsole: Plugins > AWS SNS
-  :configjson:
-  :environment:
+  :configjson: N/A
+  :environment: N/A
   :description: Use this setting to specify the channel that will receive AWS SNS notifications in the format, **teamname,channelname**. 
 
 Channel to send notifications to
@@ -436,8 +431,8 @@ Channel to send notifications to
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------+
 | Use this setting to specify the channel that will receive AWS SNS notifications by entering the team name and channel name as: **teamname,channelname**. | - System Config path: **Plugins > AWS SNS** |
-|                                                                                                                                                          | - ``config.json`` setting:                  |
-| For example, if the channel URL is https://example.com/**myteam**/channels/**mychannel**, enter: **myteam,mychannel**.                                   | - Environment variable:                     |
+|                                                                                                                                                          |                                             |
+| For example, if the channel URL is https://example.com/**myteam**/channels/**mychannel**, enter: **myteam,mychannel**.                                   |                                             |
 |                                                                                                                                                          |                                             |
 | If the channel does not exist, the plugin creates the channel for you.                                                                                   |                                             |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------+
@@ -445,17 +440,16 @@ Channel to send notifications to
 .. config:setting:: plugins-awssnsauthorizeduserids
   :displayname: Authorized user IDs (Plugins - AWS SNS)
   :systemconsole: Plugins > AWS SNS
-  :configjson:
-  :environment:
+  :configjson: N/A
+  :environment: N/A
   :description: Specify users authorized to accept AWS SNS subscriptions to a Mattermost channel. Separate multiple user IDs with commas.
 
 Authorized user IDs
 ~~~~~~~~~~~~~~~~~~~
 
 +----------------------------------------------------------------------------------------------+---------------------------------------------+
-| Use this setting to authorize users to accept AWS SNS subscriptions to a Mattermost channel. | - System Config path: **Plugins > AWS SNS** |
-|                                                                                              | - ``config.json`` setting:                  |
-| Separate multiple user IDs with commas.                                                      | - Environment variable:                     |
+| Use this setting to authorize users to accept AWS SNS subscriptions to a Mattermost channel  | - System Config path: **Plugins > AWS SNS** |
+| when the AWS SNS plugin is enabled. Separate multiple user IDs with commas.                  |                                             |
 +----------------------------------------------------------------------------------------------+---------------------------------------------+
 
 .. tip::
@@ -465,17 +459,16 @@ Authorized user IDs
 .. config:setting:: plugins-awssnstoken
   :displayname: Token (Plugins - AWS SNS)
   :systemconsole: Plugins > AWS SNS
-  :configjson:
-  :environment:
+  :configjson: N/A
+  :environment: N/A
   :description: Generate a token to validate incoming requests from AWS SNS by selecting **Regenerate**.
 
 Token
 ~~~~~
 
 +------------------------------------------------------------------------------------------+---------------------------------------------+
-| Generate a token to validate incoming requests from AWS SNS by selecting **Regenerate**. | - System Config path: **Plugins > AWS SNS** |
-|                                                                                          | - ``config.json`` setting:                  |
-|                                                                                          | - Environment variable:                     |
+| Generate a token to validate incoming requests from AWS SNS by selecting **Regenerate**  | - System Config path: **Plugins > AWS SNS** |
+| when the AWS SNS plugin is enabled.                                                      |                                             |
 +------------------------------------------------------------------------------------------+---------------------------------------------+
 
 ----
@@ -494,17 +487,17 @@ Access the following configuration settings in the System Console by going to **
   :configjson: PluginSettings.PluginStates.com.mattermost.calls.Enable
   :environment: MM_PLUGINSETTINGS_PLUGINSTATES_COM_MATTERMOST_CALLS
 
-  - **true**: Enables the calls plugin on your Mattermost workspace.
+  - **true**: (Default) Enables the calls plugin on your Mattermost workspace.
   - **false**: Disables the calls plugin on your Mattermost workspace.
 
 Enable plugin
 ~~~~~~~~~~~~~
 
-+----------------------------------------------------------------------+----------------------------------------------------------------------------------------+
-| - **true**: Enables the Calls plugin on your Mattermost workspace.   | - System Config path: **Plugins > Calls**                                              |
-| - **false**: Disables the Calls plugin on your Mattermost workspace. | - ``config.json`` setting: ``PluginSettings.PluginStates.com.mattermost.calls.Enable`` |
-|                                                                      | - Environment variable: ``MM_PLUGINSETTINGS_PLUGINSTATES_COM_MATTERMOST_CALLS``        |
-+----------------------------------------------------------------------+----------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+
+| - **true**: (Default) Enables the Calls plugin on your Mattermost workspace.   | - System Config path: **Plugins > Calls**                                              |
+| - **false**: Disables the Calls plugin on your Mattermost workspace.           | - ``config.json`` setting: ``PluginSettings.PluginStates.com.mattermost.calls.Enable`` |
+|                                                                                | - Environment variable: ``MM_PLUGINSETTINGS_PLUGINSTATES_COM_MATTERMOST_CALLS``        |
++--------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+
 
 .. config:setting:: plugins-callsrtcserveraddress
   :displayname: RTC server port (Plugins - Calls)
@@ -571,7 +564,6 @@ Enable on specific channels
 | - **true**: Channel admins can enable or disable calls on specific channels. Participants in DMs/GMs can also enable or disable calls. | - System Config path: **Plugins > Calls**                                                                  |
 | - **false**: Only System Admins can enable or disable calls on specific channels.                                                      | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.calls.allowenablecalls``                |
 |                                                                                                                                        | - Environment variable: N/A                                                                                |
-|                                                                                                                                        |                                                                                                            |
 +----------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: plugins-testmode
@@ -593,32 +585,9 @@ Test mode
 | - **true**: Only System Admins can start calls in channels.                                                                                | - System Config path: **Plugins > Calls**                                                                                                          |
 | - **false**: All team members can start calls in channels.                                                                                 | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.calls.defaultenabled``                                                          |
 |                                                                                                                                            | - Environment variable: N/A                                                                                                                        |
-|                                                                                                                                            |                                                                                                                                                    |
 +--------------------------------------------------------------+-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
 | **Note**: Use this setting to confirm calls work as expected. When **true**, users attempting to start calls are prompted to contact System Admins. System Admins are prompted to confirm that calls are working as expected before switching to live mode.                                     |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-.. config:setting:: plugins-callsmaxcallparticipants
-  :displayname: Max call participants (Plugins - Calls)
-  :systemconsole: Plugins > Calls
-  :configjson: PluginSettings.Plugins.com.mattermost.calls.maxcallparticipants
-  :environment: N/A
-  :description: The maximum number of participants that can join a single call. Default value is **0** (unlimited). The maximum recommended setting is 200.
-
-Max call participants
-~~~~~~~~~~~~~~~~~~~~~
-
-.. include:: ../_static/badges/selfhosted-only.rst
-  :start-after: :nosearch:
-
-+-----------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+
-| This setting limits the number of participants that can join a single call. | - System Config path: **Plugins > Calls**                                                                     |
-|                                                                             | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.calls.maxcallparticipants``                |
-|                                                                             | - Environment variable: N/A                                                                                   |
-| Default is **0** (no limit).                                                |                                                                                                               |
-+-----------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+
-| **Note**: This setting is optional, but the recommended maximum number of participants is **200**.                                                                                          |
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: plugins-callsicehost
   :displayname: ICE host override (Plugins - Calls)
@@ -637,13 +606,14 @@ ICE host override
 | This setting overrides the host advertised to clients when connecting to calls.                                                                                          | - System Config path: **Plugins > Calls**                                                                                                                                                                                                                                                      |
 |                                                                                                                                                                          | - ``config.json`` setting:  ``PluginSettings.Plugins.com.mattermost.calls.icehostoverride``                                                                                                                                                                                                    |
 | This is an optional field. Changing this setting requires a plugin restart to take effect.                                                                               |                                                                                                                                                                                                                                                                                                |
-|                                                                                                                                                                          |                                                                                                                                                                                                                                                                                                |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | **Note**:                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 |   - This setting is only applicable when not running calls through the standalone ``rtcd`` service.                                                                                                                                                                                                                                                                                                                                                                       |
 |   - Depending on the network infrastructure (e.g. instance behind a NAT device) it may be necessary to set this field to the client facing external IP for clients to connect. When empty or unset, the RTC service will attempt to find the instance's public IP through STUN.                                                                                                                                                                                           |
 |   - A hostname (e.g. domain name) can be specified in this setting, but an IP address will be passed to clients. This means that a DNS resolution happens on the Mattermost instance which could result in a different IP address from the one the clients would see, causing connectivity to fail. When in doubt, we recommend using an IP address directly or confirming that the resolution on the host side reflects the one on the client.                           |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. |ice_host_override_link| replace:: `ICE Host Override <plugins-configuration-settings.html#ice-host-override>`__
 
 .. config:setting:: plugins-callsrtcdserviceurl
   :displayname: RTCD service URL (Plugins - Calls)
@@ -667,6 +637,28 @@ RTCD service URL
 | This is an optional field. Changing this setting requires a plugin restart to take effect.                    |                                                                                                         |
 +---------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+
 
+.. config:setting:: plugins-callsmaxcallparticipants
+  :displayname: Max call participants (Plugins - Calls)
+  :systemconsole: Plugins > Calls
+  :configjson: PluginSettings.Plugins.com.mattermost.calls.maxcallparticipants
+  :environment: N/A
+  :description: The maximum number of participants that can join a single call. Default value is **0** (unlimited). The maximum recommended setting is 200.
+
+Max call participants
+~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: ../_static/badges/selfhosted-only.rst
+  :start-after: :nosearch:
+
++-----------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+
+| This setting limits the number of participants that can join a single call. | - System Config path: **Plugins > Calls**                                                                     |
+|                                                                             | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.calls.maxcallparticipants``                |
+|                                                                             | - Environment variable: N/A                                                                                   |
+| Default is **0** (no limit).                                                |                                                                                                               |
++-----------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+
+| **Note**: This setting is optional, but the recommended maximum number of participants is **200**.                                                                                          |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 .. config:setting:: plugins-callsiceservers
   :displayname: ICE server configurations (Plugins - Calls)
   :systemconsole: Plugins > Calls
@@ -680,15 +672,23 @@ ICE servers configurations
 .. include:: ../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
-+-------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+
-| This setting stores a list of ICE servers (STUN/TURN) in JSON format to be used by the service. | - System Config path: **Plugins > Calls**                                                                   |
-|                                                                                                 | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.calls.iceserversconfigs``                |
-|                                                                                                 | - Environment variable: N/A                                                                                 |
-| This is an optional field. Changing this setting may require a plugin restart to take effect.   |                                                                                                             |
-|                                                                                                 |                                                                                                             |
-| Default is ``[{"urls": ["stun:stun.global.calls.mattermost.com:3478"]}]``                       |                                                                                                             |
-+-------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+
- 
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+| This setting stores a list of ICE servers (STUN/TURN) in JSON format to be used by the service.                                                                                                                           | - System Config path: **Plugins > Calls**                                                        |
+|                                                                                                                                                                                                                           | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.calls.iceserversconfigs``     |
+|                                                                                                                                                                                                                           | - Environment variable: N/A                                                                      |
+| This is an optional field. Changing this setting may require a plugin restart to take effect.                                                                                                                             |                                                                                                  |
+|                                                                                                                                                                                                                           |                                                                                                  |
+| Default is ``[{"urls": ["stun:stun.global.calls.mattermost.com:3478"]}]``                                                                                                                                                 |                                                                                                  |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+| **Note**:                                                                                                                                                                                                                 |                                                                                                  |
+|                                                                                                                                                                                                                           |                                                                                                  |
+| - The configurations above, containing STUN and TURN servers, are sent to the clients and used to generate local candidates.                                                                                              |                                                                                                  |
+|                                                                                                                                                                                                                           |                                                                                                  |
+| - If hosting calls through the plugin (i.e. not using the |rtcd_service|) any configured STUN server may also be used to find the instance's public IP when none is provided through the |ice_host_override_link| option. |                                                                                                  |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+
+.. |rtcd_service| replace:: `rtcd service <calls-deployment.html#the-rtcd-service>`__
+
 **Example**
  
  .. code-block:: json
@@ -717,9 +717,10 @@ ICE servers configurations
 	    "urls": ["turn:turn.example.com:443"]
     }]
 
-+-----------------------------------------------------------------------------+-------------------------------------------------------+
-| **Note**: To get TURN generated credentials to work you must provide a secret through the *TURN static auth secret* setting below.  |
-+-------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Note**:                                                                                                                                                                     |
+| - To get TURN generated credentials to work you must provide a secret through the *TURN static auth secret* setting below.                                                    |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: plugins-callsturnauthsecret
   :displayname: TURN static auth secret (Plugins - Calls)
@@ -927,20 +928,20 @@ Access the following configuration settings in the System Console by going to **
 .. config:setting:: plugins-channelexportenable
   :displayname: Enable plugin (Plugins - Channel Export)
   :systemconsole: Plugins > Channel Export
-  :configjson: 
-  :environment: 
+  :configjson: N/A
+  :environment: N/A
 
   - **true**: Enables the Channel Export plugin on your Mattermost workspace.
-  - **false**: Disables the Channel Export plugin on your Mattermost workspace.
+  - **false**: (Default) Disables the Channel Export plugin on your Mattermost workspace.
 
 Enable Plugin
 ~~~~~~~~~~~~~
 
-+-------------------------------------------------------------------------------+----------------------------------------------------+
-| - **true**: Enables the Channel Export plugin on your Mattermost workspace.   | - System Config path: **Plugins > Channel Export** |
-| - **false**: Disables the Channel Export plugin on your Mattermost workspace. | - ``config.json`` setting:                         |
-|                                                                               | - Environment variable:                            |
-+-------------------------------------------------------------------------------+----------------------------------------------------+
++-----------------------------------------------------------------------------------------+----------------------------------------------------+
+| - **true**: Enables the Channel Export plugin on your Mattermost workspace.             | - System Config path: **Plugins > Channel Export** |
+| - **false**: (Default) Disables the Channel Export plugin on your Mattermost workspace. |                                                    |
+|                                                                                         |                                                    |
++-----------------------------------------------------------------------------------------+----------------------------------------------------+
 
 ----
 
@@ -955,51 +956,50 @@ Access the following configuration settings in the System Console by going to **
 .. config:setting:: plugins-demoenable
   :displayname: Enable plugin (Plugins - Demo)
   :systemconsole: Plugins > Demo Plugin
-  :configjson: 
-  :environment: 
+  :configjson: N/A
+  :environment: N/A
 
   - **true**: Enables the Demo plugin on your Mattermost workspace.
-  - **false**: Disables the Demo plugin on your Mattermost workspace.
+  - **false**: (Default) Disables the Demo plugin on your Mattermost workspace.
 
 Enable plugin
 ~~~~~~~~~~~~~
 
-+---------------------------------------------------------------------+-------------------------------------------------+
-| - **true**: Enables the Demo plugin on your Mattermost workspace.   | - System Config path: **Plugins > Demo Plugin** |
-| - **false**: Disables the Demo plugin on your Mattermost workspace. | - ``config.json`` setting:                      |
-|                                                                     | - Environment variable:                         |
-+---------------------------------------------------------------------+-------------------------------------------------+
++-------------------------------------------------------------------------------+-------------------------------------------------+
+| - **true**: Enables the Demo plugin on your Mattermost workspace.             | - System Config path: **Plugins > Demo Plugin** |
+| - **false**: (Default) Disables the Demo plugin on your Mattermost workspace. |                                                 |
++-------------------------------------------------------------------------------+-------------------------------------------------+
 
 .. config:setting:: plugins-demochannelname
   :displayname: Channel name (Plugins - Demo)
   :systemconsole: Plugins > Demo Plugin
-  :configjson: 
-  :environment: 
+  :configjson: N/A
+  :environment: N/A
   :description: Specify the channel to use as part of the demo plugin. If the specified channel does not exist, the plugin creates the channel for you.
 
 Channel name
 ~~~~~~~~~~~~
 
 +----------------------------------------------------------------------------------+-------------------------------------------------+
-| Specify the channel to use as part of the demo plugin.                           | - System Config path: **Plugins > Demo Plugin** |
-|                                                                                  | - ``config.json`` setting:                      |
-| If the specified channel does not exist, the plugin creates the channel for you. | - Environment variable:                         |
+| Specify the channel to use as part of the demo plugin, when enabled.             | - System Config path: **Plugins > Demo Plugin** |
+|                                                                                  |                                                 |
+| If the specified channel does not exist, the plugin creates the channel for you. |                                                 |
 +----------------------------------------------------------------------------------+-------------------------------------------------+
 
 .. config:setting:: plugins-demousername
   :displayname: Username (Plugins - Demo)
   :systemconsole: Plugins > Demo Plugin
-  :configjson: 
-  :environment: 
+  :configjson: N/A
+  :environment: N/A
   :description: Specify the user to use as part of the demo plugin. If the specified user does not exist, the plugin creates the user for you.
 
 Username
 ~~~~~~~~
 
 +----------------------------------------------------------------------------+-------------------------------------------------+
-| Specify the user for the demo plugin.                                      | - System Config path: **Plugins > Demo Plugin** |
-|                                                                            | - ``config.json`` setting:                      |
-| If the specified user does not exist, the plugin creates the user for you. | - Environment variable:                         |
+| Specify the user for the demo plugin, when enabled.                        | - System Config path: **Plugins > Demo Plugin** |
+|                                                                            |                                                 |
+| If the specified user does not exist, the plugin creates the user for you. |                                                 |
 +----------------------------------------------------------------------------+-------------------------------------------------+
 
 ----
@@ -1017,26 +1017,25 @@ This plugin is used to post GIFs from Gfycat, Giphy, or Tenor using slash comman
 .. config:setting:: plugins-gifenable
   :displayname: Enable plugins (Plugins - GIF)
   :systemconsole: Plugins > GIF commands
-  :configjson: 
-  :environment: 
+  :configjson: N/A
+  :environment: N/A
 
   - **true**: Enables the GIF commands plugin on your Mattermost server.
-  - **false**: Disables the GIF commands plugin on your Mattermost server.
+  - **false**: (Default) Disables the GIF commands plugin on your Mattermost server.
 
 Enable plugin
 ~~~~~~~~~~~~~
 
-+--------------------------------------------------------------------------+--------------------------------------------------+
-| - **true**: Enables the GIF commands plugin on your Mattermost server.   | - System Config path: **Plugins > GIF commands** |
-| - **false**: Disables the GIF commands plugin on your Mattermost server. | - ``config.json`` setting:                       |
-|                                                                          | - Environment variable:                          |
-+--------------------------------------------------------------------------+--------------------------------------------------+
++------------------------------------------------------------------------------------+--------------------------------------------------+
+| - **true**: Enables the GIF commands plugin on your Mattermost server.             | - System Config path: **Plugins > GIF commands** |
+| - **false**: (Default) Disables the GIF commands plugin on your Mattermost server. |                                                  |
++------------------------------------------------------------------------------------+--------------------------------------------------+
 
 .. config:setting:: plugins-gifdisplayas
   :displayname: Display the GIF as (Plugins - GIF)
   :systemconsole: Plugins > GIF commands
-  :configjson: 
-  :environment: 
+  :configjson: N/A
+  :environment: N/A
   :description: Display the GIF as an embedded image where the GIF can't be collapsed, or as a collapsible image preview where the full URL displays.
 
 Display the GIF as
@@ -1044,8 +1043,8 @@ Display the GIF as
 
 +---------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------+
 | Display the GIF as an embedded image where the GIF can't be collapsed, or as a collapsible image preview where the full URL displays. | - System Config path: **Plugins > GIF commands** |
-|                                                                                                                                       | - ``config.json`` setting:                       |
-|                                                                                                                                       | - Environment variable:                          |
+|                                                                                                                                       |                                                  |
+|                                                                                                                                       |                                                  |
 +---------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------+
 | **Note**:                                                                                                                                                                                | 
 |  - `Link previews <https://docs.mattermost.com/configure/site-configuration-settings.html#enable-website-link-previews>`__ must be enabled to display GIF previews.                      |
@@ -1055,8 +1054,8 @@ Display the GIF as
 .. config:setting:: plugins-gifprovider
   :displayname: GIF provider (Plugins - GIF)
   :systemconsole: Plugins > GIF commands
-  :configjson: 
-  :environment: 
+  :configjson: N/A
+  :environment: N/A
   :description: Specify the GIF provider as **GIPHY**, **Tenor**, or **Gfycat**.
 
 GIF provider
@@ -1064,8 +1063,6 @@ GIF provider
 
 +-------------------------------------------------------------------+-----------------------------------------------------+
 | Specify the GIF provider as **GIPHY**, **Tenor**, or **Gfycat**.  | - System Config path: **Plugins > GIF commands**    |
-|                                                                   | - ``config.json`` setting:                          |
-|                                                                   | - Environment variable:                             |
 +-------------------------------------------------------------------+-----------------------------------------------------+
 | **Note**: Selecting GIPHY or Tenor requires an API key. A key is not required for Gfycat.                               |
 +-------------------------------------------------------------------------------------------------------------------------+
@@ -1073,8 +1070,8 @@ GIF provider
 .. config:setting:: plugins-gifgiphytenorapikey
   :displayname: Giphy/Tenor API key (Plugins - GIF)
   :systemconsole: Plugins > GIF commands
-  :configjson: 
-  :environment: 
+  :configjson: N/A
+  :environment: N/A
   :description: Configure your own API Key when specifying the GIF Provider as GIPHY or Tenor. An API key is not required for Gfycat.
 
 Giphy/Tenor API key
@@ -1082,16 +1079,16 @@ Giphy/Tenor API key
 
 +-----------------------------------------------------------------------------------------------------------------------+--------------------------------------------------+
 | Configure your own API key when specifying the GIF Provider as GIPHY or Tenor. An API key is not required for Gfycat. | - System Config path: **Plugins > GIF commands** |
-|                                                                                                                       | - ``config.json`` setting:                       |
-| See the `GIPHY <https://developers.giphy.com/docs/api/#quick-start-guide>`__                                          | - Environment variable:                          |
+|                                                                                                                       |                                                  |
+| See the `GIPHY <https://developers.giphy.com/docs/api/#quick-start-guide>`__                                          |                                                  |
 | or `Tenor <https://tenor.com/developer/keyregistration>`__ documentation for details.                                 |                                                  |
 +-----------------------------------------------------------------------------------------------------------------------+--------------------------------------------------+
 
 .. config:setting:: plugins-gifcontentrating
   :displayname: Content rating (GIPHY & Tenor only) (Plugins - GIF)
   :systemconsole: Plugins > GIF commands
-  :configjson: 
-  :environment: 
+  :configjson: N/A
+  :environment: N/A
   :description: Select an `MPAA-style content rating <https://en.wikipedia.org/wiki/Motion_Picture_Association_film_rating_system>`__ for GIFs from GIPHY or Tenor. Leave this field empty to disable content filtering.
 
 Content rating (GIPHY & Tenor only)
@@ -1099,15 +1096,14 @@ Content rating (GIPHY & Tenor only)
 
 +-----------------------------------------------------------------------------------------------------------------------+--------------------------------------------------+
 | Select an `MPAA-style content rating <https://en.wikipedia.org/wiki/Motion_Picture_Association_film_rating_system>`__ | - System Config path: **Plugins > GIF commands** |
-| for GIFs from GIPHY or Tenor.                                                                                         | - ``config.json`` setting:                       |
-| Leave this field empty to disable content filtering.                                                                  | - Environment variable:                          |
+| for GIFs from GIPHY or Tenor. Leave this field empty to disable content filtering.                                    |                                                  |
 +-----------------------------------------------------------------------------------------------------------------------+--------------------------------------------------+
 
 .. config:setting:: plugins-gifgfycatdisplaystyle
   :displayname: Gfycat display style (Plugins - GIF)
   :systemconsole: Plugins > GIF commands
-  :configjson: 
-  :environment: 
+  :configjson: N/A
+  :environment: N/A
   :description: Specify the display style for GIFs from Gfycat. See the `Gfycat Developer API <https://developers.gfycat.com/api/>`__ documentation for details.
 
 Gfycat display style
@@ -1115,15 +1111,14 @@ Gfycat display style
 
 +-------------------------------------------------------------------------------+--------------------------------------------------+
 | Specify the display style for GIFs from Gfycat. See the `Gfycat Developer API | - System Config path: **Plugins > GIF commands** |
-| <https://developers.gfycat.com/api/>`__ documentation for details.            | - ``config.json`` setting:                       |
-|                                                                               | - Environment variable:                          |
+| <https://developers.gfycat.com/api/>`__ documentation for details.            |                                                  |
 +-------------------------------------------------------------------------------+--------------------------------------------------+
 
 .. config:setting:: plugins-gifgiphydisplaystyle
   :displayname: GIPHY display style (Plugins - GIF)
   :systemconsole: Plugins > GIF commands
-  :configjson: 
-  :environment: 
+  :configjson: N/A
+  :environment: N/A
   :description: Specify the display style for GIFs from GIPHY. See the `GIPHY Developers Rendition Guide <https://developers.giphy.com/docs/optional-settings/>`__ for details.
 
 GIPHY display style
@@ -1131,15 +1126,14 @@ GIPHY display style
 
 +----------------------------------------------------------------------------------------+--------------------------------------------------+
 | Specify the display style for GIFs from GIPHY. See the `GIPHY Developers               | - System Config path: **Plugins > GIF commands** |
-| Rendition Guide <https://developers.giphy.com/docs/optional-settings/>`__ for details. | - ``config.json`` setting:                       |
-|                                                                                        | - Environment variable:                          |
+| Rendition Guide <https://developers.giphy.com/docs/optional-settings/>`__ for details. |                                                  |
 +----------------------------------------------------------------------------------------+--------------------------------------------------+
 
 .. config:setting:: plugins-giftenordisplaystyle
   :displayname: Tenor display style (Plugins - GIF)
   :systemconsole: Plugins > GIF commands
-  :configjson: 
-  :environment: 
+  :configjson: N/A
+  :environment: N/A
   :description: Specify the display style for GIFs from Tenor. See the `Tenor API <https://tenor.com/gifapi/documentation#responseobjects-gifformat>`__ documentation for details.
 
 Tenor display style
@@ -1147,15 +1141,14 @@ Tenor display style
 
 +--------------------------------------------------------------------------------------------------+--------------------------------------------------+
 | Specify the display style for GIFs from Tenor. See the `Tenor API                                | - System Config path: **Plugins > GIF commands** |
-| <https://tenor.com/gifapi/documentation#responseobjects-gifformat>`__ documentation for details. | - ``config.json`` setting:                       |
-|                                                                                                  | - Environment variable:                          |
+| <https://tenor.com/gifapi/documentation#responseobjects-gifformat>`__ documentation for details. |                                                  |
 +--------------------------------------------------------------------------------------------------+--------------------------------------------------+
 
 .. config:setting:: plugins-giflanguage
   :displayname: Language (Plugins - GIF)
-  :systemconsole: Plugins > GIF commands
-  :configjson: 
-  :environment: 
+  :systemconsole: Plugins > GIF commands 
+  :configjson: N/A
+  :environment: N/A
   :description: Specify the language used to search GIFs from GIPHY. See the `GIPHY Developers Language Support <https://developers.giphy.com/docs/optional-settings/#language-support>`__ documentation for details.
 
 Language
@@ -1163,26 +1156,25 @@ Language
 
 +-----------------------------------------------------------------------------------------+--------------------------------------------------+
 | Specify the language used to search GIFs from GIPHY. See the `GIPHY Developers Language | - System Config path: **Plugins > GIF commands** |
-| Support <https://developers.giphy.com/docs/optional-settings/#language-support>`__      | - ``config.json`` setting:                       |
-| documentation for details.                                                              | - Environment variable:                          |
+| Support <https://developers.giphy.com/docs/optional-settings/#language-support>`__      |                                                  |
+| documentation for details.                                                              |                                                  |
 +-----------------------------------------------------------------------------------------+--------------------------------------------------+
 
 .. config:setting:: plugins-gifforcepreview
   :displayname: Force GIF preview before posting (force /gifs) (Plugins - GIF)
   :systemconsole: Plugins > GIF commands
-  :configjson: 
-  :environment: 
+  :configjson: N/A
+  :environment: N/A
 
   - **true**: Prevents accidental posting of inappropriate GIFs from a provider that does not support content rating filtering.
-  - **false**: Both ``/gif`` and ``/gifs`` slash commands are available for the GIF commands plugin on your Mattermost server.
+  - **false**: (Default) Both ``/gif`` and ``/gifs`` slash commands are available for the GIF commands plugin on your Mattermost server.
 
 Force GIF preview before posting (force /gifs)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+---------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------+
-| - **true**: **(Default)** Prevents accidental posting of inappropriate GIFs from a provider that does not support content rating filtering. | - System Config path: **Plugins > GIF commands** |
-| - **false**: Both ``/gif`` and ``/gifs`` slash commands are available for the GIF commands plugin on your Mattermost server.                | - ``config.json`` setting:                       |
-|                                                                                                                                             | - Environment variable:                          |
++-------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------+
+| - **true**: Prevents accidental posting of inappropriate GIFs from a provider that does not support content rating filtering.                         | - System Config path: **Plugins > GIF commands** |
+| - **false**: (Default) Both ``/gif`` and ``/gifs`` slash commands are available for the GIF commands plugin on your Mattermost server.                |                                                  |
 +---------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------+
 
 ----
@@ -1292,40 +1284,38 @@ Access the following configuration settings in the System Console by going to **
 .. config:setting:: plugins-surveysenable
   :displayname: Enable plugin (Plugins - User Satisfaction Surveys)
   :systemconsole: Plugins > User Satisfaction Surveys
-  :configjson: 
-  :environment: 
+  :configjson: N/A
+  :environment: N/A
 
-  - **true**: Enables the Mattermost User Satisfaction Surveys plugin on your Mattermost workspace.
+  - **true**: (Default) Enables the Mattermost User Satisfaction Surveys plugin on your Mattermost workspace.
   - **false**: Disables the Mattermost User Satisfaction Surveys plugin on your Mattermost workspace.
 
 Enable plugin
 ~~~~~~~~~~~~~
 
-+-----------------------------------------------------------------------------------------------------+---------------------------------------------------------------+
-| - **true**: Enables the Mattermost User Satisfaction Surveys plugin on your Mattermost workspace.   | - System Config path: **Plugins > User Satisfaction Surveys** |
-| - **false**: Disables the Mattermost User Satisfaction Surveys plugin on your Mattermost workspace. | - ``config.json`` setting:                                    |
-|                                                                                                     | - Environment variable:                                       |
-+-----------------------------------------------------------------------------------------------------+---------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------+
+| - **true**: (Default) Enables the Mattermost User Satisfaction Surveys plugin on your Mattermost workspace.   | - System Config path: **Plugins > User Satisfaction Surveys** |
+| - **false**: Disables the Mattermost User Satisfaction Surveys plugin on your Mattermost workspace.           |                                                               |
++---------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------+
 
 .. config:setting:: plugins-surveysenablesend
   :displayname: Enable user satisfaction survey (Plugins - User Satisfaction Surveys)
   :systemconsole: Plugins > User Satisfaction Surveys
-  :configjson: 
-  :environment:
+  :configjson: N/A
+  :environment: N/A
 
   - **true**: A user satisfaction survey is sent to all users every quarter.
-  - **false**: User satisfaction surveys are disabled.
+  - **false**: (Default) User satisfaction surveys are disabled.
 
 Enable user satisfaction survey
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------+
-| - **true**: A survey is sent to all users every quarter. Results are used by Mattermost, Inc. to improve the product.                                                 | - System Config path: **Plugins > User Satisfaction Surveys** |
-| - **false**: User satisfaction surveys are disabled.                                                                                                                  | - ``config.json`` setting:                                    |
-|                                                                                                                                                                       | - Environment variable:                                       |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------+
-| **Note**: See the `Mattermost Privacy Policy <https://mattermost.com/privacy-policy/>`__ for more information on the collection and use of information by Mattermost.                                                                 |
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------+
+| - **true**: A survey is sent to all users every quarter. Results are used by Mattermost, Inc. to improve the product.       | - System Config path: **Plugins > User Satisfaction Surveys** |
+| - **false**: (Default) User satisfaction surveys are disabled.                                                              |                                                               |
++-----------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------+
+| **Note**: See the `Mattermost Privacy Policy <https://mattermost.com/privacy-policy/>`__ for more information on the collection and use of information by Mattermost.                       |
++-----------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------+
 
 ----
 
@@ -1335,37 +1325,36 @@ Zoom
 .. include:: ../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
 
-This plugin allows team members to initiate a Zoom meeting with a single click. All participants in a channel can easily join the Zoom meeting and the shared link is updated when the meeting is over. See the `Zoom Conferencing Plugin <https://mattermost.gitbook.io/plugin-zoom/>`__ product documentation for details.
+This plugin allows team members to initiate a Zoom meeting with a single click. All participants in a channel can easily join the Zoom meeting and the shared link is updated when the meeting is over. See the `Zoom Plugin <https://github.com/mattermost/mattermost-plugin-zoom/blob/master/README.md#installation>`__ documentation for details.
 
 .. note::
 
-  To set up this plugin, you need to create a Zoom App using a Zoom Administrator account. See the `Zoom configuration <https://mattermost.gitbook.io/plugin-zoom/installation/zoom-configuration>`__ documentation for details. 
+  To set up this plugin, you need to create a Zoom App using a Zoom Administrator account. See the `Zoom plugin <https://github.com/mattermost/mattermost-plugin-zoom/blob/master/README.md>`__ documentation for details. 
 
 Access the following configuration settings in the System Console by going to **Plugins > Zoom**.
 
 .. config:setting:: plugins-zoomenable
   :displayname: Enable plugin (Plugins - Zoom)
   :systemconsole: Plugins > Zoom
-  :configjson:
-  :environment:
+  :configjson: N/A
+  :environment: N/A
 
-  - **true**: Enables the Zoom plugin on your Mattermost server.
+  - **true**: (Default) Enables the Zoom plugin on your Mattermost server.
   - **false**: Disables the Zoom plugin on your Mattermost server.
 
 Enable plugin
 ~~~~~~~~~~~~~
 
-+------------------------------------------------------------------+------------------------------------------+
-| - **true**: Enables the Zoom plugin on your Mattermost server.   | - System Config path: **Plugins > Zoom** |
-| - **false**: Disables the Zoom plugin on your Mattermost server. | - ``config.json`` setting:               |
-|                                                                  | - Environment variable:                  |
-+------------------------------------------------------------------+------------------------------------------+
++----------------------------------------------------------------------------+------------------------------------------+
+| - **true**: (Default) Enables the Zoom plugin on your Mattermost server.   | - System Config path: **Plugins > Zoom** |
+| - **false**: Disables the Zoom plugin on your Mattermost server.           |                                          |
++----------------------------------------------------------------------------+------------------------------------------+
 
 .. config:setting:: plugins-zoomurl
   :displayname: Zoom URL (Plugins - Zoom)
   :systemconsole: Plugins > Zoom
-  :configjson: 
-  :environment:
+  :configjson: N/A
+  :environment: N/A
   :description: Specify the URL for a self-hosted private cloud or on-premise Zoom server. Leave blank if you're using Zoom's vendor-hosted SaaS service.
 
 Zoom URL
@@ -1373,15 +1362,15 @@ Zoom URL
 
 +----------------------------------------------------------------------------+------------------------------------------+
 | Specify the URL for a self-hosted private cloud or on-premise Zoom server. | - System Config path: **Plugins > Zoom** |
-| For example, **https://yourzoom.com**.                                     | - ``config.json`` setting:               |
-| Leave blank if you're using Zoom's vendor-hosted SaaS service.             | - Environment variable:                  |
+| For example, **https://yourzoom.com**.                                     |                                          |
+| Leave blank if you're using Zoom's vendor-hosted SaaS service.             |                                          |
 +----------------------------------------------------------------------------+------------------------------------------+
 
 .. config:setting:: plugins-zoomapiurl
   :displayname: Zoom API URL (Plugins - Zoom)
   :systemconsole: Plugins > Zoom
-  :configjson: 
-  :environment:
+  :configjson: N/A
+  :environment: N/A
   :description: Specify the API URL for a self-hosted private cloud or on-premise Zoom server. Leave blank if you're using Zoom's vendor-hosted SaaS service.
 
 Zoom API URL
@@ -1389,31 +1378,30 @@ Zoom API URL
 
 +---------------------------------------------------------------------------------+------------------------------------------+
 | Specify the API URL for a self-hosted private cloud or on-premises Zoom server. | - System Config path: **Plugins > Zoom** |
-| For example, **https://api.yourzoom.com/v2**.                                   | - ``config.json`` setting:               |
-| Leave blank if you're using Zoom's vendor-hosted SaaS service.                  | - Environment variable:                  |
+| For example, **https://api.yourzoom.com/v2**.                                   |                                          |
+| Leave blank if you're using Zoom's vendor-hosted SaaS service.                  |                                          |
 +---------------------------------------------------------------------------------+------------------------------------------+
 
 .. config:setting:: plugins-zoomoauth
   :displayname: Enable OAuth (Plugins - Zoom)
   :systemconsole: Plugins > Zoom
-  :configjson:
-  :environment:
+  :configjson: N/A
+  :environment: N/A
 
   - **true**: OAuth will be used as the authentication means with Zoom.
-  - **false**: JWT will be used as the authentication means with Zoom.
+  - **false**: (Default) JWT will be used as the authentication means with Zoom.
 
 Enable OAuth
 ~~~~~~~~~~~~
 
-+-----------------------------------------------------------------------+------------------------------------------+
-| - **true**: OAuth will be used as the authentication means with Zoom. | - System Config path: **Plugins > Zoom** |
-| - **false**: JWT will be used as the authentication means with Zoom.  | - ``config.json`` setting:               |
-|                                                                       | - Environment variable:                  |
-+-----------------------------------------------------------------------+------------------------------------------+
++---------------------------------------------------------------------------------+------------------------------------------+
+| - **true**: OAuth will be used as the authentication means with Zoom.           | - System Config path: **Plugins > Zoom** |
+| - **false**: (Default) JWT will be used as the authentication means with Zoom.  |                                          |
++---------------------------------------------------------------------------------+------------------------------------------+
 
 .. note::
 
-  If you are currently using a JWT Zoom application and switch to OAuth, all users will need to connect their Zoom account using OAuth the next time they try to start a meeting. See the `Zoom Configuration <https://mattermost.gitbook.io/plugin-zoom/installation/zoom-configuration>`__ documentation for details.
+  If you are currently using a JWT Zoom application and switch to OAuth, all users will need to connect their Zoom account using OAuth the next time they try to start a meeting. See the `Zoom plugin <https://github.com/mattermost/mattermost-plugin-zoom#readme>`__ documentation for details.
 
 .. config:setting:: plugins-zoomoauthbyaccountlevel
   :displayname: OAuth by account level app (Beta) (Plugins - Zoom)
@@ -1422,22 +1410,21 @@ Enable OAuth
   :environment:
 
   - **true**: Only an account administrator must log in. The rest of the users will use their e-mail to log in.
-  - **false**: All users must use their e-mail to log in.
+  - **false**: (Default) All users must use their e-mail to log in.
 
 OAuth by account level app (Beta)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +---------------------------------------------------------------------------------------------------------------+------------------------------------------+
 | - **true**: Only an account administrator must log in. The rest of the users will use their e-mail to log in. | - System Config path: **Plugins > Zoom** |
-| - **false**: All users must use their e-mail to log in.                                                       | - ``config.json`` setting:               |
-|                                                                                                               | - Environment variable:                  |
+| - **false**: (Default) All users must use their e-mail to log in.                                             |                                          |
 +---------------------------------------------------------------------------------------------------------------+------------------------------------------+
 
 .. config:setting:: plugins-zoomoauthclientid
   :displayname: Zoom OAuth client ID (Plugins - Zoom)
   :systemconsole: Plugins > Zoom
-  :configjson: 
-  :environment:
+  :configjson: N/A
+  :environment: N/A
   :description: Specify the Client ID for the OAuth app registered with Zoom. Leave blank if not using OAuth.
 
 Zoom OAuth client ID
@@ -1445,15 +1432,15 @@ Zoom OAuth client ID
 
 +-----------------------------------------------------------------------------------------------+------------------------------------------+
 | Specify the Client ID for the OAuth app registered with Zoom. Leave blank if not using OAuth. | - System Config path: **Plugins > Zoom** |
-|                                                                                               | - ``config.json`` setting:               |
-|                                                                                               | - Environment variable:                  |
+|                                                                                               |                                          |
+|                                                                                               |                                          |
 +-----------------------------------------------------------------------------------------------+------------------------------------------+
 
 .. config:setting:: plugins-zoomoauthclientsecret
   :displayname: Zoom OAuth client secret (Plugins - Zoom)
   :systemconsole: Plugins > Zoom
-  :configjson: 
-  :environment:
+  :configjson: N/A
+  :environment: N/A
   :description: Specify the Client Secret for the OAuth app registered with Zoom. Leave blank if not using OAuth.
 
 Zoom OAuth client secret
@@ -1461,15 +1448,13 @@ Zoom OAuth client secret
 
 +---------------------------------------------------------------------------------------------------+------------------------------------------+
 | Specify the Client Secret for the OAuth app registered with Zoom. Leave blank if not using OAuth. | - System Config path: **Plugins > Zoom** |
-|                                                                                                   | - ``config.json`` setting:               |
-|                                                                                                   | - Environment variable:                  |
 +---------------------------------------------------------------------------------------------------+------------------------------------------+
 
 .. config:setting:: plugins-zoomatresttokenencryptionkey 
   :displayname: At rest token encryption key (Plugins - Zoom)
   :systemconsole: Plugins > Zoom
-  :configjson: 
-  :environment:
+  :configjson: N/A
+  :environment: N/A
   :description: Generate an AES encryption key for the Zoom OAuth Token used to encrypt stored access tokens by selecting **Regenerate**. 
 
 At rest token encryption key
@@ -1477,8 +1462,7 @@ At rest token encryption key
 
 +---------------------------------------------------------------------------------------------------------------------------+------------------------------------------+
 | Generate an AES encryption key for the Zoom OAuth Token used to encrypt stored access tokens by selecting **Regenerate**. | - System Config path: **Plugins > Zoom** |
-| Regenerating the key invalidates your existing Zoom OAuth.                                                                | - ``config.json`` setting:               |
-|                                                                                                                           | - Environment variable:                  |
+| Regenerating the key invalidates your existing Zoom OAuth.                                                                |                                          |
 +---------------------------------------------------------------------------------------------------------------------------+------------------------------------------+
 
 .. config:setting:: plugins-zoomapikey
@@ -1493,15 +1477,13 @@ API key
 
 +-----------------------------------------------------------------------------------+------------------------------------------+
 | Specify the API Key generated by Zoom used to create meetings and pull user data. | - System Config path: **Plugins > Zoom** |
-|                                                                                   | - ``config.json`` setting:               |
-|                                                                                   | - Environment variable:                  |
 +-----------------------------------------------------------------------------------+------------------------------------------+
 
 .. config:setting:: plugins-zoomapisecret
   :displayname: API secret (Plugins - Zoom)
   :systemconsole: Plugins > Zoom
-  :configjson:
-  :environment:
+  :configjson: N/A
+  :environment: N/A
   :description: Specify the API Secret generated by Zoom for your API key.
 
 API secret
@@ -1509,15 +1491,13 @@ API secret
 
 +------------------------------------------------------------+------------------------------------------+
 | Specify the API Secret generated by Zoom for your API key. | - System Config path: **Plugins > Zoom** |
-|                                                            | - ``config.json`` setting:               |
-|                                                            | - Environment variable:                  |
 +------------------------------------------------------------+------------------------------------------+
 
 .. config:setting:: plugins-zoomwebhooksecret
   :displayname: API secret (Plugins - Zoom)
   :systemconsole: Plugins > Zoom
-  :configjson:
-  :environment:
+  :configjson: N/A
+  :environment: N/A
   :description: Generate a secret for the webhook URL endpoint used to authenticate the webhook to Mattermost.
 
 Webhook secret
@@ -1525,8 +1505,7 @@ Webhook secret
 
 +------------------------------------------------------------------------------------------------+------------------------------------------+
 | Generate a secret for the webhook URL endpoint used to authenticate the webhook to Mattermost. | - System Config path: **Plugins > Zoom** |
-| Regenerating the secret invalidates your existing Zoom plugin.                                 | - ``config.json`` setting:               |
-|                                                                                                | - Environment variable:                  |
+| Regenerating the secret invalidates your existing Zoom plugin.                                 |                                          |
 +------------------------------------------------------------------------------------------------+------------------------------------------+
 
 .. config:setting:: plugins-zoomsigpublickeyfile
