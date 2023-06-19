@@ -15,7 +15,7 @@ Latest Mattermost Cloud releases:
 
 ### Highlights
  - Insights has been disabled for all new instances and for existing servers that upgrade to v8.0. The Insights feature flag can be enabled with environment variables via `MM_FEATUREFLAGS_INSIGHTSENABLED=true`. See more details in [this forum post](https://forum.mattermost.com/t/proposal-to-revise-our-insights-feature-due-to-known-performance-issues/16212) on why Insights has been disabled.
- - Boards has been moved from a product back to a plugin and is now disabled by default. ``EnablePublicSharedBoards`` Boards product setting was removed from the config and the **System Console**.
+ - Boards has been moved from part of the core product back to a plugin. If you previously had the plugin disabled, it will be disabled now, even if you enabled it as part of the core product. You can re-enable it from the **System Console > Plugin** settings. The Boards configuration, ``EnablePublicSharedBoards``, was also removed from the config and the **System Console**.
  - The Channel Export and Apps plugins are now disabled by default.
 
 ### Improvements
@@ -43,8 +43,9 @@ Latest Mattermost Cloud releases:
  - Removed ``/api/v4/users/stats`` network request from ``InviteMembersButton``.
 
 ### API Changes
- - A ``context.Context`` is now passed to ``Client4`` methods.
- - Changed the Go module path from ``github.com/mattermost/mattermost-server/server/v8`` to ``github.com/mattermost/mattermost/server/v8``. For the public facing module, it's path is also changed from ``github.com/mattermost/mattermost-server/server/public`` to ``github.com/mattermost/mattermost/server/public``.
+ - Introduce the [public](https://github.com/mattermost/mattermost/tree/master/server/public) submodule, housing the familiar `model` and `plugin` packages, but now discretely versioned from the server. It is no longer necessary to `go get` a particular commit hash, as Go programs and plugins can now opt-in to importing `github.com/mattermost/mattermost-server/server/public` and managing versions idiomatically. While this submodule has not yet shipped a v1 and will introduce breaking changes before stabilizing the API, it remains both forwards and backwards compatible with the Mattermost server itself.
+  - In the main `server package`, the Go module path has changed from ``github.com/mattermost/mattermost-server/server/v8`` to ``github.com/mattermost/mattermost/server/v8``. But with the introduction of the `public` submodule, it should no longer be necessary for third-party code to import this `server` package.
+ - As part of the `public` submodule above, a ``context.Context`` is now passed to ``model.Client4`` methods.
 
 ### Bug Fixes
  - Fixed the **New Messages** line overlapping date lines in the post list.
