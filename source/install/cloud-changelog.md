@@ -14,7 +14,7 @@ Latest Mattermost Cloud releases:
 ## Release 2023-06-29
 
 ### Highlights
- - Insights has been disabled for all new instances and for existing servers that upgrade to v8.0. The Insights feature flag can be enabled with environment variables via `MM_FEATUREFLAGS_INSIGHTSENABLED=true`. See more details in [this forum post](https://forum.mattermost.com/t/proposal-to-revise-our-insights-feature-due-to-known-performance-issues/16212) on why Insights has been disabled.
+ - Insights has been disabled for all new instances and for existing servers that upgrade to v8.0. See more details in [this forum post](https://forum.mattermost.com/t/proposal-to-revise-our-insights-feature-due-to-known-performance-issues/16212) on why Insights has been disabled.
  - Boards has been moved from part of the core product back to a plugin. If you previously had the plugin disabled, it will be disabled now, even if you enabled it as part of the core product. You can re-enable it from the **System Console > Plugin** settings. The Boards configuration, ``EnablePublicSharedBoards``, was also removed from the config and the **System Console**.
  - The Channel Export and Apps plugins are now disabled by default.
 
