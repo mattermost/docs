@@ -21,7 +21,7 @@ Latest Mattermost Mobile Apps releases:
 **Note:** Mattermost Mobile App v2.5.1 contains a high level security fix. Upgrading is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
 
 ### Bug Fixes
- - Fixed issue where reading a thread could lead to the phone and server to overwork.
+ - Fixed an issue where reading a thread could lead to the phone and server to overwork.
  - Fixed the overlap between image attachments and the post footer with Collapsed Reply Threads enabled.
 
 ## 2.5.0 Release
