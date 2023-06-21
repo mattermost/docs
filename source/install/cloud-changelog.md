@@ -15,7 +15,7 @@ Latest Mattermost Cloud releases:
 
 ### Highlights
  - Insights has been disabled for all new instances and for existing servers that upgrade to v8.0. See more details in [this forum post](https://forum.mattermost.com/t/proposal-to-revise-our-insights-feature-due-to-known-performance-issues/16212) on why Insights has been disabled.
- - Boards has been moved from part of the core product back to a plugin. If you previously had the plugin disabled, it will be disabled now, even if you enabled it as part of the core product. You can re-enable it from the **System Console > Plugin** settings. The Boards configuration, ``EnablePublicSharedBoards``, was also removed from the config and the **System Console**.
+ - Boards is now operating as a plugin and can be enabled or disabled in the **System Console > Plugin settings**. The Boards configuration, ``EnablePublicSharedBoards``, was also removed from the config and the **System Console**.
  - The Channel Export and Apps plugins are now disabled by default.
 
 ### Improvements
@@ -24,9 +24,6 @@ Latest Mattermost Cloud releases:
  - Added support to specify different desktop notification sounds per channel.
  - Calls: Ringing sounds can be enabled/disabled and selected in the Desktop Notifications preferences panel.
  - Bumped the pre-packaged version of NPS to 1.3.2.
- - Apps Bar is now enabled by default for on-prem servers. ``ExperimentalSettings.EnableAppBar`` was also renamed to ``ExperimentalSettings.DisableAppBar``. See more details at:
-    - https://docs.mattermost.com/welcome/what-changed-in-v70.html#apps-bar-beta
-    - https://forum.mattermost.com/t/channel-header-plugin-changes/13551
 
 #### Administration
  - Playbooks is again shipped as a prepackaged plugin, with version 1.36.1.
