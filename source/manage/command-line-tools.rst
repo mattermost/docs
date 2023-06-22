@@ -6,11 +6,7 @@ Command line tools
 
 In self-managed deployments, a ``mattermost`` command is available for configuring the system from the directory where the Mattermost server is installed. For an overview of the Mattermost command line interface (CLI), `read this article <https://medium.com/@santosjs/plugging-in-to-the-mattermost-cli-8cdcef2bd1f6>`__ from Santos.
 
-.. note::
-  - As of Mattermost v6.0, this CLI has been replaced with the `mmctl command line tool </manage/mmctl-command-line-tool.html>`__. However, `mattermost import </manage/command-line-tools.html#mattermost-import>`__ commands, `mattermost export </manage/command-line-tools.html#mattermost-export>`__ commands, and related subcommands, remain available and fully supported from Mattermost v6.0.
-  - The CLI is run in a single node which bypasses the mechanisms that a `High Availability environment </scale/high-availability-cluster.html>`__ uses to perform actions across all nodes in the cluster. As a result, when running `CLI commands </manage/command-line-tools.html>`__ in a High Availability environment, tasks such as creating and deleting users or changing configuration settings require a server restart.
-
-These ``mattermost`` commands include:
+These ``mattermost`` commands include the following functionality:
 
 **General administration**
 
@@ -41,762 +37,785 @@ These ``mattermost`` commands include:
 
 - Analyze the database for relational consistency
 
-.. contents::
-    :backlinks: top
-    :local:
-
-Use the CLI
------------
-
-To run the CLI commands, you must be in the Mattermost root directory. On a default installation of Mattermost, the root directory is ``/opt/mattermost``. If you followed our standard `installation process <../guides/administrator.html#installing-mattermost>`__, you must run the commands as the user ``mattermost``. The name of the executable is ``mattermost``, and it can be found in the ``/opt/mattermost/bin`` directory.
-
-**For example, to get the Mattermost version on a default installation of Mattermost:**
-
-.. code-block:: bash
-
-    cd /opt/mattermost/
-    sudo -u mattermost bin/mattermost version
-
 .. note::
-
-  Ensure you run the Mattermost binary as the ``mattermost`` user. Running it as ``root`` user (for example) may cause complications with permissions as the binary initiates plugins and accesses various files when running CLI commands. Running the server as ``root`` may result in ownership of the plugins and files to be overwritten as well as other potential permissions errors.
-
-.. note::
-
-   When running CLI commands on a Mattermost installation that has the configuration stored in the database, you might need to pass the database connection string as: 
-
-.. code-block:: bash
- 
-   bin/mattermost --config="postgres://mmuser:mostest@localhost:5432/mattermost_test?sslmode=disable\u0026connect_timeout=10"
-
-Use the CLI on GitLab Omnibus
-------------------------------
-
-On GitLab Omnibus, you must be in the following directory when you run CLI commands: ``/opt/gitlab/embedded/service/mattermost``. Also, you must run the commands as the user *mattermost* and specify the location of the configuration file. The executable is ``/opt/gitlab/embedded/bin/mattermost``.
-
-**For example, to get the Mattermost version on GitLab Omnibus:**
-
-.. code-block:: bash
-
-    cd /opt/gitlab/embedded/service/mattermost
-    sudo /opt/gitlab/embedded/bin/chpst -e /opt/gitlab/etc/mattermost/env -P -U mattermost:mattermost -u mattermost:mattermost /opt/gitlab/embedded/bin/mattermost version
-
-.. note::
-   
-   The example commands in the documentation are for a default installation of Mattermost. You must modify the commands so that they work on GitLab Omnibus.
-
-Use the CLI on Docker Install
------------------------------
-
-On Docker install, the ``/mattermost/bin`` directory was added to ``PATH``, so you can use the CLI directly with the ``docker exec`` command. Note that the container name may be ``mattermostdocker_app_1`` if you installed Mattermost with ``docker-compose.yml``.
-
-**For example, to get the Mattermost version on a Docker install:**
-
-.. code-block:: bash
-
-    docker exec -it <your-mattermost-container-name> mattermost version
-
-Use the CLI on Docker Preview
------------------------------
-
-The preceding documentation and command reference below also applies to the `Mattermost docker preview image <https://github.com/mattermost/mattermost-docker-preview>`__.
-
-Mattermost 3.6 and later
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-The new CLI tool is supported in Mattermost v3.6 and later.
-
-.. note::
-
+  - As of Mattermost v6.0, this CLI has been replaced with the `mmctl command line tool </manage/mmctl-command-line-tool.html>`__. However, `mattermost import </manage/command-line-tools.html#mattermost-import>`__ commands, `mattermost export </manage/command-line-tools.html#mattermost-export>`__ commands, and related subcommands, remain available and fully supported from Mattermost v6.0.
+  - The CLI is run in a single node which bypasses the mechanisms that a `High Availability environment </scale/high-availability-cluster.html>`__ uses to perform actions across all nodes in the cluster. As a result, when running `CLI commands </manage/command-line-tools.html>`__ in a High Availability environment, tasks such as creating and deleting users or changing configuration settings require a server restart.
   -  Parameters in CLI commands are order-specific.
   -  If special characters (``!``, ``|``, ``(``, ``)``, ``\``, ``'``, and ``"``) are used, the entire argument needs to be surrounded by single quotes (e.g. ``-password 'mypassword!'``, or the individual characters need to be escaped out (e.g. ``-password mypassword\!``).
   -  Team name and channel name refer to the handles, not the display names. So in the URL ``https://community.mattermost.com/core/channels/town-square`` team name would be ``core`` and channel name would be ``town-square``.
 
-.. tip::
-  
-   If you automate user creation through the CLI tool with SMTP enabled, emails will be sent to all new users created. If you run such a load script, it is best to disable SMTP or to use test accounts so that new account creation emails aren't unintentionally sent to people at your organization who aren't expecting them.
+Use the CLI
+-----------
 
-mattermost
-----------
+.. tabs::
 
-  Description
-    Commands for configuring and managing your Mattermost instance and users.
+  .. tab:: Via Mattermost 
 
-  Options
-    .. code-block:: none
+    To run the CLI commands, you must be in the Mattermost root directory. On a default installation of Mattermost, the root directory is ``/opt/mattermost``. If you followed our standard `installation process <../guides/administrator.html#installing-mattermost>`__, you must run the commands as the user ``mattermost``. The name of the executable is ``mattermost``, and it can be found in the ``/opt/mattermost/bin`` directory.
 
-      -c, --config {string}   Configuration file to use. (default "config.json")
-      --disableconfigwatch {boolean}  When true, the config.json file will not be reloaded automatically when another process changes it (default "false")
+    For example, to get the Mattermost version on a default installation of Mattermost:
 
-  Child Commands
-    -  `mattermost channel`_ - Management of channels
-    -  `mattermost command`_ - Management of slash commands
-    -  `mattermost config`_ - Work with the configuration file
-    -  `mattermost export`_ - Compliance export commands
-    -  `mattermost group`_ - Management of Mattermost groups
-    -  `mattermost help`_ - Generate full documentation for the CLI
-    -  `mattermost import`_ - Import data
-    -  `mattermost jobserver`_ - Start the Mattermost job server
-    -  `mattermost ldap`_ - AD/LDAP related utilities
-    -  `mattermost license`_ - Licensing commands
-    -  `mattermost logs`_ - Display human-readable logs
-    -  `mattermost permissions`_ - Management of the permissions system
-    -  `mattermost plugin`_ - Management of plugins
-    -  `mattermost reset`_ - Reset the database to initial state
-    -  `mattermost roles`_ - Management of user roles
-    -  `mattermost sampledata`_ - Sample data generation
-    -  `mattermost server`_ - Run the Mattermost server
-    -  `mattermost team`_ - Management of teams
-    -  `mattermost user`_ - Management of users
-    -  `mattermost version`_ - Display version information
-    -  `mattermost webhook`_ - Management of webhooks
+    .. code-block:: bash
+
+      cd /opt/mattermost/
+      sudo -u mattermost bin/mattermost version
+
+    .. note::
+
+      - Ensure you run the Mattermost binary as the ``mattermost`` user. Running it as ``root`` user (for example) may cause complications with permissions as the binary initiates plugins and accesses various files when running CLI commands. Running the server as ``root`` may result in ownership of the plugins and files to be overwritten as well as other potential permissions errors.
+      - When running CLI commands on a Mattermost installation that has the configuration stored in the database, you might need to pass the database connection string as: 
+
+        .. code-block:: bash
+ 
+          bin/mattermost --config="postgres://mmuser:mostest@localhost:5432/mattermost_test?sslmode=disable\u0026connect_timeout=10"
+
+  .. tab:: Via GitLab Omnibus
+
+    On GitLab Omnibus, you must be in the following directory when you run CLI commands: ``/opt/gitlab/embedded/service/mattermost``. Also, you must run the commands as the user *mattermost* and specify the location of the configuration file. The executable is ``/opt/gitlab/embedded/bin/mattermost``.
+
+    For example, to get the Mattermost version on GitLab Omnibus:
+
+    .. code-block:: bash
+
+      cd /opt/gitlab/embedded/service/mattermost
+      sudo /opt/gitlab/embedded/bin/chpst -e /opt/gitlab/etc/mattermost/env -P -U mattermost:mattermost -u mattermost:mattermost /opt/gitlab/embedded/bin/mattermost version
+
+    .. note::
+   
+      The example commands on this documentation page are for a default installation of Mattermost. You must modify the commands so that they work on GitLab Omnibus.
+
+  .. tab:: Via Docker Install
+
+    On Docker install, the ``/mattermost/bin`` directory was added to ``PATH``, so you can use the CLI directly with the ``docker exec`` command. Note that the container name may be ``mattermostdocker_app_1`` if you installed Mattermost with ``docker-compose.yml``.
+
+    For example, to get the Mattermost version on a Docker Install:
+
+    .. code-block:: bash
+
+      docker exec -it <your-mattermost-container-name> mattermost version
+
+  .. tab:: Via Docker Preview
+
+    The Docker Install tab details and command references below also apply to the `Mattermost docker preview image <https://github.com/mattermost/mattermost-docker-preview>`__.
+
+mattermost cli commands
+-----------------------
+
+Description
+  Commands for configuring and managing your Mattermost instance and users.
+
+Options
+  .. code-block:: none
+
+    -c, --config {string}   Configuration file to use. (default "config.json")
+    --disableconfigwatch {boolean}  When true, the config.json file will not be reloaded automatically when another process changes it (default "false")
+
+Child Commands
+  -  `mattermost channel`_ - Management of channels
+  -  `mattermost command`_ - Management of slash commands
+  -  `mattermost config`_ - Work with the configuration file
+  -  `mattermost export`_ - Compliance export commands
+  -  `mattermost group`_ - Management of Mattermost groups
+  -  `mattermost help`_ - Generate full documentation for the CLI
+  -  `mattermost import`_ - Import data
+  -  `mattermost jobserver`_ - Start the Mattermost job server
+  -  `mattermost ldap`_ - AD/LDAP related utilities
+  -  `mattermost license`_ - Licensing commands
+  -  `mattermost logs`_ - Display human-readable logs
+  -  `mattermost permissions`_ - Management of the permissions system
+  -  `mattermost plugin`_ - Management of plugins
+  -  `mattermost reset`_ - Reset the database to initial state
+  -  `mattermost roles`_ - Management of user roles
+  -  `mattermost sampledata`_ - Sample data generation
+  -  `mattermost server`_ - Run the Mattermost server
+  -  `mattermost team`_ - Management of teams
+  -  `mattermost user`_ - Management of users
+  -  `mattermost version`_ - Display version information
+  -  `mattermost webhook`_ - Management of webhooks
 
 mattermost channel
 ------------------
 
-  Description
-    Commands for channel management.
+Description
+  Commands for channel management.
 
-  Child Commands
-    -  `mattermost channel add`_ - Add users to a channel
-    -  `mattermost channel archive`_ - Archive a channel
-    -  `mattermost channel create`_ - Create a channel
-    -  `mattermost channel delete`_ - Delete a channel
-    -  `mattermost channel list`_ - List all channels on specified teams
-    -  `mattermost channel modify`_ - Modify a channel's public/private type
-    -  `mattermost channel move`_ - Move a channel to another team
-    -  `mattermost channel remove`_ - Remove users from a channel
-    -  `mattermost channel rename`_ - Rename a channel
-    -  `mattermost channel restore`_ - Restore a channel from the archive
-    -  `mattermost channel search`_ -  Search a channel by name
+Child Commands
+  -  `mattermost channel add`_ - Add users to a channel
+  -  `mattermost channel archive`_ - Archive a channel
+  -  `mattermost channel create`_ - Create a channel
+  -  `mattermost channel delete`_ - Delete a channel
+  -  `mattermost channel list`_ - List all channels on specified teams
+  -  `mattermost channel modify`_ - Modify a channel's public/private type
+  -  `mattermost channel move`_ - Move a channel to another team
+  -  `mattermost channel remove`_ - Remove users from a channel
+  -  `mattermost channel rename`_ - Rename a channel
+  -  `mattermost channel restore`_ - Restore a channel from the archive
+  -  `mattermost channel search`_ -  Search a channel by name
 
 .. _channel-value-note:
 
 .. note::
-    **{channel} value**
+  **{channel} value**
 
-    For the *add*, *archive*, *delete*, *remove*, and *restore* commands, you can specify the *{channels}* value by {team}:{channel} using the team and channel URLs, or by using channel IDs. Channel IDs can be obtained via the `API <https://api.mattermost.com/#operation/GetChannelByName>`_ or the `mattermost channel search </manage/mmctl-command-line-tool.html#mmctl-channel-search>`__ command.
+  For the *add*, *archive*, *delete*, *remove*, and *restore* commands, you can specify the *{channels}* value by {team}:{channel} using the team and channel URLs, or by using channel IDs. Channel IDs can be obtained via the `API <https://api.mattermost.com/#operation/GetChannelByName>`_ or the `mattermost channel search </manage/mmctl-command-line-tool.html#mmctl-channel-search>`__ command.
     
-    For example, in the following URL the *{channels}* value is *myteam:mychannel*:
-    
-    ``https://example.com/myteam/channels/mychannel``
+  For example, in the following URL the *{channels}* value is *myteam:mychannel*: ``https://example.com/myteam/channels/mychannel``
 
-    Also, the team and channel names in the URL should be written in lowercase.
+  Also, the team and channel names in the URL should be written in lowercase.
 
 mattermost channel add
 ~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
-   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl channel add </manage/mmctl-command-line-tool.html#mmctl-channel-users-add>`__.
+  From Mattermost v6.0, this command has been replaced with the mmctl command `mmctl channel add </manage/mmctl-command-line-tool.html#mmctl-channel-users-add>`__.
 
 
 Description
-    Add users to a channel. If adding multiple users, use a space-separated list.
+  Add users to a channel. If adding multiple users, use a space-separated list.
 
- Format
-   .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost channel add {channel} {users}
+    mattermost channel add {channel} {users}
 
- Examples
-   .. code-block:: none
+Examples
+  .. code-block:: none
 
-      bin/mattermost channel add 8soyabwthjnf9qibfztje5a36h user@example.com username
-      bin/mattermost channel add myteam:mychannel user@example.com username
+    bin/mattermost channel add 8soyabwthjnf9qibfztje5a36h user@example.com username
+    bin/mattermost channel add myteam:mychannel user@example.com username
 
 mattermost channel archive
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
-   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl channel archive </manage/mmctl-command-line-tool.html#mmctl-channel-archive>`__.
+  From Mattermost v6.0, this command has been replaced with the mmctl command `mmctl channel archive </manage/mmctl-command-line-tool.html#mmctl-channel-archive>`__.
 
 
 Description
-    Archive a channel. Archived channels are not accessible to users, but remain in the database. To restore a channel from the archive, see `mattermost channel restore`_. Channels can be specified by {team}:{channel} using the team and channel names, or by using channel IDs. Channel IDs can be obtained via the `API <https://api.mattermost.com/#operation/GetChannelByName>`_ or the `mattermost channel search </manage/mmctl-command-line-tool.html#mmctl-channel-search>`__ command.
+  Archive a channel. Archived channels are not accessible to users, but remain in the database. To restore a channel from the archive, see `mattermost channel restore`_. Channels can be specified by {team}:{channel} using the team and channel names, or by using channel IDs. Channel IDs can be obtained via the `API <https://api.mattermost.com/#operation/GetChannelByName>`_ or the `mattermost channel search </manage/mmctl-command-line-tool.html#mmctl-channel-search>`__ command.
     
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost channel archive {channels}
+    mattermost channel archive {channels}
 
-  Examples
-    .. code-block:: none
+Examples
+  .. code-block:: none
 
-      bin/mattermost channel archive 8soyabwthjnf9qibfztje5a36h
-      bin/mattermost channel archive myteam:mychannel
+    bin/mattermost channel archive 8soyabwthjnf9qibfztje5a36h
+    bin/mattermost channel archive myteam:mychannel
 
 mattermost channel create
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
-   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl channel create </manage/mmctl-command-line-tool.html#mmctl-channel-create>`__.
+  From Mattermost v6.0, this command has been replaced with the mmctl command `mmctl channel create </manage/mmctl-command-line-tool.html#mmctl-channel-create>`__.
 
 
 Description
-    Create a channel.
+  Create a channel.
 
- Format
-   .. code-block:: none
+Format
+  .. code-block:: none
 
-     mattermost channel create
+    mattermost channel create
 
- Examples
-   .. code-block:: none
+Examples
+  .. code-block:: none
 
-      bin/mattermost channel create --team myteam --name mynewchannel --display_name "My New Channel"
-      bin/mattermost channel create --team myteam --name mynewprivatechannel --display_name "My New Private Channel" --private
+    bin/mattermost channel create --team myteam --name mynewchannel --display_name "My New Channel"
+    bin/mattermost channel create --team myteam --name mynewprivatechannel --display_name "My New Private Channel" --private
 
- Options
-   .. code-block:: none
+Options
+  .. code-block:: none
 
-      --display_name string   Channel Display Name
-      --header string         Channel header
-      --name string           Channel Name
-      --private               Create a private channel.
-      --purpose string        Channel purpose
-      --team string           Team name or ID
+    --display_name string   Channel Display Name
+    --header string         Channel header
+    --name string           Channel Name
+    --private               Create a private channel.
+    --purpose string        Channel purpose
+    --team string           Team name or ID
 
 mattermost channel delete
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
-   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl channel delete </manage/mmctl-command-line-tool.html#mmctl-channel-delete>`__.
+  From Mattermost v6.0, this command has been replaced with the mmctl command `mmctl channel delete </manage/mmctl-command-line-tool.html#mmctl-channel-delete>`__.
 
 Description
-    Permanently delete a channel along with all related information, including posts from the database. Channels can be specified by {team}:{channel} using the team and channel names, or by using channel IDs. Channel IDs can be obtained via the `API <https://api.mattermost.com/#operation/GetChannelByName>`_ or the `mattermost channel search </manage/mmctl-command-line-tool.html#mmctl-channel-search>`__ command.
+  Permanently delete a channel along with all related information, including posts from the database. Channels can be specified by {team}:{channel} using the team and channel names, or by using channel IDs. Channel IDs can be obtained via the `API <https://api.mattermost.com/#operation/GetChannelByName>`_ or the `mattermost channel search </manage/mmctl-command-line-tool.html#mmctl-channel-search>`__ command.
 
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost channel delete {channels}
+    mattermost channel delete {channels}
 
-  Examples
-    .. code-block:: none
+Examples
+  .. code-block:: none
 
-      bin/mattermost channel delete 8soyabwthjnf9qibfztje5a36h
-      bin/mattermost channel delete myteam:mychannel
+    bin/mattermost channel delete 8soyabwthjnf9qibfztje5a36h
+    bin/mattermost channel delete myteam:mychannel
 
 mattermost channel list
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
-   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl channel list </manage/mmctl-command-line-tool.html#mmctl-channel-list>`__.
+  From Mattermost v6.0, this command has been replaced with the mmctl command `mmctl channel list </manage/mmctl-command-line-tool.html#mmctl-channel-list>`__.
 
 
 Description
-    List all channels on a specified team. Private channels are appended with ``(private)`` and archived channels are appended with ``(archived)``.
+  List all channels on a specified team. Private channels are appended with ``(private)`` and archived channels are appended with ``(archived)``.
 
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost channel list {teams}
+    mattermost channel list {teams}
 
-  Example
-    .. code-block:: none
+Example
+  .. code-block:: none
 
-      bin/mattermost channel list myteam
+    bin/mattermost channel list myteam
 
 mattermost channel modify
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Description
-    Modify a channel's public/private type.
+  Modify a channel's public/private type.
 
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost channel modify
+    mattermost channel modify
 
-  Example
-    .. code-block:: none
+Example
+  .. code-block:: none
 
-      bin/mattermost channel modify myteam:mychannel --username myusername --private
+    bin/mattermost channel modify myteam:mychannel --username myusername --private
 
-  Options
-    .. code-block:: none
+Options
+  .. code-block:: none
 
-          --username [REQUIRED] Username of the user who is changing the channel privacy.
-          --public   Change a private channel to be public.
-          --private  Change a public channel to be private.
+    --username [REQUIRED] Username of the user who is changing the channel privacy.
+    --public   Change a private channel to be public.
+    --private  Change a public channel to be private.
 
 mattermost channel move
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
-   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl channel move </manage/mmctl-command-line-tool.html#mmctl-channel-move>`__.
+  From Mattermost v6.0, this command has been replaced with the mmctl command `mmctl channel move </manage/mmctl-command-line-tool.html#mmctl-channel-move>`__.
 
 Description
-    Move channels to another team. The command validates that all users in the channel belong to the target team. Incoming/outgoing webhooks are moved along with the channel. Channels can be specified by ``[team]:[channel]`` or by using channel IDs. Channel IDs can be obtained via the `API <https://api.mattermost.com/#operation/GetChannelByName>`_ or the `mattermost channel search </manage/mmctl-command-line-tool.html#mmctl-channel-search>`__ command.
+  Move channels to another team. The command validates that all users in the channel belong to the target team. Incoming/outgoing webhooks are moved along with the channel. Channels can be specified by ``[team]:[channel]`` or by using channel IDs. Channel IDs can be obtained via the `API <https://api.mattermost.com/#operation/GetChannelByName>`_ or the `mattermost channel search </manage/mmctl-command-line-tool.html#mmctl-channel-search>`__ command.
     
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost channel move
+    mattermost channel move
 
-  Example
-    .. code-block:: none
+Example
+  .. code-block:: none
 
-      bin/mattermost channel move newteam 8soyabwthjnf9qibfztje5a36h --username myusername
-      bin/mattermost channel move newteam myteam:mychannel --username myusername
+    bin/mattermost channel move newteam 8soyabwthjnf9qibfztje5a36h --username myusername
+    bin/mattermost channel move newteam myteam:mychannel --username myusername
 
-  Options
-    .. code-block:: none
+Options
+  .. code-block:: none
 
-          --username [REQUIRED] Username of the user who is moving the team.
-          --remove-deactivated-users [OPTIONAL] When moving the channel, remove any users who have been deactivated who may be preventing the move.
+    --username [REQUIRED] Username of the user who is moving the team.
+    --remove-deactivated-users [OPTIONAL] When moving the channel, remove any users who have been deactivated who may be preventing the move.
 
 mattermost channel remove
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
-   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl channel remove </manage/mmctl-command-line-tool.html#mmctl-channel-users-remove>`__.
+  From Mattermost v6.0, this command has been replaced with the mmctl command `mmctl channel remove </manage/mmctl-command-line-tool.html#mmctl-channel-users-remove>`__.
 
 Description
-    Remove users from a channel.
+  Remove users from a channel.
 
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
       mattermost channel remove {channel} {users}
 
-  Examples
-    .. code-block:: none
+Examples
+  .. code-block:: none
 
-      bin/mattermost channel remove 8soyabwthjnf9qibfztje5a36h user@example.com username
-      bin/mattermost channel remove myteam:mychannel user@example.com username
-      bin/mattermost channel remove myteam:mychannel --all-users
+    bin/mattermost channel remove 8soyabwthjnf9qibfztje5a36h user@example.com username
+    bin/mattermost channel remove myteam:mychannel user@example.com username
+    bin/mattermost channel remove myteam:mychannel --all-users
 
-  Options
-    .. code-block:: none
+Options
+  .. code-block:: none
 
-          --all-users string     Remove all users from the channel.
+    --all-users string     Remove all users from the channel.
 
 mattermost channel rename
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
-   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl channel rename </manage/mmctl-command-line-tool.html#mmctl-channel-rename>`__.
+  From Mattermost v6.0, this command has been replaced with the mmctl command `mmctl channel rename </manage/mmctl-command-line-tool.html#mmctl-channel-rename>`__.
 
 Description
-    Rename a channel. Channels can be specified by *{team}:{channel}* using the team and channel names, or by using channel IDs. Channel IDs can be obtained via the `API <https://api.mattermost.com/#operation/GetChannelByName>`_ or the `mattermost channel search </manage/mmctl-command-line-tool.html#mmctl-channel-search>`__ command.
+  Rename a channel. Channels can be specified by *{team}:{channel}* using the team and channel names, or by using channel IDs. Channel IDs can be obtained via the `API <https://api.mattermost.com/#operation/GetChannelByName>`_ or the `mattermost channel search </manage/mmctl-command-line-tool.html#mmctl-channel-search>`__ command.
 
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost channel rename {channel} newchannelname --display_name "New Display Name"
+    mattermost channel rename {channel} newchannelname --display_name "New Display Name"
 
-  Examples
-    .. code-block:: none
+Examples
+  .. code-block:: none
 
-      bin/mattermost channel rename 8soyabwthjnf9qibfztje5a36h newchannelname --display_name "New Display Name"
-      bin/mattermost channel rename myteam:mychannel newchannelname --display_name "New Display Name"
+    bin/mattermost channel rename 8soyabwthjnf9qibfztje5a36h newchannelname --display_name "New Display Name"
+    bin/mattermost channel rename myteam:mychannel newchannelname --display_name "New Display Name"
 
-  Options
-    .. code-block:: none
+Options
+  .. code-block:: none
 
-      --display_name string   Channel Display Name
+    --display_name string   Channel Display Name
 
 mattermost channel restore
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
-   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl channel restore </manage/mmctl-command-line-tool.html#mmctl-channel-restore>`__.
+  From Mattermost v6.0, this command has been replaced with the mmctl command `mmctl channel restore </manage/mmctl-command-line-tool.html#mmctl-channel-restore>`__.
 
 Description
-    Restore a channel from the archive. Channels can be specified by {team}:{channel} using the team and channel names, or by using channel IDs. Channel IDs can be obtained via the `API <https://api.mattermost.com/#operation/GetChannelByName>`_ or the `mattermost channel search </manage/mmctl-command-line-tool.html#mmctl-channel-search>`__ command.
+  Restore a channel from the archive. Channels can be specified by {team}:{channel} using the team and channel names, or by using channel IDs. Channel IDs can be obtained via the `API <https://api.mattermost.com/#operation/GetChannelByName>`_ or the `mattermost channel search </manage/mmctl-command-line-tool.html#mmctl-channel-search>`__ command.
   
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost channel restore {channels}
+    mattermost channel restore {channels}
 
-  Examples
-    .. code-block:: none
+Examples
+  .. code-block:: none
 
-      bin/mattermost channel restore 8soyabwthjnf9qibfztje5a36h
-      bin/mattermost channel restore myteam:mychannel
+    bin/mattermost channel restore 8soyabwthjnf9qibfztje5a36h
+    bin/mattermost channel restore myteam:mychannel
 
 mattermost channel search
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
-   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl channel search </manage/mmctl-command-line-tool.html#mmctl-channel-search>`__.
+  From Mattermost v6.0, this command has been replaced with the mmctl command `mmctl channel search </manage/mmctl-command-line-tool.html#mmctl-channel-search>`__.
 
 Description
-    Search for a channel by channel name. Returns channel display name, channel Id, and indicates if it is private or archived. Private channels are appended with ``(private)`` and archived channels are appended with ``(archived)``.
+  Search for a channel by channel name. Returns channel display name, channel Id, and indicates if it is private or archived. Private channels are appended with ``(private)`` and archived channels are appended with ``(archived)``.
 
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost channel search {channelName}
+    mattermost channel search {channelName}
 
-  Examples
-    .. code-block:: none
+Examples
+  .. code-block:: none
 
-      bin/mattermost channel search mychannel
-      bin/mattermost channel search --team myteam mychannel
-      bin/mattermost channel search --team f1924a8db44ff3bb41c96424cdc20676 mychannel
+    bin/mattermost channel search mychannel
+    bin/mattermost channel search --team myteam mychannel
+    bin/mattermost channel search --team f1924a8db44ff3bb41c96424cdc20676 mychannel
 
-  Options
-    .. code-block:: none
+Options
+  .. code-block:: none
 
-      --team   Team Name or Team ID
+    --team   Team Name or Team ID
+
+----
 
 mattermost command
 ------------------
 
-  Description
-    Commands for slash command management.
+Description
+  Commands for slash command management.
 
-  Child Commands
-    -  `mattermost command create`_ - Create a custom slash command for a specified team.
-    -  `mattermost command delete`_ - Delete a slash command.
-    -  `mattermost command list`_ - List all commands on specified teams or all teams by default.
-    -  `mattermost command modify`_ - Modify a slash command.
-    -  `mattermost command move`_ - Move a slash command to a different team.
-    -  `mattermost command show`_ - Show a custom slash command.
+Child Commands
+  -  `mattermost command create`_ - Create a custom slash command for a specified team.
+  -  `mattermost command delete`_ - Delete a slash command.
+  -  `mattermost command list`_ - List all commands on specified teams or all teams by default.
+  -  `mattermost command modify`_ - Modify a slash command.
+  -  `mattermost command move`_ - Move a slash command to a different team.
+  -  `mattermost command show`_ - Show a custom slash command.
 
 mattermost command create
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
-   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl command create </manage/mmctl-command-line-tool.html#mmctl-command-create>`__.
+  From Mattermost v6.0, this command has been replaced with the mmctl command `mmctl command create </manage/mmctl-command-line-tool.html#mmctl-command-create>`__.
 
 Description
-    Create a custom slash command for a specified team.
+  Create a custom slash command for a specified team.
 
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost command create
+    mattermost command create
 
-  Examples
-    .. code-block:: none
+Examples
+  .. code-block:: none
 
-       bin/mattermost command create myteam --title MyCommand --description "My Command Description" --trigger-word mycommand --url http://localhost:8000/my-slash-handler --creator myusername --response-username my-bot-username --icon http://localhost:8000/my-slash-handler-bot-icon.png --autocomplete --post
+    bin/mattermost command create myteam --title MyCommand --description "My Command Description" --trigger-word mycommand --url http://localhost:8000/my-slash-handler --creator myusername --response-username my-bot-username --icon http://localhost:8000/my-slash-handler-bot-icon.png --autocomplete --post
 
-  Options
-    .. code-block:: none
+Options
+  .. code-block:: none
 
-          --title string                     Command Title
-          --description string               Command Description
-          --trigger-word string [REQUIRED]   Command Trigger Word
-          --url  string   [REQUIRED]         Command Callback URL
-          --creator string  [REQUIRED]       Command Creator's Username
-          --response-username string         Command Response Username
-          --icon string                      Command icon URL
-          --autocomplete bool                Show command in autocomplete list
-          --autocompleteDesc string          Short command description for autocomplete list
-          --autocompleteHint string          Command arguments displayed as help in autocomplete list
-          --post bool                        Use POST method for callback URL
+    --title string                     Command Title
+    --description string               Command Description
+    --trigger-word string [REQUIRED]   Command Trigger Word
+    --url  string   [REQUIRED]         Command Callback URL
+    --creator string  [REQUIRED]       Command Creator's Username
+    --response-username string         Command Response Username
+    --icon string                      Command icon URL
+    --autocomplete bool                Show command in autocomplete list
+    --autocompleteDesc string          Short command description for autocomplete list
+    --autocompleteHint string          Command arguments displayed as help in autocomplete list
+    --post bool                        Use POST method for callback URL
 
 mattermost command delete
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
-   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl command delete </manage/mmctl-command-line-tool.html#mmctl-command-delete>`__.
+  From Mattermost v6.0, this command has been replaced with the mmctl command `mmctl command delete </manage/mmctl-command-line-tool.html#mmctl-command-delete>`__.
 
 Description
-    Delete a slash command. Commands can be specified by command ID.
+  Delete a slash command. Commands can be specified by command ID.
 
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost command delete {commandID}
+    mattermost command delete {commandID}
 
-  Examples
-    .. code-block:: none
+Examples
+  .. code-block:: none
 
-       bin/mattermost command delete commandID
+    bin/mattermost command delete commandID
 
 mattermost command list
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
-   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl command list </manage/mmctl-command-line-tool.html#mmctl-command-list>`__.
+  From Mattermost v6.0, this command has been replaced with the mmctl command `mmctl command list </manage/mmctl-command-line-tool.html#mmctl-command-list>`__.
 
 
 Description
-    List all commands on specified teams or all teams by default.
+  List all commands on specified teams or all teams by default.
 
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost command list {team}
+    mattermost command list {team}
 
-  Examples
-    .. code-block:: none
+Examples
+  .. code-block:: none
 
-       bin/mattermost command list myteam
+    bin/mattermost command list myteam
 
 mattermost command modify
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  Description
-    Modify a slash command. Commands can be specified by command ID.
+Description
+  Modify a slash command. Commands can be specified by command ID.
 
 .. note::
-    Only fields that you want to modify need to be specified.  Also, when modifying the command's creator, the new creator specified must have the permission to create commands.
+  Only fields that you want to modify need to be specified.  Also, when modifying the command's creator, the new creator specified must have the permission to create commands.
 
 
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost command modify {commandID}
+    mattermost command modify {commandID}
 
-  Examples
-    .. code-block:: none
+Examples
+  .. code-block:: none
 
-       bin/mattermost command modify commandID --title MyModifiedCommand --description "My Modified Command Description" --trigger-word mycommand --url http://localhost:8000/my-slash-handler --creator myusername --response-username my-bot-username --icon http://localhost:8000/my-slash-handler-bot-icon.png --autocomplete --post
+    bin/mattermost command modify commandID --title MyModifiedCommand --description "My Modified Command Description" --trigger-word mycommand --url http://localhost:8000/my-slash-handler --creator myusername --response-username my-bot-username --icon http://localhost:8000/my-slash-handler-bot-icon.png --autocomplete --post
 
-  Options
-    .. code-block:: none
+Options
+  .. code-block:: none
 
-          --title string                     Command Title
-          --description string               Command Description
-          --trigger-word string              Command Trigger Word
-          --url  string                      Command Callback URL
-          --creator string                   Command Creator's Username
-          --response-username string         Command Response Username
-          --icon string                      Command Icon URL
-          --autocomplete bool                Show command in autocomplete list
-          --autocompleteDesc string          Short command description for autocomplete list
-          --autocompleteHint string          Command arguments displayed as help in autocomplete list
-          --post bool                        Use POST method for callback URL, else use GET method
+    --title string                     Command Title
+    --description string               Command Description
+    --trigger-word string              Command Trigger Word
+    --url  string                      Command Callback URL
+    --creator string                   Command Creator's Username
+    --response-username string         Command Response Username
+    --icon string                      Command Icon URL
+    --autocomplete bool                Show command in autocomplete list
+    --autocompleteDesc string          Short command description for autocomplete list
+    --autocompleteHint string          Command arguments displayed as help in autocomplete list
+    --post bool                        Use POST method for callback URL, else use GET method
 
 mattermost command move
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-  Description
-    Move a slash command to a different team. Commands can be specified by {team}:{command-trigger-word}, or by using command IDs.
+Description
+  Move a slash command to a different team. Commands can be specified by {team}:{command-trigger-word}, or by using command IDs.
 
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost command move
+    mattermost command move
 
-  Examples
-    .. code-block:: none
+Examples
+  .. code-block:: none
 
-      bin/mattermost command move newteam oldteam:command-trigger-word
-      bin/mattermost command move newteam o8soyabwthjnf9qibfztje5a36h
+    bin/mattermost command move newteam oldteam:command-trigger-word
+    bin/mattermost command move newteam o8soyabwthjnf9qibfztje5a36h
 
 mattermost command show
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-  Description
-    Show a custom slash command. Commands can be specified by command ID. Returns command ID, team ID, trigger word, display name and creator username.
+Description
+  Show a custom slash command. Commands can be specified by command ID. Returns command ID, team ID, trigger word, display name and creator username.
 
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      command show {commandID}
+    command show {commandID}
 
-  Examples
-    .. code-block:: none
+Examples
+  .. code-block:: none
 
-      bin/mattermost command show commandID
+    bin/mattermost command show commandID
+
+----
 
 mattermost config
 -----------------
 
-  Description
-    Commands for managing the configuration file.
+Description
+  Commands for managing the configuration file.
 
-  Child Command
-    - `mattermost config get`_ - Retrieve the value of a config setting by its name in dot notation.
-    - `mattermost config migrate`_ - Migrate a file-based configuration to (or from) a database-based configuration.
-    - `mattermost config reset`_ - Resets the value of a config setting by its name in dot notation or a setting section.
-    - `mattermost config set`_ - Set the value of a config setting by its name in dot notation.
-    - `mattermost config show`_ - Print the current mattermost configuration in an easy to read format.
-    - `mattermost config validate`_ - Validate the configuration file.
+Child Command
+  - `mattermost config get`_ - Retrieve the value of a config setting by its name in dot notation.
+  - `mattermost config migrate`_ - Migrate a file-based configuration to (or from) a database-based configuration.
+  - `mattermost config reset`_ - Resets the value of a config setting by its name in dot notation or a setting section.
+  - `mattermost config set`_ - Set the value of a config setting by its name in dot notation.
+  - `mattermost config show`_ - Print the current mattermost configuration in an easy to read format.
+  - `mattermost config validate`_ - Validate the configuration file.
 
 mattermost config get
 ~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
-   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl config get </manage/mmctl-command-line-tool.html#mmctl-config-get>`__.
+  From Mattermost v6.0, this command has been replaced with the mmctl command `mmctl config get </manage/mmctl-command-line-tool.html#mmctl-config-get>`__.
 
 Description
-    Retrieve the value of a config setting by its name in dot notation.
+  Retrieve the value of a config setting by its name in dot notation.
 
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost config get {config.name}
+    mattermost config get {config.name}
 
-  Examples
-    .. code-block:: none
+Examples
+  .. code-block:: none
 
-       bin/mattermost config get SqlSettings.DriverName
+    bin/mattermost config get SqlSettings.DriverName
 
- Options
-    .. code-block:: none
+Options
+  .. code-block:: none
 
-          --path string  Optional subpath; defaults to value in Site URL.
+    --path string  Optional subpath; defaults to value in Site URL.
 
 mattermost config migrate
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  Description
-    Migrate a file-based configuration to (or from) a database-based configuration. Point the Mattermost server at the target configuration to start using it. If using SAML, ensure the SAML certificates and keys are accessible to also migrate into the database.
+Description
+  Migrate a file-based configuration to (or from) a database-based configuration. Point the Mattermost server at the target configuration to start using it. If using SAML, ensure the SAML certificates and keys are accessible to also migrate into the database.
 
 .. note::
-    If a ``from`` parameter is not specified, the command will fall back to what is specified in --config.
+  If a ``from`` parameter is not specified, the command will fall back to what is specified in --config.
 
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost config migrate {config to read} {config to write}
+    mattermost config migrate {config to read} {config to write}
 
-  Examples
-    .. code-block:: none
+Examples
+  .. code-block:: none
 
-       bin/mattermost config migrate  path/to/config.json "postgres://mmuser:mostest@dockerhost:5432/mattermost_test?sslmode=disable&connect_timeout=10"
+    bin/mattermost config migrate  path/to/config.json "postgres://mmuser:mostest@dockerhost:5432/mattermost_test?sslmode=disable&connect_timeout=10"
 
 mattermost config reset
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  Description
-    Resets the value of a config setting by its name in dot notation or a setting section to the default value. Accepts multiple values for array settings. When no parameters are given, it will reset all config settings.
+Description
+  Resets the value of a config setting by its name in dot notation or a setting section to the default value. Accepts multiple values for array settings. When no parameters are given, it will reset all config settings.
 
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost config reset {config.name} {setting section}
+    mattermost config reset {config.name} {setting section}
 
-  Examples
-    .. code-block:: none
+Examples
+  .. code-block:: none
 
-       bin/mattermost config reset SqlSettings.DriverName LogSettings
+    bin/mattermost config reset SqlSettings.DriverName LogSettings
 
-  Options
-    .. code-block:: none
+Options
+  .. code-block:: none
 
-       --confirm  Confirm you really want to reset the config setting and a backup has been performed.
+    --confirm  Confirm you really want to reset the config setting and a backup has been performed.
 
 mattermost config set
 ~~~~~~~~~~~~~~~~~~~~~
 
-  Description
+Description
     Set the value of a config setting by its name in dot notation. Accepts multiple values for array settings.
 
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost config set {config.name} {setting new value}
+    mattermost config set {config.name} {setting new value}
 
-  Examples
-    .. code-block:: none
+Examples
+  .. code-block:: none
 
-       bin/mattermost config set SqlSettings.DriverName mysql
+    bin/mattermost config set SqlSettings.DriverName mysql
 
-  Options
-   .. code-block:: none
+Options
+  .. code-block:: none
 
-       --path string  Optional subpath; defaults to value in Site URL.
+    --path string  Optional subpath; defaults to value in Site URL.
 
 mattermost config show
 ~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
-   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl config </manage/mmctl-command-line-tool.html#mmctl-config-show>`__.
+  From Mattermost v6.0, this command has been replaced with the mmctl command `mmctl config </manage/mmctl-command-line-tool.html#mmctl-config-show>`__.
 
 Description
-    Print the current mattermost configuration in an easy to read format.
+  Print the current mattermost configuration in an easy to read format.
 
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost config show
+    mattermost config show
 
-  Examples
-    .. code-block:: none
+Examples
+  .. code-block:: none
 
-       bin/mattermost config show
+    bin/mattermost config show
 
 mattermost config validate
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
-    Makes sure the configuration file has the following properties:
+  Makes sure the configuration file has the following properties:
 
     - Is valid JSON.
     - Has attributes of the correct type, such as *bool*, *int*, and *str*.
     - All entries are valid. For example, checks that entries are below the maximum length.
 
-  Format
-      .. code-block:: none
+Format
+  .. code-block:: none
 
-        mattermost config validate
+    mattermost config validate
 
-  Example
-      .. code-block:: none
+Example
+  .. code-block:: none
 
-        bin/mattermost config validate
-	
+    bin/mattermost config validate
+
+----
+
 mattermost db init
 ------------------
 
-  Description
+Description
     Initializes the database for a given data source name (DSN), executes migrations, and loads custom defaults when specified.
 
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost db init
+    mattermost db init
 
-  Examples
-  
-    Use the ``config`` flag to pass the DSN:
+Examples
+  Use the ``config`` flag to pass the DSN:
     
-    .. code-block:: none
+  .. code-block:: none
 
-       mattermost db init --config postgres://localhost/mattermost
+    mattermost db init --config postgres://localhost/mattermost
        
-    Run this command to use the ``MM_CONFIG`` environment variable:
+  Run this command to use the ``MM_CONFIG`` environment variable:
     
-    .. code-block:: none
+  .. code-block:: none
       
-       MM_CONFIG=postgres://localhost/mattermost mattermost db init
+    MM_CONFIG=postgres://localhost/mattermost mattermost db init
     
-    Run this command to set a custom defaults file to be loaded into the database: 
+  Run this command to set a custom defaults file to be loaded into the database: 
     
-    .. code-block:: none
+  .. code-block:: none
     
-       MM_CUSTOM_DEFAULTS_PATH=custom.json MM_CONFIG=postgres://localhost/mattermost mattermost db init
-       
+    MM_CUSTOM_DEFAULTS_PATH=custom.json MM_CONFIG=postgres://localhost/mattermost mattermost db init
+
+----
+
 mattermost db migrate
 ---------------------
 
-  Description
-    Migrates the database schema if there are any unapplied migrations.
+Description
+  Migrates the database schema if there are any unapplied migrations.
 
-  Format
-    .. code-block:: none
+Child Commands
+  -  `mattermost db downgrade`_ - Roll back database migrations.
 
-      mattermost db migrate
+Format
+  .. code-block:: none
 
-  Examples
-    
-    .. code-block:: none
+    mattermost db migrate
 
-       mattermost db migrate
+Example
+  .. code-block:: none
+
+    mattermost db migrate
+
+Options
+  .. code-block:: none
+
+    --auto-recover bool     If the migration plan receives an error during migrations, this command will try to rollback migrations already applied within the plan. Not recommended without reviewing migration plan by combining --save-plan and --dry-run options.
+    --save-plan bool        Saves the plan for the migration into the file store so that it can be used for reviewing the plan or for downgrading.
+    --dry-run bool          Does not apply the migrations, but it validates how the migration would run based on the given conditions.
+
+mattermost db downgrade
+~~~~~~~~~~~~~~~~~~~~~~~
+
+Description
+  Rolls back database migrations. Requires either an update plan to roll back to, or comma-separated version numbers to be rolled back.
+
+Format
+  .. code-block:: none
+
+    mattermost db downgrade
+
+Example
+  .. code-block:: none
+
+    mattermost db downgrade 99,100,101
+
+Options
+  .. code-block:: none
+
+    --<plan-file> string      Runs the rollback migrations defined in the plan file.
+
+----
 
 mattermost export
 -----------------
@@ -923,6 +942,8 @@ mattermost export schedule
           --exportFrom string     Unix timestamp (seconds since epoch, UTC) to export data from.
           --timeoutSeconds string Set how long the export should run for before timing out.
 
+----
+
 mattermost extract-documents-content 
 -------------------------------------
 
@@ -951,6 +972,8 @@ mattermost extract-documents-content
       	 --from    Optional. Unix timestamp (seconds since epoch, UTC) of the earliest file to extract. (default 0)
      	 --to 	   Optional. Unix timestamp (seconds since epoch, UTC) of the latest file to extract. (default now)
 
+----
+
 mattermost group
 -----------------
 
@@ -961,12 +984,14 @@ mattermost group
     -  `mattermost group channel`_ - Management of Mattermost groups linked to channels
     -  `mattermost group team`_ - Management of Mattermost groups linked to teams
 
+----
+
 mattermost group channel
 ------------------------
 
 .. note::
 
-   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl group channel </manage/mmctl-command-line-tool.html#mmctl-group-channel>`__.
+   From Mattermost v6.0, this command has been replaced with the mmctl command `mmctl group channel </manage/mmctl-command-line-tool.html#mmctl-group-channel>`__.
 
 
   Description
@@ -983,7 +1008,7 @@ mattermost group channel enable
 
 .. note::
 
-   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl group channel enable </manage/mmctl-command-line-tool.html#mmctl-group-channel-enable>`__.
+   From Mattermost v6.0, this command has been replaced with the mmctl command `mmctl group channel enable </manage/mmctl-command-line-tool.html#mmctl-group-channel-enable>`__.
 
 
   Description
@@ -1008,7 +1033,7 @@ mattermost group channel disable
 
 .. note::
 
-   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl group channel disable </manage/mmctl-command-line-tool.html#mmctl-group-channel-disable>`__.
+   From Mattermost v6.0, this command has been replaced with the mmctl command `mmctl group channel disable </manage/mmctl-command-line-tool.html#mmctl-group-channel-disable>`__.
 
 Description
     Disables group constraint on the specified channel.
@@ -1028,7 +1053,7 @@ mattermost group channel list
 
 .. note::
 
-   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl group channel list </manage/mmctl-command-line-tool.html#mmctl-group-channel-list>`__.
+   From Mattermost v6.0, this command has been replaced with the mmctl command `mmctl group channel list </manage/mmctl-command-line-tool.html#mmctl-group-channel-list>`__.
 
 Description
     Lists the groups associated with a channel.
@@ -1049,7 +1074,7 @@ mattermost group channel status
 
 .. note::
 
-   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl group channel status </manage/mmctl-command-line-tool.html#mmctl-group-channel-status>`__.
+   From Mattermost v6.0, this command has been replaced with the mmctl command `mmctl group channel status </manage/mmctl-command-line-tool.html#mmctl-group-channel-status>`__.
 
 Description
     Shows the group constraint status of the specified channel. Returns "Enabled" when channel membership is managed by linked groups.  Returns "Disabled" when the channel membership is managed by manually adding and removing users.
@@ -1064,12 +1089,14 @@ Description
 
       bin/mattermost group channel status myteam:mychannel
 
+----
+
 mattermost group team
 ------------------------
 
 .. note::
 
-   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl group team </manage/mmctl-command-line-tool.html#mmctl-group-team>`__.
+   From Mattermost v6.0, this command has been replaced with the mmctl command `mmctl group team </manage/mmctl-command-line-tool.html#mmctl-group-team>`__.
 
 Description
     Commands for managing Mattermost groups linked to a team.
@@ -1085,7 +1112,7 @@ mattermost group team enable
 
 .. note::
 
-   TIn Mattermost v6.0, this command has been replaced with the mmctl command `mmctl group team enable </manage/mmctl-command-line-tool.html#mmctl-group-team-enable>`__.
+   From Mattermost v6.0, this command has been replaced with the mmctl command `mmctl group team enable </manage/mmctl-command-line-tool.html#mmctl-group-team-enable>`__.
 
 Description
     Enables group constraint on the specified team. When a team is group constrained, team membership is managed by linked groups instead of managed by manually inviting and removing users.
@@ -1108,7 +1135,7 @@ mattermost group team disable
 
 .. note::
 
-   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl group team disable </manage/mmctl-command-line-tool.html#mmctl-group-team-disable>`__.
+   From Mattermost v6.0, this command has been replaced with the mmctl command `mmctl group team disable </manage/mmctl-command-line-tool.html#mmctl-group-team-disable>`__.
 
 Description
     Disables group constraint on the specified team.
@@ -1128,7 +1155,7 @@ mattermost group team list
 
 .. note::
 
-   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl group team list </manage/mmctl-command-line-tool.html#mmctl-group-team-list>`__.
+   From Mattermost v6.0, this command has been replaced with the mmctl command `mmctl group team list </manage/mmctl-command-line-tool.html#mmctl-group-team-list>`__.
 
 Description
     Lists the groups associated with a team.
@@ -1149,7 +1176,7 @@ mattermost group team status
 
 .. note::
 
-   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl group team status </manage/mmctl-command-line-tool.html#mmctl-group-team-status>`__.
+   From Mattermost v6.0, this command has been replaced with the mmctl command `mmctl group team status </manage/mmctl-command-line-tool.html#mmctl-group-team-status>`__.
 
 Description
     Shows the group constraint status of the specified team. Returns "Enabled" when team membership is managed by linked groups.  Returns "Disabled" when the team membership is managed by manually inviting and removing users.
@@ -1164,6 +1191,8 @@ Description
 
       bin/mattermost group team status myteam
 
+----
+
 mattermost help
 ---------------
 
@@ -1174,6 +1203,8 @@ mattermost help
     .. code-block:: none
 
       mattermost help {outputdir}
+
+----
 
 mattermost import
 -----------------
@@ -1224,6 +1255,8 @@ mattermost import slack
 
       bin/mattermost import slack myteam slack_export.zip
 
+----
+
 mattermost integrity
 --------------------
 
@@ -1249,6 +1282,8 @@ mattermost integrity
 
 .. _command-line-tools-mattermost-jobserver:
 
+----
+
 mattermost jobserver
 --------------------
 
@@ -1264,6 +1299,8 @@ mattermost jobserver
     .. code-block:: none
 
       bin/mattermost jobserver
+
+----
 
 mattermost ldap
 ---------------
@@ -1303,7 +1340,7 @@ mattermost ldap sync
 
 .. note::
 
-   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl ldap sync </manage/mmctl-command-line-tool.html#mmctl-ldap-sync>`__.
+   From Mattermost v6.0, this command has been replaced with the mmctl command `mmctl ldap sync </manage/mmctl-command-line-tool.html#mmctl-ldap-sync>`__.
 
 Description
     Synchronize all AD/LDAP users now.
@@ -1317,6 +1354,8 @@ Description
     .. code-block:: none
 
       bin/mattermost ldap sync
+
+----
 
 mattermost license
 ------------------
@@ -1332,7 +1371,7 @@ mattermost license upload
 
 .. note::
 
-   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl license upload </manage/mmctl-command-line-tool.html#mmctl-license-upload>`__.
+   From Mattermost v6.0, this command has been replaced with the mmctl command `mmctl license upload </manage/mmctl-command-line-tool.html#mmctl-license-upload>`__.
 
 Description
     Upload a license. This command replaces the current license if one is already uploaded.
@@ -1350,12 +1389,14 @@ Description
 .. note::
   The Mattermost server needs to be restarted after uploading a license file for any changes to take effect. Also, for cluster setups the license file needs to be uploaded to every node.
 
+----
+
 mattermost logs
 ------------------
 
 .. note::
 
-   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl logs </manage/mmctl-command-line-tool.html#mmctl-logs>`__.
+   From Mattermost v6.0, this command has been replaced with the mmctl command `mmctl logs </manage/mmctl-command-line-tool.html#mmctl-logs>`__.
 
 Description
     Displays Mattermost logs in a human-readable format.
@@ -1375,6 +1416,7 @@ Description
 
           --logrus   Displays Mattermost logs in `logrus format <https://github.com/sirupsen/logrus>`_. Else, standard output is returned.
 
+----
 
 mattermost permissions
 ----------------------
@@ -1445,6 +1487,8 @@ mattermost permissions reset
 
           --confirm   Confirm you really want to reset the permissions system and a DB backup has been performed.
 
+----
+
 mattermost plugin
 -----------------
 
@@ -1463,7 +1507,7 @@ mattermost plugin add
 
 .. note::
 
-   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl plugin add </manage/mmctl-command-line-tool.html#mmctl-plugin-add>`__.
+   From Mattermost v6.0, this command has been replaced with the mmctl command `mmctl plugin add </manage/mmctl-command-line-tool.html#mmctl-plugin-add>`__.
 
 Description
     Add plugins to your Mattermost server. If adding multiple plugins, use a space-separated list.
@@ -1483,7 +1527,7 @@ mattermost plugin delete
 
 .. note::
 
-   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl plugin delete </manage/mmctl-command-line-tool.html#mmctl-plugin-delete>`__.
+   From Mattermost v6.0, this command has been replaced with the mmctl command `mmctl plugin delete </manage/mmctl-command-line-tool.html#mmctl-plugin-delete>`__.
 
 Description
     Delete previously uploaded plugins from your Mattermost server. If deleting multiple plugins, use a space-separated list.
@@ -1503,7 +1547,7 @@ mattermost plugin disable
 
 .. note::
 
-   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl plugin disable </manage/mmctl-command-line-tool.html#mmctl-plugin-disable>`__.
+   From Mattermost v6.0, this command has been replaced with the mmctl command `mmctl plugin disable </manage/mmctl-command-line-tool.html#mmctl-plugin-disable>`__.
 
 Description
     Disable plugins. Disabled plugins are immediately removed from the user interface and logged out of all sessions. If disabling multiple plugins, use a space-separated list.
@@ -1523,7 +1567,7 @@ mattermost plugin enable
 
 .. note::
 
-   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl plugin enable </manage/mmctl-command-line-tool.html#mmctl-plugin-enable>`__.
+   From Mattermost v6.0, this command has been replaced with the mmctl command `mmctl plugin enable </manage/mmctl-command-line-tool.html#mmctl-plugin-enable>`__.
 
 Description
     Enable plugins for use on your Mattermost server. If enabling multiple plugins, use a space-separated list.
@@ -1543,7 +1587,7 @@ mattermost plugin list
 
 .. note::
 
-   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl plugin list </manage/mmctl-command-line-tool.html#mmctl-plugin-list>`__.
+   From Mattermost v6.0, this command has been replaced with the mmctl command `mmctl plugin list </manage/mmctl-command-line-tool.html#mmctl-plugin-list>`__.
 
 Description
     List all active and inactive plugins installed on your Mattermost server.
@@ -1557,6 +1601,8 @@ Description
     .. code-block:: none
 
       bin/mattermost plugin list
+
+----
 
 mattermost reset
 ----------------
@@ -1573,6 +1619,8 @@ mattermost reset
     .. code-block:: none
 
           --confirm   Confirm you really want to delete everything and a DB backup has been performed.
+
+----
 
 mattermost roles
 ----------------
@@ -1616,12 +1664,14 @@ mattermost roles system\_admin
 
       bin/mattermost roles system_admin user1
 
+----
+
 mattermost sampledata
 ---------------------
 
   Description
-    .. versionadded:: 4.7
-      Generate sample data and populate the Mattermost database. Supported in Mattermost v4.7 and later.
+
+      Generate sample data and populate the Mattermost database. 
 
       The command generates one user as the System Administrator with a username ``sysadmin`` and password ``Sys@dmin-sample1``. Other users are generated following an index, e.g. with username ``user-1`` and password ``SampleUs@r-1``.
 
@@ -1653,6 +1703,8 @@ mattermost sampledata
           -b, --bulk string                    Optional. Path to write a JSONL bulk file instead of loading into the database.
           -w, --workers int                    How many workers to run during the import. (default 2)
 
+----
+
 mattermost server
 -----------------
 
@@ -1663,6 +1715,8 @@ mattermost server
     .. code-block:: none
 
       mattermost server
+
+----
 
 mattermost team
 ---------------
@@ -1698,7 +1752,7 @@ mattermost team add
 
 .. note::
 
-   TIn Mattermost v6.0, this command has been replaced with the mmctl command `mmctl team add </manage/mmctl-command-line-tool.html#mmctl-team-users-add>`__.
+   From Mattermost v6.0, this command has been replaced with the mmctl command `mmctl team add </manage/mmctl-command-line-tool.html#mmctl-team-users-add>`__.
 
 Description
     Add users to a team. Before running this command, see the :ref:`note about {team-name} <team-value-note>`.
@@ -1718,7 +1772,7 @@ mattermost team archive
 
 .. note::
 
-   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl team archive </manage/mmctl-command-line-tool.html#mmctl-team-archive>`__.
+   From Mattermost v6.0, this command has been replaced with the mmctl command `mmctl team archive </manage/mmctl-command-line-tool.html#mmctl-team-archive>`__.
 
 
 Description
@@ -1739,7 +1793,7 @@ mattermost team create
 
 .. note::
 
-   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl team create </manage/mmctl-command-line-tool.html#mmctl-team-create>`__.
+   From Mattermost v6.0, this command has been replaced with the mmctl command `mmctl team create </manage/mmctl-command-line-tool.html#mmctl-team-create>`__.
 
 Description
     Create a team.
@@ -1768,7 +1822,7 @@ mattermost team delete
 
 .. note::
 
-   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl team delete </manage/mmctl-command-line-tool.html#mmctl-team-delete>`__.
+   From Mattermost v6.0, this command has been replaced with the mmctl command `mmctl team delete </manage/mmctl-command-line-tool.html#mmctl-team-delete>`__.
 
 Description
     Permanently delete a team along with all related information, including posts from the database. Before running this command, see the :ref:`note about {team-name} <team-value-note>`.
@@ -1793,9 +1847,7 @@ mattermost team list
 
 .. note::
 
-   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl team list </manage/mmctl-command-line-tool.html#mmctl-team-list>`__.
-
-*Supported in Mattermost v4.10 and later*
+   From Mattermost v6.0, this command has been replaced with the mmctl command `mmctl team list </manage/mmctl-command-line-tool.html#mmctl-team-list>`__.
 
   Description
     List all teams on the server.
@@ -1832,7 +1884,7 @@ mattermost team remove
 
 .. note::
 
-   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl team remove </manage/mmctl-command-line-tool.html#mmctl-team-users-remove>`__.
+   From Mattermost v6.0, this command has been replaced with the mmctl command `mmctl team remove </manage/mmctl-command-line-tool.html#mmctl-team-users-remove>`__.
 
 Description
     Remove users from a team. Before running this command, see the :ref:`note about {team-name} <team-value-note>`.
@@ -1852,7 +1904,7 @@ mattermost team rename
 
 .. note::
 
-   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl team rename </manage/mmctl-command-line-tool.html#mmctl-team-rename>`__.
+   From Mattermost v6.0, this command has been replaced with the mmctl command `mmctl team rename </manage/mmctl-command-line-tool.html#mmctl-team-rename>`__.
 
 Description
     Rename a team.
@@ -1893,7 +1945,7 @@ mattermost team search
 
 .. note::
 
-   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl team search </manage/mmctl-command-line-tool.html#mmctl-team-search>`__.
+   From Mattermost v6.0, this command has been replaced with the mmctl command `mmctl team search </manage/mmctl-command-line-tool.html#mmctl-team-search>`__.
 
 Description
     Search for teams based on name. Before running this command, see the :ref:`note about {team-name} <team-value-note>`.
@@ -1907,6 +1959,8 @@ Description
     .. code-block:: none
 
        bin/mattermost team search team1
+
+----
 
 mattermost user
 ---------------
@@ -1937,7 +1991,7 @@ mattermost user activate
 
 .. note::
 
-   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl user activate </manage/mmctl-command-line-tool.html#mmctl-user-activate>`__.
+   From Mattermost v6.0, this command has been replaced with the mmctl command `mmctl user activate </manage/mmctl-command-line-tool.html#mmctl-user-activate>`__.
 
 Description
     Activate users that have been deactivated. If activating multiple users, use a space-separated list.
@@ -1985,8 +2039,8 @@ mattermost user create
 
 .. note::
 
-   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl user create </manage/mmctl-command-line-tool.html#mmctl-user-create>`__.
-
+  - From Mattermost v6.0, this command has been replaced with the mmctl command `mmctl user create </manage/mmctl-command-line-tool.html#mmctl-user-create>`__.
+  - If you automate user creation through the CLI tool with SMTP enabled, emails will be sent to all new users created. If you run such a load script, it is best to disable SMTP or to use test accounts so that new account creation emails aren't unintentionally sent to people at your organization who aren't expecting them.
 
 Description
     Create a user.
@@ -2019,7 +2073,7 @@ mattermost user deactivate
 
 .. note::
 
-   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl user deactivate </manage/mmctl-command-line-tool.html#mmctl-user-deactivate>`__.
+   From Mattermost v6.0, this command has been replaced with the mmctl command `mmctl user deactivate </manage/mmctl-command-line-tool.html#mmctl-user-deactivate>`__.
 
 Description
     Deactivate a user. Deactivated users are immediately logged out of all sessions and are unable to log back in.
@@ -2093,7 +2147,7 @@ mattermost user email
 
 .. note::
 
-   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl user email </manage/mmctl-command-line-tool.html#mmctl-user-email>`__.
+   From Mattermost v6.0, this command has been replaced with the mmctl command `mmctl user email </manage/mmctl-command-line-tool.html#mmctl-user-email>`__.
 
 
 Description
@@ -2114,7 +2168,7 @@ mattermost user invite
 
 .. note::
 
-   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl user invite </manage/mmctl-command-line-tool.html#mmctl-user-invite>`__.
+   From Mattermost v6.0, this command has been replaced with the mmctl command `mmctl user invite </manage/mmctl-command-line-tool.html#mmctl-user-invite>`__.
 
 
 Description
@@ -2164,8 +2218,6 @@ mattermost user migrate_auth
       --dryRun Run a simulation of the migration process without changing the database.
 
 **Migrate to SAML**
-
-*Supported in Mattermost v4.8 and later*
 
   Parameters
 
@@ -2296,7 +2348,7 @@ mattermost user password
 
 .. note::
 
-   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl user reset_password </manage/mmctl-command-line-tool.html#mmctl-user-reset-password>`__.
+   From Mattermost v6.0, this command has been replaced with the mmctl command `mmctl user reset_password </manage/mmctl-command-line-tool.html#mmctl-user-reset-password>`__.
 
 
 Description
@@ -2317,7 +2369,7 @@ mattermost user resetmfa
 
 .. note::
 
-   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl user resetmfa </manage/mmctl-command-line-tool.html#mmctl-user-resetmfa>`__.
+   From Mattermost v6.0, this command has been replaced with the mmctl command `mmctl user resetmfa </manage/mmctl-command-line-tool.html#mmctl-user-resetmfa>`__.
 
 
 Description
@@ -2338,7 +2390,7 @@ mattermost user search
 
 .. note::
 
-   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl user search </manage/mmctl-command-line-tool.html#mmctl-user-search>`__.
+   From Mattermost v6.0, this command has been replaced with the mmctl command `mmctl user search </manage/mmctl-command-line-tool.html#mmctl-user-search>`__.
 
 
 Description
@@ -2370,6 +2422,8 @@ mattermost user verify
 
       bin/mattermost user verify user1
 
+----
+
 mattermost version
 ------------------
 
@@ -2384,6 +2438,8 @@ Description
     .. code-block:: none
 
       mattermost version
+
+----
 
 mattermost webhook
 ------------------
@@ -2572,7 +2628,6 @@ mattermost webhook move-outgoing
 
           --channel string              Channel ID or Channel Name
 
-
 mattermost webhook show
 ~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -2588,25 +2643,6 @@ mattermost webhook show
     .. code-block:: none
 
        bin/mattermost webhook show [webhookId]
-
-Mattermost 3.5 and earlier
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Typing ``./platform -help`` brings up documentation for the CLI tool. To return the help documentation in GitLab omnibus, type
-
-    .. code-block:: none
-
-      sudo -u mattermost /opt/gitlab/embedded/bin/mattermost --config=/var/opt/gitlab/mattermost/config.json -help
-
-Notes:
-
-- Parameters in CLI commands are order-specific.
-- If special characters (``!``, ``|``, ``(``, ``)``, ``\``, `````, and ``"``) are used, the entire argument needs to be surrounded by single quotes (e.g. ``-password 'mypassword!'``, or the individual characters need to be escaped out (e.g. ``-password mypassword\!``).
-- Team name and channel name refer to the handles, not the display names. So in the url ``https://community.mattermost.com/core/channels/town-square`` team name would be ``core`` and channel name would be ``town-square``
-
-.. tip :: 
-	
-	If you automate user creation through the CLI tool with SMTP enabled, emails will be sent to all new users created. If you run such a load script, it is best to disable SMTP or to use test accounts so that new account creation emails aren't unintentionally sent to people at your organization who aren't expecting them.
 
 CLI Documentation:
 
@@ -2775,10 +2811,10 @@ CLI Documentation:
 
 
 Troubleshooting
-^^^^^^^^^^^^^^^^^
+----------------
 
 Executing a command hangs and doesn't complete
-------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you have Bleve search indexing enabled, temporarily disable it in **System Console > Experimental > Bleve** and run the command again. You can also optionally use the new `mmctl Command Line Tool </manage/mmctl-command-line-tool.html>`_.
 
