@@ -60,13 +60,21 @@ Using a web browser or the desktop app, you can also add users to channels withi
 Leave a channel
 ----------------
 
-Using a web browser or the desktop app, you can remove yourself from a channel, you can:
+You can leave public or private channels any time.
 
-- Select the channel name at the top of the center pane to access the drop-down menu, then select **Manage Members**. Select the member's `user role </welcome/about-user-roles.html>`__, then select **Remove from Channel**.
-- Select the channel's **View Info** |channel-info| icon, and select **Members** in the right pane. Select **Manage**, select a user's role, then select **Leave a Channel**.
+.. tabs::
 
-Remove members from a channel
------------------------------
+  .. tab:: Desktop
+
+    Select the channel name at the top of the center pane to access the drop-down menu, then select **Leave Channel**.
+  
+  .. tab:: Mobile
+
+    1. In a channel, tap |options-icon| in the top right corner.
+    2. Tap **Leave channel**.
+
+Remove other members from a channel
+-----------------------------------
 
 Any member of a channel can remove other members from a channel.
 
@@ -87,6 +95,6 @@ Any member of a channel can remove other members from a channel.
     1. In a channel, tap |options-icon| in the top right corner.
     2. Tap **View Info**.
     3. Tap **Members**.
-    4. Tap **Manage**.
+    4. Tap **Manage** in the top right corner of the screen.
     5. Tap a `user role </welcome/about-user-roles.html>`__ to change it, and tap **Remove from Channel**.
     6. Tap **Done**.

@@ -29,6 +29,13 @@ Users
 | **Note**: You can search for users by partial first name, last name, nickname, or username.                                 |
 +---------------------------------------------------------------+-------------------------------------------------------------+
 
+Deactivate user accounts
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+If you need to remove a user from your Mattermost deployment, you can deactivate the user account. Deactivated users have an inactive status, are logged out of Mattermost as soon as they are deactivated, and deactivated users can no longer log back in. While a user account is deactivated, you can manage the user's role, password, and email address.
+
+Deactivate a user account by selecting their role, then select **Deactivate**. You can re-activate that user account later by selecting **Activate**.
+
 ----
 
 Groups
