@@ -160,3 +160,10 @@ Channel name
 A channel name must be at least two characters, and can be up to 64 characters in length. `Some unicode characters <https://www.w3.org/TR/unicode-xml/#Charlist>`_ aren't supported.
 
 Change the channel name by selecting **Rename Channel**. Changing the name of the channel also changes the channel URL. Any channel member can change a channel name, unless the system admin has `restricted permissions to do so using advanced permissions </onboard/advanced-permissions.html>`__.
+
+Automatically follow all new threads in this channel
+----------------------------------------------------
+
+By default, you don't automatically follow new conversation threads unless you `start a thread or reply to a thread </channels/organize-conversations.html#start-or-reply-to-threads>`__, `follow a thread </channels/organize-conversations.html#follow-threads-and-messages>`__, or are `@mentioned </channels/mention-people.html#username>`__ in a thread. 
+
+You can configure Mattermost to automatically follow every thread in a channel. When enabled, you can `access all threads </channels/organize-conversations.html#view-all-threads>`__ in the **Threads** view, and `unfollow specific threads </channels/organize-conversations.html#follow-threads-and-messages>`__ as you prefer.
