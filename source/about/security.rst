@@ -18,7 +18,7 @@ Mattermost offers a host of features to help keep your private cloud communicati
 Private Cloud deployment with secure mobile apps
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- Mattermost can run entirely behind your firewall as a single Linux binary, as a Docker container, or on your Kubernetes cluster with MySQL or PostgreSQL as database. Remote access can be enabled through the use of `VPN clients on PC and mobile devices </deploy/deployment-overview.html#behind-a-vpn>`__ so that Mattermost can be used outside your private network.
+- Mattermost can run entirely behind your firewall as a single Linux binary, as a Docker container, or on your Kubernetes cluster with PostgreSQL or MySQL as database. Remote access can be enabled through the use of `VPN clients on PC and mobile devices </deploy/deployment-overview.html#behind-a-vpn>`__ so that Mattermost can be used outside your private network.
 - Mattermost mobile apps can be deployed to an `internal Enterprise App Store </deploy/deploy-mobile-apps-using-emm-provider.html>`__ by using source code available for Mattermost mobile apps and push notification service. 
 - Optionally, the provided Mattermost Mobile Apps can be used when the Mattermost server is reachable through the internet on port 443. In this configuration, you have the option of using compiled `iOS and Android applications in iTunes and Google Play provided by Mattermost, Inc. </deploy/mobile-hpns.html>`__ (Mattermost Enterprise and Mattermost Professional).
 - User sessions across web, PC, and mobile can be `remotely revoked through profile settings </messaging/manage-profile-settings.html#view-and-logout-of-active-sessions>`__, or via the System Console by deactivating accounts.

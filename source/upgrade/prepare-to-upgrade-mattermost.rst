@@ -22,22 +22,14 @@ Upgrade to Mattermost v7.1
 
 Mattermost v7.1 introduces schema changes in the form of a new column and its index. The following notes our test results for the schema changes:
 
-- MySQL 12M Posts, 2.5M Reactions - ~1min 34s (instance: PC with 8 cores, 16GB RAM)
 - PostgreSQL 12M Posts, 2.5M Reactions - ~1min 18s (instance: db.r5.2xlarge)
+- MySQL 12M Posts, 2.5M Reactions - ~1min 34s (instance: PC with 8 cores, 16GB RAM)
 
 You can run the following SQL queries before the upgrade that obtains a lock on ``Reactions`` table. Users' reactions posted during this time won't be reflected in the database until the migrations are complete. This is fully backwards-compatible.
 
 If your connection collation and table collations are different, this can result in the error `Illegal mix of collations`. To resolve this error, set the same collation for both the connection and the table. There are different collations at different levels - connection, database, table, column, and database administrators may choose to set different collation levels for different objects.
 
 .. tabs:: 
-
-  .. tab:: MySQL
-
-    ``ALTER TABLE Reactions ADD COLUMN ChannelId varchar(26) NOT NULL DEFAULT "";``
-
-    ``UPDATE Reactions SET ChannelId = COALESCE((select ChannelId from Posts where Posts.Id = Reactions.PostId), '') WHERE ChannelId="";``
-
-    ``CREATE INDEX idx_reactions_channel_id ON Reactions(ChannelId) LOCK=NONE;``
 
   .. tab:: PostgreSQL
 
@@ -46,6 +38,14 @@ If your connection collation and table collations are different, this can result
     ``UPDATE reactions SET channelid = COALESCE((select channelid from posts where posts.id = reactions.postid), '') WHERE channelid='';``
 
     ``CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_reactions_channel_id on reactions (channelid);``
+
+  .. tab:: MySQL
+
+    ``ALTER TABLE Reactions ADD COLUMN ChannelId varchar(26) NOT NULL DEFAULT "";``
+
+    ``UPDATE Reactions SET ChannelId = COALESCE((select ChannelId from Posts where Posts.Id = Reactions.PostId), '') WHERE ChannelId="";``
+
+    ``CREATE INDEX idx_reactions_channel_id ON Reactions(ChannelId) LOCK=NONE;``
 
 Upgrade to Mattermost v7.0
 --------------------------
@@ -57,14 +57,14 @@ Upgrade to Mattermost v6.7
 
 Mattermost v6.7 introduces schema changes in the form of a new index. The following notes our test results for the schema changes:
 
+- Postgres 7M Posts - ~9s  (instance: db.r5.xlarge)
 - MySQL 7M Posts - ~17s (instance: db.r5.xlarge)
 - MySQL 9M Posts - 2min 12s (instance: db.r5.large)
-- Postgres 7M Posts - ~9s  (instance: db.r5.xlarge)
 
 If you want a zero downtime upgrade, you can apply this index prior to doing the upgrade. This is fully backwards-compatible and will not acquire any table lock or affect any existing operations on the table.
 
-- For MySQL: ``CREATE INDEX idx_posts_create_at_id on Posts(CreateAt, Id) LOCK=NONE;``
 - For Postgres: ``CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_posts_create_at_id on posts(createat, id);``
+- For MySQL: ``CREATE INDEX idx_posts_create_at_id on Posts(CreateAt, Id) LOCK=NONE;``
 
 Upgrade to Mattermost v6.0
 --------------------------
@@ -86,7 +86,7 @@ We strongly recommend that you:
 v6.0 database schema migrations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Mattermost v6.0 introduces several database schema changes to improve both database and application performance. The upgrade will run significant database schema changes that can cause an extended startup time depending on the dataset size. We've conducted extensive tests on supported database drivers including MySQL and PostgreSQL, using realistic datasets of more than 10 million posts and more than 72 million posts.
+Mattermost v6.0 introduces several database schema changes to improve both database and application performance. The upgrade will run significant database schema changes that can cause an extended startup time depending on the dataset size. We've conducted extensive tests on supported database drivers including PostgreSQL and MySQL, using realistic datasets of more than 10 million posts and more than 72 million posts.
 
 A migration to v6.0 of 10+ million posts will take approximately 1 hour and 22 minutes to complete for a MySQL database. See the `Mattermost v6.0 DB schema migrations analysis <https://gist.github.com/streamer45/59b3582118913d4fc5e8ff81ea78b055>`__ documentation for test specifications, data sizes, and test results.
 

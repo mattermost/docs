@@ -645,6 +645,19 @@ This setting controls whether or not the channel link autocomplete triggers imme
 | This feature's ``config.json`` setting is ``"ExperimentalSettings.DelayChannelAutocomplete": false`` with options ``true`` and ``false``. |
 +-------------------------------------------------------------------------------------------------------------------------------------------+
 
+Disable data refetching on browser refocus
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This setting disables re-fetching of channel and channel members on browser focus.
+
+**True**: Mattermost won't refetch channels and channel members when the browser regains focus. This may result in improved performance for users with many channels and channel members.
+
+**False**: (Default) Mattermost will refetch channels and channel emmbers when the browser regains focus.
+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ExperimentalSettings.DisableRefetchingOnBrowserFocus": false`` with options ``true`` and ``false``. |
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+
 ----
 
 Experimental Bleve configuration settings
@@ -2221,7 +2234,7 @@ Clean up outdated database entries
 
 This setting only applies to configuration in the database. It isn't available in the System Console and can be set via mmctl or changed in the database.
 
-Defines the threshold in days beyond which outdated configurations are removed from the database. This setting applies to both MySQL and PostgreSQL databases.
+Defines the threshold in days beyond which outdated configurations are removed from the database. This setting applies to both PostgreSQL and MySQL  databases.
 
 +--------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"JobSettings.CleanupConfigThresholdDays": 30`` with numerical input.   |

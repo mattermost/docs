@@ -8,7 +8,7 @@ Configure the database environment in which Mattermost is deployed by going to *
   :systemconsole: N/A
   :configjson: .SqlSettings.DriverName
   :environment: MM_SQLSETTINGS_DRIVERNAME
-  :description: The type of database. Either **mysql** or **postgres**. The default value is **mysql**.
+  :description: The type of database. Either **postgres** or **mysql**. The default value is **mysql**.
 
 Driver name
 ~~~~~~~~~~~~
@@ -45,6 +45,11 @@ Data source
 | - Add ``&tls=true`` to your database connection string if your SQL driver supports it.                                                   |
 | - Add ``&tls=skip-verify`` if you use self-signed certificates.                                                                          |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
+| **PostgreSQL databases**                                                                                                                 |
+|                                                                                                                                          |
+| When **Driver Name** is set to ``postgres``, use a connection string in the form of:                                                     |
+| ``postgres://mmuser:password@localhost:5432/mattermost_test?sslmode=disable&connect_timeout=10.``                                        |
++---------------------------------------------------------------+--------------------------------------------------------------------------+
 | **MySQL databases**                                                                                                                      |
 |                                                                                                                                          |
 | When **Driver Name** is set to ``mysql``, using ``collation`` is recommended over using ``charset``.                                     |
@@ -70,11 +75,6 @@ Data source
 |                                                                                                                                          |
 | **Note**: If you’re using MySQL 8.0 or later, the default collation has changed to ``utf8mb4_0900_ai_ci``. See our `Database Software    |
 | Requirements </install/software-hardware-requirements.html>`__ documentation for details on MySQL 8.0 support.                           |
-+---------------------------------------------------------------+--------------------------------------------------------------------------+
-| **PostgreSQL databases**                                                                                                                 |
-|                                                                                                                                          |
-| When **Driver Name** is set to ``postgres``, use a connection string in the form of:                                                     |
-| ``postgres://mmuser:password@localhost:5432/mattermost_test?sslmode=disable&connect_timeout=10.``                                        |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. config:setting:: database-maxidleconnections

@@ -186,6 +186,8 @@ redirects = {
         "https://docs.mattermost.com/manage/mmctl-cli-tool.html",
 "administration/mmctl-cli-tool.html#mmctl-channel-modify":
         "https://docs.mattermost.com/manage/command-line-tools.html#mattermost-channel-modify",
+"administration/mmctl-cli-tool.html#mmctl-user-reset-password":
+	"https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-user-reset-password",
 "administration/mmctl-cli-tool.html":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html",
 "administration/mobile-changelog.html":

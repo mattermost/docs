@@ -55,17 +55,18 @@ If ``SqlSettings.DataSource`` does not start with ``postgres://`` or ``mysql://`
 
 Here are two example connection strings:
 
+**PostgreSQL**
+
+.. code-block:: text
+
+   postgres://mmuser:really_secure_password@localhost:5432/mattermost?sslmode=disable&connect_timeout=10
+   
 **MySQL**
 
 .. code-block:: text
 
    mysql://mmuser:really_secure_password@tcp(127.0.0.1:3306)/mattermost?charset=utf8mb4,utf8&writeTimeout=30s
 
-**PostgreSQL**
-
-.. code-block:: text
-
-   postgres://mmuser:really_secure_password@localhost:5432/mattermost?sslmode=disable&connect_timeout=10
 
 Create an environment file
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -76,17 +77,17 @@ Create an environment file
 
 Create the file ``/opt/mattermost/config/mattermost.environment`` to set the ``MM_CONFIG`` environment variable to the database connection string. For example:
 
-**MySQL**
-
-.. code-block:: text
-
-   MM_CONFIG='mysql://mmuser:mostest@tcp(127.0.0.1:3306)/mattermost?charset=utf8mb4,utf8&writeTimeout=30s'
-
 **PostgreSQL**
 
 .. code-block:: text
 
    MM_CONFIG='postgres://mmuser:mostest@localhost:5432/mattermost_test?sslmode=disable&connect_timeout=10'
+
+**MySQL**
+
+.. code-block:: text
+
+   MM_CONFIG='mysql://mmuser:mostest@tcp(127.0.0.1:3306)/mattermost?charset=utf8mb4,utf8&writeTimeout=30s'
 
 .. note::
   Be sure to escape any single quotes in the database connection string by placing a ``\`` in front of them like this ``\'``. For example: ``MM_CONFIG='mysql://mmuser:it\'s-a-password!@tcp(127.0.0.1:3306)/mattermost?charset=utf8mb4,utf8&writeTimeout=30s'``
