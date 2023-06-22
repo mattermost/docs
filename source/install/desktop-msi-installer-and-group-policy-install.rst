@@ -27,9 +27,9 @@ Download group policy and MSI installer files
    .. image:: ../images/desktop/msi_gpo/msi_gpo_installation_test_00002.png
       :alt: Go to the mattermost/desktop repository on GitHub.
 
-3. Navigate to the release page for `version v5.3.1 <https://github.com/mattermost/desktop/releases/tag/v5.3.1>`__ and download the appropriate installer for your version of Windows (32-bit vs. 64-bit).
+3. Navigate to the release page for `version v5.4.0 <https://github.com/mattermost/desktop/releases/tag/v5.4.0>`__ and download the appropriate installer for your version of Windows (32-bit vs. 64-bit).
 
-4. Download the `source.zip <https://github.com/mattermost/desktop/archive/v5.3.1.zip>`__ file as well to extract group policy files.
+4. Download the `source.zip <https://github.com/mattermost/desktop/archive/v5.4.0.zip>`__ file as well to extract group policy files.
 
    .. image:: ../images/desktop/msi_gpo/msi_gpo_installation_test_00003.png
       :alt: In the mattermost/desktop repository on GitHub, go to the release page for the latest desktop release, then download the installer for your version of Windows. Download the source.zip file as well to extract group policy files.
@@ -37,12 +37,12 @@ Download group policy and MSI installer files
 Instal group policy files locally
 ---------------------------------
 
-1. Browse to the folder the above files were downloaded to and unzip the ``desktop-5.3.1.zip`` file in place.
+1. Browse to the folder the above files were downloaded to and unzip the ``desktop-5.4.0.zip`` file in place.
 
    .. image:: ../images/desktop/msi_gpo/msi_gpo_installation_test_00004.png
       :alt: Go to the install download directory on your machine and unzip the ZIP file.
 
-2. Navigate to the unzipped ``desktop-5.3.1\resources\windows\gpo`` folder and copy the contents.
+2. Navigate to the unzipped ``desktop-5.4.0\resources\windows\gpo`` folder and copy the contents.
 
    .. image:: ../images/desktop/msi_gpo/msi_gpo_installation_test_00005.png 
       :alt: Go to the \resources\windows\gpo directory and copy its contents.
@@ -140,7 +140,7 @@ Silent installation guide
 
 Perform a silent installation of MSI by running the following command:
 
-``msiexec /i mattermost-desktop-v5.3.1-x64.msi /qn``
+``msiexec /i mattermost-desktop-v5.4.0-x64.msi /qn``
 
 .. note::
    You'll need to change this command as new versions of the Mattermost Desktop App are released.
