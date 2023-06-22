@@ -173,7 +173,7 @@ Data stores
 Databases
 ^^^^^^^^^^
 
-Mattermost uses a MySQL or Postgres database to store and retrieve system data and to execute full text search. Solid State Drives (SSDs) can be used for faster read times to increase performance.
+Mattermost uses a Postgres or MySQL database to store and retrieve system data and to execute full text search. Solid State Drives (SSDs) can be used for faster read times to increase performance.
 
 See `Database requirements </install/software-hardware-requirements.html#database-software>`__ for full details.
 

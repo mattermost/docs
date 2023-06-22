@@ -181,9 +181,9 @@ Searching Chinese, Korean, and Japanese
 Differences between PostgreSQL and MySQL search
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-By default, Mattermost uses full text search support included in MySQL and PostgreSQL. These databases have slightly different search behavior. Select the **product menu** |product-list| then select **About Mattermost** to see which database you’re using.
+By default, Mattermost uses full text search support included in PostgreSQL and MySQL. These databases have slightly different search behavior. Select the **product menu** |product-list| then select **About Mattermost** to see which database you’re using.
 
-For example, different databases have different “stop words” filtered out of search results. See `MySQL <https://dev.mysql.com/doc/refman/5.7/en/fulltext-stopwords.html>`__ or `PostgreSQL <https://www.postgresql.org/docs/10/textsearch-dictionaries.html#TEXTSEARCH-STOPWORDS>`__ database documentation for a full list.
+For example, different databases have different “stop words” filtered out of search results. See `PostgreSQL <https://www.postgresql.org/docs/10/textsearch-dictionaries.html#TEXTSEARCH-STOPWORDS>`__ or `MySQL <https://dev.mysql.com/doc/refman/5.7/en/fulltext-stopwords.html>`__ database documentation for a full list.
 
 Other database-specific differences include:
 

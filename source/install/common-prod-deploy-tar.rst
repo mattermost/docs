@@ -10,7 +10,7 @@ These instructions outline how to install Mattermost Server on a 64-bit Linux ho
 **Minimum system requirements**
 
 - Hardware: 2 vCPUs/cores with 4GB RAM (support for 1,000-2,000 users)
-- Database: MySQL v8+ or PostgreSQL v12+
+- Database: PostgreSQL v12+ or MySQL v8+
 - Network ports required:
 
    - Application ports 80/443, TLS, TCP Inbound
@@ -19,7 +19,7 @@ These instructions outline how to install Mattermost Server on a 64-bit Linux ho
 
 **Deploy Generic Linux**
 
-1. Install and configure a MySQL or PostgreSQL database. Refer to one of the guides below to deploy the database based on your operating system:
+1. Install and configure a PostgreSQL or MySQL database. Refer to one of the guides below to deploy the database based on your operating system:
 
    - `Ubuntu </install/installing-ubuntu-2004-LTS.html#install-a-database>`__
    - `Debian </install/install-debian.html#install-a-database>`__
@@ -141,7 +141,7 @@ These instructions outline how to install Mattermost Server on a 64-bit Linux ho
   .. note::
     
       * If you're using MySQL, replace ``postgresql.service`` with ``mysql.service`` in two places in the ``[Unit]`` section.
-      * If you've installed MySQL or PostgreSQL on a dedicated server, you need to remove the ``After=mysql.service`` and ``BindsTo=mysql.service`` or the ``After=postgresql.service`` and ``BindsTo=postgresql.service`` lines in the ``[Unit]`` section or the Mattermost service won't start.
+      * If you've installed PostgreSQL or MySQL on a dedicated server, you need to remove the ``After=postgresql.service`` and ``BindsTo=postgresql.service`` or ``After=mysql.service`` and ``BindsTo=mysql.service`` lines in the ``[Unit]`` section or the Mattermost service won't start.
     
   c. Make systemd load the new unit.
     
