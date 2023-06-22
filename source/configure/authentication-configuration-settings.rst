@@ -1797,7 +1797,7 @@ Enable OAuth 2.0 authentication with GitLab
 
 +-------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
 | - **true**: Allows team and account creation using GitLab OAuth authentication. Input the **Secret** and **ID** credentials to configure. | - System Config path: **Authentication > OAuth 2.0 (or GitLab)** |
-| - **false**: Disables GitLab OAuth authentication.                                                                                        | - ``config.json`` setting: ``.GitLabSettings.Enable: false``     |
+| - **false**: **(Default)** Disables GitLab OAuth authentication.                                                                          | - ``config.json`` setting: ``.GitLabSettings.Enable: false``     |
 |                                                                                                                                           | - Environment variable: ``MM_GITLABSETTINGS_ENABLE``             |
 +-------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
 
