@@ -5,8 +5,14 @@ Using sockets for database
   :start-after: :nosearch:
 
 Mattermost requires a database back-end. If you plan to run it on the machine,
-install MySQL or PostgreSQL as the database. In this document let's understand how
+install PostgreSQL or MySQL as the database. In this document let's understand how
 you can use sockets for setting up the database.
+
+PostgreSQL
+----------
+
+- Install and configure PostgreSQL.
+- Choose between TCP or UNIX Socket, and jump to the corresponding section.
 
 MySQL
 -----
@@ -17,13 +23,6 @@ MySQL
     CREATE DATABASE mattermostdb;
     CREATE USER mmuser IDENTIFIED BY 'mmuser_password';
     GRANT ALL ON mattermostdb.* TO mmuser;
-
-
-PostgreSQL
-----------
-
-- Install and configure PostgreSQL.
-- Choose between TCP or UNIX Socket, and jump to the corresponding section.
 
 With TCP socket
 ---------------
@@ -97,14 +96,12 @@ Configuring Mattermost
 - Mattermost is configured in ``/etc/webapps/mattermost/config.json``.
   Strings need to be quoted.
 
-- The ``DriverName`` setting: ``mysql`` for MySQL and ``postgres`` for PostgreSQL.
+- The ``DriverName`` setting: ``postgres`` for PostgreSQL or ``mysql`` for MySQL.
 
   The ``DataSource``:
 
-  - For MySQL, set it to ``mmuser:mmuser_password@unix(/run/mysqld/mysqld.sock)/mattermostdb?charset=utf8mb4,utf8``.
   - For PostgreSQL
-    
     - TCP socket: ``postgres://mmuser:mmuser_password@127.0.0.1:5432/mattermostdb?sslmode=disable&connect_timeout=10``    
-    
     - Unix socket: ``postgres:///mattermostdb?host=/run/postgresql``, where ``mattermostdb`` is the name of the database and ``/run/postgresql`` is the directory containing the Unix socket.
+  - For MySQL, set it to ``mmuser:mmuser_password@unix(/run/mysqld/mysqld.sock)/mattermostdb?charset=utf8mb4,utf8``.
 

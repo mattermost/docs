@@ -26,6 +26,8 @@ Users
 | to other teams, and view the teams they are on and what       | - Environment variable: N/A                                 |
 | their role is on a team.                                      |                                                             |
 +---------------------------------------------------------------+-------------------------------------------------------------+
+| **Note**: You can search for users by partial first name, last name, nickname, or username.                                 |
++---------------------------------------------------------------+-------------------------------------------------------------+
 
 ----
 
@@ -71,10 +73,11 @@ Channels
 |                                                                         | - ``config.json setting``: N/A                              |
 |                                                                         | - Environment variable: N/A                                 |
 +-------------------------------------------------------------------------+-------------------------------------------------------------+
-| Channels can be deleted with all content, including posts in the database, using the `mmctl channel delete                            |
-| </manage/mmctl-command-line-tool.html#mmctl-channel-delete>`__ tool.                                                                  |
-+-------------------------------------------------------------------------+-------------------------------------------------------------+
-| **Note**: You can search for channels by channel name or by channel ID.                                                               |
+| **Notes**:                                                                                                                            |
+|                                                                                                                                       |
+| - Channels can be deleted with all content, including posts in the database, using the `mmctl channel delete </manage/mmctl-command-  |
+|   line-tool.html#mmctl-channel-delete>`__ tool.                                                                                       |
+| - You can search for channels by channel name or by channel ID.                                                                       |
 +-------------------------------------------------------------------------+-------------------------------------------------------------+
 
 ----

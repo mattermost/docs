@@ -632,33 +632,31 @@ This setting disables the Apps Bar and moves all Mattermost integration icons fr
 | This feature's ``config.json`` setting is ``"ExperimentalSettings.DisableAppBar": false`` with options ``true`` and ``false``. |
 +--------------------------------------------------------------------------------------------------------------------------------+
 
-Allow synchronized drafts
--------------------------
+Delay channel autocomplete
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This setting synchronizes draft messages across all supported Mattermost clients.
+This setting controls whether or not the channel link autocomplete triggers immediately when after a tilde is typed when composing a message. This setting makes the channel autocomplete, such as ``~town-square``, less obtrusive for people who use tildes ``~`` as punctuation. 
 
-**True**: **(Default)** Message drafts are saved on the server and may be accessed from different clients. Users may still disable server synchronization of draft messages by going to **Settings > Advanced Settings**. 
+**True**: The autocomplete appears after the user types a tilde followed by two or more characters. For example, typing ``~to`` will show the autocomplete, but typing ``~`` will not. 
 
-**False**: Draft messages are only stored locally on each user's device.
+**False**: **(Default)** The autocomplete appears immediately after the user types a tilde. For example, typing ``~`` will show the autocomplete.
 
-+------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ServiceSettings.AllowSyncedDrafts": true`` with options ``true`` and ``false``. |
-+------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ExperimentalSettings.DelayChannelAutocomplete": false`` with options ``true`` and ``false``. |
++-------------------------------------------------------------------------------------------------------------------------------------------+
 
-Patch React DOM used by plugins
-~~~~~~~~~~~~~~
+Disable data refetching on browser refocus
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This setting enables the patching of the React DOM library when loading web app plugins so that the plugin uses the version matching the web app. This should only be needed temporarily after upgrading to Mattermost v7.7 for plugins that have not been updated yet. Changes to this setting require a server restart before taking effect.
+This setting disables re-fetching of channel and channel members on browser focus.
 
-See the `Important Upgrade Notes <https://docs.mattermost.com/upgrade/important-upgrade-notes.html>`__ for more information.
+**True**: Mattermost won't refetch channels and channel members when the browser regains focus. This may result in improved performance for users with many channels and channel members.
 
-**True**: Web app plugins that package their own version of React DOM are patched to instead use the version of React DOM provided by the web app.
+**False**: (Default) Mattermost will refetch channels and channel emmbers when the browser regains focus.
 
-**False**: Web app plugins are loaded as normal.
-
-+------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"PatchPluginsReactDOM": false`` with options ``true`` and ``false``. |
-+------------------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ExperimentalSettings.DisableRefetchingOnBrowserFocus": false`` with options ``true`` and ``false``. |
++--------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ----
 
@@ -958,24 +956,6 @@ Used to control the buffer of outstanding Push Notification messages to be sent.
 +---------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature’s ``config.json`` setting is ``"PushNotificationBuffer": 1000"`` with numerical input.                                         |
 +---------------------------------------------------------------------------------------------------------------------------------------------+
-
-.. config:setting:: exp-disableinactivityemail
-  :displayname: Disable inactive server email notifications (Experimental)
-  :systemconsole: N/A
-  :configjson: EnableInactivityEmail
-  :environment: N/A
-  :description: This configuration setting disables the ability to send inactivity email notifications to Mattermost System Admins. Default value is **true**.
-
-Disable inactive server email notifications
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-This configuration setting disables the ability to send inactivity email notifications to Mattermost System Admins.
-
-+-------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableInactivityEmail": true`` with options ``true`` and ``false``.  |
-+-------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: exp-enableauditfiles
   :displayname: File configuration options (Experimental)
@@ -2254,7 +2234,7 @@ Clean up outdated database entries
 
 This setting only applies to configuration in the database. It isn't available in the System Console and can be set via mmctl or changed in the database.
 
-Defines the threshold in days beyond which outdated configurations are removed from the database. This setting applies to both MySQL and PostgreSQL databases.
+Defines the threshold in days beyond which outdated configurations are removed from the database. This setting applies to both PostgreSQL and MySQL  databases.
 
 +--------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"JobSettings.CleanupConfigThresholdDays": 30`` with numerical input.   |
