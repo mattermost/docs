@@ -231,6 +231,8 @@ Indexes to skip while purging
 | Specify index names to ignore while purging indexes.          | - System Config path: **Environment > Elasticsearch**                    |
 | Separate multiple index names with commas.                    | - ``config.json`` setting: ElasticsearchSettings.IgnoredPurgeIndexes     |
 |                                                               | - Environment variable: MM_ELASTICSEARCHSETTINGS_IGNOREDPURGEINDEXES     |
+| Use an asterisk (*) to match a sequence of index name         |                                                                          |
+| characters.                                                   |                                                                          |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. config:setting:: elastic-purgeindexes
