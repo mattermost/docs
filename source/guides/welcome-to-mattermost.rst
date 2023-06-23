@@ -37,7 +37,6 @@ Mattermost basics
    Team keyboard shortcuts </welcome/team-keyboard-shortcuts>
    About user roles </welcome/about-user-roles>
    Add people to your workspace </welcome/add-people>
-   About insights </welcome/insights>
 
 * :doc:`Get started with Mattermost Channels </welcome/get-started-mattermost-channels>` - Learn how to communicate and collaborate with your team using Mattermost Channels.
 * :doc:`Get started with Mattermost Playbooks </playbooks/work-with-playbooks>` - Learn how to create and refine repeatable, measurable workflows for a range of scenarios using Mattermost Playbooks.
@@ -48,7 +47,6 @@ Mattermost basics
 * :doc:`Team keyboard shortcuts </welcome/team-keyboard-shortcuts>` Make more efficient use of your keyboard with keyboard shortcuts.
 * :doc:`About user roles </welcome/about-user-roles>` - Learn more about the six types of user roles and their permissions in Mattermost.
 * :doc:`Add people to your workspace </welcome/add-people>` - Learn how to add new users to Mattermost and add users to existing teams and channels.
-* :doc:`Insights </welcome/insights>` - Get insights into the most important events happening on each team within your Mattermost workspace.
 
 Customize your Mattermost experience
 ------------------------------------
