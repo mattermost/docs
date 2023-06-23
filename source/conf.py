@@ -1333,6 +1333,8 @@ redirects = {
 	"https://docs.mattermost.com/configure/authentication-configuration-settings.html#office-365-openid-settings",
 "configure/authentication-configuration-settings.html#openid-connect-other":
 	"https://docs.mattermost.com/configure/authentication-configuration-settings.html#openid-connect-other-settings",
+"configure/experimental-configuration-settings.html#enable-app-bar":
+        "https://docs.mattermost.com/configure/experimental-configuration-settings.html#disable-apps-bar",
 
 # Deploy redirects
 "deploy/mobile-apps-faq.html":
