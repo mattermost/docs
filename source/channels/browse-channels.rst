@@ -22,7 +22,7 @@ Browse channels
 
 .. tip:: 
   
-  Want to see all of the channels you're already a member of? Can't find a specific private channel? Using a browser or the desktop app, select **Find Channel** in the channel sidebar to see all of the channels you're currently a member of across all of your teams, including public and private channels, direct and group messages, channels with unread messages, and threads. Channels you have `muted </channels/set-channel-preferences.html#mute-channel>`__ aren't included in results.
+  Want to see all of the channels you're already a member of, or can't find a specific private channel? Using a browser or the desktop app, select **Find Channel** in the channel sidebar to see all of the channels you're currently a member of across all of your teams, including public and private channels, direct and group messages, channels with unread messages, and threads. Channels you have `muted </channels/set-channel-preferences.html#mute-channel>`__ aren't included in results.
 
 Revisit recent channels
 -----------------------
