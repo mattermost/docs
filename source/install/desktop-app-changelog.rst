@@ -18,7 +18,7 @@ Release v5.4
 
 **Release Day: June 19, 2023**
 
-**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v5.4.0>`_
+**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/latest>`_
 
 Compatibility
 ~~~~~~~~~~~~~~~
