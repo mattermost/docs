@@ -7,7 +7,7 @@ Extended Support Release
 What is an Extended Support Release?
 ------------------------------------
 
-During each monthly release, Mattermost backports high severity or high impact security fixes to the previous three monthly releases. Extended Support Releases (ESRs) are releases that will receive backports for security fixes and major bug fixes for the length of their life cycle.
+During each monthly release, Mattermost backports security fixes and high impact bug fixes to the previous three monthly releases. Extended Support Releases (ESRs) are releases that will receive backports for security fixes and major bug fixes for the length of their life cycle.
 
 .. important::
   Support for Mattermost Server v7.1 Extended Support Release has come to the end of its life cycle on May 15, 2023. Upgrading to Mattermost Server v7.8 Extended Support Release or later is required.
@@ -27,7 +27,7 @@ To receive updates about Extended Support Releases, sign up for our mailing list
 What is included in an Extended Support Release dot release? 
 ------------------------------------------------------------
 
-Dot releases for ESR versions will contain high severity or high impact security fixes and bug fixes. They will not include changes to product functionality or new features. 
+Dot releases for ESR versions will contain security fixes and high impact bug fixes. They will not include changes to product functionality or new features.
 
 Who should use an Extended Support Release? 
 -------------------------------------------
@@ -51,7 +51,7 @@ What are the current supported Extended Support Release versions?
 +=============+================+==================+==================+============================================================================================+=====================================================+
 | 8.1         | Feature        | August 16, 2023  | May 15, 2024     |                                                                                            |                                                     |
 +-------------+----------------+------------------+------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------+
-| 7.8         | Feature        | February 16, 2023| November 15, 2023| `7.8.6 <https://releases.mattermost.com/7.8.6/mattermost-7.8.6-linux-amd64.tar.gz>`_       |                                                     |
+| 7.8         | Feature        | February 16, 2023| November 15, 2023| `7.8.7 <https://releases.mattermost.com/7.8.7/mattermost-7.8.7-linux-amd64.tar.gz>`_       |                                                     |
 +-------------+----------------+------------------+------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------+
 | 7.1         | Feature        | July 15, 2022    | May 15, 2023     | `7.1.9 <https://releases.mattermost.com/7.1.9/mattermost-7.1.9-linux-amd64.tar.gz>`_       |                                                     |
 +-------------+----------------+------------------+------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------+

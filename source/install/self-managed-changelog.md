@@ -17,6 +17,11 @@ Latest Mattermost Releases:
 
 ## Release v7.10 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
 
+- **v7.10.3, released 2023-06-15**
+  - Mattermost v7.10.3 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Updated prepackaged Boards to v7.10.3.
+  - Included prepackaged Welcomebot plugin v1.3.0.
+  - For servers wanting to allow websockets to connect from other origins, please set the ``ServiceSettings.AllowCorsFrom`` [config setting](https://docs.mattermost.com/configure/integrations-configuration-settings.html#enable-cross-origin-requests-from).
 - **v7.10.2, released 2023-05-18**
   - Fixed an issue where v7.10 reported an incorrect mmctl version.
 - **v7.10.1, released 2023-05-16**
@@ -89,6 +94,8 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - Added ``date-fns`` to https://github.com/mattermost/mattermost-webapp/.
 
 ### Known Issues
+ - Updating from v7.9.x to Focalboard 7.10.4 causes Boards attachments to be lost [MM-53240](https://mattermost.atlassian.net/browse/MM-53240).
+ - Users have trouble logging into Mattermost mobile app when the DiagnosticId is not properly stored in cache after startup [MM-53195](https://mattermost.atlassian.net/browse/MM-53195).
  - Users are unexpectedly forced to enable JSON logging [MM-51453](https://mattermost.atlassian.net/browse/MM-51453).
  - The new Insights feature has some performance costs that we are working to optimize. This feature can be disabled by setting the ``MM_FEATUREFLAGS_INSIGHTSENABLED`` environment variable to ``false``.
  - Adding an @mention at the start of a post draft and pressing the left or right arrow key can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
@@ -123,6 +130,10 @@ The following deprecations and breaking changes are planned for the Mattermost v
 
 ## Release v7.9 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
 
+- **v7.9.5, released 2023-06-15**
+  - Mattermost v7.9.5 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Updated prepackaged Boards to v7.9.6.
+  - For servers wanting to allow websockets to connect from other origins, please set the ``ServiceSettings.AllowCorsFrom`` [config setting](https://docs.mattermost.com/configure/integrations-configuration-settings.html#enable-cross-origin-requests-from).
 - **v7.9.4, released 2023-05-16**
   - Mattermost v7.9.4 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Fixed an issue where a user would still see threads in the threads view of channels they have left. Migration execution time in MySQL: Query OK, 2766769 rows affected (4 min 47.57 sec). Migration execution time in PostgreSQL: 58.11 sec, DELETE 2766690.
@@ -242,6 +253,11 @@ Mattermost v7.9.0 contains a low severity level security fix. [Upgrading](https:
 
 ## Release v7.8 - [Extended Support Release](https://docs.mattermost.com/upgrade/release-definitions.html#extended-support-release-esr)
 
+- **v7.8.7, released 2023-06-15**
+  - Mattermost v7.8.7 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Updated prepackaged Boards to v7.8.7.
+  - Fixed typo in the database migration scripts that broke idempotency.
+  - For servers wanting to allow websockets to connect from other origins, please set the ``ServiceSettings.AllowCorsFrom`` [config setting](https://docs.mattermost.com/configure/integrations-configuration-settings.html#enable-cross-origin-requests-from).
 - **v7.8.6, released 2023-05-31**
   - Fixed an issue where the total user count was fetched for every client connection. It is only necessary to fetch this once.
   - Prepackaged version 1.3.0 of the Welcomebot plugin.
