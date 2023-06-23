@@ -703,7 +703,7 @@ mattermost config set
   Examples
     .. code-block:: none
 
-       bin/mattermost config set SqlSettings.DriverName mysql
+       bin/mattermost config set SqlSettings.DriverName postgres
 
   Options
    .. code-block:: none

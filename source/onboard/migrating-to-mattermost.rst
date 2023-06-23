@@ -4,7 +4,7 @@ Migration guide
 .. include:: ../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
 
-Thousands of organizations are moving to Mattermost for powerful, flexible, and easy-to-manage workplace collaboration. Mattermost deploys as a single Linux binary with PostgreSQL or MySQL, and can scale from dozens to tens of thousands of users in a single channel.
+Thousands of organizations are moving to Mattermost for powerful, flexible, and easy-to-manage workplace collaboration. Mattermost deploys as a single Linux binary with PostgreSQL, and can scale from dozens to tens of thousands of users in a single channel.
 
 This guide summarizes different approaches to migrating from one Mattermost deployment to another, and migrating from other tools (such as Slack, HipChat, Jabber, and bespoke solutions) to Mattermost.
 
@@ -22,7 +22,7 @@ The following instructions migrate Mattermost from one server to another by back
 2. Upgrade your SOURCE Mattermost server to the latest major build version.
     1. See `Upgrading Mattermost Server documentation </upgrade/upgrading-mattermost-server.html>`__.
 3. Install the latest major build of Mattermost server as your DESTINATION.
-    1. See `Install Mattermost documentation </guides/install-deploy-upgrade-scale.html#install-mattermost>`__ for details. Make sure your new instance is properly configured and tested. The database type (PostgreSQL or MySQL) and version of SOURCE and DESTINATION deployments need to match.
+    1. See the `Deploy Mattermost <guides/deployment.html>`__ documentation for details. Make sure your new instance is properly configured and tested. The database type and version of SOURCE and DESTINATION deployments need to match.
     2. Stop the DESTINATION server using ``sudo stop mattermost``, then back up the database and ``config.json`` file.
 4. Migrate database from SOURCE to DESTINATION.
     1. Backup the database from the SOURCE Mattermost server and restore it in place of the database to which the DESTINATION server is connected.
