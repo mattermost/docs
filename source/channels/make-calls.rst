@@ -17,7 +17,7 @@ From Mattermost v7.0, you can make voice calls and share your screen in channels
 From Mattermost v7.0, you can:
 
 - Start or join a call from desktop and mobile apps in addition to web browsers.
-- Share screen (not available on mobile), raise hands, chat in a thread, and even switch between products in the Mattermost suite (i.e., Channels, Boards, and Playbooks) while on a call.
+- Share screen (not available on mobile), raise hands, chat in a thread, and continue working in Mattermost while on a call.
 - Start a call using the ``/call start`` slash command or **Start call** in the channel header.
 
 Starting from Mattermost v7.7 you can:

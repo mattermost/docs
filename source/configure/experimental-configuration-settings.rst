@@ -626,7 +626,7 @@ This setting disables the Apps Bar and moves all Mattermost integration icons fr
 
 **True**:  All integration icons in the channel header display in the channel header.
 
-**False**: **(Default)** All integration icons, except the Calls icon, are available in the vertical Apps Bar on the right side of the screen. 
+**False**: **(Default)** All integration icons, except the Calls icon, are available in the vertical Apps Bar pane on the right side of the screen. 
 
 +--------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ExperimentalSettings.DisableAppBar": false`` with options ``true`` and ``false``. |
