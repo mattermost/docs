@@ -240,6 +240,8 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - Added ``date-fns`` to https://github.com/mattermost/mattermost-webapp/.
 
 ### Known Issues
+ - Updating from v7.9.x to Focalboard 7.10.4 causes Boards attachments to be lost [MM-53240](https://mattermost.atlassian.net/browse/MM-53240).
+ - Users have trouble logging into Mattermost mobile app when the DiagnosticId is not properly stored in cache after startup [MM-53195](https://mattermost.atlassian.net/browse/MM-53195).
  - Users are unexpectedly forced to enable JSON logging [MM-51453](https://mattermost.atlassian.net/browse/MM-51453).
  - The new Insights feature has some performance costs that we are working to optimize. This feature can be disabled by setting the ``MM_FEATUREFLAGS_INSIGHTSENABLED`` environment variable to ``false``. See the `Insights </welcome/insights.html>`__ documentation for details.
  - Adding an @mention at the start of a post draft and pressing the left or right arrow key can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
@@ -672,7 +674,7 @@ Mattermost v7.7.0 contains low severity level security fixes. [Upgrading](https:
  - Fixed an issue where the unreads button in the channel sidebar was missing alternative text for screen readers.
  - Fixed a potential read-after-write issue when uploading data through the resumable uploads API.
  - Removed duplicate text in the self-hosted pricing modal.
- - Fixed the position of the Boards icon in the app bar when Boards is running without a plugin.
+ - Fixed the position of the Boards icon in the Apps Bar when Boards is running without a plugin.
  - Fixed ability to create a board when Boards is running without a plugin.
  - Fixed Boards tour tips not appearing when Boards is running without a plugin.
  - Fixed an issue where a confusing System Console banner was displayed when a license was set to expire.
