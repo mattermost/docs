@@ -22,15 +22,18 @@ Audit logging provides System Admins, including Security, IT/SRE, Compliance, an
 Configure audit logging
 -----------------------
 
-Configuring Mattermost to enable audit logging requires editing the ``config.json`` file directly. Audit logging can’t be managed using the System Console.
+The process of configuring audit logging includes specifying destination targets, event names to include, and the verbosity of the audit log output.Configuring Mattermost to enable audit logging requires editing the ``config.json`` file directly. Audit logging can’t be managed using the System Console.
 
-In the ``config.json`` file, go to the ``ExperimentalAuditSettings`` section. Within the ``AdvancedLoggingConfig`` setting, you can specify an absolute or relative filespec to another configuration file, embed multi-line JSON in the ``config.json`` file, or an environment variable. The process of configuring audit logging includes specifying destination targets, event names to include, and the verbosity of the audit log output.
+In the ``config.json`` file, go to the ``ExperimentalAuditSettings`` section. You can specify the following:
+
+- ``AdvancedLoggingJSON``: A multi-line JSON or a filespec to another configuration file.
+- ``AdvancedLoggingConfig`` (deprecated from Mattermost v.8.0): An escaped single line JSON string or a filespec to another configuration file.
 
 The example JSON configuration below specifies two log targets: one outputs to the console using a plain text format with pipes delimiting fields, and the other outputs to a file using a JSON format with log file rotation. All audit log levels are enabled.
 
-Examples of values for the ``AdvancedLoggingConfig`` setting are:
+Examples of values for the ``AdvancedLoggingJSON`` setting are:
 
-1. Filespec to another configuration file: ``"AdvancedLoggingConfig": "/path/to/audit_log_config.json"``
+1. Filespec to another configuration file: ``"AdvancedLoggingJSON": "/path/to/audit_log_config.json"``
 
    This file will contain a JSON object:
 
@@ -79,7 +82,7 @@ Examples of values for the ``AdvancedLoggingConfig`` setting are:
 
   .. code-block:: json
 
-        "AdvancedLoggingConfig": {
+        "AdvancedLoggingJSON": {
             "file_1": {
                 "Type": "file",
                 "Format": "plain",
