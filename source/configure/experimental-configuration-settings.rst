@@ -606,31 +606,31 @@ Shared channels enables the ability to establish secure connections between Matt
    - System Admins for Cloud deployments can submit a request to have the ``EnableRemoteClusterService`` configuration setting enabled in their Cloud instance.
 
 .. config:setting:: exp-enableappbar
-  :displayname: Enable app bar (Experimental)
+  :displayname: Disable Apps Bar (Experimental)
   :systemconsole: Experimental > Features
-  :configjson: EnableAppBar
-  :environment: N/A
-  :description: This setting enables the Apps Bar and moves all Mattermost integration icons from the channel header to a vertical pane on the far right side of the screen.
+  :configjson: DisableAppBar
+  :environment: ExperimentalSettings.DisableAppBar
+  :description: This setting disables the Apps Bar and moves all Mattermost integration icons from the vertical pane on the far right back to the channel header.
 
   - **true**: All integration icons in the channel header move to the Apps Bar with the exception of the calls beta feature.
   - **false**: **(Default)** All integration icons in the channel header display in the channel header.
 
-Enable app bar
-~~~~~~~~~~~~~~
+Disable Apps Bar
+~~~~~~~~~~~~~~~~
 
-This setting enables the Apps Bar and moves all Mattermost integration icons from the channel header to a vertical pane on the far right side of the screen.
+This setting disables the Apps Bar and moves all Mattermost integration icons from the vertical pane on the far right back to the channel header.
 
 .. note::
 
-  Integrations currently registered to the channel header will move to the Apps Bar automatically; however, we strongly encourage Mattermost integrators to update their integrations to provide the best user experience. See the `channel header plugin changes <https://forum.mattermost.com/t/channel-header-plugin-changes/13551>`__ user forum discussion for details on how to register integrations with the Apps Bar.
+  We strongly encourage Mattermost integrators to update their integrations to provide the best user experience. See the `channel header plugin changes <https://forum.mattermost.com/t/channel-header-plugin-changes/13551>`__ user forum discussion for details on how to register integrations with the Apps Bar.
 
-**True**: **(Default for Cloud deployments)** All integration icons in the channel header move to the Apps Bar with the exception of the calls beta feature.
+**True**:  All integration icons in the channel header display in the channel header.
 
-**False**: **(Default for self-hosted deployments)** All integration icons in the channel header display in the channel header.
+**False**: **(Default)** All integration icons, except the Calls icon, are available in the vertical Apps Bar on the right side of the screen. 
 
-+-------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ExperimentalSettings.EnableAppBar": false`` with options ``true`` and ``false``. |
-+-------------------------------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ExperimentalSettings.DisableAppBar": false`` with options ``true`` and ``false``. |
++--------------------------------------------------------------------------------------------------------------------------------+
 
 Delay channel autocomplete
 ~~~~~~~~~~~~~~~~~~~~~~~~~~

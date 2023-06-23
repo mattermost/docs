@@ -544,7 +544,7 @@ Mattermost v7.7.0 contains low severity level security fixes. [Upgrading](https:
  - Fixed an issue where the unreads button in the channel sidebar was missing alternative text for screen readers.
  - Fixed a potential read-after-write issue when uploading data through the resumable uploads API.
  - Removed duplicate text in the self-hosted pricing modal.
- - Fixed the position of the Boards icon in the app bar when Boards is running without a plugin.
+ - Fixed the position of the Boards icon in the Apps Bar when Boards is running without a plugin.
  - Fixed ability to create a board when Boards is running without a plugin.
  - Fixed Boards tour tips not appearing when Boards is running without a plugin.
  - Fixed an issue where a confusing System Console banner was displayed when a license was set to expire.
