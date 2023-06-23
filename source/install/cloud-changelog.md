@@ -53,6 +53,7 @@ Latest Mattermost Cloud releases:
  - Fixed an issue where posts were not fully sanitized for audit output when a link preview was included.
  - Fixed an issue where the footer with **Save/Cancel** buttons did not get anchored properly in the System Console.
  - Fixed an issue where the undo history was erased when links, tables, or code was pasted into the textbox.
+ - Fixed an issue where Elasticsearch didn't properly start on startup when enabled. Also added a missing ``IsEnabled`` method to Elasticsearch.
 
 ### Known Issues
  - Boards public links that follow the URL schema `/boards/public/...` will not work after this update. They can either be regenerated through the application by going to the board and selecting the **Share** button at the top right, or they can be obtained by replacing the `/boards/public/` part of the URL with `/plugins/focalboard/`.
