@@ -125,10 +125,6 @@ Install the Mattermost Desktop App using the MSI installer
    .. image:: ../images/desktop/msi_gpo/msi_gpo_installation_test_00017.png
       :alt: When the installation is complete, select Finish.
 
-.. tip::
-
-   To prevent Mattermost from adding a desktop shortcut for the desktop app, open the MSI file with an editor, delete the desktop shortcut code, and save that change as an MST file. Install the MSI using the MST file.
-
 Verify group policy settings in the installed desktop app
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
