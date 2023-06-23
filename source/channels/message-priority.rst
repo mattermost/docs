@@ -19,21 +19,18 @@ From Mattermost v7.7 and version v2.4 of the Mattermost mobile app, you can add 
   :width: 700
   :alt: Ensure important and urgent messages stand out clearly by adding priority labels to root messages.
 
-Set message priority
---------------------
-
-You can add one of three priority labels when sending a new message: Standard, Important, or Urgent. When you send a priority message, the priority label displays next to your name in the channel and the Threads view when others reply to the thread. 
-
 To set the priority of a new message:
 
-1. Select the **Message Priority** |priority-icon| icon in the message formatting toolbar. 
+1. Select the **Message Priority** |priority-icon| icon in the message formatting toolbar. Select from Standard, Important, or Urgent.
 2. Select the priority for the message. Messages have a standard priority by default.
 3. Select **Apply**
+
+When you send a priority message, the priority label displays next to your name in the channel, as well as the **Threads** view when others reply to the thread. 
 
 Send persistent notifications
 -----------------------------
 
-From Mattermost v8.0, when you add an urgent priority label, and your message @mentions at least one other user, you can enable persistent notifications which notify recipients every 5 minutes for up to 30 minutes until the recipient acknowledges or replies to the message.
+From Mattermost v8.0, when you add an urgent priority label, and your message @mentions at least one other user, you can enable persistent notifications which notify recipients at regular intervals and for a set amount of time until the recipient acknowledges or replies to the message.
 
 To enable persistent notifications for a message:
 
@@ -45,8 +42,12 @@ To enable persistent notifications for a message:
 
 .. note:: 
 
-  - Recipients must have Mattermost notifications enabled to receive persistent notifications.
-  - System admins can customize the maximum number of @mentions permitted, how frequently and how many persistent notifications are sent, as well as disable permsistent notifications for all users, if preferred. See the `configuration </configure/site-configuration-settings.html#persistent-notifications>`__ documentation for details.
+  - Recipients must have Mattermost desktop and/or mobile push notifications enabled to receive persistent notifications.
+  - @channel, @all and @here mentions don't send persistent notifications.
+  - Depending on your `push mobile notifications preferences </channels/channels-settings.html#mobile-push-notifications>`__, you're notified of persistent notifications when your `availability </welcome/set-your-status-availability.html#set-your-availability>`__ is set to Online, Away, or Offline. You won't be notified when your availability is set to Do Not Disturb, or if you've `Out of Office </welcome/set-your-status-availability.html#set-your-availability>`__.
+  - System admins can customize the maximum number of @mentions permitted, how frequently and how many persistent notifications are sent, as well as disable persistent notifications for all users, if preferred. By default, users are notified every 5 minutes for a total of 30 minutes. See the `configuration </configure/site-configuration-settings.html#persistent-notifications>`__ documentation for details.
+
+Stop a persistent notification by replying to the thread, selecting the **Acknowlege** icon (when present), or reacting to the thread with an emoji. Persistent notifications also stop being sent if the original message is deleted, or if the maximum number of persistent notifications are sent.
 
 Request acknowledgements
 ------------------------

@@ -1169,25 +1169,6 @@ Total number of persistent notifications per post
 | Numerical input. Default is **6**.                          |                                                                                    |
 +-------------------------------------------------------------+------------------------------------------------------------------------------------+
 
-.. config:setting:: posts-persistentnotificationsforguestusers
-  :displayname: Persistent notifications for guest users (Posts)
-  :systemconsole: Site Configuration > Posts
-  :configjson: .ServiceSettings.AllowPersistentNotificationsForGuests
-  :environment: MM_SERVICESETTINGS_ALLOWPERSISTENTNOTIFICATIONSFORGUESTS
-
-  - **true**:  Guest users can trigger repeating notifications to  mentioned recipients of urgent messages.
-  - **false**: **(Default)** Disables the ability for guest users to send repeating notifications.
-
-Persistent notifications for guest users
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
-| - **true**: Guest users can trigger repeating notifications to           | - System Config path: **Site Configuration > Posts**                                          |
-|   mentioned recipients of urgent messages.                               | - ``config.json`` setting: ``.ServiceSettings.AllowPersistentNotificationsForGuests: false``  |
-| - **false**: **(Default)** Disables the ability for guest users to       | - Environment variable: ``MM_SERVICESETTINGS_ALLOWPERSISTENTNOTIFICATIONSFORGUESTS``          |
-|   send repeating notifications.                                          |                                                                                               |
-+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
-
 .. config:setting:: posts-enablelinkpreviews
   :displayname: Enable website link previews (Posts)
   :systemconsole: Site Configuration > Posts
