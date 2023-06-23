@@ -13,7 +13,7 @@ Mattermost Server v8.0.0
 
   - All Mattermost-supported plugins are updated to the latest versions.
   - Any other plugins have been updated to support React 17. See the `Important Upgrade Notes <https://docs.mattermost.com/upgrade/important-upgrade-notes.html>`__ for v7.7 for more information.
-- Disabling Insights for all new instances and for existing servers that upgrade to Mattermost v8.0. You can re-enable Insights with an environment variable via ``MM_FEATUREFLAGS_INSIGHTSENABLED=true``.
+- Disabling Insights for all new instances and for existing servers that upgrade to Mattermost v8.0.
 - Removing deprecated ``PermissionUseSlashCommands``.
 - Removing deprecated ``model.CommandArgs.Session``.
 - Removing support for PostgreSQL v10. The new minimum PostgreSQL version will be v11.

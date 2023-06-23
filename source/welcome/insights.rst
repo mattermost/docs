@@ -6,7 +6,7 @@ Insights
 
 .. important::
 
-  From Mattermost v8.0, Insights has been disabled for all new instances and for existing servers that upgrade to Mattermost v8.0. The Insights feature flag can be re-enabled with an environment variable via ``MM_FEATUREFLAGS_INSIGHTSENABLED=true``.
+  From Mattermost v8.0, Insights has been disabled for all new instances and for existing servers that upgrade to Mattermost v8.0.
 
 Insights offer you visibility into top activities by surfacing the most important events happening within each team within your Mattermost workspace. 
 
