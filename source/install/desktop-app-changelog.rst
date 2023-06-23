@@ -58,6 +58,8 @@ All Platforms
 Known Issues
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+- Mattermost is not detected in the **Add Server** screen if the server has plugins disabled `MM-53294 <https://mattermost.atlassian.net/browse/MM-53294>`_.
+- When running "Run Diagnostics" from the **Help** menu, the app crashes `MM-53295 <https://mattermost.atlassian.net/browse/MM-53295>`_.
 - Users seeing an endless "Loading..." screen when attempting to log in to the app may need to manually remove their cache directory. For MacOS it is located in ``/Users/<username>/Library/Containers/Mattermost/Data/Library/Application Support/Mattermost`` and for Windows it is located in ``Users/<username>/AppData/Roaming/Mattermost``.
 - On Linux, a left-click on the Mattermost tray icon doesn't open the app window but opens the tray menu.
 - Crashes might be be experienced in some Linux desktop clients due to an upstream bug in the ``libnotifyapp`` library. A recommended workaround is to disable the Mattermost system tray icon via Desktop Settings.
