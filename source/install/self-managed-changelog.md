@@ -18,7 +18,16 @@ Latest Mattermost Releases:
 
 ### Important Upgrade Notes
 
+ - Insights has been disabled for all new instances and for existing servers that upgrade to v8.0. See more details in [this forum post](https://forum.mattermost.com/t/proposal-to-revise-our-insights-feature-due-to-known-performance-issues/16212) on why Insights has been disabled.
+ - Boards can now be enabled or disabled in the **System Console > Plugin settings**.
+ - The Channel Export and Apps plugins are now disabled by default.
+ - Apps Bar is now enabled by default for on-prem servers. ``ExperimentalSettings.EnableAppBar`` was also renamed to ``ExperimentalSettings.DisableAppBar``. See more details at:
+   - https://docs.mattermost.com/configure/experimental-configuration-settings.html#disable-app-bar 
+   - https://forum.mattermost.com/t/channel-header-plugin-changes/13551
  - The Go module has been upgraded to v8.0. All packages are now under the new path ``github.com/mattermost-server/server/v8``. Clients will have to change their module path to the new structure. Very minimal change. There are no API level breaking changes that would require code changes.
+ - Introduced the [public](https://github.com/mattermost/mattermost/tree/master/server/public) submodule, housing the familiar `model` and `plugin` packages, but now discretely versioned from the server. It is no longer necessary to `go get` a particular commit hash, as Go programs and plugins can now opt-in to importing `github.com/mattermost/mattermost-server/server/public` and managing versions idiomatically. While this submodule has not yet shipped a v1 and will introduce breaking changes before stabilizing the API, it remains both forwards and backwards compatible with the Mattermost server itself.
+  - In the main `server package`, the Go module path has changed from ``github.com/mattermost/mattermost-server/server/v8`` to ``github.com/mattermost/mattermost/server/v8``. But with the introduction of the `public` submodule, it should no longer be necessary for third-party code to import this `server` package.
+ - As part of the `public` submodule above, a ``context.Context`` is now passed to ``model.Client4`` methods.
  - Removed support for PostgreSQL v10. The new minimum PostgreSQL version is now v11.
  - The Mattermost public API for Go is now available as a distinctly versioned package. Instead of pinning a particular commit hash, use idiomatic Go to add this package as a dependency: go get github.com/mattermost/mattermost-server/server/public. This relocated Go API maintains backwards compatibility with Mattermost v7. Furthermore, the existing Go API previously at github.com/mattermost/mattermost-server/v6/model remains forward compatible with Mattermost v8, but may not contain newer features. Plugins do not need to be recompiled, but developers may opt in to using the new package to simplify their build process. The new public package is shipping alongside Mattermost v8 as version 0.5.0 to allow for some additional code refactoring before releasing as v1 later this year.
  - Three configuration fields have been added, ``LogSettings.AdvancedLoggingJSON``, ``ExperimentalAuditSettings.AdvancedLoggingJSON``, and ``NotificationLogSettings.AdvancedLoggingJSON`` which support multi-line JSON, escaped JSON as a string, or a filename that points to a file containing JSON.  The ``AdvancedLoggingConfig`` fields have been deprecated.
@@ -50,6 +59,12 @@ Latest Mattermost Releases:
 #### Apps Bar
  - The apps bar is now enabled by default.
 
+#### Calls
+ - 
+
+#### Playbooks
+ - 
+
 ### Improvements
 
 #### User Interface (UI)
@@ -77,8 +92,22 @@ Latest Mattermost Releases:
  - Pre-packaged GitHub plugin version 2.1.6.
  - Pre-packaged Autolink plugin version 1.4.0.
  - Pre-packaged Welcomebot plugin version 1.3.0.
+ - Pre-packaged NPS plugin version 1.3.2.
+ - Added support to specify different desktop notification sounds per channel.
+ - Calls: Ringing sounds can be enabled/disabled and selected in the Desktop Notifications preferences panel.
 
 #### Administration
+ - Added a new ``ConfigurationWillBeSaved`` plugin hook which is invoked before the configuration object is committed to the backing store.
+ - Admins can now specify index names to ignore while purging indexes from Elasticsearch with the ``ElasticsearchSettings.IgnoredPurgeIndexes`` setting.
+ - Added an option to use the German HPNS notification proxy.
+ - New flags were added to the database migrate command as following:
+
+    - ``auto-recover``: If the migration plan receives an error during migrations, this command will try to rollback migrations already applied within the plan. This option is not recommended to be added without reviewing migration plan. You can review the plan by combining ``--save-plan`` and ``--dry-run`` flags.
+    - ``save-plan``: The plan for the migration will be saved into the file store so that it can be used for reviewing the plan or to be used for downgrading.
+    - ``dry-run``: Does not apply the migrations, but it validates how the migration would run with the given conditions.
+
+ - A new database subcommand "downgrade" was added to be able to rollback database migrations. The command either requires an update plan to rollback, or comma separated version numbers.
+ - Removed ``/api/v4/users/stats`` network request from ``InviteMembersButton``.
  - Self-hosted admins can now define a separate shipping address during in-product license purchase.
  - Added updates to the trial request forms to allow for a more tailored trial experience.
  - First admins will now have an onboarding experience that includes first team creation based on company name and invite members link steps. 
@@ -123,6 +152,16 @@ Latest Mattermost Releases:
  - Fixed an issue where combined system messages did not display in chronological order.
  - Fixed an issue where the current user and status were not updated on WebSocket reconnect.
  - Fixed an issue where certain hashtags were not searchable when using database search.
+ - Fixed the **New Messages** line overlapping date lines in the post list.
+ - Fixed an issue where post reactions disappeared when the search sidebar was open.
+ - Fixed an issue with broken "medical_symbol", "male_sign", and "female_sign" emojis.
+ - Fixed a panic where a JSON null value was passed as a channel update.
+ - Fixed an issue where the draft counter badge remained in cases where a deleted parent post was removed.
+ - Fixed an issue where posts were not fully sanitized for audit output when a link preview was included.
+ - Fixed an issue where the footer with **Save/Cancel** buttons did not get anchored properly in the System Console.
+ - Fixed an issue where the undo history was erased when links, tables, or code was pasted into the textbox.
+ - Fixed an issue where Elasticsearch didn't properly start on startup when enabled. Also added a missing ``IsEnabled`` method to Elasticsearch.
+ - Fixed an issue where text couldn't be copied from the post textbox.
  
 ### config.json
 Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
@@ -135,6 +174,9 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
    - Added ``DelayChannelAutocomplete``, to make the channel autocomplete only appear after typing a couple letters instead of immediately after a tilde.
    - Added ``DisableRefetchingOnBrowserFocus``, to disable re-fetching of channel and channel members on browser focus.
  - Three configuration fields have been added, ``LogSettings.AdvancedLoggingJSON``, ``ExperimentalAuditSettings.AdvancedLoggingJSON``, and ``NotificationLogSettings.AdvancedLoggingJSON`` which support multi-line JSON, escaped JSON as a string, or a filename that points to a file containing JSON.  The ``AdvancedLoggingConfig`` fields have been deprecated.
+ - Now you can specify index names to ignore while purging indexes from Elasticsearch with the ``ElasticsearchSettings.IgnoredPurgeIndexes`` setting.
+ - Added a config setting ``EnablePlaybooks`` to enable/disable playbooks in product mode.
+ - Added ``DisableAppBar`` to enable apps bar by default.
  
 ### Go Version
  - v8.0 is built with Go ``v1.19.5``.
