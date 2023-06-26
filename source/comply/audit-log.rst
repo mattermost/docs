@@ -22,13 +22,22 @@ Audit logging provides System Admins, including Security, IT/SRE, Compliance, an
 Configure audit logging
 -----------------------
 
-Configuring Mattermost to enable audit logging requires editing the ``config.json`` file directly. Audit logging can’t be managed using the System Console.
+The process of configuring audit logging includes specifying destination targets, event names to include, and the verbosity of the audit log output.Configuring Mattermost to enable audit logging requires editing the ``config.json`` file directly. Audit logging can’t be managed using the System Console.
 
-In the ``config.json`` file, go to the ``ExperimentalAuditSettings`` section. Within the ``AdvancedLoggingConfig`` setting, you can specify an absolute or relative filespec to another configuration file or a JSON string. The process of configuring audit logging includes specifying destination targets, event names to include, and the verbosity of the audit log output.
+In the ``config.json`` file, go to the ``ExperimentalAuditSettings`` section. You can specify the following:
 
-The example JSON configuration specifies two log targets: one outputs to the console using a plain text format with pipes delimiting fields, and the other outputs to a file using a JSON format with log file rotation. All audit log levels are enabled.
+- ``AdvancedLoggingJSON``: A multi-line JSON or a filespec to another configuration file.
+- ``AdvancedLoggingConfig`` (deprecated from Mattermost v.8.0): An escaped single line JSON string or a filespec to another configuration file.
 
-.. code-block:: json
+The example JSON configuration below specifies two log targets: one outputs to the console using a plain text format with pipes delimiting fields, and the other outputs to a file using a JSON format with log file rotation. All audit log levels are enabled.
+
+Examples of values for the ``AdvancedLoggingJSON`` setting are:
+
+1. Filespec to another configuration file: ``"AdvancedLoggingJSON": "/path/to/audit_log_config.json"``
+
+   This file will contain a JSON object:
+
+  .. code-block:: json
 
     {
       "sample-console": {
@@ -68,18 +77,33 @@ The example JSON configuration specifies two log targets: one outputs to the con
       }
     }
 
-Examples of values for the ``AdvancedLoggingConfig`` setting are:
 
-1. Filespec to another configuration file; this file will contain a JSON object
+2. Multi-line JSON in the ``config.json`` file:
 
-  ``"AdvancedLoggingConfig": "/path/to/audit_log_config.json"``
+  .. code-block:: json
 
-2. JSON string
-
-  ``"AdvancedLoggingConfig": "{\"sample-console\":{\"type\":\"console\",\"format\":\"plain\",\"format_options\":{\"delim\":\" | \"},\"levels\":[{\"id\":100,\"name\":\"audit-api\"},{\"id\":101,\"name\":\"audit-content\"},{\"id\":102,\"name\":\"audit-permissions\"},{\"id\":103,\"name\":\"audit-cli\"}],\"options\":{\"out\":\"stdout\"},\"maxqueuesize\":1000},\"sample-file\":{\"type\":\"file\",\"format\":\"json\",\"levels\":[{\"id\":100,\"name\":\"audit-api\"},{\"id\":101,\"name\":\"audit-content\"},{\"id\":102,\"name\":\"audit-permissions\"},{\"id\":103,\"name\":\"audit-cli\"}],\"options\":{\"compress\":true,\"filename\":\"audit.log\",\"max_age\":1,\"max_backups\":10,\"max_size\":500},\"maxqueuesize\":1000}}"``
-
-.. note::
-  When using a JSON string as the value of ``AdvancedLoggingConfig``, ensure you escape double quotes (``"``) in the string using a backslash (``\``). You can also use a free online tool, such as `Free Online JSON Escape <https://www.freeformatter.com/json-escape.html>`__ to format the value correctly.
+        "AdvancedLoggingJSON": {
+            "file_1": {
+                "Type": "file",
+                "Format": "plain",
+                "Levels": [
+                    {"ID": 5, "Name": "debug", "Stacktrace": false},
+                    {"ID": 4, "Name": "info", "Stacktrace": false},
+                    {"ID": 3, "Name": "warn", "Stacktrace": false},
+                    {"ID": 2, "Name": "error", "Stacktrace": true},
+                    {"ID": 1, "Name": "fatal", "Stacktrace": true},
+                    {"ID": 0, "Name": "panic", "Stacktrace": true}
+                ],
+                "Options": {
+                    "Compress": true,
+                    "Filename": "mattermost_logr.log",
+                    "MaxAgeDays": 1,
+                    "MaxBackups": 10,
+                    "MaxSizeMB": 500 
+                },
+                "MaxQueueSize": 1000
+            }
+        }
 
 Log level configuration options
 -------------------------------
