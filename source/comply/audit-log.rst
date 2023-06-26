@@ -105,53 +105,6 @@ Examples of values for the ``AdvancedLoggingJSON`` setting are:
             }
         }
 
-3. Environment variable:
-
-  .. code-block:: shell
-
-    export MM_LOGSETTINGS_ADVANCEDLOGGINGJSON=$(jq -n -c '{
-      "file1": {
-        "Type": "file",
-        "Format": "json",
-        "Levels": [
-          {"ID": 5, "Name": "debug", "Stacktrace": false},
-          {"ID": 4, "Name": "info", "Stacktrace": false},
-          {"ID": 3, "Name": "warn", "Stacktrace": false},
-          {"ID": 2, "Name": "error", "Stacktrace": true},
-          {"ID": 1, "Name": "fatal", "Stacktrace": true},
-          {"ID": 0, "Name": "panic", "Stacktrace": true}
-        ],
-        "Options": {
-          "Compress": true,
-          "Filename": "mattermost_logr.log",
-          "MaxAgeDays": 0,
-          "MaxBackups": 10,
-          "MaxSizeMB": 10 
-        },
-        "MaxQueueSize": 1000
-      }
-    }')
-    export MM_EXPERIMENTALAUDITSETTINGS_ADVANCEDLOGGINGJSON=$(jq -n -c '{
-      "file_1": {
-        "Type": "file",
-        "Format": "json",
-        "Levels": [
-          {"ID": 100, "Name": "audit-api"},
-          {"ID": 101, "Name": "audit-content"},
-          {"ID": 102, "Name": "audit-permissions"},
-          {"ID": 103, "Name": "audit-cli"}
-        ],
-        "Options": {
-          "Compress": true,
-          "Filename": "mattermost_audit.log",
-          "MaxAgeDays": 1,
-          "MaxBackups": 10,
-          "MaxSizeMB": 500 
-        },
-        "MaxQueueSize": 1000
-      }
-    }')
-
 Log level configuration options
 -------------------------------
 
