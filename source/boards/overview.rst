@@ -1,10 +1,7 @@
 Overview
 ========
 
-.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
-  :start-after: :nosearch:
-
-Mattermost Boards provides tight integration between project management and Mattermost to align, define, organize, track, and manage work across teams, and is part of all Mattermost editions.
+The Mattermost Boards plugin provides tight integration between project management and Mattermost to align, define, organize, track, and manage work across teams.
 
 With Boards you can:
 
@@ -30,14 +27,14 @@ When working with cards, you can manage properties, add descriptions, attach ima
 Access your boards
 ------------------
 
-Open the Boards tab via the product menu in the top left corner of Mattermost, to view all the boards for your team. You can select the Boards icon in the Apps Bar to open the right-hand panel, and display boards linked to the channel or message that you're in.
+When the Boards plugin is enabled, open the Boards tab via the product menu in the top left corner of Mattermost to view all the boards for your team. You can select the **Boards** icon in the Apps Bar to open the right-hand panel, and display boards linked to the channel or message that you're in.
 
 If you don't see the Apps Bar and your boards layout looks different to what's described, you may be using an older version of Mattermost. The navigation content in this documentation will not be aligned with your navigation, but the functionality described will be applicable across versions unless otherwise noted.
 
 Focalboard personal server 
 --------------------------
 
-Boards is also available as a separate single-user Personal Edition called Focalboard. The Focalboard personal server and desktop apps have some limitations in terms of functionality. Here are some differences you will notice between them and the Boards plugin:
+The Mattermost Boards plugin is also available as a separate single-user Personal Edition called Focalboard. The Focalboard personal server and desktop apps have some limitations in terms of functionality. Here are some differences you will notice between them and the Boards plugin:
 
 - You can create private boards in the personal server version.
 - You can't @mention people in the personal server version.

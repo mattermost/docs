@@ -1,9 +1,6 @@
 Work with cards
 ===============
 
-.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
-  :start-after: :nosearch:
-
 .. |options-icon| image:: ../images/dots-horizontal_F01D8.svg
   :alt: Access additional message actions using the More actions icon.
 

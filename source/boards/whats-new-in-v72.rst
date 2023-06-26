@@ -1,10 +1,7 @@
 What’s new in Mattermost Boards 
 ===============================
 
-.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
-  :start-after: :nosearch:
-
-For the latest Boards updates, check out our `Mattermost self-hosted changelog <https://docs.mattermost.com/install/self-managed-changelog.html#mattermost-self-hosted-changelog>`_ and our `Mattermost Cloud changelog <https://docs.mattermost.com/install/cloud-changelog.html>`_.
+For the latest Boards plugin updates, check out our `Mattermost self-hosted changelog <https://docs.mattermost.com/install/self-managed-changelog.html#mattermost-self-hosted-changelog>`_ and our `Mattermost Cloud changelog <https://docs.mattermost.com/install/cloud-changelog.html>`_.
 
 
 Overview of v7.2 and beyond

@@ -28,7 +28,7 @@ Mattermost contains three key tools:
 
 * :doc:`Channels </guides/channels>` - Stay connected with your team via 1:1 and group messages, voice calls, and screensharing.
 * :doc:`Playbooks </guides/playbooks>` - Build and configure repeatable processes with workflow automation to achieve specific and predictable outcomes.
-* :doc:`Boards </guides/boards>` - Manage projects and tasks in a Kanban board structure to help your team hit key milestones.
+* :doc:`Boards plugin </guides/boards>` - Manage projects and tasks in a Kanban board structure to help your team hit key milestones.
 
 This section provides an overview of Mattermost products, features, security, integrations, licensing, subscriptions, authentication, and compliance support.
 

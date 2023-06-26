@@ -1337,6 +1337,8 @@ redirects = {
 	"https://docs.mattermost.com/configure/authentication-configuration-settings.html#openid-connect-other-settings",
 "configure/experimental-configuration-settings.html#enable-app-bar":
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#disable-apps-bar",
+"configure/product-configuration-settings.html":
+        "https://docs.mattermost.com/configure/plugins-configuration-settings.html#mattermost-boards-plugin",
 
 # Deploy redirects
 "deploy/mobile-apps-faq.html":
@@ -1572,6 +1574,8 @@ redirects = {
         "https://docs.mattermost.com/about/orchestration.html",
 
 # Important Note: The following guide files were archived in FY23 Q2.
+"guides/boards.html":
+        "https://docs.mattermost.com/guides/boards-plugin.html",
 "guides/cloud-admin-guide.html":
 	"https://docs.mattermost.com/guides/deployment.html",
 "guides/developer.html":

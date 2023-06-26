@@ -90,7 +90,6 @@ This section provides a bibliography of key project references and deliverables 
 - Mattermost Security Features: https://docs.mattermost.com/about/security.html 
 - Mattermost Channels: https://docs.mattermost.com/guides/channels.html
 - Mattermost Playbooks: https://docs.mattermost.com/guides/playbooks.html
-- Mattermost Boards: https://docs.mattermost.com/guides/boards.html
 
 2.4 Glossary
 ~~~~~~~~~~~~

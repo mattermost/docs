@@ -16,7 +16,7 @@ Both self-hosted and Cloud admins can access the following configuration setting
 - `Channel Export <#channel-export>`__
 - `Demo Plugin <#demo-plugin>`__
 - `GIF commands <#gif-commands>`__
-- `Mattermost Boards <#mattermost-boards>`__
+- `Mattermost Boards plugin <#mattermost-boards>`__
 - `Mattermost Playbooks <#mattermost-playbooks>`__
 - `User Satisfaction surveys <#user-satisfaction-surveys>`__
 - `Zoom <#zoom>`__
@@ -1141,7 +1141,8 @@ Tenor display style
 
 +--------------------------------------------------------------------------------------------------+--------------------------------------------------+
 | Specify the display style for GIFs from Tenor. See the `Tenor API                                | - System Config path: **Plugins > GIF commands** |
-| <https://tenor.com/gifapi/documentation#responseobjects-gifformat>`__ documentation for details. |                                                  |
+| <https://tenor.com/gifapi/documentation#responseobjects-gifformat>`__ documentation for details. | - ``config.json`` setting: N/A                   |
+|                                                                                                  |- Environment variable: N/A                       |
 +--------------------------------------------------------------------------------------------------+--------------------------------------------------+
 
 .. config:setting:: plugins-giflanguage
@@ -1156,8 +1157,8 @@ Language
 
 +-----------------------------------------------------------------------------------------+--------------------------------------------------+
 | Specify the language used to search GIFs from GIPHY. See the `GIPHY Developers Language | - System Config path: **Plugins > GIF commands** |
-| Support <https://developers.giphy.com/docs/optional-settings/#language-support>`__      |                                                  |
-| documentation for details.                                                              |                                                  |
+| Support <https://developers.giphy.com/docs/optional-settings/#language-support>`__      | - ``config.json`` setting: N/A                   |
+| documentation for details.                                                              | - Environment variable: N/A                      |
 +-----------------------------------------------------------------------------------------+--------------------------------------------------+
 
 .. config:setting:: plugins-gifforcepreview
@@ -1172,39 +1173,44 @@ Language
 Force GIF preview before posting (force /gifs)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------+
-| - **true**: Prevents accidental posting of inappropriate GIFs from a provider that does not support content rating filtering.                         | - System Config path: **Plugins > GIF commands** |
-| - **false**: (Default) Both ``/gif`` and ``/gifs`` slash commands are available for the GIF commands plugin on your Mattermost server.                |                                                  |
-+---------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------+
++---------------------------------------------------------------------------------+--------------------------------------------------+
+| - **true**: Prevents accidental posting of inappropriate GIFs                   | - System Config path: **Plugins > GIF commands** |
+|   from a provider that does not support content rating filtering.               | - ``config.json`` setting: N/A                   |
+| - **false**: (Default) Both ``/gif`` and ``/gifs`` slash commands are           | - Environment variable: N/A                      |
+|   available for the GIF commands plugin on your Mattermost server.              |                                                  |
++---------------------------------------------------------------------------------+--------------------------------------------------+
 
 ----
-
-Mattermost Boards
------------------
-
-.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
-  :start-after: :nosearch:
-
-Mattermost Boards is an open source alternative to Trello, Notion, and Asana. Boards is a project management tool that helps define, organize, track and manage work across teams, using a familiar kanban board view. See the `Mattermost Boards <https://docs.mattermost.com/guides/boards.html>`__ product documentation for details.
-
-Access the following configuration settings in the System Console by going to **Plugins > Mattermost Boards**.
 
 .. config:setting:: plugins-boardsenable
   :displayname: Enable plugin (Plugins - Boards)
   :systemconsole: Plugins > Mattermost Boards
-  :configjson: 
-  :environment: 
+  :configjson: N/A
+  :environment: N/A
 
-  - **true**: Enables the Mattermost Boards plugin on your Mattermost workspace.
-  - **false**: Disables the Mattermost Boards plugin on your Mattermost workspace.
+    - **true**: **(Default for Cloud deployments)** Enables the Mattermost Boards plugin for your Mattermost workspace.
+    - **false**: **(Default for self-hosted deployments)** Disables the Mattermost Boards plugin for your Mattermost workspace.
+
+
+Mattermost Boards plugin
+------------------------
+
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
+
+The Mattermost Boards plugin is an open source project management alternative to Trello, Notion, and Asana that helps define, organize, track and manage work across teams, using a familiar kanban board view. See the `Mattermost Boards plugin <https://docs.mattermost.com/guides/boards.html>`__ product documentation for details.
+
+Access the following configuration settings in the System Console by going to **Plugins > Mattermost Boards**.
+
 
 Enable plugin
 ~~~~~~~~~~~~~
 
 +----------------------------------------------------------------------------------+-------------------------------------------------------+
-| - **true**: Enables the Mattermost Boards plugin on your Mattermost workspace.   | - System Config path: **Plugins > Mattermost Boards** |
-| - **false**: Disables the Mattermost Boards plugin on your Mattermost workspace. | - ``config.json`` setting:                            |
-|                                                                                  | - Environment variable:                               |
+| - **true**: **(Default for Cloud deployments)** Enables the Mattermost Boards    | - System Config path: **Plugins > Mattermost Boards** |
+|   plugin for your Mattermost workspace.                                          | - ``config.json`` setting: N/A                        |
+| - **false**: **(Default for self-hosted deployments)** The Mattermost Boards     | - Environment variable: N/A                           |
+|   plugin is disabled for your Mattermost workspace.                              |                                                       |
 +----------------------------------------------------------------------------------+-------------------------------------------------------+
 
 ----

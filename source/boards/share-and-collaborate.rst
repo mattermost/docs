@@ -1,13 +1,10 @@
 Share and collaborate
 =====================
 
-.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
-  :start-after: :nosearch:
-
 Board permissions
 -----------------
 
-From Mattermost Boards v7.2 boards belong to teams, and any member of that team can be granted access to a board. 
+From Mattermost Boards v7.2, boards belong to teams, and any member of that team can be granted access to a board. 
 
 If your boards workspace looks different, you may be on an earlier version of boards. In earlier versions, boards are tied to channel workspaces and board membership is determined by channel membership. In this case, roles and permissions won't be applicable to you.
 
@@ -90,7 +87,7 @@ To unlink the channel from the board, open the **Share** dialog, select the role
 Guest accounts
 --------------
 
-From Mattermost Boards v7.4, `guest accounts <https://docs.mattermost.com/onboard/guest-accounts.html#guest-accounts>`_ will be supported in Boards. Guests can:
+From Mattermost Boards v7.4, `guest accounts <https://docs.mattermost.com/onboard/guest-accounts.html#guest-accounts>`_ are supported. Guests can:
 
 - Access boards where they're added as an explicit member of the board. `Team access <https://docs.mattermost.com/boards/share-and-collaborate.html#manage-team-access>`_ and `channel role groups <https://docs.mattermost.com/boards/share-and-collaborate.html#channel-role-groups>`_ don't apply to guest accounts.
 - Access existing boards, but not create new boards. Guests don't have access to the template picker and can't duplicate an existing board.
