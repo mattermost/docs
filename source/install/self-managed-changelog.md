@@ -105,13 +105,13 @@ Latest Mattermost Releases:
  - Added a new ``ConfigurationWillBeSaved`` plugin hook which is invoked before the configuration object is committed to the backing store.
  - Admins can now specify index names to ignore while purging indexes from Elasticsearch with the ``ElasticsearchSettings.IgnoredPurgeIndexes`` setting.
  - Added an option to use the German HPNS notification proxy.
- - New flags were added to the database migrate command as following:
+ - New flags were added to the [database migrate command](https://docs.mattermost.com/manage/command-line-tools.html#mattermost-db-migrate) as following:
 
     - ``auto-recover``: If the migration plan receives an error during migrations, this command will try to rollback migrations already applied within the plan. This option is not recommended to be added without reviewing migration plan. You can review the plan by combining ``--save-plan`` and ``--dry-run`` flags.
     - ``save-plan``: The plan for the migration will be saved into the file store so that it can be used for reviewing the plan or to be used for downgrading.
     - ``dry-run``: Does not apply the migrations, but it validates how the migration would run with the given conditions.
 
- - A new [database subcommand](https://docs.mattermost.com/manage/command-line-tools.html) "downgrade" was added to be able to rollback database migrations. The command either requires an update plan to rollback, or comma separated version numbers.
+ - A new [database subcommand](https://docs.mattermost.com/manage/command-line-tools.html#mattermost-db-downgrade) "downgrade" was added to be able to rollback database migrations. The command either requires an update plan to rollback, or comma separated version numbers.
  - Removed ``/api/v4/users/stats`` network request from ``InviteMembersButton``.
  - Self-hosted admins can now define a separate shipping address during in-product license purchase.
  - Added updates to the trial request forms to allow for a more tailored trial experience.
