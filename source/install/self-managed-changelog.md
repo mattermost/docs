@@ -19,7 +19,7 @@ Latest Mattermost Releases:
 ### Important Upgrade Notes
 
  - Insights has been disabled for all new instances and for existing servers that upgrade to v8.0. See more details in [this forum post](https://forum.mattermost.com/t/proposal-to-revise-our-insights-feature-due-to-known-performance-issues/16212) on why Insights has been disabled.
- - Boards can now be enabled or disabled in the **System Console > Plugin settings**.
+ - Boards is now disabled by default and can now be enabled in the **System Console > Plugin settings**.
  - The Channel Export and Apps plugins are now disabled by default.
  - Apps Bar is now enabled by default for on-prem servers. ``ExperimentalSettings.EnableAppBar`` was also renamed to ``ExperimentalSettings.DisableAppBar``. See more details at:
    - https://docs.mattermost.com/configure/experimental-configuration-settings.html#disable-app-bar 
@@ -57,12 +57,17 @@ Latest Mattermost Releases:
  - Added a persistent notification option when sending urgent priority posts.
 
 #### Apps Bar
- - The apps bar is now enabled by default.
+ - The apps bar is now enabled by default for on-prem servers. ``ExperimentalSettings.EnableAppBar`` was also renamed to ``ExperimentalSettings.DisableAppBar``. See more details at:
+   - https://docs.mattermost.com/configure/experimental-configuration-settings.html#disable-app-bar 
+   - https://forum.mattermost.com/t/channel-header-plugin-changes/13551
 
 #### Calls
  - 
 
 #### Playbooks
+ - 
+
+#### Boards
  - 
 
 ### Improvements
@@ -94,7 +99,7 @@ Latest Mattermost Releases:
  - Pre-packaged Welcomebot plugin version 1.3.0.
  - Pre-packaged NPS plugin version 1.3.2.
  - Added support to specify different desktop notification sounds per channel.
- - Calls: Ringing sounds can be enabled/disabled and selected in the Desktop Notifications preferences panel.
+ - Calls: Ringing sounds can be enabled/disabled and selected in the **Desktop Notifications** preferences panel.
 
 #### Administration
  - Added a new ``ConfigurationWillBeSaved`` plugin hook which is invoked before the configuration object is committed to the backing store.
@@ -169,24 +174,21 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 #### Changes to Team Edition and Enterprise Edition:
  - Removed ``EnableInactivityEmail`` config setting.
  - Added a new config setting section ``ProductSettings``.
- - Added new confic settings ``AllowPersistentNotifications``, ``AllowPersistentNotificationsForGuests``, ``PersistentNotificationIntervalMinutes``, ``PersistentNotificationMaxCount``, ``PersistentNotificationMaxRecipients``, to add a persistent notification option when sending urgent priority posts.
+ - Under ``ServiceSettings`` in ``config.json``:
+   - Added new confic settings ``AllowPersistentNotifications``, ``AllowPersistentNotificationsForGuests``, ``PersistentNotificationIntervalMinutes``, ``PersistentNotificationMaxCount``, ``PersistentNotificationMaxRecipients``, to add a persistent notification option when sending urgent priority posts.
  - Under ``ExperimentalSettings`` in ``config.json``:
    - Added ``DelayChannelAutocomplete``, to make the channel autocomplete only appear after typing a couple letters instead of immediately after a tilde.
    - Added ``DisableRefetchingOnBrowserFocus``, to disable re-fetching of channel and channel members on browser focus.
+   - Added ``DisableAppBar`` to enable apps bar by default.
+ - Under ``ElasticsearchSettings`` in ``config.json``:
+   - Now you can specify index names to ignore while purging indexes from Elasticsearch with the ``IgnoredPurgeIndexes`` setting.
  - Three configuration fields have been added, ``LogSettings.AdvancedLoggingJSON``, ``ExperimentalAuditSettings.AdvancedLoggingJSON``, and ``NotificationLogSettings.AdvancedLoggingJSON`` which support multi-line JSON, escaped JSON as a string, or a filename that points to a file containing JSON.  The ``AdvancedLoggingConfig`` fields have been deprecated.
- - Now you can specify index names to ignore while purging indexes from Elasticsearch with the ``ElasticsearchSettings.IgnoredPurgeIndexes`` setting.
- - Added a config setting ``EnablePlaybooks`` to enable/disable playbooks in product mode.
- - Added ``DisableAppBar`` to enable apps bar by default.
  
 ### Go Version
  - v8.0 is built with Go ``v1.19.5``.
 
 ### Known Issues
- - Using the "link" button puts the URL after ``[url]`` instead of replacing ``[url]`` when pasting [MM-53006](https://mattermost.atlassian.net/browse/MM-53006).
- - Saved posts in right-hand side show both the team and channel name in the post header [MM-53005](https://mattermost.atlassian.net/browse/MM-53005).
- - In a cluster config save scenario, it is difficult to disinguish between a timeout and a semantic error in the config if a config save in one node gets stuck [MM-52968](https://mattermost.atlassian.net/browse/MM-52968).
  - Adding an @mention at the start of a post draft and pressing the left or right arrow key can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
- - The new Insights feature has some performance costs that we are working to optimize. This feature can be disabled by setting the ``MM_FEATUREFLAGS_INSIGHTSENABLED`` environment variable to ``false``. See the `Insights </welcome/insights.html>`__ documentation for details.
  - Google login fails on the Classic mobile apps.
  - Status may sometimes get stuck as **Away** or **Offline** in High Availability mode with IP Hash turned off.
  - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
