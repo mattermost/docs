@@ -108,6 +108,8 @@ redirects = {
         "https://docs.mattermost.com/install/self-managed-changelog.html#id41",
 "administration/command-line-tools.html":
         "https://docs.mattermost.com/manage/command-line-tools.html",
+"administration/command-line-tools.html#mattermost-user-delete":
+	"https://docs.mattermost.com/manage/command-line-tools.html#mattermost-user-delete",
 "administration/command-line-tools.html#mattermost-channel-restore":
         "https://docs.mattermost.com/manage/command-line-tools.html#mattermost-channel-restore",
 "administration/command-line-tools.html#mattermost-permissions-reset":
