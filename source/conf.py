@@ -1338,7 +1338,7 @@ redirects = {
 "configure/experimental-configuration-settings.html#enable-app-bar":
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#disable-apps-bar",
 "configure/product-configuration-settings.html":
-        "https://docs.mattermost.com/configure/plugins-configuration-settings.html#mattermost-boards-plugin",
+        "https://docs.mattermost.com/configure/plugins-configuration-settings.html#focalboard-plugin",
 
 # Deploy redirects
 "deploy/mobile-apps-faq.html":
@@ -1539,7 +1539,7 @@ redirects = {
 
 # Focalboard redirects
 "focalboard/installing-boards":
-	"https://docs.mattermost.com/guides/boards.html",
+	"https://docs.mattermost.com/guides/focalboard-plugin.html",
 
 # Getting Started redirects
 "getting-started/implementation_plan.html":
