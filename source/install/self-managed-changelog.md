@@ -67,9 +67,6 @@ Latest Mattermost Releases:
 #### Playbooks
  - 
 
-#### Focalboard
- - Prepackaged Focalboard plugin version 7.11.0.
-
 ### Improvements
 
 #### User Interface (UI)
@@ -97,6 +94,7 @@ Latest Mattermost Releases:
  - Pre-packaged Autolink plugin version 1.4.0.
  - Pre-packaged Welcomebot plugin version 1.3.0.
  - Pre-packaged NPS plugin version 1.3.2.
+ - Prepackaged Focalboard plugin version 7.11.0.
  - Added support to specify different desktop notification sounds per channel.
  - Calls: Ringing sounds can be enabled/disabled and selected in the **Desktop Notifications** preferences panel.
 
