@@ -68,7 +68,7 @@ Latest Mattermost Releases:
  - 
 
 #### Boards
- - 
+ - Prepackaged Boards version 7.11.0.
 
 ### Improvements
 
