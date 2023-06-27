@@ -3,6 +3,12 @@ Focalboard plugin
 
 The Focalboard plugin enables your team to manage projects and tasks via a familiar Kanban board structure. Keep everyone in your team and organization in the loop to stay on schedule with clearly defined tasks, owners, checklists, and deadlines. Keep everything your team needs in one place, including documents, images, and important hyperlinks.
 
+.. important::
+
+  From Mattermost v8.0, Mattermost Boards is now operating as the Focalboard plugin and can be `enabled or disabled in the System Console <configure/plugins-configuration-settings.html#id9>`__. To contribute to this open source project, visit the `Focalboard repository <https://github.com/mattermost/focalboard/>`__ on GitHub. 
+  
+  For the latest Focalboard plugin updates, check out our `Mattermost self-hosted changelog <https://docs.mattermost.com/install/self-managed-changelog.html#mattermost-self-hosted-changelog>`__ and our `Mattermost Cloud changelog <https://docs.mattermost.com/install/cloud-changelog.html>`__.
+
 .. image:: ../images/Boards_Hero.png
    :alt: An example of the Focalboard screen that includes a project status board and cards organized by status. 
 

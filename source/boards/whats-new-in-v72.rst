@@ -3,7 +3,7 @@ What’s new in Mattermost Boards
 
 .. important::
 
-  From Mattermost v8.0, Mattermost is now operating as the Focalboard plugin and can be enabled or disabled in the System Console. For the latest Focalboard plugin updates, check out our `Mattermost self-hosted changelog <https://docs.mattermost.com/install/self-managed-changelog.html#mattermost-self-hosted-changelog>`_ and our `Mattermost Cloud changelog <https://docs.mattermost.com/install/cloud-changelog.html>`_.
+  From Mattermost v8.0, Mattermost Boards is now operating as the Focalboard plugin and can be `enabled or disabled in the System Console </configure/plugins-configuration-settings.html#id9>`__. For the latest Focalboard plugin updates, check out our `Mattermost self-hosted changelog <https://docs.mattermost.com/install/self-managed-changelog.html#mattermost-self-hosted-changelog>`__ and our `Mattermost Cloud changelog <https://docs.mattermost.com/install/cloud-changelog.html>`__.
 
 
 Overview of v7.2 and beyond
