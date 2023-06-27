@@ -19,7 +19,7 @@ Latest Mattermost Releases:
 ### Important Upgrade Notes
 
  - Insights has been disabled for all new instances and for existing servers that upgrade to v8.0. See more details in [this forum post](https://forum.mattermost.com/t/proposal-to-revise-our-insights-feature-due-to-known-performance-issues/16212) on why Insights has been disabled.
- - Boards is now disabled by default and can be enabled in the **System Console > Plugin settings**.
+ - The Focalboard plugin is now disabled by default and can be enabled in the **System Console > Plugin settings**.
  - The Channel Export and Apps plugins are now disabled by default.
  - Apps Bar is now enabled by default for on-prem servers. ``ExperimentalSettings.EnableAppBar`` was also renamed to ``ExperimentalSettings.DisableAppBar``. See more details at:
    - https://docs.mattermost.com/configure/experimental-configuration-settings.html#disable-app-bar 
@@ -54,7 +54,7 @@ Latest Mattermost Releases:
 ### Highlights
 
 #### Persistent Notifications
- - Added a persistent notification option when sending urgent priority posts.
+ - Persistent notifications allow users to notify recipients repeatedly until action is taken on an urgent message. Check out our documentation for more details.
 
 #### Apps Bar
  - The apps bar is now enabled by default for on-prem servers. ``ExperimentalSettings.EnableAppBar`` was also renamed to ``ExperimentalSettings.DisableAppBar``. See more details at:
@@ -67,8 +67,8 @@ Latest Mattermost Releases:
 #### Playbooks
  - 
 
-#### Boards
- - Prepackaged Boards version 7.11.0.
+#### Focalboard
+ - Prepackaged Focalboard plugin version 7.11.0.
 
 ### Improvements
 
@@ -90,7 +90,6 @@ Latest Mattermost Releases:
  - Added a new option to auto-follow all threads in the channel **Notification Preference** settings.
  - ``CTRL/CMD + K`` shortcut can now be used to insert link formatting when text is selected.
  - ``pas`` and ``pascal`` code blocks are now higlighted.
- - Language setting in Boards was removed. The main language setting under **Settings -> Display Settings** now covers Boards. Boards previously supported Catalan, Greek, Indonesian, and Occitan, but since these 4 languages were only partially translated (<40%; Boards-only), they have been removed until more areas of Mattermost are translated into these languages.
  - Removed websocket state effects for the collapse/expand state of categories.
  - Pre-packaged Calls version 0.16.1.
  - Pre-packaged Jira plugin version 3.2.5.
@@ -125,7 +124,6 @@ Latest Mattermost Releases:
  - Updated Docker Base Image from Debian to Ubuntu 22.04 LTS.
  - Type-generated settings will now be generated (only for future generations) with a URL-safe version of base64 encoding.
  - Mattermost is now resilient against database replica outages and will dynamically choose a replica if it's alive. Also a config parameter ``ReplicaMonitorIntervalSeconds`` was added and the default value is 5. This controls how frequently unhealthy replicas will be monitored for liveness check.
- - Added support for attachments when importing/exporting Boards.
  - Updated Docker Base Image from Debian to Ubuntu 22.04 LTS.
  
 #### Performance
@@ -137,9 +135,7 @@ Latest Mattermost Releases:
 
 ### Bug Fixes
  - Fixed a scrolling issue in the purchase modals.
- - Fixed an issue where the **Delete Category Dialog** message was not visible in Boards.
  - Fixed an issue where the experimental Shared Channels feature failed to synchronize if a previously removed table column was still present.
- - Fixed an innocuous panic in Boards Rest API when requesting files and an error other than ``not found`` is encountered.
  - Fixed an issue where clicking on a channel link (for a channel the user was not a part of) caused the webapp to refresh, dropping the user from a call.
  - Fixed an issue with PDF preview rendering for certain Japanese characters.
  - Fixed an issue where the screen reader did not announce the action of copying the link in the invite modal.
