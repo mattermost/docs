@@ -17,7 +17,7 @@ Important Upgrade Notes
 | v8.0                                               | Insights has been disabled for all new instances and for existing servers that upgrade to v8.0. See more details in this forum post                              |  
 |                                                    | https://forum.mattermost.com/t/proposal-to-revise-our-insights-feature-due-to-known-performance-issues/16212  on why Insights has been disabled.                 |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                                                    | Boards is now disabled by default and can now be enabled in the **System Console > Plugin settings**.                                                            |
+|                                                    | The Focalboard plugin is now disabled by default and can be enabled in the **System Console > Plugin settings**.                                                 |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | The Channel Export and Apps plugins are now disabled by default.                                                                                                 |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
