@@ -24,7 +24,7 @@ The following Mattermost configuration settings are deprecated and are no longer
 
 ----
 
-Mattermost Boards settings
+Mattermost Boards setting
 --------------------------
 
 *Removed in the Mattermost v8.0 release*
@@ -45,7 +45,7 @@ Enable publicly-shared boards
 |                                                                                                                                             |
 | - From Mattermost v7.7 through Mattermost v7.10, this configuration setting applies to Mattermost Boards available as an official           |
 |   in-product vertical.                                                                                                                      |
-| - See the `Mattermost Boards <guides/boards.html>`__ documentation for details on `sharing boards links with other                          |
+| - See the `Focalboard <guides/focalboard-plugin.html>`__ documentation for details on `sharing boards links with other                      |
 |   users <boards/share-and-collaborate.html#share-a-board-publicly>`__.                                                                      |
 | - Cloud admins can't modify this configuration setting.                                                                                     |
 +------------------------------------------------------+--------------------------------------------------------------------------------------+

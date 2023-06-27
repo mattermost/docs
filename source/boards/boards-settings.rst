@@ -12,4 +12,4 @@ To enable or disable random emoji icons for your board and cards, select the gea
 Product tour
 ------------
 
-If you skipped the product tour or want a refresher on Boards, you can restart the product tour by going to the gear icon |gear-icon| next to your profile picture and selecting **Product tour**. This will add a new **Welcome to Boards** template to your sidebar and kick-off the guided onboarding tour.
+If you skipped the product tour or want a refresher on Focalboard, you can restart the product tour by going to the gear icon |gear-icon| next to your profile picture and selecting **Product tour**. This will add a new **Welcome to Focalboard** template to your sidebar and kick-off the guided onboarding tour.

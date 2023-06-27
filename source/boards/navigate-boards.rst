@@ -4,7 +4,7 @@ Navigate boards
 .. |options-icon| image:: ../images/dots-horizontal_F01D8.svg
   :alt: Access additional message actions using the More actions icon.
   
-If you've already created a board, you can open the Boards plugin using the Apps Bar. If you don't see the Apps Bar to the right of your screen, you can access boards using the product menu in the top left corner of Mattermost.
+If you've already created a board, you can open the Focalboard plugin using the Apps Bar. If you don't see the Apps Bar to the right of your screen, you can access boards using the product menu in the top left corner of Mattermost.
 
 Link a board to a channel
 -------------------------

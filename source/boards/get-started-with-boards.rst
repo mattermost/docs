@@ -1,9 +1,9 @@
-Get Started with the Mattermost Boards plugin
-=============================================
+Get started with the Focalboard plugin
+=======================================
 
-Boards are used for planning projects collaboratively. You can access the list of channels and their boards from the drop-down menu in the left-hand sidebar. Boards are made up of cards, and cards can have a wide range of purposes.
+Focalboard is used for planning projects collaboratively. You can access the list of channels and associated boards from the drop-down menu in the left-hand sidebar. Boards are made up of cards, and cards can have a wide range of purposes.
 
-See our `Mattermost boards plugin </guides/boards.html>`__ documentation for details on the many ways you can use Boards to enable team collaboration.
+See our `Focalboard plugin </guides/focalboard-plugin.html>`__ documentation for details on the many ways you can use Focalboard to enable team collaboration.
 
 Create a board
 --------------
