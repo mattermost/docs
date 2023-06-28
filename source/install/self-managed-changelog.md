@@ -61,7 +61,7 @@ Latest Mattermost Releases:
    - https://forum.mattermost.com/t/channel-header-plugin-changes/13551
 
 #### Calls
- - 
+ - Calls v0.17.0 introduces a new ringing feature (Beta): Calls in Direct and Group Message channels will ring and pop up a visual notification for the incoming call. Check out the Calls v0.17.0 release notes and Calls documentation for more details.
 
 #### Playbooks
  - 
