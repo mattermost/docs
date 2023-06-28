@@ -4,12 +4,35 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 
 Latest Mattermost Cloud releases:
 
+- [Release 2023-07-13](#release-2023-07-13)
 - [Release 2023-06-26](#release-2023-06-26)
 - [Release 2023-06-13](#release-2023-06-13)
 - [Release 2023-05-31](#release-2023-05-31)
 - [Release 2023-05-01](#release-2023-05-01)
 - [Release 2023-04-21](#release-2023-04-21)
-- [Release 2023-03-29](#release-2023-03-29)
+
+## Release 2023-07-13
+
+### Improvements
+
+#### User Interface (UI)
+ - Updated the user interface for the **Browse channels** modal.
+ - Increased the nickname field in the user interface from 22 to 64 characters.
+ - Updated links to documentation in the **System Console**.
+ - Emoji size is now in scale with the text size in the channel header.
+ - Prepackaged Focalboard plugin version 7.11.0.
+
+#### Administration
+ - The ``mattermost database reset`` command no longer starts the application server. It will only start the store layer and truncate the tables excluding the migrations table.
+
+### Bug Fixes
+ - Fixed an issue where scrollbars were not visible enough on the **File Preview** screen.
+ - Fixed an issue where SAML Admin Attribute only compared the first value instead of looping through the assertion values array.
+ - Fixed an issue where updates to recent emojis were not batched when multiple emojis were posted at once.
+
+### Known Issues
+ - Boards public links that follow the URL schema `/boards/public/...` will not work after this update. They can either be regenerated through the application by going to the board and selecting the **Share** button at the top right, or they can be obtained by replacing the `/boards/public/` part of the URL with `/plugins/focalboard/`.
+ - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
 
 ## Release 2023-06-26
 
