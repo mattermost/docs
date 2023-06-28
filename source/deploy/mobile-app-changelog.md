@@ -20,7 +20,7 @@ Latest Mattermost Mobile Apps releases:
 
 ### Improvements
  - Calls: ``/call start`` will now start calls within an existing thread.
- - Improve logging for mobile apps.
+ - Improved logging for mobile apps.
  - Added localization support to iOS share extension.
  - Improved the user interface of the **Edit Post** screen.
 
