@@ -31,6 +31,7 @@ Latest Mattermost Mobile Apps releases:
  - Removed unneeded fetch posts for unread archived channels that were appearing in the logs.
  - Removed unneeded group calls that were appearing in the logs.
  - Fixed an issue with the progress indicator when uploading files on Android.
+ - Fixed a few issues with app initialization.
 
 ### Known Issues
  - Users are unable to adjust the font size via the OS font size setting.
