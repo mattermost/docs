@@ -17,7 +17,7 @@ Both self-hosted and Cloud admins can access the following configuration setting
 - `Demo Plugin <#demo-plugin>`__
 - `GIF commands <#gif-commands>`__
 - `Mattermost Boards <#mattermost-boards>`__
-- `Mattermost Playbooks <#mattermost-playbooks>`__
+- `Mattermost Playbooks plugin <#mattermost-playbooks>`__
 - `User Satisfaction surveys <#user-satisfaction-surveys>`__
 - `Zoom <#zoom>`__
 
@@ -1209,13 +1209,13 @@ Enable plugin
 
 ----
 
-Mattermost Playbooks
---------------------
+Mattermost Playbooks plugin
+----------------------------
 
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Mattermost Playbooks is an open source, self-hosted collaboration tool for teams. Each playbook represents a recurring outcome or specific goal that your teams collaborate on to achieve, such as service outage recovery or customer onboarding. Teams run a playbook every time they want to orchestrate people, tools, and data to achieve that outcome as quickly as possible while providing visibility to stakeholders. Playbooks also allow teams to incorporate learnings from the retrospective to tweak and improve the playbook with every iteration. See the `Mattermost Playbooks <https://docs.mattermost.com/guides/playbooks.html>`__ documentation for details.
+The Mattermost Playbooks plugin is an open source, self-hosted collaboration tool for teams. Each playbook represents a recurring outcome or specific goal that your teams collaborate on to achieve, such as service outage recovery or customer onboarding. Teams run a playbook every time they want to orchestrate people, tools, and data to achieve that outcome as quickly as possible while providing visibility to stakeholders. Playbooks also allow teams to incorporate learnings from the retrospective to tweak and improve the playbook with every iteration. See the `Mattermost Playbooks plugin <https://docs.mattermost.com/guides/playbooks.html>`__ documentation for details.
 
 Access the following configuration settings in the System Console by going to **Plugins > Playbooks**.
 
@@ -1225,33 +1225,33 @@ Access the following configuration settings in the System Console by going to **
   :configjson: 
   :environment: 
 
-  - **true**: Enables the Mattermost Playbooks plugin on your Mattermost workspace.
+  - **true**: **(Default)** Enables the Mattermost Playbooks plugin on your Mattermost workspace.
   - **false**: Disables the Mattermost Playbooks plugin on your Mattermost workspace.
 
 Enable plugin
 ~~~~~~~~~~~~~
 
-+-------------------------------------------------------------------------------------+-----------------------------------------------+
-| - **true**: Enables the Mattermost Playbooks plugin on your Mattermost workspace.   | - System Config path: **Plugins > Playbooks** |
-| - **false**: Disables the Mattermost Playbooks plugin on your Mattermost workspace. | - ``config.json`` setting:                    |
-|                                                                                     | - Environment variable:                       |
-+-------------------------------------------------------------------------------------+-----------------------------------------------+
++---------------------------------------------------------------------------------------------------+-----------------------------------------------+
+| - **true**: **(Default)** Enables the Mattermost Playbooks plugin on your Mattermost workspace.   | - System Config path: **Plugins > Playbooks** |
+| - **false**: Disables the Mattermost Playbooks plugin on your Mattermost workspace.               | - ``config.json`` setting:                    |
+|                                                                                                   | - Environment variable:                       |
++---------------------------------------------------------------------------------------------------+-----------------------------------------------+
 
 .. config:setting:: plugins-playbooksenabledteams
   :displayname: Enabled teams (Plugins - Playbooks)
   :systemconsole: Plugins > Playbooks
   :configjson: 
   :environment: 
-  :description: Enable Playbooks for all Mattermost teams, or for only selected teams.
+  :description: Enable the Playbooks plugin for all Mattermost teams, or for only selected teams.
 
 Enabled teams
 ~~~~~~~~~~~~~
 
-+------------------------------------------------------------------------+-----------------------------------------------+
-| Enable Playbooks for all Mattermost teams, or for only selected teams. | - System Config path: **Plugins > Playbooks** |
-|                                                                        | - ``config.json`` setting:                    |
-|                                                                        | - Environment variable:                       |
-+------------------------------------------------------------------------+-----------------------------------------------+
++-----------------------------------------------------------------------------------+-----------------------------------------------+
+| Enable the Playbooks plugin for all Mattermost teams, or for only selected teams. | - System Config path: **Plugins > Playbooks** |
+|                                                                                   | - ``config.json`` setting:                    |
+|                                                                                   | - Environment variable:                       |
++-----------------------------------------------------------------------------------+-----------------------------------------------+
 
 .. config:setting:: plugins-playbooksexperimentalfeatures
   :displayname: Enable experimental features (Plugins - Playbooks)
@@ -1259,17 +1259,17 @@ Enabled teams
   :configjson: 
   :environment: 
 
-  - **true**: Enables experimental Playbooks features on your Mattermost workspace.
-  - **false**: Disables experimental Playbooks features on your Mattermost workspace.
+  - **true**: Enables experimental Playbooks plugin features on your Mattermost workspace.
+  - **false**: Disables experimental Playbooks plugin features on your Mattermost workspace.
 
 Enable experimental features
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+-------------------------------------------------------------------------------------+-----------------------------------------------+
-| - **true**: Enables experimental Playbooks features on your Mattermost workspace.   | - System Config path: **Plugins > Playbooks** |
-| - **false**: Disables experimental Playbooks features on your Mattermost workspace. | - ``config.json`` setting:                    |
-|                                                                                     | - Environment variable:                       |
-+-------------------------------------------------------------------------------------+-----------------------------------------------+
++--------------------------------------------------------------------------------------------+-----------------------------------------------+
+| - **true**: Enables experimental Playbooks plugin features on your Mattermost workspace.   | - System Config path: **Plugins > Playbooks** |
+| - **false**: Disables experimental Playbooks plugin features on your Mattermost workspace. | - ``config.json`` setting:                    |
+|                                                                                            | - Environment variable:                       |
++--------------------------------------------------------------------------------------------+-----------------------------------------------+
 
 User satisfaction surveys
 -------------------------
