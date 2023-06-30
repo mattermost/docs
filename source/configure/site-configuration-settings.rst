@@ -1149,7 +1149,7 @@ Frequency of persistent notifications
 | The number of minutes between repeated notifications for      | - System Config path: **Site Configuration > Posts**                                      |
 | urgent messages sent with persistent notifications.           | - ``config.json`` setting: ``.ServiceSettings.PersistentNotificationIntervalMinutes: 5``  |
 |                                                               | - Environment variable: ``MM_SERVICESETTINGS_PERSISTENTNOTIFICATIONINTERVALMINUTES``      |
-| Numerical input. Default is **5**.                            |                                                                                           |
+| Numerical input. Default is **5**. Minimum is **2**.          |                                                                                           |
 +---------------------------------------------------------------+-------------------------------------------------------------------------------------------+
 
 .. config:setting:: posts-totalnumberofpersistentnotificationsperpost
