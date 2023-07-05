@@ -63,9 +63,6 @@ Latest Mattermost Releases:
 #### Calls
  - Calls v0.17.0 introduces a new ringing feature (Beta): Calls in Direct and Group Message channels will ring and pop up a visual notification for the incoming call. Check out the Calls v0.17.0 release notes and Calls documentation for more details.
 
-#### Playbooks
- - 
-
 ### Improvements
 
 #### User Interface (UI)
@@ -94,6 +91,7 @@ Latest Mattermost Releases:
  - Pre-packaged Welcomebot plugin version 1.3.0.
  - Pre-packaged NPS plugin version 1.3.2.
  - Prepackaged Focalboard plugin version 7.11.0.
+ - Prepackaged Playbooks plugin version 1.37.0.
  - Added support to specify different desktop notification sounds per channel.
  - Calls: Ringing sounds can be enabled/disabled and selected in the **Desktop Notifications** preferences panel.
 
