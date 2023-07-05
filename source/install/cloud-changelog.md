@@ -21,9 +21,7 @@ Latest Mattermost Cloud releases:
  - Updated links to documentation in the **System Console**.
  - Emoji size is now in scale with the text size in the channel header.
  - Prepackaged Focalboard plugin version 7.11.0.
-
-#### Administration
- - The ``mattermost database reset`` command no longer starts the application server. It will only start the store layer and truncate the tables excluding the migrations table.
+ - Prepackaged Playbooks plugin version 1.37.0.
 
 ### Bug Fixes
  - Fixed an issue where scrollbars were not visible enough on the **File Preview** screen.
