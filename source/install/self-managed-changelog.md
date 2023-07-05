@@ -53,7 +53,7 @@ Latest Mattermost Releases:
 ### Highlights
 
 #### Persistent Notifications
- - Persistent notifications allow users to notify recipients repeatedly until action is taken on an urgent message. Check out our documentation for more details.
+ - Persistent notifications allow users to notify recipients repeatedly until action is taken on an urgent message. Check out [our documentation](https://docs.mattermost.com/channels/message-priority.html#send-persistent-notifications) for more details.
 
 #### Apps Bar
  - The apps bar is now enabled by default for on-prem servers. ``ExperimentalSettings.EnableAppBar`` was also renamed to ``ExperimentalSettings.DisableAppBar``. See more details at:
