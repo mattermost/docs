@@ -27,6 +27,7 @@ Latest Mattermost Cloud releases:
  - Fixed an issue where scrollbars were not visible enough on the **File Preview** screen.
  - Fixed an issue where SAML Admin Attribute only compared the first value instead of looping through the assertion values array.
  - Fixed an issue where updates to recent emojis were not batched when multiple emojis were posted at once.
+ - Reverted a change that could cause the webapp to forget the current user's authentication method.
 
 ### Known Issues
  - Boards public links that follow the URL schema `/boards/public/...` will not work after this update. They can either be regenerated through the application by going to the board and selecting the **Share** button at the top right, or they can be obtained by replacing the `/boards/public/` part of the URL with `/plugins/focalboard/`.
