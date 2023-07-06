@@ -302,8 +302,8 @@ Control Teammate Name Display at the system level.
 .. config:setting:: log-enablecolor
   :displayname: Colorize plain text console logs
   :systemconsole: N/A
-  :configjson: EnableColor
-  :environment: N/A
+  :configjson: .LogSettings.EnableColor
+  :environment: MM_LOGSETTINGS_ENABLECOLOR
 
   - **true**: When logged events are output to the console as plain text, colorize log levels details.
   - **false**: **(Default)** Plain text log details aren't colorized in the console.
