@@ -268,6 +268,7 @@ Mattermost v7.9.0 contains a low severity level security fix. [Upgrading](https:
   - Mattermost v7.8.8 contains no database or functional changes.
   - Fixed an issue where posts were not fully sanitized for audit output when a link preview was included.
   - Updated prepackaged Playbooks plugin version to 1.36.2.
+  - Fixed an issue where line breaks were introduced when pasting hyperlinks in the chat.
   - New feature flag ``DataRetentionConcurrencyEnabled`` was added to enable/disable concurrency for data retention batch deletion. New config setting  ``DataRetentionSettings.TimeBetweenBatchesMilliseconds`` was added to control the sleep time between batch deletions.
 - **v7.8.7, released 2023-06-15**
   - Mattermost v7.8.7 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
