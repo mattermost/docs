@@ -18,7 +18,7 @@ Latest Mattermost Releases:
 
 ### Important Upgrade Notes
 
- - Insights has been disabled for all new instances and for existing servers that upgrade to v8.0. See more details in [this forum post](https://forum.mattermost.com/t/proposal-to-revise-our-insights-feature-due-to-known-performance-issues/16212) on why Insights has been disabled.
+ - Insights has been deprecated for all new instances and for existing servers that upgrade to v8.0. See more details in [this forum post](https://forum.mattermost.com/t/proposal-to-revise-our-insights-feature-due-to-known-performance-issues/16212) on why Insights has been deprecated.
  - The Focalboard plugin is now disabled by default and can be enabled in the **System Console > Plugin settings**.
  - The Channel Export and Apps plugins are now disabled by default.
  - Apps Bar is now enabled by default for on-prem servers. ``ExperimentalSettings.EnableAppBar`` was also renamed to ``ExperimentalSettings.DisableAppBar``. See more details at:
