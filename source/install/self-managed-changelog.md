@@ -17,6 +17,11 @@ Latest Mattermost Releases:
 
 ## Release v7.10 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
 
+- **v7.10.4, released 2023-07-10**
+  - Mattermost v7.10.4 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Mattermost v7.10.4 contains no database or functional changes.
+  - Fixed an issue where posts were not fully sanitized for audit output when a link preview was included.
+  - Updated prepackaged Playbooks plugin version to 1.36.2.
 - **v7.10.3, released 2023-06-15**
   - Mattermost v7.10.3 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Updated prepackaged Boards to v7.10.3.
@@ -130,6 +135,11 @@ The following deprecations and breaking changes are planned for the Mattermost v
 
 ## Release v7.9 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
 
+- **v7.9.6, released 2023-07-10**
+  - Mattermost v7.9.6 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Mattermost v7.9.6 contains no database or functional changes.
+  - Fixed an issue where posts were not fully sanitized for audit output when a link preview was included.
+  - Updated prepackaged Playbooks plugin version to 1.36.2.
 - **v7.9.5, released 2023-06-15**
   - Mattermost v7.9.5 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Updated prepackaged Boards to v7.9.6.
