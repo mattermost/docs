@@ -93,7 +93,6 @@ Latest Mattermost Releases:
  - ``CTRL/CMD + K`` shortcut can now be used to insert link formatting when text is selected.
  - ``pas`` and ``pascal`` code blocks are now higlighted.
  - Removed websocket state effects for the collapse/expand state of categories.
- - Pre-packaged Calls version 0.16.1.
  - Pre-packaged Jira plugin version 3.2.5.
  - Pre-packaged GitHub plugin version 2.1.6.
  - Pre-packaged Autolink plugin version 1.4.0.
