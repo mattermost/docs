@@ -87,7 +87,9 @@ redirects = {
 "about/faq-mattermost-source-available-license.html":
 	"https://docs.mattermost.com/about/faq-license.html#source-available-licensing",
 "about/mattermost-customizable-chatgpt-bot-framework.html":
-        "https://docs.mattermost.com/about/mattermost-customizable-ai-bot-framework.html",
+        "https://github.com/mattermost/openops#readme",
+"about/mattermost-customizable-ai-bot-framework.html":
+        "https://github.com/mattermost/openops#readme",
 
 # Administration redirects
 "administration/announcement-banner.html":
