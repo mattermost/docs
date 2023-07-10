@@ -52,21 +52,30 @@ Latest Mattermost Releases:
 
 ### Highlights
 
-#### Persistent Notifications
- - Persistent notifications allow users to notify recipients repeatedly until action is taken on an urgent message. Check out [our documentation](https://docs.mattermost.com/channels/message-priority.html#send-persistent-notifications) for more details.
+#### Private cloud LLMs, Azure AI and OpenAI integrations
+ - Mattermost provides an OpenOps framework to integrate with private cloud LLMs, Azure AI and OpenAI models to embed generative AI assistance in collaborative workflows and automation. [Learn more about OpenOps here](https://github.com/mattermost/openops).
 
-#### Apps Bar
- - The apps bar is now enabled by default for on-prem servers. ``ExperimentalSettings.EnableAppBar`` was also renamed to ``ExperimentalSettings.DisableAppBar``. See more details at:
-   - https://docs.mattermost.com/configure/experimental-configuration-settings.html#disable-app-bar 
-   - https://forum.mattermost.com/t/channel-header-plugin-changes/13551
+#### Mattermost for Microsoft Teams
+ - We’re extending our integration with the Microsoft 365 platform with a new embedded experience directly inside Microsoft Teams, as well as our updated MS Teams Connector.
 
-#### Calls
- - Calls v0.17.0 introduces a new ringing feature (Beta): Calls in Direct and Group Message channels will ring and pop up a visual notification for the incoming call. Check out the Calls v0.17.0 release notes and Calls documentation for more details.
+#### Mattermost for Atlassian Suite
+ - Uplevel your workflows within Mattermost using your Atlassian toolset. [Learn more about Mattermost for Atlassian Suite here](https://mattermost.com/atlassian/).
+
+#### Performance and efficiency with PostgreSQL 
+ - To simplify management and scalability challenges, Mattermost 8.0 recommends deploying PostgreSQL over MySQL.
+
+#### New End User Training
+ - We’re introducing [9 new training modules](https://academy.mattermost.com/p/mattermost-end-user-onboarding) dedicated to educating users on the key components of the Mattermost platform and an additional [10 new use case modules](https://academy.mattermost.com/courses/category/use-case-training) tackling technical scenarios within DevOps, Security Ops, and Incident Management.
 
 ### Improvements
 
 #### User Interface (UI)
+ - Persistent notifications allow users to notify recipients repeatedly until action is taken on an urgent message. Check out [our documentation](https://docs.mattermost.com/channels/message-priority.html#send-persistent-notifications) for more details.
+ - The apps bar is now enabled by default for on-prem servers. ``ExperimentalSettings.EnableAppBar`` was also renamed to ``ExperimentalSettings.DisableAppBar``. See more details at:
+   - https://docs.mattermost.com/configure/experimental-configuration-settings.html#disable-app-bar 
+   - https://forum.mattermost.com/t/channel-header-plugin-changes/13551
  - Added a **Mattermost Marketplace** option to the bottom of the apps bar. The option is visible when the Marketplace is enabled, and the user has ``SYSCONSOLE_WRITE_PLUGINS`` permissions.
+ - Calls v0.17.0 introduces a new ringing feature (Beta): Calls in Direct and Group Message channels will ring and pop up a visual notification for the incoming call. Check out the Calls v0.17.0 release notes and Calls documentation for more details.
  - Added an **Add channels** button to the bottom of the left-hand sidebar to make the action more obvious for users who want to create or join channels.
  - Removed the Webapp Build Hash from **Main Menu > About Mattermost** since it is now identical to Server Build Hash.
  - Replaced the ``compass-components`` icon component with ``compass-icons``.
