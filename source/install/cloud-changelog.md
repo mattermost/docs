@@ -13,6 +13,11 @@ Latest Mattermost Cloud releases:
 
 ## Release 2023-07-13
 
+### Highlights
+
+#### Calls
+ - Calls v0.17.0 introduces a new ringing feature (Beta): Calls in Direct and Group Message channels will ring and pop up a visual notification for the incoming call. Check out the Calls v0.17.0 release notes and Calls documentation for more details.
+
 ### Improvements
 
 #### User Interface (UI)
