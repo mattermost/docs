@@ -1,7 +1,7 @@
 PostgreSQL installation troubleshooting
 =======================================
 
-Mattermost supports PostgreSQL v10+.
+Mattermost supports PostgreSQL v11+.
 
 PostgreSQL v15 introduces changes that may affect compatibility with previous releases. If you're deploying a fresh installation of PostgreSQL v15, run this command: ``GRANT CREATE ON SCHEMA public TO PUBLIC`` to ensure that you can use Mattermost.
 
