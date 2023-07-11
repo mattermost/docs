@@ -1,3 +1,6 @@
+:orphan:
+:nosearch:
+
 .. _mattermost-customizable-chatgpt-bot-framework:
 
 Customizable AI bot framework
