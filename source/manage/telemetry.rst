@@ -162,8 +162,8 @@ Non-personally Identifiable Diagnostic Information, distinguished by end users a
   - *In Product Notices Diagnostics:* Notices viewed, and the notices on which an action button was clicked.
   - *Collapsed Reply Threads:* Clicks to reply to a thread, reply using the footer element, filter threads by unread, mark as read, access to global threads section.
 
-Playbooks telemetry
--------------------
+Playbooks plugin telemetry
+--------------------------
 
 Playbooks metadata is collected and sent every 24 hours. Visit the `playbooks telemetry file <https://github.com/mattermost/mattermost-plugin-playbooks/blob/master/server/telemetry/rudder.go>`_ for details about the types of metadata collected.
 
