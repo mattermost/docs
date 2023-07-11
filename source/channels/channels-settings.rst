@@ -41,6 +41,13 @@ Notification sound
 
 When desktop app notifications are set to **For all activity** or **Only for mentions and direct messages**, you can configure Mattermost to notify you using a sound. Chooose from one of 6 preset notification sounds. Notification sounds are available on Chrome, Edge, Firefox, and Safari in addition to the Mattermost Desktop App.
 
+Notification sound for incoming calls (Beta)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+When desktop app notifications are set to **For all activity** or **Only for mentions and direct messages**, you can configure Mattermost to alert you to incoming calls through direct or group messages with a specific ring tone and a desktop notification, unless the system admin has `disabled your ability to do so </plugins-configuration-settings.html#enable-call-ringing-beta>`__.
+
+When incoming call notification sounds are enabled, choose the ring tone to play, then select **Save**.
+
 Email notifications
 ~~~~~~~~~~~~~~~~~~~
 
