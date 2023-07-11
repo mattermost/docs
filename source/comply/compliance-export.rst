@@ -13,9 +13,7 @@ This feature enables compliance exports to be produced from the System Console, 
 - Posts from plugins
 - Posts from bots/webhooks
 
-The exports include information on channel member history at the time the message was posted.
-
-From Mattermost v5.18 and in Mattermost Cloud, entries for deleted messages and files are included in CSV and Actiance reports. The deleted content is included in the compliance export. Global Relay reports include file deletion entries but message deletion entries are excluded.
+The exports include information on channel member history at the time the message was posted. Entries for deleted messages and files are included in CSV and Actiance reports. The deleted content is included in the compliance export. Global Relay reports include file deletion entries but message deletion entries are excluded.
 
 By default, Mattermost stores all message history providing an unlimited search history to admins and end users. In Mattermost Enterprise, you may set a `custom data retention policy </comply/data-retention-policy.html>`__ for how long messages and file uploads are kept in Mattermost channels and direct messages.
 
@@ -34,7 +32,7 @@ For self-hosted deployments, compliance exports are written to the ``exports`` s
 
 .. note::
    
-   The compliance exports do not contain posts sent before the feature was enabled. For self-hosted deployments, you can export past history via the ``export`` :doc:`command line tool <../manage/command-line-tools>`. However, posts made prior to upgrading to Mattermost v4.5 will have less accurate channel member history information.
+   The compliance exports do not contain posts sent before the feature was enabled. For self-hosted deployments, you can export past history via the ``export`` :doc:`command line tool <../manage/command-line-tools>`. 
 
 CSV
 ~~~~
@@ -103,7 +101,7 @@ When run manually via the System Console, ``.csv`` and Actiance XML files are wr
 Is there a maximum row limit for CSV files?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-No. From Mattermost Server v5.36, there's no limit to the number of rows within Compliance Monitoring CSV files.
+No. There's no limit to the number of rows within Compliance Monitoring CSV files.
 
 How do I know if a compliance export job fails?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

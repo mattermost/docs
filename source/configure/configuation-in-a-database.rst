@@ -4,7 +4,7 @@ Configuration in a database
 .. include:: ../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
 
-A new configuration option was added in the `5.10 release </install/self-managed-changelog.html>`_ to use the database as the single source of truth for the active configuration of your Mattermost installation. This changes the Mattermost binary from reading the default ``config.json`` file to reading the configuration settings stored within a configuration table in the database.
+You can use the database as the single source of truth for the active configuration of your Mattermost installation. This changes the Mattermost binary from reading the default ``config.json`` file to reading the configuration settings stored within a configuration table in the database.
 
 Mattermost has been running our `community server <https://community.mattermost.com>`__ on this option since the feature was released, and recommends its use for those on :doc:`High Availability deployments <../scale/high-availability-cluster>`.
 

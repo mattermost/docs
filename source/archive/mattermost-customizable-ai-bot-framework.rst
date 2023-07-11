@@ -1,3 +1,6 @@
+:orphan:
+:nosearch:
+
 .. _mattermost-customizable-chatgpt-bot-framework:
 
 Customizable AI bot framework
@@ -19,9 +22,14 @@ In the near term, this may involve integrating private-cloud AI with Mattermost,
 Example open source Mattermost app AI framework
 ------------------------------------------------
 
-The `mattermost/mattermost-ai-framework repository <https://github.com/mattermost/mattermost-ai-framework>`__ demonstrates a self-hosted AI app in a multi-user chat environment that can be fully private and off-grid AKA air-gapped. It can also be deployed and tested entirely in the browser via `Gitpod <https://github.com/mattermost/mattermost-ai-framework#gitpod>`__.
+The `mattermost/mattermost-ai-framework repository <https://github.com/mattermost/mattermost-ai-framework>`__ demonstrates a self-hosted AI app in a multi-user chat environment that can be fully private and off-grid AKA air-gapped. For demo purposes, deploy locally or in the browser via `Gitpod <https://github.com/mattermost/mattermost-ai-framework#gitpod>`__.
 
 Example open source OpenAI plugin
+---------------------------------
+
+The `mattermost/mattermost-plugin-ai repository <https://github.com/mattermost/mattermost-plugin-ai>`__ demonstrates a self-hosted AI app in a multi-user chat environment that connects to the OpenAI API, streams responses, summarizes threads, and emoji reacts. It can be deployed locally for demo purposes.
+
+Third-party example open source OpenAI plugin
 ----------------------------------
 
 An example of an OpenAI integration is the  `open source OpenAI plugin for Mattermost <https://github.com/Brightscout/mattermost-plugin-openai>`_ developed by Brightscout:
@@ -43,4 +51,4 @@ Two other examples of ChatGPT integrations built by Sebastian Müller include:
 Join the community
 -------------------
 
-To learn more about Mattermost's AI bot framework, share ideas, and contribute to the development, join the `Mattermost community channel <https://community.mattermost.com/core/channels/ai-exchange>`__ or the `peer-to-peer forums <https://forum.mattermost.com/c/ai-frameworks/40>`__ today.
+To learn more about Mattermost's AI bot framework, share ideas, and contribute to the development, visit the `Mattermost AI developer blog <https://ai.mattermost.com>`__, join the `community channel <https://community.mattermost.com/core/channels/ai-exchange>`__, and check out the `peer-to-peer forums <https://forum.mattermost.com/c/ai-frameworks/40>`__ today.

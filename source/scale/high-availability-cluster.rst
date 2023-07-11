@@ -334,7 +334,7 @@ For MySQL, we recommend the following configuration options for high performance
 Leader election
 ^^^^^^^^^^^^^^^^
 
-From Mattermost v4.2, a cluster leader election process assigns any scheduled task such as LDAP sync to run on a single node in a multi-node cluster environment.
+A cluster leader election process assigns any scheduled task such as LDAP sync to run on a single node in a multi-node cluster environment.
 
 The process is based on a widely used `bully leader election algorithm <https://en.wikipedia.org/wiki/Bully_algorithm>`__ where the process with the lowest node ID number from amongst the non-failed processes is selected as the leader.
 
@@ -359,11 +359,11 @@ In previous Mattermost Server versions, and this documentation, the instructions
 Plugins and High Availability
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-From Mattermost v5.14, when you install or upgrade a plugin, it's propagated across the servers in the cluster automatically. File storage is assumed to be shared between all the servers, using services such as NAS or Amazon S3.
+When you install or upgrade a plugin, it's propagated across the servers in the cluster automatically. File storage is assumed to be shared between all the servers, using services such as NAS or Amazon S3.
 
 If ``"DriverName": "local"`` is used then the directory at ``"FileSettings":`` ``"Directory": "./data/"`` is expected to be a NAS location mapped as a local directory. If this is not the case High Availability will not function correctly and may corrupt your file storage.
 
-Note a slight behavior change from Mattermost v5.15: When you reinstall a plugin in v5.14, the previous **Enabled** or **Disabled** state is retained. As of v5.15, a reinstalled plugin's initial state is **Disabled**.
+When you reinstall a plugin in v5.14, the previous **Enabled** or **Disabled** state is retained. As of v5.15, a reinstalled plugin's initial state is **Disabled**.
 
 CLI and High Availability
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -440,7 +440,7 @@ Apply upgrades during a period of low load. The system downtime is brief, and de
 Upgrade to version 4.0 and later
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-From Mattermost Server v4.0, when a server starts up, it can automatically discover other servers in the same cluster. You can add and remove servers without the need to make changes to the configuration file, ``config.json``. To support this capability, new items were added to the ``ClusterSettings`` section of ``config.json``. When upgrading from v3.10 or earlier to v4.0 or later, you must manually add the new items to your existing ``config.json``.
+When a server starts up, it can automatically discover other servers in the same cluster. You can add and remove servers without the need to make changes to the configuration file, ``config.json``. To support this capability, new items were added to the ``ClusterSettings`` section of ``config.json``. When upgrading from v3.10 or earlier to v4.0 or later, you must manually add the new items to your existing ``config.json``.
 
 1. Review the upgrade procedure in :doc:`../upgrade/upgrading-mattermost-server`.
 2. Make a backup of your existing ``config.json`` file.
@@ -471,7 +471,7 @@ From Mattermost Server v4.0, when a server starts up, it can automatically disco
 All cluster nodes must use a single protocol
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-All cluster traffic uses the gossip protocol. From Mattermost Server v5.36, `gossip clustering can no longer be disabled </configure/configuration-settings.html#use-gossip>`__.
+All cluster traffic uses the gossip protocol. `Gossip clustering can no longer be disabled </configure/configuration-settings.html#use-gossip>`__.
 
 When upgrading a high availability cluster, you can't upgrade other nodes in the cluster when one node isn't using the gossip protocol. You must use gossip to complete a high availability upgrade. Alternatively you can shut down all nodes and bring them all up individually following an upgrade.
 

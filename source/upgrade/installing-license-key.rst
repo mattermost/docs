@@ -8,32 +8,20 @@ You can use the System Console, the mmctl, or the CLI to add or change a Matterm
 
 .. tabs::
 
-    .. tab:: Using System Console
+    .. tab:: Use System Console
 
         1. Go go **System Console > About > Edition and License**.
         2. Upload your license key file.
 
         Once the key is uploaded and installed, the details of your license are displayed.
 
-    .. tab:: Using mmctl
+    .. tab:: Use mmctl
 
         Use the `mmctl license upload </manage/mmctl-command-line-tool.html#mmctl-license-upload>`__ command to upload a new license or replace an existing license file with a new one. When complete, restart the Mattermost server. If you're running in a `High Availability </scale/high-availability-cluster.html>`__ environment, the new license file must be updated to every node.
 
         .. code-block:: none
 
             mmctl license upload [license] [flags]
-
-    .. tab:: Using the CLI
-
-        .. note::
-
-          The legacy `CLI </manage/command-line-tools.html>`__ is available for Mattermost v5.39 and earlier.
-        
-        Use the `mattermost license upload </manage/command-line-tools.html#mattermost-license-upload>`__ command to to upload a new license or replace an existing license file with a new one. When complete, restart the Mattermost server. If you're running in a `High Availability </scale/high-availability-cluster.html>`__ environment, the new license file must be updated to every node.
-
-        .. code-block:: none
-
-            mattermost license upload {license}
 
 .. note::
 

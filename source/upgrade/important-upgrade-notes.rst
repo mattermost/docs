@@ -5,13 +5,12 @@ Important Upgrade Notes
   :start-after: :nosearch:
 
 .. important::
-   - In the next release, v7.11, the following repositories will be merged into one: ``mattermost-server``, ``mattermost-webapp``, ``focalboard`` and ``mattermost-plugin-playbooks``. Developers should read the updated `Developer Guide <https://developers.mattermost.com/contribute/developer-setup/>`_ for details. Playbooks and Boards will be core parts of the product that cannot be disabled.
    - Support for Mattermost Server v7.1 :doc:`Extended Support Release </upgrade/extended-support-release>` has come to the end of its life cycle in May 15, 2023. Upgrading to Mattermost Server v7.8 :doc:`Extended Support Release </upgrade/extended-support-release>` or later is recommended.
    - MySQL 8.0.22 contains an `issue with JSON column types <https://bugs.mysql.com/bug.php?id=101284>`__ changing string values to integers which is preventing Mattermost from working properly. Users are advised to avoid this database version.
    - Upgrading the Microsoft Teams Calling plugin to v2.0.0 requires users to reconnect their accounts.
    - When upgrading to 7.x from a 5.x release please make sure to upgrade to 5.37.10 first for the upgrade to complete successfully.
    - Disable global drafts. Admins can set the feature flag ``MM_FEATUREFLAGS_GLOBALDRAFTS`` to ``false`` to disable server-wide. It can't be disabled on a per-user basis. The code is located `here <https://github.com/mattermost/mattermost-server/blob/master/server/public/model/feature_flags.go#L74>`__.
-   - Disable insights. Admins can set the feature flag ``MM_FEATUREFLAGS_INSGIHTSENABLED`` to ``false`` to disable server-wide. It can't be disabled on a per-user basis. The code is located `here <https://github.com/mattermost/mattermost-server/blob/master/server/public/model/feature_flags.go#L50>`__.
+   - Disable insights. Admins can set the feature flag ``MM_FEATUREFLAGS_INSIGHTSENABLED`` to ``false`` to disable server-wide. It can't be disabled on a per-user basis. The code is located `here <https://github.com/mattermost/mattermost-server/blob/master/server/public/model/feature_flags.go#L50>`__.
    - Please see the `the list <https://docs.mattermost.com/install/self-managed-changelog.html#upcoming-deprecations-and-breaking-changes-in-mattermost-v8-0>`_ of deprecations and breaking changes planned for the Mattermost v8.0 release, which is scheduled for the summer of 2023. This list is subject to change prior to the release.
 
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -22,6 +21,9 @@ Important Upgrade Notes
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | In v7.10.1, fixed an issue where a user would still see threads in the threads view of channels they have left. Migration execution time in MySQL: Query OK,     |
 |                                                    | 2766769 rows affected (4 min 47.57 sec). Migration execution time in PostgreSQL: 58.11 sec, DELETE 2766690.                                                      |
+|                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                    | In v7.10.3, for servers wanting to allow websockets to connect from other origins, please set the ``ServiceSettings.AllowCorsFrom`` `config setting              |
+|                                                    | <https://docs.mattermost.com/configure/integrations-configuration-settings.html#enable-cross-origin-requests-from>`_.                                            |
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v7.9                                               | Added a new index on ``Posts(OriginalId)``. For a database with 11.8 million posts, on a machine with a i7-11800H CPU (8 cores, 16 threads), 32GiB of RAM and    |
 |                                                    | SSD, the index creation takes 98.51s on MYSQL and 2.6s on PostgreSQL.                                                                                            |
@@ -69,6 +71,9 @@ Important Upgrade Notes
 |                                                    | ``WHERE p.name IS NULL;``                                                                                                                                        |
 |                                                    |                                                                                                                                                                  |
 |                                                    | Locks on the ``oauthaccessdata`` and sessions table will only be acquired if there are rows to delete.                                                           |
+|                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                    | In v7.9.5, for servers wanting to allow websockets to connect from other origins, please set the ``ServiceSettings.AllowCorsFrom`` `config setting               |
+|                                                    | <https://docs.mattermost.com/configure/integrations-configuration-settings.html#enable-cross-origin-requests-from>`_.                                            |
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v7.8                                               | `Message Priority & Acknowledgement <https://docs.mattermost.com/configure/site-configuration-settings.html#message-priority>`__ is now enabled by default       |
 |                                                    | for all instances. You may disable this feature in the System Console by going to **Posts > Message Priority** or via the config ``PostPriority`` setting.       |
@@ -111,6 +116,9 @@ Important Upgrade Notes
 |                                                    | ``WHERE p.name IS NULL;``                                                                                                                                        |
 |                                                    |                                                                                                                                                                  |
 |                                                    | Locks on the ``oauthaccessdata`` and sessions table will only be acquired if there are rows to delete.                                                           |
+|                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                    | In v7.8.7, for servers wanting to allow websockets to connect from other origins, please set the ``ServiceSettings.AllowCorsFrom`` `config setting               |
+|                                                    | <https://docs.mattermost.com/configure/integrations-configuration-settings.html#enable-cross-origin-requests-from>`_.                                            |
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v7.7                                               | Plugins with a webapp component may need to be updated to work with Mattermost v7.7 release and the updated ``React v17`` dependency.                            |
 |                                                    |                                                                                                                                                                  |

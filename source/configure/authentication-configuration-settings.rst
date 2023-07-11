@@ -227,7 +227,7 @@ Access the following configuration settings in the System Console by going to **
 Minimum password length
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-*This feature was moved to Team Edition in Mattermost v5.0, released June 16th, 2018. Prior to v5.0, this feature is available in legacy Enterprise Edition E10 and E20.*
+*This feature is available in legacy Enterprise Edition E10 and E20.*
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------+
 | This setting determines the minimum number of characters in passwords. It must be a whole number greater than or equal to 5 and less than or equal to 64. | - System Config path: **Authentication > Password**            |
@@ -266,7 +266,7 @@ Minimum password length
 Password requirements
 ~~~~~~~~~~~~~~~~~~~~~
 
-*This feature was moved to Team Edition in Mattermost v5.0, released June 16th, 2018. Prior to v5.0, this feature is available in legacy Enterprise Edition E10 and E20.*
+*This feature is available in legacy Enterprise Edition E10 and E20.*
 
 +-------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This setting controls password character requirements. By checking the corresponding box, passwords must contain: | - System Config path: **Authentication > Password**                                                                                                                                  |
@@ -1797,7 +1797,7 @@ Enable OAuth 2.0 authentication with GitLab
 
 +-------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
 | - **true**: Allows team and account creation using GitLab OAuth authentication. Input the **Secret** and **ID** credentials to configure. | - System Config path: **Authentication > OAuth 2.0 (or GitLab)** |
-| - **false**: Disables GitLab OAuth authentication.                                                                                        | - ``config.json`` setting: ``.GitLabSettings.Enable: false``     |
+| - **false**: **(Default)** Disables GitLab OAuth authentication.                                                                          | - ``config.json`` setting: ``.GitLabSettings.Enable: false``     |
 |                                                                                                                                           | - Environment variable: ``MM_GITLABSETTINGS_ENABLE``             |
 +-------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
 
@@ -1934,6 +1934,7 @@ Enable OAuth 2.0 authentication with Google
 | - **true**: Allows team and account creation using Google OAuth authentication. Input the **Client ID** and **Client Secret** credentials to configure. | - System Config path: **Authentication > OAuth 2.0**         |
 | - **false**: **(Default)** Disables Google OAuth authentication.                                                                                        | - ``config.json`` setting: ``.GoogleSettings.Enable: false`` |
 |                                                                                                                                                         | - Environment variable: ``MM_GOOGLESETTINGS_ENABLE``         |
+| See `Google Single Sign-On <https://docs.mattermost.com/onboard/sso-google.html>`__ implementation instructions.                                        |                                                              |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
 
 .. config:setting:: oauth-googleclientid
