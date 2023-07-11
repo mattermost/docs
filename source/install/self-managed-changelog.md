@@ -19,7 +19,7 @@ Latest Mattermost Releases:
 ### Important Upgrade Notes
 
  - Insights has been deprecated for all new instances and for existing servers that upgrade to v8.0. See more details in [this forum post](https://forum.mattermost.com/t/proposal-to-revise-our-insights-feature-due-to-known-performance-issues/16212) on why Insights has been deprecated.
- - The Focalboard plugin is now disabled by default and can be enabled in the **System Console > Plugin settings**.
+ - The Focalboard plugin is now disabled by default for all new instances and can be enabled in the **System Console > Plugin settings**.
  - The Channel Export and Apps plugins are now disabled by default.
  - Apps Bar is now enabled by default for on-prem servers. ``ExperimentalSettings.EnableAppBar`` was also renamed to ``ExperimentalSettings.DisableAppBar``. See more details at:
    - https://docs.mattermost.com/configure/experimental-configuration-settings.html#disable-app-bar 
@@ -28,7 +28,7 @@ Latest Mattermost Releases:
  - In the main `server package`, the Go module path has changed from ``github.com/mattermost/mattermost-server/server/v8`` to ``github.com/mattermost/mattermost/server/v8``. But with the introduction of the `public` submodule, it should no longer be necessary for third-party code to import this `server` package.
  - As part of the `public` submodule above, a ``context.Context`` is now passed to ``model.Client4`` methods.
  - Removed support for PostgreSQL v10. The new minimum PostgreSQL version is now v11.
- - The Mattermost public API for Go is now available as a distinctly versioned package. Instead of pinning a particular commit hash, use idiomatic Go to add this package as a dependency: go get github.com/mattermost/mattermost-server/server/public. This relocated Go API maintains backwards compatibility with Mattermost v7. Furthermore, the existing Go API previously at github.com/mattermost/mattermost-server/v6/model remains forward compatible with Mattermost v8, but may not contain newer features. Plugins do not need to be recompiled, but developers may opt in to using the new package to simplify their build process. The new public package is shipping alongside Mattermost v8 as version 0.5.0 to allow for some additional code refactoring before releasing as v1 later this year.
+ - The Mattermost public API for Go is now available as a distinctly versioned package. Instead of pinning a particular commit hash, use idiomatic Go to add this package as a dependency: go get ``github.com/mattermost/mattermost-server/server/public``. This relocated Go API maintains backwards compatibility with Mattermost v7. Furthermore, the existing Go API previously at github.com/mattermost/mattermost-server/v6/model remains forward compatible with Mattermost v8, but may not contain newer features. Plugins do not need to be recompiled, but developers may opt in to using the new package to simplify their build process. The new public package is shipping alongside Mattermost v8 as version 0.5.0 to allow for some additional code refactoring before releasing as v1 later this year.
  - Three configuration fields have been added, ``LogSettings.AdvancedLoggingJSON``, ``ExperimentalAuditSettings.AdvancedLoggingJSON``, and ``NotificationLogSettings.AdvancedLoggingJSON`` which support multi-line JSON, escaped JSON as a string, or a filename that points to a file containing JSON.  The ``AdvancedLoggingConfig`` fields have been deprecated.
  - The Go MySQL driver has changed the ``maxAllowedPacket`` size from 4MiB to 64MiB. This is to make it consistent with the change in the server side default value from MySQL 5.7 to MySQL 8.0. If your ``max_allowed_packet`` setting is not 64MiB, then please update the MySQL config DSN with an additional param of ``maxAllowedPacket`` to match with the server side value. Alternatively, a value of 0 can be set to to automatically fetch the server side value, on every new connection, which has a performance overhead.
  - Removed ``ExperimentalSettings.PatchPluginsReactDOM``. If this setting was previously enabled, confirm that:
@@ -39,21 +39,21 @@ Latest Mattermost Releases:
  - Removed deprecated ``PermissionUseSlashCommands``.
  - Removed deprecated ``model.CommandArgs.Session``.
  - Pass a ``context.Context`` to Client4 methods.
- - For servers wanting to allow websockets to connect from other origins, please set the ``ServiceSettings.AllowCorsFrom`` [config setting](https://docs.mattermost.com/configure/integrations-configuration-settings.html#enable-cross-origin-requests-from).
+ - For servers wanting to allow websockets to connect from other origins, please set the ``ServiceSettings.AllowCorsFrom`` [configuration setting](https://docs.mattermost.com/configure/integrations-configuration-settings.html#enable-cross-origin-requests-from).
  - In v8.0, the following repositories are merged into one: ``mattermost-server``, ``mattermost-webapp`` and ``mmctl``. Developers should read the updated [Developer Guide](https://developers.mattermost.com/contribute/developer-setup/) for details.
  - Fixed an issue caused by a migration in the previous release. Query takes around 11ms on a PostgreSQL 14 DB t3.medium RDS instance. Locks on the preferences table will only be acquired if there are rows to delete, but the time taken is negligible.
- - Fixed an issue where a user would still see threads in the threads view of channels they have left. Migration execution time in MySQL: Query OK, 2766769 rows affected (4 min 47.57 sec). Migration execution time in PostgreSQL: Execution time: 58.11 sec, DELETE 2766690.
+ - Fixed an issue where a user would still see threads in the threads view of channels they have left. Migration execution time in PostgreSQL: Execution time: 58.11 sec, DELETE 2766690. Migration execution time in MySQL: Query OK, 2766769 rows affected (4 min 47.57 sec).
  - The file info stats query is now optimized by denormalizing the ``channelID`` column into the table itself. This will speed up the query to get the file count for a channel when selecting the right-hand pane. Migration times:
 
-   - On a MySQL 8.0.31 DB with 1405 rows in FileInfo and 11M posts, it took around 0.3s
    - On a PostgreSQL 12.14 DB with 1731 rows in FileInfo and 11M posts, it took around 0.27s
+   - On a MySQL 8.0.31 DB with 1405 rows in FileInfo and 11M posts, it took around 0.3s
 
 **IMPORTANT:** If you upgrade from a release earlier than v7.10, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
 
 ### Highlights
 
-#### Private cloud LLMs, Azure AI and OpenAI integrations
- - Mattermost provides an OpenOps framework to integrate with private cloud LLMs, Azure AI and OpenAI models to embed generative AI assistance in collaborative workflows and automation. [Learn more about OpenOps here](https://github.com/mattermost/openops).
+#### Private cloud LLMs, Azure AI, and OpenAI integrations
+ - Mattermost provides an OpenOps framework to integrate with private cloud LLMs, Azure AI, and OpenAI models to embed generative AI assistance in collaborative workflows and automation. [Learn more about OpenOps here](https://github.com/mattermost/openops).
 
 #### Mattermost for Microsoft Teams
  - We’re extending our integration with the Microsoft 365 platform with a new embedded experience directly inside Microsoft Teams, as well as our updated MS Teams Connector.
@@ -65,7 +65,7 @@ Latest Mattermost Releases:
  - To simplify management and scalability challenges, Mattermost 8.0 recommends deploying PostgreSQL over MySQL.
 
 #### New End User Training
- - We’re introducing [9 new training modules](https://academy.mattermost.com/p/mattermost-end-user-onboarding) dedicated to educating users on the key components of the Mattermost platform and an additional [10 new use case modules](https://academy.mattermost.com/courses/category/use-case-training) tackling technical scenarios within DevOps, Security Ops, and Incident Management.
+ - We’re introducing [10 new training modules](https://academy.mattermost.com/p/mattermost-end-user-onboarding) dedicated to educating users on the key components of the Mattermost platform and an additional [10 new use case modules](https://academy.mattermost.com/courses/category/use-case-training) tackling technical scenarios within DevOps, Security Ops, and Incident Management.
 
 ### Improvements
 
@@ -75,20 +75,20 @@ Latest Mattermost Releases:
    - https://docs.mattermost.com/configure/experimental-configuration-settings.html#disable-app-bar 
    - https://forum.mattermost.com/t/channel-header-plugin-changes/13551
  - Added a **Mattermost Marketplace** option to the bottom of the apps bar. The option is visible when the Marketplace is enabled, and the user has ``SYSCONSOLE_WRITE_PLUGINS`` permissions.
- - Calls v0.17.0 introduces a new ringing feature (Beta): Calls in Direct and Group Message channels will ring and pop up a visual notification for the incoming call. Check out the Calls v0.17.0 release notes and Calls documentation for more details.
+ - Calls v0.17.0 introduces a new ringing feature (Beta): Calls in Direct and Group Message channels will ring and pop up a visual notification for the incoming call. Check out the Calls v0.17.0 release notes and [Calls documentation](https://docs.mattermost.com/channels/make-calls.html) for more details.
  - Added an **Add channels** button to the bottom of the left-hand sidebar to make the action more obvious for users who want to create or join channels.
  - Removed the Webapp Build Hash from **Main Menu > About Mattermost** since it is now identical to Server Build Hash.
  - Replaced the ``compass-components`` icon component with ``compass-icons``.
- - Added “hours ahead” timezone details to the user profile popover.
+ - Added **hours ahead** timezone details to the user profile popover.
  - Added an experimental feature to disable re-fetching of channel and channel members on browser focus.
  - Bot users are now hidden in the user selector in apps forms.
  - Removed the fetching of archived channels on page load.
  - The **Channel Type** dropdown within the **Browse Channels** modal can now be focused.
  - Removed in-app help pages that were no longer accessible.
  - Removed system join/leave messages from thread replies and post them instead in the main channel.
- - Added an experimental setting to make the channel autocomplete only appear after typing two characters instead of immediately after the tilde (~).
- - Users with default profile pictures will now regenerate a new picture when their username is changed.
- - Implemented URL auto generation on channel creation for when there's no URL safe characters on its name.
+ - Added [an experimental setting](https://docs.mattermost.com/configure/experimental-configuration-settings.html#delay-channel-autocomplete) to make the channel autocomplete only appear after typing two characters instead of immediately after the tilde (~).
+ - Default user profile pictures will now regenerate a new picture when the username changes.
+ - Implemented URL auto generation on channel creation for when there's no URL-safe characters on its name.
  - Added a new option to auto-follow all threads in the channel **Notification Preference** settings.
  - ``CTRL/CMD + K`` shortcut can now be used to insert link formatting when text is selected.
  - ``pas`` and ``pascal`` code blocks are now higlighted.
@@ -127,7 +127,6 @@ Latest Mattermost Releases:
  - Updated Docker Base Image from Debian to Ubuntu 22.04 LTS.
  - Type-generated settings will now be generated (only for future generations) with a URL-safe version of base64 encoding.
  - Mattermost is now resilient against database replica outages and will dynamically choose a replica if it's alive. Also a config parameter ``ReplicaMonitorIntervalSeconds`` was added and the default value is 5. This controls how frequently unhealthy replicas will be monitored for liveness check.
- - Updated Docker Base Image from Debian to Ubuntu 22.04 LTS.
  
 #### Performance
  - Improved the performance of webapp related to timezone calculations.
@@ -174,7 +173,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - Removed ``EnableInactivityEmail`` config setting.
  - Added a new config setting section ``ProductSettings``.
  - Under ``ServiceSettings`` in ``config.json``:
-   - Added new confic settings ``AllowPersistentNotifications``, ``AllowPersistentNotificationsForGuests``, ``PersistentNotificationIntervalMinutes``, ``PersistentNotificationMaxCount``, ``PersistentNotificationMaxRecipients``, to add a persistent notification option when sending urgent priority posts.
+   - Added new configuration settings ``AllowPersistentNotifications``, ``PersistentNotificationIntervalMinutes``, ``PersistentNotificationMaxCount``, ``PersistentNotificationMaxRecipients``, to add a persistent notification option when sending urgent priority posts.
  - Under ``ExperimentalSettings`` in ``config.json``:
    - Added ``DelayChannelAutocomplete``, to make the channel autocomplete only appear after typing a couple letters instead of immediately after a tilde.
    - Added ``DisableRefetchingOnBrowserFocus``, to disable re-fetching of channel and channel members on browser focus.
