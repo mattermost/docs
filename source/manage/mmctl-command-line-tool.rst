@@ -124,12 +124,15 @@ The mmctl tool comes bundled with Mattermost package. For customers that want to
 Build mmctl
 ------------
 
-The ``mmctl`` tool uses ``go`` modules to manage dependencies, so you need to have installed
-``go`` 1.11 or greater and compile the binary using:
+.. _build-mmctl:
+
+The ``mmctl`` tool uses ``go`` modules to manage dependencies, so you need to have installed ``go`` 1.19 or greater on your machine.
+
+After checking out the `mattermost repository <https://github.com/mattermost/mattermost>`__ locally to your machine, from the root directory of the project, you can compile the mmctl binary by running:
 
 .. code-block:: sh
 
-  make build
+  make -C server mmctl-build
 
 Local mode
 ----------
@@ -163,24 +166,19 @@ Running mmctl tests
 
 mmctl has two types of tests: unit tests and end to end tests.
 
-To run the unit tests, you need to execute:
+To run the unit tests, you need to execute the following from the root of the mattermost project:
 
 .. code-block:: sh
 
-  make test
+  make -C server test-mmctl
 
 To run the end to end test suite, you need to have a Mattermost server instance running. Check the `Developer Setup guide <https://developers.mattermost.com/contribute/server/developer-setup/>`_ for instructions around how to configure a local test server instance.
 
-Once the development server is set up, cd into the ``mattermost-server directory``:
+Once the development server is set up, cd into the `server subdirectory <https://github.com/mattermost/mattermost/tree/master/server>`__ subdirectory of the mattermost project:
 
-- Start it with ``make run``. To confirm that the instance is running correctly, you can access the web interface at ``http://localhost:8065``.
+- Start the server with ``make run``. To confirm that the instance is running correctly, you can access the web interface at ``http://localhost:8065``.
 - Run ``make test-data`` to preload your server instance with initial seed data. Generated data such as users are typically used for logging, etc.
-
-Change your directory to ``mmctl`` and run the end to end test suite with:
-
-.. code-block:: sh
-
-  make test-e2e
+- Run ``make test-mmctl-e2e`` to run the end to end test suite.
 
 mmctl auth
 ----------
