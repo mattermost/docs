@@ -34,7 +34,7 @@ From Mattermost v8.0, when you add an urgent priority label, and your message @m
 
 To enable persistent notifications for a message:
 
-1. Compose a message with at least one @mention.
+1. Compose a root message with at least one @mention.
 2. Select the **Message Priority** |priority-icon| icon in the message formatting toolbar. 
 3. Select **Urgent**.
 4. Select **Send persistent notifications**.
