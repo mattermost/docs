@@ -33,6 +33,7 @@ Latest Mattermost Mobile Apps releases:
  - Fixed an issue with the progress indicator when uploading files on Android.
  - Fixed a few issues with app initialization.
  - Fixed an issue where notifications would show "Session expired" instead of the message.
+ - Fixed a crash when users that reacted with a certain emoji were listed and a user was missing.
 
 ### Known Issues
  - Users are unable to adjust the font size via the OS font size setting.
