@@ -13,7 +13,7 @@ This feature was developed to a large extent by community contributions and we'd
 mmctl usage notes
 -----------------
 
-- System Admins have two ways to run ``mmctl`` commands: by downloading ``mmctl`` from the release URLs, which you can find in the :ref:`installation instructions <install-mmctl-options>`, or by building it directly. The source code lives in the `server/cmd/mmctl directory within the mattermost repository <https://github.com/mattermost/mattermost/tree/master/server/cmd/mmctl>`__.
+- System Admins have two ways to run ``mmctl`` commands: by downloading ``mmctl`` from the release URLs, which you can find in the :ref:`installation instructions <install-mmctl-options>`, or by building it directly, for which you can check the :ref:`build instructions <build-mmctl>` below. The source code lives in the `server/cmd/mmctl directory within the mattermost repository <https://github.com/mattermost/mattermost/tree/master/server/cmd/mmctl>`__.
 - ``mmctl`` also comes bundled with the Mattermost distribution, and is located in the ``bin`` folder of the installation, next to the ``CLI``.
 
   - We recommend you add the path to the Mattermost ``bin`` folder into your ``$PATH`` environment variable. This ensures that you can run mmctl commands locally regardless of your current directory location.
@@ -166,19 +166,15 @@ Running mmctl tests
 
 mmctl has two types of tests: unit tests and end to end tests.
 
-To run the unit tests, you need to execute the following from the root of the mattermost project:
+To execute them, you can run the following commands from the mattermost project root directory:
 
 .. code-block:: sh
 
-  make -C server test-mmctl
+  # For the unit tests
+  make -C server test-mmctl-unit
 
-To run the end to end test suite, you need to have a Mattermost server instance running. Check the `Developer Setup guide <https://developers.mattermost.com/contribute/server/developer-setup/>`_ for instructions around how to configure a local test server instance.
-
-Once the development server is set up, cd into the `server subdirectory <https://github.com/mattermost/mattermost/tree/master/server>`__ subdirectory of the mattermost project:
-
-- Start the server with ``make run``. To confirm that the instance is running correctly, you can access the web interface at ``http://localhost:8065``.
-- Run ``make test-data`` to preload your server instance with initial seed data. Generated data such as users are typically used for logging, etc.
-- Run ``make test-mmctl-e2e`` to run the end to end test suite.
+  # For the end to end tests
+  make -C server test-mmctl-e2e
 
 mmctl auth
 ----------
