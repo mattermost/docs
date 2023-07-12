@@ -927,7 +927,7 @@ Enable call ringing (Beta)
 
 +--------------------------------------------------------------------------+--------------------------------------------------+
 | - **true**: Ringing functionality is enabled. Direct and group message   | - System Config path: **Plugins > Calls**        |
-|   participants receive a desktop app alert and a ringing notification    | - ``config.json`` setting: N/A                   |
+|   participants receive a desktop app alert and a ringing notification    | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.calls.enableringing``                   |
 |   when a call starts.                                                    | - Environment variable: N/A                      |
 | - **false**: **(Default**) Ringing functionality is disabled.            |                                                  |
 +--------------------------------------------------------------------------+--------------------------------------------------+
