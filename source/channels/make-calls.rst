@@ -113,6 +113,11 @@ To record a call:
 Frequently asked questions
 --------------------------
 
+Can I set a ring tone for incoming calls?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Yes! From Mattermost v8.0 and Calls v0.17.0, desktop app and webapp users can go to **Settings > Notifications > Desktop Notifications** to enable Mattermost to alert you to incoming calls through direct or group messages with a specific ring tone and a desktop notification, unless the system admin has `disabled your ability to do so </plugins-configuration-settings.html#enable-call-ringing-beta>`__.
+
 Is video supported?
 ~~~~~~~~~~~~~~~~~~~
 

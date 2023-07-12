@@ -893,7 +893,7 @@ Enable simulcast for screen sharing (Experimental)
   :environment: N/A
   :description: Allow call hosts to record meeting video and audio. 
 
-Enable call recordings (beta)
+Enable call recordings (Beta)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. include:: ../_static/badges/ent-selfhosted-only.rst
@@ -955,7 +955,7 @@ Maximum call recording duration
   :description: The audio and video quality of call recordings.
 
 Call recording quality
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
 
 .. include:: ../_static/badges/ent-selfhosted-only.rst
   :start-after: :nosearch:
@@ -999,6 +999,23 @@ Call recording quality
 +----------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+
 
 .. |note| replace:: .
+
+Enable call ringing (Beta)
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. config:setting:: plugins-enablecallringing
+  :displayname: Enable call ringing (Plugins - Calls)
+  :systemconsole: Plugins > Calls
+  :configjson: PluginSettings.Plugins.com.mattermost.calls. enableringing
+  :environment: N/A
+  :description: Enable or disable incoming call desktop alerts and ringing notifications
+
++--------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| - **true**: Ringing functionality is enabled. Direct and group message   | - System Config path: **Plugins > Calls**                                                   |
+|   participants receive a desktop app alert and a ringing notification    | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.calls. enableringing``   |
+|   when a call starts.                                                    | - Environment variable: N/A                                                                 |
+| - **false**: **(Default**) Ringing functionality is disabled.            |                                                                                             |
++--------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
 
 ----
 
