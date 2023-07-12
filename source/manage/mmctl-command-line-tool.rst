@@ -87,11 +87,11 @@ The mmctl tool comes bundled with Mattermost package. For customers that want to
 
       Starting release ``v8.0.0`` of Mattermost, you can download the mmctl builds at their release URL: ``https://releases.mattermost.com/mmctl/${MATTERMOST_VERSION}/${PLATFORM}_${ARCHITECTURE}.tar``
 
-      E.g. to download the latest mmctl amd64 build for linux, you can run the following:
+      E.g. to download version ``v8.0.0`` of the mmctl amd64 build for linux, you can run the following:
 
       .. code-block:: sh
 
-         curl -vfsSL -O https://releases.mattermost.com/mmctl/{version}/linux_amd64.tar
+         curl -vfsSL -O https://releases.mattermost.com/mmctl/v8.0.0/linux_amd64.tar
 
       Supported platforms, and corresponding supported architectures, are: linux (amd64 and arm64), darwin (amd64 and arm64), windows (amd64 only).
 
