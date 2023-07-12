@@ -507,50 +507,105 @@ Enable plugin
 +----------------------------------------------------------------------+----------------------------------------------------------------------------------------+
 
 .. config:setting:: plugins-callsrtcserveraddress
-  :displayname: RTC server port (Plugins - Calls)
+  :displayname: RTC server port (UDP) (Plugins - Calls)
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.Plugins.com.mattermost.calls.udpserveraddress
   :environment: N/A
-  :description: The IP address used by the RTC server to listen on. By default the service listens on all the available interfaces.
+  :description: The IP address used by the RTC server to listen for UDP connections. By default the service listens on all the available interfaces.
 
-RTC server address
-~~~~~~~~~~~~~~~~~~
+RTC server address (UDP)
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. include:: ../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
-+-----------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+
-| This setting controls the IP address the RTC server listens to. All Calls traffic will be served through this IP.     | - System Config path: **Plugins > Calls**                                                                 |
-|                                                                                                                       | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.calls.udpserveraddress``               |
-| Changing this setting requires a plugin restart to take effect.                                                       | - Environment variable: N/A                                                                               |
-| If left unset (default value) the service will listen on all the available interfaces.                                |                                                                                                           |
-+-----------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+
-| **Note**: This setting is only applicable when not running calls through the standalone ``rtcd`` service.             |                                                                                                           |
-+-----------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+
+| This setting controls the IP address the RTC server listens for UDP connections. All calls UDP traffic will be served through this IP.     | - System Config path: **Plugins > Calls**                                                                 |
+|                                                                                                                                            | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.calls.udpserveraddress``               |
+| Changing this setting requires a plugin restart to take effect.                                                                            | - Environment variable: N/A                                                                               |
+| If left unset (default value) the service will listen on all the available interfaces.                                                     |                                                                                                           |
++--------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+
+| **Note**: This setting is only applicable when not running calls through the standalone ``rtcd`` service.                                  |                                                                                                           |
++--------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: plugins-callsrtcserverport
-  :displayname: RTC server port (Plugins - Calls)
+.. config:setting:: plugins-callsrtcserveraddress
+  :displayname: RTC server port (TCP) (Plugins - Calls)
+  :systemconsole: Plugins > Calls
+  :configjson: PluginSettings.Plugins.com.mattermost.calls.tcpserveraddress
+  :environment: N/A
+  :description: The IP address used by the RTC server to listen for TCP connections. By default the service listens on all the available interfaces.
+
+RTC server address (TCP)
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: ../_static/badges/selfhosted-only.rst
+  :start-after: :nosearch:
+
++--------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+
+| This setting controls the IP address the RTC server listens for TCP connections. All calls TCP traffic will be served through this IP.     | - System Config path: **Plugins > Calls**                                                                 |
+|                                                                                                                                            | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.calls.tcpserveraddress``               |
+| Changing this setting requires a plugin restart to take effect.                                                                            | - Environment variable: N/A                                                                               |
+| If left unset (default value) the service will listen on all the available interfaces.                                                     |                                                                                                           |
++--------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+
+| **Note**:                                                                                                                                  |                                                                                                           |
+|                                                                                                                                            |                                                                                                           |
+| - This setting is only applicable when not running calls through the standalone ``rtcd`` service.                                          |                                                                                                           |
+|                                                                                                                                            |                                                                                                           |
+| - This setting is available starting in plugin version 0.17.                                                                               |                                                                                                           |
++--------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: plugins-callsrtcserverportudp
+  :displayname: RTC server port (UDP) (Plugins - Calls)
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.Plugins.com.mattermost.calls.udpserverport
   :environment: N/A
-  :description: The UDP port the RTC server will listen on. All calls traffic will be served through this port. Default port is **8443**.
+  :description: The UDP port the RTC server will listen on. All calls UDP traffic will be served through this port. Default port is **8443**.
 
-RTC server port
-~~~~~~~~~~~~~~~
+RTC server port (UDP)
+~~~~~~~~~~~~~~~~~~~~~
 
 .. include:: ../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
-+-----------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
-| This setting controls the UDP port listened on by the RTC server. All Calls traffic will be served through this port. | - System Config path: **Plugins > Calls**                                                              |
-|                                                                                                                       | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.calls.udpserverport``               |
-|                                                                                                                       | - Environment variable: N/A                                                                            |
-| Changing this setting requires a plugin restart to take effect.                                                       |                                                                                                        |
-|                                                                                                                       |                                                                                                        |
-| Default is **8443**.                                                                                                  |                                                                                                        |
-+-----------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
-| **Note**: This setting is only applicable when not running calls through the standalone ``rtcd`` service.             |                                                                                                        |
-+-----------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+| This setting controls the UDP port listened on by the RTC server. All calls UDP traffic will be served through this port.     | - System Config path: **Plugins > Calls**                                                              |
+|                                                                                                                               | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.calls.udpserverport``               |
+|                                                                                                                               | - Environment variable: N/A                                                                            |
+| Changing this setting requires a plugin restart to take effect.                                                               |                                                                                                        |
+|                                                                                                                               |                                                                                                        |
+| Default is **8443**.                                                                                                          |                                                                                                        |
++-------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+| **Note**: This setting is only applicable when not running calls through the standalone ``rtcd`` service.                     |                                                                                                        |
++-------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: plugins-callsrtcserverporttcp
+  :displayname: RTC server port (TCP) (Plugins - Calls)
+  :systemconsole: Plugins > Calls
+  :configjson: PluginSettings.Plugins.com.mattermost.calls.tcpserverport
+  :environment: N/A
+  :description: The TCP port the RTC server will listen on. All calls TCP traffic will be served through this port. Default port is **8443**.
+
+RTC server port (TCP)
+~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: ../_static/badges/selfhosted-only.rst
+  :start-after: :nosearch:
+
++-------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+| This setting controls the TCP port listened on by the RTC server. All calls TCP traffic will be served through this port.     | - System Config path: **Plugins > Calls**                                                              |
+|                                                                                                                               | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.calls.tcpserverport``               |
+|                                                                                                                               | - Environment variable: N/A                                                                            |
+| Changing this setting requires a plugin restart to take effect.                                                               |                                                                                                        |
+|                                                                                                                               |                                                                                                        |
+| Default is **8443**.                                                                                                          |                                                                                                        |
++-------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+| **Note**:                                                                                                                     |                                                                                                        |
+|                                                                                                                               |                                                                                                        |
+| - This setting is only applicable when not running calls through the standalone ``rtcd`` service.                             |                                                                                                        |
+|                                                                                                                               |                                                                                                        |
+| - This setting is available starting in plugin version 0.17.                                                                  |                                                                                                        |
++-------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+
 
 .. config:setting:: plugins-enableonspecificchannels
   :displayname: Enable on specific channels (Plugins - Calls)
@@ -922,6 +977,36 @@ Call recording quality
 +-----------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | **Note**: The quality setting will affect the performance of the recording service and the file size of recordings. Refer to the `deployment section <configure/calls-deployment.html#configure-recording>`__ for more information.                                                          |
 +-----------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: plugins-callsenableipv6
+  :displayname: (Experimental) Enable IPv6 (Plugins - Calls)
+  :systemconsole: Plugins > Calls
+  :configjson: PluginSettings.Plugins.com.mattermost.calls.enableipv6
+  :environment: N/A
+
+  - **true**: The RTC service will work in dual-stack mode, listening for IPv6 connections and generating candidates in addition to IPv4 ones.
+  - **false**: The RTC service will only listen for IPv4 connections.
+
+(Experimental) Enable IPv6
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: ../_static/badges/selfhosted-only.rst
+  :start-after: :nosearch:
+
++----------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+
+| - **true**: The RTC service will work in dual-stack mode, listening for IPv6 connections and generating candidates in addition to IPv4 ones. | - System Config path: **Plugins > Calls**                                                                |
+| - **false**: The RTC service will only listen for IPv4 connections.                                                                          | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.calls.enableipv6``                    |
+|                                                                                                                                              | - Environment variable: N/A                                                                              |
+| Default value is **false**.                                                                                                                  |                                                                                                          |
+|                                                                                                                                              |                                                                                                          |
+| Changing this setting requires a plugin restart to take effect.                                                                              |                                                                                                          |
++----------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+
+| **Note**:                                                                                                                                    |                                                                                                          |
+|                                                                                                                                              |                                                                                                          |
+| - This setting is only applicable when not running calls through the standalone ``rtcd`` service.                                            |                                                                                                          |
+|                                                                                                                                              |                                                                                                          |
+| - This setting is available starting in plugin version 0.17.                                                                                 |                                                                                                          |
++----------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+
 
 .. |note| replace:: .
 
