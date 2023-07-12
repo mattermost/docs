@@ -19,7 +19,7 @@ From Mattermost v7.7 and version v2.4 of the Mattermost mobile app, you can add 
   :width: 700
   :alt: Ensure important and urgent messages stand out clearly by adding priority labels to root messages.
 
-To set the priority of a new message:
+To set the priority of a new root message:
 
 1. Select the **Message Priority** |priority-icon| icon in the message formatting toolbar. Select from Standard, Important, or Urgent.
 2. Select the priority for the message. Messages have a standard priority by default.
