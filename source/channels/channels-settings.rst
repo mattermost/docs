@@ -44,7 +44,7 @@ When desktop app notifications are set to **For all activity** or **Only for men
 Notification sound for incoming calls (Beta)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-When desktop app notifications are set to **For all activity** or **Only for mentions and direct messages**, you can configure Mattermost to alert you to incoming calls through direct or group messages with a specific ring tone and a desktop notification, unless the system admin has `disabled your ability to do so </plugins-configuration-settings.html#enable-call-ringing-beta>`__.
+From Mattermost v8.0 and Calls v0.17.0, when desktop app notifications are set to **For all activity** or **Only for mentions and direct messages**, you can configure Mattermost to alert you to incoming calls through direct or group messages with a specific ring tone and a desktop notification, unless the system admin has `disabled your ability to do so </plugins-configuration-settings.html#enable-call-ringing-beta>`__.
 
 When incoming call notification sounds are enabled, choose the ring tone to play, then select **Save**.
 
