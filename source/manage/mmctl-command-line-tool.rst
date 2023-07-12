@@ -13,8 +13,8 @@ This feature was developed to a large extent by community contributions and we'd
 mmctl usage notes
 -----------------
 
-- System Admins have two ways to run ``mmctl`` commands: by downloading ``mmctl`` from the repository, or by building it directly. See the `mmctl readme <https://github.com/mattermost/mmctl#install>`__ for details.
-- ``mmctl`` comes bundled with the Mattermost distribution, and is located in the ``bin`` folder of the installation, next to the ``CLI``.
+- System Admins have two ways to run ``mmctl`` commands: by downloading ``mmctl`` from the release URLs, which you can find in the :ref:`installation instructions <install-mmctl-options>`, or by building it directly. The source code lives in the `server/cmd/mmctl directory within the mattermost repository <https://github.com/mattermost/mattermost/tree/master/server/cmd/mmctl>`__.
+- ``mmctl`` also comes bundled with the Mattermost distribution, and is located in the ``bin`` folder of the installation, next to the ``CLI``.
 
   - We recommend you add the path to the Mattermost ``bin`` folder into your ``$PATH`` environment variable. This ensures that you can run mmctl commands locally regardless of your current directory location.
   - If the ``bin`` directory is not added to the ``$PATH`` environment variable, each time you use mmctl you must be in the ``bin`` directory to run mmctl commands, and the commands must be prefixed with ``./``. If you're working from a different directory, make sure you specify the full path to mmctl when running mmctl commands.
@@ -79,29 +79,47 @@ Install mmctl
 
 The mmctl tool comes bundled with Mattermost package. For customers that want to setup it independently from the package, the following methods are available to install mmctl.
 
+.. _install-mmctl-options:
+
 .. tabs::
 
+   .. tab:: Using release package (Linux, macOS, Windows)
+
+      Starting release ``v8.0.0`` of Mattermost, you can download the mmctl builds at their release URL: ``https://releases.mattermost.com/mmctl/${MATTERMOST_VERSION}/${PLATFORM}_${ARCHITECTURE}.tar``
+
+      E.g. to download the latest mmctl amd64 build for linux, you can run the following:
+
+      .. code-block:: sh
+
+         curl -vfsSL -O https://releases.mattermost.com/mmctl/{version}/linux_amd64.tar
+
+      Supported platforms, and corresponding supported architectures, are: linux (amd64 and arm64), darwin (amd64 and arm64), windows (amd64 only).
+
+      For versions older than ``v8.0.0``, you can instead visit the `mmctl releases page <https://github.com/mattermost/mmctl/releases>`__ and download the appropriate release for your OS, and install the binary.
+
+   .. tab:: Using go install (Linux, macOS, Windows)
+
+      Use this option on Linux, macOS, and Windows if you have a ``go`` environment configured.
+
+      To build and install the mmctl binary in your `$GOPATH`, run the following command:
+
+      .. code-block:: sh
+
+         # For Mattermost versions >= v8.0.0
+         go install github.com/mattermost/mattermost/server/v8/cmd/mmctl@master
+
+         # For Mattermost versions < v8.0.0
+         go install github.com/mattermost/mmctl@latest
+
    .. tab:: Use brew (Linux, macOS)
+
+      **NB: this is not an officially supported method.** This installation channel is managed by the community, please refer to the `homebrew/homebrew-core repo <https://github.com/Homebrew/homebrew-core>`__ for reporting issues.
 
       Use this option on Linux and macOS if you have Homebrew installed.
 
       .. code-block:: sh
 
          brew install mmctl
-
-   .. tab:: Using go install (Linux, macOS, Windows)
-
-      Use this option on Linux, macOS, and Windows if you have a ``go`` environment configured.
-
-      To add the project in your `$GOPATH` run the following command:
-
-      .. code-block:: sh
-
-         go install github.com/mattermost/mmctl@latest
-
-   .. tab:: Using release package (Linux, macOS, Windows)
-
-      Vist the `mmctl releases page <https://github.com/mattermost/mmctl/releases>`__ and download the appropriate release for your OS, and install the binary.
 
 Build mmctl
 ------------
