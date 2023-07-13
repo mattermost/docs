@@ -12,5 +12,3 @@ Deployment options include:
 - `Google Cloud Platform <https://console.cloud.google.com/marketplace/product/bitnami-launchpad/mattermost>`__
 
 Alternatively, you may also deploy to `Debian 9 VMware virtual machines <https://bitnami.com/stack/mattermost/virtual-machine>`__.
-
-If you migrate from Bitnami to a self-hosted installation with MySQL database, read these notes in our migration guide: `Migrating from Bitnami </onboard/migrating-to-mattermost.html#migrating-from-bitnami>`__.

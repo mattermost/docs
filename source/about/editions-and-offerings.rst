@@ -17,7 +17,7 @@ Self-hosted editions support deploying Mattermost within IT-controlled private e
 Mattermost Team Edition
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-Team Edition is a free-to-use, open source, self-hosted collaboration platform offering all the core productivity benefits of competing SaaS solutions. It deploys as a single Linux binary with PostgreSQL or MySQL under an MIT license.
+Team Edition is a free-to-use, open source, self-hosted collaboration platform offering all the core productivity benefits of competing SaaS solutions. It deploys as a single Linux binary with PostgreSQL under an MIT license.
 
 Mattermost Team Edition is also bundled inside of the free Mattermost Enterprise Edition code base, which provides the same functionality as Mattermost Team Edition, with the additional benefit of being able to trial as well as upgrade into an expanded set of features available with paid subscription, including Mattermost Professional and Mattermost Enterprise. 
 
@@ -37,9 +37,9 @@ Mattermost plans consist of features and entitlements available either free or a
 
 We have three primary plans available: 
 
-* **Mattermost Free** - This a free version of our collaboration suite designed for single teams (self-hosted only).
+* **Mattermost Free** - This a free version of our collaboration platform designed for single teams (self-hosted only).
 * **Mattermost Professional** - This is a paid subscription service providing advance access controls and user management for managers leading teams of teams.
-* **Mattermost Enterprise** - This is a paid subscription service for large and sophisticated enterprise-scale deployments of the Mattermost suite.
+* **Mattermost Enterprise** - This is a paid subscription service for large and sophisticated enterprise-scale deployments of the Mattermost platform.
 
 For customers using our service in a self-hosted deployment, the Mattermost Free offering is available in both our open source and commercial code bases (called Mattermost Team Edition and Mattermost Enterprise Edition, respectively). 
 

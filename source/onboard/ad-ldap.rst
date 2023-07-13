@@ -75,7 +75,7 @@ To configure AD/LDAP synchronization with AD/LDAP sign-in:
 
 2. Scroll down to **Synchronization Interval (minutes)** to specify how often Mattermost accounts synchronize attributes with AD/LDAP. The default setting is 60 minutes. The profile picture attribute is only synchronized when the user logs in.
      - If you want to synchronize immediately after disabling an account, use the **AD/LDAP Synchronize Now** button in **System Console > AD/LDAP**.
-     - To configure AD/LDAP synchronization with SAML sign-in, see the `SAML documentation </onboard/ad-ldap.html>`__.
+     - To configure AD/LDAP synchronization with SAML sign-in, see the `SAML documentation <https://docs.mattermost.com/onboard/sso-saml.html>`__.
 
 .. note::
    - Make sure that at least one LDAP user is in Mattermost or the sync will not complete.

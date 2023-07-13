@@ -73,12 +73,12 @@ Contributors
 Release v5.3
 --------------
 
+**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v5.3.1>`_
+
 - **v5.3.1, released 2023-04-04**
  - Calls: fixed an issue where, after opening the calls popout then closing it (without leaving the call), subsequent clicks would cause a crash.
 - **v5.3.0, released 2023-03-30**
  - Original v5.3.0 release
-
-**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/latest>`_
 
 **Note:** Mattermost v5.3.0 contains a medium severity level security fix. Upgrading is highly recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.com/security-vulnerability-report//>`__.
 
@@ -147,6 +147,8 @@ Contributors
 Release v5.2
 --------------
 
+**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v5.2.2>`_
+
 - **v5.2.2, released 2022-12-06**
  - Added ARM64 build (beta) for Windows/Linux.
  - Fixed an issue on Windows installers where the onboarding screen was displayed even when there was a preconfigured server list `MM-48079 <https://mattermost.atlassian.net/browse/MM-48079>`_.
@@ -163,8 +165,6 @@ Release v5.2
  - Fixed an issue where the tray icon colour on Windows didn't obey the setting `MM-48080 <https://mattermost.atlassian.net/browse/MM-48080>`_.
 - **v5.2.0, released 2022-10-31**
  - Original v5.2.0 release
-
-**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/latest>`_
 
 Compatibility
 ~~~~~~~~~~~~~~~
@@ -245,6 +245,8 @@ Contributors
 Release v5.1
 --------------
 
+**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v5.1.1>`_
+
 - **v5.1.1, released 2022-06-27**
  - Upgraded to Electron v18.3.0.
  - Fixed an issue where a channel name matching the server subpath would not be navigable.
@@ -254,8 +256,6 @@ Release v5.1
  - Restored Windows ZIP builds.
 - **v5.1.0, released 2022-05-16**
  - Original v5.1.0 release
-
-**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v5.1.1>`_
 
 **Note:** Mattermost v5.1.0 contains a low severity level security fix. Upgrading is highly recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.com/security-vulnerability-report//>`__.
 
@@ -343,6 +343,8 @@ Contributors
 Release v5.0
 --------------
 
+**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v5.0.4>`_
+
 - **v5.0.4, release 2022-02-04**
  - Fixed an issue where Desktop App toast notifications didn't work in v5.0.3.
  - Restored **Minimize to tray** option for Windows, and added the ability to override the tray icon color.
@@ -365,8 +367,6 @@ Release v5.0
  - Reduced the size of some builds by removing unnecessary files.
 - **v5.0.0, released 2021-10-13**
  - Original v5.0.0 release
-
-**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v5.0.4>`_
 
 **Note:** Mattermost v5.0.0 contains a low level security fix. Upgrading is highly recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.com/security-vulnerability-report//>`__.
 
