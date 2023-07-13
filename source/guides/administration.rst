@@ -168,6 +168,19 @@ This section of the guide is for system admins of self-hosted Mattermost servers
 * :doc:`Certificate-Based Authentication </onboard/certificate-based-authentication>` - Set up certificate-based authentication for Mattermost.
 * :doc:`Manage telemetry </manage/telemetry>` - Self-hosted system admins can opt out of sharing telemetry data with Mattermost.
 
+Extend Mattermost functionality
+-------------------------------
+
+This section of the guide is for system admins of self-hosted Mattermost servers interested in extending Mattermost functionality with plugin integrations.
+
+.. toctree::
+    :maxdepth: 1
+    :hidden:
+
+    Mattermost for Microsoft Teams </plugins/mattermost-for-microsoft-teams>
+
+* :doc:`Mattermost for Microsoft Teams </plugins/mattermost-for-microsoft-teams>` - Collaborate with technical & operations teams seamlessly through the Mattermost app, without leaving Microsoft Teams.
+
 Other resources
 ---------------
 .. toctree::

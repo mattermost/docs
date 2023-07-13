@@ -1313,6 +1313,68 @@ Enable plugin
 
 ----
 
+MS Teams Sync
+-------------
+
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
+
+Mattermost for Microsoft Teams enables you to collaborate with technical & operations teams seamlessly through the Mattermost app, without leaving Microsoft Teams.
+
+Access the following configuration settings in the System Console by going to **Plugins > MS Teams Sync**.
+
+Enable plugin
+~~~~~~~~~~~~~
+
+
+Tenant ID
+~~~~~~~~~~
+
+
+Client ID
+~~~~~~~~~
+
+
+Client secret
+~~~~~~~~~~~~~~
+
+
+At rest encryption key
+~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Webhook secret
+~~~~~~~~~~~~~~~
+
+
+Use the evaluation API pay model
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Enforce connected accounts
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Allow to temporarily skip connect user
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Sync users
+~~~~~~~~~~
+
+
+Sync direct and group messages
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Enabled teams
+~~~~~~~~~~~~~
+
+
+
+
+----
+
 Mattermost Playbooks
 --------------------
 
