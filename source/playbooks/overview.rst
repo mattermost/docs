@@ -4,9 +4,9 @@ Overview
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Mattermost Playbooks is a collaboration tool that defines a repeatable process to enable teams to achieve specific and predictable outcomes. With playbooks, development teams can orchestrate prescribed workflows and define, streamline, and document complex, recurring operations.
+The Mattermost Playbooks plugin is a collaboration tool that defines a repeatable process to enable teams to achieve specific and predictable outcomes. With playbooks, development teams can orchestrate prescribed workflows and define, streamline, and document complex, recurring operations.
 
-Mattermost Playbooks is included in Mattermost self-hosted and Mattermost Cloud workspace. You can access Playbooks via the product menu in the top-left corner of Mattermost.
+The Mattermost Playbooks plugin is enabled by default for Mattermost self-hosted and Mattermost Cloud workspaces. You can access the Playbooks plugin via the product menu in the top-left corner of Mattermost.
 
 To find all playbook runs, open **Product menu > Playbooks**, and then select any playbook name. Next, select **Runs** from the navigation bar, then choose a run to view its overview. Select **Go to channel** to open the run’s channel.
 

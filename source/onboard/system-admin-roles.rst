@@ -395,7 +395,7 @@ This is being considered for future development.
 Can a System Manager or User Manager demote or deactivate another Admin or Manager?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-No privilege grants the authority to deactivate or demote another admin. 
+A System or User Manager can demote or deactivate another System or User Manager, but can't demote or deactivate a System Admin.
 
 Can a System Manager or User Manager assign or unassign admin roles?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -9,6 +9,10 @@ Manage multiple server connections
 
 Using the Mattermost desktop or mobile app, you can connect to multiple Mattermost instances from a single interface. 
 
+.. note::
+
+  The ability to create and manage multiple server connections isn't available when using Mattermost in a web browser.
+
 .. tabs::
 
   .. tab:: Desktop

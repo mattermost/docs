@@ -1797,7 +1797,7 @@ Enable OAuth 2.0 authentication with GitLab
 
 +-------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
 | - **true**: Allows team and account creation using GitLab OAuth authentication. Input the **Secret** and **ID** credentials to configure. | - System Config path: **Authentication > OAuth 2.0 (or GitLab)** |
-| - **false**: Disables GitLab OAuth authentication.                                                                                        | - ``config.json`` setting: ``.GitLabSettings.Enable: false``     |
+| - **false**: **(Default)** Disables GitLab OAuth authentication.                                                                          | - ``config.json`` setting: ``.GitLabSettings.Enable: false``     |
 |                                                                                                                                           | - Environment variable: ``MM_GITLABSETTINGS_ENABLE``             |
 +-------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
 
@@ -1934,6 +1934,7 @@ Enable OAuth 2.0 authentication with Google
 | - **true**: Allows team and account creation using Google OAuth authentication. Input the **Client ID** and **Client Secret** credentials to configure. | - System Config path: **Authentication > OAuth 2.0**         |
 | - **false**: **(Default)** Disables Google OAuth authentication.                                                                                        | - ``config.json`` setting: ``.GoogleSettings.Enable: false`` |
 |                                                                                                                                                         | - Environment variable: ``MM_GOOGLESETTINGS_ENABLE``         |
+| See `Google Single Sign-On <https://docs.mattermost.com/onboard/sso-google.html>`__ implementation instructions.                                        |                                                              |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
 
 .. config:setting:: oauth-googleclientid

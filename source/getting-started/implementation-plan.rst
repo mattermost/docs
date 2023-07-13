@@ -89,7 +89,7 @@ This section provides a bibliography of key project references and deliverables 
 - Mattermost Software/Hardware Requirements: https://docs.mattermost.com/install/software-hardware-requirements.html 
 - Mattermost Security Features: https://docs.mattermost.com/about/security.html 
 - Mattermost Channels: https://docs.mattermost.com/guides/channels.html
-- Mattermost Playbooks: https://docs.mattermost.com/guides/playbooks.html
+- Mattermost Playbooks plugin: https://docs.mattermost.com/guides/playbooks.html
 - Mattermost Boards: https://docs.mattermost.com/guides/boards.html
 
 2.4 Glossary
