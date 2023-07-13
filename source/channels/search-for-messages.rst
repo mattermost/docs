@@ -157,8 +157,12 @@ To search for messages containing hashtags, select a hashtag in an existing post
   
   Hashtags don't link to channels. If you have a channel named “Marketing”, selecting a ``#marketing`` hashtag does not take you to the Marketing channel. To link to public channels, use the tilde ``~`` symbol followed by the channel name. For example ``~marketing``.
 
-Notes about all searches
-------------------------
+Use sockets for the database
+----------------------------
+
+
+Notes about performing Mattermost searches
+-------------------------------------------
 
 - Multiple-word searches return results that contain *all* of your search criteria.
 - Search modifiers can help narrow down searches. See the `search modifiers <#search-modifiers>`__ section for details.
@@ -172,30 +176,10 @@ Notes about all searches
 Technical notes about searching
 -------------------------------
 
-Searching Chinese, Korean, and Japanese
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+By default, Mattermost uses full text search support included in PostgreSQL. Select the **product menu** |product-list| then select **About Mattermost** to see which database you’re using.
 
-- The best experience for searching in Chinese, Korean, and Japanese is to use MySQL 5.7.6 or later with special configuration. See the `Chinese, Japanese and Korean Search documentation </install/i18n.html>`__ for details.
-- You can perform searches without this configuration by adding wildcards ``*`` to the end of search terms.
-
-Differences between PostgreSQL and MySQL search
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-By default, Mattermost uses full text search support included in PostgreSQL and MySQL. These databases have slightly different search behavior. Select the **product menu** |product-list| then select **About Mattermost** to see which database you’re using.
-
-For example, different databases have different “stop words” filtered out of search results. See `PostgreSQL <https://www.postgresql.org/docs/10/textsearch-dictionaries.html#TEXTSEARCH-STOPWORDS>`__ or `MySQL <https://dev.mysql.com/doc/refman/5.7/en/fulltext-stopwords.html>`__ database documentation for a full list.
-
-Other database-specific differences include:
-
-PostgreSQL:
-
+- Stop words are filtered out of search results. See `PostgreSQL <https://www.postgresql.org/docs/10/textsearch-dictionaries.html#TEXTSEARCH-STOPWORDS>`__ database documentation for a full list of applicable stop words.
 - URLs don’t return results.
 - Hashtags or recent mentions of usernames containing a dash don't return results.
 - Terms containing a dash return incorrect results since dashes are ignored in the search engine.
 - From Mattermost v7.1, search results respect the ``default_text_search_config`` value instead of being hardcoded to English. We recommend that Mattermost system admins review this value to ensure it's set correctly.
-
-MySQL:
-
-- Hashtags or recent mentions of usernames containing a dot don't return results.
-- Avoid using underline ``_`` symbol to `perform a wildcard search <#wildcards>`__. Use the asterisk ``*`` symbol instead.
-- Stop words that are excluded from search in MySQL include: ``"a", "about", "an", "are", "as", "at", "be", "by", "com", "de", "en", "for", "from", "how", "i", "in", "is", "it", "la", "of", "on", "or", "that", "the", "this", "to", "was", "what", "when", "where", "who", "will", "with", "und", "the", "www"``.

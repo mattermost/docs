@@ -21,7 +21,7 @@ It is configured using `config/config.json </configure/configuration-settings.ht
 - **Notification service:** Sends notifications via SMTP or a Push Notification Service for mobile applications.
 - **Data management service:** Connects to supported databases and file storage solutions (local, network-attached storage, Amazon S3, etc), and manages the reading and writing of data between them.
 
-The binary talks to a database, typically PostgreSQL or MySQL, and a filestore.
+The binary talks to a database, typically PostgreSQL, and a filestore.
 
 .. image:: ../images/architecture_basics.png
 
