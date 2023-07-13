@@ -24,9 +24,9 @@ Latest Mattermost Cloud releases:
 #### Administration
  - Using ``https://github.com/reduxjs/redux-devtools`` in production builds is now allowed.
  - Added a new feature flag, ``DataRetentionConcurrencyEnabled``, to enable/disable concurrency for data retention batch deletion. Also added a new configuration setting  ``DataRetentionSettings.TimeBetweenBatchesMilliseconds`` to control the sleep time between batch deletions.
- - Added a setting under **System Console > Guest Access > Show Guest Tag** to remove the **Guest** badges from within the product.
+ - Added a setting under **System Console > Authentication > Guest Access > Show Guest Tag** to remove the **Guest** badges from within the product.
  - Added Apache 2.0 license to the public submodule.
- - Added the ability for admins to hide or customize the "Forgot password" link in the login page.
+ - Added the ability for admins to hide or customize the **Forgot password** link on the login page.
  - Modified the OAuth/SAML flows to include ``desktop_login`` where applicable.
 
 ### API Changes
@@ -34,8 +34,8 @@ Latest Mattermost Cloud releases:
 
 ### Bug Fixes
  - Fixed an issue where drafts would persist after sending an ``@here`` mention in the right-hand side.
- - Fixed an issue where the "New messages" toast appeared on channels that were completely visible.
- - Fixed an UI issue related to profile popover on channel member search in right hand side panel.
+ - Fixed an issue where the **New messages** toast appeared on channels that were completely visible.
+ - Fixed an UI issue related to profile popover on channel member search in the right hand pane.
 
 ### Known Issues
  - Boards public links that follow the URL schema `/boards/public/...` will not work after this update. They can either be regenerated through the application by going to the board and selecting the **Share** button at the top right, or they can be obtained by replacing the `/boards/public/` part of the URL with `/plugins/focalboard/`.
