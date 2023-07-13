@@ -26,7 +26,7 @@ Latest Mattermost Cloud releases:
  - Using ``https://github.com/reduxjs/redux-devtools`` in production builds is now allowed.
  - Added a new feature flag, ``DataRetentionConcurrencyEnabled``, to enable/disable concurrency for data retention batch deletion. Also added a new configuration setting  ``DataRetentionSettings.TimeBetweenBatchesMilliseconds`` to control the sleep time between batch deletions.
  - Added a setting under **System Console > Authentication > Guest Access > Show Guest Tag** to remove the **Guest** badges from within the product.
- - Added Apache 2.0 license to the public submodule.
+- Added Apache 2.0 license to the public submodule, explicitly signalling to [pkg.go.dev](https://pkg.go.dev/github.com/mattermost/mattermost/server/public@v0.0.6) the license in play for this source code.
  - Added the ability for admins to hide or customize the **Forgot password** link on the login page.
  - Modified the OAuth/SAML flows to include ``desktop_login`` where applicable.
 
