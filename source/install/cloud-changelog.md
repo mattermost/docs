@@ -18,6 +18,7 @@ Latest Mattermost Cloud releases:
 #### User Interface (UI)
  - The emoji picker view modal is now displayed on mobile browsers.
  - Prepackaged v1.2.2 of the Apps plugin.
+ - Prepackaged Focalboard plugin version 7.11.1.
  - The current user object is now updated more frequently.
  - Updated the user interface so that system admins no longer appear editable by system/user managers in the System Console.
 
