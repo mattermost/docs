@@ -189,6 +189,8 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - Added ``date-fns`` to https://github.com/mattermost/mattermost/.
 
 ### Known Issues
+ - White screen might appear when creating a slash command [MM-53665](https://mattermost.atlassian.net/browse/MM-53665).
+ - When sending a draft message in a Thread, the message is not cleared if the thread is open in the right-hand side [MM-53520](https://mattermost.atlassian.net/browse/MM-53520).
  - Channel and team names are missing from **Saved Posts** in the right-hand side [MM-53636](https://mattermost.atlassian.net/browse/MM-53636).
  - Adding an @mention at the start of a post draft and pressing the left or right arrow key can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
  - Google login fails on the Classic mobile apps.
