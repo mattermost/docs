@@ -4,12 +4,42 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 
 Latest Mattermost Cloud releases:
 
+- [Release 2023-07-27](#release-2023-07-27)
 - [Release 2023-07-11](#release-2023-07-11)
 - [Release 2023-06-26](#release-2023-06-26)
 - [Release 2023-06-13](#release-2023-06-13)
 - [Release 2023-05-31](#release-2023-05-31)
 - [Release 2023-05-01](#release-2023-05-01)
-- [Release 2023-04-21](#release-2023-04-21)
+
+## Release 2023-07-27
+
+### Improvements
+
+#### User Interface (UI)
+ - The emoji picker view modal is now displayed on mobile browsers.
+ - Prepackaged v1.2.2 of the Apps plugin.
+ - The current user object is now updated more frequently.
+ - Updated the user interface so that system admins no longer appear editable by system/user managers in the System Console.
+
+#### Administration
+ - Using ``https://github.com/reduxjs/redux-devtools`` in production builds is now allowed.
+ - Added a new feature flag, ``DataRetentionConcurrencyEnabled``, to enable/disable concurrency for data retention batch deletion. Also added a new configuration setting  ``DataRetentionSettings.TimeBetweenBatchesMilliseconds`` to control the sleep time between batch deletions.
+ - Added a setting under **System Console > Guest Access > Show Guest Tag** to remove the **Guest** badges from within the product.
+ - Added Apache 2.0 license to the public submodule.
+ - Added the ability for admins to hide or customize the "Forgot password" link in the login page.
+ - Modified the OAuth/SAML flows to include ``desktop_login`` where applicable.
+
+### API Changes
+ - Added an API endpoint ``POST /api/v4/user/login/desktop_login``.
+
+### Bug Fixes
+ - Fixed an issue where drafts would persist after sending an ``@here`` mention in the right-hand side.
+ - Fixed an issue where the "New messages" toast appeared on channels that were completely visible.
+ - Fixed an UI issue related to profile popover on channel member search in right hand side panel.
+
+### Known Issues
+ - Boards public links that follow the URL schema `/boards/public/...` will not work after this update. They can either be regenerated through the application by going to the board and selecting the **Share** button at the top right, or they can be obtained by replacing the `/boards/public/` part of the URL with `/plugins/focalboard/`.
+ - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
 
 ## Release 2023-07-11
 
