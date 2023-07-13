@@ -11,9 +11,9 @@ Mattermost for Microsoft Teams enables you to collaborate with technical & opera
 
 See the following product documentation to install and use Mattermost for Microsoft Teams:
 
-- :doc:`Install the Mattermost for Microsoft Teams plugin </about/install-mattermost-for-microsoft-teams-plugin>`
-- :doc:`Install the Mattermost app in Microsoft Teams </about/install-mattermost-app-in-microsoft-teams>`
-- :doc:`Collaborate using Mattermost for Microsoft Teams </channels/collaborate-using-mattermost-for-microsoft-teams>`
+- `Install the Mattermost for Microsoft Teams plugin </about/install-mattermost-for-microsoft-teams-plugin.html>`__
+- `Install the Mattermost app in Microsoft Teams </about/install-mattermost-app-in-microsoft-teams.html>`__
+- `Collaborate using Mattermost for Microsoft Teams </channels/collaborate-using-mattermost-for-microsoft-teams.html>`__
 
 Additional integration features include:
 
@@ -21,7 +21,7 @@ Additional integration features include:
 
   Mattermost is open-source and can be extensively customized to integrate with various system monitoring and alerting tools. If your tech team has set up unique alerting features in Mattermost, use the app to access these directly from within Teams, including system status updates, improving reaction time in the event of an incident.
 
-- ***Simplified workflows through a single interface** for communication and DevOps management.
+- **Simplified workflows through a single interface** for communication and DevOps management.
 
   If your technical team uses specific DevOps tools (such as Jenkins, Jira, GitHub, etc.) that are tightly integrated with Mattermost, embedding Mattermost in Teams can give direct access to these integrated services. This simplifies workflows by providing a single interface for DevOps use cases.
 
