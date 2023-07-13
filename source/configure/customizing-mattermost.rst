@@ -16,13 +16,13 @@ Mattermost Web App
 The Mattermost webapp is licensed under the Apache 2.0 license. To modify and use with the Mattermost server, you can:
 
 1. Install the Mattermost server by following one of our installation guides
-2. Fork the `mattermost-webapp <https://github.com/mattermost/mattermost-webapp>`__ repository
-3. Make your changes 
+2. Fork the `mattermost <https://github.com/mattermost/mattermost>`__ repository
+3. Go to the web app code located in the ``webapp`` directory and make your changes
 4. Run ``make package`` to create ``mattermost-webapp.tar.gz``
 5. Copy ``mattermost-webapp-tar.gz`` to the location Mattermost was installed in Step 1
 6. Rename the existing ``client`` folder to ``client-original``
 7. Run ``tar -xvf mattermost-webapp.tar.gz`` to extract your new customized ``client`` folder
-8. If you're installing Mattermost 7.5 or newer, copy the ``products`` folder from ``client-original`` into ``client``
+8. If you're installing Mattermost 7.5 - 7.10, copy the ``products`` folder from ``client-original`` into ``client``
 9. Restart your Mattermost server
 
 It is possible to customize certain parts of the webapp without forking by using our :doc:`Custom Branding <../configure/custom-branding-tools>` settings. 
