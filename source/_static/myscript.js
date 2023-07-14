@@ -174,7 +174,7 @@ $(document).ready(function () {
 
 	// Fallback for when a notification CTA expires - ie. webinar happens
 	const dateInFuture = (value) => new Date().getTime() <= new Date(value).getTime();
-    const expiryDate = '2023-04-27T15:00:00-0500';
+    const expiryDate = '2023-07-24T15:00:00-0500';
     // 2023-04-27 @ 3pm EST
     const fallback_url = 'https://mattermost.com/solutions/mattermost-for-microsoft-teams/';
     const fallback_text = 'Learn more about Mattermost for Microsoft Teams »';
@@ -192,7 +192,7 @@ $(document).ready(function () {
 	// So it will show up for new announcements
 	// Keep "mm_notification_banner__" at the beginning of the key
 	// Add system to clean out storage items that are no longer needed
-	const notification_banner_key = 'mm_notification_banner__webinar-prod';
+	const notification_banner_key = 'mm_notification_banner__8-0-release';
 
 	if (localStorage.getItem(notification_banner_key) === null) {
 		localStorage.setItem(notification_banner_key, true);
