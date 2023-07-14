@@ -65,7 +65,7 @@ Latest Mattermost Releases:
  - To simplify management and scalability challenges, Mattermost 8.0 recommends deploying PostgreSQL over MySQL.
 
 #### New End User Training
- - We’re introducing [10 new training modules](https://academy.mattermost.com/p/mattermost-end-user-onboarding) dedicated to educating users on the key components of the Mattermost platform and an additional [10 new use case modules](https://academy.mattermost.com/courses/category/use-case-training) tackling technical scenarios within DevOps, Security Ops, and Incident Management.
+ - We’re introducing [9 new training modules](https://academy.mattermost.com/p/mattermost-end-user-onboarding) dedicated to educating users on the key components of the Mattermost platform and an additional [10 new use case modules](https://academy.mattermost.com/courses/category/use-case-training) tackling technical scenarios within DevOps, Security Ops, and Incident Management.
 
 ### Improvements
 
