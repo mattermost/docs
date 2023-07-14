@@ -70,7 +70,7 @@ Latest Mattermost Releases:
 ### Improvements
 
 #### User Interface (UI)
- - Persistent notifications allow users to notify recipients repeatedly until action is taken on an urgent message. Check out [our documentation](https://docs.mattermost.com/channels/message-priority.html#send-persistent-notifications) for more details.
+ - Persistent notifications (Professional and Enterprise Plans) allow users to notify recipients repeatedly until action is taken on an urgent message. Check out [our documentation](https://docs.mattermost.com/channels/message-priority.html#send-persistent-notifications) for more details.
  - The apps bar is now enabled by default for on-prem servers. ``ExperimentalSettings.EnableAppBar`` was also renamed to ``ExperimentalSettings.DisableAppBar``. See more details at:
    - https://docs.mattermost.com/configure/experimental-configuration-settings.html#disable-app-bar 
    - https://forum.mattermost.com/t/channel-header-plugin-changes/13551
