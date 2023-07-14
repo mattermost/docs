@@ -108,7 +108,7 @@ To customize mobile push notifications per channel:
     1. Tap the channel where you want to mute mention notifications.
     2. Tap the **More** |more-icon| icon located in the top right corner of the app.
     3. Tap **View info**.
-    4. Tap **IMobile Notifications**, and tap your notification preference for that channel.
+    4. Tap **Mobile Notifications**, and tap your notification preference for that channel.
 
 Channel header
 --------------
