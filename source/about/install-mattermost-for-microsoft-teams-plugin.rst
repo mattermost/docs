@@ -19,4 +19,14 @@ To install the `Mattermost for Microsoft Teams </plugins/mattermost-for-microsof
 Configure the plugin
 --------------------
 
-Additional configuration settings are available for this plugin. See the `plugin configuration settings </configure/plugins-coinfiguration-settings>`__ documentation for details.
+Additional configuration settings are available for this plugin. See the `MS Teams Sync plugin configuration settings </configure/plugins-configuration-settings.html#ms-teams-sync>`__ documentation for details.
+
+Demonstration
+--------------
+
+Check out this `YouTube demo <https://youtu.be/Mg-stF7_Bjk>`__, from Doug Lauder, Senior Software Design Engineer at Mattermost, to learn how to embed Mattermost in Microsoft Teams:
+
+.. raw:: html
+  
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/Mg-stF7_Bjk" alt="Install Matterrmost for Microsoft Teams plugin" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+

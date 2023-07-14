@@ -39,8 +39,8 @@ If you face any issues while installing or using the app in Microsoft Teams, you
 Demonstration
 --------------
 
-Check out this `YouTube demo <https://youtu.be/Mg-stF7_Bjk>`__, from Doug Lauder, Senior Software Design Engineer at Mattermost, to get started with Mattermost for Microsoft Teams:
+Check out this `YouTube demo <https://youtu.be/MxegqqfErEg>`__, from Doug Lauder, Senior Software Design Engineer at Mattermost, to get started with Mattermost for Microsoft Teams:
 
 .. raw:: html
   
-   <iframe width="560" height="315" src="https://www.youtube.com/embed/Mg-stF7_Bjk" alt="Video on self hosted subscription" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/MxegqqfErEg" alt="Install the Mattermost app in Microsoft Teams" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
