@@ -13,8 +13,8 @@ To install the `Mattermost for Microsoft Teams </plugins/mattermost-for-microsof
 
     If you are using an earlier version of Mattermost, `follow our documentation </upgrade/upgrading-mattermost-server.html>`__ to upgrade to Mattermost v8.0.1 or later.
 
-4. Go to **System Console > Plugins > Plugin Management > Upload Plugin**, and upload the plugin binary you downloaded in the previous step.
-5. Go to **System Console > Plugins > Plugin Management > Installed Plugins**, search for ``MS Teams Sync``, and select **Enable Plugin**.
+3. Go to **System Console > Plugins > Plugin Management > Upload Plugin**, and upload the plugin binary you downloaded in the previous step.
+4. Go to **System Console > Plugins > Plugin Management > Installed Plugins**, search for ``MS Teams Sync``, and select **Enable Plugin**.
 
 Configure the plugin
 --------------------
