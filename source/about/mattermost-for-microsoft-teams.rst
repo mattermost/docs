@@ -25,7 +25,7 @@ Additional integration features include:
 
   If your technical team uses specific DevOps tools (such as Jenkins, Jira, GitHub, etc.) that are tightly integrated with Mattermost, embedding Mattermost in Teams can give direct access to these integrated services. This simplifies workflows by providing a single interface for DevOps use cases.
 
-- The abiltiy to **quickly run scripts within Microsoft Teams**.
+- The ability to **quickly run scripts within Microsoft Teams**.
 
   Mattermost supports the use of a CLI, which can be a major advantage for tech teams. If you need to run scripts or execute commands via Mattermost, embedding it within Teams allows you to use this functionality from either platform.
 
