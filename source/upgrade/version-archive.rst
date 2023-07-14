@@ -16,6 +16,10 @@ If you want to check that the version of Mattermost you are installing is the of
 Mattermost Enterprise Edition
 ------------------------------
 
+Mattermost Enterprise Edition v8.0.0 - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v8-0-major-release>`__ - `Download <https://releases.mattermost.com/8.0.0/mattermost-8.0.0-linux-amd64.tar.gz?src=arc>`__
+  - ``https://releases.mattermost.com/8.0.0/mattermost-8.0.0-linux-amd64.tar.gz``
+  - SHA-256 Checksum: ``e5ac1c852c595ed350d970fb7e2e674205944af8097e98829e96b38ab19a6618``
+  - GPG Signature: https://releases.mattermost.com/8.0.0/mattermost-8.0.0-linux-amd64.tar.gz.sig
 Mattermost Enterprise Edition v7.10.4 - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v7-10-feature-release>`__ - `Download <https://releases.mattermost.com/7.10.4/mattermost-7.10.4-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/7.10.4/mattermost-7.10.4-linux-amd64.tar.gz``
   - SHA-256 Checksum: ``132d9c1fd0a7422f03e40bc4f095a4eaf4da470208af8d51d5e853581f2154c3``
@@ -325,10 +329,14 @@ Mattermost Enterprise Edition v2.1.0 - `View Changelog </install/legacy-self-hos
 Mattermost Team Edition
 -----------------------
 
-The open source Mattermost Team Edition is functionally identical to the commercial Mattermost Enterprise Edition in its free “team mode”, but there is no ability to unlock enterprise features. It deploys as single Linux binary with MySQL or PostgreSQL under an MIT license.
+The open source Mattermost Team Edition is functionally identical to the commercial Mattermost Enterprise Edition in its free “team mode”, but there is no ability to unlock enterprise features. It deploys as single Linux binary with PostgreSQL or MySQL under an MIT license.
 
 We generally recommend installing Enterprise Edition, even if you don't currently need a license. This provides the flexibility to seamlessly unlock Enterprise features should you need them. However, if you only want to install software with a fully open source code base, then Team Edition is the best choice for you.
 
+Mattermost Team Edition v8.0.0 - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v8-0-major-release>`__ - `Download <https://releases.mattermost.com/8.0.0/mattermost-team-8.0.0-linux-amd64.tar.gz?src=arc>`__
+  - ``https://releases.mattermost.com/8.0.0/mattermost-team-8.0.0-linux-amd64.tar.gz``
+  - SHA-256 Checksum: ``46b44a2a6b8d7a2bad4553e40a565f1eb3e0b86d60903d97ec4d2f37f68effb2``
+  - GPG Signature: https://releases.mattermost.com/8.0.0/mattermost-team-8.0.0-linux-amd64.tar.gz.sig
 Mattermost Team Edition v7.10.4 - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v7-10-feature-release>`__ - `Download <https://releases.mattermost.com/7.10.4/mattermost-team-7.10.4-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/7.10.4/mattermost-team-7.10.4-linux-amd64.tar.gz``
   - SHA-256 Checksum: ``744fae31e3cc59b8d56accd064f2605a4d165e740fcf4e224cd1693a9ff4d2eb``
