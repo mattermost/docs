@@ -20,7 +20,7 @@ Mattermost product documentation
    Mattermost administration <guides/administration>
    Welcome to Mattermost <guides/welcome-to-mattermost>
    Mattermost Channels <guides/channels>
-   Mattermost Playbooks <guides/playbooks>
+   Mattermost Playbooks plugin <guides/playbooks>
    Mattermost Boards <guides/boards>
    Mattermost for developers <https://developers.mattermost.com/>
    Get help with Mattermost <guides/get-help>

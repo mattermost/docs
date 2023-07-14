@@ -17,7 +17,7 @@ From Mattermost v7.0, you can make voice calls and share your screen in channels
 From Mattermost v7.0, you can:
 
 - Start or join a call from desktop and mobile apps in addition to web browsers.
-- Share screen (not available on mobile), raise hands, chat in a thread, and even switch between products in the Mattermost suite (i.e., Channels, Boards, and Playbooks) while on a call.
+- Share screen (not available on mobile), raise hands, chat in a thread, and continue working in Mattermost while on a call.
 - Start a call using the ``/call start`` slash command or **Start call** in the channel header.
 
 Starting from Mattermost v7.7 you can:
@@ -112,6 +112,11 @@ To record a call:
     
 Frequently asked questions
 --------------------------
+
+Can I set a ring tone for incoming calls?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Yes! From Mattermost v8.0 and Calls v0.17.0, desktop app and webapp users can go to **Settings > Notifications > Desktop Notifications** to enable Mattermost to alert you to incoming calls through direct or group messages with a specific ring tone and a desktop notification, unless the system admin has `disabled your ability to do so </plugins-configuration-settings.html#enable-call-ringing-beta>`__.
 
 Is video supported?
 ~~~~~~~~~~~~~~~~~~~

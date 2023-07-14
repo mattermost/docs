@@ -163,6 +163,10 @@
       <td valign="middle">Perl</td>
       <td valign="middle">perl, pl</td>
     </tr>
+        <tr class="row-odd">
+      <td valign="middle">Pascal</td>
+      <td valign="middle">pascal, pas</td>
+    </tr>
     <tr class="row-odd">
       <td valign="middle">PostgreSQL</td>
       <td valign="middle">pgsql, postgres, postgresql</td>

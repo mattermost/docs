@@ -9,7 +9,7 @@ Navigate boards
   :width: 24px
   :alt: Access additional message actions using the More actions icon.
   
-If you've already created a board, you can open Boards using the App Bar. If you don't see the Apps Bar to the right of your screen, you can access boards using the product menu in the top left corner of Mattermost.
+If you've already created a board, you can open Boards using the Apps Bar. If you don't see the Apps Bar to the right of your screen, you can access boards using the product menu in the top left corner of Mattermost.
 
 Link a board to a channel
 -------------------------
@@ -20,7 +20,7 @@ From Mattermost Boards v7.2, boards can be linked to channels and accessed from 
  
   A channel can be linked to multiple boards, but each individual board can only be linked to one channel at a time. Linking the same board to another channel will automatically remove the link from the previous channel.
 
-Open the boards App Bar icon, and select **Create a Board** to create a new board linked to the current channel. Once a board is linked to a channel, it's listed in the right-hand side of the Boards Apps Bar. Linking a board to a channel automatically grants all channel members access to the board, with the exception of guest accounts. Select a linked board to navigate directly to the board.
+Open the Boards Apps Bar icon, and select **Create a Board** to create a new board linked to the current channel. Once a board is linked to a channel, it's listed in the right-hand side of the Boards Apps Bar. Linking a board to a channel automatically grants all channel members access to the board, with the exception of guest accounts. Select a linked board to navigate directly to the board.
 
 .. note:: 
   

@@ -26,6 +26,15 @@ Users
 | to other teams, and view the teams they are on and what       | - Environment variable: N/A                                 |
 | their role is on a team.                                      |                                                             |
 +---------------------------------------------------------------+-------------------------------------------------------------+
+| **Note**: You can search for users by partial first name, last name, nickname, or username.                                 |
++---------------------------------------------------------------+-------------------------------------------------------------+
+
+Deactivate user accounts
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+If you need to remove a user from your Mattermost deployment, you can deactivate the user account. Deactivated users have an inactive status, are logged out of Mattermost as soon as they are deactivated, and deactivated users can no longer log back in. While a user account is deactivated, you can manage the user's role, password, and email address.
+
+Deactivate a user account by selecting their role, then select **Deactivate**. You can re-activate that user account later by selecting **Activate**.
 
 ----
 
@@ -71,10 +80,11 @@ Channels
 |                                                                         | - ``config.json setting``: N/A                              |
 |                                                                         | - Environment variable: N/A                                 |
 +-------------------------------------------------------------------------+-------------------------------------------------------------+
-| Channels can be deleted with all content, including posts in the database, using the `mmctl channel delete                            |
-| </manage/mmctl-command-line-tool.html#mmctl-channel-delete>`__ tool.                                                                  |
-+-------------------------------------------------------------------------+-------------------------------------------------------------+
-| **Note**: You can search for channels by channel name or by channel ID.                                                               |
+| **Notes**:                                                                                                                            |
+|                                                                                                                                       |
+| - Channels can be deleted with all content, including posts in the database, using the `mmctl channel delete </manage/mmctl-command-  |
+|   line-tool.html#mmctl-channel-delete>`__ tool.                                                                                       |
+| - You can search for channels by channel name or by channel ID.                                                                       |
 +-------------------------------------------------------------------------+-------------------------------------------------------------+
 
 ----

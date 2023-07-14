@@ -4,23 +4,8 @@ Using sockets for database
 .. include:: ../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
 
-Mattermost requires a database back-end. If you plan to run it on the machine,
-install MySQL or PostgreSQL as the database. In this document let's understand how
+Mattermost requires a database back-end, and PostgreSQL is our database of choice. In this document let's understand how
 you can use sockets for setting up the database.
-
-MySQL
------
-
-.. code-block:: bash
-
-    $ mysql -u root -p
-    CREATE DATABASE mattermostdb;
-    CREATE USER mmuser IDENTIFIED BY 'mmuser_password';
-    GRANT ALL ON mattermostdb.* TO mmuser;
-
-
-PostgreSQL
-----------
 
 - Install and configure PostgreSQL.
 - Choose between TCP or UNIX Socket, and jump to the corresponding section.
@@ -97,14 +82,9 @@ Configuring Mattermost
 - Mattermost is configured in ``/etc/webapps/mattermost/config.json``.
   Strings need to be quoted.
 
-- The ``DriverName`` setting: ``mysql`` for MySQL and ``postgres`` for PostgreSQL.
+- Set ``DriverName`` to ``postgres``.
 
-  The ``DataSource``:
+  Set ``DataSource``:
 
-  - For MySQL, set it to ``mmuser:mmuser_password@unix(/run/mysqld/mysqld.sock)/mattermostdb?charset=utf8mb4,utf8``.
-  - For PostgreSQL
-    
-    - TCP socket: ``postgres://mmuser:mmuser_password@127.0.0.1:5432/mattermostdb?sslmode=disable&connect_timeout=10``    
-    
-    - Unix socket: ``postgres:///mattermostdb?host=/run/postgresql``, where ``mattermostdb`` is the name of the database and ``/run/postgresql`` is the directory containing the Unix socket.
-
+  - TCP socket: ``postgres://mmuser:mmuser_password@127.0.0.1:5432/mattermostdb?sslmode=disable&connect_timeout=10``    
+  - Unix socket: ``postgres:///mattermostdb?host=/run/postgresql``, where ``mattermostdb`` is the name of the database and ``/run/postgresql`` is the directory containing the Unix socket.

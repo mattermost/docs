@@ -58,7 +58,7 @@ These guides will help you prepare for your Mattermost deployment.
 * :doc:`Welcome email template </getting-started/welcome-email-to-end-users>` - Use our sample email template when you’re ready to invite users to your server.
 
 Deployment guides
-----------------
+------------------
 
 These deployment guides are for administrators who are ready to integrate Mattermost with their organization’s IT infrastructure. 
 
