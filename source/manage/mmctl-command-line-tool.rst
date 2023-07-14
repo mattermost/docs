@@ -2095,7 +2095,7 @@ Set the value of a config setting by its name in dot notation. Accepts multiple 
 
 .. code-block:: sh
 
-   mmctl config set SqlSettings.DriverName mysql
+   mmctl config set SqlSettings.DriverName postgres
    mmctl config set SqlSettings.DataSourceReplicas "replica1" "replica2"
 
 **Options**

@@ -5,9 +5,10 @@ Work with cards
   :start-after: :nosearch:
 
 .. |options-icon| image:: ../images/dots-horizontal_F01D8.svg
-  :height: 24px
-  :width: 24px
   :alt: Access additional message actions using the More actions icon.
+
+.. |vertical-3-dots| image:: ../images/dots-vertical_F01D9.svg
+  :alt: Select the More icon to access additional channel management options.
 
 A card consists of:
 
@@ -123,7 +124,7 @@ From Mattermost v7.7 you can attach files to your cards, which other board membe
 
 To upload a file to a card, select **Attach** in the top-right corner of the card. Then select the file you'd like to upload. When your file has been uploaded, you can find it in the **Attachments** section of the card. Select the **+** sign to add additional files to your card.
 
-To delete a file, hover over it and select the vertical menu. Then select **Delete**. To download the file, select the download icon.
+To delete a file, hover over it and select the |vertical-3-dots| menu. Then select **Delete**. To download the file, select the download icon.
 
 Card badges
 -----------

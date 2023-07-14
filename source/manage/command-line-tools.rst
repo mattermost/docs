@@ -6,11 +6,7 @@ Command line tools
 
 In self-managed deployments, a ``mattermost`` command is available for configuring the system from the directory where the Mattermost server is installed. For an overview of the Mattermost command line interface (CLI), `read this article <https://medium.com/@santosjs/plugging-in-to-the-mattermost-cli-8cdcef2bd1f6>`__ from Santos.
 
-.. note::
-  - As of Mattermost v6.0, this CLI has been replaced with the `mmctl command line tool </manage/mmctl-command-line-tool.html>`__. However, `mattermost import </manage/command-line-tools.html#mattermost-import>`__ commands, `mattermost export </manage/command-line-tools.html#mattermost-export>`__ commands, and related subcommands, remain available and fully supported from Mattermost v6.0.
-  - The CLI is run in a single node which bypasses the mechanisms that a `High Availability environment </scale/high-availability-cluster.html>`__ uses to perform actions across all nodes in the cluster. As a result, when running `CLI commands </manage/command-line-tools.html>`__ in a High Availability environment, tasks such as creating and deleting users or changing configuration settings require a server restart.
-
-These ``mattermost`` commands include:
+These ``mattermost`` commands include the following functionality:
 
 **General administration**
 
@@ -41,1894 +37,1951 @@ These ``mattermost`` commands include:
 
 - Analyze the database for relational consistency
 
-.. contents::
-    :backlinks: top
-    :local:
-
-Use the CLI
------------
-
-To run the CLI commands, you must be in the Mattermost root directory. On a default installation of Mattermost, the root directory is ``/opt/mattermost``. If you followed our standard `installation process <../guides/administrator.html#installing-mattermost>`__, you must run the commands as the user ``mattermost``. The name of the executable is ``mattermost``, and it can be found in the ``/opt/mattermost/bin`` directory.
-
-**For example, to get the Mattermost version on a default installation of Mattermost:**
-
-.. code-block:: bash
-
-    cd /opt/mattermost/
-    sudo -u mattermost bin/mattermost version
-
 .. note::
-
-  Ensure you run the Mattermost binary as the ``mattermost`` user. Running it as ``root`` user (for example) may cause complications with permissions as the binary initiates plugins and accesses various files when running CLI commands. Running the server as ``root`` may result in ownership of the plugins and files to be overwritten as well as other potential permissions errors.
-
-.. note::
-
-   When running CLI commands on a Mattermost installation that has the configuration stored in the database, you might need to pass the database connection string as: 
-
-.. code-block:: bash
- 
-   bin/mattermost --config="postgres://mmuser:mostest@localhost:5432/mattermost_test?sslmode=disable\u0026connect_timeout=10"
-
-Use the CLI on GitLab Omnibus
-------------------------------
-
-On GitLab Omnibus, you must be in the following directory when you run CLI commands: ``/opt/gitlab/embedded/service/mattermost``. Also, you must run the commands as the user *mattermost* and specify the location of the configuration file. The executable is ``/opt/gitlab/embedded/bin/mattermost``.
-
-**For example, to get the Mattermost version on GitLab Omnibus:**
-
-.. code-block:: bash
-
-    cd /opt/gitlab/embedded/service/mattermost
-    sudo /opt/gitlab/embedded/bin/chpst -e /opt/gitlab/etc/mattermost/env -P -U mattermost:mattermost -u mattermost:mattermost /opt/gitlab/embedded/bin/mattermost version
-
-.. note::
-   
-   The example commands in the documentation are for a default installation of Mattermost. You must modify the commands so that they work on GitLab Omnibus.
-
-Use the CLI on Docker Install
------------------------------
-
-On Docker install, the ``/mattermost/bin`` directory was added to ``PATH``, so you can use the CLI directly with the ``docker exec`` command. Note that the container name may be ``mattermostdocker_app_1`` if you installed Mattermost with ``docker-compose.yml``.
-
-**For example, to get the Mattermost version on a Docker install:**
-
-.. code-block:: bash
-
-    docker exec -it <your-mattermost-container-name> mattermost version
-
-Use the CLI on Docker Preview
------------------------------
-
-The preceding documentation and command reference below also applies to the `Mattermost docker preview image <https://github.com/mattermost/mattermost-docker-preview>`__.
-
-Mattermost 3.6 and later
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-The new CLI tool is supported in Mattermost v3.6 and later.
-
-.. note::
-
+  - As of Mattermost v6.0, this CLI has been replaced with the `mmctl command line tool </manage/mmctl-command-line-tool.html>`__. However, `mattermost import </manage/command-line-tools.html#mattermost-import>`__ commands, `mattermost export </manage/command-line-tools.html#mattermost-export>`__ commands, and related subcommands, remain available and fully supported from Mattermost v6.0.
+  - The CLI is run in a single node which bypasses the mechanisms that a `High Availability environment </scale/high-availability-cluster.html>`__ uses to perform actions across all nodes in the cluster. As a result, when running `CLI commands </manage/command-line-tools.html>`__ in a High Availability environment, tasks such as creating and deleting users or changing configuration settings require a server restart.
   -  Parameters in CLI commands are order-specific.
   -  If special characters (``!``, ``|``, ``(``, ``)``, ``\``, ``'``, and ``"``) are used, the entire argument needs to be surrounded by single quotes (e.g. ``-password 'mypassword!'``, or the individual characters need to be escaped out (e.g. ``-password mypassword\!``).
   -  Team name and channel name refer to the handles, not the display names. So in the URL ``https://community.mattermost.com/core/channels/town-square`` team name would be ``core`` and channel name would be ``town-square``.
 
-.. tip::
-  
-   If you automate user creation through the CLI tool with SMTP enabled, emails will be sent to all new users created. If you run such a load script, it is best to disable SMTP or to use test accounts so that new account creation emails aren't unintentionally sent to people at your organization who aren't expecting them.
+Use the CLI
+-----------
 
-mattermost
-----------
+.. tabs::
 
-  Description
-    Commands for configuring and managing your Mattermost instance and users.
+  .. tab:: Via Mattermost 
 
-  Options
-    .. code-block:: none
+    To run the CLI commands, you must be in the Mattermost root directory. On a default installation of Mattermost, the root directory is ``/opt/mattermost``. If you followed our standard `installation process <../guides/administrator.html#installing-mattermost>`__, you must run the commands as the user ``mattermost``. The name of the executable is ``mattermost``, and it can be found in the ``/opt/mattermost/bin`` directory.
 
-      -c, --config {string}   Configuration file to use. (default "config.json")
-      --disableconfigwatch {boolean}  When true, the config.json file will not be reloaded automatically when another process changes it (default "false")
+    For example, to get the Mattermost version on a default installation of Mattermost:
 
-  Child Commands
-    -  `mattermost channel`_ - Management of channels
-    -  `mattermost command`_ - Management of slash commands
-    -  `mattermost config`_ - Work with the configuration file
-    -  `mattermost export`_ - Compliance export commands
-    -  `mattermost group`_ - Management of Mattermost groups
-    -  `mattermost help`_ - Generate full documentation for the CLI
-    -  `mattermost import`_ - Import data
-    -  `mattermost jobserver`_ - Start the Mattermost job server
-    -  `mattermost ldap`_ - AD/LDAP related utilities
-    -  `mattermost license`_ - Licensing commands
-    -  `mattermost logs`_ - Display human-readable logs
-    -  `mattermost permissions`_ - Management of the permissions system
-    -  `mattermost plugin`_ - Management of plugins
-    -  `mattermost reset`_ - Reset the database to initial state
-    -  `mattermost roles`_ - Management of user roles
-    -  `mattermost sampledata`_ - Sample data generation
-    -  `mattermost server`_ - Run the Mattermost server
-    -  `mattermost team`_ - Management of teams
-    -  `mattermost user`_ - Management of users
-    -  `mattermost version`_ - Display version information
-    -  `mattermost webhook`_ - Management of webhooks
+    .. code-block:: bash
+
+      cd /opt/mattermost/
+      sudo -u mattermost bin/mattermost version
+
+    .. note::
+
+      - Ensure you run the Mattermost binary as the ``mattermost`` user. Running it as ``root`` user (for example) may cause complications with permissions as the binary initiates plugins and accesses various files when running CLI commands. Running the server as ``root`` may result in ownership of the plugins and files to be overwritten as well as other potential permissions errors.
+      - When running CLI commands on a Mattermost installation that has the configuration stored in the database, you might need to pass the database connection string as: 
+
+        .. code-block:: bash
+ 
+          bin/mattermost --config="postgres://mmuser:mostest@localhost:5432/mattermost_test?sslmode=disable\u0026connect_timeout=10"
+
+  .. tab:: Via GitLab Omnibus
+
+    On GitLab Omnibus, you must be in the following directory when you run CLI commands: ``/opt/gitlab/embedded/service/mattermost``. Also, you must run the commands as the user *mattermost* and specify the location of the configuration file. The executable is ``/opt/gitlab/embedded/bin/mattermost``.
+
+    For example, to get the Mattermost version on GitLab Omnibus:
+
+    .. code-block:: bash
+
+      cd /opt/gitlab/embedded/service/mattermost
+      sudo /opt/gitlab/embedded/bin/chpst -e /opt/gitlab/etc/mattermost/env -P -U mattermost:mattermost -u mattermost:mattermost /opt/gitlab/embedded/bin/mattermost version
+
+    .. note::
+   
+      The example commands on this documentation page are for a default installation of Mattermost. You must modify the commands so that they work on GitLab Omnibus.
+
+  .. tab:: Via Docker Install
+
+    On Docker install, the ``/mattermost/bin`` directory was added to ``PATH``, so you can use the CLI directly with the ``docker exec`` command. Note that the container name may be ``mattermostdocker_app_1`` if you installed Mattermost with ``docker-compose.yml``.
+
+    For example, to get the Mattermost version on a Docker Install:
+
+    .. code-block:: bash
+
+      docker exec -it <your-mattermost-container-name> mattermost version
+
+  .. tab:: Via Docker Preview
+
+    The Docker Install tab details and command references below also apply to the `Mattermost docker preview image <https://github.com/mattermost/mattermost-docker-preview>`__.
+
+mattermost cli commands
+-----------------------
+
+Description
+  Commands for configuring and managing your Mattermost instance and users.
+
+Options
+  .. code-block:: none
+
+    -c, --config {string}           Configuration file to use. (default "config.json")
+    --disableconfigwatch {boolean}  When true, the config.json file will not be reloaded automatically when another process changes it (default "false")
+
+Child Commands
+  -  `mattermost channel`_ - Management of channels
+  -  `mattermost command`_ - Management of slash commands
+  -  `mattermost config`_ - Work with the configuration file
+  -  `mattermost db init`_ - Initialize the database, execute migrations, and load custom defaults
+  -  `mattermost db migrate`_ - Migrate the database schema for unapplied migrations
+  -  `mattermost export`_ - Compliance export commands
+  -  `mattermost extract-documents-content`_ - Extract and index the contents of files shared for legacy Mattermost Servers
+  -  `mattermost group`_ - Management of Mattermost groups
+  -  `mattermost group channel`_ - Manage Mattermost groups linked to a channel
+  -  `mattermost group team`_ - Manage Mattermost groups linked to a team
+  -  `mattermost help`_ - Generate full documentation for the CLI
+  -  `mattermost import`_ - Import data
+  -  `mattermost integrity`_ - Check database schema integrity as well as referential integrity of channels, slash commands, webhooks, posts, schemes, sessions, users, and teams
+  -  `mattermost jobserver`_ - Start the Mattermost job server
+  -  `mattermost ldap`_ - AD/LDAP related utilities
+  -  `mattermost license`_ - Licensing commands
+  -  `mattermost logs`_ - Display human-readable logs
+  -  `mattermost permissions`_ - Management of the permissions system
+  -  `mattermost plugin`_ - Management of plugins
+  -  `mattermost reset`_ - Reset the database to initial state
+  -  `mattermost roles`_ - Management of user roles
+  -  `mattermost sampledata`_ - Sample data generation
+  -  `mattermost server`_ - Run the Mattermost server
+  -  `mattermost team`_ - Management of teams
+  -  `mattermost user`_ - Management of users
+  -  `mattermost version`_ - Display version information
+  -  `mattermost webhook`_ - Management of webhooks
 
 mattermost channel
 ------------------
 
-  Description
-    Commands for channel management.
+Description
+  Commands for channel management.
 
-  Child Commands
-    -  `mattermost channel add`_ - Add users to a channel
-    -  `mattermost channel archive`_ - Archive a channel
-    -  `mattermost channel create`_ - Create a channel
-    -  `mattermost channel delete`_ - Delete a channel
-    -  `mattermost channel list`_ - List all channels on specified teams
-    -  `mattermost channel modify`_ - Modify a channel's public/private type
-    -  `mattermost channel move`_ - Move a channel to another team
-    -  `mattermost channel remove`_ - Remove users from a channel
-    -  `mattermost channel rename`_ - Rename a channel
-    -  `mattermost channel restore`_ - Restore a channel from the archive
-    -  `mattermost channel search`_ -  Search a channel by name
+Child Commands
+  -  `mattermost channel add`_ - Add users to a channel
+  -  `mattermost channel archive`_ - Archive a channel
+  -  `mattermost channel create`_ - Create a channel
+  -  `mattermost channel delete`_ - Delete a channel
+  -  `mattermost channel list`_ - List all channels on specified teams
+  -  `mattermost channel modify`_ - Modify a channel's public/private type
+  -  `mattermost channel move`_ - Move a channel to another team
+  -  `mattermost channel remove`_ - Remove users from a channel
+  -  `mattermost channel rename`_ - Rename a channel
+  -  `mattermost channel restore`_ - Restore a channel from the archive
+  -  `mattermost channel search`_ -  Search a channel by name
 
 .. _channel-value-note:
 
 .. note::
-    **{channel} value**
+  **{channel} value**
 
-    For the *add*, *archive*, *delete*, *remove*, and *restore* commands, you can specify the *{channels}* value by {team}:{channel} using the team and channel URLs, or by using channel IDs. Channel IDs can be obtained via the `API <https://api.mattermost.com/#operation/GetChannelByName>`_ or the `mattermost channel search </manage/mmctl-command-line-tool.html#mmctl-channel-search>`__ command.
+  For the *add*, *archive*, *delete*, *remove*, and *restore* commands, you can specify the *{channels}* value by {team}:{channel} using the team and channel URLs, or by using channel IDs. Channel IDs can be obtained via the `API <https://api.mattermost.com/#operation/GetChannelByName>`_ or the `mattermost channel search </manage/mmctl-command-line-tool.html#mmctl-channel-search>`__ command.
     
-    For example, in the following URL the *{channels}* value is *myteam:mychannel*:
-    
-    ``https://example.com/myteam/channels/mychannel``
+  For example, in the following URL the *{channels}* value is *myteam:mychannel*: ``https://example.com/myteam/channels/mychannel``
 
-    Also, the team and channel names in the URL should be written in lowercase.
+  Also, the team and channel names in the URL should be written in lowercase.
 
 mattermost channel add
 ~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
-   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl channel add </manage/mmctl-command-line-tool.html#mmctl-channel-users-add>`__.
+  From Mattermost v6.0, this command has been replaced with the mmctl command `mmctl channel add </manage/mmctl-command-line-tool.html#mmctl-channel-users-add>`__.
 
 
 Description
-    Add users to a channel. If adding multiple users, use a space-separated list.
+  Add users to a channel. If adding multiple users, use a space-separated list.
 
- Format
-   .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost channel add {channel} {users}
+    mattermost channel add {channel} {users}
 
- Examples
-   .. code-block:: none
+Examples
+  .. code-block:: none
 
-      bin/mattermost channel add 8soyabwthjnf9qibfztje5a36h user@example.com username
-      bin/mattermost channel add myteam:mychannel user@example.com username
+    bin/mattermost channel add 8soyabwthjnf9qibfztje5a36h user@example.com username
+    bin/mattermost channel add myteam:mychannel user@example.com username
 
 mattermost channel archive
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
-   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl channel archive </manage/mmctl-command-line-tool.html#mmctl-channel-archive>`__.
+  From Mattermost v6.0, this command has been replaced with the mmctl command `mmctl channel archive </manage/mmctl-command-line-tool.html#mmctl-channel-archive>`__.
 
 
 Description
-    Archive a channel. Archived channels are not accessible to users, but remain in the database. To restore a channel from the archive, see `mattermost channel restore`_. Channels can be specified by {team}:{channel} using the team and channel names, or by using channel IDs. Channel IDs can be obtained via the `API <https://api.mattermost.com/#operation/GetChannelByName>`_ or the `mattermost channel search </manage/mmctl-command-line-tool.html#mmctl-channel-search>`__ command.
+  Archive a channel. Archived channels are not accessible to users, but remain in the database. To restore a channel from the archive, see `mattermost channel restore`_. Channels can be specified by {team}:{channel} using the team and channel names, or by using channel IDs. Channel IDs can be obtained via the `API <https://api.mattermost.com/#operation/GetChannelByName>`_ or the `mattermost channel search </manage/mmctl-command-line-tool.html#mmctl-channel-search>`__ command.
     
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost channel archive {channels}
+    mattermost channel archive {channels}
 
-  Examples
-    .. code-block:: none
+Examples
+  .. code-block:: none
 
-      bin/mattermost channel archive 8soyabwthjnf9qibfztje5a36h
-      bin/mattermost channel archive myteam:mychannel
+    bin/mattermost channel archive 8soyabwthjnf9qibfztje5a36h
+    bin/mattermost channel archive myteam:mychannel
 
 mattermost channel create
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
-   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl channel create </manage/mmctl-command-line-tool.html#mmctl-channel-create>`__.
+  From Mattermost v6.0, this command has been replaced with the mmctl command `mmctl channel create </manage/mmctl-command-line-tool.html#mmctl-channel-create>`__.
 
 
 Description
-    Create a channel.
+  Create a channel.
 
- Format
-   .. code-block:: none
+Format
+  .. code-block:: none
 
-     mattermost channel create
+    mattermost channel create
 
- Examples
-   .. code-block:: none
+Examples
+  .. code-block:: none
 
-      bin/mattermost channel create --team myteam --name mynewchannel --display_name "My New Channel"
-      bin/mattermost channel create --team myteam --name mynewprivatechannel --display_name "My New Private Channel" --private
+    bin/mattermost channel create --team myteam --name mynewchannel --display_name "My New Channel"
+    bin/mattermost channel create --team myteam --name mynewprivatechannel --display_name "My New Private Channel" --private
 
- Options
-   .. code-block:: none
+Options
+  .. code-block:: none
 
-      --display_name string   Channel Display Name
-      --header string         Channel header
-      --name string           Channel Name
-      --private               Create a private channel.
-      --purpose string        Channel purpose
-      --team string           Team name or ID
+    --display_name string   Channel Display Name
+    --header string         Channel header
+    --name string           Channel Name
+    --private               Create a private channel.
+    --purpose string        Channel purpose
+    --team string           Team name or ID
 
 mattermost channel delete
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
-   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl channel delete </manage/mmctl-command-line-tool.html#mmctl-channel-delete>`__.
+  From Mattermost v6.0, this command has been replaced with the mmctl command `mmctl channel delete </manage/mmctl-command-line-tool.html#mmctl-channel-delete>`__.
 
 Description
-    Permanently delete a channel along with all related information, including posts from the database. Channels can be specified by {team}:{channel} using the team and channel names, or by using channel IDs. Channel IDs can be obtained via the `API <https://api.mattermost.com/#operation/GetChannelByName>`_ or the `mattermost channel search </manage/mmctl-command-line-tool.html#mmctl-channel-search>`__ command.
+  Permanently delete a channel along with all related information, including posts from the database. Channels can be specified by {team}:{channel} using the team and channel names, or by using channel IDs. Channel IDs can be obtained via the `API <https://api.mattermost.com/#operation/GetChannelByName>`_ or the `mattermost channel search </manage/mmctl-command-line-tool.html#mmctl-channel-search>`__ command.
 
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost channel delete {channels}
+    mattermost channel delete {channels}
 
-  Examples
-    .. code-block:: none
+Examples
+  .. code-block:: none
 
-      bin/mattermost channel delete 8soyabwthjnf9qibfztje5a36h
-      bin/mattermost channel delete myteam:mychannel
+    bin/mattermost channel delete 8soyabwthjnf9qibfztje5a36h
+    bin/mattermost channel delete myteam:mychannel
 
 mattermost channel list
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
-   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl channel list </manage/mmctl-command-line-tool.html#mmctl-channel-list>`__.
+  From Mattermost v6.0, this command has been replaced with the mmctl command `mmctl channel list </manage/mmctl-command-line-tool.html#mmctl-channel-list>`__.
 
 
 Description
-    List all channels on a specified team. Private channels are appended with ``(private)`` and archived channels are appended with ``(archived)``.
+  List all channels on a specified team. Private channels are appended with ``(private)`` and archived channels are appended with ``(archived)``.
 
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost channel list {teams}
+    mattermost channel list {teams}
 
-  Example
-    .. code-block:: none
+Example
+  .. code-block:: none
 
-      bin/mattermost channel list myteam
+    bin/mattermost channel list myteam
 
 mattermost channel modify
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Description
-    Modify a channel's public/private type.
+  Modify a channel's public/private type.
 
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost channel modify
+    mattermost channel modify
 
-  Example
-    .. code-block:: none
+Example
+  .. code-block:: none
 
-      bin/mattermost channel modify myteam:mychannel --username myusername --private
+    bin/mattermost channel modify myteam:mychannel --username myusername --private
 
-  Options
-    .. code-block:: none
+Options
+  .. code-block:: none
 
-          --username [REQUIRED] Username of the user who is changing the channel privacy.
-          --public   Change a private channel to be public.
-          --private  Change a public channel to be private.
+    --username [REQUIRED] Username of the user who is changing the channel privacy.
+    --public   Change a private channel to be public.
+    --private  Change a public channel to be private.
 
 mattermost channel move
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
-   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl channel move </manage/mmctl-command-line-tool.html#mmctl-channel-move>`__.
+  From Mattermost v6.0, this command has been replaced with the mmctl command `mmctl channel move </manage/mmctl-command-line-tool.html#mmctl-channel-move>`__.
 
 Description
-    Move channels to another team. The command validates that all users in the channel belong to the target team. Incoming/outgoing webhooks are moved along with the channel. Channels can be specified by ``[team]:[channel]`` or by using channel IDs. Channel IDs can be obtained via the `API <https://api.mattermost.com/#operation/GetChannelByName>`_ or the `mattermost channel search </manage/mmctl-command-line-tool.html#mmctl-channel-search>`__ command.
+  Move channels to another team. The command validates that all users in the channel belong to the target team. Incoming/outgoing webhooks are moved along with the channel. Channels can be specified by ``[team]:[channel]`` or by using channel IDs. Channel IDs can be obtained via the `API <https://api.mattermost.com/#operation/GetChannelByName>`_ or the `mattermost channel search </manage/mmctl-command-line-tool.html#mmctl-channel-search>`__ command.
     
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost channel move
+    mattermost channel move
 
-  Example
-    .. code-block:: none
+Example
+  .. code-block:: none
 
-      bin/mattermost channel move newteam 8soyabwthjnf9qibfztje5a36h --username myusername
-      bin/mattermost channel move newteam myteam:mychannel --username myusername
+    bin/mattermost channel move newteam 8soyabwthjnf9qibfztje5a36h --username myusername
+    bin/mattermost channel move newteam myteam:mychannel --username myusername
 
-  Options
-    .. code-block:: none
+Options
+  .. code-block:: none
 
-          --username [REQUIRED] Username of the user who is moving the team.
-          --remove-deactivated-users [OPTIONAL] When moving the channel, remove any users who have been deactivated who may be preventing the move.
+    --username [REQUIRED]                 Username of the user who is moving the team.
+    --remove-deactivated-users [OPTIONAL] When moving the channel, remove any users who have been deactivated who may be preventing the move.
 
 mattermost channel remove
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
-   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl channel remove </manage/mmctl-command-line-tool.html#mmctl-channel-users-remove>`__.
+  From Mattermost v6.0, this command has been replaced with the mmctl command `mmctl channel remove </manage/mmctl-command-line-tool.html#mmctl-channel-users-remove>`__.
 
 Description
-    Remove users from a channel.
+  Remove users from a channel.
 
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
       mattermost channel remove {channel} {users}
 
-  Examples
-    .. code-block:: none
+Examples
+  .. code-block:: none
 
-      bin/mattermost channel remove 8soyabwthjnf9qibfztje5a36h user@example.com username
-      bin/mattermost channel remove myteam:mychannel user@example.com username
-      bin/mattermost channel remove myteam:mychannel --all-users
+    bin/mattermost channel remove 8soyabwthjnf9qibfztje5a36h user@example.com username
+    bin/mattermost channel remove myteam:mychannel user@example.com username
+    bin/mattermost channel remove myteam:mychannel --all-users
 
-  Options
-    .. code-block:: none
+Options
+  .. code-block:: none
 
-          --all-users string     Remove all users from the channel.
+    --all-users string     Remove all users from the channel.
 
 mattermost channel rename
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
-   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl channel rename </manage/mmctl-command-line-tool.html#mmctl-channel-rename>`__.
+  From Mattermost v6.0, this command has been replaced with the mmctl command `mmctl channel rename </manage/mmctl-command-line-tool.html#mmctl-channel-rename>`__.
 
 Description
-    Rename a channel. Channels can be specified by *{team}:{channel}* using the team and channel names, or by using channel IDs. Channel IDs can be obtained via the `API <https://api.mattermost.com/#operation/GetChannelByName>`_ or the `mattermost channel search </manage/mmctl-command-line-tool.html#mmctl-channel-search>`__ command.
+  Rename a channel. Channels can be specified by *{team}:{channel}* using the team and channel names, or by using channel IDs. Channel IDs can be obtained via the `API <https://api.mattermost.com/#operation/GetChannelByName>`_ or the `mattermost channel search </manage/mmctl-command-line-tool.html#mmctl-channel-search>`__ command.
 
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost channel rename {channel} newchannelname --display_name "New Display Name"
+    mattermost channel rename {channel} newchannelname --display_name "New Display Name"
 
-  Examples
-    .. code-block:: none
+Examples
+  .. code-block:: none
 
-      bin/mattermost channel rename 8soyabwthjnf9qibfztje5a36h newchannelname --display_name "New Display Name"
-      bin/mattermost channel rename myteam:mychannel newchannelname --display_name "New Display Name"
+    bin/mattermost channel rename 8soyabwthjnf9qibfztje5a36h newchannelname --display_name "New Display Name"
+    bin/mattermost channel rename myteam:mychannel newchannelname --display_name "New Display Name"
 
-  Options
-    .. code-block:: none
+Options
+  .. code-block:: none
 
-      --display_name string   Channel Display Name
+    --display_name string   Channel Display Name
 
 mattermost channel restore
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
-   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl channel restore </manage/mmctl-command-line-tool.html#mmctl-channel-restore>`__.
+  From Mattermost v6.0, this command has been replaced with the mmctl command `mmctl channel restore </manage/mmctl-command-line-tool.html#mmctl-channel-restore>`__.
 
 Description
-    Restore a channel from the archive. Channels can be specified by {team}:{channel} using the team and channel names, or by using channel IDs. Channel IDs can be obtained via the `API <https://api.mattermost.com/#operation/GetChannelByName>`_ or the `mattermost channel search </manage/mmctl-command-line-tool.html#mmctl-channel-search>`__ command.
+  Restore a channel from the archive. Channels can be specified by {team}:{channel} using the team and channel names, or by using channel IDs. Channel IDs can be obtained via the `API <https://api.mattermost.com/#operation/GetChannelByName>`_ or the `mattermost channel search </manage/mmctl-command-line-tool.html#mmctl-channel-search>`__ command.
   
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost channel restore {channels}
+    mattermost channel restore {channels}
 
-  Examples
-    .. code-block:: none
+Examples
+  .. code-block:: none
 
-      bin/mattermost channel restore 8soyabwthjnf9qibfztje5a36h
-      bin/mattermost channel restore myteam:mychannel
+    bin/mattermost channel restore 8soyabwthjnf9qibfztje5a36h
+    bin/mattermost channel restore myteam:mychannel
 
 mattermost channel search
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
-   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl channel search </manage/mmctl-command-line-tool.html#mmctl-channel-search>`__.
+  From Mattermost v6.0, this command has been replaced with the mmctl command `mmctl channel search </manage/mmctl-command-line-tool.html#mmctl-channel-search>`__.
 
 Description
-    Search for a channel by channel name. Returns channel display name, channel Id, and indicates if it is private or archived. Private channels are appended with ``(private)`` and archived channels are appended with ``(archived)``.
+  Search for a channel by channel name. Returns channel display name, channel Id, and indicates if it is private or archived. Private channels are appended with ``(private)`` and archived channels are appended with ``(archived)``.
 
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost channel search {channelName}
+    mattermost channel search {channelName}
 
-  Examples
-    .. code-block:: none
+Examples
+  .. code-block:: none
 
-      bin/mattermost channel search mychannel
-      bin/mattermost channel search --team myteam mychannel
-      bin/mattermost channel search --team f1924a8db44ff3bb41c96424cdc20676 mychannel
+    bin/mattermost channel search mychannel
+    bin/mattermost channel search --team myteam mychannel
+    bin/mattermost channel search --team f1924a8db44ff3bb41c96424cdc20676 mychannel
 
-  Options
-    .. code-block:: none
+Options
+  .. code-block:: none
 
-      --team   Team Name or Team ID
+    --team   Team Name or Team ID
+
+----
 
 mattermost command
 ------------------
 
-  Description
-    Commands for slash command management.
+Description
+  Commands for slash command management.
 
-  Child Commands
-    -  `mattermost command create`_ - Create a custom slash command for a specified team.
-    -  `mattermost command delete`_ - Delete a slash command.
-    -  `mattermost command list`_ - List all commands on specified teams or all teams by default.
-    -  `mattermost command modify`_ - Modify a slash command.
-    -  `mattermost command move`_ - Move a slash command to a different team.
-    -  `mattermost command show`_ - Show a custom slash command.
+Child Commands
+  -  `mattermost command create`_ - Create a custom slash command for a specified team.
+  -  `mattermost command delete`_ - Delete a slash command.
+  -  `mattermost command list`_ - List all commands on specified teams or all teams by default.
+  -  `mattermost command modify`_ - Modify a slash command.
+  -  `mattermost command move`_ - Move a slash command to a different team.
+  -  `mattermost command show`_ - Show a custom slash command.
 
 mattermost command create
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
-   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl command create </manage/mmctl-command-line-tool.html#mmctl-command-create>`__.
+  From Mattermost v6.0, this command has been replaced with the mmctl command `mmctl command create </manage/mmctl-command-line-tool.html#mmctl-command-create>`__.
 
 Description
-    Create a custom slash command for a specified team.
+  Create a custom slash command for a specified team.
 
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost command create
+    mattermost command create
 
-  Examples
-    .. code-block:: none
+Examples
+  .. code-block:: none
 
-       bin/mattermost command create myteam --title MyCommand --description "My Command Description" --trigger-word mycommand --url http://localhost:8000/my-slash-handler --creator myusername --response-username my-bot-username --icon http://localhost:8000/my-slash-handler-bot-icon.png --autocomplete --post
+    bin/mattermost command create myteam --title MyCommand --description "My Command Description" --trigger-word mycommand --url http://localhost:8000/my-slash-handler --creator myusername --response-username my-bot-username --icon http://localhost:8000/my-slash-handler-bot-icon.png --autocomplete --post
 
-  Options
-    .. code-block:: none
+Options
+  .. code-block:: none
 
-          --title string                     Command Title
-          --description string               Command Description
-          --trigger-word string [REQUIRED]   Command Trigger Word
-          --url  string   [REQUIRED]         Command Callback URL
-          --creator string  [REQUIRED]       Command Creator's Username
-          --response-username string         Command Response Username
-          --icon string                      Command icon URL
-          --autocomplete bool                Show command in autocomplete list
-          --autocompleteDesc string          Short command description for autocomplete list
-          --autocompleteHint string          Command arguments displayed as help in autocomplete list
-          --post bool                        Use POST method for callback URL
+    --title string                     Command Title
+    --description string               Command Description
+    --trigger-word string [REQUIRED]   Command Trigger Word
+    --url  string   [REQUIRED]         Command Callback URL
+    --creator string  [REQUIRED]       Command Creator's Username
+    --response-username string         Command Response Username
+    --icon string                      Command icon URL
+    --autocomplete bool                Show command in autocomplete list
+    --autocompleteDesc string          Short command description for autocomplete list
+    --autocompleteHint string          Command arguments displayed as help in autocomplete list
+    --post bool                        Use POST method for callback URL
 
 mattermost command delete
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
-   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl command delete </manage/mmctl-command-line-tool.html#mmctl-command-delete>`__.
+  From Mattermost v6.0, this command has been replaced with the mmctl command `mmctl command delete </manage/mmctl-command-line-tool.html#mmctl-command-delete>`__.
 
 Description
-    Delete a slash command. Commands can be specified by command ID.
+  Delete a slash command. Commands can be specified by command ID.
 
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost command delete {commandID}
+    mattermost command delete {commandID}
 
-  Examples
-    .. code-block:: none
+Examples
+  .. code-block:: none
 
-       bin/mattermost command delete commandID
+    bin/mattermost command delete commandID
 
 mattermost command list
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
-   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl command list </manage/mmctl-command-line-tool.html#mmctl-command-list>`__.
+  From Mattermost v6.0, this command has been replaced with the mmctl command `mmctl command list </manage/mmctl-command-line-tool.html#mmctl-command-list>`__.
 
 
 Description
-    List all commands on specified teams or all teams by default.
+  List all commands on specified teams or all teams by default.
 
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost command list {team}
+    mattermost command list {team}
 
-  Examples
-    .. code-block:: none
+Examples
+  .. code-block:: none
 
-       bin/mattermost command list myteam
+    bin/mattermost command list myteam
 
 mattermost command modify
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  Description
-    Modify a slash command. Commands can be specified by command ID.
+Description
+  Modify a slash command. Commands can be specified by command ID.
 
 .. note::
-    Only fields that you want to modify need to be specified.  Also, when modifying the command's creator, the new creator specified must have the permission to create commands.
+  Only fields that you want to modify need to be specified.  Also, when modifying the command's creator, the new creator specified must have the permission to create commands.
 
 
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost command modify {commandID}
+    mattermost command modify {commandID}
 
-  Examples
-    .. code-block:: none
+Examples
+  .. code-block:: none
 
-       bin/mattermost command modify commandID --title MyModifiedCommand --description "My Modified Command Description" --trigger-word mycommand --url http://localhost:8000/my-slash-handler --creator myusername --response-username my-bot-username --icon http://localhost:8000/my-slash-handler-bot-icon.png --autocomplete --post
+    bin/mattermost command modify commandID --title MyModifiedCommand --description "My Modified Command Description" --trigger-word mycommand --url http://localhost:8000/my-slash-handler --creator myusername --response-username my-bot-username --icon http://localhost:8000/my-slash-handler-bot-icon.png --autocomplete --post
 
-  Options
-    .. code-block:: none
+Options
+  .. code-block:: none
 
-          --title string                     Command Title
-          --description string               Command Description
-          --trigger-word string              Command Trigger Word
-          --url  string                      Command Callback URL
-          --creator string                   Command Creator's Username
-          --response-username string         Command Response Username
-          --icon string                      Command Icon URL
-          --autocomplete bool                Show command in autocomplete list
-          --autocompleteDesc string          Short command description for autocomplete list
-          --autocompleteHint string          Command arguments displayed as help in autocomplete list
-          --post bool                        Use POST method for callback URL, else use GET method
+    --title string                     Command Title
+    --description string               Command Description
+    --trigger-word string              Command Trigger Word
+    --url  string                      Command Callback URL
+    --creator string                   Command Creator's Username
+    --response-username string         Command Response Username
+    --icon string                      Command Icon URL
+    --autocomplete bool                Show command in autocomplete list
+    --autocompleteDesc string          Short command description for autocomplete list
+    --autocompleteHint string          Command arguments displayed as help in autocomplete list
+    --post bool                        Use POST method for callback URL, else use GET method
 
 mattermost command move
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-  Description
-    Move a slash command to a different team. Commands can be specified by {team}:{command-trigger-word}, or by using command IDs.
+Description
+  Move a slash command to a different team. Commands can be specified by {team}:{command-trigger-word}, or by using command IDs.
 
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost command move
+    mattermost command move
 
-  Examples
-    .. code-block:: none
+Examples
+  .. code-block:: none
 
-      bin/mattermost command move newteam oldteam:command-trigger-word
-      bin/mattermost command move newteam o8soyabwthjnf9qibfztje5a36h
+    bin/mattermost command move newteam oldteam:command-trigger-word
+    bin/mattermost command move newteam o8soyabwthjnf9qibfztje5a36h
 
 mattermost command show
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-  Description
-    Show a custom slash command. Commands can be specified by command ID. Returns command ID, team ID, trigger word, display name and creator username.
+Description
+  Show a custom slash command. Commands can be specified by command ID. Returns command ID, team ID, trigger word, display name and creator username.
 
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      command show {commandID}
+    command show {commandID}
 
-  Examples
-    .. code-block:: none
+Examples
+  .. code-block:: none
 
-      bin/mattermost command show commandID
+    bin/mattermost command show commandID
+
+----
 
 mattermost config
 -----------------
 
-  Description
-    Commands for managing the configuration file.
+Description
+  Commands for managing the configuration file.
 
-  Child Command
-    - `mattermost config get`_ - Retrieve the value of a config setting by its name in dot notation.
-    - `mattermost config migrate`_ - Migrate a file-based configuration to (or from) a database-based configuration.
-    - `mattermost config reset`_ - Resets the value of a config setting by its name in dot notation or a setting section.
-    - `mattermost config set`_ - Set the value of a config setting by its name in dot notation.
-    - `mattermost config show`_ - Print the current mattermost configuration in an easy to read format.
-    - `mattermost config validate`_ - Validate the configuration file.
+Child Command
+  - `mattermost config get`_ - Retrieve the value of a config setting by its name in dot notation.
+  - `mattermost config migrate`_ - Migrate a file-based configuration to (or from) a database-based configuration.
+  - `mattermost config reset`_ - Resets the value of a config setting by its name in dot notation or a setting section.
+  - `mattermost config set`_ - Set the value of a config setting by its name in dot notation.
+  - `mattermost config show`_ - Print the current mattermost configuration in an easy to read format.
+  - `mattermost config validate`_ - Validate the configuration file.
 
 mattermost config get
 ~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
-   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl config get </manage/mmctl-command-line-tool.html#mmctl-config-get>`__.
+  From Mattermost v6.0, this command has been replaced with the mmctl command `mmctl config get </manage/mmctl-command-line-tool.html#mmctl-config-get>`__.
 
 Description
-    Retrieve the value of a config setting by its name in dot notation.
+  Retrieve the value of a config setting by its name in dot notation.
 
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost config get {config.name}
+    mattermost config get {config.name}
 
-  Examples
-    .. code-block:: none
+Examples
+  .. code-block:: none
 
-       bin/mattermost config get SqlSettings.DriverName
+    bin/mattermost config get SqlSettings.DriverName
 
- Options
-    .. code-block:: none
+Options
+  .. code-block:: none
 
-          --path string  Optional subpath; defaults to value in Site URL.
+    --path string  Optional subpath; defaults to value in Site URL.
 
 mattermost config migrate
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  Description
-    Migrate a file-based configuration to (or from) a database-based configuration. Point the Mattermost server at the target configuration to start using it. If using SAML, ensure the SAML certificates and keys are accessible to also migrate into the database.
+Description
+  Migrate a file-based configuration to (or from) a database-based configuration. Point the Mattermost server at the target configuration to start using it. If using SAML, ensure the SAML certificates and keys are accessible to also migrate into the database.
 
 .. note::
-    If a ``from`` parameter is not specified, the command will fall back to what is specified in --config.
+  If a ``from`` parameter is not specified, the command will fall back to what is specified in --config.
 
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost config migrate {config to read} {config to write}
+    mattermost config migrate {config to read} {config to write}
 
-  Examples
-    .. code-block:: none
+Examples
+  .. code-block:: none
 
-       bin/mattermost config migrate  path/to/config.json "postgres://mmuser:mostest@dockerhost:5432/mattermost_test?sslmode=disable&connect_timeout=10"
+    bin/mattermost config migrate  path/to/config.json "postgres://mmuser:mostest@dockerhost:5432/mattermost_test?sslmode=disable&connect_timeout=10"
 
 mattermost config reset
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  Description
-    Resets the value of a config setting by its name in dot notation or a setting section to the default value. Accepts multiple values for array settings. When no parameters are given, it will reset all config settings.
+Description
+  Resets the value of a config setting by its name in dot notation or a setting section to the default value. Accepts multiple values for array settings. When no parameters are given, it will reset all config settings.
 
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost config reset {config.name} {setting section}
+    mattermost config reset {config.name} {setting section}
 
-  Examples
-    .. code-block:: none
+Examples
+  .. code-block:: none
 
-       bin/mattermost config reset SqlSettings.DriverName LogSettings
+    bin/mattermost config reset SqlSettings.DriverName LogSettings
 
-  Options
-    .. code-block:: none
+Options
+  .. code-block:: none
 
-       --confirm  Confirm you really want to reset the config setting and a backup has been performed.
+    --confirm  Confirm you really want to reset the config setting and a backup has been performed.
 
 mattermost config set
 ~~~~~~~~~~~~~~~~~~~~~
 
-  Description
+Description
     Set the value of a config setting by its name in dot notation. Accepts multiple values for array settings.
 
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost config set {config.name} {setting new value}
+    mattermost config set {config.name} {setting new value}
 
-  Examples
-    .. code-block:: none
+Examples
+  .. code-block:: none
 
-       bin/mattermost config set SqlSettings.DriverName mysql
+   bin/mattermost config set SqlSettings.DriverName postgres
 
-  Options
-   .. code-block:: none
+Options
+  .. code-block:: none
 
-       --path string  Optional subpath; defaults to value in Site URL.
+    --path string  Optional subpath; defaults to value in Site URL.
 
 mattermost config show
 ~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
-   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl config </manage/mmctl-command-line-tool.html#mmctl-config-show>`__.
+  From Mattermost v6.0, this command has been replaced with the mmctl command `mmctl config </manage/mmctl-command-line-tool.html#mmctl-config-show>`__.
 
 Description
-    Print the current mattermost configuration in an easy to read format.
+  Print the current mattermost configuration in an easy to read format.
 
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost config show
+    mattermost config show
 
-  Examples
-    .. code-block:: none
+Examples
+  .. code-block:: none
 
-       bin/mattermost config show
+    bin/mattermost config show
 
 mattermost config validate
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  Description
-    Makes sure the configuration file has the following properties:
+Description
+  Makes sure the configuration file has the following properties:
 
-    - Is valid JSON.
-    - Has attributes of the correct type, such as *bool*, *int*, and *str*.
-    - All entries are valid. For example, checks that entries are below the maximum length.
+  - Is valid JSON.
+  - Has attributes of the correct type, such as *bool*, *int*, and *str*.
+  - All entries are valid. For example, checks that entries are below the maximum length.
 
-  Format
-      .. code-block:: none
+Format
+  .. code-block:: none
 
-        mattermost config validate
+    mattermost config validate
 
-  Example
-      .. code-block:: none
+Example
+  .. code-block:: none
 
-        bin/mattermost config validate
-	
+    bin/mattermost config validate
+
+----
+
 mattermost db init
 ------------------
 
-  Description
+Description
     Initializes the database for a given data source name (DSN), executes migrations, and loads custom defaults when specified.
 
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost db init
+    mattermost db init
 
-  Examples
-  
-    Use the ``config`` flag to pass the DSN:
+Examples
+  Use the ``config`` flag to pass the DSN:
     
-    .. code-block:: none
+  .. code-block:: none
 
-       mattermost db init --config postgres://localhost/mattermost
+    mattermost db init --config postgres://localhost/mattermost
        
-    Run this command to use the ``MM_CONFIG`` environment variable:
+  Run this command to use the ``MM_CONFIG`` environment variable:
     
-    .. code-block:: none
+  .. code-block:: none
       
-       MM_CONFIG=postgres://localhost/mattermost mattermost db init
+    MM_CONFIG=postgres://localhost/mattermost mattermost db init
     
-    Run this command to set a custom defaults file to be loaded into the database: 
+  Run this command to set a custom defaults file to be loaded into the database: 
     
-    .. code-block:: none
+  .. code-block:: none
     
-       MM_CUSTOM_DEFAULTS_PATH=custom.json MM_CONFIG=postgres://localhost/mattermost mattermost db init
-       
+    MM_CUSTOM_DEFAULTS_PATH=custom.json MM_CONFIG=postgres://localhost/mattermost mattermost db init
+
+----
+
 mattermost db migrate
 ---------------------
 
-  Description
-    Migrates the database schema if there are any unapplied migrations.
+Description
+  Migrates the database schema if there are any unapplied migrations.
 
-  Format
-    .. code-block:: none
+Child Commands
+  -  `mattermost db downgrade`_ - Roll back database migrations.
 
-      mattermost db migrate
+Format
+  .. code-block:: none
 
-  Examples
-    
-    .. code-block:: none
+    mattermost db migrate
 
-       mattermost db migrate
+Example
+  .. code-block:: none
+
+    mattermost db migrate
+
+Options
+  .. code-block:: none
+
+    --auto-recover bool     If the migration plan receives an error during migrations, this command will try to rollback migrations already applied within the plan. Not recommended without reviewing migration plan by combining --save-plan and --dry-run options.
+    --save-plan bool        Saves the plan for the migration into the file store so that it can be used for reviewing the plan or for downgrading.
+    --dry-run bool          Does not apply the migrations, but it validates how the migration would run based on the given conditions.
+
+mattermost db downgrade
+~~~~~~~~~~~~~~~~~~~~~~~
+
+Description
+  Rolls back database migrations. Requires either an update plan to roll back to, or comma-separated version numbers to be rolled back.
+
+Format
+  .. code-block:: none
+
+    mattermost db downgrade
+
+Example
+  .. code-block:: none
+
+    mattermost db downgrade 99,100,101
+
+Options
+  .. code-block:: none
+
+    --<plan-file> string      Runs the rollback migrations defined in the plan file.
+
+----
 
 mattermost export
 -----------------
 
-  Description
-   Commands for exporting data for compliance and for merging multiple Mattermost instances.
+Description
+  Commands for exporting data for compliance and for merging multiple Mattermost instances.
 
-  Child Commands
-    -  `mattermost export actiance`_ - Export data from Mattermost in Actiance XML format. Requires a Mattermost Enterprise subscription plan.
-    -  `mattermost export bulk`_ - Export data to a file compatible with the Mattermost `Bulk Import format </onboard/bulk-loading-data.html>`__
-    -  `mattermost export csv`_ - Export data from Mattermost in CSV format. Requires a Mattermost Enterprise subscription plan.
-    -  `mattermost export global-relay-zip`_ - Export data from Mattermost into a ZIP file containing emails to send to Global Relay for debug and testing purposes only. Requires a Mattermost Enterprise subscription plan.
-    -  `mattermost export schedule`_ - Schedule an export job
+Child Commands
+  -  `mattermost export actiance`_ - Export data from Mattermost in Actiance XML format. Requires a Mattermost Enterprise subscription plan.
+  -  `mattermost export bulk`_ - Export data to a file compatible with the Mattermost `Bulk Import format </onboard/bulk-loading-data.html>`__
+  -  `mattermost export csv`_ - Export data from Mattermost in CSV format. Requires a Mattermost Enterprise subscription plan.
+  -  `mattermost export global-relay-zip`_ - Export data from Mattermost into a ZIP file containing emails to send to Global Relay for debug and testing purposes only. Requires a Mattermost Enterprise subscription plan.
+  -  `mattermost export schedule`_ - Schedule an export job
 
 mattermost export actiance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  Description
+Description
     Export data from Mattermost in Actiance XML format.
 
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost export actiance
+    mattermost export actiance
 
-  Example
-    .. code-block:: none
+Example
+  .. code-block:: none
 
-      bin/mattermost export actiance --exportFrom=1513102632
+    bin/mattermost export actiance --exportFrom=1513102632
 
-  Options
-    .. code-block:: none
+Options
+  .. code-block:: none
 
-          --exportFrom string     Unix timestamp (milliseconds since epoch, UTC) to export data from.
-          --batchSize int         The number of posts to export. The default of -1 means no limit.
+    --exportFrom string     Unix timestamp (milliseconds since epoch, UTC) to export data from.
+    --batchSize int         The number of posts to export. The default of -1 means no limit.
 
 mattermost export bulk
 ~~~~~~~~~~~~~~~~~~~~~~
 
-  Description
-    Export data to a file compatible with the Mattermost `Bulk Import format </onboard/bulk-loading-data.html>`__.
+Description
+  Export data to a file compatible with the Mattermost `Bulk Import format </onboard/bulk-loading-data.html>`__.
 
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost export bulk
+    mattermost export bulk
 
-  Example
-    .. code-block:: none
+Example
+  .. code-block:: none
 
-      bin/mattermost export bulk file.json --all-teams
+    bin/mattermost export bulk file.json --all-teams
 
-  Options
-    .. code-block:: none
+Options
+  .. code-block:: none
 
-      --all-teams bool   [REQUIRED] Export all teams from the server.
-      --attachments bool Also export file attachments.
-      --archive bool     Outputs a single archive file.
+    --all-teams bool   [REQUIRED] Export all teams from the server.
+    --attachments bool Also export file attachments.
+    --archive bool     Outputs a single archive file.
 
 mattermost export csv
 ~~~~~~~~~~~~~~~~~~~~~
 
-  Description
-    Export data from Mattermost in CSV format.
+Description
+  Export data from Mattermost in CSV format.
 
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost export csv
+    mattermost export csv
 
-  Example
-    .. code-block:: none
+Example
+  .. code-block:: none
 
-      bin/mattermost export csv --exportFrom=1513102632
+    bin/mattermost export csv --exportFrom=1513102632
 
-  Options
-    .. code-block:: none
+Options
+  .. code-block:: none
 
-        --exportFrom string     Unix timestamp (seconds since epoch, UTC) to export data from.
-        --batchSize int         The number of posts to export. The default of -1 means no limit.
+    --exportFrom string     Unix timestamp (seconds since epoch, UTC) to export data from.
+    --batchSize int         The number of posts to export. The default of -1 means no limit.
 
 mattermost export global-relay-zip
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  Description
-    Export data from Mattermost into a zip file containing emails to send to Global Relay for debug and testing purposes only. This does not archive any information in Global Relay.
+Description
+  Export data from Mattermost into a zip file containing emails to send to Global Relay for debug and testing purposes only. This does not archive any information in Global Relay.
 
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost export global-relay-zip
+    mattermost export global-relay-zip
 
-  Example
-    .. code-block:: none
+Example
+  .. code-block:: none
 
-      bin/mattermost export global-relay-zip --exportFrom=1513102632
+    bin/mattermost export global-relay-zip --exportFrom=1513102632
 
-  Options
-    .. code-block:: none
+Options
+  .. code-block:: none
 
-        --exportFrom string     Unix timestamp (seconds since epoch, UTC) to export data from.
-        --batchSize int         The number of posts to export. The default of -1 means no limit.
+    --exportFrom string     Unix timestamp (seconds since epoch, UTC) to export data from.
+    --batchSize int         The number of posts to export. The default of -1 means no limit.
 
 mattermost export schedule
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  Description
+Description
     Schedule an export job in a format suitable for importing into a third-party archive system.
 
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost export schedule
+    mattermost export schedule
 
-  Example
-    .. code-block:: none
+Example
+  .. code-block:: none
 
-      bin/mattermost export schedule --format=actiance --exportFrom=1513102632
+    bin/mattermost export schedule --format=actiance --exportFrom=1513102632
 
-  Options
-    .. code-block:: none
+Options
+  .. code-block:: none
 
-          --format string         Output file format. Currently, only ``actiance`` is supported.
-          --exportFrom string     Unix timestamp (seconds since epoch, UTC) to export data from.
-          --timeoutSeconds string Set how long the export should run for before timing out.
+    --format string         Output file format. Currently, only ``actiance`` is supported.
+    --exportFrom string     Unix timestamp (seconds since epoch, UTC) to export data from.
+    --timeoutSeconds string Set how long the export should run for before timing out.
+
+----
 
 mattermost extract-documents-content 
 -------------------------------------
 
-  Description
-    Extracts and indexes the contents of files shared prior to upgrading to Mattermost Server v5.35. Running this command is strongly recommended since search results for past file contents may be incomplete. If this command isn't run, users can search older files based on filename only.
+Description
+  Extracts and indexes the contents of files shared prior to upgrading to Mattermost Server v5.35. Running this command is strongly recommended since search results for past file contents may be incomplete. If this command isn't run, users can search older files based on filename only.
     
-    If you're using `Elasticsearch </scale/elasticsearch.html>`__ search, you must rebuild the search index after running the content extraction command.
+  If you're using `Elasticsearch </scale/elasticsearch.html>`__ search, you must rebuild the search index after running the content extraction command.
     
-    If you're using `Bleve </deploy/bleve-search.html>`__ search, you must disable Bleve before running the content extraction command. Once extraction is complete, re-enable Bleve, then rebuild the search index.
+  If you're using `Bleve </deploy/bleve-search.html>`__ search, you must disable Bleve before running the content extraction command. Once extraction is complete, re-enable Bleve, then rebuild the search index.
 
-    You can run this extraction command while the server is running. Running this command adds load to your server. For large deployments, or teams that share many large, text-heavy documents, we recommended you review our `hardware requirements </install/software-hardware-requirements.html#hardware-requirements>`__, and test `enabling content search </configure/configuration-settings.html#enable-document-search-by-content>`__ in a staging environment before enabling it in a production environment.
+  You can run this extraction command while the server is running. Running this command adds load to your server. For large deployments, or teams that share many large, text-heavy documents, we recommended you review our `hardware requirements </install/software-hardware-requirements.html#hardware-requirements>`__, and test `enabling content search </configure/configuration-settings.html#enable-document-search-by-content>`__ in a staging environment before enabling it in a production environment.
   
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
     
-      mattermost extract-documents-content 
+    mattermost extract-documents-content 
 
-  Example
-    .. code-block:: none
+Example
+  .. code-block:: none
     
-      extract-documents-content --from=12345
+    extract-documents-content --from=12345
   
-  Options
-    .. code-block:: none
+Options
+  .. code-block:: none
     
-      	 --from    Optional. Unix timestamp (seconds since epoch, UTC) of the earliest file to extract. (default 0)
-     	 --to 	   Optional. Unix timestamp (seconds since epoch, UTC) of the latest file to extract. (default now)
+    --from    Optional. Unix timestamp (seconds since epoch, UTC) of the earliest file to extract. (default 0)
+    --to 	    Optional. Unix timestamp (seconds since epoch, UTC) of the latest file to extract. (default now)
+
+----
 
 mattermost group
 -----------------
 
-  Description
-    Commands for managing Mattermost groups.  For more information on Mattermost groups please see `this documentation. </onboard/ad-ldap-groups-synchronization.html>`__.
+Description
+  Commands for managing Mattermost groups.  For more information on Mattermost groups please see `this documentation. </onboard/ad-ldap-groups-synchronization.html>`__.
 
-  Child Commands
-    -  `mattermost group channel`_ - Management of Mattermost groups linked to channels
-    -  `mattermost group team`_ - Management of Mattermost groups linked to teams
+Child Commands
+  -  `mattermost group channel`_ - Management of Mattermost groups linked to channels
+  -  `mattermost group team`_ - Management of Mattermost groups linked to teams
+
+----
 
 mattermost group channel
 ------------------------
 
 .. note::
 
-   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl group channel </manage/mmctl-command-line-tool.html#mmctl-group-channel>`__.
+  From Mattermost v6.0, this command has been replaced with the mmctl command `mmctl group channel </manage/mmctl-command-line-tool.html#mmctl-group-channel>`__.
 
 
-  Description
-    Commands for managing Mattermost groups linked to a channel.
+Description
+  Commands for managing Mattermost groups linked to a channel.
 
-  Child Commands
-    -  `mattermost group channel enable`_ - Enables group constraint on the specified channel
-    -  `mattermost group channel disable`_ - Disables group constraint on the specified channel
-    -  `mattermost group channel list`_ - Lists the groups associated with a channel
-    -  `mattermost group channel status`_ - Shows the group constraint status of the specified channel
+Child Commands
+  -  `mattermost group channel enable`_ - Enables group constraint on the specified channel
+  -  `mattermost group channel disable`_ - Disables group constraint on the specified channel
+  -  `mattermost group channel list`_ - Lists the groups associated with a channel
+  -  `mattermost group channel status`_ - Shows the group constraint status of the specified channel
 
 mattermost group channel enable
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
-   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl group channel enable </manage/mmctl-command-line-tool.html#mmctl-group-channel-enable>`__.
+  From Mattermost v6.0, this command has been replaced with the mmctl command `mmctl group channel enable </manage/mmctl-command-line-tool.html#mmctl-group-channel-enable>`__.
 
 
-  Description
-    Enables group constraint on the specified channel. When a channel is group constrained, channel membership is managed by linked groups instead of managed by manually adding and removing users.
+Description
+  Enables group constraint on the specified channel. When a channel is group constrained, channel membership is managed by linked groups instead of managed by manually adding and removing users.
 
 .. note::
   To enable a group constraint on a specific channel, you must already have at least one group associated. See `AD/LDAP Group documentation </onboard/ad-ldap-groups-synchronization.html#adding-default-teams-or-channels-for-the-group>`_ for more details on how to associate a group to a channel.
 
+Format
+  .. code-block:: none
 
-  Format
-    .. code-block:: none
+    mattermost group channel enable {team}:{channel}
 
-      mattermost group channel enable {team}:{channel}
+Examples
+  .. code-block:: none
 
-  Examples
-    .. code-block:: none
-
-      bin/mattermost group channel enable myteam:mychannel
+    bin/mattermost group channel enable myteam:mychannel
 
 mattermost group channel disable
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
-   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl group channel disable </manage/mmctl-command-line-tool.html#mmctl-group-channel-disable>`__.
+  From Mattermost v6.0, this command has been replaced with the mmctl command `mmctl group channel disable </manage/mmctl-command-line-tool.html#mmctl-group-channel-disable>`__.
 
 Description
     Disables group constraint on the specified channel.
 
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost group channel disable {team}:{channel}
+    mattermost group channel disable {team}:{channel}
 
-  Examples
-    .. code-block:: none
+Examples
+  .. code-block:: none
 
-      bin/mattermost group channel disable myteam:mychannel
+    bin/mattermost group channel disable myteam:mychannel
 
 mattermost group channel list
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
-   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl group channel list </manage/mmctl-command-line-tool.html#mmctl-group-channel-list>`__.
+  From Mattermost v6.0, this command has been replaced with the mmctl command `mmctl group channel list </manage/mmctl-command-line-tool.html#mmctl-group-channel-list>`__.
 
 Description
     Lists the groups associated with a channel.
 
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost group channel list {team}:{channel}
+    mattermost group channel list {team}:{channel}
 
-  Examples
-    .. code-block:: none
+Examples
+  .. code-block:: none
 
-      bin/mattermost group channel list myteam:mychannel
-
+    bin/mattermost group channel list myteam:mychannel
 
 mattermost group channel status
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
-   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl group channel status </manage/mmctl-command-line-tool.html#mmctl-group-channel-status>`__.
+  From Mattermost v6.0, this command has been replaced with the mmctl command `mmctl group channel status </manage/mmctl-command-line-tool.html#mmctl-group-channel-status>`__.
 
 Description
-    Shows the group constraint status of the specified channel. Returns "Enabled" when channel membership is managed by linked groups.  Returns "Disabled" when the channel membership is managed by manually adding and removing users.
+  Shows the group constraint status of the specified channel. Returns "Enabled" when channel membership is managed by linked groups.  Returns "Disabled" when the channel membership is managed by manually adding and removing users.
 
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost group channel status {team}:{channel}
+    mattermost group channel status {team}:{channel}
 
-  Examples
-    .. code-block:: none
+Examples
+  .. code-block:: none
 
-      bin/mattermost group channel status myteam:mychannel
+    bin/mattermost group channel status myteam:mychannel
+
+----
 
 mattermost group team
 ------------------------
 
 .. note::
 
-   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl group team </manage/mmctl-command-line-tool.html#mmctl-group-team>`__.
+  From Mattermost v6.0, this command has been replaced with the mmctl command `mmctl group team </manage/mmctl-command-line-tool.html#mmctl-group-team>`__.
 
 Description
-    Commands for managing Mattermost groups linked to a team.
+  Commands for managing Mattermost groups linked to a team.
 
-  Child Commands
-    -  `mattermost group team enable`_ - Enables group constraint on the specified team
-    -  `mattermost group team disable`_ - Disables group constraint on the specified team
-    -  `mattermost group team list`_ - Lists the groups associated with a team
-    -  `mattermost group team status`_ - Shows the group constraint status of the specified team
+Child Commands
+  -  `mattermost group team enable`_ - Enables group constraint on the specified team
+  -  `mattermost group team disable`_ - Disables group constraint on the specified team
+  -  `mattermost group team list`_ - Lists the groups associated with a team
+  -  `mattermost group team status`_ - Shows the group constraint status of the specified team
 
 mattermost group team enable
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
-   TIn Mattermost v6.0, this command has been replaced with the mmctl command `mmctl group team enable </manage/mmctl-command-line-tool.html#mmctl-group-team-enable>`__.
+  From Mattermost v6.0, this command has been replaced with the mmctl command `mmctl group team enable </manage/mmctl-command-line-tool.html#mmctl-group-team-enable>`__.
 
 Description
-    Enables group constraint on the specified team. When a team is group constrained, team membership is managed by linked groups instead of managed by manually inviting and removing users.
+  Enables group constraint on the specified team. When a team is group constrained, team membership is managed by linked groups instead of managed by manually inviting and removing users.
 
 .. note::
   To enable a group constraint on a specific team, you must already have at least one group associated. See `AD/LDAP Group documentation </onboard/ad-ldap-groups-synchronization.html#adding-default-teams-or-channels-for-the-group>`_ for more details on how to associate a group to a team.
 
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost group team enable {team}
+    mattermost group team enable {team}
 
-  Examples
-    .. code-block:: none
+Examples
+  .. code-block:: none
 
-      bin/mattermost group team enable myteam
+    bin/mattermost group team enable myteam
 
 mattermost group team disable
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
-   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl group team disable </manage/mmctl-command-line-tool.html#mmctl-group-team-disable>`__.
+  From Mattermost v6.0, this command has been replaced with the mmctl command `mmctl group team disable </manage/mmctl-command-line-tool.html#mmctl-group-team-disable>`__.
 
 Description
-    Disables group constraint on the specified team.
+  Disables group constraint on the specified team.
 
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost group team disable {team}
+    mattermost group team disable {team}
 
-  Examples
-    .. code-block:: none
+Examples
+  .. code-block:: none
 
-      bin/mattermost group team disable myteam
+    bin/mattermost group team disable myteam
 
 mattermost group team list
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
-   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl group team list </manage/mmctl-command-line-tool.html#mmctl-group-team-list>`__.
+  From Mattermost v6.0, this command has been replaced with the mmctl command `mmctl group team list </manage/mmctl-command-line-tool.html#mmctl-group-team-list>`__.
 
 Description
-    Lists the groups associated with a team.
+  Lists the groups associated with a team.
 
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost group team list {team}
+    mattermost group team list {team}
 
-  Examples
-    .. code-block:: none
+Examples
+  .. code-block:: none
 
-      bin/mattermost group team list myteam
-
+    bin/mattermost group team list myteam
 
 mattermost group team status
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
-   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl group team status </manage/mmctl-command-line-tool.html#mmctl-group-team-status>`__.
+  From Mattermost v6.0, this command has been replaced with the mmctl command `mmctl group team status </manage/mmctl-command-line-tool.html#mmctl-group-team-status>`__.
 
 Description
-    Shows the group constraint status of the specified team. Returns "Enabled" when team membership is managed by linked groups.  Returns "Disabled" when the team membership is managed by manually inviting and removing users.
+  Shows the group constraint status of the specified team. Returns "Enabled" when team membership is managed by linked groups.  Returns "Disabled" when the team membership is managed by manually inviting and removing users.
 
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost group team status {team}
+    mattermost group team status {team}
 
-  Examples
-    .. code-block:: none
+Examples
+  .. code-block:: none
 
-      bin/mattermost group team status myteam
+    bin/mattermost group team status myteam
+
+----
 
 mattermost help
 ---------------
 
-  Description
-    Generate full documentation in Markdown format for the Mattermost command line tools.
+Description
+  Generate full documentation in Markdown format for the Mattermost command line tools.
 
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost help {outputdir}
+    mattermost help {outputdir}
+
+----
 
 mattermost import
 -----------------
 
-  Description
-    Import data into Mattermost.
+Description
+  Import data into Mattermost.
 
-  Child Command
-    -  `mattermost import bulk`_ - Import a Mattermost Bulk Import File.
-    -  `mattermost import slack`_ - Import a team from Slack.
+Child Command
+  -  `mattermost import bulk`_ - Import a Mattermost Bulk Import File.
+  -  `mattermost import slack`_ - Import a team from Slack.
 
 mattermost import bulk
 ~~~~~~~~~~~~~~~~~~~~~~
 
-  Description
+Description
     Import data from a Mattermost Bulk Import File.
 
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost import bulk {file}
+    mattermost import bulk {file}
 
-  Options
-    .. code-block:: none
+Options
+  .. code-block:: none
 
-          --apply         Save the import data to the database. Use with caution - this cannot be reverted.
-          --validate      Validate the import data without making any changes to the system.
-          --workers int   How many workers to run whilst doing the import. (default 2)
+    --apply        Save the import data to the database. Use with caution - this cannot be reverted.
+    --validate     Validate the import data without making any changes to the system.
+    -workers int   How many workers to run whilst doing the import. (default 2)
 
-  Example
-    .. code-block:: none
+Example
+  .. code-block:: none
 
-      bin/mattermost import bulk bulk-file.jsonl
+    bin/mattermost import bulk bulk-file.jsonl
 
 mattermost import slack
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-  Description
-    Import a team from a Slack export zip file.
+Description
+  Import a team from a Slack export zip file.
 
-  Format
-    .. code-block:: none
+Format
+    . code-block:: none
 
-      mattermost import slack {team} {file}
+    mattermost import slack {team} {file}
 
-  Example
-    .. code-block:: none
+Example
+  .. code-block:: none
 
-      bin/mattermost import slack myteam slack_export.zip
+    bin/mattermost import slack myteam slack_export.zip
+
+----
 
 mattermost integrity
 --------------------
 
-  Description
+Description
     Check database schema integrity as well as referential integrity of channels, slash commands, webhooks, posts, schemes, sessions, users, and teams. This process may temporarily affect live system performance, and should be used during off-peak periods.
 
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost integrity
+    mattermost integrity
 
-  Example
-    .. code-block:: none
+Example
+  .. code-block:: none
 
-      bin/mattermost integrity --confirm --verbose
+    bin/mattermost integrity --confirm --verbose
 
-  Options
-    .. code-block:: none
+Options
+  .. code-block:: none
 
-          --confirm   Optional. Skip the confirmation message which indicates that the complete integrity check may temporarily harm system performance. This is not recommended in production environments.
-	  --verbose   Outputs a detailed report of number and type of orphaned records including ids (if any).
+    --confirm   Optional. Skip the confirmation message which indicates that the complete integrity check may temporarily harm system performance. This is not recommended in production environments.
+    --verbose   Outputs a detailed report of number and type of orphaned records including ids (if any).
 
+----
 
 .. _command-line-tools-mattermost-jobserver:
 
 mattermost jobserver
 --------------------
 
-  Description
-    Start the Mattermost job server.
+Description
+  Start the Mattermost job server.
 
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost jobserver
+    mattermost jobserver
 
-  Example
-    .. code-block:: none
+Example
+  .. code-block:: none
 
-      bin/mattermost jobserver
+    bin/mattermost jobserver
+
+----
 
 mattermost ldap
 ---------------
 
-  Description
-    Commands to configure and synchronize AD/LDAP.
+Description
+  Commands to configure and synchronize AD/LDAP.
 
-  Child Command
-    -  `mattermost ldap idmigrate`_ - Migrate the LDAP Id Attribute to a new value
-    -  `mattermost ldap sync`_ - Synchronize now
+Child Command
+  -  `mattermost ldap idmigrate`_ - Migrate the LDAP Id Attribute to a new value
+  -  `mattermost ldap sync`_ - Synchronize now
 
 mattermost ldap idmigrate
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  Description
-    Migrate LDAP Id Attribute to new value.
+Description
+  Migrate LDAP Id Attribute to new value.
 
-    Run this utility to change the value of your ID Attribute without your users losing their accounts. After running the command you can change the ID Attribute to the new value in your ``config.json``. For example, if your current ID Attribute was ``sAMAccountName`` and you wanted to change it to ``objectGUID``, you would:
+  Run this utility to change the value of your ID Attribute without your users losing their accounts. After running the command you can change the ID Attribute to the new value in your ``config.json``. For example, if your current ID Attribute was ``sAMAccountName`` and you wanted to change it to ``objectGUID``, you would:
 
-    1. Wait for an off-peak time when your users won't be impacted by a server restart.
-    2. Run the command ``mattermost ldap idmigrate objectGUID``.
-    3. Edit your ``config.json`` and change your ``IdAttribute`` field to the new value ``objectGUID``.
-    4. Restart the Mattermost server.
+  1. Wait for an off-peak time when your users won't be impacted by a server restart.
+  2. Run the command ``mattermost ldap idmigrate objectGUID``.
+  3. Edit your ``config.json`` and change your ``IdAttribute`` field to the new value ``objectGUID``.
+  4. Restart the Mattermost server.
 
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost ldap idmigrate {attribute}
+    mattermost ldap idmigrate {attribute}
 
-  Example
-    .. code-block:: none
+Example
+  .. code-block:: none
 
-      bin/mattermost ldap idmigrate objectGUID
+    bin/mattermost ldap idmigrate objectGUID
 
 mattermost ldap sync
 ~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
-   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl ldap sync </manage/mmctl-command-line-tool.html#mmctl-ldap-sync>`__.
+  From Mattermost v6.0, this command has been replaced with the mmctl command `mmctl ldap sync </manage/mmctl-command-line-tool.html#mmctl-ldap-sync>`__.
 
 Description
-    Synchronize all AD/LDAP users now.
+  Synchronize all AD/LDAP users now.
 
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost ldap sync
+    mattermost ldap sync
 
-  Example
-    .. code-block:: none
+Example
+  .. code-block:: none
 
-      bin/mattermost ldap sync
+    bin/mattermost ldap sync
+
+----
 
 mattermost license
 ------------------
 
-  Description
-    Commands to manage licensing.
+Description
+  Commands to manage licensing.
 
-  Child Command
-    -  `mattermost license upload`_ - Upload a license.
+Child Command
+  -  `mattermost license upload`_ - Upload a license.
 
 mattermost license upload
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
-   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl license upload </manage/mmctl-command-line-tool.html#mmctl-license-upload>`__.
+  From Mattermost v6.0, this command has been replaced with the mmctl command `mmctl license upload </manage/mmctl-command-line-tool.html#mmctl-license-upload>`__.
 
 Description
-    Upload a license. This command replaces the current license if one is already uploaded.
+  Upload a license. This command replaces the current license if one is already uploaded.
 
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost license upload {license}
+    mattermost license upload {license}
 
-  Example
-    .. code-block:: none
+Example
+  .. code-block:: none
 
-      bin/mattermost license upload /path/to/license/mylicensefile.mattermost-license
+    bin/mattermost license upload /path/to/license/mylicensefile.mattermost-license
 
 .. note::
   The Mattermost server needs to be restarted after uploading a license file for any changes to take effect. Also, for cluster setups the license file needs to be uploaded to every node.
 
+----
+
 mattermost logs
-------------------
+----------------
 
 .. note::
 
-   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl logs </manage/mmctl-command-line-tool.html#mmctl-logs>`__.
+  From Mattermost v6.0, this command has been replaced with the mmctl command `mmctl logs </manage/mmctl-command-line-tool.html#mmctl-logs>`__.
 
 Description
-    Displays Mattermost logs in a human-readable format.
+  Displays Mattermost logs in a human-readable format.
 
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
       mattermost logs
 
-  Example
-    .. code-block:: none
+Example
+  .. code-block:: none
 
-      bin/mattermost logs --logrus
+    bin/mattermost logs --logrus
 
-  Options
-    .. code-block:: none
+Options
+  .. code-block:: none
 
-          --logrus   Displays Mattermost logs in `logrus format <https://github.com/sirupsen/logrus>`_. Else, standard output is returned.
+    --logrus   Displays Mattermost logs in `logrus format <https://github.com/sirupsen/logrus>`_. Else, standard output is returned.
 
+----
 
 mattermost permissions
 ----------------------
 
-  Description
-    Commands to manage advanced permissions.
+Description
+  Commands to manage advanced permissions.
 
-  Child Commands
-    -  `mattermost permissions export`_ - Export Schemes and Roles.
-    -  `mattermost permissions import`_ - Import Schemes and Roles from a permissions export.
-    -  `mattermost permissions reset`_ - Reset the permissions system to its default state on new installs.
+Child Commands
+  -  `mattermost permissions export`_ - Export Schemes and Roles.
+  -  `mattermost permissions import`_ - Import Schemes and Roles from a permissions export.
+  -  `mattermost permissions reset`_ - Reset the permissions system to its default state on new installs.
 
 mattermost permissions export
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  Description
-    Prints to stdout a jsonl representation of Schemes and Roles from a Mattermost instance. Used to export
-    Roles and Schemes from one Mattermost instance to another. The output is a jsonl representation with
-    each line containing a json representation of a Scheme and its associated Roles. The output is intended
-    to be used as the input of `mattermost permissions import`.
+Description
+  Prints to stdout a jsonl representation of Schemes and Roles from a Mattermost instance. Used to export
+  Roles and Schemes from one Mattermost instance to another. The output is a jsonl representation with
+  each line containing a json representation of a Scheme and its associated Roles. The output is intended
+  to be used as the input of `mattermost permissions import`.
 
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost permissions export
+    mattermost permissions export
 
-  Example
-    .. code-block:: none
+Example
+  .. code-block:: none
 
-      bin/mattermost permissions export > my-permissions-export.jsonl
+    bin/mattermost permissions export > my-permissions-export.jsonl
 
 mattermost permissions import
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  Description
-    Creates Roles and Schemes on a Mattermost instance from a jsonl input file in the format outputted by
-    `mattermost permissions export`.
+Description
+  Creates Roles and Schemes on a Mattermost instance from a jsonl input file in the format outputted by
+  `mattermost permissions export`.
 
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost permissions import {file}
+    mattermost permissions import {file}
 
-  Example
-    .. code-block:: none
+Example
+  .. code-block:: none
 
-      bin/mattermost permissions import my-permissions-export.jsonl
+    bin/mattermost permissions import my-permissions-export.jsonl
 
 mattermost permissions reset
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  Description
-    Reset permissions for all users, including Admins, to their default state on new installs. Note: **this will delete
-    all custom schemes**.
+Description
+  Reset permissions for all users, including Admins, to their default state on new installs. Note: **this will delete
+  all custom schemes**.
 
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost permissions reset
+    mattermost permissions reset
 
-  Example
-    .. code-block:: none
+Example
+  .. code-block:: none
 
-      bin/mattermost permissions reset
+    bin/mattermost permissions reset
 
-  Options
-    .. code-block:: none
+Options
+  .. code-block:: none
 
-          --confirm   Confirm you really want to reset the permissions system and a DB backup has been performed.
+    --confirm   Confirm you really want to reset the permissions system and a DB backup has been performed.
+
+----
 
 mattermost plugin
 -----------------
 
-  Description
-    Commands to manage plugins.
+Description
+  Commands to manage plugins.
 
-  Child Commands
-    -  `mattermost plugin add`_ - Add plugins to your Mattermost server.
-    -  `mattermost plugin delete`_ - Delete previously uploaded plugins.
-    -  `mattermost plugin disable`_ - Disable plugins.
-    -  `mattermost plugin enable`_ - Enable plugins for use.
-    -  `mattermost plugin list`_ - List plugins installed on your Mattermost server.
+Child Commands
+  -  `mattermost plugin add`_ - Add plugins to your Mattermost server.
+  -  `mattermost plugin delete`_ - Delete previously uploaded plugins.
+  -  `mattermost plugin disable`_ - Disable plugins.
+  -  `mattermost plugin enable`_ - Enable plugins for use.
+  -  `mattermost plugin list`_ - List plugins installed on your Mattermost server.
 
 mattermost plugin add
 ~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
-   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl plugin add </manage/mmctl-command-line-tool.html#mmctl-plugin-add>`__.
+  From Mattermost v6.0, this command has been replaced with the mmctl command `mmctl plugin add </manage/mmctl-command-line-tool.html#mmctl-plugin-add>`__.
 
 Description
-    Add plugins to your Mattermost server. If adding multiple plugins, use a space-separated list.
+  Add plugins to your Mattermost server. If adding multiple plugins, use a space-separated list.
 
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost plugin add {plugin tar file}
+    mattermost plugin add {plugin tar file}
 
-  Example
-    .. code-block:: none
+Example
+  .. code-block:: none
 
-      bin/mattermost plugin add hovercardexample.tar.gz pluginexample.tar.gz
+    bin/mattermost plugin add hovercardexample.tar.gz pluginexample.tar.gz
 
 mattermost plugin delete
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
-   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl plugin delete </manage/mmctl-command-line-tool.html#mmctl-plugin-delete>`__.
+  From Mattermost v6.0, this command has been replaced with the mmctl command `mmctl plugin delete </manage/mmctl-command-line-tool.html#mmctl-plugin-delete>`__.
 
 Description
-    Delete previously uploaded plugins from your Mattermost server. If deleting multiple plugins, use a space-separated list.
+  Delete previously uploaded plugins from your Mattermost server. If deleting multiple plugins, use a space-separated list.
 
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost plugin delete {plugin_id}
+    mattermost plugin delete {plugin_id}
 
-  Example
-    .. code-block:: none
+Example
+  .. code-block:: none
 
-      bin/mattermost plugin delete hovercardexample pluginexample
+    bin/mattermost plugin delete hovercardexample pluginexample
 
 mattermost plugin disable
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
-   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl plugin disable </manage/mmctl-command-line-tool.html#mmctl-plugin-disable>`__.
+  From Mattermost v6.0, this command has been replaced with the mmctl command `mmctl plugin disable </manage/mmctl-command-line-tool.html#mmctl-plugin-disable>`__.
 
 Description
-    Disable plugins. Disabled plugins are immediately removed from the user interface and logged out of all sessions. If disabling multiple plugins, use a space-separated list.
+  Disable plugins. Disabled plugins are immediately removed from the user interface and logged out of all sessions. If disabling multiple plugins, use a space-separated list.
 
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost plugin disable {plugin_id}
+    mattermost plugin disable {plugin_id}
 
-  Example
-    .. code-block:: none
+Example
+  .. code-block:: none
 
-      bin/mattermost plugin disable hovercardexample pluginexample
+    bin/mattermost plugin disable hovercardexample pluginexample
 
 mattermost plugin enable
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
-   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl plugin enable </manage/mmctl-command-line-tool.html#mmctl-plugin-enable>`__.
+  From Mattermost v6.0, this command has been replaced with the mmctl command `mmctl plugin enable </manage/mmctl-command-line-tool.html#mmctl-plugin-enable>`__.
 
 Description
-    Enable plugins for use on your Mattermost server. If enabling multiple plugins, use a space-separated list.
+  Enable plugins for use on your Mattermost server. If enabling multiple plugins, use a space-separated list.
 
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost plugin enable {plugin_id}
+    mattermost plugin enable {plugin_id}
 
-  Example
-    .. code-block:: none
+Example
+  .. code-block:: none
 
-      bin/mattermost plugin enable hovercardexample pluginexample
+    bin/mattermost plugin enable hovercardexample pluginexample
 
 mattermost plugin list
 ~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
-   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl plugin list </manage/mmctl-command-line-tool.html#mmctl-plugin-list>`__.
+  From Mattermost v6.0, this command has been replaced with the mmctl command `mmctl plugin list </manage/mmctl-command-line-tool.html#mmctl-plugin-list>`__.
 
 Description
-    List all active and inactive plugins installed on your Mattermost server.
+  List all active and inactive plugins installed on your Mattermost server.
 
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost plugin list
+    mattermost plugin list
 
-  Example
-    .. code-block:: none
+Example
+  .. code-block:: none
 
-      bin/mattermost plugin list
+    bin/mattermost plugin list
+
+----
 
 mattermost reset
 ----------------
 
-  Description
-    Completely erase the database causing the loss of all data. This resets Mattermost to its initial state.
+Description
+  Completely erase the database causing the loss of all data. This resets Mattermost to its initial state.
 
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost reset
+    mattermost reset
 
-  Options
-    .. code-block:: none
+Options
+  .. code-block:: none
 
-          --confirm   Confirm you really want to delete everything and a DB backup has been performed.
+    --confirm   Confirm you really want to delete everything and a DB backup has been performed.
+
+----
 
 mattermost roles
 ----------------
 
-  Description
-    Commands to manage user roles.
+Description
+  Commands to manage user roles.
 
-  Child Commands
-    -  `mattermost roles member`_ - Remove System Admin privileges from a user
-    -  `mattermost roles system_admin`_ - Make a user into a System Admin
+Child Commands
+  -  `mattermost roles member`_ - Remove System Admin privileges from a user
+  -  `mattermost roles system_admin`_ - Make a user into a System Admin
 
 mattermost roles member
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-  Description
-    Remove system admin privileges from a user.
+Description
+  Remove system admin privileges from a user.
 
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost roles member {users}
+    mattermost roles member {users}
 
-  Example
-    .. code-block:: none
+Example
+  .. code-block:: none
 
-      bin/mattermost roles member user1
+    bin/mattermost roles member user1
 
 mattermost roles system\_admin
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  Description
-    Promote a user to a System Admin.
+Description
+  Promote a user to a System Admin.
 
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost roles system_admin {users}
+    mattermost roles system_admin {users}
 
-  Example
-    .. code-block:: none
+Example
+  .. code-block:: none
 
-      bin/mattermost roles system_admin user1
+    bin/mattermost roles system_admin user1
+
+----
 
 mattermost sampledata
 ---------------------
 
-  Description
-    .. versionadded:: 4.7
-      Generate sample data and populate the Mattermost database. Supported in Mattermost v4.7 and later.
+Description
+  Generate sample data and populate the Mattermost database. 
 
-      The command generates one user as the System Administrator with a username ``sysadmin`` and password ``Sys@dmin-sample1``. Other users are generated following an index, e.g. with username ``user-1`` and password ``SampleUs@r-1``.
+  The command generates one user as the System Administrator with a username ``sysadmin`` and password ``Sys@dmin-sample1``. Other users are generated following an index, e.g. with username ``user-1`` and password ``SampleUs@r-1``.
 
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost sampledata
+    mattermost sampledata
 
-  Example
-    .. code-block:: none
+Example
+  .. code-block:: none
 
-      bin/mattermost sampledata --seed 10 --teams 4 --users 30
+    bin/mattermost sampledata --seed 10 --teams 4 --users 30
 
-  Options
-    .. code-block:: none
+Options
+  .. code-block:: none
 
-          -u, --users int                      The number of sample users. (default 15)
-              --profile-images string          Optional. Path to folder with images to randomly pick as user profile image.
-          -t, --teams int                      The number of sample teams. (default 2)
-              --team-memberships int           The number of sample team memberships per user. (default 2)
-              --channels-per-team int          The number of sample channels per team. (default 10)
-              --channel-memberships int        The number of sample channel memberships per user in a team. (default 5)
-              --posts-per-channel int          The number of sample post per channel. (default 100)
-              --direct-channels int            The number of sample direct message channels. (default 30)
-              --group-channels int             The number of sample group message channels. (default 15)
-              --posts-per-direct-channel int   The number of sample posts per direct message channel. (default 15)
-              --posts-per-group-channel int    The number of sample post per group message channel. (default 30)
-          -s, --seed int                       Seed used for generating the random data (Different seeds generate different data). (default 1)
-          -b, --bulk string                    Optional. Path to write a JSONL bulk file instead of loading into the database.
-          -w, --workers int                    How many workers to run during the import. (default 2)
+    -u, --users int                  The number of sample users. (default 15)
+    --profile-images string          Optional. Path to folder with images to randomly pick as user profile image.
+    -t, --teams int                  The number of sample teams. (default 2)
+    --team-memberships int           The number of sample team memberships per user. (default 2)
+    --channels-per-team int          The number of sample channels per team. (default 10)
+    --channel-memberships int        The number of sample channel memberships per user in a team. (default 5)
+    --posts-per-channel int          The number of sample post per channel. (default 100)
+    --direct-channels int            The number of sample direct message channels. (default 30)
+    --group-channels int             The number of sample group message channels. (default 15)
+    --posts-per-direct-channel int   The number of sample posts per direct message channel. (default 15)
+    --posts-per-group-channel int    The number of sample post per group message channel. (default 30)
+    -s, --seed int                   Seed used for generating the random data (Different seeds generate different data). (default 1)
+    -b, --bulk string                Optional. Path to write a JSONL bulk file instead of loading into the database.
+    -w, --workers int                How many workers to run during the import. (default 2)
+
+----
 
 mattermost server
 -----------------
 
-  Description
-    Runs the Mattermost server.
+Description
+  Runs the Mattermost server.
 
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost server
+    mattermost server
+
+----
 
 mattermost team
 ---------------
 
-  Description
-    Commands to manage teams.
+Description
+  Commands to manage teams.
 
-  Child Commands
-    -  `mattermost team add`_ - Add users to a team.
-    -  `mattermost team archive`_ - Archive teams based on name.
-    -  `mattermost team create`_ - Create a team.
-    -  `mattermost team delete`_ - Delete a team.
-    -  `mattermost team list`_ - List all teams.
-    -  `mattermost team modify`_ - Modify a team's public/private type.
-    -  `mattermost team remove`_ - Remove users from a team.
-    -  `mattermost team rename`_ - Rename a team.
-    -  `mattermost team restore`_ - Restore a previously archived team.
-    -  `mattermost team search`_ - Search for teams based on name.
+Child Commands
+  -  `mattermost team add`_ - Add users to a team.
+  -  `mattermost team archive`_ - Archive teams based on name.
+  -  `mattermost team create`_ - Create a team.
+  -  `mattermost team delete`_ - Delete a team.
+  -  `mattermost team list`_ - List all teams.
+  -  `mattermost team modify`_ - Modify a team's public/private type.
+  -  `mattermost team remove`_ - Remove users from a team.
+  -  `mattermost team rename`_ - Rename a team.
+  -  `mattermost team restore`_ - Restore a previously archived team.
+  -  `mattermost team search`_ - Search for teams based on name.
 
 .. _team-value-note:
 
 .. note::
-    **{team-name} value**
+  **{team-name} value**
 
-    For the *add*, *delete*, and *remove* commands, you can determine the *{team-name}* value from the URLs that you use to access your instance of Mattermost. For example, in the following URL the *{team-name}* value is *myteam*:
+  For the *add*, *delete*, and *remove* commands, you can determine the *{team-name}* value from the URLs that you use to access your instance of Mattermost. For example, in the following URL the *{team-name}* value is *myteam*: ``https://example.com/myteam/channels/mychannel``
 
-    ``https://example.com/myteam/channels/mychannel``
-
-    Also, the team and channel names in the URL should be written in lowercase.
+  Also, the team and channel names in the URL should be written in lowercase.
 
 mattermost team add
 ~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
-   TIn Mattermost v6.0, this command has been replaced with the mmctl command `mmctl team add </manage/mmctl-command-line-tool.html#mmctl-team-users-add>`__.
+  From Mattermost v6.0, this command has been replaced with the mmctl command `mmctl team add </manage/mmctl-command-line-tool.html#mmctl-team-users-add>`__.
 
 Description
     Add users to a team. Before running this command, see the :ref:`note about {team-name} <team-value-note>`.
 
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost team add {team-name} {users}
+    mattermost team add {team-name} {users}
 
-  Example
-    .. code-block:: none
+Example
+  .. code-block:: none
 
-      bin/mattermost team add myteam user@example.com username
+    bin/mattermost team add myteam user@example.com username
 
 mattermost team archive
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
-   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl team archive </manage/mmctl-command-line-tool.html#mmctl-team-archive>`__.
+  From Mattermost v6.0, this command has been replaced with the mmctl command `mmctl team archive </manage/mmctl-command-line-tool.html#mmctl-team-archive>`__.
 
 
 Description
-    Archive teams based on name. Before running this command, see the :ref:`note about {team-name} <team-value-note>`.
+  Archive teams based on name. Before running this command, see the :ref:`note about {team-name} <team-value-note>`.
 
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost team archive {team}
+    mattermost team archive {team}
 
-  Examples
-    .. code-block:: none
+Examples
+  .. code-block:: none
 
-       bin/mattermost team archive team1
+    bin/mattermost team archive team1
 
 mattermost team create
 ~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
-   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl team create </manage/mmctl-command-line-tool.html#mmctl-team-create>`__.
+  From Mattermost v6.0, this command has been replaced with the mmctl command `mmctl team create </manage/mmctl-command-line-tool.html#mmctl-team-create>`__.
 
 Description
-    Create a team.
+  Create a team.
 
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost team create
+    mattermost team create
 
-  Examples
-    .. code-block:: none
+Examples
+  .. code-block:: none
 
-      bin/mattermost team create --name mynewteam --display_name "My New Team"
-      bin/mattermost teams create --name private --display_name "My New Private Team" --private
+    bin/mattermost team create --name mynewteam --display_name "My New Team"
+    bin/mattermost teams create --name private --display_name "My New Private Team" --private
 
-  Options
-    .. code-block:: none
+Options
+  .. code-block:: none
 
-          --display_name string   Team Display Name
-          --email string          Administrator Email (anyone with this email is automatically a team admin)
-          --name string           Team Name
-          --private               Create a private team.
+    --display_name string   Team Display Name
+    --email string          Administrator Email (anyone with this email is automatically a team admin)
+    --name string           Team Name
+    --private               Create a private team.
 
 mattermost team delete
 ~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
-   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl team delete </manage/mmctl-command-line-tool.html#mmctl-team-delete>`__.
+  From Mattermost v6.0, this command has been replaced with the mmctl command `mmctl team delete </manage/mmctl-command-line-tool.html#mmctl-team-delete>`__.
 
 Description
-    Permanently delete a team along with all related information, including posts from the database. Before running this command, see the :ref:`note about {team-name} <team-value-note>`.
+  Permanently delete a team along with all related information, including posts from the database. Before running this command, see the :ref:`note about {team-name} <team-value-note>`.
 
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost team delete {team-name}
+    mattermost team delete {team-name}
 
-  Example
-    .. code-block:: none
+Example
+  .. code-block:: none
 
-      bin/mattermost team delete myteam
+    bin/mattermost team delete myteam
 
-  Options
-    .. code-block:: none
+Options
+  .. code-block:: none
 
-          --confirm   Confirm you really want to delete the team and a DB backup has been performed.
+    --confirm   Confirm you really want to delete the team and a DB backup has been performed.
 
 mattermost team list
 ~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
-   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl team list </manage/mmctl-command-line-tool.html#mmctl-team-list>`__.
+  From Mattermost v6.0, this command has been replaced with the mmctl command `mmctl team list </manage/mmctl-command-line-tool.html#mmctl-team-list>`__.
 
-*Supported in Mattermost v4.10 and later*
+Description
+  List all teams on the server.
 
-  Description
-    List all teams on the server.
+Format
+  .. code-block:: none
 
-  Format
-    .. code-block:: none
+    mattermost team list
 
-      mattermost team list
+Example
+  .. code-block:: none
 
-  Example
-    .. code-block:: none
-
-      bin/mattermost team list
+    bin/mattermost team list
 
 mattermost team modify
 ~~~~~~~~~~~~~~~~~~~~~~
 
-  Description
-    Modify a team's public/private type.
+Description
+  Modify a team's public/private type.
 
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost team modify [team] [flag]
+    mattermost team modify [team] [flag]
 
-  Example
-    .. code-block:: none
+Example
+  .. code-block:: none
 
-      bin/mattermost modify team myteam --private
-      bin/mattermost modify team myteam --public
+    bin/mattermost modify team myteam --private
+    bin/mattermost modify team myteam --public
 
 mattermost team remove
 ~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
-   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl team remove </manage/mmctl-command-line-tool.html#mmctl-team-users-remove>`__.
+  From Mattermost v6.0, this command has been replaced with the mmctl command `mmctl team remove </manage/mmctl-command-line-tool.html#mmctl-team-users-remove>`__.
 
 Description
-    Remove users from a team. Before running this command, see the :ref:`note about {team-name} <team-value-note>`.
+  Remove users from a team. Before running this command, see the :ref:`note about {team-name} <team-value-note>`.
 
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost team remove {team-name} {users}
+    mattermost team remove {team-name} {users}
 
-  Example
-    .. code-block:: none
+Example
+  .. code-block:: none
 
-      bin/mattermost team remove myteam user@example.com username
+    bin/mattermost team remove myteam user@example.com username
 
 mattermost team rename
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
-   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl team rename </manage/mmctl-command-line-tool.html#mmctl-team-rename>`__.
+  From Mattermost v6.0, this command has been replaced with the mmctl command `mmctl team rename </manage/mmctl-command-line-tool.html#mmctl-team-rename>`__.
 
 Description
     Rename a team.
 
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost team rename {team} newteamname --display_name "New Display Name"
+    mattermost team rename {team} newteamname --display_name "New Display Name"
 
-  Examples
-    .. code-block:: none
+Examples
+  .. code-block:: none
 
-      bin/mattermost team rename myteam newteamname --display_name "New Display Name"
+    bin/mattermost team rename myteam newteamname --display_name "New Display Name"
 
-  Options
-    .. code-block:: none
+Options
+  .. code-block:: none
 
-      --display_name string   Team Display Name
+    --display_name string   Team Display Name
 
 mattermost team restore
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-  Description
-    Restore a previously archived team.
+Description
+  Restore a previously archived team.
 
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost team restore {team}
+    mattermost team restore {team}
 
-  Example
-    .. code-block:: none
+Example
+  .. code-block:: none
 
-      bin/mattermost team restore myteam
+    bin/mattermost team restore myteam
 
 mattermost team search
 ~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
-   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl team search </manage/mmctl-command-line-tool.html#mmctl-team-search>`__.
+  From Mattermost v6.0, this command has been replaced with the mmctl command `mmctl team search </manage/mmctl-command-line-tool.html#mmctl-team-search>`__.
 
 Description
-    Search for teams based on name. Before running this command, see the :ref:`note about {team-name} <team-value-note>`.
+  Search for teams based on name. Before running this command, see the :ref:`note about {team-name} <team-value-note>`.
 
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost team search {team}
+    mattermost team search {team}
 
-  Examples
-    .. code-block:: none
+Examples
+  .. code-block:: none
 
-       bin/mattermost team search team1
+    bin/mattermost team search team1
+
+----
 
 mattermost user
 ---------------
 
-  Description
-    Commands to manage users.
+Description
+  Commands to manage users.
 
-  Child Commands
+Child Commands
 
-    -  `mattermost user activate`_ - Activate a user
-    -  `mattermost user convert`_ - Convert a user to a bot, or a bot to a user
-    -  `mattermost user create`_ - Create a user
-    -  `mattermost user deactivate`_ - Deactivate a user
-    -  `mattermost user delete`_ - Delete a user and all posts
-    -  `mattermost user deleteall`_ - Delete all users and all posts
-    -  `mattermost user email`_ - Set a user's email
-    -  `mattermost user invite`_ - Send a user an email invitation to a team
-    -  `mattermost user migrate_auth`_ - Mass migrate all user accounts to a new authentication type
-    -  `mattermost user password`_ - Set a user's password
-    -  `mattermost user resetmfa`_ - Turn off MFA for a user
-    -  `mattermost user search`_ - Search for users based on username, email, or user ID
-    -  `mattermost user verify`_ - Verify email address of a new user
+  -  `mattermost user activate`_ - Activate a user
+  -  `mattermost user convert`_ - Convert a user to a bot, or a bot to a user
+  -  `mattermost user create`_ - Create a user
+  -  `mattermost user deactivate`_ - Deactivate a user
+  -  `mattermost user delete`_ - Delete a user and all posts
+  -  `mattermost user deleteall`_ - Delete all users and all posts
+  -  `mattermost user email`_ - Set a user's email
+  -  `mattermost user invite`_ - Send a user an email invitation to a team
+  -  `mattermost user migrate_auth`_ - Mass migrate all user accounts to a new authentication type
+  -  `mattermost user password`_ - Set a user's password
+  -  `mattermost user resetmfa`_ - Turn off MFA for a user
+  -  `mattermost user search`_ - Search for users based on username, email, or user ID
+  -  `mattermost user verify`_ - Verify email address of a new user
 
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -1937,676 +1990,655 @@ mattermost user activate
 
 .. note::
 
-   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl user activate </manage/mmctl-command-line-tool.html#mmctl-user-activate>`__.
+  From Mattermost v6.0, this command has been replaced with the mmctl command `mmctl user activate </manage/mmctl-command-line-tool.html#mmctl-user-activate>`__.
 
 Description
-    Activate users that have been deactivated. If activating multiple users, use a space-separated list.
+  Activate users that have been deactivated. If activating multiple users, use a space-separated list.
 
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost user activate {emails, usernames, userIds}
+    mattermost user activate {emails, usernames, userIds}
 
-  Examples
-    .. code-block:: none
+Examples
+  .. code-block:: none
 
-      bin/mattermost user activate user@example.com
-      bin/mattermost user activate username1 username2
+    bin/mattermost user activate user@example.com
+    bin/mattermost user activate username1 username2
 
 mattermost user convert
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-  Description
-    Convert a user to a bot, or convert a bot to a user account.
+Description
+  Convert a user to a bot, or convert a bot to a user account.
 
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost user convert {emails, usernames, userIds} --bot
-      OR
-      mattermost user convert {bot_id} --user --email {email_address} --password {new_password}
+    mattermost user convert {emails, usernames, userIds} --bot
+    OR
+    mattermost user convert {bot_id} --user --email {email_address} --password {new_password}
 
-  Examples
-    .. code-block:: none
+Examples
+  .. code-block:: none
 
-      bin/mattermost user convert user@example.com --bot
-      bin/mattermost user convert username1 username2 --bot
-      bin/mattermost user convert old_bot --user --email real_user@example.com --password Password1
+    bin/mattermost user convert user@example.com --bot
+    bin/mattermost user convert username1 username2 --bot
+    bin/mattermost user convert old_bot --user --email real_user@example.com --password Password1
 
 
-  Options
-    .. code-block:: none
+Options
+  .. code-block:: none
 
-          --bot string       Convert user to bot.  Supports converting multiple bots at once, use a space-separated list.
-          --user string      Convert bot to user.  Supports converting one account per command. The converted user will have the role of `system_user` set.
+    --bot string       Convert user to bot.  Supports converting multiple bots at once, use a space-separated list.
+    --user string      Convert bot to user.  Supports converting one account per command. The converted user will have the role of `system_user` set.
 
 mattermost user create
 ~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
-   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl user create </manage/mmctl-command-line-tool.html#mmctl-user-create>`__.
-
+  - From Mattermost v6.0, this command has been replaced with the mmctl command `mmctl user create </manage/mmctl-command-line-tool.html#mmctl-user-create>`__.
+  - If you automate user creation through the CLI tool with SMTP enabled, emails will be sent to all new users created. If you run such a load script, it is best to disable SMTP or to use test accounts so that new account creation emails aren't unintentionally sent to people at your organization who aren't expecting them.
 
 Description
-    Create a user.
+  Create a user.
 
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost user create
+    mattermost user create
 
-  Examples
-    .. code-block:: none
+Examples
+  .. code-block:: none
 
-      bin/mattermost user create --email user@example.com --username userexample --password Password1
-      bin/mattermost user create --firstname Joe --system_admin --email joe@example.com --username joe --password Password1
+    bin/mattermost user create --email user@example.com --username userexample --password Password1
+    bin/mattermost user create --firstname Joe --system_admin --email joe@example.com --username joe --password Password1
 
-  Options
-    .. code-block:: none
+Options
+  .. code-block:: none
 
-          --email string       Email
-          --firstname string   First Name
-          --lastname string    Last Name
-          --locale string      Locale (ex: en, fr)
-          --nickname string    Nickname
-          --password string    Password
-          --system_admin       Make the user a system administrator
-          --username string    Username
+    --email string       Email
+    --firstname string   First Name
+    --lastname string    Last Name
+    --locale string      Locale (ex: en, fr)
+    --nickname string    Nickname
+    --password string    Password
+    --system_admin       Make the user a system administrator
+    --username string    Username
 
 mattermost user deactivate
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
-   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl user deactivate </manage/mmctl-command-line-tool.html#mmctl-user-deactivate>`__.
+  From Mattermost v6.0, this command has been replaced with the mmctl command `mmctl user deactivate </manage/mmctl-command-line-tool.html#mmctl-user-deactivate>`__.
 
 Description
-    Deactivate a user. Deactivated users are immediately logged out of all sessions and are unable to log back in.
+  Deactivate a user. Deactivated users are immediately logged out of all sessions and are unable to log back in.
 
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost user deactivate {emails, usernames, userIds}
+    mattermost user deactivate {emails, usernames, userIds}
 
-  Examples
-    .. code-block:: none
+Examples
+  .. code-block:: none
 
-      bin/mattermost user deactivate user@example.com
-      bin/mattermost user deactivate username
+    bin/mattermost user deactivate user@example.com
+    bin/mattermost user deactivate username
 
-  .. note::
-    Users deactivated via this CLI command can continue to use Mattermost, if they are already logged in, until the user cache is manually purged or automatically after 30 minutes. Users who are deactivated when they're not logged in will not be able to log in to Mattermost again.
+.. note::
+  Users deactivated via this CLI command can continue to use Mattermost, if they are already logged in, until the user cache is manually purged or automatically after 30 minutes. Users who are deactivated when they're not logged in will not be able to log in to Mattermost again.
 
-    If you want to immediately terminate a deactivated user's session, purge all caches in **System Console > Web Server > Purge All Caches** after running this command.
+  If you want to immediately terminate a deactivated user's session, purge all caches in **System Console > Web Server > Purge All Caches** after running this command.
 
-    You can also use the `API command <https://api.mattermost.com/#tag/users%2Fpaths%2F~1users~1%7Buser_id%7D%2Fdelete>`_ to deactivate a user account and immediately terminate the session.
+  You can also use the `API command <https://api.mattermost.com/#tag/users%2Fpaths%2F~1users~1%7Buser_id%7D%2Fdelete>`_ to deactivate a user account and immediately terminate the session.
 
 mattermost user delete
 ~~~~~~~~~~~~~~~~~~~~~~
 
-  Description
-    Permanently delete a user and all related information, including posts from the database.
+Description
+  Permanently delete a user and all related information, including posts from the database.
 
-    Does not delete content from the file storage. You can manually delete all file uploads for a given user as uploads contain the ``CreatorId`` field. User profile pictures are stored in ``data/users/<userid>/profile.png``.
+  Does not delete content from the file storage. You can manually delete all file uploads for a given user as uploads contain the ``CreatorId`` field. User profile pictures are stored in ``data/users/<userid>/profile.png``.
 
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost user delete {users}
+    mattermost user delete {users}
 
-  Example
-    .. code-block:: none
+Example
+  .. code-block:: none
 
-      bin/mattermost user delete user@example.com
+    bin/mattermost user delete user@example.com
 
-  Options
-    .. code-block:: none
+Options
+  .. code-block:: none
 
-          --confirm   Confirm you really want to delete the user and a DB backup has been performed.
+    --confirm   Confirm you really want to delete the user and a DB backup has been performed.
 
 mattermost user deleteall
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  Description
+Description
     Permanently delete all users and all related information, including posts.
 
     Does not delete content from the file storage. You can manually delete all file uploads and user profile pictures. All uploads contain the ``CreatorId`` field and user profile pictures are stored in ``data/users/<userid>/profile.png``.
 
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost user deleteall
+    mattermost user deleteall
 
-  Example
-    .. code-block:: none
+Example
+  .. code-block:: none
 
-      bin/mattermost user deleteall
+    bin/mattermost user deleteall
 
-  Options
-    .. code-block:: none
+Options
+  .. code-block:: none
 
-          --confirm   Confirm you really want to delete the user and a DB backup has been performed.
+    --confirm   Confirm you really want to delete the user and a DB backup has been performed.
 
 mattermost user email
 ~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
-   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl user email </manage/mmctl-command-line-tool.html#mmctl-user-email>`__.
-
+  From Mattermost v6.0, this command has been replaced with the mmctl command `mmctl user email </manage/mmctl-command-line-tool.html#mmctl-user-email>`__.
 
 Description
-    Set a user's email.
+  Set a user's email.
 
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-       mattermost user email {user} {new email}
+    mattermost user email {user} {new email}
 
-  Example
-    .. code-block:: none
+Example
+  .. code-block:: none
 
-      bin/mattermost user email user@example.com newuser@example.com
+    bin/mattermost user email user@example.com newuser@example.com
 
 mattermost user invite
 ~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
-   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl user invite </manage/mmctl-command-line-tool.html#mmctl-user-invite>`__.
-
+  From Mattermost v6.0, this command has been replaced with the mmctl command `mmctl user invite </manage/mmctl-command-line-tool.html#mmctl-user-invite>`__.
 
 Description
-    Send a user an email invite to a team. You can invite a user to multiple teams by listing the team names or team IDs.
+  Send a user an email invite to a team. You can invite a user to multiple teams by listing the team names or team IDs.
 
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost user invite {email} {teams}
+    mattermost user invite {email} {teams}
 
-  Examples
-    .. code-block:: none
+Examples
+  .. code-block:: none
 
-      bin/mattermost user invite user@example.com myteam
-      bin/mattermost user invite user@example.com myteam1 myteam2
+    bin/mattermost user invite user@example.com myteam
+    bin/mattermost user invite user@example.com myteam1 myteam2
 
 mattermost user migrate_auth
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. _cli-user-migrate-auth:
 
-  Description
-    Migrates all existing Mattermost user accounts from one authentication provider to another. For example, you can upgrade your authentication provider from email to AD/LDAP, or from AD/LDAP to SAML. Output will display any accounts that are not migrated successfully. These accounts might be blocked because of filters in your AD/LDAP configuration in the System Console.
+Description
+  Migrates all existing Mattermost user accounts from one authentication provider to another. For example, you can upgrade your authentication provider from email to AD/LDAP, or from AD/LDAP to SAML. Output will display any accounts that are not migrated successfully. These accounts might be blocked because of filters in your AD/LDAP configuration in the System Console.
 
 **Migrate to AD/LDAP**
 
-  Parameters
-    -  ``from_auth``: The authentication service from which to migrate user accounts. Supported options: ``email``, ``gitlab``, ``saml``.
+Parameters
+  -  ``from_auth``: The authentication service from which to migrate user accounts. Supported options: ``email``, ``gitlab``, ``saml``.
 
-    -  ``to_auth``: The authentication service to which to migrate user accounts. Supported options: ``ldap``.
+  -  ``to_auth``: The authentication service to which to migrate user accounts. Supported options: ``ldap``.
 
-    -  ``match_field``: The field that is guaranteed to be the same in both authentication services. For example, if the user emails are consistent set to email. Supported options: ``email``, ``username``.
+  -  ``match_field``: The field that is guaranteed to be the same in both authentication services. For example, if the user emails are consistent set to email. Supported options: ``email``, ``username``.
 
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost user migrate_auth {from_auth} ldap {match_field}
+    mattermost user migrate_auth {from_auth} ldap {match_field}
 
-  Example
-    .. code-block:: none
+Example
+  .. code-block:: none
 
-      bin/mattermost user migrate_auth email ldap email
-  Options
-    .. code-block:: none
+    bin/mattermost user migrate_auth email ldap email
 
-      --force  Ignore duplicate entries on the AD/LDAP server.
-      --dryRun Run a simulation of the migration process without changing the database.
+Options
+  .. code-block:: none
+
+    --force  Ignore duplicate entries on the AD/LDAP server.
+    --dryRun Run a simulation of the migration process without changing the database.
 
 **Migrate to SAML**
 
-*Supported in Mattermost v4.8 and later*
+Parameters
 
-  Parameters
+  -  ``from_auth``: The authentication service from which to migrate user accounts. Supported options: ``email``, ``gitlab``. ``ldap``.
 
-    -  ``from_auth``: The authentication service from which to migrate user accounts. Supported options: ``email``, ``gitlab``. ``ldap``.
+  -  ``to_auth``: The authentication service to which to migrate user accounts. Supported options: ``saml``.
 
-    -  ``to_auth``: The authentication service to which to migrate user accounts. Supported options: ``saml``.
+  -  ``users_file``: The path of a JSON file with the usernames and emails of all users to migrate to SAML. The username and email must be the same as in your SAML service provider. Moreover, the email must match the email address of the Mattermost user account. An example of the users file is below:
 
-    -  ``users_file``: The path of a JSON file with the usernames and emails of all users to migrate to SAML. The username and email must be the same as in your SAML service provider. Moreover, the email must match the email address of the Mattermost user account. An example of the users file is below:
+.. code-block:: json
 
-    .. code-block:: json
+  {
+    "user1@email.com": "username.one",
+    "user2@email.com": "username.two"
+  }
 
-        {
-          "user1@email.com": "username.one",
-          "user2@email.com": "username.two"
-        }
+Users file generation
+  Generating the ``users_file`` depends on how the system is configured and which SAML service provider is used. Below are two sample scripts for OneLogin and Okta service providers. For ADFS, you can use the AD/LDAP protocol to directly extract the users information and export it to a JSON file.
 
-  Users file generation
-    Generating the ``users_file`` depends on how the system is configured and which SAML service provider is used. Below are two sample scripts for OneLogin and Okta service providers. For ADFS, you can use the AD/LDAP protocol to directly extract the users information and export it to a JSON file.
+  After generating the ``users_file``, you can manually update the file to obtain a list of Mattermost user accounts you want to migrate to SAML. Note that users listed in ``users_file`` that do not yet exist in Mattermost are ignored during the migration process.
 
-    After generating the ``users_file``, you can manually update the file to obtain a list of Mattermost user accounts you want to migrate to SAML. Note that users listed in ``users_file`` that do not yet exist in Mattermost are ignored during the migration process.
+OneLogin:
 
-    OneLogin:
+  .. code-block:: python
 
-    .. code-block:: python
+    from onelogin.api.client import OneLoginClient
+    import json
 
-        from onelogin.api.client import OneLoginClient
-        import json
+    client_id = input("Client id: ")
+    client_secret = input("Secret: ")
+    region = input("Region (us, eu): ")
 
-        client_id = input("Client id: ")
-        client_secret = input("Secret: ")
-        region = input("Region (us, eu): ")
+    client = OneLoginClient(client_id, client_secret, region)
 
-        client = OneLoginClient(client_id, client_secret, region)
+    mapping = {}
+    for user in client.get_users():
+      mapping[user.email] = user.username
 
-        mapping = {}
-        for user in client.get_users():
-            mapping[user.email] = user.username
+    with file("saml_users.json", "w") as fd:
+      json.dump(mapping, fd)
 
-        with file("saml_users.json", "w") as fd:
-            json.dump(mapping, fd)
+Okta:
 
-    Okta:
+  .. code-block:: python
 
-    .. code-block:: python
+    from okta import UsersClient
+    import json
 
-        from okta import UsersClient
-        import json
+    base_url = input("Base url (example: https://example.okta.com): ")
+    api_token = input("API Token: ")
 
-        base_url = input("Base url (example: https://example.okta.com): ")
-        api_token = input("API Token: ")
+      sersClient = UsersClient(base_url, api_token)
 
-        usersClient = UsersClient(base_url, api_token)
+    users = usersClient.get_paged_users(limit=25)
 
-        users = usersClient.get_paged_users(limit=25)
+    mapping = {}
 
-        mapping = {}
+      for user in users.result:
+        mapping[user.profile.email] = user.profile.login
 
+      while not users.is_last_page():
+        users = usersClient.get_paged_users(url=users.next_url)
         for user in users.result:
-            mapping[user.profile.email] = user.profile.login
+          mapping[user.profile.email] = user.profile.login
 
-        while not users.is_last_page():
-            users = usersClient.get_paged_users(url=users.next_url)
-            for user in users.result:
-                mapping[user.profile.email] = user.profile.login
+      with file("saml_users.json", "w") as fd:
+          json.dump(mapping, fd)
 
-        with file("saml_users.json", "w") as fd:
-            json.dump(mapping, fd)
+ADFS:
 
-    ADFS:
+  .. code-block:: python
 
-    .. code-block:: python
+    import ldap
+    import json
+    import getpass
 
-        import ldap
-        import json
-        import getpass
+      ldap_host = input('Ldap Host (example ldap://localhost:389): ')
+      base_dn = input('Base DN (example dc=mm,dc=test,dc=com): ')
+      bind_dn = input('Bind DN (example ORGANIZATION\username): ')
+      password = getpass.getpass('Password: ')
+      user_object_class = input('User object class (example organizationalPerson): ')
+      username_field = input('Username field (example sAMAccountName): ')
+      mail_field = input('Mail field (example mail): ')
 
-        ldap_host = input('Ldap Host (example ldap://localhost:389): ')
-        base_dn = input('Base DN (example dc=mm,dc=test,dc=com): ')
-        bind_dn = input('Bind DN (example ORGANIZATION\username): ')
-        password = getpass.getpass('Password: ')
-        user_object_class = input('User object class (example organizationalPerson): ')
-        username_field = input('Username field (example sAMAccountName): ')
-        mail_field = input('Mail field (example mail): ')
+      l = ldap.initialize(ldap_host)
+      l.simple_bind_s(bind_dn, password)
+      page_control = ldap.controls.libldap.SimplePagedResultsControl(True, size=1000, cookie='')
+      r = l.search_ext(base_dn, ldap.SCOPE_SUBTREE, '(objectClass='+user_object_class+')', [username_field, mail_field],         serverctrls=[page_control])
 
-        l = ldap.initialize(ldap_host)
-        l.simple_bind_s(bind_dn, password)
-        page_control = ldap.controls.libldap.SimplePagedResultsControl(True, size=1000, cookie='')
-        r = l.search_ext(base_dn, ldap.SCOPE_SUBTREE, '(objectClass='+user_object_class+')', [username_field, mail_field],         serverctrls=[page_control])
+      mapping = {}
+      while True:
+          rtype, rdata, rmsgid, serverctrls = l.result3(r)
 
-        mapping = {}
-        while True:
-            rtype, rdata, rmsgid, serverctrls = l.result3(r)
+          for dn, entry in rdata:
+            if mail_field in entry and len(entry[mail_field]) >= 1 and username_field in entry and len(entry[username_field]) >= 1:
+              mapping[entry[mail_field][0].decode('utf-8')] = entry[username_field][0].decode('utf-8')
 
-            for dn, entry in rdata:
-                if mail_field in entry and len(entry[mail_field]) >= 1 and username_field in entry and len(entry[username_field]) >= 1:
-                    mapping[entry[mail_field][0].decode('utf-8')] = entry[username_field][0].decode('utf-8')
-
-            controls = [control for control in serverctrls if control.controlType == ldap.controls.libldap.SimplePagedResultsControl.controlType]
+          controls = [control for control in serverctrls if control.controlType == ldap.controls.libldap.SimplePagedResultsControl.controlType]
             if not controls:
-                print('The server ignores RFC 2696 control')
-                break
+              print('The server ignores RFC 2696 control')
+              break
             if not controls[0].cookie:
-                break
-            page_control.cookie = controls[0].cookie
-            r = l.search_ext(base_dn, ldap.SCOPE_SUBTREE, '(objectClass='+user_object_class+')', [username_field, mail_field], serverctrls=[page_control])
+              break
+          page_control.cookie = controls[0].cookie
+          r = l.search_ext(base_dn, ldap.SCOPE_SUBTREE, '(objectClass='+user_object_class+')', [username_field, mail_field], serverctrls=[page_control])
 
         with open("saml_users.json", "w") as fd:
-            json.dump(mapping, fd)
+          json.dump(mapping, fd)
 
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost user migrate_auth {from_auth} saml {users_file}
+    mattermost user migrate_auth {from_auth} saml {users_file}
 
-  Example
-    .. code-block:: none
+Example
+  .. code-block:: none
 
-      bin/mattermost user migrate_auth email saml users.json
+    bin/mattermost user migrate_auth email saml users.json
 
-  Options
-    .. code-block:: none
+Options
+  .. code-block:: none
 
-      --auto   Automatically migrate all users without a {users_file}. Assumes the usernames and emails are identical between Mattermost and SAML services.
-      --dryRun Run a simulation of the migration process without changing the database. Useful to test if the migration results in any errors. You can use this option with or without a {users_file}.
+    --auto   Automatically migrate all users without a {users_file}. Assumes the usernames and emails are identical between Mattermost and SAML services.
+    --dryRun Run a simulation of the migration process without changing the database. Useful to test if the migration results in any errors. You can use this option with or without a {users_file}.
 
 mattermost user password
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
-   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl user reset_password </manage/mmctl-command-line-tool.html#mmctl-user-reset-password>`__.
+  From Mattermost v6.0, this command has been replaced with the mmctl command `mmctl user reset_password </manage/mmctl-command-line-tool.html#mmctl-user-reset-password>`__.
 
 
 Description
-    Set a user's password.
+  Set a user's password.
 
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost user password {user} {password}
+    mattermost user password {user} {password}
 
-  Example
-    .. code-block:: none
+Example
+  .. code-block:: none
 
-      bin/mattermost user password user@example.com Password1
+    bin/mattermost user password user@example.com Password1
 
 mattermost user resetmfa
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
-   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl user resetmfa </manage/mmctl-command-line-tool.html#mmctl-user-resetmfa>`__.
-
+  From Mattermost v6.0, this command has been replaced with the mmctl command `mmctl user resetmfa </manage/mmctl-command-line-tool.html#mmctl-user-resetmfa>`__.
 
 Description
-    Turns off multi-factor authentication for a user. If MFA enforcement is enabled, the user will be forced to re-enable MFA with a new device as soon as they log in.
+  Turns off multi-factor authentication for a user. If MFA enforcement is enabled, the user will be forced to re-enable MFA with a new device as soon as they log in.
 
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost user resetmfa {users}
+    mattermost user resetmfa {users}
 
-  Example
-    .. code-block:: none
+Example
+  .. code-block:: none
 
-      bin/mattermost user resetmfa user@example.com
+    bin/mattermost user resetmfa user@example.com
 
 mattermost user search
 ~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
-   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl user search </manage/mmctl-command-line-tool.html#mmctl-user-search>`__.
-
+  From Mattermost v6.0, this command has been replaced with the mmctl command `mmctl user search </manage/mmctl-command-line-tool.html#mmctl-user-search>`__.
 
 Description
-    Search for users based on username, email, or user ID.
+  Search for users based on username, email, or user ID.
 
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost user search {users}
+    mattermost user search {users}
 
-  Example
-    .. code-block:: none
+Example
+  .. code-block:: none
 
-      bin/mattermost user search user1@example.com user2@example.com
+    bin/mattermost user search user1@example.com user2@example.com
 
 mattermost user verify
 ~~~~~~~~~~~~~~~~~~~~~~
 
-  Description
-    Verify the email address of a new user.
+Description
+  Verify the email address of a new user.
 
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost user verify {users}
+    mattermost user verify {users}
 
-  Example
-    .. code-block:: none
+Example
+  .. code-block:: none
 
-      bin/mattermost user verify user1
+    bin/mattermost user verify user1
+
+----
 
 mattermost version
 ------------------
 
 .. note::
 
-   From Mattermost v6.5, this CLI command no longer interacts with the database. The ``mattermost db migrate </manage/command-line-tools.html#mattermost-db-migrate>`__ CLI command has been introduced to trigger schema migrations.
+  From Mattermost v6.5, this CLI command no longer interacts with the database. The `mattermost db migrate </manage/command-line-tools.html#mattermost-db-migrate>`__ CLI command has been introduced to trigger schema migrations.
 
-Description
+Desription
     Displays Mattermost version information.
 
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost version
+    mattermost version
+
+----
 
 mattermost webhook
 ------------------
 
-  Description
-    Commands to manage webhooks.
+Description
+  Commands to manage webhooks.
 
-  Child Commands
-    -  `mattermost webhook create-incoming`_ - Create an incoming webhook within specific channel.
-    -  `mattermost webhook create-outgoing`_ - Create an outgoing webhook within specific channel.
-    -  `mattermost webhook delete`_ - Delete incoming and outgoing webhooks.
-    -  `mattermost webhook list`_ - List all webhooks.
-    -  `mattermost webhook modify-incoming`_ - Modify an existing incoming webhook by changing its title, description, channel, or icon URL.
-    -  `mattermost webhook modify-outgoing`_ - Modify an existing outgoing webhook by changing its title, description, channel, icon, URL, content-type, and triggers.
-    -  `mattermost webhook move-outgoing`_ - Move an existing outgoing webhook with an ID.
-    -  `mattermost webhook show`_ - Show information about a webhook by providing the webhook ID.
+Child Commands
+  -  `mattermost webhook create-incoming`_ - Create an incoming webhook within specific channel.
+  -  `mattermost webhook create-outgoing`_ - Create an outgoing webhook within specific channel.
+  -  `mattermost webhook delete`_ - Delete incoming and outgoing webhooks.
+  -  `mattermost webhook list`_ - List all webhooks.
+  -  `mattermost webhook modify-incoming`_ - Modify an existing incoming webhook by changing its title, description, channel, or icon URL.
+  -  `mattermost webhook modify-outgoing`_ - Modify an existing outgoing webhook by changing its title, description, channel, icon, URL, content-type, and triggers.
+  -  `mattermost webhook move-outgoing`_ - Move an existing outgoing webhook with an ID.
+  -  `mattermost webhook show`_ - Show information about a webhook by providing the webhook ID.
 
 mattermost webhook create-incoming
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  Description
+Description
     Create an incoming webhook within specific channel.
 
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost webhook create-incoming
+    mattermost webhook create-incoming
 
-  Examples
-    .. code-block:: none
+Examples
+  .. code-block:: none
 
-       bin/mattermost webhook create-incoming --channel [channelID] --user [userID] --display-name [display-name] --description [webhookDescription] --lock-to-channel --icon [iconURL]
+    bin/mattermost webhook create-incoming --channel [channelID] --user [userID] --display-name [display-name] --description [webhookDescription] --lock-to-channel --icon [iconURL]
 
-  Options
-    .. code-block:: none
+Options
+  .. code-block:: none
 
-          --channel string           Channel ID
-          --user string              User ID
-          --display-name string      Incoming webhook display name
-          --description string       Incoming webhook description
-          --lock-to-channel boolean  (True/False) Lock incoming webhook to channel
-          --icon [iconURL]           Icon URL
+    --channel string           Channel ID
+    --user string              User ID
+    --display-name string      Incoming webhook display name
+    --description string       Incoming webhook description
+    --lock-to-channel boolean  (True/False) Lock incoming webhook to channel
+    --icon [iconURL]           Icon URL
 
 mattermost webhook create-outgoing
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  Description
-    Create an outgoing webhook which allows external posting of messages from a specific channel.
+Description
+  Create an outgoing webhook which allows external posting of messages from a specific channel.
 
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost webhook create-outgoing
+    mattermost webhook create-outgoing
 
-  Examples
-    .. code-block:: none
+Examples
+  .. code-block:: none
 
-       bin/mattermost webhook create-outgoing --team myteam --channel mychannel --user myusername --display-name mywebhook --description "My cool webhook" --trigger-when start --trigger-word "build" --icon http://localhost:8000/my-slash-handler-bot-icon.png --url http://localhost:8000/my-webhook-handler --content-type "application/json"
+    bin/mattermost webhook create-outgoing --team myteam --channel mychannel --user myusername --display-name mywebhook --description "My cool webhook" --trigger-when start --trigger-word "build" --icon http://localhost:8000/my-slash-handler-bot-icon.png --url http://localhost:8000/my-webhook-handler --content-type "application/json"
 
-       bin/mattermost webhook create-outgoing --team myotherteam --channel mychannel --user myusername --display-name myotherwebhook --description "My cool webhook" --trigger-when exact --trigger-word "build" --trigger-word "test" --trigger-word "third-trigger" --icon http://localhost:8000/my-slash-handler-bot-icon.png --url http://localhost:8000/my-webhook-handler --url http://example.com --content-type "application/json"
+    bin/mattermost webhook create-outgoing --team myotherteam --channel mychannel --user myusername --display-name myotherwebhook --description "My cool webhook" --trigger-when exact --trigger-word "build" --trigger-word "test" --trigger-word "third-trigger" --icon http://localhost:8000/my-slash-handler-bot-icon.png --url http://localhost:8000/my-webhook-handler --url http://example.com --content-type "application/json"
 
-  Options
-    .. code-block:: none
+Options
+  .. code-block:: none
 
-          --team string [REQUIRED]                Team name or ID
-          --channel string                        Channel name or ID
-          --user string [REQUIRED]                User username, email, or ID
-          --display-name string [REQUIRED]        Outgoing webhook display name
-          --description string                    Outgoing webhook description
-          --trigger-words stringArray [REQUIRED]  Words to trigger webhook
-          --trigger-when string [REQUIRED]        When to trigger webhook (exact: for first word matches a trigger word exactly, start: for first word starts with a trigger word) (default "exact")
-          --icon [iconURL]                        Icon URL
-          --url stringArray [REQUIRED]            Callback URLs
-          --content-type string                   Content-type
-          --h, --help         Help for create-outgoing
+    --team string [REQUIRED]                Team name or ID
+    --channel string                        Channel name or ID
+    --user string [REQUIRED]                User username, email, or ID
+    --display-name string [REQUIRED]        Outgoing webhook display name
+    --description string                    Outgoing webhook description
+    --trigger-words stringArray [REQUIRED]  Words to trigger webhook
+    --trigger-when string [REQUIRED]        When to trigger webhook (exact: for first word matches a trigger word exactly, start: for first word starts with a trigger word) (default "exact")
+    --icon [iconURL]                        Icon URL
+    --url stringArray [REQUIRED]            Callback URLs
+    --content-type string                   Content-type
+    --h, --help                             Help for create-outgoing
 
 mattermost webhook delete
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-   Description
-    Delete incoming and outgoing webhooks. If deleting multiple webhooks, use a space-separated list.
+Description
+  Delete incoming and outgoing webhooks. If deleting multiple webhooks, use a space-separated list.
 
-   Format
-     .. code-block:: none
+Format
+  .. code-block:: none
 
-       mattermost webhook delete [webhookID]
+    mattermost webhook delete [webhookID]
 
-   Examples
-     .. code-block:: none
+Examples
+  .. code-block:: none
 
-        bin/mattermost webhook delete ggwpz8c1oj883euk98wfm9n1cr
+    bin/mattermost webhook delete ggwpz8c1oj883euk98wfm9n1cr
 
 mattermost webhook list
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-  Description
-    List all webhooks.
+Description
+  List all webhooks.
 
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost webhook list {team}
+    mattermost webhook list {team}
 
-  Examples
-    .. code-block:: none
+Examples
+  .. code-block:: none
 
-       bin/mattermost webhook list team1
-       bin/mattermost webhook list
+    bin/mattermost webhook list team1
+    bin/mattermost webhook list
 
-  Options
-    .. code-block:: none
+Options
+  .. code-block:: none
 
-          --team string  Specific team results to return.  If not specified, all teams will be included.
+    --team string  Specific team results to return.  If not specified, all teams will be included.
 
 mattermost webhook modify-incoming
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  Description
-    Modify an existing incoming webhook by changing its title, description, channel or icon url.
+Description
+  Modify an existing incoming webhook by changing its title, description, channel or icon url.
 
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost webhook modify-incoming {webhookId}
+    mattermost webhook modify-incoming {webhookId}
 
-  Examples
-    .. code-block:: none
+Examples
+  .. code-block:: none
 
-       bin/mattermost webhook modify-incoming [webhookID] --channel [channelID] --display-name [displayName] --description [webhookDescription] --lock-to-channel --icon [iconURL]
+    bin/mattermost webhook modify-incoming [webhookID] --channel [channelID] --display-name [displayName] --description [webhookDescription] --lock-to-channel --icon [iconURL]
 
-  Options
-    .. code-block:: none
+Options
+  .. code-block:: none
 
-          --channel string              Channel ID
-          --display-name string         Incoming webhook display name
-          --description string          Incoming webhook description
-          --lock-to-channel boolean     (True/False) Lock incoming webhook to channel
-          --icon [iconURL]              Icon URL
+    --channel string              Channel ID
+    --display-name string         Incoming webhook display name
+    --description string          Incoming webhook description
+    --lock-to-channel boolean     (True/False) Lock incoming webhook to channel
+    --icon [iconURL]              Icon URL
 
 mattermost webhook modify-outgoing
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  Description
-    Modify an existing outgoing webhook by changing its title, description, channel, trigger words, icon url, callback url, or content type.
+Description
+  Modify an existing outgoing webhook by changing its title, description, channel, trigger words, icon url, callback url, or content type.
 
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost webhook modify-outgoing {webhookId}
+    mattermost webhook modify-outgoing {webhookId}
 
-  Examples
-    .. code-block:: none
+Examples
+  .. code-block:: none
 
-       bin/mattermost webhook modify-outgoing [webhookId] --channel [channelId] --display-name [displayName] --description "New webhook description" --icon http://localhost:8000/my-slash-handler-bot-icon.png --url http://localhost:8000/my-webhook-handler --content-type "application/json" --trigger-word test --trigger-when start`
+    bin/mattermost webhook modify-outgoing [webhookId] --channel [channelId] --display-name [displayName] --description "New webhook description" --icon http://localhost:8000/my-slash-handler-bot-icon.png --url http://localhost:8000/my-webhook-handler --content-type "application/json" --trigger-word test --trigger-when start`
 
-  Options
-    .. code-block:: none
+Options
+  .. code-block:: none
 
-          --channel string              Channel ID
-          --display-name string         Incoming webhook display name
-          --description string          Incoming webhook description
-	  --trigger-word string array	Word(s) to trigger webhook
-	  --trigger-when string		When to trigger webhook (exact: for first word matches a trigger word exactly, start: for first word starts with a trigger word)")
-         --icon [iconURL]              Icon URL
-	  --url [callbackURL]           Callback URL
-	  --content-type string         Content type
+    --channel string                Channel ID
+    --display-name string           Incoming webhook display name
+    --description string            Incoming webhook description
+    --trigger-word string array     Word(s) to trigger webhook
+    --trigger-when string           When to trigger webhook (exact: for first word matches a trigger word exactly, start: for first word starts with a trigger word)")
+    --icon [iconURL]                Icon URL
+    --url [callbackURL]             Callback URL
+    --content-type string           Content type
 
 mattermost webhook move-outgoing
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  Description
+Description
     Move an existing outgoing webhook to another team by specifying its id. If the outgoing webhook is triggered by a keyword then assigning a channel is optional.  If the outgoing webhook is associated to a specific channel prior to moving, a channel must be specified within the new team.
 
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost webhook move-outgoing {webhookId}
+    mattermost webhook move-outgoing {webhookId}
 
-  Examples
-    .. code-block:: none
+Examples
+  .. code-block:: none
 
-       bin/mattermost webhook move-outgoing newteam oldteam:[webhookId] --channel [channelId or channelName]
+    bin/mattermost webhook move-outgoing newteam oldteam:[webhookId] --channel [channelId or channelName]
 
-  Options
-    .. code-block:: none
+Options
+  .. code-block:: none
 
-          --channel string              Channel ID or Channel Name
-
+    --channel string              Channel ID or Channel Name
 
 mattermost webhook show
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-  Description
+Description
     Show information about a webhook by providing the webhook ID. Returns display name, channel ID and team ID for both incoming and outgoing webhooks.  Additionally returns callback URL, username, and icon URL for outgoing webhooks.
 
-  Format
-    .. code-block:: none
+Format
+  .. code-block:: none
 
-      mattermost webhook show {webhookId}
+    mattermost webhook show {webhookId}
 
-  Examples
-    .. code-block:: none
+Examples
+  .. code-block:: none
 
-       bin/mattermost webhook show [webhookId]
-
-Mattermost 3.5 and earlier
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Typing ``./platform -help`` brings up documentation for the CLI tool. To return the help documentation in GitLab omnibus, type
-
-    .. code-block:: none
-
-      sudo -u mattermost /opt/gitlab/embedded/bin/mattermost --config=/var/opt/gitlab/mattermost/config.json -help
-
-Notes:
-
-- Parameters in CLI commands are order-specific.
-- If special characters (``!``, ``|``, ``(``, ``)``, ``\``, `````, and ``"``) are used, the entire argument needs to be surrounded by single quotes (e.g. ``-password 'mypassword!'``, or the individual characters need to be escaped out (e.g. ``-password mypassword\!``).
-- Team name and channel name refer to the handles, not the display names. So in the url ``https://community.mattermost.com/core/channels/town-square`` team name would be ``core`` and channel name would be ``town-square``
-
-.. tip :: 
-	
-	If you automate user creation through the CLI tool with SMTP enabled, emails will be sent to all new users created. If you run such a load script, it is best to disable SMTP or to use test accounts so that new account creation emails aren't unintentionally sent to people at your organization who aren't expecting them.
+    bin/mattermost webhook show [webhookId]
 
 CLI Documentation:
 
@@ -2775,10 +2807,10 @@ CLI Documentation:
 
 
 Troubleshooting
-^^^^^^^^^^^^^^^^^
+----------------
 
 Executing a command hangs and doesn't complete
-------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you have Bleve search indexing enabled, temporarily disable it in **System Console > Experimental > Bleve** and run the command again. You can also optionally use the new `mmctl Command Line Tool </manage/mmctl-command-line-tool.html>`_.
 

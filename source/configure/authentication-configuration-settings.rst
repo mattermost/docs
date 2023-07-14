@@ -2204,7 +2204,7 @@ Select OpenID Connect service provider
 | - **Office 365** (`see settings <#office-365-openid-settings>`__)                |                                                           |
 | - **OpenID Connect (Other)** (`see settings <#openid-connect-other-settings>`__) |                                                           |
 +----------------------------------------------------------------------------------+-----------------------------------------------------------+
-| **Note**: **GitLab** OpenID is available in all plans. All other providers require Mattermost Enterprise or Professional. |
+| **Note**: **GitLab** OpenID is available in all plans. All other providers require Mattermost Enterprise or Professional.                    |
 +----------------------------------------------------------------------------------------------------------------------------------------------+
 
 GitLab OpenID settings

@@ -1,4 +1,4 @@
-SActive directory/LDAP setup
+Active directory/LDAP setup
 ===========================
 
 .. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
