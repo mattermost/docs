@@ -129,7 +129,7 @@ All Platforms
 - Fixed an issue with maximizing the main window when a monitor is removed.
 - Fixed an issue where special characters in the server name caused the top bar of the Desktop App to disappear.
 - Fixed an issue where OneLogin users wouldn't have their credentials remembered.
-- Fixed an issue with plugin navigation displaying a white empty bar between the plugin UI and the Desktop app bar.
+- Fixed an issue with plugin navigation displaying a white empty bar between the plugin UI and the Desktop Apps Bar.
 
 Known Issues
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

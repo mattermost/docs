@@ -1,15 +1,15 @@
-Mattermost Playbooks
-====================
+Mattermost Playbooks plugin
+===========================
 
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Mattermost Playbooks are pre-built, configurable checklists that define a repeatable process for teams to achieve specific and predictable outcomes. With Playbooks, development teams can orchestrate prescribed workflows and define, streamline, and document complex, recurring operations. Playbooks help you stay in command with integrated communication, collaboration, and status dashboards to manage your entire workflow lifecycle.
+The Mattermost Playbooks plugin enables you to create and manage pre-built, configurable checklists that define a repeatable process for teams to achieve specific and predictable outcomes. With playbooks, development teams can orchestrate prescribed workflows and define, streamline, and document complex, recurring operations. Playbooks help you stay in command with integrated communication, collaboration, and status dashboards to manage your entire workflow lifecycle.
     
 .. image:: ../images/Playbooks_Hero.png
-   :alt: An example of the Mattermost Playbooks screen that includes active run details in the right-hand pane.
+   :alt: An example of the Mattermost Playbooks plugin screen that includes active run details in the right-hand pane.
    
-This Mattermost Playbooks User Guide is for anyone who needs help using Mattermost workflow capabilities.
+This Mattermost Playbooks plugin documentation is for anyone who needs help using Mattermost workflow capabilities.
 
 .. toctree::
    :hidden:
@@ -23,7 +23,7 @@ This Mattermost Playbooks User Guide is for anyone who needs help using Mattermo
    Share and collaborate </playbooks/share-and-collaborate>
    Interact with playbooks </playbooks/interact-with-playbooks>
    
-* :doc:`Overview </playbooks/overview>` - Learn about Mattermost Playbooks features.
+* :doc:`Overview </playbooks/overview>` - Learn about Mattermost Playbooks plugin features.
 * :doc:`Work with playbooks </playbooks/work-with-playbooks>` - Customize a playbook for successful runs.
 * :doc:`Work with runs </playbooks/work-with-runs>` - Edit triggers and actions in an active run.
 * :doc:`Work with tasks </playbooks/work-with-tasks>` - Work with tasks and the task inbox.

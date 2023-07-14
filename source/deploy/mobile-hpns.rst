@@ -62,19 +62,15 @@ Configuring your existing Mattermost instance to use the Mattermost HPNS is a si
 
 3. Set **Enable Push Notifications** to **Use HPNS connection with uptime SLA to send notifications to iOS and Android apps**. Note that this option is only available in Mattermost Enterprise Edition.
 
-4. Specify the URL of the **Push Notification Server** based on your Mattermost edition.
+4. Mattermost Enterprise and Professional customers: Specify the physical location of the **Push Notification Server**.
 
-- Mattermost Team Edition: ``https://push-test.mattermost.com``
-- Mattermost Enterprise Edition: ``https://push.mattermost.com``
+  - United States: ``https://push.mattermost.com``
+  - Germany: ``https://hpns-de.mattermost.com``
 
 .. image:: ../images/mobile_hpns.png
    :alt: Configure a licensed self-hosted Mattermost deployment to use the Mattermost Hosted Push Notification Server (HPNS) in the System Console by going to Environment > Push Notification Server. Select the HPNS option, then specify the server URL.
    
 5. Review the Mattermost Terms of Service and the Mattermost Privacy Policy, then select the box "I understand and accept the Mattermost Hosted Push Notification Service Terms of Service and Privacy Policy" to acknowledge that you understand the terms of use.
-
-.. note:: 
-
-  The default **Push Notification Server** address is ``https://push.mattermost.com``. The server is hosted inside the United States. Mattermost also offers a push notification server hosted in Germany. If you wish to use the server in Germany, update the **Push Notification Server** address to ``https://hpns-de.mattermost.com/``.
 
 6. Select **Save**
 

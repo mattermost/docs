@@ -32,6 +32,12 @@ Join, leave, or mute channels
 - Mute a channel using ``/mute`` or ``/mute {channel-name}`` to turn off desktop, email, and push notifications for the current or specified channel.
 - Remove someone from a channel using ``/kick {@username}`` or ``/remove {@username}``.
 
+Start or join a call
+~~~~~~~~~~~~~~~~~~~~
+
+- Start a call in a channe or thread using ``/call start``
+- Join a call in a channel or thread using ``/call join``
+
 Manage conversations
 ~~~~~~~~~~~~~~~~~~~~
 
