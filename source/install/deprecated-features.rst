@@ -7,7 +7,7 @@ Removed features in upcoming versions
 -------------------------------------
 
 Removed features by Mattermost version
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------
 
 Mattermost Server v8.0.0
 ~~~~~~~~~~~~~~~~~~~~~~~~
