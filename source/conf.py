@@ -365,7 +365,7 @@ redirects = {
 "cloud/cloud-reporting.html":
 	"https://docs.mattermost.com/manage/statistics.html",
 "cloud/cloud-administration/data-retention-policy.html":
-        "https://docs.mattermost.com/comply/cloud-data-retention-policy.html",
+        "https://docs.mattermost.com/comply/data-retention-policy.html",
 "cloud/cloud-administration/saml-technical.html":
 	"https://docs.mattermost.com/onboard/cloud-sso-saml-technical.html",
 "cloud/cloud-administration/sso-openid-connect.html":
