@@ -392,6 +392,8 @@ redirects = {
 # Compliance redirects
 "comply/compliance-reporting-oversight":
         "https://docs.mattermost.com/comply/compliance-monitoring.html",
+"comply/cloud-data-retention-policy.html":
+	"https://docs.mattermost.com/comply/data-retention-policy.html",
 
 # Configure redirects
 "configure/config-ssl-http2-apache2.html":
