@@ -543,7 +543,7 @@ Latest Mattermost Cloud releases:
  - Fixed an issue where the metrics server restarted for every config change.
  - Prevented browsers and CDNs from caching remote entrypoint files.
  - Fixed a potential read-after-write issue when uploading data through the resumable uploads API.
- - Fixed the position of the Boards icon in the app bar when Boards is running without a plugin.
+ - Fixed the position of the Boards icon in the Apps Bar when Boards is running without a plugin.
  - Fixed ability to create a board when Boards is running without a plugin.
  - Fixed Boards tour tips not appearing when Boards is running without a plugin.
  - Fixed the slash command description help text.

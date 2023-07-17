@@ -9,7 +9,7 @@ Configure Mattermost to enable push notifications to Mattermost clients by going
   :configjson: .EmailSettings.SendPushNotifications
   :environment: MM_EMAILSETTINGS_SENDPUSHNOTIFICATIONS
 
-  - **true**: **(Default)** Your Mattermost server sends mobile push notifications to the server specified.
+  - **true**: **(Default)** Your Mattermost server sends mobile push notifications.
   - **false**: Mobile push notifications are disabled.
 
 Enable push notifications
@@ -20,9 +20,34 @@ Enable push notifications
 +-----------------------------------------------------------------+--------------------------------------------------------------------------------+
 | Enable or disable Mattermost push notifications.                | - System Config path: **Environment > Push Notification Server**               |
 |                                                                 | - ``config.json setting``: ``".EmailSettings.SendPushNotifications": true",``  |
-| - **true**: **(Default)** Your Mattermost server sends mobile   | - Environment variable: ``MM_EMAILSETTINGS_SENDPUSHNOTIFICATIONS``             |
-|   push notifications to the server specified.                   |                                                                                |
-| - **false**: Mobile push notifications are disabled.            |                                                                                |
+| - **Do not send push notifications**: Mobile push notifications | - Environment variable: ``MM_EMAILSETTINGS_SENDPUSHNOTIFICATIONS``             |
+|   are disabled.                                                 |                                                                                |
+| - **Use HPNS connection with uptime SLA to send notifications   |                                                                                |
+|   to iOS and Android apps**: **(Default)** Use Mattermost's     |                                                                                |
+|   `hosted push notification service </deploy/mobile-hpns.html   |                                                                                |
+|   push-notifications-service-hpns>`__.                          |                                                                                |
+| - **Use TPNS connection to send notifications to iOS and        |                                                                                |
+|   Android apps**: Use Mattermost's `test push notification      |                                                                                |
+|   service </deploy/mobile-hpns.html#test-push-notifications-    |                                                                                |
+|   service-tpns>`__.                                             |                                                                                |
+| - **Manually enter Push Notification Service location**:        |                                                                                |
+|   When building your own custom mobile apps, you must `host     |                                                                                |
+|   your own mobile push proxy service </deploy/mobile-hpns.      |                                                                                |
+|   html#host-your-own-push-proxy-service>`__, and specify that   |                                                                                |
+|   URL in the **Push Notification Server** field.                |                                                                                |
++-----------------------------------------------------------------+--------------------------------------------------------------------------------+
+| **Notes**:                                                                                                                                       |
+|                                                                                                                                                  |
+| - Mattermost Enterprise, Professional, and Cloud customers can use Mattermost’s SLA-bound Hosted Push Notification Service (HPNS) in one of two  |
+|   of two locations, including the United States and Germany. Mattermost Team Edition customers can use Mattermost's Test Push Notification       |
+|   server (TPNS).                                                                                                                                 |
+| - The TPNS is provided for testing push notifications prior to compiling your own service, and isn't available for Mattermost Cloud deployments. |
+|   Ensure you’re familiar with its `limitations </deploy/mobile-hpns.html#test-push-notifications-service-tpns>`__.                               |
+| - Review the `mobile push notifications </deploy/mobile-hpns.html>`__ and `mobile apps </deploy/build-custom-mobile-apps.html>`__ documentation, |
+|   including guidance on compiling your own mobile apps and MPNS, before deploying to production.                                                 |
+| - To confirm push notifications are working, connect to the `Mattermost iOS App <https://apps.apple.com/us/app/mattermost/id1257222717>`__       |
+|   available on the App Store, or the `Mattermost Android App <https://play.google.com/store/apps/details?id=com.mattermost.rn>`__ available on   |
+|   Google Play.                                                                                                                                   |
 +-----------------------------------------------------------------+--------------------------------------------------------------------------------+
 
 .. config:setting:: push-serverlocation
@@ -30,7 +55,7 @@ Enable push notifications
   :systemconsole: Environment > Push Notification Server
   :configjson: .EmailSettings.PushNotificationServer
   :environment: MM_EMAILSETTINGS_PUSHNOTIFICATIONSERVER
-  :description: The URL of the Mattermost Push Notification Service (MPNS), which re-sends push notifications from Mattermost to services like Apple Push Notification Service (APNS) and Google Cloud Messaging (GCM).
+  :description: The physical location of the Mattermost Hosted Notification Service (HPNS) server.
 
 Push notification server location
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -38,29 +63,12 @@ Push notification server location
 *Available in legacy Enterprise Edition E10/E20*
 
 +-----------------------------------------------------------------+--------------------------------------------------------------------------------+
-| The location of Mattermost Push Notification Service (MPNS),    | - System Config path: **Environment > Push Notification Server**               |
-| which re-sends push notifications from Mattermost to services   | - ``config.json setting``: ``".EmailSettings.PushNotificationServer",``        |
-| like Apple Push Notification Service (APNS) and Google Cloud    | - Environment variable: ``MM_EMAILSETTINGS_PUSHNOTIFICATIONSERVER``            |
-| Messaging (GCM).                                                |                                                                                |
-|                                                                 |                                                                                |
-| - Customers running a Professional or Enterprise Edition        |                                                                                |
-|   workspace should enter ``https://push.mattermost.com`` for    |                                                                                |
-|   the push notification server hosted in the United States.     |                                                                                |
-| - If you prefer to use a push notification server hosted in     |                                                                                |
-|   Germany, enter ``https://hpns-de.mattermost.com/``.           |                                                                                |
-| - Team Edition customers should enter                           |                                                                                |
-|   ``https://push-test.mattermost.com``.                         |                                                                                |
-+-----------------------------------------------------------------+--------------------------------------------------------------------------------+
-| **Notes**:                                                                                                                                       |
-|                                                                                                                                                  |
-| - The TPNS is provided for testing push notifications prior to compiling your own service. Ensure you’re familiar with its `limitations          |
-|   </deploy/mobile-hpns.html#test-push-notifications-service-tpns>`__. Review the                                                                 |
-|   `mobile push notifications </deploy/mobile-hpns.html>`__                                                                                       |
-|   and `mobile apps </deploy/build-custom-mobile-apps.html>`__ documentation, including guidance on compiling your own                            |
-|   mobile apps and MPNS, before deploying to production.                                                                                          |
-| - To confirm push notifications are working, connect to the `Mattermost iOS App <https://apps.apple.com/us/app/mattermost/id1257222717>`__       |
-|   available on the App Store, or the `Mattermost Android App <https://play.google.com/store/apps/details?id=com.mattermost.rn>`__ available on   |
-|   Google Play.                                                                                                                                   |
+| The physical location of the Mattermost Hosted Push             | - System Config path: **Environment > Push Notification Server**               |
+| Notification Service (HPNS) server.                             | - ``config.json setting``: ``".EmailSettings.PushNotificationServer",``        |
+|                                                                 | - Environment variable: ``MM_EMAILSETTINGS_PUSHNOTIFICATIONSERVER``            |
+| Select from **US** **(Default)** or **Germany** to              |                                                                                |
+| automatically populate the **Push Notification Server**         |                                                                                |
+| field server URL.                                               |                                                                                |
 +-----------------------------------------------------------------+--------------------------------------------------------------------------------+
 
 .. config:setting:: push-maxnotificationsperchannel

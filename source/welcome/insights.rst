@@ -4,16 +4,16 @@ Insights
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
+.. important::
+
+  From Mattermost v8.0, Insights has been disabled for all new instances and for existing servers that upgrade to Mattermost v8.0.
+
 Insights offer you visibility into top activities by surfacing the most important events happening within each team within your Mattermost workspace. 
 
 From Mattermost v7.1, insights are available for all users using Mattermost in a web browser or the desktop app, except guests. Mobile support for insights is coming in a future release.
 
 .. image:: ../images/myinsights_teaminsights.gif
   :alt: An example of the Mattermost Insights page that includes top user and team-based activities and events.
-  
-.. note:: 
-    
-   To disable Insights, system admins can set the feature flag ``MM_FEATUREFLAGS_INSIGHTSENABLED`` to ``false`` to disable it server-wide. It can't be disabled on a per-user basis. The code is located `here <https://github.com/mattermost/mattermost-server/blob/master/model/feature_flags.go#L11>`_.
 
 Access insights
 ---------------
