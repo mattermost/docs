@@ -2277,7 +2277,7 @@ Create an export file.
 
 .. code-block:: sh
 
-   --no-attachments     Set to true to include file attachments in the export file.
+   --no-attachments     Omit to include file attachments in the export file.
    -h, --help           help for create
 
 **Options inherited from parent commands**
