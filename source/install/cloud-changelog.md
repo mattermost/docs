@@ -37,6 +37,7 @@ Latest Mattermost Cloud releases:
  - Fixed an issue where drafts would persist after sending an ``@here`` mention in the right-hand side.
  - Fixed an issue where the **New messages** toast appeared on channels that were completely visible.
  - Fixed an UI issue related to profile popover on channel member search in the right hand pane.
+ - Fixed an issue where the multi-line channel header preview was too narrow on mobile web view.
 
 ### Known Issues
  - Boards public links that follow the URL schema `/boards/public/...` will not work after this update. They can either be regenerated through the application by going to the board and selecting the **Share** button at the top right, or they can be obtained by replacing the `/boards/public/` part of the URL with `/plugins/focalboard/`.
