@@ -9,7 +9,7 @@ Unified communication
    /about/install-mattermost-for-microsoft-teams-plugin.rst
    /about/install-mattermost-app-in-microsoft-teams.rst
 
-Mattermost's Unified Communication solution is designed to provide an extended extended customization experience for technical and operational teams.
+Mattermost's Unified Communication solution is designed to provide an extended collaboration experience for technical and operational teams to teams on other collaboration systems.
 
 * :doc:`Mattermost for Microsoft Teams </about/mattermost-for-microsoft-teams>` - Learn how organizations can easily connect operational workflows through the Mattermost app while staying connected to the all-employee platform, all in one place.
 
