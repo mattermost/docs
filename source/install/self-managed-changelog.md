@@ -198,6 +198,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - Added ``date-fns`` to https://github.com/mattermost/mattermost/.
 
 ### Known Issues
+ - v8.0.0 **About Mattermost** dialog shows "ci" as the current version in Team Edition [MM-53681](https://mattermost.atlassian.net/browse/MM-53681).
  - White screen might appear when creating a slash command [MM-53665](https://mattermost.atlassian.net/browse/MM-53665).
  - When sending a draft message in a Thread, the message is not cleared if the thread is open in the right-hand side [MM-53520](https://mattermost.atlassian.net/browse/MM-53520).
  - Channel and team names are missing from **Saved Posts** in the right-hand side [MM-53636](https://mattermost.atlassian.net/browse/MM-53636).
