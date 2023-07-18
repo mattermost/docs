@@ -18,6 +18,7 @@ Latest Mattermost Releases:
   - Mattermost v8.0.1 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Mattermost v8.0.1 contains no database or functional changes.
   - Added support for embedding Mattermost in a Microsoft Teams iframe.
+  - Fixed an issue where the v8.0.0 **About Mattermost** dialog reported an incorrect server version in the Free Plan [MM-53681](https://mattermost.atlassian.net/browse/MM-53681).
 - **8.0.0, released 2023-07-14**
   - Original 8.0.0 release
 
@@ -198,7 +199,6 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - Added ``date-fns`` to https://github.com/mattermost/mattermost/.
 
 ### Known Issues
- - v8.0.0 **About Mattermost** dialog shows "ci" as the current version in Team Edition [MM-53681](https://mattermost.atlassian.net/browse/MM-53681).
  - White screen might appear when creating a slash command [MM-53665](https://mattermost.atlassian.net/browse/MM-53665).
  - When sending a draft message in a Thread, the message is not cleared if the thread is open in the right-hand side [MM-53520](https://mattermost.atlassian.net/browse/MM-53520).
  - Channel and team names are missing from **Saved Posts** in the right-hand side [MM-53636](https://mattermost.atlassian.net/browse/MM-53636).
