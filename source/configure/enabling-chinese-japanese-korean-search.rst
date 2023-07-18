@@ -1,6 +1,6 @@
 ..  _i18n:
 
-Chinese, Japanese, and Korean search
+Chinese, Japanese and Korean search
 ======================================
 
 .. include:: ../_static/badges/allplans-selfhosted.rst
@@ -18,65 +18,92 @@ Below is additional information on how to configure the database for different l
 中文 / Chinese
 --------------
 
-数据库版本请参考： `配置要求 </install/software-hardware-requirements.html#database-software>`__ 。
-其中MySQL的ngram配置可以参考 `Cannot search CJK contents <https://github.com/mattermost/mattermost-server/issues/2033#issuecomment-182336690>`__ 。
+尽管在 Mattermost 8.0 更新后，官方推荐为了更好的性能请使用 PostgreSQL 作为后端数据库。
 
-更多中文相关问题讨论请访问 `中文讨论组 <https://forum.mattermost.com/c/international/chinese>`__ 。
+但就目前而言，使用 MySQL 能够更容易的实现中文语言的全文搜索功能，在妥善配置 ngram 后，根据官方数据库构造重新生成索引即可达成。
+具体的操作方式，可参考： `Cannot search CJK contents <https://github.com/mattermost/mattermost-server/issues/2033#issuecomment-182336690>`__。
 
-以Ubuntu 14.04 PostgreSQL 9.3 数据库 mattermost 为例。
+有关 PostgreSQL 的配置方式，请参考以下流程：
 
-编译scws
-~~~~~~~~
-
-.. code:: bash
-
-    wget -q -O - http://www.xunsearch.com/scws/down/scws-1.2.2.tar.bz2 | tar xjf -
-    cd scws-1.2.2
-    ./configure
-    make install
-
-编译zhparser
-~~~~~~~~~~~~
+配置 SCWS
+~~~~~~~~~~
 
 .. code:: bash
 
-    sudo apt-get install --yes postgresql-server-dev-9.3 libpq-dev
-    git clone https://github.com/amutu/zhparser.git
-    SCWS_HOME=/usr/local make && make install
+    # 取得 SCWS 代码
+    wget http://www.xunsearch.com/scws/down/scws-1.2.3.tar.bz2
+    # 解压缩
+    tar xvjf scws-1.2.3.tar.bz2
+    # 进入解压后的目录
+    cd scws-1.2.3
+    # 执行配置脚本、编译并安装
+    ./configure --prefix=/usr/local/scws ; make ; make install
+    
+    # 可选：检查文件是否存在
+    ls -al /usr/local/scws/lib/libscws.la
+    /usr/local/scws/bin/scws -h
+    # 可选：将词典安装在 /usr/local/scws/etc 中
+    cd /usr/local/scws/etc
+    wget http://www.xunsearch.com/scws/down/scws-dict-chs-gbk.tar.bz2
+    wget http://www.xunsearch.com/scws/down/scws-dict-chs-utf8.tar.bz2
+    tar xvjf scws-dict-chs-gbk.tar.bz2
+    tar xvjf scws-dict-chs-utf8.tar.bz2
 
-.. note::
-  通过 Docker 镜像（mattermost/mattermost-prod-db）应用数据库的用户，请按照下述方法安装依赖项。
-
-  .. code:: bash
-
-    # Alpine 通过 apk add 命令安装依赖项
-    apk add wget tar gcc git postgresql-dev 
-
-创建extension以及增加解析配置
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. code:: bash
-
-   sudo -i -u postgres
-   psql mattermost -c 'CREATE EXTENSION zhparser'
-   psql mattermost -c 'CREATE TEXT SEARCH CONFIGURATION simple_zh_cfg (PARSER = zhparser);'
-   psql mattermost -c 'ALTER TEXT SEARCH CONFIGURATION simple_zh_cfg ADD MAPPING FOR n,v,a,i,e,l WITH simple;'
-
-设置postgresql
+配置 Zhparser
 ~~~~~~~~~~~~~~
 
-将 /etc/postgresql/9.3/main/postgresql.conf 中 default_text_search_config 的值更改为 simple_zh_cfg，然后重启postgresql: sudo service postgresql restart
+.. code:: bash
 
-调试
-~~~~
+    # 下载 Zhparser 源代码
+    git clone https://github.com/amutu/zhparser.git
+    # 进入下载后的目录
+    cd zhparser
+    # 编译并安装
+    SCWS_HOME=/usr/local/scws make && make install
 
-可以打开 mattermost 的配置 config/config.json 中 SqlSettings 的设置 Trace: true，然后可以在mattermost的标准输出看到执行的SQL语句。
+.. note::
+
+    自 Mattermost 6.0 起，官方已不再使用 mattermost/mattermost-prod-db 作为数据库镜像，你可以直接使用安装在服务器上的 PostgreSQL 数据库，或者使用 PostgreSQL 官方的 Docker 镜像。
+
+    如果使用 Docker 镜像作为数据库，可以预先执行以下命令，安装依赖（请根据实际的 PostgreSQL 版本选择）。
+
+    .. code:: bash
+
+        # 更新本地缓存
+        apt update
+        # 配置 SCWS 时需要的依赖
+        apt install wget make gcc
+        # 配置 Zhparser 时需要的依赖
+        apt install git postgresql-server-dev-13
+
+创建 extension 并增加解析配置
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code:: sql
 
-    SELECT to_tsvector('simple_zh_cfg', '开始全面整修道路');
-    SELECT to_tsvector('simple_zh_cfg', '开始全面整修道路') @@ to_tsquery('simple_zh_cfg', '全面');
-    SELECT * FROM Posts WHERE Message @@ to_tsquery('simple_zh_cfg', '全面');
+    -- 创建 extension
+    CREATE EXTENSION zhparser
+    -- 创建 text serach confguration
+    CREATE TEXT SEARCH CONFIGURATION simple_zh_cfg (PARSER = zhparser);
+    -- 配置 token mapping
+    ALTER TEXT SEARCH CONFIGURATION simple_zh_cfg ADD MAPPING FOR n,v,a,i,e,l WITH simple;    
+
+更新 PostgreSQL 配置
+~~~~~~~~~~~~~~~~~~~~~
+
+将 postgresql.conf 中的 default_text_search_config 的值更改为 simple_zh_cfg。
+
+更改后，需要重启数据库方可生效。
+
+.. note::
+
+    配置完成后，需根据 Mattermost 官方仓库中的 SQL 建表语句重新创建索引，方可正式启用中文语言的全文搜索功能。
+
+    未尽事宜，可以参考以下链接：
+
+    - `SCWS 官方文档 <http://www.xunsearch.com/scws/docs.php>`__
+    - `Zhparser 官方文档 <https://github.com/amutu/zhparser/blob/master/README.md>`__
+    - `Mattermost 建表语句 <https://github.com/mattermost/mattermost/tree/master/server/channels/db/migrations/postgres>`__
 
 日本語 / Japanese
 -----------------
