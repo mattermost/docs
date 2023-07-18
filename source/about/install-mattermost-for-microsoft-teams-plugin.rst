@@ -7,7 +7,7 @@ Install the Mattermost for Microsoft Teams plugin
 To install the `Mattermost for Microsoft Teams </plugins/mattermost-for-microsoft-teams>`__ plugin in Mattermost:
 
 1. Log in to your Mattermost workspace as a system administrator.
-2. Download the `latest plugin binary release <https://github.com/mattermost/mattermost-plugin-msteams-sync/releases>`__, compatible with Mattermost v8.0.1 and later. 
+2. Download version v0.3.9 of `the plugin binary release <https://github.com/mattermost/mattermost-plugin-msteams-sync/releases>`__, compatible with Mattermost v8.0.1 and later. 
 
   .. tip::
 
