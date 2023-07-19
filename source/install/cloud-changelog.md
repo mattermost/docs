@@ -5,11 +5,11 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 Latest Mattermost Cloud releases:
 
 - [Release 2023-07-27](#release-2023-07-27)
+- [Release 2023-07-19](#release-2023-07-19)
 - [Release 2023-07-11](#release-2023-07-11)
 - [Release 2023-06-26](#release-2023-06-26)
 - [Release 2023-06-13](#release-2023-06-13)
 - [Release 2023-05-31](#release-2023-05-31)
-- [Release 2023-05-01](#release-2023-05-01)
 
 ## Release 2023-07-27
 
@@ -39,6 +39,11 @@ Latest Mattermost Cloud releases:
 ### Known Issues
  - Boards public links that follow the URL schema `/boards/public/...` will not work after this update. They can either be regenerated through the application by going to the board and selecting the **Share** button at the top right, or they can be obtained by replacing the `/boards/public/` part of the URL with `/plugins/focalboard/`.
  - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
+
+## Release 2023-07-19
+
+### Bug Fixes
+ - Fixed an issue where a "Seeker can't seek" error was displayed when viewing older image attachments.
 
 ## Release 2023-07-11
 
