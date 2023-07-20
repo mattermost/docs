@@ -4,12 +4,17 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 
 Latest Mattermost Cloud releases:
 
+- [Release 2023-07-19](#release-2023-07-19)
 - [Release 2023-07-11](#release-2023-07-11)
 - [Release 2023-06-26](#release-2023-06-26)
 - [Release 2023-06-13](#release-2023-06-13)
 - [Release 2023-05-31](#release-2023-05-31)
 - [Release 2023-05-01](#release-2023-05-01)
-- [Release 2023-04-21](#release-2023-04-21)
+
+## Release 2023-07-19
+
+### Bug Fixes
+ - Fixed an issue where a "Seeker can't seek" error was displayed when viewing older image attachments.
 
 ## Release 2023-07-11
 
