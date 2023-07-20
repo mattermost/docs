@@ -20,7 +20,7 @@ Before you export and migrate your data, you must `install Mattermost </guides/d
 
 The `mmctl usage notes </manage/mmctl-command-line-tool.html#mmctl-usage-notes>`_ provide some additional context and information which you can reference before and during the process.
 
-You'll be using the `mmctl export </manage/mmctl-command-line-tool.html#mmctl-export>`__ commands to export your Cloud data for channels, messages, users, etc. The export file is downloaded to a location specified in the export commands. Once the export is complete, you'll import the data into your self-hosted instance.
+You'll be using the `mmctl export </manage/mmctl-command-line-tool.html#mmctl-export>`__ commands to export your Cloud data for channels, messages, users, etc. The export file is downloaded to a location specified in the export commands. Once the export is complete, you'll import the data into your self-hosted instance. If preferred, you can configure Mattermost to store the data export in an Amazon S3 cloud storage location. This option can be useful in cases where an export is quite large and challenging to download from the Mattermost server. See the XXX documentation for details.
 
 .. note::
   
@@ -28,7 +28,7 @@ You'll be using the `mmctl export </manage/mmctl-command-line-tool.html#mmctl-ex
   
   Moreover, the export process doesn’t include integrations or any custom data. Other aspects of your instance, such as specific security settings and requirements, are also not included. For assistance with migrating additional data and settings, see our support options: https://mattermost.com/support/.
 
-Once mmctl is installed, we can generate the export from the source instance.
+Once mmctl is authenticated, you can generate the export from the source instance.
 
 Authenticate
 ------------
@@ -41,31 +41,84 @@ Authentication is done with either Mattermost login credentials or an authentica
    
 You'll be prompted for a username (use your admin user), password, and for a connection name. The connection name can be anything you want, and it's used to identify this set of credentials in the future, for your convenience. Then you will be able to start the export process.
 
+Export data to a Amazon S3 cloud storage location
+--------------------------------------------------
+
+You can configure Mattermost to export your data export to an Amazon S3 cloud location.  consists of the following steps:
+
+1. Enable the ``FileSettings.DedicatedExportStore`` configuration setting in the ``config.json`` file using mmctl and the ``mmctl config set`` command by setting the configuration value to ``true``. See the `mmctl usage notes </manage/mmctl-command-line-tool.html#mmctl-config-set>`__ for additional context. This configuration setting is disabled by default.
+
+2. Once this setting is enabled, additional Amazon S3 export configuration settings are available to you to specify cloud storage specifics including:
+
+  - ``ExportDriverName``:
+  - ``ExportDirectory``: 
+  - ``ExportAmazonS3AccessKeyId``: A string representing the access key for your S3 storage instance. Your EC2 administrator can provide you with this value.
+  - ``ExportAmazonS3SecretAccessKey``: A string representing the secret access key for your Amazon S3 storage instance.
+  - ``ExportAmazonS3Bucket``: A string representing the Amazon S3 bucket name for your Amazon S3 object storage isntance.
+  - ``ExportAmazonS3PathPrefix``: A string representing the specified prefix for the Amazon S3 bucket in AWS. 
+  - ``ExportAmazonS3Region``: A string representing the AWS region specified for the Amazon S3 bucket in AWS. If no region is set, Mattermost attempts to get the appropriate region from AWS, and sets this value to ``us-east-1`` if none found.
+  - ``ExportAmazonS3Endpoint``: A string representing the hostname of your S3-compatible instance. Defaults to ``s3.amazonaws.com``.
+  - ``ExportAmazonS3SSL``: 
+  - ``ExportAmazonS3SignV2``: Specify whether to use the Signature v2 signing process by setting this value to ``true``, or use the Signature v4 signing process by setting this value to ``false``. By default, Mattermost uses Signature v4 to sign API calls to AWS. Under some circumstances, v2 is required.
+  - ``ExportAmazonS3SSE``: Enable server-side encryption for Amazon S3 to encrypt files using server-side encryption with Amazon S3-managed keys.
+  - ``ExportAmazonS3Trace``: Enable Amazon S3 debugging to capture additional debugging information in system logs by setting this value to ``true``.
+  - ``ExportAmazonS3RequestTimeoutMilliseconds``: The amount of time, in milliseconds, before calls to your Amazon S3 storage instance time out.
+  - ``ExportAmazonS3PresignExpiresSeconds``: 
+
+3. Use mmctl to create a full export using ``mmctl export generate-presigned-url [exportname]``.
+
+4. Use a slash command to generate a pre-signed URL from the Amazon S3 location for backups, and to retrieve the file download link. 
+
+  This slash comamnd is only available for system admins when:
+
+  - The ``EnableExportDirectDownload`` feature flag is enabled on the Mattermost Cloud Server.
+  - The cloud storage instance allows link generation (Currently Amazon S3 only).
+  - And the config setting, ``FileSettings.DedicatedExportStore`` configuration option, is enabled and configured. Shared storage isn't supported.
+
+
 Create the export
 -----------------
 
-Once you're logged in, run:
+Once you're logged in, run the mmctl export command based on your export storage location:
 
-.. code::
+.. tabs::
 
-   mmctl export create
+   .. tab:: Local data export
 
-This will create a full export of the server, and include attached files. Append ``--no-attachments`` if you do not wish to export attached files from your instance. This process can take some time, so ``mmctl`` will return immediately, and the job will run in the background on the Mattermost instance until the export is fully created. If successful, the command will immediately output a job ID, like this:
+      .. code::
+         
+         mmctl export create
 
-.. code::
+      Running this command creates a full export of the server, including attached files. Append ``--no-attachments`` if you do not wish to export attached files from your instance. This process can take some time, so ``mmctl`` will return immediately, and the job will run in the background on the Mattermost instance until the export is fully created. If successful, the command will immediately output a job ID, like this:
 
-   Export process job successfully created, ID: yfrr9ku5i7fjubeshs1ksrknzc
+      .. code::
 
-While the job is running, its status can be checked using the ID that was provided when it was created, and when it's done the output will look similar to this:
+         Export process job successfully created, ID: yfrr9ku5i7fjubeshs1ksrknzc
 
-.. code::
+      While the job is running, its status can be checked using the ID that was provided when it was created, and when it's done the output will look similar to this:
 
-  mmctl export job show yfrr9ku5i7fjubeshs1ksrknzc
-  ID: yfrr9ku5i7fjubeshs1ksrknzc
-  Status: success
-  Created: 2021-11-03 10:44:13 -0500 CDT
-  Started: 2021-11-03 10:44:23 -0500 CDT
+      .. code::
 
+         mmctl export job show yfrr9ku5i7fjubeshs1ksrknzc
+         ID: yfrr9ku5i7fjubeshs1ksrknzc
+         Status: success
+         Created: 2021-11-03 10:44:13 -0500 CDT
+         Started: 2021-11-03 10:44:23 -0500 CDT
+
+   .. tab:: Cloud data export
+
+      .. code::
+
+         mmctl export generate-presigned-url [exportname]
+
+      Running this command creates a full export of the server, including attached files, and generates a pre-signed URL for the export file you can retrieve using the Mattermost slash command ``/exportlink [job-id|zip file|latest]``. See the XXX documentation for usage details.
+
+      This process can take some time, so ``mmctl`` will return immediately, and the job will run in the background on the Mattermost instance until the export is fully created. If successful, the command will immediately output a job ID, like this:
+
+      .. code::
+
+         Export process job successfully created, ID: yfrr9ku5i7fjubeshs1ksrknzc
+   
 Download the export
 -------------------
 
@@ -166,7 +219,7 @@ If you’re using plugins that aren’t listed on the Marketplace, they won’t 
 The migration only includes data from Channels. No Boards or Playbooks data is exported.
 
 Migration process
-^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~
 
 **Export from your self-hosted instance**
 
@@ -203,7 +256,7 @@ The completed file will be downloaded to your desktop as a ``.zip`` file.
 The Support team will provide you with S3 credentials so you can upload the exported file. Once you’ve uploaded the file, please contact the Support team and let them know.
 
 Create a new workspace on the Mattermost Cloud
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In the meantime, you can log into Mattermost Cloud with your Mattermost credentials and create a Cloud workspace. 
 
@@ -212,17 +265,17 @@ In the meantime, you can log into Mattermost Cloud with your Mattermost credenti
    Do not create any users in your Mattermost Cloud instance as the migration process performs this task for you.
 
 Importing your data into your Mattermost Cloud instance
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Once the export upload to the provided S3 bucket is complete and you’ve shared your Mattermost Cloud instance name/URL, Support can begin the import step.
 
 Depending on the size of the export this process can take some time. Support will contact you as soon as the import is complete. During this time it is highly recommended you do not use your Mattermost Cloud instance.
 
 Start using your Mattermost Cloud instance
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When the export is complete, you can log into your Cloud instance and can invite your users to log in. 
 
 .. note:: 
   
-  It’s recommended that you keep your self-hosted Mattermost server until you’ve been using your Cloud instance for a while and all is verified as is as expected.
+  We recommend that you keep your self-hosted Mattermost server until you’ve been using your Cloud instance for a while and all is verified as is as expected.
