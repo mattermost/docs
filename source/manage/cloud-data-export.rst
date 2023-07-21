@@ -14,13 +14,15 @@ Migrate from Cloud to self-hosted
 You can migrate your Cloud workspace data to a self-hosted deployment at any time.
 
 How does the process work?
---------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Before you export and migrate your data, you must `install Mattermost </guides/deployment.html#install-guides>`_ on the server you’ll be using to run Mattermost. The migration is done using the mmctl CLI tool, which is a remote CLI tool for Mattermost that's installed locally and uses the Mattermost API. mmctl is pre-installed.
 
 The `mmctl usage notes </manage/mmctl-command-line-tool.html#mmctl-usage-notes>`_ provide some additional context and information which you can reference before and during the process.
 
-You'll be using the `mmctl export </manage/mmctl-command-line-tool.html#mmctl-export>`__ commands to export your Cloud data for channels, messages, users, etc. The export file is downloaded to a location specified in the export commands. Once the export is complete, you'll import the data into your self-hosted instance. If preferred, you can configure Mattermost to store the data export in an Amazon S3 cloud storage location. This option can be useful in cases where an export is quite large and challenging to download from the Mattermost server. See the XXX documentation for details.
+You'll be using the `mmctl export </manage/mmctl-command-line-tool.html#mmctl-export>`__ commands to export your Cloud data for channels, messages, users, etc. The export file is downloaded to a location specified in the export commands. Once the export is complete, you'll import the data into your self-hosted instance. 
+
+You can export the data to an Amazon S3 cloud storage location in cases where an export is quite large and challenging to download from the Mattermost server. See the `create the export <#create-the-export>`_ section below for details.
 
 .. note::
   
@@ -41,41 +43,6 @@ Authentication is done with either Mattermost login credentials or an authentica
    
 You'll be prompted for a username (use your admin user), password, and for a connection name. The connection name can be anything you want, and it's used to identify this set of credentials in the future, for your convenience. Then you will be able to start the export process.
 
-Export data to a Amazon S3 cloud storage location
---------------------------------------------------
-
-You can configure Mattermost to export your data export to an Amazon S3 cloud location.  consists of the following steps:
-
-1. Enable the ``FileSettings.DedicatedExportStore`` configuration setting in the ``config.json`` file using mmctl and the ``mmctl config set`` command by setting the configuration value to ``true``. See the `mmctl usage notes </manage/mmctl-command-line-tool.html#mmctl-config-set>`__ for additional context. This configuration setting is disabled by default.
-
-2. Once this setting is enabled, additional Amazon S3 export configuration settings are available to you to specify cloud storage specifics including:
-
-  - ``ExportDriverName``:
-  - ``ExportDirectory``: 
-  - ``ExportAmazonS3AccessKeyId``: A string representing the access key for your S3 storage instance. Your EC2 administrator can provide you with this value.
-  - ``ExportAmazonS3SecretAccessKey``: A string representing the secret access key for your Amazon S3 storage instance.
-  - ``ExportAmazonS3Bucket``: A string representing the Amazon S3 bucket name for your Amazon S3 object storage isntance.
-  - ``ExportAmazonS3PathPrefix``: A string representing the specified prefix for the Amazon S3 bucket in AWS. 
-  - ``ExportAmazonS3Region``: A string representing the AWS region specified for the Amazon S3 bucket in AWS. If no region is set, Mattermost attempts to get the appropriate region from AWS, and sets this value to ``us-east-1`` if none found.
-  - ``ExportAmazonS3Endpoint``: A string representing the hostname of your S3-compatible instance. Defaults to ``s3.amazonaws.com``.
-  - ``ExportAmazonS3SSL``: 
-  - ``ExportAmazonS3SignV2``: Specify whether to use the Signature v2 signing process by setting this value to ``true``, or use the Signature v4 signing process by setting this value to ``false``. By default, Mattermost uses Signature v4 to sign API calls to AWS. Under some circumstances, v2 is required.
-  - ``ExportAmazonS3SSE``: Enable server-side encryption for Amazon S3 to encrypt files using server-side encryption with Amazon S3-managed keys.
-  - ``ExportAmazonS3Trace``: Enable Amazon S3 debugging to capture additional debugging information in system logs by setting this value to ``true``.
-  - ``ExportAmazonS3RequestTimeoutMilliseconds``: The amount of time, in milliseconds, before calls to your Amazon S3 storage instance time out.
-  - ``ExportAmazonS3PresignExpiresSeconds``: 
-
-3. Use mmctl to create a full export using ``mmctl export generate-presigned-url [exportname]``.
-
-4. Use a slash command to generate a pre-signed URL from the Amazon S3 location for backups, and to retrieve the file download link. 
-
-  This slash comamnd is only available for system admins when:
-
-  - The ``EnableExportDirectDownload`` feature flag is enabled on the Mattermost Cloud Server.
-  - The cloud storage instance allows link generation (Currently Amazon S3 only).
-  - And the config setting, ``FileSettings.DedicatedExportStore`` configuration option, is enabled and configured. Shared storage isn't supported.
-
-
 Create the export
 -----------------
 
@@ -83,7 +50,9 @@ Once you're logged in, run the mmctl export command based on your export storage
 
 .. tabs::
 
-   .. tab:: Local data export
+   .. tab:: Local export
+
+      Run the following mmctl command:
 
       .. code::
          
@@ -105,35 +74,40 @@ Once you're logged in, run the mmctl export command based on your export storage
          Created: 2021-11-03 10:44:13 -0500 CDT
          Started: 2021-11-03 10:44:23 -0500 CDT
 
-   .. tab:: Cloud data export
+      Once the status is ``success``, download the export onto your local machine. First, discover the name of the completed export file with ``mmctl export list``:
+
+      .. code::
+
+         mmctl export list
+         r3kcj8yuwbramdt714doafi3oo_export.zip
+
+      This will show all of the exports on the server, so be sure to download the latest one and to delete it when you're done to save storage. Download the file with a command like the following, but with the filename of the export on your server:
+
+      .. code::
+
+         mmctl export download r3kcj8yuwbramdt714doafi3oo_export.zip
+
+   .. tab:: Cloud export
+
+      You can specify a dedicated cloud storage location for exports that's separate from file uploads. This option can be useful in cases where an export is quite large and challenging to download from the Mattermost server.
+
+      Run the following mmctl command:
 
       .. code::
 
          mmctl export generate-presigned-url [exportname]
 
-      Running this command creates a full export of the server, including attached files, and generates a pre-signed URL for the export file you can retrieve using the Mattermost slash command ``/exportlink [job-id|zip file|latest]``. See the XXX documentation for usage details.
+      Running this command creates a full export of the server, including attached files, in a unique Amazon S3 cloud storage location, and generates a pre-signed URL for the export file.
 
       This process can take some time, so ``mmctl`` will return immediately, and the job will run in the background on the Mattermost instance until the export is fully created. If successful, the command will immediately output a job ID, like this:
 
       .. code::
 
          Export process job successfully created, ID: yfrr9ku5i7fjubeshs1ksrknzc
+
+      Retrieve the file download link to the export using the Mattermost slash command ``/exportlink [job-id|zip file|latest]``. Use the ``latest`` option to automatically pull the latest export available, or specify the download link by ``job-id`` or ``zip file``.
    
-Download the export
--------------------
 
-Once the status is ``success``, you can download the export onto your local machine. First, discover the name of the completed export file with ``mmctl export list``:
-
-.. code::
-
-   mmctl export list
-   r3kcj8yuwbramdt714doafi3oo_export.zip
-
-This will show all of the exports on the server, so be sure to download the latest one and to delete it when you're done to save storage. Download the file with a command like the following, but with the filename of the export on your server:
-
-.. code::
-
-   mmctl export download r3kcj8yuwbramdt714doafi3oo_export.zip
 
 Upload the export to the new server
 -----------------------------------
