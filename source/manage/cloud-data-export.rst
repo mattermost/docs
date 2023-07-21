@@ -22,7 +22,7 @@ The `mmctl usage notes </manage/mmctl-command-line-tool.html#mmctl-usage-notes>`
 
 You'll be using the `mmctl export </manage/mmctl-command-line-tool.html#mmctl-export>`__ commands to export your Cloud data for channels, messages, users, etc. The export file is downloaded to a location specified in the export commands. Once the export is complete, you'll import the data into your self-hosted instance. 
 
-You can export the data to an Amazon S3 cloud storage location in cases where an export is quite large and challenging to download from the Mattermost server. See the `create the export <#create-the-export>`_ section below for details.
+You can export the data to an Amazon S3 cloud storage location in cases where an export is quite large and challenging to download from the Mattermost server. See the `create the export <#create-the-export>`__ section below for details.
 
 .. note::
   
@@ -105,9 +105,7 @@ Once you're logged in, run the mmctl export command based on your export storage
 
          Export process job successfully created, ID: yfrr9ku5i7fjubeshs1ksrknzc
 
-      Retrieve the file download link to the export using the Mattermost slash command ``/exportlink [job-id|zip file|latest]``. Use the ``latest`` option to automatically pull the latest export available, or specify the download link by ``job-id`` or ``zip file``.
-   
-
+      From your Mattermost Cloud web instance, retrieve the file download link to the export by using the Mattermost slash command ``/exportlink [job-id|zip file|latest]``. Use the ``latest`` option to automatically pull the latest export available, or specify the download link by ``job-id`` or ``zip file``.
 
 Upload the export to the new server
 -----------------------------------
