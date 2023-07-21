@@ -89,23 +89,42 @@ Once you're logged in, run the mmctl export command based on your export storage
 
    .. tab:: Cloud export
 
-      You can specify a dedicated cloud storage location for exports that's separate from file uploads. This option can be useful in cases where an export is quite large and challenging to download from the Mattermost server.
-
       Run the following mmctl command:
 
       .. code::
+         
+         mmctl export create
 
-         mmctl export generate-presigned-url [exportname]
-
-      Running this command creates a full export of the server, including attached files, in a unique Amazon S3 cloud storage location, and generates a pre-signed URL for the export file.
-
-      This process can take some time, so ``mmctl`` will return immediately, and the job will run in the background on the Mattermost instance until the export is fully created. If successful, the command will immediately output a job ID, like this:
+      Running this command creates a full export of the server, including attached files. Append ``--no-attachments`` if you do not wish to export attached files from your instance. This process can take some time, so ``mmctl`` will return immediately, and the job will run in the background on the Mattermost instance until the export is fully created. If successful, the command will immediately output a job ID, like this:
 
       .. code::
 
          Export process job successfully created, ID: yfrr9ku5i7fjubeshs1ksrknzc
 
-      From your Mattermost Cloud web instance, retrieve the file download link to the export by using the Mattermost slash command ``/exportlink [job-id|zip file|latest]``. Use the ``latest`` option to automatically pull the latest export available, or specify the download link by ``job-id`` or ``zip file``.
+      While the job is running, its status can be checked using the ID that was provided when it was created, and when it's done the output will look similar to this:
+
+      .. code::
+
+         mmctl export job show yfrr9ku5i7fjubeshs1ksrknzc
+         ID: yfrr9ku5i7fjubeshs1ksrknzc
+         Status: success
+         Created: 2021-11-03 10:44:13 -0500 CDT
+         Started: 2021-11-03 10:44:23 -0500 CDT
+
+      Once the status is ``success``, download the export onto your local machine. First, discover the name of the completed export file with ``mmctl export list``:
+
+      .. code::
+
+         mmctl export list
+         r3kcj8yuwbramdt714doafi3oo_export.zip
+
+      This will show all of the exports on the server, so be sure to download the latest one and to delete it when you're done to save storage. Generate a link to download the file with a command like the following, but with the filename of the export on your server:
+
+      .. code::
+
+         mmctl export generate-presigned-url r3kcj8yuwbramdt714doafi3oo_export.zip
+
+      As an alternative to this last step, from your Mattermost Cloud web instance, you can retrieve the file download link to the export by using the Mattermost slash command ``/exportlink [job-id|zip file|latest]``. Use the ``latest`` option to automatically pull the latest export available, or specify the download link by ``job-id`` or ``zip file``.
 
 Upload the export to the new server
 -----------------------------------
