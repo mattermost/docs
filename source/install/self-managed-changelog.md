@@ -14,7 +14,11 @@ Latest Mattermost Releases:
 
 ## Release v8.0 - [Major Release](https://docs.mattermost.com/upgrade/release-definitions.html#major-release)
 
-**Release Day: July 14, 2023**
+- **v8.0.1, release date TBD**
+  - Fixing an issue where the v8.0.0 **About Mattermost** dialog reports an incorrect server version in the Free Plan [MM-53681](https://mattermost.atlassian.net/browse/MM-53681).
+  - Adding support for embedding Mattermost in a Microsoft Teams iframe.
+- **8.0.0, released 2023-07-14**
+  - Original 8.0.0 release
 
 ### Important Upgrade Notes
 
