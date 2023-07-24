@@ -6,6 +6,12 @@ This page describes features that are removed from support for Mattermost, or wi
 Removed features in upcoming versions
 -------------------------------------
 
+Mattermost Server v9.0.0
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Boards is moving to a community plugin.
+- Removing support for some prepackaged plugins.
+
 Removed features by Mattermost version
 ----------------------------------------
 
