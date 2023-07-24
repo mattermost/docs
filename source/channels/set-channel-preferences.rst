@@ -21,20 +21,21 @@ For each channel you're a member of, you can set notification preferences as wel
 Channel notification preferences
 --------------------------------
 
-To manage channel notification preferences, select the channel name at the top of the screen to access channel-specific settings, then select **Notification Preferences**.
+You have 2 ways to manage individual channel notification preferences
 
-.. tip::
-
-  Alternatively, to manage channel notification preferences select the channel name, select the **View Info** |channel-info| icon, then select **Notification Preferences** in the right pane.
+- Select the channel name, then select **Notification Preferences**, or
+- Select the **View Info** |channel-info| icon, then select **Notification Preferences** in the right pane.
 
 Mute channel
 ~~~~~~~~~~~~~
 
-Muting turns off desktop, email, and push notifications for a channel, direct message, or group message. The channel, direct message, or group message will only be marked as unread in the channel sidebar if you're mentioned. By default, all channels, direct messages, and group messages are unmuted.
+By default, all channels, direct messages, and group messages are unmuted. 
+
+Muting a channel turns off desktop, email, incoming call ring tones, and mobile push notifications for that channel, direct message, or group message. The channel will only be marked as unread in the channel sidebar if you're mentioned. 
 
 Once a channel is muted:
 
-- Email, desktop, and push notifications are disabled.
+- Email, desktop, incoming call ring tones, and push notifications are disabled.
 - A mute icon displays next to the channel, direct message, or group message's name.
 - The channel, direct message, or group message appears at reduced opacity in the channel sidebar, and isn't marked as unread unless you're mentioned directly.
 
@@ -67,7 +68,7 @@ By default, you'll receive mention notifications every time someone on your team
 
   .. tab:: Desktop
 
-    To stop receiving mention notifications, enable the **Ignore mentions for @channel, @here and @all** option, then select **Save**. When enabled, mention notifications for channel-wide mentions are ignored, but the channel is marked as unread unless the channel is muted.
+    To stop receiving notifications for these types of mentions, enable the **Ignore mentions for @channel, @here and @all** option, then select **Save**. When enabled, mention notifications for channel-wide mentions are ignored, but the channel is marked as unread unless the channel is muted.
   
   .. tab:: Mobile
 
@@ -76,55 +77,38 @@ By default, you'll receive mention notifications every time someone on your team
     3. Tap **View info**.
     4. Tap **Ignore @channel, @here, @all** to disable the option.
 
-Mobile notifications
-~~~~~~~~~~~~~~~~~~~~
+Desktop notifications
+~~~~~~~~~~~~~~~~~~~~~
 
-You can set the mobile notifications preferences per channel.
+By default, the `desktop notification preferences </channels/channels-settings.html#notifications>`__ you've configured in **Settings** apply to all channels you're a member of by default. Desktop notifications are available on Edge, Firefox, Safari, Chrome, and `Mattermost desktop apps <https://mattermost.com/apps>`__.
 
-1. Tap the channel where you want to mute mention notifications.
-2. Tap the **More** |more-icon| icon located in the top right corner of the app.
-3. Tap **View info**.
-4. Tap **All new**, **Mentions/DMs only**, or **Nothing** to determine how you'll be notified of new messages in a specific channel.
+To configure desktop notifications for a channel, edit **Desktop notifications**, update your channel-specific desktop notifications, sound, and thread reply preferences, then select **Save**.
 
-Send desktop notifications
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+To revert a channel to use global desktop notifications, select **Reset to defaults**.
 
-By default, your `desktop notification preferences </channels/channels-settings.html#notifications>`__ configured in **Settings** apply to all channels. Desktop notifications are available on Edge, Firefox, Safari, Chrome, and `Mattermost desktop apps <https://mattermost.com/apps>`__.
-
-To customize desktop notifications per channel, edit **Send desktop notifications**, choose one of the following options, then select **Save**:
-
-+---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **Notification option**   | **You'll receive...**                                                                                                                                                                                                                            |
-+===========================+==================================================================================================================================================================================================================================================+
-| **Global default (None)** | Desktop notifications based on your `Settings </channels/channels-settings.html>`__ configuration.                                                                                                                                               |
-+---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **For all activity**      | Desktop notifications for every new message.                                                                                                                                                                                                     |
-+---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **Only for mentions**     | - Desktop notifications for @mentions only.                                                                                                                                                                                                      |
-|                           | - When you've `enabled Collapsed Reply Threads </channels/channels-settings.html#collapsed-reply-threads>`__, receive reply thread notifications by enabling **Notify me about threads I'm following**.                                          |
-+---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **Never**                 | No desktop notifications.                                                                                                                                                                                                                        |
-+---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Send mobile push notifications
+Mobile push notifications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Mattermost push notifications `must be enabled </configure/configuration-settings.html#enable-push-notifications>`__ by a system admin. Once enabled, your `mobile push notification preferences </messaging/manage-channels-settings.html#mobile-push-notifications>`__ configured in **Settings** apply to all channels by default.
+Mattermost push notifications `must be enabled </configure/configuration-settings.html#enable-push-notifications>`__ by a system admin. 
 
-To customize mobile push notifications per channel, edit **Send mobile push notifications**, choose one of the following options, then select **Save**:
+Once enabled, your `mobile push notification preferences </messaging/manage-channels-settings.html#mobile-push-notifications>`__ configured in **Settings** apply to all channels you're a member of by default.
 
-+------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **Notification option**      | **You'll receive...**                                                                                                                                                                                                                            |
-+==============================+==================================================================================================================================================================================================================================================+
-| **Global default (Mention)** | Mobile notifications based on your `Settings </channels/channels-settings.html>`__ configuration.                                                                                                                                                |
-+------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **For all activity**         | Mobile notifications for every new message.                                                                                                                                                                                                      |
-+------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **Only for mentions**        | - Mobile notifications for @mentions only.                                                                                                                                                                                                       |
-|                              | - When you've `enabled Collapsed Reply Threads </channels/channels-settings.html#collapsed-reply-threads>`__, receive reply thread notifications by enabling **Notify me about threads I'm following**.                                          |
-+------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **Never**                    | No desktop notifications.                                                                                                                                                                                                                        |
-+------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+To customize mobile push notifications per channel:
+
+.. tabs::
+
+  .. tab:: Desktop
+
+    To configure mobile notifications for a channel, edit **Mobile push notifications**, update your channel-specific mobile notifications and thread reply preferences, then select **Save**.
+
+    To revert a channel to use global mobile push notifications, select **Reset to defaults**.
+  
+  .. tab:: Mobile
+
+    1. Tap the channel where you want to mute mention notifications.
+    2. Tap the **More** |more-icon| icon located in the top right corner of the app.
+    3. Tap **View info**.
+    4. Tap **Mobile Notifications**, and tap your notification preference for that channel.
 
 Channel header
 --------------
@@ -160,3 +144,10 @@ Channel name
 A channel name must be at least two characters, and can be up to 64 characters in length. `Some unicode characters <https://www.w3.org/TR/unicode-xml/#Charlist>`_ aren't supported.
 
 Change the channel name by selecting **Rename Channel**. Changing the name of the channel also changes the channel URL. Any channel member can change a channel name, unless the system admin has `restricted permissions to do so using advanced permissions </onboard/advanced-permissions.html>`__.
+
+Automatically follow all new threads in this channel
+----------------------------------------------------
+
+By default, you don't automatically follow new conversation threads unless you `start a thread or reply to a thread </channels/organize-conversations.html#start-or-reply-to-threads>`__, `follow a thread </channels/organize-conversations.html#follow-threads-and-messages>`__, or are `@mentioned </channels/mention-people.html#username>`__ in a thread. 
+
+You can configure Mattermost to automatically follow every thread in a channel. When enabled, you can `access all threads </channels/organize-conversations.html#view-all-threads>`__ in the **Threads** view, and `unfollow specific threads </channels/organize-conversations.html#follow-threads-and-messages>`__ as you prefer.

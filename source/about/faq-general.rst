@@ -28,7 +28,7 @@ Mattermost provides an open source, well-documented `load test simulator <https:
 How do I deploy the open source Mattermost Team Edition under an MIT license?
 -----------------------------------------------------------------------------
 
-The open source Mattermost Team Edition is functionally identical to the commercial Mattermost Enterprise Edition in its free “team mode”, but there is no ability to unlock enterprise features. It deploys as a single Linux binary with MySQL or PostgreSQL under an MIT license.
+The open source Mattermost Team Edition is functionally identical to the commercial Mattermost Enterprise Edition in its free “team mode”, but there is no ability to unlock enterprise features. It deploys as a single Linux binary with PostgreSQL under an MIT license.
 
 We generally recommend installing Enterprise Edition, even if you don't currently need a license. This provides the flexibility to unlock Enterprise features seamlessly should you need them. However, if you only want to install software with a fully open source code base, then Team Edition is the best choice for you.
 
