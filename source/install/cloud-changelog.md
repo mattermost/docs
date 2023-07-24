@@ -4,12 +4,49 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 
 Latest Mattermost Cloud releases:
 
+- [Release 2023-07-20](#release-2023-07-20)
+- [Release 2023-07-19](#release-2023-07-19)
+- [Release 2023-07-11](#release-2023-07-11)
 - [Release 2023-06-26](#release-2023-06-26)
 - [Release 2023-06-13](#release-2023-06-13)
 - [Release 2023-05-31](#release-2023-05-31)
-- [Release 2023-05-01](#release-2023-05-01)
-- [Release 2023-04-21](#release-2023-04-21)
-- [Release 2023-03-29](#release-2023-03-29)
+
+## Release 2023-07-20
+
+### Bug Fixes
+ - Added support for a new Cloud Export storage and a presigned URL generation.
+
+## Release 2023-07-19
+
+### Bug Fixes
+ - Fixed an issue where a "Seeker can't seek" error was displayed when viewing older image attachments.
+
+## Release 2023-07-11
+
+### Highlights
+
+#### Calls
+ - Calls v0.17.0 introduces a new ringing feature (Beta): Calls in Direct and Group Message channels will ring and pop up a visual notification for the incoming call. Check out the Calls v0.17.0 release notes and Calls documentation for more details.
+
+### Improvements
+
+#### User Interface (UI)
+ - Updated the user interface for the **Browse channels** modal.
+ - Increased the nickname field in the user interface from 22 to 64 characters.
+ - Updated links to documentation in the **System Console**.
+ - Emoji size is now in scale with the text size in the channel header.
+ - Prepackaged Focalboard plugin version 7.11.0.
+ - Prepackaged Playbooks plugin version 1.37.0.
+
+### Bug Fixes
+ - Fixed an issue where scrollbars were not visible enough on the **File Preview** screen.
+ - Fixed an issue where SAML Admin Attribute only compared the first value instead of looping through the assertion values array.
+ - Fixed an issue where updates to recent emojis were not batched when multiple emojis were posted at once.
+ - Reverted a change that could cause the webapp to forget the current user's authentication method.
+
+### Known Issues
+ - Boards public links that follow the URL schema `/boards/public/...` will not work after this update. They can either be regenerated through the application by going to the board and selecting the **Share** button at the top right, or they can be obtained by replacing the `/boards/public/` part of the URL with `/plugins/focalboard/`.
+ - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
 
 ## Release 2023-06-26
 
@@ -484,7 +521,7 @@ Latest Mattermost Cloud releases:
  - Fixed an issue where the metrics server restarted for every config change.
  - Prevented browsers and CDNs from caching remote entrypoint files.
  - Fixed a potential read-after-write issue when uploading data through the resumable uploads API.
- - Fixed the position of the Boards icon in the app bar when Boards is running without a plugin.
+ - Fixed the position of the Boards icon in the Apps Bar when Boards is running without a plugin.
  - Fixed ability to create a board when Boards is running without a plugin.
  - Fixed Boards tour tips not appearing when Boards is running without a plugin.
  - Fixed the slash command description help text.

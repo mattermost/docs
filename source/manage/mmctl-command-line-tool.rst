@@ -13,8 +13,8 @@ This feature was developed to a large extent by community contributions and we'd
 mmctl usage notes
 -----------------
 
-- System Admins have two ways to run ``mmctl`` commands: by downloading ``mmctl`` from the repository, or by building it directly. See the `mmctl readme <https://github.com/mattermost/mmctl#install>`__ for details.
-- ``mmctl`` comes bundled with the Mattermost distribution, and is located in the ``bin`` folder of the installation, next to the ``CLI``.
+- System Admins have two ways to run ``mmctl`` commands: by downloading ``mmctl`` from the release URLs, which you can find in the :ref:`installation instructions <install-mmctl-options>`, or by building it directly, for which you can check the :ref:`build instructions <build-mmctl>` below. The source code lives in the `server/cmd/mmctl directory within the mattermost repository <https://github.com/mattermost/mattermost/tree/master/server/cmd/mmctl>`__.
+- ``mmctl`` also comes bundled with the Mattermost distribution, and is located in the ``bin`` folder of the installation, next to the ``CLI``.
 
   - We recommend you add the path to the Mattermost ``bin`` folder into your ``$PATH`` environment variable. This ensures that you can run mmctl commands locally regardless of your current directory location.
   - If the ``bin`` directory is not added to the ``$PATH`` environment variable, each time you use mmctl you must be in the ``bin`` directory to run mmctl commands, and the commands must be prefixed with ``./``. If you're working from a different directory, make sure you specify the full path to mmctl when running mmctl commands.
@@ -79,9 +79,41 @@ Install mmctl
 
 The mmctl tool comes bundled with Mattermost package. For customers that want to setup it independently from the package, the following methods are available to install mmctl.
 
+.. _install-mmctl-options:
+
 .. tabs::
 
+   .. tab:: Using release package (Linux, macOS, Windows)
+
+      Starting release ``v8.0.0`` of Mattermost, you can download the mmctl builds at their release URL: ``https://releases.mattermost.com/mmctl/${MATTERMOST_VERSION}/${PLATFORM}_${ARCHITECTURE}.tar``
+
+      E.g. to download version ``v8.0.0`` of the mmctl amd64 build for linux, you can run the following:
+
+      .. code-block:: sh
+
+         curl -vfsSL -O https://releases.mattermost.com/mmctl/v8.0.0/linux_amd64.tar
+
+      Supported platforms, and corresponding supported architectures, are: linux (amd64 and arm64), darwin (amd64 and arm64), windows (amd64 only).
+
+      For versions older than ``v8.0.0``, you can instead visit the `mmctl releases page <https://github.com/mattermost/mmctl/releases>`__ and download the appropriate release for your OS, and install the binary.
+
+   .. tab:: Using go install (Linux, macOS, Windows)
+
+      Use this option on Linux, macOS, and Windows if you have a ``go`` environment configured.
+
+      To build and install the mmctl binary in your `$GOPATH`, run the following command:
+
+      .. code-block:: sh
+
+         # For Mattermost versions >= v8.0.0
+         go install github.com/mattermost/mattermost/server/v8/cmd/mmctl@master
+
+         # For Mattermost versions < v8.0.0
+         go install github.com/mattermost/mmctl@latest
+
    .. tab:: Use brew (Linux, macOS)
+
+      **NB: this is not an officially supported method.** This installation channel is managed by the community, please refer to the `homebrew/homebrew-core repo <https://github.com/Homebrew/homebrew-core>`__ for reporting issues.
 
       Use this option on Linux and macOS if you have Homebrew installed.
 
@@ -89,29 +121,18 @@ The mmctl tool comes bundled with Mattermost package. For customers that want to
 
          brew install mmctl
 
-   .. tab:: Using go install (Linux, macOS, Windows)
-
-      Use this option on Linux, macOS, and Windows if you have a ``go`` environment configured.
-
-      To add the project in your `$GOPATH` run the following command:
-
-      .. code-block:: sh
-
-         go install github.com/mattermost/mmctl@latest
-
-   .. tab:: Using release package (Linux, macOS, Windows)
-
-      Vist the `mmctl releases page <https://github.com/mattermost/mmctl/releases>`__ and download the appropriate release for your OS, and install the binary.
-
 Build mmctl
 ------------
 
-The ``mmctl`` tool uses ``go`` modules to manage dependencies, so you need to have installed
-``go`` 1.11 or greater and compile the binary using:
+.. _build-mmctl:
+
+The ``mmctl`` tool uses ``go`` modules to manage dependencies, so you need to have installed ``go`` 1.19 or greater on your machine.
+
+After checking out the `mattermost repository <https://github.com/mattermost/mattermost>`__ locally to your machine, from the root directory of the project, you can compile the mmctl binary by running:
 
 .. code-block:: sh
 
-  make build
+  make -C server mmctl-build
 
 Local mode
 ----------
@@ -145,24 +166,15 @@ Running mmctl tests
 
 mmctl has two types of tests: unit tests and end to end tests.
 
-To run the unit tests, you need to execute:
+To execute them, you can run the following commands from the mattermost project root directory:
 
 .. code-block:: sh
 
-  make test
+  # For the unit tests
+  make -C server test-mmctl-unit
 
-To run the end to end test suite, you need to have a Mattermost server instance running. Check the `Developer Setup guide <https://developers.mattermost.com/contribute/server/developer-setup/>`_ for instructions around how to configure a local test server instance.
-
-Once the development server is set up, cd into the ``mattermost-server directory``:
-
-- Start it with ``make run``. To confirm that the instance is running correctly, you can access the web interface at ``http://localhost:8065``.
-- Run ``make test-data`` to preload your server instance with initial seed data. Generated data such as users are typically used for logging, etc.
-
-Change your directory to ``mmctl`` and run the end to end test suite with:
-
-.. code-block:: sh
-
-  make test-e2e
+  # For the end to end tests
+  make -C server test-mmctl-e2e
 
 mmctl auth
 ----------
@@ -2083,7 +2095,7 @@ Set the value of a config setting by its name in dot notation. Accepts multiple 
 
 .. code-block:: sh
 
-   mmctl config set SqlSettings.DriverName mysql
+   mmctl config set SqlSettings.DriverName postgres
    mmctl config set SqlSettings.DataSourceReplicas "replica1" "replica2"
 
 **Options**
@@ -2265,7 +2277,7 @@ Create an export file.
 
 .. code-block:: sh
 
-   --no-attachments     Set to true to include file attachments in the export file.
+   --no-attachments     Omit to include file attachments in the export file.
    -h, --help           help for create
 
 **Options inherited from parent commands**
