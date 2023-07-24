@@ -14,7 +14,11 @@ Latest Mattermost Releases:
 
 ## Release v8.0 - [Major Release](https://docs.mattermost.com/upgrade/release-definitions.html#major-release)
 
-**Release Day: July 14, 2023**
+- **v8.0.1, release date TBD**
+  - Fixing an issue where the v8.0.0 **About Mattermost** dialog reports an incorrect server version in the Free Plan [MM-53681](https://mattermost.atlassian.net/browse/MM-53681).
+  - Adding support for embedding Mattermost in a Microsoft Teams iframe.
+- **8.0.0, released 2023-07-14**
+  - Original 8.0.0 release
 
 ### Important Upgrade Notes
 
@@ -70,7 +74,7 @@ Latest Mattermost Releases:
 ### Improvements
 
 #### User Interface (UI)
- - Persistent notifications allow users to notify recipients repeatedly until action is taken on an urgent message. Check out [our documentation](https://docs.mattermost.com/channels/message-priority.html#send-persistent-notifications) for more details.
+ - Persistent notifications (Professional and Enterprise Plans) allow users to notify recipients repeatedly until action is taken on an urgent message. Check out [our documentation](https://docs.mattermost.com/channels/message-priority.html#send-persistent-notifications) for more details.
  - The apps bar is now enabled by default for on-prem servers. ``ExperimentalSettings.EnableAppBar`` was also renamed to ``ExperimentalSettings.DisableAppBar``. See more details at:
    - https://docs.mattermost.com/configure/experimental-configuration-settings.html#disable-app-bar 
    - https://forum.mattermost.com/t/channel-header-plugin-changes/13551
@@ -169,19 +173,23 @@ Latest Mattermost Releases:
 ### config.json
 Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
 
-#### Changes to Team Edition and Enterprise Edition:
+#### Changes to all plans:
  - Removed ``EnableInactivityEmail`` config setting.
  - Added a new config setting section ``ProductSettings``.
- - Under ``ServiceSettings`` in ``config.json``:
-   - Added new configuration settings ``AllowPersistentNotifications``, ``PersistentNotificationIntervalMinutes``, ``PersistentNotificationMaxCount``, ``PersistentNotificationMaxRecipients``, to add a persistent notification option when sending urgent priority posts.
  - Under ``ExperimentalSettings`` in ``config.json``:
    - Added ``DelayChannelAutocomplete``, to make the channel autocomplete only appear after typing a couple letters instead of immediately after a tilde.
    - Added ``DisableRefetchingOnBrowserFocus``, to disable re-fetching of channel and channel members on browser focus.
    - Added ``DisableAppBar`` to enable apps bar by default.
+ - Three configuration fields have been added, ``LogSettings.AdvancedLoggingJSON``, ``ExperimentalAuditSettings.AdvancedLoggingJSON``, and ``NotificationLogSettings.AdvancedLoggingJSON`` which support multi-line JSON, escaped JSON as a string, or a filename that points to a file containing JSON.  The ``AdvancedLoggingConfig`` fields have been deprecated.
+
+#### Changes to Professional and Enterprise plans:
+ - Under ``ServiceSettings`` in ``config.json``:
+   - Added new configuration settings ``AllowPersistentNotifications``, ``PersistentNotificationIntervalMinutes``, ``PersistentNotificationMaxCount``, ``PersistentNotificationMaxRecipients``, to add a persistent notification option when sending urgent priority posts.
+
+#### Changes to Enterprise plan:
  - Under ``ElasticsearchSettings`` in ``config.json``:
    - Now you can specify index names to ignore while purging indexes from Elasticsearch with the ``IgnoredPurgeIndexes`` setting.
- - Three configuration fields have been added, ``LogSettings.AdvancedLoggingJSON``, ``ExperimentalAuditSettings.AdvancedLoggingJSON``, and ``NotificationLogSettings.AdvancedLoggingJSON`` which support multi-line JSON, escaped JSON as a string, or a filename that points to a file containing JSON.  The ``AdvancedLoggingConfig`` fields have been deprecated.
- 
+
 ### Go Version
  - v8.0 is built with Go ``v1.19.5``.
 

@@ -120,5 +120,7 @@ Extend Channels functionality
    :hidden:
 
    Extend functionality with integrations </channels/extend-channels-functionality>
+   Collaborate using Mattermost for MS Teams </channels/collaborate-using-mattermost-for-microsoft-teams>
    
 * :doc:`Extend Channels with integrations </channels/extend-channels-functionality>` - Find open source integrations to common tools in the Mattermost Marketplace.
+* :doc:`Collaborate using Mattermost for MS Teams </channels/collaborate-using-mattermost-for-microsoft-teams>` - Learn how to collaborate with colleagues across both Mattermost and Microsoft Teams at the same time.
