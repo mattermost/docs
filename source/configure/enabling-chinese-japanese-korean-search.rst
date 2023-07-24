@@ -83,7 +83,7 @@ Below is additional information on how to configure the database for different l
 
     -- 创建 extension
     CREATE EXTENSION zhparser
-    -- 创建 text serach confguration
+    -- 创建 text search configuration
     CREATE TEXT SEARCH CONFIGURATION simple_zh_cfg (PARSER = zhparser);
     -- 配置 token mapping
     ALTER TEXT SEARCH CONFIGURATION simple_zh_cfg ADD MAPPING FOR n,v,a,i,e,l WITH simple;    
