@@ -19,11 +19,6 @@ How to troubleshoot server-side performance issues without Prometheus or Grafana
 
 Enable slow query logging in PostgreSQL and leave it enabled to gather data over time. PostgreSQL's slow query log helps you identify queries that take longer than a specified amount of time. The slow query log isn't enabled by default, and must be enabled manually.
 
-To enable slow query logging globally, change the following line in postgresql.conf and reload the page: ``log_min_duration_statement = 5000``. When you this value to ``5000``, PostgreSQL considers queries that take longer than 5 seconds to be slow queries and logs them in the log file.
+To enable slow query logging globally, change the following line in ``postgresql.conf``: ``log_min_duration_statement = 1000``, then restart PostgreSQL. When you this value to ``1000``, PostgreSQL considers queries that take longer than 1 second to be slow queries and logs them in the log file. Alternatively, you can run ``SELECT pg_reload_conf();`` to reload the configuration without a restart.
 
-To enable slow query logging for a specific database, use ``ALTER DATABASE`` to change the configuration parameter for a single database. For example:
-
-.. code-block:: none
-
-  postgres=# ALTER DATABASE test SET log_min_duration_statement = 5000;
-  ALTER DATABASE
+To enable slow query logging for a specific database, use ``ALTER DATABASE`` to change the configuration parameter for a single database. 
