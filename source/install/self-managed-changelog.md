@@ -19,6 +19,7 @@ Latest Mattermost Releases:
   - Mattermost v8.0.1 contains no database or functional changes.
   - Added support for embedding Mattermost in a Microsoft Teams iframe.
   - Fixed an issue where the v8.0.0 **About Mattermost** dialog reported an incorrect server version in the Free Plan [MM-53681](https://mattermost.atlassian.net/browse/MM-53681).
+  - Prepackaged Focalboard plugin version 7.11.2.
 - **8.0.0, released 2023-07-14**
   - Original 8.0.0 release
 
