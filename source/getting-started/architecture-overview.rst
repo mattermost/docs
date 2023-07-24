@@ -21,7 +21,7 @@ It is configured using `config/config.json </configure/configuration-settings.ht
 - **Notification service:** Sends notifications via SMTP or a Push Notification Service for mobile applications.
 - **Data management service:** Connects to supported databases and file storage solutions (local, network-attached storage, Amazon S3, etc), and manages the reading and writing of data between them.
 
-The binary talks to a database, typically MySQL or PostgreSQL, and a filestore.
+The binary talks to a database, typically PostgreSQL, and a filestore.
 
 .. image:: ../images/architecture_basics.png
 
@@ -81,7 +81,7 @@ The following table lists the Mattermost services ports for Mattermost Server, p
 +-------------------------------------------------------------+---------------------------------------+-----------------------------------+-----------+------------+---------------------------------------------------------------+
 | Metrics                                                     | MetricsSettings.ListenAddress         | 8067                              | TCP       | Inbound    | External (no proxy) / Internal (with proxy)                   |
 +-------------------------------------------------------------+---------------------------------------+-----------------------------------+-----------+------------+---------------------------------------------------------------+
-| Database                                                    | SqlSettings.DataSource                | 3306 (MySQL) / 5432 (PostgreSQL)  | TCP       | Outbound   | Usually internal (recommended)                                |
+| Database                                                    | SqlSettings.DataSource                | 5432 (PostgreSQL) / 3306 (MySQL)  | TCP       | Outbound   | Usually internal (recommended)                                |
 +-------------------------------------------------------------+---------------------------------------+-----------------------------------+-----------+------------+---------------------------------------------------------------+
 | LDAP                                                        | LdapSettings.LdapPort                 | 389                               | TCP/UDP   | Outbound   |                                                               |
 +-------------------------------------------------------------+---------------------------------------+-----------------------------------+-----------+------------+---------------------------------------------------------------+

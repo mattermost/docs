@@ -62,7 +62,7 @@ Use the following message template to alert users of the migration::
 
 **Announcing Mattermost onboarding using email using username/password:**
 
-#. Get a list of email addresses of people in the new system by running a database query on Mattermost. Run ``SELECT Email FROM Users`` from either MySQL or PostgreSQL databases. 
+#. Get a list of email addresses of people in the new system by running a database query on Mattermost. Run ``SELECT Email FROM Users`` from either PostgreSQL or MySQL databases. 
 #. Adapt the `migration announcement email template </onboard/migration-announcement-email.html>`__ to let users know how to reclaim their old accounts or start new ones.
 
 Onboard users using SSO in Mattermost

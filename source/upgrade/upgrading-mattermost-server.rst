@@ -72,7 +72,7 @@ Upgrade Mattermost Server
 
 6. Back up your data and application. Make sure you've properly backed up your database before continuing with the upgrade. In case of an unexpected failure, you should be in a position to load a previous database snapshot.
 
-   a. Back up your database using your organization’s standard procedures for backing up MySQL or PostgreSQL.
+   a. Back up your database using your organization’s standard procedures for backing up the database.
 
    b. Back up your application by copying into an archive folder (e.g. ``mattermost-back-YYYY-MM-DD-HH-mm``).
 

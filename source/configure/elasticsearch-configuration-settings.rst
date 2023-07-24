@@ -170,7 +170,7 @@ Server password
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. config:setting:: elastic-enablesniffing
-  :displayname: Enable cluster sniffing
+  :displayname: Enable cluster sniffing (Elasticsearch)
   :systemconsole: Environment > Elasticsearch
   :configjson: .Elasticsearchsettings.Sniff
   :environment: MM_ELASTICSEARCHSETTINGS_SNIFF
@@ -195,6 +195,13 @@ Enable cluster sniffing
 | Select the **Test Connection** button in the System Console to validate the connection between Mattermost and the Elasticsearch server.   |
 +----------------------------------------------------------------+--------------------------------------------------------------------------+
 
+.. config:setting:: elastic-bulkindexing
+  :displayname: Bulk indexing (Elasticsearch)
+  :systemconsole: Environment > Elasticsearch
+  :configjson: N/A
+  :environment: N/A
+  :description: Configure Mattermost to start a bulk index of all existing posts in the database by selecting Index Now.
+
 Bulk indexing
 ~~~~~~~~~~~~~
 
@@ -209,13 +216,39 @@ Bulk indexing
 | index and search results will be incomplete.                                                                                             |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 
+.. config:setting:: elastic-indexestoskipwhilepurging
+  :displayname: Indexes to skip while purging (Elasticsearch)
+  :systemconsole: Environment > Elasticsearch
+  :configjson: .Elasticsearchsettings.IgnoredPurgeIndexes
+  :environment: MM_ELASTICSEARCHSETTINGS_IGNOREDPURGEINDEXES
+  :description: Specify index names to ignore while purging indexes, separated by commas.
+
+
+Indexes to skip while purging
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++---------------------------------------------------------------+--------------------------------------------------------------------------+
+| Specify index names to ignore while purging indexes.          | - System Config path: **Environment > Elasticsearch**                    |
+| Separate multiple index names with commas.                    | - ``config.json`` setting: ElasticsearchSettings.IgnoredPurgeIndexes     |
+|                                                               | - Environment variable: MM_ELASTICSEARCHSETTINGS_IGNOREDPURGEINDEXES     |
+| Use an asterisk (*) to match a sequence of index name         |                                                                          |
+| characters.                                                   |                                                                          |
++---------------------------------------------------------------+--------------------------------------------------------------------------+
+
+.. config:setting:: elastic-purgeindexes
+  :displayname: Purge indexes (Elasticsearch)
+  :systemconsole: Environment > Elasticsearch
+  :configjson: N/A
+  :environment: N/A
+  :description: Purge the entire Elasticsearch index by selecting Purge Indexes.
+
 Purge indexes
 ~~~~~~~~~~~~~
 
 *Available in legacy Enterprise Edition E10/E20*
 
 +---------------------------------------------------------------+-------------------------------------------------------------+
-| Configure Mattermost to purge the entire Elasticsearch index. | - System Config path: **Environment > Elasticsearch**       |
+| Purge the entire Elasticsearch index.                         | - System Config path: **Environment > Elasticsearch**       |
 | Typically only used if the index has corrupted and search     | - ``config.json`` setting: N/A                              |
 | isn't behaving as expected.                                   | - Environment variable: N/A                                 |
 +---------------------------------------------------------------+-------------------------------------------------------------+
@@ -526,7 +559,7 @@ Request timeout
 +---------------------------------------------------------------+------------------------------------------------------------------------------------+
 
 .. config:setting:: elastic-trace
-  :displayname: Trace (ElasticSearch)
+  :displayname: Trace (Elasticsearch)
   :systemconsole: N/A
   :configjson: .Elasticsearchsettings.Trace
   :environment: MM_ELASTICSEARCHSETTINGS_TRACE
