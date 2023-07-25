@@ -169,6 +169,7 @@ Latest Mattermost Releases:
  - Fixed an issue where the undo history was erased when links, tables, or code was pasted into the textbox.
  - Fixed an issue where Elasticsearch didn't properly start on startup when enabled. Also added a missing ``IsEnabled`` method to Elasticsearch.
  - Fixed an issue where text couldn't be copied from the post textbox.
+ - Fixed an issue where using **shift+tab** with a screen reader placed the cursor focus at the bottom of the channel rather than at the post that was linked to.
  
 ### config.json
 Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
