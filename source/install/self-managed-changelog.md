@@ -462,7 +462,7 @@ Mattermost v7.9.0 contains a low severity level security fix. [Upgrading](https:
   - Mattermost v7.8.7 contains no database or functional changes.
   - Updated prepackaged Boards to v7.8.7.
   - Fixed typo in the database migration scripts that broke idempotency.
-  - For servers wanting to allow websockets to connect from other origins, please set the ``ServiceSettings.AllowCorsFrom`` [config setting](https://docs.mattermost.com/configure/integrations-configuration-settings.html#enable-cross-origin-requests-from).
+  - For servers wanting to allow websockets to connect from origins other than the origin of the site URL, please set the ``ServiceSettings.AllowCorsFrom`` [config setting](https://docs.mattermost.com/configure/integrations-configuration-settings.html#enable-cross-origin-requests-from). Also ensure that the ``siteURL`` is set correctly.
 - **v7.8.6, released 2023-05-31**
   - Fixed an issue where the total user count was fetched for every client connection. It is only necessary to fetch this once.
   - Prepackaged version 1.3.0 of the Welcomebot plugin.
