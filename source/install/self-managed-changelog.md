@@ -53,6 +53,7 @@ Latest Mattermost Releases:
  - Fixed the clickable area of post textboxes being too small.
  - Fixed an UI bug in the bot profile popover.
  - Fixed an issue with missing zoneinfo in the Docker container.
+ - Fixed an issue with the ``registerMessageWillBeUpdatedHook`` plugin hook.
 
 ### config.json
 Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
