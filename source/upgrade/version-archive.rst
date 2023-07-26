@@ -18,7 +18,7 @@ Mattermost Enterprise Edition
 
 Mattermost Enterprise Edition v8.0.1 - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v8-0-major-release>`__ - `Download <https://releases.mattermost.com/8.0.1/mattermost-8.0.1-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/8.0.1/mattermost-8.0.1-linux-amd64.tar.gz``
-  - SHA-256 Checksum: ``e5ac1c852c595ed350d970fb7e2e674205944af8097e98829e96b38ab19a6618``
+  - SHA-256 Checksum: ``c3601f0cfcdc8ac8827576e66bfda3e12d3fc3e92aa67c2b68a643c52e7eb17f``
   - GPG Signature: https://releases.mattermost.com/8.0.1/mattermost-8.0.1-linux-amd64.tar.gz.sig
 Mattermost Enterprise Edition v7.10.5 - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v7-10-feature-release>`__ - `Download <https://releases.mattermost.com/7.10.5/mattermost-7.10.5-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/7.10.5/mattermost-7.10.5-linux-amd64.tar.gz``
@@ -335,7 +335,7 @@ We generally recommend installing Enterprise Edition, even if you don't currentl
 
 Mattermost Team Edition v8.0.1 - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v8-0-major-release>`__ - `Download <https://releases.mattermost.com/8.0.1/mattermost-team-8.0.1-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/8.0.1/mattermost-team-8.0.1-linux-amd64.tar.gz``
-  - SHA-256 Checksum: ``46b44a2a6b8d7a2bad4553e40a565f1eb3e0b86d60903d97ec4d2f37f68effb2``
+  - SHA-256 Checksum: ``684d266e9deafe03c1203bd7e19ef65259000d1e7aa0978b44135ca164981f23``
   - GPG Signature: https://releases.mattermost.com/8.0.1/mattermost-team-8.0.1-linux-amd64.tar.gz.sig
 Mattermost Team Edition v7.10.5 - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v7-10-feature-release>`__ - `Download <https://releases.mattermost.com/7.10.5/mattermost-team-7.10.5-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/7.10.5/mattermost-team-7.10.5-linux-amd64.tar.gz``
