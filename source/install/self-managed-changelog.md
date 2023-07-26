@@ -6,11 +6,87 @@ See the [changelog in progress](https://bit.ly/2nK3cVf) for the upcoming release
 
 Latest Mattermost Releases:
 
+- [Release v8.1 - Extended Support Release](#release-v8-1-extended-support-release)
 - [Release v8.0 - Major Release](#release-v8-0-major-release)
 - [Release v7.11 - Feature Release](#release-v7-11-feature-release)
 - [Release v7.10 - Feature Release](#release-v7-10-feature-release)
-- [Release v7.9 - Feature Release](#release-v7-9-feature-release)
 - [Release v7.8 - Extended Support Release](#release-v7-8-extended-support-release)
+
+## Release v8.1 - [Extended Support Release](https://docs.mattermost.com/upgrade/release-definitions.html#extended-support-release-esr)
+
+**Release day: August 16, 2023**
+
+### Improvements
+
+#### User Interface (UI)
+ - Updated the user interface for the **Browse channels** modal.
+ - Increased the nickname field in the user interface from 22 to 64 characters.
+ - Updated links to documentation in the **System Console**.
+ - Emoji size is now in scale with the text size in the channel header.
+ - The emoji picker view modal is now displayed on mobile browsers.
+ - Prepackaged v1.2.2 of the Apps plugin.
+ - Prepackaged Focalboard plugin version 7.11.2.
+ - Pre-packaged Playbooks plugin version 1.38.0.
+ - The current user object is now updated more frequently.
+ - Updated the user interface so that system admins no longer appear editable by system/user managers in the System Console.
+
+#### Administration
+ - Added support for a new Export storage and a presigned URL generation.
+ - Using ``https://github.com/reduxjs/redux-devtools`` in production builds is now allowed.
+ - Added a new feature flag, ``DataRetentionConcurrencyEnabled``, to enable/disable concurrency for data retention batch deletion. Also added a new configuration setting  ``DataRetentionSettings.TimeBetweenBatchesMilliseconds`` to control the sleep time between batch deletions.
+ - Added a setting under **System Console > Authentication > Guest Access > Show Guest Tag** to remove the **Guest** badges from within the product.
+- Added Apache 2.0 license to the public submodule, explicitly signalling to [pkg.go.dev](https://pkg.go.dev/github.com/mattermost/mattermost/server/public@v0.0.6) the license in play for this source code.
+ - Added the ability for admins to hide or customize the **Forgot password** link on the login page.
+
+### Bug Fixes
+ - Fixed an issue where scrollbars were not visible enough on the **File Preview** screen.
+ - Fixed an issue where SAML Admin Attribute only compared the first value instead of looping through the assertion values array.
+ - Fixed an issue where updates to recent emojis were not batched when multiple emojis were posted at once.
+ - Reverted a change that could cause the webapp to forget the current user's authentication method.
+ - Fixed an issue where a "Seeker can't seek" error was displayed when viewing older image attachments.
+ - Fixed an issue where drafts would persist after sending an ``@here`` mention in the right-hand side.
+ - Fixed an issue where the **New messages** toast appeared on channels that were completely visible.
+ - Fixed an UI issue related to profile popover on channel member search in the right hand pane.
+ - Fixed an issue where the multi-line channel header preview was too narrow on mobile web view.
+ - Fixed the render of the **Add Slash Command** page in the backstage area.
+ - Fixed an issue where user's timezone affected the date selection in the calendar.
+ - Fixed the clickable area of post textboxes being too small.
+ - Fixed an UI bug in the bot profile popover.
+
+### config.json
+Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
+
+#### Changes to all plans:
+ - Under ``PasswordSettings`` in ``config.json``:
+    - Added ``EnableForgotLink`` to add the ability for admins to hide or customize the **Forgot password** link on the login page.
+ - Under ``FileSettings`` 
+    - Added various export store settings to add support for a new Export storage.
+
+#### Changes to Professional and Enterprise plans:
+ - Under ``GuestAccountsSettings`` in ``config.json``:
+    - Added ``HideTags`` to add the ability to remove the **Guest** badges from within the product.
+
+#### Changes to Enterprise plan:
+ - ``DataRetentionSettings`` in ``config.json``:
+    - Added ``TimeBetweenBatchesMilliseconds`` setting to control the sleep time between batch deletions.
+
+### Go Version
+ - v8.1 is built with Go ``v1.19.5``.
+
+### Open Source Components:
+ - Added ``date-fns`` to https://github.com/mattermost/mattermost/, and removed ``sass``.
+
+### Known Issues
+ - Adding an @mention at the start of a post draft and pressing the left or right arrow key can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
+ - Google login fails on the Classic mobile apps.
+ - Status may sometimes get stuck as **Away** or **Offline** in High Availability mode with IP Hash turned off.
+ - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
+ - The team sidebar on the desktop app does not update when channels have been read on mobile.
+ - Slack import through the CLI fails if email notifications are enabled.
+ - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
+ - The Playbooks left-hand sidebar doesn't update when a user is added to a run or playbook without a refresh.
+ - If a user isn't a member of a configured broadcast channel, posting a status update might fail without any error feedback. As a temporary workaround, join the configured broadcast channels, or remove those channels from the run configuration.
+ - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
 
 ## Release v8.0 - [Major Release](https://docs.mattermost.com/upgrade/release-definitions.html#major-release)
 
