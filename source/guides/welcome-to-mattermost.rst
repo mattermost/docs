@@ -29,7 +29,7 @@ Mattermost basics
    :hidden:
 
    Get started with Mattermost Channels </welcome/get-started-mattermost-channels>
-   Get started with the Mattermost Playbooks plugin </playbooks/work-with-playbooks>
+   Get started with Mattermost Playbooks </playbooks/work-with-playbooks>
    Get started with Mattermost Boards </boards/work-with-boards>
    Manage custom groups </welcome/manage-custom-groups>
    About teams </welcome/about-teams>
@@ -39,7 +39,7 @@ Mattermost basics
    Add people to your workspace </welcome/add-people>
 
 * :doc:`Get started with Mattermost Channels </welcome/get-started-mattermost-channels>` - Learn how to communicate and collaborate with your team using Mattermost Channels.
-* :doc:`Get started with the Mattermost Playbooks plugin </playbooks/work-with-playbooks>` - Learn how to create and refine repeatable, measurable workflows for a range of scenarios using the Mattermost Playbooks plugin.
+* :doc:`Get started with Mattermost Playbooks </playbooks/work-with-playbooks>` - Learn how to create and refine repeatable, measurable workflows for a range of scenarios using Mattermost Playbooks.
 * :doc:`Get started with Mattermost Boards </boards/work-with-boards>` - Learn how to create and manage projects using customizable cards to increase your team's productivity using Mattermost Boards.
 * :doc:`Manage custom groups </welcome/manage-custom-groups>` - Learn how to define custom groups of users, such as a team or department, you can @mention in Mattermost.  
 * :doc:`About teams </welcome/about-teams>` - Learn about the digital workspaces where you and your teammates collaborate together in Mattermost.

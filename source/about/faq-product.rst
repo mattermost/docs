@@ -52,7 +52,7 @@ The following chart highlights the end user features of Mattermost and their sup
     "Leave team", "X", "X"
     **BOARDS**
     "Boards, cards, and views", "X", "X"
-    **PLAYBOOKS PLUGIN**
+    **PLAYBOOKS**
     "Templates and checklists", "X", "X"
     **CALLS**
     "Join call", "X", "X", "X"
