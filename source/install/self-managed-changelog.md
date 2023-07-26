@@ -37,6 +37,7 @@ Latest Mattermost Releases:
  - Added a setting under **System Console > Authentication > Guest Access > Show Guest Tag** to remove the **Guest** badges from within the product.
 - Added Apache 2.0 license to the public submodule, explicitly signalling to [pkg.go.dev](https://pkg.go.dev/github.com/mattermost/mattermost/server/public@v0.0.6) the license in play for this source code.
  - Added the ability for admins to hide or customize the **Forgot password** link on the login page.
+ - The ``mattermost database reset`` command no longer starts the application server. It will only start the store layer and truncate the tables excluding the migrations table.
 
 ### Bug Fixes
  - Fixed an issue where scrollbars were not visible enough on the **File Preview** screen.
