@@ -2,12 +2,40 @@
 
 Latest Mattermost Mobile Apps releases:
 
+- [2.7.0 Release](#release)
 - [2.6.0 Release](#release)
 - [2.5.1 Release](#id1)
 - [2.5.0 Release](#id4)
 - [2.4.0 Release](#id9)
 - [2.3.0 Release](#id14)
-- [2.2.0 Release](#id19)
+
+## 2.7.0 Release
+- Release Date: August 16, 2023
+- Server Versions Supported: Server v7.8.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
+
+### Compatibility
+ - **Upgrade to server version v7.8.0 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/upgrade/extended-support-release.html) (ESR) v7.1.0 has ended and upgrading to server ESR v7.8.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
+ - iPhone 5s devices and later with iOS 12.1+ is required.
+
+### Improvements
+ - Guest tags are now removed based on server configuration under **System Console > Authentication > Guest Access > Show Guest Tag**.
+ - Improved behavior of multi-request environments (such as HTTP1.1).
+ - Added search result highlight that matches the words being searched.
+ - Added a new feature for remembering the last viewed channel or thread. It will help to jump back to the last channel or thread where the user left.
+ - Reduced the padding/margins on the **Files** tab in the **Search** page.
+ - User’s current status is now shown at the bottom tab bar profile image.
+ - Added a **Copy info** button to the **About** page.
+
+### Bug Fixes
+ - Fixed issues with timeouts when uploading files.
+ - Fixed hashtag search to match the hashtag and not the word.
+ - Fixed search results to match the webapp.
+ - Fixed an issue with selecting the custom theme from the display setting.
+
+### Known Issues
+ - Users are unable to adjust the font size via the OS font size setting.
+ - Some Google Pixel phones on Android 12+ might not continue past the login screen. This is a known issue with the OS, and the current workaround is to restart the device.
 
 ## 2.6.0 Release
 - Release Date: July 14, 2023
