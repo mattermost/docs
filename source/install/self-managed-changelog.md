@@ -14,9 +14,12 @@ Latest Mattermost Releases:
 
 ## Release v8.0 - [Major Release](https://docs.mattermost.com/upgrade/release-definitions.html#major-release)
 
-- **v8.0.1, release date TBD**
-  - Fixing an issue where the v8.0.0 **About Mattermost** dialog reports an incorrect server version in the Free Plan [MM-53681](https://mattermost.atlassian.net/browse/MM-53681).
-  - Adding support for embedding Mattermost in a Microsoft Teams iframe.
+- **v8.0.1, released 2023-07-26**
+  - Mattermost v8.0.1 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Mattermost v8.0.1 contains no database or functional changes.
+  - Added support for embedding Mattermost in a Microsoft Teams iframe.
+  - Fixed an issue where the v8.0.0 **About Mattermost** dialog reported an incorrect server version in the Free Plan [MM-53681](https://mattermost.atlassian.net/browse/MM-53681).
+  - Prepackaged Focalboard plugin version 7.11.2.
 - **8.0.0, released 2023-07-14**
   - Original 8.0.0 release
 
@@ -220,6 +223,11 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ## Release v7.10 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
 
+- **v7.10.5, released 2023-07-26**
+  - Mattermost v7.10.5 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Mattermost v7.10.5 contains no database or functional changes.
+  - Fixed an issue where line breaks were introduced when pasting hyperlinks in the chat.
+  - Prepackaged Focalboard plugin version 7.10.5.
 - **v7.10.4, released 2023-07-12**
   - Mattermost v7.10.4 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Mattermost v7.10.4 contains no database or functional changes.
@@ -450,6 +458,10 @@ Mattermost v7.9.0 contains a low severity level security fix. [Upgrading](https:
 
 ## Release v7.8 - [Extended Support Release](https://docs.mattermost.com/upgrade/release-definitions.html#extended-support-release-esr)
 
+- **v7.8.9, released 2023-07-26**
+  - Mattermost v7.8.9 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Mattermost v7.8.9 contains no database or functional changes.
+  - Prepackaged Focalboard plugin version 7.8.8.
 - **v7.8.8, released 2023-07-07**
   - Mattermost v7.8.8 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Mattermost v7.8.8 contains no database or functional changes.
