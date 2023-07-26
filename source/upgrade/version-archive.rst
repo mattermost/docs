@@ -22,7 +22,7 @@ Mattermost Enterprise Edition v8.0.1 - `View Changelog <https://docs.mattermost.
   - GPG Signature: https://releases.mattermost.com/8.0.1/mattermost-8.0.1-linux-amd64.tar.gz.sig
 Mattermost Enterprise Edition v7.10.5 - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v7-10-feature-release>`__ - `Download <https://releases.mattermost.com/7.10.5/mattermost-7.10.5-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/7.10.5/mattermost-7.10.5-linux-amd64.tar.gz``
-  - SHA-256 Checksum: ``132d9c1fd0a7422f03e40bc4f095a4eaf4da470208af8d51d5e853581f2154c3``
+  - SHA-256 Checksum: ``5937103d7c7d298343740f9c5f8e87595d829eaf288d4aec834ce7e087a047de``
   - GPG Signature: https://releases.mattermost.com/7.10.5/mattermost-7.10.5-linux-amd64.tar.gz.sig
 Mattermost Enterprise Edition v7.9.6 - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v7-9-feature-release>`__ - `Download <https://releases.mattermost.com/7.9.6/mattermost-7.9.6-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/7.9.6/mattermost-7.9.6-linux-amd64.tar.gz``
@@ -339,7 +339,7 @@ Mattermost Team Edition v8.0.1 - `View Changelog <https://docs.mattermost.com/in
   - GPG Signature: https://releases.mattermost.com/8.0.1/mattermost-team-8.0.1-linux-amd64.tar.gz.sig
 Mattermost Team Edition v7.10.5 - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v7-10-feature-release>`__ - `Download <https://releases.mattermost.com/7.10.5/mattermost-team-7.10.5-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/7.10.5/mattermost-team-7.10.5-linux-amd64.tar.gz``
-  - SHA-256 Checksum: ``744fae31e3cc59b8d56accd064f2605a4d165e740fcf4e224cd1693a9ff4d2eb``
+  - SHA-256 Checksum: ``e09c4e7d7134e94fb06e92bda041dc8c9d122649052b27c380b20ac591faff95``
   - GPG Signature: https://releases.mattermost.com/7.10.5/mattermost-team-7.10.5-linux-amd64.tar.gz.sig
 Mattermost Team Edition v7.9.6 - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v7-9-feature-release>`__ - `Download <https://releases.mattermost.com/7.9.6/mattermost-team-7.9.6-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/7.9.6/mattermost-team-7.9.6-linux-amd64.tar.gz``
