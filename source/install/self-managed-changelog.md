@@ -46,7 +46,7 @@ Latest Mattermost Releases:
  - Removed deprecated ``PermissionUseSlashCommands``.
  - Removed deprecated ``model.CommandArgs.Session``.
  - Pass a ``context.Context`` to Client4 methods.
- - For servers wanting to allow websockets to connect from other origins, please set the ``ServiceSettings.AllowCorsFrom`` [configuration setting](https://docs.mattermost.com/configure/integrations-configuration-settings.html#enable-cross-origin-requests-from).
+ - For servers wanting to allow websockets to connect from origins other than the origin of the site URL, please set the ``ServiceSettings.AllowCorsFrom`` [configuration setting](https://docs.mattermost.com/configure/integrations-configuration-settings.html#enable-cross-origin-requests-from). Also ensure that the ``siteURL`` is set correctly.
  - In v8.0, the following repositories are merged into one: ``mattermost-server``, ``mattermost-webapp`` and ``mmctl``. Developers should read the updated [Developer Guide](https://developers.mattermost.com/contribute/developer-setup/) for details.
  - Fixed an issue caused by a migration in the previous release. Query takes around 11ms on a PostgreSQL 14 DB t3.medium RDS instance. Locks on the preferences table will only be acquired if there are rows to delete, but the time taken is negligible.
  - Fixed an issue where a user would still see threads in the threads view of channels they have left. Migration execution time in PostgreSQL: Execution time: 58.11 sec, DELETE 2766690. Migration execution time in MySQL: Query OK, 2766769 rows affected (4 min 47.57 sec).
@@ -172,6 +172,7 @@ Latest Mattermost Releases:
  - Fixed an issue where the undo history was erased when links, tables, or code was pasted into the textbox.
  - Fixed an issue where Elasticsearch didn't properly start on startup when enabled. Also added a missing ``IsEnabled`` method to Elasticsearch.
  - Fixed an issue where text couldn't be copied from the post textbox.
+ - Fixed an issue where using **SHIFT+TAB** with a screen reader placed the cursor focus at the bottom of the channel rather than at the post that was linked to.
  
 ### config.json
 Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
@@ -236,7 +237,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
   - Mattermost v7.10.3 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Updated prepackaged Boards to v7.10.3.
   - Included prepackaged Welcomebot plugin v1.3.0.
-  - For servers wanting to allow websockets to connect from other origins, please set the ``ServiceSettings.AllowCorsFrom`` [config setting](https://docs.mattermost.com/configure/integrations-configuration-settings.html#enable-cross-origin-requests-from).
+  - For servers wanting to allow websockets to connect from origins other than the origin of the site URL, please set the ``ServiceSettings.AllowCorsFrom`` [configuration setting](https://docs.mattermost.com/configure/integrations-configuration-settings.html#enable-cross-origin-requests-from). Also ensure that the ``siteURL`` is set correctly.
 - **v7.10.2, released 2023-05-18**
   - Fixed an issue where v7.10 reported an incorrect mmctl version.
 - **v7.10.1, released 2023-05-16**
@@ -337,7 +338,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 - **v7.9.5, released 2023-06-15**
   - Mattermost v7.9.5 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Updated prepackaged Boards to v7.9.6.
-  - For servers wanting to allow websockets to connect from other origins, please set the ``ServiceSettings.AllowCorsFrom`` [config setting](https://docs.mattermost.com/configure/integrations-configuration-settings.html#enable-cross-origin-requests-from).
+  - For servers wanting to allow websockets to connect from origins other than the origin of the site URL, please set the ``ServiceSettings.AllowCorsFrom`` [configuration setting](https://docs.mattermost.com/configure/integrations-configuration-settings.html#enable-cross-origin-requests-from). Also ensure that the ``siteURL`` is set correctly.
 - **v7.9.4, released 2023-05-16**
   - Mattermost v7.9.4 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Fixed an issue where a user would still see threads in the threads view of channels they have left. Migration execution time in MySQL: Query OK, 2766769 rows affected (4 min 47.57 sec). Migration execution time in PostgreSQL: 58.11 sec, DELETE 2766690.
@@ -473,7 +474,7 @@ Mattermost v7.9.0 contains a low severity level security fix. [Upgrading](https:
   - Mattermost v7.8.7 contains no database or functional changes.
   - Updated prepackaged Boards to v7.8.7.
   - Fixed typo in the database migration scripts that broke idempotency.
-  - For servers wanting to allow websockets to connect from other origins, please set the ``ServiceSettings.AllowCorsFrom`` [config setting](https://docs.mattermost.com/configure/integrations-configuration-settings.html#enable-cross-origin-requests-from).
+  - For servers wanting to allow websockets to connect from origins other than the origin of the site URL, please set the ``ServiceSettings.AllowCorsFrom`` [configuration setting](https://docs.mattermost.com/configure/integrations-configuration-settings.html#enable-cross-origin-requests-from). Also ensure that the ``siteURL`` is set correctly.
 - **v7.8.6, released 2023-05-31**
   - Fixed an issue where the total user count was fetched for every client connection. It is only necessary to fetch this once.
   - Prepackaged version 1.3.0 of the Welcomebot plugin.
