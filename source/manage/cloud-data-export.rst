@@ -14,13 +14,15 @@ Migrate from Cloud to self-hosted
 You can migrate your Cloud workspace data to a self-hosted deployment at any time.
 
 How does the process work?
---------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Before you export and migrate your data, you must `install Mattermost </guides/deployment.html#install-guides>`_ on the server you’ll be using to run Mattermost. The migration is done using the mmctl CLI tool, which is a remote CLI tool for Mattermost that's installed locally and uses the Mattermost API. mmctl is pre-installed.
+Before you export and migrate your data, you must `install Mattermost </guides/deployment.html#install-guides>`_ on the server you’ll be using to run Mattermost. The migration is done using the mmctl CLI tool, which is a remote CLI tool for Mattermost that's installed locally and uses the Mattermost API. ``mmctl`` is pre-installed.
 
 The `mmctl usage notes </manage/mmctl-command-line-tool.html#mmctl-usage-notes>`_ provide some additional context and information which you can reference before and during the process.
 
-You'll be using the `mmctl export </manage/mmctl-command-line-tool.html#mmctl-export>`__ commands to export your Cloud data for channels, messages, users, etc. The export file is downloaded to a location specified in the export commands. Once the export is complete, you'll import the data into your self-hosted instance.
+You'll be using the `mmctl export </manage/mmctl-command-line-tool.html#mmctl-export>`__ commands to export your Cloud data for channels, messages, users, etc. The export file is downloaded to a location specified in the export commands. Once the export is complete, you'll import the data into your self-hosted instance. 
+
+Alternatively, you can export the data to an Amazon S3 cloud storage location in cases where an export is quite large and challenging to download from the Mattermost server. See the `create the export <#create-the-export>`__ section below for details.
 
 .. note::
   
@@ -28,7 +30,7 @@ You'll be using the `mmctl export </manage/mmctl-command-line-tool.html#mmctl-ex
   
   Moreover, the export process doesn’t include integrations or any custom data. Other aspects of your instance, such as specific security settings and requirements, are also not included. For assistance with migrating additional data and settings, see our support options: https://mattermost.com/support/.
 
-Once mmctl is installed, we can generate the export from the source instance.
+Once ``mmctl`` is authenticated, you can generate the export from the source instance.
 
 Authenticate
 ------------
@@ -44,13 +46,13 @@ You'll be prompted for a username (use your admin user), password, and for a con
 Create the export
 -----------------
 
-Once you're logged in, run:
+Once you're logged in, run the following ``mmctl`` command:
 
 .. code::
-
+         
    mmctl export create
 
-This will create a full export of the server, and include attached files. Append ``--no-attachments`` if you do not wish to export attached files from your instance. This process can take some time, so ``mmctl`` will return immediately, and the job will run in the background on the Mattermost instance until the export is fully created. If successful, the command will immediately output a job ID, like this:
+Running this command creates a full export of the server, including attached files. Append ``--no-attachments`` if you do not wish to export attached files from your instance. This process can take some time, so ``mmctl`` will return immediately, and the job will run in the background on the Mattermost instance until the export is fully created. If successful, the command will immediately output a job ID, like this:
 
 .. code::
 
@@ -60,32 +62,33 @@ While the job is running, its status can be checked using the ID that was provid
 
 .. code::
 
-  mmctl export job show yfrr9ku5i7fjubeshs1ksrknzc
-  ID: yfrr9ku5i7fjubeshs1ksrknzc
-  Status: success
-  Created: 2021-11-03 10:44:13 -0500 CDT
-  Started: 2021-11-03 10:44:23 -0500 CDT
+   mmctl export job show yfrr9ku5i7fjubeshs1ksrknzc
+   ID: yfrr9ku5i7fjubeshs1ksrknzc
+   Status: success
+   Created: 2021-11-03 10:44:13 -0500 CDT
+   Started: 2021-11-03 10:44:23 -0500 CDT
 
-Download the export
--------------------
-
-Once the status is ``success``, you can download the export onto your local machine. First, discover the name of the completed export file with ``mmctl export list``:
+Once the status is ``success``, download the export onto your local machine. First, discover the name of the completed export file with ``mmctl export list``:
 
 .. code::
 
    mmctl export list
    r3kcj8yuwbramdt714doafi3oo_export.zip
 
-This will show all of the exports on the server, so be sure to download the latest one and to delete it when you're done to save storage. Download the file with a command like the following, but with the filename of the export on your server:
+This will show all of the exports on the server, so be sure to download the latest one and to delete it when you're done to save storage. Generate a link to download the file with a command like the following, but with the filename of the export on your server:
 
 .. code::
 
-   mmctl export download r3kcj8yuwbramdt714doafi3oo_export.zip
+   mmctl export generate-presigned-url r3kcj8yuwbramdt714doafi3oo_export.zip
+
+.. tip::
+   
+   As an alternative to this last step, from your Mattermost Cloud web instance, you can retrieve the file download link to the export by using the Mattermost slash command ``/exportlink [job-id|zip file|latest]``. Use the ``latest`` option to automatically pull the latest export available, or specify the download link by ``job-id`` or ``zip file``.
 
 Upload the export to the new server
 -----------------------------------
 
-Finally, it's time to take our export from the source server and use it as an import into the destination server. First, log into the destination server using mmctl the same way you logged into the source server:
+Finally, it's time to take our export from the source server and use it as an import into the destination server. First, log into the destination server using ``mmctl`` the same way you logged into the source server:
 
 .. code::
 
@@ -166,7 +169,7 @@ If you’re using plugins that aren’t listed on the Marketplace, they won’t 
 The migration only includes data from Channels. No Boards or Playbooks data is exported.
 
 Migration process
-^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~
 
 **Export from your self-hosted instance**
 
@@ -203,7 +206,7 @@ The completed file will be downloaded to your desktop as a ``.zip`` file.
 The Support team will provide you with S3 credentials so you can upload the exported file. Once you’ve uploaded the file, please contact the Support team and let them know.
 
 Create a new workspace on the Mattermost Cloud
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In the meantime, you can log into Mattermost Cloud with your Mattermost credentials and create a Cloud workspace. 
 
@@ -212,17 +215,17 @@ In the meantime, you can log into Mattermost Cloud with your Mattermost credenti
    Do not create any users in your Mattermost Cloud instance as the migration process performs this task for you.
 
 Importing your data into your Mattermost Cloud instance
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Once the export upload to the provided S3 bucket is complete and you’ve shared your Mattermost Cloud instance name/URL, Support can begin the import step.
 
 Depending on the size of the export this process can take some time. Support will contact you as soon as the import is complete. During this time it is highly recommended you do not use your Mattermost Cloud instance.
 
 Start using your Mattermost Cloud instance
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When the export is complete, you can log into your Cloud instance and can invite your users to log in. 
 
 .. note:: 
   
-  It’s recommended that you keep your self-hosted Mattermost server until you’ve been using your Cloud instance for a while and all is verified as is as expected.
+  We recommend that you keep your self-hosted Mattermost server until you’ve been using your Cloud instance for a while and all is verified as is as expected.
