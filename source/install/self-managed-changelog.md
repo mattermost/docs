@@ -43,7 +43,6 @@ Latest Mattermost Releases:
  - Fixed an issue where SAML Admin Attribute only compared the first value instead of looping through the assertion values array.
  - Fixed an issue where updates to recent emojis were not batched when multiple emojis were posted at once.
  - Reverted a change that could cause the webapp to forget the current user's authentication method.
- - Fixed an issue where a "Seeker can't seek" error was displayed when viewing older image attachments.
  - Fixed an issue where drafts would persist after sending an ``@here`` mention in the right-hand side.
  - Fixed an issue where the **New messages** toast appeared on channels that were completely visible.
  - Fixed an UI issue related to profile popover on channel member search in the right hand pane.
