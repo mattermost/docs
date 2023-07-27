@@ -32,6 +32,7 @@ Latest Mattermost Mobile Apps releases:
  - Fixed hashtag search to match the hashtag and not the word.
  - Fixed search results to match the webapp.
  - Fixed an issue with selecting the custom theme from the display setting.
+ - Fixed an issue where the keyboard overlapped with recent search items in the search tab.
 
 ### Known Issues
  - Users are unable to adjust the font size via the OS font size setting.
