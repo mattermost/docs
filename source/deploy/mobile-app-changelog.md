@@ -23,7 +23,7 @@ Latest Mattermost Mobile Apps releases:
  - Improved behavior of multi-request environments (such as HTTP/1.1).
  - Added search result highlight that matches the words being searched.
  - Added a new feature for remembering the last viewed channel or thread that takes returning users to the last channel or thread they visited.
- - Reduced the padding/margins on the **Files** tab in the **Search** page.
+ - Improved the appearance of the search results.
  - User’s current status is now shown at the bottom tab bar profile image.
  - Added a **Copy info** button to the **About** page.
 
