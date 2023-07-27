@@ -31,7 +31,7 @@ Latest Mattermost Releases:
  - Updated the user interface so that system admins no longer appear editable by system/user managers in the System Console.
 
 #### Administration
- - Added support for a new Export storage and a presigned URL generation.
+ - Added support for a separate Export storage and S3 presigned URLs generation for downloading the export files.
  - Using ``https://github.com/reduxjs/redux-devtools`` in production builds is now allowed.
  - Added a new feature flag, ``DataRetentionConcurrencyEnabled``, to enable/disable concurrency for data retention batch deletion. Also added a new configuration setting  ``DataRetentionSettings.TimeBetweenBatchesMilliseconds`` to control the sleep time between batch deletions.
  - Added a setting under **System Console > Authentication > Guest Access > Show Guest Tag** to remove the **Guest** badges from within the product.
