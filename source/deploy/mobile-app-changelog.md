@@ -20,9 +20,9 @@ Latest Mattermost Mobile Apps releases:
 
 ### Improvements
  - Guest tags are now removed based on server configuration under **System Console > Authentication > Guest Access > Show Guest Tag**.
- - Improved behavior of multi-request environments (such as HTTP1.1).
+ - Improved behavior of multi-request environments (such as HTTP/1.1).
  - Added search result highlight that matches the words being searched.
- - Added a new feature for remembering the last viewed channel or thread. It will help to jump back to the last channel or thread where the user left.
+ - Added a new feature for remembering the last viewed channel or thread that takes returning users to the last channel or thread they visited.
  - Reduced the padding/margins on the **Files** tab in the **Search** page.
  - User’s current status is now shown at the bottom tab bar profile image.
  - Added a **Copy info** button to the **About** page.
