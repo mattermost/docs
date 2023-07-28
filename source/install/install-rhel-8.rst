@@ -34,6 +34,10 @@ Install a database
 
     2. Install PostgreSQL. See the `PostgreSQL <https://www.postgresql.org/download/linux/redhat/>`__ documentation for details. 
 
+       .. note::
+
+        Mattermost v8.0 and later requires a PostgreSQL v11 or higher database. Using ``dnf install postgresql-server`` to install PostgreSQL will result in a v10x instance of PostgreSQL. We recommend running ``dnf module install postgresql:11/server`` or later instead to meet this database prerequisite for Mattermost.
+
     3. Initialize the database by running ``sudo postgresql-setup initdb``.
 
     4. Set PostgreSQL to start on boot by running ``sudo systemctl enable postgresql``.
@@ -44,21 +48,25 @@ Install a database
 
     7. Start the PostgreSQL interactive terminal by running ``psql``.
 
-    8.  Create the Mattermost database by running ``postgres=# CREATE DATABASE mattermost WITH ENCODING 'UTF8' LC_COLLATE='en_US.UTF-8' LC_CTYPE='en_US.UTF-8' TEMPLATE=template0;``.
+    8. Create the Mattermost database by running ``postgres=# CREATE DATABASE mattermost WITH ENCODING 'UTF8' LC_COLLATE='en_US.UTF-8' LC_CTYPE='en_US.UTF-8' TEMPLATE=template0;``.
 
-    9.  Create the Mattermost user *mmuser* by running ``postgres=# CREATE USER mmuser WITH PASSWORD 'mmuser-password';``.
+    9. Create the Mattermost user *mmuser* by running ``postgres=# CREATE USER mmuser WITH PASSWORD 'mmuser-password';``.
 
         .. note::
     
             Use a password that is more secure than ``mmuser-password``.
 
-    10.  Grant the user access to the Mattermost database by running ``postgres=# GRANT ALL PRIVILEGES ON DATABASE mattermost to mmuser;``.
+    10. Grant the user access to the Mattermost database by running ``postgres=# GRANT ALL PRIVILEGES ON DATABASE mattermost to mmuser;``.
 
-    11. Exit the PostgreSQL interactive terminal by running ``postgres=# \q``.
+    11. Configure Mattermost Server to run on startup by creating the ``systemd`` unit file, editing the file contents, and then reloading the file. 
 
-    12. Log out of the *postgres* account by running ``exit``.
+    12. If you have SELinux enabled and enforced, modify the SELinux context of the ``systemd`` file by running ``restorecon /etc/systemd/system``,
 
-    13. (Optional) If you use separate servers for your database and the Mattermost app server, you may allow PostgreSQL to listen on all assigned IP Addresses. To do so, open ``/etc/postgresql/{version}/main/postgresql.conf`` as *root* in a text editor, and replacing ``{version}`` with the version of PostgreSQL that's currently running. As a best practice, ensure that only the Mattermost server is able to connect to the PostgreSQL port using a firewall.
+    13. Exit the PostgreSQL interactive terminal by running ``postgres=# \q``.
+
+    14. Log out of the *postgres* account by running ``exit``.
+
+    15. (Optional) If you use separate servers for your database and the Mattermost app server, you may allow PostgreSQL to listen on all assigned IP Addresses. To do so, open ``/etc/postgresql/{version}/main/postgresql.conf`` as *root* in a text editor, and replacing ``{version}`` with the version of PostgreSQL that's currently running. As a best practice, ensure that only the Mattermost server is able to connect to the PostgreSQL port using a firewall.
 
         a. Open ``/var/lib/pgsql/data/postgresql.conf`` as root in a text editor.
 
@@ -68,7 +76,7 @@ Install a database
 
         d. Restart PostgreSQL for the change to take effect: ``sudo systemctl restart postgresql``.
 
-    14. Modify the file ``pg_hba.conf`` to allow the Mattermost server to communicate with the database.
+    16. Modify the file ``pg_hba.conf`` to allow the Mattermost server to communicate with the database.
 
         **If the Mattermost server and the database are on the same machine:**
 
@@ -92,9 +100,9 @@ Install a database
 
             b. Add the following line to the end of the file, where *{mattermost-server-IP}* is the IP address of the machine that contains the Mattermost server: ``host all all {mattermost-server-IP}/32 md5``.
 
-    15. Reload PostgreSQL by running ``sudo systemctl reload postgresql``.
+    17. Reload PostgreSQL by running ``sudo systemctl reload postgresql``.
 
-    16. Verify that you can connect with the user *mmuser*.
+    18. Verify that you can connect with the user *mmuser*.
 
         a. If the Mattermost server and the database are on the same machine, use the following command: ``psql --dbname=mattermost --username=mmuser --password``.
 
@@ -104,7 +112,9 @@ Install a database
       
             You might have to install the PostgreSQL client software to use the command.
 
-    The PostgreSQL interactive terminal starts. To exit the PostgreSQL interactive terminal, type ``\q`` and press **Enter**.
+    19.  Label port 8065 by running ``semanage port -a -t http_port_t -p tcp 8065``.
+    
+    Exit the PostgreSQL interactive terminal by running ``\q`` and pressing **Enter**.
 
     With the database installed and the initial setup complete, you can now install the Mattermost server.
 
