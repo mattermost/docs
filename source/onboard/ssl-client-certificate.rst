@@ -11,7 +11,8 @@ Before you begin, follow the `official guides to install Mattermost </guides/adm
 For the purposes of this guide, the Mattermost server domain name is ``example.mattermost.com``, and the user account is ``mmuser`` with email ``mmuser@mattermost.com`` and password ``mmuser-password``.
 
 .. note::
-  Generating the client certificates in this section is optional if you have already generated them before.
+  - Generating the client certificates in this section is optional if you have already generated them before.
+  - An SSL certificate (or a self-signed certificate) is required in cases where your Mattermost Server **Site URL** is configured as ``HTTP`` or ``localhost``.
 
 Set up mutual TLS authentication for the web app
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
