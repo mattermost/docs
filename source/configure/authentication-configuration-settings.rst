@@ -2712,3 +2712,22 @@ Enforce multi-factor authentication
 | **Note**: This setting defaults to false and cannot be changed if MFA isn't enforced for non-guest users.                                                                                                     |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+.. config:setting:: guest-showtag
+  :displayname: Show guest tag (Guest Access)
+  :systemconsole: Authentication > Guest Access
+  :configjson: .GuestAccountsSettings.HideTags
+  :environment: MM_GUESTACCOUNTSSETTINGS_HIDETAGS
+
+  - **True**: **(Default)** Guest tags are visible in Mattermost.
+  - **False**: **(Default)** Guest tags aren't visible in Mattermost.
+
+Show guest tag
+~~~~~~~~~~~~~~
+
++-----------------------------------------------------------------+----------------------------------------------------------------------+
+| - **true**: **(Default)** Guest tags are visible in Mattermost. | - System Config path: **Authentication > Guest Access**              |
+| - **false**:  Guest tags aren't visible in Mattermost.          | - ``config.json`` setting: ``.GuestAccountsSettings.HideTags: true`` |
+|                                                                 | - Environment variable: ``MM_GUESTACCOUNTSSETTINGS_HIDETAGS``        |
++-----------------------------------------------------------------+----------------------------------------------------------------------+
+| **Note**: See the `guest accounts <https://docs.mattermost.com/onboard/guest-accounts.html>`__ documentation for details.              |
++----------------------------------------------------------------------------------------------------------------------------------------+
