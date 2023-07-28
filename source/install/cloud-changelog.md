@@ -28,6 +28,7 @@ Latest Mattermost Cloud releases:
  - Pre-packaged Playbooks version 1.38.0.
  - Fixed a UI bug in the bot profile popover.
  - Fixed an issue with the ``registerMessageWillBeUpdatedHook`` plugin hook.
+ - Fixed an issue where the **Saved Posts** section would not show channel and team names.
 
 ### Known Issues
  - Boards public links that follow the URL schema `/boards/public/...` no longer work. They can either be regenerated through the application by going to the board and selecting the **Share** button at the top right, or they can be obtained by replacing the `/boards/public/` part of the URL with `/plugins/focalboard/`.
