@@ -297,6 +297,25 @@ Maximum login attempts
 | Numerical input. Default is **10**.                                                                                                                         | - Environment variable: ``MM_SERVICESETTINGS_MAXIMUMLOGINATTEMPTS``      |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
+.. config:setting:: password-ForgotPasswordLink
+  :displayname: Enable custom forgot password link (Password)
+  :systemconsole: Authentication > Password
+  :configjson: .ServiceSettings.ForgotPasswordLink
+  :environment: MM_SERVICESETTINGS_FORGOTPASSWORDLINK
+  :description: Enables the ability to set a custom Forgot Password link for users that overrides the default Mattermost workflow.
+  
+  - **true**: **(Default)** Custom Forget Password workflow opens in a new tab using the specified URL.
+  - **false**: Default Mattermost Forget Password workflow is used.
+
+Enable custom forgot password link
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++-------------------------------------------------------------------------------+------------------------------------------------------------------------+
+| - **true**: **(Default)** Custom Forget Password workflow opens in a new tab  | - System Config path: **Authentication > Enable forgot password link** |
+|   using the specified URL.                                                    | - ``config.json`` setting: ``.LdapSettings.ForgotPasswordLink: true``  |
+| - **false**: Default Mattermost Forget Password workflow is used.             | - Environment variable: ``MM_LDAPSETTINGS_FORGOTPASSWORDLINK``         |
++-------------------------------------------------------------------------------+------------------------------------------------------------------------+
+
 ----
 
 MFA
