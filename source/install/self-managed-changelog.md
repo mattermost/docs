@@ -54,6 +54,7 @@ Latest Mattermost Releases:
  - Fixed an UI bug in the bot profile popover.
  - Fixed an issue with missing zoneinfo in the Docker container.
  - Fixed an issue with the ``registerMessageWillBeUpdatedHook`` plugin hook.
+ - Fixed an issue where the **Saved Posts** section would not show channel and team names.
 
 ### config.json
 Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
