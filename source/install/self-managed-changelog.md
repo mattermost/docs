@@ -235,7 +235,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
   - Updated prepackaged Playbooks plugin version to 1.36.2.
 - **v7.10.3, released 2023-06-15**
   - Mattermost v7.10.3 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
-  - Updated prepackaged Boards to v7.10.3.
+  - Updated prepackaged Boards to v7.10.4.
   - Included prepackaged Welcomebot plugin v1.3.0.
   - For servers wanting to allow websockets to connect from origins other than the origin of the site URL, please set the ``ServiceSettings.AllowCorsFrom`` [configuration setting](https://docs.mattermost.com/configure/integrations-configuration-settings.html#enable-cross-origin-requests-from). Also ensure that the ``siteURL`` is set correctly.
 - **v7.10.2, released 2023-05-18**
