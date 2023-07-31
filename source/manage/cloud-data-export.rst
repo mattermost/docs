@@ -84,7 +84,7 @@ This will show all of the exports on the server, so be sure to download the late
 .. tip::
    
    - As an alternative to this last step, from your Mattermost Cloud web instance, you can retrieve the file download link to the export by using the Mattermost slash command ``/exportlink [job-id|zip file|latest]``. Use the ``latest`` option to automatically pull the latest export available, or specify the download link by ``job-id`` or ``zip file``. 
-   - Mattermost v8.1-RC is required to use the ``mmctl export generate-presigned-url`` command on a self-hosted Mattermost instance. Access the `Mattermost Enterprise v8.1-RC1 binary <https://releases.mattermost.com/8.1.0-rc1/mattermost-enterprise-8.1.0-rc1-linux-amd64.tar.gz>`__ or the `Mattermost Team Edition v8.1-RC binary <https://releases.mattermost.com/8.1.0-rc1/mattermost-team-8.1.0-rc1-linux-amd64.tar.gz>`__.
+   - Mattermost v8.1.0-RC1 is required to use the ``mmctl export generate-presigned-url`` command on a self-hosted Mattermost instance. Access the `Mattermost Enterprise v8.1.0-RC1 binary <https://releases.mattermost.com/8.1.0-rc1/mattermost-enterprise-8.1.0-rc1-linux-amd64.tar.gz>`__ or the `Mattermost Team Edition v8.1.0-RC1 binary <https://releases.mattermost.com/8.1.0-rc1/mattermost-team-8.1.0-rc1-linux-amd64.tar.gz>`__.
 
 Upload the export to the new server
 -----------------------------------
