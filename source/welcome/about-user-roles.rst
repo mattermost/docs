@@ -53,22 +53,12 @@ This is the default role given to users when they join a team. Members have basi
 Guest
 -----
 
-Guest is a role with restricted permissions, which allow organizations to collaborate with users outside of their organization, and control what channels they are in and who they can collaborate with.
+A guest is a role with restricted permissions, which allow organizations to collaborate with users outside of their organization, and control what channels they are in and who they can collaborate with.
 
-Guests can: 
+.. include:: /onboard/guest-account-access.rst
+  :start-after: :nosearch:
 
-- Pin messages to channels.
-- Use slash commands (with the exception of those used to invite members).
-- Favorite channels.
-- Mute channels.
-- Update their profile.
-- Use different authentication methods than other users
-
-Guests cannot:
-
-- Discover public channels.
-- Join open teams.
-- Create direct messages or group messages with members who aren’t within the same channel.
+See the `guest accounts <https://docs.mattermost.com/onboard/guest-accounts.html>`__ documentation for details on working with guest accounts.
 
 User with personal access token permission
 ------------------------------------------
