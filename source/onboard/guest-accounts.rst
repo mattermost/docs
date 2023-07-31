@@ -99,7 +99,7 @@ There are `additional permissions </onboard/advanced-permissions.html>`__ in Mat
 Guest identification
 ---------------------
 
-Guests are identified with a **Guest** badge unless your system admin has `disabled guest badges </configure/authentication-configuration-settings.html#guest-access>`__. When visible, this badge is visible in various places in the Mattermost interface, such as on a guest’s profile and next to their name on user lists, including @mentions. When guests are added to a channel, a system message notifies other channel members that the added user is a guest.
+Guests are identified with a **Guest** badge unless your system admin has `disabled guest badges </configure/authentication-configuration-settings.html#guest-access>`__. When visible, this badge is visible in various places in the Mattermost interface, such as on a guest’s profile and next to their name on user lists, including @mentions. Additionally, when badges are visible, and guests are added to a channel, a system message notifies other channel members that the added user is a guest.
 
 Additionally, when guest badges are visible, channels containing guests display the message: *This channel has guests*.
 
