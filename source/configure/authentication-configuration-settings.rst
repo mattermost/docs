@@ -297,24 +297,27 @@ Maximum login attempts
 | Numerical input. Default is **10**.                                                                                                                         | - Environment variable: ``MM_SERVICESETTINGS_MAXIMUMLOGINATTEMPTS``      |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
-.. config:setting:: password-ForgotPasswordLink
-  :displayname: Enable custom forgot password link (Password)
+.. config:setting:: password-forgotpasswordlink
+  :displayname: Enable forgot password link (Password)
   :systemconsole: Authentication > Password
   :configjson: .ServiceSettings.ForgotPasswordLink
   :environment: MM_SERVICESETTINGS_FORGOTPASSWORDLINK
-  :description: Enables the ability to set a custom Forgot Password link for users that overrides the default Mattermost workflow.
+  :description: Show or hide the Forgot Password link on the Mattermost login page.
   
-  - **true**: **(Default)** Custom Forget Password workflow opens in a new tab using the specified URL.
-  - **false**: Default Mattermost Forget Password workflow is used.
+  - **true**: **(Default)** Displays the Forgot Password link on the Mattermost login page.
+  - **false**: Hides the Forgot Password link from the Mattermost login page.
 
-Enable custom forgot password link
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Enable forgot password link
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+-------------------------------------------------------------------------------+------------------------------------------------------------------------+
-| - **true**: **(Default)** Custom Forget Password workflow opens in a new tab  | - System Config path: **Authentication > Enable forgot password link** |
-|   using the specified URL.                                                    | - ``config.json`` setting: ``.LdapSettings.ForgotPasswordLink: true``  |
-| - **false**: Default Mattermost Forget Password workflow is used.             | - Environment variable: ``MM_LDAPSETTINGS_FORGOTPASSWORDLINK``         |
-+-------------------------------------------------------------------------------+------------------------------------------------------------------------+
++---------------------------------------------------------------------------------+------------------------------------------------------------------------+
+| - **true**: **(Default)** Displays the **Forget Password** link on the          | - System Config path: **Authentication > Enable forgot password link** |
+|   Mattermost login page.                                                        | - ``config.json`` setting: ``.LdapSettings.ForgotPasswordLink: true``  |
+| - **false**: Hides the **Forgot Password** link from the Mattermost login page. | - Environment variable: ``MM_LDAPSETTINGS_FORGOTPASSWORDLINK``         |
++---------------------------------------------------------------------------------+------------------------------------------------------------------------+
+| **Note**: You can customize the **Forgot Password** link URL by going to **Site Configuration > Customization > Forgot Password Custom Link**.           |
+| See the `configuration </configure/site-configuration-settings.html#forgot-password-custom-link>`__ documentation for details.                           |
++---------------------------------------------------------------------------------+------------------------------------------------------------------------+
 
 ----
 
