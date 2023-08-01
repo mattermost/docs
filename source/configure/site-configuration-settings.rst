@@ -220,7 +220,7 @@ About link
 | String input. Default is ``https://about.mattermost.com/default-about/``.                                                                                                                                                   | - Environment variable: ``MM_SUPPORTSETTINGS_ABOUTLINK``      |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------+
 
-.. config:setting:: custom-forgotpassword-url
+.. config:setting:: custom-forgotpasswordurl
   :displayname: Forgot Password custom link (Customization)
   :systemconsole: Site Configuration > Customization
   :configjson: .SupportSettings.ForgetPasswordCustomLink
