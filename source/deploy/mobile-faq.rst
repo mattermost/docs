@@ -346,3 +346,27 @@ You can use the mobile applications hosted by Mattermost in the `Apple App Store
 .. note::
   
  The use of hosted applications by Mattermost `can be deployed with Enterprise Mobility Management solutions via AppConfig </deploy/mobile-appconfig.html>`__ but wrapping is not supported. See the `product documentation </deploy/deploy-mobile-apps-using-emm-provider.html#manage-app-configuration-using-appconfig>`__ for details.
+
+How the `deviceId` behaves
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The `deviceId` is a identifier provided by the push notification service (Apple Push Notification service (APNs) and Firebase Cloud Messaging (FCM)) that identifies the relationship between device, app and the notification service.
+
+When the app starts, if the push notification permissions are enabled, it will try to connect with the corresponding notification service (APNs for iOS, FCM for Android) to get the `deviceId`. If there is any change in the `deviceId`, it will notify any connected server about this change.
+
+Based on the documentation from [APNs](https://developer.apple.com/documentation/usernotifications/registering_your_app_with_apns?changes=_8) and [FCM](https://firebase.google.com/docs/cloud-messaging/android/client#java_1), the `deviceId` only will change in the following cases:
+- The app is restored from a backup from a different device
+- The user clears the app data
+- The user reinstall the app
+- The user install the app in a different device
+
+If the phone has a `deviceId`, when the user logs into a server, and audit log `login` will store the `deviceId`, and the `deviceId` will also be added in the session data in the database. It is possible the `deviceId` is not available, due to several reasons including:
+- The device is not connected to the network
+- The notification service is not reachable for any reason
+- The app is not properly signed
+- The device has not been granted the needed permissions
+
+In those scenarios, the `login` audit log will not have the `deviceId`, and the session data will not have the `deviceId`.
+If the app receives the `deviceId` later, the phone will send the new `deviceId` to the server, generating a `attachDeviceId` audit log, and adding the `deviceId` to the session data in the database.
+
+Since the `deviceId` relates to the application, connections done through the web browser, even on mobile, will not have a `deviceID`.
