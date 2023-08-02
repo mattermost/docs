@@ -8,8 +8,9 @@ Thousands of organizations are moving to Mattermost for powerful, flexible, and 
 
 This guide summarizes different approaches to migrating from one Mattermost deployment to another, and migrating from other tools (such as Slack, HipChat, Jabber, and bespoke solutions) to Mattermost.
 
-.. contents::
+.. contents:: On this page
   :backlinks: top
+  :depth: 1
   :local:
 
 Migrate Mattermost server
