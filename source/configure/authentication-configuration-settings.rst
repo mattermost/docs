@@ -297,6 +297,28 @@ Maximum login attempts
 | Numerical input. Default is **10**.                                                                                                                         | - Environment variable: ``MM_SERVICESETTINGS_MAXIMUMLOGINATTEMPTS``      |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
+.. config:setting:: password-forgotpasswordlink
+  :displayname: Enable forgot password link (Password)
+  :systemconsole: Authentication > Password
+  :configjson: .ServiceSettings.ForgotPasswordLink
+  :environment: MM_SERVICESETTINGS_FORGOTPASSWORDLINK
+  :description: Show or hide the Forgot Password link on the Mattermost login page.
+  
+  - **true**: **(Default)** Displays the Forgot Password link on the Mattermost login page.
+  - **false**: Hides the Forgot Password link from the Mattermost login page.
+
+Enable forgot password link
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++---------------------------------------------------------------------------------+------------------------------------------------------------------------+
+| - **true**: **(Default)** Displays the **Forget Password** link on the          | - System Config path: **Authentication > Enable forgot password link** |
+|   Mattermost login page.                                                        | - ``config.json`` setting: ``.LdapSettings.ForgotPasswordLink: true``  |
+| - **false**: Hides the **Forgot Password** link from the Mattermost login page. | - Environment variable: ``MM_LDAPSETTINGS_FORGOTPASSWORDLINK``         |
++---------------------------------------------------------------------------------+------------------------------------------------------------------------+
+| **Note**: You can customize the **Forgot Password** link URL by going to **Site Configuration > Customization > Forgot Password Custom Link**.           |
+| See the `configuration </configure/site-configuration-settings.html#forgot-password-custom-link>`__ documentation for details.                           |
++---------------------------------------------------------------------------------+------------------------------------------------------------------------+
+
 ----
 
 MFA
