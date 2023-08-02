@@ -94,7 +94,7 @@ This will show all of the exports on the server, so be sure to download the late
 Upload the export to the new server
 -----------------------------------
 
-Finally, it's time to take our export from the source server and use it as an import into the destination server. If you have a file import larger than <x>, first, review and modify the following Mattermost configuration settings, where applicable, to ensure a smooth and successful import:
+Finally, it's time to take our export from the source server and use it as an import into the destination server. If you have a file import larger than <x> and plan to import to a self-hosted Mattermost instance, first, review and modify the following self-hosted Mattermost configuration settings, where applicable, to ensure a smooth and successful import:
 
 +-----------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
 | **Mattermost configuration setting**                                              | **Large file import recommendation**                                                                                          |
