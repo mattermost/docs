@@ -5,11 +5,11 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 Latest Mattermost Cloud releases:
 
 - [Release 2023-08-10](#release-2023-08-10)
+- [Release 2023-08-03](#release-2023-08-03)
 - [Release 2023-07-26](#release-2023-07-26)
 - [Release 2023-07-20](#release-2023-07-20)
 - [Release 2023-07-19](#release-2023-07-19)
 - [Release 2023-07-11](#release-2023-07-11)
-- [Release 2023-06-26](#release-2023-06-26)
 
 ## Release 2023-08-10
 
@@ -33,6 +33,12 @@ Latest Mattermost Cloud releases:
 ### Known Issues
  - Boards public links that follow the URL schema `/boards/public/...` no longer work. They can either be regenerated through the application by going to the board and selecting the **Share** button at the top right, or they can be obtained by replacing the `/boards/public/` part of the URL with `/plugins/focalboard/`.
  - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
+
+## Release 2023-08-03
+
+### Bug Fixes
+ - Fixed an issue where ``FileExportBackend`` should not use Bifrost.
+ - Fixed an issue related to the export configuration settings.
 
 ## Release 2023-07-26
 
