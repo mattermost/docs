@@ -348,7 +348,7 @@ You can use the mobile applications hosted by Mattermost in the `Apple App Store
  The use of hosted applications by Mattermost `can be deployed with Enterprise Mobility Management solutions via AppConfig </deploy/mobile-appconfig.html>`__ but wrapping is not supported. See the `product documentation </deploy/deploy-mobile-apps-using-emm-provider.html#manage-app-configuration-using-appconfig>`__ for details.
 
 How the ``deviceId`` behaves
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The ``deviceId`` is a identifier provided by a push notification service, such as Apple Push Notification service (APNs) and Firebase Cloud Messaging (FCM), that identifies the relationship between device, app, and the notification service.
 
