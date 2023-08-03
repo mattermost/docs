@@ -362,6 +362,7 @@ Based on the documentation from `APNs <https://developer.apple.com/documentation
 - The user installed the app on a different device
 
 If the device has a ``deviceId``, when the user logs into a Mattermost server, an audit log entry ``login`` will store the ``deviceId``, and the ``deviceId`` will also be added in the session data in the database. However, it's possible the ``deviceId`` isn't available, due to several reasons including:
+
 - The device is not connected to the network
 - The notification service is not reachable for any reason
 - The app is not properly signed
