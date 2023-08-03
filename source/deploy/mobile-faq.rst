@@ -355,6 +355,7 @@ The ``deviceId`` is a identifier provided by a push notification service, such a
 When the app starts, if the push notification permissions are enabled, the app will try to connect with the corresponding notification service (APNs for iOS, FCM for Android) to get the ``deviceId``. If there is any change to the ``deviceId``, the app will notify any connected server about this change.
 
 Based on the documentation from `APNs <https://developer.apple.com/documentation/usernotifications/registering_your_app_with_apns?changes=_8>`__ and `FCM <https://firebase.google.com/docs/cloud-messaging/android/client#java_1>`__, the ``deviceId`` only will change in the following cases:
+
 - The app is restored from a backup from a different device
 - The user clears the app data
 - The user reinstalled the app
