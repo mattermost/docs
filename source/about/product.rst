@@ -42,10 +42,10 @@ Use playbooks to support your prescribed workflows and trust the process
 
 Structured workflows are specific scenarios and use cases that require a reliable and repeatable process. These use cases lend themselves well to shared checklists, automation, and retrospectives where the life cycle is measured in hours to weeks. Some examples include incident collaboration and software releases.
 
-The Mattermost `Playbooks plugin </guides/playbooks.html>`__ streamlines complex, recurring processes that enable teams to achieve a specific and predictable outcome. Orchestrate prescribed workflows with built-in checklists, triggers, automation, tool integrations, and retrospectives. Increase stakeholder visibility with status updates and cumulative statistics. Customize a playbook to align with organizational practices, and adjust on the fly to respond quickly in highly dynamic situations. Playbooks are critical in incident collaboration to avoid and minimize costly business disruptions, and in software release processes to ship high-quality software on time. 
+Mattermost `Playbooks </guides/playbooks.html>`__ streamlines complex, recurring processes that enable teams to achieve a specific and predictable outcome. Orchestrate prescribed workflows with built-in checklists, triggers, automation, tool integrations, and retrospectives. Increase stakeholder visibility with status updates and cumulative statistics. Customize a playbook to align with organizational practices, and adjust on the fly to respond quickly in highly dynamic situations. Playbooks are critical in incident collaboration to avoid and minimize costly business disruptions, and in software release processes to ship high-quality software on time. 
 
 .. image:: ../images/Playbooks_Hero.png
-   :alt: An example of the Mattermost Playbooks plugin screen that includes active run details in the right-hand pane.
+   :alt: An example of the Mattermost Playbooks screen that includes active run details in the right-hand pane.
    
 Use Boards to hit your milestones and support your project workflows
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

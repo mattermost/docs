@@ -4,12 +4,48 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 
 Latest Mattermost Cloud releases:
 
+- [Release 2023-08-03](#release-2023-08-03)
+- [Release 2023-07-26](#release-2023-07-26)
 - [Release 2023-07-20](#release-2023-07-20)
 - [Release 2023-07-19](#release-2023-07-19)
 - [Release 2023-07-11](#release-2023-07-11)
 - [Release 2023-06-26](#release-2023-06-26)
-- [Release 2023-06-13](#release-2023-06-13)
-- [Release 2023-05-31](#release-2023-05-31)
+
+## Release 2023-08-03
+
+### Bug Fixes
+ - Fixed an issue where ``FileExportBackend`` should not use Bifrost.
+ - Fixed an issue related to the export configuration settings.
+
+## Release 2023-07-26
+
+### Improvements
+
+#### User Interface (UI)
+ - The emoji picker view modal is now displayed on mobile browsers.
+ - Prepackaged v1.2.2 of the Apps plugin.
+ - Prepackaged Focalboard plugin version 7.11.2.
+ - The current user object is now updated more frequently.
+ - Updated the user interface so that system admins no longer appear editable by system/user managers in the System Console.
+
+#### Administration
+ - Using ``https://github.com/reduxjs/redux-devtools`` in production builds is now allowed.
+ - Added a new feature flag, ``DataRetentionConcurrencyEnabled``, to enable/disable concurrency for data retention batch deletion. Also added a new configuration setting  ``DataRetentionSettings.TimeBetweenBatchesMilliseconds`` to control the sleep time between batch deletions.
+ - Added a setting under **System Console > Authentication > Guest Access > Show Guest Tag** to remove the **Guest** badges from within the product.
+- Added Apache 2.0 license to the public submodule, explicitly signalling to [pkg.go.dev](https://pkg.go.dev/github.com/mattermost/mattermost/server/public@v0.0.6) the license in play for this source code.
+ - Added the ability for admins to hide or customize the **Forgot password** link on the login page.
+
+### Bug Fixes
+ - Fixed an issue where drafts would persist after sending an ``@here`` mention in the right-hand side.
+ - Fixed an issue where the **New messages** toast appeared on channels that were completely visible.
+ - Fixed an UI issue related to profile popover on channel member search in the right hand pane.
+ - Fixed an issue where the multi-line channel header preview was too narrow on mobile web view.
+ - Fixed the render of the **Add Slash Command** page in the backstage area.
+ - Fixed an issue where user's timezone affected the date selection in the calendar.
+
+### Known Issues
+ - Boards public links that follow the URL schema `/boards/public/...` will not work after this update. They can either be regenerated through the application by going to the board and selecting the **Share** button at the top right, or they can be obtained by replacing the `/boards/public/` part of the URL with `/plugins/focalboard/`.
+ - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
 
 ## Release 2023-07-20
 
