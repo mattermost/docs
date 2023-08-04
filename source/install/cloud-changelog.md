@@ -20,6 +20,7 @@ Latest Mattermost Cloud releases:
  - Updated the minimum required Edge version to 112+.
  - An error is now displayed if a post edit history fails to load.
  - Removed the deprecated Insights feature.
+ - Prepackaged Calls plugin version 0.18.0.
 
 ### Bug Fixes
  - Fixed an issue with missing zoneinfo in the Docker container.
