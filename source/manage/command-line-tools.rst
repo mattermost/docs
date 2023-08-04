@@ -8,7 +8,7 @@ In self-managed deployments, a ``mattermost`` command is available for configuri
 
 .. important::
 
-  As of Mattermost v6.0, this CLI has been replaced with the `mmctl command line tool </manage/mmctl-command-line-tool.html>`__. However, `mattermost import </manage/command-line-tools.html#mattermost-import>`__ commands, `mattermost export </manage/command-line-tools.html#mattermost-export>`__ commands, and related subcommands, remain available and fully supported from Mattermost v6.0.
+  From Mattermost v6.0, the majority of these CLI commands have been replaced with equivalents available using the `mmctl command line tool </manage/mmctl-command-line-tool.html>`__. However, `mattermost import </manage/command-line-tools.html#mattermost-import>`__ commands, `mattermost export </manage/command-line-tools.html#mattermost-export>`__ commands, and related subcommands, remain available and fully supported from Mattermost v6.0.
 
 These ``mattermost`` commands include the following functionality:
 
@@ -104,8 +104,9 @@ Options
 
 Child Commands
   -  `mattermost db`_ - Database commands
-  -  `mattermost export`_ - Compliance export commands
+  -  `mattermost export`_ - Compliance export commands 
   -  `mattermost help`_ - Generate full documentation for the CLI
+  -  `mattermost import`_ - Legacy import command
   -  `mattermost jobserver`_ - Start the Mattermost job server
   -  `mattermost server`_ - Run the Mattermost server
   -  `mattermost version`_ - Display version information
@@ -244,7 +245,6 @@ Options
     --exportFrom string     Unix timestamp (milliseconds since epoch, UTC) to export data from.
     --batchSize int         The number of posts to export. The default of -1 means no limit.
 
-
 ----
 
 mattermost export
@@ -258,7 +258,7 @@ Description
 
 Child Commands
   -  `mattermost export actiance`_ - Export data from Mattermost in Actiance XML format. Requires a Mattermost Enterprise subscription plan.
-  -  `mattermost export bulk`_ - Export data to a file compatible with the Mattermost `Bulk Import format </onboard/bulk-loading-data.html>`__
+  -  `mattermost export bulk`_ - Export data to a file compatible with the Mattermost `Bulk Import format </onboard/bulk-loading-data.html>`__. Deprecated in favor of `mmctl export commands </manage/mmctl-command-line-tool.html#mmctl-export>`__.
   -  `mattermost export csv`_ - Export data from Mattermost in CSV format. Requires a Mattermost Enterprise subscription plan.
   -  `mattermost export global-relay-zip`_ - Export data from Mattermost into a ZIP file containing emails to send to Global Relay for debug and testing purposes only. Requires a Mattermost Enterprise subscription plan.
   -  `mattermost export schedule`_ - Schedule an export job
@@ -288,25 +288,7 @@ Options
 mattermost export bulk
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Description
-  Export data to a file compatible with the Mattermost `Bulk Import format </onboard/bulk-loading-data.html>`__.
-
-Format
-  .. code-block:: none
-
-    mattermost export bulk
-
-Example
-  .. code-block:: none
-
-    bin/mattermost export bulk file.json --all-teams
-
-Options
-  .. code-block:: none
-
-    --all-teams bool   [REQUIRED] Export all teams from the server.
-    --attachments bool Also export file attachments.
-    --archive bool     Outputs a single archive file.
+From Mattermost v6.0, this command has been deprecated in favor of `mmctl export commands </manage/mmctl-command-line-tool.html#mmctl-export>`__ as the supported way to export data out of Mattermost.
 
 mattermost export csv
 ~~~~~~~~~~~~~~~~~~~~~
@@ -392,6 +374,41 @@ Format
 
 ----
 
+mattermost import
+-----------------
+
+Description
+  Import data into Mattermost.
+
+Child Command
+  -  `mattermost import bulk`_ - Import a Mattermost Bulk Import File. Deprecated in favor of `mmctl import commands </manage/mmctl-command-line-tool.html#mmctl-import>`__.
+  -  `mattermost import slack`_ - Import a team from Slack.
+
+mattermost import bulk
+~~~~~~~~~~~~~~~~~~~~~~
+
+From Mattermost v6.0, this command has been deprecated in favor of `mmctl import commands </manage/mmctl-command-line-tool.html#mmctl-import>`__ as the supported way to import data into Mattermost.
+
+mattermost import slack
+~~~~~~~~~~~~~~~~~~~~~~~
+
+See the `mmctl import commands </manage/mmctl-command-line-tool.html#mmctl-import>`__ documentation as the preferred way to import Slack data into Mattermost.
+
+Description
+  Import a team from a Slack export zip file.
+
+Format
+    . code-block:: none
+
+    mattermost import slack {team} {file}
+
+Example
+  .. code-block:: none
+
+    bin/mattermost import slack myteam slack_export.zip
+
+----
+
 mattermost jobserver
 --------------------
 
@@ -437,6 +454,8 @@ Format
   .. code-block:: none
 
     mattermost version
+
+----
 
 Troubleshooting
 ----------------
