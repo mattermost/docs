@@ -27,6 +27,7 @@ Latest Mattermost Releases:
  - Prepackaged v1.2.2 of the Apps plugin.
  - Prepackaged Focalboard plugin version 7.11.2.
  - Prepackaged Playbooks version 1.38.0.
+ - Prepackaged Calls plugin version 0.18.0.
  - The current user object is now updated more frequently.
  - Updated the user interface so that system admins no longer appear editable by system/user managers in the System Console.
 
