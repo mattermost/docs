@@ -37,7 +37,7 @@ Yes, but this relies on AD/LDAP to do so. Currently, we do not support SCIM. See
 How do I migrate users from one authentication method (e.g. email) to SAML?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-See the `user migrate_auth CLI command </manage/command-line-tools.html#mattermost-user-migrate-auth>`__ documentation, or see the `mmctl user migrate_auth command </manage/mmctl-command-line-tool.html#mmctl-user-migrate-auth>`__ for details.
+See the `mmctl user migrate-auth </manage/mmctl-command-line-tool.html#mmctl-user-migrate-auth>`__ command documentation for details.
 
 How is SAML different from OAuth 2.0 and OpenId Connect?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
