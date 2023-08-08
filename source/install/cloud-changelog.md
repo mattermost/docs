@@ -33,7 +33,6 @@ Latest Mattermost Cloud releases:
 
 ### Known Issues
  - Boards public links that follow the URL schema `/boards/public/...` no longer work. They can either be regenerated through the application by going to the board and selecting the **Share** button at the top right, or they can be obtained by replacing the `/boards/public/` part of the URL with `/plugins/focalboard/`.
- - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
 
 ## Release 2023-08-03
 
