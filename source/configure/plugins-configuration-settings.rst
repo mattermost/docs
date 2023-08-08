@@ -18,7 +18,7 @@ Both self-hosted and Cloud admins can access the following configuration setting
 - `GIF commands <#gif-commands>`__
 - `Mattermost Boards <#mattermost-boards>`__
 - `MS Teams Sync <#ms-teams-sync>`__
--  Playbooks <#mattermost-playbooks>`__
+- `Playbooks <#playbooks>`__
 - `User Satisfaction surveys <#user-satisfaction-surveys>`__
 - `Zoom <#zoom>`__
 
