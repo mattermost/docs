@@ -77,9 +77,6 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 ### Go Version
  - v8.1 is built with Go ``v1.19.5``.
 
-### Open Source Components:
- - Added ``date-fns`` to https://github.com/mattermost/mattermost/, and removed ``sass``.
-
 ### Known Issues
  - Adding an @mention at the start of a post draft and pressing the left or right arrow key can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
  - Google login fails on the Classic mobile apps.
