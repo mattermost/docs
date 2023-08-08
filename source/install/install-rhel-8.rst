@@ -78,51 +78,45 @@ Install a database
 
     2. Install PostgreSQL. See the `PostgreSQL <https://www.postgresql.org/download/linux/redhat/>`__ documentation for details. 
 
-    3. Initialize the database by running ``sudo postgresql-setup initdb``.
+    3. Switch to the *postgres* Linux user account that was created during the installation by running ``sudo -iu postgres``.
 
-    4. Set PostgreSQL to start on boot by running ``sudo systemctl enable postgresql``.
+    4. Start the PostgreSQL interactive terminal by running ``psql``.
 
-    5. Start the PostgreSQL server by running ``sudo systemctl start postgresql``.
+    5.  Create the Mattermost database by running ``postgres=# CREATE DATABASE mattermost WITH ENCODING 'UTF8' LC_COLLATE='en_US.UTF-8' LC_CTYPE='en_US.UTF-8' TEMPLATE=template0;``.
 
-    6. Switch to the *postgres* Linux user account that was created during the installation by running ``sudo -iu postgres``.
-
-    7. Start the PostgreSQL interactive terminal by running ``psql``.
-
-    8.  Create the Mattermost database by running ``postgres=# CREATE DATABASE mattermost WITH ENCODING 'UTF8' LC_COLLATE='en_US.UTF-8' LC_CTYPE='en_US.UTF-8' TEMPLATE=template0;``.
-
-    9.  Create the Mattermost user *mmuser* by running ``postgres=# CREATE USER mmuser WITH PASSWORD 'mmuser-password';``.
+    6.  Create the Mattermost user *mmuser* by running ``postgres=# CREATE USER mmuser WITH PASSWORD 'mmuser-password';``.
 
         .. note::
     
             Use a password that is more secure than ``mmuser-password``.
 
-    10.  Grant the user access to the Mattermost database by running ``postgres=# GRANT ALL PRIVILEGES ON DATABASE mattermost to mmuser;``.
+    7.  Grant the user access to the Mattermost database by running ``postgres=# GRANT ALL PRIVILEGES ON DATABASE mattermost to mmuser;``.
 
-    11. Exit the PostgreSQL interactive terminal by running ``postgres=# \q``.
+    8. Exit the PostgreSQL interactive terminal by running ``postgres=# \q``.
 
-    12. Log out of the *postgres* account by running ``exit``.
+    9. Log out of the *postgres* account by running ``exit``.
 
-    13. (Optional) If you use separate servers for your database and the Mattermost app server, you may allow PostgreSQL to listen on all assigned IP Addresses. To do so, open ``/etc/postgresql/{version}/main/postgresql.conf`` as *root* in a text editor, and replacing ``{version}`` with the version of PostgreSQL that's currently running. As a best practice, ensure that only the Mattermost server is able to connect to the PostgreSQL port using a firewall.
+    13. (Optional) If you use separate servers for your database and the Mattermost app server, you may allow PostgreSQL to listen on all assigned IP Addresses. As a best practice, ensure that only the Mattermost server is able to connect to the PostgreSQL port using a firewall.
 
-        a. Open ``/var/lib/pgsql/data/postgresql.conf`` as root in a text editor.
+        a. Open ``/var/lib/pgsql/{version}/data/postgresql.conf`` as root in a text editor.
 
         b. Find the following line: ``#listen_addresses = 'localhost'``.
 
         c. Uncomment the line and change ``localhost`` to ``*``: ``listen_addresses = '*'``.
 
-        d. Restart PostgreSQL for the change to take effect: ``sudo systemctl restart postgresql``.
+        d. Restart PostgreSQL for the change to take effect: ``sudo systemctl restart postgresql-{version}``.
 
     14. Modify the file ``pg_hba.conf`` to allow the Mattermost server to communicate with the database.
 
         **If the Mattermost server and the database are on the same machine:**
 
-            a. Open ``/var/lib/pgsql/data/pg_hba.conf`` as root in a text editor.
+            a. Open ``/var/lib/pgsql/{version}/data/pg_hba.conf`` as root in a text editor.
 
             b. Find the following lines:
 
              ``local   all             all                        peer``
       
-             ``host    all             all         ::1/128        ident``
+             ``host    all             all         ::1/128        scram-sha-256``
 
             c. Change ``peer`` and ``ident`` to ``trust``:
 
@@ -132,11 +126,11 @@ Install a database
 
         **If the Mattermost server and the database are on different machines:**
 
-            a. Open ``/var/lib/pgsql/data/pg_hba.conf`` as *root* in a text editor.
+            a. Open ``/var/lib/pgsql/{version}/data/pg_hba.conf`` as *root* in a text editor.
 
             b. Add the following line to the end of the file, where *{mattermost-server-IP}* is the IP address of the machine that contains the Mattermost server: ``host all all {mattermost-server-IP}/32 md5``.
 
-    15. Reload PostgreSQL by running ``sudo systemctl reload postgresql``.
+    15. Reload PostgreSQL by running ``sudo systemctl reload postgresql-{version}``.
 
     16. Verify that you can connect with the user *mmuser*.
 
