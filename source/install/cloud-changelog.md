@@ -24,7 +24,7 @@ Latest Mattermost Cloud releases:
  - Pre-packaged Playbooks version 1.38.0.
 
 ### Bug Fixes
- - Fixed an issue with missing zoneinfo in the Docker container.
+ - Fixed an issue with missing time zone metadata in the Docker container.
  - Fixed the error returned by ``PUT /api/v4/channels/{channelid}`` when the provided name already existed in the team.
  - Fixed the clickable area of post textboxes being too small.
  - Fixed a UI bug in the bot profile popover.
