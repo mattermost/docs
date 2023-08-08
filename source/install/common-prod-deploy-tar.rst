@@ -1,6 +1,6 @@
 :orphan:
 :nosearch:
-.. This page is intentionally not accessible via the LHS navigation pane because it's common content included on other docs pages.
+.. This page is intentionally not accessible via the LHS navigation pane because it's being phased out in favor of a dedicated Tarball deploy page linked to the /download page of the website.
 
 .. include:: ../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
@@ -10,7 +10,7 @@ These instructions outline how to install Mattermost Server on a 64-bit Linux ho
 **Minimum system requirements**
 
 - Hardware: 2 vCPUs/cores with 4GB RAM (support for 1,000-2,000 users)
-- Database: MySQL v8+ or PostgreSQL v12+
+- Database: PostgreSQL v12+ or MySQL v8+
 - Network ports required:
 
    - Application ports 80/443, TLS, TCP Inbound
@@ -19,7 +19,7 @@ These instructions outline how to install Mattermost Server on a 64-bit Linux ho
 
 **Deploy Generic Linux**
 
-1. Install and configure a MySQL or PostgreSQL database. Refer to one of the guides below to deploy the database based on your operating system:
+1. Install and configure a PostgreSQL or MySQL database. Refer to one of the guides below to deploy the database based on your operating system:
 
    - `Ubuntu </install/installing-ubuntu-2004-LTS.html#install-a-database>`__
    - `Debian </install/install-debian.html#install-a-database>`__
@@ -27,11 +27,15 @@ These instructions outline how to install Mattermost Server on a 64-bit Linux ho
 
 2. Log in to the server that will host Mattermost Server and open a terminal window.
 
-3. Download `the latest version of the Mattermost Server <https://mattermost.com/deploy/>`__. In the following command, replace ``X.X.X`` with the version that you want to download:
+3. Download `the latest version of the Mattermost Server <https://docs.mattermost.com/upgrade/version-archive.html>`__. In the following command, replace ``X.X.X`` with the version that you want to download:
   
    .. code:: bash
 
+    # Enterprise Edition
     wget https://releases.mattermost.com/X.X.X/mattermost-X.X.X-linux-amd64.tar.gz
+
+    # Team Edition
+    wget https://releases.mattermost.com/X.X.X/mattermost-team-X.X.X-linux-amd64.tar.gz
 
 4. Extract the Mattermost Server files.
   
@@ -137,7 +141,7 @@ These instructions outline how to install Mattermost Server on a 64-bit Linux ho
   .. note::
     
       * If you're using MySQL, replace ``postgresql.service`` with ``mysql.service`` in two places in the ``[Unit]`` section.
-      * If you've installed MySQL or PostgreSQL on a dedicated server, you need to remove the ``After=mysql.service`` and ``BindsTo=mysql.service`` or the ``After=postgresql.service`` and ``BindsTo=postgresql.service`` lines in the ``[Unit]`` section or the Mattermost service won't start.
+      * If you've installed PostgreSQL or MySQL on a dedicated server, you need to remove the ``After=postgresql.service`` and ``BindsTo=postgresql.service`` or ``After=mysql.service`` and ``BindsTo=mysql.service`` lines in the ``[Unit]`` section or the Mattermost service won't start.
     
   c. Make systemd load the new unit.
     
@@ -179,4 +183,4 @@ These instructions outline how to install Mattermost Server on a 64-bit Linux ho
             
       sudo systemctl enable mattermost.service
 
-Once you're Mattermost server is up and running, create your first Mattermost user, `invite more users </channels/manage-channel-members.html>`__, and explore the Mattermost platform. 
+Once your Mattermost server is up and running, create your first Mattermost user, `invite more users </channels/manage-channel-members.html>`__, and explore the Mattermost platform. 

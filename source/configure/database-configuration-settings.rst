@@ -8,7 +8,7 @@ Configure the database environment in which Mattermost is deployed by going to *
   :systemconsole: N/A
   :configjson: .SqlSettings.DriverName
   :environment: MM_SQLSETTINGS_DRIVERNAME
-  :description: The type of database. Either **mysql** or **postgres**. The default value is **mysql**.
+  :description: The type of database. Either **postgres** or **mysql**. The default value is **mysql**.
 
 Driver name
 ~~~~~~~~~~~~
@@ -45,6 +45,11 @@ Data source
 | - Add ``&tls=true`` to your database connection string if your SQL driver supports it.                                                   |
 | - Add ``&tls=skip-verify`` if you use self-signed certificates.                                                                          |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
+| **PostgreSQL databases**                                                                                                                 |
+|                                                                                                                                          |
+| When **Driver Name** is set to ``postgres``, use a connection string in the form of:                                                     |
+| ``postgres://mmuser:password@localhost:5432/mattermost_test?sslmode=disable&connect_timeout=10.``                                        |
++---------------------------------------------------------------+--------------------------------------------------------------------------+
 | **MySQL databases**                                                                                                                      |
 |                                                                                                                                          |
 | When **Driver Name** is set to ``mysql``, using ``collation`` is recommended over using ``charset``.                                     |
@@ -70,11 +75,6 @@ Data source
 |                                                                                                                                          |
 | **Note**: If you’re using MySQL 8.0 or later, the default collation has changed to ``utf8mb4_0900_ai_ci``. See our `Database Software    |
 | Requirements </install/software-hardware-requirements.html>`__ documentation for details on MySQL 8.0 support.                           |
-+---------------------------------------------------------------+--------------------------------------------------------------------------+
-| **PostgreSQL databases**                                                                                                                 |
-|                                                                                                                                          |
-| When **Driver Name** is set to ``postgres``, use a connection string in the form of:                                                     |
-| ``postgres://mmuser:password@localhost:5432/mattermost_test?sslmode=disable&connect_timeout=10.``                                        |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. config:setting:: database-maxidleconnections
@@ -232,10 +232,12 @@ Recycle database connections
 
 +--------------------------------------------------------+------------------------------------------------------------------+
 | Select the **Recycle Database Connections** button to  | - System Config path: **Environment > Database**                 |
-| reconnect to the configured database.                  | - ``config.json`` setting: N/A                                   |
-| All old connections are closed after 20 seconds.       | - Environment variable: N/A                                      |
+| manually recycle the connection pool by closing the    | - ``config.json`` setting: N/A                                   |
+| current set of open connections to the database        | - Environment variable: N/A                                      |
+| within 20 seconds, and then creating a new set of      |                                                                  |
+| connections.                                           |                                                                  |
 |                                                        |                                                                  |
-| To fail over without downing the server, change the    |                                                                  |
+| To fail over without stopping the server, change the   |                                                                  |
 | database line in the ``config.json`` file, select      |                                                                  |
 | **Reload Configuration from Disk** via **Environment   |                                                                  |
 | > Web Server**, then select **Recycle Database         |                                                                  |
@@ -248,7 +250,7 @@ Recycle database connections
   :configjson: .SqlSettings.DisableDatabaseSearch
   :environment: MM_SQLSETTINGS_DISABLEDATABASESEARCH
 
-  - **true**: Disables the use of the database to perform earches. If another search engine isn't configured, setting this value to ``true`` will result in empty search results.
+  - **true**: Disables the use of the database to perform searches. If another search engine isn't configured, setting this value to ``true`` will result in empty search results.
   - **false**: **(Default)** Database search isn't disabled.
 
 Disable database search
@@ -282,6 +284,19 @@ Applied schema migrations
 *Available in legacy Enterprise Edition E10/E20*
 
 A list of all migrations that have been applied to the data store based on the version information available in the ``db_migrations`` table. Select **About Mattermost** from the product menu to review the current database schema version applied to your deployment.
+
+
+.. config:setting:: database-activesearchbackend
+  :displayname: Active search backend (Database)
+  :systemconsole: Environment > Database
+  :configjson: N/A
+  :environment: N/A
+  :description: Read-only display of the currently active backend used for search.
+
+Active Search Backend
+~~~~~~~~~~~~~~~~~~~~~
+
+Read-only display of the currently active backend used for search. Values can include ``none``, ``database``, ``elasticsearch``, or ``bleve``.
 
 .. config:setting:: database-readreplicas
   :displayname: Read replicas (Database)
@@ -393,3 +408,25 @@ Replica lag settings
 |                                                                                                                                           |
 |   select member_id, count_transactions_remote_in_applier_queue FROM performance_schema.replication_group_member_stats where member_id=<>  |
 +--------------------------------------------------------+----------------------------------------------------------------------------------+
+
+.. config:setting:: database-replicamonitorintervalseconds
+  :displayname: Replica monitor interval (Database)
+  :systemconsole: N/A
+  :configjson: .SqlSettings.ReplicaMonitorIntervalSeconds
+  :environment: MM_SQLSETTINGS_REPLICAMONITORINTERVALSECONDS
+
+  Specifies how frequently unhealthy replicas will be monitored for liveness check. Mattermost will dynamically choose a replica if it's alive.
+
+Replica monitor interval (seconds)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
+
++--------------------------------------------------------+---------------------------------------------------------------------------------+
+| Specifies how frequently unhealthy replicas will be    | - System Config path: N/A                                                       |
+| monitored for liveness check. Mattermost will          | - ``config.json`` setting: ``".SqlSettings.ReplicaMonitorIntervalSeconds": 5``  |
+| dynamically choose a replica if it's alive.            | - Environment variable: ``MM_SQLSETTINGS_REPLICAMONITORINTERVALSECONDS``        |
+|                                                        |                                                                                 |
+| Numerical input. Default is 5 seconds.                 |                                                                                 |
++--------------------------------------------------------+---------------------------------------------------------------------------------+

@@ -6,7 +6,7 @@ Overview
 
 Mattermost Playbooks is a collaboration tool that defines a repeatable process to enable teams to achieve specific and predictable outcomes. With playbooks, development teams can orchestrate prescribed workflows and define, streamline, and document complex, recurring operations.
 
-Mattermost Playbooks is included in Mattermost self-hosted and Mattermost Cloud workspace. You can access Playbooks via the product menu in the top-left corner of Mattermost.
+Mattermost Playbooks is enabled by default for Mattermost self-hosted and Mattermost Cloud workspaces. You can access Playbooks via the product menu in the top-left corner of Mattermost.
 
 To find all playbook runs, open **Product menu > Playbooks**, and then select any playbook name. Next, select **Runs** from the navigation bar, then choose a run to view its overview. Select **Go to channel** to open the run’s channel.
 
@@ -17,7 +17,7 @@ Playbooks are made up of:
 - **Checklists**: The list of tasks to be completed for the run. `Checklists </playbooks/customize-a-playbook.html#make-checklists>`_ can be edited ad-hoc during a run.
 - **Templates**: `Templates </playbooks/overview.html#templates>`_ for frequently-used actions such as updates and reminders. You can create your own templates or use default ones.
 - **Actions**: `Automation options </playbooks/customize-a-playbook.html#actions>`_ for inviting members, creating webhooks, editing welcome messages, and more.
-- **Permissions**: Manage :doc:`permissions </playbooks/playbook-permissions>` at a channel and a playbook level.
+- **Permissions**: Manage :doc:`permissions </playbooks/share-and-collaborate>` at a channel and a playbook level.
 
 Teams run a playbook every time they want to orchestrate people, tools, and data to achieve that outcome as quickly as possible while providing visibility to stakeholders. 
 

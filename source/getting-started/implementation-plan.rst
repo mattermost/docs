@@ -48,7 +48,7 @@ A Mattermost Enterprise implementation consists of the following system componen
 - **Mattermost Server**
   - The Mattermost Server is a single binary that includes the RESTful JSON web service, authentication client, authentication provider, notification service, and data management service. The Mattermost Server can be deployed in stand-alone or high availability mode where two or more servers are clustered together using gossip protocol and a proxy server that routes traffic from client applications to healthy servers in the cluster.
 - **Mattermost Database**
-  - A MySQL or PostgreSQL database in stand-alone or high-availability configurations (master with read replicas). When choosing the database, consider the `inherent search limitations of the database type </install/requirements.html#database-software>`__ and whether `Elasticsearch </scale/elasticsearch.html>`__ is most appropriate for your deployment.
+  - A PostgreSQL database in stand-alone or high-availability configurations (master with read replicas). When choosing the database, consider the `inherent search limitations of the database type </install/requirements.html#database-software>`__ and whether `Elasticsearch </scale/elasticsearch.html>`__ is most appropriate for your deployment.
 - **Mattermost Push Notification Service**
   - Hosted or on-premise service that pushes notifications to Mattermost Android and Mattermost iOS mobile applications.
 - **Mattermost Client Applications**
@@ -155,7 +155,7 @@ Build out the required deployment environments (development, staging, production
 3.3.4 Install software
 ^^^^^^^^^^^^^^^^^^^^^^
 
-Install and configure Mattermost and its component software (MySQL or PostgreSQL, Nginx or another proxy, etc.)
+Install and configure Mattermost and its component software (PostgreSQL, Nginx or another proxy, etc.)
 
 **Reference**: https://docs.mattermost.com/guides/deployment.html#install-guides
 

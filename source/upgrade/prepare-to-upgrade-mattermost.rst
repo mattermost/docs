@@ -10,54 +10,43 @@ In most cases, you can `upgrade Mattermost Server </upgrade/upgrading-mattermost
   :backlinks: top
   :local:
 
+Upgrade Best Practices
+----------------------
+
+Mattermost will aim to have non-locking, backwards-compatible migrations in general. This backwards compatibility guarantee extends to only the last ESR version. For example, if there are three ESR versions ESR1, ESR2, and ESR3, upgrading from ESR1 to ESR2, and then ESR2 to ESR3 will ensure backwards compatibility, but not from ESR1 to ESR3 directly.
+
+In the case of delayed upgrades, we recommend upgrading to the closest ESR version first, and from there to the next ESR. Do not attempt to directly upgrade to the latest version as it might break backwards compatibility of the older nodes in the cluster during the upgrade.
+
 Upgrade to Mattermost v7.1
 --------------------------
 
-Mattermost v7.1 introduces schema changes in the form of a new column and its index. The following notes our test results for the schema changes:
+Mattermost v7.1 introduces schema changes in the form of a new column and its index. Our test results for the schema changes include:
 
-- MySQL 12M Posts, 2.5M Reactions - ~1min 34s (instance: PC with 8 cores, 16GB RAM)
 - PostgreSQL 12M Posts, 2.5M Reactions - ~1min 18s (instance: db.r5.2xlarge)
 
 You can run the following SQL queries before the upgrade that obtains a lock on ``Reactions`` table. Users' reactions posted during this time won't be reflected in the database until the migrations are complete. This is fully backwards-compatible.
 
 If your connection collation and table collations are different, this can result in the error `Illegal mix of collations`. To resolve this error, set the same collation for both the connection and the table. There are different collations at different levels - connection, database, table, column, and database administrators may choose to set different collation levels for different objects.
 
-.. tabs:: 
+``ALTER TABLE reactions ADD COLUMN IF NOT EXISTS channelid varchar(26) NOT NULL DEFAULT '';``
 
-  .. tab:: MySQL
+``UPDATE reactions SET channelid = COALESCE((select channelid from posts where posts.id = reactions.postid), '') WHERE channelid='';``
 
-    ``ALTER TABLE Reactions ADD COLUMN ChannelId varchar(26) NOT NULL DEFAULT "";``
-
-    ``UPDATE Reactions SET ChannelId = COALESCE((select ChannelId from Posts where Posts.Id = Reactions.PostId), '') WHERE ChannelId="";``
-
-    ``CREATE INDEX idx_reactions_channel_id ON Reactions(ChannelId) LOCK=NONE;``
-
-  .. tab:: PostgreSQL
-
-    ``ALTER TABLE reactions ADD COLUMN IF NOT EXISTS channelid varchar(26) NOT NULL DEFAULT '';``
-
-    ``UPDATE reactions SET channelid = COALESCE((select channelid from posts where posts.id = reactions.postid), '') WHERE channelid='';``
-
-    ``CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_reactions_channel_id on reactions (channelid);``
-
-Upgrade to Mattermost v7.0
---------------------------
-
-Self-hosted Mattermost customers using MySQL databases may notice the migration to release v7.0 taking longer than usual when there are a large number of rows in the ``FileInfo`` table. See the `important upgrade notes </upgrade/important-upgrade-notes.html>`__ documentation for details.
+``CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_reactions_channel_id on reactions (channelid);``
 
 Upgrade to Mattermost v6.7
 --------------------------
 
 Mattermost v6.7 introduces schema changes in the form of a new index. The following notes our test results for the schema changes:
 
-- MySQL 7M Posts - ~17s (instance: db.r5.xlarge)
-- MySQL 9M Posts - 2min 12s (instance: db.r5.large)
 - Postgres 7M Posts - ~9s  (instance: db.r5.xlarge)
 
-If you want a zero downtime upgrade, you can apply this index prior to doing the upgrade. This is fully backwards-compatible and will not acquire any table lock or affect any existing operations on the table.
+If you want a zero downtime upgrade, you can apply this index prior to doing the upgrade. 
 
-- For MySQL: ``CREATE INDEX idx_posts_create_at_id on Posts(CreateAt, Id) LOCK=NONE;``
-- For Postgres: ``CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_posts_create_at_id on posts(createat, id);``
+``CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_posts_create_at_id on posts(createat, id);``
+
+This is fully backwards-compatible and will not acquire any table lock or affect any existing operations on the table.
+
 
 Upgrade to Mattermost v6.0
 --------------------------
@@ -74,51 +63,18 @@ We strongly recommend that you:
 
 .. important::
 
-  Support for Mattermost Server v6.3 :doc:`Extended Support Release </upgrade/extended-support-release>` has come to the end of its life cycle on October 15, 2022. Upgrading to Mattermost Server v7.1 Extended Support Release or later is required. Upgrading from a previous Extended Support Release to the latest Extended Support Release is supported. Upgrading from v5.31 to v5.37 should take roughly the same amount of time as upgrading from v5.31 to v5.35, then upgrading v5.35 to 5.37. However, an upgrade directly from v5.31 to v5.37 could potentially take hours due to the database schema migrations required for v5.35. Review the :doc:`important-upgrade-notes` for all intermediate versions in between to ensure you’re aware of the possible migrations that could affect your upgrade.
+  Support for Mattermost Server v7.1 :doc:`Extended Support Release </upgrade/extended-support-release>` has come to the end of its life cycle on May 15, 2023. Upgrading to Mattermost Server v7.8 Extended Support Release or later is required. Upgrading from a previous Extended Support Release to the latest Extended Support Release is supported. Upgrading from v5.31 to v5.37 should take roughly the same amount of time as upgrading from v5.31 to v5.35, then upgrading v5.35 to 5.37. However, an upgrade directly from v5.31 to v5.37 could potentially take hours due to the database schema migrations required for v5.35. Review the :doc:`important-upgrade-notes` for all intermediate versions in between to ensure you’re aware of the possible migrations that could affect your upgrade.
 
 v6.0 database schema migrations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Mattermost v6.0 introduces several database schema changes to improve both database and application performance. The upgrade will run significant database schema changes that can cause an extended startup time depending on the dataset size. We've conducted extensive tests on supported database drivers including MySQL and PostgreSQL, using realistic datasets of more than 10 million posts and more than 72 million posts.
+Mattermost v6.0 introduces several database schema changes to improve both database and application performance. The upgrade will run significant database schema changes that can cause an extended startup time depending on the dataset size. We've conducted extensive tests on supported PostgreSQL database drivers, using realistic datasets of more than 10 million posts and more than 72 million posts.
 
-A migration to v6.0 of 10+ million posts will take approximately 1 hour and 22 minutes to complete for a MySQL database. See the `Mattermost v6.0 DB schema migrations analysis <https://gist.github.com/streamer45/59b3582118913d4fc5e8ff81ea78b055>`__ documentation for test specifications, data sizes, and test results.
+The following query executed during the migration process will have a significant impact on database CPU usage and write operation restrictions for the duration of the query:
 
-A large migration from v5.39 to v6.0 of 72+ million posts will take approximately 3 hours and 40 minutes to complete for a MySQL database. See the `Migration results analysis <https://gist.github.com/streamer45/868c451164f6e8069d8b398685a31b6e>`__ documentation for test specifications, data sizes, and test results.
+``ALTER TABLE posts ALTER COLUMN props TYPE jsonb USING props::jsonb;`` (~ 11 minutes)
 
-.. tabs::
-
-   .. tab:: MySQL
-
-      The following queries, executed during the migration process on an environment with 10+ million posts, will have a significant impact on database CPU usage and write operation restrictions for the duration of the query:
-
-      ``ALTER TABLE Posts MODIFY Props JSON;`` (~26 minutes)
-
-      ``ALTER TABLE Posts DROP COLUMN ParentId;`` (~26 minutes)
-
-      ``ALTER TABLE Posts MODIFY COLUMN FileIds text;`` (~26 minutes)
-
-      For a complete breakdown of MySQL queries, as well as their impact and duration, see the `Mattermost v6.0 DB schema migrations analysis <https://gist.github.com/streamer45/59b3582118913d4fc5e8ff81ea78b055#mysql-1>`__ documentation.
-
-      **MySQL Mitigation Strategies**
-
-      **Run combined queries prior to the upgrade.**
-      The previous queries can be combined when run prior to the upgrade as follows:
-
-      ``ALTER TABLE Posts MODIFY COLUMN FileIds text, MODIFY COLUMN Props JSON;``
-
-      This limits the time taken to that of a single query of that type.
-
-      **Online migration**: An online migration that avoids locking can be attempted on MySQL installations, especially for particularly heavy queries or very big datasets (tens of millions of posts or more). This can be done through an external tool like `pt-online-schema-change <https://www.percona.com/doc/percona-toolkit/LATEST/pt-online-schema-change.html>`__. However, the online migration process can cause a significant spike in CPU usage on the database instance it runs.
-
-      See the `Mattermost v6.0 DB schema migrations analysis <https://gist.github.com/streamer45/59b3582118913d4fc5e8ff81ea78b055#online-migration-mysql>`__ documentation for a sample execution and additional caveats.
-
-   .. tab:: PostgreSQL
-
-      The following query executed during the migration process will have a significant impact on database CPU usage and write operation restrictions for the duration of the query:
-
-      ``ALTER TABLE posts ALTER COLUMN props TYPE jsonb USING props::jsonb;`` (~ 11 minutes)
-
-      For a complete breakdown of PostgreSQL queries, as well as their impact and duration, see the `Mattermost v6.0 DB schema migrations analysis <https://gist.github.com/streamer45/59b3582118913d4fc5e8ff81ea78b055#postgresql-1>`__.
+For a complete breakdown of PostgreSQL queries, as well as their impact and duration, see the `Mattermost v6.0 DB schema migrations analysis <https://gist.github.com/streamer45/59b3582118913d4fc5e8ff81ea78b055#postgresql-1>`__.
 
 Upgrade from releases older than v5.35
 ----------------------------------------
@@ -170,8 +126,6 @@ Ensure you review the `high availability cluster upgrade guide </scale/high-avai
 
 .. important::
 
-  We only support one minor version difference between server versions when performing a rolling upgrade. For example v5.27.1 + v5.27.2 or v5.26.4 + v5.27.1 is supported, whereas v5.25.5 + v5.27.0 is not supported. 
-
   Running two different versions of Mattermost in your cluster should not be done outside of an upgrade scenario. Due to a fundamental change to the clustering code in v6.0, nodes from different versions cannot be run, as noted in the :doc:`important-upgrade-notes` product documentation.
 
-  The release of v6.0 also introduces database schema changes and longer migration times should be expected, especially on MySQL installations. 
+  The release of v6.0 also introduces database schema changes and longer migration times should be expected. 

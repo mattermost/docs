@@ -4,42 +4,409 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 
 Latest Mattermost Cloud releases:
 
-- [Release 2023-02-02](#release-2023-02-02)
-- [Release 2023-01-26](#release-2023-01-26)
-- [Release 2023-01-12](#release-2023-01-12)
-- [Release 2022-12-20](#release-2022-12-20)
-- [Release 2022-12-01](#release-2022-12-01)
-- [Release 2022-11-24](#release-2022-11-24)
+- [Release 2023-08-03](#release-2023-08-03)
+- [Release 2023-07-26](#release-2023-07-26)
+- [Release 2023-07-20](#release-2023-07-20)
+- [Release 2023-07-19](#release-2023-07-19)
+- [Release 2023-07-11](#release-2023-07-11)
+- [Release 2023-06-26](#release-2023-06-26)
 
-## Release 2023-02-02
+## Release 2023-08-03
+
+### Bug Fixes
+ - Fixed an issue where ``FileExportBackend`` should not use Bifrost.
+ - Fixed an issue related to the export configuration settings.
+
+## Release 2023-07-26
+
+### Improvements
+
+#### User Interface (UI)
+ - The emoji picker view modal is now displayed on mobile browsers.
+ - Prepackaged v1.2.2 of the Apps plugin.
+ - Prepackaged Focalboard plugin version 7.11.2.
+ - The current user object is now updated more frequently.
+ - Updated the user interface so that system admins no longer appear editable by system/user managers in the System Console.
+
+#### Administration
+ - Using ``https://github.com/reduxjs/redux-devtools`` in production builds is now allowed.
+ - Added a new feature flag, ``DataRetentionConcurrencyEnabled``, to enable/disable concurrency for data retention batch deletion. Also added a new configuration setting  ``DataRetentionSettings.TimeBetweenBatchesMilliseconds`` to control the sleep time between batch deletions.
+ - Added a setting under **System Console > Authentication > Guest Access > Show Guest Tag** to remove the **Guest** badges from within the product.
+- Added Apache 2.0 license to the public submodule, explicitly signalling to [pkg.go.dev](https://pkg.go.dev/github.com/mattermost/mattermost/server/public@v0.0.6) the license in play for this source code.
+ - Added the ability for admins to hide or customize the **Forgot password** link on the login page.
+
+### Bug Fixes
+ - Fixed an issue where drafts would persist after sending an ``@here`` mention in the right-hand side.
+ - Fixed an issue where the **New messages** toast appeared on channels that were completely visible.
+ - Fixed an UI issue related to profile popover on channel member search in the right hand pane.
+ - Fixed an issue where the multi-line channel header preview was too narrow on mobile web view.
+ - Fixed the render of the **Add Slash Command** page in the backstage area.
+ - Fixed an issue where user's timezone affected the date selection in the calendar.
+
+### Known Issues
+ - Boards public links that follow the URL schema `/boards/public/...` will not work after this update. They can either be regenerated through the application by going to the board and selecting the **Share** button at the top right, or they can be obtained by replacing the `/boards/public/` part of the URL with `/plugins/focalboard/`.
+ - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
+
+## Release 2023-07-20
+
+### Bug Fixes
+ - Added support for a new Cloud Export storage and a presigned URL generation.
+
+## Release 2023-07-19
+
+### Bug Fixes
+ - Fixed an issue where a "Seeker can't seek" error was displayed when viewing older image attachments.
+
+## Release 2023-07-11
+
+### Highlights
+
+#### Calls
+ - Calls v0.17.0 introduces a new ringing feature (Beta): Calls in Direct and Group Message channels will ring and pop up a visual notification for the incoming call. Check out the Calls v0.17.0 release notes and Calls documentation for more details.
+
+### Improvements
+
+#### User Interface (UI)
+ - Updated the user interface for the **Browse channels** modal.
+ - Increased the nickname field in the user interface from 22 to 64 characters.
+ - Updated links to documentation in the **System Console**.
+ - Emoji size is now in scale with the text size in the channel header.
+ - Prepackaged Focalboard plugin version 7.11.0.
+ - Prepackaged Playbooks plugin version 1.37.0.
+
+### Bug Fixes
+ - Fixed an issue where scrollbars were not visible enough on the **File Preview** screen.
+ - Fixed an issue where SAML Admin Attribute only compared the first value instead of looping through the assertion values array.
+ - Fixed an issue where updates to recent emojis were not batched when multiple emojis were posted at once.
+ - Reverted a change that could cause the webapp to forget the current user's authentication method.
+
+### Known Issues
+ - Boards public links that follow the URL schema `/boards/public/...` will not work after this update. They can either be regenerated through the application by going to the board and selecting the **Share** button at the top right, or they can be obtained by replacing the `/boards/public/` part of the URL with `/plugins/focalboard/`.
+ - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
+
+## Release 2023-06-26
+
+### Highlights
+ - Insights has been disabled for all new instances and for existing servers that upgrade to v8.0. See more details in [this forum post](https://forum.mattermost.com/t/proposal-to-revise-our-insights-feature-due-to-known-performance-issues/16212) on why Insights has been disabled.
+ - Boards is now operating as a plugin and can be enabled or disabled in the **System Console > Plugin settings**. The Boards configuration, ``EnablePublicSharedBoards``, was also removed from the config and the **System Console**.
+ - The Channel Export and Apps plugins are now disabled by default.
+
+### Improvements
+
+#### User Interface (UI)
+ - Added support to specify different desktop notification sounds per channel.
+ - Calls: Ringing sounds can be enabled/disabled and selected in the Desktop Notifications preferences panel.
+ - Bumped the pre-packaged version of NPS to 1.3.2.
+
+#### Administration
+ - Playbooks is again shipped as a prepackaged plugin, with version 1.36.1.
+ - Added a new ``ConfigurationWillBeSaved`` plugin hook which is invoked before the configuration object is committed to the backing store.
+ - Admins can now specify index names to ignore while purging indexes from Elasticsearch with the ``ElasticsearchSettings.IgnoredPurgeIndexes`` setting.
+ - Added an option to use the German HPNS notification proxy.
+ - New flags were added to the database migrate command as following:
+
+    - ``auto-recover``: If the migration plan receives an error during migrations, this command will try to rollback migrations already applied within the plan. This option is not recommended to be added without reviewing migration plan. You can review the plan by combining ``--save-plan`` and ``--dry-run`` flags.
+    - ``save-plan``: The plan for the migration will be saved into the file store so that it can be used for reviewing the plan or to be used for downgrading.
+    - ``dry-run``: Does not apply the migrations, but it validates how the migration would run with the given conditions.
+
+ - A new database subcommand "downgrade" was added to be able to rollback database migrations. The command either requires an update plan to rollback, or comma separated version numbers.
+ - Removed ``/api/v4/users/stats`` network request from ``InviteMembersButton``.
+
+### API Changes
+ - Introduce the [public](https://github.com/mattermost/mattermost/tree/master/server/public) submodule, housing the familiar `model` and `plugin` packages, but now discretely versioned from the server. It is no longer necessary to `go get` a particular commit hash, as Go programs and plugins can now opt-in to importing `github.com/mattermost/mattermost-server/server/public` and managing versions idiomatically. While this submodule has not yet shipped a v1 and will introduce breaking changes before stabilizing the API, it remains both forwards and backwards compatible with the Mattermost server itself.
+  - In the main `server package`, the Go module path has changed from ``github.com/mattermost/mattermost-server/server/v8`` to ``github.com/mattermost/mattermost/server/v8``. But with the introduction of the `public` submodule, it should no longer be necessary for third-party code to import this `server` package.
+ - As part of the `public` submodule above, a ``context.Context`` is now passed to ``model.Client4`` methods.
+
+### Bug Fixes
+ - Fixed the **New Messages** line overlapping date lines in the post list.
+ - Fixed an issue where post reactions disappeared when the search sidebar was open.
+ - Fixed an issue with broken "medical_symbol", "male_sign", and "female_sign" emojis.
+ - Fixed a panic where a JSON null value was passed as a channel update.
+ - Fixed an issue where the draft counter badge remained in cases where a deleted parent post was removed.
+ - Fixed an issue where posts were not fully sanitized for audit output when a link preview was included.
+ - Fixed an issue where the footer with **Save/Cancel** buttons did not get anchored properly in the System Console.
+ - Fixed an issue where the undo history was erased when links, tables, or code was pasted into the textbox.
+ - Fixed an issue where Elasticsearch didn't properly start on startup when enabled. Also added a missing ``IsEnabled`` method to Elasticsearch.
+ - Fixed an issue where text couldn't be copied from the post textbox.
+
+### Known Issues
+ - Boards public links that follow the URL schema `/boards/public/...` will not work after this update. They can either be regenerated through the application by going to the board and selecting the **Share** button at the top right, or they can be obtained by replacing the `/boards/public/` part of the URL with `/plugins/focalboard/`.
+ - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
+
+## Release 2023-06-13
+
+### Compatibility
+- Updated Chromium minimum supported version to 112+.
+
+### Improvements
+
+#### User Interface (UI)
+ - Reworked some of the components used for showing autocomplete results.
+
+#### Administration
+ - Added support for environment variable overrides of ``AdvancedLoggingConfigJSON`` configuration fields.
+
+### Bug Fixes
+ - Ensured users mentioned in message attachments are loaded by the web app.
+ - Fixed an issue where the reply bar did not get highlighted when a user was mentioned by a reply because of their Reply Notifications setting.
+ - Fixed an issue where the total user count was fetched for every client connection. It is only necessary to fetch this once.
+ - Fixed an issue where the date separator displayed in the center channel for every post when the pinned posts right-hand side panel was open.
+
+### Known Issues
+ - Using the "link" button puts the URL after ``[url]`` instead of replacing ``[url]`` when pasting [MM-53006](https://mattermost.atlassian.net/browse/MM-53006).
+ - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
+
+## Release 2023-05-31
+
+### Improvements
+
+#### User Interface (UI)
+ - Added a persistent notification option when sending urgent priority posts.
+ - Added an experimental feature to disable re-fetching of channel and channel members on browser focus.
+ - Bot users are now hidden in the user selector in apps forms.
+ - Removed the fetching of archived channels on page load.
+ - The **Channel Type** dropdown within the **Browse Channels** modal can now be focused.
+ - Removed in-app help pages that were no longer accessible.
+ - Removed system join/leave messages from thread replies and post them instead in the main channel.
+ - Added an experimental setting to make the channel autocomplete only appear after typing two characters instead of immediately after the tilde (~).
+ - Users with default profile pictures will now regenerate a new picture when their username is changed.
+ - Implemented URL auto generation on channel creation for when there's no URL safe characters on its name.
+ - Added a new option to auto-follow all threads in the channel **Notification Preference** settings.
+ - ``CTRL/CMD + K`` shortcut can now be used to insert link formatting when text is selected.
+ - ``pas`` and ``pascal`` code blocks are now higlighted.
+ - Language setting in Boards was removed. The main language setting under **Settings -> Display Settings** now covers Boards. Boards previously supported Catalan, Greek, Indonesian, and Occitan, but since these 4 languages were only partially translated (<40%; Boards-only), they have been removed until more areas of Mattermost are translated into these languages.
+ - Removed websocket state effects for the collapse/expand state of categories.
+ - Pre-packaged Calls version 0.16.1.
+ - Pre-packaged Jira plugin version 3.2.5.
+ - Pre-packaged GitHub plugin version 2.1.6.
+ - Pre-packaged Autolink plugin version 1.4.0.
+ - Pre-packaged Welcomebot plugin version 1.3.0.
+
+#### Administration
+ - The Go module has been upgraded to v8.0. All packages are now under the new path ``github.com/mattermost-server/server/v8``.
+ - Type-generated settings will now be generated (only for future generations) with a URL-safe version of base64 encoding.
+ - Mattermost is now resilient against database replica outages and will dynamically choose a replica if it's alive. Also a config parameter ``ReplicaMonitorIntervalSeconds`` was added and the default value is 5. This controls how frequently unhealthy replicas will be monitored for liveness check.
+ - Removed ``ExperimentalSettings.PatchPluginsReactDOM``.
+ - Removed deprecated ``PermissionUseSlashCommands``.
+ - Added support for attachments when importing/exporting Boards.
+ - Updated Docker Base Image from Debian to Ubuntu 22.04 LTS.
+ - Removed support for PostgreSQL v10. The new minimum PostgreSQL version is now v11.
+ - The Mattermost public API for Go is now available as a distinctly versioned package. Instead of pinning a particular commit hash, use idiomatic Go to add this package as a dependency: go get github.com/mattermost/mattermost-server/server/public. This relocated Go API maintains backwards compatibility with Mattermost v7. Furthermore, the existing Go API previously at github.com/mattermost/mattermost-server/v6/model remains forward compatible with Mattermost v8, but may not contain newer features. Plugins do not need to be recompiled, but developers may opt in to using the new package to simplify their build process. The new public package is shipping alongside Mattermost v8 as version 0.5.0 to allow for some additional code refactoring before releasing as v1 later this year.
+ - Three configuration fields have been added, ``LogSettings.AdvancedLoggingJSON``, ``ExperimentalAuditSettings.AdvancedLoggingJSON``, and ``NotificationLogSettings.AdvancedLoggingJSON`` which support multi-line JSON, escaped JSON as a string, or a filename that points to a file containing JSON.  The ``AdvancedLoggingConfig`` fields have been deprecated.
+ - The Go MySQL driver has changed the ``maxAllowedPacket`` size from 4MiB to 64MiB. This is to make it consistent with the change in the server side default value from MySQL 5.7 to MySQL 8.0. If your ``max_allowed_packet`` setting is not 64MiB, then please update the MySQL config DSN with an additional param of ``maxAllowedPacket`` to match with the server side value. Alternatively, a value of 0 can be set to to automatically fetch the server side value, on every new connection, which has a performance overhead.
+ - For servers wanting to allow websockets to connect from other origins, please set the ``ServiceSettings.AllowCorsFrom`` config setting.
+
+### Bug Fixes
+ - Fixed the sorting value of categories in ``CreateSidebarCategoryForTeamForUser``.
+ - Fixed a potential crash when opening the user profile popover.
+ - Fixed permalink and thread reply navigation between teams.
+ - Fixed an issue with the installation of pre-packaged plugins that are not in the Marketplace.
+ - Fixed an issue caused by a migration in a previous release. The query takes around 11ms on a PostgreSQL 14 DB t3.medium RDS instance. Locks on the preferences table will only be acquired if there are rows to delete, but the time taken is negligible.
+ - Fixed an issue where modals did not close when clicking below them on certain screen sizes.
+ - Fixed an issue with a few translation labels that couldn't be translated.
+ - Fixed an issue where the server log UI for plain text formatting was unexpectedly removed in a previous release.
+ - Fixed an issue where combined system messages did not display in chronological order.
+ - Fixed an issue where the current user and status were not updated on WebSocket reconnect.
+ - Fixed an issue where certain hashtags were not searchable when using database search.
+
+### Known Issues
+ - Selecting the **replies** option for a thread doesn't navigate to the thread when Collapsed Reply Threads is enabled. A workaround is to use the reply arrow in the post menu, or to navigate to the **Threads** view when replying to messages [MM-52995](https://mattermost.atlassian.net/browse/MM-52995).
+ - Using the "link" button puts the URL after ``[url]`` instead of replacing ``[url]`` when pasting [MM-53006](https://mattermost.atlassian.net/browse/MM-53006).
+ - Saved posts in right-hand side show both the team and channel name in the post header [MM-53005](https://mattermost.atlassian.net/browse/MM-53005).
+ - In a cluster config save scenario, it is difficult to disinguish between a timeout and a semantic error in the config if a config save in one node gets stuck [MM-52968](https://mattermost.atlassian.net/browse/MM-52968).
+ - The URL of the post in a reminder post for direct and group messages have a double slash on mobile [MM-51026](https://mattermost.atlassian.net/browse/MM-51026).
+ - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
+
+## Release 2023-05-01
+
+### Highlights
+ - Added an improved Cloud trial experience in preparation for replacing the Cloud Free experience. See more details in these Forum posts:
+    - https://forum.mattermost.com/t/cloud-monthly-billing-deprecation/15804
+    - https://forum.mattermost.com/t/cloud-free-deprecation/15802
+
+### Improvements
+
+#### User Interface (UI)
+ - Replaced the ``compass-components`` icon component with ``compass-icons``.
+ - Added “hours ahead” timezone details to the user profile popover.
+ - Pre-packaged Calls v0.15.1.
+
+#### Administration
+ - Removed the deprecated ``model.CommandArgs.Session``.
+ - The database section in the **System Console** now has an additional read-only section which shows the active search backend in use. This can be helpful to confirm which search engine is currently active when there are multiple configured.
+ 
+#### Performance
+ - Improved the performance of webapp related to timezone calculations.
+ - Improved performance of code used for post list screen reader support.
+ 
+### API Changes
+ - An underscore is now used in the timeline API (``event-id`` -> ``event_id``) for consistency with other API arguments.
+
+### Bug Fixes
+ - Fixed an issue where a user would still see threads in the threads view of channels they have left. Migration execution time in MySQL: Query OK, 2766769 rows affected (4 min 47.57 sec). Migration execution time in PostgreSQL: Execution time: 58.11 sec, DELETE 2766690.
+ - Fixed an issue where clicking on a channel link (for a channel the user was not a part of) caused the webapp to refresh, dropping the user from a call.
+ - Fixed an issue with PDF preview rendering for certain Japanese characters.
+ - Fixed an issue where the screen reader did not announce the action of copying the link in the invite modal.
+ - Fixed an issue with post metadata not generating correctly for images due to missing content-type in response. This would result in certain embedded images not to display on mobile clients.
+ - Fixed an issue where edits to messages persisted after canceling.
+ - Added a condition for bot tags for webhook posts when a bot account is used for webhooks.
+
+### Known Issues
+ - Message Actions … ellipsis menu icon only displays rectangle when clicked on [MM-52444](https://mattermost.atlassian.net/browse/MM-52444).
+ - The URL of the post in a reminder post for direct and group messages have a double slash on mobile [MM-51026](https://mattermost.atlassian.net/browse/MM-51026).
+ - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
+
+## Release 2023-04-21
+
+### Improvements
+
+#### User Interface (UI)
+ - Enabled Work Templates in the Onboarding checklist and the `+` Menu.
+ - Added a **Mattermost Marketplace** option to the bottom of the apps bar. The option is visible when the Marketplace is enabled, and the user has ``SYSCONSOLE_WRITE_PLUGINS`` permissions.
+ - Added an **Add channels** button to the bottom of the left-hand sidebar to make the action more obvious for users who want to create or join channels.
+ - Removed the Webapp Build Hash from **Main Menu > About Mattermost** since it is now identical to Server Build Hash.
+
+#### Administration
+ - The following repositories have been merged into one: ``mattermost-server``, ``mattermost-webapp``, ``focalboard`` and ``mattermost-plugin-playbooks``. Developers should read the updated [Developer Guide](https://developers.mattermost.com/contribute/developer-setup/) for details. Playbooks and Boards are now core parts of the product that cannot be disabled.
+ - The file info stats query is now optimized by denormalizing the ``channelID`` column into the table itself. This will speed up the query to get the file count for a channel when selecting the right-hand pane. Migration times:
+
+   - On a MySQL 8.0.31 DB with 1405 rows in FileInfo and 11M posts, it took around 0.3s
+   - On a PostgreSQL 12.14 DB with 1731 rows in FileInfo and 11M posts, it took around 0.27s
+
+ - Added the ability to search a partial first name, last name, nickname, or username on the **System Console > Users** page.
+ - **Contact Support** now redirects users to Zendesk and pre-fills known information.
+ - Added a mechanism for public routes on products and used it to support publicly shared Board links.
+
+### Bug Fixes
+ - Fixed a scrolling issue in the purchase modals.
+ - Fixed an issue where the **Delete Category Dialog** message was not visible in Boards.
+ - Fixed an issue where the experimental Shared Channels feature failed to synchronize if a previously removed table column was still present.
+ - Fixed an innocuous panic in Boards Rest API when requesting files and an error other than ``not found`` is encountered.
+ - Fixed an issue with the compact message mode.
+
+### Known Issues
+ - The URL of the post in a reminder post for direct and group messages have a double slash on mobile [MM-51026](https://mattermost.atlassian.net/browse/MM-51026).
+ - A user gets scrolled to the bottom of the post editor after pasting long text in the right-hand pane [MM-51302](https://mattermost.atlassian.net/browse/MM-51302).
+ - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
+
+## Release 2023-03-29
+
+### Improvements
+
+#### Administration
+ - The ``ServiceSettings.PostEditTimeLimit`` config setting no longer affects Plugins, Shared Channels, Integration Actions, or Mattermost Products.
+ - The app server no longer starts if the telemetry ID in the systems table doesn't exist. Although there is no action required by the administrators, it may be good to be aware of this change.
+ - Added additional values to the support packet.
+
+#### Performance
+ - Writes to websocket now take 13% less memory and happen 22% faster per message.
+
+### API Changes
+ - Added a ``exclude_files_count`` parameter to exclude file counts from channel stats API.
+
+### Bug Fixes
+ - Fixed an issue where Shared Channels wasn't properly added to the Professional license.
+
+### Known Issues
+ - The URL of the post in a reminder post for Direct and Group Messages have a double slash on mobile [MM-51026](https://mattermost.atlassian.net/browse/MM-51026).
+ - A user gets scrolled to the bottom of the post editor after pasting long text in the right-hand side [MM-51302](https://mattermost.atlassian.net/browse/MM-51302).
+ - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
+
+## Release 2023-03-20
+
+### Compatibility
+ - Updated Firefox minimum supported version to 102+.
+ - Updated Safari minimum supported version to 16.2+.
+ - Updated Windows minimum supported version to 10+.
+ - Updated Chromium minimum supported version to 110+.
+ - Updated Edge minimum supported version to 110+.
 
 ### Highlights
 
 #### Annual Cloud Subscriptions
  - On the purchase modal, admins are now able to buy an annual cloud subscription starting from their current user count.
  - The **System Console > Billing & Account > Subscriptions** page now reflects whether the plan is monthly or annual.
- - Cloud Professional monthly will no longer be offered to new customers starting February 2, 2023.
+ - Cloud Professional monthly will no longer be offered to new customers starting March 20, 2023.
  - Added the option to migrate from a monthly to an annual Cloud Professional plan for existing Cloud Professional monthly customers.
+
+#### Boards
+ - Added support for person, multi-person, and date property filters in Boards.
+ - Added support for person property groups in Boards.
+ - System and team admins are now able to join any board on the team as a board admin via the board URL.
+ - Additional Compliance APIs to return the history of boards and blocks, including deleted items (available in Mattermost Enterprise Edition and above).
+ - See [the Boards product documentation](https://docs.mattermost.com/boards/groups-filter-sort.html#work-with-groups-filter-and-sort) for more details.
 
 ### Improvements
 
 #### User Interface (UI)
- - Boards was reverted from an in-built product back to a plugin.
+ - Pre-packaged Calls v0.14.0.
+ - Pre-packaged Playbooks v1.36.0.
+ - All post components were removed in favor of a unified approach.
+ - App bindings are now refreshed when a App plugin enabled event gets triggered.
+ - Improvements were added to the sidebar channel and category menus.
+ - Removed right-click hijacking on code blocks in messages.
+ - The order of the Leave Channel and Archive Channel settings were updated to match the mobile app.
+ - Added the condition to remove unread styling for archived channels and to filter archived channels from local data.
+ - Changed the collapsed post fade out effect to be less buggy.
+ - Users now have the ability to see the history of edited messages and to restore an old message version with the current version.
  - Improved the user interface of the user profile popover.
+ - Added the ability to set a reminder to read a post at a specific time via the “More” menu in posts.
+ - Mentions from muted channels are no longer shown or counted on the browser and desktop tabs.
+ - Updated **System Console** descriptions for **Environment > Developer configuration** settings in the **System Console** to clarify that changes require a server restart to take effect.
+ - The custom user status is now shown in the right-hand side and in the **System Console**.
+ - Added the ability to handle multiple emails at once when inviting users.
+ - Added accessibility support to the date picker.
+ - A feedback survey is displayed during a workspace downgrade process from Cloud Professional to Cloud Free.
+ - Migrated the post dot menu to a Material UI (MUI) menu.
 
 #### Administration
+ - The invoice is now sent attached when an Admin upgrades to Cloud annual subscription.
+ - Removed Boards limits from Cloud Starter subscription.
+ - Enabled ``EnableOAuthServiceProvider`` by default.
+ - Export files now contain the read and unread status for channels.
+ - Added the ``SentAt`` column to ``NotifyAdmin``.
+ - Updated ``NotifyAdmin.RequiredFeature`` column type to ``varchar(255)``.
+ - Updated ``NotifyAdmin.RequiredPlan`` column type to ``varchar(100)``.
+ - [Message Priority & Acknowledgement](https://docs.mattermost.com/configure/site-configuration-settings.html#message-priority) is now enabled by default for all instances.
+ - Added the ability to delete a workspace via **System Console > Billing & Account > Subscription**.
+ - Added an error message when running an LDAP sync with ``SyncEnabled`` set to ``false``.
+ - Added Admin log table filtering and sorting.
+ - Go version was bumped to v1.19.
  - GraphQL APIs are now correctly counted when measuring performance telemetry.
  - Boards cards are no longer mentioned as being limited in the **System Console**, the limits usage modal, the downgrade modal, or the left-hand side menu.
  - Removed an unused ``ProductLimits.Integrations``.
 
+#### Performance
+ - Reduced the rate that unreads are resynced when the window is focused from 10 seconds to 2 minutes.
+ - The center channel is no longer shown as loading when switching teams.
+ - Added logging fixes: empty ``short_message`` for Gelf formatter is no longer allowed and ``params.Host`` is now used over ``params.IP`` for syslog config.
+ - Added minor performance improvements.
+
+### API Changes
+ - Added an ``exclude_files_count`` parameter to exclude file counts from the channel stats API.
+ - Added a new API endpoint ``GET api/v4/posts/[POST_ID]/edit_history``.
+ - Added a new API endpoint ``DELETE /api/v4/cloud/delete-workspace``.
+
+### Bug Fixes
+ - Fixed new teams to use the updated translation for default channels after a config change.
+ - Fixed a layout issue in the System Console for smaller-sized tablets.
+ - Fixed an issue where a "plugin configured with a nil SecureConfig" warning was logged when starting each plugin.
+ - Fixed an issue where portal availability was checked when not on enterprise edition.
+ - Fixed a 404 error from requests to ``/api/v4/system/notices/`` on page load.
+ - Fixed an issue where OpenID Connect was configurable for Cloud Starter licenses.
+ - Fixed an issue where C# syntax highlighting was not working.
+ - Fixed an issue where incoming webhooks changed the user's activity while the user was offline/away.
+ - Fixed an issue where usernames were not clickable in the right-hand side.
+ - Fixed issues with spacing in the channel categories and maintained the same spacing in the left-hand side.
+ - Fixed an issue where the setting `Restrict new system and team members to specified email domains` was not visible in Cloud Starter.
+ - Fixed disproportionate height issues for tall single images.
+ - Fixed an issue where a single WebSocket reconnect could be handled multiple times which would negatively affect performance.
+ - Fixed an issue in Top DM Insights, where a deleted participant caused DM Insights to fail.
+ - Fixed an issue where Cloud limits would briefly flash in the **System Console** before disappearing.
+
 ### Known Issues
- - Clicking on a user profile picture throws a console error [MM-49961](https://mattermost.atlassian.net/browse/MM-49961).
- - Bot and guest tags are truncated on suggestion autocomplete [MM-49973](https://mattermost.atlassian.net/browse/MM-49973).
- - Horizontal scroll displays in the Threads list due to a new tags component [MM-49854](https://mattermost.atlassian.net/browse/MM-49854).
- - Login/create account screen layout breaks when Javascript error banner displays [MM-49587](https://mattermost.atlassian.net/browse/MM-49587).
- - Spacing in the channel switcher is incorrect [MM-49853](https://mattermost.atlassian.net/browse/MM-49853).
- - Spacing issue is displayed between the Global Drafts tour point title and “New” tag [MM-49866](https://mattermost.atlassian.net/browse/MM-49866).
- - The message box flashes controls while typing in the right-hand side [MM-49266](https://mattermost.atlassian.net/browse/MM-49266).
+ - The URL of the post in a reminder post for Direct and Group Messages have a double slash on mobile [MM-51026](https://mattermost.atlassian.net/browse/MM-51026).
+ - A user gets scrolled to the bottom of the post editor after pasting long text in the right-hand side [MM-51302](https://mattermost.atlassian.net/browse/MM-51302).
  - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
 
 ## Release 2023-01-26
@@ -104,7 +471,7 @@ Latest Mattermost Cloud releases:
  - Publicly shared boards lead to a "Team not found" error page. See [issue-focalboard-4450](https://github.com/mattermost/focalboard/issues/4450) for more details.
  - If a user is not a member of a configured broadcast channel, posting a status update might fail without any error feedback. As a temporary workaround, join the configured broadcast channels or remove those channels from the run configuration.
 
-## Release 2023-01-12
+## Release 2023-01-16
 
 ### Highlights
 
@@ -190,7 +557,7 @@ Latest Mattermost Cloud releases:
  - Fixed an issue where the metrics server restarted for every config change.
  - Prevented browsers and CDNs from caching remote entrypoint files.
  - Fixed a potential read-after-write issue when uploading data through the resumable uploads API.
- - Fixed the position of the Boards icon in the app bar when Boards is running without a plugin.
+ - Fixed the position of the Boards icon in the Apps Bar when Boards is running without a plugin.
  - Fixed ability to create a board when Boards is running without a plugin.
  - Fixed Boards tour tips not appearing when Boards is running without a plugin.
  - Fixed the slash command description help text.

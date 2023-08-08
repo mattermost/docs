@@ -6,10 +6,6 @@ Advanced permissions: backend infrastructure
 
 This document outlines the backend server infrastructure for permissions in Mattermost and is recommended only for technical Admins or developers looking to make modifications to their installation.
 
-.. note::
-
-  The contents of this document apply from Mattermost Server v5.0.
-
 .. contents::
   :backlinks: top
   :local:
@@ -69,8 +65,6 @@ Permissions in Mattermost are a property of the server code base and are not cre
 | invite_user                                  | team    | Invite users to the team using Send Email Invite or Get Team Invite Link.                                                                                                                             |
 +----------------------------------------------+---------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | add_user_to_team                             | team    | Add existing server users to the current team.                                                                                                                                                        |
-+----------------------------------------------+---------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| use_slash_commands                           | channel | Use slash commands.                                                                                                                                                                                   |
 +----------------------------------------------+---------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | manage_slash_commands                        | system  | Create, edit, and delete your own slash commands.                                                                                                                                                     |
 +----------------------------------------------+---------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -259,7 +253,6 @@ The following built-in roles and associated permissions are available:
 
 *channel_guest*
 
-- use_slash_commands
 - read_channel
 - add_reaction
 - remove_reaction
@@ -284,7 +277,6 @@ The following built-in roles and associated permissions are available:
 - get_public_link
 - remove_reaction
 - manage_public_channel_members
-- use_slash_commands
 - upload_file
 - manage_private_channel_properties
 - create_post
@@ -394,7 +386,6 @@ The following built-in roles and associated permissions are available:
 - delete_public_channel
 - read_public_channel
 - sysconsole_read_about
-- use_slash_commands
 - read_bots
 - sysconsole_read_authentication
 - edit_other_users

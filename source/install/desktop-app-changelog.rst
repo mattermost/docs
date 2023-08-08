@@ -6,15 +6,148 @@ Desktop application changelog
 
 Latest Mattermost Desktop App releases:
 
-- `Release v5.2 <#id1>`_
-- `Release v5.1 <#id5>`_
-- `Release v5.0 <#id19>`_
-- `Release v4.7 <#id34>`_
-- `Release v4.6 <#id51>`_
-- `Release v4.5 <#id63>`_
+- `Release v5.4 <#id1>`_
+- `Release v5.3 <#id3>`_
+- `Release v5.2 <#id16>`_
+- `Release v5.1 <#id32>`_
+- `Release v5.0 <#id47>`_
+- `Release v4.7 <#id62>`_
+
+Release v5.4
+--------------
+
+**Release Day: June 19, 2023**
+
+**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/latest>`_
+
+Compatibility
+~~~~~~~~~~~~~~~
+
+- Desktop App is supported on any supported Extended Support Release or a newer Mattermost server version.
+- Updated Chromium minimum supported version to 112+.
+
+Improvements
+~~~~~~~~~~~~~~~
+
+All Platforms
+^^^^^^^^^^^^^
+
+- Improved URL validation and the add/edit server experience.
+- Made ``ExtraBar`` dark when using dark mode.
+- Improved the tray icon click behaviour across operating systems.
+
+Architectural Changes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Major version upgrade of Electron to v24.3.1. Electron is the underlying technology used to build the Desktop App.
+
+Bug Fixes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+All Platforms
+^^^^^^^^^^^^^
+
+- Calls: Fixed duplicate desktop notifications when calls popout was open.
+- Fixed an issue where YubiKeys did not work on the MAS build.
+- Fixed an issue where servers on subpaths would not properly navigate to external URLs on the same domain.
+- Fixed an issue where spellcheck highlighting would persist after text was deleted.
+- Fixed an issue for the MAS build where the default downloads directory would be invalid after upgrade.
+- Fixed an issue where the default download location did not respect ``XDG_DOWNLOAD_DIR`` where it was set.
+- Fixed an issue where the popup window was not refocused if it already existed.
+
+Known Issues
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Mattermost is not detected in the **Add Server** screen if the server has plugins disabled `MM-53294 <https://mattermost.atlassian.net/browse/MM-53294>`_.
+- When running "Run Diagnostics" from the **Help** menu, the app crashes `MM-53295 <https://mattermost.atlassian.net/browse/MM-53295>`_.
+- Users seeing an endless "Loading..." screen when attempting to log in to the app may need to manually remove their cache directory. For MacOS it is located in ``/Users/<username>/Library/Containers/Mattermost/Data/Library/Application Support/Mattermost`` and for Windows it is located in ``Users/<username>/AppData/Roaming/Mattermost``.
+- On Linux, a left-click on the Mattermost tray icon doesn't open the app window but opens the tray menu.
+- Crashes might be be experienced in some Linux desktop clients due to an upstream bug in the ``libnotifyapp`` library. A recommended workaround is to disable the Mattermost system tray icon via Desktop Settings.
+- On apps using GPO configurations, when adding a second server tab, it's possible to drag and drop tabs, but they'll jump back to the original position when releasing the mouse.
+
+Contributors
+~~~~~~~~~~~~~~
+
+- `cpoile <https://github.com/cpoile>`_, `devinbinnie <https://github.com/devinbinnie>`_, `jnsgruk <https://github.com/jnsgruk?>`_, `streamer45 <https://github.com/streamer45>`_, `zoltan-ofir <https://github.com/zoltan-ofir>`_.
+
+Release v5.3
+--------------
+
+**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v5.3.1>`_
+
+- **v5.3.1, released 2023-04-04**
+ - Calls: fixed an issue where, after opening the calls popout then closing it (without leaving the call), subsequent clicks would cause a crash.
+- **v5.3.0, released 2023-03-30**
+ - Original v5.3.0 release
+
+**Note:** Mattermost v5.3.0 contains a medium severity level security fix. Upgrading is highly recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.com/security-vulnerability-report//>`__.
+
+Compatibility
+~~~~~~~~~~~~~~~
+
+- Desktop App is supported on any supported Extended Support Release or a newer Mattermost server version.
+- Support for Windows v8 and v8.1 have been dropped. Minimum supported Windows version was updated to 10+.
+- Updated Chromium minimum supported version to 110+.
+
+Highlights
+~~~~~~~~~~~~~~~
+
+- Added application diagnostics.
+- Implemented a global calls widget window.
+
+Improvements
+~~~~~~~~~~~~~~~
+
+All Platforms
+^^^^^^^^^^^^^
+
+- Added support for starting a call from an existing thread through the ``/call start`` slash command.
+- Added support for Gnome's "do-not-disturb" status.
+- Added a menu item for showing the logs folder.
+- Improved performance by reducing the number of calls for URL detection.
+- Changed the tray behavior on left-click. Left-clicking on the system tray Mattermost icon now hides the application to system tray if it's already visible.
+- Defaulted to opening a file when it's selected from the download list.
+
+Architectural Changes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Major version upgrade of Electron to v23.1.2. Electron is the underlying technology used to build the Desktop App.
+
+Bug Fixes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+All Platforms
+^^^^^^^^^^^^^
+
+- Fixed an issue where a user could open a blank Electron window using the main window.
+- Fixed an issue where image thumbnails did not always display in the downloads for MAS builds.
+- Fixed an issue where the Boards/Playbooks tabs sometimes didn't appear automatically when a server was added.
+- Fixed an issue where RPM conflicted with other Electron-based applications.
+- Fixed an issue where a custom certificate wasn't applied to the WebSocket connection along with the HTTP connection.
+- Fixed an issue where opening the app with a deeplink could cause the app not to redirect to the correct URL.
+- Fixed an issue with closing the Downloads drop-down menu when selecting **Show in folder**.
+- Fixed an issue with maximizing the main window when a monitor is removed.
+- Fixed an issue where special characters in the server name caused the top bar of the Desktop App to disappear.
+- Fixed an issue where OneLogin users wouldn't have their credentials remembered.
+- Fixed an issue with plugin navigation displaying a white empty bar between the plugin UI and the Desktop Apps Bar.
+
+Known Issues
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Users seeing an endless "Loading..." screen when attempting to log in to the app may need to manually remove their cache directory. For MacOS it is located in ``/Users/<username>/Library/Containers/Mattermost/Data/Library/Application Support/Mattermost`` and for Windows it is located in ``Users/<username>/AppData/Roaming/Mattermost``.
+- On Linux, a left-click on the Mattermost tray icon doesn't open the app window but opens the tray menu.
+- Crashes might be be experienced in some Linux desktop clients due to an upstream bug in the ``libnotifyapp`` library. A recommended workaround is to disable the Mattermost system tray icon via Desktop Settings.
+- On apps using GPO configurations, when adding a second server tab, it's possible to drag and drop tabs, but they'll jump back to the original position when releasing the mouse.
+
+Contributors
+~~~~~~~~~~~~~~
+
+- `cpoile <https://github.com/cpoile>`_, `cs4p <https://github.com/cs4p>`_, `devinbinnie <https://github.com/devinbinnie>`_, `JtheBAB <https://github.com/JtheBAB>`_, `kevfocke <https://github.com/kevfocke>`_, `kyeongsoosoo <https://github.com/kyeongsoosoo>`_, `m1lt0n <https://github.com/m1lt0n>`_, `streamer45 <https://github.com/streamer45>`_, `tboulis <https://github.com/tboulis>`_.
 
 Release v5.2
 --------------
+
+**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v5.2.2>`_
 
 - **v5.2.2, released 2022-12-06**
  - Added ARM64 build (beta) for Windows/Linux.
@@ -32,8 +165,6 @@ Release v5.2
  - Fixed an issue where the tray icon colour on Windows didn't obey the setting `MM-48080 <https://mattermost.atlassian.net/browse/MM-48080>`_.
 - **v5.2.0, released 2022-10-31**
  - Original v5.2.0 release
-
-**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/latest>`_
 
 Compatibility
 ~~~~~~~~~~~~~~~
@@ -114,6 +245,8 @@ Contributors
 Release v5.1
 --------------
 
+**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v5.1.1>`_
+
 - **v5.1.1, released 2022-06-27**
  - Upgraded to Electron v18.3.0.
  - Fixed an issue where a channel name matching the server subpath would not be navigable.
@@ -123,8 +256,6 @@ Release v5.1
  - Restored Windows ZIP builds.
 - **v5.1.0, released 2022-05-16**
  - Original v5.1.0 release
-
-**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v5.1.1>`_
 
 **Note:** Mattermost v5.1.0 contains a low severity level security fix. Upgrading is highly recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.com/security-vulnerability-report//>`__.
 
@@ -212,6 +343,8 @@ Contributors
 Release v5.0
 --------------
 
+**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v5.0.4>`_
+
 - **v5.0.4, release 2022-02-04**
  - Fixed an issue where Desktop App toast notifications didn't work in v5.0.3.
  - Restored **Minimize to tray** option for Windows, and added the ability to override the tray icon color.
@@ -234,8 +367,6 @@ Release v5.0
  - Reduced the size of some builds by removing unnecessary files.
 - **v5.0.0, released 2021-10-13**
  - Original v5.0.0 release
-
-**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v5.0.4>`_
 
 **Note:** Mattermost v5.0.0 contains a low level security fix. Upgrading is highly recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.com/security-vulnerability-report//>`__.
 

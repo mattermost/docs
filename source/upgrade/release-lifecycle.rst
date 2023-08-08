@@ -11,12 +11,18 @@ During each monthly release, Mattermost backports high severity or high impact s
 
 .. important::
 
-  Support for Mattermost Server v6.3 :doc:`Extended Support Release </upgrade/extended-support-release>` has come to the end of its life cycle on October 15, 2022. Upgrading to Mattermost Server v7.1 or later is required.
+  Support for Mattermost Server v7.1 :doc:`Extended Support Release </upgrade/extended-support-release>` has come to the end of its life cycle on May 15, 2023. Upgrading to Mattermost Server v7.8 or later is required.
 
 +-------------+-----------------------+--------------------------+--------------------------+--------------------------+
 | Version     | Release Type          | Lifecyle Start Date      | Lifecycle End Date       | Extended Support Release |
 +=============+=======================+==========================+==========================+==========================+
-| 7.9         | Feature               |  2023-03-16              | 2023-06-15               |                          |
+| 8.1         | Feature               |  2023-08-16              | 2024-05-15               | Yes                      |
++-------------+-----------------------+--------------------------+--------------------------+--------------------------+
+| 8.0         | Major                 |  2023-07-16              | 2023-10-15               |                          |
++-------------+-----------------------+--------------------------+--------------------------+--------------------------+
+| 7.10        | Feature               |  2023-04-16              | 2023-08-15               |                          |
++-------------+-----------------------+--------------------------+--------------------------+--------------------------+
+| 7.9         | Feature               |  2023-03-16              | 2023-07-15               |                          |
 +-------------+-----------------------+--------------------------+--------------------------+--------------------------+
 | 7.8         | Feature               |  2023-02-16              | 2023-11-15               | Yes                      |
 +-------------+-----------------------+--------------------------+--------------------------+--------------------------+

@@ -9,7 +9,7 @@ Board permissions
 
 From Mattermost Boards v7.2 boards belong to teams, and any member of that team can be granted access to a board. 
 
-If your boards workspace looks different, you may be on an earlier version of Boards, where boards are tied to channel workspaces and board membership is determined by channel membership. In this case, roles and permissions won't be applicable to you.
+If your boards workspace looks different, you may be on an earlier version of boards. In earlier versions, boards are tied to channel workspaces and board membership is determined by channel membership. In this case, roles and permissions won't be applicable to you.
 
 Roles
 -----
@@ -42,6 +42,16 @@ The level of access to a board is determined by a user’s assigned board role. 
 - **Editor**: Can modify the board and its contents.
 - **Commenter**: Can add comments to cards.
 - **Viewer**: Can view the board and its contents but can't comment or edit the board.
+
+System admin access
+~~~~~~~~~~~~~~~~~~~
+
+System admins can access any board across the server provided they have the board's URL without having to request permission or be manually added. When a system admin joins a board, their default role is admin. System admins will have an **Admin** label assigned to their name on the participants list.
+
+Team admin access
+~~~~~~~~~~~~~~~~~
+
+Team admins can access any board within their team provided they have the board's URL without having to request permission or be manually added. When a system admin joins a board, their default role is admin. Team admins will have a **Team admin** label assigned to their name on the participants list.
 
 Manage team access
 ~~~~~~~~~~~~~~~~~~~
@@ -107,7 +117,7 @@ Share a board publicly
 
 Sharing boards publicly is disabled by default. This means that the **Publish** tab is not available from the **Share** dialog. To enable public board sharing:
 
-1. Go to **Product menu > System Console > Plugins > Plugin Management > Mattermost Boards > Settings**.
+1. Go to **Product menu > System Console > Products > Boards**.
 2. Set **Enable Publicly-Shared Boards** to **true**.
 3. Select **Save**.
 

@@ -17,7 +17,7 @@ Set up shared channels
 
 The process of sharing channels involves the following three steps:
 
-1. System Admins must enable shared channels functionality for their Mattermost instance. See our `Configuration Settings </configure/configuration-settings.html#enable-shared-channels-experimental>`__ documentation for details.
+1. System Admins must enable shared channels functionality for their Mattermost instance. See our `Experimental Configuration Settings </configure/experimental-configuration-settings.html#enable-shared-channels>`__ documentation for details.
 
 2. System Admins `use a slash command </messaging/executing-slash-commands.html>`__ to establish a secure and trusted relationship between other Mattermost Enterprise instances. This process involves creating a password-protected, encrypted invitation, creating a strong decryption password, then sending the invitation and password to the System Admin of a remote Mattermost instance. We strongly recommend that you share an invitation separately from its password to ensure that someone doesn't have all of the data necessary to take action if the message were compromised.
 
@@ -40,7 +40,7 @@ System Admins can use the following slash command to create a secure connection 
 
 For example:
 
-``/secure-connection create --name “AcmeUS” --displayname “AcmeUSA” --password examplepassword``
+``/secure-connection create --name AcmeUS --displayname “AcmeUSA” --password examplepassword``
 
 This slash command creates an invitation consisting of a password-protected AES 256-bit encrypted code blob for a remote Mattermost entity known locally as ``AcmeUS`` with a password of ``examplepassword``. Within Mattermost, this shared connection displays to the local System Admin based on the ``name`` and ``displayname`` provided.
 

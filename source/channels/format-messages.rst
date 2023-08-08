@@ -49,6 +49,11 @@ Format messages
 .. |message-priority-icon| image:: ../images/Priority-Message-Icon.svg
   :alt: Mark a message as important or urgent using the Priority Message icon.
 
+.. contents:: On this page:
+  :backlinks: top
+  :local:
+  :depth: 2
+
 Use the messaging formatting toolbar
 ------------------------------------
 
@@ -63,12 +68,12 @@ The message formatting toolbar offers the following formatting options:
 +--------------------------------------------------------------+-------------------------+
 | **Formatting option**                                        | **Icon**                | 
 +==============================================================+=========================+
-| Bold, italicize, or strike out text                          | |bold-icon|             |
+| `Bold, italicize, or strike out text <#use-markdown>`_       | |bold-icon|             |
 |                                                              | |italics-icon|          | 
 |                                                              | |strikeout-icon|        | 
 +--------------------------------------------------------------+-------------------------+
-| Add headings, links, or attachments                          | |headings-icon|         |
-|                                                              | |links-icon|            | 
+| Add `headings <#headings>`_, `links <#links>`_,              | |headings-icon|         |
+| or attachments                                               | |links-icon|            | 
 |                                                              | |attachments-icon|      |
 +--------------------------------------------------------------+-------------------------+
 | Format a numbered list, a bulleted list, quoted text, or     | |numbered-icon|         |
@@ -76,7 +81,7 @@ The message formatting toolbar offers the following formatting options:
 |                                                              | |quotes-icon|           |
 |                                                              | |code-icon|             |
 +--------------------------------------------------------------+-------------------------+
-| Add emojis or GIFs                                           | |emoji-icon|            |
+| `Add emojis or GIFs </channels/react-to-messages.html>`__    | |emoji-icon|            |
 +--------------------------------------------------------------+-------------------------+
 | `Set message priority </channels/message-priority.html>`__   | |message-priority-icon| |
 +--------------------------------------------------------------+-------------------------+
@@ -120,10 +125,14 @@ You can use either ``_`` or ``*`` around a word or phrase to make it italic, or 
 Links
 ~~~~~
 
+.. tip::
+
+  Format selected message text as a link by pressing :kbd:`Ctrl` :kbd:`K` on Windows and Linux, or by pressing :kbd:`⌘` :kbd:`K` on Mac.
+
 Channel links
 ^^^^^^^^^^^^^
 
-Create a link to a public channel in a message by typing ``~`` followed by the channel name (e.g. ``~roadmap``). From Mattermost v6.2, channel members also see private channel names returned.
+Create a link to a public channel in a message by typing ``~`` followed by the channel name (e.g. ``~roadmap``). Channel members see private channel names returned.
 
 Labeled links
 ^^^^^^^^^^^^^
@@ -306,7 +315,7 @@ Renders as: ``monospace``.
 In-line images
 ~~~~~~~~~~~~~~
 
-In-line images are images added within lines of text. From Mattermost Server v5.35 and in Mattermost Cloud, you can control whether all in-line images over 100px in height are automatically collapsed or expanded in messages by setting a `user preference </channels/channels-settings.html#website-link-previews>`__, or by using the ``/collapse`` and ``/expand`` slash commands.
+In-line images are images added within lines of text. You can control whether all in-line images over 100px in height are automatically collapsed or expanded in messages by setting a `user preference </channels/channels-settings.html#website-link-previews>`__, or by using the ``/collapse`` and ``/expand`` slash commands.
 
 To add in-line images to text, use an exclamation mark ``!`` followed by the ``alt text`` in square brackets ``[ ]``, then the ``image URL`` in round brackets ``( )``. You can add hover text after the link by placing the text in quotes ``" "``.
 
@@ -432,7 +441,7 @@ Math Formulas
 
   .. tab:: Using Inline LaTeX
 
-    From Mattermost v6.1, you can create formulas that display inline using LaTeX. Use the dollar sign ($) symbol at the beginning and end of each formula.
+    You can create formulas that display inline using LaTeX. Use the dollar sign ($) symbol at the beginning and end of each formula.
 
     .. note::
 

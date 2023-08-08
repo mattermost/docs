@@ -5,10 +5,10 @@ Search for messages
   :start-after: :nosearch:
 
 .. |product-list| image:: ../images/products_E82F.svg
-  :alt: Navigate between Channels, Playbooks, and Boards using the product menu icon.
+  :alt: Navigate between channels, playbooks, and Boards using the product menu icon.
 
 .. |search-icon| image:: ../images/magnify_F0349.svg
-  :alt: Navigate between Channels, Playbooks, and Boards using the product menu icon.
+  :alt: Navigate between channels, playbooks, and Boards using the product menu icon.
   
 .. |channel-info| image:: ../images/information-outline_F02FD.svg
   :alt: Use the Channel Info icon to access additional channel management options.
@@ -16,7 +16,7 @@ Search for messages
 .. |channel-files-icon| image:: ../images/file-text-outline_F09EE.svg
   :alt: Use the Channel Files icon to search for files attached to messages in a given channel.
 
-Use Mattermost search to find messages, replies, and the contents of files shared across all channels you're a member of in your team's conversation history. You can also search by `hashtags <#hashtags>`__ or perform more advanced searches using `search modifiers <#search-modifiers>`__
+Use Mattermost search to find messages, replies, and the contents of files shared across all channels you're a member of in your team's conversation history. You can also search by `hashtags <#hashtags>`__ or perform more advanced searches using `search modifiers <#search-modifiers>`__.
 
 Search for message and files 
 -----------------------------
@@ -39,7 +39,7 @@ Search for message and files
 
     **Search for files**
 
-    File content search is available in Mattermost Server from v5.35 and in Mattermost Cloud. Select the **Search** field, select **Files**, then type your search criteria. 
+    File content search is available in Mattermost Server and in Mattermost Cloud. Select the **Search** field, select **Files**, then type your search criteria. 
 
       .. image:: ../images/search-files.png
         :alt: Use the Search field to serach for files attached to messages.
@@ -86,11 +86,7 @@ Search for message and files
 Search modifiers
 ----------------
 
-You can apply search modifiers to any search to reduce the number of results returned. Select a search modifier to add it to the Search field. Supported modifiers are described below.
-
-.. note::
-
-  In Mattermost versions up to v6.0, your search results include messages from your current team only. From Mattermost v6.1, your search results include messages from all of your teams.
+You can apply search modifiers to any search to reduce the number of results returned. Select a search modifier to add it to the Search field. Supported modifiers are described below. Your search results include messages from all of your teams.
 
 .. image:: ../images/search-modifiers.png
 
@@ -161,8 +157,12 @@ To search for messages containing hashtags, select a hashtag in an existing post
   
   Hashtags don't link to channels. If you have a channel named “Marketing”, selecting a ``#marketing`` hashtag does not take you to the Marketing channel. To link to public channels, use the tilde ``~`` symbol followed by the channel name. For example ``~marketing``.
 
-Notes about all searches
-------------------------
+Use sockets for the database
+----------------------------
+
+
+Notes about performing Mattermost searches
+-------------------------------------------
 
 - Multiple-word searches return results that contain *all* of your search criteria.
 - Search modifiers can help narrow down searches. See the `search modifiers <#search-modifiers>`__ section for details.
@@ -176,30 +176,10 @@ Notes about all searches
 Technical notes about searching
 -------------------------------
 
-Searching Chinese, Korean, and Japanese
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+By default, Mattermost uses full text search support included in PostgreSQL. Select the **product menu** |product-list| then select **About Mattermost** to see which database you’re using.
 
-- The best experience for searching in Chinese, Korean, and Japanese is to use MySQL 5.7.6 or later with special configuration. See the `Chinese, Japanese and Korean Search documentation </install/i18n.html>`__ for details.
-- You can perform searches without this configuration by adding wildcards ``*`` to the end of search terms.
-
-Differences between PostgreSQL and MySQL search
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-By default, Mattermost uses full text search support included in MySQL and PostgreSQL. These databases have slightly different search behavior. Select the **product menu** |product-list| then select **About Mattermost** to see which database you’re using.
-
-For example, different databases have different “stop words” filtered out of search results. See `MySQL <https://dev.mysql.com/doc/refman/5.7/en/fulltext-stopwords.html>`__ or `PostgreSQL <https://www.postgresql.org/docs/10/textsearch-dictionaries.html#TEXTSEARCH-STOPWORDS>`__ database documentation for a full list.
-
-Other database-specific differences include:
-
-PostgreSQL:
-
+- Stop words are filtered out of search results. See `PostgreSQL <https://www.postgresql.org/docs/10/textsearch-dictionaries.html#TEXTSEARCH-STOPWORDS>`__ database documentation for a full list of applicable stop words.
 - URLs don’t return results.
 - Hashtags or recent mentions of usernames containing a dash don't return results.
 - Terms containing a dash return incorrect results since dashes are ignored in the search engine.
 - From Mattermost v7.1, search results respect the ``default_text_search_config`` value instead of being hardcoded to English. We recommend that Mattermost system admins review this value to ensure it's set correctly.
-
-MySQL:
-
-- Hashtags or recent mentions of usernames containing a dot don't return results.
-- Avoid using underline ``_`` symbol to `perform a wildcard search <#wildcards>`__. Use the asterisk ``*`` symbol instead.
-- Stop words that are excluded from search in MySQL include: ``"a", "about", "an", "are", "as", "at", "be", "by", "com", "de", "en", "for", "from", "how", "i", "in", "is", "it", "la", "of", "on", "or", "that", "the", "this", "to", "was", "what", "when", "where", "who", "will", "with", "und", "the", "www"``.

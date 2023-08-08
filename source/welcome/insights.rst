@@ -4,6 +4,10 @@ Insights
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
+.. important::
+
+  From Mattermost v8.0, Insights has been disabled for all new instances and for existing servers that upgrade to Mattermost v8.0.
+
 Insights offer you visibility into top activities by surfacing the most important events happening within each team within your Mattermost workspace. 
 
 From Mattermost v7.1, insights are available for all users using Mattermost in a web browser or the desktop app, except guests. Mobile support for insights is coming in a future release.

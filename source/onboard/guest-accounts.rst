@@ -33,7 +33,7 @@ Enable guest accounts
 
 1. Go to **System Console > Authentication > Guest Access**.
 2. Set **Enable Guest Access** to **true**.
-3. (Optional) Specify the **Whitelisted Guest Domains** that are acceptable for guest access. This allows the System Admin to set a list of approved guest domains.
+3. (Optional) Specify the **Whitelisted Guest Domains** that are acceptable for guest access. This allows the system admin to set a list of approved guest domains.
 4. (Optional) Set **Enforce Multi-factor Authentication** to **true**. If you're enforcing MFA for your users, you can optionally choose to also enforce MFA for your guest users.
  
 .. note::
@@ -45,14 +45,14 @@ Guest authentication
 
 Guests can access the Mattermost server via email invitation, and be authenticated using AD/LDAP or SAML 2.0.
 
-Before you proceed, ensure that the authentication method you wish to use is correctly configured on your server and enabled in Mattermost. For configuration steps and technical documentation, see `Active Directory/LDAP Setup </onboard/ad-ldap.html>`_ and `SAML Single-Sign-On </onboard/sso-saml.html>`__.
+Before you proceed, ensure that the authentication method you wish to use is correctly configured on your server and enabled in Mattermost. For configuration steps and technical documentation, see `Active Directory/LDAP setup </onboard/ad-ldap.html>`_ and `SAML Single-Sign-On </onboard/sso-saml.html>`__.
 
-Converting a member user to a guest will not change the channels they are in. However, they will be restricted from discovering additional channels and are unable to direct message/group message users outside of the channels they are in. They can be added to channels by System Admins and other roles that have the correct permissions to invite guests.
+Converting a member user to a guest won't change the channels they are in. However, they will be restricted from discovering additional channels and are unable to direct message/group message users outside of the channels they are in. They can be added to channels by system admins and other roles that have the correct permissions to invite guests.
 
 Invite guests to the Mattermost server via email
 -------------------------------------------------
 
-Guests can be invited into one or more Mattermost channels within a team by System Admins and other roles that have the correct permission to invite guests. A guest can be invited into channels on multiple teams.
+Guests can be invited into one or more Mattermost channels within a team by system admins and other roles that have the correct permission to invite guests. A guest can be invited into channels on multiple teams.
 
 .. note::
   
@@ -81,7 +81,7 @@ When enabled, the **Guest Filter** in Mattermost identifies external users whose
 
 If a Mattermost guest user has the ``guest`` role removed in the AD/LDAP system, the synchronization process will not automatically promote them to a member user role. This is done manually via **System Console > User Management**. If a member user has the **Guest Attribute** added, the synchronization processes will automatically demote the member user to the guest role.
 
-When a guest logs in without having any channels assigned to their account, they're advised to contact a Mattermost System Admin. 
+When a guest logs in without having any channels assigned to their account, they're advised to contact a Mattermost system admin. 
 
 Configure SAML 2.0 authentication
 ----------------------------------
@@ -136,11 +136,11 @@ When a guest has been removed from all channels within a team, and if they belon
 Promote and demote user roles
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-System Admins can demote a user from a member to a guest by updating the user's role in **System Console > User Management > Users**. Select the member, then select **Demote to Guest**. System Admins should also purge all of the demoted guest's sessions by selecting the guest user, then selecting **Revoke Sessions**.
+System admins can demote a user from a member to a guest by updating the user's role in **System Console > User Management > Users**. Select the member, then select **Demote to Guest**. System admins should also purge all of the demoted guest's sessions by selecting the guest user, then selecting **Revoke Sessions**.
 
 The demoted guest user retains their existing channel and team memberships, but is restricted from discovering public channels and collaborating with users outside of the channels they're in. This is useful if you're already collaborating with external contractors, and want to restrict their abilities within Mattermost.
 
-System Admins can also promote a guest to member by updating their role in **System Console > User Management > Users**. Select the guest, then select **Promote to Member**.
+System admins can also promote a guest to member by updating their role in **System Console > User Management > Users**. Select the guest, then select **Promote to Member**.
 
 .. note::
   
@@ -149,11 +149,9 @@ System Admins can also promote a guest to member by updating their role in **Sys
 Disable guest accounts
 -----------------------
 
-To disable the guest accounts feature, go to **System Console > Authentication > Guest Access**, then set **Enable Guest Access** to **False**. To deactivate individual guest accounts, go to **System Console > User Management > Users**. Select a user, then select **Deactivate**. You can re-activate individual Guest Accounts by selecting **Activate**.
+To disable the guest accounts feature, go to **System Console > Authentication > Guest Access**, then set **Enable Guest Access** to **False**. To deactivate individual guest accounts, go to **System Console > User Management > Users**. Select a user, then select **Deactivate**. You can re-activate individual guest accounts by selecting **Activate**.
 
-From Mattermost Server version 5.18 and in Mattermost Cloud:
-
-- Wwhen a single guest account is deactivated or the guest account feature is disabled, guests are marked as ``inactive``, are logged out of Mattermost, and all guest sessions are revoked. In Mattermost Server versions prior to 5.18, disabling the guest account feature leaves current guest accounts as active until they are manually deactivated.
+- When a single guest account is deactivated or the guest account feature is disabled, guests are marked as ``inactive``, are logged out of Mattermost, and all guest sessions are revoked. In Mattermost Server versions prior to 5.18, disabling the guest account feature leaves current guest accounts as active until they are manually deactivated.
 - If you're using AD/LDAP and the guest access setting is disabled, the ``guest`` filter and existing guest users in System Console are deactivated. Additionally, no new guests can be invited or added using the filter as an authentication method. If a previous guest's credentials match the user filter (the only filter which is active when guest access is disabled), they will be reactivated and promoted to a member user upon their next login.
 - Similarly, for SAML, when the guest access setting is disabled, the ``guest`` attribute and existing guest users in System Console are deactivated. Additionally, no new guests can be invited or added using the attribute as an authentication method. If a previous guest's credentials match the user attribute (the only attribute which is active when guest access is disabled), they will be reactivated and promoted to a member user upon their next login.
 
@@ -172,7 +170,7 @@ Similarly, for SAML, when guest access is re-enabled, the SAML ``guest`` attribu
 
 Previous guest users will be activated with the next synchronization. If their credentials still match the ``guest`` attribute, they will retain their guest status. If they no longer match the ``guest`` attribute but do match the ``user`` filter, they will be not be promoted to member user automatically on login - this must be done manually. If a previous guest was reactivated as a member user when guest access was disabled, and now are identified by the ``guest`` attribute once again, they will automatically be demoted to guest upon their login.
 
-Frequently Asked Questions
+Frequently asked questions
 ---------------------------
 
 How am I charged for guest accounts?

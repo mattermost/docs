@@ -4,55 +4,17 @@ mmctl command line tool
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-The mmctl is a CLI tool for the Mattermost server which is installed locally and uses the Mattermost API, but may also be used remotely. Authentication is done with either login credentials or an authentication token. This mmctl tool is included from Mattermost v6.0, and it replaces the `CLI </manage/command-line-tools.html>`__. The mmctl can currently be used alongside the Mattermost CLI tool. The Mattermost CLI tool will be deprecated in a future release.
+The mmctl is a CLI tool for the Mattermost server which is installed locally and uses the Mattermost API, but may also be used remotely. Authentication is done with either login credentials or an authentication token. This mmctl tool is included and replaces the `CLI </manage/command-line-tools.html>`__. The mmctl can currently be used alongside the Mattermost CLI tool. The Mattermost CLI tool will be deprecated in a future release.
 
 Being installed locally enables System Admins for both self-hosted and Cloud Mattermost instances to run CLI commands even in instances where there's no access to the server (e.g., via SSH).
 
 This feature was developed to a large extent by community contributions and we'd like to extend our gratitude to the contributors who have worked on this project. We are currently accepting pull requests for Help Wanted issues in the `mattermost-server <https://github.com/mattermost/mattermost-server/issues?q=is%3Aissue+is%3Aopen+label%3A%22Help+Wanted%22+label%3AArea%2Fmmctl>`__ repo. You can learn more about the unit test coverage campaign for mmctl in the `Unit testing mmctl commands <https://mattermost.com/blog/unit-testing-mmctl-commands/>`__ blog post.
 
-What's new in Mattermost v6.0?
-------------------------------
-
-The following new mmctl functionality is available from Mattermost v6.0:
-
-- Output streaming that includes a progress indicator, easy navigation via paged output, output to file support, and basic piped output search support.
-- Report mmctl issues to Mattermost using the link provided when unhandled errors and exceptions are encountered.
-- Interactive user confirmations.
-
-For more information on what's new in mmctl for Mattermost v6.0, see the `Mattermost v6.0 mmctl demo video <https://www.youtube.com/watch?v=zITNaPWP-80>`_.
-
-.. raw:: html
-
-   <div style="position: relative; padding-bottom: 50%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
-      <iframe src="https://www.youtube.com/embed/zITNaPWP-80" alt="Video on what's new in the mmctl command line tool from Mattermost v6.0" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 95%;"></iframe>
-   </div>
-
-What's changed in Mattermost v6.0?
-----------------------------------
-
-The following mmctl changes are available from Mattermost v6.0:
-
-- The inherited option ``config-path`` has changed to ``config``.
-- The option ``password`` has changed to ``password-file``.
-- Option names that contained underscores have been updated to use hyphens for consistency.
-
-For more information on what's changed in mmctl for Mattermost v6.0, see the `Mattermost v6.0 mmctl changes video <https://www.youtube.com/watch?v=hmbSfSeWo4Y>`_.
-
-.. raw:: html
-
-   <div style="position: relative; padding-bottom: 50%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
-      <iframe src="https://www.youtube.com/embed/hmbSfSeWo4Y" alt="Video for more information on what's changed in mmctl for Mattermost v6.0" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 95%;"></iframe>
-   </div>
-
-.. note::
-
-   You can continue to use existing options available from Mattermost v5.38 and earlier releases. However, we strongly recommend that customers upgrading to Mattermost v6.0 or later make use of the latest option syntax to take full advantage of the security and scaleability improvements available.
-
 mmctl usage notes
 -----------------
 
-- System Admins have two ways to run ``mmctl`` commands: by downloading ``mmctl`` from the repository, or by building it directly. See the `mmctl readme <https://github.com/mattermost/mmctl#install>`__ for details.
-- ``mmctl`` comes bundled with the Mattermost distribution, and is located in the ``bin`` folder of the installation, next to the ``CLI``.
+- System Admins have two ways to run ``mmctl`` commands: by downloading ``mmctl`` from the release URLs, which you can find in the :ref:`installation instructions <install-mmctl-options>`, or by building it directly, for which you can check the :ref:`build instructions <build-mmctl>` below. The source code lives in the `server/cmd/mmctl directory within the mattermost repository <https://github.com/mattermost/mattermost/tree/master/server/cmd/mmctl>`__.
+- ``mmctl`` also comes bundled with the Mattermost distribution, and is located in the ``bin`` folder of the installation, next to the ``CLI``.
 
   - We recommend you add the path to the Mattermost ``bin`` folder into your ``$PATH`` environment variable. This ensures that you can run mmctl commands locally regardless of your current directory location.
   - If the ``bin`` directory is not added to the ``$PATH`` environment variable, each time you use mmctl you must be in the ``bin`` directory to run mmctl commands, and the commands must be prefixed with ``./``. If you're working from a different directory, make sure you specify the full path to mmctl when running mmctl commands.
@@ -115,39 +77,62 @@ mmctl commands
 Install mmctl
 -------------
 
-The mmctl tool comes bundled with the Mattermost package from v6.0. For customers that want to setup it independently from the package, or for versions prior to v6.0, there are different methods available to install mmctl.
+The mmctl tool comes bundled with Mattermost package. For customers that want to setup it independently from the package, the following methods are available to install mmctl.
 
-**Using brew (Linux, macOS)**
+.. _install-mmctl-options:
 
-Use this option on Linux and macOS if you have Homebrew installed.
+.. tabs::
 
-.. code-block:: sh
+   .. tab:: Using release package (Linux, macOS, Windows)
 
-   brew install mmctl
+      Starting release ``v8.0.0`` of Mattermost, you can download the mmctl builds at their release URL: ``https://releases.mattermost.com/mmctl/${MATTERMOST_VERSION}/${PLATFORM}_${ARCHITECTURE}.tar``
 
-**Using go install (Linux, macOS, Windows)**
+      E.g. to download version ``v8.0.0`` of the mmctl amd64 build for linux, you can run the following:
 
-Use this option on Linux, macOS, and Windows if you have a ``go`` environment configured.
+      .. code-block:: sh
 
-To add the project in your `$GOPATH` run the following command:
+         curl -vfsSL -O https://releases.mattermost.com/mmctl/v8.0.0/linux_amd64.tar
 
-.. code-block:: sh
+      Supported platforms, and corresponding supported architectures, are: linux (amd64 and arm64), darwin (amd64 and arm64), windows (amd64 only).
 
-   go install github.com/mattermost/mmctl@latest
+      For versions older than ``v8.0.0``, you can instead visit the `mmctl releases page <https://github.com/mattermost/mmctl/releases>`__ and download the appropriate release for your OS, and install the binary.
 
-**Using release package (Linux, macOS, Windows)**
+   .. tab:: Using go install (Linux, macOS, Windows)
 
-Vist the `mmctl releases page <https://github.com/mattermost/mmctl/releases>`__ and download the appropriate release for your OS, and install the binary.
+      Use this option on Linux, macOS, and Windows if you have a ``go`` environment configured.
+
+      To build and install the mmctl binary in your `$GOPATH`, run the following command:
+
+      .. code-block:: sh
+
+         # For Mattermost versions >= v8.0.0
+         go install github.com/mattermost/mattermost/server/v8/cmd/mmctl@master
+
+         # For Mattermost versions < v8.0.0
+         go install github.com/mattermost/mmctl@latest
+
+   .. tab:: Use brew (Linux, macOS)
+
+      **NB: this is not an officially supported method.** This installation channel is managed by the community, please refer to the `homebrew/homebrew-core repo <https://github.com/Homebrew/homebrew-core>`__ for reporting issues.
+
+      Use this option on Linux and macOS if you have Homebrew installed.
+
+      .. code-block:: sh
+
+         brew install mmctl
 
 Build mmctl
 ------------
 
-The ``mmctl`` tool uses ``go`` modules to manage dependencies, so you need to have installed
-``go`` 1.11 or greater and compile the binary using:
+.. _build-mmctl:
+
+The ``mmctl`` tool uses ``go`` modules to manage dependencies, so you need to have installed ``go`` 1.19 or greater on your machine.
+
+After checking out the `mattermost repository <https://github.com/mattermost/mattermost>`__ locally to your machine, from the root directory of the project, you can compile the mmctl binary by running:
 
 .. code-block:: sh
 
-  make build
+  make -C server mmctl-build
 
 Local mode
 ----------
@@ -173,8 +158,6 @@ Using local mode
 
 You need to append ``--local`` to the command you want to use, or set the environment variable as ``MMCTL_LOCAL=true``. To use a socket file other than the default, you need to set the environment variable to ``MMCTL_LOCAL_SOCKET_PATH``. This file must match the `server configuration setting </configure/configuration-settings.html#enable-local-mode-socket-location>`_.
 
-In Mattermost versions prior to 5.26, only the commands ``config``, ``plugin``, and ``license`` are available.
-
 Running mmctl tests
 -------------------
 
@@ -183,24 +166,15 @@ Running mmctl tests
 
 mmctl has two types of tests: unit tests and end to end tests.
 
-To run the unit tests, you need to execute:
+To execute them, you can run the following commands from the mattermost project root directory:
 
 .. code-block:: sh
 
-  make test
+  # For the unit tests
+  make -C server test-mmctl-unit
 
-To run the end to end test suite, you need to have a Mattermost server instance running. Check the `Developer Setup guide <https://developers.mattermost.com/contribute/server/developer-setup/>`_ for instructions around how to configure a local test server instance.
-
-Once the development server is set up, cd into the ``mattermost-server directory``:
-
-- Start it with ``make run``. To confirm that the instance is running correctly, you can access the web interface at ``http://localhost:8065``.
-- Run ``make test-data`` to preload your server instance with initial seed data. Generated data such as users are typically used for logging, etc.
-
-Change your directory to ``mmctl`` and run the end to end test suite with:
-
-.. code-block:: sh
-
-  make test-e2e
+  # For the end to end tests
+  make -C server test-mmctl-e2e
 
 mmctl auth
 ----------
@@ -860,7 +834,7 @@ Manage channels.
       -  `mmctl channel create`_ - Create a channel
       -  `mmctl channel delete`_ - Delete a channel
       -  `mmctl channel list`_ - List all channels on specified teams
-      -  `mmctl channel make-private`_ - Set a channel's type to "private"
+      -  `mmctl channel make-private`_ - Set a channel's type to "private" (Deprecated)
       -  `mmctl channel modify`_ - Modify a channel's type (private/public)
       -  `mmctl channel move`_ - Move channels to the specified team
       -  `mmctl channel rename`_ - Rename a channel
@@ -1046,6 +1020,8 @@ List all Public, Private, and archived channels on specified teams. Archived cha
 
 mmctl channel make-private
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This command is deprecated in favour of using `mmctl channel modify </manage/mmctl-command-line-tool.html#mmctl-channel-modify>`__ and the ``--private`` flag instead.
 
 **Description**
 
@@ -2119,7 +2095,7 @@ Set the value of a config setting by its name in dot notation. Accepts multiple 
 
 .. code-block:: sh
 
-   mmctl config set SqlSettings.DriverName mysql
+   mmctl config set SqlSettings.DriverName postgres
    mmctl config set SqlSettings.DataSourceReplicas "replica1" "replica2"
 
 **Options**
@@ -2272,7 +2248,9 @@ Manage exports.
       -  `mmctl export create`_ - Create an export file
       -  `mmctl export delete`_ - Delete an export file
       -  `mmctl export download`_ - Download export files
-      -  `mmctl export job`_ - List and show export jobs
+      -  `mmctl export generate-presigned-url`_ - Generate a pre-signed URL for an export file
+      -  `mmctl export job`_ - List, show, and cancel export jobs
+      -  `mmctl export job cancel`_ - Cancel export job
       -  `mmctl export job list`_ - List export jobs
       -  `mmctl export job show`_ - Show export job
       -  `mmctl export list`_ - List export files
@@ -2300,8 +2278,8 @@ Create an export file.
 
 .. code-block:: sh
 
-   --attachments     Set to true to include file attachments in the export file.
-   -h, --help        help for create
+   --no-attachments     Omit to include file attachments in the export file.
+   -h, --help           help for create
 
 **Options inherited from parent commands**
 
@@ -2383,8 +2361,8 @@ Download export files.
 
 .. code-block:: sh
 
-   -h, --help     help for download
-   --resume       Set to true to resume an export download.
+   -h, --help          help for download
+   --num-retries int   Number of retries to resume a download. (Default is 5)
     
 **Options inherited from parent commands**
 
@@ -2399,20 +2377,92 @@ Download export files.
    --quiet                        prevent mmctl to generate output for the commands
    --strict                       will only run commands if the mmctl version matches the server one
    --suppress-warnings            disables printing warning messages
+
+mmctl export generate-presigned-url
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Description**
+
+Generate a pre-signed URL for an export file in cases where a Mattermost Cloud export is large and challenging to download from the Mattermost server.
+
+**Format**
+
+.. code-block:: sh
+
+  mmctl export generate-presigned-url [exportname] [flags]
+
+**Options**
+
+.. code-block:: sh
    
+  -h, --help   help for generate-presigned-url
+
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+   --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
+   --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+   --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
+   --json                         the output format will be in json format
+   --local                        allows communicating with the server through a unix socket
+   --quiet                        prevent mmctl to generate output for the commands
+   --strict                       will only run commands if the mmctl version matches the server one
+   --suppress-warnings            disables printing warning messages
+
 mmctl export job
 ~~~~~~~~~~~~~~~~
 
 **Description**
 
-List and show export jobs.
+List, show, and export jobs.
 
 **Options**
 
 .. code-block:: sh
 
-   -h, --help   help for job
+  -h, --help   help for job
 
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+   --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
+   --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+   --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
+   --json                         the output format will be in json format
+   --local                        allows communicating with the server through a unix socket
+   --quiet                        prevent mmctl to generate output for the commands
+   --strict                       will only run commands if the mmctl version matches the server one
+   --suppress-warnings            disables printing warning messages
+
+mmctl export job cancel
+~~~~~~~~~~~~~~~~~~~~~~~
+
+**Description**
+
+Cancel an export job.
+
+**Format**
+
+.. code-block:: sh
+
+  mmctl export job cancel [exportJobID] [flags]
+
+**Example**
+
+.. code-block:: sh
+
+   export job cancel o98rj3ur83dp5dppfyk5yk6osy
+
+**Options**
+
+.. code-block:: sh
+
+   -h, --help     help for download
+    
 **Options inherited from parent commands**
 
 .. code-block:: sh
@@ -3152,6 +3202,7 @@ Manage imports.
       -  `mmctl import list incomplete`_ - List incomplete import files uploads
       -  `mmctl import process`_ - Start an import job
       -  `mmctl import upload`_ - Upload import files
+      -  `mmctl import validate`_ - Validate an import file
 
 **Options**
 
@@ -3458,6 +3509,47 @@ Upload import files.
    --strict                       will only run commands if the mmctl version matches the server one
    --suppress-warnings            disables printing warning messages
 
+mmctl import validate
+~~~~~~~~~~~~~~~~~~~~~
+
+**Description**
+
+Validate an import file.
+
+**Format**
+
+.. code-block:: sh
+
+     mmctl import validate [filepath] [flags]
+
+**Examples**
+
+.. code-block:: sh
+
+     import validate import_file.zip --team myteam --team myotherteam
+
+**Options**
+
+.. code-block:: sh
+
+      -h, --help              help for validate
+      --ignore-attachments    Don't check if the attached files are present in the archive
+      --team stringArray      Predefined team[s] to assume as already present on the destination server. Implies ``--check-missing-teams``. The flag can be repeated.
+
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+   --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
+   --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+   --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
+   --json                         the output format will be in json format
+   --local                        allows communicating with the server through a unix socket
+   --quiet                        prevent mmctl to generate output for the commands
+   --strict                       will only run commands if the mmctl version matches the server one
+   --suppress-warnings            disables printing warning messages
+
 mmctl integrity
 ---------------
 
@@ -3600,6 +3692,7 @@ Manage the Mattermost license.
    Child Commands
       -  `mmctl license remove`_ - Remove the current license
       -  `mmctl license upload`_ - Upload a new license
+      -  `mmctl license upload-string`_ - Upload a license from a string
 
 **Options**
 
@@ -3664,6 +3757,45 @@ Upload a license and replace the current license.
 .. code-block:: sh
 
    mmctl license upload /path/to/license/mylicensefile.mattermost-license
+
+**Options**
+
+.. code-block:: sh
+
+   -h, --help   help for upload
+
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+   --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
+   --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+   --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
+   --json                         the output format will be in json format
+   --local                        allows communicating with the server through a unix socket
+   --quiet                        prevent mmctl to generate output for the commands
+   --strict                       will only run commands if the mmctl version matches the server one
+   --suppress-warnings            disables printing warning messages
+
+mmctl license upload-string
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Description**
+
+Upload a license from a string. Replaces the current license.
+
+**Format**
+
+.. code-block:: sh
+
+   mmctl license upload-string [license] [flags]
+
+**Examples**
+
+.. code-block:: sh
+
+   license upload-string "mylicensestring"
 
 **Options**
 
@@ -6007,6 +6139,33 @@ Migrate accounts from one authentication provider to another. For example, you c
 .. code-block:: sh
 
    mmctl user migrate-auth [from_auth] [to_auth] [migration-options] [flags]
+
+**Arguments**
+
+  **from_auth:**
+      The authentication service to migrate users accounts from.
+      Supported options: email, gitlab, google, ldap, office365, saml.
+
+  **to_auth:**
+      The authentication service to migrate users to.
+      Supported options: ldap, saml.
+
+  **migration-options (ldap):**
+      match_field:
+         The field that is guaranteed to be the same in both authentication services. For example, if the users emails are consistent set to email.
+         Supported options: email, username.
+
+  **migration-options (saml):**
+      **users_file:**
+         The path of a json file with the usernames and emails of all users to migrate to SAML. The username and email must be the same that the SAML service provider store. And the email must match with the email in mattermost database.
+
+      .. code-block:: javascript
+
+         Example json content:
+         {
+            "usr1@email.com": "usr.one",
+            "usr2@email.com": "usr.two"
+         }
 
 **Examples**
 

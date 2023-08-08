@@ -86,6 +86,10 @@ redirects = {
 	"https://docs.mattermost.com/about/faq-license.html#what-are-mattermost-s-policies-around-licensing-terms-of-use-and-privacy",
 "about/faq-mattermost-source-available-license.html":
 	"https://docs.mattermost.com/about/faq-license.html#source-available-licensing",
+"about/mattermost-customizable-chatgpt-bot-framework.html":
+        "https://github.com/mattermost/openops#readme",
+"about/mattermost-customizable-ai-bot-framework.html":
+        "https://github.com/mattermost/openops#readme",
 
 # Administration redirects
 "administration/announcement-banner.html":
@@ -106,6 +110,8 @@ redirects = {
         "https://docs.mattermost.com/install/self-managed-changelog.html#id41",
 "administration/command-line-tools.html":
         "https://docs.mattermost.com/manage/command-line-tools.html",
+"administration/command-line-tools.html#mattermost-user-delete":
+	"https://docs.mattermost.com/manage/command-line-tools.html#mattermost-user-delete",
 "administration/command-line-tools.html#mattermost-channel-restore":
         "https://docs.mattermost.com/manage/command-line-tools.html#mattermost-channel-restore",
 "administration/command-line-tools.html#mattermost-permissions-reset":
@@ -184,6 +190,8 @@ redirects = {
         "https://docs.mattermost.com/manage/mmctl-cli-tool.html",
 "administration/mmctl-cli-tool.html#mmctl-channel-modify":
         "https://docs.mattermost.com/manage/command-line-tools.html#mattermost-channel-modify",
+"administration/mmctl-cli-tool.html#mmctl-user-reset-password":
+	"https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-user-reset-password",
 "administration/mmctl-cli-tool.html":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html",
 "administration/mobile-changelog.html":
@@ -357,7 +365,7 @@ redirects = {
 "cloud/cloud-reporting.html":
 	"https://docs.mattermost.com/manage/statistics.html",
 "cloud/cloud-administration/data-retention-policy.html":
-        "https://docs.mattermost.com/comply/cloud-data-retention-policy.html",
+        "https://docs.mattermost.com/comply/data-retention-policy.html",
 "cloud/cloud-administration/saml-technical.html":
 	"https://docs.mattermost.com/onboard/cloud-sso-saml-technical.html",
 "cloud/cloud-administration/sso-openid-connect.html":
@@ -384,6 +392,8 @@ redirects = {
 # Compliance redirects
 "comply/compliance-reporting-oversight":
         "https://docs.mattermost.com/comply/compliance-monitoring.html",
+"comply/cloud-data-retention-policy.html":
+	"https://docs.mattermost.com/comply/data-retention-policy.html",
 
 # Configure redirects
 "configure/config-ssl-http2-apache2.html":
@@ -1315,12 +1325,24 @@ redirects = {
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#export-output-directory",
 "configure/experimental-configuration-settings.html#export-settings-default-retention-days":
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#export-retention-days",
+"configure/experimental-configuration-settings.html#allow-synchronized-drafts":
+        "https://docs.mattermost.com/configure/site-configuration-settings.html#enable-server-syncing-of-message-drafts",
 "configure/authentication-configuration-settings.html#gitlab":
 	"https://docs.mattermost.com/configure/authentication-configuration-settings.html#gitlab-oauth-2-0-settings",
 "configure/authentication-configuration-settings.html#google":
 	"https://docs.mattermost.com/configure/authentication-configuration-settings.html#google-oauth-2-0-settings",
 "configure/authentication-configuration-settings.html#office-365":
 	"https://docs.mattermost.com/configure/authentication-configuration-settings.html#office-365-oauth-2-0-settings",
+"configure/authentication-configuration-settings.html#gitlab-settings":
+	"https://docs.mattermost.com/configure/authentication-configuration-settings.html#gitlab-openid-settings",
+"configure/authentication-configuration-settings.html#google-settings":
+	"https://docs.mattermost.com/configure/authentication-configuration-settings.html#google-openid-settings",
+"configure/authentication-configuration-settings.html#office-365-settings":
+	"https://docs.mattermost.com/configure/authentication-configuration-settings.html#office-365-openid-settings",
+"configure/authentication-configuration-settings.html#openid-connect-other":
+	"https://docs.mattermost.com/configure/authentication-configuration-settings.html#openid-connect-other-settings",
+"configure/experimental-configuration-settings.html#enable-app-bar":
+        "https://docs.mattermost.com/configure/experimental-configuration-settings.html#disable-apps-bar",
 
 # Deploy redirects
 "deploy/mobile-apps-faq.html":
@@ -1760,7 +1782,7 @@ redirects = {
 "integrations/integration-faq.html":
         "https://docs.mattermost.com/about/faq-integrations.html",
 "integrations/jira.html":
-        "https://mattermost.gitbook.io/plugin-jira/",
+        "https://github.com/mattermost/mattermost-plugin-jira#readme",
 "integrations/net-promoter-score.html":
         "https://docs.mattermost.com/manage/user-satisfaction-surveys.html",
 "integrations/webhook.html":
@@ -1768,7 +1790,7 @@ redirects = {
 "integrations/zapier.html":
         "https://developers.mattermost.com/integrate/admin-guide/admin-zapier-integration/",
 "integrations/zoom.html":
-        "https://mattermost.gitbook.io/plugin-zoom/",
+        "https://github.com/mattermost/mattermost-plugin-zoom/blob/master/README.md/",
 
 # Manage redirects
 "manage/scripts.html":
@@ -1917,10 +1939,14 @@ redirects = {
         "https://docs.mattermost.com/channels/channels-settings.html#advanced",
 "messaging/manage-profile-settings.html":
         "https://docs.mattermost.com/welcome/manage-your-profile.html",
+"messaging/manage-profile-settings.html#multi-factor-authentication":
+	"https://docs.mattermost.com/welcome/manage-your-profile.html#security",	
 "messaging/manage-profile-settings.html#profile":
         "https://docs.mattermost.com/welcome/manage-your-profile.html#profile",
 "messaging/manage-profile-settings.html#security":
         "https://docs.mattermost.com/welcome/manage-your-profile.html#security",
+"messaging/manage-profile-settings.html#multi-factor-authentication":
+	"https://docs.mattermost.com/welcome/manage-your-profile.html#security",
 "messaging/managing-account-settings.html":
 	"https://docs.mattermost.com/channels/channels-settings.html",
 "messaging/managing-channels.html":
@@ -2360,7 +2386,7 @@ master_doc = "index"
 
 # General information about the project.
 project = "Mattermost"
-copyright = "2015-2022 Mattermost"
+copyright = "2015-2023 Mattermost"
 author = "Mattermost"
 
 # The version info for the project you're documenting, acts as replacement for
@@ -2368,9 +2394,9 @@ author = "Mattermost"
 # built documents.
 #
 # The short X.Y version.
-# version = '7.8'
+# version = '8.0'
 # The full version, including alpha/beta/rc tags.
-# release = '7.8'
+# release = '8.0'
 
 # The language for content autogenerated by Sphinx. Refer to documentation
 # for a list of supported languages.
@@ -2484,12 +2510,12 @@ html_static_path = ["_static"]
 # A list of CSS files. The entry must be a filename string or a tuple containing the filename string and the attributes
 # dictionary. The filename must be relative to the html_static_path, or a full URI with scheme like
 # https://example.org/style.css. The attributes is used for attributes of <link> tag. It defaults to an empty list.
-html_css_files = ["mytheme.css?v=v7", "css/compass-icons.css"]
+html_css_files = ["mytheme.css?version=v46", "css/compass-icons.css"]
 
 # A list of JavaScript filenames. The entry must be a filename string or a tuple containing the filename string and the
 # attributes dictionary. The filename must be relative to the html_static_path, or a full URI with scheme like
 # https://example.org/script.js. The attributes is used for attributes of <script> tag. It defaults to an empty list.
-html_js_files = ["myscript.js"]
+html_js_files = ["myscript.js?version=v16"]
 
 # The name of an image file, relative to the configuration directory, to use as favicon of the docs.  This file should
 # be a Windows icon file (.ico) being 16x16 or 32x32 pixels in size.

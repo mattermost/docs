@@ -41,7 +41,7 @@ Configure AD/LDAP login
      - Create a new workspace and create an account using email and password, which is automatically assigned the **System Administrator** role since it is the first account created. You may also assign the role to another account.
 
 2. **Configure AD/LDAP.**
-     - Go to **System Console > Authentication > AD/LDAP** and fill in AD/LDAP settings based on the `configuration settings documentation </configure/configuration-settings.html#ad-ldap>`__.
+     - Go to **System Console > Authentication > AD/LDAP** and fill in AD/LDAP settings based on the `configuration settings documentation </configure/authentication-configuration-settings.html#ad-ldap>`__.
 
 3. **Confirm that AD/LDAP sign-on is enabled.**
      - After AD/LDAP has been enabled, confirm that users can log in using AD/LDAP credentials.
@@ -75,10 +75,12 @@ To configure AD/LDAP synchronization with AD/LDAP sign-in:
 
 2. Scroll down to **Synchronization Interval (minutes)** to specify how often Mattermost accounts synchronize attributes with AD/LDAP. The default setting is 60 minutes. The profile picture attribute is only synchronized when the user logs in.
      - If you want to synchronize immediately after disabling an account, use the **AD/LDAP Synchronize Now** button in **System Console > AD/LDAP**.
-     - To configure AD/LDAP synchronization with SAML sign-in, see the `SAML documentation </onboard/ad-ldap.html>`__.
+     - To configure AD/LDAP synchronization with SAML sign-in, see the `SAML documentation <https://docs.mattermost.com/onboard/sso-saml.html>`__.
 
 .. note::
-   Make sure that at least one LDAP user is in Mattermost or the sync will not complete.
+   - Make sure that at least one LDAP user is in Mattermost or the sync will not complete.
+   - Synchronization with AD/LDAP settings in the System Console can be used to determine the connectivity and availability of arbitrary hosts. System admins concerned about this can use custom admin roles to limit access to modifying these settings. See the `system admin roles </onboard/system-admin-roles.html#edit-privileges-of-system-admin-roles-advanced>`__ documentation for details. 
+
 
 Configure AD/LDAP sign-in using filters
 ----------------------------------------

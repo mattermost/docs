@@ -23,8 +23,7 @@ Start or reply to threads
 
 .. tip:: 
     
-    - When replying to a thread in a web browser or the desktop app, you can also select the reply count if a thread already exists.
-    - Select anywhere on a message in a channel in the center pane to view it, or reply to it.
+    - When replying to a thread in a web browser or the desktop app, you can also select the reply count if a thread already exists, and you can select anywhere on a message in a channel in the center pane to view it or reply to it.
     - In channels, a dot next to the thread participants indicates there are unread replies. You'll only see unreads for threads you're following.
 
 .. image:: ../images/crt-new-unread-threads.jpg
@@ -33,19 +32,35 @@ Start or reply to threads
 Follow threads and messages
 ---------------------------
 
-You can follow particular messages and threads so that any reply activity triggers `notifications </channels/channels-settings.html#notifications>`__. Follow or unfollow any thread, at any time, by toggling the thread’s **Follow/Following** indicator, or from the **More Actions** |more-actions-icon| icon.
+You'll automatically follow every thread you participate or are mentioned in. You can manually follow particular messages and threads so that any reply activity triggers `notifications </channels/channels-settings.html#notifications>`__. Follow or unfollow any thread, at any time.
 
 .. image:: ../images/crt-following-thread.png
    :alt: Follow threads to stay updated on replies to messages.
 
-You'll automatically follow every thread you participate or are mentioned in. If you’re no longer interested in a or message thread, you can unfollow it to stop receiving notifications. Viewing a thread without responding to it doesn’t automatically follow that thread.
+.. tabs::
 
-.. image:: ../images/crt-following-thread.jpg
-   :alt: Follow, unfollow, and mark threads as unread from the More Actions icon.
-   
+  .. tab:: Desktop
+
+    Toggle the thread’s **Follow/Following** indicator, or select **Follow thread** from the **More Actions** |more-actions-icon| icon. 
+    
+    **Unfollow threads**
+    
+    If you’re no longer interested in a or message thread, unfollow it to stop receiving notifications. Viewing a thread without responding to it doesn’t automatically follow that thread.
+
+    .. image:: ../images/crt-following-thread.jpg
+      :alt: Follow, unfollow, and mark threads as unread from the More Actions icon.
+
+  .. tab:: Mobile
+
+    Long-press on a message to access message options, then tap **Follow Thread**. 
+    
+    **Unfollow threads**
+    
+    If you’re no longer interested in a or message thread, unfollow it to stop receiving notifications. Viewing a thread without responding to it doesn’t automatically follow that thread.
+
 .. tip::
   - Follow messages with no replies from the **More Actions** |more-actions-icon| icon to be notified if someone replies to the message later based on your notification preferences.
-  - Use keyboard arrow keys to navigate threads in the **Threads** view.
+  - You can also use keyboard arrow keys to navigate threads in the **Threads** view.
 
 View all threads
 ----------------
@@ -86,4 +101,3 @@ In particular, please be aware of these important known issues and risks:
   - You may experience lag in your desktop or web client if you're following many threads or opening threads with many replies.
   - Server performance for instances with many users and posts may be impacted. 
   - You should expect to see more unread channels and notifications on your mobile device than you'll see on your desktop instance of Mattermost. This is expected when running a mobile app release older than v1.46.
-  - For a comprehensive list of known issues, and to see our work queue in priority order, check out our `Kanban board <https://mattermost.atlassian.net/secure/RapidBoard.jspa?rapidView=91&quickFilter=499>`__.

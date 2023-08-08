@@ -104,7 +104,7 @@ Channel moderation
 
 *Available in legacy Enterprise Edition E20*
 
-From Mattermost v5.22, the channel moderation settings allow Admins to restrict actions within specific channels. These actions include:
+Channel moderation settings allow Admins to restrict actions within specific channels. These actions include:
 
 - **Make channel read-only:** The ability for Admins to turn off posting in specified channels.
 - **Restrict reactions:** Turn off the ability for members and guests to post reactions.

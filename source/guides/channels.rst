@@ -79,6 +79,7 @@ Work with messages
    Forward messages </channels/forward-messages>
    Share links to messages </channels/share-links>
    Save and pin messages </channels/save-pin-messages>
+   Set message reminders </channels/message-reminders>
    Search for messages </channels/search-for-messages>
 
 * :doc:`Send messages </channels/send-messages>` - Send messages to other Mattermost users.
@@ -93,6 +94,7 @@ Work with messages
 * :doc:`Forward messages </channels/forward-messages>` - Quickly and easily forward messages with previews.
 * :doc:`Share links to messages </channels/share-links>` - Share links to messages across channels.
 * :doc:`Save and pin messages </channels/save-pin-messages>` - Mark useful messages for easy retrieval in the future.
+* :doc:`Set message reminders </channels/message-reminders>` - Set reminders to follow up on messages.
 * :doc:`Search for messages </channels/search-for-messages>` - Use search to find messages, replies, and contents of files across Mattermost Channels.
 
 Keyboard accessibility
@@ -118,5 +120,7 @@ Extend Channels functionality
    :hidden:
 
    Extend functionality with integrations </channels/extend-channels-functionality>
+   Collaborate using Mattermost for MS Teams </channels/collaborate-using-mattermost-for-microsoft-teams>
    
 * :doc:`Extend Channels with integrations </channels/extend-channels-functionality>` - Find open source integrations to common tools in the Mattermost Marketplace.
+* :doc:`Collaborate using Mattermost for MS Teams </channels/collaborate-using-mattermost-for-microsoft-teams>` - Learn how to collaborate with colleagues across both Mattermost and Microsoft Teams at the same time.

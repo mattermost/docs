@@ -18,7 +18,7 @@ Mattermost offers a host of features to help keep your private cloud communicati
 Private Cloud deployment with secure mobile apps
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- Mattermost can run entirely behind your firewall as a single Linux binary, as a Docker container, or on your Kubernetes cluster with MySQL or PostgreSQL as database. Remote access can be enabled through the use of `VPN clients on PC and mobile devices </deploy/deployment-overview.html#behind-a-vpn>`__ so that Mattermost can be used outside your private network.
+- Mattermost can run entirely behind your firewall as a single Linux binary, as a Docker container, or on your Kubernetes cluster with a PostgreSQL database. Remote access can be enabled through the use of `VPN clients on PC and mobile devices </deploy/deployment-overview.html#behind-a-vpn>`__ so that Mattermost can be used outside your private network.
 - Mattermost mobile apps can be deployed to an `internal Enterprise App Store </deploy/deploy-mobile-apps-using-emm-provider.html>`__ by using source code available for Mattermost mobile apps and push notification service. 
 - Optionally, the provided Mattermost Mobile Apps can be used when the Mattermost server is reachable through the internet on port 443. In this configuration, you have the option of using compiled `iOS and Android applications in iTunes and Google Play provided by Mattermost, Inc. </deploy/mobile-hpns.html>`__ (Mattermost Enterprise and Mattermost Professional).
 - User sessions across web, PC, and mobile can be `remotely revoked through profile settings </messaging/manage-profile-settings.html#view-and-logout-of-active-sessions>`__, or via the System Console by deactivating accounts.
@@ -34,7 +34,13 @@ Centralized security and administration
 Transmission security
 ~~~~~~~~~~~~~~~~~~~~~~
 
-- Mattermost supports TLS encryption using AES-256 with 2048-bit RSA on all data transmissions between Mattermost client applications and the Mattermost server across both LAN and internet.
+- Mattermost supports TLS encryption using AES-256 with 2048-bit RSA between Mattermost client applications and the Mattermost server across both LAN and internet.
+- Connections to calls are secured with a combination of:
+
+  - TLS: the existing WebSocket channel is used to secure the signaling path.
+  - DTLS v1.2 (mandatory): used for initial key exchange. Supports ``TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256`` and ``TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA`` algorithms.
+  - SRTP (mandatory): used to encrypt all media packets (i.e. those containing voice or screen share). Supports ``AEAD_AES_128_GCM`` and ``AES128_CM_HMAC_SHA1_80`` algorithms. 
+
 - Connections to Active Directory/LDAP can be optionally secured with TLS or stunnel (Mattermost Enterprise and Mattermost Professional).
 - Encryption-at-rest is available for messages via hardware and software disk encryption solutions applied to the Mattermost database, which resides on its own server within your infrastructure. To enable end user search and compliance reporting of message histories, Mattermost does not offer encryption within the database.
 - Encryption-at-rest is available for files stored via hardware and software disk encryption solutions applied to the server used for local storage or storage via MinIO.

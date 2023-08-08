@@ -1,40 +1,35 @@
 Cloud subscriptions
 ===================
 
-From 2 February 2023, Mattermost Cloud subscriptions are switching from a monthly subscription to an annual subscription. However, existing Cloud Professional monthly customers can maintain their monthly subscription.
+From 2 February 2023, Mattermost Cloud subscriptions are switching from a monthly subscription to an annual subscription.
 
 Buy a Cloud subscription
 ------------------------
 
-Mattermost Cloud can be used free forever with Mattermost Free.
-
-You can also start a free, 30-day trial of Mattermost Enterprise to explore additional features. During or after the trial, you can choose to upgrade to Mattermost Professional in-product or Enterprise by `contacting sales <https://mattermost.com/contact-sales/>`__.
-
-For Professional, follow the steps below:
-
-1. Select **View Plans**.
+1. Select **View Plans** at the top of the Mattermost window.
 2. Select Professional by clicking **Upgrade**.
 3. Provide your credit card details.
 
 .. note::
-  
-  Your credit card will be verified and you'll be charged immediately.
-  
+
+  - Your credit card will be verified and you'll be charged immediately.
+  - A minimum of ten seats is required.
+
 4. Click **Upgrade** to confirm.
 
-If you choose not to upgrade at the end of your 30-day trial, your subscription will revert to Mattermost Free.
+To upgrade to Mattermost Enterprise, `contact sales <https://mattermost.com/contact-sales/>`__.
 
 View subscription information
 -----------------------------
 
-The subscription screen outlines the details of your Mattermost Cloud account, including the annual cost per user and the number of users currently registered in your workspace. You can also find a summary of your last invoice in the same page, and any `workspace limits </onboard/mattermost-limits.html>`__ set for your subscription.
+When you've purchased a subscription, you can view the details of your Mattermost Cloud account, including the annual cost per user and the number of users currently registered in your workspace. You can also find a summary of your last invoice in the same page.
 
 Billing period
 --------------
 
-After you begin your Mattermost Cloud paid subscription, your credit card is billed immediately. Your subscription automatically renews annually, however you can opt-out of auto-renewal.
+When you begin your Mattermost Cloud subscription, your credit card is billed immediately. Your subscription automatically renews annually, however you can opt-out of auto-renewal.
 
-If there's a payment failure, your invoice will show *Payment Failed*. Please review the accuracy of your credit card information in **Payment Information**. Unresolved failed payments may result in a delinquency and an interruption to your subscription.
+If there's a payment failure, your invoice will show **Payment Failed**. Please review the accuracy of your credit card information in **Payment Information**. Unresolved failed payments may result in a delinquency and an interruption to your subscription.
 
 Payment information
 ~~~~~~~~~~~~~~~~~~~
@@ -58,9 +53,9 @@ You'll be notified immediately of failed payments both in-product, with a banner
 If you have not paid or resolved the failed payment after 90 days, your workspace will be downgraded to Mattermost Free and subject to the data limits of that plan. If there is no activity on your workspace 60 days after the downgrade, your workspace will be deleted.
 
 Add more users to your Cloud Professional subscription
------------------------------------
+------------------------------------------------------
 
-When you subscribe to an annual plan with Mattermost, you can add users to your workspace anytime. You may incur retroactive charges during renewal or at the end of your annual subscriptionon. You can view any upcoming charges in **System Console > Subscriptions**.
+You can add users to your workspace anytime. You may incur retroactive charges during renewal or at the end of your annual subscription. You can view any upcoming charges in **System Console > Subscriptions**.
 
 - If the number of users is less than 10% of initial number of users when you subscribed to your annual plan, you won't be billed for the cost of additional users retroactively
 - If the number of users is greater than 10% of the initial number of users when you subscribed to your annual plan, you will be billed the cost of additional users, pro-rated during renewal or at the end of your annual subcsription.
@@ -70,7 +65,6 @@ Example:
 - You subscribed to Cloud Professional on January 2023 for 100 users. Throughout your subscription term, you add 8 users. You will not be retroactively billed for the cost of additional users.
 - You subscribed to Cloud Professional on January 2023 for 100 users. On March 2023, you add 5 users. On September 2023, you add another 10 users for a total of 15 users during your subscription term. You will be billed pro-rated for the cost of additional users incurred in March and September.
 
-
 Renew your subscription
 -----------------------
 
@@ -78,13 +72,6 @@ Monthly Cloud annual subscriptions renew automatically.
 
 Frequently asked questions
 ---------------------------
-
-What happens when my 30-day Mattermost Enterprise trial period ends?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-At the end of the 30-day trial, you can opt to purchase an annual subscription to Mattermost Professional via the prompts provided in Mattermost. If you wish to opt for Mattermost Enterprise, `contact sales <https://mattermost.com/contact-sales/>`__. 
-
-If you choose not to continue, your subscription will revert to Mattermost Free and you will not be billed. In this case, Mattermost Enterprise features will no longer be available to use. Any data you may have that exceeds the `data limits </onboard/mattermost-limits.html>`_ for Mattermost Free will be auto-archived.
 
 How am I billed for my annual Cloud subscription?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -96,28 +83,18 @@ What happens if I decide to buy a subscription to Mattermost Enterprise during m
 
 Your plan immediately changes to the plan you've upgraded to. You will be invoiced as per your agreement with our sales team.
 
-How do I change my subscription to Cloud Free?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-If you're on the Cloud Enterprise plan and want to move to another plan, please contact your Customer Success Manager or our `Support team <mailto:support@mattermost.com>`_.
-
-If you're on Cloud Professional and want to move to Cloud Free:
-
-1. Open **System Console > Billing & Account > Subscription**.
-2. Select **View Plans**.
-3. Select **Downgrade**.
-
 How do I cancel my subscription? 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To cancel your subscription, please `contact us <https://customers.mattermost.com/cloud/contact-us>`__.
+If you're a monthly Mattermost Cloud Professional, or Mattermost Cloud Free customer, you can cancel your subscription through the System Console. Please note that canceling your Mattermost Cloud subscription will **permanently delete** your Mattermost Cloud workspace.
 
-I'm no longer being billed for my Cloud Starter ($149/year) plan. Why is that?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1. Navigate to **System Console > Billing & Account > Subscription**.
+2. Select **Cancel Subscription** near the bottom of the page.
+3. (Optional) We'd appreciate your feedback about your experience and any areas we can improve on.
 
-If you created a Cloud Starter ($149/year) plan prior to June 15, 2022, your plan is now free with no data limits and is called Cloud Free. You have the option to `upgrade to Professional or Enterprise <https://mattermost.com/pricing/>`__, or continue using Cloud Free.
+Once confirmed, your subscription will be canceled, and your Mattermost Cloud workspace will be **permanently deleted**
 
-Cloud Free workspaces created on or after June 15, 2022 are free forever with certain `workspace limits </onboard/mattermost-limits.html#workspace-limits>`__ such as message and file history.
+If you have an annual subscription to Mattermost Cloud Professional, or Mattermost Cloud Enterprise and you wish to cancel, please `contact us <https://customers.mattermost.com/cloud/contact-us>`__.
 
 When will support for other regions be available?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -169,12 +146,6 @@ Mattermost Cloud provides `three offerings <https://mattermost.com/pricing/>`_: 
 
 These offerings are deployed in the following ways:
 
- - **Freemium**: Single application layer, shared infrastructure, shared network, starter group ring.
  - **Professional**: Single application layer, shared infrastructure, shared network, professional group ring.
  - **Enterprise**: Single application layer, shared infrastructure, shared network, enterprise group ring.
  - **Enterprise plus dedicated add-on**: Single application layer, dedicated network via VPC (Virtual Private Cloud), dedicated infrastructure, enterprise group ring.
-
-Can I cancel and delete my Cloud workspace?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Yes. Please contact our Mattermost `Support team <mailto:support@mattermost.com>`_ with the subject **Mattermost Cloud Workspace Deletion Request** for assistance.

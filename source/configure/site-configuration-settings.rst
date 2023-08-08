@@ -71,7 +71,7 @@ Site description
 Enable custom branding
 ~~~~~~~~~~~~~~~~~~~~~~
 
-*This feature was moved to Team Edition in Mattermost v5.0, released June 16th, 2018. Prior to v5.0, this feature is available in legacy Enterprise Edition E10 and E20.*
+*This feature is available in legacy Enterprise Edition E10 and E20.*
 
 +--------------------------------------------------------------------------------+-----------------------------------------------------------------------+
 | - **true**: Enables the display of a custom image and text on the login page   | - System Config path: **Site Configuration > Customization**          |
@@ -173,7 +173,7 @@ Terms of Use link
 |                                                                                                                                                                                                                                                                                                                                                                                                                                                 |                                                                    |
 | String input. Default is ``https://about.mattermost.com/default-terms/``.                                                                                                                                                                                                                                                                                                                                                                       |                                                                    |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------+
-| **Note**: From Mattermost v5.17, this setting doesn't change the **Terms of Use** link in the **About Mattermost** window.                                                                                                                                                                                                                                                                                                                                                                                           |
+| **Note**: This setting doesn't change the **Terms of Use** link in the **About Mattermost** window.                                                                                                                                                                                                                                                                                                                                                                                                                  |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: custom-privacypolicylink
@@ -196,7 +196,7 @@ Privacy Policy link
 |                                                                                                                                                                                                    | - ``config.json`` setting: ``.SupportSettings.PrivacyPolicyLink`` |
 | String input. Default is ``https://about.mattermost.com/default-privacy-policy/``.                                                                                                                 | - Environment variable: ``MM_SUPPORTSETTINGS_PRIVACYPOLICYLINK``  |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
-| **Note**: From Mattermost v5.17, this setting does not change the **Privacy Policy** link in the **About Mattermost** window.                                                                                                                                          |
+| **Note**: This setting does not change the **Privacy Policy** link in the **About Mattermost** window.                                                                                                                                                                 |
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: custom-aboutlink
@@ -1076,20 +1076,98 @@ Collapsed reply threads
 | - **Disabled**: Users cannot enable Collapsed Reply Threads. ``config.json`` setting: ``"disabled"``                                                                                                                                                                                                                                                                 |                                                                    |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------+
 
+.. config:setting:: posts-messagepriority
+  :displayname: Message priority (Posts)
+  :systemconsole: Site Configuration > Posts
+  :configjson: .ServiceSettings.PostPriority
+  :environment: MM_SERVICESETTINGS_POSTPRIORITY
+
+  - **true**: **(Default)** Enables message priority for all users.
+  - **false**: Disables the ability to set message priority and request acknowlegements.
+
 Message priority
 ~~~~~~~~~~~~~~~~~
 
 +-----------------------------------------------------------------------------+------------------------------------------------------------------------+
 | - **true**: **(Default)** Enables message priority for all users which      | - System Config path: **Site Configuration > Posts**                   |
-|   enables them to set a visual indiciator for important or urgent root      | | - ``config.json`` setting: ``.ServiceSettings.PostPriority: true``   |
+|   enables them to set a visual indiciator for important or urgent root      | - ``config.json`` setting: ``.ServiceSettings.PostPriority: true``     |
 |   messages.                                                                 | - Environment variable: ``MM_SERVICESETTINGS_POSTPRIORITY``            |
 | - **false**: Disables the ability to set message priority and request       |                                                                        |
 |   acknowledgements.                                                         |                                                                        |
 +-----------------------------------------------------------------------------+------------------------------------------------------------------------+
 | **Note**: `Mattermost Professional or Enterprise <https://mattermost.com/pricing>`__ customers can additionally request message acknowledgements to  |
 | track that specific, time-sensitive messages have been seen and actioned. See the                                                                    |
-| `message priority <https://docs.mattermost.com/channels/message-priority>`__ documentation to learn more.                                            |
+| `message priority <https://docs.mattermost.com/channels/message-priority.html>`__ documentation to learn more.                                       |
 +-----------------------------------------------------------------------------+------------------------------------------------------------------------+
+
+.. config:setting:: posts-persistentnotifications
+  :displayname: Persistent notifications (Posts)
+  :systemconsole: Site Configuration > Posts
+  :configjson: .ServiceSettings.AllowPersistentNotifications
+  :environment: MM_SERVICESETTINGS_ALLOWPERSISTENTNOTIFICATIONS
+
+  - **true**: **(Default)** Users can trigger repeating notifications to mentioned recipients of urgent messages.
+  - **false**: Disables the ability to send repeating notifications.
+
+Persistent notifications
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
++--------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| - **true**: **(Default)** Users can trigger repeating notifications to   | - System Config path: **Site Configuration > Posts**                                |
+|   mentioned recipients of urgent messages.                               | - ``config.json`` setting: ``.ServiceSettings.AllowPersistentNotifications: true``  |
+| - **false**: Disables the ability to send repeating notifications.       | - Environment variable: ``MM_SERVICESETTINGS_ALLOWPERSISTENTNOTIFICATIONS``         |
++--------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+
+.. config:setting:: posts-maxnumberofrecipientsforpersistentnotifications
+  :displayname: Maximum number of recipients for persistent notifications (Posts)
+  :systemconsole: Site Configuration > Posts
+  :configjson: .ServiceSettings.PersistentNotificationMaxRecipients
+  :environment: MM_SERVICESETTINGS_PERSISTENTNOTIFICATIONSMAXRECIPIENTS
+  :description: The maximum number of recipients users may send persistent notifications to. Default is **5**.
+
+Maximum number of recipients for persistent notifications
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++---------------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| The maximum number of recipients users may send persistent    | - System Config path: **Site Configuration > Posts**                                    |
+| notifications to.                                             | - ``config.json`` setting: ``.ServiceSettings.PersistentNotificationMaxRecipients: 5``  |
+|                                                               | - Environment variable: ``MM_SERVICESETTINGS_PERSISTENTNOTIFICATIONSMAXRECIPIENTS``     |
+| Numerical input. Default is **5**.                            |                                                                                         |
++---------------------------------------------------------------+-----------------------------------------------------------------------------------------+
+
+.. config:setting:: posts-frequencyofpersistentnotifications
+  :displayname: Frequency of persistent notifications (Posts)
+  :systemconsole: Site Configuration > Posts
+  :configjson: .ServiceSettings.PersistentNotificationIntervalMinutes
+  :environment: MM_SERVICESETTINGS_PERSISTENTNOTIFICATIONINTERVALMINUTES
+  :description: The number of minutes between repeated notifications for urgent messages sent with persistent notifications. Default is **5**.
+
+Frequency of persistent notifications
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++---------------------------------------------------------------+-------------------------------------------------------------------------------------------+
+| The number of minutes between repeated notifications for      | - System Config path: **Site Configuration > Posts**                                      |
+| urgent messages sent with persistent notifications.           | - ``config.json`` setting: ``.ServiceSettings.PersistentNotificationIntervalMinutes: 5``  |
+|                                                               | - Environment variable: ``MM_SERVICESETTINGS_PERSISTENTNOTIFICATIONINTERVALMINUTES``      |
+| Numerical input. Default is **5**. Minimum is **2**.          |                                                                                           |
++---------------------------------------------------------------+-------------------------------------------------------------------------------------------+
+
+.. config:setting:: posts-totalnumberofpersistentnotificationsperpost
+  :displayname: Total number of persistent notifications per post (Posts)
+  :systemconsole: Site Configuration > Posts
+  :configjson: .ServiceSettings.PersistentNotificationMaxCount
+  :environment: MM_SERVICESETTINGS_PERSISTENTNOTIFICATIONMAXCOUNT
+  :description: The maximum number of times users may receive persistent notifications. Default is **6**.
+
+Total number of persistent notifications per post
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++-------------------------------------------------------------+------------------------------------------------------------------------------------+
+| The maximum number of times users may receive persistent    | - System Config path: **Site Configuration > Posts**                               |
+| notifications.                                              | - ``config.json`` setting: ``.ServiceSettings.PersistentNotificationMaxCount: 6``  |
+|                                                             | - Environment variable: ``MM_SERVICESETTINGS_PERSISTENTNOTIFICATIONMAXCOUNT``      |
+| Numerical input. Default is **6**.                          |                                                                                    |
++-------------------------------------------------------------+------------------------------------------------------------------------------------+
 
 .. config:setting:: posts-enablelinkpreviews
   :displayname: Enable website link previews (Posts)
@@ -1151,17 +1229,19 @@ Enable message link previews
   :configjson: .ServiceSettings.EnableSVGs
   :environment: MM_SERVICESETTINGS_ENABLESVGS
 
-  - **true**: **(Default)** Enables previews of SVG files attached to messages.
-  - **false**: Disables previews of SVG files.
+  - **true**: Enables previews of SVG files attached to messages.
+  - **false**: **(Default)** Disables previews of SVG files.
 
 Enable SVGs
 ~~~~~~~~~~~
 
 +-------------------------------------------------------------------------------+------------------------------------------------------------------+
-| - **true**: **(Default)** Enables previews of SVG files attached to messages. | - System Config path: **Site Configuration > Posts**             |
-| - **false**: Disables previews of SVG files.                                  | - ``config.json`` setting: ``.ServiceSettings.EnableSVGs: true`` |
+| - **true**: Enables previews of SVG files attached to messages.               | - System Config path: **Site Configuration > Posts**             |
+| - **false**: **(Default)** Disables previews of SVG files.                    | - ``config.json`` setting: ``.ServiceSettings.EnableSVGs: false``|
 |                                                                               | - Environment variable: ``MM_SERVICESETTINGS_ENABLESVGS``        |
 +-------------------------------------------------------------------------------+------------------------------------------------------------------+
+| **Warning**: Enabling SVGs is not recommended in environments where not all users are trusted.                                                   |
++--------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: posts-enablelatex
   :displayname: Enable LaTeX code block rendering (Posts)
@@ -1169,18 +1249,18 @@ Enable SVGs
   :configjson: .ServiceSettings.EnableLatex
   :environment: MM_SERVICESETTINGS_ENABLELATEX
 
-  - **true**: **(Default)** Enables rendering of `LaTeX in code blocks <https://docs.mattermost.com/channels/format-messages.html#math-formulas>`__.
-  - **false**: Disables rendering in blocks. Instead, LaTeX code is highlighted.
+  - **true**: Enables rendering of `LaTeX in code blocks <https://docs.mattermost.com/channels/format-messages.html#math-formulas>`__.
+  - **false**: **(Default)** Disables rendering in blocks. Instead, LaTeX code is highlighted.
 
 Enable LaTeX code block rendering
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
-| - **true**: **(Default)** Enables rendering of `LaTeX in code blocks <https://docs.mattermost.com/channels/format-messages.html#math-formulas>`__. | - System Config path: **Site Configuration > Posts**              |
-| - **false**: Disables rendering in blocks. Instead, LaTeX code is highlighted.                                                                     | - ``config.json`` setting: ``.ServiceSettings.EnableLatex: true`` |
+| - **true**: Enables rendering of `LaTeX in code blocks <https://docs.mattermost.com/channels/format-messages.html#math-formulas>`__.               | - System Config path: **Site Configuration > Posts**              |
+| - **false**: **(Default)** Disables rendering in blocks. Instead, LaTeX code is highlighted.                                                       | - ``config.json`` setting: ``.ServiceSettings.EnableLatex: false``|
 |                                                                                                                                                    | - Environment variable: ``MM_SERVICESETTINGS_ENABLELATEX``        |
 +----------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
-| **Warning**: Choose **false** to prevent Mattermost from crashing due to code outgrowing its assigned memory when it is rendered.                                                                                      |
+| **Warning**: Enabling LaTeX rendering is not recommended in environments where not all users are trusted.                                                                                                              |
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: posts-enableinlinelatex
@@ -1200,7 +1280,7 @@ Enable inline LaTeX rendering
 | - **false**: Disables inline rendering of LaTeX. Instead, LaTeX in message text is highlighted. LaTeX can also be rendered in a code block, if that feature is enabled. See **Enable LaTeX code block rendering**. | - ``config.json`` setting: ``.ServiceSettings.EnableInlineLatex: true`` |
 |                                                                                                                                                                                                                    | - Environment variable: ``MM_SERVICESETTINGS_ENABLEINLINELATEX``        |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
-| **Warning**: Choose **false** to prevent Mattermost from crashing due to code outgrowing its assigned memory when it is rendered.                                                                                                                                                            |
+| **Warning**: Enabling LaTeX rendering is not recommended in environments where not all users are trusted.                                                                                                                                                                                    |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: posts-customurlschemes
@@ -1242,6 +1322,29 @@ Google API key
 | - The key must have the YouTube Data API added as a service.                                                                                                                                                                                                                                                                            |
 | - This key is used in client-side Javascript.                                                                                                                                                                                                                                                                                           |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: posts-AllowSyncedDrafts
+  :displayname: Enable server syncing of message drafts (Posts)
+  :systemconsole: Site Configuration > Posts
+  :configjson: .ServiceSettings.AllowSyncedDrafts
+  :environment: MM_SERVICESETTINGS_ALLOWSYNCEDDRAFTS
+  :description: Enable or disable the ability to synchronize draft messages across all supported Mattermost clients.
+
+Enable server syncing of message drafts
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++------------------------------------------------------+--------------------------------------------------------------------------------------+
+| Enable or disable the ability to synchronize draft   | - System Config path: **Site Configuration > Posts**                                 |
+| messages across all supported Mattermost clients.    | - ``config.json`` setting: ``".ServiceSettings.AllowSyncedDrafts: true,``            |
+|                                                      | - Environment variable: ``MM_SERVICESETTINGS_ALLOWSYNCEDDRAFTS``                     |
+| - **true**: **(Default)** Message drafts are saved   |                                                                                      |
+|   on the server and may be accessed from different   |                                                                                      |
+|   clients. Users may still disable server            |                                                                                      |
+|   synchronization of draft messages by going         |                                                                                      |
+|   to **Settings > Advanced Settings**.               |                                                                                      |
+| - **false**: Draft messages are stored locally       |                                                                                      |
+|   on each device.                                    |                                                                                      |
++------------------------------------------------------+--------------------------------------------------------------------------------------+
 
 ----
 

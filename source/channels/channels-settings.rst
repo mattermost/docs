@@ -18,7 +18,7 @@ You can customize your Channels experience in the following ways in **Settings**
 Notifications
 -------------
 
-Settings to configure desktop notifications, desktop notification sounds, email notifications, mobile push notifications, and words that trigger mentions.
+Settings to configure desktop notifications and sounds, email notifications, mobile push notifications, words that trigger mentions, and automatic direct message replies.
 
 Desktop notifications
 ~~~~~~~~~~~~~~~~~~~~~
@@ -30,7 +30,7 @@ Send desktop notifications
 
 Choose what activity triggers a desktop notification. This setting applies globally, but this preference is customizable for each channel from the channel name drop-down menu. Desktop notifications are available on Chrome, Edge, Firefox, and Safari.
 
-When `desktop app <https://mattermost.com/apps>`__ notifications are set to "Only for mentions and direct messages":
+When `desktop app <https://mattermost.com/apps>`__ notifications are set to **Only for mentions and direct messages**, notifications trigger as follows:
 
 - An empty red circle is displayed over the upper right corner of the Mattermost dock icon when any message without an at-mention is received. 
 - A solid red circle with a post count is displayed when a message with an at-mention is received.
@@ -39,7 +39,14 @@ When `desktop app <https://mattermost.com/apps>`__ notifications are set to "Onl
 Notification sound
 ^^^^^^^^^^^^^^^^^^
 
-Notification sounds fire for any activity that would trigger a desktop notification. Notification sounds are available on Chrome, Edge, Firefox, and Safari in addition to the Mattermost Desktop App.
+When desktop app notifications are set to **For all activity** or **Only for mentions and direct messages**, you can configure Mattermost to notify you using a sound. Chooose from one of 6 preset notification sounds. Notification sounds are available on Chrome, Edge, Firefox, and Safari in addition to the Mattermost Desktop App.
+
+Notification sound for incoming calls (Beta)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+From Mattermost v8.0 and Calls v0.17.0, when desktop app notifications are set to **For all activity** or **Only for mentions and direct messages**, you can configure Mattermost to alert you to incoming calls through direct or group messages with a specific ring tone and a desktop notification, unless the system admin has `disabled your ability to do so </plugins-configuration-settings.html#enable-call-ringing-beta>`__.
+
+When incoming call notification sounds are enabled, choose the ring tone to play, then select **Save**.
 
 Email notifications
 ~~~~~~~~~~~~~~~~~~~
@@ -190,10 +197,6 @@ Select the timezone used for timestamps in the user interface and for email noti
 
   1. Tap **Display**.
   2. Tap **Timezone**.
-
-.. note::
-  
-  Timezone is enabled by default from Mattermost v6.0. In Mattermost v5.38 or earlier, timezone functionality `must first be enabled by the system admin </configure/deprecated-configuration-settings.html#timezone>`__.
 
 Website link previews
 ~~~~~~~~~~~~~~~~~~~~~
@@ -368,20 +371,3 @@ Use this setting to deactivate your account. Deactivating your account removes y
 To reactivate your account, contact your System Admin. This is only available for accounts with email login, and when `user deactivation </configure/configuration-settings.html#enable-account-deactivation>`__ is enabled.
 
 For accounts with other authentication methods such as AD/LDAP or SAML, or for accounts that do not have this setting available, contact your System Admin to deactivate your account.
-
-Deprecated settings
--------------------
-
-Notifications > Notification duration
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-*Removed in June 16th, 2018 release*
-
-In Mattermost v5.0 and later, desktop notifications will stay onscreen for five seconds when supported by the browser and operating system.
-
-Display > Display font
-~~~~~~~~~~~~~~~~~~~~~~
-
-*Removed in July 16th, 2017 release*
-
-Select what font is used.

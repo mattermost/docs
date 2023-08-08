@@ -140,8 +140,10 @@ You can share a unique URL that takes users to a Mattermost account creation pag
 
   .. tab:: Mobile
 
-    1. Tap **Share link**.
-    2. Share the link with others.
+    1. Tap the |plus| icon in the top right corner of the screen.
+    2. Tap the **Invite people to the team** option.
+    3. Tap **Share link**.
+    4. Share the link with others.
 
 Remove people from teams
 ------------------------
