@@ -21,12 +21,12 @@ Latest Mattermost Cloud releases:
  - An error is now displayed if a post edit history fails to load.
  - Removed the deprecated Insights feature.
  - Prepackaged Calls plugin version 0.18.0.
+ - Pre-packaged Playbooks version 1.38.0.
 
 ### Bug Fixes
  - Fixed an issue with missing zoneinfo in the Docker container.
  - Fixed the error returned by ``PUT /api/v4/channels/{channelid}`` when the provided name already existed in the team.
  - Fixed the clickable area of post textboxes being too small.
- - Pre-packaged Playbooks version 1.38.0.
  - Fixed a UI bug in the bot profile popover.
  - Fixed an issue with the ``registerMessageWillBeUpdatedHook`` plugin hook.
  - Fixed an issue where the **Saved Posts** section would not show channel and team names.
