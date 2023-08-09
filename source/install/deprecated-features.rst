@@ -12,6 +12,7 @@ Mattermost Server v9.0.0
 - Boards is moving to a community plugin.
 - Removing support for some prepackaged plugins.
 - Removing deprecated Insights feature.
+- In-product GIF picker powered by GIPHY `is being discontinued <https://techcrunch.com/2023/07/05/gfycat-shuts-down-on-september-1/>`_. Gfycat will be replaced with GIPHY in the 9.0 release.
 
 Removed features by Mattermost version
 ----------------------------------------
@@ -21,7 +22,7 @@ Mattermost Server v8.0.0
 
 - Removed ``ExperimentalSettings.PatchPluginsReactDOM``. If this setting was previously enabled, confirm that:
   - All Mattermost-supported plugins are updated to the latest versions.
-  - Any other plugins have been updated to support React 17. See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) for v7.7 for more information.
+  - Any other plugins have been updated to support React 17. See the `Important Upgrade Notes <https://docs.mattermost.com/upgrade/important-upgrade-notes.html>`_ for v7.7 for more information.
 - Deprecated Insights for all new instances and for existing servers that upgrade to Mattermost v8.0.
 - Removed deprecated ``PermissionUseSlashCommands``.
 - Removed deprecated ``model.CommandArgs.Session``.
