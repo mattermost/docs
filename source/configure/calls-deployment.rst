@@ -11,10 +11,10 @@ This document provides information on how to successfully make the Calls plugin 
 - `Requirements <#requirements>`__
 - `Limitations <#limitations>`__
 - `Configuration <#configuration>`__
-- `Kubernetes deployments <#kubernetes-deployments>`__
 - `Performance <#performance>`__
 - `RTCD Service <#the-rtcd-service>`__
 - `Configure recording <#configure-recording>`__
+- `Kubernetes deployments <#kubernetes-deployments>`__
 - `Frequently asked questions <#frequently-asked-questions>`__
 
 Terminology
@@ -137,129 +137,6 @@ rtcd (HA)
 
 .. image:: ../images/calls-deployment-image2.png
   :alt: A diagram of an rtcd deployment.
-
-Kubernetes deployments
-----------------------
-
-.. image:: ../images/calls-deployment-kubernetes.png
-  :alt: A diagram of calls deployed in a Kubernetes cluster.
-
-If Mattermost isn't deployed in a Kubernetes cluster, and you want to use this deployment type, visit the `Kubernetes operator guide </install/mattermost-kubernetes-operator.html>`__.
-
-``rtcd`` is deployed with a Helm chart. To install this Helm chart run:
-
-.. code-block:: none
-
-  helm repo add mattermost https://helm.mattermost.com
-
-More info about the version and the chart itself, please check here. Regarding changing the parameters of the helm chart, please check and copy the default values from here.
-
-An example with sample values:
-
-.. code-block:: none
-
-  image:
-    repository: mattermost/rtcd
-    pullPolicy: IfNotPresent
-    tag: "v0.9.0"
-
-  imagePullSecrets: []
-  nameOverride: ""
-  fullnameOverride: ""
-
-  serviceAccount:
-    create: true
-    annotations: {}
-    name: ""
-
-  podAnnotations: {}
-
-  podSecurityContext: {}
-
-  securityContext: {}
-
-  # Which deployment method you'd like to use "deployment" or "daemonset"
-  deploymentType: "deployment"
-
-  configuration:
-    # Only needed if deploymentType is set to "deployment"
-    replicas: 2
-
-    environmentVariables:
-      RTCD_API_SECURITY_ALLOWSELFREGISTRATION: "\"true\""
-      RTCD_RTC_ICESERVERS:
-    "\'[{\"urls\":[\"stun:stun.global.calls.mattermost.com:3478\"]}]\'"
-      RTCD_LOGGER_CONSOLELEVEL: "\"DEBUG\""
-      RTCD_LOGGER_ENABLEFILE: "\"false\""
-    maxUnavailable: 1 # Only used when updateStrategy is set to "RollingUpdate"
-    updateStrategy: RollingUpdate
-    terminationGracePeriod: 18000 # 5 hours, used to gracefully draining the instance.
-
-  service:
-    # APIport is the port used by rtcd HTTP/WebSocket API.
-    APIport: 8045
-    # RTCport is the UDP port used to route all the calls related traffic.
-    RTCport: 8443
-
-  ingress:
-    enabled: false
-    classname: nginx-calls
-    annotations:
-    hosts:
-      - host: mattermost-rtcd.local
-        paths:
-          - "/"
-
-  resources:
-    limits:
-      cpu: 7800m # Values for c5.2xlarge in AWS
-      memory: 15Gi # Values for c5.2xlarge in AWS
-    requests:
-      cpu: 100m
-      memory: 32Mi
-
-  nodeSelector:
-    kops.k8s.io/instancegroup: rtcd
-
-  tolerations:
-    - key: "rtcd"
-      operator: "Equal"
-      value: "true"
-      effect: "NoSchedule"
-
-  dnsConfig:
-    options:
-    - name: ndots
-      value: "1"
-
-  affinity:
-    podAntiAffinity:
-      requiredDuringSchedulingIgnoredDuringExecution:
-        - labelSelector:
-            matchExpressions:
-              - key: app.kubernetes.io/name
-                operator: In
-                values:
-                  - mattermost-rtcd
-          topologyKey: topology.kubernetes.io/zone
-      preferredDuringSchedulingIgnoredDuringExecution:
-        - weight: 100
-          podAffinityTerm:
-            labelSelector:
-              matchExpressions:
-                - key: app.kubernetes.io/name
-                  operator: In
-                  values:
-                    - mattermost-rtcd
-            topologyKey: topology.kubernetes.io/zone
-
-``rtcd`` will be deployed as a deployment as shown in the `deploymentType` field. For that reason the sections of `deployment.replicas`, `nodeSelector` and `tolerations` are used so that ``rtcd`` to be deployed in specific nodes.
-
-After having the values above, to deploy the ``rtcd`` helm chart run:
-
-.. code-block:: none
-
-  helm upgrade mattermost-rtcd mattermost/mattermost-rtcd -f /Users/myuser/rtcd_values.yaml --namespace mattermost-rtcd --create-namespace --install --debug
 
 Performance
 -----------
@@ -438,6 +315,27 @@ Configure recording
 -------------------
 
 Before you can start recording calls, you need to configure the ``calls-offloader`` job service. You can read about how to do that `here <https://github.com/mattermost/calls-offloader/blob/master/docs/getting_started.md>`__. Performance and scalability recommendations related to this service can be found in `here <https://github.com/mattermost/calls-offloader/blob/master/docs/performance.md>`__.
+
+Kubernetes deployments
+----------------------
+
+The Calls plugin has been designed to integrate well with Kubernetes to offer improved scalability and control over the deployment.
+
+This is a sample diagram showing how the ``rtcd`` standalone service can be deployed in a Kubernetes cluster:
+
+.. image:: ../images/calls-deployment-kubernetes.png
+  :alt: A diagram of calls deployed in a Kubernetes cluster.
+
+If Mattermost isn't deployed in a Kubernetes cluster, and you want to use this deployment type, visit the `Kubernetes operator guide </install/mattermost-kubernetes-operator.html>`__.
+
+Helm Charts
+~~~~~~~~~~~
+
+The recommended way to deploy Calls related components and services in a Kubernetes deployment is to use the officially provided Helm charts. Related documentation including detailed information on how to deploy these services can be found in our ``mattermost-helm`` repository:
+
+- `rtcd Helm chart <https://github.com/mattermost/mattermost-helm/tree/master/charts/mattermost-rtcd>`__
+
+- `calls-offloader Helm chart <https://github.com/mattermost/mattermost-helm/tree/master/charts/mattermost-calls-offloader>`__
 
 Frequently asked questions
 --------------------------
