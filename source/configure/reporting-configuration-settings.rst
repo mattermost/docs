@@ -22,7 +22,8 @@ Site statistics
 | sessions, commands, webhooks, active users, connections,      | - ``config.json setting``: N/A                              |
 | playbooks, runs, boards, and cards.                           | - Environment variable: N/A                                 |
 +---------------------------------------------------------------+-------------------------------------------------------------+
-| **Note**: Inactive and deactivated users are not counted towards the total number of active users.                          |
+| **Note**: Inactive and deactivated users, as well as remote Mattermost for Microsoft Teams users, aren't counted towards    |
+| the total number of active users.                                                                                           |
 +---------------------------------------------------------------+-------------------------------------------------------------+
 
 ----
