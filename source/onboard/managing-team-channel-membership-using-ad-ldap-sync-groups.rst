@@ -39,7 +39,7 @@ To manage membership of a private team with synchronized groups:
 5. Review the notice in the footer of the screen for any users that are not part of groups who will be removed from the team on the next synchronization.
 6. Select **Save**. Members will be updated on the next scheduled AD/LDAP synchronization.
 
-Alternatively you can use the CLI tool to set the team to be managed by groups:
+Alternatively you can use the mmctl tools to set the team to be managed by groups:
 
 1. Ensure there's at least one group already associated to the team. You can view and add default teams to a group via **System Console > User Management > Groups > Group Configuration**. See the `mmctl group team list </manage/mmctl-command-line-tool.html#mmctl-group-team-list>`__ documentation for more information on adding default teams and channels and confirming whether if there is already a group associated to the team.
 2. Ensure **Team Settings > General > Allow any user with an account on this server to join this team** is set to ``No``.

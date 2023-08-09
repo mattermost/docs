@@ -112,9 +112,8 @@ Enable document search by content
 |   for files by file name only.                                |                                                                                     |
 +---------------------------------------------------------------+-------------------------------------------------------------------------------------+
 | **Note**: Document content search results for files shared before upgrading to Mattermost Server v5.35 may be incomplete until an                   |
-| extraction command is executed using the `CLI </manage/command-line-tools.html#mattermost-extract-documents-content>`__                             |
-| or the `mmctl </manage/mmctl-command-line-tool.html?highlight=mmctl#mmctl-extract>`__. If this command is not run,                                  |
-| users can search older files based on file name only.                                                                                               |
+| extraction command is executed using the `mmctl </manage/mmctl-command-line-tool.html?highlight=mmctl#mmctl-extract>`__.                            |
+| If this command is not run, users can search older files based on file name only.                                                                   |
 |                                                                                                                                                     |
 | You can optionally install the following `dependencies <https://github.com/sajari/docconv#dependencies>`__ to extend content searching support in   |
 | Mattermost to include file formats beyond PDF, DOCX, and ODT, such as DOC, RTF, XML, HTML, and PAGES:                                               |
