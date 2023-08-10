@@ -65,7 +65,7 @@ Authentication safeguards
 - Session length, session cache, and idle timeout can be `configured according to your internal policies </configure/configuration-settings.html#session-lengths>`__, automatically forcing a user to re-login after a specified period of time.
 - Remotely `revoke user sessions </messaging/managing-account-settings.html#view-and-logout-of-active-sessions>`__ across web, mobile devices, and native desktop apps. User sessions can also be revoked remotely by a System Admin in **System Console > Users**.
 - Session fixation, where an attacker can trick the user to authenticate with a known session cookie, does not affect Mattermost users as a new session cookie is set at each login.
-- Remotely reset user passwords via the System Console or via the `command line </manage/command-line-tools.html#mattermost-user-password>`__.
+- Remotely reset user passwords via the System Console or via the `mmctl user reset-password </manage/mmctl-command-line-tool.html#mmctl-user-reset-password>`__ command.
 - Mattermost supports integrated authentication with `Active Directory and LDAP </onboard/ad-ldap.html>`__ (Mattermost Enterprise and Mattermost Professional) as well as `SAML 2.0 SSO integration </onboard/sso-saml.html>`__ with providers including `Active Directory Federation Services </onboard/ad-ldap.html#configure-ad-ldap-deployments-with-multiple-domains>`__,  `Okta </onboard/sso-saml-okta.html>`__, among others (Mattermost Enterprise and Mattermost Professional).
 - The ability to require `multi-factor authentication </onboard/multi-factor-authentication.html>`__ is also available (Mattermost Enterprise and Mattermost Professional).
 

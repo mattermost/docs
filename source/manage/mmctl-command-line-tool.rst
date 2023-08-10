@@ -18,7 +18,7 @@ mmctl usage notes
 
   - We recommend you add the path to the Mattermost ``bin`` folder into your ``$PATH`` environment variable. This ensures that you can run mmctl commands locally regardless of your current directory location.
   - If the ``bin`` directory is not added to the ``$PATH`` environment variable, each time you use mmctl you must be in the ``bin`` directory to run mmctl commands, and the commands must be prefixed with ``./``. If you're working from a different directory, make sure you specify the full path to mmctl when running mmctl commands.
-- Parameters in CLI commands are order-specific.
+- Parameters in mmctl commands are order-specific.
 - You can use the ``--local`` flag with mmctl commands to run them without authentication by allowing communicating with the server through a Unix socket. See the `local mode </manage/mmctl-command-line-tool.html#local-mode>`__ documentation for activation and usage details.
 - If special characters (``!``, ``|``, ``(``, ``)``, ``\``, ``'``, and ``"``) are used, the entire argument needs to be surrounded by single quotes (e.g. ``-password 'mypassword!'``, or the individual characters need to be escaped out (e.g. ``password mypassword\!``).
 - Team name and channel name refer to the handles, not the display names. So in the URL ``https://community.mattermost.com/core/channels/town-square`` team name would be ``core`` and channel name would be ``town-square``.
@@ -2248,6 +2248,7 @@ Manage exports.
       -  `mmctl export create`_ - Create an export file
       -  `mmctl export delete`_ - Delete an export file
       -  `mmctl export download`_ - Download export files
+      -  `mmctl export generate-presigned-url`_ - Generate a pre-signed URL for an export file
       -  `mmctl export job`_ - List, show, and cancel export jobs
       -  `mmctl export job cancel`_ - Cancel export job
       -  `mmctl export job list`_ - List export jobs
@@ -2376,7 +2377,40 @@ Download export files.
    --quiet                        prevent mmctl to generate output for the commands
    --strict                       will only run commands if the mmctl version matches the server one
    --suppress-warnings            disables printing warning messages
+
+mmctl export generate-presigned-url
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Description**
+
+Generate a pre-signed URL for an export file in cases where a Mattermost Cloud export is large and challenging to download from the Mattermost server.
+
+**Format**
+
+.. code-block:: sh
+
+  mmctl export generate-presigned-url [exportname] [flags]
+
+**Options**
+
+.. code-block:: sh
    
+  -h, --help   help for generate-presigned-url
+
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+   --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
+   --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+   --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
+   --json                         the output format will be in json format
+   --local                        allows communicating with the server through a unix socket
+   --quiet                        prevent mmctl to generate output for the commands
+   --strict                       will only run commands if the mmctl version matches the server one
+   --suppress-warnings            disables printing warning messages
+
 mmctl export job
 ~~~~~~~~~~~~~~~~
 
@@ -2388,7 +2422,7 @@ List, show, and export jobs.
 
 .. code-block:: sh
 
-   -h, --help   help for job
+  -h, --help   help for job
 
 **Options inherited from parent commands**
 

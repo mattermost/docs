@@ -63,8 +63,8 @@ Using the Mattermost desktop or mobile app, you can connect to multiple Mattermo
   
     Tap the **Servers** |servers-icon| icon located in the top left corner of the window to access all available servers and to add new servers.
 
-    To configure a new server accessible through the mobile app:
-    
+    **Add a server**
+        
     1. Tap **Add a server**.
     2. Enter the server URL. Server URLs must begin with either ``http://`` or ``https://``.
     3. Enter the server's Display Name.
@@ -73,3 +73,15 @@ Using the Mattermost desktop or mobile app, you can connect to multiple Mattermo
     .. tip::
 
         Can't find your Mattermost server URL? Ask your company’s IT department or your Mattermost system admin for your organization’s **Mattermost Site URL**. It’ll look something like ``https://example.com/company/mattermost``, ``mattermost.yourcompanydomain.com``, or ``chat.yourcompanydomain.com``. These URLs could also end in ``.net``.
+
+    **Remove a server**
+
+    Swipe left on an existing server entry to reveal additional options. Tap **Remove**.
+
+    .. image:: ../images/swipe-left-to-remove.png
+      :width: 400px
+      :alt: In the Mattermost mobile app, swipe left on an existing server connection entry to delete the connection.
+
+    .. note::
+
+        Removing a server from your mobile app doesn't delete its data. You can add the server back any time.

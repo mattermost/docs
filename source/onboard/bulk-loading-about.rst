@@ -17,4 +17,4 @@ The bulk loading command is not a synchronization tool
   You cannot use the bulk loading command to remove any objects or their fields from the Mattermost database. The command only creates or overwrites fields.
 
 .. important::
-  The bulk loading command runs in the CLI and operates in the security context of the CLI. This means it has full permissions to access and alter everything in the Mattermost database.
+  The bulk loading command runs in the mmctl and operates in the security context of the mmctl. This means it has full permissions to access and alter everything in the Mattermost database.

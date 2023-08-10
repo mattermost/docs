@@ -38,9 +38,9 @@ Users in Mattermost can be deactivated in the following ways:
 - **AD/LDAP Synchronization**: AD/LDAP users can be deactivated in Mattermost based on their status in the directory server via synchronization. Learn more in `AD/LDAP documentation </onboard/ad-ldap.html#how-do-i-deactivate-users>`__.
 - **System Console**: User management screen in **System Console > Users** allows administrators to deactiveate users with email/password login.
 - **RESTful API** The Mattermost API can be used to deactivate users. See `API documentation to learn more <https://api.mattermost.com/#operation/DeleteUser>`__.
-- **Command Line Interface**: You can use the Mattermost `CLI </manage/command-line-tools.html#mattermost-user-deactivate>`__ and `mmctl </manage/mmctl-command-line-tool.html#mmctl-user-deactivate>`__ tools to deactivate users.
+- **Command Line Interface**: You can use the Mattermost `mmctl user deactivate </manage/mmctl-command-line-tool.html#mmctl-user-deactivate>`__ command to deactivate users.
 
-Once deactivated, users still exist in the Mattermost database and their messages can still be viewed in Mattermost. You can use the Mattermost `CLI </manage/command-line-tools.html#mattermost-user-delete>`__, or the `mmctl </manage/mmctl-command-line-tool.html#mmctl-user-delete>`__ tools to delete a user and all of their content.
+Once deactivated, users still exist in the Mattermost database and their messages can still be viewed in Mattermost. You can use the `mmctl </manage/mmctl-command-line-tool.html#mmctl-user-delete>`__ tools to delete a user and all of their content.
 
 .. note::
 
