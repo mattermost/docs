@@ -28,8 +28,6 @@ Latest Mattermost Releases:
  - Prepackaged Focalboard plugin version 7.11.2.
  - Prepackaged Playbooks version 1.38.0.
  - Prepackaged Calls plugin version 0.18.0.
- - The current user object is now updated more frequently.
- - Updated the user interface so that system admins no longer appear editable by system/user managers in the System Console.
 
 #### Administration
  - Added support for a separate Export storage and S3 presigned URLs generation for downloading the export files.
@@ -56,6 +54,7 @@ Latest Mattermost Releases:
  - Fixed an issue with missing time zone metadata in the Docker container.
  - Fixed an issue with the ``registerMessageWillBeUpdatedHook`` plugin hook.
  - Fixed an issue where the **Saved Posts** section would not show channel and team names.
+ - Fixed accessibility issues: tab support at login, reset and signup pages, and controls at the Apps bar.
 
 ### config.json
 Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
