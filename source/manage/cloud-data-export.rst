@@ -94,7 +94,7 @@ This will show all of the exports on the server, so be sure to download the late
 Upload the export to the new server
 -----------------------------------
 
-Finally, it's time to take our export from the source server and use it as an import into the destination server. If you have a file import larger than <x> and plan to import to a self-hosted Mattermost instance, first, review and modify the following self-hosted Mattermost configuration settings, where applicable, to ensure a smooth and successful import:
+Finally, it's time to take our export from the source server and use it as an import into the destination server. Before proceeding, review and modify the following self-hosted Mattermost configuration settings, where applicable, to ensure a smooth and successful import.
 
 +-----------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
 | **Mattermost configuration setting**                                              | **Large file import recommendation**                                                                                          |
@@ -102,14 +102,16 @@ Finally, it's time to take our export from the source server and use it as an im
 | `Maximum Users Per Team                                                           | Increase this value to a number that **exceeds** the maximum number of users, per team, in the import file.                   |
 | </configure/site-configuration-settings.html#max-users-per-team>`__               |                                                                                                                               |
 +-----------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
-| `Maximum File Size                                                                | Increase this value to be **larger** than the size of the import file.                                                        |
-| </configure/environment-configuration-settings.html#maximum-file-size>`__         | Following a successful import, you can revert this setting to its previous value or a suitable value based on expected usage. |
+| `Maximum File Size                                                                | Temporarily increase this value to be **larger** than the size of the import file.                                            |
+| </configure/environment-configuration-settings.html#maximum-file-size>`__         | Following a successful import, we strongly recommend reverting this value to a reasonable limit for daily expected usage.     |
 +-----------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
-| `Write Timeout                                                                    | Increase this value to **3600**. Following a successful import, you can revert this setting to its previous value.            |
-| </configure/environment-configuration-settings.html#write-timeout>`__             |                                                                                                                               |
+| `Write Timeout                                                                    | Temporarily adjust this value based on import file speed and network path to enable the file to upload without timeouts.      |
+| </configure/environment-configuration-settings.html#write-timeout>`__             | Start with a value of **3600** and adjust if needed.                                                                          |
+|                                                                                   | Following a successful import, we strongly recommend reverting this setting to its initial or previous value.                 |
 +-----------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
-| `Read Timeout                                                                     | Increase this value to **3600**. Following a successful import, you can revert this setting to its previous value.            |
-| </configure/environment-configuration-settings.html#read-timeout>`__              |                                                                                                                               |
+| `Read Timeout                                                                     | Temporarily adjust this value based on import file speed and network path to enable the file to upload without timeouts.      |
+| </configure/environment-configuration-settings.html#read-timeout>`__              | Start with a value of **3600** and adjust if needed.                                                                          |
+|                                                                                   | Following a successful import, we strongly recommend reverting this setting to its initial or previous value.                 |
 +-----------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
 | `Amazon S3 Request Timeout                                                        | If using cloud-based file storage, adjust this value to ensure your storage requests don't time out too soon.                 |
 | </configure/environment-configuration-settings.html#amazon-s3-request-timeout>`__ |                                                                                                                               |
