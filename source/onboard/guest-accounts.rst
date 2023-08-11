@@ -161,36 +161,36 @@ Frequently asked questions
 ---------------------------
 
 How am I charged for guest accounts?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Guests are charged as a user seat.
 
 Why doesn’t Mattermost have single-channel guests?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 We wanted to support collaboration with external guests for the broadest use cases without limiting guests' access to channels. In the future, we may consider adding single-channel guests.
 
 Can I set an expiration date for guests?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Currently, you cannot. This feature may be added at a later stage.
 
 Can MFA be applied selectively?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If MFA is enforced for your users, it can be applied to guest accounts. Guests can configure MFA in by going to their profile picture and selecting **Profile > Security**. If MFA is not enforced for your users, it can't be applied to guest accounts.
 
 Has the guest accounts feature been reviewed by an external security firm?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The guest account feature was reviewed by the Mattermost security team. We do not have an external firm review scheduled but will include this feature in future reviews.
 
 How can I validate my guests' identity?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Guests can be authenticated via SAML and/or AD/LDAP to ensure that only the named guest can log in. Alternatively, you can whitelist domains via **System Console > Authentication > Guest Access > Whitelisted Guest Domains**.
 
 Can I restrict guests' ability to upload content?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 It is not currently possible to selectively disable upload/download functionality as it is a server-wide configuration.
