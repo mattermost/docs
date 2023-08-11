@@ -17,8 +17,8 @@ Both self-hosted and Cloud admins can access the following configuration setting
 - `Demo Plugin <#demo-plugin>`__
 - `GIF commands <#gif-commands>`__
 - `Mattermost Boards <#mattermost-boards>`__
-- `MS Teams Sync <#ms-teams-sync>`__
--  Playbooks <#mattermost-playbooks>`__
+- `MS Teams Connector <#ms-teams-connector>`__
+-  Playbooks <#playbooks>`__
 - `User Satisfaction surveys <#user-satisfaction-surveys>`__
 - `Zoom <#zoom>`__
 
@@ -1312,42 +1312,42 @@ Enable plugin
 
 ----
 
-MS Teams Sync
--------------
+MS Teams Connector
+------------------
 
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 Mattermost for Microsoft Teams enables you to collaborate with technical & operations teams seamlessly through the Mattermost app, without leaving Microsoft Teams.
 
-Access the following configuration settings in the System Console by going to **Plugins > MS Teams Sync**.
+Access the following configuration settings in the System Console by going to **Plugins > MS Teams Connector**.
 
 .. config:setting:: plugins-msteamssyncenable
-  :displayname: Enable plugin (Plugins - MS Teams Sync)
-  :systemconsole: Plugins > MS Teams Sync
+  :displayname: Enable plugin (Plugins - MS Teams Connector)
+  :systemconsole: Plugins > MS Teams Connector
   :configjson: N/A
   :environment: N/A
 
-  - **true**: Enables the MS Teams Sync plugin on your Mattermost workspace.
-  - **false**: Disables the MS Teams Sync plugin on your Mattermost workspace.
+  - **true**: Enables the MS Teams Connector on your Mattermost workspace.
+  - **false**: Disables the MS Teams Connector on your Mattermost workspace.
 
 Enable plugin
 ~~~~~~~~~~~~~
 
-+------------------------------------------------------------------------+----------------------------------------------------+
-| Enable the Mattermost for Microsoft Teams plugin for all Mattermost    | - System Config path: **Plugins > MS Teams Sync**  |
-| teams.                                                                 | - ``config.json`` setting: N/A                     |
-|                                                                        | - Environment variable: N/A                        |
-| - **true**: Enables MS Teams Sync plugin on your Mattermost workspace. |                                                    |
-| - **false**: **(Default)** Disables the MS Teams Sync plugin.          |                                                    |
-+------------------------------------------------------------------------+----------------------------------------------------+
-| **Note**: Use the `Enabled Teams <#enabled-teams>`__ configuration option to specify which Mattermost teams synchronize     |
-| direct and group messages with Microsoft Teams chats.                                                                       |
-+------------------------------------------------------------------------+----------------------------------------------------+
++------------------------------------------------------------------------+---------------------------------------------------------+
+| Enable the Mattermost for Microsoft Teams plugin for all Mattermost    | - System Config path: **Plugins > MS Teams Connector**  |
+| teams.                                                                 | - ``config.json`` setting: N/A                          |
+|                                                                        | - Environment variable: N/A                             |
+| - **true**: Enables MS Teams Connector on your Mattermost workspace.   |                                                         |
+| - **false**: **(Default)** Disables the MS Teams Connector.            |                                                         |
++------------------------------------------------------------------------+---------------------------------------------------------+
+| **Note**: Use the `Enabled Teams <#enabled-teams>`__ configuration option to specify which Mattermost teams synchronize          |
+| direct and group messages with Microsoft Teams chats.                                                                            |
++------------------------------------------------------------------------+---------------------------------------------------------+
 
 .. config:setting:: plugins-msteamssynctenantid
-  :displayname: Tenant ID (Plugins - MS Teams Sync)
-  :systemconsole: Plugins > MS Teams Sync
+  :displayname: Tenant ID (Plugins - MS Teams Connector)
+  :systemconsole: Plugins > MS Teams Connector
   :configjson: N/A
   :environment: N/A
   :description: Specify the Microsoft Teams Tenant ID.
@@ -1355,15 +1355,15 @@ Enable plugin
 Tenant ID
 ~~~~~~~~~~
 
-+------------------------------------------------------------------------+---------------------------------------------------+
-| Specify the Microsoft Teams Tenant ID.                                 | - System Config path: **Plugins > MS Teams Sync** |
-|                                                                        | - ``config.json`` setting: N/A                    |
-|                                                                        | - Environment variable: N/A                       |
-+------------------------------------------------------------------------+---------------------------------------------------+
++------------------------------------------------------------------------+--------------------------------------------------------+
+| Specify the Microsoft Teams Tenant ID.                                 | - System Config path: **Plugins > MS Teams Connector** |
+|                                                                        | - ``config.json`` setting: N/A                         |
+|                                                                        | - Environment variable: N/A                            |
++------------------------------------------------------------------------+--------------------------------------------------------+
 
 .. config:setting:: plugins-msteamssyncclientid
-  :displayname: Client ID (Plugins - MS Teams Sync)
-  :systemconsole: Plugins > MS Teams Sync
+  :displayname: Client ID (Plugins - MS Teams Connector)
+  :systemconsole: Plugins > MS Teams Connector
   :configjson: N/A
   :environment: N/A
   :description: Specify the Microsoft Teams Client ID.
@@ -1372,15 +1372,15 @@ Tenant ID
 Client ID
 ~~~~~~~~~
 
-+------------------------------------------------------------------------+---------------------------------------------------+
-| Specify the Microsoft Teams Client ID.                                 | - System Config path: **Plugins > MS Teams Sync** |
-|                                                                        | - ``config.json`` setting: N/A                    |
-|                                                                        | - Environment variable: N/A                       |
-+------------------------------------------------------------------------+---------------------------------------------------+
++------------------------------------------------------------------------+--------------------------------------------------------+
+| Specify the Microsoft Teams Client ID.                                 | - System Config path: **Plugins > MS Teams Connector** |
+|                                                                        | - ``config.json`` setting: N/A                         |
+|                                                                        | - Environment variable: N/A                            |
++------------------------------------------------------------------------+--------------------------------------------------------+
 
 .. config:setting:: plugins-msteamssyncclientsecret
-  :displayname: Client secret (Plugins - MS Teams Sync)
-  :systemconsole: Plugins > MS Teams Sync
+  :displayname: Client secret (Plugins - MS Teams Connector)
+  :systemconsole: Plugins > MS Teams Connector
   :configjson: N/A
   :environment: N/A
   :description: Specify the Microsoft Teams Client Secret.
@@ -1388,15 +1388,15 @@ Client ID
 Client secret
 ~~~~~~~~~~~~~~
 
-+------------------------------------------------------------------------+---------------------------------------------------+
-| Specify the Microsoft Teams Client Secret.                             | - System Config path: **Plugins > MS Teams Sync** |
-|                                                                        | - ``config.json`` setting: N/A                    |
-| Alpha-numeric value.                                                   | - Environment variable: N/A                       |
-+------------------------------------------------------------------------+---------------------------------------------------+
++------------------------------------------------------------------------+--------------------------------------------------------+
+| Specify the Microsoft Teams Client Secret.                             | - System Config path: **Plugins > MS Teams Connector** |
+|                                                                        | - ``config.json`` setting: N/A                         |
+| Alpha-numeric value.                                                   | - Environment variable: N/A                            |
++------------------------------------------------------------------------+--------------------------------------------------------+
 
 .. config:setting:: plugins-msteamssyncgenerateatrestencryptionkey
-  :displayname: At rest encryption key (Plugins - MS Teams Sync)
-  :systemconsole: Plugins > MS Teams Sync
+  :displayname: At rest encryption key (Plugins - MS Teams Connector)
+  :systemconsole: Plugins > MS Teams Connector
   :configjson: N/A
   :environment: N/A
   :description: Generate the AES encryption key used to encrypt sotred access tokens.
@@ -1404,34 +1404,34 @@ Client secret
 At rest encryption key
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-+------------------------------------------------------------------------+---------------------------------------------------+
-| Generate the AES encryption key used to encrypt sotred access tokens.  | - System Config path: **Plugins > MS Teams Sync** |
-|                                                                        | - ``config.json`` setting: N/A                    |
-| Alpha-numeric value.                                                   | - Environment variable: N/A                       |
-+------------------------------------------------------------------------+---------------------------------------------------+
-| **Note**: Select **Regenerate** to generate a new key.                                                                     |
-+------------------------------------------------------------------------+---------------------------------------------------+
++------------------------------------------------------------------------+--------------------------------------------------------+
+| Generate the AES encryption key used to encrypt sotred access tokens.  | - System Config path: **Plugins > MS Teams Connector** |
+|                                                                        | - ``config.json`` setting: N/A                         |
+| Alpha-numeric value.                                                   | - Environment variable: N/A                            |
++------------------------------------------------------------------------+--------------------------------------------------------+
+| **Note**: Select **Regenerate** to generate a new key.                                                                          |
++------------------------------------------------------------------------+--------------------------------------------------------+
 
 .. config:setting:: plugins-msteamssyncgeneratewebhooksecret
-  :displayname: Webhook secret (Plugins - MS Teams Sync)
-  :systemconsole: Plugins > MS Teams Sync
+  :displayname: Webhook secret (Plugins - MS Teams Connector)
+  :systemconsole: Plugins > MS Teams Connector
   :configjson: N/A
   :environment: N/A
   :description: Generate the webhook secret that Microsoft Teams will use to send messages to Mattermost.
 
 Webhook secret
 ~~~~~~~~~~~~~~~
-+------------------------------------------------------------------------+---------------------------------------------------+
-| Generate the webhook secret that Microsoft Teams will use to send      | - System Config path: **Plugins > MS Teams Sync** |
-| messages to Mattermost.                                                | - ``config.json`` setting: N/A                    |
-|                                                                        | - Environment variable: N/A                       |
-+------------------------------------------------------------------------+---------------------------------------------------+
-| **Note**: Select **Regenerate** to generate a new key.                                                                     |
-+------------------------------------------------------------------------+---------------------------------------------------+
++------------------------------------------------------------------------+--------------------------------------------------------+
+| Generate the webhook secret that Microsoft Teams will use to send      | - System Config path: **Plugins > MS Teams Connector** |
+| messages to Mattermost.                                                | - ``config.json`` setting: N/A                         |
+|                                                                        | - Environment variable: N/A                            |
++------------------------------------------------------------------------+--------------------------------------------------------+
+| **Note**: Select **Regenerate** to generate a new key.                                                                          |
++------------------------------------------------------------------------+--------------------------------------------------------+
 
 .. config:setting:: plugins-msteamssyncuseevaluationapipaymodel
-  :displayname: Use the evaluation API pay model (Plugins - MS Teams Sync)
-  :systemconsole: Plugins > MS Teams Sync
+  :displayname: Use the evaluation API pay model (Plugins - MS Teams Connector)
+  :systemconsole: Plugins > MS Teams Connector
   :configjson: N/A
   :environment: N/A
 
@@ -1441,17 +1441,17 @@ Webhook secret
 Use the evaluation API pay model
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+------------------------------------------------------------------------+---------------------------------------------------+
-| Enable the evaluation API pay model to receive a limited number of     | - System Config path: **Plugins > MS Teams Sync** |
-| change notifications. Ensure you keep the number of notifications low. | - ``config.json`` setting: N/A                    |
-|                                                                        | - Environment variable: N/A                       |
-| - **true**: Enables the evaluation API pay model.                      |                                                   |
-| - **false**: **(Default)** Disables the evaluation API pay model.      |                                                   |
-+------------------------------------------------------------------------+---------------------------------------------------+
++------------------------------------------------------------------------+--------------------------------------------------------+
+| Enable the evaluation API pay model to receive a limited number of     | - System Config path: **Plugins > MS Teams Connector** |
+| change notifications. Ensure you keep the number of notifications low. | - ``config.json`` setting: N/A                         |
+|                                                                        | - Environment variable: N/A                            |
+| - **true**: Enables the evaluation API pay model.                      |                                                        |
+| - **false**: **(Default)** Disables the evaluation API pay model.      |                                                        |
++------------------------------------------------------------------------+--------------------------------------------------------+
 
 .. config:setting:: plugins-msteamssyncenforceconnectedaccounts
-  :displayname: Enforce connected accounts (Plugins - MS Teams Sync)
-  :systemconsole: Plugins > MS Teams Sync
+  :displayname: Enforce connected accounts (Plugins - MS Teams Connector)
+  :systemconsole: Plugins > MS Teams Connector
   :configjson: N/A
   :environment: N/A
 
@@ -1461,20 +1461,20 @@ Use the evaluation API pay model
 Enforce connected accounts
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+------------------------------------------------------------------------+---------------------------------------------------+
-| Requires all users to connect their Mattermost account to their        | - System Config path: **Plugins > MS Teams Sync** |
-| Microsoft Teams account, if the accounts aren't already connected.     | - ``config.json`` setting: N/A                    |
-|                                                                        | - Environment variable: N/A                       |
-| - **true**: Users are required to connect their Mattermost and         |                                                   |
-|   Microsoft Teams accounts each time they refresh the Mattermost       |                                                   |
-|   browser, refresh the desktop app, or log in to Mattermost.           |                                                   |
-| - **false**: **(Default)** Users aren't required to connect their      |                                                   |
-|   Mattermost and Microsoft Teams accounts.                             |                                                   |
-+------------------------------------------------------------------------+---------------------------------------------------+
++------------------------------------------------------------------------+--------------------------------------------------------+
+| Requires all users to connect their Mattermost account to their        | - System Config path: **Plugins > MS Teams Connector** |
+| Microsoft Teams account, if the accounts aren't already connected.     | - ``config.json`` setting: N/A                         |
+|                                                                        | - Environment variable: N/A                            |
+| - **true**: Users are required to connect their Mattermost and         |                                                        |
+|   Microsoft Teams accounts each time they refresh the Mattermost       |                                                        |
+|   browser, refresh the desktop app, or log in to Mattermost.           |                                                        |
+| - **false**: **(Default)** Users aren't required to connect their      |                                                        |
+|   Mattermost and Microsoft Teams accounts.                             |                                                        |
++------------------------------------------------------------------------+--------------------------------------------------------+
 
 .. config:setting:: plugins-msteamssyncallowtempskipconnectuser
-  :displayname: Allow to temporarily skip connect user (Plugins - MS Teams Sync)
-  :systemconsole: Plugins > MS Teams Sync
+  :displayname: Allow to temporarily skip connect user (Plugins - MS Teams Connector)
+  :systemconsole: Plugins > MS Teams Connector
   :configjson: N/A
   :environment: N/A
 
@@ -1484,21 +1484,21 @@ Enforce connected accounts
 Allow to temporarily skip connect user
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+------------------------------------------------------------------------+---------------------------------------------------+
-| Allow users to temporarily dismiss the prompt to connect their         | - System Config path: **Plugins > MS Teams Sync** |
-| Mattermost account to their Microsoft Teams account. Users will        | - ``config.json`` setting: N/A                    |
-| continue to be prompted when they refresh the browser, refresh the     | - Environment variable: N/A                       |
-| desktop app, or log in to Mattermost.                                  |                                                   |
-|                                                                        |                                                   |
-| - **true**: Enables users to skip the current prompt to connect their  |                                                   |
-|   Mattermost and Microsoft Teams user accounts.                        |                                                   |
-| - **false**: **(Default)** Prevents users from skipping the prompt to  |                                                   |
-|   connect their Mattermost and Microsoft Teams accounts.               |                                                   |
-+------------------------------------------------------------------------+---------------------------------------------------+
++------------------------------------------------------------------------+--------------------------------------------------------+
+| Allow users to temporarily dismiss the prompt to connect their         | - System Config path: **Plugins > MS Teams Connector** |
+| Mattermost account to their Microsoft Teams account. Users will        | - ``config.json`` setting: N/A                         |
+| continue to be prompted when they refresh the browser, refresh the     | - Environment variable: N/A                            |
+| desktop app, or log in to Mattermost.                                  |                                                        |
+|                                                                        |                                                        |
+| - **true**: Enables users to skip the current prompt to connect their  |                                                        |
+|   Mattermost and Microsoft Teams user accounts.                        |                                                        |
+| - **false**: **(Default)** Prevents users from skipping the prompt to  |                                                        |
+|   connect their Mattermost and Microsoft Teams accounts.               |                                                        |
++------------------------------------------------------------------------+--------------------------------------------------------+
 
 .. config:setting:: plugins-msteamssyncsyncusers
-  :displayname: Sync users (Plugins - MS Teams Sync)
-  :systemconsole: Plugins > MS Teams Sync
+  :displayname: Sync users (Plugins - MS Teams Connector)
+  :systemconsole: Plugins > MS Teams Connector
   :configjson: N/A
   :environment: N/A
   :description: Specify how often, in minutes, to synchronize direct messages, group messages, and chats, between Mattermost and Microsoft Teams users.
@@ -1506,18 +1506,18 @@ Allow to temporarily skip connect user
 Sync users
 ~~~~~~~~~~
 
-+------------------------------------------------------------------------+---------------------------------------------------+
-| Specify how often, in minutes, to synchronize direct messages,         | - System Config path: **Plugins > MS Teams Sync** |
-| group messages, and chats, between Mattermost and Microsoft Teams      | - ``config.json`` setting: N/A                    |
-| users.                                                                 | - Environment variable: N/A                       |
-|                                                                        |                                                   |
-| Leave this value blank to disble user synchronization.                 |                                                   |
-| Numerical value.                                                       |                                                   |
-+------------------------------------------------------------------------+---------------------------------------------------+
++------------------------------------------------------------------------+--------------------------------------------------------+
+| Specify how often, in minutes, to synchronize direct messages,         | - System Config path: **Plugins > MS Teams Connector** |
+| group messages, and chats, between Mattermost and Microsoft Teams      | - ``config.json`` setting: N/A                         |
+| users.                                                                 | - Environment variable: N/A                            |
+|                                                                        |                                                        |
+| Leave this value blank to disble user synchronization.                 |                                                        |
+| Numerical value.                                                       |                                                        |
++------------------------------------------------------------------------+--------------------------------------------------------+
 
 .. config:setting:: plugins-msteamssyncsyncmessages
-  :displayname: Sync direct and group messages (Plugins - MS Teams Sync)
-  :systemconsole: Plugins > MS Teams Sync
+  :displayname: Sync direct and group messages (Plugins - MS Teams Connector)
+  :systemconsole: Plugins > MS Teams Connector
   :configjson: N/A
   :environment: N/A
 
@@ -1527,18 +1527,18 @@ Sync users
 Sync direct and group messages
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+------------------------------------------------------------------------+----------------------------------------------------+
-| Synchronize direct messages, group messages, and chats between         | - System Config path: **Plugins > MS Teams Sync**  |
-| Mattermost and Microsoft Teams users.                                  | - ``config.json`` setting: N/A                     |
-|                                                                        | - Environment variable: N/A                        |
-| - **true**: **(Default)** Mattermost synchronizes direct messages,     |                                                    |
-|   group messages, and chats between Mattermost and Microsoft Teams.    |                                                    |
-| - **false**: Mattermost doesn't synchronize messages and chats.        |                                                    |
-+------------------------------------------------------------------------+----------------------------------------------------+
++------------------------------------------------------------------------+---------------------------------------------------------+
+| Synchronize direct messages, group messages, and chats between         | - System Config path: **Plugins > MS Teams Connector**  |
+| Mattermost and Microsoft Teams users.                                  | - ``config.json`` setting: N/A                          |
+|                                                                        | - Environment variable: N/A                             |
+| - **true**: **(Default)** Mattermost synchronizes direct messages,     |                                                         |
+|   group messages, and chats between Mattermost and Microsoft Teams.    |                                                         |
+| - **false**: Mattermost doesn't synchronize messages and chats.        |                                                         |
++------------------------------------------------------------------------+---------------------------------------------------------+
 
 .. config:setting:: plugins-msteamssyncenabledteams
-  :displayname: Enabled teams (Plugins - MS Teams Sync)
-  :systemconsole: Plugins > MS Teams Sync
+  :displayname: Enabled teams (Plugins - MS Teams Connector)
+  :systemconsole: Plugins > MS Teams Connector
   :configjson: N/A
   :environment: N/A
   :description: Specify which Mattermost teams synchronize direct messages, group messages, and chats with Microsoft Teams.
@@ -1546,13 +1546,13 @@ Sync direct and group messages
 Enabled teams
 ~~~~~~~~~~~~~
 
-+------------------------------------------------------------------------+----------------------------------------------------+
-| Specify which Mattermost teams synchronize direct messages, group      | - System Config path: **Plugins > MS Teams Sync**  |
-| messages, and chats with Microsoft Teams.                              | - ``config.json`` setting: N/A                     |
-|                                                                        | - Environment variable: N/A                        |
-| Separate multiple team names with commas. Leave this value blank to    |                                                    |
-| synchronize all Mattermost teams.                                      |                                                    |
-+------------------------------------------------------------------------+----------------------------------------------------+
++------------------------------------------------------------------------+---------------------------------------------------------+
+| Specify which Mattermost teams synchronize direct messages, group      | - System Config path: **Plugins > MS Teams Connector**  |
+| messages, and chats with Microsoft Teams.                              | - ``config.json`` setting: N/A                          |
+|                                                                        | - Environment variable: N/A                             |
+| Separate multiple team names with commas. Leave this value blank to    |                                                         |
+| synchronize all Mattermost teams.                                      |                                                         |
++------------------------------------------------------------------------+---------------------------------------------------------+
 
 ----
 
