@@ -25,7 +25,7 @@ Frequently asked questions
 What happens when I log out of Mattermost?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-When you log out of Mattermost, all data related to your session is removed except a record in the app database of the server you accessed and general activity state information, such as the onboarding checklist. Your user data stored within the server database is deleted when you log out. If you were to delete the Mattermost desktop app, the most recent server URL and state data would also be deleted.
+When you log out of Mattermost, all data related to your session is removed except a record in the app database of the server you accessed and general activity state information, such as the onboarding checklist. Your user data stored within the server database is deleted when you log out. If you were to delete the Mattermost desktop and the mobile app, the most recent server URL and state data would also be deleted.
 
 When you log out, the following additional data is also deleted:
 - On MacOS, your user credentials for this server from the keychain.
