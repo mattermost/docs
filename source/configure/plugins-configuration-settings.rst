@@ -18,7 +18,7 @@ Both self-hosted and Cloud admins can access the following configuration setting
 - `GIF commands <#gif-commands>`__
 - `Mattermost Boards <#mattermost-boards>`__
 - `MS Teams Sync <#ms-teams-sync>`__
--  Playbooks <#playbooks>`__
+-  Playbooks <#mattermost-playbooks>`__
 - `User Satisfaction surveys <#user-satisfaction-surveys>`__
 - `Zoom <#zoom>`__
 
@@ -91,7 +91,7 @@ Automatic prepackaged plugins
   :configjson: EnableUploads
   :environment: MM_PLUGINSETTINGS_ENABLEUPLOADS
 
-Upload plugin
+Upload Plugin
 ~~~~~~~~~~~~~
 
 +------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
@@ -1320,6 +1320,8 @@ Access the following configuration settings in the System Console by going to **
 .. config:setting:: plugins-boardsenable
   :displayname: Enable plugin (Plugins - Boards)
   :systemconsole: Plugins > Mattermost Boards
+  :configjson: 
+  :environment: 
 
   - **true**: Enables the Mattermost Boards plugin on your Mattermost workspace.
   - **false**: Disables the Mattermost Boards plugin on your Mattermost workspace.
@@ -1330,6 +1332,7 @@ Enable plugin
 +----------------------------------------------------------------------------------+-------------------------------------------------------+
 | - **true**: Enables the Mattermost Boards plugin on your Mattermost workspace.   | - System Config path: **Plugins > Mattermost Boards** |
 | - **false**: Disables the Mattermost Boards plugin on your Mattermost workspace. |                                                       |
+|                                                                                  | - Environment variable:                               |
 +----------------------------------------------------------------------------------+-------------------------------------------------------+
 
 ----
