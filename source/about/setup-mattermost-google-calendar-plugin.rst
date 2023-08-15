@@ -29,12 +29,30 @@ Create a Google Calendar service
 
 1. In a browser, as a Google admin, create a project in the Google Cloud Console by going to ``https://console.cloud.google.com/``, selecting the project option in the top left corner of the screen, then selecting **New Project** option in the top right corner of the popup window.
 
+  .. image:: ../images/google-cloud-console-create-project.png
+    :alt: In Google Cloud Console, select New Project to create up a new project.
+
+  .. image:: ../images/google-cloud-console-new-project.png
+    :alt: Use Google Cloud Console to set up a new project.
+
 2. When your project is created, go to **APIs & Services** to search for and enable the following 2 services:
 
   - **Google Calendar API**: Used for anything related to the calendar and events.
   - **Google People API**: Used to link your Mattermost account to your Google account.
 
+  .. image:: ../images/google-cloud-console-apis.png
+    :alt: In Google Cloud Console, select APIs & Services to search for services to enable.
+
+  .. image:: ../images/enable-google-cloud-console-google-calendar-api.png
+    :alt: In Google Cloud Console, search for and enable the Google Calendar API.
+
+  .. image:: ../images/enable-google-cloud-console-google-people-api.png
+    :alt: In Google Cloud Console, search for and enable the Google People API.
+
 3. Choose how to configure and register the application by selecting the user type as **Internal** or **External**, then select **Create**.
+
+  .. image:: ../images/google-cloud-console-OAuth-consent-screen.png
+    :alt: On the OAuth consent screen, configure and register the application as internal or external.
 
 4. When prompted, set the following app information:
 
@@ -43,33 +61,48 @@ Create a Google Calendar service
   - **Developer contact information**
   - Populate the remaining fields as needed.
 
+  .. image:: ../images/google-cloud-console-app-information.png
+    :alt: Configure the consent screen app name and user support email.
+
+  .. image:: ../images/google-cloud-console-developer-contact-information.png
+    :alt: Configure the consent screen developer contact information.
+
 5. Under Credentials, create new OAuth 2.0 credentials by selecting **Create Credentials > OAuth client ID**.
 
   - Under **Application type**, select **Web Application**.
   - Under **Authorized redirect URIs** add ``https://(MM_SITE_URL)/plugins/com.mattermost.gcal/oauth2/complete`` and replace ``MM_SITE_URL`` with your Mattermost Server Site URL.
 
+  .. image:: ../images/google-cloud-console-web-application.png
+    :alt: Under Credentials, select Web application.
+
+  .. image:: ../images/google-cloud-console-authorized-redirect-uris.png
+    :alt: Configure the authorized redirect URI for Mattermost.
+
 6. Once the OAuth client is created, make a copy of the **Client ID** and **Client Secret** values for the next and final setup step below.
+
+  .. image:: ../images/google-cloud-console-OAuth-client-created.png
+    :alt: Copy the Client ID and Client secret values. You'll need these values in the next step.
 
 Configure the Mattermost Google Calendar plugin
 -----------------------------------------------
 
-7. In Mattermost, configure the plugin by going to **System Console > Plugin Management > Google Calendar**, enter the following values, and select **Save**.
+In Mattermost, configure the plugin by going to **System Console > Plugin Management > Google Calendar**, enter the following values, and select **Save**.
 
-  - **Enable Plugin**: Select **true** to enable the plugin for your Mattermost instance.
-  - **Admin User IDs**: Specify the user IDs who are authorized to manage the plugin in addition to Mattermost system admins. Separate multiple user IDs with commas. Go to **System Console > User Management > Users** to obtain a user's ID.
-  - **Encryption key**: Generate an encryption key used to store data in the database. Regenerating this value forces users to re-link their Google Calendar in Mattermost.
-  - **Google Application Client ID**: Paste via the OAuth Client ID created using the Google Cloud Console.
-  - **Google Client Secret**: Paste via the OAuth Client Secret created using the Google Cloud Console.
-  - **Google Domain verify key**: TBD
+- **Enable Plugin**: Select **true** to enable the plugin for your Mattermost instance.
+- **Admin User IDs**: Specify the user IDs who are authorized to manage the plugin in addition to Mattermost system admins. Separate multiple user IDs with commas. Go to **System Console > User Management > Users** to obtain a user's ID.
+- **Encryption key**: Generate an encryption key used to store data in the database. Regenerating this value forces users to re-link their Google Calendars in Mattermost.
+- **Google Application Client ID**: Paste the Client ID value from the Google Cloud Console.
+- **Google Client Secret**: Paste the Client Secret value from the Google Cloud Console.
+- **Google Domain verify key**: TBD
 
 .. note::
 
-    Additional Mattermost Google Calendar configuration options are available for troubleshooting, including the admin log level of plugin logs, and  displaying full or partial context for admin log messages. See the `plugin configuration settings </configure/plugins-configuration-settings.html#mattermost-google-calendar plugin> documentation for details.
+    Additional Mattermost Google Calendar configuration options are available for troubleshooting, including the admin log level of plugin logs, and  displaying full or partial context for admin log messages. See the `plugin configuration settings </configure/plugins-configuration-settings.html#mattermost-google-calendar-plugin>`__ documentation for details.
 
 Get started with the plugin
 ---------------------------
 
-See our `use Mattermost Google Calendar plugin </channels/collaborate-using-mattermost-for-microsoft-teams>`__ documentation for details on how users can `link their Google Calendar to Mattermost </channels/use-mattermost-google-calendar-plugin.html#link-google-calendar>`__, `set plugin preferences </channels/use-mattermost-google-calendar-plugin.html#set-preferences>`__, and `create calendar events in Mattermost </channels/use-mattermost-google-calendar-plugin.html#create-events>`__ that are added to their Google Calendar automatically.
+See the `use Mattermost Google Calendar plugin </channels/use-mattermost-google-calendar-plugin>`__ documentation for details on how users can `link their Google Calendar to Mattermost </channels/use-mattermost-google-calendar-plugin.html#connect-your-google-calendar-account-to-mattermost>`__, `customize plugin preferences </channels/use-mattermost-google-calendar-plugin.html#customize-your-google-calendar-plugin>`__, and `create calendar events in Mattermost <channels/use-mattermost-google-calendar-plugin.html#create-a-calendar-event>`__ that are added to their Google Calendar automatically.
 
 Troubleshooting
 ---------------

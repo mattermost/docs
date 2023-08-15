@@ -17,6 +17,7 @@ Both self-hosted and Cloud admins can access the following configuration setting
 - `Demo Plugin <#demo-plugin>`__
 - `GIF commands <#gif-commands>`__
 - `Mattermost Boards <#mattermost-boards>`__
+- `Google Calendar <#google-calendar>`__`
 - `MS Teams Sync <#ms-teams-sync>`__
 -  Playbooks <#mattermost-playbooks>`__
 - `User Satisfaction surveys <#user-satisfaction-surveys>`__
@@ -1312,6 +1313,150 @@ Enable plugin
 
 ----
 
+Google Calendar
+----------------
+
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
+
+The Mattermost Google Calendar plugin enables a two-way integration between Mattermost and Google Calendar.
+
+Access the following configuration settings in the System Console by going to **Plugins > Google Calendar**.
+
+.. config:setting:: plugins-googlecalendarenable
+  :displayname: Enable plugin (Plugins - Google Calendar)
+  :systemconsole: Plugins > Google Calendar
+  :configjson: N/A
+  :environment: N/A
+
+  - **true**: Enables the Google Calendar plugin on your Mattermost workspace.
+  - **false**: Disables the Google Calendar plugin on your Mattermost workspace.
+
+Enable plugin
+~~~~~~~~~~~~~
+
++--------------------------------------------------------------------------+------------------------------------------------------+
+| Enable the Mattermost Google Calendar plugin for all Mattermost teams.   | - System Config path: **Plugins > Google Calendar**  |
+|                                                                          | - ``config.json`` setting: N/A                       |
+| - **true**: Enables Google Calendar plugin on your Mattermost workspace. | - Environment variable: N/A                          |
+| - **false**: **(Default)** Disables the Google Calendar plugin.          |                                                      |
++--------------------------------------------------------------------------+------------------------------------------------------+
+
+.. config:setting:: plugins-googlecalendaradminuserids
+  :displayname: Enable plugin (Plugins - Google Calendar)
+  :systemconsole: Plugins > Google Calendar
+  :configjson: N/A
+  :environment: N/A
+
+Admin user IDs
+~~~~~~~~~~~~~~
+
++--------------------------------------------------------------------------+------------------------------------------------------+
+| A comma-separated list of users authorized to manage the plugin.         | - System Config path: **Plugins > Google Calendar**  |
+|                                                                          | - ``config.json`` setting: N/A                       |
+| Go to **System Console > User Management > Users** to access user IDs.   | - Environment variable: N/A                          |
++--------------------------------------------------------------------------+------------------------------------------------------+
+
+.. config:setting:: plugins-googlecalendarcopypluginlogs
+  :displayname: Enable plugin (Plugins - Google Calendar)
+  :systemconsole: Plugins > Google Calendar
+  :configjson: N/A
+  :environment: N/A
+
+Copy plugin logs to admins, as bot messages
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++--------------------------------------------------------------------------+------------------------------------------------------+
+| The level of detail in log events for the plugin.                        | - System Config path: **Plugins > Google Calendar**  |
+|                                                                          | - ``config.json`` setting: N/A                       |
+| Can be one of: **None**, **Debug**, **Info**, **Warning**, or **Error**. | - Environment variable: N/A                          |
++--------------------------------------------------------------------------+------------------------------------------------------+
+
+.. config:setting:: plugins-googlecalendardisplayfullcontext
+  :displayname: Enable plugin (Plugins - Google Calendar)
+  :systemconsole: Plugins > Google Calendar
+  :configjson: N/A
+  :environment: N/A
+
+  - **true**: Displays full context for each admin log entry.
+  - **false**: Full context isn't displayed for each admin log entry.
+
+Display full context for each admin log message
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++--------------------------------------------------------------------------+------------------------------------------------------+
+| Specify whether full context is displayed for log messages.              | - System Config path: **Plugins > Google Calendar**  |
+|                                                                          | - ``config.json`` setting: N/A                       |
+| - **true**: Displays full context for each admin log entry.              | - Environment variable: N/A                          |
+| - **false**: Full context isn't displayed for each admin log entry.      |                                                      |
++--------------------------------------------------------------------------+------------------------------------------------------+
+
+.. config:setting:: plugins-googlecalendarencryptionkey
+  :displayname: Enable plugin (Plugins - Google Calendar)
+  :systemconsole: Plugins > Google Calendar
+  :configjson: N/A
+  :environment: N/A
+
+Encryption key
+~~~~~~~~~~~~~~
+
++--------------------------------------------------------------------------+------------------------------------------------------+
+| The encryption key used to store data in the database.                   | - System Config path: **Plugins > Google Calendar**  |
+|                                                                          | - ``config.json`` setting: N/A                       |
+|                                                                          | - Environment variable: N/A                          |
++--------------------------------------------------------------------------+------------------------------------------------------+
+| **Note**: Select **Regenerate** to generate a new encryption key. When you regenerate this value, all users will need to        |
+| `reconnect their Google Calendar with Mattermost </channels/use-mattermost-google-calendar-plugin.                              |
+| html#connect-your-google-calendar-account-to-mattermost>`__.                                                                    |
++--------------------------------------------------------------------------+------------------------------------------------------+
+
+.. config:setting:: plugins-googlecalendarappclientid
+  :displayname: Enable plugin (Plugins - Google Calendar)
+  :systemconsole: Plugins > Google Calendar
+  :configjson: N/A
+  :environment: N/A
+
+Google application client ID
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++--------------------------------------------------------------------------+------------------------------------------------------+
+| The Google App Authentication Client ID.                                 | - System Config path: **Plugins > Google Calendar**  |
+|                                                                          | - ``config.json`` setting: N/A                       |
+|                                                                          | - Environment variable: N/A                          |
++--------------------------------------------------------------------------+------------------------------------------------------+
+
+.. config:setting:: plugins-googlecalendarclientsecret
+  :displayname: Enable plugin (Plugins - Google Calendar)
+  :systemconsole: Plugins > Google Calendar
+  :configjson: N/A
+  :environment: N/A
+
+Google client secret
+~~~~~~~~~~~~~~~~~~~~~
+
++--------------------------------------------------------------------------+------------------------------------------------------+
+| The Google App Authentication Client Secret.                             | - System Config path: **Plugins > Google Calendar**  |
+|                                                                          | - ``config.json`` setting: N/A                       |
+|                                                                          | - Environment variable: N/A                          |
++--------------------------------------------------------------------------+------------------------------------------------------+
+
+.. config:setting:: plugins-googlecalendardomainverifykey
+  :displayname: Enable plugin (Plugins - Google Calendar)
+  :systemconsole: Plugins > Google Calendar
+  :configjson: N/A
+  :environment: N/A
+
+Google domain verify key
+~~~~~~~~~~~~~~~~~~~~~~~~
+
++--------------------------------------------------------------------------+------------------------------------------------------+
+| The Google App domain verification key.                                  | - System Config path: **Plugins > Google Calendar**  |
+|                                                                          | - ``config.json`` setting: N/A                       |
+|                                                                          | - Environment variable: N/A                          |
++--------------------------------------------------------------------------+------------------------------------------------------+
+
+----
+
 MS Teams Sync
 -------------
 
@@ -1367,7 +1512,6 @@ Tenant ID
   :configjson: N/A
   :environment: N/A
   :description: Specify the Microsoft Teams Client ID.
-
 
 Client ID
 ~~~~~~~~~
