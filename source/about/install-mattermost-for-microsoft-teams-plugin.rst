@@ -7,7 +7,7 @@ Install the Mattermost for Microsoft Teams plugin
 To install the `Mattermost for Microsoft Teams </plugins/mattermost-for-microsoft-teams>`__ plugin in Mattermost:
 
 1. Log in to your Mattermost workspace as a system administrator.
-2. Download version v0.3.9 of `the plugin binary release <https://github.com/mattermost/mattermost-plugin-msteams-sync/releases>`__, compatible with Mattermost v8.0.1 and later. 
+2. Download the latest version of `the plugin binary release <https://github.com/mattermost/mattermost-plugin-msteams-sync/releases>`__, compatible with Mattermost v8.0.1 and later. 
 
   .. tip::
 
@@ -47,7 +47,7 @@ If you encounter issues when connecting user accounts or linking channels, we re
 Get help
 ---------
 
-If you face any issues while installing the Mattermost for Microsoft Teams sync plugin, you can either:
+If you face any issues while installing the Mattermost for Microsoft Teams Sync plugin, you can either:
 
 - Open a new issue in the `Mattermost for Microsoft Teams GitHub repository <https://github.com/mattermost/mattermost-plugin-msteams-sync/issues/new>`__. 
 - Or, create a new topic in our `peer-to-peer troubleshooting forum <https://forum.mattermost.com/c/trouble-shoot/16>`__.
