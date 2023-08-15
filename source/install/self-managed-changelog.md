@@ -6,11 +6,90 @@ See the [changelog in progress](https://bit.ly/2nK3cVf) for the upcoming release
 
 Latest Mattermost Releases:
 
+- [Release v8.1 - Extended Support Release](#release-v8-1-extended-support-release)
 - [Release v8.0 - Major Release](#release-v8-0-major-release)
 - [Release v7.11 - Feature Release](#release-v7-11-feature-release)
 - [Release v7.10 - Feature Release](#release-v7-10-feature-release)
-- [Release v7.9 - Feature Release](#release-v7-9-feature-release)
 - [Release v7.8 - Extended Support Release](#release-v7-8-extended-support-release)
+
+## Release v8.1 - [Extended Support Release](https://docs.mattermost.com/upgrade/release-definitions.html#extended-support-release-esr)
+
+**Release day: August 16, 2023**
+
+### Improvements
+
+#### User Interface (UI)
+ - Updated the user interface for the **Browse channels** modal.
+ - Increased the nickname field in the user interface from 22 to 64 characters.
+ - Updated links to documentation in the **System Console**.
+ - Emoji size is now in scale with the text size in the channel header.
+ - The emoji picker view modal is now displayed on mobile browsers.
+ - Prepackaged v1.2.2 of the Apps plugin.
+ - Prepackaged Focalboard plugin version 7.11.2.
+ - Prepackaged Playbooks version 1.38.0.
+ - Prepackaged Calls plugin version 0.18.0.
+
+#### Administration
+ - Added support for a separate Export storage and S3 presigned URLs generation for downloading the export files.
+ - Using ``https://github.com/reduxjs/redux-devtools`` in production builds is now allowed for webapp.
+ - Added a new feature flag, ``DataRetentionConcurrencyEnabled``, to enable/disable concurrency for data retention batch deletion. Also added a new configuration setting  ``DataRetentionSettings.TimeBetweenBatchesMilliseconds`` to control the sleep time between batch deletions.
+ - Added a setting under **System Console > Authentication > Guest Access > Show Guest Tag** to remove the **Guest** badges from within the product.
+- Added Apache 2.0 license to the public submodule, explicitly signalling to [pkg.go.dev](https://pkg.go.dev/github.com/mattermost/mattermost/server/public@v0.0.6) the license in play for this source code.
+ - Added the ability for admins to hide or customize the **Forgot password** link on the login page.
+ - The ``mattermost database reset`` command no longer starts the application server. It will only start the store layer and truncate the tables excluding the migrations table.
+
+### Bug Fixes
+ - Fixed an issue where scrollbars were not visible enough on the **File Preview** screen.
+ - Fixed an issue where SAML Admin Attribute only compared the first value instead of looping through the assertion values array.
+ - Fixed an issue where updates to recent emojis were not batched when multiple emojis were posted at once.
+ - Reverted a change that could cause the webapp to forget the current user's authentication method.
+ - Fixed an issue where drafts would persist after sending an ``@here`` mention in the right-hand side.
+ - Fixed an issue where the **New messages** toast appeared on channels that were completely visible.
+ - Fixed an UI issue related to profile popover on channel member search in the right hand pane.
+ - Fixed an issue where the multi-line channel header preview was too narrow on mobile web view.
+ - Fixed the render of the **Add Slash Command** page in the backstage area.
+ - Fixed an issue where user's timezone affected the date selection in the calendar.
+ - Fixed the clickable area of post textboxes being too small.
+ - Fixed an UI bug in the bot profile popover.
+ - Fixed an issue with missing time zone metadata in the Docker container.
+ - Fixed an issue with the ``registerMessageWillBeUpdatedHook`` plugin hook.
+ - Fixed an issue where the **Saved Posts** section would not show channel and team names.
+ - Fixed accessibility issues: tab support at login, reset and signup pages, and controls at the Apps bar.
+
+### config.json
+Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
+
+#### Changes to all plans:
+ - Under ``PasswordSettings`` in ``config.json``:
+    - Added ``EnableForgotLink`` to add the ability for admins to hide or customize the **Forgot password** link on the login page.
+ - Under ``FileSettings`` 
+    - Added various export store settings to add support for a new Export storage.
+
+#### Changes to Professional and Enterprise plans:
+ - Under ``GuestAccountsSettings`` in ``config.json``:
+    - Added ``HideTags`` to add the ability to remove the **Guest** badges from within the product.
+
+#### Changes to Enterprise plan:
+ - ``DataRetentionSettings`` in ``config.json``:
+    - Added ``TimeBetweenBatchesMilliseconds`` setting to control the sleep time between batch deletions.
+
+### Go Version
+ - v8.1 is built with Go ``v1.19.5``.
+
+### Known Issues
+ - Adding an @mention at the start of a post draft and pressing the left or right arrow key can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
+ - Google login fails on the Classic mobile apps.
+ - Status may sometimes get stuck as **Away** or **Offline** in High Availability mode with IP Hash turned off.
+ - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
+ - The team sidebar on the desktop app does not update when channels have been read on mobile.
+ - Slack import through the CLI fails if email notifications are enabled.
+ - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
+ - The Playbooks left-hand sidebar doesn't update when a user is added to a run or playbook without a refresh.
+ - If a user isn't a member of a configured broadcast channel, posting a status update might fail without any error feedback. As a temporary workaround, join the configured broadcast channels, or remove those channels from the run configuration.
+ - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
+
+### Contributors
+ - [3kami3](https://github.com/3kami3), [agarciamontoro](https://github.com/agarciamontoro), [agnivade](https://github.com/agnivade), [akaMrDC](https://github.com/akaMrDC), [Alanchen](https://translate.mattermost.com/user/Alanchen), [amyblais](https://github.com/amyblais), [andrleite](https://github.com/andrleite), [austin-denoble](https://github.com/austin-denoble), [ayusht2810](https://github.com/ayusht2810), [azigler](https://github.com/azigler), [azistellar](https://translate.mattermost.com/user/azistellar), [bartoszpijet](https://github.com/bartoszpijet), [bbodenmiller](https://github.com/bbodenmiller), [BenCookie95](https://github.com/BenCookie95), [BodhiHu](https://github.com/BodhiHu), [CI-YU](https://translate.mattermost.com/user/CI-YU), [cpoile](https://github.com/cpoile), [crspeller](https://github.com/crspeller), [ctlaltdieliet](https://translate.mattermost.com/user/ctlaltdieliet), [cwarnermm](https://github.com/cwarnermm), [danielcw-fortuna](https://github.com/danielcw-fortuna), [devinbinnie](https://github.com/devinbinnie), [dirosv-eden](https://translate.mattermost.com/user/dirosv-eden), [dsharma522](https://github.com/dsharma522), [EduardoSellanes](https://github.com/EduardoSellanes), [emdecr](https://github.com/emdecr), [enahum](https://github.com/enahum), [esarafianou](https://github.com/esarafianou), [esethna](https://github.com/esethna), [fmartingr](https://github.com/fmartingr), [gabrieljackson](https://github.com/gabrieljackson), [guuw](https://translate.mattermost.com/user/guuw), [hanh.h.pham](https://translate.mattermost.com/user/hanh.h.pham), [harshal2030](https://github.com/harshal2030), [harshilsharma63](https://github.com/harshilsharma63), [hchorfispiria](https://github.com/hchorfispiria), [hmhealey](https://github.com/hmhealey), [ifoukarakis](https://github.com/ifoukarakis), [invalid-email-address](https://github.com/invalid-email-address), [isacikgoz](https://github.com/isacikgoz), [it33](https://github.com/it33), [janostgren](https://github.com/janostgren), [jasonblais](https://github.com/jasonblais), [jespino](https://github.com/jespino), [jlandells](https://github.com/jlandells), [johnsonbrothers](https://github.com/johnsonbrothers), [jprusch](https://github.com/jprusch), [JulienTant](https://github.com/JulienTant), [kaakaa](https://github.com/kaakaa), [karan2704](https://github.com/karan2704), [kayazeren](https://github.com/kayazeren), [komoon8934](https://github.com/komoon8934), [krmh04](https://github.com/krmh04), [Kshitij-Katiyar](https://github.com/Kshitij-Katiyar), [larkox](https://github.com/larkox), [LeonardJouve](https://github.com/LeonardJouve), [lieut-data](https://github.com/lieut-data), [linkvn](https://github.com/linkvn), [loganrosen](https://github.com/loganrosen), [lynn915](https://github.com/lynn915), [M-ZubairAhmed](https://github.com/M-ZubairAhmed), [mahaker](https://github.com/mahaker), [majo](https://translate.mattermost.com/user/majo), [manojmalik20](https://github.com/manojmalik20), [marianunez](https://github.com/marianunez), [master7](https://translate.mattermost.com/user/master7), [matinzd](https://github.com/matinzd), [matt-w99](https://github.com/matt-w99), [matthew-src](https://github.com/matthew-src), [matthew-w](https://translate.mattermost.com/user/matthew-w), [matthewbirtch](https://github.com/matthewbirtch), [mgdelacroix](https://github.com/mgdelacroix), [mickmister](https://github.com/mickmister), [mkdbns](https://github.com/mkdbns), [morgancz](https://github.com/morgancz), [mustdiechik](https://github.com/mustdiechik), [mvitale1989](https://github.com/mvitale1989), [namanh-asher](https://github.com/namanh-asher), [nickmisasi](https://github.com/nickmisasi), [notlelouch](https://github.com/notlelouch), [orta-contrib](https://github.com/orta-contrib), [panoramix360](https://github.com/panoramix360), [PedroHmaker](https://github.com/PedroHmaker), [phoinix-mm-test](https://github.com/phoinix-mm-test), [phoinixgrr](https://github.com/phoinixgrr), [pjenicot](https://github.com/pjenicot), [potatogim](https://github.com/potatogim), [pvev](https://github.com/pvev), [qryptdev](https://github.com/qryptdev), [ridwankabeer435](https://github.com/ridwankabeer435), [roadt](https://github.com/roadt), [saideepesh000](https://github.com/saideepesh000), [saturninoabril](https://github.com/saturninoabril), [sbishel](https://github.com/sbishel), [Sharuru](https://github.com/Sharuru), [ShrootBuck](https://github.com/ShrootBuck), [sinansonmez](https://github.com/sinansonmez), [sonichigo](https://github.com/sonichigo), [spirosoik](https://github.com/spirosoik), [sri-byte](https://github.com/sri-byte), [stafot](https://github.com/stafot), [streamer45](https://github.com/streamer45), [stylianosrigas](https://github.com/stylianosrigas), [Sudhanva-Nadiger](https://github.com/Sudhanva-Nadiger), [thefourcraft](https://github.com/thefourcraft), [thinkGeist](https://github.com/thinkGeist), [ThrRip](https://github.com/ThrRip), [timmycheng](https://github.com/timmycheng), [toninis](https://github.com/toninis), [tsabi](https://github.com/tsabi), [varghesejose2020](https://github.com/varghesejose2020), [veronicadip](https://github.com/veronicadip), [vish9812](https://github.com/vish9812), [wiersgallak](https://github.com/wiersgallak), [wiggin77](https://github.com/wiggin77), [Willyfrog](https://github.com/Willyfrog), [yasserfaraazkhan](https://github.com/yasserfaraazkhan), [yigitcan-prospr](https://github.com/yigitcan-prospr), [yomiadetutu1](https://github.com/yomiadetutu1)
 
 ## Release v8.0 - [Major Release](https://docs.mattermost.com/upgrade/release-definitions.html#major-release)
 
