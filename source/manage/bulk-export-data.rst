@@ -18,6 +18,10 @@ Bulk export data
 
   .. tab:: Use CLI
 
+    .. note:: 
+      
+      From Mattermost v6.0, this command has been deprecated in favor of `mmctl export commands </manage/mmctl-command-line-tool.html#mmctl-export>`__ as the supported way to export data out of Mattermost.
+
     The export command runs in the `CLI </manage/command-line-tools.html>`__.  It has permissions to access all information in the Mattermost database.
 
     To run the export command:
