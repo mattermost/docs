@@ -115,7 +115,7 @@ To set up a PostgreSQL database for use by the Mattermost server:
 
       These host connections are specific to Ubuntu 20.04, and will differ depending on the operating system version you're running. For example, in Ubuntu 22.04, the ``peer`` connection types are listed as ``sha-256`` instead.
 
-      **Single server deployment**
+      **Local Database (same server)**
 
       If the Mattermost server and the database are on the same machine:
 
@@ -133,7 +133,7 @@ To set up a PostgreSQL database for use by the Mattermost server:
 
         ``host    all             all         ::1/128        trust``
 
-      **Multi-server deployment**
+      **Remote Database (separate server)**
 
       If the Mattermost server and the database are on different machines:
 
@@ -145,7 +145,7 @@ To set up a PostgreSQL database for use by the Mattermost server:
 
       These host connections are specific to Red Hat 8, and will differ depending on the operating system version you're running.
 
-      **Single server deployment**
+      **Local Database (same server)**
 
       If the Mattermost server and the database are on the same machine:
 
@@ -163,7 +163,7 @@ To set up a PostgreSQL database for use by the Mattermost server:
 
         ``host    all             all         ::1/128        trust``
 
-      **Multi-server deployment**
+      **Remote Database (separate server)**
 
       If the Mattermost server and the database are on different machines:
 
@@ -182,7 +182,7 @@ To set up a PostgreSQL database for use by the Mattermost server:
 
 .. tabs::
 
-  .. tab:: Single server deployment
+  .. tab:: Local Database (same server)
 
     If the Mattermost server and the database are on the same machine, use the following command: 
 
@@ -191,7 +191,7 @@ To set up a PostgreSQL database for use by the Mattermost server:
 
           psql --dbname=mattermost --username=mmuser --password
 
-  .. tab:: Multi-server deployment
+  .. tab:: Remote Database (separate server)
 
     If the Mattermost server is on a different machine, log into that machine and use the following command: 
 
