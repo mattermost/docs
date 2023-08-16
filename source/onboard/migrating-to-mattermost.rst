@@ -174,8 +174,6 @@ Next you have to create a zip file with the ``mattermost_import.jsonl`` file and
 
 .. code:: bash
 
-    mkdir data
-    mv bulk-export-attachments data
     zip -r mattermost-bulk-import.zip data mattermost_import.jsonl
 
 The file ``mattermost-bulk-import.zip`` is now ready to import into Mattermost.
