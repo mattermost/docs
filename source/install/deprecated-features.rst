@@ -9,8 +9,7 @@ Removed features in upcoming versions
 Mattermost Server v9.0.0
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-- Boards is moving to a community plugin.
-- Removing support for some prepackaged plugins.
+- Mattermost Boards will transition to being fully community supported, with various other plugins following suit. See this `forum post <https://forum.mattermost.com/t/upcoming-product-changes-to-boards-and-various-plugins/16669>`_ for more details.
 - Removing deprecated Insights feature.
 - Gfycat as a GIF service is being `discontinued <https://techcrunch.com/2023/07/05/gfycat-shuts-down-on-september-1/>`_ on September 1, 2023. The in-product GIF picker currently powered by Gfycat will be replaced with GIPHY in the 9.0 release and in our `supported versions <https://docs.mattermost.com/upgrade/release-lifecycle.html>`_.
 
