@@ -1515,6 +1515,28 @@ Sync users
 | Numerical value.                                                       |                                                   |
 +------------------------------------------------------------------------+---------------------------------------------------+
 
+.. config:setting:: plugins-msteamssyncsyncguests
+  :displayname: Sync guest users (Plugins - MS Teams Connector)
+  :systemconsole: Plugins > MS Teams Connector
+  :configjson: N/A
+  :environment: N/A
+
+  - **true**: Microsoft Teams guest users are synchronized to linked channels in Mattermost.
+  - **false**: Microsoft Teams guest user messages aren't synchronized to linked channels in Mattermost.
+
+Sync guest users
+~~~~~~~~~~~~~~~~
+
++------------------------------------------------------------------------+---------------------------------------------------------+
+| Synchronize Microsoft Teams guest users to linked channels in          | - System Config path: **Plugins > MS Teams Conenctor**  |
+| Mattermost                          .                                  | - ``config.json`` setting: N/A                          |
+|                                                                        | - Environment variable: N/A                             |
+| - **true**: Microsoft Teams guest users are synchronized to linked     |                                                         |
+|   channels in Mattermost.                                              |                                                         |
+| - **false**: Microsoft Teams guest users aren't synchronized to        |                                                         |
+|   linked channels in Mattermost.                                       |                                                         |
++------------------------------------------------------------------------+---------------------------------------------------------+
+
 .. config:setting:: plugins-msteamssyncsyncmessages
   :displayname: Sync direct and group messages (Plugins - MS Teams Sync)
   :systemconsole: Plugins > MS Teams Sync
