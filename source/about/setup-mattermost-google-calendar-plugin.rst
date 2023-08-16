@@ -118,5 +118,5 @@ Get help
 
 If you face any issues while installing the Mattermost Google Calendar plugin, you can either:
 
-- Open a new issue in the `Mattermost Google Calendar repository <https://github.com/mattermost/xxx/issues/new>`__. 
+- Open a new issue in the `Mattermost Google Calendar repository <https://github.com/mattermost/mattermost-plugin-mscalendar/issues/new>`__. 
 - Or, create a new topic in our `peer-to-peer troubleshooting forum <https://forum.mattermost.com/c/trouble-shoot/16>`__.
