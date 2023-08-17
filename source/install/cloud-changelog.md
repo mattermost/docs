@@ -33,6 +33,7 @@ Latest Mattermost Cloud releases:
 
 ### Bug Fixes
  - Fixed accessibility issues: tab support at login, reset and signup pages, and App bar.
+ - Fixed an issue where CRLF line endings passed to mmctl commands were not being stripped from commands.
 
 ### Known Issues
  - 
