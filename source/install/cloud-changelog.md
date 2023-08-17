@@ -4,12 +4,38 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 
 Latest Mattermost Cloud releases:
 
+- [Release 2023-08-31](#release-2023-08-31)
 - [Release 2023-08-09](#release-2023-08-09)
 - [Release 2023-08-03](#release-2023-08-03)
 - [Release 2023-07-26](#release-2023-07-26)
 - [Release 2023-07-20](#release-2023-07-20)
 - [Release 2023-07-19](#release-2023-07-19)
-- [Release 2023-07-11](#release-2023-07-11)
+
+## Release 2023-08-31
+
+### Improvements
+
+#### User Interface (UI)
+ - Added functionality to bulk mark a whole channel category as read.
+ - Removed Boards product tour code.
+
+#### Administration
+ - API examples are now updated to reflect latest Go API conventions, deprecating older code samples.
+ - Updated the public server module version to v0.0.7.
+ - Added a ``Post Action`` plugin hook to allow plugins to register new items in the post menu.
+ - Added a ``Post Editor Action`` plugin hook to allow plugins to register new items in the post editor menu.
+ - Improved logging on plugin initialization, activation and removal.
+ - Removed the deprecated ``ManifestExecutables`` struct.
+ - Removed the deprecated ``UserAuth.Password`` field.
+ - The server is now built using a node version matching server.
+ - Remote users are no longer counted as part of the license.
+ - Improved data retention logs.
+
+### Bug Fixes
+ - Fixed accessibility issues: tab support at login, reset and signup pages, and App bar.
+
+### Known Issues
+ - 
 
 ## Release 2023-08-09
 
