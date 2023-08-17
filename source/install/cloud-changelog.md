@@ -24,10 +24,10 @@ Latest Mattermost Cloud releases:
  - Updated the public server module version to v0.0.7.
  - Added a ``Post Action`` plugin hook to allow plugins to register new items in the post menu.
  - Added a ``Post Editor Action`` plugin hook to allow plugins to register new items in the post editor menu.
- - Improved logging on plugin initialization, activation and removal.
+ - Improved logging on plugin initialization, activation, and removal.
  - Removed the deprecated ``ManifestExecutables`` struct.
  - Removed the deprecated ``UserAuth.Password`` field.
- - The server is now built using a node version matching server.
+ - The server is now built using a node version matching the server version.
  - Remote users are no longer counted as part of the license.
  - Improved data retention logs.
 
