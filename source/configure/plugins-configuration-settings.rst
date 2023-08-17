@@ -1440,21 +1440,6 @@ Google client secret
 |                                                                          | - Environment variable: N/A                          |
 +--------------------------------------------------------------------------+------------------------------------------------------+
 
-.. config:setting:: plugins-googlecalendardomainverifykey
-  :displayname: Enable plugin (Plugins - Google Calendar)
-  :systemconsole: Plugins > Google Calendar
-  :configjson: N/A
-  :environment: N/A
-
-Google domain verify key
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-+--------------------------------------------------------------------------+------------------------------------------------------+
-| The Google App domain verification key.                                  | - System Config path: **Plugins > Google Calendar**  |
-|                                                                          | - ``config.json`` setting: N/A                       |
-|                                                                          | - Environment variable: N/A                          |
-+--------------------------------------------------------------------------+------------------------------------------------------+
-
 ----
 
 MS Teams Sync

@@ -29,21 +29,19 @@ Customize your Google Calendar plugin
 Mattermost prompts you to configure the plugin based on your personal preferences with the following options. You only need to complete this step once.
 
 - **Update status**: The plugin can update `your Mattermost availability </welcome/set-your-status-availability.html#set-your-availability>`__ when you have an event scheduled.
-- **Confirm status changes**: You can manually confirm every availability change, or the plugin can update your availability automatically.
+- **Get Confirmation**: You can manually confirm every availability change, or the plugin can update your availability automatically.
 
   - If you select **Yes**, Mattermost confirms your availability update 5 minutes before each event starts. You'll also be prompted to change your availability back to **Online** once an event ends.
   - Select **No** to enable the plugin to update your availability automatically.
 
-- **Status during meetings**: During an event, your availability can be set to **Away** or **No Not Disturb** when you’re in a meeting. 
+- **Receive notifications during meetings**: During an event, your availability can be set to **Away** or **No Not Disturb** when you’re in a meeting. 
 
   - Set your availability to **Away** to clearly communicate to others in Mattermost that you're unavailable. You'll continue to receive desktop, email, and push notifications based on your Mattermost notification preferences.
   - Set your availability to `Do Not Disturb </welcome/set-your-status-availability.html#set-your-availability-as-do-not-disturb>`__  to disable all desktop, email, and push notifications.
 
-- **Receive reminders**: You can choose to receive an event reminder 5 minutes before a meeting in a direct messages, and optionally a channel message reminder if specified a channel when you created the event.
+- **Receive reminders**: You can choose to receive an event reminder 5 minutes before a meeting in a direct message.
 
-.. tip::
-
-    Update your plugin preferences any time by entering the Mattermost slash command ``/gcal settings`` in the message text field, and selecting **Send**.
+- **Daily summary**: You can get a daily summary of your events delivered in a direct message.
 
 Create a calendar event
 -----------------------
@@ -58,7 +56,7 @@ Create a calendar event
 
   - You can invite guests to the event by username if they’ve already connected their Google Calendar account to the Mattermost server, or alternatively by their email address. 
   - Once you’ve invited guests to an event, guests must accept the event invitation to receive event reminders based on how they’ve customized their Google Calendar plugin preferences.
-  - When you create an event, its based on your timezone. Guests see event details based on their timeszone.
+  - When you create an event, it's based on your timezone. Guests see event details based on their timezone in direct message reminders, but channel reminders display using the event creator's timezone. 
 
 Review your upcoming events
 ---------------------------
@@ -68,4 +66,4 @@ You can use the following Mattermost slash commands to review your upcoming Goog
 - See a summary of today's events by entering the slash command ``/gcal today`` in the message text field.
 - See a summary of tomorrow's events by entering the slash command ``/gcal tomorrow`` in the message text field.
 - See a summary of the week's events by entering the slash command ``/gcal viewcal`` in the message text field.
-- Schedule a daily summary of your Google Calendar to be sent to you in a direct message by entering the slash command ``/gcal summary time 8:00AM`` in the message text field. Replace the time based on your preference. Every day at the scheduled time, you'll receive a list of your events in a direct message.
+- Update your plugin preferences any time by entering the Mattermost slash command ``/gcal settings`` in the message text field.

@@ -93,7 +93,6 @@ In Mattermost, configure the plugin by going to **System Console > Plugin Manage
 - **Encryption key**: Generate an encryption key used to store data in the database. Regenerating this value forces users to re-link their Google Calendars in Mattermost.
 - **Google Application Client ID**: Paste the Client ID value from the Google Cloud Console.
 - **Google Client Secret**: Paste the Client Secret value from the Google Cloud Console.
-- **Google Domain verify key**: TBD
 
 .. note::
 
