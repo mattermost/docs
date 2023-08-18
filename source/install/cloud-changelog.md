@@ -27,7 +27,6 @@ Latest Mattermost Cloud releases:
  - Improved logging on plugin initialization, activation, and removal.
  - Removed the deprecated ``ManifestExecutables`` struct.
  - Removed the deprecated ``UserAuth.Password`` field.
- - The server is now built using a node version matching the server version.
  - Remote users are no longer counted as part of the license.
  - Improved data retention logs.
  - Removed ``/opengraph`` endpoint as it was unused.
