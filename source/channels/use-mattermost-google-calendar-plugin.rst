@@ -48,7 +48,7 @@ Create a calendar event
 
 1. Using a web browser or the desktop app, select a channel name to access additional channel options.
 2. Select **Create calendar event**.
-3. Specify a subject, date, start time, and end time for the event. You can optionally specify additional event details, including location, guest invitations, description, and a public channel where event reminders will be posted.
+3. Specify a subject, date, start time, and end time for the event. You can optionally specify additional event details, including location, guest invitations, description, and a channel where event reminders will be posted.
 
 4. Select **Create**.
 
