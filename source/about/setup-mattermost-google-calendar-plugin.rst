@@ -18,7 +18,7 @@ Install the Mattermost Google Calendar plugin
 To install the `Mattermost Google Calendar </plugins/mattermost-google-calendar>`__ plugin on your Mattermost server:
 
 1. Log in to your Mattermost workspace as a system administrator.
-2. Download the latest version of `the plugin binary release <https://github.com/mattermost/xxx>`__, compatible with Mattermost v8.x and later. 
+2. Download the latest version of the plugin binary release compatible with Mattermost v8.x and later. 
 
   .. tip::
 
@@ -96,7 +96,7 @@ In Mattermost, configure the plugin by going to **System Console > Plugin Manage
 
 .. note::
 
-    Additional Mattermost Google Calendar configuration options are available for troubleshooting, including the admin log level of plugin logs, and  displaying full or partial context for admin log messages. See the `plugin configuration settings </configure/plugins-configuration-settings.html#mattermost-google-calendar-plugin>`__ documentation for details.
+    Additional Mattermost Google Calendar configuration options are available for troubleshooting, including the admin log level of plugin logs, and  displaying full or partial context for admin log messages. See the `plugin configuration settings </configure/plugins-configuration-settings.html#google-calendar>`__ documentation for details.
 
 Get started with the plugin
 ---------------------------
