@@ -401,7 +401,7 @@ On the host running Calls (could be the Mattermost instance itself or the one ru
 
    nc -l -u -p 8443
 
-On the client side (i.e. the host where you'd normally access Mattermost from), run the following:
+On the client side (i.e., the machine you would normally use to run the Mattermost desktop app or browser), run the following:
 
 .. code-block:: bash
 
