@@ -19,7 +19,7 @@ Both self-hosted and Cloud admins can access the following configuration setting
 - `Mattermost Boards <#mattermost-boards>`__
 - `Google Calendar <#google-calendar>`__
 - `MS Teams Sync <#ms-teams-sync>`__
--  Playbooks <#playbooks>`__
+- `Playbooks <#playbooks>`__
 - `User Satisfaction surveys <#user-satisfaction-surveys>`__
 - `Zoom <#zoom>`__
 
