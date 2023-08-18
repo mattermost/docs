@@ -30,10 +30,14 @@ Latest Mattermost Cloud releases:
  - The server is now built using a node version matching the server version.
  - Remote users are no longer counted as part of the license.
  - Improved data retention logs.
+ - Removed ``/opengraph`` endpoint as it was unused.
+ - Transitionally prepackaged plugins are now installed to the filestore for continuity when a future release stops prepackaging those plugins.
 
 ### Bug Fixes
  - Fixed accessibility issues: tab support at login, reset and signup pages, and App bar.
  - Fixed an issue where CRLF line endings passed to mmctl commands were not being stripped from commands.
+ - Fixed an issue where text copied from Microsoft OneNote pastes it as an image.
+ - Fixed an issue preventing successful activation of trial licenses.
 
 ### Known Issues
  - 
