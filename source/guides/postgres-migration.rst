@@ -1,12 +1,14 @@
-Migration Guidelines from MySQL to PostgreSQL
+Migration guidelines from MySQL to PostgreSQL
 =============================================
 
 .. include:: ../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
 
-As of version 8.0, a significant decision has been made to establish PostgreSQL as the default database for Mattermost, a step taken to enhance the platform’s performance and capabilities. Recognizing the importance of supporting the community members who are interested in migrating from a MySQL database, we have taken proactive measures to provide them with some assistance. To streamline the migration process and alleviate any potential challenges, we have prepared a comprehensive set of basic guidelines to facilitate a smooth transition. Additionally, we want to offer recommendations for various tools that have proven to be highly effective in simplifying the migration efforts.
+From Mattermost v8.0, PostgreSQL is our database of choice for Mattermost to enhance the platform’s performance and capabilities. Recognizing the importance of supporting the community members who are interested in migrating from a MySQL database, we have taken proactive measures to provide guidance and best practices. 
 
-Note that this guideline is still in development and we are working to streamline the migration process. We are planning to improve this guide by periodically updating it. Please use this guide as a starting point and always backup your database before starting the migration.
+To streamline the migration process and alleviate any potential challenges, we have prepared a comprehensive set of guidelines to facilitate a smooth transition. Additionally, we want to offer recommendations for various tools that have proven to be highly effective in simplifying your migration efforts.
+
+Note that these guidelines are in development and we are working to streamline the migration process. We plan to improve this guide by updating it as new information becomes available. Please use this guide as a starting point and always backup your database before starting a migration.
 
 Table of Contents
 -----------------
@@ -36,18 +38,18 @@ Before the migration
 --------------------
 
 -  Backup your MySQL data.
--  Find your mattermost version. You can look to the about modal from the web app.
--  Determine migration window the process requires application to stop.
+-  Confirm your Mattermost version. See the **About** modal for details. 
+-  Determine the migration window needed. This process requires you to stop the Mattermost Server during the migration.
 -  See the `schema-diffs <#schema-diffs>`__ section to ensure data compatibility between schemas.
--  Prepare your PostgreSQL environment by creating a database and user. See more info `here <https://docs.mattermost.com/install/prepare-mattermost-database.html>`__
+-  Prepare your PostgreSQL environment by creating a database and user. See the `database </install/prepare-mattermost-database.html>`__ documentation for details.
 
 Prepare target database
 -----------------------
 
--  Clone mattermost repository for your specific version:
+-  Clone the ``mattermost`` repository for your specific version:
    ``git clone -b <your current version (eg. release-7.8)> git@github.com:mattermost/mattermost.git --depth=1``
 -  ``cd`` into ``mattermost`` project*.
--  Create a postgres database using morph CLI with the following command:
+-  Create a PostgreSQL database using morph CLI with the following command:
 
 .. code:: bash
 
@@ -55,18 +57,18 @@ Prepare target database
 
 \* After ``v8`` due to project re-organization, the migrations directory has been changed to ``./server/channels/db/migrations/postgres/`` relative to project root. Therefore ``cd`` into ``mattermost/server/channels``.
 
-Schema Diffs
+Schema diffs
 ------------
 
-Before the migration, due to differences between two schemas some manual steps may required to have an error-free migration.
+Before the migration, due to differences between two schemas, some manual steps may required to have an error-free migration.
 
-Text to Character Varying
+Text to character varying
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Since our MySQL schema uses ``text`` column type in the various tables instead of ``varchar`` represantation in the PostgreSQL schema, we encourage to check if the sizes are consistent within the Postgres schema limits.
+Since the Mattermost MySQL schema uses the ``text`` column type in the various tables instead of ``varchar`` representation in the PostgreSQL schema, we encourage you to check if the sizes are consistent within the PostgreSQL schema limits.
 
 ================ ================ =====================
-Table            Column           Data Type Casting
+Table            Column           Data type casting
 ================ ================ =====================
 Audits           Action           text -> varchar(512)
 Audits           ExtraInfo        text -> varchar(1024)
@@ -90,7 +92,7 @@ UploadSessions   FileName         text -> varchar(256)
 UploadSessions   Path             text -> varchar(512)
 ================ ================ =====================
 
-As you can see there are several occurrences where schema can differ and data size constaints within the Postgres schema can result in errors. Several reports have been received from our community members that ``LinkMetadata`` and ``FileInfo`` tables indeed had some overflows so we recommend checking these tables in particular. Please do check if your data in MySQL schema exceed these limitations. You can check if there are any required deletions. For example to do so in the Audits table/Action column; run:
+As you can see, there are several occurrences where the schema can differ and data size constraints within the PostgreSQL schema can result in errors. Several reports have been received from our community that ``LinkMetadata`` and ``FileInfo`` tables had some overflows, so we recommend checking these tables in particular. Please do check if your data in the MySQL schema exceeds these limitations. You can check if there are any required deletions. For example, to do so in the ``Audits`` table/``Action`` column; run:
 
 .. code:: sql
 
@@ -99,16 +101,16 @@ As you can see there are several occurrences where schema can differ and data si
 Full-text indexes
 ~~~~~~~~~~~~~~~~~
 
-There is a possibility where some words in the ``Posts`` ans ``FileInfo`` tables can exceed the `limits of the maximum token length <https://www.postgresql.org/docs/11/textsearch-limitations.html>`__ for full text search indexing. In that case we recommend dropping ``idx_posts_message_txt`` and ``idx_fileinfo_content_txt`` indexes from the PostgreSQL schema and creating these indexes after the migration by running following queries:
+It's possible that some words in the ``Posts`` ans ``FileInfo`` tables can exceed the `limits of the maximum token length <https://www.postgresql.org/docs/11/textsearch-limitations.html>`__ for full text search indexing. In these cases, we recommend dropping the ``idx_posts_message_txt`` and ``idx_fileinfo_content_txt`` indexes from the PostgreSQL schema, and creating these indexes after the migration by running following queries:
 
-Tp drop indexes run these before the migration:
+To drop indexes, run the following commands before the migration:
 
 .. code:: sql
 
    DROP INDEX IF EXISTS idx_posts_message_txt;
    DROP INDEX IF EXISTS idx_fileinfo_content_txt;
 
-To re-create indexes, run these once the migration is completed:
+To re-create indexes, run the following once the migration is completed:
 
 .. code:: sql
 
@@ -118,7 +120,7 @@ To re-create indexes, run these once the migration is completed:
 Migrate the data
 ----------------
 
-Now we set the schema to desired state and we can start migrating the **data** by running ``pgLoader`` \*\*
+Once we set the schema to desired state, we can start migrating the **data** by running ``pgLoader`` \*\*
 
 \*\* Use the following configuration for the baseline of the data migration:
 
@@ -163,20 +165,20 @@ Now we set the schema to desired state and we can start migrating the **data** b
         $$ UPDATE {{ .source_schema }}.db_migrations set name='add_createat_to_teamembers' where version=92; $$,
         $$ ALTER SCHEMA {{ .source_schema }} RENAME TO public; $$;
 
-Once you save this configuration file eg. ``migration.load``, you can run the ``pgLoader`` with following command:
+Once you save this configuration file, eg. ``migration.load``, you can run the ``pgLoader`` with following command:
 
 .. code:: bash
 
    pgLoader migration.load > migration.log
 
-Feel free to contribute and/or report your findings through the migration.
+Feel free to contribute to and/or report your findings through your migration to us.
 
 Compare the data
 ----------------
 
 We internally developed a tool to simplify the process of comparing contents of two databases. The ``dbcmp`` tool compares every table and reports whether if there is a diversity between two schemas.
 
-The tool has a few flags needs to be supplied to run a comparison:
+The tool includes a few flags to run a comparison:
 
 .. code:: sh
 
@@ -196,7 +198,9 @@ For our case we can simply run the following command:
 
    dbcmp --source "${MYSQL_DSN}" --target "${POSTGRES_DSN}" --exclude="db_migrations","ir_","focalboard","systems"
 
-Note that the migration guide only covers the tables for Mattermost channels, the support for other plugins such as Boards and Playbooks will be added in the future. Another exlusion we are making is in the ``db_migrations`` table which has a small difference (a typo in a single migration name) creates a diff. Since we created the Postgres schema with morph and the official mattermost source, we can consider to skip it safely. On the other hand, ``systems`` table may contain additional diffs if there was extra keys added during some of the migrations. Consider excluding ``systems`` table if you run into issues and do a manual comparison as the data in the ``systems`` table is relatively smaller in size.
+Note that this migration guide only covers the tables for Mattermost channels. Support for other plugins, such as Playbooks, will be added in the future. 
+
+Another exclusion we are making is in the ``db_migrations`` table which has a small difference (a typo in a single migration name) creates a diff. Since we created the PostgreSQL schema with morph, and the official ``mattermost`` source, we can skip it safely without concerns. On the other hand, ``systems`` table may contain additional diffs if there were extra keys added during some of the migrations. Consider excluding the ``systems`` table if you run into issues, and perform a manual comparison as the data in the ``systems`` table is relatively smaller in size.
 
 Notes
 -----
