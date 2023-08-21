@@ -16,6 +16,7 @@ This document provides information on how to successfully make the Calls plugin 
 - `Configure recording <#configure-recording>`__
 - `Kubernetes deployments <#kubernetes-deployments>`__
 - `Frequently asked questions <#frequently-asked-questions>`__
+- `Troubleshooting <#troubleshooting>`__
 
 Terminology
 -----------
@@ -316,6 +317,11 @@ Configure recording
 
 Before you can start recording calls, you need to configure the ``calls-offloader`` job service. You can read about how to do that `here <https://github.com/mattermost/calls-offloader/blob/master/docs/getting_started.md>`__. Performance and scalability recommendations related to this service can be found in `here <https://github.com/mattermost/calls-offloader/blob/master/docs/performance.md>`__.
 
+.. note::
+  If deploying the service in a Kubernetes cluster, refer to the later section on `Helm charts <#helm-charts>`__.
+
+Once the ``calls-offloader`` service is running, recordings should be explicitly enabled through the `Enable call recordings <plugins-configuration-settings.html#enable-call-recordings-beta>`__ config setting and the service's URL should be configured using `Job service URL <plugins-configuration-settings.html#job-service-url>`__.
+
 Kubernetes deployments
 ----------------------
 
@@ -380,3 +386,32 @@ Can the traffic between Mattermost and ``rtcd``  be kept internal or should it b
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When possible, it's recommended to keep communication between the Mattermost cluster and the dedicated ``rtcd`` service under the same private network as this can greatly simplify deployment and security. There's no requirement to expose ``rtcd``'s HTTP API to the public internet.
+
+Troubleshooting
+---------------
+
+Connectivity issues
+~~~~~~~~~~~~~~~~~~~
+
+If calls are failing to connect or timing out, it's likely the `RTC Server Port <plugins-configuration-settings.html#rtc-server-port-udp>`__ is not open or forwarded correctly. An easy way to check whether data can go through is to perform some tests using the ``netcat`` command line tool.
+
+On the host running Calls (could be the Mattermost instance itself or the one running ``rtcd`` depending on the chosen setup), run the following:
+
+.. code-block:: bash
+
+   nc -l -u -p 8443
+
+On the client side (i.e., the machine you would normally use to run the Mattermost desktop app or browser), run the following:
+
+.. code-block:: bash
+
+   nc -v -u HOST_IP 8443
+
+If connection succeeds, you should be able to send and receive text messages by typing and hitting enter on either side.
+
+.. note::
+   ``HOST_IP`` should generally be the public (client facing) IP of the Mattermost
+   (or ``rtcd``) instance hosting the calls. When set, it should be the value of the |ice_host_override_link|
+   config setting.
+
+   ``8443`` should be changed with the port configured in `RTC Server Port <plugins-configuration-settings.html#rtc-server-port-udp>`__.

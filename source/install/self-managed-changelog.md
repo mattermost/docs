@@ -6,11 +6,15 @@ See the [changelog in progress](https://bit.ly/2nK3cVf) for the upcoming release
 
 Latest Mattermost Releases:
 
+- [Release v8.1 - Extended Support Release](#release-v8-1-extended-support-release)
 - [Release v8.0 - Major Release](#release-v8-0-major-release)
 - [Release v7.11 - Feature Release](#release-v7-11-feature-release)
 - [Release v7.10 - Feature Release](#release-v7-10-feature-release)
-- [Release v7.9 - Feature Release](#release-v7-9-feature-release)
 - [Release v7.8 - Extended Support Release](#release-v7-8-extended-support-release)
+
+## Release v8.1 - [Extended Support Release](https://docs.mattermost.com/upgrade/release-definitions.html#extended-support-release-esr)
+
+**Note: v8.1.0 is currently delayed for a few days as additional release testing time is needed.**
 
 ## Release v8.0 - [Major Release](https://docs.mattermost.com/upgrade/release-definitions.html#major-release)
 
