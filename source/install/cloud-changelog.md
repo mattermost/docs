@@ -18,6 +18,7 @@ Latest Mattermost Cloud releases:
 #### User Interface (UI)
  - Added functionality to bulk mark a whole channel category as read.
  - Removed Boards product tour code.
+ - Replaced Gfycat with Giphy in the gif picker.
 
 #### Administration
  - API examples are now updated to reflect latest Go API conventions, deprecating older code samples.
@@ -31,6 +32,8 @@ Latest Mattermost Cloud releases:
  - Improved data retention logs.
  - Removed ``/opengraph`` endpoint as it was unused.
  - Transitionally prepackaged plugins are now installed to the filestore for continuity when a future release stops prepackaging those plugins.
+ - Added a ``NotificationWillBePushed`` plugin API method which allows plugins to send push notifications to a specific user's mobile sessions.
+ - Added a ``NotificationWillBePushed`` plugin hook invoked before the push notification is processed and sent to the notification service. Plugins may reject the push notification.
 
 ### Bug Fixes
  - Fixed accessibility issues: tab support at login, reset and signup pages, and App bar.
