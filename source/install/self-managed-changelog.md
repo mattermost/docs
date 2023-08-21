@@ -130,7 +130,6 @@ Latest Mattermost Releases:
  - Added updates to the trial request forms to allow for a more tailored trial experience.
  - First admins will now have an onboarding experience that includes first team creation based on company name and invite members link steps. 
  - Adds the ability to expand seats in-product for self-hosted servers.
- - Added a new section in the **System Console > Products** for Boards.
  - Added the ability to search a partial first name, last name, nickname, or username on the **System Console > Users** page.
  - **Contact Support** now redirects users to Zendesk and pre-fills known information.
  - Added a mechanism for public routes on products and used it to support publicly shared Board links.
