@@ -1,0 +1,29 @@
+name: CD
+on:
+  workflow_run:
+    workflows: ["CI Master"]
+    types:
+      - completed
+permissions:
+  contents: read
+jobs:
+  s3-release-prod:
+    runs-on: ubuntu-latest
+    steps:
+    - name: cd/Configure AWS
+      uses: aws-actions/configure-aws-credentials@07c2f971bac433df982ccc261983ae443861db49 # v1-node16
+      with:
+        aws-region: us-east-1
+        aws-access-key-id: ${{ secrets.DOCS_BUILDS_BUCKET_AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.DOCS_BUILDS_BUCKET_AWS_SECRET_ACCESS_KEY }}
+    - name: cd/Download artifacts
+      uses: dawidd6/action-download-artifact@0c49384d39ceb023b8040f480a25596fd6cf441b # v2.26.0
+      with:
+        workflow: ${{ github.event.workflow_run.workflow_id }}
+        run_id: ${{ github.event.workflow_run.id }}
+        workflow_conclusion: success
+        name: docs
+        path: build/html
+    - name: cd/Upload artifacts to S3
+      run: |
+        aws s3 cp build/html s3://docs.mattermost.com/ --recursive --cache-control no-cache --acl public-read --no-progress
