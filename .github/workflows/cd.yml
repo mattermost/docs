@@ -1,9 +1,10 @@
 name: CD
 on:
   workflow_run:
-    workflows: ["CI Master"]
+    workflows: ["CI"]
     types:
       - completed
+    branches: ["master"]
 permissions:
   contents: read
 jobs:
