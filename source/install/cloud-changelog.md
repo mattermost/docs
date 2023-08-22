@@ -34,12 +34,14 @@ Latest Mattermost Cloud releases:
  - Transitionally prepackaged plugins are now installed to the filestore for continuity when a future release stops prepackaging those plugins.
  - Added a ``NotificationWillBePushed`` plugin API method which allows plugins to send push notifications to a specific user's mobile sessions.
  - Added a ``NotificationWillBePushed`` plugin hook invoked before the push notification is processed and sent to the notification service. Plugins may reject the push notification.
+ - Removed the deprecated ``Manifest.RequiredConfig`` field.
 
 ### Bug Fixes
  - Fixed accessibility issues: tab support at login, reset and signup pages, and App bar.
  - Fixed an issue where CRLF line endings passed to mmctl commands were not being stripped from commands.
  - Fixed an issue where text copied from Microsoft OneNote pastes it as an image.
  - Fixed an issue preventing successful activation of trial licenses.
+ - Fixed an issue where a custom group wouldn't get marked as a mention if it was not part of the webapp's local state.
 
 ### Known Issues
  - 
