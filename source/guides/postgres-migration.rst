@@ -8,18 +8,14 @@ From Mattermost v8.0, PostgreSQL is our database of choice for Mattermost to enh
 
 To streamline the migration process and alleviate any potential challenges, we have prepared a comprehensive set of guidelines to facilitate a smooth transition. Additionally, we want to offer recommendations for various tools that have proven to be highly effective in simplifying your migration efforts.
 
-Note that these guidelines are in development and we are working to streamline the migration process. We plan to improve this guide by updating it as new information becomes available. Please use this guide as a starting point and always backup your database before starting a migration.
+.. note::
 
-Table of Contents
------------------
+   These guidelines are in development and we are working to streamline the migration process. We plan to improve this guide by updating it as new information becomes available. It is essential to note that it does not encompass migration configurations for any plugins, such as Focalboard and Playbooks. If your system utilizes these plugins, we highly advise exercising patience until we incorporate the necessary configurations specifically tailored to ensure a smooth transition for those plugins as well. Please use this guide as a starting point and always backup your database before starting a migration.
 
--  `Required tools <#required-tools>`__
--  `Before the migration <#before-the-migration>`__
--  `Prepare target database <#prepare-target-database>`__
--  `Schema Differences <#schema-diffs>`__
--  `Migrate the data <#migrate-the-data>`__
--  `Compare the data <#compare-the-data>`__
--  `Notes <#notes>`__
+.. contents:: On this page:
+  :backlinks: top
+  :local:
+  :depth: 1
 
 Required tools
 --------------
@@ -101,7 +97,7 @@ As you can see, there are several occurrences where the schema can differ and da
 Full-text indexes
 ~~~~~~~~~~~~~~~~~
 
-It's possible that some words in the ``Posts`` ans ``FileInfo`` tables can exceed the `limits of the maximum token length <https://www.postgresql.org/docs/11/textsearch-limitations.html>`__ for full text search indexing. In these cases, we recommend dropping the ``idx_posts_message_txt`` and ``idx_fileinfo_content_txt`` indexes from the PostgreSQL schema, and creating these indexes after the migration by running following queries:
+It's possible that some words in the ``Posts`` and ``FileInfo`` tables can exceed the `limits of the maximum token length <https://www.postgresql.org/docs/11/textsearch-limitations.html>`__ for full text search indexing. In these cases, we recommend dropping the ``idx_posts_message_txt`` and ``idx_fileinfo_content_txt`` indexes from the PostgreSQL schema, and creating these indexes after the migration by running following queries:
 
 To drop indexes, run the following commands before the migration:
 
@@ -124,7 +120,7 @@ Once we set the schema to desired state, we can start migrating the **data** by 
 
 \*\* Use the following configuration for the baseline of the data migration:
 
-.. code:: sql
+.. code::
 
    LOAD DATABASE
         FROM      mysql://{{ .mysql_user }}:{{ .mysql_password }}@mysql:3306/{{ .source_schema }}
@@ -176,7 +172,7 @@ Feel free to contribute to and/or report your findings through your migration to
 Compare the data
 ----------------
 
-We internally developed a tool to simplify the process of comparing contents of two databases. The ``dbcmp`` tool compares every table and reports whether if there is a diversity between two schemas.
+We internally developed a tool to simplify the process of comparing contents of two databases. The ``dbcmp`` tool compares every table and reports whether if there is a diversion between two schemas.
 
 The tool includes a few flags to run a comparison:
 
@@ -196,13 +192,8 @@ For our case we can simply run the following command:
 
 .. code:: sh
 
-   dbcmp --source "${MYSQL_DSN}" --target "${POSTGRES_DSN}" --exclude="db_migrations","ir_","focalboard","systems"
+   dbcmp --source "${MYSQL_DSN}" --target "${POSTGRES_DSN}" --exclude="db_migrations,ir_,focalboard,systems"
 
 Note that this migration guide only covers the tables for Mattermost channels. Support for other plugins, such as Playbooks, will be added in the future. 
 
 Another exclusion we are making is in the ``db_migrations`` table which has a small difference (a typo in a single migration name) creates a diff. Since we created the PostgreSQL schema with morph, and the official ``mattermost`` source, we can skip it safely without concerns. On the other hand, ``systems`` table may contain additional diffs if there were extra keys added during some of the migrations. Consider excluding the ``systems`` table if you run into issues, and perform a manual comparison as the data in the ``systems`` table is relatively smaller in size.
-
-Notes
------
-
-Keep in mind that this migration guide primarily focuses on providing step-by-step instructions for the migration; however, it is essential to note that it does not encompass migration configurations for any plugins, such as Focalboard and Playbooks. If your system utilizes these plugins, we highly advise exercising patience until we incorporate the necessary configurations specifically tailored to ensure a smooth transition for those plugins as well.
