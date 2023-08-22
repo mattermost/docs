@@ -22,7 +22,7 @@ Required tools
 
 -  Install ``pgLoader``. See the official `installation
    guide <https://pgloader.readthedocs.io/en/latest/install.html>`__.
--  Install morph CLI via running the following command:
+-  Install morph CLI by running the following command:
 
    -  ``go install github.com/mattermost/morph/cmd/morph@v1``
 
@@ -34,9 +34,9 @@ Before the migration
 --------------------
 
 .. note::
-   This guide requires at least a schema of v6.4. So, if you have an earlier version and planning to migrate, please update your Mattermost Server to v6.4 at least. 
+   This guide requires a schema of v6.4 or later. So, if you have an earlier version and planning to migrate, please update your Mattermost Server to v6.4 at a minimum. 
 
--  Backup your MySQL data.
+-  Back up your MySQL data.
 -  Confirm your Mattermost version. See the **About** modal for details. 
 -  Determine the migration window needed. This process requires you to stop the Mattermost Server during the migration.
 -  See the `schema-diffs <#schema-diffs>`__ section to ensure data compatibility between schemas.
@@ -59,7 +59,7 @@ Prepare target database
 Schema diffs
 ------------
 
-Before the migration, due to differences between two schemas, some manual steps may required to have an error-free migration.
+Before the migration, due to differences between two schemas, some manual steps may be required for an error-free migration.
 
 Text to character varying
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -100,7 +100,7 @@ As you can see, there are several occurrences where the schema can differ and da
 Full-text indexes
 ~~~~~~~~~~~~~~~~~
 
-It's possible that some words in the ``Posts`` and ``FileInfo`` tables can exceed the `limits of the maximum token length <https://www.postgresql.org/docs/11/textsearch-limitations.html>`__ for full text search indexing. In these cases, we recommend dropping the ``idx_posts_message_txt`` and ``idx_fileinfo_content_txt`` indexes from the PostgreSQL schema, and creating these indexes after the migration by running following queries:
+It's possible that some words in the ``Posts`` and ``FileInfo`` tables can exceed the `limits of the maximum token length <https://www.postgresql.org/docs/11/textsearch-limitations.html>`__ for full text search indexing. In these cases, we recommend dropping the ``idx_posts_message_txt`` and ``idx_fileinfo_content_txt`` indexes from the PostgreSQL schema, and creating these indexes after the migration by running the following queries:
 
 To drop indexes, run the following commands before the migration:
 
@@ -112,7 +112,7 @@ To drop indexes, run the following commands before the migration:
 Migrate the data
 ----------------
 
-Once we set the schema to desired state, we can start migrating the **data** by running ``pgLoader`` \*\*
+Once we set the schema to a desired state, we can start migrating the **data** by running ``pgLoader`` \*\*
 
 \*\* Use the following configuration for the baseline of the data migration:
 
@@ -157,7 +157,7 @@ Once we set the schema to desired state, we can start migrating the **data** by 
         $$ UPDATE {{ .source_schema }}.db_migrations set name='add_createat_to_teamembers' where version=92; $$,
         $$ ALTER SCHEMA {{ .source_schema }} RENAME TO public; $$;
 
-Once you save this configuration file, eg. ``migration.load``, you can run the ``pgLoader`` with following command:
+Once you save this configuration file, e.g. ``migration.load``, you can run the ``pgLoader`` with the following command:
 
 .. code:: bash
 
