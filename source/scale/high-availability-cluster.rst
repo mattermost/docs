@@ -214,7 +214,7 @@ Migrating to NAS or S3 from local storage is beyond the scope of this document.
 Database configuration
 ^^^^^^^^^^^^^^^^^^^^^^
 
-Use the read replica feature to scale the database. The Mattermost server can be set up to use one master database and onr or more read replica databases.
+Use the read replica feature to scale the database. The Mattermost server can be set up to use one master database and one or more read replica databases.
 
 On large deployments, also consider using the search replica feature to isolate search queries onto one or more search replicas. A search replica is similar to a read replica, but is used only for handling search queries.
 
