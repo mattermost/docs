@@ -33,6 +33,9 @@ Required tools
 Before the migration
 --------------------
 
+.. note::
+   This guide requires at least a schema of v6.4. So, if you have an earlier version and planning to migrate, please update your Mattermost Server to v6.4 at least. 
+
 -  Backup your MySQL data.
 -  Confirm your Mattermost version. See the **About** modal for details. 
 -  Determine the migration window needed. This process requires you to stop the Mattermost Server during the migration.
@@ -106,13 +109,6 @@ To drop indexes, run the following commands before the migration:
    DROP INDEX IF EXISTS idx_posts_message_txt;
    DROP INDEX IF EXISTS idx_fileinfo_content_txt;
 
-To re-create indexes, run the following once the migration is completed:
-
-.. code:: sql
-
-   CREATE INDEX IF NOT EXISTS idx_posts_message_txt ON posts USING gin(to_tsvector('english', message));
-   CREATE INDEX IF NOT EXISTS idx_fileinfo_content_txt ON fileinfo USING gin(to_tsvector('english', content));
-
 Migrate the data
 ----------------
 
@@ -166,6 +162,13 @@ Once you save this configuration file, eg. ``migration.load``, you can run the `
 .. code:: bash
 
    pgLoader migration.load > migration.log
+
+To re-create indexes that has been removed before the migration, run the following once the migration is completed:
+
+.. code:: sql
+
+   CREATE INDEX IF NOT EXISTS idx_posts_message_txt ON posts USING gin(to_tsvector('english', message));
+   CREATE INDEX IF NOT EXISTS idx_fileinfo_content_txt ON fileinfo USING gin(to_tsvector('english', content));
 
 Feel free to contribute to and/or report your findings through your migration to us.
 
