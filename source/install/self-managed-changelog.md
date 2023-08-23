@@ -14,7 +14,7 @@ Latest Mattermost Releases:
 
 ## Release v8.1 - [Extended Support Release](https://docs.mattermost.com/upgrade/release-definitions.html#extended-support-release-esr)
 
-**Note: v8.1.0 is currently delayed for a few days as additional release testing time is needed.**
+**Note:** v8.1.0 is currently delayed while we are working to resolve an issue where the Docker Content Trust signatures of our release images have expired.
 
 ## Release v8.0 - [Major Release](https://docs.mattermost.com/upgrade/release-definitions.html#major-release)
 
