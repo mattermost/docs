@@ -42,6 +42,7 @@ Latest Mattermost Cloud releases:
  - Fixed an issue where text copied from Microsoft OneNote pastes it as an image.
  - Fixed an issue preventing successful activation of trial licenses.
  - Fixed an issue where a custom group wouldn't get marked as a mention if it was not part of the webapp's local state.
+ - Fixed several issues with loading of licenses.
 
 ### Known Issues
  - 
