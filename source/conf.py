@@ -1821,6 +1821,8 @@ redirects = {
 # Manage redirects
 "manage/scripts.html":
         "https://forum.mattermost.com/t/scripts-for-performing-discreet-tasks/13527",
+"manage/telemetry.html#boards-telemetry":
+        "https://github.com/mattermost/focalboard/blob/main/docs/index.md",
 
 # Messaging redirects
 "messaging/about-teams-channels-messages.html#teams":
