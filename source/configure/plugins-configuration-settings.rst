@@ -16,7 +16,6 @@ Both self-hosted and Cloud admins can access the following configuration setting
 - `Channel Export <#channel-export>`__
 - `Demo Plugin <#demo-plugin>`__
 - `GIF commands <#gif-commands>`__
-- `Mattermost Boards <#mattermost-boards>`__
 - `Google Calendar <#google-calendar>`__
 - `MS Teams Sync <#ms-teams-sync>`__
 - `Playbooks <#playbooks>`__
