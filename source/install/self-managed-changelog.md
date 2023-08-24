@@ -14,7 +14,7 @@ Latest Mattermost Releases:
 
 ## Release v8.1 - [Extended Support Release](https://docs.mattermost.com/upgrade/release-definitions.html#extended-support-release-esr)
 
-**Release day: August 16, 2023**
+**Release day: August 24, 2023**
 
 ### Improvements
 
