@@ -19,6 +19,8 @@ Latest Mattermost Cloud releases:
  - Added functionality to bulk mark a whole channel category as read.
  - Removed Boards product tour code.
  - Replaced Gfycat with Giphy in the gif picker.
+ - Updated Focalboard plugin version to 7.11.3.
+ - Pre-packaged Playbooks version 1.38.1.
 
 #### Administration
  - API examples are now updated to reflect latest Go API conventions, deprecating older code samples.
