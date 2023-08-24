@@ -2375,7 +2375,9 @@ redirects = {
 
 # Welcome redirects
 "welcome/manage-desktop-app-server-connections.html":
-        "https://docs.mattermost.com/welcome/manage-multiple-server-connections.html"
+        "https://docs.mattermost.com/welcome/manage-multiple-server-connections.html",
+"welcome/insights.html":
+        "https://docs.mattermost.com/install/deprecated-features.html#mattermost-server-v9-0-0"
 
 # End of redirects. The last redirect above should NOT end in a comma.
 
