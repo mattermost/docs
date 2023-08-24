@@ -4,7 +4,7 @@ Install a License Key
 .. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-You can use the System Console, the mmctl, or the CLI to add or change a Mattermost license key.
+You can use the System Console or the mmctl tools to add or change a Mattermost license key.
 
 .. tabs::
 
