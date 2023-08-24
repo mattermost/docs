@@ -539,15 +539,16 @@ Allow users to view archived channels
   :environment: MM_PRIVACYSETTINGS_SHOWEMAILADDRESS
 
   - **true**: **(Default)** All users can see the email addresses of every other user.
-  - **false**: Hides email addresses in the client user interface, except from System Admins.
+  - **false**: Hides email addresses in the client user interface, except for System Admins and the System Roles with read/write access to Compliance, Billing, or User Management (users/teams/channels/groups etc).
 
 Show email address
 ~~~~~~~~~~~~~~~~~~
 
 +---------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
 | - **true**: **(Default)** All users can see the email addresses of every other user.        | - System Config path: **Site Configuration > Users and teams**         |
-| - **false**: Hides email addresses in the client user interface, except from System Admins. | - ``config.json`` setting: ``.PrivacySettings.ShowEmailAddress: true`` |
-|                                                                                             | - Environment variable: ``MM_PRIVACYSETTINGS_SHOWEMAILADDRESS``        |
+| - **false**: Hides email addresses in the client user interface, except from System Admins  | - ``config.json`` setting: ``.PrivacySettings.ShowEmailAddress: true`` |
+|   and the System Roles with read/write access to Compliance, Billing, or User Management    | - Environment variable: ``MM_PRIVACYSETTINGS_SHOWEMAILADDRESS``        |
+|   (users/teams/channels/groups etc).                                                        |                                                                        |
 +---------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
 
 .. config:setting:: users-showfullname
