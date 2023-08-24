@@ -1,3 +1,6 @@
+:nosearch:
+:orphan:
+
 Get started with the Focalboard plugin
 =======================================
 

@@ -1,3 +1,6 @@
+:nosearch:
+:orphan:
+
 Work with groups, filter, and sort
 ==================================
 

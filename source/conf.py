@@ -88,6 +88,8 @@ redirects = {
 	"https://docs.mattermost.com/about/faq-license.html#source-available-licensing",
 "about/mattermost-customizable-chatgpt-bot-framework.html":
         "https://docs.mattermost.com/about/mattermost-customizable-ai-bot-framework.html",
+"about/product.html#use-boards-to-hit-your-milestones-and-support-your-project-workflows":
+        "https://github.com/mattermost/focalboard/tree/product-docs#readme",
 
 # Administration redirects
 "administration/announcement-banner.html":
@@ -338,6 +340,28 @@ redirects = {
         "https://docs.mattermost.com/welcome/what-changed-in-v60.html",
 "boards/data-and-archives.html":
 	"https://docs.mattermost.com/boards/migrate-to-boards.html",
+"boards/boards-settings.html":
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/index.md",
+"boards/calculations.html":
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/index.md",
+"boards/work-with-boards.html":
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/index.md",
+"boards/groups-filter-sort.html":
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/index.md",
+"boards/migrate-to-boards.html":
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/index.md",
+"boards/navigate-boards.html":
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/index.md",
+"boards/overview.html":
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/index.md",
+"boards/share-and-collaborate.html":
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/index.md",
+"boards/work-with-boards.html":
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/index.md",
+"boards/work-with-cards.html":
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/index.md",
+"boards/work-with-views.html":
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/index.md",
 
 # Channels redirects
 "channels/find-channels.html":
@@ -1339,6 +1363,10 @@ redirects = {
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#disable-apps-bar",
 "configure/product-configuration-settings.html":
         "https://docs.mattermost.com/configure/plugins-configuration-settings.html#focalboard-plugin",
+"configure/plugins-configuration-settings.html#mattermost-boards":
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/index.md",
+"configure/plugins-configuration-settings.html#id9":
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/index.md",
 
 # Deploy redirects
 "deploy/mobile-apps-faq.html":
@@ -1572,6 +1600,8 @@ redirects = {
 	"https://docs.mattermost.com/guides/channels.html",
 "guides/orchestration.html":
         "https://docs.mattermost.com/about/orchestration.html",
+"guides/boards.html":
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/index.md",
 
 # Important Note: The following guide files were archived in FY23 Q2.
 "guides/boards.html":
@@ -2373,7 +2403,9 @@ redirects = {
 
 # Welcome redirects
 "welcome/manage-desktop-app-server-connections.html":
-        "https://docs.mattermost.com/welcome/manage-multiple-server-connections.html"
+        "https://docs.mattermost.com/welcome/manage-multiple-server-connections.html",
+"welcome/whats-new-in-v72.html":
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/index.md"
 
 # End of redirects. The last redirect above should NOT end in a comma.
 

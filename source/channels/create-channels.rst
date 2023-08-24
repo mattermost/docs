@@ -26,7 +26,6 @@ Anyone can create public channels, private channels, direct messages, and group 
      2. Enter a channel name.
      3. Choose whether this is a public or private channel. See the `channel types </channels/channel-types.html>`__ documentation to learn more about public and private channels.
      4. (Optional) Describe the channel's focus or purpose. This text is visible to all channel members in the channel header.
-     5. (Optional) When the `Focalboard plugin </configure/plugins-configuration-settings.html#focalboard-plugin>`__ is enabled, you can create a board for the channel during channel creation by selecting the **Create a board for this channel** option, and then selecting the boards template to use. See the `Focalboard plugin  </guides/focalboard-plugin.html>`__ documentation to learn more about managing tasks with boards, see the `link a board to a channel </boards/navigate-boards.html#link-a-board-to-a-channel>`__ documentation to learn about the benefits of linking boards to channels, and see the `choose a board template </boards/work-with-boards.html#choose-a-board-template>`__ documentation for details on available templates.
 
     **To start a direct or group message**
         

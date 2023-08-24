@@ -21,7 +21,6 @@ Mattermost product documentation
    Welcome to Mattermost <guides/welcome-to-mattermost>
    Mattermost Channels <guides/channels>
    Mattermost Playbooks <guides/playbooks>
-   Focalboard plugin <guides/focalboard-plugin>
    Mattermost for developers <https://developers.mattermost.com/>
    Get help with Mattermost <guides/get-help>
    Community chat <guides/community-chat>

@@ -101,4 +101,3 @@ In particular, please be aware of these important known issues and risks:
   - You may experience lag in your desktop or web client if you're following many threads or opening threads with many replies.
   - Server performance for instances with many users and posts may be impacted. 
   - You should expect to see more unread channels and notifications on your mobile device than you'll see on your desktop instance of Mattermost. This is expected when running a mobile app release older than v1.46.
-  - For a comprehensive list of known issues, and to see our work queue in priority order, check out our `Kanban board <https://mattermost.atlassian.net/secure/RapidBoard.jspa?rapidView=91&quickFilter=499>`__.

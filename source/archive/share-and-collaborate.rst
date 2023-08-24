@@ -1,3 +1,6 @@
+:nosearch:
+:orphan:
+
 Share and collaborate
 =====================
 

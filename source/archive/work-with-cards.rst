@@ -1,3 +1,6 @@
+:nosearch:
+:orphan:
+
 Work with cards
 ===============
 

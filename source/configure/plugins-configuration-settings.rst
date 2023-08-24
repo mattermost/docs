@@ -16,7 +16,6 @@ Both self-hosted and Cloud admins can access the following configuration setting
 - `Channel Export <#channel-export>`__
 - `Demo Plugin <#demo-plugin>`__
 - `GIF commands <#gif-commands>`__
-- `Focalboard plugin <#focalboard-plugin>`__
 - `Mattermost Playbooks <#mattermost-playbooks>`__
 - `User Satisfaction surveys <#user-satisfaction-surveys>`__
 - `Zoom <#zoom>`__
@@ -1179,38 +1178,6 @@ Force GIF preview before posting (force /gifs)
 | - **false**: (Default) Both ``/gif`` and ``/gifs`` slash commands are           | - Environment variable: N/A                      |
 |   available for the GIF commands plugin on your Mattermost server.              |                                                  |
 +---------------------------------------------------------------------------------+--------------------------------------------------+
-
-----
-
-.. config:setting:: plugins-boardsenable
-  :displayname: Enable plugin (Plugins - Boards)
-  :systemconsole: Plugins > Focalboard
-  :configjson: N/A
-  :environment: N/A
-
-    - **true**: **(Default for Cloud deployments)** Enables the Focalboard plugin for your Mattermost workspace.
-    - **false**: **(Default for self-hosted deployments)** Disables the Focalboard plugin for your Mattermost workspace.
-
-
-Focalboard plugin
------------------
-
-The Focalboard plugin is an open source project management alternative to Trello, Notion, and Asana that helps define, organize, track and manage work across teams, using a familiar kanban board view. See the `Focalboard plugin </guides/focalboard-plugin.html>`__ product documentation for details.
-
-Access the following configuration settings in the System Console by going to **Plugins > Focalboard**.
-
-
-Enable plugin
-~~~~~~~~~~~~~
-
-+----------------------------------------------------------------------------------+-------------------------------------------------------+
-| - **true**: **(Default for Cloud deployments)** Enables the Focalboard           | - System Config path: **Plugins > Focalboard**        |
-|   plugin for your Mattermost workspace.                                          | - ``config.json`` setting: N/A                        |
-| - **false**: **(Default for self-hosted deployments)** The Focalboard            | - Environment variable: N/A                           |
-|   plugin is disabled for your Mattermost workspace.                              |                                                       |
-+----------------------------------------------------------------------------------+-------------------------------------------------------+
-
-To enable the Focalboard plugin, set this value to **true**.
 
 ----
 

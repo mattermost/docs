@@ -1,3 +1,6 @@
+:nosearch:
+:orphan:
+
 What’s new in Mattermost Boards 
 ===============================
 
