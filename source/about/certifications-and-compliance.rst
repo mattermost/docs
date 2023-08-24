@@ -55,7 +55,7 @@ Data management
 ^^^^^^^^^^^^^^^^
 
 - **Data Retention:** Use `data retention </comply/data-retention-policy.html>`__ to automatically erase data after a set period of time, a feature that meets the Right to Erasure principle. In Team Edition, you can use database scripts to achieve the same result.
-- **Profile Deletion:** Delete a user’s personal information via `mmctl user delete </manage/mmctl-command-line-tool.html#mmctl-user-delete>`__, or via `the CLI </manage/command-line-tools.html#mattermost-user-delete>`__. Both the mmctl and the CLI command permanently deletes all user information including messages created by the user.
+- **Profile Deletion:** Delete a user’s personal information via `mmctl user delete </manage/mmctl-command-line-tool.html#mmctl-user-delete>`__. This permanently deletes all user information including messages created by the user.
 - **Self-Hosted Push Notification Service:** Self-host your own push notification service, or deploy mobile apps with any EMM provider that supports `AppConfig <https://www.appconfig.org/members/>`__ to meet security and compliance policies. See `our Mobile App deployment documentation </deploy/mobile-overview.html>`__ to learn more.
 
 Data portability

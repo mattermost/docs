@@ -39,14 +39,14 @@ Important administration notes
 **DO NOT manipulate the Mattermost database**
 
 - In particular, DO NOT manually delete data from the database directly. Mattermost is designed as a continuous archive and cannot be supported after manual manipulation.
-- If you need to permanently delete a team or user, use the `mattermost user delete </manage/command-line-tools.html#mattermost-user-delete>`__ CLI command, or use the `mmctl user delete </manage/mmctl-command-line-tool.html#mmctl-user-delete>`__ command.
+- If you need to permanently delete a team or user, use the `mmctl user delete </manage/mmctl-command-line-tool.html#mmctl-user-delete>`__ command or the `mmctl user deletall </manage/mmctl-command-line-tool.html#mmctl-user-deleteall>`__ command.
 
 Common tasks
 ------------
 
 **Creating System Admin account from the command line**
 
-- If the System Admin leaves the organization or is otherwise unavailable, you can use the command line interface to assign the *system_admin* role to an existing user. In the ``/opt/mattermost`` directory, type ``sudo -u mattermost bin/mattermost roles system_admin {user-name}``, where *{user-name}* is the username of the person with the new role. For more information about using the command line interface, see `Command Line Tools </manage/command-line-tools.html>`__.
+- If the System Admin leaves the organization or is otherwise unavailable, you can use the `mmctl roles </manage/mmctl-command-line-tool.html#mmctl-roles>`__ commands to assign the *system_admin* role to an existing user. 
 - The user needs to log out and log back in before the *system_admin* role is applied.
   
 **Migrating to AD/LDAP or SAML from email-based authentication**
@@ -57,7 +57,7 @@ Common tasks
 **Deactivating a user**
 
 - System Admins can go to **System Console > Users** for a list of all users on the server. The list can be searched and filtered to make finding the user easier. Click the user's role and in the menu that opens, click **Deactivate**.
-- To preserve audit history, users are typically never deleted from the system. If permanently deleting a user is necessary (e.g. for the purposes of `GDPR <https://gdpr-info.eu/>`__), an `mmctl command </manage/mmctl-command-line-tool.html>`__ or a `CLI command </manage/command-line-tools.html>`_ can be used to do so.
+- To preserve audit history, users are typically never deleted from the system. If permanently deleting a user is necessary (e.g. for the purposes of `GDPR <https://gdpr-info.eu/>`__), an `mmctl command </manage/mmctl-command-line-tool.html>`__ can be used to do so.
 - Note that AD/LDAP user accounts cannot be deactivated from Mattermost; they must be deactivated from your Active Directory.
 
 **Checking for a valid license in Enterprise Edition without logging in**

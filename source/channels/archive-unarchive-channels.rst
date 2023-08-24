@@ -58,4 +58,4 @@ System admins and Team admins can unarchive public channels or private channels 
 
 .. tip::
 
-  Alternatively, system admins can unarchive channels `via the CLI </manage/command-line-tools.html#mattermost-channel-restore>`__, or via the `mmctl </manage/mmctl-command-line-tool.html#mmctl-channel-unarchive>`__. Team admins can unarchive channels `via the API <https://api.mattermost.com/#operation/RestoreChannel>`__.
+  Alternatively, system admins can unarchive channels `via the mmctl </manage/mmctl-command-line-tool.html#mmctl-channel-unarchive>`__. Team admins can unarchive channels `via the API <https://api.mattermost.com/#operation/RestoreChannel>`__.
