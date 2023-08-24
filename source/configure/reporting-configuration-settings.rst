@@ -22,7 +22,9 @@ Site statistics
 | sessions, commands, webhooks, active users, connections,      | - ``config.json setting``: N/A                              |
 | and playbooks.                                                | - Environment variable: N/A                                 |
 +---------------------------------------------------------------+-------------------------------------------------------------+
-| **Note**: Inactive and deactivated users are not counted towards the total number of active users.                          |
+| **Note**: Inactive and deactivated users, as well as remote users in                                                        |
+| `Microsoft Teams integrations </channels/collaborate-using-mattermost-for-microsoft-teams.html>`__                          |
+| and `shared channels users </onboard/shared-channels.html>`__, aren't counted towards the total number of active users.     |
 +---------------------------------------------------------------+-------------------------------------------------------------+
 
 ----

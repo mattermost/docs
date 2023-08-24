@@ -31,11 +31,11 @@ Mute channel
 
 By default, all channels, direct messages, and group messages are unmuted. 
 
-Muting a channel turns off desktop, email, and mobile push notifications for that channel, direct message, or group message. The channel will only be marked as unread in the channel sidebar if you're mentioned. 
+Muting a channel turns off desktop, email, incoming call ring tones, and mobile push notifications for that channel, direct message, or group message. The channel will only be marked as unread in the channel sidebar if you're mentioned. 
 
 Once a channel is muted:
 
-- Email, desktop, and push notifications are disabled.
+- Email, desktop, incoming call ring tones, and push notifications are disabled.
 - A mute icon displays next to the channel, direct message, or group message's name.
 - The channel, direct message, or group message appears at reduced opacity in the channel sidebar, and isn't marked as unread unless you're mentioned directly.
 
@@ -108,7 +108,7 @@ To customize mobile push notifications per channel:
     1. Tap the channel where you want to mute mention notifications.
     2. Tap the **More** |more-icon| icon located in the top right corner of the app.
     3. Tap **View info**.
-    4. Tap **IMobile Notifications**, and tap your notification preference for that channel.
+    4. Tap **Mobile Notifications**, and tap your notification preference for that channel.
 
 Channel header
 --------------

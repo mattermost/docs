@@ -21,7 +21,7 @@ When an ESR is at the end of its life cycle, there will be announcements ahead o
 
 To receive updates about Extended Support Releases, sign up for our mailing list `here <https://eepurl.com/dCKn2P>`__.
 
-.. image:: ../images/esr.png
+.. image:: ../images/ESR_graphic.png
    :alt: Timeline-based chart showing the lifecycle of Mattermost Extended Support Releases and feature releases from last year and this year.
 
 What is included in an Extended Support Release dot release? 
@@ -51,7 +51,7 @@ What are the current supported Extended Support Release versions?
 +=============+================+==================+==================+============================================================================================+=====================================================+
 | 8.1         | Feature        | August 16, 2023  | May 15, 2024     |                                                                                            |                                                     |
 +-------------+----------------+------------------+------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------+
-| 7.8         | Feature        | February 16, 2023| November 15, 2023| `7.8.7 <https://releases.mattermost.com/7.8.7/mattermost-7.8.7-linux-amd64.tar.gz>`_       |                                                     |
+| 7.8         | Feature        | February 16, 2023| November 15, 2023| `7.8.9 <https://releases.mattermost.com/7.8.9/mattermost-7.8.9-linux-amd64.tar.gz>`_       |                                                     |
 +-------------+----------------+------------------+------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------+
 | 7.1         | Feature        | July 15, 2022    | May 15, 2023     | `7.1.9 <https://releases.mattermost.com/7.1.9/mattermost-7.1.9-linux-amd64.tar.gz>`_       |                                                     |
 +-------------+----------------+------------------+------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------+
@@ -109,10 +109,3 @@ Earlier 4.x versions of Mattermost Desktop App and earlier v1.x versions of the 
 Please review the `Desktop App changelog </install/desktop-app-changelog.html>`_ and the `Mobile App changelog </deploy/mobile-app-changelog.html>`_ notes for any self-hosted version requirements for features and functionalities, as well as notes on security fixes.
 
 See more details in our `release lifecycle documentation </upgrade/release-lifecycle.html#desktop-and-mobile-app-server-compatibility>`_.
-
-Mobile App v1.55.1 extended support release (ESR)
---------------------------------------------------
-
-The latest version of the mobile app released in September 2022 (v1.55.1) is our first mobile extended support release. We are very excited about the upcoming general availability of the v2.0 mobile app in December 2022. We recognize that some customers may have a custom build of Mattermost mobile and need more time to test or implement their custom changes on mobile v2.0. The mobile ESR will be supported until July 2023.
-
-The mobile v1.55.1 (ESR) will be smoke tested monthly with every new server release until the mobile ESR reaches end-of-life (July 2023). The ESR version will receive critical security fixes only and be released as needed via unsigned builds to our mobile Github repository.

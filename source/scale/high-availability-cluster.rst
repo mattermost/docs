@@ -214,11 +214,14 @@ Migrating to NAS or S3 from local storage is beyond the scope of this document.
 Database configuration
 ^^^^^^^^^^^^^^^^^^^^^^
 
-Use the read replica feature to scale the database. The Mattermost server can be set up to use one master database and multiple read replica databases. Mattermost distributes read requests across all databases, and sends write requests to the master database, and those changes are then sent to update the read replicas.
+Use the read replica feature to scale the database. The Mattermost server can be set up to use one master database and one or more read replica databases.
 
-On large deployments, consider using the search replica feature to isolate search queries onto one or more database servers. A search replica is similar to a read replica, but is used only for handling search queries.
+On large deployments, also consider using the search replica feature to isolate search queries onto one or more search replicas. A search replica is similar to a read replica, but is used only for handling search queries.
 
-If there are no search replicas, the server uses the read replicas instead. Similarly, if there are no read replicas, the server falls back to master.
+Mattermost distributes queries as follows:
+* All write requests, and some specific read requests, are sent to the master.
+* All other read requests (excluding those specific queries that go to the master) are distributed among the available read replicas. If no read replicas are available, these are sent to the master instead.
+* Search requests are distributed among the available search replicas. If no search replicas are available, these are sent to the read replicas instead (or, if no read replicas are available, to the master).
 
 Size the databases
 ``````````````````
@@ -232,7 +235,7 @@ Deploy a multi-database configuration
 
 To configure a multi-database Mattermost server:
 
-1. Update the ``DataSource`` setting in ``config.json`` with a connection string to your master database server. The connection string is based on the database type set in ``DriverName``, either ``postgres`` or ``mysql``.
+1. Update the ``DataSource`` setting in ``config.json`` with a connection string to your master database server.
 2. Update the ``DataSourceReplicas`` setting in ``config.json`` with a series of connection strings to your database read replica servers in the format ``["readreplica1", "readreplica2"]``. Each connection should also be compatible with the ``DriverName`` setting.
 
 Here's an example ``SqlSettings`` block for one master and two read replicas:
@@ -280,7 +283,7 @@ While the connection settings are changing, there might be a brief moment when w
 Transparent failover
 ````````````````````
 
-The database can be configured for high availability and transparent failover use the existing database technologies. We recommend PostgreSQL Clustering, MySQL Clustering, or Amazon Aurora. Database transparent failover is beyond the scope of this documentation.
+The database can be configured for high availability and transparent failover use the existing database technologies. We recommend PostgreSQL Clustering or Amazon Aurora. Database transparent failover is beyond the scope of this documentation.
 
 Recommended configuration settings for PostgreSQL
 ``````````````````````````````````````````````````
@@ -319,17 +322,6 @@ If you're using PostgreSQL as the choice of database, we recommend the following
 .. note::
   
    If you are using pgbouncer, or any similar connection pooling proxy, in front of your DB, then apply the keepalive settings to the proxy instead, and revert the keepalive settings for the DB back to defaults.
-
-Recommended configuration settings for MySQL
-````````````````````````````````````````````
-
-For MySQL, we recommend the following configuration options for high performance:
-
-1. **innodb_buffer_pool_size**: Set to about 70% of your total RAM.
-2. **innodb_log_file_size**: Set to 256MB. Increasing this helps in write intensive operations. Downside is that recovery times will be longer.
-3. **innodb_flush_log_at_trx_commit**: 2. Note that this can potentially cause up to 1 second of loss of transaction data.
-4. **max_heap_table_size**: 64MB.
-5. **tmp_table_size**: 64MB.
 
 Leader election
 ^^^^^^^^^^^^^^^^

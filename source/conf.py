@@ -87,9 +87,9 @@ redirects = {
 "about/faq-mattermost-source-available-license.html":
 	"https://docs.mattermost.com/about/faq-license.html#source-available-licensing",
 "about/mattermost-customizable-chatgpt-bot-framework.html":
-        "https://docs.mattermost.com/about/mattermost-customizable-ai-bot-framework.html",
-"about/product.html#use-boards-to-hit-your-milestones-and-support-your-project-workflows":
-        "https://github.com/mattermost/focalboard/tree/product-docs#readme",
+        "https://github.com/mattermost/openops#readme",
+"about/mattermost-customizable-ai-bot-framework.html":
+        "https://github.com/mattermost/openops#readme",
 
 # Administration redirects
 "administration/announcement-banner.html":
@@ -110,6 +110,8 @@ redirects = {
         "https://docs.mattermost.com/install/self-managed-changelog.html#id41",
 "administration/command-line-tools.html":
         "https://docs.mattermost.com/manage/command-line-tools.html",
+"administration/command-line-tools.html#mattermost-user-delete":
+	"https://docs.mattermost.com/manage/command-line-tools.html#mattermost-user-delete",
 "administration/command-line-tools.html#mattermost-channel-restore":
         "https://docs.mattermost.com/manage/command-line-tools.html#mattermost-channel-restore",
 "administration/command-line-tools.html#mattermost-permissions-reset":
@@ -385,7 +387,7 @@ redirects = {
 "cloud/cloud-reporting.html":
 	"https://docs.mattermost.com/manage/statistics.html",
 "cloud/cloud-administration/data-retention-policy.html":
-        "https://docs.mattermost.com/comply/cloud-data-retention-policy.html",
+        "https://docs.mattermost.com/comply/data-retention-policy.html",
 "cloud/cloud-administration/saml-technical.html":
 	"https://docs.mattermost.com/onboard/cloud-sso-saml-technical.html",
 "cloud/cloud-administration/sso-openid-connect.html":
@@ -412,6 +414,8 @@ redirects = {
 # Compliance redirects
 "comply/compliance-reporting-oversight":
         "https://docs.mattermost.com/comply/compliance-monitoring.html",
+"comply/cloud-data-retention-policy.html":
+	"https://docs.mattermost.com/comply/data-retention-policy.html",
 
 # Configure redirects
 "configure/config-ssl-http2-apache2.html":
@@ -1361,12 +1365,6 @@ redirects = {
 	"https://docs.mattermost.com/configure/authentication-configuration-settings.html#openid-connect-other-settings",
 "configure/experimental-configuration-settings.html#enable-app-bar":
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#disable-apps-bar",
-"configure/product-configuration-settings.html":
-        "https://docs.mattermost.com/configure/plugins-configuration-settings.html#focalboard-plugin",
-"configure/plugins-configuration-settings.html#mattermost-boards":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/index.md",
-"configure/plugins-configuration-settings.html#id9":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/index.md",
 
 # Deploy redirects
 "deploy/mobile-apps-faq.html":
@@ -2540,12 +2538,12 @@ html_static_path = ["_static"]
 # A list of CSS files. The entry must be a filename string or a tuple containing the filename string and the attributes
 # dictionary. The filename must be relative to the html_static_path, or a full URI with scheme like
 # https://example.org/style.css. The attributes is used for attributes of <link> tag. It defaults to an empty list.
-html_css_files = ["mytheme.css?version=v38", "css/compass-icons.css"]
+html_css_files = ["mytheme.css?version=v46", "css/compass-icons.css"]
 
 # A list of JavaScript filenames. The entry must be a filename string or a tuple containing the filename string and the
 # attributes dictionary. The filename must be relative to the html_static_path, or a full URI with scheme like
 # https://example.org/script.js. The attributes is used for attributes of <script> tag. It defaults to an empty list.
-html_js_files = ["myscript.js?version=v14"]
+html_js_files = ["myscript.js?version=v16"]
 
 # The name of an image file, relative to the configuration directory, to use as favicon of the docs.  This file should
 # be a Windows icon file (.ico) being 16x16 or 32x32 pixels in size.

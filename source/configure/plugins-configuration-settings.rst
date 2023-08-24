@@ -16,7 +16,10 @@ Both self-hosted and Cloud admins can access the following configuration setting
 - `Channel Export <#channel-export>`__
 - `Demo Plugin <#demo-plugin>`__
 - `GIF commands <#gif-commands>`__
-- `Mattermost Playbooks <#mattermost-playbooks>`__
+- `Mattermost Boards <#mattermost-boards>`__
+- `Google Calendar <#google-calendar>`__
+- `MS Teams Sync <#ms-teams-sync>`__
+- `Playbooks <#playbooks>`__
 - `User Satisfaction surveys <#user-satisfaction-surveys>`__
 - `Zoom <#zoom>`__
 
@@ -499,50 +502,105 @@ Enable plugin
 +--------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+
 
 .. config:setting:: plugins-callsrtcserveraddress
-  :displayname: RTC server port (Plugins - Calls)
+  :displayname: RTC server port (UDP) (Plugins - Calls)
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.Plugins.com.mattermost.calls.udpserveraddress
   :environment: N/A
-  :description: The IP address used by the RTC server to listen on. By default the service listens on all the available interfaces.
+  :description: The IP address used by the RTC server to listen for UDP connections. By default the service listens on all the available interfaces.
 
-RTC server address
-~~~~~~~~~~~~~~~~~~
+RTC server address (UDP)
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. include:: ../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
-+-----------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+
-| This setting controls the IP address the RTC server listens to. All Calls traffic will be served through this IP.     | - System Config path: **Plugins > Calls**                                                                 |
-|                                                                                                                       | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.calls.udpserveraddress``               |
-| Changing this setting requires a plugin restart to take effect.                                                       | - Environment variable: N/A                                                                               |
-| If left unset (default value) the service will listen on all the available interfaces.                                |                                                                                                           |
-+-----------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+
-| **Note**: This setting is only applicable when not running calls through the standalone ``rtcd`` service.             |                                                                                                           |
-+-----------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+
+| This setting controls the IP address the RTC server listens for UDP connections. All calls UDP traffic will be served through this IP.     | - System Config path: **Plugins > Calls**                                                                 |
+|                                                                                                                                            | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.calls.udpserveraddress``               |
+| Changing this setting requires a plugin restart to take effect.                                                                            | - Environment variable: N/A                                                                               |
+| If left unset (default value) the service will listen on all the available interfaces.                                                     |                                                                                                           |
++--------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+
+| **Note**: This setting is only applicable when not running calls through the standalone ``rtcd`` service.                                  |                                                                                                           |
++--------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: plugins-callsrtcserverport
-  :displayname: RTC server port (Plugins - Calls)
+.. config:setting:: plugins-callsrtcserveraddress
+  :displayname: RTC server port (TCP) (Plugins - Calls)
+  :systemconsole: Plugins > Calls
+  :configjson: PluginSettings.Plugins.com.mattermost.calls.tcpserveraddress
+  :environment: N/A
+  :description: The IP address used by the RTC server to listen for TCP connections. By default the service listens on all the available interfaces.
+
+RTC server address (TCP)
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: ../_static/badges/selfhosted-only.rst
+  :start-after: :nosearch:
+
++--------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+
+| This setting controls the IP address the RTC server listens for TCP connections. All calls TCP traffic will be served through this IP.     | - System Config path: **Plugins > Calls**                                                                 |
+|                                                                                                                                            | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.calls.tcpserveraddress``               |
+| Changing this setting requires a plugin restart to take effect.                                                                            | - Environment variable: N/A                                                                               |
+| If left unset (default value) the service will listen on all the available interfaces.                                                     |                                                                                                           |
++--------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+
+| **Note**:                                                                                                                                  |                                                                                                           |
+|                                                                                                                                            |                                                                                                           |
+| - This setting is only applicable when not running calls through the standalone ``rtcd`` service.                                          |                                                                                                           |
+|                                                                                                                                            |                                                                                                           |
+| - This setting is available starting in plugin version 0.17.                                                                               |                                                                                                           |
++--------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: plugins-callsrtcserverportudp
+  :displayname: RTC server port (UDP) (Plugins - Calls)
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.Plugins.com.mattermost.calls.udpserverport
   :environment: N/A
-  :description: The UDP port the RTC server will listen on. All calls traffic will be served through this port. Default port is **8443**.
+  :description: The UDP port the RTC server will listen on. All calls UDP traffic will be served through this port. Default port is **8443**.
 
-RTC server port
-~~~~~~~~~~~~~~~
+RTC server port (UDP)
+~~~~~~~~~~~~~~~~~~~~~
 
 .. include:: ../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
-+-----------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
-| This setting controls the UDP port listened on by the RTC server. All Calls traffic will be served through this port. | - System Config path: **Plugins > Calls**                                                              |
-|                                                                                                                       | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.calls.udpserverport``               |
-|                                                                                                                       | - Environment variable: N/A                                                                            |
-| Changing this setting requires a plugin restart to take effect.                                                       |                                                                                                        |
-|                                                                                                                       |                                                                                                        |
-| Default is **8443**.                                                                                                  |                                                                                                        |
-+-----------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
-| **Note**: This setting is only applicable when not running calls through the standalone ``rtcd`` service.             |                                                                                                        |
-+-----------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+| This setting controls the UDP port listened on by the RTC server. All calls UDP traffic will be served through this port.     | - System Config path: **Plugins > Calls**                                                              |
+|                                                                                                                               | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.calls.udpserverport``               |
+|                                                                                                                               | - Environment variable: N/A                                                                            |
+| Changing this setting requires a plugin restart to take effect.                                                               |                                                                                                        |
+|                                                                                                                               |                                                                                                        |
+| Default is **8443**.                                                                                                          |                                                                                                        |
++-------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+| **Note**: This setting is only applicable when not running calls through the standalone ``rtcd`` service.                     |                                                                                                        |
++-------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: plugins-callsrtcserverporttcp
+  :displayname: RTC server port (TCP) (Plugins - Calls)
+  :systemconsole: Plugins > Calls
+  :configjson: PluginSettings.Plugins.com.mattermost.calls.tcpserverport
+  :environment: N/A
+  :description: The TCP port the RTC server will listen on. All calls TCP traffic will be served through this port. Default port is **8443**.
+
+RTC server port (TCP)
+~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: ../_static/badges/selfhosted-only.rst
+  :start-after: :nosearch:
+
++-------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+| This setting controls the TCP port listened on by the RTC server. All calls TCP traffic will be served through this port.     | - System Config path: **Plugins > Calls**                                                              |
+|                                                                                                                               | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.calls.tcpserverport``               |
+|                                                                                                                               | - Environment variable: N/A                                                                            |
+| Changing this setting requires a plugin restart to take effect.                                                               |                                                                                                        |
+|                                                                                                                               |                                                                                                        |
+| Default is **8443**.                                                                                                          |                                                                                                        |
++-------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+| **Note**:                                                                                                                     |                                                                                                        |
+|                                                                                                                               |                                                                                                        |
+| - This setting is only applicable when not running calls through the standalone ``rtcd`` service.                             |                                                                                                        |
+|                                                                                                                               |                                                                                                        |
+| - This setting is available starting in plugin version 0.17.                                                                  |                                                                                                        |
++-------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+
 
 .. config:setting:: plugins-enableonspecificchannels
   :displayname: Enable on specific channels (Plugins - Calls)
@@ -837,7 +895,7 @@ Enable simulcast for screen sharing (Experimental)
   :environment: N/A
   :description: Allow call hosts to record meeting video and audio. 
 
-Enable call recordings (beta)
+Enable call recordings (Beta)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. include:: ../_static/badges/ent-selfhosted-only.rst
@@ -899,7 +957,7 @@ Maximum call recording duration
   :description: The audio and video quality of call recordings.
 
 Call recording quality
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
 
 .. include:: ../_static/badges/ent-selfhosted-only.rst
   :start-after: :nosearch:
@@ -912,7 +970,54 @@ Call recording quality
 | **Note**: The quality setting will affect the performance of the recording service and the file size of recordings. Refer to the `deployment section <configure/calls-deployment.html#configure-recording>`__ for more information.                                                          |
 +-----------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+.. config:setting:: plugins-callsenableipv6
+  :displayname: (Experimental) Enable IPv6 (Plugins - Calls)
+  :systemconsole: Plugins > Calls
+  :configjson: PluginSettings.Plugins.com.mattermost.calls.enableipv6
+  :environment: N/A
+
+  - **true**: The RTC service will work in dual-stack mode, listening for IPv6 connections and generating candidates in addition to IPv4 ones.
+  - **false**: The RTC service will only listen for IPv4 connections.
+
+(Experimental) Enable IPv6
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: ../_static/badges/selfhosted-only.rst
+  :start-after: :nosearch:
+
++----------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+
+| - **true**: The RTC service will work in dual-stack mode, listening for IPv6 connections and generating candidates in addition to IPv4 ones. | - System Config path: **Plugins > Calls**                                                                |
+| - **false**: The RTC service will only listen for IPv4 connections.                                                                          | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.calls.enableipv6``                    |
+|                                                                                                                                              | - Environment variable: N/A                                                                              |
+| Default value is **false**.                                                                                                                  |                                                                                                          |
+|                                                                                                                                              |                                                                                                          |
+| Changing this setting requires a plugin restart to take effect.                                                                              |                                                                                                          |
++----------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+
+| **Note**:                                                                                                                                    |                                                                                                          |
+|                                                                                                                                              |                                                                                                          |
+| - This setting is only applicable when not running calls through the standalone ``rtcd`` service.                                            |                                                                                                          |
+|                                                                                                                                              |                                                                                                          |
+| - This setting is available starting in plugin version 0.17.                                                                                 |                                                                                                          |
++----------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+
+
 .. |note| replace:: .
+
+Enable call ringing (Beta)
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. config:setting:: plugins-enablecallringing
+  :displayname: Enable call ringing (Plugins - Calls)
+  :systemconsole: Plugins > Calls
+  :configjson: PluginSettings.Plugins.com.mattermost.calls. enableringing
+  :environment: N/A
+  :description: Enable or disable incoming call desktop alerts and ringing notifications
+
++--------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| - **true**: Ringing functionality is enabled. Direct and group message   | - System Config path: **Plugins > Calls**                                                   |
+|   participants receive a desktop app alert and a ringing notification    | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.calls. enableringing``   |
+|   when a call starts.                                                    | - Environment variable: N/A                                                                 |
+| - **false**: **(Default**) Ringing functionality is disabled.            |                                                                                             |
++--------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
 
 ----
 
@@ -1181,8 +1286,380 @@ Force GIF preview before posting (force /gifs)
 
 ----
 
-Mattermost Playbooks
---------------------
+Google Calendar
+----------------
+
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
+
+The Mattermost Google Calendar plugin enables a two-way integration between Mattermost and Google Calendar.
+
+Access the following configuration settings in the System Console by going to **Plugins > Google Calendar**.
+
+.. config:setting:: plugins-googlecalendarenable
+  :displayname: Enable plugin (Plugins - Google Calendar)
+  :systemconsole: Plugins > Google Calendar
+  :configjson: N/A
+  :environment: N/A
+
+  - **true**: Enables the Google Calendar plugin on your Mattermost workspace.
+  - **false**: Disables the Google Calendar plugin on your Mattermost workspace.
+
+Enable plugin
+~~~~~~~~~~~~~
+
++--------------------------------------------------------------------------+------------------------------------------------------+
+| Enable the Mattermost Google Calendar plugin for all Mattermost teams.   | - System Config path: **Plugins > Google Calendar**  |
+|                                                                          | - ``config.json`` setting: N/A                       |
+| - **true**: Enables Google Calendar plugin on your Mattermost workspace. | - Environment variable: N/A                          |
+| - **false**: **(Default)** Disables the Google Calendar plugin.          |                                                      |
++--------------------------------------------------------------------------+------------------------------------------------------+
+
+.. config:setting:: plugins-googlecalendaradminuserids
+  :displayname: Enable plugin (Plugins - Google Calendar)
+  :systemconsole: Plugins > Google Calendar
+  :configjson: N/A
+  :environment: N/A
+
+Admin user IDs
+~~~~~~~~~~~~~~
+
++--------------------------------------------------------------------------+------------------------------------------------------+
+| A comma-separated list of users authorized to manage the plugin.         | - System Config path: **Plugins > Google Calendar**  |
+|                                                                          | - ``config.json`` setting: N/A                       |
+| Go to **System Console > User Management > Users** to access user IDs.   | - Environment variable: N/A                          |
++--------------------------------------------------------------------------+------------------------------------------------------+
+
+.. config:setting:: plugins-googlecalendarcopypluginlogs
+  :displayname: Enable plugin (Plugins - Google Calendar)
+  :systemconsole: Plugins > Google Calendar
+  :configjson: N/A
+  :environment: N/A
+
+Copy plugin logs to admins, as bot messages
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++--------------------------------------------------------------------------+------------------------------------------------------+
+| The level of detail in log events for the plugin.                        | - System Config path: **Plugins > Google Calendar**  |
+|                                                                          | - ``config.json`` setting: N/A                       |
+| Can be one of: **None**, **Debug**, **Info**, **Warning**, or **Error**. | - Environment variable: N/A                          |
++--------------------------------------------------------------------------+------------------------------------------------------+
+
+.. config:setting:: plugins-googlecalendardisplayfullcontext
+  :displayname: Enable plugin (Plugins - Google Calendar)
+  :systemconsole: Plugins > Google Calendar
+  :configjson: N/A
+  :environment: N/A
+
+  - **true**: Displays full context for each admin log entry.
+  - **false**: Full context isn't displayed for each admin log entry.
+
+Display full context for each admin log message
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++--------------------------------------------------------------------------+------------------------------------------------------+
+| Specify whether full context is displayed for log messages.              | - System Config path: **Plugins > Google Calendar**  |
+|                                                                          | - ``config.json`` setting: N/A                       |
+| - **true**: Displays full context for each admin log entry.              | - Environment variable: N/A                          |
+| - **false**: Full context isn't displayed for each admin log entry.      |                                                      |
++--------------------------------------------------------------------------+------------------------------------------------------+
+
+.. config:setting:: plugins-googlecalendarencryptionkey
+  :displayname: Enable plugin (Plugins - Google Calendar)
+  :systemconsole: Plugins > Google Calendar
+  :configjson: N/A
+  :environment: N/A
+
+Encryption key
+~~~~~~~~~~~~~~
+
++--------------------------------------------------------------------------+------------------------------------------------------+
+| The encryption key used to store data in the database.                   | - System Config path: **Plugins > Google Calendar**  |
+|                                                                          | - ``config.json`` setting: N/A                       |
+|                                                                          | - Environment variable: N/A                          |
++--------------------------------------------------------------------------+------------------------------------------------------+
+| **Note**: Select **Regenerate** to generate a new encryption key. When you regenerate this value, all users will need to        |
+| `reconnect their Google Calendar with Mattermost </channels/use-mattermost-google-calendar-plugin.                              |
+| html#connect-your-google-calendar-account-to-mattermost>`__.                                                                    |
++--------------------------------------------------------------------------+------------------------------------------------------+
+
+.. config:setting:: plugins-googlecalendarappclientid
+  :displayname: Enable plugin (Plugins - Google Calendar)
+  :systemconsole: Plugins > Google Calendar
+  :configjson: N/A
+  :environment: N/A
+
+Google application client ID
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++--------------------------------------------------------------------------+------------------------------------------------------+
+| The Google App Authentication Client ID.                                 | - System Config path: **Plugins > Google Calendar**  |
+|                                                                          | - ``config.json`` setting: N/A                       |
+|                                                                          | - Environment variable: N/A                          |
++--------------------------------------------------------------------------+------------------------------------------------------+
+
+.. config:setting:: plugins-googlecalendarclientsecret
+  :displayname: Enable plugin (Plugins - Google Calendar)
+  :systemconsole: Plugins > Google Calendar
+  :configjson: N/A
+  :environment: N/A
+
+Google client secret
+~~~~~~~~~~~~~~~~~~~~~
+
++--------------------------------------------------------------------------+------------------------------------------------------+
+| The Google App Authentication Client Secret.                             | - System Config path: **Plugins > Google Calendar**  |
+|                                                                          | - ``config.json`` setting: N/A                       |
+|                                                                          | - Environment variable: N/A                          |
++--------------------------------------------------------------------------+------------------------------------------------------+
+
+----
+
+MS Teams Sync
+-------------
+
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
+
+Mattermost for Microsoft Teams enables you to collaborate with technical & operations teams seamlessly through the Mattermost app, without leaving Microsoft Teams.
+
+Access the following configuration settings in the System Console by going to **Plugins > MS Teams Sync**.
+
+.. config:setting:: plugins-msteamssyncenable
+  :displayname: Enable plugin (Plugins - MS Teams Sync)
+  :systemconsole: Plugins > MS Teams Sync
+  :configjson: N/A
+  :environment: N/A
+
+  - **true**: Enables the MS Teams Sync plugin on your Mattermost workspace.
+  - **false**: Disables the MS Teams Sync plugin on your Mattermost workspace.
+
+Enable plugin
+~~~~~~~~~~~~~
+
++------------------------------------------------------------------------+----------------------------------------------------+
+| Enable the Mattermost for Microsoft Teams plugin for all Mattermost    | - System Config path: **Plugins > MS Teams Sync**  |
+| teams.                                                                 | - ``config.json`` setting: N/A                     |
+|                                                                        | - Environment variable: N/A                        |
+| - **true**: Enables MS Teams Sync plugin on your Mattermost workspace. |                                                    |
+| - **false**: **(Default)** Disables the MS Teams Sync plugin.          |                                                    |
++------------------------------------------------------------------------+----------------------------------------------------+
+| **Note**: Use the `Enabled Teams <#enabled-teams>`__ configuration option to specify which Mattermost teams synchronize     |
+| direct and group messages with Microsoft Teams chats.                                                                       |
++------------------------------------------------------------------------+----------------------------------------------------+
+
+.. config:setting:: plugins-msteamssynctenantid
+  :displayname: Tenant ID (Plugins - MS Teams Sync)
+  :systemconsole: Plugins > MS Teams Sync
+  :configjson: N/A
+  :environment: N/A
+  :description: Specify the Microsoft Teams Tenant ID.
+
+Tenant ID
+~~~~~~~~~~
+
++------------------------------------------------------------------------+---------------------------------------------------+
+| Specify the Microsoft Teams Tenant ID.                                 | - System Config path: **Plugins > MS Teams Sync** |
+|                                                                        | - ``config.json`` setting: N/A                    |
+|                                                                        | - Environment variable: N/A                       |
++------------------------------------------------------------------------+---------------------------------------------------+
+
+.. config:setting:: plugins-msteamssyncclientid
+  :displayname: Client ID (Plugins - MS Teams Sync)
+  :systemconsole: Plugins > MS Teams Sync
+  :configjson: N/A
+  :environment: N/A
+  :description: Specify the Microsoft Teams Client ID.
+
+Client ID
+~~~~~~~~~
+
++------------------------------------------------------------------------+---------------------------------------------------+
+| Specify the Microsoft Teams Client ID.                                 | - System Config path: **Plugins > MS Teams Sync** |
+|                                                                        | - ``config.json`` setting: N/A                    |
+|                                                                        | - Environment variable: N/A                       |
++------------------------------------------------------------------------+---------------------------------------------------+
+
+.. config:setting:: plugins-msteamssyncclientsecret
+  :displayname: Client secret (Plugins - MS Teams Sync)
+  :systemconsole: Plugins > MS Teams Sync
+  :configjson: N/A
+  :environment: N/A
+  :description: Specify the Microsoft Teams Client Secret.
+
+Client secret
+~~~~~~~~~~~~~~
+
++------------------------------------------------------------------------+---------------------------------------------------+
+| Specify the Microsoft Teams Client Secret.                             | - System Config path: **Plugins > MS Teams Sync** |
+|                                                                        | - ``config.json`` setting: N/A                    |
+| Alpha-numeric value.                                                   | - Environment variable: N/A                       |
++------------------------------------------------------------------------+---------------------------------------------------+
+
+.. config:setting:: plugins-msteamssyncgenerateatrestencryptionkey
+  :displayname: At rest encryption key (Plugins - MS Teams Sync)
+  :systemconsole: Plugins > MS Teams Sync
+  :configjson: N/A
+  :environment: N/A
+  :description: Generate the AES encryption key used to encrypt sotred access tokens.
+
+At rest encryption key
+~~~~~~~~~~~~~~~~~~~~~~~
+
++------------------------------------------------------------------------+---------------------------------------------------+
+| Generate the AES encryption key used to encrypt sotred access tokens.  | - System Config path: **Plugins > MS Teams Sync** |
+|                                                                        | - ``config.json`` setting: N/A                    |
+| Alpha-numeric value.                                                   | - Environment variable: N/A                       |
++------------------------------------------------------------------------+---------------------------------------------------+
+| **Note**: Select **Regenerate** to generate a new key.                                                                     |
++------------------------------------------------------------------------+---------------------------------------------------+
+
+.. config:setting:: plugins-msteamssyncgeneratewebhooksecret
+  :displayname: Webhook secret (Plugins - MS Teams Sync)
+  :systemconsole: Plugins > MS Teams Sync
+  :configjson: N/A
+  :environment: N/A
+  :description: Generate the webhook secret that Microsoft Teams will use to send messages to Mattermost.
+
+Webhook secret
+~~~~~~~~~~~~~~~
++------------------------------------------------------------------------+---------------------------------------------------+
+| Generate the webhook secret that Microsoft Teams will use to send      | - System Config path: **Plugins > MS Teams Sync** |
+| messages to Mattermost.                                                | - ``config.json`` setting: N/A                    |
+|                                                                        | - Environment variable: N/A                       |
++------------------------------------------------------------------------+---------------------------------------------------+
+| **Note**: Select **Regenerate** to generate a new key.                                                                     |
++------------------------------------------------------------------------+---------------------------------------------------+
+
+.. config:setting:: plugins-msteamssyncuseevaluationapipaymodel
+  :displayname: Use the evaluation API pay model (Plugins - MS Teams Sync)
+  :systemconsole: Plugins > MS Teams Sync
+  :configjson: N/A
+  :environment: N/A
+
+  - **true**: Enables the evaluation API pay model.
+  - **false**: Disables the evaluation API pay model.
+
+Use the evaluation API pay model
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++------------------------------------------------------------------------+---------------------------------------------------+
+| Enable the evaluation API pay model to receive a limited number of     | - System Config path: **Plugins > MS Teams Sync** |
+| change notifications. Ensure you keep the number of notifications low. | - ``config.json`` setting: N/A                    |
+|                                                                        | - Environment variable: N/A                       |
+| - **true**: Enables the evaluation API pay model.                      |                                                   |
+| - **false**: **(Default)** Disables the evaluation API pay model.      |                                                   |
++------------------------------------------------------------------------+---------------------------------------------------+
+
+.. config:setting:: plugins-msteamssyncenforceconnectedaccounts
+  :displayname: Enforce connected accounts (Plugins - MS Teams Sync)
+  :systemconsole: Plugins > MS Teams Sync
+  :configjson: N/A
+  :environment: N/A
+
+  - **true**: Users are required to connect their Mattermost and Microsoft Teams accounts.
+  - **false**: Users aren't required to connect their Mattermost and Microsoft Teams accounts.
+
+Enforce connected accounts
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++------------------------------------------------------------------------+---------------------------------------------------+
+| Requires all users to connect their Mattermost account to their        | - System Config path: **Plugins > MS Teams Sync** |
+| Microsoft Teams account, if the accounts aren't already connected.     | - ``config.json`` setting: N/A                    |
+|                                                                        | - Environment variable: N/A                       |
+| - **true**: Users are required to connect their Mattermost and         |                                                   |
+|   Microsoft Teams accounts each time they refresh the Mattermost       |                                                   |
+|   browser, refresh the desktop app, or log in to Mattermost.           |                                                   |
+| - **false**: **(Default)** Users aren't required to connect their      |                                                   |
+|   Mattermost and Microsoft Teams accounts.                             |                                                   |
++------------------------------------------------------------------------+---------------------------------------------------+
+
+.. config:setting:: plugins-msteamssyncallowtempskipconnectuser
+  :displayname: Allow to temporarily skip connect user (Plugins - MS Teams Sync)
+  :systemconsole: Plugins > MS Teams Sync
+  :configjson: N/A
+  :environment: N/A
+
+  - **true**: Enables users to skip the current prompt to connect their Mattermost and Microsoft Teams user accounts.
+  - **false**: Prevents users from skipping the prompt to connect their Mattermost and Microsoft Teams user accounts.
+
+Allow to temporarily skip connect user
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++------------------------------------------------------------------------+---------------------------------------------------+
+| Allow users to temporarily dismiss the prompt to connect their         | - System Config path: **Plugins > MS Teams Sync** |
+| Mattermost account to their Microsoft Teams account. Users will        | - ``config.json`` setting: N/A                    |
+| continue to be prompted when they refresh the browser, refresh the     | - Environment variable: N/A                       |
+| desktop app, or log in to Mattermost.                                  |                                                   |
+|                                                                        |                                                   |
+| - **true**: Enables users to skip the current prompt to connect their  |                                                   |
+|   Mattermost and Microsoft Teams user accounts.                        |                                                   |
+| - **false**: **(Default)** Prevents users from skipping the prompt to  |                                                   |
+|   connect their Mattermost and Microsoft Teams accounts.               |                                                   |
++------------------------------------------------------------------------+---------------------------------------------------+
+
+.. config:setting:: plugins-msteamssyncsyncusers
+  :displayname: Sync users (Plugins - MS Teams Sync)
+  :systemconsole: Plugins > MS Teams Sync
+  :configjson: N/A
+  :environment: N/A
+  :description: Specify how often, in minutes, to synchronize direct messages, group messages, and chats, between Mattermost and Microsoft Teams users.
+
+Sync users
+~~~~~~~~~~
+
++------------------------------------------------------------------------+---------------------------------------------------+
+| Specify how often, in minutes, to synchronize direct messages,         | - System Config path: **Plugins > MS Teams Sync** |
+| group messages, and chats, between Mattermost and Microsoft Teams      | - ``config.json`` setting: N/A                    |
+| users.                                                                 | - Environment variable: N/A                       |
+|                                                                        |                                                   |
+| Leave this value blank to disble user synchronization.                 |                                                   |
+| Numerical value.                                                       |                                                   |
++------------------------------------------------------------------------+---------------------------------------------------+
+
+.. config:setting:: plugins-msteamssyncsyncmessages
+  :displayname: Sync direct and group messages (Plugins - MS Teams Sync)
+  :systemconsole: Plugins > MS Teams Sync
+  :configjson: N/A
+  :environment: N/A
+
+  - **true**: Mattermost synchronizes direct messages, group messages, and chats between Mattermost and Microsoft Teams.
+  - **false**: Mattermost doesn't synchronize direct messages, group messages, and chats between Mattermost and Microsoft Teams.
+
+Sync direct and group messages
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++------------------------------------------------------------------------+----------------------------------------------------+
+| Synchronize direct messages, group messages, and chats between         | - System Config path: **Plugins > MS Teams Sync**  |
+| Mattermost and Microsoft Teams users.                                  | - ``config.json`` setting: N/A                     |
+|                                                                        | - Environment variable: N/A                        |
+| - **true**: **(Default)** Mattermost synchronizes direct messages,     |                                                    |
+|   group messages, and chats between Mattermost and Microsoft Teams.    |                                                    |
+| - **false**: Mattermost doesn't synchronize messages and chats.        |                                                    |
++------------------------------------------------------------------------+----------------------------------------------------+
+
+.. config:setting:: plugins-msteamssyncenabledteams
+  :displayname: Enabled teams (Plugins - MS Teams Sync)
+  :systemconsole: Plugins > MS Teams Sync
+  :configjson: N/A
+  :environment: N/A
+  :description: Specify which Mattermost teams synchronize direct messages, group messages, and chats with Microsoft Teams.
+
+Enabled teams
+~~~~~~~~~~~~~
+
++------------------------------------------------------------------------+----------------------------------------------------+
+| Specify which Mattermost teams synchronize direct messages, group      | - System Config path: **Plugins > MS Teams Sync**  |
+| messages, and chats with Microsoft Teams.                              | - ``config.json`` setting: N/A                     |
+|                                                                        | - Environment variable: N/A                        |
+| Separate multiple team names with commas. Leave this value blank to    |                                                    |
+| synchronize all Mattermost teams.                                      |                                                    |
++------------------------------------------------------------------------+----------------------------------------------------+
+
+----
+
+Playbooks
+----------
 
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
@@ -1197,17 +1674,17 @@ Access the following configuration settings in the System Console by going to **
   :configjson: 
   :environment: 
 
-  - **true**: Enables the Mattermost Playbooks plugin on your Mattermost workspace.
-  - **false**: Disables the Mattermost Playbooks plugin on your Mattermost workspace.
+  - **true**: **(Default)** Enables Mattermost Playbooks on your Mattermost workspace.
+  - **false**: Disables Mattermost Playbooks on your Mattermost workspace.
 
 Enable plugin
 ~~~~~~~~~~~~~
 
-+-------------------------------------------------------------------------------------+-----------------------------------------------+
-| - **true**: Enables the Mattermost Playbooks plugin on your Mattermost workspace.   | - System Config path: **Plugins > Playbooks** |
-| - **false**: Disables the Mattermost Playbooks plugin on your Mattermost workspace. | - ``config.json`` setting:                    |
-|                                                                                     | - Environment variable:                       |
-+-------------------------------------------------------------------------------------+-----------------------------------------------+
++---------------------------------------------------------------------------------------------------+-----------------------------------------------+
+| - **true**: **(Default)** Enables Mattermost Playbooks on your Mattermost workspace.              | - System Config path: **Plugins > Playbooks** |
+| - **false**: Disables Mattermost Playbooks on your Mattermost workspace.                          | - ``config.json`` setting:                    |
+|                                                                                                   | - Environment variable:                       |
++---------------------------------------------------------------------------------------------------+-----------------------------------------------+
 
 .. config:setting:: plugins-playbooksenabledteams
   :displayname: Enabled teams (Plugins - Playbooks)
@@ -1219,11 +1696,11 @@ Enable plugin
 Enabled teams
 ~~~~~~~~~~~~~
 
-+------------------------------------------------------------------------+-----------------------------------------------+
-| Enable Playbooks for all Mattermost teams, or for only selected teams. | - System Config path: **Plugins > Playbooks** |
-|                                                                        | - ``config.json`` setting:                    |
-|                                                                        | - Environment variable:                       |
-+------------------------------------------------------------------------+-----------------------------------------------+
++-----------------------------------------------------------------------------------+-----------------------------------------------+
+| Enable Playbooks for all Mattermost teams, or for only selected teams.            | - System Config path: **Plugins > Playbooks** |
+|                                                                                   | - ``config.json`` setting:                    |
+|                                                                                   | - Environment variable:                       |
++-----------------------------------------------------------------------------------+-----------------------------------------------+
 
 .. config:setting:: plugins-playbooksexperimentalfeatures
   :displayname: Enable experimental features (Plugins - Playbooks)
@@ -1237,11 +1714,11 @@ Enabled teams
 Enable experimental features
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+-------------------------------------------------------------------------------------+-----------------------------------------------+
-| - **true**: Enables experimental Playbooks features on your Mattermost workspace.   | - System Config path: **Plugins > Playbooks** |
-| - **false**: Disables experimental Playbooks features on your Mattermost workspace. | - ``config.json`` setting:                    |
-|                                                                                     | - Environment variable:                       |
-+-------------------------------------------------------------------------------------+-----------------------------------------------+
++--------------------------------------------------------------------------------------------+-----------------------------------------------+
+| - **true**: Enables experimental Playbooks features on your Mattermost workspace.          | - System Config path: **Plugins > Playbooks** |
+| - **false**: Disables experimental Playbooks features on your Mattermost workspace.        | - ``config.json`` setting:                    |
+|                                                                                            | - Environment variable:                       |
++--------------------------------------------------------------------------------------------+-----------------------------------------------+
 
 User satisfaction surveys
 -------------------------

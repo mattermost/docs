@@ -17,7 +17,7 @@ Self-hosted editions support deploying Mattermost within IT-controlled private e
 Mattermost Team Edition
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-Team Edition is a free-to-use, open source, self-hosted collaboration platform offering all the core productivity benefits of competing SaaS solutions. It deploys as a single Linux binary with PostgreSQL or MySQL under an MIT license.
+Team Edition is a free-to-use, open source, self-hosted collaboration platform offering all the core productivity benefits of competing SaaS solutions. It deploys as a single Linux binary with PostgreSQL under an MIT license.
 
 Mattermost Team Edition is also bundled inside of the free Mattermost Enterprise Edition code base, which provides the same functionality as Mattermost Team Edition, with the additional benefit of being able to trial as well as upgrade into an expanded set of features available with paid subscription, including Mattermost Professional and Mattermost Enterprise. 
 
@@ -45,8 +45,8 @@ For customers using our service in a self-hosted deployment, the Mattermost Free
 
 The Mattermost Professional and Mattermost Enterprise editions are only available after deploying our Mattermost Enterprise Edition code base, and then applying a valid license key that comes with a subscription purchase, or by starting a 30-day free trial that can be activated either in-product (**System Console > Edition and License > Start trial**) or online at https://mattermost.com/trial/.
 
-Mattermost Free
----------------
+Mattermost Free (Self-Hosted only)
+---------------------------------------------
 
 Mattermost Free is a set of collaboration features for accelerating your technical team’s productivity, shipping software faster with higher quality, and improving alignment among team members.
 
@@ -65,7 +65,6 @@ Features include:
 - Highly customizable `third-party bots, integrations <https://mattermost.com/marketplace/#publicApps>`__, and `command line tools </manage/mmctl-command-line-tool.html>`__.
 - Extensive integration support via `webhooks, APIs, drivers <https://developers.mattermost.com/integrate/other-integrations/>`__, and `third-party extensions <https://mattermost.com/marketplace/>`__.
 - Multiple languages including English (Australian, US), Bulgarian, Chinese (Simplified and Traditional), Dutch, French, German, Italian, Japanese, Korean, Persian, Polish, Portuguese (Brazil), Romanian, Russian, Spanish, Swedish, Turkish, and Ukrainian.
-- `SOC2 Type1 certification <https://mattermost.com/security/>`__ (Cloud only).
 - `Community support <https://mattermost.com/support/>`__.
 
 See a complete list of features `here <https://mattermost.com/pricing>`__.

@@ -41,7 +41,7 @@ To manage membership of a private team with synchronized groups:
 
 Alternatively you can use the CLI tool to set the team to be managed by groups:
 
-1. Ensure there's at least one group already associated to the team. You can view and add default teams to a group via **System Console > User Management > Groups > Group Configuration**. Please see more information on adding default teams and channels `here </manage/command-line-tools.html#mattermost-group-team-list>`_. Additionally, you can use the CLI tool to view if there is already a group associated to the team by running the `group team list CLI command </manage/command-line-tools.html#mattermost-group-team-list>`_.
+1. Ensure there's at least one group already associated to the team. You can view and add default teams to a group via **System Console > User Management > Groups > Group Configuration**. See the `CLI </manage/command-line-tools.html#mattermost-group-team-list>`__ documentation for more information on adding default teams and channels. Additionally, you can use the CLI tool to view if there is already a group associated to the team by running the `group team list CLI command </manage/command-line-tools.html#mattermost-group-team-list>`_.
 2. Ensure **Team Settings > General > Allow any user with an account on this server to join this team** is set to ``No``.
 3. Convert the team to have its membership managed by synchronized groups by running the `group team enable CLI command </manage/command-line-tools.html#mattermost-group-team-enable>`_.
 
@@ -56,7 +56,7 @@ To manage membership of a private channel with synchronized groups:
 
 Alternatively you can use the CLI tool to set a private channel to be managed by groups:
 
-1. Ensure there's at least one group already associated to the channel. You can view and add default channels to a group via **System Console > User Management > Groups > Group Configuration**. Please see more information on adding default teams and channels `here </onboard/ad-ldap-groups-synchronization.html#adding-default-teams-or-channels-for-the-group>`_. Additionally, you can use the CLI tool to view if there is already a group associated to the channel by running the `group channel list CLI command </manage/command-line-tools.html#mattermost-group-team-list>`_.
+1. Ensure there's at least one group already associated to the channel. You can view and add default channels to a group via **System Console > User Management > Groups > Group Configuration**. See our `AD/LDAP </onboard/ad-ldap-groups-synchronization.html#adding-default-teams-or-channels-for-the-group>`__ documentation for more information on adding default teams and channels. Additionally, you can use the CLI tool to view if there is already a group associated to the channel by running the `group channel list CLI command </manage/command-line-tools.html#mattermost-group-team-list>`_.
 2. Convert the team to have its membership managed by synchronized groups by running the `group channel enable CLI command </manage/command-line-tools.html#mattermost-group-channel-enable>`_.
 
 Add or remove groups from teams

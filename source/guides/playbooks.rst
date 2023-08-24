@@ -4,12 +4,12 @@ Mattermost Playbooks
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Mattermost Playbooks are pre-built, configurable checklists that define a repeatable process for teams to achieve specific and predictable outcomes. With Playbooks, development teams can orchestrate prescribed workflows and define, streamline, and document complex, recurring operations. Playbooks help you stay in command with integrated communication, collaboration, and status dashboards to manage your entire workflow lifecycle.
+ Mattermost Playbooks enables you to create and manage pre-built, configurable checklists that define a repeatable process for teams to achieve specific and predictable outcomes. With playbooks, development teams can orchestrate prescribed workflows and define, streamline, and document complex, recurring operations. Playbooks help you stay in command with integrated communication, collaboration, and status dashboards to manage your entire workflow lifecycle.
     
 .. image:: ../images/Playbooks_Hero.png
    :alt: An example of the Mattermost Playbooks screen that includes active run details in the right-hand pane.
    
-This Mattermost Playbooks User Guide is for anyone who needs help using Mattermost workflow capabilities.
+This Mattermost Playbooks documentation is for anyone who needs help using Mattermost workflow capabilities.
 
 .. toctree::
    :hidden:

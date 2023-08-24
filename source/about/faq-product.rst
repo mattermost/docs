@@ -48,6 +48,8 @@ The following chart highlights the end user features of Mattermost and their sup
     "Create a new team", "X", "X"
     "Get team invite link", "X", "X", "X"
     "Add members to team", "X", "X", "X"
+    "Get team invite link", "X", "X", "X"
+    "Add members to team", "X", "X", "X"
     "Manage team members", "X", "X",
     "Leave team", "X", "X"
     **PLAYBOOKS**

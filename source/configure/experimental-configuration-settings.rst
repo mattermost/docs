@@ -2211,12 +2211,12 @@ When running Mattermost in `High Availablity mode <https://docs.mattermost.com/s
   :environment: N/A
   :description: Defines the threshold in hours beyond which older completed database jobs are removed. Must be set to a value greater than or equal to ``0`` to be enabled. Default value is **-1**
 
-Clean Up old database jobs
+Clean up old database jobs
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-Defines the threshold in days beyond which older completed database jobs are removed. This setting applies to both MySQL and PostgreSQL databases, is disabled by default, and must be set to a value greater than or equal to ``0`` to be enabled.
+Defines the threshold in days beyond which older completed database jobs are removed. This setting is disabled by default, and must be set to a value greater than or equal to ``0`` to be enabled.
 
 +--------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"JobSettings.CleanupJobsThresholdDays": -1`` with numerical input.     |
@@ -2234,7 +2234,7 @@ Clean up outdated database entries
 
 This setting only applies to configuration in the database. It isn't available in the System Console and can be set via mmctl or changed in the database.
 
-Defines the threshold in days beyond which outdated configurations are removed from the database. This setting applies to both PostgreSQL and MySQL  databases.
+Defines the threshold in days beyond which outdated configurations are removed from the database.
 
 +--------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"JobSettings.CleanupConfigThresholdDays": 30`` with numerical input.   |

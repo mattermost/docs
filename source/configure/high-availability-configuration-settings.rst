@@ -13,7 +13,7 @@ In a Mattermost high availability cluster deployment, the System Console is set 
   :environment: MM_CLUSTERSETTINGS_ENABLE
 
   - **true**: The Mattermost server will attempt inter-node communication with the other servers in the cluster that have the same cluster name.
-   **false**: **(Default)** Mattermost high availability mode is disabled.
+  - **false**: **(Default)** Mattermost high availability mode is disabled.
 
 Enable high availability mode
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

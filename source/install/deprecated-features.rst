@@ -6,21 +6,27 @@ This page describes features that are removed from support for Mattermost, or wi
 Removed features in upcoming versions
 -------------------------------------
 
+Mattermost Server v9.0.0
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Mattermost Boards will transition to being fully community supported, with various other plugins following suit. See this `forum post <https://forum.mattermost.com/t/upcoming-product-changes-to-boards-and-various-plugins/16669>`_ for more details.
+- Removing deprecated Insights feature.
+- Gfycat as a GIF service is being `discontinued <https://techcrunch.com/2023/07/05/gfycat-shuts-down-on-september-1/>`_ on September 1, 2023. The in-product GIF picker currently powered by Gfycat will be replaced with GIPHY in the 9.0 release and in our `supported versions <https://docs.mattermost.com/upgrade/release-lifecycle.html>`_.
+
+Removed features by Mattermost version
+----------------------------------------
+
 Mattermost Server v8.0.0
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-- Removing ``ExperimentalSettings.PatchPluginsReactDOM``. If this setting was previously enabled, confirm that:
-
+- Removed ``ExperimentalSettings.PatchPluginsReactDOM``. If this setting was previously enabled, confirm that:
   - All Mattermost-supported plugins are updated to the latest versions.
-  - Any other plugins have been updated to support React 17. See the `Important Upgrade Notes <https://docs.mattermost.com/upgrade/important-upgrade-notes.html>`__ for v7.7 for more information.
-- Disabling Insights for all new instances and for existing servers that upgrade to Mattermost v8.0.
-- Removing deprecated ``PermissionUseSlashCommands``.
-- Removing deprecated ``model.CommandArgs.Session``.
-- Removing support for PostgreSQL v10. The new minimum PostgreSQL version will be v11.
-- Deprecating the ``AdvancedLoggingConfig`` fields, and replacing them with ``AdvancedLoggingJSON`` fields which accept inline JSON or a filename.
-
-Removed features by Mattermost version
---------------------------------------
+  - Any other plugins have been updated to support React 17. See the `Important Upgrade Notes <https://docs.mattermost.com/upgrade/important-upgrade-notes.html>`_ for v7.7 for more information.
+- Deprecated Insights for all new instances and for existing servers that upgrade to Mattermost v8.0.
+- Removed deprecated ``PermissionUseSlashCommands``.
+- Removed deprecated ``model.CommandArgs.Session``.
+- Removed support for PostgreSQL v10. The new minimum PostgreSQL version is now v11.
+- Deprecated the ``AdvancedLoggingConfig`` fields, and replaced them with ``AdvancedLoggingJSON`` fields which accept inline JSON or a filename.
 
 Mattermost Server v6.0.0
 ~~~~~~~~~~~~~~~~~~~~~~~~

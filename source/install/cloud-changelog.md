@@ -4,12 +4,157 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 
 Latest Mattermost Cloud releases:
 
-- [Release 2023-06-13](#release-2023-06-13)
-- [Release 2023-05-31](#release-2023-05-31)
-- [Release 2023-05-01](#release-2023-05-01)
-- [Release 2023-04-21](#release-2023-04-21)
-- [Release 2023-03-29](#release-2023-03-29)
-- [Release 2023-03-20](#release-2023-03-20)
+- [Release 2023-08-09](#release-2023-08-09)
+- [Release 2023-08-03](#release-2023-08-03)
+- [Release 2023-07-26](#release-2023-07-26)
+- [Release 2023-07-20](#release-2023-07-20)
+- [Release 2023-07-19](#release-2023-07-19)
+- [Release 2023-07-11](#release-2023-07-11)
+
+## Release 2023-08-09
+
+### Improvements
+
+#### User Interface (UI)
+ - The number of channel members is now shown in the **Browse channels** modal.
+ - Updated the minimum required Edge version to 112+.
+ - An error is now displayed if a post edit history fails to load.
+ - Removed the deprecated Insights feature.
+ - Prepackaged Calls plugin version 0.18.0.
+ - Pre-packaged Playbooks version 1.38.0.
+
+### Bug Fixes
+ - Fixed an issue with missing time zone metadata in the Docker container.
+ - Fixed the error returned by ``PUT /api/v4/channels/{channelid}`` when the provided name already existed in the team.
+ - Fixed the clickable area of post textboxes being too small.
+ - Fixed a UI bug in the bot profile popover.
+ - Fixed an issue with the ``registerMessageWillBeUpdatedHook`` plugin hook.
+ - Fixed an issue where the **Saved Posts** section would not show channel and team names.
+
+### Known Issues
+ - Boards public links that follow the URL schema `/boards/public/...` no longer work. They can either be regenerated through the application by going to the board and selecting the **Share** button at the top right, or they can be obtained by replacing the `/boards/public/` part of the URL with `/plugins/focalboard/`.
+
+## Release 2023-08-03
+
+### Bug Fixes
+ - Fixed an issue where ``FileExportBackend`` should not use Bifrost.
+ - Fixed an issue related to the export configuration settings.
+
+## Release 2023-07-26
+
+### Improvements
+
+#### User Interface (UI)
+ - The emoji picker view modal is now displayed on mobile browsers.
+ - Prepackaged v1.2.2 of the Apps plugin.
+ - Prepackaged Focalboard plugin version 7.11.2.
+ - The current user object is now updated more frequently.
+ - Updated the user interface so that system admins no longer appear editable by system/user managers in the System Console.
+
+#### Administration
+ - Using ``https://github.com/reduxjs/redux-devtools`` in production builds is now allowed.
+ - Added a new feature flag, ``DataRetentionConcurrencyEnabled``, to enable/disable concurrency for data retention batch deletion. Also added a new configuration setting  ``DataRetentionSettings.TimeBetweenBatchesMilliseconds`` to control the sleep time between batch deletions.
+ - Added a setting under **System Console > Authentication > Guest Access > Show Guest Tag** to remove the **Guest** badges from within the product.
+- Added Apache 2.0 license to the public submodule, explicitly signalling to [pkg.go.dev](https://pkg.go.dev/github.com/mattermost/mattermost/server/public@v0.0.6) the license in play for this source code.
+ - Added the ability for admins to hide or customize the **Forgot password** link on the login page.
+
+### Bug Fixes
+ - Fixed an issue where drafts would persist after sending an ``@here`` mention in the right-hand side.
+ - Fixed an issue where the **New messages** toast appeared on channels that were completely visible.
+ - Fixed an UI issue related to profile popover on channel member search in the right hand pane.
+ - Fixed an issue where the multi-line channel header preview was too narrow on mobile web view.
+ - Fixed the render of the **Add Slash Command** page in the backstage area.
+ - Fixed an issue where user's timezone affected the date selection in the calendar.
+
+### Known Issues
+ - Boards public links that follow the URL schema `/boards/public/...` will not work after this update. They can either be regenerated through the application by going to the board and selecting the **Share** button at the top right, or they can be obtained by replacing the `/boards/public/` part of the URL with `/plugins/focalboard/`.
+ - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
+
+## Release 2023-07-20
+
+### Bug Fixes
+ - Added support for a new Cloud Export storage and a presigned URL generation.
+
+## Release 2023-07-19
+
+### Bug Fixes
+ - Fixed an issue where a "Seeker can't seek" error was displayed when viewing older image attachments.
+
+## Release 2023-07-11
+
+### Highlights
+
+#### Calls
+ - Calls v0.17.0 introduces a new ringing feature (Beta): Calls in Direct and Group Message channels will ring and pop up a visual notification for the incoming call. Check out the Calls v0.17.0 release notes and Calls documentation for more details.
+
+### Improvements
+
+#### User Interface (UI)
+ - Updated the user interface for the **Browse channels** modal.
+ - Increased the nickname field in the user interface from 22 to 64 characters.
+ - Updated links to documentation in the **System Console**.
+ - Emoji size is now in scale with the text size in the channel header.
+ - Prepackaged Focalboard plugin version 7.11.0.
+ - Prepackaged Playbooks plugin version 1.37.0.
+
+### Bug Fixes
+ - Fixed an issue where scrollbars were not visible enough on the **File Preview** screen.
+ - Fixed an issue where SAML Admin Attribute only compared the first value instead of looping through the assertion values array.
+ - Fixed an issue where updates to recent emojis were not batched when multiple emojis were posted at once.
+ - Reverted a change that could cause the webapp to forget the current user's authentication method.
+
+### Known Issues
+ - Boards public links that follow the URL schema `/boards/public/...` will not work after this update. They can either be regenerated through the application by going to the board and selecting the **Share** button at the top right, or they can be obtained by replacing the `/boards/public/` part of the URL with `/plugins/focalboard/`.
+ - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
+
+## Release 2023-06-26
+
+### Highlights
+ - Insights has been disabled for all new instances and for existing servers that upgrade to v8.0. See more details in [this forum post](https://forum.mattermost.com/t/proposal-to-revise-our-insights-feature-due-to-known-performance-issues/16212) on why Insights has been disabled.
+ - Boards is now operating as a plugin and can be enabled or disabled in the **System Console > Plugin settings**. The Boards configuration, ``EnablePublicSharedBoards``, was also removed from the config and the **System Console**.
+ - The Channel Export and Apps plugins are now disabled by default.
+
+### Improvements
+
+#### User Interface (UI)
+ - Added support to specify different desktop notification sounds per channel.
+ - Calls: Ringing sounds can be enabled/disabled and selected in the Desktop Notifications preferences panel.
+ - Bumped the pre-packaged version of NPS to 1.3.2.
+
+#### Administration
+ - Playbooks is again shipped as a prepackaged plugin, with version 1.36.1.
+ - Added a new ``ConfigurationWillBeSaved`` plugin hook which is invoked before the configuration object is committed to the backing store.
+ - Admins can now specify index names to ignore while purging indexes from Elasticsearch with the ``ElasticsearchSettings.IgnoredPurgeIndexes`` setting.
+ - Added an option to use the German HPNS notification proxy.
+ - New flags were added to the database migrate command as following:
+
+    - ``auto-recover``: If the migration plan receives an error during migrations, this command will try to rollback migrations already applied within the plan. This option is not recommended to be added without reviewing migration plan. You can review the plan by combining ``--save-plan`` and ``--dry-run`` flags.
+    - ``save-plan``: The plan for the migration will be saved into the file store so that it can be used for reviewing the plan or to be used for downgrading.
+    - ``dry-run``: Does not apply the migrations, but it validates how the migration would run with the given conditions.
+
+ - A new database subcommand "downgrade" was added to be able to rollback database migrations. The command either requires an update plan to rollback, or comma separated version numbers.
+ - Removed ``/api/v4/users/stats`` network request from ``InviteMembersButton``.
+
+### API Changes
+ - Introduce the [public](https://github.com/mattermost/mattermost/tree/master/server/public) submodule, housing the familiar `model` and `plugin` packages, but now discretely versioned from the server. It is no longer necessary to `go get` a particular commit hash, as Go programs and plugins can now opt-in to importing `github.com/mattermost/mattermost-server/server/public` and managing versions idiomatically. While this submodule has not yet shipped a v1 and will introduce breaking changes before stabilizing the API, it remains both forwards and backwards compatible with the Mattermost server itself.
+  - In the main `server package`, the Go module path has changed from ``github.com/mattermost/mattermost-server/server/v8`` to ``github.com/mattermost/mattermost/server/v8``. But with the introduction of the `public` submodule, it should no longer be necessary for third-party code to import this `server` package.
+ - As part of the `public` submodule above, a ``context.Context`` is now passed to ``model.Client4`` methods.
+
+### Bug Fixes
+ - Fixed the **New Messages** line overlapping date lines in the post list.
+ - Fixed an issue where post reactions disappeared when the search sidebar was open.
+ - Fixed an issue with broken "medical_symbol", "male_sign", and "female_sign" emojis.
+ - Fixed a panic where a JSON null value was passed as a channel update.
+ - Fixed an issue where the draft counter badge remained in cases where a deleted parent post was removed.
+ - Fixed an issue where posts were not fully sanitized for audit output when a link preview was included.
+ - Fixed an issue where the footer with **Save/Cancel** buttons did not get anchored properly in the System Console.
+ - Fixed an issue where the undo history was erased when links, tables, or code was pasted into the textbox.
+ - Fixed an issue where Elasticsearch didn't properly start on startup when enabled. Also added a missing ``IsEnabled`` method to Elasticsearch.
+ - Fixed an issue where text couldn't be copied from the post textbox.
+
+### Known Issues
+ - Boards public links that follow the URL schema `/boards/public/...` will not work after this update. They can either be regenerated through the application by going to the board and selecting the **Share** button at the top right, or they can be obtained by replacing the `/boards/public/` part of the URL with `/plugins/focalboard/`.
+ - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
 
 ## Release 2023-06-13
 
