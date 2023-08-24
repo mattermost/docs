@@ -17,8 +17,9 @@ Both self-hosted and Cloud admins can access the following configuration setting
 - `Demo Plugin <#demo-plugin>`__
 - `GIF commands <#gif-commands>`__
 - `Mattermost Boards <#mattermost-boards>`__
+- `Google Calendar <#google-calendar>`__
 - `MS Teams Sync <#ms-teams-sync>`__
--  Playbooks <#mattermost-playbooks>`__
+- `Playbooks <#playbooks>`__
 - `User Satisfaction surveys <#user-satisfaction-surveys>`__
 - `Zoom <#zoom>`__
 
@@ -195,6 +196,10 @@ Agenda
 .. include:: ../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
+.. note::
+  
+  From Mattermost v8.1, this third-party plugin is managed by the Mattermost Community.
+
 Access the following configuration settings in the System Console by going to **Plugins > Agenda**.
 
 .. config:setting:: plugins-agendaenable
@@ -221,6 +226,10 @@ Antivirus
 
 .. include:: ../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
+
+.. note::
+  
+  From Mattermost v8.1, this third-party plugin is managed by the Mattermost Community.
 
 This plugin allows the forwarding of uploaded files to an antivirus scanning application, `ClamAV anti-virus software <https://www.clamav.net/>`__, and prevents the upload from completing if there is a virus detected in the file.
 
@@ -284,6 +293,10 @@ Apps
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
+.. note::
+  
+  From Mattermost v8.1, this third-party plugin is managed by the Mattermost Community.
+
 Access the following configuration settings in the System Console by going to **Plugins > Apps**.
 
 To create your own Mattermost App, see the `Mattermost Apps <https://developers.mattermost.com/integrate/apps/>`__ developer documentation.
@@ -313,6 +326,10 @@ Autolink
 
 .. include:: ../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
+
+.. note::
+  
+  From Mattermost v8.1, this third-party plugin is managed by the Mattermost Community.
 
 This plugin creates regular expression patterns that are reformatted into a Markdown link before the message is saved into the database. This plugin can be configured through the System Console, ``config.json`` file, or ``/autolink`` slash command. See the `Autolink Plugin <https://github.com/mattermost/mattermost-plugin-autolink/blob/master/README.md>`__ documentation for details.
 
@@ -397,6 +414,10 @@ AWS SNS
 
 .. include:: ../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
+
+.. note::
+  
+  From Mattermost v8.1, this third-party plugin is managed by the Mattermost Community.
 
 This plugin is used to receive alert notifications from `Amazon AWS CloudWatch <https://aws.amazon.com/cloudwatch/>`__ to Mattermost channels via `AWS Simple Notification Server (SNS) <https://docs.aws.amazon.com/sns/latest/dg/welcome.html>`__.
 
@@ -519,7 +540,7 @@ RTC server address (UDP)
 | Changing this setting requires a plugin restart to take effect.                                                                            | - Environment variable: N/A                                                                               |
 | If left unset (default value) the service will listen on all the available interfaces.                                                     |                                                                                                           |
 +--------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+
-| **Note**: This setting is only applicable when not running calls through the standalone ``rtcd`` service.                                  |                                                                                                           |
+| **Note**: This setting is only applicable when not running calls through the standalone ``rtcd`` service.                                                                                                                                              |
 +--------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: plugins-callsrtcserveraddress
@@ -541,11 +562,11 @@ RTC server address (TCP)
 | Changing this setting requires a plugin restart to take effect.                                                                            | - Environment variable: N/A                                                                               |
 | If left unset (default value) the service will listen on all the available interfaces.                                                     |                                                                                                           |
 +--------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+
-| **Note**:                                                                                                                                  |                                                                                                           |
-|                                                                                                                                            |                                                                                                           |
-| - This setting is only applicable when not running calls through the standalone ``rtcd`` service.                                          |                                                                                                           |
-|                                                                                                                                            |                                                                                                           |
-| - This setting is available starting in plugin version 0.17.                                                                               |                                                                                                           |
+| **Note**:                                                                                                                                                                                                                                              |
+|                                                                                                                                                                                                                                                        |
+| - This setting is only applicable when not running calls through the standalone ``rtcd`` service.                                                                                                                                                      |
+|                                                                                                                                                                                                                                                        |
+| - This setting is available starting in plugin version 0.17.                                                                                                                                                                                           |
 +--------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: plugins-callsrtcserverportudp
@@ -569,7 +590,7 @@ RTC server port (UDP)
 |                                                                                                                               |                                                                                                        |
 | Default is **8443**.                                                                                                          |                                                                                                        |
 +-------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
-| **Note**: This setting is only applicable when not running calls through the standalone ``rtcd`` service.                     |                                                                                                        |
+| **Note**: This setting is only applicable when not running calls through the standalone ``rtcd`` service.                                                                                                                              |
 +-------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: plugins-callsrtcserverporttcp
@@ -593,11 +614,11 @@ RTC server port (TCP)
 |                                                                                                                               |                                                                                                        |
 | Default is **8443**.                                                                                                          |                                                                                                        |
 +-------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
-| **Note**:                                                                                                                     |                                                                                                        |
-|                                                                                                                               |                                                                                                        |
-| - This setting is only applicable when not running calls through the standalone ``rtcd`` service.                             |                                                                                                        |
-|                                                                                                                               |                                                                                                        |
-| - This setting is available starting in plugin version 0.17.                                                                  |                                                                                                        |
+| **Note**:                                                                                                                                                                                                                              |
+|                                                                                                                                                                                                                                        |
+| - This setting is only applicable when not running calls through the standalone ``rtcd`` service.                                                                                                                                      |
+|                                                                                                                                                                                                                                        |
+| - This setting is available starting in plugin version 0.17.                                                                                                                                                                           |
 +-------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
 
 
@@ -880,11 +901,11 @@ Enable simulcast for screen sharing (Experimental)
 | - **false**: Disables simulcast for screen sharing.                                                                    | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.calls.enablesimulcast``               |
 |                                                                                                                        | - Environment variable N/A                                                                               |
 +------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+
-| **Note**: This functionality has the following requirements:                                                           |                                                                                                          |
-|                                                                                                                        |                                                                                                          |
-| - Calls plugin version >= v0.16.0                                                                                      |                                                                                                          |
-|                                                                                                                        |                                                                                                          |
-| - ``rtcd`` version >= v0.10.0 (if in use)                                                                              |                                                                                                          |
+| **Note**: This functionality has the following requirements:                                                                                                                                                                      |
+|                                                                                                                                                                                                                                   |
+| - Calls plugin version >= v0.16.0                                                                                                                                                                                                 |
+|                                                                                                                                                                                                                                   |
+| - ``rtcd`` version >= v0.10.0 (if in use)                                                                                                                                                                                         |
 +------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: plugins-enablecallrecordings
@@ -992,11 +1013,9 @@ Call recording quality
 |                                                                                                                                              |                                                                                                          |
 | Changing this setting requires a plugin restart to take effect.                                                                              |                                                                                                          |
 +----------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+
-| **Note**:                                                                                                                                    |                                                                                                          |
-|                                                                                                                                              |                                                                                                          |
-| - This setting is only applicable when not running calls through the standalone ``rtcd`` service.                                            |                                                                                                          |
-|                                                                                                                                              |                                                                                                          |
-| - This setting is available starting in plugin version 0.17.                                                                                 |                                                                                                          |
+| **Note**:                                                                                                                                                                                                                                               |
+| - This setting is only applicable when not running calls through the standalone ``rtcd`` service.                                                                                                                                                       |
+| - This setting is available starting in plugin version 0.17.                                                                                                                                                                                            |
 +----------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+
 
 .. |note| replace:: .
@@ -1026,6 +1045,10 @@ Channel export
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
+.. note::
+  
+  From Mattermost v8.1, this third-party plugin is managed by the Mattermost Community.
+
 Access the following configuration settings in the System Console by going to **Plugins > Channel Export**.
 
 .. config:setting:: plugins-channelexportenable
@@ -1037,13 +1060,12 @@ Access the following configuration settings in the System Console by going to **
   - **true**: Enables the Channel Export plugin on your Mattermost workspace.
   - **false**: (Default) Disables the Channel Export plugin on your Mattermost workspace.
 
-Enable Plugin
+Enable plugin
 ~~~~~~~~~~~~~
 
 +-----------------------------------------------------------------------------------------+----------------------------------------------------+
 | - **true**: Enables the Channel Export plugin on your Mattermost workspace.             | - System Config path: **Plugins > Channel Export** |
 | - **false**: (Default) Disables the Channel Export plugin on your Mattermost workspace. |                                                    |
-|                                                                                         |                                                    |
 +-----------------------------------------------------------------------------------------+----------------------------------------------------+
 
 ----
@@ -1085,7 +1107,6 @@ Channel name
 
 +----------------------------------------------------------------------------------+-------------------------------------------------+
 | Specify the channel to use as part of the demo plugin, when enabled.             | - System Config path: **Plugins > Demo Plugin** |
-|                                                                                  |                                                 |
 | If the specified channel does not exist, the plugin creates the channel for you. |                                                 |
 +----------------------------------------------------------------------------------+-------------------------------------------------+
 
@@ -1101,7 +1122,6 @@ Username
 
 +----------------------------------------------------------------------------+-------------------------------------------------+
 | Specify the user for the demo plugin, when enabled.                        | - System Config path: **Plugins > Demo Plugin** |
-|                                                                            |                                                 |
 | If the specified user does not exist, the plugin creates the user for you. |                                                 |
 +----------------------------------------------------------------------------+-------------------------------------------------+
 
@@ -1112,6 +1132,10 @@ GIF commands
 
 .. include:: ../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
+
+.. note::
+  
+  From Mattermost v8.1, this third-party plugin is managed by the Mattermost Community.
 
 Access the following configuration settings in the System Console by going to **Plugins > GIF commands**.
 
@@ -1146,8 +1170,6 @@ Display the GIF as
 
 +---------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------+
 | Display the GIF as an embedded image where the GIF can't be collapsed, or as a collapsible image preview where the full URL displays. | - System Config path: **Plugins > GIF commands** |
-|                                                                                                                                       |                                                  |
-|                                                                                                                                       |                                                  |
 +---------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------+
 | **Note**:                                                                                                                                                                                | 
 |  - `Link previews <https://docs.mattermost.com/configure/site-configuration-settings.html#enable-website-link-previews>`__ must be enabled to display GIF previews.                      |
@@ -1288,6 +1310,10 @@ Mattermost Boards
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
+.. note::
+  
+  From Mattermost v8.1, this third-party plugin is managed by the Mattermost Community.
+
 Mattermost Boards is an open source alternative to Trello, Notion, and Asana. Boards is a project management tool that helps define, organize, track and manage work across teams, using a familiar kanban board view. See the `Mattermost Boards <https://docs.mattermost.com/guides/boards.html>`__ product documentation for details.
 
 Access the following configuration settings in the System Console by going to **Plugins > Mattermost Boards**.
@@ -1306,9 +1332,138 @@ Enable plugin
 
 +----------------------------------------------------------------------------------+-------------------------------------------------------+
 | - **true**: Enables the Mattermost Boards plugin on your Mattermost workspace.   | - System Config path: **Plugins > Mattermost Boards** |
-| - **false**: Disables the Mattermost Boards plugin on your Mattermost workspace. | - ``config.json`` setting:                            |
+| - **false**: Disables the Mattermost Boards plugin on your Mattermost workspace. |                                                       |
 |                                                                                  | - Environment variable:                               |
 +----------------------------------------------------------------------------------+-------------------------------------------------------+
+
+----
+
+Google Calendar
+----------------
+
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
+
+The Mattermost Google Calendar plugin enables a two-way integration between Mattermost and Google Calendar.
+
+Access the following configuration settings in the System Console by going to **Plugins > Google Calendar**.
+
+.. config:setting:: plugins-googlecalendarenable
+  :displayname: Enable plugin (Plugins - Google Calendar)
+  :systemconsole: Plugins > Google Calendar
+  :configjson: N/A
+  :environment: N/A
+
+  - **true**: Enables the Google Calendar plugin on your Mattermost workspace.
+  - **false**: Disables the Google Calendar plugin on your Mattermost workspace.
+
+Enable plugin
+~~~~~~~~~~~~~
+
++--------------------------------------------------------------------------+------------------------------------------------------+
+| Enable the Mattermost Google Calendar plugin for all Mattermost teams.   | - System Config path: **Plugins > Google Calendar**  |
+|                                                                          | - ``config.json`` setting: N/A                       |
+| - **true**: Enables Google Calendar plugin on your Mattermost workspace. | - Environment variable: N/A                          |
+| - **false**: **(Default)** Disables the Google Calendar plugin.          |                                                      |
++--------------------------------------------------------------------------+------------------------------------------------------+
+
+.. config:setting:: plugins-googlecalendaradminuserids
+  :displayname: Enable plugin (Plugins - Google Calendar)
+  :systemconsole: Plugins > Google Calendar
+  :configjson: N/A
+  :environment: N/A
+
+Admin user IDs
+~~~~~~~~~~~~~~
+
++--------------------------------------------------------------------------+------------------------------------------------------+
+| A comma-separated list of users authorized to manage the plugin.         | - System Config path: **Plugins > Google Calendar**  |
+|                                                                          | - ``config.json`` setting: N/A                       |
+| Go to **System Console > User Management > Users** to access user IDs.   | - Environment variable: N/A                          |
++--------------------------------------------------------------------------+------------------------------------------------------+
+
+.. config:setting:: plugins-googlecalendarcopypluginlogs
+  :displayname: Enable plugin (Plugins - Google Calendar)
+  :systemconsole: Plugins > Google Calendar
+  :configjson: N/A
+  :environment: N/A
+
+Copy plugin logs to admins, as bot messages
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++--------------------------------------------------------------------------+------------------------------------------------------+
+| The level of detail in log events for the plugin.                        | - System Config path: **Plugins > Google Calendar**  |
+|                                                                          | - ``config.json`` setting: N/A                       |
+| Can be one of: **None**, **Debug**, **Info**, **Warning**, or **Error**. | - Environment variable: N/A                          |
++--------------------------------------------------------------------------+------------------------------------------------------+
+
+.. config:setting:: plugins-googlecalendardisplayfullcontext
+  :displayname: Enable plugin (Plugins - Google Calendar)
+  :systemconsole: Plugins > Google Calendar
+  :configjson: N/A
+  :environment: N/A
+
+  - **true**: Displays full context for each admin log entry.
+  - **false**: Full context isn't displayed for each admin log entry.
+
+Display full context for each admin log message
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++--------------------------------------------------------------------------+------------------------------------------------------+
+| Specify whether full context is displayed for log messages.              | - System Config path: **Plugins > Google Calendar**  |
+|                                                                          | - ``config.json`` setting: N/A                       |
+| - **true**: Displays full context for each admin log entry.              | - Environment variable: N/A                          |
+| - **false**: Full context isn't displayed for each admin log entry.      |                                                      |
++--------------------------------------------------------------------------+------------------------------------------------------+
+
+.. config:setting:: plugins-googlecalendarencryptionkey
+  :displayname: Enable plugin (Plugins - Google Calendar)
+  :systemconsole: Plugins > Google Calendar
+  :configjson: N/A
+  :environment: N/A
+
+Encryption key
+~~~~~~~~~~~~~~
+
++--------------------------------------------------------------------------+------------------------------------------------------+
+| The encryption key used to store data in the database.                   | - System Config path: **Plugins > Google Calendar**  |
+|                                                                          | - ``config.json`` setting: N/A                       |
+|                                                                          | - Environment variable: N/A                          |
++--------------------------------------------------------------------------+------------------------------------------------------+
+| **Note**: Select **Regenerate** to generate a new encryption key. When you regenerate this value, all users will need to        |
+| `reconnect their Google Calendar with Mattermost </channels/use-mattermost-google-calendar-plugin.                              |
+| html#connect-your-google-calendar-account-to-mattermost>`__.                                                                    |
++--------------------------------------------------------------------------+------------------------------------------------------+
+
+.. config:setting:: plugins-googlecalendarappclientid
+  :displayname: Enable plugin (Plugins - Google Calendar)
+  :systemconsole: Plugins > Google Calendar
+  :configjson: N/A
+  :environment: N/A
+
+Google application client ID
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++--------------------------------------------------------------------------+------------------------------------------------------+
+| The Google App Authentication Client ID.                                 | - System Config path: **Plugins > Google Calendar**  |
+|                                                                          | - ``config.json`` setting: N/A                       |
+|                                                                          | - Environment variable: N/A                          |
++--------------------------------------------------------------------------+------------------------------------------------------+
+
+.. config:setting:: plugins-googlecalendarclientsecret
+  :displayname: Enable plugin (Plugins - Google Calendar)
+  :systemconsole: Plugins > Google Calendar
+  :configjson: N/A
+  :environment: N/A
+
+Google client secret
+~~~~~~~~~~~~~~~~~~~~~
+
++--------------------------------------------------------------------------+------------------------------------------------------+
+| The Google App Authentication Client Secret.                             | - System Config path: **Plugins > Google Calendar**  |
+|                                                                          | - ``config.json`` setting: N/A                       |
+|                                                                          | - Environment variable: N/A                          |
++--------------------------------------------------------------------------+------------------------------------------------------+
 
 ----
 
@@ -1367,7 +1522,6 @@ Tenant ID
   :configjson: N/A
   :environment: N/A
   :description: Specify the Microsoft Teams Client ID.
-
 
 Client ID
 ~~~~~~~~~

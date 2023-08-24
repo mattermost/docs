@@ -297,6 +297,28 @@ Maximum login attempts
 | Numerical input. Default is **10**.                                                                                                                         | - Environment variable: ``MM_SERVICESETTINGS_MAXIMUMLOGINATTEMPTS``      |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
+.. config:setting:: password-forgotpasswordlink
+  :displayname: Enable forgot password link (Password)
+  :systemconsole: Authentication > Password
+  :configjson: .ServiceSettings.ForgotPasswordLink
+  :environment: MM_SERVICESETTINGS_FORGOTPASSWORDLINK
+  :description: Show or hide the Forgot Password link on the Mattermost login page.
+  
+  - **true**: **(Default)** Displays the Forgot Password link on the Mattermost login page.
+  - **false**: Hides the Forgot Password link from the Mattermost login page.
+
+Enable forgot password link
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++---------------------------------------------------------------------------------+------------------------------------------------------------------------+
+| - **true**: **(Default)** Displays the **Forget Password** link on the          | - System Config path: **Authentication > Enable forgot password link** |
+|   Mattermost login page.                                                        | - ``config.json`` setting: ``.LdapSettings.ForgotPasswordLink: true``  |
+| - **false**: Hides the **Forgot Password** link from the Mattermost login page. | - Environment variable: ``MM_LDAPSETTINGS_FORGOTPASSWORDLINK``         |
++---------------------------------------------------------------------------------+------------------------------------------------------------------------+
+| **Note**: You can customize the **Forgot Password** link URL by going to **Site Configuration > Customization > Forgot Password Custom Link**.           |
+| See the `configuration </configure/site-configuration-settings.html#forgot-password-custom-link>`__ documentation for details.                           |
++---------------------------------------------------------------------------------+------------------------------------------------------------------------+
+
 ----
 
 MFA
@@ -749,8 +771,8 @@ ID attribute
 |                                                                                                                                                                                                    |                                                                                                                                  |
 | String input.                                                                                                                                                                                      |                                                                                                                                  |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
-| **Note**: If a user's ID Attribute changes, a new Mattermost account is created that is not associated with the previous account. If you need to change this field after users have signed-in, use the `mattermost ldap idmigrate <https://docs.mattermost.com/manage/command-line-tools.html#mattermost-ldap-idmigrate>`__ CLI tool. |
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Note**: If a user's ID Attribute changes, a new Mattermost account is created that is not associated with the previous account. If you need to change this field after users have signed-in, use the `mmctl ldap idmigrate <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-ldap-idmigrate>`__ command.       |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: ldap-loginidattribute
   :displayname: Login ID attribute (AD/LDAP)
@@ -2712,3 +2734,22 @@ Enforce multi-factor authentication
 | **Note**: This setting defaults to false and cannot be changed if MFA isn't enforced for non-guest users.                                                                                                     |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+.. config:setting:: guest-showtag
+  :displayname: Show guest tag (Guest Access)
+  :systemconsole: Authentication > Guest Access
+  :configjson: .GuestAccountsSettings.HideTags
+  :environment: MM_GUESTACCOUNTSSETTINGS_HIDETAGS
+
+  - **True**: **(Default)** Guest tags are visible in Mattermost.
+  - **False**: **(Default)** Guest tags aren't visible in Mattermost.
+
+Show guest tag
+~~~~~~~~~~~~~~
+
++-----------------------------------------------------------------+----------------------------------------------------------------------+
+| - **true**: **(Default)** Guest tags are visible in Mattermost. | - System Config path: **Authentication > Guest Access**              |
+| - **false**:  Guest tags aren't visible in Mattermost.          | - ``config.json`` setting: ``.GuestAccountsSettings.HideTags: true`` |
+|                                                                 | - Environment variable: ``MM_GUESTACCOUNTSSETTINGS_HIDETAGS``        |
++-----------------------------------------------------------------+----------------------------------------------------------------------+
+| **Note**: See the `guest accounts <https://docs.mattermost.com/onboard/guest-accounts.html>`__ documentation for details.              |
++----------------------------------------------------------------------------------------------------------------------------------------+

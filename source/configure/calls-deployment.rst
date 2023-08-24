@@ -11,11 +11,12 @@ This document provides information on how to successfully make the Calls plugin 
 - `Requirements <#requirements>`__
 - `Limitations <#limitations>`__
 - `Configuration <#configuration>`__
-- `Kubernetes deployments <#kubernetes-deployments>`__
 - `Performance <#performance>`__
 - `RTCD Service <#the-rtcd-service>`__
 - `Configure recording <#configure-recording>`__
+- `Kubernetes deployments <#kubernetes-deployments>`__
 - `Frequently asked questions <#frequently-asked-questions>`__
+- `Troubleshooting <#troubleshooting>`__
 
 Terminology
 -----------
@@ -137,129 +138,6 @@ rtcd (HA)
 
 .. image:: ../images/calls-deployment-image2.png
   :alt: A diagram of an rtcd deployment.
-
-Kubernetes deployments
-----------------------
-
-.. image:: ../images/calls-deployment-kubernetes.png
-  :alt: A diagram of calls deployed in a Kubernetes cluster.
-
-If Mattermost isn't deployed in a Kubernetes cluster, and you want to use this deployment type, visit the `Kubernetes operator guide </install/mattermost-kubernetes-operator.html>`__.
-
-``rtcd`` is deployed with a Helm chart. To install this Helm chart run:
-
-.. code-block:: none
-
-  helm repo add mattermost https://helm.mattermost.com
-
-More info about the version and the chart itself, please check here. Regarding changing the parameters of the helm chart, please check and copy the default values from here.
-
-An example with sample values:
-
-.. code-block:: none
-
-  image:
-    repository: mattermost/rtcd
-    pullPolicy: IfNotPresent
-    tag: "v0.9.0"
-
-  imagePullSecrets: []
-  nameOverride: ""
-  fullnameOverride: ""
-
-  serviceAccount:
-    create: true
-    annotations: {}
-    name: ""
-
-  podAnnotations: {}
-
-  podSecurityContext: {}
-
-  securityContext: {}
-
-  # Which deployment method you'd like to use "deployment" or "daemonset"
-  deploymentType: "deployment"
-
-  configuration:
-    # Only needed if deploymentType is set to "deployment"
-    replicas: 2
-
-    environmentVariables:
-      RTCD_API_SECURITY_ALLOWSELFREGISTRATION: "\"true\""
-      RTCD_RTC_ICESERVERS:
-    "\'[{\"urls\":[\"stun:stun.global.calls.mattermost.com:3478\"]}]\'"
-      RTCD_LOGGER_CONSOLELEVEL: "\"DEBUG\""
-      RTCD_LOGGER_ENABLEFILE: "\"false\""
-    maxUnavailable: 1 # Only used when updateStrategy is set to "RollingUpdate"
-    updateStrategy: RollingUpdate
-    terminationGracePeriod: 18000 # 5 hours, used to gracefully draining the instance.
-
-  service:
-    # APIport is the port used by rtcd HTTP/WebSocket API.
-    APIport: 8045
-    # RTCport is the UDP port used to route all the calls related traffic.
-    RTCport: 8443
-
-  ingress:
-    enabled: false
-    classname: nginx-calls
-    annotations:
-    hosts:
-      - host: mattermost-rtcd.local
-        paths:
-          - "/"
-
-  resources:
-    limits:
-      cpu: 7800m # Values for c5.2xlarge in AWS
-      memory: 15Gi # Values for c5.2xlarge in AWS
-    requests:
-      cpu: 100m
-      memory: 32Mi
-
-  nodeSelector:
-    kops.k8s.io/instancegroup: rtcd
-
-  tolerations:
-    - key: "rtcd"
-      operator: "Equal"
-      value: "true"
-      effect: "NoSchedule"
-
-  dnsConfig:
-    options:
-    - name: ndots
-      value: "1"
-
-  affinity:
-    podAntiAffinity:
-      requiredDuringSchedulingIgnoredDuringExecution:
-        - labelSelector:
-            matchExpressions:
-              - key: app.kubernetes.io/name
-                operator: In
-                values:
-                  - mattermost-rtcd
-          topologyKey: topology.kubernetes.io/zone
-      preferredDuringSchedulingIgnoredDuringExecution:
-        - weight: 100
-          podAffinityTerm:
-            labelSelector:
-              matchExpressions:
-                - key: app.kubernetes.io/name
-                  operator: In
-                  values:
-                    - mattermost-rtcd
-            topologyKey: topology.kubernetes.io/zone
-
-``rtcd`` will be deployed as a deployment as shown in the `deploymentType` field. For that reason the sections of `deployment.replicas`, `nodeSelector` and `tolerations` are used so that ``rtcd`` to be deployed in specific nodes.
-
-After having the values above, to deploy the ``rtcd`` helm chart run:
-
-.. code-block:: none
-
-  helm upgrade mattermost-rtcd mattermost/mattermost-rtcd -f /Users/myuser/rtcd_values.yaml --namespace mattermost-rtcd --create-namespace --install --debug
 
 Performance
 -----------
@@ -439,6 +317,32 @@ Configure recording
 
 Before you can start recording calls, you need to configure the ``calls-offloader`` job service. You can read about how to do that `here <https://github.com/mattermost/calls-offloader/blob/master/docs/getting_started.md>`__. Performance and scalability recommendations related to this service can be found in `here <https://github.com/mattermost/calls-offloader/blob/master/docs/performance.md>`__.
 
+.. note::
+  If deploying the service in a Kubernetes cluster, refer to the later section on `Helm charts <#helm-charts>`__.
+
+Once the ``calls-offloader`` service is running, recordings should be explicitly enabled through the `Enable call recordings <plugins-configuration-settings.html#enable-call-recordings-beta>`__ config setting and the service's URL should be configured using `Job service URL <plugins-configuration-settings.html#job-service-url>`__.
+
+Kubernetes deployments
+----------------------
+
+The Calls plugin has been designed to integrate well with Kubernetes to offer improved scalability and control over the deployment.
+
+This is a sample diagram showing how the ``rtcd`` standalone service can be deployed in a Kubernetes cluster:
+
+.. image:: ../images/calls-deployment-kubernetes.png
+  :alt: A diagram of calls deployed in a Kubernetes cluster.
+
+If Mattermost isn't deployed in a Kubernetes cluster, and you want to use this deployment type, visit the `Kubernetes operator guide </install/mattermost-kubernetes-operator.html>`__.
+
+Helm Charts
+~~~~~~~~~~~
+
+The recommended way to deploy Calls related components and services in a Kubernetes deployment is to use the officially provided Helm charts. Related documentation including detailed information on how to deploy these services can be found in our ``mattermost-helm`` repository:
+
+- `rtcd Helm chart <https://github.com/mattermost/mattermost-helm/tree/master/charts/mattermost-rtcd>`__
+
+- `calls-offloader Helm chart <https://github.com/mattermost/mattermost-helm/tree/master/charts/mattermost-calls-offloader>`__
+
 Frequently asked questions
 --------------------------
 
@@ -482,3 +386,32 @@ Can the traffic between Mattermost and ``rtcd``  be kept internal or should it b
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When possible, it's recommended to keep communication between the Mattermost cluster and the dedicated ``rtcd`` service under the same private network as this can greatly simplify deployment and security. There's no requirement to expose ``rtcd``'s HTTP API to the public internet.
+
+Troubleshooting
+---------------
+
+Connectivity issues
+~~~~~~~~~~~~~~~~~~~
+
+If calls are failing to connect or timing out, it's likely the `RTC Server Port <plugins-configuration-settings.html#rtc-server-port-udp>`__ is not open or forwarded correctly. An easy way to check whether data can go through is to perform some tests using the ``netcat`` command line tool.
+
+On the host running Calls (could be the Mattermost instance itself or the one running ``rtcd`` depending on the chosen setup), run the following:
+
+.. code-block:: bash
+
+   nc -l -u -p 8443
+
+On the client side (i.e., the machine you would normally use to run the Mattermost desktop app or browser), run the following:
+
+.. code-block:: bash
+
+   nc -v -u HOST_IP 8443
+
+If connection succeeds, you should be able to send and receive text messages by typing and hitting enter on either side.
+
+.. note::
+   ``HOST_IP`` should generally be the public (client facing) IP of the Mattermost
+   (or ``rtcd``) instance hosting the calls. When set, it should be the value of the |ice_host_override_link|
+   config setting.
+
+   ``8443`` should be changed with the port configured in `RTC Server Port <plugins-configuration-settings.html#rtc-server-port-udp>`__.

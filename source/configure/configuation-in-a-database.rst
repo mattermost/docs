@@ -33,7 +33,7 @@ These instructions cover migrating the Mattermost configuration to the database 
 Get your database connection string
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The first step is to get your master database connection string. We recommend using the `mmctl config get command </manage/mmctl-command-line-tool.html#mmctl-config-get>`__, or using the CLI's ``mattermost config get`` command to do this.  
+The first step is to get your master database connection string. We recommend using the `mmctl config get command </manage/mmctl-command-line-tool.html#mmctl-config-get>`__ to do this.
 
 To use the ``mattermost config get`` command:
 

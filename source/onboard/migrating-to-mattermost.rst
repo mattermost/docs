@@ -8,8 +8,9 @@ Thousands of organizations are moving to Mattermost for powerful, flexible, and 
 
 This guide summarizes different approaches to migrating from one Mattermost deployment to another, and migrating from other tools (such as Slack, HipChat, Jabber, and bespoke solutions) to Mattermost.
 
-.. contents::
+.. contents:: On this page
   :backlinks: top
+  :depth: 1
   :local:
 
 Migrate Mattermost server
@@ -173,8 +174,6 @@ Next you have to create a zip file with the ``mattermost_import.jsonl`` file and
 
 .. code:: bash
 
-    mkdir data
-    mv bulk-export-attachments data
     zip -r mattermost-bulk-import.zip data mattermost_import.jsonl
 
 The file ``mattermost-bulk-import.zip`` is now ready to import into Mattermost.
