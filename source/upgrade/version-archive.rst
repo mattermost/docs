@@ -17,7 +17,7 @@ Mattermost Enterprise Edition
 ------------------------------
 
 Mattermost Enterprise Edition v8.1.0 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v8-1-extended-support-release>`__ - `Download <https://releases.mattermost.com/8.1.0/mattermost-8.1.0-linux-amd64.tar.gz?src=arc>`__
-  - ``https://releases.mattermost.com/8.0.1/mattermost-8.0.1-linux-amd64.tar.gz``
+  - ``https://releases.mattermost.com/8.1.0/mattermost-8.1.0-linux-amd64.tar.gz``
   - SHA-256 Checksum: ``70fb4aa1042d949966ac7485847ee5bbddd849f2565a89779ac101474f09a610``
   - GPG Signature: https://releases.mattermost.com/8.1.0/mattermost-8.1.0-linux-amd64.tar.gz.sig
 Mattermost Enterprise Edition v8.0.1 - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v8-0-major-release>`__ - `Download <https://releases.mattermost.com/8.0.1/mattermost-8.0.1-linux-amd64.tar.gz?src=arc>`__
