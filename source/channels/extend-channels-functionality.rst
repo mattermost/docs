@@ -4,10 +4,28 @@ Extend Channels functionality
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-`Visit the Mattermost Marketplace <https://mattermost.com/marketplace/>`__ to find dozens of open source integrations to common tools like Jira, Jenkins, GitLab, with interactive bot applications (Hubot, mattermost-bot), and other communication tools (Email, IRC, XMPP, Threema) that are freely available for use and customization.
+`Visit the Mattermost Marketplace <https://mattermost.com/marketplace/>`__ to find dozens of open source integrations to common tools with interactive bot applications (Hubot, mattermost-bot), and other communication tools (Email, IRC, XMPP, Threema) that are freely available for use and customization.
 
-Popular Mattermost integrations
--------------------------------
+Pre-packaged Mattermost integrations
+------------------------------------
+
+The following integrations are pre-packaged with Mattermost installations:
+
+- `Calls </configure/calls-deployment.html>`__: Make voice calls and share your screen in channels, group mesasges, and direct messages.
+- `Jira <https://mattermost.com/marketplace/jira-plugin/>`__: Create tickets from messages, and get notified of updates in Jira.
+- `GitHub <https://mattermost.com/marketplace/github-plugin/>`__: Subscribe to repositories, then stay updated with reviews and assignments in Mattermost.
+- `GitLab <https://mattermost.com/marketplace/gitlab-plugin/>`__: Subscribe to repositories, then stay updated with reviews and assignments in Mattermost.
+- `Microsoft Teams Connector <https://mattermost.com/marketplace/mattermost-ms-teams-connector/>`__: Synchronize messages from Mattermost to Microsoft teams adn vice versa.
+- `ServiceNow <https://mattermost.com/marketplace/servicenow/>`__: Subscribe to record changes in ServiceNow and manage them through Mattermost.
+- `User Satisfaction Surveys </manage/user-satisfaction-surveys.html>`__: Measure user satisfaction and improve product quality by hearing directly from your users.
+- `Zoom <https://mattermost.com/marketplace/zoom-plugin/>`__: Start audio and video conferencing calls in Mattermost.
+
+.. note::
+
+  You may need to configure and enable pre-packaged Mattermost plugins before you using them. See the `Mattermost plugin configuration settings </configure/plugins-configuration-settings.html>`__ documentation for details on enabling and configuring these plugins.
+
+Popular third-party Mattermost integrations
+-------------------------------------------
 
 On the Mattermost Marketplace, you'll find popular integrations such as:
 
@@ -21,10 +39,7 @@ Developer tools
 
 - `CircleCI <https://mattermost.com/marketplace/circleci/>`__: Manage pipelines without leaving Mattermost.
 - `Confluence <https://mattermost.com/marketplace/confluence/>`__: Notify Mattermost users of updates and new pages in Confluence.
-- `GitHub <https://mattermost.com/marketplace/github-plugin/>`__: Subscribe to repositories, then stay updated with reviews and assignments in Mattermost.
-- `GitLab <https://mattermost.com/marketplace/gitlab-plugin/>`__: Subscribe to repositories, then stay updated with reviews and assignments in Mattermost.
 - `Jenkins <https://mattermost.com/marketplace/jenkins-plugin-2/>`__: Interact with jobs and builds with slash commands.
-- `Jira <https://mattermost.com/marketplace/jira-plugin/>`__: Create tickets from messages, and get notified of updates in Jira.
 - `Opsgenie <https://mattermost.com/marketplace/opsgenie/>`__: Send and receive updates, as well as acknowledge, close, or assign issues in Mattermost.
 - `PagerDuty Notifier <https://mattermost.com/marketplace/pagerduty/>`__: Send events from PagerDuty to Mattermost.
 - `Zendesk App <https://mattermost.com/marketplace/zendesk-app/>`__: Create tickets and receive ticket updates within Mattermost.
@@ -44,11 +59,3 @@ Social & fun
 
 - `GIF Commands <https://mattermost.com/marketplace/giphy-plugin/>`__: Share GIFs from Giphy or Gfycat using ``/gif`` and ``/gifs`` slash commands.
 - `Memes <https://mattermost.com/marketplace/memes-plugin/>`__: Create memes using the ``/meme`` slash command in Mattermost.
-
-Video calling & screensharing
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-- `Skype for Business <https://mattermost.com/marketplace/skype4business-plugin/>`__: Start and join voice calls, video calls, and use screensharing in Mattermost.
-- `Zoom <https://mattermost.com/marketplace/zoom-plugin/>`__: Start audio and video conferencing calls in Mattermost.
-
-
