@@ -93,6 +93,8 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ## Release v8.0 - [Major Release](https://docs.mattermost.com/upgrade/release-definitions.html#major-release)
 
+- **v8.0.2, released **
+  -  
 - **v8.0.1, released 2023-07-26**
   - Mattermost v8.0.1 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Mattermost v8.0.1 contains no database or functional changes.
