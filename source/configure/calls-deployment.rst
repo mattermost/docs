@@ -315,7 +315,7 @@ In general, ``rtcd`` is the preferred solution for a performant and scalable dep
 Horizontal scalability
 ~~~~~~~~~~~~~~~~~~~~~~
 
-The supported way to enable horizontal scalability for Calls is through a form of DNS based load balancing. This can be achieved regardless of how the ``rtcd`` service is deployed (barebone instance, Kubernetes or else).
+The supported way to enable horizontal scalability for Calls is through a form of DNS based load balancing. This can be achieved regardless of how the ``rtcd`` service is deployed (bare bone instance, Kubernetes, or an alternate way).
 
 In order for this to work, the `RTCD Service URL <plugins-configuration-settings.html#rtcd-service-url>`__ should point to a hostname that resolves to multiple IP addresses, each pointing to a running ``rtcd`` instance. The Mattermost Calls plugin will then automatically distribute calls amongst the available hosts.
 
