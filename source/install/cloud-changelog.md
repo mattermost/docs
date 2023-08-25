@@ -34,9 +34,9 @@ Latest Mattermost Cloud releases:
  - Improved data retention logs.
  - Removed ``/opengraph`` endpoint as it was unused.
  - Transitionally prepackaged plugins are now installed to the filestore for continuity when a future release stops prepackaging those plugins.
- - Added a ``NotificationWillBePushed`` plugin API method which allows plugins to send push notifications to a specific user's mobile sessions.
- - Added a ``NotificationWillBePushed`` plugin hook invoked before the push notification is processed and sent to the notification service. Plugins may reject the push notification.
  - Removed the deprecated ``Manifest.RequiredConfig`` field.
+ - Added a ``NotificationWillBePushed`` plugin hook invoked before the push notification is processed and sent to the notification service. Plugins may modify or reject the push notification.
+ - Added a `SendPushNotification` plugin api method which allows plugins to send push notifications to a specific user's mobile sessions.
 
 ### Bug Fixes
  - Fixed accessibility issues: tab support at login, reset and signup pages, and App bar.
