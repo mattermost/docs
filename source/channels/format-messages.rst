@@ -359,12 +359,12 @@ In-line image with link
 
 .. code-block:: none
 
-  [![Mattermost](../images/icon-76x76.png)](https://github.com/mattermost/mattermost-server)
+  [![Mattermost](../images/icon-76x76.png)](https://github.com/mattermost/mattermost)
 
 Renders as:
 
   .. image:: ../images/icon-76x76.png
-    :target: https://github.com/mattermost/mattermost-server
+    :target: https://github.com/mattermost/mattermost
    
 In-line image displayed with fixed width and height
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

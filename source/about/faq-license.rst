@@ -124,7 +124,7 @@ To which repositories does this apply?
 
 We plan to apply this license to the enterprise directories of our `Jira <https://github.com/mattermost/mattermost-plugin-jira>`__, `Microsoft Calendar <https://github.com/mattermost/mattermost-plugin-mscalendar>`__, and `Microsoft Teams Meetings <https://github.com/mattermost/mattermost-plugin-msteams-meetings>`__ plugins. We also intend to release `Playbooks </guides/playbooks.html>`__ and `Channel Export <https://github.com/mattermost/mattermost-plugin-channel-export>`__ plugins under the Mattermost Source Available License. New, Mattermost-authored plugins will generally be released under the Mattermost Source Available License. When we update the licenses, we will release a new version and note the change in the ``README.md`` file of the GitHub repository and any release notes.
 
-We expect to keep plugins without an enterprise component under our open source license. No licensing changes are planned to non-plugin repositories, such as `mattermost-server <https://github.com/mattermost/mattermost-server>`__ or `mattermost-webapp <https://github.com/mattermost/mattermost-webapp>`__.
+We expect to keep plugins without an enterprise component under our open source license. No licensing changes are planned to non-plugin repositories, such as `mattermost <https://github.com/mattermost/mattermost>`__ or `mattermost webapp <https://github.com/mattermost/mattermost/tree/master/webapp>`__.
 
 Will the repositories be public?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -270,7 +270,7 @@ Rebranding
 Copyright and Licensing of ``/mattermost-server`` open source code
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-- Compiling and distributing your own version of the open source Mattermost ``/mattermost-server`` repo requires a) compliance with licenses in the repo, including `NOTICE.txt <https://github.com/mattermost/mattermost-server/blob/master/NOTICE.txt>`__, and b) the compiled version of the ``/mattermost-server`` source code should have the same open source license as the source code, `per our licensing policy <about/faq-license.html/>`__.
+- Compiling and distributing your own version of the open source Mattermost ``/mattermost-server`` repo requires a) compliance with licenses in the repo, including `NOTICE.txt <https://github.com/mattermost/mattermost/blob/master/NOTICE.txt>`__, and b) the compiled version of the ``/mattermost-server`` source code should have the same open source license as the source code, `per our licensing policy <about/faq-license.html/>`__.
 
 Other considerations
 ^^^^^^^^^^^^^^^^^^^^
