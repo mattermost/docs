@@ -21,6 +21,7 @@ Latest Mattermost Cloud releases:
  - Replaced Gfycat with Giphy in the gif picker.
  - Updated Focalboard plugin version to 7.11.3.
  - Pre-packaged Playbooks version 1.38.1.
+ - Upgraded prepackaged Zoom plugin to v1.6.2, and Antivirus plugin to v1.0.0.
 
 #### Administration
  - API examples are now updated to reflect latest Go API conventions, deprecating older code samples.
