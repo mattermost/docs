@@ -22,6 +22,7 @@ Latest Mattermost Cloud releases:
  - Updated Focalboard plugin version to 7.11.3.
  - Pre-packaged Playbooks version 1.38.1.
  - Upgraded prepackaged Zoom plugin to v1.6.2, and Antivirus plugin to v1.0.0.
+ - Enabled prepackaged plugins to be included in the in-product marketplace for Cloud.
 
 #### Administration
  - API examples are now updated to reflect latest Go API conventions, deprecating older code samples.
@@ -38,6 +39,7 @@ Latest Mattermost Cloud releases:
  - Removed the deprecated ``Manifest.RequiredConfig`` field.
  - Added a ``NotificationWillBePushed`` plugin hook invoked before the push notification is processed and sent to the notification service. Plugins may modify or reject the push notification.
  - Added a `SendPushNotification` plugin api method which allows plugins to send push notifications to a specific user's mobile sessions.
+ - Disabled ``PluginSettings.EnableRemoteMarketplace`` functionality.
 
 ### Bug Fixes
  - Fixed accessibility issues: tab support at login, reset and signup pages, and App bar.
@@ -46,9 +48,7 @@ Latest Mattermost Cloud releases:
  - Fixed an issue preventing successful activation of trial licenses.
  - Fixed an issue where a custom group wouldn't get marked as a mention if it was not part of the webapp's local state.
  - Fixed several issues with loading of licenses.
-
-### Known Issues
- - 
+ - Fixed an issue with the in-product marketplace theming.
 
 ## Release 2023-08-09
 
