@@ -1,8 +1,9 @@
+:nosearch:
 :orphan:
 
 .. _deploy-cloudron:
 
-.. This page is intentionally NOT accessible from the LHS, and is no longer maintained in this repository. Unofficial content has moved to the User Forum.
+.. This page has been archived and is intentionally NOT accessible from the LHS. Unofficial content has moved to the User Forum, but was subsequently deleted.
 
 Deploy Mattermost on Cloudron (unofficial)
 ==========================================
