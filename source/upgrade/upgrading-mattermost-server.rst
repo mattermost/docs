@@ -24,10 +24,11 @@ Make sure that you understand how to `prepare for your upgrade </upgrade/prepare
   - The output should be similar to ``/opt/mattermost/bin/mattermost``. 
   - The install directory is everything before the first occurrence of the string ``/mattermost``. In this example, the ``{install-path}`` is ``/opt``. 
   - If that command doesn't produce any results, it's likely because your version is older; try ``whereis platform`` instead.
-- **Location of your local storage directory**: The local storage directory contains all the files that users have attached to their messages.
+- **Location and size of your local storage directory**: The local storage directory contains all the files that users have attached to their messages.
 
   - If you don't know its location, open the System Console and go to **Environment > File Storage**, then read the value in **Local Storage Directory**. 
   - Paths are relative to the ``mattermost`` directory. For example, if the local storage directory is ``./data/`` then the absolute path is ``{install-path}/mattermost/data``.
+- **Database disk space**: If you're upgrading a Mattermost deployment on the same server as your database, we recommend that you have sufficient disk space available. Double your database size should be sufficient, but more is always better.
 
 Upgrade Mattermost Server
 --------------------------
