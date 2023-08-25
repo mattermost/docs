@@ -45,7 +45,11 @@ Install Mattermost on RHEL
   :local:
   :depth: 1
 
-Deployment includes 4 steps: `download <#download>`__, `install <#install>`__, `setup <#setup>`__, and `update <#updates>`__.
+.. note::
+  
+  You need a PostgreSQL database. See the `database preparation <install/prepare-mattermost-database.html>`__ documentation for details on this prerequisite.
+
+A Mattermost deployment includes 4 steps: `download <#download>`__, `install <#install>`__, `setup <#setup>`__, and `update <#updates>`__.
 
 Download the latest Mattermost Server tarball
 ---------------------------------------------
