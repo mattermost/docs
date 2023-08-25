@@ -10,23 +10,10 @@ Guest accounts
 
 Guest accounts are a way to collaborate with individuals, such as vendors and contractors, outside of your organization by controlling their access to channels and team members. For example, guest accounts can be used to collaborate with customers on a support issue or work on a website project with resources from an external design firm.
 
-Guests can:
+.. include:: /onboard/guest-account-access.rst
+  :start-after: :nosearch:
 
-- Pin messages to channels
-- Use slash commands (excluding restricted commands such as invite members, rename channels, change headers, etc)
-- Favorite channels
-- Mute channels
-- Update their profile
-- Use different authentication methods than other users
-
-Guests cannot:
-
-- Discover public channels
-- Join open teams
-- Create direct messages or group messages with members who aren’t within the same channel
-- Invite people
-
-Additionally, guest accounts count as a paid user in your Mattermost workspace, but guests are not automatically added to the default **Town-square** and **Off-topic** channels upon logging in. Guests must be invited/added to these channels manually.
+Additionally, guest accounts count as a paid user in your Mattermost workspace, but guests aren't automatically added to the default **Town-square** and **Off-topic** channels when they log in. Guests must be invited/added to these channels manually.
 
 Enable guest accounts
 ----------------------
@@ -112,9 +99,9 @@ There are `additional permissions </onboard/advanced-permissions.html>`__ in Mat
 Guest identification
 ---------------------
 
-Guests are identified with a **Guest** badge. This badge is visible in various places on the interface and mobile apps, such as on a guest’s profile and next to their name on user lists, including @mentions. When guests are added to a channel, a system message informs other channel members that the added user is a guest.
+Guests are identified with a **Guest** badge unless your system admin has `disabled guest badges </configure/authentication-configuration-settings.html#guest-access>`__. When visible, this badge is visible in various places in the Mattermost interface, such as on a guest’s profile and next to their name on user lists, including @mentions. Additionally, when badges are visible, and guests are added to a channel, a system message notifies other channel members that the added user is a guest.
 
-Channels containing guests display the message: *This channel has guests*.
+Additionally, when guest badges are visible, channels containing guests display the message: *This channel has guests*.
 
 .. image:: ../images/Guest_Badges.png
 
@@ -122,21 +109,21 @@ Manage guests
 --------------
 
 Add guests to additional channels
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Users with the permissions to invite guests can **Invite Guests** to additional channels. A system message will be posted in the channels to let other members know a guest user has been added.
 
 Remove guests from channels and teams
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Guests can be removed from a channel through **Manage members**, or by using the ``/kick`` or ``/remove`` slash commands.
 
 When a guest has been removed from all channels within a team, and if they belong to other teams, they will default into the last channel on the last team they have accessed. If they are removed from all channels on all teams, they'll be taken to a screen letting them know they have no channels assigned.
 
 Promote and demote user roles
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-System admins can demote a user from a member to a guest by updating the user's role in **System Console > User Management > Users**. Select the member, then select **Demote to Guest**. System admins should also purge all of the demoted guest's sessions by selecting the guest user, then selecting **Revoke Sessions**.
+System admins can demote a user from a member to a guest by updating the user's role in **System Console > User Management > Users**. Select the member, then select **Demote to Guest**. All system and custom roles assigned to the demoted user are removed. System admins should also purge all of the demoted guest's sessions by selecting the guest user, then selecting **Revoke Sessions**.
 
 The demoted guest user retains their existing channel and team memberships, but is restricted from discovering public channels and collaborating with users outside of the channels they're in. This is useful if you're already collaborating with external contractors, and want to restrict their abilities within Mattermost.
 
@@ -174,36 +161,36 @@ Frequently asked questions
 ---------------------------
 
 How am I charged for guest accounts?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Guests are charged as a user seat.
 
 Why doesn’t Mattermost have single-channel guests?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 We wanted to support collaboration with external guests for the broadest use cases without limiting guests' access to channels. In the future, we may consider adding single-channel guests.
 
 Can I set an expiration date for guests?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Currently, you cannot. This feature may be added at a later stage.
 
 Can MFA be applied selectively?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If MFA is enforced for your users, it can be applied to guest accounts. Guests can configure MFA in by going to their profile picture and selecting **Profile > Security**. If MFA is not enforced for your users, it can't be applied to guest accounts.
 
 Has the guest accounts feature been reviewed by an external security firm?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The guest account feature was reviewed by the Mattermost security team. We do not have an external firm review scheduled but will include this feature in future reviews.
 
 How can I validate my guests' identity?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Guests can be authenticated via SAML and/or AD/LDAP to ensure that only the named guest can log in. Alternatively, you can whitelist domains via **System Console > Authentication > Guest Access > Whitelisted Guest Domains**.
 
 Can I restrict guests' ability to upload content?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 It is not currently possible to selectively disable upload/download functionality as it is a server-wide configuration.

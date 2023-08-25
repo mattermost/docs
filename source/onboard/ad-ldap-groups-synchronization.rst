@@ -208,11 +208,11 @@ To manage membership of a private team with synchronized groups:
 4. Review the notice in the footer of the screen for any users that are not part of groups who will be removed from the team on the next synchronization.
 5. Select **Save**. Members will be updated on the next scheduled AD/LDAP synchronization.
 
-Alternatively, you can use the CLI or mmctl tools to set the team to be managed by groups:
+Alternatively, you can use the mmctl tools to set the team to be managed by groups:
 
-1. Ensure there is at least one group already associated to the team. You can view and add default teams to a group via **System Console > User Management > Groups > Group Configuration**. Please see more information on adding default teams and channels `here </onboard/ad-ldap-groups-synchronization.html#adding-default-teams-or-channels-for-the-group>`__. Additionally, you can use the CLI or mmctl tools to confirm if there is already a group associated to the team by running the `group team list CLI command </manage/command-line-tools.html#mattermost-group-team-list>`__ or by running the `mmctl group team list command </manage/mmctl-command-line-tool.html#mmctl-group-team-list>`__.
+1. Ensure there is at least one group already associated to the team. You can view and add default teams to a group via **System Console > User Management > Groups > Group Configuration**. Please see more information on adding default teams and channels `here </onboard/ad-ldap-groups-synchronization.html#adding-default-teams-or-channels-for-the-group>`__. Additionally, you can use the mmctl to confirm if there is already a group associated to the team by running the `mmctl group team list </manage/mmctl-command-line-tool.html#mmctl-group-team-list>`__ command.
 2. Ensure **Team Settings > General > Allow any user with an account on this server to join this team** is set to **No**.
-3. Convert the team to have its membership managed by synchronized groups by running the `group team enable CLI or command </manage/command-line-tools.html#mattermost-group-team-enable>`__, or by running the `mmctl group team enable command </manage/mmctl-command-line-tool.html#mmctl-group-team-enable>`__.
+3. Convert the team to have its membership managed by synchronized groups by running the `mmctl group team enable </manage/mmctl-command-line-tool.html#mmctl-group-team-enable>`__command.
 
 To manage membership of a private channel with synchronized groups:
 
@@ -222,10 +222,10 @@ To manage membership of a private channel with synchronized groups:
 4. Review the notice in the footer of the screen for any users that are not part of groups who will be removed from the channel on the next synchronization.
 5. Select **Save**. 
 
-Members will be updated on the next scheduled AD/LDAP synchronization. Alternatively, you can use the CLI or mmctl tools to set a private channel to be managed by groups:
+Members will be updated on the next scheduled AD/LDAP synchronization. Alternatively, you can use the mmctl to set a private channel to be managed by groups:
 
-1. Ensure there is at least one group already associated to the channel. You can view and add default channels to a group via **System Console > User Management > Groups > Group Configuration**. Please see more information on adding default teams and channels `here </onboard/ad-ldap-groups-synchronization.html#adding-default-teams-or-channels-for-the-group>`_. Additionally, you can use the CLI or mmctl tools to view if there is already a group associated to the channel by running the `group channel list CLI command </manage/command-line-tools.html#mattermost-group-team-list>`__, or by running the `mmctl group channel list command </manage/mmctl-command-line-tool.html#mmctl-group-channel-list>`__.
-2. Convert the team to have its membership managed by synchronized groups by running the `group channel enable CLI command </manage/command-line-tools.html#mattermost-group-channel-enable>`__, or by running the `mmctl group channel enable command </manage/mmctl-command-line-tool.html#mmctl-group-channel-enable>`__.
+1. Ensure there is at least one group already associated to the channel. You can view and add default channels to a group via **System Console > User Management > Groups > Group Configuration**. Please see more information on adding default teams and channels `here </onboard/ad-ldap-groups-synchronization.html#adding-default-teams-or-channels-for-the-group>`_. Additionally, you can use the mmctl to view if there is already a group associated to the channel by running the `mmctl group channel list </manage/mmctl-command-line-tool.html#mmctl-group-channel-list>`__ command.
+2. Convert the team to have its membership managed by synchronized groups by running the `mmctl group channel enable </manage/mmctl-command-line-tool.html#mmctl-group-channel-enable>`__ command.
 
 Assign roles to group members
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -299,9 +299,9 @@ If the user is removed from a synchronized group and later re-added to the group
 Disable group-synchronized management of teams and private channels
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To remove the management of members by synchronized groups in a team, disable **Sync Group Members** under **System Console > User Management > Teams > Team Management**. Alternatively, you can also run the `group team disable CLI command </manage/command-line-tools.html#mattermost-group-team-disable>`__, or run the `mmctl group team disable command </manage/mmctl-command-line-tool.html#mmctl-group-team-disable>`__.
+To remove the management of members by synchronized groups in a team, disable **Sync Group Members** under **System Console > User Management > Teams > Team Management**. Alternatively, you can also run the `mmctl group team disable </manage/mmctl-command-line-tool.html#mmctl-group-team-disable>`__ command.
 
-To remove the management of members by synchronized groups in a channel, disable **Sync Group Members** under **System Console > User Management > Channels > Channel Management**. Alternatively, you can also run the `group channel disable CLI command </manage/command-line-tools.html#mattermost-group-channel-disable>`__, or run the `mmctl group channel disable command </manage/mmctl-command-line-tool.html#mmctl-group-channel-disable>`__.
+To remove the management of members by synchronized groups in a channel, disable **Sync Group Members** under **System Console > User Management > Channels > Channel Management**. Alternatively, you can also run the `mmctl group channel disable </manage/mmctl-command-line-tool.html#mmctl-group-channel-disable>`__ command.
 
 Frequently asked questions
 --------------------------

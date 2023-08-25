@@ -312,6 +312,23 @@ Some caveats apply here. Web socket events (for example: emoji reactions, hand r
 
 In general, ``rtcd`` is the preferred solution for a performant and scalable deployment. With ``rtcd``, the Mattermost server will be minimally impacted when hosting a high number of calls.
 
+Horizontal scalability
+~~~~~~~~~~~~~~~~~~~~~~
+
+The supported way to enable horizontal scalability for Calls is through a form of DNS based load balancing. This can be achieved regardless of how the ``rtcd`` service is deployed (bare bone instance, Kubernetes, or an alternate way).
+
+In order for this to work, the `RTCD Service URL <plugins-configuration-settings.html#rtcd-service-url>`__ should point to a hostname that resolves to multiple IP addresses, each pointing to a running ``rtcd`` instance. The Mattermost Calls plugin will then automatically distribute calls amongst the available hosts.
+
+The expected requirements are the following:
+
+- When a new ``rtcd`` instance is deployed, it should be added to the DNS record. The plugin side will then be able to pick it up and start assigning calls to the new host.
+
+- If a ``rtcd`` instance goes down, it should be removed from the DNS record. The plugin side can then detect the change and stop assigning new calls to that host.
+
+.. note::
+   Load balancing is done at the call level. This means that a single call will always live on a single ``rtcd`` instance.
+   There's currently no support for spreading sessions belonging to the same call across a fleet of instances.
+
 Configure recording
 -------------------
 
