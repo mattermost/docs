@@ -4,23 +4,23 @@ About user roles
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-There are six types of user roles with different permission levels in Mattermost: System Admins, Team Admins, Channel Admins, Members, Guests, and Inactive accounts. To view a list of users on the team and what their roles are, Team Admins using Mattermost in a web browser or the desktop app can open the Team menu and select **Manage Members**.
+There are six types of user roles with different permission levels in Mattermost: system admin, team admins, channel admins, members, guests, and inactive accounts. To view a list of users on the team and what their roles are, Team Admins using Mattermost in a web browser or the desktop app can open the Team menu and select **Manage Members**.
 
 System Admin
 ------------
 
-The first user added to a newly-installed Mattermost system is assigned the System Admin role.
+The first user added to a newly-installed Mattermost system is assigned the system admin role.
 
-The System Admin is typically a member of the IT staff and has all the privileges of a Team Admin, along with the following additional privileges:
+The system admin is typically a member of the IT staff and has all the privileges of a Team Admin, along with the following additional privileges:
 
 - Access to the System Console in any team site.
 - Ability to change any setting on the Mattermost server available in the System Console.
-- Ability to promote and demote other users from Member role to System Admin role (and vice versa).
+- Ability to promote and demote other users from Member role to system admin role (and vice versa).
 - Ability to promote and demote other users to and from Guest role.
 - Ability to deactivate user accounts and to reactivate them.
 - Access to private channels, but only if given the link to the private channel.
 
-A System Admin can view and manage users in **System Console > User Management > Users**. They can search users by name, filter users by teams, and filter to view other System Admins, guests, as well as active and inactive users.
+A system admin can view and manage users in **System Console > User Management > Users**. They can search users by name, filter users by teams, and filter to view other system admins, guests, as well as active and inactive users. Only a system admin can make changes to another system admin user account in Mattermost.
 
 Team Admin
 ----------
@@ -43,7 +43,7 @@ The person who creates a channel is assigned the Channel Admin role for that cha
 - Ability to remove members from the channel.
 - Ability to configure channel actions that automate tasks based on trigger conditions, such as `joining a channel </channels/join-leave-channels.html#join-a-channel>`__ or `sending a message </channels/send-messages.html>`__ in a channel.
 
-Depending on your system configuration, Channel Admins can be granted special permissions by the System Admin to rename and delete channels.
+Depending on your system configuration, Channel Admins can be granted special permissions by the system admin to rename and delete channels.
 
 Member
 ------
@@ -53,29 +53,19 @@ This is the default role given to users when they join a team. Members have basi
 Guest
 -----
 
-Guest is a role with restricted permissions, which allow organizations to collaborate with users outside of their organization, and control what channels they are in and who they can collaborate with.
+A guest is a role with restricted permissions, which allow organizations to collaborate with users outside of their organization, and control what channels they are in and who they can collaborate with.
 
-Guests can: 
+.. include:: /onboard/guest-account-access.rst
+  :start-after: :nosearch:
 
-- Pin messages to channels.
-- Use slash commands (with the exception of those used to invite members).
-- Favorite channels.
-- Mute channels.
-- Update their profile.
-- Use different authentication methods than other users
-
-Guests cannot:
-
-- Discover public channels.
-- Join open teams.
-- Create direct messages or group messages with members who aren’t within the same channel.
+See the `guest accounts <https://docs.mattermost.com/onboard/guest-accounts.html>`__ documentation for details on working with guest accounts.
 
 User with personal access token permission
 ------------------------------------------
 
-A System Admin can enable `personal access tokens <https://developers.mattermost.com/integrate/admin-guide/admin-personal-access-token/>`__ and give permissions for that account to create personal access tokens in **System Console > Users**.
+A system admin can enable `personal access tokens <https://developers.mattermost.com/integrate/admin-guide/admin-personal-access-token/>`__ and give permissions for that account to create personal access tokens in **System Console > Users**.
 
-In addition, the System Admin can optionally set the following permissions for the account, useful for integrations and bot accounts:
+In addition, the system admin can optionally set the following permissions for the account, useful for integrations and bot accounts:
 
 - **post:all**: Allows the account to post to all Mattermost channels including direct messages.
 - **post:channels**: Allows the account to post to all Mattermost public channels.
@@ -83,7 +73,7 @@ In addition, the System Admin can optionally set the following permissions for t
 Deactivate users
 ----------------
 
-A System Admin can deactivate user accounts via **System Console > Users** for a list of all users on the server. The list can be searched and filtered to make finding users easier. Select the user's role and in the menu that opens, then select **Deactivate**.
+A system admin can deactivate user accounts via **System Console > Users** for a list of all users on the server. The list can be searched and filtered to make finding users easier. Select the user's role and in the menu that opens, then select **Deactivate**.
 
 When **Deactivate** is selected, the user is logged out of the system, and receives an error message if they try to log back in. The user no longer appears in channel member lists, and they are removed from the team members list. A deactivated account can also be reactivated from the System Console, in which case the user rejoins channels and teams that they previously belonged to.
 

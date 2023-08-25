@@ -49,6 +49,7 @@ Get started
     eDiscovery </comply/electronic-discovery>
     Compliance monitoring </comply/compliance-monitoring>
     Compliance export </comply/compliance-export>
+    Legal hold </comply/legal-hold>
     Data retention tools </comply/data-retention-policy>
     Custom terms of service </comply/custom-terms-of-service>
     Notify Admin </upgrade/notify-admin>
@@ -63,7 +64,7 @@ These resources will help you get started with your Mattermost self-hosted or Cl
 * **User permissions** - All versions of Mattermost offer standard user permissions control. Professional and Enterprise versions also include :doc:`advanced permissions control </onboard/advanced-permissions>` to customize which users can perform specific actions, and :doc:`System Admin roles </onboard/system-admin-roles>` to grant admins from your organization access to specific areas of the Mattermost System Console.
 * **Manage team and channel members** - :doc:`Manage team and channel members </manage/team-channel-members>` synchronization, moderation, and membership settings.
 * **Customize branding** - Change Mattermost branding, site name, and description with :doc:`custom branding tools </configure/custom-branding-tools>`.
-* **Compliance tools** - Extract data from Mattermost for :doc:`eDiscovery </comply/electronic-discovery>` use in legal cases, create :doc:`Compliance monitoring </comply/compliance-monitoring>` reports for query and download actions, or :doc:`Compliance export </comply/compliance-export>` reports for channel history actions, set custom :doc:`data retention policies </comply/data-retention-policy>`, and set :doc:`custom terms of service </comply/custom-terms-of-service>` for team members.
+* **Compliance tools** - Extract data from Mattermost for :doc:`eDiscovery </comply/electronic-discovery>` use in legal cases, create :doc:`Compliance monitoring </comply/compliance-monitoring>` reports for query and download actions, or :doc:`Compliance export </comply/compliance-export>` reports for channel history actions, carry out a :doc:`legal hold </comply/legal-hold>`, set custom :doc:`data retention policies </comply/data-retention-policy>`, and set :doc:`custom terms of service </comply/custom-terms-of-service>` for team members.
 * **Notify admin** - Keep track of your users' :doc:`feature requirement needs </upgrade/notify-admin>`.
 
 Advanced user management
