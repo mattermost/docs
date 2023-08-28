@@ -50,6 +50,9 @@ Latest Mattermost Cloud releases:
  - Fixed several issues with loading of licenses.
  - Fixed an issue with the in-product marketplace theming.
 
+### Known Issues
+ - Text overlaps when opening the Playbook RHS panel [MM-54261](https://mattermost.atlassian.net/browse/MM-54261).
+
 ## Release 2023-08-09
 
 ### Improvements
