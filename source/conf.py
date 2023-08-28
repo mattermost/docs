@@ -111,27 +111,27 @@ redirects = {
 "administration/command-line-tools.html":
         "https://docs.mattermost.com/manage/command-line-tools.html",
 "administration/command-line-tools.html#mattermost-user-delete":
-	"https://docs.mattermost.com/manage/command-line-tools.html#mattermost-user-delete",
+	"https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-user-delete",
 "administration/command-line-tools.html#mattermost-channel-restore":
-        "https://docs.mattermost.com/manage/command-line-tools.html#mattermost-channel-restore",
+        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-channel-restore",
 "administration/command-line-tools.html#mattermost-permissions-reset":
-        "https://docs.mattermost.com/manage/command-line-tools.html#mattermost-permissions-reset",
+        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-permissions-reset",
 "administration/command-line-tools.html#mattermost-permissions-export":
-        "https://docs.mattermost.com/manage/command-line-tools.html#mattermost-permissions-export",
+        "https://api.mattermost.com/#tag/roles/operation/GetAllRoles",
 "administration/command-line-tools.html#mattermost-permissions-import":
         "https://docs.mattermost.com/manage/command-line-tools.html#mattermost-permissions-import",
 "administration/command-line-tools.html#mattermost-group-team-list":
-        "https://docs.mattermost.com/manage/command-line-tools.html#mattermost-group-team-list",
+        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-group-team-list",
 "administration/command-line-tools.html#mattermost-group-team-enable":
-        "https://docs.mattermost.com/manage/command-line-tools.html#mattermost-group-team-enable",
+        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-group-team-enable",
 "administration/command-line-tools.html#mattermost-group-channel-enable":
-        "https://docs.mattermost.com/manage/command-line-tools.html#mattermost-group-channel-enable",
+        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-group-channel-enable",
 "administration/command-line-tools.html#mattermost-group-team-disable":
-        "https://docs.mattermost.com/manage/command-line-tools.html#mattermost-group-team-disable",
+        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-group-team-disable",
 "administration/command-line-tools.html#mattermost-group-channel-disable":
-        "https://docs.mattermost.com/manage/command-line-tools.html#mattermost-group-channel-disable",
+        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-group-channel-disable",
 "administration/command-line-tools.html#mattermost-ldap-idmigrate":
-        "https://docs.mattermost.com/manage/command-line-tools.html#mattermost-ldap-idmigrate",
+        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-ldap-idmigrate",
 "administration/compliance.html":
         "https://docs.mattermost.com/comply/compliance-monitoring.html",
 "administration/compliance-export.html":
@@ -189,11 +189,9 @@ redirects = {
 "administration/mmctl-cli-tool.html":
         "https://docs.mattermost.com/manage/mmctl-cli-tool.html",
 "administration/mmctl-cli-tool.html#mmctl-channel-modify":
-        "https://docs.mattermost.com/manage/command-line-tools.html#mattermost-channel-modify",
+        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-channel-modify",
 "administration/mmctl-cli-tool.html#mmctl-user-reset-password":
 	"https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-user-reset-password",
-"administration/mmctl-cli-tool.html":
-        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html",
 "administration/mobile-changelog.html":
         "https://docs.mattermost.com/deploy/mobile-app-changelog.html",
 "administration/notices.html":
@@ -1761,7 +1759,7 @@ redirects = {
 "install/use-kubernetes-mattermost.html":
         "https://docs.mattermost.com/install/install-kubernetes.html",
 "install/deploy-cloudron.html":
-        "https://forum.mattermost.com/t/deploy-mattermost-on-cloudron/13526",
+        "https://forum.mattermost.com/",
 "install/desktop-custom-dictionaries.html#setting-up-the-dictionaries":
         "https://docs.mattermost.com/install/desktop-custom-dictionaries.html#prepare-custom-dictionaries",
 "install/desktop-custom-dictionaries.html#configuring-the-desktop-app":
@@ -1795,6 +1793,186 @@ redirects = {
 # Manage redirects
 "manage/scripts.html":
         "https://forum.mattermost.com/t/scripts-for-performing-discreet-tasks/13527",
+"manage/command-line-tools.html#mattermost-channel":
+        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-channel",
+"manage/command-line-tools.html#mattermost-channel-add":
+        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-channel-users-add",
+"manage/command-line-tools.html#mattermost-channel-archive":
+        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-channel-archive",
+"manage/command-line-tools.html#mattermost-channel-create":
+        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-channel-create",
+"manage/command-line-tools.html#mattermost-channel-delete":
+        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-channel-delete",
+"manage/command-line-tools.html#mattermost-channel-list":
+        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-channel-list",
+"manage/command-line-tools.html#mattermost-channel-modify":
+        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-channel-modify",
+"manage/command-line-tools.html#mattermost-channel-move":
+        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-channel-move",
+"manage/command-line-tools.html#mattermost-channel-remove":
+        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-channel-users-remove",
+"manage/command-line-tools.html#mattermost-channel-rename":
+        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-channel-rename",
+"manage/command-line-tools.html#mattermost-channel-restore":
+        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-channel-restore",
+"manage/command-line-tools.html#mattermost-channel-search":
+        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-channel-search",
+"manage/command-line-tools.html#mattermost-command":
+        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-command",
+"manage/command-line-tools.html#mattermost-command-create":
+        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-command-create",
+"manage/command-line-tools.html#mattermost-command-delete":
+        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-command-delete",
+"manage/command-line-tools.html#mattermost-command-list":
+        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-command-list",
+"manage/command-line-tools.html#mattermost-command-modify":
+        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-command-modify",
+"manage/command-line-tools.html#mattermost-command-move":
+        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-command-move",
+"manage/command-line-tools.html#mattermost-command-show":
+        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-command-show",
+"manage/command-line-tools.html#mattermost-config":
+        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-config",
+"manage/command-line-tools.html#mattermost-config-get":
+        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-config-get",
+"manage/command-line-tools.html#mattermost-config-migrate":
+        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-config-migrate",
+"manage/command-line-tools.html#mattermost-config-reset":
+        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-config-reset",
+"manage/command-line-tools.html#mattermost-config-set":
+        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-config-set",
+"manage/command-line-tools.html#mattermost-config-show":
+        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-config-show",
+"manage/command-line-tools.html#mattermost-export-bulk":
+        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-export",
+"manage/command-line-tools.html#mattermost-group":
+        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-group",
+"manage/command-line-tools.html#mattermost-group-team-list":
+        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-group-team-list",
+"manage/command-line-tools.html#mattermost-group-team-enable":
+        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-group-team-enable",
+"manage/command-line-tools.html#mattermost-group-channel":
+        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-group-channel",
+"manage/command-line-tools.html#mattermost-group-channel-enable":
+        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-group-channel-enable",
+"manage/command-line-tools.html#mattermost-group-team":
+        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-group-team",
+"manage/command-line-tools.html#mattermost-group-team-disable":
+        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-group-team-disable",
+"manage/command-line-tools.html#mattermost-group-channel-disable":
+        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-group-channel-disable",
+"manage/command-line-tools.html#mattermost-group-channel-status":
+        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-group-channel-status",
+"manage/command-line-tools.html#mattermost-integrity":
+        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-integrity",
+"manage/command-line-tools.html#mattermost-ldap":
+        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-ldap",
+"manage/command-line-tools.html#mattermost-ldap-idmigrate":
+        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-ldap-idmigrate",
+"manage/command-line-tools.html#mattermost-ldap-sync":
+        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-ldap-sync",
+"manage/command-line-tools.html#mattermost-license":
+        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-license",
+"manage/command-line-tools.html#mattermost-license-upload":
+        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-license-upload",
+"manage/command-line-tools.html#mattermost-logs":
+        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-logs",
+"manage/command-line-tools.html#mattermost-permissions":
+        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-permissions",
+"manage/command-line-tools.html#mattermost-permissions-reset":
+        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-permissions-reset",
+"manage/command-line-tools.html#mattermost-plugin":
+        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-plugin",
+"manage/command-line-tools.html#mattermost-plugin-add":
+        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-plugin-add",
+"manage/command-line-tools.html#mattermost-plugin-delete":
+        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-plugin-delete",
+"manage/command-line-tools.html#mattermost-plugin-disable":
+        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-plugin-disable",
+"manage/command-line-tools.html#mattermost-plugin-enable":
+        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-plugin-enable",
+"manage/command-line-tools.html#mattermost-plugin-list":
+        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-plugin-list",
+"manage/command-line-tools.html#mattermost-roles":
+        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-roles",
+"manage/command-line-tools.html#mattermost-roles-member":
+        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-roles",
+"manage/command-line-tools.html#mattermost-roles-system-admin":
+        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-roles",
+"manage/command-line-tools.html#mattermost-sampledata":
+        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-sampledata",
+"manage/command-line-tools.html#mattermost-team":
+        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-team",
+"manage/command-line-tools.html#mattermost-team-add":
+        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-team-users",
+"manage/command-line-tools.html#mattermost-team-archive":
+        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-team-archive",
+"manage/command-line-tools.html#mattermost-team-create":
+        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-team-create",
+"manage/command-line-tools.html#mattermost-team-delete":
+        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-team-delete",
+"manage/command-line-tools.html#mattermost-team":
+        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-team",
+"manage/command-line-tools.html#mattermost-team-list":
+        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-team-list",
+"manage/command-line-tools.html#mattermost-team-modify":
+        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-team-modify",
+"manage/command-line-tools.html#mattermost-team-remove":
+        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-team-users",
+"manage/command-line-tools.html#mattermost-team-rename":
+        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-team-rename",
+"manage/command-line-tools.html#mattermost-team-restore":
+        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-team-restore",
+"manage/command-line-tools.html#mattermost-team-search":
+        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-team-search",
+"manage/command-line-tools.html#mattermost-user":
+        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-user",
+"manage/command-line-tools.html#mattermost-user-activate":
+        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-user-activate",
+"manage/command-line-tools.html#mattermost-user-convert":
+        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-user-convert",
+"manage/command-line-tools.html#mattermost-user-create":
+        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-user-create",
+"manage/command-line-tools.html#mattermost-user-deactivate":
+        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-user-deactivate",
+"manage/command-line-tools.html#mattermost-user-delete":
+        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-user-delete",
+"manage/command-line-tools.html#mattermost-user-deleteall":
+        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-user-deleteall",
+"manage/command-line-tools.html#mattermost-user-email":
+        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-user-email",
+"manage/command-line-tools.html#mattermost-user-invite":
+        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-user-invite",
+"manage/command-line-tools.html#mattermost-user-migrate-auth":
+        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-user-migrate-auth",
+"manage/command-line-tools.html#mattermost-user-password":
+        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-user-reset-password",
+"manage/command-line-tools.html#mattermost-user-resetmfa":
+        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-user-reset-mfa",
+"manage/command-line-tools.html#mattermost-user-search":
+        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-user-search",
+"manage/command-line-tools.html#mattermost-user-verify":
+        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-user-verify",
+"manage/command-line-tools.html#mattermost-version":
+        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-version",
+"manage/command-line-tools.html#mattermost-webhook":
+        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-webhook",
+"manage/command-line-tools.html#mattermost-webhook-create-incoming":
+        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-webhook-create-incoming",
+"manage/command-line-tools.html#mattermost-webhook-create-outgoing":
+        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-webhook-create-outgoing",
+"manage/command-line-tools.html#mattermost-webhook-delete":
+        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-webhook-delete",
+"manage/command-line-tools.html#mattermost-webhook-list":
+        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-webhook-list",
+"manage/command-line-tools.html#mattermost-webhook-modify-incoming":
+        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-webhook-modify-incoming",
+"manage/command-line-tools.html#mattermost-webhook-modify-outgoing":
+        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-webhook-modify-outgoing",
+"manage/command-line-tools.html#mattermost-webhook-move-outgoing":
+        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-webhook-modify-outgoing",
+"manage/command-line-tools.html#mattermost-webhook-show":
+        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-webhook-show",
 
 # Messaging redirects
 "messaging/about-teams-channels-messages.html#teams":
