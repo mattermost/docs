@@ -219,6 +219,7 @@ Use the read replica feature to scale the database. The Mattermost server can be
 On large deployments, also consider using the search replica feature to isolate search queries onto one or more search replicas. A search replica is similar to a read replica, but is used only for handling search queries.
 
 Mattermost distributes queries as follows:
+
 * All write requests, and some specific read requests, are sent to the master.
 * All other read requests (excluding those specific queries that go to the master) are distributed among the available read replicas. If no read replicas are available, these are sent to the master instead.
 * Search requests are distributed among the available search replicas. If no search replicas are available, these are sent to the read replicas instead (or, if no read replicas are available, to the master).
