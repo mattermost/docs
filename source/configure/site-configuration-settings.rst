@@ -220,6 +220,26 @@ About link
 | String input. Default is ``https://about.mattermost.com/default-about/``.                                                                                                                                                   | - Environment variable: ``MM_SUPPORTSETTINGS_ABOUTLINK``      |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------+
 
+.. config:setting:: custom-forgotpasswordurl
+  :displayname: Forgot Password custom link (Customization)
+  :systemconsole: Site Configuration > Customization
+  :configjson: .SupportSettings.ForgetPasswordCustomLink
+  :environment: MM_SUPPORTSETTINGS_FORGETPASSWORDCUSTOMLINK
+  :description: Set a custom URL for the **Forgot Password** link on the Mattermost login page. Leave this field blank to use Mattermost's Password Reset workflow.
+
+Forgot Password custom link
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++-------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+| When the **Forgot Password** link is enabled on the Mattermost login page,    | - System Config path: **Site Configuration > Forgot password custom link**    |
+| users are taken to a custom URL to recover or change their password.          | - ``config.json`` setting: ``.SupportSettings.ForgetPasswordCustomLink``      |
+|                                                                               | - Environment variable: ``MM_SUPPORTSETTINGS_FORGETPASSWORDCUSTOMLINK``       |
+| Leave this field blank to use Mattermost's Password Reset workflow.           |                                                                               |
++-------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+| **Note**: You can control whether the **Forgot Password** link is visible or hidden by going to **Authentication > Password > Enable Forgot Password Link**.  |
+| See the `configuration </configure/authentication-configuration-settings.html#enable-forgot-password-link>`__ documentation for details.                      |
++-------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+
 .. config:setting:: custom-reportaproblemlink
   :displayname: Report a Problem link (Customization)
   :systemconsole: Site Configuration > Customization
@@ -539,15 +559,16 @@ Allow users to view archived channels
   :environment: MM_PRIVACYSETTINGS_SHOWEMAILADDRESS
 
   - **true**: **(Default)** All users can see the email addresses of every other user.
-  - **false**: Hides email addresses in the client user interface, except from System Admins.
+  - **false**: Hides email addresses in the client user interface, except for System Admins and the System Roles with read/write access to Compliance, Billing, or User Management (users/teams/channels/groups etc).
 
 Show email address
 ~~~~~~~~~~~~~~~~~~
 
 +---------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
 | - **true**: **(Default)** All users can see the email addresses of every other user.        | - System Config path: **Site Configuration > Users and teams**         |
-| - **false**: Hides email addresses in the client user interface, except from System Admins. | - ``config.json`` setting: ``.PrivacySettings.ShowEmailAddress: true`` |
-|                                                                                             | - Environment variable: ``MM_PRIVACYSETTINGS_SHOWEMAILADDRESS``        |
+| - **false**: Hides email addresses in the client user interface, except from System Admins  | - ``config.json`` setting: ``.PrivacySettings.ShowEmailAddress: true`` |
+|   and the System Roles with read/write access to Compliance, Billing, or User Management    | - Environment variable: ``MM_PRIVACYSETTINGS_SHOWEMAILADDRESS``        |
+|   (users/teams/channels/groups etc).                                                        |                                                                        |
 +---------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
 
 .. config:setting:: users-showfullname

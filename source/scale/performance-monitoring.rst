@@ -269,11 +269,11 @@ To learn how to set up runtime profiling, see the `pprof package Go documentatio
 
 If enabled, you can run the profiler by
 
-``go tool pprof channel http://localhost:<port>/debug/pprof/profile``
+``go tool pprof http://localhost:<port>/debug/pprof/profile``
 
 where you can replace ``localhost`` with the server name. The profiling reports are available at ``<ip>:<port>``, which include:
 
-- ``/debug/pprof/`` for CPU profiling
+- ``/debug/pprof/profile`` for CPU profiling
 - ``/debug/pprof/cmdline/`` for command line profiling
 - ``/debug/pprof/symbol/`` for symbol profiling
 - ``/debug/pprof/goroutine/`` for GO routine profiling
