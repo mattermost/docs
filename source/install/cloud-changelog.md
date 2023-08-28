@@ -42,9 +42,9 @@ Latest Mattermost Cloud releases:
  - Disabled ``PluginSettings.EnableRemoteMarketplace`` functionality.
 
 ### Bug Fixes
- - Fixed accessibility issues: tab support at login, reset and signup pages, and App bar.
+ - Fixed accessibility issues: tab support at login, reset pages, sign up pages, and App bar.
  - Fixed an issue where CRLF line endings passed to mmctl commands were not being stripped from commands.
- - Fixed an issue where text copied from Microsoft OneNote pastes it as an image.
+ - Fixed an issue where text copied from Microsoft OneNote is pasted as an image.
  - Fixed an issue preventing successful activation of trial licenses.
  - Fixed an issue where a custom group wouldn't get marked as a mention if it was not part of the webapp's local state.
  - Fixed several issues with loading of licenses.
