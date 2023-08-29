@@ -18,9 +18,9 @@ This page provides a guide on how to customize and distribute your own Mattermos
 Custom build configuration
 --------------------------
 
-You can customize and distribute your own Mattermost desktop application by configuring `src/common/config/buildConfig.js <https://github.com/mattermost/desktop/blob/master/src/common/config/buildConfig.js>`__.
+You can customize and distribute your own Mattermost desktop application by configuring `src/common/config/buildConfig.ts <https://github.com/mattermost/desktop/blob/master/src/common/config/buildConfig.ts>`__.
 
-1. Configure the desktop app's ``buildConfig.js`` file. There are multiple parameters you can configure to customize the user experience:
+1. Configure the desktop app's ``buildConfig.ts`` file. There are multiple parameters you can configure to customize the user experience:
 
 ``defaultTeams``
 ~~~~~~~~~~~~~~~~
