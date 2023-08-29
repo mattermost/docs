@@ -10,7 +10,7 @@ To streamline the migration process and alleviate any potential challenges, we h
 
 .. note::
 
-   These guidelines are in development and we are working to streamline the migration process. We plan to improve this guide by updating it as new information becomes available. It is essential to note that it does not encompass migration configurations for any plugins, such as Focalboard and Playbooks. If your system utilizes these plugins, we highly advise exercising patience until we incorporate the necessary configurations specifically tailored to ensure a smooth transition for those plugins as well. Please use this guide as a starting point and always backup your database before starting a migration.
+   These guidelines are in development and we are working to streamline the migration process. We plan to improve this guide by updating it as new information becomes available. Please use this guide as a starting point and always backup your database before starting a migration.
 
 .. contents:: On this page:
   :backlinks: top
@@ -192,6 +192,174 @@ For our case we can simply run the following command:
 
    dbcmp --source "${MYSQL_DSN}" --target "${POSTGRES_DSN}" --exclude="db_migrations,ir_,focalboard,systems"
 
-Note that this migration guide only covers the tables for Mattermost channels. Support for other plugins, such as Playbooks, will be added in the future. 
+Note that this migration guide only covers the tables for Mattermost products.
 
 Another exclusion we are making is in the ``db_migrations`` table which has a small difference (a typo in a single migration name) creates a diff. Since we created the PostgreSQL schema with morph, and the official ``mattermost`` source, we can skip it safely without concerns. On the other hand, ``systems`` table may contain additional diffs if there were extra keys added during some of the migrations. Consider excluding the ``systems`` table if you run into issues, and perform a manual comparison as the data in the ``systems`` table is relatively smaller in size.
+
+Plugin migrations
+-----------------
+
+On the plugin side, we are going to take a different approach from what we have done above. We are not going to use ``morph`` tool to create tables and indexes this time. We are going to utilize ``pgloader`` to create the tables on behalf of us. The reason for doing so is Boards and Playbooks are leveraging application logic to facilitate SQL queries. But we don't want to use any level of application at this point.
+
+Playbooks
+~~~~~~~~~
+
+Once we are ready to migrate, we can start migrating the **schema** and the **data**  by running ``pgLoader`` \*\*
+
+\*\* Use the following configuration for the baseline of the data migration:
+
+.. code::
+
+   LOAD DATABASE
+        FROM      mysql://{{ .mysql_user }}:{{ .mysql_password }}@mysql:3306/{{ .source_schema }}
+        INTO      pgsql://{{ .pg_user }}:{{ .pg_password }}@postgres:5432/{{ .target_schema }}
+
+   WITH include drop, create tables, create indexes, no foreign keys,
+       workers = 8, concurrency = 1,
+       multiple readers per thread, rows per range = 50000,
+       preserve index names
+
+   SET PostgreSQL PARAMETERS
+       maintenance_work_mem to '128MB',
+       work_mem to '12MB'
+
+   SET MySQL PARAMETERS
+       net_read_timeout  = '120',
+       net_write_timeout = '120'
+
+   CAST column IR_ChannelAction.ActionType to text drop typemod,
+        column IR_ChannelAction.TriggerType to text drop typemod,
+        column IR_Incident.ChecklistsJSON to "json" drop typemod
+
+   INCLUDING ONLY TABLE NAMES MATCHING
+       ~/IR_/
+
+   BEFORE LOAD DO
+       $$ ALTER SCHEMA public RENAME TO {{ .source_schema }}; $$
+
+   AFTER LOAD DO
+       $$ ALTER TABLE {{ .source_schema }}.IR_ChannelAction ALTER COLUMN ActionType TYPE varchar(65536); $$,
+       $$ ALTER TABLE {{ .source_schema }}.IR_ChannelAction ALTER COLUMN TriggerType TYPE varchar(65536); $$,
+       $$ ALTER TABLE {{ .source_schema }}.IR_Incident ALTER COLUMN ReminderMessageTemplate TYPE varchar(65536); $$,
+       $$ ALTER TABLE {{ .source_schema }}.IR_Incident ALTER COLUMN ReminderMessageTemplate SET DEFAULT ''::text;  $$,
+       $$ ALTER TABLE {{ .source_schema }}.IR_Incident ALTER COLUMN ConcatenatedInvitedUserIDs TYPE varchar(65536); $$,
+       $$ ALTER TABLE {{ .source_schema }}.IR_Incident ALTER COLUMN ConcatenatedInvitedUserIDs SET DEFAULT ''::text; $$,
+       $$ ALTER TABLE {{ .source_schema }}.IR_Incident ALTER COLUMN ConcatenatedWebhookOnCreationURLs TYPE varchar(65536); $$,
+       $$ ALTER TABLE {{ .source_schema }}.IR_Incident ALTER COLUMN ConcatenatedWebhookOnCreationURLs SET DEFAULT ''::text; $$,
+       $$ ALTER TABLE {{ .source_schema }}.IR_Incident ALTER COLUMN ConcatenatedInvitedGroupIDs TYPE varchar(65536); $$,
+       $$ ALTER TABLE {{ .source_schema }}.IR_Incident ALTER COLUMN ConcatenatedInvitedGroupIDs SET DEFAULT ''::text; $$,
+       $$ ALTER TABLE {{ .source_schema }}.IR_Incident ALTER COLUMN Retrospective TYPE varchar(65536); $$,
+       $$ ALTER TABLE {{ .source_schema }}.IR_Incident ALTER COLUMN Retrospective SET DEFAULT ''::text; $$,
+       $$ ALTER TABLE {{ .source_schema }}.IR_Incident ALTER COLUMN MessageOnJoin TYPE varchar(65536); $$,
+       $$ ALTER TABLE {{ .source_schema }}.IR_Incident ALTER COLUMN MessageOnJoin SET DEFAULT ''::text; $$,
+       $$ ALTER TABLE {{ .source_schema }}.IR_Incident ALTER COLUMN ConcatenatedWebhookOnStatusUpdateURLs TYPE varchar(65536); $$,
+       $$ ALTER TABLE {{ .source_schema }}.IR_Incident ALTER COLUMN ConcatenatedWebhookOnStatusUpdateURLs SET DEFAULT ''::text; $$,
+       $$ ALTER TABLE {{ .source_schema }}.IR_Incident ALTER COLUMN CategoryName TYPE varchar(65536); $$,
+       $$ ALTER TABLE {{ .source_schema }}.IR_Incident ALTER COLUMN CategoryName SET DEFAULT ''::text; $$,
+       $$ ALTER TABLE {{ .source_schema }}.IR_Incident ALTER COLUMN ConcatenatedBroadcastChannelIds TYPE varchar(65536); $$,
+       $$ ALTER TABLE {{ .source_schema }}.IR_Incident ALTER COLUMN ConcatenatedBroadcastChannelIds SET DEFAULT ''::text; $$,
+       $$ ALTER TABLE {{ .source_schema }}.IR_Incident ALTER COLUMN ChannelIDToRootID TYPE varchar(65536); $$,
+       $$ ALTER TABLE {{ .source_schema }}.IR_Incident ALTER COLUMN ChannelIDToRootID SET DEFAULT ''::text; $$,
+       $$ ALTER TABLE {{ .source_schema }}.IR_Playbook ALTER COLUMN ReminderMessageTemplate TYPE varchar(65536); $$,
+       $$ ALTER TABLE {{ .source_schema }}.IR_Playbook ALTER COLUMN ReminderMessageTemplate SET DEFAULT ''::text; $$,
+       $$ ALTER TABLE {{ .source_schema }}.IR_Playbook ALTER COLUMN ConcatenatedInvitedUserIDs TYPE varchar(65536); $$,
+       $$ ALTER TABLE {{ .source_schema }}.IR_Playbook ALTER COLUMN ConcatenatedInvitedUserIDs SET DEFAULT ''::text; $$,
+       $$ ALTER TABLE {{ .source_schema }}.IR_Playbook ALTER COLUMN ConcatenatedWebhookOnCreationURLs TYPE varchar(65536); $$,
+       $$ ALTER TABLE {{ .source_schema }}.IR_Playbook ALTER COLUMN ConcatenatedWebhookOnCreationURLs SET DEFAULT ''::text; $$,
+       $$ ALTER TABLE {{ .source_schema }}.IR_Playbook ALTER COLUMN ConcatenatedInvitedGroupIDs TYPE varchar(65536); $$,
+       $$ ALTER TABLE {{ .source_schema }}.IR_Playbook ALTER COLUMN ConcatenatedInvitedGroupIDs SET DEFAULT ''::text; $$,
+       $$ ALTER TABLE {{ .source_schema }}.IR_Playbook ALTER COLUMN MessageOnJoin TYPE varchar(65536); $$,
+       $$ ALTER TABLE {{ .source_schema }}.IR_Playbook ALTER COLUMN MessageOnJoin SET DEFAULT ''::text; $$,
+       $$ ALTER TABLE {{ .source_schema }}.IR_Playbook ALTER COLUMN RetrospectiveTemplate TYPE varchar(65536); $$,
+       $$ ALTER TABLE {{ .source_schema }}.IR_Playbook ALTER COLUMN RetrospectiveTemplate SET DEFAULT ''::text; $$,
+       $$ ALTER TABLE {{ .source_schema }}.IR_Playbook ALTER COLUMN ConcatenatedWebhookOnStatusUpdateURLs TYPE varchar(65536); $$,
+       $$ ALTER TABLE {{ .source_schema }}.IR_Playbook ALTER COLUMN ConcatenatedWebhookOnStatusUpdateURLs SET DEFAULT ''::text; $$,
+       $$ ALTER TABLE {{ .source_schema }}.IR_Playbook ALTER COLUMN ConcatenatedSignalAnyKeywords TYPE varchar(65536); $$,
+       $$ ALTER TABLE {{ .source_schema }}.IR_Playbook ALTER COLUMN ConcatenatedSignalAnyKeywords SET DEFAULT ''::text; $$,
+       $$ ALTER TABLE {{ .source_schema }}.IR_Playbook ALTER COLUMN CategoryName TYPE varchar(65536); $$,
+       $$ ALTER TABLE {{ .source_schema }}.IR_Playbook ALTER COLUMN CategoryName SET DEFAULT ''::text; $$,
+       $$ ALTER TABLE {{ .source_schema }}.IR_Playbook ALTER COLUMN ConcatenatedBroadcastChannelIds TYPE varchar(65536); $$,
+       $$ ALTER TABLE {{ .source_schema }}.IR_Playbook ALTER COLUMN ConcatenatedBroadcastChannelIds SET DEFAULT ''::text; $$,
+       $$ ALTER TABLE {{ .source_schema }}.IR_Playbook ALTER COLUMN RunSummaryTemplate TYPE varchar(65536); $$,
+       $$ ALTER TABLE {{ .source_schema }}.IR_Playbook ALTER COLUMN RunSummaryTemplate SET DEFAULT ''::text; $$,
+       $$ ALTER TABLE {{ .source_schema }}.IR_Playbook ALTER COLUMN ChannelNameTemplate TYPE varchar(65536); $$,
+       $$ ALTER TABLE {{ .source_schema }}.IR_Playbook ALTER COLUMN ChannelNameTemplate SET DEFAULT ''::text; $$,
+       $$ ALTER TABLE {{ .source_schema }}.IR_PlaybookMember ALTER COLUMN Roles TYPE varchar(65536); $$,
+       $$ ALTER TABLE {{ .source_schema }}.IR_Category_Item ADD CONSTRAINT ir_category_item_categoryid FOREIGN KEY (CategoryId) REFERENCES {{ .source_schema }}.IR_Category(Id); $$,
+       $$ ALTER TABLE {{ .source_schema }}.IR_Metric ADD CONSTRAINT ir_metric_metricconfigid FOREIGN KEY (MetricConfigId) REFERENCES {{ .source_schema }}.IR_MetricConfig(Id); $$,
+       $$ ALTER TABLE {{ .source_schema }}.IR_Metric ADD CONSTRAINT ir_metric_incidentid FOREIGN KEY (IncidentId) REFERENCES {{ .source_schema }}.IR_Incident(Id); $$,
+       $$ ALTER TABLE {{ .source_schema }}.IR_MetricConfig ADD CONSTRAINT ir_metricconfig_playbookid FOREIGN KEY (PlaybookId) REFERENCES {{ .source_schema }}.IR_Playbook(Id); $$,
+       $$ ALTER TABLE {{ .source_schema }}.IR_PlaybookAutoFollow ADD CONSTRAINT ir_playbookautofollow_playbookid FOREIGN KEY (PlaybookId) REFERENCES {{ .source_schema }}.IR_Playbook(Id); $$,
+       $$ ALTER TABLE {{ .source_schema }}.IR_PlaybookMember ADD CONSTRAINT ir_playbookmember_playbookid FOREIGN KEY (PlaybookId) REFERENCES {{ .source_schema }}.IR_Playbook(Id); $$,
+       $$ ALTER TABLE {{ .source_schema }}.IR_Run_Participants ADD CONSTRAINT ir_run_participants_incidentid FOREIGN KEY (IncidentId) REFERENCES {{ .source_schema }}.IR_Incident(Id); $$,
+       $$ ALTER TABLE {{ .source_schema }}.IR_StatusPosts ADD CONSTRAINT ir_statusposts_incidentid FOREIGN KEY (IncidentId) REFERENCES {{ .source_schema }}.IR_Incident(Id); $$,
+       $$ ALTER TABLE {{ .source_schema }}.IR_TimelineEvent ADD CONSTRAINT ir_timelineevent_incidentid FOREIGN KEY (IncidentId) REFERENCES {{ .source_schema }}.IR_Incident(Id); $$,
+       $$ CREATE UNIQUE INDEX IF NOT EXISTS ir_playbookmember_playbookid_memberid_key on {{ .source_schema }}.IR_PlaybookMember(PlaybookId,MemberId); $$,
+       $$ CREATE INDEX IF NOT EXISTS ir_statusposts_incidentid_postid_key on {{ .source_schema }}.IR_StatusPosts(IncidentId,PostId); $$,
+       $$ CREATE INDEX IF NOT EXISTS ir_playbookmember_playbookid on {{ .source_schema }}.IR_PlaybookMember(PlaybookId); $$,
+       $$ ALTER SCHEMA {{ .source_schema }} RENAME TO public; $$,
+       $$ SELECT pg_catalog.set_config('search_path', '"$user", public', false); $$,
+       $$ ALTER USER mmuser SET SEARCH_PATH TO 'public'; $$;
+
+.. code:: bash
+
+   pgLoader playbooks.load > playbooks_migration.log
+
+Boards
+~~~~~~
+
+As of ``v9.0`` Boards will transition to being fully community supported. Hence this guide covers only the version ``v7.10.x`` of the schema. `Official announcement <https://docs.mattermost.com/install/deprecated-features.html#mattermost-server-v9-0-0>`__.
+
+Once we are ready to migrate, we can start migrating the **schema** and the **data**  by running ``pgLoader`` \*\*
+
+\*\* Use the following configuration for the baseline of the data migration:
+
+.. code::
+
+   LOAD DATABASE
+        FROM      mysql://{{ .mysql_user }}:{{ .mysql_password }}@mysql:3306/{{ .source_schema }}
+        INTO      pgsql://{{ .pg_user }}:{{ .pg_password }}@postgres:5432/{{ .target_schema }}
+
+   WITH include drop, create tables, create indexes, reset sequences,
+       workers = 8, concurrency = 1,
+       multiple readers per thread, rows per range = 50000,
+       preserve index names
+
+   SET PostgreSQL PARAMETERS
+       maintenance_work_mem to '128MB',
+       work_mem to '12MB'
+
+   SET MySQL PARAMETERS
+       net_read_timeout  = '120',
+       net_write_timeout = '120'
+
+   CAST column focalboard_blocks.fields to "json" drop typemod,
+        column focalboard_blocks_history.fields to "json" drop typemod,
+        column focalboard_schema_migrations.name to "varchar" drop typemod,
+        column focalboard_sessions.props to "json" drop typemod,
+        column focalboard_teams.settings to "json" drop typemod,
+        column focalboard_users.props to "json" drop typemod,
+        type int when (= precision 11) to int4 drop typemod,
+        type json to jsonb drop typemod
+
+   INCLUDING ONLY TABLE NAMES MATCHING
+       ~/focalboard/
+
+   BEFORE LOAD DO
+       $$ ALTER SCHEMA public RENAME TO {{ .source_schema }}; $$
+
+   AFTER LOAD DO
+       $$ ALTER SCHEMA {{ .source_schema }} RENAME TO public; $$,
+       $$ SELECT pg_catalog.set_config('search_path', '"$user", public', false); $$,
+       $$ ALTER USER mmuser SET SEARCH_PATH TO 'public'; $$;
+
+.. code:: bash
+
+   pgLoader focalboard.load > focalboard_migration.log
+
+Compare the plugin data
+~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code:: sh
+
+   dbcmp --source "${MYSQL_DSN}" --target "${POSTGRES_DSN}" --exclude="db_migrations,systems"
