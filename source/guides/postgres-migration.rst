@@ -204,6 +204,8 @@ On the plugin side, we are going to take a different approach from what we have 
 Playbooks
 ~~~~~~~~~
 
+The ``pgloader`` configuration provided for Playbooks is based on ``v1.38.1`` and the plugin should be at least ``v1.36.0`` to perform migration.
+
 Once we are ready to migrate, we can start migrating the **schema** and the **data**  by running ``pgLoader`` \*\*
 
 \*\* Use the following configuration for the baseline of the data migration:
