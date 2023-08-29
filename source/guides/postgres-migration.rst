@@ -102,7 +102,7 @@ Full-text indexes
 
 It's possible that some words in the ``Posts`` and ``FileInfo`` tables can exceed the `limits of the maximum token length <https://www.postgresql.org/docs/11/textsearch-limitations.html>`__ for full text search indexing. In these cases, we recommend dropping the ``idx_posts_message_txt`` and ``idx_fileinfo_content_txt`` indexes from the PostgreSQL schema, and creating these indexes after the migration by running the following queries:
 
-To drop indexes, run the following commands before the migration:
+To drop indexes, run the following commands before the migration (These are included in the script, so you may not need to run these manually):
 
 .. code:: sql
 
@@ -125,8 +125,7 @@ Once we set the schema to a desired state, we can start migrating the **data** b
    WITH data only,
         workers = 8, concurrency = 1,
         multiple readers per thread, rows per range = 50000,
-        create no tables,
-        create no indexes,
+        create no tables, create no indexes,
         preserve index names
 
    SET PostgreSQL PARAMETERS
@@ -137,9 +136,9 @@ Once we set the schema to a desired state, we can start migrating the **data** b
          net_read_timeout  = '120',
          net_write_timeout = '120'
 
-   CAST column Channels.Type to channel_type drop typemod,
-        column Teams.Type to team_type drop typemod,
-        column UploadSessions.Type to upload_session_type drop typemod,
+   CAST column Channels.Type to "channel_type" drop typemod,
+        column Teams.Type to "team_type" drop typemod,
+        column UploadSessions.Type to "upload_session_type" drop typemod,
         column Drafts.Priority to text,
         type int when (= precision 11) to integer drop typemod,
         type bigint when (= precision 20) to bigint drop typemod,
@@ -147,14 +146,17 @@ Once we set the schema to a desired state, we can start migrating the **data** b
         type tinyint when (<= precision 4) to boolean using tinyint-to-boolean,
         type json to jsonb drop typemod
 
-   MATERIALIZE VIEWS exclude_products
-        excluding table names matching ~<IR_>, ~<focalboard>
+   EXCLUDING TABLE NAMES MATCHING ~<IR_>, ~<focalboard>
 
    BEFORE LOAD DO
-        $$ ALTER SCHEMA public RENAME TO {{ .source_schema }}; $$
+        $$ ALTER SCHEMA public RENAME TO {{ .source_schema }}; $$,
+        $$ DROP INDEX IF EXISTS idx_posts_message_txt; $$,
+        $$ DROP INDEX IF EXISTS idx_fileinfo_content_txt; $$
 
    AFTER LOAD DO
         $$ UPDATE {{ .source_schema }}.db_migrations set name='add_createat_to_teamembers' where version=92; $$,
+        $$ CREATE INDEX IF NOT EXISTS idx_posts_message_txt ON {{ .source_schema }}.posts USING gin(to_tsvector('english', message)); $$,
+        $$ CREATE INDEX IF NOT EXISTS idx_fileinfo_content_txt ON {{ .source_schema }}.fileinfo USING gin(to_tsvector('english', content)); $$,
         $$ ALTER SCHEMA {{ .source_schema }} RENAME TO public; $$;
 
 Once you save this configuration file, e.g. ``migration.load``, you can run the ``pgLoader`` with the following command:
@@ -162,13 +164,6 @@ Once you save this configuration file, e.g. ``migration.load``, you can run the 
 .. code:: bash
 
    pgLoader migration.load > migration.log
-
-To re-create indexes that has been removed before the migration, run the following once the migration is completed:
-
-.. code:: sql
-
-   CREATE INDEX IF NOT EXISTS idx_posts_message_txt ON posts USING gin(to_tsvector('english', message));
-   CREATE INDEX IF NOT EXISTS idx_fileinfo_content_txt ON fileinfo USING gin(to_tsvector('english', content));
 
 Feel free to contribute to and/or report your findings through your migration to us.
 
