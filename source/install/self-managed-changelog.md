@@ -12,6 +12,83 @@ Latest Mattermost Releases:
 - [Release v7.10 - Feature Release](#release-v7-10-feature-release)
 - [Release v7.8 - Extended Support Release](#release-v7-8-extended-support-release)
 
+## Release v9.0 - [Major Release](https://docs.mattermost.com/upgrade/release-definitions.html#major-release)
+
+**Release day: September 15, 2023**
+
+### Important Upgrade Notes
+ - Removed the deprecated Insights feature.
+ - Mattermost Boards and various other plugins have transitioned to being fully community supported. See this [forum post](https://forum.mattermost.com/t/upcoming-product-changes-to-boards-and-various-plugins/16669) for more details.
+
+**IMPORTANT:** If you upgrade from a release earlier than v8.1, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
+
+### Compatibility
+ - Updated the minimum required Edge version to 112+.
+
+### Improvements
+
+#### User Interface (UI)
+ - The number of channel members is now shown in the **Browse channels** modal.
+ - An error is now displayed if a post edit history fails to load.
+ - Added functionality to bulk mark a whole channel category as read.
+ - Removed Boards product tour code.
+ - Replaced Gfycat with Giphy in the gif picker.
+ - Updated Focalboard plugin version to 7.11.3.
+ - Pre-packaged Playbooks version 1.38.1.
+ - Upgraded prepackaged Zoom plugin to v1.6.2.
+ - Upgraded prepackaged Antivirus plugin version to 1.0.0.
+
+#### Administration
+ - API examples are now updated to reflect latest Go API conventions, deprecating older code samples.
+ - Updated the public server module version to v0.0.7.
+ - Added a ``Post Action`` plugin hook to allow plugins to register new items in the post menu.
+ - Added a ``Post Editor Action`` plugin hook to allow plugins to register new items in the post editor menu.
+ - Improved logging on plugin initialization, activation, and removal.
+ - Removed the deprecated ``ManifestExecutables`` struct.
+ - Removed the deprecated ``UserAuth.Password`` field.
+ - Remote users are no longer counted as part of the license.
+ - Improved data retention logs.
+ - Removed ``/opengraph`` endpoint as it was unused.
+ - Transitionally prepackaged plugins are now installed to the filestore for continuity when a future release stops prepackaging those plugins.
+ - Removed the deprecated ``Manifest.RequiredConfig`` field.
+ - Added a ``NotificationWillBePushed`` plugin hook invoked before the push notification is processed and sent to the notification service. Plugins may modify or reject the push notification.
+ - Added a `SendPushNotification` plugin api method which allows plugins to send push notifications to a specific user's mobile sessions.
+ - Disabled ``PluginSettings.EnableRemoteMarketplace`` functionality.
+
+### Bug Fixes
+ - Fixed the error returned by ``PUT /api/v4/channels/{channelid}`` when the provided name already existed in the team.
+ - Fixed an issue where CRLF line endings passed to mmctl commands were not being stripped from commands.
+ - Fixed an issue where text copied from Microsoft OneNote is pasted as an image.
+ - Fixed an issue preventing successful activation of trial licenses.
+ - Fixed an issue where a custom group wouldn't get marked as a mention if it was not part of the webapp's local state.
+ - Fixed several issues with loading of licenses.
+ - Fixed an issue with the in-product marketplace theming.
+
+### config.json
+Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
+
+#### Changes to all plans:
+ - Under ``ServiceSettings`` in the ``config.json``:
+    - Added ``DefaultGiphySdkKey`` to replace Gfycat with Giphy in the gif picker.
+
+### Go Version
+ - v9.0 is built with Go ``v1.19.5``.
+
+### Known Issues
+ - Adding an @mention at the start of a post draft and pressing the left or right arrow key can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
+ - Google login fails on the Classic mobile apps.
+ - Status may sometimes get stuck as **Away** or **Offline** in High Availability mode with IP Hash turned off.
+ - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
+ - The team sidebar on the desktop app does not update when channels have been read on mobile.
+ - Slack import through the CLI fails if email notifications are enabled.
+ - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
+ - The Playbooks left-hand sidebar doesn't update when a user is added to a run or playbook without a refresh.
+ - If a user isn't a member of a configured broadcast channel, posting a status update might fail without any error feedback. As a temporary workaround, join the configured broadcast channels, or remove those channels from the run configuration.
+ - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
+
+### Contributors
+ - 
+
 ## Release v8.1 - [Extended Support Release](https://docs.mattermost.com/upgrade/release-definitions.html#extended-support-release-esr)
 
 **Release day: August 24, 2023**
