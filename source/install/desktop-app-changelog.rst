@@ -6,19 +6,68 @@ Desktop application changelog
 
 Latest Mattermost Desktop App releases:
 
+- `Release v5.5 <#id1>`_
 - `Release v5.4 <#id1>`_
 - `Release v5.3 <#id3>`_
 - `Release v5.2 <#id16>`_
 - `Release v5.1 <#id32>`_
 - `Release v5.0 <#id47>`_
-- `Release v4.7 <#id62>`_
+
+Release v5.5
+--------------
+
+**Release Day: September 15, 2023**
+
+**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/latest>`_
+
+Compatibility
+~~~~~~~~~~~~~~~
+
+- Desktop App is supported on any supported Extended Support Release or a newer Mattermost server version.
+- Updated Chromium minimum supported version to 116+.
+
+Improvements
+~~~~~~~~~~~~~~~
+
+All Platforms
+^^^^^^^^^^^^^
+
+- Set the minimum window width to 600px.
+
+Architectural Changes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Major version upgrade of Electron to v26.1.0. Electron is the underlying technology used to build the Desktop App.
+
+Bug Fixes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+All Platforms
+^^^^^^^^^^^^^
+
+- Fixed a crash in diagnostics when the server was unreachable.
+- Fixed bad user feedback on the server URL validation when plugins were disabled.
+- Fixed an issue where auto-updating the app wouldn't be properly disabled.
+
+Known Issues
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Users seeing an endless "Loading..." screen when attempting to log in to the app may need to manually remove their cache directory. For MacOS it is located in ``/Users/<username>/Library/Containers/Mattermost/Data/Library/Application Support/Mattermost`` and for Windows it is located in ``Users/<username>/AppData/Roaming/Mattermost``.
+- On Linux, a left-click on the Mattermost tray icon doesn't open the app window but opens the tray menu.
+- Crashes might be be experienced in some Linux desktop clients due to an upstream bug in the ``libnotifyapp`` library. A recommended workaround is to disable the Mattermost system tray icon via Desktop Settings.
+- On apps using GPO configurations, when adding a second server tab, it's possible to drag and drop tabs, but they'll jump back to the original position when releasing the mouse.
+
+Contributors
+~~~~~~~~~~~~~~
+
+- `apollo13 <https://github.com/apollo13>`_, `cpoile <https://github.com/cpoile>`_, `devinbinnie <https://github.com/devinbinnie>`_, `Partizann <https://github.com/Partizann>`_.
 
 Release v5.4
 --------------
 
 **Release Day: June 19, 2023**
 
-**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/latest>`_
+**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v5.4.0>`_
 
 Compatibility
 ~~~~~~~~~~~~~~~
