@@ -22,9 +22,6 @@ Latest Mattermost Releases:
 
 **IMPORTANT:** If you upgrade from a release earlier than v8.1, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
 
-### Compatibility
- - Updated the minimum required Edge version to 112+.
-
 ### Improvements
 
 #### User Interface (UI)
