@@ -10,6 +10,7 @@ Learn how to install, deploy, and scale Mattermost for teams and organizations o
     :maxdepth: 1
     :hidden:
 
+    Mattermost changelog </deploy/mattermost-changelog>
     Prepare your Mattermost database </install/prepare-mattermost-database>
     Deploy on Ubuntu </install/install-ubuntu>
     Deploy using Docker </install/install-docker>
@@ -18,6 +19,7 @@ Learn how to install, deploy, and scale Mattermost for teams and organizations o
     Deploy using Kubernetes </install/install-kubernetes>
     Deploy on Red Hat </install/install-rhel-8>
 
+* :doc:`Mattermost changelog </deploy/mattermost-changelog>`
 * :doc:`Prepare your Mattermost database </install/prepare-mattermost-database>` - Learn how to prepare and configure a database for Mattermost.
 * :doc:`Deploy on Ubuntu </install/install-ubuntu>` - Signed packages direct from Mattermost featuring a single command for install and upgrades.
 * `Deploy using Docker </install/install-docker.html#deploy-mattermost-on-docker-for-production-use>`__ - The fastest way to try Mattermost and a great single server installation option.
