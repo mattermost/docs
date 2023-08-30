@@ -121,7 +121,8 @@ Search limitations on MySQL:
 - Hashtags or recent mentions of usernames containing a dot do not return search results.
 - The migration system requires the MySQL database user to have additional `EXECUTE`, `CREATE ROUTINE`, `ALTER ROUTINE` and `REFERENCES` privileges to run schema migrations.
 
-**MySQL 8 Support**:
+MySQL 8 Support:
+^^^^^^^^^^^^^^^^
 
 In MySQL 8.0.4, the default authentication plugin was changed from ``mysql_native_password`` to ``caching_sha2_password`` (https://mysqlserverteam.com/mysql-8-0-4-new-default-authentication-plugin-caching_sha2_password/). Therefore, you will need to enable ``mysql_native_password`` by adding the following entry in your MySQL configuration file:
 
