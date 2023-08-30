@@ -19,6 +19,7 @@ Latest Mattermost Mobile Apps releases:
  - iPhone 5s devices and later with iOS 12.1+ is required.
 
 ### Improvements
+ - Calls: Added incoming call notifications for Direct Message and Group Message calls.
  - Added some performance improvements.
  - Removed unneeded requests to the server with malformed mentions.
  - Adds a snackbar info when the ``Copy Info`` button is clicked on the **About** screen.
