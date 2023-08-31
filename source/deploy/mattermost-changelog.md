@@ -139,12 +139,12 @@ See [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgr
 
 - **New End User Training**
   - We’re introducing [9 new training modules](https://academy.mattermost.com/p/mattermost-end-user-onboarding) dedicated to educating users on the key components of the Mattermost platform and an additional [10 new use case modules](https://academy.mattermost.com/courses/category/use-case-training) tackling technical scenarios within DevOps, Security Ops, and Incident Management.
-
 :::
 
 ### Improvements
 
-#### User interface (UI)
+::::{tabs}
+:::{tab} User interface (UI)
 - Persistent notifications (Professional and Enterprise Plans) allow users to notify recipients repeatedly until action is taken on an urgent message. Check out [our documentation](https://docs.mattermost.com/channels/message-priority.html#send-persistent-notifications) for more details.
 - The apps bar is now enabled by default for on-prem servers. ``ExperimentalSettings.EnableAppBar`` was also renamed to ``ExperimentalSettings.DisableAppBar``. See more details at:
   - https://docs.mattermost.com/configure/experimental-configuration-settings.html#disable-app-bar 
@@ -177,8 +177,8 @@ See [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgr
 - Prepackaged Playbooks plugin version 1.37.0.
 - Added support to specify different desktop notification sounds per channel.
 - Calls: Ringing sounds can be enabled/disabled and selected in the **Desktop Notifications** preferences panel.
-
-#### Administration
+:::
+:::{tab} Administration
 - Added a new ``ConfigurationWillBeSaved`` plugin hook which is invoked before the configuration object is committed to the backing store.
 - Admins can now specify index names to ignore while purging indexes from Elasticsearch with the ``ElasticsearchSettings.IgnoredPurgeIndexes`` setting.
 - Added an option to use the German HPNS notification proxy.
@@ -199,15 +199,15 @@ See [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgr
 - Updated Docker Base Image from Debian to Ubuntu 22.04 LTS.
 - Type-generated settings will now be generated (only for future generations) with a URL-safe version of base64 encoding.
 - Mattermost is now resilient against database replica outages and will dynamically choose a replica if it's alive. Also a config parameter ``ReplicaMonitorIntervalSeconds`` was added and the default value is 5. This controls how frequently unhealthy replicas will be monitored for liveness check.
-
-### Performance
+:::
+:::{tab} Performance
 - Improved the performance of webapp related to timezone calculations.
 - Improved performance of code used for post list screen reader support.
-
-### API Changes
+:::
+:::{tab} API Changes
 - An underscore is now used in the timeline API (``event-id`` -> ``event_id``) for consistency with other API arguments.
-
-### Bug fixes
+:::
+:::{tab} Bug fixes
 - Fixed a scrolling issue in the purchase modals.
 - Fixed an issue where the experimental Shared Channels feature failed to synchronize if a previously removed table column was still present.
 - Fixed an issue where clicking on a channel link (for a channel the user was not a part of) caused the webapp to refresh, dropping the user from a call.
@@ -238,8 +238,8 @@ See [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgr
 - Fixed an issue where Elasticsearch didn't properly start on startup when enabled. Also added a missing ``IsEnabled`` method to Elasticsearch.
 - Fixed an issue where text couldn't be copied from the post textbox.
 - Fixed an issue where using **SHIFT+TAB** with a screen reader placed the cursor focus at the bottom of the channel rather than at the post that was linked to.
-
-### Known issues
+:::
+:::{tab} Known issues
 - White screen might appear when creating a slash command [MM-53665](https://mattermost.atlassian.net/browse/MM-53665).
 - When sending a draft message in a Thread, the message is not cleared if the thread is open in the right-hand side [MM-53520](https://mattermost.atlassian.net/browse/MM-53520).
 - Channel and team names are missing from **Saved Posts** in the right-hand side [MM-53636](https://mattermost.atlassian.net/browse/MM-53636).
@@ -252,6 +252,8 @@ See [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgr
 - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
 - The Playbooks left-hand sidebar doesn't update when a user is added to a run or playbook without a refresh.
 - If a user isn't a member of a configured broadcast channel, posting a status update might fail without any error feedback. As a temporary workaround, join the configured broadcast channels, or remove those channels from the run configuration.
+:::
+::::
 
 ----
 
@@ -260,16 +262,17 @@ See [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgr
 :name: self-hosted
 :::
 
-### Go version
+::::{tabs}
+:::{tab} Go version
 - v8.0 is built with Go ``v1.19.5``.
-
-### Open source components
+:::
+:::{tab} Open source components
 - Added ``date-fns`` to https://github.com/mattermost/mattermost/.
-
-### config.json
+:::
+:::{tab} config.json
 Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
 
-#### Changes to all plans
+**Changes to all plans**
 - Removed ``EnableInactivityEmail`` config setting.
 - Added a new config setting section ``ProductSettings``.
 - Under ``ExperimentalSettings`` in ``config.json``:
@@ -278,14 +281,15 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
   - Added ``DisableAppBar`` to enable apps bar by default.
 - Three configuration fields have been added, ``LogSettings.AdvancedLoggingJSON``, ``ExperimentalAuditSettings.AdvancedLoggingJSON``, and ``NotificationLogSettings.AdvancedLoggingJSON`` which support multi-line JSON, escaped JSON as a string, or a filename that points to a file containing JSON.  The ``AdvancedLoggingConfig`` fields have been deprecated.
 
-
-#### Changes to Professional and Enterprise plans
+**Changes to Professional and Enterprise plans**
 - Under ``ServiceSettings`` in ``config.json``:
   - Added new configuration settings ``AllowPersistentNotifications``, ``PersistentNotificationIntervalMinutes``, ``PersistentNotificationMaxCount``, ``PersistentNotificationMaxRecipients``, to add a persistent notification option when sending urgent priority posts.
 
-#### Changes to Enterprise plan
+**Changes to Enterprise plan only**
 - Under ``ElasticsearchSettings`` in ``config.json``:
   - Now you can specify index names to ignore while purging indexes from Elasticsearch with the ``IgnoredPurgeIndexes`` setting.
+:::
+::::
 
 ### Contributors
 
@@ -349,21 +353,22 @@ Release highlights
 
 ### Improvements
 
-::::{tab-set}
-:::{tab-item} Tab 1
-:sync: tab1
-Tab one
+::::{tabs}
+:::{tab} Tab A
+I've got a single tab working! Now to figure out how to add additional tabs!
 :::
-
-:::{tab-item} Tab 2
-:sync: tab2
-Tab two
+:::{tab} Tab B
+Does Tab B work?
 :::
 ::::
 
 #### User interface (UI)
 
+text
+
 #### Administration
+
+text
 
 ### Bug fixes
 
