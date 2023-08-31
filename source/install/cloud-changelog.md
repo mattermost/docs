@@ -4,12 +4,45 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 
 Latest Mattermost Cloud releases:
 
+- [Release 2023-09-14](#release-2023-09-14)
 - [Release 2023-08-29](#release-2023-08-29)
 - [Release 2023-08-09](#release-2023-08-09)
 - [Release 2023-08-03](#release-2023-08-03)
 - [Release 2023-07-26](#release-2023-07-26)
 - [Release 2023-07-20](#release-2023-07-20)
-- [Release 2023-07-19](#release-2023-07-19)
+
+## Release 2023-09-14
+
+### Compatibility
+ - Updated Chromium minimum supported version to 116+.
+
+### Improvements
+
+#### User Interface (UI)
+ - Added a **Cancel** button to the **Delete category** modal.
+ - Added the ability to resize the channel sidebar and right-hand sidebar.
+ - Added two new filtering options (show all channel types, show private channels) to the **Browse channels** modal.
+
+#### Plugin Changes
+ - Added new frontend plugin extension point for the new messages separator bar.
+ - Added a new plugin extensibility point to add actions to the code blocks.
+ - Added the plugin hook ``UserHasBeenDeactivated``.
+ - Added a new server side plugin API method to set the searchable content for a file info (``SetFileSearchableContent``). The ``MessageHasBeenPosted`` plugin hook is now executed after the attachments are linked to the post.
+
+#### Administration
+ - Added ``mattermost-plugin-api`` into the mono repo.
+ - Added a new config setting ``TeamSettings.EnableJoinLeaveMessageByDefault`` that sets the default value for ``UserSetting``, ``ADVANCED_FILTER_JOIN_LEAVE``.
+
+#### API Changes
+ - Added the ``X-Forwarded-For`` request header to the audit stream for all Rest API calls.
+ - Added API endpoint ``POST /api/v4/user/login/desktop_login``. Modified OAuth/SAML flows to include ``desktop_login`` where applicable.
+
+### Bug Fixes
+ - Fixed keyboard support for the left-hand side channel menu, the left-hand side category menu, and the post dot menu.
+ - Fixed display name in the ``comment_on`` component.
+
+### Known Issues
+ - 
 
 ## Release 2023-08-29
 
