@@ -554,6 +554,7 @@ Mattermost v7.9.0 contains a low severity level security fix. [Upgrading](https:
   - Mattermost v7.8.10 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Mattermost v7.10.6 contains no database or functional changes.
   - Fixed an issue with missing time zone metadata in the Docker container.
+  - Replaced Gfycat with Giphy in the gif picker.
 - **v7.8.9, released 2023-07-26**
   - Mattermost v7.8.9 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Mattermost v7.8.9 contains no database or functional changes.
