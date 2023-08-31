@@ -22,7 +22,7 @@ Latest Mattermost Mobile Apps releases:
  - Calls: Added incoming call notifications for Direct Message and Group Message calls.
  - Added some performance improvements.
  - Removed unneeded requests to the server with malformed mentions.
- - Adds snackbar info when the ``Copy Info`` button is tapped on the **About** screen.
+ - Added toast info when the ``Copy Info`` button is tapped on the **About** screen.
 
 ### Bug Fixes
  - Removed some inconsistencies between mobile and browser in the way Direct Messages are shown in the sidebar.
