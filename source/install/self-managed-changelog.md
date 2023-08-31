@@ -66,7 +66,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 #### Changes to all plans:
  - Under ``ServiceSettings`` in the ``config.json``:
-    - Added ``DefaultGiphySdkKey`` to replace Gfycat with Giphy in the gif picker.
+    - Added ``GiphySdkKey`` to replace Gfycat with Giphy in the gif picker.
 
 ### Go Version
  - v9.0 is built with Go ``v1.19.5``.
