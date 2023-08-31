@@ -157,7 +157,9 @@ Once we set the schema to a desired state, we can start migrating the **data** b
         $$ UPDATE {{ .source_schema }}.db_migrations set name='add_createat_to_teamembers' where version=92; $$,
         $$ CREATE INDEX IF NOT EXISTS idx_posts_message_txt ON {{ .source_schema }}.posts USING gin(to_tsvector('english', message)); $$,
         $$ CREATE INDEX IF NOT EXISTS idx_fileinfo_content_txt ON {{ .source_schema }}.fileinfo USING gin(to_tsvector('english', content)); $$,
-        $$ ALTER SCHEMA {{ .source_schema }} RENAME TO public; $$;
+        $$ ALTER SCHEMA {{ .source_schema }} RENAME TO public; $$,
+        $$ SELECT pg_catalog.set_config('search_path', '"$user", public', false); $$,
+        $$ ALTER USER {{ .pg_user }} SET SEARCH_PATH TO 'public'; $$;
 
 Once you save this configuration file, e.g. ``migration.load``, you can run the ``pgLoader`` with the following command:
 
@@ -301,7 +303,7 @@ Once we are ready to migrate, we can start migrating the **schema** and the **da
        $$ CREATE INDEX IF NOT EXISTS ir_playbookmember_playbookid on {{ .source_schema }}.IR_PlaybookMember(PlaybookId); $$,
        $$ ALTER SCHEMA {{ .source_schema }} RENAME TO public; $$,
        $$ SELECT pg_catalog.set_config('search_path', '"$user", public', false); $$,
-       $$ ALTER USER mmuser SET SEARCH_PATH TO 'public'; $$;
+       $$ ALTER USER {{ .pg_user }} SET SEARCH_PATH TO 'public'; $$;
 
 .. code:: bash
 
@@ -358,7 +360,7 @@ Once we are ready to migrate, we can start migrating the **schema** and the **da
        $$ UPDATE {{ .source_schema }}.focalboard_users SET `props` = "{}" WHERE `fields` = ""; $$,
        $$ ALTER SCHEMA {{ .source_schema }} RENAME TO public; $$,
        $$ SELECT pg_catalog.set_config('search_path', '"$user", public', false); $$,
-       $$ ALTER USER mmuser SET SEARCH_PATH TO 'public'; $$;
+       $$ ALTER USER {{ .pg_user }} SET SEARCH_PATH TO 'public'; $$;
 
 .. code:: bash
 
