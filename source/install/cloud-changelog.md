@@ -11,7 +11,7 @@ Latest Mattermost Cloud releases:
 - [Release 2023-07-20](#release-2023-07-20)
 - [Release 2023-07-19](#release-2023-07-19)
 
-## Release 2023-08-31
+## Release 2023-08-29
 
 ### Improvements
 
