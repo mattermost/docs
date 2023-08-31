@@ -351,6 +351,11 @@ Once we are ready to migrate, we can start migrating the **schema** and the **da
        $$ ALTER SCHEMA public RENAME TO {{ .source_schema }}; $$
 
    AFTER LOAD DO
+       $$ UPDATE {{ .source_schema }}.focalboard_blocks SET `fields` = "{}" WHERE `fields` = ""; $$,
+       $$ UPDATE {{ .source_schema }}.focalboard_blocks_history SET `fields` = "{}" WHERE `fields` = ""; $$,
+       $$ UPDATE {{ .source_schema }}.focalboard_sessions SET `props` = "{}" WHERE `fields` = ""; $$,
+       $$ UPDATE {{ .source_schema }}.focalboard_teams SET `settings` = "{}" WHERE `fields` = ""; $$,
+       $$ UPDATE {{ .source_schema }}.focalboard_users SET `props` = "{}" WHERE `fields` = ""; $$,
        $$ ALTER SCHEMA {{ .source_schema }} RENAME TO public; $$,
        $$ SELECT pg_catalog.set_config('search_path', '"$user", public', false); $$,
        $$ ALTER USER mmuser SET SEARCH_PATH TO 'public'; $$;
