@@ -14,7 +14,7 @@ Latest Mattermost Releases:
 
 ## Release v8.1 - [Extended Support Release](https://docs.mattermost.com/upgrade/release-definitions.html#extended-support-release-esr)
 
-- **8.1.1, released **
+- **8.1.1, released 2023-09-01**
   - Mattermost v8.1.1 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Mattermost v8.1.1 contains no database or functional changes.
   - Fixed an issue preventing successful activation of trial licenses.
@@ -102,7 +102,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ## Release v8.0 - [Major Release](https://docs.mattermost.com/upgrade/release-definitions.html#major-release)
 
-- **v8.0.2, released **
+- **v8.0.2, released 2023-09-01**
   - Mattermost v8.0.2 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Mattermost v8.0.2 contains no database or functional changes.
   - Fixed an issue with missing time zone metadata in the Docker container.
@@ -551,7 +551,7 @@ Mattermost v7.9.0 contains a low severity level security fix. [Upgrading](https:
 
 ## Release v7.8 - [Extended Support Release](https://docs.mattermost.com/upgrade/release-definitions.html#extended-support-release-esr)
 
-- **v7.8.10, released **
+- **v7.8.10, released 2023-09-01**
   - Mattermost v7.8.10 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Mattermost v7.10.6 contains no database or functional changes.
   - Fixed an issue with missing time zone metadata in the Docker container.
