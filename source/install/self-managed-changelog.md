@@ -21,6 +21,7 @@ Latest Mattermost Releases:
   - Fixed several issues with loading of licenses.
   - Fixed an issue where text copied from Microsoft OneNote pasted it as an image.
   - Replaced Gfycat with Giphy in the gif picker.
+  - Fixed an issue where compliance export jobs were not able to start after disabling and enabling the compliance export.
 - **8.1.0, released 2023-08-24**
   - Original 8.1.0 release
 
