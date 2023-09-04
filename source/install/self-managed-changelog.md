@@ -73,6 +73,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ### Open Source Components
  - Added ``@giphy/js-fetch-api`` and ``@giphy/react-components`` to https://github.com/mattermost/mattermost/.
+ - Added ``@react-native/eslint-config``, ``@react-native/metro-config``, and ``@tsconfig/react-native`` to https://github.com/mattermost/mattermost-mobile/.
 
 ### Known Issues
  - Adding an @mention at the start of a post draft and pressing the left or right arrow key can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
