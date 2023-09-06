@@ -309,7 +309,7 @@ Once we are ready to migrate, we can start migrating the **schema** and the **da
 
    pgLoader playbooks.load > playbooks_migration.log
 
-Boards
+Focalboard
 ~~~~~~
 
 As of ``v9.0`` Boards will transition to being fully community supported. Hence this guide covers only the version ``v7.10.x`` of the schema. `Official announcement <https://docs.mattermost.com/install/deprecated-features.html#mattermost-server-v9-0-0>`__.
