@@ -24,7 +24,7 @@ The following integrations are pre-packaged with Mattermost installations:
 
   You may need to configure and enable pre-packaged Mattermost plugins before you using them. See the `Mattermost plugin configuration settings </configure/plugins-configuration-settings.html>`__ documentation for details on enabling and configuring these plugins.
 
-Popular third-party Mattermost integrations
+Popular third-party community integrations
 -------------------------------------------
 
 On the Mattermost Marketplace, you'll find popular integrations such as:
