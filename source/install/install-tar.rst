@@ -44,7 +44,11 @@ You can install the Mattermost Server on any 64-bit Linux system using the tarba
   :local:
   :depth: 1
 
-Deployment includes 3 steps: `download <#download>`__, `install <#install>`__, and `setup <#setup>`__.
+.. note::
+
+  You need a PostgreSQL database. See the `database preparation <install/prepare-mattermost-database.html>`__ documentation for details on this prerequisite.
+
+A Mattermost deployment includes 3 steps: `download <#download>`__, `install <#install>`__, and `setup <#setup>`__.
 
 Download
 --------
