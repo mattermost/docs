@@ -50,6 +50,7 @@ All Platforms
 - Fixed a crash in diagnostics when the server was unreachable.
 - Fixed bad user feedback on the server URL validation when plugins were disabled.
 - Fixed an issue where auto-updating the app wouldn't be properly disabled.
+- Fixed an issue where changes in the OS dark/light mode did not reflect immediately in the window top bar.
 
 Known Issues
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
