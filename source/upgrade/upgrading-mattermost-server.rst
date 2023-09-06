@@ -28,7 +28,7 @@ Make sure that you understand how to `prepare for your upgrade </upgrade/prepare
 
   - If you don't know its location, open the System Console and go to **Environment > File Storage**, then read the value in **Local Storage Directory**. 
   - Paths are relative to the ``mattermost`` directory. For example, if the local storage directory is ``./data/`` then the absolute path is ``{install-path}/mattermost/data``.
-- **Database disk space**: If you're upgrading a Mattermost deployment on the same server as your database, we recommend that you have sufficient disk space available. Double your database size should be sufficient, but more is always better.
+- **Database disk space**: If you're upgrading a Mattermost deployment on the same server as your database, we recommend that you have sufficient disk space available. Doubling your database size should be sufficient, but more is always better.
 
 Upgrade Mattermost Server
 --------------------------
