@@ -18,6 +18,8 @@ Latest Mattermost Mobile Apps releases:
  - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
  - iPhone 5s devices and later with iOS 12.1+ is required.
 
+Note: Mattermost Mobile App v2.8.0 contains a medium level security fix. Updating is recommended. Details will be posted on our security updates page 30 days after release as per the Mattermost Responsible Disclosure Policy.
+
 ### Improvements
  - Calls: Added incoming call notifications for Direct Message and Group Message calls.
  - Added some performance improvements.
