@@ -24,11 +24,11 @@ Below is an overview of our products, features, security, integrations, licensin
 
 Mattermost is an open source platform that provides secure collaboration for technical and operational teams that work in environments with complex nation-state level security and trust requirements. 
 
-Mattermost contains three key tools:
+With Mattermost you can:
 
-* :doc:`Channels </guides/channels>` - Stay connected with your team via 1:1 and group messages, voice calls, and screensharing.
-* :doc:`Playbooks </guides/playbooks>` - Build and configure repeatable processes with workflow automation to achieve specific and predictable outcomes.
-* :doc:`Boards </guides/boards>` - Manage projects and tasks in a Kanban board structure to help your team hit key milestones.
+* :doc:`Connect and collaborate </guides/collaborate>` - Stay connected with your team via 1:1 and group messages, voice calls, and screensharing.
+* :doc:`Build repeatable processes </guides/repeatable-processes>` - Build and configure repeatable processes with workflow automation to achieve specific and predictable outcomes.
+* :doc:`Customize your preferences` </guides/preferences>` - Match the way you work by adjusting your notification settings, changing your theme, or updating your profile settings.
 
 This section provides an overview of Mattermost products, features, security, integrations, licensing, subscriptions, authentication, and compliance support.
 

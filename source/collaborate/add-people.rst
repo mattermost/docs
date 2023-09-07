@@ -4,7 +4,7 @@ Add people to your workspace
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Getting people set up with a Mattermost account is something that happens when deploying and configuring the Mattermost workspace. A Mattermost system admin can `provision Mattermost users </onboard/user-provisioning-workflows.html>`__ using one or more of the following methods:
+Getting people set up with a Mattermost account is typically something that admins do when deploying and configuring the Mattermost workspace. A Mattermost admin can `provision Mattermost users </onboard/user-provisioning-workflows.html>`__ using one or more of the following methods:
 
 - `Enable account creation </configure/authentication-configuration-settings.html#enable-account-creation>`__.
 - Use `mmctl user create </manage/mmctl-command-line-tool.html#mmctl-user-create>`__ or Mattermost `APIs <https://api.mattermost.com/#tag/users>`__ to create user accounts.

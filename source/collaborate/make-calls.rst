@@ -1,10 +1,12 @@
-Start a call 
+Make calls 
 ============
 
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 From Mattermost v7.0, you can make voice calls and share your screen in channels, group messages, and direct messages in both Mattermost Cloud and Mattermost self-hosted deployments.
+
+On this page:
 
 - `Start a call <#start-a-call>`__
 - `Emojis <#emojis>`__

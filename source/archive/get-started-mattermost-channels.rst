@@ -1,8 +1,11 @@
-Get started with Mattermost Channels
-====================================
+Collaborate within channels
+===========================
 
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
+
+
+
 
 Using a web browser or the desktop app, you can access Mattermost Channels by selecting **Channels** from the **product menu** |product-list|. On mobile, you log in directly to Mattermost Channels.
 
@@ -12,6 +15,13 @@ Using a web browser or the desktop app, you can access Mattermost Channels by se
 Channels are where you can communicate with your team about various topics or projects. The channels you're a member of and useful channel management tools are available in the channel sidebar to the left. 
 
 See our `Mattermost Channels </guides/channels.html>`__ documentation for details on the many ways you can use Channels to enable team collaboration.
+
+Channels, messages, and conversations
+-------------------------------------
+
+Channels are used to organize conversations across different topics. Find available channels in the left-hand panel. There are four types of channels: public channels, private channels, direct messages, and group messages. See the `Channel Types </channels/channel-types.html>`__ documentation for more information.
+
+Sending messages, replying to messages, and participating in conversation threads are important ways to keep conversations active with your team. See the following topics to learn more about working with channels.
 
 Channels and direct messages
 ----------------------------

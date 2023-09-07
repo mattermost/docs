@@ -7,6 +7,14 @@ About teams
 .. |plus| image:: ../images/plus_F0415.svg
   :alt: The Plus icon provides access to channel and direct message functionality.
 
+.. toctree::
+   :maxdepth: 1
+   :hidden:
+   :titlesonly:
+
+   Team settings </collaborate/team-settings>
+   Team keyboard shortcuts </collaborate/team-keyboard-shortcuts>
+
 .. contents:: On this page
   :backlinks: top
   :depth: 1

@@ -4,14 +4,14 @@ Keyboard shortcuts for Channels
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Keyboard shortcuts for Mattermost Channels help you make more efficient use of your keyboard in a web browser or the desktop app.
+Keyboard shortcuts help you make more efficient use of your keyboard in a web browser or the desktop app.
 
 .. tip::
 
   Display a list of available keyboard shortcuts by pressing :kbd:`Ctrl` :kbd:`/` on Windows or Linux, pressing :kbd:`⌘` :kbd:`/` on Mac, or using the ``/shortcuts`` slash command.
 
-Navigation shortcuts for Mattermost Channels
---------------------------------------------
+Navigation shortcuts for channels
+---------------------------------
 
 The following keyboard shortcuts are supported in all `supported browsers </install/software-hardware-requirements.html#software-requirements>`__ and in the Mattermost desktop app.
 

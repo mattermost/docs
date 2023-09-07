@@ -1,16 +1,25 @@
-Log in to Mattermost
+Access your workspace
 =====================
 
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Mattermost is accessible through a server link. You'll receive the server link from your Mattermost system admin or through an email invitation. You can use that link in a web browser, or as a server connection in the `desktop app </install/desktop-app-install.html>`__, or the `mobile app </deploy/use-prebuilt-mobile-apps.html>`__.
+Mattermost is accessible through a URL link. You'll receive a link from your Mattermost system admin or through an email invitation. You can use that link in a web browser, or as a server connection in the `desktop app </install/desktop-app-install.html>`__, the `mobile app for iOS </install/install-ios-app.html>`__, or the `mobile app for Android </install/install-android-app.html>`__.
 
 .. tip::
-  
-  - Mattermost Cloud customers can log into their Cloud workspaces from the `Cloud Workspace Connection <https://customers.mattermost.com/cloud/connect-workspace>`__ page by specifying their company or domain name.
+
+  - Is your Mattermost hosted externally? You can access Cloud workspaces from the `Cloud Workspace Connection <https://customers.mattermost.com/cloud/connect-workspace>`__ page by specifying your company or domain name.
   - Can't find your Mattermost link? Ask your company's IT department or your Mattermost system admin for your organization's **Mattermost Site URL**. It'll look something like ``https://example.com/company/mattermost``, ``mattermost.yourcompanydomain.com``, or ``chat.yourcompanydomain.com``. These URLs could also end in ``.net``.
 
+.. toctree::
+  :maxdepth: 1
+  :hidden:
+  :titlesonly:
+
+  Use the desktop app </install/desktop-app-install>
+  Use the iOS mobile app </install/install-ios-app>
+  Use the Android mobile app </install/install-android-app>
+  Log out of Mattermost </collaborate/log-out>
 
 .. tabs::
 

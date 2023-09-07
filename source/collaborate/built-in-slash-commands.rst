@@ -1,5 +1,5 @@
-Interact with channels
-======================
+Use built-in slash commands
+============================
 
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:

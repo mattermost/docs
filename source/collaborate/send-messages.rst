@@ -16,6 +16,23 @@ Send messages
 .. |smile-icon| image:: ../images/smile-icon.png
   :alt: Use the Smile icon to add emojis to your message.
 
+
+Send messages
+-------------
+
+.. |send-icon| image:: ../images/send_F048A.svg
+  :alt: Select the Send icon to post your message.
+
+Enter a message in the text field, then select **Send** |send-icon| to send the message. You can include images and file attachments to your messages by:
+
+- copying and pasting images.
+- dragging-and-drop image files into the text field.
+- selecting the **Attachment** |attachment| icon.
+
+.. |attachment| image:: ../images/paperclip_F03E2.svg
+  :alt: Use the Attachment icon to add images or files to your messages.
+
+
 Compose a message by typing into the text box at the bottom of the Mattermost screen, then select the **Send** |send-icon| icon.
 
 .. tabs::

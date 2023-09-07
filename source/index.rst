@@ -18,10 +18,7 @@ Mattermost product documentation
    About Mattermost <overview/index>
    Deploy Mattermost <guides/deployment>
    Mattermost administration <guides/administration>
-   Welcome to Mattermost <guides/welcome-to-mattermost>
-   Mattermost Channels <guides/channels>
-   Mattermost Playbooks <guides/playbooks>
-   Mattermost Boards <guides/boards>
+   Use Mattermost <guides/use-mattermost>
    Mattermost for developers <https://developers.mattermost.com/>
    Get help with Mattermost <guides/get-help>
    Community chat <guides/community-chat>

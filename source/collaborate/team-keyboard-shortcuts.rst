@@ -4,14 +4,14 @@ Team keyboard shortcuts
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Keyboard shortcuts for Mattermost teams help you make a more efficient use of your keyboard when using Mattermost in a web browser or the desktop app.
+Keyboard shortcuts help you make a more efficient use of your keyboard when navigating Mattermost teams in a web browser or the desktop app.
 
 .. tip::
 
-  Display a list of available keyboard shortcuts by pressing :kbd:`Ctrl` :kbd:`/` on Windows or Linux, pressing :kbd:`⌘` :kbd:`/` on Mac, or using the ``/shortcuts`` slash command.
+  See  a list of available keyboard shortcuts any time by pressing :kbd:`Ctrl` :kbd:`/` on Windows or Linux, pressing :kbd:`⌘` :kbd:`/` on Mac, or using the ``/shortcuts`` slash command.
 
-Navigation shortcuts for Mattermost Channels
---------------------------------------------
+Team navigation shortcuts
+--------------------------
 
 The following keyboard shortcuts are supported in all `supported browsers </install/software-hardware-requirements.html#software-requirements>`__ and in the Mattermost Desktop App.
 
