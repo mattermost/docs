@@ -23,6 +23,8 @@ Latest Mattermost Mobile Apps releases:
  - Added some performance improvements.
  - Removed unneeded requests to the server with malformed mentions.
  - Added toast info when the ``Copy Info`` button is tapped on the **About** screen.
+ - Slightly improved performance of Markdown rendering.
+ - Added a limit to the maximum complexity of Markdown rendered.
 
 ### Bug Fixes
  - Removed some inconsistencies between mobile and browser in the way Direct Messages are shown in the sidebar.
