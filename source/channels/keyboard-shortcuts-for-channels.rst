@@ -31,7 +31,7 @@ The following keyboard shortcuts are supported in all `supported browsers </inst
 +-------------------------------------+------------------------------+----------------------------------------------------------------------------------+
 | :kbd:`Alt` + select channel         | :kbd:`⌥` + select channel    | Mark the last post in the channel as unread.                                     |
 +-------------------------------------+------------------------------+----------------------------------------------------------------------------------+
-| :kbd:`Ctrl` :kbd:`K`                | :kbd:`⌘` :kbd:`K`            | Open the **Find Channels** dialog.                                               |
+| :kbd:`Ctrl` :kbd:`K`                | :kbd:`⌘` :kbd:`K`            | Open the **Find Channels** dialog. If text is highlighted, a hyperlink is created|
 +-------------------------------------+------------------------------+----------------------------------------------------------------------------------+
 | :kbd:`Ctrl` :kbd:`Shift` :kbd:`K`   | :kbd:`⌘` :kbd:`⇧` :kbd:`K`   | Open the **Direct Messages** dialog.                                             |
 +-------------------------------------+------------------------------+----------------------------------------------------------------------------------+
