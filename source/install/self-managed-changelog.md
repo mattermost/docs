@@ -59,7 +59,6 @@ Latest Mattermost Releases:
  - Fixed an issue where text copied from Microsoft OneNote is pasted as an image.
  - Fixed an issue preventing successful activation of trial licenses.
  - Fixed an issue where a custom group wouldn't get marked as a mention if it was not part of the webapp's local state.
- - Fixed several issues with loading of licenses.
  - Fixed an issue with the in-product marketplace theming.
 
 ### config.json
