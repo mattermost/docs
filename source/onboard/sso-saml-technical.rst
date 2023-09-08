@@ -132,10 +132,10 @@ Why does the ObjectGUID of a user in Mattermost differ from what I'm seeing in A
 
 The Active Directory Object-Guid attribute (LDAP display name `objectGUID`) is a 16 byte array which can be displayed in different ways. However, only Microsoft changes the encoding of the ObjectGUID. All the others keep it the same except for the different base (octal, decimal, hex), as follows:
 
-* The `ldapsearch` linux command displays it as base 64: `Hrz/HqNKnU+lCNTYHx9Ycw==`. This is also the format used in LDIF files.
+1. The `ldapsearch` linux command displays it as base 64: `Hrz/HqNKnU+lCNTYHx9Ycw==`. This is also the format used in LDIF files.
 
-* The [LDAP Golang package Mattermost uses](https://github.com/go-ldap/ldap)  emits the value as hexidecimal (base 16) array, with each byte separated by a backslash: `\1e\bc\ff\1e\a3\4a\9d\4f\a5\08\d4\d8\1f\1f\58\73`
+2. The `LDAP Golang package Mattermost uses <https://github.com/go-ldap/ldap>`_ emits the value as hexidecimal (base 16) array, with each byte separated by a backslash: `\1e\bc\ff\1e\a3\4a\9d\4f\a5\08\d4\d8\1f\1f\58\73`
 
-    You can remove the backslashes (`1ebcff1ea34a9d4fa508d4d81f1f5873`) and parse it with [Golang like this](https://play.golang.org/p/9b8iDPuz0Nm). The snippets prints the base 10 representation of each value: `[30 188 255 30 163 74 157 79 165 8 212 216 31 31 88 115]`
+  - You can remove the backslashes (`1ebcff1ea34a9d4fa508d4d81f1f5873`) and parse it with `Golang like this <https://play.golang.org/p/9b8iDPuz0Nm>`_. The snippets prints the base 10 representation of each value: `[30 188 255 30 163 74 157 79 165 8 212 216 31 31 88 115]`
 
-* Windows Powershell displays the value like this: `1effbc1e-4aa3-4f9d-a508-d4d81f1f5873`
+3. Windows Powershell displays the value like this: `1effbc1e-4aa3-4f9d-a508-d4d81f1f5873`
