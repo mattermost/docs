@@ -30,6 +30,7 @@ Latest Mattermost Releases:
  - Added functionality to bulk mark a whole channel category as read.
  - Removed Boards product tour code.
  - Replaced Gfycat with Giphy in the gif picker.
+ - Pre-packaged Calls version v0.19.0.
  - Updated Focalboard plugin version to 7.11.3.
  - Pre-packaged Playbooks version 1.38.1.
  - Upgraded prepackaged Zoom plugin to v1.6.2.
