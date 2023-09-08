@@ -22,6 +22,7 @@ Latest Mattermost Cloud releases:
  - Added a **Cancel** button to the **Delete category** modal.
  - Added the ability to resize the channel sidebar and right-hand sidebar.
  - Added two new filtering options (show all channel types, show private channels) to the **Browse channels** modal.
+ - Pre-packaged Calls version v0.19.0.
 
 #### Plugin Changes
  - Added new frontend plugin extension point for the new messages separator bar.
