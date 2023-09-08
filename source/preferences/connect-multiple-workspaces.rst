@@ -1,5 +1,5 @@
-Manage multiple server connections
-===================================
+Connect to multiple Mattermost workspaces
+=========================================
 
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:

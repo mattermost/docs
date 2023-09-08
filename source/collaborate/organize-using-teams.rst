@@ -1,5 +1,5 @@
-About teams
-===========
+Organize using teams
+====================
 
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:

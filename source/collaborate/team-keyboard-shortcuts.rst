@@ -10,8 +10,8 @@ Keyboard shortcuts help you make a more efficient use of your keyboard when navi
 
   See  a list of available keyboard shortcuts any time by pressing :kbd:`Ctrl` :kbd:`/` on Windows or Linux, pressing :kbd:`⌘` :kbd:`/` on Mac, or using the ``/shortcuts`` slash command.
 
-Team navigation shortcuts
---------------------------
+Team navigation
+---------------
 
 The following keyboard shortcuts are supported in all `supported browsers </install/software-hardware-requirements.html#software-requirements>`__ and in the Mattermost Desktop App.
 

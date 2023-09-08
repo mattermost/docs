@@ -26,8 +26,7 @@ Sending messages, replying to messages, and participating in conversation thread
 Channels and direct messages
 ----------------------------
 
-.. |plus| image:: ../images/plus_F0415.svg
-  :alt: The Plus icon provides access to channel and direct message functionality.
+
 
 Everyone who joins a Mattermost workspace is automatically added to two default channels: **Town Square** and **Off-Topic**. See our `Channel Types </channels/channel-types.html>`__ documentation for details.
 

@@ -34,7 +34,7 @@ Another example is a support incident playbook. The time to resolution metric ca
 When you delete configured metrics from a playbook, the data isn't deleted, but you no longer see those metrics in the dashboard. In addition, the corresponding metric field is removed from the retrospective form and from published retrospectives.
 
 Metrics dashboard
-^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~
 
 For each run, you can enter a value per metric under the retrospective section. This value can be based on whatever you are measuring, such as number of bugs found per run. 
 
@@ -54,6 +54,6 @@ The lower half of the page shows a list of finished runs with metrics values. Yo
    :alt: View and assess metrics for your playbook.
 
 Channel export
-^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~
 
 Exporting the contents of a channel requires the channel export plugin. See the `Channel Export plugin documentation <https://github.com/mattermost/mattermost-plugin-channel-export#readme>`_ for more information.
