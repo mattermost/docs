@@ -24,12 +24,6 @@ Latest Mattermost Cloud releases:
  - Added two new filtering options (show all channel types, show private channels) to the **Browse channels** modal.
  - Pre-packaged Calls version v0.19.0.
 
-#### Plugin Changes
- - Added new frontend plugin extension point for the new messages separator bar.
- - Added a new plugin extensibility point to add actions to the code blocks.
- - Added the plugin hook ``UserHasBeenDeactivated``.
- - Added a new server side plugin API method to set the searchable content for a file info (``SetFileSearchableContent``). The ``MessageHasBeenPosted`` plugin hook is now executed after the attachments are linked to the post.
-
 #### Administration
  - Added ``mattermost-plugin-api`` into the mono repo.
  - Added a new config setting ``TeamSettings.EnableJoinLeaveMessageByDefault`` that sets the default value for ``UserSetting``, ``ADVANCED_FILTER_JOIN_LEAVE``.
