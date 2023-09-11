@@ -130,7 +130,7 @@ No. When Mattermost is configured to use SAML for user authentication, the follo
 Why does the ObjectGUID of a user in Mattermost differ from what I'm seeing in ADFS?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The Active Directory Object-Guid attribute (LDAP display name `objectGUID`) is a 16 byte array which can be displayed in different ways. However, only Microsoft changes the encoding of the ObjectGUID. All the others keep it the same except for the different base (octal, decimal, hex), as follows:
+The Active Directory Object-Guid attribute (LDAP display name ``objectGUID``) is a 16 byte array which can be displayed in different ways. However, only Microsoft changes the encoding of the ObjectGUID. All the others keep it the same except for the different base (octal, decimal, hex), as follows:
 
 1. The ``ldapsearch`` linux command displays it as base 64: ``Hrz/HqNKnU+lCNTYHx9Ycw==``. This is also the format used in LDIF files.
 
