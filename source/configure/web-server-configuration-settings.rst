@@ -558,7 +558,7 @@ TLS cipher overwrites
 | - This setting only takes effect if you are using the built-in server binary directly, and not using a reverse proxy layer, such     |
 |   as NGINX.                                                                                                                          |
 | - See the ``ServerTLSSupportedCiphers`` variable in `/model/config.go                                                                |
-|   <https://github.com/mattermost/mattermost-server/blob/master/model/config.go>`__ for a list of ciphers considered secure.          |
+|   <https://github.com/mattermost/mattermost/blob/master/server/public/model/config.go>`__ for a list of ciphers considered secure.          |
 +--------------------------------------------------------+-----------------------------------------------------------------------------+
 
 .. config:setting:: web-goroutinehealththreshold

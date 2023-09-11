@@ -16,14 +16,16 @@ What can you customize?
 
 Using Mattermost in a web browser or the desktop app, you can customize your sidebar in the following ways:
 
-- `Create custom categories <#create-custom-categories>`__.
-- `Group and order channels into your categories <#organize-channels-in-categories>`__.
-- `Mute and unmute entire categories <#mute-and-unmute-categories>`__.
-- `Sort channels in each category <#sort-channels-in-categories>`__ manually, alphabetically, or by recent activity.
-- `Filter your sidebar to view unread channels only <#group-unread-channels-separately>`__, or choose to group unread messages into an **Unreads** category.
-- `Manage your direct messages <#manage-direct-messages>`__ by sorting them alphabetically or by recent activity, and by setting how many to display in your sidebar.
+- `Create custom categories <#create-custom-categories>`__
+- `Group and order channels into your categories <#organize-channels-in-categories>`__
+- `Mute and unmute entire categories <#mute-and-unmute-categories>`__
+- `Mark entire categories as read <#mark-channel-categories-as-read>`__
+- `Sort channels in each category <#sort-channels-in-categories>`__ manually, alphabetically, or by recent activity
+- `Filter your sidebar to view unread channels only <#group-unread-channels-separately>`__, or choose to group unread messages into an **Unreads** category
+- `Manage your direct messages <#manage-direct-messages>`__ by sorting them alphabetically or by recent activity, and by setting how many to display in your sidebar
 
-  .. image:: ../images/channel_sidebar_updates.gif
+.. image:: ../images/channel_sidebar_updates.gif
+   :alt: Organize your channel sidebar with channel categories.
 
 Create custom categories
 -------------------------
@@ -105,7 +107,7 @@ You can also specify a category destination for the current channel or conversat
 Mute and unmute categories
 ---------------------------
 
-When you mute or unmute a category, all channels within that category are also muted or unmuted. You can still selectively unmute specific channels within a muted category.
+When you mute or unmute a category, all channels within that category are also muted or unmuted. You can selectively unmute specific channels within a muted category.
 
 Select the **Category options** icon in the sidebar, then select **Mute Category**.
 
@@ -119,6 +121,13 @@ To unmute the category, select the **Category options** icon in the sidebar, the
 
 .. image:: ../images/mute-categories.gif
    :alt: Mute or unmute a category to mute or unmute all channels within that category. You can also selectively unmute specific channels within a muted category.
+
+Mark channel categories as read
+-------------------------------
+
+When you mark a channel category as read, all channels within that category are marked as read. You can selectively mark specific channels as unread where preferred.
+
+Select the **Category options** icon in the sidebar, then select **Mark category as read**.
 
 Sort channels in categories
 ----------------------------
