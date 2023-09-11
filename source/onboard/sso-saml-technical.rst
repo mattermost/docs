@@ -128,7 +128,7 @@ Can I update user attributes using the API?
 No. When Mattermost is configured to use SAML for user authentication, the following user attribute changes can't be made through the API:  first name, last name, position, nickname, email, profile image, or username. SAML must be the authoritative source for these user attributes.
 
 Why does the ObjectGUID of a user in Mattermost differ from what I'm seeing in ADFS?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The Active Directory Object-Guid attribute (LDAP display name `objectGUID`) is a 16 byte array which can be displayed in different ways. However, only Microsoft changes the encoding of the ObjectGUID. All the others keep it the same except for the different base (octal, decimal, hex), as follows:
 
