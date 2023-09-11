@@ -22,6 +22,23 @@ Latest Mattermost Releases:
 
 **IMPORTANT:** If you upgrade from a release earlier than v8.1, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
 
+### Highlights
+
+#### Dev/Sec/ChatOps in Strict Security Environments with Jira, Confluence, and Mattermost
+ - Accelerate mission-critical workflows that keep your team aligned and your data secure on [the Mattermost and Atlassian platforms](https://mattermost.com/atlassian/).
+
+#### Air-Gapped, Edge-Ready Generative AI with Defense Unicorn's LeapfrogAI
+ - Deploy and utilize local GenAI models in edge, air-gapped, and zero-trust environments with [LeapfrogAI and Mattermost](https://github.com/defenseunicorns/leapfrogai).
+
+#### AI-Accelerated Collaboration
+ - Mattermost partner Mobius Logic has enhanced the MS Teams Connector for the Microsoft 365 platform by embedding Mattermost directly inside [Microsoft Teams](https://docs.mattermost.com/about/mattermost-for-microsoft-teams.html).
+
+#### MLOps and Secure Federation with Customer Compliance
+ - Our partnership with SOS International (SOSi) enables the integration of advanced military-grade federation using XMPP. Read the [exoINSIGHT announcement from Exovera](https://exovera.com/press-release/exovera-unveils-exoinsight/).
+
+#### Improving Your Organization’s Core Collaboration
+ - To optimize the core platform experience, we are reinforcing the fundamentals to ensure Mattermost continues being resilient, stable, and best-in-breed for your critical operations.
+
 ### Improvements
 
 #### User Interface (UI)
