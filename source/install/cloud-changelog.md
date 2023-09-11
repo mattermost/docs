@@ -43,7 +43,7 @@ Latest Mattermost Cloud releases:
  - Fixed display name in the ``comment_on`` component.
 
 ### Known Issues
- - 
+ - Left-hand side resize option overrides the **Browse/Create Channel** menu [MM-54367](https://mattermost.atlassian.net/browse/MM-54367).
 
 ## Release 2023-08-29
 
