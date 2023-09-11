@@ -7,7 +7,7 @@ Navigate channels
 Navigate between channels
 --------------------------
 
-Using Mattermost in a web browser or the desktop app, you can navigate between channels by selecting the **Find channel** option in the channel sidebar, or by pressing :kbd:`Ctrl` :kbd:`K` on Windows or Linux, or :kbd:`⌘` :kbd:`K` on Mac. The Find channels screen also displays `member availability </welcome/set-your-status-availability.html>`__ at a glance.
+Using Mattermost in a web browser or the desktop app, you can navigate between channels by selecting the **Find channel** option in the channel sidebar, or by pressing :kbd:`Ctrl` :kbd:`K` on Windows or Linux, or :kbd:`⌘` :kbd:`K` on Mac. The Find channels screen also displays `member availability </preferences/set-your-status-availability.html>`__ at a glance.
 
     .. image:: ../images/switch-channels.png
         :alt: Navigate between channels and review member availability.

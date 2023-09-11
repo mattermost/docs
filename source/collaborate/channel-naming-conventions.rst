@@ -4,7 +4,7 @@ Channel naming conventions
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-All organizations are different and have different communication needs. The importance of organizing your conversations increases as your user base grows. The following are ideas for how you might want to name, group, and structure your channels. If you change your mind about a channel's name, you can :doc:`rename it </channels/rename-channels>`. 
+All organizations are different and have different communication needs. The importance of organizing your conversations increases as your user base grows. The following are ideas for how you might want to name, group, and structure your channels. If you change your mind about a channel's name, you can :doc:`rename it </collaborate/rename-channels>`. 
 
 Basic structure
 ---------------
@@ -45,7 +45,7 @@ Here are different navigation options and types of channels to consider.
 Navigate channels using the keyboard
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Keyboard shortcuts allow users to jump between channels. See the `keyboard shortcuts for Channels </channels/keyboard-shortcuts-for-channels.html>`__ documentation for all available keyboard shortcuts.
+Keyboard shortcuts allow users to jump between channels. See the `keyboard shortcuts </collaborate/keyboard-shortcuts.html>`__ documentation for all available keyboard shortcuts.
 
 Topic channels
 ~~~~~~~~~~~~~~
@@ -61,7 +61,7 @@ Meeting channels
 
 Meeting channels are often used to organize regular meetings. Members can add topics as messages to be discussed during the regular meeting time. Examples: Monday Sales Update, All Hands Meeting.
 
-There are three built-in features to make meetings in Channels easier:
+There are three built-in features to make meetings easier:
 
 1. Numbered agenda items in title text
 

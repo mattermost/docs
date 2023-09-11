@@ -8,7 +8,7 @@ You can log out of Mattermost from your profile picture. Select **Log Out** to l
 
 .. tabs::
 
-  .. tab:: Desktop
+  .. tab:: Web/Desktop
 
       .. image:: ../images/profile-log-out.png
         :alt: Log out of Mattermost from your profile picture.

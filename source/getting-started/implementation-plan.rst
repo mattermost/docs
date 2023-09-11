@@ -88,9 +88,8 @@ This section provides a bibliography of key project references and deliverables 
 - Mattermost Overview: https://docs.mattermost.com/about/product.html
 - Mattermost Software/Hardware Requirements: https://docs.mattermost.com/install/software-hardware-requirements.html 
 - Mattermost Security Features: https://docs.mattermost.com/about/security.html 
-- Mattermost Channels: https://docs.mattermost.com/guides/channels.html
-- Mattermost Playbooks: https://docs.mattermost.com/guides/playbooks.html
-- Mattermost Boards: https://docs.mattermost.com/guides/boards.html
+- Mattermost: https://docs.mattermost.com/guides/collaborate.html
+- Mattermost Playbooks plugin: https://docs.mattermost.com/guides/repeatable-processes.html
 
 2.4 Glossary
 ~~~~~~~~~~~~
@@ -250,7 +249,7 @@ Send all users a welcome email with instructions on how to get started using Mat
 
 **References**: 
 - Links to download Mattermost apps:  https://mattermost.com/apps 
-- Channels Guide: https://docs.mattermost.com/guides/channels.html 
+- Channels Guide: https://docs.mattermost.com/guides/collaborate.html 
 
 3.4 Implementation schedule
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~

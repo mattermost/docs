@@ -19,7 +19,7 @@ Using Mattermost in a web browser or the desktop app, any member of a channel ca
 
 .. tabs::
 
-  .. tab:: Desktop
+  .. tab:: Web/Desktop
 
     1. Select the channel name at the top of the center pane to access the drop-down menu, then select **Add Members**. 
 
@@ -64,7 +64,7 @@ You can leave public or private channels any time.
 
 .. tabs::
 
-  .. tab:: Desktop
+  .. tab:: Web/Desktop
 
     Select the channel name at the top of the center pane to access the drop-down menu, then select **Leave Channel**.
   
@@ -80,7 +80,7 @@ Any member of a channel can remove other members from a channel.
 
 .. tabs::
 
-  .. tab:: Desktop
+  .. tab:: Web/Desktop
 
     You have two ways to remove members from a channel:
 

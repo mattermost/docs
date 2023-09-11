@@ -15,7 +15,7 @@ Set message priority (beta)
 
 From Mattermost v7.7 and version v2.4 of the Mattermost mobile app, you can add a message priority label to root messages to make important messages requiring timely action or response more visible and less likely to be overlooked.
 
-.. image:: ../images/Message-Priority-Animated-optimized.gif
+.. image:: ../images/MPA-Animated-GIF-Update-2023-08-15.gif
   :width: 700
   :alt: Ensure important and urgent messages stand out clearly by adding priority labels to root messages.
 
@@ -47,7 +47,7 @@ To enable persistent notifications for a message:
 
   - Recipients must have Mattermost desktop and/or mobile push notifications enabled to receive persistent notifications.
   - @channel, @all and @here mentions don't send persistent notifications.
-  - You're notified depending on your `notifications preferences </channels/channels-settings.html#mobile-push-notifications>`__ for desktop and mobile push notifications. You won't be notified when your availability is set to Do Not Disturb, or if you're `Out of Office </welcome/set-your-status-availability.html#set-your-availability>`__.
+  - You're notified depending on your `notifications preferences </preferences/manage-your-notifications.html>`__ for desktop and mobile push notifications. You won't be notified when your availability is set to Do Not Disturb, or if you're `Out of Office </preferences/set-your-status-availability.html#set-your-availability>`__.
   - System admins can customize the maximum number of @mentions permitted, how frequently and how many persistent notifications are sent, as well as disable persistent notifications for all users, if preferred. By default, users are notified every 5 minutes for a total of 30 minutes. See the `configuration </configure/site-configuration-settings.html#persistent-notifications>`__ documentation for details.
 
 Stop a persistent notification by replying to the thread, selecting the **Acknowlege** icon (when present), or reacting to the thread with an emoji. Persistent notifications also stop being sent if the original message is deleted, or if the maximum number of persistent notifications are sent.

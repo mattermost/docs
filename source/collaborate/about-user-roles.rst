@@ -41,7 +41,7 @@ The person who creates a channel is assigned the Channel Admin role for that cha
 - Ability to assign the Channel Admin role to other members of the channel.
 - Ability to remove the Channel Admin role from other holders of the Channel Admin role.
 - Ability to remove members from the channel.
-- Ability to configure channel actions that automate tasks based on trigger conditions, such as `joining a channel </channels/join-leave-channels.html#join-a-channel>`__ or `sending a message </channels/send-messages.html>`__ in a channel.
+- Ability to configure channel actions that automate tasks based on trigger conditions, such as `joining a channel </collaborate/join-leave-channels.html#join-a-channel>`__ or `sending a message </collaborate/send-messages.html>`__ in a channel.
 
 Depending on your system configuration, Channel Admins can be granted special permissions by the system admin to rename and delete channels.
 

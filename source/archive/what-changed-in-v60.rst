@@ -43,7 +43,7 @@ From Mattermost v6.0, **Account Settings** have moved. The Account Settings menu
 Status and availability
 -----------------------
 
-Let your team know your online status using `custom status and availability settings </welcome/set-your-status-availability.html>`_, which include emojis. Select your profile picture to change your status and availability.
+Let your team know your online status using `custom status and availability settings </preferences/set-your-status-availability.html>`_, which include emojis. Select your profile picture to change your status and availability.
 
 Product menu
 ------------

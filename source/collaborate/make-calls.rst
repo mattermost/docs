@@ -34,7 +34,7 @@ Start a call
 
 .. tabs::
 
-  .. tab:: Desktop
+  .. tab:: Web/Desktop
 
     To start a call, select **Start call** in the channel or message header. When you start a call in a channel, you're muted by default. In a direct or group message you're unmuted by default.
     
@@ -63,7 +63,7 @@ You can use emojis to react during a call.
 
 .. tabs::
 
-  .. tab:: Desktop
+  .. tab:: Web/Desktop
 
     Expand the call window using the arrows in the top-right of the call widget. From there, select the emoji icon to access frequently-used emojis or select additional emojis from the emoji picker.
 
@@ -78,7 +78,7 @@ A chat thread is created automatically for every new call.
 
 .. tabs::
 
-  .. tab:: Desktop
+  .. tab:: Web/Desktop
 
     To do this, expand the call window using the arrows in the top-right of the call widget. From there, select the emoji icon to access frequently-used emojis or select additional emojis from the emoji picker.
 
@@ -101,7 +101,7 @@ To record a call:
 
 .. tabs::
 
-  .. tab:: Desktop
+  .. tab:: Web/Desktop
 
     1. Select **Start call** in the header of the channel, group message, or direct message.
     2. Select the pop-out icon.

@@ -11,7 +11,7 @@ Anyone can rename the channels they belong to, unless the System Admin has `rest
 
 .. tabs::
 
-  .. tab:: Desktop
+  .. tab:: Web/Desktop
 
         Select the channel name at the top of the center pane to access the drop-down menu, then select **Rename Channel**. You'll be prompted to provide two pieces of information:
 

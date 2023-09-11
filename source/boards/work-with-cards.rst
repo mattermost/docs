@@ -140,14 +140,14 @@ Comment on a card
 
 Comments allow you to provide feedback and ask questions relevant to the specific work item on the card.
 
-To add a comment, select a card to open the card view, then click on **Add a comment…** to type in your comment, and press **Send** to save the comment to the card. All team members who are `following the card </boards/work-with-cards.html#receive-updates>`_ will receive a notification with a preview of your comment in Mattermost Channels.
+To add a comment, select a card to open the card view, then click on **Add a comment…** to type in your comment, and press **Send** to save the comment to the card. All team members who are `following the card </boards/work-with-cards.html#receive-updates>`_ will receive a notification with a preview of your comment in Mattermost.
 
 From Mattermost Boards v7.4, only board members with the *Commenter* role or higher can comment on a card. Board members assigned the *Viewer* role can view, but not comment on, a card.
 
 Mention people
 --------------
 
-You can include a team member on a card by `mentioning them on a card </channels/mention-people.html>`__ the same way you would in Channels. Mentions are supported in the `Comments </boards/work-with-cards.html#comment-on-a-card>`_ and `Description </boards/work-with-cards.html#card-descriptions>`_ sections within a card. The team member you mention will receive a direct message notification from the boards bot with a link to the card you mentioned them on. To mention multiple team members, separate each name with a comma.
+You can include a team member on a card by `mentioning them on a card </collaborate/mention-people.html>`__ the same way you would in a message or thread. Mentions are supported in the `Comments </boards/work-with-cards.html#comment-on-a-card>`_ and `Description </boards/work-with-cards.html#card-descriptions>`_ sections within a card. The team member you mention will receive a direct message notification from the boards bot with a link to the card you mentioned them on. To mention multiple team members, separate each name with a comma.
 
 Receive updates
 ---------------

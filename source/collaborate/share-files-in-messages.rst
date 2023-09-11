@@ -20,11 +20,11 @@ With file attachments, you can share additional information that helps your team
 
 .. tabs::
 
-  .. tab:: Desktop
+  .. tab:: Web/Desktop
 
     You can share files with other Mattermost users or entire channels by:
 
-    - Dragging and dropping files into Channels.
+    - Dragging and dropping files into channels.
     - Selecting the **Attachment** |attachment-icon| icon in the message input box.
     - Pasting from the clipboard.
     

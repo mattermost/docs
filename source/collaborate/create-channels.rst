@@ -8,7 +8,7 @@ Anyone can create public channels, private channels, direct messages, and group 
   
 .. tabs::
 
-  .. tab:: Desktop
+  .. tab:: Web/Desktop
       
     **To create a public or private channel** 
         
@@ -24,7 +24,7 @@ Anyone can create public channels, private channels, direct messages, and group 
            :alt: You can also create a channel using the + symbol button
      
      2. Enter a channel name.
-     3. Choose whether this is a public or private channel. See the `channel types </channels/channel-types.html>`__ documentation to learn more about public and private channels.
+     3. Choose whether this is a public or private channel. See the `channel types </collaborate/channel-types.html>`__ documentation to learn more about public and private channels.
      4. (Optional) Describe the channel's focus or purpose. This text is visible to all channel members in the channel header.
      5. (Optional) Select the **Create a board for this channel** option, and then select a boards template to use. See the `Mattermost Boards documentation </guides/boards.html>`__ to learn more about managing tasks with boards, see the `link a board to a channel </boards/navigate-boards.html#link-a-board-to-a-channel>`__ documentation to learn about the benefits of linking boards to channels, and see the `choose a board template </boards/work-with-boards.html#choose-a-board-template>`__ documentation for details on available templates.
 
@@ -59,12 +59,12 @@ Anyone can create public channels, private channels, direct messages, and group 
 
   **Automate with channel actions**
   
-  The person who creates a channel automatically becomes the channel admin. Channel admins using Mattermost in a web browser or the desktop app can access **Channel Actions** from the channel name drop-down menu in the center pane to set up automatic actions when users `join the channel </channels/join-leave-channels.html#join-a-channel>`__ or `post a message </channels/send-messages.html>`__ to the channel.
+  The person who creates a channel automatically becomes the channel admin. Channel admins using Mattermost in a web browser or the desktop app can access **Channel Actions** from the channel name drop-down menu in the center pane to set up automatic actions when users `join the channel </collaborate/join-leave-channels.html#join-a-channel>`__ or `post a message </collaborate/send-messages.html>`__ to the channel.
   
   Automatic actions include:
   
   - Displaying a temporary welcome message for new channel members.
-  - Automatically adding the channel to a `category in the user's channel sidebar </channels/customize-your-channel-sidebar.html>`__.
+  - Automatically adding the channel to a `category in the user's channel sidebar </preferences/customize-your-channel-sidebar.html>`__.
   - Prompting to run a playbook based on the contents of a message.
 
   The `playbooks must be enabled </configure/plugins-configuration-settings.html#mattermost-playbooks>`__ for channel admins to use channel actions.

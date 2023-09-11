@@ -22,7 +22,7 @@ To mark a channel as a **Favorite**:
 
 .. tabs::
 
-  .. tab:: Desktop
+  .. tab:: Web/Desktop
 
     1. Open a channel.
     2. Select on the star icon next to the channel name.

@@ -24,7 +24,7 @@ Save messages
 .. tabs::
 
 
-  .. tab:: Desktop
+  .. tab:: Web/Desktop
 
     Save messages for later follow up by selecting the **Save** |save-icon| icon next to a message. 
 
@@ -53,7 +53,7 @@ All members of a channel can pin important or useful messages to that channel. T
 
 .. tabs::
 
-  .. tab:: Desktop
+  .. tab:: Web/Desktop
 
     1. Hover over the message that you want to pin. The **More** |more-icon| icon link appears.
     2. Select the **More** option, then select **Pin to channel**.

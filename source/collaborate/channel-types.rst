@@ -4,12 +4,14 @@ Channel types
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-You'll find four types of channels in Mattermost: public channels, private channels, direct messages, and group messages.
+Channels are used to organize conversations across different topics. Find available channels in the left-hand panel. There are four types of channels: public channels, private channels, direct messages, and group messages. 
+
+Sending messages, replying to messages, and participating in conversation threads are important ways to keep conversations active with your team. See the following topics to learn more about working with channels.
 
 Public channels
 ---------------
 
-Public channels are open to everyone on a team and are identified with a |globe-icon| icon. New team members are automatically added to two public channels when they sign up: **Town Square** and **Off-Topic**. See the :doc:`Join and Leave Channels </channels/join-leave-channels>` documentation for details on discovering and joining other channels.
+Public channels are open to everyone on a team and are identified with a |globe-icon| icon. New team members are automatically added to two public channels when they sign up: **Town Square** and **Off-Topic**. See the :doc:`Join and leave channels </collaborate/join-leave-channels>` documentation for details on discovering and joining other channels.
 
 .. |globe-icon| image:: ../images/globe-icon.png
    :alt: A globe icon indicates a public channel.

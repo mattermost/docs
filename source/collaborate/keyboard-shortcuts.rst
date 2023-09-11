@@ -21,7 +21,7 @@ Mattermost keyboard shortcuts help you make a more efficient use of your keyboar
 .. tip::
 
   - In Mattermost, display a list of available keyboard shortcuts by pressing :kbd:`Ctrl` :kbd:`/` on Windows or Linux, pressing :kbd:`⌘` :kbd:`/` on macOS, or using the ``/shortcuts`` slash command.
-  - Additional keyboard shortcuts are available for Mattermost Channels. See the `keyboard shortcuts for Mattermost Channels </channels/keyboard-shortcuts-for-channels.html>`__ and the `team keyboard shortcuts </welcome/team-keyboard-shortcuts.html>`__ documentation for details.
+  - Additional keyboard shortcuts are available. See the `team keyboard shortcuts </collaborate/team-keyboard-shortcuts.html>`__ documentation for details.
 
 Channel navigation
 ------------------
@@ -139,7 +139,7 @@ The following keyboard shortcuts work in all `supported browsers </install/softw
 Calls
 ------
 
-The following keyboard shortcuts are supported in all `supported browsers </install/software-hardware-requirements.html#software-requirements>`__ and in the Mattermost desktop app when `calls </channels/make-calls.html>`_ are enabled.
+The following keyboard shortcuts are supported in all `supported browsers </install/software-hardware-requirements.html#software-requirements>`__ and in the Mattermost desktop app when `calls </collaborate/make-calls.html>`_ are enabled.
 
 +-----------------------------------------------------------+--------------------------------------------------+-----------------------------------------------------------------------------------------+
 | On Windows & Linux                                        | On Mac                                           | Description                                                                             |

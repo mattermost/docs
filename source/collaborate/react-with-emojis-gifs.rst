@@ -1,35 +1,52 @@
-React to messages using emojis
-==============================
+React with emojis and GIFs
+===========================
 
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Emojis are small, digital images or icons you can use to communicate or express concepts such as emotions and physical gestures in your messages. 
+.. |smile-icon| image:: ../images/smile-icon.png
+  :alt: Smile icon
 
-You can react to messages quickly by selecting a recently used emoji. Recent emojis are sorted based on the number of times you've used the emoji. If your most recent reactions aren't visible, you can enable quick reactions by selecting **Settings > Display > Quick reactions on messages**.
+Emojis and GIFs are small, digital images, animated images, or icons you can use to communicate or express concepts such as emotions, humor, and physical gestures in your messages. 
 
-.. tabs::
+Quick emoji reactions
+-----------------------
 
-  .. tab:: Desktop
-              
-    Select the **Smile** icon |smile-icon| inside the Mattermost message input box to open the emoji picker. If the existing emojis available in Mattermost don't cover what you want to express, you can also `upload your own custom emoji <#upload-custom-emojis>`__.
-
-       .. |smile-icon| image:: ../images/smile-icon.png
-           :alt: Smile icon
-
-    Hover over a message to access recently used emojis. 
+React to messages quickly with recently used emojis. Hover over a message to access recently used emojis. 
 
     .. image:: ../images/recent-emojis.png
       :alt: React to messages quickly by selecting one of your most recently used emojis.
+
+Recently used emojis are sorted based on how often you've used them. 
+
+.. tip::
+  
+  If you don't see your most recently used emojis, enable quick reactions by selecting **Settings > Display > Quick reactions on messages**.
+
+Include emojis and GIFs in messages
+-----------------------------------
+
+.. tabs::
+
+  .. tab:: Web/desktop
+              
+    Select the **Smile** icon |smile-icon| inside the Mattermost message input box to open the emoji and GIF picker. 
+
+    Select an emoji from the **Emojis** tab, or switch to the **GIFs** tab to search for a GIF.
      
-    You can also react to messages by typing ``:`` followed by at least two characters of the word describing the emoji. This opens an emoji autocomplete. Descriptions include skin tone details for people-based emojis, where supported.
+    You can also specify emojis based on their name. Type ``:`` followed by at least two characters of the word describing the emoji. This opens an emoji autocomplete. Descriptions include skin tone details for people-based emojis, where supported.
 
     .. image:: ../images/emojiautocomplete.png
       :alt: Emoji autocomplete
-        
+
+
+    .. tip::
+
+      Can't find the perfect emoji? You can `upload your own custom emoji <#upload-custom-emojis>`__ if your system admin has `enabled you to do so </configure/site-configuration-settings.html#emoji-enablecustom>`__.
+
   .. tab:: Mobile
    
-    Long press on a message, and then select a recently used emoji, or select the |smile-icon| to add a different reaction.
+    Long press on a message, and then select a recently used emoji, or select the |smile-icon| to add a different reaction. Mattermost accesses the emojis and GIFs available on your mobile device.
     
 Manage emojis
 -------------

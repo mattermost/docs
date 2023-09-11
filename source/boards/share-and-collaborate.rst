@@ -132,10 +132,10 @@ Paste the link anywhere you want to share the board. Anyone with the link will b
 
 Select the **Regenerate Token** icon in the URL box if you want to invalidate all the previously shared links. Confirm the action to regenerate the token.
 
-Share cards on Channels
------------------------
+Share cards
+-----------
 
-Cards can be linked and shared with team members directly on Mattermost Channels. When you share a link to a card within Channels, the card details are automatically displayed in a preview. This preview highlights what the card is about at a glance without having to navigate to it.
+Cards can be linked and shared with team members directly on Mattermost. When you share a link to a card within a conversation, the card details are automatically displayed in a preview. This preview highlights what the card is about at a glance without having to navigate to it.
 
 To share a card, you'll need to copy the card link first:
 

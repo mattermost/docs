@@ -23,7 +23,7 @@ Search for message and files
 
 .. tabs::
 
-  .. tab:: Desktop
+  .. tab:: Web/Desktop
 
     **Search for messages**
 

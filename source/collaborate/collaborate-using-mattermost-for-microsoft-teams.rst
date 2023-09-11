@@ -60,11 +60,11 @@ Collaborate with colleagues
 
 You have many ways to collaborate with colleagues in linked channels using a web browser or the Mattermost desktop app, including:
 
-- `Send messages </channels/send-messages.html>`__ and `reply to messages <https://docs.mattermost.com/channels/reply-to-messages.html>`__
-- `Attach files to messages </channels/share-files-in-messages.html>`__
-- `Express yourself with emojis </channels/react-to-messages.html>`__
-- `Share complex systems data and formatted code </channels/format-messages.html>`__
-- `Edit or delete sent messages </channels/send-messages.html#edit-or-delete-messages>`__
+- `Send messages </collaborate/send-messages.html>`__ and `reply to messages <h/collaborate/reply-to-messages.html>`__
+- `Attach files to messages </collaborate/share-files-in-messages.html>`__
+- `Express yourself with emojis and GIFs </collaborate/react-with-emojis-gifs.html>`__
+- `Share complex systems data and formatted code </collaborate/format-messages.html>`__
+- `Edit or delete sent messages </collaborate/send-messages.html#edit-or-delete-messages>`__
 
 No matter which tool you use, your message is visible across both Mattermost and Microsoft Teams.
 

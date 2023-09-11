@@ -6,7 +6,7 @@ Browse channels
 
 .. tabs::
 
-  .. tab:: Desktop
+  .. tab:: Web/Desktop
 
     1. Select the **+** icon at the top of the channel sidebar to see all available public channels you can join that you're not already a member of.
     2. Select **Browse Channels**. 
@@ -22,7 +22,7 @@ Browse channels
 
 .. tip:: 
   
-  Want to see all of the channels you're already a member of, or can't find a specific private channel? Using a browser or the desktop app, select **Find Channel** in the channel sidebar to see all of the channels you're currently a member of across all of your teams, including public and private channels, direct and group messages, channels with unread messages, and threads. Channels you have `muted </channels/set-channel-preferences.html#mute-channel>`__ aren't included in results.
+  Want to see all of the channels you're already a member of, or can't find a specific private channel? Using a browser or the desktop app, select **Find Channel** in the channel sidebar to see all of the channels you're currently a member of across all of your teams, including public and private channels, direct and group messages, channels with unread messages, and threads. Channels you have `muted </preferences/set-channel-preferences.html#mute-channel>`__ aren't included in results.
 
 Revisit recent channels
 -----------------------

@@ -1,10 +1,10 @@
-Customize your Channels experience
+Customize your Mattermost experience
 ==================================
 
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-You can customize your Channels experience in the following ways in **Settings**:
+You can customize your Mattermost experience in the following ways in **Settings**:
 
 - `Notifications <#notifications>`__
 - `Display <#display>`__

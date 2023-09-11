@@ -14,7 +14,7 @@ You must be a system admin, team admin, or channel admin to convert public chann
 
 .. tabs::
 
-  .. tab:: Desktop
+  .. tab:: Web/Desktop
 
     To convert a public channel to a private channel, select the public channel name at the top of the center pane to access the drop-down menu, then select **Convert to Private Channel**. 
 

@@ -1,5 +1,5 @@
-Extend Channels functionality
-=============================
+Extend Mattermost with integrations
+===================================
 
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:

@@ -11,7 +11,7 @@ System Admins can display a notice that's visible to all users on the system via
 .. image:: ../images/announcement-banner-1106x272.png
   :width: 1106
   :height: 272
-  :alt: An example of an announcement banner displayed in Mattermost Channels notifying all users that the system will be going down for maintenance later that evening. System Admins enable the banner and customize the text to display, as well as configure whether or not users can dismiss the banner.
+  :alt: An example of an announcement banner displayed in Mattermost notifying all users that the system will be going down for maintenance later that evening. System Admins enable the banner and customize the text to display, as well as configure whether or not users can dismiss the banner.
 
 .. note::
 

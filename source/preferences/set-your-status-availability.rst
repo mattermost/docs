@@ -4,18 +4,16 @@ Set your status and availability
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Let your team know whether you're available by setting a custom status and your availability in Mattermost. 
+Let your team know whether you're available by setting a `custom status </preferences/set-your-status-availability.html#set-a-custom-status>`__ and your `availability </preferences/set-your-status-availability.html#set-your-availability>`__ in Mattermost. 
 
 Set a custom status
 --------------------
 
-Set a custom status to display a descriptive status message and optional emoji next to your name in Mattermost. Other members can see your status anywhere they can see your name, such as the channel sidebar and in conversations. 
-
-To set a custom status in Mattermost:
+Set a custom status to display a descriptive status message and optional emoji next to your name in Mattermost. Other members can see your status anywhere they can see your name, such as the channel sidebar and in conversations. To set a custom status in Mattermost:
 
 .. tabs::
 
-  .. tab:: Desktop
+  .. tab:: Web/Desktop
 
     1. Select your profile picture, then select **Set a custom status**.
     2. Choose from a list of suggested statuses, or enter a new emoji and status. The Speech bubble emoji 💬  is used by default if you don't specify an emoji. A custom status can be a maximum of 100 characters in length.
@@ -52,7 +50,7 @@ To set your availability, select your profile picture, then specify your availab
 Other members can see your availability anywhere they can see your name, such as the channel sidebar, within conversations, and within Direct Messages.
 
 Set your availability as Do Not Disturb
----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Set your availability to **Do Not Disturb** to disable all desktop, email, and push notifications when you are unavailable or need to concentrate. 
 

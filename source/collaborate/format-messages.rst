@@ -65,26 +65,26 @@ From Mattermost v7.0, you can format your messages in Mattermost using the messa
 
 The message formatting toolbar offers the following formatting options:
 
-+--------------------------------------------------------------+-------------------------+
-| **Formatting option**                                        | **Icon**                | 
-+==============================================================+=========================+
-| `Bold, italicize, or strike out text <#use-markdown>`_       | |bold-icon|             |
-|                                                              | |italics-icon|          | 
-|                                                              | |strikeout-icon|        | 
-+--------------------------------------------------------------+-------------------------+
-| Add `headings <#headings>`_, `links <#links>`_,              | |headings-icon|         |
-| or attachments                                               | |links-icon|            | 
-|                                                              | |attachments-icon|      |
-+--------------------------------------------------------------+-------------------------+
-| Format a numbered list, a bulleted list, quoted text, or     | |numbered-icon|         |
-| text as code                                                 | |bullets-icon|          |
-|                                                              | |quotes-icon|           |
-|                                                              | |code-icon|             |
-+--------------------------------------------------------------+-------------------------+
-| `Add emojis or GIFs </channels/react-to-messages.html>`__    | |emoji-icon|            |
-+--------------------------------------------------------------+-------------------------+
-| `Set message priority </channels/message-priority.html>`__   | |message-priority-icon| |
-+--------------------------------------------------------------+-------------------------+
++-------------------------------------------------------------------+-------------------------+
+| **Formatting option**                                             | **Icon**                | 
++===================================================================+=========================+
+| `Bold, italicize, or strike out text <#use-markdown>`_            | |bold-icon|             |
+|                                                                   | |italics-icon|          | 
+|                                                                   | |strikeout-icon|        | 
++-------------------------------------------------------------------+-------------------------+
+| Add `headings <#headings>`_, `links <#links>`_,                   | |headings-icon|         |
+| or attachments                                                    | |links-icon|            | 
+|                                                                   | |attachments-icon|      |
++-------------------------------------------------------------------+-------------------------+
+| Format a numbered list, a bulleted list, quoted text, or          | |numbered-icon|         |
+| text as code                                                      | |bullets-icon|          |
+|                                                                   | |quotes-icon|           |
+|                                                                   | |code-icon|             |
++-------------------------------------------------------------------+-------------------------+
+| `Add emojis or GIFs </collaborate/react-with-emojis-gifs.html>`__ | |emoji-icon|            |
++-------------------------------------------------------------------+-------------------------+
+| `Set message priority </collaborate/message-priority.html>`__     | |message-priority-icon| |
++-------------------------------------------------------------------+-------------------------+
 
 Review how your message formatting will look when the message is sent by selecting the **Show/Hide Preview** |preview-icon| icon. Return to your draft message by selecting the icon again.
 

@@ -9,7 +9,7 @@ Organize conversations using Collapsed Reply Threads
   :width: 24px
   :alt: Access additional message actions using the More Actions icon.
 
-Threads are a key part of the messaging experience in Mattermost Channels. They're used to organize conversations and enable users to discuss topics without adding noise to channels or direct messages.
+Threads are a key part of the messaging experience in Mattermost. They're used to organize conversations and enable users to discuss topics without adding noise to channels or direct messages.
 
 Collapsed Reply Threads offers an enhanced experience for users communicating in threads and replying to messages that includes a unified threads inbox to read all conversations in one view. Threads improve the ability to process channel content, find, follow, and resume conversations more easily, and keep threaded conversations focused.
 
@@ -19,7 +19,7 @@ Collapsed Reply Threads offers an enhanced experience for users communicating in
 Start or reply to threads
 -------------------------
 
-`Replies to messages </channels/reply-to-messages.html>`__ are collapsed under the first message of a thread. 
+`Replies to messages </collaborate/reply-to-messages.html>`__ are collapsed under the first message of a thread. 
 
 .. tip:: 
     
@@ -32,14 +32,14 @@ Start or reply to threads
 Follow threads and messages
 ---------------------------
 
-You'll automatically follow every thread you participate or are mentioned in. You can manually follow particular messages and threads so that any reply activity triggers `notifications </channels/channels-settings.html#notifications>`__. Follow or unfollow any thread, at any time.
+You'll automatically follow every thread you participate or are mentioned in. You can manually follow particular messages and threads so that any reply activity triggers `notifications </preferences/manage-your-notifications.html>`__. Follow or unfollow any thread, at any time.
 
 .. image:: ../images/crt-following-thread.png
    :alt: Follow threads to stay updated on replies to messages.
 
 .. tabs::
 
-  .. tab:: Desktop
+  .. tab:: Web/Desktop
 
     Toggle the thread’s **Follow/Following** indicator, or select **Follow thread** from the **More Actions** |more-actions-icon| icon. 
     

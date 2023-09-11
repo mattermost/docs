@@ -4,7 +4,7 @@ Access your workspace
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Mattermost is accessible through a URL link. You'll receive a link from your Mattermost system admin or through an email invitation. You can use that link in a web browser, or as a server connection in the `desktop app </install/desktop-app-install.html>`__, the `mobile app for iOS </install/install-ios-app.html>`__, or the `mobile app for Android </install/install-android-app.html>`__.
+Mattermost is accessible through a URL link. You'll receive a link from your Mattermost system admin or through an email invitation. You can use that link in a web browser, or as a server connection in the `desktop app </collaborate/install-desktop-app.html>`__, the `mobile app for iOS </collaborate/install-ios-app.html>`__, or the `mobile app for Android </collaborate/install-android-app.html>`__.
 
 .. tip::
 
@@ -16,18 +16,18 @@ Mattermost is accessible through a URL link. You'll receive a link from your Mat
   :hidden:
   :titlesonly:
 
-  Use the desktop app </install/desktop-app-install>
-  Use the iOS mobile app </install/install-ios-app>
-  Use the Android mobile app </install/install-android-app>
+  Install the desktop app </collaborate/install-desktop-app>
+  Install the iOS mobile app </collaborate/install-ios-app>
+  Install the Android mobile app </collaborate/install-android-app>
   Log out of Mattermost </collaborate/log-out>
 
 .. tabs::
 
-  .. tab:: Desktop
+  .. tab:: Web/Desktop
 
     **Web browser**
 
-    1. Open a web browser.
+    1. Open a web browser. Review the `web browsers that Mattermost supports </install/software-hardware-requirements.html#pc-web>`__.
     2. Copy and paste the Mattermost server link into the browser's address field.
     3. Enter your user credentials to log into Mattermost. 
 
@@ -38,16 +38,16 @@ Mattermost is accessible through a URL link. You'll receive a link from your Mat
     
     **Desktop app**
 
-    1. Download and install the Mattermost `desktop app </install/desktop-app-install.html>`__.
-    2. When prompted, enter the Mattermost server link and a display name for the Mattermost instance. The display name is helpful in cases where you connect to multiple Mattermost instances. See the `server connections </welcome/manage-multiple-server-connections.html>`__ documentation for details.
+    1. Download and install the Mattermost `desktop app </collaborate/install-desktop-app.html>`__.
+    2. When prompted, enter the Mattermost server link and a display name for the Mattermost instance. The display name is helpful in cases where you connect to multiple Mattermost instances. See the `server connections </preferences/connect-multiple-workspaces.html>`__ documentation for details.
     3. Enter your user credentials to log into Mattermost. 
     4. The team that displays first in the team sidebar opens. If you're not a member of a team yet, you're prompted to select a team to join.
 
 
   .. tab:: Mobile
 
-    1. Download and install the Mattermost `mobile app </deploy/use-prebuilt-mobile-apps.html>`__.
-    2. When prompted, enter the Mattermost server link and a display name for the Mattermost instance. The display name is helpful in cases where you connect to multiple Mattermost instances. See the `server connections </welcome/manage-multiple-server-connections.html>`__ documentation for details.
+    1. Download and install the Mattermost `iOS mobile app </collaborate/install-ios-app.html>`__ or the `Android mobile app </collaborate/install-android-app.html>`__.
+    2. When prompted, enter the Mattermost server link and a display name for the Mattermost instance. The display name is helpful in cases where you connect to multiple Mattermost instances. See the `server connections </preferences/connect-multiple-workspaces.html>`__ documentation for details.
     3. Enter your user credentials to log into Mattermost. 
     4. The team that displays first in the team sidebar opens. If you're not a member of a team yet, you're prompted to select a team to join.
 

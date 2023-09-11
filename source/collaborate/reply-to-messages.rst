@@ -6,7 +6,7 @@ Reply to messages
 
 .. tabs::
 
-  .. tab:: Desktop
+  .. tab:: Web/Desktop
 
     Reply to messages by selecting the **Reply** |reply-arrow| icon next to the message text. 
 
@@ -20,11 +20,11 @@ Reply to messages
 
     Tap on a message to reply to it, or long press and select **Reply**.
 
-Depending on how the system admin has configured Mattermost, you may also be able to `edit and delete messages </channels/send-messages.html#edit-or-delete-messages>`__ after you've sent them. Your system admin may also restrict messaging actions, such as editing or deleting messages, by configuring `advanced permissions </onboard/advanced-permissions.html>`__, available in `Mattermost Enterprise and Professional subscription plans <https://mattermost.com/pricing>`__.
+Depending on how the system admin has configured Mattermost, you may also be able to `edit and delete messages </collaborate/send-messages.html#edit-or-delete-messages>`__ after you've sent them. Your system admin may also restrict messaging actions, such as editing or deleting messages, by configuring `advanced permissions </onboard/advanced-permissions.html>`__, available in `Mattermost Enterprise and Professional subscription plans <https://mattermost.com/pricing>`__.
 
 .. tip::
 
-  It's easy to return to a message in progress with global message drafts. Find all of your draft messages in the **Drafts** view available at the top of the channel sidebar. See the `draft messages </channels/send-messages.html#draft-messages>`__ documentation for details.
+  It's easy to return to a message in progress with global message drafts. Find all of your draft messages in the **Drafts** view available at the top of the channel sidebar. See the `draft messages </collaborate/send-messages.html#draft-messages>`__ documentation for details.
 
 Organize conversations into threads
 -----------------------------------
@@ -44,4 +44,4 @@ To shrink the right-hand sidebar to its original width, select the same **Collap
 Work with Collapsed Reply Threads
 ---------------------------------
 
-Collapsed Reply Threads is generally available in Mattermost Cloud and from self-hosted Mattermost v7.0, and is enabled by default for all new Mattermost deployments. Collapsed Reply Threads offer a new way to organize conversations within channels. See our `Organizing Conversations using Collapsed Reply Threads </channels/organize-conversations.html>`__ documentation to learn more.
+Collapsed Reply Threads is generally available in Mattermost Cloud and from self-hosted Mattermost v7.0, and is enabled by default for all new Mattermost deployments. Collapsed Reply Threads offer a new way to organize conversations within channels. See our `Organizing Conversations using Collapsed Reply Threads </collaborate/organize-conversations.html>`__ documentation to learn more.

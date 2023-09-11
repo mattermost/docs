@@ -18,7 +18,7 @@ Channels are where you connect, collaborate, and communicate with your team abou
 You're added to default channels automatically
 ----------------------------------------------
 
-Everyone who joins a Mattermost workspace is automatically added to two default channels: **Town Square** and **Off-Topic**. See our `Channel Types </channels/channel-types.html>`__ documentation for details.
+Everyone who joins a Mattermost workspace is automatically added to two default channels: **Town Square** and **Off-Topic**. See our `Channel Types </collaborate/channel-types.html>`__ documentation for details.
 
 - **Town Square** is great for your team-wide communications, such as announcements.
 - **Off-Topic** is great for fun, social, non-work-related conversations. 
@@ -26,9 +26,9 @@ Everyone who joins a Mattermost workspace is automatically added to two default 
 Channel sidebar
 ----------------
 
-In the channel sidebar on the left, you'll find all of the the channels you're a member of as well as useful channel management tools. As your channel sidebar fills up with channels you've joined, you can organize your channels into categories based on how you work. See the `customize your channel sidebar </channels/customize-your-channel-sidebar.html>`__ documentation for details.
+In the channel sidebar on the left, you'll find all of the the channels you're a member of as well as useful channel management tools. As your channel sidebar fills up with channels you've joined, you can organize your channels into categories based on how you work. See the `customize your channel sidebar </preferences/customize-your-channel-sidebar.html>`__ documentation for details.
 
-Mattermost offers four types of channels: **public channels**, **private channels**, **direct messages**, and **group messages**. See the `Channel Types </channels/channel-types.html>`__ documentation for more information. `Create channels </channels/create-channels.html>`__, or start a new direct or group message by selecting the **Plus** |plus| icon.
+Mattermost offers four types of channels: **public channels**, **private channels**, **direct messages**, and **group messages**. See the `Channel Types </collaborate/channel-types.html>`__ documentation for more information. `Create channels </collaborate/create-channels.html>`__, or start a new direct or group message by selecting the **Plus** |plus| icon.
 
 - **Public** channels are identified with a **Globe** |globe| icon. Anyone on the team can join a public channel.
 - **Private** channels are typically used for sensitive topics, and are identified with a **Lock** |lock| icon. You must be invited to private channels by another channel member.

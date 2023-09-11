@@ -19,26 +19,7 @@ See our `Mattermost Channels </guides/channels.html>`__ documentation for detail
 Channels, messages, and conversations
 -------------------------------------
 
-Channels are used to organize conversations across different topics. Find available channels in the left-hand panel. There are four types of channels: public channels, private channels, direct messages, and group messages. See the `Channel Types </channels/channel-types.html>`__ documentation for more information.
 
-Sending messages, replying to messages, and participating in conversation threads are important ways to keep conversations active with your team. See the following topics to learn more about working with channels.
-
-Channels and direct messages
-----------------------------
-
-
-
-Everyone who joins a Mattermost workspace is automatically added to two default channels: **Town Square** and **Off-Topic**. See our `Channel Types </channels/channel-types.html>`__ documentation for details.
-
-- **Town Square** is great for your team-wide communications, such as announcements.
-- **Off-Topic** is great for fun, social, non-work-related conversations. 
-
-Direct messages are private conversations between two people. 
-Group messages are private conversations for small groups of up to seven people. 
-Start a new direct or group message by selecting the **Plus** |plus| icon.
-
-.. tip:: 
-    Direct and group messages are also channels in Mattermost, so many of the `preferences available for channels </channels/set-channel-preferences.html>`__ are also available for direct messages. 
 
 Create and join channels
 ------------------------
@@ -54,11 +35,7 @@ Channels are either **public** or **private**.
 .. |lock| image:: ../images/lock-outline_F0341.svg
   :alt: Private channels are identified with a Lock icon.
 
-See the following documentation to learn more about working with channels:
 
-- `Create channels </channels/create-channels.html>`__
-- `Join and leave channels </channels/join-leave-channels.html>`__
-- `Find channels </channels/find-channels.html>`__
 
 As your channel sidebar fills up with channels you've joined, you can organize your channels into categories based on how you work. See the `customize your channel sidebar </channels/customize-your-channel-sidebar.html>`__ documentation for details.
 

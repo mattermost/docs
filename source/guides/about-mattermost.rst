@@ -26,12 +26,6 @@ Mattermost’s mission is to make the world safer and more productive by develop
    /about/certifications-and-compliance.rst
    /about/frequently-asked-questions.rst
 
-Mattermost contains three key tools:
-
-* :doc:`Channels </guides/channels>` - Stay connected with your team via 1:1 and group messaging.
-* :doc:`Playbooks </guides/playbooks>` - Build and configure repeatable processes to achieve specific and predictable outcomes.
-* :doc:`Boards </guides/boards>` - Manage projects and tasks in a Kanban board structure to help your team hit key milestones.
-
 This section provides an overview of Mattermost products, features, security, integrations, licensing, subscriptions, authentication, and compliance support.
 
 * :doc:`Product overview </about/product>` - Learn about the Mattermost open source project, self-hosted vs. cloud, and premium Mattermost features.

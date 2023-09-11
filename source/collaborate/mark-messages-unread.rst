@@ -11,7 +11,7 @@ If you read a message, but don't have time to address it right away, you can mar
 
 .. tabs::
 
-  .. tab:: Desktop
+  .. tab:: Web/Desktop
 
     Hover over the message, select the **More** |more-actions-icon| option, then select **Mark as Unread**.
 

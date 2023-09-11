@@ -5,16 +5,31 @@ Join and leave channels
   :start-after: :nosearch:
 
 .. |more-icon| image:: ../images/dots-horizontal_F01D8.svg
-    :alt: Use the More icon to access additional message options.
+  :alt: Use the More icon to access additional message options.
+
+.. |globe| image:: ../images/globe_E805.svg
+  :alt: Public channels are identified with a Globe icon.
+
+.. |lock| image:: ../images/lock-outline_F0341.svg
+  :alt: Private channels are identified with a Lock icon.
 
 Join a channel
 --------------
 
-To join a private channel, you need to be added to the channel by a member of that channel.
+Channels are either **public** or **private**.
+
+- **Public** channels are identified with a **Globe** |globe| icon. Anyone on the team can join a public channel.
+- **Private** channels are typically used for sensitive topics, and are identified with a **Lock** |lock| icon. You must be invited to private channels by another channel member.
+
+.. note::
+  
+  To join a private channel, you need to be added to the channel by a member of that channel.
+
+To join a public channel:
 
 .. tabs::
 
-  .. tab:: Desktop
+  .. tab:: Web/Desktop
 
     1. Select the **Add channels** button in the channel sidebar, then select **Browse Channels**.
      
@@ -40,8 +55,14 @@ To join a private channel, you need to be added to the channel by a member of th
 
 .. tip::
   
-  When you join channels, depending on the `channel actions configured </channels/create-channels.html>`__, you may see a welcome message, and channels may be added to `a category in your channel sidebar </channels/customize-your-channel-sidebar.html>`__ automatically. 
+  When you join channels, depending on the `channel actions configured </collaborate/create-channels.html>`__, you may see a welcome message, and channels may be added to `a category in your channel sidebar </collaborate/customize-your-channel-sidebar.html>`__ automatically. 
   Using Mattermost in a web browser or the desktop app, access **Channel Actions** from the channel name drop-down menu in the center pane to see what automatic actions have been configured.
+
+See the following documentation to learn more about working with channels:
+
+- `Create channels </collaborate/create-channels.html>`__
+- `Find channels </collaborate/find-channels.html>`__
+- `Customize your channel sidebar </collaborate/customize-your-channel-sidebar.html>`__
 
 Leave a channel
 ---------------
@@ -50,7 +71,7 @@ When you leave a private channel, you must be re-added by another channel member
 
 .. tabs::
 
-  .. tab:: Desktop
+  .. tab:: Web/Desktop
 
     Select the channel name at the top of the center pane to access the drop-down menu, then select **Leave Channel**. 
 

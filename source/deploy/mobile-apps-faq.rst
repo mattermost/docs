@@ -9,7 +9,7 @@ Mobile apps FAQ
 Can I connect to multiple Mattermost servers using the mobile apps?
 -------------------------------------------------------------------
 
-Yes. Mattermost mobile app v2.0 and later supports multiple server connections. See the `manage multiple server connections </welcome/manage-multiple-server-connections.html>`__ documentation for details. 
+Yes. Mattermost mobile app v2.0 and later supports multiple server connections. See the `manage multiple server connections </preferences/connect-multiple-workspaces.html>`__ documentation for details. 
 
 Is there a tablet version of the mobile apps?
 ---------------------------------------------
