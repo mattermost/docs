@@ -10,18 +10,18 @@ Learn more
 ----------
 
 .. toctree::
-   :maxdepth: 1
-   :hidden:
-   :titlesonly:
+  :maxdepth: 1
+  :hidden:
+  :titlesonly:
 
-   Manage your notifications </preferences/manage-your-notifications>
-   Customize your channel sidebar </preferences/customize-your-channel-sidebar>
-   Manage your profile </preferences/manage-your-profile>
-   Manage your security preferences </preferences/manage-your-security-preferences>
-   Set your status & availability </preferences/set-your-status-availability>
-   Customize your theme </preferences/customize-your-theme>
-   Customize your desktop app experience </preferences/customize-desktop-app-experience>
-   Connect to multiple workspaces </preferences/connect-multiple-workspaces>
+  Manage your notifications </preferences/manage-your-notifications>
+  Customize your channel sidebar </preferences/customize-your-channel-sidebar>
+  Manage your profile </preferences/manage-your-profile>
+  Manage your security preferences </preferences/manage-your-security-preferences>
+  Set your status & availability </preferences/set-your-status-availability>
+  Customize your theme </preferences/customize-your-theme>
+  Customize your desktop app experience </preferences/customize-desktop-app-experience>
+  Connect to multiple workspaces </preferences/connect-multiple-workspaces>
 
 * :doc:`Manage your notifications </preferences/manage-your-notifications>` - Learn how Mattermost notifications work by default and how to customize notifications based on how you prefer to work.
 * :doc:`Customize your channel sidebar </preferences/customize-your-channel-sidebar>` - Organize conversations in the sidebar to keep your workspace efficient.
