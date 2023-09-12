@@ -41,30 +41,32 @@ Learn more
 Learn more about collaborating within Mattermost channels:
 
 .. toctree::
-   :maxdepth: 1
-   :hidden:
+  :maxdepth: 1
+  :hidden:
 
-   Channel types </collaborate/channel-types> 
-   Create channels </collaborate/create-channels>
-   Channel naming conventions </collaborate/channel-naming-conventions> 
-   Rename a channel </collaborate/rename-channels>
-   Convert public channels to private </collaborate/convert-public-channels>
-   Join and leave channels </collaborate/join-leave-channels>
-   Start a call </collaborate/make-calls>
-   Manage channel members </collaborate/manage-channel-members>
-   Browse channels </collaborate/browse-channels> 
-   Navigate between channels </collaborate/navigate-between-channels>
-   Mark channels as favorites </collaborate/favorite-channels>
-   Mark channels as unread </collaborate/mark-channels-unread>
-   Archive and unarchive channels </collaborate/archive-unarchive-channels>
-   Interact with channels </collaborate/interact-with-channels>
+  Channel types </collaborate/channel-types>
+  Channel naming conventions </collaborate/channel-naming-conventions> 
+  Communicate a channel's focus and scope </collaborate/channel-header-purpose>
+  Create channels </collaborate/create-channels>
+  Rename channels </collaborate/rename-channels>
+  Convert public channels to private </collaborate/convert-public-channels>
+  Join and leave channels </collaborate/join-leave-channels>
+  Start a call </collaborate/make-calls>
+  Manage channel members </collaborate/manage-channel-members>
+  Browse channels </collaborate/browse-channels> 
+  Navigate between channels </collaborate/navigate-between-channels>
+  Mark channels as favorites </collaborate/favorite-channels>
+  Mark channels as unread </collaborate/mark-channels-unread>
+  Archive and unarchive channels </collaborate/archive-unarchive-channels>
 
 * :doc:`Channel types </collaborate/channel-types>` - Learn more about the types of channels available in Mattermost.
+* :doc:`Channel naming conventions </collaborate/channel-naming-conventions>` - Learn why channel names are important.
+* :doc:`Communicate a channel's focus and scope </collaborate/channel-header-purpose>` - Learn how to communicate a channel's scope and focus.
 * :doc:`Browse channels </collaborate/browse-channels>` - Browse all available public channels you can join, and all channels you're a member of.
 * :doc:`Join and leave channels </collaborate/join-leave-channels>` - Learn how to start or stop being a channel member.
 * :doc:`Navigate between channels </collaborate/navigate-between-channels>` - Learn how to navigate between channels.
 * :doc:`Create channels </collaborate/create-channels>`  - Create channels to organize discussion by topic, project, or focus.
-* :doc:`Channel naming conventions </collaborate/channel-naming-conventions>` - Learn why channel names are important.
+
 * :doc:`Rename a channel </collaborate/rename-channels>` - Rename channels to make them more discoverable.
 * :doc:`Convert public channels to private </collaborate/convert-public-channels>` - Learn how to convert channel access and visibility.
 * :doc:`Manage channel members </collaborate/manage-channel-members>` - Add and remove users from channels.

@@ -20,9 +20,6 @@ Send messages
 Send messages
 -------------
 
-.. |send-icon| image:: ../images/send_F048A.svg
-  :alt: Select the Send icon to post your message.
-
 Enter a message in the text field, then select **Send** |send-icon| to send the message. You can include images and file attachments to your messages by:
 
 - copying and pasting images.

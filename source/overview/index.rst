@@ -28,7 +28,7 @@ With Mattermost you can:
 
 * :doc:`Connect and collaborate </guides/collaborate>` - Stay connected with your team via 1:1 and group messages, voice calls, and screensharing.
 * :doc:`Build repeatable processes </guides/repeatable-processes>` - Build and configure repeatable processes with workflow automation to achieve specific and predictable outcomes.
-* :doc:`Customize your preferences` </guides/preferences>` - Match the way you work by adjusting your notification settings, changing your theme, or updating your profile settings.
+* :doc:`Customize your preferences </guides/preferences>` - Match the way you work by adjusting your notification settings, changing your theme, or updating your profile settings.
 
 This section provides an overview of Mattermost products, features, security, integrations, licensing, subscriptions, authentication, and compliance support.
 

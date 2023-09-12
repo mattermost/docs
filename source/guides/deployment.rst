@@ -90,14 +90,11 @@ Desktop and Mobile App deployment
     :maxdepth: 1
     :hidden:
 
-    Desktop app install guides </install/desktop-app-install>
     Desktop app deployment guide </deploy/desktop-app>
     Desktop MSI installer and group policy installation guides (beta) </install/desktop-msi-installer-and-group-policy-install>
     Desktop App custom dictionaries </install/desktop-custom-dictionaries>
     Desktop managed resources </install/desktop-app-managed-resources>
     Using Mattermost’s pre-built mobile apps </deploy/use-prebuilt-mobile-apps>
-    iOS setup </install/install-ios-app>
-    Android setup </install/install-android-app>
     Testing push notifications </deploy/mobile-testing-notifications>
     Deploy Mattermost mobile apps </deploy/mobile-overview>
     Mobile push notifications </deploy/mobile-hpns>
@@ -112,7 +109,6 @@ Customize the Mattermost desktop and mobile apps to meet any deployment needs.
 
 **Desktop Apps**
 
-* :doc:`Desktop app install guides </install/desktop-app-install>`
 * :doc:`Desktop app deployment guide </deploy/desktop-app>` - Customize and distribute the Mattermost desktop app with pre-configured settings.
 * :doc:`Desktop MSI installer and group policy installation guides (beta) </install/desktop-msi-installer-and-group-policy-install>` - Use the Mattermost MSI installer and Group Policy definitions for Windows deployment.
 * :doc:`Desktop app custom dictionaries </install/desktop-custom-dictionaries>` - Create custom dictionaries for Mattermost spellcheck.
@@ -121,8 +117,6 @@ Customize the Mattermost desktop and mobile apps to meet any deployment needs.
 **Mobile Apps**
 
 * :doc:`Using Mattermost’s pre-built mobile apps </deploy/use-prebuilt-mobile-apps>` - Connect users to your Mattermost server with our prebuilt apps for Android and iOS.
-* :doc:`iOS setup </install/install-ios-app>` - Install the Mattermost mobile app for iOS.
-* :doc:`Android setup </install/install-android-app>` - Install the Mattermost mobile app for Android.
 * :doc:`Testing push notifications </deploy/mobile-testing-notifications>` - Learn how to test mobile push notifications.
 * :doc:`Deploy Mattermost mobile apps </deploy/mobile-overview>` - Learn the basics of how to customize and deploy Mattermost to the Enterprise.
 * :doc:`Mobile push notifications </deploy/mobile-hpns>` - Set up mobile push notifications. 

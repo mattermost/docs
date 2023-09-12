@@ -8,7 +8,7 @@ Use the Mattermost Google Calendar plugin
 
 .. note..
 
-    Your system admin needs to `set up this plugin </about/setup-mattermost-google-calendar-plugin.html>`__ before you can use it to manage your Google Calendar in Mattermost.
+  Your system admin needs to `set up this plugin </about/setup-mattermost-google-calendar-plugin.html>`__ before you can use it to manage your Google Calendar in Mattermost.
 
 Connect your Google Calendar account to Mattermost
 ---------------------------------------------------
@@ -54,9 +54,9 @@ Create a calendar event
 
   .. note:: 
 
-  - You can invite guests to the event by username if they’ve already connected their Google Calendar account to the Mattermost server, or alternatively by their email address. 
-  - Once you’ve invited guests to an event, guests must accept the event invitation to receive event reminders based on how they’ve customized their Google Calendar plugin preferences.
-  - When you create an event, it's based on your timezone. Guests see event details based on their timezone in direct message reminders, but channel reminders display using the event creator's timezone. 
+    - You can invite guests to the event by username if they’ve already connected their Google Calendar account to the Mattermost server, or alternatively by their email address. 
+    - Once you’ve invited guests to an event, guests must accept the event invitation to receive event reminders based on how they’ve customized their Google Calendar plugin preferences.
+    - When you create an event, it's based on your timezone. Guests see event details based on their timezone in direct message reminders, but channel reminders display using the event creator's timezone. 
 
 Review your upcoming events
 ---------------------------

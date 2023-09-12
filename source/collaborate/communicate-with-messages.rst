@@ -28,7 +28,7 @@ Learn more about messages and threads:
 
 * :doc:`Send messages </collaborate/send-messages>` - Send messages to other Mattermost users.
 * :doc:`Reply to messages </collaborate/reply-to-messages>` - Communicate with your team in Mattermost.
-* :doc:`React with emojis and GIFs </collaborate/react-to-messages>` - Use emojis and GIFs to react to messages and to express concepts, humor, emotions, and physical gestures in your own messages.
+* :doc:`React with emojis and GIFs</collaborate/react-with-emojis-gifs>` - Use emojis and GIFs to react to messages and to express concepts, humor, emotions, and physical gestures in your own messages.
 * :doc:`Organize conversations with Collapsed Reply Threads </collaborate/organize-conversations>` - An enhanced communication thread experience is available in Mattermost.
 * :doc:`Mark messages as unread </collaborate/mark-messages-unread>` - Change messages to an unread state for easy follow-up.
 * :doc:`Forward messages </collaborate/forward-messages>` - Quickly and easily forward messages with previews.

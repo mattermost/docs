@@ -31,8 +31,6 @@ Do I need to compile the mobile apps to host my own push notification server?
 
 Yes. To host your own push notification server, you'll need to compile the mobile apps. See `documentation </deploy/build-custom-mobile-apps.html>`__ to learn how to compile your own mobile apps.
 
-.. _push-faq:
-
 How do push notifications work?
 ---------------------------------
 

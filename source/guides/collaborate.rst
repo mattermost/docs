@@ -15,7 +15,9 @@ This Mattermost end user documentation is designed for anyone who wants guidance
 
    Access your Mattermost workspace </collaborate/access-your-workspace>
    Organize using teams </collaborate/organize-using-teams>
+   Organize using custom user groups </collaborate/organize-using-custom-user-groups>
    Invite people </collaborate/invite-people>
+   Learn about Mattermost roles </collaborate/learn-about-roles>
    Collaborate within channels </collaborate/collaborate-within-channels>
    Communicate with messages and threads </collaborate/communicate-with-messages>
    Make calls </collaborate/make-calls>
@@ -24,7 +26,9 @@ This Mattermost end user documentation is designed for anyone who wants guidance
 
 * :doc:`Access your Mattermost workspace </collaborate/access-your-workspace>` - Log in to a Mattermost workspace to connect with your teammates.
 * :doc:`Organize using teams </collaborate/organize-using-teams>` - Learn about team-based organization in Mattermost.
+* :doc:`Organize using custom user groups </collaborate/organize-using-custom-user-groups>` - Learn about creating and managing custom user groups in Mattermost.
 * :doc:`Invite people to your workspace </collaborate/invite-people>` - Learn how to add new users to Mattermost and add users to existing teams and channels.
+* :doc:`Learn about Mattermost user roles </collaborate/learn-about-roles>` - Learn about the 6 user roles in Mattermost and what they can do.
 * :doc:`Collaborate within channels </collaborate/collaborate-within-channels>` Learn how to get started collaborating within Mattermost channels.
 * :doc:`Communicate with messages and threads </collaborate/communicate-with-messages>` Learn how to get started collaborating within Mattermost channels.
 * :doc:`Make calls </collaborate/make-calls>` Learn how to get started collaborating within Mattermost channels.

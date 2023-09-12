@@ -220,7 +220,7 @@ One Dark Theme
 .. image:: ../images/OneDark.png
   :alt: One Dark Theme
 
-`GitHub <https://github.com/georgewitteman/one-dark-mattermost>`_
+`Visit the one-dark-mattermost GitHub repository online: <https://github.com/georgewitteman/one-dark-mattermost>`__.
 
 Want this theme? Copy and paste the following code into Mattermost:
 
@@ -234,9 +234,9 @@ Discord Dark Theme
 .. image:: ../images/DiscordDarkTheme.png
   :alt: Discord Dark Theme
 
-Want this theme? Copy and paste the following code into Mattermost:
+`Visit the mattermost-discord-dark GitHub repository online: <https://github.com/danger89/mattermost-discord-dark>`__.
 
-`GitHub <https://github.com/danger89/mattermost-discord-dark>`_
+Want this theme? Copy and paste the following code into Mattermost:
 
 .. code-block:: none
 
