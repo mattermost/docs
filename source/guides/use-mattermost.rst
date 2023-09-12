@@ -7,13 +7,13 @@ Use Mattermost
 This Mattermost end user documentation is designed for anyone looking to connect and collaborate in Mattermost, build repeatable, automated processes, and make Mattermost match your work preferences.
 
 .. toctree::
-   :maxdepth: 1
-   :hidden:
-   :titlesonly:
+  :maxdepth: 1
+  :hidden:
+  :titlesonly:
 
-   Connect and collaborate </guides/collaborate>
-   Build repeatable processes </guides/repeatable-processes>
-   Customize your preferences </guides/preferences>
+  Connect and collaborate </guides/collaborate>
+  Build repeatable processes </guides/repeatable-processes>
+  Customize your preferences </guides/preferences>
 
 * :doc:`Connect and collaborate </guides/collaborate>` - Learn how to use Mattermost to connect and collaborate with your teammates.
 * :doc:`Build repeatable processes </guides/repeatable-processes>` - Learn how to build repeatable processes, move faster, and make fewer mistakes with checklist-based automations in Mattermost.

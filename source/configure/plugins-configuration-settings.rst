@@ -1436,8 +1436,8 @@ Encryption key
 |                                                                          | - Environment variable: N/A                          |
 +--------------------------------------------------------------------------+------------------------------------------------------+
 | **Note**: Select **Regenerate** to generate a new encryption key. When you regenerate this value, all users will need to        |
-| `reconnect their Google Calendar with Mattermost </channels/channels-settings.html#client-debugging/use-mattermost-google-      |
-| calendar-plugin.html#connect-your-google-calendar-account-to-mattermost>`__.                                                    |
+| `reconnect their Google Calendar with Mattermost                                                                                |
+| </collaborate/use-mattermost-google-calendar-plugin.html#connect-your-google-calendar-account-to-mattermost`__.                 |
 +--------------------------------------------------------------------------+------------------------------------------------------+
 
 .. config:setting:: plugins-googlecalendarappclientid

@@ -23,7 +23,7 @@ You can chance this message send behavior.
 
 .. tabs::
 
-    .. tab:: Web/Desktop
+    .. tab:: performance/Desktop
 
         If you find you're accidentally sending messages too soon, you can configure Mattermost to require an extra keystroke to send all messages, or for code blocks.
         
@@ -51,7 +51,7 @@ By default, Mattermost formats your messages with Markdown to show links, emojis
         This option isn't something you can set using the mobile app.
 
 Enable join/leave messages
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------
 
 By default, Mattermost shows you system messages when users join or leave channels you're a member of. You can hide these messages if preferred.
 

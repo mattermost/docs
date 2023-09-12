@@ -91,7 +91,7 @@ Review how your message formatting will look when the message is sent by selecti
 .. tip::
 
   - Hide the formatting options by selecting the **Show/Hide Formatting** |hide-formatting-icon| icon. Select the icon again to show the formatting options. 
-  - You can control whether post formatting is rendered within the message formatting editor. When disabled, raw text is shown. See the `Channels customization </channels/channels-settings.html#enable-post-formatting>`__ documentation for details. 
+  - You can control whether post formatting is rendered within the message formatting editor. When disabled, raw text is shown. See the `Channels customization </preferences/manage-advanced-options>`__ documentation for details. 
  
 Use Markdown
 -------------
@@ -315,7 +315,7 @@ Renders as: ``monospace``.
 In-line images
 ~~~~~~~~~~~~~~
 
-In-line images are images added within lines of text. You can control whether all in-line images over 100px in height are automatically collapsed or expanded in messages by setting a `user preference </channels/channels-settings.html#website-link-previews>`__, or by using the ``/collapse`` and ``/expand`` slash commands.
+In-line images are images added within lines of text. You can control whether all in-line images over 100px in height are automatically collapsed or expanded in messages by setting a `user preference </preferences/manage-your-display-options>`__, or by using the ``/collapse`` and ``/expand`` slash commands.
 
 To add in-line images to text, use an exclamation mark ``!`` followed by the ``alt text`` in square brackets ``[ ]``, then the ``image URL`` in round brackets ``( )``. You can add hover text after the link by placing the text in quotes ``" "``.
 
