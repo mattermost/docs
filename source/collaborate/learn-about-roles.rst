@@ -25,7 +25,7 @@ The first user added to a newly-installed Mattermost system is assigned the syst
 A system admin can view and manage users in **System Console > User Management > Users**. They can search users by name, filter users by teams, and filter to view other system admins, guests, as well as active and inactive users. Only a system admin can make changes to another system admin user account in Mattermost.
 
 Grant personal access tokens
-----------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 System admin also can enable `personal access tokens <https://developers.mattermost.com/integrate/admin-guide/admin-personal-access-token/>`__ for user accounts. This gives specific users permissions to create personal access tokens via **System Console > Users**.
 
