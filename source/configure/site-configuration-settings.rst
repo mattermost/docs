@@ -637,6 +637,9 @@ Enable last active time
 Enable custom user groups
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
+
 +---------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
 | - **true**: **(Default)** Users with appropriate permissions can create custom user groups,       | - System Config path: **Site Configuration > Users and teams**              |
 |   and users can @mention custom user groups in Mattermost conversations.                          | - ``config.json`` setting: N/A                                              |

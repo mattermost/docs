@@ -29,7 +29,7 @@ Customize a theme
 
 Using Mattermost in a web browser or the desktop app, you can customize any of the standard themes by selecting a standard theme and then selecting **Custom Theme** to load the standard theme into the custom theme color selectors.
 
-Select **Custom Theme** to customize your theme colors and share them with others by copying and pasting theme vectors into the input box. Observe a live preview as you customize theme colors, then select **Save** to confirm your changes. Discard your changes by selecting **Cancel**, or by exiting the settings modal and selecting **Yes, Discard**. See the `customize your theme </welcome/customize-your-theme.html>`__ documentation to learn more about working with the custom theme color selectors.
+Select **Custom Theme** to customize your theme colors and share them with others by copying and pasting theme vectors into the input box. Observe a live preview as you customize theme colors, then select **Save** to confirm your changes. Discard your changes by selecting **Cancel**, or by exiting the settings modal and selecting **Yes, Discard**. See the `customize your theme </preferences/customize-your-theme.html>`__ documentation to learn more about working with the custom theme color selectors.
 
 .. tip::
   In Enterprise edition, if you are a member of multiple teams, you can optionally select the checkbox **Apply new theme to all my teams** to have the theme show up across teams. Otherwise, the changes will only apply to the current team.

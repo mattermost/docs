@@ -51,7 +51,7 @@ Learn more about collaborating within Mattermost channels:
   Rename channels </collaborate/rename-channels>
   Convert public channels to private </collaborate/convert-public-channels>
   Join and leave channels </collaborate/join-leave-channels>
-  Start a call </collaborate/make-calls>
+  Make calls in Mattermost </collaborate/make-calls>
   Manage channel members </collaborate/manage-channel-members>
   Browse channels </collaborate/browse-channels> 
   Navigate between channels </collaborate/navigate-between-channels>
@@ -64,9 +64,9 @@ Learn more about collaborating within Mattermost channels:
 * :doc:`Communicate a channel's focus and scope </collaborate/channel-header-purpose>` - Learn how to communicate a channel's scope and focus.
 * :doc:`Browse channels </collaborate/browse-channels>` - Browse all available public channels you can join, and all channels you're a member of.
 * :doc:`Join and leave channels </collaborate/join-leave-channels>` - Learn how to start or stop being a channel member.
+* :doc:`Make calls in Mattermost </collaobrate/make-calls>` - Learn how to start, join, and attend calls in Mattermost, as well as screen share.
 * :doc:`Navigate between channels </collaborate/navigate-between-channels>` - Learn how to navigate between channels.
 * :doc:`Create channels </collaborate/create-channels>`  - Create channels to organize discussion by topic, project, or focus.
-
 * :doc:`Rename a channel </collaborate/rename-channels>` - Rename channels to make them more discoverable.
 * :doc:`Convert public channels to private </collaborate/convert-public-channels>` - Learn how to convert channel access and visibility.
 * :doc:`Manage channel members </collaborate/manage-channel-members>` - Add and remove users from channels.

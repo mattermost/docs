@@ -77,7 +77,7 @@ Enable Collapsed Reply Threads
 
 See our `configuration settings </configure/configuration-settings.html#collapsed-reply-threads>`__ documentation for details on configuring the default availability of collapsed reply threads. From Mattermost v7.0, Collapsed Reply Threads are enabled by default for all new Mattermost deployments.
 
-Depending on how your system admin has configured **Collapsed Reply Threads** for your workspace, it may already be enabled for you, or you may be able to `enable this feature for your account <preferences/manage-your-display-options.html#collapsed-reply-threads`__ by going to **Settings > Display > Collapsed Reply Threads**. 
+Depending on how your system admin has configured **Collapsed Reply Threads** for your workspace, it may already be enabled for you, or you may be able to `enable this feature for your account </preferences/manage-your-display-options.html#collapsed-reply-threads`__ by going to **Settings > Display > Collapsed Reply Threads**. 
 
 Tutorial video
 ---------------

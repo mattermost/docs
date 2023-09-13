@@ -7,7 +7,7 @@ Add people to your workspace
 .. |plus| image:: ../images/plus_F0415.svg
   :alt: The Plus icon provides access to channel and direct message functionality.
 
-Getting people set up with a Mattermost account is typically something that admins do when deploying and configuring the Mattermost workspace. However, `team admins </welcome/about-user-roles.html#team-admin>`__ can also invite people, including `guests </onboard/guest-accounts.html>`__, to a Mattermost team via a `direct invite <#send-a-direct-invite>`__, a `public team invite link <#send-a-team-invite-link>`__.
+Getting people set up with a Mattermost account is typically something that admins do when deploying and configuring the Mattermost workspace. However, `team admins </collaborate/learn-about-roles.html#team-admin>`__ can also invite people, including `guests </onboard/guest-accounts.html>`__, to a Mattermost team via a `direct invite <#send-a-direct-invite>`__, a `public team invite link <#send-a-team-invite-link>`__.
 
 All users can add existing Mattermost users to a Mattermost team or channel, unless the system admin has restricted the ability for you to do so.
 
@@ -17,7 +17,7 @@ All users can add existing Mattermost users to a Mattermost team or channel, unl
 .. tip::
 
     - Add users to a channel by selecting the channel name and selecting **Add Members**. 
-    - Add groups of users to a channel by `creating a custom group </welcome/manage-custom-groups.html>`__ and `@mentioning </collaborate/mention-people.html>`__ the custom group in a channel. Mattermost will prompt to you to add any users who aren't already members of that channel.
+    - Add groups of users to a channel by `creating a custom group </collaborate/organize-using-custom-user-groups.html>`__ and `@mentioning </collaborate/mention-people.html>`__ the custom group in a channel. Mattermost will prompt to you to add any users who aren't already members of that channel.
     - A guest is a special role that is restricted to only the channels they have been invited to. When guest access is enabled, you can invite guests or users external to the organization, such as vendors or customers.
 
 Send a direct invite

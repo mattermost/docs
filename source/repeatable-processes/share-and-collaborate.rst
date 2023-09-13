@@ -91,7 +91,7 @@ By default, all Members can start a run using a playbook. You can restrict this 
 If you want to continue to allow Members to edit playbooks, an alternative to this configuration is to make the playbook private.
 
 Duplicate a playbook
-~~~~~~~~~~~~~~~~~~~~
+---------------------
 
 Playbooks are repeatable workflows and sometimes it’s easier to copy and improve rather than start from scratch. 
 
@@ -100,7 +100,7 @@ You can do this by duplicating a playbook in the Playbooks screen. Select the **
 To import a playbook, go to the Playbooks screen, and select **Import**. Choose the team you’re importing to, then select the JSON file. You can also export any playbook to JSON to easily share with other Mattermost servers.
 
 Channel export
-^^^^^^^^^^^^^^
+--------------
 
 Exporting the contents of a channel requires the channel export plugin. See the `Channel Export plugin documentation <https://github.com/mattermost/mattermost-plugin-channel-export#readme>`_ for more information.
 

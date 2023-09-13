@@ -350,6 +350,81 @@ redirects = {
         "https://docs.mattermost.com/welcome/log-in.html",
 "channels/organize-conversations.html#enable-collapsed-reply-threads-beta":
         "https://docs.mattermost.com/channels/organize-conversations.html#enable-collapsed-reply-threads",
+# Important Note: The following guide files were reorg'd in FY23 Q3.
+"/channels/channel-types.html":
+        "https://docs.mattermost.com/collaborate/channel-types.html",
+"/channels/create-channels.html":
+        "https://docs.mattermost.com/collaborate/create-channels.html",
+"/channels/channel-naming-conventions.html":
+        "https://docs.mattermost.com/collaborate/channel-naming-conventions.html",
+"/channels/rename-channels.html":
+        "https://docs.mattermost.com/collaborate/rename-channels.html",
+"/channels/convert-public-channels.html":
+        "https://docs.mattermost.com/collaborate/convert-public-channels.html",
+"/channels/join-leave-channels.html":
+        "https://docs.mattermost.com/collaborate/join-leave-channels.html",
+"/channels/make-calls.html":
+        "https://docs.mattermost.com/collaborate/make-calls.html",
+"/channels/manage-channel-members.html":
+        "https://docs.mattermost.com/collaborate/manage-channel-members.html",
+"/channels/browse-channels.html":
+        "https://docs.mattermost.com/collaborate/browse-channels.html",
+"/channels/navigate-between-channels.html":
+        "https://docs.mattermost.com/collaborate/navigate-between-channels.html",
+"/channels/favorite-channels.html":
+        "https://docs.mattermost.com/collaborate/favorite-channels.html",
+"/channels/mark-channels-unread.html":
+        "https://docs.mattermost.com/collaborate/mark-channels-unread.html",
+"/channels/customize-your-channel-sidebar.html":
+        "https://docs.mattermost.com/preferences/customize-your-channel-sidebar.html",
+"/channels/archive-unarchive-channels.html":
+        "https://docs.mattermost.com/collaborate/archive-unarchive-channels.html",
+"/channels/set-channel-preferences.html":
+        "https://docs.mattermost.com/guides/preferences.html",
+"/channels/channels-settings.html":
+        "https://docs.mattermost.com/guides/preferences.html",
+"/channels/interact-with-channels.html":
+        "https://docs.mattermost.com/collaborate/run-slash-commands.html",
+"/channels/send-messages.html":
+        "https://docs.mattermost.com/collaborate/send-messages.html",
+"/channels/message-priority.html":
+        "https://docs.mattermost.com/collaborate/message-priority.html",
+"/channels/reply-to-messages.html":
+        "https://docs.mattermost.com/collaborate/reply-to-messages.html",
+"/channels/organize-conversations.html":
+        "https://docs.mattermost.com/collaborate/organize-conversations.html",
+"/channels/react-to-messages.html":
+        "https://docs.mattermost.com/collaborate/react-with-emojis-gifs.html",
+"/channels/mention-people.html":
+        "https://docs.mattermost.com/collaborate/mention-people.html",
+"/channels/mark-messages-unread.html":
+        "https://docs.mattermost.com/collaborate/mark-messages-unread.html",
+"/channels/format-messages.html":
+        "https://docs.mattermost.com/collaborate/format-messages.html",
+"/channels/share-files-in-messages.html":
+        "https://docs.mattermost.com/collaborate/share-files-in-messages.html",
+"/channels/forward-messages.html":
+        "https://docs.mattermost.com/collaborate/forward-messages.html",
+"/channels/share-links.html":
+        "https://docs.mattermost.com/collaborate/share-links.html",
+"/channels/save-pin-messages.html":
+        "https://docs.mattermost.com/collaborate/save-pin-messages.html",
+"/channels/message-reminders.html":
+        "https://docs.mattermost.com/collaborate/message-reminders.html",
+"/channels/search-for-messages.html":
+        "https://docs.mattermost.com/collaborate/search-for-messages.html",
+"/channels/keyboard-accessibility.html":
+        "https://docs.mattermost.com/collaborate/keyboard-accessibility.html#",
+"/channels/keyboard-shortcuts-for-channels.html":
+        "https://docs.mattermost.com/collaborate/keyboard-shortcuts.html",
+"/channels/run-slash-commands.html":
+        "https://docs.mattermost.com/collaborate/run-slash-commands.html",
+"/channels/extend-channels-functionality.html":
+        "https://docs.mattermost.com/collaborate/extend-mattermost-with-integrations.html",
+"/channels/collaborate-using-mattermost-for-microsoft-teams.html":
+        "https://docs.mattermost.com/collaborate/collaborate-using-mattermost-for-microsoft-teams.html",
+"/channels/use-mattermost-google-calendar-plugin.html":
+        "https://docs.mattermost.com/collaborate/use-mattermost-google-calendar-plugin.html",
 
 # Cloud redirects
 "cloud/cloud-administration/cloud-changelog.html":
@@ -1576,7 +1651,6 @@ redirects = {
 	"https://docs.mattermost.com/guides/channels.html",
 "guides/orchestration.html":
         "https://docs.mattermost.com/about/orchestration.html",
-
 # Important Note: The following guide files were archived in FY23 Q2.
 "guides/cloud-admin-guide.html":
 	"https://docs.mattermost.com/guides/deployment.html",
@@ -1592,6 +1666,22 @@ redirects = {
 	"https://docs.mattermost.com/guides/administration.html",
 "guides/user.html":
         "https://docs.mattermost.com/guides/channels.html",
+# Important Note: The following guide files were reorg'd in FY23 Q3.
+"/guides/channels.html":
+        "https://docs.mattermost.com/guides/use-mattermost.html",
+"/guides/channels.html#channels-messages-and-conversations":
+        "https://docs.mattermost.com/guides/collaborate.html",
+"/guides/channels.html#work-with-channels":
+        "https://docs.mattermost.com/collaborate/collaborate-within-channels.html",
+"/guides/channels.html#work-with-messages":
+        "https://docs.mattermost.com/collaborate/communicate-with-messages.html",
+"/guides/channels.html#keyboard-accessibility":
+        "https://docs.mattermost.com/collaborate/keyboard-accessibility.html",
+"/guides/channels.html#extend-channels-functionality":
+        "https://docs.mattermost.com/collaborate/extend-mattermost-with-integrations.html",
+"/guides/playbooks.html":
+        "https://docs.mattermost.com/guides/repeatable-processes.html",
+
 
 # Help redirects resulting from the June 2021 docs reorganization project.
 "help/apps/desktop-changelog.html":
@@ -2435,6 +2525,97 @@ redirects = {
 	"https://docs.mattermost.com/playbooks/share-and-collaborate.html",
 "playbooks/playbook-permissions":
 	"https://docs.mattermost.com/playbooks/share-and-collaborate.html#playbooks-permissions",
+# Important Note: The following guide files were reorg'd in FY23 Q3.
+"/playbooks/overview.html":
+        "https://docs.mattermost.com/repeatable-processes/learn-about-playbooks.html",
+"/playbooks/overview.html#what-s-a-playbook":
+        "https://docs.mattermost.com/repeatable-processes/learn-about-playbooks.html",
+"/playbooks/overview.html#what-s-a-run":
+        "https://docs.mattermost.com/repeatable-processes/learn-about-playbooks.html#what-s-a-run",
+"/playbooks/overview.html#keywords":
+        "https://docs.mattermost.com/repeatable-processes/learn-about-playbooks.html#keywords",
+"/playbooks/overview.html#welcome-message":
+        "https://docs.mattermost.com/repeatable-processes/learn-about-playbooks.html#welcome-message",
+"/playbooks/overview.html#tasks-and-checklists":
+        "https://docs.mattermost.com/repeatable-processes/learn-about-playbooks.html#tasks-and-checklists",
+"/playbooks/overview.html#status-updates":
+        "https://docs.mattermost.com/repeatable-processes/learn-about-playbooks.html#status-updates",
+"/playbooks/overview.html#retrospective":
+        "https://docs.mattermost.com/repeatable-processes/learn-about-playbooks.html#retrospective",
+"/playbooks/work-with-playbooks.html":
+        "https://docs.mattermost.com/repeatable-processes/work-with-playbooks.html",
+"/playbooks/work-with-playbooks.html#templates":
+        "https://docs.mattermost.com/repeatable-processes/work-with-playbooks.html#templates",
+"/playbooks/work-with-playbooks.html#edit-a-playbook":
+        "https://docs.mattermost.com/repeatable-processes/work-with-playbooks.html#edit-a-playbook",
+"/playbooks/work-with-playbooks.html#make-checklists":
+        "https://docs.mattermost.com/repeatable-processes/work-with-playbooks.html#make-checklists",
+"/playbooks/work-with-playbooks.html#multiple-runs-in-a-channel":
+        "https://docs.mattermost.com/repeatable-processes/work-with-playbooks.html#multiple-runs-in-a-channel",
+"/playbooks/work-with-playbooks.html#status-updates":
+        "https://docs.mattermost.com/repeatable-processes/work-with-playbooks.html#status-updates",
+"/playbooks/work-with-playbooks.html#keywords":
+        "https://docs.mattermost.com/repeatable-processes/work-with-playbooks.html#keywords",
+"/playbooks/work-with-playbooks.html#actions":
+        "https://docs.mattermost.com/repeatable-processes/work-with-playbooks.html#actions",
+"/playbooks/work-with-playbooks.html#run-metrics":
+        "https://docs.mattermost.com/repeatable-processes/work-with-playbooks.html#run-metrics",
+"/playbooks/work-with-playbooks.html#webhooks":
+        "https://docs.mattermost.com/repeatable-processes/work-with-playbooks.html#webhooks",
+"/playbooks/work-with-runs.html":
+        "https://docs.mattermost.com/repeatable-processes/work-with-runs.html",
+"/playbooks/work-with-runs.html#follow-and-participate":
+        "https://docs.mattermost.com/repeatable-processes/work-with-runs.html#follow-and-participate",
+"/playbooks/work-with-runs.html#view-run-details":
+        "https://docs.mattermost.com/repeatable-processes/work-with-runs.html#view-run-details",
+"/playbooks/work-with-runs.html#runs-and-channel-behavior":
+        "https://docs.mattermost.com/repeatable-processes/work-with-runs.html#runs-and-channel-behavior",
+"/playbooks/work-with-runs.html#send-outgoing-webhooks":
+        "https://docs.mattermost.com/repeatable-processes/work-with-runs.html#send-outgoing-webhooks",
+"/playbooks/work-with-tasks.html":
+        "https://docs.mattermost.com/repeatable-processes/work-with-tasks.html",
+"/playbooks/work-with-tasks.html#tasks-and-due-dates":
+        "https://docs.mattermost.com/repeatable-processes/work-with-tasks.html#tasks-and-due-dates",
+"/playbooks/work-with-tasks.html#task-actions":
+        "https://docs.mattermost.com/repeatable-processes/work-with-tasks.html#task-actions",
+"/playbooks/work-with-tasks.html#task-inbox":
+        "https://docs.mattermost.com/repeatable-processes/work-with-tasks.html#task-inbox",
+"/playbooks/notifications-and-updates.html":
+        "https://docs.mattermost.com/repeatable-processes/notifications-and-updates.html",
+"/playbooks/notifications-and-updates.html#status-updates":
+        "https://docs.mattermost.com/repeatable-processes/notifications-and-updates.html#status-updates",
+"/playbooks/notifications-and-updates.html#request-an-update":
+        "https://docs.mattermost.com/repeatable-processes/notifications-and-updates.html#request-an-update",
+"/playbooks/notifications-and-updates.html#follow-runs-and-playbooks":
+        "https://docs.mattermost.com/repeatable-processes/notifications-and-updates.html#follow-runs-and-playbooks",
+"/playbooks/notifications-and-updates.html#daily-digest":
+        "https://docs.mattermost.com/repeatable-processes/notifications-and-updates.html#daily-digest",
+"/playbooks/notifications-and-updates.html#playbook-to-do":
+        "https://docs.mattermost.com/repeatable-processes/notifications-and-updates.html#playbook-to-do",
+"/playbooks/metrics-and-goals.html":
+        "https://docs.mattermost.com/repeatable-processes/metrics-and-goals.html",
+"/playbooks/metrics-and-goals.html#configure-retrospectives-before-a-run":
+        "https://docs.mattermost.com/repeatable-processes/metrics-and-goals.html#configure-retrospectives-before-a-run",
+"/playbooks/metrics-and-goals.html#metrics":
+        "https://docs.mattermost.com/repeatable-processes/metrics-and-goals.html#metrics",
+"/playbooks/share-and-collaborate.html":
+        "https://docs.mattermost.com/repeatable-processes/share-and-collaborate.html",
+"/playbooks/share-and-collaborate.html#playbook-roles":
+        "https://docs.mattermost.com/repeatable-processes/share-and-collaborate.html#playbook-roles",
+"/playbooks/share-and-collaborate.html#playbooks-permissions":
+        "https://docs.mattermost.com/repeatable-processes/share-and-collaborate.html#playbooks-permissions",
+"/playbooks/share-and-collaborate.html#restrict-who-can-create-playbooks":
+        "https://docs.mattermost.com/repeatable-processes/share-and-collaborate.html#restrict-who-can-create-playbooks",
+"/playbooks/share-and-collaborate.html#duplicate-a-playbook":
+        "https://docs.mattermost.com/repeatable-processes/share-and-collaborate.html#duplicate-a-playbook",
+"/playbooks/share-and-collaborate.html#channel-export":
+        "https://docs.mattermost.com/repeatable-processes/share-and-collaborate.html#channel-export",
+"/playbooks/interact-with-playbooks.html":
+        "https://docs.mattermost.com/repeatable-processes/interact-with-playbooks.html",
+"/playbooks/interact-with-playbooks.html#slash-commands":
+        "https://docs.mattermost.com/repeatable-processes/interact-with-playbooks.html#slash-commands",
+"/playbooks/interact-with-playbooks.html#api-documentation":
+        "https://docs.mattermost.com/repeatable-processes/interact-with-playbooks.html#api-documentation",
 
 # Process redirects
 # The process directory and its contents have been archived in FY23 Q2 and all applicable content has been moved from docs.mm.com to handbook.mm.com.

@@ -23,7 +23,7 @@ You can chance this message send behavior.
 
 .. tabs::
 
-    .. tab:: performance/Desktop
+    .. tab:: Web/Desktop
 
         If you find you're accidentally sending messages too soon, you can configure Mattermost to require an extra keystroke to send all messages, or for code blocks.
         

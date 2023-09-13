@@ -84,7 +84,7 @@ Any member of a channel can remove other members from a channel.
 
     You have two ways to remove members from a channel:
 
-    - Select the channel name at the top of the center pane to access the drop-down menu, then select **Manage Members**. Select the member's `user role </welcome/about-user-roles.html>`__, then select **Remove from Channel**.
+    - Select the channel name at the top of the center pane to access the drop-down menu, then select **Manage Members**. Select the member's `user role </collaborate/learn-about-roles.html>`__, then select **Remove from Channel**.
     - Select the channel's **View Info** |channel-info| icon, and select **Members** in the right pane. From there, select **Manage**, select a user's role, then select **Remove from Channel**.
 
     .. image:: ../images/remove-member-from-channel.png
@@ -96,5 +96,5 @@ Any member of a channel can remove other members from a channel.
     2. Tap **View Info**.
     3. Tap **Members**.
     4. Tap **Manage** in the top right corner of the screen.
-    5. Tap a `user role </welcome/about-user-roles.html>`__ to change it, and tap **Remove from Channel**.
+    5. Tap a user role to change it, and tap **Remove from Channel**.
     6. Tap **Done**.

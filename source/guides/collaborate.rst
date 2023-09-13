@@ -20,7 +20,6 @@ This Mattermost end user documentation is designed for anyone who wants guidance
    Learn about Mattermost roles </collaborate/learn-about-roles>
    Collaborate within channels </collaborate/collaborate-within-channels>
    Communicate with messages and threads </collaborate/communicate-with-messages>
-   Make calls </collaborate/make-calls>
    Keyboard shortcuts </collaborate/keyboard-shortcuts>
    Extend Mattermost with integrations </collaborate/extend-mattermost-with-integrations>
 
@@ -31,6 +30,5 @@ This Mattermost end user documentation is designed for anyone who wants guidance
 * :doc:`Learn about Mattermost user roles </collaborate/learn-about-roles>` - Learn about the 6 user roles in Mattermost and what they can do.
 * :doc:`Collaborate within channels </collaborate/collaborate-within-channels>` Learn how to get started collaborating within Mattermost channels.
 * :doc:`Communicate with messages and threads </collaborate/communicate-with-messages>` Learn how to get started collaborating within Mattermost channels.
-* :doc:`Make calls </collaborate/make-calls>` Learn how to get started collaborating within Mattermost channels.
 * :doc:`Keyboard shortcuts </collaborate/keyboard-shortcuts>` - Make a more efficient use of your keyboard with keyboard shortcuts.
 * :doc:`Extend Mattermost with integrations </collaborate/extend-mattermost-with-integrations>` - Find open source integrations to common tools in the Mattermost Marketplace.

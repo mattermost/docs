@@ -96,7 +96,6 @@ What is the process to end a customer relationship due to new U.S. trade laws or
 
 The customer is contacted via email with either manually or through an automated process with compliance@mattermost.com cc'd and the communication is written back into SFDC for record keeping.
 
-
 U.S. export compliance overview
 -------------------------------
 
@@ -203,7 +202,7 @@ Selecting **Contact us** in the Mattermost Admin Advisor will send some informat
 Are the server access logs containing IP addresses a GDPR compliance issue?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Based on our interpretation of `article 49 of GDPR <https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32016R0679&from=EN>`_, processing personal data for the purpose of ensuring network and information security is acceptable. Moreover:
+Based on our interpretation of `article 49 of GDPR <https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32016R0679&from=EN>`__, processing personal data for the purpose of ensuring network and information security is acceptable. Moreover:
 
 - You can control access to the logs via restricted access to the System Console and the server.
 - As a self-hosted software, you have full control and ownership of the logs, with the ability to set up a purge schedule to meet your needs.
@@ -237,4 +236,4 @@ Are you 508 compliant?
 
 Yes, the Mattermost platform is compliant with 508.
 
-Learn more about our `VPAT Template for 508 compliance <https://docs.mattermost.com/about/vpat.html>`_, and `how Mattermost approaches accessibility in product development <https://mattermost.com/blog/mattermost-accessibility-for-the-visually-impaired/>`_.
+Learn more about our `VPAT Template for 508 compliance <https://docs.mattermost.com/about/vpat.html>`__, and `how Mattermost approaches accessibility in product development <https://mattermost.com/blog/mattermost-accessibility-for-the-visually-impaired/>`__.

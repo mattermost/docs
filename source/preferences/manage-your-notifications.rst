@@ -4,6 +4,8 @@ Manage your notifications
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
+
+
 .. |gear| image:: ../images/settings-outline_F08BB.svg
   :alt: Use the Settings icon to customize your Mattermost user experience.
 
@@ -21,6 +23,8 @@ Mattermost notifies you of new activity in the following ways:
 - **Sounds**: Audible sounds alert you to new activity.
 
 You can configure Mattermost to receive increase or decrease the number of notifications based on your preferences.
+
+.. tip:: Missing notifications? Visit our `notifications knowledge base article <https://support.mattermost.com/hc/en-us/articles/19161390661780>`__ for troubleshooting tips and tricks.
 
 Get notified
 -------------

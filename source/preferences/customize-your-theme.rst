@@ -19,7 +19,7 @@ To customize your Mattermost theme:
 
 .. tabs::
 
-  .. tab:: Browser/desktop
+  .. tab:: Web/desktop
 
     Select the **Settings** |gear-icon| icon, then go to **Display > Theme**. Select **Theme Colors** to choose from five standard themes designed by the Mattermost team. 
 
