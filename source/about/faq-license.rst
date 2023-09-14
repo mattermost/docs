@@ -1,6 +1,10 @@
 Open-source licensing questions
 ===============================
 
+.. contents:: On this page
+    :backlinks: top
+    :depth: 2
+
 Terms of use and privacy policy
 -------------------------------
 

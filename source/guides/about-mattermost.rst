@@ -11,7 +11,8 @@ Mattermost is an open source platform for secure communication, collaboration, a
 Mattermost’s mission is to make the world safer and more productive by developing and delivering secure, open source collaboration software that is trusted, flexible, and offers fast time-to-value. Find an overview below of our products, features, security, integrations, licensing and subscriptions, authentication, and compliance support.
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
+   :titlesonly:
    :hidden:
 
    /about/product.rst

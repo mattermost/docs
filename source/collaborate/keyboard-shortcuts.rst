@@ -8,6 +8,7 @@ Mattermost keyboard shortcuts
 
   Keyboard accessibility </collaborate/keyboard-accessibility>
   Run slash commands </collaborate/run-slash-commands>
+  Built-in-slash-commands </collaborate/built-in-slash-commands>
 
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:

@@ -1,6 +1,10 @@
 Product questions
 =================
 
+.. contents:: On this page
+    :backlinks: top
+    :depth: 2
+
 What features are available on different Mattermost clients?
 ------------------------------------------------------------
 

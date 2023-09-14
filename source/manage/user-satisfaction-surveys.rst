@@ -6,7 +6,7 @@ User satisfaction surveys
 
 Feedback is used to measure user satisfaction and improve product quality by hearing directly from users. Please refer to our `privacy policy <https://github.com/mattermost/mattermost/blob/master/server/build/PRIVACY_POLICY.md>`_ for more information on the collection and use of information received through our services.
 
-.. contents::
+.. contents:: On this page
   :depth: 2
   :local:
   :backlinks: entry
