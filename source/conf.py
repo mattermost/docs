@@ -345,6 +345,28 @@ redirects = {
 # Important Note: The following guide files were reorg'd in FY23 Q3.
 "/boards/work-with-boards.html":
         "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+"boards/boards-settings.html":
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/index.md",
+"boards/calculations.html":
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/index.md",
+"boards/work-with-boards.html":
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/index.md",
+"boards/groups-filter-sort.html":
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/index.md",
+"boards/migrate-to-boards.html":
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/index.md",
+"boards/navigate-boards.html":
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/index.md",
+"boards/overview.html":
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/index.md",
+"boards/share-and-collaborate.html":
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/index.md",
+"boards/work-with-boards.html":
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/index.md",
+"boards/work-with-cards.html":
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/index.md",
+"boards/work-with-views.html":
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/index.md",
 
 # Channels redirects
 "channels/find-channels.html":
@@ -1654,6 +1676,9 @@ redirects = {
 	"https://docs.mattermost.com/guides/channels.html",
 "guides/orchestration.html":
         "https://docs.mattermost.com/about/orchestration.html",
+"guides/boards.html":
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/index.md",
+
 # Important Note: The following guide files were archived in FY23 Q2.
 "guides/cloud-admin-guide.html":
 	"https://docs.mattermost.com/guides/deployment.html",

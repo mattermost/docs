@@ -1,3 +1,6 @@
+:orphan:
+:nosearch:
+
 Product configuration settings
 ===============================
 

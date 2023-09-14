@@ -154,7 +154,7 @@ Build out the required deployment environments (development, staging, production
 3.3.4 Install software
 ^^^^^^^^^^^^^^^^^^^^^^
 
-Install and configure Mattermost and its component software (PostgreSQL, Nginx or another proxy, etc.)
+Install and configure Mattermost and its component software (PostgreSQL, NGINX, or another proxy, etc.)
 
 **Reference**: https://docs.mattermost.com/guides/deployment.html#install-guides
 

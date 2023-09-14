@@ -56,7 +56,6 @@ Features include:
 
 - Unlimited teams and channels for one-to-one and group messaging, file sharing, and unlimited search history with threaded messaging, emoji, and custom emoji.
 - Unlimited playbooks with ad hoc add/remove tasks, automated triggers, and stakeholders dashboard.
-- Unlimited boards, with table, gallery, list views, a single workspace per channel, shareable read-only boards, and data import.
 - Native apps for iOS, Android, Windows, macOS, and Linux.
 - Pre-packaged integrations with most common developer tools, including Jira, Confluence, GitHub, GitLab, CircleCI, Zoom, Jitsi, and more.
 - Tools for `custom branding </configure/custom-branding-tools.html>`__ and `themes </messaging/customizing-theme-colors.html>`__.

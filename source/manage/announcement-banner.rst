@@ -15,7 +15,7 @@ System Admins can display a notice that's visible to all users on the system via
 
 .. note::
 
-   The announcement banner is not displayed in the Boards or Playbooks tabs.
+   The announcement banner displays in Mattermost Channels, and is not visible in Playbooks, the Focalboard plugin, or other Mattermost integrations.
 
 .. image:: ../images/announcement-banner.png
   :alt: System Admins can display an announcement banner at the top of the user's screen.

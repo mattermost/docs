@@ -82,7 +82,7 @@ The team URL is part of the web address that navigates to your team on the syste
 - Teams may contain only lowercase letters, numbers, and dashes.
 - Teams must start with a letter and cannot end in a dash.
 - Teams must be 2 - 64 characters in length.
-- Team names cannot start with the following restricted words: admin, api, channel, claim, error, files, help, landing, login, mfa, oauth, plug, plugins, post, signup, playbooks, or boards.
+- Team names cannot start with the following restricted words: admin, api, channel, claim, error, files, help, landing, login, mfa, oauth, plug, plugins, post, signup, or playbooks.
 
 Join a team
 -----------

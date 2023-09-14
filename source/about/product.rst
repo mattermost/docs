@@ -46,16 +46,6 @@ Mattermost `playbooks </guides/repeatable-processes.html>`__ streamline complex,
 
 .. image:: ../images/Playbooks_Hero.png
    :alt: An example of the Mattermost Playbooks screen that includes active run details in the right-hand pane.
-   
-Use Boards to hit your milestones and support your project workflows
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Project workflows include use cases driving milestone achievement such as project planning, execution, and task management where teams require alignment on a shared set of tasks, milestones, and goals. Typical life cycles for project workflows are measured in weeks to months. Project workflows can include various scopes, from introducing a new product or feature to planning a team offsite.
-
-`Boards </guides/boards.html>`__ is a deliverable and task management solution to help teams achieve project milestones using a familiar kanban board structure. Align work across the organization, and invest time and effort into what matters most. Stay on schedule with clearly defined tasks, owners, checklists, and deadlines. Increase transparency and keep all resources available including documents, images, and links. Additionally, boards are perfect for tracking tasks for sprints and features in roadmap planning.
-
-.. image:: ../images/Boards_Hero.png
-   :alt: An example of the Mattermost Boards screen that includes a project status board and cards organized by status.
 
 About the Mattermost open source project
 -----------------------------------------
