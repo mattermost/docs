@@ -80,7 +80,7 @@ Using Mattermost in a web browser or the desktop app, you can upload new emojis 
   If you can't see the **Custom Emoji** option, your Mattermost system admin may have restricted access to upload custom emoji. Contact your Mattermost system admin for assistance.
   
 Remove custom emojis
-^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~
 
 Using Mattermost in a web browser or the desktop app, you can remove custom emojis that you uploaded to Mattermost.
 

@@ -258,7 +258,6 @@ Or by indenting each line by four spaces:
 
   ^^^^ 4x spaces
 
-
 **Syntax highlighting**
 
 To add syntax highlighting, type the language to be highlighted after the ``````` at the beginning of the code block. Mattermost also offers four different code themes (GitHub, Solarized Dark, Solarized Light, and Monokai) that can be changed in **Settings > Display > Theme > Custom Theme > Center Channel Styles**.
@@ -417,7 +416,7 @@ Create block quotes using ``>``.
 .. image:: ../images/blockQuotes.png
 
 Tables
-------
+~~~~~~
 
 Create a table by placing a dashed line ``---`` under the header row, then separating each column with using pipes ``|``. The columns don’t need to line up exactly. Choose how to align table columns by including colons ``:`` within the header row.
 

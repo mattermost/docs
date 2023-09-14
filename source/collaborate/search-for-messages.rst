@@ -157,10 +157,6 @@ To search for messages containing hashtags, select a hashtag in an existing post
   
   Hashtags don't link to channels. If you have a channel named “Marketing”, selecting a ``#marketing`` hashtag does not take you to the Marketing channel. To link to public channels, use the tilde ``~`` symbol followed by the channel name. For example ``~marketing``.
 
-Use sockets for the database
-----------------------------
-
-
 Notes about performing Mattermost searches
 -------------------------------------------
 

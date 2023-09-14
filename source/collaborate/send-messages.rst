@@ -16,10 +16,6 @@ Send messages
 .. |smile-icon| image:: ../images/smile-icon.png
   :alt: Use the Smile icon to add emojis to your message.
 
-
-Send messages
--------------
-
 Enter a message in the text field, then select **Send** |send-icon| to send the message. You can include images and file attachments to your messages by:
 
 - copying and pasting images.

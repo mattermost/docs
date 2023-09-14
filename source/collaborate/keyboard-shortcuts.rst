@@ -6,7 +6,7 @@ Mattermost keyboard shortcuts
   :hidden:
   :titlesonly:
 
-  Keyboard accessibility in Channels </collaborate/keyboard-accessibility>
+  Keyboard accessibility </collaborate/keyboard-accessibility>
   Run slash commands </collaborate/run-slash-commands>
 
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst

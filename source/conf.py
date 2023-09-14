@@ -343,30 +343,134 @@ redirects = {
 "boards/data-and-archives.html":
 	"https://docs.mattermost.com/boards/migrate-to-boards.html",
 # Important Note: The following guide files were reorg'd in FY23 Q3.
-"/boards/work-with-boards.html":
+"boards/work-with-boards.html":
         "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
 "boards/boards-settings.html":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/index.md",
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
 "boards/calculations.html":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/index.md",
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
 "boards/work-with-boards.html":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/index.md",
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
 "boards/groups-filter-sort.html":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/index.md",
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
 "boards/migrate-to-boards.html":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/index.md",
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
 "boards/navigate-boards.html":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/index.md",
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
 "boards/overview.html":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/index.md",
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
 "boards/share-and-collaborate.html":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/index.md",
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
 "boards/work-with-boards.html":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/index.md",
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
 "boards/work-with-cards.html":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/index.md",
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
 "boards/work-with-views.html":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/index.md",
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+"boards/overview.html#what-s-a-board":
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+"boards/overview.html#what-s-a-card":
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+"boards/overview.html#access-your-boards":
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+"boards/overview.html#focalboard-personal-server":
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+"boards/work-with-boards.html#add-new-boards":
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+"boards/work-with-boards.html#choose-a-board-template":
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+"boards/work-with-boards.html#edit-board-templates":
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+"boards/work-with-cards.html#card-descriptions":
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+"boards/work-with-cards.html#card-properties":
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+"boards/work-with-cards.html#add-properties":
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+"boards/work-with-cards.html#rename-a-property":
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+"boards/work-with-cards.html#change-a-property-type":
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+"boards/work-with-cards.html#delete-a-property":
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+"boards/work-with-cards.html#define-a-select-or-multi-select-property":
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+"boards/work-with-cards.html#toggle-properties-shown-on-a-board":
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+"boards/work-with-cards.html#attach-files":
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+"boards/work-with-cards.html#card-badges":
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+"boards/work-with-cards.html#comment-on-a-card":
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+"boards/work-with-cards.html#mention-people":
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+"boards/work-with-cards.html#receive-updates":
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+"boards/work-with-cards.html#search-cards":
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+"boards/work-with-cards.html#card-templates":
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+"boards/work-with-views.html#board-view":
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+"boards/work-with-views.html#table-view":
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+"boards/work-with-views.html#gallery-view":
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+"boards/work-with-views.html#calendar-view":
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+"boards/groups-filter-sort.html#group-cards":
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+"boards/groups-filter-sort.html#filters":
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+"boards/groups-filter-sort.html#sorting-cards":
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+"boards/share-and-collaborate.html#board-permissions":
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+"boards/share-and-collaborate.html#roles":
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+"boards/share-and-collaborate.html#guest-accounts":
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+"boards/share-and-collaborate.html#share-a-board":
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+"boards/share-and-collaborate.html#share-cards-on-channels":
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+"boards/migrate-to-boards.html#import-and-export-a-board-archive":
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+"boards/migrate-to-boards.html#export-to-csv":
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+"boards/migrate-to-boards.html#import-and-export-from-other-applications":
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+"boards/migrate-to-boards.html#import-from-asana":
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+"boards/migrate-to-boards.html#import-from-notion":
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+"boards/migrate-to-boards.html#import-from-jira":
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+"boards/migrate-to-boards.html#import-from-trello":
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+"boards/migrate-to-boards.html#import-from-todoist":
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+"boards/navigate-boards.html#link-a-board-to-a-channel":
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+"boards/navigate-boards.html#unlink-a-board-from-a-channel":
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+"boards/navigate-boards.html#sidebar-categories":
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+"boards/navigate-boards.html#drag-and-drop":
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+"boards/navigate-boards.html#manage-boards-on-the-sidebar":
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+"boards/navigate-boards.html#find-a-board":
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+"boards/navigate-boards.html#team-sidebar":
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+"boards/boards-settings.html#set-language":
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+"boards/boards-settings.html#random-emoji-icons":
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+"boards/boards-settings.html#product-tour":
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
 
 # Channels redirects
 "channels/find-channels.html":
@@ -376,80 +480,274 @@ redirects = {
 "channels/organize-conversations.html#enable-collapsed-reply-threads-beta":
         "https://docs.mattermost.com/channels/organize-conversations.html#enable-collapsed-reply-threads",
 # Important Note: The following guide files were reorg'd in FY23 Q3.
-"/channels/channel-types.html":
+"channels/channel-types.html":
         "https://docs.mattermost.com/collaborate/channel-types.html",
-"/channels/create-channels.html":
+"channels/create-channels.html":
         "https://docs.mattermost.com/collaborate/create-channels.html",
-"/channels/channel-naming-conventions.html":
+"channels/channel-naming-conventions.html":
         "https://docs.mattermost.com/collaborate/channel-naming-conventions.html",
-"/channels/rename-channels.html":
+"channels/rename-channels.html":
         "https://docs.mattermost.com/collaborate/rename-channels.html",
-"/channels/convert-public-channels.html":
+"channels/convert-public-channels.html":
         "https://docs.mattermost.com/collaborate/convert-public-channels.html",
-"/channels/join-leave-channels.html":
+"channels/join-leave-channels.html":
         "https://docs.mattermost.com/collaborate/join-leave-channels.html",
-"/channels/make-calls.html":
+"channels/make-calls.html":
         "https://docs.mattermost.com/collaborate/make-calls.html",
-"/channels/manage-channel-members.html":
+"channels/manage-channel-members.html":
         "https://docs.mattermost.com/collaborate/manage-channel-members.html",
-"/channels/browse-channels.html":
+"channels/browse-channels.html":
         "https://docs.mattermost.com/collaborate/browse-channels.html",
-"/channels/navigate-between-channels.html":
+"channels/navigate-between-channels.html":
         "https://docs.mattermost.com/collaborate/navigate-between-channels.html",
-"/channels/favorite-channels.html":
+"channels/favorite-channels.html":
         "https://docs.mattermost.com/collaborate/favorite-channels.html",
-"/channels/mark-channels-unread.html":
+"channels/mark-channels-unread.html":
         "https://docs.mattermost.com/collaborate/mark-channels-unread.html",
-"/channels/customize-your-channel-sidebar.html":
+"channels/customize-your-channel-sidebar.html":
         "https://docs.mattermost.com/preferences/customize-your-channel-sidebar.html",
-"/channels/archive-unarchive-channels.html":
+"channels/archive-unarchive-channels.html":
         "https://docs.mattermost.com/collaborate/archive-unarchive-channels.html",
-"/channels/set-channel-preferences.html":
+"channels/set-channel-preferences.html":
         "https://docs.mattermost.com/guides/preferences.html",
-"/channels/channels-settings.html":
+"channels/channels-settings.html":
         "https://docs.mattermost.com/guides/preferences.html",
-"/channels/interact-with-channels.html":
+"channels/interact-with-channels.html":
         "https://docs.mattermost.com/collaborate/run-slash-commands.html",
-"/channels/send-messages.html":
+"channels/send-messages.html":
         "https://docs.mattermost.com/collaborate/send-messages.html",
-"/channels/message-priority.html":
+"channels/message-priority.html":
         "https://docs.mattermost.com/collaborate/message-priority.html",
-"/channels/reply-to-messages.html":
+"channels/reply-to-messages.html":
         "https://docs.mattermost.com/collaborate/reply-to-messages.html",
-"/channels/organize-conversations.html":
+"channels/organize-conversations.html":
         "https://docs.mattermost.com/collaborate/organize-conversations.html",
-"/channels/react-to-messages.html":
+"channels/react-to-messages.html":
         "https://docs.mattermost.com/collaborate/react-with-emojis-gifs.html",
-"/channels/mention-people.html":
+"channels/mention-people.html":
         "https://docs.mattermost.com/collaborate/mention-people.html",
-"/channels/mark-messages-unread.html":
+"channels/mark-messages-unread.html":
         "https://docs.mattermost.com/collaborate/mark-messages-unread.html",
-"/channels/format-messages.html":
+"channels/format-messages.html":
         "https://docs.mattermost.com/collaborate/format-messages.html",
-"/channels/share-files-in-messages.html":
+"channels/share-files-in-messages.html":
         "https://docs.mattermost.com/collaborate/share-files-in-messages.html",
-"/channels/forward-messages.html":
+"channels/forward-messages.html":
         "https://docs.mattermost.com/collaborate/forward-messages.html",
-"/channels/share-links.html":
+"channels/share-links.html":
         "https://docs.mattermost.com/collaborate/share-links.html",
-"/channels/save-pin-messages.html":
+"channels/save-pin-messages.html":
         "https://docs.mattermost.com/collaborate/save-pin-messages.html",
-"/channels/message-reminders.html":
+"channels/message-reminders.html":
         "https://docs.mattermost.com/collaborate/message-reminders.html",
-"/channels/search-for-messages.html":
+"channels/search-for-messages.html":
         "https://docs.mattermost.com/collaborate/search-for-messages.html",
-"/channels/keyboard-accessibility.html":
+"channels/keyboard-accessibility.html":
         "https://docs.mattermost.com/collaborate/keyboard-accessibility.html#",
-"/channels/keyboard-shortcuts-for-channels.html":
+"channels/keyboard-shortcuts-for-channels.html":
         "https://docs.mattermost.com/collaborate/keyboard-shortcuts.html",
-"/channels/run-slash-commands.html":
+"channels/run-slash-commands.html":
         "https://docs.mattermost.com/collaborate/run-slash-commands.html",
-"/channels/extend-channels-functionality.html":
+"channels/extend-channels-functionality.html":
         "https://docs.mattermost.com/collaborate/extend-mattermost-with-integrations.html",
-"/channels/collaborate-using-mattermost-for-microsoft-teams.html":
+"channels/collaborate-using-mattermost-for-microsoft-teams.html":
         "https://docs.mattermost.com/collaborate/collaborate-using-mattermost-for-microsoft-teams.html",
-"/channels/use-mattermost-google-calendar-plugin.html":
+"channels/use-mattermost-google-calendar-plugin.html":
         "https://docs.mattermost.com/collaborate/use-mattermost-google-calendar-plugin.html",
+"channels/channel-types.html#public-channels":
+        "https://docs.mattermost.com/collaborate/channel-types.html#public-channels",
+"channels/channel-types.html#private-channels":
+        "https://docs.mattermost.com/collaborate/channel-types.html#private-channels",
+"channels/channel-types.html#direct-messages":
+        "https://docs.mattermost.com/collaborate/channel-types.html#direct-messages",
+"channels/channel-types.html#group-messages":
+        "https://docs.mattermost.com/collaborate/channel-types.html#group-messages",
+"channels/channel-naming-conventions.html#basic-structure":
+        "https://docs.mattermost.com/collaborate/channel-naming-conventions.html#basic-structure",
+"channels/channel-naming-conventions.html#scope-channel-names":
+        "https://docs.mattermost.com/collaborate/channel-naming-conventions.html#scope-channel-names",
+"channels/channel-naming-conventions.html#channel-naming-examples":
+        "https://docs.mattermost.com/collaborate/channel-naming-conventions.html#channel-naming-examples",
+"channels/convert-public-channels.html#convert-private-channels-to-public-channels":
+        "https://docs.mattermost.com/collaborate/convert-public-channels.html#convert-private-channels-to-public-channels",
+"channels/join-leave-channels.html#join-a-channel":
+        "https://docs.mattermost.com/collaborate/join-leave-channels.html#join-a-channel",
+"channels/join-leave-channels.html#leave-a-channel":
+        "https://docs.mattermost.com/collaborate/join-leave-channels.html#leave-a-channel",
+"channels/make-calls.html#id1":
+        "https://docs.mattermost.com/collaborate/make-calls.html#start-a-call",
+"channels/make-calls.html#emojis":
+        "https://docs.mattermost.com/collaborate/make-calls.html#emojis",
+"channels/make-calls.html#chat-in-a-call":
+        "https://docs.mattermost.com/collaborate/make-calls.html#chat-in-a-call",
+"channels/make-calls.html#record-a-call":
+        "https://docs.mattermost.com/collaborate/make-calls.html#record-a-call",
+"channels/make-calls.html#frequently-asked-questions":
+        "https://docs.mattermost.com/collaborate/make-calls.html#frequently-asked-questions",
+"channels/make-calls.html#troubleshooting":
+        "https://docs.mattermost.com/collaborate/make-calls.html#troubleshooting",
+"channels/make-calls.html#debugging":
+        "https://docs.mattermost.com/collaborate/make-calls.html#debugging",
+"channels/manage-channel-members.html#add-members-to-a-channel":
+        "https://docs.mattermost.com/collaborate/manage-channel-members.html#add-members-to-a-channel",
+"channels/manage-channel-members.html#leave-a-channel":
+        "https://docs.mattermost.com/collaborate/manage-channel-members.html#leave-a-channel",
+"channels/manage-channel-members.html#remove-other-members-from-a-channel":
+        "https://docs.mattermost.com/collaborate/manage-channel-members.html#remove-other-members-from-a-channel",
+"channels/browse-channels.html#revisit-recent-channels":
+        "https://docs.mattermost.com/collaborate/browse-channels.html#revisit-recent-channels",
+"channels/navigate-between-channels.html#navigate-between-channels":
+        "https://docs.mattermost.com/collaborate/navigate-between-channels.html#navigate-between-channels",
+"channels/navigate-between-channels.html#return-to-recently-viewed-channels":
+        "https://docs.mattermost.com/collaborate/navigate-between-channels.html#return-to-recently-viewed-channels",
+"channels/customize-your-channel-sidebar.html#what-can-you-customize":
+        "https://docs.mattermost.com/preferences/customize-your-channel-sidebar.html",
+"channels/customize-your-channel-sidebar.html#create-custom-categories":
+        "https://docs.mattermost.com/preferences/customize-your-channel-sidebar.html#create-custom-categories",
+"channels/customize-your-channel-sidebar.html#make-categories-work-for-you":
+        "https://docs.mattermost.com/preferences/customize-your-channel-sidebar.html#make-categories-work-for-you",
+"channels/customize-your-channel-sidebar.html#organize-channels-in-categories":
+        "https://docs.mattermost.com/preferences/customize-your-channel-sidebar.html#organize-channels-in-categories",
+"channels/customize-your-channel-sidebar.html#mute-and-unmute-categories":
+        "https://docs.mattermost.com/preferences/customize-your-channel-sidebar.html#mute-and-unmute-categories",
+"channels/customize-your-channel-sidebar.html#sort-channels-in-categories":
+        "https://docs.mattermost.com/preferences/customize-your-channel-sidebar.html#sort-channels-in-categories",
+"channels/customize-your-channel-sidebar.html#group-unread-channels-separately":
+        "https://docs.mattermost.com/preferences/customize-your-channel-sidebar.html#group-unread-channels-separately",
+"channels/customize-your-channel-sidebar.html#manage-direct-messages":
+        "https://docs.mattermost.com/preferences/customize-your-channel-sidebar.html#manage-direct-messages",
+"channels/archive-unarchive-channels.html#archive-a-channel":
+        "https://docs.mattermost.com/collaborate/archive-unarchive-channels.html#archive-a-channel",
+"channels/archive-unarchive-channels.html#unarchive-a-channel":
+        "https://docs.mattermost.com/collaborate/archive-unarchive-channels.html#unarchive-a-channel",
+"channels/set-channel-preferences.html#channel-notification-preferences":
+        "https://docs.mattermost.com/preferences/manage-your-notifications.html",
+"channels/set-channel-preferences.html#channel-header":
+        "https://docs.mattermost.com/collaborate/channel-header-purpose.html#channel-header",
+"channels/set-channel-preferences.html#channel-purpose":
+        "https://docs.mattermost.com/collaborate/channel-header-purpose.html#channel-purpose",
+"channels/set-channel-preferences.html#channel-name":
+        "https://docs.mattermost.com/collaborate/channel-header-purpose.html#channel-name",
+"channels/set-channel-preferences.html#automatically-follow-all-new-threads-in-this-channel":
+        "https://docs.mattermost.com/preferences/manage-your-notifications.html",
+"channels/channels-settings.html#notifications":
+        "https://docs.mattermost.com/preferences/manage-your-notifications.html",
+"channels/channels-settings.html#display":
+        "https://docs.mattermost.com/preferences/manage-your-display-options.html",
+"channels/channels-settings.html#sidebar":
+        "https://docs.mattermost.com/preferences/manage-your-sidebar-options.html",
+"channels/channels-settings.html#advanced":
+        "https://docs.mattermost.com/preferences/manage-advanced-options.html",
+"channels/interact-with-channels.html#slash-commands":
+        "https://docs.mattermost.com/collaborate/run-slash-commands.html",
+"channels/send-messages.html#draft-messages":
+        "https://docs.mattermost.com/collaborate/send-messages.html#draft-messages",
+"channels/send-messages.html#edit-or-delete-messages":
+        "https://docs.mattermost.com/collaborate/send-messages.html#edit-or-delete-messages",
+"channels/send-messages.html#do-more-with-your-messages":
+        "https://docs.mattermost.com/collaborate/send-messages.html#do-more-with-your-messages",
+"channels/message-priority.html#send-persistent-notifications":
+        "https://docs.mattermost.com/collaborate/message-priority.html#send-persistent-notifications",
+"channels/message-priority.html#request-acknowledgements":
+        "https://docs.mattermost.com/collaborate/message-priority.html#request-acknowledgements",
+"channels/reply-to-messages.html#organize-conversations-into-threads":
+        "https://docs.mattermost.com/collaborate/reply-to-messages.html#organize-conversations-into-threads",
+"channels/reply-to-messages.html#work-with-collapsed-reply-threads":
+        "https://docs.mattermost.com/collaborate/reply-to-messages.html#work-with-collapsed-reply-threads",
+"channels/organize-conversations.html#start-or-reply-to-threads":
+        "https://docs.mattermost.com/collaborate/organize-conversations.html#start-or-reply-to-threads",
+"channels/organize-conversations.html#follow-threads-and-messages":
+        "https://docs.mattermost.com/collaborate/organize-conversations.html#follow-threads-and-messages",
+"channels/organize-conversations.html#view-all-threads":
+        "https://docs.mattermost.com/collaborate/organize-conversations.html#view-all-threads",
+"channels/organize-conversations.html#enable-collapsed-reply-threads":
+        "https://docs.mattermost.com/collaborate/organize-conversations.html#enable-collapsed-reply-threads",
+"channels/organize-conversations.html#tutorial-video":
+        "https://docs.mattermost.com/collaborate/organize-conversations.html#tutorial-video",
+"channels/organize-conversations.html#known-issues":
+        "https://docs.mattermost.com/collaborate/organize-conversations.html#known-issues",
+"channels/react-to-messages.html#manage-emojis":
+        "https://docs.mattermost.com/collaborate/react-with-emojis-gifs.html#manage-emojis",
+"channels/mention-people.html#username":
+        "https://docs.mattermost.com/collaborate/mention-people.html#username",
+"channels/mention-people.html#channel-and-all":
+        "https://docs.mattermost.com/collaborate/mention-people.html#channel-and-all",
+"channels/mention-people.html#here":
+        "https://docs.mattermost.com/collaborate/mention-people.html#here",
+"channels/mention-people.html#groupname":
+        "https://docs.mattermost.com/collaborate/mention-people.html#groupname",
+"channels/mention-people.html#words-that-trigger-mentions":
+        "https://docs.mattermost.com/collaborate/mention-people.html#words-that-trigger-mentions",
+"channels/mention-people.html#see-all-recent-mentions":
+        "https://docs.mattermost.com/collaborate/mention-people.html#see-all-recent-mentions",
+"channels/mention-people.html#confirmation-dialog-warnings":
+        "https://docs.mattermost.com/collaborate/mention-people.html#confirmation-dialog-warnings",
+"channels/mention-people.html#mention-highlights":
+        "https://docs.mattermost.com/collaborate/mention-people.html#mention-highlights",
+"channels/format-messages.html#use-the-messaging-formatting-toolbar":
+        "https://docs.mattermost.com/collaborate/format-messages.html#use-the-messaging-formatting-toolbar",
+"channels/format-messages.html#use-markdown":
+        "https://docs.mattermost.com/collaborate/format-messages.html#use-markdown",
+"channels/share-files-in-messages.html#attachment-limits-and-sizes":
+        "https://docs.mattermost.com/collaborate/share-files-in-messages.html#attachment-limits-and-sizes",
+"channels/share-files-in-messages.html#preview-file-attachments":
+        "https://docs.mattermost.com/collaborate/share-files-in-messages.html#preview-file-attachments",
+"channels/save-pin-messages.html#save-messages":
+        "https://docs.mattermost.com/collaborate/save-pin-messages.html#save-messages",
+"channels/save-pin-messages.html#pin-messages":
+        "https://docs.mattermost.com/collaborate/save-pin-messages.html#pin-messages",
+"channels/message-reminders.html#set-a-reminder":
+        "https://docs.mattermost.com/collaborate/message-reminders.html",
+"channels/search-for-messages.html#search-for-message-and-files":
+        "https://docs.mattermost.com/collaborate/search-for-messages.html#search-for-message-and-files",
+"channels/search-for-messages.html#search-modifiers":
+        "https://docs.mattermost.com/collaborate/search-for-messages.html#search-modifiers",
+"channels/search-for-messages.html#hashtags":
+        "https://docs.mattermost.com/collaborate/search-for-messages.html#hashtags",
+"channels/search-for-messages.html#notes-about-performing-mattermost-searches":
+        "https://docs.mattermost.com/collaborate/search-for-messages.html#notes-about-performing-mattermost-searches",
+"channels/search-for-messages.html#technical-notes-about-searching":
+        "https://docs.mattermost.com/collaborate/search-for-messages.html#technical-notes-about-searching",
+"channels/keyboard-accessibility.html":
+        "https://docs.mattermost.com/collaborate/keyboard-accessibility.html",
+"channels/keyboard-accessibility.html#region-navigation":
+        "https://docs.mattermost.com/collaborate/keyboard-accessibility.html",
+"channels/keyboard-accessibility.html#message-navigation":
+        "https://docs.mattermost.com/collaborate/keyboard-accessibility.html#message-navigation",
+"channels/keyboard-accessibility.html#channel-sidebar-navigation":
+        "https://docs.mattermost.com/collaborate/keyboard-accessibility.html#channel-sidebar-navigation",
+"channels/keyboard-shortcuts-for-channels.html#navigation-shortcuts-for-mattermost-channels":
+        "https://docs.mattermost.com/collaborate/keyboard-shortcuts.html#channel-navigation",
+"channels/keyboard-shortcuts-for-channels.html#file-upload-shortcuts":
+        "https://docs.mattermost.com/collaborate/keyboard-shortcuts.html#file-uploads",
+"channels/keyboard-shortcuts-for-channels.html#message-shortcuts":
+        "https://docs.mattermost.com/collaborate/keyboard-shortcuts.html#messages",
+"channels/keyboard-shortcuts-for-channels.html#formatting-shortcuts":
+        "https://docs.mattermost.com/collaborate/keyboard-shortcuts.html#message-formatting",
+"channels/keyboard-shortcuts-for-channels.html#accessibility-nagivation-shortcuts":
+        "https://docs.mattermost.com/collaborate/keyboard-shortcuts.html#accessibility-nagivation",
+"channels/keyboard-shortcuts-for-channels.html#calls-shortcuts":
+        "https://docs.mattermost.com/collaborate/keyboard-shortcuts.html#calls",
+"channels/extend-channels-functionality.html#popular-mattermost-integrations":
+        "https://docs.mattermost.com/collaborate/extend-mattermost-with-integrations.html#popular-mattermost-integrations",
+"channels/collaborate-using-mattermost-for-microsoft-teams.html#connect-your-mattermost-account-to-your-ms-teams-account":
+        "https://docs.mattermost.com/collaborate/collaborate-using-mattermost-for-microsoft-teams.html#connect-your-mattermost-account-to-your-ms-teams-account",
+"channels/collaborate-using-mattermost-for-microsoft-teams.html#collaborate-through-messages":
+        "https://docs.mattermost.com/collaborate/collaborate-using-mattermost-for-microsoft-teams.html#collaborate-through-messages",
+"channels/collaborate-using-mattermost-for-microsoft-teams.html#collaborate-through-linked-channels":
+        "https://docs.mattermost.com/collaborate/collaborate-using-mattermost-for-microsoft-teams.html#collaborate-through-linked-channels",
+"channels/collaborate-using-mattermost-for-microsoft-teams.html#demonstration-mattermost-embedded-in-microsoft-teams":
+        "https://docs.mattermost.com/collaborate/collaborate-using-mattermost-for-microsoft-teams.html#demonstration-mattermost-embedded-in-microsoft-teams",
+"channels/use-mattermost-google-calendar-plugin.html#connect-your-google-calendar-account-to-mattermost":
+        "https://docs.mattermost.com/collaborate/use-mattermost-google-calendar-plugin.html#connect-your-google-calendar-account-to-mattermost",
+"channels/use-mattermost-google-calendar-plugin.html#customize-your-google-calendar-plugin":
+        "https://docs.mattermost.com/collaborate/use-mattermost-google-calendar-plugin.html#customize-your-google-calendar-plugin",
+"channels/use-mattermost-google-calendar-plugin.html#create-a-calendar-event":
+        "https://docs.mattermost.com/collaborate/use-mattermost-google-calendar-plugin.html#create-a-calendar-event",
+"channels/use-mattermost-google-calendar-plugin.html#review-your-upcoming-events":
+        "https://docs.mattermost.com/collaborate/use-mattermost-google-calendar-plugin.html#review-your-upcoming-events",
+"channels/about-teams-channels-messages.html":
+        "https://docs.mattermost.com/guides/collaborate.html",
 
 # Cloud redirects
 "cloud/cloud-administration/cloud-changelog.html":
@@ -1643,7 +1941,7 @@ redirects = {
 
 # Focalboard redirects
 "focalboard/installing-boards":
-	"https://docs.mattermost.com/guides/boards.html",
+	"https://github.com/mattermost/focalboard/blob/main/docs/mattermost-boards-dev-guide.md",
 
 # Getting Started redirects
 "getting-started/implementation_plan.html":
@@ -1695,29 +1993,29 @@ redirects = {
 "guides/user.html":
         "https://docs.mattermost.com/guides/channels.html",
 # Important Note: The following guide files were reorg'd in FY23 Q3.
-"/guides/channels.html":
+"guides/channels.html":
         "https://docs.mattermost.com/guides/use-mattermost.html",
-"/guides/channels.html#channels-messages-and-conversations":
+"guides/channels.html#channels-messages-and-conversations":
         "https://docs.mattermost.com/guides/collaborate.html",
-"/guides/channels.html#work-with-channels":
+"guides/channels.html#work-with-channels":
         "https://docs.mattermost.com/collaborate/collaborate-within-channels.html",
-"/guides/channels.html#work-with-messages":
+"guides/channels.html#work-with-messages":
         "https://docs.mattermost.com/collaborate/communicate-with-messages.html",
-"/guides/channels.html#keyboard-accessibility":
+"guides/channels.html#keyboard-accessibility":
         "https://docs.mattermost.com/collaborate/keyboard-accessibility.html",
-"/guides/channels.html#extend-channels-functionality":
+"guides/channels.html#extend-channels-functionality":
         "https://docs.mattermost.com/collaborate/extend-mattermost-with-integrations.html",
-"/guides/playbooks.html":
+"guides/playbooks.html":
         "https://docs.mattermost.com/guides/repeatable-processes.html",
-"/guides/welcome-to-mattermost.html":
+"guides/welcome-to-mattermost.html":
         "https://docs.mattermost.com/guides/use-mattermost.html",
-"/guides/welcome-to-mattermost.html#access-your-mattermost-workspace":
+"guides/welcome-to-mattermost.html#access-your-mattermost-workspace":
         "https://docs.mattermost.com/collaborate/access-your-workspace.html",
-"/guides/welcome-to-mattermost.html#mattermost-basics":
+"guides/welcome-to-mattermost.html#mattermost-basics":
         "https://docs.mattermost.com/guides/use-mattermost.html",
-"/guides/welcome-to-mattermost.html#customize-your-mattermost-experience":
+"guides/welcome-to-mattermost.html#customize-your-mattermost-experience":
         "https://docs.mattermost.com/guides/preferences.html",
-"/guides/welcome-to-mattermost.html#mattermost-interface-changes":
+"guides/welcome-to-mattermost.html#mattermost-interface-changes":
         "https://docs.mattermost.com/guides/deployment.html#changelogs",
 
 # Help redirects resulting from the June 2021 docs reorganization project.
@@ -1728,7 +2026,7 @@ redirects = {
 "help/apps/desktop-mvp.html":
         "https://developers.mattermost.com/contribute/mvp/",
 "help/getting-started/about-teams-channels-messages.html":
-        "https://docs.mattermost.com/channels/about-teams-channels-messages.html",
+        "https://docs.mattermost.com/guides/collaborate.html",
 "help/getting-started/access-your-workspace.html":
 	"https://docs.mattermost.com/guides/welcome-to-mattermost.html#access-your-mattermost-workspace",
 "help/getting-started/accessibility.html":
@@ -1895,6 +2193,13 @@ redirects = {
         "https://docs.mattermost.com/install/desktop-custom-dictionaries.html#configure-the-desktop-app",
 "install/desktop-custom-dictionaries.html#removing-customized-dictionaries":
         "https://docs.mattermost.com/install/desktop-custom-dictionaries.html#remove-custom-dictionaries",
+# Important Note: The following guide files were reorg'd in FY23 Q3.
+"install/desktop-app-install.html":
+        "https://docs.mattermost.com/collaborate/install-desktop-app.html",
+"install/install-ios-app.html":
+        "https://docs.mattermost.com/collaborate/install-ios-app.html",
+"install/install-android-app.html":
+        "https://docs.mattermost.com/collaborate/install-android-app.html",
 
 # Integrations redirects.
 # The integrations directory and its contents have been archived in FY23 Q2 and all applicable content has been moved from docs.mm.com to developers.mm.com.
@@ -2653,7 +2958,7 @@ redirects = {
         "https://docs.mattermost.com/repeatable-processes/interact-with-playbooks.html#slash-commands",
 "playbooks/interact-with-playbooks.html#api-documentation":
         "https://docs.mattermost.com/repeatable-processes/interact-with-playbooks.html#api-documentation",
-"/playbooks/work-with-playbooks.html":
+"playbooks/work-with-playbooks.html":
         "https://docs.mattermost.com/guides/repeatable-processes.html",
 
 # Process redirects
@@ -2832,6 +3137,80 @@ redirects = {
         "https://docs.mattermost.com/configure/user-management-configuration-settings.html#deactivate-user-accounts",
 "welcome/add-people.html":
         "https://docs.mattermost.com/configure/user-management-configuration-settings.html#users",
+"welcome/manage-your-profile.html":
+        "https://docs.mattermost.com/preferences/manage-your-profile.html",
+"welcome/manage-your-profile.html#profile":
+        "https://docs.mattermost.com/preferences/manage-your-profile.html",
+"welcome/manage-your-profile.html#security":
+        "https://docs.mattermost.com/preferences/manage-your-security-preferences.html",
+"welcome/set-your-status-availability.html":
+        "https://docs.mattermost.com/preferences/set-your-status-availability.html",
+"welcome/set-your-status-availability.html#set-a-custom-status":
+        "https://docs.mattermost.com/preferences/set-your-status-availability.html#set-a-custom-status",
+"welcome/set-your-status-availability.html#clear-a-custom-status":
+        "https://docs.mattermost.com/preferences/set-your-status-availability.html#clear-a-custom-status",
+"welcome/set-your-status-availability.html#set-your-availability":
+        "https://docs.mattermost.com/preferences/set-your-status-availability.html#set-your-availability",
+"welcome/set-your-status-availability.html#set-your-availability-as-do-not-disturb":
+        "https://docs.mattermost.com/preferences/set-your-status-availability.html#set-your-availability-as-do-not-disturb",
+"welcome/set-your-status-availability.html#how-mattermost-determines-your-availability":
+        "https://docs.mattermost.com/preferences/set-your-status-availability.html#how-mattermost-determines-your-availability",
+"welcome/customize-your-theme.html":
+        "https://docs.mattermost.com/preferences/customize-your-theme.html",
+"welcome/customize-your-theme.html#import-theme-from-slack":
+        "https://docs.mattermost.com/preferences/customize-your-theme.html#import-theme-from-slack",
+"welcome/customize-your-theme.html#custom-themes":
+        "https://docs.mattermost.com/preferences/customize-your-theme.html#custom-themes",
+"welcome/customize-your-theme.html#standard-themes":
+        "https://docs.mattermost.com/preferences/customize-your-theme.html",
+"welcome/customize-your-theme.html#export-a-custom-theme":
+        "https://docs.mattermost.com/preferences/customize-your-theme.html",
+"welcome/customize-your-theme.html#import-a-custom-theme":
+        "https://docs.mattermost.com/preferences/customize-your-theme.html",
+"welcome/customize-your-theme.html#custom-theme-examples":
+        "https://docs.mattermost.com/preferences/customize-your-theme.html",
+"welcome/customize-your-theme.html#dark-theme-desktop-app-only":
+        "https://docs.mattermost.com/preferences/customize-your-theme.html#dark-theme-desktop-app-only",
+"welcome/customize-desktop-app-experience.html":
+        "https://docs.mattermost.com/preferences/customize-desktop-app-experience.html",
+"welcome/manage-multiple-server-connections.html":
+        "https://docs.mattermost.com/preferences/connect-multiple-workspaces.html",
+"welcome/what-changed-in-v70.html":
+        "https://docs.mattermost.com/guides/deployment.html#changelogs",
+"welcome/what-changed-in-v60.html":
+        "https://docs.mattermost.com/guides/deployment.html#changelogs",
+"welcome/whats-new-in-v72.html":
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+"welcome/keyboard-shortcuts.html#navigation-shortcuts-in-the-desktop-app":
+        "https://docs.mattermost.com/collaborate/keyboard-shortcuts.html#navigation-in-the-desktop-app",
+"welcome/keyboard-shortcuts.html#zoom-shortcuts-for-web-and-desktop-app":
+        "https://docs.mattermost.com/collaborate/keyboard-shortcuts.html#zoom-in-zoom-out-display",
+"welcome/log-out.html#frequently-asked-questions":
+        "https://docs.mattermost.com/collaborate/log-out.html#frequently-asked-questions",
+"welcome/log-in.html#reset-your-password":
+        "https://docs.mattermost.com/collaborate/access-your-workspace.html#reset-your-password",
+"welcome/log-in.html#email-address-or-username":
+        "https://docs.mattermost.com/collaborate/access-your-workspace.html#email-address-or-username",
+"welcome/log-in.html#single-sign-on-sso":
+        "https://docs.mattermost.com/collaborate/access-your-workspace.html#single-sign-on-sso",
+"welcome/get-started-mattermost-channels.html#channels-and-direct-messages":
+        "https://docs.mattermost.com/collaborate/collaborate-within-channels.html#you-re-added-to-default-channels-automatically",
+"welcome/get-started-mattermost-channels.html#create-and-join-channels":
+        "https://docs.mattermost.com/collaborate/collaborate-within-channels.html#learn-more",
+"welcome/get-started-mattermost-channels.html#invite-people-to-the-team":
+        "https://docs.mattermost.com/collaborate/invite-people.html",
+"welcome/get-started-mattermost-channels.html#send-messages":
+        "https://docs.mattermost.com/collaborate/send-messages.html",
+"welcome/get-started-mattermost-channels.html#customize-your-mattermost-experience":
+        "https://docs.mattermost.com/guides/preferences.html",
+"welcome/manage-custom-groups.html#create-a-custom-group":
+        "https://docs.mattermost.com/collaborate/organize-using-custom-user-groups.html#create-a-custom-group",
+"welcome/manage-custom-groups.html#review-group-members":
+        "https://docs.mattermost.com/collaborate/organize-using-custom-user-groups.html#review-group-members",
+"welcome/manage-custom-groups.html#manage-custom-user-groups":
+        "https://docs.mattermost.com/collaborate/organize-using-custom-user-groups.html#manage-custom-user-groups",
+"welcome/add-people.html#add-people-on-demand":
+        "https://docs.mattermost.com/collaborate/invite-people.html"
 
 # End of redirects. The last redirect above should NOT end in a comma.
 
