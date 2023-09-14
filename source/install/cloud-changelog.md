@@ -31,6 +31,7 @@ Latest Mattermost Cloud releases:
  - A ``user_id`` is now included in all HTTP logs (debug level) to help determine who is generating unexpected traffic.
  - Added a setting ``DisplaySettings.MaxMarkdownNodes`` to limit the maximum complexity of markdown text on mobile.
  - Added new URL Parameter to ``GET /api/v4/groups`` and ``GET /api/v4/groups/:group_id``. ``include_member_ids`` will add all the members ``user_ids`` to the group response objects. You can now also add group members to a channel, any members that are not part of the team can be added to the team through this flow and subsequently added the channel.
+ - Add new `'MessageHasBeenDeleted'` hook to the plugin API.
 
 ### Bug Fixes
  - Fixed an issue with keyboard support for some menus with submenus.
