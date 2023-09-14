@@ -19,7 +19,7 @@ Make sure that you understand how to `prepare for your upgrade </upgrade/prepare
 
 - **Existing install directory - {install-path}**: If you don't know where Mattermost Server is installed, use the ``whereis mattermost`` command to find standard binary places and $PATH. 
 
-  - This command won't won't return anything if ``/opt/mattermost/bin`` wasn't added to the PATH. 
+  - This command won't return anything if ``/opt/mattermost/bin`` wasn't added to the PATH. 
   - Alternatively, you can use the ``find / -executable -type f -iname mattermost 2> /dev/null`` command to find the ``mattermost`` binary. 
   - The output should be similar to ``/opt/mattermost/bin/mattermost``. 
   - The install directory is everything before the first occurrence of the string ``/mattermost``. In this example, the ``{install-path}`` is ``/opt``. 
@@ -28,7 +28,7 @@ Make sure that you understand how to `prepare for your upgrade </upgrade/prepare
 
   - If you don't know its location, open the System Console and go to **Environment > File Storage**, then read the value in **Local Storage Directory**. 
   - Paths are relative to the ``mattermost`` directory. For example, if the local storage directory is ``./data/`` then the absolute path is ``{install-path}/mattermost/data``.
-- **Database disk space**: If you're upgrading a Mattermost deployment on the same server as your database, we recommend that you have sufficient disk space available. Doubling your database size should be sufficient, but more is always better.
+- **Database disk space**: If you're upgrading a Mattermost deployment on the same server as your database, we recommend a minimum 2GB of free disk space to allow for extraction, copy, and cleanup, and a minimum of twice the size of your Mattermost installation available for the database.
 
 Upgrade Mattermost Server
 --------------------------
