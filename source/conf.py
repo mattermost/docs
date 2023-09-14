@@ -2585,7 +2585,7 @@ redirects = {
 "welcome/manage-desktop-app-server-connections.html":
         "https://docs.mattermost.com/welcome/manage-multiple-server-connections.html",
 "welcome/whats-new-in-v72.html":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/index.md"
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/index.md",
 "welcome/insights.html":
         "https://docs.mattermost.com/install/deprecated-features.html#mattermost-server-v9-0-0"
 
