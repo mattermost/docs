@@ -4,12 +4,40 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 
 Latest Mattermost Cloud releases:
 
+- [Release 2023-09-12](#release-2023-09-12)
 - [Release 2023-08-29](#release-2023-08-29)
 - [Release 2023-08-09](#release-2023-08-09)
 - [Release 2023-08-03](#release-2023-08-03)
 - [Release 2023-07-26](#release-2023-07-26)
 - [Release 2023-07-20](#release-2023-07-20)
-- [Release 2023-07-19](#release-2023-07-19)
+
+## Release 2023-09-12
+
+### Compatibility
+ - Updated Chromium minimum supported version to 116+.
+
+### Improvements
+
+#### User Interface (UI)
+ - Added a **Cancel** button to the **Delete category** modal.
+ - Added the ability to resize the channel sidebar and right-hand sidebar.
+ - Added two new filtering options (show all channel types, show private channels) to the **Browse channels** modal.
+ - Pre-packaged Calls version v0.19.0.
+
+#### Administration
+ - Added ``mattermost-plugin-api`` into the mono repo.
+ - Added a new config setting ``TeamSettings.EnableJoinLeaveMessageByDefault`` that sets the default value for ``UserSetting``, ``ADVANCED_FILTER_JOIN_LEAVE``.
+
+#### API Changes
+ - Added the ``X-Forwarded-For`` request header to the audit stream for all Rest API calls.
+ - Added API endpoint ``POST /api/v4/user/login/desktop_login``. Modified OAuth/SAML flows to include ``desktop_login`` where applicable.
+
+### Bug Fixes
+ - Fixed keyboard support for the left-hand side channel menu, the left-hand side category menu, and the post dot menu.
+ - Fixed display name in the ``comment_on`` component.
+
+### Known Issues
+ - Left-hand side resize option overrides the **Browse/Create Channel** menu [MM-54367](https://mattermost.atlassian.net/browse/MM-54367).
 
 ## Release 2023-08-29
 
