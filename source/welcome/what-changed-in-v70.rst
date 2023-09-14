@@ -40,7 +40,7 @@ You can show or hide channel information in the right pane by selecting the **Vi
 Apps bar (beta)
 ---------------
 
-We've moving access to your enabled Mattermost integrations, including the icons for Playbooks and Boards, from the channel header in the center pane. Their new home is a vertical pane located to the far right of the Mattermost screen called the Apps Bar.
+We've moving access to your enabled Mattermost integrations, including the icon for Playbooks, from the channel header in the center pane. Their new home is a vertical pane located to the far right of the Mattermost screen called the Apps Bar.
 
 .. image:: ../images/app-bar.png
     :alt: You can access your Mattermost integrations from the Apps Bar when your System Admin enables this feature in the System Console.

@@ -7,7 +7,7 @@ Get started with Mattermost Channels
 Using a web browser or the desktop app, you can access Mattermost Channels by selecting **Channels** from the **product menu** |product-list|. On mobile, you log in directly to Mattermost Channels.
 
 .. |product-list| image:: ../images/products_E82F.svg
-  :alt: Navigate between channels, playbooks, and Boards using the Product list icon.
+  :alt: Navigate between Channels and Playbooks using the Product list icon.
 
 Channels are where you can communicate with your team about various topics or projects. The channels you're a member of and useful channel management tools are available in the channel sidebar to the left. 
 

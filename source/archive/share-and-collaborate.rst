@@ -1,13 +1,13 @@
+:nosearch:
+:orphan:
+
 Share and collaborate
 =====================
-
-.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
-  :start-after: :nosearch:
 
 Board permissions
 -----------------
 
-From Mattermost Boards v7.2 boards belong to teams, and any member of that team can be granted access to a board. 
+From Mattermost Boards v7.2, boards belong to teams, and any member of that team can be granted access to a board. 
 
 If your boards workspace looks different, you may be on an earlier version of boards. In earlier versions, boards are tied to channel workspaces and board membership is determined by channel membership. In this case, roles and permissions won't be applicable to you.
 
@@ -90,7 +90,7 @@ To unlink the channel from the board, open the **Share** dialog, select the role
 Guest accounts
 --------------
 
-From Mattermost Boards v7.4, `guest accounts <https://docs.mattermost.com/onboard/guest-accounts.html#guest-accounts>`_ will be supported in Boards. Guests can:
+From Mattermost Boards v7.4, `guest accounts <https://docs.mattermost.com/onboard/guest-accounts.html#guest-accounts>`_ are supported. Guests can:
 
 - Access boards where they're added as an explicit member of the board. `Team access <https://docs.mattermost.com/boards/share-and-collaborate.html#manage-team-access>`_ and `channel role groups <https://docs.mattermost.com/boards/share-and-collaborate.html#channel-role-groups>`_ don't apply to guest accounts.
 - Access existing boards, but not create new boards. Guests don't have access to the template picker and can't duplicate an existing board.
@@ -112,26 +112,6 @@ Share a board internally
 
 To share a board with team members internally, select **Share** in the top-right corner of the board, then select **Copy link** from the **Share** tab below. Paste the copied link in a channel or direct message to share the board with other team members. Only team members who have permissions to the board will be able to open the board from the shared link.
 
-Share a board publicly
-~~~~~~~~~~~~~~~~~~~~~~
-
-Sharing boards publicly is disabled by default. This means that the **Publish** tab is not available from the **Share** dialog. To enable public board sharing:
-
-1. Go to **Product menu > System Console > Products > Boards**.
-2. Set **Enable Publicly-Shared Boards** to **true**.
-3. Select **Save**.
-
-Once enabled, board admins can share a read-only link online with anyone: 
-
-1. Select **Share** in the top-right corner of the board.
-2. Toggle to the **Publish** tab.
-3. Switch to the **Publish to the web** option.
-4. Select **Copy link**.
-
-Paste the link anywhere you want to share the board. Anyone with the link will be able to view the board, but they won’t be able to edit the board.
-
-Select the **Regenerate Token** icon in the URL box if you want to invalidate all the previously shared links. Confirm the action to regenerate the token.
-
 Share cards on Channels
 -----------------------
 
@@ -142,4 +122,4 @@ To share a card, you'll need to copy the card link first:
 - Open a card and select the options menu **(...)** at the top right of the card, then select **Copy link**.
 - Alternatively, you can open the board view and hover your mouse over any card to access the options menu **(...)** for the card and select **Copy link** from there.
 
-After you've copied the link, paste it into any channel or direct message to share the card. A preview of the card will display within the channel with a link back to the card on Boards.
+After you've copied the link, paste it into any channel or direct message to share the card. A preview of the card will display within the channel with a link back to the card on the board.

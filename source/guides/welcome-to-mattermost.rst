@@ -4,7 +4,7 @@ Welcome to Mattermost
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Whether it's your first day as a Mattermost user, or you're upgrading from an older Mattermost version, we recommend starting here to learn how to access and customize your workspace, familiarize yourself with the concept of teams and user roles, and learn how to get started with Channels, Boards, and Playbooks.
+Whether it's your first day as a Mattermost user, or you're upgrading from an older Mattermost version, we recommend starting here to learn how to access and customize your workspace, familiarize yourself with the concept of teams and user roles, and learn how to get started with Channels and Playbooks.
 
 Access your Mattermost workspace
 --------------------------------
@@ -30,7 +30,6 @@ Mattermost basics
 
    Get started with Mattermost Channels </welcome/get-started-mattermost-channels>
    Get started with Mattermost Playbooks </playbooks/work-with-playbooks>
-   Get started with Mattermost Boards </boards/work-with-boards>
    Manage custom groups </welcome/manage-custom-groups>
    About teams </welcome/about-teams>
    Team settings </welcome/team-settings>
@@ -40,7 +39,6 @@ Mattermost basics
 
 * :doc:`Get started with Mattermost Channels </welcome/get-started-mattermost-channels>` - Learn how to communicate and collaborate with your team using Mattermost Channels.
 * :doc:`Get started with Mattermost Playbooks </playbooks/work-with-playbooks>` - Learn how to create and refine repeatable, measurable workflows for a range of scenarios using Mattermost Playbooks.
-* :doc:`Get started with Mattermost Boards </boards/work-with-boards>` - Learn how to create and manage projects using customizable cards to increase your team's productivity using Mattermost Boards.
 * :doc:`Manage custom groups </welcome/manage-custom-groups>` - Learn how to define custom groups of users, such as a team or department, you can @mention in Mattermost.  
 * :doc:`About teams </welcome/about-teams>` - Learn about the digital workspaces where you and your teammates collaborate together in Mattermost.
 * :doc:`Team settings </welcome/team-settings>` - Configure team names, descriptions, icons, and invitation settings.
@@ -78,8 +76,6 @@ Upgrading from an older version of Mattermost? Learn what's changed or moved in 
 
    What changed in Mattermost v7.0? </welcome/what-changed-in-v70>
    What changed in Mattermost v6.0? </welcome/what-changed-in-v60>
-   What changed in Mattermost Boards </welcome/whats-new-in-v72> 
 
 * :doc:`What changed in Mattermost v7.0? </welcome/what-changed-in-v70>` - Learn more about how we've improved your Mattermost user experience from v7.0.
 * :doc:`What changed in Mattermost v6.0? </welcome/what-changed-in-v60>` - Learn more about the ways we've improved your Mattermost navigation experience from v6.0.
-* :doc:`What changed in Mattermost Boards </welcome/whats-new-in-v72>` - Learn more about the ways we've improved your Mattermost Boards experience from v7.2.

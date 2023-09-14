@@ -342,6 +342,28 @@ redirects = {
         "https://docs.mattermost.com/welcome/what-changed-in-v60.html",
 "boards/data-and-archives.html":
 	"https://docs.mattermost.com/boards/migrate-to-boards.html",
+"boards/boards-settings.html":
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/index.md",
+"boards/calculations.html":
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/index.md",
+"boards/work-with-boards.html":
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/index.md",
+"boards/groups-filter-sort.html":
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/index.md",
+"boards/migrate-to-boards.html":
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/index.md",
+"boards/navigate-boards.html":
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/index.md",
+"boards/overview.html":
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/index.md",
+"boards/share-and-collaborate.html":
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/index.md",
+"boards/work-with-boards.html":
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/index.md",
+"boards/work-with-cards.html":
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/index.md",
+"boards/work-with-views.html":
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/index.md",
 
 # Channels redirects
 "channels/find-channels.html":
@@ -1543,7 +1565,7 @@ redirects = {
 
 # Focalboard redirects
 "focalboard/installing-boards":
-	"https://docs.mattermost.com/guides/boards.html",
+	"https://docs.mattermost.com/guides/focalboard-plugin.html",
 
 # Getting Started redirects
 "getting-started/implementation_plan.html":
@@ -1576,8 +1598,12 @@ redirects = {
 	"https://docs.mattermost.com/guides/channels.html",
 "guides/orchestration.html":
         "https://docs.mattermost.com/about/orchestration.html",
+"guides/boards.html":
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/index.md",
 
 # Important Note: The following guide files were archived in FY23 Q2.
+"guides/boards.html":
+        "https://docs.mattermost.com/guides/boards-plugin.html",
 "guides/cloud-admin-guide.html":
 	"https://docs.mattermost.com/guides/deployment.html",
 "guides/developer.html":
@@ -1795,6 +1821,8 @@ redirects = {
 # Manage redirects
 "manage/scripts.html":
         "https://forum.mattermost.com/t/scripts-for-performing-discreet-tasks/13527",
+"manage/telemetry.html#boards-telemetry":
+        "https://github.com/mattermost/focalboard/blob/main/docs/index.md",
 "manage/command-line-tools.html#mattermost-channel":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-channel",
 "manage/command-line-tools.html#mattermost-channel-add":
@@ -2556,6 +2584,8 @@ redirects = {
 # Welcome redirects
 "welcome/manage-desktop-app-server-connections.html":
         "https://docs.mattermost.com/welcome/manage-multiple-server-connections.html",
+"welcome/whats-new-in-v72.html":
+        "https://github.com/mattermost/focalboard/blob/product-docs/docs/index.md",
 "welcome/insights.html":
         "https://docs.mattermost.com/install/deprecated-features.html#mattermost-server-v9-0-0"
 

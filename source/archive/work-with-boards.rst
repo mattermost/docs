@@ -1,23 +1,16 @@
+:nosearch:
+:orphan:
+
 Work with boards
 ================
 
-.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
-  :start-after: :nosearch:
-  
- 
 .. |gear-icon| image:: ../images/settings-outline_F08BB.svg
-  :height: 24px
-  :width: 24px
   :alt: Access settings using the gear icon.
   
 .. |plus-icon| image:: ../images/plus_F0415.svg
-  :height: 24px
-  :width: 24px
   :alt: Open menus using the plus icon.
   
 .. |options-icon| image:: ../images/dots-horizontal_F01D8.svg
-  :height: 24px
-  :width: 24px
   :alt: Access additional actions using the options icon.
  
 Start by selecting the type of board you want to use. A board contains cards, which typically track tasks or topics, and views, which define how to display the cards, or a subset of them. Views can display cards in a board, table, calendar, or gallery layout, optionally filtered and grouped by a property (e.g., priority, status, etc).

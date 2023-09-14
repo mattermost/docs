@@ -5,10 +5,10 @@ Search for messages
   :start-after: :nosearch:
 
 .. |product-list| image:: ../images/products_E82F.svg
-  :alt: Navigate between channels, playbooks, and Boards using the product menu icon.
+  :alt: Navigate between Channels and Playbooks using the product menu icon.
 
 .. |search-icon| image:: ../images/magnify_F0349.svg
-  :alt: Navigate between channels, playbooks, and Boards using the product menu icon.
+  :alt: Navigate between Channels and Playbooks using the product menu icon.
   
 .. |channel-info| image:: ../images/information-outline_F02FD.svg
   :alt: Use the Channel Info icon to access additional channel management options.

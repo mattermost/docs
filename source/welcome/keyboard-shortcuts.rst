@@ -20,7 +20,7 @@ The following navigation keyboard shortcuts are supported only in the Mattermost
 
   .. tab:: Desktop app v5.0 onwards
 
-    Mattermost desktop app v5.0 introduces additional ways to navigate your Mattermost interface, including server selections, as well as tabs for channels, playbooks, and boards. 
+    Mattermost desktop app v5.0 introduces additional ways to navigate your Mattermost interface, including server selections, as well as tabs for Channels and Playbooks. 
     
     +--------------------------------------+-------------------------------+-------------------------------------------------------------------------------------------------+
     | On Windows & Linux                   | On macOS                      | Description                                                                                     |
@@ -38,8 +38,6 @@ The following navigation keyboard shortcuts are supported only in the Mattermost
     | :kbd:`Ctrl` :kbd:`Shift` :kbd:`Tab`  | :kbd:`⌘` :kbd:`⇧` :kbd:`Tab`  | Navigate to the previous product tab based on the current product selected.                     |  
     +--------------------------------------+-------------------------------+-------------------------------------------------------------------------------------------------+
     | :kbd:`Ctrl` :kbd:`1`                 | :kbd:`⌘` :kbd:`1`             | Navigate to the **Channels** tab.                                                               |
-    +--------------------------------------+-------------------------------+-------------------------------------------------------------------------------------------------+
-    | :kbd:`Ctrl` :kbd:`2`                 | :kbd:`⌘` :kbd:`2`             | Navigate to the **Boards** tab.                                                                 |
     +--------------------------------------+-------------------------------+-------------------------------------------------------------------------------------------------+
     | :kbd:`Ctrl` :kbd:`3`                 | :kbd:`⌘` :kbd:`3`             | Navigate to the **Playbooks** tab.                                                              |
     +--------------------------------------+-------------------------------+-------------------------------------------------------------------------------------------------+

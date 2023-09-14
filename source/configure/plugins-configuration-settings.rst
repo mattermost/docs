@@ -9,7 +9,6 @@ Both self-hosted and Cloud admins can access the following configuration setting
 - `Plugin Management <#plugin-management>`__
 - `Apps <#apps>`__
 - `Calls <#calls>`__
-- `Mattermost Boards <#mattermost-boards>`__
 - `Google Calendar <#google-calendar>`__
 - `MS Teams Sync <#ms-teams-sync>`__
 - `Playbooks <#playbooks>`__
@@ -763,40 +762,6 @@ Enable call ringing (Beta)
 |   when a call starts.                                                    | - Environment variable: N/A                                                                 |
 | - **false**: **(Default**) Ringing functionality is disabled.            |                                                                                             |
 +--------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
-
-----
-
-Mattermost Boards
------------------
-
-.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
-  :start-after: :nosearch:
-
-.. note::
-  
-  From Mattermost v8.1, this third-party plugin is managed by the Mattermost Community.
-
-Mattermost Boards is an open source alternative to Trello, Notion, and Asana. Boards is a project management tool that helps define, organize, track and manage work across teams, using a familiar kanban board view. See the `Mattermost Boards <https://docs.mattermost.com/guides/boards.html>`__ product documentation for details.
-
-Access the following configuration settings in the System Console by going to **Plugins > Mattermost Boards**.
-
-.. config:setting:: plugins-boardsenable
-  :displayname: Enable plugin (Plugins - Boards)
-  :systemconsole: Plugins > Mattermost Boards
-  :configjson: 
-  :environment: 
-
-  - **true**: Enables the Mattermost Boards plugin on your Mattermost workspace.
-  - **false**: Disables the Mattermost Boards plugin on your Mattermost workspace.
-
-Enable plugin
-~~~~~~~~~~~~~
-
-+----------------------------------------------------------------------------------+-------------------------------------------------------+
-| - **true**: Enables the Mattermost Boards plugin on your Mattermost workspace.   | - System Config path: **Plugins > Mattermost Boards** |
-| - **false**: Disables the Mattermost Boards plugin on your Mattermost workspace. |                                                       |
-|                                                                                  | - Environment variable:                               |
-+----------------------------------------------------------------------------------+-------------------------------------------------------+
 
 ----
 
