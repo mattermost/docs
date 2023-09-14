@@ -4,12 +4,41 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 
 Latest Mattermost Cloud releases:
 
+- [Release 2023-09-28](#release-2023-09-28)
 - [Release 2023-09-12](#release-2023-09-12)
 - [Release 2023-08-29](#release-2023-08-29)
 - [Release 2023-08-09](#release-2023-08-09)
 - [Release 2023-08-03](#release-2023-08-03)
 - [Release 2023-07-26](#release-2023-07-26)
-- [Release 2023-07-20](#release-2023-07-20)
+
+## Release 2023-09-28
+
+### Improvements
+
+#### User Interface (UI)
+ - GitLab plugin v1.7.0 is now available via prepackaged plugins.
+ - Added additional reaction options when viewing threads or messages when the sidebar is larger than its minimum width.
+ - Added block changes to name, display name, and purpose for direct and group messages.
+ - Added a link to notification documentation in the **Notification Settings** modal.
+ - Updated the post textbox measurement code to be more reliable.
+
+#### Administration
+ - Added two new url parameters to ``GET /api/v4/groups``: ``include_archived`` and ``filter_archived``. Added the ability to restore archived groups from the user groups modal.
+ - Moved the ``request`` package into the public shared folder.
+ - Added file storage information to the support package.
+ - Improved performance on data retention ``DeleteOrphanedRows`` queries. Removed feature flag ``DataRetentionConcurrencyEnabled``. Data retention now runs without concurrency in order to avoid any performance degradation. Added a new configuration setting ``DataRetentionSettings.RetentionIdsBatchSize``, which allows admins to to configure how many batches of IDs will be fetched at a time when deleting orphaned reactions. The default value is 100.
+ - The Go version was bumped to v1.20.
+ - A ``user_id`` is now included in all HTTP logs (debug level) to help determine who is generating unexpected traffic.
+ - Added a setting ``DisplaySettings.MaxMarkdownNodes`` to limit the maximum complexity of markdown text on mobile.
+
+### Bug Fixes
+ - Fixed an issue with keyboard support for some menus with submenus.
+ - Fixed an issue with a disappearing punctuation when following a group mention.
+ - Fixed an issue where compliance export jobs were not able to start after disabling and enabling the compliance export.
+ - Fixed a potential read after write issue when loading a license.
+
+### Known Issues
+ - Left-hand side resize option overrides the **Browse/Create Channel** menu [MM-54367](https://mattermost.atlassian.net/browse/MM-54367).
 
 ## Release 2023-09-12
 
