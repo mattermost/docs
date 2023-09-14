@@ -23,13 +23,14 @@ Latest Mattermost Cloud releases:
  - Updated the post textbox measurement code to be more reliable.
 
 #### Administration
- - Added two new url parameters to ``GET /api/v4/groups``: ``include_archived`` and ``filter_archived``. Added the ability to restore archived groups from the user groups modal.
+ - Added two new URL parameters to ``GET /api/v4/groups``: ``include_archived`` and ``filter_archived``. Added the ability to restore archived groups from the user groups modal.
  - Moved the ``request`` package into the public shared folder.
  - Added file storage information to the support package.
  - Improved performance on data retention ``DeleteOrphanedRows`` queries. Removed feature flag ``DataRetentionConcurrencyEnabled``. Data retention now runs without concurrency in order to avoid any performance degradation. Added a new configuration setting ``DataRetentionSettings.RetentionIdsBatchSize``, which allows admins to to configure how many batches of IDs will be fetched at a time when deleting orphaned reactions. The default value is 100.
  - The Go version was bumped to v1.20.
  - A ``user_id`` is now included in all HTTP logs (debug level) to help determine who is generating unexpected traffic.
  - Added a setting ``DisplaySettings.MaxMarkdownNodes`` to limit the maximum complexity of markdown text on mobile.
+ - Added new URL Parameter to ``GET /api/v4/groups`` and ``GET /api/v4/groups/:group_id``. ``include_member_ids`` will add all the members ``user_ids`` to the group response objects. You can now also add group members to a channel, any members that are not part of the team can be added to the team through this flow and subsequently added the channel.
 
 ### Bug Fixes
  - Fixed an issue with keyboard support for some menus with submenus.
