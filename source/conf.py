@@ -334,6 +334,8 @@ redirects = {
         "https://docs.mattermost.com/configure/deprecated-configuration-settings.html#town-square-is-read-only",
 "administration/config-settings.html#user-filter":
         "https://docs.mattermost.com/configure/configuration-settings.html#user-filter",
+"administration/command-line-tools.html#mattermost-user-migrate-auth":
+        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-user-migrate-auth",
 
 # Boards redirects
 "boards/navigating-mattermost-boards.html":
@@ -1785,7 +1787,7 @@ redirects = {
 "install/use-kubernetes-mattermost.html":
         "https://docs.mattermost.com/install/install-kubernetes.html",
 "install/deploy-cloudron.html":
-        "https://forum.mattermost.com/t/deploy-mattermost-on-cloudron/13526",
+        "https://forum.mattermost.com/",
 "install/desktop-custom-dictionaries.html#setting-up-the-dictionaries":
         "https://docs.mattermost.com/install/desktop-custom-dictionaries.html#prepare-custom-dictionaries",
 "install/desktop-custom-dictionaries.html#configuring-the-desktop-app":
@@ -2584,6 +2586,8 @@ redirects = {
         "https://docs.mattermost.com/welcome/manage-multiple-server-connections.html",
 "welcome/whats-new-in-v72.html":
         "https://github.com/mattermost/focalboard/blob/product-docs/docs/index.md"
+"welcome/insights.html":
+        "https://docs.mattermost.com/install/deprecated-features.html#mattermost-server-v9-0-0"
 
 # End of redirects. The last redirect above should NOT end in a comma.
 

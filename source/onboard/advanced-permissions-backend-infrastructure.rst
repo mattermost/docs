@@ -120,6 +120,8 @@ Permissions in Mattermost are a property of the server code base and are not cre
 +----------------------------------------------+---------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | read_channel                                 | channel | View posts in a channel.                                                                                                                                                                              |
 +----------------------------------------------+---------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| read_channel_contents                        | channel | Read the contents of a channel.                                                                                                                                                                       |
++----------------------------------------------+---------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | read_public_channel                          | team    | View and access public channels on a team.                                                                                                                                                            |
 +----------------------------------------------+---------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | add_reaction                                 | channel | Add emoji reactions to posts.                                                                                                                                                                         |
@@ -254,6 +256,7 @@ The following built-in roles and associated permissions are available:
 *channel_guest*
 
 - read_channel
+- read_channel_contents
 - add_reaction
 - remove_reaction
 - upload_file
@@ -273,6 +276,7 @@ The following built-in roles and associated permissions are available:
 - read_public_channel_groups
 - use_channel_mentions
 - read_channel
+- read_channel_contents
 - delete_post
 - get_public_link
 - remove_reaction
@@ -375,6 +379,7 @@ The following built-in roles and associated permissions are available:
 - sysconsole_read_reporting
 - upload_file
 - read_channel
+- read_channel_contents
 - sysconsole_read_user_management_teams
 - delete_emojis
 - manage_private_channel_properties
