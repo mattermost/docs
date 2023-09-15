@@ -279,7 +279,7 @@ Now that you have an environment in place, we recommend working through the foll
 
 - Roll out desktop app 
 
- - Resource: https://docs.mattermost.com/install/desktop-app-install.html
+ - Resource: https://docs.mattermost.com/collaborate/install-desktop-app.html
  - Resource: https://docs.mattermost.com/deploy/desktop-app.html
  - (Optional) Use the MSI installer to install on Windows machines
 

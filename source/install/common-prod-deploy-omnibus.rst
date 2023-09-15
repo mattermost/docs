@@ -42,7 +42,7 @@ Mattermost bundles the components of a Mattermost deployment into a single insta
 
 3. Open a browser and navigate to your Mattermost domain either by domain name (e.g. ``mymattermostserver.com``), or by the server's IP address if you're not using a domain name. 
 
-4. Create your first Mattermost user, `invite more users </channels/manage-channel-members.html>`__, and explore the Mattermost platform. 
+4. Create your first Mattermost user, `invite more users </collaborate/manage-channel-members.html>`__, and explore the Mattermost platform. 
 
    .. note:: 
 

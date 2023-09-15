@@ -33,7 +33,7 @@ Install Mattermost Omnibus
 
   </div>
 
-.. contents:: On this page:
+.. contents:: On this page
   :backlinks: top
   :local:
   :depth: 1

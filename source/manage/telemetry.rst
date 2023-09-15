@@ -112,7 +112,7 @@ Groups Configuration Information (Enterprise Edition only)
   Information related to AD/LDAP groups, including number of groups synced to Mattermost, teams and channels associated to groups, teams and channels synced with groups, and number of group members.
 
 Plugin Configuration Information
-  Basic information including number of active and inactive plugins, which are using webapp or backend portions, which `Mattermost plugins <https://github.com/mattermost/mattermost-server/blob/master/services/telemetry/telemetry.go#L1406>`__ are enabled along with their versions, and core plugins disabled count (including apps framework, calls, boards, playbooks, net promoter score/user satisfaction survey, and channel export). Some plugins may send summary data such as number of authenticated users of the plugin. The list of plugins is obtained from the Marketplace. If the Marketplace can't be reached, the list of known plugins is used instead.
+  Basic information including number of active and inactive plugins, which are using webapp or backend portions, which `Mattermost plugins <https://github.com/mattermost/mattermost-server/blob/master/services/telemetry/telemetry.go#L1406>`__ are enabled along with their versions, and core plugins disabled count. Some plugins may send summary data such as number of authenticated users of the plugin. The list of plugins is obtained from the Marketplace. If the Marketplace can't be reached, the list of known plugins is used instead.
 
 Permissions Configuration Information (Enterprise Edition only)
   Permissions configured for each role for the System Scheme and each Team Override Scheme created in the system. Scheme ID; Team Admin permissions; team user permissions; Channel Admin permissions; channel user permissions; number of teams the scheme is associated with; number of users assigned to each admin role; Number of admin roles not using default privileges; Changes to default privileges of each admin role.
@@ -166,54 +166,6 @@ Playbooks telemetry
 --------------------
 
 Playbooks metadata is collected and sent every 24 hours. Visit the `playbooks telemetry file <https://github.com/mattermost/mattermost-plugin-playbooks/blob/master/server/telemetry/rudder.go>`_ for details about the types of metadata collected.
-
-Boards telemetry
-----------------
-
-Boards metadata is collected and sent every 24 hours. Visit the `boards telemetry file <https://github.com/mattermost/focalboard/blob/main/webapp/src/telemetry/telemetryClient.ts>`_ for information about the action and event data collected.
-
-Other telemetry information that we collect is:
-
-**Server telemetry**
-
-Boards Plugin Information
-
-- Boards Version and Build Number
-- Boards Edition 
-- Operating System for Boards server
-- The server diagnostic ID
-      
-Configuration Information
-
-- ServerRoot is default server root (``true``/``false``)
-- Port is default port (``true``/``false``)
-- UseSSL (``true``/``false``)
-- Database Type 
-- Single User (``true``/``false``)
-    
-User Count Information
-
-- Registered User Count
-- Daily Active User Count
-- Weekly Active User Count
-- Monthly Active User Count
-    
-Block Count Information
-
-- Block Counts By Type
-    
-Workspace Information
-
-- Workspace Count
-
-**Web app event activity**
-
-Load Board View
-
-- ``UserID``: Unique identifier of the server.
-- ``UserActualID``: Unique identifier of the user who initiated the action.
-- ``Event``: Type of the event. Only the ``view`` event is currently monitored.
-- ``View Type`` (``board``, ``table``, ``gallery``).
 
 Apps framework telemetry
 ------------------------
