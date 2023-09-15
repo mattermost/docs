@@ -1,6 +1,10 @@
 Product questions
 =================
 
+.. contents:: On this page
+    :backlinks: top
+    :depth: 2
+
 What features are available on different Mattermost clients?
 ------------------------------------------------------------
 
@@ -48,10 +52,10 @@ The following chart highlights the end user features of Mattermost and their sup
     "Create a new team", "X", "X"
     "Get team invite link", "X", "X", "X"
     "Add members to team", "X", "X", "X"
+    "Get team invite link", "X", "X", "X"
+    "Add members to team", "X", "X", "X"
     "Manage team members", "X", "X",
     "Leave team", "X", "X"
-    **BOARDS**
-    "Boards, cards, and views", "X", "X"
     **PLAYBOOKS**
     "Templates and checklists", "X", "X"
     **CALLS**

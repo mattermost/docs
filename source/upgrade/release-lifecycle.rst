@@ -16,6 +16,8 @@ During each monthly release, Mattermost backports high severity or high impact s
 +-------------+-----------------------+--------------------------+--------------------------+--------------------------+
 | Version     | Release Type          | Lifecyle Start Date      | Lifecycle End Date       | Extended Support Release |
 +=============+=======================+==========================+==========================+==========================+
+| 9.1         | Feature               |  2023-10-16              | 2024-01-15               |                          |
++-------------+-----------------------+--------------------------+--------------------------+--------------------------+
 | 9.0         | Major                 |  2023-09-16              | 2023-12-15               |                          |
 +-------------+-----------------------+--------------------------+--------------------------+--------------------------+
 | 8.1         | Feature               |  2023-08-16              | 2024-05-15               | Yes                      |
@@ -167,6 +169,3 @@ Desktop and mobile app compatibility
 Mattermost desktop and mobile apps are backwards compatible; however, we strongly recommend updating to the latest version for an optimal user experience. The latest versions include the latest security fixes, and are compatible with the oldest supported `extended support release </upgrade/extended-support-release.html>`__ of Mattermost Server to ensure backwards compatibility.
 
 Please review the `desktop app changelog </install/desktop-app-changelog.html>`__ and the `mobile app changelog </deploy/mobile-app-changelog.html>`__ notes for any self-hosted or Cloud-specific version requirements for features and functionalities, as well as notes on security fixes.
-
-.. include:: upgrading-to-v60.rst
-  :start-after: :nosearch:

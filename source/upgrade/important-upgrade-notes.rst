@@ -10,11 +10,15 @@ Important Upgrade Notes
    - Upgrading the Microsoft Teams Calling plugin to v2.0.0 requires users to reconnect their accounts.
    - When upgrading to 7.x from a 5.x release please make sure to upgrade to 5.37.10 first for the upgrade to complete successfully.
    - Disable global drafts. Admins can set the feature flag ``MM_FEATUREFLAGS_GLOBALDRAFTS`` to ``false`` to disable server-wide. It can't be disabled on a per-user basis. The code is located `here <https://github.com/mattermost/mattermost-server/blob/master/server/public/model/feature_flags.go#L74>`__.
-   - Please see the `list of deprecations <https://docs.mattermost.com/install/deprecated-features.html>`_ planned for an upcoming v9.0 release (currently scheduled for September 15th, 2023).
 
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | If you’re upgrading from a version earlier than... | Then...                                                                                                                                                          |
 +====================================================+==================================================================================================================================================================+
+| v9.0                                               | Removed the deprecated Insights feature.                                                                                                                         |
+|                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                    | Mattermost Boards and various other plugins have transitioned to being fully community supported. See this                                                       |
+|                                                    | `forum post <https://forum.mattermost.com/t/upcoming-product-changes-to-boards-and-various-plugins/16669>`_ for more details.                                    |
++----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v8.1                                               | In v8.1.2, improved performance on data retention ``DeleteOrphanedRows`` queries.                                                                                |
 |                                                    |                                                                                                                                                                  |                                                                             
 |                                                    | New migration for a new table:                                                                                                                                   |

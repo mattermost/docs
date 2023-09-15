@@ -1,6 +1,10 @@
 General Mattermost questions
 ============================
 
+.. contents:: On this page
+    :backlinks: top
+    :depth: 2
+
 Why was Mattermost created?
 ---------------------------
 
