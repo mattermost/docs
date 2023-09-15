@@ -2,12 +2,43 @@
 
 Latest Mattermost Mobile Apps releases:
 
-- [2.7.0 Release](#release)
-- [2.6.0 Release](#id1)
-- [2.5.1 Release](#id6)
-- [2.5.0 Release](#id9)
-- [2.4.0 Release](#id14)
-- [2.3.0 Release](#id19)
+- [2.8.0 Release](#release)
+- [2.7.0 Release](#id1)
+- [2.6.0 Release](#id6)
+- [2.5.1 Release](#id11)
+- [2.5.0 Release](#id14)
+- [2.4.0 Release](#id19)
+
+## 2.8.0 Release
+- Release Date: September 15, 2023
+- Server Versions Supported: Server v7.8.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
+
+### Compatibility
+ - **Upgrade to server version v7.8.0 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/upgrade/extended-support-release.html) (ESR) v7.1.0 has ended and upgrading to server ESR v7.8.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
+ - iPhone 5s devices and later with iOS 12.1+ is required.
+
+Note: Mattermost Mobile App v2.8.0 contains a medium level security fix. Updating is recommended. Details will be posted on our security updates page 30 days after release as per the Mattermost Responsible Disclosure Policy.
+
+### Improvements
+ - Calls: Added incoming call notifications for Direct Message and Group Message calls.
+ - Added some performance improvements.
+ - Removed unneeded requests to the server with malformed mentions.
+ - Added toast info when the ``Copy Info`` button is tapped on the **About** screen.
+ - Slightly improved performance of Markdown rendering.
+ - Added a limit to the maximum complexity of Markdown rendered.
+
+### Bug Fixes
+ - Removed some inconsistencies between mobile and browser in the way Direct Messages are shown in the sidebar.
+ - The **Member**/**Admin** label is now correctly shown inside the **Members** screen when managing users.
+ - Fixed UI issues with the **Mark all as read** button where the **Thread** disappeared when the font size was too large.
+ - Fixed an issue where users could not scroll down the acknowledgement bottom sheet in the user list when there were many users.
+ - Fixed a potential issue causing Calls sessions to be stuck.
+
+### Known Issues
+ - The **Following** button in the Thread view wraps incorrectly [MM-54499](https://mattermost.atlassian.net/browse/MM-54499).
+ - Users are unable to adjust the font size via the OS font size setting.
+ - Some Google Pixel phones on Android 12+ might not continue past the login screen. This is a known issue with the OS, and the current workaround is to restart the device.
 
 ## 2.7.0 Release
 - Release Date: August 16, 2023
