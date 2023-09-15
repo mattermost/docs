@@ -14,7 +14,7 @@ The following Voluntary Product Accessibility Template for 508 Compliance is com
 - **Vendor Contact Email**: compliance[at]mattermost.com
 - **Vendor Contact Telephone**: Please `contact Mattermost, Inc. <https://mattermost.com/contact-us/>`__ for telephone access. 
 
-.. contents::
+.. contents:: On this page
     :backlinks: top
 
 Summary 
@@ -77,7 +77,7 @@ Section 1194.21 Software Applications and Operating Systems - Detail
 
 - **Level of Support and Supporting Features**: SUPPORTS 
 
-- **Remarks and Explanations**: Web-based application has extensive keyboard shortcut controls along with support for tabbed interface allowing operating using keyboard only. `Definitions of keyboard shortcuts are available in product documentation </channels/keyboard-shortcuts-for-channels.html>`__. Keyboard functionality is under continuous review for opportunities for improvement. 
+- **Remarks and Explanations**: Web-based application has extensive keyboard shortcut controls along with support for tabbed interface allowing operating using keyboard only. `Definitions of keyboard shortcuts are available in product documentation </collaborate/keyboard-shortcuts.html>`__. Keyboard functionality is under continuous review for opportunities for improvement. 
 
 (b) Applications shall not disrupt or disable activated features of other products that are identified as accessibility features, where those features are developed and documented according to industry standards. Applications also shall not disrupt or disable activated features of any operating system that are identified as accessibility features where the application programming interface for those accessibility features has been documented by the manufacturer of the operating system and is available to the product developer.
 

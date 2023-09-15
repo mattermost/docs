@@ -1,7 +1,7 @@
 Mobile apps FAQ
 ===============
 
-.. contents::
+.. contents:: On this page
   :backlinks: top
   :local:
 

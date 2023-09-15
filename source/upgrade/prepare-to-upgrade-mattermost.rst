@@ -6,7 +6,7 @@ Prepare to upgrade Mattermost
 
 In most cases, you can `upgrade Mattermost Server </upgrade/upgrading-mattermost-server.html>`__ in a few minutes. However, the upgrade can take longer depending on several factors, including the size and complexity of your installation, and the version that you're upgrading from. When planning an upgrade, it's worth confirming that your current database and operating system version are still supported. Details can be found on our `software and hardware requirements </install/software-hardware-requirements.html#server-software>`__ page.
 
-.. contents::
+.. contents:: On this page
   :backlinks: top
   :local:
 

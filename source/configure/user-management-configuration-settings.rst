@@ -20,6 +20,13 @@ Users
 
 *Available in legacy Enterprise Edition E10/E20*
 
+Getting people set up with a Mattermost account is typically something that system admins do when deploying and configuring the Mattermost workspace. A Mattermost admin can `provision Mattermost users </onboard/user-provisioning-workflows.html>`__ using one or more of the following methods:
+
+- `Enable account creation </configure/authentication-configuration-settings.html#enable-account-creation>`__.
+- Use `mmctl user create </manage/mmctl-command-line-tool.html#mmctl-user-create>`__ or Mattermost `APIs <https://api.mattermost.com/#tag/users>`__ to create user accounts.
+- `Migrate user accounts </onboard/migrating-to-mattermost.html#migration-guide>`__ from other collaboration systems and `bulk load </onboard/bulk-loading-data.html>`__ that user data into Mattermost.
+- Connect an authentication service to assist with user provisioning, such as `AD/LDAP authentication </onboard/ad-ldap.html#active-directory-ldap-setup>`__ or `SAML authentication </onboard/sso-saml.html>`__.
+
 +---------------------------------------------------------------+-------------------------------------------------------------+
 | Manage active and inactive users, revoke all user sessions,   | - System Config path: **User Management > Users**           |
 | access individual users to view their User ID, add users      | - ``config.json setting``: N/A                              |

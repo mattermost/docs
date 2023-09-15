@@ -29,4 +29,4 @@ See our `Mobile Push Notifications </deploy/mobile-hpns.html>`__ documentation t
 Success! Your public app store deployment is complete
 -----------------------------------------------------
 
-If you don't need the additional security provided via an EMM provider, your deployment is complete! Feel free to point your users to our `Mattermost Channels </guides/channels.html>`__ product documentation to learn more about using Mattermost Channels.
+If you don't need the additional security provided via an EMM provider, your deployment is complete! Feel free to point your users to our `Mattermost </guides/collaborate.html>`__ end user product documentation to learn more.

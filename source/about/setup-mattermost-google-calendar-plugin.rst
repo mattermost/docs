@@ -101,7 +101,7 @@ In Mattermost, configure the plugin by going to **System Console > Plugin Manage
 Get started with the plugin
 ---------------------------
 
-See the `use Mattermost Google Calendar plugin </channels/use-mattermost-google-calendar-plugin>`__ documentation for details on how users can `link their Google Calendar to Mattermost </channels/use-mattermost-google-calendar-plugin.html#connect-your-google-calendar-account-to-mattermost>`__, `customize plugin preferences </channels/use-mattermost-google-calendar-plugin.html#customize-your-google-calendar-plugin>`__, and `create calendar events in Mattermost <channels/use-mattermost-google-calendar-plugin.html#create-a-calendar-event>`__ that are added to their Google Calendar automatically.
+See the `use Mattermost Google Calendar plugin </collaborate/use-mattermost-google-calendar-plugin>`__ documentation for details on how users can `link their Google Calendar to Mattermost </collaborate/use-mattermost-google-calendar-plugin.html#connect-your-google-calendar-account-to-mattermost>`__, `customize plugin preferences </collaborate/use-mattermost-google-calendar-plugin.html#customize-your-google-calendar-plugin>`__, and `create calendar events in Mattermost <collaborate/use-mattermost-google-calendar-plugin.html#create-a-calendar-event>`__ that are added to their Google Calendar automatically.
 
 Troubleshooting
 ---------------

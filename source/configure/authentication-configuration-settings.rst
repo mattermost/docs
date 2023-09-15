@@ -848,15 +848,15 @@ First name attribute
 
 *Available in legacy Enterprise Edition E10 and E20*
 
-+----------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
-| This is the attribute in the AD/LDAP server that populates the first name field in Mattermost.                 | - System Config path: **Authentication > AD/LDAP**              |
-|                                                                                                                | - ``config.json`` setting: ``.LdapSettings.FirstNameAttribute`` |
-| When set, users cannot edit their first name.                                                                  | - Environment variable: ``MM_LDAPSETTINGS_FIRSTNAMEATTRIBUTE``  |
-|                                                                                                                |                                                                 |
-| When not set, users can edit their first name in their :doc:`profile settings </welcome/manage-your-profile>`. |                                                                 |
-|                                                                                                                |                                                                 |
-| String input.                                                                                                  |                                                                 |
-+----------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
+| This is the attribute in the AD/LDAP server that populates the first name field in Mattermost.                     | - System Config path: **Authentication > AD/LDAP**              |
+|                                                                                                                    | - ``config.json`` setting: ``.LdapSettings.FirstNameAttribute`` |
+| When set, users cannot edit their first name.                                                                      | - Environment variable: ``MM_LDAPSETTINGS_FIRSTNAMEATTRIBUTE``  |
+|                                                                                                                    |                                                                 |
+| When not set, users can edit their first name in their :doc:`profile settings </preferences/manage-your-profile>`. |                                                                 |
+|                                                                                                                    |                                                                 |
+| String input.                                                                                                      |                                                                 |
++--------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
 
 .. config:setting:: ldap-lastnameattribute
   :displayname: Last name attribute (AD/LDAP)
@@ -870,15 +870,15 @@ Last name attribute
 
 *Available in legacy Enterprise Edition E10 and E20*
 
-+-----------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------+
-| This is the attribute in the AD/LDAP server that populates the last name field in Mattermost.                         | - System Config path: **Authentication > AD/LDAP**             |
-|                                                                                                                       | - ``config.json`` setting: ``.LdapSettings.LastNameAttribute`` |
-| When set, users cannot edit their last name.                                                                          | - Environment variable: ``MM_LDAPSETTINGS_LASTNAMEATTRIBUTE``  |
-|                                                                                                                       |                                                                |
-| When not set, users can edit their last name as part of their :doc:`profile settings </welcome/manage-your-profile>`. |                                                                |
-|                                                                                                                       |                                                                |
-| String input.                                                                                                         |                                                                |
-+-----------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------+
+| This is the attribute in the AD/LDAP server that populates the last name field in Mattermost.                             | - System Config path: **Authentication > AD/LDAP**             |
+|                                                                                                                           | - ``config.json`` setting: ``.LdapSettings.LastNameAttribute`` |
+| When set, users cannot edit their last name.                                                                              | - Environment variable: ``MM_LDAPSETTINGS_LASTNAMEATTRIBUTE``  |
+|                                                                                                                           |                                                                |
+| When not set, users can edit their last name as part of their :doc:`profile settings </preferences/manage-your-profile>`. |                                                                |
+|                                                                                                                           |                                                                |
+| String input.                                                                                                             |                                                                |
++---------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------+
 
 .. config:setting:: ldap-nicknameattribute
   :displayname: Nickname attribute (AD/LDAP)
@@ -892,15 +892,15 @@ Nickname attribute
 
 *Available in legacy Enterprise Edition E10 and E20*
 
-+----------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------+
-| This is the attribute in the AD/LDAP server that populates the nickname field in Mattermost.                         | - System Config path: **Authentication > AD/LDAP**             |
-|                                                                                                                      | - ``config.json`` setting: ``.LdapSettings.NicknameAttribute`` |
-| When set, users cannot edit their nickname.                                                                          | - Environment variable: ``MM_LDAPSETTINGS_NICKNAMEATTRIBUTE``  |
-|                                                                                                                      |                                                                |
-| When not set, users can edit their nickname as part of their :doc:`profile settings </welcome/manage-your-profile>`. |                                                                |
-|                                                                                                                      |                                                                |
-| String input.                                                                                                        |                                                                |
-+----------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------+
+| This is the attribute in the AD/LDAP server that populates the nickname field in Mattermost.                             | - System Config path: **Authentication > AD/LDAP**             |
+|                                                                                                                          | - ``config.json`` setting: ``.LdapSettings.NicknameAttribute`` |
+| When set, users cannot edit their nickname.                                                                              | - Environment variable: ``MM_LDAPSETTINGS_NICKNAMEATTRIBUTE``  |
+|                                                                                                                          |                                                                |
+| When not set, users can edit their nickname as part of their :doc:`profile settings </preferences/manage-your-profile>`. |                                                                |
+|                                                                                                                          |                                                                |
+| String input.                                                                                                            |                                                                |
++--------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------+
 
 .. config:setting:: ldap-positionattribute
   :displayname: Position attribute (AD/LDAP)
@@ -914,15 +914,15 @@ Position attribute
 
 *Available in legacy Enterprise Edition E10 and E20*
 
-+----------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------+
-| This is the attribute in the AD/LDAP server that populates the position field in Mattermost.                         | - System Config path: **Authentication > AD/LDAP**             |
-|                                                                                                                      | - ``config.json`` setting: ``.LdapSettings.PositionAttribute`` |
-| When set, users cannot edit their position.                                                                          | - Environment variable: ``MM_LDAPSETTINGS_POSITIONATTRIBUTE``  |
-|                                                                                                                      |                                                                |
-| When not set, users can edit their position as part of their :doc:`profile settings </welcome/manage-your-profile>`. |                                                                |
-|                                                                                                                      |                                                                |
-| String input.                                                                                                        |                                                                |
-+----------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------+
+| This is the attribute in the AD/LDAP server that populates the position field in Mattermost.                             | - System Config path: **Authentication > AD/LDAP**             |
+|                                                                                                                          | - ``config.json`` setting: ``.LdapSettings.PositionAttribute`` |
+| When set, users cannot edit their position.                                                                              | - Environment variable: ``MM_LDAPSETTINGS_POSITIONATTRIBUTE``  |
+|                                                                                                                          |                                                                |
+| When not set, users can edit their position as part of their :doc:`profile settings </preferences/manage-your-profile>`. |                                                                |
+|                                                                                                                          |                                                                |
+| String input.                                                                                                            |                                                                |
++--------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------+
 
 .. config:setting:: ldap-profilepictureattribute
   :displayname: Profile picture attribute (AD/LDAP)
