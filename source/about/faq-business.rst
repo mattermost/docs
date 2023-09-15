@@ -1,7 +1,9 @@
-:orphan:
-
 Business questions
 ==================
+
+.. contents:: On this page
+    :backlinks: top
+    :depth: 2
 
 How do I fork Mattermost?
 -------------------------

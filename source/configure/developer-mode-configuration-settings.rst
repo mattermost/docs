@@ -79,7 +79,7 @@ Enable client debugging
 | - **false**: **(Default)** Those settings are     |                                                                                             |
 |   hidden and disabled.                            |                                                                                             |
 +---------------------------------------------------+---------------------------------------------------------------------------------------------+
-| See the `client debugging <https://docs.mattermost.com/channels/channels-settings.html#client-debugging>`__ documentation to learn more.        |
+| See the `client debugging </preferences/manage-advanced-options.html#performance-debugging>`__ documentation to learn more.                     |
 +---------------------------------------------------+---------------------------------------------------------------------------------------------+
 
 .. config:setting:: dev-allowuntrustedinternalconnections

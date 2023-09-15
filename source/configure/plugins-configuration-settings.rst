@@ -859,8 +859,8 @@ Encryption key
 |                                                                          | - Environment variable: N/A                          |
 +--------------------------------------------------------------------------+------------------------------------------------------+
 | **Note**: Select **Regenerate** to generate a new encryption key. When you regenerate this value, all users will need to        |
-| `reconnect their Google Calendar with Mattermost </channels/use-mattermost-google-calendar-plugin.                              |
-| html#connect-your-google-calendar-account-to-mattermost>`__.                                                                    |
+| `reconnect their Google Calendar with Mattermost                                                                                |
+| </collaborate/use-mattermost-google-calendar-plugin.html#connect-your-google-calendar-account-to-mattermost`__.                 |
 +--------------------------------------------------------------------------+------------------------------------------------------+
 
 .. config:setting:: plugins-googlecalendarappclientid
@@ -1144,7 +1144,7 @@ Playbooks
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Mattermost Playbooks is an open source, self-hosted collaboration tool for teams. Each playbook represents a recurring outcome or specific goal that your teams collaborate on to achieve, such as service outage recovery or customer onboarding. Teams run a playbook every time they want to orchestrate people, tools, and data to achieve that outcome as quickly as possible while providing visibility to stakeholders. Playbooks also allow teams to incorporate learnings from the retrospective to tweak and improve the playbook with every iteration. See the `Mattermost Playbooks <https://docs.mattermost.com/guides/playbooks.html>`__ documentation for details.
+Mattermost Playbooks is an open source, self-hosted collaboration tool for teams. Each playbook represents a recurring outcome or specific goal that your teams collaborate on to achieve, such as service outage recovery or customer onboarding. Teams run a playbook every time they want to orchestrate people, tools, and data to achieve that outcome as quickly as possible while providing visibility to stakeholders. Playbooks also allow teams to incorporate learnings from the retrospective to tweak and improve the playbook with every iteration. See the `Mattermost Playbooks plugin </guides/repeatable-processes.html>`__ documentation for details.
 
 Access the following configuration settings in the System Console by going to **Plugins > Playbooks**.
 

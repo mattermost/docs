@@ -40,7 +40,7 @@ Install Mattermost on RHEL
 
   If you are running the Mattermost Server and database on a single system, we recommend the `Mattermost Omnibus install method </install/installing-mattermost-omnibus.html>`__ as this greatly reduces setup and ongoing maintenance.
 
-.. contents:: On this page:
+.. contents:: On this page
   :backlinks: top
   :local:
   :depth: 1

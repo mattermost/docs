@@ -23,7 +23,7 @@ Site statistics
 | and playbooks.                                                | - Environment variable: N/A                                 |
 +---------------------------------------------------------------+-------------------------------------------------------------+
 | **Note**: Inactive and deactivated users, as well as remote users in                                                        |
-| `Microsoft Teams integrations </channels/collaborate-using-mattermost-for-microsoft-teams.html>`__                          |
+| `Microsoft Teams integrations </collaborate/collaborate-using-mattermost-for-microsoft-teams.html>`__                       |
 | and `shared channels users </onboard/shared-channels.html>`__, aren't counted towards the total number of active users.     |
 +---------------------------------------------------------------+-------------------------------------------------------------+
 

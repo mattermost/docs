@@ -1,6 +1,10 @@
 Mattermost editions and plans 
 =============================
 
+.. contents:: On this page
+    :backlinks: top
+    :depth: 2
+
 Mattermost is an open core platform. 
 
 This means we develop both an open source, self-hosted edition of our software provided free to our community, as well as a commercial edition that extends and enhances our open source software with paid, subscription-based offerings available both in self-hosted and cloud deployment modes.
@@ -79,7 +83,7 @@ Mattermost Professional is the set of collaboration features that enables you to
 
 This offering includes all the features of Mattermost Free, plus: 
 
-- `Guest access </onboard/guest-accounts.html>`__ and `custom user groups </welcome/manage-custom-groups.html>`__.
+- `Guest access </onboard/guest-accounts.html>`__ and `custom user groups </collaborate/organize-using-custom-user-groups.html>`__.
 - `Active Directory/LDAP Single Sign-on and user synchronization </onboard/ad-ldap.html>`__.
 - Single Sign-on with `SAML </onboard/sso-saml.html>`__ or `Office365 </onboard/sso-office.html>`__.
 - `MFA enforcement </onboard/multi-factor-authentication.html#enforcing-mfa-e10>`__.
@@ -106,10 +110,10 @@ This offering includes all the features of Mattermost Professional, plus:
 - `eDiscovery and compliance export automation </comply/compliance-export.html>`__.
 - `Enterprise mobile device management with custom EMM support via AppConfig </deploy/mobile-appconfig.html>`__.
 - `Advanced legal controls with customizable end-user terms of service and re-acceptance duration </comply/custom-terms-of-service.html>`__.
-- `Private mobility with ID-only push notifications </configure/configuration-settings.html#push-notification-contents>`__.
+- `Private mobility with ID-only push notifications </configure/site-configuration-settings.html#notification-pushnotificationcontents>`__.
 - `Enhanced compliance with global and custom retention policies for messages and files </comply/data-retention-policy.html>`__.
 - `Granular administrative control with custom system admin roles </onboard/system-admin-roles.html>`__.
-- `Advanced configuration of playbook permissions, analytics dashboards, and channel exports </playbooks/setting-up-playbooks.html>`__.
+- `Advanced configuration of playbook permissions, analytics dashboards, and channel exports </repeatable-processes/share-and-collaborate.html>`__.
 - `Enhanced compliance controls and granular audit logs with data export </comply/audit-log.html>`__.
 - `Advanced collaboration with shared channels across Mattermost instances </onboard/shared-channels.html>`__.
 - `High availability support with multi-node database deployment </scale/high-availability-cluster.html>`__.
