@@ -33,7 +33,7 @@ Additional configuration settings are available for this plugin. See the `MS Tea
 Get started with the plugin
 ---------------------------
 
-See our `collaborate using Mattermost for MS Teams </channels/collaborate-using-mattermost-for-microsoft-teams>`__ documentation for details on how to collaborate across both Mattermost and Microsoft Teams at the same time.
+See our `collaborate using Mattermost for MS Teams </collaborate/collaborate-using-mattermost-for-microsoft-teams>`__ documentation for details on how to collaborate across both Mattermost and Microsoft Teams at the same time.
 
 Troubleshooting
 ---------------

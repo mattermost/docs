@@ -6,7 +6,7 @@ Install Mattermost via Docker
 .. include:: ../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
 
-.. contents:: On this page:
+.. contents:: On this page
   :backlinks: top
   :local:
   :depth: 1

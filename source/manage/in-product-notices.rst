@@ -6,7 +6,7 @@ In-product notices
 
 Mattermost in-product notices keep users and administrators informed of the newest product improvements, features, and releases.
 
-.. contents::
+.. contents:: On this page
   :local:
 
 Administrator notices

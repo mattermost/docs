@@ -14,4 +14,4 @@ The Mattermost Google Calendar integration enables a two-way integration between
 See the following product documentation to install and use Mattermost Google Calendar integration:
 
 - `Set up the Mattermost Google Calendar plugin </about/setup-mattermost-google-calendar-plugin.html>`__
-- `Use the Mattermost Calendar plugin </channels/use-mattermost-google-calendar-plugin.html>`__
+- `Use the Mattermost Calendar plugin </collaborate/use-mattermost-google-calendar-plugin.html>`__

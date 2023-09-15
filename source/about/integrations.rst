@@ -1,6 +1,10 @@
 Integrations overview
 =====================
 
+.. contents:: On this page
+    :backlinks: top
+    :depth: 2
+
 Mattermost provides a variety of methods to add functionality and customize the end-user experience to suit your organization’s needs, whether you want to add new user capabilities with slash commands, build an advanced chatbot, or completely change the functionality of your server.
 
 A wide array of open source integrations are available and ready to use from Mattermost and our community. To see a list of open source integrations please see the `Mattermost Integrations Directory <https://mattermost.com/marketplace/>`__.

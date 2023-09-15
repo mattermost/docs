@@ -3,7 +3,7 @@ Configure SAML with OneLogin
 
 The following process provides steps to configure SAML 2.0 with OneLogin for Mattermost.
 
-.. contents::
+.. contents:: On this page
   :backlinks: top
   :local:
 
