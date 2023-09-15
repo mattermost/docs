@@ -17,13 +17,10 @@ Mattermost product documentation
 
    About Mattermost <overview/index>
    Deploy Mattermost <guides/deployment>
-   Mattermost administration <guides/administration>
-   Welcome to Mattermost <guides/welcome-to-mattermost>
-   Mattermost Channels <guides/channels>
-   Mattermost Playbooks <guides/playbooks>
-   Mattermost Boards <guides/boards>
-   Mattermost for developers <https://developers.mattermost.com/>
+   Manage Mattermost <guides/administration>
+   Use Mattermost <guides/use-mattermost>
+   Develop with Mattermost <https://developers.mattermost.com/>
    Get help with Mattermost <guides/get-help>
-   Community chat <guides/community-chat>
-   Mattermost Handbook <https://handbook.mattermost.com/>
-   Contribute to this site <guides/contribute-to-documentation>
+   Join our community <guides/community-chat>
+   Learn how we work <https://handbook.mattermost.com/>
+   Contribute to this documentation <guides/contribute-to-documentation>

@@ -22,7 +22,7 @@ This is currently supported for Okta and Microsoft ADFS server 2012 and 2016. On
 
 For detailed steps, view the :doc:`Configure SAML with Okta <sso-saml-okta>`, :doc:`Configure SAML with Microsoft ADFS for Windows Server 2012 <sso-saml-adfs>`, and :doc:`Configure SAML with Microsoft ADFS using Microsoft Windows Server 2016 <sso-saml-adfs-msws2016>` documentation. 
 
-.. contents::
+.. contents:: On this page
   :backlinks: top
   :local:
 
@@ -101,7 +101,7 @@ When enabled, SAML synchronization with AD/LDAP occurs in phases:
 
 1. Get all the current LDAP users from the Mattermost database who have ``Users.AuthService`` set to ``ldap``. This is a SQL query issued against the Mattermost database: ``SELECT * FROM Users WHERE AuthService = 'ldap'``.
 2. Get all the current SAML users from the Mattermost database who have ``Users.AuthService`` set to ``saml``. This is a SQL query issued against the Mattermost database: ``SELECT * FROM Users WHERE AuthService = 'saml'``.
-3. Get all the current LDAP users from the LDAP server as defined by ``LdapSettings.UserFilter``. This is an `LDAP query <https://github.com/mattermost/mattermost-server/blob/master/scripts/ldap-check.sh>`__ issued against the LDAP server. Users are retrieved in batches as defined by ``LdapSettings.MaxPageSize``.
+3. Get all the current LDAP users from the LDAP server as defined by ``LdapSettings.UserFilter``. This is an `LDAP query <https://github.com/mattermost/mattermost/blob/master/server/scripts/ldap-check.sh>`__ issued against the LDAP server. Users are retrieved in batches as defined by ``LdapSettings.MaxPageSize``.
 4. Update LDAP attributes. For each existing Mattermost user retrieved in step 1, attempt to find a match against the list of LDAP users from step 3. To find matches, ``Users.AuthData`` field of the Mattermost user is compared against the ``LdapSettings.IdAttribute`` LDAP setting.
 
  - If any attribute of the user has changed, that attribute is copied from the LDAP server and the user is marked as updated.

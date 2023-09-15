@@ -3,7 +3,7 @@ Configure SAML with Microsoft ADFS using Microsoft Windows Server 2016
 
 This document provides steps to configure SAML 2.0 with Microsoft ADFS for Mattermost and Microsoft Windows Server 2016.
 
-.. contents::
+.. contents:: On this page
   :backlinks: top
   :local:
 

@@ -12,7 +12,7 @@ Certain proxy servers also provide a layer of caching which can make loading ima
 
 When enabled, the image proxy needs to be publicly accessible to both the Mattermost client and server.
 
-Mattermost clients will use the image proxy to load all external images. The Mattermost server will use the image proxy when possible, but will not use it when requesting content that may not be an image, such as for `image previews of plaintext URLs <https://github.com/mattermost/mattermost-server/issues/11857>`_.
+Mattermost clients will use the image proxy to load all external images. The Mattermost server will use the image proxy when possible, but will not use it when requesting content that may not be an image, such as for `image previews of plaintext URLs <https://github.com/mattermost/mattermost/issues/11857>`_.
 
 Configure an image proxy by going to **System Console > Environment > Image Proxy**.
 

@@ -1,14 +1,13 @@
 Security overview
 ==================
 
+.. contents:: On this page
+    :backlinks: top
+    :depth: 2
+
 Security in Mattermost software is continually reviewed by developers, IT administrators, and security researchers accountable for deploying the software in their organizations.
 
-Multiple rounds of penetration testing and security analysis, in addition to internal reviews, have produced a long list of safeguards, processes, policies, and compliance features:
-
-.. contents::
-    :backlinks: top
-
-To expand on each:
+Multiple rounds of penetration testing and security analysis, in addition to internal reviews, have produced a long list of safeguards, processes, policies, and compliance features.
 
 Security features
 ------------------

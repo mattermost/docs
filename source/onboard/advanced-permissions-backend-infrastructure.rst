@@ -6,7 +6,7 @@ Advanced permissions: backend infrastructure
 
 This document outlines the backend server infrastructure for permissions in Mattermost and is recommended only for technical Admins or developers looking to make modifications to their installation.
 
-.. contents::
+.. contents:: On this page
   :backlinks: top
   :local:
 
@@ -119,6 +119,8 @@ Permissions in Mattermost are a property of the server code base and are not cre
 | edit_other_users                             | system  | Edit values on the `user` object of other users.                                                                                                                                                      |
 +----------------------------------------------+---------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | read_channel                                 | channel | View posts in a channel.                                                                                                                                                                              |
++----------------------------------------------+---------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| read_channel_contents                        | channel | Read the contents of a channel.                                                                                                                                                                       |
 +----------------------------------------------+---------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | read_public_channel                          | team    | View and access public channels on a team.                                                                                                                                                            |
 +----------------------------------------------+---------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -254,6 +256,7 @@ The following built-in roles and associated permissions are available:
 *channel_guest*
 
 - read_channel
+- read_channel_contents
 - add_reaction
 - remove_reaction
 - upload_file
@@ -273,6 +276,7 @@ The following built-in roles and associated permissions are available:
 - read_public_channel_groups
 - use_channel_mentions
 - read_channel
+- read_channel_contents
 - delete_post
 - get_public_link
 - remove_reaction
@@ -375,6 +379,7 @@ The following built-in roles and associated permissions are available:
 - sysconsole_read_reporting
 - upload_file
 - read_channel
+- read_channel_contents
 - sysconsole_read_user_management_teams
 - delete_emojis
 - manage_private_channel_properties

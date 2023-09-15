@@ -4,6 +4,7 @@ Use cases
 .. toctree::
    :maxdepth: 1
    :hidden:
+   :titlesonly:
 
    /about/secure-command-and-control.rst
    /about/unified-collaboration.rst

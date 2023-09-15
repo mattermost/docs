@@ -11,7 +11,8 @@ Mattermost is an open source platform for secure communication, collaboration, a
 Mattermost’s mission is to make the world safer and more productive by developing and delivering secure, open source collaboration software that is trusted, flexible, and offers fast time-to-value. Find an overview below of our products, features, security, integrations, licensing and subscriptions, authentication, and compliance support.
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
+   :titlesonly:
    :hidden:
 
    /about/product.rst
@@ -25,12 +26,6 @@ Mattermost’s mission is to make the world safer and more productive by develop
    /about/corporate-directory-integration.rst
    /about/certifications-and-compliance.rst
    /about/frequently-asked-questions.rst
-
-Mattermost contains three key tools:
-
-* :doc:`Channels </guides/channels>` - Stay connected with your team via 1:1 and group messaging.
-* :doc:`Playbooks </guides/playbooks>` - Build and configure repeatable processes to achieve specific and predictable outcomes.
-* :doc:`Boards </guides/boards>` - Manage projects and tasks in a Kanban board structure to help your team hit key milestones.
 
 This section provides an overview of Mattermost products, features, security, integrations, licensing, subscriptions, authentication, and compliance support.
 
