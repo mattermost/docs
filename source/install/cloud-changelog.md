@@ -23,6 +23,7 @@ Latest Mattermost Cloud releases:
  - Updated the post textbox measurement code to be more reliable.
  - Pre-packaged Calls version v0.19.1.
  - The ``invite`` slash command now supports custom user groups.
+ - Re-enabled the remote marketplace functionality (if configured as per ``PluginSettings.EnableRemoteMarketplace``).
 
 #### Administration
  - Added two new URL parameters to ``GET /api/v4/groups``: ``include_archived`` and ``filter_archived``. Added the ability to restore archived groups from the user groups modal.
