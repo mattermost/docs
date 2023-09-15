@@ -16,7 +16,12 @@ Latest Mattermost Desktop App releases:
 Release v5.5
 --------------
 
-**Release Day: September 15, 2023**
+- **v5.5.1, released **
+ - Mattermost v5.5.1 contains low severity level security fixes. Upgrading is highly recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.com/security-vulnerability-report//>`__.
+ - Upgraded to Electron v26.2.1.
+ - Fixde an issue where logging was stuck to ``info`` level.
+- **v5.5.0, released 2023-09-15**
+ - Original v5.5.0 release
 
 **Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/latest>`_
 
