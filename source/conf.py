@@ -77,7 +77,7 @@ redirects = {
 
 # About redirects
 "about/license-and-subscription.html#do-you-have-a-program-for-official-non-profits-open-source-projects-and-charities":
-        "https://docs.mattermost.com/about/subscription.html#do-you-have-a-program-for-official-non-profits-open-source-projects-and-charities",
+        "https://docs.mattermost.com/about/subscription.html#mattermost-nonprofit-license-program",
 "about/deployments-and-editions.html":
         "https://docs.mattermost.com/about/editions-and-offerings.html",
 "about/faq-business.html#copyright-and-licensing-of-mattermost-server-open-source-code":
@@ -344,133 +344,133 @@ redirects = {
 	"https://docs.mattermost.com/boards/migrate-to-boards.html",
 # Important Note: The following guide files were reorg'd in FY23 Q3.
 "boards/work-with-boards.html":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
 "boards/boards-settings.html":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
 "boards/calculations.html":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
 "boards/work-with-boards.html":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
 "boards/groups-filter-sort.html":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
 "boards/migrate-to-boards.html":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
 "boards/navigate-boards.html":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
 "boards/overview.html":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
 "boards/share-and-collaborate.html":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
 "boards/work-with-boards.html":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
 "boards/work-with-cards.html":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
 "boards/work-with-views.html":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
 "boards/overview.html#what-s-a-board":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
 "boards/overview.html#what-s-a-card":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
 "boards/overview.html#access-your-boards":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
 "boards/overview.html#focalboard-personal-server":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
 "boards/work-with-boards.html#add-new-boards":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
 "boards/work-with-boards.html#choose-a-board-template":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
 "boards/work-with-boards.html#edit-board-templates":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
 "boards/work-with-cards.html#card-descriptions":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
 "boards/work-with-cards.html#card-properties":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
 "boards/work-with-cards.html#add-properties":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
 "boards/work-with-cards.html#rename-a-property":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
 "boards/work-with-cards.html#change-a-property-type":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
 "boards/work-with-cards.html#delete-a-property":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
 "boards/work-with-cards.html#define-a-select-or-multi-select-property":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
 "boards/work-with-cards.html#toggle-properties-shown-on-a-board":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
 "boards/work-with-cards.html#attach-files":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
 "boards/work-with-cards.html#card-badges":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
 "boards/work-with-cards.html#comment-on-a-card":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
 "boards/work-with-cards.html#mention-people":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
 "boards/work-with-cards.html#receive-updates":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
 "boards/work-with-cards.html#search-cards":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
 "boards/work-with-cards.html#card-templates":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
 "boards/work-with-views.html#board-view":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
 "boards/work-with-views.html#table-view":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
 "boards/work-with-views.html#gallery-view":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
 "boards/work-with-views.html#calendar-view":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
 "boards/groups-filter-sort.html#group-cards":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
 "boards/groups-filter-sort.html#filters":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
 "boards/groups-filter-sort.html#sorting-cards":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
 "boards/share-and-collaborate.html#board-permissions":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
 "boards/share-and-collaborate.html#roles":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
 "boards/share-and-collaborate.html#guest-accounts":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
 "boards/share-and-collaborate.html#share-a-board":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
 "boards/share-and-collaborate.html#share-cards-on-channels":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
 "boards/migrate-to-boards.html#import-and-export-a-board-archive":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
 "boards/migrate-to-boards.html#export-to-csv":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
 "boards/migrate-to-boards.html#import-and-export-from-other-applications":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
 "boards/migrate-to-boards.html#import-from-asana":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
 "boards/migrate-to-boards.html#import-from-notion":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
 "boards/migrate-to-boards.html#import-from-jira":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
 "boards/migrate-to-boards.html#import-from-trello":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
 "boards/migrate-to-boards.html#import-from-todoist":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
 "boards/navigate-boards.html#link-a-board-to-a-channel":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
 "boards/navigate-boards.html#unlink-a-board-from-a-channel":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
 "boards/navigate-boards.html#sidebar-categories":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
 "boards/navigate-boards.html#drag-and-drop":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
 "boards/navigate-boards.html#manage-boards-on-the-sidebar":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
 "boards/navigate-boards.html#find-a-board":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
 "boards/navigate-boards.html#team-sidebar":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
 "boards/boards-settings.html#set-language":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
 "boards/boards-settings.html#random-emoji-icons":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
 "boards/boards-settings.html#product-tour":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
 
 # Channels redirects
 "channels/find-channels.html":
@@ -478,7 +478,7 @@ redirects = {
 "channels/sign-in.html":
         "https://docs.mattermost.com/welcome/log-in.html",
 "channels/organize-conversations.html#enable-collapsed-reply-threads-beta":
-        "https://docs.mattermost.com/channels/organize-conversations.html#enable-collapsed-reply-threads",
+        "https://docs.mattermost.com/collaborate/organize-conversations.html#enable-collapsed-reply-threads",
 # Important Note: The following guide files were reorg'd in FY23 Q3.
 "channels/channel-types.html":
         "https://docs.mattermost.com/collaborate/channel-types.html",
@@ -748,6 +748,8 @@ redirects = {
         "https://docs.mattermost.com/collaborate/use-mattermost-google-calendar-plugin.html#review-your-upcoming-events",
 "channels/about-teams-channels-messages.html":
         "https://docs.mattermost.com/guides/collaborate.html",
+"channels/find-channels.html#revisit-recent-channels":
+        "https://docs.mattermost.com/collaborate/browse-channels.html#revisit-recent-channels",
 
 # Cloud redirects
 "cloud/cloud-administration/cloud-changelog.html":
@@ -798,7 +800,6 @@ redirects = {
 	"https://forum.mattermost.org/t/configuring-apache2-with-ssl-and-http-2/11939",
 "configure/configuring-apache2.html":
         "https://forum.mattermost.com/t/configuring-apache2-as-a-proxy-for-mattermost-server/11938",
-
 
 # Configuration settings redirects
 "configure/configuration-in-mattermost-database.html":
@@ -1360,7 +1361,7 @@ redirects = {
 "configure/configuration-settings.html#batch-size": 
         "https://docs.mattermost.com/configure/compliance-configuration-settings.html#batch-size",
 "configure/configuration-settings.html#disable-post-metadata": 
-                "https://docs.mattermost.com/configure/deprecated-configuration-settings.html#disable-post-metadata",
+        "https://docs.mattermost.com/configure/deprecated-configuration-settings.html#disable-post-metadata",
 "configure/configuration-settings.html#enable-ad-ldap-group-sync": 
         "https://docs.mattermost.com/configure/deprecated-configuration-settings.html#enable-ad-ldap-group-sync",
 "configure/configuration-settings.html#amazon-s3-signature-v2": 
@@ -1748,9 +1749,9 @@ redirects = {
 
 # Deployment redirects
 "deployment/advanced-permissions.html":
-	"https://docs.mattermost.com/onboard/advanced-permissions.html",
+        "https://docs.mattermost.com/onboard/advanced-permissions.html",
 "deployment/auth.html":
-	"https://docs.mattermost.com/onboard/multi-factor-authentication.html",
+        "https://docs.mattermost.com/onboard/multi-factor-authentication.html",
 "deployment/admin-roles.html":
 	"https://docs.mattermost.com/onboard/system-admin-roles.html",
 "deployment/atlassian-integrations.html":
@@ -1760,9 +1761,9 @@ redirects = {
 "deployment/bot-integrations.html":
         "https://mattermost.com/marketplace/",
 "deployment/bots.html":
-	"https://developers.mattermost.com/integrate/admin-guide/admin-bot-accounts/",
+        "https://developers.mattermost.com/integrate/admin-guide/admin-bot-accounts/",
 "deployment/bulk-loading.html":
-	"https://docs.mattermost.com/onboard/bulk-loading-data.html",
+        "https://docs.mattermost.com/onboard/bulk-loading-data.html",
 "deployment/ci-cd-tools.html":
         "https://mattermost.com/marketplace/",
 "deployment/cluster.html":
@@ -1770,7 +1771,7 @@ redirects = {
 "deployment/cluster-310.html":
         "https://docs.mattermost.com/scale/high-availability-cluster.html",
 "deployment/cluster#upgrade-guide.html":
-	"https://docs.mattermost.com/scale/high-availability-cluster.html#upgrade-guide",
+        "https://docs.mattermost.com/scale/high-availability-cluster.html#upgrade-guide",
 "deployment/customize-mattermost.html":
 	"https://docs.mattermost.com/configure/customizing-mattermost.html",
 "deployment/customize-email.html":
@@ -1975,8 +1976,7 @@ redirects = {
 "guides/orchestration.html":
         "https://docs.mattermost.com/about/orchestration.html",
 "guides/boards.html":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/index.md",
-
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
 # Important Note: The following guide files were archived in FY23 Q2.
 "guides/cloud-admin-guide.html":
 	"https://docs.mattermost.com/guides/deployment.html",
@@ -2026,7 +2026,7 @@ redirects = {
 "help/apps/desktop-mvp.html":
         "https://developers.mattermost.com/contribute/mvp/",
 "help/getting-started/about-teams-channels-messages.html":
-        "https://docs.mattermost.com/guides/collaborate.html",
+        "https://docs.mattermost.com/channels/about-teams-channels-messages.html",
 "help/getting-started/access-your-workspace.html":
 	"https://docs.mattermost.com/guides/welcome-to-mattermost.html#access-your-mattermost-workspace",
 "help/getting-started/accessibility.html":
@@ -2416,7 +2416,7 @@ redirects = {
 "messaging/about-teams-channels-messages.html#messages":
         "https://docs.mattermost.com/guides/channels.html#work-with-messages",
 "messaging/accessing-your-workspace.html":
-	"https://docs.mattermost.com/welcome/sign-in.html",
+	"https://docs.mattermost.com/collaborate/access-your-workspace.html",
 "messaging/channels-basics.html":
         "https://docs.mattermost.com/guides/channels.html#work-with-channels",
 "messaging/channels-basics.html#write-messages":
@@ -2426,7 +2426,7 @@ redirects = {
 "messaging/channels-basics.html#notify-teammates":
         "https://docs.mattermost.com/channels/mention-people.html",
 "messaging/channels-basics.html#link-to-channels":
-        "https://docs.mattermost.com/channels/format-messages.html#channel-links",
+        "https://docs.mattermost.com/collaborate/format-messages.html#channel-links",
 "messaging/channels-basics.html#format-your-messages":
         "https://docs.mattermost.com/channels/format-messages.html",
 "messaging/channels-basics.html#react-to-messages":
@@ -2490,31 +2490,31 @@ redirects = {
 "messaging/formatting-text.html":
         "https://docs.mattermost.com/channels/format-messages.html",
 "messaging/formatting-text.html#text-style":
-        "https://docs.mattermost.com/channels/format-messages.html#text-style",
+        "https://docs.mattermost.com/collaborate/format-messages.html#text-style",
 "messaging/formatting-text.html#links":
-        "https://docs.mattermost.com/channels/format-messages.html#links",
+        "https://docs.mattermost.com/collaborate/format-messages.html#links",
 "messaging/formatting-text.html#headings":
-        "https://docs.mattermost.com/channels/format-messages.html#headings",
+        "https://docs.mattermost.com/collaborate/format-messages.html#headings",
 "messaging/formatting-text.html#lists":
-        "https://docs.mattermost.com/channels/format-messages.html#lists",
+        "https://docs.mattermost.com/collaborate/format-messages.html#lists",
 "messaging/formatting-text.html#code-block":
-        "https://docs.mattermost.com/channels/format-messages.html#code-blocks",
+        "https://docs.mattermost.com/collaborate/format-messages.html#code-blocks",
 "messaging/formatting-text.html#in-line-code":
-        "https://docs.mattermost.com/channels/format-messages.html#in-line-code",
+        "https://docs.mattermost.com/collaborate/format-messages.html#in-line-code",
 "messaging/formatting-text.html#in-line-images":
-        "https://docs.mattermost.com/channels/format-messages.html#in-line-images",
+        "https://docs.mattermost.com/collaborate/format-messages.html#in-line-images",
 "messaging/formatting-text.html#in-line-image-with-hover-text":
-        "https://docs.mattermost.com/channels/format-messages.html#in-line-image-with-hover-text",
+        "https://docs.mattermost.com/collaborate/format-messages.html#in-line-image-with-hover-text",
 "messaging/formatting-text.html#in-line-image-displayed-with-fixed-width-and-height":
-        "https://docs.mattermost.com/channels/format-messages.html#in-line-image-displayed-with-fixed-width-and-height",
+        "https://docs.mattermost.com/collaborate/format-messages.html#in-line-image-displayed-with-fixed-width-and-height",
 "messaging/formatting-text.html#lines":
-        "https://docs.mattermost.com/channels/format-messages.html#horizontal-lines",
+        "https://docs.mattermost.com/collaborate/format-messages.html#horizontal-lines",
 "messaging/formatting-text.html#block-quotes":
-        "https://docs.mattermost.com/channels/format-messages.html#block-quotes",
+        "https://docs.mattermost.com/collaborate/format-messages.html#block-quotes",
 "messaging/formatting-text.html#tables":
-        "https://docs.mattermost.com/channels/format-messages.html#tables",
+        "https://docs.mattermost.com/collaborate/format-messages.html#tables",
 "messaging/formatting-text.html#math-formulas":
-        "https://docs.mattermost.com/channels/format-messages.html#math-formulas",
+        "https://docs.mattermost.com/collaborate/format-messages.html#math-formulas",
 "messaging/keyboard-accessibility.html":
         "https://docs.mattermost.com/channels/keyboard-accessibility.html",
 "messaging/keyboard-accessibility.html#region-navigation":
@@ -2680,9 +2680,9 @@ redirects = {
 "messaging/saving-messages.html":
         "https://docs.mattermost.com/channels/save-pin-messages.html",
 "messaging/saving-messages.html#saving-a-message":
-        "https://docs.mattermost.com/save-pin-messages.html#save-messages",
+        "https://docs.mattermost.com/collaborate/save-pin-messages.html#save-messages",
 "messaging/saving-messages.html#viewing-saved-messages":
-        "https://docs.mattermost.com/channels/save-pin-messages.html#see-your-saved-messages",
+        "https://docs.mattermost.com/collaborate/save-pin-messages.html",
 "messaging/saving-messages.html#unsaving-messages":
         "https://docs.mattermost.com/channels/save-pin-messages.html#unsave-messages",
 "messaging/searching-in-mattermost.html":
@@ -2819,6 +2819,12 @@ redirects = {
         "https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html#manage-members",
 "onboard/ad-ldap-groups-synchronization.html#disabling-group-synchronized-management-of-teams-and-private-channels": 
         "https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html#disable-group-synchronized-management-of-teams-and-private-channels",
+"onboard/migrating.html#migrating-from-slack-using-the-mattermost-mmetl-tool-and-bulk-import":
+        "https://docs.mattermost.com/onboard/migrating-to-mattermost.html#use-the-mattermost-mmetl-tool-and-bulk-import",
+"onboard/migrating.html#migrating-from-slack-using-the-mattermost-web-app":
+        "https://docs.mattermost.com/onboard/migrating-to-mattermost.html#use-the-mattermost-web-app-deprecated",
+"onboard/migrating-to-mattermost.html#migrating-from-slack-using-the-mattermost-mmetl-tool-and-bulk-import":
+        "https://docs.mattermost.com/onboard/migrating-to-mattermost.html#use-the-mattermost-mmetl-tool-and-bulk-import",
 
 # Overview redirects
 "overview/architecture.html":
@@ -2859,13 +2865,13 @@ redirects = {
 	"https://docs.mattermost.com/playbooks/customize-a-playbook.html",
 "playbooks/refining-and-improving.html":
 	"https://docs.mattermost.com/playbooks/metrics-and-goals.html",
-"playbooks/customize-a-playbook":
+"playbooks/customize-a-playbook.html":
 	"https://docs.mattermost.com/playbooks/work-with-playbooks.html",
-"playbooks/customize-a-run":
+"playbooks/customize-a-run.html":
 	"https://docs.mattermost.com/playbooks/work-with-runs.html",
-"playbooks/reusing-and-sharing-playbooks":
+"playbooks/reusing-and-sharing-playbooks.html":
 	"https://docs.mattermost.com/playbooks/share-and-collaborate.html",
-"playbooks/playbook-permissions":
+"playbooks/playbook-permissions.html":
 	"https://docs.mattermost.com/playbooks/share-and-collaborate.html#playbooks-permissions",
 # Important Note: The following guide files were reorg'd in FY23 Q3.
 "playbooks/overview.html":
@@ -3088,7 +3094,7 @@ redirects = {
 "welcome/keyboard-shortcuts.html":
         "https://docs.mattermost.com/collaborate/keyboard-shortcuts.html",
 "welcome/log-out.html":
-        "https://docs.mattermost.com/build/html/collaborate/log-out.html",
+        "https://docs.mattermost.com/collaborate/log-out.html",
 "welcome/get-started-mattermost-channels.html":
         "https://docs.mattermost.com/guides/collaborate.html",
 "welcome/manage-custom-groups.html":
@@ -3096,7 +3102,7 @@ redirects = {
 "welcome/about-teams.html":
         "https://docs.mattermost.com/collaborate/organize-using-teams.html",
 "welcome/about-teams.html#single-team-versus-multiple-teams":
-        "https://docs.mattermost.com/organize-using-teams.html#single-team-versus-multiple-teams",
+        "https://docs.mattermost.com/collaborate/organize-using-teams.html#single-team-versus-multiple-teams",
 "welcome/about-teams.html#team-sidebar":
         "https://docs.mattermost.com/collaborate/organize-using-teams.html#team-sidebar",
 "welcome/about-teams.html#create-a-team":
@@ -3180,7 +3186,7 @@ redirects = {
 "welcome/what-changed-in-v60.html":
         "https://docs.mattermost.com/guides/deployment.html#changelogs",
 "welcome/whats-new-in-v72.html":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
 "welcome/keyboard-shortcuts.html#navigation-shortcuts-in-the-desktop-app":
         "https://docs.mattermost.com/collaborate/keyboard-shortcuts.html#navigation-in-the-desktop-app",
 "welcome/keyboard-shortcuts.html#zoom-shortcuts-for-web-and-desktop-app":
@@ -3210,7 +3216,15 @@ redirects = {
 "welcome/manage-custom-groups.html#manage-custom-user-groups":
         "https://docs.mattermost.com/collaborate/organize-using-custom-user-groups.html#manage-custom-user-groups",
 "welcome/add-people.html#add-people-on-demand":
-        "https://docs.mattermost.com/collaborate/invite-people.html"
+        "https://docs.mattermost.com/collaborate/invite-people.html",
+"welcome/sign-in.html":
+        "https://docs.mattermost.com/collaborate/access-your-workspace.html",
+"welcome/sign-in.html#email-address-or-username":
+        "https://docs.mattermost.com/collaborate/access-your-workspace.html#email-address-or-username",
+"welcome/sign-in.html#reset-your-password":
+        "https://docs.mattermost.com/collaborate/access-your-workspace.html#reset-your-password",
+"welcome/sign-in.html#single-sign-on-sso":
+        "https://docs.mattermost.com/collaborate/access-your-workspace.html#single-sign-on-sso"
 
 # End of redirects. The last redirect above should NOT end in a comma.
 

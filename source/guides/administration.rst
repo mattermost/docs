@@ -1,5 +1,5 @@
-Mattermost administration guide
-===============================
+Manage Mattermost
+==================
 
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
