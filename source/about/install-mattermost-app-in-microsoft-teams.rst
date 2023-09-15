@@ -38,7 +38,7 @@ Check out this `YouTube demo <https://youtu.be/MxegqqfErEg>`__, from Doug Lauder
 Get users started with the embedded app
 ----------------------------------------
 
-See our end user documentation for a `video walkthrough of using Mattermost embedded within Microsoft Teams </channels/collaborate-using-mattermost-for-microsoft-teams.html#demonstration-mattermost-embedded-in-microsoft-teams>`__.
+See our end user documentation for a `video walkthrough of using Mattermost embedded within Microsoft Teams </collaborate/collaborate-using-mattermost-for-microsoft-teams.html#demonstration-mattermost-embedded-in-microsoft-teams>`__.
 
 Benefits of the embedded app
 ----------------------------

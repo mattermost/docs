@@ -1,7 +1,9 @@
-:orphan:
-
 Business questions
 ==================
+
+.. contents:: On this page
+    :backlinks: top
+    :depth: 2
 
 How do I fork Mattermost?
 -------------------------
@@ -36,7 +38,7 @@ Rebranding
 Copyright and Licensing of ``/mattermost-server`` open source code
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- Compiling and distributing your own version of the open source Mattermost ``/mattermost-server`` repo requires a) compliance with licenses in the repo, including `NOTICE.txt <https://github.com/mattermost/mattermost-server/blob/master/NOTICE.txt>`__, and b) the compiled version of the ``/mattermost-server`` source code should have the same open source license as the source code, `per our licensing policy </about/subscription.html/>`__.
+- Compiling and distributing your own version of the open source Mattermost ``/mattermost-server`` repo requires a) compliance with licenses in the repo, including `NOTICE.txt <https://github.com/mattermost/mattermost/blob/master/NOTICE.txt>`__, and b) the compiled version of the ``/mattermost-server`` source code should have the same open source license as the source code, `per our licensing policy </about/subscription.html/>`__.
 
 Other considerations
 ~~~~~~~~~~~~~~~~~~~~

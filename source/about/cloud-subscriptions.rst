@@ -1,6 +1,10 @@
 Cloud subscriptions
 ===================
 
+.. contents:: On this page
+    :backlinks: top
+    :depth: 2
+
 Mattermost Cloud Subscriptions are offered as an annual subscription.
 
 Buy a Cloud subscription
