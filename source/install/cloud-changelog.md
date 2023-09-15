@@ -21,6 +21,7 @@ Latest Mattermost Cloud releases:
  - Added block changes to name, display name, and purpose for direct and group messages.
  - Added a link to notification documentation in the **Notification Settings** modal.
  - Updated the post textbox measurement code to be more reliable.
+ - Pre-packaged Calls version v0.19.1.
 
 #### Administration
  - Added two new URL parameters to ``GET /api/v4/groups``: ``include_archived`` and ``filter_archived``. Added the ability to restore archived groups from the user groups modal.
