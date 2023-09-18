@@ -28,7 +28,7 @@ Latest Mattermost Releases:
  - Accelerate mission-critical workflows that keep your team aligned and your data secure on [the Mattermost and Atlassian platforms](https://mattermost.com/atlassian/).
 
 #### Air-Gapped, Edge-Ready Generative AI with Defense Unicorn's LeapfrogAI
- - Deploy and utilize local GenAI models in edge, air-gapped, and zero-trust environments with [LeapfrogAI and Mattermost](https://github.com/defenseunicorns/leapfrogai).
+ - Deploy and utilize local GenAI models in edge, air-gapped, and zero-trust environments with [LeapfrogAI and Mattermost](https://leapfrog.ai/).
 
 #### AI-Accelerated Collaboration
  - Mattermost partner Mobius Logic has enhanced the MS Teams Connector for the Microsoft 365 platform by embedding Mattermost directly inside [Microsoft Teams](https://docs.mattermost.com/about/mattermost-for-microsoft-teams.html).
