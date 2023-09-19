@@ -25,6 +25,7 @@ Latest Mattermost Cloud releases:
  - The ``invite`` slash command now supports custom user groups.
  - Re-enabled the remote marketplace functionality (if configured as per ``PluginSettings.EnableRemoteMarketplace``).
  - Added the ability to convert a Group Message channel to a private channel.
+ - Group Message channels now behave like Direct Message channels, showing a new mention on every message.
 
 #### Administration
  - Added two new URL parameters to ``GET /api/v4/groups``: ``include_archived`` and ``filter_archived``. Added the ability to restore archived groups from the user groups modal.
