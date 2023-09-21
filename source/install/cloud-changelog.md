@@ -29,7 +29,6 @@ Latest Mattermost Cloud releases:
 
 #### Administration
  - Added two new URL parameters to ``GET /api/v4/groups``: ``include_archived`` and ``filter_archived``. Added the ability to restore archived groups from the user groups modal.
- - Moved the ``request`` package into the public shared folder.
  - Added file storage information to the support package.
  - Improved performance on data retention ``DeleteOrphanedRows`` queries. Removed feature flag ``DataRetentionConcurrencyEnabled``. Data retention now runs without concurrency in order to avoid any performance degradation. Added a new configuration setting ``DataRetentionSettings.RetentionIdsBatchSize``, which allows admins to to configure how many batches of IDs will be fetched at a time when deleting orphaned reactions. The default value is 100.
  - The Go version was bumped to v1.20.
