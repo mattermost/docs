@@ -41,6 +41,7 @@ Latest Mattermost Cloud releases:
  - Added new API endpoint ``GET`` ``/api/v4/channels/<channel-id>/common_teams`` to fetch list of teams common between members of a group message.
  - Added new API endpoint ``POST`` ``/api/v4/channels/<channel-id>/convert_to_channel`` to convert a group message to a private channel.
  - Added a new ``MessageHasBeenDeleted`` hook to the plugin API.
+ - Moved the ``request`` package into the public shared folder.
 
 ### Bug Fixes
  - Fixed an issue with keyboard support for some menus with submenus.
