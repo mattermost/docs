@@ -61,7 +61,7 @@ Latest Mattermost Releases:
  - Improved logging on plugin initialization, activation, and removal.
  - Removed the deprecated ``ManifestExecutables`` struct.
  - Removed the deprecated ``UserAuth.Password`` field.
- - Remote users are no longer counted as part of the license.
+ - [Remote users](https://docs.mattermost.com/onboard/shared-channels.html) are no longer counted as part of the license.
  - Improved data retention logs.
  - Removed ``/opengraph`` endpoint as it was unused.
  - Transitionally prepackaged plugins are now installed to the filestore for continuity when a future release stops prepackaging those plugins.
@@ -93,6 +93,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - Added ``@react-native/eslint-config``, ``@react-native/metro-config``, and ``@tsconfig/react-native`` to https://github.com/mattermost/mattermost-mobile/.
 
 ### Known Issues
+ - Copy pasting images from Chrome fails [MM-54486](https://mattermost.atlassian.net/browse/MM-54486).
  - Adding an @mention at the start of a post draft and pressing the left or right arrow key can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
  - Google login fails on the Classic mobile apps.
  - Status may sometimes get stuck as **Away** or **Offline** in High Availability mode with IP Hash turned off.
@@ -185,6 +186,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - v8.1 is built with Go ``v1.19.5``.
 
 ### Known Issues
+ - Copy pasting images from Chrome fails [MM-54486](https://mattermost.atlassian.net/browse/MM-54486).
  - Adding an @mention at the start of a post draft and pressing the left or right arrow key can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
  - Google login fails on the Classic mobile apps.
  - Status may sometimes get stuck as **Away** or **Offline** in High Availability mode with IP Hash turned off.
