@@ -32,7 +32,7 @@ There are two ways to set up AD/LDAP:
      - Next, configure AD/LDAP and then convert your System Admin account to use the AD/LDAP login method.
 
 2. **Configure AD/LDAP by editing ``config.json``**
-     - Edit ``config.json`` to enable AD/LDAP based on the `AD/LDAP settings documentation </configure/configuration-settings.html#ad-ldap>`__. When you log in to Mattermost the first user to log in with valid AD/LDAP credentials will be assigned the System Admin role.
+     - Edit ``config.json`` to enable AD/LDAP based on the `AD/LDAP settings documentation </configure/authentication-configuration-settings.html#ad-ldap>`__. When you log in to Mattermost the first user to log in with valid AD/LDAP credentials will be assigned the System Admin role.
 
 Configure AD/LDAP login
 --------------------------
