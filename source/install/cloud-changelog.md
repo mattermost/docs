@@ -16,7 +16,7 @@ Latest Mattermost Cloud releases:
 ### Improvements
 
 #### User Interface (UI)
- - GitLab plugin v1.7.0 is now available via prepackaged plugins.
+ - Pre-packaged GitLab plugin version v1.7.0.
  - Added additional reaction options when viewing threads or messages when the sidebar is larger than its minimum width.
  - Added block changes to name, display name, and purpose for direct and group messages.
  - Added a link to [notification documentation](https://docs.mattermost.com/preferences/manage-your-notifications.html) in the **Notification Settings** modal.
