@@ -42,7 +42,7 @@ Team override scheme
 
 *Available in legacy Enterprise Edition E10 and E20*
 
-On systems with multiple `Mattermost teams </welcome/about-teams.html#create-a-team>`__, each team may operate and collaborate in a unique way. Team Override Schemes give Admins the flexibility to tailor permissions to the needs of each team.
+On systems with multiple `Mattermost teams </collaborate/organize-using-teams.html#single-team-versus-multiple-teams>`__, each team may operate and collaborate in a unique way. Team Override Schemes give Admins the flexibility to tailor permissions to the needs of each team.
 
 When you use this permission scheme:
 
@@ -210,11 +210,11 @@ Example: As the default for the entire system, only allow system admins to creat
 Administration tools
 --------------------
 
-There are a number of CLI and mmctl tools available for admins to help in configuring and troubleshooting the permissions system:
+There are a number of API and mmctl tools available for admins to help in configuring and troubleshooting the permissions system:
 
-1. Reset all permissions to the default on new installations using the `CLI </manage/command-line-tools.html#mattermost-permissions-reset>`__, or using the `mmctl </manage/mmctl-command-line-tool.html#mmctl-permissions-reset>`__.
-2. `Export permission schemes </manage/command-line-tools.html#mattermost-permissions-export>`__: Exports the System Scheme and any Team Override Schemes to a ``jsonl`` file.
-3. `Import permission schemes </manage/command-line-tools.html#mattermost-permissions-import>`__: Imports the System Scheme and any Team Override Schemes to your Mattermost instance from a ``jsonl`` input file in the format outputted by ``mattermost permissions export``.
+1. Reset all permissions to the default on new installations using the `mmctl permissions reset </manage/mmctl-command-line-tool.html#mmctl-permissions-reset>`__ command.
+2. Use the `GetAllRoles <https://api.mattermost.com/#tag/roles/operation/GetAllRoles>`__ API endpoint to get a list of all roles.
+3. Add permissions to a role using the `mmctl permissions add </manage/mmctl-command-line-tool.html#mmctl-permissions-add>`__ command.
 
 Backend infrastructure
 ----------------------

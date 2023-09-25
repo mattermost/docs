@@ -4,12 +4,82 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 
 Latest Mattermost Cloud releases:
 
+- [Release 2023-09-12](#release-2023-09-12)
+- [Release 2023-08-29](#release-2023-08-29)
 - [Release 2023-08-09](#release-2023-08-09)
 - [Release 2023-08-03](#release-2023-08-03)
 - [Release 2023-07-26](#release-2023-07-26)
 - [Release 2023-07-20](#release-2023-07-20)
-- [Release 2023-07-19](#release-2023-07-19)
-- [Release 2023-07-11](#release-2023-07-11)
+
+## Release 2023-09-12
+
+### Compatibility
+ - Updated Chromium minimum supported version to 116+.
+
+### Improvements
+
+#### User Interface (UI)
+ - Added a **Cancel** button to the **Delete category** modal.
+ - Added the ability to resize the channel sidebar and right-hand sidebar.
+ - Added two new filtering options (show all channel types, show private channels) to the **Browse channels** modal.
+ - Pre-packaged Calls version v0.19.0.
+
+#### Administration
+ - Added ``mattermost-plugin-api`` into the mono repo.
+ - Added a new config setting ``TeamSettings.EnableJoinLeaveMessageByDefault`` that sets the default value for ``UserSetting``, ``ADVANCED_FILTER_JOIN_LEAVE``.
+
+#### API Changes
+ - Added the ``X-Forwarded-For`` request header to the audit stream for all Rest API calls.
+ - Added API endpoint ``POST /api/v4/user/login/desktop_login``. Modified OAuth/SAML flows to include ``desktop_login`` where applicable.
+
+### Bug Fixes
+ - Fixed keyboard support for the left-hand side channel menu, the left-hand side category menu, and the post dot menu.
+ - Fixed display name in the ``comment_on`` component.
+
+### Known Issues
+ - Left-hand side resize option overrides the **Browse/Create Channel** menu [MM-54367](https://mattermost.atlassian.net/browse/MM-54367).
+
+## Release 2023-08-29
+
+### Improvements
+
+#### User Interface (UI)
+ - Added functionality to bulk mark a whole channel category as read.
+ - Removed Boards product tour code.
+ - Replaced Gfycat with Giphy in the gif picker.
+ - Updated Focalboard plugin version to 7.11.3.
+ - Pre-packaged Playbooks version 1.38.1.
+ - Upgraded prepackaged Zoom plugin to v1.6.2.
+ - Enabled prepackaged plugins to be included in the in-product marketplace for Cloud.
+
+#### Administration
+ - API examples are now updated to reflect latest Go API conventions, deprecating older code samples.
+ - Updated the public server module version to v0.0.7.
+ - Added a ``Post Action`` plugin hook to allow plugins to register new items in the post menu.
+ - Added a ``Post Editor Action`` plugin hook to allow plugins to register new items in the post editor menu.
+ - Improved logging on plugin initialization, activation, and removal.
+ - Removed the deprecated ``ManifestExecutables`` struct.
+ - Removed the deprecated ``UserAuth.Password`` field.
+ - Remote users are no longer counted as part of the license.
+ - Improved data retention logs.
+ - Removed ``/opengraph`` endpoint as it was unused.
+ - Transitionally prepackaged plugins are now installed to the filestore for continuity when a future release stops prepackaging those plugins.
+ - Removed the deprecated ``Manifest.RequiredConfig`` field.
+ - Added a ``NotificationWillBePushed`` plugin hook invoked before the push notification is processed and sent to the notification service. Plugins may modify or reject the push notification.
+ - Added a `SendPushNotification` plugin api method which allows plugins to send push notifications to a specific user's mobile sessions.
+ - Disabled ``PluginSettings.EnableRemoteMarketplace`` functionality.
+
+### Bug Fixes
+ - Fixed accessibility issues: tab support at login, reset pages, sign up pages, and App bar.
+ - Fixed an issue where CRLF line endings passed to mmctl commands were not being stripped from commands.
+ - Fixed an issue where text copied from Microsoft OneNote is pasted as an image.
+ - Fixed an issue preventing successful activation of trial licenses.
+ - Fixed an issue where a custom group wouldn't get marked as a mention if it was not part of the webapp's local state.
+ - Fixed several issues with loading of licenses.
+ - Fixed an issue with the in-product marketplace theming.
+
+### Known Issues
+ - Text overlaps when opening the Playbook RHS panel [MM-54261](https://mattermost.atlassian.net/browse/MM-54261).
 
 ## Release 2023-08-09
 

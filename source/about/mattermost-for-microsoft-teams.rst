@@ -13,6 +13,4 @@ See the following product documentation to install and use Mattermost for Micros
 
 - `Install the Mattermost for Microsoft Teams plugin </about/install-mattermost-for-microsoft-teams-plugin.html>`__
 - `Install the Mattermost app in Microsoft Teams </about/install-mattermost-app-in-microsoft-teams.html>`__
-- `Collaborate using Mattermost for Microsoft Teams </channels/collaborate-using-mattermost-for-microsoft-teams.html>`__
-
-
+- `Collaborate using Mattermost for Microsoft Teams </collaborate/collaborate-using-mattermost-for-microsoft-teams.html>`__

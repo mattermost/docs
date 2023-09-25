@@ -104,4 +104,4 @@ Encountering issues with your Docker deployment? See the `Docker deployment trou
   
       sudo docker compose -f docker-compose.yml -f docker-compose.nginx.yml down
       
-7. Create your first Mattermost System Admin user, `invite more users </channels/manage-channel-members.html>`__, and explore the Mattermost platform. 
+7. Create your first Mattermost System Admin user, `invite more users </collaborate/manage-channel-members.html>`__, and explore the Mattermost platform. 

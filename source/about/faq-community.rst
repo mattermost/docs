@@ -1,6 +1,10 @@
 Mattermost community questions
 ==============================
 
+.. contents:: On this page
+    :backlinks: top
+    :depth: 2
+
 How can I contribute to Mattermost?
 -----------------------------------
 
@@ -15,7 +19,7 @@ You can get involved and contribute to Mattermost in the following ways:
 - Get troubleshooting help
 - Help translate Mattermost
 
-See the `Get Involved <https://github.com/mattermost/mattermost-server#get-involved>`__ section of the Mattermost GitHub ``README.md`` for more information.
+See the `Get Involved <https://github.com/mattermost/mattermost#get-involved>`__ section of the Mattermost GitHub ``README.md`` for more information.
 
 Can contributors add themselves to the Mattermost company page on LinkedIn?
 ---------------------------------------------------------------------------

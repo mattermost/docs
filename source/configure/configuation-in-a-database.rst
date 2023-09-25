@@ -33,7 +33,7 @@ These instructions cover migrating the Mattermost configuration to the database 
 Get your database connection string
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The first step is to get your master database connection string. We recommend using the `mmctl config get command </manage/mmctl-command-line-tool.html#mmctl-config-get>`__, or using the CLI's ``mattermost config get`` command to do this.  
+The first step is to get your master database connection string. We recommend using the `mmctl config get command </manage/mmctl-command-line-tool.html#mmctl-config-get>`__ to do this.
 
 To use the ``mattermost config get`` command:
 
@@ -58,6 +58,13 @@ Here is an example connection string:
 .. code-block:: text
 
    postgres://mmuser:really_secure_password@localhost:5432/mattermost?sslmode=disable&connect_timeout=10
+   
+**MySQL**
+
+.. code-block:: text
+
+   mysql://mmuser:really_secure_password@tcp(127.0.0.1:3306)/mattermost?charset=utf8mb4,utf8&writeTimeout=30s
+
 
 Create an environment file
 ~~~~~~~~~~~~~~~~~~~~~~~~~~

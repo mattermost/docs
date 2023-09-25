@@ -20,10 +20,10 @@ Site statistics
 +---------------------------------------------------------------+-------------------------------------------------------------+
 | View statistics on activated users, teams, channels, posts,   | - System Config path: **Reporting > Site Statistics**       |
 | sessions, commands, webhooks, active users, connections,      | - ``config.json setting``: N/A                              |
-| playbooks, runs, boards, and cards.                           | - Environment variable: N/A                                 |
+| and playbooks.                                                | - Environment variable: N/A                                 |
 +---------------------------------------------------------------+-------------------------------------------------------------+
 | **Note**: Inactive and deactivated users, as well as remote users in                                                        |
-| `Microsoft Teams integrations </channels/collaborate-using-mattermost-for-microsoft-teams.html>`__                          |
+| `Microsoft Teams integrations </collaborate/collaborate-using-mattermost-for-microsoft-teams.html>`__                       |
 | and `shared channels users </onboard/shared-channels.html>`__, aren't counted towards the total number of active users.     |
 +---------------------------------------------------------------+-------------------------------------------------------------+
 

@@ -1,7 +1,11 @@
 Cloud subscriptions
 ===================
 
-From 2 February 2023, Mattermost Cloud subscriptions are switching from a monthly subscription to an annual subscription.
+.. contents:: On this page
+    :backlinks: top
+    :depth: 2
+
+Mattermost Cloud Subscriptions are offered as an annual subscription.
 
 Buy a Cloud subscription
 ------------------------
@@ -68,7 +72,7 @@ Example:
 Renew your subscription
 -----------------------
 
-Monthly Cloud annual subscriptions renew automatically.
+Cloud subscriptions renew automatically, unless you opt out of renewal.
 
 Frequently asked questions
 ---------------------------
@@ -78,21 +82,13 @@ How am I billed for my annual Cloud subscription?
 
 When you purchase your subscription, your credit card is charged immediately. Thereafter, your subscription auto-renews every year. You can opt-out of auto-renewal in the System Console. You'll still receive reminders when your subscription is due for renewal.
 
-What happens if I decide to buy a subscription to Mattermost Enterprise during my trial?
+What happens if I want to buy Mattermost Enterprise during my trial?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Your plan immediately changes to the plan you've upgraded to. You will be invoiced as per your agreement with our sales team.
+You will have to contact our sales team to upgrade to Mattermost Enterprise. Your plan immediately changes to the plan you've upgraded to. You will be invoiced as per your agreement with our sales team.
 
 How do I cancel my subscription? 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-If you're a monthly Mattermost Cloud Professional, or Mattermost Cloud Free customer, you can cancel your subscription through the System Console. Please note that canceling your Mattermost Cloud subscription will **permanently delete** your Mattermost Cloud workspace.
-
-1. Navigate to **System Console > Billing & Account > Subscription**.
-2. Select **Cancel Subscription** near the bottom of the page.
-3. (Optional) We'd appreciate your feedback about your experience and any areas we can improve on.
-
-Once confirmed, your subscription will be canceled, and your Mattermost Cloud workspace will be **permanently deleted**
 
 If you have an annual subscription to Mattermost Cloud Professional, or Mattermost Cloud Enterprise and you wish to cancel, please `contact us <https://customers.mattermost.com/cloud/contact-us>`__.
 

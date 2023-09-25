@@ -4,6 +4,11 @@ Mattermost workspace migration
 .. include:: ../_static/badges/allplans-cloud.rst
   :start-after: :nosearch:
 
+.. contents:: On this page
+  :backlinks: top
+  :depth: 1
+  :local:
+
 This document outlines the process for migrating from Mattermost Cloud to a Mattermost self-hosted instance. In the future, a process for migrating from Mattermost self-hosted to Mattermost Cloud will also be documented and provided here.
 
 Migrating between two installations follows the same process that's documented below, regardless as to whether the source or destination of the migration is in the Cloud or self-hosted. **These steps will work for any Mattermost instance**.
@@ -89,7 +94,30 @@ This will show all of the exports on the server, so be sure to download the late
 Upload the export to the new server
 -----------------------------------
 
-Finally, it's time to take our export from the source server and use it as an import into the destination server. First, log into the destination server using ``mmctl`` the same way you logged into the source server:
+Finally, it's time to take our export from the source server and use it as an import into the destination server. Before proceeding, review and modify the following self-hosted Mattermost configuration settings, where applicable, to ensure a smooth and successful import.
+
++-----------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+| **Mattermost configuration setting**                                              | **Large file import recommendation**                                                                                          |
++-----------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+| `Maximum Users Per Team                                                           | Increase this value to a number that **exceeds** the maximum number of users, per team, in the import file.                   |
+| </configure/site-configuration-settings.html#max-users-per-team>`__               |                                                                                                                               |
++-----------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+| `Maximum File Size                                                                | Temporarily increase this value to be **larger** than the size of the import file.                                            |
+| </configure/environment-configuration-settings.html#maximum-file-size>`__         | Following a successful import, we strongly recommend reverting this value to a reasonable limit for daily expected usage.     |
++-----------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+| `Write Timeout                                                                    | Temporarily adjust this value based on import file speed and network path to enable the file to upload without timeouts.      |
+| </configure/environment-configuration-settings.html#write-timeout>`__             | Start with a value of **3600** and adjust if needed.                                                                          |
+|                                                                                   | Following a successful import, we strongly recommend reverting this setting to its initial or previous value.                 |
++-----------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+| `Read Timeout                                                                     | Temporarily adjust this value based on import file speed and network path to enable the file to upload without timeouts.      |
+| </configure/environment-configuration-settings.html#read-timeout>`__              | Start with a value of **3600** and adjust if needed.                                                                          |
+|                                                                                   | Following a successful import, we strongly recommend reverting this setting to its initial or previous value.                 |
++-----------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+| `Amazon S3 Request Timeout                                                        | If using cloud-based file storage, adjust this value to ensure your storage requests don't time out too soon.                 |
+| </configure/environment-configuration-settings.html#amazon-s3-request-timeout>`__ |                                                                                                                               |
++-----------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+
+Next, log into the destination server using ``mmctl`` the same way you logged into the source server:
 
 .. code::
 
@@ -167,7 +195,7 @@ If you’re using plugins that aren’t listed on the Marketplace, they won’t 
 
 **Data**
 
-The migration only includes data from Channels. No Boards or Playbooks data is exported.
+The migration only includes data from Channels. No Playbooks data is exported.
 
 Migration process
 ~~~~~~~~~~~~~~~~~

@@ -33,7 +33,7 @@ Install Mattermost Omnibus
 
   </div>
 
-.. contents:: On this page:
+.. contents:: On this page
   :backlinks: top
   :local:
   :depth: 1
@@ -152,7 +152,7 @@ Mattermost Omnibus is integrated with the apt package manager. When a new Matter
 
 .. note::
 
-  When you run the ``sudo apt uprade`` command, mattermost-server will be updated along with any other packages. Before running the ``apt`` command, we strongly recommend stopping the Mattermost server by running the command ``sudo systemctl stop mattermost-server``.
+  When you run the ``sudo apt upgrade`` command, mattermost-server will be updated along with any other packages. Before running the ``apt`` command, we strongly recommend stopping the Mattermost server by running the command ``sudo systemctl stop mattermost-server``.
 	
 Backup and restore
 ------------------
