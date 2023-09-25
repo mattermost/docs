@@ -50,7 +50,6 @@ Latest Mattermost Cloud releases:
 
 ### Known Issues
  - Known issues related to the new feature to convert a Group Message channel to a private channel: [MM-54524](https://mattermost.atlassian.net/browse/MM-54524), [MM-54525](https://mattermost.atlassian.net/browse/MM-54525), [MM-54526](https://mattermost.atlassian.net/browse/MM-54526), [MM-54541](https://mattermost.atlassian.net/browse/MM-54541), [MM-54542](https://mattermost.atlassian.net/browse/MM-54542), [MM-54543](https://mattermost.atlassian.net/browse/MM-54543).
- - A spacing issue is seen with the ``Already in channel`` text when attempting to add an existing user to a channel [MM-54512](https://mattermost.atlassian.net/browse/MM-54512).
  - Left-hand side resize option overrides the **Browse/Create Channel** menu [MM-54367](https://mattermost.atlassian.net/browse/MM-54367).
 
 ## Release 2023-09-12
