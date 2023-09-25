@@ -19,16 +19,16 @@ Latest Mattermost Cloud releases:
  - GitLab plugin v1.7.0 is now available via prepackaged plugins.
  - Added additional reaction options when viewing threads or messages when the sidebar is larger than its minimum width.
  - Added block changes to name, display name, and purpose for direct and group messages.
- - Added a link to notification documentation in the **Notification Settings** modal.
+ - Added a link to [notification documentation](https://docs.mattermost.com/preferences/manage-your-notifications.html) in the **Notification Settings** modal.
  - Updated the post textbox measurement code to be more reliable.
  - Pre-packaged Calls version v0.19.1.
  - The ``invite`` slash command now supports custom user groups.
- - Re-enabled the remote marketplace functionality (if configured as per ``PluginSettings.EnableRemoteMarketplace``).
- - Added the ability to convert a Group Message channel to a private channel.
- - Group Message channels now behave like Direct Message channels, showing a new mention on every message.
+ - Re-enabled the remote marketplace functionality, when configured as per ``PluginSettings.EnableRemoteMarketplace`` [documentation](https://docs.mattermost.com/configure/plugins-configuration-settings.html#plugins-enableremotemarketplace).
+ - Added the ability to convert a group message channel to a private channel.
+ - Group message channels now behave like direct message channels, showing a new mention for every new message.
 
 #### Administration
- - Added two new URL parameters to ``GET /api/v4/groups``: ``include_archived`` and ``filter_archived``. Added the ability to restore archived groups from the user groups modal.
+ - Added 2 new URL parameters to ``GET /api/v4/groups``: ``include_archived`` and ``filter_archived``. Added the ability to restore archived groups from the user groups modal.
  - Added file storage information to the support package.
  - Improved performance on data retention ``DeleteOrphanedRows`` queries. Removed feature flag ``DataRetentionConcurrencyEnabled``. Data retention now runs without concurrency in order to avoid any performance degradation. Added a new configuration setting ``DataRetentionSettings.RetentionIdsBatchSize``, which allows admins to to configure how many batches of IDs will be fetched at a time when deleting orphaned reactions. The default value is 100.
  - The Go version was bumped to v1.20.
