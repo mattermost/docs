@@ -1003,6 +1003,7 @@ At rest encryption key
 
 Webhook secret
 ~~~~~~~~~~~~~~~
+
 +------------------------------------------------------------------------+---------------------------------------------------+
 | Generate the webhook secret that Microsoft Teams will use to send      | - System Config path: **Plugins > MS Teams Sync** |
 | messages to Mattermost.                                                | - ``config.json`` setting: N/A                    |
@@ -1083,7 +1084,7 @@ Allow to temporarily skip connect user
   :systemconsole: Plugins > MS Teams Sync
   :configjson: N/A
   :environment: N/A
-  :description: Specify how often, in minutes, to synchronize direct messages, group messages, and chats, between Mattermost and Microsoft Teams users.
+  :description: Specify how often, in minutes, to synchronize direct messages, group messages, and chats, between Mattermost and Microsoft Teams users. Leave blank to disable user synchronization.
 
 Sync users
 ~~~~~~~~~~
@@ -1097,14 +1098,26 @@ Sync users
 | Numerical value.                                                       |                                                   |
 +------------------------------------------------------------------------+---------------------------------------------------+
 
-.. config:setting:: plugins-msteamssyncsyncmessages
-  :displayname: Sync direct and group messages (Plugins - MS Teams Sync)
-  :systemconsole: Plugins > MS Teams Sync
+.. config:setting:: plugins-msteamssyncguestusers
+  :displayname: Sync guest users (Plugins - MS Teams Connect)
+  :systemconsole: Plugins > MS Teams Connect
   :configjson: N/A
   :environment: N/A
 
-  - **true**: Mattermost synchronizes direct messages, group messages, and chats between Mattermost and Microsoft Teams.
-  - **false**: Mattermost doesn't synchronize direct messages, group messages, and chats between Mattermost and Microsoft Teams.
+  - **true**: Mattermost includes Microsoft Teams guest users when synchronizing.
+  - **false**: Mattermost doesn't include Microsoft Teams guest users when synchronizing.
+
+Sync guest users
+~~~~~~~~~~~~~~~~
+
++------------------------------------------------------------------------+------------------------------------------------------+
+| Synchronize Microsoft Teams guest users and Mattermost users.          | - System Config path: **Plugins > MS Teams Connect** |
+|                                                                        | - ``config.json`` setting: N/A                       |
+| - **true**: Mattermost includes Microsoft Teams guest users when       | - Environment variable: N/A                          |
+|   synchronizing.                                                       |                                                      |
+| - **false**: **(Default)**Mattermost doesn't include Microsoft Teams   |                                                      |
+|   guest users when synchronizing.                                      |                                                      |
++------------------------------------------------------------------------+------------------------------------------------------+
 
 Sync direct and group messages
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1135,6 +1148,24 @@ Enabled teams
 | Separate multiple team names with commas. Leave this value blank to    |                                                    |
 | synchronize all Mattermost teams.                                      |                                                    |
 +------------------------------------------------------------------------+----------------------------------------------------+
+
+.. config:setting:: plugins-msteamssyncpromptinterval
+  :displayname: Sync users (Plugins - MS Teams Connect)
+  :systemconsole: Plugins > MS Teams Connect
+  :configjson: N/A
+  :environment: N/A
+  :description: Specify how often, in hours, to prompt users to connect their Microsoft Teams user account to their Mattermost user account. Leave empty to disable the prompt.
+
+Prompt interval for DMs and GMs
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++------------------------------------------------------------------------+------------------------------------------------------+
+| Specify how often, in hours, to prompt users to connect their          | - System Config path: **Plugins > MS Teams Connect** |
+| Microsoft Teams user account to their Mattermost user account.         | - ``config.json`` setting: N/A                       |
+|                                                                        | - Environment variable: N/A                          |
+| Leave this value blank to disble the prompt.                           |                                                      |
+| Numerical value.                                                       |                                                      |
++------------------------------------------------------------------------+------------------------------------------------------+
 
 ----
 
