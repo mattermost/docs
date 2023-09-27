@@ -516,7 +516,7 @@ Live indexing batch size
 |                                                                                                                                                   |
 | **What exactly happens when I increase this value?**                                                                                              |
 | The primary impact is that a post will be indexed into Elasticsearch after the threshold of posts is met which then makes the posts searchable    |
-| within Mattermost. So, if you set this based on our reccomendations for larger servers and you make a post, you cannot find it via search         | 
+| within Mattermost. So, if you set this based on our recommendations for larger servers and you make a post, you cannot find it via search         | 
 | for 10-20 seconds, on average. Realistically, no users should see or feel this impact due to the limited amount of users who are actively         |
 | **searching** for a post this fast. You can set this to a lower average or higher average as well. Depending on your Elasticsearch server specs.  |  
 |                                                                                                                                                   |
