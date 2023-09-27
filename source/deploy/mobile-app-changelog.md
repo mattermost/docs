@@ -28,6 +28,7 @@ Latest Mattermost Mobile Apps releases:
 ### Bug Fixes
  - Fixed an issue on Android where hitting the back button on certain settings did not always save the changes.
  - Fixed a display error on the Multi-factor Authentication (MFA) screen.
+ - Fixed an issue where the app hanged when using the magic keyboard on iPadOS 17.
 
 ### Known Issues
  - The **Following** button in the Thread view wraps incorrectly [MM-54499](https://mattermost.atlassian.net/browse/MM-54499).
