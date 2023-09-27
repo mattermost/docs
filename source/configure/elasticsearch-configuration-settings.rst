@@ -502,14 +502,78 @@ Live indexing batch size
 *Available in legacy Enterprise Edition E10/E20*
 
 +---------------------------------------------------------------+-----------------------------------------------------------------------------------+
-| The number of new posts batched together before they're       | - System Config path: N/A                                                         |
-| added to the Elasticsearch index.                             | - ``config.json`` setting: ``".Elasticsearchsettings.LiveIndexingBatchSize: 1",`` |
-|                                                               | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_LIVEINDEXINGBATCHSIZE``        |
-| Numerical input. Default is **1**.                            |                                                                                   |
+| The number of new posts needed before they're added to the    | - System Config path: N/A                                                         |
+| Elasticsearch index.                                          | - ``config.json`` setting: ``".Elasticsearchsettings.LiveIndexingBatchSize: 1",`` |
+| Once added to the Index the post becomes searchable.          | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_LIVEINDEXINGBATCHSIZE``        |
+| On servers with more than one post per second, we suggest     |                                                                                   |
+| this to the average posts per 20 seconds.                     |                                                                                   |
+|                                                               |                                                                                   |
+| Numerical input. Default is **1**. Meaning an index job is    |                                                                                   |
+| run after every post.                                         |                                                                                   |
 +---------------------------------------------------------------+-----------------------------------------------------------------------------------+
-| **Note**: It may be necessary to increase this value to avoid hitting the rate limit of your Elasticsearch cluster on installs handling           |
-| multiple messages per second.                                                                                                                     |
+| **Note**: It may be necessary to increase this value to avoid hitting the rate limit or resource limit of your Elasticsearch cluster              |
+| on installs handling more than one post per second.                                                                                               |
+|                                                                                                                                                   |
+| **What exactly happens when I increase this value?**                                                                                              |
+| The primary impact is that a post will be indexed into Elasticsearch after the threshold of posts is met which then makes the posts searchable    |
+| within Mattermost. So, if you set this based on our reccomendations for larger servers and you make a post, you cannot find it via search         | 
+| for 10-20 seconds, on average. Realistically, no users should see or feel this impact due to the limited amount of users who are actively         |
+| **searching** for a post this fast. You can set this to a lower average or higher average as well. Depending on your Elasticsearch server specs.  |  
+|                                                                                                                                                   |
+| During busy periods, this delay will be faster as more traffic is happening, causing more posts and a quicker time to hit the index number.       |
+| During slow times, expect the reverse.                                                                                                            |
 +---------------------------------------------------------------+-----------------------------------------------------------------------------------+
+
+
+**How to find the right number for your server**
+
+1. You must understand how many posts per 10s your server makes. Run the below query and get your server's average posts per second.
+
+    Note that this query can be heavy, so it's encouraged to run it during non-peak hours. 
+    Additionally, you can uncomment the `WHERE` clause to see the posts per second over the last year. `31536000000` represents milliseconds in a year. 
+
+    .. code-block:: SQL
+
+      SELECT
+        AVG(postsPerSecond) as averagePostsPerSecond
+      FROM (
+        SELECT 
+          count(*) as postsPerSecond, 
+          date_trunc('second', to_timestamp(createat/1000))
+        FROM posts
+        -- 	WHERE createAt > ( (extract(epoch from now()) * 1000 )  - 31536000000)
+        GROUP BY date_trunc('second', to_timestamp(createat/1000))
+      ) as ppd;
+
+2. Decide the acceptable index window for your environment and multiply your average posts per second by that. We suggest 10-20 seconds. So, assuming you have 10 posts per second on average, you would do `10 posts per second * 20 seconds` to come to the number `200`. After 200 posts Mattermost will run an indexing job, so on average, there would be a 20-second delay in searchability.
+
+3. Edit the config.json or run mmctl to modify the `LiveIndexingBatchSize` setting
+  
+    **Editing in the config.json**
+
+    .. code-block:: JSON
+
+      {
+        "ElasticsearchSettings": {
+          "LiveIndexingBatchSize": 200
+        }
+      }
+    
+
+    **Editing via mmctl**
+
+    .. code-block:: JSON
+
+      mmctl config set ElasticsearchSettings.LiveIndexingBatchSize 200
+
+    **Editing via Env Var**
+
+    .. code-block:: JSON
+
+      MM_ELASTICSEARCHSETTINGS_LIVEINDEXINGBATCHSIZE = 200
+
+4. Restart Mattermost
+
 
 .. config:setting:: elastic-bulkindexingtimewindow
   :displayname: Bulk indexing time window (Elasticsearch)
