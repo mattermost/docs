@@ -17,9 +17,9 @@ Latest Mattermost Releases:
 **Release day: October 16, 2023**
 
 ### Important Upgrade Notes
- - Improved performance on data retention ``DeleteOrphanedRows`` queries. Removed feature flag ``DataRetentionConcurrencyEnabled``. Data retention now runs without concurrency in order to avoid any performance degradation.
+ - Improved performance on data retention ``DeleteOrphanedRows`` queries. See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) for notes on a new migration that was added. Removed feature flag ``DataRetentionConcurrencyEnabled``. Data retention now runs without concurrency in order to avoid any performance degradation. Added a new configuration setting ``DataRetentionSettings.RetentionIdsBatchSize``, which allows admins to to configure how many batches of IDs will be fetched at a time when deleting orphaned reactions. The default value is 100.
 
-**IMPORTANT:** If you upgrade from a release earlier than v8.1, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
+**IMPORTANT:** If you upgrade from a release earlier than v9.0, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
 
 ### Compatibility
  - Updated Chromium minimum supported version to 116+.
@@ -72,6 +72,8 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
     - Added a new config setting ``EnableJoinLeaveMessageByDefault`` that sets the default value for ``UserSetting``, ``ADVANCED_FILTER_JOIN_LEAVE``.
  - Under ``DisplaySettings`` in ``config.json``:
     - Added a setting ``MaxMarkdownNodes`` to limit the maximum complexity of markdown text on mobile.
+
+ #### Changes to Enterprise plan:
  - Under ``DataRetentionSettings`` in ``config.json``:
     - Added a new configuration setting ``RetentionIdsBatchSize``, which allows admins to to configure how many batches of IDs will be fetched at a time when deleting orphaned reactions. The default value is 100.
 
