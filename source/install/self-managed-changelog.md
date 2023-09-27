@@ -17,10 +17,9 @@ Latest Mattermost Releases:
 **Release day: October 16, 2023**
 
 ### Important Upgrade Notes
- - Removed the deprecated Insights feature.
- - Mattermost Boards and various other plugins have transitioned to being fully community supported. See this [forum post](https://forum.mattermost.com/t/upcoming-product-changes-to-boards-and-various-plugins/16669) for more details.
+ - Improved performance on data retention ``DeleteOrphanedRows`` queries. Removed feature flag ``DataRetentionConcurrencyEnabled``. Data retention now runs without concurrency in order to avoid any performance degradation.
 
-**IMPORTANT:** If you upgrade from a release earlier than v9.0, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
+**IMPORTANT:** If you upgrade from a release earlier than v8.1, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
 
 ### Compatibility
  - Updated Chromium minimum supported version to 116+.
@@ -31,7 +30,6 @@ Latest Mattermost Releases:
  - Added a **Cancel** button to the **Delete category** modal.
  - Added the ability to resize the channel sidebar and right-hand sidebar.
  - Added two new filtering options (show all channel types, show private channels) to the **Browse channels** modal.
- - Pre-packaged Calls version v0.19.0.
  - Pre-packaged GitLab plugin version v1.7.0.
  - Added additional reaction options when viewing threads or messages when the sidebar is larger than its minimum width.
  - Added block changes to name, display name, and purpose for direct and group messages.
@@ -46,13 +44,9 @@ Latest Mattermost Releases:
 #### Administration
  - Added ``mattermost-plugin-api`` into the mono repo.
  - Updated the public server module version to v0.0.9.
- - Added a new config setting ``TeamSettings.EnableJoinLeaveMessageByDefault`` that sets the default value for ``UserSetting``, ``ADVANCED_FILTER_JOIN_LEAVE``.
  - Added 2 new URL parameters to ``GET /api/v4/groups``: ``include_archived`` and ``filter_archived``. Added the ability to restore archived groups from the user groups modal.
  - Added file storage information to the support package.
- - Improved performance on data retention ``DeleteOrphanedRows`` queries. Removed feature flag ``DataRetentionConcurrencyEnabled``. Data retention now runs without concurrency in order to avoid any performance degradation. Added a new configuration setting ``DataRetentionSettings.RetentionIdsBatchSize``, which allows admins to to configure how many batches of IDs will be fetched at a time when deleting orphaned reactions. The default value is 100.
- - The Go version was bumped to v1.20.
  - A ``user_id`` is now included in all HTTP logs (debug level) to help determine who is generating unexpected traffic.
- - Added a setting ``DisplaySettings.MaxMarkdownNodes`` to limit the maximum complexity of markdown text on mobile.
  - Added new URL Parameter to ``GET /api/v4/groups`` and ``GET /api/v4/groups/:group_id``. ``include_member_ids`` will add all the members ``user_ids`` to the group response objects. You can now also add group members to a channel, any members that are not part of the team can be added to the team through this flow and subsequently added the channel.
 
 #### Plugin Changes
@@ -73,7 +67,13 @@ Latest Mattermost Releases:
 Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
 
 #### Changes to all plans:
- - DataRetentionSettings.RetentionIdsBatchSize, Removed ServiceSettingsDefaultGfycatAPISecret and ServiceSettingsDefaultGfycatAPIKey, TeamSettings.EnableJoinLeaveMessageByDefault, DisplaySettings.MaxMarkdownNodes
+ - Removed ``ServiceSettingsDefaultGfycatAPISecret`` and ``ServiceSettingsDefaultGfycatAPIKey`` configuration settings.
+ - Under ``TeamSettings`` in ``config.json``:
+    - Added a new config setting ``EnableJoinLeaveMessageByDefault`` that sets the default value for ``UserSetting``, ``ADVANCED_FILTER_JOIN_LEAVE``.
+ - Under ``DisplaySettings`` in ``config.json``:
+    - Added a setting ``MaxMarkdownNodes`` to limit the maximum complexity of markdown text on mobile.
+ - Under ``DataRetentionSettings`` in ``config.json``:
+    - Added a new configuration setting ``RetentionIdsBatchSize``, which allows admins to to configure how many batches of IDs will be fetched at a time when deleting orphaned reactions. The default value is 100.
 
 ### API Changes
  - Added the ``X-Forwarded-For`` request header to the audit stream for all Rest API calls.
@@ -84,7 +84,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - Moved the ``request`` package into the public shared folder.
 
 ### Go Version
- - v9.1 is built with Go ``v1.19.5``.
+ - v9.1 is built with Go ``v1.20.0``.
 
 ### Known Issues
  - Known issues related to the new feature to convert a Group Message channel to a private channel: [MM-54525](https://mattermost.atlassian.net/browse/MM-54525), [MM-54526](https://mattermost.atlassian.net/browse/MM-54526), [MM-54541](https://mattermost.atlassian.net/browse/MM-54541), [MM-54542](https://mattermost.atlassian.net/browse/MM-54542).
