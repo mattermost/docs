@@ -45,6 +45,7 @@ Latest Mattermost Releases:
 
 #### Administration
  - Added ``mattermost-plugin-api`` into the mono repo.
+ - Updated the public server module version to v0.0.9.
  - Added a new config setting ``TeamSettings.EnableJoinLeaveMessageByDefault`` that sets the default value for ``UserSetting``, ``ADVANCED_FILTER_JOIN_LEAVE``.
  - Added 2 new URL parameters to ``GET /api/v4/groups``: ``include_archived`` and ``filter_archived``. Added the ability to restore archived groups from the user groups modal.
  - Added file storage information to the support package.
@@ -53,6 +54,12 @@ Latest Mattermost Releases:
  - A ``user_id`` is now included in all HTTP logs (debug level) to help determine who is generating unexpected traffic.
  - Added a setting ``DisplaySettings.MaxMarkdownNodes`` to limit the maximum complexity of markdown text on mobile.
  - Added new URL Parameter to ``GET /api/v4/groups`` and ``GET /api/v4/groups/:group_id``. ``include_member_ids`` will add all the members ``user_ids`` to the group response objects. You can now also add group members to a channel, any members that are not part of the team can be added to the team through this flow and subsequently added the channel.
+
+#### Plugin Changes
+ - Added new frontend plugin extension point for the new messages separator bar.
+ - Added a new plugin extensibility point to add actions to the code blocks.
+ - Added the plugin hook ``UserHasBeenDeactivated``.
+ - Added a new server side plugin API method to set the searchable content for a file info (``SetFileSearchableContent``). The ``MessageHasBeenPosted`` plugin hook is now executed after the attachments are linked to the post.
 
 ### Bug Fixes
  - Fixed keyboard support for the left-hand side channel menu, the left-hand side category menu, and the post dot menu.
@@ -66,8 +73,7 @@ Latest Mattermost Releases:
 Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
 
 #### Changes to all plans:
- - Under ``ServiceSettings`` in the ``config.json``:
-    - 
+ - DataRetentionSettings.RetentionIdsBatchSize, Removed ServiceSettingsDefaultGfycatAPISecret and ServiceSettingsDefaultGfycatAPIKey, TeamSettings.EnableJoinLeaveMessageByDefault, DisplaySettings.MaxMarkdownNodes
 
 ### API Changes
  - Added the ``X-Forwarded-For`` request header to the audit stream for all Rest API calls.
