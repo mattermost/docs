@@ -1,6 +1,10 @@
 Product questions
 =================
 
+.. contents:: On this page
+    :backlinks: top
+    :depth: 2
+
 What features are available on different Mattermost clients?
 ------------------------------------------------------------
 
@@ -46,12 +50,20 @@ The following chart highlights the end user features of Mattermost and their sup
     "Team settings", "X", "X"
     "Join existing team", "X", "X", "X"
     "Create a new team", "X", "X"
-    "Get team invite link", "X", "X",
-    "Add members to team", "X", "X",
+    "Get team invite link", "X", "X", "X"
+    "Add members to team", "X", "X", "X"
+    "Get team invite link", "X", "X", "X"
+    "Add members to team", "X", "X", "X"
     "Manage team members", "X", "X",
     "Leave team", "X", "X"
-    **FOCALBOARD**
-    "Boards, cards, and views", "X", "O"
+    **PLAYBOOKS**
+    "Templates and checklists", "X", "X"
+    **CALLS**
+    "Join call", "X", "X", "X"
+    "Share screen", "X", "X"
+    "Chat in thread", "X", "X", "X"
+    "React with emoji", "X", "X", "X"
+    "Start recording", "X", "X", "X"
     **INTEGRATIONS**
     "Slash commands", "X", "X", "O"
     "Server-side plugins", "X", "X", "X"
@@ -62,6 +74,8 @@ The following chart highlights the end user features of Mattermost and their sup
     "Message attachments", "X", "X", "X"
     "Message buttons", "X", "X", "X"
     "Message menus", "X", "X", "X"
+    "Message actions", "X", "X"
+    "Right-hand sidebar", "X", "X"
     **AUTHENTICATION**
     "Email-password login", "X", "X", "X"
     "AD/LDAP", "X", "X", "X"
@@ -70,7 +84,7 @@ The following chart highlights the end user features of Mattermost and their sup
     "Office 365 SSO", "X", "X", "X"
     "Google SSO", "X", "X",
     **OTHER**
-    "Localization for 16 languages", "X", "X", "X"
+    "Localization for 20 languages", "X", "X", "X"
     "Custom user interface themes", "X", "X", "X"
     "User profile settings", "X", "X", "X"
     "Channel settings", "X", "X", "X"

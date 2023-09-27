@@ -3,7 +3,7 @@ Configure SAML with Okta
 
 The following process provides steps to configure SAML 2.0 with Okta for Mattermost.
 
-.. contents::
+.. contents:: On this page
   :backlinks: top
   :local:
 

@@ -80,7 +80,7 @@ Encountering issues with your Docker deployment? See the `Docker deployment trou
 
    .. code:: bash
   
-      sudo docker-compose -f docker-compose.yml -f docker-compose.without-nginx.yml up -d
+      sudo docker compose -f docker-compose.yml -f docker-compose.without-nginx.yml up -d
 
    To access your new Mattermost deployment, navigate to ``http://<YOUR_MM_DOMAIN>:8065/`` in your browser.
 
@@ -88,13 +88,13 @@ Encountering issues with your Docker deployment? See the `Docker deployment trou
 
    .. code:: bash
   
-      sudo docker-compose -f docker-compose.yml -f docker-compose.without-nginx.yml down
+      sudo docker compose -f docker-compose.yml -f docker-compose.without-nginx.yml down
 
    **Using the included NGINX:**
 
    .. code:: bash
   
-      sudo docker-compose -f docker-compose.yml -f docker-compose.nginx.yml up -d
+      sudo docker compose -f docker-compose.yml -f docker-compose.nginx.yml up -d
 
    To access your new Mattermost deployment via HTTPS, navigate to ``https://<YOUR_MM_DOMAIN>/`` in your browser.
 
@@ -102,6 +102,6 @@ Encountering issues with your Docker deployment? See the `Docker deployment trou
 
    .. code:: bash
   
-      sudo docker-compose -f docker-compose.yml -f docker-compose.nginx.yml down
+      sudo docker compose -f docker-compose.yml -f docker-compose.nginx.yml down
       
-7. Create your first Mattermost System Admin user, `invite more users </channels/manage-channel-members.html>`__, and explore the Mattermost platform. 
+7. Create your first Mattermost System Admin user, `invite more users </collaborate/manage-channel-members.html>`__, and explore the Mattermost platform. 

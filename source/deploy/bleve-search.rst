@@ -10,9 +10,7 @@ The Bleve search engine works as a library integrated into the Mattermost codeba
 
 .. note::
 
-  From Mattermost v6.1, Bleve search uses the scorch index type on newly-created indexes. This new index type features efficiency improvements and indexes that use significantly less disk space.
-  
-  To use this new type of index on your existing indexes, first upgrade Mattermost Server to version to v6.1 or later. Then go to **System Console > Experimental > Bleve** and select **Purge Index** to run a purge operation. When that's complete, select **Index Now** to reindex. Bleve remains compatible with existing indexes, so currently indexed data will continue to work if a purge and reindex isn't run.
+  Bleve search uses the scorch index type on newly-created indexes. This new index type features efficiency improvements and indexes that use significantly less disk space. Go to **System Console > Experimental > Bleve** and select **Purge Index** to run a purge operation. When that's complete, select **Index Now** to reindex. Bleve remains compatible with existing indexes, so currently indexed data will continue to work if a purge and reindex isn't run.
 
 Configuring Bleve in Mattermost
 -------------------------------
@@ -31,7 +29,7 @@ Follow these steps to configure the Mattermost server to use Bleve and generate 
 
 .. note::
 
-  Search results for files shared before upgrading to Mattermost Server v5.35 may be incomplete until an extraction command is run using the `CLI </manage/command-line-tools.html#mattermost-extract-documents-content>`__, or using the `mmctl </manage/mmctl-command-line-tool.html#mmctl-extract>`__. After running this command, the search index must be rebuilt. Go to **System Console > Experimental > Bleve > Bulk Indexing**, then select **Index Now** to rebuild the search index to include older file contents.
+  Search results for files shared before upgrading to Mattermost Server v5.35 may be incomplete until an extraction command is run using the `mmctl </manage/mmctl-command-line-tool.html#mmctl-extract>`__. After running this command, the search index must be rebuilt. Go to **System Console > Experimental > Bleve > Bulk Indexing**, then select **Index Now** to rebuild the search index to include older file contents.
 
 Using Bleve search
 ------------------

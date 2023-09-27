@@ -112,9 +112,8 @@ Enable document search by content
 |   for files by file name only.                                |                                                                                     |
 +---------------------------------------------------------------+-------------------------------------------------------------------------------------+
 | **Note**: Document content search results for files shared before upgrading to Mattermost Server v5.35 may be incomplete until an                   |
-| extraction command is executed using the `CLI </manage/command-line-tools.html#mattermost-extract-documents-content>`__                             |
-| or the `mmctl </manage/mmctl-command-line-tool.html?highlight=mmctl#mmctl-extract>`__. If this command is not run,                                  |
-| users can search older files based on file name only.                                                                                               |
+| extraction command is executed using the `mmctl </manage/mmctl-command-line-tool.html?highlight=mmctl#mmctl-extract>`__.                            |
+| If this command is not run, users can search older files based on file name only.                                                                   |
 |                                                                                                                                                     |
 | You can optionally install the following `dependencies <https://github.com/sajari/docconv#dependencies>`__ to extend content searching support in   |
 | Mattermost to include file formats beyond PDF, DOCX, and ODT, such as DOC, RTF, XML, HTML, and PAGES:                                               |
@@ -155,7 +154,7 @@ Enable searching content of documents within ZIP files
 | - **false**: **(Default)** The contents of documents within   |                                                                                        |
 |   ZIP files aren’t returned in search results.                |                                                                                        |
 +---------------------------------------------------------------+----------------------------------------------------------------------------------------+
-| **Note**: Document content search within ZIP files is available in Mattermost Server from v5.35, with mobile support coming soon.                      |
+| **Note**: Document content search within ZIP files is available, with mobile support coming soon.                                                      |
 | Searching document contents adds load to your server. For large deployments, or teams that share many large, text-heavy documents,                     |
 | we recommend you review our `hardware requirements </install/software-hardware-requirements.html#hardware-requirements>`__,                            |
 | and test enabling this feature in a staging environment before enabling it in a production environment.                                                |
@@ -388,7 +387,7 @@ Enable Amazon S3 debugging
   :environment: MM_FILESETTINGS_INITIALFONT
   :description: The font used in auto-generated profile pictures with colored backgrounds and username initials. Default value is **nunito-bold.ttf**.
 
-Initial Font
+Initial font
 ~~~~~~~~~~~~
 
 *Available in legacy Enterprise Edition E10/E20*
@@ -400,3 +399,20 @@ Initial Font
 | A string with the font file name. Default is                  |                                                                                |
 | **nunito-bold.ttf**.                                          |                                                                                |
 +---------------------------------------------------------------+--------------------------------------------------------------------------------+
+
+.. config:setting:: file-amazons3requesttimeoutmilliseconds
+  :displayname: Amazon S3 request timeout (File Storage)
+  :systemconsole: N/A
+  :configjson: .FileSettings.AmazonS3RequestTimeoutMilliseconds
+  :environment: MM_FILESETTINGS_AMAZONS3REQUESTTIMEOUTMILLISECONDS
+  :description: Amount of time, in milliseconds, before requests to Amazon S3 time out. Default value is 30000 (30 seconds).
+
+Amazon S3 request timeout 
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
++---------------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| The amount of time, in milliseconds, before requests to       | - System Config path: N/A                                                               |
+| Amazon S3 storage time out.                                   | - ``config.json`` setting: ``".FileSettings.AmazonS3RequestTimeoutMilliseconds: 30000`` |
+|                                                               | - Environment variable: ``MM_FILESETTINGS_AMAZONS3REQUESTTIMEOUTMILLISECONDS``          |
+| Default is 30000 (30 seconds).                                |                                                                                         |
++---------------------------------------------------------------+-----------------------------------------------------------------------------------------+

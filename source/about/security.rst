@@ -1,14 +1,13 @@
 Security overview
 ==================
 
+.. contents:: On this page
+    :backlinks: top
+    :depth: 2
+
 Security in Mattermost software is continually reviewed by developers, IT administrators, and security researchers accountable for deploying the software in their organizations.
 
-Multiple rounds of penetration testing and security analysis, in addition to internal reviews, have produced a long list of safeguards, processes, policies, and compliance features:
-
-.. contents::
-    :backlinks: top
-
-To expand on each:
+Multiple rounds of penetration testing and security analysis, in addition to internal reviews, have produced a long list of safeguards, processes, policies, and compliance features.
 
 Security features
 ------------------
@@ -18,7 +17,7 @@ Mattermost offers a host of features to help keep your private cloud communicati
 Private Cloud deployment with secure mobile apps
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- Mattermost can run entirely behind your firewall as a single Linux binary, as a Docker container, or on your Kubernetes cluster with MySQL or PostgreSQL as database. Remote access can be enabled through the use of `VPN clients on PC and mobile devices </deploy/deployment-overview.html#behind-a-vpn>`__ so that Mattermost can be used outside your private network.
+- Mattermost can run entirely behind your firewall as a single Linux binary, as a Docker container, or on your Kubernetes cluster with a PostgreSQL database. Remote access can be enabled through the use of `VPN clients on PC and mobile devices </deploy/deployment-overview.html#behind-a-vpn>`__ so that Mattermost can be used outside your private network.
 - Mattermost mobile apps can be deployed to an `internal Enterprise App Store </deploy/deploy-mobile-apps-using-emm-provider.html>`__ by using source code available for Mattermost mobile apps and push notification service. 
 - Optionally, the provided Mattermost Mobile Apps can be used when the Mattermost server is reachable through the internet on port 443. In this configuration, you have the option of using compiled `iOS and Android applications in iTunes and Google Play provided by Mattermost, Inc. </deploy/mobile-hpns.html>`__ (Mattermost Enterprise and Mattermost Professional).
 - User sessions across web, PC, and mobile can be `remotely revoked through profile settings </messaging/manage-profile-settings.html#view-and-logout-of-active-sessions>`__, or via the System Console by deactivating accounts.
@@ -34,7 +33,13 @@ Centralized security and administration
 Transmission security
 ~~~~~~~~~~~~~~~~~~~~~~
 
-- Mattermost supports TLS encryption using AES-256 with 2048-bit RSA on all data transmissions between Mattermost client applications and the Mattermost server across both LAN and internet.
+- Mattermost supports TLS encryption using AES-256 with 2048-bit RSA between Mattermost client applications and the Mattermost server across both LAN and internet.
+- Connections to calls are secured with a combination of:
+
+  - TLS: the existing WebSocket channel is used to secure the signaling path.
+  - DTLS v1.2 (mandatory): used for initial key exchange. Supports ``TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256`` and ``TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA`` algorithms.
+  - SRTP (mandatory): used to encrypt all media packets (i.e. those containing voice or screen share). Supports ``AEAD_AES_128_GCM`` and ``AES128_CM_HMAC_SHA1_80`` algorithms. 
+
 - Connections to Active Directory/LDAP can be optionally secured with TLS or stunnel (Mattermost Enterprise and Mattermost Professional).
 - Encryption-at-rest is available for messages via hardware and software disk encryption solutions applied to the Mattermost database, which resides on its own server within your infrastructure. To enable end user search and compliance reporting of message histories, Mattermost does not offer encryption within the database.
 - Encryption-at-rest is available for files stored via hardware and software disk encryption solutions applied to the server used for local storage or storage via MinIO.
@@ -59,7 +64,7 @@ Authentication safeguards
 - Session length, session cache, and idle timeout can be `configured according to your internal policies </configure/configuration-settings.html#session-lengths>`__, automatically forcing a user to re-login after a specified period of time.
 - Remotely `revoke user sessions </messaging/managing-account-settings.html#view-and-logout-of-active-sessions>`__ across web, mobile devices, and native desktop apps. User sessions can also be revoked remotely by a System Admin in **System Console > Users**.
 - Session fixation, where an attacker can trick the user to authenticate with a known session cookie, does not affect Mattermost users as a new session cookie is set at each login.
-- Remotely reset user passwords via the System Console or via the `command line </manage/command-line-tools.html#mattermost-user-password>`__.
+- Remotely reset user passwords via the System Console or via the `mmctl user reset-password </manage/mmctl-command-line-tool.html#mmctl-user-reset-password>`__ command.
 - Mattermost supports integrated authentication with `Active Directory and LDAP </onboard/ad-ldap.html>`__ (Mattermost Enterprise and Mattermost Professional) as well as `SAML 2.0 SSO integration </onboard/sso-saml.html>`__ with providers including `Active Directory Federation Services </onboard/ad-ldap.html#configure-ad-ldap-deployments-with-multiple-domains>`__,  `Okta </onboard/sso-saml-okta.html>`__, among others (Mattermost Enterprise and Mattermost Professional).
 - The ability to require `multi-factor authentication </onboard/multi-factor-authentication.html>`__ is also available (Mattermost Enterprise and Mattermost Professional).
 

@@ -18,7 +18,7 @@ For scheduled data retention jobs to work, the `global retention policy for file
 Configure a global data retention policy
 -----------------------------------------
 
-To set a global data retention policy in Mattermost v5.38 and later:
+To set a global data retention policy:
 
 1. Go to **System Console > Compliance > Data Retention Policies**.
 2. Select **Edit** from the menu located to the right of the **Global retention policy** table. 
@@ -31,7 +31,7 @@ Select **Save**. Messages and files older than the duration you set will be dele
 Configure a custom data retention policy
 ----------------------------------------
 
-To set a custom data retention policy in Mattermost v5.38 and later:
+To set a custom data retention policy:
 
 1. Go to **System Console > Compliance > Data Retention Policies**.
 2. Select **Add policy** to the right of the **Custom retention policies** table. 
@@ -71,14 +71,11 @@ The file attachment is removed from the Mattermost user interface, deleted from 
 Why didn't an old file get deleted after running the deletion job?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-First, check the data deletion was successful in the deletion job table in **System Console > Compliance > Data Retention Policy**.
+1. Check the data deletion was successful in the deletion job table in **System Console > Compliance > Data Retention Policy**.
 
-If the files were uploaded prior to Mattermost v4.2, you will need to delete the files manually from your local file storage or Amazon S3 storage:
-
-1. Wait until all files uploaded prior to Mattermost v4.2 are past the file retention policy duration.
 2. Delete the ``teams/`` folder in the root of your  Mattermost storage directory.
 
-Note that these files will still be removed from the Mattermost user interface if they were uploaded in Mattermost v3.5 or later, which contain the `FileInfo table </install/self-managed-changelog.html#id41>`__. 
+Note that these files will still be removed from the Mattermost user interface. 
 
 Why do I see ``Pending`` in the deletion job table with no details?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

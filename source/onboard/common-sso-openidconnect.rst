@@ -24,7 +24,8 @@ Step 2: Configure Mattermost for an OpenID Connect SSO
 8. Restart your Mattermost server to see the changes take effect.
 
 .. note::
-  When Mattermost is configured to use OpenID Connect for user authentication, the following user attribute changes can't be made through the Mattermost API: first name, last name, or username. OpenID Connect must be the authoritative source for these user attributes.
+  - When Mattermost is configured to use OpenID Connect for user authentication, the following user attribute changes can't be made through the Mattermost API: first name, last name, or username. OpenID Connect must be the authoritative source for these user attributes.
+  - The **Discovery Endpoint** setting can be used to determine the connectivity and availability of arbitrary hosts. System admins concerned about this can use custom admin roles to limit access to modifying these settings. See the `system admin roles </onboard/system-admin-roles.html#edit-privileges-of-system-admin-roles-advanced>`__ documentation for details. 
   
 Frequently Asked Questions
 --------------------------

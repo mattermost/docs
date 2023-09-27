@@ -1,7 +1,7 @@
 GitLab Single Sign-On
 =====================
 
-.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../_static/badges/entpro-cloud-free.rst
   :start-after: :nosearch:
 
 Configuring GitLab as a Single Sign-On (SSO) service
@@ -15,7 +15,7 @@ Follow these steps to configure Mattermost to use GitLab as a Single Sign-on (SS
   - Mattermost's open source Team Edition supports the OAuth 2.0 standard.
   - Mattermost Professional and Enterprise support the OpenID Connect standard.
 
-Step 1: Add an OpenID Connect application to your GitLab account
+Step 1: Add a Mattermost application to your GitLab account
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. Log in to your GitLab account, then go to ``https://{gitlab-site-name}/profile/applications``. For *{gitlab-site-name}* use the name of your GitLab instance. If you're using GitLab itself as your service provider, use ``gitlab.com``.
@@ -46,11 +46,11 @@ Step 2: Configure Mattermost for GitLab SSO
 
 1. Log in to Mattermost, then go to **System Console > Authentication > OpenID Connect**.
 2. Select **GitLab** as the service provider.
-3. Enter the **Gitlab Site URL** of your GitLab instance. If your GitLab instance is not set up to use SSL, start the URL with ``http://`` instead of ``https://``. If you are using GitLab itself as your provider, use ``gitlab.com``.
+3. Enter the **GitLab Site URL** of your GitLab instance. If your GitLab instance is not set up to use SSL, start the URL with ``http://`` instead of ``https://``. If you are using GitLab itself as your provider, use ``gitlab.com``.
 4. The **Discovery Endpoint** for OpenID Connect with GitLab is prepopulated with ``https://gitlab.com/.well-known/openid-configuration``.
 5. Paste the **Application ID** from GitLab as the **Client ID** in Mattermost.
 6. Paste the **Application Secret Key** from GitLab as the **Client Secret** in Mattermost. 
-7. Update the ``config.json`` file and specify the scopes you selected in GitLab under the ``GitLabSettings`` property. At a minimum, ``openid`` is a required scope for Mattermost Professional and Enterprise, and `read_user` is a required scope for Mattermost Team Edition. Changes to this setting require a server restart before taking effect. 
+7. Update the ``config.json`` file and specify the scopes you selected in GitLab under the ``GitLabSettings`` property. At a minimum, ``openid`` is a required scope for Mattermost Professional and Enterprise, and ``read_user`` is a required scope for Mattermost Team Edition. Mattermost Team Edition does not work with scopes other than ``read_user``. Changes to this setting require a server restart before taking effect. 
 8. Select **Save**.
 
 .. note::
@@ -68,6 +68,6 @@ Frequently Asked Questions
 --------------------------
 
 How can I use LDAP attributes or Groups with OpenID?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 At this time, LDAP data isn't compatible with OpenID. If you currently rely on LDAP to manage your users' teams, channels, groups, or attributes, you won't be able to do this automatically with users who have logged in with OpenID. If you need LDAP synced to each user, we suggest using SAML or LDAP as the login provider. Some OpenID providers can use SAML instead, like Keycloak.

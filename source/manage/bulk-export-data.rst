@@ -18,6 +18,10 @@ Bulk export data
 
   .. tab:: Use CLI
 
+    .. note:: 
+      
+      From Mattermost v6.0, this command has been deprecated in favor of `mmctl export commands </manage/mmctl-command-line-tool.html#mmctl-export>`__ as the supported way to export data out of Mattermost.
+
     The export command runs in the `CLI </manage/command-line-tools.html>`__.  It has permissions to access all information in the Mattermost database.
 
     To run the export command:
@@ -494,6 +498,36 @@ UserChannelMembership object
           <kbd>"true"</kbd> - Yes.<br>
           <kbd>"false"</kbd> - No.</td>
       </td>
+    </tr>
+      <tr class="row-odd">
+      <td valign="middle">mention_count</td>
+      <td valign="middle">int64</td>
+      <td>The mention preferences for this user in this channel as defined by the <b>ChannelMentionCount</b> object.</td>
+    </tr>
+      <tr class="row-odd">
+      <td valign="middle">mention_count_root</td>
+      <td valign="middle">int64</td>
+      <td>The mention preferences for this user in this channel as defined by the <b>ChannelMentionCountRoot</b> object.</td>
+    </tr>
+      <tr class="row-odd">
+      <td valign="middle">urgent_mention_count</td>
+      <td valign="middle">int64</td>
+      <td>The mention preferences for this user in this channel as defined by the <b>UrgendMentionCount</b> object.</td>
+    </tr>
+      <tr class="row-odd">
+      <td valign="middle">msg_count</td>
+      <td valign="middle">int64</td>
+      <td>The mention preferences for this user in this channel as defined by the <b>MsgCount</b> object.</td>
+    </tr>
+      <tr class="row-odd">
+      <td valign="middle">msg_count_root</td>
+      <td valign="middle">int64</td>
+      <td>The mention preferences for this user in this channel as defined by the <b>MsgCountRoot</b> object.</td>
+    </tr>
+      <tr class="row-odd">
+      <td valign="middle">last_viewed_at</td>
+      <td valign="middle">int64</td>
+      <td>The mention preferences for this user in this channel as defined by the <b>LastViewedAt</b> object.</td>
     </tr>
   </table>
 

@@ -4,9 +4,9 @@ User satisfaction surveys
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Mattermost introduced in-product feedback surveys from v5.12. Feedback is used to measure user satisfaction and improve product quality by hearing directly from users. Please refer to our `privacy policy <https://github.com/mattermost/mattermost-server/blob/master/build/PRIVACY_POLICY.md>`_ for more information on the collection and use of information received through our services.
+Feedback is used to measure user satisfaction and improve product quality by hearing directly from users. Please refer to our `privacy policy <https://github.com/mattermost/mattermost/blob/master/server/build/PRIVACY_POLICY.md>`_ for more information on the collection and use of information received through our services.
 
-.. contents::
+.. contents:: On this page
   :depth: 2
   :local:
   :backlinks: entry
@@ -64,7 +64,7 @@ Users can optionally select a 0-10 score on how likely they are to recommend Mat
 What data is collected?
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-Data is only collected when a user selects a score or provides written feedback in response to survey questions. Please refer to our `privacy policy <https://github.com/mattermost/mattermost-server/blob/master/build/PRIVACY_POLICY.md>`_ for more information on the collection and use of information received through our services. The following **non-personally identifiable information** is collected:
+Data is only collected when a user selects a score or provides written feedback in response to survey questions. Please refer to our `privacy policy <https://github.com/mattermost/mattermost/blob/master/server/build/PRIVACY_POLICY.md>`_ for more information on the collection and use of information received through our services. The following **non-personally identifiable information** is collected:
 
 - Survey information:
    - Score (0-10) submitted by the user

@@ -13,7 +13,7 @@ In a Mattermost high availability cluster deployment, the System Console is set 
   :environment: MM_CLUSTERSETTINGS_ENABLE
 
   - **true**: The Mattermost server will attempt inter-node communication with the other servers in the cluster that have the same cluster name.
-   **false**: **(Default)** Mattermost high availability mode is disabled.
+  - **false**: **(Default)** Mattermost high availability mode is disabled.
 
 Enable high availability mode
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -124,7 +124,7 @@ Use gossip
 +-----------------------------------------------------------------+--------------------------------------------------------------------------------+
 | **Notes**:                                                                                                                                       |
 |                                                                                                                                                  |
-| - From Mattermost Server v5.36, gossip clustering can no longer be disabled.                                                                     |
+| - Gossip clustering can no longer be disabled.                                                                                                   |
 | - The gossip port and gossip protocol are used to determine cluster health even when this setting is set to **false**.                           |
 +-----------------------------------------------------------------+--------------------------------------------------------------------------------+
 
@@ -172,10 +172,9 @@ Enable gossip compression
 *Available in legacy Enterprise Edition E20*
 
 +-----------------------------------------------------------------+----------------------------------------------------------------------------------+
-| Once all servers in a cluster are upgraded to Mattermost v5.33  | - System Config path: **Environment > High Availability**                        |
-| or later, we recommend that you disable this configuration      | - ``config.json`` setting: ``".ClusterSettings.EnableGossipCompression: true”,`` |
-| setting for better performance.                                 | - Environment variable: ``MM_CLUSTERSETTINGS_ENABLEGOSSIPCOMPRESSION``           |
-|                                                                 |                                                                                  |
+| We recommend that you disable this configuration                | - System Config path: **Environment > High Availability**                        |
+| setting for better performance.                                 | - ``config.json`` setting: ``".ClusterSettings.EnableGossipCompression: true”,`` |
+|                                                                 | - Environment variable: ``MM_CLUSTERSETTINGS_ENABLEGOSSIPCOMPRESSION``           |
 | - **true**: **(Default for self-hosted deployments)**           |                                                                                  |
 |   All communication through the cluster uses gossip             |                                                                                  |
 |   compression. This setting is enabled by default to maintain   |                                                                                  |
@@ -183,6 +182,7 @@ Enable gossip compression
 | - **false**: **(Default for Cloud deployments)**                |                                                                                  |
 |   All communication using the gossip protocol remains           |                                                                                  |
 |   uncompressed.                                                 |                                                                                  |
+|                                                                 |                                                                                  |
 +-----------------------------------------------------------------+----------------------------------------------------------------------------------+
 
 .. config:setting:: ha-gossipport

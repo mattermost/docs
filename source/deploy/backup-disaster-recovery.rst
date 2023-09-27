@@ -13,11 +13,8 @@ The state of your Mattermost server is contained in multiple data stores that ne
 
 To back up your Mattermost server:
 
-1. Back up your Mattermost database using standard MySQL or PostgreSQL procedures depending on your database version.
+1. Back up your Mattermost database using standard procedures depending on your database version. `PostgreSQL SQL Dump backup documentation <https://www.postgresql.org/docs/10/backup-dump.html>`__ is available online. Use the navigation at the top of the page to select your PostgreSQL version.
 
-      - `MySQL backup documentation <https://dev.mysql.com/doc/refman/5.6/en/backup-types.html>`__ is available online. Use the selector on the page to choose your MySQL version.
-      - `PostgreSQL SQL Dump backup documentation <https://www.postgresql.org/docs/10/backup-dump.html>`__ is available online. Use the navigation at the top of the page to select your PostgreSQL version.
-     
 2. Back up your server settings stored in ``config/config.json``.
 
       - If you are using SAML configuration for Mattermost, your SAML certificate files will be saved in the ``config`` directory. Therefore, it is recommended to back up the entire directory.
@@ -100,7 +97,5 @@ Set up a manual failover plan for SSO outages
 When users are unable to reach your organization's SSO provider during an outage, an error message directing them to contact your support link (defined in your System Console settings) is displayed.
 
 Once IT is contacted about an SSO outage issue, they can temporarily change a user's account from SSO to email-password using the System Console, and the end user can use password to claim the account, until the SSO outage is over and the account can be converted back to SSO.
-
-If the System Admin is unable to log into the System Console because of the SSO outage, they can switch their authentication method to email-password to gain access using the `command line tool </manage/command-line-tools.html>`__.
 
 When the outage is over, it's critical to switch everyone back to SSO from email-password to maintain consistency and security.

@@ -172,11 +172,30 @@ $(document).ready(function () {
 	
 	// Notification Banner
 
+	// Fallback for when a notification CTA expires - ie. webinar happens
+	const dateInFuture = (value) => new Date().getTime() <= new Date(value).getTime();
+    const expiryDate = '2023-09-29T15:00:00-0500';
+    // 2023-09-29 @ 3pm EST
+    const fallback_url = 'https://mattermost.com/solutions/mattermost-for-microsoft-teams/';
+    const fallback_text = 'Learn more about Mattermost for Microsoft Teams »';
+    
+    if (!dateInFuture(expiryDate)) {
+        if ($(".notification-bar").length) {
+            // $('.notification-bar').remove();
+            // $('body').removeClass('with-notification');
+            $('.notification-bar__link').attr('href', fallback_url);
+            $('.notification-bar__link').text(fallback_text);
+        }
+    }
+
 	// NOTE: Change the notification_banner_key to something unique everytime it changes
 	// So it will show up for new announcements
 	// Keep "mm_notification_banner__" at the beginning of the key
 	// Add system to clean out storage items that are no longer needed
-	const notification_banner_key = 'mm_notification_banner__mst';
+	let notification_banner_key = 'mm_notification_banner__9-0-release';
+	if (!dateInFuture(expiryDate)) {
+		notification_banner_key = 'mm_notification_banner__fallback-mst';
+	}
 
 	if (localStorage.getItem(notification_banner_key) === null) {
 		localStorage.setItem(notification_banner_key, true);
@@ -199,32 +218,68 @@ $(document).ready(function () {
 		localStorage.setItem(notification_banner_key, false);
 	});
 
-});
+	// Installation Copy Buttons
+	Array.from(
+		document.querySelectorAll('.mm-code-copy')
+	).map(clicker => {
+		const clickerInput = clicker.querySelector('.mm-code-copy__text');
+		const clickerTriggers = clicker.querySelectorAll('.mm-code-copy__trigger');
+		const clickerNotice = clicker.querySelector('.mm-code-copy__copied-notice');
+		const copyText = clickerInput.innerText;
 
-// Redesign - Navigation
-document.addEventListener("DOMContentLoaded", function(event) {     
-    const hamburger = document.getElementById('hamburger');
-    const subMenus = document.querySelectorAll('.site-nav__hassubnav a');
+		clickerTriggers.forEach(trigger => {
+			trigger.addEventListener('click', (e) => {
+				e.preventDefault();
+				// The Clipboard API is only available in secure contexts (HTTPS), in some or all supporting browsers.
+				// https://developer.mozilla.org/en-US/docs/Web/API/Clipboard
+				// So this will not work on our current preview sites
+				// Building locally with `make livehtml` will work
+				clickerNotice.classList.add('show');
+	
+				const copyCommand = clicker.dataset.clickCommand;
+				const copyMethod = clicker.dataset.clickMethod;
+				const copyEl = trigger.dataset.clickEl;
 
-    let multiEventSingleHandler = (elem, events, handler, use_capture) => {
-        events.forEach(ev => {
-            elem.addEventListener(ev, handler, typeof(use_capture) === 'undefined' ? false : use_capture);
-        });
-    }
+				setTimeout(function () {
+					clickerNotice.classList.remove("show");
+				}, 1000);
 
-    let clickTouch = (elem, handler, use_capture) => {
-        multiEventSingleHandler(elem, ['click', 'touch'], handler, typeof(use_capture) === 'undefined' ? false : use_capture);
-    }
+				navigator.clipboard.writeText(copyText).then(() => {
+	
+					dataLayer.push({
+						event: 'copy.installation',
+						installLabel: `${copyMethod} - ${copyCommand}`,
+						copyAction: copyEl
+					});
+	
+				});
+			});
+		});
+		
+	});
+	// Navigation
+	const hamburger = document.getElementById('hamburger');
+	const subMenus = document.querySelectorAll('.site-nav__hassubnav a');
 
-    subMenus.forEach(snav => {
-        clickTouch(snav, () => {
-            snav.parentElement.classList.toggle('is-active');
-        }, false);
-    });
+	let multiEventSingleHandler = (elem, events, handler, use_capture) => {
+		events.forEach(ev => {
+			elem.addEventListener(ev, handler, typeof(use_capture) === 'undefined' ? false : use_capture);
+		});
+	}
 
-    clickTouch(hamburger, () => {
-        hamburger.classList.toggle('is-active');
-        document.body.classList.toggle('nav-open');
-        document.getElementById('navigation').classList.toggle('active');
-    });
+	let clickTouch = (elem, handler, use_capture) => {
+		multiEventSingleHandler(elem, ['click', 'touch'], handler, typeof(use_capture) === 'undefined' ? false : use_capture);
+	}
+
+	subMenus.forEach(snav => {
+		clickTouch(snav, () => {
+			snav.parentElement.classList.toggle('is-active');
+		}, false);
+	});
+
+	clickTouch(hamburger, () => {
+		hamburger.classList.toggle('is-active');
+		document.body.classList.toggle('nav-open');
+		document.getElementById('navigation').classList.toggle('active');
+	});
 });

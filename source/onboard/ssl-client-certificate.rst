@@ -10,8 +10,9 @@ Before you begin, follow the `official guides to install Mattermost </guides/adm
 
 For the purposes of this guide, the Mattermost server domain name is ``example.mattermost.com``, and the user account is ``mmuser`` with email ``mmuser@mattermost.com`` and password ``mmuser-password``.
 
-.. note::
-  Generating the client certificates in this section is optional if you have already generated them before.
+.. important::
+  - Generating the client certificates in this section is optional if you have already generated them before.
+  - We strongly recommend configuring an SSL certificate (or a self-signed certificate) for security, privacy, compliance, as well as to avoid browser limitations that can prevent Mattermost product features from working that copy data using the user's local clipboard, including `sharing message links </collaborate/share-links.html#share-message-links>`__ and `inviting new members to teams </collaborate/invite-people.html#send-a-team-invite-link>`__. 
 
 Set up mutual TLS authentication for the web app
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

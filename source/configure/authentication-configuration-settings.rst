@@ -227,7 +227,7 @@ Access the following configuration settings in the System Console by going to **
 Minimum password length
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-*This feature was moved to Team Edition in Mattermost v5.0, released June 16th, 2018. Prior to v5.0, this feature is available in legacy Enterprise Edition E10 and E20.*
+*This feature is available in legacy Enterprise Edition E10 and E20.*
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------+
 | This setting determines the minimum number of characters in passwords. It must be a whole number greater than or equal to 5 and less than or equal to 64. | - System Config path: **Authentication > Password**            |
@@ -266,7 +266,7 @@ Minimum password length
 Password requirements
 ~~~~~~~~~~~~~~~~~~~~~
 
-*This feature was moved to Team Edition in Mattermost v5.0, released June 16th, 2018. Prior to v5.0, this feature is available in legacy Enterprise Edition E10 and E20.*
+*This feature is available in legacy Enterprise Edition E10 and E20.*
 
 +-------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This setting controls password character requirements. By checking the corresponding box, passwords must contain: | - System Config path: **Authentication > Password**                                                                                                                                  |
@@ -296,6 +296,28 @@ Maximum login attempts
 |                                                                                                                                                             | - ``config.json`` setting: ``.ServiceSettings.MaximumLoginAttempts: 10`` |
 | Numerical input. Default is **10**.                                                                                                                         | - Environment variable: ``MM_SERVICESETTINGS_MAXIMUMLOGINATTEMPTS``      |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+
+.. config:setting:: password-forgotpasswordlink
+  :displayname: Enable forgot password link (Password)
+  :systemconsole: Authentication > Password
+  :configjson: .ServiceSettings.ForgotPasswordLink
+  :environment: MM_SERVICESETTINGS_FORGOTPASSWORDLINK
+  :description: Show or hide the Forgot Password link on the Mattermost login page.
+  
+  - **true**: **(Default)** Displays the Forgot Password link on the Mattermost login page.
+  - **false**: Hides the Forgot Password link from the Mattermost login page.
+
+Enable forgot password link
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++---------------------------------------------------------------------------------+------------------------------------------------------------------------+
+| - **true**: **(Default)** Displays the **Forget Password** link on the          | - System Config path: **Authentication > Enable forgot password link** |
+|   Mattermost login page.                                                        | - ``config.json`` setting: ``.LdapSettings.ForgotPasswordLink: true``  |
+| - **false**: Hides the **Forgot Password** link from the Mattermost login page. | - Environment variable: ``MM_LDAPSETTINGS_FORGOTPASSWORDLINK``         |
++---------------------------------------------------------------------------------+------------------------------------------------------------------------+
+| **Note**: You can customize the **Forgot Password** link URL by going to **Site Configuration > Customization > Forgot Password Custom Link**.           |
+| See the `configuration </configure/site-configuration-settings.html#forgot-password-custom-link>`__ documentation for details.                           |
++---------------------------------------------------------------------------------+------------------------------------------------------------------------+
 
 ----
 
@@ -749,8 +771,8 @@ ID attribute
 |                                                                                                                                                                                                    |                                                                                                                                  |
 | String input.                                                                                                                                                                                      |                                                                                                                                  |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
-| **Note**: If a user's ID Attribute changes, a new Mattermost account is created that is not associated with the previous account. If you need to change this field after users have signed-in, use the `mattermost ldap idmigrate <https://docs.mattermost.com/manage/command-line-tools.html#mattermost-ldap-idmigrate>`__ CLI tool. |
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Note**: If a user's ID Attribute changes, a new Mattermost account is created that is not associated with the previous account. If you need to change this field after users have signed-in, use the `mmctl ldap idmigrate <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-ldap-idmigrate>`__ command.       |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: ldap-loginidattribute
   :displayname: Login ID attribute (AD/LDAP)
@@ -826,15 +848,15 @@ First name attribute
 
 *Available in legacy Enterprise Edition E10 and E20*
 
-+----------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
-| This is the attribute in the AD/LDAP server that populates the first name field in Mattermost.                 | - System Config path: **Authentication > AD/LDAP**              |
-|                                                                                                                | - ``config.json`` setting: ``.LdapSettings.FirstNameAttribute`` |
-| When set, users cannot edit their first name.                                                                  | - Environment variable: ``MM_LDAPSETTINGS_FIRSTNAMEATTRIBUTE``  |
-|                                                                                                                |                                                                 |
-| When not set, users can edit their first name in their :doc:`profile settings </welcome/manage-your-profile>`. |                                                                 |
-|                                                                                                                |                                                                 |
-| String input.                                                                                                  |                                                                 |
-+----------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
+| This is the attribute in the AD/LDAP server that populates the first name field in Mattermost.                     | - System Config path: **Authentication > AD/LDAP**              |
+|                                                                                                                    | - ``config.json`` setting: ``.LdapSettings.FirstNameAttribute`` |
+| When set, users cannot edit their first name.                                                                      | - Environment variable: ``MM_LDAPSETTINGS_FIRSTNAMEATTRIBUTE``  |
+|                                                                                                                    |                                                                 |
+| When not set, users can edit their first name in their :doc:`profile settings </preferences/manage-your-profile>`. |                                                                 |
+|                                                                                                                    |                                                                 |
+| String input.                                                                                                      |                                                                 |
++--------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
 
 .. config:setting:: ldap-lastnameattribute
   :displayname: Last name attribute (AD/LDAP)
@@ -848,15 +870,15 @@ Last name attribute
 
 *Available in legacy Enterprise Edition E10 and E20*
 
-+-----------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------+
-| This is the attribute in the AD/LDAP server that populates the last name field in Mattermost.                         | - System Config path: **Authentication > AD/LDAP**             |
-|                                                                                                                       | - ``config.json`` setting: ``.LdapSettings.LastNameAttribute`` |
-| When set, users cannot edit their last name.                                                                          | - Environment variable: ``MM_LDAPSETTINGS_LASTNAMEATTRIBUTE``  |
-|                                                                                                                       |                                                                |
-| When not set, users can edit their last name as part of their :doc:`profile settings </welcome/manage-your-profile>`. |                                                                |
-|                                                                                                                       |                                                                |
-| String input.                                                                                                         |                                                                |
-+-----------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------+
+| This is the attribute in the AD/LDAP server that populates the last name field in Mattermost.                             | - System Config path: **Authentication > AD/LDAP**             |
+|                                                                                                                           | - ``config.json`` setting: ``.LdapSettings.LastNameAttribute`` |
+| When set, users cannot edit their last name.                                                                              | - Environment variable: ``MM_LDAPSETTINGS_LASTNAMEATTRIBUTE``  |
+|                                                                                                                           |                                                                |
+| When not set, users can edit their last name as part of their :doc:`profile settings </preferences/manage-your-profile>`. |                                                                |
+|                                                                                                                           |                                                                |
+| String input.                                                                                                             |                                                                |
++---------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------+
 
 .. config:setting:: ldap-nicknameattribute
   :displayname: Nickname attribute (AD/LDAP)
@@ -870,15 +892,15 @@ Nickname attribute
 
 *Available in legacy Enterprise Edition E10 and E20*
 
-+----------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------+
-| This is the attribute in the AD/LDAP server that populates the nickname field in Mattermost.                         | - System Config path: **Authentication > AD/LDAP**             |
-|                                                                                                                      | - ``config.json`` setting: ``.LdapSettings.NicknameAttribute`` |
-| When set, users cannot edit their nickname.                                                                          | - Environment variable: ``MM_LDAPSETTINGS_NICKNAMEATTRIBUTE``  |
-|                                                                                                                      |                                                                |
-| When not set, users can edit their nickname as part of their :doc:`profile settings </welcome/manage-your-profile>`. |                                                                |
-|                                                                                                                      |                                                                |
-| String input.                                                                                                        |                                                                |
-+----------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------+
+| This is the attribute in the AD/LDAP server that populates the nickname field in Mattermost.                             | - System Config path: **Authentication > AD/LDAP**             |
+|                                                                                                                          | - ``config.json`` setting: ``.LdapSettings.NicknameAttribute`` |
+| When set, users cannot edit their nickname.                                                                              | - Environment variable: ``MM_LDAPSETTINGS_NICKNAMEATTRIBUTE``  |
+|                                                                                                                          |                                                                |
+| When not set, users can edit their nickname as part of their :doc:`profile settings </preferences/manage-your-profile>`. |                                                                |
+|                                                                                                                          |                                                                |
+| String input.                                                                                                            |                                                                |
++--------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------+
 
 .. config:setting:: ldap-positionattribute
   :displayname: Position attribute (AD/LDAP)
@@ -892,15 +914,15 @@ Position attribute
 
 *Available in legacy Enterprise Edition E10 and E20*
 
-+----------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------+
-| This is the attribute in the AD/LDAP server that populates the position field in Mattermost.                         | - System Config path: **Authentication > AD/LDAP**             |
-|                                                                                                                      | - ``config.json`` setting: ``.LdapSettings.PositionAttribute`` |
-| When set, users cannot edit their position.                                                                          | - Environment variable: ``MM_LDAPSETTINGS_POSITIONATTRIBUTE``  |
-|                                                                                                                      |                                                                |
-| When not set, users can edit their position as part of their :doc:`profile settings </welcome/manage-your-profile>`. |                                                                |
-|                                                                                                                      |                                                                |
-| String input.                                                                                                        |                                                                |
-+----------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------+
+| This is the attribute in the AD/LDAP server that populates the position field in Mattermost.                             | - System Config path: **Authentication > AD/LDAP**             |
+|                                                                                                                          | - ``config.json`` setting: ``.LdapSettings.PositionAttribute`` |
+| When set, users cannot edit their position.                                                                              | - Environment variable: ``MM_LDAPSETTINGS_POSITIONATTRIBUTE``  |
+|                                                                                                                          |                                                                |
+| When not set, users can edit their position as part of their :doc:`profile settings </preferences/manage-your-profile>`. |                                                                |
+|                                                                                                                          |                                                                |
+| String input.                                                                                                            |                                                                |
++--------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------+
 
 .. config:setting:: ldap-profilepictureattribute
   :displayname: Profile picture attribute (AD/LDAP)
@@ -1797,7 +1819,7 @@ Enable OAuth 2.0 authentication with GitLab
 
 +-------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
 | - **true**: Allows team and account creation using GitLab OAuth authentication. Input the **Secret** and **ID** credentials to configure. | - System Config path: **Authentication > OAuth 2.0 (or GitLab)** |
-| - **false**: Disables GitLab OAuth authentication.                                                                                        | - ``config.json`` setting: ``.GitLabSettings.Enable: false``     |
+| - **false**: **(Default)** Disables GitLab OAuth authentication.                                                                          | - ``config.json`` setting: ``.GitLabSettings.Enable: false``     |
 |                                                                                                                                           | - Environment variable: ``MM_GITLABSETTINGS_ENABLE``             |
 +-------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
 
@@ -1934,6 +1956,7 @@ Enable OAuth 2.0 authentication with Google
 | - **true**: Allows team and account creation using Google OAuth authentication. Input the **Client ID** and **Client Secret** credentials to configure. | - System Config path: **Authentication > OAuth 2.0**         |
 | - **false**: **(Default)** Disables Google OAuth authentication.                                                                                        | - ``config.json`` setting: ``.GoogleSettings.Enable: false`` |
 |                                                                                                                                                         | - Environment variable: ``MM_GOOGLESETTINGS_ENABLE``         |
+| See `Google Single Sign-On <https://docs.mattermost.com/onboard/sso-google.html>`__ implementation instructions.                                        |                                                              |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
 
 .. config:setting:: oauth-googleclientid
@@ -2031,8 +2054,8 @@ Google OAuth 2.0 Token endpoint
 .. config:setting:: oauth-o365enable
   :displayname: Enable (OAuth - Office 365)
   :systemconsole: Authentication > OAuth 2.0
-  :configjson: Enable
-  :environment: N/A
+  :configjson: .Office365Settings.Enable
+  :environment: MM_OFFICE365SETTINGS_ENABLE
 
   - **true**: Allow team creation and account signup using Office 365 OAuth.
   - **false**: **(Default)** Office 365 OAuth cannot be used for team creation or account signup.
@@ -2051,7 +2074,7 @@ Enable OAuth 2.0 Authentication with Office 365
 
 +-------------------------------------------------------------------------------------+----------------------------------------------------------------+
 | - **true**: Allows team and account creation using Office 365 OAuth authentication. | - System Config path: **Authentication > OAuth 2.0**           |
-| - **false**: **(Default)** Disables Office 365 OAuth authentication.                | - ``config.json`` setting: ``Office365Settings.Enable: false`` |
+| - **false**: **(Default)** Disables Office 365 OAuth authentication.                | - ``config.json`` setting: ``.Office365Settings.Enable: false``|
 |                                                                                     | - Environment variable: ``MM_OFFICE365SETTINGS_ENABLE``        |
 +-------------------------------------------------------------------------------------+----------------------------------------------------------------+
 | **Note**: See the `Office 365 Single Sign-On <https://docs.mattermost.com/onboard/sso-office.html>`__ documentation for details.                     |
@@ -2063,8 +2086,8 @@ Office 365 OAuth 2.0 Application ID
 .. config:setting:: oauth-o365appid
   :displayname: Application ID (OAuth - Office 365)
   :systemconsole: Authentication > OAuth 2.0
-  :configjson: Id
-  :environment: N/A
+  :configjson: .Office365Settings.Id
+  :environment: MM_OFFICE365SETTINGS_ID
   :description: This setting holds the Application ID generated when configuring Office 365 as a Single Sign-On service through the Microsoft Azure Portal.
 
 *Available in legacy Enterprise Edition E20*
@@ -2083,8 +2106,8 @@ Office 365 OAuth 2.0 Application secret password
 .. config:setting:: oauth-o365appsecret
   :displayname: Application secret password (OAuth - Office 365)
   :systemconsole: Authentication > OAuth 2.0
-  :configjson: Secret
-  :environment: N/A
+  :configjson: .Office365Settings.Secret
+  :environment: MM_OFFICE365SETTINGS_SECRET
   :description: This setting holds the Application Secret Password generated when configuring Office 365 as a Single Sign-On service through the Microsoft Azure Portal.
 
 *Available in legacy Enterprise Edition E20*
@@ -2103,8 +2126,8 @@ Office 365 OAuth 2.0 Directory (tenant) ID
 .. config:setting:: oauth-o365directoryid
   :displayname: Directory ID (OAuth - Office 365)
   :systemconsole: Authentication > OAuth 2.0
-  :configjson: DirectoryId
-  :environment: N/A
+  :configjson: .Office365Settings.DirectoryId
+  :environment: MM_OFFICE365SETTINGS_DIRECTORYID
   :description: This setting holds the Directory (tenant) ID set for Mattermost through the Azure Portal.
 
 *Available in legacy Enterprise Edition E20*
@@ -2124,8 +2147,8 @@ Office 365 OAuth 2.0 User API endpoint
 .. config:setting:: oauth-o365userapiendpoint
   :displayname: User API endpoint (OAuth - Office 365)
   :systemconsole: Authentication > OAuth 2.0
-  :configjson: UserApiEndpoint
-  :environment: N/A
+  :configjson: .Office365Settings.UserAPIEndpoint
+  :environment: MM_OFFICE365SETTINGS_USERAPIENDPOINT
   :description: We recommend using ``https://graph.microsoft.com/v1.0/me`` as the User API Endpoint. It is the default value.
 
 *Available in legacy Enterprise Edition E20*
@@ -2142,8 +2165,8 @@ Office 365 OAuth 2.0 Auth endpoint
 .. config:setting:: oauth-o365authendpoint
   :displayname: Auth endpoint (OAuth - Office 365)
   :systemconsole: Authentication > OAuth 2.0
-  :configjson: AuthEndpoint
-  :environment: N/A
+  :configjson: .Office365Settings.AuthEndpoint
+  :environment: MM_OFFICE365SETTINGS_AUTHENDPOINT
   :description: We recommend ``https://login.microsoftonline.com/common/oauth2/v2.0/authorize`` as the Auth Endpoint.
 
 *Available in legacy Enterprise Edition E20*
@@ -2160,8 +2183,8 @@ Office 365 OAuth 2.0 Token endpoint
 .. config:setting:: oauth-o365tokenendpoint
   :displayname: Token endpoint (OAuth - Office 365)
   :systemconsole: Authentication > OAuth 2.0
-  :configjson: TokenEndpoint
-  :environment: N/A
+  :configjson: .Office365Settings.TokenEndpoint
+  :environment: MM_OFFICE365SETTINGS_TOKENENDPOINT
   :description: We recommend that you use ``https://login.microsoftonline.com/common/oauth2/v2.0/token`` as the Token Endpoint. It is the default value.
 
 *Available in legacy Enterprise Edition E20*
@@ -2194,21 +2217,39 @@ Select OpenID Connect service provider
 
 *Available in legacy Enterprise Edition E20*
 
-Choose whether OpenID Connect can be used for account creation and login. Options include:
++----------------------------------------------------------------------------------+-----------------------------------------------------------+
+| Use this setting to enable OpenID Connect, with these options:                   | - System Config path: **Authentication > OpenID Connect** |
+|                                                                                  | - ``config.json`` setting: N/A                            |
+| - **Do not allow login via an OpenID provider**                                  | - Environment variable: N/A                               |
+| - **GitLab** (`see settings <#gitlab-openid-settings>`__)                        |                                                           |
+| - **Google Apps** (`see settings <#google-openid-settings>`__)                   |                                                           |
+| - **Office 365** (`see settings <#office-365-openid-settings>`__)                |                                                           |
+| - **OpenID Connect (Other)** (`see settings <#openid-connect-other-settings>`__) |                                                           |
++----------------------------------------------------------------------------------+-----------------------------------------------------------+
+| **Note**: **GitLab** OpenID is available in all plans. All other providers require Mattermost Enterprise or Professional.                    |
++----------------------------------------------------------------------------------------------------------------------------------------------+
 
-- **Do not allow login via an OpenID provider**
-- **GitLab** (available in all plans; see `GitLab Settings <https://docs.mattermost.com/configure/configuration-settings.html#gitlab-settings>`__ for details)
-- **Google Apps** (Available in Mattermost Enterprise and Professional; see `Google Settings <https://docs.mattermost.com/configure/configuration-settings.html#google-settings>`__ for details)
-- **Office 365** (Available in Mattermost Enterprise and Professional; see `Office 365 Settings <https://docs.mattermost.com/configure/configuration-settings.html#office-365-settings>`__ for details)
-- **OpenID Connect (Other)** (Available in Mattermost Enterprise and Professional; see `OpenID Connect Settings <https://docs.mattermost.com/configure/authentication-configuration-settings.html#openid-connect-other>`__ for more detail)
-
-This feature's setting does not appear in ``config.json``.
-
-GitLab settings
-^^^^^^^^^^^^^^^
+GitLab OpenID settings
+^^^^^^^^^^^^^^^^^^^^^^
 
 .. include:: ../_static/badges/entpro-cloud-free.rst
   :start-after: :nosearch:
+
+Enable OpenID Connect authentication with GitLab
+''''''''''''''''''''''''''''''''''''''''''''''''
+
+*Available in legacy Enterprise Edition E10 and E20.*
+
++------------------------------------------------------------------------------------------+--------------------------------------------------------------+
+| - **true**: Allows team and account creation using GitLab OpenID Connect authentication. | - System Config path: **Authentication > OpenID Connect**    |
+| - **false**: **(Default)** Disables GitLab OpenID Connect authentication.                | - ``config.json`` setting: ``.GitLabSettings.Enable: false`` |
+|                                                                                          | - Environment variable: ``MM_GITLABSETTINGS_ENABLE``         |
++------------------------------------------------------------------------------------------+--------------------------------------------------------------+
+| **Note**: See the `GitLab Single Sign-On <https://docs.mattermost.com/onboard/sso-gitlab.html>`__ documentation for details.                            |
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+GitLab OpenID site URL
+''''''''''''''''''''''
 
 .. config:setting:: oidc-gitlabsiteurl
   :displayname: GitLab site URL (OpenID Connect - GitLab)
@@ -2217,223 +2258,285 @@ GitLab settings
   :environment: N/A
   :description: Specify the URL of your GitLab instance (example ``https://example.com:3000``).
 
-GitLab site URL
-'''''''''''''''
+*Available in legacy Enterprise Edition E10 and E20.*
 
-*Available in legacy Enterprise Edition E10 and E20. Not available in Cloud Free.*
++-----------------------------------------------------------------------------------------+-----------------------------------------------------------+
+| This setting stores the URL of your GitLab instance, e.g. **https://example.com:3000**. | - System Config path: **Authentication > OpenID Connect** |
+|                                                                                         | - ``config.json`` setting: N/A                            |
+|                                                                                         | - Environment variable: N/A                               |
+| String input.                                                                           |                                                           |
++-----------------------------------------------------------------------------------------+-----------------------------------------------------------+
+| **Note**: See **Step 2** of the `GitLab Single Sign-On <https://docs.mattermost.com/onboard/sso-gitlab.html>`__ documentation for details.          |
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Specify the URL of your GitLab instance (example ``https://example.com:3000``). If your GitLab instance is not set up with SSL, start the URL with ``http://`` instead of ``https://``.
+GitLab OpenID Discovery endpoint
+''''''''''''''''''''''''''''''''
 
 .. config:setting:: oidc-gitlabdiscoveryendpoint
   :displayname: Discovery endpoint (OpenID Connect - GitLab)
   :systemconsole: Authentication > OpenID Connect
-  :configjson: N/A
-  :environment: N/A
+  :configjson: .GitLabSettings.DiscoveryEndpoint
+  :environment: MM_GITLABSETTINGS_DISCOVERYENDPOINT
   :description: Obtain this value by registering Mattermost as an application in your service provider account.
 
-Discovery endpoint
-''''''''''''''''''
+*Available in legacy Enterprise Edition E10 and E20.*
 
-*Available in legacy Enterprise Edition E10 and E20*
-*Not available in Cloud Free*
++-------------------------------------------------------------------------------------+-----------------------------------------------------------------+
+| This setting is prepopulated with the Discovery Endpoint for GitLab OpenID Connect. | - System Config path: **Authentication > OpenID Connect**       |
+|                                                                                     | - ``config.json`` setting: ``.GitLabSettings.DiscoveryEndpoint``|
+|                                                                                     | - Environment variable: ``MM_GITLABSETTINGS_DISCOVERYENDPOINT`` |
+| String input. Default is ``https://gitlab.com/.well-known/openid-configuration``    |                                                                 |
++-------------------------------------------------------------------------------------+-----------------------------------------------------------------+
+| **Note**: See **Step 2** of the `GitLab Single Sign-On <https://docs.mattermost.com/onboard/sso-gitlab.html>`__ documentation for details.            |
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Obtain this value by registering Mattermost as an application in your service provider account. Should be in the format ``https://myopenid.provider.com/{my_company}/.well-known/openid-configuration`` where the value of *{my_company}* is replaced with your organization.
+GitLab OpenID Client ID
+'''''''''''''''''''''''
 
 .. config:setting:: oidc-gitlabclientid
   :displayname: Client ID (OpenID Connect - GitLab)
   :systemconsole: Authentication > OpenID Connect
-  :configjson: N/A
-  :environment: N/A
+  :configjson: .GitLabSettings.Id
+  :environment: MM_GITLABSETTINGS_ID
   :description: Obtain this value by registering Mattermost as an application in your service provider account.
 
-Client ID
-'''''''''
+*Available in legacy Enterprise Edition E10 and E20.*
 
-*Available in legacy Enterprise Edition E10 and E20*
-*Not available in Cloud Free*
++-----------------------------------------------------------------+--------------------------------------------------------------------------+
+| This setting stores the **Application ID** generated by GitLab. | - System Config path: **Authentication > OpenID Connect**                |
+|                                                                 | - ``config.json`` setting: ``.GitLabSettings.Id``                        |
+|                                                                 | - Environment variable: ``MM_GITLABSETTINGS_ID``                         |
+| String input.                                                   |                                                                          |
++-----------------------------------------------------------------+--------------------------------------------------------------------------+
+| **Note**: See **Step 2** of the `GitLab Single Sign-On <https://docs.mattermost.com/onboard/sso-gitlab.html>`__ documentation for details. |
++--------------------------------------------------------------------------------------------------------------------------------------------+
 
-Obtain this value by registering Mattermost as an application in your service provider account.
+GitLab OpenID Client secret
+'''''''''''''''''''''''''''
 
 .. config:setting:: oidc-gitlabclientsecret
   :displayname: Client secret (OpenID Connect - GitLab)
   :systemconsole: Authentication > OpenID Connect
-  :configjson: N/A
-  :environment: N/A
+  :configjson: .GitLabSettings.Secret
+  :environment: MM_GITLABSETTINGS_SECRET
   :description: Obtain this value by registering Mattermost as an application in your service provider account.
 
-Client secret
-'''''''''''''
+*Available in legacy Enterprise Edition E10 and E20.*
 
-*Available in legacy Enterprise Edition E10 and E20*
-*Not available in Cloud Free*
++-------------------------------------------------------------------------+------------------------------------------------------------------+
+| This setting stores the **Application Secret Key** generated by GitLab. | - System Config path: **Authentication > OpenID Connect**        |
+|                                                                         | - ``config.json`` setting: ``.GitLabSettings.Secret``            |
+|                                                                         | - Environment variable: ``MM_GITLABSETTINGS_SECRET``             |
+| String input.                                                           |                                                                  |
++-------------------------------------------------------------------------+------------------------------------------------------------------+
+| **Note**: See **Step 2** of the `GitLab Single Sign-On <https://docs.mattermost.com/onboard/sso-gitlab.html>`__ documentation for details. |
++--------------------------------------------------------------------------------------------------------------------------------------------+
 
-Obtain this value by registering Mattermost as an application in your service provider account.
-
-Google Settings
-^^^^^^^^^^^^^^^
+Google OpenID settings
+^^^^^^^^^^^^^^^^^^^^^^
 
 .. include:: ../_static/badges/entpro-cloud-free.rst
   :start-after: :nosearch:
+
+Enable OpenID Connect authentication with Google
+''''''''''''''''''''''''''''''''''''''''''''''''
 
 .. config:setting:: oidc-googleenable
   :displayname: Enable Google Settings (OpenID Connect - Google)
   :systemconsole: Authentication > OpenID Connect
-  :configjson: Enable
-  :environment: N/A
+  :configjson: .GoogleSettings.Enable
+  :environment: MM_GOOGLESETTINGS_ENABLE
 
   - **true**: Allow team creation and account signup using Google OpenID Connect.
   - **false**: **(Default)** Google OpenID Connect cannot be used for team creation or account signup.
 
-Enable authentication with Google by selecting ``Google Apps`` from **System Console > Authentication > OpenID Connect > Select service provider**.
+*Available in legacy Enterprise Edition E20*
 
-**True**: Allow team creation and account signup using Google OpenID Connect. To configure, input the **Client ID**, **Client Secret**, and **DiscoveryEndpoint** credentials. See `the documentation <https://docs.mattermost.com/onboard/sso-google.html>`__ for more detail.
++------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
+| - **true**: Allows team and account creation using Google OpenID authentication.                                 | - System Config path: **Authentication > OpenID Connect**    |
+| - **false**: **(Default)** Disables Google OpenID authentication.                                                | - ``config.json`` setting: ``.GoogleSettings.Enable: false`` |
+|                                                                                                                  | - Environment variable: ``MM_GOOGLESETTINGS_ENABLE``         |
+| See `Google Single Sign-On <https://docs.mattermost.com/onboard/sso-google.html>`__ implementation instructions. |                                                              |
++------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
 
-**False**: Google OpenID Connect cannot be used for team creation or account signup.
-
-+----------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Enable": false`` with options ``true`` and ``false``. |
-+----------------------------------------------------------------------------------------------------+
+Google OpenID Discovery endpoint
+''''''''''''''''''''''''''''''''
 
 .. config:setting:: oidc-googlediscoveryendpoint
   :displayname: Discovery endpoint (OpenID Connect - Google)
   :systemconsole: Authentication > OpenID Connect
-  :configjson: DiscoveryEndpoint
-  :environment: N/A
+  :configjson: .GoogleSettings.DiscoveryEndpoint
+  :environment: MM_GOOGLESETTINGS_DISCOVERYENDPOINT
   :description: This value is prepopulated with ``https://accounts.google.com/.well-known/openid-configuration``.
-
-Discovery endpoint
-''''''''''''''''''
 
 *Available in legacy Enterprise Edition E20*
 
-This value is prepopulated with ``https://accounts.google.com/.well-known/openid-configuration``.
++---------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
+| This setting is prepopulated with the Discovery Endpoint for Google OpenID Connect.                                                                     | - System Config path: **Authentication > OpenID Connect**        |
+|                                                                                                                                                         | - ``config.json`` setting: ``.GoogleSettings.DiscoveryEndpoint`` |
+| See `Configure Mattermost for Google Apps SSO <https://docs.mattermost.com/onboard/sso-google.html#step-3-configure-mattermost-for-google-apps-sso>`__. | - Environment variable: ``MM_GOOGLESETTINGS_DISCOVERYENDPOINT``  |
+|                                                                                                                                                         |                                                                  |
+| String input. Default is ``https://accounts.google.com/.well-known/openid-configuration``                                                               |                                                                  |
++---------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
 
-+------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"DiscoveryEndpoint": ""`` with string input. |
-+------------------------------------------------------------------------------------------+
+Google OpenID Client ID
+'''''''''''''''''''''''
 
 .. config:setting:: oidc-googleclientid
   :displayname: Client ID (OpenID Connect - Google)
   :systemconsole: Authentication > OpenID Connect
-  :configjson: Id
-  :environment: N/A
+  :configjson: .GoogleSettings.Id
+  :environment: MM_GOOGLESETTINGS_ID
   :description: Obtain this value by registering Mattermost as an application in your Google account.
-
-Client ID
-'''''''''
 
 *Available in legacy Enterprise Edition E20*
 
-Obtain this value by registering Mattermost as an application in your Google account.
++------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+
+| This setting stores the Client ID generated by Google.                                                           | - System Config path: **Authentication > OpenID Connect** |
+|                                                                                                                  | - ``config.json`` setting: ``.GoogleSettings.Id``         |
+| See `Google Single Sign-On <https://docs.mattermost.com/onboard/sso-google.html>`__ implementation instructions. | - Environment variable: ``MM_GOOGLESETTINGS_ID``          |
+|                                                                                                                  |                                                           |
+| String input.                                                                                                    |                                                           |
++------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+
 
-+---------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Id": ""`` with string input. |
-+---------------------------------------------------------------------------+
+Google OpenID Client secret
+'''''''''''''''''''''''''''
 
 .. config:setting:: oidc-googleclientsecret
   :displayname: Client secret (OpenID Connect - Google)
   :systemconsole: Authentication > OpenID Connect
-  :configjson: Secret
-  :environment: N/a
+  :configjson: .GoogleSettings.Secret
+  :environment: MM_GOOGLESETTINGS_SECRET
   :description: Obtain this value by registering Mattermost as an application in your Google account.
-
-Client secret
-'''''''''''''
 
 *Available in legacy Enterprise Edition E20*
 
-Obtain this value by registering Mattermost as an application in your Google account.
++-------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+
+| This setting stores the Client Secret generated by Google.                                                        | - System Config path: **Authentication > OpenID Connect** |
+|                                                                                                                   | - ``config.json`` setting: ``.GoogleSettings.Secret``     |
+| See `Google Single Sign-On <https://docs.mattermost.com/onboard/sso-google.html>`__  implementation instructions. | - Environment variable: ``MM_GOOGLESETTINGS_SECRET``      |
+|                                                                                                                   |                                                           |
+| String input.                                                                                                     |                                                           |
++-------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+
 
-+-------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Secret": ""`` with string input. |
-+-------------------------------------------------------------------------------+
-
-Office 365 Settings
-^^^^^^^^^^^^^^^^^^^
+Office 365 OpenID settings
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. include:: ../_static/badges/entpro-cloud-free.rst
   :start-after: :nosearch:
 
+.. note::
+   In line with Microsoft ADFS guidance, we recommend `configuring intranet forms-based authentication for devices that do not support WIA <https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configure-intranet-forms-based-authentication-for-devices-that-do-not-support-wia>`_.
+
+Enable OpenID Connect authentication with Office 365
+''''''''''''''''''''''''''''''''''''''''''''''''''''
+
 .. config:setting:: oidc-o365enable
   :displayname: Enable Office 365 Settings (OpenID Connect - Office 365)
   :systemconsole: Authentication > OpenID Connect
-  :configjson: Enable
-  :environment: N/A
+  :configjson: .Office365Settings.Enable
+  :environment: MM_OFFICE365SETTINGS_ENABLE
 
   - **true**: Allow team creation and account signup using Office 365 OpenID Connect.
   - **false**: **(Default)** Office 365 OpenID Connect cannot be used for team creation or account signup.
 
-.. note::
-   In line with Microsoft ADFS guidance, we recommend `configuring intranet forms-based authentication for devices that do not support WIA <https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configure-intranet-forms-based-authentication-for-devices-that-do-not-support-wia>`_.
+*Available in legacy Enterprise Edition E20*
 
-Enable authentication with Office 365 by selecting **Office 365** from **System Console > Authentication > OpenID Connect > Select service provider**.
++----------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
+| - **true**: Allows team and account creation using Office 365 OpenID Connect authentication.                         | - System Config path: **Authentication > OpenID Connect**       |
+| - **false**: **(Default)** Disables Office 365 OpenID Connect authentication.                                        | - ``config.json`` setting: ``.Office365Settings.Enable: false`` |
+|                                                                                                                      | - Environment variable: ``MM_OFFICE365SETTINGS_ENABLE``         |
+| See `Office 365 Single Sign-On <https://docs.mattermost.com/onboard/sso-office.html>`__ implementation instructions. |                                                                 |
++----------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
 
-**True**: Allow team creation and account signup using Office 365 OpenID Connect. To configure, input the **Application ID** and **Application Secret Password** credentials. See `the documentation <https://docs.mattermost.com/onboard/sso-office.html>`__ for more detail.
-
-**False**: Office 365 OpenID Connect cannot be used for team creation or account signup.
-
-+----------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Enable": false`` with options ``true`` and ``false``. |
-+----------------------------------------------------------------------------------------------------+
+Office 365 OpenID Directory (tenant) ID
+'''''''''''''''''''''''''''''''''''''''
 
 .. config:setting:: oidc-o365directoryid
   :displayname: Directory ID (OpenID Connect - Office 365)
   :systemconsole: Authentication > OpenID Connect
-  :configjson: N/A
-  :environment: N/A
-  :description: This value is the ID of the application's AAD directory.
-
-Directory (tenant) ID
-'''''''''''''''''''''
+  :configjson: .Office365Settings.DirectoryId
+  :environment: MM_OFFICE365SETTINGS_DIRECTORYID
+  :description: This setting holds the Directory (tenant) ID set for Mattermost through the Microsoft Azure Portal.
 
 *Available in legacy Enterprise Edition E20*
 
-This value is the ID of the application's AAD directory.
++----------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------+
+| This setting holds the Directory (tenant) ID set for Mattermost through the Microsoft Azure Portal.                  | - System Config path: **Authentication > OpenID Connect**     |
+|                                                                                                                      | - ``config.json`` setting: ``.Office365Settings.DirectoryId`` |
+| See `Office 365 Single Sign-On <https://docs.mattermost.com/onboard/sso-office.html>`__ implementation instructions. | - Environment variable: ``MM_OFFICE365SETTINGS_DIRECTORYID``  |
+|                                                                                                                      |                                                               |
+| String input.                                                                                                        |                                                               |
++----------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------+
+
+Office 365 OpenID Discovery endpoint
+''''''''''''''''''''''''''''''''''''
 
 .. config:setting:: oidc-o365discoveryendpoint
   :displayname: Discovery endpoint (OpenID Connect - Office 365)
   :systemconsole: Authentication > OpenID Connect
-  :configjson: N/A
-  :environment: N/A
+  :configjson: .Office365Settings.DiscoveryEndpoint
+  :environment: MM_OFFICE365SETTINGS_DISCOVERYENDPOINT
   :description: This value is prepopulated with ``https://login.microsoftonline.com/common/v2.0/.well-known/openid-configuration``.
-
-Discovery endpoint
-''''''''''''''''''
 
 *Available in legacy Enterprise Edition E20*
 
-This value is prepopulated with ``https://login.microsoftonline.com/common/v2.0/.well-known/openid-configuration``.
++----------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| This setting is prepopulated with the Discovery Endpoint for Office 365 OpenID Connect.                              | - System Config path: **Authentication > OpenID Connect**           |
+|                                                                                                                      | - ``config.json`` setting: ``.Office365Settings.DiscoveryEndpoint`` |
+| See `Office 365 Single Sign-On <https://docs.mattermost.com/onboard/sso-office.html>`__ implementation instructions. | - Environment variable: ``MM_OFFICE365SETTINGS_DISCOVERYENDPOINT``  |
+|                                                                                                                      |                                                                     |
+| String input. Default is ``https://login.microsoftonline.com/common/v2.0/.well-known/openid-configuration``          |                                                                     |
++----------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+
+Office 365 Client ID
+''''''''''''''''''''
 
 .. config:setting:: oidc-o365clientid
   :displayname: Client ID (OpenID Connect - Office 365)
   :systemconsole: Authentication > OpenID Connect
-  :configjson: N/A
-  :environment: N/A
-  :description: Obtain this value by registering Mattermost as an application in your Google account.
-
-Client ID
-'''''''''
+  :configjson: .Office365Settings.Id
+  :environment: MM_OFFICE365SETTINGS_ID
+  :description: This setting stores the Application (client) ID  generated through the Microsoft Azure Portal.
 
 *Available in legacy Enterprise Edition E20*
 
-Obtain this value by registering Mattermost as an application in your Google account.
++----------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+
+| This setting stores the **Application (client) ID** generated through the Microsoft Azure Portal.                    | - System Config path: **Authentication > OpenID Connect** |
+|                                                                                                                      | - ``config.json`` setting: ``.Office365Settings.Id``      |
+| See `Office 365 Single Sign-On <https://docs.mattermost.com/onboard/sso-office.html>`__ implementation instructions. | - Environment variable: ``MM_OFFICE365SETTINGS_ID``       |
+|                                                                                                                      |                                                           |
+| String input.                                                                                                        |                                                           |
++----------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+
+
+Office 365 Client secret
+''''''''''''''''''''''''
 
 .. config:setting:: oidc-o365clientsecret
   :displayname: Client secret (OpenID Connect - Office 365)
   :systemconsole: Authentication > OpenID Connect
-  :configjson: N/A
-  :environment: N/A
-  :description: Obtain this value by registering Mattermost as an application in your Google account.
-
-Client secret
-'''''''''''''
+  :configjson: .Office365Settings.Secret
+  :environment: MM_OFFICE365SETTINGS_SECRET
+  :description: This setting stores the Client Secret generated through the Microsoft Azure Portal.
 
 *Available in legacy Enterprise Edition E20*
 
-Obtain this value by registering Mattermost as an application in your Google account.
++----------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+
+| This setting stores the **Client Secret** generated through the Microsoft Azure Portal.                              | - System Config path: **Authentication > OpenID Connect** |
+|                                                                                                                      | - ``config.json`` setting: ``.Office365Settings.Secret``  |
+| See `Office 365 Single Sign-On <https://docs.mattermost.com/onboard/sso-office.html>`__ implementation instructions. | - Environment variable: ``MM_OFFICE365SETTINGS_SECRET``   |
+|                                                                                                                      |                                                           |
+| String input.                                                                                                        |                                                           |
++----------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+
 
-OpenID Connect (other)
-^^^^^^^^^^^^^^^^^^^^^^
+OpenID Connect (other) settings
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
+
+Enable OpenID Connect authentication with other service providers
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 .. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
   :start-after: :nosearch:
@@ -2441,109 +2544,123 @@ OpenID Connect (other)
 .. config:setting:: oidc-enable
   :displayname: Enable (OpenID Connect)
   :systemconsole: Authentication > OpenID Connect
-  :configjson: Enable
-  :environment: N/A
+  :configjson: .OpenIdSettings.Enable
+  :environment: MM_OPENIDSETTINGS_ENABLE
 
   - **True**: Allow team creation and account signup using OpenID Connect.
   - **False**: **(Default)** OpenID Connect cannot be used for team creation or account signup.
 
-Enable authentication with a service provider by selecting ``OpenID Connect (Other)`` from **System Console > Authentication > OpenID Connect > Select service provider**.
+*Available in legacy Enterprise Edition E20*
 
-**True**: Allow team creation and account signup using OpenID Connect. To configure, input the **Client ID**, **Client Secret**, and **DiscoveryEndpoint** credentials. See `the documentation <https://docs.mattermost.com/onboard/sso-openidconnect.html>`__ for more detail.
++---------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
+| - **true**: Allows team and account creation using other OpenID Connect service providers.                                      | - System Config path: **Authentication > OpenID Connect**    |
+| - **false**: **(Default)** Disables OpenID Connect authentication with other service providers.                                 | - ``config.json`` setting: ``.OpenIdSettings.Enable: false`` |
+|                                                                                                                                 | - Environment variable: ``MM_OPENIDSETTINGS_ENABLE``         |
+| See `OpenID Connect Single Sign-On <https://docs.mattermost.com/onboard/sso-openidconnect.html>`__ implementation instructions. |                                                              |
++---------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
 
-**False**: OpenID Connect cannot be used for team creation or account signup.
-
-+----------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Enable": false`` with options ``true`` and ``false``. |
-+----------------------------------------------------------------------------------------------------+
+OpenID Connect (other) Button name
+''''''''''''''''''''''''''''''''''
 
 .. config:setting:: oidc-buttonname
   :displayname: Button name (OpenID Connect)
   :systemconsole: Authentication > OpenID Connect
-  :configjson: ButtonText
-  :environment: N/A
+  :configjson: .OpenIdSettings.ButtonText
+  :environment: MM_OPENIDSETTINGS_BUTTONTEXT
   :description: Specify the text that displays on the OpenID login button.
-
-Button name
-'''''''''''
 
 *Available in legacy Enterprise Edition E20*
 
-Specify the text that displays on the OpenID login button.
++-------------------------------------------------------+-----------------------------------------------------------+
+| This setting is the text for the OpenID login button. | - System Config path: **Authentication > OpenID Connect** |
+|                                                       | - ``config.json`` setting: ``.OpenIdSettings.ButtonText`` |
+| String input.                                         | - Environment variable: ``MM_OPENIDSETTINGS_BUTTONTEXT``  |
++-------------------------------------------------------+-----------------------------------------------------------+
 
-+-----------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ButtonText": ""`` with string input. |
-+-----------------------------------------------------------------------------------+
+OpenID Connect (other) Button color
+'''''''''''''''''''''''''''''''''''
 
 .. config:setting:: oidc-buttoncolor
   :displayname: Button color
   :systemconsole: Authentication > OpenID Connect
-  :configjson: ButtonColor
-  :environment: N/A
+  :configjson: .OpenIdSettings.ButtonColor
+  :environment: MM_OPENIDSETTINGS_BUTTONCOLOR
   :description: Specify the color of the OpenID login button for white labeling purposes. Use a hex code with a #-sign before the code, for example ``#145DBF``.
 
-Button color
-''''''''''''
+*Available in legacy Enterprise Edition E20*
 
-Specify the color of the OpenID login button for white labeling purposes. Use a hex code with a #-sign before the code, for example ``#145DBF``.
++------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------+
+| This setting is the color of the OpenID login button. Use a hex code with a #-sign before the code, for example ``#145DBF``. | - System Config path: **Authentication > OpenID Connect**  |
+|                                                                                                                              | - ``config.json`` setting: ``.OpenIdSettings.ButtonColor`` |
+| String input.                                                                                                                | - Environment variable: ``MM_OPENIDSETTINGS_BUTTONCOLOR``  |
++------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------+
 
-+------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ButtonColor": ""`` with string input. |
-+------------------------------------------------------------------------------------+
+OpenID Connect (other) Discovery endpoint
+'''''''''''''''''''''''''''''''''''''''''
 
 .. config:setting:: oidc-discoveryendpoint
   :displayname: Discovery endpoint (OpenID Connect)
   :systemconsole: Authentication > OpenID Connect
-  :configjson: DiscoveryEndpoint
-  :environment: N/A
+  :configjson: .OpenIdSettings.DiscoveryEndpoint
+  :environment: MM_OPENIDSETTINGS_DISCOVERYENDPOINT
   :description: Obtain this value by registering Mattermost as an application in your service provider account.
-
-Discovery endpoint
-''''''''''''''''''
 
 *Available in legacy Enterprise Edition E20*
 
-Obtain this value by registering Mattermost as an application in your service provider account. Should be in the format ``https://myopenid.provider.com/{my_company}/.well-known/openid-configuration`` where the value of *{my_company}* is replaced with your organization.
++--------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
+| This setting stores the Discovery Endpoint URL from the OpenID provider.                               | - System Config path: **Authentication > OpenID Connect**        |
+| The URL should be in the format of ``https://myopenid.provider.com/{my_organization}/                  | - ``config.json`` setting: ``.OpenIdSettings.DiscoveryEndpoint`` |
+| .well-known/openid-configuration``.                                                                    | - Environment variable: ``MM_OPENIDSETTINGS_DISCOVERYENDPOINT``  |
+|                                                                                                        |                                                                  |
+| See `OpenID Connect Single Sign-On <https://docs.mattermost.com/onboard/sso-openidconnect.html>`__     |                                                                  |
+| implementation instructions.                                                                           |                                                                  |
+|                                                                                                        |                                                                  |
+| String input.                                                                                          |                                                                  |
++--------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
+| **Note**: The **Discovery Endpoint** setting can be used to determine the connectivity and availability of arbitrary hosts. System admins concerned about this can use    |
+| custom admin roles to limit access to modifying these settings. See the `system admin roles </onboard/system-admin-roles.html#edit-privileges-of-                         |
+| system-admin-roles-advanced>`__ documentation for details.                                                                                                                |
++--------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
 
-+------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"DiscoveryEndpoint": ""`` with string input. |
-+------------------------------------------------------------------------------------------+
+OpenID Connect (other) Client ID
+''''''''''''''''''''''''''''''''
 
 .. config:setting:: oidc-clientid
   :displayname: Client ID (OpenID Connect)
   :systemconsole: Authentication > OpenID Connect
-  :configjson: Id
-  :environment: N/A
+  :configjson: .OpenIdSettings.Id
+  :environment: MM_OPENIDSETTINGS_ID
   :description: Obtain this value by registering Mattermost as an application in your service provider account.
-
-Client ID
-'''''''''
 
 *Available in legacy Enterprise Edition E20*
 
-Obtain this value by registering Mattermost as an application in your service provider account.
++---------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+
+| This setting stores the Client ID from the OpenID provider.                                                                     | - System Config path: **Authentication > OpenID Connect** |
+|                                                                                                                                 | - ``config.json`` setting: ``.OpenIdSettings.Id``         |
+| See `OpenID Connect Single Sign-On <https://docs.mattermost.com/onboard/sso-openidconnect.html>`__ implementation instructions. | - Environment variable: ``MM_OPENIDSETTINGS_ID``          |
+|                                                                                                                                 |                                                           |
+| String input.                                                                                                                   |                                                           |
++---------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+
 
-+---------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Id": ""`` with string input. |
-+---------------------------------------------------------------------------+
+OpenID Connect (other) Client secret
+''''''''''''''''''''''''''''''''''''
 
 .. config:setting:: oidc-clientsecret
   :displayname: Client secret (OpenID Connect)
   :systemconsole: Authentication > OpenID Connect
-  :configjson: Secret
-  :environment: N/A
+  :configjson: .OpenIdSettings.Secret
+  :environment: MM_OPENIDSETTINGS_SECRET
   :description: Obtain this value by registering Mattermost as an application in your service provider account.
-
-Client secret
-'''''''''''''
 
 *Available in legacy Enterprise Edition E20*
 
-Obtain this value by registering Mattermost as an application in your service provider account.
-
-+-------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Secret": ""`` with string input. |
-+-------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+
+| This setting stores the Client Secret from the OpenID provider.                                                                 | - System Config path: **Authentication > OpenID Connect** |
+|                                                                                                                                 | - ``config.json`` setting: ``.OpenIdSettings.Secret``     |
+| See `OpenID Connect Single Sign-On <https://docs.mattermost.com/onboard/sso-openidconnect.html>`__ implementation instructions. | - Environment variable: ``MM_OPENIDSETTINGS_SECRET``      |
+|                                                                                                                                 |                                                           |
+| String input.                                                                                                                   |                                                           |
++---------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+
 
 ----
 
@@ -2558,8 +2675,8 @@ Access the following configuration settings in the System Console by going to **
 .. config:setting:: guest-enable
   :displayname: Enable guest access (Guest Access)
   :systemconsole: Authentication > Guest Access
-  :configjson: Enable
-  :environment: N/A
+  :configjson: .GuestAccountsSettings.Enable
+  :environment: MM_GUESTACCOUNTSSETTINGS_ENABLE
 
   - **true**: Enables the guest account feature.
   - **false**: **(Default)** Disables the guest account feature.
@@ -2580,8 +2697,8 @@ Enable guest access
 .. config:setting:: guest-whitelistdomains
   :displayname: Whitelisted guest domains (Guest Access)
   :systemconsole: Authentication > Guest Access
-  :configjson: RestrictCreationToDomains
-  :environment: N/A
+  :configjson: .GuestAccountsSettings.RestrictCreationToDomains
+  :environment: MM_GUESTACCOUNTSSETTINGS_RESTRICTCREATIONTODOMAINS
   :description: When populated, guest accounts can only be created by a verified email from this list of comma-separated domains.
 
 Whitelisted guest domains
@@ -2598,8 +2715,8 @@ Whitelisted guest domains
 .. config:setting:: guest-enforcemultifactorauth
   :displayname: Enforce multi-factor authentication (Guest Access)
   :systemconsole: Authentication > Guest Access
-  :configjson: EnforceMultifactorAuthentication
-  :environment: N/A
+  :configjson: .GuestAccountsSettings.EnforceMultifactorAuthentication
+  :environment: MM_GUESTACCOUNTSSETTINGS_ENFORCEMULTIFACTORAUTHENTICATION
 
   - **True**: Multi-factor authentication (MFA) is required for login.
   - **False**: **(Default)** Multi-factor authentication for guests is optional.
@@ -2617,3 +2734,22 @@ Enforce multi-factor authentication
 | **Note**: This setting defaults to false and cannot be changed if MFA isn't enforced for non-guest users.                                                                                                     |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+.. config:setting:: guest-showtag
+  :displayname: Show guest tag (Guest Access)
+  :systemconsole: Authentication > Guest Access
+  :configjson: .GuestAccountsSettings.HideTags
+  :environment: MM_GUESTACCOUNTSSETTINGS_HIDETAGS
+
+  - **True**: **(Default)** Guest tags are visible in Mattermost.
+  - **False**: **(Default)** Guest tags aren't visible in Mattermost.
+
+Show guest tag
+~~~~~~~~~~~~~~
+
++-----------------------------------------------------------------+----------------------------------------------------------------------+
+| - **true**: **(Default)** Guest tags are visible in Mattermost. | - System Config path: **Authentication > Guest Access**              |
+| - **false**:  Guest tags aren't visible in Mattermost.          | - ``config.json`` setting: ``.GuestAccountsSettings.HideTags: true`` |
+|                                                                 | - Environment variable: ``MM_GUESTACCOUNTSSETTINGS_HIDETAGS``        |
++-----------------------------------------------------------------+----------------------------------------------------------------------+
+| **Note**: See the `guest accounts <https://docs.mattermost.com/onboard/guest-accounts.html>`__ documentation for details.              |
++----------------------------------------------------------------------------------------------------------------------------------------+

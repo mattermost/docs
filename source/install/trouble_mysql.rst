@@ -217,3 +217,10 @@ Mattermost customers using v7.7 or earlier may see an errors occur on servers us
 
 .. note::
     This issue has been addressed from Mattermost v7.8.
+
+Maximum allowed packet
+-----------------------
+
+The Go MySQL driver has changed the ``maxAllowedPacket`` size from 4MiB to 64MiB. This is to make it consistent with the change in the server-side default value from MySQL 5.7 to MySQL 8.0. 
+
+If your ``max_allowed_packet`` setting is not 64MiB, update the MySQL configuration DSN with an additional parameter of ``maxAllowedPacket`` to match with the server-side value. Alternatively, set a value of ``0`` to fetch the server-side value automatically on every new connection which has a performance overhead.

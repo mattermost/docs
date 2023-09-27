@@ -179,7 +179,7 @@ Login and session metrics
 - ``mattermost_login_logins_fail_total``: The total number of failed logins.
 - ``mattermost_login_logins_total``: The total number of successful logins.
 
-Mattermost Channels metrics
+Mattermost channels metrics
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 - ``mattermost_post_broadcasts_total``: The total number of WebSocket broadcasts sent because a post was created.
@@ -190,7 +190,7 @@ Mattermost Channels metrics
 - ``mattermost_post_webhooks_totals``: The total number of webhook posts created.
 
 .. image:: ../images/perf_monitoring_messaging_metrics.png
-   :alt: Example Mattermost Channels metrics, including messages per minute, broadcasts per minute, emails sent per minute, mobile push notifications per minute, and number of file attachments per minute, in a self-hosted Mattermost deployment.
+   :alt: Example Mattermost channels metrics, including messages per minute, broadcasts per minute, emails sent per minute, mobile push notifications per minute, and number of file attachments per minute, in a self-hosted Mattermost deployment.
 
 Process metrics
 ^^^^^^^^^^^^^^^
@@ -269,11 +269,11 @@ To learn how to set up runtime profiling, see the `pprof package Go documentatio
 
 If enabled, you can run the profiler by
 
-``go tool pprof channel http://localhost:<port>/debug/pprof/profile``
+``go tool pprof http://localhost:<port>/debug/pprof/profile``
 
 where you can replace ``localhost`` with the server name. The profiling reports are available at ``<ip>:<port>``, which include:
 
-- ``/debug/pprof/`` for CPU profiling
+- ``/debug/pprof/profile`` for CPU profiling
 - ``/debug/pprof/cmdline/`` for command line profiling
 - ``/debug/pprof/symbol/`` for symbol profiling
 - ``/debug/pprof/goroutine/`` for GO routine profiling

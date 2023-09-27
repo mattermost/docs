@@ -6,11 +6,7 @@ Advanced permissions: backend infrastructure
 
 This document outlines the backend server infrastructure for permissions in Mattermost and is recommended only for technical Admins or developers looking to make modifications to their installation.
 
-.. note::
-
-  The contents of this document apply from Mattermost Server v5.0.
-
-.. contents::
+.. contents:: On this page
   :backlinks: top
   :local:
 
@@ -70,8 +66,6 @@ Permissions in Mattermost are a property of the server code base and are not cre
 +----------------------------------------------+---------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | add_user_to_team                             | team    | Add existing server users to the current team.                                                                                                                                                        |
 +----------------------------------------------+---------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| use_slash_commands                           | channel | Use slash commands.                                                                                                                                                                                   |
-+----------------------------------------------+---------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | manage_slash_commands                        | system  | Create, edit, and delete your own slash commands.                                                                                                                                                     |
 +----------------------------------------------+---------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | manage_others_slash_commands                 | system  | Edit or delete other users' slash commands.                                                                                                                                                           |
@@ -125,6 +119,8 @@ Permissions in Mattermost are a property of the server code base and are not cre
 | edit_other_users                             | system  | Edit values on the `user` object of other users.                                                                                                                                                      |
 +----------------------------------------------+---------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | read_channel                                 | channel | View posts in a channel.                                                                                                                                                                              |
++----------------------------------------------+---------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| read_channel_contents                        | channel | Read the contents of a channel.                                                                                                                                                                       |
 +----------------------------------------------+---------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | read_public_channel                          | team    | View and access public channels on a team.                                                                                                                                                            |
 +----------------------------------------------+---------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -259,8 +255,8 @@ The following built-in roles and associated permissions are available:
 
 *channel_guest*
 
-- use_slash_commands
 - read_channel
+- read_channel_contents
 - add_reaction
 - remove_reaction
 - upload_file
@@ -280,11 +276,11 @@ The following built-in roles and associated permissions are available:
 - read_public_channel_groups
 - use_channel_mentions
 - read_channel
+- read_channel_contents
 - delete_post
 - get_public_link
 - remove_reaction
 - manage_public_channel_members
-- use_slash_commands
 - upload_file
 - manage_private_channel_properties
 - create_post
@@ -383,6 +379,7 @@ The following built-in roles and associated permissions are available:
 - sysconsole_read_reporting
 - upload_file
 - read_channel
+- read_channel_contents
 - sysconsole_read_user_management_teams
 - delete_emojis
 - manage_private_channel_properties
@@ -394,7 +391,6 @@ The following built-in roles and associated permissions are available:
 - delete_public_channel
 - read_public_channel
 - sysconsole_read_about
-- use_slash_commands
 - read_bots
 - sysconsole_read_authentication
 - edit_other_users

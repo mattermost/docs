@@ -217,11 +217,11 @@ Enable webhook debugging
 |   webhooks aren’t printed to log files.       |                                                                              |
 +-----------------------------------------------+------------------------------------------------------------------------------+
 
-.. config:setting:: log-advancedloggingconfig
+.. config:setting:: log-advancedloggingjson
   :displayname: Enable diagnostics and error reporting (Logging)
   :systemconsole: Environment > Logging
-  :configjson: .LogSettings.AdvancedLoggingConfig
-  :environment: MM_LOGSETTINGS_ADVANCEDLOGGINGCONFIG
+  :configjson: .LogSettings.AdvancedLoggingJSON
+  :environment: MM_LOGSETTINGS_ADVANCEDLOGGINGJSON
   :description: Configure Mattermost to allow any combination of console, local file, syslog, and TCP socket targets, and send log records to multiple targets.
 
 Enable diagnostics and error reporting
@@ -231,17 +231,16 @@ Enable diagnostics and error reporting
 
 +-----------------------------------------------+---------------------------------------------------------------------------+
 | Configure Mattermost to allow any combination | - System Config path: **Environment > Logging**                           |
-| of console, local file, syslog, and TCP       | - ``config.json setting``: ``".LogSettings.AdvancedLoggingConfig": "",``  |
-| socket targets, and send log records to       | - Environment variable: ``MM_LOGSETTINGS_ADVANCEDLOGGINGCONFIG``          |
+| of console, local file, syslog, and TCP       | - ``config.json setting``: ``".LogSettings.AdvancedLoggingJSON": "",``    |
+| socket targets, and send log records to       | - Environment variable: ``MM_LOGSETTINGS_ADVANCEDLOGGINGJSON``            |
 | multiple targets.                             |                                                                           |
-|                                               |                                                                           |
 +-----------------------------------------------+---------------------------------------------------------------------------+
 
 .. config:setting:: log-multipletargetoutput
   :displayname: Output logs to multiple targets (Logging)
   :systemconsole: Environment > Logging
-  :configjson: .LogSettings.AdvancedLoggingConfig
-  :environment: MM_LOGSETTINGS_ADVANCEDLOGGINGCONFIG
+  :configjson: .LogSettings.AdvancedLoggingJSON
+  :environment: MM_LOGSETTINGS_ADVANCEDLOGGINGJSON
   :description: Configure Mattermost to allow any combination of console, local file, syslog, and TCP socket targets, and send log records to multiple targets.
 
 Output logs to multiple targets
@@ -251,8 +250,8 @@ Output logs to multiple targets
 
 +-----------------------------------------------+---------------------------------------------------------------------------+
 | Configure Mattermost to allow any combination | - System Config path: **Environment > Logging**                           |
-| of console, local file, syslog, and TCP       | - ``config.json setting``: ``".LogSettings.AdvancedLoggingConfig": "",``  |
-| socket targets, and send log records to       | - Environment variable: ``MM_LOGSETTINGS_ADVANCEDLOGGINGCONFIG``          |
+| of console, local file, syslog, and TCP       | - ``config.json setting``: ``".LogSettings.AdvancedLoggingJSON": "",``    |
+| socket targets, and send log records to       | - Environment variable: ``MM_LOGSETTINGS_ADVANCEDLOGGINGJSON``            |
 | multiple targets.                             |                                                                           |
 |                                               |                                                                           |
 | String input can contain a filespec to        |                                                                           |
@@ -302,8 +301,8 @@ Control Teammate Name Display at the system level.
 .. config:setting:: log-enablecolor
   :displayname: Colorize plain text console logs
   :systemconsole: N/A
-  :configjson: EnableColor
-  :environment: N/A
+  :configjson: .LogSettings.EnableColor
+  :environment: MM_LOGSETTINGS_ENABLECOLOR
 
   - **true**: When logged events are output to the console as plain text, colorize log levels details.
   - **false**: **(Default)** Plain text log details aren't colorized in the console.

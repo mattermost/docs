@@ -3,6 +3,7 @@ Deprecated configuration settings
 
 The following Mattermost configuration settings are deprecated and are no longer supported in current Mattermost releases:
 
+- `Mattermost Boards settings <#mattermost-boards-settings>`__
 - `Bleve settings <#bleve-settings>`__
 - `Elasticsearch settings <#elasticsearch-settings>`__
 - `Service settings <#service-settings>`__
@@ -22,6 +23,32 @@ The following Mattermost configuration settings are deprecated and are no longer
 - `Other deprecated settings <#other-deprecated-settings>`__
 
 ----
+
+Mattermost Boards setting
+--------------------------
+
+*Removed in the Mattermost v8.0 release*
+
+Enable publicly-shared boards
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++------------------------------------------------------+--------------------------------------------------------------------------------------+
+| Enable or disable the ability to share               | - System Config path: **Products > Boards**                                          |
+| links to Mattermost boards with other users.         | - ``config.json`` setting: ``".ProductSettings.EnablePublicSharedBoards: false”,``   |
+|                                                      | - Environment variable: ``MM_PRODUCTSETTINGS_ENABLEPUBLICSHAREDBOARDS``              |
+| - **true**: Enables the ability to share links to    |                                                                                      |
+|   Mattermost boards with other users.                |                                                                                      |
+| - **false**: **(Default)** Mattermost boards can't   |                                                                                      |
+|   be shared with other users.                        |                                                                                      |
++------------------------------------------------------+--------------------------------------------------------------------------------------+
+| **Notes**:                                                                                                                                  |
+|                                                                                                                                             |
+| - From Mattermost v7.7 through Mattermost v7.10, this configuration setting applies to Mattermost Boards available as an official           |
+|   in-product vertical.                                                                                                                      |
+| - See the `Focalboard <guides/focalboard-plugin.html>`__ documentation for details on `sharing boards links with other                      |
+|   users <boards/share-and-collaborate.html#share-a-board-publicly>`__.                                                                      |
+| - Cloud admins can't modify this configuration setting.                                                                                     |
++------------------------------------------------------+--------------------------------------------------------------------------------------+
 
 Bleve settings
 --------------
@@ -578,6 +605,23 @@ Restrict managing integrations to Admins
 | This feature's ``config.json`` setting is ``"EnableOnlyAdminIntegrations": true`` with options ``true`` and ``false``. |
 +------------------------------------------------------------------------------------------------------------------------+
 
+Patch React DOM used by plugins
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+*Deprecated. Not used in Mattermost v8.0 and later*
+
+This setting enables the patching of the React DOM library when loading web app plugins so that the plugin uses the version matching the web app. This should only be needed temporarily after upgrading to Mattermost v7.7 for plugins that have not been updated yet. Changes to this setting require a server restart before taking effect.
+
+See the `Important Upgrade Notes <https://docs.mattermost.com/upgrade/important-upgrade-notes.html>`__ for more information.
+
+**True**: Web app plugins that package their own version of React DOM are patched to instead use the version of React DOM provided by the web app.
+
+**False**: Web app plugins are loaded as normal.
+
++------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"PatchPluginsReactDOM": false`` with options ``true`` and ``false``. |
++------------------------------------------------------------------------------------------------------------------+
+
 ----
 
 Permission policy settings
@@ -814,6 +858,8 @@ Post edit time limit
 
 When post editing is permitted, setting this to ``-1`` allows editing any time, and setting this to a positive integer restricts editing time in seconds. If post editing is disabled, this setting does not apply.
 
+**Note:** This setting does not affect plugins, shared channels, integration actions, or Mattermost products.
+
 +--------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"PostEditTimeLimit": -1`` with numerical input.      |
 +--------------------------------------------------------------------------------------------------+
@@ -941,3 +987,14 @@ For more information on AD/LDAP Group Sync, please see the `AD/LDAP Group Sync d
 +-----------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ExperimentalLdapGroupSync": false`` with options ``true`` and ``false``. |
 +-----------------------------------------------------------------------------------------------------------------------+
+
+Disable inactive server email notifications
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
+This configuration setting disables the ability to send inactivity email notifications to Mattermost System Admins.
+
++-------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableInactivityEmail": true`` with options ``true`` and ``false``.  |
++-------------------------------------------------------------------------------------------------------------------+

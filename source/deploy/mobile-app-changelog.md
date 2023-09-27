@@ -2,12 +2,263 @@
 
 Latest Mattermost Mobile Apps releases:
 
-- [2.1.0 Release](#release)
-- [2.0.1 Release](#id1)
-- [2.0.0 Release](#id6)
-- [1.55.1 Release](#id9)
-- [1.55.0 Release](#id13)
-- [1.54.0 Release](#id18)
+- [2.8.0 Release](#release)
+- [2.7.0 Release](#id1)
+- [2.6.0 Release](#id6)
+- [2.5.1 Release](#id11)
+- [2.5.0 Release](#id14)
+- [2.4.0 Release](#id19)
+
+## 2.8.0 Release
+- Release Date: September 15, 2023
+- Server Versions Supported: Server v7.8.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
+
+### Compatibility
+ - **Upgrade to server version v7.8.0 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/upgrade/extended-support-release.html) (ESR) v7.1.0 has ended and upgrading to server ESR v7.8.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
+ - iPhone 5s devices and later with iOS 12.1+ is required.
+
+Note: Mattermost Mobile App v2.8.0 contains a medium level security fix. Updating is recommended. Details will be posted on our security updates page 30 days after release as per the Mattermost Responsible Disclosure Policy.
+
+### Improvements
+ - Calls: Added incoming call notifications for Direct Message and Group Message calls.
+ - Added some performance improvements.
+ - Removed unneeded requests to the server with malformed mentions.
+ - Added toast info when the ``Copy Info`` button is tapped on the **About** screen.
+ - Slightly improved performance of Markdown rendering.
+ - Added a limit to the maximum complexity of Markdown rendered.
+
+### Bug Fixes
+ - Removed some inconsistencies between mobile and browser in the way Direct Messages are shown in the sidebar.
+ - The **Member**/**Admin** label is now correctly shown inside the **Members** screen when managing users.
+ - Fixed UI issues with the **Mark all as read** button where the **Thread** disappeared when the font size was too large.
+ - Fixed an issue where users could not scroll down the acknowledgement bottom sheet in the user list when there were many users.
+ - Fixed a potential issue causing Calls sessions to be stuck.
+
+### Known Issues
+ - The **Following** button in the Thread view wraps incorrectly [MM-54499](https://mattermost.atlassian.net/browse/MM-54499).
+ - Users are unable to adjust the font size via the OS font size setting.
+ - Some Google Pixel phones on Android 12+ might not continue past the login screen. This is a known issue with the OS, and the current workaround is to restart the device.
+
+## 2.7.0 Release
+- Release Date: August 16, 2023
+- Server Versions Supported: Server v7.8.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
+
+### Compatibility
+ - **Upgrade to server version v7.8.0 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/upgrade/extended-support-release.html) (ESR) v7.1.0 has ended and upgrading to server ESR v7.8.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
+ - iPhone 5s devices and later with iOS 12.1+ is required.
+
+### Improvements
+ - Guest tags are now removed based on server configuration under **System Console > Authentication > Guest Access > Show Guest Tag**.
+ - Improved behavior of multi-request environments (such as HTTP/1.1).
+ - Added search result highlight that matches the words being searched.
+ - Added a new feature for remembering the last viewed channel or thread that takes returning users to the last channel or thread they visited.
+ - Improved the appearance of the search results.
+ - User’s current status is now shown at the bottom tab bar profile image.
+ - Added a **Copy info** button to the **About** page.
+
+### Bug Fixes
+ - Fixed issues with timeouts when uploading files.
+ - Fixed hashtag search to match the hashtag and not the word.
+ - Fixed search results to match the webapp.
+ - Fixed an issue with selecting the custom theme from the display setting.
+ - Fixed an issue where the keyboard overlapped with recent search items in the search tab.
+ - Fixed an issue with notifications showing a session expired message when it shouldn't.
+
+### Known Issues
+ - Users are unable to adjust the font size via the OS font size setting.
+ - Some Google Pixel phones on Android 12+ might not continue past the login screen. This is a known issue with the OS, and the current workaround is to restart the device.
+
+## 2.6.0 Release
+- Release Date: July 14, 2023
+- Server Versions Supported: Server v7.8.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
+
+### Compatibility
+ - **Upgrade to server version v7.8.0 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/upgrade/extended-support-release.html) (ESR) v7.1.0 has ended and upgrading to server ESR v7.8.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
+ - iPhone 5s devices and later with iOS 12.1+ is required.
+
+### Improvements
+ - Calls: ``/call start`` will now start calls within an existing thread.
+ - Improved logging for mobile apps.
+ - Added localization support to iOS share extension.
+ - Improved the user interface of the **Edit Post** screen.
+
+### Bug Fixes
+ - Fixed a rare issue when changing the role of the current user in a channel.
+ - Calls: Fixed an issue for blank screen after ending a call and exiting its thread.
+ - Fixed an issue where the Global Threads screens didn't show a badge if the user had mentions in other channels / servers.
+ - Removed unneeded fetch posts for unread archived channels that were appearing in the logs.
+ - Removed unneeded group calls that were appearing in the logs.
+ - Fixed an issue with the progress indicator when uploading files on Android.
+ - Fixed a few issues with app initialization.
+ - Fixed an issue where notifications would show "Session expired" instead of the message.
+ - Fixed a crash when users that reacted with a certain emoji were listed and a user was missing.
+
+### Known Issues
+ - Users are unable to adjust the font size via the OS font size setting.
+ - Some Google Pixel phones on Android 12+ might not continue past the login screen. This is a known issue with the OS, and the current workaround is to restart the device.
+
+## 2.5.1 Release
+- Release Date: June 23, 2023
+- Server Versions Supported: Server v7.8.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
+
+### Compatibility
+ - **Upgrade to server version v7.8.0 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/upgrade/extended-support-release.html) (ESR) v7.1.0 has ended and upgrading to server ESR v7.8.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
+ - iPhone 5s devices and later with iOS 12.1+ is required.
+
+**Note:** Mattermost Mobile App v2.5.1 contains a high level security fix. Upgrading is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+
+### Bug Fixes
+ - Fixed an issue where reading a thread could lead to the phone and server to overwork.
+ - Fixed the overlap between image attachments and the post footer with Collapsed Reply Threads enabled.
+
+## 2.5.0 Release
+- Release Date: June 16, 2023
+- Server Versions Supported: Server v7.8.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
+
+### Compatibility
+ - **Upgrade to server version v7.8.0 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/upgrade/extended-support-release.html) (ESR) v7.1.0 has ended and upgrading to server ESR v7.8.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
+ - iPhone 5s devices and later with iOS 12.1+ is required.
+
+### Improvements
+ - Calls: Added call quality degradation logic and a banner to alert users when they are on unstable connections.
+ - Improved client error handling.
+ - Post editing now respects the ``message_source`` field.
+ - Improved reaction time for the **Copy Text** option.
+ - Improved behavior around "Maximum call stack size exceeded" errors.
+ - Android: removed unneeded space after the list in the **Find Channels** screen.
+
+### Bug Fixes
+ - Fixed an issue where **Search** and **Recent Mentions** did not highlight saved posts.
+ - Fixed the interactive dialog radio buttons style when using the light theme.
+ - Fixed a small issue when marking threads as read.
+ - Fixed an issue where the **Save** button sometimes did not show on the Edit Post screen.
+ - Fixed theming issues in the login screen.
+ - Fixed an issue where replies sometimes seemed to be attributed to the wrong person or the wrong thread.
+ - Ensured users mentioned in message attachments are loaded by the app.
+ - Fixed issues with user status synchronization.
+ - Fixed duplicated text for SSO login method when only SSO was available.
+
+### Known Issues
+ - Users are unable to adjust the font size via the OS font size setting.
+ - Some Google Pixel phones on Android 12+ might not continue past the login screen. This is a known issue with the OS, and the current workaround is to restart the device.
+
+## 2.4.0 Release
+- Release Date: May 17, 2023
+- Server Versions Supported: Server v7.8.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
+
+### Compatibility
+ - **Upgrade to server version v7.8.0 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/upgrade/extended-support-release.html) (ESR) v7.1.0 has ended and upgrading to server ESR v7.8.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
+ - iPhone 5s devices and later with iOS 12.1+ is required.
+
+### Improvements
+ - Added mobile support for message acknowledgements and persistent notifications.
+ - Added the ability to add members to channels.
+ - Increased the character limit for the user's nickname from 22 to 64 characters.
+ - Added localization support for iOS usage description strings in permission dialogs.
+ - Users can now follow or unfollow a thread and undo the action if needed.
+ - Added the ability to search for files posted in a channel.
+ - Added support for ``ExperimentalSettings.DelayChannelAutocomplete`` to make the channel autocomplete only appear after typing a couple letters instead of immediately after a tilde.
+ - Calls: Redesigned the Calls user interface.
+ - Calls: Call threads are now auto-followed when joining from mobile.
+ - Calls (Android): Fixed an issue with Bluetooth, and added audio device selection menu.
+ - Added support for self-hosted Sentry URL parameters in build scripts.
+
+### Bug Fixes
+ - Fixed an issue where the app did not now show an error when adding servers without a diagnostic ID.
+ - Fixed an issue where users were unable to select several files when attaching files to a message.
+ - Fixed an issue where some channels would appear as if no messages were there.
+ - Fixed an issue with using the camera to capture photos/videos on Android versions 9 and below.
+ - Fixed a crash on iOS when attempting to open a Thread by tapping on the notification.
+ - Fixed an incomplete setup of ``sentry-cli`` node package.
+ - Fixed an issue with out of order websocket event handling for posts.
+ - Fixed a crash when opening a push notification for a thread when the Thread screen was already opened in the background.
+ - Fixed a crash issue and error ``Cannot read property "id" of undefined``.
+ - RN Image is now used on local images to avoid cache problems.
+
+### Known Issues
+ - Users are unable to adjust the font size via the OS font size setting.
+ - Some Google Pixel phones on Android 12+ might not continue past the login screen. This is a known issue with the OS, and the current workaround is to restart the device.
+
+## 2.3.0 Release
+- Release Date: April 14, 2023
+- Server Versions Supported: Server v7.1.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
+
+### Compatibility
+ - **Upgrade to server version v7.1.0 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/upgrade/extended-support-release.html) (ESR) 6.3.0 has ended and upgrading to server ESR v7.1.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
+ - iPhone 5s devices and later with iOS 12.1+ is required.
+
+### Improvements
+ - Calls: Raising a hand will now take precedence when ordering participants in the call screen.
+ - Calls: Optimized screensharing in landscape mode for Android and iOS and unlocked landscape mode for iOS phone devices.
+ - Channel names are now tappable in threads and in recent mentions, search, and saved message screens.
+ - The ``ExperimentalGroupUnreadChannels`` server config is now respected.
+ - Added more information to the logs for better debugging.
+
+### Bug Fixes
+ - Calls: Fixed an issue with emoji rendering.
+ - Calls: Fixed an issue that caused a crash when the current presenter left the call without stopping the screenshare.
+ - Fixed an issue with guest badges not appearing on the channel member list.
+ - Added minor performance fixes to the channel member list screen.
+ - Fixed an issue where some notifications did not show when a channel sidebar category was collapsed.
+ - Fixed an issue where tapping on a custom status in the message list did not open the user's profile card.
+ - Fixed an issue where the channel members count did not get updated after removing users.
+ - Fixed a crash on markdown table images and prevented image-related crashes on other parts of the app.
+ - Fixed websocket not connecting during rare scenarios.
+ - Fixed the sort order of the search results. Search results now display from newest to oldest.
+
+### Open Source Components
+ - Added ``mattermost/calls-common`` to https://github.com/mattermost/mattermost-mobile.
+
+### Known Issues
+ - Users are unable to adjust the font size via the OS font size setting.
+ - Some Google Pixel phones on Android 12+ might not continue past the login screen. This is a known issue with the OS, and the current workaround is to restart the device.
+
+## 2.2.0 Release
+- Release Date: March 17, 2023
+- Server Versions Supported: Server v7.1.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
+
+### Compatibility
+ - **Upgrade to server version v7.1.0 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/upgrade/extended-support-release.html) (ESR) 6.3.0 has ended and upgrading to server ESR v7.1.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
+ - iPhone 5s devices and later with iOS 12.1+ is required.
+
+### Improvements
+ - Added the ability to set mobile notifications preferences per channel.
+ - Added support for connecting the WebSocket over TLS1.3.
+ - Calls: Added slash commands to start/stop call recordings (``/call recording [start|stop]``).
+ - Calls: Implemented glare free negotiation. This fix prevents potential negotiation problems when two clients try to connect simultaneously.
+ - The Help link now is not converted to lowercase.
+ - Added minor performance improvements on sending a message.
+ - Archived channels show a more detailed warning.
+
+### Bug Fixes
+ - Calls: Fixed a rare case where the Join Call banner showed that a call started "53 years ago".
+ - Calls: Fixed a crash on joining calls.
+ - Fixed an issue where tapping **Send Message** in a user’s profile pop-over did not open a Direct Message channel.
+ - Fixed an issue where an incorrect skin tone was applied to emojis selected in the emoji picker.
+ - Fixed an issue where the channel list displayed Direct Messages with user accounts that had been deactivated.
+ - Fixed an issue with searching for channels and users that contain non-Latin characters.
+ - Fixed an issue where selecting an item from the autocomplete doubled tilde and slash characters.
+ - Fixed an "Unable to reset your password" issue.
+ - Fixed an issue where the Group Message member count showed as 0 on GraphQL enabled instances.
+ - Fixed an issue with missing posts in a thread when a post gets deleted.
+ - Fixed an issue with saving a draft when navigating away from a thread or channel screens.
+ - Fixed an issue with running the app in a Stage Manager on iPad.
+ - Fixed an issue with the timing of showing the tutorial for the skin tone selector in the emoji picker.
+ - Fixed a crash when toggling Collapsed Reply Thread on/off.
+ - Fixed an issue with the push notification display when push notifications were set as a generic message with sender only.
+
+### Known Issues
+ - Users are unable to adjust the font size via the OS font size setting.
+ - Moving posts with the Wrangler plugin causes database "Unique key" errors [MM-44960](https://mattermost.atlassian.net/browse/MM-44960).
+ - Some pixel phones on Android 12+ might not go past the login screen. This is a known issue with the OS and the current workaround is to restart the device.
 
 ## 2.1.0 Release
 - Release Date: February 16, 2023

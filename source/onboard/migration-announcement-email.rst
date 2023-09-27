@@ -26,7 +26,7 @@ To get started:
 
 2. Once you reset your password, use your email and new password to log in. 
 
-3. `Download <https://mattermost.com/apps>`__ the Mattermost apps for desktop and mobile. Refer to the `Channels documentation  </messaging/welcome-to-mattermost-messaging.html>`__ on how to get up and running quickly.
+3. `Download <https://mattermost.com/apps>`__ the Mattermost apps for desktop and mobile. Refer to the `Use Mattermost </guides/use-mattermost.html>`__ end user documentation on how to get up and running quickly.
 
 4. Remember to bookmark the URL so you can use it to log in next time!
 

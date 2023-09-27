@@ -4,7 +4,7 @@ Configuration in a database
 .. include:: ../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
 
-A new configuration option was added in the `5.10 release </install/self-managed-changelog.html>`_ to use the database as the single source of truth for the active configuration of your Mattermost installation. This changes the Mattermost binary from reading the default ``config.json`` file to reading the configuration settings stored within a configuration table in the database.
+You can use the database as the single source of truth for the active configuration of your Mattermost installation. This changes the Mattermost binary from reading the default ``config.json`` file to reading the configuration settings stored within a configuration table in the database.
 
 Mattermost has been running our `community server <https://community.mattermost.com>`__ on this option since the feature was released, and recommends its use for those on :doc:`High Availability deployments <../scale/high-availability-cluster>`.
 
@@ -33,7 +33,7 @@ These instructions cover migrating the Mattermost configuration to the database 
 Get your database connection string
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The first step is to get your master database connection string. We recommend using the `mmctl config get command </manage/mmctl-command-line-tool.html#mmctl-config-get>`__, or using the CLI's ``mattermost config get`` command to do this.  
+The first step is to get your master database connection string. We recommend using the `mmctl config get command </manage/mmctl-command-line-tool.html#mmctl-config-get>`__ to do this.
 
 To use the ``mattermost config get`` command:
 
@@ -51,21 +51,20 @@ Example output:
 
 Another way to get your database connection string is to view your ``config.json`` file and get the value in ``SqlSettings.DataSource``.
 
-If ``SqlSettings.DataSource`` does not start with ``postgres://`` or ``mysql://``, then you have to add this line to the beginning based on the database in use. Also, if you see ``\u0026`` replace it with ``&``.
+If ``SqlSettings.DataSource`` does not start with ``postgres://``, then you have to add this line to the beginning based on the database in use. Also, if you see ``\u0026`` replace it with ``&``.
 
-Here are two example connection strings:
+Here is an example connection string:
 
+.. code-block:: text
+
+   postgres://mmuser:really_secure_password@localhost:5432/mattermost?sslmode=disable&connect_timeout=10
+   
 **MySQL**
 
 .. code-block:: text
 
    mysql://mmuser:really_secure_password@tcp(127.0.0.1:3306)/mattermost?charset=utf8mb4,utf8&writeTimeout=30s
 
-**PostgreSQL**
-
-.. code-block:: text
-
-   postgres://mmuser:really_secure_password@localhost:5432/mattermost?sslmode=disable&connect_timeout=10
 
 Create an environment file
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -76,26 +75,11 @@ Create an environment file
 
 Create the file ``/opt/mattermost/config/mattermost.environment`` to set the ``MM_CONFIG`` environment variable to the database connection string. For example:
 
-**MySQL**
-
-.. code-block:: text
-
-   MM_CONFIG='mysql://mmuser:mostest@tcp(127.0.0.1:3306)/mattermost?charset=utf8mb4,utf8&writeTimeout=30s'
-
-**PostgreSQL**
-
 .. code-block:: text
 
    MM_CONFIG='postgres://mmuser:mostest@localhost:5432/mattermost_test?sslmode=disable&connect_timeout=10'
 
-.. note::
-  Be sure to escape any single quotes in the database connection string by placing a ``\`` in front of them like this ``\'``. For example: ``MM_CONFIG='mysql://mmuser:it\'s-a-password!@tcp(127.0.0.1:3306)/mattermost?charset=utf8mb4,utf8&writeTimeout=30s'``
-
-.. code-block:: text
-
-   MM_CONFIG='mysql://mmuser:it\'s-a-password!@tcp(127.0.0.1:3306)/mattermost?charset=utf8mb4,utf8&writeTimeout=30s'
-
-Finally, run this command to verify the permissions on your Mattermost directory:
+Run this command to verify the permissions on your Mattermost directory:
 
 .. code-block:: bash
 
@@ -129,8 +113,8 @@ Here's a complete ``mattermost.service`` file with the ``EnvironmentFile`` line 
    [Unit]
    Description=Mattermost
    After=network.target
-   After=mysql.service
-   Requires=mysql.service
+   After=postgresql.service
+   Requires=postgresql.service
 
    [Service]
    Type=notify
@@ -146,29 +130,19 @@ Here's a complete ``mattermost.service`` file with the ``EnvironmentFile`` line 
    LimitNOFILE=49152
 
    [Install]
-   WantedBy=mysql.service
-
-.. note::
-  If you're using PostgreSQL as your database, the ``mysql.service`` must be replaced with ``postgresql.service``. The easiest way to avoid making a mistake is to add only the ``EnvironmentFile`` line and not copy the entire example.
+   WantedBy=postgresql.service
 
 Migrate configuration from ``config.json``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-You can use the `mmctl config migrate </manage/mmctl-command-line-tool.html#mmctl-config-migrate>`__ command, or you can use the CLI mattermost config migrate command for this step, as described below.
+You can use the `mmctl config migrate </manage/mmctl-command-line-tool.html#mmctl-config-migrate>`__ command to migrate the configuration.
 
 .. note::
  
    If you're using a High Availability cluster, you only need to run this on a single server in the cluster.
 
-The CLI command to migrate the config to the database should always be run as the *mattermost* user.
-
-.. code-block:: bash
-
-   sudo su mattermost
-   cd /opt/mattermost
-   mmctl config migrate ./config/config.json 'mysql://mmuser:mostest@tcp(127.0.0.1:3306)/mattermost?charset=utf8mb4,utf8&writeTimeout=30s'
-
 .. warning::
+   
    When migrating config, Mattermost will incorporate configuration from any existing ``MM_*`` environment variables set in the current shell. See `Environment Variables  </configure/configuration-settings.html>`_
    
 As with the environment file, you'll have to escape any single quotes in the database connection string. Also, any existing SAML certificates will be migrated into the database as well so they are available for all servers in the cluster.

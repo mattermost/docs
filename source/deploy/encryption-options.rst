@@ -8,7 +8,7 @@ Mattermost provides encryption-in-transit and encryption-at-rest capabilities. T
 
 Encryption is not required for GDPR, although it can be used as an additional safeguard against data breach.
 
-.. contents::
+.. contents:: On this page
   :backlinks: top
   :local:
 
@@ -32,7 +32,7 @@ Encryption-at-rest
 Database
 ~~~~~~~~
 
-Encryption-at-rest is available for messages via hardware and software disk encryption solutions applied to the Mattermost database, which resides on its own server within your infrastructure. Encryption options at the disk level are documented both for `MySQL <https://www.percona.com/blog/2016/04/08/mysql-data-at-rest-encryption/>`__ and `PostgreSQL <https://www.postgresql.org/docs/10/encryption-options.html>`__.
+Encryption-at-rest is available for messages via hardware and software disk encryption solutions applied to the Mattermost database, which resides on its own server within your infrastructure. See the `PostgreSQL <https://www.postgresql.org/docs/10/encryption-options.html>`__ database documentation for details on encryption options at the disk level.
 
 File storage
 ~~~~~~~~~~~~~
