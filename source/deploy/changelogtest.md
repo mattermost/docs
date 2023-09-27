@@ -8,6 +8,8 @@ See the [changelog in progress](https://bit.ly/2nK3cVf) for the upcoming release
 
 **Release day: September 15, 2023**
 
+Testing
+
 ### Important Upgrade Notes
  - Removed the deprecated Insights feature.
  - Mattermost Boards and various other plugins have transitioned to being fully community supported. See this [forum post](https://forum.mattermost.com/t/upcoming-product-changes-to-boards-and-various-plugins/16669) for more details.
