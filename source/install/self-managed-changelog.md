@@ -6,11 +6,98 @@ See the [changelog in progress](https://bit.ly/2nK3cVf) for the upcoming release
 
 Latest Mattermost Releases:
 
+- [Release v9.1 - Feature Release](#release-v9-1-feature-release)
 - [Release v9.0 - Major Release](#release-v9-0-major-release)
 - [Release v8.1 - Extended Support Release](#release-v8-1-extended-support-release)
 - [Release v8.0 - Major Release](#release-v8-0-major-release)
-- [Release v7.10 - Feature Release](#release-v7-10-feature-release)
 - [Release v7.8 - Extended Support Release](#release-v7-8-extended-support-release)
+
+## Release v9.1 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
+
+**Release day: October 16, 2023**
+
+### Important Upgrade Notes
+ - Removed the deprecated Insights feature.
+ - Mattermost Boards and various other plugins have transitioned to being fully community supported. See this [forum post](https://forum.mattermost.com/t/upcoming-product-changes-to-boards-and-various-plugins/16669) for more details.
+
+**IMPORTANT:** If you upgrade from a release earlier than v9.0, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
+
+### Compatibility
+ - Updated Chromium minimum supported version to 116+.
+
+### Improvements
+
+#### User Interface (UI)
+ - Added a **Cancel** button to the **Delete category** modal.
+ - Added the ability to resize the channel sidebar and right-hand sidebar.
+ - Added two new filtering options (show all channel types, show private channels) to the **Browse channels** modal.
+ - Pre-packaged Calls version v0.19.0.
+ - Pre-packaged GitLab plugin version v1.7.0.
+ - Added additional reaction options when viewing threads or messages when the sidebar is larger than its minimum width.
+ - Added block changes to name, display name, and purpose for direct and group messages.
+ - Added a link to [notification documentation](https://docs.mattermost.com/preferences/manage-your-notifications.html) in the **Notification Settings** modal.
+ - Updated the post textbox measurement code to be more reliable.
+ - Pre-packaged Calls version v0.19.1.
+ - The ``invite`` slash command now supports custom user groups.
+ - Re-enabled the remote marketplace functionality, when configured as per ``PluginSettings.EnableRemoteMarketplace`` [documentation](https://docs.mattermost.com/configure/plugins-configuration-settings.html#plugins-enableremotemarketplace).
+ - Added the ability to convert a group message channel to a private channel.
+ - Group message channels now behave like direct message channels, showing a new mention for every new message.
+
+#### Administration
+ - Added ``mattermost-plugin-api`` into the mono repo.
+ - Added a new config setting ``TeamSettings.EnableJoinLeaveMessageByDefault`` that sets the default value for ``UserSetting``, ``ADVANCED_FILTER_JOIN_LEAVE``.
+ - Added 2 new URL parameters to ``GET /api/v4/groups``: ``include_archived`` and ``filter_archived``. Added the ability to restore archived groups from the user groups modal.
+ - Added file storage information to the support package.
+ - Improved performance on data retention ``DeleteOrphanedRows`` queries. Removed feature flag ``DataRetentionConcurrencyEnabled``. Data retention now runs without concurrency in order to avoid any performance degradation. Added a new configuration setting ``DataRetentionSettings.RetentionIdsBatchSize``, which allows admins to to configure how many batches of IDs will be fetched at a time when deleting orphaned reactions. The default value is 100.
+ - The Go version was bumped to v1.20.
+ - A ``user_id`` is now included in all HTTP logs (debug level) to help determine who is generating unexpected traffic.
+ - Added a setting ``DisplaySettings.MaxMarkdownNodes`` to limit the maximum complexity of markdown text on mobile.
+ - Added new URL Parameter to ``GET /api/v4/groups`` and ``GET /api/v4/groups/:group_id``. ``include_member_ids`` will add all the members ``user_ids`` to the group response objects. You can now also add group members to a channel, any members that are not part of the team can be added to the team through this flow and subsequently added the channel.
+
+### Bug Fixes
+ - Fixed keyboard support for the left-hand side channel menu, the left-hand side category menu, and the post dot menu.
+ - Fixed display name in the ``comment_on`` component.
+ - Fixed an issue with keyboard support for some menus with submenus.
+ - Fixed an issue with a disappearing punctuation when following a group mention.
+ - Fixed an issue where compliance export jobs were not able to start after disabling and enabling the compliance export.
+ - Fixed a potential read after write issue when loading a license.
+
+### config.json
+Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
+
+#### Changes to all plans:
+ - Under ``ServiceSettings`` in the ``config.json``:
+    - 
+
+### API Changes
+ - Added the ``X-Forwarded-For`` request header to the audit stream for all Rest API calls.
+ - Added API endpoint ``POST /api/v4/user/login/desktop_login``. Modified OAuth/SAML flows to include ``desktop_login`` where applicable.
+ - Added new API endpoint ``GET`` ``/api/v4/channels/<channel-id>/common_teams`` to fetch list of teams common between members of a group message.
+ - Added new API endpoint ``POST`` ``/api/v4/channels/<channel-id>/convert_to_channel`` to convert a group message to a private channel.
+ - Added a new ``MessageHasBeenDeleted`` hook to the plugin API.
+ - Moved the ``request`` package into the public shared folder.
+
+### Go Version
+ - v9.1 is built with Go ``v1.19.5``.
+
+### Known Issues
+ - Known issues related to the new feature to convert a Group Message channel to a private channel: [MM-54525](https://mattermost.atlassian.net/browse/MM-54525), [MM-54526](https://mattermost.atlassian.net/browse/MM-54526), [MM-54541](https://mattermost.atlassian.net/browse/MM-54541), [MM-54542](https://mattermost.atlassian.net/browse/MM-54542).
+ - ``/invite`` user to a channel incorrectly posts an ephemeral message of ``<no value> added to {channel_name} channel`` [MM-54555](https://mattermost.atlassian.net/browse/MM-54555).
+ - Left-hand side resize option overrides the **Browse/Create Channel** menu if To-Do plugin is installed [MM-54367](https://mattermost.atlassian.net/browse/MM-54367).
+ - Copy pasting images from Chrome fails [MM-54486](https://mattermost.atlassian.net/browse/MM-54486).
+ - Adding an @mention at the start of a post draft and pressing the left or right arrow key can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
+ - Google login fails on the Classic mobile apps.
+ - Status may sometimes get stuck as **Away** or **Offline** in High Availability mode with IP Hash turned off.
+ - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
+ - The team sidebar on the desktop app does not update when channels have been read on mobile.
+ - Slack import through the CLI fails if email notifications are enabled.
+ - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
+ - The Playbooks left-hand sidebar doesn't update when a user is added to a run or playbook without a refresh.
+ - If a user isn't a member of a configured broadcast channel, posting a status update might fail without any error feedback. As a temporary workaround, join the configured broadcast channels, or remove those channels from the run configuration.
+ - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
+
+### Contributors
+ - 
 
 ## Release v9.0 - [Major Release](https://docs.mattermost.com/upgrade/release-definitions.html#major-release)
 
