@@ -13,6 +13,10 @@ Latest Mattermost Cloud releases:
 
 ## Release 2023-09-26
 
+### Important Upgrade Notes
+
+ - **Mattermost Boards is now removed from all Cloud workspaces**. See this [forum post](https://forum.mattermost.com/t/upcoming-product-changes-to-boards-and-various-plugins/16669) for more details.
+
 ### Improvements
 
 #### User Interface (UI)
