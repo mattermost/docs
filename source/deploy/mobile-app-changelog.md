@@ -20,7 +20,6 @@ Latest Mattermost Mobile Apps releases:
 
 ### Improvements
  - Added an alert showing the user that the server is using an invalid or untrusted SSL certificate.
- - Added an alert showing when a deeplink is invalid.
  - Calls: added wired headset support as an option in the Android build. iOS supports wired headset as the non-speakerphone output.
  - Added changes for v9.1+ servers that send notifications for every message within group messages.
 
