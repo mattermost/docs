@@ -29,6 +29,9 @@ Latest Mattermost Mobile Apps releases:
  - Fixed a display error on the Multi-factor Authentication (MFA) screen.
  - Fixed an issue where the app hanged when using the magic keyboard on iPadOS 17.
 
+### Open Source Components
+ - Removed ``@rudderstack/rudder-sdk-react-native`` from https://github.com/mattermost/mattermost-mobile/.
+
 ### Known Issues
  - The **Following** button in the Thread view wraps incorrectly [MM-54499](https://mattermost.atlassian.net/browse/MM-54499).
  - "Removed from channel" message is shown when a Direct Message channel is converted to a private channel [MM-54525](https://mattermost.atlassian.net/browse/MM-54525).
