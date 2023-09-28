@@ -122,7 +122,7 @@ Follow these steps to configure Mattermost to use your Elasticsearch server, and
    - Additional advanced Elasticsearch settings for large deployments can be configured outside the System Console in the ``config.json`` file. Read the `Elasticsearch configuration settings </configure/configuration-settings.html#elasticsearch>`__ documentation to learn more.
    - If your deployment has a large number of posts (typically in excess of one million but not strictly defined), the reindexing progress percentage may stay at 99% for a long time. The size of the data to be indexed is estimated, and on large databases, estimations can become inaccurate. While progress estimates may be inaccurate, and the progress percentage may appear stuck at near completion, indexing will continue behind the scenes until complete.
    - Search results for files shared before upgrading to Mattermost Server v5.35 may be incomplete until an extraction command is run using the `mmctl </manage/mmctl-command-line-tool.html#mmctl-extract>`__. After running this command, the search index must be rebuilt. Go to **System Console > Environment > Elasticsearch > Bulk Indexing**, then select **Index Now** to rebuild the search index to include older file contents.
-   - For high post volume deployments it is strongly encouraged to read and properly configure the `LiveIndexingBatchSize </configure/environment-configuration-settings.html#live-indexing-batch-size>`__     
+   - For high post volume deployments, we strongly encourage you to read and properly configure the Mattermost `LiveIndexingBatchSize </configure/environment-configuration-settings.html#live-indexing-batch-size>`__ configuration setting.
     
 Limitations
 ------------
@@ -153,7 +153,7 @@ Mattermost creates three types of indexes: users, channels, and posts. Users and
 Can I pause an Elasticsearch indexing job?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Yes. From Mattermost v.6.7, the Elasticsearch indexing job is resumable. Stopping a server while the Elasticsearch indexing job is running puts the job in pending status. The job resumes when the server restarts. System Admins can cancel an indexing job through the System Console.
+Yes. From Mattermost v6.7, the Elasticsearch indexing job is resumable. Stopping a server while the Elasticsearch indexing job is running puts the job in pending status. The job resumes when the server restarts. System Admins can cancel an indexing job through the System Console.
 
 Can an index rollover policy be defined?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
