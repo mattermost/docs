@@ -29,14 +29,14 @@ Latest Mattermost Releases:
 #### User Interface (UI)
  - Added a **Cancel** button to the **Delete category** modal.
  - Added the ability to resize the channel sidebar and right-hand sidebar.
- - Added two new filtering options (show all channel types, show private channels) to the **Browse channels** modal.
+ - Added two new filtering options (show all channel types and show private channels) to the **Browse channels** modal.
  - Pre-packaged GitLab plugin version v1.7.0.
  - Added additional reaction options when viewing threads or messages when the sidebar is larger than its minimum width.
  - Added block changes to name, display name, and purpose for direct and group messages.
  - Added a link to [notification documentation](https://docs.mattermost.com/preferences/manage-your-notifications.html) in the **Notification Settings** modal.
  - Updated the post textbox measurement code to be more reliable.
  - Pre-packaged Calls version v0.19.1.
- - The ``invite`` slash command now supports custom user groups.
+ - The ``/invite`` slash command now supports custom user groups.
  - Re-enabled the remote marketplace functionality, when configured as per ``PluginSettings.EnableRemoteMarketplace`` [documentation](https://docs.mattermost.com/configure/plugins-configuration-settings.html#plugins-enableremotemarketplace).
  - Added the ability to convert a group message channel to a private channel.
  - Group message channels now behave like direct message channels, showing a new mention for every new message.
@@ -59,7 +59,7 @@ Latest Mattermost Releases:
  - Fixed keyboard support for the left-hand side channel menu, the left-hand side category menu, and the post dot menu.
  - Fixed display name in the ``comment_on`` component.
  - Fixed an issue with keyboard support for some menus with submenus.
- - Fixed an issue with a disappearing punctuation when following a group mention.
+ - Fixed an issue with disappearing punctuation when following a group mention.
  - Fixed an issue where compliance export jobs were not able to start after disabling and enabling the compliance export.
  - Fixed a potential read after write issue when loading a license.
 
