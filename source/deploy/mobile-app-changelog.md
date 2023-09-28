@@ -31,6 +31,7 @@ Latest Mattermost Mobile Apps releases:
 
 ### Known Issues
  - The **Following** button in the Thread view wraps incorrectly [MM-54499](https://mattermost.atlassian.net/browse/MM-54499).
+ - "Removed from channel" message is shown when a Direct Message channel is converted to a private channel [MM-54525](https://mattermost.atlassian.net/browse/MM-54525).
  - Users are unable to adjust the font size via the OS font size setting.
  - Some Google Pixel phones on Android 12+ might not continue past the login screen. This is a known issue with the OS, and the current workaround is to restart the device.
 
