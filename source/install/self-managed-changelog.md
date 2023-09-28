@@ -31,18 +31,18 @@ Latest Mattermost Releases:
  - Added the ability to resize the channel sidebar and right-hand sidebar.
  - Added two new filtering options (show all channel types and show private channels) to the **Browse channels** modal.
  - Pre-packaged GitLab plugin version v1.7.0.
+ - Pre-packaged Calls version v0.19.1.
  - Added additional reaction options when viewing threads or messages when the sidebar is larger than its minimum width.
  - Added block changes to name, display name, and purpose for direct and group messages.
  - Added a link to [notification documentation](https://docs.mattermost.com/preferences/manage-your-notifications.html) in the **Notification Settings** modal.
  - Updated the post textbox measurement code to be more reliable.
- - Pre-packaged Calls version v0.19.1.
  - The ``/invite`` slash command now supports custom user groups.
  - Re-enabled the remote marketplace functionality, when configured as per ``PluginSettings.EnableRemoteMarketplace`` [documentation](https://docs.mattermost.com/configure/plugins-configuration-settings.html#plugins-enableremotemarketplace).
  - Added the ability to convert a group message channel to a private channel.
  - Group message channels now behave like direct message channels, showing a new mention for every new message.
 
 #### Administration
- - Added ``mattermost-plugin-api`` into the mono repo.
+ - Added ``mattermost-plugin-api`` into the mattermost repo.
  - Updated the public server module version to v0.0.9.
  - Added 2 new URL parameters to ``GET /api/v4/groups``: ``include_archived`` and ``filter_archived``. Added the ability to restore archived groups from the user groups modal.
  - Added file storage information to the support package.
@@ -53,7 +53,7 @@ Latest Mattermost Releases:
  - Added new frontend plugin extension point for the new messages separator bar.
  - Added a new plugin extensibility point to add actions to the code blocks.
  - Added the plugin hook ``UserHasBeenDeactivated``.
- - Added a new server side plugin API method to set the searchable content for a file info (``SetFileSearchableContent``). The ``MessageHasBeenPosted`` plugin hook is now executed after the attachments are linked to the post.
+ - Added a new server side plugin API method to set the searchable content for file info (``SetFileSearchableContent``). The ``MessageHasBeenPosted`` plugin hook is now executed after the attachments are linked to the post.
 
 ### Bug Fixes
  - Fixed keyboard support for the left-hand side channel menu, the left-hand side category menu, and the post dot menu.
@@ -89,7 +89,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - v9.1 is built with Go ``v1.20.7``.
 
 ### Known Issues
- - Known issues related to the new feature to convert a Group Message channel to a private channel: [MM-54525](https://mattermost.atlassian.net/browse/MM-54525), [MM-54526](https://mattermost.atlassian.net/browse/MM-54526), [MM-54541](https://mattermost.atlassian.net/browse/MM-54541), [MM-54542](https://mattermost.atlassian.net/browse/MM-54542).
+ - A known issue related to the new feature to convert a Group Message channel to a private channel: [MM-54526](https://mattermost.atlassian.net/browse/MM-54526).
  - ``/invite`` user to a channel incorrectly posts an ephemeral message of ``<no value> added to {channel_name} channel`` [MM-54555](https://mattermost.atlassian.net/browse/MM-54555).
  - Left-hand side resize option overrides the **Browse/Create Channel** menu if To-Do plugin is installed [MM-54367](https://mattermost.atlassian.net/browse/MM-54367).
  - Copy pasting images from Chrome fails [MM-54486](https://mattermost.atlassian.net/browse/MM-54486).
