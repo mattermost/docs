@@ -23,6 +23,9 @@ Note: Mattermost Mobile App v2.8.1 contains high to critical level security fixe
 ### Compatibility
  - Bumped the iOS minimum supported version to v13.4.
 
+### Improvements
+ - Added an alert showing when a deeplink is invalid.
+
 ## 2.8.0 Release
 - Release Date: September 15, 2023
 - Server Versions Supported: Server v7.8.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
