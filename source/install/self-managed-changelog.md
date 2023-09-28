@@ -33,7 +33,7 @@ Latest Mattermost Releases:
  - Pre-packaged GitLab plugin version v1.7.0.
  - Pre-packaged Calls version v0.19.1.
  - Added additional reaction options when viewing threads or messages when the sidebar is larger than its minimum width.
- - Added block changes to name, display name, and purpose for direct and group messages.
+ - Improved the API to block any changes to direct and group messages names, display name, or purpose.
  - Added a link to [notification documentation](https://docs.mattermost.com/preferences/manage-your-notifications.html) in the **Notification Settings** modal.
  - Updated the post textbox measurement code to be more reliable.
  - The ``/invite`` slash command now supports custom user groups.
