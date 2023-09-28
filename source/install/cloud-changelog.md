@@ -4,12 +4,28 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 
 Latest Mattermost Cloud releases:
 
+- [Release 2023-10-12](#release-2023-10-12)
 - [Release 2023-09-26](#release-2023-09-26)
 - [Release 2023-09-12](#release-2023-09-12)
 - [Release 2023-08-29](#release-2023-08-29)
 - [Release 2023-08-09](#release-2023-08-09)
 - [Release 2023-08-03](#release-2023-08-03)
-- [Release 2023-07-26](#release-2023-07-26)
+
+## Release 2023-10-12
+
+### Improvements
+
+#### Administration
+ - Added heap profile, CPU profile, and goroutines profile to the support package.
+ - Merged WIP i18n locales, but disallowed selecting unsupported locales.
+
+### Bug Fixes
+ - Fixed an issue where the channel member count increased when adding an already present user.
+
+### Known Issues
+ - Known issues related to the new feature to convert a Group Message channel to a private channel: [MM-54525](https://mattermost.atlassian.net/browse/MM-54525), [MM-54526](https://mattermost.atlassian.net/browse/MM-54526), [MM-54541](https://mattermost.atlassian.net/browse/MM-54541), [MM-54542](https://mattermost.atlassian.net/browse/MM-54542).
+ - ``/invite`` user to a channel incorrectly posts an ephemeral message of ``<no value> added to {channel_name} channel`` [MM-54555](https://mattermost.atlassian.net/browse/MM-54555).
+ - Left-hand side resize option overrides the **Browse/Create Channel** menu if To-Do plugin is installed [MM-54367](https://mattermost.atlassian.net/browse/MM-54367).
 
 ## Release 2023-09-26
 
