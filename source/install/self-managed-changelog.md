@@ -86,7 +86,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - Moved the ``request`` package into the public shared folder.
 
 ### Go Version
- - v9.1 is built with Go ``v1.20.0``.
+ - v9.1 is built with Go ``v1.20.7``.
 
 ### Known Issues
  - Known issues related to the new feature to convert a Group Message channel to a private channel: [MM-54525](https://mattermost.atlassian.net/browse/MM-54525), [MM-54526](https://mattermost.atlassian.net/browse/MM-54526), [MM-54541](https://mattermost.atlassian.net/browse/MM-54541), [MM-54542](https://mattermost.atlassian.net/browse/MM-54542).
