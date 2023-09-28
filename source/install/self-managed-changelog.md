@@ -89,7 +89,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - v9.1 is built with Go ``v1.20.7``.
 
 ### Known Issues
- - A known issue related to the new feature to convert a Group Message channel to a private channel: [MM-54526](https://mattermost.atlassian.net/browse/MM-54526).
+ - A known issue related to the new feature to convert a Group Message channel to a private channel [MM-54526](https://mattermost.atlassian.net/browse/MM-54526).
  - ``/invite`` user to a channel incorrectly posts an ephemeral message of ``<no value> added to {channel_name} channel`` [MM-54555](https://mattermost.atlassian.net/browse/MM-54555).
  - Left-hand side resize option overrides the **Browse/Create Channel** menu if To-Do plugin is installed [MM-54367](https://mattermost.atlassian.net/browse/MM-54367).
  - Copy pasting images from Chrome fails [MM-54486](https://mattermost.atlassian.net/browse/MM-54486).
@@ -97,7 +97,6 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - Google login fails on the Classic mobile apps.
  - Status may sometimes get stuck as **Away** or **Offline** in High Availability mode with IP Hash turned off.
  - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
- - The team sidebar on the desktop app does not update when channels have been read on mobile.
  - Slack import through the CLI fails if email notifications are enabled.
  - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
  - The Playbooks left-hand sidebar doesn't update when a user is added to a run or playbook without a refresh.
