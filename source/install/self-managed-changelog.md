@@ -30,7 +30,7 @@ Latest Mattermost Releases:
  - Added a **Cancel** button to the **Delete category** modal.
  - Added the ability to resize the channel sidebar and right-hand sidebar.
  - Added two new filtering options (show all channel types and show private channels) to the **Browse channels** modal.
- - Pre-packaged GitLab plugin version v1.7.0.
+ - Pre-packaged GitLab plugin version [v1.7.0](https://github.com/mattermost/mattermost-plugin-gitlab/releases/tag/v1.7.0).
  - Pre-packaged Calls version v0.19.1.
  - Added additional reaction options when viewing threads or messages when the sidebar is larger than its minimum width.
  - Added a link to [notification documentation](https://docs.mattermost.com/preferences/manage-your-notifications.html) in the **Notification Settings** modal.
