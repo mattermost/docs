@@ -3,11 +3,11 @@
 Latest Mattermost Mobile Apps releases:
 
 - [2.8.1 Release](#release)
-- [2.8.0 Release](#release)
-- [2.7.0 Release](#id1)
-- [2.6.0 Release](#id6)
-- [2.5.1 Release](#id11)
-- [2.5.0 Release](#id14)
+- [2.8.0 Release](#id2)
+- [2.7.0 Release](#id5)
+- [2.6.0 Release](#id10)
+- [2.5.1 Release](#id15)
+- [2.5.0 Release](#id18)
 
 ## 2.8.1 Release
 - Release Date: 
@@ -25,6 +25,9 @@ Note: Mattermost Mobile App v2.8.1 contains high to critical level security fixe
 
 ### Improvements
  - Added an alert showing when a deeplink is invalid.
+
+### Bug Fixes
+ - Fixed an issue where the app hanged when using the magic keyboard on iPadOS 17.
 
 ## 2.8.0 Release
 - Release Date: September 15, 2023
