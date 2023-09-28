@@ -85,7 +85,7 @@ The mmctl tool comes bundled with Mattermost package. For customers that want to
 
    .. tab:: Using release package (Linux, macOS, Windows)
 
-      Starting release ``v8.0.0`` of Mattermost, you can download the mmctl builds at their release URL: ``https://releases.mattermost.com/mmctl/${MATTERMOST_VERSION}/${PLATFORM}_${ARCHITECTURE}.tar`` (for windows, substitute the `.tar` suffix with `.zip`)
+      Starting with the release ``v8.0.0`` of Mattermost, you can download the mmctl builds at their release URL: ``https://releases.mattermost.com/mmctl/${MATTERMOST_VERSION}/${PLATFORM}_${ARCHITECTURE}.tar`` (for windows, substitute the ``.tar`` suffix with ``.zip``)
 
       E.g. to download version ``v8.0.0`` of the mmctl amd64 build for linux, you can run the following:
 
