@@ -26,7 +26,6 @@ Latest Mattermost Mobile Apps releases:
 ### Bug Fixes
  - Fixed an issue on Android where pressing the back button on certain settings did not always save the changes.
  - Fixed a display error on the Multi-factor Authentication (MFA) screen.
- - Fixed an issue where the app hanged when using the magic keyboard on iPadOS 17.
 
 ### Open Source Components
  - Removed ``@rudderstack/rudder-sdk-react-native`` from https://github.com/mattermost/mattermost-mobile/.
