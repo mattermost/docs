@@ -529,25 +529,25 @@ Live indexing batch size
 
 **How to find the right number for your server**
 
-1. You must understand how many posts your server makes every 10 seconds. Run the query below to calculate your server's average posts per second.
+1. You must understand how many posts your server makes every minute. Run the query below to calculate your server's average posts per minute.
 
     Note that this query can be heavy, so we recommend that you run it during non-peak hours.
-    Additionally, you can uncomment the ``WHERE`` clause to see the posts per second over the last year. ``31536000000`` represents the number of milliseconds in a year. 
+    Additionally, you can adjust the ``WHERE`` clause to see the posts per minute over a different time period. Right now ``31536000000`` represents the number of milliseconds in a year. 
 
     .. code-block:: SQL
 
       SELECT
-        AVG(postsPerSecond) as averagePostsPerSecond
+        AVG(postsPerMinute) as averagePostsPerMinute
       FROM (
         SELECT 
-          count(*) as postsPerSecond, 
-          date_trunc('second', to_timestamp(createat/1000))
+          count(*) as postsPerMinute, 
+          date_trunc('minute', to_timestamp(createat/1000))
         FROM posts
-        -- 	WHERE createAt > ( (extract(epoch from now()) * 1000 )  - 31536000000)
-        GROUP BY date_trunc('second', to_timestamp(createat/1000))
-      ) as ppd;
+        WHERE createAt > ( (extract(epoch from now()) * 1000 )  - 31536000000)
+        GROUP BY date_trunc('minute', to_timestamp(createat/1000))
+      ) as ppm;
 
-2. Decide the acceptable index window for your environment, and multiply your average posts per second by that. We suggest 10-20 seconds. Assuming you have 10 posts per second on average, you would calculate ``10 posts per second * 20 seconds`` to come to the number ``200``. After 200 posts, Mattermost will run an indexing job, so on average, there would be a 20-second delay in searchability.
+2. Decide the acceptable index window for your environment, and divide your average posts per minute by that. We suggest 10-20 seconds. Assuming you have ``600`` posts per minute on average, and you want to index every 20 seconds (``60 seconds / 20 seconds = 3```) you would calculate ``600 / 3`` to come to the number ``200``. After 200 posts, Mattermost will index the posts into Elasticsearch. So, on average, there would be a 20-second delay in searchability.
 
 3. Edit the ``config.json`` or run mmctl to modify the ``LiveIndexingBatchSize`` setting
   
