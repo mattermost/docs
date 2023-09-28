@@ -26,12 +26,12 @@ Latest Mattermost Mobile Apps releases:
 ### Bug Fixes
  - Fixed an issue on Android where pressing the back button on certain settings did not always save the changes.
  - Fixed a display error on the Multi-factor Authentication (MFA) screen.
+ - Fixed an issue where the **Following** button in the Thread view wrapped incorrectly.
 
 ### Open Source Components
  - Removed ``@rudderstack/rudder-sdk-react-native`` from https://github.com/mattermost/mattermost-mobile/.
 
 ### Known Issues
- - The **Following** button in the Thread view wraps incorrectly [MM-54499](https://mattermost.atlassian.net/browse/MM-54499).
  - "Removed from channel" message is shown when a Direct Message channel is converted to a private channel [MM-54525](https://mattermost.atlassian.net/browse/MM-54525).
  - Users are unable to adjust the font size via the OS font size setting.
  - Some Google Pixel phones on Android 12+ might not continue past the login screen. This is a known issue with the OS, and the current workaround is to restart the device.
