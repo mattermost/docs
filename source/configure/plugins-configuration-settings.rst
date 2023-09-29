@@ -1154,7 +1154,7 @@ Enabled teams
   :systemconsole: Plugins > MS Teams Connect
   :configjson: N/A
   :environment: N/A
-  :description: Specify how often, in hours, to prompt users to connect their Microsoft Teams user account to their Mattermost user account. Leave empty to disable the prompt.
+  :description: Specify how often, in hours, to prompt users to connect their Microsoft Teams user account to their Mattermost user account.
 
 Prompt interval for DMs and GMs
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1166,6 +1166,41 @@ Prompt interval for DMs and GMs
 | Leave this value blank to disble the prompt.                           |                                                      |
 | Numerical value.                                                       |                                                      |
 +------------------------------------------------------------------------+------------------------------------------------------+
+
+.. config:setting:: plugins-msteamssyncmaxsizeattachments
+  :displayname: Maximum size of attachments to support complete one time download (Plugins - MS Teams Connect)
+  :systemconsole: Plugins > MS Teams Connect
+  :configjson: N/A
+  :environment: N/A
+  :description: Specify the maximum file size, in megabytes (MB), of attachments that can be loaded into memory. Attachment files larger than this value will be streamed from Microsoft Teams to Mattermost.
+
+Maximum size of attachments to support complete one time download
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++--------------------------------------------------------------------+----------------------------------------------------------+
+| Specify the maximum file size, in megabytes (MB), of attachments   | - System Config path: **Plugins > MS Teams Connect**     |
+| that can be loaded into memory. Attachment files larger than       | - ``config.json`` setting: N/A                           |
+| this value will be streamed from Microsoft Teams to Mattermost.    | - Environment variable: N/A                              |
+|                                                                    |                                                          |
+| Numerical value. Default is **20** MB.                             |                                                          |
++--------------------------------------------------------------------+----------------------------------------------------------+
+
+.. config:setting:: plugins-msteamssyncbuffer
+  :displayname: Buffer size for streaming files (Plugins - MS Teams Connect)
+  :systemconsole: Plugins > MS Teams Connect
+  :configjson: N/A
+  :environment: N/A
+  :description: Specify the buffer size, in megabytes (MB), for streaming attachment files from Microsoft Teams to Mattermost.
+
+Buffer size for streaming files
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++--------------------------------------------------------------------+----------------------------------------------------------+
+| Specify the buffer size, in megabytes (MB), for streaming          | - System Config path: **Plugins > MS Teams Connect**     |
+| attachment files from Microsoft Teams to Mattermost.               | - ``config.json`` setting: N/A                           |
+|                                                                    | - Environment variable: N/A                              |
+| Numerical value. Default is **20** MB.                             |                                                          |
++--------------------------------------------------------------------+----------------------------------------------------------+
 
 ----
 
