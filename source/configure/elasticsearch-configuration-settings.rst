@@ -502,14 +502,79 @@ Live indexing batch size
 *Available in legacy Enterprise Edition E10/E20*
 
 +---------------------------------------------------------------+-----------------------------------------------------------------------------------+
-| The number of new posts batched together before they're       | - System Config path: N/A                                                         |
-| added to the Elasticsearch index.                             | - ``config.json`` setting: ``".Elasticsearchsettings.LiveIndexingBatchSize: 1",`` |
-|                                                               | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_LIVEINDEXINGBATCHSIZE``        |
-| Numerical input. Default is **1**.                            |                                                                                   |
+| The number of new posts needed before those posts are added   | - System Config path: N/A                                                         |
+| to the Elasticsearch index. Once added to the Index,          | - ``config.json`` setting: ``".Elasticsearchsettings.LiveIndexingBatchSize: 1",`` |
+| the post becomes searchable.                                  | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_LIVEINDEXINGBATCHSIZE``        |
+|                                                               |                                                                                   |
+| On servers with more than 1 post per second, we suggest       |                                                                                   |
+| setting this value to the average number of  posts over a     |                                                                                   |
+| 20 second period of time.                                     |                                                                                   |
+|                                                               |                                                                                   |
+| Numerical input. Default is **1**. Every post is indexed      |                                                                                   |
+| synchronously as they are created.                            |                                                                                   |
 +---------------------------------------------------------------+-----------------------------------------------------------------------------------+
-| **Note**: It may be necessary to increase this value to avoid hitting the rate limit of your Elasticsearch cluster on installs handling           |
-| multiple messages per second.                                                                                                                     |
+| **Note**: It may be necessary to increase this value to avoid hitting the rate limit or resource limit of your Elasticsearch cluster              |
+| on installs handling more than 1 post per second.                                                                                                 |
+|                                                                                                                                                   |
+| **What exactly happens when I increase this value?**                                                                                              |
+| The primary impact is that a post will be indexed into Elasticsearch after the threshold of posts is met which then makes the posts searchable    |
+| within Mattermost. So, if you set this based on our recommendations for larger servers, and you make a post, you cannot find it via search        | 
+| for ~ 10-20 seconds, on average. Realistically, no users should see or feel this impact due to the limited amount of users who are actively       |
+| **searching** for a post this quickly. You can set this value to a lower average or higher average as well, depending on your Elasticsearch       |
+| server specifications.                                                                                                                            |
+|                                                                                                                                                   |
+| During busy periods, this delay will be faster as more traffic is happening, causing more posts and a quicker time to hit the index number.       |
+| During slow times, expect the reverse.                                                                                                            |
 +---------------------------------------------------------------+-----------------------------------------------------------------------------------+
+
+**How to find the right number for your server**
+
+1. You must understand how many posts your server makes every minute. Run the query below to calculate your server's average posts per minute.
+
+    Note that this query can be heavy, so we recommend that you run it during non-peak hours.
+    Additionally, you can adjust the ``WHERE`` clause to see the posts per minute over a different time period. Right now ``31536000000`` represents the number of milliseconds in a year. 
+
+    .. code-block:: SQL
+
+      SELECT
+        AVG(postsPerMinute) as averagePostsPerMinute
+      FROM (
+        SELECT 
+          count(*) as postsPerMinute, 
+          date_trunc('minute', to_timestamp(createat/1000))
+        FROM posts
+        WHERE createAt > ( (extract(epoch from now()) * 1000 )  - 31536000000)
+        GROUP BY date_trunc('minute', to_timestamp(createat/1000))
+      ) as ppm;
+
+2. Decide the acceptable index window for your environment, and divide your average posts per minute by that. We suggest 10-20 seconds. Assuming you have ``600`` posts per minute on average, and you want to index every 20 seconds (``60 seconds / 20 seconds = 3```) you would calculate ``600 / 3`` to come to the number ``200``. After 200 posts, Mattermost will index the posts into Elasticsearch. So, on average, there would be a 20-second delay in searchability.
+
+3. Edit the ``config.json`` or run mmctl to modify the ``LiveIndexingBatchSize`` setting
+  
+    **In the ``config.json``**
+
+    .. code-block:: JSON
+
+      {
+        "ElasticsearchSettings": {
+          "LiveIndexingBatchSize": 200
+        }
+      }
+    
+
+    **Via mmctl**
+
+    .. code-block:: JSON
+
+      mmctl config set ElasticsearchSettings.LiveIndexingBatchSize 200
+
+    **Via an environment variable**
+
+    .. code-block:: JSON
+
+      MM_ELASTICSEARCHSETTINGS_LIVEINDEXINGBATCHSIZE = 200
+
+4. Restart the Mattermost server.
 
 .. config:setting:: elastic-bulkindexingtimewindow
   :displayname: Bulk indexing time window (Elasticsearch)
