@@ -28,6 +28,7 @@ Note: Mattermost Mobile App v2.8.1 contains high to critical level security fixe
 
 ### Bug Fixes
  - Fixed an issue where the app hanged when using the magic keyboard on iPadOS 17.
+ - Patched the ``react-native-fast-image`` library which resulted in the transient dependency libwebp being updated and ``CVE-2023-4863`` being mitigated for iOS.
 
 ## 2.8.0 Release
 - Release Date: September 15, 2023
