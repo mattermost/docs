@@ -21,14 +21,30 @@ To generate a Support Packet:
    - ``plugins.json``
    - ``sanitized_config.json``
    - ``support_packet.yaml``
+   - ``cpu.prof``
+   - ``heap.prof``
+   - ``goroutines``
    - ``warning.txt`` (present when issues are encountered during packet generation)
 
    You'll be notified if any packet files are unavailable during packet generation. See the ``warning.txt`` file for details.
 
-3. Plugins are not sanitized during packet generation. Sanitize any confidential details in the ``plugin.json`` file before sending the support packet to Mattermost. 
+3. Plugins are not sanitized during packet generation. Sanitize any confidential details in the ``plugin.json`` file before sending the Support Packet to Mattermost.
 
 .. note::
 
   When sanitizing Support Packet data, replace details with example strings that contain the same special characters if possible, as special characters are common causes of configuration errors.
 
-  LDAP groups are not included during support packet generation. Only ``LDAP Version`` and ``LDAP Vendor`` are included when present. These values are included in the ``support_packet.yaml`` file.
+  LDAP groups are not included during Support Packet generation. Only ``LDAP Version`` and ``LDAP Vendor`` are included when present. These values are included in the ``support_packet.yaml`` file.
+
+
+Go performance metrics
+------------
+
+The Support Packet contains three go runtime profiling files:
+  - ``cpu.prof`` contains a 5-second CPU profile
+  - ``heap.prof`` contains a heap profile
+  - ``goroutines`` contains a dump of all the running go routines
+
+These files can be read using `pprof <https://golang.google.cn/pkg/cmd/pprof/>`_.
+
+Use ``go tool pprof -web X`` to open a visualization of the profile in your browser, replacing ``X`` with the profile's file name.
