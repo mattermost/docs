@@ -41,6 +41,7 @@ Go performance metrics
 ------------
 
 The Support Packet contains three go runtime profiling files:
+
   - ``cpu.prof`` contains a 5-second CPU profile
   - ``heap.prof`` contains a heap profile
   - ``goroutines`` contains a dump of all the running go routines
