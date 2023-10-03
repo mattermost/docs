@@ -119,6 +119,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
   - Mattermost v8.1.3 contains no database or functional changes.
   - Fixed a potential read after write issue when loading license.
   - Prepackaged Calls plugin version v0.18.2.
+  - Fixed a panic where a simple worker would crash if if failed to get a job.
 - **8.1.2, released 2023-09-08**
   - Mattermost v8.1.2 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Mattermost v8.1.2 contains the following database changes:
