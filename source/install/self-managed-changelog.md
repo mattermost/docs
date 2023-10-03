@@ -32,6 +32,7 @@ Latest Mattermost Releases:
  - Added two new filtering options (show all channel types and show private channels) to the **Browse channels** modal.
  - Pre-packaged GitLab plugin version [v1.7.0](https://github.com/mattermost/mattermost-plugin-gitlab/releases/tag/v1.7.0).
  - Pre-packaged Calls version v0.19.1.
+ - Pre-packaged Playbooks version [v1.39.0](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v1.39.0).
  - Added additional reaction options when viewing threads or messages when the sidebar is larger than its minimum width.
  - Added a link to [notification documentation](https://docs.mattermost.com/preferences/manage-your-notifications.html) in the **Notification Settings** modal.
  - Updated the post textbox measurement code to be more reliable.
@@ -90,7 +91,6 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ### Known Issues
  - A known issue related to the new feature to convert a Group Message channel to a private channel [MM-54526](https://mattermost.atlassian.net/browse/MM-54526).
- - ``/invite`` user to a channel incorrectly posts an ephemeral message of ``<no value> added to {channel_name} channel`` [MM-54555](https://mattermost.atlassian.net/browse/MM-54555).
  - Left-hand side resize option overrides the **Browse/Create Channel** menu if To-Do plugin is installed [MM-54367](https://mattermost.atlassian.net/browse/MM-54367).
  - Copy pasting images from Chrome fails [MM-54486](https://mattermost.atlassian.net/browse/MM-54486).
  - Adding an @mention at the start of a post draft and pressing the left or right arrow key can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
