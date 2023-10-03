@@ -62,7 +62,7 @@ Mobile apps
 .. csv-table::
     :header: "Operating System", "Technical Requirement"
 
-    "iOS", "iPhone 5s devices and later with iOS 13.4+"
+    "iOS", "iPhone 6s devices and later with iOS 13.4+"
     "Android", "Android devices with Android 7+"
 
 .. note::
