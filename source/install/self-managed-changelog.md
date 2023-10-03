@@ -216,6 +216,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 - **8.0.4, released **
   - 
   - Mattermost v8.0.4 contains no database or functional changes.
+  - Prepackaged Calls plugin version v0.17.1.
 - **v8.0.3, released 2023-09-08**
   - Mattermost v8.0.3 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Mattermost v8.0.3 contains no database or functional changes.
