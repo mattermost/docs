@@ -118,8 +118,8 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
   - 
   - Mattermost v8.1.3 contains no database or functional changes.
   - Fixed a potential read after write issue when loading license.
-  - Prepackaged Calls plugin version v0.18.2.
-  - Fixed a panic where a simple worker would crash if if failed to get a job.
+  - Prepackaged Calls plugin version [v0.18.2](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v0.18.2).
+  - Fixed a panic where a simple worker would crash if it failed to get a job.
 - **8.1.2, released 2023-09-08**
   - Mattermost v8.1.2 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Mattermost v8.1.2 contains the following database changes:
@@ -216,7 +216,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 - **8.0.4, released **
   - 
   - Mattermost v8.0.4 contains no database or functional changes.
-  - Prepackaged Calls plugin version v0.17.1.
+  - Prepackaged Calls plugin version [v0.17.1](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v0.17.1).
 - **v8.0.3, released 2023-09-08**
   - Mattermost v8.0.3 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Mattermost v8.0.3 contains no database or functional changes.
@@ -672,7 +672,7 @@ Mattermost v7.9.0 contains a low severity level security fix. [Upgrading](https:
 - **7.8.12, released **
   - 
   - Mattermost v7.8.12 contains no database or functional changes.
-  - Prepackaged Calls plugin version upgraded v0.13.1.
+  - Prepackaged Calls plugin version upgraded [v0.13.1](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v0.13.1).
 - **v7.8.11, released 2023-09-08**
   - Mattermost v7.8.11 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Mattermost v7.8.11 contains the following database changes:
