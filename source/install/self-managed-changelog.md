@@ -19,6 +19,7 @@ Latest Mattermost Releases:
 ### Important Upgrade Notes
  - Removed the deprecated Insights feature.
  - Mattermost Boards and various other plugins have transitioned to being fully community supported. See this [forum post](https://forum.mattermost.com/t/upcoming-product-changes-to-boards-and-various-plugins/16669) for more details.
+ - The ``channel_viewed`` websocket event was changed to ``multiple_channels_viewed``, and is now only triggered for channels that actually have unread messages.
 
 **IMPORTANT:** If you upgrade from a release earlier than v8.1, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
 
