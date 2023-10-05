@@ -38,7 +38,7 @@ Latest Mattermost Releases:
  - Updated the post textbox measurement code to be more reliable.
  - The ``/invite`` slash command now supports custom user groups.
  - Re-enabled the remote marketplace functionality, when configured as per ``PluginSettings.EnableRemoteMarketplace`` [documentation](https://docs.mattermost.com/configure/plugins-configuration-settings.html#plugins-enableremotemarketplace).
- - "Added the ability to convert a group message to a private channel.
+ - Added the ability to convert a group message to a private channel.
  - Group messages (GMs) now behave like direct messages (DMs). The badge count increases for every new message.
 
 #### Administration
