@@ -18,6 +18,7 @@ Latest Mattermost Cloud releases:
 #### User Interface (UI)
  - Pre-packaged Playbooks version [v1.39.0](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v1.39.0).
  - Pre-packaged Focalboard plugin version [v7.11.4](https://github.com/mattermost/focalboard/releases/tag/v7.11.4).
+ - Pre-packaged Calls plugin version [v0.20.0](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v0.20.0).
 
 #### Administration
  - Added heap profile, CPU profile, and goroutines profile to the support package.
