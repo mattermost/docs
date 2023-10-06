@@ -27,7 +27,7 @@ Latest Mattermost Cloud releases:
  - Fixed an issue where the channel member count increased when adding an already present user.
 
 ### Known Issues
- - Known issues related to the new feature to convert a Group Message channel to a private channel: [MM-54525](https://mattermost.atlassian.net/browse/MM-54525), [MM-54541](https://mattermost.atlassian.net/browse/MM-54541).
+ - Known issue related to the new feature to convert a Group Message channel to a private channel: [MM-54525](https://mattermost.atlassian.net/browse/MM-54525).
  - Left-hand side resize option overrides the **Browse/Create Channel** menu if To-Do plugin is installed [MM-54367](https://mattermost.atlassian.net/browse/MM-54367).
 
 ## Release 2023-09-26
