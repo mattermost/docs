@@ -90,7 +90,9 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - v9.1 is built with Go ``v1.20.7``.
 
 ### Known Issues
- - A known issue related to the new feature to convert a Group Message channel to a private channel [MM-54526](https://mattermost.atlassian.net/browse/MM-54526).
+ - GM to channel conversion should show an error "A channel with that name already exists on the same team" [MM-54713](https://mattermost.atlassian.net/browse/MM-54713).
+ - Thread/posts jump when switching to and from preview mode [MM-54758](https://mattermost.atlassian.net/browse/MM-54758).
+ - Desktop UI doesn't show all content when the RHS thread is opened [MM-54696](https://mattermost.atlassian.net/browse/MM-54696).
  - Left-hand side resize option overrides the **Browse/Create Channel** menu if To-Do plugin is installed [MM-54367](https://mattermost.atlassian.net/browse/MM-54367).
  - Copy pasting images from Chrome fails [MM-54486](https://mattermost.atlassian.net/browse/MM-54486).
  - Adding an @mention at the start of a post draft and pressing the left or right arrow key can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
