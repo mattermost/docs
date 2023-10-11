@@ -443,7 +443,7 @@ RTCD service URL
 | **Note**:                                                                                                                                                                                                                                                                 |
 |                                                                                                                                                                                                                                                                           |
 | - The client will self-register the first time it connects to the service and store the authentication key in the database. If no client ID is explicitly provided, the diagnostic ID of the Mattermost installation will be used.                                        |
-| - The service URL supports credentials in the form ``http://clientID:authKey@hostname``. Alternatively these can be passed through environment overrides to the Mattermost server, namely ``MM_CALLS_JOB_SERVICE_CLIENT_ID`` and ``MM_CALLS_JOB_SERVICE_AUTH_KEY``        |
+| - The service URL supports credentials in the form ``http://clientID:authKey@hostname``. Alternatively these can be passed through environment overrides to the Mattermost server, namely ``MM_CALLS_RTCD_CLIENT_ID`` and ``MM_CALLS_RTCD_AUTH_KEY``                      |
 +---------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: plugins-callsmaxcallparticipants
