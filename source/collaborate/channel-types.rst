@@ -29,12 +29,12 @@ Channel members can choose to leave private channels at any time.
 Direct messages
 ---------------
 
-Direct messages are channels for conversations between two people. You can also start a direct message with people on other teams when enabled by the System Admin. Only members of the conversation can see direct messages and channel heading information, including last active status of the other user, when enabled.
+Direct messages are channels for conversations between two people. You can also start a direct message with people on other teams when enabled by the System Admin. Only members of the conversation can see direct messages and channel heading information, including last active status of the other user, when enabled. Due to the direct nature of these messages, they will always generate a badge, and a notification unless the channel is muted.
 
 Group messages
 --------------
 
-Group messages are channels for conversations among three or more people and up to seven people. You can also start a group message with people on other teams when enabled by the System Admin. Only members of the conversation can see group messages.
+Group messages are channels for conversations among three or more people and up to seven people. You can also start a group message with people on other teams when enabled by the System Admin. Only members of the conversation can see group messages. Due to the direct nature of these messages, they will always generate a badge, and a notification unless the channel is muted. If you want to tweak what triggers a notification in these channels, check here how to manage your notifications.
 
 .. tip::
 
