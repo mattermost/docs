@@ -88,3 +88,30 @@ Mattermost is designed as a system-of-record, so there isn't an option to delete
     AD/LDAP user accounts can't be deactivated from Mattermost; they must be deactivated from your Active Directory.
 
 
+User ID
+-------
+Users can be specified in Mattermost by username or user ID. Usernames automatically resolve when a match is detected.
+Below are three ways a User's ID can be determined.
+
+
+Determining a User ID through the System Console (Admin):
+
+Log in to your Mattermost instance as an administrator.
+Go to the System Console by clicking on the gear icon in the top left corner and selecting "System Console."
+In the System Console, navigate to "Users" or a similar section where user management settings are available.
+You should see a list of users, and their IDs should be displayed alongside their usernames.
+Find the user whose ID you want to determine and note it down.
+
+Determining a User ID Using the API:
+
+Yes, it is possible to find a user's ID using the Mattermost API. You can use this method if you need to automate user-related tasks or integrate with external systems.
+Make an HTTP GET request to the following endpoint: https://your-mattermost-url/api/v4/users/username/username_here.
+Replace your-mattermost-url with the URL of your Mattermost instance and username_here with the actual username of the user you are looking for.
+The API response will contain a JSON object that includes the user's ID among other details.
+
+Determining a User ID Using mmctl:
+
+If you prefer command-line tools, Mattermost offers mmctl for system administration.
+Open your terminal or command prompt.
+Use the following command to list all users and their IDs: mmctl user list.
+You will receive a list of users with their IDs, making it easy to identify the user you're interested in.
