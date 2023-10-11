@@ -42,12 +42,12 @@ Latest Mattermost Releases:
  - Group messages (GMs) now behave like direct messages (DMs). The badge count increases for every new message.
 
 #### Administration
- - Added ``mattermost-plugin-api`` into the mattermost repo.
+ - Added ``mattermost-plugin-api`` into the ``mattermost`` GitHub repository.
  - Updated the public server module version to v0.0.9.
  - Added 2 new URL parameters to ``GET /api/v4/groups``: ``include_archived`` and ``filter_archived``. Added the ability to restore archived groups from the user groups modal.
  - Added file storage information to the support package.
  - A ``user_id`` is now included in all HTTP logs (debug level) to help determine who is generating unexpected traffic.
- - Added new URL Parameter to ``GET /api/v4/groups`` and ``GET /api/v4/groups/:group_id``. ``include_member_ids`` will add all the members ``user_ids`` to the group response objects. You can now also add group members to a channel, any members that are not part of the team can be added to the team through this flow and subsequently added the channel.
+ - Added new URL parameter to ``GET /api/v4/groups`` and ``GET /api/v4/groups/:group_id``. ``include_member_ids`` will add all the members ``user_ids`` to the group response objects. You can now also add group members to a channel, any members that are not part of the team can be added to the team through this flow and subsequently added the channel.
 
 #### Plugin Changes
  - Added new frontend plugin extension point for the new messages separator bar.
@@ -90,8 +90,8 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - v9.1 is built with Go ``v1.20.7``.
 
 ### Known Issues
- - GM to channel conversion should show an error "A channel with that name already exists on the same team" [MM-54713](https://mattermost.atlassian.net/browse/MM-54713).
- - Marking a GM as unread does not resurface the numbered notification badge [MM-54778](https://mattermost.atlassian.net/browse/MM-54778).
+ - Converting a group message to a channel should show an error "A channel with that name already exists on the same team" for duplicate channel names [MM-54713](https://mattermost.atlassian.net/browse/MM-54713).
+ - Marking a group message as unread doesn't resurface the numbered notification badge [MM-54778](https://mattermost.atlassian.net/browse/MM-54778).
  - Thread/posts jump when switching to and from preview mode [MM-54758](https://mattermost.atlassian.net/browse/MM-54758).
  - Desktop UI doesn't show all content when the RHS thread is opened [MM-54696](https://mattermost.atlassian.net/browse/MM-54696).
  - Left-hand side resize option overrides the **Browse/Create Channel** menu if To-Do plugin is installed [MM-54367](https://mattermost.atlassian.net/browse/MM-54367).
