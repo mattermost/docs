@@ -38,7 +38,7 @@ To generate a Support Packet:
 
 
 Go performance metrics
-------------
+----------------------
 
 The Support Packet contains three go runtime profiling files:
 
