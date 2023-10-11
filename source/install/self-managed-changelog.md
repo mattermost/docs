@@ -14,11 +14,16 @@ Latest Mattermost Releases:
 
 ## Release v9.0 - [Major Release](https://docs.mattermost.com/upgrade/release-definitions.html#major-release)
 
-**Release day: September 15, 2023**
+- **9.0.1, released 2023-10-06**
+  - Mattermost v9.0.1 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Mattermost v9.0.1 contains no database or functional changes.
+- **9.0.0, released 2023-09-15**
+  - Original 9.0.0 release
 
 ### Important Upgrade Notes
  - Removed the deprecated Insights feature.
  - Mattermost Boards and various other plugins have transitioned to being fully community supported. See this [forum post](https://forum.mattermost.com/t/upcoming-product-changes-to-boards-and-various-plugins/16669) for more details.
+ - The ``channel_viewed`` websocket event was changed to ``multiple_channels_viewed``, and is now only triggered for channels that actually have unread messages.
 
 **IMPORTANT:** If you upgrade from a release earlier than v8.1, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
 
@@ -110,6 +115,12 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ## Release v8.1 - [Extended Support Release](https://docs.mattermost.com/upgrade/release-definitions.html#extended-support-release-esr)
 
+- **8.1.3, released 2023-10-06**
+  - Mattermost v8.1.3 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Mattermost v8.1.3 contains no database or functional changes.
+  - Fixed a potential read after write issue when loading license.
+  - Prepackaged Calls plugin version [v0.18.2](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v0.18.2).
+  - Fixed a panic where a simple worker would crash if it failed to get a job.
 - **8.1.2, released 2023-09-08**
   - Mattermost v8.1.2 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Mattermost v8.1.2 contains the following database changes:
@@ -203,6 +214,10 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ## Release v8.0 - [Major Release](https://docs.mattermost.com/upgrade/release-definitions.html#major-release)
 
+- **8.0.4, released 2023-10-06**
+  - Mattermost v8.0.4 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Mattermost v8.0.4 contains no database or functional changes.
+  - Prepackaged Calls plugin version [v0.17.1](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v0.17.1).
 - **v8.0.3, released 2023-09-08**
   - Mattermost v8.0.3 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Mattermost v8.0.3 contains no database or functional changes.
@@ -655,6 +670,10 @@ Mattermost v7.9.0 contains a low severity level security fix. [Upgrading](https:
 
 ## Release v7.8 - [Extended Support Release](https://docs.mattermost.com/upgrade/release-definitions.html#extended-support-release-esr)
 
+- **7.8.12, released 2023-10-06**
+  - Mattermost v7.8.12 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Mattermost v7.8.12 contains no database or functional changes.
+  - Prepackaged Calls plugin version upgraded [v0.13.1](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v0.13.1).
 - **v7.8.11, released 2023-09-08**
   - Mattermost v7.8.11 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Mattermost v7.8.11 contains the following database changes:
