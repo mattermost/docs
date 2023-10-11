@@ -94,7 +94,8 @@ Users can be specified in Mattermost by username or user ID. Usernames automatic
 Below are three ways a User's ID can be determined.
 
 
-Determining a User ID through the System Console (Admin):
+Determining a User ID through the System Console (Admin)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Log in to your Mattermost instance as an administrator.
 Go to the System Console by clicking on the gear icon in the top left corner and selecting "System Console."
@@ -102,14 +103,16 @@ In the System Console, navigate to "Users" or a similar section where user manag
 You should see a list of users, and their IDs should be displayed alongside their usernames.
 Find the user whose ID you want to determine and note it down.
 
-Determining a User ID Using the API:
+Determining a User ID Using the API
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Yes, it is possible to find a user's ID using the Mattermost API. You can use this method if you need to automate user-related tasks or integrate with external systems.
 Make an HTTP GET request to the following endpoint: https://your-mattermost-url/api/v4/users/username/username_here.
 Replace your-mattermost-url with the URL of your Mattermost instance and username_here with the actual username of the user you are looking for.
 The API response will contain a JSON object that includes the user's ID among other details.
 
-Determining a User ID Using mmctl:
+Determining a User ID Using mmctl
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you prefer command-line tools, Mattermost offers mmctl for system administration.
 Open your terminal or command prompt.
