@@ -4,12 +4,32 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 
 Latest Mattermost Cloud releases:
 
+- [Release 2023-10-10](#release-2023-10-10)
 - [Release 2023-09-26](#release-2023-09-26)
 - [Release 2023-09-12](#release-2023-09-12)
 - [Release 2023-08-29](#release-2023-08-29)
 - [Release 2023-08-09](#release-2023-08-09)
 - [Release 2023-08-03](#release-2023-08-03)
-- [Release 2023-07-26](#release-2023-07-26)
+
+## Release 2023-10-10
+
+### Improvements
+
+#### User Interface (UI)
+ - Pre-packaged Playbooks version [v1.39.0](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v1.39.0).
+ - Pre-packaged Focalboard plugin version [v7.11.4](https://github.com/mattermost/focalboard/releases/tag/v7.11.4).
+ - Pre-packaged Calls plugin version [v0.20.0](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v0.20.0).
+
+#### Administration
+ - Added heap profile, CPU profile, and goroutines profile to the support package.
+ - Merged WIP i18n locales, but disallowed selecting unsupported locales.
+
+### Bug Fixes
+ - Fixed an issue where the channel member count increased when adding an already present user.
+
+### Known Issues
+ - Known issue related to the new feature to convert a Group Message channel to a private channel: [MM-54525](https://mattermost.atlassian.net/browse/MM-54525).
+ - Left-hand side resize option overrides the **Browse/Create Channel** menu if To-Do plugin is installed [MM-54367](https://mattermost.atlassian.net/browse/MM-54367).
 
 ## Release 2023-09-26
 
