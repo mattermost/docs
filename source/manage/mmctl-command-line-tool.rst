@@ -6178,25 +6178,26 @@ Migrate accounts from one authentication provider to another. For example, you c
 .. code-block:: json
 
   [
-  {
-    "email": "user1@example.com",
-    "auth_data": {
-      "saml": {
-        "idp_id": "saml_idp_1",
-        "saml_user_id": "user123"
+    {
+      "email": "user1@example.com",
+      "auth_data": {
+        "saml": {
+          "idp_id": "saml_idp_1",
+          "saml_user_id": "user123"
+        }
+      }
+    },
+    {
+      "email": "user2@example.com",
+      "auth_data": {
+        "saml": {
+          "idp_id": "saml_idp_2",
+          "saml_user_id": "user456"
+        }
       }
     }
-  },
-  {
-    "email": "user2@example.com",
-    "auth_data": {
-      "saml": {
-        "idp_id": "saml_idp_2",
-        "saml_user_id": "user456"
-      }
-    }
-  }
-]
+  ]
+
 
 
 **Options**
