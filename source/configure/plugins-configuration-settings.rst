@@ -133,7 +133,7 @@ Enable remote Marketplace
 | **Notes**:                                                                                                                                                                                                                        |
 |                                                                                                                                                                                                                                   |
 | - From Mattermost v9.1, set this configuration setting value to ``true`` to access a configured remote marketplace URL.                                                                                                           |
-| - For Mattermost v9.0, the ``MM_STREAMLINEDMARKETPLACE`` feature flag must be set to ``false``, and this configuration setting must be set to ``true`` to access a configured remote marketplace URL.                             |
+| - For Mattermost v9.0, the ``MM_FEATUREFLAGS_STREAMLINEDMARKETPLACE`` feature flag must be set to ``false``, and this configuration setting must be set to ``true`` to access a configured remote marketplace URL.                             |
 | - Each Mattermost host must have network access to the endpoint set in MarketplaceURL.                                                                                                                                            |
 +-------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------+
 
