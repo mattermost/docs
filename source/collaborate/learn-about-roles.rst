@@ -42,6 +42,7 @@ When a team is first created, the person who set it up is made a Team Admin. It 
 - Access to the **Team Settings** menu.
 - Ability to change the team name and import data from Slack export files.
 - Access to the **Manage Members** menu, where they can control whether team members are a **Member** or a **Team Admin**.
+- Ability to manage all aspects of a team, such as managing private channels they're not a member of.
 
 Channel admin
 -------------
