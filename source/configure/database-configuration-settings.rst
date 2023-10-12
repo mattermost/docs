@@ -391,7 +391,7 @@ Replica lag settings
 | **Notes**:                                                                                                                                |
 |                                                                                                                                           |
 | - The ``QueryAbsoluteLag`` and ``QueryTimeLag`` queries must return a single row.                                                         |
-| - To properly monitor this you must setup `performance monitoring </scale/performance-monitoring.html>`__ for Mattermost.    |
+| - To properly monitor this you must setup `performance monitoring </scale/performance-monitoring.html>`__ for Mattermost.                 |
 +--------------------------------------------------------+----------------------------------------------------------------------------------+
 
 1. Configure the replica lag metric based on your database type. See the following tabs for details on configuring this for each database type.
