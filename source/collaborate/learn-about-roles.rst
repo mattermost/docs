@@ -93,7 +93,6 @@ User ID
 Users can be specified in Mattermost by username or user ID. Usernames automatically resolve when a match is detected.
 Below are three ways a User's ID can be determined.
 
-
 Determining a User ID through the System Console (Admin)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
