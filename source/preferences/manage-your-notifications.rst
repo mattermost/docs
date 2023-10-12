@@ -93,7 +93,7 @@ On mobile, select the **Settings** |gear| icon and tap **Notifications**.
 
         **Customize notification keywords**
 
-        You can customize any additional keywords to receive notifications. For example, you can receive notifications for all messages and threads related to a specific topic, project name, or customer. Separate multiple keywords using commas.
+        You can customize any additional non case-sensitive keywords to trigger notifications. For example, you can receive notifications for all messages and threads related to a specific topic, project name, or customer. Separate multiple keywords using commas or by pressing :kbd:`Tab`, and use :kbd:`Backspace` to manage keywords.
 
     .. tab:: Replies
 
