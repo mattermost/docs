@@ -21,7 +21,7 @@ To submit a merge request (MR) to GitLab for taking the next Mattermost version,
     - Update to `GitLab Mattermost documentation <https://docs.gitlab.com/omnibus/gitlab-mattermost/README.html>`__
 
 2. Build GitLab and test it locally `following these steps </developer/developer-flow.html#testing-with-gitlab-omnibus>`__.
-3. Submit a MR to the `master branch of Gitlab <https://gitlab.com/gitlab-org/omnibus-gitlab>`__, including a summary of updates in Team Edition that are relevant to GitLab
+3. Submit a MR to the `master branch of GitLab <https://gitlab.com/gitlab-org/omnibus-gitlab>`__, including a summary of updates in Team Edition that are relevant to GitLab
 4. Post a link to the MR in the Release Discussion channel.
 5. Check daily for updates until the MR is merged, ensuring it gets merged by the 7th of the month.
 6. Once the MR is merged and included in an RC, `test upgrade following these steps <https://docs.google.com/document/d/1mbeu2XXwCpbz3qz7y_6yDIYBToyY2nW0NFZq9Gdei1E/edit#heading=h.ncq9ltn04isg>`__.
@@ -103,7 +103,7 @@ The root admin account for them has username `root` and password `Password1`.
 
 7. To confirm the upgrade was successful:
 
- - Go to `http://gitlab-rc-testing2.spinmint.com  <http://gitlab-rc-testing2.spinmint.com >`__.
+ - Go to `http://gitlab-rc-testing2.spinmint.com <http://gitlab-rc-testing2.spinmint.com>`__.
  - Create an account and log in.
  - Confirm the correct version number in **Main Menu** > **About Mattermost**.
 
