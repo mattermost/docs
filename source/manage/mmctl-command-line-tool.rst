@@ -6198,8 +6198,6 @@ Migrate accounts from one authentication provider to another. For example, you c
     }
   ]
 
-
-
 **Options**
 
 .. code-block:: sh
