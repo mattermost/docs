@@ -36,4 +36,4 @@ Convert private channels to public channels
 
 Due to potential security concerns with sharing private channel history, only system admins can convert private channels to public channels via **System Console > Channels > Edit (Channel Configuration)**. 
 
-Alternatively, System Admins can perform this action using the `mmctl channel modify command </manage/mmctl-command-line-tool.html#mmctl-channel-modify>`__.
+Alternatively, system admins can perform this action using the `mmctl channel modify command </manage/mmctl-command-line-tool.html#mmctl-channel-modify>`__.
