@@ -29,13 +29,17 @@ Channel members can choose to leave private channels at any time.
 Direct messages
 ---------------
 
-Direct messages are channels for conversations between 2 people. You can also start a direct message with people on other teams `when enabled by the system admin </configure/site-configuration-settings.html#users-restrictdirectmessage>`__. Only members of the conversation can see direct messages and channel heading information, including the last active status of the other user (when enabled). Direct messages will always display a new message badge, and trigger a notification, unless the channel is muted.
+Direct messages are channels for conversations between 2 people. You can start a direct message with people on other teams `when enabled by the system admin </configure/site-configuration-settings.html#users-restrictdirectmessage>`__. Only members of the conversation can see direct messages and channel heading information, including the last active status of the other user. 
+
+Direct messages always display a new message badge. Direct messages always trigger a notification, unless you mute the channel, or you disable notifications altogether. See the `notification documentation </preferences/manage-your-notifications.html>`__ for details on customizing notifications based on your preferences.
 
 Group messages
 --------------
 
-Group messages are channels for conversations among 3 or more people and up to 7 people. You can also start a group message with people on other teams when `enabled by the system admin </configure/site-configuration-settings.html#users-restrictdirectmessage>`__. Only members of the conversation can see group messages. From Mattermost v9.1, group messages will always display a new message badge, and trigger a notification, unless the channel is muted. See the `notification documentation </preferences/manage-your-notifications.html>`__ to learn more about customizing channel notifications.
+Group messages are channels for conversations among 3 or more people and up to 7 people. You can also start a group message with people on other teams when `enabled by the system admin </configure/site-configuration-settings.html#users-restrictdirectmessage>`__. Only members of the conversation can see group messages. Group messages always display a new message badge.
+
+From Mattermost v9.1, group messages trigger notifications by default, unless you mute the channel, or you disable notifications altogether. You can control how you're notified about group message conversations by going to **Settings > Notifications**. See the `notification documentation </preferences/manage-your-notifications.html>`__ to learn more.
 
 .. tip::
 
-   Create a private channel to communicate with more than seven people. 
+   Want to have a group conversation with more than 7 people? You can `create a private channel </collaborate/create-channels.html>`__. Alternatively, from Mattermost v9.1, you can `convert the group message to a private channel </collaborate/convert-onvert-group-messages.html>`__.
