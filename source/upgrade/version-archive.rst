@@ -345,7 +345,7 @@ The open source Mattermost Team Edition is functionally identical to the commerc
 
 We generally recommend installing Enterprise Edition, even if you don't currently need a license. This provides the flexibility to seamlessly unlock Enterprise features should you need them. However, if you only want to install software with a fully open source code base, then Team Edition is the best choice for you.
 
-Mattermost Team Edition v9.1.0 - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v9-0-major-release>`__ - `Download <https://releases.mattermost.com/9.1.0/mattermost-team-9.1.0-linux-amd64.tar.gz?src=arc>`__
+Mattermost Team Edition v9.1.0 - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v9-1-feature-release>`__ - `Download <https://releases.mattermost.com/9.1.0/mattermost-team-9.1.0-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/9.1.0/mattermost-team-9.1.0-linux-amd64.tar.gz``
   - SHA-256 Checksum: ``b120c4a55f76361bb10ea23dcc1ef19617932f7a80df8e6255ad0f9e0ff1da3a``
   - GPG Signature: https://releases.mattermost.com/9.1.0/mattermost-team-9.1.0-linux-amd64.tar.gz.sig
