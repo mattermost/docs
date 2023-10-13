@@ -19,7 +19,7 @@ Invite people
 ~~~~~~~~~~~~~
 
 - Invite one person using ``/invite user1`` or ``/invite @user1``.
-- Invite a custom user group using ``/invite usergroup``.
+- Invite a custom user group using ``/invite @usergroup``.
 - Invite multiple people using ``/invite @user1 @user2``.
 - Invite one person to a specific channel using ``/invite @user1 ~channel1``, or ``/invite @user1 channel1``.
 - Invite multiple people to multiple channels using ``/invite @user1 @user2 ~channel1 ~channel2``.
