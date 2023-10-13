@@ -87,12 +87,10 @@ Examples of values for the ``AdvancedLoggingJSON`` setting are:
                 "Type": "file",
                 "Format": "plain",
                 "Levels": [
-                    {"ID": 5, "Name": "debug", "Stacktrace": false},
-                    {"ID": 4, "Name": "info", "Stacktrace": false},
-                    {"ID": 3, "Name": "warn", "Stacktrace": false},
-                    {"ID": 2, "Name": "error", "Stacktrace": true},
-                    {"ID": 1, "Name": "fatal", "Stacktrace": true},
-                    {"ID": 0, "Name": "panic", "Stacktrace": true}
+                  { "id": 100, "name": "audit-api" },
+                  { "id": 101, "name": "audit-content" },
+                  { "id": 102, "name": "audit-permissions" },
+                  { "id": 103, "name": "audit-cli" }
                 ],
                 "Options": {
                     "Compress": true,
