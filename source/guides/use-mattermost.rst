@@ -24,4 +24,4 @@ This Mattermost end user documentation is designed for anyone looking to connect
 
 .. tip::
 
-  From Mattermost v9.1, when using Mattermost in a browser or the desktop app, you can reside both the channel sidebar and right-hand sidebar panes!
+  From Mattermost v9.1, when using Mattermost in a browser or the desktop app, you can resize both the channel sidebar and right-hand sidebar panes!
