@@ -43,6 +43,9 @@ Mattermost is accessible through a URL link. You'll receive a link from your Mat
     3. Enter your user credentials to log into Mattermost. 
     4. The team that displays first in the team sidebar opens. If you're not a member of a team yet, you're prompted to select a team to join.
 
+    .. note::
+
+      Depending on how your user credentials are set up in Mattermost, you may temporarily leave the desktop app during login while authenticating your credentials. Once you're successfully logged in to Mattermost, you'll be returned to the desktop app.
 
   .. tab:: Mobile
 
