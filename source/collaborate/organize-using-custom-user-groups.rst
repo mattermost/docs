@@ -4,6 +4,9 @@ Manage custom groups (beta)
 .. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
   :start-after: :nosearch:
 
+.. |more-icon-vertical| image:: ../images/dots-vertical_F01D9.svg
+  :alt: Use the More icon in the top left corner to access Mattermost desktop apps customization settings.
+
 *Not available in legacy Enterprise Edition E10/E20*
 
 Custom groups (beta) reduce noise and improve focus by notifying the right people in a channel at the right time, while maintaining transparency for all members in that channel. Custom user groups let you notify up to 256 users at a time rather than notifying users individually. 
@@ -47,17 +50,21 @@ To manage a custom user group in a web browser or the desktop app, select **User
 Review available groups
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-Review a list of all available custom user groups, search for specific groups by name, or filter the list of groups to display only groups you're a member of.
+Review a list of all available custom user groups, search for specific groups by name.
+
+.. tip::
+  
+  You can filter the list of groups to display only groups you're a member of, or only archived groups.
 
 Change name or mention
 ~~~~~~~~~~~~~~~~~~~~~~
 
-1. From the **More Actions** icon to the right of any custom group, select **View Group**. 
+1. From the **More Actions** |more-icon-vertical| icon to the right of any custom group, select **View Group**. 
 
   .. image:: ../images/manage-user-groups.png
     :alt: Access tools to manage your custom user groups.
 
-2. From the **More Actions** icon, select **Edit Details**.
+2. From the **More Actions** |more-icon-vertical| icon, select **Edit Details**.
 
   .. image:: ../images/edit-custom-group.png
     :alt: Edit details of a custom user group.
@@ -75,12 +82,22 @@ Remove people
 
 Hover over a member, then select the **Trash** icon to remove them from the group.
 
+Join a group
+~~~~~~~~~~~~
+
+While viewing the members of a group, from the **More Actions** |more-icon-vertical| icon, select **Join Group**.
+
 Leave a group
 ~~~~~~~~~~~~~
 
-From the **More Actions** icon, select **Leave Group**.
+From the **More Actions** |more-icon-vertical| icon, select **Leave Group**.
 
 Archive group
 ~~~~~~~~~~~~~
 
-From the **More Actions** icon, select **Archive Group**. When you archive a custom user group, you won’t be able to mention the group’s handle or view its members. However, the group isn't deleted from the list, and all members remain in the group unless manually removed.
+From the **More Actions** |more-icon-vertical| icon, select **Archive Group**. When you archive a custom user group, you won’t be able to mention the group’s handle or view its members. However, the group isn't deleted from the list, and all members remain in the group unless they're manually removed.
+
+Unarchive group
+~~~~~~~~~~~~~~~
+
+From Mattermost v9.1, you can restore an archived group. From the **More Actions** |more-icon-vertical| icon, filter the list of groups to show only archived groups. Select an archived group view details about the group, if preferreed, and then select **Restore Group**.
