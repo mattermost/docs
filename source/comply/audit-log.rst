@@ -77,7 +77,6 @@ Examples of values for the ``AdvancedLoggingJSON`` setting are:
       }
     }
 
-
 2. Multi-line JSON in the ``config.json`` file:
 
   .. code-block:: json
@@ -94,7 +93,7 @@ Examples of values for the ``AdvancedLoggingJSON`` setting are:
                 ],
                 "Options": {
                     "Compress": true,
-                    "Filename": "mattermost_logr.log",
+                    "Filename": "audit.log",
                     "MaxAgeDays": 1,
                     "MaxBackups": 10,
                     "MaxSizeMB": 500 
