@@ -347,6 +347,7 @@ You can use the mobile applications hosted by Mattermost in the `Apple App Store
   
  The use of hosted applications by Mattermost `can be deployed with Enterprise Mobility Management solutions via AppConfig </deploy/mobile-appconfig.html>`__ but wrapping is not supported. See the `product documentation </deploy/deploy-mobile-apps-using-emm-provider.html#manage-app-configuration-using-appconfig>`__ for details.
 
+
 How the ``deviceId`` behaves
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -372,3 +373,15 @@ In these scenarios, the ``login`` audit log won't have the ``deviceId``, and the
 If the app receives the ``deviceId`` later, the device will send the new ``deviceId`` to the server, generating an ``attachDeviceId`` audit log, and adding the ``deviceId`` to the session data in the database.
 
 Since the ``deviceId`` relates to the application, connections through the web browser, even on mobile, won't have a ``deviceID``.
+
+Where can I find mobile message notification logs?
+-------------------------------------------------------------
+Notification messages are logged to the ``notifications.log`` file. However, this file can only be accessed by server admins.
+Generally you will find it by navigating to ``Notification Settings--->File Location``. One thing to note here is that the ``notifications.log`` exists only if you have enabled it in the Notification Settings i.e., ``NotificationSettings.EnableFile`` should be set to ``TRUE``.
+You can learn more about logging `here <https://docs.mattermost.com/configure/environment-configuration-settings.html#logging>`__.
+
+The team members / users can access their notification logs based on their device platform.
+Android users can view the logs using ``logcat``.
+iOS users can acess the logs in the ``console app`` on their MacOS.
+However, the Android and iOS logs may differ from each other as different things are logged while receiving and processing requests based on the user platform.
+
