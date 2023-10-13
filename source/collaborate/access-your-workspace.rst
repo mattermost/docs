@@ -45,7 +45,7 @@ Mattermost is accessible through a URL link. You'll receive a link from your Mat
 
     .. note::
 
-      Depending on how your user credentials are set up in Mattermost, you may temporarily leave the desktop app during login while authenticating your credentials. Once you're successfully logged in to Mattermost, you'll be returned to the desktop app.
+      When you log into Mattermost using external user credentials, such as Google or Office 365, you'll temporarily leave the desktop app during login while authenticating your credentials. Once you're successfully logged in to Mattermost, you'll be returned to the desktop app. See the `Single Sign-On (SSO) <#single-sign-on-sso>`__ section below for details on the external providers that Mattermosts supports.
 
   .. tab:: Mobile
 
