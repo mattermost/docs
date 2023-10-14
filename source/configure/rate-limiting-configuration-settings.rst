@@ -53,6 +53,8 @@ Maximum queries per second
   :environment: MM_RATELIMITSETTINGS_MAXBURST
   :description: The maximum number of requests allowed beyond the per second query limit when `rate limiting <#enable-rate-limiting>`__ is enabled. Default is **100** requests.
 
+  If the configuration for maximum queries per second is altered it will impact if more/less queries will occur in one-second periods.
+
 Maximum burst size
 ~~~~~~~~~~~~~~~~~~
 
@@ -72,6 +74,8 @@ Maximum burst size
   :configjson: .RateLimitSettings.MemoryStoreSize
   :environment: MM_RATELIMITSETTINGS_MEMORYSTORESIZE
   :description: The maximum number of user sessions connected to the system as determined by vary rate limit settings when `rate limiting <#enable-rate-limiting>`__ is enabled. Default is **10000** sessions.
+
+  If the configuration for maximum burst size is altered it will impact if more/less concurrent requests are handled.
 
 Memory store size
 ~~~~~~~~~~~~~~~~~
@@ -95,6 +99,10 @@ Memory store size
 
   - **true**: **(Default)** Rate limit API access by IP address. Recommended when using a proxy.
   - **false**: Rate limiting does not vary by IP address.
+
+  If the configuration for memory store size is lower than the amount of users in the system, there might be too frequent session/token evications
+  If the configuration for memory store size is higher than the amount of users in the system, there will be an underutilization of resources
+
 
 Vary rate limit by remote address
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
