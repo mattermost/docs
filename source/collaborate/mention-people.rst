@@ -11,6 +11,7 @@ When you want to get the attention of specific Mattermost users, you can use @me
 - `@all <#channel-and-all>`__
 - `@here <#here>`__
 - `@groupname <#groupname>`__
+- `@customusergroupname <#customusergroupname>`__
 
 .. note::
 
@@ -85,6 +86,17 @@ As with ``@username`` mentions, use *@* to bring up a list of groups that can be
 
   @dev-managers great work hitting all of our code coverage goals this quarter!
 
+@customusergroupname
+--------------------
+
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
+
+You can add groups of users to a channel or team by `creating a custom group </collaborate/organize-using-custom-user-groups.html>`__ and @mentioning that custom group in a channel.
+
+- Mattermost prompts to you to add any users who aren't already members of that channel to the channel.
+- From Mattermost v9.1, you're given the option to add any users who aren't already members of that team to the team, if you have the permissions to do so.
+
 Words that trigger mentions
 ---------------------------
 
@@ -107,7 +119,7 @@ Select **Jump** next to a search result in the right-hand sidebar to jump the ce
 Confirmation dialog warnings
 ----------------------------
 
-When your system admin has configured Mattermost to require confirmations for @messages, you must confirm any mention that will trigger notifications for more than five users before sending the notification.
+When your system admin has configured Mattermost to require confirmations for @mentions, you must confirm any mention that will trigger notifications for more than five users before sending the notification.
 
 This confirmation dialog only appears when your system admin has configured this setting in the System Console. See our `configuration settings </configure/configuration-settings.html#show-channel-all-or-here-confirmation-dialog>`__ product documentation for details. This configuration setting is supported on the Mattermost Mobile App (from v1.34) if the `AD/LDAP groups </onboard/ad-ldap-groups-synchronization.html>`__ feature is enabled.
 
