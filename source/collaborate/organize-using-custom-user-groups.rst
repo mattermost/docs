@@ -4,13 +4,19 @@ Manage custom groups (beta)
 .. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
   :start-after: :nosearch:
 
+.. |more-icon-vertical| image:: ../images/dots-vertical_F01D9.svg
+  :alt: Use the More icon in the top left corner to access Mattermost desktop apps customization settings.
+
+.. |plus| image:: ../images/plus_F0415.svg
+  :alt: The Plus icon provides access to channel and direct message functionality.
+
 *Not available in legacy Enterprise Edition E10/E20*
 
 Custom groups (beta) reduce noise and improve focus by notifying the right people in a channel at the right time, while maintaining transparency for all members in that channel. Custom user groups let you notify up to 256 users at a time rather than notifying users individually. 
 
 For example, perhaps you want to @mention a cross-functional team about a bug fixes needed for an upcoming feature release, without notifying everyone else in the channel. Using a custom group notifies the cross-functional team immediately, while keeping important stakeholders in the loop on the status of the feature release.
 
-Or perhaps you want to add a group of users to a channel. When you @mention a custom group in a channel, Mattermost prompts you to add anyone from that custom group who isn't already a channel member.
+Or perhaps you want to add a group of users to a team and a channel. When you @mention a custom group in a channel, Mattermost prompts you to add anyone from that custom group who isn't already a channel and team member. See the `invite people to your workspace </collaborate/invite-people.html>`__ documentation for details.
 
 Once a custom user group has been created, you can mention that group the same way you @mention another Mattermost member. See the `mention people in messages </collaborate/mention-people.html>`__ documentation for details.
 
@@ -23,7 +29,7 @@ Once a custom user group has been created, you can mention that group the same w
 Create a custom group
 ---------------------
 
-1. Using Mattermost in a web browser or the desktop app, select **+** from the top of the channel sidebar, then select **Create New User Group**.
+1. Using Mattermost in a web browser or the desktop app, select |plus| at the top of the channel sidebar, then select **Create New User Group**.
 
 2. Specify a name and mention. The mention is the handle you use to @mention a notification to the group. Group names must be unique across the Mattermost workspace. If a name is in use as a channel name, display name, or another custom group's name, it won't be available.
 
@@ -47,17 +53,21 @@ To manage a custom user group in a web browser or the desktop app, select **User
 Review available groups
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-Review a list of all available custom user groups, search for specific groups by name, or filter the list of groups to display only groups you're a member of.
+Review a list of all available custom user groups, search for specific groups by name.
+
+.. tip::
+  
+  You can filter the list of groups to display only groups you're a member of, or only archived groups.
 
 Change name or mention
 ~~~~~~~~~~~~~~~~~~~~~~
 
-1. From the **More Actions** icon to the right of any custom group, select **View Group**. 
+1. From the **More Actions** |more-icon-vertical| icon to the right of any custom group, select **View Group**. 
 
   .. image:: ../images/manage-user-groups.png
     :alt: Access tools to manage your custom user groups.
 
-2. From the **More Actions** icon, select **Edit Details**.
+2. From the **More Actions** |more-icon-vertical| icon, select **Edit Details**.
 
   .. image:: ../images/edit-custom-group.png
     :alt: Edit details of a custom user group.
@@ -75,12 +85,22 @@ Remove people
 
 Hover over a member, then select the **Trash** icon to remove them from the group.
 
+Join a group
+~~~~~~~~~~~~
+
+While viewing the members of a group, from the **More Actions** |more-icon-vertical| icon, select **Join Group**.
+
 Leave a group
 ~~~~~~~~~~~~~
 
-From the **More Actions** icon, select **Leave Group**.
+From the **More Actions** |more-icon-vertical| icon, select **Leave Group**.
 
 Archive group
 ~~~~~~~~~~~~~
 
-From the **More Actions** icon, select **Archive Group**. When you archive a custom user group, you won’t be able to mention the group’s handle or view its members. However, the group isn't deleted from the list, and all members remain in the group unless manually removed.
+From the **More Actions** |more-icon-vertical| icon, select **Archive Group**. When you archive a custom user group, you won’t be able to mention the group’s handle or view its members. However, the group isn't deleted from the list, and all members remain in the group unless they're manually removed.
+
+Unarchive group
+~~~~~~~~~~~~~~~
+
+From Mattermost v9.1, you can restore an archived group. From the **More Actions** |more-icon-vertical| icon, filter the list of groups to show only archived groups. Select an archived group view details about the group, if preferreed, and then select **Restore Group**.
