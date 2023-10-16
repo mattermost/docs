@@ -42,7 +42,8 @@ The following keyboard shortcuts for channels are supported in all `supported br
 +-------------------------------------+------------------------------+----------------------------------------------------------------------------------+
 | :kbd:`Alt` + select channel         | :kbd:`⌥` + select channel    | Mark the last post in the channel as unread.                                     |
 +-------------------------------------+------------------------------+----------------------------------------------------------------------------------+
-| :kbd:`Ctrl` :kbd:`K`                | :kbd:`⌘` :kbd:`K`            | Open the **Find Channels** dialog.                                               |
+| :kbd:`Ctrl` :kbd:`K`                | :kbd:`⌘` :kbd:`K`            | - If text isn't selected: Open the **Find Channels** dialog.                     |
+|                                     |                              | - If text is selected: Create a hyperlink in the format ``[linktext](URL)``.     |
 +-------------------------------------+------------------------------+----------------------------------------------------------------------------------+
 | :kbd:`Ctrl` :kbd:`Shift` :kbd:`K`   | :kbd:`⌘` :kbd:`⇧` :kbd:`K`   | Open the **Direct Messages** dialog.                                             |
 +-------------------------------------+------------------------------+----------------------------------------------------------------------------------+

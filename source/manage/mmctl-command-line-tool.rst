@@ -2278,8 +2278,9 @@ Create an export file.
 
 .. code-block:: sh
 
-   --no-attachments     Omit to include file attachments in the export file.
-   -h, --help           help for create
+   --no-attachments              Omit to include file attachments in the export file.
+   --include-archived-channels   Include archived channels in the export file.
+   -h, --help                    help for create
 
 **Options inherited from parent commands**
 
