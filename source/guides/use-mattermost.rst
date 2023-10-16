@@ -21,3 +21,7 @@ This Mattermost end user documentation is designed for anyone looking to connect
 
 .. image:: ../images/Channels_Hero.png
   :alt: An example of the Mattermost screen that includes teams, the channel sidebar, an active conversation in the center pane, reply threads in the right-hand pane.
+
+.. tip::
+
+  From Mattermost v9.1, when using Mattermost in a browser or the desktop app, you can resize both the channel sidebar and right-hand sidebar panes!
