@@ -2278,8 +2278,9 @@ Create an export file.
 
 .. code-block:: sh
 
-   --no-attachments     Omit to include file attachments in the export file.
-   -h, --help           help for create
+   --no-attachments              Omit to include file attachments in the export file.
+   --include-archived-channels   Include archived channels in the export file.
+   -h, --help                    help for create
 
 **Options inherited from parent commands**
 
@@ -6172,6 +6173,31 @@ Migrate accounts from one authentication provider to another. For example, you c
 .. code-block:: sh
 
    mmctl user migrate-auth email saml users.json
+
+**user.json Example**
+
+.. code-block:: json
+
+  [
+    {
+      "email": "user1@example.com",
+      "auth_data": {
+        "saml": {
+          "idp_id": "saml_idp_1",
+          "saml_user_id": "user123"
+        }
+      }
+    },
+    {
+      "email": "user2@example.com",
+      "auth_data": {
+        "saml": {
+          "idp_id": "saml_idp_2",
+          "saml_user_id": "user456"
+        }
+      }
+    }
+  ]
 
 **Options**
 
