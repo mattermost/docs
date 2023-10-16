@@ -9,7 +9,7 @@ You can change the members of your group conversation by converting the group me
 .. note::
 
     - Any member of an existing group message, except `guests </onboard/guest-accounts.html>`__, can convert that group message to a private channel.
-    - All group message particpants must share at least one team membership.
+    - All group message participants must share at least one team membership.
     - You can convert a group message to a private channel using a web browser or the desktop app.
 
 To convert a group message to a private channel:
