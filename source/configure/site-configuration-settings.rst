@@ -455,6 +455,30 @@ Max channels per team
 | for Cloud deployments.                                                                |                                                                       |
 +---------------------------------------------------------------------------------------+-----------------------------------------------------------------------+
 
+.. config:setting:: users-enablejoinleavemessages
+  :displayname: Enable join/leave messages by default (Users and teams)
+  :systemconsole: Site Configuration > Users and teams
+  :configjson: .TeamSettings.EnableJoinLeaveMessageByDefault
+  :environment: MM_TEAMSETTINGS_ENABLEJOINLEAVEMESSAGEBYDEFAULT
+  :description: Specify the default configuration of system messages displayed when users join or leave channels.
+
+  - **true**: **(Default)** Join/Leave messages are displayed.
+  - **false**: Join/Leave messages are hidden.
+
+Enable join/leave messages by default
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++---------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+
+| Specify the default configuration of system messages displayed when users             | - System Config path: **Site Configuration > Users and teams**                     |
+| join or leave channels.                                                               | - ``config.json`` setting: ``.TeamSettings.EnableJoinLeaveMessageByDefault: true`` |
+|                                                                                       | - Environment variable: ``MM_TEAMSETTINGS_ENABLEJOINLEAVEMESSAGEBYDEFAULT``        |
+| - **true**: **(Default)** Join/Leave messages are displayed.                          |                                                                                    |
+| - **false**: Join/Leave messages are hidden.                                          |                                                                                    |
+|                                                                                       |                                                                                    |
+| Users can override this default by going to **Settings > Advanced >                   |                                                                                    |
+| Enable Join/Leave Messages**.                                                         |                                                                                    |
++---------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+
+
 .. config:setting:: users-restrictdirectmessage
   :displayname: Enable users to open direct message channels with (Users and teams)
   :systemconsole: Site Configuration > Users and teams
@@ -1241,11 +1265,11 @@ Disable link previews for specific domains
 Enable message link previews
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
-| - **true**: **(Default)** `Share links to Mattermost messages <https://docs.mattermost.com/collaborate/share-links.html>`__ will generate a preview for any users that have access to the original message. | - System Config path: **Site Configuration > Posts**                       |
-| - **false**: Share links do not generate a preview.                                                                                                                                                      | - ``config.json`` setting: ``.ServiceSettings.EnablePermalinkPreviews: true`` |
-|                                                                                                                                                                                                          | - Environment variable: ``MM_SERVICESETTINGS_ENABLEPERMALINKPREVIEWS``        |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+| - **true**: **(Default)** `Share links to Mattermost messages <https://docs.mattermost.com/collaborate/share-links.html>`__ will generate a preview for any users that have access to the original message. | - System Config path: **Site Configuration > Posts**                          |
+| - **false**: Share links do not generate a preview.                                                                                                                                                         | - ``config.json`` setting: ``.ServiceSettings.EnablePermalinkPreviews: true`` |
+|                                                                                                                                                                                                             | - Environment variable: ``MM_SERVICESETTINGS_ENABLEPERMALINKPREVIEWS``        |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
 
 .. config:setting:: posts-enablesvg
   :displayname: Enable SVGs (Posts)
@@ -1280,12 +1304,12 @@ Enable LaTeX code block rendering
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
-| - **true**: Enables rendering of `LaTeX in code blocks <https://docs.mattermost.com/collaborate/format-messages.html#math-formulas>`__.               | - System Config path: **Site Configuration > Posts**           |
+| - **true**: Enables rendering of `LaTeX in code blocks <https://docs.mattermost.com/collaborate/format-messages.html#math-formulas>`__.            | - System Config path: **Site Configuration > Posts**              |
 | - **false**: **(Default)** Disables rendering in blocks. Instead, LaTeX code is highlighted.                                                       | - ``config.json`` setting: ``.ServiceSettings.EnableLatex: false``|
 |                                                                                                                                                    | - Environment variable: ``MM_SERVICESETTINGS_ENABLELATEX``        |
 +----------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
 | **Warning**: Enabling LaTeX rendering is not recommended in environments where not all users are trusted.                                                                                                              |
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
 
 .. config:setting:: posts-enableinlinelatex
   :displayname: Enable inline LaTeX rendering (Posts)
@@ -1300,12 +1324,12 @@ Enable inline LaTeX rendering
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
-| - **true**: **(Default)** Enables rendering of `LaTeX in message text <https://docs.mattermost.com/collaborate/format-messages.html#math-formulas>`__.                                                                | - System Config path: **Site Configuration > Posts**                 |
+| - **true**: **(Default)** Enables rendering of `LaTeX in message text <https://docs.mattermost.com/collaborate/format-messages.html#math-formulas>`__.                                                             | - System Config path: **Site Configuration > Posts**                    |
 | - **false**: Disables inline rendering of LaTeX. Instead, LaTeX in message text is highlighted. LaTeX can also be rendered in a code block, if that feature is enabled. See **Enable LaTeX code block rendering**. | - ``config.json`` setting: ``.ServiceSettings.EnableInlineLatex: true`` |
 |                                                                                                                                                                                                                    | - Environment variable: ``MM_SERVICESETTINGS_ENABLEINLINELATEX``        |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
 | **Warning**: Enabling LaTeX rendering is not recommended in environments where not all users are trusted.                                                                                                                                                                                    |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
 
 .. config:setting:: posts-customurlschemes
   :displayname: Custom URL schemes (Posts)
@@ -1322,6 +1346,25 @@ Custom URL schemes
 |                                                                                                                                                                                                          | - ``config.json`` setting: ``.DisplaySettings.CustomURLSchemes: []``  |
 | ``config.json`` setting: an array of strings                                                                                                                                                             | - Environment variable: ``MM_DISPLAYSETTINGS_CUSTOMURLSCHEMES``       |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------+
+
+.. config:setting:: posts-maxmarkdownnodes
+  :displayname: Maximum Markdown nodes (Posts)
+  :systemconsole: Site Configuration > Posts
+  :configjson: .DisplaySettings.MaxMarkdownNodes
+  :environment: MM_DISPLAYSETTINGS_MAXMARKDOWNNODES
+  :description: The maximum number of Markdown elements that can be included in a single piece of text in a message. Default is 0 which applies a Mattermost-specified limit.
+
+Maximum Markdown nodes
+~~~~~~~~~~~~~~~~~~~~~~
+
++-------------------------------------------------------------+-----------------------------------------------------------------------+
+| The maximum number of Markdown elements (such as emojis,    | - System Config path: **Site Configuration > Posts**                  |
+| links, or table cells), that can be included in a single    | - ``config.json`` setting: ``.DisplaySettings.MaxMarkdownNodes: 0``   |
+| piece of text in a message.                                 | - Environment variable: ``MM_DISPLAYSETTINGS_MAXMARKDOWNNODES``       |
+|                                                             |                                                                       |
+| Numerical input. Default is **0** which applies a           |                                                                       |
+| Mattermost-specified limit.                                 |                                                                       |
++-------------------------------------------------------------+-----------------------------------------------------------------------+
 
 .. config:setting:: posts-googleapikey
   :displayname: Google API key (Posts)

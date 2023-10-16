@@ -17,8 +17,14 @@ All users can add existing Mattermost users to a Mattermost team or channel, unl
 .. tip::
 
     - Add users to a channel by selecting the channel name and selecting **Add Members**. 
-    - Add groups of users to a channel by `creating a custom group </collaborate/organize-using-custom-user-groups.html>`__ and `@mentioning </collaborate/mention-people.html>`__ the custom group in a channel. Mattermost will prompt to you to add any users who aren't already members of that channel.
-    - A guest is a special role that is restricted to only the channels they have been invited to. When guest access is enabled, you can invite guests or users external to the organization, such as vendors or customers.
+    - Add groups of users to a channel or team by `creating a custom group </collaborate/organize-using-custom-user-groups.html>`__ and `@mentioning </collaborate/mention-people.html>`__ the custom group in a channel. 
+
+      - Mattermost prompts to you to add any users who aren't already members of that channel to the channel.
+      - From Mattermost v9.1, you're given the option to add any users who aren't already members of that team to the team, if you have the permissions to do so.
+
+    - A `guest user </onboard/guest-accounts.html>`__ in Mattermost is a special role that is restricted to only the channels they have been invited to. When `guest access is enabled </configure/authentication-configuration-settings.html#guest-enable>`__ by the system admin, you can invite guests or users external to the organization, such as vendors or customers.
+
+      - Once guests are invited to the team, you can add them to the channel.
 
 Send a direct invite
 ~~~~~~~~~~~~~~~~~~~~
