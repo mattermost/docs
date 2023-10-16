@@ -9,7 +9,7 @@ Manage your sidebar options
 
 To customize Mattermost channel sidebar options based on your preferences, select the gear icon |gear-icon| next to your profile picture, then go to **Sidebar**. 
 
-Your channel sidebar includes `enhanced sidebar features </collaborate/customize-your-channel-sidebar.html>`__, including custom, collapsible channel categories, drag and drop, unread filtering, channel sorting options, and more.
+Your channel sidebar includes `enhanced sidebar features </preferences/customize-your-channel-sidebar.html>`__, including custom, collapsible channel categories, drag and drop, unread filtering, channel sorting options, and more.
 
 .. note::
 
