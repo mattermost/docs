@@ -118,19 +118,23 @@ Enable Marketplace
   :configjson: .PluginSettings.EnableRemoteMarketplace
   :environment: MM_PLUGINSETTINGS_ENABLEREMOTEMARKETPLACE
 
-  - **true**: Mattermost attempts to connect to the endpoint set in MarketplaceURL.
-  - **false**: **(Default)** Mattermost does not attempt to connect to a remote Marketplace, and will show only pre-packaged and installed plugins.
+  - **true**: **(Default)** Mattermost attempts to connect to the endpoint set in MarketplaceURL.
+  - **false**: Mattermost doesn't attempt to connect to a remote Marketplace, and shows only pre-packaged and installed plugins.
 
 Enable remote Marketplace
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------+
-| - **true**: Mattermost attempts to connect to the endpoint set in **Marketplace URL**.                                                          | - System Config path: **Plugins > Plugin Management**                           |
-|   If the connection fails, an error is displayed, and the Marketplace only shows pre-packaged and installed plugins.                            | - ``config.json`` setting: ``.PluginSettings.EnableRemoteMarketplace: false``   |
-| - **false**: **(Default)** Mattermost does not attempt to connect to a remote Marketplace.                                                      | - Environment variable: ``MM_PLUGINSETTINGS_ENABLEREMOTEMARKETPLACE``           |
-|   The Marketplace will only show pre-packaged and installed plugins. Use this setting if your Mattermost server cannot connect to the Internet. |                                                                                 |
+| - **true**: **(Default)** Mattermost attempts to connect to the endpoint set in **Marketplace URL**.                                            | - System Config path: **Plugins > Plugin Management**                           |
+|   If the connection fails, an error is displayed, and the Marketplace only shows pre-packaged and installed plugins.                            | - ``config.json`` setting: ``.PluginSettings.EnableRemoteMarketplace: true``    |
+| - **false**:  Mattermost does not attempt to connect to a remote Marketplace.                                                                   | - Environment variable: ``MM_PLUGINSETTINGS_ENABLEREMOTEMARKETPLACE``           |
+|   The Marketplace shows only pre-packaged and installed plugins. Use this setting if your Mattermost server cannot connect to the Internet.     |                                                                                 |
 +-------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------+
-| **Note**: To connect to a remote Marketplace, **Enable Marketplace** must be **true**, and each Mattermost host must have network access to the endpoint set in **Marketplace URL**.                                              |
+| **Notes**:                                                                                                                                                                                                                        |
+|                                                                                                                                                                                                                                   |
+| - From Mattermost v9.1, set this configuration setting value to ``true`` to access a configured remote marketplace URL.                                                                                                           |
+| - For Mattermost v9.0, the ``MM_FEATUREFLAGS_STREAMLINEDMARKETPLACE`` feature flag must be set to ``false``, and this configuration setting must be set to ``true`` to access a configured remote marketplace URL.                |
+| - Each Mattermost host must have network access to the endpoint set in MarketplaceURL.                                                                                                                                            |
 +-------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------+
 
 .. config:setting:: plugins-marketplaceurl
@@ -432,14 +436,19 @@ RTCD service URL
 .. include:: ../_static/badges/ent-selfhosted-only.rst
   :start-after: :nosearch:
 
-+---------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+
-| The URL to a running `rtcd <https://github.com/mattermost/rtcd>`__ service instance that will host the calls. | - System Config path: **Plugins > Calls**                                                               |
-|                                                                                                               | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.calls.rtcdserviceurl``               |
-|                                                                                                               | - Environment variable: N/A                                                                             |
-| When set (non empty) all the calls will be handled by this external service.                                  |                                                                                                         |
-|                                                                                                               |                                                                                                         |
-| This is an optional field. Changing this setting requires a plugin restart to take effect.                    |                                                                                                         |
-+---------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| The URL to a running `rtcd <https://github.com/mattermost/rtcd>`__ service instance that will host the calls. | - System Config path: **Plugins > Calls**                                                                                                                 |
+|                                                                                                               | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.calls.rtcdserviceurl``                                                                 |
+|                                                                                                               | - Environment variable: N/A                                                                                                                               |
+| When set (non empty) all the calls will be handled by this external service.                                  |                                                                                                                                                           |
+|                                                                                                               |                                                                                                                                                           |
+| This is an optional field. Changing this setting requires a plugin restart to take effect.                    |                                                                                                                                                           |
++---------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Note**:                                                                                                                                                                                                                                                                 |
+|                                                                                                                                                                                                                                                                           |
+| - The client will self-register the first time it connects to the service and store the authentication key in the database. If no client ID is explicitly provided, the diagnostic ID of the Mattermost installation will be used.                                        |
+| - The service URL supports credentials in the form ``http://clientID:authKey@hostname``. Alternatively these can be passed through environment overrides to the Mattermost server, namely ``MM_CALLS_RTCD_CLIENT_ID`` and ``MM_CALLS_RTCD_AUTH_KEY``                      |
++---------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: plugins-callsmaxcallparticipants
   :displayname: Max call participants (Plugins - Calls)
@@ -670,11 +679,16 @@ Job service URL
 .. include:: ../_static/badges/ent-selfhosted-only.rst
   :start-after: :nosearch:
 
-+------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+
-| The URL to a running job service where all the processing related to recordings happens. The recorded files produced are stored in Mattermost. | - System Config path: **Plugins > Calls**                                                               |
-|                                                                                                                                                | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.calls.jobserviceurl``                |
-| This is a required field. Changing this setting requires a plugin restart to take effect.                                                      |                                                                                                         |
-+------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+| The URL to a running job service where all the processing related to recordings happens. The recorded files produced are stored in Mattermost. | - System Config path: **Plugins > Calls**                                                                                        |
+|                                                                                                                                                | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.calls.jobserviceurl``                                         |
+| This is a required field. Changing this setting requires a plugin restart to take effect.                                                      |                                                                                                                                  |
++------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+| **Note**:                                                                                                                                                                                                                                                                         |
+|                                                                                                                                                                                                                                                                                   |
+| - The client will self-register the first time it connects to the service and store the authentication key in the database. If no client ID is explicitly provided, the diagnostic ID of the Mattermost installation will be used.                                                |
+| - The service URL supports credentials in the form ``http://clientID:authKey@hostname``. Alternatively these can be passed through environment overrides to the Mattermost server, namely ``MM_CALLS_JOB_SERVICE_CLIENT_ID`` and ``MM_CALLS_JOB_SERVICE_AUTH_KEY``.               |
++------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: plugins-maximumcallrecordingduration
   :displayname: Maximum call recording duration (Plugins - Calls)
@@ -1003,6 +1017,7 @@ At rest encryption key
 
 Webhook secret
 ~~~~~~~~~~~~~~~
+
 +------------------------------------------------------------------------+---------------------------------------------------+
 | Generate the webhook secret that Microsoft Teams will use to send      | - System Config path: **Plugins > MS Teams Sync** |
 | messages to Mattermost.                                                | - ``config.json`` setting: N/A                    |
@@ -1083,7 +1098,7 @@ Allow to temporarily skip connect user
   :systemconsole: Plugins > MS Teams Sync
   :configjson: N/A
   :environment: N/A
-  :description: Specify how often, in minutes, to synchronize direct messages, group messages, and chats, between Mattermost and Microsoft Teams users.
+  :description: Specify how often, in minutes, to synchronize direct messages, group messages, and chats, between Mattermost and Microsoft Teams users. Leave blank to disable user synchronization.
 
 Sync users
 ~~~~~~~~~~
@@ -1097,14 +1112,26 @@ Sync users
 | Numerical value.                                                       |                                                   |
 +------------------------------------------------------------------------+---------------------------------------------------+
 
-.. config:setting:: plugins-msteamssyncsyncmessages
-  :displayname: Sync direct and group messages (Plugins - MS Teams Sync)
-  :systemconsole: Plugins > MS Teams Sync
+.. config:setting:: plugins-msteamssyncguestusers
+  :displayname: Sync guest users (Plugins - MS Teams Connect)
+  :systemconsole: Plugins > MS Teams Connect
   :configjson: N/A
   :environment: N/A
 
-  - **true**: Mattermost synchronizes direct messages, group messages, and chats between Mattermost and Microsoft Teams.
-  - **false**: Mattermost doesn't synchronize direct messages, group messages, and chats between Mattermost and Microsoft Teams.
+  - **true**: Mattermost includes Microsoft Teams guest users when synchronizing.
+  - **false**: Mattermost doesn't include Microsoft Teams guest users when synchronizing.
+
+Sync guest users
+~~~~~~~~~~~~~~~~
+
++------------------------------------------------------------------------+------------------------------------------------------+
+| Synchronize Microsoft Teams guest users and Mattermost users.          | - System Config path: **Plugins > MS Teams Connect** |
+|                                                                        | - ``config.json`` setting: N/A                       |
+| - **true**: Mattermost includes Microsoft Teams guest users when       | - Environment variable: N/A                          |
+|   synchronizing.                                                       |                                                      |
+| - **false**: **(Default)**Mattermost doesn't include Microsoft Teams   |                                                      |
+|   guest users when synchronizing.                                      |                                                      |
++------------------------------------------------------------------------+------------------------------------------------------+
 
 Sync direct and group messages
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1135,6 +1162,59 @@ Enabled teams
 | Separate multiple team names with commas. Leave this value blank to    |                                                    |
 | synchronize all Mattermost teams.                                      |                                                    |
 +------------------------------------------------------------------------+----------------------------------------------------+
+
+.. config:setting:: plugins-msteamssyncpromptinterval
+  :displayname: Sync users (Plugins - MS Teams Connect)
+  :systemconsole: Plugins > MS Teams Connect
+  :configjson: N/A
+  :environment: N/A
+  :description: Specify how often, in hours, to prompt users to connect their Microsoft Teams user account to their Mattermost user account.
+
+Prompt interval for DMs and GMs
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++------------------------------------------------------------------------+------------------------------------------------------+
+| Specify how often, in hours, to prompt users to connect their          | - System Config path: **Plugins > MS Teams Connect** |
+| Microsoft Teams user account to their Mattermost user account.         | - ``config.json`` setting: N/A                       |
+|                                                                        | - Environment variable: N/A                          |
+| Leave this value blank to disble the prompt.                           |                                                      |
+| Numerical value.                                                       |                                                      |
++------------------------------------------------------------------------+------------------------------------------------------+
+
+.. config:setting:: plugins-msteamssyncmaxsizeattachments
+  :displayname: Maximum size of attachments to support complete one time download (Plugins - MS Teams Connect)
+  :systemconsole: Plugins > MS Teams Connect
+  :configjson: N/A
+  :environment: N/A
+  :description: Specify the maximum file size, in megabytes (MB), of attachments that can be loaded into memory. Attachment files larger than this value will be streamed from Microsoft Teams to Mattermost.
+
+Maximum size of attachments to support complete one time download
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++--------------------------------------------------------------------+----------------------------------------------------------+
+| Specify the maximum file size, in megabytes (MB), of attachments   | - System Config path: **Plugins > MS Teams Connect**     |
+| that can be loaded into memory. Attachment files larger than       | - ``config.json`` setting: N/A                           |
+| this value will be streamed from Microsoft Teams to Mattermost.    | - Environment variable: N/A                              |
+|                                                                    |                                                          |
+| Numerical value. Default is **20** MB.                             |                                                          |
++--------------------------------------------------------------------+----------------------------------------------------------+
+
+.. config:setting:: plugins-msteamssyncbuffer
+  :displayname: Buffer size for streaming files (Plugins - MS Teams Connect)
+  :systemconsole: Plugins > MS Teams Connect
+  :configjson: N/A
+  :environment: N/A
+  :description: Specify the buffer size, in megabytes (MB), for streaming attachment files from Microsoft Teams to Mattermost.
+
+Buffer size for streaming files
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++--------------------------------------------------------------------+----------------------------------------------------------+
+| Specify the buffer size, in megabytes (MB), for streaming          | - System Config path: **Plugins > MS Teams Connect**     |
+| attachment files from Microsoft Teams to Mattermost.               | - ``config.json`` setting: N/A                           |
+|                                                                    | - Environment variable: N/A                              |
+| Numerical value. Default is **20** MB.                             |                                                          |
++--------------------------------------------------------------------+----------------------------------------------------------+
 
 ----
 

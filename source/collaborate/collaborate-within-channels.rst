@@ -49,7 +49,8 @@ Learn more about collaborating within Mattermost channels:
   Communicate a channel's focus and scope </collaborate/channel-header-purpose>
   Create channels </collaborate/create-channels>
   Rename channels </collaborate/rename-channels>
-  Convert public channels to private </collaborate/convert-public-channels>
+  Convert public channels to private channels </collaborate/convert-public-channels>
+  Convert group messages to private channels </collaborate/convert-group-messages>
   Join and leave channels </collaborate/join-leave-channels>
   Make calls in Mattermost </collaborate/make-calls>
   Manage channel members </collaborate/manage-channel-members>
@@ -68,7 +69,8 @@ Learn more about collaborating within Mattermost channels:
 * :doc:`Navigate between channels </collaborate/navigate-between-channels>` - Learn how to navigate between channels.
 * :doc:`Create channels </collaborate/create-channels>`  - Create channels to organize discussion by topic, project, or focus.
 * :doc:`Rename a channel </collaborate/rename-channels>` - Rename channels to make them more discoverable.
-* :doc:`Convert public channels to private </collaborate/convert-public-channels>` - Learn how to convert channel access and visibility.
+* :doc:`Convert public channels to private channels </collaborate/convert-public-channels>` - Learn how to convert channel access and visibility.
+* :doc:`Convert group messages to private channels </collaborate/convert-group-messages>` - Learn how to convert group messages to private channels.
 * :doc:`Manage channel members </collaborate/manage-channel-members>` - Add and remove users from channels.
 * :doc:`Mark channels as favorites </collaborate/favorite-channels>` - Mark commonly visited channels as favorites.
 * :doc:`Mark channels as unread </collaborate/mark-channels-unread>` - Mark channels unread to return to messages later.

@@ -4,12 +4,78 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 
 Latest Mattermost Cloud releases:
 
+- [Release 2023-10-10](#release-2023-10-10)
+- [Release 2023-09-26](#release-2023-09-26)
 - [Release 2023-09-12](#release-2023-09-12)
 - [Release 2023-08-29](#release-2023-08-29)
 - [Release 2023-08-09](#release-2023-08-09)
 - [Release 2023-08-03](#release-2023-08-03)
-- [Release 2023-07-26](#release-2023-07-26)
-- [Release 2023-07-20](#release-2023-07-20)
+
+## Release 2023-10-10
+
+### Improvements
+
+#### User Interface (UI)
+ - Pre-packaged Playbooks version [v1.39.0](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v1.39.0).
+ - Pre-packaged Focalboard plugin version [v7.11.4](https://github.com/mattermost/focalboard/releases/tag/v7.11.4).
+ - Pre-packaged Calls plugin version [v0.20.0](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v0.20.0).
+
+#### Administration
+ - Added heap profile, CPU profile, and goroutines profile to the support package.
+ - Merged WIP i18n locales, but disallowed selecting unsupported locales.
+
+### Bug Fixes
+ - Fixed an issue where the channel member count increased when adding an already present user.
+
+### Known Issues
+ - Known issue related to the new feature to convert a Group Message channel to a private channel: [MM-54525](https://mattermost.atlassian.net/browse/MM-54525).
+ - Left-hand side resize option overrides the **Browse/Create Channel** menu if To-Do plugin is installed [MM-54367](https://mattermost.atlassian.net/browse/MM-54367).
+
+## Release 2023-09-26
+
+### Important Upgrade Notes
+
+ - **Mattermost Boards is now removed from all Cloud workspaces**. See this [forum post](https://forum.mattermost.com/t/upcoming-product-changes-to-boards-and-various-plugins/16669) for more details.
+
+### Improvements
+
+#### User Interface (UI)
+ - Pre-packaged GitLab plugin version v1.7.0.
+ - Added additional reaction options when viewing threads or messages when the sidebar is larger than its minimum width.
+ - Added block changes to name, display name, and purpose for direct and group messages.
+ - Added a link to [notification documentation](https://docs.mattermost.com/preferences/manage-your-notifications.html) in the **Notification Settings** modal.
+ - Updated the post textbox measurement code to be more reliable.
+ - Pre-packaged Calls version v0.19.1.
+ - The ``invite`` slash command now supports custom user groups.
+ - Re-enabled the remote marketplace functionality, when configured as per ``PluginSettings.EnableRemoteMarketplace`` [documentation](https://docs.mattermost.com/configure/plugins-configuration-settings.html#plugins-enableremotemarketplace).
+ - Added the ability to convert a group message channel to a private channel.
+ - Group message channels now behave like direct message channels, showing a new mention for every new message.
+
+#### Administration
+ - Added 2 new URL parameters to ``GET /api/v4/groups``: ``include_archived`` and ``filter_archived``. Added the ability to restore archived groups from the user groups modal.
+ - Added file storage information to the support package.
+ - Improved performance on data retention ``DeleteOrphanedRows`` queries. Removed feature flag ``DataRetentionConcurrencyEnabled``. Data retention now runs without concurrency in order to avoid any performance degradation. Added a new configuration setting ``DataRetentionSettings.RetentionIdsBatchSize``, which allows admins to to configure how many batches of IDs will be fetched at a time when deleting orphaned reactions. The default value is 100.
+ - The Go version was bumped to v1.20.
+ - A ``user_id`` is now included in all HTTP logs (debug level) to help determine who is generating unexpected traffic.
+ - Added a setting ``DisplaySettings.MaxMarkdownNodes`` to limit the maximum complexity of markdown text on mobile.
+ - Added new URL Parameter to ``GET /api/v4/groups`` and ``GET /api/v4/groups/:group_id``. ``include_member_ids`` will add all the members ``user_ids`` to the group response objects. You can now also add group members to a channel, any members that are not part of the team can be added to the team through this flow and subsequently added the channel.
+
+### API Changes
+ - Added new API endpoint ``GET`` ``/api/v4/channels/<channel-id>/common_teams`` to fetch list of teams common between members of a group message.
+ - Added new API endpoint ``POST`` ``/api/v4/channels/<channel-id>/convert_to_channel`` to convert a group message to a private channel.
+ - Added a new ``MessageHasBeenDeleted`` hook to the plugin API.
+ - Moved the ``request`` package into the public shared folder.
+
+### Bug Fixes
+ - Fixed an issue with keyboard support for some menus with submenus.
+ - Fixed an issue with a disappearing punctuation when following a group mention.
+ - Fixed an issue where compliance export jobs were not able to start after disabling and enabling the compliance export.
+ - Fixed a potential read after write issue when loading a license.
+
+### Known Issues
+ - Known issues related to the new feature to convert a Group Message channel to a private channel: [MM-54525](https://mattermost.atlassian.net/browse/MM-54525), [MM-54526](https://mattermost.atlassian.net/browse/MM-54526), [MM-54541](https://mattermost.atlassian.net/browse/MM-54541), [MM-54542](https://mattermost.atlassian.net/browse/MM-54542).
+ - ``/invite`` user to a channel incorrectly posts an ephemeral message of ``<no value> added to {channel_name} channel`` [MM-54555](https://mattermost.atlassian.net/browse/MM-54555).
+ - Left-hand side resize option overrides the **Browse/Create Channel** menu if To-Do plugin is installed [MM-54367](https://mattermost.atlassian.net/browse/MM-54367).
 
 ## Release 2023-09-12
 

@@ -29,7 +29,7 @@ Channel purpose
 
 You're prompted to provide an optional channel purpose description when `creating a new channel in Mattermost </collaborate/create-channels.html>`__ visible when you select **View Info** |channel-info| for the channel.
 
-.. image:: ../images/channel-purpose.png
+.. image:: ../images/channel-purpose-info.png
     :alt: Channel purpose helps users decide if they want to join the channel based on its scope or focus.
 
 A channel purpose can be up to 250 characters in length and is often used to help users decide whether to join that channel.

@@ -15,7 +15,7 @@ Using ``wget``, download the Mattermost Server release you want to install.
 
         <div class="mm-code-copy__wrapper">
           <code class="mm-code-copy__text mm-code-copy__trigger" data-click-el="Snippet">
-          wget https://releases.mattermost.com/9.0.0/mattermost-9.0.0-linux-amd64.tar.gz
+          wget https://releases.mattermost.com/9.1.0/mattermost-9.1.0-linux-amd64.tar.gz
           </code>
           <span class="mm-code-copy__copied-notice">Copied to clipboard</span>
         </div>
@@ -35,7 +35,7 @@ Using ``wget``, download the Mattermost Server release you want to install.
 
         <div class="mm-code-copy__wrapper">
           <code class="mm-code-copy__text mm-code-copy__trigger" data-click-el="Snippet">
-            wget https://releases.mattermost.com/7.8.11/mattermost-7.8.11-linux-amd64.tar.gz
+            wget https://releases.mattermost.com/8.1.3/mattermost-8.1.3-linux-amd64.tar.gz
           </code>
           <span class="mm-code-copy__copied-notice">Copied to clipboard</span>
         </div>
