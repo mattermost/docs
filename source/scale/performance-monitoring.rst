@@ -6,7 +6,7 @@ Performance monitoring
 
 *Available in legacy Mattermost Enterprise Edition E20*
 
-Performance monitoring support enables a Mattermost server to track system health for large Enterprise deployments through integrations with `Prometheus <https://prometheus.io/>`__ and `Grafana <https://grafana.org/>`__. These integrations support data collection from several Mattermost servers, which is particularly useful if you're running Mattermost `in high availability mode </scale/high-availability-cluster.html>`__.
+Performance monitoring support enables a Mattermost server to track system health for large Enterprise deployments through integrations with `Prometheus <https://prometheus.io/>`__ and `Grafana <https://grafana.org/>`__. These integrations support data collection from several Mattermost servers, which is particularly useful if you're running Mattermost `in high availability mode </scale/high-availability-cluster.html>`__. Once you're tracking system health, you can `set up performance alerts </scale/performance-alerting.html>`__ on your Grafana dashboard.
 
 .. note::
 
@@ -252,15 +252,15 @@ Use annotations to streamline analysis when a job is long running, such as an LD
 Standard Go metrics
 ~~~~~~~~~~~~~~~~~~~
 
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
+
 The performance monitoring feature provides standard Go metrics for HTTP server runtime profiling data and system monitoring, such as:
 
 - ``go_memstats_alloc_bytes`` for memory usage
 - ``go_goroutines`` for number of goroutines
 - ``go_gc_duration_seconds`` for garbage collection duration
 - ``go_memstats_heap_objects`` for object tracking on the heap
-
-.. note::
-  Profile reports are available to Team Edition and Enterprise Edition users.
 
 To learn how to set up runtime profiling, see the `pprof package Go documentation <https://pkg.go.dev/net/http/pprof>`__. You can also visit the ``ip:port`` page for a complete list of metrics with descriptions.
 

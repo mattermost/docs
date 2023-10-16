@@ -7,13 +7,16 @@ Manage custom groups (beta)
 .. |more-icon-vertical| image:: ../images/dots-vertical_F01D9.svg
   :alt: Use the More icon in the top left corner to access Mattermost desktop apps customization settings.
 
+.. |plus| image:: ../images/plus_F0415.svg
+  :alt: The Plus icon provides access to channel and direct message functionality.
+
 *Not available in legacy Enterprise Edition E10/E20*
 
 Custom groups (beta) reduce noise and improve focus by notifying the right people in a channel at the right time, while maintaining transparency for all members in that channel. Custom user groups let you notify up to 256 users at a time rather than notifying users individually. 
 
 For example, perhaps you want to @mention a cross-functional team about a bug fixes needed for an upcoming feature release, without notifying everyone else in the channel. Using a custom group notifies the cross-functional team immediately, while keeping important stakeholders in the loop on the status of the feature release.
 
-Or perhaps you want to add a group of users to a channel. When you @mention a custom group in a channel, Mattermost prompts you to add anyone from that custom group who isn't already a channel member.
+Or perhaps you want to add a group of users to a team and a channel. When you @mention a custom group in a channel, Mattermost prompts you to add anyone from that custom group who isn't already a channel and team member. See the `invite people to your workspace </collaborate/invite-people.html>`__ documentation for details.
 
 Once a custom user group has been created, you can mention that group the same way you @mention another Mattermost member. See the `mention people in messages </collaborate/mention-people.html>`__ documentation for details.
 
@@ -26,7 +29,7 @@ Once a custom user group has been created, you can mention that group the same w
 Create a custom group
 ---------------------
 
-1. Using Mattermost in a web browser or the desktop app, select **+** from the top of the channel sidebar, then select **Create New User Group**.
+1. Using Mattermost in a web browser or the desktop app, select |plus| at the top of the channel sidebar, then select **Create New User Group**.
 
 2. Specify a name and mention. The mention is the handle you use to @mention a notification to the group. Group names must be unique across the Mattermost workspace. If a name is in use as a channel name, display name, or another custom group's name, it won't be available.
 
