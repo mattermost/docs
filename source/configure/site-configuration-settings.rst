@@ -455,6 +455,30 @@ Max channels per team
 | for Cloud deployments.                                                                |                                                                       |
 +---------------------------------------------------------------------------------------+-----------------------------------------------------------------------+
 
+.. config:setting:: users-enablejoinleavemessages
+  :displayname: Enable join/leave messages by default (Users and teams)
+  :systemconsole: Site Configuration > Users and teams
+  :configjson: .TeamSettings.EnableJoinLeaveMessageByDefault
+  :environment: MM_TEAMSETTINGS_ENABLEJOINLEAVEMESSAGEBYDEFAULT
+  :description: Specify the default configuration of system messages displayed when users join or leave channels.
+
+  - **true**: **(Default)** Join/Leave messages are displayed.
+  - **false**: Join/Leave messages are hidden.
+
+Enable join/leave messages by default
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++---------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+
+| Specify the default configuration of system messages displayed when users             | - System Config path: **Site Configuration > Users and teams**                     |
+| join or leave channels.                                                               | - ``config.json`` setting: ``.TeamSettings.EnableJoinLeaveMessageByDefault: true`` |
+|                                                                                       | - Environment variable: ``MM_TEAMSETTINGS_ENABLEJOINLEAVEMESSAGEBYDEFAULT``        |
+| - **true**: **(Default)** Join/Leave messages are displayed.                          |                                                                                    |
+| - **false**: Join/Leave messages are hidden.                                          |                                                                                    |
+|                                                                                       |                                                                                    |
+| Users can override this default by going to **Settings > Advanced >                   |                                                                                    |
+| Enable Join/Leave Messages**.                                                         |                                                                                    |
++---------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+
+
 .. config:setting:: users-restrictdirectmessage
   :displayname: Enable users to open direct message channels with (Users and teams)
   :systemconsole: Site Configuration > Users and teams
@@ -1322,6 +1346,25 @@ Custom URL schemes
 |                                                                                                                                                                                                          | - ``config.json`` setting: ``.DisplaySettings.CustomURLSchemes: []``  |
 | ``config.json`` setting: an array of strings                                                                                                                                                             | - Environment variable: ``MM_DISPLAYSETTINGS_CUSTOMURLSCHEMES``       |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------+
+
+.. config:setting:: posts-maxmarkdownnodes
+  :displayname: Maximum Markdown nodes (Posts)
+  :systemconsole: Site Configuration > Posts
+  :configjson: .DisplaySettings.MaxMarkdownNodes
+  :environment: MM_DISPLAYSETTINGS_MAXMARKDOWNNODES
+  :description: The maximum number of Markdown elements that can be included in a single piece of text in a message. Default is 0 which applies a Mattermost-specified limit.
+
+Maximum Markdown nodes
+~~~~~~~~~~~~~~~~~~~~~~
+
++-------------------------------------------------------------+-----------------------------------------------------------------------+
+| The maximum number of Markdown elements (such as emojis,    | - System Config path: **Site Configuration > Posts**                  |
+| links, or table cells), that can be included in a single    | - ``config.json`` setting: ``.DisplaySettings.MaxMarkdownNodes: 0``   |
+| piece of text in a message.                                 | - Environment variable: ``MM_DISPLAYSETTINGS_MAXMARKDOWNNODES``       |
+|                                                             |                                                                       |
+| Numerical input. Default is **0** which applies a           |                                                                       |
+| Mattermost-specified limit.                                 |                                                                       |
++-------------------------------------------------------------+-----------------------------------------------------------------------+
 
 .. config:setting:: posts-googleapikey
   :displayname: Google API key (Posts)

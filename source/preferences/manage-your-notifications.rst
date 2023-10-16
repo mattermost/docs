@@ -4,8 +4,6 @@ Manage your notifications
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-
-
 .. |gear| image:: ../images/settings-outline_F08BB.svg
   :alt: Use the Settings icon to customize your Mattermost user experience.
 
@@ -15,19 +13,31 @@ Manage your notifications
 .. |more-icon| image:: ../images/dots-horizontal_F01D8.svg
     :alt: Use the More icon to access additional message options.
 
+.. |dot-badge| image:: ../images/dot-badge.png
+    :alt: A dot on the badge means you have unread activity in at least one channel you're a member of.
+    :width: 50px
+
+.. |numbered-badge| image:: ../images/numbered-badge.png
+    :alt: A numbered badge means you have at least 1 unread message, @mention, or one of your keywords has triggered a notification.
+    :width: 50px
+
 Mattermost notifies you of new activity in the following ways:
 
 - **Badges**: In Mattermost, badges show you when you have unread messages and threads.
+
+    - |dot-badge| A dot on the badge means you have unread activity in at least one channel you're a member of.
+    - |numbered-badge| A numbered badge means you have at least one unread `direct message </collaborate/channel-types.html#direct-messages>`__, `group message </collaborate/channel-types.html#group-messages>`__, `@mention </collaborate/mention-people.html>`__, or one of your keywords has triggered a notification.
 - **Banner alerts**: Pop-ups alert you to new activity.
 - **Push notifications**: Mobile app alert you to new activity when you're on the go.
 - **Sounds**: Audible sounds alert you to new activity.
 
-You can configure Mattermost to receive increase or decrease the number of notifications based on your preferences.
 
 .. tip:: Missing notifications? Visit our `notifications knowledge base article <https://support.mattermost.com/hc/en-us/articles/19161390661780>`__ for troubleshooting tips and tricks.
 
 Get notified
 -------------
+
+You can configure Mattermost to receive increase or decrease the number of notifications based on your preferences.
 
 In a web browser or the desktop app, select the **Settings** |gear| icon located in the top right corner of the screen to manage your notification preferences.
 
@@ -93,7 +103,7 @@ On mobile, select the **Settings** |gear| icon and tap **Notifications**.
 
         **Customize notification keywords**
 
-        You can customize any additional keywords to receive notifications. For example, you can receive notifications for all messages and threads related to a specific topic, project name, or customer. Separate multiple keywords using commas.
+        You can customize any additional non case-sensitive keywords to trigger notifications. For example, you can receive notifications for all messages and threads related to a specific topic, project name, or customer. Separate multiple keywords using commas or by pressing :kbd:`Tab`, and use :kbd:`Backspace` to manage keywords.
 
     .. tab:: Replies
 
