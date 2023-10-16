@@ -118,19 +118,23 @@ Enable Marketplace
   :configjson: .PluginSettings.EnableRemoteMarketplace
   :environment: MM_PLUGINSETTINGS_ENABLEREMOTEMARKETPLACE
 
-  - **true**: Mattermost attempts to connect to the endpoint set in MarketplaceURL.
-  - **false**: **(Default)** Mattermost does not attempt to connect to a remote Marketplace, and will show only pre-packaged and installed plugins.
+  - **true**: **(Default)** Mattermost attempts to connect to the endpoint set in MarketplaceURL.
+  - **false**: Mattermost doesn't attempt to connect to a remote Marketplace, and shows only pre-packaged and installed plugins.
 
 Enable remote Marketplace
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------+
-| - **true**: Mattermost attempts to connect to the endpoint set in **Marketplace URL**.                                                          | - System Config path: **Plugins > Plugin Management**                           |
-|   If the connection fails, an error is displayed, and the Marketplace only shows pre-packaged and installed plugins.                            | - ``config.json`` setting: ``.PluginSettings.EnableRemoteMarketplace: false``   |
-| - **false**: **(Default)** Mattermost does not attempt to connect to a remote Marketplace.                                                      | - Environment variable: ``MM_PLUGINSETTINGS_ENABLEREMOTEMARKETPLACE``           |
-|   The Marketplace will only show pre-packaged and installed plugins. Use this setting if your Mattermost server cannot connect to the Internet. |                                                                                 |
+| - **true**: **(Default)** Mattermost attempts to connect to the endpoint set in **Marketplace URL**.                                            | - System Config path: **Plugins > Plugin Management**                           |
+|   If the connection fails, an error is displayed, and the Marketplace only shows pre-packaged and installed plugins.                            | - ``config.json`` setting: ``.PluginSettings.EnableRemoteMarketplace: true``    |
+| - **false**:  Mattermost does not attempt to connect to a remote Marketplace.                                                                   | - Environment variable: ``MM_PLUGINSETTINGS_ENABLEREMOTEMARKETPLACE``           |
+|   The Marketplace shows only pre-packaged and installed plugins. Use this setting if your Mattermost server cannot connect to the Internet.     |                                                                                 |
 +-------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------+
-| **Note**: To connect to a remote Marketplace, **Enable Marketplace** must be **true**, and each Mattermost host must have network access to the endpoint set in **Marketplace URL**.                                              |
+| **Notes**:                                                                                                                                                                                                                        |
+|                                                                                                                                                                                                                                   |
+| - From Mattermost v9.1, set this configuration setting value to ``true`` to access a configured remote marketplace URL.                                                                                                           |
+| - For Mattermost v9.0, the ``MM_FEATUREFLAGS_STREAMLINEDMARKETPLACE`` feature flag must be set to ``false``, and this configuration setting must be set to ``true`` to access a configured remote marketplace URL.                |
+| - Each Mattermost host must have network access to the endpoint set in MarketplaceURL.                                                                                                                                            |
 +-------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------+
 
 .. config:setting:: plugins-marketplaceurl
@@ -432,14 +436,19 @@ RTCD service URL
 .. include:: ../_static/badges/ent-selfhosted-only.rst
   :start-after: :nosearch:
 
-+---------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+
-| The URL to a running `rtcd <https://github.com/mattermost/rtcd>`__ service instance that will host the calls. | - System Config path: **Plugins > Calls**                                                               |
-|                                                                                                               | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.calls.rtcdserviceurl``               |
-|                                                                                                               | - Environment variable: N/A                                                                             |
-| When set (non empty) all the calls will be handled by this external service.                                  |                                                                                                         |
-|                                                                                                               |                                                                                                         |
-| This is an optional field. Changing this setting requires a plugin restart to take effect.                    |                                                                                                         |
-+---------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| The URL to a running `rtcd <https://github.com/mattermost/rtcd>`__ service instance that will host the calls. | - System Config path: **Plugins > Calls**                                                                                                                 |
+|                                                                                                               | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.calls.rtcdserviceurl``                                                                 |
+|                                                                                                               | - Environment variable: N/A                                                                                                                               |
+| When set (non empty) all the calls will be handled by this external service.                                  |                                                                                                                                                           |
+|                                                                                                               |                                                                                                                                                           |
+| This is an optional field. Changing this setting requires a plugin restart to take effect.                    |                                                                                                                                                           |
++---------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Note**:                                                                                                                                                                                                                                                                 |
+|                                                                                                                                                                                                                                                                           |
+| - The client will self-register the first time it connects to the service and store the authentication key in the database. If no client ID is explicitly provided, the diagnostic ID of the Mattermost installation will be used.                                        |
+| - The service URL supports credentials in the form ``http://clientID:authKey@hostname``. Alternatively these can be passed through environment overrides to the Mattermost server, namely ``MM_CALLS_RTCD_CLIENT_ID`` and ``MM_CALLS_RTCD_AUTH_KEY``                      |
++---------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: plugins-callsmaxcallparticipants
   :displayname: Max call participants (Plugins - Calls)
@@ -670,11 +679,16 @@ Job service URL
 .. include:: ../_static/badges/ent-selfhosted-only.rst
   :start-after: :nosearch:
 
-+------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+
-| The URL to a running job service where all the processing related to recordings happens. The recorded files produced are stored in Mattermost. | - System Config path: **Plugins > Calls**                                                               |
-|                                                                                                                                                | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.calls.jobserviceurl``                |
-| This is a required field. Changing this setting requires a plugin restart to take effect.                                                      |                                                                                                         |
-+------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+| The URL to a running job service where all the processing related to recordings happens. The recorded files produced are stored in Mattermost. | - System Config path: **Plugins > Calls**                                                                                        |
+|                                                                                                                                                | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.calls.jobserviceurl``                                         |
+| This is a required field. Changing this setting requires a plugin restart to take effect.                                                      |                                                                                                                                  |
++------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+| **Note**:                                                                                                                                                                                                                                                                         |
+|                                                                                                                                                                                                                                                                                   |
+| - The client will self-register the first time it connects to the service and store the authentication key in the database. If no client ID is explicitly provided, the diagnostic ID of the Mattermost installation will be used.                                                |
+| - The service URL supports credentials in the form ``http://clientID:authKey@hostname``. Alternatively these can be passed through environment overrides to the Mattermost server, namely ``MM_CALLS_JOB_SERVICE_CLIENT_ID`` and ``MM_CALLS_JOB_SERVICE_AUTH_KEY``.               |
++------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: plugins-maximumcallrecordingduration
   :displayname: Maximum call recording duration (Plugins - Calls)
