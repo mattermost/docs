@@ -252,15 +252,15 @@ Use annotations to streamline analysis when a job is long running, such as an LD
 Standard Go metrics
 ~~~~~~~~~~~~~~~~~~~
 
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
+
 The performance monitoring feature provides standard Go metrics for HTTP server runtime profiling data and system monitoring, such as:
 
 - ``go_memstats_alloc_bytes`` for memory usage
 - ``go_goroutines`` for number of goroutines
 - ``go_gc_duration_seconds`` for garbage collection duration
 - ``go_memstats_heap_objects`` for object tracking on the heap
-
-.. note::
-  Profile reports are available to Team Edition and Enterprise Edition users.
 
 To learn how to set up runtime profiling, see the `pprof package Go documentation <https://pkg.go.dev/net/http/pprof>`__. You can also visit the ``ip:port`` page for a complete list of metrics with descriptions.
 
