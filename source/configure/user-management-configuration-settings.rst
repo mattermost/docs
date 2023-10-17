@@ -53,7 +53,7 @@ Using mmctl
 ^^^^^^^^^^^^^^^^
 
 If you prefer command-line tools, Mattermost offers mmctl for system administration.
-Open your terminal or command prompt.
+In a terminal window, use the following command to list all users and their IDs: ``mmctl user list`` to return a list of user IDs.
 Use the following command to list all users and their IDs: ``mmctl user list``.
 You will receive a list of users with their IDs, making it easy to identify the user you're interested in.
 
