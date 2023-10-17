@@ -42,7 +42,7 @@ Users can be specified in Mattermost by username or user ID. Usernames automatic
 System admins can identify a user's ID using the Mattermost API or mmctl. 
 
 Using the API
-~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^
 
 Yes, it is possible to find a user's ID using the Mattermost API. You can use this method if you need to automate user-related tasks or integrate with external systems.
 Make an HTTP GET request to the following endpoint: ``https://your-mattermost-url/api/v4/users/username/username_here``.
