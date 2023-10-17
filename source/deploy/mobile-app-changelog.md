@@ -2,12 +2,36 @@
 
 Latest Mattermost Mobile Apps releases:
 
+- [2.10.0 Release](#release)
 - [2.9.0 Release](#release)
 - [2.8.2 Release](#id1)
 - [2.8.1 Release](#id4)
 - [2.8.0 Release](#id9)
 - [2.7.0 Release](#id14)
-- [2.6.0 Release](#id19)
+
+## 2.10.0 Release
+- Release Date: November 16, 2023
+- Server Versions Supported: Server v8.1.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
+
+### Compatibility
+ - **Upgrade to server version v8.1.0 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/upgrade/extended-support-release.html) (ESR) v7.8.0 has ended and upgrading to server ESR v8.1.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
+ - iPhone 5s devices and later with iOS 12.4+ is required.
+
+### Improvements
+ - Added the ability to copy the channel purpose text.
+
+### Bug Fixes
+ - Calls: Fixed an issue on Android where the microphone would stop working when Mattermost was put in the background.
+ - Fixed an issue where users could not auto-reconnect the websocket after turning off and then turning on Wi-Fi (or when Wi-Fi was not stable) on some Samsung devices.
+ - Fixed an issue where users did not remain in the current channel when replying to a post from the permalink view.
+
+### Open Source Components
+ - Added ``@voximplant/react-native-foreground-service`` to https://github.com/mattermost/mattermost-mobile.
+
+### Known Issues
+ - Users are unable to adjust the font size via the OS font size setting.
+ - Some Google Pixel phones on Android 12+ might not continue past the login screen. This is a known issue with the OS, and the current workaround is to restart the device.
 
 ## 2.9.0 Release
 - Release Date: October 16, 2023
