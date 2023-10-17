@@ -50,7 +50,7 @@ Replace **your-mattermost-url** with the URL of your Mattermost instance and **u
 The API response will contain a JSON object that includes the user's ID among other details.
 
 Using mmctl
-~~~~~~~~~~~
+^^^^^^^^^^^^^^^^
 
 If you prefer command-line tools, Mattermost offers mmctl for system administration.
 Open your terminal or command prompt.
