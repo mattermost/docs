@@ -2765,6 +2765,46 @@ redirects = {
         "https://docs.mattermost.com/guides/channels.html",
 "messaging/welcome-to-mattermost-messaging.html":
 	"https://docs.mattermost.com/guides/channels.html",
+"messaging/cloud-user-management.html": 
+	"https://docs.mattermost.com/collaborate/manage-channel-members.html",
+"messaging/cloud-user-management.html#inviting-team-members": 
+	"https://docs.mattermost.com/collaborate/invite-people.html",
+"messaging/cloud-user-management.html#sending-direct-invites": 
+	"https://docs.mattermost.com/collaborate/invite-people.html#send-a-direct-invite",
+"messaging/cloud-user-management.html#sending-team-invite-links": 
+	"https://docs.mattermost.com/collaborate/invite-people.html#send-a-team-invite-link",
+"messaging/cloud-user-management.html#adding-someone-to-your-team": 
+	"https://docs.mattermost.com/collaborate/invite-people.html",
+"messaging/cloud-user-management.html#about-user-roles": 
+	"https://docs.mattermost.com/collaborate/learn-about-roles.html",
+"messaging/cloud-user-management.html#system-admin": 
+	"https://docs.mattermost.com/collaborate/learn-about-roles.html#system-admin",
+"messaging/cloud-user-management.html#team-admin": 
+	"https://docs.mattermost.com/collaborate/learn-about-roles.html#team-admin",
+"messaging/cloud-user-management.html#channel-admin": 
+	"https://docs.mattermost.com/collaborate/learn-about-roles.html#channel-admin",
+"messaging/cloud-user-management.html#member": 
+	"https://docs.mattermost.com/collaborate/learn-about-roles.html#member",
+"messaging/cloud-user-management.html#guest": 
+	"https://docs.mattermost.com/collaborate/learn-about-roles.html#guest",
+"messaging/cloud-user-management.html#user-with-personal-access-token-permission": 
+	"https://docs.mattermost.com/collaborate/learn-about-roles.html#grant-personal-access-tokens",
+"messaging/cloud-user-management.html#deactivating-users": 
+	"https://docs.mattermost.com/collaborate/learn-about-roles.html#deactivated",
+"messaging/cloud-user-management.html#removing-a-user-from-a-team-or-leaving-a-team": 
+	"https://docs.mattermost.com/collaborate/organize-using-teams.html#remove-people-from-teams",
+"messaging/cloud-user-management.html#remove-user-from-team": 
+	"https://docs.mattermost.com/collaborate/organize-using-teams.html#remove-people-from-teams",
+"messaging/cloud-user-management.html#leaving-a-team": 
+	"https://docs.mattermost.com/collaborate/organize-using-teams.html#leave-a-team",
+"messaging/cloud-user-management.html#obtaining-user-id": 
+	"https://docs.mattermost.com/configure/user-management-configuration-settings.html#users",
+"messaging/cloud-user-management.html#about-system-roles-beta": 
+	"https://docs.mattermost.com/onboard/system-admin-roles.html",
+"messaging/cloud-user-management.html#assigning-system-roles": 
+	"https://docs.mattermost.com/onboard/system-admin-roles.html#assign-system-admin-roles",
+"messaging/cloud-user-management.html#editing-privileges-of-system-roles": 
+	"https://docs.mattermost.com/onboard/system-admin-roles.html#edit-privileges-of-system-admin-roles-advanced",
 
 # Mobile redirects
 "mobile/deploy-mobile-apps-using-emm-provider.html":
