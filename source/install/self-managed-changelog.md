@@ -30,6 +30,7 @@ Latest Mattermost Releases:
  - Improved readability by displaying system messages on multiple lines when editing a channel header.
  - Combined "joined/left" event types in system messages.
  - Added a new user preference to disable webapp prefetching via **Settings > Advanced > Allow Mattermost to prefetch channel posts**.
+ - Pre-packaged Focalboard plugin version [v7.11.4](https://github.com/mattermost/focalboard/releases/tag/v7.11.4).
 
 #### Administration
  - JSON null value cases are now handled correctly by also checking that the pointer is no longer null when unmarshalling to a pointer.
@@ -37,6 +38,8 @@ Latest Mattermost Releases:
  - Replaced ``github.com/mattermost/gziphandler`` with ``github.com/klauspost/compress/gzhttp``.
  - Performance metrics now contain information on if a given request was sent during a page load or a websocket reconnect.
  - Elasticsearch aggregation jobs no longer start when a bulk indexing job is currently running.
+ - Added heap profile, CPU profile, and goroutines profile to the support package.
+ - Merged WIP i18n locales, but disallowed selecting unsupported locales.
 
 ### Bug Fixes
  - Fixed a panic where a simple worker would crash if it failed to get a job.
@@ -45,6 +48,7 @@ Latest Mattermost Releases:
  - Fixed the alignment of the **Help** menu in the global header.
  - Fixed a broken link in the **Edit Channel** header modal.
  - Fixed an issue that prevented users to be added to channels from the System Console.
+ - Fixed an issue where the channel member count increased when adding an already present user.
 
 ### config.json
 Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
