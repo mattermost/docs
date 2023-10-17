@@ -39,7 +39,7 @@ Getting people set up with a Mattermost account is typically something that syst
 Identify a User's ID
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Users can be specified in Mattermost by username or user ID. Usernames automatically resolve when a match is detected.
-Below are two ways a User's ID can be determined.
+System admins can identify a user's ID using the Mattermost API or mmctl. 
 
 Using the API
 ~~~~~~~~~~~~~
