@@ -1265,11 +1265,11 @@ Disable link previews for specific domains
 Enable message link previews
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
-| - **true**: **(Default)** `Share links to Mattermost messages <https://docs.mattermost.com/collaborate/share-links.html>`__ will generate a preview for any users that have access to the original message. | - System Config path: **Site Configuration > Posts**                       |
-| - **false**: Share links do not generate a preview.                                                                                                                                                      | - ``config.json`` setting: ``.ServiceSettings.EnablePermalinkPreviews: true`` |
-|                                                                                                                                                                                                          | - Environment variable: ``MM_SERVICESETTINGS_ENABLEPERMALINKPREVIEWS``        |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+| - **true**: **(Default)** `Share links to Mattermost messages <https://docs.mattermost.com/collaborate/share-links.html>`__ will generate a preview for any users that have access to the original message. | - System Config path: **Site Configuration > Posts**                          |
+| - **false**: Share links do not generate a preview.                                                                                                                                                         | - ``config.json`` setting: ``.ServiceSettings.EnablePermalinkPreviews: true`` |
+|                                                                                                                                                                                                             | - Environment variable: ``MM_SERVICESETTINGS_ENABLEPERMALINKPREVIEWS``        |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
 
 .. config:setting:: posts-enablesvg
   :displayname: Enable SVGs (Posts)
@@ -1304,12 +1304,12 @@ Enable LaTeX code block rendering
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
-| - **true**: Enables rendering of `LaTeX in code blocks <https://docs.mattermost.com/collaborate/format-messages.html#math-formulas>`__.               | - System Config path: **Site Configuration > Posts**           |
+| - **true**: Enables rendering of `LaTeX in code blocks <https://docs.mattermost.com/collaborate/format-messages.html#math-formulas>`__.            | - System Config path: **Site Configuration > Posts**              |
 | - **false**: **(Default)** Disables rendering in blocks. Instead, LaTeX code is highlighted.                                                       | - ``config.json`` setting: ``.ServiceSettings.EnableLatex: false``|
 |                                                                                                                                                    | - Environment variable: ``MM_SERVICESETTINGS_ENABLELATEX``        |
 +----------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
 | **Warning**: Enabling LaTeX rendering is not recommended in environments where not all users are trusted.                                                                                                              |
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
 
 .. config:setting:: posts-enableinlinelatex
   :displayname: Enable inline LaTeX rendering (Posts)
@@ -1324,12 +1324,12 @@ Enable inline LaTeX rendering
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
-| - **true**: **(Default)** Enables rendering of `LaTeX in message text <https://docs.mattermost.com/collaborate/format-messages.html#math-formulas>`__.                                                                | - System Config path: **Site Configuration > Posts**                 |
+| - **true**: **(Default)** Enables rendering of `LaTeX in message text <https://docs.mattermost.com/collaborate/format-messages.html#math-formulas>`__.                                                             | - System Config path: **Site Configuration > Posts**                    |
 | - **false**: Disables inline rendering of LaTeX. Instead, LaTeX in message text is highlighted. LaTeX can also be rendered in a code block, if that feature is enabled. See **Enable LaTeX code block rendering**. | - ``config.json`` setting: ``.ServiceSettings.EnableInlineLatex: true`` |
 |                                                                                                                                                                                                                    | - Environment variable: ``MM_SERVICESETTINGS_ENABLEINLINELATEX``        |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
 | **Warning**: Enabling LaTeX rendering is not recommended in environments where not all users are trusted.                                                                                                                                                                                    |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
 
 .. config:setting:: posts-customurlschemes
   :displayname: Custom URL schemes (Posts)

@@ -873,8 +873,8 @@ Encryption key
 |                                                                          | - Environment variable: N/A                          |
 +--------------------------------------------------------------------------+------------------------------------------------------+
 | **Note**: Select **Regenerate** to generate a new encryption key. When you regenerate this value, all users will need to        |
-| `reconnect their Google Calendar with Mattermost                                                                                |
-| </collaborate/use-mattermost-google-calendar-plugin.html#connect-your-google-calendar-account-to-mattermost`__.                 |
+| `reconnect their Google Calendar with Mattermost </collaborate/use-mattermost-google-calendar-plugin.html#connect-your          |
+| google-calendar-account-to-mattermost>`__.                                                                                      |
 +--------------------------------------------------------------------------+------------------------------------------------------+
 
 .. config:setting:: plugins-googlecalendarappclientid
@@ -1129,7 +1129,7 @@ Sync guest users
 |                                                                        | - ``config.json`` setting: N/A                       |
 | - **true**: Mattermost includes Microsoft Teams guest users when       | - Environment variable: N/A                          |
 |   synchronizing.                                                       |                                                      |
-| - **false**: **(Default)**Mattermost doesn't include Microsoft Teams   |                                                      |
+| - **false**: **(Default)** Mattermost doesn't include Microsoft Teams  |                                                      |
 |   guest users when synchronizing.                                      |                                                      |
 +------------------------------------------------------------------------+------------------------------------------------------+
 
