@@ -46,7 +46,7 @@ Using the API
 
 Yes, it is possible to find a user's ID using the Mattermost API. You can use this method if you need to automate user-related tasks or integrate with external systems.
 Make an HTTP GET request to the following endpoint: ``https://your-mattermost-url/api/v4/users/username/username_here``.
-Replace **your-mattermost-url** with the URL of your Mattermost instance and **username_here** with the actual username of the user you are looking for.
+Replace ``your-mattermost-url`` with the URL of your Mattermost instance and ``username_here`` with the username you are looking for.
 The API response will contain a JSON object that includes the user's ID among other details.
 
 Using mmctl
