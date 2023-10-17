@@ -25,6 +25,8 @@ Latest Mattermost Releases:
 
 ### Improvements
 
+See this walkthrough video on the highlights in our latest release: https://www.youtube.com/watch?v=dbHg-63J9dA
+
 #### User Interface (UI)
  - Added a **Cancel** button to the **Delete category** modal.
  - Added the ability to resize the channel sidebar and right-hand sidebar.
