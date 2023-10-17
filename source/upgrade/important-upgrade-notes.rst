@@ -5,7 +5,7 @@ Important Upgrade Notes
   :start-after: :nosearch:
 
 .. important::
-   - Support for Mattermost Server v7.8 :doc:`Extended Support Release </upgrade/extended-support-release>` is coming to the end of its life cycle in November 15, 2023. Upgrading to Mattermost Server v8.1 :doc:`Extended Support Release </upgrade/extended-support-release>` or later is recommended.
+   - Support for Mattermost Server v7.8 :doc:`Extended Support Release </upgrade/extended-support-release>` has come to the end of its life cycle in November 15, 2023. Upgrading to Mattermost Server v8.1 :doc:`Extended Support Release </upgrade/extended-support-release>` or later is required.
    - MySQL 8.0.22 contains an `issue with JSON column types <https://bugs.mysql.com/bug.php?id=101284>`__ changing string values to integers which is preventing Mattermost from working properly. Users are advised to avoid this database version.
    - Upgrading the Microsoft Teams Calling plugin to v2.0.0 requires users to reconnect their accounts.
    - When upgrading to 7.x from a 5.x release please make sure to upgrade to 5.37.10 first for the upgrade to complete successfully.
@@ -14,7 +14,10 @@ Important Upgrade Notes
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | If you’re upgrading from a version earlier than... | Then...                                                                                                                                                          |
 +====================================================+==================================================================================================================================================================+
-| v9.2                                               |                                                                                                                          |
+| v9.2                                               | Fixed Data Retention Policies to run jobs when there is any "Custom retention policy" enabled even when the "Global retention policy" is set to "keep-forever".  |
+|                                                    | Before this fix, the Enabled Custom Policies wouldn't run as long as Global Policy was set to "keep-forever" or was disabled. After the fix, the custom policies |
+|                                                    | will run automatically even when the Global Policy is set to "keep-forever". Once the server is upgraded, posts may unintentionally be deleted. Admins should    |
+|                                                    | make sure to disable all custom policies before upgrading, and then re-enable them again after upgrading.                                                        |
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v9.1                                               | In v9.1.0, improved performance on data retention ``DeleteOrphanedRows`` queries.                                                                                |
 |                                                    |                                                                                                                                                                  |                                                                             
