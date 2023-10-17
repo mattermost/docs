@@ -17,7 +17,7 @@ Latest Mattermost Releases:
 **Release day: November 16, 2023**
 
 ### Important Upgrade Notes
- - Fixed Data Retention Policies to run jobs when their is any "Custom retention policy" enabled even when the "Global retention policy" is set to "keep-forever". Earlier due to this bug, the Enabled Custom Policies wouldn't run as long as Global Policy was set to "keep-forever"/disabled. After this fix, the custom policies would run automatically even when the Global Policy is set to "keep-forever". So once upgraded, this may unintentionally delete posts. So, admins should make sure to "disable" all custom policies before upgrading. Then re-enable them again as per the requirement.
+ - Fixed Data Retention Policies to run jobs when there is any "Custom retention policy" enabled even when the "Global retention policy" is set to "keep-forever". Before this fix, the Enabled Custom Policies wouldn't run as long as Global Policy was set to "keep-forever" or was disabled. After the fix, the custom policies will run automatically even when the Global Policy is set to "keep-forever". Once the server is upgraded, posts may unintentionally be deleted. Admins should make sure to disable all custom policies before upgrading, and then re-enable them again after upgrading.
 
 **IMPORTANT:** If you upgrade from a release earlier than v9.1, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
 
@@ -28,7 +28,7 @@ Latest Mattermost Releases:
 
 #### User Interface (UI)
  - Improved readability by displaying system messages on multiple lines when editing a channel header.
- - Combined "joined/left" event type in system messages.
+ - Combined "joined/left" event types in system messages.
  - Added a new user preference to disable webapp prefetching via **Settings > Advanced > Allow Mattermost to prefetch channel posts**.
 
 #### Administration
@@ -42,15 +42,16 @@ Latest Mattermost Releases:
  - Fixed a panic where a simple worker would crash if it failed to get a job.
  - Fixed post props on update to properly see channel links.
  - Fixed an issue where the API for drafts would return empty drafts.
- - Fixed alignment of the help menu in the global header.
+ - Fixed the alignment of the **Help** menu in the global header.
  - Fixed a broken link in the **Edit Channel** header modal.
- - Fixed a bug preventing users to be added to channels from the system console.
+ - Fixed an issue that prevented users to be added to channels from the System Console.
 
 ### config.json
 Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
 
 #### Changes to all plans:
- - A new config value added to LogSettings so that log fields can be size limited during logging. (MaxFieldSize)
+ - Under ``LogSettings`` in ``confi.json``:
+   - Added a new configuration setting ``MaxFieldSize`` to add the ability to size-limit log fields during logging.
 
 ### API Changes
  - Added ``origin_client to the mattermost_api_time`` metrics.
