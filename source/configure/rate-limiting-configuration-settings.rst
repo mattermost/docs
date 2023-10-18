@@ -69,6 +69,10 @@ Maximum burst size
 | is enabled.                                                     | - Environment variable: ``MM_RATELIMITSETTINGS_MAXBURST``                |
 |                                                                 |                                                                          |
 | Numerical input. Default is **100**.                            |                                                                          |
+|                                                                 |                                                                          |
+| Increase this value to allow for more concurrent requests to be |                                                                          |
+| handled, and decrease this value to limit this capacity.        |                                                                          |
+|                                                                 |                                                                          |
 +-----------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. config:setting:: ratelimit-memorystoresize
@@ -78,7 +82,6 @@ Maximum burst size
   :environment: MM_RATELIMITSETTINGS_MEMORYSTORESIZE
   :description: The maximum number of user sessions connected to the system as determined by vary rate limit settings when `rate limiting <#enable-rate-limiting>`__ is enabled. Default is **10000** sessions.
 
-  Increase this value to allow for more concurrent requests to be handled, and decrease this value to limit this capacity.
 
 Memory store size
 ~~~~~~~~~~~~~~~~~
@@ -92,6 +95,12 @@ Memory store size
 |                                                                 |                                                                            |
 | Numerical input. Default is **10000**. Typically set to the     |                                                                            |
 | number of users in the system.                                  |                                                                            |
+|                                                                 |                                                                            |
+| We recommend setting this value to the expected number of       |                                                                            |
+| users. A higher value may result in underutilized resources,    |                                                                            |
+| and a lower value may result in user sessions/tokens expiring   |                                                                            |
+| too frequently.                                                 |                                                                            |
+|                                                                 |                                                                            |                                                                           |
 +-----------------------------------------------------------------+----------------------------------------------------------------------------+
 
 .. config:setting:: ratelimit-varybyremoteaddress
@@ -103,7 +112,6 @@ Memory store size
   - **true**: **(Default)** Rate limit API access by IP address. Recommended when using a proxy.
   - **false**: Rate limiting does not vary by IP address.
 
-  We recommend setting this value to the expected number of users. A higher value may result in underutilized resources, and a lower value may result in user sessions/tokens expiring too frequently.
 
 Vary rate limit by remote address
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
