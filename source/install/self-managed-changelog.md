@@ -24,9 +24,17 @@ Latest Mattermost Releases:
 ### Compatibility
  - Updated Chromium minimum supported version to 116+.
 
-### Improvements
+### Highlights
 
-See this walkthrough video on the highlights in our latest release: https://www.youtube.com/watch?v=dbHg-63J9dA
+#### Never Miss Group Messages Again
+ - Group messages (GMs) now behave like direct messages (DMs). [The badge count increases for every new message](https://docs.mattermost.com/collaborate/channel-types.html#group-messages).
+
+#### Convert Group Messages to Private Channels
+ - Added the ability to [convert a group message to a private channel](https://docs.mattermost.com/collaborate/convert-group-messages.html).
+
+See this walkthrough video on the highlights and some of the below improvements in our latest release: https://www.youtube.com/watch?v=dbHg-63J9dA
+
+### Improvements
 
 #### User Interface (UI)
  - Added a **Cancel** button to the **Delete category** modal.
@@ -40,8 +48,6 @@ See this walkthrough video on the highlights in our latest release: https://www.
  - Updated the post textbox measurement code to be more reliable.
  - The ``/invite`` slash command now supports custom user groups.
  - Re-enabled the remote marketplace functionality, when configured as per ``PluginSettings.EnableRemoteMarketplace`` [documentation](https://docs.mattermost.com/configure/plugins-configuration-settings.html#plugins-enableremotemarketplace).
- - Added the ability to convert a group message to a private channel.
- - Group messages (GMs) now behave like direct messages (DMs). The badge count increases for every new message.
 
 #### Administration
  - Added ``mattermost-plugin-api`` into the ``mattermost`` GitHub repository.
