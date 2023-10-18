@@ -51,10 +51,10 @@ Latest Mattermost Releases:
  - Fixed an issue where the channel member count increased when adding an already present user.
 
 ### config.json
-Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
+ - Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
 
 #### Changes to all plans:
- - Under ``LogSettings`` in ``confi.json``:
+ - Under ``LogSettings`` in ``config.json``:
    - Added a new configuration setting ``MaxFieldSize`` to add the ability to size-limit log fields during logging.
 
 ### API Changes
