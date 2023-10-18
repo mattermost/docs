@@ -44,6 +44,10 @@ Maximum queries per second
 | `rate limiting <#enable-rate-limiting>`__ is enabled.         | - ``config.json`` setting: ``".RateLimitSettings.PerSec: 10,``           |
 |                                                               | - Environment variable: ``MM_RATELIMITSETTINGS_PERSEC``                  |
 | Numerical input. Default is **10**.                           |                                                                          |
+|                                                               |                                                                          |
+| Increase this value to accept more requests each second, and  |                                                                          |
+| decrease this value to allow fewer requests.                  |                                                                          |
+|                                                               |                                                                          |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. config:setting:: ratelimit-maxburst
@@ -53,7 +57,6 @@ Maximum queries per second
   :environment: MM_RATELIMITSETTINGS_MAXBURST
   :description: The maximum number of requests allowed beyond the per second query limit when `rate limiting <#enable-rate-limiting>`__ is enabled. Default is **100** requests.
 
-  Increase this value to accept more requests each second, and decrease this value to allow fewer requests.
 
 Maximum burst size
 ~~~~~~~~~~~~~~~~~~
