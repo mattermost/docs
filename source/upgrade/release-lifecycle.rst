@@ -165,25 +165,48 @@ During each monthly release, Mattermost backports high severity or high impact s
 | 4.0         | Feature               |  2017-07-16              | 2017-09-15               |                          |
 +-------------+-----------------------+--------------------------+--------------------------+--------------------------+
 
-Desktop and mobile app compatibility
+Desktop app compatibility
 -------------------------------------
 
-Mattermost desktop and mobile apps are backwards compatible; however, we strongly recommend updating to the latest version for an optimal user experience. The latest versions include the latest security fixes, and are compatible with the oldest supported `extended support release </upgrade/extended-support-release.html>`__ of Mattermost Server to ensure backwards compatibility.
+Mattermost desktop app is backwards compatible; however, we strongly recommend updating to the latest version for an optimal user experience. The latest versions include the latest security fixes, and are compatible with the oldest supported `extended support release </upgrade/extended-support-release.html>`__ of Mattermost Server to ensure backwards compatibility.
 
-Please review the `desktop app changelog </install/desktop-app-changelog.html>`__ and the `mobile app changelog </deploy/mobile-app-changelog.html>`__ notes for any self-hosted or Cloud-specific version requirements for features and functionalities, as well as notes on security fixes.
+Please review the `desktop app changelog </install/desktop-app-changelog.html>`__ notes for any self-hosted or cloud-specific version requirements for features and functionalities, as well as notes on security fixes.
 
 +-------------+-----------------------+--------------------------+
 | Version     | Lifecyle Start Date   | Lifecycle End Date       | 
 +=============+=======================+==========================+
-| v5.5        | 2023-09-15            | 2024-06-15               |
+| v5.5        | 2023-09-15            | 2024-06-14               |
 +-------------+-----------------------+--------------------------+
-| v5.4        | 2023-06-19            | 2024-03-19               |
+| v5.4        | 2023-06-19            | 2024-03-18               |
 +-------------+-----------------------+--------------------------+
-| v5.3        | 2023-03-30            | 2023-12-30               |
+| v5.3        | 2023-03-30            | 2023-12-29               |
 +-------------+-----------------------+--------------------------+
 | v5.2        | 2022-10-31            | 2023-07-30               |
 +-------------+-----------------------+--------------------------+
-| v5.1        | 2023-07-16            | 2023-10-15               |
+| v5.1        | 2022-05-16            | 2023-02-15               |
 +-------------+-----------------------+--------------------------+
-| v5.0        | 2023-04-16            | 2023-08-15               |
+| v5.0        | 2021-10-13            | 2022-07-12               |
++-------------+-----------------------+--------------------------+
+
+Mobile app compatibility
+-------------------------------------
+
+Mattermost mobile apps are backwards compatible; however, we officially support the latest version at any given time for an optimal user experience. The latest versions include the latest security fixes, and are compatible with the oldest supported `extended support release </upgrade/extended-support-release.html>`__ of Mattermost Server to ensure backwards compatibility.
+
+Please review the `mobile app changelog </deploy/mobile-app-changelog.html>`__ notes for any self-hosted or cloud-specific version requirements for features and functionalities, as well as notes on security fixes.
+
++-------------+-----------------------+--------------------------+
+| Version     | Lifecyle Start Date   | Lifecycle End Date       | 
++=============+=======================+==========================+
+| v2.9        | 2023-10-16            | 2023-11-15               |
++-------------+-----------------------+--------------------------+
+| v2.8        | 2023-09-16            | 2023-10-15               |
++-------------+-----------------------+--------------------------+
+| v2.7        | 2023-08-16            | 2023-09-15               |
++-------------+-----------------------+--------------------------+
+| v2.6        | 2023-07-16            | 2023-08-15               |
++-------------+-----------------------+--------------------------+
+| v2.5        | 2023-06-16            | 2023-07-15               |
++-------------+-----------------------+--------------------------+
+| v2.4        | 2023-05-16            | 2023-06-15               |
 +-------------+-----------------------+--------------------------+
