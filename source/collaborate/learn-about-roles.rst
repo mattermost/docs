@@ -86,4 +86,4 @@ Mattermost is designed as a system-of-record, so there isn't an option to delete
 
 .. note::
 
-AD/LDAP user accounts can't be deactivated from Mattermost; they must be deactivated from your Active Directory.
+    AD/LDAP user accounts can't be deactivated from Mattermost; they must be deactivated from your Active Directory.
