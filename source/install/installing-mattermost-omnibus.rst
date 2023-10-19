@@ -39,6 +39,10 @@ Install Mattermost Omnibus
   :local:
   :depth: 1
 
+.. note::
+
+ Omnibus supports Ubuntu distributions only.
+
 Mattermost Omnibus packages the free, unlicensed Mattermost Enterprise version of Mattermost, a PostgreSQL database, and when required, NGINX as the application proxy. A custom CLI (``mmomni``) and ansible recipes link the components together and configures them. Mattermost Omnibus is only supported on Ubuntu distributions. 
 
 Add the Mattermost PPA repositories
