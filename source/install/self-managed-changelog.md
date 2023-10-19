@@ -240,7 +240,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
   - Mattermost v8.1.4 contains the following functional changes:
   	- Added a new configuration setting ``MaxFieldSize`` to add the ability to size-limit log fields during logging.
   	- Added a restriction to the mobile Oauth / SAML redirection to match the ``NativeAppSettings.AppCustomURLSchemes`` configuration setting.
-        - When ``ServiceSettings.ExperimentalEnableHardenedMode`` is enabled, standard users authenticated via username and password will not be able to use post props reserved for integrations, such as ``override_username`` or ``override_icon_url``. 
+	- When ``ServiceSettings.ExperimentalEnableHardenedMode`` is enabled, standard users authenticated via username and password will not be able to use post props reserved for integrations, such as ``override_username`` or ``override_icon_url``. 
 - **8.1.3, released 2023-10-06**
   - Mattermost v8.1.3 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Mattermost v8.1.3 contains no database or functional changes.
@@ -802,7 +802,7 @@ Mattermost v7.9.0 contains a low severity level security fix. [Upgrading](https:
   - Mattermost v7.8.12 contains the following functional changes:
   	- Added a new configuration setting ``MaxFieldSize`` to add the ability to size-limit log fields during logging.
   	- Added a restriction to the mobile Oauth / SAML redirection to match the ``NativeAppSettings.AppCustomURLSchemes`` configuration setting.
-        - When ``ServiceSettings.ExperimentalEnableHardenedMode`` is enabled, standard users authenticated via username and password will not be able to use post props reserved for integrations, such as ``override_username`` or ``override_icon_url``. 
+	- When ``ServiceSettings.ExperimentalEnableHardenedMode`` is enabled, standard users authenticated via username and password will not be able to use post props reserved for integrations, such as ``override_username`` or ``override_icon_url``. 
 - **7.8.12, released 2023-10-06**
   - Mattermost v7.8.12 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Mattermost v7.8.12 contains no database or functional changes.
