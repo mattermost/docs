@@ -44,7 +44,7 @@ Important Upgrade Notes
 |                                                    | Added a new configuration setting ``DataRetentionSettings.RetentionIdsBatchSize``, which allows admins to configure how many batches of IDs will be fetched at   |
 |                                                    | a time when deleting orphaned reactions. The default value is 100.                                                                                               |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                                                    | Modifield OAuth/SAML flows to include ``desktop_login`` where applicable. This change makes Desktop v5.2 and below incompatible with server v9.1 and later.      |
+|                                                    | Minimum supported Desktop App version is now v5.3. OAuth/SAML flows were modified to include ``desktop_login`` which makes earlier versions incompatible.     |
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v9.0                                               | Removed the deprecated Insights feature.                                                                                                                         |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
