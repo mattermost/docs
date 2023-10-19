@@ -11,21 +11,21 @@ Learn how to install, deploy, and scale Mattermost for teams and organizations o
   :hidden:
   :titlesonly:
 
-  Prepare your Mattermost database </install/prepare-mattermost-database>
-  Deploy on Ubuntu </install/install-ubuntu>
-  Deploy using Docker </install/install-docker>
-  Deploy with a tarball </install/install-tar>
-  Deploy using Omnibus </install/installing-mattermost-omnibus>
-  Deploy using Kubernetes </install/install-kubernetes>
-  Deploy on Red Hat </install/install-rhel-8>
-  Prepare for your Mattermost deployment </guides/prepare-for-your-mattermost-deployment>
-  Deployment guides </guides/deployment-guides>
-  Deploy Mattermost Apps <guides/deploy-mattermost-apps>
-  Upgrade Mattermost </guides/upgrade-mattermost>
-  Scale Mattermost </guides/scale-mattermost>
-  Deployment troubleshooting </guides/deployment-troubleshooting>
-  Changelogs </guides/changelogs>
-  Additional server installation guides </guides/additional-server-installation-guides>
+    Prepare your Mattermost database </install/prepare-mattermost-database>
+    Deploy on Ubuntu </install/install-ubuntu>
+    Deploy using Docker </install/install-docker>
+    Deploy with a tarball </install/install-tar>
+    Deploy using Omnibus </install/installing-mattermost-omnibus>
+    Deploy using Kubernetes </install/install-kubernetes>
+    Deploy on Red Hat </install/install-rhel-8>
+    Prepare for your Mattermost deployment </guides/prepare-for-your-mattermost-deployment>
+    Deployment guides </guides/deployment-guides>
+    Deploy Mattermost Apps </guides/deploy-mattermost-apps>
+    Upgrade Mattermost </guides/upgrade-mattermost>
+    Scale Mattermost </guides/scale-mattermost>
+    Deployment troubleshooting </guides/deployment-troubleshooting>
+    Changelogs </guides/changelogs>
+    Additional server installation guides </guides/additional-server-installation-guides>
 
 .. tip::
 
