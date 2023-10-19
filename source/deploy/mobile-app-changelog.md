@@ -25,6 +25,7 @@ Latest Mattermost Mobile Apps releases:
  - Calls: Fixed an issue on Android where the microphone would stop working when Mattermost was put in the background.
  - Fixed an issue where users could not auto-reconnect the websocket after turning off and then turning on Wi-Fi (or when Wi-Fi was not stable) on some Samsung devices.
  - Fixed an issue where users did not remain in the current channel when replying to a post from the permalink view.
+ - Fixed an issue where the app became unresponsive when a tutorial for the user or server list was partially showed.
 
 ### Open Source Components
  - Added ``@voximplant/react-native-foreground-service`` to https://github.com/mattermost/mattermost-mobile.
