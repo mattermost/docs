@@ -81,6 +81,7 @@ Latest Mattermost Cloud releases:
 
 ### Compatibility
  - Updated Chromium minimum supported version to 116+.
+ - Minimum supported Desktop App version is now v5.3. OAuth/SAML flows were modified to include ``desktop_login`` which makes earlier versions incompatible.
 
 ### Improvements
 
