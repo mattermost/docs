@@ -99,7 +99,6 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - v9.1 is built with Go ``v1.20.7``.
 
 ### Known Issues
- - LDAP mmctl commands are failing [MM-54929](https://mattermost.atlassian.net/browse/MM-54929).
  - Converting a group message to a channel should show an error "A channel with that name already exists on the same team" for duplicate channel names [MM-54713](https://mattermost.atlassian.net/browse/MM-54713).
  - Marking a group message as unread doesn't resurface the numbered notification badge [MM-54778](https://mattermost.atlassian.net/browse/MM-54778).
  - Thread/posts jump when switching to and from preview mode [MM-54758](https://mattermost.atlassian.net/browse/MM-54758).
