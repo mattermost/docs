@@ -30,7 +30,6 @@ Latest Mattermost Releases:
  - Improved readability by displaying system messages on multiple lines when editing a channel header.
  - Combined "joined/left" event types in system messages.
  - Added a new user preference to disable webapp prefetching via **Settings > Advanced > Allow Mattermost to prefetch channel posts**.
- - Pre-packaged Focalboard plugin version [v7.11.4](https://github.com/mattermost/focalboard/releases/tag/v7.11.4).
  - Pre-packaged NPS plugin version [v1.3.3](https://github.com/mattermost/mattermost-plugin-nps/releases/tag/v1.3.3).
 
 #### Administration
