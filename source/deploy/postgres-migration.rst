@@ -109,16 +109,16 @@ To drop indexes, run the following commands before the migration (These are incl
    DROP INDEX IF EXISTS idx_posts_message_txt;
    DROP INDEX IF EXISTS idx_fileinfo_content_txt;
 
-Artifacts may remaining from previous configurations/versions
+Artefacts may remain from previous configurations/versions
 ~~~~~~~~~~~~~~~~~
 
-Prior to ``v6.4``, Mattermost was utilizing `golang-migrate <https://github.com/golang-migrate/migrate>`__ for handling the schema migrations. Since we don't use it anymore, the table ``schema_migrations`` shouldn't be migrated. If you were using Mattermost before ``v6.4`` consider excluding this table from migration and comparison. 
+Prior to ``v6.4``, Mattermost was using `golang-migrate <https://github.com/golang-migrate/migrate>`__ to handle the schema migrations. Since we don't use it anymore, the table ``schema_migrations`` shouldn't be migrated. If you were using Mattermost before ``v6.4`` consider excluding this table from migration and comparison. 
 
 .. code:: sql
 
    DROP TABLE mattermost.schema_migrations;
 
-Another note about configurations is that; if you were previously utilizing a database for handling the Mattermot configuration, those tables should be removed from your MySQL database. Consider running following DDL to drop tables.
+Also, if you were previously utilizing a database for handling the Mattermost configuration, those tables should be removed from your MySQL database. Consider running following DDL to drop tables.
 
 .. code:: sql
 
@@ -126,7 +126,7 @@ Another note about configurations is that; if you were previously utilizing a da
    DROP TABLE Configurations;
    DROP TABLE db_config_migrations;
 
-Some community members have reported that they had ``description`` and ``nextsyncat`` columns in their ``SharedChannelRemotes`` table. These columns should be removed from the Table, consider running following DDL to drop the columns. (This migration will be added to future versions of Mattermost)
+Some community members have reported that they had ``description`` and ``nextsyncat`` columns in their ``SharedChannelRemotes`` table. These columns should be removed from the table. Consider running following DDL to drop the columns. (This migration will be added to future versions of Mattermost).
 
 .. code:: sql
 
