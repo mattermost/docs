@@ -112,7 +112,7 @@ To drop indexes, run the following commands before the migration (These are incl
 Artifacts may remain from previous configurations/versions
 ~~~~~~~~~~~~~~~~~
 
-Prior to ``v6.4``, Mattermost was using `golang-migrate <https://github.com/golang-migrate/migrate>`__ to handle the schema migrations. Since we don't use it anymore, the table ``schema_migrations`` shouldn't be migrated. If you were using Mattermost before ``v6.4`` consider excluding this table from migration and comparison. 
+Prior to ``v6.4``, Mattermost was using `golang-migrate <https://github.com/golang-migrate/migrate>`__ to handle the schema migrations. Since we don't use it anymore, we exclude the table ``schema_migrations``. If you were using Mattermost before ``v6.4`` consider dropiing this table and exclude this table from comparison as well. 
 
 .. code:: sql
 
