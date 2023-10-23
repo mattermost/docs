@@ -1,15 +1,20 @@
-# Mattermost Cloud changelog
+# Mattermost legacy cloud changelog
 
 This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/get-started/), an enterprise-grade SaaS offering hosted by Mattermost.
 
-Latest Mattermost Cloud releases:
+```{Important}
+From Mattermost v9.2, see the [Mattermost Changelog](/deploy/mattermost-changelog) page for details on the latest cloud and self-hosted versions of Mattermost to be [deployed and upgraded on infrastructure you control](https://docs.mattermost.com/guides/deployment.html).
 
-- [Release 2023-08-29](#release-2023-08-29)
-- [Release 2023-08-09](#release-2023-08-09)
-- [Release 2023-08-03](#release-2023-08-03)
-- [Release 2023-07-26](#release-2023-07-26)
-- [Release 2023-07-20](#release-2023-07-20)
-- [Release 2023-07-19](#release-2023-07-19)
+- See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) documentation for details on upgrading.
+- See the [changelog in progress](https://bit.ly/2nK3cVf) for details about the upcoming release.
+- **Self-Hosted Releases Prior to v9.2**: See the [Mattermost Legacy Self-Hosted Changelog](/deploy/legacy-self-hosted-changelog) for details.
+```
+
+```{contents} On ths page
+:depth: 2
+```
+
+----
 
 ## Release 2023-08-29
 
@@ -53,6 +58,8 @@ Latest Mattermost Cloud releases:
 ### Known Issues
  - Text overlaps when opening the Playbook RHS panel [MM-54261](https://mattermost.atlassian.net/browse/MM-54261).
 
+----
+
 ## Release 2023-08-09
 
 ### Improvements
@@ -76,11 +83,15 @@ Latest Mattermost Cloud releases:
 ### Known Issues
  - Boards public links that follow the URL schema `/boards/public/...` no longer work. They can either be regenerated through the application by going to the board and selecting the **Share** button at the top right, or they can be obtained by replacing the `/boards/public/` part of the URL with `/plugins/focalboard/`.
 
+----
+
 ## Release 2023-08-03
 
 ### Bug Fixes
  - Fixed an issue where ``FileExportBackend`` should not use Bifrost.
  - Fixed an issue related to the export configuration settings.
+
+----
 
 ## Release 2023-07-26
 
@@ -112,15 +123,21 @@ Latest Mattermost Cloud releases:
  - Boards public links that follow the URL schema `/boards/public/...` will not work after this update. They can either be regenerated through the application by going to the board and selecting the **Share** button at the top right, or they can be obtained by replacing the `/boards/public/` part of the URL with `/plugins/focalboard/`.
  - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
 
+----
+
 ## Release 2023-07-20
 
 ### Bug Fixes
  - Added support for a new Cloud Export storage and a presigned URL generation.
 
+----
+
 ## Release 2023-07-19
 
 ### Bug Fixes
  - Fixed an issue where a "Seeker can't seek" error was displayed when viewing older image attachments.
+
+----
 
 ## Release 2023-07-11
 
@@ -148,6 +165,8 @@ Latest Mattermost Cloud releases:
 ### Known Issues
  - Boards public links that follow the URL schema `/boards/public/...` will not work after this update. They can either be regenerated through the application by going to the board and selecting the **Share** button at the top right, or they can be obtained by replacing the `/boards/public/` part of the URL with `/plugins/focalboard/`.
  - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
+
+----
 
 ## Release 2023-06-26
 
@@ -198,6 +217,8 @@ Latest Mattermost Cloud releases:
  - Boards public links that follow the URL schema `/boards/public/...` will not work after this update. They can either be regenerated through the application by going to the board and selecting the **Share** button at the top right, or they can be obtained by replacing the `/boards/public/` part of the URL with `/plugins/focalboard/`.
  - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
 
+----
+
 ## Release 2023-06-13
 
 ### Compatibility
@@ -220,6 +241,8 @@ Latest Mattermost Cloud releases:
 ### Known Issues
  - Using the "link" button puts the URL after ``[url]`` instead of replacing ``[url]`` when pasting [MM-53006](https://mattermost.atlassian.net/browse/MM-53006).
  - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
+
+----
 
 ## Release 2023-05-31
 
@@ -282,6 +305,8 @@ Latest Mattermost Cloud releases:
  - The URL of the post in a reminder post for direct and group messages have a double slash on mobile [MM-51026](https://mattermost.atlassian.net/browse/MM-51026).
  - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
 
+----
+
 ## Release 2023-05-01
 
 ### Highlights
@@ -321,6 +346,8 @@ Latest Mattermost Cloud releases:
  - The URL of the post in a reminder post for direct and group messages have a double slash on mobile [MM-51026](https://mattermost.atlassian.net/browse/MM-51026).
  - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
 
+----
+
 ## Release 2023-04-21
 
 ### Improvements
@@ -354,6 +381,8 @@ Latest Mattermost Cloud releases:
  - A user gets scrolled to the bottom of the post editor after pasting long text in the right-hand pane [MM-51302](https://mattermost.atlassian.net/browse/MM-51302).
  - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
 
+----
+
 ## Release 2023-03-29
 
 ### Improvements
@@ -376,6 +405,8 @@ Latest Mattermost Cloud releases:
  - The URL of the post in a reminder post for Direct and Group Messages have a double slash on mobile [MM-51026](https://mattermost.atlassian.net/browse/MM-51026).
  - A user gets scrolled to the bottom of the post editor after pasting long text in the right-hand side [MM-51302](https://mattermost.atlassian.net/browse/MM-51302).
  - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
+
+----
 
 ## Release 2023-03-20
 
@@ -474,6 +505,8 @@ Latest Mattermost Cloud releases:
  - A user gets scrolled to the bottom of the post editor after pasting long text in the right-hand side [MM-51302](https://mattermost.atlassian.net/browse/MM-51302).
  - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
 
+----
+
 ## Release 2023-01-26
 
 ### Highlights
@@ -535,6 +568,8 @@ Latest Mattermost Cloud releases:
  - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
  - Publicly shared boards lead to a "Team not found" error page. See [issue-focalboard-4450](https://github.com/mattermost/focalboard/issues/4450) for more details.
  - If a user is not a member of a configured broadcast channel, posting a status update might fail without any error feedback. As a temporary workaround, join the configured broadcast channels or remove those channels from the run configuration.
+
+----
 
 ## Release 2023-01-16
 
@@ -638,11 +673,15 @@ Latest Mattermost Cloud releases:
  - The message box flashes controls while typing in the right-hand side [MM-49266](https://mattermost.atlassian.net/browse/MM-49266).
  - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
 
+----
+
 ## Release 2022-12-20
 
 ### Bug Fixes
  - Fixed a deadlock in the export job which caused export jobs to hang forever.
  - Uploading exports to S3 no longer times out.
+
+----
 
 ## Release 2022-12-01
 
@@ -685,6 +724,8 @@ Latest Mattermost Cloud releases:
  - Boards linked to a channel you're a member of don't automatically appear on your sidebar unless you're an explicit member of the board. As a workaround, you can access the board from the channel RHS, or by searching for the board via the board switcher (Ctrl/Cmd+K). Alternatively, you can ask the board admin to add you to the board as an explicit member. See the [issue-focalboard-4179](https://github.com/mattermost/focalboard/issues/4179) for more details.
  - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
 
+----
+
 ## Release 2022-11-24
 
 ### Improvements
@@ -705,6 +746,8 @@ Latest Mattermost Cloud releases:
 ### Known Issues
  - Boards linked to a channel you're a member of doesn't automatically appear on your sidebar unless you're an explicit member of the board. As a workaround, you can access the board from the channel RHS, or by searching for the board via the board switcher (Ctrl/Cmd+K). Alternatively, you can ask the board admin to add you to the board as an explicit member. See the [issue-focalboard-4179](https://github.com/mattermost/focalboard/issues/4179) for more details.
  - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
+
+----
 
 ## Release 2022-11-17
 
@@ -752,6 +795,8 @@ Latest Mattermost Cloud releases:
  - Boards linked to a channel you're a member of do not automatically appear on your sidebar unless you're an explicit member of the board. As a workaround, you can access the board from the channel RHS or by searching for the board via the board switcher (Ctrl/Cmd+K). Alternatively, you can ask the board Admin to add you to the board as an explicit member. See the [issue-focalboard-4179](https://github.com/mattermost/focalboard/issues/4179) for more details.
  - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
 
+----
+
 ## Release 2022-11-10
 
 ### Improvements
@@ -783,6 +828,8 @@ Latest Mattermost Cloud releases:
 
 ### Known Issues
  - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
+
+----
 
 ## Release 2022-10-27
 
@@ -839,6 +886,8 @@ Latest Mattermost Cloud releases:
 ### Known Issues
  - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
 
+----
+
 ## Release 2022-10-13
 
 ### Highlights
@@ -889,6 +938,8 @@ Latest Mattermost Cloud releases:
  - "More" menu for Pinned posts on the right-hand side is cut-off [MM-46987](https://mattermost.atlassian.net/browse/MM-46987).
  - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
 
+----
+
 ## Release 2022-10-06
 
 ### Improvements
@@ -929,6 +980,8 @@ Latest Mattermost Cloud releases:
  - "More" menu for Pinned posts on the right-hand side is cut-off [MM-46987](https://mattermost.atlassian.net/browse/MM-46987).
  - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
  - On the new Boards RHS from the channel Apps Bar, channel members who are not board Admins are incorrectly able to see the **Unlink** board button. However, selecting the button doesn't actually unlink the board unless the user is a board Admin [issue-focalboard-3600](https://github.com/mattermost/focalboard/issues/3600).
+
+----
 
 ## Release 2022-09-15
 
@@ -978,6 +1031,8 @@ Latest Mattermost Cloud releases:
  - The runs and playbooks in the Playbooks left-hand sidebar don't have dot-menus that allow interaction with each item [MM-44752](https://mattermost.atlassian.net/browse/MM-44752).
  - On the new Boards RHS from the channel Apps Bar, channel members who are not board admins are incorrectly able to see the **Unlink** board button. However, selecting the button doesn't actually unlink the board unless the user is a board admin [issue-focalboard-3600](https://github.com/mattermost/focalboard/issues/3600).
 
+----
+
 ## Release 2022-09-01
 
 ### Improvements
@@ -1014,6 +1069,8 @@ Latest Mattermost Cloud releases:
  - The runs and playbooks in the Playbooks left-hand sidebar don't have dot-menus that allow interaction with each item [MM-44752](https://mattermost.atlassian.net/browse/MM-44752).
  - On the new Boards RHS from the channel Apps Bar, channel members who are not board admins are incorrectly able to see the **Unlink** board button. However, selecting the button doesn't actually unlink the board unless the user is a board admin [issue-focalboard-3600](https://github.com/mattermost/focalboard/issues/3600).
 
+----
+
 ## Release 2022-08-25
 
 ### Improvements
@@ -1038,6 +1095,8 @@ Latest Mattermost Cloud releases:
  - The runs and playbooks in the Playbooks left-hand sidebar does not have dot-menus that allow interaction with each item [MM-44752](https://mattermost.atlassian.net/browse/MM-44752).
  - On the new Boards RHS from the channel Apps Bar, channel members who are not board admins are incorrectly able to see the **Unlink** board button. However, selecting the button doesn't actually unlink the board unless the user is a board admin [issue-focalboard-3600](https://github.com/mattermost/focalboard/issues/3600).
  - On Boards, selecting the **+ New** button below a column on the Kanban view doesn't always create a new card. As a workaround, set a new default card template by going to the dropdown menu from the blue **New** button on the header of the board, opening the **Options** menu on any card template, and selecting **Set as default** [issue-focalboard-3676](https://github.com/mattermost/focalboard/issues/3676).
+
+----
 
 ## Release 2022-08-18
 
@@ -1082,6 +1141,8 @@ Latest Mattermost Cloud releases:
  - On the new Boards RHS from the channel Apps Bar, channel members who are not admins of the board are incorrectly able to see the "unlink" board button. However, clicking on the button will not actually unlink the board unless the user is a board admin [issue-focalboard-3600](https://github.com/mattermost/focalboard/issues/3600).
  - On Boards, clicking on `+ New` button below a column on the Kanban view does not always create a new card. As a workaround, set a new default card template by going to the dropdown menu from the blue `New` button on the header of the board, then open the Options Menu on any card template and select "Set as default" [issue-focalboard-3676](https://github.com/mattermost/focalboard/issues/3676).
 
+----
+
 ## Release 2022-08-10
 
 ### Improvements
@@ -1098,6 +1159,8 @@ Latest Mattermost Cloud releases:
 ### Known Issues
  - Mentions incorrectly shows users as not in a channel [MM-44157](https://mattermost.atlassian.net/browse/MM-44157).
  - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
+
+----
 
 ## Release 2022-08-03
 
@@ -1125,6 +1188,8 @@ Latest Mattermost Cloud releases:
  - Mentions incorrectly shows users as not in a channel [MM-44157](https://mattermost.atlassian.net/browse/MM-44157).
  - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
+----
+
 ## Release 2022-07-28
 
 ### Improvements
@@ -1150,6 +1215,8 @@ Latest Mattermost Cloud releases:
 ### Known Issues
  - Mentions incorrectly shows users as not in a channel [MM-44157](https://mattermost.atlassian.net/browse/MM-44157).
  - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
+
+----
 
 ## Release 2022-07-20
 
@@ -1179,6 +1246,8 @@ Latest Mattermost Cloud releases:
  - Custom status does not appear until refresh [MM-45334](https://mattermost.atlassian.net/browse/MM-45334).
  - Mentions incorrectly shows users as not in a channel [MM-44157](https://mattermost.atlassian.net/browse/MM-44157).
  - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
+
+----
 
 ## Release 2022-07-13
 
@@ -1216,6 +1285,8 @@ Latest Mattermost Cloud releases:
  - Mentions incorrectly shows users as not in a channel [MM-44157](https://mattermost.atlassian.net/browse/MM-44157).
  - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
+----
+
 ## Release 2022-06-29
 
 ### Improvements
@@ -1247,6 +1318,8 @@ Latest Mattermost Cloud releases:
  - Mentions incorrectly shows users as not in a channel [MM-44157](https://mattermost.atlassian.net/browse/MM-44157).
  - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
+----
+
 ## Release 2022-06-22
 
 ### Improvements
@@ -1273,10 +1346,14 @@ Latest Mattermost Cloud releases:
  - Mentions incorrectly shows users as not in a channel [MM-44157](https://mattermost.atlassian.net/browse/MM-44157).
  - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
+----
+
 ## Release 2022-06-15
 
 ### Bug Fixes
  - Fixed an issue where multiple backend errors displayed when file storage usage got fetched if no files had been uploaded.
+
+----
 
 ## Release 2022-06-14
 
@@ -1344,6 +1421,8 @@ Latest Mattermost Cloud releases:
  - Channel switcher does not show cross team unreads on refresh [MM-44073](https://mattermost.atlassian.net/browse/MM-44073).
  - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
+----
+
 ## Release 2022-05-26
 
 ### Highlights
@@ -1380,6 +1459,8 @@ Latest Mattermost Cloud releases:
  - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](/messaging/organizing-conversations.html#known-issues).
  - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
+----
+
 ## Release 2022-05-12
 
 ### Improvements
@@ -1404,6 +1485,8 @@ Latest Mattermost Cloud releases:
  - File upload might fail for SVG files [MM-38982](https://mattermost.atlassian.net/browse/MM-38982).
  - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](/messaging/organizing-conversations.html#known-issues).
  - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
+
+----
 
 ## Release 2022-04-28
 
@@ -1440,6 +1523,8 @@ Latest Mattermost Cloud releases:
  - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](/messaging/organizing-conversations.html#known-issues).
  - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
+----
+
 ## Release 2022-04-13
 
 ### Improvements
@@ -1470,6 +1555,8 @@ Latest Mattermost Cloud releases:
  - File upload might fail for SVG files [MM-38982](https://mattermost.atlassian.net/browse/MM-38982).
  - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](/messaging/organizing-conversations.html#known-issues).
  - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
+
+----
 
 ## Release 2022-03-30
 
@@ -1506,6 +1593,8 @@ Latest Mattermost Cloud releases:
  - File upload might fail for SVG files [MM-38982](https://mattermost.atlassian.net/browse/MM-38982).
  - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](/messaging/organizing-conversations.html#known-issues).
  - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
+
+----
 
 ## Release 2022-03-16
 
@@ -1557,6 +1646,8 @@ Latest Mattermost Cloud releases:
  - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](/messaging/organizing-conversations.html#known-issues).
  - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
+----
+
 ## Release 2022-03-08
 
 ### Bug Fixes
@@ -1605,6 +1696,8 @@ Latest Mattermost Cloud releases:
  - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](/messaging/organizing-conversations.html#known-issues).
  - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
+----
+
 ## Release 2022-02-16
 
 ### Compatibility
@@ -1652,6 +1745,8 @@ Latest Mattermost Cloud releases:
  - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](/messaging/organizing-conversations.html#known-issues).
  - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
+----
+
 ## Release 2022-02-10
 
 ### Bug Fixes
@@ -1687,6 +1782,8 @@ Latest Mattermost Cloud releases:
  - ``CTRL/CMD + SHIFT + A`` shortcut does not open **Settings** [MM-38236](https://mattermost.atlassian.net/browse/MM-38236).
  - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](/messaging/organizing-conversations.html#known-issues).
  - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
+
+----
 
 ## Release 2022-01-27
 
@@ -1732,6 +1829,8 @@ Latest Mattermost Cloud releases:
  - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](/messaging/organizing-conversations.html#known-issues).
  - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
+----
+
 ## Release 2022-01-11
 
 ### Bug Fixes
@@ -1767,6 +1866,8 @@ Latest Mattermost Cloud releases:
  - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](/messaging/organizing-conversations.html#known-issues).
  - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
+----
+
 ## Release 2021-12-01
 
 ### Improvements
@@ -1792,6 +1893,8 @@ Latest Mattermost Cloud releases:
  - ``CTRL/CMD + SHIFT + A`` shortcut does not open **Settings** [MM-38236](https://mattermost.atlassian.net/browse/MM-38236).
  - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](/messaging/organizing-conversations.html#known-issues).
  - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
+
+----
 
 ## Release 2021-11-23
 
@@ -1825,10 +1928,14 @@ Latest Mattermost Cloud releases:
  - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](/messaging/organizing-conversations.html#known-issues).
  - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
+----
+
 ## Release 2021-11-11
 
 ### Bug Fixes
  - Fixed an issue with panics in a ``patchChannel`` function [MM-40014](https://mattermost.atlassian.net/browse/MM-40014).
+
+----
 
 ## Release 2021-11-10
 
@@ -1858,6 +1965,8 @@ Latest Mattermost Cloud releases:
  - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](/messaging/organizing-conversations.html#known-issues).
  - **Cloud > "Tips & Next Steps"** should not show an "Explore channels" section for guest users.
  - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
+
+----
 
 ## Release 2021-10-27
 
@@ -1913,6 +2022,8 @@ Latest Mattermost Cloud releases:
  - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](/messaging/organizing-conversations.html#known-issues).
  - **Cloud > "Tips & Next Steps"** should not show an "Explore channels" section for guest users.
  - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
+
+----
 
 ## Release 2021-10-13
 
@@ -1988,6 +2099,8 @@ Latest Mattermost Cloud releases:
  - **Cloud > "Tips & Next Steps"** should not show an "Explore channels" section for guest users.
  - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
+----
+
 ## Release 2021-09-29
 
 ### Highlights
@@ -2057,6 +2170,8 @@ Latest Mattermost Cloud releases:
  - **Cloud > "Tips & Next Steps"** should not show an "Explore channels" section for guest users.
  - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
+----
+
 ## Release 2021-08-12
 
 ### Highlights
@@ -2098,6 +2213,8 @@ Latest Mattermost Cloud releases:
  - Sometimes an "Unable to get role" error appears when changing a channel member role in **System Console > User Management > Channels**.
  - **Cloud > "Tips & Next Steps"** should not show an "Explore channels" section for guest users.
  - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
+
+----
 
 ## Release 2021-07-29
 
@@ -2143,6 +2260,8 @@ Latest Mattermost Cloud releases:
  - **Cloud > "Tips & Next Steps"** should not show an "Explore channels" section for guest users.
  - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
+----
+
 ## Release 2021-07-15
 
 ### Highlights
@@ -2166,6 +2285,8 @@ Latest Mattermost Cloud releases:
  - Sometimes an "Unable to get role" error appears when changing a channel member role in **System Console > User Management > Channels**.
  - **Cloud > "Tips & Next Steps"** should not show an "Explore channels" section for guest users.
  - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
+
+----
 
 ## Release 2021-07-01
 
@@ -2202,6 +2323,8 @@ Latest Mattermost Cloud releases:
  - **Cloud > "Tips & Next Steps"** should not show an "Explore channels" section for guest users.
  - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
+----
+
 ## Release 2021-06-16
 
 ### Improvements
@@ -2224,6 +2347,8 @@ Latest Mattermost Cloud releases:
  - Sometimes an "Unable to get role" error appears when changing a channel member role in **System Console > User Management > Channels**.
  - **Cloud > "Tips & Next Steps"** should not show an "Explore channels" section for guest users.
  - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
+
+----
 
 ## Release 2021-06-02
 
@@ -2252,6 +2377,8 @@ Latest Mattermost Cloud releases:
  - Sometimes an "Unable to get role" error appears when changing a channel member role in **System Console > User Management > Channels**.
  - **Cloud > "Tips & Next Steps"** should not show an "Explore channels" section for guest users.
  - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
+
+----
 
 ## Release 2021-05-21
 
@@ -2286,6 +2413,8 @@ Latest Mattermost Cloud releases:
  - **Cloud > "Tips & Next Steps"** should not show an "Explore channels" section for guest users.
  - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
+----
+
 ## Release 2021-05-05
 
 ### Improvements
@@ -2316,6 +2445,8 @@ Latest Mattermost Cloud releases:
  - Sometimes an "Unable to get role" error appears when changing a channel member role in **System Console > User Management > Channels**.
  - **Cloud > "Tips & Next Steps"** should not show an "Explore channels" section for guest users.
  - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
+
+----
 
 ## Release 2021-04-22
 
@@ -2365,6 +2496,8 @@ Latest Mattermost Cloud releases:
  - **Cloud > "Tips & Next Steps"** should not show an "Explore channels" section for guest users.
  - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
+----
+
 ## Release 2021-04-07
 
 ### Improvements
@@ -2402,6 +2535,8 @@ Latest Mattermost Cloud releases:
  - **Cloud > "Tips & Next Steps"** should not show an "Explore channels" section for guest users.
  - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
+----
+
 ## Release 2021-03-24
 
 ### Improvements
@@ -2432,6 +2567,8 @@ Latest Mattermost Cloud releases:
  - Sometimes an "Unable to get role" error appears when changing a channel member role in **System Console > User Management > Channels**.
  - **Cloud > "Tips & Next Steps"** should not show an "Explore channels" section for guest users.
  - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
+
+----
 
 ## Release 2021-03-12
 
@@ -2469,6 +2606,8 @@ Latest Mattermost Cloud releases:
  - Sometimes an "Unable to get role" error appears when changing a channel member role in **System Console > User Management > Channels**.
  - **Cloud > "Tips & Next Steps"** should not show an "Explore channels" section for guest users.
  - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
+
+----
 
 ## Release 2021-02-25
 
@@ -2513,6 +2652,8 @@ Latest Mattermost Cloud releases:
  - **Cloud > "Tips & Next Steps"** should not show an "Explore channels" section for guest users.
  - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
+----
+
 ## Release 2021-02-10
 
 ### Highlights
@@ -2552,6 +2693,8 @@ Latest Mattermost Cloud releases:
  - Sometimes an "Unable to get role" error appears when changing a channel member role in **System Console > User Management > Channels**.
  - **Cloud > "Tips & Next Steps"** should not show an "Explore channels" section for guest users.
  - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
+
+----
 
 ## Release 2021-01-26
 
@@ -2595,6 +2738,8 @@ Latest Mattermost Cloud releases:
  - **Cloud > "Tips & Next Steps"** should not show an "Explore channels" section for guest users.
  - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
+----
+
 ## Release 2021-01-12
 
 ### Highlights
@@ -2631,11 +2776,15 @@ Latest Mattermost Cloud releases:
  - Cloud > "Tips & Next Steps" should not show an "Explore channels" section for guest users.
  - System Roles shows License and Environment as possible permissions but they are always hidden in Cloud.
 
+----
+
 ## Release 2020-12-18
 
 ### Bug Fixes
  - Fixed a performance issue related to typing lag.
  - Fixed an issue where YouTube previews did not display sometimes.
+
+----
 
 ## Release 2020-12-09
 
@@ -2663,10 +2812,14 @@ Latest Mattermost Cloud releases:
  - Cloud > "Tips & Next Steps" should not show an "Explore channels" section for guest users.
  - System Roles shows License and Environment as possible permissions but they are always hidden in Cloud.
 
+----
+
 ## Release 2020-12-03
 
 ### Bug Fixes
   - Disabled the xmlsec1-based SAML library in favor of the re-enabled and improved SAML library.
+
+----
 
 ## Release 2020-11-24
 

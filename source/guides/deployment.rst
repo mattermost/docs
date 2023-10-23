@@ -10,7 +10,6 @@ Learn how to install, deploy, and scale Mattermost for teams and organizations o
     :maxdepth: 1
     :hidden:
 
-    Mattermost changelog </deploy/mattermost-changelog>
     Prepare your Mattermost database </install/prepare-mattermost-database>
     Deploy on Ubuntu </install/install-ubuntu>
     Deploy using Docker </install/install-docker>
@@ -19,7 +18,6 @@ Learn how to install, deploy, and scale Mattermost for teams and organizations o
     Deploy using Kubernetes </install/install-kubernetes>
     Deploy on Red Hat </install/install-rhel-8>
 
-* :doc:`Mattermost changelog </deploy/mattermost-changelog>`
 * :doc:`Prepare your Mattermost database </install/prepare-mattermost-database>` - Learn how to prepare and configure a database for Mattermost.
 * :doc:`Deploy on Ubuntu </install/install-ubuntu>` - Signed packages direct from Mattermost featuring a single command for install and upgrades.
 * `Deploy using Docker </install/install-docker.html#deploy-mattermost-on-docker-for-production-use>`__ - The fastest way to try Mattermost and a great single server installation option.
@@ -209,16 +207,16 @@ Changelogs
     :maxdepth: 1
     :hidden:
 
-    Mattermost self-hosted </install/self-managed-changelog>
-    Mattermost legacy self-hosted </install/legacy-self-hosted-changelog>
-    Mattermost Cloud </install/cloud-changelog>
+    Mattermost changelog </deploy/mattermost-changelog>
+    Mattermost legacy self-hosted </deploy/legacy-self-hosted-changelog>
+    Mattermost legacy Cloud </deploy/legacy-cloud-changelog>
     Mobile apps </deploy/mobile-app-changelog>
     Desktop apps </install/desktop-app-changelog>
     Deprecated features </install/deprecated-features>
 
-* :doc:`Mattermost self-hosted </install/self-managed-changelog>`
-* :doc:`Mattermost legacy self-hosted </install/legacy-self-hosted-changelog>`
-* :doc:`Mattermost Cloud </install/cloud-changelog>`
+* :doc:`Mattermost changelog </deploy/mattermost-changelog>`
+* :doc:`Mattermost legacy self-hosted </deploy/legacy-self-hosted-changelog>`
+* :doc:`Mattermost legacy Cloud </deploy/legacy-cloud-changelog>`
 * :doc:`Mobile apps </deploy/mobile-app-changelog>`
 * :doc:`Desktop apps </install/desktop-app-changelog>`
 * :doc:`Deprecated features </install/deprecated-features>`

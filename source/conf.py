@@ -105,11 +105,7 @@ redirects = {
 "administration/bulk-export.html":
         "https://docs.mattermost.com/manage/bulk-export-tool.html",
 "administration/changelog.html":
-        "https://docs.mattermost.com/install/self-managed-changelog.html",
-"administration/changelog.html":
-	"https://docs.mattermost.com/install/self-managed-changelog.html",
-"administration/changelog.html#database-changes-from-v3-4-to-v3-5":
-        "https://docs.mattermost.com/install/self-managed-changelog.html#id41",
+        "https://docs.mattermost.com/deploy/mattermost-changelog.html",
 "administration/command-line-tools.html":
         "https://docs.mattermost.com/manage/command-line-tools.html",
 "administration/command-line-tools.html#mattermost-user-delete":
@@ -355,7 +351,7 @@ redirects = {
 
 # Cloud redirects
 "cloud/cloud-administration/cloud-changelog.html":
-	"https://docs.mattermost.com/install/cloud-changelog.html",
+	"https://docs.mattermost.com/deploy/legacy-cloud-changelog.html",
 "cloud/cloud-administration/cloud-compliance.html":
         "https://docs.mattermost.com/comply/cloud-compliance-and-oversight.html",
 "cloud/cloud-integrations/cloud-slash-commands.html":
@@ -1770,6 +1766,12 @@ redirects = {
         "https://docs.mattermost.com/install/desktop-custom-dictionaries.html#configure-the-desktop-app",
 "install/desktop-custom-dictionaries.html#removing-customized-dictionaries":
         "https://docs.mattermost.com/install/desktop-custom-dictionaries.html#remove-custom-dictionaries",
+"install/self-managed-changelog.html":
+        "https://docs.mattermost.com/deploy/legacy-mattermost-changelog.html",
+"install/legacy-self-hosted-changelog.html":
+        "https://docs.mattermost.com/deploy/legacy-mattermost-changelog.html",
+"install/cloud-changelog.html":
+        "https://docs.mattermost.com/deploy/legacy-cloud-changelog.html",
 
 # Integrations redirects.
 # The integrations directory and its contents have been archived in FY23 Q2 and all applicable content has been moved from docs.mm.com to developers.mm.com.
