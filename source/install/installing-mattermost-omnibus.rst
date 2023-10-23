@@ -20,6 +20,7 @@ Install Mattermost Omnibus
       <h3>Minimum system requirements:</h3>
       <ul>
         <li>Hardware: 1 vCPU/core with 2GB RAM (support for up to 1,000 users)</li>
+	<li>Operating System: Ubuntu 18.04 or greater</li>
         <li>Database: PostgreSQL v11+</li>
         <li>Network ports required:
           <ul>
@@ -33,12 +34,16 @@ Install Mattermost Omnibus
 
   </div>
 
-.. contents:: On this page:
+.. contents:: On this page
   :backlinks: top
   :local:
   :depth: 1
 
-Mattermost Omnibus packages the free, unlicensed Mattermost Enterprise version of Mattermost, a PostgreSQL database, and when required, NGINX as the application proxy. A custom CLI (``mmomni``) and ansible recipes link the components together and configures them.
+.. note::
+
+ Omnibus supports Ubuntu distributions only.
+
+Mattermost Omnibus packages the free, unlicensed Mattermost Enterprise version of Mattermost, a PostgreSQL database, and when required, NGINX as the application proxy. A custom CLI (``mmomni``) and ansible recipes link the components together and configures them. Mattermost Omnibus is only supported on Ubuntu distributions. 
 
 Add the Mattermost PPA repositories
 -----------------------------------

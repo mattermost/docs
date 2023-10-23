@@ -4,6 +4,10 @@ Install the Mattermost App in Microsoft Teams
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
+.. tip::
+
+  Looking to `install the Mattermost for Microsoft Teams plugin </about/install-mattermost-for-microsoft-teams-plugin.html>`__ instead?
+
 With `Mattermost for Microsoft Teams </about/mattermost-for-microsoft-teams.html>`__, you can embed your Mattermost workspace within your Microsoft Teams instance and take advantage of `embedded app features <#benefits-of-the-embedded-app>`_.
 
 .. important::
@@ -38,7 +42,7 @@ Check out this `YouTube demo <https://youtu.be/MxegqqfErEg>`__, from Doug Lauder
 Get users started with the embedded app
 ----------------------------------------
 
-See our end user documentation for a `video walkthrough of using Mattermost embedded within Microsoft Teams </channels/collaborate-using-mattermost-for-microsoft-teams.html#demonstration-mattermost-embedded-in-microsoft-teams>`__.
+See our end user documentation for a `video walkthrough of using Mattermost embedded within Microsoft Teams </collaborate/collaborate-using-mattermost-for-microsoft-teams.html#demonstration-mattermost-embedded-in-microsoft-teams>`__.
 
 Benefits of the embedded app
 ----------------------------

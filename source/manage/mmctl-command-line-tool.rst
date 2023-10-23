@@ -8,7 +8,7 @@ The mmctl is a CLI tool for the Mattermost server which is installed locally and
 
 Being installed locally enables System Admins for both self-hosted and Cloud Mattermost instances to run CLI commands even in instances where there's no access to the server (e.g., via SSH).
 
-This feature was developed to a large extent by community contributions and we'd like to extend our gratitude to the contributors who have worked on this project. We are currently accepting pull requests for Help Wanted issues in the `mattermost-server <https://github.com/mattermost/mattermost-server/issues?q=is%3Aissue+is%3Aopen+label%3A%22Help+Wanted%22+label%3AArea%2Fmmctl>`__ repo. You can learn more about the unit test coverage campaign for mmctl in the `Unit testing mmctl commands <https://mattermost.com/blog/unit-testing-mmctl-commands/>`__ blog post.
+This feature was developed to a large extent by community contributions and we'd like to extend our gratitude to the contributors who have worked on this project. We are currently accepting pull requests for Help Wanted issues in the `mattermost-server <https://github.com/mattermost/mattermost/issues?q=is%3Aissue+is%3Aopen+label%3A%22Help+Wanted%22+label%3AArea%2Fmmctl>`__ repo. You can learn more about the unit test coverage campaign for mmctl in the `Unit testing mmctl commands <https://mattermost.com/blog/unit-testing-mmctl-commands/>`__ blog post.
 
 mmctl usage notes
 -----------------
@@ -85,7 +85,7 @@ The mmctl tool comes bundled with Mattermost package. For customers that want to
 
    .. tab:: Using release package (Linux, macOS, Windows)
 
-      Starting release ``v8.0.0`` of Mattermost, you can download the mmctl builds at their release URL: ``https://releases.mattermost.com/mmctl/${MATTERMOST_VERSION}/${PLATFORM}_${ARCHITECTURE}.tar``
+      Starting with the release ``v8.0.0`` of Mattermost, you can download the mmctl builds at their release URL: ``https://releases.mattermost.com/mmctl/${MATTERMOST_VERSION}/${PLATFORM}_${ARCHITECTURE}.tar`` (for windows, substitute the ``.tar`` suffix with ``.zip``)
 
       E.g. to download version ``v8.0.0`` of the mmctl amd64 build for linux, you can run the following:
 
@@ -2278,8 +2278,9 @@ Create an export file.
 
 .. code-block:: sh
 
-   --no-attachments     Omit to include file attachments in the export file.
-   -h, --help           help for create
+   --no-attachments              Omit to include file attachments in the export file.
+   --include-archived-channels   Include archived channels in the export file.
+   -h, --help                    help for create
 
 **Options inherited from parent commands**
 
@@ -3668,7 +3669,7 @@ Synchronize all LDAP users and groups now.
 .. code-block:: sh
 
    -h, --help                  help for sync
-   --include-removed-members   Include members who left or were removed from a group-synced team/channel
+   --include-removed-members   Include members who left or were removed from a group-synced team/channel. Useful in cases where synchronized groups are unlinked/re-linked for testing purposes, when LDAP users are deactivated and reactivated, or when a user leaves a team in error.
 
 **Options inherited from parent commands**
 
@@ -6172,6 +6173,31 @@ Migrate accounts from one authentication provider to another. For example, you c
 .. code-block:: sh
 
    mmctl user migrate-auth email saml users.json
+
+**user.json Example**
+
+.. code-block:: json
+
+  [
+    {
+      "email": "user1@example.com",
+      "auth_data": {
+        "saml": {
+          "idp_id": "saml_idp_1",
+          "saml_user_id": "user123"
+        }
+      }
+    },
+    {
+      "email": "user2@example.com",
+      "auth_data": {
+        "saml": {
+          "idp_id": "saml_idp_2",
+          "saml_user_id": "user456"
+        }
+      }
+    }
+  ]
 
 **Options**
 

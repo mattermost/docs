@@ -58,6 +58,13 @@ Here is an example connection string:
 .. code-block:: text
 
    postgres://mmuser:really_secure_password@localhost:5432/mattermost?sslmode=disable&connect_timeout=10
+   
+**MySQL**
+
+.. code-block:: text
+
+   mysql://mmuser:really_secure_password@tcp(127.0.0.1:3306)/mattermost?charset=utf8mb4,utf8&writeTimeout=30s
+
 
 Create an environment file
 ~~~~~~~~~~~~~~~~~~~~~~~~~~

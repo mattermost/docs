@@ -203,7 +203,7 @@ Specify the color of the email login button text for white labeling purposes. Us
 Enable account deactivation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**True**: Ability for users to deactivate their own account from **Settings > Advanced**. If a user deactivates their own account, they will get an email notification confirming they were deactivated.
+**True**: Ability for users to deactivate their own account from **Settings > Advanced > Deactivate Account**. If a user deactivates their own account, they will get an email notification confirming they were deactivated. Available only when authentication is set to use email/password. Not available when authentication uses SAML or AD/LDAP.
 
 **False**: Ability for users to deactivate their own account is disabled.
 
@@ -296,26 +296,6 @@ Changes made when hardened mode is enabled:
 +----------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ExperimentalEnableHardenedMode": false`` with options ``true`` and ``false``. |
 +----------------------------------------------------------------------------------------------------------------------------+
-
-.. config:setting:: exp-enablepreviewfeatures
-  :displayname: Enable preview features (Experimental)
-  :systemconsole: Experimental > Features
-  :configjson: EnablePreviewFeatures
-  :environment: N/A
-
-  - **true**: **(Default)** Preview features can be enabled from **Settings > Advanced > Preview Pre-release features**.
-  - **false**: Disables and hides preview features from **Settings > Advanced > Preview Pre-release features**.
-
-Enable preview features
-~~~~~~~~~~~~~~~~~~~~~~~
-
-**True**: Preview features can be enabled from **Settings > Advanced > Preview Pre-release features**.
-
-**False**: Disables and hides preview features from **Settings > Advanced > Preview Pre-release features**.
-
-+------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnablePreviewFeatures": true`` with options ``true`` and ``false``. |
-+------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: exp-enablethemeselection
   :displayname: Enable theme selection (Experimental)
@@ -1845,27 +1825,6 @@ This setting isn't available in the System Console and can only be set in ``conf
 +-------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ExperimentalStrictCSRFEnforcement": false`` with options ``true`` and ``false``. |
 +-------------------------------------------------------------------------------------------------------------------------------+
-
-.. config:setting:: exp-customusergroups
-  :displayname: Custom user groups (Experimental)
-  :systemconsole: N/A
-  :configjson: EnableCustomGroups
-  :environment: N/A
-  :description: This configuration setting controls the ability for users to create custom user groups. Default is **true**.
-
-Custom user groups
-~~~~~~~~~~~~~~~~~~
-
-.. include:: ../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-This configuration setting controls the ability for users to create custom user groups. This configuration setting is enabled by default for both self-hosted and Cloud deployments, but can only be disabled in self-hosted deployments.
-
-+----------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableCustomGroups": true`` with options ``true`` and ``false``.  |
-+----------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: exp-developerflags
   :displayname: Developer flags (Experimental)

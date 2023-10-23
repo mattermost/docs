@@ -20,6 +20,13 @@ Users
 
 *Available in legacy Enterprise Edition E10/E20*
 
+Getting people set up with a Mattermost account is typically something that system admins do when deploying and configuring the Mattermost workspace. A Mattermost admin can `provision Mattermost users </onboard/user-provisioning-workflows.html>`__ using one or more of the following methods:
+
+- `Enable account creation </configure/authentication-configuration-settings.html#enable-account-creation>`__.
+- Use `mmctl user create </manage/mmctl-command-line-tool.html#mmctl-user-create>`__ or Mattermost `APIs <https://api.mattermost.com/#tag/users>`__ to create user accounts.
+- `Migrate user accounts </onboard/migrating-to-mattermost.html#migration-guide>`__ from other collaboration systems and `bulk load </onboard/bulk-loading-data.html>`__ that user data into Mattermost.
+- Connect an authentication service to assist with user provisioning, such as `AD/LDAP authentication </onboard/ad-ldap.html#active-directory-ldap-setup>`__ or `SAML authentication </onboard/sso-saml.html>`__.
+
 +---------------------------------------------------------------+-------------------------------------------------------------+
 | Manage active and inactive users, revoke all user sessions,   | - System Config path: **User Management > Users**           |
 | access individual users to view their User ID, add users      | - ``config.json setting``: N/A                              |
@@ -28,6 +35,25 @@ Users
 +---------------------------------------------------------------+-------------------------------------------------------------+
 | **Note**: You can search for users by partial first name, last name, nickname, or username.                                 |
 +---------------------------------------------------------------+-------------------------------------------------------------+
+
+Identify a User's ID
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Users can be specified in Mattermost by username or user ID. Usernames automatically resolve when a match is detected.
+System admins can identify a user's ID using the Mattermost API or mmctl. 
+
+Using the API
+^^^^^^^^^^^^^^^^
+
+Use this method if you need to automate user-related tasks or integrate with external systems.
+Make an HTTP GET request to the following endpoint: ``https://your-mattermost-url/api/v4/users/username/username_here``.
+Replace ``your-mattermost-url`` with the URL of your Mattermost instance and ``username_here`` with the username you are looking for.
+The API response contains a JSON object that includes the user's ID among other details.
+
+Using mmctl
+^^^^^^^^^^^^^^^^
+
+If you prefer command-line tools, Mattermost offers mmctl for system administration.
+In a terminal window, use the following command to list all users and their IDs: ``mmctl user list`` to return a list of user IDs.
 
 Deactivate user accounts
 ~~~~~~~~~~~~~~~~~~~~~~~~

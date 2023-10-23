@@ -40,12 +40,16 @@ Install Mattermost on RHEL
 
   If you are running the Mattermost Server and database on a single system, we recommend the `Mattermost Omnibus install method </install/installing-mattermost-omnibus.html>`__ as this greatly reduces setup and ongoing maintenance.
 
-.. contents:: On this page:
+.. contents:: On this page
   :backlinks: top
   :local:
   :depth: 1
 
-Deployment includes 4 steps: `download <#download>`__, `install <#install>`__, `setup <#setup>`__, and `update <#updates>`__.
+.. note::
+  
+  You need a PostgreSQL database. See the `database preparation </install/prepare-mattermost-database.html>`__ documentation for details on this prerequisite.
+
+A Mattermost deployment includes 4 steps: `download <#download>`__, `install <#install>`__, `setup <#setup>`__, and `update <#updates>`__.
 
 Download the latest Mattermost Server tarball
 ---------------------------------------------

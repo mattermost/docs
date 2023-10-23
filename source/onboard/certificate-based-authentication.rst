@@ -12,7 +12,7 @@ Follow these steps to configure user CBA for your browser and Mattermost Desktop
 
 Before you begin, follow the `official guides to install Mattermost </guides/deployment.html#install-guides>`__ on your system, including NGINX configuration as a proxy with SSL and HTTP/2, and a valid SSL certificate such as Let's Encrypt.
 
-.. contents::
+.. contents:: On this page
   :backlinks: top
   :local:
   :depth: 2

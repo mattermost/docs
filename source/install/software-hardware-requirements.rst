@@ -8,7 +8,7 @@ Software and hardware requirements
 
 This guide outlines minimum software and hardware requirements for deploying Mattermost. Requirements may vary based on utilization and observing performance of pilot projects is recommended prior to scale out.
 
-.. contents::
+.. contents:: On this page
     :backlinks: top
 
 Deployment overview
@@ -49,7 +49,7 @@ PC web
 .. csv-table::
     :header: "Browser", "Self-Hosted Technical Requirement", "Cloud Technical Requirement"
 
-    "Chrome", "v112+", "v112+"
+    "Chrome", "v116+", "v116+"
     "Firefox", "v102+", "v102+"
     "Safari", "v16.2+", "v16.2+"
     "Edge", "v112+", "v112+"
@@ -62,7 +62,7 @@ Mobile apps
 .. csv-table::
     :header: "Operating System", "Technical Requirement"
 
-    "iOS", "iPhone 5s devices and later with iOS 12.1+"
+    "iOS", "iPhone 5s devices and later with iOS 12.4+"
     "Android", "Android devices with Android 7+"
 
 .. note::
@@ -76,7 +76,7 @@ Mobile web
 .. csv-table::
     :header: "Browser", "Technical Requirement"
 
-    "iOS", "iOS 12.1+ with Safari 16.2+ or Chrome 112+"
+    "iOS", "iOS 12.4+ with Safari 16.2+ or Chrome 112+"
     "Android", "Android 7+ with Chrome 112+"
 
 Email client
@@ -107,7 +107,7 @@ Amazon Aurora equivalents of both PostgreSQL and MySQL are also supported.
 
 MariaDB v10+ no longer functions as a MySQL drop-in replacement, and it's not supported for Mattermost due to the requirement of MySQL 5.7.12. Prior versions of MariaDB were not officially supported but may have functioned in older Mattermost releases. If you are running MariaDB now, migrating from MariaDB to the MySQL equivalent is recommended.
 
-Deployments requiring searching in Chinese, Japanese, and Korean languages require MySQL 5.7.6+ and the configuration of `ngram Full-Text parser <https://dev.mysql.com/doc/refman/5.7/en/fulltext-search-ngram.html>`__. For searching two characters, you will also need to set ``ft_min_word_len`` and ``innodb_ft_min_token_size`` to ``2`` and restart MySQL. See `CJK discussion <https://github.com/mattermost/mattermost-server/issues/2033#issuecomment-183872616>`__ for details.
+Deployments requiring searching in Chinese, Japanese, and Korean languages require MySQL 5.7.6+ and the configuration of `ngram Full-Text parser <https://dev.mysql.com/doc/refman/5.7/en/fulltext-search-ngram.html>`__. For searching two characters, you will also need to set ``ft_min_word_len`` and ``innodb_ft_min_token_size`` to ``2`` and restart MySQL. See `CJK discussion <https://github.com/mattermost/mattermost/issues/2033#issuecomment-183872616>`__ for details.
 
 Search limitations on PostgreSQL:
 
@@ -150,7 +150,7 @@ Usage of CPU, RAM, and storage space can vary significantly based on user behavi
 
 Moreover, memory requirements can be driven by peak file sharing activity. Recommendation is based on default 50 MB maximum file size, which can be `adjusted from the System Console </configure/configuration-settings.html#maximum-file-size>`__. Changing this number may change memory requirements.
 
-For deployments larger than 2,000 users, it is recommended to use the Mattermost open source load testing framework to simulate usage of your system at full scale: `https://github.com/mattermost/mattermost-load-test <https://github.com/mattermost/mattermost-load-test>`__.
+For deployments larger than 2,000 users, it is recommended to use the Mattermost open source load testing framework to simulate usage of your system at full scale: `https://github.com/mattermost/mattermost-load-test-ng <https://github.com/mattermost/mattermost-load-test-ng>`__.
 
 Mattermost supports any 64-bit x86 processor architecture.
 
@@ -172,7 +172,7 @@ Scale requirements
 
 For Enterprise Edition deployments with a multi-server setup, see `our scaling guide </scale/scaling-for-enterprise.html>`__.
 
-It is highly recommended that pilots are run before enterprise-wide deployments in order to estimate full scale usage based on your specific organizational needs. You can use the Mattermost open source load testing framework to simulate usage of your system: `https://github.com/mattermost/mattermost-load-test <https://github.com/mattermost/mattermost-load-test>`__.
+It is highly recommended that pilots are run before enterprise-wide deployments in order to estimate full scale usage based on your specific organizational needs. You can use the Mattermost open source load testing framework to simulate usage of your system: `https://github.com/mattermost/mattermost-load-test-ng <https://github.com/mattermost/mattermost-load-test-ng>`__.
 
 Mattermost's `performance monitoring </scale/performance-monitoring.html>`__ tools can be used for detailed performance measurements and to inspect the running system to ensure sizing and installation is correct.
 

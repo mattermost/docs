@@ -1,7 +1,7 @@
 Mobile apps FAQ
 ===============
 
-.. contents::
+.. contents:: On this page
   :backlinks: top
   :local:
 
@@ -372,3 +372,13 @@ In these scenarios, the ``login`` audit log won't have the ``deviceId``, and the
 If the app receives the ``deviceId`` later, the device will send the new ``deviceId`` to the server, generating an ``attachDeviceId`` audit log, and adding the ``deviceId`` to the session data in the database.
 
 Since the ``deviceId`` relates to the application, connections through the web browser, even on mobile, won't have a ``deviceID``.
+
+Where can I find mobile message notification logs?
+-------------------------------------------------------------
+Notification messages are logged to the ``notifications.log`` file.
+System admins must enable notification logs in the ``config.json`` file by setting ``EnableFile`` to ``true``, and specifying an optional file location via ``FileLocation``. When no location is configured, the ``notifications.log`` file is stored in the default Mattermost directory. See the `logging configuration settings <https://docs.mattermost.com/configure/environment-configuration-settings.html#logging>`__ documentation for details.
+
+The team members / users can access their notification logs based on their device platform.
+Android users can view the logs using ``logcat``.
+iOS users can acess the logs in the ``console app`` on their MacOS.
+

@@ -57,7 +57,7 @@ Once you're logged in, run the following ``mmctl`` command:
          
    mmctl export create
 
-Running this command creates a full export of the server, including attached files. Append ``--no-attachments`` if you do not wish to export attached files from your instance. This process can take some time, so ``mmctl`` will return immediately, and the job will run in the background on the Mattermost instance until the export is fully created. If successful, the command will immediately output a job ID, like this:
+Running this command creates a full export of the server, including attached files. Append ``--no-attachments`` if you do not wish to export attached files from your instance, and append ``--with-archived-channels`` to include archived channels in the export file. This process can take some time, so ``mmctl`` will return immediately, and the job will run in the background on the Mattermost instance until the export is fully created. If successful, the command will immediately output a job ID, like this:
 
 .. code::
 
@@ -195,7 +195,7 @@ If you’re using plugins that aren’t listed on the Marketplace, they won’t 
 
 **Data**
 
-The migration only includes data from Channels. No Boards or Playbooks data is exported.
+The migration only includes data from Channels. No Playbooks data is exported.
 
 Migration process
 ~~~~~~~~~~~~~~~~~

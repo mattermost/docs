@@ -28,7 +28,7 @@ You can import the following data types:
 
 Importing additional types of posts is not yet supported.
 
-.. contents:: Contents
+.. contents:: On this page
   :backlinks: top
   :local:
   :depth: 2

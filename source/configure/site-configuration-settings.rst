@@ -431,7 +431,7 @@ Max users per team
 | software-hardware-requirements.html>`__, this limit can be increased to      |                                                                   |
 | thousands of users.                                                          |                                                                   |
 |                                                                              |                                                                   |
-| `Channels <https://docs.mattermost.com/guides/channels.html>`__ are          |                                                                   |
+| `Channels </collaborate/collaborate-within-channels.html>`__ are             |                                                                   |
 | another way of organizing communications within teams on different topics.   |                                                                   |
 |                                                                              |                                                                   |
 | Numerical input. Default is **50** self-hosted deployments, and **10000**    |                                                                   |
@@ -454,6 +454,30 @@ Max channels per team
 | Numerical input. Default is **2000** for self-hosted deployments, and **10000**       | - Environment variable: ``MM_TEAMSETTINGS_MAXCHANNELSPERTEAM``        |
 | for Cloud deployments.                                                                |                                                                       |
 +---------------------------------------------------------------------------------------+-----------------------------------------------------------------------+
+
+.. config:setting:: users-enablejoinleavemessages
+  :displayname: Enable join/leave messages by default (Users and teams)
+  :systemconsole: Site Configuration > Users and teams
+  :configjson: .TeamSettings.EnableJoinLeaveMessageByDefault
+  :environment: MM_TEAMSETTINGS_ENABLEJOINLEAVEMESSAGEBYDEFAULT
+  :description: Specify the default configuration of system messages displayed when users join or leave channels.
+
+  - **true**: **(Default)** Join/Leave messages are displayed.
+  - **false**: Join/Leave messages are hidden.
+
+Enable join/leave messages by default
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++---------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+
+| Specify the default configuration of system messages displayed when users             | - System Config path: **Site Configuration > Users and teams**                     |
+| join or leave channels.                                                               | - ``config.json`` setting: ``.TeamSettings.EnableJoinLeaveMessageByDefault: true`` |
+|                                                                                       | - Environment variable: ``MM_TEAMSETTINGS_ENABLEJOINLEAVEMESSAGEBYDEFAULT``        |
+| - **true**: **(Default)** Join/Leave messages are displayed.                          |                                                                                    |
+| - **false**: Join/Leave messages are hidden.                                          |                                                                                    |
+|                                                                                       |                                                                                    |
+| Users can override this default by going to **Settings > Advanced >                   |                                                                                    |
+| Enable Join/Leave Messages**.                                                         |                                                                                    |
++---------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+
 
 .. config:setting:: users-restrictdirectmessage
   :displayname: Enable users to open direct message channels with (Users and teams)
@@ -636,6 +660,9 @@ Enable last active time
 
 Enable custom user groups
 ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
 
 +---------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
 | - **true**: **(Default)** Users with appropriate permissions can create custom user groups,       | - System Config path: **Site Configuration > Users and teams**              |
@@ -1068,7 +1095,7 @@ Automatically follow threads
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
 | **Notes**:                                                                                                                                                                                                                                                                                                                                                                                                     |
 |                                                                                                                                                                                                                                                                                                                                                                                                                |
-| - This setting **must** be enabled for `Collapsed Reply Threads <https://docs.mattermost.com/channels/organize-conversations.html>`__ to function. See the `administrator’s guide to enabling Collapsed Reply Threads <https://support.mattermost.com/hc/en-us/articles/6880701948564>`__ for details.                                                                                                         |
+| - This setting **must** be enabled for `Collapsed Reply Threads <https://docs.mattermost.com/collaborate/organize-conversations.html>`__ to function. See the `administrator’s guide to enabling Collapsed Reply Threads <https://support.mattermost.com/hc/en-us/articles/6880701948564>`__ for details.                                                                                                      |
 | - Enabling this setting does not automatically follow threads based on previous user actions. For example, threads a user participated in prior to enabling this setting won't be automatically followed, unless the user adds a new comment or is mentioned in the thread.                                                                                                                                    |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
@@ -1078,7 +1105,7 @@ Automatically follow threads
   :configjson: .ServiceSettings.CollapsedThreads
   :environment: MM_SERVICESETTINGS_COLLAPSEDTHREADS
 
-  - **Always On**: **(Default)** Enables `Collapsed Reply Threads <https://docs.mattermost.com/channels/organize-conversations.html>`__ on the server and for all users. ``config.json`` setting: ``"always_on"``
+  - **Always On**: **(Default)** Enables `Collapsed Reply Threads <https://docs.mattermost.com/collaborate/organize-conversations.html>`__ on the server and for all users. ``config.json`` setting: ``"always_on"``
   - **Default On**: Enables Collapsed Reply Threads on the server and for all users. ``config.json`` setting: ``"default_on"``
   - **Default Off**: Enables Collapsed Reply Threads on the server but **not** for users. ``config.json`` setting: ``"default_off"``
   - **Disabled**: Users cannot enable Collapsed Reply Threads. ``config.json`` setting: ``"disabled"``
@@ -1090,12 +1117,12 @@ Collapsed reply threads
 
     Customers upgrading to v7.0 must review the `administrator’s guide to enabling Collapsed Reply Threads <https://support.mattermost.com/hc/en-us/articles/6880701948564>`__ prior to enabling this functionality.
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------+
-| - **Always On**: **(Default)** Enables `Collapsed Reply Threads <https://docs.mattermost.com/channels/organize-conversations.html>`__ on the server and for all users. This is the recommended configuration for optimal user experience and to ensure consistency in how users read and respond to threaded conversations. ``config.json`` setting: ``"always_on"`` | - System Config path: **Site Configuration > Posts**               |
-| - **Default On**: Enables Collapsed Reply Threads on the server and for all users. Users can choose to `disable Collapsed Reply Threads <https://docs.mattermost.com/channels/channels-settings.html#collapsed-reply-threads>`__ for their Mattermost account in **Settings > Display > Collapsed Reply Threads**. ``config.json`` setting: ``"default_on"``         | - ``config.json`` setting: ``.ServiceSettings.CollapsedThreads``   |
-| - **Default Off**: Enables Collapsed Reply Threads on the server but **not** for users. Users can choose to `enable Collapsed Reply Threads <https://docs.mattermost.com/channels/channels-settings.html#collapsed-reply-threads>`__ for their Mattermost account in **Settings > Display > Collapsed Reply Threads**. ``config.json`` setting: ``"default_off"``    | - Environment variable: ``MM_SERVICESETTINGS_COLLAPSEDTHREADS``    |
-| - **Disabled**: Users cannot enable Collapsed Reply Threads. ``config.json`` setting: ``"disabled"``                                                                                                                                                                                                                                                                 |                                                                    |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------+
+| - **Always On**: **(Default)** Enables `Collapsed Reply Threads <https://docs.mattermost.com/collaborate/organize-conversations.html>`__ on the server and for all users. This is the recommended configuration for optimal user experience and to ensure consistency in how users read and respond to threaded conversations. ``config.json`` setting: ``"always_on"`` | - System Config path: **Site Configuration > Posts**               |
+| - **Default On**: Enables Collapsed Reply Threads on the server and for all users. Users can choose to `disable Collapsed Reply Threads </preferences/manage-your-display-options.html#collapsed-reply-threads>`__ for their Mattermost account in **Settings > Display > Collapsed Reply Threads**. ``config.json`` setting: ``"default_on"``                          | - ``config.json`` setting: ``.ServiceSettings.CollapsedThreads``   |
+| - **Default Off**: Enables Collapsed Reply Threads on the server but **not** for users. Users can choose to enable Collapsed Reply Threads for their Mattermost account in **Settings > Display > Collapsed Reply Threads**. ``config.json`` setting: ``"default_off"``                                                                                                 | - Environment variable: ``MM_SERVICESETTINGS_COLLAPSEDTHREADS``    |
+| - **Disabled**: Users cannot enable Collapsed Reply Threads. ``config.json`` setting: ``"disabled"``                                                                                                                                                                                                                                                                    |                                                                    |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------+
 
 .. config:setting:: posts-messagepriority
   :displayname: Message priority (Posts)
@@ -1118,7 +1145,7 @@ Message priority
 +-----------------------------------------------------------------------------+------------------------------------------------------------------------+
 | **Note**: `Mattermost Professional or Enterprise <https://mattermost.com/pricing>`__ customers can additionally request message acknowledgements to  |
 | track that specific, time-sensitive messages have been seen and actioned. See the                                                                    |
-| `message priority <https://docs.mattermost.com/channels/message-priority.html>`__ documentation to learn more.                                       |
+| `message priority <https://docs.mattermost.com/collaborate/message-priority.html>`__ documentation to learn more.                                    |
 +-----------------------------------------------------------------------------+------------------------------------------------------------------------+
 
 .. config:setting:: posts-persistentnotifications
@@ -1232,17 +1259,17 @@ Disable link previews for specific domains
   :configjson: .ServiceSettings.EnablePermalinkPreviews
   :environment: MM_SERVICESETTINGS_ENABLEPERMALINKPREVIEWS
 
-  - **true**: **(Default)** `Share links to Mattermost messages <https://docs.mattermost.com/channels/share-links.html>`__ will generate a preview for any users that have access to the original message.
+  - **true**: **(Default)** `Share links to Mattermost messages <https://docs.mattermost.com/collaborate/share-links.html>`__ will generate a preview for any users that have access to the original message.
   - **false**: Share links do not generate a preview.
 
 Enable message link previews
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
-| - **true**: **(Default)** `Share links to Mattermost messages <https://docs.mattermost.com/channels/share-links.html>`__ will generate a preview for any users that have access to the original message. | - System Config path: **Site Configuration > Posts**                          |
-| - **false**: Share links do not generate a preview.                                                                                                                                                      | - ``config.json`` setting: ``.ServiceSettings.EnablePermalinkPreviews: true`` |
-|                                                                                                                                                                                                          | - Environment variable: ``MM_SERVICESETTINGS_ENABLEPERMALINKPREVIEWS``        |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+| - **true**: **(Default)** `Share links to Mattermost messages <https://docs.mattermost.com/collaborate/share-links.html>`__ will generate a preview for any users that have access to the original message. | - System Config path: **Site Configuration > Posts**                          |
+| - **false**: Share links do not generate a preview.                                                                                                                                                         | - ``config.json`` setting: ``.ServiceSettings.EnablePermalinkPreviews: true`` |
+|                                                                                                                                                                                                             | - Environment variable: ``MM_SERVICESETTINGS_ENABLEPERMALINKPREVIEWS``        |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
 
 .. config:setting:: posts-enablesvg
   :displayname: Enable SVGs (Posts)
@@ -1270,19 +1297,19 @@ Enable SVGs
   :configjson: .ServiceSettings.EnableLatex
   :environment: MM_SERVICESETTINGS_ENABLELATEX
 
-  - **true**: Enables rendering of `LaTeX in code blocks <https://docs.mattermost.com/channels/format-messages.html#math-formulas>`__.
+  - **true**: Enables rendering of `LaTeX in code blocks <https://docs.mattermost.com/collaborate/format-messages.html#math-formulas>`__.
   - **false**: **(Default)** Disables rendering in blocks. Instead, LaTeX code is highlighted.
 
 Enable LaTeX code block rendering
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
-| - **true**: Enables rendering of `LaTeX in code blocks <https://docs.mattermost.com/channels/format-messages.html#math-formulas>`__.               | - System Config path: **Site Configuration > Posts**              |
+| - **true**: Enables rendering of `LaTeX in code blocks <https://docs.mattermost.com/collaborate/format-messages.html#math-formulas>`__.            | - System Config path: **Site Configuration > Posts**              |
 | - **false**: **(Default)** Disables rendering in blocks. Instead, LaTeX code is highlighted.                                                       | - ``config.json`` setting: ``.ServiceSettings.EnableLatex: false``|
 |                                                                                                                                                    | - Environment variable: ``MM_SERVICESETTINGS_ENABLELATEX``        |
 +----------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
 | **Warning**: Enabling LaTeX rendering is not recommended in environments where not all users are trusted.                                                                                                              |
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
 
 .. config:setting:: posts-enableinlinelatex
   :displayname: Enable inline LaTeX rendering (Posts)
@@ -1290,19 +1317,19 @@ Enable LaTeX code block rendering
   :configjson: .ServiceSettings.EnableInlineLatex
   :environment: MM_SERVICESETTINGS_ENABLEINLINELATEX
 
-  - **true**: **(Default)** Enables rendering of `LaTeX in message text <https://docs.mattermost.com/channels/format-messages.html#math-formulas>`__.
+  - **true**: **(Default)** Enables rendering of `LaTeX in message text <https://docs.mattermost.com/collaborate/format-messages.html#math-formulas>`__.
   - **false**: Disables inline rendering of LaTeX. Instead, LaTeX in message text is highlighted.
 
 Enable inline LaTeX rendering
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
-| - **true**: **(Default)** Enables rendering of `LaTeX in message text <https://docs.mattermost.com/channels/format-messages.html#math-formulas>`__.                                                                | - System Config path: **Site Configuration > Posts**                    |
+| - **true**: **(Default)** Enables rendering of `LaTeX in message text <https://docs.mattermost.com/collaborate/format-messages.html#math-formulas>`__.                                                             | - System Config path: **Site Configuration > Posts**                    |
 | - **false**: Disables inline rendering of LaTeX. Instead, LaTeX in message text is highlighted. LaTeX can also be rendered in a code block, if that feature is enabled. See **Enable LaTeX code block rendering**. | - ``config.json`` setting: ``.ServiceSettings.EnableInlineLatex: true`` |
 |                                                                                                                                                                                                                    | - Environment variable: ``MM_SERVICESETTINGS_ENABLEINLINELATEX``        |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
 | **Warning**: Enabling LaTeX rendering is not recommended in environments where not all users are trusted.                                                                                                                                                                                    |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
 
 .. config:setting:: posts-customurlschemes
   :displayname: Custom URL schemes (Posts)
@@ -1319,6 +1346,25 @@ Custom URL schemes
 |                                                                                                                                                                                                          | - ``config.json`` setting: ``.DisplaySettings.CustomURLSchemes: []``  |
 | ``config.json`` setting: an array of strings                                                                                                                                                             | - Environment variable: ``MM_DISPLAYSETTINGS_CUSTOMURLSCHEMES``       |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------+
+
+.. config:setting:: posts-maxmarkdownnodes
+  :displayname: Maximum Markdown nodes (Posts)
+  :systemconsole: Site Configuration > Posts
+  :configjson: .DisplaySettings.MaxMarkdownNodes
+  :environment: MM_DISPLAYSETTINGS_MAXMARKDOWNNODES
+  :description: The maximum number of Markdown elements that can be included in a single piece of text in a message. Default is 0 which applies a Mattermost-specified limit.
+
+Maximum Markdown nodes
+~~~~~~~~~~~~~~~~~~~~~~
+
++-------------------------------------------------------------+-----------------------------------------------------------------------+
+| The maximum number of Markdown elements (such as emojis,    | - System Config path: **Site Configuration > Posts**                  |
+| links, or table cells), that can be included in a single    | - ``config.json`` setting: ``.DisplaySettings.MaxMarkdownNodes: 0``   |
+| piece of text in a message.                                 | - Environment variable: ``MM_DISPLAYSETTINGS_MAXMARKDOWNNODES``       |
+|                                                             |                                                                       |
+| Numerical input. Default is **0** which applies a           |                                                                       |
+| Mattermost-specified limit.                                 |                                                                       |
++-------------------------------------------------------------+-----------------------------------------------------------------------+
 
 .. config:setting:: posts-googleapikey
   :displayname: Google API key (Posts)
@@ -1457,14 +1503,14 @@ Access the following configuration settings in the System Console by going to **
   :configjson: .FileSettings.EnablePublicLink
   :environment: MM_FILESETTINGS_ENABLEPUBLICLINK
 
-  - **true**: Allows users to create `public links <https://docs.mattermost.com/channels/share-files-in-messages.html#share-public-links>`__ to files attached to Mattermost messages.
+  - **true**: Allows users to create `public links <https://docs.mattermost.com/collaborate/share-files-in-messages.html#share-public-links>`__ to files attached to Mattermost messages.
   - **false**: **(Default)** Prevents users from creating public links to files and disables all previously created links.
 
 Enable public file links
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------+
-| - **true**: Allows users to create `public links <https://docs.mattermost.com/channels/share-files-in-messages.html#share-public-links>`__ to files attached to Mattermost messages.          | - System Config path: **Site Configuration > Public Links**           |
+| - **true**: Allows users to create `public links <https://docs.mattermost.com/collaborate/share-files-in-messages.html#share-public-links>`__ to files attached to Mattermost messages.       | - System Config path: **Site Configuration > Public Links**           |
 | - **false**: **(Default)** Prevents users from creating public links to files and disables all previously created links.                                                                      | - ``config.json`` setting: ``.FileSettings.EnablePublicLink: false``  |
 |                                                                                                                                                                                               | - Environment variable: ``MM_FILESETTINGS_ENABLEPUBLICLINK``          |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------+
@@ -1510,9 +1556,10 @@ Enable admin notices
 ~~~~~~~~~~~~~~~~~~~~
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
-| - **true**: **(Default)** System Admins will receive `in-product notices <https://docs.mattermost.com/manage/in-product-notices.html>`__ about server upgrades and administration features. | - System Config path: **Site Configuration > Notices** -                         |
-|                                                                                                                                                                                             | - ``config.json`` setting: ``.AnnouncementSettings.AdminNoticesEnabled: true``   |
-| - **false**: System Admins will not receive specific notices. Admins will still receive notices for all users (see **Enable end user notices**)                                             | - Environment variable: ``MM_ANNOUNCEMENTSETTINGS_ADMINNOTICESENABLED``          |
+| - **true**: **(Default)** System admins will receive `in-product notices <https://docs.mattermost.com/manage/in-product-notices.html>`__ about available server upgrades, relevant          | - System Config path: **Site Configuration > Notices** -                         |
+|   administration features and external dependencies, and to gather user feedback to improve the product and user experience.                                                                | - ``config.json`` setting: ``.AnnouncementSettings.AdminNoticesEnabled: true``   |
+|                                                                                                                                                                                             | - Environment variable: ``MM_ANNOUNCEMENTSETTINGS_ADMINNOTICESENABLED``          |
+| - **false**: System admins will not receive specific notices. Admins will still receive notices for all users See **Enable end user notices** below.                                        |                                                                                  |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
 
 .. config:setting:: notices-enableendusernotices
@@ -1528,7 +1575,7 @@ Enable end user notices
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
-| - **true**: **(Default)** All users receive `in-product notices <https://docs.mattermost.com/manage/in-product-notices.html>`__ about client upgrades and end user features.   | - System Config path: **Site Configuration > Notices**                        |
-| - **false**: Users will not receive in-product notices.                                                                                                                        | - ``config.json`` setting: ``.AnnouncementSettings.UserNoticesEnabled: true`` |
-|                                                                                                                                                                                | - Environment variable: ``MM_ANNOUNCEMENTSETTINGS_USERNOTICESENABLED``        |
+| - **true**: **(Default)** All users receive `in-product notices <https://docs.mattermost.com/manage/in-product-notices.html>`__ about client upgrades, relevant end user       | - System Config path: **Site Configuration > Notices**                        |
+|   features, and to gather user feedback to improve the product and user experience.                                                                                            | - ``config.json`` setting: ``.AnnouncementSettings.UserNoticesEnabled: true`` |
+| - **false**: Users will not receive in-product notices.                                                                                                                        | - Environment variable: ``MM_ANNOUNCEMENTSETTINGS_USERNOTICESENABLED``        |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+

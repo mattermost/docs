@@ -42,7 +42,7 @@ To get started:
 
 1. Open a browser on your computer, go to **[Mattermost URL]** and log in with your **[LDAP/AD, SAML, Google, etc]** credentials. Remember to bookmark the URL so you can use it to log in next time.
 
-2. `Download <https://mattermost.com/apps>`__ the Mattermost apps for desktop and mobile. See the `Channels </messaging/welcome-to-mattermost-messaging.html>`__ documentation for details on how to get up and running quickly.
+2. `Download <https://mattermost.com/apps>`__ the Mattermost apps for desktop and mobile. See the `Use Mattermost </guides/use-mattermost.html>`__ end user documentation for details on how to get up and running quickly.
 
 3. Start messaging! 
 

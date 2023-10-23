@@ -6,7 +6,7 @@ Configure SAML with Keycloak
 
 The following process provides steps to configure SAML with Keycloak for Mattermost.
 
-.. contents::
+.. contents:: On this page
   :backlinks: top
   :local:
 
