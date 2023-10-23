@@ -109,6 +109,29 @@ To drop indexes, run the following commands before the migration (These are incl
    DROP INDEX IF EXISTS idx_posts_message_txt;
    DROP INDEX IF EXISTS idx_fileinfo_content_txt;
 
+Artifacts may remaining from previous configurations/versions
+~~~~~~~~~~~~~~~~~
+
+Prior to ``v6.4``, Mattermost was utilizing `golang-migrate <https://github.com/golang-migrate/migrate>`__ for handling the schema migrations. Since we don't use it anymore, the table ``schema_migrations`` shouldn't be migrated. If you were using Mattermost before ``v6.4`` consider excluding this table from migration and comparison. 
+
+.. code:: sql
+
+   DROP TABLE mattermost.schema_migrations;
+
+Another note about configurations is that; if you were previously utilizing a database for handling the Mattermot configuration, those tables should be removed from your MySQL database. Consider running following DDL to drop tables.
+
+.. code:: sql
+
+   DROP TABLE ConfigurationFiles;
+   DROP TABLE Configurations;
+   DROP TABLE db_config_migrations;
+
+Some community members have reported that they had ``description`` and ``nextsyncat`` columns in their ``SharedChannelRemotes`` table. These columns should be removed from the Table, consider running following DDL to drop the columns. (This migration will be added to future versions of Mattermost)
+
+.. code:: sql
+
+   ALTER TABLE SharedChannelRemotes DROP COLUMN description, DROP COLUMN nextsyncat;
+
 Migrate the data
 ----------------
 
@@ -146,7 +169,7 @@ Once we set the schema to a desired state, we can start migrating the **data** b
         type tinyint when (<= precision 4) to boolean using tinyint-to-boolean,
         type json to jsonb drop typemod
 
-   EXCLUDING TABLE NAMES MATCHING ~<IR_>, ~<focalboard>
+   EXCLUDING TABLE NAMES MATCHING ~<IR_>, ~<focalboard>, schema_migrations
 
    BEFORE LOAD DO
         $$ ALTER SCHEMA public RENAME TO {{ .source_schema }}; $$,
@@ -282,6 +305,7 @@ Once we are ready to migrate, we can start migrating the **schema** and the **da
        $$ ALTER TABLE {{ .source_schema }}.IR_Playbook ALTER COLUMN ConcatenatedSignalAnyKeywords SET DEFAULT ''::text; $$,
        $$ ALTER TABLE {{ .source_schema }}.IR_Playbook ALTER COLUMN CategoryName TYPE varchar(65536); $$,
        $$ ALTER TABLE {{ .source_schema }}.IR_Playbook ALTER COLUMN CategoryName SET DEFAULT ''::text; $$,
+       $$ ALTER TABLE {{ .source_schema }}.IR_Playbook ALTER COLUMN ChecklistsJSON TYPE JSON USING ChecklistsJSON::JSON; $$,
        $$ ALTER TABLE {{ .source_schema }}.IR_Playbook ALTER COLUMN ConcatenatedBroadcastChannelIds TYPE varchar(65536); $$,
        $$ ALTER TABLE {{ .source_schema }}.IR_Playbook ALTER COLUMN ConcatenatedBroadcastChannelIds SET DEFAULT ''::text; $$,
        $$ ALTER TABLE {{ .source_schema }}.IR_Playbook ALTER COLUMN RunSummaryTemplate TYPE varchar(65536); $$,
@@ -353,11 +377,11 @@ Once we are ready to migrate, we can start migrating the **schema** and the **da
        $$ ALTER SCHEMA public RENAME TO {{ .source_schema }}; $$
 
    AFTER LOAD DO
-       $$ UPDATE {{ .source_schema }}.focalboard_blocks SET `fields` = "{}" WHERE `fields` = ""; $$,
-       $$ UPDATE {{ .source_schema }}.focalboard_blocks_history SET `fields` = "{}" WHERE `fields` = ""; $$,
-       $$ UPDATE {{ .source_schema }}.focalboard_sessions SET `props` = "{}" WHERE `fields` = ""; $$,
-       $$ UPDATE {{ .source_schema }}.focalboard_teams SET `settings` = "{}" WHERE `fields` = ""; $$,
-       $$ UPDATE {{ .source_schema }}.focalboard_users SET `props` = "{}" WHERE `fields` = ""; $$,
+       $$ UPDATE {{ .source_schema }}.focalboard_blocks SET "fields" = '{}'::json WHERE "fields"::text = ''; $$,
+       $$ UPDATE {{ .source_schema }}.focalboard_blocks_history SET "fields" = '{}'::json WHERE "fields"::text = ''; $$,
+       $$ UPDATE {{ .source_schema }}.focalboard_sessions SET "props" = '{}'::json WHERE "props"::text = ''; $$, 
+       $$ UPDATE {{ .source_schema }}.focalboard_teams SET "settings" = '{}'::json WHERE "settings"::text = ''; $$,
+       $$ UPDATE {{ .source_schema }}.focalboard_users SET "props" = '{}'::json WHERE "props"::text = ''; $$, 
        $$ ALTER SCHEMA {{ .source_schema }} RENAME TO public; $$,
        $$ SELECT pg_catalog.set_config('search_path', '"$user", public', false); $$,
        $$ ALTER USER {{ .pg_user }} SET SEARCH_PATH TO 'public'; $$;
