@@ -193,7 +193,7 @@ Additional documentation resources
 
 The following additional documentation resources are also available for the Mattermost desktop app:
 
-- `Desktop App changelog </install/desktop-app-changelog.html>`__
+- `Desktop App changelog </deploy/desktop-app-changelog.html>`__
 - `Configure your Desktop App experience </preferences/customize-desktop-app-experience.html>`__
 - `Source code <https://github.com/mattermost/desktop>`__
 - `Contributor’s guide <https://developers.mattermost.com/contribute/desktop>`__

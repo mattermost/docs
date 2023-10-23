@@ -106,6 +106,6 @@ What Mobile and Desktop App versions are compatible with the latest ESR?
 
 Earlier 4.x versions of Mattermost Desktop App and earlier v1.x versions of the Mobile App are backwards compatible and are supported with our supported Extended Support Releases. However, for an optimal user experience and for latest security fixes, we strongly recommend upgrading both your Mattermost Desktop and Mobile Apps to the latest version.
 
-Please review the `Desktop App changelog </install/desktop-app-changelog.html>`_ and the `Mobile App changelog </deploy/mobile-app-changelog.html>`_ notes for any self-hosted version requirements for features and functionalities, as well as notes on security fixes.
+Please review the `Desktop App changelog </deploy/desktop-app-changelog.html>`_ and the `Mobile App changelog </deploy/mobile-app-changelog.html>`_ notes for any self-hosted version requirements for features and functionalities, as well as notes on security fixes.
 
 See more details in our `release lifecycle documentation </upgrade/release-lifecycle.html#desktop-and-mobile-app-server-compatibility>`_.

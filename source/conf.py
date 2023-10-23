@@ -2022,7 +2022,7 @@ redirects = {
 
 # Help redirects resulting from the June 2021 docs reorganization project.
 "help/apps/desktop-changelog.html":
-	"https://docs.mattermost.com/install/desktop-app-changelog.html",
+	"https://docs.mattermost.com/deploy/desktop-app-changelog.html",
 "help/apps/desktop-guide.html":
 	"https://docs.mattermost.com/welcome/manage-desktop-app-server-connections.html",
 "help/apps/desktop-mvp.html":
@@ -3136,7 +3136,7 @@ redirects = {
 "welcome/manage-desktop-app-server-connections.html":
         "https://docs.mattermost.com/welcome/manage-multiple-server-connections.html",
 "welcome/insights.html":
-        "https://docs.mattermost.com/install/deprecated-features.html#mattermost-server-v9-0-0",
+        "https://docs.mattermost.com/deploy/deprecated-features.html#mattermost-server-v9-0-0",
 "welcome/log-in.html":
         "https://docs.mattermost.com/collaborate/access-your-workspace.html",
 "welcome/keyboard-shortcuts.html":
