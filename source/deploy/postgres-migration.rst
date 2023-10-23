@@ -109,7 +109,7 @@ To drop indexes, run the following commands before the migration (These are incl
    DROP INDEX IF EXISTS idx_posts_message_txt;
    DROP INDEX IF EXISTS idx_fileinfo_content_txt;
 
-Artefacts may remain from previous configurations/versions
+Artifacts may remain from previous configurations/versions
 ~~~~~~~~~~~~~~~~~
 
 Prior to ``v6.4``, Mattermost was using `golang-migrate <https://github.com/golang-migrate/migrate>`__ to handle the schema migrations. Since we don't use it anymore, the table ``schema_migrations`` shouldn't be migrated. If you were using Mattermost before ``v6.4`` consider excluding this table from migration and comparison. 
