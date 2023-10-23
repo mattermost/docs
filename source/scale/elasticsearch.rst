@@ -200,3 +200,33 @@ My Elasticsearch indexes won't complete, what should I do?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you have an Elasticsearch indexing job that's paused, it's likely your Elasticsearch server has restarted. If you restart your Elasticsearch server, you must also restart Mattermost to ensure jobs are completed. If restarting the Mattermost server does not resolve the issue, please contact Mattermost support.
+
+Required Permissions For Mattermost Service Account
+---------------------------------------------------
+In "least privilege" environments you may need to further constrain the service account permissions to limit the access your Elasticsearch service account has. 
+The following JSON provides an example of a "least privilege" permission set that allows Mattermost to operate correctly with Elasticsearch:
+
+ .. code-block:: none
+      {
+        "cluster_permissions": [
+          "cluster:monitor/*",
+          "indices:admin/template/put",
+          "indices:data/write/bulk"
+        ],
+        "index_permissions": [
+          {
+            "index_patterns": [
+              "t-70907*"
+            ],
+            "allowed_actions": [
+              "indices:admin/get",
+              "indices:admin/create",
+              "indices:admin/delete",
+              "indices:admin/mapping/put",
+              "indices:admin/mappings/fields/get*",
+              "indices:data/read*",
+              "indices:data/write*"
+            ]
+          }
+        ]
+      }
