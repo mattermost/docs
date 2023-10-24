@@ -234,7 +234,7 @@ The following JSON provides an example of a "least privilege" permission set tha
 
 A simpler, more flexible, and resilient variant of the above would be:
 
-.. code-block:: none
+.. code-block:: json
 
   {
     "cluster_permissions": [
