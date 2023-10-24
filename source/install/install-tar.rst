@@ -35,6 +35,9 @@ Install Mattermost Server using the tarball
 
 You can install the Mattermost Server on any 64-bit Linux system using the tarball. This is the most flexible installation method, but it comes with the highest effort, normally favored by advanced system administrators. 
 
+.. include:: ../_static/badges/academy-tarball-deployment.rst
+  :start-after: :nosearch:
+
 .. tip::
 
   If you are running the Mattermost Server and database on a single system, we recommend the `Mattermost Omnibus install method </install/installing-mattermost-omnibus.html>`__ as this greatly reduces setup and ongoing maintenance, and uses the Mattermost PPA for updates. More modern installation methods such as the Mattermost Helm Chart or Kubernetes Operator are available and are highly recommended.

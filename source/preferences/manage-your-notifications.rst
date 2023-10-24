@@ -31,8 +31,8 @@ Mattermost notifies you of new activity in the following ways:
 - **Push notifications**: Mobile app alert you to new activity when you're on the go.
 - **Sounds**: Audible sounds alert you to new activity.
 
-
-.. tip:: Missing notifications? Visit our `notifications knowledge base article <https://support.mattermost.com/hc/en-us/articles/19161390661780>`__ for troubleshooting tips and tricks.
+.. include:: ../_static/badges/academy-notifications.rst
+  :start-after: :nosearch:
 
 Get notified
 -------------
@@ -165,3 +165,7 @@ On mobile, select the **Settings** |gear| icon and tap **Notifications**.
        By default, you don’t automatically follow new conversation threads unless you start a thread or reply to a thread, follow a thread, or are @mentioned in a thread.
 
        You can configure Mattermost to automatically follow every thread in a channel. When enabled, you can access all threads in the **Threads** view, and unfollow individual threads as you prefer.
+
+.. tip:: 
+    
+    Missing notifications? Visit our `notifications knowledge base article <https://support.mattermost.com/hc/en-us/articles/19161390661780>`__ for troubleshooting tips and tricks.
