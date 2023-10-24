@@ -15,4 +15,67 @@ From Mattermost v9.2, this changelog summarizes updates for the latest cloud and
 :depth: 2
 ```
 
+## Release v9.2 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
 
+**Release day: November 16, 2023**
+
+### Important Upgrade Notes
+ - Fixed data retention policies to run jobs when any custom retention policy is enabled even when the global retention policy is set to "keep-forever". Before this fix, the enabled custom data retention policies wouldn't run as long as the global data retention policy was set to "keep-forever" or was disabled. After the fix, the custom data retention policies will run automatically even when the global data retention policy is set to "keep-forever". Once the server is upgraded, posts may unintentionally be deleted. Admins should make sure to disable all custom data retention policies before upgrading, and then re-enable them again after upgrading.
+
+**IMPORTANT:** If you upgrade from a release earlier than v9.1, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
+
+### Compatibility
+ - Updated minimum required Edge version to 116+.
+
+### Improvements
+
+#### User Interface (UI)
+ - Improved readability by displaying system messages on multiple lines when editing a channel header.
+ - Combined "joined/left" event types in system messages.
+ - Added a new user preference to disable webapp prefetching via **Settings > Advanced > Allow Mattermost to prefetch channel posts**.
+ - Pre-packaged NPS plugin version [v1.3.3](https://github.com/mattermost/mattermost-plugin-nps/releases/tag/v1.3.3).
+
+#### Administration
+ - JSON null value cases are now handled correctly by also checking that the pointer is no longer null when unmarshalling to a pointer.
+ - An annotated logger is now used to capture LDAP and SAML logs.
+ - Replaced ``github.com/mattermost/gziphandler`` with ``github.com/klauspost/compress/gzhttp``.
+ - Performance metrics now contain information on if a given request was sent during a page load or a websocket reconnect.
+ - Elasticsearch aggregation jobs no longer start when a bulk indexing job is currently running.
+ - Added heap profile, CPU profile, and goroutines profile to the support package.
+ - Merged WIP i18n locales, but disallowed selecting unsupported locales.
+
+### Bug Fixes
+ - Fixed a panic where a simple worker would crash if it failed to get a job.
+ - Fixed post props on update to properly see channel links.
+ - Fixed an issue where the API for drafts would return empty drafts.
+ - Fixed the alignment of the **Help** menu in the global header.
+ - Fixed a broken link in the **Edit Channel** header modal.
+ - Fixed an issue that prevented users to be added to channels from the System Console.
+ - Fixed an issue where the channel member count increased when adding an already present user.
+
+### config.json
+ - Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
+
+#### Changes to all plans:
+ - Under ``LogSettings`` in ``config.json``:
+   - Added a new configuration setting ``MaxFieldSize`` to add the ability to size-limit log fields during logging.
+
+### API Changes
+ - Added ``origin_client to the mattermost_api_time`` metrics.
+
+### Go Version
+ - v9.2 is built with Go ``v1.20.7``.
+
+### Known Issues
+ - Copy pasting images from Chrome fails [MM-54486](https://mattermost.atlassian.net/browse/MM-54486).
+ - Adding an @mention at the start of a post draft and pressing the left or right arrow key can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
+ - Status may sometimes get stuck as **Away** or **Offline** in High Availability mode with IP Hash turned off.
+ - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
+ - Slack import through the CLI fails if email notifications are enabled.
+ - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
+ - The Playbooks left-hand sidebar doesn't update when a user is added to a run or playbook without a refresh.
+ - If a user isn't a member of a configured broadcast channel, posting a status update might fail without any error feedback. As a temporary workaround, join the configured broadcast channels, or remove those channels from the run configuration.
+ - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
+
+### Contributors
+ - 
