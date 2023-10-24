@@ -237,6 +237,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 - **8.1.4, released **
   - 
   - Pre-packaged Focalboard plugin [v7.11.4](https://github.com/mattermost/focalboard/releases/tag/v7.11.4).
+  - Fixed an issue where plugin developers were unable to create a ``textarea`` in interactive dialogs.
   - Mattermost v8.1.4 contains the following functional changes:
   	- Added a new configuration setting ``MaxFieldSize`` to add the ability to size-limit log fields during logging.
   	- Added a restriction to the mobile Oauth / SAML redirection to match the ``NativeAppSettings.AppCustomURLSchemes`` configuration setting.
