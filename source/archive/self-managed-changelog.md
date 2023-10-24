@@ -9,7 +9,6 @@ Latest Mattermost Releases:
 - [Release v9.1 - Feature Release](#release-v9-1-feature-release)
 - [Release v9.0 - Major Release](#release-v9-0-major-release)
 - [Release v8.1 - Extended Support Release](#release-v8-1-extended-support-release)
-- [Release v8.0 - Major Release](#release-v8-0-major-release)
 - [Release v7.8 - Extended Support Release](#release-v7-8-extended-support-release)
 
 ## Release v9.1 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
