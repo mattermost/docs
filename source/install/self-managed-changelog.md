@@ -49,6 +49,7 @@ Latest Mattermost Releases:
  - Fixed a broken link in the **Edit Channel** header modal.
  - Fixed an issue that prevented users to be added to channels from the System Console.
  - Fixed an issue where the channel member count increased when adding an already present user.
+ - Fixed an issue where plugin developers were unable to create a ``textarea`` in interactive dialogs.
 
 ### config.json
  - Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
