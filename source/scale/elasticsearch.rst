@@ -206,7 +206,7 @@ Required Permissions For Mattermost Service Account
 In "least privilege" environments you may need to further constrain the service account permissions to limit the access your Elasticsearch service account has. 
 The following JSON provides an example of a "least privilege" permission set that allows Mattermost to operate correctly with Elasticsearch:
 
- .. code-block:: none
+ .. code-block:: json
 
 {
   "cluster_permissions": [
@@ -234,7 +234,7 @@ The following JSON provides an example of a "least privilege" permission set tha
 
 A simpler, more flexible, and resilient variant of the above would be:
 
-.. code-block:: none
+.. code-block:: json
 
   {
     "cluster_permissions": [
