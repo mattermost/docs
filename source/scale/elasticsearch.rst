@@ -207,47 +207,49 @@ In "least privilege" environments you may need to further constrain the service 
 The following JSON provides an example of a "least privilege" permission set that allows Mattermost to operate correctly with Elasticsearch:
 
  .. code-block:: none
+
+  {
+    "cluster_permissions": [
+      "cluster:monitor/*",
+      "indices:admin/template/put",
+      "indices:data/write/bulk"
+    ],
+    "index_permissions": [
       {
-        "cluster_permissions": [
-          "cluster:monitor/*",
-          "indices:admin/template/put",
-          "indices:data/write/bulk"
+        "index_patterns": [
+          "t-70907*"
         ],
-        "index_permissions": [
-          {
-            "index_patterns": [
-              "t-70907*"
-            ],
-            "allowed_actions": [
-              "indices:admin/get",
-              "indices:admin/create",
-              "indices:admin/delete",
-              "indices:admin/mapping/put",
-              "indices:admin/mappings/fields/get*",
-              "indices:data/read*",
-              "indices:data/write*"
-            ]
-          }
+        "allowed_actions": [
+          "indices:admin/get",
+          "indices:admin/create",
+          "indices:admin/delete",
+          "indices:admin/mapping/put",
+          "indices:admin/mappings/fields/get*",
+          "indices:data/read*",
+          "indices:data/write*"
         ]
       }
+    ]
+  }
 
 A simpler, more flexible, and resilient variant of the above would be:
 
 .. code-block:: none
-    {
-      "cluster_permissions": [
-        "cluster:monitor/*",
-        "indices:admin/template/put",
-        "indices:data/write/bulk"
-      ],
-      "index_permissions": [
-        {
-          "index_patterns": [
-            "t-70907*"
-          ],
-          "allowed_actions": [
-            "indices:*"
-          ]
-        }
-      ]
-    }
+
+  {
+    "cluster_permissions": [
+      "cluster:monitor/*",
+      "indices:admin/template/put",
+      "indices:data/write/bulk"
+    ],
+    "index_permissions": [
+      {
+        "index_patterns": [
+          "t-70907*"
+        ],
+        "allowed_actions": [
+          "indices:*"
+        ]
+      }
+    ]
+  }
