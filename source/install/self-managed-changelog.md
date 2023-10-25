@@ -238,6 +238,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
   - 
   - Pre-packaged Focalboard plugin [v7.11.4](https://github.com/mattermost/focalboard/releases/tag/v7.11.4).
   - Fixed an issue where plugin developers were unable to create a ``textarea`` in interactive dialogs.
+  - Fixed an issue where copy pasting images from Chrome failed.
   - Mattermost v8.1.4 contains the following functional changes:
   	- Added a new configuration setting ``MaxFieldSize`` to add the ability to size-limit log fields during logging.
   	- Added a restriction to the mobile Oauth / SAML redirection to match the ``NativeAppSettings.AppCustomURLSchemes`` configuration setting.
@@ -324,7 +325,6 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - v8.1 is built with Go ``v1.19.5``.
 
 ### Known Issues
- - Copy pasting images from Chrome fails [MM-54486](https://mattermost.atlassian.net/browse/MM-54486).
  - Adding an @mention at the start of a post draft and pressing the left or right arrow key can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
  - Google login fails on the Classic mobile apps.
  - Status may sometimes get stuck as **Away** or **Offline** in High Availability mode with IP Hash turned off.
