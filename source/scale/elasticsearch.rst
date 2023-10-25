@@ -208,29 +208,29 @@ The following JSON provides an example of a "least privilege" permission set tha
 
  .. code-block:: json
 
-{
-  "cluster_permissions": [
-    "cluster:monitor/*",
-    "indices:admin/template/put",
-    "indices:data/write/bulk"
-  ],
-  "index_permissions": [
-    {
-      "index_patterns": [
-        "t-70907*"
-      ],
-      "allowed_actions": [
-        "indices:admin/get",
-        "indices:admin/create",
-        "indices:admin/delete",
-        "indices:admin/mapping/put",
-        "indices:admin/mappings/fields/get*",
-        "indices:data/read*",
-        "indices:data/write*"
-      ]
-    }
-  ]
-}
+  {
+    "cluster_permissions": [
+      "cluster:monitor/*",
+      "indices:admin/template/put",
+      "indices:data/write/bulk"
+    ],
+    "index_permissions": [
+      {
+        "index_patterns": [
+          "t-70907*"
+        ],
+        "allowed_actions": [
+          "indices:admin/get",
+          "indices:admin/create",
+          "indices:admin/delete",
+          "indices:admin/mapping/put",
+          "indices:admin/mappings/fields/get*",
+          "indices:data/read*",
+          "indices:data/write*"
+        ]
+      }
+    ]
+  }
 
 A simpler, more flexible, and resilient variant of the above would be:
 
