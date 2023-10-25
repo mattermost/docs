@@ -14,7 +14,7 @@ Take Mattermost wherever you go by installing the Mattermost mobile app on your 
 6. Now follow the steps below to log in:
 
    a. **Enter Server URL:** This is the web address you go to when you want to access Mattermost. 
-   b. **Display Name:** This is a name for your server so that you can identify it in case you have multiple servers set up in your app. Click on **Connect** to continue.
+   b. **Display Name:** This is a name for your server so that you can identify it in case you have multiple servers set up in your app. Tap **Connect** to continue.
    c. Enter your credentials as specified by your Mattermost system admin in the next screen. Tap **Log in**.
    
 .. tip::
