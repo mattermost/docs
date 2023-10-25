@@ -76,16 +76,14 @@ See the `guest accounts </onboard/guest-accounts.html>`__ documentation for deta
 Deactivated
 -----------
 
-A system admin can deactivate user accounts via **System Console > Users**. A list of all users on the server can be searched and filtered to make finding users easier. Select the user's role and in the menu that opens, then select **Deactivate**.
+A system admin can deactivate user accounts via **System Console > Users**. A list of all users on the server can be searched and filtered to make finding users easier. Select the user's role and in the menu that opens, then select **Deactivate**. See the `deactivate user accounts admin </configure/user-management-configuration-settings.html#deactivate-user-accounts>`__ documentation for details.
 
 When **Deactivate** is selected, the user is logged out of the system, and receives an error message if they try to log back in. The user no longer appears in channel member lists, and they are removed from the team members list. A deactivated account can also be reactivated from the System Console, in which case the user rejoins channels and teams that they previously belonged to.
 
-Direct Message channels with deactivated users are hidden in users' sidebars, but can be reopened using the **More...** button or by pressing  :kbd:`Ctrl` :kbd:`K` on Windows or Linux, or :kbd:`⌘` :kbd:`K` on Mac.
+Direct message channels with deactivated users are hidden in users' sidebars, but can be reopened using the **More...** button or by pressing  :kbd:`Ctrl` :kbd:`K` on Windows or Linux, or :kbd:`⌘` :kbd:`K` on Mac.
 
 Mattermost is designed as a system-of-record, so there isn't an option to delete users from the Mattermost system, as such an operation could compromise the integrity of message archives.
 
 .. note::
 
     AD/LDAP user accounts can't be deactivated from Mattermost; they must be deactivated from your Active Directory.
-
-

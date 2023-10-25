@@ -18,11 +18,22 @@ Latest Mattermost Releases:
 
 ### Important Upgrade Notes
  - Improved performance on data retention ``DeleteOrphanedRows`` queries. See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) for notes on a new migration that was added. Removed feature flag ``DataRetentionConcurrencyEnabled``. Data retention now runs without concurrency in order to avoid any performance degradation. Added a new configuration setting ``DataRetentionSettings.RetentionIdsBatchSize``, which allows admins to to configure how many batches of IDs will be fetched at a time when deleting orphaned reactions. The default value is 100.
+ - Minimum supported Desktop App version is now v5.3. OAuth/SAML flows were modified to include ``desktop_login`` which makes earlier versions incompatible.
 
 **IMPORTANT:** If you upgrade from a release earlier than v9.0, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
 
 ### Compatibility
  - Updated Chromium minimum supported version to 116+.
+
+### Highlights
+
+#### Never Miss Group Messages Again
+ - Group messages (GMs) now behave like direct messages (DMs). [The badge count increases for every new message](https://docs.mattermost.com/collaborate/channel-types.html#group-messages).
+
+#### Convert Group Messages to Private Channels
+ - Added the ability to [convert a group message to a private channel](https://docs.mattermost.com/collaborate/convert-group-messages.html).
+
+See this walkthrough video on the highlights and some of the below improvements in our latest release: https://www.youtube.com/watch?v=dbHg-63J9dA
 
 ### Improvements
 
@@ -38,8 +49,6 @@ Latest Mattermost Releases:
  - Updated the post textbox measurement code to be more reliable.
  - The ``/invite`` slash command now supports custom user groups.
  - Re-enabled the remote marketplace functionality, when configured as per ``PluginSettings.EnableRemoteMarketplace`` [documentation](https://docs.mattermost.com/configure/plugins-configuration-settings.html#plugins-enableremotemarketplace).
- - Added the ability to convert a group message to a private channel.
- - Group messages (GMs) now behave like direct messages (DMs). The badge count increases for every new message.
 
 #### Administration
  - Added ``mattermost-plugin-api`` into the ``mattermost`` GitHub repository.
@@ -90,7 +99,6 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - v9.1 is built with Go ``v1.20.7``.
 
 ### Known Issues
- - LDAP mmctl commands are failing [MM-54929](https://mattermost.atlassian.net/browse/MM-54929).
  - Converting a group message to a channel should show an error "A channel with that name already exists on the same team" for duplicate channel names [MM-54713](https://mattermost.atlassian.net/browse/MM-54713).
  - Marking a group message as unread doesn't resurface the numbered notification badge [MM-54778](https://mattermost.atlassian.net/browse/MM-54778).
  - Thread/posts jump when switching to and from preview mode [MM-54758](https://mattermost.atlassian.net/browse/MM-54758).

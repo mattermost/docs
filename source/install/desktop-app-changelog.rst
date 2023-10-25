@@ -227,7 +227,8 @@ Release v5.2
 Compatibility
 ~~~~~~~~~~~~~~~
 
-- Desktop App is supported on any supported Extended Support Release or a newer Mattermost server version.
+- Desktop App is supported on any supported Extended Support Release up to v8.1 ESR.
+- Desktop App v5.2 is incompatible with server versions v9.1 and later.
 
 Highlights
 ~~~~~~~~~~~~~~~
@@ -320,7 +321,8 @@ Release v5.1
 Compatibility
 ~~~~~~~~~~~~~~~
 
-- Desktop Apps is supported on any supported Extended Support Release or a newer Mattermost server version.
+- Desktop App is supported on any supported Extended Support Release up to v8.1 ESR.
+- Desktop App v5.1 is incompatible with server versions v9.1 and later.
 
 Highlights
 ~~~~~~~~~~~~~~~
@@ -431,7 +433,8 @@ Release v5.0
 Compatibility
 ~~~~~~~~~~~~~~~
 
-- Desktop Apps is supported on any supported Extended Support Release or a newer Mattermost server version.
+- Desktop App is supported on any supported Extended Support Release up to v8.1 ESR.
+- Desktop App v5.0 is incompatible with server versions v9.1 and later.
 
 Breaking Changes / Upgrade Notes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
