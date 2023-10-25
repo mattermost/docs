@@ -53,6 +53,7 @@ From Mattermost v9.2, this changelog summarizes updates for the latest cloud and
  - Fixed an issue that prevented users to be added to channels from the System Console.
  - Fixed an issue where the channel member count increased when adding an already present user.
  - Fixed an issue where plugin developers were unable to create a ``textarea`` in interactive dialogs.
+ - Fixed an issue where copy pasting images from Chrome failed.
 
 ### config.json
  - Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
@@ -68,7 +69,6 @@ From Mattermost v9.2, this changelog summarizes updates for the latest cloud and
  - v9.2 is built with Go ``v1.20.7``.
 
 ### Known Issues
- - Copy pasting images from Chrome fails [MM-54486](https://mattermost.atlassian.net/browse/MM-54486).
  - Adding an @mention at the start of a post draft and pressing the left or right arrow key can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
  - Status may sometimes get stuck as **Away** or **Offline** in High Availability mode with IP Hash turned off.
  - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
