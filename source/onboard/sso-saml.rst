@@ -31,7 +31,10 @@ Mattermost officially supports Okta, OneLogin, and Microsoft ADFS as the identit
   Microsoft ADFS SAML Configuration for Windows Server 2016 <sso-saml-adfs-msws2016>
   Keycloak SAML Configuration <sso-saml-keycloak>
 
-In addition to the officially supported identity providers, you can also configure SAML for a custom IdP. For instance, customers have successfully set up miniOrange, Azure AD, DUO, PingFederate, Keycloak, and SimpleSAMLphp as a custom IdPs. Because we do not test against these identity providers, it is important that you test new versions of Mattermost in a staging environment to confirm it will work with your identity provider. You can also set up MFA on top of your SAML provider for additional security.
+In addition to the officially supported identity providers, you can also configure SAML for a custom IdP. For instance, customers have successfully set up miniOrange, Azure AD, DUO, PingFederate, Keycloak, and SimpleSAMLphp as custom IdPs. Because we do not test against these identity providers, it is important that you test new versions of Mattermost in a staging environment to confirm it will work with your identity provider. You can also set up MFA on top of your SAML provider for additional security.
+
+.. note:: 
+    If configuring Mattermost to use the EU-Login system for authentication, please be aware that their `issuerURI` field is what Mattermost calls "Service Provider Identifier".
 
 Using SAML attributes to apply roles
 -------------------------------------

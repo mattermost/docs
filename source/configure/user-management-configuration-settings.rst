@@ -36,6 +36,25 @@ Getting people set up with a Mattermost account is typically something that syst
 | **Note**: You can search for users by partial first name, last name, nickname, or username.                                 |
 +---------------------------------------------------------------+-------------------------------------------------------------+
 
+Identify a User's ID
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Users can be specified in Mattermost by username or user ID. Usernames automatically resolve when a match is detected.
+System admins can identify a user's ID using the Mattermost API or mmctl. 
+
+Using the API
+^^^^^^^^^^^^^^^^
+
+Use this method if you need to automate user-related tasks or integrate with external systems.
+Make an HTTP GET request to the following endpoint: ``https://your-mattermost-url/api/v4/users/username/username_here``.
+Replace ``your-mattermost-url`` with the URL of your Mattermost instance and ``username_here`` with the username you are looking for.
+The API response contains a JSON object that includes the user's ID among other details.
+
+Using mmctl
+^^^^^^^^^^^^^^^^
+
+If you prefer command-line tools, Mattermost offers mmctl for system administration.
+In a terminal window, use the following command to list all users and their IDs: ``mmctl user list`` to return a list of user IDs.
+
 Deactivate user accounts
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
