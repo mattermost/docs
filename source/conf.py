@@ -3204,7 +3204,7 @@ redirects = {
 "welcome/set-your-status-availability.html#set-your-availability-as-do-not-disturb":
         "https://docs.mattermost.com/preferences/set-your-status-availability.html#set-your-availability-as-do-not-disturb",
 "welcome/set-your-status-availability.html#how-mattermost-determines-your-availability":
-        "https://docs.mattermost.com/preferences/set-your-status-availability.html#how-mattermost-determines-your-availability",
+        "https://docs.mattermost.com/preferences/set-your-status-availability.html#set-your-availability",
 "welcome/customize-your-theme.html":
         "https://docs.mattermost.com/preferences/customize-your-theme.html",
 "welcome/customize-your-theme.html#import-theme-from-slack":
