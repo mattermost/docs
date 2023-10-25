@@ -9,7 +9,7 @@ Take Mattermost wherever you go by installing the Mattermost mobile app on your 
 1. On your device, visit the App Store. 
 2. Search for "Mattermost" and select **GET** to download the app.
 3. Enter your Apple ID Password or use Face or Touch ID to proceed with the installation. You may also be asked to provide an Apple Verification Code received through text/phone call, login notification, or **Settings** on your trusted device.
-4. Open the Mattermost app and click on **Sign in** on the welcome screen which is below the **Next** button.
+4. Open the Mattermost app and tap **Sign in** below the **Next** button.
 5. On the next screen, click on **Allow** when prompted to approve notifications for the Mattermost app.
 6. Now follow the steps below to log in:
 
