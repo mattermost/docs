@@ -115,6 +115,6 @@ If we upgrade to the latest ESR with a legacy `E10 or E20 license key <https://d
 
 No. Your license key is decoupled from the Mattermost server version. You can freely upgrade to any ESR regardless of your license key or plan.
 
-However, we highly recommend working with your Mattermost Account team to plan for a migration to our new plans, to access latest features such as persistent notifications, advanced compliance features, and call recordings.
+However, we highly recommend working with your Mattermost Account Team to plan for a migration to our new plans, and to access the latest features such as persistent notifications, advanced compliance features, and call recordings.
 
 Please contact our `Sales team <https://mattermost.com/contact-us/>`_ with questions.
