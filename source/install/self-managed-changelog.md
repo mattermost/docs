@@ -80,15 +80,33 @@ Latest Mattermost Releases:
 
 ## Release v9.1 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
 
-**Release day: October 16, 2023**
+- **9.1.1, released 2023-10-27**
+  - Mattermost v9.1.1 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Pre-packaged Focalboard plugin [v7.11.4](https://github.com/mattermost/focalboard/releases/tag/v7.11.4).
+  - Mattermost v9.1.1 contains the following functional changes:
+  	- Added a new configuration setting ``MaxFieldSize`` to add the ability to size-limit log fields during logging.
+  	- Added a restriction to the mobile Oauth / SAML redirection to match the ``NativeAppSettings.AppCustomURLSchemes`` configuration setting.
+- **9.1.0, released 2023-10-16**
+  - Original 9.1.0 release
 
 ### Important Upgrade Notes
  - Improved performance on data retention ``DeleteOrphanedRows`` queries. See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) for notes on a new migration that was added. Removed feature flag ``DataRetentionConcurrencyEnabled``. Data retention now runs without concurrency in order to avoid any performance degradation. Added a new configuration setting ``DataRetentionSettings.RetentionIdsBatchSize``, which allows admins to to configure how many batches of IDs will be fetched at a time when deleting orphaned reactions. The default value is 100.
+ - Minimum supported Desktop App version is now v5.3. OAuth/SAML flows were modified to include ``desktop_login`` which makes earlier versions incompatible.
 
 **IMPORTANT:** If you upgrade from a release earlier than v9.0, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
 
 ### Compatibility
  - Updated Chromium minimum supported version to 116+.
+
+### Highlights
+
+#### Never Miss Group Messages Again
+ - Group messages (GMs) now behave like direct messages (DMs). [The badge count increases for every new message](https://docs.mattermost.com/collaborate/channel-types.html#group-messages).
+
+#### Convert Group Messages to Private Channels
+ - Added the ability to [convert a group message to a private channel](https://docs.mattermost.com/collaborate/convert-group-messages.html).
+
+See this walkthrough video on the highlights and some of the below improvements in our latest release: https://www.youtube.com/watch?v=dbHg-63J9dA
 
 ### Improvements
 
@@ -104,8 +122,6 @@ Latest Mattermost Releases:
  - Updated the post textbox measurement code to be more reliable.
  - The ``/invite`` slash command now supports custom user groups.
  - Re-enabled the remote marketplace functionality, when configured as per ``PluginSettings.EnableRemoteMarketplace`` [documentation](https://docs.mattermost.com/configure/plugins-configuration-settings.html#plugins-enableremotemarketplace).
- - Added the ability to convert a group message to a private channel.
- - Group messages (GMs) now behave like direct messages (DMs). The badge count increases for every new message.
 
 #### Administration
  - Added ``mattermost-plugin-api`` into the ``mattermost`` GitHub repository.
@@ -156,13 +172,11 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - v9.1 is built with Go ``v1.20.7``.
 
 ### Known Issues
- - LDAP mmctl commands are failing [MM-54929](https://mattermost.atlassian.net/browse/MM-54929).
  - Converting a group message to a channel should show an error "A channel with that name already exists on the same team" for duplicate channel names [MM-54713](https://mattermost.atlassian.net/browse/MM-54713).
  - Marking a group message as unread doesn't resurface the numbered notification badge [MM-54778](https://mattermost.atlassian.net/browse/MM-54778).
  - Thread/posts jump when switching to and from preview mode [MM-54758](https://mattermost.atlassian.net/browse/MM-54758).
  - Desktop UI doesn't show all content when the right-hand side thread is opened [MM-54696](https://mattermost.atlassian.net/browse/MM-54696).
  - Left-hand side resize option overrides the **Browse/Create Channel** menu if To-Do plugin is installed [MM-54367](https://mattermost.atlassian.net/browse/MM-54367).
- - Copy pasting images from Chrome fails [MM-54486](https://mattermost.atlassian.net/browse/MM-54486).
  - Adding an @mention at the start of a post draft and pressing the left or right arrow key can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
  - Status may sometimes get stuck as **Away** or **Offline** in High Availability mode with IP Hash turned off.
  - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
@@ -177,6 +191,12 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ## Release v9.0 - [Major Release](https://docs.mattermost.com/upgrade/release-definitions.html#major-release)
 
+- **9.0.2, released 2023-10-27**
+  - Mattermost v9.0.2 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Pre-packaged Focalboard plugin [v7.11.4](https://github.com/mattermost/focalboard/releases/tag/v7.11.4).
+  - Mattermost v9.0.2 contains the following functional changes:
+  	- Added a new configuration setting ``MaxFieldSize`` to add the ability to size-limit log fields during logging.
+  	- Added a restriction to the mobile Oauth / SAML redirection to match the ``NativeAppSettings.AppCustomURLSchemes`` configuration setting.
 - **9.0.1, released 2023-10-06**
   - Mattermost v9.0.1 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Mattermost v9.0.1 contains no database or functional changes.
@@ -261,7 +281,6 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - Added ``@react-native/eslint-config``, ``@react-native/metro-config``, and ``@tsconfig/react-native`` to https://github.com/mattermost/mattermost-mobile/.
 
 ### Known Issues
- - Copy pasting images from Chrome fails [MM-54486](https://mattermost.atlassian.net/browse/MM-54486).
  - Adding an @mention at the start of a post draft and pressing the left or right arrow key can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
  - Google login fails on the Classic mobile apps.
  - Status may sometimes get stuck as **Away** or **Offline** in High Availability mode with IP Hash turned off.
@@ -278,6 +297,15 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ## Release v8.1 - [Extended Support Release](https://docs.mattermost.com/upgrade/release-definitions.html#extended-support-release-esr)
 
+- **8.1.4, released 2023-10-27**
+  - Mattermost v8.1.4 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Pre-packaged Focalboard plugin [v7.11.4](https://github.com/mattermost/focalboard/releases/tag/v7.11.4).
+  - Fixed an issue where plugin developers were unable to create a ``textarea`` in interactive dialogs.
+  - Fixed an issue where copy pasting images from Chrome failed.
+  - Mattermost v8.1.4 contains the following functional changes:
+  	- Added a new configuration setting ``MaxFieldSize`` to add the ability to size-limit log fields during logging.
+  	- Added a restriction to the mobile Oauth / SAML redirection to match the ``NativeAppSettings.AppCustomURLSchemes`` configuration setting.
+	- When ``ServiceSettings.ExperimentalEnableHardenedMode`` is enabled, standard users authenticated via username and password will not be able to use post props reserved for integrations, such as ``override_username`` or ``override_icon_url``. 
 - **8.1.3, released 2023-10-06**
   - Mattermost v8.1.3 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Mattermost v8.1.3 contains no database or functional changes.
@@ -360,7 +388,6 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - v8.1 is built with Go ``v1.19.5``.
 
 ### Known Issues
- - Copy pasting images from Chrome fails [MM-54486](https://mattermost.atlassian.net/browse/MM-54486).
  - Adding an @mention at the start of a post draft and pressing the left or right arrow key can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
  - Google login fails on the Classic mobile apps.
  - Status may sometimes get stuck as **Away** or **Offline** in High Availability mode with IP Hash turned off.
@@ -833,6 +860,13 @@ Mattermost v7.9.0 contains a low severity level security fix. [Upgrading](https:
 
 ## Release v7.8 - [Extended Support Release](https://docs.mattermost.com/upgrade/release-definitions.html#extended-support-release-esr)
 
+- **7.8.13, released 2023-10-27**
+  - Mattermost v7.8.13 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Pre-packaged Focalboard plugin [v7.8.9](https://github.com/mattermost/focalboard/releases/tag/v7.8.9).
+  - Mattermost v7.8.13 contains the following functional changes:
+  	- Added a new configuration setting ``MaxFieldSize`` to add the ability to size-limit log fields during logging.
+  	- Added a restriction to the mobile Oauth / SAML redirection to match the ``NativeAppSettings.AppCustomURLSchemes`` configuration setting.
+	- When ``ServiceSettings.ExperimentalEnableHardenedMode`` is enabled, standard users authenticated via username and password will not be able to use post props reserved for integrations, such as ``override_username`` or ``override_icon_url``. 
 - **7.8.12, released 2023-10-06**
   - Mattermost v7.8.12 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Mattermost v7.8.12 contains no database or functional changes.

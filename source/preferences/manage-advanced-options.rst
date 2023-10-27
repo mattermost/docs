@@ -65,6 +65,26 @@ By default, Mattermost shows you system messages when users join or leave channe
 
         This option isn't something you can set using the mobile app.
 
+Deactivate account
+------------------
+
+You can deactivate your account if you access Mattermost using an email address and password, and when your system admin has `enabled your ability to do so </configure/experimental-configuration-settings.html#exp-enableaccountdeactivation>`__. Deactivating your account removes your ability to access Mattermost, and disables all email and mobile notifications.
+
+.. important::
+
+    - If you deactive your account, you must contact your system admin to have it reactivated.
+    - If you access Mattermost using another authentication method, such as AD/LDAP or SAML, or use accounts that don't have this setting available, contact your system admin to deactivate your account in the System Console.
+
+.. tabs::
+
+    .. tab:: Web/Desktop
+
+        Select **Deactivate Account** to deactivate your Mattermost user account.
+
+    .. tab:: Mobile
+
+        This option isn't applicable to the mobile app.
+
 Performance debugging
 ---------------------
 
@@ -116,25 +136,20 @@ By default, `message drafts </send-messages.html#draft-messages>`__ are synchron
 
         This option isn't applicable to the mobile app.
 
-Deactivate account
-~~~~~~~~~~~~~~~~~~
+Allow Mattermost to prefetch channel posts
+------------------------------------------
 
-You can deactivate your account if you access Mattermost using an email address, and when your system admin has `enabled your ability to do so </configure/experimental-configuration-settings.html#exp-enableaccountdeactivation>`__. Deactivating your account removes your ability to access Mattermost, and disables all email and mobile notifications. 
-
-.. important::
-
-    - If you deactive your account, you must contact your system admin to have it reactivated.
-    - If you access Mattermost using another authentication method, such as AD/LDAP or SAML, or use accounts that don't have this setting available, contact your system admin to deactivate your account in the System Console.
+By default, Mattermost pre-fetches messages and user information when you start Mattermost in a browser. You can disable webapp pre-fetching so that Mattermost prefetches messages and user information as you open channels instead. Disabling prefetch is recommended for users with a high unread channel count in order to improve application performance.
 
 .. tabs::
 
     .. tab:: Web/Desktop
 
-        Select **Deactivate Account** to deactivate your Mattermost user account.
-
+        Select **Allow Mattermost to prefetch channel posts** to disable webapp pre-fetching on startup, and pre-fetch the data as you open channels.
+    
     .. tab:: Mobile
 
-    This option isn't applicable to the mobile app.
+        This option isn't applicable to the mobile app.
 
 Delete local files
 ------------------

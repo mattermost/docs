@@ -203,7 +203,7 @@ Specify the color of the email login button text for white labeling purposes. Us
 Enable account deactivation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**True**: Ability for users to deactivate their own account from **Settings > Advanced**. If a user deactivates their own account, they will get an email notification confirming they were deactivated.
+**True**: Ability for users to deactivate their own account from **Settings > Advanced > Deactivate Account**. If a user deactivates their own account, they will get an email notification confirming they were deactivated. Available only when authentication is set to use email/password. Not available when authentication uses SAML or AD/LDAP.
 
 **False**: Ability for users to deactivate their own account is disabled.
 
