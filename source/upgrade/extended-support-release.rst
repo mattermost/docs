@@ -109,3 +109,12 @@ Earlier 4.x versions of Mattermost Desktop App and earlier v1.x versions of the 
 Please review the `Desktop App changelog </install/desktop-app-changelog.html>`_ and the `Mobile App changelog </deploy/mobile-app-changelog.html>`_ notes for any self-hosted version requirements for features and functionalities, as well as notes on security fixes.
 
 See more details in our `release lifecycle documentation </upgrade/release-lifecycle.html#desktop-and-mobile-app-server-compatibility>`_.
+
+If we upgrade to the latest ESR with a legacy `E10 or E20 license key <https://docs.mattermost.com/about/editions-and-offerings.html#other-mattermost-plans>`_, will we have compatibility issues?
+-------------------------------------------------------------------------
+
+No. Your license key is decoupled from the Mattermost server version. You can freely upgrade to any ESR regardless of your license key or plan.
+
+However, we highly recommend working with your Mattermost Account Team to plan for a migration to our new plans, and to access the latest features such as persistent notifications, advanced compliance features, and call recordings.
+
+Please contact our `Sales team <https://mattermost.com/contact-us/>`_ with questions.
