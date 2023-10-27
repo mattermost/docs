@@ -15,7 +15,7 @@ To generate a Support Packet:
 
 2. Select **Download Support Packet**. A zip file is downloaded to the local machine.
 
-   A Mattermost Support Packet can contain up to five files:
+   A Mattermost Support Packet can contain the following files:
 
    - ``mattermost.log``
    - ``plugins.json``
