@@ -18,7 +18,7 @@ Mattermost Enterprise Edition
 
 Mattermost Enterprise Edition v9.1.1 - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v9-1-feature-release>`__ - `Download <https://releases.mattermost.com/9.1.1/mattermost-9.1.1-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/9.1.1/mattermost-9.1.1-linux-amd64.tar.gz``
-  - SHA-256 Checksum: ``11bd6fa1e0ec9bfe5c3e4b2449ce7fe8dfb28c4a48714bff968a7a985b047ca6``
+  - SHA-256 Checksum: ``6073190d619456b9d3db9e597b61849be035c5f8f3682d7e3dd69ccd4df86be4``
   - GPG Signature: https://releases.mattermost.com/9.1.1/mattermost-9.1.1-linux-amd64.tar.gz.sig
 Mattermost Enterprise Edition v9.0.2 - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v9-0-major-release>`__ - `Download <https://releases.mattermost.com/9.0.2/mattermost-9.0.2-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/9.0.2/mattermost-9.0.2-linux-amd64.tar.gz``
@@ -347,7 +347,7 @@ We generally recommend installing Enterprise Edition, even if you don't currentl
 
 Mattermost Team Edition v9.1.1 - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v9-1-feature-release>`__ - `Download <https://releases.mattermost.com/9.1.1/mattermost-team-9.1.1-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/9.1.1/mattermost-team-9.1.1-linux-amd64.tar.gz``
-  - SHA-256 Checksum: ``b120c4a55f76361bb10ea23dcc1ef19617932f7a80df8e6255ad0f9e0ff1da3a``
+  - SHA-256 Checksum: ``5395642cd0d79db34b6fab16a9311dfd6eb1fe82fa10c22cca55194ffd0a828b``
   - GPG Signature: https://releases.mattermost.com/9.1.1/mattermost-team-9.1.1-linux-amd64.tar.gz.sig
 Mattermost Team Edition v9.0.2 - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v9-0-major-release>`__ - `Download <https://releases.mattermost.com/9.0.2/mattermost-team-9.0.2-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/9.0.2/mattermost-team-9.0.2-linux-amd64.tar.gz``
