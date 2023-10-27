@@ -34,6 +34,7 @@ From Mattermost v9.2, this changelog summarizes updates for the latest cloud and
  - Combined "joined/left" event types in system messages.
  - Added a new user preference to disable webapp prefetching via **Settings > Advanced > Allow Mattermost to prefetch channel posts**.
  - Pre-packaged NPS plugin version [v1.3.3](https://github.com/mattermost/mattermost-plugin-nps/releases/tag/v1.3.3).
+ - Pre-packaged Todo plugin version [v0.7.1](https://github.com/mattermost/mattermost-plugin-todo/releases/tag/v0.7.1).
 
 #### Administration
  - JSON null value cases are now handled correctly by also checking that the pointer is no longer null when unmarshalling to a pointer.
