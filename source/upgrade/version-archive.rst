@@ -22,7 +22,7 @@ Mattermost Enterprise Edition v9.1.1 - `View Changelog <https://docs.mattermost.
   - GPG Signature: https://releases.mattermost.com/9.1.1/mattermost-9.1.1-linux-amd64.tar.gz.sig
 Mattermost Enterprise Edition v9.0.2 - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v9-0-major-release>`__ - `Download <https://releases.mattermost.com/9.0.2/mattermost-9.0.2-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/9.0.2/mattermost-9.0.2-linux-amd64.tar.gz``
-  - SHA-256 Checksum: ``0dc57e88667629305ca55d642fd92e811cf25aee2c83941e9a69f306ad846b44``
+  - SHA-256 Checksum: ``91a9f3d6339b5d722926e6b815ab5578a9710f40bc3e7ad9f08ffba2fe6606aa``
   - GPG Signature: https://releases.mattermost.com/9.0.2/mattermost-9.0.2-linux-amd64.tar.gz.sig
 Mattermost Enterprise Edition v8.1.4 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v8-1-extended-support-release>`__ - `Download <https://releases.mattermost.com/8.1.4/mattermost-8.1.4-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/8.1.4/mattermost-8.1.4-linux-amd64.tar.gz``
@@ -351,7 +351,7 @@ Mattermost Team Edition v9.1.1 - `View Changelog <https://docs.mattermost.com/in
   - GPG Signature: https://releases.mattermost.com/9.1.1/mattermost-team-9.1.1-linux-amd64.tar.gz.sig
 Mattermost Team Edition v9.0.2 - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v9-0-major-release>`__ - `Download <https://releases.mattermost.com/9.0.2/mattermost-team-9.0.2-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/9.0.2/mattermost-team-9.0.2-linux-amd64.tar.gz``
-  - SHA-256 Checksum: ``70ee59a52f598b3c994580633787ade249198a1d5d0e9d509e36f79e236e9aae``
+  - SHA-256 Checksum: ``1e45d784cae5f6bd9ccf743c7f2b7e2b29a657314865b71bca29cba7b7ac65ce``
   - GPG Signature: https://releases.mattermost.com/9.0.2/mattermost-team-9.0.2-linux-amd64.tar.gz.sig
 Mattermost Team Edition v8.1.4 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v8-1-extended-support-release>`__ - `Download <https://releases.mattermost.com/8.1.4/mattermost-team-8.1.4-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/8.1.4/mattermost-team-8.1.4-linux-amd64.tar.gz``
