@@ -8,27 +8,28 @@ name = "pypi"
 # Amazon AWS Universal CLI environment (https://aws.amazon.com/cli/)
 # Release notes: https://github.com/aws/aws-cli/blob/develop/CHANGELOG.rst
 # Repo: https://github.com/aws/aws-cli
-awscli = "==1.20.11"
+awscli = "==1.29.53"
 #
-# PyTest testing framework (https://docs.pytest.org/en/7.2.x/)
-pytest = "==7.2.0"
+# PyTest testing framework (https://docs.pytest.org/en/7.4.x/)
+pytest = "==7.4.2"
+#
+# Black: A Python source formatter
+black = "==23.10.1"
 
 [packages]
 #
 # Sphinx (https://www.sphinx-doc.org)
 # Release notes: https://www.sphinx-doc.org/en/master/changes.html
 # Repo: https://github.com/sphinx-doc/sphinx
-sphinx = "==4.4.0"
+sphinx = "==7.2.6"
 #
-# ReadTheDocs Theme (https://sphinx-rtd-theme.readthedocs.io/)
-# Release notes: https://github.com/readthedocs/sphinx_rtd_theme/blob/master/docs/changelog.rst
-# Repo: https://github.com/readthedocs/sphinx_rtd_theme
-sphinx-rtd-theme = "==0.5.2"
+# Furo Theme (https://github.com/pradyunsg/furo)
+furo = "==2023.9.10"
 #
 # MyST Parser (https://myst-parser.readthedocs.io/en/latest/)
 # Release notes: https://myst-parser.readthedocs.io/en/latest/develop/_changelog.html
 # Repo: https://github.com/executablebooks/myst-parser
-myst-parser = "==0.15.1"
+myst-parser = "==2.0.0"
 #
 # Sphinx Autobuild (https://github.com/executablebooks/sphinx-autobuild)
 # Repo: https://github.com/executablebooks/sphinx-autobuild
@@ -36,12 +37,8 @@ sphinx-autobuild = "==2021.3.14"
 #
 # Tabbed views for Sphinx (https://sphinx-tabs.readthedocs.io/)
 # Repo: https://github.com/executablebooks/sphinx-tabs
-sphinx-tabs = "3.2.0"
+sphinx-tabs = "==3.4.1"
 #
 # Add a "copy" button to code blocks in Sphinx (https://sphinx-copybutton.readthedocs.io/en/latest/)
 # Repo: https://github.com/executablebooks/sphinx-copybutton
-sphinx-copybutton = "0.5.0"
-#
-# Python importlib metadata library; used by Sphinx
-# Repo: https://github.com/python/importlib_metadata
-importlib-metadata = "==4.12.0"
+sphinx-copybutton = "==0.5.2"

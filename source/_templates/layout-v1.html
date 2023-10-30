@@ -28,7 +28,9 @@
   <link rel="preload" href="https://fonts.gstatic.com" crossorigin>
 
   {# CSS #}
+  {%- if style %}
   <link rel="stylesheet" href="{{ pathto('_static/' + style, 1) }}" type="text/css" />
+  {%- endif %}
   {%- for css in css_files %}
     {%- if css|attr("rel") %}
   <link rel="{{ css.rel }}" href="{{ pathto(css.filename, 1) }}" type="text/css"{% if css.title is not none %} title="{{ css.title }}"{% endif %} />
@@ -77,22 +79,9 @@
     {%- endif %}
   {%- endblock %}
 
-  	<!-- Google Tag Manager -->
-	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-	})(window,document,'script','dataLayer','GTM-K874RWM');</script>
-	<!-- End Google Tag Manager -->
-
 </head>
 
 <body class="wy-body-for-nav">
-
-	<!-- Google Tag Manager (noscript) -->
-	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K874RWM"
-	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-	<!-- End Google Tag Manager (noscript) -->
 
   {% block extrabody %} {% endblock %}
   <div class="wy-grid-for-nav">
@@ -118,17 +107,12 @@
 
           {% if theme_display_version %}
             {%- set nav_version = version %}
-            {% if READTHEDOCS and current_version %}
-              {%- set nav_version = current_version %}
-            {% endif %}
             {% if nav_version %}
               <div class="version">
                 {{ nav_version }}
               </div>
             {% endif %}
           {% endif %}
-
-          {% include "searchbox.html" %}
 
           {% endblock %}
         </div>
@@ -140,7 +124,7 @@
               The singlehtml builder doesn't handle this toctree call when the
               toctree is empty. Skip building this for now.
             #}
-            {% if 'singlehtml' not in builder %}
+            {% if 'singlehtml' not in builder and theme_navigation_depth %}
               {% set global_toc = toctree(maxdepth=theme_navigation_depth|int,
                                           collapse=theme_collapse_navigation|tobool,
                                           includehidden=theme_includehidden|tobool,
@@ -189,7 +173,6 @@
            {% endif%}
           </article>
           {%- endblock %}
-          {% include "footer.html" %}
         </div>
       {%- endblock %}
       </div>
@@ -199,7 +182,7 @@
   </div>
   {% include "versions.html" %}
 
-  {% include "header.html" %}
+  {% include "header-v1.html" %}
 
   {# JAVASCRIPTS #}
   {%- block scripts %}
@@ -215,7 +198,7 @@
         {%- endfor %}
       {% else %}
         <script type="text/javascript">
-            var DOCUMENTATION_OPTIONS = {
+            let DOCUMENTATION_OPTIONS = {
                 URL_ROOT:'{{ url_root }}',
                 VERSION:'{{ release|e }}',
                 LANGUAGE:'{{ language }}',
@@ -267,13 +250,6 @@
       {%- endif %}
     {%- endif %}
   {%- endblock %}
-
-	<script type="text/javascript">
-		jQuery(function () {
-			SphinxRtdTheme.Navigation.enable({{ 'true' if theme_sticky_navigation|tobool else 'false' }});
-		});
-	</script>
-
   {%- block footer %} {% endblock %}
 
 </body>

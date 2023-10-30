@@ -9,6 +9,7 @@ from extensions.reredirects import (
     html_collect_pages as ext_html_collect_pages,
     compute_redirects as ext_compute_redirects,
     build_js_object as ext_build_js_object,
+    toctree_returns_none as ext_toctree_returns_none,
     CONFIG_OPTION_REDIRECTS,
     CONFIG_OPTION_TEMPLATE_FILE,
     CONFIG_MM_URL_PATH_PREFIX,
@@ -146,7 +147,14 @@ class TestHtmlPageContext:
 
 class TestHtmlCollectPages:
     def test_nominal_simple_redirect(self, app):
-        expected_collected_page = ("foo", {"to_uri": "bar"}, "simpleredirect.html")
+        expected_collected_page = (
+            "foo",
+            {
+                "to_uri": "bar",
+                "toctree": ext_toctree_returns_none,
+            },
+            "simpleredirect.html"
+        )
         ext_setup(app)
         app.env.all_docs["narf"] = 0
         app.config[CONFIG_OPTION_REDIRECTS] = dict({"foo": "bar"})
@@ -160,7 +168,14 @@ class TestHtmlCollectPages:
 
     def test_nominal_redirect(self, app):
         expected_jsobject = 'const ' + CTX_FRAGMENT_REDIRECTS + ' = Object.freeze({"-":"bar","frag1":"bar#frag2"});'
-        expected_collected_page = ("foo", {CTX_FRAGMENT_REDIRECTS: expected_jsobject}, "redirect.html")
+        expected_collected_page = (
+            "foo",
+            {
+                CTX_FRAGMENT_REDIRECTS: expected_jsobject,
+                "toctree": ext_toctree_returns_none,
+            },
+            "redirect.html"
+        )
         ext_setup(app)
         app.env.all_docs["bar"] = 0
         app.config[CONFIG_OPTION_REDIRECTS] = dict({
@@ -225,6 +240,8 @@ class TestBuildJSObject:
             "frag3": "#frag4"
         }
         expected_js_object = \
-            'const ' + CTX_FRAGMENT_REDIRECTS + ' = Object.freeze({"-":"foo.html","frag1":"foo2.html#frag2","frag3":"#frag4"});'
+            ('const '
+             + CTX_FRAGMENT_REDIRECTS
+             + ' = Object.freeze({"-":"foo.html","frag1":"foo2.html#frag2","frag3":"#frag4"});')
         actual_js_object = ext_build_js_object(pagemap)
         assert(actual_js_object == expected_js_object)

@@ -9,7 +9,7 @@ from sphinx.application import Sphinx
 from sphinx.environment import BuildEnvironment
 from sphinx.util import logging
 from sphinx.util.console import bold, colorize, term_width_line  # type: ignore
-from typing import Dict, Mapping, Tuple, Any, List
+from typing import Mapping, Any, Optional
 
 # Global Sphinx configuration options
 CONFIG_HTML_BASEURL = "html_baseurl"
@@ -19,7 +19,7 @@ CONFIG_OPTION_TEMPLATE_FILE = "redirect_html_template_file"
 CONFIG_MM_URL_PATH_PREFIX = "mm_url_path_prefix"
 CONFIG_WRITE_EXTENSIONLESS_PAGES = "redirect_write_extensionless_pages"
 # Option defaults
-OPTION_REDIRECTS_DEFAULT: Dict[str, str] = dict()
+OPTION_REDIRECTS_DEFAULT: dict[str, str] = dict()
 OPTION_TEMPLATE_FILE_DEFAULT = None
 WRITE_EXTENSIONLESS_PAGES_DEFAULT = False
 MM_URL_PATH_PREFIX_DEFAULT = ""
@@ -34,12 +34,11 @@ CTX_FRAGMENT_REDIRECTS = "fragment_redirects"
 # Other constants...
 DEFAULT_PAGE = "-"
 
-
 # Sphinx logger
 logger = logging.getLogger(__name__)
 
 
-def setup(app: Sphinx) -> Dict[str, Any]:
+def setup(app: Sphinx) -> dict[str, Any]:
     """
     Sphinx extension setup function.
 
@@ -79,48 +78,80 @@ def builder_inited(app: Sphinx):
         )
         setattr(app.env, ENV_REDIRECTS_ENABLED, False)
         return
-    redirects_option: Dict[str, str] = getattr(app.config, CONFIG_OPTION_REDIRECTS)
+    redirects_option: dict[str, str] = getattr(app.config, CONFIG_OPTION_REDIRECTS)
     setattr(app.env, ENV_COMPUTED_REDIRECTS, compute_redirects(app, redirects_option))
 
 
-def env_updated(app: Sphinx, env: BuildEnvironment) -> List[str]:
+def env_updated(app: Sphinx, env: BuildEnvironment) -> list[str]:
     is_enabled: bool = getattr(app.env, ENV_REDIRECTS_ENABLED)
-    if not is_enabled:
-        return list()
-    computed_redirects: Dict[str, Dict[str, str]] = getattr(env, ENV_COMPUTED_REDIRECTS)
-    intra_page_fragments: List[str] = list()
-    for page in computed_redirects.keys():
-        if page in env.all_docs:
-            intra_page_fragments.append(page)
-    logger.verbose(
-        "env_updated(): found %d intra-page fragment pages" % len(intra_page_fragments)
-    )
-    setattr(app.env, ENV_INTRA_PAGE_FRAGMENT_PAGES, intra_page_fragments)
+    if is_enabled:
+        computed_redirects: dict[str, dict[str, str]] = getattr(
+            env, ENV_COMPUTED_REDIRECTS
+        )
+        intra_page_fragments: list[str] = list()
+        for page in computed_redirects.keys():
+            if page in env.all_docs:
+                intra_page_fragments.append(page)
+        logger.verbose(
+            "env_updated(): found %d intra-page fragment pages"
+            % len(intra_page_fragments)
+        )
+        setattr(app.env, ENV_INTRA_PAGE_FRAGMENT_PAGES, intra_page_fragments)
     return list()
 
 
 def html_page_context(
-    app: Sphinx, pagename: str, templatename: str, context: Dict, doctree: Dict
+    app: Sphinx,
+    pagename: str,
+    templatename: str,
+    context: dict[str, Any],
+    doctree: dict,
 ) -> str:
+    logger.verbose(
+        f"html_page_context(): pagename={pagename}, templatename={templatename}"
+    )
     is_enabled: bool = getattr(app.env, ENV_REDIRECTS_ENABLED)
-    if not is_enabled:
-        return templatename
-    context[CTX_HAS_FRAGMENT_REDIRECTS] = False
-    intra_page_fragments: List[str] = getattr(app.env, ENV_INTRA_PAGE_FRAGMENT_PAGES)
-    if pagename in intra_page_fragments:
-        logger.verbose(
-            "html_page_context(): page %s has intra-page redirects; adding redirects to HTML context"
-            % pagename
+    if is_enabled:
+        context[CTX_HAS_FRAGMENT_REDIRECTS] = False
+        intra_page_fragments: list[str] = getattr(
+            app.env, ENV_INTRA_PAGE_FRAGMENT_PAGES
         )
-        computed_redirects: Dict[str, Dict[str, str]] = getattr(
-            app.env, ENV_COMPUTED_REDIRECTS
-        )
-        context[CTX_FRAGMENT_REDIRECTS] = build_js_object(computed_redirects[pagename])
-        context[CTX_HAS_FRAGMENT_REDIRECTS] = True
+        if (
+            intra_page_fragments
+            and len(intra_page_fragments) > 0
+            and pagename in intra_page_fragments
+        ):
+            logger.verbose(
+                f"html_page_context(): page {pagename} has intra-page redirects; adding redirects to HTML context"
+            )
+            computed_redirects: dict[str, dict[str, str]] = getattr(
+                app.env, ENV_COMPUTED_REDIRECTS
+            )
+            context[CTX_FRAGMENT_REDIRECTS] = build_js_object(
+                computed_redirects[pagename]
+            )
+            context[CTX_HAS_FRAGMENT_REDIRECTS] = True
     return templatename
 
 
-def html_collect_pages(app: Sphinx) -> List[Tuple[str, Dict[str, Any], str]]:
+def toctree_returns_none(
+    collapse: bool, titles_only: bool, maxdepth: int, includehidden: bool
+) -> Optional[str]:
+    """
+    A "stub" function that returns None.
+    This function exists to short-cut the html-page-context event in the `furo` theme, so it
+    doesn't deepcopy the real toctree for templates that are not based on a real doc.
+
+    :param collapse: Unused.
+    :param titles_only: Unused.
+    :param maxdepth: Unused.
+    :param includehidden: Unused.
+    :return: None.
+    """
+    return None
+
+
+def html_collect_pages(app: Sphinx) -> list[tuple[str, dict[str, Any], str]]:
     """
     Collect the redirect page information and generate a list of redirect pages to write.
 
@@ -130,18 +161,19 @@ def html_collect_pages(app: Sphinx) -> List[Tuple[str, Dict[str, Any], str]]:
     is_enabled: bool = getattr(app.env, ENV_REDIRECTS_ENABLED)
     if not is_enabled:
         return list()
-    redirect_pages: List[Tuple[str, Dict[str, Any], str]] = list()
-    extensionless_pages: List[str] = list()
+    redirect_pages: list[tuple[str, dict[str, Any], str]] = list()
+    extensionless_pages: list[str] = list()
     write_extensionless_pages: bool = getattr(
         app.config, CONFIG_WRITE_EXTENSIONLESS_PAGES
     )
-    computed_redirects: Dict[str, Dict[str, str]] = getattr(app.env, ENV_COMPUTED_REDIRECTS)
+    computed_redirects: dict[str, dict[str, str]] = getattr(
+        app.env, ENV_COMPUTED_REDIRECTS
+    )
     for page in computed_redirects.keys():
         # if page is a real page in the doctree, we've already handled it elsewhere
         if page in app.env.all_docs:
             logger.verbose(
-                "html_collect_pages(): page %s has intra-page redirects; skipping it"
-                % page
+                f"html_collect_pages(): page {page} has intra-page redirects; skipping it"
             )
             continue
         # Handle the case where there is a single redirect defined for a source page
@@ -149,13 +181,15 @@ def html_collect_pages(app: Sphinx) -> List[Tuple[str, Dict[str, Any], str]]:
             # if this page only has a redirect to the DEFAULT_PAGE, then use a simple redirect template
             if DEFAULT_PAGE in computed_redirects[page]:
                 logger.verbose(
-                    "html_collect_pages(): simple redirect from %s to %s"
-                    % (page, computed_redirects[page][DEFAULT_PAGE])
+                    f"html_collect_pages(): simple redirect from {page} to {computed_redirects[page][DEFAULT_PAGE]}"
                 )
                 redirect_pages.append(
                     (
                         page,
-                        {"to_uri": computed_redirects[page][DEFAULT_PAGE]},
+                        {
+                            "to_uri": computed_redirects[page][DEFAULT_PAGE],
+                            "toctree": toctree_returns_none,  # short-cut for the `furo` theme
+                        },
                         "simpleredirect.html",  # TODO: move this into a config variable
                     )
                 )
@@ -171,15 +205,18 @@ def html_collect_pages(app: Sphinx) -> List[Tuple[str, Dict[str, Any], str]]:
             if default_page_url != "":
                 computed_redirects[page][DEFAULT_PAGE] = default_page_url
                 logger.debug(
-                    "html_collect_pages(): added DEFAULT_PAGE redirect for " + page
+                    f"html_collect_pages(): added DEFAULT_PAGE redirect for {page}"
                 )
         # build a JS object that will hold the fragment redirect map
         jsobject = build_js_object(computed_redirects[page])
-        logger.verbose("html_collect_pages(): redirect from %s; %s" % (page, jsobject))
+        logger.verbose(f"html_collect_pages(): redirect from {page}; {jsobject}")
         redirect_pages.append(
             (
                 page,
-                {CTX_FRAGMENT_REDIRECTS: jsobject},
+                {
+                    CTX_FRAGMENT_REDIRECTS: jsobject,
+                    "toctree": toctree_returns_none,  # short-cut for the `furo` theme
+                },
                 "redirect.html",  # TODO: move this into a config variable
             )
         )
@@ -198,7 +235,7 @@ def build_finished(app: Sphinx, exception: Exception):
             app.config, CONFIG_WRITE_EXTENSIONLESS_PAGES
         )
         if write_extensionless_pages:
-            extensionless_pages: List[str] = getattr(app.env, ENV_EXTENSIONLESS_PAGES)
+            extensionless_pages: list[str] = getattr(app.env, ENV_EXTENSIONLESS_PAGES)
             for pagename in list_status_iterator(
                 extensionless_pages,
                 "writing extensionless redirect pages... ",
@@ -221,9 +258,9 @@ def build_finished(app: Sphinx, exception: Exception):
 
 
 def compute_redirects(
-    app: Sphinx, redirects_option: Dict[str, str]
-) -> Dict[str, Dict[str, str]]:
-    computed_redirects: Dict[str, Dict[str, str]] = dict()
+    app: Sphinx, redirects_option: dict[str, str]
+) -> dict[str, dict[str, str]]:
+    computed_redirects: dict[str, dict[str, str]] = dict()
     # read parameters from config
     html_baseurl: str = getattr(app.config, CONFIG_HTML_BASEURL)
     html_baseurl = html_baseurl.removesuffix("/")
@@ -272,7 +309,7 @@ def compute_redirects(
         # redirect the fragment to the desired page
         computed_redirects[pagename][fragment] = target
     # remove empty keys from the map
-    empty_keys: List[str] = list()
+    empty_keys: list[str] = list()
     for key in computed_redirects.keys():
         if len(computed_redirects[key]) == 0:
             empty_keys.append(key)
@@ -281,17 +318,16 @@ def compute_redirects(
     return computed_redirects
 
 
-def build_js_object(pagemap: Dict[str, str]) -> str:
-    jsobject = "const " + CTX_FRAGMENT_REDIRECTS + " = Object.freeze({"
+def build_js_object(pagemap: dict[str, str]) -> str:
+    jsobject = f"const {CTX_FRAGMENT_REDIRECTS} = Object.freeze(" + "{"
     for frag in pagemap.keys():
-        jsobject += '"' + frag + '":"' + pagemap[frag] + '",'
-    jsobject = jsobject.rstrip(",") + "});"
-    return jsobject
+        jsobject += f'"{frag}":"{pagemap[frag]}",'
+    return jsobject.rstrip(",") + "});"
 
 
 def old_status_iterator(
     mapping: Mapping[str, str], summary: str, color: str = "darkgreen"
-) -> Tuple[str, str]:
+) -> tuple[str, str]:
     """
     Displays the status of iterating through a Dict/Mapping of strings. Taken from the Sphinx sources.
 
@@ -318,7 +354,7 @@ def status_iterator(
     color: str = "darkgreen",
     length: int = 0,
     verbosity: int = 0,
-) -> Tuple[str, str]:
+) -> tuple[str, str]:
     """
     Displays the status of iterating through a Dict/Mapping of strings. Taken from the Sphinx sources.
     Status includes percent of records in the iterable that have been iterated through.
@@ -353,7 +389,7 @@ def status_iterator(
 
 
 def old_list_status_iterator(
-    mapping: List[str], summary: str, color: str = "darkgreen"
+    mapping: list[str], summary: str, color: str = "darkgreen"
 ) -> str:
     """
     Displays the status of iterating through a List of strings. Adapted from the Sphinx sources.
@@ -376,7 +412,7 @@ def old_list_status_iterator(
 
 
 def list_status_iterator(
-    mapping: List[str],
+    mapping: list[str],
     summary: str,
     color: str = "darkgreen",
     length: int = 0,

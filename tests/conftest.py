@@ -2,7 +2,6 @@ import pytest
 import sys
 
 from pathlib import Path
-from sphinx.testing.path import path
 
 pytest_plugins = 'sphinx.testing.fixtures'
 
@@ -15,4 +14,4 @@ sys.path.insert(0, repo_root_path)
 
 @pytest.fixture(scope='session')
 def rootdir():
-    return path(__file__).parent.abspath() / 'roots'
+    return Path(__file__).parent.absolute() / 'roots'

@@ -6,7 +6,6 @@
 {%- else %}
   {%- set titlesuffix = "" %}
 {%- endif %}
-
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -28,12 +27,7 @@
   <link rel="preload" href="https://p.typekit.net" crossorigin>
   <link rel="preload" href="https://use.typekit.net" crossorigin>
   <link rel="preload" href="https://fonts.googleapis.com" crossorigin>
-  <link rel="preload" href="https://fonts.gstatic.com" crossorigin>
-
-  {# RTD hosts this file, so just load on non RTD builds #}
-  {% if not READTHEDOCS %}
-    <link rel="stylesheet" href="{{ pathto('_static/' + style, 1) }}" type="text/css" />
-  {% endif %}
+  <link rel="preload" href="https://fonts.gstatic.com" crossorigin>+
 
   {% for cssfile in css_files %}
     <link rel="stylesheet" href="{{ pathto(cssfile, 1) }}" type="text/css" />
@@ -69,17 +63,7 @@
         <link rel="prev" title="{{ prev.title|striptags|e }}" href="{{ prev.link|e }}"/>
     {%- endif %}
   {%- endblock %}
-  {%- block extrahead %}
-
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-K874RWM');</script>
-    <!-- End Google Tag Manager -->
-
-  {% endblock %}
+  {%- block extrahead %}{% endblock %}
 
   <style type="text/css">
 
@@ -100,11 +84,6 @@
 </head>
 
 <body class="wy-body-for-nav" role="document">
-
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K874RWM"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
 
   {% block menu %} {% endblock %}
   {% block extrabody %} {% endblock %}
@@ -129,7 +108,6 @@
             {% block body %}{% endblock %}
            </div>
           </div>
-          {% include "footer.html" %}
         </div>
       </div>
 
@@ -137,39 +115,24 @@
 
   </div>
 
-  {% include "header.html" %}
-
   {% if not embedded %}
     <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
+        let DOCUMENTATION_OPTIONS = {
             URL_ROOT:'{{ url_root }}',
             VERSION:'{{ release|e }}',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'{{ '' if no_search_suffix else file_suffix }}',
-            HAS_SOURCE:  {{ has_source|lower }}
+            HAS_SOURCE: {{ has_source|lower }}
         };
     </script>
-    {%- for scriptfile in script_files %}
-      <script type="text/javascript" src="{{ pathto(scriptfile, 1) }}"></script>
-    {%- endfor %}
-  {% endif %}
-
-  {# RTD hosts this file, so just load on non RTD builds #}
-  {% if not READTHEDOCS %}
-    <script type="text/javascript" src="{{ pathto('_static/js/theme.js', 1) }}"></script>
-  {% endif %}
-
-  {# STICKY NAVIGATION #}
-  {% if theme_sticky_navigation %}
-  <script type="text/javascript">
-      jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
-      });
-  </script>
+    {%- if script_files %}
+        {%- for scriptfile in script_files %}
+    <script type="text/javascript" src="{{ pathto(scriptfile, 1) }}"></script>
+        {%- endfor %}
+    {%- endif %}
   {% endif %}
 
   {% block footer %}
-
   {% endblock %}
 
 </body>

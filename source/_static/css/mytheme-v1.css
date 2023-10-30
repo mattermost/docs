@@ -1,0 +1,534 @@
+/* Redesign 2021 - Fonts */
+
+@media screen and (min-width: 1400px) {
+	.wy-nav-content {
+		height: auto;
+		max-width: 100%;
+	}
+}
+
+html, body {
+	height: 100%;
+	overflow: hidden;
+}
+
+.rst-footer-buttons {
+	padding-bottom: 16px;
+	width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+}
+
+.rst-footer-buttons a:last-child {
+	margin-right: 16px;
+}
+
+.features__table {
+	margin-bottom: 50px;
+}
+
+.features__table td {
+	padding: 10px 20px;
+	width: 50%;
+}
+
+.features__table img {
+	width: 100%;
+}
+
+.features__table p {
+	font-size: 15px;
+	line-height: 1.5;
+	margin-top: 10px;
+	opacity: .7;
+}
+
+.features__table h4 {
+	margin-bottom: 10px;
+	font-size: 17px;
+	color: #555;
+}
+
+.rst-versions .rst-other-versions {
+	color: rgba(255, 255, 255, 0.6);
+	display: none;
+	font-size: 90%;
+	padding: 12px;
+}
+
+.rst-versions .rst-current-version {
+	background-color: rgba(255, 255, 255, 0.1);
+	color: #fff;
+	text-transform: uppercase;
+}
+
+.rst-versions {
+	background: #404040 none repeat scroll 0 0;
+	border-style: none; /* removes the underlying theme's top border */
+}
+
+.rst-versions .rst-current-version .fa-cog {
+	float: left;
+}
+
+.rst-versions.shift-up .rst-current-version .fa.fa-angle-up:before {
+	/* converts to angle-down when the .shift-up class is applied (e.g. the options pane is visible) */
+	content: "\f107";
+}
+
+.rst-content tt.literal, .rst-content tt.literal, .rst-content code.literal {
+	color: #151515;
+	background: #EEEEEE;
+}
+
+.rst-content .heading-link h4 {
+	font-size: 105%;
+}
+
+.rst-content li > *:not(.first).admonition {
+	margin-top: 12px;
+	margin-bottom: 12px;
+}
+
+.rst-content li > img:not(.first) {
+	margin-bottom: 12px;
+}
+
+.wy-grid-for-nav {
+	padding-top: 70px;
+}
+
+.rst-versions {
+	width: 350px;
+}
+
+.wy-nav-content {
+	height: auto;
+	width: 100%;
+    max-width: 100%;
+	padding-top: 26px;
+}
+
+.wy-menu-vertical li.toctree-l3.current li.toctree-l4>a {
+	padding-left: 4rem;
+	border: none;
+}
+
+.wy-table td, .rst-content table.docutils td, .rst-content table.field-list td {
+	vertical-align: top;
+}
+
+.wy-nav-content .document {
+	max-width: 1000px;
+}
+
+.wy-menu-vertical > ul.current {
+	display: block;
+}
+
+.wy-menu-vertical li.toctree-l2.current li.toctree-l3.current >a {
+    background: #E0E0E0;
+}
+
+.wy-menu-vertical li.toctree-l3.current li.toctree-l4.current > a {
+	background: #cacaca;
+}
+.wy-menu-vertical li.toctree-l3.current li.toctree-l4 > a {
+	font-weight: bold;
+    font-size: 0.95em;
+}
+
+.wy-menu-vertical li.toctree-l3.current li.toctree-l4>a {
+	background: transparent;
+	padding-right: 1em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.wy-menu-vertical li.toctree-l3.current li.toctree-l4> a code {
+	font-size: 1em;
+    font-family: "Lato","proxima-nova","Helvetica Neue",Arial,sans-serif;
+}
+
+.wy-menu-vertical li.toctree-l2.current li.toctree-l3>a {
+	background: transparent;
+	border: none;
+	font-size: 1em;
+}
+
+.wy-menu-vertical li.toctree-l2.current>a {
+	background: #E0E0E0;
+	border-color: #ddd;
+	border-top: none;
+}
+
+.wy-menu-vertical li a {
+	white-space: nowrap;
+}
+
+.wy-menu-vertical li.on a, .wy-menu-vertical li.current>a {
+	border-bottom: 1px solid #ddd;
+}
+
+.wy-menu-vertical p.caption {
+	color: #555;
+	font-weight: bold;
+	margin: 4px 0;
+	height: 33px;
+	background: #CACACA;
+	cursor:pointer;
+}
+
+.wy-menu-vertical p.caption:first-child {
+	margin-top: -6px;
+	border-top: 0;
+}
+
+.rst-content tt, .rst-content tt, .rst-content code {
+	white-space: normal;
+}
+
+.rst-content .line-block {
+	margin-left: 0;
+	line-height: 24px;
+}
+
+.rst-content .highlight>pre {
+	line-height: 1.5;
+}
+
+.rst-content dl dt {
+	margin-bottom: 5px;
+	line-height: 24px;
+}
+
+.wy-nav-content-wrap {
+	margin-left: 350px;
+	height: 100%;
+	overflow: auto;
+}
+
+h1, h2, .rst-content .toctree-wrapper p.caption, h3, h4, h5, h6, legend {
+	font-family: "Lato","proxima-nova","Helvetica Neue",Arial,sans-serif;
+}
+
+.wy-menu-vertical a {
+	color: #888;
+	font-size: 15px;
+}
+
+.wy-menu-vertical li.current a {
+	font-size: 14.5px;
+	padding-left: 2em;
+}
+
+.wy-menu-vertical li.toctree-l2.current>a {
+	padding-left: 2.4em;
+}
+
+.wy-menu-vertical li.toctree-l2 a {
+	padding-left: 2.4em;
+}
+
+.wy-menu-vertical li.toctree-l2.current li.toctree-l3>a {
+	padding-left: 3.3em;
+}
+
+.wy-menu-vertical li.current {
+	background: #ececec;
+}
+
+.wy-menu-vertical a:hover {
+	background-color: #E7EFF5;
+}
+
+.wy-side-scroll {
+	width: 100%;
+}
+
+.wy-menu-vertical {
+	width: 100%;
+	top: 130px;
+	position: relative;
+}
+
+.wy-nav-side {
+	width: 350px;
+	border-right: 1px solid #ddd;
+	background: #f9f9f9;
+}
+
+/* .wy-menu-vertical li.toctree-l1.current>a {
+    border-top: none;
+} */
+
+.wy-side-nav-search {
+	width: 350px;
+	margin-top: 58px;
+	border-right: 1px solid #ddd;
+}
+
+.wy-side-nav-search .icon, .wy-side-nav-search .version {
+	display: none;
+}
+
+.wy-body-for-nav {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background: transparent;
+}
+
+.wy-side-nav-search input[type=text] {
+	border: 1px solid #ddd;
+}
+
+.wy-side-nav-search {
+	background: #f9f9f9;
+	position: fixed;
+	padding: 20px 20px 15px;
+	/* border-bottom: 1px solid #ddd;  */
+    z-index: 10;
+}
+
+.wy-nav-top {
+	background: #F5F5F5;
+	padding: 0 10px;
+	color: #222;
+	border-bottom: 1px solid #ccc;
+}
+
+.wy-nav-top a {
+	color: inherit;
+}
+
+.wy-nav-top i {
+	color: #999;
+	font-size: 20px;
+	top: 14px;
+	left: 5px;
+	position: relative;
+}
+
+@media (max-width: 768px){
+	.wy-nav-side {
+		left: -350px;
+	}
+
+	.wy-nav-top {
+		display: none;
+	}
+	.wy-side-nav-search {
+		position: relative;
+	}
+	.wy-menu-vertical {
+		top: 0;
+	}
+	.wy-nav-content-wrap {
+		margin-left: 0;
+		overflow-y: scroll;
+		-webkit-overflow-scrolling: touch;
+	}
+	.wy-nav-content-wrap.shift {
+		top: 70px;
+	}
+	img {
+		max-width: 100%;
+		width: auto;
+	}
+}
+
+@media screen and (min-width: 1400px) {
+	.wy-nav-content-wrap {
+    	background: #fcfcfc; /* gets rid of the wony gray bottom of the page when viewed on a wide screen */
+	}
+}
+
+
+/* override table width restrictions */
+@media screen and (min-width: 767px) {
+
+   .wy-table-responsive table td {
+      /* !important prevents the common CSS stylesheets from overriding
+         this as on RTD they are loaded after this stylesheet */
+      white-space: normal !important;
+   }
+
+   .wy-table-responsive {
+      overflow: visible !important;
+   }
+}
+
+@media print {
+	body,
+	div.wy-grid-for-nav,
+	section.wy-nav-content-wrap {
+		height: auto;
+	}
+
+	body {
+		overflow: visible;
+	}
+
+	section.wy-nav-content-wrap {
+		margin-left: 0px;
+	}
+
+	header {
+		position: absolute;
+	}
+
+	.header__container > :not(.header__logo) {
+		display: none;
+	}
+
+	div.c-thermometer__trigger {
+		display: none;
+	}
+}
+
+/* Redesign 2021 - BASE */
+body {
+	font-family: 'Noto Sans','Helvetica Neue',Arial,sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	color: #363A45;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-family: 'trade-gothic-next',sans-serif;
+	font-weight: 800;
+}
+
+.document p {
+	line-height: 150%;
+}
+
+a,
+.rst-content a:visited {
+	color: #1C58D9;
+}
+
+a:hover {
+	color: #1E325C;
+}
+
+pre {
+	font-family: 'Fira Mono','Courier New',Courier,monospace;
+}
+
+/* Redesign 2021 - SIDE MENU */
+
+.wy-menu,
+.wy-breadcrumbs {
+	font-family: 'trade-gothic-next',sans-serif;
+}
+
+.wy-breadcrumbs li.wy-breadcrumbs-aside {
+	display: block;
+	float: none;
+}
+
+@media (max-width: 770px) {
+	.wy-breadcrumbs li.wy-breadcrumbs-aside {
+		margin-top: 20px;
+	}
+	.wy-breadcrumbs li.wy-breadcrumbs-aside .search__icon {
+		padding: 0 20px 0 0;
+	}
+}
+
+@media (min-width: 770px) {
+	.wy-breadcrumbs li.wy-breadcrumbs-aside {
+		float: right;
+	}
+}
+
+
+.wy-menu-vertical a {
+	color: #888;
+}
+
+.wy-menu > ul > li.current >a {
+	font-weight: 800;
+	font-size: 16px;
+	line-height: 152.7%;
+}
+
+/* Redesign 2021 - CONTENT */
+.document ul,
+.document ol {
+	padding-left: 10px;
+}
+.document ul li,
+.document ol li {
+	margin-bottom: 5px;
+}
+
+/* Redesign 2021 - CODE BLOCKS */
+
+.highlight {
+	background-color: #eff4ff;
+	/* background-color: #C5D2EC; */
+}
+
+/* Redesign 2021 - NOTE BLOCKS */
+.document .admonition-title {
+	background-color: #1E325C !important;
+}
+
+.document .admonition.note,
+.document .admonition.tip {
+	background-color: #EBEBEF !important;
+}
+
+.document .admonition.note p:not(.admonition-title ) {
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+/* Redesign 2021 - HEADER */
+*,
+:after,
+:before {
+    box-sizing: border-box;
+}
+
+
+
+
+/* Redesign 2021 - SEARCH */
+#search-results .context {
+	word-break: break-word;
+}
+
+/* Inline code for install-mattermost-omnibus */
+/* Should be flooded across docs? */
+#install-mattermost-omnibus p code,
+#install-mattermost-omnibus h3 code,
+#install-mattermost-server-using-the-tarball p code,
+#install-mattermost-server-using-the-tarball h3 code,
+#install-mattermost-server-on-ubuntu p code,
+#install-mattermost-server-on-ubuntu h3 code,
+#install-mattermost-on-rhel p code,
+#install-mattermost-on-rhel h3 code {
+    background-color: #ECF0F9 !important;
+    color: #1C58D9 !important;
+    font-family: Fira Mono, monospace !important;
+    border: none;
+    border-radius: 3px;
+    font-size: 80%;
+}
+
+@media (max-width: 959px) {
+    #install-mattermost-omnibus p code,
+    #install-mattermost-omnibus h3 code,
+    #install-mattermost-server-using-the-tarball p code,
+    #install-mattermost-server-using-the-tarball h3 code,
+    #install-mattermost-server-on-ubuntu p code,
+    #install-mattermost-server-on-ubuntu h3 code {
+        word-break: break-all;
+    }
+}
