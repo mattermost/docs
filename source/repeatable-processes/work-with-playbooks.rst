@@ -81,7 +81,7 @@ Here are some scenarios why you might want to start each run in the same channel
 - Short, frequently-used processes benefit from being in the same channel - it keeps the process streamlined.
 - Teams with multiple independent workflows, such as release teams, benefit from having them in one place.
 - Cutting down on the number of new channels created makes it easier to find run channels again.
-- The run name isn't linked to the the channel's name so you can tell multiple workflows apart.
+- The run name isn't linked to the channel's name so you can tell multiple workflows apart.
 
 When you're configuring your playbook:
 
