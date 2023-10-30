@@ -46,7 +46,7 @@ Search for message and files
 
     File contents that match on file name, or contain matching text content within supported document types, are returned in the Search Results pane. Each search result includes file name, extension, and size details, as well as details about when and where the file was originally shared.
 
-    - For Mattermost Cloud workspaces, supported document file formats include PDF, PPTX, DOCX, ODT, HTML, and plain text documents. DOC, RTF, and PAGES file formats, as well as the contents of ZIP files, are not supported.
+    - For Mattermost Cloud workspaces, supported document file formats include PDF, PPTX, DOCX, ODT, HTML, and plain text documents. DOC and RTF file formats, as well as the contents of ZIP files, are not supported.
     - For Mattermost self-hosted deployments, supported document file formats include PDF, PPTX, DOCX, ODT, HTML, and plain text documents. 
 
     .. note::
@@ -54,7 +54,7 @@ Search for message and files
       System admins can extend file content search support for self-hosted deployments to include:
   
       - `files shared before upgrading to Mattermost Server v5.35 </manage/command-line-tools.html#mattermost-extract-documents-content>`__.
-      - `DOC, RTF, and PAGES file formats </configure/configuration-settings.html#enable-document-search-by-content>`__.
+      - `DOC and RTF file formats </configure/configuration-settings.html#enable-document-search-by-content>`__.
       - `documents within ZIP files </configure/configuration-settings.html#enable-searching-content-of-documents-within-zip-files>`__.
 
     **Filter results by file type**
