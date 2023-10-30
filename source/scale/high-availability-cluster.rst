@@ -297,7 +297,7 @@ If you're using PostgreSQL as the choice of database, we recommend the following
 
   # If the instance is lower capacity than r5.xlarge, then set it to a lower number. 
   # Also tune the "MaxOpenConns" setting under the "SqlSettings" of the Mattermost app accordingly. 
-  # Note that "MaxOpenConns" on Mattermost is per connection string.
+  # Note that "MaxOpenConns" on Mattermost is per data source name.
   max_connections = 1024
 
   # Set it to 1.1, unless the DB is using spinning disks.
@@ -341,7 +341,7 @@ Copy all the above settings to the read replica, and modify or add only the belo
   
   # If the instance is lower capacity than r5.xlarge, then set it to a lower number. 
   # Also tune the "MaxOpenConns" setting under the "SqlSettings" of the Mattermost app accordingly. 
-  # Note that "MaxOpenConns" on Mattermost is per connection string.
+  # Note that "MaxOpenConns" on Mattermost is per data source name.
   max_connections = 1024
 
   # This setting should be 16MB on read nodes, and 32MB on writer nodes
