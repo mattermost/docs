@@ -19,7 +19,7 @@ Latest Mattermost Mobile Apps releases:
  - iPhone 5s devices and later with iOS 12.4+ is required.
 
 ### Bug Fixes
- - Fixed an issue where a crash occured when clicking on **Threads** when a message contained LaTex.
+ - Fixed an issue where a crash occurred when tapping on **Threads** when a message contained LaTex.
 
 ## 2.9.0 Release
 - Release Date: October 16, 2023
