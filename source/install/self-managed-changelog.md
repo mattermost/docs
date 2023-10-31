@@ -17,9 +17,7 @@ Latest Mattermost Releases:
 **Release day: November 16, 2023**
 
 ### Important Upgrade Notes
- - Fixed data retention policies to run jobs when any custom retention policy is enabled even when the global retention policy is set to "keep-forever". Before this fix, the enabled custom data retention policies wouldn't run as long as the global data retention policy was set to "keep-forever" or was disabled. After the fix, the custom data retention policies will run automatically even when the global data retention policy is set to "keep-forever". Once the server is upgraded, posts may unintentionally be deleted. Admins should make sure to disable all custom data retention policies before upgrading, and then re-enable them again after upgrading.
-
-**IMPORTANT:** If you upgrade from a release earlier than v9.1, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
+ - Please read the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) before upgrading.
 
 ### Compatibility
  - Updated minimum required Edge version to 116+.
