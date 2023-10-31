@@ -16,6 +16,7 @@ Latest Mattermost Releases:
 
 - **9.1.2, released **
   - Mattermost v9.1.2 contains a high severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Mattermost v9.1.2 contains no database or functional changes.
 - **9.1.1, released 2023-10-27**
   - Mattermost v9.1.1 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Pre-packaged Focalboard plugin [v7.11.4](https://github.com/mattermost/focalboard/releases/tag/v7.11.4).
@@ -129,6 +130,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 - **9.0.3, released **
   - Mattermost v9.0.3 contains a high severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Mattermost v9.0.3 contains no database or functional changes.
 - **9.0.2, released 2023-10-27**
   - Mattermost v9.0.2 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Pre-packaged Focalboard plugin [v7.11.4](https://github.com/mattermost/focalboard/releases/tag/v7.11.4).
@@ -237,6 +239,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 - **8.1.5, released **
   - Mattermost v8.1.5 contains a high severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Mattermost v8.1.5 contains no database or functional changes.
 - **8.1.4, released 2023-10-27**
   - Mattermost v8.1.4 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Pre-packaged Focalboard plugin [v7.11.4](https://github.com/mattermost/focalboard/releases/tag/v7.11.4).
@@ -802,6 +805,7 @@ Mattermost v7.9.0 contains a low severity level security fix. [Upgrading](https:
 
 - **7.8.14, released **
   - Mattermost v7.8.14 contains a high severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Mattermost v7.8.14 contains no database or functional changes.
 - **7.8.13, released 2023-10-27**
   - Mattermost v7.8.13 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Pre-packaged Focalboard plugin [v7.8.9](https://github.com/mattermost/focalboard/releases/tag/v7.8.9).
