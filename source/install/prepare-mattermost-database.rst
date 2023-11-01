@@ -54,8 +54,16 @@ To set up a PostgreSQL database for use by the Mattermost server:
       :class: mm-code-block 
 
         postgres=# GRANT ALL PRIVILEGES ON DATABASE mattermost to mmuser;
+                  
 
-  b. Grant access to objects contained in the specified schema by running: 
+  b. Grant the user to change the owner of a database to a user ``mmuser`` by running:
+
+     .. code-block:: none
+      :class: mm-code-block 
+
+        ALTER DATABASE mattermost OWNER TO mmuser;
+
+  c. Grant access to objects contained in the specified schema by running: 
 
     .. code-block:: none
       :class: mm-code-block 
@@ -206,4 +214,4 @@ To set up a PostgreSQL database for use by the Mattermost server:
 
 The PostgreSQL interactive terminal starts. To exit the PostgreSQL interactive terminal, type ``\q`` and press :kbd:`Enter` on Windows or Linux, or :kbd:`↵` on Mac.
 
-When the PostgreSQL database is installed, and the initial setup complete, you can install the Mattermost server.
+When the PostgreSQL database is installed, and the initial setup is complete, you can install the Mattermost server.
