@@ -140,16 +140,18 @@ Enable Ask Community link
   :environment: MM_SUPPORTSETTINGS_HELPLINK
 
   This field sets the URL for the Help link on the login and sign-up pages, as well as the **Help Resources** link under the **Help** menu in the channel header.
-  If this field is empty, those links do not appear. Default value is **https://about.mattermost.com/default-help/**.
+  Default value is **https://about.mattermost.com/default-help/**.
 
 Help link
 ~~~~~~~~~
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
-| This field sets the URL for the Help link on the login and sign-up pages, as well as the **Help Resources** link under the **Help** menu in the channel header. If this field is empty, those links do not appear. | - System Config path: **Site Configuration > Customization** |
-|                                                                                                                                                                                                                    | - ``config.json`` setting: ``.SupportSettings.HelpLink``     |
-| String input. Default is ``https://about.mattermost.com/default-help/``.                                                                                                                                           | - Environment variable: ``MM_SUPPORTSETTINGS_HELPLINK``      |
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
+| This field sets the URL for the Help link on the login and sign up pages, as well as the **Help Resources** link under the **Help** menu in the channel header.  | - System Config path: **Site Configuration > Customization** |
+|                                                                                                                                                                  | - ``config.json`` setting: ``.SupportSettings.HelpLink``     |
+| String input. Default is ``https://about.mattermost.com/default-help/``.                                                                                         | - Environment variable: ``MM_SUPPORTSETTINGS_HELPLINK``      |
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
+| **Note**: If this value is empty, the Help link is hidden on the login and sign up pages. However, the **Help Resources** link remains available under the **Help** menu.                                                       |
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
 
 .. config:setting:: custom-termsofuselink
   :displayname: Terms of Use link (Customization)

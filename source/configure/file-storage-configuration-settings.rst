@@ -116,9 +116,9 @@ Enable document search by content
 | If this command is not run, users can search older files based on file name only.                                                                   |
 |                                                                                                                                                     |
 | You can optionally install the following `dependencies <https://github.com/sajari/docconv#dependencies>`__ to extend content searching support in   |
-| Mattermost to include file formats beyond PDF, DOCX, and ODT, such as DOC, RTF, XML, HTML, and PAGES:                                               |
+| Mattermost to include file formats beyond PDF, DOCX, and ODT, such as DOC, RTF, XML, and HTML:                                                      |
 |                                                                                                                                                     |
-| - **tidy**: Used to search the contents of HTML and PAGES documents.                                                                                |
+| - **tidy**: Used to search the contents of HTML documents.                                                                                          |
 | - **wv**: Used to search the contents of DOC documents.                                                                                             |
 | - **popplerutils**: Used to significantly improve server performance when extracting the contents of PDF documents.                                 |
 | - **unrtf**: Used to search the contents of RTF documents.                                                                                          |
