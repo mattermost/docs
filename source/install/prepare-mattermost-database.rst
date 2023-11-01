@@ -214,4 +214,4 @@ To set up a PostgreSQL database for use by the Mattermost server:
 
 The PostgreSQL interactive terminal starts. To exit the PostgreSQL interactive terminal, type ``\q`` and press :kbd:`Enter` on Windows or Linux, or :kbd:`↵` on Mac.
 
-When the PostgreSQL database is installed, and the initial setup complete, you can install the Mattermost server.
+When the PostgreSQL database is installed, and the initial setup is complete, you can install the Mattermost server.
