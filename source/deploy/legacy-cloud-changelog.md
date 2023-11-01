@@ -14,7 +14,10 @@ From Mattermost v9.2, see the [Mattermost Changelog](/deploy/mattermost-changelo
 :depth: 2
 ```
 
-----
+## Release 2023-11-01
+
+### Bug Fixes
+ - Added a high severity level security fix. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
 
 ## Release 2023-10-10
 
