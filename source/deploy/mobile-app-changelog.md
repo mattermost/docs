@@ -10,7 +10,7 @@ Latest Mattermost Mobile Apps releases:
 - [2.7.0 Release](#id17)
 
 ## 2.9.1 Release
-- Release Date: , 2023
+- Release Date: November 1, 2023
 - Server Versions Supported: Server v7.8.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
 
 ### Compatibility
