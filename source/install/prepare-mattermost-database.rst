@@ -56,7 +56,7 @@ To set up a PostgreSQL database for use by the Mattermost server:
         postgres=# GRANT ALL PRIVILEGES ON DATABASE mattermost to mmuser;
                   
 
-  b. Grant the user to change the owner of a database to a user mmuser by running:
+  b. Grant the user to change the owner of a database to a user ``mmuser`` by running:
 
      .. code-block:: none
       :class: mm-code-block 
