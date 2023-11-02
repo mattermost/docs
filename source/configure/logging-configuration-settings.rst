@@ -229,12 +229,12 @@ Enable diagnostics and error reporting
 
 *Available in legacy Enterprise Edition E10/E20*
 
-+-----------------------------------------------+---------------------------------------------------------------------------+
-| Configure Mattermost to allow any combination | - System Config path: **Environment > Logging**                           |
-| of console, local file, syslog, and TCP       | - ``config.json setting``: ``".LogSettings.AdvancedLoggingJSON": "",``    |
-| socket targets, and send log records to       | - Environment variable: ``MM_LOGSETTINGS_ADVANCEDLOGGINGJSON``            |
-| multiple targets.                             |                                                                           |
-+-----------------------------------------------+---------------------------------------------------------------------------+
++-----------------------------------------------+-------------------------------------------------------------------------+
+| Configure Mattermost to allow any combination | - System Config path: **Environment > Logging**                         |
+| of console, local file, syslog, and TCP       | - ``config.json setting``: ``".LogSettings.EnableDiagnostics": "",``    |
+| socket targets, and send log records to       | - Environment variable: ``MM_LOGSETTINGS_ENABLEDIAGNOSTICS``            |
+| multiple targets.                             |                                                                         |
++-----------------------------------------------+-------------------------------------------------------------------------+
 
 .. config:setting:: log-multipletargetoutput
   :displayname: Output logs to multiple targets (Logging)
