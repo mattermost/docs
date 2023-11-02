@@ -42,3 +42,7 @@ sphinx-tabs = "==3.4.1"
 # Add a "copy" button to code blocks in Sphinx (https://sphinx-copybutton.readthedocs.io/en/latest/)
 # Repo: https://github.com/executablebooks/sphinx-copybutton
 sphinx-copybutton = "==0.5.2"
+#
+# Python importlib metadata library; used by Sphinx
+# Repo: https://github.com/python/importlib_metadata
+importlib-metadata = "==4.12.0"
