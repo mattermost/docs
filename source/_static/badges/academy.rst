@@ -3,16 +3,10 @@
 
 .. raw:: html
 
-  <div class="mm-badge">
-
-|lightbulb| Free online training available: `Mattermost Academy <https://academy.mattermost.com>`__
-
-|qrcode| test
-
-.. |lightbulb| image:: ../_static/images/badges/lightbulb-outline_F0336.svg
-
-.. |qrcode| image:: ../_static/images/badges/academy-qrcode.png
-
-.. raw:: html
-
-  </div>
+  <a href="https://academy.mattermost.com" class="mm-badge mm-badge--academy" target="_blank">
+    <img src="../_static/images/badges/academy-callout-image.jpg" alt="" />
+    <div class="mm-badge__copy">
+      <span class="mm-badge__accent-text">Mattermost Academy</span>
+      <span class="mm-badge__title">Free online training available</span>
+    </div>
+  </a>
