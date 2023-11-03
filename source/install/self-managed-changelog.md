@@ -59,7 +59,7 @@ Latest Mattermost Releases:
    - Added a new configuration setting ``MaxFieldSize`` to add the ability to size-limit log fields during logging.
 
 ### API Changes
- - Added ``origin_client to the mattermost_api_time`` metrics.
+ - Added ``origin_client`` to the ``mattermost_api_time`` metrics.
 
 ### Go Version
  - v9.2 is built with Go ``v1.20.7``.
