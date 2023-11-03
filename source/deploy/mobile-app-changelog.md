@@ -51,8 +51,6 @@
  - **Upgrade to server version v7.8.0 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/upgrade/extended-support-release.html) (ESR) v7.1.0 has ended and upgrading to server ESR v7.8.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
  - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
  - iPhone 5s devices and later with iOS 12.4+ is required.
-
-### Compatibility
  - Updated the iOS minimum supported version back to v12.4.
 
 ----
@@ -65,11 +63,12 @@
  - **Upgrade to server version v7.8.0 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/upgrade/extended-support-release.html) (ESR) v7.1.0 has ended and upgrading to server ESR v7.8.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
  - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
  - iPhone 5s devices and later with iOS 13.4+ is required.
-
-Note: Mattermost Mobile App v2.8.1 contains a high level security fix. Updating is recommended. Details will be posted on our security updates page 30 days after release as per the Mattermost Responsible Disclosure Policy.
-
-### Compatibility
  - Bumped the iOS minimum supported version to v13.4.
+
+```{Note} 
+Mattermost Mobile App v2.8.1 contains a high level security fix. Updating is recommended. Details will be posted on our security updates page 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+```
+
 
 ### Improvements
  - Added an alert showing when a deeplink is invalid.
@@ -89,7 +88,10 @@ Note: Mattermost Mobile App v2.8.1 contains a high level security fix. Updating 
  - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
  - iPhone 5s devices and later with iOS 12.1+ is required.
 
-Note: Mattermost Mobile App v2.8.0 contains a medium level security fix. Updating is recommended. Details will be posted on our security updates page 30 days after release as per the Mattermost Responsible Disclosure Policy.
+```{Note} 
+Mattermost Mobile App v2.8.0 contains a medium level security fix. Updating is recommended. Details will be posted on our security updates page 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+```
+
 
 ### Improvements
  - Calls: Added incoming call notifications for Direct Message and Group Message calls.
@@ -186,7 +188,8 @@ Note: Mattermost Mobile App v2.8.0 contains a medium level security fix. Updatin
  - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
  - iPhone 5s devices and later with iOS 12.1+ is required.
 
-**Note:** Mattermost Mobile App v2.5.1 contains a high level security fix. Upgrading is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+```{Note} Mattermost Mobile App v2.5.1 contains a high level security fix. Upgrading is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+```
 
 ### Bug Fixes
  - Fixed an issue where reading a thread could lead to the phone and server to overwork.
@@ -1018,7 +1021,11 @@ Users now gain a more reliable and feature-rich application, improving their exp
 ### Highlights
 
 #### Emoji Enhancements with Skin Tone Selection
- - Added support for emoji standard v13.0 with Mattermost server v5.37. **Note: Due to the upgrade to Emoji 13.0, some emojis may be missing on Android older than 11 and iOS older than 14.2.**
+ - Added support for emoji standard v13.0 with Mattermost server v5.37. 
+
+```{Note} 
+Due to the upgrade to Emoji 13.0, some emojis may be missing on Android older than 11 and iOS older than 14.2.
+```
 
 #### English-Australian Language Support
  - Mattermost is now available in English-Australian.
@@ -1084,7 +1091,9 @@ Users now gain a more reliable and feature-rich application, improving their exp
  - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
  - iPhone 5s devices and later with iOS 11+ is required.
 
-**Note:** Mattermost Mobile App v1.44.0 contains low to high level security fixes. Upgrading is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+```{Note} 
+Mattermost Mobile App v1.44.0 contains low to high level security fixes. Upgrading is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+```
 
 ### Highlights
 
@@ -1234,7 +1243,8 @@ Users now gain a more reliable and feature-rich application, improving their exp
  - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
  - iPhone 5s devices and later with iOS 11+ is required.
 
-**Note:** Mattermost Mobile App v1.41.0 contains a high level security fix. Upgrading is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+``` {Note}Mattermost Mobile App v1.41.0 contains a high level security fix. Upgrading is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+```
 
 ### Improvements
  - Refined animations for the new image gallery.
@@ -1264,7 +1274,8 @@ Users now gain a more reliable and feature-rich application, improving their exp
  - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
  - iPhone 5s devices and later with iOS 11+ is required.
  
-**Note:** Mattermost Mobile App v1.40.0 contains a low level security fix. Upgrading is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+``` {Note}Mattermost Mobile App v1.40.0 contains a low level security fix. Upgrading is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+```
 
 ### Improvements
  - Added support for OpenID Connect (E20 Edition) - **This feature is available in Mattermost Cloud and will be available in upcoming server v5.33.0 (March 16th) release.**
@@ -1349,7 +1360,9 @@ Users now gain a more reliable and feature-rich application, improving their exp
  - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).
  - iPhone 5s devices and later with iOS 11+ is required.
  
-**Note:** Support for landscape orientation was removed for non-tablet devices.
+```{Note} 
+Support for landscape orientation was removed for non-tablet devices.
+```
 
 ### Improvements
  - Added gallery user interface improvements.
@@ -1577,7 +1590,9 @@ Users now gain a more reliable and feature-rich application, improving their exp
 ### Breaking Changes
  - Starting with mobile app v1.33.0, users on server versions below v5.19 may experience issues with how attachments, link previews, reactions and embed data are displayed. Updating your server to v5.19 or later is required.
  
-**Note:** Mattermost Mobile App v1.33.0 contains a low level security fix. Upgrading is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+```{Note} 
+Mattermost Mobile App v1.33.0 contains a low level security fix. Upgrading is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+```
  
 ### Highlights
  -  System admins will now receive an in-app notification to upgrade their server version if they are running versions v5.18 and below.
@@ -1791,9 +1806,10 @@ Mattermost Mobile App v1.31.2 contains a high level security fix. [Upgrading](/u
  
 Mattermost Mobile App v1.30.0 contains a high level security fix. [Upgrading](/upgrade/upgrading-mattermost-server.html) is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
  
-**Note:** v5.9.0 as our Extended Support Release (ESR) is coming to the end of its lifecycle and upgrading to 5.19.0 ESR or a later version is highly recommended. v5.19.0 will continue to be our current ESR until October 15, 2020. [Learn more in our forum post](https://forum.mattermost.com/t/upcoming-extended-support-release-updates/8526>).
-
-**Note:** [The Channel Moderation Settings feature](/manage/team-channel-members.html#channel-moderation-e20) released in v5.22.0 is supported on mobile app versions v1.30 and later. In earlier versions of the mobile app, users who attempt to post or react to posts without proper permissions will see an error.
+``` {Note} 
+- v5.9.0 as our Extended Support Release (ESR) is coming to the end of its lifecycle and upgrading to 5.19.0 ESR or a later version is highly recommended. v5.19.0 will continue to be our current ESR until October 15, 2020. [Learn more in our forum post](https://forum.mattermost.com/t/upcoming-extended-support-release-updates/8526>).
+- [The Channel Moderation Settings feature](/manage/team-channel-members.html#channel-moderation-e20) released in v5.22.0 is supported on mobile app versions v1.30 and later. In earlier versions of the mobile app, users who attempt to post or react to posts without proper permissions will see an error.
+```
  
 ### Improvements
  - Significantly improved Android performance, including how quickly posts in the center screen are displayed.
@@ -1833,9 +1849,10 @@ Mattermost Mobile App v1.30.0 contains a high level security fix. [Upgrading](/u
  - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).
  - iPhone 5s devices and later with iOS 11+ is required.
 
-**Note:** The persisted sidebar on Android tablets was removed in order to significantly improve the mobile app performance.
-
-**Note:** An issue was fixed where a user's status was set as online when replying to a message from a push notification. This fix only works in combination with server v5.20.0+.
+``` {Note} 
+- The persisted sidebar on Android tablets was removed in order to significantly improve the mobile app performance.
+- An issue was fixed where a user's status was set as online when replying to a message from a push notification. This fix only works in combination with server v5.20.0+.
+```
  
 ### Improvements
  - Significantly improved how quickly channels load when you open the app and when you switch between them.

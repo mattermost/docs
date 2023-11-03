@@ -1,4 +1,4 @@
-# Mattermost Cloud changelog
+# Mattermost Cloud 
 
 This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/get-started/), an enterprise-grade SaaS offering hosted by Mattermost.
 

@@ -20,8 +20,9 @@ Release v5.5
 
 **Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/latest>`__
 
-**Note:**
-Mattermost v5.5.0 contains a medium severity level security fix. Upgrading is highly recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.com/security-vulnerability-report//>`__.
+.. note::
+
+   Mattermost v5.5.0 contains a medium severity level security fix. Upgrading is highly recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.com/security-vulnerability-report//>`__.
 
 
 Compatibility
@@ -141,7 +142,8 @@ Release v5.3
 
  - Original v5.3.0 release
 
-**Note:** Mattermost v5.3.0 contains a medium severity level security fix. Upgrading is highly recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.com/security-vulnerability-report//>`__.
+.. note::
+   Mattermost v5.3.0 contains a medium severity level security fix. Upgrading is highly recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.com/security-vulnerability-report//>`__.
 
 Compatibility
 ~~~~~~~~~~~~~~~
@@ -331,7 +333,9 @@ Release v5.1
 
  - Original v5.1.0 release
 
-**Note:** Mattermost v5.1.0 contains a low severity level security fix. Upgrading is highly recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.com/security-vulnerability-report//>`__.
+.. note::
+
+   Mattermost v5.1.0 contains a low severity level security fix. Upgrading is highly recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.com/security-vulnerability-report//>`__.
 
 Compatibility
 ~~~~~~~~~~~~~~~
@@ -454,7 +458,9 @@ Release v5.0
 
  - Original v5.0.0 release
 
-**Note:** Mattermost v5.0.0 contains a low level security fix. Upgrading is highly recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.com/security-vulnerability-report//>`__.
+.. note::
+
+   Mattermost v5.0.0 contains a low level security fix. Upgrading is highly recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.com/security-vulnerability-report//>`__.
 
 Compatibility
 ~~~~~~~~~~~~~~~
@@ -555,7 +561,9 @@ Release v4.7
 
  - Original v4.7.0 release
 
-**Note:** Mattermost v4.7.0 contains low to medium level security fixes. Upgrading is highly recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.com/security-vulnerability-report/>`__.
+.. note::
+
+   Mattermost v4.7.0 contains low to medium level security fixes. Upgrading is highly recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.com/security-vulnerability-report/>`__.
 
 Compatibility
 ~~~~~~~~~~~~~~~
@@ -824,7 +832,9 @@ Release v4.4
 
  - Original v4.4.0 release
 
-**Note:** Mattermost v4.4.0 contains low to medium level security fixes. `Upgrading </administration/upgrade.html>`__ is highly recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.com/security-vulnerability-report/>`__.
+.. note::
+
+   Mattermost v4.4.0 contains low to medium level security fixes. `Upgrading </administration/upgrade.html>`__ is highly recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.com/security-vulnerability-report/>`__.
 
 **Breaking Changes** 
 
@@ -915,7 +925,9 @@ Release v4.3
 
  - Original v4.3.0 release
 
-**Note:** Mattermost v4.3.0 contains medium level security fixes. `Upgrading </upgrade/upgrading-mattermost-server.html>`__ is highly recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.com/security-vulnerability-report/>`__.
+.. note::
+
+   Mattermost v4.3.0 contains medium level security fixes. `Upgrading </upgrade/upgrading-mattermost-server.html>`__ is highly recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.com/security-vulnerability-report/>`__.
 
 **Breaking Change** 
 
@@ -1063,7 +1075,9 @@ Release v4.2.0
 - **Download Binary:** `Windows 32-bit <https://releases.mattermost.com/desktop/4.2.0/mattermost-setup-4.2.0-win32.exe>`__ | `Windows 64-bit <https://releases.mattermost.com/desktop/4.2.0/mattermost-setup-4.2.0-win64.exe>`__ | `Mac <https://releases.mattermost.com/desktop/4.2.0/mattermost-desktop-4.2.0-mac.dmg>`__ | `Linux 64-bit <https://releases.mattermost.com/desktop/4.2.0/mattermost-desktop-4.2.0-linux-x64.tar.gz>`__ 
 - **View Source Code:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v4.2.0>`__
 
-**Note:** Mattermost v4.2.0 contains a high level security fix. `Upgrading </administration/upgrade.html>`__ is highly recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.com/security-vulnerability-report/>`__.
+.. note::
+
+   Mattermost v4.2.0 contains a high level security fix. `Upgrading </administration/upgrade.html>`__ is highly recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.com/security-vulnerability-report/>`__.
 
 Improvements
 ~~~~~~~~~~~~~~~
