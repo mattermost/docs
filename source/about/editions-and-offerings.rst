@@ -54,7 +54,7 @@ Mattermost Free (Self-Hosted only)
 
 Mattermost Free is a set of collaboration features for accelerating your technical team’s productivity, shipping software faster with higher quality, and improving alignment among team members.
 
-Mattermost Free is available to our self-hosted community through both our open source Mattermost Team Edition offering, and in our commercial Mattermost Enterprise Edition offering (when no subscription license key is active). t is best suited for teams of up to 50 members. See deployment options at: https://mattermost.com/deploy/.
+Mattermost Free is available to our self-hosted community through both our open source Mattermost Team Edition offering, and in our commercial Mattermost Enterprise Edition offering (when no subscription license key is active). It is best suited for teams of up to 50 members. See deployment options at: https://mattermost.com/deploy/.
 
 .. important::
 
