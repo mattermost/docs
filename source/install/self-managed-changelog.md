@@ -14,7 +14,10 @@ Latest Mattermost Releases:
 
 ## Release v9.2 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
 
-**Release day: November 16, 2023**
+- **9.2.1, released 2023-11-06**
+  - Fixed an issue where Ubuntu GLIBC errors were thrown on Ubuntu 20.04 and Debian Bullseye versions.
+- **9.2.0, released 2023-11-02**
+  - Original 9.2.0 release
 
 ### Important Upgrade Notes
  - Please read the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) before upgrading.
