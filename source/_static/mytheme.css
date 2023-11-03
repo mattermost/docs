@@ -2857,8 +2857,8 @@ kbd {
 	height: 75px;
 	width: auto;
 	margin: 0 !important;
-	border-top-left-radius: 6px;
-	border-bottom-left-radius: 6px;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
 }
 
 @media (min-width: 769px) and (max-width: 960px) {
