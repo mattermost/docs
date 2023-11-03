@@ -1,5 +1,4 @@
 :nosearch:
-.. _install-ubuntu-1804-mysql:
 
 Install MySQL database server
 ------------------------------

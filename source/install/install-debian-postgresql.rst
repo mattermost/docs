@@ -1,5 +1,4 @@
 :nosearch:
-.. _install-debian-postgresql:
 
 Install PostgreSQL database server
 -----------------------------------

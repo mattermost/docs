@@ -8,7 +8,7 @@ Install the Mattermost App in Microsoft Teams
 
   Looking to `install the Mattermost for Microsoft Teams plugin </about/install-mattermost-for-microsoft-teams-plugin.html>`__ instead?
 
-With `Mattermost for Microsoft Teams </about/mattermost-for-microsoft-teams.html>`__, you can embed your Mattermost workspace within your Microsoft Teams instance and take advantage of `embedded app features <#benefits-of-the-embedded-app>`_.
+With `Mattermost for Microsoft Teams </about/mattermost-for-microsoft-teams.html>`__, you can embed your Mattermost workspace within your Microsoft Teams instance and take advantage of `embedded app features <#benefits-of-the-embedded-app>`__.
 
 .. important::
 

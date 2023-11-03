@@ -93,14 +93,14 @@ When will support for other regions be available?
 
 Mattermost Cloud Enterprise will support data residency based on feedback from our customers.
 
-If you require your data to reside in an area outside of the United States, please contact the product team via `feedback-cloud@mattermost.com <feedback-cloud@mattermost.com>`_, or consider `deploying one of our Self-Hosted options <https://mattermost.com/deploy>`_ that provides full control of your data. You may also work with `one of our European partners <https://mattermost.com/partners>`_ for deploying and hosting your Mattermost server.
+If you require your data to reside in an area outside of the United States, please contact the product team via `feedback-cloud@mattermost.com <feedback-cloud@mattermost.com>`__, or consider `deploying one of our Self-Hosted options <https://mattermost.com/deploy>`__ that provides full control of your data. You may also work with `one of our European partners <https://mattermost.com/partners>`__ for deploying and hosting your Mattermost server.
 
 How is Mattermost Cloud secured?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Mattermost Cloud has encryption at-rest and in-transit. We're SOC2 Type 1 certified and working towards SOC2 Type 2.
 
-Mattermost Cloud Enterprise is available to be deployed in a secure, private environment within a dedicated cloud offering to a single customer. This architecture provides the isolation and security of an on-premises deployment while ensuring consistent performance and uptime of your Mattermost workspace. `Please contact Mattermost Sales for more information on this option <https://mattermost.com/contact-sales/>`_.
+Mattermost Cloud Enterprise is available to be deployed in a secure, private environment within a dedicated cloud offering to a single customer. This architecture provides the isolation and security of an on-premises deployment while ensuring consistent performance and uptime of your Mattermost workspace. `Please contact Mattermost Sales for more information on this option <https://mattermost.com/contact-sales/>`__.
 
 What are the alternatives, and why should I choose Mattermost Cloud?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -134,7 +134,7 @@ Mattermost Cloud is hosted in AWS `us-east-1` region. Cross-region failover is p
 What environments and rings are Cloud offerings deployed with?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Mattermost Cloud provides `three offerings <https://mattermost.com/pricing/>`_: Free, Professional, Enterprise, with a virtual private Cloud add-on available for Enterprise.
+Mattermost Cloud provides `three offerings <https://mattermost.com/pricing/>`__: Free, Professional, Enterprise, with a virtual private Cloud add-on available for Enterprise.
 
 These offerings are deployed in the following ways:
 

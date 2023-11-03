@@ -19,12 +19,14 @@ The following instructions migrate Mattermost from one server to another by back
 
   - Make sure your new instance is properly configured and tested. The database type (MySQL or PostgreSQL) and version of SOURCE and DESTINATION deployments need to match.
   - Stop the DESTINATION server using ``sudo stop mattermost``, then back up the database and ``config.json`` file.
+
 4. Migrate database from SOURCE to DESTINATION. Backup the database from the SOURCE Mattermost server and restore it in place of the database to which the DESTINATION server is connected.
 5. Migrate ``config.json`` from SOURCE to DESTINATION. Copy ``config.json`` file from SOURCE deployment to DESTINATION.
 6. If you use local storage (``FileSettings.DriverName`` is set to ``local``), migrate ``./data`` from SOURCE to DESTINATION.
 
   - Copy the ``./data`` directory from SOURCE deployment to DESTINATION.
   - If you use a directory other than ``./data``, copy that directory instead.
+
 7. Start the DESTINATION deployment by running ``sudo start mattermost``. Then go to the **System Console**, make a minor change, and save it to upgrade your ``config.json`` schema to the latest version using default values for any new settings added.
 8. Test that the system is working by going to the URL of an existing team. You may need to refresh your Mattermost browser page in order to get the latest updates from the upgrade.
 
@@ -144,13 +146,13 @@ Once it's installed, run these commands. Replace ``<SLACK TOKEN>`` with the Slac
 
 .. note::
 
-    - You'll end up with two files (``export-with-emails.zip`` and ``export-with-emails-and-attachments.zip``). The file ``export-with-emails.zip`` will not have attachments.
-    - The second command can take a long time if you have a large number of file uploads. If it's interrupted, delete the file generated (if any), and start again.
+  - You'll end up with two files (``export-with-emails.zip`` and ``export-with-emails-and-attachments.zip``). The file ``export-with-emails.zip`` will not have attachments.
+  - The second command can take a long time if you have a large number of file uploads. If it's interrupted, delete the file generated (if any), and start again.
 
 .. code:: bash
 
-    slack-advanced-exporter --input-archive <SLACK EXPORT FILE> --output-archive export-with-emails.zip fetch-emails --api-token <SLACK TOKEN>
-    slack-advanced-exporter --input-archive export-with-emails.zip --output-archive export-with-emails-and-attachments.zip fetch-attachments
+  slack-advanced-exporter --input-archive <SLACK EXPORT FILE> --output-archive export-with-emails.zip fetch-emails --api-token <SLACK TOKEN>
+  slack-advanced-exporter --input-archive export-with-emails.zip --output-archive export-with-emails-and-attachments.zip fetch-attachments
 
 The file ``export-with-emails-and-attachments.zip`` now contains all the information necessary to be imported into Mattermost.
 
@@ -163,13 +165,13 @@ Next, run this command to do the conversion. Replace ``<TEAM NAME>`` with the na
 
 .. code:: bash
 
-    ./mmetl transform slack --team <TEAM NAME> --file export-with-emails-and-attachments.zip --output mattermost_import.jsonl
+  ./mmetl transform slack --team <TEAM NAME> --file export-with-emails-and-attachments.zip --output mattermost_import.jsonl
 
 Next you have to create a zip file with the ``mattermost_import.jsonl`` file and the directory ``bulk-export-attachments`` (which needs to be moved to a subdirectory ``data`` first) that contains the attachments. On Linux and macOS you can use this command:
 
 .. code:: bash
 
-    zip -r mattermost-bulk-import.zip data mattermost_import.jsonl
+  zip -r mattermost-bulk-import.zip data mattermost_import.jsonl
 
 The file ``mattermost-bulk-import.zip`` is now ready to import into Mattermost.
 
@@ -180,25 +182,25 @@ Now you can start the import process. Once you have ``mmctl`` installed and auth
 
 .. code:: bash
 
-    mmctl import upload ./mattermost-bulk-import.zip
+  mmctl import upload ./mattermost-bulk-import.zip
 
 Run this command to list the available imports:
 
 .. code:: bash
 
-    mmctl import list available
+  mmctl import list available
 
 Run this command to process the import. Replace ``<IMPORT FILE NAME>`` with the name you got from the ``mmctl import list available`` command:
 
 .. code:: bash
 
-    mmctl import process <IMPORT FILE NAME>
+  mmctl import process <IMPORT FILE NAME>
     
 Finally, run this command to view the status of the import process job. If the job status shows as ``pending``, then wait before running the command again. The ``--json`` flag is required to view the possible error message. Replace ``<JOB ID>`` with the id you got from the ``mmctl import list process`` command:
 
 .. code:: bash
 
-    mmctl import job show <JOB ID> --json
+  mmctl import job show <JOB ID> --json
 
 Debugging imports
 ^^^^^^^^^^^^^^^^^

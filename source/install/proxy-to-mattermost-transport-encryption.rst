@@ -1,4 +1,3 @@
-
 Configuring proxy to Mattermost transport encryption
 ====================================================
 

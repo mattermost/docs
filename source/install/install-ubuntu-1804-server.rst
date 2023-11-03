@@ -1,5 +1,4 @@
 :nosearch:
-.. _install-ubuntu-1804-server:
 
 Install Ubuntu Server 18.04 LTS
 --------------------------------

@@ -1,5 +1,3 @@
-.. _desktop-msi-gpo:
-
 Desktop MSI installer and group policy installation guides (beta) 
 ==================================================================
 

@@ -1,5 +1,3 @@
-.. _bulk-loading:
-
 Bulk loading data
 =================
 

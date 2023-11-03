@@ -1,4 +1,4 @@
-.. _install-rhel-7:
+:orphan:
 
 Installing Mattermost on RHEL 7
 =================================

@@ -1,5 +1,3 @@
-.. _deploy-bitnami:
-
 Deploy Mattermost on Bitnami
 =============================
 

@@ -1,5 +1,4 @@
 :nosearch:
-.. _install-ubuntu-1804-postgresql:
 
 Install PostgreSQL database server
 ----------------------------------

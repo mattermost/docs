@@ -1,5 +1,4 @@
 :nosearch:
-..  _install-rhel-7-server:
 
 Install Red Hat Enterprise Linux 7
 -----------------------------------

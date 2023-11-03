@@ -1,5 +1,3 @@
-.. _install-ubuntu-2004:
-
 Install Mattermost on Ubuntu 20.04 LTS
 ======================================
 

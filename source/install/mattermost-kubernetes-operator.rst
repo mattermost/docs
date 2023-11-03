@@ -69,7 +69,7 @@ Apply the changes with ``kubectl``:
 
 .. code-block:: sh
 
-    $ kubectl apply -n mattermost -f [PATH_TO_MATTERMOST_MANIFEST]
+  $ kubectl apply -n mattermost -f [PATH_TO_MATTERMOST_MANIFEST]
 
 The operator initiates a job in the Kubernetes cluster and once migration is complete the pods are restarted. If necessary, a database migration is also performed.
 
@@ -77,7 +77,7 @@ To view information about the running job, use
 
 .. code-block:: sh
 
-    $ kubectl -n mattermost get jobs
+  $ kubectl -n mattermost get jobs
 
 At least one pod is available at all times and once all pods are restarted with the new version the upgrade is complete.
 
@@ -85,7 +85,7 @@ To view the status of the pods and to confirm their state, use
 
 .. code-block:: sh
 
-    $ kubectl -n mattermost get pods
+  $ kubectl -n mattermost get pods
 
 The ``STATUS`` of the pods should be running/ready, with an ``AGE`` of 10-15 seconds.
 
@@ -175,10 +175,10 @@ The process described below needs to be completed prior to proceeding with the M
 
   .. code-block:: sh
 
-      $ kubectl create ns mattermost
-      $ kubectl apply -n mattermost -f /path/to/secret.yaml
-      $ kubectl apply -n mattermost -f /path/to/mattermost-installation.yaml
-      $ kubectl apply -n mattermost -f /path/to/restore.yaml
+    $ kubectl create ns mattermost
+    $ kubectl apply -n mattermost -f /path/to/secret.yaml
+    $ kubectl apply -n mattermost -f /path/to/mattermost-installation.yaml
+    $ kubectl apply -n mattermost -f /path/to/restore.yaml
 
   The deployment process can be monitored in the Kubernetes user interface. If errors or issues are experienced, review the Mattermost, Operator, and MySQL logs for guidance including error messages. If remediation is not successful, contact Mattermost customer support for assistance.
 
@@ -322,5 +322,6 @@ The installation should be deployed successfully when the Custom Resource reache
     $ kubectl -n $NEW_NAMESPACE port-forward svc/[YOUR_MATTERMOST_NAME] 8065:8065
 
   Then navigate to ``http://localhost:8065``.
+
 .. include:: faq_kubernetes.rst
   :start-after: :nosearch:

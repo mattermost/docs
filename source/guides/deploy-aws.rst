@@ -2,7 +2,7 @@ Deploy Apps to AWS
 ==================
 
 Deployment in self-managed environments
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+---------------------------------------
 
 An App designed and bundled for AWS Lambda can be deployed to the customer's own
 AWS environment, and then installed on a self-managed ("on-prem") Mattermost
@@ -24,11 +24,14 @@ You will need to create an S3 bucket within AWS or use an existing bucket.
 2. Create a bucket.
 3. **Bucket name**: Give your bucket a name, later used in ``MM_APPS_S3_BUCKET`` environment variable.
 4. **AWS Region**:
+
     a. Select your region
-    b. Save the slug value for later, to be used in ``MM_APPS_AWS_REGION`` environment variable (Example: ``us-east-1``)
-    - Corresponding Lambdas will be deployed in the same region
+    b. Save the slug value for later, to be used in ``MM_APPS_AWS_REGION`` environment variable (Example: ``us-east-1``). Corresponding Lambdas will be deployed in the same region.
+
 5. **Block Public Access settings for this bucket**
+
     a. (Optional) Check **Block *all* public access**
+
 6. Select **Create Bucket**.
 
 Create a privileged IAM user access key and secret

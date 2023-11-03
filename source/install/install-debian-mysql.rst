@@ -1,5 +1,4 @@
 :nosearch:
-.. _install-debian-mysql:
 
 Install MySQL database server
 -----------------------------

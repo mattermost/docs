@@ -1,5 +1,5 @@
+:orphan:
 :nosearch:
-.. _bulk-loading-common-issues:
 
 Common issues
 -------------

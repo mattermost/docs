@@ -1,4 +1,3 @@
-.. _high-availability:
 :orphan:
 :nosearch:
 

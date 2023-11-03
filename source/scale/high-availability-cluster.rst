@@ -60,7 +60,7 @@ Remove a server from the cluster
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. Back up your Mattermost database and the file storage location. For more information about backing up, see :doc:`../deploy/backup-disaster-recovery`.
-2. Modify your NGINX setup to remove the server. For information about this, see ``proxy server configuration`_.
+2. Modify your NGINX setup to remove the server. For information about this, see the section `proxy server configuration <#proxy-server-configuration>`__ below.
 3. Open **System Console > Environment > High Availability** to verify that all the machines remaining in the cluster are communicating as expected with green status indicators. If not, investigate the log files for any extra information.
 
 Configuration and compatibility

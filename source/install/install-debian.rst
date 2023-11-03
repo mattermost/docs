@@ -1,5 +1,3 @@
-.. _install-debian:
-
 Installing Mattermost on Debian Buster
 =======================================
 

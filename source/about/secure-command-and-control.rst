@@ -15,6 +15,6 @@ Features include:
 * (Enterprise) `ID-only push notifications </deploy/mobile-hpns.html#id-only-push-notifications>`__ to remove the need to pass clear text notifications through Apple and Google’s mobile notification relays.
 * (Enterprise) `Enterprise Mobility Management (EMM) </deploy/deploy-mobile-apps-using-emm-provider.html>`__ to manage secure mobile endpoints with a managed app configuration (`via AppConfig </deploy/mobile-appconfig.html>`__), such as AirWatch.
 
-For an example case study, learn why `The U.S. Department of Defense relies on Mattermost for Secure Command and Control across devices <https://mattermost.com/customers/us-department-of-defense/>`_, including flight crews who can now securely access documents from mobile devices anywhere in the world. 
+For an example case study, learn why `The U.S. Department of Defense relies on Mattermost for Secure Command and Control across devices <https://mattermost.com/customers/us-department-of-defense/>`__, including flight crews who can now securely access documents from mobile devices anywhere in the world. 
 
-`Contact us <https://mattermost.com/contact-sales/>`_ to learn more about this solution and to discuss whether it’s the right one for you.
+`Contact us <https://mattermost.com/contact-sales/>`__ to learn more about this solution and to discuss whether it’s the right one for you.

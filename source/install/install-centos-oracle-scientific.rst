@@ -1,3 +1,5 @@
+:orphan:
+
 Installing Mattermost on CentOS, Oracle Linux, and Scientific Linux
 ===================================================================
 

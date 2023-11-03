@@ -102,15 +102,15 @@ U.S. export compliance overview
 Summary Table
 ~~~~~~~~~~~~~
 
-+-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| Mattermost Product                              | Export Control Classification Number (ECCN)                                                                                                     |
-+=================================================+=================================================================================================================================================+
-| Mattermost Enterprise Edition                   | `ECCN 5D002 <https://www.bis.doc.gov/index.php/documents/regulations-docs/federal-register-notices/federal-register-2014/951-ccl5-pt2/file>`__  |
-| (includes Mattermost Professional & Enterprise) | with a License Exception available of `ENC <https://www.bis.doc.gov/index.php/documents/regulation-docs/415-part-740-license-exceptions/file>`__|
-+-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| Mattermost Team Edition                         | Not subject to the U.S. Export Administration Regulations (EAR) given software is publicly available                                            |
-|                                                 | and fully available to compile from publicly available source code at https://github.com/mattermost/                                            |
-+-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+| Mattermost Product                              | Export Control Classification Number (ECCN)                                                                                                       |
++=================================================+===================================================================================================================================================+
+| Mattermost Enterprise Edition                   | `ECCN 5D002 <https://www.bis.doc.gov/index.php/documents/regulations-docs/federal-register-notices/federal-register-2014/951-ccl5-pt2/file>`__    |
+| (includes Mattermost Professional & Enterprise) | with a License Exception available of `ENC <https://www.bis.doc.gov/index.php/documents/regulation-docs/415-part-740-license-exceptions/file>`__  |
++-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+| Mattermost Team Edition                         | Not subject to the U.S. Export Administration Regulations (EAR) given software is publicly available                                              |
+|                                                 | and fully available to compile from publicly available source code at https://github.com/mattermost/                                              |
++-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Overview
 ~~~~~~~~~
@@ -227,9 +227,9 @@ However, pursuant to Section (b) of Article 49 of GDPR, transfers of personal da
 Are you IPv6 compliant?
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-Yes, the Mattermost platform is compliant with IPv6 when Audio & Screen Sharing is disabled, both for our `self-hosted and Cloud offerings <https://docs.mattermost.com/about/editions-and-offerings.html>`_.
+Yes, the Mattermost platform is compliant with IPv6 when Audio & Screen Sharing is disabled, both for our `self-hosted and Cloud offerings <https://docs.mattermost.com/about/editions-and-offerings.html>`__.
 
-We plan to add IPv6 compliance for `Audio & Screen Sharing <https://docs.mattermost.com/configure/calls-deployment.html>`_ in future.
+We plan to add IPv6 compliance for `Audio & Screen Sharing <https://docs.mattermost.com/configure/calls-deployment.html>`__ in future.
 
 Are you 508 compliant?
 ~~~~~~~~~~~~~~~~~~~~~~

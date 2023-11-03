@@ -1,5 +1,3 @@
-..  _docker-local-machine:
-
 Install Mattermost via Docker
 ==============================
 

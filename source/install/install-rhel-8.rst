@@ -1,5 +1,3 @@
-.. _install-rhel-8:
-
 Install Mattermost on RHEL
 ==========================
 

@@ -73,7 +73,7 @@ Mattermost Server v5.30.0
 Mattermost Server v5.16.0
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- Removed support for Internet Explorer (IE11) in Mattermost v5.16.0. Learn more in our `forum post <https://forum.mattermost.org/t/mattermost-is-dropping-support-for-internet-explorer-ie11-in-v5-16/7575>`_.
+- Removed support for Internet Explorer (IE11) in Mattermost v5.16.0. Learn more in our `forum post <https://forum.mattermost.org/t/mattermost-is-dropping-support-for-internet-explorer-ie11-in-v5-16/7575>`__.
 
 Mattermost Server v5.12.0
 ~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -4,34 +4,30 @@ Desktop application changelog
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Latest Mattermost Desktop App releases:
-
-- `Release v5.5 <#id1>`_
-- `Release v5.4 <#id3>`_
-- `Release v5.3 <#id15>`_
-- `Release v5.2 <#id28>`_
-- `Release v5.1 <#id44>`_
-- `Release v5.0 <#id59>`_
-
 Release v5.5
 --------------
 
 - **v5.5.1, released 2023-10-03**
+
  - Mattermost v5.5.1 contains low severity level security fixes. Upgrading is highly recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.com/security-vulnerability-report//>`__.
  - Upgraded to Electron v26.2.1, which mitigates ``CVE-2023-4863`` of the third-party library libwebp.
  - Fixed an issue where logging was stuck to ``info`` level.
  - Fixed an issue where the downloads dropdown would not open on auto-update notification.
+
 - **v5.5.0, released 2023-09-15**
+
  - Original v5.5.0 release
 
-**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/latest>`_
+**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/latest>`__
 
-**Note:** Mattermost v5.5.0 contains a medium severity level security fix. Upgrading is highly recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.com/security-vulnerability-report//>`__.
+**Note:**
+Mattermost v5.5.0 contains a medium severity level security fix. Upgrading is highly recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.com/security-vulnerability-report//>`__.
+
 
 Compatibility
 ~~~~~~~~~~~~~~~
 
-- Desktop App is supported on any currently `supported Mattermost server version <https://docs.mattermost.com/upgrade/release-lifecycle.html>`_.
+- Desktop App is supported on any currently `supported Mattermost server version <https://docs.mattermost.com/upgrade/release-lifecycle.html>`__.
 - Updated Chromium minimum supported version to 116+.
 
 Improvements
@@ -69,14 +65,16 @@ Known Issues
 Contributors
 ~~~~~~~~~~~~~~
 
-- `apollo13 <https://github.com/apollo13>`_, `cpoile <https://github.com/cpoile>`_, `devinbinnie <https://github.com/devinbinnie>`_, `Partizann <https://github.com/Partizann>`_.
+- `apollo13 <https://github.com/apollo13>`__, `cpoile <https://github.com/cpoile>`__, `devinbinnie <https://github.com/devinbinnie>`__, `Partizann <https://github.com/Partizann>`__.
+
+----
 
 Release v5.4
 --------------
 
 **Release Day: June 19, 2023**
 
-**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v5.4.0>`_
+**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v5.4.0>`__
 
 Compatibility
 ~~~~~~~~~~~~~~~
@@ -116,7 +114,7 @@ All Platforms
 Known Issues
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- Mattermost is not detected in the **Add Server** screen if the server has plugins disabled `MM-53294 <https://mattermost.atlassian.net/browse/MM-53294>`_.
+- Mattermost is not detected in the **Add Server** screen if the server has plugins disabled `MM-53294 <https://mattermost.atlassian.net/browse/MM-53294>`__.
 - When running "Run Diagnostics" from the **Help** menu, the app crashes `MM-53295 <https://mattermost.atlassian.net/browse/MM-53295>`_.
 - Users seeing an endless "Loading..." screen when attempting to log in to the app may need to manually remove their cache directory. For MacOS it is located in ``/Users/<username>/Library/Containers/Mattermost/Data/Library/Application Support/Mattermost`` and for Windows it is located in ``Users/<username>/AppData/Roaming/Mattermost``.
 - On Linux, a left-click on the Mattermost tray icon doesn't open the app window but opens the tray menu.
@@ -128,14 +126,19 @@ Contributors
 
 - `cpoile <https://github.com/cpoile>`_, `devinbinnie <https://github.com/devinbinnie>`_, `jnsgruk <https://github.com/jnsgruk?>`_, `streamer45 <https://github.com/streamer45>`_, `zoltan-ofir <https://github.com/zoltan-ofir>`_.
 
+----
+
 Release v5.3
 --------------
 
-**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v5.3.1>`_
+**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v5.3.1>`__
 
 - **v5.3.1, released 2023-04-04**
+
  - Calls: fixed an issue where, after opening the calls popout then closing it (without leaving the call), subsequent clicks would cause a crash.
+
 - **v5.3.0, released 2023-03-30**
+
  - Original v5.3.0 release
 
 **Note:** Mattermost v5.3.0 contains a medium severity level security fix. Upgrading is highly recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.com/security-vulnerability-report//>`__.
@@ -202,12 +205,15 @@ Contributors
 
 - `cpoile <https://github.com/cpoile>`_, `cs4p <https://github.com/cs4p>`_, `devinbinnie <https://github.com/devinbinnie>`_, `JtheBAB <https://github.com/JtheBAB>`_, `kevfocke <https://github.com/kevfocke>`_, `kyeongsoosoo <https://github.com/kyeongsoosoo>`_, `m1lt0n <https://github.com/m1lt0n>`_, `streamer45 <https://github.com/streamer45>`_, `tboulis <https://github.com/tboulis>`_.
 
+----
+
 Release v5.2
 --------------
 
-**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v5.2.2>`_
+**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v5.2.2>`__
 
 - **v5.2.2, released 2022-12-06**
+
  - Added ARM64 build (beta) for Windows/Linux.
  - Fixed an issue on Windows installers where the onboarding screen was displayed even when there was a preconfigured server list `MM-48079 <https://mattermost.atlassian.net/browse/MM-48079>`_.
  - Fixed an issue where a crash could occur when a download list included corrupt data `MM-48483 <https://mattermost.atlassian.net/browse/MM-48483>`_.
@@ -216,12 +222,16 @@ Release v5.2
  - Fixed an issue where users could get stuck after finished the Getting Started flow `MM-48682 <https://mattermost.atlassian.net/browse/MM-48682>`_.
  - Fixed an issue where the window resize did not work on some windows machines `MM-48574 <https://mattermost.atlassian.net/browse/MM-48574>`_.
  - Fixed an issue on Windows where the three-dot menu remained focused after clicking elsewhere `MM-46424 <https://mattermost.atlassian.net/browse/MM-46424>`_.
+
 - **v5.2.1, released 2022-11-15**
+
  - Fixed an issue on ``.exe`` installers where the onboarding screen was still displayed even when there was a preconfigured server list `MM-48079 <https://mattermost.atlassian.net/browse/MM-48079>`_.
  - Fixed an issue where the default downloads location was not set on macOS `MM-48167 <https://mattermost.atlassian.net/browse/MM-48167>`_.
  - Fixed an issue where users were able to edit or remove a pre-configured server provided by GPO on Windows `MM-48184 <https://mattermost.atlassian.net/browse/MM-48184>`_.
  - Fixed an issue where the tray icon colour on Windows didn't obey the setting `MM-48080 <https://mattermost.atlassian.net/browse/MM-48080>`_.
+
 - **v5.2.0, released 2022-10-31**
+
  - Original v5.2.0 release
 
 Compatibility
@@ -301,19 +311,24 @@ Contributors
 
 - `devinbinnie <https://github.com/devinbinnie>`_, `julmondragon <https://github.com/julmondragon>`_, `m1lt0n <https://github.com/m1lt0n>`_, `saturninoabril <https://github.com/saturninoabril>`_, `tboulis <https://github.com/tboulis>`_, `vaaas <https://github.com/vaaas>`_.
 
+----
+
 Release v5.1
 --------------
 
-**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v5.1.1>`_
+**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v5.1.1>`__
 
 - **v5.1.1, released 2022-06-27**
+
  - Upgraded to Electron v18.3.0.
  - Fixed an issue where a channel name matching the server subpath would not be navigable.
  - Fixed an issue where the ``hideOnStart`` setting didn't work.
  - Fixed an issue where the certificate error dialog box would reappear infinitely.
  - Fixed an issue where the first client certificate could not be selected.
  - Restored Windows ZIP builds.
+
 - **v5.1.0, released 2022-05-16**
+
  - Original v5.1.0 release
 
 **Note:** Mattermost v5.1.0 contains a low severity level security fix. Upgrading is highly recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.com/security-vulnerability-report//>`__.
@@ -334,7 +349,7 @@ Improvements
 
 Mac
 ^^^^^^
-- Mattermost can now be installed on the `Mac App Store <https://apps.apple.com/app/mattermost-desktop/id1614666244>`_. Even if you’re already using Mattermost desktop on Mac, you can download and install it via the Mac App Store to access future automatic updates.
+- Mattermost can now be installed on the `Mac App Store <https://apps.apple.com/app/mattermost-desktop/id1614666244>`__. Even if you’re already using Mattermost desktop on Mac, you can download and install it via the Mac App Store to access future automatic updates.
 
 Linux
 ^^^^^^
@@ -400,24 +415,33 @@ Contributors
 
 - `ChristophKaser <https://github.com/ChristophKaser>`_, `coltoneshaw <https://github.com/coltoneshaw>`_, `devinbinnie <https://github.com/devinbinnie>`_, `JulienTant <https://github.com/JulienTant>`_, `oh6hay <https://github.com/oh6hay>`_, `Profesor08 <https://github.com/Profesor08>`_, `shadowshot-x <https://github.com/shadowshot-x>`_, `streamer45 <https://github.com/streamer45>`_, `svelle <https://github.com/svelle>`_ , `Willyfrog <https://github.com/Willyfrog>`_.
 
+----
+
 Release v5.0
 --------------
 
-**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v5.0.4>`_
+**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v5.0.4>`__
 
 - **v5.0.4, release 2022-02-04**
+
  - Fixed an issue where Desktop App toast notifications didn't work in v5.0.3.
  - Restored **Minimize to tray** option for Windows, and added the ability to override the tray icon color.
+
 - **v5.0.3, released 2022-02-01**
+
  - Fixed an issue where a user might get an erroneous "Your session has expired" error and be unable to login.
  - Fixed an issue where the app could crash while trying to reload a page that is currently loading.
  - Fixed an issue where OS-level shortcuts could cause an unexpected focus behavior in the app.
  - Fixed an issue where Linux users might not see the **Add Server** modal.
  - Fixed an issue that prevented the export channel log from being downloaded from Playbooks.
+
 - **v5.0.2, released 2021-11-15**
+
  - Fixed an issue where the Desktop app crashed intermittently when switching between tabs while a tab was loading.
  - Fixed an issue where the app didn't raise the window from the tray icon when clicking on the taskbar icon.
+
 - **v5.0.1, released 2021-10-22**
+
  - Fixed issue with desktop notification sounds not working correctly.
  - Fixed an issue where using a proxy server with the Desktop app caused the app to crash.
  - Fixed the new server modal not being accessible on Linux when no other servers existed.
@@ -425,7 +449,9 @@ Release v5.0
  - Fixed an issue with GPO and built-in servers not working correctly with Boards/Playbooks tabs.
  - Fixed an issue where the top bar buttons on Windows 8 were missing.
  - Reduced the size of some builds by removing unnecessary files.
+
 - **v5.0.0, released 2021-10-13**
+
  - Original v5.0.0 release
 
 **Note:** Mattermost v5.0.0 contains a low level security fix. Upgrading is highly recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.com/security-vulnerability-report//>`__.
@@ -451,6 +477,7 @@ Improvements
 
 MacOS
 ^^^^^^
+
 - Made the window menu on macOS more consistent with system standards.
 
 All Platforms
@@ -501,24 +528,31 @@ Contributors
 
 - `devinbinnie <https://github.com/devinbinnie>`_, `elsiehupp <https://github.com/elsiehupp>`_, `jtwillis92 <https://github.com/jtwillis92>`_, `koox00 <https://github.com/koox00>`_, `svelle <https://github.com/svelle>`_ , `Westacular <https://github.com/Westacular>`_, `Willyfrog <https://github.com/Willyfrog>`_
 
+----
+
 Release v4.7
 --------------
 
-**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v4.7.2>`_
+**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v4.7.2>`__
 
 - **v4.7.2, released 2021-09-13**
+
  - Upgraded to Electron v12.0.16.
  - Fixed an issue where the **Add Server** screen appeared on each startup on servers with GPO.
  - Fixed an issue where the window would flash on Windows and Linux when a new mention arrived regardless of the setting to turn it on/off.
  - Added desktop notifications for followed threads.
+
 - **v4.7.1, released 2021-08-03**
+
  - Mattermost v4.7.1 contains a medium level security fix. Upgrading is highly recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.com/security-vulnerability-report/>`__.
  - Added support to allow users to specify a different download location for Hunspell dictionaries.
  - Fixed an issue where the notification badge did not get cleared when reading a channel with unread messages until navigating away from the channel.
  - Fixed an issue where the top bar menu, and the minimize, maximize and close icons did not work on 4.7.0 on Windows 10 if GPU acceleration was disabled.
  - Reverted to Electron v12.0.1 to fix an issue where clicking in the searchbox to highlight search terms dragged the desktop window.
  - Fixed an issue to prevent a crash on malformed default download locations.
+
 - **v4.7.0, released 2021-06-23**
+
  - Original v4.7.0 release
 
 **Note:** Mattermost v4.7.0 contains low to medium level security fixes. Upgrading is highly recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.com/security-vulnerability-report/>`__.
@@ -608,10 +642,12 @@ Contributors
 ~~~~~~~~~~~~~~
 - `devinbinnie <https://github.com/devinbinnie>`_, `FalseHonesty <https://github.com/FalseHonesty>`_, `nevyangelova <https://github.com/nevyangelova>`_, `petermcj <https://github.com/petermcj>`_, `wget <https://github.com/wget>`_, `Willyfrog <https://github.com/Willyfrog>`_.
 
+----
+
 Release v4.6
 ----------------------------
 
-**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v4.6.2>`_
+**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v4.6.2>`__
 
 - **v4.6.2, released 2021-01-25**
 
@@ -631,6 +667,7 @@ Improvements
 
 All Platforms
 ^^^^^^^^^^^^^
+
 - Added a setting to be able to select different desktop notification sounds (Requires Mattermost server v5.28+).
 - ``Show Mattermost icon in the menu bar`` setting is now enabled by default for new installs on Mac, and ``Show icon in the notification area`` and ``Leave app running in the notification area when application window is closed`` settings are are now enabled by default for new installs on Ubuntu.
 - The default window frame and server tabs are now used on older Windows and Linux OS versions.
@@ -643,6 +680,7 @@ Bug Fixes
 
 All Platforms
 ^^^^^^^^^^^^^
+
 - Fixed an issue where the app window started as maximized when the "Start app on login" setting was enabled. The Desktop App no longer shows in the system tray and the parameter ``--hidden`` was removed. This setting is not respected when AppImage file (Unofficial) is used.
 - Fixed an issue where the **Add server** modal fields were missing the right-click menu.
 - Fixed an issue where users did not see the right-click menu with Copy and Paste options on the login page when using the desktop app to login to an external application.
@@ -667,11 +705,12 @@ Many thanks to all our contributors. In alphabetical order:
 
 - `devinbinnie <https://github.com/devinbinnie>`_, `dpanic <https://github.com/dpanic>`_, `jekill <https://github.com/jekill>`_, `jupenur <https://github.com/jupenur>`_, `M-ZubairAhmed <https://github.com/M-ZubairAhmed>`_, `nevyangelova <https://github.com/nevyangelova>`_, `rvillablanca <https://github.com/rvillablanca>`_, `wget <https://github.com/wget>`_, `Willyfrog <https://github.com/Willyfrog>`_.
 
+----
 
 Release v4.5
 ----------------------------
 
-**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v4.5.4>`_
+**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v4.5.4>`__
 
 - **v4.5.4, released 2020-09-11**
 
@@ -761,10 +800,12 @@ Many thanks to all our contributors. In alphabetical order:
 
 - `deanwhillier <https://github.com/deanwhillier>`_, `devinbinnie <https://github.com/devinbinnie>`_, `hanzei <https://github.com/hanzei>`_, `hunterlester <https://github.com/hunterlester>`_, `JtheBAB <https://github.com/JtheBAB>`_, `jupenur <https://github.com/jupenur>`_, `justledbetter <https://github.com/justledbetter>`_, `nevyangelova <https://github.com/nevyangelova>`_, `wget <https://github.com/wget>`_, `Willyfrog <https://github.com/Willyfrog>`_.
 
+----
+
 Release v4.4
 ----------------------------
 
-**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v4.4.2>`_
+**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v4.4.2>`__
 
 - **v4.4.2, released 2020-05-11**
 
@@ -849,6 +890,8 @@ Contributors
 Many thanks to all our contributors. In alphabetical order:
 
 - `allenlai18 <https://github.com/allenlai18>`_, `cpanato <https://github.com/cpanato>`_,  `deanwhillier <https://github.com/deanwhillier>`_, `devinbinnie <https://github.com/devinbinnie>`_, `hunterlester <https://github.com/hunterlester>`_, `JtheBAB <https://github.com/JtheBAB>`_, `jupenur <https://github.com/jupenur>`_, `kethinov <https://github.com/kethinov>`_, `rascasoft <https://github.com/rascasoft>`_, `Willyfrog <https://github.com/Willyfrog>`_, `xalkan <https://github.com/xalkan>`_.
+
+----
 
 Release v4.3
 ----------------------------
@@ -956,6 +999,8 @@ Many thanks to all our contributors. In alphabetical order:
 
 - `asaadmahmood <https://github.com/asaadmahmood>`_, `aswathkk <https://github.com/aswathkk>`_, `crspeller <https://github.com/crspeller>`_, `deanwhillier <https://github.com/deanwhillier>`_, `devinbinnie <https://github.com/devinbinnie>`_, `esethna <https://github.com/esethna>`_, `jespino <https://github.com/jespino>`_, `JtheBAB <https://github.com/JtheBAB>`_, `manland <https://github.com/manland>`_, `mickmister <https://github.com/mickmister>`_, `MikeNicholls <https://github.com/MikeNicholls>`_, `PeterDaveHello <https://github.com/PeterDaveHello>`_, `sethitow <https://github.com/sethitow>`_, `steevsachs <https://github.com/steevsachs>`_, `svelle <https://github.com/svelle>`_, `wget <https://github.com/wget>`_, `Willyfrog <https://github.com/Willyfrog>`_, `yuya-oc <https://github.com/yuya-oc>`_
 
+----
+
 Release v4.2.3
 ----------------------------
 
@@ -973,6 +1018,8 @@ All Platforms
 
 - Fixed an issue where the server URL entry prior to v4.2.2 could include malformed URLs that failed in v4.2.2 and later due to stricter validation. https://github.com/mattermost/desktop/pull/1015
 
+----
+
 Release v4.2.2
 ----------------------------
 
@@ -987,6 +1034,8 @@ All Platforms
 ^^^^^^^^^^^^^
 
 - Mattermost v4.2.2 contains high level security fixes. `Upgrading <https://mattermost.com/apps>`_ is recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`_ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.com/security-vulnerability-report/>`_.
+
+----
 
 Release v4.2.1
 ----------------------------
@@ -1004,6 +1053,8 @@ All Platforms
 ^^^^^^^^^^^^^
 
 - Fixed an issue where some links opened in a smaller window in the Mattermost app. This issue only affected installations with a `Site URL </administration/config-settings.html#site-url>`_ configured to use a subpath.
+
+----
 
 Release v4.2.0
 ----------------------------
@@ -1057,6 +1108,8 @@ Many thanks to all our contributors. In alphabetical order:
 
 - `danmaas <https://github.com/danmaas>`__, `hmhealey <https://github.com/hmhealey>`__, `j1mc <https://github.com/j1mc>`__, `jasonblais <https://github.com/jasonblais>`__, `lieut-data <https://github.com/lieut-data>`__, `rodcorsi <https://github.com/rodcorsi>`__, `scherno2 <https://github.com/scherno2>`__, `sudheerDev <https://github.com/sudheerDev>`__, `svelle <https://github.com/svelle>`__, `torlenor <https://github.com/torlenor>`__, `yuya-oc <https://github.com/yuya-oc>`__
 
+----
+
 Release v4.1.2
 ----------------------------
 
@@ -1073,6 +1126,8 @@ All Platforms
 ^^^^^^^^^^^^^
 
 - Fixed an issue where the popup dialog to authenticate a user to their proxy or server didn't work.
+
+----
 
 Release v4.1.1
 ----------------------------
@@ -1189,6 +1244,8 @@ Many thanks to all our contributors. In alphabetical order:
 
 - `Autre31415 <https://github.com/Autre31415>`__, `dmeza <https://github.com/dmeza>`__, `hmhealey <https://github.com/hmhealey>`__, `jasonblais <https://github.com/jasonblais>`__, `kethinov <https://github.com/kethinov>`__, `lieut-data <https://github.com/lieut-data>`__, `lip-d <https://github.com/lip-d>`__, `mkraft <https://github.com/mkraft>`__, `yuya-oc <https://github.com/yuya-oc>`__
 
+----
+
 Release v4.0.1
 --------------
 
@@ -1208,6 +1265,8 @@ All Platforms
 ^^^^^^^^^^^^^
 
 - Disabled Certificate Transparency verification that produced unnecessary certificate errors.
+
+----
 
 Release 4.0.0
 --------------
@@ -1606,14 +1665,14 @@ Contributors
 
 Many thanks to all our contributors. In alphabetical order:
 
--  `itsmartin <https://github.com/itsmartin>`__,
-   `jasonblais <https://github.com/jasonblais>`__,
-   `jcomack <https://github.com/jcomack>`__,
-   `jnugh <https://github.com/jnugh>`__,
-   `kytwb <https://github.com/kytwb>`__,
-   `magicmonty <https://github.com/magicmonty>`__,
-   `Razzeee <https://github.com/Razzeee>`__,
-   `yuya-oc <https://github.com/yuya-oc>`__
+- `itsmartin <https://github.com/itsmartin>`__,
+- `jasonblais <https://github.com/jasonblais>`__,
+- `jcomack <https://github.com/jcomack>`__,
+- `jnugh <https://github.com/jnugh>`__,
+- `kytwb <https://github.com/kytwb>`__,
+- `magicmonty <https://github.com/magicmonty>`__,
+- `Razzeee <https://github.com/Razzeee>`__,
+- `yuya-oc <https://github.com/yuya-oc>`__
 
 Thanks also to those who reported bugs that benefited the release, in alphabetical order:
 
@@ -1729,15 +1788,15 @@ Contributors
 
 Many thanks to all our contributors. In alphabetical order:
 
--  `akashnimare <https://github.com/akashnimare>`__,
-   `asaadmahmood <https://github.com/asaadmahmood>`__,
-   `jasonblais <https://github.com/jasonblais>`__,
-   `jgis <https://github.com/jgis>`__,
-   `jnugh <https://github.com/jnugh>`__,
-   `Razzeee <https://github.com/Razzeee>`__,
-   `St-Ex <https://github.com/St-Ex>`__,
-   `timroes <https://github.com/timroes>`__,
-   `yuya-oc <https://github.com/yuya-oc>`__
+- `akashnimare <https://github.com/akashnimare>`__,
+- `asaadmahmood <https://github.com/asaadmahmood>`__,
+- `jasonblais <https://github.com/jasonblais>`__,
+- `jgis <https://github.com/jgis>`__,
+- `jnugh <https://github.com/jnugh>`__,
+- `Razzeee <https://github.com/Razzeee>`__,
+- `St-Ex <https://github.com/St-Ex>`__,
+- `timroes <https://github.com/timroes>`__,
+- `yuya-oc <https://github.com/yuya-oc>`__
 
 --------------
 
@@ -1853,13 +1912,13 @@ Contributors
 Many thanks to all our contributors. In alphabetical order:
 
 -  `CarmDam <https://github.com/CarmDam>`__,
-   `it33 <https://github.com/it33>`__,
-   `jasonblais <https://github.com/jasonblais>`__,
-   `jnugh <https://github.com/jnugh>`__,
-   `magicmonty <https://github.com/magicmonty>`__,
-   `MetalCar <https://github.com/MetalCar>`__,
-   `Razzeee <https://github.com/Razzeee>`__,
-   `yuya-oc <https://github.com/yuya-oc>`__
+- `it33 <https://github.com/it33>`__,
+- `jasonblais <https://github.com/jasonblais>`__,
+- `jnugh <https://github.com/jnugh>`__,
+- `magicmonty <https://github.com/magicmonty>`__,
+- `MetalCar <https://github.com/MetalCar>`__,
+- `Razzeee <https://github.com/Razzeee>`__,
+- `yuya-oc <https://github.com/yuya-oc>`__
 
 --------------
 
@@ -1926,12 +1985,12 @@ Contributors
 Many thanks to all our contributors. In alphabetical order:
 
 -  `asaadmahmood <https://github.com/asaadmahmood>`__,
-   `jeremycook <https://github.com/jeremycook>`__,
-   `jnugh <https://github.com/jnugh>`__,
-   `jwilander <https://github.com/jwilander>`__,
-   `mgielda <https://github.com/mgielda>`__,
-   `lloeki <https://github.com/lloeki>`__,
-   `yuya-oc <https://github.com/yuya-oc>`__
+- `jeremycook <https://github.com/jeremycook>`__,
+- `jnugh <https://github.com/jnugh>`__,
+- `jwilander <https://github.com/jwilander>`__,
+- `mgielda <https://github.com/mgielda>`__,
+- `lloeki <https://github.com/lloeki>`__,
+- `yuya-oc <https://github.com/yuya-oc>`__
 
 Release v1.1.1 (Beta)
 -----------------------------
@@ -1957,10 +2016,10 @@ Changes
 All platforms
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
--  Rename project from ``electron-mattermost`` to ``desktop``
--  Rename the executable file from ``electron-mattermost`` to ``Mattermost``
--  The configuration directory is also different from previous versions.
--  Should execute following command to take over ``config.json``.
+- Rename project from ``electron-mattermost`` to ``desktop``
+- Rename the executable file from ``electron-mattermost`` to ``Mattermost``
+- The configuration directory is also different from previous versions.
+- Should execute following command to take over ``config.json``.
 
    -  Windows:
       ``mkdir %APPDATA%\Mattermost and copy %APPDATA%\electron-mattermost\config.json %APPDATA%\Mattermost\config.json``

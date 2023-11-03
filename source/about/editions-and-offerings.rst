@@ -86,7 +86,7 @@ This offering includes all the features of Mattermost Free, plus:
 - `Advanced team permissions </onboard/advanced-permissions.html#team-override-schemes-e20>`__.
 - `Read-only announcement channels </manage/team-channel-members.html#channel-moderation-e20>`__.
 - `System-wide announcement banners </manage/announcement-banner.html>`__.
-- O365 integration with `Microsoft Teams Calling <https://mattermost.com/marketplace/microsoft-teams-meetings/>`_ and `Jira multi-server <https://mattermost.com/marketplace/jira-plugin/>`_.
+- O365 integration with `Microsoft Teams Calling <https://mattermost.com/marketplace/microsoft-teams-meetings/>`__ and `Jira multi-server <https://mattermost.com/marketplace/jira-plugin/>`__.
 - `Next business day support via online ticketing system <https://mattermost.com/support/>`__.
 
 See a complete list of features `here <https://mattermost.com/pricing>`__.

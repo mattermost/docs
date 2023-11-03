@@ -1,5 +1,4 @@
 :nosearch:
-..  _install-rhel-7-mattermost:
 
 Install Mattermost Server
 -------------------------

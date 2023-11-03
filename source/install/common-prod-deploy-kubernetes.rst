@@ -1,5 +1,6 @@
 :orphan:
 :nosearch:
+
 .. This page is intentionally not accessible via the LHS navigation pane because it's common content included on other docs pages.
 
 You can install and deploy a production-ready Mattermost system on a Kubernetes cluster using the Mattermost Kubernetes Operator in practically any environment with less IT overhead and more automation.

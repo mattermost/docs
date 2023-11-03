@@ -1,5 +1,6 @@
 :orphan:
 :nosearch:
+
 .. This page is intentionally not accessible via the LHS navigation pane because it's common content included on other docs pages.
 
 You'll need `Docker Engine <https://docs.docker.com/engine/install/>`__ and `Docker Compose <https://docs.docker.com/compose/install/>`__ (release 1.28 or later) Follow the steps in the `Mattermost Docker Setup README <https://github.com/mattermost/docker#mattermost-docker-setup>`__ or follow the steps below.

@@ -1,5 +1,3 @@
-.. _install-kubernetes:
-
 Install Mattermost on Kubernetes
 ================================
 
