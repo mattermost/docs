@@ -2841,7 +2841,7 @@ kbd {
 	background: var(--neutral-50, #F4F4F6);
 }
 
-@media (max-width: 760px) {
+@media (max-width: 960px) {
 	.mm-badge--academy {
 		display: flex;
 		align-items: center;
@@ -2858,6 +2858,12 @@ kbd {
 	margin: 0 !important;
 	border-top-left-radius: 6px;
 	border-bottom-left-radius: 6px;
+}
+
+@media (min-width: 769px) and (max-width: 960px) {
+	.mm-badge.mm-badge--academy img {
+		height: 85px;
+	}
 }
 
 .mm-badge--academy span {
