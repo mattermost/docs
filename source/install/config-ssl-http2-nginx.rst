@@ -3,8 +3,6 @@
 
 .. This page is intentionally not accessible via the LHS navigation pane because it's common content included on other docs pages.
 
-.. _config-ssl-http2-nginx:
-
 Configure NGINX with SSL and HTTP/2
 -----------------------------------
 

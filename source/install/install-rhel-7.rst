@@ -1,4 +1,4 @@
-:orphan:
+:orphan: :nosearch:
 
 Installing Mattermost on RHEL 7
 =================================

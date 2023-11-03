@@ -1,3 +1,5 @@
+:orphan:
+
 Install the Mattermost App in Microsoft Teams
 =============================================
 

@@ -1,8 +1,6 @@
 :orphan:
 :nosearch:
 
-.. _manage_kubernetes:
-
 Managing the Mattermost Kubernetes operator
 ============================================
 

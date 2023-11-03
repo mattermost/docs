@@ -1,3 +1,5 @@
+:orphan:
+
 Mattermost for Microsoft Teams
 ==============================
 

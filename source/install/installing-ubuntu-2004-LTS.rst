@@ -1,3 +1,5 @@
+:orphan:
+
 Install Mattermost on Ubuntu 20.04 LTS
 ======================================
 

@@ -1,5 +1,3 @@
-..  _requirements:
-
 Software and hardware requirements
 ==================================
 

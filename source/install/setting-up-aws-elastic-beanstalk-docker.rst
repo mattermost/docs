@@ -1,5 +1,3 @@
-..  _docker-ebs:
-
 AWS Elastic Beanstalk Docker setup
 ==================================
 

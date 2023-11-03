@@ -1,3 +1,5 @@
+:orphan:
+
 Prepare your Mattermost MySQL database
 ======================================
 

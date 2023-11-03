@@ -1,3 +1,5 @@
+:orphan:
+
 Installing Mattermost on Debian Buster
 =======================================
 

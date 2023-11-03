@@ -1,5 +1,3 @@
-..  _troubleshooting:
-
 Troubleshooting Mattermost issues
 =================================
 

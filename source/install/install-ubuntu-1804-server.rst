@@ -1,4 +1,4 @@
-:nosearch:
+:orphan: :nosearch:
 
 Install Ubuntu Server 18.04 LTS
 --------------------------------

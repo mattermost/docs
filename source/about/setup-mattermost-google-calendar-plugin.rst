@@ -1,3 +1,5 @@
+:orphan:
+
 Set up the Mattermost Google Calendar plugin
 =============================================
 

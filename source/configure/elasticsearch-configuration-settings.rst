@@ -550,7 +550,7 @@ Live indexing batch size
 2. Decide the acceptable index window for your environment, and divide your average posts per minute by that. We suggest 10-20 seconds. Assuming you have ``600`` posts per minute on average, and you want to index every 20 seconds (``60 seconds / 20 seconds = 3```) you would calculate ``600 / 3`` to come to the number ``200``. After 200 posts, Mattermost will index the posts into Elasticsearch. So, on average, there would be a 20-second delay in searchability.
 
 3. Edit the ``config.json`` or run mmctl to modify the ``LiveIndexingBatchSize`` setting
-  
+
     **In the ``config.json``**
 
     .. code-block:: JSON
@@ -560,7 +560,6 @@ Live indexing batch size
           "LiveIndexingBatchSize": 200
         }
       }
-    
 
     **Via mmctl**
 

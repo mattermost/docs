@@ -1,3 +1,5 @@
+:orphan:
+
 Install the Mattermost for Microsoft Teams plugin
 =================================================
 

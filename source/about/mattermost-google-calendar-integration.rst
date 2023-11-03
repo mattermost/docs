@@ -1,3 +1,5 @@
+:orphan:
+
 Mattermost Google Calendar integration
 ======================================
 

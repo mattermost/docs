@@ -1,4 +1,4 @@
-:nosearch:
+:orphan: :nosearch:
 
 Install PostgreSQL database server
 ----------------------------------

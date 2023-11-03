@@ -13,7 +13,7 @@ This feature was developed to a large extent by community contributions and we'd
 mmctl usage notes
 -----------------
 
-- System Admins have two ways to run ``mmctl`` commands: by downloading ``mmctl`` from the release URLs, which you can find in the :ref:`installation instructions <install-mmctl-options>`, or by building it directly, for which you can check the :ref:`build instructions <build-mmctl>` below. The source code lives in the `server/cmd/mmctl directory within the mattermost repository <https://github.com/mattermost/mattermost/tree/master/server/cmd/mmctl>`__.
+- System Admins have two ways to run ``mmctl`` commands: by downloading ``mmctl`` from the release URLs, which you can find in the `installation instructions <#install-mmctl>`__, or by building it directly, for which you can check the `build instructions <#build-mmctl>`__ below. The source code lives in the `server/cmd/mmctl directory within the mattermost repository <https://github.com/mattermost/mattermost/tree/master/server/cmd/mmctl>`__.
 - ``mmctl`` also comes bundled with the Mattermost distribution, and is located in the ``bin`` folder of the installation, next to the ``CLI``.
 
   - We recommend you add the path to the Mattermost ``bin`` folder into your ``$PATH`` environment variable. This ensures that you can run mmctl commands locally regardless of your current directory location.
@@ -63,16 +63,16 @@ mmctl commands
 
 .. code-block:: sh
 
-       --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
-       --disable-pager                disables paged output
-       -h, --help                     help for mmctl
-       --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
-       --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
-       --json                         the output format will be in json format
-       --local                        allows communicating with the server through a unix socket
-       --quiet                        prevent mmctl to generate output for the commands
-       --strict                       will only run commands if the mmctl version matches the server one
-       --suppress-warnings            disables printing warning messages
+   --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
+   -h, --help                     help for mmctl
+   --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+   --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
+   --json                         the output format will be in json format
+   --local                        allows communicating with the server through a unix socket
+   --quiet                        prevent mmctl to generate output for the commands
+   --strict                       will only run commands if the mmctl version matches the server one
+   --suppress-warnings            disables printing warning messages
 
 Install mmctl
 -------------
@@ -3521,21 +3521,21 @@ Validate an import file.
 
 .. code-block:: sh
 
-     mmctl import validate [filepath] [flags]
+   mmctl import validate [filepath] [flags]
 
 **Examples**
 
 .. code-block:: sh
 
-     import validate import_file.zip --team myteam --team myotherteam
+   import validate import_file.zip --team myteam --team myotherteam
 
 **Options**
 
 .. code-block:: sh
 
-      -h, --help              help for validate
-      --ignore-attachments    Don't check if the attached files are present in the archive
-      --team stringArray      Predefined team[s] to assume as already present on the destination server. Implies ``--check-missing-teams``. The flag can be repeated.
+   -h, --help              help for validate
+   --ignore-attachments    Don't check if the attached files are present in the archive
+   --team stringArray      Predefined team[s] to assume as already present on the destination server. Implies ``--check-missing-teams``. The flag can be repeated.
 
 **Options inherited from parent commands**
 

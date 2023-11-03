@@ -1,3 +1,5 @@
+:orphan:
+
 Light install guide
 ===================
 

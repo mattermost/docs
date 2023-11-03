@@ -1,4 +1,4 @@
-:nosearch:
+:orphan: :nosearch:
 
 Install MySQL database server
 ------------------------------

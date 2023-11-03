@@ -1,4 +1,4 @@
-:nosearch:
+:orphan: :nosearch:
 
 Install Red Hat Enterprise Linux 7
 -----------------------------------

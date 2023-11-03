@@ -172,7 +172,7 @@ With a new database installation, the easiest solution for an unknown password i
 
 - :samp: `create user 'mmuser'@'%' identified by '{mmuser-password}';`
 
-If you recreate ``mmuser``, ensure that this user has rights to the ``mattermost`` database by following the instructions given in :ref: `mysql_grants`.
+If you recreate ``mmuser``, ensure that this user has rights to the ``mattermost`` database by following the instructions in the `granting privileges to mmuser <#granting-privileges-to-mmuser>`__ section below.
 
 Insufficient user privileges
 ----------------------------
