@@ -2850,6 +2850,7 @@ kbd {
 
 .mm-badge--academy:hover {
 	background: var(--neutral-100, #E8E9ED);
+	border-color: #DDDFE4;
 }
 
 .mm-badge.mm-badge--academy img {
