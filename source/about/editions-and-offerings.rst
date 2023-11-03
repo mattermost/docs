@@ -58,7 +58,7 @@ Mattermost Free is available to our self-hosted community through both our open 
 
 .. important::
 
-    For teams of less than 50 users, a standalone, single-node deployment of Mattermost Team Edition with frequent backups is appropriate.
+    For teams of less than 50 users, a standalone, single-node deployment of `Mattermost Team Edition <#mattermost-team-edition>`__ with frequent backups is appropriate.
     
     For teams larger than 50 users, it's strongly advised to deploy Mattermost with `Mattermost Professional <#mattermost-professional>`__ or `Mattermost Enterprise <#mattermost-enterprise>`__ to deliver a more secure, reliable, scalable, and resilient service.
 
