@@ -18,6 +18,9 @@ Search for messages
 
 Use Mattermost search to find messages, replies, and the contents of files shared across all channels you're a member of in your team's conversation history. You can also search by `hashtags <#hashtags>`__ or perform more advanced searches using `search modifiers <#search-modifiers>`__.
 
+.. include:: ../_static/badges/academy-search.rst
+  :start-after: :nosearch:
+
 Search for message and files 
 -----------------------------
 
