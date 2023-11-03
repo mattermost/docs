@@ -1,10 +1,6 @@
 Notifications questions
 =======================
 
-.. contents:: On this page
-    :backlinks: top
-    :depth: 2
-
 What determines if a desktop notification should be triggered?
 --------------------------------------------------------------
 

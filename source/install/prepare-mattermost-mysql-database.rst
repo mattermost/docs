@@ -4,11 +4,6 @@ Prepare your Mattermost MySQL database
 .. include:: ../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
 
-.. contents:: On this page
-  :backlinks: top
-  :local:
-  :depth: 1
-
 .. important::
     
     PostgreSQL is our preferred database of choice. See the `database software </install/software-hardware-requirements.html#database-software>`__ documentation for details on database version support.

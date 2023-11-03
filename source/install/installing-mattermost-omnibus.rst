@@ -34,11 +34,6 @@ Install Mattermost Omnibus
 
   </div>
 
-.. contents:: On this page
-  :backlinks: top
-  :local:
-  :depth: 1
-
 .. note::
 
  Omnibus supports Ubuntu distributions only.

@@ -3,10 +3,6 @@ Configure SAML with Okta
 
 The following process provides steps to configure SAML 2.0 with Okta for Mattermost.
 
-.. contents:: On this page
-  :backlinks: top
-  :local:
-
 .. include:: sso-saml-before-you-begin.rst
 	:start-after: :nosearch:
 

@@ -8,10 +8,7 @@ Chinese, Japanese and Korean search
 
 Enabling search for Chinese, Japanese and Korean (CJK) requires special configuration, since these languages do not contain spaces.
 
-- See `database requirements documentation </install/software-hardware-requirements.html>`__ for how to set up search for these languages.
-
-.. contents::
-    :backlinks: top
+See `database requirements documentation </install/software-hardware-requirements.html>`__ for how to set up search for these languages.
 
 Below is additional information on how to configure the database for different languages.
 

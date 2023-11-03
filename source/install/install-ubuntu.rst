@@ -40,11 +40,6 @@ You can install the Mattermost Server using our ``.deb`` signed packages using t
 
   If you are running the Mattermost Server and database on a single system, we recommend the `Mattermost Omnibus install method </install/installing-mattermost-omnibus.html>`__ as this greatly reduces setup and ongoing maintenance.
 
-.. contents:: On this page
-  :backlinks: top
-  :local:
-  :depth: 1
-
 .. note::
   
   You need a PostgreSQL database. See the `database preparation </install/prepare-mattermost-database.html>`__ documentation for details on this prerequisite.

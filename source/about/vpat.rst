@@ -14,9 +14,6 @@ The following Voluntary Product Accessibility Template for 508 Compliance is com
 - **Vendor Contact Email**: compliance[at]mattermost.com
 - **Vendor Contact Telephone**: Please `contact Mattermost, Inc. <https://mattermost.com/contact-us/>`__ for telephone access. 
 
-.. contents:: On this page
-    :backlinks: top
-
 Summary 
 -------
 

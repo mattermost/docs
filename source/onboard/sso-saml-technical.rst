@@ -22,10 +22,6 @@ This is currently supported for Okta and Microsoft ADFS server 2012 and 2016. On
 
 For detailed steps, view the :doc:`Configure SAML with Okta <sso-saml-okta>`, :doc:`Configure SAML with Microsoft ADFS for Windows Server 2012 <sso-saml-adfs>`, and :doc:`Configure SAML with Microsoft ADFS using Microsoft Windows Server 2016 <sso-saml-adfs-msws2016>` documentation. 
 
-.. contents:: On this page
-  :backlinks: top
-  :local:
-
 SAML providers
 --------------
 

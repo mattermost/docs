@@ -11,9 +11,6 @@ This guide provides steps to install the MSI and use Group Policies in Windows P
 .. note::
     The Mattermost MSI installer and Group Policy (GPO) definitions are in Beta. If you are using this installer or GPOs and have feedback, particularly if you are an organization executing remote deployments, please contact us in the `MSI Installer channel on our Community server <https://community.mattermost.com/core/channels/msi-installer>`_ or on our `community forum <https://forum.mattermost.com/>`_. We hope to promote this installer out of Beta when the known issues are addressed and we are confident that the various deployment scenarios expected in production environments are tested sufficiently with the help of organizations using this Beta. Feedback is highly appreciated.
 
-.. contents:: On this page
-    :backlinks: top
-
 Download group policy and MSI installer files
 ----------------------------------------------
 

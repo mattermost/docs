@@ -1,10 +1,6 @@
 Self-hosted subscriptions
 =========================
 
-.. contents:: On this page
-    :backlinks: top
-    :depth: 2
-
 Buy a subscription
 ------------------
 

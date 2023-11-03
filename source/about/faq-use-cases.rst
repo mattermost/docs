@@ -1,10 +1,6 @@
 Use case questions
 ==================
 
-.. contents:: On this page
-    :backlinks: top
-    :depth: 2
-
 Does Mattermost support external guests?
 ----------------------------------------
 

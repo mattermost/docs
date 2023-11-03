@@ -15,10 +15,6 @@ Mattermost keyboard shortcuts
 
 Mattermost keyboard shortcuts help you make a more efficient use of your keyboard when using Mattermost in a web browser or the desktop app.
 
-.. contents:: On this page
-    :backlinks: top
-    :local:
-
 .. tip::
 
   - In Mattermost, display a list of available keyboard shortcuts by pressing :kbd:`Ctrl` :kbd:`/` on Windows or Linux, pressing :kbd:`⌘` :kbd:`/` on macOS, or using the ``/shortcuts`` slash command.

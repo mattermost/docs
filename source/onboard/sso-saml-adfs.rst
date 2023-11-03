@@ -3,10 +3,6 @@ Configure SAML with Microsoft ADFS for Windows Server 2012
 
 The following process provides steps to configure SAML 2.0 with Microsoft ADFS for Mattermost.
 
-.. contents:: On this page
-  :backlinks: top
-  :local:
-
 .. include:: sso-saml-before-you-begin.rst
 	:start-after: :nosearch:
 

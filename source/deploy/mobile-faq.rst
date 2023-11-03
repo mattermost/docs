@@ -1,10 +1,6 @@
 Mobile apps FAQ
 ===============
 
-.. contents:: On this page
-  :backlinks: top
-  :local:
-
 What versions of Mattermost support the mobile v2 app?
 ------------------------------------------------------
 

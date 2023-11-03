@@ -10,9 +10,6 @@ If you want to check that the version of Mattermost you are installing is the of
 
    Support for Mattermost Server v7.8 :doc:`Extended Support Release </upgrade/extended-support-release>` is coming to the end of its life cycle on November 15, 2023. Upgrading to Mattermost Server v8.1 :doc:`Extended Support Release </upgrade/extended-support-release>` or later is recommended.
 
-.. contents:: On this page
-    :backlinks: top
-
 Mattermost Enterprise Edition
 ------------------------------
 

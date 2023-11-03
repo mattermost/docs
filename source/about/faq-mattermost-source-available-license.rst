@@ -3,10 +3,6 @@
 Mattermost Source Available License questions
 =============================================
 
-.. contents:: On this page
-    :backlinks: top
-    :depth: 2
-
 What is the Mattermost Source Available License?
 ------------------------------------------------
 

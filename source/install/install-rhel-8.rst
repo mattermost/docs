@@ -36,11 +36,6 @@ Install Mattermost on RHEL
 
   </div>
 
-.. contents:: On this page
-  :backlinks: top
-  :local:
-  :depth: 1
-
 .. note::
   
   You need a PostgreSQL database. See the `database preparation </install/prepare-mattermost-database.html>`__ documentation for details on this prerequisite.

@@ -10,11 +10,6 @@ You can `download the apps directly from our download page <https://mattermost.c
 
 This page provides a guide on how to customize and distribute your own Mattermost desktop app, and how to distribute the official Windows desktop app silently to end users, pre-configured with the server URL and other app settings.
 
-.. contents:: On this page
-  :depth: 1
-  :local:
-  :backlinks: entry
-
 Custom build configuration
 --------------------------
 

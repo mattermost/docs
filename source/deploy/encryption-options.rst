@@ -8,10 +8,6 @@ Mattermost provides encryption-in-transit and encryption-at-rest capabilities. T
 
 Encryption is not required for GDPR, although it can be used as an additional safeguard against data breach.
 
-.. contents:: On this page
-  :backlinks: top
-  :local:
-
 Encryption-in-transit
 ---------------------
 

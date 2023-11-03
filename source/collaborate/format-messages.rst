@@ -49,11 +49,6 @@ Format messages
 .. |message-priority-icon| image:: ../images/Priority-Message-Icon.svg
   :alt: Mark a message as important or urgent using the Priority Message icon.
 
-.. contents:: On this page
-  :backlinks: top
-  :local:
-  :depth: 2
-
 Use the messaging formatting toolbar
 ------------------------------------
 

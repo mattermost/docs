@@ -11,9 +11,6 @@ Install a production-ready Mattermost system on up to three machines.
 .. include:: install-common-intro.rst
   :start-after: :nosearch:
 
-.. contents:: Install and configure the components in the following order.
-  :depth: 2
-
 .. include:: install-tar.rst
 
 Install a database

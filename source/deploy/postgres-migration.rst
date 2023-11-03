@@ -12,11 +12,6 @@ To streamline the migration process and alleviate any potential challenges, we h
 
    These guidelines are in development and we are working to streamline the migration process. We plan to improve this guide by updating it as new information becomes available. Please use this guide as a starting point and always backup your database before starting a migration.
 
-.. contents:: On this page
-  :backlinks: top
-  :local:
-  :depth: 1
-
 Required tools
 --------------
 

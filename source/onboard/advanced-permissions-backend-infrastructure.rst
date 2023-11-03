@@ -6,10 +6,6 @@ Advanced permissions: backend infrastructure
 
 This document outlines the backend server infrastructure for permissions in Mattermost and is recommended only for technical Admins or developers looking to make modifications to their installation.
 
-.. contents:: On this page
-  :backlinks: top
-  :local:
-
 Entity definitions
 ------------------
 

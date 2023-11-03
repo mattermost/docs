@@ -1,10 +1,6 @@
 Mattermost community questions
 ==============================
 
-.. contents:: On this page
-    :backlinks: top
-    :depth: 2
-
 How can I contribute to Mattermost?
 -----------------------------------
 

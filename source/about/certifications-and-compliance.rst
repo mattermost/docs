@@ -1,10 +1,6 @@
 Certifications and compliance overview
 ========================================
 
-.. contents:: On this page
-    :backlinks: top
-    :depth: 2
-
 This overview summarizes how Mattermost can help users in support of their internal compliance initiatives, including:
 
 - GDPR Compliance

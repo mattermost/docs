@@ -1,10 +1,6 @@
 Mattermost editions and plans 
 =============================
 
-.. contents:: On this page
-    :backlinks: top
-    :depth: 2
-
 Mattermost is an open core platform. 
 
 This means we develop both an open source, self-hosted edition of our software provided free to our community, as well as a commercial edition that extends and enhances our open source software with paid, subscription-based offerings available both in self-hosted and cloud deployment modes.
