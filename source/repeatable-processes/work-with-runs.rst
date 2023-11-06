@@ -37,5 +37,5 @@ Send outgoing webhooks
 2. Select **Run details**.
 3. In the **Run details** page, scroll down to **Actions**.
 4. Add your webhook URLs in the field provided.
-    - You can turn off this option using the togggle.
+    - You can turn off this option using the toggle.
 5. Select **Save**.

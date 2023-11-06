@@ -65,6 +65,26 @@ By default, Mattermost shows you system messages when users join or leave channe
 
         This option isn't something you can set using the mobile app.
 
+Deactivate account
+------------------
+
+You can deactivate your account if you access Mattermost using an email address and password, and when your system admin has `enabled your ability to do so </configure/experimental-configuration-settings.html#exp-enableaccountdeactivation>`__. Deactivating your account removes your ability to access Mattermost, and disables all email and mobile notifications.
+
+.. important::
+
+    - If you deactive your account, you must contact your system admin to have it reactivated.
+    - If you access Mattermost using another authentication method, such as AD/LDAP or SAML, or use accounts that don't have this setting available, contact your system admin to deactivate your account in the System Console.
+
+.. tabs::
+
+    .. tab:: Web/Desktop
+
+        Select **Deactivate Account** to deactivate your Mattermost user account.
+
+    .. tab:: Mobile
+
+        This option isn't applicable to the mobile app.
+
 Performance debugging
 ---------------------
 
@@ -115,26 +135,6 @@ By default, `message drafts </send-messages.html#draft-messages>`__ are synchron
     .. tab:: Mobile
 
         This option isn't applicable to the mobile app.
-
-Deactivate account
-~~~~~~~~~~~~~~~~~~
-
-You can deactivate your account if you access Mattermost using an email address, and when your system admin has `enabled your ability to do so </configure/experimental-configuration-settings.html#exp-enableaccountdeactivation>`__. Deactivating your account removes your ability to access Mattermost, and disables all email and mobile notifications. 
-
-.. important::
-
-    - If you deactive your account, you must contact your system admin to have it reactivated.
-    - If you access Mattermost using another authentication method, such as AD/LDAP or SAML, or use accounts that don't have this setting available, contact your system admin to deactivate your account in the System Console.
-
-.. tabs::
-
-    .. tab:: Web/Desktop
-
-        Select **Deactivate Account** to deactivate your Mattermost user account.
-
-    .. tab:: Mobile
-
-    This option isn't applicable to the mobile app.
 
 Delete local files
 ------------------
