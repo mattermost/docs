@@ -70,7 +70,7 @@ Features include:
 - Pre-packaged integrations with most common developer tools, including Jira, Confluence, GitHub, GitLab, CircleCI, Zoom, Jitsi, and more.
 - Tools for `custom branding </configure/custom-branding-tools.html>`__ and `themes </messaging/customizing-theme-colors.html>`__.
 - `Multi-factor authentication </onboard/multi-factor-authentication.html>`__.
-- `Single Sign-on with GitLab </onboard/sso-gitlab.html>`__, `Google </onboard/sso-google.html>`__, or `OpenID Connect </onboard/sso-openidconnect.html>`__.
+- Single Sign-on with `GitLab </onboard/sso-gitlab.html>`__ using the OAuth 2.0 standard.
 - `Granular system permissions </onboard/advanced-permissions.html>`__.
 - Highly customizable `third-party bots, integrations <https://mattermost.com/marketplace/#publicApps>`__, and `command line tools </manage/mmctl-command-line-tool.html>`__.
 - Extensive integration support via `webhooks, APIs, drivers <https://developers.mattermost.com/integrate/other-integrations/>`__, and `third-party extensions <https://mattermost.com/marketplace/>`__.
@@ -91,7 +91,7 @@ This offering includes all the features of Mattermost Free, plus:
 
 - `Guest access </onboard/guest-accounts.html>`__ and `custom user groups </collaborate/organize-using-custom-user-groups.html>`__.
 - `Active Directory/LDAP Single Sign-on and user synchronization </onboard/ad-ldap.html>`__.
-- Single Sign-on with `SAML </onboard/sso-saml.html>`__ or `Office365 </onboard/sso-office.html>`__.
+- Single Sign-on with `GitLab </onboard/sso-gitlab.html>`__ using the OpenID Connect standard, `Google </onboard/sso-google.html>`__, `OpenID Connect </onboard/sso-openidconnect.html>`__, `SAML </onboard/sso-saml.html>`__ or `Office365 </onboard/sso-office.html>`__.
 - `MFA enforcement </onboard/multi-factor-authentication.html#enforcing-mfa-e10>`__.
 - `Advanced team permissions </onboard/advanced-permissions.html#team-override-schemes-e20>`__.
 - `Read-only announcement channels </manage/team-channel-members.html#channel-moderation-e20>`__.
