@@ -3,6 +3,9 @@
 
 Configure the database environment in which Mattermost is deployed by going to **System Console > Environment > Database**, or by editing the ``config.json`` file as described in the following tables. Changes to configuration settings in this section require a server restart before taking effect.
 
+.. include:: ../_static/badges/academy-mattermost-database.rst
+  :start-after: :nosearch:
+
 .. config:setting:: database-drivername
   :displayname: Driver name (Database)
   :systemconsole: N/A
