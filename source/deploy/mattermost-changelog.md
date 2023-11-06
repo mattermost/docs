@@ -81,4 +81,4 @@ From Mattermost v9.2, this changelog summarizes updates for the latest cloud and
  - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
 
 ### Contributors
- - 
+ - To be added.
