@@ -90,6 +90,8 @@ redirects = {
         "https://github.com/mattermost/openops#readme",
 "about/mattermost-customizable-ai-bot-framework.html":
         "https://github.com/mattermost/openops#readme",
+"about/install-mattermost-app-in-microsoft-teams.html":
+        "https://docs.mattermost.com/about/embed-mattermost-within-microsoft-teams",
 
 # Administration redirects
 "administration/announcement-banner.html":
@@ -790,6 +792,10 @@ redirects = {
         "https://docs.mattermost.com/deploy/mobile-faq.html",
 "cloud/cloud-user-management.html":
         "https://docs.mattermost.com/channels/manage-channel-members.html",
+
+# Collaborate redirects
+"collaborate/collaborate-using-mattermost-for-microsoft-teams.html":
+        "https://docs.mattermost.com/collaborate/collaborate-within-connected-microsoft-teams.html",
 
 # Compliance redirects
 "comply/compliance-reporting-oversight":

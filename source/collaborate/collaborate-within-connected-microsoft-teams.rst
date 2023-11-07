@@ -1,5 +1,5 @@
-Collaborate using Mattermost for MS Teams
-=========================================
+Collaborate within connected Microsoft Teams
+============================================
 
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
@@ -7,9 +7,7 @@ Collaborate using Mattermost for MS Teams
 .. |plus-icon| image:: ../images/plus_F0415.svg
   :alt: Open menus using the plus icon.
 
-`Mattermost for Microsoft Teams </about/mattermost-for-microsoft-teams.html>`__ enables you to collaborate with technical & operations teams seamlessly through the Mattermost app, without leaving Microsoft Teams.
-
-Join us on `Mattermost Academy <https://academy.mattermost.com/>`__ to enroll in the `Mattermost for Microsoft Teams <https://academy.mattermost.com/p/mattermost-for-microsoft-teams>`__ training course where you'll learn how to start collaborating with colleagues across both systems.
+The `Mattermost for Microsoft Teams </about/mattermost-for-microsoft-teams.html>`__ integration enables you to collaborate with technical & operations teams seamlessly through the Mattermost app, without leaving Microsoft Teams.
 
 Connect your Mattermost account to your MS Teams account
 ---------------------------------------------------------
@@ -67,12 +65,3 @@ You have many ways to collaborate with colleagues in linked channels using a web
 - `Edit or delete sent messages </collaborate/send-messages.html#edit-or-delete-messages>`__
 
 No matter which tool you use, your message is visible across both Mattermost and Microsoft Teams.
-
-Demonstration: Mattermost embedded in Microsoft Teams
-------------------------------------------------------
-
-Check out this `YouTube demo <https://youtu.be/Mg-stF7_Bjk>`__, from Doug Lauder, Senior Software Design Engineer at Mattermost, to learn more about using the embedded Mattermost instance within Microsoft Teams:
-
-.. raw:: html
-  
-   <iframe width="560" height="315" src="https://www.youtube.com/embed/Mg-stF7_Bjk" alt="Install Matterrmost for Microsoft Teams plugin" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
