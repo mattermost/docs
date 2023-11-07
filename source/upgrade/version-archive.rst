@@ -16,7 +16,7 @@ If you want to check that the version of Mattermost you are installing is the of
 Mattermost Enterprise Edition
 ------------------------------
 
-Mattermost Enterprise Edition v9.2.1 - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v9-2-feature-release>`__ - `Download <https://releases.mattermost.com/9.2.1/mattermost-9.2.1-linux-amd64.tar.gz?src=arc>`__
+Mattermost Enterprise Edition v9.2.1 - `View Changelog <https://docs.mattermost.com/deploy/mattermost-changelog.html#release-v9-2-feature-release>`__ - `Download <https://releases.mattermost.com/9.2.1/mattermost-9.2.1-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/9.2.1/mattermost-9.2.1-linux-amd64.tar.gz``
   - SHA-256 Checksum: ``ad7d83280a11f9797a944ddd472ed5e423d950954ad34794a216db9e28b3be1c``
   - GPG Signature: https://releases.mattermost.com/9.2.1/mattermost-9.2.1-linux-amd64.tar.gz.sig
@@ -349,7 +349,7 @@ The open source Mattermost Team Edition is functionally identical to the commerc
 
 We generally recommend installing Enterprise Edition, even if you don't currently need a license. This provides the flexibility to seamlessly unlock Enterprise features should you need them. However, if you only want to install software with a fully open source code base, then Team Edition is the best choice for you.
 
-Mattermost Team Edition v9.2.1 - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v9-2-feature-release>`__ - `Download <https://releases.mattermost.com/9.2.1/mattermost-team-9.2.1-linux-amd64.tar.gz?src=arc>`__
+Mattermost Team Edition v9.2.1 - `View Changelog <https://docs.mattermost.com/deploy/mattermost-changelog.html#release-v9-2-feature-release>`__ - `Download <https://releases.mattermost.com/9.2.1/mattermost-team-9.2.1-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/9.2.1/mattermost-team-9.2.1-linux-amd64.tar.gz``
   - SHA-256 Checksum: ``36d4852680b958080950c7dfcd722f7238f83df56324eee0dcba5f723b921241``
   - GPG Signature: https://releases.mattermost.com/9.2.1/mattermost-team-9.2.1-linux-amd64.tar.gz.sig
