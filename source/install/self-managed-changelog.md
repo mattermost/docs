@@ -14,6 +14,10 @@ Latest Mattermost Releases:
 
 ## Release v9.1 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
 
+- **9.1.3, released **
+  - Mattermost v9.1.3 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Mattermost v9.1.3 contains no database or functional changes.
+  - Fixed an issue where the **About Mattermost** dialog reported an incorrect server version.
 - **9.1.2, released 2023-11-06**
   - Mattermost v9.1.2 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Mattermost v9.1.2 contains no database or functional changes.
@@ -128,6 +132,10 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ## Release v9.0 - [Major Release](https://docs.mattermost.com/upgrade/release-definitions.html#major-release)
 
+- **9.0.4, released **
+  - Mattermost v9.0.4 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Mattermost v9.0.4 contains no database or functional changes.
+  - Fixed an issue where the **About Mattermost** dialog reported an incorrect server version.
 - **9.0.3, released 2023-11-06**
   - Mattermost v9.0.3 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Mattermost v9.0.3 contains no database or functional changes.
@@ -237,6 +245,10 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ## Release v8.1 - [Extended Support Release](https://docs.mattermost.com/upgrade/release-definitions.html#extended-support-release-esr)
 
+- **8.1.6, released **
+  - Mattermost v8.1.6 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Mattermost v8.1.6 contains no database or functional changes.
+  - Fixed an issue where the **About Mattermost** dialog reported an incorrect server version.
 - **8.1.5, released 2023-11-06**
   - Mattermost v8.1.5 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Mattermost v8.1.5 contains no database or functional changes.
@@ -805,6 +817,10 @@ Mattermost v7.9.0 contains a low severity level security fix. [Upgrading](https:
 
 ## Release v7.8 - [Extended Support Release](https://docs.mattermost.com/upgrade/release-definitions.html#extended-support-release-esr)
 
+- **7.8.15, released **
+  - Mattermost v7.8.15 contains medium to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Mattermost v7.8.15 contains no database or functional changes.
+  - Fixed an issue where the **About Mattermost** dialog reported an incorrect server version.
 - **7.8.14, released 2023-11-06**
   - Mattermost v7.8.14 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Mattermost v7.8.14 contains no database or functional changes.
