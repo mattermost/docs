@@ -4,7 +4,7 @@ Collaborate within embedded Microsoft Teams
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-The `Mattermost for Microsoft Teams </about/mattermost-for-microsoft-teams.html>`__ integration enables you to collaborate with technical & operations teams seamlessly through the Mattermost app, without leaving Microsoft Teams.
+The `Embedded Mattermost for Microsoft Teams </about/mattermost-for-microsoft-teams.html>`__ integration enables you to collaborate with technical & operations teams seamlessly through the Mattermost app, without leaving Microsoft Teams.
 
 Demonstration: Mattermost embedded in Microsoft Teams
 ------------------------------------------------------

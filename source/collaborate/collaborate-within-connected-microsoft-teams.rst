@@ -7,7 +7,7 @@ Collaborate within connected Microsoft Teams
 .. |plus-icon| image:: ../images/plus_F0415.svg
   :alt: Open menus using the plus icon.
 
-The `Mattermost for Microsoft Teams </about/mattermost-for-microsoft-teams.html>`__ integration enables you to collaborate with technical & operations teams seamlessly through the Mattermost app, without leaving Microsoft Teams.
+The `Embedded Mattermost for Microsoft Teams </about/mattermost-for-microsoft-teams.html>`__ integration enables you to collaborate with technical & operations teams seamlessly through the Mattermost app, without leaving Microsoft Teams.
 
 .. include:: ../_static/badges/academy-msteams.rst
   :start-after: :nosearch:
