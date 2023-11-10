@@ -2208,6 +2208,8 @@ redirects = {
         "https://docs.mattermost.com/collaborate/install-ios-app.html",
 "install/install-android-app.html":
         "https://docs.mattermost.com/collaborate/install-android-app.html",
+"install/legacy-self-hosted-changelog.html":
+	"https://docs.mattermost.com/deploy/legacy-self-hosted-changelog.html",
 "install/desktop-app-changelog.html":
 	"https://docs.mattermost.com/deploy/desktop-app-changelog.html",
 
