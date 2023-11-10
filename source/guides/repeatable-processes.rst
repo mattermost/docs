@@ -6,7 +6,11 @@ Build repeatable processes
 
 Use the Mattermost Playbooks plugin to create and manage pre-built, configurable checklists that define a repeatable process for teams to achieve specific and predictable outcomes. Mattermost Playbooks is enabled by default for Mattermost self-hosted and Mattermost Cloud workspaces. You can access Playbooks via the product menu in the top-left corner of Mattermost.
 
-With playbooks, your development teams can orchestrate prescribed workflows and define, streamline, and document complex, recurring operations. Playbooks help you stay in command with integrated communication, collaboration, and status dashboards to manage your entire workflow lifecycle.
+With playbooks, your development teams can orchestrate prescribed workflows and define, streamline, and document complex, recurring operations. 
+Playbooks help you stay in command with integrated communication, collaboration, and status dashboards to manage your entire workflow lifecycle.
+
+.. include:: ../_static/badges/academy-playbooks.rst
+  :start-after: :nosearch:
 
 .. image:: ../images/Playbooks_Hero.png
    :alt: An example of the Mattermost Playbooks screen that includes active run details in the right-hand pane.

@@ -136,6 +136,21 @@ By default, `message drafts </send-messages.html#draft-messages>`__ are synchron
 
         This option isn't applicable to the mobile app.
 
+Allow Mattermost to prefetch channel posts
+------------------------------------------
+
+By default, Mattermost pre-fetches messages and user information when you start Mattermost in a browser. You can disable webapp pre-fetching so that Mattermost prefetches messages and user information as you open channels instead. Disabling prefetch is recommended for users with a high unread channel count in order to improve application performance.
+
+.. tabs::
+
+    .. tab:: Web/Desktop
+
+        Select **Allow Mattermost to prefetch channel posts** to disable webapp pre-fetching on startup, and pre-fetch the data as you open channels.
+    
+    .. tab:: Mobile
+
+        This option isn't applicable to the mobile app.
+
 Delete local files
 ------------------
 

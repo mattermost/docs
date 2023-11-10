@@ -16,6 +16,9 @@ On this page:
 - `Troubleshooting <#troubleshooting>`__
 - `Debugging <#debugging>`__
 
+.. include:: ../_static/badges/academy-calls.rst
+  :start-after: :nosearch:
+
 From Mattermost v7.0, you can:
 
 - Start or join a call from desktop and mobile apps in addition to web browsers.
