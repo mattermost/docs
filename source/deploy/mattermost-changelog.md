@@ -19,6 +19,7 @@ From Mattermost v9.2, this changelog summarizes updates for the latest cloud and
 
 - **9.2.2, released 2023-11-08**
   - Mattermost v9.2.2 contains a high severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Pre-packaged Playbooks plugin [v1.39.1](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v1.39.1).
   - Fixed an issue where the **About Mattermost** dialog reported an incorrect server version.
 - **9.2.1, released 2023-11-06**
   - Fixed an issue where Ubuntu GLIBC errors were thrown on Ubuntu 20.04 and Debian Bullseye versions.
