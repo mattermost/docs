@@ -10,6 +10,11 @@ Mattermost for Microsoft Teams enables you to collaborate with technical and ope
 
     You must `install the Microsoft Teams plugin in Mattermost </about/install-mattermost-for-microsoft-teams-plugin.html>`__ before you can embed the Mattermost app within Microsoft Teams.
 
+.. include:: ../_static/badges/academy-msteams.rst
+  :start-after: :nosearch:
+
+See the following product documentation to install and use Mattermost for Microsoft Teams:
+
 Connect Mattermost with Microsoft Teams
 ---------------------------------------
 

@@ -100,7 +100,6 @@ Memory store size
 | users. A higher value may result in underutilized resources,    |                                                                            |
 | and a lower value may result in user sessions/tokens expiring   |                                                                            |
 | too frequently.                                                 |                                                                            |
-|                                                                 |                                                                            |                                                                           |
 +-----------------------------------------------------------------+----------------------------------------------------------------------------+
 
 .. config:setting:: ratelimit-varybyremoteaddress

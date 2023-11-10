@@ -63,6 +63,9 @@ To set your availability, select your profile picture, then specify your availab
 |                  | - By default, notifications are sent to the browser, the desktop app, and the mobile app.                         |
 +------------------+-------------------------------------------------------------------------------------------------------------------+
 | |away|           | - Set automatically for you when you've been inactive for more than 5 minutes.                                    |
+|                  |                                                                                                                   |
+|                  |   - You're inactive when you're not: typing in or navigating between channels, switching to another browser tab,  |
+|                  |     or when you've minimized or moved the browser window to the background.                                       |
 |                  | - You can manually set yourself as **Away** any time.                                                             |
 |                  | - By default, notifications are sent to your Mattermost mobile app.                                               |
 +------------------+-------------------------------------------------------------------------------------------------------------------+
@@ -75,8 +78,6 @@ To set your availability, select your profile picture, then specify your availab
 |                  | - By default, notifications are sent to your Mattermost mobile app.                                               |
 +------------------+-------------------------------------------------------------------------------------------------------------------+
 
-
-
 Other members can see your availability anywhere they can see your name, such as the channel sidebar, within conversations, and within Direct Messages.
 
 Set your availability as Do Not Disturb
@@ -87,17 +88,4 @@ Set your availability to **Do Not Disturb** to disable all desktop, email, and p
 You can specify how long to disable notifications by selecting a preset expiration or setting a custom expiration. Your availability setting automatically reverts to its previous setting once the expiration is reached (this may take up to five minutes).
 
 .. image:: ../images/set-your-availability.png
-  :alt: Example of setting your Mattermost availability to Do Not Disturb.
-
-How Mattermost determines your availability
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. csv-table::
-    :header: "Client", "**Online**", "**Away**", "**Offline**"
-
-    "**Desktop App**", "You're interacting with your computer", "You've been inactive on your computer for five minutes", "You close Mattermost, sleep, or lock your computer"
-    "**Web Browser**", "You're interacting with Mattermost in a browser", "
-    - You have not typed or navigated between channels for five minutes
-    - The tab is unfocused for five minutes
-    - The browser is in the background or minimized for five minutes", "You close the Mattermost browser window"
-    "**Mobile App**", "Mattermost is open", "Mattermost is open with five minutes of inactivity", "You change apps, close Mattermost, or lock your screen" 
+  :alt: Example of setting your Mattermost availability as Do Not Disturb.

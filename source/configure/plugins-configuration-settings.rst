@@ -919,6 +919,9 @@ Mattermost for Microsoft Teams enables you to collaborate with technical & opera
 
 Access the following configuration settings in the System Console by going to **Plugins > MS Teams Sync**.
 
+.. include:: ../_static/badges/academy-msteams.rst
+  :start-after: :nosearch:
+
 .. config:setting:: plugins-msteamssyncenable
   :displayname: Enable plugin (Plugins - MS Teams Sync)
   :systemconsole: Plugins > MS Teams Sync
