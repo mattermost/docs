@@ -263,6 +263,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
   - Mattermost v8.1.6 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Mattermost v8.1.6 contains no database or functional changes.
   - Pre-packaged Playbooks plugin [v1.39.1](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v1.39.1).
+  - Pre-packaged ToDo plugin version [v0.7.1](https://github.com/mattermost/mattermost-plugin-todo/releases/tag/v0.7.1).
   - Fixed an issue where the **About Mattermost** dialog reported an incorrect server version.
 - **8.1.5, released 2023-11-06**
   - Mattermost v8.1.5 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
