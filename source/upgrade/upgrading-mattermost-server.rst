@@ -6,6 +6,9 @@ Upgrade Mattermost Server
 
 In most cases, you can upgrade Mattermost Server in a few minutes. However, the upgrade can take longer depending on several factors, including the size and complexity of your installation, and the version that you're upgrading from.
 
+.. include:: ../_static/badges/academy-tarball-upgrade.rst
+  :start-after: :nosearch:
+
 .. _before-you-begin:
 
 Before you begin

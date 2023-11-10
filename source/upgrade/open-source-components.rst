@@ -28,6 +28,7 @@ Desktop
 Mobile
 -------
 
+ - Mattermost Mobile v2.10.0 - `View Open Source Components <https://github.com/mattermost/mattermost-mobile/blob/release-2.10/NOTICE.txt>`_.
  - Mattermost Mobile v2.9.0 - `View Open Source Components <https://github.com/mattermost/mattermost-mobile/blob/release-2.9/NOTICE.txt>`_.
  - Mattermost Mobile v2.8.0 - `View Open Source Components <https://github.com/mattermost/mattermost-mobile/blob/release-2.8/NOTICE.txt>`_.
  - Mattermost Mobile v2.7.0 - `View Open Source Components <https://github.com/mattermost/mattermost-mobile/blob/release-2.7/NOTICE.txt>`_.
@@ -98,6 +99,7 @@ Mobile
 Server
 ------------------------------
 
+ - Mattermost Enterprise Edition v9.2.0 - `View Open Source Components <https://github.com/mattermost/mattermost-server/blob/release-9.2/NOTICE.txt>`_.
  - Mattermost Enterprise Edition v9.1.0 - `View Open Source Components <https://github.com/mattermost/mattermost-server/blob/release-9.1/NOTICE.txt>`_.
  - Mattermost Enterprise Edition v9.0.0 - `View Open Source Components <https://github.com/mattermost/mattermost-server/blob/release-9.0/NOTICE.txt>`_.
  - Mattermost Enterprise Edition v8.1.0 - `View Open Source Components <https://github.com/mattermost/mattermost-server/blob/release-8.1/NOTICE.txt>`_.
