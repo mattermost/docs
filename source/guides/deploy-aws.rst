@@ -2,7 +2,7 @@ Deploy Apps to AWS
 ==================
 
 Deployment in self-managed environments
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+---------------------------------------
 
 An App designed and bundled for AWS Lambda can be deployed to the customer's own
 AWS environment, and then installed on a self-managed ("on-prem") Mattermost
@@ -112,27 +112,27 @@ The command requires that the following environment variables are set:
 Once deployed, apps can be installed interactively in Mattermost using ``/apps install listed`` command which will show all the deployed apps available for installation in Mattermost.
 
 Deployed app details
-~~~~~~~~~~~~~~~~~~~~
+---------------------
 
-AWS Lambda Functions Naming
-----------------------------
+AWS Lambda functions naming
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 AWS Lambda functions have semantic names, meaning that a function described in the ``manifest.json`` file translates to AWS as ``$appID_$appVersion_$functionName`` to avoid collisions with other apps' or other versions' functions. **appsctl** deploys lambda functions using this naming convention. For example, the name of a ``servicenow`` app's lambda function might be ``com-mattermost-servicenow_0-1-0_go-function``. **appsctl** handles the naming of AWS Lambda functions. The dedicated S3 bucket name is stored in the environment variable: ``MM_APPS_S3_BUCKET``.
 
-Storage of App Assets and Manifests
-------------------------------------
+Storage of app assets and manifests
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The AWS S3 bucket mentioned above is used to store all app static assets and manifest files.
 
 All files in the static folder of the bundle are considered to be the app's static assets and are stored in the above-mentioned bucket. Stored assets also have semantic keys and are generated using the rule: ``static/$appID_$appVersion/filename``. For example, the ``servicenow`` app's static file key can be accessed at ``"static/com.mattermost.servicenow_0.1.0_app/photo.png"``.
 
-Storage of Manifest File
-------------------------
+Storage of manifest file
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The ``manifest.json`` file of an app is stored in the same S3 bucket with the key: ``manifests/$appID_$appVersion.json``.
 
-Flow of Deploying Custom Apps to AWS
--------------------------------------
+Deploy ustom apps to AWS
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. image:: deploy-third-party-aws.png
    :width: 800
@@ -146,8 +146,8 @@ The deployer needs lambda function names, asset keys, and the manifest key to de
 
 ``appsctl generate-terraform-data /PATH/TO/YOUR/APP/BUNDLE``
 
-Flow of deploying custom apps to AWS
--------------------------------------
+Deploy custom apps to AWS
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. image:: deploy-mm-aws.png
    :width: 800
