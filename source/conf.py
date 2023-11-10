@@ -2196,7 +2196,7 @@ redirects = {
 "install/desktop-custom-dictionaries.html#removing-customized-dictionaries":
         "https://docs.mattermost.com/install/desktop-custom-dictionaries.html#remove-custom-dictionaries",
 "install/self-managed-changelog.html":
-        "https://docs.mattermost.com/deploy/legacy-mattermost-changelog.html",
+        "https://docs.mattermost.com/deploy/legacy-self-hosted-changelog.html",
 "install/legacy-self-hosted-changelog.html":
         "https://docs.mattermost.com/deploy/legacy-mattermost-changelog.html",
 "install/cloud-changelog.html":
