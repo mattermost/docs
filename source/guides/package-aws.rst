@@ -3,8 +3,8 @@ Package Apps for AWS Lambda
 
 Developers must prepare apps for deployment to AWS, which includes creating an app bundle and making the app runnable as an AWS Lambda function.
 
-App bundle
-----------
+App Bundle
+^^^^^^^^^^
 
 An app bundle is a convenient way to deliver an app to the Mattermost ecosystem. It provides a way to organize code and resources needed for an app to run. An app bundle is created by the developer of the app. Mattermost uses app bundles to deploy and install/uninstall apps.
 
@@ -14,8 +14,8 @@ The app bundle contains a ``manifest.json`` file, a ``static/`` folder (optional
 - The ``manifest.json`` file contains details about the app such as appID, appVersion, appType (HTTP or an AWS app), requested permissions, requested locations, and information about the functions such as function path, name, runtime, and handler.
 - Each of the lambda function bundles is a valid and runnable AWS Lambda function, deployed in AWS by the |Mattermost Apps Cloud Deployer|. The AWS Lambda function bundle is a ``.zip`` file which contains scripts or compiled programs and their dependencies. Note that it must be smaller than 50 MB. Exact specification of the bundle varies for different runtimes. For example, one can see more details for ``node.js`` bundles |bundles here|.
 
-Making your app runnable as an AWS Lambda function
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Make your app runnable as an AWS Lambda function
+--------------------------------------------------
 
 In order for your app to run as an AWS Lambda function, it must use one of the supported languages for AWS Lambda. You can find the list |list here|.
 

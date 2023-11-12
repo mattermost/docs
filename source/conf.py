@@ -288,3141 +288,3217 @@ linkcheck_anchors = False
 # Redirects using: https://pypi.org/project/sphinx-reredirects/
 redirects = {
 
-    # How to add redirects for docs.mattermost.com:
-    # A redirect is required when an existing product documentation page is moved to a new sub-directory, to another information site altogether, OR when the file # is archived because it's no longer needed. Redirects defined here ensure that existing links to these changed pages take the user to the correct destination # page. Many of the links below are the result of the information architecture overhaul completed in FY22 Q2.
-    # All redirects in the following are organized alphabetically for easy scanning and management based on the origin URL (the URL to the left of the colon).
-    # Please take care to ensure that alphabetical order is maintained as new redirects are added. See a mistake? Please feel free to fix it!
-    # Before adding a new redirect, please search to confirm that the redirect you want isn't already specified below.
-    # Add the new redirect in the appropriate section, based on its path.
-    # For page heading redirects, use the format "directory/filename.html": "full-URL-path-to-new-destination.html",
-    # For mid-page redirects (also known as section title redirects), use the format "directory/filename.html#section-title": "full-URL-path-to-new-destination.html",
-    # Ensure that all redirects end in a comma, except for the very last redirect.
+# How to add redirects for docs.mattermost.com:
+# A redirect is required when an existing product documentation page is moved to a new sub-directory, to another information site altogether, OR when the file # is archived because it's no longer needed. Redirects defined here ensure that existing links to these changed pages take the user to the correct destination # page. Many of the links below are the result of the information architecture overhaul completed in FY22 Q2.
+# All redirects in the following are organized alphabetically for easy scanning and management based on the origin URL (the URL to the left of the colon).
+# Please take care to ensure that alphabetical order is maintained as new redirects are added. See a mistake? Please feel free to fix it!
+# Before adding a new redirect, please search to confirm that the redirect you want isn't already specified below.
+# Add the new redirect in the appropriate section, based on its path.
+# For page heading redirects, use the format "directory/filename.html": "full-URL-path-to-new-destination.html",
+# For mid-page redirects (also known as section title redirects), use the format "directory/filename.html#section-title": "full-URL-path-to-new-destination.html",
+# Ensure that all redirects end in a comma, except for the very last redirect.
 
-    # About redirects
-    "about/license-and-subscription.html#do-you-have-a-program-for-official-non-profits-open-source-projects-and-charities":
-        "https://docs.mattermost.com/about/subscription.html#do-you-have-a-program-for-official-non-profits-open-source-projects-and-charities",
-    "about/deployments-and-editions.html":
+# About redirects
+"about/license-and-subscription.html#do-you-have-a-program-for-official-non-profits-open-source-projects-and-charities":
+        "https://docs.mattermost.com/about/subscription.html#mattermost-nonprofit-license-program",
+"about/deployments-and-editions.html":
         "https://docs.mattermost.com/about/editions-and-offerings.html",
-    "about/faq-business.html#copyright-and-licensing-of-mattermost-server-open-source-code":
-        "https://docs.mattermost.com/about/faq-license.html#open-source-derivative-work-of-mattermost",
-    "about/faq-enterprise.html#what-are-mattermost-s-policies-around-licensing-terms-of-use-and-privacy":
-        "https://docs.mattermost.com/about/faq-license.html#what-are-mattermost-s-policies-around-licensing-terms-of-use-and-privacy",
-    "about/faq-mattermost-source-available-license.html":
-        "https://docs.mattermost.com/about/faq-license.html#source-available-licensing",
-    "about/mattermost-customizable-chatgpt-bot-framework.html":
+"about/faq-business.html#copyright-and-licensing-of-mattermost-server-open-source-code":
+	"https://docs.mattermost.com/about/faq-license.html#open-source-derivative-work-of-mattermost",
+"about/faq-enterprise.html#what-are-mattermost-s-policies-around-licensing-terms-of-use-and-privacy":
+	"https://docs.mattermost.com/about/faq-license.html#what-are-mattermost-s-policies-around-licensing-terms-of-use-and-privacy",
+"about/faq-mattermost-source-available-license.html":
+	"https://docs.mattermost.com/about/faq-license.html#source-available-licensing",
+"about/mattermost-customizable-chatgpt-bot-framework.html":
         "https://github.com/mattermost/openops#readme",
-    "about/mattermost-customizable-ai-bot-framework.html":
+"about/mattermost-customizable-ai-bot-framework.html":
         "https://github.com/mattermost/openops#readme",
 
-    # Administration redirects
-    "administration/announcement-banner.html":
+# Administration redirects
+"administration/announcement-banner.html":
         "https://docs.mattermost.com/manage/announcement-banner.html",
-    "administration/audit-log.html":
+"administration/audit-log.html":
         "https://docs.mattermost.com/comply/audit-log.html",
-    "administration/backup.html":
+"administration/backup.html":
         "https://docs.mattermost.com/deploy/backup-disaster-recovery.html",
-    "administration/branding.html":
+"administration/branding.html":
         "https://docs.mattermost.com/configure/custom-branding-tools.html",
-    "administration/bulk-export.html":
+"administration/bulk-export.html":
         "https://docs.mattermost.com/manage/bulk-export-tool.html",
-    "administration/changelog.html":
-        "https://docs.mattermost.com/install/self-managed-changelog.html",
-    "administration/changelog.html#database-changes-from-v3-4-to-v3-5":
-        "https://docs.mattermost.com/install/self-managed-changelog.html#id41",
-    "administration/command-line-tools.html":
+"administration/changelog.html":
+        "https://docs.mattermost.com/deploy/mattermost-changelog.html",
+"administration/command-line-tools.html":
         "https://docs.mattermost.com/manage/command-line-tools.html",
-    "administration/command-line-tools.html#mattermost-user-delete":
-        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-user-delete",
-    "administration/command-line-tools.html#mattermost-channel-restore":
+"administration/command-line-tools.html#mattermost-user-delete":
+	"https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-user-delete",
+"administration/command-line-tools.html#mattermost-channel-restore":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-channel-restore",
-    "administration/command-line-tools.html#mattermost-permissions-reset":
+"administration/command-line-tools.html#mattermost-permissions-reset":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-permissions-reset",
-    "administration/command-line-tools.html#mattermost-permissions-export":
+"administration/command-line-tools.html#mattermost-permissions-export":
         "https://api.mattermost.com/#tag/roles/operation/GetAllRoles",
-    "administration/command-line-tools.html#mattermost-permissions-import":
+"administration/command-line-tools.html#mattermost-permissions-import":
         "https://docs.mattermost.com/manage/command-line-tools.html#mattermost-permissions-import",
-    "administration/command-line-tools.html#mattermost-group-team-list":
+"administration/command-line-tools.html#mattermost-group-team-list":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-group-team-list",
-    "administration/command-line-tools.html#mattermost-group-team-enable":
+"administration/command-line-tools.html#mattermost-group-team-enable":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-group-team-enable",
-    "administration/command-line-tools.html#mattermost-group-channel-enable":
+"administration/command-line-tools.html#mattermost-group-channel-enable":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-group-channel-enable",
-    "administration/command-line-tools.html#mattermost-group-team-disable":
+"administration/command-line-tools.html#mattermost-group-team-disable":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-group-team-disable",
-    "administration/command-line-tools.html#mattermost-group-channel-disable":
+"administration/command-line-tools.html#mattermost-group-channel-disable":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-group-channel-disable",
-    "administration/command-line-tools.html#mattermost-ldap-idmigrate":
+"administration/command-line-tools.html#mattermost-ldap-idmigrate":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-ldap-idmigrate",
-    "administration/compliance.html":
+"administration/command-line-tools.html#platform-channel-move":
+        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-channel-move",
+"administration/compliance.html":
         "https://docs.mattermost.com/comply/compliance-monitoring.html",
-    "administration/compliance-export.html":
+"administration/compliance-export.html":
         "https://docs.mattermost.com/comply/compliance-export.html",
-    "administration/config-in-database.html":
+"administration/config-in-database.html":
         "https://docs.mattermost.com/configure/configuation-in-a-database.html",
-    "administration/config-in-database.html#configuration-in-a-database.html":
+"administration/config-in-database.html#configuration-in-a-database.html":
         "https://docs.mattermost.com/configure/configuation-in-a-database.html",
-    "administration/config-in-database.html#configuration-in-the-mattermost-database":
+"administration/config-in-database.html#configuration-in-the-mattermost-database":
         "https://docs.mattermost.com/configure/configuation-in-a-database.html",
-    "administration/config-settings.html#enable-hardened-mode-experimental":
-        "https://docs.mattermost.com/configure/experimental-configuration-settings.html#enable-hardened-mode",
-    "administration/data-retention.html":
+"administration/config-settings.html#enable-hardened-mode-experimental":
+	"https://docs.mattermost.com/configure/experimental-configuration-settings.html#enable-hardened-mode",
+"administration/data-retention.html":
         "https://docs.mattermost.com/comply/data-retention-policy.html",
-    "administration/devops-command-center.html":
+"administration/devops-command-center.html":
         "https://docs.mattermost.com/guides/playbooks.html",
-    "administration/downgrade.html":
+"administration/downgrade.html":
         "https://docs.mattermost.com/upgrade/downgrading-mattermost-server.html",
-    "administration/ediscovery.html#mattermost-restful-api":
+"administration/ediscovery.html#mattermost-restful-api":
         "https://docs.mattermost.com/comply/electronic-discovery.html#mattermost-restful-api",
-    "administration/ediscovery.html#mattermost-database":
+"administration/ediscovery.html#mattermost-database":
         "https://docs.mattermost.com/comply/electronic-discovery.html#mattermost-database",
-    "administration/ediscovery.html":
+"administration/ediscovery.html":
         "https://docs.mattermost.com/comply/electronic-discovery.html",
-    "administration/encryption.html":
+"administration/encryption.html":
         "https://docs.mattermost.com/deploy/encryption-options.html",
-    "administration/extended-support-release.html":
+"administration/extended-support-release.html":
         "https://docs.mattermost.com/upgrade/extended-support-release.html",
-    "administration/extended-support-release.html":
+"administration/extended-support-release.html":
         "https://docs.mattermost.com/upgrade/extended-support-release.html",
-    "administration/generating-support-packet.html":
+"administration/generating-support-packet.html":
         "https://docs.mattermost.com/manage/generating-support-packet.html",
-    "administration/health-check.html":
+"administration/health-check.html":
         "https://docs.mattermost.com/manage/health-checks.html",
-    "administration/hipchat-migration-guidelines.html":
+"administration/hipchat-migration-guidelines.html":
         "https://docs.mattermost.com/onboard/migrating-from-hipchat-to-mattermost.html",
-    "administration/image-proxy.html":
+"administration/image-proxy.html":
         "https://docs.mattermost.com/deploy/image-proxy.html",
-    "administration/important-upgrade-notes.html":
+"administration/important-upgrade-notes.html":
         "https://docs.mattermost.com/upgrade/important-upgrade-notes.html",
-    "administration/legacy-upgrade.html":
+"administration/legacy-upgrade.html":
         "https://docs.mattermost.com/guides/deployment.html#upgrade-mattermost",
-    "administration/light-install-hindi.html":
+"administration/light-install-hindi.html":
         "https://docs.mattermost.com/guides/deployment.html",
-    "administration/migrating.html#migrating-from-slack-using-the-mattermost-mmetl-tool-and-bulk-import":
+"administration/migrating.html#migrating-from-slack-using-the-mattermost-mmetl-tool-and-bulk-import":
         "https://docs.mattermost.com/onboard/migrating.html#migrating-from-slack-using-the-mattermost-mmetl-tool-and-bulk-import",
-    "administration/migrating.html#migrating-from-slack-using-the-mattermost-web-app":
+"administration/migrating.html#migrating-from-slack-using-the-mattermost-web-app":
         "https://docs.mattermost.com/onboard/migrating.html#migrating-from-slack-using-the-mattermost-web-app",
-    "administration/migrating.html#migrating-from-slack-using-the-mattermost-mmetl-tool-and-bulk-import":
+"administration/migrating.html#migrating-from-slack-using-the-mattermost-mmetl-tool-and-bulk-import":
         "https://docs.mattermost.com/onboard/migrating-to-mattermost.html#migrating-from-slack-using-the-mattermost-mmetl-tool-and-bulk-import",
-    "administration/migrating.html":
+"administration/migrating.html":
         "https://docs.mattermost.com/onboard/migrating-to-mattermost.html",
-    "administration/migration-announcement-email-template.html":
+"administration/migration-announcement-email-template.html":
         "https://docs.mattermost.com/onboard/migration-announcement-email.html",
-    "administration/mmctl-cli-tool.html":
+"administration/mmctl-cli-tool.html":
         "https://docs.mattermost.com/manage/mmctl-cli-tool.html",
-    "administration/mmctl-cli-tool.html#mmctl-channel-modify":
+"administration/mmctl-cli-tool.html#mmctl-channel-modify":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-channel-modify",
-    "administration/mmctl-cli-tool.html#mmctl-user-reset-password":
-        "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-user-reset-password",
-    "administration/mobile-changelog.html":
+"administration/mmctl-cli-tool.html#mmctl-user-reset-password":
+	"https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-user-reset-password",
+"administration/mobile-changelog.html":
         "https://docs.mattermost.com/deploy/mobile-app-changelog.html",
-    "administration/notices.html":
+"administration/notices.html":
         "https://docs.mattermost.com/manage/in-product-notices.html",
-    "administration/open-source-components.html":
+"administration/open-source-components.html":
         "https://docs.mattermost.com/upgrade/open-source-components.html",
-    "administration/performance-alerting-guide.html":
+"administration/performance-alerting-guide.html":
         "https://docs.mattermost.com/scale/peformance-alerting.html",
-    "administration/performance-alerting-guide":
+"administration/performance-alerting-guide":
         "https://docs.mattermost.com/scale/performance-monitoring.html",
-    "administration/plugins.html":
+"administration/plugins.html":
         "https://developers.mattermost.com/integrate/admin-guide/admin-plugins-beta/",
-    "administration/prev-config-settings.html":
+"administration/prev-config-settings.html":
         "https://docs.mattermost.com/configure/configuration-settings.html",
-    "administration/release-definitions.html":
+"administration/release-definitions.html":
         "https://docs.mattermost.com/upgrade/release-definitions.html",
-    "administration/release-lifecycle.html":
+"administration/release-lifecycle.html":
         "https://docs.mattermost.com/upgrade/release-lifecycle.html",
-    "administration/scripts.html":
+"administration/scripts.html":
         "https://docs.mattermost.com/manage/scripts.html",
-    "administration/statistics.html":
+"administration/statistics.html":
         "https://docs.mattermost.com/manage/statistics.html",
-    "administration/telemetry.html":
+"administration/telemetry.html":
         "https://docs.mattermost.com/manage/telemetry.html",
-    "administration/upgrade.html":
+"administration/telemetry.html":
+	"https://docs.mattermost.com/manage/telemetry.html",
+"administration/upgrade.html":
         "https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html",
-    "administration/upgrade.html#upgrade-team-edition-to-enterprise-edition":
+"administration/upgrade.html#upgrade-team-edition-to-enterprise-edition":
         "https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html#upgrading-team-edition-to-enterprise-edition",
-    "administration/upgrade-guide.html":
+"administration/upgrade-guide.html":
         "https://docs.mattermost.com/guides/deployment.html#upgrade-mattermost",
-    "administration/upgrading-to-2.0.html":
+"administration/upgrading-to-2.0.html":
         "https://docs.mattermost.com/guides/deployment.html#upgrade-mattermost",
-    "administration/upgrading-to-3.0.html":
+"administration/upgrading-to-3.0.html":
         "https://docs.mattermost.com/guides/deployment.html#upgrade-mattermost",
-    "administration/user-provisioning.html":
+"administration/user-provisioning.html":
         "https://docs.mattermost.com/onboard/user-provisioning-workflows.html",
-    "administration/config-in-database.html#create-an-environment-file":
-        "https://docs.mattermost.com/configure/deprecated-configuration-settings.html#enable-public-channel-creation-for",
-    "administration/config-settings.html":
+"administration/config-in-database.html#create-an-environment-file":
+       "https://docs.mattermost.com/configure/deprecated-configuration-settings.html#enable-public-channel-creation-for",
+"administration/config-settings.html":
         "https://docs.mattermost.com/configure/configuration-settings.html",
-    "administration/config-settings.html#aggregate-search-indexes":
+"administration/config-settings.html#aggregate-search-indexes":
         "https://docs.mattermost.com/configure/configuration-settings.html#aggregate-search-indexes",
-    "administration/config-settings.html#allow-users-to-view-archived-channels-beta":
+"administration/config-settings.html#allow-users-to-view-archived-channels-beta":
         "https://docs.mattermost.com/configure/configuration-settings.html#allow-users-to-view-archived-channels",
-    "administration/config-settings.html#autoclose-direct-messages-in-sidebar-experimental":
+"administration/config-settings.html#autoclose-direct-messages-in-sidebar-experimental":
         "https://docs.mattermost.com/configure/deprecated-configuration-settings.html#autoclose-direct-messages-in-sidebar",
-    "administration/config-settings.html#ad-ldap":
+"administration/config-settings.html#ad-ldap":
         "https://docs.mattermost.com/configure/configuration-settings.html#ad-ldap",
-    "administration/config-settings.html#customization":
+"administration/config-in-database.html":
+	"https://docs.mattermost.com/configure/configuation-in-a-database.html",
+"administration/config-settings.html#customization":
         "https://docs.mattermost.com/configure/configuration-settings.html#customization",
-    "administration/config-settings.html#default-channels-experimental":
+"administration/config-settings.html#default-channels-experimental":
         "https://docs.mattermost.com/configure/configuration-settings.html#default-channels-experimental",
-    "administration/config-settings.html#deprecated-configuration-settings":
+"administration/config-settings.html#deprecated-configuration-settings":
         "https://docs.mattermost.com/configure/configuration-settings.html#deprecated-configuration-settings",
-    "administration/config-settings.html#data-retention-policy":
-        "https://docs.mattermost.com/configure/configuration-settings.html#data-retention-policy",
-    "administration/config-settings.html#enable-automatic-replies-experimental":
+"administration/config-settings.html#data-retention-policy":
+ 	"https://docs.mattermost.com/configure/configuration-settings.html#data-retention-policy",
+"administration/config-settings.html#enable-automatic-replies-experimental":
         "https://docs.mattermost.com/configure/configuration-settings.html#enable-automatic-replies-experimental",
-    "administration/config-settings.html#enable-document-search-by-content":
+"administration/config-settings.html#enable-document-search-by-content":
         "https://docs.mattermost.com/configure/configuration-settings.html#enable-document-search-by-content",
-    "administration/config-settings.html#enable-high-availability-mode":
+"administration/config-settings.html#enable-high-availability-mode":
         "https://docs.mattermost.com/configure/configuration-settings.html#enable-high-availability-mode",
-    "administration/config-settings.html#enable-legacy-sidebar":
+"administration/config-settings.html#enable-legacy-sidebar":
         "https://docs.mattermost.com/configure/deprecated-configuration-settings.html#enable-legacy-sidebar",
-    "administration/config-settings.html#enable-link-previews":
+"administration/config-settings.html#enable-link-previews":
         "https://docs.mattermost.com/configure/configuration-settings.html#enable-link-previews",
-    "administration/config-settings.html#enable-local-mode":
+"administration/config-settings.html#enable-local-mode":
         "https://docs.mattermost.com/configure/configuration-settings.html#enable-local-mode",
-    "administration/config-settings.html#enable-local-mode-socket-location":
+"administration/config-settings.html#enable-local-mode-socket-location":
         "https://docs.mattermost.com/configure/configuration-settings.html#enable-local-mode-socket-location",
-    "administration/config-settings.html#enable-public-channel-renaming-for":
+"administration/config-settings.html#enable-public-channel-renaming-for":
         "https://docs.mattermost.com/configure/deprecated-configuration-settings.html#enable-public-channel-renaming-for",
-    "administration/config-settings.html#enable-public-channel-creation-for":
+"administration/config-settings.html#enable-public-channel-creation-for":
         "https://docs.mattermost.com/configure/configuration-settings.html#enable-public-channel-creation-for",
-    "administration/config-settings.html#enable-users-to-open-direct-message-channels-with":
-        "https://docs.mattermost.com/configure/site-configuration-settings.html#enable-users-to-open-direct-message-channels-with",
-    "administration/config-settings.html#enable-x-to-leave-channels-from-left-hand-sidebar-experimental":
+"administration/config-settings.html#enable-users-to-open-direct-message-channels-with":
+	"https://docs.mattermost.com/configure/site-configuration-settings.html#enable-users-to-open-direct-message-channels-with",
+"administration/config-settings.html#enable-x-to-leave-channels-from-left-hand-sidebar-experimental":
         "https://docs.mattermost.com/configure/deprecated-configuration-settings.html#enable-x-to-leave-channels-from-left-hand-sidebar",
-    "administration/config-settings.html#environment":
+"administration/config-settings.html#environment":
         "https://docs.mattermost.com/configure/configuration-settings.html#environment-variables",
-    "administration/config-settings.html#experimental-sidebar-features":
+"administration/config-settings.html#experimental-sidebar-features":
         "https://docs.mattermost.com/configure/deprecated-configuration-settings.html#experimental-sidebar-features",
-    "administration/config-settings.html#files":
+"administration/config-settings.html#files":
         "https://docs.mattermost.com/configure/configuration-settings.html#file-storage",
-    "administration/config-settings.html#forward-port-80-to-443":
+"administration/config-settings.html#forward-port-80-to-443":
         "https://docs.mattermost.com/configure/configuration-settings.html#forward-port-80-to-443",
-    "administration/config-settings.html#gitlab-settings":
-        "https://docs.mattermost.com/configure/configuration-settings.html#gitlab-settings",
-    "administration/config-settings.html#google-settings":
+"administration/config-settings.html#gitlab-settings":
+	"https://docs.mattermost.com/configure/configuration-settings.html#gitlab-settings",
+"administration/config-settings.html#google-settings":
         "https://docs.mattermost.com/configure/configuration-settings.html#google-settings",
-    "administration/config-settings.html#group-unread-channels-experimental":
+"administration/config-settings.html#group-unread-channels-experimental":
         "https://docs.mattermost.com/configure/configuration-settings.html#group-unread-channels-experimental",
-    "administration/config-settings.html#id-attribute":
+"administration/config-settings.html#id-attribute":
         "https://docs.mattermost.com/configure/configuration-settings.html#id-attribute",
-    "administration/config-settings.html#link-previews":
+"administration/config-settings.html#link-previews":
         "https://docs.mattermost.com/configure/configuration-settings.html#enable-link-previews",
-    "administration/config-settings.html#logging":
+"administration/config-settings.html#logging":
         "https://docs.mattermost.com/configure/configuration-settings.html#standard-logging",
-    "administration/config-settings.html#login-id-attribute":
+"administration/config-settings.html#login-id-attribute":
         "https://docs.mattermost.com/configure/configuration-settings.html#login-id-attribute",
-    "administration/config-settings.html#maximum-file-size":
+"administration/config-settings.html#maximum-file-size":
         "https://docs.mattermost.com/configure/configuration-settings.html#maximum-file-size",
-    "administration/config-settings.html#maximum-page-size":
+"administration/config-settings.html#maximum-page-size":
         "https://docs.mattermost.com/configure/configuration-settings.html#maximum-page-size",
-    "administration/config-settings.html#office-365-settings":
+"administration/config-settings.html#office-365-settings":
         "https://docs.mattermost.com/configure/configuration-settings.html#office-365-settings",
-    "administration/config-settings.html#openid-connect-other-settings":
+"administration/config-settings.html#openid-connect-other-settings":
         "https://docs.mattermost.com/configure/configuration-settings.html#openid-connect-other-settings",
-    "administration/config-settings.html#policy":
+"administration/config-settings.html#policy":
         "https://docs.mattermost.com/configure/deprecated-configuration-settings.html#policy",
-    "administration/config-settings#post-edit-time-limit.html":
-        "https://docs.mattermost.com/configure/deprecated-configuration-settings.html#post-edit-time-limit",
-    "administration/config-settings.html#push-notification-contents":
+"administration/config-settings#post-edit-time-limit.html":
+    "https://docs.mattermost.com/configure/deprecated-configuration-settings.html#post-edit-time-limit",
+"administration/config-settings.html#push-notification-contents":
         "https://docs.mattermost.com/configure/configuration-settings.html#push-notification-contents",
-    "administration/config-settings.html#rate-limiting":
+"administration/config-settings.html#rate-limiting":
         "https://docs.mattermost.com/configure/configuration-settings.html#rate-limiting",
-    "administration/config-settings.html#session-lengths":
-        "https://docs.mattermost.com/configure/configuration-settings.html#session-lengths",
-    "administration/config-settings.html#sidebar-organization":
+"administration/config-settings.html#session-lengths":
+	"https://docs.mattermost.com/configure/configuration-settings.html#session-lengths",
+"administration/config-settings.html#sidebar-organization":
         "https://docs.mattermost.com/configure/deprecated-configuration-settings.html#sidebar-organization",
-    "administration/config-settings#site-configuration.html":
+"administration/config-settings#site-configuration.html":
         "https://docs.mattermost.com/configure/configuration-settings.html#site-configuration",
-    "administration/config-settings.html#site-url":
+"administration/config-settings.html#site-url":
         "https://docs.mattermost.com/configure/configuration-settings.html#site-url",
-    "administration/config-settings.html#smtp-email-server":
+"administration/config-settings.html#smtp-email-server":
         "https://docs.mattermost.com/configure/configuration-settings.html#smtp-email-server",
-    "administration/config-settings#storage.html":
+"administration/config-settings#storage.html":
         "https://docs.mattermost.com/configure/configuration-settings.html#local-storage-directory",
-    "administration/config-settings.html#teammate-name-display":
+"administration/config-settings.html#teammate-name-display":
         "https://docs.mattermost.com/configure/configuration-settings.html#teammate-name-display",
-    "administration/config-settings.html#timezone":
+"administration/config-settings.html#timezone":
         "https://docs.mattermost.com/configure/deprecated-configuration-settings.html#timezone",
-    "administration/config-settings.html#town-square-is-hidden-in-left-hand-sidebar-experimental":
+"administration/config-settings.html#town-square-is-hidden-in-left-hand-sidebar-experimental":
         "https://docs.mattermost.com/configure/deprecated-configuration-settings.html#town-square-is-hidden-in-left-hand-sidebar",
-    "administration/config-settings.html#town-square-is-read-only-experimental":
+"administration/config-settings.html#town-square-is-read-only-experimental":
         "https://docs.mattermost.com/configure/deprecated-configuration-settings.html#town-square-is-read-only",
-    "administration/config-settings.html#user-filter":
+"administration/config-settings.html#user-filter":
         "https://docs.mattermost.com/configure/configuration-settings.html#user-filter",
-    "administration/command-line-tools.html#mattermost-user-migrate-auth":
+"administration/command-line-tools.html#mattermost-user-migrate-auth":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-user-migrate-auth",
 
-    # Boards redirects
-    "boards/navigating-mattermost-boards.html":
+# Boards redirects
+"boards/navigating-mattermost-boards.html":
         "https://docs.mattermost.com/welcome/what-changed-in-v60.html",
-    "boards/data-and-archives.html":
-        "https://docs.mattermost.com/boards/migrate-to-boards.html",
-    # Important Note: The following guide files were reorg'd in FY23 Q3.
-    "boards/work-with-boards.html":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
-    "boards/boards-settings.html":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
-    "boards/calculations.html":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
-    "boards/groups-filter-sort.html":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
-    "boards/migrate-to-boards.html":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
-    "boards/navigate-boards.html":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
-    "boards/overview.html":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
-    "boards/share-and-collaborate.html":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
-    "boards/work-with-cards.html":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
-    "boards/work-with-views.html":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
-    "boards/overview.html#what-s-a-board":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
-    "boards/overview.html#what-s-a-card":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
-    "boards/overview.html#access-your-boards":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
-    "boards/overview.html#focalboard-personal-server":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
-    "boards/work-with-boards.html#add-new-boards":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
-    "boards/work-with-boards.html#choose-a-board-template":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
-    "boards/work-with-boards.html#edit-board-templates":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
-    "boards/work-with-cards.html#card-descriptions":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
-    "boards/work-with-cards.html#card-properties":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
-    "boards/work-with-cards.html#add-properties":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
-    "boards/work-with-cards.html#rename-a-property":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
-    "boards/work-with-cards.html#change-a-property-type":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
-    "boards/work-with-cards.html#delete-a-property":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
-    "boards/work-with-cards.html#define-a-select-or-multi-select-property":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
-    "boards/work-with-cards.html#toggle-properties-shown-on-a-board":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
-    "boards/work-with-cards.html#attach-files":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
-    "boards/work-with-cards.html#card-badges":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
-    "boards/work-with-cards.html#comment-on-a-card":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
-    "boards/work-with-cards.html#mention-people":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
-    "boards/work-with-cards.html#receive-updates":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
-    "boards/work-with-cards.html#search-cards":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
-    "boards/work-with-cards.html#card-templates":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
-    "boards/work-with-views.html#board-view":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
-    "boards/work-with-views.html#table-view":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
-    "boards/work-with-views.html#gallery-view":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
-    "boards/work-with-views.html#calendar-view":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
-    "boards/groups-filter-sort.html#group-cards":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
-    "boards/groups-filter-sort.html#filters":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
-    "boards/groups-filter-sort.html#sorting-cards":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
-    "boards/share-and-collaborate.html#board-permissions":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
-    "boards/share-and-collaborate.html#roles":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
-    "boards/share-and-collaborate.html#guest-accounts":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
-    "boards/share-and-collaborate.html#share-a-board":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
-    "boards/share-and-collaborate.html#share-cards-on-channels":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
-    "boards/migrate-to-boards.html#import-and-export-a-board-archive":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
-    "boards/migrate-to-boards.html#export-to-csv":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
-    "boards/migrate-to-boards.html#import-and-export-from-other-applications":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
-    "boards/migrate-to-boards.html#import-from-asana":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
-    "boards/migrate-to-boards.html#import-from-notion":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
-    "boards/migrate-to-boards.html#import-from-jira":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
-    "boards/migrate-to-boards.html#import-from-trello":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
-    "boards/migrate-to-boards.html#import-from-todoist":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
-    "boards/navigate-boards.html#link-a-board-to-a-channel":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
-    "boards/navigate-boards.html#unlink-a-board-from-a-channel":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
-    "boards/navigate-boards.html#sidebar-categories":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
-    "boards/navigate-boards.html#drag-and-drop":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
-    "boards/navigate-boards.html#manage-boards-on-the-sidebar":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
-    "boards/navigate-boards.html#find-a-board":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
-    "boards/navigate-boards.html#team-sidebar":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
-    "boards/boards-settings.html#set-language":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
-    "boards/boards-settings.html#random-emoji-icons":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
-    "boards/boards-settings.html#product-tour":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
+"boards/data-and-archives.html":
+	"https://docs.mattermost.com/boards/migrate-to-boards.html",
+# Important Note: The following guide files were reorg'd in FY23 Q3.
+"boards/work-with-boards.html":
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
+"boards/boards-settings.html":
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
+"boards/calculations.html":
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
+"boards/work-with-boards.html":
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
+"boards/groups-filter-sort.html":
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
+"boards/migrate-to-boards.html":
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
+"boards/navigate-boards.html":
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
+"boards/overview.html":
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
+"boards/share-and-collaborate.html":
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
+"boards/work-with-boards.html":
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
+"boards/work-with-cards.html":
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
+"boards/work-with-views.html":
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
+"boards/overview.html#what-s-a-board":
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
+"boards/overview.html#what-s-a-card":
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
+"boards/overview.html#access-your-boards":
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
+"boards/overview.html#focalboard-personal-server":
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
+"boards/work-with-boards.html#add-new-boards":
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
+"boards/work-with-boards.html#choose-a-board-template":
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
+"boards/work-with-boards.html#edit-board-templates":
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
+"boards/work-with-cards.html#card-descriptions":
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
+"boards/work-with-cards.html#card-properties":
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
+"boards/work-with-cards.html#add-properties":
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
+"boards/work-with-cards.html#rename-a-property":
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
+"boards/work-with-cards.html#change-a-property-type":
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
+"boards/work-with-cards.html#delete-a-property":
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
+"boards/work-with-cards.html#define-a-select-or-multi-select-property":
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
+"boards/work-with-cards.html#toggle-properties-shown-on-a-board":
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
+"boards/work-with-cards.html#attach-files":
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
+"boards/work-with-cards.html#card-badges":
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
+"boards/work-with-cards.html#comment-on-a-card":
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
+"boards/work-with-cards.html#mention-people":
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
+"boards/work-with-cards.html#receive-updates":
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
+"boards/work-with-cards.html#search-cards":
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
+"boards/work-with-cards.html#card-templates":
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
+"boards/work-with-views.html#board-view":
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
+"boards/work-with-views.html#table-view":
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
+"boards/work-with-views.html#gallery-view":
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
+"boards/work-with-views.html#calendar-view":
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
+"boards/groups-filter-sort.html#group-cards":
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
+"boards/groups-filter-sort.html#filters":
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
+"boards/groups-filter-sort.html#sorting-cards":
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
+"boards/share-and-collaborate.html#board-permissions":
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
+"boards/share-and-collaborate.html#roles":
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
+"boards/share-and-collaborate.html#guest-accounts":
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
+"boards/share-and-collaborate.html#share-a-board":
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
+"boards/share-and-collaborate.html#share-cards-on-channels":
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
+"boards/migrate-to-boards.html#import-and-export-a-board-archive":
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
+"boards/migrate-to-boards.html#export-to-csv":
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
+"boards/migrate-to-boards.html#import-and-export-from-other-applications":
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
+"boards/migrate-to-boards.html#import-from-asana":
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
+"boards/migrate-to-boards.html#import-from-notion":
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
+"boards/migrate-to-boards.html#import-from-jira":
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
+"boards/migrate-to-boards.html#import-from-trello":
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
+"boards/migrate-to-boards.html#import-from-todoist":
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
+"boards/navigate-boards.html#link-a-board-to-a-channel":
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
+"boards/navigate-boards.html#unlink-a-board-from-a-channel":
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
+"boards/navigate-boards.html#sidebar-categories":
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
+"boards/navigate-boards.html#drag-and-drop":
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
+"boards/navigate-boards.html#manage-boards-on-the-sidebar":
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
+"boards/navigate-boards.html#find-a-board":
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
+"boards/navigate-boards.html#team-sidebar":
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
+"boards/boards-settings.html#set-language":
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
+"boards/boards-settings.html#random-emoji-icons":
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
+"boards/boards-settings.html#product-tour":
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
 
-    # Channels redirects
-    "channels/find-channels.html":
+# Channels redirects
+"channels/find-channels.html":
         "https://docs.mattermost.com/channels/browse-channels.html",
-    "channels/sign-in.html":
+"channels/sign-in.html":
         "https://docs.mattermost.com/welcome/log-in.html",
-    "channels/organize-conversations.html#enable-collapsed-reply-threads-beta":
-        "https://docs.mattermost.com/channels/organize-conversations.html#enable-collapsed-reply-threads",
-    # Important Note: The following guide files were reorg'd in FY23 Q3.
-    "channels/channel-types.html":
-        "https://docs.mattermost.com/collaborate/channel-types.html",
-    "channels/create-channels.html":
-        "https://docs.mattermost.com/collaborate/create-channels.html",
-    "channels/channel-naming-conventions.html":
-        "https://docs.mattermost.com/collaborate/channel-naming-conventions.html",
-    "channels/rename-channels.html":
-        "https://docs.mattermost.com/collaborate/rename-channels.html",
-    "channels/convert-public-channels.html":
-        "https://docs.mattermost.com/collaborate/convert-public-channels.html",
-    "channels/join-leave-channels.html":
-        "https://docs.mattermost.com/collaborate/join-leave-channels.html",
-    "channels/make-calls.html":
-        "https://docs.mattermost.com/collaborate/make-calls.html",
-    "channels/manage-channel-members.html":
-        "https://docs.mattermost.com/collaborate/manage-channel-members.html",
-    "channels/browse-channels.html":
-        "https://docs.mattermost.com/collaborate/browse-channels.html",
-    "channels/navigate-between-channels.html":
-        "https://docs.mattermost.com/collaborate/navigate-between-channels.html",
-    "channels/favorite-channels.html":
-        "https://docs.mattermost.com/collaborate/favorite-channels.html",
-    "channels/mark-channels-unread.html":
-        "https://docs.mattermost.com/collaborate/mark-channels-unread.html",
-    "channels/customize-your-channel-sidebar.html":
-        "https://docs.mattermost.com/preferences/customize-your-channel-sidebar.html",
-    "channels/archive-unarchive-channels.html":
-        "https://docs.mattermost.com/collaborate/archive-unarchive-channels.html",
-    "channels/set-channel-preferences.html":
-        "https://docs.mattermost.com/guides/preferences.html",
-    "channels/channels-settings.html":
-        "https://docs.mattermost.com/guides/preferences.html",
-    "channels/interact-with-channels.html":
-        "https://docs.mattermost.com/collaborate/run-slash-commands.html",
-    "channels/send-messages.html":
-        "https://docs.mattermost.com/collaborate/send-messages.html",
-    "channels/message-priority.html":
-        "https://docs.mattermost.com/collaborate/message-priority.html",
-    "channels/reply-to-messages.html":
-        "https://docs.mattermost.com/collaborate/reply-to-messages.html",
-    "channels/organize-conversations.html":
-        "https://docs.mattermost.com/collaborate/organize-conversations.html",
-    "channels/react-to-messages.html":
-        "https://docs.mattermost.com/collaborate/react-with-emojis-gifs.html",
-    "channels/mention-people.html":
-        "https://docs.mattermost.com/collaborate/mention-people.html",
-    "channels/mark-messages-unread.html":
-        "https://docs.mattermost.com/collaborate/mark-messages-unread.html",
-    "channels/format-messages.html":
-        "https://docs.mattermost.com/collaborate/format-messages.html",
-    "channels/share-files-in-messages.html":
-        "https://docs.mattermost.com/collaborate/share-files-in-messages.html",
-    "channels/forward-messages.html":
-        "https://docs.mattermost.com/collaborate/forward-messages.html",
-    "channels/share-links.html":
-        "https://docs.mattermost.com/collaborate/share-links.html",
-    "channels/save-pin-messages.html":
-        "https://docs.mattermost.com/collaborate/save-pin-messages.html",
-    "channels/message-reminders.html":
-        "https://docs.mattermost.com/collaborate/message-reminders.html",
-    "channels/search-for-messages.html":
-        "https://docs.mattermost.com/collaborate/search-for-messages.html",
-    "channels/keyboard-shortcuts-for-channels.html":
-        "https://docs.mattermost.com/collaborate/keyboard-shortcuts.html",
-    "channels/run-slash-commands.html":
-        "https://docs.mattermost.com/collaborate/run-slash-commands.html",
-    "channels/extend-channels-functionality.html":
-        "https://docs.mattermost.com/collaborate/extend-mattermost-with-integrations.html",
-    "channels/collaborate-using-mattermost-for-microsoft-teams.html":
-        "https://docs.mattermost.com/collaborate/collaborate-using-mattermost-for-microsoft-teams.html",
-    "channels/use-mattermost-google-calendar-plugin.html":
-        "https://docs.mattermost.com/collaborate/use-mattermost-google-calendar-plugin.html",
-    "channels/channel-types.html#public-channels":
-        "https://docs.mattermost.com/collaborate/channel-types.html#public-channels",
-    "channels/channel-types.html#private-channels":
-        "https://docs.mattermost.com/collaborate/channel-types.html#private-channels",
-    "channels/channel-types.html#direct-messages":
-        "https://docs.mattermost.com/collaborate/channel-types.html#direct-messages",
-    "channels/channel-types.html#group-messages":
-        "https://docs.mattermost.com/collaborate/channel-types.html#group-messages",
-    "channels/channel-naming-conventions.html#basic-structure":
-        "https://docs.mattermost.com/collaborate/channel-naming-conventions.html#basic-structure",
-    "channels/channel-naming-conventions.html#scope-channel-names":
-        "https://docs.mattermost.com/collaborate/channel-naming-conventions.html#scope-channel-names",
-    "channels/channel-naming-conventions.html#channel-naming-examples":
-        "https://docs.mattermost.com/collaborate/channel-naming-conventions.html#channel-naming-examples",
-    "channels/convert-public-channels.html#convert-private-channels-to-public-channels":
-        "https://docs.mattermost.com/collaborate/convert-public-channels.html#convert-private-channels-to-public-channels",
-    "channels/join-leave-channels.html#join-a-channel":
-        "https://docs.mattermost.com/collaborate/join-leave-channels.html#join-a-channel",
-    "channels/join-leave-channels.html#leave-a-channel":
-        "https://docs.mattermost.com/collaborate/join-leave-channels.html#leave-a-channel",
-    "channels/make-calls.html#id1":
-        "https://docs.mattermost.com/collaborate/make-calls.html#start-a-call",
-    "channels/make-calls.html#emojis":
-        "https://docs.mattermost.com/collaborate/make-calls.html#emojis",
-    "channels/make-calls.html#chat-in-a-call":
-        "https://docs.mattermost.com/collaborate/make-calls.html#chat-in-a-call",
-    "channels/make-calls.html#record-a-call":
-        "https://docs.mattermost.com/collaborate/make-calls.html#record-a-call",
-    "channels/make-calls.html#frequently-asked-questions":
-        "https://docs.mattermost.com/collaborate/make-calls.html#frequently-asked-questions",
-    "channels/make-calls.html#troubleshooting":
-        "https://docs.mattermost.com/collaborate/make-calls.html#troubleshooting",
-    "channels/make-calls.html#debugging":
-        "https://docs.mattermost.com/collaborate/make-calls.html#debugging",
-    "channels/manage-channel-members.html#add-members-to-a-channel":
-        "https://docs.mattermost.com/collaborate/manage-channel-members.html#add-members-to-a-channel",
-    "channels/manage-channel-members.html#leave-a-channel":
-        "https://docs.mattermost.com/collaborate/manage-channel-members.html#leave-a-channel",
-    "channels/manage-channel-members.html#remove-other-members-from-a-channel":
-        "https://docs.mattermost.com/collaborate/manage-channel-members.html#remove-other-members-from-a-channel",
-    "channels/browse-channels.html#revisit-recent-channels":
-        "https://docs.mattermost.com/collaborate/browse-channels.html#revisit-recent-channels",
-    "channels/navigate-between-channels.html#navigate-between-channels":
-        "https://docs.mattermost.com/collaborate/navigate-between-channels.html#navigate-between-channels",
-    "channels/navigate-between-channels.html#return-to-recently-viewed-channels":
-        "https://docs.mattermost.com/collaborate/navigate-between-channels.html#return-to-recently-viewed-channels",
-    "channels/customize-your-channel-sidebar.html#what-can-you-customize":
-        "https://docs.mattermost.com/preferences/customize-your-channel-sidebar.html",
-    "channels/customize-your-channel-sidebar.html#create-custom-categories":
-        "https://docs.mattermost.com/preferences/customize-your-channel-sidebar.html#create-custom-categories",
-    "channels/customize-your-channel-sidebar.html#make-categories-work-for-you":
-        "https://docs.mattermost.com/preferences/customize-your-channel-sidebar.html#make-categories-work-for-you",
-    "channels/customize-your-channel-sidebar.html#organize-channels-in-categories":
-        "https://docs.mattermost.com/preferences/customize-your-channel-sidebar.html#organize-channels-in-categories",
-    "channels/customize-your-channel-sidebar.html#mute-and-unmute-categories":
-        "https://docs.mattermost.com/preferences/customize-your-channel-sidebar.html#mute-and-unmute-categories",
-    "channels/customize-your-channel-sidebar.html#sort-channels-in-categories":
-        "https://docs.mattermost.com/preferences/customize-your-channel-sidebar.html#sort-channels-in-categories",
-    "channels/customize-your-channel-sidebar.html#group-unread-channels-separately":
-        "https://docs.mattermost.com/preferences/customize-your-channel-sidebar.html#group-unread-channels-separately",
-    "channels/customize-your-channel-sidebar.html#manage-direct-messages":
-        "https://docs.mattermost.com/preferences/customize-your-channel-sidebar.html#manage-direct-messages",
-    "channels/archive-unarchive-channels.html#archive-a-channel":
-        "https://docs.mattermost.com/collaborate/archive-unarchive-channels.html#archive-a-channel",
-    "channels/archive-unarchive-channels.html#unarchive-a-channel":
-        "https://docs.mattermost.com/collaborate/archive-unarchive-channels.html#unarchive-a-channel",
-    "channels/set-channel-preferences.html#channel-notification-preferences":
-        "https://docs.mattermost.com/preferences/manage-your-notifications.html",
-    "channels/set-channel-preferences.html#channel-header":
-        "https://docs.mattermost.com/collaborate/channel-header-purpose.html#channel-header",
-    "channels/set-channel-preferences.html#channel-purpose":
-        "https://docs.mattermost.com/collaborate/channel-header-purpose.html#channel-purpose",
-    "channels/set-channel-preferences.html#channel-name":
-        "https://docs.mattermost.com/collaborate/channel-header-purpose.html#channel-name",
-    "channels/set-channel-preferences.html#automatically-follow-all-new-threads-in-this-channel":
-        "https://docs.mattermost.com/preferences/manage-your-notifications.html",
-    "channels/channels-settings.html#notifications":
-        "https://docs.mattermost.com/preferences/manage-your-notifications.html",
-    "channels/channels-settings.html#display":
-        "https://docs.mattermost.com/preferences/manage-your-display-options.html",
-    "channels/channels-settings.html#sidebar":
-        "https://docs.mattermost.com/preferences/manage-your-sidebar-options.html",
-    "channels/channels-settings.html#advanced":
-        "https://docs.mattermost.com/preferences/manage-advanced-options.html",
-    "channels/interact-with-channels.html#slash-commands":
-        "https://docs.mattermost.com/collaborate/run-slash-commands.html",
-    "channels/send-messages.html#draft-messages":
-        "https://docs.mattermost.com/collaborate/send-messages.html#draft-messages",
-    "channels/send-messages.html#edit-or-delete-messages":
-        "https://docs.mattermost.com/collaborate/send-messages.html#edit-or-delete-messages",
-    "channels/send-messages.html#do-more-with-your-messages":
-        "https://docs.mattermost.com/collaborate/send-messages.html#do-more-with-your-messages",
-    "channels/message-priority.html#send-persistent-notifications":
-        "https://docs.mattermost.com/collaborate/message-priority.html#send-persistent-notifications",
-    "channels/message-priority.html#request-acknowledgements":
-        "https://docs.mattermost.com/collaborate/message-priority.html#request-acknowledgements",
-    "channels/reply-to-messages.html#organize-conversations-into-threads":
-        "https://docs.mattermost.com/collaborate/reply-to-messages.html#organize-conversations-into-threads",
-    "channels/reply-to-messages.html#work-with-collapsed-reply-threads":
-        "https://docs.mattermost.com/collaborate/reply-to-messages.html#work-with-collapsed-reply-threads",
-    "channels/organize-conversations.html#start-or-reply-to-threads":
-        "https://docs.mattermost.com/collaborate/organize-conversations.html#start-or-reply-to-threads",
-    "channels/organize-conversations.html#follow-threads-and-messages":
-        "https://docs.mattermost.com/collaborate/organize-conversations.html#follow-threads-and-messages",
-    "channels/organize-conversations.html#view-all-threads":
-        "https://docs.mattermost.com/collaborate/organize-conversations.html#view-all-threads",
-    "channels/organize-conversations.html#enable-collapsed-reply-threads":
+"channels/organize-conversations.html#enable-collapsed-reply-threads-beta":
         "https://docs.mattermost.com/collaborate/organize-conversations.html#enable-collapsed-reply-threads",
-    "channels/organize-conversations.html#tutorial-video":
-        "https://docs.mattermost.com/collaborate/organize-conversations.html#tutorial-video",
-    "channels/organize-conversations.html#known-issues":
-        "https://docs.mattermost.com/collaborate/organize-conversations.html#known-issues",
-    "channels/react-to-messages.html#manage-emojis":
-        "https://docs.mattermost.com/collaborate/react-with-emojis-gifs.html#manage-emojis",
-    "channels/mention-people.html#username":
-        "https://docs.mattermost.com/collaborate/mention-people.html#username",
-    "channels/mention-people.html#channel-and-all":
-        "https://docs.mattermost.com/collaborate/mention-people.html#channel-and-all",
-    "channels/mention-people.html#here":
-        "https://docs.mattermost.com/collaborate/mention-people.html#here",
-    "channels/mention-people.html#groupname":
-        "https://docs.mattermost.com/collaborate/mention-people.html#groupname",
-    "channels/mention-people.html#words-that-trigger-mentions":
-        "https://docs.mattermost.com/collaborate/mention-people.html#words-that-trigger-mentions",
-    "channels/mention-people.html#see-all-recent-mentions":
-        "https://docs.mattermost.com/collaborate/mention-people.html#see-all-recent-mentions",
-    "channels/mention-people.html#confirmation-dialog-warnings":
-        "https://docs.mattermost.com/collaborate/mention-people.html#confirmation-dialog-warnings",
-    "channels/mention-people.html#mention-highlights":
-        "https://docs.mattermost.com/collaborate/mention-people.html#mention-highlights",
-    "channels/format-messages.html#use-the-messaging-formatting-toolbar":
-        "https://docs.mattermost.com/collaborate/format-messages.html#use-the-messaging-formatting-toolbar",
-    "channels/format-messages.html#use-markdown":
-        "https://docs.mattermost.com/collaborate/format-messages.html#use-markdown",
-    "channels/share-files-in-messages.html#attachment-limits-and-sizes":
-        "https://docs.mattermost.com/collaborate/share-files-in-messages.html#attachment-limits-and-sizes",
-    "channels/share-files-in-messages.html#preview-file-attachments":
-        "https://docs.mattermost.com/collaborate/share-files-in-messages.html#preview-file-attachments",
-    "channels/save-pin-messages.html#save-messages":
-        "https://docs.mattermost.com/collaborate/save-pin-messages.html#save-messages",
-    "channels/save-pin-messages.html#pin-messages":
-        "https://docs.mattermost.com/collaborate/save-pin-messages.html#pin-messages",
-    "channels/message-reminders.html#set-a-reminder":
+# Important Note: The following guide files were reorg'd in FY23 Q3.
+"channels/channel-types.html":
+        "https://docs.mattermost.com/collaborate/channel-types.html",
+"channels/create-channels.html":
+        "https://docs.mattermost.com/collaborate/create-channels.html",
+"channels/channel-naming-conventions.html":
+        "https://docs.mattermost.com/collaborate/channel-naming-conventions.html",
+"channels/rename-channels.html":
+        "https://docs.mattermost.com/collaborate/rename-channels.html",
+"channels/convert-public-channels.html":
+        "https://docs.mattermost.com/collaborate/convert-public-channels.html",
+"channels/join-leave-channels.html":
+        "https://docs.mattermost.com/collaborate/join-leave-channels.html",
+"channels/make-calls.html":
+        "https://docs.mattermost.com/collaborate/make-calls.html",
+"channels/manage-channel-members.html":
+        "https://docs.mattermost.com/collaborate/manage-channel-members.html",
+"channels/browse-channels.html":
+        "https://docs.mattermost.com/collaborate/browse-channels.html",
+"channels/navigate-between-channels.html":
+        "https://docs.mattermost.com/collaborate/navigate-between-channels.html",
+"channels/favorite-channels.html":
+        "https://docs.mattermost.com/collaborate/favorite-channels.html",
+"channels/mark-channels-unread.html":
+        "https://docs.mattermost.com/collaborate/mark-channels-unread.html",
+"channels/customize-your-channel-sidebar.html":
+        "https://docs.mattermost.com/preferences/customize-your-channel-sidebar.html",
+"channels/archive-unarchive-channels.html":
+        "https://docs.mattermost.com/collaborate/archive-unarchive-channels.html",
+"channels/set-channel-preferences.html":
+        "https://docs.mattermost.com/guides/preferences.html",
+"channels/channels-settings.html":
+        "https://docs.mattermost.com/guides/preferences.html",
+"channels/interact-with-channels.html":
+        "https://docs.mattermost.com/collaborate/run-slash-commands.html",
+"channels/send-messages.html":
+        "https://docs.mattermost.com/collaborate/send-messages.html",
+"channels/message-priority.html":
+        "https://docs.mattermost.com/collaborate/message-priority.html",
+"channels/reply-to-messages.html":
+        "https://docs.mattermost.com/collaborate/reply-to-messages.html",
+"channels/organize-conversations.html":
+        "https://docs.mattermost.com/collaborate/organize-conversations.html",
+"channels/react-to-messages.html":
+        "https://docs.mattermost.com/collaborate/react-with-emojis-gifs.html",
+"channels/mention-people.html":
+        "https://docs.mattermost.com/collaborate/mention-people.html",
+"channels/mark-messages-unread.html":
+        "https://docs.mattermost.com/collaborate/mark-messages-unread.html",
+"channels/format-messages.html":
+        "https://docs.mattermost.com/collaborate/format-messages.html",
+"channels/share-files-in-messages.html":
+        "https://docs.mattermost.com/collaborate/share-files-in-messages.html",
+"channels/forward-messages.html":
+        "https://docs.mattermost.com/collaborate/forward-messages.html",
+"channels/share-links.html":
+        "https://docs.mattermost.com/collaborate/share-links.html",
+"channels/save-pin-messages.html":
+        "https://docs.mattermost.com/collaborate/save-pin-messages.html",
+"channels/message-reminders.html":
         "https://docs.mattermost.com/collaborate/message-reminders.html",
-    "channels/search-for-messages.html#search-for-message-and-files":
+"channels/search-for-messages.html":
+        "https://docs.mattermost.com/collaborate/search-for-messages.html",
+"channels/keyboard-accessibility.html":
+        "https://docs.mattermost.com/collaborate/keyboard-accessibility.html#",
+"channels/keyboard-shortcuts-for-channels.html":
+        "https://docs.mattermost.com/collaborate/keyboard-shortcuts.html",
+"channels/run-slash-commands.html":
+        "https://docs.mattermost.com/collaborate/run-slash-commands.html",
+"channels/extend-channels-functionality.html":
+        "https://docs.mattermost.com/collaborate/extend-mattermost-with-integrations.html",
+"channels/collaborate-using-mattermost-for-microsoft-teams.html":
+        "https://docs.mattermost.com/collaborate/collaborate-using-mattermost-for-microsoft-teams.html",
+"channels/use-mattermost-google-calendar-plugin.html":
+        "https://docs.mattermost.com/collaborate/use-mattermost-google-calendar-plugin.html",
+"channels/channel-types.html#public-channels":
+        "https://docs.mattermost.com/collaborate/channel-types.html#public-channels",
+"channels/channel-types.html#private-channels":
+        "https://docs.mattermost.com/collaborate/channel-types.html#private-channels",
+"channels/channel-types.html#direct-messages":
+        "https://docs.mattermost.com/collaborate/channel-types.html#direct-messages",
+"channels/channel-types.html#group-messages":
+        "https://docs.mattermost.com/collaborate/channel-types.html#group-messages",
+"channels/channel-naming-conventions.html#basic-structure":
+        "https://docs.mattermost.com/collaborate/channel-naming-conventions.html#basic-structure",
+"channels/channel-naming-conventions.html#scope-channel-names":
+        "https://docs.mattermost.com/collaborate/channel-naming-conventions.html#scope-channel-names",
+"channels/channel-naming-conventions.html#channel-naming-examples":
+        "https://docs.mattermost.com/collaborate/channel-naming-conventions.html#channel-naming-examples",
+"channels/convert-public-channels.html#convert-private-channels-to-public-channels":
+        "https://docs.mattermost.com/collaborate/convert-public-channels.html#convert-private-channels-to-public-channels",
+"channels/join-leave-channels.html#join-a-channel":
+        "https://docs.mattermost.com/collaborate/join-leave-channels.html#join-a-channel",
+"channels/join-leave-channels.html#leave-a-channel":
+        "https://docs.mattermost.com/collaborate/join-leave-channels.html#leave-a-channel",
+"channels/make-calls.html#id1":
+        "https://docs.mattermost.com/collaborate/make-calls.html#start-a-call",
+"channels/make-calls.html#emojis":
+        "https://docs.mattermost.com/collaborate/make-calls.html#emojis",
+"channels/make-calls.html#chat-in-a-call":
+        "https://docs.mattermost.com/collaborate/make-calls.html#chat-in-a-call",
+"channels/make-calls.html#record-a-call":
+        "https://docs.mattermost.com/collaborate/make-calls.html#record-a-call",
+"channels/make-calls.html#frequently-asked-questions":
+        "https://docs.mattermost.com/collaborate/make-calls.html#frequently-asked-questions",
+"channels/make-calls.html#troubleshooting":
+        "https://docs.mattermost.com/collaborate/make-calls.html#troubleshooting",
+"channels/make-calls.html#debugging":
+        "https://docs.mattermost.com/collaborate/make-calls.html#debugging",
+"channels/manage-channel-members.html#add-members-to-a-channel":
+        "https://docs.mattermost.com/collaborate/manage-channel-members.html#add-members-to-a-channel",
+"channels/manage-channel-members.html#leave-a-channel":
+        "https://docs.mattermost.com/collaborate/manage-channel-members.html#leave-a-channel",
+"channels/manage-channel-members.html#remove-other-members-from-a-channel":
+        "https://docs.mattermost.com/collaborate/manage-channel-members.html#remove-other-members-from-a-channel",
+"channels/browse-channels.html#revisit-recent-channels":
+        "https://docs.mattermost.com/collaborate/browse-channels.html#revisit-recent-channels",
+"channels/navigate-between-channels.html#navigate-between-channels":
+        "https://docs.mattermost.com/collaborate/navigate-between-channels.html#navigate-between-channels",
+"channels/navigate-between-channels.html#return-to-recently-viewed-channels":
+        "https://docs.mattermost.com/collaborate/navigate-between-channels.html#return-to-recently-viewed-channels",
+"channels/customize-your-channel-sidebar.html#what-can-you-customize":
+        "https://docs.mattermost.com/preferences/customize-your-channel-sidebar.html",
+"channels/customize-your-channel-sidebar.html#create-custom-categories":
+        "https://docs.mattermost.com/preferences/customize-your-channel-sidebar.html#create-custom-categories",
+"channels/customize-your-channel-sidebar.html#make-categories-work-for-you":
+        "https://docs.mattermost.com/preferences/customize-your-channel-sidebar.html#make-categories-work-for-you",
+"channels/customize-your-channel-sidebar.html#organize-channels-in-categories":
+        "https://docs.mattermost.com/preferences/customize-your-channel-sidebar.html#organize-channels-in-categories",
+"channels/customize-your-channel-sidebar.html#mute-and-unmute-categories":
+        "https://docs.mattermost.com/preferences/customize-your-channel-sidebar.html#mute-and-unmute-categories",
+"channels/customize-your-channel-sidebar.html#sort-channels-in-categories":
+        "https://docs.mattermost.com/preferences/customize-your-channel-sidebar.html#sort-channels-in-categories",
+"channels/customize-your-channel-sidebar.html#group-unread-channels-separately":
+        "https://docs.mattermost.com/preferences/customize-your-channel-sidebar.html#group-unread-channels-separately",
+"channels/customize-your-channel-sidebar.html#manage-direct-messages":
+        "https://docs.mattermost.com/preferences/customize-your-channel-sidebar.html#manage-direct-messages",
+"channels/archive-unarchive-channels.html#archive-a-channel":
+        "https://docs.mattermost.com/collaborate/archive-unarchive-channels.html#archive-a-channel",
+"channels/archive-unarchive-channels.html#unarchive-a-channel":
+        "https://docs.mattermost.com/collaborate/archive-unarchive-channels.html#unarchive-a-channel",
+"channels/set-channel-preferences.html#channel-notification-preferences":
+        "https://docs.mattermost.com/preferences/manage-your-notifications.html",
+"channels/set-channel-preferences.html#channel-header":
+        "https://docs.mattermost.com/collaborate/channel-header-purpose.html#channel-header",
+"channels/set-channel-preferences.html#channel-purpose":
+        "https://docs.mattermost.com/collaborate/channel-header-purpose.html#channel-purpose",
+"channels/set-channel-preferences.html#channel-name":
+        "https://docs.mattermost.com/collaborate/channel-header-purpose.html#channel-name",
+"channels/set-channel-preferences.html#automatically-follow-all-new-threads-in-this-channel":
+        "https://docs.mattermost.com/preferences/manage-your-notifications.html",
+"channels/channels-settings.html#notifications":
+        "https://docs.mattermost.com/preferences/manage-your-notifications.html",
+"channels/channels-settings.html#display":
+        "https://docs.mattermost.com/preferences/manage-your-display-options.html",
+"channels/channels-settings.html#sidebar":
+        "https://docs.mattermost.com/preferences/manage-your-sidebar-options.html",
+"channels/channels-settings.html#advanced":
+        "https://docs.mattermost.com/preferences/manage-advanced-options.html",
+"channels/interact-with-channels.html#slash-commands":
+        "https://docs.mattermost.com/collaborate/run-slash-commands.html",
+"channels/send-messages.html#draft-messages":
+        "https://docs.mattermost.com/collaborate/send-messages.html#draft-messages",
+"channels/send-messages.html#edit-or-delete-messages":
+        "https://docs.mattermost.com/collaborate/send-messages.html#edit-or-delete-messages",
+"channels/send-messages.html#do-more-with-your-messages":
+        "https://docs.mattermost.com/collaborate/send-messages.html#do-more-with-your-messages",
+"channels/message-priority.html#send-persistent-notifications":
+        "https://docs.mattermost.com/collaborate/message-priority.html#send-persistent-notifications",
+"channels/message-priority.html#request-acknowledgements":
+        "https://docs.mattermost.com/collaborate/message-priority.html#request-acknowledgements",
+"channels/reply-to-messages.html#organize-conversations-into-threads":
+        "https://docs.mattermost.com/collaborate/reply-to-messages.html#organize-conversations-into-threads",
+"channels/reply-to-messages.html#work-with-collapsed-reply-threads":
+        "https://docs.mattermost.com/collaborate/reply-to-messages.html#work-with-collapsed-reply-threads",
+"channels/organize-conversations.html#start-or-reply-to-threads":
+        "https://docs.mattermost.com/collaborate/organize-conversations.html#start-or-reply-to-threads",
+"channels/organize-conversations.html#follow-threads-and-messages":
+        "https://docs.mattermost.com/collaborate/organize-conversations.html#follow-threads-and-messages",
+"channels/organize-conversations.html#view-all-threads":
+        "https://docs.mattermost.com/collaborate/organize-conversations.html#view-all-threads",
+"channels/organize-conversations.html#enable-collapsed-reply-threads":
+        "https://docs.mattermost.com/collaborate/organize-conversations.html#enable-collapsed-reply-threads",
+"channels/organize-conversations.html#tutorial-video":
+        "https://docs.mattermost.com/collaborate/organize-conversations.html#tutorial-video",
+"channels/organize-conversations.html#known-issues":
+        "https://docs.mattermost.com/collaborate/organize-conversations.html#known-issues",
+"channels/react-to-messages.html#manage-emojis":
+        "https://docs.mattermost.com/collaborate/react-with-emojis-gifs.html#manage-emojis",
+"channels/mention-people.html#username":
+        "https://docs.mattermost.com/collaborate/mention-people.html#username",
+"channels/mention-people.html#channel-and-all":
+        "https://docs.mattermost.com/collaborate/mention-people.html#channel-and-all",
+"channels/mention-people.html#here":
+        "https://docs.mattermost.com/collaborate/mention-people.html#here",
+"channels/mention-people.html#groupname":
+        "https://docs.mattermost.com/collaborate/mention-people.html#groupname",
+"channels/mention-people.html#words-that-trigger-mentions":
+        "https://docs.mattermost.com/collaborate/mention-people.html#words-that-trigger-mentions",
+"channels/mention-people.html#see-all-recent-mentions":
+        "https://docs.mattermost.com/collaborate/mention-people.html#see-all-recent-mentions",
+"channels/mention-people.html#confirmation-dialog-warnings":
+        "https://docs.mattermost.com/collaborate/mention-people.html#confirmation-dialog-warnings",
+"channels/mention-people.html#mention-highlights":
+        "https://docs.mattermost.com/collaborate/mention-people.html#mention-highlights",
+"channels/format-messages.html#use-the-messaging-formatting-toolbar":
+        "https://docs.mattermost.com/collaborate/format-messages.html#use-the-messaging-formatting-toolbar",
+"channels/format-messages.html#use-markdown":
+        "https://docs.mattermost.com/collaborate/format-messages.html#use-markdown",
+"channels/share-files-in-messages.html#attachment-limits-and-sizes":
+        "https://docs.mattermost.com/collaborate/share-files-in-messages.html#attachment-limits-and-sizes",
+"channels/share-files-in-messages.html#preview-file-attachments":
+        "https://docs.mattermost.com/collaborate/share-files-in-messages.html#preview-file-attachments",
+"channels/save-pin-messages.html#save-messages":
+        "https://docs.mattermost.com/collaborate/save-pin-messages.html#save-messages",
+"channels/save-pin-messages.html#pin-messages":
+        "https://docs.mattermost.com/collaborate/save-pin-messages.html#pin-messages",
+"channels/message-reminders.html#set-a-reminder":
+        "https://docs.mattermost.com/collaborate/message-reminders.html",
+"channels/search-for-messages.html#search-for-message-and-files":
         "https://docs.mattermost.com/collaborate/search-for-messages.html#search-for-message-and-files",
-    "channels/search-for-messages.html#search-modifiers":
+"channels/search-for-messages.html#search-modifiers":
         "https://docs.mattermost.com/collaborate/search-for-messages.html#search-modifiers",
-    "channels/search-for-messages.html#hashtags":
+"channels/search-for-messages.html#hashtags":
         "https://docs.mattermost.com/collaborate/search-for-messages.html#hashtags",
-    "channels/search-for-messages.html#notes-about-performing-mattermost-searches":
+"channels/search-for-messages.html#notes-about-performing-mattermost-searches":
         "https://docs.mattermost.com/collaborate/search-for-messages.html#notes-about-performing-mattermost-searches",
-    "channels/search-for-messages.html#technical-notes-about-searching":
+"channels/search-for-messages.html#technical-notes-about-searching":
         "https://docs.mattermost.com/collaborate/search-for-messages.html#technical-notes-about-searching",
-    "channels/keyboard-accessibility.html":
+"channels/keyboard-accessibility.html":
         "https://docs.mattermost.com/collaborate/keyboard-accessibility.html",
-    "channels/keyboard-accessibility.html#region-navigation":
+"channels/keyboard-accessibility.html#region-navigation":
         "https://docs.mattermost.com/collaborate/keyboard-accessibility.html",
-    "channels/keyboard-accessibility.html#message-navigation":
+"channels/keyboard-accessibility.html#message-navigation":
         "https://docs.mattermost.com/collaborate/keyboard-accessibility.html#message-navigation",
-    "channels/keyboard-accessibility.html#channel-sidebar-navigation":
+"channels/keyboard-accessibility.html#channel-sidebar-navigation":
         "https://docs.mattermost.com/collaborate/keyboard-accessibility.html#channel-sidebar-navigation",
-    "channels/keyboard-shortcuts-for-channels.html#navigation-shortcuts-for-mattermost-channels":
+"channels/keyboard-shortcuts-for-channels.html#navigation-shortcuts-for-mattermost-channels":
         "https://docs.mattermost.com/collaborate/keyboard-shortcuts.html#channel-navigation",
-    "channels/keyboard-shortcuts-for-channels.html#file-upload-shortcuts":
+"channels/keyboard-shortcuts-for-channels.html#file-upload-shortcuts":
         "https://docs.mattermost.com/collaborate/keyboard-shortcuts.html#file-uploads",
-    "channels/keyboard-shortcuts-for-channels.html#message-shortcuts":
+"channels/keyboard-shortcuts-for-channels.html#message-shortcuts":
         "https://docs.mattermost.com/collaborate/keyboard-shortcuts.html#messages",
-    "channels/keyboard-shortcuts-for-channels.html#formatting-shortcuts":
+"channels/keyboard-shortcuts-for-channels.html#formatting-shortcuts":
         "https://docs.mattermost.com/collaborate/keyboard-shortcuts.html#message-formatting",
-    "channels/keyboard-shortcuts-for-channels.html#accessibility-nagivation-shortcuts":
+"channels/keyboard-shortcuts-for-channels.html#accessibility-nagivation-shortcuts":
         "https://docs.mattermost.com/collaborate/keyboard-shortcuts.html#accessibility-nagivation",
-    "channels/keyboard-shortcuts-for-channels.html#calls-shortcuts":
+"channels/keyboard-shortcuts-for-channels.html#calls-shortcuts":
         "https://docs.mattermost.com/collaborate/keyboard-shortcuts.html#calls",
-    "channels/extend-channels-functionality.html#popular-mattermost-integrations":
+"channels/extend-channels-functionality.html#popular-mattermost-integrations":
         "https://docs.mattermost.com/collaborate/extend-mattermost-with-integrations.html#popular-mattermost-integrations",
-    "channels/collaborate-using-mattermost-for-microsoft-teams.html#connect-your-mattermost-account-to-your-ms-teams-account":
+"channels/collaborate-using-mattermost-for-microsoft-teams.html#connect-your-mattermost-account-to-your-ms-teams-account":
         "https://docs.mattermost.com/collaborate/collaborate-using-mattermost-for-microsoft-teams.html#connect-your-mattermost-account-to-your-ms-teams-account",
-    "channels/collaborate-using-mattermost-for-microsoft-teams.html#collaborate-through-messages":
+"channels/collaborate-using-mattermost-for-microsoft-teams.html#collaborate-through-messages":
         "https://docs.mattermost.com/collaborate/collaborate-using-mattermost-for-microsoft-teams.html#collaborate-through-messages",
-    "channels/collaborate-using-mattermost-for-microsoft-teams.html#collaborate-through-linked-channels":
+"channels/collaborate-using-mattermost-for-microsoft-teams.html#collaborate-through-linked-channels":
         "https://docs.mattermost.com/collaborate/collaborate-using-mattermost-for-microsoft-teams.html#collaborate-through-linked-channels",
-    "channels/collaborate-using-mattermost-for-microsoft-teams.html#demonstration-mattermost-embedded-in-microsoft-teams":
+"channels/collaborate-using-mattermost-for-microsoft-teams.html#demonstration-mattermost-embedded-in-microsoft-teams":
         "https://docs.mattermost.com/collaborate/collaborate-using-mattermost-for-microsoft-teams.html#demonstration-mattermost-embedded-in-microsoft-teams",
-    "channels/use-mattermost-google-calendar-plugin.html#connect-your-google-calendar-account-to-mattermost":
+"channels/use-mattermost-google-calendar-plugin.html#connect-your-google-calendar-account-to-mattermost":
         "https://docs.mattermost.com/collaborate/use-mattermost-google-calendar-plugin.html#connect-your-google-calendar-account-to-mattermost",
-    "channels/use-mattermost-google-calendar-plugin.html#customize-your-google-calendar-plugin":
+"channels/use-mattermost-google-calendar-plugin.html#customize-your-google-calendar-plugin":
         "https://docs.mattermost.com/collaborate/use-mattermost-google-calendar-plugin.html#customize-your-google-calendar-plugin",
-    "channels/use-mattermost-google-calendar-plugin.html#create-a-calendar-event":
+"channels/use-mattermost-google-calendar-plugin.html#create-a-calendar-event":
         "https://docs.mattermost.com/collaborate/use-mattermost-google-calendar-plugin.html#create-a-calendar-event",
-    "channels/use-mattermost-google-calendar-plugin.html#review-your-upcoming-events":
+"channels/use-mattermost-google-calendar-plugin.html#review-your-upcoming-events":
         "https://docs.mattermost.com/collaborate/use-mattermost-google-calendar-plugin.html#review-your-upcoming-events",
-    "channels/about-teams-channels-messages.html":
+"channels/about-teams-channels-messages.html":
         "https://docs.mattermost.com/guides/collaborate.html",
+"channels/find-channels.html#revisit-recent-channels":
+        "https://docs.mattermost.com/collaborate/browse-channels.html#revisit-recent-channels",
 
-    # Cloud redirects
-    "cloud/cloud-administration/cloud-changelog.html":
-        "https://docs.mattermost.com/install/cloud-changelog.html",
-    "cloud/cloud-administration/cloud-compliance.html":
+# Cloud redirects
+"cloud/cloud-administration/cloud-changelog.html":
+	"https://docs.mattermost.com/deploy/legacy-cloud-changelog.html",
+"cloud/cloud-administration/cloud-compliance.html":
         "https://docs.mattermost.com/comply/cloud-compliance-and-oversight.html",
-    "cloud/cloud-integrations/cloud-slash-commands.html":
-        "https://docs.mattermost.com/channels/run-slash-commands.html",
-    "cloud/cloud-administration/compliance-export.html":
-        "https://docs.mattermost.com/comply/compliance-export.html",
-    "cloud/cloud-administration/custom-terms-of-service.html":
+"cloud/cloud-integrations/cloud-slash-commands.html":
+	"https://docs.mattermost.com/channels/run-slash-commands.html",
+"cloud/cloud-administration/compliance-export.html":
+	"https://docs.mattermost.com/comply/compliance-export.html",
+"cloud/cloud-administration/custom-terms-of-service.html":
         "https://docs.mattermost.com/comply/custom-terms-of-service.html",
-    "cloud/cloud-reporting.html":
-        "https://docs.mattermost.com/manage/statistics.html",
-    "cloud/cloud-reporting.html":
-        "https://docs.mattermost.com/manage/cloud-reporting.html",
-    "cloud/cloud-administration/data-retention-policy.html":
+"cloud/cloud-reporting.html":
+	"https://docs.mattermost.com/manage/statistics.html",
+"cloud/cloud-administration/data-retention-policy.html":
         "https://docs.mattermost.com/comply/data-retention-policy.html",
-    "cloud/cloud-administration/saml-technical.html":
-        "https://docs.mattermost.com/onboard/cloud-sso-saml-technical.html",
-    "cloud/cloud-administration/sso-openid-connect.html":
+"cloud/cloud-administration/saml-technical.html":
+	"https://docs.mattermost.com/onboard/cloud-sso-saml-technical.html",
+"cloud/cloud-administration/sso-openid-connect.html":
         "https://docs.mattermost.com/onboard/convert-oauth20-service-providers-to-openidconnect.html",
-    "cloud/cloud-administration/sso-saml.html":
-        "https://docs.mattermost.com/onboard/cloud-sso-saml.html",
-    "cloud/cloud-billing/cloud-billing.html":
-        "https://docs.mattermost.com/manage/cloud-billing.html",
-    "cloud/cloud-guest-accounts.html":
+"cloud/cloud-administration/sso-saml.html":
+	"https://docs.mattermost.com/onboard/cloud-sso-saml.html",
+"cloud/cloud-billing/cloud-billing.html":
+	"https://docs.mattermost.com/manage/cloud-billing.html",
+"cloud/cloud-guest-accounts.html":
         "https://docs.mattermost.com/onboard/guest-accounts.html",
-    "cloud/cloud-integrations.html":
+"cloud/cloud-integrations.html":
         "https://developers.mattermost.com/integrate/admin-guide/admin-webhooks-incoming/",
-    "cloud/cloud-mobile/cloud-app-config.html":
-        "https://docs.mattermost.com/deploy/mobile-appconfig.html",
-    "cloud/cloud-mobile/troubleshooting-mobile.html":
+"cloud/cloud-mobile/cloud-app-config.html":
+	"https://docs.mattermost.com/deploy/mobile-appconfig.html",
+"cloud/cloud-mobile/troubleshooting-mobile.html":
         "https://docs.mattermost.com/deploy/mobile-faq.html",
-    "cloud/mobile-apps-faq.html":
+"cloud/cloud-reporting.html":
+	"https://docs.mattermost.com/manage/cloud-reporting.html",
+"cloud/mobile-apps-faq.html":
         "https://docs.mattermost.com/deploy/mobile-faq.html",
-    "cloud/cloud-user-management.html":
+"cloud/cloud-user-management.html":
         "https://docs.mattermost.com/channels/manage-channel-members.html",
 
-    # Compliance redirects
-    "comply/compliance-reporting-oversight":
+# Compliance redirects
+"comply/compliance-reporting-oversight":
         "https://docs.mattermost.com/comply/compliance-monitoring.html",
-    "comply/cloud-data-retention-policy.html":
-        "https://docs.mattermost.com/comply/data-retention-policy.html",
+"comply/cloud-data-retention-policy.html":
+	"https://docs.mattermost.com/comply/data-retention-policy.html",
 
-    # Configure redirects
-    "configure/config-ssl-http2-apache2.html":
-        "https://forum.mattermost.org/t/configuring-apache2-with-ssl-and-http-2/11939",
-    "configure/configuring-apache2.html":
+# Configure redirects
+"configure/config-ssl-http2-apache2.html":
+	"https://forum.mattermost.org/t/configuring-apache2-with-ssl-and-http-2/11939",
+"configure/configuring-apache2.html":
         "https://forum.mattermost.com/t/configuring-apache2-as-a-proxy-for-mattermost-server/11938",
 
-
-    # Configuration settings redirects
-    "configure/configuration-in-mattermost-database.html":
+# Configuration settings redirects
+"configure/configuration-in-mattermost-database.html":
         "https://docs.mattermost.com/configure/configuation-in-a-database.html",
-    "configure/configuration-settings.html#channels":
+"configure/configuration-settings.html#channels":
         "https://docs.mattermost.com/configure/user-management-configuration-settings.html#channels",
-    "configure/configuration-settings.html#allow-use-of-api-v3-endpoints":
+"configure/configuration-settings.html#allow-use-of-api-v3-endpoints":
         "https://docs.mattermost.com/configure/deprecated-configuration-settings.html#allow-use-of-api-v3-endpoints",
-    "configure/configuration-settings.html#applied-schema-migrations":
+"configure/configuration-settings.html#applied-schema-migrations":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#applied-schema-migrations",
-    "configure/configuration-settings.html#compliance-export-beta":
+"configure/configuration-settings.html#compliance-export-beta":
         "https://docs.mattermost.com/configure/configuration-settings.html#compliance-export",
-    "configure/configuration-settings.html#connection-security":
+"configure/configuration-settings.html#connection-security":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#connection-security",
-    "configure/configuration-settings.html#custom-terms-of-service-beta":
+"configure/configuration-settings.html#custom-terms-of-service-beta":
         "https://docs.mattermost.com/configure/configuration-settings.html#custom-terms-of-service",
-    "configure/configuration-settings.html#database":
+"configure/configuration-settings.html#database":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#database",
-    "configure/configuration-settings.html#data-source":
+"configure/configuration-settings.html#data-source":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#data-source",
-    "configure/configuration-settings.html#disable-database-search":
+"configure/configuration-settings.html#disable-database-search":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#disable-database-search",
-    "configure/configuration-settings.html#driver-name":
+"configure/configuration-settings.html#driver-name":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#driver-name",
-    "configure/configuration-settings.html#enable-insecure-outgoing-connections":
+"configure/configuration-settings.html#enable-insecure-outgoing-connections":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#enable-insecure-outgoing-connections",
-    "configure/configuration-settings.html#enable-latex-rendering":
+"configure/configuration-settings.html#enable-latex-rendering":
         "https://docs.mattermost.com/configure/configuration-settings.html#enable-latex-code-block-rendering",
-    "configure/configuration-settings.html#environment":
+"configure/configuration-settings.html#environment":
         "https://docs.mattermost.com/configure/web-server-configuration-settings.html",
-    "configure/configuration-settings.html#forward-port-80-to-443":
+"configure/configuration-settings.html#forward-port-80-to-443":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#forward-port-80-to-443",
-    "configure/configuration-settings.html#groups":
+"configure/configuration-settings.html#groups":
         "https://docs.mattermost.com/configure/user-management-configuration-settings.html#groups",
-    "configure/configuration-settings.html#guest-access-beta":
+"configure/configuration-settings.html#guest-access-beta":
         "https://docs.mattermost.com/configure/configuration-settings.html#guest-access",
-    "configure/configuration-settings.html#idle-timeout":
+"configure/configuration-settings.html#idle-timeout":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#idle-timeout",
-    "configure/configuration-settings.html#let-s-encrypt-certificate-cache-file":
+"configure/configuration-settings.html#let-s-encrypt-certificate-cache-file":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#let-s-encrypt-certificate-cache-file",
-    "configure/configuration-settings.html#listen-address":
+"configure/configuration-settings.html#listen-address":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#web-server-listen-address",
-    "configure/configuration-settings.html#managed-resource-paths":
+"configure/configuration-settings.html#managed-resource-paths":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#managed-resource-paths",
-    "configure/configuration-settings.html#maximum-connection-idle-timeout":
+"configure/configuration-settings.html#maximum-connection-idle-timeout":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#maximum-connection-idle-timeout",
-    "configure/configuration-settings.html#maximum-connection-lifetime":
+"configure/configuration-settings.html#maximum-connection-lifetime":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#maximum-connection-lifetime",
-    "configure/configuration-settings.html#maximum-idle-connections":
+"configure/configuration-settings.html#maximum-idle-connections":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#maximum-idle-database-connections",
-    "configure/configuration-settings.html#maximum-open-connections":
+"configure/configuration-settings.html#maximum-open-connections":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#maximum-open-connections",
-    "configure/configuration-settings.html#minimum-hashtag-length":
+"configure/configuration-settings.html#minimum-hashtag-length":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#minimum-hashtag-length",
-    "configure/configuration-settings.html#purge-all-caches":
+"configure/configuration-settings.html#purge-all-caches":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#purge-all-caches",
-    "configure/configuration-settings.html#permissions":
+"configure/configuration-settings.html#permissions":
         "https://docs.mattermost.com/configure/user-management-configuration-settings.html#permissions",
-    "configure/configuration-settings.html#plugins-beta":
+"configure/configuration-settings.html#plugins-beta":
         "https://docs.mattermost.com/configure/configuration-settings.html#plugins",
-    "configure/configuration-settings.html#query-timeout":
+"configure/configuration-settings.html#query-timeout":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#query-timeout",
-    "configure/configuration-settings.html#read-timeout":
+"configure/configuration-settings.html#read-timeout":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#read-timeout",
-    "configure/configuration-settings.html#recycle-database-connections":
+"configure/configuration-settings.html#recycle-database-connections":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#recycle-database-connections",
-    "configure/configuration-settings.html#reload-configuration-from-disk":
+"configure/configuration-settings.html#reload-configuration-from-disk":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#reload-configuration-from-disk",
-    "configuration-settings.html#reporting":
+"configuration-settings.html#reporting":
         "https://docs.mattermost.com/configure/reporting-configuration-settings.html",
-    "configure/configuration-settings.html#site-statistics":
+"configure/configuration-settings.html#site-statistics":
         "https://docs.mattermost.com/configure/reporting-configuration-settings.html#site-statistics",
-    "configure/configuration-settings.html#server-logs":
+"configure/configuration-settings.html#server-logs":
         "https://docs.mattermost.com/configure/reporting-configuration-settings.html#server-logs",
-    "configure/configuration-settings.html#site-url":
+"configure/configuration-settings.html#site-url":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#site-url",
-    "configure/configuration-settings.html#sql-statement-logging-trace":
+"configure/configuration-settings.html#sql-statement-logging-trace":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#sql-statement-logging",
-    "configure/configuration-settings.html#teams":
+"configure/configuration-settings.html#teams":
         "https://docs.mattermost.com/configure/user-management-configuration-settings.html#teams",
-    "configure/configuration-settings.html#team-statistics":
+"configure/configuration-settings.html#team-statistics":
         "https://docs.mattermost.com/configure/reporting-configuration-settings.html#team-statistics",
-    "configure/configuration-settings.html#terms-of-service-link":
+"configure/configuration-settings.html#terms-of-service-link":
         "https://docs.mattermost.com/configure/configuration-settings.html#terms-of-use-link",
-    "configure/configuration-settings.html#test-live":
+"configure/configuration-settings.html#test-live":
         "https://docs.mattermost.com/configure/web-server-configuration-settings.html",
-    "configure/configuration-settings.html#tls-certificate-file":
+"configure/configuration-settings.html#tls-certificate-file":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#tls-certificate-file",
-    "configure/configuration-settings.html#tls-key-file":
+"configure/configuration-settings.html#tls-key-file":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#tls-key-file",
-    "configure/configuration-settings.html#use-let-s-encrypt":
+"configure/configuration-settings.html#use-let-s-encrypt":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#use-let-s-encrypt",
-    "configure/configuration-settings.html#websocket-url":
+"configure/configuration-settings.html#websocket-url":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#websocket-url",
-    "configure/configuration-settings.html#license-file-location":
+"configure/configuration-settings.html#license-file-location":
         "https://docs.mattermost.com/configure/web-server-configuration-settings.html#license-file-location",
-    "configure/configuration-settings.html#tls-minimum-version":
+"configure/configuration-settings.html#tls-minimum-version":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#tls-minimum-version",
-    "configure/configuration-settings.html#enable-strict-transport-security-hsts":
+"configure/configuration-settings.html#enable-strict-transport-security-hsts":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#enable-strict-transport-security-hsts",
-    "configure/configuration-settings.html#secure-tls-transport-expiry":
+"configure/configuration-settings.html#secure-tls-transport-expiry":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#secure-tls-transport-expiry",
-    "configure/configuration-settings.html#tls-cipher-overwrites":
+"configure/configuration-settings.html#tls-cipher-overwrites":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#tls-cipher-overwrites",
-    "configure/configuration-settings.html#trusted-proxy-ip-header":
+"configure/configuration-settings.html#trusted-proxy-ip-header":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#trusted-proxy-ip-header",
-    "configure/configuration-settings.html#go-routine-health-threshold":
+"configure/configuration-settings.html#go-routine-health-threshold":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#goroutine-health-threshold",
-    "configure/configuration-settings.html#allow-cookies-for-subdomains":
+"configure/configuration-settings.html#allow-cookies-for-subdomains":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#allow-cookies-for-subdomains",
-    "configure/configuration-settings.html#cluster-log-timeout":
+"configure/configuration-settings.html#cluster-log-timeout":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#cluster-log-timeout",
-    "configure/configuration-settings.html#user-management":
+"configure/configuration-settings.html#user-management":
         "https://docs.mattermost.com/configure/user-management-configuration-settings.html",
-    "configure/configuration-settings.html#users":
+"configure/configuration-settings.html#users":
         "https://docs.mattermost.com/configure/user-management-configuration-settings.html#users",
-    "configure/configuration-settings.html#web-server":
+"configure/configuration-settings.html#web-server":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#web-server",
-    "configure/configuration-settings.html#webserver-mode":
+"configure/configuration-settings.html#webserver-mode":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#webserver-mode",
-    "configure/configuration-settings.html#write-timeout":
+"configure/configuration-settings.html#write-timeout":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#write-timeout",
-    "configure/configuration-settings.html#collapsed-reply-threads-beta":
+"configure/configuration-settings.html#collapsed-reply-threads-beta":
         "https://docs.mattermost.com/configure/configuration-settings.html#collapsed-reply-threads",
-    "configure/configuration-settings.html#elasticsearch":
+"configure/configuration-settings.html#elasticsearch":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#elasticsearch",
-    "configure/configuration-settings.html#elasticsearch-settings":
-        "https://docs.mattermost.com/configure/environment-configuration-settings.html#elasticsearch",
-    "configure/configuration-settings.html#enable-elasticsearch-indexing":
-        "https://docs.mattermost.com/configure/environment-configuration-settings.html#enable-elasticsearch-indexing.html",
-    "configure/configuration-settings.html#server-connection-address":
-        "https://docs.mattermost.com/configure/environment-configuration-settings.html#server-connection-address.html",
-    "configure/configuration-settings.html#skip-tls-verification":
-        "https://docs.mattermost.com/configure/environment-configuration-settings.html#skip-tls-verification.html",
-    "configure/configuration-settings.html#server-username":
-        "https://docs.mattermost.com/configure/environment-configuration-settings.html#server-username.html",
-    "configure/configuration-settings.html#server-password":
-        "https://docs.mattermost.com/configure/environment-configuration-settings.html#server-password.html",
-    "configure/configuration-settings.html#enable-cluster-sniffing":
-        "https://docs.mattermost.com/configure/environment-configuration-settings.html#enable-cluster-sniffing.html",
-    "configure/configuration-settings.html#bulk-indexing":
-        "https://docs.mattermost.com/configure/environment-configuration-settings.html#bulk-indexing.html",
-    "configure/configuration-settings.html#purge-indexes":
-        "https://docs.mattermost.com/configure/environment-configuration-settings.html#purge-indexes.html",
-    "configure/configuration-settings.html#enable-elasticsearch-for-search-queries":
-        "https://docs.mattermost.com/configure/environment-configuration-settings.html#enable-elasticsearch-for-search-queries.html",
-    "configure/configuration-settings.html#enable-elasticsearch-for-autocomplete-queries":
-        "https://docs.mattermost.com/configure/environment-configuration-settings.html#enable-elasticsearch-for-autocomplete-queries.html",
-    "configure/configuration-settings.html#post-index-replicas":
-        "https://docs.mattermost.com/configure/environment-configuration-settings.html#post-index-replicas.html",
-    "configure/configuration-settings.html#post-index-shards":
-        "https://docs.mattermost.com/configure/environment-configuration-settings.html#post-index-shards.html",
-    "configure/elasticsearch-configuration-settings.html#elasticsearch-configuration-settings":
+"configure/configuration-settings.html#elasticsearch-settings":
+	"https://docs.mattermost.com/configure/environment-configuration-settings.html#elasticsearch",
+"configure/configuration-settings.html#enable-elasticsearch-indexing":
+	"https://docs.mattermost.com/configure/environment-configuration-settings.html#enable-elasticsearch-indexing.html",
+"configure/configuration-settings.html#server-connection-address":
+	"https://docs.mattermost.com/configure/environment-configuration-settings.html#server-connection-address.html",
+"configure/configuration-settings.html#skip-tls-verification":
+	"https://docs.mattermost.com/configure/environment-configuration-settings.html#skip-tls-verification.html",
+"configure/configuration-settings.html#server-username":
+	"https://docs.mattermost.com/configure/environment-configuration-settings.html#server-username.html",
+"configure/configuration-settings.html#server-password":
+	"https://docs.mattermost.com/configure/environment-configuration-settings.html#server-password.html",
+"configure/configuration-settings.html#enable-cluster-sniffing":
+	"https://docs.mattermost.com/configure/environment-configuration-settings.html#enable-cluster-sniffing.html",
+"configure/configuration-settings.html#bulk-indexing":
+	"https://docs.mattermost.com/configure/environment-configuration-settings.html#bulk-indexing.html",
+"configure/configuration-settings.html#purge-indexes":
+	"https://docs.mattermost.com/configure/environment-configuration-settings.html#purge-indexes.html",
+"configure/configuration-settings.html#enable-elasticsearch-for-search-queries":
+	"https://docs.mattermost.com/configure/environment-configuration-settings.html#enable-elasticsearch-for-search-queries.html",
+"configure/configuration-settings.html#enable-elasticsearch-for-autocomplete-queries":
+	"https://docs.mattermost.com/configure/environment-configuration-settings.html#enable-elasticsearch-for-autocomplete-queries.html",
+"configure/configuration-settings.html#post-index-replicas":
+	"https://docs.mattermost.com/configure/environment-configuration-settings.html#post-index-replicas.html",
+"configure/configuration-settings.html#post-index-shards":
+	"https://docs.mattermost.com/configure/environment-configuration-settings.html#post-index-shards.html",
+"configure/elasticsearch-configuration-settings.html#elasticsearch-configuration-settings":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#channel-index-replicas",
-    "configure/elasticsearch-configuration-settings.html#channel-index-shards":
+"configure/elasticsearch-configuration-settings.html#channel-index-shards":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#channel-index-shards",
-    "configure/elasticsearch-configuration-settings.html#user-index-replicas":
+"configure/elasticsearch-configuration-settings.html#user-index-replicas":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#user-index-replicas",
-    "configure/elasticsearch-configuration-settings.html#user-index-shards":
+"configure/elasticsearch-configuration-settings.html#user-index-shards":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#user-index-shards",
-    "configure/configuration-settings.html#aggregate-search-indexes":
-        "https://docs.mattermost.com/configure/environment-configuration-settings.html#aggregate-search-indexes.html",
-    "configure/configuration-settings.html#post-aggregator-start-time":
-        "https://docs.mattermost.com/configure/environment-configuration-settings.html#post-aggregator-start-time.html",
-    "configure/configuration-settings.html#index-prefix":
-        "https://docs.mattermost.com/configure/environment-configuration-settings.html#index-prefix.html",
-    "configure/configuration-settings.html#live-indexing-batch-size":
-        "https://docs.mattermost.com/configure/environment-configuration-settings.html#live-indexing-batch-size.html",
-    "configure/configuration-settings.html#request-timeout":
-        "https://docs.mattermost.com/configure/environment-configuration-settings.html#request-timeout.html",
-    "configure/configuration-settings.html#bulk-indexing-time-window":
-        "https://docs.mattermost.com/configure/environment-configuration-settings.html#bulk-indexing-time-window.html",
-    "configure/configuration-settings.html#trace":
-        "https://docs.mattermost.com/configure/environment-configuration-settings.html#trace.html",
-    "configure/configuration-settings.html#initial-font":
+"configure/configuration-settings.html#aggregate-search-indexes":
+	"https://docs.mattermost.com/configure/environment-configuration-settings.html#aggregate-search-indexes.html",
+"configure/configuration-settings.html#post-aggregator-start-time":
+	"https://docs.mattermost.com/configure/environment-configuration-settings.html#post-aggregator-start-time.html",
+"configure/configuration-settings.html#index-prefix":
+	"https://docs.mattermost.com/configure/environment-configuration-settings.html#index-prefix.html",
+"configure/configuration-settings.html#live-indexing-batch-size":
+	"https://docs.mattermost.com/configure/environment-configuration-settings.html#live-indexing-batch-size.html",
+"configure/configuration-settings.html#request-timeout":
+	"https://docs.mattermost.com/configure/environment-configuration-settings.html#request-timeout.html",
+"configure/configuration-settings.html#bulk-indexing-time-window":
+	"https://docs.mattermost.com/configure/environment-configuration-settings.html#bulk-indexing-time-window.html",
+"configure/configuration-settings.html#trace":
+	"https://docs.mattermost.com/configure/environment-configuration-settings.html#trace.html",
+"configure/configuration-settings.html#initial-font":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#initial-font",
-    "configure/configuration-settings.html#amazon-s3-bucket-endpoint":
+"configure/configuration-settings.html#amazon-s3-bucket-endpoint":
         "https://docs.mattermost.com/configure/deprecated-configuration-settings.html#amazon-s3-bucket-endpoint",
-    "configure/configuration-settings.html#amazon-s3-location-constraint":
+"configure/configuration-settings.html#amazon-s3-location-constraint":
         "https://docs.mattermost.com/configure/deprecated-configuration-settings.html#amazon-s3-location-constraint",
-    "configure/configuration-settings.html#amazon-s3-lowercase-bucket":
+"configure/configuration-settings.html#amazon-s3-lowercase-bucket":
         "https://docs.mattermost.com/configure/deprecated-configuration-settings.html#amazon-s3-lowercase-bucket",
-    "configure/configuration-settings.html#amazon-s3-signature-v2":
+"configure/configuration-settings.html#amazon-s3-signature-v2":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#amazon-s3-signature-v2",
-    "configure/configuration-settings.html#amazon-s3-path":
+"configure/configuration-settings.html#amazon-s3-path":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#amazon-s3-path-prefix",
-    "configure/configuration-settings.html#file-storage":
+"configure/configuration-settings.html#file-storage":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#file-storage",
-    "configure/configuration-settings.html#file-storage-system":
+"configure/configuration-settings.html#file-storage-system":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#file-storage-system",
-    "configure/configuration-settings.html#local-storage-directory":
+"configure/configuration-settings.html#local-storage-directory":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#local-storage-directory",
-    "configure/configuration-settings.html#maximum-file-size":
+"configure/configuration-settings.html#maximum-file-size":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#maximum-file-size",
-    "configure/configuration-settings.html#enable-document-search-by-content":
+"configure/configuration-settings.html#enable-document-search-by-content":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#enable-document-search-by-content",
-    "configure/configuration-settings.html#enable-searching-content-of-documents-within-zip-files":
+"configure/configuration-settings.html#enable-searching-content-of-documents-within-zip-files":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#enable-searching-content-of-documents-within-zip-files",
-    "configure/configuration-settings.html#amazon-s3-bucket":
+"configure/configuration-settings.html#amazon-s3-bucket":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#amazon-s3-bucket",
-    "configure/configuration-settings.html#amazon-s3-region":
+"configure/configuration-settings.html#amazon-s3-region":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#amazon-s3-region",
-    "configure/configuration-settings.html#amazon-s3-access-key-id":
+"configure/configuration-settings.html#amazon-s3-access-key-id":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#amazon-s3-access-key-id",
-    "configure/configuration-settings.html#amazon-s3-endpoint":
+"configure/configuration-settings.html#amazon-s3-endpoint":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#amazon-s3-endpoint",
-    "configure/configuration-settings.html#amazon-s3-secret-access-key":
+"configure/configuration-settings.html#amazon-s3-secret-access-key":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#amazon-s3-secret-access-key",
-    "configure/configuration-settings.html#enable-secure-amazon-s3-connections":
+"configure/configuration-settings.html#enable-secure-amazon-s3-connections":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#enable-secure-amazon-s3-connections",
-    "configure/configuration-settings.html#enable-server-side-encryption-for-amazon-s3":
+"configure/configuration-settings.html#enable-server-side-encryption-for-amazon-s3":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#enable-server-side-encryption-for-amazon-s3",
-    "configure/configuration-settings.html#enable-amazon-s3-debugging":
+"configure/configuration-settings.html#enable-amazon-s3-debugging":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#enable-amazon-s3-debugging",
-    "configure/configuration-settings.html#test-connection":
+"configure/configuration-settings.html#test-connection":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#enable-amazon-s3-debugging",
-    "configure/configuration-settings.html#image-proxy":
+"configure/configuration-settings.html#image-proxy":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#image-proxy",
-    "configure/configuration-settings.html#enable-image-proxy":
+"configure/configuration-settings.html#enable-image-proxy":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#enable-image-proxy",
-    "configure/configuration-settings.html#image-proxy-type":
+"configure/configuration-settings.html#image-proxy-type":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#image-proxy-type",
-    "configure/configuration-settings.html#remote-image-proxy-url":
+"configure/configuration-settings.html#remote-image-proxy-url":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#remote-image-proxy-url",
-    "configure/configuration-settings.html#remote-image-proxy-options":
+"configure/configuration-settings.html#remote-image-proxy-options":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#remote-image-proxy-options",
-    "configure/configuration-settings.html#smtp":
+"configure/configuration-settings.html#smtp":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#smtp",
-    "configure/configuration-settings.html#smtp-email-server":
+"configure/configuration-settings.html#smtp-email-server":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#smtp-server",
-    "configure/configuration-settings.html#smtp-server-port":
+"configure/configuration-settings.html#smtp-server-port":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#smtp-server-port",
-    "configure/configuration-settings.html#smtp-server-timeout":
+"configure/configuration-settings.html#smtp-server-timeout":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#smtp-server-timeout",
-    "configure/configuration-settings.html#enable-smtp-authentication":
+"configure/configuration-settings.html#enable-smtp-authentication":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#enable-smtp-authentication",
-    "configure/configuration-settings.html#smtp-server-username":
+"configure/configuration-settings.html#smtp-server-username":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#smtp-server-username",
-    "configure/configuration-settings.html#smtp-server-password":
+"configure/configuration-settings.html#smtp-server-password":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#smtp-server-password",
-    "configure/configuration-settings.html#connection-security":
+"configure/configuration-settings.html#connection-security":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#connection-security",
-    "configure/configuration-settings.html#skip-server-certificate-verification":
+"configure/configuration-settings.html#skip-server-certificate-verification":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#skip-server-certificate-verification",
-    "configure/configuration-settings.html#enable-security-alerts":
+"configure/configuration-settings.html#enable-security-alerts":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#enable-security-alerts",
-    "configure/configuration-settings.html#push-notification-server":
+"configure/configuration-settings.html#push-notification-server":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#push-notification-server",
-    "configure/configuration-settings.html#enable-push-notifications":
+"configure/configuration-settings.html#enable-push-notifications":
         "https://docs.mattermost.com/configure/environment-server.html#enable-push-notifications",
-    "configure/configuration-settings.html#max-notifications-per-channel":
+"configure/configuration-settings.html#max-notifications-per-channel":
         "https://docs.mattermost.com/configure/environment-server.html#maximum-notifications-per-channel",
-    "configure/configuration-settings.html#high-availability":
+"configure/configuration-settings.html#high-availability":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#high-availability",
-    "configure/configuration-settings.html#enable-high-availability-mode":
+"configure/configuration-settings.html#enable-high-availability-mode":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#enable-high-availability-mode",
-    "configure/configuration-settings.html#cluster-name":
+"configure/configuration-settings.html#cluster-name":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#cluster-name",
-    "configure/configuration-settings.html#override-hostname":
+"configure/configuration-settings.html#override-hostname":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#override-hostname",
-    "configure/configuration-settings.html#use-ip-address":
+"configure/configuration-settings.html#use-ip-address":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#use-ip-address",
-    "configure/configuration-settings.html#use-gossip":
+"configure/configuration-settings.html#use-gossip":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#use-gossip",
-    "configure/configuration-settings.html#enable-experimental-gossip-encryption":
+"configure/configuration-settings.html#enable-experimental-gossip-encryption":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#enable-experimental-gossip-encryption",
-    "configure/configuration-settings.html#enable-gossip-compression":
+"configure/configuration-settings.html#enable-gossip-compression":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#enable-gossip-compression",
-    "configure/configuration-settings.html#gossip-port":
+"configure/configuration-settings.html#gossip-port":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#gossip-port",
-    "configure/configuration-settings.html#streaming-port":
+"configure/configuration-settings.html#streaming-port":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#streaming-port",
-    "configure/configuration-settings.html#read-only-config":
+"configure/configuration-settings.html#read-only-config":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#read-only-config",
-    "configure/configuration-settings.html#network-interface":
+"configure/configuration-settings.html#network-interface":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#network-interface",
-    "configure/configuration-settings.html#bind-address":
+"configure/configuration-settings.html#bind-address":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#bind-address",
-    "configure/configuration-settings.html#advertise-address":
+"configure/configuration-settings.html#advertise-address":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#advertise-address",
-    "configure/configuration-settings.html#maximum-idle-connections":
+"configure/configuration-settings.html#maximum-idle-connections":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#maximum-idle-connections",
-    "configure/configuration-settings.html#maximum-idle-connections-per-host":
+"configure/configuration-settings.html#maximum-idle-connections-per-host":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#maximum-idle-connections-per-host",
-    "configure/configuration-settings.html#idle-connection-timeout-in-milliseconds":
+"configure/configuration-settings.html#idle-connection-timeout-in-milliseconds":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#idle-connection-timeout",
-    "configure/configuration-settings.html#read-replicas":
+"configure/configuration-settings.html#read-replicas":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#read-replicas",
-    "configure/configuration-settings.html#search-replicas":
+"configure/configuration-settings.html#search-replicas":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#search-replicas",
-    "configure/configuration-settings.html#replica-lag-settings":
+"configure/configuration-settings.html#replica-lag-settings":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#replica-lag-settings",
-    "configure/configuration-settings.html#rate-limiting":
+"configure/configuration-settings.html#rate-limiting":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html",
-    "configure/configuration-settings.html#enable-rate-limiting":
+"configure/configuration-settings.html#enable-rate-limiting":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#enable-rate-limiting",
-    "configure/configuration-settings.html#maximum-queries-per-second":
+"configure/configuration-settings.html#maximum-queries-per-second":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#maximum-queries-per-second",
-    "configure/configuration-settings.html#memory-store-size":
+"configure/configuration-settings.html#memory-store-size":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#memory-store-size",
-    "configure/configuration-settings.html#vary-rate-limit-by-remote-address":
+"configure/configuration-settings.html#vary-rate-limit-by-remote-address":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#vary-rate-limit-by-remote-address",
-    "configure/configuration-settings.html#vary-rate-limit-by-user":
+"configure/configuration-settings.html#vary-rate-limit-by-user":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#vary-rate-limit-by-user",
-    "configure/configuration-settings.html#vary-rate-limit-by-http-header":
+"configure/configuration-settings.html#vary-rate-limit-by-http-header":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#vary-rate-limit-by-http-header",
-    "configure/configuration-settings.html#maximum-burst-size":
+"configure/configuration-settings.html#maximum-burst-size":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#maximum-burst-size",
-    "configure/configuration-settings.html#session-lengths":
+"configure/configuration-settings.html#session-lengths":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#session-lengths",
-    "configure/configuration-settings.html#extend-session-length-with-activity":
+"configure/configuration-settings.html#extend-session-length-with-activity":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#extend-session-length-with-activity",
-    "configure/configuration-settings.html#session-length-for-email-and-ad-ldap-authentication-days":
+"configure/configuration-settings.html#session-length-for-email-and-ad-ldap-authentication-days":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#session-length-for-ad-ldap-and-email",
-    "configure/configuration-settings.html#session-length-for-mobile-apps-days":
+"configure/configuration-settings.html#session-length-for-mobile-apps-days":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#session-length-for-mobile",
-    "configure/configuration-settings.html#session-length-for-sso-authentication-days":
+"configure/configuration-settings.html#session-length-for-sso-authentication-days":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#session-length-for-sso",
-    "configure/configuration-settings.html#session-cache-minutes":
+"configure/configuration-settings.html#session-cache-minutes":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#session-cache",
-    "configure/configuration-settings.html#session-idle-timeout-minutes":
+"configure/configuration-settings.html#session-idle-timeout-minutes":
         "https://docs.mattermost.com/configure/session-lengths-configuration-settings.html#session-idle-timeout",
-    "configure/configuration-settings.html#performance-monitoring":
+"configure/configuration-settings.html#performance-monitoring":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#performance-monitoring",
-    "configure/configuration-settings.html#enable-performance-monitoring":
+"configure/configuration-settings.html#enable-performance-monitoring":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#enable-performance-monitoring",
-    "configure/configuration-settings.html#id6":
+"configure/configuration-settings.html#id6":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#listen-address",
-    "configure/configuration-settings.html#developer":
+"configure/configuration-settings.html#developer":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#developer",
-    "configure/configuration-settings.html#enable-testing-commands":
+"configure/configuration-settings.html#enable-testing-commands":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#enable-testing-commands",
-    "configure/configuration-settings.html#enable-developer-mode":
+"configure/configuration-settings.html#enable-developer-mode":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#enable-developer-mode",
-    "configure/configuration-settings.html#allow-untrusted-internal-connections-to":
+"configure/configuration-settings.html#allow-untrusted-internal-connections-to":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#allow-untrusted-internal-connections",
-    "configure/configuration-settings.html#enable-client-performance-debugging":
+"configure/configuration-settings.html#enable-client-performance-debugging":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#enable-client-performance-debugging",
-    "configure/configuration-settings.html#standard-logging":
+"configure/configuration-settings.html#standard-logging":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#logging",
-    "configure/configuration-settings.html#output-logs-to-console":
+"configure/configuration-settings.html#output-logs-to-console":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#output-logs-to-console",
-    "configure/configuration-settings.html#console-log-level":
+"configure/configuration-settings.html#console-log-level":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#console-log-level",
-    "configure/configuration-settings.html#output-console-logs-as-json":
+"configure/configuration-settings.html#output-console-logs-as-json":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#output-console-logs-as-json",
-    "configure/configuration-settings.html#output-logs-to-file":
+"configure/configuration-settings.html#output-logs-to-file":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#output-logs-to-file",
-    "configure/configuration-settings.html#file-log-level":
+"configure/configuration-settings.html#file-log-level":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#file-log-level",
-    "configure/configuration-settings.html#output-file-logs-as-json":
+"configure/configuration-settings.html#output-file-logs-as-json":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#output-file-logs-as-json",
-    "configure/configuration-settings.html#file-log-directory":
+"configure/configuration-settings.html#file-log-directory":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#file-log-directory",
-    "configure/configuration-settings.html#enable-webhook-debugging":
+"configure/configuration-settings.html#enable-webhook-debugging":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#enable-webhook-debugging",
-    "configure/configuration-settings.html#enable-diagnostics-and-error-reporting":
+"configure/configuration-settings.html#enable-diagnostics-and-error-reporting":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#enable-diagnostics-and-error-reporting",
-    "configure/configuration-settings.html#advanced-logging":
+"configure/configuration-settings.html#advanced-logging":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#output-logs-to-multiple-targets",
-    "configure/configuration-settings.html#output-logs-to-multiple-targets":
+"configure/configuration-settings.html#output-logs-to-multiple-targets":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#output-logs-to-multiple-targets",
-    "configure/configuration-settings.html#environment-variables":
+"configure/configuration-settings.html#environment-variables":
         "https://docs.mattermost.com/configure/environment-variables.html",
-    "configure/configuration-settings.html#override-mattermost-license-file":
+"configure/configuration-settings.html#override-mattermost-license-file":
         "https://docs.mattermost.com/configure/environment-variables.html#override-mattermost-license-file",
-    "configure/configuration-settings.html#load-custom-configuration-defaults":
+"configure/configuration-settings.html#load-custom-configuration-defaults":
         "https://docs.mattermost.com/configure/environment-variables.html#load-custom-configuration-defaults",
-    "configure/configuration-settings.html#enable-account-creation":
+"configure/configuration-settings.html#enable-account-creation": 
         "https://docs.mattermost.com/configure/authentication-configuration-settings.html#enable-account-creation",
-    "configure/configuration-settings.html#restrict-account-creation-to-specified-email-domains":
+"configure/configuration-settings.html#restrict-account-creation-to-specified-email-domains": 
         "https://docs.mattermost.com/configure/authentication-configuration-settings.html#restrict-account-creation-to-specified-email-domains",
-    "configure/configuration-settings.html#enable-open-server":
+"configure/configuration-settings.html#enable-open-server": 
         "https://docs.mattermost.com/configure/authentication-configuration-settings.html#enable-open-server",
-    "configure/configuration-settings.html#enable-email-invitations":
+"configure/configuration-settings.html#enable-email-invitations": 
         "https://docs.mattermost.com/configure/authentication-configuration-settings.html#enable-email-invitations",
-    "configure/configuration-settings.html#enable-account-creation-with-email":
+"configure/configuration-settings.html#enable-account-creation-with-email": 
         "https://docs.mattermost.com/configure/authentication-configuration-settings.html#enable-account-creation-with-email",
-    "configure/configuration-settings.html#require-email-verification":
+"configure/configuration-settings.html#require-email-verification": 
         "https://docs.mattermost.com/configure/authentication-configuration-settings.html#require-email-verification",
-    "configure/configuration-settings.html#enable-sign-in-with-email":
+"configure/configuration-settings.html#enable-sign-in-with-email": 
         "https://docs.mattermost.com/configure/authentication-configuration-settings.html#enable-sign-in-with-email",
-    "configure/configuration-settings.html#enable-sign-in-with-username":
+"configure/configuration-settings.html#enable-sign-in-with-username": 
         "https://docs.mattermost.com/configure/authentication-configuration-settings.html#enable-sign-in-with-username",
-    "configure/configuration-settings.html#minimum-password-length":
+"configure/configuration-settings.html#minimum-password-length": 
         "https://docs.mattermost.com/configure/authentication-configuration-settings.html#minimum-password-length",
-    "configure/configuration-settings.html#maximum-login-attempts":
+"configure/configuration-settings.html#maximum-login-attempts": 
         "https://docs.mattermost.com/configure/authentication-configuration-settings.html#maximum-login-attempts",
-    "configure/configuration-settings.html#enable-multi-factor-authentication":
+"configure/configuration-settings.html#enable-multi-factor-authentication": 
         "https://docs.mattermost.com/configure/authentication-configuration-settings.html#enable-multi-factor-authentication",
-    "configure/configuration-settings.html#enforce-multi-factor-authentication":
+"configure/configuration-settings.html#enforce-multi-factor-authentication": 
         "https://docs.mattermost.com/configure/authentication-configuration-settings.html#enforce-multi-factor-authentication",
-    "configure/configuration-settings.html#enable-sign-in-with-ad-ldap":
+"configure/configuration-settings.html#enable-sign-in-with-ad-ldap": 
         "https://docs.mattermost.com/configure/authentication-configuration-settings.html#enable-sign-in-with-ad-ldap",
-    "configure/configuration-settings.html#enable-synchronization-with-ad-ldap":
+"configure/configuration-settings.html#enable-synchronization-with-ad-ldap": 
         "https://docs.mattermost.com/configure/authentication-configuration-settings.html#enable-synchronization-with-ad-ldap",
-    "configure/configuration-settings.html#login-field-name":
+"configure/configuration-settings.html#login-field-name": 
         "https://docs.mattermost.com/configure/authentication-configuration-settings.html#login-field-name",
-    "configure/configuration-settings.html#ad-ldap-server":
+"configure/configuration-settings.html#ad-ldap-server": 
         "https://docs.mattermost.com/configure/authentication-configuration-settings.html#ad-ldap-server",
-    "configure/configuration-settings.html#ad-ldap-port":
+"configure/configuration-settings.html#ad-ldap-port": 
         "https://docs.mattermost.com/configure/authentication-configuration-settings.html#ad-ldap-port",
-    "configure/configuration-settings.html#connection-security":
+"configure/configuration-settings.html#connection-security": 
         "https://docs.mattermost.com/configure/authentication-configuration-settings.html#connection-security",
-    "configure/configuration-settings.html#skip-certificate-verification":
+"configure/configuration-settings.html#skip-certificate-verification": 
         "https://docs.mattermost.com/configure/authentication-configuration-settings.html#skip-certificate-verification",
-    "configure/configuration-settings.html#private-key":
+"configure/configuration-settings.html#private-key": 
         "https://docs.mattermost.com/configure/authentication-configuration-settings.html#private-key",
-    "configure/configuration-settings.html#public-certificate":
+"configure/configuration-settings.html#public-certificate": 
         "https://docs.mattermost.com/configure/authentication-configuration-settings.html#public-certificate",
-    "configure/configuration-settings.html#bind-username":
+"configure/configuration-settings.html#bind-username": 
         "https://docs.mattermost.com/configure/authentication-configuration-settings.html#bind-username",
-    "configure/configuration-settings.html#bind-password":
+"configure/configuration-settings.html#bind-password": 
         "https://docs.mattermost.com/configure/authentication-configuration-settings.html#bind-password",
-    "configure/configuration-settings.html#base-dn":
+"configure/configuration-settings.html#base-dn": 
         "https://docs.mattermost.com/configure/authentication-configuration-settings.html#base-dn",
-    "configure/configuration-settings.html#user-filter":
+"configure/configuration-settings.html#user-filter": 
         "https://docs.mattermost.com/configure/authentication-configuration-settings.html#user-filter",
-    "configure/configuration-settings.html#group-filter":
+"configure/configuration-settings.html#group-filter": 
         "https://docs.mattermost.com/configure/authentication-configuration-settings.html#group-filter",
-    "configure/configuration-settings.html#admin-filter":
+"configure/configuration-settings.html#admin-filter": 
         "https://docs.mattermost.com/configure/authentication-configuration-settings.html#admin-filter",
-    "configure/configuration-settings.html#guest-filter":
+"configure/configuration-settings.html#guest-filter": 
         "https://docs.mattermost.com/configure/authentication-configuration-settings.html#guest-filter",
-    "configure/configuration-settings.html#id-attribute":
+"configure/configuration-settings.html#id-attribute": 
         "https://docs.mattermost.com/configure/authentication-configuration-settings.html#id-attribute",
-    "configure/configuration-settings.html#login-id-attribute":
+"configure/configuration-settings.html#login-id-attribute": 
         "https://docs.mattermost.com/configure/authentication-configuration-settings.html#login-id-attribute",
-    "configure/configuration-settings.html#username-attribute":
+"configure/configuration-settings.html#username-attribute": 
         "https://docs.mattermost.com/configure/authentication-configuration-settings.html#username-attribute",
-    "configure/configuration-settings.html#email-attribute":
+"configure/configuration-settings.html#email-attribute": 
         "https://docs.mattermost.com/configure/authentication-configuration-settings.html#email-attribute",
-    "configure/configuration-settings.html#first-name-attribute":
+"configure/configuration-settings.html#first-name-attribute": 
         "https://docs.mattermost.com/configure/authentication-configuration-settings.html#first-name-attribute",
-    "configure/configuration-settings.html#last-name-attribute":
+"configure/configuration-settings.html#last-name-attribute": 
         "https://docs.mattermost.com/configure/authentication-configuration-settings.html#last-name-attribute",
-    "configure/configuration-settings.html#nickname-attribute":
+"configure/configuration-settings.html#nickname-attribute": 
         "https://docs.mattermost.com/configure/authentication-configuration-settings.html#nickname-attribute",
-    "configure/configuration-settings.html#position-attribute":
+"configure/configuration-settings.html#position-attribute": 
         "https://docs.mattermost.com/configure/authentication-configuration-settings.html#position-attribute",
-    "configure/configuration-settings.html#profile-picture-attribute":
+"configure/configuration-settings.html#profile-picture-attribute": 
         "https://docs.mattermost.com/configure/authentication-configuration-settings.html#profile-picture-attribute",
-    "configure/configuration-settings.html#group-display-name-attribute":
+"configure/configuration-settings.html#group-display-name-attribute": 
         "https://docs.mattermost.com/configure/authentication-configuration-settings.html#group-display-name-attribute",
-    "configure/configuration-settings.html#group-id-attribute":
+"configure/configuration-settings.html#group-id-attribute": 
         "https://docs.mattermost.com/configure/authentication-configuration-settings.html#group-id-attribute",
-    "configure/configuration-settings.html#synchronization-interval-minutes":
+"configure/configuration-settings.html#synchronization-interval-minutes": 
         "https://docs.mattermost.com/configure/authentication-configuration-settings.html#synchronization-interval-minutes",
-    "configure/configuration-settings.html#maximum-page-size":
+"configure/configuration-settings.html#maximum-page-size": 
         "https://docs.mattermost.com/configure/authentication-configuration-settings.html#maximum-page-size",
-    "configure/configuration-settings.html#query-timeout-seconds":
+"configure/configuration-settings.html#query-timeout-seconds": 
         "https://docs.mattermost.com/configure/authentication-configuration-settings.html#query-timeout-seconds",
-    "configure/configuration-settings.html#enable-login-with-saml":
+"configure/configuration-settings.html#enable-login-with-saml": 
         "https://docs.mattermost.com/configure/authentication-configuration-settings.html#enable-login-with-saml",
-    "configure/configuration-settings.html#enable-synchronizing-saml-accounts-with-ad-ldap":
+"configure/configuration-settings.html#enable-synchronizing-saml-accounts-with-ad-ldap": 
         "https://docs.mattermost.com/configure/authentication-configuration-settings.html#enable-synchronizing-saml-accounts-with-ad-ldap",
-    "configure/configuration-settings.html#ignore-guest-users-when-synchronizing-with-ad-ldap":
+"configure/configuration-settings.html#ignore-guest-users-when-synchronizing-with-ad-ldap": 
         "https://docs.mattermost.com/configure/authentication-configuration-settings.html#ignore-guest-users-when-synchronizing-with-ad-ldap",
-    "configure/configuration-settings.html#override-saml-bind-data-with-ad-ldap-information":
+"configure/configuration-settings.html#override-saml-bind-data-with-ad-ldap-information": 
         "https://docs.mattermost.com/configure/authentication-configuration-settings.html#override-saml-bind-data-with-ad-ldap-information",
-    "configure/configuration-settings.html#identity-provider-metadata-url":
+"configure/configuration-settings.html#identity-provider-metadata-url": 
         "https://docs.mattermost.com/configure/authentication-configuration-settings.html#identity-provider-metadata-url",
-    "configure/configuration-settings.html#saml-sso-url":
+"configure/configuration-settings.html#saml-sso-url": 
         "https://docs.mattermost.com/configure/authentication-configuration-settings.html#saml-sso-url",
-    "configure/configuration-settings.html#identity-provider-issuer-url":
+"configure/configuration-settings.html#identity-provider-issuer-url": 
         "https://docs.mattermost.com/configure/authentication-configuration-settings.html#identity-provider-issuer-url",
-    "configure/configuration-settings.html#identity-provider-public-certificate":
+"configure/configuration-settings.html#identity-provider-public-certificate": 
         "https://docs.mattermost.com/configure/authentication-configuration-settings.html#identity-provider-public-certificate",
-    "configure/configuration-settings.html#verify-signature":
+"configure/configuration-settings.html#verify-signature": 
         "https://docs.mattermost.com/configure/authentication-configuration-settings.html#verify-signature",
-    "configure/configuration-settings.html#service-provider-login-url":
+"configure/configuration-settings.html#service-provider-login-url": 
         "https://docs.mattermost.com/configure/authentication-configuration-settings.html#service-provider-login-url",
-    "configure/configuration-settings.html#service-provider-identifier":
+"configure/configuration-settings.html#service-provider-identifier": 
         "https://docs.mattermost.com/configure/authentication-configuration-settings.html#service-provider-identifier",
-    "configure/configuration-settings.html#enable-encryption":
+"configure/configuration-settings.html#enable-encryption": 
         "https://docs.mattermost.com/configure/authentication-configuration-settings.html#enable-encryption",
-    "configure/configuration-settings.html#service-provider-private-key":
+"configure/configuration-settings.html#service-provider-private-key": 
         "https://docs.mattermost.com/configure/authentication-configuration-settings.html#service-provider-private-key",
-    "configure/configuration-settings.html#service-provider-public-certificate":
+"configure/configuration-settings.html#service-provider-public-certificate": 
         "https://docs.mattermost.com/configure/authentication-configuration-settings.html#service-provider-public-certificate",
-    "configure/configuration-settings.html#sign-request":
+"configure/configuration-settings.html#sign-request": 
         "https://docs.mattermost.com/configure/authentication-configuration-settings.html#sign-request",
-    "configure/configuration-settings.html#signature-algorithm":
+"configure/configuration-settings.html#signature-algorithm": 
         "https://docs.mattermost.com/configure/authentication-configuration-settings.html#signature-algorithm",
-    "configure/configuration-settings.html#canonical-algorithm":
+"configure/configuration-settings.html#canonical-algorithm": 
         "https://docs.mattermost.com/configure/authentication-configuration-settings.html#canonical-algorithm",
-    "configure/configuration-settings.html#guest-attribute":
+"configure/configuration-settings.html#guest-attribute": 
         "https://docs.mattermost.com/configure/authentication-configuration-settings.html#guest-attribute",
-    "configure/configuration-settings.html#admin-attribute":
+"configure/configuration-settings.html#admin-attribute": 
         "https://docs.mattermost.com/configure/authentication-configuration-settings.html#admin-attribute",
-    "configure/configuration-settings.html#preferred-language-attribute":
+"configure/configuration-settings.html#preferred-language-attribute": 
         "https://docs.mattermost.com/configure/authentication-configuration-settings.html#preferred-language-attribute",
-    "configure/configuration-settings.html#login-button-text":
+"configure/configuration-settings.html#login-button-text": 
         "https://docs.mattermost.com/configure/authentication-configuration-settings.html#login-button-text",
-    "configure/configuration-settings.html#enable-authentication-with-gitlab":
+"configure/configuration-settings.html#enable-authentication-with-gitlab": 
         "https://docs.mattermost.com/configure/authentication-configuration-settings.html#enable-authentication-with-gitlab",
-    "configure/configuration-settings.html#application-id":
+"configure/configuration-settings.html#application-id": 
         "https://docs.mattermost.com/configure/authentication-configuration-settings.html#application-id",
-    "configure/configuration-settings.html#application-secret-key":
+"configure/configuration-settings.html#application-secret-key": 
         "https://docs.mattermost.com/configure/authentication-configuration-settings.html#application-secret-key",
-    "configure/configuration-settings.html#user-api-endpoint":
+"configure/configuration-settings.html#user-api-endpoint": 
         "https://docs.mattermost.com/configure/authentication-configuration-settings.html#user-api-endpoint",
-    "configure/configuration-settings.html#auth-endpoint":
+"configure/configuration-settings.html#auth-endpoint": 
         "https://docs.mattermost.com/configure/authentication-configuration-settings.html#auth-endpoint",
-    "configure/configuration-settings.html#token-endpoint":
+"configure/configuration-settings.html#token-endpoint": 
         "https://docs.mattermost.com/configure/authentication-configuration-settings.html#token-endpoint",
-    "configure/configuration-settings.html#google":
+"configure/configuration-settings.html#google": 
         "https://docs.mattermost.com/configure/authentication-configuration-settings.html#google",
-    "configure/configuration-settings.html#client-id":
+"configure/configuration-settings.html#client-id": 
         "https://docs.mattermost.com/configure/authentication-configuration-settings.html#client-id",
-    "configure/configuration-settings.html#client-secret":
+"configure/configuration-settings.html#client-secret": 
         "https://docs.mattermost.com/configure/authentication-configuration-settings.html#client-secret",
-    "configure/configuration-settings.html#office-365":
+"configure/configuration-settings.html#office-365": 
         "https://docs.mattermost.com/configure/authentication-configuration-settings.html#office-365",
-    "configure/configuration-settings.html#application-secret-password":
+"configure/configuration-settings.html#application-secret-password": 
         "https://docs.mattermost.com/configure/authentication-configuration-settings.html#application-secret-password",
-    "configure/configuration-settings.html#directory-tenant-id":
+"configure/configuration-settings.html#directory-tenant-id": 
         "https://docs.mattermost.com/configure/authentication-configuration-settings.html#directory-tenant-id",
-    "configure/configuration-settings.html#google-settings":
+"configure/configuration-settings.html#google-settings": 
         "https://docs.mattermost.com/configure/authentication-configuration-settings.html#google-settings",
-    "configure/configuration-settings.html#discovery-endpoint":
+"configure/configuration-settings.html#discovery-endpoint": 
         "https://docs.mattermost.com/configure/authentication-configuration-settings.html#discovery-endpoint",
-    "configure/configuration-settings.html#office-365-settings":
+"configure/configuration-settings.html#office-365-settings": 
         "https://docs.mattermost.com/configure/authentication-configuration-settings.html#office-365-settings",
-    "configure/configuration-settings.html#openid-connect-other":
+"configure/configuration-settings.html#openid-connect-other": 
         "https://docs.mattermost.com/configure/authentication-configuration-settings.html#openid-connect-other",
-    "configure/configuration-settings.html#button-name":
+"configure/configuration-settings.html#button-name": 
         "https://docs.mattermost.com/configure/authentication-configuration-settings.html#button-name",
-    "configure/configuration-settings.html#button-color":
+"configure/configuration-settings.html#button-color": 
         "https://docs.mattermost.com/configure/authentication-configuration-settings.html#button-color",
-    "configure/configuration-settings.html#enable-guest-access":
+"configure/configuration-settings.html#enable-guest-access": 
         "https://docs.mattermost.com/configure/authentication-configuration-settings.html#enable-guest-access",
-    "configure/configuration-settings.html#whitelisted-guest-domains":
+"configure/configuration-settings.html#whitelisted-guest-domains": 
         "https://docs.mattermost.com/configure/authentication-configuration-settings.html#whitelisted-guest-domains",
-    "configure/configuration-settings.html#global-retention-policy-for-messages":
+"configure/configuration-settings.html#global-retention-policy-for-messages": 
         "https://docs.mattermost.com/configure/compliance-configuration-settings.html#global-retention-policy-for-messages",
-    "configure/configuration-settings.html#global-retention-policy-for-files":
+"configure/configuration-settings.html#global-retention-policy-for-files": 
         "https://docs.mattermost.com/configure/compliance-configuration-settings.html#global-retention-policy-for-files",
-    "configure/configuration-settings.html#data-deletion-time":
+"configure/configuration-settings.html#data-deletion-time": 
         "https://docs.mattermost.com/configure/compliance-configuration-settings.html#data-deletion-time",
-    "configure/configuration-settings.html#enable-compliance-export":
+"configure/configuration-settings.html#enable-compliance-export": 
         "https://docs.mattermost.com/configure/compliance-configuration-settings.html#enable-compliance-export",
-    "configure/configuration-settings.html#compliance-export-time":
+"configure/configuration-settings.html#compliance-export-time": 
         "https://docs.mattermost.com/configure/compliance-configuration-settings.html#compliance-export-time",
-    "configure/configuration-settings.html#global-relay-customer-account":
+"configure/configuration-settings.html#global-relay-customer-account": 
         "https://docs.mattermost.com/configure/compliance-configuration-settings.html#global-relay-customer-account",
-    "configure/configuration-settings.html#global-relay-smtp-username":
+"configure/configuration-settings.html#global-relay-smtp-username": 
         "https://docs.mattermost.com/configure/compliance-configuration-settings.html#global-relay-smtp-username",
-    "configure/configuration-settings.html#global-relay-smtp-password":
+"configure/configuration-settings.html#global-relay-smtp-password": 
         "https://docs.mattermost.com/configure/compliance-configuration-settings.html#global-relay-smtp-password",
-    "configure/configuration-settings.html#global-relay-email-address":
+"configure/configuration-settings.html#global-relay-email-address": 
         "https://docs.mattermost.com/configure/compliance-configuration-settings.html#global-relay-email-address",
-    "configure/configuration-settings.html#enable-compliance-reporting":
+"configure/configuration-settings.html#enable-compliance-reporting": 
         "https://docs.mattermost.com/configure/compliance-configuration-settings.html#enable-compliance-reporting",
-    "configure/configuration-settings.html#compliance-report-directory":
+"configure/configuration-settings.html#compliance-report-directory": 
         "https://docs.mattermost.com/configure/compliance-configuration-settings.html#compliance-report-directory",
-    "configure/configuration-settings.html#enable-daily-report":
+"configure/configuration-settings.html#enable-daily-report": 
         "https://docs.mattermost.com/configure/compliance-configuration-settings.html#enable-daily-report",
-    "configure/configuration-settings.html#batch-size":
+"configure/configuration-settings.html#batch-size": 
         "https://docs.mattermost.com/configure/compliance-configuration-settings.html#batch-size",
-    "configure/configuration-settings.html#disable-post-metadata":
+"configure/configuration-settings.html#disable-post-metadata": 
         "https://docs.mattermost.com/configure/deprecated-configuration-settings.html#disable-post-metadata",
-    "configure/configuration-settings.html#enable-ad-ldap-group-sync":
+"configure/configuration-settings.html#enable-ad-ldap-group-sync": 
         "https://docs.mattermost.com/configure/deprecated-configuration-settings.html#enable-ad-ldap-group-sync",
-    "configure/configuration-settings.html#amazon-s3-signature-v2":
+"configure/configuration-settings.html#amazon-s3-signature-v2": 
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#amazon-s3-signature-v2",
-    "configure/configuration-settings.html#initial-font":
+"configure/configuration-settings.html#initial-font": 
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#initial-font",
-    "configure/configuration-settings.html#output-logs-to-multiple-targets":
+"configure/configuration-settings.html#output-logs-to-multiple-targets": 
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#output-logs-to-multiple-targets",
-    "configure/configuration-settings.html#teammate-name-display":
+"configure/configuration-settings.html#teammate-name-display": 
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#teammate-name-display",
-    "configure/configuration-settings.html#colorize-plain-text-console-logs":
+"configure/configuration-settings.html#colorize-plain-text-console-logs": 
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#colorize-plain-text-console-logs",
-    "configure/configuration-settings.html#ad-ldap-login-button-color":
+"configure/configuration-settings.html#ad-ldap-login-button-color": 
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#ad-ldap-login-button-color",
-    "configure/configuration-settings.html#ad-ldap-login-button-border-color":
+"configure/configuration-settings.html#ad-ldap-login-button-border-color": 
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#ad-ldap-login-button-border-color",
-    "configure/configuration-settings.html#ad-ldap-login-button-text-color":
+"configure/configuration-settings.html#ad-ldap-login-button-text-color": 
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#ad-ldap-login-button-text-color",
-    "configure/configuration-settings.html#link-metadata-timeout":
+"configure/configuration-settings.html#link-metadata-timeout": 
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#link-metadata-timeout",
-    "configure/configuration-settings.html#email-batching-buffer-size":
+"configure/configuration-settings.html#email-batching-buffer-size": 
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#email-batching-buffer-size",
-    "configure/configuration-settings.html#email-batching-interval":
+"configure/configuration-settings.html#email-batching-interval": 
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#email-batching-interval",
-    "configure/configuration-settings.html#email-login-button-color":
+"configure/configuration-settings.html#email-login-button-color": 
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#email-login-button-color",
-    "configure/configuration-settings.html#email-login-button-border-color":
+"configure/configuration-settings.html#email-login-button-border-color": 
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#email-login-button-border-color",
-    "configure/configuration-settings.html#email-login-button-text-color":
+"configure/configuration-settings.html#email-login-button-text-color": 
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#email-login-button-text-color",
-    "configure/configuration-settings.html#enable-account-deactivation":
+"configure/configuration-settings.html#enable-account-deactivation": 
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#enable-account-deactivation",
-    "configure/configuration-settings.html#enable-automatic-replies":
+"configure/configuration-settings.html#enable-automatic-replies": 
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#enable-automatic-replies",
-    "configure/configuration-settings.html#enable-channel-viewed-websocket-messages":
+"configure/configuration-settings.html#enable-channel-viewed-websocket-messages": 
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#enable-channel-viewed-websocket-messages",
-    "configure/configuration-settings.html#enable-default-channel-leave-join-system-messages":
+"configure/configuration-settings.html#enable-default-channel-leave-join-system-messages": 
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#enable-default-channel-leave-join-system-messages",
-    "configure/configuration-settings.html#enable-preview-features":
+"configure/configuration-settings.html#enable-preview-features": 
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#enable-preview-features",
-    "configure/configuration-settings.html#enable-theme-selection":
+"configure/configuration-settings.html#enable-theme-selection": 
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#enable-theme-selection",
-    "configure/configuration-settings.html#allow-custom-themes":
+"configure/configuration-settings.html#allow-custom-themes": 
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#allow-custom-themes",
-    "configure/configuration-settings.html#default-theme":
+"configure/configuration-settings.html#default-theme": 
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#default-theme",
-    "configure/configuration-settings.html#enable-onboarding":
+"configure/configuration-settings.html#enable-onboarding": 
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#enable-onboarding",
-    "configure/configuration-settings.html#enable-user-typing-messages":
+"configure/configuration-settings.html#enable-user-typing-messages": 
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#enable-user-typing-messages",
-    "configure/configuration-settings.html#saml-login-button-color":
+"configure/configuration-settings.html#saml-login-button-color": 
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#saml-login-button-color",
-    "configure/configuration-settings.html#saml-login-button-border-color":
+"configure/configuration-settings.html#saml-login-button-border-color": 
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#saml-login-button-border-color",
-    "configure/configuration-settings.html#saml-login-button-text-color":
+"configure/configuration-settings.html#saml-login-button-text-color": 
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#saml-login-button-text-color",
-    "configure/configuration-settings.html#user-status-away-timeout":
+"configure/configuration-settings.html#user-status-away-timeout": 
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#user-status-away-timeout",
-    "configure/configuration-settings.html#enable-shared-channels":
+"configure/configuration-settings.html#enable-shared-channels": 
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#enable-shared-channels",
-    "configure/configuration-settings.html#enable-bleve-indexing":
+"configure/configuration-settings.html#enable-bleve-indexing": 
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#enable-bleve-indexing",
-    "configure/configuration-settings.html#index-directory":
+"configure/configuration-settings.html#index-directory": 
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#index-directory",
-    "configure/configuration-settings.html#enable-bleve-for-search-queries":
+"configure/configuration-settings.html#enable-bleve-for-search-queries": 
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#enable-bleve-for-search-queries",
-    "configure/configuration-settings.html#enable-bleve-for-autocomplete-queries":
+"configure/configuration-settings.html#enable-bleve-for-autocomplete-queries": 
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#enable-bleve-for-autocomplete-queries",
-    "configure/configuration-settings.html#allowed-themes":
+"configure/configuration-settings.html#allowed-themes": 
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#allowed-themes",
-    "configure/configuration-settings.html#maximum-users-for-statistics":
+"configure/configuration-settings.html#maximum-users-for-statistics": 
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#maximum-users-for-statistics",
-    "configure/configuration-settings.html#latest-android-version":
+"configure/configuration-settings.html#latest-android-version": 
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#latest-android-version",
-    "configure/configuration-settings.html#minimum-android-version":
+"configure/configuration-settings.html#minimum-android-version": 
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#minimum-android-version",
-    "configure/configuration-settings.html#latest-ios-version":
+"configure/configuration-settings.html#latest-ios-version": 
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#latest-ios-version",
-    "configure/configuration-settings.html#minimum-ios-version":
+"configure/configuration-settings.html#minimum-ios-version": 
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#minimum-ios-version",
-    "configure/configuration-settings.html#file-location":
+"configure/configuration-settings.html#file-location": 
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#file-location",
-    "configure/configuration-settings.html#push-notification-buffer":
+"configure/configuration-settings.html#push-notification-buffer": 
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#push-notification-buffer",
-    "configure/configuration-settings.html#disable-inactive-server-email-notifications":
+"configure/configuration-settings.html#disable-inactive-server-email-notifications": 
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#disable-inactive-server-email-notifications",
-    "configure/configuration-settings.html#file-configuration-options":
+"configure/configuration-settings.html#file-configuration-options": 
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#file-configuration-options",
-    "configure/configuration-settings.html#file-name":
+"configure/configuration-settings.html#file-name": 
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#file-name",
-    "configure/configuration-settings.html#file-max-size-mb":
+"configure/configuration-settings.html#file-max-size-mb": 
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#file-max-size-mb",
-    "configure/configuration-settings.html#file-max-age-days":
+"configure/configuration-settings.html#file-max-age-days": 
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#file-max-age-days",
-    "configure/configuration-settings.html#file-max-backups":
+"configure/configuration-settings.html#file-max-backups": 
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#file-max-backups",
-    "configure/configuration-settings.html#file-compress":
+"configure/configuration-settings.html#file-compress": 
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#file-compress",
-    "configure/configuration-settings.html#file-max-queue-size":
+"configure/configuration-settings.html#file-max-queue-size": 
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#file-max-queue-size",
-    "configure/configuration-settings.html#syslog-configuration-options":
+"configure/configuration-settings.html#syslog-configuration-options": 
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#syslog-configuration-options",
-    "configure/configuration-settings.html#syslog-ip":
+"configure/configuration-settings.html#syslog-ip": 
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#syslog-ip",
-    "configure/configuration-settings.html#syslog-port":
+"configure/configuration-settings.html#syslog-port": 
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#syslog-port",
-    "configure/configuration-settings.html#syslog-tag":
+"configure/configuration-settings.html#syslog-tag": 
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#syslog-tag",
-    "configure/configuration-settings.html#syslog-cert":
+"configure/configuration-settings.html#syslog-cert": 
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#syslog-cert",
-    "configure/configuration-settings.html#syslog-insecure":
+"configure/configuration-settings.html#syslog-insecure": 
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#syslog-insecure",
-    "configure/configuration-settings.html#syslog-max-queue-size":
+"configure/configuration-settings.html#syslog-max-queue-size": 
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#syslog-max-queue-size",
-    "configure/configuration-settings.html#restrict-system-admin":
+"configure/configuration-settings.html#restrict-system-admin": 
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#restrict-system-admin",
-    "configure/configuration-settings.html#remote-clusters":
+"configure/configuration-settings.html#remote-clusters": 
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#remote-clusters",
-    "configure/configuration-settings.html#enable-client-side-certification":
+"configure/configuration-settings.html#enable-client-side-certification": 
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#enable-client-side-certification",
-    "configure/configuration-settings.html#client-side-certification-login-method":
+"configure/configuration-settings.html#client-side-certification-login-method": 
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#client-side-certification-login-method",
-    "configure/configuration-settings.html#export-settings-default-directory":
+"configure/configuration-settings.html#export-settings-default-directory": 
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#export-settings-default-directory",
-    "configure/configuration-settings.html#export-settings-default-retention-days":
+"configure/configuration-settings.html#export-settings-default-retention-days": 
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#export-settings-default-retention-days",
-    "configure/configuration-settings.html#maximum-image-resolution":
+"configure/configuration-settings.html#maximum-image-resolution": 
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#maximum-image-resolution",
-    "configure/configuration-settings.html#maximum-image-decoder-concurrency":
+"configure/configuration-settings.html#maximum-image-decoder-concurrency": 
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#maximum-image-decoder-concurrency",
-    "configure/configuration-settings.html#amazon-s3-path":
+"configure/configuration-settings.html#amazon-s3-path": 
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#amazon-s3-path",
-    "configure/configuration-settings.html#global-relay-smtp-server-timeout":
+"configure/configuration-settings.html#global-relay-smtp-server-timeout": 
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#global-relay-smtp-server-timeout",
-    "configure/configuration-settings.html#import-settings-default-directory":
+"configure/configuration-settings.html#import-settings-default-directory": 
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#import-settings-default-directory",
-    "configure/configuration-settings.html#import-settings-default-retention-days":
+"configure/configuration-settings.html#import-settings-default-retention-days": 
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#import-settings-default-retention-days",
-    "configure/configuration-settings.html#export-from-timestamp":
+"configure/configuration-settings.html#export-from-timestamp": 
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#export-from-timestamp",
-    "configure/configuration-settings.html#block-profile-rate":
+"configure/configuration-settings.html#block-profile-rate": 
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#block-profile-rate",
-    "configure/configuration-settings.html#app-custom-url-schemes":
+"configure/configuration-settings.html#app-custom-url-schemes": 
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#app-custom-url-schemes",
-    "configure/configuration-settings.html#enable-plugin-uploads":
+"configure/configuration-settings.html#enable-plugin-uploads": 
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#enable-plugin-uploads",
-    "configure/configuration-settings.html#allow-insecure-download-url":
+"configure/configuration-settings.html#allow-insecure-download-url": 
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#allow-insecure-download-url",
-    "configure/configuration-settings.html#enable-plugin-health-check":
+"configure/configuration-settings.html#enable-plugin-health-check": 
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#enable-plugin-health-check",
-    "configure/configuration-settings.html#scoping-idp-provider-id":
+"configure/configuration-settings.html#scoping-idp-provider-id": 
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#scoping-idp-provider-id",
-    "configure/configuration-settings.html#custom-user-groups":
+"configure/configuration-settings.html#custom-user-groups": 
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#custom-user-groups",
-    "configure/configuration-settings.html#developer-flags":
+"configure/configuration-settings.html#developer-flags": 
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#developer-flags",
-    "configure/configuration-settings.html#enable-post-search":
+"configure/configuration-settings.html#enable-post-search": 
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#enable-post-search",
-    "configure/configuration-settings.html#enable-file-search":
+"configure/configuration-settings.html#enable-file-search": 
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#enable-file-search",
-    "configure/configuration-settings.html#enable-user-status-updates":
+"configure/configuration-settings.html#enable-user-status-updates": 
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#enable-user-status-updates",
-    "configure/configuration-settings.html#websocket-secure-port":
+"configure/configuration-settings.html#websocket-secure-port": 
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#websocket-secure-port",
-    "configure/configuration-settings.html#websocket-port":
+"configure/configuration-settings.html#websocket-port": 
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#websocket-port",
-    "configure/configuration-settings.html#enable-api-team-deletion":
+"configure/configuration-settings.html#enable-api-team-deletion": 
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#enable-api-team-deletion",
-    "configure/configuration-settings.html#enable-api-user-deletion":
+"configure/configuration-settings.html#enable-api-user-deletion": 
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#enable-api-user-deletion",
-    "configure/configuration-settings.html#enable-api-channel-deletion":
+"configure/configuration-settings.html#enable-api-channel-deletion": 
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#enable-api-channel-deletion",
-    "configure/configuration-settings.html#enable-opentracing":
+"configure/configuration-settings.html#enable-opentracing": 
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#enable-opentracing",
-    "configure/configuration-settings.html#enable-local-mode-socket-location":
+"configure/configuration-settings.html#enable-local-mode-socket-location": 
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#enable-local-mode-socket-location",
-    "configure/configuration-settings.html#run-jobs":
+"configure/configuration-settings.html#run-jobs": 
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#run-jobs",
-    "configure/configuration-settings.html#run-scheduler":
+"configure/configuration-settings.html#run-scheduler": 
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#run-scheduler",
-    "configure/configuration-settings.html#clean-up-old-database-jobs":
+"configure/configuration-settings.html#clean-up-old-database-jobs": 
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#clean-up-old-database-jobs",
-    "configure/configuration-settings.html#clean-up-outdated-database-entries":
+"configure/configuration-settings.html#clean-up-outdated-database-entries": 
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#clean-up-outdated-database-entries",
-    "configure/configuration-settings.html#enable-incoming-webhooks":
+"configure/configuration-settings.html#enable-incoming-webhooks": 
         "https://docs.mattermost.com/configure/integrations-configuration-settings.html#enable-incoming-webhooks",
-    "configure/configuration-settings.html#enable-outgoing-webhooks":
+"configure/configuration-settings.html#enable-outgoing-webhooks": 
         "https://docs.mattermost.com/configure/integrations-configuration-settings.html#enable-outgoing-webhooks",
-    "configure/configuration-settings.html#enable-custom-slash-commands":
+"configure/configuration-settings.html#enable-custom-slash-commands": 
         "https://docs.mattermost.com/configure/integrations-configuration-settings.html#enable-custom-slash-commands",
-    "configure/configuration-settings.html#enable-oauth-2-0-service-provider":
+"configure/configuration-settings.html#enable-oauth-2-0-service-provider": 
         "https://docs.mattermost.com/configure/integrations-configuration-settings.html#enable-oauth-2-0-service-provider",
-    "configure/configuration-settings.html#enable-integrations-to-override-usernames":
+"configure/configuration-settings.html#enable-integrations-to-override-usernames": 
         "https://docs.mattermost.com/configure/integrations-configuration-settings.html#enable-integrations-to-override-usernames",
-    "configure/configuration-settings.html#enable-integrations-to-override-profile-picture-icons":
+"configure/configuration-settings.html#enable-integrations-to-override-profile-picture-icons": 
         "https://docs.mattermost.com/configure/integrations-configuration-settings.html#enable-integrations-to-override-profile-picture-icons",
-    "configure/configuration-settings.html#enable-personal-access-tokens":
+"configure/configuration-settings.html#enable-personal-access-tokens": 
         "https://docs.mattermost.com/configure/integrations-configuration-settings.html#enable-personal-access-tokens",
-    "configure/configuration-settings.html#enable-bot-account-creation":
+"configure/configuration-settings.html#enable-bot-account-creation": 
         "https://docs.mattermost.com/configure/integrations-configuration-settings.html#enable-bot-account-creation",
-    "configure/configuration-settings.html#disable-bot-accounts-when-owner-is-deactivated":
+"configure/configuration-settings.html#disable-bot-accounts-when-owner-is-deactivated": 
         "https://docs.mattermost.com/configure/integrations-configuration-settings.html#disable-bot-accounts-when-owner-is-deactivated",
-    "configure/configuration-settings.html#enable-gif-picker":
+"configure/configuration-settings.html#enable-gif-picker": 
         "https://docs.mattermost.com/configure/integrations-configuration-settings.html#enable-gif-picker",
-    "configure/configuration-settings.html#gfycat-api-key":
+"configure/configuration-settings.html#gfycat-api-key": 
         "https://docs.mattermost.com/configure/integrations-configuration-settings.html#gfycat-api-key",
-    "configure/configuration-settings.html#gfycat-api-secret":
+"configure/configuration-settings.html#gfycat-api-secret": 
         "https://docs.mattermost.com/configure/integrations-configuration-settings.html#gfycat-api-secret",
-    "configure/configuration-settings.html#enable-cross-origin-requests-from":
+"configure/configuration-settings.html#enable-cross-origin-requests-from": 
         "https://docs.mattermost.com/configure/integrations-configuration-settings.html#enable-cross-origin-requests-from",
-    "configure/configuration-settings.html#cors-exposed-headers":
+"configure/configuration-settings.html#cors-exposed-headers": 
         "https://docs.mattermost.com/configure/integrations-configuration-settings.html#cors-exposed-headers",
-    "configure/configuration-settings.html#cors-allow-credentials":
+"configure/configuration-settings.html#cors-allow-credentials": 
         "https://docs.mattermost.com/configure/integrations-configuration-settings.html#cors-allow-credentials",
-    "configure/configuration-settings.html#cors-debug":
+"configure/configuration-settings.html#cors-debug": 
         "https://docs.mattermost.com/configure/integrations-configuration-settings.html#cors-debug",
-    "configure/configuration-settings.html#enable-plugins":
+"configure/configuration-settings.html#enable-plugins": 
         "https://docs.mattermost.com/configure/plugins-configuration-settings.html#enable-plugins",
-    "configure/configuration-settings.html#require-plugin-signature":
+"configure/configuration-settings.html#require-plugin-signature": 
         "https://docs.mattermost.com/configure/plugins-configuration-settings.html#require-plugin-signature",
-    "configure/configuration-settings.html#automatic-prepackaged-plugins":
+"configure/configuration-settings.html#automatic-prepackaged-plugins": 
         "https://docs.mattermost.com/configure/plugins-configuration-settings.html#automatic-prepackaged-plugins",
-    "configure/configuration-settings.html#enable-marketplace":
+"configure/configuration-settings.html#enable-marketplace": 
         "https://docs.mattermost.com/configure/plugins-configuration-settings.html#enable-marketplace",
-    "configure/configuration-settings.html#enable-remote-marketplace":
+"configure/configuration-settings.html#enable-remote-marketplace": 
         "https://docs.mattermost.com/configure/plugins-configuration-settings.html#enable-remote-marketplace",
-    "configure/configuration-settings.html#marketplace-url":
+"configure/configuration-settings.html#marketplace-url": 
         "https://docs.mattermost.com/configure/plugins-configuration-settings.html#marketplace-url",
-    "configure/configuration-settings.html#installed-plugin-state":
+"configure/configuration-settings.html#installed-plugin-state": 
         "https://docs.mattermost.com/configure/plugins-configuration-settings.html#installed-plugin-state",
-    "configure/configuration-settings.html#plugin-settings":
+"configure/configuration-settings.html#plugin-settings": 
         "https://docs.mattermost.com/configure/plugins-configuration-settings.html#plugin-settings",
-    "configure/configuration-settings.html#signature-public-key-files":
+"configure/configuration-settings.html#signature-public-key-files": 
         "https://docs.mattermost.com/configure/plugins-configuration-settings.html#signature-public-key-files",
-    "configure/configuration-settings.html#chimera-oauth-proxy-url":
+"configure/configuration-settings.html#chimera-oauth-proxy-url": 
         "https://docs.mattermost.com/configure/plugins-configuration-settings.html#chimera-oauth-proxy-url",
-    "configure/configuration-settings.html#site-name":
+"configure/configuration-settings.html#site-name": 
         "https://docs.mattermost.com/configure/site-configuration-settings.html#site-name",
-    "configure/configuration-settings.html#site-description":
+"configure/configuration-settings.html#site-description": 
         "https://docs.mattermost.com/configure/site-configuration-settings.html#site-description",
-    "configure/configuration-settings.html#enable-custom-branding":
+"configure/configuration-settings.html#enable-custom-branding": 
         "https://docs.mattermost.com/configure/site-configuration-settings.html#enable-custom-branding",
-    "configure/configuration-settings.html#custom-brand-image":
+"configure/configuration-settings.html#custom-brand-image": 
         "https://docs.mattermost.com/configure/site-configuration-settings.html#custom-brand-image",
-    "configure/configuration-settings.html#custom-brand-text":
+"configure/configuration-settings.html#custom-brand-text": 
         "https://docs.mattermost.com/configure/site-configuration-settings.html#custom-brand-text",
-    "configure/configuration-settings.html#enable-ask-community-link":
+"configure/configuration-settings.html#enable-ask-community-link": 
         "https://docs.mattermost.com/configure/site-configuration-settings.html#enable-ask-community-link",
-    "configure/configuration-settings.html#help-link":
+"configure/configuration-settings.html#help-link": 
         "https://docs.mattermost.com/configure/site-configuration-settings.html#help-link",
-    "configure/configuration-settings.html#terms-of-use-link":
+"configure/configuration-settings.html#terms-of-use-link": 
         "https://docs.mattermost.com/configure/site-configuration-settings.html#terms-of-use-link",
-    "configure/configuration-settings.html#privacy-policy-link":
+"configure/configuration-settings.html#privacy-policy-link": 
         "https://docs.mattermost.com/configure/site-configuration-settings.html#privacy-policy-link",
-    "configure/configuration-settings.html#about-link":
+"configure/configuration-settings.html#about-link": 
         "https://docs.mattermost.com/configure/site-configuration-settings.html#about-link",
-    "configure/configuration-settings.html#report-a-problem-link":
+"configure/configuration-settings.html#report-a-problem-link": 
         "https://docs.mattermost.com/configure/site-configuration-settings.html#report-a-problem-link",
-    "configure/configuration-settings.html#mattermost-apps-download-page-link":
+"configure/configuration-settings.html#mattermost-apps-download-page-link": 
         "https://docs.mattermost.com/configure/site-configuration-settings.html#mattermost-apps-download-page-link",
-    "configure/configuration-settings.html#android-app-download-link":
+"configure/configuration-settings.html#android-app-download-link": 
         "https://docs.mattermost.com/configure/site-configuration-settings.html#android-app-download-link",
-    "configure/configuration-settings.html#ios-app-download-link":
+"configure/configuration-settings.html#ios-app-download-link": 
         "https://docs.mattermost.com/configure/site-configuration-settings.html#ios-app-download-link",
-    "configure/configuration-settings.html#default-server-language":
+"configure/configuration-settings.html#default-server-language": 
         "https://docs.mattermost.com/configure/site-configuration-settings.html#default-server-language",
-    "configure/configuration-settings.html#default-client-language":
+"configure/configuration-settings.html#default-client-language": 
         "https://docs.mattermost.com/configure/site-configuration-settings.html#default-client-language",
-    "configure/configuration-settings.html#available-languages":
+"configure/configuration-settings.html#available-languages": 
         "https://docs.mattermost.com/configure/site-configuration-settings.html#available-languages",
-    "configure/configuration-settings.html#max-users-per-team":
+"configure/configuration-settings.html#max-users-per-team": 
         "https://docs.mattermost.com/configure/site-configuration-settings.html#max-users-per-team",
-    "configure/configuration-settings.html#max-channels-per-team":
+"configure/configuration-settings.html#max-channels-per-team": 
         "https://docs.mattermost.com/configure/site-configuration-settings.html#max-channels-per-team",
-    "configure/configuration-settings.html#enable-users-to-open-direct-message-channels-with":
+"configure/configuration-settings.html#enable-users-to-open-direct-message-channels-with": 
         "https://docs.mattermost.com/configure/site-configuration-settings.html#enable-users-to-open-direct-message-channels-with",
-    "configure/configuration-settings.html#allow-users-to-view-archived-channels":
+"configure/configuration-settings.html#allow-users-to-view-archived-channels": 
         "https://docs.mattermost.com/configure/site-configuration-settings.html#allow-users-to-view-archived-channels",
-    "configure/configuration-settings.html#show-email-address":
+"configure/configuration-settings.html#show-email-address": 
         "https://docs.mattermost.com/configure/site-configuration-settings.html#show-email-address",
-    "configure/configuration-settings.html#show-full-name":
+"configure/configuration-settings.html#show-full-name": 
         "https://docs.mattermost.com/configure/site-configuration-settings.html#show-full-name",
-    "configure/configuration-settings.html#enable-custom-user-statuses":
+"configure/configuration-settings.html#enable-custom-user-statuses": 
         "https://docs.mattermost.com/configure/site-configuration-settings.html#enable-custom-user-statuses",
-    "configure/configuration-settings.html#show-channel-all-or-here-confirmation-dialog":
+"configure/configuration-settings.html#show-channel-all-or-here-confirmation-dialog": 
         "https://docs.mattermost.com/configure/site-configuration-settings.html#show-channel-all-or-here-confirmation-dialog",
-    "configure/configuration-settings.html#enable-email-notifications":
+"configure/configuration-settings.html#enable-email-notifications": 
         "https://docs.mattermost.com/configure/site-configuration-settings.html#enable-email-notifications",
-    "configure/configuration-settings.html#enable-preview-mode-banner":
+"configure/configuration-settings.html#enable-preview-mode-banner": 
         "https://docs.mattermost.com/configure/site-configuration-settings.html#enable-preview-mode-banner",
-    "configure/configuration-settings.html#enable-email-batching":
+"configure/configuration-settings.html#enable-email-batching": 
         "https://docs.mattermost.com/configure/site-configuration-settings.html#enable-email-batching",
-    "configure/configuration-settings.html#email-notification-contents":
+"configure/configuration-settings.html#email-notification-contents": 
         "https://docs.mattermost.com/configure/site-configuration-settings.html#email-notification-contents",
-    "configure/configuration-settings.html#support-email-address":
+"configure/configuration-settings.html#support-email-address": 
         "https://docs.mattermost.com/configure/site-configuration-settings.html#support-email-address",
-    "configure/configuration-settings.html#notification-display-name":
+"configure/configuration-settings.html#notification-display-name": 
         "https://docs.mattermost.com/configure/site-configuration-settings.html#notification-display-name",
-    "configure/configuration-settings.html#notification-from-address":
+"configure/configuration-settings.html#notification-from-address": 
         "https://docs.mattermost.com/configure/site-configuration-settings.html#notification-from-address",
-    "configure/configuration-settings.html#notification-reply-to-address":
+"configure/configuration-settings.html#notification-reply-to-address": 
         "https://docs.mattermost.com/configure/site-configuration-settings.html#notification-reply-to-address",
-    "configure/configuration-settings.html#notification-footer-mailing-address":
+"configure/configuration-settings.html#notification-footer-mailing-address": 
         "https://docs.mattermost.com/configure/site-configuration-settings.html#notification-footer-mailing-address",
-    "configure/configuration-settings.html#push-notification-contents":
+"configure/configuration-settings.html#push-notification-contents": 
         "https://docs.mattermost.com/configure/site-configuration-settings.html#push-notification-contents",
-    "configure/configuration-settings.html#enable-announcement-banner":
+"configure/configuration-settings.html#enable-announcement-banner": 
         "https://docs.mattermost.com/configure/site-configuration-settings.html#enable-announcement-banner",
-    "configure/configuration-settings.html#banner-text":
+"configure/configuration-settings.html#banner-text": 
         "https://docs.mattermost.com/configure/site-configuration-settings.html#banner-text",
-    "configure/configuration-settings.html#banner-color":
+"configure/configuration-settings.html#banner-color": 
         "https://docs.mattermost.com/configure/site-configuration-settings.html#banner-color",
-    "configure/configuration-settings.html#banner-text-color":
+"configure/configuration-settings.html#banner-text-color": 
         "https://docs.mattermost.com/configure/site-configuration-settings.html#banner-text-color",
-    "configure/configuration-settings.html#allow-banner-dismissal":
+"configure/configuration-settings.html#allow-banner-dismissal": 
         "https://docs.mattermost.com/configure/site-configuration-settings.html#allow-banner-dismissal",
-    "configure/configuration-settings.html#enable-emoji-picker":
+"configure/configuration-settings.html#enable-emoji-picker": 
         "https://docs.mattermost.com/configure/site-configuration-settings.html#enable-emoji-picker",
-    "configure/configuration-settings.html#enable-custom-emoji":
+"configure/configuration-settings.html#enable-custom-emoji": 
         "https://docs.mattermost.com/configure/site-configuration-settings.html#enable-custom-emoji",
-    "configure/configuration-settings.html#automatically-follow-threads":
+"configure/configuration-settings.html#automatically-follow-threads": 
         "https://docs.mattermost.com/configure/site-configuration-settings.html#automatically-follow-threads",
-    "configure/configuration-settings.html#collapsed-reply-threads":
+"configure/configuration-settings.html#collapsed-reply-threads": 
         "https://docs.mattermost.com/configure/site-configuration-settings.html#collapsed-reply-threads",
-    "configure/configuration-settings.html#enable-link-previews":
+"configure/configuration-settings.html#enable-link-previews": 
         "https://docs.mattermost.com/configure/site-configuration-settings.html#enable-link-previews",
-    "configure/configuration-settings.html#disable-link-previews-for-specific-domains":
+"configure/configuration-settings.html#disable-link-previews-for-specific-domains": 
         "https://docs.mattermost.com/configure/site-configuration-settings.html#disable-link-previews-for-specific-domains",
-    "configure/configuration-settings.html#enable-message-link-previews":
+"configure/configuration-settings.html#enable-message-link-previews": 
         "https://docs.mattermost.com/configure/site-configuration-settings.html#enable-message-link-previews",
-    "configure/configuration-settings.html#enable-svgs":
+"configure/configuration-settings.html#enable-svgs": 
         "https://docs.mattermost.com/configure/site-configuration-settings.html#enable-svgs",
-    "configure/configuration-settings.html#enable-latex-code-block-rendering":
+"configure/configuration-settings.html#enable-latex-code-block-rendering": 
         "https://docs.mattermost.com/configure/site-configuration-settings.html#enable-latex-code-block-rendering",
-    "configure/configuration-settings.html#enable-inline-latex-rendering":
+"configure/configuration-settings.html#enable-inline-latex-rendering": 
         "https://docs.mattermost.com/configure/site-configuration-settings.html#enable-inline-latex-rendering",
-    "configure/configuration-settings.html#custom-url-schemes":
+"configure/configuration-settings.html#custom-url-schemes": 
         "https://docs.mattermost.com/configure/site-configuration-settings.html#custom-url-schemes",
-    "configure/configuration-settings.html#google-api-key":
+"configure/configuration-settings.html#google-api-key": 
         "https://docs.mattermost.com/configure/site-configuration-settings.html#google-api-key",
-    "configure/configuration-settings.html#allow-file-sharing":
+"configure/configuration-settings.html#allow-file-sharing": 
         "https://docs.mattermost.com/configure/site-configuration-settings.html#allow-file-sharing",
-    "configure/configuration-settings.html#allow-file-uploads-on-mobile":
+"configure/configuration-settings.html#allow-file-uploads-on-mobile": 
         "https://docs.mattermost.com/configure/site-configuration-settings.html#allow-file-uploads-on-mobile",
-    "configure/configuration-settings.html#allow-file-downloads-on-mobile":
+"configure/configuration-settings.html#allow-file-downloads-on-mobile": 
         "https://docs.mattermost.com/configure/site-configuration-settings.html#allow-file-downloads-on-mobile",
-    "configure/configuration-settings.html#enable-public-file-links":
+"configure/configuration-settings.html#enable-public-file-links": 
         "https://docs.mattermost.com/configure/site-configuration-settings.html#enable-public-file-links",
-    "configure/configuration-settings.html#public-link-salt":
+"configure/configuration-settings.html#public-link-salt": 
         "https://docs.mattermost.com/configure/site-configuration-settings.html#public-link-salt",
-    "configure/configuration-settings.html#enable-admin-notices":
+"configure/configuration-settings.html#enable-admin-notices": 
         "https://docs.mattermost.com/configure/site-configuration-settings.html#enable-admin-notices",
-    "configure/configuration-settings.html#enable-end-user-notices":
+"configure/configuration-settings.html#enable-end-user-notices": 
         "https://docs.mattermost.com/configure/site-configuration-settings.html#enable-end-user-notices",
-    "configure/experimental-configuration-settings.html#import-settings-default-directory":
+"configure/experimental-configuration-settings.html#import-settings-default-directory":
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#import-input-directory",
-    "configure/experimental-confguration-settings.html#import-settings-default-retention-days":
+"configure/experimental-confguration-settings.html#import-settings-default-retention-days":
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#import-retention-days",
-    "configure/experimental-configuration-settings.html#export-settings-default-directory":
+"configure/experimental-configuration-settings.html#export-settings-default-directory":
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#export-output-directory",
-    "configure/experimental-configuration-settings.html#export-settings-default-retention-days":
+"configure/experimental-configuration-settings.html#export-settings-default-retention-days":
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#export-retention-days",
-    "configure/experimental-configuration-settings.html#allow-synchronized-drafts":
+"configure/experimental-configuration-settings.html#allow-synchronized-drafts":
         "https://docs.mattermost.com/configure/site-configuration-settings.html#enable-server-syncing-of-message-drafts",
-    "configure/authentication-configuration-settings.html#gitlab":
-        "https://docs.mattermost.com/configure/authentication-configuration-settings.html#gitlab-oauth-2-0-settings",
-    "configure/authentication-configuration-settings.html#google":
-        "https://docs.mattermost.com/configure/authentication-configuration-settings.html#google-oauth-2-0-settings",
-    "configure/authentication-configuration-settings.html#office-365":
-        "https://docs.mattermost.com/configure/authentication-configuration-settings.html#office-365-oauth-2-0-settings",
-    "configure/authentication-configuration-settings.html#gitlab-settings":
-        "https://docs.mattermost.com/configure/authentication-configuration-settings.html#gitlab-openid-settings",
-    "configure/authentication-configuration-settings.html#google-settings":
-        "https://docs.mattermost.com/configure/authentication-configuration-settings.html#google-openid-settings",
-    "configure/authentication-configuration-settings.html#office-365-settings":
-        "https://docs.mattermost.com/configure/authentication-configuration-settings.html#office-365-openid-settings",
-    "configure/authentication-configuration-settings.html#openid-connect-other":
-        "https://docs.mattermost.com/configure/authentication-configuration-settings.html#openid-connect-other-settings",
-    "configure/experimental-configuration-settings.html#enable-app-bar":
+"configure/authentication-configuration-settings.html#gitlab":
+	"https://docs.mattermost.com/configure/authentication-configuration-settings.html#gitlab-oauth-2-0-settings",
+"configure/authentication-configuration-settings.html#google":
+	"https://docs.mattermost.com/configure/authentication-configuration-settings.html#google-oauth-2-0-settings",
+"configure/authentication-configuration-settings.html#office-365":
+	"https://docs.mattermost.com/configure/authentication-configuration-settings.html#office-365-oauth-2-0-settings",
+"configure/authentication-configuration-settings.html#gitlab-settings":
+	"https://docs.mattermost.com/configure/authentication-configuration-settings.html#gitlab-openid-settings",
+"configure/authentication-configuration-settings.html#google-settings":
+	"https://docs.mattermost.com/configure/authentication-configuration-settings.html#google-openid-settings",
+"configure/authentication-configuration-settings.html#office-365-settings":
+	"https://docs.mattermost.com/configure/authentication-configuration-settings.html#office-365-openid-settings",
+"configure/authentication-configuration-settings.html#openid-connect-other":
+	"https://docs.mattermost.com/configure/authentication-configuration-settings.html#openid-connect-other-settings",
+"configure/experimental-configuration-settings.html#enable-app-bar":
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#disable-apps-bar",
 
-    # Deploy redirects
-    "deploy/mobile-apps-faq.html":
+# Deploy redirects
+"deploy/mobile-apps-faq.html":
         "https://docs.mattermost.com/deploy/mobile-faq.html",
 
-    # Deployment redirects
-    "deployment/advanced-permissions.html":
+# Deployment redirects
+"deployment/advanced-permissions.html":
         "https://docs.mattermost.com/onboard/advanced-permissions.html",
-    "deployment/auth.html":
+"deployment/auth.html":
         "https://docs.mattermost.com/onboard/multi-factor-authentication.html",
-    "deployment/admin-roles.html":
-        "https://docs.mattermost.com/onboard/system-admin-roles.html",
-    "deployment/atlassian-integrations.html":
+"deployment/admin-roles.html":
+	"https://docs.mattermost.com/onboard/system-admin-roles.html",
+"deployment/atlassian-integrations.html":
         "https://mattermost.com/marketplace/",
-    "deployment/advanced-permissions.html#read-only-channels":
+"deployment/advanced-permissions.html#read-only-channels":
         "https://docs.mattermost.com/onboard/advanced-permissions.html#read-only-channels",
-    "deployment/bot-integrations.html":
+"deployment/bot-integrations.html":
         "https://mattermost.com/marketplace/",
-    "deployment/bots.html":
+"deployment/bots.html":
         "https://developers.mattermost.com/integrate/admin-guide/admin-bot-accounts/",
-    "deployment/bulk-loading.html":
+"deployment/bulk-loading.html":
         "https://docs.mattermost.com/onboard/bulk-loading-data.html",
-    "deployment/ci-cd-tools.html":
+"deployment/ci-cd-tools.html":
         "https://mattermost.com/marketplace/",
-    "deployment/cluster.html":
+"deployment/cluster.html":
+	"https://docs.mattermost.com/scale/high-availability-cluster.html",
+"deployment/cluster-310.html":
         "https://docs.mattermost.com/scale/high-availability-cluster.html",
-    "deployment/cluster-310.html":
-        "https://docs.mattermost.com/scale/high-availability-cluster.html",
-    "deployment/cluster#upgrade-guide.html":
+"deployment/cluster#upgrade-guide.html":
         "https://docs.mattermost.com/scale/high-availability-cluster.html#upgrade-guide",
-    "deployment/customize-mattermost.html":
-        "https://docs.mattermost.com/configure/customizing-mattermost.html",
-    "deployment/customize-email.html":
-        "https://docs.mattermost.com/configure/email-templates.html.html",
-    "deployment/converting-oauth20-service-providers-to-openidconnect.html":
+"deployment/customize-mattermost.html":
+	"https://docs.mattermost.com/configure/customizing-mattermost.html",
+"deployment/customize-email.html":
+	"https://docs.mattermost.com/configure/email-templates.html.html",
+"deployment/converting-oauth20-service-providers-to-openidconnect.html":
         "https://docs.mattermost.com/onboard/convert-oauth20-service-providers-to-openidconnect.html",
-    "deployment/certificate-based-authentication.html":
+"deployment/certificate-based-authentication.html":
         "https://docs.mattermost.com/onboard/certificate-based-authentication.html",
-    "deployment/cluster#proxy-server-configuration.html":
+"deployment/cluster#proxy-server-configuration.html":
         "https://docs.mattermost.com/scale/high-availability-cluster.html#proxy-server-configuration",
-    "deployment/team-channel-management.html":
-        "https://docs.mattermost.com/manage/team-channel-members.html",
-    "deployment/deployment.html":
+"deployment/team-channel-management.html":
+	"https://docs.mattermost.com/manage/team-channel-members.html",
+"deployment/deployment.html":
         "https://docs.mattermost.com/deploy/deployment-overview.html",
-    "deployment/deployment#file-store.html":
-        "https://docs.mattermost.com/deploy/deployment-overview.html#file-store",
-    "deployment/desktop-app-deployment.html":
-        "https://docs.mattermost.com/deploy/desktop-app.html",
-    "deployment/elasticsearch.html":
-        "https://docs.mattermost.com/scale/elasticsearch.html",
-    "deployment/enterprise-deployment-guide.html":
+"deployment/deployment#file-store.html":
+	"https://docs.mattermost.com/deploy/deployment-overview.html#file-store",
+"deployment/desktop-app-deployment.html":
+	"https://docs.mattermost.com/deploy/desktop-app.html",
+"deployment/elasticsearch.html":
+	"https://docs.mattermost.com/scale/elasticsearch.html",
+"deployment/enterprise-deployment-guide.html":
         "https://docs.mattermost.com/scale/scaling-for-enterprise.html",
-    "deployment/guest-accounts.html":
-        "https://docs.mattermost.com/onboard/guest-accounts.html",
-    "deployment/incident-response-and-monitoring.html":
+"deployment/guest-accounts.html":
+	"https://docs.mattermost.com/onboard/guest-accounts.html",
+"deployment/incident-response-and-monitoring.html":
         "https://docs.mattermost.com/guides/playbooks.html",
-    "deployment/ha.html":
-        "https://docs.mattermost.com/deployment/cluster.html",
-    "deployment/ldap-group-sync.html":
-        "https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html",
-    "deployment/ldap-group-constrained-team-channel.html":
-        "https://docs.mattermost.com/onboard/cloud-groups.html",
-    "deployment/ldap-group-sync.html#add-default-teams-or-channels-for-the-group":
+"deployment/ha.html":
+	"https://docs.mattermost.com/deployment/cluster.html",
+"deployment/ldap-group-sync.html":
+	"https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html",
+"deployment/ldap-group-constrained-team-channel.html":
+	"https://docs.mattermost.com/onboard/cloud-groups.html",
+"deployment/ldap-group-sync.html#add-default-teams-or-channels-for-the-group":
         "https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html#adding-default-teams-or-channels-for-the-group",
-    "deployment/microsoft-integrations.html":
+"deployment/microsoft-integrations.html":
         "https://mattermost.com/marketplace/",
-    "deployment/team-channel-management.html#profile":
-        "https://docs.mattermost.com/manage/team-channel-members.html#profile",
-    "deployment/metrics.html":
-        "https://docs.mattermost.com/scale/performance-monitoring.html",
-    "deployment/mobile-app-deployment.html":
-        "https://docs.mattermost.com/deploy/mobile-overview.html",
-    "deployment/on-boarding.html":
+"deployment/team-channel-management.html#profile":
+	"https://docs.mattermost.com/manage/team-channel-members.html#profile",
+"deployment/metrics.html":
+	"https://docs.mattermost.com/scale/performance-monitoring.html",
+"deployment/mobile-app-deployment.html":
+	"https://docs.mattermost.com/deploy/mobile-overview.html",
+"deployment/on-boarding.html":
+	"https://docs.mattermost.com/getting-started/admin-onboarding-tasks.html",
+"deployment/on-boarding.html#common-tasks":
         "https://docs.mattermost.com/getting-started/admin-onboarding-tasks.html",
-    "deployment/on-boarding.html#common-tasks":
-        "https://docs.mattermost.com/getting-started/admin-onboarding-tasks.html",
-    "deployment/permissions-backend.html":
+"deployment/permissions-backend.html":
         "https://docs.mattermost.com/onboard/advanced-permissions-backend-infrastructure.html",
-    "deployment/pre-sales.html":
+"deployment/pre-sales.html":
         "https://handbook.mattermost.com/operations/sales",
-    "deployment/productivity-tools.html":
+"deployment/productivity-tools.html":
         "https://mattermost.com/marketplace/",
-    "deployment/push.html":
-        "https://docs.mattermost.com/deploy/mobile-hpns.html",
-    "deployment/scaling.html":
-        "https://docs.mattermost.com/scale/scaling-for-enterprise.html",
-    "deployment/sso-ldap.html":
-        "https://docs.mattermost.com/onboard/ad-ldap.html",
-    "deployment/sso-openidconnect.html":
-        "https://docs.mattermost.com/onboard/sso-openidconnect.html",
-    "deployment/sso-gitlab.html":
-        "https://docs.mattermost.com/onboard/sso-gitlab.html",
-    "deployment/sso-google.html":
-        "https://docs.mattermost.com/onboard/sso-google.html",
-    "deployment/sso-office.html":
-        "https://docs.mattermost.com/onboard/sso-office.html",
-    "deployment/sso-saml.html":
+"deployment/push.html":
+	"https://docs.mattermost.com/deploy/mobile-hpns.html",
+"deployment/scaling.html":
+	"https://docs.mattermost.com/scale/scaling-for-enterprise.html",
+"deployment/sso-ldap.html":
+	"https://docs.mattermost.com/onboard/ad-ldap.html",
+"deployment/sso-openidconnect.html":
+	"https://docs.mattermost.com/onboard/sso-openidconnect.html",
+"deployment/sso-gitlab.html":
+	"https://docs.mattermost.com/onboard/sso-gitlab.html",
+"deployment/sso-google.html":
+	"https://docs.mattermost.com/onboard/sso-google.html",
+"deployment/sso-office.html":
+	"https://docs.mattermost.com/onboard/sso-office.html",
+"deployment/sso-saml.html":
+	"https://docs.mattermost.com/onboard/sso-saml.html",
+"deployment/sso-saml-technical.html":
+	"https://docs.mattermost.com/onboard/sso-saml-technical.html",
+"deployment/sso-saml-troubleshooting.html":
         "https://docs.mattermost.com/onboard/sso-saml.html",
-    "deployment/sso-saml-technical.html":
-        "https://docs.mattermost.com/onboard/sso-saml-technical.html",
-    "deployment/sso-saml-troubleshooting.html":
-        "https://docs.mattermost.com/onboard/sso-saml.html",
-    "deployment/ssl-client-certificate.html":
-        "https://docs.mattermost.com/onboard/ssl-client-certificate.html",
-    "deployment/sso-saml-okta.html":
-        "https://docs.mattermost.com/onboard/sso-saml-okta.html",
-    "deployment/sso-saml-okta.html#configure-saml-synchronization-with-ad-ldap":
+"deployment/ssl-client-certificate.html":
+	"https://docs.mattermost.com/onboard/ssl-client-certificate.html",
+"deployment/sso-saml-okta.html":
+	"https://docs.mattermost.com/onboard/sso-saml-okta.html",
+"deployment/sso-saml-okta.html#configure-saml-synchronization-with-ad-ldap":
         "https://docs.mattermost.com/onboard/sso-saml-okta.html#configure-saml-synchronization-with-ad-ldap",
-    "deployment/sso-saml-adfs-msws2016.html":
-        "https://docs.mattermost.com/onboard/sso-saml-adfs-msws2016.html",
-    "deployment/team-channel-management.html":
-        "https://docs.mattermost.com/manage/team-channel-members.html",
-    "deployment/video-and-audio-calling.html":
+"deployment/sso-saml-adfs-msws2016.html":
+	"https://docs.mattermost.com/onboard/sso-saml-adfs-msws2016.html",
+"deployment/team-channel-management.html":
+	"https://docs.mattermost.com/manage/team-channel-members.html",
+"deployment/video-and-audio-calling.html":
         "https://mattermost.com/marketplace/",
-    "deployment/webrtc.html":
-        "https://docs.mattermost.com/deployment/video-and-audio-calling.html",
+"deployment/webrtc.html":
+	"https://docs.mattermost.com/deployment/video-and-audio-calling.html",
 
-    # Developer redirects.
-    # The developer directory and its contents have been archived in FY23 Q2 and all applicable content has been moved from docs.mm.com to developers.mm.com.
-    "developer/api.html":
+# Developer redirects.
+# The developer directory and its contents have been archived in FY23 Q2 and all applicable content has been moved from docs.mm.com to developers.mm.com.
+"developer/api.html":
         "https://api.mattermost.com",
-    "developer/api4.html":
+"developer/api4.html":
         "https://developers.mattermost.com/contribute/server/rest-api/",
-    "developer/api-development-version4.html":
+"developer/api-development-version4.html":
         "https://developers.mattermost.com/contribute/server/rest-api/",
-    "developer/before-you-get-started.html":
+"developer/before-you-get-started.html":
         "https://developers.mattermost.com/integrate/getting-started/",
-    "developer/bot-accounts.html":
+"developer/bot-accounts.html":
         "https://developers.mattermost.com/integrate/admin-guide/admin-bot-accounts/",
-    "developer/contribution-guide.html":
+"developer/contribution-guide.html":
         "https://developers.mattermost.com/contribute/getting-started/",
-    "developer/core-developer-handbook.html":
+"developer/core-developer-handbook.html":
         "https://developers.mattermost.com/internal/",
-    "developer/developer-flow.html":
+"developer/developer-flow.html":
         "https://developers.mattermost.com/contribute/getting-started/",
-    "developer/developer-setup.html":
+"developer/developer-setup.html":
         "https://developers.mattermost.com/contribute/server/developer-setup/",
-    "developer/dev-setup.html":
+"developer/dev-setup.html":
         "https://developers.mattermost.com/contribute/server/developer-setup/",
-    "developer/dev-setup-archlinux.html":
+"developer/dev-setup-archlinux.html":
         "https://developers.mattermost.com/contribute/server/developer-setup/",
-    "developer/dev-setup-centos-7.html":
+"developer/dev-setup-centos-7.html":
         "https://developers.mattermost.com/contribute/server/developer-setup/",
-    "developer/dev-setup-compiling.html":
+"developer/dev-setup-compiling.html":
         "https://developers.mattermost.com/contribute/getting-started/",
-    "developer/dev-setup-osx.html":
+"developer/dev-setup-osx.html":
         "https://developers.mattermost.com/contribute/server/developer-setup/",
-    "developer/dev-setup-troubleshooting.html":
+"developer/dev-setup-troubleshooting.html":
         "https://developers.mattermost.com/contribute/server/developer-setup/",
-    "developer/dev-setup-ubuntu-1604.html":
+"developer/dev-setup-ubuntu-1604.html":
         "https://developers.mattermost.com/contribute/server/developer-setup/",
-    "developer/dev-setup-windows.html":
+"developer/dev-setup-windows.html":
         "https://developers.mattermost.com/contribute/server/developer-setup/",
-    "developer/fx-guidelines.html":
+"developer/fx-guidelines.html":
         "https://handbook.mattermost.com/operations/research-and-development/product/technical-writing-team-handbook/user-interface-text-guidelines##in-product-copy",
-    "developer/interactive-dialogs.html":
+"developer/interactive-dialogs.html":
         "https://developers.mattermost.com/integrate/admin-guide/admin-interactive-dialogs/",
-    "developer/interactive-messages.html":
+"developer/interactive-messages.html":
         "https://developers.mattermost.com/integrate/admin-guide/admin-interactive-messages/",
-    "developer/interactive-message-buttons.html":
+"developer/interactive-message-buttons.html":
         "https://developers.mattermost.com/integrate/admin-guide/admin-interactive-messages/",
-    "developer/localization.html":
+"developer/localization.html":
         "https://handbook.mattermost.com/contributors/contributors/localization",
-    "developer/localization-process.html":
+"developer/localization-process.html":
         "https://handbook.mattermost.com/contributors/join-us/localization",
-    "developer/manifesto.html":
+"developer/manifesto.html":
         "https://handbook.mattermost.com/company/about-mattermost",
-    "developer/message-attachments.html":
+"developer/message-attachments.html":
         "https://developers.mattermost.com/integrate/admin-guide/admin-message-attachments/",
-    "developer/mobile-developer-setup.html":
+"developer/mobile-developer-setup.html":
         "https://developers.mattermost.com/contribute/mobile/developer-setup/",
-    "developer/oauth-2-0-applications.html":
+"developer/oauth-2-0-applications.html":
         "https://developers.mattermost.com/integrate/admin-guide/admin-oauth2/",
-    "developer/personal-access-token.html":
+"developer/personal-access-token.html":
         "https://developers.mattermost.com/integrate/admin-guide/admin-personal-access-token/",
-    "developer/redux.html":
+"developer/redux.html":
         "https://developers.mattermost.com/contribute/redux/",
-    "developer/redux-to-flow.html":
+"developer/redux-to-flow.html":
         "https://developers.mattermost.com/contribute/redux/redux-to-flow/",
-    "developer/running-mattermost.html":
+"developer/running-mattermost.html":
         "https://developers.mattermost.com/contribute/server/developer-workflow/",
-    "developer/slash-commands.html":
+"developer/slash-commands.html":
         "https://developers.mattermost.com/integrate/admin-guide/admin-slash-commands/",
-    "developer/toolkit.html":
+"developer/toolkit.html":
         "https://developers.mattermost.com/integrate/apps/",
-    "developer/web-service.html":
+"developer/web-service.html":
         "https://api.mattermost.com/",
-    "developer/webapp-component.html":
+"developer/webapp-component.html":
         "https://developers.mattermost.com/contribute/webapp/build-component/",
-    "developer/webapp-end-to-end-testing.html":
+"developer/webapp-end-to-end-testing.html":
         "https://developers.mattermost.com/contribute/webapp/end-to-end-tests/",
-    "developer/webapp-to-redux.html":
+"developer/webapp-to-redux.html":
         "https://developers.mattermost.com/contribute/webapp/webapp-to-redux/",
-    "developer/webhooks-outgoing.html":
+"developer/webhooks-outgoing.html":
         "https://developers.mattermost.com/integrate/admin-guide/admin-webhooks-outgoing/",
-    "developer/webhooks-incoming.html":
+"developer/webhooks-incoming.html":
         "https://developers.mattermost.com/integrate/admin-guide/admin-webhooks-incoming/",
 
-    # Focalboard redirects
-    "focalboard/installing-boards":
-        "https://github.com/mattermost/focalboard/blob/main/docs/mattermost-boards-dev-guide.md",
+# Focalboard redirects
+"focalboard/installing-boards":
+	"https://github.com/mattermost/focalboard/blob/main/docs/mattermost-boards-dev-guide.md",
 
-    # Getting Started redirects
-    "getting-started/implementation_plan.html":
+# Getting Started redirects
+"getting-started/implementation_plan.html":
         "https://docs.mattermost.com/getting-started/implementation-plan.html",
-    "getting-started/light-install.html":
+"getting-started/light-install.html":
         "https://docs.mattermost.com/guides/deployment.html",
-    "getting-started/welcome_email.html":
+"getting-started/welcome_email.html":
         "https://docs.mattermost.com/getting-started/welcome-email-to-end-users.html",
+"getting-started/organizing-conversations.html":
+        "https://docs.mattermost.com/collaborate/organize-conversations.html",
 
-    # Guides redirects
-    "guides/administrator.html":
+# Guides redirects
+"guides/administrator.html":
         "https://docs.mattermost.com/guides/deployment.html",
-    "guides/administrator.html#mattermost-integrations":
-        "https://developers.mattermost.com/integrate/getting-started/",
-    "guides/administrator.html#installing-mattermost":
-        "https://docs.mattermost.com/guides/deployment.html#install-guides",
-    "guides/channels.html#access-your-workspace":
+"guides/administrator.html#mattermost-integrations":
+	"https://developers.mattermost.com/integrate/getting-started/",
+"guides/administrator.html#installing-mattermost":
+	"https://docs.mattermost.com/guides/deployment.html#install-guides",
+"guides/channels.html#access-your-workspace":
         "https://docs.mattermost.com/guides/welcome-to-mattermost.html#access-your-mattermost-workspace",
-    "guides/channels.html#work-with-messages":
+"guides/channels.html#work-with-messages":
         "https://docs.mattermost.com/guides/channels.html#work-with-messages",
-    "guides/channels.html#manage-teams-channels-and-members":
+"guides/channels.html#manage-teams-channels-and-members":
         "https://docs.mattermost.com/guides/channels.html#channels-messages-and-conversations",
-    "guides/channels.html#customize-channels":
+"guides/channels.html#customize-channels":
         "https://docs.mattermost.com/guides/channels.html#customize-your-channels-experience",
-    "guides/channels.html#navigate-channels":
+"guides/channels.html#navigate-channels":
         "https://docs.mattermost.com/guides/channels.html#keyboard-accessibility",
-    "guides/channels.html#extend-mattermost-channels":
+"guides/channels.html#extend-mattermost-channels":
         "https://docs.mattermost.com/guides/channels.html#extend-channels-functionality",
-    "guides/messaging.html":
-        "https://docs.mattermost.com/guides/channels.html",
-    "guides/orchestration.html":
+"guides/messaging.html":
+	"https://docs.mattermost.com/guides/channels.html",
+"guides/orchestration.html":
         "https://docs.mattermost.com/about/orchestration.html",
-    "guides/boards.html":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/index.md",
-
-    # Important Note: The following guide files were archived in FY23 Q2.
-    "guides/cloud-admin-guide.html":
-        "https://docs.mattermost.com/guides/deployment.html",
-    "guides/developer.html":
+"guides/boards.html":
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
+# Important Note: The following guide files were archived in FY23 Q2.
+"guides/cloud-admin-guide.html":
+	"https://docs.mattermost.com/guides/deployment.html",
+"guides/developer.html":
         "https://developers.mattermost.com/integrate/admin-guide/",
-    "guides/install-deploy-upgrade-scale.html":
-        "https://docs.mattermost.com/guides/deployment.html",
-    "guides/install-deploy-upgrade-scale.html#install-mattermost":
+"guides/install-deploy-upgrade-scale.html":
+	 "https://docs.mattermost.com/guides/deployment.html",
+"guides/install-deploy-upgrade-scale.html#install-mattermost":
         "https://docs.mattermost.com/guides/deployment.html#install-guides",
-    "guides/integration.html":
+"guides/integration.html":
         "https://developers.mattermost.com/integrate/getting-started/",
-    "guides/setup-onboard-manage-comply.html":
-        "https://docs.mattermost.com/guides/administration.html",
-    "guides/user.html":
+"guides/setup-onboard-manage-comply.html":
+	"https://docs.mattermost.com/guides/administration.html",
+"guides/user.html":
         "https://docs.mattermost.com/guides/channels.html",
-    # Important Note: The following guide files were reorg'd in FY23 Q3.
-    "guides/channels.html":
+# Important Note: The following guide files were reorg'd in FY23 Q3.
+"guides/channels.html":
         "https://docs.mattermost.com/guides/use-mattermost.html",
-    "guides/channels.html#channels-messages-and-conversations":
+"guides/channels.html#channels-messages-and-conversations":
         "https://docs.mattermost.com/guides/collaborate.html",
-    "guides/channels.html#work-with-channels":
+"guides/channels.html#work-with-channels":
         "https://docs.mattermost.com/collaborate/collaborate-within-channels.html",
-    "guides/channels.html#work-with-messages":
+"guides/channels.html#work-with-messages":
         "https://docs.mattermost.com/collaborate/communicate-with-messages.html",
-    "guides/channels.html#keyboard-accessibility":
+"guides/channels.html#keyboard-accessibility":
         "https://docs.mattermost.com/collaborate/keyboard-accessibility.html",
-    "guides/channels.html#extend-channels-functionality":
+"guides/channels.html#extend-channels-functionality":
         "https://docs.mattermost.com/collaborate/extend-mattermost-with-integrations.html",
-    "guides/playbooks.html":
+"guides/playbooks.html":
         "https://docs.mattermost.com/guides/repeatable-processes.html",
-    "guides/welcome-to-mattermost.html":
+"guides/welcome-to-mattermost.html":
         "https://docs.mattermost.com/guides/use-mattermost.html",
-    "guides/welcome-to-mattermost.html#access-your-mattermost-workspace":
+"guides/welcome-to-mattermost.html#access-your-mattermost-workspace":
         "https://docs.mattermost.com/collaborate/access-your-workspace.html",
-    "guides/welcome-to-mattermost.html#mattermost-basics":
+"guides/welcome-to-mattermost.html#mattermost-basics":
         "https://docs.mattermost.com/guides/use-mattermost.html",
-    "guides/welcome-to-mattermost.html#customize-your-mattermost-experience":
+"guides/welcome-to-mattermost.html#customize-your-mattermost-experience":
         "https://docs.mattermost.com/guides/preferences.html",
-    "guides/welcome-to-mattermost.html#mattermost-interface-changes":
+"guides/welcome-to-mattermost.html#mattermost-interface-changes":
         "https://docs.mattermost.com/guides/deployment.html#changelogs",
 
-    # Help redirects resulting from the June 2021 docs reorganization project.
-    "help/apps/desktop-changelog.html":
-        "https://docs.mattermost.com/install/desktop-app-changelog.html",
-    "help/apps/desktop-guide.html":
-        "https://docs.mattermost.com/welcome/manage-desktop-app-server-connections.html",
-    "help/apps/desktop-mvp.html":
+# Help redirects resulting from the June 2021 docs reorganization project.
+"help/apps/desktop-changelog.html":
+	"https://docs.mattermost.com/deploy/desktop-app-changelog.html",
+"help/apps/desktop-guide.html":
+	"https://docs.mattermost.com/welcome/manage-desktop-app-server-connections.html",
+"help/apps/desktop-mvp.html":
         "https://developers.mattermost.com/contribute/mvp/",
-    "help/getting-started/about-teams-channels-messages.html":
-        "https://docs.mattermost.com/guides/collaborate.html",
-    "help/getting-started/access-your-workspace.html":
-        "https://docs.mattermost.com/guides/welcome-to-mattermost.html#access-your-mattermost-workspace",
-    "help/getting-started/accessibility.html":
+"help/getting-started/about-teams-channels-messages.html":
+        "https://docs.mattermost.com/channels/about-teams-channels-messages.html",
+"help/getting-started/access-your-workspace.html":
+	"https://docs.mattermost.com/guides/welcome-to-mattermost.html#access-your-mattermost-workspace",
+"help/getting-started/accessibility.html":
         "https://docs.mattermost.com/channels/keyboard-accessibility.html",
-    "help/messaging/attaching-files.html":
+"help/messaging/attaching-files.html":
         "https://docs.mattermost.com/channels/share-files-in-messages.html",
-    "help/getting-started/configuring-notifications.html":
+"help/getting-started/configuring-notifications.html":
         "https://docs.mattermost.com/channels/channels-settings.html#notifications",
-    "help/getting-started/creating-teams.html":
-        "https://docs.mattermost.com/welcome/about-teams.html#create-a-team",
-    "help/getting-started/install-desktop-app.html":
+"help/getting-started/creating-teams.html":
+	"https://docs.mattermost.com/welcome/about-teams.html#create-a-team",
+"help/getting-started/install-desktop-app.html":
         "https://docs.mattermost.com/install/desktop-app-install.html",
-    "help/messaging/emoji.html":
+"help/messaging/emoji.html":
         "https://docs.mattermost.com/channels/react-to-messages.html",
-    "help/messaging/executing-commands.html":
+"help/messaging/executing-commands.html":
         "https://docs.mattermost.com/channels/run-slash-commands.html",
-    "help/messaging/flagging-messages.html":
+"help/messaging/flagging-messages.html":
         "https://docs.mattermost.com/channels/save-pin-messages.html",
-    "help/messaging/formatting-text.html":
-        "https://docs.mattermost.com/channels/format-messages.html",
-    "help/messaging/formatting-text.html#in-line-images":
-        "https://docs.mattermost.com/channels/format-messages.html#in-line-images",
-    "help/getting-started/light-install.html":
+"help/messaging/formatting-text.html":
+	"https://docs.mattermost.com/channels/format-messages.html",
+"help/messaging/formatting-text.html#in-line-images":
+	"https://docs.mattermost.com/channels/format-messages.html#in-line-images",
+"help/getting-started/light-install.html":
         "https://docs.mattermost.com/getting-started/light-install.html",
-    "help/getting-started/log-out.html":
-        "https://docs.mattermost.com/welcome/log-out.html",
-    "help/messaging/keyboard-shortcuts.html":
+"help/getting-started/log-out.html":
+	"https://docs.mattermost.com/welcome/log-out.html",
+"help/messaging/keyboard-shortcuts.html":
         "https://docs.mattermost.com/channels/keyboard-shortcuts-for-channels.html",
-    "help/getting-started/managing-members.html":
-        "https://docs.mattermost.com/channels/manage-channel-members.html",
-    "help/messaging/mentioning-teammates.html":
+"help/getting-started/managing-members.html":
+	"https://docs.mattermost.com/channels/manage-channel-members.html",
+"help/messaging/mentioning-teammates.html":
         "https://docs.mattermost.com/channels/mention-people.html",
-    "help/getting-started/messaging-basics.html#messaging-basics":
-        "https://docs.mattermost.com/guides/channels.html#work-with-messages",
-    "help/getting-started/organizing.html":
-        "https://docs.mattermost.com/channels/channel-naming-conventions.html",
-    "help/getting-started/organizing-conversations.html":
-        "https://docs.mattermost.com/guides/channels.html#work-with-channels",
-    "help/messaging/organizing-conversations.html":
-        "https://docs.mattermost.com/channels/organize-conversations.html",
-    "help/messaging/organizing-conversations.html#known-issues":
+"help/getting-started/messaging-basics.html#messaging-basics":
+	"https://docs.mattermost.com/guides/channels.html#work-with-messages",
+"help/getting-started/organizing.html":
+	"https://docs.mattermost.com/channels/channel-naming-conventions.html",
+"help/getting-started/organizing-conversations.html":
+	"https://docs.mattermost.com/guides/channels.html#work-with-channels",
+"help/messaging/organizing-conversations.html":
+	"https://docs.mattermost.com/channels/organize-conversations.html",
+"help/messaging/organizing-conversations.html#known-issues":
         "https://docs.mattermost.com/channels/organize-conversations.html#known-issues",
-    "help/getting-started/organizing-your-sidebar.html":
-        "https://docs.mattermost.com/channels/customize-your-channel-sidebar.html",
-    "help/messaging/pinning-messages.html":
+"help/getting-started/organizing-your-sidebar.html":
+	"https://docs.mattermost.com/channels/customize-your-channel-sidebar.html",
+"help/messaging/pinning-messages.html":
         "https://docs.mattermost.com/channels/save-pin-messages.html",
-    "help/getting-started/signing-in.html":
-        "https://docs.mattermost.com/welcome/sign-in.html",
-    "help/getting-started/searching.html":
-        "https://docs.mattermost.com/channels/search-for-messages.html",
-    "help/messaging/sending-messages.html":
-        "https://docs.mattermost.com/channels/send-messages.html",
-    "help/getting-started/setting-your-status-availability.html":
+"help/getting-started/signing-in.html":
+	"https://docs.mattermost.com/welcome/sign-in.html",
+"help/getting-started/searching.html":
+	"https://docs.mattermost.com/channels/search-for-messages.html",
+"help/messaging/sending-messages.html":
+	"https://docs.mattermost.com/channels/send-messages.html",
+"help/getting-started/setting-your-status-availability.html":
         "https://docs.mattermost.com/welcome/set-your-status-availability.html",
-    "help/getting-started/switch-between-teams.html":
-        "https://docs.mattermost.com/welcome/about-teams.html#team-sidebar",
-    "help/getting-started/welcome-to-mattermost.html":
-        "https://docs.mattermost.com/guides/channels.html",
-    "help/settings/account-settings.html":
+"help/getting-started/switch-between-teams.html":
+	"https://docs.mattermost.com/welcome/about-teams.html#team-sidebar",
+"help/getting-started/welcome-to-mattermost.html":
+	"https://docs.mattermost.com/guides/channels.html",
+"help/settings/account-settings.html":
         "https://docs.mattermost.com/channels/channels-settings.html",
-    "help/settings/account-settings.html#link-preview":
+"help/settings/account-settings.html#link-preview":
         "https://docs.mattermost.com/channels/channels-settings.html#website-link-previews",
-    "help/settings/channel-settings.html":
-        "https://docs.mattermost.com/channels/channels-settings.html",
-    "help/settings/custom-emoji.html":
+"help/settings/channel-settings.html":
+	"https://docs.mattermost.com/channels/channels-settings.html",
+"help/settings/custom-emoji.html":
         "https://docs.mattermost.com/channels/react-to-messages.html#upload-custom-emojis",
-    "help/settings/desktop-app-options.html":
+"help/settings/desktop-app-options.html":
         "https://docs.mattermost.com/welcome/customize-desktop-app-experience.html",
-    "help/settings/integration-settings.html":
+"help/settings/integration-settings.html":
         "https://mattermost.com/marketplace/",
-    "help/settings/manage-servers.html":
+"help/settings/manage-servers.html":
         "https://docs.mattermost.com/welcome/manage-desktop-app-server-connections.html",
-    "help/settings/team-settings.html":
-        "https://docs.mattermost.com/welcome/team-settings.html",
-    "help/settings/theme-colors.html":
+"help/settings/team-settings.html":
+	"https://docs.mattermost.com/welcome/team-settings.html",
+"help/settings/theme-colors.html":
         "https://docs.mattermost.com/welcome/customize-your-theme.html",
 
-    # Incident Collaboration redirects resulting from organization's branding shift from Incident Collaboration to Playbooks.
-    "incident-collaboration/getting-started.html":
+# Incident Collaboration redirects resulting from organization's branding shift from Incident Collaboration to Playbooks.
+"incident-collaboration/getting-started.html":
         "https://docs.mattermost.com/playbooks/getting-started.html",
-    "incident-collaboration/launching-playbooks.html":
+"incident-collaboration/launching-playbooks.html":
         "https://docs.mattermost.com/incident-collaboration/running-playbooks.html",
-    "incident-collaboration/overview.html":
+"incident-collaboration/overview.html":
         "https://docs.mattermost.com/playbooks/refining-and-improving.html",
-    "incident-collaboration/playbook-planning.html":
+"incident-collaboration/playbook-planning.html":
         "https://docs.mattermost.com/incident-collaboration/setting-up-playbooks.html",
-    "incident-collaboration/review-and-refine.html":
+"incident-collaboration/review-and-refine.html":
         "https://docs.mattermost.com/incident-collaboration/refining-and-improving.html",
-    "incident-collaboration/running-playbooks.html":
+"incident-collaboration/running-playbooks.html":
         "https://docs.mattermost.com/playbooks/running-playbooks.html",
-    "incident-collaboration/refining-and-improving.html":
-        "https://docs.mattermost.com/playbooks/refining-and-improving.html",
-    "incident-collaboration/setting-up-playbooks.html":
+"incident-collaboration/refining-and-improving.html":
+         "https://docs.mattermost.com/playbooks/refining-and-improving.html",
+"incident-collaboration/setting-up-playbooks.html":
         "https://docs.mattermost.com/playbooks/setting-up-playbooks.html",
 
-    # Install redirects
-    "install/config-cloudfront.html":
+# Install redirects
+"install/config-cloudfront.html":
         "https://docs.mattermost.com/configure/configuring-cloudfront-to-host-mattermost-static-assets.html",
-    "install/config-apache2.html":
+"install/config-apache2.html":
         "https://forum.mattermost.com/t/configuring-apache2-as-a-proxy-for-mattermost-server/11938",
-    "install/deploy-bitnami.html":
+"install/deploy-bitnami.html":
         "https://docs.mattermost.com/install/deploying-team-edition-on-bitnami.html",
-    "install/desktop.html":
+"install/desktop.html":
         "https://docs.mattermost.com/install/desktop-app-install.html",
-    "install/desktop-managed-resources.html":
+"install/desktop-managed-resources.html":
         "https://docs.mattermost.com/install/desktop-app-managed-resources.html",
-    "install/desktop-msi-gpo.html":
+"install/desktop-msi-gpo.html":
         "https://docs.mattermost.com/install/desktop-msi-installer-and-group-policy-install.html",
-    "install/docker-ebs.html":
+"install/docker-ebs.html":
         "https://docs.mattermost.com/install/setting-up-aws-elastic-beanstalk-docker.html",
-    "install/docker-local-machine.html":
+"install/docker-local-machine.html":
         "https://docs.mattermost.com/install/setting-up-local-machine-using-docker.html",
-    "install/ee-install.html":
+"install/ee-install.html":
         "https://docs.mattermost.com/install/enterprise-install-upgrade.html",
-    "install/enterprise-install-upgrade.html#changing-a-license-key":
-        "https://docs.mattermost.com/upgrade/installing-license-key.html",
-    "install/i18n.html":
-        "https://docs.mattermost.com/configure/enabling-chinese-japanese-korean-search.html",
-    "install/installing-mattermost-desktop-app.html":
+"install/enterprise-install-upgrade.html#changing-a-license-key":
+	"https://docs.mattermost.com/upgrade/installing-license-key.html",
+"install/i18n.html":
+	"https://docs.mattermost.com/configure/enabling-chinese-japanese-korean-search.html",
+"install/installing-mattermost-desktop-app.html":
         "https://docs.mattermost.com/install/desktop-app-install.html",
-    "install/install-kubernetes-cluster.html":
+"install/install-kubernetes-cluster.html":
         "https://docs.mattermost.com/install/install-kubernetes.html",
-    "install/install-kubernetes-mattermost":
+"install/install-kubernetes-mattermost":
         "https://docs.mattermost.com/install/mattermost-kubernetes-operator",
-    "install/install-kubernetes-operator.html":
+"install/install-kubernetes-operator.html":
         "https://docs.mattermost.com/install/install-kubernetes.html",
-    "install/install-ubuntu-1804.html":
+"install/install-ubuntu-1804.html":
         "https://docs.mattermost.com/install/installing-ubuntu-1804-LTS.html",
-    "install/install-ubuntu-2004.html":
+"install/install-ubuntu-2004.html":
         "https://docs.mattermost.com/install/installing-ubuntu-2004-LTS.html",
-    "install/install-mmte-helm-gitlab-helm.html":
+"install/install-mmte-helm-gitlab-helm.html":
         "https://docs.mattermost.com/install/installing-team-edition-helm-chart.html",
-    "install/mattermost-omnibus.html":
+"install/mattermost-omnibus.html":
         "https://docs.mattermost.com/install/installing-mattermost-omnibus.html",
-    "install/outbound-proxy.html":
+"install/outbound-proxy.html":
         "https://docs.mattermost.com/configure/using-outbound-proxy.html",
-    "install/prod-docker.html":
-        "https://forum.mattermost.org/t/deploy-mattermost-on-docker/12231",
-    "install/prod-windows-2012.html":
-        "https://forum.mattermost.org/t/production-install-on-windows-server/12232",
-    "install/requirements.html":
+"install/prod-docker.html":
+	"https://forum.mattermost.org/t/deploy-mattermost-on-docker/12231",
+"install/prod-windows-2012.html":
+	"https://forum.mattermost.org/t/production-install-on-windows-server/12232",
+"install/requirements.html":
         "https://docs.mattermost.com/install/software-hardware-requirements.html",
-    "install/setting-up-local-machine-using-docker.html":
+"install/setting-up-local-machine-using-docker.html":
         "https://docs.mattermost.com/guides/deployment.html",
-    "install/sockets-db.html":
+"install/sockets-db.html":
         "https://docs.mattermost.com/install/setting-up-socket-based-mattermost-database.html",
-    "install/smtp-email-setup.html":
+"install/smtp-email-setup.html":
         "https://docs.mattermost.com/configure/smtp-email.html",
-    "install/transport-encryption/config.html":
+"install/transport-encryption/config.html":
         "https://docs.mattermost.com/install/transport-encryption.html",
-    "install/transport-encryption/config-cluster.html":
+"install/transport-encryption/config-cluster.html":
         "https://docs.mattermost.com/install/cluster-transport-encryption.html",
-    "install/transport-encryption/config-database.html":
+"install/transport-encryption/config-database.html":
         "https://docs.mattermost.com/install/database-transport-encryption.html",
-    "install/transport-encryption/config-mattermost.html":
+"install/transport-encryption/config-mattermost.html":
         "https://docs.mattermost.com/install/proxy-to-mattermost-transport-encryption.html",
-    "install/use-kubernetes-mattermost.html":
+"install/use-kubernetes-mattermost.html":
         "https://docs.mattermost.com/install/install-kubernetes.html",
-    "install/deploy-cloudron.html":
+"install/deploy-cloudron.html":
         "https://forum.mattermost.com/",
-    "install/desktop-custom-dictionaries.html#setting-up-the-dictionaries":
+"install/desktop-custom-dictionaries.html#setting-up-the-dictionaries":
         "https://docs.mattermost.com/install/desktop-custom-dictionaries.html#prepare-custom-dictionaries",
-    "install/desktop-custom-dictionaries.html#configuring-the-desktop-app":
+"install/desktop-custom-dictionaries.html#configuring-the-desktop-app":
         "https://docs.mattermost.com/install/desktop-custom-dictionaries.html#configure-the-desktop-app",
-    "install/desktop-custom-dictionaries.html#removing-customized-dictionaries":
+"install/desktop-custom-dictionaries.html#removing-customized-dictionaries":
         "https://docs.mattermost.com/install/desktop-custom-dictionaries.html#remove-custom-dictionaries",
-    # Important Note: The following guide files were reorg'd in FY23 Q3.
-    "install/desktop-app-install.html":
+"install/self-managed-changelog.html":
+        "https://docs.mattermost.com/deploy/legacy-self-hosted-changelog.html",
+"install/legacy-self-hosted-changelog.html":
+        "https://docs.mattermost.com/deploy/legacy-mattermost-changelog.html",
+"install/cloud-changelog.html":
+        "https://docs.mattermost.com/deploy/legacy-cloud-changelog.html",
+# Important Note: The following guide files were reorg'd in FY23 Q3.
+"install/desktop-app-install.html":
         "https://docs.mattermost.com/collaborate/install-desktop-app.html",
-    "install/install-ios-app.html":
+"install/install-ios-app.html":
         "https://docs.mattermost.com/collaborate/install-ios-app.html",
-    "install/install-android-app.html":
+"install/install-android-app.html":
         "https://docs.mattermost.com/collaborate/install-android-app.html",
+"install/legacy-self-hosted-changelog.html":
+	"https://docs.mattermost.com/deploy/legacy-self-hosted-changelog.html",
+"install/desktop-app-changelog.html":
+	"https://docs.mattermost.com/deploy/desktop-app-changelog.html",
 
-    # Integrations redirects.
-    # The integrations directory and its contents have been archived in FY23 Q2 and all applicable content has been moved from docs.mm.com to developers.mm.com.
-    "integrations/cloud-incoming-webhooks.html":
+# Integrations redirects.
+# The integrations directory and its contents have been archived in FY23 Q2 and all applicable content has been moved from docs.mm.com to developers.mm.com.
+"integrations/cloud-incoming-webhooks.html":
         "https://developers.mattermost.com/integrate/admin-guide/",
-    "integrations/cloud-outgoing-webhooks.html":
+"integrations/cloud-outgoing-webhooks.html":
         "https://developers.mattermost.com/integrate/admin-guide/",
-    "integrations/embedding.html":
+"integrations/embedding.html":
         "https://developers.mattermost.com/integrate/admin-guide/admin-embedding/",
-    "integrations/cloud-embedding.html":
-        "https://developers.mattermost.com/integrate/admin-guide/admin-embedding/",
-    "integrations/integration-faq.html":
+"integrations/cloud-embedding.html":
+	"https://developers.mattermost.com/integrate/admin-guide/admin-embedding/",
+"integrations/integration-faq.html":
         "https://docs.mattermost.com/about/faq-integrations.html",
-    "integrations/jira.html":
+"integrations/jira.html":
         "https://github.com/mattermost/mattermost-plugin-jira#readme",
-    "integrations/net-promoter-score.html":
+"integrations/net-promoter-score.html":
         "https://docs.mattermost.com/manage/user-satisfaction-surveys.html",
-    "integrations/webhook.html":
+"integrations/webhook.html":
         "https://developers.mattermost.com/integrate/admin-guide/",
-    "integrations/zapier.html":
+"integrations/zapier.html":
         "https://developers.mattermost.com/integrate/admin-guide/admin-zapier-integration/",
-    "integrations/zoom.html":
+"integrations/zoom.html":
         "https://github.com/mattermost/mattermost-plugin-zoom/blob/master/README.md/",
 
-    # Manage redirects
-    "manage/scripts.html":
+# Manage redirects
+"manage/scripts.html":
         "https://forum.mattermost.com/t/scripts-for-performing-discreet-tasks/13527",
-    "manage/command-line-tools.html#mattermost-channel":
+"manage/command-line-tools.html#mattermost-channel":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-channel",
-    "manage/command-line-tools.html#mattermost-channel-add":
+"manage/command-line-tools.html#mattermost-channel-add":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-channel-users-add",
-    "manage/command-line-tools.html#mattermost-channel-archive":
+"manage/command-line-tools.html#mattermost-channel-archive":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-channel-archive",
-    "manage/command-line-tools.html#mattermost-channel-create":
+"manage/command-line-tools.html#mattermost-channel-create":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-channel-create",
-    "manage/command-line-tools.html#mattermost-channel-delete":
+"manage/command-line-tools.html#mattermost-channel-delete":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-channel-delete",
-    "manage/command-line-tools.html#mattermost-channel-list":
+"manage/command-line-tools.html#mattermost-channel-list":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-channel-list",
-    "manage/command-line-tools.html#mattermost-channel-modify":
+"manage/command-line-tools.html#mattermost-channel-modify":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-channel-modify",
-    "manage/command-line-tools.html#mattermost-channel-move":
+"manage/command-line-tools.html#mattermost-channel-move":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-channel-move",
-    "manage/command-line-tools.html#mattermost-channel-remove":
+"manage/command-line-tools.html#mattermost-channel-remove":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-channel-users-remove",
-    "manage/command-line-tools.html#mattermost-channel-rename":
+"manage/command-line-tools.html#mattermost-channel-rename":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-channel-rename",
-    "manage/command-line-tools.html#mattermost-channel-restore":
+"manage/command-line-tools.html#mattermost-channel-restore":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-channel-restore",
-    "manage/command-line-tools.html#mattermost-channel-search":
+"manage/command-line-tools.html#mattermost-channel-search":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-channel-search",
-    "manage/command-line-tools.html#mattermost-command":
+"manage/command-line-tools.html#mattermost-command":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-command",
-    "manage/command-line-tools.html#mattermost-command-create":
+"manage/command-line-tools.html#mattermost-command-create":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-command-create",
-    "manage/command-line-tools.html#mattermost-command-delete":
+"manage/command-line-tools.html#mattermost-command-delete":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-command-delete",
-    "manage/command-line-tools.html#mattermost-command-list":
+"manage/command-line-tools.html#mattermost-command-list":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-command-list",
-    "manage/command-line-tools.html#mattermost-command-modify":
+"manage/command-line-tools.html#mattermost-command-modify":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-command-modify",
-    "manage/command-line-tools.html#mattermost-command-move":
+"manage/command-line-tools.html#mattermost-command-move":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-command-move",
-    "manage/command-line-tools.html#mattermost-command-show":
+"manage/command-line-tools.html#mattermost-command-show":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-command-show",
-    "manage/command-line-tools.html#mattermost-config":
+"manage/command-line-tools.html#mattermost-config":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-config",
-    "manage/command-line-tools.html#mattermost-config-get":
+"manage/command-line-tools.html#mattermost-config-get":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-config-get",
-    "manage/command-line-tools.html#mattermost-config-migrate":
+"manage/command-line-tools.html#mattermost-config-migrate":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-config-migrate",
-    "manage/command-line-tools.html#mattermost-config-reset":
+"manage/command-line-tools.html#mattermost-config-reset":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-config-reset",
-    "manage/command-line-tools.html#mattermost-config-set":
+"manage/command-line-tools.html#mattermost-config-set":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-config-set",
-    "manage/command-line-tools.html#mattermost-config-show":
+"manage/command-line-tools.html#mattermost-config-show":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-config-show",
-    "manage/command-line-tools.html#mattermost-export-bulk":
+"manage/command-line-tools.html#mattermost-export-bulk":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-export",
-    "manage/command-line-tools.html#mattermost-group":
+"manage/command-line-tools.html#mattermost-group":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-group",
-    "manage/command-line-tools.html#mattermost-group-team-list":
+"manage/command-line-tools.html#mattermost-group-team-list":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-group-team-list",
-    "manage/command-line-tools.html#mattermost-group-team-enable":
+"manage/command-line-tools.html#mattermost-group-team-enable":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-group-team-enable",
-    "manage/command-line-tools.html#mattermost-group-channel":
+"manage/command-line-tools.html#mattermost-group-channel":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-group-channel",
-    "manage/command-line-tools.html#mattermost-group-channel-enable":
+"manage/command-line-tools.html#mattermost-group-channel-enable":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-group-channel-enable",
-    "manage/command-line-tools.html#mattermost-group-team":
+"manage/command-line-tools.html#mattermost-group-team":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-group-team",
-    "manage/command-line-tools.html#mattermost-group-team-disable":
+"manage/command-line-tools.html#mattermost-group-team-disable":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-group-team-disable",
-    "manage/command-line-tools.html#mattermost-group-channel-disable":
+"manage/command-line-tools.html#mattermost-group-channel-disable":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-group-channel-disable",
-    "manage/command-line-tools.html#mattermost-group-channel-status":
+"manage/command-line-tools.html#mattermost-group-channel-status":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-group-channel-status",
-    "manage/command-line-tools.html#mattermost-integrity":
+"manage/command-line-tools.html#mattermost-integrity":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-integrity",
-    "manage/command-line-tools.html#mattermost-ldap":
+"manage/command-line-tools.html#mattermost-ldap":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-ldap",
-    "manage/command-line-tools.html#mattermost-ldap-idmigrate":
+"manage/command-line-tools.html#mattermost-ldap-idmigrate":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-ldap-idmigrate",
-    "manage/command-line-tools.html#mattermost-ldap-sync":
+"manage/command-line-tools.html#mattermost-ldap-sync":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-ldap-sync",
-    "manage/command-line-tools.html#mattermost-license":
+"manage/command-line-tools.html#mattermost-license":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-license",
-    "manage/command-line-tools.html#mattermost-license-upload":
+"manage/command-line-tools.html#mattermost-license-upload":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-license-upload",
-    "manage/command-line-tools.html#mattermost-logs":
+"manage/command-line-tools.html#mattermost-logs":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-logs",
-    "manage/command-line-tools.html#mattermost-permissions":
+"manage/command-line-tools.html#mattermost-permissions":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-permissions",
-    "manage/command-line-tools.html#mattermost-permissions-reset":
+"manage/command-line-tools.html#mattermost-permissions-reset":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-permissions-reset",
-    "manage/command-line-tools.html#mattermost-plugin":
+"manage/command-line-tools.html#mattermost-plugin":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-plugin",
-    "manage/command-line-tools.html#mattermost-plugin-add":
+"manage/command-line-tools.html#mattermost-plugin-add":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-plugin-add",
-    "manage/command-line-tools.html#mattermost-plugin-delete":
+"manage/command-line-tools.html#mattermost-plugin-delete":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-plugin-delete",
-    "manage/command-line-tools.html#mattermost-plugin-disable":
+"manage/command-line-tools.html#mattermost-plugin-disable":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-plugin-disable",
-    "manage/command-line-tools.html#mattermost-plugin-enable":
+"manage/command-line-tools.html#mattermost-plugin-enable":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-plugin-enable",
-    "manage/command-line-tools.html#mattermost-plugin-list":
+"manage/command-line-tools.html#mattermost-plugin-list":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-plugin-list",
-    "manage/command-line-tools.html#mattermost-roles":
+"manage/command-line-tools.html#mattermost-roles":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-roles",
-    "manage/command-line-tools.html#mattermost-roles-member":
+"manage/command-line-tools.html#mattermost-roles-member":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-roles",
-    "manage/command-line-tools.html#mattermost-roles-system-admin":
+"manage/command-line-tools.html#mattermost-roles-system-admin":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-roles",
-    "manage/command-line-tools.html#mattermost-sampledata":
+"manage/command-line-tools.html#mattermost-sampledata":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-sampledata",
-    "manage/command-line-tools.html#mattermost-team":
+"manage/command-line-tools.html#mattermost-team":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-team",
-    "manage/command-line-tools.html#mattermost-team-add":
+"manage/command-line-tools.html#mattermost-team-add":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-team-users",
-    "manage/command-line-tools.html#mattermost-team-archive":
+"manage/command-line-tools.html#mattermost-team-archive":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-team-archive",
-    "manage/command-line-tools.html#mattermost-team-create":
+"manage/command-line-tools.html#mattermost-team-create":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-team-create",
-    "manage/command-line-tools.html#mattermost-team-delete":
+"manage/command-line-tools.html#mattermost-team-delete":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-team-delete",
-    "manage/command-line-tools.html#mattermost-team":
+"manage/command-line-tools.html#mattermost-team":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-team",
-    "manage/command-line-tools.html#mattermost-team-list":
+"manage/command-line-tools.html#mattermost-team-list":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-team-list",
-    "manage/command-line-tools.html#mattermost-team-modify":
+"manage/command-line-tools.html#mattermost-team-modify":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-team-modify",
-    "manage/command-line-tools.html#mattermost-team-remove":
+"manage/command-line-tools.html#mattermost-team-remove":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-team-users",
-    "manage/command-line-tools.html#mattermost-team-rename":
+"manage/command-line-tools.html#mattermost-team-rename":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-team-rename",
-    "manage/command-line-tools.html#mattermost-team-restore":
+"manage/command-line-tools.html#mattermost-team-restore":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-team-restore",
-    "manage/command-line-tools.html#mattermost-team-search":
+"manage/command-line-tools.html#mattermost-team-search":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-team-search",
-    "manage/command-line-tools.html#mattermost-user":
+"manage/command-line-tools.html#mattermost-user":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-user",
-    "manage/command-line-tools.html#mattermost-user-activate":
+"manage/command-line-tools.html#mattermost-user-activate":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-user-activate",
-    "manage/command-line-tools.html#mattermost-user-convert":
+"manage/command-line-tools.html#mattermost-user-convert":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-user-convert",
-    "manage/command-line-tools.html#mattermost-user-create":
+"manage/command-line-tools.html#mattermost-user-create":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-user-create",
-    "manage/command-line-tools.html#mattermost-user-deactivate":
+"manage/command-line-tools.html#mattermost-user-deactivate":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-user-deactivate",
-    "manage/command-line-tools.html#mattermost-user-delete":
+"manage/command-line-tools.html#mattermost-user-delete":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-user-delete",
-    "manage/command-line-tools.html#mattermost-user-deleteall":
+"manage/command-line-tools.html#mattermost-user-deleteall":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-user-deleteall",
-    "manage/command-line-tools.html#mattermost-user-email":
+"manage/command-line-tools.html#mattermost-user-email":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-user-email",
-    "manage/command-line-tools.html#mattermost-user-invite":
+"manage/command-line-tools.html#mattermost-user-invite":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-user-invite",
-    "manage/command-line-tools.html#mattermost-user-migrate-auth":
+"manage/command-line-tools.html#mattermost-user-migrate-auth":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-user-migrate-auth",
-    "manage/command-line-tools.html#mattermost-user-password":
+"manage/command-line-tools.html#mattermost-user-password":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-user-reset-password",
-    "manage/command-line-tools.html#mattermost-user-resetmfa":
+"manage/command-line-tools.html#mattermost-user-resetmfa":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-user-reset-mfa",
-    "manage/command-line-tools.html#mattermost-user-search":
+"manage/command-line-tools.html#mattermost-user-search":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-user-search",
-    "manage/command-line-tools.html#mattermost-user-verify":
+"manage/command-line-tools.html#mattermost-user-verify":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-user-verify",
-    "manage/command-line-tools.html#mattermost-version":
+"manage/command-line-tools.html#mattermost-version":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-version",
-    "manage/command-line-tools.html#mattermost-webhook":
+"manage/command-line-tools.html#mattermost-webhook":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-webhook",
-    "manage/command-line-tools.html#mattermost-webhook-create-incoming":
+"manage/command-line-tools.html#mattermost-webhook-create-incoming":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-webhook-create-incoming",
-    "manage/command-line-tools.html#mattermost-webhook-create-outgoing":
+"manage/command-line-tools.html#mattermost-webhook-create-outgoing":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-webhook-create-outgoing",
-    "manage/command-line-tools.html#mattermost-webhook-delete":
+"manage/command-line-tools.html#mattermost-webhook-delete":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-webhook-delete",
-    "manage/command-line-tools.html#mattermost-webhook-list":
+"manage/command-line-tools.html#mattermost-webhook-list":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-webhook-list",
-    "manage/command-line-tools.html#mattermost-webhook-modify-incoming":
+"manage/command-line-tools.html#mattermost-webhook-modify-incoming":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-webhook-modify-incoming",
-    "manage/command-line-tools.html#mattermost-webhook-modify-outgoing":
+"manage/command-line-tools.html#mattermost-webhook-modify-outgoing":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-webhook-modify-outgoing",
-    "manage/command-line-tools.html#mattermost-webhook-move-outgoing":
+"manage/command-line-tools.html#mattermost-webhook-move-outgoing":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-webhook-modify-outgoing",
-    "manage/command-line-tools.html#mattermost-webhook-show":
+"manage/command-line-tools.html#mattermost-webhook-show":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-webhook-show",
 
-    # Messaging redirects
-    "messaging/about-teams-channels-messages.html#teams":
+# Messaging redirects
+"messaging/about-teams-channels-messages.html#teams":
         "https://docs.mattermost.com/welcome/about-teams.html",
-    "messaging/about-teams-channels-messages.html#channels":
+"messaging/about-teams-channels-messages.html#channels":
         "https://docs.mattermost.com/guides/channels.html#work-with-channels",
-    "messaging/about-teams-channels-messages.html#messages":
+"messaging/about-teams-channels-messages.html#messages":
         "https://docs.mattermost.com/guides/channels.html#work-with-messages",
-    "messaging/accessing-your-workspace.html":
-        "https://docs.mattermost.com/welcome/sign-in.html",
-    "messaging/channels-basics.html":
+"messaging/accessing-your-workspace.html":
+	"https://docs.mattermost.com/collaborate/access-your-workspace.html",
+"messaging/channels-basics.html":
         "https://docs.mattermost.com/guides/channels.html#work-with-channels",
-    "messaging/channels-basics.html#write-messages":
+"messaging/channels-basics.html#write-messages":
         "https://docs.mattermost.com/channels/send-messages.html",
-    "messaging/channels-basics.html#reply-to-messages":
+"messaging/channels-basics.html#reply-to-messages":
         "https://docs.mattermost.com/channels/reply-to-messages.html",
-    "messaging/channels-basics.html#notify-teammates":
+"messaging/channels-basics.html#notify-teammates":
         "https://docs.mattermost.com/channels/mention-people.html",
-    "messaging/channels-basics.html#link-to-channels":
-        "https://docs.mattermost.com/channels/format-messages.html#channel-links",
-    "messaging/channels-basics.html#format-your-messages":
+"messaging/channels-basics.html#link-to-channels":
+        "https://docs.mattermost.com/collaborate/format-messages.html#channel-links",
+"messaging/channels-basics.html#format-your-messages":
         "https://docs.mattermost.com/channels/format-messages.html",
-    "messaging/channels-basics.html#react-to-messages":
+"messaging/channels-basics.html#react-to-messages":
         "https://docs.mattermost.com/channels/react-to-messages.html",
-    "messaging/channels-basics.html#share-files":
+"messaging/channels-basics.html#share-files":
         "https://docs.mattermost.com/channels/share-files-in-messages.html",
-    "messaging/channels-basics.html#save-messages-for-follow-up":
+"messaging/channels-basics.html#save-messages-for-follow-up":
         "https://docs.mattermost.com/channels/save-pin-messages.html",
-    "messaging/channel-preferences.html":
+"messaging/channel-preferences.html":
         "https://docs.mattermost.com/channels/set-channel-preferences.html",
-    "messaging/channel-preferences.html#channel-notification-preferences":
+"messaging/channel-preferences.html#channel-notification-preferences":
         "https://docs.mattermost.com/channels/set-channel-preferences.html#channel-notification-preferences",
-    "messaging/channel-preferences.html#channel-header":
+"messaging/channel-preferences.html#channel-header":
         "https://docs.mattermost.com/channels/set-channel-preferences.html#channel-header",
-    "messaging/channel-preferences.html#channel-purpose":
+"messaging/channel-preferences.html#channel-purpose":
         "https://docs.mattermost.com/channels/set-channel-preferences.html#channel-purpose",
-    "messaging/channel-preferences.html#channel-name":
+"messaging/channel-preferences.html#channel-name":
         "https://docs.mattermost.com/channels/set-channel-preferences.html#channel-name",
-    "messaging/channel-settings.html":
-        "https://docs.mattermost.com/channels/set-channel-preferences.html",
-    "messaging/common-navigating-mattermost-products.html":
+"messaging/channel-settings.html":
+	"https://docs.mattermost.com/channels/set-channel-preferences.html",
+"messaging/common-navigating-mattermost-products.html":
         "https://docs.mattermost.com/welcome/what-changed-in-v60.html",
-    "messaging/configuring-notifications.html":
+"messaging/configuring-notifications.html":
         "https://docs.mattermost.com/channels/channels-settings.html#notifications",
-    "messaging/configuring-notifications.html#desktop-notifications":
+"messaging/configuring-notifications.html#desktop-notifications":
         "https://docs.mattermost.com/channels/channels-settings.html#desktop-notifications",
-    "messaging/configuring-notifications.html#email-notifications":
+"messaging/configuring-notifications.html#email-notifications":
         "https://docs.mattermost.com/channels/channels-settings.html#email-notifications",
-    "messaging/configuring-notifications.html#mobile-push-notifications":
+"messaging/configuring-notifications.html#mobile-push-notifications":
         "https://docs.mattermost.com/channels/channels-settings.html#mobile-push-notifications",
-    "messaging/configuring-notifications.html#browser-tab-notifications":
+"messaging/configuring-notifications.html#browser-tab-notifications":
         "https://docs.mattermost.com/channels/channels-settings.html#browser-tab-notifications",
-    "messaging/configuring-notifications.html#muting-a-channel":
+"messaging/configuring-notifications.html#muting-a-channel":
         "https://docs.mattermost.com/channels/set-channel-preferences.html#mute-channel",
-    "messaging/configuring-notifications.html#ignoring-mentions":
+"messaging/configuring-notifications.html#ignoring-mentions":
         "https://docs.mattermost.com/channels/set-channel-preferences.html#ignore-mentions-for-channel-here-and-all",
-    "messaging/creating-teams.html":
+"messaging/creating-teams.html":
         "https://docs.mattermost.com/welcome/about-teams.html#create-a-team",
-    "messaging/creating-teams.html#methods-to-create-a-team":
+"messaging/creating-teams.html#methods-to-create-a-team":
         "https://docs.mattermost.com/welcome/about-teams.html#create-a-team",
-    "messaging/creating-teams.html#team-name-and-url-selection":
+"messaging/creating-teams.html#team-name-and-url-selection":
         "https://docs.mattermost.com/welcome/about-teams.html#team-name-and-url-selection",
-    "messaging/creating-teams.html#best-practices-for-using-a-single-team-vs-multiple-teams":
+"messaging/creating-teams.html#best-practices-for-using-a-single-team-vs-multiple-teams":
         "https://docs.mattermost.com/welcome/about-teams.html#single-team-versus-multiple-teams",
-    "messaging/customizing-theme-colors.html":
+"messaging/customizing-theme-colors.html":
         "https://docs.mattermost.com/welcome/customize-your-theme.html",
-    "messaging/customizing-theme-colors.html#import-theme-from-slack":
+"messaging/customizing-theme-colors.html#import-theme-from-slack":
         "https://docs.mattermost.com/welcome/customize-your-theme.html#import-theme-from-slack",
-    "messaging/customizing-theme-colors.html#custom-themes":
+"messaging/customizing-theme-colors.html#custom-themes":
         "https://docs.mattermost.com/welcome/customize-your-theme.html#custom-themes",
-    "messaging/customizing-theme-colors.html#standard-themes":
+"messaging/customizing-theme-colors.html#standard-themes":
         "https://docs.mattermost.com/welcome/customize-your-theme.html#standard-themes",
-    "messaging/executing-slash-commands.html":
+"messaging/executing-slash-commands.html":
         "https://docs.mattermost.com/channels/run-slash-commands.html",
-    "messaging/executing-slash-commands.html#built-in-commands":
+"messaging/executing-slash-commands.html#built-in-commands":
         "https://docs.mattermost.com/channels/run-slash-commands.html",
-    "messaging/executing-slash-commands.html#custom-commands":
+"messaging/executing-slash-commands.html#custom-commands":
         "https://docs.mattermost.com/channels/run-slash-commands.html",
-    "messaging/extending-messaging-with-integrations.html":
+"messaging/extending-messaging-with-integrations.html":
         "https://mattermost.com/marketplace/",
-    "messaging/formatting-text.html":
+"messaging/formatting-text.html":
         "https://docs.mattermost.com/channels/format-messages.html",
-    "messaging/formatting-text.html#text-style":
-        "https://docs.mattermost.com/channels/format-messages.html#text-style",
-    "messaging/formatting-text.html#links":
-        "https://docs.mattermost.com/channels/format-messages.html#links",
-    "messaging/formatting-text.html#headings":
-        "https://docs.mattermost.com/channels/format-messages.html#headings",
-    "messaging/formatting-text.html#lists":
-        "https://docs.mattermost.com/channels/format-messages.html#lists",
-    "messaging/formatting-text.html#code-block":
-        "https://docs.mattermost.com/channels/format-messages.html#code-blocks",
-    "messaging/formatting-text.html#in-line-code":
-        "https://docs.mattermost.com/channels/format-messages.html#in-line-code",
-    "messaging/formatting-text.html#in-line-images":
-        "https://docs.mattermost.com/channels/format-messages.html#in-line-images",
-    "messaging/formatting-text.html#in-line-image-with-hover-text":
-        "https://docs.mattermost.com/channels/format-messages.html#in-line-image-with-hover-text",
-    "messaging/formatting-text.html#in-line-image-displayed-with-fixed-width-and-height":
-        "https://docs.mattermost.com/channels/format-messages.html#in-line-image-displayed-with-fixed-width-and-height",
-    "messaging/formatting-text.html#lines":
-        "https://docs.mattermost.com/channels/format-messages.html#horizontal-lines",
-    "messaging/formatting-text.html#block-quotes":
-        "https://docs.mattermost.com/channels/format-messages.html#block-quotes",
-    "messaging/formatting-text.html#tables":
-        "https://docs.mattermost.com/channels/format-messages.html#tables",
-    "messaging/formatting-text.html#math-formulas":
-        "https://docs.mattermost.com/channels/format-messages.html#math-formulas",
-    "messaging/keyboard-accessibility.html":
+"messaging/formatting-text.html#text-style":
+        "https://docs.mattermost.com/collaborate/format-messages.html#text-style",
+"messaging/formatting-text.html#links":
+        "https://docs.mattermost.com/collaborate/format-messages.html#links",
+"messaging/formatting-text.html#headings":
+        "https://docs.mattermost.com/collaborate/format-messages.html#headings",
+"messaging/formatting-text.html#lists":
+        "https://docs.mattermost.com/collaborate/format-messages.html#lists",
+"messaging/formatting-text.html#code-block":
+        "https://docs.mattermost.com/collaborate/format-messages.html#code-blocks",
+"messaging/formatting-text.html#in-line-code":
+        "https://docs.mattermost.com/collaborate/format-messages.html#in-line-code",
+"messaging/formatting-text.html#in-line-images":
+        "https://docs.mattermost.com/collaborate/format-messages.html#in-line-images",
+"messaging/formatting-text.html#in-line-image-with-hover-text":
+        "https://docs.mattermost.com/collaborate/format-messages.html#in-line-image-with-hover-text",
+"messaging/formatting-text.html#in-line-image-displayed-with-fixed-width-and-height":
+        "https://docs.mattermost.com/collaborate/format-messages.html#in-line-image-displayed-with-fixed-width-and-height",
+"messaging/formatting-text.html#lines":
+        "https://docs.mattermost.com/collaborate/format-messages.html#horizontal-lines",
+"messaging/formatting-text.html#block-quotes":
+        "https://docs.mattermost.com/collaborate/format-messages.html#block-quotes",
+"messaging/formatting-text.html#tables":
+        "https://docs.mattermost.com/collaborate/format-messages.html#tables",
+"messaging/formatting-text.html#math-formulas":
+        "https://docs.mattermost.com/collaborate/format-messages.html#math-formulas",
+"messaging/keyboard-accessibility.html":
         "https://docs.mattermost.com/channels/keyboard-accessibility.html",
-    "messaging/keyboard-accessibility.html#region-navigation":
+"messaging/keyboard-accessibility.html#region-navigation":
         "https://docs.mattermost.com/channels/keyboard-accessibility.html#region-navigation",
-    "messaging/keyboard-accessibility.html#message-navigation":
+"messaging/keyboard-accessibility.html#message-navigation":
         "https://docs.mattermost.com/channels/keyboard-accessibility.html#message-navigation",
-    "messaging/keyboard-accessibility.html#channel-sidebar-navigation":
+"messaging/keyboard-accessibility.html#channel-sidebar-navigation":
         "https://docs.mattermost.com/channels/keyboard-accessibility.html#channel-sidebar-navigation",
-    "messaging/keyboard-shortcuts.html":
+"messaging/keyboard-shortcuts.html":
         "https://docs.mattermost.com/channels/keyboard-shortcuts-for-channels.html",
-    "messaging/keyboard-shortcuts.html#mattermost-server-and-product-navigation":
+"messaging/keyboard-shortcuts.html#mattermost-server-and-product-navigation":
         "https://docs.mattermost.com/welcome/keyboard-shortcuts.html#navigation-shortcuts-in-the-desktop-app",
-    "messaging/keyboard-shortcuts.html#general-mattermost-navigation":
+"messaging/keyboard-shortcuts.html#general-mattermost-navigation":
         "https://docs.mattermost.com/channels/keyboard-shortcuts-for-channels.html#navigation-shortcuts-for-mattermost-channels",
-    "messaging/keyboard-shortcuts.html#files":
+"messaging/keyboard-shortcuts.html#files":
         "https://docs.mattermost.com/channels/keyboard-shortcuts-for-channels.html#file-upload-shortcuts",
-    "messaging/keyboard-shortcuts.html#messages":
+"messaging/keyboard-shortcuts.html#messages":
         "https://docs.mattermost.com/channels/keyboard-shortcuts-for-channels.html#message-shortcuts",
-    "messaging/keyboard-shortcuts.html#formatting":
+"messaging/keyboard-shortcuts.html#formatting":
         "https://docs.mattermost.com/channels/keyboard-shortcuts-for-channels.html#formatting-shortcuts",
-    "messaging/keyboard-shortcuts.html#browser-built-in":
+"messaging/keyboard-shortcuts.html#browser-built-in":
         "https://docs.mattermost.com/welcome/keyboard-shortcuts.html#zoom-shortcuts-for-web-and-desktop-app",
-    "messaging/logging-out.html":
+"messaging/logging-out.html":
         "https://docs.mattermost.com/welcome/log-out.html",
-    "messaging/manage-channels-settings.html":
+"messaging/manage-channels-settings.html":
         "https://docs.mattermost.com/channels/channels-settings.html",
-    "messaging/manage-channels-settings.html#notifications":
+"messaging/manage-channels-settings.html#notifications":
         "https://docs.mattermost.com/channels/channels-settings.html#notifications",
-    "messaging/manage-channels-settings.html#display":
+"messaging/manage-channels-settings.html#display":
         "https://docs.mattermost.com/channels/channels-settings.html#display",
-    "messaging/manage-channels-settings.html#sidebar":
+"messaging/manage-channels-settings.html#sidebar":
         "https://docs.mattermost.com/channels/channels-settings.html#sidebar",
-    "messaging/manage-channels-settings.html#advanced":
+"messaging/manage-channels-settings.html#advanced":
         "https://docs.mattermost.com/channels/channels-settings.html#advanced",
-    "messaging/manage-profile-settings.html":
+"messaging/manage-profile-settings.html":
         "https://docs.mattermost.com/welcome/manage-your-profile.html",
-    "messaging/manage-profile-settings.html#multi-factor-authentication":
-        "https://docs.mattermost.com/welcome/manage-your-profile.html#security",
-    "messaging/manage-profile-settings.html#profile":
+"messaging/manage-profile-settings.html#multi-factor-authentication":
+	"https://docs.mattermost.com/welcome/manage-your-profile.html#security",	
+"messaging/manage-profile-settings.html#profile":
         "https://docs.mattermost.com/welcome/manage-your-profile.html#profile",
-    "messaging/manage-profile-settings.html#security":
+"messaging/manage-profile-settings.html#security":
         "https://docs.mattermost.com/welcome/manage-your-profile.html#security",
-    "messaging/manage-profile-settings.html#multi-factor-authentication":
-        "https://docs.mattermost.com/welcome/manage-your-profile.html#security",
-    "messaging/managing-account-settings.html":
-        "https://docs.mattermost.com/channels/channels-settings.html",
-    "messaging/managing-channels.html":
+"messaging/manage-profile-settings.html#multi-factor-authentication":
+	"https://docs.mattermost.com/welcome/manage-your-profile.html#security",
+"messaging/managing-account-settings.html":
+	"https://docs.mattermost.com/channels/channels-settings.html",
+"messaging/managing-channels.html":
         "https://docs.mattermost.com/guides/channels.html#work-with-channels",
-    "messaging/managing-channels.html#creating-a-channel":
+"messaging/managing-channels.html#creating-a-channel":
         "https://docs.mattermost.com/channels/create-channels.html",
-    "messaging/managing-channels.html#creating-a-direct-or-group-message":
+"messaging/managing-channels.html#creating-a-direct-or-group-message":
         "https://docs.mattermost.com/channels/create-channels.html#create-a-direct-or-group-message",
-    "messaging/managing-channels.html#joining-a-channel":
+"messaging/managing-channels.html#joining-a-channel":
         "https://docs.mattermost.com/channels/join-leave-channels.html",
-    "messaging/managing-channels.html#adding-members-to-a-channel":
+"messaging/managing-channels.html#adding-members-to-a-channel":
         "https://docs.mattermost.com/channels/manage-channel-members.html",
-    "messaging/managing-channels.html#removing-members-from-a-channel":
+"messaging/managing-channels.html#removing-members-from-a-channel":
         "https://docs.mattermost.com/channels/manage-channel-members.html#remove-members-from-a-channel",
-    "messaging/managing-channels.html#naming-a-channel":
+"messaging/managing-channels.html#naming-a-channel":
         "https://docs.mattermost.com/channels/rename-channels.html",
-    "messaging/managing-channels.html#leaving-a-channel":
+"messaging/managing-channels.html#leaving-a-channel":
         "https://docs.mattermost.com/channels/join-leave-channels.html#leave-a-channel",
-    "messaging/managing-channels.html#archiving-a-channel":
+"messaging/managing-channels.html#archiving-a-channel":
         "https://docs.mattermost.com/channels/archive-unarchive-channels.html",
-    "messaging/managing-channels.html#unarchiving-a-channel":
+"messaging/managing-channels.html#unarchiving-a-channel":
         "https://docs.mattermost.com/channels/archive-unarchive-channels.html#unarchive-a-channel",
-    "messaging/managing-channels.html#converting-public-channels-to-private-channels-and-vice-versa":
+"messaging/managing-channels.html#converting-public-channels-to-private-channels-and-vice-versa":
         "https://docs.mattermost.com/channels/convert-public-channels.html",
-    "messaging/managing-channels.html#favoriting-a-channel":
+"messaging/managing-channels.html#favoriting-a-channel":
         "https://docs.mattermost.com/channels/favorite-channels.html",
-    "messaging/managing-channels.html#navigating-between-channels":
+"messaging/managing-channels.html#navigating-between-channels":
         "https://docs.mattermost.com/channels/find-channels.html",
-    "messaging/managing-channels.html#navigating-recently-viewed-channels":
+"messaging/managing-channels.html#navigating-recently-viewed-channels":
         "https://docs.mattermost.com/channels/find-channels.html#revisit-recent-channels",
-    "messaging/managing-desktop-app-options.html":
+"messaging/managing-desktop-app-options.html":
         "https://docs.mattermost.com/welcome/customize-desktop-app-experience.html",
-    "messaging/managing-desktop-app-options.html#dark-theme":
+"messaging/managing-desktop-app-options.html#dark-theme":
         "https://docs.mattermost.com/welcome/customize-your-theme.html#dark-theme-desktop-app-only",
-    "messaging/managing-desktop-app-servers.html":
+"messaging/managing-desktop-app-servers.html":
         "https://docs.mattermost.com/welcome/manage-desktop-app-server-connections.html",
-    "messaging/managing-members.html":
+"messaging/managing-members.html":
         "https://docs.mattermost.com/channels/manage-channel-members.html",
-    "messaging/managing-members.html#inviting-team-members":
+"messaging/managing-members.html#inviting-team-members":
         "https://docs.mattermost.com/welcome/about-teams.html#invite-people-to-teams",
-    "messaging/managing-members.html#user-roles":
+"messaging/managing-members.html#user-roles":
         "https://docs.mattermost.com/welcome/about-user-roles.html",
-    "messaging/managing-members.html#removing-a-user-from-a-team-or-leaving-a-team":
+"messaging/managing-members.html#removing-a-user-from-a-team-or-leaving-a-team":
         "https://docs.mattermost.com/welcome/about-teams.html#remove-people-from-teams",
-    "messaging/mentioning-teammates.html":
+"messaging/mentioning-teammates.html":
         "https://docs.mattermost.com/channels/mention-people.html",
-    "messaging/mentioning-teammates.html#mentions":
+"messaging/mentioning-teammates.html#mentions":
         "https://docs.mattermost.com/channels/mention-people.html",
-    "messaging/mentioning-teammates.html#username":
+"messaging/mentioning-teammates.html#username":
         "https://docs.mattermost.com/channels/mention-people.html#username",
-    "messaging/mentioning-teammates.html#channel-and-all":
+"messaging/mentioning-teammates.html#channel-and-all":
         "https://docs.mattermost.com/channels/mention-people.html#channel-and-all",
-    "messaging/mentioning-teammates.html#here":
+"messaging/mentioning-teammates.html#here":
         "https://docs.mattermost.com/channels/mention-people.html#here",
-    "messaging/mentioning-teammates.html#groupname-beta":
+"messaging/mentioning-teammates.html#groupname-beta":
         "https://docs.mattermost.com/channels/mention-people.html#groupname",
-    "messaging/mentioning-teammates.html#words-that-trigger-mentions":
+"messaging/mentioning-teammates.html#words-that-trigger-mentions":
         "https://docs.mattermost.com/channels/mention-people.html#words-that-trigger-mentions",
-    "messaging/mentioning-teammates.html#recent-mentions":
+"messaging/mentioning-teammates.html#recent-mentions":
         "https://docs.mattermost.com/channels/mention-people.html#see-all-recent-mentions",
-    "messaging/mentioning-teammates.html#confirmation-dialog-warnings":
+"messaging/mentioning-teammates.html#confirmation-dialog-warnings":
         "https://docs.mattermost.com/channels/mention-people.html#confirmation-dialog-warnings",
-    "messaging/mentioning-teammates.html#highlighting":
+"messaging/mentioning-teammates.html#highlighting":
         "https://docs.mattermost.com/channels/mention-people.html#mention-highlights",
-    "messaging/messaging-basics.html":
+"messaging/messaging-basics.html":
         "https://docs.mattermost.com/guides/channels.html#work-with-channels",
-    "messaging/navigating-between-teams.html":
+"messaging/navigating-between-teams.html":
         "https://docs.mattermost.com/welcome/about-teams.html#team-sidebar",
-    "messaging/navigating-mattermost.html":
+"messaging/navigating-mattermost.html":
         "https://docs.mattermost.com/guides/channels.html#keyboard-accessibility",
-    "messaging/organizing-channels.html":
+"messaging/organizing-channels.html":
         "https://docs.mattermost.com/channels/channel-naming-conventions.html",
-    "messaging/organizing-channels.html#the-importance-of-channel-names":
+"messaging/organizing-channels.html#the-importance-of-channel-names":
         "https://docs.mattermost.com/channels/channel-naming-conventions.html",
-    "messaging/organizing-channels.html#how-to-navigate-and-organize-channels":
+"messaging/organizing-channels.html#how-to-navigate-and-organize-channels":
         "https://docs.mattermost.com/channels/channel-naming-conventions.html#channel-naming-examples",
-    "messaging/organizing-channels.html#channel-naming-examples":
+"messaging/organizing-channels.html#channel-naming-examples":
         "https://docs.mattermost.com/channels/channel-naming-conventions.html#channel-naming-examples",
-    "messaging/organizing-your-sidebar.html":
+"messaging/organizing-your-sidebar.html":
         "https://docs.mattermost.com/channels/customize-your-channel-sidebar.html",
-    "messaging/organizing-your-sidebar.html#channel-types":
+"messaging/organizing-your-sidebar.html#channel-types":
         "https://docs.mattermost.com/channels/channel-types.html",
-    "messaging/organizing-your-sidebar.html#customizing-your-sidebar":
+"messaging/organizing-your-sidebar.html#customizing-your-sidebar":
         "https://docs.mattermost.com/channels/customize-your-channel-sidebar.html#what-can-you-customize",
-    "messaging/organizing-your-sidebar.html#creating-custom-categories":
+"messaging/organizing-your-sidebar.html#creating-custom-categories":
         "https://docs.mattermost.com/channels/customize-your-channel-sidebar.html##create-custom-categories",
-    "messaging/organizing-your-sidebar.html#organizing-channels-in-categories":
+"messaging/organizing-your-sidebar.html#organizing-channels-in-categories":
         "https://docs.mattermost.com/channels/customize-your-channel-sidebar.html#organize-channels-in-categories",
-    "messaging/organizing-your-sidebar.html#muting-and-unmuting-categories":
+"messaging/organizing-your-sidebar.html#muting-and-unmuting-categories":
         "https://docs.mattermost.com/channels/customize-your-channel-sidebar.html#mute-and-unmute-categories",
-    "messaging/organizing-your-sidebar.html#sorting-channels-in-categories":
+"messaging/organizing-your-sidebar.html#sorting-channels-in-categories":
         "https://docs.mattermost.com/channels/customize-your-channel-sidebar.html#sort-channels-in-categories",
-    "messaging/organizing-your-sidebar.html#group-unread-channels-separately":
+"messaging/organizing-your-sidebar.html#group-unread-channels-separately":
         "https://docs.mattermost.com/channels/customize-your-channel-sidebar.html#group-unread-channels-separately",
-    "messaging/organizing-your-sidebar.html#managing-direct-messages":
+"messaging/organizing-your-sidebar.html#managing-direct-messages":
         "https://docs.mattermost.com/channels/customize-your-channel-sidebar.html#manage-direct-messages",
-    "messaging/organizing-conversations.html":
+"messaging/organizing-conversations.html":
         "https://docs.mattermost.com/channels/organize-conversations.html",
-    "messaging/organizing-conversations.html#enable-collapsed-reply-threads-beta":
+"messaging/organizing-conversations.html#enable-collapsed-reply-threads-beta":
         "https://docs.mattermost.com/channels/organize-conversations.html#enable-collapsed-reply-threads",
-    "messaging/organizing-conversations.html#known-issues":
+"messaging/organizing-conversations.html#known-issues":
         "https://docs.mattermost.com/channels/organize-conversations.html#known-issues",
-    "messaging/organizing-conversations.html#start-or-reply-to-threads":
+"messaging/organizing-conversations.html#start-or-reply-to-threads":
         "https://docs.mattermost.com/channels/organize-conversations.html#start-or-reply-to-threads",
-    "messaging/organizing-conversations.html#follow-threads-and-messages":
+"messaging/organizing-conversations.html#follow-threads-and-messages":
         "https://docs.mattermost.com/channels/organize-conversations.html#follow-threads-and-messages",
-    "messaging/organizing-conversations.html#view-all-threads":
+"messaging/organizing-conversations.html#view-all-threads":
         "https://docs.mattermost.com/channels/organize-conversations.html#view-all-threads",
-    "messaging/organizing-conversations.html#tutorial-video":
+"messaging/organizing-conversations.html#tutorial-video":
         "https://docs.mattermost.com/channels/organize-conversations.html#tutorial-video",
-    "messaging/organizing-mattermost.html":
+"messaging/organizing-mattermost.html":
         "https://docs.mattermost.com/channels/channel-naming-conventions.html",
-    "messaging/pinning-messages.html":
+"messaging/pinning-messages.html":
         "https://docs.mattermost.com/channels/save-pin-messages.html",
-    "messaging/pinning-messages.html#pin-a-message":
+"messaging/pinning-messages.html#pin-a-message":
         "https://docs.mattermost.com/channels/save-pin-messages.html#pin-messages",
-    "messaging/pinning-messages.html#unpin-a-message":
+"messaging/pinning-messages.html#unpin-a-message":
         "https://docs.mattermost.com/channels/save-pin-messages.html#unpin-messages",
-    "messaging/saving-messages.html":
+"messaging/saving-messages.html":
         "https://docs.mattermost.com/channels/save-pin-messages.html",
-    "messaging/saving-messages.html#saving-a-message":
-        "https://docs.mattermost.com/save-pin-messages.html#save-messages",
-    "messaging/saving-messages.html#viewing-saved-messages":
-        "https://docs.mattermost.com/channels/save-pin-messages.html#see-your-saved-messages",
-    "messaging/saving-messages.html#unsaving-messages":
+"messaging/saving-messages.html#saving-a-message":
+        "https://docs.mattermost.com/collaborate/save-pin-messages.html#save-messages",
+"messaging/saving-messages.html#viewing-saved-messages":
+        "https://docs.mattermost.com/collaborate/save-pin-messages.html",
+"messaging/saving-messages.html#unsaving-messages":
         "https://docs.mattermost.com/channels/save-pin-messages.html#unsave-messages",
-    "messaging/searching-in-mattermost.html":
+"messaging/searching-in-mattermost.html":
         "https://docs.mattermost.com/channels/search-for-messages.html",
-    "messaging/searching-in-mattermost.html#searching-for-message-contents":
+"messaging/searching-in-mattermost.html#searching-for-message-contents":
         "https://docs.mattermost.com/channels/search-for-messages.html#search-for-message-contents",
-    "messaging/searching-in-mattermost.html#searching-for-file-contents":
+"messaging/searching-in-mattermost.html#searching-for-file-contents":
         "https://docs.mattermost.com/channels/search-for-messages.html#search-for-file-contents",
-    "messaging/searching-in-mattermost.html#search-modifiers":
+"messaging/searching-in-mattermost.html#search-modifiers":
         "https://docs.mattermost.com/channels/search-for-messages.html#search-modifiers",
-    "messaging/searching-in-mattermost.html#hashtags":
+"messaging/searching-in-mattermost.html#hashtags":
         "https://docs.mattermost.com/channels/search-for-messages.html#hashtags",
-    "messaging/searching-in-mattermost.html#notes-about-all-searches":
+"messaging/searching-in-mattermost.html#notes-about-all-searches":
         "https://docs.mattermost.com/channels/search-for-messages.html#notes-about-all-searches",
-    "messaging/searching-in-mattermost.html#technical-notes":
+"messaging/searching-in-mattermost.html#technical-notes":
         "https://docs.mattermost.com/channels/search-for-messages.html#technical-notes-about-searching",
-    "messaging/sending-messages.html":
+"messaging/sending-messages.html":
         "https://docs.mattermost.com/channels/send-messages.html",
-    "messaging/sending-receiving-messages.html":
+"messaging/sending-receiving-messages.html":
         "https://docs.mattermost.com/channels/send-messages.html",
-    "messaging/sending-receiving-messages.html#send-a-message":
+"messaging/sending-receiving-messages.html#send-a-message":
         "https://docs.mattermost.com/channels/send-messages.html",
-    "messaging/sending-receiving-messages.html#reply-to-messages":
+"messaging/sending-receiving-messages.html#reply-to-messages":
         "https://docs.mattermost.com/channels/reply-to-messages.html",
-    "messaging/sending-receiving-messages.html#edit-or-delete-messages":
+"messaging/sending-receiving-messages.html#edit-or-delete-messages":
         "https://docs.mattermost.com/channels/send-messages.html#edit-or-delete-messages",
-    "messaging/sending-receiving-messages.html#mark-messages-as-unread":
+"messaging/sending-receiving-messages.html#mark-messages-as-unread":
         "https://docs.mattermost.com/channels/mark-messages-unread.html",
-    "messaging/setting-your-status-availability.html":
+"messaging/setting-your-status-availability.html":
         "https://docs.mattermost.com/welcome/set-your-status-availability.html",
-    "messaging/setting-your-status-availability.html#setting-a-custom-status":
+"messaging/setting-your-status-availability.html#setting-a-custom-status":
         "https://docs.mattermost.com/welcome/set-your-status-availability.html#set-a-custom-status",
-    "messaging/setting-your-status-availability.html#clearing-a-custom-status":
+"messaging/setting-your-status-availability.html#clearing-a-custom-status":
         "https://docs.mattermost.com/welcome/set-your-status-availability.html#clear-a-custom-status",
-    "messaging/setting-your-status-availability.html#setting-your-availability":
+"messaging/setting-your-status-availability.html#setting-your-availability":
         "https://docs.mattermost.com/welcome/set-your-status-availability.html#setting-your-availability",
-    "messaging/setting-your-status-availability.html#setting-do-not-disturb":
+"messaging/setting-your-status-availability.html#setting-do-not-disturb":
         "https://docs.mattermost.com/welcome/set-your-status-availability.html#set-your-status-as-do-not-disturb",
-    "messaging/sharing-messages.html":
+"messaging/sharing-messages.html":
         "https://docs.mattermost.com/channels/share-links.html",
-    "messaging/sharing-files.html":
+"messaging/sharing-files.html":
         "https://docs.mattermost.com/channels/share-files-in-messages.html",
-    "messaging/sharing-files.html#attach-files-to-messages":
+"messaging/sharing-files.html#attach-files-to-messages":
         "https://docs.mattermost.com/channels/share-files-in-messages.html",
-    "messaging/sharing-files.html#preview-file-attachments":
+"messaging/sharing-files.html#preview-file-attachments":
         "https://docs.mattermost.com/channels/share-files-in-messages.html#preview-file-attachments",
-    "messaging/sharing-files.html#attachment-limits-and-sizes":
+"messaging/sharing-files.html#attachment-limits-and-sizes":
         "https://docs.mattermost.com/channels/share-files-in-messages.html#attachment-limits-and-sizes",
-    "messaging/signing-in.html":
+"messaging/signing-in.html":
         "https://docs.mattermost.com/welcome/sign-in.html",
-    "messaging/signing-in.html#email-address-or-username-sign-in":
+"messaging/signing-in.html#email-address-or-username-sign-in":
         "https://docs.mattermost.com/welcome/sign-in.html#email-address-or-username",
-    "messaging/signing-in.html#single-sign-on":
+"messaging/signing-in.html#single-sign-on":
         "https://docs.mattermost.com/welcome/sign-in.html#single-sign-on-sso",
-    "messaging/switching-between-teams.html":
-        "https://docs.mattermost.com/welcome/about-teams.html#team-sidebar",
-    "messaging/team-settings.html":
+"messaging/switching-between-teams.html":
+	"https://docs.mattermost.com/welcome/about-teams.html#team-sidebar",
+"messaging/team-settings.html":
         "https://docs.mattermost.com/welcome/team-settings.html",
-    "messaging/team-settings.html#general":
+"messaging/team-settings.html#general":
         "https://docs.mattermost.com/welcome/team-settings.html#general",
-    "messaging/team-settings.html#import":
+"messaging/team-settings.html#import":
         "https://docs.mattermost.com/welcome/team-settings.html#import",
-    "messaging/using-emoji.html":
+"messaging/using-emoji.html":
         "https://docs.mattermost.com/channels/react-to-messages.html",
-    "messaging/using-emojis.html":
+"messaging/using-emojis.html":
         "https://docs.mattermost.com/channels/react-to-messages.html#",
-    "messaging/using-emoji.html#adding-emojis-to-messages":
+"messaging/using-emoji.html#adding-emojis-to-messages":
         "https://docs.mattermost.com/channels/react-to-messages.html",
-    "messaging/using-emoji.html#selecting-recent-emojis":
+"messaging/using-emoji.html#selecting-recent-emojis":
         "https://docs.mattermost.com/channels/react-to-messages.html#select-recent-emojis",
-    "messaging/using-emoji.html#typing-an-emoji":
+"messaging/using-emoji.html#typing-an-emoji":
         "https://docs.mattermost.com/channels/react-to-messages.html#",
-    "messaging/using-emoji.html#creating-custom-emojis":
+"messaging/using-emoji.html#creating-custom-emojis":
         "https://docs.mattermost.com/channels/react-to-messages.html#upload-custom-emojis",
-    "messaging/welcome-to-mattermost-channels.html":
+"messaging/welcome-to-mattermost-channels.html":
         "https://docs.mattermost.com/guides/channels.html",
-    "messaging/welcome-to-mattermost-messaging.html":
-        "https://docs.mattermost.com/guides/channels.html",
+"messaging/welcome-to-mattermost-messaging.html":
+	"https://docs.mattermost.com/guides/channels.html",
+"messaging/cloud-user-management.html": 
+	"https://docs.mattermost.com/collaborate/manage-channel-members.html",
+"messaging/cloud-user-management.html#inviting-team-members": 
+	"https://docs.mattermost.com/collaborate/invite-people.html",
+"messaging/cloud-user-management.html#sending-direct-invites": 
+	"https://docs.mattermost.com/collaborate/invite-people.html#send-a-direct-invite",
+"messaging/cloud-user-management.html#sending-team-invite-links": 
+	"https://docs.mattermost.com/collaborate/invite-people.html#send-a-team-invite-link",
+"messaging/cloud-user-management.html#adding-someone-to-your-team": 
+	"https://docs.mattermost.com/collaborate/invite-people.html",
+"messaging/cloud-user-management.html#about-user-roles": 
+	"https://docs.mattermost.com/collaborate/learn-about-roles.html",
+"messaging/cloud-user-management.html#system-admin": 
+	"https://docs.mattermost.com/collaborate/learn-about-roles.html#system-admin",
+"messaging/cloud-user-management.html#team-admin": 
+	"https://docs.mattermost.com/collaborate/learn-about-roles.html#team-admin",
+"messaging/cloud-user-management.html#channel-admin": 
+	"https://docs.mattermost.com/collaborate/learn-about-roles.html#channel-admin",
+"messaging/cloud-user-management.html#member": 
+	"https://docs.mattermost.com/collaborate/learn-about-roles.html#member",
+"messaging/cloud-user-management.html#guest": 
+	"https://docs.mattermost.com/collaborate/learn-about-roles.html#guest",
+"messaging/cloud-user-management.html#user-with-personal-access-token-permission": 
+	"https://docs.mattermost.com/collaborate/learn-about-roles.html#grant-personal-access-tokens",
+"messaging/cloud-user-management.html#deactivating-users": 
+	"https://docs.mattermost.com/collaborate/learn-about-roles.html#deactivated",
+"messaging/cloud-user-management.html#removing-a-user-from-a-team-or-leaving-a-team": 
+	"https://docs.mattermost.com/collaborate/organize-using-teams.html#remove-people-from-teams",
+"messaging/cloud-user-management.html#remove-user-from-team": 
+	"https://docs.mattermost.com/collaborate/organize-using-teams.html#remove-people-from-teams",
+"messaging/cloud-user-management.html#leaving-a-team": 
+	"https://docs.mattermost.com/collaborate/organize-using-teams.html#leave-a-team",
+"messaging/cloud-user-management.html#obtaining-user-id": 
+	"https://docs.mattermost.com/configure/user-management-configuration-settings.html#users",
+"messaging/cloud-user-management.html#about-system-roles-beta": 
+	"https://docs.mattermost.com/onboard/system-admin-roles.html",
+"messaging/cloud-user-management.html#assigning-system-roles": 
+	"https://docs.mattermost.com/onboard/system-admin-roles.html#assign-system-admin-roles",
+"messaging/cloud-user-management.html#editing-privileges-of-system-roles": 
+	"https://docs.mattermost.com/onboard/system-admin-roles.html#edit-privileges-of-system-admin-roles-advanced",
 
-    # Mobile redirects
-    "mobile/deploy-mobile-apps-using-emm-provider.html":
-        "https://docs.mattermost.com/deploy/deploy-mobile-apps-using-emm-provider.html",
-    "mobile/mobile-appstore-install.html":
+# Mobile redirects
+"mobile/deploy-mobile-apps-using-emm-provider.html":
+	"https://docs.mattermost.com/deploy/deploy-mobile-apps-using-emm-provider.html",
+"mobile/mobile-appstore-install.html":
         "https://docs.mattermost.com/deploy/use-prebuilt-mobile-apps.html",
-    "mobile/mobile-blackberry.html":
+"mobile/mobile-blackberry.html":
         "https://docs.mattermost.com/deploy/deploy-mobile-apps-using-emm-provider.html",
-    "mobile/mobile-compile yourself.html":
+"mobile/mobile-compile yourself.html":
         "https://docs.mattermost.com/deploy/build-custom-mobile-apps.html",
-    "mobile/mobile-faq#how-do-push-notifications-work.html":
+"mobile/mobile-faq#how-do-push-notifications-work.html":
         "https://docs.mattermost.com/deploy/mobile-faq.html#how-do-push-notifications-work",
-    "mobile/mobile-hpns.html":
-        "https://docs.mattermost.com/deploy/mobile-hpns.html",
-    "mobile/mobile-mobileiron.html":
+"mobile/mobile-hpns.html":
+	"https://docs.mattermost.com/deploy/mobile-hpns.html",
+"mobile/mobile-mobileiron.html":
         "https://docs.mattermost.com/deploy/build-custom-mobile-apps.html",
-    "mobile/mobile-overview.html":
-        "https://docs.mattermost.com/deploy/mobile-overview.html",
-    "mobile/mobile-overview.html#use-an-emm-provider-with-managed-app-configuration":
+"mobile/mobile-overview.html":
+	"https://docs.mattermost.com/deploy/mobile-overview.html",
+"mobile/mobile-overview.html#use-an-emm-provider-with-managed-app-configuration":
         "https://docs.mattermost.com/deploy/deploy-mobile-apps-using-emm-provider.html",
-    "mobile/mobile-testing-notifications.html":
-        "https://docs.mattermost.com/deploy/mobile-testing-notifications.html",
+"mobile/mobile-testing-notifications.html":
+	"https://docs.mattermost.com/deploy/mobile-testing-notifications.html",
 
-    # Onboard redirects
-    "onboard/ad-ldap.html#active-directory-ldap-setup-e10-e20":
+# Onboard redirects
+"onboard/ad-ldap.html#active-directory-ldap-setup-e10-e20":
         "https://docs.mattermost.com/onboard/ad-ldap.html#active-directory-ldap-setup",
-    "onboard/migrating-from-hipchat-to-mattermost.html":
+"onboard/migrating-from-hipchat-to-mattermost.html":
         "https://docs.mattermost.com/onboard/migrating-to-mattermost.html#migrating-from-slack",
-    "onboard/ad-ldap-groups-synchronization.html#enabling-ad-ldap-group-synchronization":
+"onboard/ad-ldap-groups-synchronization.html#enabling-ad-ldap-group-synchronization": 
         "https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html#enable-ad-ldap-group-synchronization",
-    "onboard/ad-ldap-groups-synchronization.html#using-ad-ldap-group-synchronization":
+"onboard/ad-ldap-groups-synchronization.html#using-ad-ldap-group-synchronization":
         "https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html#synchronize-ad-ldap-groups-to-mattermost",
-    "onboard/ad-ldap-groups-synchronization.html#linking-ad-ldap-groups-to-mattermost-groups":
+"onboard/ad-ldap-groups-synchronization.html#linking-ad-ldap-groups-to-mattermost-groups": 
         "https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html#link-ad-ldap-groups-to-mattermost-groups",
-    "onboard/ad-ldap-groups-synchronization.html#configuring-the-group":
+"onboard/ad-ldap-groups-synchronization.html#configuring-the-group": 
         "https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html#configure-the-linked-group",
-    "onboard/ad-ldap-groups-synchronization.html#adding-default-teams-or-channels-for-the-group":
+"onboard/ad-ldap-groups-synchronization.html#adding-default-teams-or-channels-for-the-group": 
         "https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html#add-default-teams-or-channels-for-the-group",
-    "onboard/ad-ldap-groups-synchronization.html#synchronizing-teams-and-channels":
+"onboard/ad-ldap-groups-synchronization.html#synchronizing-teams-and-channels": 
         "https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html#synchronize-teams-and-channels",
-    "onboard/ad-ldap-groups-synchronization.html#removing-configured-teams-and-channels-from-a-group":
+"onboard/ad-ldap-groups-synchronization.html#removing-configured-teams-and-channels-from-a-group": 
         "https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html#remove-configured-teams-and-channels-from-a-group",
-    "onboard/ad-ldap-groups-synchronization.html#viewing-users-belonging-to-the-group":
+"onboard/ad-ldap-groups-synchronization.html#viewing-users-belonging-to-the-group": 
         "https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html#view-users-belonging-to-the-group",
-    "onboard/ad-ldap-groups-synchronization.html#disabling-and-re-activating-ad-ldap-users":
+"onboard/ad-ldap-groups-synchronization.html#disabling-and-re-activating-ad-ldap-users": 
         "https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html#disable-and-re-activate-ad-ldap-users",
-    "onboard/ad-ldap-groups-synchronization.html#managing-groups":
+"onboard/ad-ldap-groups-synchronization.html#managing-groups": 
         "https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html#manage-groups",
-    "onboard/ad-ldap-groups-synchronization.html#deleting-groups":
+"onboard/ad-ldap-groups-synchronization.html#deleting-groups": 
         "https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html#delete-groups",
-    "onboard/ad-ldap-groups-synchronization.html#managing-membership-of-a-team-or-channel-with-synchronized-groups":
+"onboard/ad-ldap-groups-synchronization.html#managing-membership-of-a-team-or-channel-with-synchronized-groups": 
         "https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html#use-ad-ldap-synchronized-groups-to-manage-team-or-private-channel-membership",
-    "onboard/ad-ldap-groups-synchronization.html#assigning-roles-to-group-members":
+"onboard/ad-ldap-groups-synchronization.html#assigning-roles-to-group-members": 
         "https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html#assign-roles-to-group-members",
-    "onboard/ad-ldap-groups-synchronization.html#managing-members":
+"onboard/ad-ldap-groups-synchronization.html#managing-members": 
         "https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html#manage-members",
-    "onboard/ad-ldap-groups-synchronization.html#disabling-group-synchronized-management-of-teams-and-private-channels":
+"onboard/ad-ldap-groups-synchronization.html#disabling-group-synchronized-management-of-teams-and-private-channels": 
         "https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html#disable-group-synchronized-management-of-teams-and-private-channels",
+"onboard/migrating.html#migrating-from-slack-using-the-mattermost-mmetl-tool-and-bulk-import":
+        "https://docs.mattermost.com/onboard/migrating-to-mattermost.html#use-the-mattermost-mmetl-tool-and-bulk-import",
+"onboard/migrating.html#migrating-from-slack-using-the-mattermost-web-app":
+        "https://docs.mattermost.com/onboard/migrating-to-mattermost.html#use-the-mattermost-web-app-deprecated",
+"onboard/migrating-to-mattermost.html#migrating-from-slack-using-the-mattermost-mmetl-tool-and-bulk-import":
+        "https://docs.mattermost.com/onboard/migrating-to-mattermost.html#use-the-mattermost-mmetl-tool-and-bulk-import",
 
-    # Overview redirects
-    "overview/architecture.html":
+# Overview redirects
+"overview/architecture.html":
         "https://docs.mattermost.com/getting-started/architecture-overview.html",
-    "overview/architecture#database-with-vips.html":
+"overview/architecture#database-with-vips.html":
         "https://docs.mattermost.com/getting-started/architecture-overview.html#database-with-vips",
-    "overview/architecture#reference-architectures.html":
+"overview/architecture#reference-architectures.html":
         "https://docs.mattermost.com/getting-started/architecture-overview.html#reference-architectures",
-    "overview/auth.html":
+"overview/auth.html":
         "https://docs.mattermost.com/about/corporate-directory-integration.html",
-    "overview/authentication.html":
+"overview/authentication.html":
         "https://docs.mattermost.com/onboard/multi-factor-authentication.html",
-    "overview/compliance.html":
+"overview/compliance.html":
         "https://docs.mattermost.com/about/certifications-and-compliance.html",
-    "overview/faq.html":
+"overview/faq.html":
         "https://docs.mattermost.com/about/frequently-asked-questions.html",
-    "overview/integrations.html":
+"overview/integrations.html":
         "https://docs.mattermost.com/about/integrations.html",
-    "overview/license-and-subscription.html":
+"overview/license-and-subscription.html":
         "https://docs.mattermost.com/about/subscription.html",
-    "overview/license-and-subscription.html#frequently-asked-questions":
+"overview/license-and-subscription.html#frequently-asked-questions":
         "https://docs.mattermost.com/about/subscription.html#frequently-asked-questions",
-    "overview/product.html":
-        "https://docs.mattermost.com/about/product.html",
-    "overview/product#mattermost-enterprise-edition-e10.html":
+"overview/product.html":
+	"https://docs.mattermost.com/about/product.html",
+"overview/product#mattermost-enterprise-edition-e10.html":
         "https://docs.mattermost.com/about/product.html#mattermost-enterprise-edition",
-    "overview/security.html":
+"overview/security.html":
         "https://docs.mattermost.com/about/security.html",
 
-    # Playbooks redirects
-    "playbooks/getting-started.html":
-        "https://docs.mattermost.com/playbooks/overview.html",
-    "playbooks/navigating-mattermost-playbooks.html":
+# Playbooks redirects
+"playbooks/getting-started.html":
+	"https://docs.mattermost.com/playbooks/overview.html",
+"playbooks/navigating-mattermost-playbooks.html":
         "https://docs.mattermost.com/welcome/what-changed-in-v60.html",
-    "playbooks/setting-up-playbooks.html":
-        "https://docs.mattermost.com/playbooks/customize-a-playbook.html",
-    "playbooks/running-playbooks.html":
-        "https://docs.mattermost.com/playbooks/customize-a-playbook.html",
-    "playbooks/refining-and-improving.html":
-        "https://docs.mattermost.com/playbooks/metrics-and-goals.html",
-    "playbooks/customize-a-playbook":
-        "https://docs.mattermost.com/playbooks/work-with-playbooks.html",
-    "playbooks/customize-a-run":
-        "https://docs.mattermost.com/playbooks/work-with-runs.html",
-    "playbooks/reusing-and-sharing-playbooks":
-        "https://docs.mattermost.com/playbooks/share-and-collaborate.html",
-    "playbooks/playbook-permissions":
-        "https://docs.mattermost.com/playbooks/share-and-collaborate.html#playbooks-permissions",
-    # Important Note: The following guide files were reorg'd in FY23 Q3.
-    "playbooks/overview.html":
+"playbooks/setting-up-playbooks.html":
+	"https://docs.mattermost.com/playbooks/customize-a-playbook.html",
+"playbooks/running-playbooks.html":
+	"https://docs.mattermost.com/playbooks/customize-a-playbook.html",
+"playbooks/refining-and-improving.html":
+	"https://docs.mattermost.com/playbooks/metrics-and-goals.html",
+"playbooks/customize-a-playbook.html":
+	"https://docs.mattermost.com/playbooks/work-with-playbooks.html",
+"playbooks/customize-a-run.html":
+	"https://docs.mattermost.com/playbooks/work-with-runs.html",
+"playbooks/reusing-and-sharing-playbooks.html":
+	"https://docs.mattermost.com/playbooks/share-and-collaborate.html",
+"playbooks/playbook-permissions.html":
+	"https://docs.mattermost.com/playbooks/share-and-collaborate.html#playbooks-permissions",
+# Important Note: The following guide files were reorg'd in FY23 Q3.
+"playbooks/overview.html":
         "https://docs.mattermost.com/repeatable-processes/learn-about-playbooks.html",
-    "playbooks/overview.html#what-s-a-playbook":
+"playbooks/overview.html#what-s-a-playbook":
         "https://docs.mattermost.com/repeatable-processes/learn-about-playbooks.html",
-    "playbooks/overview.html#what-s-a-run":
+"playbooks/overview.html#what-s-a-run":
         "https://docs.mattermost.com/repeatable-processes/learn-about-playbooks.html#what-s-a-run",
-    "playbooks/overview.html#keywords":
+"playbooks/overview.html#keywords":
         "https://docs.mattermost.com/repeatable-processes/learn-about-playbooks.html#keywords",
-    "playbooks/overview.html#welcome-message":
+"playbooks/overview.html#welcome-message":
         "https://docs.mattermost.com/repeatable-processes/learn-about-playbooks.html#welcome-message",
-    "playbooks/overview.html#tasks-and-checklists":
+"playbooks/overview.html#tasks-and-checklists":
         "https://docs.mattermost.com/repeatable-processes/learn-about-playbooks.html#tasks-and-checklists",
-    "playbooks/overview.html#status-updates":
+"playbooks/overview.html#status-updates":
         "https://docs.mattermost.com/repeatable-processes/learn-about-playbooks.html#status-updates",
-    "playbooks/overview.html#retrospective":
+"playbooks/overview.html#retrospective":
         "https://docs.mattermost.com/repeatable-processes/learn-about-playbooks.html#retrospective",
-    "playbooks/work-with-playbooks.html":
+"playbooks/work-with-playbooks.html":
         "https://docs.mattermost.com/repeatable-processes/work-with-playbooks.html",
-    "playbooks/work-with-playbooks.html#templates":
+"playbooks/work-with-playbooks.html#templates":
         "https://docs.mattermost.com/repeatable-processes/work-with-playbooks.html#templates",
-    "playbooks/work-with-playbooks.html#edit-a-playbook":
+"playbooks/work-with-playbooks.html#edit-a-playbook":
         "https://docs.mattermost.com/repeatable-processes/work-with-playbooks.html#edit-a-playbook",
-    "playbooks/work-with-playbooks.html#make-checklists":
+"playbooks/work-with-playbooks.html#make-checklists":
         "https://docs.mattermost.com/repeatable-processes/work-with-playbooks.html#make-checklists",
-    "playbooks/work-with-playbooks.html#multiple-runs-in-a-channel":
+"playbooks/work-with-playbooks.html#multiple-runs-in-a-channel":
         "https://docs.mattermost.com/repeatable-processes/work-with-playbooks.html#multiple-runs-in-a-channel",
-    "playbooks/work-with-playbooks.html#status-updates":
+"playbooks/work-with-playbooks.html#status-updates":
         "https://docs.mattermost.com/repeatable-processes/work-with-playbooks.html#status-updates",
-    "playbooks/work-with-playbooks.html#keywords":
+"playbooks/work-with-playbooks.html#keywords":
         "https://docs.mattermost.com/repeatable-processes/work-with-playbooks.html#keywords",
-    "playbooks/work-with-playbooks.html#actions":
+"playbooks/work-with-playbooks.html#actions":
         "https://docs.mattermost.com/repeatable-processes/work-with-playbooks.html#actions",
-    "playbooks/work-with-playbooks.html#run-metrics":
+"playbooks/work-with-playbooks.html#run-metrics":
         "https://docs.mattermost.com/repeatable-processes/work-with-playbooks.html#run-metrics",
-    "playbooks/work-with-playbooks.html#webhooks":
+"playbooks/work-with-playbooks.html#webhooks":
         "https://docs.mattermost.com/repeatable-processes/work-with-playbooks.html#webhooks",
-    "playbooks/work-with-runs.html":
+"playbooks/work-with-runs.html":
         "https://docs.mattermost.com/repeatable-processes/work-with-runs.html",
-    "playbooks/work-with-runs.html#follow-and-participate":
+"playbooks/work-with-runs.html#follow-and-participate":
         "https://docs.mattermost.com/repeatable-processes/work-with-runs.html#follow-and-participate",
-    "playbooks/work-with-runs.html#view-run-details":
+"playbooks/work-with-runs.html#view-run-details":
         "https://docs.mattermost.com/repeatable-processes/work-with-runs.html#view-run-details",
-    "playbooks/work-with-runs.html#runs-and-channel-behavior":
+"playbooks/work-with-runs.html#runs-and-channel-behavior":
         "https://docs.mattermost.com/repeatable-processes/work-with-runs.html#runs-and-channel-behavior",
-    "playbooks/work-with-runs.html#send-outgoing-webhooks":
+"playbooks/work-with-runs.html#send-outgoing-webhooks":
         "https://docs.mattermost.com/repeatable-processes/work-with-runs.html#send-outgoing-webhooks",
-    "playbooks/work-with-tasks.html":
+"playbooks/work-with-tasks.html":
         "https://docs.mattermost.com/repeatable-processes/work-with-tasks.html",
-    "playbooks/work-with-tasks.html#tasks-and-due-dates":
+"playbooks/work-with-tasks.html#tasks-and-due-dates":
         "https://docs.mattermost.com/repeatable-processes/work-with-tasks.html#tasks-and-due-dates",
-    "playbooks/work-with-tasks.html#task-actions":
+"playbooks/work-with-tasks.html#task-actions":
         "https://docs.mattermost.com/repeatable-processes/work-with-tasks.html#task-actions",
-    "playbooks/work-with-tasks.html#task-inbox":
+"playbooks/work-with-tasks.html#task-inbox":
         "https://docs.mattermost.com/repeatable-processes/work-with-tasks.html#task-inbox",
-    "playbooks/notifications-and-updates.html":
+"playbooks/notifications-and-updates.html":
         "https://docs.mattermost.com/repeatable-processes/notifications-and-updates.html",
-    "playbooks/notifications-and-updates.html#status-updates":
+"playbooks/notifications-and-updates.html#status-updates":
         "https://docs.mattermost.com/repeatable-processes/notifications-and-updates.html#status-updates",
-    "playbooks/notifications-and-updates.html#request-an-update":
+"playbooks/notifications-and-updates.html#request-an-update":
         "https://docs.mattermost.com/repeatable-processes/notifications-and-updates.html#request-an-update",
-    "playbooks/notifications-and-updates.html#follow-runs-and-playbooks":
+"playbooks/notifications-and-updates.html#follow-runs-and-playbooks":
         "https://docs.mattermost.com/repeatable-processes/notifications-and-updates.html#follow-runs-and-playbooks",
-    "playbooks/notifications-and-updates.html#daily-digest":
+"playbooks/notifications-and-updates.html#daily-digest":
         "https://docs.mattermost.com/repeatable-processes/notifications-and-updates.html#daily-digest",
-    "playbooks/notifications-and-updates.html#playbook-to-do":
+"playbooks/notifications-and-updates.html#playbook-to-do":
         "https://docs.mattermost.com/repeatable-processes/notifications-and-updates.html#playbook-to-do",
-    "playbooks/metrics-and-goals.html":
+"playbooks/metrics-and-goals.html":
         "https://docs.mattermost.com/repeatable-processes/metrics-and-goals.html",
-    "playbooks/metrics-and-goals.html#configure-retrospectives-before-a-run":
+"playbooks/metrics-and-goals.html#configure-retrospectives-before-a-run":
         "https://docs.mattermost.com/repeatable-processes/metrics-and-goals.html#configure-retrospectives-before-a-run",
-    "playbooks/metrics-and-goals.html#metrics":
+"playbooks/metrics-and-goals.html#metrics":
         "https://docs.mattermost.com/repeatable-processes/metrics-and-goals.html#metrics",
-    "playbooks/share-and-collaborate.html":
+"playbooks/share-and-collaborate.html":
         "https://docs.mattermost.com/repeatable-processes/share-and-collaborate.html",
-    "playbooks/share-and-collaborate.html#playbook-roles":
+"playbooks/share-and-collaborate.html#playbook-roles":
         "https://docs.mattermost.com/repeatable-processes/share-and-collaborate.html#playbook-roles",
-    "playbooks/share-and-collaborate.html#playbooks-permissions":
+"playbooks/share-and-collaborate.html#playbooks-permissions":
         "https://docs.mattermost.com/repeatable-processes/share-and-collaborate.html#playbooks-permissions",
-    "playbooks/share-and-collaborate.html#restrict-who-can-create-playbooks":
+"playbooks/share-and-collaborate.html#restrict-who-can-create-playbooks":
         "https://docs.mattermost.com/repeatable-processes/share-and-collaborate.html#restrict-who-can-create-playbooks",
-    "playbooks/share-and-collaborate.html#duplicate-a-playbook":
+"playbooks/share-and-collaborate.html#duplicate-a-playbook":
         "https://docs.mattermost.com/repeatable-processes/share-and-collaborate.html#duplicate-a-playbook",
-    "playbooks/share-and-collaborate.html#channel-export":
+"playbooks/share-and-collaborate.html#channel-export":
         "https://docs.mattermost.com/repeatable-processes/share-and-collaborate.html#channel-export",
-    "playbooks/interact-with-playbooks.html":
+"playbooks/interact-with-playbooks.html":
         "https://docs.mattermost.com/repeatable-processes/interact-with-playbooks.html",
-    "playbooks/interact-with-playbooks.html#slash-commands":
+"playbooks/interact-with-playbooks.html#slash-commands":
         "https://docs.mattermost.com/repeatable-processes/interact-with-playbooks.html#slash-commands",
-    "playbooks/interact-with-playbooks.html#api-documentation":
+"playbooks/interact-with-playbooks.html#api-documentation":
         "https://docs.mattermost.com/repeatable-processes/interact-with-playbooks.html#api-documentation",
-    "playbooks/work-with-playbooks.html":
+"playbooks/work-with-playbooks.html":
         "https://docs.mattermost.com/guides/repeatable-processes.html",
 
-    # Process redirects
-    # The process directory and its contents have been archived in FY23 Q2 and all applicable content has been moved from docs.mm.com to handbook.mm.com.
-    "process/accepting-pull-request.html":
+# Process redirects
+# The process directory and its contents have been archived in FY23 Q2 and all applicable content has been moved from docs.mm.com to handbook.mm.com.
+"process/accepting-pull-request.html":
         "https://handbook.mattermost.com/contributors/contributors/help-wanted",
-    "process/accepting-pull-requests.html":
+"process/accepting-pull-requests.html":
         "https://handbook.mattermost.com/contributors/contributors/help-wanted",
-    "process/asset-guidelines.html":
+"process/asset-guidelines.html":
         "https://handbook.mattermost.com/operations/messaging-and-math",
-    "process/BEFORE-YOU-GET-STARTED.html":
+"process/BEFORE-YOU-GET-STARTED.html":
         "https://github.com/mattermost/mattermost-handbook",
-    "process/benefits-canada.html":
+"process/benefits-canada.html":
         "https://handbook.mattermost.com/operations/workplace/people#key-channels-and-resources",
-    "process/benefits-us.html":
+"process/benefits-us.html":
         "https://handbook.mattermost.com/operations/workplace/people#key-channels-and-resources",
-    "process/bug-fix-release.html":
+"process/bug-fix-release.html":
         "https://handbook.mattermost.com/operations/research-and-development/product/release-process/bug-fix-release",
-    "process/bug-severity-guidelines.html":
+"process/bug-severity-guidelines.html":
         "https://handbook.mattermost.com/operations/research-and-development/product/development-process/new-bug-tickets/bug-severity-guidelines",
-    "process/casestudy.html":
+"process/casestudy.html":
         "https://handbook.mattermost.com/operations/messaging-and-math/how-to-guides-for-m-and-m/how-to-write-mattermost-case-studies",
-    "process/community-guidelines.html":
+"process/community-guidelines.html":
         "https://handbook.mattermost.com/contributors/contributors/community-playbook/",
-    "process/community-overview.html":
+"process/community-overview.html":
+	"https://handbook.mattermost.com/contributors/contributors/community",
+"process/community-process.html":
         "https://handbook.mattermost.com/contributors/contributors/community",
-    "process/community-process.html":
-        "https://handbook.mattermost.com/contributors/contributors/community",
-    "process/community-systems.html":
+"process/community-systems.html":
         "https://handbook.mattermost.com/contributors/contributors",
-    "process/deprecated-features.html":
+"process/deprecated-features.html":
         "https://handbook.mattermost.com/operations/research-and-development/product/development-process/deprecated-features",
-    "process/developer.html":
-        "https://handbook.mattermost.com",
-    "process/design-process.html":
+"process/developer.html":
+	"https://handbook.mattermost.com",
+"process/design-process.html":
         "https://handbook.mattermost.com/operations/research-and-development/product/product-design-team-handbook#overview",
-    "process/documentation-guidelines.html":
+"process/documentation-guidelines.html":
         "https://handbook.mattermost.com/operations/operations/publishing/publishing-guidelines/voice-tone-and-writing-style-guidelines/documentation-style-guide",
-    "process/documentation-UItext-guidelines.html":
+"process/documentation-UItext-guidelines.html":
         "https://handbook.mattermost.com/operations/research-and-development/product/development-process/user-interface-text-guidelines",
-    "process/dot-release.html":
+"process/dot-release.html":
         "https://handbook.mattermost.com/operations/research-and-development/product/release-process/dot-release",
-    "process/end-user-documentation.html":
+"process/end-user-documentation.html":
         "https://handbook.mattermost.com/operations/operations/company-processes/publishing/publishing-guidelines/voice-tone-and-writing-style-guidelines/documentation-style-guide#document-structure",
-    "process/engineer-expectations.html":
+"process/engineer-expectations.html":
         "https://handbook.mattermost.com/operations/workplace/people/working-at-mattermost/onboarding/engineer-onboarding",
-    "process/feature-release.html":
+"process/feature-release.html":
         "https://handbook.mattermost.com/operations/research-and-development/product/release-process/feature-release",
-    "process/guest-article.html":
+"process/guest-article.html":
         "https://handbook.mattermost.com/operations/messaging-and-math/how-to-guides-for-m-and-m/how-to-write-guest-blog-posts-for-mattermost-apps-and-services",
-    "process/handbook.html":
-        "https://handbook.mattermost.com/company/about-mattermost",
-    "process/help-wanted.html":
-        "https://handbook.mattermost.com/contributors/contributors/ways-to-contribute/help-wanted",
-    "process/how-to-run-a-hackaton.html":
+"process/handbook.html":
+	"https://handbook.mattermost.com/company/about-mattermost",
+"process/help-wanted.html":
+	"https://handbook.mattermost.com/contributors/contributors/ways-to-contribute/help-wanted",
+"process/how-to-run-a-hackaton.html":
         "https://handbook.mattermost.com/contributors/contributors/how-to-run-a-hackathon",
-    "process/integrations-directory.html":
+"process/integrations-directory.html":
         "https://handbook.mattermost.com/operations/research-and-development/product/how-to-guides-for-product/integrations-directory",
-    "process/marketing-guidelines.html":
+"process/marketing-guidelines.html":
         "https://handbook.mattermost.com/operations/messaging-and-math",
-    "process/mobile-release-process.html":
+"process/mobile-release-process.html":
         "https://handbook.mattermost.com/operations/research-and-development/product/release-process/mobile-release",
-    "process/new-bug-tickets.html":
+"process/new-bug-tickets.html":
         "https://handbook.mattermost.com/operations/research-and-development/product/development-process/new-bug-tickets",
-    "process/overview.html":
+"process/overview.html":
         "https://handbook.mattermost.com/operations/research-and-development/product/development-process",
-    "process/partner-programs.html":
+"process/partner-programs.html":
         "https://handbook.mattermost.com/operations/sales/partner-programs",
-    "process/people-ops.html":
+"process/people-ops.html":
         "https://handbook.mattermost.com/operations/workplace/people",
-    "process/pm-faq.html":
+"process/pm-faq.html":
         "https://handbook.mattermost.com/operations/research-and-development/product/product-management-team-handbook#frequently-asked-questions-faq",
-    "process/product-manager.html":
+"process/product-manager.html":
         "https://handbook.mattermost.com/contributors/join-us/staff-recruiting/product-manager-hiring",
-    "process/product-manager-hiring.html":
+"process/product-manager-hiring.html":
         "https://handbook.mattermost.com/contributors/join-us/recruiting-cadences/product-manager-hiring",
-    "process/release-faq.html":
+"process/release-faq.html":
         "https://handbook.mattermost.com/operations/research-and-development/product/release-process/release-overview",
-    "process/release-process.html":
+"process/release-process.html":
         "https://handbook.mattermost.com/operations/research-and-development/product/release-process/feature-release",
-    "process/release-scorecard-definitions.html":
+"process/release-scorecard-definitions.html":
         "https://handbook.mattermost.com/operations/research-and-development/product/release-process/release-scorecard-definitions",
-    "process/release-tips.html":
+"process/release-tips.html":
         "https://handbook.mattermost.com/operations/research-and-development/product/release-process/release-tips",
-    "process/security.html":
-        "https://handbook.mattermost.com/operations/operations/company-policies/security-policies",
-    "process/security-release.html":
+"process/security.html":
+	"https://handbook.mattermost.com/operations/operations/company-policies/security-policies",
+"process/security-release.html":
         "https://handbook.mattermost.com/operations/research-and-development/product/release-process/security-release",
-    "process/sg_document-structure.html":
+"process/sg_document-structure.html":
         "https://handbook.mattermost.com/operations/operations/company-processes/publishing/publishing-guidelines/voice-tone-and-writing-style-guidelines/documentation-style-guide#document-structure",
-    "process/sg_general-guidelines.html":
+"process/sg_general-guidelines.html":
         "https://handbook.mattermost.com/operations/operations/company-processes/publishing/publishing-guidelines/voice-tone-and-writing-style-guidelines/documentation-style-guide#document-structure",
-    "process/sg_grammar-spelling-mechanics.html":
+"process/sg_grammar-spelling-mechanics.html":
         "https://handbook.mattermost.com/operations/operations/company-processes/publishing/publishing-guidelines/voice-tone-and-writing-style-guidelines/documentation-style-guide#document-structure",
-    "process/sg_rest_markup.html":
+"process/sg_rest_markup.html":
         "https://handbook.mattermost.com/operations/operations/company-processes/publishing/publishing-guidelines/voice-tone-and-writing-style-guidelines/documentation-style-guide#document-structure",
-    "process/software-requirements.html":
+"process/software-requirements.html":
         "https://handbook.mattermost.com/operations/research-and-development/product/development-process/software-requirements",
-    "process/training.html":
+"process/training.html":
         "https://handbook.mattermost.com",
-    "process/working-at-mattermost.html":
-        "https://handbook.mattermost.com/operations/workplace/people/working-at-mattermost/onboarding/engineer-onboarding",
+"process/working-at-mattermost.html":
+	"https://handbook.mattermost.com/operations/workplace/people/working-at-mattermost/onboarding/engineer-onboarding",
 
-    # Upgrade redirects
-    "upgrade/upgrading-mattermost-server.html#prepare-to-upgrade-to-the-latest-version":
+# Upgrade redirects
+"upgrade/upgrading-mattermost-server.html#prepare-to-upgrade-to-the-latest-version":
         "https://docs.mattermost.com/upgrade/prepare-to-upgrade-mattermost.html",
-    "upgrade/upgrading-mattermost-server.html#upgrade-to-mattermost-v7-0":
+"upgrade/upgrading-mattermost-server.html#upgrade-to-mattermost-v7-0":
         "https://docs.mattermost.com/upgrade/prepare-to-upgrade-mattermost.html#upgrade-to-mattermost-v7-0",
-    "upgrade/upgrading-mattermost-server.html#upgrade-to-mattermost-v6-7":
+"upgrade/upgrading-mattermost-server.html#upgrade-to-mattermost-v6-7":
         "https://docs.mattermost.com/upgrade/prepare-to-upgrade-mattermost.html#upgrade-to-mattermost-v6-7",
-    "upgrade/upgrading-mattermost-server.html#upgrade-to-mattermost-v6-0":
+"upgrade/upgrading-mattermost-server.html#upgrade-to-mattermost-v6-0":
         "https://docs.mattermost.com/upgrade/prepare-to-upgrade-mattermost.html#upgrade-to-mattermost-v6-0",
-    "upgrade/upgrading-mattermost-server.html#v6-0-database-schema-migrations":
+"upgrade/upgrading-mattermost-server.html#v6-0-database-schema-migrations":
         "https://docs.mattermost.com/upgrade/prepare-to-upgrade-mattermost.html#v6-0-database-schema-migrations",
-    "upgrade/upgrading-mattermost-server.html#upgrade-from-releases-older-than-v5-35":
+"upgrade/upgrading-mattermost-server.html#upgrade-from-releases-older-than-v5-35":
         "https://docs.mattermost.com/upgrade/prepare-to-upgrade-mattermost.html#upgrade-from-releases-older-than-v5-35",
-    "upgrade/upgrading-mattermost-server.html#upgrade-high-availability-deployments":
+"upgrade/upgrading-mattermost-server.html#upgrade-high-availability-deployments":
         "https://docs.mattermost.com/upgrade/prepare-to-upgrade-mattermost.html#upgrade-high-availability-deployments",
 
-    # Welcome redirects
-    "welcome/manage-desktop-app-server-connections.html":
+# Welcome redirects
+"welcome/manage-desktop-app-server-connections.html":
         "https://docs.mattermost.com/welcome/manage-multiple-server-connections.html",
-    "welcome/insights.html":
-        "https://docs.mattermost.com/install/deprecated-features.html#mattermost-server-v9-0-0",
-    "welcome/log-in.html":
+"welcome/insights.html":
+        "https://docs.mattermost.com/deploy/deprecated-features.html#mattermost-server-v9-0-0",
+"welcome/log-in.html":
         "https://docs.mattermost.com/collaborate/access-your-workspace.html",
-    "welcome/keyboard-shortcuts.html":
+"welcome/keyboard-shortcuts.html":
         "https://docs.mattermost.com/collaborate/keyboard-shortcuts.html",
-    "welcome/log-out.html":
-        "https://docs.mattermost.com/build/html/collaborate/log-out.html",
-    "welcome/get-started-mattermost-channels.html":
+"welcome/log-out.html":
+        "https://docs.mattermost.com/collaborate/log-out.html",
+"welcome/get-started-mattermost-channels.html":
         "https://docs.mattermost.com/guides/collaborate.html",
-    "welcome/manage-custom-groups.html":
+"welcome/manage-custom-groups.html":
         "https://docs.mattermost.com/collaborate/organize-using-custom-user-groups.html",
-    "welcome/about-teams.html":
+"welcome/about-teams.html":
         "https://docs.mattermost.com/collaborate/organize-using-teams.html",
-    "welcome/about-teams.html#single-team-versus-multiple-teams":
-        "https://docs.mattermost.com/organize-using-teams.html#single-team-versus-multiple-teams",
-    "welcome/about-teams.html#team-sidebar":
+"welcome/about-teams.html#single-team-versus-multiple-teams":
+        "https://docs.mattermost.com/collaborate/organize-using-teams.html#single-team-versus-multiple-teams",
+"welcome/about-teams.html#team-sidebar":
         "https://docs.mattermost.com/collaborate/organize-using-teams.html#team-sidebar",
-    "welcome/about-teams.html#create-a-team":
+"welcome/about-teams.html#create-a-team":
         "https://docs.mattermost.com/collaborate/organize-using-teams.html#create-a-team",
-    "welcome/about-teams.html#join-a-team":
+"welcome/about-teams.html#join-a-team":
         "https://docs.mattermost.com/collaborate/organize-using-teams.html#join-a-team",
-    "welcome/about-teams.html#invite-people-to-teams":
+"welcome/about-teams.html#invite-people-to-teams":
         "https://docs.mattermost.com/collaborate/invite-people.html",
-    "welcome/about-teams.html#remove-people-from-teams":
+"welcome/about-teams.html#remove-people-from-teams":
         "https://docs.mattermost.com/collaborate/organize-using-teams.html#remove-people-from-teams",
-    "welcome/about-teams.html#leave-a-team":
+"welcome/about-teams.html#leave-a-team":
         "https://docs.mattermost.com/collaborate/organize-using-teams.html#leave-a-team",
-    "welcome/team-settings.html":
+"welcome/team-settings.html":
         "https://docs.mattermost.com/collaborate/team-settings.html",
-    "welcome/team-settings.html#general":
+"welcome/team-settings.html#general":
         "https://docs.mattermost.com/collaborate/team-settings.html#general",
-    "welcome/team-settings.html#import":
+"welcome/team-settings.html#import":
         "https://docs.mattermost.com/collaborate/team-settings.html#import",
-    "welcome/team-keyboard-shortcuts.html":
+"welcome/team-keyboard-shortcuts.html":
         "https://docs.mattermost.com/collaborate/team-keyboard-shortcuts.html",
-    "welcome/team-keyboard-shortcuts.html#navigation-shortcuts-for-mattermost-channels":
+"welcome/team-keyboard-shortcuts.html#navigation-shortcuts-for-mattermost-channels":
         "https://docs.mattermost.com/collaborate/keyboard-shortcuts.html",
-    "welcome/about-user-roles.html":
+"welcome/about-user-roles.html":
         "https://docs.mattermost.com/collaborate/learn-about-roles.html",
-    "welcome/about-user-roles.html#system-admin":
+"welcome/about-user-roles.html#system-admin":
         "https://docs.mattermost.com/collaborate/learn-about-roles.html#system-admin",
-    "welcome/about-user-roles.html#team-admin":
+"welcome/about-user-roles.html#team-admin":
         "https://docs.mattermost.com/collaborate/learn-about-roles.html#team-admin",
-    "welcome/about-user-roles.html#channel-admin":
+"welcome/about-user-roles.html#channel-admin":
         "https://docs.mattermost.com/collaborate/learn-about-roles.html#channel-admin",
-    "welcome/about-user-roles.html#member":
+"welcome/about-user-roles.html#member":
         "https://docs.mattermost.com/collaborate/learn-about-roles.html#member",
-    "welcome/about-user-roles.html#guest":
+"welcome/about-user-roles.html#guest":
         "https://docs.mattermost.com/collaborate/learn-about-roles.html#guest",
-    "welcome/about-user-roles.html#user-with-personal-access-token-permission":
+"welcome/about-user-roles.html#user-with-personal-access-token-permission":
         "https://docs.mattermost.com/collaborate/learn-about-roles.html#grant-personal-access-tokens",
-    "welcome/about-user-roles.html#deactivate-users":
+"welcome/about-user-roles.html#deactivate-users":
         "https://docs.mattermost.com/configure/user-management-configuration-settings.html#deactivate-user-accounts",
-    "welcome/add-people.html":
+"welcome/add-people.html":
         "https://docs.mattermost.com/configure/user-management-configuration-settings.html#users",
-    "welcome/manage-your-profile.html":
+"welcome/manage-your-profile.html":
         "https://docs.mattermost.com/preferences/manage-your-profile.html",
-    "welcome/manage-your-profile.html#profile":
+"welcome/manage-your-profile.html#profile":
         "https://docs.mattermost.com/preferences/manage-your-profile.html",
-    "welcome/manage-your-profile.html#security":
+"welcome/manage-your-profile.html#security":
         "https://docs.mattermost.com/preferences/manage-your-security-preferences.html",
-    "welcome/set-your-status-availability.html":
+"welcome/set-your-status-availability.html":
         "https://docs.mattermost.com/preferences/set-your-status-availability.html",
-    "welcome/set-your-status-availability.html#set-a-custom-status":
+"welcome/set-your-status-availability.html#set-a-custom-status":
         "https://docs.mattermost.com/preferences/set-your-status-availability.html#set-a-custom-status",
-    "welcome/set-your-status-availability.html#clear-a-custom-status":
+"welcome/set-your-status-availability.html#clear-a-custom-status":
         "https://docs.mattermost.com/preferences/set-your-status-availability.html#clear-a-custom-status",
-    "welcome/set-your-status-availability.html#set-your-availability":
+"welcome/set-your-status-availability.html#set-your-availability":
         "https://docs.mattermost.com/preferences/set-your-status-availability.html#set-your-availability",
-    "welcome/set-your-status-availability.html#set-your-availability-as-do-not-disturb":
+"welcome/set-your-status-availability.html#set-your-availability-as-do-not-disturb":
         "https://docs.mattermost.com/preferences/set-your-status-availability.html#set-your-availability-as-do-not-disturb",
-    "welcome/set-your-status-availability.html#how-mattermost-determines-your-availability":
-        "https://docs.mattermost.com/preferences/set-your-status-availability.html#how-mattermost-determines-your-availability",
-    "welcome/customize-your-theme.html":
+"welcome/set-your-status-availability.html#how-mattermost-determines-your-availability":
+        "https://docs.mattermost.com/preferences/set-your-status-availability.html#set-your-availability",
+"welcome/customize-your-theme.html":
         "https://docs.mattermost.com/preferences/customize-your-theme.html",
-    "welcome/customize-your-theme.html#import-theme-from-slack":
+"welcome/customize-your-theme.html#import-theme-from-slack":
         "https://docs.mattermost.com/preferences/customize-your-theme.html#import-theme-from-slack",
-    "welcome/customize-your-theme.html#custom-themes":
+"welcome/customize-your-theme.html#custom-themes":
         "https://docs.mattermost.com/preferences/customize-your-theme.html#custom-themes",
-    "welcome/customize-your-theme.html#standard-themes":
+"welcome/customize-your-theme.html#standard-themes":
         "https://docs.mattermost.com/preferences/customize-your-theme.html",
-    "welcome/customize-your-theme.html#export-a-custom-theme":
+"welcome/customize-your-theme.html#export-a-custom-theme":
         "https://docs.mattermost.com/preferences/customize-your-theme.html",
-    "welcome/customize-your-theme.html#import-a-custom-theme":
+"welcome/customize-your-theme.html#import-a-custom-theme":
         "https://docs.mattermost.com/preferences/customize-your-theme.html",
-    "welcome/customize-your-theme.html#custom-theme-examples":
+"welcome/customize-your-theme.html#custom-theme-examples":
         "https://docs.mattermost.com/preferences/customize-your-theme.html",
-    "welcome/customize-your-theme.html#dark-theme-desktop-app-only":
+"welcome/customize-your-theme.html#dark-theme-desktop-app-only":
         "https://docs.mattermost.com/preferences/customize-your-theme.html#dark-theme-desktop-app-only",
-    "welcome/customize-desktop-app-experience.html":
+"welcome/customize-desktop-app-experience.html":
         "https://docs.mattermost.com/preferences/customize-desktop-app-experience.html",
-    "welcome/manage-multiple-server-connections.html":
+"welcome/manage-multiple-server-connections.html":
         "https://docs.mattermost.com/preferences/connect-multiple-workspaces.html",
-    "welcome/what-changed-in-v70.html":
+"welcome/what-changed-in-v70.html":
         "https://docs.mattermost.com/guides/deployment.html#changelogs",
-    "welcome/what-changed-in-v60.html":
+"welcome/what-changed-in-v60.html":
         "https://docs.mattermost.com/guides/deployment.html#changelogs",
-    "welcome/whats-new-in-v72.html":
-        "https://github.com/mattermost/focalboard/blob/product-docs/docs/focalboard-plugin-end-user-guide.md",
-    "welcome/keyboard-shortcuts.html#navigation-shortcuts-in-the-desktop-app":
+"welcome/whats-new-in-v72.html":
+        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
+"welcome/keyboard-shortcuts.html#navigation-shortcuts-in-the-desktop-app":
         "https://docs.mattermost.com/collaborate/keyboard-shortcuts.html#navigation-in-the-desktop-app",
-    "welcome/keyboard-shortcuts.html#zoom-shortcuts-for-web-and-desktop-app":
+"welcome/keyboard-shortcuts.html#zoom-shortcuts-for-web-and-desktop-app":
         "https://docs.mattermost.com/collaborate/keyboard-shortcuts.html#zoom-in-zoom-out-display",
-    "welcome/log-out.html#frequently-asked-questions":
+"welcome/log-out.html#frequently-asked-questions":
         "https://docs.mattermost.com/collaborate/log-out.html#frequently-asked-questions",
-    "welcome/log-in.html#reset-your-password":
+"welcome/log-in.html#reset-your-password":
         "https://docs.mattermost.com/collaborate/access-your-workspace.html#reset-your-password",
-    "welcome/log-in.html#email-address-or-username":
+"welcome/log-in.html#email-address-or-username":
         "https://docs.mattermost.com/collaborate/access-your-workspace.html#email-address-or-username",
-    "welcome/log-in.html#single-sign-on-sso":
+"welcome/log-in.html#single-sign-on-sso":
         "https://docs.mattermost.com/collaborate/access-your-workspace.html#single-sign-on-sso",
-    "welcome/get-started-mattermost-channels.html#channels-and-direct-messages":
+"welcome/get-started-mattermost-channels.html#channels-and-direct-messages":
         "https://docs.mattermost.com/collaborate/collaborate-within-channels.html#you-re-added-to-default-channels-automatically",
-    "welcome/get-started-mattermost-channels.html#create-and-join-channels":
+"welcome/get-started-mattermost-channels.html#create-and-join-channels":
         "https://docs.mattermost.com/collaborate/collaborate-within-channels.html#learn-more",
-    "welcome/get-started-mattermost-channels.html#invite-people-to-the-team":
+"welcome/get-started-mattermost-channels.html#invite-people-to-the-team":
         "https://docs.mattermost.com/collaborate/invite-people.html",
-    "welcome/get-started-mattermost-channels.html#send-messages":
+"welcome/get-started-mattermost-channels.html#send-messages":
         "https://docs.mattermost.com/collaborate/send-messages.html",
-    "welcome/get-started-mattermost-channels.html#customize-your-mattermost-experience":
+"welcome/get-started-mattermost-channels.html#customize-your-mattermost-experience":
         "https://docs.mattermost.com/guides/preferences.html",
-    "welcome/manage-custom-groups.html#create-a-custom-group":
+"welcome/manage-custom-groups.html#create-a-custom-group":
         "https://docs.mattermost.com/collaborate/organize-using-custom-user-groups.html#create-a-custom-group",
-    "welcome/manage-custom-groups.html#review-group-members":
+"welcome/manage-custom-groups.html#review-group-members":
         "https://docs.mattermost.com/collaborate/organize-using-custom-user-groups.html#review-group-members",
-    "welcome/manage-custom-groups.html#manage-custom-user-groups":
+"welcome/manage-custom-groups.html#manage-custom-user-groups":
         "https://docs.mattermost.com/collaborate/organize-using-custom-user-groups.html#manage-custom-user-groups",
-    "welcome/add-people.html#add-people-on-demand":
-        "https://docs.mattermost.com/collaborate/invite-people.html"
+"welcome/add-people.html#add-people-on-demand":
+        "https://docs.mattermost.com/collaborate/invite-people.html",
+"welcome/sign-in.html":
+        "https://docs.mattermost.com/collaborate/access-your-workspace.html",
+"welcome/sign-in.html#email-address-or-username":
+        "https://docs.mattermost.com/collaborate/access-your-workspace.html#email-address-or-username",
+"welcome/sign-in.html#reset-your-password":
+        "https://docs.mattermost.com/collaborate/access-your-workspace.html#reset-your-password",
+"welcome/sign-in.html#single-sign-on-sso":
+        "https://docs.mattermost.com/collaborate/access-your-workspace.html#single-sign-on-sso"
 
-    # End of redirects. The last redirect above should NOT end in a comma.
+# End of redirects. The last redirect above should NOT end in a comma.
 
 }

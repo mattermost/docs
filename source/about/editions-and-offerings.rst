@@ -46,11 +46,17 @@ For customers using our service in a self-hosted deployment, the Mattermost Free
 The Mattermost Professional and Mattermost Enterprise editions are only available after deploying our Mattermost Enterprise Edition code base, and then applying a valid license key that comes with a subscription purchase, or by starting a 30-day free trial that can be activated either in-product (**System Console > Edition and License > Start trial**) or online at https://mattermost.com/trial/.
 
 Mattermost Free (Self-Hosted only)
----------------------------------------------
+----------------------------------
 
 Mattermost Free is a set of collaboration features for accelerating your technical team’s productivity, shipping software faster with higher quality, and improving alignment among team members.
 
-Mattermost Free is available to our self-hosted community through both our open source Mattermost Team Edition offering, and in our commercial Mattermost Enterprise Edition offering (when no subscription license key is active). See deployment options at: https://mattermost.com/deploy/.
+Mattermost Free is available to our self-hosted community through both our open source Mattermost Team Edition offering, and in our commercial Mattermost Enterprise Edition offering (when no subscription license key is active). It is best suited for teams of up to 50 members. See deployment options at: https://mattermost.com/deploy/.
+
+.. important::
+
+    For teams of less than 50 users, a standalone, single-node deployment of `Mattermost Team Edition <#mattermost-team-edition>`__ with frequent backups is appropriate.
+    
+    For teams larger than 50 users, it's strongly advised to deploy Mattermost with `Mattermost Professional <#mattermost-professional>`__ or `Mattermost Enterprise <#mattermost-enterprise>`__ to deliver a more secure, reliable, scalable, and resilient service.
 
 Features include:
 
@@ -60,7 +66,7 @@ Features include:
 - Pre-packaged integrations with most common developer tools, including Jira, Confluence, GitHub, GitLab, CircleCI, Zoom, Jitsi, and more.
 - Tools for `custom branding </configure/custom-branding-tools.html>`__ and `themes </messaging/customizing-theme-colors.html>`__.
 - `Multi-factor authentication </onboard/multi-factor-authentication.html>`__.
-- `Single Sign-on with GitLab </onboard/sso-gitlab.html>`__ , `Google </onboard/sso-google.html>`, or `OpenID Connect </onboard/sso-openidconnect.html>`__.
+- Single Sign-on with `GitLab </onboard/sso-gitlab.html>`__ using the OAuth 2.0 standard.
 - `Granular system permissions </onboard/advanced-permissions.html>`__.
 - Highly customizable `third-party bots, integrations <https://mattermost.com/marketplace/#publicApps>`__, and `command line tools </manage/mmctl-command-line-tool.html>`__.
 - Extensive integration support via `webhooks, APIs, drivers <https://developers.mattermost.com/integrate/other-integrations/>`__, and `third-party extensions <https://mattermost.com/marketplace/>`__.
@@ -81,7 +87,7 @@ This offering includes all the features of Mattermost Free, plus:
 
 - `Guest access </onboard/guest-accounts.html>`__ and `custom user groups </collaborate/organize-using-custom-user-groups.html>`__.
 - `Active Directory/LDAP Single Sign-on and user synchronization </onboard/ad-ldap.html>`__.
-- Single Sign-on with `SAML </onboard/sso-saml.html>`__ or `Office365 </onboard/sso-office.html>`__.
+- Single Sign-on with `GitLab </onboard/sso-gitlab.html>`__ using the OpenID Connect standard, `Google </onboard/sso-google.html>`__, `OpenID Connect </onboard/sso-openidconnect.html>`__, `SAML </onboard/sso-saml.html>`__ or `Office365 </onboard/sso-office.html>`__.
 - `MFA enforcement </onboard/multi-factor-authentication.html#enforcing-mfa-e10>`__.
 - `Advanced team permissions </onboard/advanced-permissions.html#team-override-schemes-e20>`__.
 - `Read-only announcement channels </manage/team-channel-members.html#channel-moderation-e20>`__.

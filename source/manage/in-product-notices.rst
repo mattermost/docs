@@ -6,15 +6,13 @@ In-product notices
 
 Mattermost in-product notices keep users and administrators informed of the newest product improvements, features, and releases.
 
+.. contents:: On this page
+  :local:
+
 Administrator notices
 ---------------------
 
-Administrator notices inform System Admins when:
-
-- A new Mattermost Server version is available, and when upgrades are required due to ending support life cycles.
-- External dependencies are being deprecated.
-- Mattermost recommends Server configuration options to optimize the user's product experience.
-- Mattermost is gathering user feedback to improve the product and user experience.
+Administrator notices inform System Admins when a new server version is available, when external dependencies are being deprecated, or when server upgrades are recommended due to ending support life cycles. System Admins may also receive notices about recommended server configuration options to optimize the user experience of their deployment.
 
 .. image:: ../images/notices_admin.png
    :alt: An example of an in-product administrator notice announcing that a new server version of Mattermost is available. Admin notices can be disabled.

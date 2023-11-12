@@ -49,6 +49,14 @@ Format messages
 .. |message-priority-icon| image:: ../images/Priority-Message-Icon.svg
   :alt: Mark a message as important or urgent using the Priority Message icon.
 
+.. contents:: On this page
+  :backlinks: top
+  :local:
+  :depth: 2
+
+.. include:: ../_static/badges/academy-message-formatting.rst
+  :start-after: :nosearch:
+
 Use the messaging formatting toolbar
 ------------------------------------
 
@@ -273,7 +281,6 @@ Example:
       fmt.Println("Hello, 世界")
   }
   ```
-
 Renders as:
 
 **GitHub Theme**
