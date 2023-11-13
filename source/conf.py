@@ -2196,7 +2196,7 @@ redirects = {
 "install/desktop-custom-dictionaries.html#removing-customized-dictionaries":
         "https://docs.mattermost.com/install/desktop-custom-dictionaries.html#remove-custom-dictionaries",
 "install/self-managed-changelog.html":
-        "https://docs.mattermost.com/deploy/legacy-mattermost-changelog.html",
+        "https://docs.mattermost.com/deploy/legacy-self-hosted-changelog.html",
 "install/legacy-self-hosted-changelog.html":
         "https://docs.mattermost.com/deploy/legacy-mattermost-changelog.html",
 "install/cloud-changelog.html":
@@ -2208,6 +2208,10 @@ redirects = {
         "https://docs.mattermost.com/collaborate/install-ios-app.html",
 "install/install-android-app.html":
         "https://docs.mattermost.com/collaborate/install-android-app.html",
+"install/legacy-self-hosted-changelog.html":
+	"https://docs.mattermost.com/deploy/legacy-self-hosted-changelog.html",
+"install/desktop-app-changelog.html":
+	"https://docs.mattermost.com/deploy/desktop-app-changelog.html",
 
 # Integrations redirects.
 # The integrations directory and its contents have been archived in FY23 Q2 and all applicable content has been moved from docs.mm.com to developers.mm.com.
