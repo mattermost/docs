@@ -1,9 +1,6 @@
 :orphan:
 :nosearch:
 
-Frequently Asked Questions
---------------------------
-
 What's the difference between the Mattermost Operator and Helm Charts?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

@@ -8,7 +8,6 @@ Install Mattermost on Kubernetes
 
 .. contents:: On this page
   :backlinks: top
-  :local:
 
 You can install and deploy a production-ready Mattermost system on a Kubernetes cluster using the Mattermost Kubernetes Operator in practically any environment with less IT overhead and more automation.
 
@@ -19,7 +18,8 @@ You'll need a `Kubernetes cluster <https://kubernetes.io/docs/setup/>`__ running
     - If you’re unsure about which environment you want to use for your Kubernetes cluster, we suggest using a managed service such as as `Amazon EKS <https://aws.amazon.com/eks/>`__, `Azure Kubernetes Service <https://azure.microsoft.com/en-ca/services/kubernetes-service/>`__, `Google Kubernetes Engine <https://cloud.google.com/kubernetes-engine/>`__, or `DigitalOcean Kubernetes <https://www.digitalocean.com/products/kubernetes/>`__.
     - Looking for a quick way to evaluate Mattermost or to try out the latest Mattermost deployment? See this article for details on creating your own Mattermost instance on Kubernetes using Minicube: https://medium.com/@Erez.Tamam/create-your-own-mattermost-instance-on-kubernetes-in-10-minutes-d13f576ed794.
 
-**Install the operators**
+Install the operators
+---------------------
 
 Operators are installed using ``kubectl``, and each operator is created in its own namespace. You can install and run multiple Mattermost installations in the same cluster using different namespaces.
 
@@ -36,7 +36,8 @@ Operators are installed using ``kubectl``, and each operator is created in its o
 
     To install the operators using the Mattermost Operator Helm chart, follow the instructions `here <https://github.com/mattermost/mattermost-helm/tree/master/charts/mattermost-operator>`__.
 
-**Deploy Mattermost**
+Deploy Mattermost
+-----------------
   
 1. (Mattermost Enterprise only) Create a Mattermost license secret by opening a text editor and creating a secret manifest containing the Mattermost license. Replace ``[LICENSE_FILE_CONTENTS]`` below with the contents of your Mattermost license file. Save the file as ``mattermost-license-secret.yaml``.
 
@@ -256,7 +257,11 @@ Operators are installed using ``kubectl``, and each operator is created in its o
 
   Then navigate to http://localhost:8065.
 
+Frequently asked questions
+--------------------------
 
+.. include:: faq_kubernetes.rst
+  :start-after: :nosearch:
 
 
 
