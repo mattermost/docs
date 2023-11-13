@@ -6135,6 +6135,10 @@ mmctl user migrate-auth
 
 Migrate accounts from one authentication provider to another. For example, you can upgrade your authentication provider from email to LDAP.
 
+.. note::
+
+   We recommend using the `UpdateUserAuth <https://api.mattermost.com/#tag/users/operation/UpdateUserAuth>`__ API endpoint instead to avoid forcing all users to reset their Mattermost passwords.
+
 **Format**
 
 .. code-block:: sh
