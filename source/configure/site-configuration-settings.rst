@@ -347,10 +347,10 @@ Default server language
 +--------------------------------------------------------------------------------+---------------------------------------------------------------------------+
 | The default language for system messages and logs.                             | - System Config path: **Site Configuration > Localization**               |
 |                                                                                | - ``config.json`` setting: ``.LocalizationSettings.DefaultServerLocale``  |
-| Options: ``"bg"``, ``"de"``, ``"en"``, ``en-AU``, ``"es"``, ``"fa"``,          | - Environment variable: ``MM_LOCALIZATIONSETTINGS_DEFAULTSERVERLOCALE``   |
+| Options: ``"bg"``, ``"de"``, ``"en"``, ``"en-AU"``, ``"es"``, ``"fa"``,        | - Environment variable: ``MM_LOCALIZATIONSETTINGS_DEFAULTSERVERLOCALE``   |
 | ``"fr"``, ``"hu"``, ``"it"``, ``"ja"``, ``"ko"``, ``"nl"``, ``"pl"``,          |                                                                           |
-| ``"pt-br"``, ``"ro"``, ``"ru"``, ``"sv"``, ``"tr"``, ``uk``, ``"zh_CN"``,      |                                                                           |
-| and ``"zh_TW"``.                                                               |                                                                           |
+| ``"pt-br"``, ``"ro"``, ``"ru"``, ``"sv"``, ``"tr"``, ``"uk"``, ``"vi"``,       |                                                                           |
+| ``"zh_CN"``, and ``"zh_TW"``.                                                  |                                                                           |
 |                                                                                |                                                                           |
 | Default is ``"en"``.                                                           |                                                                           |
 +--------------------------------------------------------------------------------+---------------------------------------------------------------------------+
@@ -368,10 +368,10 @@ Default client language
 +--------------------------------------------------------------------------------+---------------------------------------------------------------------------+
 | The default language for new users and pages where the user isn't logged in.   | - System Config path: **Site Configuration > Localization**               |
 |                                                                                | - ``config.json`` setting: ``.LocalizationSettings.DefaultClientLocale``  |
-| Options: ``"bg"``, ``"de"``, ``"en"``, ``en-AU``, ``"es"``, ``"fa"``,          | - Environment variable: ``MM_LOCALIZATIONSETTINGS_DEFAULTCLIENTLOCALE``   |
+| Options: ``"bg"``, ``"de"``, ``"en"``, ``"en-AU"``, ``"es"``, ``"fa"``,        | - Environment variable: ``MM_LOCALIZATIONSETTINGS_DEFAULTCLIENTLOCALE``   |
 | ``"fr"``, ``"hu"``, ``"it"``, ``"ja"``, ``"ko"``, ``"nl"``, ``"pl"``,          |                                                                           |
-| ``"pt-br"``, ``"ro"``, ``"ru"``, ``"sv"``, ``"tr"``, ``uk``, ``"zh_CN"``,      |                                                                           |
-| and ``"zh_TW"``.                                                               |                                                                           |
+| ``"pt-br"``, ``"ro"``, ``"ru"``, ``"sv"``, ``"tr"``, ``"uk"``, ``"vi"``,       |                                                                           |
+| ``"zh_CN"``, and ``"zh_TW"``.                                                  |                                                                           |
 |                                                                                |                                                                           |
 | Default is ``"en"``.                                                           |                                                                           |
 +--------------------------------------------------------------------------------+---------------------------------------------------------------------------+
@@ -394,10 +394,10 @@ Available languages
 | in addition to any other languages. For example, to limit the language         |                                                                           |
 | choices to US English and Español (es), the string would be ``”en,es”``.       |                                                                           |
 |                                                                                |                                                                           |
-| Options: ``"bg"``, ``"de"``, ``"en"``, ``en-AU``, ``"es"``, ``"fa"``,          |                                                                           |
+| Options: ``"bg"``, ``"de"``, ``"en"``, ``"en-AU"``, ``"es"``, ``"fa"``,        |                                                                           |
 | ``"fr"``, ``"hu"``, ``"it"``, ``"ja"``, ``"ko"``, ``"nl"``, ``"pl"``,          |                                                                           |
-| ``"pt-br"``, ``"ro"``, ``"ru"``, ``"sv"``, ``"tr"``, ``uk``, ``"zh_CN"``,      |                                                                           |
-| and ``"zh_TW"``.                                                               |                                                                           |
+| ``"pt-br"``, ``"ro"``, ``"ru"``, ``"sv"``, ``"tr"``, ``"uk"``, ``"vi"``,       |                                                                           |
+| ``"zh_CN"``, and ``"zh_TW"``.                                                 |                                                                           |
 |                                                                                |                                                                           |
 | Default is ``"en"``.                                                           |                                                                           |
 +--------------------------------------------------------------------------------+---------------------------------------------------------------------------+
