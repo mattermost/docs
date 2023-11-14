@@ -28,8 +28,8 @@ From Mattermost v9.2, this changelog summarizes updates for the latest cloud and
 ### Improvements
 
 #### User Interface (UI)
- - Updated pre-packaged Playbooks plugin version to v1.39.1.
- - Updated pre-packaged Calls version v0.21.0.
+ - Updated pre-packaged Playbooks plugin version to [v1.39.1](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v1.39.1).
+ - Updated pre-packaged Calls version [v0.21.0](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v0.21.0).
  - Added Vietnamese (Beta) as a new language.
  - Added support for custom keywords with highlights without a notification.
  - Updated the **Settings** modal with an improved user interface.
@@ -39,9 +39,9 @@ From Mattermost v9.2, this changelog summarizes updates for the latest cloud and
  - Added a **Back** button to the ``/access_problem`` page.
 
 #### Performance
- - Added an API to batch requests for custom emojis on page load.
  - Removed pre-fetch preference and set new prefetch limits for the webapp.
  - Improved websocket event marshaling performance.
+ - Batched loading of recently used emojis on initial load.
 
 #### Administration
  - The tooltip on the announcement bar in the **System Console** is now widened.
@@ -50,11 +50,9 @@ From Mattermost v9.2, this changelog summarizes updates for the latest cloud and
  - Performed a cleanup in preparation for adding support for multi-word mentions.
  - Added a warning log message when the app runs as root.
  - Removed all uses of ``ExperimentalTimezone`` in webapp.
- - Batched loading of recently used emojis on initial load.
  - Added support for previewing WebVTT attachments.
  - Introduced separate ``AdvancedLogging`` levels for LDAP messages.
  - Introduced trace logging level for LDAP messages.
- - ``NextSyncAt`` and ``Description`` columns are removed from the ``SharedChannelsRemotes`` table. Migration impact is considered to be minimal considering the possible table size.
  - Added a new way to modify ``WebSocket`` messages sent to individual connections.
  - Added a new server side hook ``MessagesWillBeConsumed`` to allow modifying post objects after they are grabbed from the database but before they are delivered to the client. This is behind a feature flag and disabled by default.
  - Users and posts are now pretty-printed in the logs.
@@ -85,10 +83,13 @@ From Mattermost v9.2, this changelog summarizes updates for the latest cloud and
  - Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
 
 #### Changes to all plans:
- - Removed all instances of ``DisplaySettings.ExperimentalTimezone``. 
+ - Removed ``DisplaySettings.ExperimentalTimezone`` setting. 
 
 ### API Changes
- - 
+ - Added an API to batch requests for custom emojis on page load.
+
+### Database Changes
+ - ``NextSyncAt`` and ``Description`` columns are removed from the ``SharedChannelsRemotes`` table. Migration impact is considered to be minimal considering the possible table size.
 
 ### Go Version
  - v9.3 is built with Go ``v1.20.7``.
