@@ -17,6 +17,66 @@ From Mattermost v9.2, this changelog summarizes updates for the latest cloud and
 
 ## Release v9.3 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
 
+**Release Date: December 16, 2023**
+
+### Important Upgrade Notes
+ - Please read the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) before upgrading.
+
+### Compatibility
+ - 
+
+### Improvements
+
+#### User Interface (UI)
+ - 
+
+#### Administration
+ - 
+
+### Bug Fixes
+ - Fixed an issue where marking a Group Message as unread didn't show the mention badges correctly.
+ - Fixed an issue where ``invite_id`` was being reset on all team changes.
+ - Fixed an issue where interactive dialog elements with subtype ``number`` didn't handle a 0 value properly.
+ - Fixed an issue with the download link in channel file search items when including a path in the **Site URL** setting.
+ - Fixed an issue with the formatting of special mentions in the right-hand side.
+ - Fixed ``MessageWillBeUpdated`` plugin hook to allow rejections.
+ - Fixed an issue with some shortcuts not working as expected.
+ - Fixed the message history not clearing the input on the center channel.
+ - Fixed an issue where a higher contrast was generated for some usernames.
+ - Fixed an issue where newly created Group Messages showed having 0 members.
+ - Fixed an issue where an incorrect timestamp was assigned to support packet files.
+ - Fixed an issue where the **Reset Password** link was not displayed if only LDAP/AD was enabled.
+ - Fixed an issue where **Recent Mentions** showed posts for other similar named users.
+ - Fixed an error that appeared when updating the header of Group Messages.
+ - Fixed an issue that caused the server to get stuck during shutdown due to a deadlock in a dependency.
+ - Fixed an issue where Desktop App clients would be shown an error when trying to open file preview links.
+ - Fixed an issue with double URL encoding of Oauth redirect URI params.
+
+### config.json
+ - Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
+
+#### Changes to all plans:
+ - 
+
+### API Changes
+ - 
+
+### Go Version
+ - v9.3 is built with Go ``v1.20.7``.
+
+### Known Issues
+ - Adding an @mention at the start of a post draft and pressing the left or right arrow key can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
+ - Status may sometimes get stuck as **Away** or **Offline** in High Availability mode with IP Hash turned off.
+ - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
+ - Slack import through the CLI fails if email notifications are enabled.
+ - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
+ - The Playbooks left-hand sidebar doesn't update when a user is added to a run or playbook without a refresh.
+ - If a user isn't a member of a configured broadcast channel, posting a status update might fail without any error feedback. As a temporary workaround, join the configured broadcast channels, or remove those channels from the run configuration.
+ - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
+
+### Contributors
+ - 
+
 ## Release v9.2 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
 
 - **9.2.2, released 2023-11-08**
