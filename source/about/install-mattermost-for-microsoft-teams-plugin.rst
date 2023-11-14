@@ -155,7 +155,7 @@ Respond to issue alerts
 Once performance alerts are set up, if you receive an performance issue alert, we recommend completing the following troubleshooting and debugging steps before reaching out to Mattermost for assistance:
 
 1. If you have confirmed the integration isn't working for an individual user, but works for others, ask the user experiencing the issue to disconnect from the MS Teams integration using ``/msteams-sync disconnect``, then re-connect using ``/msteams-sync connect``.
-2. If you have confirmed the integration isn't working for several users, go to **System Console > Plugin Management**, search for **MSTeams Sync**, disable the plugin, and then & re-enable it.
+2. If you have confirmed the integration isn't working for several users, go to **System Console > Plugin Management**, search for **MSTeams Sync**, disable the plugin, and then re-enable it.
 
 If these steps don't resolve the issue alert, gather relevant information to accelerate troubleshooting, following `our bug report template <#bug-report-template>`__, then `open a support ticket <https://support.mattermost.com/hc/en-us/requests/new>`__.
 
