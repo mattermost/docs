@@ -6,14 +6,14 @@ Desktop application changelog
 
 Latest Mattermost Desktop App releases:
 
+- `Release v5.6 <#id1>`_
 - `Release v5.5 <#id1>`_
 - `Release v5.4 <#id3>`_
 - `Release v5.3 <#id15>`_
 - `Release v5.2 <#id28>`_
 - `Release v5.1 <#id44>`_
-- `Release v5.0 <#id59>`_
 
-Release v5.5
+Release v5.6
 --------------
 
 **Release Date: December 16, 2023**
