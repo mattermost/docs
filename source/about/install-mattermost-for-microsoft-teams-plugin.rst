@@ -4,6 +4,10 @@ Install the Mattermost for Microsoft Teams plugin
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
+.. contents:: On this page
+    :backlinks: top
+    :depth: 3
+
 .. tip::
 
   Looking to `install the Mattermost app within Microsoft Teams </about/install-mattermost-app-in-microsoft-teams.html>`__ instead?
@@ -127,6 +131,58 @@ Configure the plugin
 --------------------
 
 Additional configuration settings are available for this plugin. See the `MS Teams Sync plugin configuration settings </configure/plugins-configuration-settings.html#ms-teams-sync>`__ documentation for details.
+
+Monitor plugin performance
+--------------------------
+
+You can set up `performance monitoring </scale/performance-monitoring.html>`__ and `performance alerting </scale/performance-alerting.html>`__ for this plugin using Prometheus and Grafana.
+
+- Monitoring enables you to proactively review the overall health of the plugin, including database calls, HTTP requests, and API latency.
+- Alerting enables you to detect and take action as issues come up, such as the integration being offline.
+
+Grafana dashboards `are available on GitHub <https://github.com/mattermost/mattermost-plugin-msteams-sync/blob/main/server/metrics/dashboards/cloud.json>`__ for Mattermost Cloud deployments as a useful starting point. These dashboards are designed for use in Mattermost Cloud, and filter to a given ``namespace``. 
+
+.. image:: ../images/grafana-dashboard-msteams.png
+  :alt: Example of a Grafana monitoring dashboard for a Mattermost instance connected to Microsoft Teams.
+
+.. note:: 
+  
+  Modifications will be necessary for self-hosted Mattermost deployments. See the `Get help <#get-help>`__ section below for details on how to contact us for assistance.
+
+Respond to issue alerts
+~~~~~~~~~~~~~~~~~~~~~~~
+
+Once performance alerts are set up, if you receive an performance issue alert, we recommend completing the following troubleshooting and debugging steps before reaching out to Mattermost for assistance:
+
+1. If you have confirmed the integration isn't working for an individual user, but works for others, ask the user experiencing the issue to disconnect from the MS Teams integration using ``/msteams-sync disconnect``, then re-connect using ``/msteams-sync connect``.
+2. If you have confirmed the integration isn't working for several users, go to **System Console > Plugin Management**, search for **MSTeams Sync**, disable the plugin, and then & re-enable it.
+
+If these steps don't resolve the issue alert, gather relevant information to accelerate troubleshooting, following `our bug report template <#bug-report-template>`__, then `open a support ticket <https://support.mattermost.com/hc/en-us/requests/new>`__.
+
+Bug report template
+^^^^^^^^^^^^^^^^^^^
+
+**Reproduction steps**: Include steps to reproduce the bug:
+
+1. Go to ...
+2. Select  ...
+3. Scroll down to ...
+4. See error ...
+
+**Expected behavior**: A clear and concise description of what you expected to happen.
+
+**Actual behavior**: A clear and concise description of what actually happened.
+
+**Screenshots**: If applicable, add screenshots or a screen recording to elaborate on the problem.
+
+**Platforms**: Browser, version, and OS: [e.g., Chrome v1118 on Mac, Desktop App v5.5.1 on Windows]
+
+**Additional context**: Add the following context about the problem here, to help us troubleshoot the issue:
+
+- Timestamp during which the issue occurred
+- Mattermost username or user ID
+- MS Teams username or user ID
+- Platform from where the message originated. If the message originated from Mattermost, include the post ID by selecting **Copy Link** from the message dropdown menu.
 
 Get started with the plugin
 ---------------------------
