@@ -16,6 +16,64 @@ Latest Mattermost Desktop App releases:
 Release v5.5
 --------------
 
+**Release Date: December 16, 2023**
+
+**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/latest>`_
+
+Compatibility
+~~~~~~~~~~~~~~~
+
+- Desktop App is supported on any currently `supported Mattermost server version <https://docs.mattermost.com/upgrade/release-lifecycle.html>`_.
+- Updated Chromium minimum supported version to 118+.
+
+Improvements
+~~~~~~~~~~~~~~~
+
+All Platforms
+^^^^^^^^^^^^^
+
+- Added Vietnamese as a new language (Beta).
+- Removed ``gconf`` dependency for Debian/Ubuntu.
+- Stopped auto-opening Boards/Playbooks tabs.
+
+Architectural Changes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Major version upgrade of Electron to v27.0.2. Electron is the underlying technology used to build the Desktop App.
+
+Bug Fixes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+All Platforms
+^^^^^^^^^^^^^
+
+- Fixed an issue where some notifications did not navigate to the channel.
+- Set the category for the main menu correctly for installations with Debian package.
+- Fixed an issue where servers on a subpath could not grant the ``media`` permission.
+- Fixed an issue where users could not fullscreen embedded videos.
+- Fixed a deep linking issue for servers with subpaths.
+
+macOS
+^^^^^^^^^^^^^
+
+- Fixed an issue where clicking on a link to an unregistered protocol on macOS would cause the app to crash.
+
+Known Issues
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Users seeing an endless "Loading..." screen when attempting to log in to the app may need to manually delete their cache directory. For MacOS it is located in ``/Users/<username>/Library/Containers/Mattermost/Data/Library/Application Support/Mattermost``, for Windows in ``Users/<username>/AppData/Roaming/Mattermost`` and for Linux in ``~/config/Mattermost`` (where ``~`` is the home directory).
+- On Linux, a left-click on the Mattermost tray icon doesn't open the app window but opens the tray menu.
+- Crashes might be be experienced in some Linux desktop clients due to an upstream bug in the ``libnotifyapp`` library. A recommended workaround is to disable the Mattermost system tray icon via Desktop Settings.
+- On apps using GPO configurations, when adding a second server tab, it's possible to drag and drop tabs, but they'll jump back to the original position when releasing the mouse.
+
+Contributors
+~~~~~~~~~~~~~~
+
+- `BaumiCoder <https://github.com/BaumiCoder>`_, `ctlaltdieliet <https://github.com/ctlaltdieliet>`_, `devinbinnie <https://github.com/devinbinnie>`_, `larkox <https://github.com/larkox>`_.
+
+Release v5.5
+--------------
+
 - **v5.5.1, released 2023-10-03**
  - Mattermost v5.5.1 contains low severity level security fixes. Upgrading is highly recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.com/security-vulnerability-report//>`__.
  - Upgraded to Electron v26.2.1, which mitigates ``CVE-2023-4863`` of the third-party library libwebp.
@@ -24,7 +82,7 @@ Release v5.5
 - **v5.5.0, released 2023-09-15**
  - Original v5.5.0 release
 
-**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/latest>`_
+**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v5.5.1>`_
 
 **Note:** Mattermost v5.5.0 contains a medium severity level security fix. Upgrading is highly recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.com/security-vulnerability-report//>`__.
 
