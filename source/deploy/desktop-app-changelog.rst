@@ -58,6 +58,11 @@ macOS
 
 - Fixed an issue where clicking on a link to an unregistered protocol on macOS would cause the app to crash.
 
+Open Source Components
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Added ``electron-extension-installer`` and ``node-gyp`` to https://github.com/mattermost/desktop.
+
 Known Issues
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
