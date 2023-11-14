@@ -6,18 +6,18 @@ Changelogs
   :hidden:
   :titlesonly:
 
-    Mattermost self-hosted </install/self-managed-changelog>
-    Mattermost legacy self-hosted </install/legacy-self-hosted-changelog>
-    Mattermost Cloud </install/cloud-changelog>
+    Mattermost changelog </deploy/mattermost-changelog>
+    Mattermost legacy self-hosted </deploy/legacy-self-hosted-changelog>
+    Mattermost legacy Cloud </deploy/legacy-cloud-changelog>
     Mobile apps </deploy/mobile-app-changelog>
-    Desktop apps </install/desktop-app-changelog>
-    Deprecated features </install/deprecated-features>
+    Desktop app </deploy/desktop-app-changelog>
+    Deprecated features </deploy/deprecated-features>
 
 These changelogs will help you clarify what's new, changed, and deprecated in every Mattermost release.
 
-* :doc:`Mattermost self-hosted </install/self-managed-changelog>`
-* :doc:`Mattermost legacy self-hosted </install/legacy-self-hosted-changelog>`
-* :doc:`Mattermost Cloud </install/cloud-changelog>`
+* :doc:`Mattermost changelog </deploy/mattermost-changelog>`
+* :doc:`Mattermost legacy self-hosted </deploy/legacy-self-hosted-changelog>`
+* :doc:`Mattermost legacy Cloud </deploy/legacy-cloud-changelog>`
 * :doc:`Mobile apps </deploy/mobile-app-changelog>`
-* :doc:`Desktop apps </install/desktop-app-changelog>`
-* :doc:`Deprecated features </install/deprecated-features>`
+* :doc:`Desktop apps </deploy/desktop-app-changelog>`
+* :doc:`Deprecated features </deploy/deprecated-features>`
