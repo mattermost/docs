@@ -45,12 +45,20 @@ To enable persistent notifications for a message:
 
 .. note:: 
 
-  - Recipients must have Mattermost desktop and/or mobile push notifications enabled to receive persistent notifications.
   - @channel, @all and @here mentions don't send persistent notifications.
-  - You're notified depending on your `notifications preferences </preferences/manage-your-notifications.html>`__ for desktop and mobile push notifications. You won't be notified when your availability is set to Do Not Disturb, or if you're `Out of Office </preferences/set-your-status-availability.html#set-your-availability>`__.
   - System admins can customize the maximum number of @mentions permitted, how frequently and how many persistent notifications are sent, as well as disable persistent notifications for all users, if preferred. By default, users are notified every 5 minutes for a total of 30 minutes. See the `configuration </configure/site-configuration-settings.html#persistent-notifications>`__ documentation for details.
 
-Stop a persistent notification by replying to the thread, selecting the **Acknowlege** icon (when present), or reacting to the thread with an emoji. Persistent notifications also stop being sent if the original message is deleted, or if the maximum number of persistent notifications are sent.
+Receive persistent notifications
+--------------------------------
+
+You must have desktop and/or mobile push notifications enabled to receive persistent notifications. How you're notified depends on your `notifications preferences </preferences/manage-your-notifications.html>`__ for desktop and mobile push notifications. You won't be notified when your availability is set to **Do Not Disturb**, or if you're `Out of Office </preferences/set-your-status-availability.html#set-your-availability>`__. Learn more about customizing how you receive notifications by visiting the `get notified </preferences/manage-your-notifications.html#get-notified>`__ documentation.
+
+Urgent messages show a red mention badge which remains visibible until you view the message. Selecting the **Acknowledge** icon (when present) won't impact the urgent red mention badge.
+
+.. image:: ../images/urgent-message.png
+  :alt: Example of the channel sidebar with both regular and urgent unread messages.
+
+To stop receiving persistent notifications, you can reply to the thread, select the **Acknowlege** icon (when present), or react to the thread with an emoji. Persistent notifications also stop if the original message is deleted, or if the maximum number of persistent notifications are sent.
 
 Request acknowledgements
 ------------------------

@@ -11,7 +11,7 @@ From Mattermost v7.2, using a web browser or the desktop app, you can forward me
 
 .. note::
   
-  Private channels, direct messages, and group messages indended for specific people can't be forwarded.
+  Private channels, direct messages, and group messages intended for specific people can't be forwarded.
 
 To forward a message:
 

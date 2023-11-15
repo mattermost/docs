@@ -8,7 +8,7 @@ name = "pypi"
 # Amazon AWS Universal CLI environment (https://aws.amazon.com/cli/)
 # Release notes: https://github.com/aws/aws-cli/blob/develop/CHANGELOG.rst
 # Repo: https://github.com/aws/aws-cli
-awscli = "==1.20.11"
+awscli = "==1.29.38"
 #
 # PyTest testing framework (https://docs.pytest.org/en/7.2.x/)
 pytest = "==7.2.0"
@@ -23,7 +23,7 @@ sphinx = "==4.4.0"
 # ReadTheDocs Theme (https://sphinx-rtd-theme.readthedocs.io/)
 # Release notes: https://github.com/readthedocs/sphinx_rtd_theme/blob/master/docs/changelog.rst
 # Repo: https://github.com/readthedocs/sphinx_rtd_theme
-sphinx-rtd-theme = "==0.5.2"
+sphinx-rtd-theme = "==1.0.0"
 #
 # MyST Parser (https://myst-parser.readthedocs.io/en/latest/)
 # Release notes: https://myst-parser.readthedocs.io/en/latest/develop/_changelog.html
@@ -36,7 +36,7 @@ sphinx-autobuild = "==2021.3.14"
 #
 # Tabbed views for Sphinx (https://sphinx-tabs.readthedocs.io/)
 # Repo: https://github.com/executablebooks/sphinx-tabs
-sphinx-tabs = "3.2.0"
+sphinx-tabs = "==3.4.0"
 #
 # Add a "copy" button to code blocks in Sphinx (https://sphinx-copybutton.readthedocs.io/en/latest/)
 # Repo: https://github.com/executablebooks/sphinx-copybutton

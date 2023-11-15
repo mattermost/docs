@@ -8,6 +8,8 @@ With workspace optimizations, System Admins can review their workspace health an
 
 System Admins can access their workspace optimization page in the System Console by going to **Reporting > Workspace Optimization**.
 
+
+
 .. image:: ../images/workspace-optimization.png
   :alt: Review your workspace health and growth scores, then take advantage of recommended optimizations.
 

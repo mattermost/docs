@@ -3,6 +3,9 @@
 
 Configure file storage settings by going to **System Console > Environment > File Storage**, or by editing the ``config.json`` file as described in the following tables.
 
+.. include:: ../_static/badges/academy-file-storage.rst
+  :start-after: :nosearch:
+
 .. note::
 
   Mattermost currently supports storing files on the local filesystem and Amazon S3 or S3-compatible containers. We have tested Mattermost with `MinIO <https://min.io/>`__ and `Digital Ocean Spaces <https://docs.digitalocean.com/products/spaces/>`__ products, but not all S3-compatible containers on the market. If you are looking to use other S3-compatible containers, we recommend completing your own testing.
@@ -116,9 +119,9 @@ Enable document search by content
 | If this command is not run, users can search older files based on file name only.                                                                   |
 |                                                                                                                                                     |
 | You can optionally install the following `dependencies <https://github.com/sajari/docconv#dependencies>`__ to extend content searching support in   |
-| Mattermost to include file formats beyond PDF, DOCX, and ODT, such as DOC, RTF, XML, HTML, and PAGES:                                               |
+| Mattermost to include file formats beyond PDF, DOCX, and ODT, such as DOC, RTF, XML, and HTML:                                                      |
 |                                                                                                                                                     |
-| - **tidy**: Used to search the contents of HTML and PAGES documents.                                                                                |
+| - **tidy**: Used to search the contents of HTML documents.                                                                                          |
 | - **wv**: Used to search the contents of DOC documents.                                                                                             |
 | - **popplerutils**: Used to significantly improve server performance when extracting the contents of PDF documents.                                 |
 | - **unrtf**: Used to search the contents of RTF documents.                                                                                          |

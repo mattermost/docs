@@ -289,40 +289,69 @@ The database can be configured for high availability and transparent failover us
 Recommended configuration settings for PostgreSQL
 ``````````````````````````````````````````````````
 
-If you're using PostgreSQL as the choice of database, we recommend the following configuration optimizations on your Mattermost server. These  configurations were tested on an AWS Aurora r5.xlarge instance of PostgreSQL 11.7. There are also some general optimizations mentioned which requires servers with higher specifications.
+If you're using PostgreSQL as the choice of database, we recommend the following configuration optimizations on your Mattermost server. These configurations were tested on an AWS Aurora r5.xlarge instance of PostgreSQL 11.7. There are also some general optimizations mentioned which requires servers with higher specifications.
 
-1. **max_connections**: If you are using read-replicas, set reader connections to 1024, and set writer connections to 256. If you are using a single instance, then only setting reader connections to 1024 should be sufficient. If the instance is lower capacity than r5.xlarge, then set it to a lower number. Also tune the ``MaxOpenConns`` setting under the ``SqlSettings`` of the Mattermost app accordingly.
+**Config for Postgres Primary or Writer node**
 
-2. **random_page_cost**: Set it to 1.1, unless the DB is using spinning disks.
+.. code-block:: bash
 
-3. **work_mem**: Set it to 16MB for readers, and 32MB for writers. If it's a single instance, 16MB should be sufficient. If the instance is of a lower capacity than r5.xlarge, then set it to a lower number.
+  # If the instance is lower capacity than r5.xlarge, then set it to a lower number. 
+  # Also tune the "MaxOpenConns" setting under the "SqlSettings" of the Mattermost app accordingly. 
+  # Note that "MaxOpenConns" on Mattermost is per data source name.
+  max_connections = 1024
 
-4. **effective_cache_size**: Set it to 65% of total memory. For a 32GB instance, it should be 21GB.
+  # Set it to 1.1, unless the DB is using spinning disks.
+  random_page_cost = 1.1
 
-5. **shared_buffers**: Set it to 65% of total memory. For a 32GB instance, it should be 21GB.
+  # This should be 32MB if using read replicas, or 16MB if using a single PostgreSQL instance. 
+  # If the instance is of a lower capacity than r5.xlarge, then set it to a lower number.
+  work_mem = 32MB
 
-6. **tcp_keepalives_count**: 5
+  # Set both of the below settings to 65% of total memory. For a 32 GB instance, it should be 21 GB.
+  # If on a smaller server, set this to 20% or less total RAM.
+  # ex: 512MB would work for a 4GB RAM server
+  effective_cache_size = 21GB
+  shared_buffers = 21GB
 
-7. **tcp_keepalives_idle**: 5
+  # If you are using pgbouncer, or any similar connection pooling proxy, 
+  # in front of your DB, then apply the keepalive settings to the proxy instead, 
+  # and revert the keepalive settings for the DB back to defaults.
+  tcp_keepalives_idle = 5
+  tcp_keepalives_interval = 1
+  tcp_keepalives_count = 5
 
-8. **tcp_keepalives_interval**: 1
-
-9. If you have more than 32 CPUs, please set the following options to utilize more CPU for your server:
-
-  - **max_worker_processes**: 12
-  - **max_parallel_workers_per_gather**: 4
-  - **max_parallel_workers**: 12
-  - **max_parallel_maintenance_workers**: 4
-
-10. **autovacuum_max_workers**: 4
-
-11. **maintenance_work_mem**: 1GB (reduce this to 512MB if your server has less than 32GB of RAM)
-
-12. **autovacuum_vacuum_cost_limit**: 500
-
-.. note::
+  # 1GB (reduce this to 512MB if your server has less than 32GB of RAM)
+  maintenance_work_mem = 512MB
   
-   If you are using pgbouncer, or any similar connection pooling proxy, in front of your DB, then apply the keepalive settings to the proxy instead, and revert the keepalive settings for the DB back to defaults.
+  autovacuum_max_workers = 4
+  autovacuum_vacuum_cost_limit = 500
+
+
+  # If you have more than 32 CPUs on your database server, please set the following options to utilize more CPU for your server:
+  max_worker_processes = 12
+  max_parallel_workers_per_gather = 4
+  max_parallel_workers = 12
+  max_parallel_maintenance_workers = 4
+
+**Config for Postgres Replica node**
+
+Copy all the above settings to the read replica, and modify or add only the below. 
+
+.. code-block:: bash
+  
+  # If the instance is lower capacity than r5.xlarge, then set it to a lower number. 
+  # Also tune the "MaxOpenConns" setting under the "SqlSettings" of the Mattermost app accordingly. 
+  # Note that "MaxOpenConns" on Mattermost is per data source name.
+  max_connections = 1024
+
+  # This setting should be 16MB on read nodes, and 32MB on writer nodes
+  work_mem = 16MB
+
+  # The below settings allow the reader to return query results even when the primary has a write process running, a query conflict. 
+  # This is set to on because of the high volume of write traffic that can prevent the reader from returning query results within the timeout. 
+  # https://www.postgresql.org/docs/current/hot-standby.html#HOT-STANDBY-CONFLICT
+  hot_standby = on
+  hot_standby_feedback = on
 
 Leader election
 ^^^^^^^^^^^^^^^^

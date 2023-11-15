@@ -80,10 +80,12 @@ Output console logs as JSON
 |                                               | - Environment variable: ``MM_LOGSETTINGS_CONSOLEJSON``              |
 | - **true**: **(Default)** Logged events are   |                                                                     |
 |   written in a machine-readable JSON format.  |                                                                     |
-|   Typically set to **true** in production.    |                                                                     |
 | - **false**: Logged events are written in     |                                                                     |
 |   plain text.                                 |                                                                     |
 +-----------------------------------------------+---------------------------------------------------------------------+
+| **Note**: Typically set to **true** in a production environment.                                                    |
++-----------------------------------------------+---------------------------------------------------------------------+
+
 
 .. config:setting:: log-enablefile
   :displayname: Output logs to file (Logging)
@@ -109,10 +111,11 @@ Output logs to file
 |   `file log level <#file-log-level>`__        |                                                                     |
 |   configuration to a ``mattermost.log`` file  |                                                                     |
 |   located in the directory configured via     |                                                                     |
-|   file location. Typically set to **true**    |                                                                     |
-|   in production.                              |                                                                     |
+|   ``file location``.                          |                                                                     |
 | - **false**: Logged events aren’t written to  |                                                                     |
 |   a file.                                     |                                                                     |
++-----------------------------------------------+---------------------------------------------------------------------+
+| **Note**: Typically set to **true** in a production environment.                                                    |
 +-----------------------------------------------+---------------------------------------------------------------------+
 
 .. config:setting:: log-filelevel
@@ -164,9 +167,10 @@ Output file logs as JSON
 |                                               | - Environment variable: ``MM_LOGSETTINGS_FILEJSON``                 |
 | - **true**: **(Default)** Logged events are   |                                                                     |
 |   written in a machine-readable JSON format.  |                                                                     |
-|   Typically set to **true** in production.    |                                                                     |
 | - **false**: Logged events are written in     |                                                                     |
 |   plain text.                                 |                                                                     |
++-----------------------------------------------+---------------------------------------------------------------------+
+| **Note**: Typically set to **true** in a production environment.                                                    |
 +-----------------------------------------------+---------------------------------------------------------------------+
 
 .. config:setting:: log-filelocation
@@ -217,24 +221,32 @@ Enable webhook debugging
 |   webhooks aren’t printed to log files.       |                                                                              |
 +-----------------------------------------------+------------------------------------------------------------------------------+
 
-.. config:setting:: log-advancedloggingjson
+.. config:setting:: log-enablediagnostics
   :displayname: Enable diagnostics and error reporting (Logging)
   :systemconsole: Environment > Logging
-  :configjson: .LogSettings.AdvancedLoggingJSON
-  :environment: MM_LOGSETTINGS_ADVANCEDLOGGINGJSON
-  :description: Configure Mattermost to allow any combination of console, local file, syslog, and TCP socket targets, and send log records to multiple targets.
+  :configjson: .LogSettings.EnableDiagnostics
+  :environment: MM_LOGSETTINGS_ENABLEDIAGNOSTICS
+  :description: Send diagnostics and error reports to Mattermost, Inc.
 
 Enable diagnostics and error reporting
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *Available in legacy Enterprise Edition E10/E20*
 
-+-----------------------------------------------+---------------------------------------------------------------------------+
-| Configure Mattermost to allow any combination | - System Config path: **Environment > Logging**                           |
-| of console, local file, syslog, and TCP       | - ``config.json setting``: ``".LogSettings.AdvancedLoggingJSON": "",``    |
-| socket targets, and send log records to       | - Environment variable: ``MM_LOGSETTINGS_ADVANCEDLOGGINGJSON``            |
-| multiple targets.                             |                                                                           |
-+-----------------------------------------------+---------------------------------------------------------------------------+
++----------------------------------------------+-------------------------------------------------------------------------+
+| Whether or not diagnostics and error reports | - System Config path: **Environment > Logging**                         |
+| are sent to Mattermost, Inc.                 | - ``config.json setting``: ``".LogSettings.EnableDiagnostics": "",``    |
+|                                              | - Environment variable: ``MM_LOGSETTINGS_ENABLEDIAGNOSTICS``            |
+| - **true**: **(Default)** Send diagnostics   |                                                                         |
+|   and error reports.                         |                                                                         |
+| - **false**: Diagnostics and error reports   |                                                                         |
+|   aren't sent.                               |                                                                         |
++----------------------------------------------+-------------------------------------------------------------------------+
+| **Notes**:                                                                                                             |
+|                                                                                                                        |
+| - See the :doc:`telemetry documentation</manage/telemetry.html#error-and-diagnostics-reporting-feature>` for more      |
+|   details on the information that is collected.                                                                        |
++----------------------------------------------+-------------------------------------------------------------------------+
 
 .. config:setting:: log-multipletargetoutput
   :displayname: Output logs to multiple targets (Logging)
@@ -250,7 +262,7 @@ Output logs to multiple targets
 
 +-----------------------------------------------+---------------------------------------------------------------------------+
 | Configure Mattermost to allow any combination | - System Config path: **Environment > Logging**                           |
-| of console, local file, syslog, and TCP       | - ``config.json setting``: ``".LogSettings.AdvancedLoggingJSON": "",``    |
+| of console, local file, syslog, and TCP       | - ``config.json setting``: ``".LogSettings.AdvancedLoggingJSON":: "",``   |
 | socket targets, and send log records to       | - Environment variable: ``MM_LOGSETTINGS_ADVANCEDLOGGINGJSON``            |
 | multiple targets.                             |                                                                           |
 |                                               |                                                                           |
@@ -271,12 +283,12 @@ Output logs to multiple targets
 .. config:setting:: log-lockteammatenamedisplay
   :displayname: Teammate name display (Logging)
   :systemconsole: N/A
-  :configjson: LockTeammateNameDisplay
+  :configjson: TeamSettings.LockTeammateNameDisplay
   :environment: N/A
-  :description: Control Teammate Name Display at the system level.
+  :description: Enables system admins to control Teammate Name Display at the system level.
 
   - **true**: Allows System Admins to control Teammate Name Display at the system level.
-  - **false**: System Admins cannot control Teammate Name Display at the system level.
+  - **false**: **(Default)** System Admins cannot control Teammate Name Display at the system level.
 
 Teammate name display
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -286,23 +298,23 @@ Teammate name display
 
 *Available in legacy Enterprise Edition E20*
 
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-Control Teammate Name Display at the system level.
-
-**True**: Allows System Admins to control Teammate Name Display at the system level.
-
-**False**: System Admins cannot control Teammate Name Display at the system level.
-
-+------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"LockTeammateNameDisplay"`` with options ``true`` and ``false``.     |
-+------------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------+--------------------------------------------------------------------------------+
+| Enable system admins to control Teammate Name      | - System Config path: N/A                                                      |
+| Display at the system level.                       | - ``config.json setting``: ``".TeamSettings.LockTeammateNameDisplay": false",``|
+|                                                    | - Environment variable: ``MM_TEAMSETTINGS_LOCKTEAMMATENAMEDISPLAY``            |
+| - **true**: System admins can control Teammate     |                                                                                |
+|   Name Display at the system level.                |                                                                                |
+| - **false**: **(Default)** System admins can't     |                                                                                |
+|   control Teammate Name Display at the system      |                                                                                |
+|   level.                                           |                                                                                |
++----------------------------------------------------+--------------------------------------------------------------------------------+
 
 .. config:setting:: log-enablecolor
-  :displayname: Colorize plain text console logs
+  :displayname: Colorize plain text console logs (Logging)
   :systemconsole: N/A
   :configjson: .LogSettings.EnableColor
   :environment: MM_LOGSETTINGS_ENABLECOLOR
+  :description: Enables system admins to display plain text log level details in color.
 
   - **true**: When logged events are output to the console as plain text, colorize log levels details.
   - **false**: **(Default)** Plain text log details aren't colorized in the console.
@@ -310,12 +322,30 @@ Control Teammate Name Display at the system level.
 Colorize plain text console logs
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This setting isn't available in the System Console and can only be set in ``config.json``.
++-----------------------------------------------+----------------------------------------------------------------------+
+| Enables system admins to display plain text   | - System Config path: N/A                                            |
+| log level details in color.                   | - ``config.json setting``: ``".LogSettings.ENABLECOLOR": false",``   |
+|                                               | - Environment variable: ``MM_LOGSETTINGS_ENABLECOLOR``               |
+| - **true**: When logged events are output to  |                                                                      |
+|   the console as plain text, colorize log     |                                                                      |
+|   levels details.                             |                                                                      |
+| - **false**: **(Default)** Plain text log     |                                                                      |
+|   details aren't colorized in the console.    |                                                                      |
++-----------------------------------------------+----------------------------------------------------------------------+
 
-**True**: When logged events are output to the console as plain text, colorize log levels details.
+.. config:setting:: log-maxfieldsize
+  :displayname: Maximum field size (Logging)
+  :systemconsole: N/A
+  :configjson: .LogSettings.MaxFieldSize
+  :environment: MM_LOGSETTINGS_MAXFIELDSIZE
+  :description: Enables system admins to limit the size of log fields during logging. Default is **2048**.
 
-**False**: Plain text log details aren't colorized in the console.
+Maximum field size
+~~~~~~~~~~~~~~~~~~
 
-+---------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableColor": false`` with options ``true`` and ``false``. |
-+---------------------------------------------------------------------------------------------------------+
++-----------------------------------------------+----------------------------------------------------------------------+
+| Enables system admins to limit the size of    | - System Config path: N/A                                            |
+| log fields during logging.                    | - ``config.json setting``: ``".LogSettings.MaxFieldSize": 2048",``   |
+|                                               | - Environment variable: ``MM_LOGSETTINGS_MAXFIELDSIZE``              |
+| Numerical value. Default is **2048**.         |                                                                      |
++-----------------------------------------------+----------------------------------------------------------------------+
