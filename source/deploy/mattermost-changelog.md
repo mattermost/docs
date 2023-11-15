@@ -24,6 +24,7 @@ From Mattermost v9.2, this changelog summarizes updates for the latest cloud and
 
 ### Compatibility
  - Updated minimum required Firefox version to v115+.
+ - Updated minimum supported Chromium version to 118+.
 
 ### Improvements
 
