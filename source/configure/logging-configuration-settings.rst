@@ -242,10 +242,8 @@ Enable diagnostics and error reporting
 | - **false**: Diagnostics and error reports   |                                                                         |
 |   aren't sent.                               |                                                                         |
 +----------------------------------------------+-------------------------------------------------------------------------+
-| **Notes**:                                                                                                             |
-|                                                                                                                        |
-| - See the :doc:`telemetry documentation</manage/telemetry.html#error-and-diagnostics-reporting-feature>` for more      |
-|   details on the information that is collected.                                                                        |
+| **Note**: See the `telemetry </manage/telemetry.html#error-and-diagnostics-reporting-feature>`__ docummentation for    |
+| details on the information Mattermost collects.                                                                        |
 +----------------------------------------------+-------------------------------------------------------------------------+
 
 .. config:setting:: log-multipletargetoutput
@@ -277,7 +275,7 @@ Output logs to multiple targets
 | - Logs are recorded asynchronously to reduce latency to the caller.                                                       |
 | - Advanced logging supports hot-reloading of logger configuration.                                                        |
 +-----------------------------------------------+---------------------------------------------------------------------------+
-| See the :doc:`audit log v2 </comply/audit-log>` documentation for additional information.                                 |
+| **Note**: See the :doc:`audit log v2 </comply/audit-log>` documentation for additional information.                       |
 +-----------------------------------------------+---------------------------------------------------------------------------+
 
 .. config:setting:: log-enableplaintextcolor
