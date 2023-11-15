@@ -280,36 +280,7 @@ Output logs to multiple targets
 | See the :doc:`audit log v2 </comply/audit-log>` documentation for additional information.                                 |
 +-----------------------------------------------+---------------------------------------------------------------------------+
 
-.. config:setting:: log-lockteammatenamedisplay
-  :displayname: Teammate name display (Logging)
-  :systemconsole: N/A
-  :configjson: TeamSettings.LockTeammateNameDisplay
-  :environment: N/A
-  :description: Enables system admins to control Teammate Name Display at the system level.
-
-  - **true**: Allows System Admins to control Teammate Name Display at the system level.
-  - **false**: **(Default)** System Admins cannot control Teammate Name Display at the system level.
-
-Teammate name display
-~~~~~~~~~~~~~~~~~~~~~~
-
-.. include:: ../_static/badges/ent-only.rst
-  :start-after: :nosearch:
-
-*Available in legacy Enterprise Edition E20*
-
-+----------------------------------------------------+--------------------------------------------------------------------------------+
-| Enable system admins to control Teammate Name      | - System Config path: N/A                                                      |
-| Display at the system level.                       | - ``config.json setting``: ``".TeamSettings.LockTeammateNameDisplay": false",``|
-|                                                    | - Environment variable: ``MM_TEAMSETTINGS_LOCKTEAMMATENAMEDISPLAY``            |
-| - **true**: System admins can control Teammate     |                                                                                |
-|   Name Display at the system level.                |                                                                                |
-| - **false**: **(Default)** System admins can't     |                                                                                |
-|   control Teammate Name Display at the system      |                                                                                |
-|   level.                                           |                                                                                |
-+----------------------------------------------------+--------------------------------------------------------------------------------+
-
-.. config:setting:: log-enablecolor
+.. config:setting:: log-enableplaintextcolor
   :displayname: Colorize plain text console logs (Logging)
   :systemconsole: N/A
   :configjson: .LogSettings.EnableColor
