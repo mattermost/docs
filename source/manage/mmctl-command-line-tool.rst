@@ -2266,7 +2266,7 @@ mmctl export create
 
 **Description**
 
-Create an export file.
+Create an export file including message attachments.
 
 **Format**
 
@@ -2278,7 +2278,7 @@ Create an export file.
 
 .. code-block:: sh
 
-   --no-attachments              Omit to include file attachments in the export file.
+   --no-attachments              Include to omit file attachments in the export file.
    --include-archived-channels   Include archived channels in the export file.
    -h, --help                    help for create
 
