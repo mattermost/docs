@@ -54,7 +54,7 @@ If you upgrade from a release earlier than v9.0, please read the other [Importan
 #### Convert Group Messages to Private Channels
  - Added the ability to [convert a group message to a private channel](https://docs.mattermost.com/collaborate/convert-group-messages.html).
 
-See this walkthrough video on the highlights and some of the below improvements in our latest release: https://www.youtube.com/watch?v=dbHg-63J9dA
+See [this walkthrough video](https://www.youtube.com/watch?v=dbHg-63J9dA) on the highlights and some of the below improvements in our latest release.
 
 ### Improvements
 
