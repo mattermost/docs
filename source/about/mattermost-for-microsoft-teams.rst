@@ -6,14 +6,12 @@ Mattermost for Microsoft Teams
 
 Mattermost for Microsoft Teams enables you to collaborate with technical and operations teams seamlessly through the Mattermost app, without leaving Microsoft Teams. Two integrations are available: a `connected integration <#connect-mattermost-with-microsoft-teams>`__ and an `embedded integration <#embed-mattermost-within-mattermost-teams>`__.
 
-.. important::
 
-    You must `install the Microsoft Teams plugin in Mattermost </about/install-mattermost-for-microsoft-teams-plugin.html>`__ before you can embed the Mattermost app within Microsoft Teams.
 
 .. include:: ../_static/badges/academy-msteams.rst
   :start-after: :nosearch:
 
-See the following product documentation to install and use Mattermost for Microsoft Teams:
+See the following product documentation to install and use the Mattermost for Microsoft Teams integration:
 
 Connect Mattermost with Microsoft Teams
 ---------------------------------------
@@ -30,6 +28,10 @@ Embed Mattermost within Mattermost Teams
 Embedding a Mattermost instance within a Microsoft Teams workspace across desktop and web clients enables Central IT organizations to provide an extended customization experience for technical and operational teams while staying firmly integrated into the Microsoft 365 all-employee platform.
 
 Embed Mattermost into Microsoft Teams by visiting the `embed Mattermost within Microsoft Teams </about/embed-mattermost-within-microsoft-teams.html>`__ documentation.
+
+.. important::
+
+    You must `install the Microsoft Teams plugin in Mattermost </about/install-mattermost-for-microsoft-teams-plugin.html>`__ before you can embed the Mattermost app within Microsoft Teams.
 
 Visit the `collaborate in an embedded Microsoft Teams instance </collaborate/collaborate-within-embedded-microsoft-teams.html>`__ to learn how to use this integration.
 
