@@ -7,7 +7,7 @@ Cloud IP Filtering
 
 IP Filtering is a powerful security feature that allows system administrators to control access to their workspace by defining approved IP ranges. Only users within these specified IP ranges can access the workspace, ensuring enhanced security for your workspace. IP Filtering requires a subscription to Mattermost Cloud Enterprise.  
 
-Accessing the IP Filtering Configuration:
+Configure IP filtering
 ------------------------
 
 1. **Login as System Administrator:** Access the system console of your workspace, ensuring your user is a system administrator.
