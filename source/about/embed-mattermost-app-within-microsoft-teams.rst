@@ -1,5 +1,5 @@
-Install the Mattermost App in Microsoft Teams
-=============================================
+Embed the Mattermost App within Microsoft Teams
+================================================
 
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:

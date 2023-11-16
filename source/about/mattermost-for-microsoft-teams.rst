@@ -15,5 +15,5 @@ Mattermost for Microsoft Teams enables you to collaborate with technical & opera
 See the following product documentation to install and use Mattermost for Microsoft Teams:
 
 - `Install the Mattermost for Microsoft Teams plugin </about/install-mattermost-for-microsoft-teams-plugin.html>`__
-- `Install the Mattermost app in Microsoft Teams </about/install-mattermost-app-in-microsoft-teams.html>`__
+- `Embed the Mattermost app within Microsoft Teams </about/embed-mattermost-app-within-microsoft-teams.html>`__
 - `Collaborate using Mattermost for Microsoft Teams </collaborate/collaborate-using-mattermost-for-microsoft-teams.html>`__

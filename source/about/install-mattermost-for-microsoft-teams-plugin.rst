@@ -16,7 +16,6 @@ To install the `Mattermost for Microsoft Teams </plugins/mattermost-for-microsof
 
 1. Log in to your Mattermost workspace as a system administrator.
 2. Download the latest version of `the plugin binary release <https://github.com/mattermost/mattermost-plugin-msteams-sync/releases>`__, compatible with Mattermost v8.0.1 and later. If you are using an earlier version of Mattermost, `follow our documentation </upgrade/upgrading-mattermost-server.html>`__ to upgrade to Mattermost v8.0.1 or later.
-
 3. Go to **System Console > Plugins > Plugin Management > Upload Plugin**, and upload the plugin binary you downloaded in the previous step.
 4. Go to **System Console > Plugins > Plugin Management**. In the **Installed Plugins** section, scroll to **MS Teams Sync**, and select **Enable Plugin**.
 
@@ -149,59 +148,25 @@ Grafana dashboards `are available on GitHub <https://github.com/mattermost/matte
   
   Modifications will be necessary for self-hosted Mattermost deployments. See the `Get help <#get-help>`__ section below for details on how to contact us for assistance.
 
-Respond to issue alerts
-~~~~~~~~~~~~~~~~~~~~~~~
-
-Once performance alerts are set up, if you receive an performance issue alert, we recommend completing the following troubleshooting and debugging steps before reaching out to Mattermost for assistance:
-
-1. If you have confirmed the integration isn't working for an individual user, but works for others, ask the user experiencing the issue to disconnect from the MS Teams integration using ``/msteams-sync disconnect``, then re-connect using ``/msteams-sync connect``.
-2. If you have confirmed the integration isn't working for several users, go to **System Console > Plugin Management**, search for **MSTeams Sync**, disable the plugin, and then re-enable it.
-
-If these steps don't resolve the issue alert, gather relevant information to accelerate troubleshooting, following `our bug report template <#bug-report-template>`__, then `open a support ticket <https://support.mattermost.com/hc/en-us/requests/new>`__.
-
-Bug report template
-^^^^^^^^^^^^^^^^^^^
-
-**Reproduction steps**: Include steps to reproduce the bug:
-
-1. Go to ...
-2. Select  ...
-3. Scroll down to ...
-4. See error ...
-
-**Expected behavior**: A clear and concise description of what you expected to happen.
-
-**Actual behavior**: A clear and concise description of what actually happened.
-
-**Screenshots**: If applicable, add screenshots or a screen recording to elaborate on the problem.
-
-**Platforms**: Browser, version, and OS: [e.g., Chrome v1118 on Mac, Desktop App v5.5.1 on Windows]
-
-**Additional context**: Add the following context about the problem here, to help us troubleshoot the issue:
-
-- Timestamp during which the issue occurred
-- Mattermost username or user ID
-- MS Teams username or user ID
-- Platform from where the message originated. If the message originated from Mattermost, include the post ID by selecting **Copy Link** from the message dropdown menu.
-
 Get started with the plugin
 ---------------------------
 
 See our `collaborate using Mattermost for MS Teams </collaborate/collaborate-using-mattermost-for-microsoft-teams>`__ documentation for details on how to collaborate across both Mattermost and Microsoft Teams at the same time.
 
-Troubleshooting
----------------
+Trobleshooting
+--------------
 
-If you encounter issues when connecting user accounts or linking channels, we recommend restarting the plugin as a Mattermost system admin. 
+If you encounter issues when connecting user accounts or linking channels, restart the plugin as a Mattermost system admin. 
 
 1. Go to **System Console > Plugins > Plugin Management**.
 2. Under **Installed Plugins**, scroll to the **MSTeams Sync** section, select **Disable** then wait for the State to change to **Not running**.
 3. Select **Enable** and wait for the State to change to **Running**.
 
 Get help
----------
+--------
 
-If you face any issues while installing the Mattermost for Microsoft Teams Sync plugin, you can either:
+If you face issues while installing this plugin, gather relevant information, including reproduction steps to accelerate troubleshooting. You're welcome to open a new issue in the `Mattermost for Microsoft Teams GitHub repository <https://github.com/mattermost/mattermost-plugin-msteams-sync/issues/new>`__.
 
-- Open a new issue in the `Mattermost for Microsoft Teams GitHub repository <https://github.com/mattermost/mattermost-plugin-msteams-sync/issues/new>`__. 
-- Or, create a new topic in our `peer-to-peer troubleshooting forum <https://forum.mattermost.com/c/trouble-shoot/16>`__.
+- **Mattermost Commercial Customers (including Enterprise and Professional plans)**: Visit `Mattermost Support <https://mattermost.com/support/>`__ to `submit a support ticket <https://support.mattermost.com/hc/en-us/requests/new>`__.
+
+- **Mattermost Team Edition and Free customers** Visit the Mattermost `peer-to-peer troubleshooting forum <https://forum.mattermost.com/c/trouble-shoot/16>`__ where you can access the global Mattermost Community for assistance.
