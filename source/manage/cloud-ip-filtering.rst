@@ -22,8 +22,8 @@ About CIDR notation
 
 CIDR (Classless Inter-Domain Routing) notation is used to specify a range of IP addresses. It consists of an IP address followed by a forward slash and a number indicating the network's prefix length. For example:
 
-   - `192.168.0.0/24` represents the IP range from `192.168.0.0` to `192.168.0.255`.
-   - The `/24` signifies that the first 24 bits are the network address, leaving 8 bits for host addresses.
+   - ``192.168.0.0/24`` represents the IP range from ``192.168.0.0`` to ``192.168.0.255``.
+   - The ``/24`` signifies that the first 24 bits are the network address, leaving 8 bits for host addresses.
 
 For a more in-depth explanation of CIDR notation, refer to `this article </https://aws.amazon.com/what-is/cidr/>`__.
 
@@ -35,7 +35,7 @@ Add an IP range
 To add an IP range to the whitelist, follow these steps:
 
 1. Select the **Add Filter** button within the IP Filtering settings page in the System Console.
-2. Enter the IP range using CIDR notation. For example, `192.168.1.0/24`.
+2. Enter the IP range using CIDR notation. For example, ``192.168.1.0/24``.
 3. Provide a descriptive name or label for the IP range to ease identification in the future.
 4. Save the changes.
 
