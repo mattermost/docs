@@ -75,6 +75,6 @@ If  you are unable to access your workspace due to previously set IP filters, an
 Conclusion:
 --------------
 
-By configuring IP filters using CIDR notation, system administrators can effectively manage access to the workspace, enhancing security by allowing access only from specified IP ranges.
+By configuring IP filters using CIDR notation, system admins can effectively manage access to the workspace, enhancing security by allowing access only from specified IP ranges.
 
 For any further assistance or queries, `contact our support team </https://mattermost.com/support/>`__.
