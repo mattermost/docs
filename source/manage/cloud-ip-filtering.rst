@@ -62,7 +62,7 @@ System admins have the option to enable or disable IP filtering:
 
 Unable to access your workspace
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-If  you are unable to access your workspace due to previously set IP filters, and you need to regain access to your workspace, your workspace owner can:
+If you are unable to access your workspace due to previously set IP filters, and you need to regain access to your workspace, your workspace owner can:
 
 1. Visit the `Mattermost Customer Portal </https://customers.mattermost.com/>`__.
 2. Select the **IP Filtering** menu item in the left hand side bar.
