@@ -3,19 +3,15 @@
 
 .. raw:: html
 
-  <div class="mm-badge mm-badge--note">
+  <div class="mm-badge">
 
-Note
+|plans-img| Available only on `Enterprise <https://mattermost.com/pricing/>`__ plans
 
-|plans-img-yellow| Available only on `Enterprise <https://mattermost.com/pricing/>`__ plans
+|deployment-img| Available only for `Cloud <https://customers.mattermost.com/cloud/signup/>`__ deployments
 
-|deployment-img-yellow| Available only for `Cloud <https://customers.mattermost.com/cloud/signup/>`__ deployments
+.. |plans-img| image:: ../_static/images/badges/flag_icon.svg
 
-.. |plans-img-yellow| image:: ../_static/images/badges/flag_icon_yellow.svg
-    :class: mm-badge-flag
-
-.. |deployment-img-yellow| image:: ../_static/images/badges/deployment_icon_yellow.svg
-    :class: mm-badge-deployment
+.. |deployment-img| image:: ../_static/images/badges/deployment_icon.svg
 
 .. raw:: html
 
