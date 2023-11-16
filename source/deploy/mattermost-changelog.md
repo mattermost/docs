@@ -79,6 +79,7 @@ From Mattermost v9.2, this changelog summarizes updates for the latest cloud and
  - Fixed an issue that caused the server to get stuck during shutdown due to a deadlock in a dependency.
  - Fixed an issue where Desktop App clients would be shown an error when trying to open file preview links.
  - Fixed an issue with double URL encoding of Oauth redirect URI params.
+ - Fixed an issue where users couldn't at-mention custom groups in group constrained teams and channels.
 
 ### config.json
  - Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
