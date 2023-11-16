@@ -17,7 +17,7 @@ From Mattermost v9.2, this changelog summarizes updates for the latest cloud and
 
 ## Release v9.3 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
 
-**Release Date: December 16, 2023**
+**Release Date: December 15, 2023**
 
 ### Important Upgrade Notes
  - Please read the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) before upgrading.
