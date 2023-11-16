@@ -34,7 +34,7 @@ From Mattermost v9.2, this changelog summarizes updates for the latest cloud and
 
 ### Improvements
 
-See [this walkthrough video](https://www.youtube.com/watch?v=udC2OCTGooc&feature=youtu.be&ab_channel=Mattermost) on some of the below improvements in our latest release.
+See [this walkthrough video](https://www.youtube.com/watch?v=udC2OCTGooc&feature=youtu.be&ab_channel=Mattermost) on some of the improvements in our latest release below.
 
 #### User Interface (UI)
  - Improved readability by displaying system messages on multiple lines when editing a channel header.
