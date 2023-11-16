@@ -77,7 +77,7 @@ See [this walkthrough video](https://www.youtube.com/watch?v=udC2OCTGooc&feature
  - v9.2 is built with Go ``v1.20.7``.
 
 ### Known Issues
- - (Cloud) The **About Mattermost** dialog reported an incorrect server version.
+ - (Cloud) The **About Mattermost** dialog reports an incorrect server version.
  - Adding an @mention at the start of a post draft and pressing the left or right arrow key can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
  - Status may sometimes get stuck as **Away** or **Offline** in High Availability mode with IP Hash turned off.
  - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
