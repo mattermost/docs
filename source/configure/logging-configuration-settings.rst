@@ -242,10 +242,8 @@ Enable diagnostics and error reporting
 | - **false**: Diagnostics and error reports   |                                                                         |
 |   aren't sent.                               |                                                                         |
 +----------------------------------------------+-------------------------------------------------------------------------+
-| **Notes**:                                                                                                             |
-|                                                                                                                        |
-| - See the :doc:`telemetry documentation</manage/telemetry.html#error-and-diagnostics-reporting-feature>` for more      |
-|   details on the information that is collected.                                                                        |
+| **Note**: See the `telemetry </manage/telemetry.html#error-and-diagnostics-reporting-feature>`__ docummentation for    |
+| details on the information Mattermost collects.                                                                        |
 +----------------------------------------------+-------------------------------------------------------------------------+
 
 .. config:setting:: log-multipletargetoutput
@@ -277,39 +275,10 @@ Output logs to multiple targets
 | - Logs are recorded asynchronously to reduce latency to the caller.                                                       |
 | - Advanced logging supports hot-reloading of logger configuration.                                                        |
 +-----------------------------------------------+---------------------------------------------------------------------------+
-| See the :doc:`audit log v2 </comply/audit-log>` documentation for additional information.                                 |
+| **Note**: See the :doc:`audit log v2 </comply/audit-log>` documentation for additional information.                       |
 +-----------------------------------------------+---------------------------------------------------------------------------+
 
-.. config:setting:: log-lockteammatenamedisplay
-  :displayname: Teammate name display (Logging)
-  :systemconsole: N/A
-  :configjson: TeamSettings.LockTeammateNameDisplay
-  :environment: N/A
-  :description: Enables system admins to control Teammate Name Display at the system level.
-
-  - **true**: Allows System Admins to control Teammate Name Display at the system level.
-  - **false**: **(Default)** System Admins cannot control Teammate Name Display at the system level.
-
-Teammate name display
-~~~~~~~~~~~~~~~~~~~~~~
-
-.. include:: ../_static/badges/ent-only.rst
-  :start-after: :nosearch:
-
-*Available in legacy Enterprise Edition E20*
-
-+----------------------------------------------------+--------------------------------------------------------------------------------+
-| Enable system admins to control Teammate Name      | - System Config path: N/A                                                      |
-| Display at the system level.                       | - ``config.json setting``: ``".TeamSettings.LockTeammateNameDisplay": false",``|
-|                                                    | - Environment variable: ``MM_TEAMSETTINGS_LOCKTEAMMATENAMEDISPLAY``            |
-| - **true**: System admins can control Teammate     |                                                                                |
-|   Name Display at the system level.                |                                                                                |
-| - **false**: **(Default)** System admins can't     |                                                                                |
-|   control Teammate Name Display at the system      |                                                                                |
-|   level.                                           |                                                                                |
-+----------------------------------------------------+--------------------------------------------------------------------------------+
-
-.. config:setting:: log-enablecolor
+.. config:setting:: log-enableplaintextcolor
   :displayname: Colorize plain text console logs (Logging)
   :systemconsole: N/A
   :configjson: .LogSettings.EnableColor
