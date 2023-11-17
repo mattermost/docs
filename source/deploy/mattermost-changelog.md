@@ -32,7 +32,7 @@ From Mattermost v9.2, this changelog summarizes updates for the latest cloud and
  - Updated pre-packaged Playbooks plugin version to [v1.39.1](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v1.39.1).
  - Updated pre-packaged Calls version [v0.21.1](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v0.21.1).
  - Added Vietnamese (Beta) as a new language.
- - Added ability to passively track keywords with highlights without triggering a notification.
+ - Added the ability to passively track keywords with highlights without triggering a notification.
  - Updated the **Settings** modal with an improved user interface.
  - Added a new **Jump to recents** banner when a channel is scrolled up.
  - Modified the behavior of the code button (Ctrl+Alt+C) to create inline codes or code blocks.
