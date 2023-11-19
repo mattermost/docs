@@ -5,7 +5,6 @@
     width: 270px;
     text-align: center;
     float: right;
-    top: 0;
     font-size: 14px;
 }
 
@@ -73,10 +72,18 @@
 }
 /* Thermometer ends */
 
+/* Thermometer group */
+.c-thermometer__group {
+    display: block;
+    position: relative;
+}
+/* Thermometer group ends */
+
 /* Thermometer Modal */
 
 .c-thermometer-modal__container {
-    display: none;
+    display: block;
+    visibility: hidden;
     position: fixed;
     left: 0;
     top: 0;
@@ -180,16 +187,16 @@
 
 .c-thermometer-popup {
     border-radius: 8px;
-    border: 1px solid rgba(61, 60, 64, 0.08);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.12);
-    padding: 16px 40px 24px;
+    border: 1px solid var(--color-foreground-border);
+    box-shadow: 0 4px 6px var(--color-background-border);
+    padding: 16px 0 24px;
+    margin: 2rem 0 0;
     display: none;
     text-align: center;
-    max-width: 210px;
+    width: 270px;
+    background: var(--color-sidebar-background);
     position: absolute;
     right: 0;
-    top: -120px;
-    background: white;
     z-index: 9;
 }
 
@@ -209,7 +216,7 @@
     position: absolute;
     width: 24px;
     height: 24px;
-    color: rgba(61, 60, 64, 0.72);
+    color: var(--color-foreground-primary);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -218,12 +225,9 @@
     top: 8px;
     font-size: 22px;
     cursor: pointer;
-    font-family: sans-serif;
-    font-weight: 300;
 }
 
-.c-thermometer-popup__close:hover {
-}
+.c-thermometer-popup__close:hover { }
 
 /* Thermometer Confirmation Popup Ends */
 

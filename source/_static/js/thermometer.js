@@ -90,7 +90,7 @@ jqueryReady(() => {
             }
             document.querySelectorAll('.c-thermometer-modal__container').forEach(elt => {
                 console.debug('show container');
-                elt.style.display = 'block';
+                elt.style.visibility = 'visible';
             })
         }
     }, '.c-thermometer__emojis a.rate-this-page-action');
@@ -101,7 +101,7 @@ jqueryReady(() => {
                 console.debug('target has class "btn-link"');
                 jqueryParents(evt.target, '.c-thermometer-modal__container').forEach(parentElt => {
                     console.debug('hide container');
-                    parentElt.style.display = 'none';
+                    parentElt.style.visibility = 'hidden';
                 });
                 document.querySelectorAll('a.rate-this-page-action').forEach(elt => {
                     console.debug('remove selected from links');
@@ -142,7 +142,7 @@ jqueryReady(() => {
             }
             jqueryParents(evt.target, '.c-thermometer-modal__container').forEach(parentElt => {
                 console.debug('hide container');
-                parentElt.style.display = 'none';
+                parentElt.style.visibility = 'hidden';
             });
             document.querySelectorAll('.c-thermometer__emojis').forEach(elt => {
                 console.debug('add pointer-events-none class');
