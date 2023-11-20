@@ -2,8 +2,8 @@
 
 .. Users trying to access this page are now redirected to /onboard/migrating-to-mattermost.html#migrating-from-slack instead
 
-Migrating from HipChat to Mattermost
-=====================================
+Migrate from HipChat to Mattermost
+==================================
 
 You can migrate HipChat users and message histories to Mattermost using the following guidelines.
 
