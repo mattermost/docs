@@ -29,7 +29,7 @@ Slack offers two ways to `export your data from their product <https://get.slack
 1. Regular export - Contains only public channel posts. This does not include private channels, DMs, or group conversations. This can be generated from **Slack > Administration > Workspace settings > Import/Export Data > Export > Start Export**.
 2. Corporate export - Contains all posts. This includes public channels, private channels, DMs and group messages. You must `request this export type from Slack directly <https://slack.com/help/articles/1500001548241-Request-to-export-all-conversations>`__.
 
-You will receive a zip file containing the following contents. 
+You will receive a zip file containing the following contents.
 
 - Channels (``channels.json``)
 - Users (``users.json``)
@@ -73,18 +73,15 @@ Once you have the program downloaded locally, run the commands below to fetch th
 
 .. code:: bash
 
-  slack-advanced-exporter --input-archive <SLACK EXPORT FILE> --output-archive export-with-emails.zip fetch-emails --api-token <SLACK TOKEN>
-  slack-advanced-exporter --input-archive export-with-emails.zip --output-archive export-with-emails-and-attachments.zip fetch-attachments
+  ./slack-advanced-exporter --input-archive <SLACK EXPORT FILE> --output-archive export-with-emails.zip fetch-emails --api-token <SLACK TOKEN>
+  ./slack-advanced-exporter --input-archive export-with-emails.zip --output-archive export-with-emails-and-attachments.zip fetch-attachments --api-token <SLACK TOKEN>
 
 .. note::
 
-  - You'll end up with two files, ``export-with-emails.zip`` and ``export-with-emails-and-attachments.zip``. The file ``export-with-emails.zip`` won't include attachments.
+  - The first command collects all of the user emails and creates the file ``export-with-emails.zip``. The second command fetches attachments and creates the file ``export-with-emails-and-attachments.zip``, which we will use going forward.
   - The second command can take a long time if you have a large number of file uploads. If it's interrupted, delete the file generated (if any), and start again.
 
 The file ``export-with-emails-and-attachments.zip`` now contains all the information necessary to be imported into Mattermost.
-
-Michael K Note:
-> This section caused the customer confusion because they always asked if they needed both emails and attachments.
 
 From the slack advanced exporter repo:
 Due to archive/zip limitations, these actions cannot modify archive in place. It's preferable to fetch e-mails first to avoid copying large attachments around.
@@ -104,26 +101,11 @@ Next, run the following command to create a Mattermost bulk import file. Replace
 
     ./mmetl transform slack --team <TEAM NAME> --file export-with-emails-and-attachments.zip --output mattermost_import.jsonl
 
-Michael K Note:
-I don't understand the below pre-existing paragraph. I'm not sure what the zip file structure is after slack advanced export
-https://github.com/grundleborg/slack-advanced-exporter/blob/c0f7bf8230cd15d9b44af36d73ce8f0650538c67/cmd/fetch_attachments.go#L148
-It looks like we place them in a folder called ``__uploads``
-but it's my understanding that we should make a ``data`` folder. I'm not sure what ``bulk-export-attachments`` is representing below. I need to look into this more.
-I need to go through this part of the process. I generated a slack export, but it doesn't contain posts for "today", so I don't have the available info
+The tool outputs a [.jsonl](https://jsonlines.org/examples) file containing all of your users, channels, and posts. It also creates a ``data`` folder that contains all of your attachments.
 
-Next you have to create a zip file with the ``mattermost_import.jsonl`` file and the directory ``bulk-export-attachments`` (which needs to be moved to a subdirectory ``data`` first) that contains the attachments. On Linux and macOS you can use this command:
+.. important::
 
-The tool outputs a `.jsonl` file https://jsonlines.org/examples. We now need to place this file and attachments into a new zip file. Place this output file in the root directory of the zip file.
-
-Michael K note:
-it doesn't matter what th `.jsonl` file is called
-you can name it what you want with the `--output` flag as shown above
-it just needs to be a `.jsonl` file and be in the root directory of the zip file
-this is a point of confusion, since there is no clear understanding of what the name of the files needs to be
-
-.. code:: bash
-
-  zip -r mattermost-bulk-import.zip data mattermost_import.jsonl
+  It doesn't matter what you name the ``.jsonl`` file. You can name it what you want with the `--output` flag as shown above. It just needs to be a ``.jsonl`` file.
 
 The file ``mattermost-bulk-import.zip`` is now ready to import into Mattermost.
 
@@ -133,7 +115,7 @@ The file ``mattermost-bulk-import.zip`` is now ready to import into Mattermost.
 We have two options to run the import process:
 
 1. SSH into the Mattermost server's host, upload the export file to this server's file system somehow, and use the ``mattermost`` command to process the export file.
-2. Uploading the export through Mattermost's API, via command line ``mmctl`` from the server or from another computer.
+2. Uploading the export through Mattermost's API, via command line ``mmctl`` from the server or from another computer. This option is required for Mattermost Cloud deployments.
 
 Note that for the second option, the server will save the import in its file store before running the import (e.g. AWS S3 if you are using that are your file store), so there will be time spent uploading/downloading the file in this case. Since this is really just a one-time thing to import this file, we recommend the first option of running it on the server itself if you have a large export zip file.
 
@@ -142,22 +124,30 @@ Note that the migration is idempotent, meaning that you can run multiple imports
 Option 1: Use the ``mattermost`` command to run the export
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-First get the export file onto your server using something like ``scp``
-
-Use the server executable named ``mattermost`` to run the export with the command:
+First get the ``.jsonl`` file and ``data`` folder onto your server using something like ``scp``. Then you'll use the ``mattermost`` binary to process the bulk import data:
 
 .. code:: bash
-    mattermost bulk import
+    mattermost import bulk ./mattermost_import.jsonl --import-path ./data --apply
 
-Michael K Note:
-need to fill in other details here for Option 1
+.. important::
+    If doing this locally in a development environment, you'll want to set the location of your server's data folder first like so:
+
+    export MM_FILESETTINGS_DIRECTORY=/absolute/path/to/mattermost/server/data
+
+    You can use an official Mattermost release to obtain a ``mattermost`` binary to use, or run `make build-(arch)` to build the binary and have it placed in the `GOBIN` directory.
 
 Option 2: Upload export via ``mmctl``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Ensure you have the Mattermost command line tool ``mmctl`` installed. This allows you to perform different tasks that communicate to Mattermost's API.
+Ensure you have the Mattermost command line tool ``mmctl`` installed. This allows you to perform different tasks that communicate to Mattermost's API. You'll also want to [configure authentication](https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-auth) for the tool.
 
-Once you have ``mmctl`` installed and authenticated, use this command to upload ``mattermost-bulk-import.zip``:
+To prepare our files to be uploaded to the server, we need to put both the ``.jsonl`` file and ``data`` folder together into a zip file.
+
+.. code:: bash
+
+  zip -r mattermost-bulk-import.zip data mattermost_import.jsonl
+
+Then we can upload the zip file to our Mattermost server:
 
 .. code:: bash
 
@@ -184,7 +174,10 @@ Finally, run this command to view the status of the import process job. If the j
 Debug imports
 ^^^^^^^^^^^^^
 
-The ``mmctl import job show`` shows a detailed error message. If you run into problems which the error message does not help to resolve, please try the first option of using the ``mattermost bulk import`` command. The ``mmctl`` import process does not give you any additional debugging information, even in the Mattermost server logs.
+If you choose the ``mmctl`` option above, you can use the ``mmctl import job show`` command to view any relevant errors that may have occurred. If you run into problems which the error message does not help to resolve, please try the first option of using the ``mattermost bulk import`` command. The ``mmctl`` import process does not give you any additional debugging information, even in the Mattermost server logs.
+
+.. important::
+    Note that if your logged in Mattermost user is not present in your input (neither the email nor the username matches any users in the import file), your user will not be added to any new channels in the import process.
 
 Additional tools
 ^^^^^^^^^^^^^^^^
