@@ -29,7 +29,7 @@ Slack offers two ways to `export your data from their product <https://get.slack
 1. Regular export - Contains only public channel posts. This does not include private channels, DMs, or group conversations. This can be generated from **Slack > Administration > Workspace settings > Import/Export Data > Export > Start Export**.
 2. Corporate export - Contains all posts. This includes public channels, private channels, DMs and group messages. You must `request this export type from Slack directly <https://slack.com/help/articles/1500001548241-Request-to-export-all-conversations>`__.
 
-You will receive a zip file containing the following contents.
+You will receive a zip file containing the following contents:
 
 - Channels (``channels.json``)
 - Users (``users.json``)
@@ -48,8 +48,8 @@ You will receive a zip file containing the following contents.
 3. Download file attachments and email addresses
 ------------------------------------------------
 
-When you download your Slack export zip file, few pieces of data will be missing from the zip file:
-- Emails of users
+When you download your Slack export zip file, some data will be missing from the zip file:
+- User emails
 - Uploaded attachment contents
 
 We need to create a Slack app in order to gather these contents. Follow these steps to create a Slack app:
@@ -93,7 +93,7 @@ Due to archive/zip limitations, these actions cannot modify archive in place. It
 4. Convert Slack import to Mattermost's bulk export format
 ----------------------------------------------------------
 
-Now that you have a Slack export file with emails and attachments, let's convert this information into Mattermost's bulk import format using the import preparation tool ``mmetl``. Download the latest release of ``mmetl`` for your OS and architecture `here <https://github.com/mattermost/mmetl/releases/>`__. Run ``mmetl help`` to learn more about using the tool.
+Now that you have a Slack export file with emails and attachments, let's convert this information into Mattermost's bulk import format using the import preparation tool ``mmetl``. Download the latest release of ``mmetl`` for your `OS and architecture <https://github.com/mattermost/mmetl/releases/>`__. Run ``mmetl help`` to learn more about using the tool.
 
 Next, run the following command to create a Mattermost bulk import file. Replace ``<TEAM NAME>`` with the name of your team in Mattermost:
 
@@ -119,7 +119,7 @@ We have two options to run the import process:
 
 Note that for the second option, the server will save the import in its file store before running the import (e.g. AWS S3 if you are using that are your file store), so there will be time spent uploading/downloading the file in this case. Since this is really just a one-time thing to import this file, we recommend the first option of running it on the server itself if you have a large export zip file.
 
-Note that the migration is idempotent, meaning that you can run multiple imports that contain the same posts, and there will not be duplicated created posts in Mattermost. Each post is imported with the correct user/author and `created_at` value from your Slack instance. Threads are kept in tact with the import.
+Note that the migration is idempotent, meaning that you can run multiple imports that contain the same posts, and there will not be duplicated created posts in Mattermost. Each post is imported with the correct user/author and ``created_at`` value from your Slack instance. Threads are kept in tact with the import.
 
 Option 1: Use the ``mattermost`` command to run the export
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -132,9 +132,9 @@ First get the ``.jsonl`` file and ``data`` folder onto your server using somethi
 .. important::
     If doing this locally in a development environment, you'll want to set the location of your server's data folder first like so:
 
-    export MM_FILESETTINGS_DIRECTORY=/absolute/path/to/mattermost/server/data
+    ``export MM_FILESETTINGS_DIRECTORY=/absolute/path/to/mattermost/server/data``
 
-    You can use an official Mattermost release to obtain a ``mattermost`` binary to use, or run `make build-(arch)` to build the binary and have it placed in the `GOBIN` directory.
+    You can use an official Mattermost release to obtain a ``mattermost`` binary to use, or run `make build-(arch)` to build the binary and have it placed in the ``GOBIN`` directory.
 
 Option 2: Upload export via ``mmctl``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
