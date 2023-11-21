@@ -4,21 +4,19 @@ Reply to messages
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-.. tabs::
+.. tab:: Web/Desktop
 
-  .. tab:: Web/Desktop
+  Reply to messages by selecting the **Reply** |reply-arrow| icon next to the message text. 
 
-    Reply to messages by selecting the **Reply** |reply-arrow| icon next to the message text. 
+  .. |reply-arrow| image:: ../images/reply-outline_F0F20.svg
+    :alt: Reply icon.
 
-    .. |reply-arrow| image:: ../images/reply-outline_F0F20.svg
-      :alt: Reply icon.
+  .. image:: ../images/reply-to-message.png
+    :alt: Reply to Mattermost messages
 
-    .. image:: ../images/reply-to-message.png
-      :alt: Reply to Mattermost messages
+.. tab:: Mobile
 
-  .. tab:: Mobile
-
-    Tap on a message to reply to it, or long press and select **Reply**.
+  Tap on a message to reply to it, or long press and select **Reply**.
 
 Depending on how the system admin has configured Mattermost, you may also be able to `edit and delete messages </collaborate/send-messages.html#edit-or-delete-messages>`__ after you've sent them. Your system admin may also restrict messaging actions, such as editing or deleting messages, by configuring `advanced permissions </onboard/advanced-permissions.html>`__, available in `Mattermost Enterprise and Professional subscription plans <https://mattermost.com/pricing>`__.
 

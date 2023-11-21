@@ -20,28 +20,26 @@ You can mark public and private channels, as well as direct and group messages a
 
 To mark a channel as a **Favorite**:
 
-.. tabs::
+.. tab:: Web/Desktop
 
-  .. tab:: Web/Desktop
+  1. Open a channel.
+  2. Select on the star icon next to the channel name.
 
-    1. Open a channel.
-    2. Select on the star icon next to the channel name.
+  At the top of the page, select the |favorite-icon| icon next to the channel name.
 
-    At the top of the page, select the |favorite-icon| icon next to the channel name.
+  .. image:: ../images/favorite-channel-desktop.png
+    :alt: Mark a channel as a favorite.
 
-    .. image:: ../images/favorite-channel-desktop.png
-      :alt: Mark a channel as a favorite.
+  To remove a channel from your **Favorites** list, select the |favorite-icon| icon again.
 
-    To remove a channel from your **Favorites** list, select the |favorite-icon| icon again.
+  .. tip::
 
-    .. tip::
+    - Alternatively to mark channels as favorites, select the channel name, select the **View Info** |channel-info| icon, then select **Favorite** in the right pane. Select **Favorited** to remove the channel from your list of favorites.
 
-      - Alternatively to mark channels as favorites, select the channel name, select the **View Info** |channel-info| icon, then select **Favorite** in the right pane. Select **Favorited** to remove the channel from your list of favorites.
+.. tab:: Mobile
 
-  .. tab:: Mobile
-
-    1. Tap the channel you want to mark as a favorite.
-    2. Tap the **More** (...) icon located in the top right corner of the app.
-    3. Tap **Favorite**.
-    
-    To remove a channel from the **Favorites** list, tap the **Favorited** option.
+  1. Tap the channel you want to mark as a favorite.
+  2. Tap the **More** (...) icon located in the top right corner of the app.
+  3. Tap **Favorite**.
+  
+  To remove a channel from the **Favorites** list, tap the **Favorited** option.

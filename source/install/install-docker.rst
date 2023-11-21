@@ -9,34 +9,32 @@ Install Docker
 
 If you don't have Docker installed, follow the instructions below based on your operating system:
 
-.. tabs::
+.. tab:: macOS
 
-  .. tab:: macOS
+  Install `Docker for Mac <https://docs.docker.com/installation/mac/>`__.
 
-    Install `Docker for Mac <https://docs.docker.com/installation/mac/>`__.
+.. tab:: Windows 10
 
-  .. tab:: Windows 10
+  Install `Docker for Windows <https://docs.docker.com/installation/windows/>`__.
 
-    Install `Docker for Windows <https://docs.docker.com/installation/windows/>`__.
+.. tab:: Ubuntu
 
-  .. tab:: Ubuntu
+  Follow the `Install Docker Engine on Ubuntu <https://docs.docker.com/engine/install/ubuntu/>`__ documentation, or you can use the Docker package from the Ubuntu repositories:
 
-    Follow the `Install Docker Engine on Ubuntu <https://docs.docker.com/engine/install/ubuntu/>`__ documentation, or you can use the Docker package from the Ubuntu repositories:
+  .. code:: bash
 
-    .. code:: bash
+    sudo apt update
+    sudo apt install docker.io
+    sudo systemctl start docker
 
-      sudo apt update
-      sudo apt install docker.io
-      sudo systemctl start docker
+.. tab:: Fedora
 
-  .. tab:: Fedora
+  Follow the `Install Docker Engine on Fedora <https://docs.docker.com/engine/installation/linux/fedora/>`__ documentation, or you can use the Moby package (Moby is the FOSS upstream project to Docker) from the Fedora repositories:
 
-    Follow the `Install Docker Engine on Fedora <https://docs.docker.com/engine/installation/linux/fedora/>`__ documentation, or you can use the Moby package (Moby is the FOSS upstream project to Docker) from the Fedora repositories:
+  .. code:: bash
 
-    .. code:: bash
-
-      sudo dnf install moby-engine
-      sudo systemctl start docker
+    sudo dnf install moby-engine
+    sudo systemctl start docker
 
 .. _Preview Mattermost on Docker:
 

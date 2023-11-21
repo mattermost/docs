@@ -3,37 +3,35 @@
 Bulk export data
 ----------------
 
-.. tabs::
+.. tab:: Use mmctl
 
-  .. tab:: Use mmctl
+  1. Create a full export file including attachments by running the `mmctl export create -- attachments </manage/mmctl-command-line-tool.html#mmctl-export-create>`__ command. See the `Mattermost workspace migration </manage/cloud-data-export.html#create-the-export>`__ documentation for details.
 
-    1. Create a full export file including attachments by running the `mmctl export create -- attachments </manage/mmctl-command-line-tool.html#mmctl-export-create>`__ command. See the `Mattermost workspace migration </manage/cloud-data-export.html#create-the-export>`__ documentation for details.
+  2. While the job is running, you can check its status by running the `mmctl export job show </manage/mmctl-command-line-tool.html#mmctl-export-job-show>`__ command.
 
-    2. While the job is running, you can check its status by running the `mmctl export job show </manage/mmctl-command-line-tool.html#mmctl-export-job-show>`__ command.
+  3. When the export job status is successful:
 
-    3. When the export job status is successful:
+    a. Identify the name of the completed export file by running the `mmctl export list </manage/mmctl-command-line-tool.html#mmctl-export-list>`__ command.
+    b. Download the export file to your local machine by running the `mmctl export download </manage/mmctl-command-line-tool.html#mmctl-export-download>`__ command.
 
-      a. Identify the name of the completed export file by running the `mmctl export list </manage/mmctl-command-line-tool.html#mmctl-export-list>`__ command.
-      b. Download the export file to your local machine by running the `mmctl export download </manage/mmctl-command-line-tool.html#mmctl-export-download>`__ command.
+.. tab:: Use CLI
 
-  .. tab:: Use CLI
+  .. note:: 
+    
+    From Mattermost v6.0, this command has been deprecated in favor of `mmctl export commands </manage/mmctl-command-line-tool.html#mmctl-export>`__ as the supported way to export data out of Mattermost.
 
-    .. note:: 
-      
-      From Mattermost v6.0, this command has been deprecated in favor of `mmctl export commands </manage/mmctl-command-line-tool.html#mmctl-export>`__ as the supported way to export data out of Mattermost.
+  The export command runs in the `CLI </manage/command-line-tools.html>`__.  It has permissions to access all information in the Mattermost database.
 
-    The export command runs in the `CLI </manage/command-line-tools.html>`__.  It has permissions to access all information in the Mattermost database.
+  To run the export command:
 
-    To run the export command:
+  1.  Navigate to the directory where the Mattermost server is installed. On a default install of Mattermost, the directory is ``/opt/mattermost``.
+  2.  Run the following command to extract data from all teams on the server. Note that you can change the file name and specify an absolute or relative path to dictate where the file is exported:
 
-    1.  Navigate to the directory where the Mattermost server is installed. On a default install of Mattermost, the directory is ``/opt/mattermost``.
-    2.  Run the following command to extract data from all teams on the server. Note that you can change the file name and specify an absolute or relative path to dictate where the file is exported:
+      ``sudo -u mattermost bin/mattermost export bulk file.json --all-teams``
 
-        ``sudo -u mattermost bin/mattermost export bulk file.json --all-teams``
+      ``sudo -u mattermost bin/mattermost export bulk /home/user/bulk_data.json --all-teams``
 
-        ``sudo -u mattermost bin/mattermost export bulk /home/user/bulk_data.json --all-teams``
-
-    3.  Retrieve your file from the location you specified.
+  3.  Retrieve your file from the location you specified.
 
 At this time, the export supports attributes of the objects listed below. All Mattermost bulk export data files will begin with a ``Version`` object as the first line of the file. This indicates the version of the Mattermost bulk import file format with which the exported data is compatible.
 

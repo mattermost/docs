@@ -26,28 +26,25 @@ Recently used emojis are sorted based on how often you've used them.
 Include emojis and GIFs in messages
 -----------------------------------
 
-.. tabs::
+.. tab:: Web/desktop
 
-  .. tab:: Web/desktop
-              
-    Select the **Smile** icon |smile-icon| inside the Mattermost message input box to open the emoji and GIF picker. 
+  Select the **Smile** icon |smile-icon| inside the Mattermost message input box to open the emoji and GIF picker. 
 
-    Select an emoji from the **Emojis** tab, or switch to the **GIFs** tab to search for a GIF.
-     
-    You can also specify emojis based on their name. Type ``:`` followed by at least two characters of the word describing the emoji. This opens an emoji autocomplete. Descriptions include skin tone details for people-based emojis, where supported.
+  Select an emoji from the **Emojis** tab, or switch to the **GIFs** tab to search for a GIF.
 
-    .. image:: ../images/emojiautocomplete.png
-      :alt: Emoji autocomplete
+  You can also specify emojis based on their name. Type ``:`` followed by at least two characters of the word describing the emoji. This opens an emoji autocomplete. Descriptions include skin tone details for people-based emojis, where supported.
 
+  .. image:: ../images/emojiautocomplete.png
+    :alt: Emoji autocomplete
 
-    .. tip::
+  .. tip::
 
-      Can't find the perfect emoji? You can `upload your own custom emoji <#upload-custom-emojis>`__ if your system admin has `enabled you to do so </configure/site-configuration-settings.html#emoji-enablecustom>`__.
+    Can't find the perfect emoji? You can `upload your own custom emoji <#upload-custom-emojis>`__ if your system admin has `enabled you to do so </configure/site-configuration-settings.html#emoji-enablecustom>`__.
 
-  .. tab:: Mobile
-   
-    Long press on a message, and then select a recently used emoji, or select the |smile-icon| to add a different reaction. Mattermost accesses the emojis and GIFs available on your mobile device.
-    
+.. tab:: Mobile
+
+  Long press on a message, and then select a recently used emoji, or select the |smile-icon| to add a different reaction. Mattermost accesses the emojis and GIFs available on your mobile device.
+
 Manage emojis
 -------------
 

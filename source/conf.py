@@ -38,10 +38,10 @@ extensions = [
     # The original sphinx_sitemap extension can be found at:
     # https://pypi.org/project/sphinx-sitemap/
     "sitemap",
-    "sphinx_tabs.tabs",
     "sphinx_copybutton",
     "compass-icons",
     "config-setting-v2",
+    "sphinx_inline_tabs",
 ]
 
 sphinx_tabs_disable_tab_closing = True

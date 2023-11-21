@@ -81,45 +81,43 @@ The mmctl tool comes bundled with Mattermost package. For customers that want to
 
 .. _install-mmctl-options:
 
-.. tabs::
+.. tab:: Using release package (Linux, macOS, Windows)
 
-   .. tab:: Using release package (Linux, macOS, Windows)
+   Starting with the release ``v8.0.0`` of Mattermost, you can download the mmctl builds at their release URL: ``https://releases.mattermost.com/mmctl/${MATTERMOST_VERSION}/${PLATFORM}_${ARCHITECTURE}.tar`` (for windows, substitute the ``.tar`` suffix with ``.zip``)
 
-      Starting with the release ``v8.0.0`` of Mattermost, you can download the mmctl builds at their release URL: ``https://releases.mattermost.com/mmctl/${MATTERMOST_VERSION}/${PLATFORM}_${ARCHITECTURE}.tar`` (for windows, substitute the ``.tar`` suffix with ``.zip``)
+   E.g. to download version ``v8.0.0`` of the mmctl amd64 build for linux, you can run the following:
 
-      E.g. to download version ``v8.0.0`` of the mmctl amd64 build for linux, you can run the following:
+   .. code-block:: sh
 
-      .. code-block:: sh
+      curl -vfsSL -O https://releases.mattermost.com/mmctl/v8.0.0/linux_amd64.tar
 
-         curl -vfsSL -O https://releases.mattermost.com/mmctl/v8.0.0/linux_amd64.tar
+   Supported platforms, and corresponding supported architectures, are: linux (amd64 and arm64), darwin (amd64 and arm64), windows (amd64 only).
 
-      Supported platforms, and corresponding supported architectures, are: linux (amd64 and arm64), darwin (amd64 and arm64), windows (amd64 only).
+   For versions older than ``v8.0.0``, you can instead visit the `mmctl releases page <https://github.com/mattermost/mmctl/releases>`__ and download the appropriate release for your OS, and install the binary.
 
-      For versions older than ``v8.0.0``, you can instead visit the `mmctl releases page <https://github.com/mattermost/mmctl/releases>`__ and download the appropriate release for your OS, and install the binary.
+.. tab:: Using go install (Linux, macOS, Windows)
 
-   .. tab:: Using go install (Linux, macOS, Windows)
+   Use this option on Linux, macOS, and Windows if you have a ``go`` environment configured.
 
-      Use this option on Linux, macOS, and Windows if you have a ``go`` environment configured.
+   To build and install the mmctl binary in your `$GOPATH`, run the following command:
 
-      To build and install the mmctl binary in your `$GOPATH`, run the following command:
+   .. code-block:: sh
 
-      .. code-block:: sh
+      # For Mattermost versions >= v8.0.0
+      go install github.com/mattermost/mattermost/server/v8/cmd/mmctl@master
 
-         # For Mattermost versions >= v8.0.0
-         go install github.com/mattermost/mattermost/server/v8/cmd/mmctl@master
+      # For Mattermost versions < v8.0.0
+      go install github.com/mattermost/mmctl@latest
 
-         # For Mattermost versions < v8.0.0
-         go install github.com/mattermost/mmctl@latest
+.. tab:: Use brew (Linux, macOS)
 
-   .. tab:: Use brew (Linux, macOS)
+   **NB: this is not an officially supported method.** This installation channel is managed by the community, please refer to the `homebrew/homebrew-core repo <https://github.com/Homebrew/homebrew-core>`__ for reporting issues.
 
-      **NB: this is not an officially supported method.** This installation channel is managed by the community, please refer to the `homebrew/homebrew-core repo <https://github.com/Homebrew/homebrew-core>`__ for reporting issues.
+   Use this option on Linux and macOS if you have Homebrew installed.
 
-      Use this option on Linux and macOS if you have Homebrew installed.
+   .. code-block:: sh
 
-      .. code-block:: sh
-
-         brew install mmctl
+      brew install mmctl
 
 Build mmctl
 ------------

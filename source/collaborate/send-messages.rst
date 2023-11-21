@@ -28,22 +28,20 @@ Enter a message in the text field, then select **Send** |send-icon| to send the 
 
 Compose a message by typing into the text box at the bottom of the Mattermost screen, then select the **Send** |send-icon| icon.
 
-.. tabs::
+.. tab:: Web/Desktop
 
-  .. tab:: Web/Desktop
+  You can also use a keyboard to send messages:
+  
+  - Press :kbd:`Enter` on Windows or Linux, or :kbd:`↵` on Mac. 
+  - To create new text lines, press :kbd:`Shift` :kbd:`Enter` on Windows or Linux, or press :kbd:`⇧` :kbd:`↵` on Mac. 
 
-    You can also use a keyboard to send messages:
-    
-    - Press :kbd:`Enter` on Windows or Linux, or :kbd:`↵` on Mac. 
-    - To create new text lines, press :kbd:`Shift` :kbd:`Enter` on Windows or Linux, or press :kbd:`⇧` :kbd:`↵` on Mac. 
+  .. tip::
 
-    .. tip::
+    If you find you're accidentally sending messages too soon, you can configure Mattermost to require :kbd:`Shift` :kbd:`Enter` on Windows or Linux, or press :kbd:`⇧` :kbd:`↵` on Mac to send all messages. Select the **gear** |gear-icon| icon to go to **Settings**, then select **Advanced > Send messages on CTRL+ENTER**.
 
-      If you find you're accidentally sending messages too soon, you can configure Mattermost to require :kbd:`Shift` :kbd:`Enter` on Windows or Linux, or press :kbd:`⇧` :kbd:`↵` on Mac to send all messages. Select the **gear** |gear-icon| icon to go to **Settings**, then select **Advanced > Send messages on CTRL+ENTER**.
+.. tab:: Mobile
 
-  .. tab:: Mobile
-
-    Tap the **Smile** icon |smile-icon| to add emojis while composing your message.
+  Tap the **Smile** icon |smile-icon| to add emojis while composing your message.
 
 .. tip::
   

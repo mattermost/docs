@@ -23,21 +23,19 @@ Set a custom status
 
 Set a custom status to display a descriptive status message and optional emoji next to your name in Mattermost. Other members can see your status anywhere they can see your name, such as the channel sidebar and in conversations. To set a custom status in Mattermost:
 
-.. tabs::
+.. tab:: Web/Desktop
 
-  .. tab:: Web/Desktop
+  1. Select your profile picture, then select **Set a custom status**.
+  2. Choose from a list of suggested statuses, or enter a new emoji and status. The Speech bubble emoji 💬  is used by default if you don't specify an emoji. A custom status can be a maximum of 100 characters in length.
+  3. Specify when to clear your custom status.
+  4. Select **Set Status**.
 
-    1. Select your profile picture, then select **Set a custom status**.
-    2. Choose from a list of suggested statuses, or enter a new emoji and status. The Speech bubble emoji 💬  is used by default if you don't specify an emoji. A custom status can be a maximum of 100 characters in length.
-    3. Specify when to clear your custom status.
-    4. Select **Set Status**.
+.. tab:: Mobile
 
-  .. tab:: Mobile
-
-    1. Select your profile picture, then selecting **Set a status**.
-    2. Choose from a list of suggested statuses, reuse a recent status, or tap to enter a status and select an emoji. The Speech bubble emoji 💬  is used by default if you don't specify an emoji. A custom status can be a maximum of 100 characters in length.
-    3. Specify when to clear your custom status.
-    4. Tap **Done**. 
+  1. Select your profile picture, then selecting **Set a status**.
+  2. Choose from a list of suggested statuses, reuse a recent status, or tap to enter a status and select an emoji. The Speech bubble emoji 💬  is used by default if you don't specify an emoji. A custom status can be a maximum of 100 characters in length.
+  3. Specify when to clear your custom status.
+  4. Tap **Done**. 
 
 .. tip::
 

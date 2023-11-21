@@ -42,130 +42,128 @@ You can configure Mattermost to receive increase or decrease the number of notif
 In a web browser or the desktop app, select the **Settings** |gear| icon located in the top right corner of the screen to manage your notification preferences.
 
 On mobile, select the **Settings** |gear| icon and tap **Notifications**.
-
-.. tabs::
     
-    .. tab:: Web/Desktop
-        
-        By default, you're notified of all Mattermost activity in both a web browser and the desktop app with badges, banner alerts, and sounds. In supported web browsers, the tab's favicon also notifies you of unread messages with an asterisk (*) and a count.
-            
-        **Too many notifications!**
+.. tab:: Web/Desktop
 
-        If that's too many notifications, you can configure Mattermost to notify you for only mentions and direct messages. Select **Desktop Notifications > Only for mentions and direct messages**. 
+    By default, you're notified of all Mattermost activity in both a web browser and the desktop app with badges, banner alerts, and sounds. In supported web browsers, the tab's favicon also notifies you of unread messages with an asterisk (*) and a count.
+    
+    **Too many notifications!**
 
-        Disable web and desktop notifications altogether by selecting **Desktop Notifications > Never**.
+    If that's too many notifications, you can configure Mattermost to notify you for only mentions and direct messages. Select **Desktop Notifications > Only for mentions and direct messages**. 
 
-        **Too loud**
+    Disable web and desktop notifications altogether by selecting **Desktop Notifications > Never**.
 
-        You can change or disable the audible sound for notifications. Go to **Desktop notifications > Notification sound**, and choose a different sound or turn the sound off.
+    **Too loud**
 
-        **Incoming call sounds**
+    You can change or disable the audible sound for notifications. Go to **Desktop notifications > Notification sound**, and choose a different sound or turn the sound off.
 
-        Want to hear a sound when a Mattermost call starts? If your Mattermost admin `enables this beta feature </configure/plugins-configuration-settings.html#enable-call-ringing-beta>`__, you can choose the sound that plays when a call is started within a direct or group message you're participating in by going to **Desktop notifications > Notification sound for incoming calls**.
-        
-        You can disable incoming call sounds altogether if preferred.
+    **Incoming call sounds**
 
-    .. tab:: Email 
-        
-        By default, you're notified of all Mattermost activity by email right away when you're offline or away from Mattermost for more than 5 minutes.
+    Want to hear a sound when a Mattermost call starts? If your Mattermost admin `enables this beta feature </configure/plugins-configuration-settings.html#enable-call-ringing-beta>`__, you can choose the sound that plays when a call is started within a direct or group message you're participating in by going to **Desktop notifications > Notification sound for incoming calls**.
 
-        **Too many notifications!**
+    You can disable incoming call sounds altogether if preferred.
 
-        Turn off email notifications altogether by selecting **Email Notifications > Never**.
+.. tab:: Email 
 
-        **Group email notifications in batches**
+    By default, you're notified of all Mattermost activity by email right away when you're offline or away from Mattermost for more than 5 minutes.
 
-        Mattermost also supports the ability to group multiple email notifications together into a single email. If your Mattermost admin `enables this feature </configure/site-configuration-settings.html#notification-enableemailbatching>`__, you'll receive batches of notifications by email every 15 minutes, or as configured by your admin.
+    **Too many notifications!**
 
-    .. tab:: Mobile
+    Turn off email notifications altogether by selecting **Email Notifications > Never**.
 
-        By default, you're notified of all Mattermost activity in the mobile app when you're away or offline for more than 5 minutes.
+    **Group email notifications in batches**
 
-        **Too many notifications!**
+    Mattermost also supports the ability to group multiple email notifications together into a single email. If your Mattermost admin `enables this feature </configure/site-configuration-settings.html#notification-enableemailbatching>`__, you'll receive batches of notifications by email every 15 minutes, or as configured by your admin.
 
-        If that's too many notifications, you can configure Mattermost to notify you for only mentions and direct messages. Select **Mobile Push Notifications > For mentions and direct messages**.
+.. tab:: Mobile
 
-        **Only notify me when I'm offline**
+    By default, you're notified of all Mattermost activity in the mobile app when you're away or offline for more than 5 minutes.
 
-        If you prefer to be notified of all activity, but only when you're offline, select **For all activity** and then select **Offline**.
+    **Too many notifications!**
 
-        Turn off all mobile notifications by selecting **Mobile Push Notifications > Never**.
+    If that's too many notifications, you can configure Mattermost to notify you for only mentions and direct messages. Select **Mobile Push Notifications > For mentions and direct messages**.
 
-        **Not enough notifications**
+    **Only notify me when I'm offline**
 
-        If you prefer to always be notified, regardless of your user status, select **Mobile Push Notifications > Trigger push notifications when > Online, away or offline**.
+    If you prefer to be notified of all activity, but only when you're offline, select **For all activity** and then select **Offline**.
 
-    .. tab:: @mentions/keywords
+    Turn off all mobile notifications by selecting **Mobile Push Notifications > Never**.
 
-        By default, you’re notified when you’re @mentioned in a message or a thread by your username or first name, or when a thread you’re following has a new response. For all other messages, the channel is highlighted to indicate unread messages.
+    **Not enough notifications**
 
-        You're also notified when someone uses channel-wide mentions including @channel, @all, and @here. 
+    If you prefer to always be notified, regardless of your user status, select **Mobile Push Notifications > Trigger push notifications when > Online, away or offline**.
 
-        **Customize notification keywords**
+.. tab:: @mentions/keywords
 
-        You can customize any additional non case-sensitive keywords to trigger notifications. For example, you can receive notifications for all messages and threads related to a specific topic, project name, or customer. Separate multiple keywords using commas or by pressing :kbd:`Tab`, and use :kbd:`Backspace` to manage keywords.
+    By default, you’re notified when you’re @mentioned in a message or a thread by your username or first name, or when a thread you’re following has a new response. For all other messages, the channel is highlighted to indicate unread messages.
 
-    .. tab:: Replies
+    You're also notified when someone uses channel-wide mentions including @channel, @all, and @here. 
 
-        If `Collapsed Reply Threads </collaborate/organize-conversations.html>`__ is disabled, you won't be notified in reply threads unless you're @mentioned. However, you can configure Mattermost to notify you when someone replies to a thread you started, or started or have participated in. Select **Reply notifications** to choose the option that works best for you. This setting is hidden when Collapsed Reply Threads is enabled.
+    **Customize notification keywords**
 
-        **Automatic replies**
+    You can customize any additional non case-sensitive keywords to trigger notifications. For example, you can receive notifications for all messages and threads related to a specific topic, project name, or customer. Separate multiple keywords using commas or by pressing :kbd:`Tab`, and use :kbd:`Backspace` to manage keywords.
 
-        Mattermost also supports the ability to automatically send custom replies to direct messages. If your Mattermost admin enables this experimental feature, you can go to **Automatic Direct Message Replies** to select **Enable** this feature and compose your message.
-        
-        Enabling this feature also sets your status to **Out of Office** and disables all email and push notifications until you disable it.
+.. tab:: Replies
 
-    .. tab:: Per channel/category
+    If `Collapsed Reply Threads </collaborate/organize-conversations.html>`__ is disabled, you won't be notified in reply threads unless you're @mentioned. However, you can configure Mattermost to notify you when someone replies to a thread you started, or started or have participated in. Select **Reply notifications** to choose the option that works best for you. This setting is hidden when Collapsed Reply Threads is enabled.
 
-       You can set notification preferences at the channel level for every channel you're a member of. You have 2 ways to access  channel preferences: 
-       
-       - Select the channel name, then select **Notification Preferences**. 
-       - Or select the **View Info** |channel-info| icon, and select **Notification Preferences** in the right pane.
+    **Automatic replies**
 
-       **Mute channel**
+    Mattermost also supports the ability to automatically send custom replies to direct messages. If your Mattermost admin enables this experimental feature, you can go to **Automatic Direct Message Replies** to select **Enable** this feature and compose your message.
 
-       All channels are unmuted by default. Using Mattermost in a web browser or the desktop app, mute a channel any time by selecting **Mute Channel**. Mute a direct message or group message by selecting **Mute Conversation**. You can unmute channels the same way by selecting **Unmute Channel** and **Unmute Conversation**.
+    Enabling this feature also sets your status to **Out of Office** and disables all email and push notifications until you disable it.
 
-       Using the mobile app:
+.. tab:: Per channel/category
 
-       1. Tap the channel or conversation you want to mute.
-       2. Tap the **More** |more-icon| icon located in the top right corner of the app.
-       3. Tap **Mute**.
-       4. Unmute the channel or conversation by tapping **Mute** again.
+    You can set notification preferences at the channel level for every channel you're a member of. You have 2 ways to access  channel preferences: 
 
-       Once a channel is muted:
+    - Select the channel name, then select **Notification Preferences**. 
+    - Or select the **View Info** |channel-info| icon, and select **Notification Preferences** in the right pane.
 
-       - Email, desktop, incoming call ring tones, and push notifications are disabled.
-       - A mute icon displays next to the channel, direct message, or group message’s name.
-       - The channel is dimmed in the channel sidebar, and isn’t bolded to indicate unread messages unless you’re @ mentioned directly.
+    **Mute channel**
 
-       **Ignore channel-wide @mentions**
-        
-       By default, you’ll be notified every time someone on your team mentions an entire channel using @channel, @all, or @here.
+    All channels are unmuted by default. Using Mattermost in a web browser or the desktop app, mute a channel any time by selecting **Mute Channel**. Mute a direct message or group message by selecting **Mute Conversation**. You can unmute channels the same way by selecting **Unmute Channel** and **Unmute Conversation**.
 
-       When using Mattermost in a web browser or the desktop app, stop being notified for channel-wide @mentions, by selecting the **Ignore mentions for @channel, @here and @all** option. Mention notifications for channel-wide mentions are ignored, but the channel is marked as unread unless it's muted.
-        
-       Using the mobile app:
+    Using the mobile app:
 
-       1. Tap the channel where you want to mute mention notifications.
-       2. Tap the **More** |more-icon| icon located in the top right corner of the app to access additional message options.
-       3. Tap **View info**.
-       4. Tap **Ignore @channel, @here, @all** to disable the option.
+    1. Tap the channel or conversation you want to mute.
+    2. Tap the **More** |more-icon| icon located in the top right corner of the app.
+    3. Tap **Mute**.
+    4. Unmute the channel or conversation by tapping **Mute** again.
 
-       **Desktop notifications**
+    Once a channel is muted:
 
-       By default, your web and desktop notification preferences apply to all channels you’re a member of. You can customize notifications on a channel by channel basis if preferred by selecting **Desktop notifications**. Select **(Default**) options to revert back to your global preferences.
+    - Email, desktop, incoming call ring tones, and push notifications are disabled.
+    - A mute icon displays next to the channel, direct message, or group message’s name.
+    - The channel is dimmed in the channel sidebar, and isn’t bolded to indicate unread messages unless you’re @ mentioned directly.
 
-       **Mobile push notifications**
+    **Ignore channel-wide @mentions**
 
-       By default, your mobile push notification preferences apply to all channels you’re a member of. You can customize notifications on a channel by channel basis if preferred by selecting **Mobile push notifications**. Select **(Default**) options to revert back to your global preferences.
+    By default, you’ll be notified every time someone on your team mentions an entire channel using @channel, @all, or @here.
 
-       **Auto-follow all new threads in this channel**
+    When using Mattermost in a web browser or the desktop app, stop being notified for channel-wide @mentions, by selecting the **Ignore mentions for @channel, @here and @all** option. Mention notifications for channel-wide mentions are ignored, but the channel is marked as unread unless it's muted.
 
-       By default, you don’t automatically follow new conversation threads unless you start a thread or reply to a thread, follow a thread, or are @mentioned in a thread.
+    Using the mobile app:
 
-       You can configure Mattermost to automatically follow every thread in a channel. When enabled, you can access all threads in the **Threads** view, and unfollow individual threads as you prefer.
+    1. Tap the channel where you want to mute mention notifications.
+    2. Tap the **More** |more-icon| icon located in the top right corner of the app to access additional message options.
+    3. Tap **View info**.
+    4. Tap **Ignore @channel, @here, @all** to disable the option.
+
+    **Desktop notifications**
+
+    By default, your web and desktop notification preferences apply to all channels you’re a member of. You can customize notifications on a channel by channel basis if preferred by selecting **Desktop notifications**. Select **(Default**) options to revert back to your global preferences.
+
+    **Mobile push notifications**
+
+    By default, your mobile push notification preferences apply to all channels you’re a member of. You can customize notifications on a channel by channel basis if preferred by selecting **Mobile push notifications**. Select **(Default**) options to revert back to your global preferences.
+
+    **Auto-follow all new threads in this channel**
+
+    By default, you don’t automatically follow new conversation threads unless you start a thread or reply to a thread, follow a thread, or are @mentioned in a thread.
+
+    You can configure Mattermost to automatically follow every thread in a channel. When enabled, you can access all threads in the **Threads** view, and unfollow individual threads as you prefer.
 
 .. tip:: 
-    
+
     Missing notifications? Visit our `notifications knowledge base article <https://support.mattermost.com/hc/en-us/articles/19161390661780>`__ for troubleshooting tips and tricks.

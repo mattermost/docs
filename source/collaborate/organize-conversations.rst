@@ -37,26 +37,24 @@ You'll automatically follow every thread you participate or are mentioned in. Yo
 .. image:: ../images/crt-following-thread.png
    :alt: Follow threads to stay updated on replies to messages.
 
-.. tabs::
+.. tab:: Web/Desktop
 
-  .. tab:: Web/Desktop
+  Toggle the thread’s **Follow/Following** indicator, or select **Follow thread** from the **More Actions** |more-actions-icon| icon. 
+  
+  **Unfollow threads**
+  
+  If you’re no longer interested in a or message thread, unfollow it to stop receiving notifications. Viewing a thread without responding to it doesn’t automatically follow that thread.
 
-    Toggle the thread’s **Follow/Following** indicator, or select **Follow thread** from the **More Actions** |more-actions-icon| icon. 
-    
-    **Unfollow threads**
-    
-    If you’re no longer interested in a or message thread, unfollow it to stop receiving notifications. Viewing a thread without responding to it doesn’t automatically follow that thread.
+  .. image:: ../images/crt-following-thread.jpg
+    :alt: Follow, unfollow, and mark threads as unread from the More Actions icon.
 
-    .. image:: ../images/crt-following-thread.jpg
-      :alt: Follow, unfollow, and mark threads as unread from the More Actions icon.
+.. tab:: Mobile
 
-  .. tab:: Mobile
-
-    Long-press on a message to access message options, then tap **Follow Thread**. 
-    
-    **Unfollow threads**
-    
-    If you’re no longer interested in a or message thread, unfollow it to stop receiving notifications. Viewing a thread without responding to it doesn’t automatically follow that thread.
+  Long-press on a message to access message options, then tap **Follow Thread**. 
+  
+  **Unfollow threads**
+  
+  If you’re no longer interested in a or message thread, unfollow it to stop receiving notifications. Viewing a thread without responding to it doesn’t automatically follow that thread.
 
 .. tip::
   - Follow messages with no replies from the **More Actions** |more-actions-icon| icon to be notified if someone replies to the message later based on your notification preferences.

@@ -6,16 +6,6 @@ Make calls
 
 From Mattermost v7.0, you can make voice calls and share your screen in channels, group messages, and direct messages in both Mattermost Cloud and Mattermost self-hosted deployments.
 
-On this page:
-
-- `Start a call <#start-a-call>`__
-- `Emojis <#emojis>`__
-- `Chat in a call <#chat-in-a-call>`__
-- `Record a call <#record-a-call>`__
-- `Frequently asked questions <#frequently-asked-questions>`__
-- `Troubleshooting <#troubleshooting>`__
-- `Debugging <#debugging>`__
-
 .. include:: ../_static/badges/academy-calls.rst
   :start-after: :nosearch:
 
@@ -35,24 +25,22 @@ Mattermost Cloud users can start calling right out of the box. For Mattermost se
 Start a call
 ------------
 
-.. tabs::
+.. tab:: Web/Desktop
 
-  .. tab:: Web/Desktop
-
-    To start a call, select **Start call** in the channel or message header. When you start a call in a channel, you're muted by default. In a direct or group message you're unmuted by default.
+  To start a call, select **Start call** in the channel or message header. When you start a call in a channel, you're muted by default. In a direct or group message you're unmuted by default.
+  
+  .. tip::
     
-    .. tip::
-      
-      Select the call widget to move it to a different area of your screen.
+    Select the call widget to move it to a different area of your screen.
 
-  .. tab:: Mobile
+.. tab:: Mobile
+  
+  To start a call, select the channel info menu. Then select **Start Call**.
     
-    To start a call, select the channel info menu. Then select **Start Call**.
-     
-    After starting the call, audio will come through the device's speaker or a Bluetooth device, if connected. On Android, audio output will automatically switch to a Bluetooth device if one is connected during a call. You can tap the **Speaker** icon to manually select the output device.
+  After starting the call, audio will come through the device's speaker or a Bluetooth device, if connected. On Android, audio output will automatically switch to a Bluetooth device if one is connected during a call. You can tap the **Speaker** icon to manually select the output device.
 
-    On iOS, audio will automatically come through a connected device. You can override this behavior by tapping the **Speaker** button. Audio will then come through the speaker. However, you cannot manually select an output device on iOS at this time.
-    
+  On iOS, audio will automatically come through a connected device. You can override this behavior by tapping the **Speaker** button. Audio will then come through the speaker. However, you cannot manually select an output device on iOS at this time.
+
 Any active team member in the channel can join a call, whether it's a public or private channel. If someone from outside of the organization wants to join a call, you'll need to provide them with a guest account, and add them to the channel. Users who are archived or not registered can't join a call.
 
 You can share a call's link to use in a meeting request or share with other team mates. The link is unique to each channel, and contains the channel's ID, so it doesn't change between calls. Use the ``/call link`` slash command to generate a shareable link.
@@ -64,31 +52,27 @@ Emojis
 
 You can use emojis to react during a call.
 
-.. tabs::
+.. tab:: Web/Desktop
 
-  .. tab:: Web/Desktop
+  Expand the call window using the arrows in the top-right of the call widget. From there, select the emoji icon to access frequently-used emojis or select additional emojis from the emoji picker.
 
-    Expand the call window using the arrows in the top-right of the call widget. From there, select the emoji icon to access frequently-used emojis or select additional emojis from the emoji picker.
+.. tab:: Mobile
 
-  .. tab:: Mobile
-  
-    Expand the call window using the arrows in the top-right of the active call banner. From there, select **React**.
-      
+  Expand the call window using the arrows in the top-right of the active call banner. From there, select **React**.
+
 Chat in a call
 --------------
 
 A chat thread is created automatically for every new call.
 
-.. tabs::
+.. tab:: Web/Desktop
 
-  .. tab:: Web/Desktop
+  To do this, expand the call window using the arrows in the top-right of the call widget. From there, select the emoji icon to access frequently-used emojis or select additional emojis from the emoji picker.
 
-    To do this, expand the call window using the arrows in the top-right of the call widget. From there, select the emoji icon to access frequently-used emojis or select additional emojis from the emoji picker.
+.. tab:: Mobile
 
-  .. tab:: Mobile
-  
-    To do this, expand the call window using the arrows in the top-right of the active call banner. Then select **More > Call Thread**.
-    
+  To do this, expand the call window using the arrows in the top-right of the active call banner. Then select **More > Call Thread**.
+
 Record a call
 -------------
 
@@ -102,18 +86,16 @@ When you stop recording, the recording is posted in the call thread as a file at
 
 To record a call:
 
-.. tabs::
+.. tab:: Web/Desktop
 
-  .. tab:: Web/Desktop
+  1. Select **Start call** in the header of the channel, group message, or direct message.
+  2. Select the pop-out icon.
+  3. In the pop-out screen, select the record button.
+  4. To stop recording, select the record button again.
 
-    1. Select **Start call** in the header of the channel, group message, or direct message.
-    2. Select the pop-out icon.
-    3. In the pop-out screen, select the record button.
-    4. To stop recording, select the record button again.
+.. tab:: Mobile
 
-  .. tab:: Mobile
-  
-    To start recording, use the ``/call recording start`` slash command. When you're finished recording, use the ``/call recording stop`` slash command. Alternatively, expand the call window using the arrows in the top-right of the active call banner. Then select the record button. To finish, select the button again.
+  To start recording, use the ``/call recording start`` slash command. When you're finished recording, use the ``/call recording stop`` slash command. Alternatively, expand the call window using the arrows in the top-right of the active call banner. Then select the record button. To finish, select the button again.
     
 Frequently asked questions
 --------------------------

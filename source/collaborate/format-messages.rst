@@ -4,6 +4,7 @@ Format messages
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
+
 .. |bold-icon| image:: ../images/format-bold_F0264.svg
   :alt: Bold message text using the Bold icon in the message formatting toolbar.
 
@@ -48,11 +49,6 @@ Format messages
 
 .. |message-priority-icon| image:: ../images/Priority-Message-Icon.svg
   :alt: Mark a message as important or urgent using the Priority Message icon.
-
-.. contents:: On this page
-  :backlinks: top
-  :local:
-  :depth: 2
 
 .. include:: ../_static/badges/academy-message-formatting.rst
   :start-after: :nosearch:
@@ -439,40 +435,38 @@ Renders as:
 Math Formulas
 ~~~~~~~~~~~~~
 
-.. tabs::
+.. tab:: Using Inline LaTeX
 
-  .. tab:: Using Inline LaTeX
+  You can create formulas that display inline using LaTeX. Use the dollar sign ($) symbol at the beginning and end of each formula.
 
-    You can create formulas that display inline using LaTeX. Use the dollar sign ($) symbol at the beginning and end of each formula.
+  .. note::
 
-    .. note::
+    This feature is `disabled by default </configure/configuration-settings.html#enable-inline-latex-rendering>`__. Contact your system admin to enable this setting in **System Console > Site Configuration > Posts** to use this feature.
 
-      This feature is `disabled by default </configure/configuration-settings.html#enable-inline-latex-rendering>`__. Contact your system admin to enable this setting in **System Console > Site Configuration > Posts** to use this feature.
+  .. code-block:: none
 
-    .. code-block:: none
+    $X_k = \sum_{n=0}^{2N-1} x_n \cos \left[\frac{\pi}{N} \left(n+\frac{1}{2}+\frac{N}{2}\right) \left(k+\frac{1}{2}\right) \right]$
 
-      $X_k = \sum_{n=0}^{2N-1} x_n \cos \left[\frac{\pi}{N} \left(n+\frac{1}{2}+\frac{N}{2}\right) \left(k+\frac{1}{2}\right) \right]$
-  
-    Renders as:
+  Renders as:
 
-    .. image:: ../images/latex-inline.png
-      :alt: An inline LaTeX math equation sample.
-      
-  .. tab:: Using LaTeX in Code Blocks
+  .. image:: ../images/latex-inline.png
+    :alt: An inline LaTeX math equation sample.
+    
+.. tab:: Using LaTeX in Code Blocks
 
-    Create formulas as code blocks by using LaTeX in a ``latex`` `code blocks <#code-blocks>`__. 
+  Create formulas as code blocks by using LaTeX in a ``latex`` `code blocks <#code-blocks>`__. 
 
-    .. note::
+  .. note::
 
-      This feature is `disabled by default </configure/configuration-settings.html#enable-latex-code-block-rendering>`__. Contact your system admin to enable this setting in **System Console > Site Configuration > Posts** to use this feature.
+    This feature is `disabled by default </configure/configuration-settings.html#enable-latex-code-block-rendering>`__. Contact your system admin to enable this setting in **System Console > Site Configuration > Posts** to use this feature.
 
-    .. code-block:: none
+  .. code-block:: none
 
-      ```latex
-      X_k = \sum_{n=0}^{2N-1} x_n \cos \left[\frac{\pi}{N} \left(n+\frac{1}{2}+\frac{N}{2}\right) \left(k+\frac{1}{2}\right) \right]
-      ```
+    ```latex
+    X_k = \sum_{n=0}^{2N-1} x_n \cos \left[\frac{\pi}{N} \left(n+\frac{1}{2}+\frac{N}{2}\right) \left(k+\frac{1}{2}\right) \right]
+    ```
 
-    Renders as:
+  Renders as:
 
-    .. image:: ../images/latex-codeblock.png
-      :alt: A LaTeX code block math equation sample.
+  .. image:: ../images/latex-codeblock.png
+    :alt: A LaTeX code block math equation sample.

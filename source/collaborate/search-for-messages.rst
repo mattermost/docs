@@ -24,67 +24,64 @@ Use Mattermost search to find messages, replies, and the contents of files share
 Search for message and files 
 -----------------------------
 
-.. tabs::
+.. tab:: Web/Desktop
 
-  .. tab:: Web/Desktop
+  **Search for messages**
 
-    **Search for messages**
+  1. Select the Search field, select **Messages**, then enter your search criteria. 
 
-    1. Select the Search field, select **Messages**, then enter your search criteria. 
+    .. image:: ../images/search-messages.png
+      :alt: Use the Search field to search for messages.
 
-      .. image:: ../images/search-messages.png
-        :alt: Use the Search field to search for messages.
+  2. When message results display in the Search Results pane, select **Jump** to view a full message in context.
 
-    2. When message results display in the Search Results pane, select **Jump** to view a full message in context.
+    .. image:: ../images/jump-to-message.png
+      :alt: From search results, you can go to the full message by selecting Jump.
 
-      .. image:: ../images/jump-to-message.png
-        :alt: From search results, you can go to the full message by selecting Jump.
+  **Search for files**
 
-    **Search for files**
+  File content search is available in Mattermost Server and in Mattermost Cloud. Select the **Search** field, select **Files**, then type your search criteria. 
 
-    File content search is available in Mattermost Server and in Mattermost Cloud. Select the **Search** field, select **Files**, then type your search criteria. 
+    .. image:: ../images/search-files.png
+      :alt: Use the Search field to serach for files attached to messages.
 
-      .. image:: ../images/search-files.png
-        :alt: Use the Search field to serach for files attached to messages.
+  File contents that match on file name, or contain matching text content within supported document types, are returned in the Search Results pane. Each search result includes file name, extension, and size details, as well as details about when and where the file was originally shared.
 
-    File contents that match on file name, or contain matching text content within supported document types, are returned in the Search Results pane. Each search result includes file name, extension, and size details, as well as details about when and where the file was originally shared.
+  - For Mattermost Cloud workspaces, supported document file formats include PDF, PPTX, DOCX, ODT, HTML, and plain text documents. DOC and RTF file formats, as well as the contents of ZIP files, are not supported.
+  - For Mattermost self-hosted deployments, supported document file formats include PDF, PPTX, DOCX, ODT, HTML, and plain text documents. 
 
-    - For Mattermost Cloud workspaces, supported document file formats include PDF, PPTX, DOCX, ODT, HTML, and plain text documents. DOC and RTF file formats, as well as the contents of ZIP files, are not supported.
-    - For Mattermost self-hosted deployments, supported document file formats include PDF, PPTX, DOCX, ODT, HTML, and plain text documents. 
-
-    .. note::
-      
-      System admins can extend file content search support for self-hosted deployments to include:
-  
-      - `files shared before upgrading to Mattermost Server v5.35 </manage/command-line-tools.html#mattermost-extract-documents-content>`__.
-      - `DOC and RTF file formats </configure/configuration-settings.html#enable-document-search-by-content>`__.
-      - `documents within ZIP files </configure/configuration-settings.html#enable-searching-content-of-documents-within-zip-files>`__.
-
-    **Filter results by file type**
+  .. note::
     
-    To narrow search results further, in the Search Results pane, select the **File Type Filter** option, then select specific file types, such as documents, spreadsheets, or images.
+    System admins can extend file content search support for self-hosted deployments to include:
+
+    - `files shared before upgrading to Mattermost Server v5.35 </manage/command-line-tools.html#mattermost-extract-documents-content>`__.
+    - `DOC and RTF file formats </configure/configuration-settings.html#enable-document-search-by-content>`__.
+    - `documents within ZIP files </configure/configuration-settings.html#enable-searching-content-of-documents-within-zip-files>`__.
+
+  **Filter results by file type**
   
-    .. image:: ../images/file-search-filter.png
-      :alt: You can filter search results by file type.
+  To narrow search results further, in the Search Results pane, select the **File Type Filter** option, then select specific file types, such as documents, spreadsheets, or images.
 
-    .. tip::
-      Select the **Channel Files** icon below the channel name to access files recently shared in the current channel. 
-  
-      .. image:: ../images/channel-files-icon.png
-        :alt: Use the Channel Files option to access recently shared files in the current channel.
+  .. image:: ../images/file-search-filter.png
+    :alt: You can filter search results by file type.
 
-  .. tab:: Mobile
+  .. tip::
+    Select the **Channel Files** icon below the channel name to access files recently shared in the current channel. 
 
-    1. Tap the **Search** |search-icon| icon at the bottom of the app to search for messages or files attached to messages.
-    2. To the right of search options, tap to select which team to search.
-    3. Enter your search criteria, including applicable `hashtags <#hashtags>`__.
-    4. Tap to apply `search modifiers <#search-modifiers>`__ to your search.
+    .. image:: ../images/channel-files-icon.png
+      :alt: Use the Channel Files option to access recently shared files in the current channel.
 
-.. tip::
-  To access files recently shared in a channel:
-  
-  - Select the |channel-files-icon| icon below the channel name to access files recently shared in that channel. 
-  - Select the channel name, select the **View Info** |channel-info| icon, then select **Files** in the right pane.
+.. tab:: Mobile
+
+  1. Tap the **Search** |search-icon| icon at the bottom of the app to search for messages or files attached to messages.
+  2. To the right of search options, tap to select which team to search.
+  3. Enter your search criteria, including applicable `hashtags <#hashtags>`__.
+  4. Tap to apply `search modifiers <#search-modifiers>`__ to your search.
+
+To access files recently shared in a channel:
+
+- Select the |channel-files-icon| icon below the channel name to access files recently shared in that channel. 
+- Select the channel name, select the **View Info** |channel-info| icon, then select **Files** in the right pane.
 
 Search modifiers
 ----------------

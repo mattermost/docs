@@ -6,22 +6,20 @@ Install a License Key
 
 You can use the System Console or the mmctl tools to add or change a Mattermost license key.
 
-.. tabs::
+.. tab:: Use System Console
 
-    .. tab:: Use System Console
+    1. Go go **System Console > About > Edition and License**.
+    2. Upload your license key file.
 
-        1. Go go **System Console > About > Edition and License**.
-        2. Upload your license key file.
+    Once the key is uploaded and installed, the details of your license are displayed.
 
-        Once the key is uploaded and installed, the details of your license are displayed.
+.. tab:: Use mmctl
 
-    .. tab:: Use mmctl
+    Use the `mmctl license upload </manage/mmctl-command-line-tool.html#mmctl-license-upload>`__ command to upload a new license or replace an existing license file with a new one. When complete, restart the Mattermost server. If you're running in a `High Availability </scale/high-availability-cluster.html>`__ environment, the new license file must be updated to every node.
 
-        Use the `mmctl license upload </manage/mmctl-command-line-tool.html#mmctl-license-upload>`__ command to upload a new license or replace an existing license file with a new one. When complete, restart the Mattermost server. If you're running in a `High Availability </scale/high-availability-cluster.html>`__ environment, the new license file must be updated to every node.
+    .. code-block:: none
 
-        .. code-block:: none
-
-            mmctl license upload [license] [flags]
+        mmctl license upload [license] [flags]
 
 .. note::
 

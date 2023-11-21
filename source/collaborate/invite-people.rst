@@ -32,33 +32,31 @@ Send a direct invite
 Direct invites are invitation emails sent from your team's server directly to the invited person's email address. A link within the invitation directs them to an account creation page. Invitation links sent by email expire after 48 hours and can only be used once. 
 
 .. note::
-  
+
   - A System Admin can invalidate all active invitation links via **System Console > Authentication > Signup > Invalidate pending email invites**.
   - If you can't invite others to the team, contact your system admin for assistance. You may not have sufficent permissions to do so, or `email invitations may not be enabled </configure/authentication-configuration-settings.html#signup-enableemailinvitations>`__.
 
-.. tabs::
+.. tab:: Web/Desktop
 
-  .. tab:: Web/Desktop
+  1. Select the team name at the top of the channel sidebar, then select **Invite People**.
+  2. Enter email address recipients for team invitations.
+  3. Specify whether the invited users are members or guests. When adding a guest, you must specify the channels the guest can access.
+  4. Select **Invite**.
 
-    1. Select the team name at the top of the channel sidebar, then select **Invite People**.
-    2. Enter email address recipients for team invitations.
-    3. Specify whether the invited users are members or guests. When adding a guest, you must specify the channels the guest can access.
-    4. Select **Invite**.
+  .. tip::
 
-    .. tip::
-      
-      - If someone you want to add to your team already has an account on the server, you can add them to your team without sending an invitation by entering their username instead of an email address. If the person you want to add isn't visible, you can't invite them. 
-      - System admins can view and add team membership to individual users on the user profile page (via **System Console > Users > User Profile**) by selecting **Add Team**. 
+    - If someone you want to add to your team already has an account on the server, you can add them to your team without sending an invitation by entering their username instead of an email address. If the person you want to add isn't visible, you can't invite them. 
+    - System admins can view and add team membership to individual users on the user profile page (via **System Console > Users > User Profile**) by selecting **Add Team**. 
 
-  .. tab:: Mobile
+.. tab:: Mobile
 
-    1. Tap the |plus| icon in the top right corner of the screen.
-    2. Tap the **Invite people to the team** option.
-    3. Invite people by:
+  1. Tap the |plus| icon in the top right corner of the screen.
+  2. Tap the **Invite people to the team** option.
+  3. Invite people by:
 
-      - Entering the name of a user on another Mattermost team on the same server.
-      - Entering a user's email address.
-      - Sharing the invitation link with users directly as a `team invitation link <#send-a-team-invite-link>`__.
+    - Entering the name of a user on another Mattermost team on the same server.
+    - Entering a user's email address.
+    - Sharing the invitation link with users directly as a `team invitation link <#send-a-team-invite-link>`__.
 
 Send a team invite link
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -69,19 +67,17 @@ You can share a unique URL that takes users to a Mattermost account creation pag
 
   If you're unable to share links, contact your Mattermost system admin for assistance. An `SSL certificate (or a self-signed certificate) </onboard/ssl-client-certificate.html>`__ may be required for this functioanlity to work.
 
-.. tabs::
+.. tab:: Web/Desktop
 
-  .. tab:: Web/Desktop
+  1. Select the team name at the top of the channel sidebar, then select **Invite People**.
+  2. Select the **Copy Link** button to save the URL to your clipboard and share it with those you want to invite to the team.
 
-    1. Select the team name at the top of the channel sidebar, then select **Invite People**.
-    2. Select the **Copy Link** button to save the URL to your clipboard and share it with those you want to invite to the team.
+.. tab:: Mobile
 
-  .. tab:: Mobile
-
-    1. Tap the |plus| icon in the top right corner of the screen.
-    2. Tap the **Invite people to the team** option.
-    3. Tap **Share link**.
-    4. Share the link with others.
+  1. Tap the |plus| icon in the top right corner of the screen.
+  2. Tap the **Invite people to the team** option.
+  3. Tap **Share link**.
+  4. Share the link with others.
 
 .. note::
   

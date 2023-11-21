@@ -162,55 +162,53 @@ Navigation in the desktop app
 
 The following navigation keyboard shortcuts are supported only in the Mattermost desktop app.
 
-.. tabs::
+.. tab:: Desktop app v5.0 onwards
 
-  .. tab:: Desktop app v5.0 onwards
+  Mattermost desktop app v5.0 introduces additional ways to navigate your Mattermost interface, including server selections, as well as tabs for channels, playbooks, and boards. 
+  
+  +--------------------------------------+-------------------------------+-------------------------------------------------------------------------------------------------+
+  | On Windows & Linux                   | On macOS                      | Description                                                                                     |
+  +======================================+===============================+=================================================================================================+
+  | :kbd:`Ctrl` :kbd:`F`                 | :kbd:`⌘` :kbd:`F`             | Move focus to the **Search** field and search the current channel.                              |
+  +--------------------------------------+-------------------------------+-------------------------------------------------------------------------------------------------+
+  | :kbd:`Ctrl` :kbd:`Shift` :kbd:`S`    | :kbd:`⌘` :kbd:`⌃` :kbd:`S`    | Open the **Servers** selector, press :kbd:`↑` or :kbd:`↓` to navigate between                   |
+  |                                      |                               | servers, then press :kbd:`Enter` on Windows or Linux, or :kbd:`↵` on macOS, to select a server. |
+  +--------------------------------------+-------------------------------+-------------------------------------------------------------------------------------------------+
+  || :kbd:`Ctrl` :kbd:`Shift` :kbd:`1`   || :kbd:`⌘` :kbd:`⌃` :kbd:`1`   || Navigate to the first server in the **Servers** list.                                          |
+  || :kbd:`Ctrl` :kbd:`Shift` :kbd:`2`   || :kbd:`⌘` :kbd:`⌃` :kbd:`2`   || Replace the number with the server's position within the server in the list.                   |
+  +--------------------------------------+-------------------------------+-------------------------------------------------------------------------------------------------+
+  | :kbd:`Ctrl` :kbd:`Tab`               | :kbd:`⌘` :kbd:`Tab`           | Navigate to the next product tab based on the current product selected.                         |
+  +--------------------------------------+-------------------------------+-------------------------------------------------------------------------------------------------+  
+  | :kbd:`Ctrl` :kbd:`Shift` :kbd:`Tab`  | :kbd:`⌘` :kbd:`⇧` :kbd:`Tab`  | Navigate to the previous product tab based on the current product selected.                     |  
+  +--------------------------------------+-------------------------------+-------------------------------------------------------------------------------------------------+
+  | :kbd:`Ctrl` :kbd:`1`                 | :kbd:`⌘` :kbd:`1`             | Navigate to the **Channels** tab.                                                               |
+  +--------------------------------------+-------------------------------+-------------------------------------------------------------------------------------------------+
+  | :kbd:`Ctrl` :kbd:`2`                 | :kbd:`⌘` :kbd:`2`             | Navigate to the **Boards** tab.                                                                 |
+  +--------------------------------------+-------------------------------+-------------------------------------------------------------------------------------------------+
+  | :kbd:`Ctrl` :kbd:`3`                 | :kbd:`⌘` :kbd:`3`             | Navigate to the **Playbooks** tab.                                                              |
+  +--------------------------------------+-------------------------------+-------------------------------------------------------------------------------------------------+
+  | :kbd:`Ctrl` :kbd:`Tab`               | :kbd:`⌘` :kbd:`Tab`           | Navigate to the next product tab based on your current position.                                |
+  +--------------------------------------+-------------------------------+-------------------------------------------------------------------------------------------------+
+  
+.. tab:: Desktop app v4.7 and earlier
 
-    Mattermost desktop app v5.0 introduces additional ways to navigate your Mattermost interface, including server selections, as well as tabs for channels, playbooks, and boards. 
-    
-    +--------------------------------------+-------------------------------+-------------------------------------------------------------------------------------------------+
-    | On Windows & Linux                   | On macOS                      | Description                                                                                     |
-    +======================================+===============================+=================================================================================================+
-    | :kbd:`Ctrl` :kbd:`F`                 | :kbd:`⌘` :kbd:`F`             | Move focus to the **Search** field and search the current channel.                              |
-    +--------------------------------------+-------------------------------+-------------------------------------------------------------------------------------------------+
-    | :kbd:`Ctrl` :kbd:`Shift` :kbd:`S`    | :kbd:`⌘` :kbd:`⌃` :kbd:`S`    | Open the **Servers** selector, press :kbd:`↑` or :kbd:`↓` to navigate between                   |
-    |                                      |                               | servers, then press :kbd:`Enter` on Windows or Linux, or :kbd:`↵` on macOS, to select a server. |
-    +--------------------------------------+-------------------------------+-------------------------------------------------------------------------------------------------+
-    || :kbd:`Ctrl` :kbd:`Shift` :kbd:`1`   || :kbd:`⌘` :kbd:`⌃` :kbd:`1`   || Navigate to the first server in the **Servers** list.                                          |
-    || :kbd:`Ctrl` :kbd:`Shift` :kbd:`2`   || :kbd:`⌘` :kbd:`⌃` :kbd:`2`   || Replace the number with the server's position within the server in the list.                   |
-    +--------------------------------------+-------------------------------+-------------------------------------------------------------------------------------------------+
-    | :kbd:`Ctrl` :kbd:`Tab`               | :kbd:`⌘` :kbd:`Tab`           | Navigate to the next product tab based on the current product selected.                         |
-    +--------------------------------------+-------------------------------+-------------------------------------------------------------------------------------------------+  
-    | :kbd:`Ctrl` :kbd:`Shift` :kbd:`Tab`  | :kbd:`⌘` :kbd:`⇧` :kbd:`Tab`  | Navigate to the previous product tab based on the current product selected.                     |  
-    +--------------------------------------+-------------------------------+-------------------------------------------------------------------------------------------------+
-    | :kbd:`Ctrl` :kbd:`1`                 | :kbd:`⌘` :kbd:`1`             | Navigate to the **Channels** tab.                                                               |
-    +--------------------------------------+-------------------------------+-------------------------------------------------------------------------------------------------+
-    | :kbd:`Ctrl` :kbd:`2`                 | :kbd:`⌘` :kbd:`2`             | Navigate to the **Boards** tab.                                                                 |
-    +--------------------------------------+-------------------------------+-------------------------------------------------------------------------------------------------+
-    | :kbd:`Ctrl` :kbd:`3`                 | :kbd:`⌘` :kbd:`3`             | Navigate to the **Playbooks** tab.                                                              |
-    +--------------------------------------+-------------------------------+-------------------------------------------------------------------------------------------------+
-    | :kbd:`Ctrl` :kbd:`Tab`               | :kbd:`⌘` :kbd:`Tab`           | Navigate to the next product tab based on your current position.                                |
-    +--------------------------------------+-------------------------------+-------------------------------------------------------------------------------------------------+
-    
-  .. tab:: Desktop app v4.7 and earlier
+  Mattermost desktop app v4.7 and earlier releases support the following navigation keyboard shortcuts:
 
-    Mattermost desktop app v4.7 and earlier releases support the following navigation keyboard shortcuts:
-
-    +--------------------------------------+------------------------------+--------------------------------------------------------------------------------+
-    | On Windows & Linux                   | On macOS                     | Description                                                                    |
-    +======================================+==============================+================================================================================+
-    | :kbd:`Ctrl` :kbd:`F`                 | :kbd:`⌘` :kbd:`F`            | Move focus to the **Search** field and search the current channel.             |
-    +--------------------------------------+------------------------------+--------------------------------------------------------------------------------+
-    || :kbd:`Ctrl` :kbd:`1`                || :kbd:`⌘` :kbd:`1`           | Navigate to the first server in the **Servers** list.                          |
-    || :kbd:`Ctrl` :kbd:`2`                || :kbd:`⌘` :kbd:`2`           | Replace the number with the server's tab position.                             |
-    || :kbd:`Ctrl` :kbd:`3`                || :kbd:`⌘` :kbd:`3`           |                                                                                |
-    +--------------------------------------+------------------------------+--------------------------------------------------------------------------------+
-    | :kbd:`Ctrl` :kbd:`Tab`               | :kbd:`⌘` :kbd:`Tab`          | Navigate to the next server tab based on the current server selected.          |
-    +--------------------------------------+------------------------------+--------------------------------------------------------------------------------+
-    | :kbd:`Ctrl` :kbd:`Shift` :kbd:`Tab`  | :kbd:`⌘` :kbd:`⇧` :kbd:`Tab` | Navigate to the previous server tab based on the current server selected.      |
-    +--------------------------------------+------------------------------+--------------------------------------------------------------------------------+
-    | :kbd:`Alt` :kbd:`↓`                  | :kbd:`⌥` :kbd:`↓`            | Next channel or direct message in the channel sidebar.                         |
-    +--------------------------------------+------------------------------+--------------------------------------------------------------------------------+
+  +--------------------------------------+------------------------------+--------------------------------------------------------------------------------+
+  | On Windows & Linux                   | On macOS                     | Description                                                                    |
+  +======================================+==============================+================================================================================+
+  | :kbd:`Ctrl` :kbd:`F`                 | :kbd:`⌘` :kbd:`F`            | Move focus to the **Search** field and search the current channel.             |
+  +--------------------------------------+------------------------------+--------------------------------------------------------------------------------+
+  || :kbd:`Ctrl` :kbd:`1`                || :kbd:`⌘` :kbd:`1`           | Navigate to the first server in the **Servers** list.                          |
+  || :kbd:`Ctrl` :kbd:`2`                || :kbd:`⌘` :kbd:`2`           | Replace the number with the server's tab position.                             |
+  || :kbd:`Ctrl` :kbd:`3`                || :kbd:`⌘` :kbd:`3`           |                                                                                |
+  +--------------------------------------+------------------------------+--------------------------------------------------------------------------------+
+  | :kbd:`Ctrl` :kbd:`Tab`               | :kbd:`⌘` :kbd:`Tab`          | Navigate to the next server tab based on the current server selected.          |
+  +--------------------------------------+------------------------------+--------------------------------------------------------------------------------+
+  | :kbd:`Ctrl` :kbd:`Shift` :kbd:`Tab`  | :kbd:`⌘` :kbd:`⇧` :kbd:`Tab` | Navigate to the previous server tab based on the current server selected.      |
+  +--------------------------------------+------------------------------+--------------------------------------------------------------------------------+
+  | :kbd:`Alt` :kbd:`↓`                  | :kbd:`⌥` :kbd:`↓`            | Next channel or direct message in the channel sidebar.                         |
+  +--------------------------------------+------------------------------+--------------------------------------------------------------------------------+
 
 Zoom in & zoom out display
 ---------------------------
