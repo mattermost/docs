@@ -64,7 +64,7 @@ From Mattermost v9.2, this changelog summarizes updates for the latest cloud and
 ### Bug Fixes
  - Fixed an issue where marking a Group Message as unread didn't show the mention badges correctly.
  - Fixed an issue where ``invite_id`` was being reset on all team changes.
- - Fixed an issue where interactive dialog elements with subtype ``number`` didn't handle a 0 value properly.
+ - Fixed an issue where interactive dialog elements with subtype ``number`` didn't handle a ``0`` value properly.
  - Fixed an issue with the download link in channel file search items when including a path in the **Site URL** setting.
  - Fixed an issue with the formatting of special mentions in the right-hand side.
  - Fixed ``MessageWillBeUpdated`` plugin hook to allow rejections.
