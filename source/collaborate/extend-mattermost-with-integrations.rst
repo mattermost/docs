@@ -13,10 +13,12 @@ Latest integrations
    :maxdepth: 1
    :hidden:
 
-   Collaborate using Mattermost for MS Teams </collaborate/collaborate-using-mattermost-for-microsoft-teams>
+   Collaborate within connected MS Teams </collaborate/collaborate-within-connected-microsoft-teams>
+   Collaborate within embedded MS Teams </collaborate/collaborate-within-embedded-microsoft-teams>
    Use the Mattermost Google Calendar plugin </collaborate/use-mattermost-google-calendar-plugin>
 
-* :doc:`Collaborate using Mattermost for MS Teams </collaborate/collaborate-using-mattermost-for-microsoft-teams>` - Learn how to collaborate with colleagues across both Mattermost and Microsoft Teams at the same time.
+* :doc:`Collaborate within a connected Microsoft Teams instance </collaborate/collaborate-within-connected-microsoft-teams>` - Learn how to collaborate with colleagues when Mattermost is connected to Microsoft Teams.
+* :doc:`Collaborate within an embedded Microsoft Teams instance </collaborate/collaborate-within-embedded-microsoft-teams>` - Learn how to collaborate with colleagues when Mattermost is embedded within Microsoft Teams.
 * :doc:`Use the Mattermost Google Calendar plugin </collaborate/use-mattermost-google-calendar-plugin>` - Learn how to manage events using a two-way integration between Mattermost and Google Calendar.
 
 Popular Mattermost integrations
