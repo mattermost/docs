@@ -39,7 +39,7 @@ See [this walkthrough video](https://www.youtube.com/watch?v=udC2OCTGooc&feature
 #### User Interface (UI)
  - Improved readability by displaying system messages on multiple lines when editing a channel header.
  - Combined "joined/left" event types in system messages.
- - Added a new user preference to disable webapp prefetching via **Settings > Advanced > Allow Mattermost to prefetch channel posts**.
+ - Added a new user preference to disable webapp prefetching via **Settings > Advanced > Allow Mattermost to prefetch channel posts**. Client Performance Debugging needs to be enabled in the System Console in order for this setting to appear.
  - Pre-packaged NPS plugin version [v1.3.3](https://github.com/mattermost/mattermost-plugin-nps/releases/tag/v1.3.3).
  - Pre-packaged Todo plugin version [v0.7.1](https://github.com/mattermost/mattermost-plugin-todo/releases/tag/v0.7.1).
 
