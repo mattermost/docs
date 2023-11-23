@@ -1,22 +1,15 @@
-:orphan:
-
-Install the Mattermost App in Microsoft Teams
-=============================================
-
+Embed Mattermost within Microsoft Teams
+=======================================
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-.. tip::
-
-  Looking to `install the Mattermost for Microsoft Teams plugin </about/install-mattermost-for-microsoft-teams-plugin.html>`__ instead?
-
-With `Mattermost for Microsoft Teams </about/mattermost-for-microsoft-teams.html>`__, you can embed your Mattermost workspace within your Microsoft Teams instance and take advantage of `embedded app features <#benefits-of-the-embedded-app>`__.
+Using the `Mattermost for Microsoft Teams </about/mattermost-for-microsoft-teams.html>`__ integration, you can choose to embed your Mattermost workspace within your Microsoft Teams instance and take advantage of `embedded app features <about/mattermost-for-microsoft-teams.html#benefits-of-embedding-mattermost>`__.
 
 .. important::
 
-    You must `install the Microsoft Teams plugin in Mattermost </plugins/install-mattermost-for-microsoft-teams-plugin>`__ before you can embed the Mattermost app within Microsoft Teams.
+    You must `install the Mattermost for Microsoft Teams integration </about/install-mattermost-for-microsoft-teams-plugin.html>`__ before you can embed the Mattermost app within Microsoft Teams.
 
-To install the Mattermost app in Microsoft Teams:
+To embed the Mattermost app within Microsoft Teams:
 
 1. In Mattermost, as an administrator, go to **System Console > Plugins > MSTeams Sync**. At the bottom of the settings page, select **Download Manifest** to download a ZIP file containing the Microsoft Teams application manifest pre-configured for your Mattermost workspace.
 2. In Microsoft Teams, as an administrator, go to the Microsoft Teams admin center under **Teams Apps > Manage Apps**, or use the following URL: ``https://admin.teams.microsoft.com/policies/manage-apps``.
@@ -45,25 +38,6 @@ Get users started with the embedded app
 ----------------------------------------
 
 See our end user documentation for a `video walkthrough of using Mattermost embedded within Microsoft Teams </collaborate/collaborate-using-mattermost-for-microsoft-teams.html#demonstration-mattermost-embedded-in-microsoft-teams>`__.
-
-Benefits of the embedded app
-----------------------------
-
-- **Improved reaction time in the event of an incident** by accessing alerting features in Mattermost directly from within Microsoft Teams.
-
-  Mattermost is open-source and can be extensively customized to integrate with various system monitoring and alerting tools. If your tech team has set up unique alerting features in Mattermost, use the app to access these directly from within Teams, including system status updates, improving reaction time in the event of an incident.
-
-- **Simplified workflows through a single interface** for communication and DevOps management.
-
-  If your technical team uses specific DevOps tools (such as Jenkins, Jira, GitHub, etc.) that are tightly integrated with Mattermost, embedding Mattermost in Teams can give direct access to these integrated services. This simplifies workflows by providing a single interface for DevOps use cases.
-
-- **Quickly run scripts within Microsoft Teams**.
-
-  Mattermost supports the use of a CLI, which can be a major advantage for tech teams. If you need to run scripts or execute commands via Mattermost, embedding it within Teams allows you to use this functionality from either platform.
-
-- **Embed custom functionality to accelerate technical workflows**.
-
-  If your tech team has created custom bots and plugins that function with Mattermost, embedding it within Microsoft Teams will allow everyone to access these utilities. These may include custom bots for streamlining incident management, security operations and red/blue team workflows.
 
 Limitations
 ------------
