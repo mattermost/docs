@@ -101,7 +101,7 @@ Next, run the following command to create a Mattermost bulk import file. Replace
 
     ./mmetl transform slack --team <TEAM NAME> --file export-with-emails-and-attachments.zip --output mattermost_import.jsonl
 
-The tool outputs a [.jsonl](https://jsonlines.org/examples) file containing all of your users, channels, and posts. It also creates a ``data`` folder that contains all of your attachments.
+The tool outputs a `.jsonl <https://jsonlines.org/examples>`__ file containing all of your users, channels, and posts. It also creates a ``data`` folder that contains all of your attachments.
 
 .. important::
 
