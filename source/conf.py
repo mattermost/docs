@@ -752,7 +752,9 @@ redirects = {
         "https://docs.mattermost.com/guides/collaborate.html",
 "channels/find-channels.html#revisit-recent-channels":
         "https://docs.mattermost.com/collaborate/browse-channels.html#revisit-recent-channels",
-
+"channels/syntax-highlighting.html":
+	"https://docs.mattermost.com/collaborate/syntax-highlighting.html",
+	
 # Cloud redirects
 "cloud/cloud-administration/cloud-changelog.html":
 	"https://docs.mattermost.com/deploy/legacy-cloud-changelog.html",
@@ -2218,6 +2220,8 @@ redirects = {
 	"https://docs.mattermost.com/deploy/legacy-self-hosted-changelog.html",
 "install/desktop-app-changelog.html":
 	"https://docs.mattermost.com/deploy/desktop-app-changelog.html",
+"install/deprecated-features.html":
+	"https://docs.mattermost.com/deploy/deprecated-features.html",
 
 # Integrations redirects.
 # The integrations directory and its contents have been archived in FY23 Q2 and all applicable content has been moved from docs.mm.com to developers.mm.com.
