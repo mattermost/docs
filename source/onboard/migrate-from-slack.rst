@@ -117,7 +117,7 @@ We have two options to run the import process:
 1. SSH into the Mattermost server's host, upload the export file to this server's file system somehow, and use the ``mattermost`` command to process the export file.
 2. Uploading the export through Mattermost's API, via command line ``mmctl`` from the server or from another computer. This option is required for Mattermost Cloud deployments.
 
-Note that for the second option, the server will save the import in its file store before running the import (e.g. AWS S3 if you are using that are your file store), so there will be time spent uploading/downloading the file in this case. Since this is really just a one-time thing to import this file, we recommend the first option of running it on the server itself if you have a large export zip file.
+For the second option, the server will save the import in its file store before running the import (e.g. AWS S3 if you are using that are your file store), so there will be time spent uploading/downloading the file in this case. Since this is really just a one-time thing to import this file, we recommend the first option of running it on the server itself if you have a large export zip file.
 
 Note that the migration is idempotent, meaning that you can run multiple imports that contain the same posts, and there will not be duplicated created posts in Mattermost. Each post is imported with the correct user/author and ``created_at`` value from your Slack instance. Threads are kept in tact with the import.
 
