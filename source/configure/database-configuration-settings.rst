@@ -43,15 +43,15 @@ Data source
 | String input.                                                 | - Environment variable: ``MM_SQLSETTINGS_DATASOURCE``                    |
 |                                                               |                                                                          |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
-| To enable SSL:                                                                                                                           |
-|                                                                                                                                          |
-| - Add ``&tls=true`` to your database connection string if your SQL driver supports it.                                                   |
-| - Add ``&tls=skip-verify`` if you use self-signed certificates.                                                                          |
-+---------------------------------------------------------------+--------------------------------------------------------------------------+
 | **PostgreSQL databases**                                                                                                                 |
 |                                                                                                                                          |
 | When **Driver Name** is set to ``postgres``, use a connection string in the form of:                                                     |
 | ``postgres://mmuser:password@localhost:5432/mattermost_test?sslmode=disable&connect_timeout=10.``                                        |
+|                                                                                                                                          |
+| **To enable TLS with PostgreSQL databases**:                                                                                             |
+|                                                                                                                                          |
+|                                                                                                                                          |
+|                                                                                                                                          |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | **MySQL databases**                                                                                                                      |
 |                                                                                                                                          |
@@ -78,6 +78,11 @@ Data source
 |                                                                                                                                          |
 | **Note**: If you’re using MySQL 8.0 or later, the default collation has changed to ``utf8mb4_0900_ai_ci``. See our `Database Software    |
 | Requirements </install/software-hardware-requirements.html>`__ documentation for details on MySQL 8.0 support.                           |
+|                                                                                                                                          |
+| **To enable TLS with MySQL databases**:                                                                                                  |
+|                                                                                                                                          |
+| - Add ``&tls=true`` to your database connection string if your SQL driver supports it.                                                   |
+| - Add ``&tls=skip-verify`` if you use self-signed certificates.                                                                          |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. config:setting:: database-maxidleconnections
