@@ -78,7 +78,7 @@ Limitations
 Configuration
 -------------
 
-For Mattermost self-hosted customers, the calls plugin is pre-packaged, installed, and enabled. Configuration to allow end-users to use it can be found in the `System Console </configure/plugins-configuration-settings.html#calls-beta>`__.
+For Mattermost self-hosted customers, the calls plugin is pre-packaged, installed, and enabled. Configuration to allow end-users to use it can be found in the `System Console </configure/plugins-configuration-settings.html#calls>`__.
 
 Modes of operation
 ------------------
@@ -410,7 +410,15 @@ Troubleshooting
 Connectivity issues
 ~~~~~~~~~~~~~~~~~~~
 
-If calls are failing to connect or timing out, it's likely the `RTC Server Port <plugins-configuration-settings.html#rtc-server-port-udp>`__ is not open or forwarded correctly. An easy way to check whether data can go through is to perform some tests using the ``netcat`` command line tool.
+If calls are failing to connect or timing out, it's likely there could be a misconfiguration at either the plugin config or networking level.
+
+For example, the `RTC Server Port (UDP) <plugins-configuration-settings.html#rtc-server-port-udp>`__ or the `RTC Server Port (TCP) <plugins-configuration-settings.html#rtc-server-port-tcp>`__ may not be open or forwarded correctly.
+
+
+Connectivity checks
+^^^^^^^^^^^^^^^^^^^
+
+An easy way to check whether data can go through is to perform some tests using the ``netcat`` command line tool.
 
 On the host running Calls (could be the Mattermost instance itself or the one running ``rtcd`` depending on the chosen setup), run the following:
 
@@ -432,3 +440,18 @@ If connection succeeds, you should be able to send and receive text messages by 
    config setting.
 
    ``8443`` should be changed with the port configured in `RTC Server Port <plugins-configuration-settings.html#rtc-server-port-udp>`__.
+
+   The same checks can be performed to test connectivity through the TCP port using the same commands with ``-u`` flag removed.
+
+Network packets debugging
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+A more advanced way to debug networking issues is to use the ``tcpdump`` command line utility to temporaily monitor network packets flowing in and out of the instance hosting calls.
+
+On the server side, run the following:
+
+.. code-block:: bash
+
+   sudo tcpdump -n port 8443
+
+This command will output information (i.e. source and destination addresses) for all the network packets being sent or received through port ``8443``. This is a good way to check whether data is getting in and out of the instance and can be used to quickly identify network configuration issues.
