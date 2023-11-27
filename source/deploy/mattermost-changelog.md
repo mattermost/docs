@@ -39,6 +39,7 @@ From Mattermost v9.2, this changelog summarizes updates for the latest cloud and
  - Modified the behavior of the code button (Ctrl+Alt+C) to create inline codes or code blocks.
  - Disabled markdown keybindings within code blocks.
  - Added a **Back** button to the ``/access_problem`` page.
+ - Added a default limit of the number of reactions per post.
 
 #### Performance
  - Removed pre-fetch preference and set new prefetch limits for the webapp.
