@@ -41,7 +41,7 @@ Learn how to install, deploy, and scale Mattermost for teams and organizations o
 * :doc:`Deploy using Kubernetes </install/install-kubernetes>` - Install using the Mattermost Helm Chart or Operator and simplified updates.
 * :doc:`Deploy on Red Hat </install/install-rhel-8>` - Support for all current Red Hat Enterprise Linux platforms with a tarball.
 * :doc:`Deployment guides </guides/deployment-guides>` - for administrators who are ready to integrate Mattermost with their organization’s IT infrastructure.
-* :doc:`Deploy Mattermost Apps </guides/deploy-mattermost-apps>` - Learn how to deploy Mattermost Apps to your server.
+* :doc:`Deploy Mattermost Apps </deploy/deploy-mattermost-apps>` - Learn how to deploy Mattermost Apps to your server.
 * :doc:`Prepare for your Mattermost deployment </guides/prepare-for-your-mattermost-deployment>` - Review software and hardware requirements for Mattermost server, and plan out your Mattermost rollout.
 * :doc:`Upgrade Mattermost </guides/upgrade-mattermost>` - Learn how to stay up to date with the latest features and improvements.
 * :doc:`Scale Mattermost </guides/scale-mattermost>` - Learn how to scale and monitor your Mattermost deployment.
