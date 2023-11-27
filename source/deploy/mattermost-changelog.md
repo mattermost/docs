@@ -50,7 +50,7 @@ From Mattermost v9.2, this changelog summarizes updates for the latest cloud and
  - The tooltip on the announcement bar in the **System Console** is now widened.
  - Improved the error message when trying to activate a plugin in an unsupported environment.
  - Added a file storage permission check to the workspace health dashboard.
- - Performed a cleanup in preparation for adding support for multi-word mentions.
+ - Performed a cleanup in preparation for adding support for multi-word keywords that trigger notification.
  - Added a warning log message when the app runs as root.
  - Removed all uses of ``ExperimentalTimezone`` in webapp.
  - Added support for previewing WebVTT attachments.
@@ -64,7 +64,7 @@ From Mattermost v9.2, this changelog summarizes updates for the latest cloud and
  - Added **Logging > Advanced Logging** setting to the **System Console** to allow admins to configure custom log targets via the user interface.
 
 ### Bug Fixes
- - Fixed an issue where marking a Group Message as unread didn't show the mention badges correctly.
+ - Fixed an issue where marking a Group Message as unread didn't show the badge count correctly.
  - Fixed an issue where ``invite_id`` was being reset on all team changes.
  - Fixed an issue where interactive dialog elements with subtype ``number`` didn't handle a ``0`` value properly.
  - Fixed an issue with the download link in channel file search items when including a path in the **Site URL** setting.
