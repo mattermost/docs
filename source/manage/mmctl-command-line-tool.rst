@@ -2278,7 +2278,7 @@ Create an export file including message attachments.
 
 .. code-block:: sh
 
-   --no-attachments              Include to omit file attachments in the export file.
+   --no-attachments              Omit file attachments in the export file.
    --include-archived-channels   Include archived channels in the export file.
    -h, --help                    help for create
 

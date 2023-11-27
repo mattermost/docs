@@ -202,6 +202,11 @@ Desktop app
 
 In the top menu bar of the app, select **View > Developer Tools for Current Tab**. In the logs that are generated, right-click and select **Save as** to download the logs.
 
+Mobile app
+^^^^^^^^^^
+
+You can access and share debug logs from **Account screen > Settings > Report a problem**.
+
 Call stats dump
 ~~~~~~~~~~~~~~~
 
