@@ -30,7 +30,8 @@ From Mattermost v9.2, this changelog summarizes updates for the latest cloud and
 
 #### User Interface (UI)
  - Updated pre-packaged Playbooks plugin version to [v1.39.1](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v1.39.1).
- - Updated pre-packaged Calls version [v0.21.1](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v0.21.1).
+ - Updated pre-packaged Calls version to [v0.21.1](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v0.21.1).
+ - Updated pre-packaged Jira plugin version to [v4.0.1](https://github.com/mattermost/mattermost-plugin-jira/releases/tag/v4.0.1). Also see [v4.0.0](https://github.com/mattermost/mattermost-plugin-jira/releases/tag/v4.0.0) for recent breaking changes.
  - Added Vietnamese (Beta) as a new language.
  - Added the ability to passively track keywords with highlights without triggering a notification.
  - Updated the **Settings** modal with an improved user interface.
