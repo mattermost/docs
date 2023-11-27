@@ -108,25 +108,25 @@ Data source
 | The library used to interact with MySQL is `Go-MySQL-Driver <https://pkg.go.dev/github.com/go-sql-driver/mysql>`__                       |
 | and for this moment you can only use:                                                                                                    |
 |                                                                                                                                          |
-| - ``&tls=false``: To don't use TLS / SSL encryption against MySQL server                                                                 |
+| - ``tls=false``: To don't use TLS / SSL encryption against MySQL server                                                                 |
 |                                                                                                                                          |
 | Exemple :                                                                                                                                |
 |                                                                                                                                          |
 | ``"<user:pass>@tcp(hostname or IP:3306)/mattermost?charset=utf8mb4,utf8&writeTimeout=30s&tls=false"``                                    |
 |                                                                                                                                          |
-| - ``&tls=true``: To use TLS / SSL encryption against MySQL server.                                                                       |
+| - ``tls=true``: To use TLS / SSL encryption against MySQL server.                                                                       |
 |                                                                                                                                          |
 | Exemple :                                                                                                                                |
 |                                                                                                                                          |
 | ``"<user:pass>@tcp(hostname or IP:3306)/mattermost?charset=utf8mb4,utf8&writeTimeout=30s&tls=true"``                                     |
 |                                                                                                                                          |
-| - ``&tls=skip-verify``: To use TLS / SSL encryption with self-signed certificates                                                        |
+| - ``tls=skip-verify``: To use TLS / SSL encryption with self-signed certificates                                                        |
 |                                                                                                                                          |
 | Exemple :                                                                                                                                |
 |                                                                                                                                          |
 | ``"<user:pass>@tcp(hostname or IP:3306)/mattermost?charset=utf8mb4,utf8&writeTimeout=30s&tls=skip-verify"``                              |
 |                                                                                                                                          |
-| - ``&tls=preferred``: To use TLS / SSL encryption if server advertise with a possible fallback unencrypted if it not advertised          |
+| - ``tls=preferred``: To use TLS / SSL encryption if server advertise with a possible fallback unencrypted if it not advertised          |
 |                                                                                                                                          |
 | Exemple :                                                                                                                                |
 |                                                                                                                                          |
