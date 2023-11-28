@@ -33,7 +33,7 @@ From Mattermost v9.2, this changelog summarizes updates for the latest cloud and
  - Updated pre-packaged Calls version to [v0.21.1](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v0.21.1).
  - Updated pre-packaged Jira plugin version to [v4.0.1](https://github.com/mattermost/mattermost-plugin-jira/releases/tag/v4.0.1). Also see [v4.0.0](https://github.com/mattermost/mattermost-plugin-jira/releases/tag/v4.0.0) for recent breaking changes.
  - Added Vietnamese (Beta) as a new language.
- - Added the ability to passively track keywords with highlights without triggering a notification.
+ - Added the ability to passively track keywords with highlights without triggering a notification (Professional and Enterprise plans).
  - Updated the **Settings** modal with an improved user interface.
  - Added a new **Jump to recents** banner when a channel is scrolled up.
  - Modified the behavior of the code button (Ctrl+Alt+C) to create inline codes or code blocks.
