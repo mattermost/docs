@@ -12,6 +12,10 @@ To migrate from Slack to Mattermost involves the following steps:
 4. `Convert the Slack import to Mattermost's format <#convert-slack-import-to-mattermost-s-bulk-export-format>`__
 5. `Import data into Mattermost <#import-data-into-mattermost>`__
 
+.. note::
+
+  If you are migrating to a self-hosted deployment of Mattermost, we recommend configuring your Mattermost server to use an S3 filestore before migration, as opposed to using the local filesystem filestore. If you are testing this in a development environment, you can use the ``minio`` docker image to simulate using an S3 bucket.
+
 1. Prepare your Mattermost server
 ---------------------------------
 
@@ -128,13 +132,6 @@ First get the ``.jsonl`` file and ``data`` folder onto your server using somethi
 
 .. code:: bash
     mattermost import bulk ./mattermost_import.jsonl --import-path ./data --apply
-
-.. important::
-    If doing this locally in a development environment, you'll want to set the location of your server's data folder first like so:
-
-    ``export MM_FILESETTINGS_DIRECTORY=/absolute/path/to/mattermost/server/data``
-
-    You can use an official Mattermost release to obtain a ``mattermost`` binary to use, or run `make build-(arch)` to build the binary and have it placed in the ``GOBIN`` directory.
 
 Option 2: Upload export via ``mmctl``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
