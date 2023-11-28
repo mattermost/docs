@@ -18,7 +18,7 @@ Mattermost Enterprise Edition
 
 Mattermost Enterprise Edition v9.2.3 - `View Changelog <https://docs.mattermost.com/deploy/mattermost-changelog.html#release-v9-2-feature-release>`__ - `Download <https://releases.mattermost.com/9.2.3/mattermost-9.2.3-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/9.2.3/mattermost-9.2.3-linux-amd64.tar.gz``
-  - SHA-256 Checksum: ``ffa48aa925c7f2c5bbd2b62de0c9800563503ff243000d65c6ebc2261a84a132``
+  - SHA-256 Checksum: ``1063a605cb9f7d57eef36919897502914af55b991b147ee48a73bc323569062a``
   - GPG Signature: https://releases.mattermost.com/9.2.3/mattermost-9.2.3-linux-amd64.tar.gz.sig
 Mattermost Enterprise Edition v9.1.4 - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v9-1-feature-release>`__ - `Download <https://releases.mattermost.com/9.1.4/mattermost-9.1.4-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/9.1.4/mattermost-9.1.4-linux-amd64.tar.gz``
@@ -351,7 +351,7 @@ We generally recommend installing Enterprise Edition, even if you don't currentl
 
 Mattermost Team Edition v9.2.3 - `View Changelog <https://docs.mattermost.com/deploy/mattermost-changelog.html#release-v9-2-feature-release>`__ - `Download <https://releases.mattermost.com/9.2.3/mattermost-team-9.2.3-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/9.2.3/mattermost-team-9.2.3-linux-amd64.tar.gz``
-  - SHA-256 Checksum: ``ff42d71d8aa4189b3b8af77b5c622352d467960b19c8398c6f7d6614420ef607``
+  - SHA-256 Checksum: ``5d8757d27e63082417d259e6264d7918f49832809187a86fbb93b7502696a646``
   - GPG Signature: https://releases.mattermost.com/9.2.3/mattermost-team-9.2.3-linux-amd64.tar.gz.sig
 Mattermost Team Edition v9.1.4 - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v9-1-feature-release>`__ - `Download <https://releases.mattermost.com/9.1.4/mattermost-team-9.1.4-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/9.1.4/mattermost-team-9.1.4-linux-amd64.tar.gz``
