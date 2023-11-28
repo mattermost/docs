@@ -2,12 +2,23 @@
 
 Latest Mattermost Mobile Apps releases:
 
+- [2.10.1 Release](#release)
 - [2.10.0 Release](#release)
 - [2.9.1 Release](#id1)
 - [2.9.0 Release](#id4)
 - [2.8.2 Release](#id10)
 - [2.8.1 Release](#id13)
-- [2.8.0 Release](#id18)
+
+## 2.10.1 Release
+- Release Date: 
+- Server Versions Supported: Server v8.1.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
+
+### Compatibility
+ - **Upgrade to server version v8.1.0 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/upgrade/extended-support-release.html) (ESR) v7.8.0 has ended and upgrading to server ESR v8.1.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
+ - iPhone 5s devices and later with iOS 12.4+ is required.
+
+Note: Mattermost Mobile App v2.10.1 contains a high level security fix. Updating is recommended. Details will be posted on our security updates page 30 days after release as per the Mattermost Responsible Disclosure Policy.
 
 ## 2.10.0 Release
 - Release Date: November 16, 2023
