@@ -22,7 +22,7 @@ Mattermost Enterprise Edition v9.2.3 - `View Changelog <https://docs.mattermost.
   - GPG Signature: https://releases.mattermost.com/9.2.3/mattermost-9.2.3-linux-amd64.tar.gz.sig
 Mattermost Enterprise Edition v9.1.4 - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v9-1-feature-release>`__ - `Download <https://releases.mattermost.com/9.1.4/mattermost-9.1.4-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/9.1.4/mattermost-9.1.4-linux-amd64.tar.gz``
-  - SHA-256 Checksum: ``467ea83eb2a573ee0669a7ae9a7e651a7784e1c48ff38c8cf7db5acf2fb4a95e``
+  - SHA-256 Checksum: ``7fa2da26022b214796fac59669fd475237bf67bd8c7c2b9ae75d905f0e7528b1``
   - GPG Signature: https://releases.mattermost.com/9.1.4/mattermost-9.1.4-linux-amd64.tar.gz.sig
 Mattermost Enterprise Edition v9.0.5 - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v9-0-major-release>`__ - `Download <https://releases.mattermost.com/9.0.5/mattermost-9.0.5-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/9.0.5/mattermost-9.0.5-linux-amd64.tar.gz``
@@ -355,7 +355,7 @@ Mattermost Team Edition v9.2.3 - `View Changelog <https://docs.mattermost.com/de
   - GPG Signature: https://releases.mattermost.com/9.2.3/mattermost-team-9.2.3-linux-amd64.tar.gz.sig
 Mattermost Team Edition v9.1.4 - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v9-1-feature-release>`__ - `Download <https://releases.mattermost.com/9.1.4/mattermost-team-9.1.4-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/9.1.4/mattermost-team-9.1.4-linux-amd64.tar.gz``
-  - SHA-256 Checksum: ``70e7fc8e9abf3f4d756da76cbd6d3333d3cf98a30f8b91d1a38f0c660698e8c0``
+  - SHA-256 Checksum: ``0e622b736730a2f4402587e62be54cf14b882538e878c424b12c012b7bfd85c3``
   - GPG Signature: https://releases.mattermost.com/9.1.4/mattermost-team-9.1.4-linux-amd64.tar.gz.sig
 Mattermost Team Edition v9.0.5 - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v9-0-major-release>`__ - `Download <https://releases.mattermost.com/9.0.5/mattermost-team-9.0.5-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/9.0.5/mattermost-team-9.0.5-linux-amd64.tar.gz``
