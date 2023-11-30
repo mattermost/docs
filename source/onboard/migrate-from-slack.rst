@@ -99,19 +99,17 @@ Due to archive/zip limitations, these actions cannot modify archive in place. It
 
 Now that you have a Slack export file with emails and attachments, let's convert this information into Mattermost's bulk import format using the import preparation tool ``mmetl``. Download the latest release of ``mmetl`` for your `OS and architecture <https://github.com/mattermost/mmetl/releases/>`__. Run ``mmetl help`` to learn more about using the tool.
 
-Next, run the following command to create a Mattermost bulk import file. Replace ``<TEAM NAME>`` with the name of your team in Mattermost:
+Next, run the following command to create a Mattermost bulk import file. Replace ``<TEAM-NAME>`` with the name of your team in Mattermost. Note that the name needs to be one word like "my-team".
 
 .. code:: bash
 
-    ./mmetl transform slack --team <TEAM NAME> --file export-with-emails-and-attachments.zip --output mattermost_import.jsonl
+    ./mmetl transform slack --team <TEAM-NAME> --file export-with-emails-and-attachments.zip --output mattermost_import.jsonl
 
 The tool outputs a `.jsonl <https://jsonlines.org/examples>`__ file containing all of your users, channels, and posts. It also creates a ``data`` folder that contains all of your attachments.
 
 .. important::
 
   It doesn't matter what you name the ``.jsonl`` file. You can name it what you want with the `--output` flag as shown above. It just needs to be a ``.jsonl`` file.
-
-The file ``mattermost-bulk-import.zip`` is now ready to import into Mattermost.
 
 5. Import data into Mattermost
 ------------------------------
