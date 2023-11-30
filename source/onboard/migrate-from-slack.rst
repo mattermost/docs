@@ -129,6 +129,7 @@ Option 1: Use the ``mattermost`` command to run the export
 First get the ``.jsonl`` file and ``data`` folder onto your server using something like ``scp``. Then you'll use the ``mattermost`` binary to process the bulk import data:
 
 .. code:: bash
+
     mattermost import bulk ./mattermost_import.jsonl --import-path ./data --apply
 
 Option 2: Upload export via ``mmctl``
