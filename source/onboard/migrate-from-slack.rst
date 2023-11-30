@@ -4,7 +4,7 @@ Migrate from Slack
 .. include:: ../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
 
-To migrate from Slack to Mattermost involves the following steps:
+Migrating from Slack to Mattermost involves the following steps:
 
 1. `Prepare your Mattermost server <#prepare-your-mattermost-server>`__
 2. `Generate a Slack import <#generate-a-slack-import>`__
