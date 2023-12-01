@@ -12,18 +12,14 @@ To migrate from Slack to Mattermost involves the following steps:
 4. `Convert the Slack import to Mattermost's format <#convert-slack-import-to-mattermost-s-bulk-export-format>`__
 5. `Import data into Mattermost <#import-data-into-mattermost>`__
 
-.. note::
-
-  If you are migrating to a self-hosted deployment of Mattermost, we recommend configuring your Mattermost server to use an S3 filestore before migration, as opposed to using the local filesystem filestore. If you are testing this in a development environment, you can use the ``minio`` docker image to simulate using an S3 bucket.
-
 1. Prepare your Mattermost server
 ---------------------------------
 
-We recommend you create a separate team in Mattermost for each of your Slack workspaces.
-
-You can import two workspaces into the same team, but you'll need to ensure there are no channel name collisions first. Make sure that all users in Mattermost have the same username as in Slack, otherwise the import will fail.
+We don't recommend merging multiple workspaces into the same Mattermost team at the time of import. If merging multiple Slack workspaces into a single team is the desired end-result, we recommend completing the import to separate teams, validating the results, then using `mmctl <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-channel-move>`__ to move channels between teams.
 
 Also, system administrator roles will be overwritten if the usernames match and the user isn't an admin on the Slack workspace.
+
+Make sure you are running on a supported version of `Mattermost <https://docs.mattermost.com/upgrade/release-lifecycle.html/>`__ to benefit from the most up-to-date functionality and fixes.
 
 2. Generate a Slack import
 --------------------------
@@ -53,6 +49,7 @@ You will receive a zip file containing the following contents:
 ------------------------------------------------
 
 When you download your Slack export zip file, some data will be missing from the zip file:
+
 - User emails
 - Uploaded attachment contents
 
@@ -87,8 +84,7 @@ Once you have the program downloaded locally, run the commands below to fetch th
 
 The file ``export-with-emails-and-attachments.zip`` now contains all the information necessary to be imported into Mattermost.
 
-From the slack advanced exporter repo:
-Due to archive/zip limitations, these actions cannot modify archive in place. It's preferable to fetch e-mails first to avoid copying large attachments around.
+It's preferable to fetch e-mails first to avoid copying large attachments around. Make sure you choose different file names at each stage, as the tool does not support in-place modifications.
 
 .. important::
 
@@ -105,7 +101,7 @@ Next, run the following command to create a Mattermost bulk import file. Replace
 
     ./mmetl transform slack --team <TEAM-NAME> --file export-with-emails-and-attachments.zip --output mattermost_import.jsonl
 
-The tool outputs a `.jsonl <https://jsonlines.org/examples>`__ file containing all of your users, channels, and posts. It also creates a ``data`` folder that contains all of your attachments.
+The tool outputs a `.jsonl <https://jsonlines.org/examples>`__ file containing all of your users, channels, and posts. It also creates a ``data`` folder that contains all of your attachments. Users' default authentication method will be configured as email/password. See the `section below <#use-the-imported-team>`__ for instructions on migrating the auth method to another choice.
 
 .. important::
 
@@ -119,7 +115,7 @@ We have two options to run the import process:
 1. SSH into the Mattermost server's host, upload the export file to this server's file system somehow, and use the ``mattermost`` command to process the export file.
 2. Uploading the export through Mattermost's API, via command line ``mmctl`` from the server or from another computer. This option is required for Mattermost Cloud deployments.
 
-For the second option, the server will save the import in its file store before running the import (e.g. AWS S3 if you are using that are your file store), so there will be time spent uploading/downloading the file in this case. Since this is really just a one-time thing to import this file, we recommend the first option of running it on the server itself if you have a large export zip file.
+For the second option, the server will save the import in its file store before running the import (e.g. AWS S3 if you are using that as your file store), so there will be time spent uploading/downloading the file in this case. Depending on system/environment specs, a 5GB import should be fine over ``mmctl`` import. Imports greater than 10GB should use the ``mattermost`` binary for import.
 
 The migration is idempotent, meaning that you can run multiple imports that contain the same posts, and there will not be duplicated created posts in Mattermost. Each post is imported with the correct user/author and ``created_at`` value from your Slack instance. Threads are kept in tact with the import.
 
@@ -169,10 +165,10 @@ Finally, run this command to view the status of the import process job. If the j
 Debug imports
 ^^^^^^^^^^^^^
 
-If you choose the ``mmctl`` option above, you can use the ``mmctl import job show`` command to view any relevant errors that may have occurred. If you run into problems which the error message does not help to resolve, please try the first option of using the ``mattermost bulk import`` command. The ``mmctl`` import process does not give you any additional debugging information, even in the Mattermost server logs.
+If you choose the ``mmctl`` option above, you can use the ``mmctl import job show`` command to view any relevant errors that may have occurred. If you run into problems which the error message does not help to resolve, please try the second option of using the ``mattermost bulk import`` command. The ``mmctl`` import process does not give you any additional debugging information, even in the Mattermost server logs.
 
 .. important::
-    Note that if your logged in Mattermost user is not present in your input (neither the email nor the username matches any users in the import file), your user will not be added to any new channels in the import process.
+    Note that if you are part of the user group being imported from Slack, your Mattermost profile must have a matching username and email to the corresponding ``user`` line of the ``jsonl`` file. You can manually edit the file to ensure it matches your Mattermost user.
 
 Additional tools
 ^^^^^^^^^^^^^^^^
@@ -184,6 +180,7 @@ Additional tools
 Use the imported team
 ^^^^^^^^^^^^^^^^^^^^^
 
-* During the import process, the emails and usernames from Slack are used to create new Mattermost accounts. If emails are not present in the Slack export archive, then placeholder values will be generated and the system admin will need to update these manually.
+* During the import process, the emails and usernames from Slack are used to create new Mattermost accounts. If emails are not present in the Slack export archive, then placeholder values will be generated and the system admin will need to update these manually. We recommend administrators search the final import ``jsonl`` file for ``user`` lines for with ``@example.com`` in the email property to address and resolve the missing information prior to import.
 * Slack users can activate their new Mattermost accounts by using Mattermost's **Password Reset** screen with their email addresses from Slack to set new passwords for their Mattermost accounts.
 * Once logged in, Mattermost users will have access to previous Slack messages in the public channels imported from Slack.
+* Instructions on how to migrate user authenticatation to LDAP or SAML can be found `here <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-user-migrate-auth>`__.
