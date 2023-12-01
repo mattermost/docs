@@ -29,10 +29,6 @@ Slack offers two ways to `export your data from their product <https://get.slack
 1. Regular export - Contains only public channel posts. This does not include private channels, DMs, or group conversations. This can be generated from **Slack > Administration > Workspace settings > Import/Export Data > Export > Start Export**.
 2. Corporate export - Contains all posts. This includes public channels, private channels, DMs and group messages. You must `request this export type from Slack directly <https://slack.com/help/articles/1500001548241-Request-to-export-all-conversations>`__.
 
-.. image:: ../../source/images/slack-export-workspace-settings.png
-
-.. image:: ../../source/images/slack-export-data.png
-
 You will receive a zip file containing the following contents:
 
 - Channels (``channels.json``)
