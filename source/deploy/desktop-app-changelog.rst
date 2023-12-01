@@ -52,6 +52,7 @@ All Platforms
 - Fixed an issue where servers on a subpath could not grant the ``media`` permission.
 - Fixed an issue where users could not fullscreen embedded videos.
 - Fixed a deep linking issue for servers with subpaths.
+- Fixed an issue where the "session expired" badge wasn't displayed.
 
 macOS
 ^^^^^^^^^^^^^
