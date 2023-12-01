@@ -4,7 +4,7 @@ Migrate from Slack
 .. include:: ../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
 
-To migrate from Slack to Mattermost involves the following steps:
+Migrating from Slack to Mattermost involves the following steps:
 
 1. `Prepare your Mattermost server <#prepare-your-mattermost-server>`__
 2. `Generate a Slack import <#generate-a-slack-import>`__
@@ -112,22 +112,14 @@ The tool outputs a `.jsonl <https://jsonlines.org/examples>`__ file containing a
 
 We have two options to run the import process:
 
-1. SSH into the Mattermost server's host, upload the export file to this server's file system somehow, and use the ``mattermost`` command to process the export file.
-2. Uploading the export through Mattermost's API, via command line ``mmctl`` from the server or from another computer. This option is required for Mattermost Cloud deployments.
+1. Uploading the export through Mattermost's API, via command line ``mmctl`` from the server or from another computer. This option is required for Mattermost Cloud deployments.
+2. SSH into the Mattermost server's host, upload the export file to this server's file system somehow, and use the ``mattermost`` command to process the export file.
 
-For the second option, the server will save the import in its file store before running the import (e.g. AWS S3 if you are using that as your file store), so there will be time spent uploading/downloading the file in this case. Depending on system/environment specs, a 5GB import should be fine over ``mmctl`` import. Imports greater than 10GB should use the ``mattermost`` binary for import.
+For the first option, the server will save the import in its file store before running the import (e.g. AWS S3 if you are using that are your file store), so there will be time spent uploading/downloading the file in this case. Depending on system/environment specs, a 5GB import should be fine over ``mmctl`` import. Imports greater than 10GB should use the ``mattermost`` binary for import.
 
 The migration is idempotent, meaning that you can run multiple imports that contain the same posts, and there will not be duplicated created posts in Mattermost. Each post is imported with the correct user/author and ``created_at`` value from your Slack instance. Threads are kept in tact with the import.
 
-Option 1: Use the ``mattermost`` command to run the export
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-First get the ``.jsonl`` file and ``data`` folder onto your server using something like ``scp``. Then you'll use the ``mattermost`` binary to process the bulk import data:
-
-.. code:: bash
-    mattermost import bulk ./mattermost_import.jsonl --import-path ./data --apply
-
-Option 2: Upload export via ``mmctl``
+Option 1: Upload export via ``mmctl``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Ensure you have the Mattermost command line tool ``mmctl`` installed. This allows you to perform different tasks that communicate to Mattermost's API. You'll also want to `configure authentication </manage/mmctl-command-line-tool.html#mmctl-auth>`__ for the tool.
@@ -161,6 +153,15 @@ Finally, run this command to view the status of the import process job. If the j
 .. code:: bash
 
   mmctl import job show <JOB ID> --json
+
+Option 2: Use the ``mattermost`` command to run the export
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+First get the ``.jsonl`` file and ``data`` folder onto your server using something like ``scp``. Then you'll use the ``mattermost`` binary to process the bulk import data:
+
+.. code:: bash
+
+    mattermost import bulk ./mattermost_import.jsonl --import-path ./data --apply
 
 Debug imports
 ^^^^^^^^^^^^^
