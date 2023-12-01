@@ -15,7 +15,7 @@ Migrating from Slack to Mattermost involves the following steps:
 1. Prepare your Mattermost server
 ---------------------------------
 
-We don't recommend merging multiple workspaces into the same Mattermost team at the time of import. If merging multiple Slack workspaces into a single team is the desired end-result, we recommend completing the import to separate teams, validating the results, then using `mmctl <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-channel-move>`__ to move channels between teams.
+During the import process, we advise to create a new team for importing the Slack workspace data. If merging multiple Slack workspaces into a single team is the desired end-result, we recommend completing the import to separate teams, validating the results, then using `mmctl <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-channel-move>`__ to move channels between teams.
 
 Also, system administrator roles will be overwritten if the usernames match and the user isn't an admin on the Slack workspace.
 
