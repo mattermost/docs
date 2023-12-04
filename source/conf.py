@@ -2860,7 +2860,7 @@ redirects = {
 "onboard/ad-ldap.html#active-directory-ldap-setup-e10-e20":
         "https://docs.mattermost.com/onboard/ad-ldap.html#active-directory-ldap-setup",
 "onboard/migrating-from-hipchat-to-mattermost.html":
-        "https://docs.mattermost.com/onboard/migrating-to-mattermost.html#migrating-from-slack",
+        "https://docs.mattermost.com/onboard/migrating-to-mattermost.html",
 "onboard/ad-ldap-groups-synchronization.html#enabling-ad-ldap-group-synchronization": 
         "https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html#enable-ad-ldap-group-synchronization",
 "onboard/ad-ldap-groups-synchronization.html#using-ad-ldap-group-synchronization":
