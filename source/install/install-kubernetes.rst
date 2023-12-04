@@ -27,10 +27,12 @@ Operators are installed using ``kubectl``, and each operator is created in its o
 
 2. Install the Mattermost Operator:
 
-   .. code-block:: sh
+  .. code-block:: sh
+    :class: mm-code-block 
 
-    $ kubectl create ns mattermost-operator
-    $ kubectl apply -n mattermost-operator -f https://raw.githubusercontent.com/mattermost/mattermost-operator/master/docs/mattermost-operator/mattermost-operator.yaml
+    kubectl create ns mattermost-operator
+
+    kubectl apply -n mattermost-operator -f https://raw.githubusercontent.com/mattermost/mattermost-operator/master/docs/mattermost-operator/mattermost-operator.yaml
 
 .. tip::
 
@@ -55,19 +57,19 @@ Deploy Mattermost
 
   .. code-block:: yaml
 
-    apiVersion: installation.mattermost.com/v1beta1
-    kind: Mattermost
-    metadata:
-      name: mm-example-full                         # Chose the desired name
-    spec:
-      size: 5000users                               # Adjust to your requirements
-      ingress:
-        enabled: true
-        host: example.mattermost-example.com        # Adjust to your domain
-        annotations:
-          kubernetes.io/ingress.class: nginx
-      version: 6.0.1
-      licenseSecret: ""                             # If you have created secret in step 1, put its name here
+      apiVersion: installation.mattermost.com/v1beta1
+      kind: Mattermost
+      metadata:
+        name: mm-example-full                         # Chose the desired name
+      spec:
+        size: 5000users                               # Adjust to your requirements
+        ingress:
+          enabled: true
+          host: example.mattermost-example.com        # Adjust to your domain
+          annotations:
+            kubernetes.io/ingress.class: nginx
+        version: 6.0.1
+        licenseSecret: ""                             # If you have created secret in step 1, put its name here
     
   Save the file as ``mattermost-installation.yaml``. While recommended file names are provided, your naming conventions may differ. 
 
@@ -86,7 +88,7 @@ Deploy Mattermost
     Additional fields are documented `in the example <https://github.com/mattermost/mattermost-operator/blob/master/docs/examples/mattermost_full.yaml>`__.
     If you have previous experience with Kubernetes Custom Resources, you can also check the `Custom Resource Definition <https://github.com/mattermost/mattermost-operator/blob/master/config/crd/bases/installation.mattermost.com_mattermosts.yaml>`__.
 
-3. Create external database secret. (Skip if using MySQL and MinIO operators).
+3. Create external database secret.
 
   The database secret needs to be created in the namespace that will hold the Mattermost installation. The secret should contain the following data:
 
@@ -114,9 +116,8 @@ Deploy Mattermost
   .. note:: 
 
     - For PostgreSQL databases, the connection is checked with `pg_isready <https://www.postgresql.org/docs/9.3/app-pg-isready.html>`__ so the ``DB_CONNECTION_CHECK_URL`` is the same as connection string.
-    - For MySQL databases, the check is performed via HTTP call; therefore ``DB_CONNECTION_CHECK_URL`` should be an HTTP URL.
 
-4. Create external filestore secret (Skip if using MySQL and MinIO operators).
+4. Create external filestore secret.
 
   The filestore secret needs to be created in the namespace that will hold the Mattermost installation. The secret should contain the following data:
 
@@ -139,7 +140,7 @@ Deploy Mattermost
       name: my-s3-iam-access-key
     type: Opaque
 
-5. Adjust installation manifest (Skip if using MySQL and MinIO operators).
+5. Adjust installation manifest.
 
   To instruct Mattermost Operator to use the external database, modify Mattermost manifest by adding the following fields:
 
@@ -212,63 +213,59 @@ Deploy Mattermost
   a. Create the Mattermost namespace:
 
     .. code-block:: sh
+      :class: mm-code-block
 
-        $ kubectl create ns mattermost
+      kubectl create ns mattermost
 
   b. (Mattermost Enterprise only) apply the license file by specifying the path to the file you created in step 1:
 
     .. code-block:: sh
+      :class: mm-code-block
 
-        $ kubectl apply -n mattermost -f [PATH_TO_LICENCE_SECRET_MANIFEST]
+      kubectl apply -n mattermost -f [PATH_TO_LICENCE_SECRET_MANIFEST]
 
   c. Apply the installation file by specifying the path to the file you created in step 2:
 
     .. code-block:: sh
+      :class: mm-code-block
 
-        $ kubectl apply -n mattermost -f [PATH_TO_MATTERMOST_MANIFEST]
+      kubectl apply -n mattermost -f [PATH_TO_MATTERMOST_MANIFEST]
 
   The deployment process can be monitored in the Kubernetes user interface or in command line by running:
 
-  .. code-block:: sh
+    .. code-block:: sh
+      :class: mm-code-block
 
-    $ kubectl -n mattermost get mm -w
+      kubectl -n mattermost get mm -w
 
   The installation should be deployed successfully, when the Custom Resource reaches the ``stable`` state.
 
 7. Configure DNS and use Mattermost.
 
-  When the deployment is complete, obtain the hostname or IP address of your Mattermost deployment using the following command:
+  a. When the deployment is complete, obtain the hostname or IP address of your Mattermost deployment using the following command:
 
-  .. code-block:: sh
+    .. code-block:: sh
+      :class: mm-code-block
 
-    $ kubectl -n mattermost get ingress
+      kubectl -n mattermost get ingress
 
-  Copy the resulting hostname or IP address from the ``ADDRESS`` column, open your browser, and connect to Mattermost.
+  b. Copy the resulting hostname or IP address from the ``ADDRESS`` column, open your browser, and connect to Mattermost.
 
-  Use your domain registration service to create a canonical name or IP address record for the ``ingress.host`` in your manifest, pointing to the address you just copied. For example, on AWS you would do this within a hosted zone in Route53.
+  c. Use your domain registration service to create a canonical name or IP address record for the ``ingress.host`` in your manifest, pointing to the address you just copied. For example, on AWS you would do this within a hosted zone in Route53.
 
-  Navigate to the ``ingress.host`` URL in your browser and use Mattermost.
+  d. Navigate to the ``ingress.host`` URL in your browser and use Mattermost.
 
-  If you just want to try it out on your local machine without configuring the domain, run:
+.. note::
+  
+  If you just want to try it out on your local machine without configuring the domain, run the following command, and then navigate to http://localhost:8065.
 
-  .. code-block:: sh
+    .. code-block:: sh
+      :class: mm-code-block
 
-    $ kubectl -n mattermost port-forward svc/[YOUR_MATTERMOST_NAME] 8065:8065
-
-  Then navigate to http://localhost:8065.
+      kubectl -n mattermost port-forward svc/[YOUR_MATTERMOST_NAME] 8065:8065
 
 Frequently asked questions
 --------------------------
 
 .. include:: faq_kubernetes.rst
   :start-after: :nosearch:
-
-
-
-
-
-
- 
-
-
-
