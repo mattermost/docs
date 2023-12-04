@@ -9,8 +9,6 @@ Using ``wget``, download the Mattermost Server release you want to install.
 
   .. raw:: html
 
-    <div class="mm-code-copy mm-code-copy--long" data-click-method="Tarball" data-click-command="Download the latest release">
-
       <div class="mm-code-copy__wrapper">
         <code class="mm-code-copy__text mm-code-copy__trigger" data-click-el="Snippet">
         wget https://releases.mattermost.com/9.2.2/mattermost-9.2.2-linux-amd64.tar.gz

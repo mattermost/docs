@@ -560,6 +560,8 @@ redirects = {
         "https://docs.mattermost.com/configure/configuration-settings.html#user-filter",
 "administration/command-line-tools.html#mattermost-user-migrate-auth":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-user-migrate-auth",
+"administration/config-settings.html#id76":
+        "https://docs.mattermost.com/configure/site-configuration-settings.html#file-sharing-and-downloads",
 
 # Boards redirects
 "boards/navigating-mattermost-boards.html":
@@ -3074,6 +3076,8 @@ redirects = {
 "onboard/migrating-from-hipchat-to-mattermost.html":
         "https://docs.mattermost.com/onboard/migrating-to-mattermost.html#migrating-from-slack",
 "onboard/ad-ldap-groups-synchronization.html#enabling-ad-ldap-group-synchronization":
+        "https://docs.mattermost.com/onboard/migrating-to-mattermost.html",
+"onboard/ad-ldap-groups-synchronization.html#enabling-ad-ldap-group-synchronization": 
         "https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html#enable-ad-ldap-group-synchronization",
 "onboard/ad-ldap-groups-synchronization.html#using-ad-ldap-group-synchronization":
         "https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html#synchronize-ad-ldap-groups-to-mattermost",
