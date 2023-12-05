@@ -27,6 +27,5 @@ Yes. Mattermost binds to 443 instead of 8065. The Mattermost binary requires the
     sudo setcap cap_net_bind_service=+ep ./mattermost/bin/mattermost
 
 .. note::
-  
-  - We recommend the `Mattermost Omnibus install method </install/installing-mattermost-omnibus.html>`__ over the tarball if you are running the Mattermost Server and database a single system as this greatly reduces setup and ongoing maintenance.
+
   - We highly recommend using a proxy in front of Mattermost server for up to 200 concurrent users. If you have fewer than 200 concurrent users, you can `set up TLS </install/setup-tls.html>`__. If you're exceeding 200 concurrent users, you'll need `a proxy </install/setup-nginx-proxy.html>`__, such as NGINX, in front of Mattermost to manage the traffic.
