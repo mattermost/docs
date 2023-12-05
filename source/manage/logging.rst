@@ -174,7 +174,7 @@ Define audit log output
 
     .. tab:: Multi-line JSON
 
-        In the example below, file output is written to /logs/audit.log in plain text and includes all audit log levels & events. Older logs are kept for 1 day, and up to a total of 10 backup log files are kept at a time. Logs are rotated using gzip when the maximum size of the log file reaches 500 MB. A maximum of 1000 audit records can be queued/buffered while writing to the file.
+        In the example below, file output is written to ``/logs/audit.log`` in plain text and includes all audit log levels & events. Older logs are kept for 1 day, and up to a total of 10 backup log files are kept at a time. Logs are rotated using gzip when the maximum size of the log file reaches 500 MB. A maximum of 1000 audit records can be queued/buffered while writing to the file.
 
         .. code-block:: JSON
 
