@@ -88,7 +88,9 @@ From Mattermost v9.2, this changelog summarizes updates for the latest cloud and
  - Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
 
 #### Changes to all plans:
- - Removed ``DisplaySettings.ExperimentalTimezone`` setting. 
+ - Removed ``DisplaySettings.ExperimentalTimezone`` setting.
+ - Under ``ServiceSettings`` in ``config.json``:
+    - Added ``DefaultUniqueReactionsPerPost`` and ``MaxUniqueReactionsPerPost`` to fix an issue where invalid reactions could be added to posts and to add a default limit for the number of reactions per post.
 
 ### API Changes
  - Added an API to batch requests for custom emojis on page load.
