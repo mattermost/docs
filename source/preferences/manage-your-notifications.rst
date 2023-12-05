@@ -105,6 +105,13 @@ On mobile, select the **Settings** |gear| icon and tap **Notifications**.
 
         Using a web browser or the desktop app, customize any additional non case-sensitive keywords to trigger notifications. For example, you can receive notifications for all messages and threads related to a specific topic, project name, or customer. Separate multiple keywords using commas or by pressing :kbd:`Tab`, and use :kbd:`Backspace` to manage keywords.
 
+        .. image:: ../images/keywords-trigger-mentions.gif
+          :alt: A walkthrough of setting keywords that trigger mentions in Mattermost.
+
+        .. raw:: html
+          
+          <br/><br/>
+
         **Passively track keywords (no notification)**
 
         .. include:: ../_static/badges/ent-pro-only.rst
@@ -113,6 +120,9 @@ On mobile, select the **Settings** |gear| icon and tap **Notifications**.
         From Mattermost v9.3, Mattermost Enterprise and Professional users interested calling attention to specific topics of interest across channels, at a glance, can do so without triggering notifications.
         
         Using a web browser or the desktop app, passively track key terms by specifying single or multi-words to highlight in all channels you're a member of. Keywords and phrases are automatically highlighted based on your `Mattermost theme </preferences/customize-your-theme.html>`__.
+
+        .. image:: ../images/keywords-highlighted.gif
+          :alt: A walkthrough of setting keywords that are highlighted in Mattermost.
 
     .. tab:: Replies
 
