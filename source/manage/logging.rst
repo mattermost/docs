@@ -33,7 +33,7 @@ Customize the following console logs by going to **System Console > Environment 
 File logs
 ---------
 
-File logs feature info level log messages including errors and information around startup and initialization and webhook debug messages. The file is stored in ./logs/mattermost.log, rotated at 100 MB, and archived to a separate file in the same directory.
+File logs feature info level log messages including errors and information around startup and initialization and webhook debug messages. The file is stored in ``./logs/mattermost.log``, rotated at 100 MB, and archived to a separate file in the same directory.
 
 Customize the following file logs by going to **System Console > Environment > Logging** or by editing the ``config.json`` file directly:
 
