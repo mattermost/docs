@@ -338,6 +338,8 @@ redirects = {
         "https://docs.mattermost.com/configure/configuration-settings.html#user-filter",
 "administration/command-line-tools.html#mattermost-user-migrate-auth":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-user-migrate-auth",
+"administration/config-settings.html#id76":
+        "https://docs.mattermost.com/configure/site-configuration-settings.html#file-sharing-and-downloads",
 
 # Boards redirects
 "boards/navigating-mattermost-boards.html":
