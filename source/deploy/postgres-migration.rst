@@ -402,7 +402,7 @@ Compare the plugin data
    dbcmp --source "${MYSQL_DSN}" --target "${POSTGRES_DSN}" --exclude="db_migrations,systems"
 
 Troubleshooting
---------------
+-----------------
 
 Unsupported authentication for MySQL
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
