@@ -22,6 +22,10 @@ Required tools
 
 -  Install ``pgLoader``. See the official `installation
    guide <https://pgloader.readthedocs.io/en/latest/install.html>`__.
+
+.. note::
+   If you are using MySQL v8: Due to a `known bug <https://github.com/dimitri/pgloader/issues/1183>`__ in pgLoader compiled binaries, you need to compile pgLoader from the source. Please follow the steps `here <https://pgloader.readthedocs.io/en/latest/install.html#build-from-sources>`__ to build from the source.
+
 -  Install morph CLI by running the following command:
 
    -  ``go install github.com/mattermost/morph/cmd/morph@v1``
@@ -396,3 +400,15 @@ Compare the plugin data
 .. code:: sh
 
    dbcmp --source "${MYSQL_DSN}" --target "${POSTGRES_DSN}" --exclude="db_migrations,systems"
+
+Troubleshooting
+--------------
+
+Unsupported authentication for MySQL
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If you are facing an error due to authentication with MySQL v8, it may be related to a `known issue <https://github.com/dimitri/pgloader/issues/782>`__ with the pgLoader. The fix is to set default authentication method to ``mysql_native_password`` in your MySQL configuration. To do so, add the ``default-authentication-plugin=mysql_native_password`` value to your ``mysql.cnf`` file. Also do not forget to update your user to use this authentication method.
+
+.. code:: sql
+
+   ALTER USER '<mysql_user>'@'%' IDENTIFIED WITH mysql_native_password BY '<mysql_password>';
