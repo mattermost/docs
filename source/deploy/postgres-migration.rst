@@ -27,7 +27,7 @@ Required tools
    If you are using MySQL v8: Due to a `known bug <https://github.com/dimitri/pgloader/issues/1183>`__ in pgLoader compiled binaries, you need to compile pgLoader from the source. Please follow the steps `here <https://pgloader.readthedocs.io/en/latest/install.html#build-from-sources>`__ to build from the source.
 
 .. note::
-   We have received reports about that the pgloader docker image can be limited in terms of memory resources. Please use pgloader directly instead of a docker container. 
+   We have received reports that the pgloader Docker image can be limited in terms of memory resources. Please use pgloader directly instead of a Docker container. 
 
 -  Install morph CLI by running the following command:
 
