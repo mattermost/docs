@@ -418,7 +418,7 @@ Compare the plugin data
 Iterative migrations
 -------------------
 
-Thera are several steps in the pgloader configuration file that assumes that migration will take place at one go. If you are planning to run the migration over and over again, please do the changes defined below:
+Thera are several steps in the pgloader configuration file that assume migration will take place in one go. If you are planning to run the migration over and over again, please complete the changes defined below:
 
 -  Discard all of the statments defined in the ``BEFORE LOAD DO`` and ``AFTER LOAD DO`` sections.
 -  Run the statments defined in ``BEFORE LOAD DO`` section only once before the migration.
