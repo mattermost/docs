@@ -64,7 +64,7 @@ Replies that did not exceed the message duration are still displayed in the user
 If there was a file attached to the message, it will be removed from the user interface only.  
 
 Why can I still see messages that were supposedly deleted?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The web and desktop app cache posts are cached. Posted deleted by a data retention job will be visible to end users until they clear their cache and refresh.
 
