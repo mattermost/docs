@@ -2,12 +2,46 @@
 
 Latest Mattermost Mobile Apps releases:
 
+- [2.12.0 Release](#release)
 - [2.10.1 Release](#release)
 - [2.10.0 Release](#id1)
 - [2.9.1 Release](#id3)
 - [2.9.0 Release](#id6)
 - [2.8.2 Release](#id12)
-- [2.8.1 Release](#id15)
+
+## 2.12.0 Release
+- Release Date: January 16, 2024
+- Server Versions Supported: Server v8.1.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
+
+### Compatibility
+ - **Upgrade to server version v8.1.0 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/upgrade/extended-support-release.html) (ESR) v7.8.0 has ended and upgrading to server ESR v8.1.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
+ - iPhone 5s devices and later with iOS 12.4+ is required.
+
+### Improvements
+ - Calls: Incoming call notifications now appear on the channel list screen.
+ - Calls: Added the server name to the call notification banner for a better user experience.
+ - Calls: Added support for multiple client sessions for the same user in the same call.
+ - Added a new option to the **Channel Info** to be able to auto-follow all threads.
+ - Added an option to convert Group Messages to private channels.
+ - Added a ``channelType`` parameter to ``persistentNotificationsConfirmation``.
+ - Added a new feature to highlight keywords without triggering a notification. This cannot be configured in the mobile app.
+
+### Bug Fixes
+ - Calls: Fixed an issue where the in-app "push" notification overlay appeared when the user already received the incoming call notification banner.
+ - Fixed an issue where mentions did not appear in the global **Thread** view.
+ - Fixed an issue where an error "Cannot read property 'centerChannelColor' of undefined" appeared.
+ - Fixed an issue with opening the same modal twice.
+ - Fixed "Invariant Violation: "Home" has not been registered" error when opening the app.
+ - Fixed an issue where toggling of emojis in the emoji picker and quick reactions was not enabled.
+ - Fixed an issue with displaying tutorials for servers and user lists when the app is used for the first time.
+
+### Open Source Components
+ - Added ``@formatjs/intl-listformat`` and ``path-to-regexp``, and removed ``@nozbe/with-observables``, ``@react-native/eslint-config`` and ``@react-native/metro-config`` from https://github.com/mattermost/mattermost-mobile.
+
+### Known Issues
+ - Users are unable to adjust the font size via the OS font size setting.
+ - Some Google Pixel phones on Android 12+ might not continue past the login screen. This is a known issue with the OS, and the current workaround is to restart the device.
 
 ## 2.10.1 Release
 - Release Date: November 29, 2023
