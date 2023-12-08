@@ -15,6 +15,77 @@ From Mattermost v9.2, this changelog summarizes updates for the latest cloud and
 :depth: 2
 ```
 
+## Release v9.4 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
+
+**Release Date: January 16, 2024**
+
+### Important Upgrade Notes
+ - Please read the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) before upgrading.
+
+### Compatibility
+ - Updated the minimum required Edge version to v118+.
+
+### Improvements
+
+#### User Interface (UI)
+ - Updated the pre-packaged GitHub plugin version to [v2.1.7](https://github.com/mattermost/mattermost-plugin-github/releases/tag/v2.1.7).
+ - Improved the user interface of the channel notifications modal.
+ - Emojis are now enlarged in emoji tooltips on mouse hover.
+ - Added a gap of 8px between buttons in the modal footer when opened in the mobile web view.
+ - Updated empty states to align with new branding and made changes to the empty state copy.
+ - Adjusted the position of the suggestion list in "Add <user> to a channel" modal to be below or above the text field.
+
+#### Administration
+ - Added new ``ServerMetrics`` hook to allow plugins to register a custom HTTP endpoint to serve their metrics under the server's metrics HTTP listener.
+ - Admins now have the ability to pipe the output of ``mmctl websocket`` into the JSON parser.
+ - Added stores for Oauth **Outgoing Connections**.
+ - Made small optimizations in several database calls:
+    - ``App.HasPermissionToChannel``
+    - ``getPostsForChannelAroundLastUnread``
+    - ``publishWebsocketEventForPermalinkPost``
+    - ``countMentionsFromPost``
+ - Added support for IP Filtering in Cloud (this feature is disabled and behind a feature flag).
+ - Added last login timestamp for users, and added a materialized view and a refresh job to keep track of post stats for PostgreSQL.
+ - Allowed plugin requests to include **Authorization** headers from external systems.
+ - Added a mmctl command ``mmctl system supportpacket`` to download the **Support Packet**.
+ - Added a new mmctl command ``oauth list`` for listing registered OAuth2 applications.
+ - An optional dedicated filestore is now used for compliance exports if configured.
+ - ``MessageExportSettings.GlobalRelaySettings.CustomerType`` now supports "CUSTOM". 
+
+### Bug Fixes
+ - Fixed an issue with the emoji reaction toggle behavior.
+ - Fixed an issue with the spacing between Playbooks and the separator in the Apps bar.
+
+### config.json
+ - Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
+
+#### Changes to all plans:
+ - Under ``RefreshPostStatsRunTime`` in ``config.json``:
+    - Added ``RefreshPostStatsRunTime`` to add last login timestamp for users and to add materialized view and refresh job to keep track of post stats for PostgreSQL.
+  
+#### Changes to Enterprise plans:
+ - Under ``GlobalRelayMessageExportSettings`` in ``config.json``:
+    - Added two new config settings ``CustomSMTPServerName`` and ``CustomSMTPPort`` to allow setting a custom URL and port for Global Relay export. ``CustomSMTPServerName`` and ``CustomSMTPPort`` cannot be configured in the system console UI.
+
+#### Open Source Components:
+ - Added ``@mattermost/desktop-api`` and ``ipaddr.js`` to https://github.com/mattermost/mattermost/.
+
+### Go Version
+ - v9.4 is built with Go ``v1.20.7``.
+
+### Known Issues
+ - Adding an @mention at the start of a post draft and pressing the left or right arrow key can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
+ - Status may sometimes get stuck as **Away** or **Offline** in High Availability mode with IP Hash turned off.
+ - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
+ - Slack import through the CLI fails if email notifications are enabled.
+ - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
+ - The Playbooks left-hand sidebar doesn't update when a user is added to a run or playbook without a refresh.
+ - If a user isn't a member of a configured broadcast channel, posting a status update might fail without any error feedback. As a temporary workaround, join the configured broadcast channels, or remove those channels from the run configuration.
+ - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
+ 
+### Contributors
+ - 
+
 ## Release v9.2 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
 
 - **9.2.3, released 2023-11-29**
