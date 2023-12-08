@@ -35,6 +35,14 @@ myst-parser = "==2.0.0"
 # Repo: https://github.com/executablebooks/sphinx-autobuild
 sphinx-autobuild = "==2021.3.14"
 #
+# Tabbed views for Sphinx (https://sphinx-tabs.readthedocs.io/)
+# Repo: https://github.com/executablebooks/sphinx-tabs
+sphinx-tabs = "==3.4.0"
+#
+# Setuptools; used by sphinx-tabs
+# Repo: https://github.com/pypa/setuptools
+setuptools = "==68.2.2"
+#
 # Add a "copy" button to code blocks in Sphinx (https://sphinx-copybutton.readthedocs.io/en/latest/)
 # Repo: https://github.com/executablebooks/sphinx-copybutton
 sphinx-copybutton = "==0.5.2"
