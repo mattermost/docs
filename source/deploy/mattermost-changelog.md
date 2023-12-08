@@ -63,11 +63,11 @@ From Mattermost v9.2, this changelog summarizes updates for the latest cloud and
  - Under ``RefreshPostStatsRunTime`` in ``config.json``:
     - Added ``RefreshPostStatsRunTime`` to add last login timestamp for users and to add materialized view and refresh job to keep track of post stats for PostgreSQL.
   
-#### Changes to Enterprise plans:
+#### Changes to the Enterprise plan:
  - Under ``GlobalRelayMessageExportSettings`` in ``config.json``:
-    - Added two new config settings ``CustomSMTPServerName`` and ``CustomSMTPPort`` to allow setting a custom URL and port for Global Relay export. ``CustomSMTPServerName`` and ``CustomSMTPPort`` cannot be configured in the system console UI.
+    - Added two new configuration settings ``CustomSMTPServerName`` and ``CustomSMTPPort`` to allow setting a custom URL and port for Global Relay export. ``CustomSMTPServerName`` and ``CustomSMTPPort`` cannot be configured in the system console UI.
 
-#### Open Source Components:
+### Open Source Components:
  - Added ``@mattermost/desktop-api`` and ``ipaddr.js`` to https://github.com/mattermost/mattermost/.
 
 ### Go Version
