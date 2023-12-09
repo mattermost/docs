@@ -46,30 +46,41 @@ Data source
 | **PostgreSQL databases**                                                                                                                 |
 |                                                                                                                                          |
 | When **Driver Name** is set to ``postgres``, use a connection string in the form of:                                                     |
-| ``postgres://mmuser:password@localhost:5432/mattermost_test?sslmode=disable&connect_timeout=10.``                                        |
+| ``postgres://mmuser:password@hostname_or_IP:5432/mattermost_test?sslmode=disable&connect_timeout=10``                                    |
 |                                                                                                                                          |
 | **To use TLS with PostgreSQL databases**:                                                                                                |
 |                                                                                                                                          |
-| The parameter to encrypt connection against a PostgreSQL database is ``sslmode`` and it authorize not all mode that you could define     |
-| with the `CLI (by exemple) <https://www.postgresql.org/docs/current/libpq-ssl.html>`__ like that ``psql "sslmode=value"``                |
+| The parameter to encrypt connection against a PostgreSQL server is ``sslmode``. The library used to interact with PostgreSQL server is   |
+| `pq <https://pkg.go.dev/github.com/lib/pq>`__. For the moment, it's not possible to use all the values that you could pass to a standard |
+| PostgreSQL Client ``psql "sslmode=value"`` `See (SSL Mode Descriptions) <https://www.postgresql.org/docs/current/libpq-ssl.html>`__.     |
 |                                                                                                                                          |
-| The library used to interact with PostgreSQL is `pq <https://pkg.go.dev/github.com/lib/pq>`__ and for this moment you can only use:      |
+| Your database administrator must configure the functionality according possible values describe below :                                  |
 |                                                                                                                                          |
-| - ``disable``: No encryption                                                                                                             |
-|                                                                                                                                          |
-| Exemple : ``postgres://mmuser:password@localhost:5432/mattermost_test?sslmode=disable&connect_timeout=10.``                              |
-|                                                                                                                                          |
-| - ``require`` (default mode if value is omited): Data to be encrypted and i trust the network to connect to the server i think           |
-|                                                                                                                                          |
-| Exemple : ``postgres://mmuser:password@localhost:5432/mattermost_test?sslmode=require&connect_timeout=10.``                              |
-|                                                                                                                                          |
-| - ``verify-ca``: Data is encrypted and i want to be sure i connect to a server that i trust                                              |
-|                                                                                                                                          |
-| Exemple : ``postgres://mmuser:password@localhost:5432/mattermost_test?sslmode=verify-ca&connect_timeout=10.``                            |
-|                                                                                                                                          |
-| - ``verify-full``: Data is encrypted and i want to be sure i connect to the server specified                                             |
-|                                                                                                                                          |
-| Exemple : ``postgres://mmuser:password@localhost:5432/mattermost_test?sslmode=verify-full&connect_timeout=10.``                          |
+| +----------------------------------------+-----------------+---------------------------------------------------------------------------+ |
+| | Short description of the ``sslmode``   | Value           | Example of a data source name                                             | |
+| | parameter                              |                 |                                                                           | |
+| +========================================+=================+===========================================================================+ |
+| | Don't use TLS / SSL encryption against | ``disable``     | ``postgres://mmuser:password@hostname_or_IP:5432/mattermost_test          | |
+| |                                        |                 | ?sslmode=disable&connect_timeout=10``                                     | |
+| | PostgreSQL server.                     |                 |                                                                           | |
+| |                                        |                 |                                                                           | |
+| | (Default value in file ``config.json``)|                 |                                                                           | |
+| +----------------------------------------+-----------------+---------------------------------------------------------------------------+ |
+| | The data is encrypted and the network  | ``require``     | ``postgres://mmuser:password@hostname_or_IP:5432/mattermost_test          | |
+| |                                        |                 | ?sslmode=require&connect_timeout=10``                                     | |
+| | is trusted.                            |                 |                                                                           | |
+| |                                        |                 |                                                                           | |
+| | (Default ``sslmode``                   |                 |                                                                           | |
+| | if the value is omitted)               |                 |                                                                           | |
+| +----------------------------------------+-----------------+---------------------------------------------------------------------------+ |
+| | The data is encrypted when connecting  | ``verify-ca``   | ``postgres://mmuser:password@hostname_or_IP:5432/mattermost_test          | |
+| |                                        |                 | ?sslmode=verify-ca&connect_timeout=10``                                   | |
+| | to a trusted server.                   |                 |                                                                           | |
+| +----------------------------------------+-----------------+---------------------------------------------------------------------------+ |
+| | The data is encrypted when connecting  | ``verify-full`` | ``postgres://mmuser:password@hostname_or_IP:5432/mattermost_test          | |
+| |                                        |                 | ?sslmode=verify-full&connect_timeout=10``                                 | |
+| | to the trusted server.                 |                 |                                                                           | |
+| +----------------------------------------+-----------------+---------------------------------------------------------------------------+ |
 |                                                                                                                                          |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | **MySQL databases**                                                                                                                      |
@@ -82,7 +93,7 @@ Data source
 |                                                                                                                                          |
 |   "SqlSettings": {                                                                                                                       |
 |       "DataSource":                                                                                                                      |
-|   "<user:pass>@tcp(hostname or IP:3306)/mattermost?charset=utf8mb4,utf8&collation=utf8mb4_general_ci",                                   |
+|   "<mmuser:password>@tcp(hostname or IP:3306)/mattermost?charset=utf8mb4,utf8&collation=utf8mb4_general_ci",                             |
 |       [...]                                                                                                                              |
 |    }                                                                                                                                     |
 |                                                                                                                                          |
@@ -91,7 +102,7 @@ Data source
 | .. code-block:: none                                                                                                                     |
 |                                                                                                                                          |
 |   "SqlSettings": {                                                                                                                       |
-|       "DataSource": "<user:pass>@tcp(hostname or IP:3306)/mattermost?charset=utf8mb4,utf8",                                              |
+|       "DataSource": "<mmuser:password>@tcp(hostname or IP:3306)/mattermost?charset=utf8mb4,utf8",                                        |
 |       [...]                                                                                                                              |
 |    }                                                                                                                                     |
 |                                                                                                                                          |
@@ -100,37 +111,40 @@ Data source
 |                                                                                                                                          |
 | **To use TLS with MySQL databases**:                                                                                                     |
 |                                                                                                                                          |
-| The parameter to encrypt connection against a MySQL database is ``tls=`` and it authorize not all mode that you could define             |
-| with the `CLI (by exemple) 8.0 <https://dev.mysql.com/doc/refman/8.0/en/connection-options.html#option_general_ssl-mode>`__              |
-| or `CLI (by exemple) 5.7 <https://dev.mysql.com/doc/refman/5.7/en/connection-options.html#option_general_ssl-mode>`__                    |
-| like that ``mysql --ssl-mode=value``                                                                                                     |
+| The parameter to encrypt connection against a MySQL server is ``tls``.                                                                   |
+| The library used to interact with MySQL is `Go-MySQL-Driver <https://pkg.go.dev/github.com/go-sql-driver/mysql>`__.                      |
+| For the moment, it's not possible to use all the values that you could pass to a standard MySQL Client ``mysql --ssl-mode=value``.       |
+| `See Connection-Encryption Option Summary <https://dev.mysql.com/doc/refman/8.0/en/connection-options.html #option_general_ssl-mode>`__  |
+| for a version 8.0                                                                                                                        |
+| `See Connection-Encryption Option Summary <https://dev.mysql.com/doc/refman/5.7/en/connection-options.html#option_general_ssl-mode>`__   |
+| or for a version 5.7.                                                                                                                    |
 |                                                                                                                                          |
-| The library used to interact with MySQL is `Go-MySQL-Driver <https://pkg.go.dev/github.com/go-sql-driver/mysql>`__                       |
-| and for this moment you can only use:                                                                                                    |
+| Your database administrator must configure the functionality according possible values describe below :                                  |
 |                                                                                                                                          |
-| - ``tls=false``: To don't use TLS / SSL encryption against MySQL server                                                                  |
+| +----------------------------------------+-----------------+---------------------------------------------------------------------------+ |
+| | Short description of the ``tls``       | Value           | Example of a data source name                                             | |
+| | parameter                              |                 |                                                                           | |
+| +========================================+=================+===========================================================================+ |
+| | Don't use TLS / SSL encryption against | ``false``       | ``"<mmuser:password>@tcp(hostname or IP:3306)/mattermost_test             | |
+| |                                        |                 | ?charset=utf8mb4,utf8&writeTimeout=30s&tls=false"``                       | |
+| | MySQL server.                          |                 |                                                                           | |
+| +----------------------------------------+-----------------+---------------------------------------------------------------------------+ |
+| | Use TLS / SSL encryption against       | ``true``        | ``"<mmuser:password>@tcp(hostname or IP:3306)/mattermost_test             | |
+| |                                        |                 | ?charset=utf8mb4,utf8&writeTimeout=30s&tls=true"``                        | |
+| | MySQL server.                          |                 |                                                                           | |
+| +----------------------------------------+-----------------+---------------------------------------------------------------------------+ |
+| | Use TLS / SSL encryption with a self-  | ``skip-verify`` | ``"<mmuser:password>@tcp(hostname or IP:3306)/mattermost_test             | |
+| |                                        |                 | ?charset=utf8mb4,utf8&writeTimeout=30s&tls=skip-verify"``                 | |
+| | signed certificate against             |                 |                                                                           | |
+| | MySQL server.                          |                 |                                                                           | |
+| +----------------------------------------+-----------------+---------------------------------------------------------------------------+ |
+| | Use TLS / SSL encryption if server     | ``preferred``   | ``"<mmuser:password>@tcp(hostname or IP:3306)/mattermost_test             | |
+| |                                        |                 | ?charset=utf8mb4,utf8&writeTimeout=30s&tls=preferred"``                   | |
+| | advertises a  possible fallback        |                 |                                                                           | |
+| |                                        |                 |                                                                           | |
+| | unencrypted if  it's not advertised.   |                 |                                                                           | |
+| +----------------------------------------+-----------------+---------------------------------------------------------------------------+ |
 |                                                                                                                                          |
-| Exemple :                                                                                                                                |
-|                                                                                                                                          |
-| ``"<user:pass>@tcp(hostname or IP:3306)/mattermost?charset=utf8mb4,utf8&writeTimeout=30s&tls=false"``                                    |
-|                                                                                                                                          |
-| - ``tls=true``: To use TLS / SSL encryption against MySQL server.                                                                        |
-|                                                                                                                                          |
-| Exemple :                                                                                                                                |
-|                                                                                                                                          |
-| ``"<user:pass>@tcp(hostname or IP:3306)/mattermost?charset=utf8mb4,utf8&writeTimeout=30s&tls=true"``                                     |
-|                                                                                                                                          |
-| - ``tls=skip-verify``: To use TLS / SSL encryption with self-signed certificates                                                         |
-|                                                                                                                                          |
-| Exemple :                                                                                                                                |
-|                                                                                                                                          |
-| ``"<user:pass>@tcp(hostname or IP:3306)/mattermost?charset=utf8mb4,utf8&writeTimeout=30s&tls=skip-verify"``                              |
-|                                                                                                                                          |
-| - ``tls=preferred``: To use TLS / SSL encryption if server advertise with a possible fallback unencrypted if it not advertised           |
-|                                                                                                                                          |
-| Exemple :                                                                                                                                |
-|                                                                                                                                          |
-| ``"<user:pass>@tcp(hostname or IP:3306)/mattermost?charset=utf8mb4,utf8&writeTimeout=30s&tls=preferred"``                                |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. config:setting:: database-maxidleconnections
