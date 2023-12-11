@@ -64,7 +64,7 @@ If there was a file attached to the message, it will be removed from the user in
 Why can I still see messages that were supposedly deleted?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The web and desktop app cache posts are cached. Posts deleted by a data retention job will be visible to end users until they clear their cache and refresh.
+The web and desktop app cache posts. Posts deleted by a data retention job will be visible to end users until they clear their cache and refresh.
 
 What happens when a file is deleted by the file retention policy?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
