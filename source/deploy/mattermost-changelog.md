@@ -20,6 +20,7 @@ From Mattermost v9.2, this changelog summarizes updates for the latest cloud and
 **Release Date: January 16, 2024**
 
 ### Important Upgrade Notes
+ - MySQL v5.7 is at end of life. We recommend all customers to upgrade to at least 8.x. For now, we are logging a warning. From version v9.5 onwards, which is the next Extended Support Release, we will stop supporting v5.7 altogether.
  - Please read the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) before upgrading.
 
 ### Compatibility
