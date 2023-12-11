@@ -10,7 +10,7 @@ By default, Mattermost stores all message history providing an unlimited search 
 
 In Mattermost Enterprise, you can set a global retention policy as well as custom retention policies to manage how long messages and file uploads are kept in Mattermost channels and direct messages.
 
-For scheduled data retention jobs to work, the `global retention policy for files </configure/configuration-settings.html#enable-global-retention-policy-for-files>`__ as well as the `global retention policy for messages </configure/configuration-settings.html#enable-global-retention-policy-for-messages>`__ configuration settings in the ``config.json`` file must be set to ``true``. These configuration settings are disabled by default.
+For scheduled data retention jobs to work,
 
 .. warning:: 
   Once a message or a file is deleted, the action is irreversible. Please use caution when setting up global or custom data retention policies.
@@ -20,11 +20,12 @@ Configure a global data retention policy
 
 To set a global data retention policy:
 
-1. Go to **System Console > Compliance > Data Retention Policies**.
-2. Select **Edit** from the menu located to the right of the **Global retention policy** table. 
-3. Specify a global retention policy for channel messages and direct messages by selecting a **Channel & direct message retention** option from the dropdown, then set how long to keep those messages. When a time is set, messages and file attachments older than the duration you set will be deleted. The minimum retention period is one day.
-4. Select a **File retention** option from the dropdown. Set the number of days or years to keep files. When a time is set, uploaded files which are older than the duration you set will be deleted from your file storage system (either from your local disk or your Amazon S3 service as specified in **System Console > Environment > File Storage**. The minimum retention period is one day. The global file policy deletes all files regardless of whether they're in a direct message, private, or public channel.
-5. Under the **Policy log** section, select **Edit** to specify the start time of the daily scheduled data retention job. Choose a time when fewer people are using your system. 
+1. Set `global retention policy for files </configure/configuration-settings.html#enable-global-retention-policy-for-files>`__ as well as the `global retention policy for messages </configure/configuration-settings.html#enable-global-retention-policy-for-messages>`__ configuration settings in the ``config.json`` file to ``true``. These configuration settings are disabled by default.
+2. Go to **System Console > Compliance > Data Retention Policies**.
+3. Select **Edit** from the menu located to the right of the **Global retention policy** table. 
+4. Specify a global retention policy for channel messages and direct messages by selecting a **Channel & direct message retention** option from the dropdown, then set how long to keep those messages. When a time is set, messages and file attachments older than the duration you set will be deleted. The minimum retention period is one day.
+5. Select a **File retention** option from the dropdown. Set the number of days or years to keep files. When a time is set, uploaded files which are older than the duration you set will be deleted from your file storage system (either from your local disk or your Amazon S3 service as specified in **System Console > Environment > File Storage**. The minimum retention period is one day. The global file policy deletes all files regardless of whether they're in a direct message, private, or public channel.
+6. Under the **Policy log** section, select **Edit** to specify the start time of the daily scheduled data retention job. Choose a time when fewer people are using your system. 
 
 Select **Save**. Messages and files older than the duration you set will be deleted at the specified server time, as applicable.
 
