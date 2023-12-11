@@ -1,13 +1,10 @@
 # Mattermost mobile apps changelog
 
-Latest Mattermost Mobile Apps releases:
+This changelog summarizes updates to Mattermost mobile apps releases for [Mattermost](https://mattermost.com).
 
-- [2.11.0 Release](#release)
-- [2.10.1 Release](#release)
-- [2.10.0 Release](#release)
-- [2.9.1 Release](#id1)
-- [2.9.0 Release](#id4)
-- [2.8.2 Release](#id10)
+```{contents} On this page
+:depth: 2
+```
 
 ## 2.11.0 Release
 - Release Date: December 15, 2023
