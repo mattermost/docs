@@ -25,12 +25,12 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
  - Added a new feature to highlight keywords without triggering a notification. This cannot be configured in the mobile app.
 
 ### Bug Fixes
- - Calls: Fixed an issue where the in-app "push" notification overlay appeared when the user already received the incoming call notification banner.
- - Fixed an issue where mentions did not appear in the global **Thread** view.
+ - Calls: Fixed an issue where the in-app "push" notification overlay appeared after the user had already received the incoming call notification banner.
+ - Fixed an issue where mentions did not appear in the global **Threads** view.
  - Fixed an issue where an error "Cannot read property 'centerChannelColor' of undefined" appeared.
  - Fixed an issue with opening the same modal twice.
  - Fixed "Invariant Violation: "Home" has not been registered" error when opening the app.
- - Fixed an issue where toggling of emojis in the emoji picker and quick reactions was not enabled.
+ - Fixed an issue where toggling emojis in the emoji picker and quick reactions were not enabled.
  - Fixed an issue with displaying tutorials for servers and user lists when the app is used for the first time.
 
 ### Open Source Components
