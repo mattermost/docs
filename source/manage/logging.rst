@@ -9,7 +9,7 @@ Mattermost logging
 
 By default, Mattermost writes logs to both the console and to the ``mattermost.log`` file in a machine-readable JSON format. 
 
-You can customize the following logging options based on your business practices and needs to by going to **System Console > Environment > Logging** or by editing the ``config.json`` file directly: 
+You can customize the following logging options based on your business practices and needs by going to **System Console > Environment > Logging** or by editing the ``config.json`` file directly: 
 
 - `Omit incoming webhook details from logs </configure/environment-configuration-settings.html#enable-webhook-debugging>`__
 - `Adjust maximum log field size </configure/environment-configuration-settings.html#maximum-field-size>`__
@@ -22,13 +22,9 @@ Console logs feature verbose debug level log messages written to the console usi
 Customize the following console logs by going to **System Console > Environment > Logging** or by editing the ``config.json`` file directly:
 
 - `Stop outputting console logs </configure/environment-configuration-settings.html#output-logs-to-console>`__
-- `Omit webhook debug messages </configure/environment-configuration-settings.html#enable-webhook-debugging>`__
 - `Adjust console log level </configure/environment-configuration-settings.html#console-log-level>`__ 
 - `Output console logs as plain text </configure/environment-configuration-settings.html#output-console-logs-as-json>`__ & `colorize plain text log level details </configure/environment-configuration-settings.html#colorize-plain-text-console-logs>`__
-
-.. note::
-
-    Changing the console log level from ``DEBUG`` also omits the request body of incoming webhooks from logs.
+- `Omit webhook debug messages </configure/environment-configuration-settings.html#enable-webhook-debugging>`__
 
 File logs
 ---------
@@ -39,17 +35,15 @@ Customize the following file logs by going to **System Console > Environment > L
 
 - `Stop outputting file logs <https://docs.mattermost.com/configure/environment-configuration-settings.html#output-logs-to-file>`__
 - `Adjust file log level <https://docs.mattermost.com/configure/environment-configuration-settings.html#file-log-level>`__ 
+- `Output file logs as plain text <https://docs.mattermost.com/configure/environment-configuration-settings.html#output-file-logs-as-json>`__
 - `Change where the file is stored <https://docs.mattermost.com/configure/environment-configuration-settings.html#file-log-directory>`__
-- `Output file log as plain text <https://docs.mattermost.com/configure/environment-configuration-settings.html#output-file-logs-as-json>`__
-
-.. note::
-
-    Changing the file log level to ``DEBUG`` also includes the request body of incoming webhooks in logs.
 
 You can optionally output log records to any combination of `console <#console-target-configuration-options>`__, `local file <#file-target-configuration-options>`__, `syslog <#syslog-target-configuration-options>`__, and `TCP socket <#tcp-target-configuration-options>`__ targets, each featuring additional customization. See `Advanced Logging <#advanced-logging>`__ for details.
 
 Define logging output
 ---------------------
+
+Define logging output in JSON format in the System Console by going to **Environment > Logging > Advanced Logging** or by editing the ``config.json`` file directly. You can use the sample JSON below as a starting point.
 
 .. code-block:: JSON
 
@@ -112,8 +106,8 @@ Define logging output
 
 ----
 
-Audit logging (Experimental|Beta)
------------------------------------
+Audit logging (Experimental)
+-----------------------------
 
 .. include:: ../_static/badges/ent-only.rst
   :start-after: :nosearch:
@@ -121,7 +115,7 @@ Audit logging (Experimental|Beta)
 By default, Mattermost doesn’t write audit logs locally to a file on the server. You can enable and customize experimental audit logging in Mattermost to record activities and events performed within a Mattermost workspace, such as access to the Mattermost REST API or mmctl. 
 
 .. tip::
-    From Mattermost v9.3, you can enable and customize audit logging for AD/LDAP events separately from other logging.
+    From Mattermost v9.3, you can enable and customize advanced logging for AD/LDAP events separately from other logging.
 
 - Logs are recorded asynchronously to reduce latency to the caller, and are stored separately from general logging.
 - During short spans of inability to write to targets, the audit records buffer in memory with a configurable maximum record cap. Based on typical audit record volumes, it could take many minutes to fill the buffer. After that, the records are dropped, and the record drop event is logged.
@@ -135,7 +129,6 @@ In addition, you can output audit log records to any combination of `console <#c
     - From Mattermost v7.2, experimental audit logging beta is a breaking change from previous releases.
     - The format and content of an audit log record has changed to become standardized for all events using a `standard JSON schema </comply/embedded-json-audit-log-schema.html>`__.
     - Existing tools which ingest or parse audit log records may need to be modified.
-    - Servers which have ``LdapSettings.Trace`` enabled will see their LDAP trace logs go to ``DEBUG`` level instead of ``stdout``.
 
 ----
 
@@ -150,7 +143,8 @@ System admins can output log records to any combination of `console <#console-ta
 .. tip::
     
     - From Mattermost v9.3, system admins can configure advanced logging options in the System Console using multi-line JSON by going to **Environment > Logging**.
-    - Alternatively, admins can configure advanced logging within the ``AdvancedLoggingJSON`` section of the ``config.json`` file using multi-line JSON or escaped JSON as a string. 
+    - Alternatively, admins can configure advanced logging within the ``AdvancedLoggingJSON`` section of the ``config.json`` file using multi-line JSON or escaped JSON as a string.
+    - Mattermost Team Edition customers can output audit log records to the console or a file.
 
 Advanced logging options can be configured to:
 
@@ -174,7 +168,7 @@ Define audit log output
 
     .. tab:: Multi-line JSON
 
-        In the example below, file output is written to ``/logs/audit.log`` in plain text and includes all audit log levels & events. Older logs are kept for 1 day, and up to a total of 10 backup log files are kept at a time. Logs are rotated using gzip when the maximum size of the log file reaches 500 MB. A maximum of 1000 audit records can be queued/buffered while writing to the file.
+        In the example below, file output is written to ``./logs/audit.log`` in plain text and includes all audit log levels & events. Older logs are kept for 1 day, and up to a total of 10 backup log files are kept at a time. Logs are rotated using gzip when the maximum size of the log file reaches 500 MB. A maximum of 1000 audit records can be queued/buffered while writing to the file.
 
         .. code-block:: JSON
 
@@ -211,7 +205,7 @@ Define audit log output
 
         In the example below, the first output is written to the console in plain text and includes all audit log levels, events, and command outputs. A pipe ``|`` delimiter is placed between fields. 
 
-        A second output is written to ``/logs/audit.log`` in plain text in a machine-readable JSON format and includes all audit log levels, events, and command outputs. Older logs are kept for 1 day, and up to a total of 10 backup log files are kept at a time. Logs are rotated using GZIP when the maximum size of the log file reaches 500 MB. A maximum of 1000 audit records can be queued/buffered while writing to the file.
+        A second output is written to ``./logs/audit.log`` in plain text in a machine-readable JSON format and includes all audit log levels, events, and command outputs. Older logs are kept for 1 day, and up to a total of 10 backup log files are kept at a time. Logs are rotated using GZIP when the maximum size of the log file reaches 500 MB. A maximum of 1000 audit records can be queued/buffered while writing to the file.
 
         Contents of ``audit_log_config.json`` file:
 
@@ -395,7 +389,7 @@ Console targets can be either ``stdout`` or ``stderr``.
 File target configuration options
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-File targets support rotation and compression triggered by size and/or duration. From Mattermost v9.3, new `log levels for AD/LDAP <#log-levels>`__ have been added and can be set separately from other logging.
+File targets support rotation and compression triggered by size and/or duration.
 
 +-------------+----------+---------------------------------------------------------------------------------------------------------------------+
 | **Key**     | **Type** | **Description**                                                                                                     |

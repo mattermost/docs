@@ -243,6 +243,9 @@ Enable webhook debugging
 | - **false**: The contents of incoming         |                                                                              |
 |   webhooks aren’t printed to log files.       |                                                                              |
 +-----------------------------------------------+------------------------------------------------------------------------------+
+| **Note**: Enable debug logs by changing the `file log level </manage/logging.html#file-logs>`__ to ``DEBUG`` to include      |
+| the request body of incoming webhooks in logs.                                                                               |
++-----------------------------------------------+------------------------------------------------------------------------------+
 
 .. config:setting:: log-multipletargetoutput
   :displayname: Output logs to multiple targets (Logging)
