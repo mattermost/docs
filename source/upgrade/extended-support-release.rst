@@ -21,7 +21,7 @@ When an ESR is at the end of its life cycle, there will be announcements ahead o
 
 To receive updates about Extended Support Releases, sign up for our mailing list `here <https://eepurl.com/dCKn2P>`__.
 
-.. image:: ../images/ESR_update.png
+.. image:: ../images/ESR2_update.png
    :alt: Timeline-based chart showing the lifecycle of Mattermost Extended Support Releases and feature releases from last year and this year.
 
 What is included in an Extended Support Release dot release? 
@@ -49,7 +49,7 @@ What are the current supported Extended Support Release versions?
 +-------------+----------------+------------------+------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------+
 | Version     | Type           | Release Date     | End of Support   | Latest Dot Release Download link                                                           | Upgrade Notes                                       |
 +=============+================+==================+==================+============================================================================================+=====================================================+
-| 8.1         | Feature        | August 16, 2023  | May 15, 2024     | `8.1.6 <https://releases.mattermost.com/8.1.6/mattermost-8.1.6-linux-amd64.tar.gz>`_       |                                                     |
+| 8.1         | Feature        | August 16, 2023  | May 15, 2024     | `8.1.7 <https://releases.mattermost.com/8.1.7/mattermost-8.1.7-linux-amd64.tar.gz>`_       |                                                     |
 +-------------+----------------+------------------+------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------+
 | 7.8         | Feature        | February 16, 2023| November 15, 2023| `7.8.15 <https://releases.mattermost.com/7.8.15/mattermost-7.8.15-linux-amd64.tar.gz>`_    |                                                     |
 +-------------+----------------+------------------+------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------+
