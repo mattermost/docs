@@ -1950,6 +1950,10 @@ redirects = {
 "developer/webhooks-incoming.html":
         "https://developers.mattermost.com/integrate/admin-guide/admin-webhooks-incoming/",
 
+# Microsoft Teams redirects
+"about/embed-mattermost-within-microsoft-teams.html":
+        "about/embed-mattermost-app-within-microsoft-teams.html",
+
 # Focalboard redirects
 "focalboard/installing-boards":
 	"https://github.com/mattermost/focalboard/blob/main/docs/mattermost-boards-dev-guide.md",

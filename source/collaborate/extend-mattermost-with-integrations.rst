@@ -1,9 +1,6 @@
 Extend Mattermost with integrations
 ===================================
 
-.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
-  :start-after: :nosearch:
-
 `Visit the Mattermost Marketplace <https://mattermost.com/marketplace/>`__ to find dozens of open source integrations to common tools like Jira, Jenkins, GitLab, with interactive bot applications (Hubot, mattermost-bot), and other communication tools (Email, IRC, XMPP, Threema) that are freely available for use and customization.
 
 Latest integrations
@@ -17,7 +14,7 @@ Latest integrations
    Collaborate within embedded MS Teams </collaborate/collaborate-within-embedded-microsoft-teams>
    Use the Mattermost Google Calendar plugin </collaborate/use-mattermost-google-calendar-plugin>
 
-* :doc:`Collaborate within a connected Microsoft Teams instance </collaborate/collaborate-within-connected-microsoft-teams>` - Learn how to collaborate with colleagues when Mattermost is connected to Microsoft Teams.
+* :doc:`Collaborate within a Microsoft Teams instance </collaborate/collaborate-within-connected-microsoft-teams>` - Learn how to collaborate with colleagues when Mattermost is connected to Microsoft Teams.
 * :doc:`Collaborate within an embedded Microsoft Teams instance </collaborate/collaborate-within-embedded-microsoft-teams>` - Learn how to collaborate with colleagues when Mattermost is embedded within Microsoft Teams.
 * :doc:`Use the Mattermost Google Calendar plugin </collaborate/use-mattermost-google-calendar-plugin>` - Learn how to manage events using a two-way integration between Mattermost and Google Calendar.
 
@@ -64,5 +61,3 @@ Video calling & screensharing
 
 - `Skype for Business <https://mattermost.com/marketplace/skype4business-plugin/>`__: Start and join voice calls, video calls, and use screensharing in Mattermost.
 - `Zoom <https://mattermost.com/marketplace/zoom-plugin/>`__: Start audio and video conferencing calls in Mattermost.
-
-
