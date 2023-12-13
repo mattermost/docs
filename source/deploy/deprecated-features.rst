@@ -9,7 +9,7 @@ Removed features in upcoming versions
 Mattermost Server v9.5.0
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-MySQL v5.7 is at end of life. We recommend all customers to upgrade to at least 8.x. For now, we are logging a warning. From version v9.5 onwards, which is the next Extended Support Release, we will stop supporting v5.7 altogether.
+MySQL v5.7 is at end of life. We recommend all customers to upgrade to at least 8.x. For now, we are logging a warning. From Mattermost v9.5, which is the next Extended Support Release, we will stop supporting MySQL v5.7 altogether.
 
 Removed features by Mattermost version
 ----------------------------------------
