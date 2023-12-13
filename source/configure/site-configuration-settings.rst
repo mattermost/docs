@@ -1415,6 +1415,24 @@ Enable server syncing of message drafts
 |   on each device.                                    |                                                                                      |
 +------------------------------------------------------+--------------------------------------------------------------------------------------+
 
+.. config:setting:: posts-UniqueEmojiReactionLimit
+  :displayname: Unique emoji reaction limit (Posts)
+  :systemconsole: Site Configuration > Posts
+  :configjson: .ServiceSettings.UniqueEmojiReactionLimitPerPost
+  :environment: MM_SERVICESETTINGS_UNIQUEEMOJIREACTIONLIMITPERPOST
+  :description: Limit the number of unique emoji reactions on each post. Default is 50. Maximum is 500.
+
+Unique emoji reaction limit
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++------------------------------------------------------+---------------------------------------------------------------------------------------+
+| Limit the number of unique emoji reactions on each   | - System Config path: **Site Configuration > Posts**                                  |
+| message. Increasing this limit can lead to poor      | - ``config.json`` setting: ``".ServiceSettings.UniqueEmojiReactionLimitPerPost: 50,`` |
+| client performance.                                  | - Environment variable: ``MM_SERVICESETTINGS_UNIQUEEMOJIREACTIONLIMITPERPOST``        |
+|                                                      |                                                                                       |
+| Numerical input. Default is **50**. Maximum is 500.  |                                                                                       |
++------------------------------------------------------+---------------------------------------------------------------------------------------+
+
 ----
 
 File sharing and downloads
