@@ -1,3 +1,6 @@
+:orphan:
+:nosearch:
+
 Embed Mattermost within Microsoft Teams
 =======================================
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst

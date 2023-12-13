@@ -338,6 +338,8 @@ redirects = {
         "https://docs.mattermost.com/configure/configuration-settings.html#user-filter",
 "administration/command-line-tools.html#mattermost-user-migrate-auth":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-user-migrate-auth",
+"administration/config-settings.html#id76":
+        "https://docs.mattermost.com/configure/site-configuration-settings.html#file-sharing-and-downloads",
 
 # Boards redirects
 "boards/navigating-mattermost-boards.html":
@@ -1947,6 +1949,10 @@ redirects = {
         "https://developers.mattermost.com/integrate/admin-guide/admin-webhooks-outgoing/",
 "developer/webhooks-incoming.html":
         "https://developers.mattermost.com/integrate/admin-guide/admin-webhooks-incoming/",
+
+# Microsoft Teams redirects
+"about/embed-mattermost-within-microsoft-teams.html":
+        "about/embed-mattermost-app-within-microsoft-teams.html",
 
 # Focalboard redirects
 "focalboard/installing-boards":
