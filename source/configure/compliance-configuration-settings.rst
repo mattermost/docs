@@ -179,11 +179,11 @@ Global Relay customer account
 
 *Available as an add-on to legacy Enterprise Edition E20*
 
-Type of Global Relay customer account your organization has, either ``A9/Type 9`` or ``A10/Type 10``.
+Type of Global Relay customer account your organization has. Can be one of: ``A9/Type 9``, ``A10/Type 10``, or ``Custom``.
 
-+-------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"CustomerType": "A9/Type 9"`` with options ``"A9/Type 9"`` and ``"A10/Type 10"``. |
-+-------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"CustomerType": "A9"`` with options ``"A9``, ``"A10"``, and ``CUSTOM``. |
++---------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: compliance-exportglobalrelaysmtpuser
   :displayname: Global Relay SMTP username (Compliance Export - Global Relay EML)
@@ -222,7 +222,7 @@ The password associated with the Global Relay SMTP username.
 +-------------------------------------------------------------------------------------+
 
 .. config:setting:: compliance-exportglobalrelayemail
-  :displayname: Global Relay emailaddress
+  :displayname: Global Relay email address (Compliance Export - Global Relay EML)
   :systemconsole: Compliance > Compliance Export
   :configjson: .MessageExportSettings.GlobalRelaySettings.EmailAddress
   :environment: MM_MESSAGEEXPORTSETTINGS_GLOBALRELAYSETTINGS_EMAILADDRESS
@@ -238,6 +238,38 @@ The email address your Global Relay server monitors for incoming compliance expo
 +-------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EmailAddress": ""`` with string input. |
 +-------------------------------------------------------------------------------------+
+
+.. config:setting:: compliance-exportglobalrelaysmtpserver
+  :displayname: SMTP server name (Compliance Export - Global Relay EML)
+  :systemconsole: Compliance > Compliance Export
+  :configjson: .MessageExportSettings.GlobalRelaySettings.CustomSMTPServerName
+  :environment: MM_MESSAGEEXPORTSETTINGS_GLOBALRELAYSETTINGS_CUSTOMSMTPSERVERNAME
+  :description: The SMTP server name URL that will receive your Global Relay EML file when a custom customer account type is configured.
+
+SMTP server name
+~~~~~~~~~~~~~~~~
+
+The SMTP server name URL that will receive your Global Relay EML file when a `custom customer account type <#global-relay-customer-account>`__ is configured.
+
++----------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``".MessageExportSettings.GlobalRelaySettings.CustomSMTPServerName": ""`` with string input. |
++----------------------------------------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: compliance-exportglobalrelaysmtpport
+  :displayname: SMTP server port (Compliance Export - Global Relay EML)
+  :systemconsole: Compliance > Compliance Export
+  :configjson: .MessageExportSettings.GlobalRelaySettings.CustomSMTPPort
+  :environment: MM_MESSAGEEXPORTSETTINGS_GLOBALRELAYSETTINGS_CUSTOMSMPTPORT
+  :description: The SMTP server port that will receive your Global Relay EML file when a custom customer account type is configured. Default is 25.
+
+SMTP server port
+~~~~~~~~~~~~~~~~
+
+The SMTP server port that will receive your Global Relay EML file when a `custom customer account type <#global-relay-customer-account>`__ is configured. Default is 25.
+
++----------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``".MessageExportSettings.GlobalRelaySettings.CustomSMTPPort": 25`` with string input. |
++----------------------------------------------------------------------------------------------------------------------------------+
 
 Run compliance export job now
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
