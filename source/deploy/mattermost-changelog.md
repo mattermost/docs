@@ -52,7 +52,7 @@ From Mattermost v9.2, this changelog summarizes updates for the latest cloud and
  - Added a file storage permission check to the workspace health dashboard.
  - Performed a cleanup in preparation for adding support for multi-word keywords that trigger notification.
  - Added a warning log message when the app runs as root.
- - Removed all uses of ``ExperimentalTimezone`` in webapp.
+ - Removed all uses of the ``ExperimentalTimezone`` setting. The Timezone feature is now always enabled and no longer behind a configuration setting.
  - Added support for previewing WebVTT attachments.
  - Introduced separate ``AdvancedLogging`` levels for LDAP messages.
  - Introduced trace logging level for LDAP messages.
