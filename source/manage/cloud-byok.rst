@@ -1,0 +1,80 @@
+Cloud Dedicated Bring Your Own Key
+===================================
+
+.. include:: ../_static/badges/ent-cloud-dedicated.rst
+   :start-after: :nosearch:
+
+Bring Your Own Key aims to provide dedicated enterprise customers with the capability to introduce their encryption keys and manage their lifecycle within the cloud infrastructure. This approach ensures that customers have full control over their data encryption processes, enhancing data security and compliance. It not only enhances data security but also provides customers with autonomy over their encryption key lifecycle, aligning with the primary goal of supporting encryption at rest with custom KMS keys provided and maintained by the customers. BYOK requires a subscription to Mattermost Cloud Enterprise Dedicated.
+
+In Mattermost Dedicated, you can use KMS keys in two ways:
+
+- One KMS key for all services
+- Per-service KMS keys (EBS, RDS, S3)
+    - Keys do not need to be unique to each service.
+    - All services must be encrypted at rest.
+    - Selective enablement of this feature can be supported.
+    - Keys do not need to be unique to each service.
+    - In case a customer needs a global database the recommendation from the Infrastructure SRE team is to provide us 2 KMS keys, 1 per region.
+
+Configure BYOK
+------------------------
+1. Customer to provide their AWS KMS ARN to our infrastructure SRE team.
+2. Customer need to add the following blocks to their KMS Policy for the AWS KMS ARN provided
+
+.. code-block:: JSON
+
+    {
+        "Sid": "Allow use of the key",
+        "Effect": "Allow",
+        "Principal": {
+            "AWS": "arn:aws:iam::<MATTERMOST_AWS_ACCOUNT_ID>:user/mattermost-cloud-<environment>-provisioning-<VPC_ID>"
+        },
+        "Action": [
+            "kms:Encrypt",
+            "kms:Decrypt",
+            "kms:ReEncrypt*",
+            "kms:GenerateDataKey*",
+            "kms:DescribeKey"
+        ],
+        "Resource": "<CUSTOM_CUSTOMER_KMS_ID>"
+    },
+    {
+        "Sid": "Allow use of the key role nodes",
+        "Effect": "Allow",
+        "Principal": {
+            "AWS": "arn:aws:iam::<MATTERMOST_AWS_ACCOUNT_ID>:role/nodes.<CLUSTER_ID>-kops.k8s.local"
+        },
+        "Action": [
+            "kms:Encrypt",
+            "kms:Decrypt",
+            "kms:ReEncrypt*",
+            "kms:GenerateDataKey*",
+            "kms:DescribeKey"
+        ],
+        "Resource": "<CUSTOM_CUSTOMER_KMS_ID>"
+    },
+
+3. Infrastructure SRE team need to update kops cluster and S3, RDS resources after KMS policy is updated on customer's end.
+
+An alternative configuration path that Mattermost offers is that the customer provides an external key (non-KMS) to the infrastructure SRE team and the team maintains all the key lifecycle and the relevant resources for the customer.
+This path offers less control to customers but simplifies the setup process.
+
+Requirements
+~~~~~~~~~~~~~~~~~~~~~~~
+
+- Customers must possess their AWS Account. (In the alternative path mentioned above this is delegated to Mattermost)
+- Customers oversee the maintenance lifecycle of their custom KMS key.
+- A valid AWS KMS arn for encrypting storage and databases should be provided to the Infrastructure SRE team.
+- Incorporate blocks from the Infrastructure SRE team into their KMS key policy.
+
+Considerations
+~~~~~~~~~~~~~~~~~~~~~~~
+- Changing the AWS KMS key in the database necessitates downtime due to AWS Aurora's encryption limitations.
+- Proper communication is essential for setting expectations and scheduling changes.
+
+Conclusion
+--------------
+
+If you are a large enterprise with compliance requirements or working in highly-regulated industries using Mattermost Cloud Dedicated with BYOK ensures full data control.
+
+For any further assistance or queries, `contact our support team </https://mattermost.com/support/>`__.
