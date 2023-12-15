@@ -1,21 +1,21 @@
-Collaborate within connected Microsoft Teams
-============================================
+Collaborate within Microsoft Teams
+==================================
 
-.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../_static/badges/ent-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 .. |plus-icon| image:: ../images/plus_F0415.svg
   :alt: Open menus using the plus icon.
 
-The `Connected Mattermost for Microsoft Teams </about/mattermost-for-microsoft-teams.html>`__ integration enables you to collaborate with Microsoft Teams users without leaving Mattermost.
+The `Mattermost for Microsoft Teams plugin </about/mattermost-for-microsoft-teams.html>`__ integration enables you to collaborate with Microsoft Teams users without leaving Mattermost.
 
 .. include:: ../_static/badges/academy-msteams.rst
   :start-after: :nosearch:
 
-Connect your Mattermost account to your MS Teams account
----------------------------------------------------------
+Connect your Mattermost account to your Microsoft Teams account
+---------------------------------------------------------------
 
-To use the Mattermost for Microsoft Teams plugin, you must connect your Mattermost user account to Microsoft Teams. You only need to complete this step once.
+To use the Microsoft Teams plugin, you must connect your Mattermost user account to Microsoft Teams. You only need to complete this step once.
 
 1. Log into Mattermost using your credentials. 
 2. When you log in, you’ll be prompted to enter your Microsoft Teams user information, including your Microsoft Teams email address and your Microsoft Teams password.

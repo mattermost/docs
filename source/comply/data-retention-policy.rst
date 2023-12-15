@@ -10,8 +10,6 @@ By default, Mattermost stores all message history providing an unlimited search 
 
 In Mattermost Enterprise, you can set a global retention policy as well as custom retention policies to manage how long messages and file uploads are kept in Mattermost channels and direct messages.
 
-For scheduled data retention jobs to work, the `global retention policy for files </configure/configuration-settings.html#enable-global-retention-policy-for-files>`__ as well as the `global retention policy for messages </configure/configuration-settings.html#enable-global-retention-policy-for-messages>`__ configuration settings in the ``config.json`` file must be set to ``true``. These configuration settings are disabled by default.
-
 .. warning:: 
   Once a message or a file is deleted, the action is irreversible. Please use caution when setting up global or custom data retention policies.
 
@@ -62,6 +60,11 @@ The message is removed from the Mattermost user interface and deleted from the `
 Replies that did not exceed the message duration are still displayed in the user interface. However, further replies are no longer possible.
 
 If there was a file attached to the message, it will be removed from the user interface only.  
+
+Why can I still see messages that were supposedly deleted?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The web and desktop app cache posts. Posts deleted by a data retention job will be visible to end users until they clear their cache and refresh.
 
 What happens when a file is deleted by the file retention policy?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
