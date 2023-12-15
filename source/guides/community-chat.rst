@@ -1,9 +1,9 @@
-Join Our Community
+Join our community
 ==================
 
 Connect with thousands of contributors, customers, and users to build, share, and learn together at `community.mattermost.com <https://community.mattermost.com>`__. This server is our virtual office and is open to everyone. Please review our `Code of Conduct <https://handbook.mattermost.com/contributors/contributors/guidelines/contribution-guidelines>`__ before participating.
 
-General Channels
+General channels
 ----------------
 
 - `~Contributors <https://community.mattermost.com/core/chann0els/tickets>`__
@@ -13,7 +13,7 @@ General Channels
 - `~Off-Topic <https://community.mattermost.com/core/channels/off-topic-pub>`__
 - `~Reception <https://community.mattermost.com/core/channels/town-square>`__
 
-Technical Support Channels
+Technical support channels
 --------------------------
 
 To familiarize yourself with our community support process, start by reading the `Get Help <https://docs.mattermost.com/guides/get-help.html>`__ documentation page.
@@ -24,7 +24,7 @@ To familiarize yourself with our community support process, start by reading the
 
 We also recommend using the `Troubleshooting forum <https://forum.mattermost.com/c/trouble-shoot/16>`__ for technical support.
 
-Contributor Community Channels
+Contributor community channels
 ------------------------------
 
 To familiarize yourself with our community contribution process, start by exploring the `Contribute to Mattermost <https://mattermost.com/contribute/>`__ documentation.
