@@ -1,17 +1,11 @@
 Desktop application changelog
 ==============================
 
-.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
-  :start-after: :nosearch:
+This changelog summarizes updates to Mattermost desktop app releases for `Mattermost <https://mattermost.com>`__.
 
-Latest Mattermost Desktop App releases:
-
-- `Release v5.5 <#id1>`_
-- `Release v5.4 <#id3>`_
-- `Release v5.3 <#id15>`_
-- `Release v5.2 <#id28>`_
-- `Release v5.1 <#id44>`_
-- `Release v5.0 <#id59>`_
+.. contents:: On this page
+    :backlinks: top
+    :depth: 2
 
 Release v5.5
 --------------
