@@ -44,6 +44,7 @@ mmctl commands
 - `mmctl ldap`_ - LDAP Management
 - `mmctl license`_ - License Management
 - `mmctl logs`_ - Log Management
+- `mmctl oauth`_ - OAuth2 application management
 - `mmctl permissions`_ - Permissions Management
 - `mmctl plugin`_ - Plugin Management
 - `mmctl post`_ - Post Management
@@ -3838,6 +3839,61 @@ Display logs in a human-readable format. As the log format depends on the server
    -h, --help         help for logs
    -l, --logrus       Use logrus for formatting
    -n, --number int   Number of log lines to retrieve (default 200)
+
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+   --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
+   --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+   --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
+   --json                         the output format will be in json format
+   --local                        allows communicating with the server through a unix socket
+   --quiet                        prevent mmctl to generate output for the commands
+   --strict                       will only run commands if the mmctl version matches the server one
+   --suppress-warnings            disables printing warning messages
+
+mmctl oauth
+-----------
+
+Manage registered OAuth2 applications.
+
+Child Commands
+      -  `mmctl oauth list`_ - Remove permissions from a role
+
+**Options**
+
+.. code-block:: sh
+
+   -h, --help   help for permissions
+
+mmctl oauth list
+~~~~~~~~~~~~~~~~
+
+**Description**
+
+List all registered OAuth2 applications.
+
+**Format**
+
+.. code-block:: sh
+
+   mmctl oauth list [flags]
+
+**Example**
+
+.. code-block:: sh
+
+   mmctl list
+
+**Options**
+
+.. code-block:: sh
+
+   -h, --help       help for add
+   --page int       Page number to fetch for the list of OAuth2 apps
+   --per-page int   Number of OAuth2 apps to be fetched per page (default 200)
 
 **Options inherited from parent commands**
 
