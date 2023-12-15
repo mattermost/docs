@@ -11,15 +11,15 @@ Manage your notifications
   :alt: Use the Channel Info icon to access additional channel management options.
 
 .. |more-icon| image:: ../images/dots-horizontal_F01D8.svg
-    :alt: Use the More icon to access additional message options.
+  :alt: Use the More icon to access additional message options.
 
 .. |dot-badge| image:: ../images/dot-badge.png
-    :alt: A dot on the badge means you have unread activity in at least one channel you're a member of.
-    :width: 50px
+  :alt: A dot on the badge means you have unread activity in at least one channel you're a member of.
+  :width: 50px
 
 .. |numbered-badge| image:: ../images/numbered-badge.png
-    :alt: A numbered badge means you have at least 1 unread message, @mention, or one of your keywords has triggered a notification.
-    :width: 50px
+  :alt: A numbered badge means you have at least 1 unread message, @mention, or one of your keywords has triggered a notification.
+  :width: 50px
 
 Mattermost notifies you of new activity in the following ways:
 
@@ -103,7 +103,26 @@ On mobile, select the **Settings** |gear| icon and tap **Notifications**.
 
         **Customize notification keywords**
 
-        You can customize any additional non case-sensitive keywords to trigger notifications. For example, you can receive notifications for all messages and threads related to a specific topic, project name, or customer. Separate multiple keywords using commas or by pressing :kbd:`Tab`, and use :kbd:`Backspace` to manage keywords.
+        Using a web browser or the desktop app, customize any additional non case-sensitive keywords to trigger notifications. For example, you can receive notifications for all messages and threads related to a specific topic, project name, or customer. Separate multiple keywords using commas or by pressing :kbd:`Tab`, and use :kbd:`Backspace` to manage keywords.
+
+        .. image:: ../images/keywords-trigger-mentions.gif
+          :alt: A walkthrough of setting keywords that trigger mentions in Mattermost.
+
+        .. raw:: html
+          
+          <br/><br/>
+
+        **Passively track keywords (no notification)**
+
+        .. include:: ../_static/badges/ent-pro-only.rst
+            :start-after: :nosearch:
+        
+        From Mattermost v9.3, Mattermost Enterprise and Professional users interested calling attention to specific topics of interest across channels, at a glance, can do so without triggering notifications.
+        
+        Using a web browser or the desktop app, passively track key terms by specifying single or multi-words to highlight in all channels you're a member of. Keywords and phrases are automatically highlighted based on your `Mattermost theme </preferences/customize-your-theme.html>`__.
+
+        .. image:: ../images/keywords-highlighted.gif
+          :alt: A walkthrough of setting keywords that are highlighted in Mattermost.
 
     .. tab:: Replies
 
@@ -168,4 +187,4 @@ On mobile, select the **Settings** |gear| icon and tap **Notifications**.
 
 .. tip:: 
     
-    Missing notifications? Visit our `notifications knowledge base article <https://support.mattermost.com/hc/en-us/articles/19161390661780>`__ for troubleshooting tips and tricks.
+    Missing notifications? Visit our `notifications knowledge base article <https://support.mattermost.com/hc/en-us/articles/19161390661780>`__ for additional troubleshooting tips and tricks.
