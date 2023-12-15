@@ -354,6 +354,9 @@ Default server language
 |                                                                                |                                                                           |
 | Default is ``"en"``.                                                           |                                                                           |
 +--------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+| **Note**: Changing this configuration setting changes the default server language for users who haven't set a language preference via **Settings**.        |
+| Mattermost applies the user's language preference when specified.                                                                                          |
++--------------------------------------------------------------------------------+---------------------------------------------------------------------------+
 
 .. config:setting:: l10n-defaultclientlanguage
   :displayname: Default client language (Localization)
@@ -374,6 +377,9 @@ Default client language
 | ``"zh_CN"``, and ``"zh_TW"``.                                                  |                                                                           |
 |                                                                                |                                                                           |
 | Default is ``"en"``.                                                           |                                                                           |
++--------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+| **Note**: Changing this configuration setting changes the default client language for users who haven't set a language preference via **Settings**.        |
+| Mattermost applies the user's language preference when specified.                                                                                          |
 +--------------------------------------------------------------------------------+---------------------------------------------------------------------------+
 
 .. config:setting:: l10n-availablelanguages
