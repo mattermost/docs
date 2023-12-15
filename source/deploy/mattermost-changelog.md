@@ -21,7 +21,10 @@ From Mattermost v9.2, this changelog summarizes updates for the latest cloud and
 
 ### Important Upgrade Notes
  - MySQL v5.7 is at end of life. We recommend all customers to upgrade to at least 8.x. For now, we are logging a warning. From Mattermost v9.5, which is the next Extended Support Release, we will stop supporting MySQL v5.7 altogether.
- - Please read the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) before upgrading.
+
+```{Important}
+If you upgrade from a release earlier than v9.3, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
+```
 
 ### Compatibility
  - Updated the minimum required Edge version to v118+.
