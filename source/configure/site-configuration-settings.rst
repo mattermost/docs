@@ -239,6 +239,7 @@ Forgot Password custom link
 | Leave this field blank to use Mattermost's Password Reset workflow.           |                                                                               |
 +-------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
 | **Notes**:                                                                                                                                                    |
+|                                                                                                                                                               |
 | - You can control whether the **Forgot Password** link is visible or hidden by going to **Authentication > Password > Enable Forgot Password Link**.          |
 |   See the `configuration </configure/authentication-configuration-settings.html#enable-forgot-password-link>`__ documentation for details.                    |
 | - This configuration setting applies to all Mattermost clients, including web, desktop app, and mobile app.                                                   |
