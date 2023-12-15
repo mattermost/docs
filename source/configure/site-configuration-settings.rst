@@ -1367,6 +1367,8 @@ Maximum Markdown nodes
 | Numerical input. Default is **0** which applies a           |                                                                       |
 | Mattermost-specified limit.                                 |                                                                       |
 +-------------------------------------------------------------+-----------------------------------------------------------------------+
+| **Note**: This limit applies to all Mattermost clients, including web, desktop app, and mobile app.                                 |
++-------------------------------------------------------------+-----------------------------------------------------------------------+
 
 .. config:setting:: posts-googleapikey
   :displayname: Google API key (Posts)
