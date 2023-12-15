@@ -28,6 +28,8 @@ From Mattermost v9.2, this changelog summarizes updates for the latest cloud and
 
 ### Improvements
 
+See [this walkthrough video](https://www.youtube.com/watch?v=eXA8emM97Bo) on some of the improvements in our latest release below.
+
 #### User Interface (UI)
  - Updated pre-packaged Playbooks plugin version to [v1.39.1](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v1.39.1).
  - Updated pre-packaged Calls version to [v0.21.1](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v0.21.1).
