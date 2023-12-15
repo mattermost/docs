@@ -42,6 +42,6 @@ Feedback
 - `Propose a feature: <https://mattermost.com/suggestions/>`__ Vote for feature proposals or submit your feature ideas.
 
 Enterprise support
-----------------
+------------------
 
 Mattermost offers `support services <https://mattermost.com/support/>`__ to our Enterprise customers, where Mattermost customers can make a `support request <https://support.mattermost.com/hc/en-us/requests/new>`__ to get help from our team.
