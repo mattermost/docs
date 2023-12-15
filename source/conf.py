@@ -1950,6 +1950,10 @@ redirects = {
 "developer/webhooks-incoming.html":
         "https://developers.mattermost.com/integrate/admin-guide/admin-webhooks-incoming/",
 
+# Microsoft Teams redirects
+"about/embed-mattermost-within-microsoft-teams.html":
+        "about/embed-mattermost-app-within-microsoft-teams.html",
+
 # Focalboard redirects
 "focalboard/installing-boards":
 	"https://github.com/mattermost/focalboard/blob/main/docs/mattermost-boards-dev-guide.md",
@@ -2029,6 +2033,16 @@ redirects = {
         "https://docs.mattermost.com/guides/preferences.html",
 "guides/welcome-to-mattermost.html#mattermost-interface-changes":
         "https://docs.mattermost.com/guides/deployment.html#changelogs",
+"guides/configure-app-framework.html":
+        "https://docs.mattermost.com/deploy/configure-app-framework",
+"guides/deploy-http.html":
+        "https://docs.mattermost.com//deploy/deploy-http",
+"guides/deploy-aws.html":
+        "https://docs.mattermost.com//deploy/deploy-aws",
+"guides/package-aws.html":
+        "https://docs.mattermost.com//deploy/package-aws",
+"guides/deploy-openfaas.html":
+        "https://docs.mattermost.com/deploy/deploy-openfaas",
 
 # Help redirects resulting from the June 2021 docs reorganization project.
 "help/apps/desktop-changelog.html":
