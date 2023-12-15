@@ -413,7 +413,7 @@ Users and teams
 Access the following configuration settings in the System Console by going to **Site Configuration > Users and Teams**.
 
 .. config:setting:: users-maxusersperteam
-  :displayname: Max users per team (Users and teams)
+  :displayname: Max users per team (Users and Teams)
   :systemconsole: Site Configuration > Users and Teams
   :configjson: .TeamSettings.MaxUsersPerTeam
   :environment: MM_TEAMSETTINGS_MAXUSERSPERTEAM
@@ -423,7 +423,7 @@ Max users per team
 ~~~~~~~~~~~~~~~~~~
 
 +------------------------------------------------------------------------------+-------------------------------------------------------------------+
-| The **Max users per team** is the maximum total number of users per team,    | - System Config path: **Site Configuration > Users and teams**    |
+| The **Max users per team** is the maximum total number of users per team,    | - System Config path: **Site Configuration > Users and Teams**    |
 | including active and inactive users.                                         | - ``config.json`` setting: ``.TeamSettings.MaxUsersPerTeam: 50``  |
 |                                                                              | - Environment variable: ``MM_TEAMSETTINGS_MAXUSERSPERTEAM``       |
 | In Mattermost, a team of people should be a small organization with a        |                                                                   |
@@ -451,15 +451,15 @@ Max channels per team
 ~~~~~~~~~~~~~~~~~~~~~
 
 +---------------------------------------------------------------------------------------+-----------------------------------------------------------------------+
-| The maximum number of channels per team, including both active and archived channels. | - System Config path: **Site Configuration > Users and teams**        |
+| The maximum number of channels per team, including both active and archived channels. | - System Config path: **Site Configuration > Users and Teams**        |
 |                                                                                       | - ``config.json`` setting: ``.TeamSettings.MaxChannelsPerTeam: 2000`` |
 | Numerical input. Default is **2000** for self-hosted deployments, and **10000**       | - Environment variable: ``MM_TEAMSETTINGS_MAXCHANNELSPERTEAM``        |
 | for Cloud deployments.                                                                |                                                                       |
 +---------------------------------------------------------------------------------------+-----------------------------------------------------------------------+
 
 .. config:setting:: users-enablejoinleavemessages
-  :displayname: Enable join/leave messages by default (Users and teams)
-  :systemconsole: Site Configuration > Users and teams
+  :displayname: Enable join/leave messages by default (Users and Teams)
+  :systemconsole: Site Configuration > Users and Teams
   :configjson: .TeamSettings.EnableJoinLeaveMessageByDefault
   :environment: MM_TEAMSETTINGS_ENABLEJOINLEAVEMESSAGEBYDEFAULT
   :description: Specify the default configuration of system messages displayed when users join or leave channels.
@@ -471,7 +471,7 @@ Enable join/leave messages by default
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +---------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+
-| Specify the default configuration of system messages displayed when users             | - System Config path: **Site Configuration > Users and teams**                     |
+| Specify the default configuration of system messages displayed when users             | - System Config path: **Site Configuration > Users and Teams**                     |
 | join or leave channels.                                                               | - ``config.json`` setting: ``.TeamSettings.EnableJoinLeaveMessageByDefault: true`` |
 |                                                                                       | - Environment variable: ``MM_TEAMSETTINGS_ENABLEJOINLEAVEMESSAGEBYDEFAULT``        |
 | - **true**: **(Default)** Join/Leave messages are displayed.                          |                                                                                    |
@@ -482,8 +482,8 @@ Enable join/leave messages by default
 +---------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+
 
 .. config:setting:: users-restrictdirectmessage
-  :displayname: Enable users to open direct message channels with (Users and teams)
-  :systemconsole: Site Configuration > Users and teams
+  :displayname: Enable users to open direct message channels with (Users and Teams)
+  :systemconsole: Site Configuration > Users and Teams
   :configjson: .TeamSettings.RestrictDirectMessage
   :environment: MM_TEAMSETTINGS_RESTRICTDIRECTMESSAGE
   :description: This setting determines whether a user can open a direct message channel with anyone on the Mattermost server or only to members of the same team.
@@ -495,7 +495,7 @@ Enable users to open direct message channels with
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+
-| This setting determines whether a user can open a direct message channel with anyone on the Mattermost server or only to members of the same team. This setting only affects the options presented in the user interface. It does not affect permissions on the backend server.                                                                                                                                                                                                                                          | - System Config path: **Site Configuration > Users and teams**       |
+| This setting determines whether a user can open a direct message channel with anyone on the Mattermost server or only to members of the same team. This setting only affects the options presented in the user interface. It does not affect permissions on the backend server.                                                                                                                                                                                                                                          | - System Config path: **Site Configuration > Users and Teams**       |
 |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | - ``config.json`` setting: ``.TeamSettings.RestrictDirectMessage``   |
 | - **Any user on the Mattermost server**: **(Default)** Users can send a direct message to any user through the **Direct Messages > More** menu. ``config.json`` setting: ``"any"``                                                                                                                                                                                                                                                                                                                                       | - Environment variable: ``MM_TEAMSETTINGS_RESTRICTDIRECTMESSAGE``    |
 |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |                                                                      |
@@ -503,8 +503,8 @@ Enable users to open direct message channels with
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+
 
 .. config:setting:: users-teammatenamedisplay
-  :displayname: Teammate name display (Users and teams)
-  :systemconsole: Site Configuration > Users and teams
+  :displayname: Teammate name display (Users and Teams)
+  :systemconsole: Site Configuration > Users and Teams
   :configjson: .TeamSettings.TeammateNameDisplay
   :environment: MM_TEAMSETTINGS_TEAMMATENAMEDISPLAY
   :description: This setting determines how names appear in posts and under the **Direct Messages** list.
@@ -517,7 +517,7 @@ Teammate name display
 ~~~~~~~~~~~~~~~~~~~~~
 
 +-------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
-| This setting determines how names appear in posts and under the **Direct Messages** list.       | - System Config path: **Site Configuration > Users and teams**             |
+| This setting determines how names appear in posts and under the **Direct Messages** list.       | - System Config path: **Site Configuration > Users and Teams**             |
 | Users can change this setting in their interface under **Settings > Display >                   | - ``config.json`` setting: ``.TeamSettings.TeammateNameDisplay: username`` |
 | Teammate Name Display**, unless this setting is locked by a System Admin                        | - Environment variable: ``MM_TEAMSETTINGS_TEAMMATENAMEDISPLAY``            |
 | via the **Lock teammate name display for all users** configuration setting.                     |                                                                            |
@@ -535,8 +535,8 @@ Teammate name display
 +-------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
 
 .. config:setting:: users-lockteammatenamedisplay
-  :displayname: Lock teammate name display for all users (Users and teams)
-  :systemconsole: Site Configuration > Users and teams
+  :displayname: Lock teammate name display for all users (Users and Teams)
+  :systemconsole: Site Configuration > Users and Teams
   :configjson: .TeamSettings.LockTeammateNameDisplay
   :environment: MM_TEAMSETTINGS_LOCKTEAMMATENAMEDISPLAY
   :description: This setting controls whether users can change settings under **Settings > Display > Teammate Name Display**.
@@ -551,7 +551,7 @@ Lock teammate name display for all users
   :start-after: :nosearch:
 
 +---------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
-| This setting controls whether users can change settings under **Settings > Display > Teammate Name Display**. | - System Config path: **Site Configuration > Users and teams**              |
+| This setting controls whether users can change settings under **Settings > Display > Teammate Name Display**. | - System Config path: **Site Configuration > Users and Teams**              |
 |                                                                                                               | - ``config.json`` setting: ``.TeamSettings.LockTeammateNameDisplay: false`` |
 | - **true**: Users **cannot** change the Teammate Name Display.                                                | - Environment variable: ``MM_TEAMSETTINGS_LOCKTEAMMATENAMEDISPLAY``         |
 | - **false**: **(Default)** Users can change the Teammate Name Display setting.                                |                                                                             |
@@ -559,8 +559,8 @@ Lock teammate name display for all users
 +---------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
 
 .. config:setting:: users-viewarchivedchannels
-  :displayname: Allow users to view archived channels
-  :systemconsole: Site Configuration > Users and teams
+  :displayname: Allow users to view archived channels (Users and Teams)
+  :systemconsole: Site Configuration > Users and Teams
   :configjson: .TeamSettings.ExperimentalViewArchivedChannels
   :environment: MM_TEAMSETTINGS_EXPERIMENTALVIEWARCHIVEDCHANNELS
 
@@ -571,7 +571,7 @@ Allow users to view archived channels
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +----------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
-| - **true**: **(Default)** Allows users to access the content of archived channels of which they were a member. | - System Config path: **Site Configuration > Users and teams**                      |
+| - **true**: **(Default)** Allows users to access the content of archived channels of which they were a member. | - System Config path: **Site Configuration > Users and Teams**                      |
 | - **false**: Users are unable to access content in archived channels.                                          | - ``config.json`` setting: ``.TeamSettings.ExperimentalViewArchivedChannels: true`` |
 |                                                                                                                | - Environment variable: ``MM_TEAMSETTINGS_EXPERIMENTALVIEWARCHIVEDCHANNELS``        |
 +----------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
@@ -579,8 +579,8 @@ Allow users to view archived channels
 +----------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
 
 .. config:setting:: users-showemailaddress
-  :displayname: Show email address (Users and teams)
-  :systemconsole: Site Configuration > Users and teams
+  :displayname: Show email address (Users and Teams)
+  :systemconsole: Site Configuration > Users and Teams
   :configjson: .PrivacySettings.ShowEmailAddress
   :environment: MM_PRIVACYSETTINGS_SHOWEMAILADDRESS
 
@@ -598,8 +598,8 @@ Show email address
 +---------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
 
 .. config:setting:: users-showfullname
-  :displayname: Show full name (Users and teams)
-  :systemconsole: Site Configuration > Users and teams
+  :displayname: Show full name (Users and Teams)
+  :systemconsole: Site Configuration > Users and Teams
   :configjson: .PrivacySettings.ShowFullName
   :environment: MM_PRIVACYSETTINGS_SHOWFULLNAME
 
@@ -610,14 +610,14 @@ Show full name
 ~~~~~~~~~~~~~~
 
 +------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------+
-| - **true**: **(Default)** Full names are visible to all users in the client user interface.                      | - System Config path: **Site Configuration > Users and teams**     |
+| - **true**: **(Default)** Full names are visible to all users in the client user interface.                      | - System Config path: **Site Configuration > Users and Teams**     |
 | - **false**: Hides full names from all users, except System Admins. Username is shown in place of the full name. | - ``config.json`` setting: ``.PrivacySettings.ShowFullName: true`` |
 |                                                                                                                  | - Environment variable: ``MM_PRIVACYSETTINGS_SHOWFULLNAME``        |
 +------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------+
 
 .. config:setting:: users-enablecustomstatuses
-  :displayname: Enable custom user statuses (Users and teams)
-  :systemconsole: Site Configuration > Users and teams
+  :displayname: Enable custom user statuses (Users and Teams)
+  :systemconsole: Site Configuration > Users and Teams
   :configjson: .TeamSettings.EnableCustomUserStatuses
   :environment: MM_TEAMSETTINGS_ENABLECUSTOMUSERSTATUSES
 
@@ -628,14 +628,14 @@ Enable custom user statuses
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +---------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
-| - **true**: **(Default)** Users can set status messages and emojis that are visible to all users. | - System Config path: **Site Configuration > Users and teams**              |
+| - **true**: **(Default)** Users can set status messages and emojis that are visible to all users. | - System Config path: **Site Configuration > Users and Teams**              |
 | - **false**: Users cannot set custom statuses.                                                    | - ``config.json`` setting: ``.TeamSettings.EnableCustomUserStatuses: true`` |
 |                                                                                                   | - Environment variable: ``MM_TEAMSETTINGS_ENABLECUSTOMUSERSTATUSES``        |
 +---------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
 
 .. config:setting:: users-enablelastactivetime
-  :displayname: Enable last active time (Users and teams)
-  :systemconsole: Site Configuration > Users and teams
+  :displayname: Enable last active time (Users and Teams)
+  :systemconsole: Site Configuration > Users and Teams
   :configjson: .TeamSettings.EnableLastActiveTime
   :environment: MM_TEAMSETTINGS_ENABLELASTACTIVETIME
 
@@ -646,31 +646,49 @@ Enable last active time
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 +---------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
-| - **true**: **(Default)** Users can see when inactive users were last active on a                 | - System Config path: **Site Configuration > Users and teams**              |
+| - **true**: **(Default)** Users can see when inactive users were last active on a                 | - System Config path: **Site Configuration > Users and Teams**              |
 |   user's profile and in direct message channel headers.                                           | - ``config.json`` setting: ``.TeamSettings.EnableLastActiveTime: true``     |
 | - **false**: Users can't see when inactive users were last online.                                | - Environment variable: ``MM_TEAMSETTINGS_ENABLELASTACTIVETIME``            |
 +---------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
 
 .. config:setting:: users-enablecustomusergroups
-  :displayname: Enable custom user groups (Users and teams)
-  :systemconsole: Site Configuration > Users and teams
+  :displayname: Enable custom user groups (Users and Teams)
+  :systemconsole: Site Configuration > Users and Teams
   :configjson: N/A
   :environment: N/A
 
   - **true**: **(Default)** Users with appropriate permissions can create custom user groups, and users can @mention custom user groups in Mattermost conversations.
   - **false**: Users cannot set custom statuses.
 
-Enable custom user groups
-~~~~~~~~~~~~~~~~~~~~~~~~~
+Enable custom user groups (Beta)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
 +---------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
-| - **true**: **(Default)** Users with appropriate permissions can create custom user groups,       | - System Config path: **Site Configuration > Users and teams**              |
+| - **true**: **(Default)** Users with appropriate permissions can create custom user groups,       | - System Config path: **Site Configuration > Users and Teams**              |
 |   and users can @mention custom user groups in Mattermost conversations.                          | - ``config.json`` setting: N/A                                              |
 | - **false**: Users cannot set custom statuses.                                                    | - Environment variable: N/A                                                 |
 +---------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
+
+.. config:setting:: users-userstatsupdatetime
+  :displayname: User statistics update time (Users and Teams)
+  :systemconsole: Site Configuration > Users and Teams
+  :configjson: .ServiceSettings.RefreshPostStatsRunTime
+  :environment: MM_SERVICESETTINGS.REFRESHPOSTSTATSRUNTIME
+  :description: Set the server time for updating the user post statistics, including each user's total message count, and the timestamp of each user's most recently sent message. Default is **00:00**.
+
+User statistics update time
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++--------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------+
+| Set the server time for updating the user post statistics, including each user's total     | - System Config path: **Site Configuration > Users and Teams**                 |
+| message count, and the timestamp of each user's most recently sent message.                | - ``config.json`` setting: ``.ServiceSettings.RefreshPostStatsRunTime: 00:00`` |
+|                                                                                            | - Environment variable: ``MM_SERVICESETTINGS.REFRESHPOSTSTATSRUNTIME``         |
+| Must be a 24-hour time stamp in the form ``HH:MM`` based on the local time of the server.  |                                                                                |
+| Default is **00:00**.                                                                      |                                                                                |
++--------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------+
 
 ----
 
