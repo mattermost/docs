@@ -1,7 +1,7 @@
 Join our community
 ==================
 
-Connect with thousands of contributors, customers, and users to build, share, and learn together at `community.mattermost.com <https://community.mattermost.com>`__. This server is our virtual office and is open to everyone. Please review our `Code of Conduct <https://handbook.mattermost.com/contributors/contributors/guidelines/contribution-guidelines>`__ before participating.
+Connect with thousands of contributors, customers, partners, and users to build, share, and learn together at `community.mattermost.com <https://community.mattermost.com>`__. This server is our virtual office and is open to everyone. Please review our `Code of Conduct <https://handbook.mattermost.com/contributors/contributors/guidelines/contribution-guidelines>`__ before participating.
 
 General channels
 ----------------
