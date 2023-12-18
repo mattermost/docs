@@ -41,4 +41,4 @@ To familiarize yourself with our community contribution process, start by explor
 
 There are many channels that specialize in different areas of the Mattermost platform. To find and join them, search “**Developers:**” in the `LHS <https://handbook.mattermost.com/company/about-mattermost/list-of-terms#lhs>`__ “🔍 Find channel” search bar on the community server.
 
-We hold a public developer community meeting every Wednesday at 8:30 AM PT. ☎️ The meeting is held via an audio call in `Developers: Meeting <https://community.mattermost.com/core/channels/developers-meeting>`__ and everyone is welcome. This weekly meeting is a great opportunity to ask questions about the project and get involved.
+We hold a public developer community meeting every Wednesday at 8:30 AM Palo Alto time. ☎️ The meeting is held via an audio call in `Developers: Meeting <https://community.mattermost.com/core/channels/developers-meeting>`__ and everyone is welcome. This weekly meeting is a great opportunity to ask questions about the project and get involved.
