@@ -56,10 +56,10 @@ Operators are installed using ``kubectl``, and each operator is created in its o
         host: example.mattermost-example.com        # Adjust to your domain
         annotations:
           kubernetes.io/ingress.class: nginx
-      version: 6.0.1
+      version: 9.2.3                                # Mattermost version, adjust to the version you want to deploy
       licenseSecret: ""                             # If you have created secret in step 1, put its name here
-    
-  Save the file as ``mattermost-installation.yaml``. While recommended file names are provided, your naming conventions may differ. 
+
+  Save the file as ``mattermost-installation.yaml``. While recommended file names are provided, your naming conventions may differ.
 
   Some of the most commonly-used fields include:
 
@@ -181,7 +181,7 @@ Operators are installed using ``kubectl``, and each operator is created in its o
         host: example.mattermost-example.com
         annotations:
           kubernetes.io/ingress.class: nginx
-      version: 6.0.1
+      version: 9.2.3 # Mattermost version, check the latest version on the mattermost website or repository
       licenseSecret: ""
       database:
         external:
@@ -246,15 +246,3 @@ Operators are installed using ``kubectl``, and each operator is created in its o
     $ kubectl -n mattermost port-forward svc/[YOUR_MATTERMOST_NAME] 8065:8065
 
   Then navigate to http://localhost:8065.
-
-
-
-
-
-
-
-
- 
-
-
-
