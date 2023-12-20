@@ -134,9 +134,9 @@ On mobile, select the **Settings** |gear| icon and tap **Notifications**.
         
         Enabling this feature also sets your status to **Out of Office** and disables all email and push notifications until you disable it.
 
-    .. tab:: Per channel/category
+    .. tab:: Per channel/category/group message
 
-       You can set notification preferences at the channel level for every channel you're a member of. You have 2 ways to access  channel preferences: 
+       You can set notification preferences at the channel level, including group messages, for every channel you're a member of. You have 2 ways to access channel preferences: 
        
        - Select the channel name, then select **Notification Preferences**. 
        - Or select the **View Info** |channel-info| icon, and select **Notification Preferences** in the right pane.
@@ -177,7 +177,11 @@ On mobile, select the **Settings** |gear| icon and tap **Notifications**.
 
        **Mobile push notifications**
 
-       By default, your mobile push notification preferences apply to all channels you’re a member of. You can customize notifications on a channel by channel basis if preferred by selecting **Mobile push notifications**. Select **(Default**) options to revert back to your global preferences.
+       In the desktop app, your mobile push notification preferences use the same configuration as the desktop app by default. Clear the **Use the same notification setting as desktop** option to customize your push notification preferences. You can receive notifications for all new messages; mentions, direct messages, and keywords; or no notifications within the desktop app.
+
+       In the mobile app, you're notified about all new messages by default. You can customize your mobile app notification preferences. You can receive notifications for all new messages, mentions only, or no notifications.
+
+       Select **Reset to default** to return to global defaults.
 
        **Auto-follow all new threads in this channel**
 
