@@ -66,7 +66,7 @@ Requirements
 
 - Customers must possess their AWS Account. (In the alternative path mentioned above this is delegated to Mattermost.)
 - Customers oversee the maintenance life cycle of their custom KMS key.
-- A valid AWS KMS arn for encrypting storage and databases should be provided to the Infrastructure SRE team.
+- A valid AWS KMS ARN for encrypting storage and databases should be provided to the Infrastructure SRE team.
 - The customer incorporate blocks from the Infrastructure SRE team into their KMS key policy.
 
 Considerations
