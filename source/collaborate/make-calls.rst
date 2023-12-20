@@ -47,7 +47,7 @@ Start a call
 
   .. tab:: Web/Desktop
 
-    To start a call, select **Start call** in the channel or message. When you start a call in a channel, you're muted by default. In a direct or group message you're unmuted by default.
+    To start a call, select **Start call** in the channel header. When you start a call in a channel, you're muted by default. In a direct or group message you're unmuted by default.
     
     .. tip::
       
