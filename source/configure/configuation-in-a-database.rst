@@ -41,7 +41,7 @@ To use the ``mattermost config get`` command:
 
    sudo su mattermost
    cd /opt/mattermost
-   mmctl config get SqlSettings.DataSource
+   bin/mattermost config get SqlSettings.DataSource
 
 Example output:
 
