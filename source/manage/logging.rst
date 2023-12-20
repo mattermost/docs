@@ -11,8 +11,6 @@ By default, Mattermost writes logs to both the console and to the ``mattermost.l
 
 You can customize the following logging options based on your business practices and needs by going to **System Console > Environment > Logging** or by editing the ``config.json`` file directly: 
 
-- `Omit incoming webhook details from logs </configure/environment-configuration-settings.html#enable-webhook-debugging>`__
-- `Adjust maximum log field size </configure/environment-configuration-settings.html#maximum-field-size>`__
 
 Console logs
 ------------
@@ -138,7 +136,7 @@ Advanced logging
 .. include:: ../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
-System admins can output log records to any combination of `console <#console-target-configuration-options>`__, `local file <#file-target-configuration-options>`__, `syslog <#syslog-target-configuration-options>`__, and `TCP socket <#tcp-target-configuration-options>`__ targets. Each output target features additional configuration options you can customize for your Mattermost deployment.
+System admins can output log and audit records to any combination of `console <#console-target-configuration-options>`__, `local file <#file-target-configuration-options>`__, `syslog <#syslog-target-configuration-options>`__, and `TCP socket <#tcp-target-configuration-options>`__ targets. Each output target features additional configuration options you can customize for your Mattermost deployment.
 
 .. tip::
     
@@ -161,7 +159,7 @@ Configuring advanced logging includes the following steps:
 - `Configure log levels & events <#configure-log-levels-and-events>`__
 - `Configure target-specific settings <#configure-target-specific-settings>`__
 
-Define audit log output
+Define advanced log output
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 .. tabs::
@@ -479,3 +477,13 @@ Do server logs show any information about a service or similar stopping/updating
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Yes. When updating the audit log configuration via REST API, mmctl, or System Console, the last event of the audit log should be about the admin user updating the config of the server, which helps your security team identify which actions took place in the system and by whom.
+
+How do I omit incoming webhook details from the logs?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+See `enable-webhook-debugging </configure/environment-configuration-settings.html#enable-webhook-debugging>`__
+
+How do I adjust the maximum log field size?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+See `maximum-field-size </configure/environment-configuration-settings.html#maximum-field-size>`__

@@ -1,4 +1,4 @@
-Embedded JSON audit log schema
+Audit Log JSON Schema
 ==============================
 
 .. include:: ../_static/badges/ent-selfhosted.rst
