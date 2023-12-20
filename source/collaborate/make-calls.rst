@@ -31,7 +31,7 @@ Join a call
 
 To join a call, select **Join call** in a channel, group message, or direct message. 
 
-From Mattermost v9.4, you'll see incoming call notifications for direct and group messages when a new call is started. Multiple calls starting in multiple messages will result in multiple incoming call notifications. If you're already in a call, and you receive a new incoming call notification, Mattermost prompts you to **Leave & Join**, or cancel to stay in the current call.
+From Mattermost v9.4, you'll see incoming call notifications for direct and group messages when a new call is started. Multiple calls will result in multiple incoming call notifications. If you're already in a call, and you receive a new incoming call notification, Mattermost prompts you to **Join** the incoming call, or dismiss the notification.
 
 Any active team member in a channel or message can join a call, whether it's a public or private channel, or a group or direct message. If someone from outside of the organization wants to join a call, you need to provide them with a guest account, and add them to the channel. Users who are archived or not registered can't join a call.
 
