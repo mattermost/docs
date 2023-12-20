@@ -4,22 +4,24 @@ Cloud Dedicated Bring Your Own Key
 .. include:: ../_static/badges/ent-cloud-dedicated.rst
    :start-after: :nosearch:
 
-Bring Your Own Key aims to provide dedicated enterprise customers with the capability to introduce their encryption keys and manage their lifecycle within the cloud infrastructure. This approach ensures that customers have full control over their data encryption processes, enhancing data security and compliance. It not only enhances data security but also provides customers with autonomy over their encryption key lifecycle, aligning with the primary goal of supporting encryption at rest with custom KMS keys provided and maintained by the customers. BYOK requires a subscription to Mattermost Cloud Enterprise Dedicated.
+Bring Your Own Key (BYOK) provides Enterprise Cloud customers with autonomy over their encryption key life cycle. BYOK supports encryption at rest with custom KMS keys that the enterprise provides and maintains.
 
-In Mattermost Dedicated, you can use KMS keys in two ways:
+BYOK requires a subscription to Mattermost Cloud Enterprise Dedicated, which offers enhanced data security and compliance by ensuring that enterprises have full control over their data encryption processes.
 
-- One KMS key for all services
+In Mattermost Cloud Enterprise Dedicated, you can use KMS keys in 2 ways:
+
+- One KMS key for all services; or,
 - Per-service KMS keys (EBS, RDS, S3)
     - Keys do not need to be unique to each service.
     - All services must be encrypted at rest.
     - Selective enablement of this feature can be supported.
-    - Keys do not need to be unique to each service.
-    - In case a customer needs a global database the recommendation from the Infrastructure SRE team is to provide us 2 KMS keys, 1 per region.
+    - Keys don't need to be unique to each service.
+    - In cases where a global database is needed, we recommend providing 2 KMS keys (1 per region).
 
 Configure BYOK
 ------------------------
-1. Customer to provide their AWS KMS ARN to our infrastructure SRE team.
-2. Customer need to add the following blocks to their KMS Policy for the AWS KMS ARN provided
+1. Enterprise customer provides their AWS KMS ARN to the Mattermost Infrastructure SRE team.
+2. Enterprise customer adds the following blocks to their KMS Policy for the AWS KMS ARN provided:
 
 .. code-block:: JSON
 
@@ -54,18 +56,18 @@ Configure BYOK
         "Resource": "<CUSTOM_CUSTOMER_KMS_ID>"
     },
 
-3. Infrastructure SRE team need to update kops cluster and S3, RDS resources after KMS policy is updated on customer's end.
+3. The Mattermost Infrastructure SRE team updates the kops cluster and S3, RDS resources after the KMS policy is updated on the customer's end.
 
-An alternative configuration path that Mattermost offers is that the customer provides an external key (non-KMS) to the infrastructure SRE team and the team maintains all the key lifecycle and the relevant resources for the customer.
+Alternatively, the Enterprise customer can provide an external key (non-KMS) to the Mattermost Infrastructure SRE team that Mattermost maintains on behalf of the customer.
 This path offers less control to customers but simplifies the setup process.
 
 Requirements
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-- Customers must possess their AWS Account. (In the alternative path mentioned above this is delegated to Mattermost)
-- Customers oversee the maintenance lifecycle of their custom KMS key.
+- Customers must possess their AWS Account. (In the alternative path mentioned above this is delegated to Mattermost.)
+- Customers oversee the maintenance life cycle of their custom KMS key.
 - A valid AWS KMS arn for encrypting storage and databases should be provided to the Infrastructure SRE team.
-- Incorporate blocks from the Infrastructure SRE team into their KMS key policy.
+- The customer incorporate blocks from the Infrastructure SRE team into their KMS key policy.
 
 Considerations
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -75,6 +77,6 @@ Considerations
 Conclusion
 --------------
 
-If you are a large enterprise with compliance requirements or working in highly-regulated industries using Mattermost Cloud Dedicated with BYOK ensures full data control.
+If you are a large enterprise with compliance requirements, or are working in highly-regulated industries, using Mattermost Cloud Dedicated with BYOK ensures full data control.
 
 For any further assistance or queries, `contact our support team </https://mattermost.com/support/>`__.
