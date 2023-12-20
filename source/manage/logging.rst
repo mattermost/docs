@@ -150,7 +150,7 @@ Advanced logging options can be configured to:
 
 - Enable trace logging for AD/LDAP to troubleshoot authentication issues.
 - Capture errors and panics in a separate, monitored file that triggers alerts.
-- Capture production debug and error logs in a separate file with log file rotation to reproduce issues.
+- Capture production debug and error logs in a separate file with log file rotation to reproduce issues, while enforcing a cap on the amount of disk space the debug logs are allowed to use.
 - Audit every API endpoint accessed during a user workflow.
 
 Configuring advanced logging includes the following steps:
