@@ -126,7 +126,7 @@ In addition, you can output audit log records to any combination of `console <#c
 
 .. warning::
     
-    - From Mattermost v7.2, experimental audit logging beta is a breaking change from previous releases.
+    - From Mattermost v7.2, experimental audit logging beta is a breaking change from previous releases in cases where customers looking to parse previous audit logs with the new format.
     - The format and content of an audit log record has changed to become standardized for all events using a `standard JSON schema </comply/embedded-json-audit-log-schema.html>`__.
     - Existing tools which ingest or parse audit log records may need to be modified.
 
