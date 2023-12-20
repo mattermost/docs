@@ -155,7 +155,7 @@ Advanced logging options can be configured to:
 
 Configuring advanced logging includes the following steps:
 
-- `Define audit log output <#define-audit-log-output>`__ as multi-line JSON or a filespec to another configuration file.
+- `Define log output <#define-audit-log-output>`__ as multi-line JSON or a filespec to another configuration file.
 - `Specify destination targets <#specify-destination-targets>`__, including any combination of `console <#console-target-configuration-options>`__, `local file <#file-target-configuration-options>`__, `syslog <#syslog-target-configuration-options>`__, and `TCP socket <#tcp-target-configuration-options>`__ targets.
 - `Configure format preferences <#specify-destination-targets>`__ for `plain <#plain-log-format-configuration-options>`__, `JSON <#json-log-format-configuration-options>`__, or `GELF <#gelf-log-format-configuration-options>`__ output.
 - `Configure log levels & events <#configure-log-levels-and-events>`__
