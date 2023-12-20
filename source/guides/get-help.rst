@@ -1,47 +1,42 @@
 Get help with Mattermost
 =========================
 
-Get the help you need with Mattermost via robust documentation, extensive community support, and professional support services. We have a diverse community spread across the internet, and web searches via your favorite search engine are often the quickest way to get answers. 
+Get the help you need with Mattermost via robust documentation, extensive community support, and professional support services. If you're struggling with something on your Mattermost journey, take a look at the following learning resources:
 
-If you’re struggling with something on your Mattermost journey, take a look at the following learning resources:
+Training
+--------
 
-Free online training
---------------------
-
-.. image:: ../_static/images/badges/academy-qrcode.png
-    :alt: Mattermost Academy QR Code. Scan to enrol in available courses.
-
-Scan this QR Code to enrol in `Mattermost Academy <https://academy.mattermost.com/>`__ end user and system admin courses for self-hosted deployments. Get the most out of your Mattermost deployment!
+- `Mattermost Academy <https://academy.mattermost.com/>`__ - Enroll in the free online end user and system admin courses for self-hosted deployments. Get the most out of your Mattermost experience with this in-depth training!
 
 Documentation
---------------
+-------------
 
-- `Mattermost Product Documentation: </>`__ This comprehensive documentation site features information about deploying, managing, and using Mattermost.
-- `Mattermost Developer Documentation: <https://developers.mattermost.com/>`__ This site features information for developers, integrators, and community contributors integrating, extending, customizing, and contributing to Mattermost.
-- `Mattermost API Reference: <https://api.mattermost.com/>`__ This site features information about the Mattermost Web Services API used by Mattermost clients and third-party applications to interact with the Mattermost server.
+- `Mattermost product documentation (here) <https://docs.mattermost.com/>`__ - read information for end users and administrators about deploying, managing, and using Mattermost.
+- `Mattermost developer documentation <https://developers.mattermost.com/>`__ - read information for developer community members about integrating, extending, customizing, and contributing to Mattermost.
+- `Mattermost API reference <https://api.mattermost.com/>`__ - read information for developer community members about the Mattermost API used by Mattermost clients and third-party applications.
 
-Support knowledge base
-----------------------
+Help Center
+-----------
 
-`Support Knowledge Base: <http://support.mattermost.com>`__ Get answers to frequently asked questions and common problems.
+- `Mattermost Help Center <http://support.mattermost.com>`__ - access frequently asked questions and common troubleshooting tips.
 
-Mattermost Community server
----------------------------
+Community server
+----------------
 
-`Community chat server: <https://community.mattermost.com/login>`__ Chat directly with the Mattermost community in chat channels tailored to share knowledge and expertise.
+- `Mattermost Community server <https://community.mattermost.com>`__ - connect with thousands of contributors, customers, and users to build, share, and learn together. This server is our virtual office and is open to everyone. Please review our `Code of Conduct <https://handbook.mattermost.com/contributors/contributors/guidelines/contribution-guidelines>`__ before participating.
 
 Mattermost user forums
 ----------------------
 
-`Forums: <https://forum.mattermost.org/>`__ Search past discussions for helpful information, or start your own thread.
+- `Troubleshooting forum <https://forum.mattermost.com/c/trouble-shoot/16>`__ - join our community forum for technical support. Please review our `Code of Conduct <https://handbook.mattermost.com/contributors/contributors/guidelines/contribution-guidelines>`__ before participating.
 
 Feedback
 --------
 
-- `Report an issue: <https://handbook.mattermost.com/contributors/contributors/ways-to-contribute#report-a-bug>`__ Report bugs or other issues you encounter when using Mattermost to our development team.
-- `Propose a feature: <https://mattermost.com/suggestions/>`__ Vote for feature proposals or submit your feature ideas.
+- `Report a bug <https://developers.mattermost.com/contribute/why-contribute/#youve-found-a-bug>`__ - report bugs or other issues you encounter when using Mattermost to our development team.
+- `Propose a feature <https://mattermost.com/suggestions/>`__ - vote for feature proposals or submit your own.
 
-Enterprise support
-------------------
+Professional and enterprise support
+-----------------------------------
 
-Mattermost offers `support services <https://mattermost.com/support/>`__ to our Enterprise customers, where Mattermost customers can make a `support request <https://support.mattermost.com/hc/en-us/requests/new>`__ to get help from our team.
+- `Mattermost Support <https://mattermost.com/support/>`__ - Submit a `support request <https://support.mattermost.com/hc/en-us/requests/new>`__ to get help from our team. Available to enrolled Professional and Enterprise customers.
