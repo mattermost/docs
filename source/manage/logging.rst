@@ -106,7 +106,7 @@ Define logging output in JSON format in the System Console by going to **Environ
 
 ----
 
-Audit logging (Experimental)
+Audit logging (Beta)
 -----------------------------
 
 .. include:: ../_static/badges/ent-only.rst
