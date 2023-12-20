@@ -71,8 +71,8 @@ Enable client debugging
 
 +---------------------------------------------------+---------------------------------------------------------------------------------------------+
 | Enable or disable client-side debugging settings  | - System Config path: **Environment > Developer**                                           |
-| found in *Settings > Advanced > Debugging* for    | - ``config.json setting``: ``".ServiceSettings.EnableClientPerformanceDebugging": false",`` |
-| individual users.                                 | - Environment variable: ``MM_SERVICESETTINGS_ENABLECLIENTPERFORMANCEDEBUGGING``             |
+| found in **Settings > Advanced > Debugging**      | - ``config.json setting``: ``".ServiceSettings.EnableClientPerformanceDebugging": false",`` |
+| for individual users.                             | - Environment variable: ``MM_SERVICESETTINGS_ENABLECLIENTPERFORMANCEDEBUGGING``             |
 |                                                   |                                                                                             |
 | - **true**: Those settings are visible and can    |                                                                                             |
 |   be enabled by users.                            |                                                                                             |
