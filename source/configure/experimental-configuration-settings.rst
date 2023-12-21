@@ -5,7 +5,7 @@ Both self-hosted and Cloud admins can access the following configuration setting
 
 - `Experimental System Console configuration settings <#experimental-system-console-configuration-settings>`__
 - `Experimental Bleve configuration settings <#experimental-bleve-configuration-settings>`__
-- `Experimental/Beta Audit logging configuration settings <#experimental-beta-audit-logging-configuration-options>`__
+- `Beta Audit logging configuration settings <#beta-audit-logging-configuration-options>`__
 - `Experimental job configuration settings <#experimental-job-configuration-settings>`__
 - `Experimental configuration settings for self-hosted deployments only <#experimental-configuration-settings-for-self-hosted-deployments-only>`__
 
@@ -744,8 +744,8 @@ Enable Bleve for autocomplete queries
 
 ----
 
-Experimental/Beta audit logging configuration options
------------------------------------------------------
+Beta audit logging configuration settings
+-----------------------------------------
 
 Enable the following settings to output audit events. You can specify these settings independently for audit events and AD/LDAP events. 
 When audit logging is enabled, you can specify size, backup interval, compression, maximium age to manage file rotation, and timestamps for audit logging.
@@ -755,7 +755,7 @@ When audit logging is enabled, you can specify size, backup interval, compressio
   These settings aren't available in the System Console and can only be set in ``config.json``.
 
 .. config:setting:: exp-wroteauditfileslocally
-  :displayname: File name (Experimental Audit Logging)
+  :displayname: File name (Beta Audit Logging)
   :systemconsole: N/A
   :configjson: FileName
   :environment: N/A
@@ -773,7 +773,7 @@ Write audit files locally
 +--------------------------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: exp-auditfilename
-  :displayname: File name (Experimental Audit Logging)
+  :displayname: File name (Beta Audit Logging)
   :systemconsole: N/A
   :configjson: FileName
   :environment: N/A
@@ -789,7 +789,7 @@ Specify the path to the audit file.
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: exp-filemaxsize
-  :displayname: File max size MB (Experimental Audit Logging)
+  :displayname: File max size MB (Beta Audit Logging)
   :systemconsole: N/A
   :configjson: FileMaxSizeMB
   :environment: N/A
@@ -805,7 +805,7 @@ This is the maximum size (in megabytes) that the file can grow before triggering
 +---------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: exp-filemaxage
-  :displayname: File max age days (Experimental Audit Logging)
+  :displayname: File max age days (Beta Audit Logging)
   :systemconsole: N/A
   :configjson: FileMaxAgeDays
   :environment: N/A
@@ -821,7 +821,7 @@ This is the maximum age in days a file can reach before triggering rotation. The
 +--------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: exp-filemaxbackups
-  :displayname: File max backups (Experimental Audit Logging)
+  :displayname: File max backups (Beta Audit Logging)
   :systemconsole: N/A
   :configjson: FileMaxBackups
   :environment: N/A
@@ -837,7 +837,7 @@ This is the maximum number of rotated files kept; the oldest is deleted first. T
 +--------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: exp-filecompress
-  :displayname: File compress (Experimental Audit Logging)
+  :displayname: File compress (Beta Audit Logging)
   :systemconsole: N/A
   :configjson: FileCompress
   :environment: N/A
@@ -853,7 +853,7 @@ When ``true``, rotated files are compressed using ``gzip``.
 +-------------------------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: exp-filemaxqueuesize
-  :displayname: File max queue size (Experimental Audit Logging)
+  :displayname: File max queue size (Beta Audit Logging)
   :systemconsole: N/A
   :configjson: FileMaxQueueSize
   :environment: N/A
@@ -1065,7 +1065,7 @@ Used to control the buffer of outstanding Push Notification messages to be sent.
 +---------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: exp-enableauditfiles
-  :displayname: File configuration options (Experimental)
+  :displayname: File configuration settings (Beta)
   :systemconsole: N/A
   :configjson: FileEnabled
   :environment: N/A
