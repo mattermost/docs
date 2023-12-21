@@ -182,7 +182,7 @@ Define advanced log output
                     ],
                     "Options": {
                         "Compress": true,
-                        "Filename": "audit.log",
+                        "Filename": "./logs/audit.log",
                         "MaxAgeDays": 1,
                         "MaxBackups": 10,
                         "MaxSizeMB": 500
@@ -238,7 +238,7 @@ Define advanced log output
                 ],
                 "options": {
                 "compress": true,
-                "filename": "audit.log",
+                "filename": "./logs/audit.log",
                 "max_age": 1,
                 "max_backups": 10,
                 "max_size": 500
