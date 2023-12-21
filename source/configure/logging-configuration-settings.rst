@@ -13,7 +13,7 @@ Configure logging by going to **System Console > Environment > Logging**, or by 
   - **false**: Output log messages aren’t written to the console.
 
 Output logs to console
-~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
 
 *Available in legacy Enterprise Edition E10/E20*
 
@@ -86,6 +86,29 @@ Output console logs as JSON
 | **Note**: Typically set to **true** in a production environment.                                                    |
 +-----------------------------------------------+---------------------------------------------------------------------+
 
+.. config:setting:: log-enableplaintextcolor
+  :displayname: Colorize plain text console logs (Logging)
+  :systemconsole: N/A
+  :configjson: .LogSettings.EnableColor
+  :environment: MM_LOGSETTINGS_ENABLECOLOR
+  :description: Enables system admins to display plain text log level details in color.
+
+  - **true**: When logged events are output to the console as plain text, colorize log levels details.
+  - **false**: **(Default)** Plain text log details aren't colorized in the console.
+
+Colorize plain text console logs
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++-----------------------------------------------+----------------------------------------------------------------------+
+| Enables system admins to display plain text   | - System Config path: N/A                                            |
+| log level details in color.                   | - ``config.json setting``: ``".LogSettings.EnableColor": false",``   |
+|                                               | - Environment variable: ``MM_LOGSETTINGS_ENABLECOLOR``               |
+| - **true**: When logged events are output to  |                                                                      |
+|   the console as plain text, colorize log     |                                                                      |
+|   levels details.                             |                                                                      |
+| - **false**: **(Default)** Plain text log     |                                                                      |
+|   details aren't colorized in the console.    |                                                                      |
++-----------------------------------------------+----------------------------------------------------------------------+
 
 .. config:setting:: log-enablefile
   :displayname: Output logs to file (Logging)
@@ -116,6 +139,27 @@ Output logs to file
 |   a file.                                     |                                                                     |
 +-----------------------------------------------+---------------------------------------------------------------------+
 | **Note**: Typically set to **true** in a production environment.                                                    |
++-----------------------------------------------+---------------------------------------------------------------------+
+
+.. config:setting:: log-filelocation
+  :displayname: File log directory (Logging)
+  :systemconsole: Environment > Logging
+  :configjson: .LogSettings.FileLocation
+  :environment: MM_LOGSETTINGS_FILELOCATION
+  :description: The location of the log files. Default value is **./logs**.
+
+File log directory
+~~~~~~~~~~~~~~~~~~
+
+*Available in legacy Enterprise Edition E10/E20*
+
++-----------------------------------------------+---------------------------------------------------------------------+
+| The location of the log files.                | - System Config path: **Environment > Logging**                     |
+|                                               | - ``config.json setting``: ``".LogSettings.FileLocation": "",``     |
+| String input. If left blank, log files are    | - Environment variable: ``MM_LOGSETTINGS_FILELOCATION``             |
+| stored in the ``./logs`` directory.           |                                                                     |
++-----------------------------------------------+---------------------------------------------------------------------+
+| **Note**: The path you configure must exist, and Mattermost must have write permissions for this directory.         |
 +-----------------------------------------------+---------------------------------------------------------------------+
 
 .. config:setting:: log-filelevel
@@ -173,27 +217,6 @@ Output file logs as JSON
 | **Note**: Typically set to **true** in a production environment.                                                    |
 +-----------------------------------------------+---------------------------------------------------------------------+
 
-.. config:setting:: log-filelocation
-  :displayname: File log directory (Logging)
-  :systemconsole: Environment > Logging
-  :configjson: .LogSettings.FileLocation
-  :environment: MM_LOGSETTINGS_FILELOCATION
-  :description: The location of the log files. Default value is **./logs**.
-
-File log directory
-~~~~~~~~~~~~~~~~~~
-
-*Available in legacy Enterprise Edition E10/E20*
-
-+-----------------------------------------------+---------------------------------------------------------------------+
-| The location of the log files.                | - System Config path: **Environment > Logging**                     |
-|                                               | - ``config.json setting``: ``".LogSettings.FileLocation": "",``     |
-| String input. If left blank, log files are    | - Environment variable: ``MM_LOGSETTINGS_FILELOCATION``             |
-| stored in the ``./logs`` directory.           |                                                                     |
-+-----------------------------------------------+---------------------------------------------------------------------+
-| **Note**: The path you configure must exist, and Mattermost must have write permissions for this directory.         |
-+-----------------------------------------------+---------------------------------------------------------------------+
-
 .. config:setting:: log-enablewebhookdebug
   :displayname: Enable webhook debugging (Logging)
   :systemconsole: Environment > Logging
@@ -201,7 +224,7 @@ File log directory
   :environment: MM_LOGSETTINGS_ENABLEWEBHOOKDEBUGGING
   :description: Configure Mattermost to capture the contents of incoming webhooks to log files for debugging.
 
-  - **true**: **(Default)** The contents of incoming webhooks are printed to log files for debugging.
+  - **true**: **(Default)** The contents of incoming webhooks are printed to console and/or file logs for debugging.
   - **false**: The contents of incoming webhooks aren’t printed to log files.
 
 Enable webhook debugging
@@ -211,8 +234,8 @@ Enable webhook debugging
 
 +-----------------------------------------------+------------------------------------------------------------------------------+
 | Configure Mattermost to capture the contents  | - System Config path: **Environment > Logging**                              |
-| of incoming webhooks to log files for         | - ``config.json setting``: ``".LogSettings.EnableWebhookDebugging": true",`` |
-| debugging.                                    | - Environment variable: ``MM_LOGSETTINGS_ENABLEWEBHOOKDEBUGGING``            |
+| of incoming webhooks to console and/or file   | - ``config.json setting``: ``".LogSettings.EnableWebhookDebugging": true",`` |
+| logs for debugging.                           | - Environment variable: ``MM_LOGSETTINGS_ENABLEWEBHOOKDEBUGGING``            |
 |                                               |                                                                              |
 | - **true**: **(Default)** The contents of     |                                                                              |
 |   incoming webhooks are printed to log files  |                                                                              |
@@ -220,31 +243,9 @@ Enable webhook debugging
 | - **false**: The contents of incoming         |                                                                              |
 |   webhooks aren’t printed to log files.       |                                                                              |
 +-----------------------------------------------+------------------------------------------------------------------------------+
-
-.. config:setting:: log-enablediagnostics
-  :displayname: Enable diagnostics and error reporting (Logging)
-  :systemconsole: Environment > Logging
-  :configjson: .LogSettings.EnableDiagnostics
-  :environment: MM_LOGSETTINGS_ENABLEDIAGNOSTICS
-  :description: Send diagnostics and error reports to Mattermost, Inc.
-
-Enable diagnostics and error reporting
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-*Available in legacy Enterprise Edition E10/E20*
-
-+----------------------------------------------+-------------------------------------------------------------------------+
-| Whether or not diagnostics and error reports | - System Config path: **Environment > Logging**                         |
-| are sent to Mattermost, Inc.                 | - ``config.json setting``: ``".LogSettings.EnableDiagnostics": "",``    |
-|                                              | - Environment variable: ``MM_LOGSETTINGS_ENABLEDIAGNOSTICS``            |
-| - **true**: **(Default)** Send diagnostics   |                                                                         |
-|   and error reports.                         |                                                                         |
-| - **false**: Diagnostics and error reports   |                                                                         |
-|   aren't sent.                               |                                                                         |
-+----------------------------------------------+-------------------------------------------------------------------------+
-| **Note**: See the `telemetry </manage/telemetry.html#error-and-diagnostics-reporting-feature>`__ docummentation for    |
-| details on the information Mattermost collects.                                                                        |
-+----------------------------------------------+-------------------------------------------------------------------------+
+| **Note**: Enable debug logs by changing the `file log level </manage/logging.html#file-logs>`__ to ``DEBUG`` to include      |
+| the request body of incoming webhooks in logs.                                                                               |
++-----------------------------------------------+------------------------------------------------------------------------------+
 
 .. config:setting:: log-multipletargetoutput
   :displayname: Output logs to multiple targets (Logging)
@@ -275,32 +276,8 @@ Output logs to multiple targets
 | - Logs are recorded asynchronously to reduce latency to the caller.                                                       |
 | - Advanced logging supports hot-reloading of logger configuration.                                                        |
 +-----------------------------------------------+---------------------------------------------------------------------------+
-| **Note**: See the :doc:`audit log v2 </comply/audit-log>` documentation for additional information.                       |
+| **Note**: See the :doc:`Mattermost logging </manage/logging>` documentation for details.                                  |
 +-----------------------------------------------+---------------------------------------------------------------------------+
-
-.. config:setting:: log-enableplaintextcolor
-  :displayname: Colorize plain text console logs (Logging)
-  :systemconsole: N/A
-  :configjson: .LogSettings.EnableColor
-  :environment: MM_LOGSETTINGS_ENABLECOLOR
-  :description: Enables system admins to display plain text log level details in color.
-
-  - **true**: When logged events are output to the console as plain text, colorize log levels details.
-  - **false**: **(Default)** Plain text log details aren't colorized in the console.
-
-Colorize plain text console logs
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-+-----------------------------------------------+----------------------------------------------------------------------+
-| Enables system admins to display plain text   | - System Config path: N/A                                            |
-| log level details in color.                   | - ``config.json setting``: ``".LogSettings.ENABLECOLOR": false",``   |
-|                                               | - Environment variable: ``MM_LOGSETTINGS_ENABLECOLOR``               |
-| - **true**: When logged events are output to  |                                                                      |
-|   the console as plain text, colorize log     |                                                                      |
-|   levels details.                             |                                                                      |
-| - **false**: **(Default)** Plain text log     |                                                                      |
-|   details aren't colorized in the console.    |                                                                      |
-+-----------------------------------------------+----------------------------------------------------------------------+
 
 .. config:setting:: log-maxfieldsize
   :displayname: Maximum field size (Logging)
@@ -318,3 +295,28 @@ Maximum field size
 |                                               | - Environment variable: ``MM_LOGSETTINGS_MAXFIELDSIZE``              |
 | Numerical value. Default is **2048**.         |                                                                      |
 +-----------------------------------------------+----------------------------------------------------------------------+
+
+.. config:setting:: log-enablediagnostics
+  :displayname: Enable diagnostics and error reporting (Logging)
+  :systemconsole: Environment > Logging
+  :configjson: .LogSettings.EnableDiagnostics
+  :environment: MM_LOGSETTINGS_ENABLEDIAGNOSTICS
+  :description: Send diagnostics and error reports to Mattermost, Inc.
+
+Enable diagnostics and error reporting
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+*Available in legacy Enterprise Edition E10/E20*
+
++----------------------------------------------+-------------------------------------------------------------------------+
+| Whether or not diagnostics and error reports | - System Config path: **Environment > Logging**                         |
+| are sent to Mattermost, Inc.                 | - ``config.json setting``: ``".LogSettings.EnableDiagnostics": "",``    |
+|                                              | - Environment variable: ``MM_LOGSETTINGS_ENABLEDIAGNOSTICS``            |
+| - **true**: **(Default)** Send diagnostics   |                                                                         |
+|   and error reports.                         |                                                                         |
+| - **false**: Diagnostics and error reports   |                                                                         |
+|   aren't sent.                               |                                                                         |
++----------------------------------------------+-------------------------------------------------------------------------+
+| **Note**: See the `telemetry </manage/telemetry.html#error-and-diagnostics-reporting-feature>`__ docummentation for    |
+| details on the information Mattermost collects.                                                                        |
++----------------------------------------------+-------------------------------------------------------------------------+
