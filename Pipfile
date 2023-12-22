@@ -37,7 +37,7 @@ sphinx-autobuild = "==2021.3.14"
 #
 # Tabbed views for Sphinx (https://sphinx-tabs.readthedocs.io/)
 # Repo: https://github.com/executablebooks/sphinx-tabs
-sphinx-tabs = "==3.4.0"
+#sphinx-tabs = "==3.4.0"
 #
 # Setuptools; used by sphinx-tabs
 # Repo: https://github.com/pypa/setuptools
