@@ -6,7 +6,7 @@ Install NGINX server
 --------------------
 NGINX is a popular web server and is responsible for hosting some of the largest and highest-traffic sites on the internet. It's more resource-friendly than Apache in most cases, and can be used as a web server or reverse proxy.
 
-In a production setting, use a proxy server for greater security and performance of Mattermost.
+In a production setting, we recommend using a proxy server for greater security and performance of Mattermost.
 
 -  SSL termination
 -  HTTP to HTTPS redirect

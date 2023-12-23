@@ -113,6 +113,6 @@ The following software is required to build the documentation:
     cd build
     ```
    
-7. Then, preview your changes by opening the `source/html/index.html` file.
+7. Then, preview your changes by opening the `build/html/index.html` file.
 
 Build errors are written to the `build/warnings.log` file. 

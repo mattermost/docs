@@ -8,7 +8,7 @@ An App designed and bundled for AWS Lambda can be deployed to the customer's own
 AWS environment, and then installed on a self-managed ("on-prem") Mattermost
 instance. Note that the only AWS-hosted apps available on Mattermost Cloud instances are the ones by Mattermost.
 
-For details on how to develop and package apps for AWS see `Package / AWS <package-aws.html>`_.
+For details on how to develop and package apps for AWS see `Package / AWS </deploy/package-aws.html>`__.
 
 There are three steps required to enable AWS applications on a self-managed Mattermost instance.
 
@@ -37,7 +37,7 @@ You will need to create an S3 bucket within AWS or use an existing bucket.
 Create a privileged IAM user access key and secret
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-You will need an access key and secret so that ``appsctl`` can deploy the app. These credentials can come from creating an IAM user, using a privileged IAM user, or even using the AWS account owners personal access key. Please follow the instructions provided by AWS (https://aws.amazon.com/premiumsupport/knowledge-center/create-access-key/) to complete these steps and save the ``Access key ID`` and ``Secret access key`` values.
+You will need an access key and secret so that ``appsctl`` can deploy the app. These credentials can come from creating an IAM user, using a privileged IAM user, or even using the AWS account owners personal access key. Please follow the `instructions provided by AWS <https://aws.amazon.com/premiumsupport/knowledge-center/create-access-key/>`__ to complete these steps and save the ``Access key ID`` and ``Secret access key`` values.
 
 Set AWS_DEPLOY environment variables
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -137,7 +137,7 @@ The ``manifest.json`` file of an app is stored in the same S3 bucket with the ke
 Deploy ustom apps to AWS
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. image:: deploy-third-party-aws.png
+.. image:: /images/deploy-third-party-aws.png
    :width: 800
 
 Deployment in Mattermost Cloud
@@ -152,7 +152,7 @@ The deployer needs lambda function names, asset keys, and the manifest key to de
 Deploy custom apps to AWS
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. image:: deploy-mm-aws.png
+.. image:: /images/deploy-mm-aws.png
    :width: 800
 
 .. |Mattermost apps cloud deployer| raw:: html

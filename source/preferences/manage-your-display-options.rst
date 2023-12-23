@@ -228,6 +228,7 @@ You can control what language Mattermost displays in. Options include:
 - Português (Brasil) - Portuguese
 - Română - Romanian
 - Svenska - Swedish
+- Tiếng Việt - Vietnamese
 - Türkçe - Turkish
 - български - Bulgarian
 - Pусский - Russian

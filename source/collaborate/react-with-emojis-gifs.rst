@@ -12,12 +12,12 @@ Emojis and GIFs are small, digital images, animated images, or icons you can use
 Quick emoji reactions
 -----------------------
 
-React to messages quickly with recently used emojis. Hover over a message to access recently used emojis. 
+Hover over a message to react quickly using your most recent emojis. You can react with up to 50 emojis per message.
 
     .. image:: ../images/recent-emojis.png
       :alt: React to messages quickly by selecting one of your most recently used emojis.
 
-Recently used emojis are sorted based on how often you've used them. 
+Recently used emojis are sorted based on how often you've used them.
 
 .. tip::
   

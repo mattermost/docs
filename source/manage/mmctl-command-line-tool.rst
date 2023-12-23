@@ -19,7 +19,7 @@ mmctl usage notes
   - We recommend you add the path to the Mattermost ``bin`` folder into your ``$PATH`` environment variable. This ensures that you can run mmctl commands locally regardless of your current directory location.
   - If the ``bin`` directory is not added to the ``$PATH`` environment variable, each time you use mmctl you must be in the ``bin`` directory to run mmctl commands, and the commands must be prefixed with ``./``. If you're working from a different directory, make sure you specify the full path to mmctl when running mmctl commands.
 - Parameters in mmctl commands are order-specific.
-- You can use the ``--local`` flag with mmctl commands to run them without authentication by allowing communicating with the server through a Unix socket. See the `local mode </manage/mmctl-command-line-tool.html#local-mode>`__ documentation for activation and usage details.
+- You can use the ``--local`` flag with mmctl commands to run them without authentication by allowing communicating with the server through a Unix socket. See the `local mode <#local-mode>`__ documentation for activation and usage details.
 - If special characters (``!``, ``|``, ``(``, ``)``, ``\``, ``'``, and ``"``) are used, the entire argument needs to be surrounded by single quotes (e.g. ``-password 'mypassword!'``, or the individual characters need to be escaped out (e.g. ``password mypassword\!``).
 - Team name and channel name refer to the handles, not the display names. So in the URL ``https://community.mattermost.com/core/channels/town-square`` team name would be ``core`` and channel name would be ``town-square``.
 
@@ -40,7 +40,7 @@ mmctl commands
 - `mmctl group team`_ - Team Group Management
 - `mmctl group user`_ - Custom User Group Management
 - `mmctl import`_ - Import Management
-- `mmctl integrity`_ - Database Record Integrity
+- `mmctl integrity`_ - (Deprecated) Database Record Integrity
 - `mmctl ldap`_ - LDAP Management
 - `mmctl license`_ - License Management
 - `mmctl logs`_ - Log Management
@@ -832,7 +832,7 @@ Manage channels.
       -  `mmctl channel create`_ - Create a channel
       -  `mmctl channel delete`_ - Delete a channel
       -  `mmctl channel list`_ - List all channels on specified teams
-      -  `mmctl channel make-private`_ - Set a channel's type to "private" (Deprecated)
+      -  `mmctl channel make-private`_ - (Deprecated) Set a channel's type to "private" 
       -  `mmctl channel modify`_ - Modify a channel's type (private/public)
       -  `mmctl channel move`_ - Move channels to the specified team
       -  `mmctl channel rename`_ - Rename a channel
@@ -1019,7 +1019,7 @@ List all Public, Private, and archived channels on specified teams. Archived cha
 mmctl channel make-private
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This command is deprecated in favour of using `mmctl channel modify </manage/mmctl-command-line-tool.html#mmctl-channel-modify>`__ and the ``--private`` flag instead.
+This command is deprecated in favour of `mmctl channel modify </manage/mmctl-command-line-tool.html#mmctl-channel-modify>`__ and the ``--private`` flag.
 
 **Description**
 
@@ -1185,7 +1185,7 @@ Rename an existing channel.
 mmctl channel restore
 ~~~~~~~~~~~~~~~~~~~~~
 
-Deprecated in favor of `mmctl channel unarchive`_. Not used in Mattermost Server version v5.26 and later.
+This command is deprecated in favor of `mmctl channel unarchive`_. Not used in Mattermost Server version v5.26 and later.
 
 **Description**
 
@@ -1518,7 +1518,7 @@ Create a custom slash command for the specified team.
 mmctl command delete
 ~~~~~~~~~~~~~~~~~~~~
 
-Deprecated in favor of `mmctl command archive`_.
+This command is deprecated in favor of `mmctl command archive`_.
 
 **Description**
 
@@ -3554,7 +3554,7 @@ mmctl integrity
 
 **Description**
 
-Perform a relational integrity check which returns information about any orphaned record found. This command can only be run using local mode.
+This command is deprecated from Mattermost v9.3. Performs a relational integrity check which returns information about any orphaned record found. This command can only be run using `local mode <#local-mode>`__. 
 
 **Format**
 
@@ -5930,7 +5930,7 @@ mmctl user deleteall
 
 **Description**
 
-Permanently delete all users and all related information including posts. This command can only be run in local mode.
+Permanently delete all users and all related information including posts. This command can only be run in `local mode <#local-mode>`__.
 
 **Format**
 

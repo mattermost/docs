@@ -3,7 +3,7 @@
 Install the Mattermost for Microsoft Teams plugin
 =================================================
 
-.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../_static/badges/ent-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 .. contents:: On this page
@@ -14,7 +14,7 @@ Install the Mattermost for Microsoft Teams plugin
 
   Looking to `embed Mattermost within Microsoft Teams </about/embed-mattermost-within-microsoft-teams.html>`__ instead?
 
-To install the `Mattermost for Microsoft Teams integration </configure/plugins-configuration-settings.html#ms-teams-sync>`__ in Mattermost:
+To install the `Microsoft Teams plugin </configure/plugins-configuration-settings.html#ms-teams-sync>`__ in Mattermost:
 
 1. Log in to your Mattermost workspace as a system administrator.
 2. Download the latest version of `the plugin binary release <https://github.com/mattermost/mattermost-plugin-msteams-sync/releases>`__, compatible with Mattermost v8.0.1 and later. If you are using an earlier version of Mattermost, `follow our documentation </upgrade/upgrading-mattermost-server.html>`__ to upgrade to Mattermost v8.0.1 or later.
@@ -98,7 +98,7 @@ Step 2: Create a user account to act as a bot
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. Create a regular user account. We will connect this account later from the Mattermost side.
-2. This account is needed for creating messages on MS Teams on behalf of users who are present in Mattermost but not on MS Teams.
+2. This account is needed for creating messages on Microsoft Teams on behalf of users who are present in Mattermost but not on Microsoft Teams.
 3. This account is also needed when users on Mattermost have not connected their accounts and some messages need to be posted on their behalf. See the screenshot below:
 
    .. image:: ../images/teams-user-as-bot.png
@@ -106,7 +106,7 @@ Step 2: Create a user account to act as a bot
 
 .. note::
   
-  After you've connected the bot user to the account on MS Teams, all the messages that are posted from the account on MS Teams won't be synchronized back to Mattermost since it's a "bot", and messages from bots are ignored.
+  After you've connected the bot user to the account on Microsoft Teams, all the messages that are posted from the account on Microsoft Teams won't be synchronized back to Mattermost since it's a "bot", and messages from bots are ignored.
 
 Step 3: Ensure you have the metered APIs enabled (and the pay subscription associated to it)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -131,7 +131,7 @@ Mattermost admins can configure Mattermost to automatically prompt users to conn
 Configure the plugin
 --------------------
 
-Additional configuration settings are available for this plugin. See the `MS Teams Sync plugin configuration settings </configure/plugins-configuration-settings.html#ms-teams-sync>`__ documentation for details.
+Additional configuration settings are available for this plugin. See the `Microsoft Teams Sync plugin configuration settings </configure/plugins-configuration-settings.html#ms-teams-sync>`__ documentation for details.
 
 Monitor plugin performance
 --------------------------
@@ -153,7 +153,7 @@ Grafana dashboards `are available on GitHub <https://github.com/mattermost/matte
 Get started with the plugin
 ---------------------------
 
-See our `collaborate using Mattermost for MS Teams </collaborate/collaborate-using-mattermost-for-microsoft-teams>`__ documentation for details on how to collaborate across both Mattermost and Microsoft Teams at the same time.
+See our `collaborate using the Microsoft Teams plugin </collaborate/collaborate-using-mattermost-for-microsoft-teams>`__ documentation for details on how to collaborate across both Mattermost and Microsoft Teams at the same time.
 
 Trobleshooting
 --------------

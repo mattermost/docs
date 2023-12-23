@@ -4,9 +4,6 @@ Use Mattermost
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-.. |lightbulb| image:: ../images/lightbulb-outline_F0336.svg
-  :alt: Lightbulb icon.
-
 This Mattermost end user documentation is designed for anyone looking to connect and collaborate in Mattermost, build repeatable, automated processes, and make Mattermost match your work preferences.
 
 .. toctree::

@@ -35,8 +35,7 @@ Install a production-ready Mattermost system on 1 to 3 machines.
 .. include:: config-mattermost-server.rst
   :start-after: :nosearch:
 
-.. include:: config-tls-mattermost.rst
-  :start-after: :nosearch:
+
 
 .. include:: install-nginx.rst
   :start-after: :nosearch:
