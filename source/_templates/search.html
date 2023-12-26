@@ -42,8 +42,13 @@
 {% endblock %}
 {% block scripts -%}
     {{ super() }}
+    {# Load the search indexes after the DOM has finished loading #}
     <script lang="js">
-        Search.loadIndex("{{ pathto('searchindex.js', 1) }}");
-        Search.loadConfigSettingsIndex("{{ pathto('config-settings-index.json', 1) }}");
+        _ready(() => {
+            Search.loadIndex("{{ pathto('searchindex.js', 1) }}");
+        });
+        _ready(() => {
+            Search.loadConfigSettingsIndex("{{ pathto('config-settings-index.json', 1) }}");
+        });
     </script>
 {%- endblock scripts %}
