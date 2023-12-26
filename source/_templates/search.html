@@ -1,0 +1,49 @@
+{% extends "furo/page.html" %}
+{%- block regular_scripts -%}
+    {# Load lunr.js and mark.js before anything else #}
+    <script type="text/javascript" src="https://unpkg.com/lunr@2.3.9/lunr.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.es6.min.js"
+            integrity="sha512-jZSRKDD86PmExf0ZoXQEMxhtxvLtOxo2xMJwgnx3VE/5VT5c8LCsnvut4wK3fIdFyO4szlbz/2tpg+xulnJDyQ=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"></script>
+    {{ super() }}
+    <script src="{{ pathto('_static/js/mattermost-search.js', 1) }}"></script>
+    <script src="{{ pathto('_static/language_data.js', 1) }}"></script>
+{%- endblock regular_scripts-%}
+{%- block htmltitle -%}
+    <title>{{ _("Search") }} - {{ docstitle }}</title>
+{%- endblock htmltitle -%}
+{% block content %}
+    <noscript>
+        <div class="admonition error">
+            <p class="admonition-title">{% trans %}Error{% endtrans %}</p>
+            <p>
+                {% trans %}Please activate JavaScript to enable the search functionality.{% endtrans %}
+            </p>
+        </div>
+    </noscript>
+
+    <div style="display:inline-block">
+        <h2 id="search-title" style="float: left;"></h2><h2 id="search-dots" style="float: right;"></h2>
+    </div>
+    <p id="search-summary" class="search-summary"></p>
+    <!-- configuration setting-specific results will display here -->
+    <div id="config-setting-results-section" style="display: none;">
+        <h3>Configuration settings</h3><a id="config-setting-results-anchor"></a>
+        <div class="search" id="config-setting-results-list"></div>
+    </div>
+    <!-- all other results will display here -->
+    <div id="search-additional-information-header" style="display: none;">
+        <h3>Additional information</h3><a id="search-results-anchor"></a>
+    </div>
+    <div id="search-results">
+        <ul class="search" id="search-results-list"></ul>
+    </div>
+{% endblock %}
+{% block scripts -%}
+    {{ super() }}
+    <script lang="js">
+        Search.loadIndex("{{ pathto('searchindex.js', 1) }}");
+        Search.loadConfigSettingsIndex("{{ pathto('config-settings-index.json', 1) }}");
+    </script>
+{%- endblock scripts %}
