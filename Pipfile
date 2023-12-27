@@ -8,13 +8,19 @@ name = "pypi"
 # Amazon AWS Universal CLI environment (https://aws.amazon.com/cli/)
 # Release notes: https://github.com/aws/aws-cli/blob/develop/CHANGELOG.rst
 # Repo: https://github.com/aws/aws-cli
-awscli = "==1.29.53"
+awscli = "==1.32.8"
 #
 # PyTest testing framework (https://docs.pytest.org/en/7.4.x/)
 pytest = "==7.4.2"
 #
+# exceptiongroup: Backport of PEP-654 Exception groups to Python <3.11
+exceptiongroup = {version = "*", markers = "python_version < '3.11'"}
+#
 # Black: A Python source formatter
 black = "==23.10.1"
+#
+# Docutils Stubs
+docutils-stubs = "==0.0.22"
 
 [packages]
 #
