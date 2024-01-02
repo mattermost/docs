@@ -33,7 +33,7 @@ If you upgrade from a release earlier than v9.3, please read the other [Importan
 
 #### User Interface (UI)
  - Updated the pre-packaged GitHub plugin version to [v2.1.7](https://github.com/mattermost/mattermost-plugin-github/releases/tag/v2.1.7).
- - Pre-packaged Calls plugin version [v0.22.1](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v0.22.1).
+ - Pre-packaged Calls plugin version [v0.22.2](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v0.22.2).
  - Improved the user interface of the channel notifications modal.
  - Emojis are now enlarged in emoji tooltips on mouse hover.
  - Added a gap of 8px between buttons in the modal footer when opened in the mobile web view.
