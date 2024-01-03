@@ -125,7 +125,7 @@ Enable document search by content
 | - **wv**: Used to search the contents of DOC documents.                                                                                             |
 | - **popplerutils**: Used to significantly improve server performance when extracting the contents of PDF documents.                                 |
 | - **unrtf**: Used to search the contents of RTF documents.                                                                                          |
-| - **Justtext**: Used to search HTML documents.                                                                                                      |
+| - **JusText**: Used to search HTML documents.                                                                                                      |
 |                                                                                                                                                     |
 | If you choose not to install these dependencies, you’ll see log entries for documents that couldn’t be extracted.                                   |
 | Any documents that can’t be extracted are skipped and logged so that content extraction can proceed.                                                |
