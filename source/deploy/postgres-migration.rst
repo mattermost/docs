@@ -22,6 +22,11 @@ Required tools
 
 -  Install ``pgLoader``. See the official `installation
    guide <https://pgloader.readthedocs.io/en/latest/install.html>`__.
+
+.. note::
+   -  If you are using MySQL v8: Due to a `known bug <https://github.com/dimitri/pgloader/issues/1183>`__ in pgLoader compiled binaries, you need to compile pgLoader from the source. Please follow the steps `here <https://pgloader.readthedocs.io/en/latest/install.html#build-from-sources>`__ to build from the source.
+   -  We have received reports that the pgloader Docker image can be limited in terms of memory resources. Please use pgloader directly instead of a Docker container. 
+
 -  Install morph CLI by running the following command:
 
    -  ``go install github.com/mattermost/morph/cmd/morph@v1``
@@ -41,6 +46,7 @@ Before the migration
 -  Determine the migration window needed. This process requires you to stop the Mattermost Server during the migration.
 -  See the `schema-diffs <#schema-diffs>`__ section to ensure data compatibility between schemas.
 -  Prepare your PostgreSQL environment by creating a database and user. See the `database </install/prepare-mattermost-database.html>`__ documentation for details.
+-  If you are planning to run an iterative migration (running the pgloader several times), please see :ref:`iterative-migrations` section.
 
 Prepare target database
 -----------------------
@@ -102,15 +108,25 @@ Full-text indexes
 
 It's possible that some words in the ``Posts`` and ``FileInfo`` tables can exceed the `limits of the maximum token length <https://www.postgresql.org/docs/11/textsearch-limitations.html>`__ for full text search indexing. In these cases, we recommend dropping the ``idx_posts_message_txt`` and ``idx_fileinfo_content_txt`` indexes from the PostgreSQL schema, and creating these indexes after the migration by running the following queries:
 
-To drop indexes, run the following commands before the migration (These are included in the script, so you may not need to run these manually):
+To drop indexes, run the following commands before the migration. Although these statements are included in the script, we recommend running these manually to prevent errors:
 
 .. code:: sql
 
    DROP INDEX IF EXISTS idx_posts_message_txt;
    DROP INDEX IF EXISTS idx_fileinfo_content_txt;
 
+Also make sure these indexes are re-created after the migration is completed. You can simply run the following queries to re-create these indexes:
+
+.. code:: sql
+
+   CREATE INDEX IF NOT EXISTS idx_posts_message_txt ON {{ .source_schema }}.posts USING gin(to_tsvector('english', message));
+   CREATE INDEX IF NOT EXISTS idx_fileinfo_content_txt ON {{ .source_schema }}.fileinfo USING gin(to_tsvector('english', content));
+
+.. note::
+   If any of the entries in your  ``Posts`` and ``FileInfo`` tables exceed the limit, ``pgloader`` will fail with ``ERROR:  string is too long for tsvector`` error while trying to create these indexes. You should remove these statements from the ``pgloader`` configuration.
+
 Artifacts may remain from previous configurations/versions
-~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Prior to ``v6.4``, Mattermost was using `golang-migrate <https://github.com/golang-migrate/migrate>`__ to handle the schema migrations. Since we don't use it anymore, we exclude the table ``schema_migrations``. If you were using Mattermost before ``v6.4`` consider dropping this table and excluding it from comparison as well.
 
@@ -336,7 +352,7 @@ Once we are ready to migrate, we can start migrating the **schema** and the **da
 Focalboard
 ~~~~~~~~~~
 
-As of ``v9.0`` Boards will transition to being fully community supported as the Focalboard plugin. Hence this guide covers only the version ``v7.10.x`` of the schema. `Official announcement <https://docs.mattermost.com/install/deprecated-features.html#mattermost-server-v9-0-0>`__.
+As of ``v9.0`` Boards will transition to being fully community supported as the Focalboard plugin. Hence this guide covers only the version ``v7.10.x`` of the schema. `Official announcement <https://docs.mattermost.com/deploy/deprecated-features.html#mattermost-server-v9-0-0>`__.
 
 Once we are ready to migrate, we can start migrating the **schema** and the **data**  by running ``pgLoader`` \*\*
 
@@ -396,3 +412,24 @@ Compare the plugin data
 .. code:: sh
 
    dbcmp --source "${MYSQL_DSN}" --target "${POSTGRES_DSN}" --exclude="db_migrations,systems"
+
+Iterative migrations
+-------------------
+
+There are several steps in the pgloader configuration file that assume migration will take place in one go. If you are planning to run the migration over and over again, please complete the changes defined below:
+
+-  Discard all of the statments defined in the ``BEFORE LOAD DO`` and ``AFTER LOAD DO`` sections.
+-  Run the statments defined in ``BEFORE LOAD DO`` section only once before the migration.
+-  Once the migration is completed, run the statments defined in the ``AFTER LOAD DO`` section manually.
+
+Troubleshooting
+-----------------
+
+Unsupported authentication for MySQL
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If you are facing an error due to authentication with MySQL v8, it may be related to a `known issue <https://github.com/dimitri/pgloader/issues/782>`__ with the pgLoader. The fix is to set default authentication method to ``mysql_native_password`` in your MySQL configuration. To do so, add the ``default-authentication-plugin=mysql_native_password`` value to your ``mysql.cnf`` file. Also do not forget to update your user to use this authentication method.
+
+.. code:: sql
+
+   ALTER USER '<mysql_user>'@'%' IDENTIFIED WITH mysql_native_password BY '<mysql_password>';

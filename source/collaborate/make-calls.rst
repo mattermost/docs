@@ -16,6 +16,9 @@ On this page:
 - `Troubleshooting <#troubleshooting>`__
 - `Debugging <#debugging>`__
 
+.. include:: ../_static/badges/academy-calls.rst
+  :start-after: :nosearch:
+
 From Mattermost v7.0, you can:
 
 - Start or join a call from desktop and mobile apps in addition to web browsers.
@@ -198,6 +201,11 @@ Desktop app
 ^^^^^^^^^^^
 
 In the top menu bar of the app, select **View > Developer Tools for Current Tab**. In the logs that are generated, right-click and select **Save as** to download the logs.
+
+Mobile app
+^^^^^^^^^^
+
+You can access and share debug logs from **Account screen > Settings > Report a problem**.
 
 Call stats dump
 ~~~~~~~~~~~~~~~

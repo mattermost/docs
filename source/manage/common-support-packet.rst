@@ -1,6 +1,6 @@
 :nosearch:
 
-Use the System Console to generate a Mattermost Support Packet that includes configuration information, logs, plugin details, and data on external dependencies. Confidential data, such as passwords, are automatically stripped. 
+Use the System Console to generate a Mattermost Support Packet that includes configuration information, logs, plugin details, trial Enterprise flag, and data on external dependencies. Confidential data, such as passwords, are automatically stripped. 
 
 .. note:: 
 
@@ -46,6 +46,6 @@ The Support Packet contains 3 go runtime profiling files:
   - ``heap.prof`` contains a heap profile
   - ``goroutines`` contains a dump of all the running go routines
 
-These files can be read using `pprof <https://golang.google.cn/pkg/cmd/pprof/>`_.
+These files can be read using `pprof <https://golang.google.cn/pkg/cmd/pprof/>`__.
 
 Use ``go tool pprof -web X`` to open a visualization of the profile in your browser, replacing ``X`` with the profile's file name.

@@ -54,6 +54,9 @@ Format messages
   :local:
   :depth: 2
 
+.. include:: ../_static/badges/academy-message-formatting.rst
+  :start-after: :nosearch:
+
 Use the messaging formatting toolbar
 ------------------------------------
 
@@ -118,6 +121,7 @@ You can use either ``_`` or ``*`` around a word or phrase to make it italic, or 
 .. |bold_italics| image:: ../images/bold_italics.png
   :width: 100px
   :alt: Bold Italics
+  
 .. |strikethrough| image:: ../images/strikethrough.png
   :width: 100px
   :alt: Strike Through

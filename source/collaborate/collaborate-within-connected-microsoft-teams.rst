@@ -1,20 +1,21 @@
-Collaborate using Mattermost for MS Teams
-=========================================
+Collaborate within Microsoft Teams
+==================================
 
-.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../_static/badges/ent-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 .. |plus-icon| image:: ../images/plus_F0415.svg
   :alt: Open menus using the plus icon.
 
-`Mattermost for Microsoft Teams </about/mattermost-for-microsoft-teams.html>`__ enables you to collaborate with technical & operations teams seamlessly through the Mattermost app, without leaving Microsoft Teams.
+The `Mattermost for Microsoft Teams plugin </about/mattermost-for-microsoft-teams.html>`__ integration enables you to collaborate with Microsoft Teams users without leaving Mattermost.
 
-Join us on `Mattermost Academy <https://academy.mattermost.com/>`__ to enroll in the `Mattermost for Microsoft Teams <https://academy.mattermost.com/p/mattermost-for-microsoft-teams>`__ training course where you'll learn how to start collaborating with colleagues across both systems.
+.. include:: ../_static/badges/academy-msteams.rst
+  :start-after: :nosearch:
 
-Connect your Mattermost account to your MS Teams account
----------------------------------------------------------
+Connect your Mattermost account to your Microsoft Teams account
+---------------------------------------------------------------
 
-To use the Mattermost for Microsoft Teams plugin, you must connect your Mattermost user account to Microsoft Teams. You only need to complete this step once.
+To use the Microsoft Teams plugin, you must connect your Mattermost user account to Microsoft Teams. You only need to complete this step once.
 
 1. Log into Mattermost using your credentials. 
 2. When you log in, you’ll be prompted to enter your Microsoft Teams user information, including your Microsoft Teams email address and your Microsoft Teams password.
@@ -67,12 +68,3 @@ You have many ways to collaborate with colleagues in linked channels using a web
 - `Edit or delete sent messages </collaborate/send-messages.html#edit-or-delete-messages>`__
 
 No matter which tool you use, your message is visible across both Mattermost and Microsoft Teams.
-
-Demonstration: Mattermost embedded in Microsoft Teams
-------------------------------------------------------
-
-Check out this `YouTube demo <https://youtu.be/Mg-stF7_Bjk>`__, from Doug Lauder, Senior Software Design Engineer at Mattermost, to learn more about using the embedded Mattermost instance within Microsoft Teams:
-
-.. raw:: html
-  
-   <iframe width="560" height="315" src="https://www.youtube.com/embed/Mg-stF7_Bjk" alt="Install Matterrmost for Microsoft Teams plugin" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
