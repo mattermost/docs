@@ -17,7 +17,10 @@ From Mattermost v9.2, this changelog summarizes updates for the latest cloud and
 
 ## Release v9.4 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
 
-**Release Date: January 16, 2024**
+- **9.4.1, released 2024-01-16**
+  - Fixed an issue where ``getChannelMemberOnly`` failed to fetch data when certain fields were NULL.
+- **9.4.0, released 2024-01-16**
+  - Original 9.4.0 release.
 
 ### Important Upgrade Notes
  - MySQL v5.7 is at end of life. We recommend all customers to upgrade to at least 8.x. For now, we are logging a warning. From Mattermost v9.5, which is the next Extended Support Release, we will stop supporting MySQL v5.7 altogether.
@@ -44,11 +47,6 @@ If you upgrade from a release earlier than v9.3, please read the other [Importan
  - Added new ``ServerMetrics`` hook to allow plugins to register a custom HTTP endpoint to serve their metrics under the server's metrics HTTP listener.
  - Admins now have the ability to pipe the output of ``mmctl websocket`` into the JSON parser.
  - Added stores for OAuth **Outgoing Connections**.
- - Made small optimizations in several database calls:
-    - ``App.HasPermissionToChannel``
-    - ``getPostsForChannelAroundLastUnread``
-    - ``publishWebsocketEventForPermalinkPost``
-    - ``countMentionsFromPost``
  - Added support for IP Filtering in Cloud (this feature is disabled and behind a feature flag).
  - Added last login timestamp for users, and added a materialized view and a refresh job to keep track of post stats for PostgreSQL.
  - Allowed plugin requests to include **Authorization** headers from external systems.
