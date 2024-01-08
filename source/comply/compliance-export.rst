@@ -30,8 +30,7 @@ Use the following guides to configure exports for CSV, Actiance XML, or Global R
 
 .. note::
    
-   - For self-hosted deployments, compliance exports are written to the ``exports`` subdirectory of the configured `Local Storage directory </configure/environment-configuration-settings.html#file-storage>`__ in the chosen format.
-   - If you've configured Mattermost to use S3 storage, the exports are written to the ``exports`` directory in the Mattermost bucket.
+   - For self-hosted deployments, compliance exports are written to the ``exports`` subdirectory of the configured filestore in the chosen format. This will either be in the `Local Storage directory </configure/environment-configuration-settings.html#file-storage>` or the Mattermost S3 bucket if S3 storage is configured.
    - Alternatively, you can specify an alternate filestore target and generate an S3 presigned URL for compliance exports. See the `dedicated export filestore target </configure/experimental-configuration-settings.html#enable-dedicated-export-filestore-target>`__ configuration settings documentation for details.
    - Compliance exports don't contain posts sent before the feature was enabled. For self-hosted deployments, you can export past history via the ``export`` :doc:`command line tool <../manage/command-line-tools>`. 
 
