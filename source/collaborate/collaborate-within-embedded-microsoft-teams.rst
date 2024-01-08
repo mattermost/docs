@@ -9,8 +9,8 @@ The `Mattermost for Microsoft Teams plugin </about/mattermost-for-microsoft-team
 Demonstration: Mattermost embedded in Microsoft Teams
 ------------------------------------------------------
 
-Check out this `YouTube demo <https://youtu.be/Mg-stF7_Bjk>`__, from Doug Lauder, Senior Software Design Engineer at Mattermost, to learn more about using the embedded Mattermost instance within Microsoft Teams:
+Check out this `YouTube demo <https://youtu.be/2t2CsC5JWPw>`__, from John Landells, Senior Technical Account Manager at Mattermost, to learn more about using the embedded Mattermost instance within Microsoft Teams:
 
 .. raw:: html
   
-   <iframe width="560" height="315" src="https://www.youtube.com/embed/Mg-stF7_Bjk" alt="Install Mattermost for Microsoft Teams plugin" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/2t2CsC5JWPw" alt="Install Mattermost for Microsoft Teams plugin" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
