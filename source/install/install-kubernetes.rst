@@ -81,7 +81,7 @@ Deploy Mattermost
     "metadata.name", "The name of your Mattermost as it will be shown in Kubernetes. The shorter the better."
     "spec.size", "The size of your installation. This can be '100users', '1000users, '5000users', '10000users', or '25000users'."
     "spec.ingress.host", "The DNS for your Mattermost installation."
-    "spec.version", "The Mattermost version. Refer to `the version archive page <https://docs.mattermost.com/upgrade/version-archive.html>` when selecting a mattermost version."
+    "spec.version", "The Mattermost version. Refer to `the version archive page <https://docs.mattermost.com/upgrade/version-archive.html>`__ when selecting a mattermost version."
     "spec.licenseSecret", "The name of the Kubernetes secret containing your license (e.g. mattermost-license). Required for Enterprise deployments."
     "spec.mattermostEnv", "List of custom environment variables for the Mattermost instance. Only required when tweaking Mattermost configuration is required."
     
