@@ -11,7 +11,7 @@ Install Mattermost on Kubernetes
 
 You can install and deploy a production-ready Mattermost system on a Kubernetes cluster using the Mattermost Kubernetes Operator in practically any environment with less IT overhead and more automation.
 
-You'll need a `Kubernetes cluster <https://kubernetes.io/docs/setup/>`__ running `a version that is currently supported with patch releases <https://kubernetes.io/releases/>`,  Kubernetes CLI `kubectl <https://kubernetes.io/docs/reference/kubectl/overview/>`__ installed on local machine, and a basic understanding of Kubernetes concepts (such as deployments, pods) and actions (such as applying manifests, viewing pod logs). Running Mattermost in Kubernetes requires resources based on your total number of users. See the `Mattermost Kubernetes Operator </install/mattermost-kubernetes-operator.html>`__ documentation to learn more about the minimum Kubernetes cluster resources Mattermost requires at different scales.
+You'll need a `Kubernetes cluster <https://kubernetes.io/docs/setup/>`__ running `a version that is currently supported with patch releases <https://kubernetes.io/releases/>`__,  Kubernetes CLI `kubectl <https://kubernetes.io/docs/reference/kubectl/overview/>`__ installed on local machine, and a basic understanding of Kubernetes concepts (such as deployments, pods) and actions (such as applying manifests, viewing pod logs). Running Mattermost in Kubernetes requires resources based on your total number of users. See the `Mattermost Kubernetes Operator </install/mattermost-kubernetes-operator.html>`__ documentation to learn more about the minimum Kubernetes cluster resources Mattermost requires at different scales.
 
 .. tip::
     
@@ -81,7 +81,7 @@ Deploy Mattermost
     "metadata.name", "The name of your Mattermost as it will be shown in Kubernetes. The shorter the better."
     "spec.size", "The size of your installation. This can be '100users', '1000users, '5000users', '10000users', or '25000users'."
     "spec.ingress.host", "The DNS for your Mattermost installation."
-    "spec.version", "The Mattermost version. Refer to `the version archive page <https://docs.mattermost.com/upgrade/version-archive.html>` when selecting a mattermost version."
+    "spec.version", "The Mattermost version. Refer to `the version archive page <https://docs.mattermost.com/upgrade/version-archive.html>`__ when selecting a mattermost version."
     "spec.licenseSecret", "The name of the Kubernetes secret containing your license (e.g. mattermost-license). Required for Enterprise deployments."
     "spec.mattermostEnv", "List of custom environment variables for the Mattermost instance. Only required when tweaking Mattermost configuration is required."
     
