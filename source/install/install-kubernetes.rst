@@ -11,7 +11,7 @@ Install Mattermost on Kubernetes
 
 You can install and deploy a production-ready Mattermost system on a Kubernetes cluster using the Mattermost Kubernetes Operator in practically any environment with less IT overhead and more automation.
 
-You'll need a `Kubernetes cluster <https://kubernetes.io/docs/setup/>`__ running `a version that is currently supported with patch releases <https://kubernetes.io/releases/>`,  Kubernetes CLI `kubectl <https://kubernetes.io/docs/reference/kubectl/overview/>`__ installed on local machine, and a basic understanding of Kubernetes concepts (such as deployments, pods) and actions (such as applying manifests, viewing pod logs). Running Mattermost in Kubernetes requires resources based on your total number of users. See the `Mattermost Kubernetes Operator </install/mattermost-kubernetes-operator.html>`__ documentation to learn more about the minimum Kubernetes cluster resources Mattermost requires at different scales.
+You'll need a `Kubernetes cluster <https://kubernetes.io/docs/setup/>`__ running `a version that is currently supported with patch releases <https://kubernetes.io/releases/>`__,  Kubernetes CLI `kubectl <https://kubernetes.io/docs/reference/kubectl/overview/>`__ installed on local machine, and a basic understanding of Kubernetes concepts (such as deployments, pods) and actions (such as applying manifests, viewing pod logs). Running Mattermost in Kubernetes requires resources based on your total number of users. See the `Mattermost Kubernetes Operator </install/mattermost-kubernetes-operator.html>`__ documentation to learn more about the minimum Kubernetes cluster resources Mattermost requires at different scales.
 
 .. tip::
     
@@ -85,12 +85,9 @@ Deploy Mattermost
     "spec.licenseSecret", "The name of the Kubernetes secret containing your license (e.g. mattermost-license). Required for Enterprise deployments."
     "spec.mattermostEnv", "List of custom environment variables for the Mattermost instance. Only required when tweaking Mattermost configuration is required."
     
-    Additional fields are documented `in the example <https://github.com/mattermost/mattermost-operator/blob/master/docs/examples/mattermost_full.yaml>`__.
-    If you have previous experience with Kubernetes Custom Resources, you can also check the `Custom Resource Definition <https://github.com/mattermost/mattermost-operator/blob/master/config/crd/bases/installation.mattermost.com_mattermosts.yaml>`__.
+  Additional fields are documented `in the example <https://github.com/mattermost/mattermost-operator/blob/master/docs/examples/mattermost_full.yaml>`__. If you have previous experience with Kubernetes Custom Resources, you can also check the `Custom Resource Definition <https://github.com/mattermost/mattermost-operator/blob/master/config/crd/bases/installation.mattermost.com_mattermosts.yaml>`__.
 
-3. Create external database secret.
-
-  The database secret needs to be created in the namespace that will hold the Mattermost installation. The secret should contain the following data:
+3. Create external database secret. The database secret needs to be created in the namespace that will hold the Mattermost installation. The secret should contain the following data:
 
   .. csv-table::
     :header: "Key", "Description", "Required"
@@ -115,11 +112,9 @@ Deploy Mattermost
 
   .. note:: 
 
-    - For PostgreSQL databases, the connection is checked with `pg_isready <https://www.postgresql.org/docs/9.3/app-pg-isready.html>`__ so the ``DB_CONNECTION_CHECK_URL`` is the same as connection string.
+    For PostgreSQL databases, the connection is checked with `pg_isready <https://www.postgresql.org/docs/9.3/app-pg-isready.html>`__ so the ``DB_CONNECTION_CHECK_URL`` is the same as connection string.
 
-4. Create external filestore secret.
-
-  The filestore secret needs to be created in the namespace that will hold the Mattermost installation. The secret should contain the following data:
+4. Create external filestore secret. The filestore secret needs to be created in the namespace that will hold the Mattermost installation. The secret should contain the following data:
 
   .. csv-table::
     :header: "Key", "Description", "Required"
