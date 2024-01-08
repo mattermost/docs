@@ -1,26 +1,44 @@
-Mattermost community collaboration server
-=========================================
+Join our community
+==================
 
-Mattermost hosts a collaboration and chat server at `community.mattermost.com <https://community.mattermost.com/login>`__ to connect our team with our larger contributor and user community. This server is open to everyone, and we welcome anyone who wants to participate in our community to sign up.
+Connect with thousands of contributors, customers, partners, and users to build, share, and learn together at `community.mattermost.com <https://community.mattermost.com>`__. This server is our virtual office and is open to everyone. Please review our `Code of Conduct <https://handbook.mattermost.com/contributors/contributors/guidelines/contribution-guidelines>`__ before participating.
 
-We have many channels on our community server you can join. Here are some of the more popular channels.
+General channels
+----------------
 
-**General purpose channels**
+- `~Contributors <https://community.mattermost.com/core/chann0els/tickets>`__
+- `~Community Team <https://community.mattermost.com/core/channels/community-team>`__
+- `~Developers <https://community.mattermost.com/core/channels/developers>`__
+- `~New Channel Notifications <https://community.mattermost.com/core/channels/new-channel-notifications>`__
+- `~Off-Topic <https://community.mattermost.com/core/channels/off-topic-pub>`__
+- `~Reception <https://community.mattermost.com/core/channels/town-square>`__
 
-- `Peer-to-peer Help: <https://community.mattermost.com/core/channels/peer-to-peer-help>`__ Get help from other community members on using, deploying, or contributing to Mattermost.
-- `Ask Anything: <https://community.mattermost.com/core/channels/ask-anything>`__ Ask general questions about Mattermost.
+Technical support channels
+--------------------------
 
-**Contributor discussions**
+To familiarize yourself with our community support process, start by reading the `Get Help <https://docs.mattermost.com/guides/get-help.html>`__ documentation page.
 
-- `Developers: <https://community.mattermost.com/core/channels/developers>`__ Get help with development issues from our team and other developers in our community.
-- `Developers Meeting: <https://community.mattermost.com/core/channels/developers-meeting>`__ Join the weekly developers meeting to find out what Mattermost developers are working on.
-- `Contributors: <https://community.mattermost.com/core/channels/tickets>`__ Connect with other people who are working to make Mattermost better.
-- `Contributor Guilds: <https://developers.mattermost.com/contribute/getting-started/guilds/>`__ Find focused groups within our community that work on specific portions of the Mattermost ecosystem.
-- `Documentation Working Group: <https://community.mattermost.com/core/channels/dwg-documentation-working-group>`__ Provide feedback about Mattermost documentation and ask questions to the Mattermost Technical Writing team.
-- `Content: <https://community.mattermost.com/core/channels/mattermost-blog>`__ Discuss blog, video, podcast, and other content publication with the Mattermost Content team.
+- `~Ask Anything <https://community.mattermost.com/core/channels/ask-anything>`__
+- `~Bugs <https://community.mattermost.com/core/channels/bugs>`__
+- `~Peer-to-peer Help <https://community.mattermost.com/core/channels/peer-to-peer-help>`__
 
-**Social channels**
+We also recommend using the `Troubleshooting forum <https://forum.mattermost.com/c/trouble-shoot/16>`__ for technical support.
 
-- `Off-Topic: <https://community.mattermost.com/core/channels/off-topic-pub>`__ Talk about anything that’s not directly related to Mattermost
-- `Open Source Fridays: <https://community.mattermost.com/core/channels/open-source-fridays>`__ Share what you’re working on during your own Open Source Fridays.
-- `Social: <https://community.mattermost.com/core/channels/social>`__ Join the conversation on our channel for casual chats. 
+Contributor community channels
+------------------------------
+
+To familiarize yourself with our community contribution process, start by exploring the `Contribute to Mattermost <https://mattermost.com/contribute/>`__ documentation.
+
+- `~AI Exchange <https://community.mattermost.com/core/channels/ai-exchange>`__
+- `~Developers: Meeting <https://community.mattermost.com/core/channels/developers-meeting>`__
+- `~DWG: Documentation Working Group <https://community.mattermost.com/core/channels/dwg-documentation-working-group>`__
+- `~Feature Proposals <https://community.mattermost.com/core/channels/feature-ideas>`__
+- `~i18n - Localization <https://community.mattermost.com/core/channels/localization>`__
+- `~Open Source Fridays (OSF) <https://community.mattermost.com/core/channels/open-source-fridays>`__
+- `~Public Speakers <https://community.mattermost.com/core/channels/public-speakers>`__
+- `~QA: Contributors <https://community.mattermost.com/core/channels/qa-contributors>`__
+- `~Thank you! <https://community.mattermost.com/core/channels/thank-you>`__
+
+There are many channels that specialize in different areas of the Mattermost platform. To find and join them, search “**Developers:**” in the `LHS <https://handbook.mattermost.com/company/about-mattermost/list-of-terms#lhs>`__ “🔍 Find channel” search bar on the community server.
+
+We hold a public developer community meeting every Wednesday at 8:30 AM Palo Alto time. ☎️ The meeting is held via an audio call in `Developers: Meeting <https://community.mattermost.com/core/channels/developers-meeting>`__ and everyone is welcome. This weekly meeting is a great opportunity to ask questions about the project and get involved.
