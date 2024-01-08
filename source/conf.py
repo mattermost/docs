@@ -804,6 +804,8 @@ redirects = {
         "https://docs.mattermost.com/comply/compliance-monitoring.html",
 "comply/cloud-data-retention-policy.html":
 	"https://docs.mattermost.com/comply/data-retention-policy.html",
+"comply/audit-log.html":
+        "https://docs.mattermost.com/manage/logging.html",
 
 # Configure redirects
 "configure/config-ssl-http2-apache2.html":
@@ -1752,6 +1754,20 @@ redirects = {
 	"https://docs.mattermost.com/configure/authentication-configuration-settings.html#openid-connect-other-settings",
 "configure/experimental-configuration-settings.html#enable-app-bar":
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#disable-apps-bar",
+"configure/experimental-configuration-settings.html#syslog-configuration-options":
+        "https://docs.mattermost.com/manage/logging.html#syslog-target-configuration-options",
+"configure/experimental-configuration-settings.html#syslog-ip":
+        "https://docs.mattermost.com/manage/logging.html#syslog-target-configuration-options",
+"configure/experimental-configuration-settings.html#syslog-port":
+        "https://docs.mattermost.com/manage/logging.html#syslog-target-configuration-options",
+"configure/experimental-configuration-settings.html#syslog-tag":
+        "https://docs.mattermost.com/manage/logging.html#syslog-target-configuration-options",
+"configure/experimental-configuration-settings.html#syslog-cert":
+        "https://docs.mattermost.com/manage/logging.html#syslog-target-configuration-options",
+"configure/experimental-configuration-settings.html#syslog-insecure":
+        "https://docs.mattermost.com/manage/logging.html#syslog-target-configuration-options",
+"configure/experimental-configuration-settings.html#syslog-max-queue-size":
+        "https://docs.mattermost.com/manage/logging.html#syslog-target-configuration-options",
 
 # Deploy redirects
 "deploy/mobile-apps-faq.html":
@@ -3313,7 +3329,7 @@ master_doc = "index"
 
 # General information about the project.
 project = "Mattermost"
-copyright = "2015-2023 Mattermost"
+copyright = "2015-2024 Mattermost"
 author = "Mattermost"
 
 # The version info for the project you're documenting, acts as replacement for

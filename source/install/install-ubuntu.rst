@@ -148,7 +148,7 @@ When a new Mattermost version is released, run: ``sudo apt update && sudo apt up
 
 .. note::
 	
-	When you run the ``sudo apt uprade`` command, ``mattermost-server`` will be updated along with any other packages. We strongly recommend you stop the Mattermost Server before running the ``apt`` command using ``sudo systemctl stop mattermost-server``.
+	When you run the ``sudo apt upgrade`` command, ``mattermost-server`` will be updated along with any other packages. We strongly recommend you stop the Mattermost Server before running the ``apt`` command using ``sudo systemctl stop mattermost-server``.
 
 Remove Mattermost
 ------------------
