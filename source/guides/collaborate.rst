@@ -8,6 +8,9 @@ Mattermost provides 1:1 and group messaging that features integrated voice/video
 
 This Mattermost end user documentation is designed for anyone who wants guidance on using Mattermost to collaborate.
 
+.. include:: ../_static/badges/academy-channels.rst
+  :start-after: :nosearch:
+
 .. toctree::
    :maxdepth: 1
    :hidden:

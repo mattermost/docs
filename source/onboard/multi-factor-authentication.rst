@@ -12,7 +12,7 @@ With MFA enabled, users need to provide a secure one-time code in addition to th
 
 Mattermost offers a smartphone-based MFA check in addition to email-password or Active Directory/LDAP authentication to log in to the Mattermost server.
 
-Supported devices include iOS, Android, or other devices that are able to install Google Authenticator or a similar app. After the app is installed, the device does not require internet access.
+Supported devices include iOS, Android, or other devices that are able to install a software-based authenticator such as FreeOTP, Google Authenticator, Microsoft Authenticator, 1Password, LastPass, or a similar app. After the app is installed, the device does not require internet access.
 
 .. note::
   
