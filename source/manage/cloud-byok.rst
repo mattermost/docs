@@ -15,7 +15,6 @@ In Mattermost Cloud Enterprise Dedicated, you can use KMS keys in 2 ways:
     - Keys do not need to be unique to each service.
     - All services must be encrypted at rest.
     - Selective enablement of this feature can be supported.
-    - Keys don't need to be unique to each service.
     - In cases where a global database is needed, we recommend providing 2 KMS keys (1 per region).
 
 Configure BYOK
@@ -64,10 +63,10 @@ This path offers less control to customers but simplifies the setup process.
 Requirements
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-- Customers must possess their AWS Account. (In the alternative path mentioned above this is delegated to Mattermost.)
+- Customers must own their AWS Account. (In the alternative path mentioned above this is delegated to Mattermost.)
 - Customers oversee the maintenance life cycle of their custom KMS key.
 - A valid AWS KMS ARN for encrypting storage and databases should be provided to the Infrastructure SRE team.
-- The customer incorporate blocks from the Infrastructure SRE team into their KMS key policy.
+- The customer should incorporate the provided policy blocks from the Infrastructure SRE team into their KMS key policy.
 
 Considerations
 ~~~~~~~~~~~~~~~~~~~~~~~
