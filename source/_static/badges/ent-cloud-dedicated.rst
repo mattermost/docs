@@ -5,7 +5,7 @@
 
   <div class="mm-badge">
 
-|plans-img| Available only on `Enterprise <https://mattermost.com/pricing/>`__ plans
+|plans-img| Available only on `Enterprise <https://mattermost.com/contact-sales/>`__ plans
 
 |deployment-img| Available only for `Cloud Dedicated <https://customers.mattermost.com/cloud/signup/>`__ deployments
 

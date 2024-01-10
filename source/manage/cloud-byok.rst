@@ -70,7 +70,7 @@ Requirements
 
 Considerations
 ~~~~~~~~~~~~~~~~~~~~~~~
-- Changing the AWS KMS key in the database necessitates downtime due to AWS Aurora's encryption limitations.
+- Changing the AWS KMS key in the database necessitates downtime due to AWS Aurora's encryption `limitations. <https://repost.aws/knowledge-center/update-encryption-key-rds>`__
 - Proper communication is essential for setting expectations and scheduling changes.
 
 Conclusion
