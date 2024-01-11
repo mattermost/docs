@@ -44,7 +44,7 @@ If you upgrade from a release earlier than v9.3, please read the other [Importan
  - Adjusted the position of the suggestion list in "Add <user> to a channel" modal to be below or above the text field.
 
 #### Administration
- - Added support for IP Filtering in Cloud (Cloud Enterprise plan) (this feature is behind a feature flag).
+ - Added support for IP Filtering in Cloud (Cloud Enterprise plan) (this feature is disabled by default and behind a feature flag).
  - Added support for Bring Your Own Key (BYOK) Encryption (Cloud Enterprise plan).
  - An optional dedicated filestore is now used for compliance exports if configured (Cloud Enterprise plan).
  - ``MessageExportSettings.GlobalRelaySettings.CustomerType`` now supports "CUSTOM".
