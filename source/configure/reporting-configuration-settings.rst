@@ -39,7 +39,7 @@ Team statistics
 | number of public and private channels, total post count, and  | - ``config.json`` setting: N/A                                |
 | count of paid users (self-hosted only).                       | - Environment variable: N/A                                   |
 +---------------------------------------------------------------+---------------------------------------------------------------+
-| **Note**: Deactivated users are not counted towards the total number of active users.                                          |
+| **Note**: Deactivated users are not counted towards the total number of active users.                                         |
 +---------------------------------------------------------------+---------------------------------------------------------------+
 
 ----
