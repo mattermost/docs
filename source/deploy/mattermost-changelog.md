@@ -44,8 +44,10 @@ If you upgrade from a release earlier than v9.3, please read the other [Importan
  - Adjusted the position of the suggestion list in "Add <user> to a channel" modal to be below or above the text field.
 
 #### Administration
- - Added support for IP Filtering in Cloud (this feature is disabled and behind a feature flag).
- - ``MessageExportSettings.GlobalRelaySettings.CustomerType`` now supports "CUSTOM". 
+ - Added support for IP Filtering in Cloud (Cloud Enterprise plan) (this feature is behind a feature flag).
+ - Added support for Bring Your Own Key (BYOK) Encryption (Cloud Enterprise plan).
+ - An optional dedicated filestore is now used for compliance exports if configured (Cloud Enterprise plan).
+ - ``MessageExportSettings.GlobalRelaySettings.CustomerType`` now supports "CUSTOM".
  - Added new ``ServerMetrics`` hook to allow plugins to register a custom HTTP endpoint to serve their metrics under the server's metrics HTTP listener.
  - Admins now have the ability to pipe the output of ``mmctl websocket`` into the JSON parser.
  - Added stores for OAuth **Outgoing Connections**.
@@ -53,7 +55,6 @@ If you upgrade from a release earlier than v9.3, please read the other [Importan
  - Allowed plugin requests to include **Authorization** headers from external systems.
  - Added a mmctl command ``mmctl system supportpacket`` to download the **Support Packet**.
  - Added a new mmctl command ``oauth list`` for listing registered OAuth2 applications.
- - An optional dedicated filestore is now used for compliance exports if configured.
 
 ### Bug Fixes
  - Fixed an issue with the emoji reaction toggle behavior.
