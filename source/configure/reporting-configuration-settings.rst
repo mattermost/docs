@@ -22,7 +22,7 @@ Site statistics
 | sessions, commands, webhooks, active users, connections,      | - ``config.json setting``: N/A                              |
 | and playbooks.                                                | - Environment variable: N/A                                 |
 +---------------------------------------------------------------+-------------------------------------------------------------+
-| **Note**: Deactivated users as well as synthetic users in                                                                  |
+| **Note**: Deactivated users as well as synthetic users in                                                                   |
 | `Microsoft Teams integrations </collaborate/collaborate-using-mattermost-for-microsoft-teams.html>`__                       |
 | and `shared channels users </onboard/shared-channels.html>`__, aren't counted towards the total number of active users.     |
 +---------------------------------------------------------------+-------------------------------------------------------------+
