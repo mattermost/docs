@@ -15,3 +15,4 @@ Cloud workspace management
 * :doc:`Workspace usage </manage/workspace-usage>` - Keep your workspace active.
 * :doc:`Workspace migration </manage/cloud-data-export>` - Migrate your workspace using the mmctl tool.
 * :doc:`Cloud data residency </manage/cloud-data-residency>` - Find information about your data in the Cloud.
+* :doc:`Cloud Bring Your Own Key (BYOK) </manage/cloud-byok>` - Learn how to manage data encryption processes within a Mattermost Cloud Enterprise Dedicated deployment.
