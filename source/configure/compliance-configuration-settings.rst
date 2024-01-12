@@ -172,7 +172,7 @@ If Global Relay is chosen, the following options will be presented:
   :systemconsole: Compliance > Compliance Export
   :configjson: .MessageExportSettings.GlobalRelaySettings.CustomerType
   :environment: MM_MESSAGEEXPORTSETTINGS_GLOBALRELAYSETTINGS_CUSTOMERTYPE
-  :description: Type of Global Relay customer account your organization has, either ``A9/Type 9`` or ``A10/Type 10``.
+  :description: Type of Global Relay customer account your organization has. Can be ``A9/Type 9``, ``A10/Type 10``, or ``Custom``.
 
 Global Relay customer account
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
