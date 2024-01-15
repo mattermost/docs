@@ -33,25 +33,9 @@ These instructions cover migrating the Mattermost configuration to the database 
 Get your database connection string
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The first step is to get your master database connection string. We recommend using the `mmctl config get command </manage/mmctl-command-line-tool.html#mmctl-config-get>`__ to do this.
+The first step is to get your master database connection string. We recommend accessing  your ``config.json`` file to make a copy of the value in ``SqlSettings.DataSource`` or your equivalent environment variable, ``MM_SQLSETTINGS_DATASOURCE``.
 
-To use the ``mattermost config get`` command:
-
-.. code-block:: bash
-
-   sudo su mattermost
-   cd /opt/mattermost
-   bin/mattermost config get SqlSettings.DataSource
-
-Example output:
-
-.. code-block:: text
-
-   "mmuser:really_secure_password@tcp(127.0.0.1:3306)/mattermost?charset=utf8mb4,utf8\u0026writeTimeout=30s"
-
-Another way to get your database connection string is to view your ``config.json`` file and get the value in ``SqlSettings.DataSource``.
-
-If ``SqlSettings.DataSource`` does not start with ``postgres://``, then you have to add this line to the beginning based on the database in use. Also, if you see ``\u0026`` replace it with ``&``.
+If ``SqlSettings.DataSource`` does not start with ``postgres://``, then you have to add this line to the beginning based on the database in use. Also, if you see ``\u0026``, replace it with ``&``.
 
 Here is an example connection string:
 
