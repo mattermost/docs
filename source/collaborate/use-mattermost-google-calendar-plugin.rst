@@ -4,7 +4,7 @@ Use the Mattermost Google Calendar plugin
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-`The Mattermost Google Calendar plugin </about/mattermost-google-calendar-plugin.html>`__ enables you to manage events using a two-way integration between Mattermost and Google Calendar without leaving Mattermost.
+`The Mattermost Google Calendar plugin </about/mattermost-google-calendar-integration.html>`__ enables you to manage events using a two-way integration between Mattermost and Google Calendar without leaving Mattermost.
 
 .. note..
 
