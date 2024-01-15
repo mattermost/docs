@@ -461,7 +461,7 @@ Frequently asked questions
 Does Mattermost have an audit log besides the system ``auditd``?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Yes. See the `audit logging <#audit-logging-experimental-beta>`__ documentation for details.
+Yes. See the `audit logging <#audit-logging-beta>`__ documentation for details.
 
 When syslog is configured as the target, does it contain the IP address of the emitter of the data (i.e., the Mattermost app node)?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

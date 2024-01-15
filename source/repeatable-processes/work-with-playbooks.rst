@@ -58,7 +58,7 @@ Make checklists
 ----------------
 
 1. In channels, select **Toggle Playbook List** from the Apps Bar.
-2. Select an exiStart a **Blank Playbook**, or use the built-in template.
+2. Select **Blank Playbook**, or use the built-in template.
 3. Name your playbook and provide a description.
 4. Select the **Checklists** tab.
 
