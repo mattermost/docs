@@ -50,7 +50,7 @@ For customers using our service in a self-hosted deployment, the Mattermost Free
 The Mattermost Professional and Mattermost Enterprise editions are only available after deploying our Mattermost Enterprise Edition code base, and then applying a valid license key that comes with a subscription purchase, or by starting a 30-day free trial that can be activated either in-product (**System Console > Edition and License > Start trial**) or online at https://mattermost.com/trial/.
 
 Mattermost Free (Self-Hosted only)
-----------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Mattermost Free is a set of collaboration features for accelerating your technical team’s productivity, shipping software faster with higher quality, and improving alignment among team members.
 
@@ -80,7 +80,7 @@ Features include:
 See a complete list of features `here <https://mattermost.com/pricing>`__.
 
 Mattermost Professional 
------------------------
+~~~~~~~~~~~~~~~~~~~~~~~
 
 Mattermost Professional is the set of collaboration features that enables you to build and scale your sophisticated technical workflows across multiple cross-functional teams to deliver mission-critical software.
 
@@ -102,7 +102,7 @@ This offering includes all the features of Mattermost Free, plus:
 See a complete list of features `here <https://mattermost.com/pricing>`__.
 
 Mattermost Enterprise 
----------------------
+~~~~~~~~~~~~~~~~~~~~~
 
 Mattermost Enterprise is an enterprise-grade collaboration system that supports and helps you scale your mission-critical enterprise workflows, meet strict enterprise security, compliance, and privacy requirements, as well as provide executive reporting, dashboards, and productivity metrics.
 
@@ -120,7 +120,7 @@ This offering includes all the features of Mattermost Professional, plus:
 - `Enhanced compliance with global and custom retention policies for messages and files </comply/data-retention-policy.html>`__.
 - `Granular administrative control with custom system admin roles </onboard/system-admin-roles.html>`__.
 - `Advanced configuration of playbook permissions, analytics dashboards, and channel exports </repeatable-processes/share-and-collaborate.html>`__.
-- `Enhanced compliance controls and granular audit logs with data export </comply/audit-log.html>`__.
+- `Enhanced compliance controls and granular audit logs with data export </manage/logging.html#audit-logging-experimental-beta>`__.
 - `Advanced collaboration with shared channels across Mattermost instances </onboard/shared-channels.html>`__.
 - `High availability support with multi-node database deployment </scale/high-availability-cluster.html>`__.
 - `Horizontal scaling through cluster-based deployment </scale/scaling-for-enterprise.html#cluster-based-deployment>`__.
