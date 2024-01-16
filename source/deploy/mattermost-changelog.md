@@ -26,9 +26,6 @@ From Mattermost v9.2, this changelog summarizes updates for the latest cloud and
 If you upgrade from a release earlier than v9.4, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
 ```
 
-### Compatibility
- - 
-
 ### Improvements
 
 #### User Interface (UI)
@@ -50,7 +47,7 @@ If you upgrade from a release earlier than v9.4, please read the other [Importan
  - Prometheus metrics are now available under the Source Available License.
 
 #### Performance
- -  Optimized ``createPost`` performance.
+ - Optimized ``createPost`` performance.
  - Improved the performance of emoji uploads.
 
 #### Plugins
@@ -94,7 +91,7 @@ If you upgrade from a release earlier than v9.4, please read the other [Importan
  - Added a new API endpoint ``GET /api/v4/reports/users/count``.
 
 ### Open Source Components
- - Notice.txt: @tanstack/react-table, prometheus/client_model
+ - Added ``@tanstack/react-table`` and ``prometheus/client_model`` to https://github.com/mattermost/mattermost/.
 
 ### Go Version
  - v9.5 is built with Go ``v1.20.7``.
