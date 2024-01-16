@@ -34,6 +34,8 @@ If you upgrade from a release earlier than v9.3, please read the other [Importan
 
 ### Improvements
 
+See [this walkthrough video](https://www.youtube.com/watch?v=bEMp4vYLi6c&feature=youtu.be&ab_channel=Mattermost) on some of the improvements in our latest release below.
+
 #### User Interface (UI)
  - Updated the pre-packaged GitHub plugin version to [v2.1.7](https://github.com/mattermost/mattermost-plugin-github/releases/tag/v2.1.7).
  - Pre-packaged Calls plugin version [v0.22.2](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v0.22.2).
@@ -69,7 +71,7 @@ If you upgrade from a release earlier than v9.3, please read the other [Importan
   
 #### Changes to the Enterprise plan:
  - Under ``GlobalRelayMessageExportSettings`` in ``config.json``:
-    - Added two new configuration settings ``CustomSMTPServerName`` and ``CustomSMTPPort`` to allow setting a custom URL and port for Global Relay export. ``CustomSMTPServerName`` and ``CustomSMTPPort`` cannot be configured in the system console UI.
+    - Added two new configuration settings ``CustomSMTPServerName`` and ``CustomSMTPPort`` to allow setting a custom URL and port for Global Relay export. This enables compliance export to integrate with Proofpoint.
 
 ### Open Source Components:
  - Added ``@mattermost/desktop-api`` and ``ipaddr.js`` to https://github.com/mattermost/mattermost/.
@@ -78,6 +80,7 @@ If you upgrade from a release earlier than v9.3, please read the other [Importan
  - v9.4 is built with Go ``v1.20.7``.
 
 ### Known Issues
+ - Preview doesn't work when editing a channel header [MM-56572](https://mattermost.atlassian.net/browse/MM-56572).
  - The channel member count shows as zero in the **Browse channels** modal [MM-56266](https://mattermost.atlassian.net/browse/MM-56266).
  - Adding an @mention at the start of a post draft and pressing the left or right arrow key can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
  - Status may sometimes get stuck as **Away** or **Offline** in High Availability mode with IP Hash turned off.

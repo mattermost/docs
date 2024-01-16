@@ -50,7 +50,7 @@ For customers using our service in a self-hosted deployment, the Mattermost Free
 The Mattermost Professional and Mattermost Enterprise editions are only available after deploying our Mattermost Enterprise Edition code base, and then applying a valid license key that comes with a subscription purchase, or by starting a 30-day free trial that can be activated either in-product (**System Console > Edition and License > Start trial**) or online at https://mattermost.com/trial/.
 
 Mattermost Free (Self-Hosted only)
-----------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Mattermost Free is a set of collaboration features for accelerating your technical team’s productivity, shipping software faster with higher quality, and improving alignment among team members.
 
@@ -80,7 +80,7 @@ Features include:
 See a complete list of features `here <https://mattermost.com/pricing>`__.
 
 Mattermost Professional 
------------------------
+~~~~~~~~~~~~~~~~~~~~~~~
 
 Mattermost Professional is the set of collaboration features that enables you to build and scale your sophisticated technical workflows across multiple cross-functional teams to deliver mission-critical software.
 
@@ -102,7 +102,7 @@ This offering includes all the features of Mattermost Free, plus:
 See a complete list of features `here <https://mattermost.com/pricing>`__.
 
 Mattermost Enterprise 
----------------------
+~~~~~~~~~~~~~~~~~~~~~
 
 Mattermost Enterprise is an enterprise-grade collaboration system that supports and helps you scale your mission-critical enterprise workflows, meet strict enterprise security, compliance, and privacy requirements, as well as provide executive reporting, dashboards, and productivity metrics.
 
