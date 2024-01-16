@@ -53,6 +53,7 @@ If you upgrade from a release earlier than v9.4, please read the other [Importan
 #### Plugins
  - Plugins are now allowed to register user settings.
  - Plugins can now register an action in the **User Settings** section. Plugins can also now disable a section in their **User Settings**.
+ - Included session id in request payload of the ``WebSocketMessageHasBeenPosted`` plugin hook.
 
 ### Bug Fixes
  - Fixed an issue where the right-hand side stopped getting the focus when navigating from **Global Threads** or **Global Drafts**.
