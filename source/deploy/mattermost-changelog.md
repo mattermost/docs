@@ -47,7 +47,7 @@ If you upgrade from a release earlier than v9.3, please read the other [Importan
  - Added support for IP Filtering in Cloud (Cloud Enterprise plan) (this feature is disabled by default and behind a feature flag).
  - Added support for Bring Your Own Key (BYOK) Encryption (Cloud Enterprise plan).
  - An optional dedicated filestore is now used for compliance exports if configured (Cloud Enterprise plan).
- - ``MessageExportSettings.GlobalRelaySettings.CustomerType`` now supports "CUSTOM".
+ - ``MessageExportSettings.GlobalRelaySettings.CustomerType`` now supports "CUSTOM", this enables our .
  - Added new ``ServerMetrics`` hook to allow plugins to register a custom HTTP endpoint to serve their metrics under the server's metrics HTTP listener.
  - Admins now have the ability to pipe the output of ``mmctl websocket`` into the JSON parser.
  - Added stores for OAuth **Outgoing Connections**.
@@ -69,7 +69,7 @@ If you upgrade from a release earlier than v9.3, please read the other [Importan
   
 #### Changes to the Enterprise plan:
  - Under ``GlobalRelayMessageExportSettings`` in ``config.json``:
-    - Added two new configuration settings ``CustomSMTPServerName`` and ``CustomSMTPPort`` to allow setting a custom URL and port for Global Relay export. ``CustomSMTPServerName`` and ``CustomSMTPPort`` cannot be configured in the system console UI.
+    - Added two new configuration settings ``CustomSMTPServerName`` and ``CustomSMTPPort`` to allow setting a custom URL and port for Global Relay export, this enables compliance export to integrate with Proofpoint.
 
 ### Open Source Components:
  - Added ``@mattermost/desktop-api`` and ``ipaddr.js`` to https://github.com/mattermost/mattermost/.
