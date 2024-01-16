@@ -640,6 +640,40 @@ This setting disables re-fetching of channel and channel members on browser focu
 | This feature's ``config.json`` setting is ``"ExperimentalSettings.DisableRefetchingOnBrowserFocus": false`` with options ``true`` and ``false``. |
 +--------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Enable dedicated export filestore target
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This setting enables you to specify an alternate filestore target for Mattermost `bulk exports </manage/bulk-export-tool.html>`__ and `compliance exports </comply/compliance-export.html>`__. 
+
+**True**: A new ``ExportFileBackend()`` is generated under ``FileSettings`` using new configuration values for the following configuration settings:
+
+- ``ExportDriverName``
+- ``ExportDirectory``
+- ``ExportAmazonS3AccessKeyId``
+- ``ExportAmazonS3SecretAccessKey``
+- ``ExportAmazonS3Bucket``
+- ``ExportAmazonS3PathPrefix``
+- ``ExportAmazonS3Region``
+- ``ExportAmazonS3Endpoint``
+- ``ExportAmazonS3SSL``
+- ``ExportAmazonS3SignV2``
+- ``ExportAmazonS3SSE``
+- ``ExportAmazonS3Trace``
+- ``ExportAmazonS3RequestTimeoutMilliseconds``
+- ``ExportAmazonS3PresignExpiresSeconds``
+
+**False**: Standard `file storage </configure/environment-configuration-settings.html#file-storage>`__ is used (or when the configuration setting is omitted).
+
+When an alternate filestore target is configured, Mattermost Cloud admins can generate an S3 presigned URL for exports using the ``/exportlink [job-id|zip file|latest]`` slash command. See the `Mattermost workspace migration </manage/cloud-data-export.html#create-the-export>`__ documentation for details. Alternatively, Cloud and self-hosted admins can use the `mmctl export generate-presigned-url </manage/mmctl-command-line-tool.html#mmctl-export-generate-presigned-url>`__ command to generate a presigned URL directly from mmctl.
+
+.. note::
+
+  Generating an S3 presigned URL requires the feature flag ``EnableExportDirectDownload`` to be set to ``true``,  the storage must be compatible with generating an S3 link, and this experimental configuration setting must be set to ``true``. Presigned URLs for exports aren't supported for systems with shared storage.
+
++-------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ExperimentalSettings.DedicatedExportStore": false`` with options ``true`` and ``false``.     |
++-------------------------------------------------------------------------------------------------------------------------------------------+
+
 ----
 
 Experimental Bleve configuration settings
