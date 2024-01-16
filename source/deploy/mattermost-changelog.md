@@ -66,19 +66,21 @@ If you upgrade from a release earlier than v9.4, please read the other [Importan
  - Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
 
 #### Changes to all plans:
- - Added two new configuration settings, ``DataRetentionSettings.MessageRetentionHours`` and ``DataRetentionSettings.FileRetentionHours``, in order to support setting your global retention time in hours. ``DataRetentionSettings.MessageRetentionDays`` and ``DataRetentionSettings.FileRetentionDays`` are deprecated but we will continue to use their value until you set something for their hours equivalent. If Days are set then the hours config must be 0 and if hours is set then the days config must be 0. We do not support hours for granular retention policies. Due to how our Elasticsearch indexes are stored, Data retention will now also remove elastic search indexes equal to the day of the retention cut-off time.
- - Added new configuration values for Wrangler:
-``AllowedEmailDomain`` - a CSV list of strings, where each is an email domain that is allowed to use the feature (e.g. - on community.mattermost.com, ``mattermost.com`` would allow staff to move a thread, while non-staff cannot).
-``MoveThreadMaxCount`` - a number representing the maximum number of posts that can be in a thread for it to be moveable.
-``MoveThreadToAnotherTeamEnable`` - a boolean value representing whether moving should work across teams.
-``MoveThreadFromPrivateChannelEnable`` - a boolean value representing whether moving should work from within a private channel.
-``MoveThreadFromDirectMessageChannelEnable`` - a boolean value representing whether moving should be allowed from within a group message.
+ - Under ``ServiceSettings`` in ``config.json``:
+     - Added ``MaximumPayloadSizeBytes`` to add a limit to the payload size of API endpoints passing in arrays.
  - Added a configuration setting ``OutgoingIntegrationRequestsDefaultTimeout`` for integration requests.
- - Added ``MaximumPayloadSizeBytes``
-  
+
+#### Changes to the Professional and Enterprise plans:
+ - Under ``WranglerSettings`` in ``config.json``:
+    - Added ``AllowedEmailDomain`` - a CSV list of strings, where each is an email domain that is allowed to use the feature (e.g. - on community.mattermost.com, ``mattermost.com`` would allow staff to move a thread, while non-staff cannot).
+    - ``MoveThreadMaxCount`` - a number representing the maximum number of posts that can be in a thread for it to be moveable.
+    - ``MoveThreadToAnotherTeamEnable`` - a boolean value representing whether moving should work across teams.
+    - ``MoveThreadFromPrivateChannelEnable`` - a boolean value representing whether moving should work from within a private channel.
+    - ``MoveThreadFromDirectMessageChannelEnable`` - a boolean value representing whether moving should be allowed from within a group message.
+
 #### Changes to the Enterprise plan:
- - 
-    - 
+ - Under ``DataRetentionSettings`` in ``config.json``:
+    - Added two new configuration settings, ``MessageRetentionHours`` and ``FileRetentionHours``, in order to support setting your global retention time in hours. ``DataRetentionSettings.MessageRetentionDays`` and ``DataRetentionSettings.FileRetentionDays`` are deprecated but we will continue to use their value until you set something for their hours equivalent. If Days are set then the hours configuration must be 0 and if hours is set then the days config must be 0. We do not support hours for granular retention policies. Due to how our Elasticsearch indexes are stored, Data retention will now also remove elastic search indexes equal to the day of the retention cut-off time.
 
 ### API Changes
  - Added a new API endpoint ``POST /api/v4/posts/<post ID>/move``.
