@@ -15,6 +15,10 @@ From Mattermost v9.2, this changelog summarizes updates for the latest cloud and
 :depth: 2
 ```
 
+## Release v9.5
+
+
+
 ## Release v9.4 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
 
 - **9.4.1, released 2024-01-16**
