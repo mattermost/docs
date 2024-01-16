@@ -71,7 +71,7 @@ See [this walkthrough video](https://www.youtube.com/watch?v=bEMp4vYLi6c&feature
   
 #### Changes to the Enterprise plan:
  - Under ``GlobalRelayMessageExportSettings`` in ``config.json``:
-    - Added two new configuration settings ``CustomSMTPServerName`` and ``CustomSMTPPort`` to allow setting a custom URL and port for Global Relay export, this enables compliance export to integrate with Proofpoint.
+    - Added two new configuration settings ``CustomSMTPServerName`` and ``CustomSMTPPort`` to allow setting a custom URL and port for Global Relay export. This enables compliance export to integrate with Proofpoint.
 
 ### Open Source Components:
  - Added ``@mattermost/desktop-api`` and ``ipaddr.js`` to https://github.com/mattermost/mattermost/.
