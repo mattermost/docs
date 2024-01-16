@@ -5,8 +5,9 @@ Both self-hosted and Cloud admins can access the following configuration setting
 
 - `Experimental System Console configuration settings <#experimental-system-console-configuration-settings>`__
 - `Experimental Bleve configuration settings <#experimental-bleve-configuration-settings>`__
-- `Experimental configuration settings for self-hosted deployments only <#experimental-configuration-settings-for-self-hosted-deployments-only>`__
+- `Beta Audit logging configuration settings <#beta-audit-logging-configuration-options>`__
 - `Experimental job configuration settings <#experimental-job-configuration-settings>`__
+- `Experimental configuration settings for self-hosted deployments only <#experimental-configuration-settings-for-self-hosted-deployments-only>`__
 
 ----
 
@@ -639,6 +640,40 @@ This setting disables re-fetching of channel and channel members on browser focu
 | This feature's ``config.json`` setting is ``"ExperimentalSettings.DisableRefetchingOnBrowserFocus": false`` with options ``true`` and ``false``. |
 +--------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Enable dedicated export filestore target
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This setting enables you to specify an alternate filestore target for Mattermost `bulk exports </manage/bulk-export-tool.html>`__ and `compliance exports </comply/compliance-export.html>`__. 
+
+**True**: A new ``ExportFileBackend()`` is generated under ``FileSettings`` using new configuration values for the following configuration settings:
+
+- ``ExportDriverName``
+- ``ExportDirectory``
+- ``ExportAmazonS3AccessKeyId``
+- ``ExportAmazonS3SecretAccessKey``
+- ``ExportAmazonS3Bucket``
+- ``ExportAmazonS3PathPrefix``
+- ``ExportAmazonS3Region``
+- ``ExportAmazonS3Endpoint``
+- ``ExportAmazonS3SSL``
+- ``ExportAmazonS3SignV2``
+- ``ExportAmazonS3SSE``
+- ``ExportAmazonS3Trace``
+- ``ExportAmazonS3RequestTimeoutMilliseconds``
+- ``ExportAmazonS3PresignExpiresSeconds``
+
+**False**: Standard `file storage </configure/environment-configuration-settings.html#file-storage>`__ is used (or when the configuration setting is omitted).
+
+When an alternate filestore target is configured, Mattermost Cloud admins can generate an S3 presigned URL for exports using the ``/exportlink [job-id|zip file|latest]`` slash command. See the `Mattermost workspace migration </manage/cloud-data-export.html#create-the-export>`__ documentation for details. Alternatively, Cloud and self-hosted admins can use the `mmctl export generate-presigned-url </manage/mmctl-command-line-tool.html#mmctl-export-generate-presigned-url>`__ command to generate a presigned URL directly from mmctl.
+
+.. note::
+
+  Generating an S3 presigned URL requires the feature flag ``EnableExportDirectDownload`` to be set to ``true``,  the storage must be compatible with generating an S3 link, and this experimental configuration setting must be set to ``true``. Presigned URLs for exports aren't supported for systems with shared storage.
+
++-------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ExperimentalSettings.DedicatedExportStore": false`` with options ``true`` and ``false``.     |
++-------------------------------------------------------------------------------------------------------------------------------------------+
+
 ----
 
 Experimental Bleve configuration settings
@@ -742,6 +777,131 @@ Enable Bleve for autocomplete queries
 +-----------------------------------------------------------------------------------------------------------------+
 
 ----
+
+Beta audit logging configuration settings
+-----------------------------------------
+
+Enable the following settings to output audit events. You can specify these settings independently for audit events and AD/LDAP events. 
+When audit logging is enabled, you can specify size, backup interval, compression, maximium age to manage file rotation, and timestamps for audit logging.
+
+.. note::
+  
+  These settings aren't available in the System Console and can only be set in ``config.json``.
+
+.. config:setting:: exp-wroteauditfileslocally
+  :displayname: File name (Beta Audit Logging)
+  :systemconsole: N/A
+  :configjson: FileName
+  :environment: N/A
+  :description: Write audit files locally.
+
+Write audit files locally
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**True**: Audit files are written locally to a file.
+
+**False**: Audit logs aren't written locally to a file.
+
++--------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``".ExperimentalAuditSettings.FileEnabled": false",`` with options ``true`` and ``false``. |
++--------------------------------------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: exp-auditfilename
+  :displayname: File name (Beta Audit Logging)
+  :systemconsole: N/A
+  :configjson: FileName
+  :environment: N/A
+  :description: Specify the path to the audit file.
+
+File name
+~~~~~~~~~
+
+Specify the path to the audit file.
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``".ExperimentalAuditSettings.FileName": ""`` with string input consisting of a user-defined path (e.g. ``/var/log/mattermost_audit.log``).         |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: exp-filemaxsize
+  :displayname: File max size MB (Beta Audit Logging)
+  :systemconsole: N/A
+  :configjson: FileMaxSizeMB
+  :environment: N/A
+  :description: This is the maximum size (measured in megabytes) that the file can grow before triggering rotation. Default is **100** MB.
+
+File max size MB
+~~~~~~~~~~~~~~~~
+
+This is the maximum size (in megabytes) that the file can grow before triggering rotation. The default setting is ``100``.
+
++---------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``".ExperimentalAuditSettings.FileMaxSizeMB": 100`` with numerical input. |
++---------------------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: exp-filemaxage
+  :displayname: File max age days (Beta Audit Logging)
+  :systemconsole: N/A
+  :configjson: FileMaxAgeDays
+  :environment: N/A
+  :description: This is the maximum age in days a file can reach before triggering rotation. The default value is **0**, indicating no limit on the age.
+
+File max age days
+~~~~~~~~~~~~~~~~~
+
+This is the maximum age in days a file can reach before triggering rotation. The default value is ``0``, indicating no limit on the age.
+
++--------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``".ExperimentalAuditSettings.FileMaxAgeDays": 0`` with numerical input. |
++--------------------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: exp-filemaxbackups
+  :displayname: File max backups (Beta Audit Logging)
+  :systemconsole: N/A
+  :configjson: FileMaxBackups
+  :environment: N/A
+  :description: This is the maximum number of rotated files kept; the oldest is deleted first. The default value is **0**, indicating no limit on the number of backups.
+
+File max backups
+~~~~~~~~~~~~~~~~
+
+This is the maximum number of rotated files kept; the oldest is deleted first. The default value is ``0``, indicating no limit on the number of backups.
+
++--------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``".ExperimentalAuditSettings.FileMaxBackups": 0`` with numerical input. |
++--------------------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: exp-filecompress
+  :displayname: File compress (Beta Audit Logging)
+  :systemconsole: N/A
+  :configjson: FileCompress
+  :environment: N/A
+  :description: When ``true``, rotated files are compressed using ``gzip``. Default value is **false**.
+
+File compress
+~~~~~~~~~~~~~
+
+When ``true``, rotated files are compressed using ``gzip``.
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``".ExperimentalAuditSettings.FileCompress": false`` with options ``true`` and ``false``. |
++-------------------------------------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: exp-filemaxqueuesize
+  :displayname: File max queue size (Beta Audit Logging)
+  :systemconsole: N/A
+  :configjson: FileMaxQueueSize
+  :environment: N/A
+  :description: This setting determines how many audit records can be queued/buffered at any point in time when writing to a file. Default is **1000** records.
+
+File max queue size
+~~~~~~~~~~~~~~~~~~~
+
+This setting determines how many audit records can be queued/buffered at any point in time when writing to a file. The default is ``1000`` records.
+This setting can be left as default unless you are seeing audit write failures in the server log and need to adjust the number accordingly.
+
++-------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``".ExperimentalAuditSettings.FileMaxQueueSize": 1000`` with numerical input. |
++-------------------------------------------------------------------------------------------------------------------------+
 
 Experimental configuration settings for self-hosted deployments only
 --------------------------------------------------------------------
@@ -939,278 +1099,11 @@ Used to control the buffer of outstanding Push Notification messages to be sent.
 +---------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: exp-enableauditfiles
-  :displayname: File configuration options (Experimental)
+  :displayname: File configuration settings (Beta)
   :systemconsole: N/A
   :configjson: FileEnabled
   :environment: N/A
   :description: Enable this setting to write audit files locally, specifying size, backup interval, compression, maximum age to manage file rotation, and timestamps. Default value is **false**.
-
-File configuration options
-~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-Enable this setting to write audit files locally, specifying size, backup interval, compression, maximum age to manage file rotation, and timestamps.
-
-**True**: File output is enabled.
-
-**False**: File output is disabled.
-
-+---------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"FileEnabled": false`` with options ``true`` and ``false``. |
-+---------------------------------------------------------------------------------------------------------+
-
-.. config:setting:: exp-auditfilename
-  :displayname: File name (Experimental)
-  :systemconsole: N/A
-  :configjson: FileName
-  :environment: N/A
-  :description: This is the path to the output file location.
-
-File name
-~~~~~~~~~
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-This is the path to the output file location.
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"FileName": ""`` with string input consisting of a user-defined path (e.g. ``/var/log/mattermost_audit.log``).                                    |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-.. config:setting:: exp-filemaxsize
-  :displayname: File max size MB (Experimental)
-  :systemconsole: N/A
-  :configjson: FileMaxSizeMB
-  :environment: N/A
-  :description: This is the maximum size (measured in megabytes) that the file can grow before triggering rotation. Default is **100** MB.
-
-File max size MB
-~~~~~~~~~~~~~~~~
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-This is the maximum size (measured in megabytes) that the file can grow before triggering rotation. The default setting is 100.
-
-+------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"FileMaxSizeMB": 100`` with numerical input. |
-+------------------------------------------------------------------------------------------+
-
-.. config:setting:: exp-filemaxage
-  :displayname: File max age days (Experimental)
-  :systemconsole: N/A
-  :configjson: FileMaxAgeDays
-  :environment: N/A
-  :description: This is the maximum age in days a file can reach before triggering rotation. The default value is **0**, indicating no limit on the age.
-
-File max age days
-~~~~~~~~~~~~~~~~~
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-This is the maximum age in days a file can reach before triggering rotation. The default value is 0, indicating no limit on the age.
-
-+-----------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"FileMaxAgeDays": 0`` with numerical input. |
-+-----------------------------------------------------------------------------------------+
-
-.. config:setting:: exp-filemaxbackups
-  :displayname: File max backups
-  :systemconsole: N/A
-  :configjson: FileMaxBackups
-  :environment: N/A
-  :description: This is the maximum number of rotated files kept; the oldest is deleted first. The default value is **0**, indicating no limit on the number of backups.
-
-File max backups
-~~~~~~~~~~~~~~~~
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-This is the maximum number of rotated files kept; the oldest is deleted first. The default value is 0, indicating no limit on the number of backups.
-
-+-----------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"FileMaxBackups": 0`` with numerical input. |
-+-----------------------------------------------------------------------------------------+
-
-.. config:setting:: exp-filecompress
-  :displayname: File compress (Experimental)
-  :systemconsole: N/A
-  :configjson: FileCompress
-  :environment: N/A
-  :description: When ``true``, rotated files are compressed using ``gzip``. Default value is **false**.
-
-File compress
-~~~~~~~~~~~~~
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-When ``true``, rotated files are compressed using ``gzip``.
-
-+----------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"FileCompress": false`` with options ``true`` and ``false``. |
-+----------------------------------------------------------------------------------------------------------+
-
-.. config:setting:: exp-filemaxqueuesize
-  :displayname: File max queue size (Experimental)
-  :systemconsole: N/A
-  :configjson: FileMaxQueueSize
-  :environment: N/A
-  :description: This setting determines how many audit records can be queued/buffered at any point in time when writing to a file. Default is **1000** records.
-
-File max queue size
-~~~~~~~~~~~~~~~~~~~
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-This setting determines how many audit records can be queued/buffered at any point in time when writing to a file. The default is 1000 records.
-This setting can be left as default unless you are seeing audit write failures in the server log and need to adjust the number accordingly.
-
-+----------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"FileMaxQueueSize": 1000`` with numerical input. |
-+----------------------------------------------------------------------------------------------+
-
-.. config:setting:: exp-enablesyslog
-  :displayname: Syslog configuration options (Experimental)
-  :systemconsole: N/A
-  :configjson: SysLogEnabled
-  :environment: N/A
-  :description: Enable this setting to write audit records to a local or remote syslog, specifying the IP, port, user-generated fields, and certificate settings. Default value is **false**.
-
-Syslog configuration options
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-Enable this setting to write audit records to a local or remote syslog, specifying the IP, port, user-generated fields, and certificate settings.
-
-**True**: Syslog output is enabled.
-
-**False**: Syslog output is disabled.
-
-+-----------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"SysLogEnabled": false`` with options ``true`` and ``false``. |
-+-----------------------------------------------------------------------------------------------------------+
-
-.. config:setting:: exp-syslogip
-  :displayname: Syslog IP (Experimental)
-  :systemconsole: N/A
-  :configjson: SysLogIP
-  :environment: N/A
-  :description: The IP address or domain of the syslog server. Default value is **localhost**.
-
-Syslog IP
-~~~~~~~~~
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-The IP address or domain of the syslog server. Use ``localhost`` for local syslog.
-
-+-------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"SysLogIP": "localhost"`` with string input consisting of an IP address or domain name. |
-+-------------------------------------------------------------------------------------------------------------------------------------+
-
-.. config:setting:: exp-syslogport
-  :displayname: Syslog port (Experimental)
-  :systemconsole: N/A
-  :configjson: SysLogPort
-  :environment: N/A
-  :description: The port that the syslog server is listening on. Default value is **6514**.
-
-Syslog port
-~~~~~~~~~~~
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-The port that the syslog server is listening on. The default port is 6514.
-
-+------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"SysLogPort": 6514`` with numeric input consisting of a port number. |
-+------------------------------------------------------------------------------------------------------------------+
-
-.. config:setting:: exp-syslogtag
-  :displayname: Syslog tag (Experimental)
-  :systemconsole: N/A
-  :configjson: SysLogTag
-  :environment: N/A
-  :description: The syslog metadata tag field.
-
-Syslog tag
-~~~~~~~~~~
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-The syslog metadata tag field.
-
-+-------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"SysLogTag": ""`` with string input consisting of a user-defined tag field. |
-+-------------------------------------------------------------------------------------------------------------------------+
-
-.. config:setting:: exp-syslogcert
-  :displayname: Syslog cert (Experimental)
-  :systemconsole: N/A
-  :configjson: SysLogCert
-  :environment: N/A
-  :description: This is the path to the syslog server certificate for TLS connections (``.crt`` or ``.pem``).
-
-Syslog cert
-~~~~~~~~~~~
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-This is the path to the syslog server certificate for TLS connections (``.crt`` or ``.pem``).
-
-+-----------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"SysLogCert": ""`` with string input consisting of the path to the certificate. |
-+-----------------------------------------------------------------------------------------------------------------------------+
-
-.. config:setting:: exp-sysloginsecure
-  :displayname: Syslog insecure (Experimental)
-  :systemconsole: N/A
-  :configjson: SysLogInsecure
-  :environment: N/A
-  :description: This setting controls whether a client verifies the server's certificate chain and host name. Default value is **false**.
-
-Syslog insecure
-~~~~~~~~~~~~~~~
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-This setting controls whether a client verifies the server's certificate chain and host name. If ``true``, TLS accepts any certificate presented by the server and any host name in that certificate. In this mode, TLS is susceptible to man-in-the-middle attacks.
-
-.. note::
-   This should be used only for testing and not in a production environment.
-
-+------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"SysLogInsecure": false`` with options ``true`` and ``false``. |
-+------------------------------------------------------------------------------------------------------------+
-
-.. config:setting:: exp-syslogmaxqueuesize
-  :displayname: Syslog max queue size (Experimental)
-  :systemconsole: N/A
-  :configjson: SysLogMaxQueueSize
-  :environment: N/A
-  :description: This setting determines how many audit records can be queued/buffered at any point in time when writing to syslog. Default is **1000** records.
-
-Syslog max queue size
-~~~~~~~~~~~~~~~~~~~~~
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-This setting determines how many audit records can be queued/buffered at any point in time when writing to syslog. The default is 1000 records.
-This setting can be left as default unless you are seeing audit write failures in the server log and need to adjust the number accordingly.
-
-+------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"SysLogMaxQueueSize": 1000`` with numerical input. |
-+------------------------------------------------------------------------------------------------+
-
-.. config:setting:: exp-restrictsystemadmin
-  :displayname: Restrict system admin (Experimental)
-  :systemconsole: N/A
-  :configjson: RestrictSystemAdmin
-  :environment: N/A
-
-  - **true**: Restricts the System Admin from viewing and modifying a subset of server configuration settings from the System Console.
-  - **false**: **(Default)** No restrictions are applied to the System Admin role.
 
 Restrict system admin
 ~~~~~~~~~~~~~~~~~~~~~

@@ -728,8 +728,51 @@ Call recording quality
 |                                                                                                                             | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.calls.recordingquality``                                                                    |
 | The default is **Medium**. This is a required value.                                                                        |                                                                                                                                                                |
 +-----------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **Note**: The quality setting will affect the performance of the recording service and the file size of recordings. Refer to the `deployment section <configure/calls-deployment.html#configure-recording>`__ for more information.                                                          |
+| **Note**: The quality setting will affect the performance of the job service and the file size of recordings. Refer to the `deployment section <calls-deployment.html#configure-recording-and-transcriptions>`__ for more information.                                                       |
 +-----------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: plugins-enablecalltranscriptions
+  :displayname: Enable call transcriptions (Plugins - Calls)
+  :systemconsole: Plugins > Calls
+  :configjson: PluginSettings.Plugins.com.mattermost.calls.enabletranscriptions
+  :environment: N/A
+  :description: Enables automatic transcriptions of calls.
+
+Enable call transcriptions (Experimental)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: ../_static/badges/ent-selfhosted-only.rst
+  :start-after: :nosearch:
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+| - **true**: Enables automatic transcriptions of calls.                                                                                                                                                                                                             | - System Config path: **Plugins > Calls**                                                                  |
+| - **false**: **(Default)** Call transcriptions functionality is disabled.                                                                                                                                                                                          | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.calls.enabletranscriptions``            |
+|                                                                                                                                                                                                                                                                    |                                                                                                            |
+| Transcriptions are generated from the call participants' audio tracks and the resulting files are attached to the call thread when the recording ends. Captions will be optionally rendered on top of the recording file video player.                             |                                                                                                            |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+| **Note**: Call transcriptions require call recordings to be enabled. This setting is available starting in plugin version 0.22.                                                                                                                                                                                                                                                 |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: plugins-transcribermodelsize
+  :displayname: Call transcriber model size (Plugins - Calls)
+  :systemconsole: Plugins > Calls
+  :configjson: PluginSettings.Plugins.com.mattermost.calls.transcribermodelsize
+  :environment: N/A
+  :description: The speech-to-text model size to use. Heavier models will produce more accurate results at the expense of processing time and resources usage.
+
+Transcriber model size
+~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: ../_static/badges/ent-selfhosted-only.rst
+  :start-after: :nosearch:
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| The speech-to-text model size to use. Heavier models will produce more accurate results at the expense of processing time and resources usage. Available options are: *Tiny*, *Base* and *Small*.                                                                                                            | - System Config path: **Plugins > Calls**                                                                                                                      |
+|                                                                                                                                                                                                                                                                                                              | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.calls.transcribermodelsize``                                                                |
+| The default is **Base**. This is a required value.                                                                                                                                                                                                                                                           |                                                                                                                                                                |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Note**: The model size setting will affect the performance of the job service. Refer to the `deployment section <calls-deployment.html#configure-recording-and-transcriptions>`__ for more information. This setting is available starting in plugin version 0.22.                                                                                                                                                                                                          |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: plugins-callsenableipv6
   :displayname: (Experimental) Enable IPv6 (Plugins - Calls)

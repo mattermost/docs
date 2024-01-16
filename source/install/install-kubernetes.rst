@@ -11,7 +11,7 @@ Install Mattermost on Kubernetes
 
 You can install and deploy a production-ready Mattermost system on a Kubernetes cluster using the Mattermost Kubernetes Operator in practically any environment with less IT overhead and more automation.
 
-You'll need a `Kubernetes cluster <https://kubernetes.io/docs/setup/>`__ running version 1.16 or higher,  Kubernetes CLI `kubectl <https://kubernetes.io/docs/reference/kubectl/overview/>`__ installed on local machine, and a basic understanding of Kubernetes concepts (such as deployments, pods) and actions (such as applying manifests, viewing pod logs). Running Mattermost in Kubernetes requires resources based on your total number of users. See the `Mattermost Kubernetes Operator </install/mattermost-kubernetes-operator.html>`__ documentation to learn more about the minimum Kubernetes cluster resources Mattermost requires at different scales.
+You'll need a `Kubernetes cluster <https://kubernetes.io/docs/setup/>`__ running `a version that is currently supported with patch releases <https://kubernetes.io/releases/>`__,  Kubernetes CLI `kubectl <https://kubernetes.io/docs/reference/kubectl/overview/>`__ installed on local machine, and a basic understanding of Kubernetes concepts (such as deployments, pods) and actions (such as applying manifests, viewing pod logs). Running Mattermost in Kubernetes requires resources based on your total number of users. See the `Mattermost Kubernetes Operator </install/mattermost-kubernetes-operator.html>`__ documentation to learn more about the minimum Kubernetes cluster resources Mattermost requires at different scales.
 
 .. tip::
     
@@ -48,10 +48,10 @@ Deploy Mattermost
     apiVersion: v1
     kind: Secret
     metadata:
-      name: mattermost-license
+      name: my-mattermost-license
     type: Opaque
     stringData:
-      license: [LICENSE_FILE_CONTENTS]
+      license: <LICENSE_FILE_CONTENTS>
 
 2. Create an installation manifest file locally in a text editor by copying and pasting contenst from the Mattermost installation manifest, and adjusting fields for your configuration and environment. 
 
@@ -60,37 +60,34 @@ Deploy Mattermost
       apiVersion: installation.mattermost.com/v1beta1
       kind: Mattermost
       metadata:
-        name: mm-example-full                         # Chose the desired name
+        name: <INSTALLATION_NAME_HERE>                # Chose the desired installation name. Example = mm-example-full
       spec:
-        size: 5000users                               # Adjust to your requirements
+        size: <SIZE_VALUE_HERE>                       # Adjust to your requirements. Example = 5000users
         ingress:
           enabled: true
-          host: example.mattermost-example.com        # Adjust to your domain
+          host: <FULL_DOMAIN_NAME_HERE>               # Adjust to your domain. Example = example.mattermost-example.com
           annotations:
             kubernetes.io/ingress.class: nginx
-        version: 6.0.1
-        licenseSecret: ""                             # If you have created secret in step 1, put its name here
+        version: <VERSION_HERE>                       # Select a recent supported version of Mattermost. Example = 9.3.0
+        licenseSecret: ""                             # If you created a license secret in step 1, put the secret name here
     
   Save the file as ``mattermost-installation.yaml``. While recommended file names are provided, your naming conventions may differ. 
 
   Some of the most commonly-used fields include:
 
   .. csv-table::
-    :header: "Field", "Description", "Must Edit"
+    :header: "Field", "Description"
 
-    "metadata.name", "The name of your Mattermost as it will be shown in Kubernetes. The shorter the better.", "Yes"
-    "spec.size", "The size of your installation. This can be '100users', '1000users, '5000users', '10000users', or '25000users'.", "Yes"
-    "spec.ingress.host", "The DNS for your Mattermost installation.", "Yes"
-    "spec.version", "The Mattermost version.", "No"
-    "spec.licenseSecret", "The name of the Kubernetes secret containing your license (e.g. mattermost-license). Required for Enterprise deployments.", "No"
-    "spec.mattermostEnv", "List of custom environment variables for the Mattermost instance.", "No"
+    "metadata.name", "The name of your Mattermost as it will be shown in Kubernetes. The shorter the better."
+    "spec.size", "The size of your installation. This can be '100users', '1000users, '5000users', '10000users', or '25000users'."
+    "spec.ingress.host", "The DNS for your Mattermost installation."
+    "spec.version", "The Mattermost version. Refer to `the version archive page <https://docs.mattermost.com/upgrade/version-archive.html>`__ when selecting a mattermost version."
+    "spec.licenseSecret", "The name of the Kubernetes secret containing your license (e.g. mattermost-license). Required for Enterprise deployments."
+    "spec.mattermostEnv", "List of custom environment variables for the Mattermost instance. Only required when tweaking Mattermost configuration is required."
     
-    Additional fields are documented `in the example <https://github.com/mattermost/mattermost-operator/blob/master/docs/examples/mattermost_full.yaml>`__.
-    If you have previous experience with Kubernetes Custom Resources, you can also check the `Custom Resource Definition <https://github.com/mattermost/mattermost-operator/blob/master/config/crd/bases/installation.mattermost.com_mattermosts.yaml>`__.
+  Additional fields are documented `in the example <https://github.com/mattermost/mattermost-operator/blob/master/docs/examples/mattermost_full.yaml>`__. If you have previous experience with Kubernetes Custom Resources, you can also check the `Custom Resource Definition <https://github.com/mattermost/mattermost-operator/blob/master/config/crd/bases/installation.mattermost.com_mattermosts.yaml>`__.
 
-3. Create external database secret.
-
-  The database secret needs to be created in the namespace that will hold the Mattermost installation. The secret should contain the following data:
+3. Create external database secret. The database secret needs to be created in the namespace that will hold the Mattermost installation. The secret should contain the following data:
 
   .. csv-table::
     :header: "Key", "Description", "Required"
@@ -115,11 +112,9 @@ Deploy Mattermost
 
   .. note:: 
 
-    - For PostgreSQL databases, the connection is checked with `pg_isready <https://www.postgresql.org/docs/9.3/app-pg-isready.html>`__ so the ``DB_CONNECTION_CHECK_URL`` is the same as connection string.
+    For PostgreSQL databases, the connection is checked with `pg_isready <https://www.postgresql.org/docs/9.3/app-pg-isready.html>`__ so the ``DB_CONNECTION_CHECK_URL`` is the same as connection string.
 
-4. Create external filestore secret.
-
-  The filestore secret needs to be created in the namespace that will hold the Mattermost installation. The secret should contain the following data:
+4. Create external filestore secret. The filestore secret needs to be created in the namespace that will hold the Mattermost installation. The secret should contain the following data:
 
   .. csv-table::
     :header: "Key", "Description", "Required"
@@ -192,8 +187,8 @@ Deploy Mattermost
         host: example.mattermost-example.com
         annotations:
           kubernetes.io/ingress.class: nginx
-      version: 6.0.1
-      licenseSecret: ""
+      version: 9.3.0
+      licenseSecret: my-mattermost-license
       database:
         external:
           secret: my-postgres-connection
@@ -210,7 +205,7 @@ Deploy Mattermost
 
 6. Apply the installation manifest file. Manifests are applied with ``kubectl``. Before running the commands make sure you are connected to your Kubernetes cluster.
 
-  a. Create the Mattermost namespace:
+  a. Create a namespace for this new Mattermost installation:
 
     .. code-block:: sh
       :class: mm-code-block
