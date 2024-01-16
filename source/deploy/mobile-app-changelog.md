@@ -15,7 +15,7 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
  - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
  - iPhone 5s devices and later with iOS 12.4+ is required.
 
-Note: Mattermost Mobile App v2.13.0 contains a low level security fix. Updating is recommended. Details will be posted on our security updates page 30 days after release as per the Mattermost Responsible Disclosure Policy.
+Note: Mattermost Mobile App v2.13.0 contains low level security fixes. Updating is recommended. Details will be posted on our security updates page 30 days after release as per the Mattermost Responsible Disclosure Policy.
 
 ### Improvements
  - Calls: Implemented an alert that shows an error to user in case they leave (or are removed from) a channel with an active call.
