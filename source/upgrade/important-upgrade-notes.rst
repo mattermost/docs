@@ -5,7 +5,7 @@ Important Upgrade Notes
   :start-after: :nosearch:
 
 .. important::
-   - Support for Mattermost Server v7.8 :doc:`Extended Support Release </upgrade/extended-support-release>` has come to the end of its life cycle in November 15, 2023. Upgrading to Mattermost Server v8.1 :doc:`Extended Support Release </upgrade/extended-support-release>` or later is required.
+   - Support for Mattermost Server v8.1 :doc:`Extended Support Release </upgrade/extended-support-release>` is coming to the end of its life cycle in May 15, 2024. Upgrading to Mattermost Server v9.5 :doc:`Extended Support Release </upgrade/extended-support-release>` or later is recommended.
    - MySQL 8.0.22 contains an `issue with JSON column types <https://bugs.mysql.com/bug.php?id=101284>`__ changing string values to integers which is preventing Mattermost from working properly. Users are advised to avoid this database version.
    - Upgrading the Microsoft Teams Calling plugin to v2.0.0 requires users to reconnect their accounts.
    - When upgrading to 7.x from a 5.x release please make sure to upgrade to 5.37.10 first for the upgrade to complete successfully.
