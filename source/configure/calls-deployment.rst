@@ -4,7 +4,7 @@ Calls self-hosted deployment
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-This document provides information on how to successfully make the Calls plugin work on self-hosted deployments. It also outlines some of the most common deployment strategies with example diagrams, and also provides the deployment guidelines for the recording service.
+This document provides information on how to successfully make the Calls plugin work on self-hosted deployments. It also outlines some of the most common deployment strategies with example diagrams, and also provides the deployment guidelines for the recording and transcription service.
 
 - `Terminology <#terminology>`__
 - `Plugin components <#plugin-components>`__
@@ -13,7 +13,7 @@ This document provides information on how to successfully make the Calls plugin 
 - `Configuration <#configuration>`__
 - `Performance <#performance>`__
 - `RTCD Service <#the-rtcd-service>`__
-- `Configure recording <#configure-recording>`__
+- `Configure recording and transcriptions <#configure-recording-and-transcriptions>`__
 - `Kubernetes deployments <#kubernetes-deployments>`__
 - `Frequently asked questions <#frequently-asked-questions>`__
 - `Troubleshooting <#troubleshooting>`__
@@ -329,15 +329,21 @@ The expected requirements are the following:
    Load balancing is done at the call level. This means that a single call will always live on a single ``rtcd`` instance.
    There's currently no support for spreading sessions belonging to the same call across a fleet of instances.
 
-Configure recording
--------------------
+Configure recording and transcriptions
+--------------------------------------
 
-Before you can start recording calls, you need to configure the ``calls-offloader`` job service. You can read about how to do that `here <https://github.com/mattermost/calls-offloader/blob/master/docs/getting_started.md>`__. Performance and scalability recommendations related to this service can be found in `here <https://github.com/mattermost/calls-offloader/blob/master/docs/performance.md>`__.
+Before you can start recording and transcribing calls, you need to configure the ``calls-offloader`` job service. You can read about how to do that `here <https://github.com/mattermost/calls-offloader/blob/master/docs/getting_started.md>`__. Performance and scalability recommendations related to this service can be found in `here <https://github.com/mattermost/calls-offloader/blob/master/docs/performance.md>`__.
 
 .. note::
   If deploying the service in a Kubernetes cluster, refer to the later section on `Helm charts <#helm-charts>`__.
 
 Once the ``calls-offloader`` service is running, recordings should be explicitly enabled through the `Enable call recordings <plugins-configuration-settings.html#enable-call-recordings-beta>`__ config setting and the service's URL should be configured using `Job service URL <plugins-configuration-settings.html#job-service-url>`__.
+
+
+Call transcriptions can be enabled through the `Enable call transcriptions <plugins-configuration-settings.html#enable-call-transcriptions-experimental>`__ config setting.
+
+.. note::
+  The call transcriptions functionality is available starting in Calls version v0.22.0
 
 Kubernetes deployments
 ----------------------
