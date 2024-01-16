@@ -15,9 +15,101 @@ From Mattermost v9.2, this changelog summarizes updates for the latest cloud and
 :depth: 2
 ```
 
-## Release v9.5
+## Release v9.5 - [Extended Support Release](https://docs.mattermost.com/upgrade/release-definitions.html#extended-support-release-esr)
 
+**Release day: 2024-02-16**
 
+### Important Upgrade Notes
+ - We have stopped supporting MySQL v5.7 since it's at the end of life. We urge customers to upgrade their MySQL instance at their earliest convenience.
+
+```{Important}
+If you upgrade from a release earlier than v9.4, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
+```
+
+### Compatibility
+ - 
+
+### Improvements
+
+#### User Interface (UI)
+ - Pre-packaged Calls version [v0.23.0](https://github.com/mattermost/mattermost-plugin-calls/releases).
+ - Improved the behavior of suggestion boxes when changing the caret position.
+ - Changed the time for tomorrow in the **Do Not Disturb** timer and post reminder to refer to the next day at 9am instead of 24hrs from the time of activation.
+ - Added a new Wrangler feature to be able to move threads (Experimental). Moving threads requires a Professional/Enterprise license to activate. This feature is not yet recommended for production use. A new feature flag ``MoveThreadsEnabled`` was added and is default OFF. Changing this value to ON will enable the experimental **Move Threads** feature.
+
+#### Administration
+ - The ``where`` field is now rendered in ``model.AppError`` only when it's present.
+ - Added Outgoing Oauth implementation ``Get``/``List`` logic.
+ - The mmctl bulk import process command in local mode now supports processing an import file without actually uploading it to the server. Simply pass the file path to the import file and the server will directly read from it, and pass the ``--bypass-upload`` flag. There is no need to use the import upload command. NOTE: all of this is applicable only in local mode.
+ - Added **Monthly Active Users** (MAU) as part of the true-up report.
+ - Made small optimizations in several database calls:
+    - ``App.HasPermissionToChannel``
+    - ``getPostsForChannelAroundLastUnread``
+    - ``publishWebsocketEventForPermalinkPost``
+    - ``countMentionsFromPost``
+ - Prometheus metrics are now available under the Source Available License.
+
+#### Performance
+ -  Optimized ``createPost`` performance.
+ - Improved the performance of emoji uploads.
+
+#### Plugins
+ - Plugins are now allowed to register user settings.
+ - Plugins can now register an action in the **User Settings** section. Plugins can also now disable a section in their **User Settings**.
+
+### Bug Fixes
+ - Fixed an issue where the right-hand side stopped getting the focus when navigating from **Global Threads** or **Global Drafts**.
+ - Fixed a theme issue in the notification settings.
+ - Fixed a regression in compliance exports which did not allow the export job to be canceled gracefully on server shutdown.
+ - Fixed an error where posts dismissed by a plugin were not properly removed from the view.
+ - Fixed an issue where if there were multiple websocket connections from a single user, then in case one connection got removed during a broadcast, there was a possibility that the other good connection would not get the event.
+ - Fixed an issue with true-up reports sending active users and not activated users.
+
+### config.json
+ - Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
+
+#### Changes to all plans:
+ - Added two new configuration settings, ``DataRetentionSettings.MessageRetentionHours`` and ``DataRetentionSettings.FileRetentionHours``, in order to support setting your global retention time in hours. ``DataRetentionSettings.MessageRetentionDays`` and ``DataRetentionSettings.FileRetentionDays`` are deprecated but we will continue to use their value until you set something for their hours equivalent. If Days are set then the hours config must be 0 and if hours is set then the days config must be 0. We do not support hours for granular retention policies. Due to how our Elasticsearch indexes are stored, Data retention will now also remove elastic search indexes equal to the day of the retention cut-off time.
+ - Added new configuration values for Wrangler:
+``AllowedEmailDomain`` - a CSV list of strings, where each is an email domain that is allowed to use the feature (e.g. - on community.mattermost.com, ``mattermost.com`` would allow staff to move a thread, while non-staff cannot).
+``MoveThreadMaxCount`` - a number representing the maximum number of posts that can be in a thread for it to be moveable.
+``MoveThreadToAnotherTeamEnable`` - a boolean value representing whether moving should work across teams.
+``MoveThreadFromPrivateChannelEnable`` - a boolean value representing whether moving should work from within a private channel.
+``MoveThreadFromDirectMessageChannelEnable`` - a boolean value representing whether moving should be allowed from within a group message.
+ - Added a configuration setting ``OutgoingIntegrationRequestsDefaultTimeout`` for integration requests.
+ - Added ``MaximumPayloadSizeBytes``
+  
+#### Changes to the Enterprise plan:
+ - 
+    - 
+
+### API Changes
+ - Added a new API endpoint ``POST /api/v4/posts/<post ID>/move``.
+ - Added ``UpdateChannelMembersNotifications`` plugin API.
+ - Added plugin APIs and hooks for accessing the **Shared Channels** service via plugins.
+ - Added a limit to the payload size of API endpoints passing in arrays.
+ - Added ``PreferencesHaveChanged`` plugin hook.
+ - Added ``GetPreferenceForUser`` plugin API.
+ - Added a new API endpoint ``GET /api/v4/users/report`` for system admin user reporting.
+ - Added a new API endpoint ``GET /api/v4/reports/users/count``.
+
+### Open Source Components
+ - Notice.txt: @tanstack/react-table, prometheus/client_model
+
+### Go Version
+ - v9.5 is built with Go ``v1.20.7``.
+
+### Known Issues
+ - Status may sometimes get stuck as **Away** or **Offline** in High Availability mode with IP Hash turned off.
+ - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
+ - Slack import through the CLI fails if email notifications are enabled.
+ - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
+ - The Playbooks left-hand sidebar doesn't update when a user is added to a run or playbook without a refresh.
+ - If a user isn't a member of a configured broadcast channel, posting a status update might fail without any error feedback. As a temporary workaround, join the configured broadcast channels, or remove those channels from the run configuration.
+ - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
+ 
+### Contributors
+ - 
 
 ## Release v9.4 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
 
