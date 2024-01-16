@@ -1,29 +1,27 @@
-:orphan:
-:nosearch:
-
-.. _manage_kubernetes:
-
-Managing the Mattermost Kubernetes operator
-============================================
-
-.. This page is intentionally not accessible via the LHS navigation pane because it's common content included on other docs pages.
+Manage the Mattermost Kubernetes Operator
+=========================================
 
 CLI commands
 ------------
 
-You can manage and monitor your Mattermost installation's installation and deployment process in the CLI, using the commands listed below.
+You can manage and monitor your Mattermost installation and deployment process in the CLI, using the commands listed below.
 
 .. code-block:: sh
 
-    $ kubectl -n mattermost get jobs
+  kubectl -n mattermost get jobs
 
 .. code-block:: sh
 
-    $ kubectl -n mattermost get all
+  kubectl -n mattermost get all
 
 Logs
 ----
 
+The following command can be used for operator or mattermost pod/container logs:
+
 .. code-block:: sh
 
-    $ mattermost logs -f [pod name]
+  kubectl -n [namespace] logs -f [pod name]
+
+If the ``-n [namespace]`` is omitted, then the default namespace of the current context is used. We recommend specifying the namespace based on your deployment.
+
