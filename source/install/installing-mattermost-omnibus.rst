@@ -20,7 +20,7 @@ Install Mattermost Omnibus
       <h3>Minimum system requirements:</h3>
       <ul>
         <li>Hardware: 1 vCPU/core with 2GB RAM (support for up to 1,000 users)</li>
-	<li>Operating System: Ubuntu 18.04 or greater</li>
+	<li>Operating System: Ubuntu 18.04 or greater, but no higher than 22.04</li>
         <li>Database: PostgreSQL v11+</li>
         <li>Network ports required:
           <ul>
