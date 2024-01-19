@@ -634,7 +634,7 @@ This setting disables re-fetching of channel and channel members on browser focu
 
 **True**: Mattermost won't refetch channels and channel members when the browser regains focus. This may result in improved performance for users with many channels and channel members.
 
-**False**: (Default) Mattermost will refetch channels and channel emmbers when the browser regains focus.
+**False**: (Default) Mattermost will refetch channels and channel members when the browser regains focus.
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ExperimentalSettings.DisableRefetchingOnBrowserFocus": false`` with options ``true`` and ``false``. |
