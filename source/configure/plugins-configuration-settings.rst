@@ -423,6 +423,31 @@ ICE host override
 
 .. |ice_host_override_link| replace:: `ICE Host Override <plugins-configuration-settings.html#ice-host-override>`__
 
+.. config:setting:: plugins-callsicehostportoverride
+  :displayname: ICE host port override (Plugins - Calls)
+  :systemconsole: Plugins > Calls
+  :configjson: PluginSettings.Plugins.com.mattermost.calls.icehostportoverride
+  :environment: N/A
+  :description: An optional port number to be used as an override for host candidates in place of the one used to listen on.
+
+ICE host port override
+~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: ../_static/badges/selfhosted-only.rst
+  :start-after: :nosearch:
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+| This setting can be used to override the port used in the ICE host candidates that get advertised to clients when connecting to calls.                              | - System Config path: **Plugins > Calls**                                                              |
+|                                                                                                                                                                     | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.calls.icehostportoverride``         |
+|                                                                                                                                                                     | - Environment variable: N/A                                                                            |
+| This can be useful in case there are additional network components (e.g. NLBs) in front of the RTC server that may route the calls traffic through a different port.|                                                                                                        |
+| Changing this setting requires a plugin restart to take effect.                                                                                                     |                                                                                                        |
+|                                                                                                                                                                     |                                                                                                        |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+| **Note**: this value will apply to both UDP and TCP host candidates.                                                                                                                                                                                                         |
+|                                                                                                                                                                                                                                                                              |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+
 .. config:setting:: plugins-callsrtcdserviceurl
   :displayname: RTCD service URL (Plugins - Calls)
   :systemconsole: Plugins > Calls
