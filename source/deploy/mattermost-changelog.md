@@ -41,16 +41,16 @@ If you upgrade from a release earlier than v9.4, please read the other [Importan
  - Added Outgoing Oauth implementation ``Get``/``List`` logic.
  - The mmctl bulk import process command in local mode now supports processing an import file without actually uploading it to the server. Simply pass the file path to the import file and the server will directly read from it, and pass the ``--bypass-upload`` flag. There is no need to use the import upload command. NOTE: all of this is applicable only in local mode.
  - Added **Monthly Active Users** (MAU) as part of the true-up report.
- - Made small optimizations in several database calls:
-    - ``App.HasPermissionToChannel``
-    - ``getPostsForChannelAroundLastUnread``
-    - ``publishWebsocketEventForPermalinkPost``
-    - ``countMentionsFromPost``
  - Prometheus metrics are now available under the Source Available License.
 
 #### Performance
  - Optimized ``createPost`` performance.
  - Improved the performance of emoji uploads.
+ - Made small optimizations in several database calls:
+     - ``App.HasPermissionToChannel``
+     - ``getPostsForChannelAroundLastUnread``
+     - ``publishWebsocketEventForPermalinkPost``
+     - ``countMentionsFromPost``
 
 #### Plugins
  - Plugins are now allowed to register user settings.
