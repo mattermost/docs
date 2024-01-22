@@ -2751,5 +2751,8 @@ Show guest tag
 | - **false**:  Guest tags aren't visible in Mattermost.          | - ``config.json`` setting: ``.GuestAccountsSettings.HideTags: true`` |
 |                                                                 | - Environment variable: ``MM_GUESTACCOUNTSSETTINGS_HIDETAGS``        |
 +-----------------------------------------------------------------+----------------------------------------------------------------------+
-| **Note**: See the `guest accounts <https://docs.mattermost.com/onboard/guest-accounts.html>`__ documentation for details.              |
+| **Notes**:                                                                                                                             |
+|                                                                                                                                        |
+| - See the `guest accounts <https://docs.mattermost.com/onboard/guest-accounts.html>`__ documentation for details.                      |
+| - This configuration setting applies to all Mattermost clients, including web, desktop app, and mobile app.                            |
 +----------------------------------------------------------------------------------------------------------------------------------------+
