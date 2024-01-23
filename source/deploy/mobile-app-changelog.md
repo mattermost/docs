@@ -37,7 +37,7 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
  - Added ``@formatjs/intl-listformat`` and ``path-to-regexp``, and removed ``@nozbe/with-observables``, ``@react-native/eslint-config`` and ``@react-native/metro-config`` from https://github.com/mattermost/mattermost-mobile.
 
 ### Known Issues
- - Popovers, such as emoji selectors and the channel context menu, may be unfunctional in the mobile app [MM-56582](https://mattermost.atlassian.net/browse/MM-56582). A workaround is to disable **Reduce Motion** in your phone settings and re-launching the app.
+ - Popovers, such as emoji selectors and the channel context menu, may be non-functional in the mobile app [MM-56582](https://mattermost.atlassian.net/browse/MM-56582). A workaround is to disable **Reduce Motion** in your phone settings and then re-launching the app.
  - Users are unable to adjust the font size via the OS font size setting.
  - Some Google Pixel phones on Android 12+ might not continue past the login screen. This is a known issue with the OS, and the current workaround is to restart the device.
 
