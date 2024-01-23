@@ -80,6 +80,7 @@ See [this walkthrough video](https://www.youtube.com/watch?v=bEMp4vYLi6c&feature
  - v9.4 is built with Go ``v1.20.7``.
 
 ### Known Issues
+ - Non-channel-admin users can no longer use message links in private channels [MM-56575](https://mattermost.atlassian.net/browse/MM-56575).
  - Preview doesn't work when editing a channel header [MM-56572](https://mattermost.atlassian.net/browse/MM-56572).
  - The channel member count shows as zero in the **Browse channels** modal [MM-56266](https://mattermost.atlassian.net/browse/MM-56266).
  - Adding an @mention at the start of a post draft and pressing the left or right arrow key can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
