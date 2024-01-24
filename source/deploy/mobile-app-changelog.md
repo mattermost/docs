@@ -17,6 +17,9 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
 
 Note: Mattermost Mobile App v2.12.1 contains a medium level security fix. Updating is recommended. Details will be posted on our security updates page 30 days after release as per the Mattermost Responsible Disclosure Policy.
 
+### Bug Fixes
+ - Fixed an issue where various menus and popovers were non-functional when the phone had accessibility settings related to removing animations enabled.
+
 ## 2.12.0 Release
  - Release Date: January 16, 2024
  - Server Versions Supported: Server v8.1.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
