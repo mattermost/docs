@@ -3,8 +3,17 @@ Removed and deprecated features for Mattermost
 
 This page describes features that are removed from support for Mattermost, or will be removed in a future update (deprecated), and provides early notice about future changes that might affect your use of Mattermost. This information is subject to change with future releases, and might not include each deprecated feature.
 
+.. contents:: On this page
+    :backlinks: top
+    :depth: 3
+
 Removed features in upcoming versions
 -------------------------------------
+
+Mattermost Server v9.5.0
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+MySQL v5.7 is at end of life. We recommend all customers to upgrade to at least 8.x. For now, we are logging a warning. From Mattermost v9.5, which is the next Extended Support Release, we will stop supporting MySQL v5.7 altogether.
 
 Removed features by Mattermost version
 ----------------------------------------

@@ -1,12 +1,10 @@
 Mattermost for Microsoft Teams
 ==============================
 
-.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../_static/badges/ent-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Mattermost for Microsoft Teams enables you to collaborate with technical and operations teams seamlessly through the Mattermost app, without leaving Microsoft Teams. Two integrations are available: a `connected integration <#connect-mattermost-with-microsoft-teams>`__ and an `embedded integration <#embed-mattermost-within-mattermost-teams>`__.
-
-
+The Mattermost for Microsoft Teams plugin enables you to collaborate with technical and operations teams seamlessly through the Mattermost app, without leaving Microsoft Teams. Two integrations are available: a `connected integration <#connect-mattermost-with-microsoft-teams>`__ and an `embedded integration <#embed-mattermost-within-mattermost-teams>`__.
 
 .. include:: ../_static/badges/academy-msteams.rst
   :start-after: :nosearch:
@@ -20,7 +18,7 @@ A connected Mattermost integration with Microsoft Teams enables direct message, 
 
 Install this integration by visiting the `install the Mattermost for Microsoft Teams plugin </about/install-mattermost-for-microsoft-teams-plugin.html>`__ documentation.
 
-Visit the `collaborate within a connected Microsoft Teams instance </collaborate/collaborate-within-connected-microsoft-teams.html>`__ to learn how to use this integration. 
+Visit the `collaborate within a Microsoft Teams instance </collaborate/collaborate-within-connected-microsoft-teams.html>`__ to learn how to use this integration. 
 
 Embed Mattermost within Mattermost Teams
 ----------------------------------------

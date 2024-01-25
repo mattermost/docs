@@ -1,4 +1,4 @@
-Embedded JSON audit log schema
+Audit Log JSON Schema
 ==============================
 
 .. include:: ../_static/badges/ent-selfhosted.rst
@@ -81,13 +81,13 @@ JSON data model
 |            |                              | Mattermost currently supports three log formats: plain, JSON, and `GELF <https://docs.graylog.org/docs/gelf>`__.                    |
 |            |                              |                                                                                                                                     |
 |            |                              | - Plain log format uses `RFC3339 <https://www.rfc-editor.org/rfc/rfc3339>`__ by default.                                            |
-|            |                              |   See the `plain log format configuration </comply/audit-log.html#plain-log-format-configuration-options>`__ documentation for      |
+|            |                              |   See the `plain log format configuration </manage/logging.html#plain-log-format-configuration-options>`__ documentation for        |
 |            |                              |   supported options.                                                                                                                |
 |            |                              | - JSON log format uses `RFC3339 <https://www.rfc-editor.org/rfc/rfc3339>`__ by default.                                             |
-|            |                              |   See the `JSON log format configuration </comply/audit-log.html#json-log-format-configuration-options>`__ documentation for        |
+|            |                              |   See the `JSON log format configuration </manage/logging.html#json-log-format-configuration-options>`__ documentation for          |
 |            |                              |   supported options.                                                                                                                |
 |            |                              | - GELF log format uses `unixtime <https://www.unixtimestamp.com/>`__.                                                               |
-|            |                              |   See the `GELF log format configuration </comply/audit-log.html#gelf-log-format-format-configuration-options>`__ documentation for |
+|            |                              |   See the `GELF log format configuration </manage/logging.html#gelf-log-format-configuration-options>`__ documentation for          |
 |            |                              |   supported options.                                                                                                                |
 +------------+------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
 | event_name | string                       | Unique name and identifier of the event type taking place (e.g. ``getLogs`` ``requestRenewalLink``,                                 |
