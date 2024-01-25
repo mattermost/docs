@@ -17,7 +17,7 @@ The exports include information on channel member history at the time the messag
 
 By default, Mattermost stores all message history providing an unlimited search history to admins and end users. In Mattermost Enterprise, you may set a `custom data retention policy </comply/data-retention-policy.html>`__ for how long messages and file uploads are kept in Mattermost channels and direct messages.
 
-Enterprise deployments with a requirement to archive history beyond the data retention period can enable this add-on to export compliance reports to third-party systems. Integration with Actiance Vantage, Global Relay and Proofpoint are currently supported, with integrations with other systems in the roadmap.
+Enterprise deployments with a requirement to archive history beyond the data retention period can enable this add-on to export compliance reports to third-party systems. Integration with Actiance Vantage, Global Relay, and Proofpoint are currently supported, with integrations with other systems in the roadmap.
 
 .. note::
   
