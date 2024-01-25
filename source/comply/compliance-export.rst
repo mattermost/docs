@@ -17,7 +17,7 @@ The exports include information on channel member history at the time the messag
 
 By default, Mattermost stores all message history providing an unlimited search history to admins and end users. In Mattermost Enterprise, you may set a `custom data retention policy </comply/data-retention-policy.html>`__ for how long messages and file uploads are kept in Mattermost channels and direct messages.
 
-Enterprise deployments with a requirement to archive history beyond the data retention period can enable this add-on to export compliance reports to third-party systems. Integration with Actiance Vantage and Global Relay are currently supported, with integrations with other systems in the roadmap.
+Enterprise deployments with a requirement to archive history beyond the data retention period can enable this add-on to export compliance reports to third-party systems. Integration with Actiance Vantage, Global Relay, and Proofpoint are currently supported, with integrations with other systems in the roadmap.
 
 .. note::
   
@@ -72,7 +72,7 @@ Global Relay EML
 5. Select **A9/Type 9**, **A10/Type 10**, or **Custom** for the **Global Relay Customer Account**. This is the type of Global Relay customer account your organization has.
    
    - For **A9/Type 9** and **A10/Type 10** types, set the **Global Relay SMTP username**, **Global Relay SMTP password**, and **Global Relay SMTP email address**, provided by Global Relay.
-   - For a **Custom** type, set the **Global Relay SMTP username**, **Global Relay SMTP password**, **Global Relay SMTP email address**, **SMTP Server Name**, and the **SMTP Server Port**, provided by Global Relay.
+   - For a **Custom** type, set the **Global Relay SMTP username**, **Global Relay SMTP password**, **Global Relay SMTP email address**, **SMTP Server Name**, and the **SMTP Server Port**, provided by Global Relay. **Custom** type can be used to integrate with Proofpoint.
 6. Select **Save**.
 
 Once you've selected Global Relay EML as your file format, you can set up an integration with Global Relay archive system. For more information, see `Global Relay Archive <https://www.globalrelay.com/gr-services/archive>`__.
