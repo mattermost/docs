@@ -38,7 +38,7 @@ If you upgrade from a release earlier than v9.4, please read the other [Importan
  - Applied a wording change for active and activated users in the **Team Statistics** page.
 
 #### Administration
- - Added banners visible to Admins who have instances with over 10k users. This can be forked and then disabled.
+ - Added banners visible to Admins who have instances with over 10k users.
  - The ``where`` field is now rendered in ``model.AppError`` only when it's present.
  - Added Outgoing Oauth implementation ``Get``/``List`` logic.
  - The mmctl bulk import process command in local mode now supports processing an import file without actually uploading it to the server. Simply pass the file path to the import file and the server will directly read from it, and pass the ``--bypass-upload`` flag. There is no need to use the import upload command. NOTE: all of this is applicable only in local mode.
