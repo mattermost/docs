@@ -12,6 +12,10 @@ Migrating from Slack to Mattermost involves the following steps:
 4. `Convert the Slack import to Mattermost's format <#convert-slack-import-to-mattermost-s-bulk-export-format>`__
 5. `Import data into Mattermost <#import-data-into-mattermost>`__
 
+.. tip::
+
+  Looking for help migrating from Slack to Mattermost? [Contact us for Enterprise migration support](https://mattermost.com/contact-sales/).
+
 1. Prepare your Mattermost server
 ---------------------------------
 
