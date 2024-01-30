@@ -6,6 +6,20 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
 :depth: 2
 ```
 
+## 2.12.1 Release
+ - Release Date: January 30, 2024
+ - Server Versions Supported: Server v8.1.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
+
+### Compatibility
+ - **Upgrade to server version v8.1.0 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/upgrade/extended-support-release.html) (ESR) v7.8.0 has ended and upgrading to server ESR v8.1.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
+ - iPhone 5s devices and later with iOS 12.4+ is required.
+
+Note: Mattermost Mobile App v2.12.1 contains a medium level security fix. Updating is recommended. Details will be posted on our security updates page 30 days after release as per the Mattermost Responsible Disclosure Policy.
+
+### Bug Fixes
+ - Fixed an issue where various menus and popovers were non-functional when the phone had accessibility settings related to removing animations enabled.
+
 ## 2.12.0 Release
  - Release Date: January 16, 2024
  - Server Versions Supported: Server v8.1.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
@@ -37,6 +51,7 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
  - Added ``@formatjs/intl-listformat`` and ``path-to-regexp``, and removed ``@nozbe/with-observables``, ``@react-native/eslint-config`` and ``@react-native/metro-config`` from https://github.com/mattermost/mattermost-mobile.
 
 ### Known Issues
+ - Popovers, such as emoji selectors and the channel context menu, may be non-functional in the mobile app [MM-56582](https://mattermost.atlassian.net/browse/MM-56582). A workaround is to disable the **Reduce Motion** accessibility option in your device settings and then re-launch the app.
  - Users are unable to adjust the font size via the OS font size setting.
  - Some Google Pixel phones on Android 12+ might not continue past the login screen. This is a known issue with the OS, and the current workaround is to restart the device.
 

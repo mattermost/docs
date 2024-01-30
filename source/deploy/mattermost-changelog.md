@@ -118,6 +118,10 @@ If you upgrade from a release earlier than v9.4, please read the other [Importan
 
 ## Release v9.4 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
 
+- **9.4.2, released 2024-01-30**
+  - Mattermost v9.4.2 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Fixed an issue with true-up reports sending active users and not activated users. Added **Monthly Active Users** (MAU) as part of the true-up reports.
+  - Mattermost v9.4.2 contains no database or functional changes.
 - **9.4.1, released 2024-01-16**
   - Fixed an issue where ``getChannelMemberOnly`` failed to fetch data when certain fields were NULL.
 - **9.4.0, released 2024-01-16**
@@ -172,7 +176,7 @@ See [this walkthrough video](https://www.youtube.com/watch?v=bEMp4vYLi6c&feature
   
 #### Changes to the Enterprise plan:
  - Under ``GlobalRelayMessageExportSettings`` in ``config.json``:
-    - Added two new configuration settings ``CustomSMTPServerName`` and ``CustomSMTPPort`` to allow setting a custom URL and port for Global Relay export. ``CustomSMTPServerName`` and ``CustomSMTPPort`` cannot be configured in the system console UI.
+    - Added two new configuration settings ``CustomSMTPServerName`` and ``CustomSMTPPort`` to allow setting a custom URL and port for Global Relay export. This enables compliance export to integrate with Proofpoint.
 
 ### Open Source Components:
  - Added ``@mattermost/desktop-api`` and ``ipaddr.js`` to https://github.com/mattermost/mattermost/.
@@ -181,6 +185,7 @@ See [this walkthrough video](https://www.youtube.com/watch?v=bEMp4vYLi6c&feature
  - v9.4 is built with Go ``v1.20.7``.
 
 ### Known Issues
+ - Non-channel-admin users can no longer use message links in private channels [MM-56575](https://mattermost.atlassian.net/browse/MM-56575).
  - Preview doesn't work when editing a channel header [MM-56572](https://mattermost.atlassian.net/browse/MM-56572).
  - The channel member count shows as zero in the **Browse channels** modal [MM-56266](https://mattermost.atlassian.net/browse/MM-56266).
  - Adding an @mention at the start of a post draft and pressing the left or right arrow key can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
@@ -197,7 +202,11 @@ See [this walkthrough video](https://www.youtube.com/watch?v=bEMp4vYLi6c&feature
 
 ## Release v9.3 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
 
-**Release Date: December 15, 2023**
+- **9.3.1, released 2024-01-30**
+  - Mattermost v9.3.1 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Mattermost v9.3.1 contains no database or functional changes.
+- **9.3.0, released 2023-12-15**
+  - Original 9.3.0 release.
 
 ### Important Upgrade Notes
  - Please read the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) before upgrading.
@@ -299,6 +308,9 @@ See [this walkthrough video](https://www.youtube.com/watch?v=eXA8emM97Bo) on som
 
 ## Release v9.2 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
 
+- **9.2.5, released 2024-01-30**
+    - Mattermost v9.2.5 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+    - Mattermost v9.2.5 contains no database or functional changes.
 - **9.2.4, released 2024-01-09**
   - Mattermost v9.2.4 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Mattermost v9.2.4 contains the following functional changes:
