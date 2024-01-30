@@ -14,7 +14,7 @@ Migrating from Slack to Mattermost involves the following steps:
 
 .. tip::
 
-  Looking for help migrating from Slack to Mattermost? [Contact us for Enterprise migration support](https://mattermost.com/contact-sales/).
+  Looking for help migrating from Slack to Mattermost? `Contact us for Enterprise migration support <https://mattermost.com/contact-sales/>`.
 
 1. Prepare your Mattermost server
 ---------------------------------
