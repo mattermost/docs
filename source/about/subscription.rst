@@ -19,7 +19,7 @@ The Mattermost Nonprofit License enables nonprofit organizations who are unable 
 What's included?
 ~~~~~~~~~~~~~~~~~
 
-A three-year subscription to our Mattermost Professional self-hosted offering for up to 1,000 users with a subscription fee of $250 USD. Upon acceptance of these terms, Mattermost has the right to place the name and logo of the nonprofit or charitable institution on our website and in our marketing materials.
+A three-year subscription to our Mattermost Professional self-hosted offering for up to 1,000 users with a subscription fee of $250 USD. If the nonprofit has over 1,000 users, the application will undergo a review on a case-by-case basis. Upon acceptance of these terms, Mattermost has the right to place the name and logo of the nonprofit or charitable institution on our website and in our marketing materials.
 
 Following the three-year subscription, the institution can renew the license every three years for an additional $250 USD subscription fee.
 
