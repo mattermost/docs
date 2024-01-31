@@ -7,7 +7,7 @@ Subscription overview
 
 .. tip::
 
-  Nonprofit and open-source organizations that meet the 'eligibility requirements </about/subscription.html#who-s-eligible>' can apply for the Mattermost Nonprofit license by `completing this form <https://support.mattermost.com/hc/en-us/requests/new?ticket_form_id=17664739497236>`__.
+  Nonprofit and open-source organizations that meet the `eligibility requirements </about/subscription.html#who-s-eligible>`__ can apply for the Mattermost Nonprofit license by `completing this form <https://support.mattermost.com/hc/en-us/requests/new?ticket_form_id=17664739497236>`__.
 
 Mattermost offers features through `Mattermost Professional and Mattermost Enterprise subscription plans <https://www.mattermost.com/pricing>`__. Your plan subscription determines what features you have access to. When choosing a subscription, you can choose the deployment type as self-hosted or Cloud. 
 
