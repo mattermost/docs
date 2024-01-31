@@ -5,6 +5,10 @@ Subscription overview
     :backlinks: top
     :depth: 2
 
+.. tip::
+
+  Nonprofit and open-source organizations that meet the 'eligibility requirements </about/subscription.html#who-s-eligible>' can apply for the Mattermost Nonprofit license by `completing this form <https://support.mattermost.com/hc/en-us/requests/new?ticket_form_id=17664739497236>`__.
+
 Mattermost offers features through `Mattermost Professional and Mattermost Enterprise subscription plans <https://www.mattermost.com/pricing>`__. Your plan subscription determines what features you have access to. When choosing a subscription, you can choose the deployment type as self-hosted or Cloud. 
 
 Mattermost self-hosted deployments require a license subscription key to be applied to access features in the Professional or Enterprise plans. Mattermost offers a `secure self-service Customer Portal <https://customers.mattermost.com>`__ where you can purchase and manage your Mattermost self-hosted subscription. When you complete the purchase process, a license key is generated. Please see :doc:`Self-hosted subscriptions </about/self-hosted-subscriptions>` for more details.
@@ -14,7 +18,7 @@ Mattermost Cloud is a software-as-a-service product. Start a free 30-day Matterm
 Mattermost Nonprofit License program
 --------------------------------------
 
-The Mattermost Nonprofit License enables nonprofit organizations who are unable to afford our commercial licenses to apply the benefits of the self-hosted `Mattermost Professional offering </about/editions-and-offerings.html#mattermost-professional>`__ towards advancing their missions with special nonprofit pricing.
+The Mattermost Nonprofit License enables nonprofit/open-source organizations who are unable to afford our commercial licenses to apply the benefits of the self-hosted `Mattermost Professional offering </about/editions-and-offerings.html#mattermost-professional>`__ towards advancing their missions with special nonprofit pricing.
 
 What's included?
 ~~~~~~~~~~~~~~~~~
