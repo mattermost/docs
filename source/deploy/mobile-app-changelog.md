@@ -16,6 +16,7 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
 
 ### Bug Fixes
  - Fixed an issue with HTTP connections on iOS that were previously removed.
+ - Updated the purpose message for permissions on iOS.
 
 ## 2.12.1 Release
  - Release Date: January 30, 2024
