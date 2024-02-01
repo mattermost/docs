@@ -105,6 +105,8 @@ If you upgrade from a release earlier than v9.4, please read the other [Importan
  - v9.5 is built with Go ``v1.20.7``.
 
 ### Known Issues
+ - User autocomplete no longer stays closed after pressing ESC key [MM-56748](https://mattermost.atlassian.net/browse/MM-56748).
+ - Some tooltip texts are misaligned [MM-56737](https://mattermost.atlassian.net/browse/MM-56737).
  - Status may sometimes get stuck as **Away** or **Offline** in High Availability mode with IP Hash turned off.
  - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
  - Slack import through the CLI fails if email notifications are enabled.
