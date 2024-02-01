@@ -26,6 +26,7 @@ Note: Mattermost Mobile App v2.13.0 contains low level security fixes. Updating 
  - Fixed an issue where it was not possible to join a channel from the **Find channels** screen.
  - Fixed an issue with the height of automatic replies input text box.
  - Fixed an issue with the selection of custom themes.
+ - Fixed an issue with the mention badge color when connected to multiple servers.
 
 ### Known Issues
  - Users are unable to adjust the font size via the OS font size setting.
