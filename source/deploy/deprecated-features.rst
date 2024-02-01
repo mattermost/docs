@@ -18,6 +18,7 @@ Mattermost Server v9.5.0
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 - MySQL v5.7 is at end of life. We recommend all customers to upgrade to at least 8.x. From Mattermost v9.5, which is the latest Extended Support Release, we have stopped supporting MySQL v5.7 altogether.
+- Added safety limit error message in compiled Team Edition and Enterprise Edition deployments when enterprise scale and access control automation features are unavailable and count of users who are registered and not deactivated exceeds 10,000. ERROR_SAFE_LIMITS_EXCEEDED.
 
 Mattermost Server v9.0.0
 ~~~~~~~~~~~~~~~~~~~~~~~~
