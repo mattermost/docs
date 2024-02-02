@@ -217,7 +217,7 @@ The following JSON provides an example of a "least privilege" permission set tha
     "index_permissions": [
       {
         "index_patterns": [
-          "t-70907*"
+          "your-index-pattern*"
         ],
         "allowed_actions": [
           "indices:admin/get",
@@ -245,7 +245,7 @@ A simpler, more flexible, and resilient variant of the above would be:
     "index_permissions": [
       {
         "index_patterns": [
-          "t-70907*"
+          "your-index-pattern*"
         ],
         "allowed_actions": [
           "indices:*"
