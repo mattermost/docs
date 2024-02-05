@@ -15,9 +15,97 @@ From Mattermost v9.2, this changelog summarizes updates for the latest cloud and
 :depth: 2
 ```
 
+## Release v9.4 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
+
+- **9.4.2, released 2024-01-30**
+  - Mattermost v9.4.2 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Fixed an issue with true-up reports sending active users and not activated users. Added **Monthly Active Users** (MAU) as part of the true-up reports.
+  - Mattermost v9.4.2 contains no database or functional changes.
+- **9.4.1, released 2024-01-16**
+  - Fixed an issue where ``getChannelMemberOnly`` failed to fetch data when certain fields were NULL.
+- **9.4.0, released 2024-01-16**
+  - Original 9.4.0 release.
+
+### Important Upgrade Notes
+ - MySQL v5.7 is at end of life. We recommend all customers to upgrade to at least 8.x. For now, we are logging a warning. From Mattermost v9.5, which is the next Extended Support Release, we will stop supporting MySQL v5.7 altogether.
+
+```{Important}
+If you upgrade from a release earlier than v9.3, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
+```
+
+### Compatibility
+ - Updated the minimum required Edge version to v118+.
+
+### Improvements
+
+See [this walkthrough video](https://www.youtube.com/watch?v=bEMp4vYLi6c&feature=youtu.be&ab_channel=Mattermost) on some of the improvements in our latest release below.
+
+#### User Interface (UI)
+ - Updated the pre-packaged GitHub plugin version to [v2.1.7](https://github.com/mattermost/mattermost-plugin-github/releases/tag/v2.1.7).
+ - Pre-packaged Calls plugin version [v0.22.2](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v0.22.2).
+ - Improved the user interface of the channel notifications modal.
+ - Emojis are now enlarged in emoji tooltips on mouse hover.
+ - Added a gap of 8px between buttons in the modal footer when opened in the mobile web view.
+ - Updated empty states to align with new branding and made changes to the empty state copy.
+ - Adjusted the position of the suggestion list in "Add <user> to a channel" modal to be below or above the text field.
+
+#### Administration
+ - Added support for IP Filtering in Cloud (Cloud Enterprise plan) (this feature is disabled by default and behind a feature flag).
+ - Added support for Bring Your Own Key (BYOK) Encryption (Cloud Enterprise plan).
+ - An optional dedicated filestore is now used for compliance exports if configured (Cloud Enterprise plan).
+ - ``MessageExportSettings.GlobalRelaySettings.CustomerType`` now supports "CUSTOM".
+ - Added new ``ServerMetrics`` hook to allow plugins to register a custom HTTP endpoint to serve their metrics under the server's metrics HTTP listener.
+ - Admins now have the ability to pipe the output of ``mmctl websocket`` into the JSON parser.
+ - Added stores for OAuth **Outgoing Connections**.
+ - Added last login timestamp for users, and added a materialized view and a refresh job to keep track of post stats for PostgreSQL.
+ - Allowed plugin requests to include **Authorization** headers from external systems.
+ - Added a mmctl command ``mmctl system supportpacket`` to download the **Support Packet**.
+ - Added a new mmctl command ``oauth list`` for listing registered OAuth2 applications.
+
+### Bug Fixes
+ - Fixed an issue with the emoji reaction toggle behavior.
+ - Fixed an issue with the spacing between Playbooks and the separator in the Apps bar.
+
+### config.json
+ - Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
+
+#### Changes to all plans:
+ - Under ``RefreshPostStatsRunTime`` in ``config.json``:
+    - Added ``RefreshPostStatsRunTime`` to add last login timestamp for users and to add materialized view and refresh job to keep track of post stats for PostgreSQL.
+  
+#### Changes to the Enterprise plan:
+ - Under ``GlobalRelayMessageExportSettings`` in ``config.json``:
+    - Added two new configuration settings ``CustomSMTPServerName`` and ``CustomSMTPPort`` to allow setting a custom URL and port for Global Relay export. This enables compliance export to integrate with Proofpoint.
+
+### Open Source Components:
+ - Added ``@mattermost/desktop-api`` and ``ipaddr.js`` to https://github.com/mattermost/mattermost/.
+
+### Go Version
+ - v9.4 is built with Go ``v1.20.7``.
+
+### Known Issues
+ - Non-channel-admin users can no longer use message links in private channels [MM-56575](https://mattermost.atlassian.net/browse/MM-56575).
+ - Preview doesn't work when editing a channel header [MM-56572](https://mattermost.atlassian.net/browse/MM-56572).
+ - The channel member count shows as zero in the **Browse channels** modal [MM-56266](https://mattermost.atlassian.net/browse/MM-56266).
+ - Adding an @mention at the start of a post draft and pressing the left or right arrow key can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
+ - Status may sometimes get stuck as **Away** or **Offline** in High Availability mode with IP Hash turned off.
+ - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
+ - Slack import through the CLI fails if email notifications are enabled.
+ - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
+ - The Playbooks left-hand sidebar doesn't update when a user is added to a run or playbook without a refresh.
+ - If a user isn't a member of a configured broadcast channel, posting a status update might fail without any error feedback. As a temporary workaround, join the configured broadcast channels, or remove those channels from the run configuration.
+ - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
+ 
+### Contributors
+ - [AayushChaudhary0001](https://github.com/AayushChaudhary0001), [aditipatelpro](https://github.com/aditipatelpro), [agarciamontoro](https://github.com/agarciamontoro), [agnivade](https://github.com/agnivade), [akbarkz](https://github.com/akbarkz), [Alpha-4](https://github.com/Alpha-4), [amyblais](https://github.com/amyblais), [andrius](https://translate.mattermost.com/user/andrius), [andriuspetrauskis](https://github.com/andriuspetrauskis), [andrleite](https://github.com/andrleite), [arthurhrg](https://github.com/arthurhrg), [arush-vashishtha](https://github.com/arush-vashishtha), [asaadmahmood](https://github.com/asaadmahmood), [avas27JTG](https://github.com/avas27JTG), [ayusht2810](https://github.com/ayusht2810), [azigler](https://github.com/azigler), [BenCookie95](https://github.com/BenCookie95), [caotanduc99](https://github.com/caotanduc99), [CI-YU](https://github.com/CI-YU), [codejagaban](https://github.com/codejagaban), [cpoile](https://github.com/cpoile), [crspeller](https://github.com/crspeller), [ctlaltdieliet](https://github.com/ctlaltdieliet), [cwarnermm](https://github.com/cwarnermm), [cyberjam](https://github.com/cyberjam), [danielsischy](https://github.com/danielsischy), [Dev-A-Line](https://translate.mattermost.com/user/Dev-A-Line), [devinbinnie](https://github.com/devinbinnie), [DHaussermann](https://github.com/DHaussermann), [dkkb](https://github.com/dkkb), [Eleferen](https://translate.mattermost.com/user/Eleferen), [enahum](https://github.com/enahum), [fmartingr](https://github.com/fmartingr), [FokinAleksandr](https://github.com/FokinAleksandr), [GabrielCasaro](https://github.com/GabrielCasaro), [gabrieljackson](https://github.com/gabrieljackson), [gabsfrancis](https://translate.mattermost.com/user/gabsfrancis), [grundleborg](https://github.com/grundleborg), [hanzei](https://github.com/hanzei), [harsh4723](https://github.com/harsh4723), [harshilsharma63](https://github.com/harshilsharma63), [hasancankucuk](https://github.com/hasancankucuk), [hereje](https://github.com/hereje), [hmhealey](https://github.com/hmhealey), [ifoukarakis](https://github.com/ifoukarakis), [isacikgoz](https://github.com/isacikgoz), [jasonblais](https://github.com/jasonblais), [jespino](https://github.com/jespino), [johnsonbrothers](https://github.com/johnsonbrothers), [jprusch](https://translate.mattermost.com/user/jprusch), [jwilander](https://github.com/jwilander), [kaakaa](https://github.com/kaakaa), [Kshitij-Katiyar](https://github.com/Kshitij-Katiyar), [larkox](https://github.com/larkox), [lieut-data](https://github.com/lieut-data), [lindalumitchell](https://github.com/lindalumitchell), [ludvigbolin](https://github.com/ludvigbolin), [lynn915](https://github.com/lynn915), [M-ZubairAhmed](https://github.com/M-ZubairAhmed), [majo](https://translate.mattermost.com/user/majo), [master7](https://translate.mattermost.com/user/master7), [matt-w99](https://github.com/matt-w99), [matthew-w](https://translate.mattermost.com/user/matthew-w), [matthewbirtch](https://github.com/matthewbirtch), [mgdelacroix](https://github.com/mgdelacroix), [mickmister](https://github.com/mickmister), [morgancz](https://github.com/morgancz), [mvitale1989](https://github.com/mvitale1989), [neflyte](https://github.com/neflyte), [nickmisasi](https://github.com/nickmisasi), [Paul-Stern](https://github.com/Paul-Stern), [pgteekens](https://translate.mattermost.com/user/pgteekens), [phoinixgrr](https://github.com/phoinixgrr), [PromoFaux](https://github.com/PromoFaux), [PulkitGarg-code](https://github.com/PulkitGarg-code), [raghavaggarwal2308](https://github.com/raghavaggarwal2308), [rajatdangat](https://github.com/rajatdangat), [relwell](https://github.com/relwell), [roaslin](https://github.com/roaslin), [rohan-kapse](https://github.com/rohan-kapse), [rohitkbc](https://github.com/rohitkbc), [Rutam21](https://github.com/Rutam21), [RyoKub](https://github.com/RyoKub), [saakshiraut28](https://github.com/saakshiraut28), [San4es](https://github.com/San4es), [sapnasivakumar](https://github.com/sapnasivakumar), [saturninoabril](https://github.com/saturninoabril), [sbishel](https://github.com/sbishel), [Sharuru](https://github.com/Sharuru), [ShlokJswl](https://github.com/ShlokJswl), [sinansonmez](https://github.com/sinansonmez), [srappan](https://github.com/srappan), [sri-byte](https://github.com/sri-byte), [srisri332](https://github.com/srisri332), [stafot](https://github.com/stafot), [streamer45](https://github.com/streamer45), [stylianosrigas](https://github.com/stylianosrigas), [Sudhanva-Nadiger](https://github.com/Sudhanva-Nadiger), [svelle](https://github.com/svelle), [Syed-Ali-Abbas-Zaidi](https://github.com/Syed-Ali-Abbas-Zaidi), [tanmaythole](https://github.com/tanmaythole), [TealWater](https://github.com/TealWater), [thomasbrq](https://github.com/thomasbrq), [ThrRip](https://github.com/ThrRip), [toninis](https://github.com/toninis), [tsabi](https://github.com/tsabi), [umrkhn](https://github.com/umrkhn), [varghesejose2020](https://github.com/varghesejose2020), [Vinecreeper888](https://github.com/Vinecreeper888), [weblate](https://github.com/weblate), [wiggin77](https://github.com/wiggin77), [yasserfaraazkhan](https://github.com/yasserfaraazkhan), [yomiadetutu1](https://github.com/yomiadetutu1), [ZubairImtiaz3](https://github.com/ZubairImtiaz3)
+
 ## Release v9.3 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
 
-**Release Date: December 15, 2023**
+- **9.3.1, released 2024-01-30**
+  - Mattermost v9.3.1 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Mattermost v9.3.1 contains no database or functional changes.
+- **9.3.0, released 2023-12-15**
+  - Original 9.3.0 release.
 
 ### Important Upgrade Notes
  - Please read the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) before upgrading.
@@ -119,6 +207,13 @@ See [this walkthrough video](https://www.youtube.com/watch?v=eXA8emM97Bo) on som
 
 ## Release v9.2 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
 
+- **9.2.5, released 2024-01-30**
+    - Mattermost v9.2.5 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+    - Mattermost v9.2.5 contains no database or functional changes.
+- **9.2.4, released 2024-01-09**
+  - Mattermost v9.2.4 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Mattermost v9.2.4 contains the following functional changes:
+     - Fixed an issue where invalid reactions could be added to posts. Added default limit of the number of reactions per post.
 - **9.2.3, released 2023-11-29**
   - Mattermost v9.2.3 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Mattermost v9.2.3 contains no database or functional changes.
