@@ -5,112 +5,7 @@
     pointer-events: none;
 }
 
-footer:not(.site-footer) {
-    position: relative;
-    border-top: 1px solid #dedede;
-    margin-top: 24px;
-    padding: 24px 0 40px;
-    line-height: 150%;
-    font-size: 14px;
-}
-
-footer:not(.site-footer) p {
-    line-height: 150%;
-    font-size: 14px;
-}
-
-footer hr {
-    display: none;
-}
-
-@media (max-width: 1024px) {
-    footer {
-        padding: 160px 0 20px;
-    }
-}
-
-.search__icon {
-    cursor: pointer;
-    display: inline-block;
-    font-size: 16px;
-    padding: 0 20px;
-    color: #1C58D9;
-    position: relative;
-}
-
-@media screen and (min-width: 770px) {
-    .search__icon {
-        display: none;
-    }
-}
-
-.search__icon span {
-    font-family: "trade-gothic-next","Lato","Helvetica Neue","Arial",sans-serif;
-    font-size: 16px;
-}
-
-.search__icon:hover {
-    color: #1E325C;
-}
-
-header .header__searchbar {
-    display: none;
-    float: left;
-    padding: 0 5px 0 0;
-}
-
-@media (max-width: 768px){
-    header .links__icon {
-        display: block;
-    }
-
-    header .search__icon {
-        display: block;
-        position: absolute;
-        left: -5px;
-        top: 0px;
-        z-index: 10;
-        padding: 20px;
-    }
-
-    header .header__searchbar {
-        border-bottom: 1px solid #ccc;
-        display: none;
-        background: #fff;
-        line-height: 40px;
-        padding: 15px;
-        width: 100%;
-    }
-    header .header__searchbar input[type="text"] {
-        width: 100%;
-        border-radius: 50px;
-        border: 1px solid #ddd;
-        padding: 6px 12px;
-    }
-    header .header__searchbar input:focus {
-        outline: none;
-    }
-}
-
-@media (min-width: 991.98px) {
-    .notification-bar__content > div img {
-        display: inline-block;
-        margin-right: 10px;
-        width: auto;
-        height: 25px;
-    }
-    .site-header--not-home .nav-container {
-        padding-left: 50px;
-        padding-right: 50px;
-    }
-}
-
-/* Redesign 2021 - NAV */
-
-.header__logo img {
-    height: 40px !important;
-    width: auto !important;
-}
+/* GRID */
 
 .row {
     display: flex;
@@ -173,6 +68,26 @@ header .header__searchbar {
         flex: 0 0 83.333333%;
         max-width: 83.333333%;
     }
+}
+
+/* NAV */
+
+@media (min-width: 991.98px) {
+    .notification-bar__content > div img {
+        display: inline-block;
+        margin-right: 10px;
+        width: auto;
+        height: 25px;
+    }
+    .site-header--not-home .nav-container {
+        /* padding-left: 50px;
+        padding-right: 50px; */
+    }
+}
+
+.header__logo img {
+    height: 40px !important;
+    width: auto !important;
 }
 
 /* Notification Banner */
@@ -1261,9 +1176,6 @@ kbd {
     }
 }
 
-/* END NEW NAV */
-
-
 .nav-container {
     width: 100%;
     max-width: 1100px;
@@ -1275,7 +1187,7 @@ kbd {
 }
 @media (min-width: 1400px) {
     .site-header--not-home .nav-container {
-        padding-right: 20vw;
+        /* padding-right: 20vw;  */
     }
 }
 @media (max-width: 1199.98px) {
@@ -1293,7 +1205,7 @@ kbd {
         padding: 0 24px ;
     }
     div:not(.site-header--not-home) .nav-container .site-header__col--logo {
-        padding-left: 50px;
+        /* padding-left: 50px; */
     }
 }
 
@@ -1307,10 +1219,21 @@ kbd {
     z-index: 999;
 }
 
+.site-header__row {
+    display: flex;
+    justify-content: space-between;
+}
+
+@media (prefers-color-scheme: dark) {
+    .site-header {
+        background: #000;
+    }
+}
+
 .site-header__col--logo {
     display: flex;
     align-items: center;
-    padding-left: 10px;
+    /* padding-left: 10px; */
 }
 
 @media (max-width:991.98px) {
@@ -1398,6 +1321,34 @@ kbd {
 
 .site-header .lower-nav ul .current-menu-item a {
     border-bottom: 3px solid #ffbc1f;
+}
+
+/* END NEW NAV */
+
+/* FOOTER */
+
+footer:not(.site-footer) {
+    position: relative;
+    border-top: 1px solid #dedede;
+    margin-top: 24px;
+    padding: 24px 0 40px;
+    line-height: 150%;
+    font-size: 14px;
+}
+
+footer:not(.site-footer) p {
+    line-height: 150%;
+    font-size: 14px;
+}
+
+footer hr {
+    display: none;
+}
+
+@media (max-width: 1024px) {
+    footer {
+        padding: 160px 0 20px;
+    }
 }
 
 footer.site-footer {
@@ -1715,4 +1666,11 @@ mark {
     font-weight: 700;
     box-shadow: 0 0 0 2px #F1C40F;
     font-style: unset;
+}
+
+
+/* SIDEBAR */
+
+.sidebar-brand {
+    display: none;
 }

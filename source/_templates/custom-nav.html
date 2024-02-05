@@ -4,7 +4,7 @@
             <span aria-hidden="true">×</span>
         </a>
 	    <div class="notification-bar__wrapper">
-		    <img src="{{ pathto('_static/images/notification-bar/icon-green-rocket.svg', 1) }}" alt="" class="notification-bar__icon"><a href="https://mattermost.com/blog/inc-recognizes-mattermost-as-a-power-partner/" target="_blank" class="notification-bar__link">Inc. Recognizes Mattermost as a 2023 'Power Partner'!</a>
+		    <img src="{{ pathto('_static/images/notification-bar/icon-megaphone.svg', 1) }}" alt="" class="notification-bar__icon"><a href="https://mattermost.com/blog/mattermost-v8-0-is-now-available/" target="_blank" class="notification-bar__link">Mattermost Version 8.0 is Now Available »</a>
 		</div>
     </div>
 </div>
@@ -14,11 +14,11 @@
 <header class="site-header site-header--not-home" itemscope="" itemtype="https://schema.org/WebSite">
 {% endif %}
 	<div class="nav-container site-header__container">
-		<div class="row site-header__row">
-			<div class="col-9 col-md-3 col-lg-2 site-header__col--logo">
+		<div class="site-header__row">
+			<div class="site-header__col--logo">
 				<a href="/" data-ol-has-click-handler=""><img width="190" height="43" src="{{ pathto('_static/images/Mattermost-Logo-Denim.svg', 1) }}" alt="Mattermost Logo"></a>
 			</div>
-			<div class="col-3 col-md-9 site-header__mobile-menu" id="hamburger" data-ol-has-click-handler="">
+			<div class="site-header__mobile-menu" id="hamburger" data-ol-has-click-handler="">
 				<svg class="hamburger-open" width="25" height="20" viewBox="0 0 25 20" fill="none" xmlns="http://www.w3.org/2000/svg">
 					<line y1="1.5" x2="25" y2="1.5" stroke="#1B1D22" stroke-width="3"></line>
 					<line y1="9.83325" x2="25" y2="9.83325" stroke="#1B1D22" stroke-width="3"></line>
@@ -29,7 +29,7 @@
 					<line y1="-1.5" x2="24.0416" y2="-1.5" transform="matrix(-0.707107 0.707107 0.707107 0.707107 20 3)" stroke="#1B1D22" stroke-width="3"></line>
 				</svg>
 			</div>
-			<div class="col-12 col-lg-10 site-header__col--menu">
+			<div class="site-header__col--menu">
 				<ul class="site-nav" id="navigation">
 					<li class="site-nav__toplink site-nav__hassubnav">
 						<a href="javascript:void(0);" data-ol-has-click-handler="">
@@ -51,7 +51,7 @@
 											<a href="https://mattermost.com/channels/" data-ol-has-click-handler="">
 												Channels
 											</a>
-										</li>
+										</li>	
 										<li class="sub-menu__links--single">
 											<a href="https://mattermost.com/playbooks/" data-ol-has-click-handler="">
 												Playbooks
@@ -76,7 +76,7 @@
 											<a href="https://mattermost.com/solutions/use-cases/secure-collaboration/" data-ol-has-click-handler="">
 											Control of Collaboration
 											</a>
-										</li>
+										</li>	
 										<li class="sub-menu__links--single">
 											<a href="https://mattermost.com/solutions/use-cases/error-reduction/" data-ol-has-click-handler="">
 											Risk &amp; Error Reduction
@@ -84,12 +84,7 @@
 										</li>
 										<li class="sub-menu__links--single">
 											<a href="https://mattermost.com/solutions/use-cases/accelerate-productivity/" data-ol-has-click-handler="">
-											Decision Optimization
-											</a>
-										</li>
-										<li class="sub-menu__links--single">
-											<a href="https://mattermost.com/open-source/" data-ol-has-click-handler="">
-											Open Source
+											Process &amp; Decision Optimization
 											</a>
 										</li>
 									</ul>
@@ -183,7 +178,7 @@
 												<a href="https://mattermost.com/download/" data-ol-has-click-handler="">
 												Deploy
 												</a>
-											</li>
+											</li>	
 											<li class="sub-menu__links--single">
 												<a href="https://developers.mattermost.com/integrate/getting-started/" data-ol-has-click-handler="">
 												Integrate
@@ -212,9 +207,9 @@
 												<a href="https://mattermost.com/community/" data-ol-has-click-handler="">
 												Community
 												</a>
-											</li>
+											</li>	
 											<li class="sub-menu__links--single">
-												<a href="https://academy.mattermost.com/" data-ol-has-click-handler="">
+												<a href="https://academy.mattermost.com/p/mattermost-end-user-onboarding" data-ol-has-click-handler="">
 												Academy
 												</a>
 											</li>
@@ -229,7 +224,7 @@
 												</a>
 											</li>
 											<li class="sub-menu__links--single">
-												<a href="https://docs.mattermost.com/guides/changelogs.html" data-ol-has-click-handler="">
+												<a href="https://docs.mattermost.com/administration/changelog.html" data-ol-has-click-handler="">
 													Release Notes
 												</a>
 											</li>
@@ -293,7 +288,7 @@
 			</div>
 		</div>
 	</div>
-	{%- if pagename != 'index' %}
+	<!-- {%- if pagename != 'index' %}
 	<div class="header__searchbar">
 		<form id="rtd-search-form" class="wy-form" action="{{ pathto('search') }}" method="get">
 			<input type="text" name="q" placeholder="Search by keyword" autofocus />
@@ -301,5 +296,5 @@
 			<input type="hidden" name="area" value="default" />
 		</form>
 	</div>
-	{% endif %}
+	{% endif %} -->
 </header>

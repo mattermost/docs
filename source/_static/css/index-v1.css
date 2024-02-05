@@ -1,3 +1,8 @@
+
+/* body {
+    margin: 0;
+}
+
 .wy-nav-content {
     padding: 0 !important;
 }
@@ -98,6 +103,7 @@ footer {
 .redesign-landing .card-grid a {
     display: block;
     transition: all .6s cubic-bezier(.23,1,.32,1);
+    text-decoration: none;
 }
 .redesign-landing .card-grid a:hover {
     transform: translateY(-10px);
@@ -327,4 +333,4 @@ footer.site-footer .secondary-footer__social li:focus svg path,footer.site-foote
         width: 600px;
         padding: 10px 20px;
     }
-}
+} */

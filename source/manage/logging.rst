@@ -160,7 +160,7 @@ Configuring advanced logging includes the following steps:
 - `Configure target-specific settings <#configure-target-specific-settings>`__
 
 Define advanced log output
-~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. tabs::
 
