@@ -5,7 +5,7 @@ Configuring proxy to Mattermost transport encryption
 .. include:: ../_static/badges/ent-selfhosted.rst
   :start-after: :nosearch:
 
-*Available in legacy Mattermost Enterprise Edition E20*
+*Also available in legacy Mattermost Enterprise Edition E20*
 
 Mattermost is able to encrypt the traffic between the proxy and the application server using TLS.
 

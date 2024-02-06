@@ -4,7 +4,7 @@ Data retention policy
 .. include:: ../_static/badges/ent-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-*Available in legacy Mattermost Enterprise Edition E20*
+*Also available in legacy Mattermost Enterprise Edition E20*
 
 By default, Mattermost stores all message history providing an unlimited search history to System Admins and end users.
 

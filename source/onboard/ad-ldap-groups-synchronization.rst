@@ -6,7 +6,7 @@ AD/LDAP groups
 .. include:: ../_static/badges/ent-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-*Available in legacy Mattermost Enterprise Edition E20*
+*Also available in legacy Mattermost Enterprise Edition E20*
 
 Overview
 --------

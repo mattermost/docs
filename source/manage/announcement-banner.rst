@@ -4,7 +4,7 @@ Announcement banner
 .. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-*Available in legacy Mattermost Enterprise Edition E10 and E20*
+*Also available in legacy Mattermost Enterprise Edition E10 and E20*
 
 System Admins can display a notice that's visible to all users on the system via an announcement banner. The announcement banner is disabled by default, so System Admins must first `enable this feature </configure/configuration-settings.html#enable-announcement-banner>`__ within the System Console or via the ``config.json`` file.
 
