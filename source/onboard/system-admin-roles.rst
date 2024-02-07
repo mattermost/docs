@@ -18,7 +18,7 @@ A System Admin can configure the following system roles:
 - **Custom Group Manager** The Custom Group Manager role has permissions to `create, edit, restore, and delete custom user groups </collaborate/organize-using-custom-user-groups.html>`__. This role can be used to assign individual users the ability to manage custom groups when **Custom Groups** permissions are removed for **All Members** via **System Console > Permissions > Edit Scheme > Custom Groups**.
 - **Viewer:** The Viewer role is able to view all areas of the System Console, but has no write access.
 
-When a user is assigned a system role, they have role-based access to the System Console. Each role has a different set of default permissions, and what users can access or view depends on the role they've been assigned.
+When a user is assigned a system role, they have role-based access to the System Console and the API endpoints. Each role has a different set of default permissions, and what users can access or view depends on the role they've been assigned.
 
 +----------------------+-----------------------+---------------------------------------+
 | **System role**      | **Read/Write access** | **Read Only access**                  |
