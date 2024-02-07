@@ -6,7 +6,9 @@ Compliance monitoring
 .. include:: ../_static/badges/ent-selfhosted.rst
   :start-after: :nosearch:
 
-*Also available in legacy Mattermost Enterprise Edition E20*
+.. raw:: html
+
+ <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 This feature enables compliance exports to be produced from the System Console, with all query and download actions logged in an audit history to enable oversight and prevent unauthorized queries.
 

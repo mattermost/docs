@@ -15,7 +15,9 @@ View statistics for your overall deployment and specific teams as well as access
 Site statistics
 ---------------
 
-*Available in legacy Enterprise Edition E10/E20*
+.. raw:: html
+
+ <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +---------------------------------------------------------------+-------------------------------------------------------------+
 | View statistics on activated users, teams, channels, posts,   | - System Config path: **Reporting > Site Statistics**       |
@@ -32,7 +34,9 @@ Site statistics
 Team statistics
 ---------------
 
-*Available in legacy Enterprise Edition E10/E20*
+.. raw:: html
+
+ <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +---------------------------------------------------------------+---------------------------------------------------------------+
 | View statistics per team on number of activated users,        | - System Config path: **Reporting > Team Statistics**         |
@@ -50,7 +54,9 @@ Server logs
 .. include:: ../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
-*Available in legacy Enterprise Edition E10/E20*
+.. raw:: html
+
+ <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +---------------------------------------------------------------+---------------------------------------------------------------+
 | View logging of server-side events.                           | - System Config path: **Reporting > Server Logs**             |

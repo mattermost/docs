@@ -47,7 +47,9 @@ When a team is first created, the person who set it up is made a Team Admin. It 
 Channel admin
 -------------
 
-*Also available in legacy Mattermost Enterprise Edition E10 or E20*
+.. raw:: html
+
+ <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 The person who creates a channel is assigned the Channel Admin role for that channel. People with the Channel Admin role have the following privileges:
 

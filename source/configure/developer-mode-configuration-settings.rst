@@ -16,7 +16,9 @@ Configure developer mode by going to **System Console > Environment > Developer*
 Enable testing commands
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-*Available in legacy Enterprise Edition E10/E20*
+.. raw:: html
+
+ <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +---------------------------------------------------+--------------------------------------------------------------------------+
 | Enable or disable the ``/test`` slash command.    | - System Config path: **Environment > Developer**                        |
@@ -41,7 +43,9 @@ Enable testing commands
 Enable developer mode
 ~~~~~~~~~~~~~~~~~~~~~
 
-*Available in legacy Enterprise Edition E10/E20*
+.. raw:: html
+
+ <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +-----------------------------------------------+---------------------------------------------------------------------------+
 | Enable or disable developer mode.             | - System Config path: **Environment > Developer**                         |
@@ -67,7 +71,9 @@ Enable developer mode
 Enable client debugging
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-*Available in legacy Enterprise Edition E10/E20*
+.. raw:: html
+
+ <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +---------------------------------------------------+---------------------------------------------------------------------------------------------+
 | Enable or disable client-side debugging settings  | - System Config path: **Environment > Developer**                                           |
@@ -92,7 +98,9 @@ Enable client debugging
 Allow untrusted internal connections
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-*Available in legacy Enterprise Edition E10/E20*
+.. raw:: html
+
+ <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +-----------------------------------------------+-----------------------------------------------------------------------------------------------+
 | Limit the ability for the Mattermost server   | - System Config path: **Environment > Developer**                                             |

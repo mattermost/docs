@@ -28,7 +28,9 @@ Cluster-based deployment
 .. include:: ../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
-*Also available in legacy Mattermost Enterprise Edition E20*
+.. raw:: html
+
+ <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 Deployments over 10,000 registered users with moderate usage can be supported by adding additional servers in cluster-based, High Availability configuration. To date, the largest simulation included `70,000 concurrent users on a single Mattermost instance <https://mattermost.com/blog/performance-scale-mattermost/>`__.
 

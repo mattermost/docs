@@ -6,7 +6,9 @@ Custom terms of service
 .. include:: ../_static/badges/ent-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-*Also available in legacy Mattermost Enterprise Edition E20*
+.. raw:: html
+
+ <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 System Admins can outline custom Terms of Service for their team members to accept before they can access Mattermost on web, desktop, or mobile.
 

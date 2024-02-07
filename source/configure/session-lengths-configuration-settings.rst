@@ -15,7 +15,9 @@ User sessions are cleared when a user tries to log in, and sessions are cleared 
 Extend session length with activity
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-*Available in legacy Enterprise Edition E10/E20*
+.. raw:: html
+
+ <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +----------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | Improves the user experience by extending sessions and keeping | - System Config path: **Environment > Session Lengths**                                 |
@@ -44,7 +46,9 @@ Extend session length with activity
 Session length for AD/LDAP and email
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-*Available in legacy Enterprise Edition E10/E20*
+.. raw:: html
+
+ <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +----------------------------------------------------------------+--------------------------------------------------------------------------------+
 | Set the number of hours counted from the last time a user      | - System Config path: **Environment > Session Lengths**                        |
@@ -67,7 +71,9 @@ Session length for AD/LDAP and email
 Session length for mobile
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-*Available in legacy Enterprise Edition E10/E20*
+.. raw:: html
+
+ <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +----------------------------------------------------------------+-----------------------------------------------------------------------------------+
 | Set the number of hours counted from the last time a user      | - System Config path: **Environment > Session Lengths**                           |
@@ -89,7 +95,9 @@ Session length for mobile
 Session length for SSO
 ~~~~~~~~~~~~~~~~~~~~~~
 
-*Available in legacy Enterprise Edition E10/E20*
+.. raw:: html
+
+ <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +----------------------------------------------------------------+----------------------------------------------------------------------------------+
 | Set the number of hours from the last time a user entered      | - System Config path: **Environment > Session Lengths**                          |
@@ -118,7 +126,9 @@ Session length for SSO
 Session cache
 ~~~~~~~~~~~~~
 
-*Available in legacy Enterprise Edition E10/E20*
+.. raw:: html
+
+ <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +----------------------------------------------------------------+-----------------------------------------------------------------------------+
 | Set the number of minutes to cache a session in memory.        | - System Config path: **Environment > Session Lengths**                     |
@@ -138,7 +148,9 @@ Session cache
 Session idle timeout
 ~~~~~~~~~~~~~~~~~~~~
 
-*Available in legacy Enterprise Edition E10/E20*
+.. raw:: html
+
+ <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +----------------------------------------------------------------+--------------------------------------------------------------------------------------+
 | The number of minutes from the last time a user was active     | - System Config path: N/A                                                            |

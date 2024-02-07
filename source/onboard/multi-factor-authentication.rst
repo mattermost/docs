@@ -34,7 +34,9 @@ Enforcing MFA
 .. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
-*Also available in legacy Mattermost Enterprise Edition E10/E20*
+.. raw:: html
+
+ <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 This option can be enabled by the System Admin by going to **System Console > Authentication > MFA**, then setting **Enforce Multi-factor Authentication** to **true**.
 
