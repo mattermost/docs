@@ -18,7 +18,7 @@ Driver name
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | The type of database. Can be either:                          | - System Config path: N/A                                                |
@@ -39,7 +39,7 @@ Data source
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | The connection string to the master database.                 | - System Config path: N/A                                                |
@@ -96,7 +96,7 @@ Maximum idle database connections
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +--------------------------------------------------------+------------------------------------------------------------------+
 | The maximum number of idle connections held open       | - System Config path: **Environment > Database**                 |
@@ -117,7 +117,7 @@ Maximum open connections
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +--------------------------------------------------------+------------------------------------------------------------------+
 | The maximum number of open connections to the          | - System Config path: **Environment > Database**                 |
@@ -139,7 +139,7 @@ Query timeout
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +--------------------------------------------------------+------------------------------------------------------------------+
 | The amount of time to wait, in seconds, for a response | - System Config path: **Environment > Database**                 |
@@ -161,7 +161,7 @@ Maximum connection lifetime
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +--------------------------------------------------------+-------------------------------------------------------------------------------------+
 | Maximum lifetime for a connection to the database,     | - System Config path: **Environment > Database**                                    |
@@ -185,7 +185,7 @@ Maximum connection idle timeout
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +--------------------------------------------------------+-------------------------------------------------------------------------------------+
 | Maximum time a database connection can remain idle,    | - System Config path: **Environment > Database**                                    |
@@ -207,7 +207,7 @@ Minimum hashtag length
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +----------------------------------------------------------------------+-------------------------------------------------------------------------+
 | Minimum number of characters in a hashtag.                           | - System Config path: **Environment > Database**                        |
@@ -232,7 +232,7 @@ SQL statement logging
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | Executed SQL statements can be written to the log for         | - System Config path: **Environment > Database**                         |
@@ -251,7 +251,7 @@ Recycle database connections
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 +--------------------------------------------------------+------------------------------------------------------------------+
 | Select the **Recycle Database Connections** button to  | - System Config path: **Environment > Database**                 |
@@ -281,7 +281,7 @@ Disable database search
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +---------------------------------------------------------------+------------------------------------------------------------------------------+
 | When other search engines are configured, such as             | - System Config path: **Environment > Database**                             |
@@ -308,7 +308,7 @@ Applied schema migrations
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 A list of all migrations that have been applied to the data store based on the version information available in the ``db_migrations`` table. Select **About Mattermost** from the product menu to review the current database schema version applied to your deployment.
 
@@ -340,7 +340,7 @@ Read replicas
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +--------------------------------------------------------+-----------------------------------------------------------------------+
 | Specifies the connection strings for the read replica  | - System Config path: N/A                                             |
@@ -368,7 +368,7 @@ Search replicas
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +--------------------------------------------------------+-----------------------------------------------------------------------------+
 | Specifies the connection strings for the search        | - System Config path: N/A                                                   |
@@ -395,7 +395,7 @@ Replica lag settings
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 +--------------------------------------------------------+----------------------------------------------------------------------------------+
 | String array input specifies a connection string and   | - System Config path: N/A                                                        |

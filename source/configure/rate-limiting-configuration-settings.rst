@@ -17,7 +17,7 @@ Enable rate limiting
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +----------------------------------------------------------------+--------------------------------------------------------------------------+
 | Enable or disable rate limiting to throttle APIs to a          | - System Config path: **Environment > Rate Limiting**                    |
@@ -41,7 +41,7 @@ Maximum queries per second
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | Throttle the API at this number of requests per second when   | - System Config path: **Environment > Rate Limiting**                    |
@@ -67,7 +67,7 @@ Maximum burst size
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +-----------------------------------------------------------------+--------------------------------------------------------------------------+
 | The maximum number of requests allowed beyond the per second    | - System Config path: **Environment > Rate Limiting**                    |
@@ -94,7 +94,7 @@ Memory store size
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +-----------------------------------------------------------------+----------------------------------------------------------------------------+
 | The maximum number of user sessions connected to the system as  | - System Config path: **Environment > Rate Limiting**                      |
@@ -125,7 +125,7 @@ Vary rate limit by remote address
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +-----------------------------------------------------------------+----------------------------------------------------------------------------+
 | Configure Mattermost to rate limit API access by IP address     | - System Config path: **Environment > Rate Limiting**                      |
@@ -150,7 +150,7 @@ Vary rate limit by user
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +-----------------------------------------------------------------+----------------------------------------------------------------------------+
 | Configure Mattermost to rate limit API access by authentication | - System Config path: **Environment > Rate Limiting**                      |
@@ -175,7 +175,7 @@ Vary rate limit by HTTP header
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +-----------------------------------------------------------------+----------------------------------------------------------------------------+
 | Configure Mattermost to vary rate limiting API access           | - System Config path: **Environment > Rate Limiting**                      |

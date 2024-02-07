@@ -49,7 +49,7 @@ Channel admin
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 The person who creates a channel is assigned the Channel Admin role for that channel. People with the Channel Admin role have the following privileges:
 

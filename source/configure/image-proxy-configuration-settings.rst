@@ -17,7 +17,7 @@ Enable image proxy
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +---------------------------------------------------------------+---------------------------------------------------------------------+
 | An image proxy anonymizes Mattermost app connections and      | - System Config path: **Environment > Image Proxy**                 |
@@ -45,7 +45,7 @@ Image proxy type
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +---------------------------------------------------------------+-------------------------------------------------------------------------------+
 | The type of image proxy used by Mattermost.                   | - System Config path: **Environment > Image Proxy**                           |
@@ -69,7 +69,7 @@ Remote image proxy URL
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +---------------------------------------------------------------+---------------------------------------------------------------------------+
 | The URL of the atmos/camo proxy. This setting isn't needed    | - System Config path: **Environment > Image Proxy**                       |
@@ -89,7 +89,7 @@ Remote image proxy options
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +---------------------------------------------------------------+-------------------------------------------------------------------------------+
 | The URL signing key passed to an atmos/camo image proxy.      | - System Config path: **Environment > Image Proxy**                           |

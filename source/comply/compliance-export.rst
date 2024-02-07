@@ -6,7 +6,7 @@ Compliance export
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 This feature enables compliance exports to be produced from the System Console, containing all messages including:
 

@@ -8,7 +8,7 @@ SAML Single Sign-On: technical documentation
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 Security Assertion Markup Language (SAML) is an open standard that allows identity providers (IdP), like OneLogin, to pass authorization credentials to service providers (SP), like Mattermost.
 

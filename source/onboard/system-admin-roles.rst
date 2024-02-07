@@ -6,7 +6,7 @@ Additional System Admin roles
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 System Admins can assign system roles that permit granular user access to specific areas of the System Console. These roles enable users to perform certain administrative tasks without requiring access to all system administration areas. System roles never supersede the user's original role or the user's permissions configured by the Permissions scheme.
 

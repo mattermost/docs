@@ -6,7 +6,7 @@ Configuring database transport encryption
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 Mattermost is able to encrypt the traffic between the database and the application using TLS. This guide describes the setup steps for a single, separate MySQL server.
 

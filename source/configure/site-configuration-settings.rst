@@ -73,7 +73,7 @@ Enable custom branding
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +--------------------------------------------------------------------------------+-----------------------------------------------------------------------+
 | - **true**: Enables the display of a custom image and text on the login page   | - System Config path: **Site Configuration > Customization**          |
@@ -817,7 +817,7 @@ Email notification contents
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
 | - **Send full message contents**: **(Default)** Email notifications include the full message contents, along with the name of the sender and the channel. ``config.json`` setting: ``"full"``                                                                                                 | - System Config path: **Site Configuration > Notifications**                |
@@ -1511,7 +1511,7 @@ Allow file uploads on mobile
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 +---------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
 | - **true**: **(Default)** Allows users to attach files to messages from mobile apps.              |  - System Config path: **Site Configuration > File Sharing and Downloads** |
@@ -1536,7 +1536,7 @@ Allow file downloads on mobile
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 +----------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
 | - **true**: **(Default)** Enables file downloads on mobile apps.                                               | - System Config path: **Site Configuration > File sharing and downloads** |

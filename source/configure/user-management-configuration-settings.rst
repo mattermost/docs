@@ -20,7 +20,7 @@ Users
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 Getting people set up with a Mattermost account is typically something that system admins do when deploying and configuring the Mattermost workspace. A Mattermost admin can `provision Mattermost users </onboard/user-provisioning-workflows.html>`__ using one or more of the following methods:
 
@@ -71,7 +71,7 @@ Groups
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 +---------------------------------------------------------------+-------------------------------------------------------------+
 | Manage default teams and channels by linking AD/LDAP groups   | - System Config path: **User Management > Groups**          |
@@ -89,7 +89,7 @@ Teams
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 +---------------------------------------------------------------+-------------------------------------------------------------+
 | Manage team settings, including group synchronization for     | - System Config path: **User Management > Teams**           |
@@ -107,7 +107,7 @@ Channels
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 +-------------------------------------------------------------------------+-------------------------------------------------------------+
 | Manage channel settings, including group synchronization on channels.   | - System Config path: **User Management > Channels**        |
@@ -131,7 +131,7 @@ Permissions
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +---------------------------------------------------------------------+-------------------------------------------------------------+
 | Restrict actions in Mattermost to authorized users only.            | - System Config path: **User Management > Permissions**     |
@@ -148,7 +148,7 @@ System roles
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +----------------------------------------------------------------------+------------------------------------------------------------+
 | Restrict System Console access to authorized users only.             | - System Config path: **User Management > System Roles**   |

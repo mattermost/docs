@@ -6,7 +6,7 @@ Performance monitoring
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 Performance monitoring support enables a Mattermost server to track system health for large Enterprise deployments through integrations with `Prometheus <https://prometheus.io/>`__ and `Grafana <https://grafana.org/>`__. These integrations support data collection from several Mattermost servers, which is particularly useful if you're running Mattermost `in high availability mode </scale/high-availability-cluster.html>`__. Once you're tracking system health, you can `set up performance alerts </scale/performance-alerting.html>`__ on your Grafana dashboard.
 

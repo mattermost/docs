@@ -8,7 +8,7 @@ Custom terms of service
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 System Admins can outline custom Terms of Service for their team members to accept before they can access Mattermost on web, desktop, or mobile.
 

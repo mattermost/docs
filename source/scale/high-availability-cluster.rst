@@ -6,7 +6,7 @@ High availability cluster
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 A High availability cluster enables a Mattermost system to maintain service during outages and hardware failures through the use of redundant infrastructure.
 

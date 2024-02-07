@@ -15,7 +15,7 @@ Site URL
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +---------------------------------------------------------------+---------------------------------------------------------------+
 | The URL that users use to access Mattermost.                  | - System Config path: **Environment > Web Server**            |
@@ -50,7 +50,7 @@ Web server listen address
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +---------------------------------------------------------------+------------------------------------------------------------------+
 | The address and port to which to bind and listen.             | - System Config path: **Environment > Web Server**               |
@@ -77,7 +77,7 @@ Forward port 80 to 443
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | Forward insecure traffic from port 80 to port 443.            | - System Config path: **Environment > Web Server**                       |
@@ -104,7 +104,7 @@ Web server connection security
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +-----------------------------------------------------------------------+-----------------------------------------------------------------------+
 | Connection security between Mattermost clients and the server.        | - System Config path: **Environment > Web Server**                    |
@@ -129,7 +129,7 @@ TLS certificate file
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +--------------------------------------------------------+------------------------------------------------------------------+
 | The path to the certificate file to use for TLS        | - System Config path: **Environment > Web Server**               |
@@ -150,7 +150,7 @@ TLS key file
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +--------------------------------------------------------+---------------------------------------------------------------+
 | The path to the TLS key file to use for TLS            | - System Config path: **Environment > Web Server**            |
@@ -174,7 +174,7 @@ Use Let's Encrypt
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +-----------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 | Enable the automatic retrieval of certificates from Let’s Encrypt.                            | - System Config path: **Environment > Web Server**                       |
@@ -201,7 +201,7 @@ Let's Encrypt certificate cache file
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +--------------------------------------------------------+------------------------------------------------------------------------------------+
 | The path to the file where certificates and other data | - System Config path: **Environment > Web Server**                                 |
@@ -222,7 +222,7 @@ Read timeout
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +---------------------------------------------------------+---------------------------------------------------------------------+
 | Maximum time allowed from when the connection is        | - System Config path: **Environment > Web Server**                  |
@@ -246,7 +246,7 @@ Write timeout
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +----------------------------------------------------------+-----------------------------------------------------------------------------+
 | - If using HTTP (insecure), this is the maximum time     | - System Config path: **Environment > Web Server**                          |
@@ -270,7 +270,7 @@ Idle timeout
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +---------------------------------------------------------+---------------------------------------------------------------------+
 | Set an explicit idle timeout in the HTTP server.        | - System Config path: **Environment > Web Server**                  |
@@ -295,7 +295,7 @@ Webserver mode
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +---------------------------------------------------------------------+------------------------------------------------------------------------+
 | We recommend gzip to improve performance unless your                | - System Config path: **Environment > Web Server**                     |
@@ -325,7 +325,7 @@ Enable insecure outgoing connections
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +---------------------------------------------------------------+---------------------------------------------------------------------------------------------+
 | Configure Mattermost to allow insecure outgoing connections.  | - System Config path: **Environment > Web Server**                                          |
@@ -353,7 +353,7 @@ Managed resource paths
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +--------------------------------------------------------+-------------------------------------------------------------------------+
 | A comma-separated list of paths within the Mattermost  | - System Config path: **Environment > Web Server**                      |
@@ -383,7 +383,7 @@ Reload configuration from disk
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +----------------------------------------------------------+---------------------------------------------------------------+
 | You must change the database line in the ``config.json`` | - System Config path: **Environment > Web Server**            |
@@ -402,7 +402,7 @@ Purge all caches
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +----------------------------------------------------------+---------------------------------------------------------------+
 | Purge all in-memory caches for sessions, accounts,       | - System Config path: **Environment > Web Server**            |
@@ -427,7 +427,7 @@ Websocket URL
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +--------------------------------------------------------+---------------------------------------------------------------------+
 | You can configure the server to instruct clients       | - System Config path: N/A                                           |
@@ -451,7 +451,7 @@ License file location
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +--------------------------------------------------------+----------------------------------------------------------------------------+
 | The path and filename of the license file on disk.     | - System Config path: N/A                                                  |
@@ -475,7 +475,7 @@ TLS minimum version
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +--------------------------------------------------------+---------------------------------------------------------------------+
 | The minimum TLS version used by the Mattermost server. | - System Config path: N/A                                           |
@@ -498,7 +498,7 @@ Trusted proxy IP header
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +--------------------------------------------------------+------------------------------------------------------------------------------+
 | Specified headers that will be checked, one by one,    | - System Config path: N/A                                                    |
@@ -534,7 +534,7 @@ Enable Strict Transport Security (HSTS)
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +--------------------------------------------------------+-------------------------------------------------------------------------------+
 | - **true**: Adds the Strict Transport Security (HSTS)  | - System Config path: N/A                                                     |
@@ -560,7 +560,7 @@ Secure TLS transport expiry
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +--------------------------------------------------------+----------------------------------------------------------------------------------------+
 | The time, in seconds, that the browser remembers a     | - System Config path: N/A                                                              |
@@ -586,7 +586,7 @@ TLS cipher overwrites
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +--------------------------------------------------------+-----------------------------------------------------------------------------+
 | Set TLS ciphers overwrites to meet requirements from   | - System Config path: N/A                                                   |
@@ -619,7 +619,7 @@ Goroutine health threshold
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +--------------------------------------------------------+----------------------------------------------------------------------------------+
 | Set a threshold on the number of goroutines when the   | - System Config path: N/A                                                        |
@@ -647,7 +647,7 @@ Allow cookies for subdomains
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +--------------------------------------------------------+-------------------------------------------------------------------------------------+
 | - **true**: **(Default)** Allows cookies for           | - System Config path: N/A                                                           |
@@ -671,7 +671,7 @@ Cluster log timeout
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 +--------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | Define the frequency, in milliseconds, of cluster      | - System Config path: N/A                                                               |

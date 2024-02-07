@@ -8,7 +8,7 @@ Using AD/LDAP synchronized groups to manage team or private channel membership
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 Mattermost groups created with `synchronized AD/LDAP groups </onboard/ad-ldap-groups-synchronization.html>`_ can be used to manage the membership of private teams and private channels. When a team or private channel is managed by synchronized groups, users will be added and removed based on their membership to the synchronized AD/LDAP group.
 

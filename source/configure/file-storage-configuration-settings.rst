@@ -25,7 +25,7 @@ File storage system
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | The type of file storage system used.                         | - System Config path: **Environment > File Storage**                     |
@@ -51,7 +51,7 @@ Local storage directory
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | The local directory to which files are written when the       | - System Config path: **Environment > File Storage**                     |
@@ -77,7 +77,7 @@ Maximum file size
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | The maximum file size for message attachments.                | - System Config path: **Environment > File Storage**                     |
@@ -110,7 +110,7 @@ Enable document search by content
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +---------------------------------------------------------------+-------------------------------------------------------------------------------------+
 | Enable users to search the contents of documents attached     | - System Config path: **Environment > File Storage**                                |
@@ -154,7 +154,7 @@ Enable searching content of documents within ZIP files
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +---------------------------------------------------------------+----------------------------------------------------------------------------------------+
 | Enables users to search the contents of compressed ZIP files  | - System Config path: **Environment > File Storage**                                   |
@@ -185,7 +185,7 @@ Amazon S3 bucket
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | The name of the bucket for your S3-compatible object          | - System Config path: **Environment > File Storage**                     |
@@ -206,7 +206,7 @@ Amazon S3 path prefix
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | The prefix you selected for your **Amazon S3 bucket** in AWS. | - System Config path: N/A                                                |
@@ -226,7 +226,7 @@ Amazon S3 region
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | The AWS region you selected when creating your                | - System Config path: **Environment > File Storage**                     |
@@ -252,7 +252,7 @@ Amazon S3 access key ID
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | A string with the access key for the S3-compatible storage    | - System Config path: **Environment > File Storage**                     |
@@ -276,7 +276,7 @@ Amazon S3 endpoint
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +---------------------------------------------------------------+------------------------------------------------------------------------------------+
 | The hostname of your S3-compatible instance.                  | - System Config path: **Environment > File Storage**                               |
@@ -300,7 +300,7 @@ Amazon S3 secret access key
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | The secret access key associated with your Amazon S3          | - System Config path: **Environment > File Storage**                     |
@@ -322,7 +322,7 @@ Enable secure Amazon S3 connections
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | Enable or disable secure Amazon S3 connections.               | - System Config path: **Environment > File Storage**                     |
@@ -346,7 +346,7 @@ Amazon S3 signature v2
 
 .. raw:: html
 
- <p class="mm-badge-note">Not available in legacy Mattermost Enterprise Edition E10 or E20</p>
+ <p class="mm-label-note">Not available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | By default, Mattermost uses Signature v4 to sign API calls    | - System Config path: N/A                                                |
@@ -373,7 +373,7 @@ Enable server-side encryption for Amazon S3
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | Enable server-side encryption for Amazon S3.                  | - System Config path: **Environment > File Storage**                     |
@@ -398,7 +398,7 @@ Enable Amazon S3 debugging
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | Enable or disable Amazon S3 debugging to capture additional   | - System Config path: **Environment > File Storage**                     |
@@ -425,7 +425,7 @@ Initial font
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------------+
 | The font used in auto-generated profile pictures with colored | - System Config path: N/A                                                      |

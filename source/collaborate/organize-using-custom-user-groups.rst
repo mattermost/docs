@@ -12,7 +12,7 @@ Manage custom groups (beta)
 
 .. raw:: html
 
- <p class="mm-badge-note">Not available in legacy Mattermost Enterprise Edition E10 or E20</p>
+ <p class="mm-label-note">Not available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 Custom groups (beta) reduce noise and improve focus by notifying the right people in a channel at the right time, while maintaining transparency for all members in that channel. Custom user groups let you notify up to 256 users at a time rather than notifying users individually. 
 

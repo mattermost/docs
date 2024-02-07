@@ -17,7 +17,7 @@ Enable push notifications
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +-----------------------------------------------------------------+--------------------------------------------------------------------------------+
 | Enable or disable Mattermost push notifications.                | - System Config path: **Environment > Push Notification Server**               |
@@ -64,7 +64,7 @@ Push notification server location
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +-----------------------------------------------------------------+--------------------------------------------------------------------------------+
 | The physical location of the Mattermost Hosted Push             | - System Config path: **Environment > Push Notification Server**               |
@@ -87,7 +87,7 @@ Maximum notifications per channel
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +-----------------------------------------------------------------+--------------------------------------------------------------------------------------+
 | The maximum total number of users in a channel before @all,     | - System Config path: **Environment > Push Notification Server**                     |

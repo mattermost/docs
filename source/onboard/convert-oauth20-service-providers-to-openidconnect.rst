@@ -6,7 +6,7 @@ Converting OAuth 2.0 Service Providers to OpenID Connect
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 .. include:: common-converting-oauth-to-openidconnect.rst
   :start-after: :nosearch:

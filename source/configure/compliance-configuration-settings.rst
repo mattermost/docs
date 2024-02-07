@@ -38,7 +38,7 @@ Global retention policy for messages
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 Set how long Mattermost keeps messages across all teams and channels. Doesn't apply to custom retention policies. Requires the `global retention policy for messages <https://docs.mattermost.com/configure/configuration-settings.html#enable-global-retention-policy-for-messages>`__ configuration setting to be set to ``true``.
 
@@ -60,7 +60,7 @@ Global retention policy for files
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 Set how long Mattermost keeps files across all teams and channels. Doesn't apply to custom retention policies. Requires the `global retention policy for files <https://docs.mattermost.com/configure/configuration-settings.html#enable-global-retention-policy-for-files>`__ configuration setting to be set to ``true``.
 
@@ -75,7 +75,7 @@ Custom retention policy
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 Set how long Mattermost keeps messages and files across specific teams and channels by specifying a name for the custom retention policy, setting a duration value, specifying the teams and channels that will follow this policy.
 
@@ -91,7 +91,7 @@ Data deletion time
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 Set the start time of the daily scheduled data retention job. Choose a time when fewer people are using your system. Must be a 24-hour time stamp in the form ``HH:MM``.
 
@@ -106,7 +106,7 @@ Run deletion job now
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 Start a Data Retention deletion job immediately. You can monitor the status of the job in the data deletion job table within the Policy Log section.
 

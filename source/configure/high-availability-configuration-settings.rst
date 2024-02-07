@@ -20,7 +20,7 @@ Enable high availability mode
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 +-----------------------------------------------------------------+------------------------------------------------------------+
 | You can enable high availability mode.                          | - System Config path: **Environment > High Availability**  |
@@ -46,7 +46,7 @@ Cluster name
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 +-----------------------------------------------------------------+-----------------------------------------------------------------+
 | The cluster to join by name in a high availability environment. | - System Config path: **Environment > High Availability**       |
@@ -68,7 +68,7 @@ Override hostname
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 +-----------------------------------------------------------------+----------------------------------------------------------------------+
 | You can override the hostname of this server.                   | - System Config path: **Environment > High Availability**            |
@@ -96,7 +96,7 @@ Use IP address
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 +-----------------------------------------------------------------+------------------------------------------------------------------------+
 | You can configure your high availability environment to         | - System Config path: **Environment > High Availability**              |
@@ -122,7 +122,7 @@ Use gossip
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 +-----------------------------------------------------------------+--------------------------------------------------------------------------------+
 | All cluster traffic uses the gossip protocol.                   | - System Config path: **Environment > High Availability**                      |
@@ -152,7 +152,7 @@ Enable experimental gossip encryption
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 +-----------------------------------------------------------------+----------------------------------------------------------------------------------------------+
 | Gossip encryption uses AES-256 by default, and this value isn’t | - System Config path: **Environment > High Availability**                                    |
@@ -183,7 +183,7 @@ Enable gossip compression
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 +-----------------------------------------------------------------+----------------------------------------------------------------------------------+
 | We recommend that you disable this configuration                | - System Config path: **Environment > High Availability**                        |
@@ -211,7 +211,7 @@ Gossip port
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 +-----------------------------------------------------------------+---------------------------------------------------------------------+
 | The port used for the gossip protocol. Both UDP and TCP         | - System Config path: **Environment > High Availability**           |
@@ -232,7 +232,7 @@ Streaming port
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 +-----------------------------------------------------------------+------------------------------------------------------------------------+
 | The port used for streaming data between servers.               | - System Config path: **Environment > High Availability**              |
@@ -254,7 +254,7 @@ Read only config
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 +-----------------------------------------------------------------+------------------------------------------------------------------------+
 | - **true**: **(Default)** Changes made to settings in the       | - System Config path: N/A                                              |
@@ -275,7 +275,7 @@ Network interface
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 +-----------------------------------------------------------------+------------------------------------------------------------------------+
 | An IP address used to identify the device that does automatic   | - System Config path: N/A                                              |
@@ -296,7 +296,7 @@ Bind address
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 +-----------------------------------------------------------------+--------------------------------------------------------------------+
 | An IP address used to bind cluster traffic to a specific        | - System Config path: N/A                                          |
@@ -322,7 +322,7 @@ Advertise address
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 +-----------------------------------------------------------------+------------------------------------------------------------------------+
 | The IP address used to access the server from other nodes.      | - System Config path: N/A                                              |
@@ -344,7 +344,7 @@ Maximum idle connections for high availability
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 +-----------------------------------------------------------------+------------------------------------------------------------------------+
 | The maximum number of idle connections held open from one       | - System Config path: N/A                                              |
@@ -365,7 +365,7 @@ Maximum idle connections per host
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 +-----------------------------------------------------------------+------------------------------------------------------------------------------+
 | The maximum number of idle connections held open from one       | - System Config path: N/A                                                    |
@@ -386,7 +386,7 @@ Idle connection timeout
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 +-----------------------------------------------------------------+---------------------------------------------------------------------------------------+
 | The amount of time, in milliseconds, to leave an idle           | - System Config path: N/A                                                             |

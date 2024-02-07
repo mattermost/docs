@@ -36,7 +36,7 @@ Enforcing MFA
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 This option can be enabled by the System Admin by going to **System Console > Authentication > MFA**, then setting **Enforce Multi-factor Authentication** to **true**.
 

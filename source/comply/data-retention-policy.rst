@@ -6,7 +6,7 @@ Data retention policy
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 By default, Mattermost stores all message history providing an unlimited search history to System Admins and end users.
 

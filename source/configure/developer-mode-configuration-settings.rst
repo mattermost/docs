@@ -18,7 +18,7 @@ Enable testing commands
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +---------------------------------------------------+--------------------------------------------------------------------------+
 | Enable or disable the ``/test`` slash command.    | - System Config path: **Environment > Developer**                        |
@@ -45,7 +45,7 @@ Enable developer mode
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +-----------------------------------------------+---------------------------------------------------------------------------+
 | Enable or disable developer mode.             | - System Config path: **Environment > Developer**                         |
@@ -73,7 +73,7 @@ Enable client debugging
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +---------------------------------------------------+---------------------------------------------------------------------------------------------+
 | Enable or disable client-side debugging settings  | - System Config path: **Environment > Developer**                                           |
@@ -100,7 +100,7 @@ Allow untrusted internal connections
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +-----------------------------------------------+-----------------------------------------------------------------------------------------------+
 | Limit the ability for the Mattermost server   | - System Config path: **Environment > Developer**                                             |

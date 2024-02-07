@@ -6,7 +6,7 @@ Generating a support packet
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 .. include:: common-support-packet.rst
   :start-after: :nosearch:

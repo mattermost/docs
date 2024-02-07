@@ -8,7 +8,7 @@ Guest accounts
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 Guest accounts are a way to collaborate with individuals, such as vendors and contractors, outside of your organization by controlling their access to channels and team members. For example, guest accounts can be used to collaborate with customers on a support issue or work on a website project with resources from an external design firm.
 

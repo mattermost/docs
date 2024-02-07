@@ -6,7 +6,7 @@ Google Single Sign-On
 
 .. raw:: html
 
- <p class="mm-badge-note">Also available in legacy Mattermost Enterprise Edition E20</p>
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 .. include:: common-sso-google.rst
   :start-after: :nosearch:
