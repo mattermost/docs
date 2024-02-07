@@ -4,12 +4,13 @@ Compliance export
 .. include:: ../_static/badges/ent-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-.. class:: mm-badge-note
-
-   *Also available in legacy Mattermost Enterprise Edition E20*
-
 .. raw:: html
    <p class="mm-badge-note"><em>Also available in legacy Mattermost Enterprise Edition E20</em></p>
+
+.. class:: your-class-name
+
+   Your paragraph content goes here.
+
 
 This feature enables compliance exports to be produced from the System Console, containing all messages including:
 
