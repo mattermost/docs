@@ -19,12 +19,12 @@ Site statistics
 
 +---------------------------------------------------------------+-------------------------------------------------------------+
 | View statistics on activated users, teams, channels, posts,   | - System Config path: **Reporting > Site Statistics**       |
-| sessions, commands, webhooks, active users, connections,      | - ``config.json setting``: N/A                              |
+| sessions, commands, webhooks, activated users, connections,   | - ``config.json setting``: N/A                              |
 | and playbooks.                                                | - Environment variable: N/A                                 |
 +---------------------------------------------------------------+-------------------------------------------------------------+
 | **Note**: Deactivated users as well as synthetic users in                                                                   |
 | `Microsoft Teams integrations </collaborate/collaborate-using-mattermost-for-microsoft-teams.html>`__                       |
-| and `shared channels users </onboard/shared-channels.html>`__, aren't counted towards the total number of active users.     |
+| and `shared channels users </onboard/shared-channels.html>`__, aren't counted towards the total number of activated users.  |
 +---------------------------------------------------------------+-------------------------------------------------------------+
 
 ----
@@ -39,7 +39,7 @@ Team statistics
 | number of public and private channels, total post count, and  | - ``config.json`` setting: N/A                                |
 | count of paid users (self-hosted only).                       | - Environment variable: N/A                                   |
 +---------------------------------------------------------------+---------------------------------------------------------------+
-| **Note**: Deactivated users are not counted towards the total number of active users.                                         |
+| **Note**: Deactivated users are not counted towards the total number of activated users.                                      |
 +---------------------------------------------------------------+---------------------------------------------------------------+
 
 ----

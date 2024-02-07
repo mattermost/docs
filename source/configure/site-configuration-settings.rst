@@ -426,14 +426,14 @@ Access the following configuration settings in the System Console by going to **
   :systemconsole: Site Configuration > Users and Teams
   :configjson: .TeamSettings.MaxUsersPerTeam
   :environment: MM_TEAMSETTINGS_MAXUSERSPERTEAM
-  :description: The maximum total number of users per team, including active and inactive users. Default is **50** users per team.
+  :description: The maximum total number of users per team, including activated and inactive users. Default is **50** users per team.
 
 Max users per team
 ~~~~~~~~~~~~~~~~~~
 
 +------------------------------------------------------------------------------+-------------------------------------------------------------------+
 | The **Max users per team** is the maximum total number of users per team,    | - System Config path: **Site Configuration > Users and Teams**    |
-| including active and inactive users.                                         | - ``config.json`` setting: ``.TeamSettings.MaxUsersPerTeam: 50``  |
+| including activated and inactive users.                                      | - ``config.json`` setting: ``.TeamSettings.MaxUsersPerTeam: 50``  |
 |                                                                              | - Environment variable: ``MM_TEAMSETTINGS_MAXUSERSPERTEAM``       |
 | In Mattermost, a team of people should be a small organization with a        |                                                                   |
 | specific goal. In the physical world, a team could sit around a single       |                                                                   |

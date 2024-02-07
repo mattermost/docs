@@ -182,7 +182,7 @@ The following diagram is a suggested configuration for Highly-Available database
 Load testing
 ~~~~~~~~~~~~
 
-Mattermost Enterprise Edition was `load tested <https://github.com/mattermost/mattermost-load-test>`__ with 60,000 concurrent active users with:
+Mattermost Enterprise Edition was `load tested <https://github.com/mattermost/mattermost-load-test>`__ with 60,000 concurrent activated users with:
 
 - Six Mattermost servers: m4.2xlarge (8 vCPU, 32 GB RAM)
 - One MySQL database server with five read replicas: db.r4.2xlarge (8 vCPU, 61 GB RAM)
