@@ -3019,6 +3019,13 @@ img.mm-badge-flag {
 	}
 }
 
+/* Badge note */
+
+.mm-badge-note {
+	font-size: 12px;
+	margin-top: -20px;
+}
+
 /* Config Settings */
 
 .config-setting-result-item {
