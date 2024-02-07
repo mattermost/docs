@@ -6,19 +6,19 @@ Additional System Admin roles
 
 *Available in legacy Mattermost Enterprise Edition E20*
 
-System Admins can assign system roles that permit granular user access to specific areas of the System Console. These roles enable users to perform certain administrative tasks without requiring access to all system administration areas. System roles never supersede the user's original role or the user's permissions configured by the Permissions scheme.
+System Admins can assign system roles that permit granular user access to specific areas of the System Console and related API endpoints. These roles enable users to perform certain administrative tasks without requiring access to all system administration areas. System roles never supersede the user's original role or the user's permissions configured by the Permissions scheme.
 
 Available roles
 ----------------
 
 A System Admin can configure the following system roles:
 
-- **System Manager:** The System Manager role has read/write permissions for management areas of the System Console, such as user management and integrations (excluding permissions). This role has read only access to authentication, reporting, and license interfaces.
+- **System Manager:** The System Manager role has read/write permissions for management areas, such as user management and integrations (excluding permissions). This role has read only access to authentication, reporting, and license interfaces.
 - **User Manager:** The User Manager role is able to read/write to all the user management areas (excluding permissions). The authentication interface is read-only.
-- **Custom Group Manager** The Custom Group Manager role has permissions to `create, edit, restore, and delete custom user groups </collaborate/organize-using-custom-user-groups.html>`__ via **User Groups** in the **Products menu**. It can be used to assign individual users this ability when **Custom Groups** permissions are removed for **All Members** via **System Console > Permissions > Edit Scheme > Custom Groups**.
-- **Viewer:** The Viewer role is able to view all pages of the System Console, but has no write access to any pages.
+- **Custom Group Manager** The Custom Group Manager role has permissions to `create, edit, restore, and delete custom user groups </collaborate/organize-using-custom-user-groups.html>`__. This role can be used to assign individual users the ability to manage custom groups when **Custom Groups** permissions are removed for **All Members** via **System Console > Permissions > Edit Scheme > Custom Groups**.
+- **Viewer:** The Viewer role is able to view all areas of the System Console, but has no write access.
 
-When a user is assigned a system role, they have role-based access to the System Console. Each role has a different set of default permissions, and what users can access or view depends on the role they've been assigned.
+When a user is assigned a system role, they have role-based access to the System Console and the API endpoints. Each role has a different set of default permissions, and what users can access or view depends on the role they've been assigned.
 
 +----------------------+-----------------------+---------------------------------------+
 | **System role**      | **Read/Write access** | **Read Only access**                  |
