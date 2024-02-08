@@ -116,7 +116,7 @@ If your system is air-gapped (meaning it doesn't have access to the internet), t
 Quarterly true-up report prior to v7.9
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-When you buy an annual Mattermost subscription, you agree to provide quarterly reports of the actual number of activated users within your system. An active user is a user who has an account in a workspace and does not show as **Inactive** in **System Console > User Management > Users**.
+When you buy an annual Mattermost subscription, you agree to provide quarterly reports of the actual number of activated users within your system. An active user is a user who has an account in a workspace and does not show as **Deactivated** in **System Console > User Management > Users**.
 
 We'll send you an email notice around the end of the quarter reminding you to send us your report. 
 
@@ -125,7 +125,7 @@ We'll send you an email notice around the end of the quarter reminding you to se
 
 To send this report, take a screenshot of **System Console > Site Statistics** and send in a reply email back to us. 
 
-- Please ensure your screenshot is taken from the top of the page and includes the **Total Activated Users** metric. 
+- Please ensure your screenshot is taken from the top of the page and includes the **Total Activated Users** metric (from Mattermost v9.5), or the **Total Active Users metric (Prior to Mattermost v9.5).
 - Please include the date of the screenshot in the file name.
 - We don't need your server address, so if it appears on your screenshot, you can redact it from the image.
 

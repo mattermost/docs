@@ -1011,7 +1011,7 @@ Synchronization interval (minutes)
 |                                                                                                                              | - ``config.json`` setting: ``.LdapSettings.SyncIntervalMinutes: 60`` |
 | Syncing with the AD/LDAP server will update Mattermost accounts to match any changes made to AD/LDAP attributes.             | - Environment variable: ``MM_LDAPSETTINGS_SYNCINTERVALMINUTES``      |
 |                                                                                                                              |                                                                      |
-| Disabled AD/LDAP accounts become inactive users in Mattermost, and any active sessions are revoked.                          |                                                                      |
+| Disabled AD/LDAP accounts become deactivated users in Mattermost, and any active sessions are revoked.                       |                                                                      |
 |                                                                                                                              |                                                                      |
 | Use the **AD/LDAP Synchronize Now** button to immediately revoke a session after disabling an AD/LDAP account.               |                                                                      |
 |                                                                                                                              |                                                                      |

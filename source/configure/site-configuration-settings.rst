@@ -426,14 +426,14 @@ Access the following configuration settings in the System Console by going to **
   :systemconsole: Site Configuration > Users and Teams
   :configjson: .TeamSettings.MaxUsersPerTeam
   :environment: MM_TEAMSETTINGS_MAXUSERSPERTEAM
-  :description: The maximum total number of users per team, including activated and inactive users. Default is **50** users per team.
+  :description: The maximum total number of users per team, including activated and deactivated users. Default is **50** users per team.
 
 Max users per team
 ~~~~~~~~~~~~~~~~~~
 
 +------------------------------------------------------------------------------+-------------------------------------------------------------------+
 | The **Max users per team** is the maximum total number of users per team,    | - System Config path: **Site Configuration > Users and Teams**    |
-| including activated and inactive users.                                      | - ``config.json`` setting: ``.TeamSettings.MaxUsersPerTeam: 50``  |
+| including activated and deactivated users.                                   | - ``config.json`` setting: ``.TeamSettings.MaxUsersPerTeam: 50``  |
 |                                                                              | - Environment variable: ``MM_TEAMSETTINGS_MAXUSERSPERTEAM``       |
 | In Mattermost, a team of people should be a small organization with a        |                                                                   |
 | specific goal. In the physical world, a team could sit around a single       |                                                                   |
@@ -648,16 +648,16 @@ Enable custom user statuses
   :configjson: .TeamSettings.EnableLastActiveTime
   :environment: MM_TEAMSETTINGS_ENABLELASTACTIVETIME
 
-  - **true**: **(Default)** Users can see when inactive users were last active on a user's profile and in direct message channel headers.
-  - **false**: Users can't see when inactive users were last online.
+  - **true**: **(Default)** Users can see when deactivated users were last active on a user's profile and in direct message channel headers.
+  - **false**: Users can't see when deactivated users were last online.
 
 Enable last active time
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 +---------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
-| - **true**: **(Default)** Users can see when inactive users were last active on a                 | - System Config path: **Site Configuration > Users and Teams**              |
+| - **true**: **(Default)** Users can see when deactivated users were last active on a              | - System Config path: **Site Configuration > Users and Teams**              |
 |   user's profile and in direct message channel headers.                                           | - ``config.json`` setting: ``.TeamSettings.EnableLastActiveTime: true``     |
-| - **false**: Users can't see when inactive users were last online.                                | - Environment variable: ``MM_TEAMSETTINGS_ENABLELASTACTIVETIME``            |
+| - **false**: Users can't see when deactivated users were last online.                             | - Environment variable: ``MM_TEAMSETTINGS_ENABLELASTACTIVETIME``            |
 +---------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
 
 .. config:setting:: users-enablecustomusergroups

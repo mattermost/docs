@@ -28,10 +28,10 @@ Getting people set up with a Mattermost account is typically something that syst
 - Connect an authentication service to assist with user provisioning, such as `AD/LDAP authentication </onboard/ad-ldap.html#active-directory-ldap-setup>`__ or `SAML authentication </onboard/sso-saml.html>`__.
 
 +----------------------------------------------------------------+-------------------------------------------------------------+
-| Manage activated and inactive users, revoke all user sessions, | - System Config path: **User Management > Users**           |
-| access individual users to view their User ID, add users       | - ``config.json setting``: N/A                              |
-| to other teams, and view the teams they are on and what        | - Environment variable: N/A                                 |
-| their role is on a team.                                       |                                                             |
+| Manage activated and deactivated users, revoke all user        | - System Config path: **User Management > Users**           |
+| sessions, access individual users to view their User ID,       | - ``config.json setting``: N/A                              |
+| add users to other teams, and view the teams they are on,      | - Environment variable: N/A                                 |
+| and what their role is on a team.                              |                                                             |
 +----------------------------------------------------------------+-------------------------------------------------------------+
 | **Note**: You can search for users by partial first name, last name, nickname, or username.                                  |
 +----------------------------------------------------------------+-------------------------------------------------------------+
