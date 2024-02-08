@@ -3455,7 +3455,7 @@ html_static_path = ["_static"]
 # dictionary. The filename must be relative to the html_static_path, or a full URI with scheme like
 # https://example.org/style.css. The attributes is used for attributes of <link> tag. It defaults to an empty list.
 html_css_files = [
-    "css/mattermost.css",
+    "css/mattermost-global.css",
     "css/thermometer.css",
     "css/copybuttons.css",
     "css/compass-icons.css"

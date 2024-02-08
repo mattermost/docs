@@ -73,7 +73,10 @@
     {% include "partials/_head_css_variables.html" with context %}
     {%- endblock -%}
 
-    <link rel="stylesheet" href="{{ pathto('_static/css/index-v1.css', 1) }}" type="text/css"/>
+
+    {%- if pagename == "index" -%}
+    <link rel="stylesheet" href="{{ pathto('_static/css/homepage-v1.css', 1) }}" type="text/css"/>
+    {%- endif %}
 
     {%- block extra_styles %}
     {%- endblock -%}
