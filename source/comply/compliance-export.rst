@@ -17,7 +17,7 @@ The exports include information on channel member history at the time the messag
 
 By default, Mattermost stores all message history providing an unlimited search history to admins and end users. In Mattermost Enterprise, you may set a `custom data retention policy </comply/data-retention-policy.html>`__ for how long messages and file uploads are kept in Mattermost channels and direct messages.
 
-Enterprise deployments with a requirement to archive history beyond the data retention period can enable this add-on to export compliance reports to third-party systems. Integration with Actiance Vantage and Global Relay are currently supported, with integrations with other systems in the roadmap.
+Enterprise deployments with a requirement to archive history beyond the data retention period can enable this add-on to export compliance reports to third-party systems. Integration with Actiance Vantage, Global Relay, and Proofpoint are currently supported, with integrations with other systems in the roadmap.
 
 .. note::
   
@@ -26,13 +26,13 @@ Enterprise deployments with a requirement to archive history beyond the data ret
 Set up guide
 ------------
 
-Use the following guides to configure exports for CSV, Actiance XML, or Global Relay EML. \
-
-For self-hosted deployments, compliance exports are written to the ``exports`` subdirectory of the configured `Local Storage directory </configure/configuration-settings.html>`__ in the chosen format. If you've configured Mattermost to use S3 storage, the exports are written to the ``exports`` directory in the Mattermost bucket.
+Use the following guides to configure exports for CSV, Actiance XML, or Global Relay EML.
 
 .. note::
    
-   The compliance exports do not contain posts sent before the feature was enabled. For self-hosted deployments, you can export past history via the ``export`` :doc:`command line tool <../manage/command-line-tools>`. 
+   - For self-hosted deployments, compliance exports are written to the ``exports`` subdirectory of the configured filestore in the chosen format. This will either be in the `Local Storage directory </configure/environment-configuration-settings.html#file-storage>` or the Mattermost S3 bucket if S3 storage is configured.
+   - Alternatively, you can specify an alternate filestore target and generate an S3 presigned URL for compliance exports. See the `dedicated export filestore target </configure/experimental-configuration-settings.html#enable-dedicated-export-filestore-target>`__ configuration settings documentation for details.
+   - Compliance exports don't contain posts sent before the feature was enabled. For self-hosted deployments, you can export past history via the ``export`` :doc:`command line tool <../manage/command-line-tools>`. 
 
 CSV
 ~~~~
@@ -66,12 +66,14 @@ Global Relay EML
 ~~~~~~~~~~~~~~~~
 
 1. Go to **System Console > Compliance > Compliance Export**.
-2. Set **Enable Compliance Exports** to **true**.
+2. Set **Enable Compliance Export** to **true**.
 3. Set the **Compliance Export time**. This is the start time of the daily scheduled compliance export job and must be a 24-hour time stamp in the form HH:MM. Choose a time when fewer people are using your system.
-4. Set the export file format to **GlobalRelay EML**.
-5. Select `A9/Type 9` or `A10/Type 10` for the **Global Relay Customer Account**. This is the type of Global Relay customer account your organization has.
-6. Set the **Global Relay SMTP username**, **Global Relay SMTP password**, and **Global Relay SMTP email address**, provided by Global Relay.
-7. Select **Save**.
+4. Set the **Export Format** to **GlobalRelay EML**.
+5. Select **A9/Type 9**, **A10/Type 10**, or **Custom** for the **Global Relay Customer Account**. This is the type of Global Relay customer account your organization has.
+   
+   - For **A9/Type 9** and **A10/Type 10** types, set the **Global Relay SMTP username**, **Global Relay SMTP password**, and **Global Relay SMTP email address**, provided by Global Relay.
+   - For a **Custom** type, set the **Global Relay SMTP username**, **Global Relay SMTP password**, **Global Relay SMTP email address**, **SMTP Server Name**, and the **SMTP Server Port**, provided by Global Relay. **Custom** type can be used to integrate with Proofpoint.
+6. Select **Save**.
 
 Once you've selected Global Relay EML as your file format, you can set up an integration with Global Relay archive system. For more information, see `Global Relay Archive <https://www.globalrelay.com/gr-services/archive>`__.
 

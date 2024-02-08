@@ -10,12 +10,16 @@ Mattermost Cloud is a software-as-a-service product. Start a free 30-day Matterm
 Mattermost Nonprofit License program
 --------------------------------------
 
-The Mattermost Nonprofit License enables nonprofit organizations who are unable to afford our commercial licenses to apply the benefits of the self-hosted `Mattermost Professional offering </about/editions-and-offerings.html#mattermost-professional>`__ towards advancing their missions with special nonprofit pricing.
+The Mattermost Nonprofit License enables nonprofit and open-source organizations who are unable to afford our commercial licenses to apply the benefits of the self-hosted `Mattermost Professional offering </about/editions-and-offerings.html#mattermost-professional>`__ towards advancing their missions with special nonprofit pricing.
+
+.. tip::
+
+  Nonprofit and open-source organizations that meet the `eligibility requirements </about/subscription.html#who-s-eligible>`__ can apply for the Mattermost Nonprofit license by `completing this form <https://support.mattermost.com/hc/en-us/requests/new?ticket_form_id=17664739497236>`__. Please note that it may take up to six weeks for us to respond to your request.
 
 What's included?
 ~~~~~~~~~~~~~~~~~
 
-A three-year subscription to our Mattermost Professional self-hosted offering for up to 1,000 users with a subscription fee of $250 USD. Upon acceptance of these terms, Mattermost has the right to place the name and logo of the nonprofit or charitable institution on our website and in our marketing materials.
+A three-year subscription to our Mattermost Professional self-hosted offering for up to 1,000 users with a subscription fee of $250 USD. If the nonprofit has over 1,000 users, the application will undergo a review on a case-by-case basis. Upon acceptance of these terms, Mattermost has the right to place the name and logo of the nonprofit, open-source or charitable institution on our website and in our marketing materials.
 
 Following the three-year subscription, the institution can renew the license every three years for an additional $250 USD subscription fee.
 

@@ -130,9 +130,12 @@ On mobile, select the **Settings** |gear| icon and tap **Notifications**.
 
     Mattermost also supports the ability to automatically send custom replies to direct messages. If your Mattermost admin enables this experimental feature, you can go to **Automatic Direct Message Replies** to select **Enable** this feature and compose your message.
 
-    Enabling this feature also sets your status to **Out of Office** and disables all email and push notifications until you disable it.
+    .. tab:: Per channel/category/group message
 
-.. tab:: Per channel/category
+       You can set notification preferences at the channel level, including group messages, for every channel you're a member of. You have 2 ways to access channel preferences: 
+       
+       - Select the channel name, then select **Notification Preferences**. 
+       - Or select the **View Info** |channel-info| icon, and select **Notification Preferences** in the right pane.
 
     You can set notification preferences at the channel level for every channel you're a member of. You have 2 ways to access  channel preferences: 
 
@@ -164,10 +167,11 @@ On mobile, select the **Settings** |gear| icon and tap **Notifications**.
 
     Using the mobile app:
 
-    1. Tap the channel where you want to mute mention notifications.
-    2. Tap the **More** |more-icon| icon located in the top right corner of the app to access additional message options.
-    3. Tap **View info**.
-    4. Tap **Ignore @channel, @here, @all** to disable the option.
+       In the desktop app, your mobile push notification preferences use the same configuration as the desktop app by default. Clear the **Use the same notification setting as desktop** option to customize your push notification preferences. You can receive notifications for all new messages; mentions, direct messages, and keywords; or no notifications within the desktop app.
+
+       In the mobile app, you're notified about all new messages by default. You can customize your mobile app notification preferences. You can receive notifications for all new messages, mentions only, or no notifications.
+
+       Select **Reset to default** to return to global defaults.
 
     **Desktop notifications**
 

@@ -4,51 +4,69 @@ Make calls
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-From Mattermost v7.0, you can make voice calls and share your screen in channels, group messages, and direct messages in both Mattermost Cloud and Mattermost self-hosted deployments.
+You can `join <#join-a-call>`__ or `start <#start-a-call>`__ voice calls, share your screen, raise your hand and `react using emojis <#react-using-emojis>`__ during a call, `chat <#chat-in-a-call>`__ in a thread, and continue working in Mattermost while on a call. Mattermost Enterprise customers can also `record calls <#record-a-call>`__.
 
 .. include:: ../_static/badges/academy-calls.rst
   :start-after: :nosearch:
 
-From Mattermost v7.0, you can:
+.. note::
 
-- Start or join a call from desktop and mobile apps in addition to web browsers.
-- Share screen (not available on mobile), raise hands, chat in a thread, and continue working in Mattermost while on a call.
-- Start a call using the ``/call start`` slash command or **Start call** in the channel header.
+  - From Mattermost v9.4, you can join the same call using a web browser, the desktop app, and the mobile app. You can mute, unmute, react, screenshare, and configure voice settings independently for each Mattermost client you're using. You'll appear multiple times as a call participant in the call widget when you join one call on multiple clients.
+  - The ability to share a screen using the mobile app isn't supported.
+  - Mattermost Cloud users can start calling right out of the box. For Mattermost self-hosted deployments, System admins need to enable and configure the plugin `using the System Console </configure/plugins-configuration-settings.html#calls>`__.
 
-Starting from Mattermost v7.7 you can:
+On this page:
 
-- Record calls (Mattermost Enterprise only).
-- React using emojis.
+- `Join a call <#join-a-call>`__
+- `Start a call <#start-a-call>`__
+- `Emojis <#emojis>`__
+- `Chat in a call <#chat-in-a-call>`__
+- `Record a call <#record-a-call>`__
+- `Frequently asked questions <#frequently-asked-questions>`__
+- `Troubleshooting <#troubleshooting>`__
+- `Debugging <#debugging>`__
 
-Mattermost Cloud users can start calling right out of the box. For Mattermost self-hosted deployments, System Admins need to enable the plugin and adjust configurations `in the System Console </configure/plugins-configuration-settings.html#calls>`_.
+Join a call
+-----------
+
+To join a call, select **Join call** in a channel, group message, or direct message. 
+
+From Mattermost v9.4, you'll see incoming call notifications for direct and group messages when a new call is started. Multiple calls will result in multiple incoming call notifications. If you're already in a call, and you receive a new incoming call notification, Mattermost prompts you to **Join** the incoming call, or dismiss the notification.
+
+Any active team member in a channel or message can join a call, whether it's a public or private channel, or a group or direct message. If someone from outside of the organization wants to join a call, you need to provide them with a guest account, and add them to the channel. Users who are archived or not registered can't join a call.
+
+Share a call link
+~~~~~~~~~~~~~~~~~~
+
+You can share a call's link to use in a meeting request or share with other people. The link is unique to each channel, and contains the channel's ID, so it doesn't change between calls. Use the ``/call link`` slash command to generate a shareable link. The call link is valid for long as the channel is active. When a channel is archived or deleted the link will become invalid.
 
 Start a call
 ------------
 
 .. tab:: Web/Desktop
 
-  To start a call, select **Start call** in the channel or message header. When you start a call in a channel, you're muted by default. In a direct or group message you're unmuted by default.
-  
-  .. tip::
+  .. tab:: Web/Desktop
+
+    To start a call, select **Start call** in the channel header. When you start a call in a channel, you're muted by default. In a direct or group message you're unmuted by default.
     
-    Select the call widget to move it to a different area of your screen.
+    .. tip::
+      
+      - You can move the call widget to a different area of your screen.
+      - Alternatively, you can start a call using the ``/call start`` slash command.
 
 .. tab:: Mobile
   
   To start a call, select the channel info menu. Then select **Start Call**.
     
-  After starting the call, audio will come through the device's speaker or a Bluetooth device, if connected. On Android, audio output will automatically switch to a Bluetooth device if one is connected during a call. You can tap the **Speaker** icon to manually select the output device.
+    To start a call, go the channel info menu. Then tap **Start Call**.
+     
+    After starting the call, audio will come through the device's speaker or a Bluetooth device, if connected. On Android, audio output will automatically switch to a Bluetooth device if one is connected during a call. You can tap the **Speaker** icon to manually select the output device.
 
-  On iOS, audio will automatically come through a connected device. You can override this behavior by tapping the **Speaker** button. Audio will then come through the speaker. However, you cannot manually select an output device on iOS at this time.
+    On iOS, audio will automatically come through a connected device. You can override this behavior by tapping the **Speaker** button. Audio will then come through the speaker. However, you cannot manually select an output device on iOS at this time.
 
-Any active team member in the channel can join a call, whether it's a public or private channel. If someone from outside of the organization wants to join a call, you'll need to provide them with a guest account, and add them to the channel. Users who are archived or not registered can't join a call.
 
-You can share a call's link to use in a meeting request or share with other team mates. The link is unique to each channel, and contains the channel's ID, so it doesn't change between calls. Use the ``/call link`` slash command to generate a shareable link.
-
-The call link is valid for long as the channel is active. When a channel is archived or deleted the link will become invalid.
-
-Emojis
-------
+React using emojis
+------------------
 
 You can use emojis to react during a call.
 
@@ -76,7 +94,10 @@ A chat thread is created automatically for every new call.
 Record a call
 -------------
 
-From Mattermost v7.7 if you're the host of a meeting, you can record the call.
+.. include:: ../_static/badges/ent-only.rst
+  :start-after: :nosearch:
+
+From Mattermost v7.7, if you're the host of a meeting, you can record the call.
 
 The recording includes audio as well as any screen sharing during the call. The default setting for a recording is 60 minutes, but your system admin may adjust that as needed. Ten minutes before the time limit is reached, you'll receive a reminder that the recording limit will be reached soon.
 
