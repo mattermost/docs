@@ -362,8 +362,8 @@ Mattermost server
 
 Database server
 
- - Internal hostname: mysql.lan
- - MySQL v5.7
+ - Internal hostname: postgresql.lan
+ - PostgreSQL v11
  - LDAP Provider - 192.168.1.102
  - Internal hostname: ldap.lan
  - OpenLDAP 2.4.54 (Docker container)
@@ -388,7 +388,7 @@ Database servers
  - Hostnames: db1.local.lan, db2.local.lan, db3.local.lan
  - Primary: db1.local.lan
  - Read-Only: db2.local.lan, db3.local.lan  
- - MySQL v5.6
+ - PostgreSQL v11
 
 Elasticsearch server
 
