@@ -1768,6 +1768,8 @@ redirects = {
         "https://docs.mattermost.com/manage/logging.html#syslog-target-configuration-options",
 "configure/experimental-configuration-settings.html#syslog-max-queue-size":
         "https://docs.mattermost.com/manage/logging.html#syslog-target-configuration-options",
+"configure/configuation-in-mattermost-database.html":
+        "https://docs.mattermost.com/configure/configuation-in-a-database.html",
 
 # Deploy redirects
 "deploy/mobile-apps-faq.html":
