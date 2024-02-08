@@ -23,7 +23,7 @@
 </div>
 {%- endif %}
 
-<div class="page">
+<div class="page homepage">
     <header class="mobile-header">
         <div class="header-left">
             <label class="nav-overlay-icon" for="__navigation">
@@ -111,10 +111,13 @@
                     </label>
                 </div>
                 <article role="main">
-                    THIS IS THE HOMEPAGE
+                    <section class="masthead">
+                        <h1>Mattermost Documentation</h1>
+                        <h2 class="subhead">Technical resources to help admins, users, and developers leverage Mattermost</h2>
+                    </section>
                 </article>
             </div>
-            <div class="docs-feedback-block">{% include "feedback.html" %}</div>
+            <!-- <div class="docs-feedback-block">{% include "feedback.html" %}</div> -->
             <footer>
                 {% block footer %}
                 <div class="related-pages">

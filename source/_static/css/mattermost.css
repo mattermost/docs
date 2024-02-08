@@ -1,6 +1,13 @@
 @import url("https://use.typekit.net/hzs0pdc.css");
 @import url('https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;700&family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
+:root {
+    --denim: #1E325C;
+    --marigold: #FFBC1F;
+    --black-04:  #5A6072;
+}
+
+
 .pointer-events-none {
     pointer-events: none;
 }
@@ -288,6 +295,13 @@ kbd {
     text-decoration: none;
     transition: color .3s ease-in-out;
 }
+
+@media (prefers-color-scheme: dark) {
+    .site-header__col--menu .site-nav__toplink>a {
+        color: #FFFFFF;
+    }
+}
+
 
 @media (max-width:991.98px) {
     .site-header__col--menu .site-nav__toplink>a {
@@ -1474,6 +1488,16 @@ footer.site-footer {
     border-color: #1c58d9;
     color: #fff;
 }
+
+@media (prefers-color-scheme: dark) {
+    .mm-button.mm-button-solid.mm-button-blue {
+        background-color: var(--marigold);
+        border-color: var(--marigold);
+        color: #000000;
+    }
+}
+
+
 @media (min-width: 768px) {
     .mm-button.mm-button-solid.mm-button-blue:focus,
     .mm-button.mm-button-solid.mm-button-blue:hover {
@@ -1490,6 +1514,13 @@ footer.site-footer {
 .mm-button-outline--thin.mm-button-outline--thin-blue {
     color: #043cb5 !important;
     border: 1px solid #043cb5;
+}
+
+@media (prefers-color-scheme: dark) {
+    .mm-button-outline--thin.mm-button-outline--thin-blue {
+        color: var(--marigold) !important;
+        border: 1px solid var(--marigold);
+    }
 }
 
 @media (max-width: 767px) {
