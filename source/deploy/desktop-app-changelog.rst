@@ -18,7 +18,7 @@ Compatibility
 ~~~~~~~~~~~~~~~
 
 - Desktop App is supported on any currently `supported Mattermost server version <https://docs.mattermost.com/upgrade/release-lifecycle.html>`_.
-- Updated Chromium minimum supported version to < >.
+- Updated Chromium minimum supported version to 120+.
 
 Improvements
 ~~~~~~~~~~~~~~~
@@ -34,7 +34,7 @@ All Platforms
 Architectural Changes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- Major version upgrade of Electron to < >. Electron is the underlying technology used to build the Desktop App.
+- Major version upgrade of Electron to 28.2.2. Electron is the underlying technology used to build the Desktop App.
 
 Bug Fixes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
