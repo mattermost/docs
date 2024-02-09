@@ -22,7 +22,9 @@ Data retention policies
 Changes to properties in this section require a server restart before taking effect.
 
 .. warning::
-   Once a message or a file is deleted, the action is irreversible. Please be careful when setting up a custom data retention policy.
+
+  - Once a message or a file is deleted, the action is irreversible. Please be careful when setting up a custom data retention policy.
+  - From Mattermost v9.5, data retention removes Elasticsearch indexes based on the day of the retention cut-off time.
 
 Access the following configuration settings in the System Console by going to **Compliance > Data Retention Policies**.
 
@@ -31,7 +33,7 @@ Access the following configuration settings in the System Console by going to **
   :systemconsole: Compliance > Data Retention Policies
   :configjson: .DataRetentionSettings.MessageRetentionDays
   :environment: MM_DATARETENTIONSETTINGS_MESSAGERETENTIONDAYS
-  :description: Set how long Mattermost keeps messages across all teams and channels. Doesn't apply to custom retention policies. The minimum time is one day.
+  :description: Set how long Mattermost keeps messages across all teams and channels. Doesn't apply to custom retention policies. The minimum time is 1 hour.
 
 Global retention policy for messages
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -40,18 +42,22 @@ Global retention policy for messages
 
 Set how long Mattermost keeps messages across all teams and channels. Doesn't apply to custom retention policies. Requires the `global retention policy for messages <https://docs.mattermost.com/configure/configuration-settings.html#enable-global-retention-policy-for-messages>`__ configuration setting to be set to ``true``.
 
-By default, messages are kept forever. If **Days** or **Years** is chosen, set how many days or years messages are kept in Mattermost. Messages older than the duration you set will be deleted nightly. The minimum time is one day.
+By default, messages are kept forever. If **Hours**, **Days**, or **Years** is chosen, set how many hours, days, or years messages are kept in Mattermost. Messages older than the duration you set will be deleted nightly. The minimum message retention time is one hour.
 
-+-------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"MessageRetentionDays": 365`` with numerical input. |
-+-------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"MessageRetentionHours": 1`` or ``"MessageRetentionDays"`` with numerical input.   |
++--------------------------------------------------------------------------------------------------------------------------------+
+
+.. note::
+
+  From Mattermost v9.5, when a ``MessageRetentionHours`` value is configured, the ``MessageRetentionDays`` value must be 0 in the ``config.json`` file.  Conversely, when a ``MessageRetentionDays`` value is configured, the ``MessageRetentionHours`` value must be ``0``.
 
 .. config:setting:: dataretention-globalfilepolicy
   :displayname: Global retention policy for files (Data Retention)
   :systemconsole: Compliance > Data Retention Policies
   :configjson: .DataRetentionSettings.FileRetentionDays
   :environment: MM_DATARETENTIONSETTINGS_FILERETENTIONDAYS
-  :description: Set how long Mattermost keeps files across all teams and channels. Doesn't apply to custom retention policies. The minimum time is one day.
+  :description: Set how long Mattermost keeps files across all teams and channels. Doesn't apply to custom retention policies. The minimum time is 1 hour.
 
 Global retention policy for files
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -60,18 +66,29 @@ Global retention policy for files
 
 Set how long Mattermost keeps files across all teams and channels. Doesn't apply to custom retention policies. Requires the `global retention policy for files <https://docs.mattermost.com/configure/configuration-settings.html#enable-global-retention-policy-for-files>`__ configuration setting to be set to ``true``.
 
-By default, files are kept forever. If **Days** or **Years** is chosen, set how many days or years files are kept in Mattermost. Files older than the duration you set will be deleted nightly. The minimum time is one day.
+By default, files are kept forever. If **Hours**, **Days**, or **Years** is chosen, set how many hours, days, or years files are kept in Mattermost. Files older than the duration you set will be deleted nightly. The minimum file retention time is one hour.
 
-+----------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"FileRetentionDays": 365`` with numerical input. |
-+----------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"FileRetentionHours": ``1`` or ``"FileRetentionDays"`` with numerical input. |
++--------------------------------------------------------------------------------------------------------------------------+
+
+.. note::
+
+  From Mattermost v9.5, when a ``FileRetentionHours`` value is configured, the ``FileRetentionDays`` value must be 0 in the ``config.json`` file.  Conversely, when a ``FileRetentionDays`` value is configured, the ``FileRetentionHours`` value must be ``0``.
+
+.. config:setting:: dataretention-customretentionpolicy
+  :displayname: Custom retention policy (Data Retention)
+  :systemconsole: Compliance > Data Retention Policies
+  :configjson: .DataRetentionSettings.DeletionJobStartTime
+  :environment: MM_DATARETENTIONSETTINGS_DELETIONJOBSTARTTIME
+  :description: Set the start time of the daily scheduled data retention job. Must be a 24-hour time stamp in the form ``HH:MM``. This setting is based on the local time of the server.
 
 Custom retention policy
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 *Available in legacy Enterprise Edition E20*
 
-Set how long Mattermost keeps messages and files across specific teams and channels by specifying a name for the custom retention policy, setting a duration value, specifying the teams and channels that will follow this policy.
+Set how long Mattermost keeps messages and files across specific teams and channels by specifying a name for the custom retention policy, setting a duration value in days or years, and specifying the teams and channels that will follow this policy.
 
 .. config:setting:: dataretention-deletiontime
   :displayname: Data deletion time (Data Retention)
