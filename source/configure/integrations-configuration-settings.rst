@@ -117,14 +117,30 @@ Enable OAuth 2.0 service provider
 
   Cloud admins can't modify this configuration setting.
 
+.. config:setting:: integrate-request-timeout
+  :displayname: Integration request timeout (Integrations)
+  :systemconsole: Integrations > Integration Management
+  :configjson: .ServiceSettings.OutgoingIntegrationRequestsDefaultTimeout
+  :environment: MM_SERVICESETTINGS_OUTGOINGINTEGRATIONREQUESTDEFAULTTIMEOUT
+  :description: The number of seconds to wait for external integration HTTP requests, before timing out. Default value is **30 seconds**.
+
+Integration request timeout
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The number of seconds to wait for external integration HTTP requests, before timing out, including `custom slash commands <https://developers.mattermost.com/integrate/slash-commands/custom/>`__, `outgoing webhooks <https://developers.mattermost.com/integrate/webhooks/outgoing/>`__, `interactive messages <https://developers.mattermost.com/integrate/plugins/interactive-messages/>`__, and `interactive dialogs <https://developers.mattermost.com/integrate/plugins/interactive-dialogs/>`__. Increase this value if you have external integrations that can take some time to generate an HTTP response, or experience delayed responses due to latency.
+
++------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"OutgoingIntegrationRequestsDefaultTimeout": 30``. |
++------------------------------------------------------------------------------------------------+
+
 .. config:setting:: integrate-enableusernameoverride
   :displayname: Enable integrations to override usernames (Integrations)
   :systemconsole: Integrations > Integration Management
   :configjson: .ServiceSettings.EnablePostUsernameOverride
   :environment: MM_SERVICESETTINGS_ENABLEPOSTUSERNAMEOVERRIDE
 
-  - **true**: Webhooks, slash commands, OAuth 2.0 apps, and other integrations such as `Zapier <https://docs.mattermost.com/integrations/zapier.html>`__, will be allowed to change the username they are posting as.
-  - **false**: **(Default)** Custom slash commands can only post as the username of the user who used the slash command.
+  - **true**: Webhooks, slash commands, OAuth 2.0 apps, and other integrations will be allowed to change the username they are posting as.
+  - **false**: Custom slash commands can only post as the username of the user who used the slash command.
 
 Enable integrations to override usernames
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -143,8 +159,8 @@ Enable integrations to override usernames
   :configjson: .ServiceSettings.EnablePostIconOverride
   :environment: MM_SERVICESETTINGS_ENABLEPOSTICONOVERRIDE
 
-  - **True**: Webhooks, slash commands, and other integrations, such as `Zapier <https://docs.mattermost.com/integrations/zapier.html>`__, will be allowed to change the profile picture they post with.
-  - **False**: Webhooks, slash commands, and OAuth 2.0 apps can only post with the profile picture of the account they were set up with.
+  - **true**: Webhooks, slash commands, OAuth 2.0 apps, and other integrations such as `Zapier <https://docs.mattermost.com/integrations/zapier.html>`__, will be allowed to change the username they are posting as.
+  - **false**: **(Default)** Custom slash commands can only post as the username of the user who used the slash command.
 
 Enable integrations to override profile picture icons
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
