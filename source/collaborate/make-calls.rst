@@ -4,24 +4,26 @@ Make calls
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-You can `join <#join-a-call>`__ or `start <#start-a-call>`__ voice calls, share your screen, raise your hand and `react using emojis <#react-using-emojis>`__ during a call, `chat <#chat-in-a-call>`__ in a thread, and continue working in Mattermost while on a call. Mattermost Enterprise customers can also `record calls <#record-a-call>`__.
+You can `join a call <#join-a-call>`__ or `start a call <#start-a-call>`__, `share your screen <#share-screen>`__, raise your hand, `react using emojis <#react-using-emojis>`__ during a call, `chat in a thread <#chat-in-a-call>`__, and continue working in Mattermost while on a call. 
+
+Mattermost Enterprise customers can also `record calls <#record-a-call>`__ and `transcribe recorded calls <#transcribe-recorded-calls>`__.
 
 .. include:: ../_static/badges/academy-calls.rst
   :start-after: :nosearch:
 
 .. note::
 
-  - From Mattermost v9.4, you can join the same call using a web browser, the desktop app, and the mobile app. You can mute, unmute, react, screenshare, and configure voice settings independently for each Mattermost client you're using. You'll appear multiple times as a call participant in the call widget when you join one call on multiple clients.
-  - The ability to share a screen using the mobile app isn't supported.
-  - Mattermost Cloud users can start calling right out of the box. For Mattermost self-hosted deployments, System admins need to enable and configure the plugin `using the System Console </configure/plugins-configuration-settings.html#calls>`__.
+  Mattermost Cloud users can start calling right out of the box. For Mattermost self-hosted deployments, System admins need to enable and configure the plugin `using the System Console </configure/plugins-configuration-settings.html#calls>`__.
 
 On this page:
 
 - `Join a call <#join-a-call>`__
 - `Start a call <#start-a-call>`__
-- `Emojis <#emojis>`__
+- `Share your screen <#share-screen>`__
+- `React using emojis <#emojis>`__
 - `Chat in a call <#chat-in-a-call>`__
 - `Record a call <#record-a-call>`__
+- `Transcripbe a recorded call <#transcribe-recorded-calls>`__
 - `Frequently asked questions <#frequently-asked-questions>`__
 - `Troubleshooting <#troubleshooting>`__
 - `Debugging <#debugging>`__
@@ -29,16 +31,17 @@ On this page:
 Join a call
 -----------
 
-To join a call, select **Join call** in a channel, group message, or direct message. 
+To join a call, select **Join call** in a channel, group message, or direct message. Any active team member in a channel or message can join a call, whether it's a public or private channel, or a group or direct message. 
 
-From Mattermost v9.4, you'll see incoming call notifications for direct and group messages when a new call is started. Multiple calls will result in multiple incoming call notifications. If you're already in a call, and you receive a new incoming call notification, Mattermost prompts you to **Join** the incoming call, or dismiss the notification.
+.. tip::
 
-Any active team member in a channel or message can join a call, whether it's a public or private channel, or a group or direct message. If someone from outside of the organization wants to join a call, you need to provide them with a guest account, and add them to the channel. Users who are archived or not registered can't join a call.
+  - You can share a call's link to use in a meeting request or share with other people. The link is unique to each channel, and contains the channel's ID, so it doesn't change between calls. Use the ``/call link`` slash command to generate a shareable link. The call link is valid for long as the channel is active. When a channel is archived or deleted, the share link becomes invalid.
+  - If someone from outside of the organization wants to join a call, you need to provide them with a guest account, and add them to the channel. Users who are archived or not registered can't join a call.
 
-Share a call link
-~~~~~~~~~~~~~~~~~~
+From Mattermost v9.4:
 
-You can share a call's link to use in a meeting request or share with other people. The link is unique to each channel, and contains the channel's ID, so it doesn't change between calls. Use the ``/call link`` slash command to generate a shareable link. The call link is valid for long as the channel is active. When a channel is archived or deleted the link will become invalid.
+- You can join the same call using a web browser, the desktop app, and the mobile app. You can mute, unmute, react, share your screen, and configure voice settings independently for each Mattermost client you're using. You'll appear multiple times as a call participant in the call widget when you join one call on multiple clients.
+- You'll see incoming call notifications for direct and group messages when a new call is started. Multiple calls will result in multiple incoming call notifications. If you're already in a call, and you receive a new incoming call notification, Mattermost prompts you to **Join** the incoming call, or dismiss the notification.
 
 Start a call
 ------------
@@ -62,6 +65,20 @@ Start a call
 
     On iOS, audio will automatically come through a connected device. You can override this behavior by tapping the **Speaker** button. Audio will then come through the speaker. However, you cannot manually select an output device on iOS at this time.
 
+Share your screen
+-----------------
+
+During a call, you can share your screen with other call participants, unless your system admin has `disabled your ability to do so </configure/plugins-configuration-settings.html#allow-screen-sharing>`__. 
+
+.. note::
+  
+  Screensharing is available in the Mattermost desktop app or a web browser. The ability to screenshare using the mobile app isn't supported.
+
+To share your screen:
+
+1. In the call widget, select **Start presenting**.
+2. Select the screen you want to share.
+3. To stop sharing, select the **Stop presenting** icon or the **Stop sharing** option.
 
 React using emojis
 ------------------
@@ -99,13 +116,11 @@ Record a call
 .. include:: ../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
-From Mattermost v7.7, if you're the host of a meeting, you can record the call.
+From Mattermost v7.7, if you're the host of a meeting, you can record the call, unless your system admin has `disabled the host's ability to do so <https://docs.mattermost.com/configure/plugins-configuration-settings.html#enable-call-recordings-beta>`__.
 
-The recording includes audio as well as any screen sharing during the call. The default setting for a recording is 60 minutes, but your system admin may adjust that as needed. Ten minutes before the time limit is reached, you'll receive a reminder that the recording limit will be reached soon.
+Call recordings include audio, any screen sharing during the call, and `text captions <#add-captions-to-recorded-calls>`__, when enabled. The default setting for a recording is 60 minutes, but your system admin may `change the recording duration </configure/plugins-configuration-settings.html#maximum-call-recording-duration>`__ as needed. You'll receive a reminder 10 minutes before the recording limit is reached. If your call is going to continue beyond the recording limit, allow the first recording to complete, then start a new recording immediately after.
 
-If your call is going to continue and you still want to record, once the first recording is complete you can start a new one immediately after.
-
-When you stop recording, the recording is posted in the call thread as a file attachment. It's available to all users in the channel both during the call, and when the call has ended.
+When you stop recording, the recording file is posted in the call thread as an MP4 file attachment. It's available to all users in the channel both during the call, and after the call has ended.
 
 To record a call:
 
@@ -115,20 +130,34 @@ To record a call:
 
     1. Select **Start call** in the header of the channel, group message, or direct message.
     2. Select the pop-out icon.
-    3. In the pop-out screen, select the record button.
-    4. To stop recording, select the record button again.
+    3. In the call widget, select the **Record** button.
+    4. To stop recording, select the **Record** button again.
 
   .. tab:: Mobile
   
-    To start recording, use the ``/call recording start`` slash command. When you're finished recording, use the ``/call recording stop`` slash command. Alternatively, expand the call window using the arrows in the top-right of the active call banner. Then select the record button. To finish, select the button again.
-    
+    To start recording, use the ``/call recording start`` slash command. When you're finished recording, use the ``/call recording stop`` slash command. Alternatively, expand the call window using the arrows in the top-right of the active call banner. Then select the **Record** button. To finish, select the **Record** button again.
+
+Transcribe recorded calls
+--------------------------
+
+.. include:: ../_static/badges/ent-only.rst
+  :start-after: :nosearch:
+
+From Mattermost v9.4, and Mattermost mobile app v.2.13, call recordings can include text captions, and a transcription text file can be generated, unless your system admin has `disabled the ability to transcribe call recordings <configure/plugins-configuration-settings.html#enable-call-transcriptions-experimental>`__.
+
+.. note::
+
+  `Call recording must be enabled <configure/plugins-configuration-settings.html#enable-call-recordings-beta>`__ to enable recorded call transcriptions.
+
+When call recording stops, the transcription file is posted in the call thread as a TXT file attachment. It's available to all users in the channel both during the call, and after the call has ended. Additionally, users viewing the call recording can show or hide text captions using the Closed Captioning option in the video player.
+
 Frequently asked questions
 --------------------------
 
 Can I set a ring tone for incoming calls?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Yes! From Mattermost v8.0 and Calls v0.17.0, desktop app and webapp users can go to **Settings > Notifications > Desktop Notifications** to enable Mattermost to alert you to incoming calls through direct or group messages with a specific ring tone and a desktop notification, unless the system admin has `disabled your ability to do so </plugins-configuration-settings.html#enable-call-ringing-beta>`__.
+Yes! From Mattermost v8.0 and Calls v0.17.0, desktop app and web users can go to **Settings > Notifications > Desktop Notifications** to enable Mattermost to alert you to incoming calls through direct or group messages with a specific ring tone and a desktop notification, unless the system admin has `disabled your ability to do so </plugins-configuration-settings.html#enable-call-ringing-beta>`__.
 
 Is video supported?
 ~~~~~~~~~~~~~~~~~~~
@@ -170,7 +199,7 @@ There's a known bug on macOS with some versions of Chrome (which is used by Matt
 
 1. Quit Mattermost.
 2. Open Terminal.
-3. In terminal, run: ``tccutil reset ScreenCapture Mattermost.Desktop``
+3. In the terminal, run: ``tccutil reset ScreenCapture Mattermost.Desktop``
 4. Restart Mattermost and start a call.
 5. Select **Screen share** and give it permissions again.
 6. Restart Mattermost again.
