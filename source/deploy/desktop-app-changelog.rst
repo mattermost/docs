@@ -10,7 +10,7 @@ This changelog summarizes updates to Mattermost desktop app releases for `Matter
 Release v5.7
 --------------
 
-**Release Date: March 16, 2024**
+**Release Date: March 15, 2024**
 
 **Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/latest>`_
 
