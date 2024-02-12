@@ -4,7 +4,9 @@ Google Single Sign-On
 .. include:: ../_static/badges/entpro-cloud-free.rst
   :start-after: :nosearch:
 
-*Available in legacy Mattermost Enterprise Edition E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 .. include:: common-sso-google.rst
   :start-after: :nosearch:
