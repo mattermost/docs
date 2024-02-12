@@ -8,14 +8,38 @@ Performance monitoring
 
  <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
-Performance monitoring support enables a Mattermost server to track system health for large Enterprise deployments through integrations with `Prometheus <https://prometheus.io/>`__ and `Grafana <https://grafana.org/>`__. These integrations support data collection from several Mattermost servers, which is particularly useful if you're running Mattermost `in high availability mode </scale/high-availability-cluster.html>`__. Once you're tracking system health, you can `set up performance alerts </scale/performance-alerting.html>`__ on your Grafana dashboard.
+Performance monitoring support enables admins to track system health for large Enterprise deployments through integrations with `Prometheus <https://prometheus.io/>`__ and `Grafana <https://grafana.org/>`__. These integrations support data collection from several Mattermost servers, which is particularly useful if you're running Mattermost `in high availability mode </scale/high-availability-cluster.html>`__. Once you're tracking system health, you can `set up performance alerts </scale/performance-alerting.html>`__ on your Grafana dashboard.
+
+Admins can collect and store various data points from the Mattermost application in an `OpenMetrics <https://openmetrics.io>`__ format by `deploying the Mattermost Metrics plugin <#mattermost-metrics-plugin>`__, or by `deploying Prometheus <#install-prometheus>`__ and `Grafana <#install-grafana>`__.
+
+Mattermost Metrics plugin
+-------------------------
+
+The Mattermost Metrics plugin, available from Mattermost v6.3, collects and stores the `same performance monitoring metrics <#statistics>`__ as if Prometheus and Grafana were deployed, without having to deploy these third-party tools. Data is collected every minute and is stored where the plugin is running. The data is sychronized to either a cloud-based or local file store every hour, and retained for 15 days. 
+
+Using the Mattermost Metrics plugin, you can download and share the collected data with Mattermost to understand application performance, troubleshoot system stability and performance, as well as inform route cause analysis.
+
+In High Availability deployments, the Mattermost Metrics Plugin operates in 2 modes: scraper mode and listener mode.
+
+- In **Scraper Mode**, the plugin scrapes metrics from nodes listed in the ``ClusterDiscovery`` table. The plugin includes Time Series Database (tsdb) synchronization to a remote file store. This mode is essential for collecting metrics data.
+
+- In **Listener Mode**, the plugin serves download requests by copying tsdb blocks from the remote file store and preparing the dump. This mode is focused on making the collected metrics available for analysis and troubleshooting.
+
+For the single node deployment, these modes are combined.
+
+Install the Mattermost Metrics plugin
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1. Download the latest version from the `Mattermost release page <https://github.com/mattermost/mattermost-plugin-metrics/releases>`__.
+2. In the System Console, go to **Plugins > Plugin Management** to upload the plugin file. Alternatively, you can place the plugin file in the Mattermost server's plugin directory manually.
+3. Enable the plugin in the System Console.
+
+Install Prometheus
+-------------------
 
 .. note::
 
    While Prometheus and Grafana may be installed on the same server as Mattermost, we recommend installing these integrations on separate servers, and configure Prometheus to pull all metrics from Mattermost and other connected servers.
-
-Install Prometheus
--------------------
 
 1. `Download a precompiled binary for Prometheus <https://prometheus.io/download/>`__. Binaries are provided for many popular distributions, including Darwin, Linux, and Windows. For installation instructions, see the `Prometheus install guides <https://prometheus.io/docs/introduction/getting_started/>`__.
 
@@ -76,6 +100,10 @@ Install Prometheus
 
 Install Grafana
 ----------------
+
+.. note::
+
+   While Prometheus and Grafana may be installed on the same server as Mattermost, we recommend installing these integrations on separate servers, and configure Prometheus to pull all metrics from Mattermost and other connected servers.
 
 1. `Download a precompiled binary for Grafana <https://grafana.com/docs/grafana/latest/installation/debian/>`__ on Ubuntu or Debian. Binaries are also available for other distributions, including Redhat, Windows and Mac. For install instructions, see `Grafana install guides <https://grafana.com/docs/grafana/latest/installation/debian/>`__
 
