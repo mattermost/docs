@@ -183,11 +183,15 @@ Require email verification
 Enable sign-in with email
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
-| - **true**: **(Default)** Allows users to sign-in with email and password.                                                                                                      | - System Config path: **Authentication > Email**                    |
-| - **false**: Disables authentication with email and password, and removes the option from the login screen. Use this option to limit authentication to single sign-on services. | - ``config.json`` setting: ``.EmailSettings.EnableSignInWithEmail`` |
-|                                                                                                                                                                                 | - Environment variable: ``MM_EMAILSETTINGS_ENABLESIGNINWITHEMAIL``  |
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
++-----------------------------------------------------------------------------+-------------------------------------------------------------------------+
+| - **true**: **(Default)** Allows users to sign-in with email and password.  | - ``config.json`` setting: ``.EmailSettings.EnableSignInWithEmail``     |
+| - **false**: Disables authentication with email and password,               | - System Config path: **Authentication > Email**                        |
+|   and removes the option from the login screen. Use this option to limit    | - Environment variable: ``MM_EMAILSETTINGS_ENABLESIGNINWITHEMAIL``      |
+|   authentication to single sign-on services.                                |                                                                         |
++-----------------------------------------------------------------------------+-------------------------------------------------------------------------+
+| **Note**: To provide users with only a single email sign in option on the login page, ensure that the                                                 |
+| `enable sign-in with username <#enable-sign-in-with-username>`__ configuration setting is set to **false**.                                           |
++-----------------------------------------------------------------------------+-------------------------------------------------------------------------+
 
 .. config:setting:: email-enablesigninwithusername
   :displayname: Enable sign-in with username (Signup)
@@ -201,11 +205,12 @@ Enable sign-in with email
 Enable sign-in with username
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
-| - **true**: **(Default)** Allows authentication with a username and password for accounts created with an email address. This setting does not affect AD/LDAP sign-in. | - System Config path: **Authentication > Email**                       |
-| - **false**: Disables authenticaton with a username and removes the option from the login screen.                                                                      | - ``config.json`` setting: ``.EmailSettings.EnableSignInWithUsername`` |
-|                                                                                                                                                                        | - Environment variable: ``MM_EMAILSETTINGS_ENABLESIGNINWITHUSERNAME``  |
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
+| - **true**: **(Default)** Allows authentication with a username and password for         | - System Config path: **Authentication > Email**                       |
+|   accounts created with an email address. This setting does not affect AD/LDAP sign-in.  | - ``config.json`` setting: ``.EmailSettings.EnableSignInWithUsername`` |
+| - **false**: Disables authenticaton with a username and removes the option               | - Environment variable: ``MM_EMAILSETTINGS_ENABLESIGNINWITHUSERNAME``  |
+|   from the login screen.                                                                 |                                                                        |
++------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
 
 ----
 
