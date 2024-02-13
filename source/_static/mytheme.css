@@ -3263,3 +3263,24 @@ mark {
 		word-break: break-all;
 	}
 }
+
+/* YAML formatting for existing code-block class */
+
+.highlight-yaml {
+	background-color: #ECF0F9 !important;
+	border: none !important;
+	border-radius: 5px;
+}
+
+.highlight-yaml pre {
+	font-family: Fira Mono, monospace !important;
+    font-size: 13px !important;
+}
+
+.highlight-yaml pre span:not(.nt) {
+	color: #1C58D9 !important;
+}
+
+.highlight-yaml pre span.c1 {
+	color: #408090 !important;
+}
