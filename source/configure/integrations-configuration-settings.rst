@@ -140,14 +140,14 @@ The number of seconds to wait for external integration HTTP requests, before tim
   :environment: MM_SERVICESETTINGS_ENABLEPOSTUSERNAMEOVERRIDE
 
   - **true**: Webhooks, slash commands, OAuth 2.0 apps, and other integrations will be allowed to change the username they are posting as.
-  - **false**: Custom slash commands can only post as the username of the user who used the slash command.
+  - **false**: **(Default)** Custom slash commands can only post as the username of the user who used the slash command.
 
 Enable integrations to override usernames
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **True**: Webhooks, slash commands, OAuth 2.0 apps, and other integrations such as `Zapier <https://docs.mattermost.com/integrations/zapier.html>`__, will be allowed to change the username they are posting as. If no username is present, the username for the post is the same as it would be for a setting of ``False``.
 
-**False**: Custom slash commands can only post as the username of the user who used the slash command. OAuth 2.0 apps can only post as the username of the user who set up the integration. For incoming webhooks and outgoing webhooks, the username is "webhook". See https://developers.mattermost.com/integrate/other-integrations/ for more details.
+**False**: **(Default)** Custom slash commands can only post as the username of the user who used the slash command. OAuth 2.0 apps can only post as the username of the user who set up the integration. For incoming webhooks and outgoing webhooks, the username is "webhook". See https://developers.mattermost.com/integrate/other-integrations/ for more details.
 
 +------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnablePostUsernameOverride": false`` with options ``true`` and ``false``. |
@@ -159,15 +159,15 @@ Enable integrations to override usernames
   :configjson: .ServiceSettings.EnablePostIconOverride
   :environment: MM_SERVICESETTINGS_ENABLEPOSTICONOVERRIDE
 
-  - **true**: Webhooks, slash commands, OAuth 2.0 apps, and other integrations such as `Zapier <https://docs.mattermost.com/integrations/zapier.html>`__, will be allowed to change the username they are posting as.
-  - **false**: **(Default)** Custom slash commands can only post as the username of the user who used the slash command.
+  - **true**: Webhooks, slash commands, and other integrations, such as `Zapier <https://docs.mattermost.com/integrations/zapier.html>`__, will be allowed to change the profile picture they post with.
+  - **false**: **(Default)** Webhooks, slash commands, and OAuth 2.0 apps can only post with the profile picture of the account they were set up with.
 
 Enable integrations to override profile picture icons
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **True**: Webhooks, slash commands, and other integrations, such as `Zapier <https://docs.mattermost.com/integrations/zapier.html>`__, will be allowed to change the profile picture they post with.
 
-**False**: Webhooks, slash commands, and OAuth 2.0 apps can only post with the profile picture of the account they were set up with. See https://developers.mattermost.com/integrate/other-integrations/ for more details.
+**False**: **(Default)** Webhooks, slash commands, and OAuth 2.0 apps can only post with the profile picture of the account they were set up with. See https://developers.mattermost.com/integrate/other-integrations/ for more details.
 
 +--------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnablePostIconOverride": false`` with options ``true`` and ``false``. |
