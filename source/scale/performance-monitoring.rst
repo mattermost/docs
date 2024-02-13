@@ -19,14 +19,6 @@ The Mattermost Metrics plugin, available from Mattermost v6.3, collects and stor
 
 Using the Mattermost Metrics plugin, you can download and share the collected data with Mattermost to understand application performance, troubleshoot system stability and performance, as well as inform route cause analysis.
 
-In High Availability deployments, the Mattermost Metrics plugin operates in 2 modes: scraper mode and listener mode.
-
-- In **Scraper Mode**, the plugin scrapes metrics from nodes listed in the ``ClusterDiscovery`` table. The plugin includes Time Series Database (tsdb) synchronization to a remote file store. This mode is essential for collecting metrics data.
-
-- In **Listener Mode**, the plugin serves download requests by copying tsdb blocks from the remote file store and preparing the dump. This mode is focused on making the collected metrics available for analysis and troubleshooting.
-
-For the single node deployment, these modes are combined.
-
 Install the Mattermost Metrics plugin
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
