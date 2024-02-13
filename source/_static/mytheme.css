@@ -3199,6 +3199,7 @@ mark {
 	padding: 18px 15px;
 	border: none !important;
 	display: inline-block;
+	max-width: 100%;
 }
 
 @media (max-width: 720px) {
@@ -3264,23 +3265,19 @@ mark {
 	}
 }
 
-/* YAML formatting for existing code-block class */
-
-.highlight-yaml {
-	background-color: #ECF0F9 !important;
-	border: none !important;
-	border-radius: 5px;
+/* YAML formatting for mm-code-block class */
+.mm-code-block.highlight-yaml pre {
+	white-space: pre !important;
 }
 
-.highlight-yaml pre {
-	font-family: Fira Mono, monospace !important;
-    font-size: 13px !important;
-}
-
-.highlight-yaml pre span:not(.nt) {
+.mm-code-block.highlight-yaml pre span:not(.nt) {
 	color: #1C58D9 !important;
 }
 
-.highlight-yaml pre span.c1 {
+.mm-code-block.highlight-yaml pre span.nt {
+	color: #062873 !important;
+}
+
+.mm-code-block.highlight-yaml pre span.c1 {
 	color: #408090 !important;
 }
