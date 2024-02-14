@@ -325,15 +325,21 @@ Access the following configuration settings in the System Console by going to **
   :systemconsole: Integrations > CORS
   :configjson: .ServiceSettings.AllowCorsFrom
   :environment: MM_SERVICESETTINGS_ALLOWCORSFROM
-  :description: Enable HTTP cross-origin requests from specific domains separated by spaces. Type ``*`` to allow CORS from any domain or leave it blank to disable it.
+  :description: Enable HTTP cross-origin requests from all, none, or specific domains.
 
 Enable cross-origin requests from
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Enable HTTP cross-origin requests from specific domains separated by spaces. Type ``*`` to allow CORS from any domain or leave it blank to disable it.
+Enable HTTP cross-origin requests from specific domains.
+
+- Type ``*`` to allow CORS from any domain.
+- Enter a specific domain or multiple domains separated by spaces.
+- Type ``null`` to prevent CORS from any domain.
+- Leave blank to disable it and use the Mattermost **Site URL** instead.
 
 .. note::
- Please make sure you have entered your Site URL before enabling this setting to prevent losing access to the System Console after saving. If you experience lost access to the System Console after changing this setting, you can set your `Site URL <https://docs.mattermost.com/configure/configuration-settings.html#site-url>`__ through the ``config.json`` file.
+
+  Ensure you've entered your `Site URL </configure/environment-configuration-settings.html#site-url>`__ before enabling this setting to prevent losing access to the System Console after saving. If you lose access to the System Console after changing this setting, you can set your Site URL through the ``config.json`` file.
 
 +--------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"AllowCorsFrom": ""`` with string input. |
