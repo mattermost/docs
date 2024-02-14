@@ -4,7 +4,9 @@ Manage team and channel members
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-*Available in legacy Enterprise Edition E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 System Admins can manage channel configuration in the System Console, including:
 
@@ -102,7 +104,9 @@ Channel moderation
 .. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
-*Available in legacy Enterprise Edition E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 Channel moderation settings allow Admins to restrict actions within specific channels. These actions include:
 
