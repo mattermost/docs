@@ -22,7 +22,7 @@ The first user added to a newly-installed Mattermost system is assigned the syst
 - Ability to deactivate user accounts and to reactivate them.
 - Access to private channels, but only if given the link to the private channel.
 
-A system admin can view and manage users in **System Console > User Management > Users**. Search users by name, filter users by teams, and filter to view other system admins, guests, as well as active and inactive users. Only a system admin can make changes to another system admin user account in Mattermost.
+A system admin can view and manage users in **System Console > User Management > Users**. They can search users by name, filter users by teams, and filter to view other system admins, guests, as well as activated and deactivated users. Only a system admin can make changes to another system admin user account in Mattermost.
 
 Grant personal access tokens
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~

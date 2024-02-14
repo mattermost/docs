@@ -958,7 +958,7 @@ Select the themes that can be chosen by users when ``EnableThemeSelection`` is s
   :systemconsole: N/A
   :configjson: MaxUsersForStatistics
   :environment: N/A
-  :description: Sets the maximum number of users on the server before statistics for total posts, total hashtag posts, total file posts, posts per day, and active users with posts per day are disabled. Default is **2500** users.
+  :description: Sets the maximum number of users on the server before statistics for total posts, total hashtag posts, total file posts, posts per day, and activated users with posts per day are disabled. Default is **2500** users.
 
 Maximum users for statistics
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -972,7 +972,7 @@ Maximum users for statistics
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-Sets the maximum number of users on the server before statistics for total posts, total hashtag posts, total file posts, posts per day, and active users with posts per day are disabled.
+Sets the maximum number of users on the server before statistics for total posts, total hashtag posts, total file posts, posts per day, and activated users with posts per day are disabled.
 
 This setting is used to maximize performance for large Enterprise deployments.
 

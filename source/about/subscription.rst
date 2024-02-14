@@ -100,7 +100,7 @@ In this case, the "physical address" is the location where the individual, who w
 How is a user defined for subscriptions?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-For the purpose of billing, a “user” is any account created in Mattermost that does not show as **Inactive** in **System Console > User Management > Users**. Guests are also defined as users.
+For the purpose of billing, a “user” is any account created in Mattermost that does not show as **Deactivated** in **System Console > User Management > Users**. Guests are also defined as users.
 
 Bots, deactivated users, and synthetic users in `Microsoft Teams integrations </collaborate/collaborate-using-mattermost-for-microsoft-teams.html>`__ and `shared channels users </onboard/shared-channels.html>`__, aren't counted towards the total number of active users.
 

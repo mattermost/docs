@@ -13,7 +13,7 @@ From Mattermost v7.7 you can buy a Mattermost subscription from within Mattermos
 1. In Mattermost, select **View Plans** in the global header or via **System Console > View plans**.
 2. Select **Upgrade**. A minimum of ten users is required.
 3. Provide payment details.
-4. Enter the number of user seats you're purchasing. This number has to be equal to, or greater than, the current number of active users in your Mattermost deployment.
+4. Enter the number of user seats you're purchasing. This number has to be equal to, or greater than, the current number of activated users in your Mattermost deployment.
 5. Select **Upgrade**.
 
 When your purchase is complete, a license is automatically applied to instance and your subscription is active immediately.
@@ -76,7 +76,7 @@ You can access your Customer Portal account to view information about your:
 - Organization information
 - Payment methods
 - Renewals
-- Active users (available in a future release)
+- Activated users (available in a future release)
 
 Subscription and licenses not purchased via the Customer Portal won't be listed.
 
@@ -136,11 +136,11 @@ If you have a Mattermost deployment prior to v7.9, a system admin needs to take 
 Renew your subscription
 -----------------------
 
-From Mattermost Server v5.32, you can renew your self-hosted Mattermost subscription with a credit card if you have a standard Mattermost contract. When you renew your license, you can also increase the number of active users.
+From Mattermost Server v5.32, you can renew your self-hosted Mattermost subscription with a credit card if you have a standard Mattermost contract. When you renew your license, you can also increase the number of activated users.
 
 If you haven't upgraded to v5.32, contact Mattermost Support at support@mattermost.com to renew your license.
 
-If you're a reseller, have a non-standard contract, or want to adjust the number of active users on your license during the license period, please contact Mattermost Sales at sales@mattermost.com.
+If you're a reseller, have a non-standard contract, or want to adjust the number of activated users on your license during the license period, please contact Mattermost Sales at sales@mattermost.com.
 
 System admins will be alerted 60 days prior to license expiry via a banner in Mattermost. Select **Renew license now** to start the renewal process in the Customer Portal. You can also dismiss the banner and renew your license at a later date via **System Console > Edition and License**.
 
@@ -154,7 +154,7 @@ Process your license renewal
 
   * You can upgrade within the Customer Portal, but it's not possible to downgrade.
 
-3. Confirm the listed number of active users is correct. 
+3. Confirm the listed number of activated users is correct. 
 
  * You can increase the number of licensed users, but you can't decrease it.
 
@@ -176,7 +176,7 @@ What is a true-up report and why is the true-up notice necessary?
 
 A true-up report is our quarterly request for you to provide us with the actual number of activated users within your system to determine if you have more active users now than when you bought your subscription.
 
-As your organization grows, you may need to add additional users during your subscription period. Mattermost needs to have insight into changes in your active user count so that we can charge you appropriately for your self-hosted license usage. Additionally, we don’t want to over estimate/charge active users at your renewal time. 
+As your organization grows, you may need to add additional users during your subscription period. Mattermost needs to have insight into changes in your active user count so that we can charge you appropriately for your self-hosted license usage. Additionally, we don’t want to over estimate/charge activated users at your renewal time. 
 
 When you receive the quarterly true-up notice from Mattermost, please share your active user count with us.
 

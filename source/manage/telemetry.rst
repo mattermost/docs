@@ -35,7 +35,7 @@ The following data is collected once every 24 hours:
 - Database version
 - Number of teams
 - Number of users 
-- Number of active users
+- Number of activated users
 - Whether or not the unit tests have been run
 - Date and time of the last check for security updates
 - The location of the Amazon Cloudfront server used for telemetry data
