@@ -24,8 +24,8 @@ Mattermost will tell you when you’ve successfully connected your account.
 
 .. note::
 
-  - If you're not prompted to connect your accounts, display the prompt in a browser window by running the Mattermost slash command ``/msteams-sync connect`` in Mattermost. Follow the link to connect your accounts.
-  - To change which accounts are linked, in Mattermost, run the slash command ``/msteams-sync disconnect``, then connect your Mattermost account to a new Microsoft Teams account.
+  - If you're not prompted to connect your accounts, display the prompt in a browser window by running the Mattermost slash command ``/msteams connect`` in Mattermost. Follow the link to connect your accounts.
+  - To change which accounts are linked, in Mattermost, run the slash command ``/msteams disconnect``, then connect your Mattermost account to a new Microsoft Teams account.
   - If a Microsoft Teams user account is removed from Microsoft Teams, the linked Mattermost user account is also removed the next time user accounts are synchronized.
 
 Once you've connected your Mattermost account to your Microsoft Teams account, you’re ready to collaborate across your organization, regardless of which tool you’re in. You have two ways to collaborate:
@@ -50,11 +50,11 @@ Collaborating through linked channels starts with a Mattermost admin linking a M
 Link channels
 ~~~~~~~~~~~~~~
 
-As a Mattermost channel admin, team admin, or system admin, run the following slash command in the channel you want to link: ``/msteams-sync link``, then select the Microsoft Teams team and channel identifiers you want to link the current Mattermost channel to. Mattermost notifies you when the linking is complete or if the channel is already linked.
+As a Mattermost channel admin, team admin, or system admin, run the following slash command in the channel you want to link: ``/msteams link``, then select the Microsoft Teams team and channel identifiers you want to link the current Mattermost channel to. Mattermost notifies you when the linking is complete or if the channel is already linked.
 
 .. tip:: 
 
-  Want to change an existing link? Unlink a current Mattermost channel using the ``/msteams-sync unlink`` slash command, then relink to a new Microsoft Teams channel as needed.
+  Want to change an existing link? Unlink a current Mattermost channel using the ``/msteams unlink`` slash command, then relink to a new Microsoft Teams channel as needed.
 
 Collaborate with colleagues
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -4,7 +4,9 @@ Performance monitoring
 .. include:: ../_static/badges/ent-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-*Available in legacy Mattermost Enterprise Edition E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 Performance monitoring support enables a Mattermost server to track system health for large Enterprise deployments through integrations with `Prometheus <https://prometheus.io/>`__ and `Grafana <https://grafana.org/>`__. These integrations support data collection from several Mattermost servers, which is particularly useful if you're running Mattermost `in high availability mode </scale/high-availability-cluster.html>`__. Once you're tracking system health, you can `set up performance alerts </scale/performance-alerting.html>`__ on your Grafana dashboard.
 
@@ -269,17 +271,18 @@ To learn how to set up runtime profiling, see the `pprof package Go documentatio
 
 If enabled, you can run the profiler by
 
-``go tool pprof http://localhost:<port>/debug/pprof/profile``
+``go tool pprof http://localhost:<port>/debug/pprof/profile?seconds=<duration>``
 
 where you can replace ``localhost`` with the server name. The profiling reports are available at ``<ip>:<port>``, which include:
 
-- ``/debug/pprof/profile`` for CPU profiling
-- ``/debug/pprof/cmdline/`` for command line profiling
-- ``/debug/pprof/symbol/`` for symbol profiling
-- ``/debug/pprof/goroutine/`` for GO routine profiling
-- ``/debug/pprof/heap/`` for heap profiling
-- ``/debug/pprof/threadcreate/`` for threads profiling
-- ``/debug/pprof/block/`` for block profiling
+- ``/debug/pprof/profile?seconds=30`` for CPU profiling
+- ``/debug/pprof/cmdline`` for command line profiling
+- ``/debug/pprof/symbol`` for symbol profiling
+- ``/debug/pprof/trace`` for trace profiling
+- ``/debug/pprof/goroutine`` for Go routine profiling
+- ``/debug/pprof/heap`` for heap profiling
+- ``/debug/pprof/threadcreate`` for threads profiling
+- ``/debug/pprof/block`` for block profiling
 
 .. image:: ../images/perf_monitoring_go_metrics.png
    :alt: Example Go metrics for HTTP server runtime profiling data and system monitoring, including memory usage, Go routines, and garbage collection duration, in a self-hosted Mattermost deployment.

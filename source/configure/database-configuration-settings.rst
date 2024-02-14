@@ -16,7 +16,9 @@ Configure the database environment in which Mattermost is deployed by going to *
 Driver name
 ~~~~~~~~~~~~
 
-*Available in legacy Enterprise Edition E10/E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | The type of database. Can be either:                          | - System Config path: N/A                                                |
@@ -35,7 +37,9 @@ Driver name
 Data source
 ~~~~~~~~~~~~
 
-*Available in legacy Enterprise Edition E10/E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | The connection string to the master database.                 | - System Config path: N/A                                                |
@@ -43,19 +47,46 @@ Data source
 | String input.                                                 | - Environment variable: ``MM_SQLSETTINGS_DATASOURCE``                    |
 |                                                               |                                                                          |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
-| To enable SSL:                                                                                                                           |
-|                                                                                                                                          |
-| - Add ``&tls=true`` to your database connection string if your SQL driver supports it.                                                   |
-| - Add ``&tls=skip-verify`` if you use self-signed certificates.                                                                          |
-+---------------------------------------------------------------+--------------------------------------------------------------------------+
 | **PostgreSQL databases**                                                                                                                 |
 |                                                                                                                                          |
 | When **Driver Name** is set to ``postgres``, use a connection string in the form of:                                                     |
-| ``postgres://mmuser:password@localhost:5432/mattermost_test?sslmode=disable&connect_timeout=10.``                                        |
+| ``postgres://mmuser:password@hostname_or_IP:5432/mattermost_test?sslmode=disable&connect_timeout=10``                                    |
+|                                                                                                                                          |
+| **To use TLS with PostgreSQL databases**                                                                                                 |
+|                                                                                                                                          |
+| The parameter to encrypt connection against a PostgreSQL server is ``sslmode``. The library used to interact with PostgreSQL server is   |
+| `pq <https://pkg.go.dev/github.com/lib/pq>`__. Currently, it's not possible to use all the values that you could pass to a standard      |
+| PostgreSQL Client ``psql "sslmode=value"`` See the `SSL Mode Descriptions <https://www.postgresql.org/docs/current/libpq-ssl.html>`__    |
+| documentation for details.                                                                                                               |
+|                                                                                                                                          |
+| Your database admin must configure the functionality according to the supported values described below:                                  |
+|                                                                                                                                          |
+| +----------------------------------------+-----------------+---------------------------------------------------------------------------+ |
+| | Short description of the ``sslmode``   | Value           | Example of a data source name                                             | |
+| | parameter                              |                 |                                                                           | |
+| +========================================+=================+===========================================================================+ |
+| | Don't use TLS / SSL encryption against | ``disable``     | ``postgres://mmuser:password@hostname_or_IP:5432/mattermost_test          | |
+| | the PostgreSQL server.                 |                 | ?sslmode=disable&connect_timeout=10``                                     | |
+| |                                        |                 |                                                                           | |
+| | Default value in file ``config.json``  |                 |                                                                           | |
+| +----------------------------------------+-----------------+---------------------------------------------------------------------------+ |
+| | The data is encrypted and the network  | ``require``     | ``postgres://mmuser:password@hostname_or_IP:5432/mattermost_test          | |
+| | is trusted.                            |                 | ?sslmode=require&connect_timeout=10``                                     | |
+| |                                        |                 |                                                                           | |
+| | Default value is ``sslmode`` when      |                 |                                                                           | |
+| | omitted.                               |                 |                                                                           | |
+| +----------------------------------------+-----------------+---------------------------------------------------------------------------+ |
+| | The data is encrypted when connecting  | ``verify-ca``   | ``postgres://mmuser:password@hostname_or_IP:5432/mattermost_test          | |
+| | to a trusted server.                   |                 | ?sslmode=verify-ca&connect_timeout=10``                                   | |
+| +----------------------------------------+-----------------+---------------------------------------------------------------------------+ |
+| | The data is encrypted when connecting  | ``verify-full`` | ``postgres://mmuser:password@hostname_or_IP:5432/mattermost_test          | |
+| | to a trusted server.                   |                 | ?sslmode=verify-full&connect_timeout=10``                                 | |
+| +----------------------------------------+-----------------+---------------------------------------------------------------------------+ |
+|                                                                                                                                          |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | **MySQL databases**                                                                                                                      |
 |                                                                                                                                          |
-| When **Driver Name** is set to ``mysql``, using ``collation`` is recommended over using ``charset``.                                     |
+| When **Driver Name** is set to ``mysql``, we recommend using ``collation`` over using ``charset``.                                       |
 |                                                                                                                                          |
 | To specify collation:                                                                                                                    |
 |                                                                                                                                          |
@@ -63,7 +94,7 @@ Data source
 |                                                                                                                                          |
 |   "SqlSettings": {                                                                                                                       |
 |       "DataSource":                                                                                                                      |
-|   "<user:pass>@<servername>/mattermost?charset=utf8mb4,utf8&collation=utf8mb4_general_ci",                                               |
+|   "<mmuser:password>@tcp(hostname or IP:3306)/mattermost?charset=utf8mb4,utf8&collation=utf8mb4_general_ci",                             |
 |       [...]                                                                                                                              |
 |    }                                                                                                                                     |
 |                                                                                                                                          |
@@ -72,12 +103,42 @@ Data source
 | .. code-block:: none                                                                                                                     |
 |                                                                                                                                          |
 |   "SqlSettings": {                                                                                                                       |
-|       "DataSource": "<user:pass>@<servername>/mattermost?charset=utf8mb4,utf8",                                                          |
+|       "DataSource": "<mmuser:password>@tcp(hostname or IP:3306)/mattermost?charset=utf8mb4,utf8",                                        |
 |       [...]                                                                                                                              |
 |    }                                                                                                                                     |
 |                                                                                                                                          |
 | **Note**: If you’re using MySQL 8.0 or later, the default collation has changed to ``utf8mb4_0900_ai_ci``. See our `Database Software    |
 | Requirements </install/software-hardware-requirements.html>`__ documentation for details on MySQL 8.0 support.                           |
+|                                                                                                                                          |
+| **To use TLS with MySQL databases**                                                                                                      |
+|                                                                                                                                          |
+| The parameter to encrypt connection against a MySQL server is ``tls``.                                                                   |
+| The library used to interact with MySQL is `Go-MySQL-Driver <https://pkg.go.dev/github.com/go-sql-driver/mysql>`__.                      |
+| For the moment, it's not possible to use all the values that you could pass to a standard MySQL Client ``mysql --ssl-mode=value``.       |
+| See `Connection-Encryption Option Summary <https://dev.mysql.com/doc/refman/8.0/en/connection-options.html #option_general_ssl-mode>`__  |
+| documentation for a version 8.0 example.                                                                                                 |
+|                                                                                                                                          |
+| Your database admin must configure the functionality according to supported values described below:                                      |
+|                                                                                                                                          |
+| +----------------------------------------+-----------------+---------------------------------------------------------------------------+ |
+| | Short description of the ``tls``       | Value           | Example of a data source name                                             | |
+| | parameter                              |                 |                                                                           | |
+| +========================================+=================+===========================================================================+ |
+| | Don't use TLS / SSL encryption against | ``false``       | ``"<mmuser:password>@tcp(hostname or IP:3306)/mattermost_test             | |
+| | MySQL server.                          |                 | ?charset=utf8mb4,utf8&writeTimeout=30s&tls=false"``                       | |
+| +----------------------------------------+-----------------+---------------------------------------------------------------------------+ |
+| | Use TLS / SSL encryption against       | ``true``        | ``"<mmuser:password>@tcp(hostname or IP:3306)/mattermost_test             | |
+| | MySQL server.                          |                 | ?charset=utf8mb4,utf8&writeTimeout=30s&tls=true"``                        | |
+| +----------------------------------------+-----------------+---------------------------------------------------------------------------+ |
+| | Use TLS / SSL encryption with a self-  | ``skip-verify`` | ``"<mmuser:password>@tcp(hostname or IP:3306)/mattermost_test             | |
+| | signed certificate against             |                 | ?charset=utf8mb4,utf8&writeTimeout=30s&tls=skip-verify"``                 | |
+| | MySQL server.                          |                 |                                                                           | |
+| +----------------------------------------+-----------------+---------------------------------------------------------------------------+ |
+| | Use TLS / SSL encryption if server     | ``preferred``   | ``"<mmuser:password>@tcp(hostname or IP:3306)/mattermost_test             | |
+| | advertises a possible fallback;        |                 | ?charset=utf8mb4,utf8&writeTimeout=30s&tls=preferred"``                   | |
+| | unencrypted if it's not advertised.    |                 |                                                                           | |
+| +----------------------------------------+-----------------+---------------------------------------------------------------------------+ |
+|                                                                                                                                          |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. config:setting:: database-maxidleconnections
@@ -90,7 +151,9 @@ Data source
 Maximum idle database connections
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-*Available in legacy Enterprise Edition E10/E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +--------------------------------------------------------+------------------------------------------------------------------+
 | The maximum number of idle connections held open       | - System Config path: **Environment > Database**                 |
@@ -109,7 +172,9 @@ Maximum idle database connections
 Maximum open connections
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-*Available in legacy Enterprise Edition E10/E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +--------------------------------------------------------+------------------------------------------------------------------+
 | The maximum number of open connections to the          | - System Config path: **Environment > Database**                 |
@@ -129,7 +194,9 @@ Maximum open connections
 Query timeout
 ~~~~~~~~~~~~~
 
-*Available in legacy Enterprise Edition E10/E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +--------------------------------------------------------+------------------------------------------------------------------+
 | The amount of time to wait, in seconds, for a response | - System Config path: **Environment > Database**                 |
@@ -149,7 +216,9 @@ Query timeout
 Maximum connection lifetime
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-*Available in legacy Enterprise Edition E10/E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +--------------------------------------------------------+-------------------------------------------------------------------------------------+
 | Maximum lifetime for a connection to the database,     | - System Config path: **Environment > Database**                                    |
@@ -171,7 +240,9 @@ Maximum connection lifetime
 Maximum connection idle timeout
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-*Available in legacy Enterprise Edition E10/E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +--------------------------------------------------------+-------------------------------------------------------------------------------------+
 | Maximum time a database connection can remain idle,    | - System Config path: **Environment > Database**                                    |
@@ -191,7 +262,9 @@ Maximum connection idle timeout
 Minimum hashtag length
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-*Available in legacy Enterprise Edition E10/E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +----------------------------------------------------------------------+-------------------------------------------------------------------------+
 | Minimum number of characters in a hashtag.                           | - System Config path: **Environment > Database**                        |
@@ -214,7 +287,9 @@ Minimum hashtag length
 SQL statement logging
 ~~~~~~~~~~~~~~~~~~~~~
 
-*Available in legacy Enterprise Edition E10/E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | Executed SQL statements can be written to the log for         | - System Config path: **Environment > Database**                         |
@@ -231,7 +306,9 @@ Recycle database connections
 .. include:: ../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
-*Available in legacy Enterprise Edition E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 +--------------------------------------------------------+------------------------------------------------------------------+
 | Select the **Recycle Database Connections** button to  | - System Config path: **Environment > Database**                 |
@@ -259,7 +336,9 @@ Recycle database connections
 Disable database search
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-*Available in legacy Enterprise Edition E10/E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +---------------------------------------------------------------+------------------------------------------------------------------------------+
 | When other search engines are configured, such as             | - System Config path: **Environment > Database**                             |
@@ -284,7 +363,9 @@ Disable database search
 Applied schema migrations
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-*Available in legacy Enterprise Edition E10/E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 A list of all migrations that have been applied to the data store based on the version information available in the ``db_migrations`` table. Select **About Mattermost** from the product menu to review the current database schema version applied to your deployment.
 
@@ -314,7 +395,9 @@ Read replicas
 .. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
-*Available in legacy Enterprise Edition E10 and E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +--------------------------------------------------------+-----------------------------------------------------------------------+
 | Specifies the connection strings for the read replica  | - System Config path: N/A                                             |
@@ -340,7 +423,9 @@ Search replicas
 .. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
-*Available in legacy Enterprise Edition E10 and E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +--------------------------------------------------------+-----------------------------------------------------------------------------+
 | Specifies the connection strings for the search        | - System Config path: N/A                                                   |
@@ -365,7 +450,9 @@ Replica lag settings
 .. include:: ../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
-*Available in legacy Enterprise Edition E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 +--------------------------------------------------------+----------------------------------------------------------------------------------+
 | String array input specifies a connection string and   | - System Config path: N/A                                                        |

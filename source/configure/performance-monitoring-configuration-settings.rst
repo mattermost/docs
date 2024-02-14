@@ -16,7 +16,9 @@ Configure performance monitoring by going to **System Console > Environment > Pe
 Enable performance monitoring
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-*Available in legacy Enterprise Edition E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 +-----------------------------------------------+---------------------------------------------------------------------+
 | Enable or disable performance monitoring.     | - System Config path: **Environment > Performance Monitoring**      |
@@ -40,7 +42,9 @@ Enable performance monitoring
 Listen address for performance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-*Available in legacy Enterprise Edition E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 +---------------------------------------------------------------+-------------------------------------------------------------------------+
 | The port the Mattermost server will listen on to expose       | - System Config path: **Environment > Performance Monitoring**          |

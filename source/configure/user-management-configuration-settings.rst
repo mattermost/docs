@@ -18,7 +18,9 @@ Manage your Mattermost users including their access permissions, groups, teams, 
 Users
 -----
 
-*Available in legacy Enterprise Edition E10/E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 Getting people set up with a Mattermost account is typically something that system admins do when deploying and configuring the Mattermost workspace. A Mattermost admin can `provision Mattermost users </onboard/user-provisioning-workflows.html>`__ using one or more of the following methods:
 
@@ -27,14 +29,14 @@ Getting people set up with a Mattermost account is typically something that syst
 - `Migrate user accounts </onboard/migrating-to-mattermost.html#migration-guide>`__ from other collaboration systems and `bulk load </onboard/bulk-loading-data.html>`__ that user data into Mattermost.
 - Connect an authentication service to assist with user provisioning, such as `AD/LDAP authentication </onboard/ad-ldap.html#active-directory-ldap-setup>`__ or `SAML authentication </onboard/sso-saml.html>`__.
 
-+---------------------------------------------------------------+-------------------------------------------------------------+
-| Manage active and inactive users, revoke all user sessions,   | - System Config path: **User Management > Users**           |
-| access individual users to view their User ID, add users      | - ``config.json setting``: N/A                              |
-| to other teams, and view the teams they are on and what       | - Environment variable: N/A                                 |
-| their role is on a team.                                      |                                                             |
-+---------------------------------------------------------------+-------------------------------------------------------------+
-| **Note**: You can search for users by partial first name, last name, nickname, or username.                                 |
-+---------------------------------------------------------------+-------------------------------------------------------------+
++----------------------------------------------------------------+-------------------------------------------------------------+
+| Manage activated and deactivated users, revoke all user        | - System Config path: **User Management > Users**           |
+| sessions, access individual users to view their User ID,       | - ``config.json setting``: N/A                              |
+| add users to other teams, and view the teams they are on,      | - Environment variable: N/A                                 |
+| and what their role is on a team.                              |                                                             |
++----------------------------------------------------------------+-------------------------------------------------------------+
+| **Note**: You can search for users by partial first name, last name, nickname, or username.                                  |
++----------------------------------------------------------------+-------------------------------------------------------------+
 
 Identify a User's ID
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -67,7 +69,9 @@ Deactivate a user account by selecting their role, then select **Deactivate**. Y
 Groups
 ------
 
-*Available in legacy Enterprise Edition E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 +---------------------------------------------------------------+-------------------------------------------------------------+
 | Manage default teams and channels by linking AD/LDAP groups   | - System Config path: **User Management > Groups**          |
@@ -83,7 +87,9 @@ Groups
 Teams
 -----
 
-*Available in legacy Enterprise Edition E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 +---------------------------------------------------------------+-------------------------------------------------------------+
 | Manage team settings, including group synchronization for     | - System Config path: **User Management > Teams**           |
@@ -99,7 +105,9 @@ Teams
 Channels
 --------
 
-*Available in legacy Enterprise Edition E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 +-------------------------------------------------------------------------+-------------------------------------------------------------+
 | Manage channel settings, including group synchronization on channels.   | - System Config path: **User Management > Channels**        |
@@ -121,7 +129,9 @@ Permissions
 .. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
-*Available in legacy Enterprise Edition E10/E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +---------------------------------------------------------------------+-------------------------------------------------------------+
 | Restrict actions in Mattermost to authorized users only.            | - System Config path: **User Management > Permissions**     |
@@ -136,7 +146,9 @@ Permissions
 System roles
 ------------
 
-*Available in legacy Enterprise Edition E10/E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +----------------------------------------------------------------------+------------------------------------------------------------+
 | Restrict System Console access to authorized users only.             | - System Config path: **User Management > System Roles**   |
