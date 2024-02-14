@@ -17,7 +17,10 @@ From Mattermost v9.2, this changelog summarizes updates for the latest cloud and
 
 ## Release v9.5 - [Extended Support Release](https://docs.mattermost.com/upgrade/release-definitions.html#extended-support-release-esr)
 
-**Release day: 2024-02-16**
+- **9.5.1, released **
+  - 
+- **9.5.0, released 2024-02-16**
+  - Original 9.5.0 release.
 
 ### Important Upgrade Notes
  - We have stopped supporting MySQL v5.7 since it's at the end of life. We urge customers to upgrade their MySQL instance at their earliest convenience.
