@@ -17,9 +17,10 @@ From Mattermost v9.2, this changelog summarizes updates for the latest cloud and
 
 ## Release v9.4 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
 
-- **9.4.3, released **
-  - 
+- **9.4.3, released 2024-02-14**
+  - Mattermost v9.4.3 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Mattermost v9.4.3 contains no database or functional changes.
+  - Pre-packaged Jira plugin version [v4.1.0](https://github.com/mattermost/mattermost-plugin-jira/releases/tag/v4.1.0).
 - **9.4.2, released 2024-01-30**
   - Mattermost v9.4.2 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Fixed an issue with true-up reports sending active users and not activated users. Added **Monthly Active Users** (MAU) as part of the true-up reports.
@@ -104,9 +105,10 @@ See [this walkthrough video](https://www.youtube.com/watch?v=bEMp4vYLi6c&feature
 
 ## Release v9.3 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
 
-- **9.3.2, released **
-  - 
+- **9.3.2, released 2024-02-14**
+  - Mattermost v9.3.2 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Mattermost v9.3.2 contains no database or functional changes.
+  - Pre-packaged Jira plugin version [v4.1.0](https://github.com/mattermost/mattermost-plugin-jira/releases/tag/v4.1.0).
 - **9.3.1, released 2024-01-30**
   - Mattermost v9.3.1 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Mattermost v9.3.1 contains no database or functional changes.
@@ -213,9 +215,10 @@ See [this walkthrough video](https://www.youtube.com/watch?v=eXA8emM97Bo) on som
 
 ## Release v9.2 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
 
-- **9.2.6, released **
-    - 
+- **9.2.6, released 2024-02-14**
+    - Mattermost v9.2.6 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
     - Mattermost v9.2.6 contains no database or functional changes.
+    - Pre-packaged Jira plugin version [v4.1.0](https://github.com/mattermost/mattermost-plugin-jira/releases/tag/v4.1.0).
 - **9.2.5, released 2024-01-30**
     - Mattermost v9.2.5 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
     - Mattermost v9.2.5 contains no database or functional changes.
