@@ -1931,7 +1931,8 @@ Migrate a file-based configuration to (or from) a database-based configuration. 
 
 .. note::
 
-   The `migrate` function requires local mode to be enabled.  To do this, add the following line to your Mattermost Environment file:
+   The ``migrate`` function requires local mode to be enabled.  To do this, add the following line to your Mattermost Environment file:
+
    .. code-block:: sh
 
       MM_SERVICESETTINGS_ENABLELOCALMODE=true
