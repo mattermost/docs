@@ -3199,6 +3199,7 @@ mark {
 	padding: 18px 15px;
 	border: none !important;
 	display: inline-block;
+	max-width: 100%;
 }
 
 @media (max-width: 720px) {
@@ -3262,4 +3263,21 @@ mark {
 	#install-mattermost-server-on-ubuntu h3 code {
 		word-break: break-all;
 	}
+}
+
+/* YAML formatting for mm-code-block class */
+.mm-code-block.highlight-yaml pre {
+	white-space: pre !important;
+}
+
+.mm-code-block.highlight-yaml pre span:not(.nt) {
+	color: #1C58D9 !important;
+}
+
+.mm-code-block.highlight-yaml pre span.nt {
+	color: #062873 !important;
+}
+
+.mm-code-block.highlight-yaml pre span.c1 {
+	color: #408090 !important;
 }
