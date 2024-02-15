@@ -126,7 +126,7 @@ Deploy Mattermost
   .. note::
     While file names are provided, your file names can be different. The file names in this tutorial are used for clarity and organization.
 
-  Here is a list of supported fields in the installation manifest file:
+  Some of the most commonly-used fields include:
 
   .. csv-table::
     :header: "Field", "Description"
