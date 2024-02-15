@@ -44,8 +44,6 @@ With Helm
 
 3. Create a file named ``config.yaml``, then copy and paste the content of `this file <https://github.com/mattermost/mattermost-helm/blob/master/charts/mattermost-operator/values.yaml>`__ into it.
 
-  .. tip::
-      This will be your configuration file for the Mattermost Operator chart. If left as-is, the Mattermost-Operator will utilize the MySQL Operator, and Minio Operator - **these operators are not recommended for production usage**. You an customize your deployment at any time by updating the relevant values in ``config.yaml``.
 
 4. Create a namespace for the Mattermost Operator:
 
