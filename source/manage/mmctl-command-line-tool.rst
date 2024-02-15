@@ -1929,6 +1929,13 @@ Migrate a file-based configuration to (or from) a database-based configuration. 
 
    To change the store type to use the database, a System Admin needs to set a ``MM_CONFIG`` `environment variable </configure/configuation-in-a-database.html#create-an-environment-file>`_ and restart the Mattermost server.
 
+.. note::
+
+   The `migrate` function requires local mode to be enabled.  To do this, add the following line to your Mattermost Environment file:
+   .. code-block:: sh
+
+      MM_SERVICESETTINGS_ENABLELOCALMODE=true
+
 **Format**
 
 .. code-block:: sh
@@ -1939,7 +1946,7 @@ Migrate a file-based configuration to (or from) a database-based configuration. 
 
 .. code-block:: sh
 
-   mmctl config migrate path/to/config.json "postgres://mmuser:mostest@localhost:5432/mattermost_test?sslmode=disable&connect_timeout=10"
+   mmctl config migrate path/to/config.json "postgres://mmuser:mostest@localhost:5432/mattermost_test?sslmode=disable&connect_timeout=10" --local
 
 **Options**
 
