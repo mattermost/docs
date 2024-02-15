@@ -105,7 +105,7 @@ We'll send you an email notice around the end of the quarter reminding you to se
 .. image:: ../images/true-up-schedule.png
    :alt: The timeframes followed for the true-up notifications.
 
-If you have more total active users than you purchased in your annual subscription, your Customer Success Manager will provide you with a true-up quote for the new users added. The additional invoice will be pro-rated based on the number of months left in your subscription term, including the months for the calendar quarter for the time you pull the report. Mattermost won't provide downward adjustments. Mattermost will invoice based on Mattermost’s `current list prices <https://mattermost.com/pricing/>`__.
+If you have more total activated users than you purchased in your annual subscription, your Customer Success Manager will provide you with a true-up quote for the new users added. The additional invoice will be pro-rated based on the number of months left in your subscription term, including the months for the calendar quarter for the time you pull the report. Mattermost won't provide downward adjustments. Mattermost will invoice based on Mattermost’s `current list prices <https://mattermost.com/pricing/>`__.
 
 From Mattermost v7.9
 ~~~~~~~~~~~~~~~~~~~~
@@ -125,7 +125,7 @@ Prior to Mattermost v7.9
 
 If you have a Mattermost deployment prior to v7.9, a system admin needs to take a screenshot of the **System Console > Site Statistics** page and send it to Mattermost in an email.
 
-- Please ensure your screenshot is taken from the top of the page and includes both **Total Active Users** and the **Monthly Active Users** metrics. 
+- Please ensure your screenshot is taken from the top of the page and includes both **Total Activated Users** and the **Monthly Active Users** metrics. 
 - Please include the date of the screenshot in the file name.
 - We don't need your server address, so if it appears on your screenshot, you can redact it from the image.
 
@@ -174,11 +174,11 @@ Frequently asked questions
 What is a true-up report and why is the true-up notice necessary? 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-A true-up report is our quarterly request for you to provide us with the actual number of activated users within your system to determine if you have more active users now than when you bought your subscription.
+A true-up report is our quarterly request for you to provide us with the actual number of activated users within your system to determine if you have more activated users now than when you bought your subscription.
 
-As your organization grows, you may need to add additional users during your subscription period. Mattermost needs to have insight into changes in your active user count so that we can charge you appropriately for your self-hosted license usage. Additionally, we don’t want to over estimate/charge activated users at your renewal time. 
+As your organization grows, you may need to add additional users during your subscription period. Mattermost needs to have insight into changes in your activated user count so that we can charge you appropriately for your self-hosted license usage. Additionally, we don’t want to over estimate/charge activated users at your renewal time. 
 
-When you receive the quarterly true-up notice from Mattermost, please share your active user count with us.
+When you receive the quarterly true-up notice from Mattermost, please share your activated user count with us.
 
 How do I renew my subscription if I don't have internet access?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

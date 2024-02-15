@@ -23,7 +23,7 @@ On this page:
 - `React using emojis <#emojis>`__
 - `Chat in a call <#chat-in-a-call>`__
 - `Record a call <#record-a-call>`__
-- `Transcripbe a recorded call <#transcribe-recorded-calls>`__
+- `Transcribe a recorded call <#transcribe-recorded-calls>`__
 - `Frequently asked questions <#frequently-asked-questions>`__
 - `Troubleshooting <#troubleshooting>`__
 - `Debugging <#debugging>`__
