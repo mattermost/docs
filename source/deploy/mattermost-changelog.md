@@ -15,6 +15,112 @@ From Mattermost v9.2, this changelog summarizes updates for the latest cloud and
 :depth: 2
 ```
 
+## Release v9.5 - [Extended Support Release](https://docs.mattermost.com/upgrade/release-definitions.html#extended-support-release-esr)
+
+- **9.5.1, released 2024-02-16**
+  - Mattermost v9.5.1 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+- **9.5.0, released 2024-02-16**
+  - Original 9.5.0 release.
+
+### Important Upgrade Notes
+ - We have stopped supporting MySQL v5.7 since it's at the end of life. We urge customers to upgrade their MySQL instance at their earliest convenience.
+
+```{Important}
+If you upgrade from a release earlier than v9.4, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
+```
+
+### Improvements
+
+#### User Interface (UI)
+ - Pre-packaged Calls version [v0.23.1](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v0.23.1).
+ - Pre-packaged Jira plugin version [v4.1.0](https://github.com/mattermost/mattermost-plugin-jira/releases/tag/v4.1.0).
+ - Improved the behavior of suggestion boxes when changing the caret position.
+ - Changed the time for tomorrow in the **Do Not Disturb** timer and post reminder to refer to the next day at 9:00am instead of 24hrs from the time of activation.
+ - Added a new Wrangler feature to be able to move threads (Experimental). Moving threads requires a Professional/Enterprise license to activate. This feature is not yet recommended for production use. A new feature flag ``MoveThreadsEnabled`` was added and is default OFF. Changing this value to ON will enable the experimental **Move Threads** feature.
+ - Applied a wording change for active and activated users in the **System Console** user list.
+ - Applied a wording change for active and activated users in the **Team Statistics** page.
+
+#### Administration
+ - Added safety limit error message in compiled Team Edition and Enterprise Edition deployments when enterprise scale and access control automation features are unavailable and count of users who are registered and not deactivated exceeds 10,000. ERROR_SAFE_LIMITS_EXCEEDED.
+ - The ``where`` field is now rendered in ``model.AppError`` only when it's present.
+ - Added Outgoing Oauth implementation ``Get``/``List`` logic.
+ - The mmctl bulk import process command in local mode now supports processing an import file without actually uploading it to the server. Simply pass the file path to the import file and the server will directly read from it, and pass the ``--bypass-upload`` flag. There is no need to use the import upload command. NOTE: all of this is applicable only in local mode.
+ - Added **Monthly Active Users** (MAU) as part of the true-up report.
+ - Prometheus metrics are now available under the Source Available License.
+
+#### Performance
+ - Optimized ``createPost`` performance.
+ - Improved the performance of emoji uploads.
+ - Made small optimizations in several database calls:
+     - ``App.HasPermissionToChannel``
+     - ``getPostsForChannelAroundLastUnread``
+     - ``publishWebsocketEventForPermalinkPost``
+     - ``countMentionsFromPost``
+
+#### Plugins
+ - Plugins are now allowed to register user settings.
+ - Plugins can now register an action in the **User Settings** section. Plugins can also now disable a section in their **User Settings**.
+ - Included session id in request payload of the ``WebSocketMessageHasBeenPosted`` plugin hook.
+
+### Bug Fixes
+ - Fixed an issue where the right-hand side stopped getting the focus when navigating from **Global Threads** or **Global Drafts**.
+ - Fixed a theme issue in the notification settings.
+ - Fixed a regression in compliance exports which did not allow the export job to be canceled gracefully on server shutdown.
+ - Fixed an error where posts dismissed by a plugin were not properly removed from the view.
+ - Fixed an issue where if there were multiple websocket connections from a single user, then in case one connection got removed during a broadcast, there was a possibility that the other good connection would not get the event.
+ - Fixed an issue with true-up reports sending active users and not activated users.
+ - Fixed an issue where users were not able to navigate through links to private channels they are member of with certain configurations.
+
+### config.json
+ - Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
+
+#### Changes to all plans:
+ - Under ``ServiceSettings`` in ``config.json``:
+     - Added ``MaximumPayloadSizeBytes`` to add a limit to the payload size of API endpoints passing in arrays.
+ - Added a configuration setting ``OutgoingIntegrationRequestsDefaultTimeout`` for integration requests.
+
+#### Changes to the Professional and Enterprise plans:
+ - Under ``WranglerSettings`` in ``config.json``:
+    - Added ``AllowedEmailDomain`` - a CSV list of strings, where each is an email domain that is allowed to use the feature (e.g. - on community.mattermost.com, ``mattermost.com`` would allow staff to move a thread, while non-staff cannot).
+    - ``MoveThreadMaxCount`` - a number representing the maximum number of posts that can be in a thread for it to be moveable.
+    - ``MoveThreadToAnotherTeamEnable`` - a boolean value representing whether moving should work across teams.
+    - ``MoveThreadFromPrivateChannelEnable`` - a boolean value representing whether moving should work from within a private channel.
+    - ``MoveThreadFromDirectMessageChannelEnable`` - a boolean value representing whether moving should be allowed from within a group message.
+
+#### Changes to the Enterprise plan:
+ - Under ``DataRetentionSettings`` in ``config.json``:
+    - Added two new configuration settings, ``MessageRetentionHours`` and ``FileRetentionHours``, in order to support setting your global retention time in hours. ``DataRetentionSettings.MessageRetentionDays`` and ``DataRetentionSettings.FileRetentionDays`` are deprecated but we will continue to use their value until you set something for their hours equivalent. If Days are set then the hours configuration must be 0 and if hours is set then the days config must be 0. We do not support hours for granular retention policies. Due to how our Elasticsearch indexes are stored, Data retention will now also remove elastic search indexes equal to the day of the retention cut-off time.
+
+### API Changes
+ - Added a new API endpoint ``POST /api/v4/posts/<post ID>/move``.
+ - Added ``UpdateChannelMembersNotifications`` plugin API.
+ - Added plugin APIs and hooks for accessing the **Shared Channels** service via plugins.
+ - Added a limit to the payload size of API endpoints passing in arrays.
+ - Added ``PreferencesHaveChanged`` plugin hook.
+ - Added ``GetPreferenceForUser`` plugin API.
+ - Added a new API endpoint ``GET /api/v4/users/report`` for system admin user reporting.
+ - Added a new API endpoint ``GET /api/v4/reports/users/count``.
+
+### Open Source Components
+ - Added ``@tanstack/react-table`` and ``prometheus/client_model`` to https://github.com/mattermost/mattermost/.
+
+### Go Version
+ - v9.5 is built with Go ``v1.20.7``.
+
+### Known Issues
+ - The ``ChannelsHasBeenCreated`` plugin hook is not called for Group Messages [MM-56776](https://mattermost.atlassian.net/browse/MM-56776).
+ - User autocomplete no longer stays closed after pressing ESC key [MM-56748](https://mattermost.atlassian.net/browse/MM-56748).
+ - Status may sometimes get stuck as **Away** or **Offline** in High Availability mode with IP Hash turned off.
+ - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
+ - Slack import through the CLI fails if email notifications are enabled.
+ - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
+ - The Playbooks left-hand sidebar doesn't update when a user is added to a run or playbook without a refresh.
+ - If a user isn't a member of a configured broadcast channel, posting a status update might fail without any error feedback. As a temporary workaround, join the configured broadcast channels, or remove those channels from the run configuration.
+ - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
+ 
+### Contributors
+ - [agarciamontoro](https://github.com/agarciamontoro), [agnivade](https://github.com/agnivade), [akbarkz](https://translate.mattermost.com/user/akbarkz), [amyblais](https://github.com/amyblais), [andriuspetrauskis](https://github.com/andriuspetrauskis), [andriuspre](https://github.com/andriuspre), [angeloskyratzakos](https://github.com/angeloskyratzakos), [asaadmahmood](https://github.com/asaadmahmood), [ayusht2810](https://github.com/ayusht2810), [azigler](https://github.com/azigler), [azistellar](https://translate.mattermost.com/user/azistellar), [azizthegit](https://github.com/azizthegit), [bbodenmiller](https://github.com/bbodenmiller), [BenCookie95](https://github.com/BenCookie95), [c0d33ngr](https://github.com/c0d33ngr), [catenacyber](https://github.com/catenacyber), [cedricongjh](https://github.com/cedricongjh), [Chlbek](https://translate.mattermost.com/user/Chlbek), [chriswachira](https://github.com/chriswachira), [coltoneshaw](https://github.com/coltoneshaw), [cpoile](https://github.com/cpoile), [cripton](https://github.com/cripton), [crspeller](https://github.com/crspeller), [ctlaltdieliet](https://github.com/ctlaltdieliet), [cwarnermm](https://github.com/cwarnermm), [cyberjam](https://github.com/cyberjam), [devinbinnie](https://github.com/devinbinnie), [duttakapil](https://github.com/duttakapil), [Eleferen](https://translate.mattermost.com/user/Eleferen), [enahum](https://github.com/enahum), [GabrielCasaro](https://github.com/GabrielCasaro), [gabrieljackson](https://github.com/gabrieljackson), [grundleborg](https://github.com/grundleborg), [hanzei](https://github.com/hanzei), [harshilsharma63](https://github.com/harshilsharma63), [heisdinesh](https://github.com/heisdinesh), [hmhealey](https://github.com/hmhealey), [hynex](https://translate.mattermost.com/user/hynex), [ifoukarakis](https://github.com/ifoukarakis), [isacikgoz](https://github.com/isacikgoz), [jespino](https://github.com/jespino), [johndavidlugtu](https://github.com/johndavidlugtu), [johnsonbrothers](https://github.com/johnsonbrothers), [jones](https://translate.mattermost.com/user/jones), [jprusch](https://github.com/jprusch), [JulienTant](https://github.com/JulienTant), [kaakaa](https://github.com/kaakaa), [kerochelo](https://github.com/kerochelo), [Kshitij-Katiyar](https://github.com/Kshitij-Katiyar), [larkox](https://github.com/larkox), [lieut-data](https://github.com/lieut-data), [lindalumitchell](https://github.com/lindalumitchell), [M-ZubairAhmed](https://github.com/M-ZubairAhmed), [majo](https://translate.mattermost.com/user/majo), [marianunez](https://github.com/marianunez), [master7](https://translate.mattermost.com/user/master7), [matoro](https://github.com/matoro), [matt-w99](https://github.com/matt-w99), [matthew-w](https://translate.mattermost.com/user/matthew-w), [mgdelacroix](https://github.com/mgdelacroix), [mickmister](https://github.com/mickmister), [milotype](https://translate.mattermost.com/user/milotype), [mkaraki](https://github.com/mkaraki), [mvitale1989](https://github.com/mvitale1989), [nickmisasi](https://github.com/nickmisasi), [Nityanand13](https://github.com/Nityanand13), [norma596](https://translate.mattermost.com/user/norma596), [Omar8345](https://github.com/Omar8345), [phoinixgrr](https://github.com/phoinixgrr), [raghavaggarwal2308](https://github.com/raghavaggarwal2308), [Rutam21](https://github.com/Rutam21), [RyoKub](https://github.com/RyoKub), [sapnasivakumar](https://github.com/sapnasivakumar), [saturninoabril](https://github.com/saturninoabril), [sbishel](https://github.com/sbishel), [ShrootBuck](https://github.com/ShrootBuck), [SkyDusH](https://translate.mattermost.com/user/SkyDusH), [sonichigo](https://github.com/sonichigo), [sri-byte](https://github.com/sri-byte), [stafot](https://github.com/stafot), [streamer45](https://github.com/streamer45), [stylianosrigas](https://github.com/stylianosrigas), [Sudhanva-Nadiger](https://github.com/Sudhanva-Nadiger), [Syed-Ali-Abbas-Zaidi](https://github.com/Syed-Ali-Abbas-Zaidi), [TealWater](https://github.com/TealWater), [thinkGeist](https://github.com/thinkGeist), [thomasbrq](https://github.com/thomasbrq), [ThrRip](https://github.com/ThrRip), [titanventura](https://github.com/titanventura), [toninis](https://github.com/toninis), [trangology](https://github.com/trangology), [tsabi](https://translate.mattermost.com/user/tsabi), [Utsav-Ladani](https://github.com/Utsav-Ladani), [varghesejose2020](https://github.com/varghesejose2020), [vish9812](https://github.com/vish9812), [VishalB98](https://github.com/VishalB98), [wiggin77](https://github.com/wiggin77), [Willy-Wakam](https://github.com/Willy-Wakam), [yasserfaraazkhan](https://github.com/yasserfaraazkhan), [yaz](https://translate.mattermost.com/user/yaz), [yomiadetutu1](https://github.com/yomiadetutu1)
+
 ## Release v9.4 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
 
 - **9.4.3, released 2024-02-14**
