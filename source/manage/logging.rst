@@ -108,7 +108,7 @@ Define logging output in JSON format in the System Console by going to **Environ
 ----
 
 Audit logging (Beta)
------------------------------
+--------------------
 
 .. include:: ../_static/badges/ent-only.rst
   :start-after: :nosearch:
@@ -163,7 +163,7 @@ Configuring advanced logging includes the following steps:
 - `Configure target-specific settings <#configure-target-specific-settings>`__
 
 Define advanced log output
-~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. tabs::
 
