@@ -1927,15 +1927,12 @@ Migrate a file-based configuration to (or from) a database-based configuration. 
 
 .. note::
 
-   To change the store type to use the database, a System Admin needs to set a ``MM_CONFIG`` `environment variable </configure/configuation-in-a-database.html#create-an-environment-file>`_ and restart the Mattermost server.
+   - To change the store type to use the database, a System Admin needs to set a ``MM_CONFIG`` `environment variable </configure/configuation-in-a-database.html#create-an-environment-file>`_ and restart the Mattermost server.
+   - The ``migrate`` function requires local mode to be enabled.  To do this, add the following line to your Mattermost Environment file:
 
-.. note::
+      .. code-block:: sh
 
-   The ``migrate`` function requires local mode to be enabled.  To do this, add the following line to your Mattermost Environment file:
-
-   .. code-block:: sh
-
-      MM_SERVICESETTINGS_ENABLELOCALMODE=true
+         MM_SERVICESETTINGS_ENABLELOCALMODE=true
 
 **Format**
 
