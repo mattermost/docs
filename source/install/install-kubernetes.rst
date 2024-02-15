@@ -23,7 +23,7 @@ Install the operators
 
 Nginx Ingress Controller
 ^^^^^^^^^^^^^^^^^^^^^^^^
-For instructions on installation the NGINX ingress controller in your Kubernetes cluster, click `here <https://kubernetes.github.io/ingress-nginx/deploy/>`__.
+For instructions on installating the NGINX ingress controller in your Kubernetes cluster, click `here <https://kubernetes.github.io/ingress-nginx/deploy/>`__.
 
 Mattermost Operator
 ^^^^^^^^^^^^^
