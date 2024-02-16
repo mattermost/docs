@@ -12,12 +12,12 @@ Install the Mattermost for Microsoft Teams plugin
 
   Looking to `embed Mattermost within Microsoft Teams </about/embed-mattermost-within-microsoft-teams.html>`__ instead?
 
-To install the `Microsoft Teams plugin </configure/plugins-configuration-settings.html#ms-teams-sync>`__ in Mattermost:
+To install the `Microsoft Teams plugin </configure/plugins-configuration-settings.html#ms-teams>`__ in Mattermost:
 
 1. Log in to your Mattermost workspace as a system administrator.
-2. Download the latest version of `the plugin binary release <https://github.com/mattermost/mattermost-plugin-msteams-sync/releases>`__, compatible with Mattermost v8.0.1 and later. If you are using an earlier version of Mattermost, `follow our documentation </upgrade/upgrading-mattermost-server.html>`__ to upgrade to Mattermost v8.0.1 or later.
+2. Download the latest version of `the plugin binary release <https://github.com/mattermost/mattermost-plugin-msteams/releases>`__, compatible with Mattermost v8.0.1 and later. If you are using an earlier version of Mattermost, `follow our documentation </upgrade/upgrading-mattermost-server.html>`__ to upgrade to Mattermost v8.0.1 or later.
 3. Go to **System Console > Plugins > Plugin Management > Upload Plugin**, and upload the plugin binary you downloaded in the previous step.
-4. Go to **System Console > Plugins > Plugin Management**. In the **Installed Plugins** section, scroll to **MS Teams Sync**, and select **Enable Plugin**.
+4. Go to **System Console > Plugins > Plugin Management**. In the **Installed Plugins** section, scroll to **MS Teams**, and select **Enable Plugin**.
 
 Set up an OAuth application in Azure
 -------------------------------------
@@ -34,10 +34,10 @@ Step 1: Create Mattermost App in Azure
 
 4. Fill out the form with the following values:
 
- - **Name**: ``Mattermost MS Teams Sync``
+ - **Name**: ``Mattermost MS Teams``
  - **Supported account types**: ``Default value (Single tenant)``
  - **Platform**: ``Web``
- - **Redirect URI**: ``https://(MM_SITE_URL)/plugins/com.mattermost.msteams-sync/oauth-redirect``
+ - **Redirect URI**: ``https://(MM_SITE_URL)/plugins/com.mattermost.msteams/oauth-redirect``
 
 Replace ``(MM_SITE_URL)`` with your Mattermost server's Site URL. Select **Register** to submit the form.
 
@@ -122,14 +122,14 @@ Configure how users will connect accounts
 
 Mattermost admins can configure Mattermost to automatically prompt users to connect their Mattermost user account to their Microsoft Teams user account on login.
 
-1. Go to **System Console > Plugins > MS Teams Sync**.
+1. Go to **System Console > Plugins > MS Teams**.
 2. Enable **Enforce connected accounts** to prompt users to connect if they haven't done so.
 3. (Optional) Enable **Allow to temporarily skip connect user** to allow users to skip the connection prompt temporarily. Users are prompted on refresh and login.
 
 Configure the plugin
 --------------------
 
-Additional configuration settings are available for this plugin. See the `Microsoft Teams Sync plugin configuration settings </configure/plugins-configuration-settings.html#ms-teams-sync>`__ documentation for details.
+Additional configuration settings are available for this plugin. See the `Microsoft Teams plugin configuration settings </configure/plugins-configuration-settings.html#ms-teams>`__ documentation for details.
 
 Monitor plugin performance
 --------------------------
@@ -139,7 +139,7 @@ You can set up `performance monitoring </scale/performance-monitoring.html>`__ a
 - Monitoring enables you to proactively review the overall health of the plugin, including database calls, HTTP requests, and API latency.
 - Alerting enables you to detect and take action as issues come up, such as the integration being offline.
 
-Grafana dashboards `are available on GitHub <https://github.com/mattermost/mattermost-plugin-msteams-sync/blob/main/server/metrics/dashboards/cloud.json>`__ for Mattermost Cloud deployments as a useful starting point. These dashboards are designed for use in Mattermost Cloud, and filter to a given ``namespace``. 
+Grafana dashboards `are available on GitHub <https://github.com/mattermost/mattermost-plugin-msteams/blob/main/server/metrics/dashboards/cloud.json>`__ for Mattermost Cloud deployments as a useful starting point. These dashboards are designed for use in Mattermost Cloud, and filter to a given ``namespace``. 
 
 .. image:: ../images/grafana-dashboard-msteams.png
   :alt: Example of a Grafana monitoring dashboard for a Mattermost instance connected to Microsoft Teams.
@@ -159,13 +159,13 @@ Trobleshooting
 If you encounter issues when connecting user accounts or linking channels, restart the plugin as a Mattermost system admin. 
 
 1. Go to **System Console > Plugins > Plugin Management**.
-2. Under **Installed Plugins**, scroll to the **MSTeams Sync** section, select **Disable** then wait for the State to change to **Not running**.
+2. Under **Installed Plugins**, scroll to the **MS Teams** section, select **Disable** then wait for the State to change to **Not running**.
 3. Select **Enable** and wait for the State to change to **Running**.
 
 Get help
 --------
 
-If you face issues while installing this plugin, gather relevant information, including reproduction steps to accelerate troubleshooting. You're welcome to open a new issue in the `Mattermost for Microsoft Teams GitHub repository <https://github.com/mattermost/mattermost-plugin-msteams-sync/issues/new>`__.
+If you face issues while installing this plugin, gather relevant information, including reproduction steps to accelerate troubleshooting. You're welcome to open a new issue in the `Mattermost for Microsoft Teams GitHub repository <https://github.com/mattermost/mattermost-plugin-msteams/issues/new>`__.
 
 - **Mattermost Commercial Customers (including Enterprise and Professional plans)**: Visit `Mattermost Support <https://mattermost.com/support/>`__ to `submit a support ticket <https://support.mattermost.com/hc/en-us/requests/new>`__.
 
