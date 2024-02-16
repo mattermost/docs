@@ -44,6 +44,7 @@ All Platforms
 
 - Fixed an issue where the user's URL would be cleared after being entered in the **Add Server** modal.
 - Fixed an issue where users couldn't add a second server with a similar subpath as the configured server.
+- Fixed a potential crash in diagnostics.
 
 Open Source Components
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
