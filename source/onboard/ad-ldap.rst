@@ -63,7 +63,7 @@ Configure AD/LDAP login
 Configure AD/LDAP synchronization
 ----------------------------------
 
-In addition to configuring AD/LDAP sign-in, you can also configure AD/LDAP synchronization. When synchronizing, Mattermost queries AD/LDAP for relevant account information and updates Mattermost accounts based on changes to attributes (first name, last name, and nickname). When accounts are disabled in AD/LDAP users are made inactive in Mattermost, and their active sessions are revoked once Mattermost synchronizes the updated attributes.
+In addition to configuring AD/LDAP sign-in, you can also configure AD/LDAP synchronization. When synchronizing, Mattermost queries AD/LDAP for relevant account information and updates Mattermost accounts based on changes to attributes (first name, last name, and nickname). When accounts are disabled in AD/LDAP users are deactivated in Mattermost, and their active sessions are revoked once Mattermost synchronizes the updated attributes.
 
 The AD/LDAP synchronization depends on email. Make sure all users on your AD/LDAP server have an email address, or ensure their account is deactivated in Mattermost.
 

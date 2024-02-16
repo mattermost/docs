@@ -100,12 +100,16 @@ In this case, the "physical address" is the location where the individual, who w
 How is a user defined for subscriptions?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-For the purpose of billing, a “user” is any account created in Mattermost that has not been deactivated by the System Administrator. You can see your user count for billing purposes from the System Console on the **Site Statistics** page under “Total Active Users”. Guests are also defined as users. 
+For the purpose of billing, a “user” is any account created in Mattermost that does not show as **Deactivated** in **System Console > User Management > Users**. Guests are also defined as users.
+
+Bots, deactivated users, and synthetic users in `Microsoft Teams integrations </collaborate/collaborate-using-mattermost-for-microsoft-teams.html>`__ and `shared channels users </onboard/shared-channels.html>`__, aren't counted towards the total number of activated users.
+
+You can review your user count, for billing purposes, by going to ** System Console > Site Statistics**, under **Total Activated Users**.
 
 Do I need to pay for deactivated users?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-No. If you deactivate a user, that user is not counted as an active user during your annual renewal process. You can deactivate users manually via the System Console, and also via Active Directory/LDAP synchronization, the mmctl tool, and the server APIs.
+No. If you deactivate a user, that user is not counted as an activated user during your annual renewal process. You can deactivate users manually via the System Console, and also via Active Directory/LDAP synchronization, the mmctl tool, and the server APIs.
 
 If you choose to pull SQL reports from the database to monitor individual activity to make deactivation decisions, and you are running under high user load, we recommend the reports are pulled from a read replica of the database.
 
