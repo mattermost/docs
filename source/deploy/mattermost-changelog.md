@@ -31,6 +31,8 @@ If you upgrade from a release earlier than v9.4, please read the other [Importan
 
 ### Improvements
 
+See [this walkthrough video](https://mattermost.com/video/changelog-v9-5/) on some of the improvements in our latest release below.
+
 #### User Interface (UI)
  - Pre-packaged Calls version [v0.23.1](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v0.23.1).
  - Pre-packaged Jira plugin version [v4.1.0](https://github.com/mattermost/mattermost-plugin-jira/releases/tag/v4.1.0).
