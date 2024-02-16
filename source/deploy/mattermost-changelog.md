@@ -15,6 +15,69 @@ From Mattermost v9.2, this changelog summarizes updates for the latest cloud and
 :depth: 2
 ```
 
+## Release v9.6 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
+
+**Release day: March 15, 2024**
+
+### Important Upgrade Notes
+ - 
+
+```{Important}
+If you upgrade from a release earlier than v9.5, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
+```
+
+### Improvements
+
+#### User Interface (UI)
+ - 
+
+#### Administration
+ - 
+
+#### Performance
+ - 
+
+#### Plugins
+ - 
+
+### Bug Fixes
+ - 
+
+### config.json
+ - Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
+
+#### Changes to all plans:
+ - 
+
+#### Changes to the Professional and Enterprise plans:
+ - 
+
+#### Changes to the Enterprise plan:
+ - 
+
+### API Changes
+ - 
+
+### Open Source Components
+ - Added  to https://github.com/mattermost/mattermost/.
+
+### Go Version
+ - v9.6 is built with Go ``v1.20.7``.
+
+### Known Issues
+ - The ``ChannelsHasBeenCreated`` plugin hook is not called for Group Messages [MM-56776](https://mattermost.atlassian.net/browse/MM-56776).
+ - User autocomplete no longer stays closed after pressing ESC key [MM-56748](https://mattermost.atlassian.net/browse/MM-56748).
+ - Status may sometimes get stuck as **Away** or **Offline** in High Availability mode with IP Hash turned off.
+ - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
+ - Slack import through the CLI fails if email notifications are enabled.
+ - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
+ - The Playbooks left-hand sidebar doesn't update when a user is added to a run or playbook without a refresh.
+ - If a user isn't a member of a configured broadcast channel, posting a status update might fail without any error feedback. As a temporary workaround, join the configured broadcast channels, or remove those channels from the run configuration.
+ - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
+ 
+### Contributors
+ - 
+
 ## Release v9.5 - [Extended Support Release](https://docs.mattermost.com/upgrade/release-definitions.html#extended-support-release-esr)
 
 - **9.5.1, released 2024-02-16**
