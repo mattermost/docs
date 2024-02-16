@@ -1,7 +1,11 @@
 Self-hosted administration
 ==========================
 
-This section of the guide is for system admins of self-hosted Mattermost servers. If you're the admin for a Mattermost Cloud workspace, please refer to the `Cloud workspace management </guides/administration.html#cloud-workspace-management>`__ section on this page.
+This section of the guide is for system admins of self-hosted Mattermost servers.
+
+.. tip::
+    
+    If you're the admin for a Mattermost Cloud workspace, see the `Cloud workspace management </guides/cloud-workspace-management.html>`__ documentation.
 
 .. toctree::
     :maxdepth: 1
@@ -9,6 +13,7 @@ This section of the guide is for system admins of self-hosted Mattermost servers
     :titlesonly:
 
     Mattermost self-hosted billing </manage/self-hosted-billing>
+    Mattermost error codes </manage/error-codes>
     Store configuration in the database </configure/configuation-in-a-database>
     Bulk loading data </onboard/bulk-loading-data>
     SMTP email setup </configure/smtp-email>
@@ -28,6 +33,7 @@ This section of the guide is for system admins of self-hosted Mattermost servers
     Manage telemetry </manage/telemetry>
 
 * :doc:`Mattermost self-hosted billing </manage/self-hosted-billing>` - Manage your Mattermost subscription.
+* :doc:`Mattermost error codes </manage/error-codes>` - Learn more about the error code you're encountering in Mattermost.
 * :doc:`Include configuration in the Mattermost database </configure/configuation-in-a-database>` - Store Mattermost configuration information in your database rather than as a JSON file. We recommend this for High Availability environments.
 * :doc:`Bulk loading data </onboard/bulk-loading-data>` - Import bulk data into Mattermost for teams, channels, users, post content, and more.
 * :doc:`SMTP email setup </configure/smtp-email>` - Connect to an email server to send emails for password resets and system notifications.
