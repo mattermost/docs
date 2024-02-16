@@ -156,7 +156,15 @@ See our `collaborate using the Microsoft Teams plugin </collaborate/collaborate-
 Trobleshooting
 --------------
 
-If you encounter issues when connecting user accounts or linking channels, restart the plugin as a Mattermost system admin. 
+FAQ
+~~~~~~~~~~~~~~
+**Can I connect my Mattermost account to a Microsoft Teams account of a different email address?**
+
+No. Currently, only accounts with the same email addresses are allowed to be connected.
+
+**I'm experiencing multiple issues connecting user accounts and linking channels.**
+
+If you encounter other issues when connecting user accounts or linking channels, restart the plugin as a Mattermost system admin. 
 
 1. Go to **System Console > Plugins > Plugin Management**.
 2. Under **Installed Plugins**, scroll to the **MS Teams** section, select **Disable** then wait for the State to change to **Not running**.
