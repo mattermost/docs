@@ -142,7 +142,7 @@ Configurations are stored in the ``Configurations`` table in the database. To ve
 
 .. code-block:: sql
 
-   SELECT * FROM Configurations WHERE Active = 1;
+   SELECT * FROM Configurations WHERE Active=true;
 
 There should be exactly one line returned, and the ``Value`` field for that line should match your ``config.json`` file.
 
