@@ -38,6 +38,7 @@ See [this walkthrough video](https://www.youtube.com/watch?v=b1M2BGGF578&feature
  - Pre-packaged Jira plugin version [v4.1.0](https://github.com/mattermost/mattermost-plugin-jira/releases/tag/v4.1.0).
  - Improved the behavior of suggestion boxes when changing the caret position.
  - Changed the time for tomorrow in the **Do Not Disturb** timer and post reminder to refer to the next day at 9:00am instead of 24hrs from the time of activation.
+ - Updated message timestamp tooltips to include seconds.
  - Added a new Wrangler feature to be able to move threads (Experimental). Moving threads requires a Professional/Enterprise license to activate. This feature is not yet recommended for production use. A new feature flag ``MoveThreadsEnabled`` was added and is default OFF. Changing this value to ON will enable the experimental **Move Threads** feature.
  - Applied a wording change for active and activated users in the **System Console** user list.
  - Applied a wording change for active and activated users in the **Team Statistics** page.
