@@ -63,7 +63,8 @@ If you upgrade from a release earlier than v9.5, please read the other [Importan
  - Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
 
 #### Changes to all plans:
- - EnableOutgoingOAuthConnections config
+ - Under ``ServiceSettings`` in ``config.json``:
+    - Added ``EnableOutgoingOAuthConnections`` configuration setting for Outgoing OAuth Connections integration type.
 
 ### Open Source Components
  - Added ``@floating-ui/react``, and removed ``@floating-ui/react-dom`` and ``@floating-ui/react-dom-interactions`` from https://github.com/mattermost/mattermost/.
@@ -72,8 +73,6 @@ If you upgrade from a release earlier than v9.5, please read the other [Importan
  - v9.6 is built with Go ``v1.20.7``.
 
 ### Known Issues
- - The ``ChannelsHasBeenCreated`` plugin hook is not called for Group Messages [MM-56776](https://mattermost.atlassian.net/browse/MM-56776).
- - User autocomplete no longer stays closed after pressing ESC key [MM-56748](https://mattermost.atlassian.net/browse/MM-56748).
  - Status may sometimes get stuck as **Away** or **Offline** in High Availability mode with IP Hash turned off.
  - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
  - Slack import through the CLI fails if email notifications are enabled.
