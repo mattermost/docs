@@ -34,7 +34,7 @@ With Helm
 ^^^^^^^^^
 
 
-1. Install Helm. We recommend Helm v3.13.0 or later. For installation instructions, click `here <See: https://docs.helm.sh/using_helm/#quickstart>`__.
+1. Install Helm. We recommend Helm v3.13.0 or later. For installation instructions, see the `Helm quickstart documentation <https://docs.helm.sh/using_helm/#quickstart>`__.
 2. Once Helm is installed and initialized, run the following:
 
   .. code-block:: sh
