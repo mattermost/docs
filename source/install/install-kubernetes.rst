@@ -42,7 +42,7 @@ With Helm
 
     helm repo add mattermost https://helm.mattermost.com
 
-3. Create a file named ``config.yaml``, then copy and paste the content of `this file <https://github.com/mattermost/mattermost-helm/blob/master/charts/mattermost-operator/values.yaml>`__ into it.
+3. Create a file named ``config.yaml``, then copy and paste the content of `the Mattermost operator file <https://github.com/mattermost/mattermost-helm/blob/master/charts/mattermost-operator/values.yaml>`__ into it.
 
 
 4. Create a namespace for the Mattermost Operator:
