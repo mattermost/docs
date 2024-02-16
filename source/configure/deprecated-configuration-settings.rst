@@ -442,7 +442,9 @@ Town Square is hidden in left hand sidebar
 
    .. tab:: Mattermost v5.39 and earlier
 
-      Available in legacy Enterprise Edition E10 and higher.
+      .. raw:: html
+
+       <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
       This setting applies to the legacy sidebar only. You must enable the `Enable Legacy Sidebar </configure/configuration-settings.html#enable-legacy-sidebar>`__ configuration setting to see and enable this functionality in the System Console.
 
@@ -471,7 +473,9 @@ Town Square is read-only
 
    .. tab:: Mattermost v5.39 and earlier
 
-      Available in legacy Enterprise Edition E10 and higher.
+      .. raw:: html
+
+       <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
       **True**: Only System Admins can post in Town Square. Other members are not able to post, reply, upload files, react using emojis,  pin messages to Town Square, nor are they able to change the channel name, header, or purpose.
 
@@ -499,7 +503,9 @@ Restrict custom emoji creation
 
       After upgrading to v4.9 (released April 16th, 2018) or later, changing the ``config.json`` value no longer has an effect because this setting has been migrated to the database. This setting can be modified using the System Console user interface.
 
-      Available in legacy Enterprise Edition E10 and E20.
+      .. raw:: html
+
+       <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
       **Allow everyone to create custom emoji**: Allows everyone to add custom emojis from the emoji picker.
 
@@ -592,7 +598,9 @@ Restrict managing integrations to Admins
 
       After upgrading to v4.9 (released April 16th, 2018) or later, changing the ``config.json`` value no longer has an effect because this setting has been migrated to the database. This setting can be modified using the System Console user interface.
 
-      Available in legacy Enterprise Edition E10 and E20.
+      .. raw:: html
+
+       <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 **True**: Webhooks and slash commands can only be created, edited, and viewed by Team and System Admins, and OAuth 2.0 applications by System Admins. Integrations are available to all users after they have been created by the Admin.
 
@@ -961,7 +969,9 @@ Other deprecated settings
 Disable Post Metadata
 ~~~~~~~~~~~~~~~~~~~~~
 
-*Available in legacy Enterprise Edition E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -976,7 +986,9 @@ This setting isn't available in the System Console and can only be set in ``conf
 Enable AD/LDAP group sync
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-*Available in legacy Enterprise Edition E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 **True**: Enables AD/LDAP Group Sync configurable under **User Management > Groups**.
 

@@ -13,7 +13,9 @@ Configure SMTP email server settings by going to **System Console > Environment 
 SMTP server
 ~~~~~~~~~~~
 
-*Available in legacy Enterprise Edition E10/E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +-----------------------------------------------------------------+---------------------------------------------------------------+
 | The location of the SMTP email server used for email            | - System Config path: **Environment > SMTP**                  |
@@ -31,7 +33,9 @@ SMTP server
 SMTP server port
 ~~~~~~~~~~~~~~~~
 
-*Available in legacy Enterprise Edition E10/E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +-----------------------------------------------------------------+---------------------------------------------------------------+
 | The port of SMTP email server.                                  | - System Config path: **Environment > SMTP**                  |
@@ -51,7 +55,9 @@ SMTP server port
 Enable SMTP authentication
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-*Available in legacy Enterprise Edition E10/E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +-----------------------------------------------------------------+---------------------------------------------------------------------------+
 | Enable or disable SMTP authentication.                          | - System Config path: **Environment > SMTP**                              |
@@ -72,7 +78,9 @@ Enable SMTP authentication
 SMTP server username
 ~~~~~~~~~~~~~~~~~~~~
 
-*Available in legacy Enterprise Edition E10/E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +-----------------------------------------------------------------+---------------------------------------------------------------+
 | The username for authenticating to the SMTP server.             | - System Config path: **Environment > SMTP**                  |
@@ -90,7 +98,9 @@ SMTP server username
 SMTP server password
 ~~~~~~~~~~~~~~~~~~~~
 
-*Available in legacy Enterprise Edition E10/E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +-----------------------------------------------------------------+---------------------------------------------------------------+
 | The password associated with the SMTP username.                 | - System Config path: **Environment > SMTP**                  |
@@ -111,7 +121,9 @@ SMTP server password
 SMTP connection security
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-*Available in legacy Enterprise Edition E10/E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +-----------------------------------------------------------------+-----------------------------------------------------------------------+
 | Specify connection security for emails sent using SMTP.         | - System Config path: **Environment > SMTP**                          |
@@ -136,7 +148,9 @@ SMTP connection security
 Skip server certificate verification
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-*Available in legacy Enterprise Edition E10/E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +-----------------------------------------------------------------------+----------------------------------------------------------------------------------------------+
 | Configure Mattermost to skip the verification of the email server     | - System Config path: **Environment > SMTP**                                                 |
@@ -159,7 +173,9 @@ Skip server certificate verification
 Enable security alerts
 ~~~~~~~~~~~~~~~~~~~~~~
 
-*Available in legacy Enterprise Edition E10/E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +-----------------------------------------------------------------+----------------------------------------------------------------------------------+
 | Enable or disable security alerts.                              | - System Config path: **Environment > SMTP**                                     |
@@ -182,7 +198,9 @@ Enable security alerts
 SMTP server timeout
 ~~~~~~~~~~~~~~~~~~~
 
-*Available in legacy Enterprise Edition E10/E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +-----------------------------------------------------------------+----------------------------------------------------------------------+
 | The maximum amount of time, in seconds, allowed for             | - System Config path: **Environment > SMTP**                         |

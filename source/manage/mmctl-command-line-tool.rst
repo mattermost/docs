@@ -1927,7 +1927,12 @@ Migrate a file-based configuration to (or from) a database-based configuration. 
 
 .. note::
 
-   To change the store type to use the database, a System Admin needs to set a ``MM_CONFIG`` `environment variable </configure/configuation-in-a-database.html#create-an-environment-file>`_ and restart the Mattermost server.
+   - To change the store type to use the database, a System Admin needs to set a ``MM_CONFIG`` `environment variable </configure/configuation-in-a-database.html#create-an-environment-file>`_ and restart the Mattermost server.
+   - The ``migrate`` function requires local mode to be enabled.  To do this, add the following line to your Mattermost Environment file:
+
+      .. code-block:: sh
+
+         MM_SERVICESETTINGS_ENABLELOCALMODE=true
 
 **Format**
 
@@ -1939,7 +1944,7 @@ Migrate a file-based configuration to (or from) a database-based configuration. 
 
 .. code-block:: sh
 
-   mmctl config migrate path/to/config.json "postgres://mmuser:mostest@localhost:5432/mattermost_test?sslmode=disable&connect_timeout=10"
+   mmctl config migrate path/to/config.json "postgres://mmuser:mostest@localhost:5432/mattermost_test?sslmode=disable&connect_timeout=10" --local
 
 **Options**
 
@@ -3934,7 +3939,9 @@ mmctl permissions add
 .. include:: ../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
-*Available in legacy Mattermost Enterprise Edition E10 and E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 **Description**
 
@@ -3979,7 +3986,9 @@ mmctl permissions remove
 .. include:: ../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
-*Available in legacy Mattermost Enterprise Edition E10 and E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 **Description**
 
@@ -4024,7 +4033,9 @@ mmctl permissions reset
 .. include:: ../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
-*Available in legacy Mattermost Enterprise Edition E10 and E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 **Description**
 
@@ -4069,7 +4080,9 @@ mmctl permissions role assign
 .. include:: ../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
-*Available in legacy Mattermost Enterprise Edition E10 and E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 **Description**
 

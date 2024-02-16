@@ -33,7 +33,7 @@ You can use the System Console or the mmctl tools to add or change a Mattermost 
 Change an existing license key
 -------------------------------
 
-Make sure that the new license is for a number of users that is greater than or equal to the current total number of users on your system. To find the total number of users, go to **System Console > Reporting > Site Statistics**. The total number of users is displayed in the **Total Active Users** field. The license is rejected if this value is greater than the value allowed by the license key.
+Make sure that the new license is for a number of users that is greater than or equal to the current total number of users on your system. To find the total number of users, go to **System Console > Reporting > Site Statistics**. The total number of users is displayed in the **Total Activated Users** field. The license is rejected if this value is greater than the value allowed by the license key.
 
 Then, follow these steps to change your license key:
         1. Go go **System Console > About > Edition and License**.
