@@ -3939,7 +3939,9 @@ mmctl permissions add
 .. include:: ../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
-*Available in legacy Mattermost Enterprise Edition E10 and E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 **Description**
 
@@ -3984,7 +3986,9 @@ mmctl permissions remove
 .. include:: ../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
-*Available in legacy Mattermost Enterprise Edition E10 and E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 **Description**
 
@@ -4029,7 +4033,9 @@ mmctl permissions reset
 .. include:: ../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
-*Available in legacy Mattermost Enterprise Edition E10 and E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 **Description**
 
@@ -4074,7 +4080,9 @@ mmctl permissions role assign
 .. include:: ../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
-*Available in legacy Mattermost Enterprise Edition E10 and E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 **Description**
 

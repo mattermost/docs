@@ -15,7 +15,9 @@ Configure logging by going to **System Console > Environment > Logging**, or by 
 Output logs to console
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-*Available in legacy Enterprise Edition E10/E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +-----------------------------------------------+---------------------------------------------------------------------+
 | Configure Mattermost to output logs to the    | - System Config path: **Environment > Logging**                     |
@@ -44,7 +46,9 @@ Output logs to console
 Console log level
 ~~~~~~~~~~~~~~~~~
 
-*Available in legacy Enterprise Edition E10/E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +-----------------------------------------------+---------------------------------------------------------------------+
 | The level of detail in log events written     | - System Config path: **Environment > Logging**                     |
@@ -72,7 +76,9 @@ Console log level
 Output console logs as JSON
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-*Available in legacy Enterprise Edition E10/E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +-----------------------------------------------+---------------------------------------------------------------------+
 | Configure Mattermost to output console logs   | - System Config path: **Environment > Logging**                     |
@@ -123,7 +129,9 @@ Colorize plain text console logs
 Output logs to file
 ~~~~~~~~~~~~~~~~~~~
 
-*Available in legacy Enterprise Edition E10/E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +-----------------------------------------------+---------------------------------------------------------------------+
 | Configure Mattermost to output console logs   | - System Config path: **Environment > Logging**                     |
@@ -151,7 +159,9 @@ Output logs to file
 File log directory
 ~~~~~~~~~~~~~~~~~~
 
-*Available in legacy Enterprise Edition E10/E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +-----------------------------------------------+---------------------------------------------------------------------+
 | The location of the log files.                | - System Config path: **Environment > Logging**                     |
@@ -176,7 +186,9 @@ File log directory
 File log level
 ~~~~~~~~~~~~~~
 
-*Available in legacy Enterprise Edition E10/E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +-----------------------------------------------+---------------------------------------------------------------------+
 | The level of detail in log events when        | - System Config path: **Environment > Logging**                     |
@@ -203,7 +215,9 @@ File log level
 Output file logs as JSON
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-*Available in legacy Enterprise Edition E10/E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +-----------------------------------------------+---------------------------------------------------------------------+
 | Configure Mattermost to output file logs as   | - System Config path: **Environment > Logging**                     |
@@ -230,7 +244,9 @@ Output file logs as JSON
 Enable webhook debugging
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-*Available in legacy Enterprise Edition E10/E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +-----------------------------------------------+------------------------------------------------------------------------------+
 | Configure Mattermost to capture the contents  | - System Config path: **Environment > Logging**                              |
@@ -257,7 +273,9 @@ Enable webhook debugging
 Output logs to multiple targets
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-*Available in legacy Enterprise Edition E10/E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +-----------------------------------------------+---------------------------------------------------------------------------+
 | Configure Mattermost to allow any combination | - System Config path: **Environment > Logging**                           |
@@ -306,7 +324,9 @@ Maximum field size
 Enable diagnostics and error reporting
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-*Available in legacy Enterprise Edition E10/E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +----------------------------------------------+-------------------------------------------------------------------------+
 | Whether or not diagnostics and error reports | - System Config path: **Environment > Logging**                         |

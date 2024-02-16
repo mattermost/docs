@@ -314,7 +314,9 @@ Enable theme selection
 .. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
-*Available in legacy Enterprise Edition E10 and E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 **True**: Enables the **Display > Theme** tab in **Settings** so users can select their theme.
 
@@ -339,7 +341,9 @@ Allow custom themes
 .. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
-*Available in legacy Enterprise Edition E10 and E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 **True**: Enables the **Display > Theme > Custom Theme** section in **Settings**.
 
@@ -362,7 +366,9 @@ Default theme
 .. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
-*Available in legacy Enterprise Edition E10 and E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 Set a default theme that applies to all new users on the system.
 
@@ -473,7 +479,9 @@ SAML login button color
 .. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
-*Available in legacy Enterprise Edition E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 Specify the color of the SAML login button for white labeling purposes. Use a hex code with a #-sign before the code. This setting only applies to the mobile app.
 
@@ -494,7 +502,9 @@ SAML login button border color
 .. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
-*Available in legacy Enterprise Edition E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 Specify the color of the SAML login button border for white labeling purposes. Use a hex code with a #-sign before the code. This setting only applies to the mobile app.
 
@@ -515,7 +525,9 @@ SAML login button text color
 .. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
-*Available in legacy Enterprise Edition E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 Specify the color of the SAML login button text for white labeling purposes. Use a hex code with a #-sign before the code. This setting only applies to the mobile app.
 
@@ -574,7 +586,9 @@ Enable shared channels
 .. include:: ../_static/badges/ent-selfhosted-only.rst
   :start-after: :nosearch:
 
-*Available in legacy Enterprise Edition E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 Shared channels enables the ability to establish secure connections between Mattermost instances, and invite secured connections to shared channels where secure connections can participate as they would in any public and private channel. Enabling shared channels functionality requires a server restart.
 
@@ -927,7 +941,9 @@ Allowed themes
 .. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
-*Available in legacy Enterprise Edition E10 and E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -942,7 +958,7 @@ Select the themes that can be chosen by users when ``EnableThemeSelection`` is s
   :systemconsole: N/A
   :configjson: MaxUsersForStatistics
   :environment: N/A
-  :description: Sets the maximum number of users on the server before statistics for total posts, total hashtag posts, total file posts, posts per day, and active users with posts per day are disabled. Default is **2500** users.
+  :description: Sets the maximum number of users on the server before statistics for total posts, total hashtag posts, total file posts, posts per day, and activated users with posts per day are disabled. Default is **2500** users.
 
 Maximum users for statistics
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -950,11 +966,13 @@ Maximum users for statistics
 .. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
-*Available in legacy Enterprise Edition E10 and E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-Sets the maximum number of users on the server before statistics for total posts, total hashtag posts, total file posts, posts per day, and active users with posts per day are disabled.
+Sets the maximum number of users on the server before statistics for total posts, total hashtag posts, total file posts, posts per day, and activated users with posts per day are disabled.
 
 This setting is used to maximize performance for large Enterprise deployments.
 
@@ -1047,7 +1065,9 @@ Batch size
 .. include:: ../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
-*Available in legacy Enterprise Edition E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -1070,7 +1090,9 @@ File Location
 .. include:: ../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
-*Available in legacy Enterprise Edition E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -1133,7 +1155,9 @@ Remote clusters
 .. include:: ../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
-*Available in legacy Enterprise Edition E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -1162,7 +1186,9 @@ Enable client-side certification
 .. include:: ../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
-*Available in legacy Enterprise Edition E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 **True**: Enables client-side certification for your Mattermost server. See `the documentation <https://docs.mattermost.com/onboard/certificate-based-authentication.html>`__ to learn more.
 
@@ -1187,7 +1213,9 @@ Client-side certification login method
 .. include:: ../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
-*Available in legacy Enterprise Edition E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 Used in combination with the ``ClientSideCertEnable`` configuration setting.
 
@@ -1389,7 +1417,9 @@ Google scope
 .. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
-*Available in legacy Enterprise Edition E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -1448,7 +1478,9 @@ Export from timestamp
 .. include:: ../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
-*Available in legacy Enterprise Edition E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -1516,7 +1548,9 @@ Office 365 Scope
 .. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
-*Available in legacy Enterprise Edition E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -1641,7 +1675,9 @@ Scoping IDP provider ID
 .. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
-*Available in legacy Enterprise Edition E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -1664,7 +1700,9 @@ Scoping IDP provider name
 .. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
-*Available in legacy Enterprise Edition E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 

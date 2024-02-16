@@ -36,7 +36,7 @@ Operators are installed using ``kubectl``, and each operator is created in its o
 
 .. tip::
 
-    To install the operators using the Mattermost Operator Helm chart, follow the instructions `here <https://github.com/mattermost/mattermost-helm/tree/master/charts/mattermost-operator>`__.
+    To install the operators using the Mattermost Operator Helm chart, follow the instructions `here <https://github.com/mattermost/mattermost-helm/tree/master/charts/mattermost-operator>`__. See the `Kubernetes YAML file <https://github.com/mattermost/mattermost-operator/blob/0f2c7b1a182598c4399449eb17a6557187175082/apis/mattermost/v1beta1/mattermost_types.go#L308C2-L309C14>`__ documentation within the ``mattermost`` GitHub repository for details on working with the YAML file.
 
 Deploy Mattermost
 -----------------
