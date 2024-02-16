@@ -19,8 +19,8 @@ From Mattermost v9.2, this changelog summarizes updates for the latest cloud and
 
 **Release day: March 15, 2024**
 
-### Important Upgrade Notes
- - 
+### Compatibility
+ - Updated minimum required Edge and Chrome versions to 120+.
 
 ```{Important}
 If you upgrade from a release earlier than v9.5, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
@@ -29,37 +29,44 @@ If you upgrade from a release earlier than v9.5, please read the other [Importan
 ### Improvements
 
 #### User Interface (UI)
- - 
+ - Pre-packaged Calls version [v0.24.0](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v0.24.0).
+ - Pre-packaged GitLab plugin version [v1.8.0](https://github.com/mattermost/mattermost-plugin-gitlab/releases/tag/v1.8.0).
+ - Re-designed the **System Console -> User Management** screen, and added a batch CSV export of users.
+ - Changed notifications so that, if you have **Thread Reply Notifications** disabled for your account and "Automatically follow threads in this channel" for a channel, you'll no longer receive thread notifications for that channel.
+ - Improved the appearance of profile/account menus.
+ - Added support for checkbox types in the **System Admin** settings.
+ - Added support for webp preview in the web app similar to png and other image formats.
+ - Several pre-packaged plugins were removed.
+ - Added Outgoing OAuth Connections integration type.
 
 #### Administration
- - 
+ - Removed some unused Redux actions and reducers.
+ - Limited the number of user preference updates to 10 per call.
+ - Clarified that the LDAP profile picture setting is optional.
 
-#### Performance
- - 
-
-#### Plugins
- - 
+#### mmctl
+ - Extended mmctl with support for user preferences.
 
 ### Bug Fixes
- - 
+ - Fixed an issue with switching to a **Direct Message** channel with a shared channel user (user from another server).
+ - Fixed an issue with extra space getting added to code blocks in search results.
+ - Fixed an issue where deactivated members were not included in a favorited **Direct Message** channel export.
+ - Fixed an issue where password strength settings wouldn't be disabled if they were set through environment variables.
+ - Fixed an issue where post mentions would grow outside the viewport on small devices.
+ - Fixed an issue with draft removal after deleting the post.
+ - Fixed a markdown issue where, on some occasions, extra space was found before a list.
+ - Fixed an issue where a sender to a custom group would also receive the message notification themselves.
+ - Fixed a web app crash when a System Admin clicked on a link to a private channel that they were not a member of.
+ - Fixed ``ChannelHasBeenCreated`` plugin hook not being called when a group channel was created.
 
 ### config.json
  - Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
 
 #### Changes to all plans:
- - 
-
-#### Changes to the Professional and Enterprise plans:
- - 
-
-#### Changes to the Enterprise plan:
- - 
-
-### API Changes
- - 
+ - EnableOutgoingOAuthConnections config
 
 ### Open Source Components
- - Added  to https://github.com/mattermost/mattermost/.
+ - Added ``@floating-ui/react``, and removed ``@floating-ui/react-dom`` and ``@floating-ui/react-dom-interactions`` from https://github.com/mattermost/mattermost/.
 
 ### Go Version
  - v9.6 is built with Go ``v1.20.7``.
