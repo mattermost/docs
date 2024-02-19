@@ -1,10 +1,15 @@
 @import url("https://use.typekit.net/hzs0pdc.css");
 @import url('https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;700&family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
+* {
+    box-sizing: border-box;
+}
+
 :root {
     --denim: #1E325C;
     --marigold: #FFBC1F;
     --black-04:  #5A6072;
+    --black-05:  #363A45;
 }
 
 
@@ -296,7 +301,7 @@ kbd {
     transition: color .3s ease-in-out;
 }
 
-@media (prefers-color-scheme: dark) {
+body:not([data-theme="light"]) {
     .site-header__col--menu .site-nav__toplink>a {
         color: #FFFFFF;
     }
@@ -441,8 +446,16 @@ kbd {
 }
 
 .site-header__mobile-menu {
-    padding-top: 20px;
+    cursor: pointer;
     text-align: right;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 @media (min-width:992px) {
@@ -1192,16 +1205,17 @@ kbd {
 
 .nav-container {
     width: 100%;
-    max-width: 1100px;
+    max-width: 1312px;
     margin-right: auto;
     margin-left: auto;
 }
+
 .site-header--not-home .nav-container {
-    max-width: 1900px;
+    max-width: 1312px;
 }
-@media (min-width: 1400px) {
-    .site-header--not-home .nav-container {
-        /* padding-right: 20vw;  */
+@media (min-width: 1550px) {
+    .nav-container, .site-header--not-home .nav-container {
+        max-width: 1390px;
     }
 }
 @media (max-width: 1199.98px) {
@@ -1238,9 +1252,9 @@ kbd {
     justify-content: space-between;
 }
 
-@media (prefers-color-scheme: dark) {
-    .site-header {
-        background: #000;
+@media (max-width: 991px) {
+    .site-header__row {
+        display: block;
     }
 }
 
@@ -1343,9 +1357,8 @@ kbd {
 
 footer:not(.site-footer) {
     position: relative;
-    border-top: 1px solid #dedede;
     margin-top: 24px;
-    padding: 24px 0 40px;
+    padding: 24px;
     line-height: 150%;
     font-size: 14px;
 }
@@ -1489,7 +1502,7 @@ footer.site-footer {
     color: #fff;
 }
 
-@media (prefers-color-scheme: dark) {
+body:not([data-theme="light"]) {
     .mm-button.mm-button-solid.mm-button-blue {
         background-color: var(--marigold);
         border-color: var(--marigold);
@@ -1516,10 +1529,15 @@ footer.site-footer {
     border: 1px solid #043cb5;
 }
 
-@media (prefers-color-scheme: dark) {
+body:not([data-theme="light"]) {
     .mm-button-outline--thin.mm-button-outline--thin-blue {
         color: var(--marigold) !important;
         border: 1px solid var(--marigold);
+    }
+
+    .mm-button-outline--thin.mm-button-outline--thin-blue:hover {
+        color: #000000 !important;
+        background-color: var(--marigold);
     }
 }
 

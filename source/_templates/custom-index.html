@@ -39,20 +39,6 @@
             </a>
         </div>
         <div class="header-right">
-            <div class="theme-toggle-container theme-toggle-header">
-                <button class="theme-toggle">
-                    <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
-                    <svg class="theme-icon-when-auto">
-                        <use href="#svg-sun-half"></use>
-                    </svg>
-                    <svg class="theme-icon-when-dark">
-                        <use href="#svg-moon"></use>
-                    </svg>
-                    <svg class="theme-icon-when-light">
-                        <use href="#svg-sun"></use>
-                    </svg>
-                </button>
-            </div>
             <label class="toc-overlay-icon toc-header-icon{% if furo_hide_toc %} no-toc{% endif %}" for="__toc">
                 <div class="visually-hidden">Toggle table of contents sidebar</div>
                 <i class="icon"><svg>
@@ -88,20 +74,6 @@
                     {{ warning("Got an unsupported value for 'top_of_page_button'") }}
                     {%- endif -%}
                     {#- Theme toggle -#}
-                    <div class="theme-toggle-container theme-toggle-content">
-                        <button class="theme-toggle">
-                            <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
-                            <svg class="theme-icon-when-auto">
-                                <use href="#svg-sun-half"></use>
-                            </svg>
-                            <svg class="theme-icon-when-dark">
-                                <use href="#svg-moon"></use>
-                            </svg>
-                            <svg class="theme-icon-when-light">
-                                <use href="#svg-sun"></use>
-                            </svg>
-                        </button>
-                    </div>
                     <label class="toc-overlay-icon toc-content-icon{% if furo_hide_toc %} no-toc{% endif %}"
                         for="__toc">
                         <div class="visually-hidden">Toggle table of contents sidebar</div>
@@ -112,9 +84,138 @@
                 </div>
                 <article role="main">
                     <section class="masthead">
-                        <h1>Mattermost Documentation</h1>
-                        <h2 class="subhead">Technical resources to help admins, users, and developers leverage Mattermost</h2>
+                        <div class="container">
+                            <div class="theme-toggle-container theme-toggle-header">
+                                <button class="theme-toggle">
+                                    <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+                                    <svg class="theme-icon-when-auto">
+                                        <use href="#svg-sun-half"></use>
+                                    </svg>
+                                    <svg class="theme-icon-when-dark">
+                                        <use href="#svg-moon"></use>
+                                    </svg>
+                                    <svg class="theme-icon-when-light">
+                                        <use href="#svg-sun"></use>
+                                    </svg>
+                                </button>
+                            </div>
+
+                            <h1>Mattermost Documentation</h1>
+                            <h2 class="subhead">Technical resources to help admins, users, and developers leverage Mattermost</h2>
+                        </div>
                     </section>
+
+                    <div class="homepage-content">
+                        <div class="homepage-content__container">
+                            <section class='masthead-cards-section gray'>
+                                <h2 class='masthead-h2'>Deploy, setup, and administration</h2>
+                                <div class='masthead-cards'>
+                                    <a href='overview/index.html' class="masthead-card">
+                                        <div class="masthead-card__icon">
+                                            <img src="{{ pathto('_static/images/home/Overview.svg', 1) }}" alt="" class='light' width="50" height="50">
+                                            <img src="{{ pathto('_static/images/home/Overview-dark.svg', 1) }}" alt="" class='dark' width="50" height="50">
+                                        </div>
+                                        <div class='masthead-card__content'>
+                                            <h4>Overview</h4>
+                                            <p>Learn about Mattermost products, capabilities, features, and licensing.</p>
+                                            <p class='link'>Get started »</p>
+                                        </div>
+                                    </a>
+                                    <a href='guides/deployment.html' class="masthead-card">
+                                        <div class="masthead-card__icon">
+                                            <img src="{{ pathto('_static/images/home/Deploy.svg', 1) }}" alt="" width="44">
+                                        </div>
+                                        <div class='masthead-card__content'>
+                                            <h4>Deploy</h4>
+                                            <p>Install Mattermost and scale it to meet your needs.</p>
+                                            <p class='link'>Get started »</p>
+                                        </div>
+                                    </a>
+                                    <a href='guides/administration.html' class="masthead-card">
+                                        <div class="masthead-card__icon">
+                                            <img src="{{ pathto('_static/images/home/Admin-Guide.svg', 1) }}" alt="" width="50" height="50">
+                                        </div>
+                                        <div class='masthead-card__content'>
+                                            <h4>Admin guide</h4>
+                                            <p>Setup, manage, and configure your Mattermost server.</p>
+                                            <p class='link'>Get started »</p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </section>
+
+                            <section class='masthead-cards-section'>
+                                <h2 class='masthead-h2'>Use Mattermost</h2>
+                                <div class='masthead-cards'>
+                                    <a href='guides/collaborate.html' class="masthead-card">
+                                        <div class="masthead-card__icon">
+                                            <img src="{{ pathto('_static/images/home/Channels.svg', 1) }}" alt="" class='light' width="46">
+                                            <img src="{{ pathto('_static/images/home/Channels-dark.svg', 1) }}" alt="" class='dark' width="46">
+                                        </div>
+                                        <div class='masthead-card__content'>
+                                            <h4>Connect and collaborate</h4>
+                                            <p>Bring your team together to collaborate freely without silos. Message, meet, talk, and screen share.</p>
+                                            <p class='link'>Get started »</p>
+                                        </div>
+                                    </a>
+                                    <a href='guides/repeatable-processes.html' class="masthead-card">
+                                        <div class="masthead-card__icon">
+                                            <img src="{{ pathto('_static/images/home/Playbooks.svg', 1) }}" alt="" width="50" height="50">
+                                        </div>
+                                        <div class='masthead-card__content'>
+                                            <h4>Build repeatable processes</h4>
+                                            <p>Most faster and make fewer mistakes with checklist-based automation that powers your team workflows.</p>
+                                            <p class='link'>Get started »</p>
+                                        </div>
+                                    </a>
+                                    <a href='guides/preferences.html' class="masthead-card">
+                                        <div class="masthead-card__icon">
+                                            <img src="{{ pathto('_static/images/home/CustomizeYourPreferences.svg', 1) }}" alt="" width="40">
+                                        </div>
+                                        <div class='masthead-card__content'>
+                                            <h4>Customize your preferences</h4>
+                                            <p>Match the way you work by adjusting your notification settings, changing your theme, or updating your profile settings.</p>
+                                            <p class='link'>Get started »</p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <h2 class='masthead-h2'>More resources</h2>
+                                <div class='masthead-cards'>
+                                    <a href='https://developers.mattermost.com/contribute/' class="masthead-card">
+                                        <div class="masthead-card__icon">
+                                            <img src="{{ pathto('_static/images/home/Contribute.svg', 1) }}" alt="" width="48">
+                                        </div>
+                                        <div class='masthead-card__content'>
+                                            <h4>Contribute</h4>
+                                            <p>Contribute code to help make Mattermost better.</p>
+                                            <p class='link'>Get started »</p>
+                                        </div>
+                                    </a>
+                                    <a href='https://developers.mattermost.com/integrate/getting-started/' class="masthead-card">
+                                        <div class="masthead-card__icon">
+                                            <img src="{{ pathto('_static/images/home/IntegrateExtend.svg', 1) }}" alt="" width="32">
+                                        </div>
+                                        <div class='masthead-card__content'>
+                                            <h4>Integrate and extend</h4>
+                                            <p>Extend Mattermost capabilities via Apps, Plugins, Webhooks, or APIs.</p>
+                                            <p class='link'>Get started »</p>
+                                        </div>
+                                    </a>
+                                    <a href='/guides/get-help.html' class="masthead-card">
+                                        <div class="masthead-card__icon">
+                                            <img src="{{ pathto('_static/images/home/Help.svg', 1) }}" alt="" width="42">
+                                        </div>
+                                        <div class='masthead-card__content'>
+                                            <h4>Get help</h4>
+                                            <p>Connect with our community, or leverage our premium support services.</p>
+                                            <p class='link'>Get started »</p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+
                 </article>
             </div>
             <!-- <div class="docs-feedback-block">{% include "feedback.html" %}</div> -->

@@ -1,0 +1,82 @@
+.admonition {
+    font-size: 16px;
+    padding: 0 16px 12px 16px;
+    border-radius: 4px;
+
+    p.admonition-title {
+        margin: 0 -16px 12px;
+        height: 36px;
+        box-sizing: border-box;
+        font-size: 16px;
+        font-weight: 700;
+        padding-left: 40px;
+
+        &:before {
+            width: 18px;
+            height: 18px;
+            top: 8px;
+            left: 14px;
+        }
+    }
+
+    &.tip, &.important {
+        border: none;
+
+        .admonition-title {
+            background: #339970;
+            color: white;
+
+            &:before {
+                background: white;
+            }
+        }
+    }
+
+    &.note {
+        border: none;
+
+        .admonition-title {
+            background: #1E325C;
+            color: white;
+
+            &:before {
+                background: white;
+            }
+        }
+    }
+}
+
+.tab-set > input:checked + label {
+    color: var(--blue);
+    border-color: currentColor;
+
+    &:hover {
+        border-color: currentColor;
+    }
+}
+
+.highlight button.copybtn {
+    background: transparent;
+}
+
+body:not([data-theme="light"]) {
+    .admonition.note {
+        background-color: rgba(255,255,255, 0.06);
+    }
+
+    .admonition.note .admonition-title {
+        background: #4A69AB;
+    }
+
+    .tab-set > input:checked + label {
+        color: var(--marigold-03);
+    }
+
+    .highlight {
+        background: rgba(255,255,255, 0.04) !important;
+
+        pre {
+            color: rgba(255,255,255, 0.8) !important;
+        }
+    }
+}

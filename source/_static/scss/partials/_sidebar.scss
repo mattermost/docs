@@ -1,0 +1,95 @@
+.sidebar-container {
+    width: 272px;
+    padding: 16px 0 0 16px;
+}
+
+/* Theme Overrides */
+
+.sidebar-search-container {
+    padding: 0 16px;
+    color: #3F4350A3;
+
+    &:hover {
+        background: transparent;
+    }
+}
+
+.toc-tree li.scroll-current>.reference {
+    color: var(--blue);
+}
+
+.scroll-current a {
+    position: initial;
+
+    &::before {
+        content: "";
+        background-color: currentColor;
+        width: 3px;
+        height: 16px;
+        display: block;
+        position: absolute;
+        left: 0;
+    }
+}
+
+.sidebar-tree {
+    label {
+        margin-right: 8px;
+    }
+
+    .current-page {
+        & >.reference {
+            color: #1C58D9;
+            border-right: 3px solid currentColor;
+            background: rgba(28, 88, 217, 0.04);
+        }
+
+        & > a.current {
+            color: #1C58D9;
+        }
+    }
+}
+
+.sidebar-search {
+    border-radius: 4px;
+    border: 1px solid rgba(63, 67, 80, 0.16);
+    background: #FFF;
+}
+
+.sidebar-search-container:before {
+    left: 32px;
+    z-index: 20;
+    background-color: currentColor;
+}
+
+.sidebar-tree .toctree-l1>.reference, .sidebar-tree .toctree-l1>label .icon {
+    color: #363A45B8;
+}
+
+body:not([data-theme="light"]) {
+    .toc-tree li.scroll-current>.reference {
+        color: var(--marigold-03);
+    }
+
+    .sidebar-tree .current-page > a.current {
+        color: var(--marigold-03);
+        background: rgba(255, 255, 255, 0.04);
+    }
+
+    .sidebar-tree .toctree-l1>.reference, .sidebar-tree .toctree-l1>label .icon {
+        color: #FFFFFFB8;
+    }
+
+    .sidebar-search-container {
+        color: #FFFFFFA3;
+    }
+
+    .site-header__col--logo {
+        color: #fff;
+    }
+
+    .sidebar-search {
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        background: rgba(255, 255, 255, 0.04);
+    }
+}

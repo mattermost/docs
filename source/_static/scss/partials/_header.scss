@@ -1,0 +1,17 @@
+.site-header__col--logo {
+    color: #1B1D21;
+
+    a {
+        color: inherit !important;
+    }
+}
+
+body:not([data-theme="light"]) {
+    .site-header__col--logo {
+        color: #fff;
+    }
+
+    .site-header {
+        background: #000;
+    }
+}
