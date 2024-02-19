@@ -15,9 +15,22 @@ Admins can collect and store various data points from the Mattermost application
 Mattermost Metrics plugin
 -------------------------
 
-The Mattermost Metrics plugin, available from Mattermost v6.3, collects and stores the `same performance monitoring metrics <#statistics>`__ as if Prometheus and Grafana were deployed, without having to deploy these third-party tools. Data is collected every minute and is stored where the plugin is running. The data is sychronized to either a cloud-based or local file store every hour, and retained for 15 days. 
+The Mattermost Metrics plugin, is an alternative tool to collect application metrics from Mattermost. It can be installed on versions later than v6.3, collects and stores the `same performance monitoring metrics <#statistics>`__ as if Prometheus, without having to deploy these third-party tools. Data is collected every minute and is stored where the plugin is running. The data is sychronized to either a cloud-based or local file store every hour, and retained for 15 days. 
 
 Using the Mattermost Metrics plugin, you can download and share the collected data with Mattermost to understand application performance, troubleshoot system stability and performance, as well as inform route cause analysis.
+
+Furthermore, to use the dump file genereated by the plugin, you can simply clone the `Dockprom <https://github.com/stefanprodan/dockpromo>`__ Repository. Then you should change the prometheus data volume to point the dump that youjust downloaded. Note that the downloaded file is compressed, to be able to use it, you should decmpress it first.
+
+The volume configuration for Prometheus should look like below in the ``docker-compose.yml`` file:
+
+.. code:: yaml
+
+    volumes:
+      - ./prometheus:/etc/prometheus
+      - /Path/To/Dump/Directory:/prometheus/data
+
+Once you set this up, run ``docker-compose`` as described in `Dockprom Repository <https://github.com/stefanprodan/dockprom?tab=readme-ov-file#install>`__. You can also use our official performance monitoring dashboard by simply importing it in Grafana. To do so, open Grafana (By default it's ``<localhost>:3000``) and then login into it. Once you logged it, navigate to the "+" icon on the left sidebar and select "Import". Enter the dashboard ID (``15582``) in the "Grafana.com Dashboard" field and then click "Load" to fetch the dashboard. 
+
 
 Install the Mattermost Metrics plugin
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
