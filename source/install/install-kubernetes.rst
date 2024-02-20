@@ -22,11 +22,11 @@ Install the operators
 ---------------------
 
 Nginx Ingress Controller
-^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~
 For instructions on installation the NGINX ingress controller in your Kubernetes cluster, click `here <https://kubernetes.github.io/ingress-nginx/deploy/>`__.
 
 Mattermost Operator
-^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~
 
 There are multiple options for installation of the Mattermost Kubernetes Operator. We recommend deployment with Helm, but installation instructions via the Kubernetes CLI can also be found below.
 
@@ -162,6 +162,7 @@ Deploy Mattermost
 3. Create a file ``mattermost-database-secret.yaml`` to house secrets related to your installation's database. The database secret needs to be created in the namespace that will hold the Mattermost installation. The secret should contain the following data:
 
   .. code-block:: yaml
+
     apiVersion: v1
     data:
       DB_CONNECTION_CHECK_URL: <DB_CONNECTION_CHECK_URL>
