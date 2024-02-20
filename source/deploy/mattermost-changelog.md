@@ -79,7 +79,6 @@ If you upgrade from a release earlier than v9.5, please read the other [Importan
  - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
  - The Playbooks left-hand sidebar doesn't update when a user is added to a run or playbook without a refresh.
  - If a user isn't a member of a configured broadcast channel, posting a status update might fail without any error feedback. As a temporary workaround, join the configured broadcast channels, or remove those channels from the run configuration.
- - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
  
 ### Contributors
  - 
