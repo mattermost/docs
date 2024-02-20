@@ -32,7 +32,7 @@ If you upgrade from a release earlier than v9.5, please read the other [Importan
  - Pre-packaged Calls version [v0.24.0](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v0.24.0).
  - Pre-packaged GitLab plugin version [v1.8.0](https://github.com/mattermost/mattermost-plugin-gitlab/releases/tag/v1.8.0).
  - Re-designed the **System Console > User Management** screen, and added the ability to batch export users in CSV format.
- - Changed notifications so that, if you have **Thread Reply Notifications** disabled for your account and **Automatically follow threads in this channel** for a channel, you'll no longer receive thread notifications for that channel.
+ - Changed notifications so that, if you have **Thread Reply Notifications** disabled for your account and **Automatically follow threads in this channel** enabled for a channel, you'll no longer receive thread notifications for that channel.
  - Improved the appearance of profile/account menus.
  - Added support for checkbox types in the **System Admin** settings.
  - Added support for WebP image previews in the web app similar to PNG and other image formats.
