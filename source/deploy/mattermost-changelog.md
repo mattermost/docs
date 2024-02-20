@@ -34,12 +34,12 @@ If you upgrade from a release earlier than v9.5, please read the other [Importan
  - Added the [Outgoing OAuth Connections](https://mattermost.com/pl/outgoing-oauth-connections) integration type.
  - Re-designed the **System Console > User Management** screen, and added the ability to batch export users in CSV format.
  - Improved the appearance of profile/account menus.
- - Added support for checkbox types in the **System Admin** settings.
+ - Added support for checkbox types in the **System Console** settings.
  - Added support for WebP image previews in the web app similar to PNG and other image formats.
  - Several pre-packaged plugins were removed.
 
 #### Administration
- - Removed some unused Redux actions and reducers.
+ - Removed some unused Redux actions and reducers, including ``state.entities.posts.selectedPostId``.
  - Limited the number of user preference updates to 10 per call.
  - Clarified that the LDAP profile picture setting is optional.
 
