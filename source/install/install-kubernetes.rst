@@ -106,7 +106,7 @@ Deploy Mattermost
     stringData:
       license: <LICENSE_FILE_CONTENTS>
 
-2. Create an installation manifest file ``mattermost-installation.yaml`` locally, and open it with a text editor. Copy and paste the below YAML structure, and make any necessary adjustments for your configuration and environment. 
+2. Create an installation manifest file ``mattermost-installation.yaml`` locally, and open it with a text editor. Copy and paste the YAML structure below, and make any necessary adjustments for your configuration and environment. 
 
   .. code-block:: yaml
     :class: mm-code-block 
