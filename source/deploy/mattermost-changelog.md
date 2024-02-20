@@ -62,7 +62,7 @@ If you upgrade from a release earlier than v9.5, please read the other [Importan
 ### config.json
  - Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
 
-#### Changes to all plans:
+#### Changes to the Enterprise plan:
  - Under ``ServiceSettings`` in ``config.json``:
     - Added ``EnableOutgoingOAuthConnections`` configuration setting for Outgoing OAuth Connections integration type.
 
