@@ -12,6 +12,9 @@ The `Mattermost for Microsoft Teams plugin </about/mattermost-for-microsoft-team
 .. include:: ../_static/badges/academy-msteams.rst
   :start-after: :nosearch:
 
+.. image:: ../images/ms-teams-dm-sync-feb-2024.gif
+   :alt: An example of a Mattermost direct message (DM) that is synced with a DM on Microsoft Teams.
+
 Connect your Mattermost account to your Microsoft Teams account
 ---------------------------------------------------------------
 
