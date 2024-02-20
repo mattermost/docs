@@ -31,7 +31,7 @@ Operators are installed using ``kubectl``, and each operator is created in its o
 
 .. tip::
 
-    To install the operators using the Mattermost Operator Helm chart, follow the instructions `here <https://github.com/mattermost/mattermost-helm/tree/master/charts/mattermost-operator>`__.
+    To install the operators using the Mattermost Operator Helm chart, follow the instructions `here <https://github.com/mattermost/mattermost-helm/tree/master/charts/mattermost-operator>`__. See the `Kubernetes YAML file <https://github.com/mattermost/mattermost-operator/blob/0f2c7b1a182598c4399449eb17a6557187175082/apis/mattermost/v1beta1/mattermost_types.go#L308C2-L309C14>`__ documentation within the ``mattermost`` GitHub repository for details on working with the YAML file.
 
 Deploy Mattermost
 -----------------
@@ -39,6 +39,7 @@ Deploy Mattermost
 1. (Mattermost Enterprise only) Create a Mattermost license secret by opening a text editor and creating a secret manifest containing the Mattermost license. Replace ``[LICENSE_FILE_CONTENTS]`` below with the contents of your Mattermost license file. Save the file as ``mattermost-license-secret.yaml``.
 
   .. code-block:: yaml
+    :class: mm-code-block 
 
     apiVersion: v1
     kind: Secret
@@ -51,6 +52,7 @@ Deploy Mattermost
 2. Create an installation manifest file locally in a text editor by copying and pasting contenst from the Mattermost installation manifest, and adjusting fields for your configuration and environment. 
 
   .. code-block:: yaml
+    :class: mm-code-block 
 
       apiVersion: installation.mattermost.com/v1beta1
       kind: Mattermost
@@ -94,6 +96,7 @@ Deploy Mattermost
   Example secret for AWS Aurora compatible with PostgreSQL:
 
   .. code-block:: yaml
+    :class: mm-code-block 
 
     apiVersion: v1
     data:
@@ -120,6 +123,7 @@ Deploy Mattermost
   Example secret for AWS S3:
 
   .. code-block:: yaml
+    :class: mm-code-block 
 
     apiVersion: v1
     data:
@@ -135,6 +139,7 @@ Deploy Mattermost
   To instruct Mattermost Operator to use the external database, modify Mattermost manifest by adding the following fields:
 
   .. code-block:: yaml
+    :class: mm-code-block 
 
     spec:
     ...
@@ -145,6 +150,7 @@ Deploy Mattermost
   To instruct Mattermost Operator to use the external filestore, modify Mattermost manifest by adding the following fields:
 
   .. code-block:: yaml
+    :class: mm-code-block 
 
     spec:
     ...
@@ -157,6 +163,7 @@ Deploy Mattermost
   Additionally when using Amazon S3, set the ``MM_FILESETTINGS_AMAZONS3SSE`` and ``MM_FILESETTINGS_AMAZONS3SSL`` environment variables to ``true``:
 
   .. code-block:: yaml
+    :class: mm-code-block 
 
     spec:
     ...
@@ -170,6 +177,7 @@ Deploy Mattermost
   Example Mattermost manifest configured with both external databases and filestore:
 
   .. code-block:: yaml
+    :class: mm-code-block 
 
     apiVersion: installation.mattermost.com/v1beta1
     kind: Mattermost

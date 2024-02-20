@@ -10,7 +10,7 @@ What is an Extended Support Release?
 During each monthly release, Mattermost backports security fixes and high impact bug fixes to the previous three monthly releases. Extended Support Releases (ESRs) are releases that will receive backports for security fixes and major bug fixes for the length of their life cycle.
 
 .. important::
-  Support for Mattermost Server v7.8 Extended Support Release is coming to the end of its life cycle on November 15, 2023. Upgrading to Mattermost Server v8.1 Extended Support Release or later is recommended.
+  Support for Mattermost Server v8.1 Extended Support Release is coming to the end of its life cycle on May 15, 2024. Upgrading to Mattermost Server v9.5 Extended Support Release or later is recommended.
 
 What is the life cycle of an Extended Support Release?
 ------------------------------------------------------
@@ -49,7 +49,9 @@ What are the current supported Extended Support Release versions?
 +-------------+----------------+------------------+------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------+
 | Version     | Type           | Release Date     | End of Support   | Latest Dot Release Download link                                                           | Upgrade Notes                                       |
 +=============+================+==================+==================+============================================================================================+=====================================================+
-| 8.1         | Feature        | August 16, 2023  | May 15, 2024     | `8.1.9 <https://releases.mattermost.com/8.1.9/mattermost-8.1.9-linux-amd64.tar.gz>`_       |                                                     |
+| 9.5         | Feature        | February 16, 2024| November 15, 2024| `9.5.1 <https://releases.mattermost.com/9.5.1/mattermost-9.5.1-linux-amd64.tar.gz>`_       |                                                     |
++-------------+----------------+------------------+------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------+
+| 8.1         | Feature        | August 16, 2023  | May 15, 2024     | `8.1.10 <https://releases.mattermost.com/8.1.10/mattermost-8.1.10-linux-amd64.tar.gz>`_    |                                                     |
 +-------------+----------------+------------------+------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------+
 | 7.8         | Feature        | February 16, 2023| November 15, 2023| `7.8.15 <https://releases.mattermost.com/7.8.15/mattermost-7.8.15-linux-amd64.tar.gz>`_    |                                                     |
 +-------------+----------------+------------------+------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------+
@@ -106,7 +108,7 @@ What Mobile and Desktop App versions are compatible with the latest ESR?
 
 Earlier 4.x versions of Mattermost Desktop App and earlier v1.x versions of the Mobile App are backwards compatible and are supported with our supported Extended Support Releases. However, for an optimal user experience and for latest security fixes, we strongly recommend upgrading both your Mattermost Desktop and Mobile Apps to the latest version.
 
-Please review the `Desktop App changelog </install/desktop-app-changelog.html>`_ and the `Mobile App changelog </deploy/mobile-app-changelog.html>`_ notes for any self-hosted version requirements for features and functionalities, as well as notes on security fixes.
+Please review the `Desktop App changelog </deploy/desktop-app-changelog.html>`_ and the `Mobile App changelog </deploy/mobile-app-changelog.html>`_ notes for any self-hosted version requirements for features and functionalities, as well as notes on security fixes.
 
 See more details in our `release lifecycle documentation </upgrade/release-lifecycle.html#desktop-and-mobile-app-server-compatibility>`_.
 

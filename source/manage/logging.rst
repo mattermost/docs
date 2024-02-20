@@ -7,10 +7,13 @@ Mattermost logging
 .. contents:: On this page
     :depth: 2
 
-By default, Mattermost writes logs to both the console and to the ``mattermost.log`` file in a machine-readable JSON format. 
+By default, all Mattermost editions write logs to both the console and to the ``mattermost.log`` file in a machine-readable JSON format.
 
-You can customize the following logging options based on your business practices and needs by going to **System Console > Environment > Logging** or by editing the ``config.json`` file directly: 
+.. note::
 
+    Mattermost Enterprise and Professional customers can additionally log directly to syslog and TCP socket destination targets.
+
+System admins can customize the following logging options based on your business practices and needs by going to **System Console > Environment > Logging** or by editing the ``config.json`` file directly.
 
 Console logs
 ------------
@@ -105,7 +108,7 @@ Define logging output in JSON format in the System Console by going to **Environ
 ----
 
 Audit logging (Beta)
------------------------------
+--------------------
 
 .. include:: ../_static/badges/ent-only.rst
   :start-after: :nosearch:

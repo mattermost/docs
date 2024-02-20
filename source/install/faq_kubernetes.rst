@@ -43,6 +43,7 @@ This can be caused by the default ``proxy-buffer-size`` setting for NGINX Ingres
 To fix this issue, configure an appropriate buffer size (8k or 16k should be sufficient for most cases) with NGINX annotation by adding it to the Mattermost manifest under ``spec.ingressAnnotations``:
 
 .. code-block:: yaml
+  :class: mm-code-block 
 
   ...
   spec:

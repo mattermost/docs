@@ -409,7 +409,7 @@ Compare the plugin data
    dbcmp --source "${MYSQL_DSN}" --target "${POSTGRES_DSN}" --exclude="db_migrations,systems"
 
 Iterative migrations
--------------------
+--------------------
 
 There are several steps in the pgloader configuration file that assume migration will take place in one go. If you are planning to run the migration over and over again, please complete the changes defined below:
 

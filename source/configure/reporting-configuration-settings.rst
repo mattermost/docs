@@ -15,16 +15,18 @@ View statistics for your overall deployment and specific teams as well as access
 Site statistics
 ---------------
 
-*Available in legacy Enterprise Edition E10/E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +---------------------------------------------------------------+-------------------------------------------------------------+
 | View statistics on activated users, teams, channels, posts,   | - System Config path: **Reporting > Site Statistics**       |
-| sessions, commands, webhooks, active users, connections,      | - ``config.json setting``: N/A                              |
+| sessions, commands, webhooks, activated users, connections,   | - ``config.json setting``: N/A                              |
 | and playbooks.                                                | - Environment variable: N/A                                 |
 +---------------------------------------------------------------+-------------------------------------------------------------+
-| **Note**: Deactivated users as well as synthetic users in                                                                   |
+| **Note**: Bots, deactivated users, and synthetic users in                                                                   |
 | `Microsoft Teams integrations </collaborate/collaborate-using-mattermost-for-microsoft-teams.html>`__                       |
-| and `shared channels users </onboard/shared-channels.html>`__, aren't counted towards the total number of active users.     |
+| and `shared channels users </onboard/shared-channels.html>`__, aren't counted towards the total number of activated users.  |
 +---------------------------------------------------------------+-------------------------------------------------------------+
 
 ----
@@ -32,14 +34,18 @@ Site statistics
 Team statistics
 ---------------
 
-*Available in legacy Enterprise Edition E10/E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +---------------------------------------------------------------+---------------------------------------------------------------+
 | View statistics per team on number of activated users,        | - System Config path: **Reporting > Team Statistics**         |
 | number of public and private channels, total post count, and  | - ``config.json`` setting: N/A                                |
 | count of paid users (self-hosted only).                       | - Environment variable: N/A                                   |
 +---------------------------------------------------------------+---------------------------------------------------------------+
-| **Note**: Deactivated users are not counted towards the total number of active users.                                         |
+| **Note**: Bots, deactivated users, and synthetic users in                                                                     |
+| `Microsoft Teams integrations </collaborate/collaborate-using-mattermost-for-microsoft-teams.html>`__                         |
+| and `shared channels users </onboard/shared-channels.html>`__, aren't counted towards the total number of active users.       |
 +---------------------------------------------------------------+---------------------------------------------------------------+
 
 ----
@@ -50,7 +56,9 @@ Server logs
 .. include:: ../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
-*Available in legacy Enterprise Edition E10/E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +---------------------------------------------------------------+---------------------------------------------------------------+
 | View logging of server-side events.                           | - System Config path: **Reporting > Server Logs**             |

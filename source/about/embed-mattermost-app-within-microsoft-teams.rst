@@ -12,7 +12,7 @@ With the `Microsoft Teams plugin </about/mattermost-for-microsoft-teams.html>`__
 
 To install the Mattermost app in Microsoft Teams:
 
-1. In Mattermost, as an administrator, go to **System Console > Plugins > MSTeams Sync**. At the bottom of the settings page, select **Download Manifest** to download a ZIP file containing the Microsoft Teams application manifest pre-configured for your Mattermost workspace.
+1. In Mattermost, as an administrator, go to **System Console > Plugins > MS Teams**. At the bottom of the settings page, select **Download Manifest** to download a ZIP file containing the Microsoft Teams application manifest pre-configured for your Mattermost workspace.
 2. In Microsoft Teams, as an administrator, go to the Microsoft Teams admin center under **Teams Apps > Manage Apps**, or use the following URL: ``https://admin.teams.microsoft.com/policies/manage-apps``.
 3. Select **Upload new app**, then upload the app manifest you downloaded in the previous step.
 
@@ -69,5 +69,5 @@ Get help
 
 If you face any issues while installing or using the app in Microsoft Teams, you can either:
 
-- Open a new issue in the `Mattermost for Microsoft Teams GitHub repository <https://github.com/mattermost/mattermost-plugin-msteams-sync/issues/new>`__. 
+- Open a new issue in the `Mattermost for Microsoft Teams GitHub repository <https://github.com/mattermost/mattermost-plugin-msteams/issues/new>`__. 
 - Or, create a new topic in our `peer-to-peer troubleshooting forum <https://forum.mattermost.com/c/trouble-shoot/16>`__.

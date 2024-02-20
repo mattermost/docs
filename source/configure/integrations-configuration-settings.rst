@@ -117,13 +117,29 @@ Enable OAuth 2.0 service provider
 
   Cloud admins can't modify this configuration setting.
 
+.. config:setting:: integrate-request-timeout
+  :displayname: Integration request timeout (Integrations)
+  :systemconsole: Integrations > Integration Management
+  :configjson: .ServiceSettings.OutgoingIntegrationRequestsDefaultTimeout
+  :environment: MM_SERVICESETTINGS_OUTGOINGINTEGRATIONREQUESTDEFAULTTIMEOUT
+  :description: The number of seconds to wait for external integration HTTP requests, before timing out. Default value is **30 seconds**.
+
+Integration request timeout
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The number of seconds to wait for external integration HTTP requests, before timing out, including `custom slash commands <https://developers.mattermost.com/integrate/slash-commands/custom/>`__, `outgoing webhooks <https://developers.mattermost.com/integrate/webhooks/outgoing/>`__, `interactive messages <https://developers.mattermost.com/integrate/plugins/interactive-messages/>`__, and `interactive dialogs <https://developers.mattermost.com/integrate/plugins/interactive-dialogs/>`__. Increase this value if you have external integrations that can take some time to generate an HTTP response, or experience delayed responses due to latency.
+
++------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"OutgoingIntegrationRequestsDefaultTimeout": 30``. |
++------------------------------------------------------------------------------------------------+
+
 .. config:setting:: integrate-enableusernameoverride
   :displayname: Enable integrations to override usernames (Integrations)
   :systemconsole: Integrations > Integration Management
   :configjson: .ServiceSettings.EnablePostUsernameOverride
   :environment: MM_SERVICESETTINGS_ENABLEPOSTUSERNAMEOVERRIDE
 
-  - **true**: Webhooks, slash commands, OAuth 2.0 apps, and other integrations such as `Zapier <https://docs.mattermost.com/integrations/zapier.html>`__, will be allowed to change the username they are posting as.
+  - **true**: Webhooks, slash commands, OAuth 2.0 apps, and other integrations will be allowed to change the username they are posting as.
   - **false**: **(Default)** Custom slash commands can only post as the username of the user who used the slash command.
 
 Enable integrations to override usernames
@@ -131,7 +147,7 @@ Enable integrations to override usernames
 
 **True**: Webhooks, slash commands, OAuth 2.0 apps, and other integrations such as `Zapier <https://docs.mattermost.com/integrations/zapier.html>`__, will be allowed to change the username they are posting as. If no username is present, the username for the post is the same as it would be for a setting of ``False``.
 
-**False**: Custom slash commands can only post as the username of the user who used the slash command. OAuth 2.0 apps can only post as the username of the user who set up the integration. For incoming webhooks and outgoing webhooks, the username is "webhook". See https://developers.mattermost.com/integrate/other-integrations/ for more details.
+**False**: **(Default)** Custom slash commands can only post as the username of the user who used the slash command. OAuth 2.0 apps can only post as the username of the user who set up the integration. For incoming webhooks and outgoing webhooks, the username is "webhook". See https://developers.mattermost.com/integrate/other-integrations/ for more details.
 
 +------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnablePostUsernameOverride": false`` with options ``true`` and ``false``. |
@@ -143,15 +159,15 @@ Enable integrations to override usernames
   :configjson: .ServiceSettings.EnablePostIconOverride
   :environment: MM_SERVICESETTINGS_ENABLEPOSTICONOVERRIDE
 
-  - **True**: Webhooks, slash commands, and other integrations, such as `Zapier <https://docs.mattermost.com/integrations/zapier.html>`__, will be allowed to change the profile picture they post with.
-  - **False**: Webhooks, slash commands, and OAuth 2.0 apps can only post with the profile picture of the account they were set up with.
+  - **true**: Webhooks, slash commands, and other integrations, such as `Zapier <https://docs.mattermost.com/integrations/zapier.html>`__, will be allowed to change the profile picture they post with.
+  - **false**: **(Default)** Webhooks, slash commands, and OAuth 2.0 apps can only post with the profile picture of the account they were set up with.
 
 Enable integrations to override profile picture icons
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **True**: Webhooks, slash commands, and other integrations, such as `Zapier <https://docs.mattermost.com/integrations/zapier.html>`__, will be allowed to change the profile picture they post with.
 
-**False**: Webhooks, slash commands, and OAuth 2.0 apps can only post with the profile picture of the account they were set up with. See https://developers.mattermost.com/integrate/other-integrations/ for more details.
+**False**: **(Default)** Webhooks, slash commands, and OAuth 2.0 apps can only post with the profile picture of the account they were set up with. See https://developers.mattermost.com/integrate/other-integrations/ for more details.
 
 +--------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnablePostIconOverride": false`` with options ``true`` and ``false``. |
@@ -309,15 +325,21 @@ Access the following configuration settings in the System Console by going to **
   :systemconsole: Integrations > CORS
   :configjson: .ServiceSettings.AllowCorsFrom
   :environment: MM_SERVICESETTINGS_ALLOWCORSFROM
-  :description: Enable HTTP cross-origin requests from specific domains separated by spaces. Type ``*`` to allow CORS from any domain or leave it blank to disable it.
+  :description: Enable HTTP cross-origin requests from all, none, or specific domains.
 
 Enable cross-origin requests from
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Enable HTTP cross-origin requests from specific domains separated by spaces. Type ``*`` to allow CORS from any domain or leave it blank to disable it.
+Enable HTTP cross-origin requests from specific domains.
+
+- Type ``*`` to allow CORS from any domain.
+- Enter a specific domain or multiple domains separated by spaces.
+- Type ``null`` to prevent CORS from any domain.
+- Leave blank to disable it and use the Mattermost **Site URL** instead.
 
 .. note::
- Please make sure you have entered your Site URL before enabling this setting to prevent losing access to the System Console after saving. If you experience lost access to the System Console after changing this setting, you can set your `Site URL <https://docs.mattermost.com/configure/configuration-settings.html#site-url>`__ through the ``config.json`` file.
+
+  Ensure you've entered your `Site URL </configure/environment-configuration-settings.html#site-url>`__ before enabling this setting to prevent losing access to the System Console after saving. If you lose access to the System Console after changing this setting, you can set your Site URL through the ``config.json`` file.
 
 +--------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"AllowCorsFrom": ""`` with string input. |

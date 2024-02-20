@@ -5,7 +5,7 @@ Important Upgrade Notes
   :start-after: :nosearch:
 
 .. important::
-   - Support for Mattermost Server v7.8 :doc:`Extended Support Release </upgrade/extended-support-release>` has come to the end of its life cycle in November 15, 2023. Upgrading to Mattermost Server v8.1 :doc:`Extended Support Release </upgrade/extended-support-release>` or later is required.
+   - Support for Mattermost Server v8.1 :doc:`Extended Support Release </upgrade/extended-support-release>` is coming to the end of its life cycle in May 15, 2024. Upgrading to Mattermost Server v9.5 :doc:`Extended Support Release </upgrade/extended-support-release>` or later is recommended.
    - MySQL 8.0.22 contains an `issue with JSON column types <https://bugs.mysql.com/bug.php?id=101284>`__ changing string values to integers which is preventing Mattermost from working properly. Users are advised to avoid this database version.
    - Upgrading the Microsoft Teams Calling plugin to v2.0.0 requires users to reconnect their accounts.
    - When upgrading to 7.x from a 5.x release please make sure to upgrade to 5.37.10 first for the upgrade to complete successfully.
@@ -14,8 +14,10 @@ Important Upgrade Notes
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | If you’re upgrading from a version earlier than... | Then...                                                                                                                                                          |
 +====================================================+==================================================================================================================================================================+
-| v9.4                                               | MySQL v5.7 is at end of life. We recommend all customers to upgrade to at least 8.x. For now, we are logging a warning. From Mattermost v9.5, which is the next  |
-|                                                    | Extended Support Release, we will stop supporting MySQL v5.7 altogether.                                                                                         |
+| v9.5                                               | We have stopped supporting MySQL v5.7 since it's at the end of life. We urge customers to upgrade their MySQL instance at their earliest convenience.            |
+|                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                    | Added safety limit error message in compiled Team Edition and Enterprise Edition deployments when enterprise scale and access control automation features are    |
+|                                                    | unavailable and count of users who are registered and not deactivated exceeds 10,000. ERROR_SAFE_LIMITS_EXCEEDED.                                                |
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v9.2                                               | Fixed data retention policies to run jobs when any custom retention policy is enabled even when the global retention policy is set to "keep-forever". Before     |
 |                                                    | this fix, the enabled custom data retention policies wouldn't run as long as the global data retention policy was set to "keep-forever" or was disabled. After   |
