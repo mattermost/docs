@@ -102,10 +102,17 @@ body:not([data-theme=light]) .sidebar-search {
   background: rgba(255, 255, 255, 0.04);
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: trade-gothic-next, sans-serif;
+  font-weight: 800;
+}
+
 .admonition {
   font-size: 16px;
   padding: 0 16px 12px 16px;
   border-radius: 4px;
+  background: rgba(54, 58, 69, 0.06);
+  box-shadow: none;
 }
 .admonition p.admonition-title {
   margin: 0 -16px 12px;
@@ -154,7 +161,7 @@ body:not([data-theme=light]) .sidebar-search {
   background: transparent;
 }
 
-body:not([data-theme=light]) .admonition.note {
+body:not([data-theme=light]) .admonition {
   background-color: rgba(255, 255, 255, 0.06);
 }
 body:not([data-theme=light]) .admonition.note .admonition-title {
@@ -163,10 +170,11 @@ body:not([data-theme=light]) .admonition.note .admonition-title {
 body:not([data-theme=light]) .tab-set > input:checked + label {
   color: var(--marigold-03);
 }
-body:not([data-theme=light]) .highlight {
+body:not([data-theme=light]) .highlight, body:not([data-theme=light]) .mm-code-copy code {
   background: rgba(255, 255, 255, 0.04) !important;
+  color: rgba(255, 255, 255, 0.8) !important;
 }
-body:not([data-theme=light]) .highlight pre {
+body:not([data-theme=light]) .highlight pre, body:not([data-theme=light]) .mm-code-copy code pre {
   color: rgba(255, 255, 255, 0.8) !important;
 }
 
