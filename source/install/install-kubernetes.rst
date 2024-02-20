@@ -34,7 +34,7 @@ With Helm
 ^^^^^^^^^
 
 
-1. Install Helm. We recommend Helm v3.4.0 or later. For installation instructions, click `here <See: https://docs.helm.sh/using_helm/#quickstart>`__.
+1. Install Helm. We recommend Helm v3.13.0 or later. For installation instructions, see the `Helm quickstart documentation <https://docs.helm.sh/using_helm/#quickstart>`__.
 2. Once Helm is installed and initialized, run the following:
 
   .. code-block:: sh
@@ -42,10 +42,8 @@ With Helm
 
     helm repo add mattermost https://helm.mattermost.com
 
-3. Create a file named ``config.yaml``, then copy and paste the content of `this file <https://github.com/mattermost/mattermost-helm/blob/master/charts/mattermost-operator/values.yaml>`__ into it.
+3. Create a file named ``config.yaml``, then copy and paste the content of `the Mattermost operator file <https://github.com/mattermost/mattermost-helm/blob/master/charts/mattermost-operator/values.yaml>`__ into it.
 
-  .. tip::
-      This will be your configuration file for the Mattermost Operator chart. If left as-is, the Mattermost-Operator will utilize the MySQL Operator, and Minio Operator - **these operators are not recommended for production usage**. You an customize your deployment at any time by updating the relevant values in ``config.yaml``.
 
 4. Create a namespace for the Mattermost Operator:
 
@@ -98,6 +96,7 @@ Deploy Mattermost
 1. (Mattermost Enterprise only) Create a Mattermost license secret by opening a text editor and creating a secret manifest containing the Mattermost license. Replace ``[LICENSE_FILE_CONTENTS]`` below with the contents of your Mattermost license file. Save the file as ``mattermost-license-secret.yaml``.
 
   .. code-block:: yaml
+    :class: mm-code-block 
 
     apiVersion: v1
     kind: Secret
@@ -110,6 +109,7 @@ Deploy Mattermost
 2. Create an installation manifest file ``mattermost-installation.yaml`` locally, and open it with a text editor. Copy and paste the below YAML structure, and make any necessary adjustments for your configuration and environment. 
 
   .. code-block:: yaml
+    :class: mm-code-block 
 
       apiVersion: installation.mattermost.com/v1beta1
       kind: Mattermost
@@ -128,7 +128,7 @@ Deploy Mattermost
   .. note::
     While file names are provided, your file names can be different. The file names in this tutorial are used for clarity and organization.
 
-  Here is a list of supported fields in the installation manifest file:
+  Some of the most commonly-used fields include:
 
   .. csv-table::
     :header: "Field", "Description"
@@ -184,6 +184,7 @@ Deploy Mattermost
   Here's an example of a secret for AWS Aurora with PostgreSQL:
 
   .. code-block:: yaml
+    :class: mm-code-block 
 
     apiVersion: v1
     data:
@@ -222,6 +223,7 @@ Deploy Mattermost
   Here's an example of a secret for Amazon S3:
 
   .. code-block:: yaml
+    :class: mm-code-block 
 
     apiVersion: v1
     data:
@@ -240,6 +242,7 @@ Deploy Mattermost
   In order for the Mattermost Operator to utilize your external database, you must modify the Mattermost manifest (inside the ``mattermost-installation.yaml`` file) by adding the following fields:
 
   .. code-block:: yaml
+    :class: mm-code-block 
 
     spec:
     ...
@@ -250,6 +253,7 @@ Deploy Mattermost
   Now, point the Mattermost Operator at your external filestore. Modify the Mattermost manifest (inside the ``mattermost-installation.yaml`` file) by adding the following fields:
 
   .. code-block:: yaml
+    :class: mm-code-block 
 
     spec:
     ...
@@ -262,6 +266,7 @@ Deploy Mattermost
   Additionally when using Amazon S3, set the ``MM_FILESETTINGS_AMAZONS3SSE`` and ``MM_FILESETTINGS_AMAZONS3SSL`` environment variables to ``true``:
 
   .. code-block:: yaml
+    :class: mm-code-block 
 
     spec:
     ...
@@ -275,6 +280,7 @@ Deploy Mattermost
   If you've configured your Mattermost Enterprise Edition installation manifest with a custom PostgreSQL database, and an Amazon S3 filestore, your installation manifest should look something like this:
 
   .. code-block:: yaml
+    :class: mm-code-block 
 
     apiVersion: installation.mattermost.com/v1beta1
     kind: Mattermost
