@@ -14,7 +14,7 @@ Purchase Mattermost Licenses
 
 Mattermost offers capabilities through **Mattermost Enterprise** and **Mattermost Professional** subscription plans. Your plan subscription determines what features you have access to. When choosing a subscription:
 
-Mattermost self-hosted deployments require a license subscription key to be applied to access features in the Professional or Enterprise plans via purchase options at https://mattermost.com/pricing/. 
+- Mattermost self-hosted deployments require a license subscription key to be applied to access features in the Professional or Enterprise plans via purchase options at https://mattermost.com/pricing/. 
 
 Mattermost also offers purchase through a `self-service Customer Portal <https://customers.mattermost.com>`__ where you can purchase and manage your Mattermost self-hosted subscription. When you complete the purchase process, a license key is generated. Please see :doc:`Self-hosted subscriptions </about/self-hosted-subscriptions>` for more details.
 
