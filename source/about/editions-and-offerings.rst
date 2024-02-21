@@ -117,7 +117,7 @@ This offering includes all the features of Mattermost Professional, plus:
 - `Advanced legal controls with customizable end-user terms of service and re-acceptance duration </comply/custom-terms-of-service.html>`__.
 - `Private mobility with ID-only push notifications </configure/site-configuration-settings.html#notification-pushnotificationcontents>`__.
 - `Enhanced compliance with global and custom retention policies for messages and files </comply/data-retention-policy.html>`__.
-- `Playbooks with ad hoc add/remove tasks, automated triggers, and stakeholders dashboard <https://docs.mattermost.com/playbooks/get-started-with-playbooks.html>`__.
+- `Playbooks with ad hoc add/remove tasks, automated triggers, and stakeholders dashboard </repeatable-processes/learn-about-playbooks.html>`__.
 - `Granular administrative control with custom system admin roles </onboard/system-admin-roles.html>`__.
 - `Advanced configuration of playbook permissions, analytics dashboards, and channel exports </repeatable-processes/share-and-collaborate.html>`__.
 - `Enhanced compliance controls and granular audit logs with data export </manage/logging.html#audit-logging-experimental-beta>`__.
