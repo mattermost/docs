@@ -28,7 +28,7 @@ See the `Kubernetes deployment documentation <https://kubernetes.github.io/ingre
 Mattermost Operator
 ~~~~~~~~~~~~~~~~~~~
 
-There are multiple options for installation of the Mattermost Kubernetes Operator. We recommend deployment with Helm, but installation instructions via the Kubernetes CLI can also be found below.
+There are multiple ways to install the Mattermost Kubernetes Operator. We recommend deploying with Helm, but installation instructions via the Kubernetes CLI can also be found below.
 
 With Helm
 ^^^^^^^^^
