@@ -1633,7 +1633,7 @@ From Mattermost v9.2, see the [Mattermost Changelog](/deploy/mattermost-changelo
 
 #### Administration
  - To add the ability to toggle sending inactivity email notification to Admins, a configuration setting ``EmailSettings.EnableInactivityEmail`` was added.
- - To filter out inactive users in the System Console, an **Active** filter was added for users and Admins in **System Console > User Management > Users**.
+ - To filter out deactivated users in the System Console, an **Active** filter was added for users and Admins in **System Console > User Management > Users**.
 
 #### Performance
  - Added an index to the ``UserGroups DisplayName`` for improved autosuggest query performance.

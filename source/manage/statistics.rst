@@ -8,7 +8,7 @@ Statistics on users, posts, and channels are tracked for each system and team. E
 
 .. note::
 
-  To maximize performance for large Enterprise deployments, statistics for total posts, total hashtag posts, total file posts, posts per day, and active users with posts per day are disabled. You can re-enable them by changing the ``MaxUsersForStatistics`` value `in config.json </configure/configuration-settings.html#maximum-users-for-statistics>`__.
+  To maximize performance for large Enterprise deployments, statistics for total posts, total hashtag posts, total file posts, posts per day, and activated users with posts per day are disabled. You can re-enable them by changing the ``MaxUsersForStatistics`` value `in config.json </configure/configuration-settings.html#maximum-users-for-statistics>`__.
 
 For advanced metrics for Enterprise deployments, `see performance monitoring documentation to learn more </scale/performance-monitoring.html>`__.
 

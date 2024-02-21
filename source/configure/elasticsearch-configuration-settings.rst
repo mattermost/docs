@@ -18,7 +18,9 @@ You can configure the Elasticsearch environment in which Mattermost is deployed 
 Enable Elasticsearch indexing
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-*Available in legacy Enterprise Edition E10/E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------------+
 | Configure Mattermost to index new posts automatically.        | - System Config path: **Environment > Elasticsearch**                          |
@@ -44,7 +46,9 @@ Enable Elasticsearch indexing
 Server connection address
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-*Available in legacy Enterprise Edition E10/E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +----------------------------------------------------+--------------------------------------------------------------------------+
 | The address of the Elasticsearch server.           | - System Config path: **Environment > Elasticsearch**                    |
@@ -120,7 +124,9 @@ Client certificate key path
 Skip TLS verification
 ~~~~~~~~~~~~~~~~~~~~~
 
-*Available in legacy Enterprise Edition E10/E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +---------------------------------------------------------------+-------------------------------------------------------------------------------------+
 | The certificate step for TLS connections can be skipped.      | - System Config path: **Environment > Elasticsearch**                               |
@@ -141,7 +147,9 @@ Skip TLS verification
 Server username
 ~~~~~~~~~~~~~~~
 
-*Available in legacy Enterprise Edition E10/E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | (Optional) The username to authenticate to the                | - System Config path: **Environment > Elasticsearch**                    |
@@ -160,7 +168,9 @@ Server username
 Server password
 ~~~~~~~~~~~~~~~
 
-*Available in legacy Enterprise Edition E10/E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | (Optional) The password to authenticate to the                | - System Config path: **Environment > Elasticsearch**                    |
@@ -182,7 +192,9 @@ Server password
 Enable cluster sniffing
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-*Available in legacy Enterprise Edition E10/E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +----------------------------------------------------------------+--------------------------------------------------------------------------+
 | Configure Mattermost to automatically find and connect to      | - System Config path: **Environment > Elasticsearch**                    |
@@ -205,7 +217,9 @@ Enable cluster sniffing
 Bulk indexing
 ~~~~~~~~~~~~~
 
-*Available in legacy Enterprise Edition E10/E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | Configure Mattermost to start a bulk index of all existing    | - System Config path: **Environment > Elasticsearch**                    |
@@ -245,7 +259,9 @@ Indexes to skip while purging
 Purge indexes
 ~~~~~~~~~~~~~
 
-*Available in legacy Enterprise Edition E10/E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +---------------------------------------------------------------+-------------------------------------------------------------+
 | Purge the entire Elasticsearch index.                         | - System Config path: **Environment > Elasticsearch**       |
@@ -269,7 +285,9 @@ Purge indexes
 Enable Elasticsearch for search queries
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-*Available in legacy Enterprise Edition E10/E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +---------------------------------------------------------------+---------------------------------------------------------------------------------+
 | Configure Mattermost to use Elasticsearch for all search      | - System Config path: **Environment > Elasticsearch**                           |
@@ -296,7 +314,9 @@ Enable Elasticsearch for search queries
 Enable Elasticsearch for autocomplete queries
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-*Available in legacy Enterprise Edition E10/E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +---------------------------------------------------------------+------------------------------------------------------------------------------------+
 | Configure Mattermost to use Elasticsearch for all             | - System Config path: **Environment > Elasticsearch**                              |
@@ -320,7 +340,9 @@ Enable Elasticsearch for autocomplete queries
 Post index replicas
 ~~~~~~~~~~~~~~~~~~~
 
-*Available in legacy Enterprise Edition E10/E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +---------------------------------------------------------------+-------------------------------------------------------------------------------+
 | The number of replicas to use for each post index.            | - System Config path: N/A                                                     |
@@ -341,7 +363,9 @@ Post index replicas
 Post index shards
 ~~~~~~~~~~~~~~~~~
 
-*Available in legacy Enterprise Edition E10/E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +---------------------------------------------------------------+-------------------------------------------------------------------------------+
 | The number of shards to use for each post index.              | - System Config path: N/A                                                     |
@@ -362,7 +386,9 @@ Post index shards
 Channel index replicas
 ~~~~~~~~~~~~~~~~~~~~~~
 
-*Available in legacy Enterprise Edition E10/E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +---------------------------------------------------------------+----------------------------------------------------------------------------------+
 | The number of replicas to use for each channel index.         | - System Config path: N/A                                                        |
@@ -380,7 +406,9 @@ Channel index replicas
 Channel index shards
 ~~~~~~~~~~~~~~~~~~~~
 
-*Available in legacy Enterprise Edition E10/E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +---------------------------------------------------------------+----------------------------------------------------------------------------------+
 | The number of shards to use for each channel index.           | - System Config path: N/A                                                        |
@@ -398,7 +426,9 @@ Channel index shards
 User index replicas
 ~~~~~~~~~~~~~~~~~~~
 
-*Available in legacy Enterprise Edition E10/E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +---------------------------------------------------------------+-------------------------------------------------------------------------------+
 | The number of replicas to use for each user index.            | - System Config path: N/A                                                     |
@@ -416,7 +446,9 @@ User index replicas
 User index shards
 ~~~~~~~~~~~~~~~~~
 
-*Available in legacy Enterprise Edition E10/E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +---------------------------------------------------------------+----------------------------------------------------------------------------------+
 | The number of shards to use for each user index.              | - System Config path: N/A                                                        |
@@ -434,7 +466,9 @@ User index shards
 Aggregate search indexes
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-*Available in legacy Enterprise Edition E10/E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +---------------------------------------------------------------+----------------------------------------------------------------------------------------+
 | Elasticsearch indexes older than the age specified by this    | - System Config path: N/A                                                              |
@@ -457,7 +491,9 @@ Aggregate search indexes
 Post aggregator start time
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-*Available in legacy Enterprise Edition E10/E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +---------------------------------------------------------------+---------------------------------------------------------------------------------------------+
 | The start time of the daily scheduled aggregator job.         | - System Config path: N/A                                                                   |
@@ -478,7 +514,9 @@ Post aggregator start time
 Index prefix
 ~~~~~~~~~~~~
 
-*Available in legacy Enterprise Edition E10/E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | The prefix added to the Elasticsearch index name.             | - System Config path: N/A                                                |
@@ -499,7 +537,9 @@ Index prefix
 Live indexing batch size
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-*Available in legacy Enterprise Edition E10/E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +---------------------------------------------------------------+-----------------------------------------------------------------------------------+
 | The number of new posts needed before those posts are added   | - System Config path: N/A                                                         |
@@ -589,7 +629,9 @@ Live indexing batch size
 Bulk indexing time window
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-*Available in legacy Enterprise Edition E10/E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +---------------------------------------------------------------+----------------------------------------------------------------------------------------------+
 | The maximum time window, in seconds, for a batch of posts     | - System Config path: **Environment > Elasticsearch**                                        |
@@ -615,7 +657,9 @@ Bulk indexing time window
 Request timeout
 ~~~~~~~~~~~~~~~
 
-*Available in legacy Enterprise Edition E10/E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +---------------------------------------------------------------+------------------------------------------------------------------------------------+
 | The timeout, in seconds, for Elasticsearch calls.             | - System Config path: N/A                                                          |
@@ -637,7 +681,9 @@ Request timeout
 Trace
 ~~~~~
 
-*Available in legacy Enterprise Edition E10/E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | Options for printing Elasticsearch trace errors.              | - System Config path: N/A                                                |

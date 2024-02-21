@@ -8,12 +8,14 @@ Self-hosted subscriptions
 Buy a subscription
 ------------------
 
-From Mattermost v7.7 you can buy a Mattermost subscription from within Mattermost:
+To purchase a commercial subscription for Mattermost Professional or Mattermost Enterprise please visit: https://mattermost.com/pricing/
+
+For Mattermost v7.7 and later you can also buy a Mattermost subscription from within Mattermost:
 
 1. In Mattermost, select **View Plans** in the global header or via **System Console > View plans**.
 2. Select **Upgrade**. A minimum of ten users is required.
 3. Provide payment details.
-4. Enter the number of user seats you're purchasing. This number has to be equal to, or greater than, the current number of active users in your Mattermost deployment.
+4. Enter the number of user seats you're purchasing. This number has to be equal to, or greater than, the current number of activated users in your Mattermost deployment.
 5. Select **Upgrade**.
 
 When your purchase is complete, a license is automatically applied to instance and your subscription is active immediately.
@@ -76,7 +78,7 @@ You can access your Customer Portal account to view information about your:
 - Organization information
 - Payment methods
 - Renewals
-- Active users (available in a future release)
+- Activated users (available in a future release)
 
 Subscription and licenses not purchased via the Customer Portal won't be listed.
 
@@ -95,58 +97,54 @@ This process adds additional users to your existing subscription and is not a ne
 
 If you don't have a self-hosted license in the Customer Portal and want to add users, `contact us <https://mattermost.com/contact-us/>`__.
 
-Quarterly true-up reports from v7.9
------------------------------------
+Quarterly true-up reports
+-------------------------
 
-From Mattermost v7.9, the reporting period is still the same, but we've introduced a process that no longer requires you to take screenshots.
+When you buy an annual Mattermost subscription, you agree to provide Mattermost with quarterly reports of the actual number of activated users within your system. An activated user is a user who has a Mattermost account and doesn't show as **Deactivated** in **System Console > User Management > Users**.
+
+We'll send you an email notice around the end of the quarter reminding you to send us your report.
 
 .. image:: ../images/true-up-schedule.png
-      :alt: The timeframes followed for the true up notifications.
+   :alt: The timeframes followed for the true-up notifications.
 
-To send the report, a system admin must navigate to the **System Console** and open either the **Site Statistics** or **Team Statistics** pages.
+If you have more total activated users than you purchased in your annual subscription, your Customer Success Manager will provide you with a true-up quote for the new users added. The additional invoice will be pro-rated based on the number of months left in your subscription term, including the months for the calendar quarter for the time you pull the report. Mattermost won't provide downward adjustments. Mattermost will invoice based on Mattermost’s `current list prices <https://mattermost.com/pricing/>`__.
 
-If the current date is within the true-up reporting period, a panel will be visible at the top of the page with a button to share your system's statistics directly to Mattermost.
+From Mattermost v7.9
+~~~~~~~~~~~~~~~~~~~~
 
-If your system is air-gapped (meaning it doesn't have access to the internet), the system admin can download the system statistcs which can then be shared with your Customer Success Manager from a device that's not air-gapped.
+From Mattermost v7.9, we've introduced a process that no longer requires you to take screenshots. To send Mattermost the report, a system admin must go to the **System Console** and open either the **Site Statistics** or **Team Statistics** pages.
+
+When the current date is within the true-up reporting period, a panel will be visible at the top of the page with a button to share your system's statistics with Mattermost directly.
+
+If your system is air-gapped (meaning it doesn't have access to the internet), the system admin can download the system statistcs which can then be shared with your Mattermost Customer Success Manager from a device that's not air-gapped.
 
 .. tip::
    
    Not sure where to find the site statistics or team statistics? Please reach out to your account executive, Customer Success Manager, orders@mattermost.com, or support@mattermost.com for help.
 
-Quarterly true-up report prior to v7.9
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Prior to Mattermost v7.9
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
-When you buy an annual Mattermost subscription, you agree to provide quarterly reports of the actual number of active users within your system. An active user is a user who has an account in a workspace and does not show as **Inactive** in **System Console > User Management > Users**.
+If you have a Mattermost deployment prior to v7.9, a system admin needs to take a screenshot of the **System Console > Site Statistics** page and send it to Mattermost in an email.
 
-We'll send you an email notice around the end of the quarter reminding you to send us your report. 
-
-.. image:: ../images/true-up-schedule.png
-      :alt: The timeframes followed for the true up notifications.
-
-To send this report, take a screenshot of **System Console > Site Statistics** and send in a reply email back to us. 
-
-- Please ensure your screenshot is taken from the top of the page and includes the **Total Active Users** metric. 
+- Please ensure your screenshot is taken from the top of the page and includes both **Total Activated Users** and the **Monthly Active Users** metrics. 
 - Please include the date of the screenshot in the file name.
 - We don't need your server address, so if it appears on your screenshot, you can redact it from the image.
 
 .. tip:: 
 
    Not sure where to take the screenshot? Please reach out to your account executive, Customer Success Manager, orders@mattermost.com, or support@mattermost.com for help.
-
-If you have more total active users than you purchased in your annual subscription, your Customer Success Manager will provide you with a true-up quote for the new users added.
-
-The additional invoice will be pro-rated based on the number of months left in your subscription term, including the months for the calendar quarter for the time you pull the report. We will not provide downward adjustments. Mattermost will invoice based on Mattermost’s `current list prices <https://mattermost.com/pricing/>`__.
    
 Renew your subscription
 -----------------------
 
-From Mattermost Server v5.32, you can renew your self-hosted Mattermost subscription with a credit card if you have a standard Mattermost contract. When you renew your license, you can also increase the number of active users.
+From Mattermost Server v5.32, you can renew your self-hosted Mattermost subscription with a credit card if you have a standard Mattermost contract. When you renew your license, you can also increase the number of activated users.
 
 If you haven't upgraded to v5.32, contact Mattermost Support at support@mattermost.com to renew your license.
 
-If you're a reseller, have a non-standard contract, or want to adjust the number of active users on your license during the license period, please contact Mattermost Sales at sales@mattermost.com.
+If you're a reseller, have a non-standard contract, or want to adjust the number of activated users on your license during the license period, please contact Mattermost Sales at sales@mattermost.com.
 
-System Admins will be alerted 60 days prior to license expiry via a banner in Mattermost. Select **Renew license now** to start the renewal process in the Customer Portal. You can also dismiss the banner and renew your license at a later date via **System Console > Edition and License**.
+System admins will be alerted 60 days prior to license expiry via a banner in Mattermost. Select **Renew license now** to start the renewal process in the Customer Portal. You can also dismiss the banner and renew your license at a later date via **System Console > Edition and License**.
 
 When you select **Renew license now**, you're taken to the renewal page in the Customer Portal, which lists your license information and account details. This is pre-populated based on the email address associated with your existing license subscription.
 
@@ -158,7 +156,7 @@ Process your license renewal
 
   * You can upgrade within the Customer Portal, but it's not possible to downgrade.
 
-3. Confirm the listed number of active users is correct. 
+3. Confirm the listed number of activated users is correct. 
 
  * You can increase the number of licensed users, but you can't decrease it.
 
@@ -175,14 +173,14 @@ You can watch a video overview of the renewal process on YouTube:
 Frequently asked questions
 --------------------------
 
-What is a true up and why is the true up notice necessary? 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+What is a true-up report and why is the true-up notice necessary? 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-A true up is our quarterly request for you to provide a screenshot of your instance data to determine if you have more active users now than when you bought your subscription.
+A true-up report is our quarterly request for you to provide us with the actual number of activated users within your system to determine if you have more activated users now than when you bought your subscription.
 
-As your organization grows, you may need to add additional users during your subscription period. Mattermost needs to have insight into changes in your active user count so that we can charge you appropriately for your self-hosted license usage. Additionally, we don’t want to over estimate/charge active users at your renewal time. 
+As your organization grows, you may need to add additional users during your subscription period. Mattermost needs to have insight into changes in your activated user count so that we can charge you appropriately for your self-hosted license usage. Additionally, we don’t want to over estimate/charge activated users at your renewal time. 
 
-When you receive the quarterly true up notice from Mattermost, please take a screenshot of your active user count which you can find in **System Console > Site Statistics**. Then reply to the email with the attached screenshot.
+When you receive the quarterly true-up notice from Mattermost, please share your activated user count with us.
 
 How do I renew my subscription if I don't have internet access?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
