@@ -64,7 +64,7 @@ For academic licensing, please see: https://mattermost.com/education/
 Mattermost Enterprise Cloud  
 ---------------------------
 
-Enterprises can inquire about Mattermost Cloud Enterprise, as a single-tenant cloud-managed service for Mattermost Enterprise hosted by Mattermost, Inc. The system is offered on the same Kubernetes-based platform as the self-hosted edition, and managed by Mattermost, Inc. 
+Enterprises can inquire about Mattermost Cloud Enterprise, a single-tenant cloud-managed service for Mattermost Enterprise hosted by Mattermost, Inc. The system is offered on the same Kubernetes-based platform as the self-hosted edition, and managed by Mattermost, Inc. 
 
 For more information, contact the Mattermost Sales organization at https://mattermost.com/contact-sales/
 
