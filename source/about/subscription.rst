@@ -1,7 +1,7 @@
 Subscription overview
 =====================
 
-Mattermost Professional and Mattermost Enterprises licenses are sold as prepaid annual subscriptions based on the number of annual seat licenses purchased, or “seats”. Each seat license purchased entitles a customer to an “activated user”, which is a user registered on a specific Mattermost server and not deactivated. 
+Mattermost Professional and Mattermost Enterprise licenses are sold as prepaid annual subscriptions based on the number of seat licenses purchased, or “seats”. Each seat license purchased entitles a customer to an “activated user”, which is a user registered on a specific Mattermost server and not deactivated. 
 
 Administrators can view user status in the System Console and activate and deactivate registered users at any time. Deactivated users have history and preferences saved. 
 
