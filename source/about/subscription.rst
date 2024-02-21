@@ -12,7 +12,7 @@ Administrators can view user status in the System Console and activate and deact
 Purchase Mattermost Licenses 
 ----------------------------
 
-Mattermost offers capabilities through **Mattermost Enterprise** and **Mattermost Professional** subscription plans. Your plan subscription determines what features you have access to. When choosing a subscription. 
+Mattermost offers capabilities through **Mattermost Enterprise** and **Mattermost Professional** subscription plans. Your plan subscription determines what features you have access to. When choosing a subscription:
 
 Mattermost self-hosted deployments require a license subscription key to be applied to access features in the Professional or Enterprise plans via purchase options at https://mattermost.com/pricing/. 
 
