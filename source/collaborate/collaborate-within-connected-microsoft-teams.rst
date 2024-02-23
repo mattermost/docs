@@ -33,13 +33,12 @@ Mattermost will confirm when your account is connected, and prompt you to select
 Select your preferred platform
 -------------------------------
 
-Once you've connected your Mattermost account to your Microsoft Teams account, Mattermost prompts you to choose which platform you'll use more often: `Mattermost <#mattermost-is-your-preferred-platform>`_ or `Microsoft Teams <#microsoft-teams-is-your-preferred-platform>`_. Mattermost optimizes your experience based on the platform you choose.
+Once you've connected your Mattermost account to your Microsoft Teams account, Mattermost prompts you to choose which platform you'll use more often: `Mattermost <#mattermost-is-your-preferred-platform>`_ or `Microsoft Teams <#microsoft-teams-is-your-preferred-platform>`_. Mattermost optimizes your experience based on the platform you prefer to use.
 
 .. note::
 
-  If you're not prompted to connect your accounts, run the Mattermost slash command ``/msteams connect`` within the Mattermost message text box to display the prompt in a browser window. Follow the link to connect your accounts.
-
-You can change your selection later by selecting your profile picture and going to **Settings > TBD**.
+  - If you're not prompted to connect your accounts, run the Mattermost slash command ``/msteams connect`` within the Mattermost message text box to display the prompt in a browser window. Follow the link to connect your accounts.
+  - If you select **Skip for now**, Mattermost is selected as your primary platform. You can change this preference any time by selecting your profile picture and going to **Settings > MS Teams Settings**.
 
 Mattermost is your preferred platform
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
