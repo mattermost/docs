@@ -2459,18 +2459,6 @@ pre {
 	}
 }
 
-@media (min-width:1200px) {
-	.site-nav-login {
-		margin-left: 6rem !important;
-	}
-}
-
-@media (min-width:992px) {
-	.site-nav-login {
-		margin-left: 2rem !important;
-	}
-}
-
 @media (max-width:768px) {
 	.site-nav-login {
 		margin-top: 3rem;
@@ -2490,6 +2478,17 @@ pre {
 	}
 }
 
+@media (min-width:992px) {
+	.site-nav-login {
+		margin-left: 2rem !important;
+	}
+}
+
+@media (min-width:1200px) {
+	.site-nav-login {
+		margin-left: 6rem !important;
+	}
+}
 			
 
 .site-header__col--menu .site-nav__hassubnav .sub-menu__col {
