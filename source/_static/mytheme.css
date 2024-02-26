@@ -2430,9 +2430,9 @@ pre {
 
 	.site-header__col--menu .site-nav__hassubnav .sub-menu__developers .sub-menu__developers-grid-wrapper {
 		display: grid;
-		grid-template-columns: 75px 95px;
-		-moz-column-gap: 70px;
-		column-gap: 70px
+		grid-template-columns: 120px 95px;
+		-moz-column-gap: 40px;
+		column-gap: 40px
 	}
 }
 
@@ -2451,12 +2451,46 @@ pre {
 }
 
 @media (min-width:992px) {
-	.site-header__col--menu .site-nav__hassubnav .sub-menu__login {
+	.site-header__col--menu .site-nav__hassubnav .sub-menu__login,
+	.site-header__col--menu .site-nav__hassubnav .sub-menu__enterprise {
 		right: unset;
 		margin-left: -40px;
 		padding: 50px 60px 20px;
 	}
 }
+
+@media (min-width:1200px) {
+	.site-nav-login {
+		margin-left: 6rem !important;
+	}
+}
+
+@media (min-width:992px) {
+	.site-nav-login {
+		margin-left: 2rem !important;
+	}
+}
+
+@media (max-width:768px) {
+	.site-nav-login {
+		margin-top: 3rem;
+	}
+	.site-nav-login .toplink-wrapper {
+		border-bottom: none !important;
+		text-align: center;
+	}
+	.site-nav-login .sub-menu__links--single a {
+		justify-content: center;
+	}
+	.site-nav-login .sub-menu__links--single {
+		margin-bottom: 2rem !important;
+	}
+	.site-nav-login .sub-menu__links--single:last-child {
+		margin-bottom: 5rem !important;
+	}
+}
+
+			
 
 .site-header__col--menu .site-nav__hassubnav .sub-menu__col {
 	display: flex;
@@ -2640,7 +2674,7 @@ pre {
 	}
 
 	.site-header .site-nav__button:not(.site-nav__button--secondary) {
-		padding-top: 40px;
+		padding-top: 0px;
 	}
 }
 
