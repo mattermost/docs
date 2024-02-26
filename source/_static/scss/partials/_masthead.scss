@@ -139,7 +139,7 @@
     .link {
         text-decoration: none;
         font-weight: 700;
-        color: var(--blue);
+        color: var(--primary);
     }
 }
 
@@ -171,7 +171,7 @@ body:not([data-theme="light"]) {
         color: rgba(255, 255, 255, 0.8);
 
         .link {
-            color: var(--marigold-03);
+            color: var(--primary);
         }
     }
 }

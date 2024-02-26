@@ -1,6 +1,7 @@
 .sidebar-container {
     width: 272px;
     padding: 16px 0 0 16px;
+    overflow: hidden;
 }
 
 /* Theme Overrides */
@@ -15,7 +16,7 @@
 }
 
 .toc-tree li.scroll-current>.reference {
-    color: var(--blue);
+    color: var(--primary);
 }
 
 .scroll-current a {
@@ -68,11 +69,11 @@
 
 body:not([data-theme="light"]) {
     .toc-tree li.scroll-current>.reference {
-        color: var(--marigold-03);
+        color: var(--primary);
     }
 
     .sidebar-tree .current-page > a.current {
-        color: var(--marigold-03);
+        color: var(--primary);
         background: rgba(255, 255, 255, 0.04);
     }
 

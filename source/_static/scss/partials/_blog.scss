@@ -54,7 +54,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .tab-set > input:checked + label {
-    color: var(--blue);
+    color: var(--primary);
     border-color: currentColor;
 
     &:hover {
@@ -67,6 +67,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 body:not([data-theme="light"]) {
+    .mm-badge img {
+        filter: invert(100%);
+    }
+
     .admonition {
         background-color: rgba(255,255,255, 0.06);
     }
@@ -76,7 +80,7 @@ body:not([data-theme="light"]) {
     }
 
     .tab-set > input:checked + label {
-        color: var(--marigold-03);
+        color: var(--primary);
     }
 
     .highlight, .mm-code-copy code {
@@ -86,5 +90,51 @@ body:not([data-theme="light"]) {
         pre {
             color: rgba(255,255,255, 0.8) !important;
         }
+    }
+}
+
+.mm-badge__accent-text {
+    color: var(--neutral-600, #767D93);
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+}
+
+.mm-badge__title {
+    color: var(--neutral-950, #363A45);
+    font-family: 'trade-gothic-next', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    flex: 0 0 auto;
+}
+
+.mm-badge__copy > * {
+    display: block;
+}
+
+.mm-badge--academy {
+    padding: 0;
+    border: 1px solid var(--neutral-100, #E8E9ED);
+    background: var(--neutral-50, #F4F4F6);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    > * {
+        display: inline-block;
+    }
+
+    img {
+        height: 75px;
+        width: auto;
+        margin: 0 !important;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
     }
 }

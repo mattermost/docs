@@ -3459,7 +3459,6 @@ html_static_path = ["_static"]
 html_css_files = [
     "css/mattermost-global.css",
     "css/homepage-v1.css",
-    "css/thermometer.css",
     "css/copybuttons.css",
     "css/compass-icons.css"
 ]

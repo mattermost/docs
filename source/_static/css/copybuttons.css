@@ -130,6 +130,7 @@
 
 .mm-code-copy button.mm-button svg {
     margin-right: 10px;
+    min-width: 18px;
 }
 
 .mm-code-copy button.mm-button span {

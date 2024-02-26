@@ -3,9 +3,35 @@
 @import "partials/_sidebar";
 @import "partials/_blog";
 @import "partials/_masthead";
+@import "partials/_thermometer";
+
+body {
+    overflow: hidden;
+
+    &.with-notification {
+        .page {
+            padding-top: 115px;
+        }
+
+        header {
+            top: 45px;
+        }
+    }
+}
+
+.page {
+    height: 100%;
+    padding-top: 75px;
+    overflow: hidden;
+
+    .main {
+        height: 100%;
+        overflow: auto;
+    }
+}
 
 a {
-    color: var(--blue);
+    color: var(--primary);
 }
 
 .homepage .content {
@@ -61,6 +87,6 @@ a {
 
 body:not([data-theme="light"]) {
     a {
-        color: var(--marigold-03);
+        color: var(--primary);
     }
 }

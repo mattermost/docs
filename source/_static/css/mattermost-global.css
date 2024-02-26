@@ -157,7 +157,7 @@
 }
 
 .notification-bar a {
-    color: #1B1D22;
+    color: #1B1D22 !important;
 }
 
 .notification-bar__close {
@@ -184,23 +184,14 @@
     opacity: .5;
 }
 
-.with-notification .wy-side-scroll {
-    padding-top: 62px;
-}
-
 .with-notification .notification-bar {
     display: flex;
 }
 
-.with-notification header {
-    top: 46px;
-}
-
-@media (max-width: 770px) {
-    .with-notification header  {
-        /* TEMP FOR LONG COPY */
-        top: 70px;
-    }
+.with-notification .page {
+    overflow: auto;
+    height: 100%;
+    padding-top: 120px;
 }
 
 .with-notification .wy-grid-for-nav {
@@ -1241,7 +1232,7 @@ body:not([data-theme="light"]) {
     font-family: 'trade-gothic-next',sans-serif;
     background: #fff;
     box-shadow: 0 4px 15px rgba(0, 0, 0, .1);
-    position: sticky;
+    position: fixed;
     top: 0;
     width: 100%;
     z-index: 999;

@@ -1,6 +1,6 @@
-:root {
-    --blue: #1C58D9;
-    --marigold-03: #FFBC1F;
+body {
+    --color-highlight-on-target: rgb(255 212 112 / 32%);
+    --primary: #1C58D9;
     --denim-01: #C5D2EC;
     --denim-05: #1E325C;
     --black-01: #EBEBEF;
@@ -8,3 +8,7 @@
     --black-05: #363A45;
 }
 
+body:not([data-theme=light]) {
+    --primary: #FFBC1F;
+    --color-highlight-on-target: rgb(255 212 112 / 32%);
+}
