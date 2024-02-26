@@ -73,6 +73,7 @@ If you upgrade from a release earlier than v9.5, please read the other [Importan
  - v9.6 is built with Go ``v1.20.7``.
 
 ### Known Issues
+ - Draft is lost from the reply box when other user's root post is deleted [MM-56972](https://mattermost.atlassian.net/browse/MM-56972).
  - Status may sometimes get stuck as **Away** or **Offline** in High Availability mode with IP Hash turned off.
  - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
  - Slack import through the CLI fails if email notifications are enabled.
