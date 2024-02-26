@@ -271,6 +271,10 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ## Release v8.1 - [Extended Support Release](https://docs.mattermost.com/upgrade/release-definitions.html#extended-support-release-esr)
 
+- **8.1.10, released 2024-02-14**
+  - Mattermost v8.1.10 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Mattermost v8.1.10 contains no database or functional changes.
+  - Pre-packaged Jira plugin version [v4.1.0](https://github.com/mattermost/mattermost-plugin-jira/releases/tag/v4.1.0).
 - **8.1.9, released 2024-01-30**
   - Mattermost v8.1.9 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Fixed an issue with true-up reports sending active users and not activated users. Added **Monthly Active Users** (MAU) as part of the true-up reports.
@@ -2071,7 +2075,7 @@ If you upgrade from a release earlier than v6.6, please read the other [Importan
 
 #### Administration
  - To add the ability to toggle sending inactivity email notification to Admins, a configuration setting ``EmailSettings.EnableInactivityEmail`` was added.
- - To filter out inactive users in the System Console, an **Active** filter was added for users and Admins in **System Console > User Management > Users**.
+ - To filter out deactivated users in the System Console, an **Active** filter was added for users and Admins in **System Console > User Management > Users**.
  - Added a ``threadsOnly`` query parameter for getting user threads.
  - To allow Admins to add a new license without having to first remove the old one, a new “License" button was added to **System Console > Edition and License**.
 
@@ -5017,7 +5021,7 @@ If you upgrade from a release earlier than 5.25, please read the other [Importan
  - Added ability for Elasticsearch to search terms inside links.
  - Searching for a user with a leading "@" in the search term with Elasticsearch now returns results for those users.
  - Added ability to include filtering search/autocompletion by roles.
- - Added ability to search/autocomplete inactive users from Elasticsearch.
+ - Added ability to search/autocomplete deactivated users from Elasticsearch.
  - Added missing methods such as ``PermanenteDeleteByUser`` and ``PermanenteDeleteByChannel`` that update and/or delete entities in the searchlayer.
  - Implemented prefix/suffix search on Teams and Channel pages in System Console.
 

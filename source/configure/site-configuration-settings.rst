@@ -71,7 +71,9 @@ Site description
 Enable custom branding
 ~~~~~~~~~~~~~~~~~~~~~~
 
-*This feature is available in legacy Enterprise Edition E10 and E20.*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +--------------------------------------------------------------------------------+-----------------------------------------------------------------------+
 | - **true**: Enables the display of a custom image and text on the login page   | - System Config path: **Site Configuration > Customization**          |
@@ -426,14 +428,14 @@ Access the following configuration settings in the System Console by going to **
   :systemconsole: Site Configuration > Users and Teams
   :configjson: .TeamSettings.MaxUsersPerTeam
   :environment: MM_TEAMSETTINGS_MAXUSERSPERTEAM
-  :description: The maximum total number of users per team, including active and inactive users. Default is **50** users per team.
+  :description: The maximum total number of users per team, including activated and deactivated users. Default is **50** users per team.
 
 Max users per team
 ~~~~~~~~~~~~~~~~~~
 
 +------------------------------------------------------------------------------+-------------------------------------------------------------------+
 | The **Max users per team** is the maximum total number of users per team,    | - System Config path: **Site Configuration > Users and Teams**    |
-| including active and inactive users.                                         | - ``config.json`` setting: ``.TeamSettings.MaxUsersPerTeam: 50``  |
+| including activated and deactivated users.                                   | - ``config.json`` setting: ``.TeamSettings.MaxUsersPerTeam: 50``  |
 |                                                                              | - Environment variable: ``MM_TEAMSETTINGS_MAXUSERSPERTEAM``       |
 | In Mattermost, a team of people should be a small organization with a        |                                                                   |
 | specific goal. In the physical world, a team could sit around a single       |                                                                   |
@@ -648,16 +650,16 @@ Enable custom user statuses
   :configjson: .TeamSettings.EnableLastActiveTime
   :environment: MM_TEAMSETTINGS_ENABLELASTACTIVETIME
 
-  - **true**: **(Default)** Users can see when inactive users were last active on a user's profile and in direct message channel headers.
-  - **false**: Users can't see when inactive users were last online.
+  - **true**: **(Default)** Users can see when deactivated users were last active on a user's profile and in direct message channel headers.
+  - **false**: Users can't see when deactivated users were last online.
 
 Enable last active time
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 +---------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
-| - **true**: **(Default)** Users can see when inactive users were last active on a                 | - System Config path: **Site Configuration > Users and Teams**              |
+| - **true**: **(Default)** Users can see when deactivated users were last active on a              | - System Config path: **Site Configuration > Users and Teams**              |
 |   user's profile and in direct message channel headers.                                           | - ``config.json`` setting: ``.TeamSettings.EnableLastActiveTime: true``     |
-| - **false**: Users can't see when inactive users were last online.                                | - Environment variable: ``MM_TEAMSETTINGS_ENABLELASTACTIVETIME``            |
+| - **false**: Users can't see when deactivated users were last online.                             | - Environment variable: ``MM_TEAMSETTINGS_ENABLELASTACTIVETIME``            |
 +---------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
 
 .. config:setting:: users-enablecustomusergroups
@@ -813,7 +815,9 @@ Email notification contents
 .. include:: ../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
-*Available in legacy Enterprise Edition E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
 | - **Send full message contents**: **(Default)** Email notifications include the full message contents, along with the name of the sender and the channel. ``config.json`` setting: ``"full"``                                                                                                 | - System Config path: **Site Configuration > Notifications**                |
@@ -1505,7 +1509,9 @@ Allow file uploads on mobile
 .. include:: ../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
-*Available in legacy Enterprise Edition E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 +---------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
 | - **true**: **(Default)** Allows users to attach files to messages from mobile apps.              |  - System Config path: **Site Configuration > File Sharing and Downloads** |
@@ -1528,7 +1534,9 @@ Allow file downloads on mobile
 .. include:: ../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
-*Available in legacy Enterprise Edition E20*
+.. raw:: html
+
+ <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 +----------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
 | - **true**: **(Default)** Enables file downloads on mobile apps.                                               | - System Config path: **Site Configuration > File sharing and downloads** |

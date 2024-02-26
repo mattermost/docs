@@ -1,15 +1,23 @@
 Subscription overview
 =====================
 
+Mattermost Professional and Mattermost Enterprise licenses are sold as prepaid annual subscriptions based on the number of seat licenses purchased, or “seats”. Each seat license purchased entitles a customer to an “activated user”, which is a user registered on a specific Mattermost server and not deactivated. 
+
+Administrators can view user status in the System Console and activate and deactivate registered users at any time. Deactivated users have history and preferences saved. 
+
 .. contents:: On this page
     :backlinks: top
     :depth: 2
 
-Mattermost offers features through `Mattermost Professional and Mattermost Enterprise subscription plans <https://www.mattermost.com/pricing>`__. Your plan subscription determines what features you have access to. When choosing a subscription, you can choose the deployment type as self-hosted or Cloud. 
+Purchase Mattermost Licenses 
+----------------------------
 
-Mattermost self-hosted deployments require a license subscription key to be applied to access features in the Professional or Enterprise plans. Mattermost offers a `secure self-service Customer Portal <https://customers.mattermost.com>`__ where you can purchase and manage your Mattermost self-hosted subscription. When you complete the purchase process, a license key is generated. Please see :doc:`Self-hosted subscriptions </about/self-hosted-subscriptions>` for more details.
+Mattermost offers capabilities through **Mattermost Enterprise** and **Mattermost Professional** subscription plans. Your plan subscription determines what features you have access to. When choosing a subscription:
 
-Mattermost Cloud is a software-as-a-service product. Start a free 30-day Mattermost Enterprise trial, to explore paid features. Please see :doc:`Cloud subscriptions </about/cloud-subscriptions>` for more details.
+- Mattermost self-hosted deployments require a license subscription key to be applied to access features in the Professional or Enterprise plans via purchase options at https://mattermost.com/pricing/. 
+
+- Mattermost also offers purchase through a `self-service Customer Portal <https://customers.mattermost.com>`__ where you can purchase and manage your Mattermost self-hosted subscription. When you complete the purchase process, a license key is generated. Please see :doc:`Self-hosted subscriptions </about/self-hosted-subscriptions>` for more details.
+
 
 Mattermost Nonprofit License program
 --------------------------------------
@@ -52,6 +60,18 @@ Mattermost educational license program
 ---------------------------------------
 
 For academic licensing, please see: https://mattermost.com/education/
+
+Mattermost Enterprise Cloud  
+---------------------------
+
+Enterprises can inquire about Mattermost Cloud Enterprise, a single-tenant cloud-managed service for Mattermost Enterprise hosted by Mattermost, Inc. The system is offered on the same Kubernetes-based platform as the self-hosted edition, and managed by Mattermost, Inc. 
+
+For more information, contact the Mattermost Sales organization at https://mattermost.com/contact-sales/
+
+Cloud-hosted Mattermost Professional  
+------------------------------------
+
+For small businesses, Mattermost Professional is available as a software-as-a-service product. More information is available at  :doc:`Cloud subscriptions </about/cloud-subscriptions>`.
 
 Frequently asked questions
 --------------------------
@@ -100,12 +120,16 @@ In this case, the "physical address" is the location where the individual, who w
 How is a user defined for subscriptions?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-For the purpose of billing, a “user” is any account created in Mattermost that has not been deactivated by the System Administrator. You can see your user count for billing purposes from the System Console on the **Site Statistics** page under “Total Active Users”. Guests are also defined as users. 
+For the purpose of billing, a “user” is any account created in Mattermost that does not show as **Deactivated** in **System Console > User Management > Users**. Guests are also defined as users.
+
+Bots, deactivated users, and synthetic users in `Microsoft Teams integrations </collaborate/collaborate-using-mattermost-for-microsoft-teams.html>`__ and `shared channels users </onboard/shared-channels.html>`__, aren't counted towards the total number of activated users.
+
+You can review your user count, for billing purposes, by going to ** System Console > Site Statistics**, under **Total Activated Users**.
 
 Do I need to pay for deactivated users?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-No. If you deactivate a user, that user is not counted as an active user during your annual renewal process. You can deactivate users manually via the System Console, and also via Active Directory/LDAP synchronization, the mmctl tool, and the server APIs.
+No. If you deactivate a user, that user is not counted as an activated user during your annual renewal process. You can deactivate users manually via the System Console, and also via Active Directory/LDAP synchronization, the mmctl tool, and the server APIs.
 
 If you choose to pull SQL reports from the database to monitor individual activity to make deactivation decisions, and you are running under high user load, we recommend the reports are pulled from a read replica of the database.
 
