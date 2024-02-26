@@ -15,6 +15,12 @@ Mattermost supports TLS encryption including AES-256 with 2048-bit RSA on all da
 
 Connections to Active Directory/LDAP can `optionally be secured with TLS or stunnel </configure/configuration-settings.html#ad-ldap-port>`__.
 
+Connections to calls are secured with a combination of:
+
+  - TLS: The existing WebSocket channel is used to secure the signaling path.
+  - DTLS v1.2 (mandatory): Used for initial key exchange. Supports ``TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256`` and ``TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA`` algorithms.
+  - SRTP (mandatory): Used to encrypt all media packets (i.e. those containing voice or screen share). Supports ``AEAD_AES_128_GCM`` and ``AES128_CM_HMAC_SHA1_80`` algorithms.
+
 Gossip encryption (experimental)
 --------------------------------
 

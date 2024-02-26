@@ -4,7 +4,9 @@ Self-hosted subscriptions
 Buy a subscription
 ------------------
 
-From Mattermost v7.7 you can buy a Mattermost subscription from within Mattermost:
+To purchase a commercial subscription for Mattermost Professional or Mattermost Enterprise please visit: https://mattermost.com/pricing/
+
+For Mattermost v7.7 and later you can also buy a Mattermost subscription from within Mattermost:
 
 1. In Mattermost, select **View Plans** in the global header or via **System Console > View plans**.
 2. Select **Upgrade**. A minimum of ten users is required.
