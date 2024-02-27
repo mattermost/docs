@@ -3,6 +3,8 @@ body {
   --color-highlight-on-target: rgb(255 212 112 / 32%);
   --primary: #1C58D9;
   --primary-rgb: 22, 88, 217;
+  --neutral-50: #F4F4F6;
+  --neutral-100: #E8E9ED;
   --denim-01: #C5D2EC;
   --denim-05: #1E325C;
   --black-01: #EBEBEF;
@@ -183,7 +185,10 @@ p .sig-inline, p code.literal {
   background: transparent;
 }
 
-body:not([data-theme=light]) .mm-badge img {
+body:not([data-theme=light]) .theme-icon {
+  filter: invert(100%);
+}
+body:not([data-theme=light]) .mm-badge .theme-icon {
   filter: invert(100%);
 }
 body:not([data-theme=light]) .admonition {
@@ -685,6 +690,16 @@ body:not([data-theme=light]) .c-thermometer-modal__footer .btn-primary {
   margin-right: 4px;
 }
 
+.mm-badge {
+  background: transparent;
+}
+.mm-badge.mm-badge--academy {
+  background-color: var(--neutral-50);
+  border: 1px solid var(--neutral-100);
+  text-decoration: none;
+  display: inline-flex;
+  padding-right: 24px;
+}
 .mm-badge.mm-badge--note {
   background-color: rgba(var(--primary-rgb), 0.08);
   border-color: var(--primary);

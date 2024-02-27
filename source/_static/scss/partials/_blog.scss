@@ -81,7 +81,11 @@ p .sig-inline, p code.literal {
 }
 
 body:not([data-theme="light"]) {
-    .mm-badge img {
+    .theme-icon {
+        @include img-invert;
+    }
+
+    .mm-badge .theme-icon {
         @include img-invert;
     }
 

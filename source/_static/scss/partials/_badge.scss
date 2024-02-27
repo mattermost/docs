@@ -25,6 +25,16 @@
 }
 
 .mm-badge {
+    background: transparent;
+
+    &.mm-badge--academy {
+        background-color: var(--neutral-50);
+        border: 1px solid var(--neutral-100);
+        text-decoration: none;
+        display: inline-flex;
+        padding-right: 24px;
+    }
+
     &.mm-badge--note {
         background-color: rgba(var(--primary-rgb), 0.08);
         border-color: var(--primary);

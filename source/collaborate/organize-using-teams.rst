@@ -6,6 +6,7 @@ Organize using teams
 
 .. |plus| image:: ../images/plus_F0415.svg
   :alt: The Plus icon provides access to channel and direct message functionality.
+  :class: theme-icon
 
 .. toctree::
    :maxdepth: 1
@@ -15,7 +16,7 @@ Organize using teams
    Team settings </collaborate/team-settings>
    Team keyboard shortcuts </collaborate/team-keyboard-shortcuts>
 
-A team is a digital workspace where you and your teammates can collaborate in Mattermost. Depending on how Mattermost is set up in your organization, you can belong to one team or multiple teams. 
+A team is a digital workspace where you and your teammates can collaborate in Mattermost. Depending on how Mattermost is set up in your organization, you can belong to one team or multiple teams.
 
 Users with the **Create Teams** permission can `create new teams <#create-a-team>`__ and `manage team settings </collaborate/team-settings.html>`__ for existing teams.
 
