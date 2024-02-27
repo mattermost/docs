@@ -33,7 +33,6 @@ body:not([data-theme=light]) .site-header {
 .sidebar-container {
   width: 272px;
   padding: 16px 0 0 16px;
-  overflow: hidden;
 }
 
 /* Theme Overrides */
@@ -704,28 +703,19 @@ body:not([data-theme=light]) .mm-badge.mm-badge--note img {
   filter: invert(0%);
 }
 
-body {
-  overflow: hidden;
-}
-body.with-notification #__toc:checked ~ .page .toc-drawer {
-  top: 115px;
-}
-body.with-notification .page {
+body.with-notification .toc-sticky, body.with-notification .main > .content, body.with-notification .sidebar-sticky {
   padding-top: 115px;
 }
 body.with-notification header {
   top: 45px;
 }
 
-.page {
-  height: 100%;
+.toc-sticky, .main > .content, .sidebar-sticky {
   padding-top: 75px;
-  overflow: hidden;
 }
+
 .page .main {
   display: flex;
-  height: 100%;
-  overflow: auto;
 }
 .page .main .content {
   width: auto;

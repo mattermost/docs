@@ -7,14 +7,8 @@
 @import "partials/_badge";
 
 body {
-    overflow: hidden;
-
     &.with-notification {
-        #__toc:checked ~ .page .toc-drawer {
-            top: 115px;
-        }
-
-        .page {
+        .toc-sticky, .main > .content, .sidebar-sticky {
             padding-top: 115px;
         }
 
@@ -24,15 +18,13 @@ body {
     }
 }
 
-.page {
-    height: 100%;
+.toc-sticky, .main > .content, .sidebar-sticky {
     padding-top: 75px;
-    overflow: hidden;
+}
 
+.page {
     .main {
         display: flex;
-        height: 100%;
-        overflow: auto;
 
         .content {
             width: auto;
