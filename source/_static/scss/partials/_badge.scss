@@ -4,13 +4,16 @@
     gap: 8px;
     font-size: 14px;
 
+    &.block {
+        display: block;
+    }
+
     p {
         border-radius: 4px;
         font-family: var(--font-trade);
         align-items: center;
         background: rgba(var(--primary-rgb), 0.08);
-        height: 28px;
-        padding: 0 10px;
+        padding: 5px 10px;
         display: flex;
         gap: 4px;
 
@@ -21,12 +24,31 @@
     }
 }
 
+.mm-badge {
+    &.mm-badge--note {
+        background-color: rgba(var(--primary-rgb), 0.08);
+        border-color: var(--primary);
+
+        img {
+            @include img-invert;
+        }
+    }
+}
+
 body:not([data-theme=light]) {
     .mm-plans-badge {
         p {
             background-color: rgba(255,255,255, 0.08);
             img {
                 @include img-invert;
+            }
+        }
+    }
+
+    .mm-badge {
+        &.mm-badge--note {
+            img {
+                filter: invert(0%);
             }
         }
     }

@@ -10,6 +10,10 @@ body {
     overflow: hidden;
 
     &.with-notification {
+        #__toc:checked ~ .page .toc-drawer {
+            top: 115px;
+        }
+
         .page {
             padding-top: 115px;
         }
@@ -26,8 +30,18 @@ body {
     overflow: hidden;
 
     .main {
+        display: flex;
         height: 100%;
         overflow: auto;
+
+        .content {
+            width: auto;
+            min-width: 0;
+        }
+
+        .toc-drawer {
+            flex: 0 0 300px;
+        }
     }
 }
 
@@ -72,6 +86,7 @@ a {
 
 .content-icon-container {
     margin-top: 48px;
+    align-items: center;
 }
 
 

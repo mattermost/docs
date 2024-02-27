@@ -5,7 +5,7 @@ Install Mattermost Server on Ubuntu
 
     <div class="mm-badge mm-badge--combo">
 
-    <div class="mm-badge__plan-deploy">
+    <div class="mm-plans-badge block">
       <p>
         <img src="../_static/images/badges/flag_icon.svg" alt="" />
         <span>Available on <a href="https://mattermost.com/pricing/">all plans</a></span>
@@ -41,7 +41,7 @@ You can install the Mattermost Server using our ``.deb`` signed packages using t
   If you are running the Mattermost Server and database on a single system, we recommend the `Mattermost Omnibus install method </install/installing-mattermost-omnibus.html>`__ as this greatly reduces setup and ongoing maintenance.
 
 .. note::
-  
+
   You need a PostgreSQL database. See the `database preparation </install/prepare-mattermost-database.html>`__ documentation for details on this prerequisite.
 
 A Mattermost deployment includes 4 steps: `add the PPA repository <#add-the-mattermost-server-ppa-repository>`__, `install <#install>`__, `setup <#setup>`__, and `update <#updates>`__.
@@ -75,7 +75,7 @@ Install
 Ahead of installing the Mattermost Server, it's good practice to update all your repositories and, where required, update existing packages by running the following command:
 
 .. code-block:: none
-  :class: mm-code-block 
+  :class: mm-code-block
 
     sudo apt update
 
@@ -104,18 +104,18 @@ You now have the latest Mattermost Server version installed on your system.
 The installation path is ``/opt/mattermost``. The package will have added a user and group named ``mattermost``. The required systemd unit file has also been created but will not be set to active.
 
 .. note::
-	
+
 	Since the signed package from the Mattermost repository is used for mulitple installation types, we don't add any dependencies in the systemd unit file. If you are installing the Mattermost server on the same system as your database, you may want to add both ``After=postgresql.service`` and ``BindsTo=postgresql.service`` to the ``[Unit]`` section of the systemd unit file.
 
 Setup
 -----
 
-Before you start the Mattermost Server, you need to edit the configuration file. A sample configuration file is located at ``/opt/mattermost/config/config.defaults.json``. 
+Before you start the Mattermost Server, you need to edit the configuration file. A sample configuration file is located at ``/opt/mattermost/config/config.defaults.json``.
 
 Rename this configuration file with correct permissions:
 
 .. code-block:: none
-  :class: mm-code-block 
+  :class: mm-code-block
 
   sudo install -C -m 600 -o mattermost -g mattermost /opt/mattermost/config/config.defaults.json /opt/mattermost/config/config.json
 
@@ -126,15 +126,15 @@ Configure the following properties in this file:
 * Set ``"SiteURL"``: The domain name for the Mattermost application (e.g. ``https://mattermost.example.com``).
 
 After modifying the ``config.json`` configuration file, you can now start the Mattermost Server:
-	
+
 .. code-block:: none
-  :class: mm-code-block 
+  :class: mm-code-block
 
   sudo systemctl start mattermost
 
 Verify that Mattermost is running: curl ``http://localhost:8065``. You should see the HTML that’s returned by the Mattermost Server.
 
-The final step, depending on your requirements, is to run ``sudo systemctl enable mattermost.service`` so that Mattermost will start on system boot. 
+The final step, depending on your requirements, is to run ``sudo systemctl enable mattermost.service`` so that Mattermost will start on system boot.
 
 Updates
 -------
@@ -142,7 +142,7 @@ Updates
 When a new Mattermost version is released, run: ``sudo apt update && sudo apt upgrade`` to download and update your Mattermost instance.
 
 .. note::
-	
+
 	When you run the ``sudo apt upgrade`` command, ``mattermost-server`` will be updated along with any other packages. We strongly recommend you stop the Mattermost Server before running the ``apt`` command using ``sudo systemctl stop mattermost-server``.
 
 Remove Mattermost
@@ -151,7 +151,7 @@ Remove Mattermost
 If you wish to remove the Mattermost Server for any reason, you can run this command:
 
 .. code-block:: none
-  :class: mm-code-block 
+  :class: mm-code-block
 
     sudo apt remove --purge mattermost
 

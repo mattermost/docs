@@ -3,6 +3,20 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 800;
 }
 
+p .sig-inline, p code.literal {
+    background-color: rgba(var(--primary-rgb), 0.10);
+    color: var(--primary);
+    border: none;
+}
+
+#__toc:checked~.page .toc-drawer {
+    top: 60px;
+}
+
+.toc-content-icon {
+    align-items: center;
+}
+
 .admonition {
     font-size: 16px;
     padding: 0 16px 12px 16px;

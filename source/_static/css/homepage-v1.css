@@ -116,6 +116,20 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 800;
 }
 
+p .sig-inline, p code.literal {
+  background-color: rgba(var(--primary-rgb), 0.1);
+  color: var(--primary);
+  border: none;
+}
+
+#__toc:checked ~ .page .toc-drawer {
+  top: 60px;
+}
+
+.toc-content-icon {
+  align-items: center;
+}
+
 .admonition {
   font-size: 16px;
   padding: 0 16px 12px 16px;
@@ -655,13 +669,15 @@ body:not([data-theme=light]) .c-thermometer-modal__footer .btn-primary {
   gap: 8px;
   font-size: 14px;
 }
+.mm-plans-badge.block {
+  display: block;
+}
 .mm-plans-badge p {
   border-radius: 4px;
   font-family: var(--font-trade);
   align-items: center;
   background: rgba(var(--primary-rgb), 0.08);
-  height: 28px;
-  padding: 0 10px;
+  padding: 5px 10px;
   display: flex;
   gap: 4px;
 }
@@ -670,15 +686,29 @@ body:not([data-theme=light]) .c-thermometer-modal__footer .btn-primary {
   margin-right: 4px;
 }
 
+.mm-badge.mm-badge--note {
+  background-color: rgba(var(--primary-rgb), 0.08);
+  border-color: var(--primary);
+}
+.mm-badge.mm-badge--note img {
+  filter: invert(100%);
+}
+
 body:not([data-theme=light]) .mm-plans-badge p {
   background-color: rgba(255, 255, 255, 0.08);
 }
 body:not([data-theme=light]) .mm-plans-badge p img {
   filter: invert(100%);
 }
+body:not([data-theme=light]) .mm-badge.mm-badge--note img {
+  filter: invert(0%);
+}
 
 body {
   overflow: hidden;
+}
+body.with-notification #__toc:checked ~ .page .toc-drawer {
+  top: 115px;
 }
 body.with-notification .page {
   padding-top: 115px;
@@ -693,8 +723,16 @@ body.with-notification header {
   overflow: hidden;
 }
 .page .main {
+  display: flex;
   height: 100%;
   overflow: auto;
+}
+.page .main .content {
+  width: auto;
+  min-width: 0;
+}
+.page .main .toc-drawer {
+  flex: 0 0 300px;
 }
 
 a {
@@ -734,6 +772,7 @@ a {
 }
 .content-icon-container {
   margin-top: 48px;
+  align-items: center;
 }
 
 .subhead {

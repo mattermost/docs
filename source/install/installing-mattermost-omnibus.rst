@@ -5,7 +5,7 @@ Install Mattermost Omnibus
 
   <div class="mm-badge mm-badge--combo">
 
-    <div class="mm-badge__plan-deploy">
+    <div class="mm-plans-badge block">
       <p>
         <img src="../_static/images/badges/flag_icon.svg" alt="" />
         <span>Available on <a href="https://mattermost.com/pricing/">all plans</a></span>
@@ -38,12 +38,12 @@ Install Mattermost Omnibus
 
  Omnibus supports Ubuntu distributions only.
 
-Mattermost Omnibus packages the free, unlicensed Mattermost Enterprise version of Mattermost, a PostgreSQL database, and when required, NGINX as the application proxy. A custom CLI (``mmomni``) and ansible recipes link the components together and configures them. Mattermost Omnibus is only supported on Ubuntu distributions. 
+Mattermost Omnibus packages the free, unlicensed Mattermost Enterprise version of Mattermost, a PostgreSQL database, and when required, NGINX as the application proxy. A custom CLI (``mmomni``) and ansible recipes link the components together and configures them. Mattermost Omnibus is only supported on Ubuntu distributions.
 
 Add the Mattermost PPA repositories
 -----------------------------------
 
-In a terminal window, run the following command 
+In a terminal window, run the following command
 
 .. raw:: html
 
@@ -107,11 +107,11 @@ Configure Mattermost Omnibus
 
   Plugin uploads, local mode, and HTTPS are enabled by default. These settings are modified in the ``yaml`` file as described below.
 
-With Mattermost Omnibus, the Mattermost ``config.json`` file isn't used because Omnibus stores configuration in the database. The Omnibus platform itself requires a configuration of its own stored in ``/etc/mattermost/mmomni.yml``. This file contains the data that Omnibus needs to configure the platform, and connect all the services together. 
+With Mattermost Omnibus, the Mattermost ``config.json`` file isn't used because Omnibus stores configuration in the database. The Omnibus platform itself requires a configuration of its own stored in ``/etc/mattermost/mmomni.yml``. This file contains the data that Omnibus needs to configure the platform, and connect all the services together.
 
 You’ll need to use ``mmctl`` to make changes to your Mattermost server configuration using ``mmctl --local config edit``. See the `mmctl </manage/mmctl-command-line-tool.html#mmctl-config-edit>`__ documentation for additional command details.
 
-For Omnibus to work properly, some configuration parameters must remain unchanged, such as the port that Mattermost uses to run. 
+For Omnibus to work properly, some configuration parameters must remain unchanged, such as the port that Mattermost uses to run.
 
 The following parameters must be configured directly using the ``mmomni.yml`` file:
 
@@ -153,7 +153,7 @@ Mattermost Omnibus is integrated with the apt package manager. When a new Matter
 .. note::
 
   When you run the ``sudo apt upgrade`` command, mattermost-server will be updated along with any other packages. Before running the ``apt`` command, we strongly recommend stopping the Mattermost server by running the command ``sudo systemctl stop mattermost-server``.
-	
+
 Backup and restore
 ------------------
 
@@ -162,14 +162,14 @@ The Mattermost Omnibus CLI tool ``mmomni`` is used for both backups and restores
 To back up the contents of your Mattermost server, run the following command:
 
 .. code-block:: sh
-  :class: mm-code-block 
+  :class: mm-code-block
 
   mmomni backup -o /tmp/mm_backup_datetime.tgz
 
 To restore the contents of your Mattermost server, run the following two commands:
 
 .. code-block:: sh
-  :class: mm-code-block 
+  :class: mm-code-block
 
   mmomni restore /tmp/mm_backup_datetime.tgz
   mmomni reconfigure
@@ -180,7 +180,7 @@ Remove Mattermost Omnibus
 If you want to remove Mattermost and Mattermost Omnibus completely for any reason, you can run the following command:
 
 .. code-block:: sh
-  :class: mm-code-block 
+  :class: mm-code-block
 
   sudo apt remove --purge mattermost mattermost-omnibus
 
@@ -206,9 +206,9 @@ How do I fix an EXPKEYSIG error on upgrades?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In the rare case that you encounter an ``EXPKEYSIG`` error when upgrading, this indicates that your certificate is expired. To obtain a new certificate, run the following commands:
-	
+
 .. code-block:: sh
-  :class: mm-code-block 
+  :class: mm-code-block
 
   sudo apt-key remove 44774B28
   sudo curl -o- https://deb.packages.mattermost.com/pubkey.gpg | sudo apt-key add -
