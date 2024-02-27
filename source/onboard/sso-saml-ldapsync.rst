@@ -6,7 +6,7 @@ Configure SAML synchronization with AD/LDAP
 In addition to configuring SAML sign-in, you can optionally configure synchronizing SAML accounts with AD/LDAP. When configured:
 
  - Mattermost queries AD/LDAP for relevant account information and updates SAML accounts based on changes to attributes (first name, last name, and nickname)
- - Accounts disabled in AD/LDAP are made inactive in Mattermost, and their active sessions are revoked once Mattermost synchronizes attributes.
+ - Accounts disabled in AD/LDAP are deactivated in Mattermost, and their active sessions are revoked once Mattermost synchronizes attributes.
 
 To configure SAML synchronization with AD/LDAP:
 
@@ -30,7 +30,7 @@ To re-activate the account:
 4. Purge all caches again in Mattermost by going to **System Console > Environment > Web Server**, then select **Purge All Caches** again. This re-activates the account in Mattermost.
 
   .. note::
-    If a user is deactivated from AD/LDAP, they will be deactivated in Mattermost on the next sync. They will be shown as "Inactive" in the System Console users list, all of their sessions will expire and they won't be able to log back in to Mattermost.
+    If a user is deactivated from AD/LDAP, they will be deactivated in Mattermost on the next sync. They will be shown as "Deactivated" in the System Console users list, all of their sessions will expire and they won't be able to log back in to Mattermost.
 
     If a user is deactivated from SAML, their session won't expire until they're deactivated from AD/LDAP. However, they won't be able to log back in to Mattermost.
 

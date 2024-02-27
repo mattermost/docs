@@ -2075,7 +2075,7 @@ If you upgrade from a release earlier than v6.6, please read the other [Importan
 
 #### Administration
  - To add the ability to toggle sending inactivity email notification to Admins, a configuration setting ``EmailSettings.EnableInactivityEmail`` was added.
- - To filter out inactive users in the System Console, an **Active** filter was added for users and Admins in **System Console > User Management > Users**.
+ - To filter out deactivated users in the System Console, an **Active** filter was added for users and Admins in **System Console > User Management > Users**.
  - Added a ``threadsOnly`` query parameter for getting user threads.
  - To allow Admins to add a new license without having to first remove the old one, a new “License" button was added to **System Console > Edition and License**.
 
@@ -5021,7 +5021,7 @@ If you upgrade from a release earlier than 5.25, please read the other [Importan
  - Added ability for Elasticsearch to search terms inside links.
  - Searching for a user with a leading "@" in the search term with Elasticsearch now returns results for those users.
  - Added ability to include filtering search/autocompletion by roles.
- - Added ability to search/autocomplete inactive users from Elasticsearch.
+ - Added ability to search/autocomplete deactivated users from Elasticsearch.
  - Added missing methods such as ``PermanenteDeleteByUser`` and ``PermanenteDeleteByChannel`` that update and/or delete entities in the searchlayer.
  - Implemented prefix/suffix search on Teams and Channel pages in System Console.
 

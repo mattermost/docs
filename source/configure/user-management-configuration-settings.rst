@@ -29,14 +29,14 @@ Getting people set up with a Mattermost account is typically something that syst
 - `Migrate user accounts </onboard/migrating-to-mattermost.html#migration-guide>`__ from other collaboration systems and `bulk load </onboard/bulk-loading-data.html>`__ that user data into Mattermost.
 - Connect an authentication service to assist with user provisioning, such as `AD/LDAP authentication </onboard/ad-ldap.html#active-directory-ldap-setup>`__ or `SAML authentication </onboard/sso-saml.html>`__.
 
-+---------------------------------------------------------------+-------------------------------------------------------------+
-| Manage active and inactive users, revoke all user sessions,   | - System Config path: **User Management > Users**           |
-| access individual users to view their User ID, add users      | - ``config.json setting``: N/A                              |
-| to other teams, and view the teams they are on and what       | - Environment variable: N/A                                 |
-| their role is on a team.                                      |                                                             |
-+---------------------------------------------------------------+-------------------------------------------------------------+
-| **Note**: You can search for users by partial first name, last name, nickname, or username.                                 |
-+---------------------------------------------------------------+-------------------------------------------------------------+
++----------------------------------------------------------------+-------------------------------------------------------------+
+| Manage activated and deactivated users, revoke all user        | - System Config path: **User Management > Users**           |
+| sessions, access individual users to view their User ID,       | - ``config.json setting``: N/A                              |
+| add users to other teams, and view the teams they are on,      | - Environment variable: N/A                                 |
+| and what their role is on a team.                              |                                                             |
++----------------------------------------------------------------+-------------------------------------------------------------+
+| **Note**: You can search for users by partial first name, last name, nickname, or username.                                  |
++----------------------------------------------------------------+-------------------------------------------------------------+
 
 Identify a User's ID
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -60,7 +60,7 @@ In a terminal window, use the following command to list all users and their IDs:
 Deactivate user accounts
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you need to remove a user from your Mattermost deployment, you can deactivate the user account. Deactivated users have an inactive status, are logged out of Mattermost as soon as they are deactivated, and deactivated users can no longer log back in. While a user account is deactivated, you can manage the user's role, password, and email address.
+If you need to remove a user from your Mattermost deployment, you can deactivate the user account. Deactivated users have an deactivated status, are logged out of Mattermost as soon as they are deactivated, and deactivated users can no longer log back in. While a user account is deactivated, you can manage the user's role, password, and email address.
 
 Deactivate a user account by selecting their role, then select **Deactivate**. You can re-activate that user account later by selecting **Activate**.
 
