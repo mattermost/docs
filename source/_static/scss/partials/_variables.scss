@@ -1,5 +1,15 @@
+/** Grid settings **/
+$main-sm-columns:		12;
+$xs-width:				360;
+$sm-width:				544;
+$md-width:				768;
+$lg-width:				992;
+$xl-width:				1200;
+$xls-width:				1600;
+$grid-gutter-width:		24;
+
 body {
-    --font-trade: 'trade-gothic-next', sans-serif;
+    --font-trade: "trade-gothic-next", "Lato", "Helvetica Neue", "Arial", sans-serif;
     --color-highlight-on-target: rgb(255 212 112 / 32%);
     --primary: #1C58D9;
     --primary-rgb: 22, 88, 217;
@@ -16,8 +26,4 @@ body:not([data-theme=light]) {
     --primary: #FFBC1F;
     --primary-rgb: 255, 188, 31;
     --color-highlight-on-target: rgb(255 212 112 / 32%);
-}
-
-@mixin img-invert {
-    filter: invert(100%);
 }

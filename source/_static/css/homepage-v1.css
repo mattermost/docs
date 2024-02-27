@@ -1,5 +1,6 @@
+/** Grid settings **/
 body {
-  --font-trade: "trade-gothic-next", sans-serif;
+  --font-trade: "trade-gothic-next", "Lato", "Helvetica Neue", "Arial", sans-serif;
   --color-highlight-on-target: rgb(255 212 112 / 32%);
   --primary: #1C58D9;
   --primary-rgb: 22, 88, 217;
@@ -16,6 +17,12 @@ body:not([data-theme=light]) {
   --primary: #FFBC1F;
   --primary-rgb: 255, 188, 31;
   --color-highlight-on-target: rgb(255 212 112 / 32%);
+}
+
+@media (max-width: 1350px) {
+  .site-header {
+    padding: 0 24px;
+  }
 }
 
 .site-header__col--logo {
@@ -40,7 +47,7 @@ body:not([data-theme=light]) .site-header {
 /* Theme Overrides */
 .sidebar-search-container {
   padding: 0 16px;
-  color: #3F4350A3;
+  color: rgba(63, 67, 80, 0.6392156863);
 }
 .sidebar-search-container:hover {
   background: transparent;
@@ -88,7 +95,7 @@ body:not([data-theme=light]) .site-header {
 }
 
 .sidebar-tree .toctree-l1 > .reference, .sidebar-tree .toctree-l1 > label .icon {
-  color: #363A45B8;
+  color: rgba(54, 58, 69, 0.7215686275);
 }
 
 body:not([data-theme=light]) .toc-tree li.scroll-current > .reference {
@@ -99,10 +106,10 @@ body:not([data-theme=light]) .sidebar-tree .current-page > a.current {
   background: rgba(255, 255, 255, 0.04);
 }
 body:not([data-theme=light]) .sidebar-tree .toctree-l1 > .reference, body:not([data-theme=light]) .sidebar-tree .toctree-l1 > label .icon {
-  color: #FFFFFFB8;
+  color: rgba(255, 255, 255, 0.7215686275);
 }
 body:not([data-theme=light]) .sidebar-search-container {
-  color: #FFFFFFA3;
+  color: rgba(255, 255, 255, 0.6392156863);
 }
 body:not([data-theme=light]) .site-header__col--logo {
   color: #fff;
@@ -254,7 +261,7 @@ body:not([data-theme=light]) .highlight pre, body:not([data-theme=light]) .mm-co
 
 .masthead {
   background-color: var(--denim);
-  font-family: "trade-gothic-next", "Lato", "Helvetica Neue", "Arial", sans-serif;
+  font-family: var(--font-trade);
   padding: 40px 30px 160px;
 }
 .masthead .container {
@@ -280,7 +287,7 @@ body:not([data-theme=light]) .highlight pre, body:not([data-theme=light]) .mm-co
 
 @media (min-width: 991.98px) {
   .masthead {
-    padding: 70px 70px 160px;
+    padding: 120px 70px 160px;
   }
 }
 .homepage-content {
@@ -315,15 +322,14 @@ body:not([data-theme=light]) .highlight pre, body:not([data-theme=light]) .mm-co
   font-size: 20px;
   font-style: normal;
   font-weight: 700;
-  line-height: 150%;
-  /* 30px */
-  font-family: "trade-gothic-next", "Lato", "Helvetica Neue", "Arial", sans-serif;
+  line-height: 150%; /* 30px */
   margin: 0 0 28px;
 }
 
 .masthead-cards {
   display: flex;
   gap: 20px;
+  font-family: var(--font-trade);
 }
 .masthead-cards + .masthead-h2 {
   margin-top: 32px;
@@ -374,6 +380,7 @@ body:not([data-theme=light]) .highlight pre, body:not([data-theme=light]) .mm-co
   font-size: inherit;
   margin: 0;
   padding: 0;
+  font-weight: 700;
 }
 .masthead-card__content p {
   font-weight: normal;
@@ -600,7 +607,7 @@ body:not([data-theme=light]) .c-thermometer-modal__footer .btn-primary {
 }
 
 .c-thermometer-modal__footer .btn-primary:hover, .c-thermometer-modal__footer .btn-primary:focus, .c-thermometer-modal__footer .btn-primary:active {
-  background: #135dbe;
+  background: rgb(19, 93, 190);
 }
 
 /* Thermometer Modal Ends */
@@ -656,11 +663,9 @@ body:not([data-theme=light]) .c-thermometer-modal__footer .btn-primary {
     justify-content: center;
     position: relative;
   }
-
   .c-thermometer__trigger {
     width: 270px;
   }
-
   .c-thermometer-popup {
     max-width: 100%;
     width: 100%;
@@ -785,8 +790,7 @@ a {
   font-size: 22px;
   font-style: normal;
   font-weight: 400;
-  line-height: 150%;
-  /* 33px */
+  line-height: 150%; /* 33px */
   margin-top: 0;
 }
 

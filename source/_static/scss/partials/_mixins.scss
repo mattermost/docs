@@ -1,0 +1,60 @@
+// Media Query Mixins
+@mixin max-xs { 
+	@media (max-width: #{$sm-width - 0.02 + px}) {
+		@content;
+	}
+}
+
+@mixin max-sm { 
+	@media (max-width: #{$md-width - 0.02 + px}) {
+		@content;
+	}
+}
+
+@mixin max-md { 
+	@media (max-width: #{$lg-width - 0.02 + px}) {
+		@content;
+	}
+}
+
+@mixin max-lg {
+	@media (max-width: #{$xl-width - 0.02 + px}) {
+		@content;
+	}
+}
+
+@mixin max-xl {
+	@media (max-width: #{$xls-width - 0.02 + px}) {
+		@content;
+	}
+}
+
+@mixin min-md {
+	@media (min-width: #{$md-width + px}) {
+		@content;
+	}
+}
+
+
+@mixin min-lg {
+	@media (min-width: #{$lg-width + px}) {
+		@content;
+	}
+}
+
+@mixin min-xl {
+	@media (min-width: #{$xl-width + px}) {
+		@content;
+	}
+}
+
+@mixin min-xls {
+	@media (min-width: #{$xls-width + px}) {
+		@content;
+	}
+}
+
+// Stylistic
+@mixin img-invert {
+    filter: invert(100%);
+}

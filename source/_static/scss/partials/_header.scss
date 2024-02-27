@@ -1,3 +1,9 @@
+.site-header {
+    @media (max-width:1350px) {
+    	padding: 0 24px;
+	}
+}
+
 .site-header__col--logo {
     color: #1B1D21;
 
