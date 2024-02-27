@@ -1,6 +1,8 @@
 body {
+  --font-trade: "trade-gothic-next", sans-serif;
   --color-highlight-on-target: rgb(255 212 112 / 32%);
   --primary: #1C58D9;
+  --primary-rgb: 22, 88, 217;
   --denim-01: #C5D2EC;
   --denim-05: #1E325C;
   --black-01: #EBEBEF;
@@ -10,6 +12,7 @@ body {
 
 body:not([data-theme=light]) {
   --primary: #FFBC1F;
+  --primary-rgb: 255, 188, 31;
   --color-highlight-on-target: rgb(255 212 112 / 32%);
 }
 
@@ -200,7 +203,7 @@ body:not([data-theme=light]) .highlight pre, body:not([data-theme=light]) .mm-co
 
 .mm-badge__title {
   color: var(--neutral-950, #363A45);
-  font-family: "trade-gothic-next", sans-serif;
+  font-family: var(--font-trade);
   font-size: 16px;
   font-style: normal;
   font-weight: 800;
@@ -393,7 +396,7 @@ body:not([data-theme=light]) .masthead-card__content .link {
   display: block;
   width: 270px;
   text-align: center;
-  float: right;
+  margin: 0 auto;
   font-size: 14px;
 }
 
@@ -646,6 +649,34 @@ body:not([data-theme=light]) .c-thermometer-modal__footer .btn-primary {
     top: 20px;
   }
 }
+.mm-plans-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+.mm-plans-badge p {
+  border-radius: 4px;
+  font-family: var(--font-trade);
+  align-items: center;
+  background: rgba(var(--primary-rgb), 0.08);
+  height: 28px;
+  padding: 0 10px;
+  display: flex;
+  gap: 4px;
+}
+.mm-plans-badge p img {
+  width: 16px;
+  margin-right: 4px;
+}
+
+body:not([data-theme=light]) .mm-plans-badge p {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+body:not([data-theme=light]) .mm-plans-badge p img {
+  filter: invert(100%);
+}
+
 body {
   overflow: hidden;
 }

@@ -1,0 +1,33 @@
+.mm-plans-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+
+    p {
+        border-radius: 4px;
+        font-family: var(--font-trade);
+        align-items: center;
+        background: rgba(var(--primary-rgb), 0.08);
+        height: 28px;
+        padding: 0 10px;
+        display: flex;
+        gap: 4px;
+
+        img {
+            width: 16px;
+            margin-right: 4px;
+        }
+    }
+}
+
+body:not([data-theme=light]) {
+    .mm-plans-badge {
+        p {
+            background-color: rgba(255,255,255, 0.08);
+            img {
+                @include img-invert;
+            }
+        }
+    }
+}

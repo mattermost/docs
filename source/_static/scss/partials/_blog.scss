@@ -68,7 +68,7 @@ h1, h2, h3, h4, h5, h6 {
 
 body:not([data-theme="light"]) {
     .mm-badge img {
-        filter: invert(100%);
+        @include img-invert;
     }
 
     .admonition {
@@ -106,7 +106,7 @@ body:not([data-theme="light"]) {
 
 .mm-badge__title {
     color: var(--neutral-950, #363A45);
-    font-family: 'trade-gothic-next', sans-serif;
+    font-family: var(--font-trade);
     font-size: 16px;
     font-style: normal;
     font-weight: 800;

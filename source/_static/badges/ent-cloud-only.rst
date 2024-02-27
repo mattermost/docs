@@ -3,7 +3,7 @@
 
 .. raw:: html
 
-  <div class="mm-badge">
+  <div class="mm-plans-badge">
 
 |plans-img| Available only on `Enterprise <https://mattermost.com/pricing/>`__ plans
 

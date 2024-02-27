@@ -3,7 +3,7 @@
 
 .. raw:: html
 
-  <div class="mm-badge">
+  <div class="mm-plans-badge">
 
 |deployment-img| `Cloud <https://customers.mattermost.com/cloud/signup/>`__ and `self-hosted <https://mattermost.com/deploy/>`__ deployments
 
