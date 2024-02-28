@@ -140,7 +140,7 @@ Much of the preparation work is focused on ensuring the environment is deployed 
 
   - (Optional) Set up configuration management via the database instead of a config file for high available environments
 
-   - Resource: https://docs.mattermost.com/configure/configuation-in-a-database.html
+   - Resource: https://docs.mattermost.com/configure/configuration-in-a-database.html
 
  - Install and configure File Storage
 
