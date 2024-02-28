@@ -10,7 +10,7 @@
 body {
     &.with-notification {
         .toc-sticky, .main > .content, .sidebar-sticky {
-            padding-top: 115px;
+            padding-top: 0px;
         }
 
         header {
