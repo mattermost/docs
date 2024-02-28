@@ -8,10 +8,6 @@ Thousands of organizations are moving to Mattermost for powerful, flexible, and 
 
 This guide summarizes different approaches to migrating to Mattermost from other tools, including `Slack </onboard/migrate-from-slack.html>`__, `HipChat </onboard/migrating-from-hipchat-to-mattermost.html>`__, `Jabber <#migrate-from-jabber>`__, `Pidgin <#migrate-from-pidgin>`__, `Bitnami <#migrate-from-bitnami>`__, and other `bespoke messaging solutions <#migrate-from-bespoke-messaging-solutions>`__, as well as `migrating Mattermost server <#migrate-mattermost-server>`__ to another server instance.
 
-.. contents:: On this page
-  :backlinks: top
-  :depth: 2
-
 Migrate from Slack
 ------------------
 

@@ -4,9 +4,6 @@ Mattermost logging
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-.. contents:: On this page
-    :depth: 2
-
 By default, all Mattermost editions write logs to both the console and to the ``mattermost.log`` file in a machine-readable JSON format.
 
 .. note::
@@ -165,90 +162,88 @@ Configuring advanced logging includes the following steps:
 Define advanced log output
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. tabs::
+.. tab:: Multi-line JSON
 
-    .. tab:: Multi-line JSON
+    In the example below, file output is written to ``./logs/audit.log`` in plain text and includes all audit log levels & events. Older logs are kept for 1 day, and up to a total of 10 backup log files are kept at a time. Logs are rotated using gzip when the maximum size of the log file reaches 500 MB. A maximum of 1000 audit records can be queued/buffered while writing to the file.
 
-        In the example below, file output is written to ``./logs/audit.log`` in plain text and includes all audit log levels & events. Older logs are kept for 1 day, and up to a total of 10 backup log files are kept at a time. Logs are rotated using gzip when the maximum size of the log file reaches 500 MB. A maximum of 1000 audit records can be queued/buffered while writing to the file.
+    .. code-block:: JSON
 
-        .. code-block:: JSON
-
-            "AdvancedLoggingJSON": {
-                "file_1": {
-                    "Type": "file",
-                    "Format": "plain",
-                    "Levels": [
-                    { "id": 100, "name": "audit-api" },
-                    { "id": 101, "name": "audit-content" },
-                    { "id": 102, "name": "audit-permissions" },
-                    { "id": 103, "name": "audit-cli" }
-                    ],
-                    "Options": {
-                        "Compress": true,
-                        "Filename": "./logs/audit.log",
-                        "MaxAgeDays": 1,
-                        "MaxBackups": 10,
-                        "MaxSizeMB": 500
-                    },
-                    "MaxQueueSize": 1000
-                }
+        "AdvancedLoggingJSON": {
+            "file_1": {
+                "Type": "file",
+                "Format": "plain",
+                "Levels": [
+                { "id": 100, "name": "audit-api" },
+                { "id": 101, "name": "audit-content" },
+                { "id": 102, "name": "audit-permissions" },
+                { "id": 103, "name": "audit-cli" }
+                ],
+                "Options": {
+                    "Compress": true,
+                    "Filename": "./logs/audit.log",
+                    "MaxAgeDays": 1,
+                    "MaxBackups": 10,
+                    "MaxSizeMB": 500
+                },
+                    MaxQueueSize": 1000
             }
+        }
 
-    .. tab:: Filespec
+.. tab:: Filespec
 
-        Advanced logging configuration can be pointed to a filespec to another configuration file, rather than multi-line JSON, to keep the config.json file tidy:
+    Advanced logging configuration can be pointed to a filespec to another configuration file, rather than multi-line JSON, to keep the config.json file tidy:
 
-        .. code:: JSON
+    .. code:: JSON
 
-            "AdvancedLoggingJSON": "/path/to/audit_log_config.json"
+        "AdvancedLoggingJSON": "/path/to/audit_log_config.json"
 
-        The separate configuration file includes the multi-line JSON instead.
+    The separate configuration file includes the multi-line JSON instead.
 
-        In the example below, the first output is written to the console in plain text and includes all audit log levels, events, and command outputs. A pipe ``|`` delimiter is placed between fields. 
+    In the example below, the first output is written to the console in plain text and includes all audit log levels, events, and command outputs. A pipe ``|`` delimiter is placed between fields. 
 
-        A second output is written to ``./logs/audit.log`` in plain text in a machine-readable JSON format and includes all audit log levels, events, and command outputs. Older logs are kept for 1 day, and up to a total of 10 backup log files are kept at a time. Logs are rotated using GZIP when the maximum size of the log file reaches 500 MB. A maximum of 1000 audit records can be queued/buffered while writing to the file.
+    A second output is written to ``./logs/audit.log`` in plain text in a machine-readable JSON format and includes all audit log levels, events, and command outputs. Older logs are kept for 1 day, and up to a total of 10 backup log files are kept at a time. Logs are rotated using GZIP when the maximum size of the log file reaches 500 MB. A maximum of 1000 audit records can be queued/buffered while writing to the file.
 
-        Contents of ``audit_log_config.json`` file:
+    Contents of ``audit_log_config.json`` file:
 
-        .. code-block:: JSON
+    .. code-block:: JSON
 
-            {
-            "sample-console": {
-                "type": "console",
-                "format": "plain",
-                "format_options": {
+        {
+        "sample-console": {
+            "type": "console",
+            "format": "plain",
+            "format_options": {
                     "delim": " | "
-                },
-                "levels": [
-                { "id": 100, "name": "audit-api" },
-                { "id": 101, "name": "audit-content" },
-                { "id": 102, "name": "audit-permissions" },
-                { "id": 103, "name": "audit-cli" }
-                ],
-                "options": {
-                "out": "stdout"
-                },
-                "maxqueuesize": 1000
             },
-            "sample-file": {
-                "type": "file",
-                "format": "json",
-                "levels": [
-                { "id": 100, "name": "audit-api" },
-                { "id": 101, "name": "audit-content" },
-                { "id": 102, "name": "audit-permissions" },
-                { "id": 103, "name": "audit-cli" }
-                ],
-                "options": {
-                "compress": true,
-                "filename": "./logs/audit.log",
-                "max_age": 1,
-                "max_backups": 10,
-                "max_size": 500
-                },
-                "maxqueuesize": 1000
-            }
-            }
+            "levels": [
+            { "id": 100, "name": "audit-api" },
+            { "id": 101, "name": "audit-content" },
+            { "id": 102, "name": "audit-permissions" },
+            { "id": 103, "name": "audit-cli" }
+            ],
+            "options": {
+            "out": "stdout"
+            },
+            "maxqueuesize": 1000
+        },
+        "sample-file": {
+            "type": "file",
+            "format": "json",
+            "levels": [
+            { "id": 100, "name": "audit-api" },
+            { "id": 101, "name": "audit-content" },
+            { "id": 102, "name": "audit-permissions" },
+            { "id": 103, "name": "audit-cli" }
+            ],
+            "options": {
+            "compress": true,
+            "filename": "./logs/audit.log",
+            "max_age": 1,
+            "max_backups": 10,
+            "max_size": 500
+            },
+            "maxqueuesize": 1000
+        }
+        }
 
 Specify destination targets
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~

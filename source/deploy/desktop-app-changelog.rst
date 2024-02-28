@@ -3,9 +3,6 @@ Desktop application changelog
 
 This changelog summarizes updates to Mattermost desktop app releases for `Mattermost <https://mattermost.com>`__.
 
-.. contents:: On this page
-    :backlinks: top
-    :depth: 2
 Release v5.6
 --------------
 

@@ -3,10 +3,6 @@ Removed and deprecated features for Mattermost
 
 This page describes features that are removed from support for Mattermost, or will be removed in a future update (deprecated), and provides early notice about future changes that might affect your use of Mattermost. This information is subject to change with future releases, and might not include each deprecated feature.
 
-.. contents:: On this page
-    :backlinks: top
-    :depth: 3
-
 Removed features in upcoming versions
 -------------------------------------
 

@@ -6,10 +6,6 @@ Install the Mattermost for Microsoft Teams plugin
 .. include:: ../_static/badges/ent-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-.. contents:: On this page
-    :backlinks: top
-    :depth: 3
-
 .. tip::
 
   Looking to `embed Mattermost within Microsoft Teams </about/embed-mattermost-within-microsoft-teams.html>`__ instead?

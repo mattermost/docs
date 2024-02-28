@@ -15,19 +15,6 @@ Mattermost Enterprise customers can also `record calls <#record-a-call>`__ and `
 
   Mattermost Cloud users can start calling right out of the box. For Mattermost self-hosted deployments, System admins need to enable and configure the plugin `using the System Console </configure/plugins-configuration-settings.html#calls>`__.
 
-On this page:
-
-- `Join a call <#join-a-call>`__
-- `Start a call <#start-a-call>`__
-- `Share your screen <#share-screen>`__
-- `React using emojis <#emojis>`__
-- `Chat in a call <#chat-in-a-call>`__
-- `Record a call <#record-a-call>`__
-- `Transcribe a recorded call <#transcribe-recorded-calls>`__
-- `Frequently asked questions <#frequently-asked-questions>`__
-- `Troubleshooting <#troubleshooting>`__
-- `Debugging <#debugging>`__
-
 Join a call
 -----------
 
@@ -46,24 +33,22 @@ From Mattermost v9.4:
 Start a call
 ------------
 
-.. tabs::
+.. tab:: Web/Desktop
 
-  .. tab:: Web/Desktop
-
-    To start a call, select **Start call** in the channel header. When you start a call in a channel, you're muted by default. In a direct or group message you're unmuted by default.
+  To start a call, select **Start call** in the channel header. When you start a call in a channel, you're muted by default. In a direct or group message you're unmuted by default.
     
-    .. tip::
+  .. tip::
       
-      - You can move the call widget to a different area of your screen.
-      - Alternatively, you can start a call using the ``/call start`` slash command.
+    - You can move the call widget to a different area of your screen.
+    - Alternatively, you can start a call using the ``/call start`` slash command.
 
-  .. tab:: Mobile
+.. tab:: Mobile
     
-    To start a call, go the channel info menu. Then tap **Start Call**.
+  To start a call, go the channel info menu. Then tap **Start Call**.
      
-    After starting the call, audio will come through the device's speaker or a Bluetooth device, if connected. On Android, audio output will automatically switch to a Bluetooth device if one is connected during a call. You can tap the **Speaker** icon to manually select the output device.
+  After starting the call, audio will come through the device's speaker or a Bluetooth device, if connected. On Android, audio output will automatically switch to a Bluetooth device if one is connected during a call. You can tap the **Speaker** icon to manually select the output device.
 
-    On iOS, audio will automatically come through a connected device. You can override this behavior by tapping the **Speaker** button. Audio will then come through the speaker. However, you cannot manually select an output device on iOS at this time.
+  On iOS, audio will automatically come through a connected device. You can override this behavior by tapping the **Speaker** button. Audio will then come through the speaker. However, you cannot manually select an output device on iOS at this time.
 
 Share your screen
 -----------------
@@ -85,31 +70,27 @@ React using emojis
 
 You can use emojis to react during a call.
 
-.. tabs::
+.. tab:: Web/Desktop
 
-  .. tab:: Web/Desktop
+  Expand the call window using the arrows in the top-right of the call widget. From there, select the emoji icon to access frequently-used emojis or select additional emojis from the emoji picker.
 
-    Expand the call window using the arrows in the top-right of the call widget. From there, select the emoji icon to access frequently-used emojis or select additional emojis from the emoji picker.
-
-  .. tab:: Mobile
+.. tab:: Mobile
   
-    Expand the call window using the arrows in the top-right of the active call banner. From there, select **React**.
-      
+  Expand the call window using the arrows in the top-right of the active call banner. From there, select **React**.
+
 Chat in a call
 --------------
 
 A chat thread is created automatically for every new call.
 
-.. tabs::
+.. tab:: Web/Desktop
 
-  .. tab:: Web/Desktop
+  To do this, expand the call window using the arrows in the top-right of the call widget. From there, select the emoji icon to access frequently-used emojis or select additional emojis from the emoji picker.
 
-    To do this, expand the call window using the arrows in the top-right of the call widget. From there, select the emoji icon to access frequently-used emojis or select additional emojis from the emoji picker.
-
-  .. tab:: Mobile
+.. tab:: Mobile
   
-    To do this, expand the call window using the arrows in the top-right of the active call banner. Then select **More > Call Thread**.
-    
+  To do this, expand the call window using the arrows in the top-right of the active call banner. Then select **More > Call Thread**.
+
 Record a call
 -------------
 
@@ -124,18 +105,16 @@ When you stop recording, the recording file is posted in the call thread as an M
 
 To record a call:
 
-.. tabs::
+.. tab:: Web/Desktop
 
-  .. tab:: Web/Desktop
+  1. Select **Start call** in the header of the channel, group message, or direct message.
+  2. Select the pop-out icon.
+  3. In the call widget, select the **Record** button.
+  4. To stop recording, select the **Record** button again.
 
-    1. Select **Start call** in the header of the channel, group message, or direct message.
-    2. Select the pop-out icon.
-    3. In the call widget, select the **Record** button.
-    4. To stop recording, select the **Record** button again.
-
-  .. tab:: Mobile
+.. tab:: Mobile
   
-    To start recording, use the ``/call recording start`` slash command. When you're finished recording, use the ``/call recording stop`` slash command. Alternatively, expand the call window using the arrows in the top-right of the active call banner. Then select the **Record** button. To finish, select the **Record** button again.
+  To start recording, use the ``/call recording start`` slash command. When you're finished recording, use the ``/call recording stop`` slash command. Alternatively, expand the call window using the arrows in the top-right of the active call banner. Then select the **Record** button. To finish, select the **Record** button again.
 
 Transcribe recorded calls
 --------------------------
