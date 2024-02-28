@@ -117,6 +117,10 @@
     z-index: 9999;
 }
 
+.notification-bar a {
+    text-decoration: none;
+}
+
 @media (max-width: 770px) {
     .notification-bar {
         text-align: left;

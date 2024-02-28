@@ -25,7 +25,7 @@ $(document).ready(function () {
 
 	// Fallback for when a notification CTA expires - ie. webinar happens
 	const dateInFuture = (value) => new Date().getTime() <= new Date(value).getTime();
-    const expiryDate = '2024-11-01T00:00:00-0500';
+    const expiryDate = '2023-11-01T00:00:00-0500';
     // 2023-11-01 @ 12am EST
     const fallback_url = 'https://mattermost.com/solutions/mattermost-for-microsoft-teams/';
     const fallback_text = 'Learn more about Mattermost for Microsoft Teams »';

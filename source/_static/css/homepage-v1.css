@@ -289,6 +289,9 @@ body:not([data-theme=light]) .highlight pre, body:not([data-theme=light]) .mm-co
   .masthead {
     padding: 120px 70px 160px;
   }
+  body.with-notification .masthead {
+    padding: 60px 70px 160px;
+  }
 }
 .homepage-content {
   padding: 0 70px;
@@ -724,7 +727,7 @@ body:not([data-theme=light]) .mm-badge.mm-badge--note img {
 }
 
 body.with-notification .toc-sticky, body.with-notification .main > .content, body.with-notification .sidebar-sticky {
-  padding-top: 115px;
+  padding-top: 0px;
 }
 body.with-notification header {
   top: 45px;
