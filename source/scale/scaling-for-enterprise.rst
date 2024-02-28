@@ -28,7 +28,7 @@ The following reference architectures are available as recommended starting poin
 - `Up to 79000 users </scale/scale-to-79000-users.rst>`__
 - `Up to 88000 users </scale/scale-to-88000-users.rst>`__
 
-Load Testing
+Testing methodology and updates
 ------------
 
 [Neil] Lay out what we did in testing these archs (specifically which version of MM was used in the tests, when we plan to publish updated lists etc). 
