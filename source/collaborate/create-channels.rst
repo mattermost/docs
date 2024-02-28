@@ -12,16 +12,14 @@ Anyone can create public channels, private channels, direct messages, and group 
 
 .. tab:: Web/Desktop
 
-  **To create a public or private channel** 
+  **To create a public or private channel**
 
-  1. Select the **Add channels** button in the channel sidebar, then select **Create New Channel**.
+  1. Select the **Add channels** button in the channel sidebar, then select **Create New Channel**. Alternatively, you can select |plus-icon| at the top of the channel sidebar, then select **Create New Channel**.
 
     .. image:: ../images/add-channels-button.png
-        :alt: You can create a channel using the Add channels button
-        :width: 400
+      :alt: You can create a channel using the Add channels button
+      :width: 400
 
-   Alternatively, you can select |plus-icon| at the top of the channel sidebar, then select **Create New Channel**.
-  
   2. Enter a channel name.
   3. Choose whether this is a public or private channel. See the `channel types </collaborate/channel-types.html>`__ documentation to learn more about public and private channels.
   4. (Optional) Describe the channel's focus or purpose. This text is visible to all channel members in the channel header.
@@ -52,9 +50,8 @@ Anyone can create public channels, private channels, direct messages, and group 
 
   Tap |plus-icon| in the top right corner of the app, then select **Open a Direct Message**. You can select one person for a direct message or up to seven people for a group message. Tap **Start** to start the conversation.
 
-.. tip::
-
-**Automate with channel actions**
+Automate with channel actions
+-----------------------------
 
 The person who creates a channel automatically becomes the channel admin. Channel admins using Mattermost in a web browser or the desktop app can access **Channel Actions** from the channel name drop-down menu in the center pane to set up automatic actions when users `join the channel </collaborate/join-leave-channels.html#join-a-channel>`__ or `post a message </collaborate/send-messages.html>`__ to the channel.
 

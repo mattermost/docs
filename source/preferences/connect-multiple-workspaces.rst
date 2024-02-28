@@ -32,7 +32,7 @@ Using the Mattermost desktop or mobile app, you can connect to multiple Mattermo
   2. Enter the server URL. Server URLs must begin with either ``http://`` or ``https://``.
   3. Enter the server's Display Name.
 
-      .. tip::
+    .. tip::
 
       Can't find your Mattermost server URL? Ask your company’s IT department or your Mattermost system admin for your organization’s **Mattermost Site URL**. It’ll look something like ``https://example.com/company/mattermost``, ``mattermost.yourcompanydomain.com``, or ``chat.yourcompanydomain.com``. These URLs could also end in ``.net``.
 

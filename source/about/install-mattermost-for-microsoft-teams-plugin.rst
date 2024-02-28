@@ -152,7 +152,7 @@ Get started with the plugin
 See our `collaborate using the Microsoft Teams plugin </collaborate/collaborate-using-mattermost-for-microsoft-teams>`__ documentation for details on how to collaborate across both Mattermost and Microsoft Teams at the same time.
 
 Trobleshooting FAQ
---------------
+------------------
 
 **Can I connect my Mattermost account to a Microsoft Teams account of a different email address?**
 

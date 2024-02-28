@@ -4,6 +4,14 @@ Channel types
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
+.. |globe-icon| image:: ../images/globe_E805.svg
+   :alt: A globe icon indicates a public channel.
+   :class: theme-icon
+
+.. |lock-icon| image:: ../images/lock-outline_F0341.svg
+   :alt: A lock icon indicates a private channel.
+   :class: theme-icon
+
 Channels are used to organize conversations across different topics. Find available channels in the left-hand panel. There are four types of channels: public channels, private channels, direct messages, and group messages. 
 
 Sending messages, replying to messages, and participating in conversation threads are important ways to keep conversations active with your team. See the following topics to learn more about working with channels.
@@ -13,20 +21,12 @@ Public channels
 
 Public channels are open to everyone on a team and are identified with a **Globe** |globe-icon| icon. New team members are automatically added to two public channels when they sign up: **Town Square** and **Off-Topic**. See the :doc:`Join and leave channels </collaborate/join-leave-channels>` documentation for details on discovering and joining other channels.
 
-.. |globe-icon| image:: ../images/globe_E805.svg
-   :alt: A globe icon indicates a public channel.
-   :class: theme-icon
-
 Private channels
 ----------------
 
 Private channels are for sensitive topics and are only visible to selected team members. Private channels are identified with a **Lock** |lock-icon| icon. In Team Edition, any member of a private channel can add or remove other members from private channels, but in other Mattermost versions these permissions can be restricted to the Channel Admins and System Admins.
 
 Channel members can choose to leave private channels at any time.
-
-.. |lock-icon| image:: ../images/lock_F033E.svg
-   :alt: A lock icon indicates a private channel.
-   :class: theme-icon
 
 Direct messages
 ---------------
