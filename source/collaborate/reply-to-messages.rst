@@ -10,6 +10,7 @@ Reply to messages
 
   .. |reply-arrow| image:: ../images/reply-outline_F0F20.svg
     :alt: Reply icon.
+    :class: theme-icon
 
   .. image:: ../images/reply-to-message.png
     :alt: Reply to Mattermost messages

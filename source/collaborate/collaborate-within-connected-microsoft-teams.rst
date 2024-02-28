@@ -6,6 +6,7 @@ Collaborate within Microsoft Teams
 
 .. |plus-icon| image:: ../images/plus_F0415.svg
   :alt: Open menus using the plus icon.
+  :class: theme-icon
 
 The `Mattermost for Microsoft Teams plugin </about/mattermost-for-microsoft-teams.html>`__ integration enables you to collaborate with Microsoft Teams users without leaving Mattermost.
 

@@ -6,6 +6,7 @@ Customize your Desktop App experience
 
 .. |more-icon-vertical| image:: ../images/dots-vertical_F01D9.svg
   :alt: Use the More icon in the top left corner to access Mattermost Desktop Apps customization settings.
+  :class: theme-icon
 
 Additional customization options are available to you when using the Mattermost desktop app.
 

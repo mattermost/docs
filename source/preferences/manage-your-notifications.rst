@@ -6,12 +6,15 @@ Manage your notifications
 
 .. |gear| image:: ../images/settings-outline_F08BB.svg
   :alt: Use the Settings icon to customize your Mattermost user experience.
+  :class: theme-icon
 
 .. |channel-info| image:: ../images/information-outline_F02FD.svg
   :alt: Use the Channel Info icon to access additional channel management options.
+  :class: theme-icon
 
 .. |more-icon| image:: ../images/dots-horizontal_F01D8.svg
   :alt: Use the More icon to access additional message options.
+  :class: theme-icon
 
 .. |dot-badge| image:: ../images/dot-badge.png
   :alt: A dot on the badge means you have unread activity in at least one channel you're a member of.

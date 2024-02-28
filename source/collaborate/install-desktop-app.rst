@@ -6,6 +6,7 @@ Install the Mattermost desktop app
 
 .. |more-icon-vertical| image:: ../images/dots-vertical_F01D9.svg
   :alt: Use the More icon in the top left corner to access Mattermost desktop apps customization settings.
+  :class: theme-icon
 
 The Mattermost desktop app is available for Linux, Mac, and Windows operating systems. The Desktop App supports all the features of the web experience, plus the following features:
 

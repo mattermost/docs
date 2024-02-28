@@ -8,9 +8,11 @@ Manage channel members
 
 .. |channel-info| image:: ../images/information-outline_F02FD.svg
   :alt: Use the Channel Info icon to access additional channel management options.
+  :class: theme-icon
 
 .. |options-icon| image:: ../images/dots-horizontal_F01D8.svg
   :alt: Access additional message actions using the More actions icon.
+  :class: theme-icon
 
 Add members to a channel
 ------------------------

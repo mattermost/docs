@@ -6,15 +6,19 @@ Search for messages
 
 .. |product-list| image:: ../images/products_E82F.svg
   :alt: Navigate between Channels and Playbooks using the product menu icon.
+  :class: theme-icon
 
 .. |search-icon| image:: ../images/magnify_F0349.svg
   :alt: Navigate between Channels and Playbooks using the product menu icon.
+  :class: theme-icon
   
 .. |channel-info| image:: ../images/information-outline_F02FD.svg
   :alt: Use the Channel Info icon to access additional channel management options.
+  :class: theme-icon
 
 .. |channel-files-icon| image:: ../images/file-text-outline_F09EE.svg
   :alt: Use the Channel Files icon to search for files attached to messages in a given channel.
+  :class: theme-icon
 
 Use Mattermost search to find messages, replies, and the contents of files shared across all channels you're a member of in your team's conversation history. You can also search by `hashtags <#hashtags>`__ or perform more advanced searches using `search modifiers <#search-modifiers>`__.
 

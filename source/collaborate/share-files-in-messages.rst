@@ -4,17 +4,21 @@ Share files in messages
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-.. |attachment-icon| image:: ../images/attachment-icon.png
+.. |attachment-icon| image:: ../images/paperclip_F03E2.svg
   :alt: Use the Attachment icon to share files with messages.
+  :class: theme-icon
 
 .. |download-icon| image:: ../images/download-outline_F0B8F.svg
   :alt: Use the Download icon to download an attached file to your local system.
+  :class: theme-icon
 
 .. |desktop-download-icon| image:: ../images/arrow-down-bold-circle-outline_F0048.svg
   :alt: Use the desktop app download icon to review download status, as well as access and clear the list of downloaded files.
+  :class: theme-icon
 
 .. |channel-files-icon| image:: ../images/channel-files-icon.svg
   :alt: Use the Channel files icon to access all files shared in the current channel.
+  :class: theme-icon
 
 With file attachments, you can share additional information that helps your team to visually understand your ideas. Sharing videos, voice recordings, screenshots, and photos can make your messages more effective and clear.
 

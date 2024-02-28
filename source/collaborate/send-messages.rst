@@ -6,15 +6,19 @@ Send messages
 
 .. |gear-icon| image:: ../images/settings-outline_F08BB.svg
   :alt: Select the Gear icon to open the Settings dialog.
+  :class: theme-icon
 
 .. |more-icon| image:: ../images/dots-horizontal_F01D8.svg
   :alt: Select the More icon to access additional message actions.
+  :class: theme-icon
 
 .. |send-icon| image:: ../images/send_F048A.svg
   :alt: Select the Send icon to post your message.
+  :class: theme-icon
 
-.. |smile-icon| image:: ../images/smile-icon.png
+.. |smile-icon| image:: ../images/emoticon-plus-outline_E80F.svg
   :alt: Use the Smile icon to add emojis to your message.
+  :class: theme-icon
 
 Enter a message in the text field, then select **Send** |send-icon| to send the message. You can include images and file attachments to your messages by:
 
@@ -24,7 +28,7 @@ Enter a message in the text field, then select **Send** |send-icon| to send the 
 
 .. |attachment| image:: ../images/paperclip_F03E2.svg
   :alt: Use the Attachment icon to add images or files to your messages.
-
+  :class: theme-icon
 
 Compose a message by typing into the text box at the bottom of the Mattermost screen, then select the **Send** |send-icon| icon.
 

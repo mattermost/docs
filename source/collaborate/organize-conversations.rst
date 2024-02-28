@@ -5,9 +5,8 @@ Organize conversations using Collapsed Reply Threads
   :start-after: :nosearch:
 
 .. |more-actions-icon| image:: ../images/dots-horizontal_F01D8.svg
-  :height: 24px
-  :width: 24px
   :alt: Access additional message actions using the More Actions icon.
+  :class: theme-icon
 
 Threads are a key part of the messaging experience in Mattermost. They're used to organize conversations and enable users to discuss topics without adding noise to channels or direct messages.
 

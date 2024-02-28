@@ -6,12 +6,19 @@ Join and leave channels
 
 .. |more-icon| image:: ../images/dots-horizontal_F01D8.svg
   :alt: Use the More icon to access additional message options.
+  :class: theme-icon
 
 .. |globe| image:: ../images/globe_E805.svg
   :alt: Public channels are identified with a Globe icon.
+  :class: theme-icon
 
 .. |lock| image:: ../images/lock-outline_F0341.svg
   :alt: Private channels are identified with a Lock icon.
+  :class: theme-icon
+
+.. |plus| image:: ../images/plus_F0415.svg
+  :alt: The Plus icon provides access to channel and direct message functionality.
+  :class: theme-icon
 
 Join a channel
 --------------
@@ -35,7 +42,7 @@ To join a public channel:
       :alt: You can browse channels using the Add channels button
       :width: 400
   
-  You can also select the **+** symbol at the top of the channel sidebar, then select **Browse Channels**. 
+   Alternatively, you can select |plus| at the top of the channel sidebar, then select **Browse Channels**. 
 
     .. image:: ../images/browse-channels.png
       :alt: You can browse available channels to join using the + option at the top of the channel sidebar.
@@ -47,7 +54,7 @@ To join a public channel:
 
 .. tab:: Mobile
 
-  1. Tap the **+** symbol located in the top right corner the app.
+  1. Tap |plus| located in the top right corner the app.
   2. Tap **Browse Channels**. 
   3. Tap the public channel you want to join.
 

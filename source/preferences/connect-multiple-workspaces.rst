@@ -6,6 +6,7 @@ Connect to multiple Mattermost workspaces
 
 .. |servers-icon| image:: ../images/server-variant_E81F.svg
   :alt: Access server connection options using the Servers icon.
+  :class: theme-icon
 
 Using the Mattermost desktop or mobile app, you can connect to multiple Mattermost instances from a single interface. 
 

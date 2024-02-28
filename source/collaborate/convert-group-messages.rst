@@ -6,6 +6,7 @@ Convert group messages to private channels
 
 .. |more-icon| image:: ../images/dots-horizontal_F01D8.svg
     :alt: Use the More icon to access additional message options.
+    :class: theme-icon
 
 From Mattermost v9.1, you can change the members of your group conversation by converting the group message to a private channel. When a group message is converted to private, its history and membership are preserved. Membership in a private channel remains as invitation only.
 

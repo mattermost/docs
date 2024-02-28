@@ -6,12 +6,15 @@ Share links to channels and messages
 
 .. |copy-link-icon| image:: ../images/link-variant_F0339.svg
   :alt: Use the Copy Link icon to copy the public URL link for an image in a message.
+  :class: theme-icon
 
 .. |more-icon| image:: ../images/dots-horizontal_F01D8.svg
   :alt: Use the More icon to access additional message options.
+  :class: theme-icon
 
 .. |channel-info| image:: ../images/information-outline_F02FD.svg
   :alt: Use the Channel Info icon to access additional channel management options.
+  :class: theme-icon
 
 You can share links to Mattermost `channels <#share-channel-links>`__ and `messages <#share-message-links>`__ with other Mattermost users. 
 

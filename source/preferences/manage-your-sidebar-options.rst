@@ -6,6 +6,7 @@ Manage your sidebar options
 
 .. |gear-icon| image:: ../images/settings-outline_F08BB.svg
   :alt: Access settings using the gear icon.
+  :class: theme-icon
 
 To customize Mattermost channel sidebar options based on your preferences, select the gear icon |gear-icon| next to your profile picture, then go to **Sidebar**. 
 

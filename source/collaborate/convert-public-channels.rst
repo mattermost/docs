@@ -6,6 +6,7 @@ Convert public channels to private channels
 
 .. |more-icon| image:: ../images/dots-horizontal_F01D8.svg
     :alt: Use the More icon to access additional message options.
+    :class: theme-icon
 
 You must be a system admin or team admin to convert public channels to private channels. When a channel is converted from public to private, its history and membership are preserved. Membership in a private channel remains as invitation only. Publicly-shared files remain accessible to anyone with the link.
 

@@ -6,12 +6,15 @@ Mark channels as favorites
 
 .. |more-icon| image:: ../images/dots-horizontal_F01D8.svg
     :alt: Use the More icon to access additional message options.
+    :class: theme-icon
 
 .. |channel-info| image:: ../images/information-outline_F02FD.svg
   :alt: Use the Channel Info icon to access additional channel management options.
+  :class: theme-icon
 
 .. |favorite-icon| image:: ../images/star-outline_F04D2.svg
   :alt: Use the Star icon to mark a channel as a favorite.
+  :class: theme-icon
 
 You can mark public and private channels, as well as direct and group messages as favorites so they're easy to access later. Favorite channels display in the **Favorites** category in the channel sidebar.
 

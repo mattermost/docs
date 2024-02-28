@@ -4,14 +4,17 @@ Save and pin messages
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-.. |save-icon| image:: ../images/save-icon.png
+.. |save-icon| image:: ../images/bookmark-outline_F00C3.svg
   :alt: Save icon.
+  :class: theme-icon
 
 .. |more-icon| image:: ../images/dots-horizontal_F01D8.svg
   :alt: When you hover over messages, you can access more message options from the More icon.
+  :class: theme-icon
 
 .. |bookmark-icon| image:: ../images/bookmark-outline_F00C3.svg
   :alt: Save important messages to make it easier to access them in the future.
+  :class: theme-icon
 
 You have two ways to mark a post to make it easy to find later: 
 

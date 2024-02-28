@@ -6,6 +6,7 @@ Add people to your workspace
 
 .. |plus| image:: ../images/plus_F0415.svg
   :alt: The Plus icon provides access to channel and direct message functionality.
+  :class: theme-icon
 
 Getting people set up with a Mattermost account is typically something that admins do when deploying and configuring the Mattermost workspace. However, `team admins </collaborate/learn-about-roles.html#team-admin>`__ can also invite people, including `guests </onboard/guest-accounts.html>`__, to a Mattermost team via a `direct invite <#send-a-direct-invite>`__, a `public team invite link <#send-a-team-invite-link>`__.
 

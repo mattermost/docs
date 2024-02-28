@@ -6,12 +6,15 @@ Collaborate within channels
 
 .. |globe| image:: ../images/globe_E805.svg
   :alt: Public channels are identified with a Globe icon.
+  :class: theme-icon
 
 .. |lock| image:: ../images/lock-outline_F0341.svg
   :alt: Private channels are identified with a Lock icon.
+  :class: theme-icon
 
 .. |plus| image:: ../images/plus_F0415.svg
   :alt: The Plus icon provides access to channel and direct message functionality.
+  :class: theme-icon
 
 Channels are where you connect, collaborate, and communicate with your team about various topics or projects. Use channels to organize conversations across different topics. `Sending messages </collaborate/send-messages.html>`__, `replying to messages </collaborate/reply-to-messages.html>`_, and `participating in conversation threads </collaborate/organize-conversations.html#start-or-reply-to-threads>`__ are important ways to keep conversations active with your team.
 

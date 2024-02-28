@@ -6,6 +6,7 @@ Browse channels
 
 .. |plus-icon| image:: ../images/plus_F0415.svg
   :alt: Open menus using the plus icon.
+  :class: theme-icon
 
 .. tab:: Web/Desktop
 

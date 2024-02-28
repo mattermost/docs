@@ -8,6 +8,7 @@ Prepare your Mattermost MySQL database
 
 .. |product-list| image:: ../images/products_E82F.svg
   :alt: Navigate between Channels and Playbooks using the product menu icon.
+  :class: theme-icon
 
 .. important::
     

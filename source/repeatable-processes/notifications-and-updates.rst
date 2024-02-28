@@ -6,6 +6,7 @@ Notifications and updates
   
 .. |vertical-3-dots| image:: ../images/dots-vertical_F01D9.svg
   :alt: Select the More icon to access additional channel management options.
+  :class: theme-icon
 
 There are multiple ways to receive updates and notifications.
 

@@ -6,6 +6,7 @@ Mark messages as unread
 
 .. |more-actions-icon| image:: ../images/dots-horizontal_F01D8.svg
   :alt: Access additional message actions using the More actions icon.
+  :class: theme-icon
 
 If you read a message, but don't have time to address it right away, you can mark that message as unread. Marking a message as unread displays the channel as bold in the channel sidebar, and groups the message with all other unread messages. 
 

@@ -8,6 +8,7 @@ Customize your Mattermost theme
 
 .. |gear-icon| image:: ../images/settings-outline_F08BB.svg
   :alt: Use the Settings icon to customize your Mattermost user experience.
+  :class: theme-icon
 
 The colors of the Mattermost user interface are customizable. You can choose from `five standard themes <#standard-themes>`__ designed by the Mattermost team, design your own theme based on a standard theme, or `import your theme colors from a Slack instance <#import-theme-from-slack>`__. Your theme changes apply to all teams you're a member of, and are visible across all Mattermost clients.
 

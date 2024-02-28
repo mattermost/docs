@@ -4,8 +4,9 @@ React with emojis and GIFs
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-.. |smile-icon| image:: ../images/smile-icon.png
+.. |smile-icon| image:: ../images/emoticon-plus-outline_E80F.svg
   :alt: Smile icon
+  :class: theme-icon
 
 Emojis and GIFs are small, digital images, animated images, or icons you can use to communicate or express concepts such as emotions, humor, and physical gestures in your messages. 
 
