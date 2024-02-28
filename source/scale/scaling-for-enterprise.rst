@@ -29,19 +29,13 @@ The following reference architectures are available as recommended starting poin
 - `Up to 88000 users </scale/scale-to-88000-users.rst>`__
 
 Testing methodology and updates
-------------
+--------------------------------
 
-All tests were executed with the custom load test tool built by the Mattermost development teams to determine supported users for each deployment size. Tests were performed using the Mattermost v8.1 extended support release (ESR).
+All tests were executed with the custom load test tool built by the Mattermost development teams to determine supported users for each deployment size. Tests were performed using the Mattermost v8.1 extended support release (ESR). Over time, this guide will be updated with new deployment sizes, deployment architectures, and newer versions of the Mattermost Server will be tested using an ESR. 
 
 At a high level, each deployment size was fixed (Mattermost server node count/sizing, database reader/writer count/sizing), and unbounded tests were used to report the maximum numbers of concurrent users the deployment can support. Each test included populated databases and a post table history of 100 million posts to provide a test simulation of a production Mattermost deployment.
 
-Over time, this guide will be updated with new deployment sizes, deployment architectures, and newer versions of the Mattermost Server will be tested using an ESR. 
-
-Tests were defined by configuration of the actions executed by each simulated user (and the frequency of these actions). The coordinator metrics define a health system under load.
-
-Full testing methodology, configuration, and setup is available. Sign up at `Mattermost Community <https://community.mattermost.com/>`__ and join the `Developers: Performance channel <https://community.mattermost.com/core/channels/developers-performance>`__.
-
-Share the data profile (e.g. DB size in users, posts). Share the “action” profile (login, channel switch, posts created etc).
+Tests were defined by configuration of the actions executed by each simulated user (and the frequency of these actions). The coordinator metrics define a health system under load. Full testing methodology, configuration, and setup is available. Sign up at `Mattermost Community <https://community.mattermost.com/>`__ and join the `Developers: Performance channel <https://community.mattermost.com/core/channels/developers-performance>`__.
 
 Mattermost load testing tools
 -----------------------------
