@@ -46,4 +46,4 @@ We strongly recommend that you review storage utilization at least quarterly to 
 Additional considerations
 -------------------------
 
-TBD
+Smaller deployments, or deployments using the `Mattermost Omnibus installer </install/installing-mattermost-omnibus.html>`__, will need an increase in resources due to the fact the database is hosted on the same server as the Mattermost application.
