@@ -300,7 +300,7 @@ When reporting issues found in the Mattermost Desktop App, it's helpful to inclu
 
 To access the Developer Tools Console:
 
-1. In the menu bar, go to **View > Developer Tools for Current Tab**.
+1. In the menu bar, go to **View > Developer Tools > Developer Tools for Current Tab**.
 2. Select the **Console** tab.
 3. Right-click the log entry, then select **Save As**.
 4. Save the file, then send it along with a description of your issue.

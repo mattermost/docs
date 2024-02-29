@@ -236,7 +236,7 @@ Web app
 Desktop app
 ^^^^^^^^^^^
 
-In the top menu bar of the app, select **View > Developer Tools for Current Tab**. In the logs that are generated, right-click and select **Save as** to download the logs.
+In the top menu bar of the app, select **View > Developer Tools > Developer Tools for Current Tab**. In the logs that are generated, right-click and select **Save as** to download the logs.
 
 Mobile app
 ^^^^^^^^^^
