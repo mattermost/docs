@@ -1,4 +1,4 @@
-Embed the Mattermost App within Microsoft Teams (Beta)
+Embed the Mattermost App within Microsoft Teams (Experimental)
 ======================================================
 
 .. include:: ../_static/badges/ent-cloud-selfhosted.rst
