@@ -2091,6 +2091,10 @@ mmctl config set
 
 Set the value of a config setting by its name in dot notation. Accepts multiple values for array settings.
 
+.. note::
+
+   Mattermost plugin uploads can't be enabled through the API or using mmctl in local mode.
+
 **Format**
 
 .. code-block:: sh
