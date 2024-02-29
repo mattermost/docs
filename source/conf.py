@@ -139,11 +139,11 @@ redirects = {
 "administration/compliance-export.html":
         "https://docs.mattermost.com/comply/compliance-export.html",
 "administration/config-in-database.html":
-        "https://docs.mattermost.com/configure/configuation-in-a-database.html",
+        "https://docs.mattermost.com/configure/configuration-in-a-database.html",
 "administration/config-in-database.html#configuration-in-a-database.html":
-        "https://docs.mattermost.com/configure/configuation-in-a-database.html",
+        "https://docs.mattermost.com/configure/configuration-in-a-database.html",
 "administration/config-in-database.html#configuration-in-the-mattermost-database":
-        "https://docs.mattermost.com/configure/configuation-in-a-database.html",
+        "https://docs.mattermost.com/configure/configuration-in-a-database.html",
 "administration/config-settings.html#enable-hardened-mode-experimental":
 	"https://docs.mattermost.com/configure/experimental-configuration-settings.html#enable-hardened-mode",
 "administration/data-retention.html":
@@ -245,7 +245,7 @@ redirects = {
 "administration/config-settings.html#ad-ldap":
         "https://docs.mattermost.com/configure/configuration-settings.html#ad-ldap",
 "administration/config-in-database.html":
-	"https://docs.mattermost.com/configure/configuation-in-a-database.html",
+	"https://docs.mattermost.com/configure/configuration-in-a-database.html",
 "administration/config-settings.html#customization":
         "https://docs.mattermost.com/configure/configuration-settings.html#customization",
 "administration/config-settings.html#default-channels-experimental":
@@ -815,7 +815,7 @@ redirects = {
 
 # Configuration settings redirects
 "configure/configuration-in-mattermost-database.html":
-        "https://docs.mattermost.com/configure/configuation-in-a-database.html",
+        "https://docs.mattermost.com/configure/configuration-in-a-database.html",
 "configure/configuration-settings.html#channels":
         "https://docs.mattermost.com/configure/user-management-configuration-settings.html#channels",
 "configure/configuration-settings.html#allow-use-of-api-v3-endpoints":
@@ -1768,8 +1768,8 @@ redirects = {
         "https://docs.mattermost.com/manage/logging.html#syslog-target-configuration-options",
 "configure/experimental-configuration-settings.html#syslog-max-queue-size":
         "https://docs.mattermost.com/manage/logging.html#syslog-target-configuration-options",
-"configure/configuation-in-mattermost-database.html":
-        "https://docs.mattermost.com/configure/configuation-in-a-database.html",
+"configure/configuration-in-mattermost-database.html":
+        "https://docs.mattermost.com/configure/configuration-in-a-database.html",
 
 # Deploy redirects
 "deploy/mobile-apps-faq.html":
@@ -3455,12 +3455,12 @@ html_static_path = ["_static"]
 # A list of CSS files. The entry must be a filename string or a tuple containing the filename string and the attributes
 # dictionary. The filename must be relative to the html_static_path, or a full URI with scheme like
 # https://example.org/style.css. The attributes is used for attributes of <link> tag. It defaults to an empty list.
-html_css_files = ["mytheme.css?version=v52", "css/compass-icons.css"]
+html_css_files = ["mytheme.css?version=v59", "css/compass-icons.css"]
 
 # A list of JavaScript filenames. The entry must be a filename string or a tuple containing the filename string and the
 # attributes dictionary. The filename must be relative to the html_static_path, or a full URI with scheme like
 # https://example.org/script.js. The attributes is used for attributes of <script> tag. It defaults to an empty list.
-html_js_files = ["myscript.js?version=v19"]
+html_js_files = ["myscript.js?version=v20"]
 
 # The name of an image file, relative to the configuration directory, to use as favicon of the docs.  This file should
 # be a Windows icon file (.ico) being 16x16 or 32x32 pixels in size.

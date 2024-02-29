@@ -16,6 +16,9 @@ Connect Mattermost with Microsoft Teams
 
 A connected Mattermost integration with Microsoft Teams enables direct message, group message, and chat synchronization as well as the ability to link and synchronize channel-based collaboration.
 
+.. image:: ../images/ms-teams-channel-sync-feb-2024.gif
+   :alt: An example of a Mattermost channel that is synced with a channel on Microsoft Teams.
+
 Install this integration by visiting the `install the Mattermost for Microsoft Teams plugin </about/install-mattermost-for-microsoft-teams-plugin.html>`__ documentation.
 
 Visit the `collaborate within a Microsoft Teams instance </collaborate/collaborate-within-connected-microsoft-teams.html>`__ to learn how to use this integration. 

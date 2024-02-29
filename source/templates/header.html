@@ -4,7 +4,7 @@
             <span aria-hidden="true">×</span>
         </a>
 	    <div class="notification-bar__wrapper">
-		    <img src="{{ pathto('_static/images/notification-bar/icon-green-rocket.svg', 1) }}" alt="" class="notification-bar__icon"><a href="https://mattermost.com/blog/inc-recognizes-mattermost-as-a-power-partner/" target="_blank" class="notification-bar__link">Inc. Recognizes Mattermost as a 2023 'Power Partner'!</a>
+		    <a href="https://mattermost.com/webinar/cybersecurity-incident-response/" target="_blank" class="notification-bar__link">[WEBINAR] Learn how to secure mission-critical work 🔐</a>
 		</div>
     </div>
 </div>
@@ -157,15 +157,44 @@
 							</div>
 						</div>
 					</li>
-					<li class="site-nav__toplink">
-						<a href="https://mattermost.com/pricing/" data-ol-has-click-handler="">
-							<div class="toplink-wrapper">Pricing</div>
+					<li class="site-nav__toplink site-nav__hassubnav">
+						<a href="javascript:void(0);">
+							<div class="toplink-wrapper">
+								Enterprise
+								<span>
+									<svg width="11" height="7" viewBox="0 0 11 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M1 1.50262L5.5 5.97313L10 1.50262" stroke="#BABEC9" stroke-width="1.5" stroke-linejoin="round" />
+									</svg>
+								</span>
+							</div>
 						</a>
+						<div class="sub-menu sub-menu__enterprise">
+							<div class="sub-menu__links-wrapper">
+								<p class="sub-menu__link-col-header">Enterprise</p>
+								<ul>
+									<li class="sub-menu__links--single">
+										<a href="https://mattermost.com/solutions/enterprise/">
+											Enterprise Overview
+										</a>
+									</li>
+									<li class="sub-menu__links--single">
+										<a href="https://mattermost.com/solutions/why-choose-enterprise">
+											Why Upgrade to Enterprise
+										</a>
+									</li>
+									<li class="sub-menu__links--single">
+										<a href="https://mattermost.com/solutions/enterprise/cloud/">
+											Cloud Enterprise
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
 					</li>
 					<li class="site-nav__toplink site-nav__hassubnav">
 						<a href="javascript:void(0);" data-ol-has-click-handler="">
 							<div class="toplink-wrapper">
-								Developers
+								Resources
 								<span>
 									<svg width="11" height="7" viewBox="0 0 11 7" fill="none" xmlns="http://www.w3.org/2000/svg">
 										<path d="M1 1.50262L5.5 5.97313L10 1.50262" stroke="#BABEC9" stroke-width="1.5" stroke-linejoin="round"></path>
@@ -175,15 +204,14 @@
 						</a>
 						<div class="sub-menu sub-menu__developers">
 							<div class="sub-menu__developers__main">
-								<p class="sub-menu__link-col-header">Developers</p>
+								<p class="sub-menu__link-col-header">Resources</p>
 								<div class="sub-menu__developers-grid-wrapper">
 									<div class="sub-menu__dev-link-col">
 										<ul>
 											<li class="sub-menu__links--single">
-												<a href="https://mattermost.com/download/" data-ol-has-click-handler="">
-												Deploy
+												<a href="https://mattermost.com/resources/" data-ol-has-click-handler="">Resources Library
 												</a>
-											</li>	
+											</li>
 											<li class="sub-menu__links--single">
 												<a href="https://developers.mattermost.com/integrate/getting-started/" data-ol-has-click-handler="">
 												Integrate
@@ -200,10 +228,10 @@
 												</a>
 											</li>
 											<li class="sub-menu__links--single">
-												<a href="https://mattermost.com/resources/" data-ol-has-click-handler="">
-													Resources
+												<a href="https://mattermost.com/download/" data-ol-has-click-handler="">
+												Deploy
 												</a>
-											</li>
+											</li>	
 										</ul>
 									</div>
 									<div class="sub-menu__dev-link-col">
@@ -240,19 +268,19 @@
 						</div>
 					</li>
 					<li class="site-nav__toplink">
-						<a href="https://mattermost.com/enterprise/" data-ol-has-click-handler="">
-						<div class="toplink-wrapper">Enterprise</div>
+						<a href="https://mattermost.com/pricing/" data-ol-has-click-handler="">
+							<div class="toplink-wrapper">Pricing</div>
 						</a>
 					</li>
-					<li class="site-nav__toplink site-nav__hassubnav">
+					<li class="site-nav__toplink">
+						<a href="https://mattermost.com/download/" data-ol-has-click-handler="">
+							<div class="toplink-wrapper">Download</div>
+						</a>
+					</li>
+					<li class="site-nav__toplink site-nav__hassubnav site-nav-login">
 						<a href="javascript:void(0);" data-ol-has-click-handler="">
 							<div class="toplink-wrapper">
 								Login
-								<span>
-									<svg width="11" height="7" viewBox="0 0 11 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-										<path d="M1 1.50262L5.5 5.97313L10 1.50262" stroke="#BABEC9" stroke-width="1.5" stroke-linejoin="round"></path>
-									</svg>
-								</span>
 							</div>
 						</a>
 						<div class="sub-menu sub-menu__login">
@@ -283,11 +311,8 @@
 							</div>
 						</div>
 					</li>
-											<li class="site-nav__toplink site-nav__button">
-							<a class="mm-button mm-button-solid mm-button-blue" href="https://mattermost.com/download/" data-ol-has-click-handler="">Get Started</a>
-						</li>
-										<li class="site-nav__toplink site-nav__button site-nav__button--secondary">
-						<a class="mm-button mm-button-outline--thin mm-button-outline--thin-blue" href="https://mattermost.com/contact-sales/" data-ol-has-click-handler="">Contact Sales</a>
+					<li class="site-nav__toplink site-nav__button">
+						<a class="mm-button mm-button-solid mm-button-blue" href="https://mattermost.com/contact-sales/" data-ol-has-click-handler="">Contact Sales</a>
 					</li>
 				</ul>
 			</div>

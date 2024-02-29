@@ -42,6 +42,9 @@ You can start a direct or group message between Mattermost and Microsoft Teams u
 
 - Within Microsoft Teams, select **Chat > New chat**, and select the users you want to chat with. Your conversation is visible in both Mattermost and Microsoft Teams for all users who have connected their Mattermost user account to their Microsoft Teams user account.
 
+.. image:: ../images/ms-teams-dm-sync-feb-2024.gif
+   :alt: An example of a Mattermost direct message (DM) that is synced with a DM on Microsoft Teams.
+
 Collaborate through linked channels
 ------------------------------------
 
