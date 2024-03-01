@@ -1,7 +1,5 @@
-:orphan:
-
-Mattermost for Microsoft Teams
-==============================
+Mattermost for Microsoft Teams (Beta)
+=====================================
 
 .. include:: ../_static/badges/ent-cloud-selfhosted.rst
   :start-after: :nosearch:
