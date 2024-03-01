@@ -4,7 +4,7 @@ Scale Mattermost up to 1000 users
 .. include:: ../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
-This page describes the Mattermost reference architecture designed for the load of up to 1000 concurrent users. Unsure which reference architecture to use? See the `scaling for enterprise </scale/scaling-for-enterprise.rst>`__ documentation for details.
+This page describes the Mattermost reference architecture designed for the load of up to 1000 concurrent users. Unsure which reference architecture to use? See the `scaling for enterprise </scale/scaling-for-enterprise.html>`__ documentation for details.
 
 - **High Availability**: Required
 - **Database Configuration**: writer, reader
