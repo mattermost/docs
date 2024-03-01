@@ -158,7 +158,9 @@ Trobleshooting FAQ
 
 **Can I connect my Mattermost account to a Microsoft Teams account of a different email address?**
 
-No. Currently, only accounts with the same email addresses are allowed to be connected. Specify the email address that matches your Mattermost account.
+No. Currently, only accounts with the same email addresses are allowed to be connected. Specify the email address that matches your Mattermost account. 
+
+If connecting a Mattermost account to a Microsoft Teams account with a different email address is something your workspace requires, there is an open `Github issue <https://github.com/mattermost/mattermost-plugin-msteams/issues/519>`__ for you to share your feedback.
 
 Get help
 --------
