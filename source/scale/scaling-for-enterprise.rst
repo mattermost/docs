@@ -17,14 +17,14 @@ Available reference architectures
 
 The following reference architectures are available as recommended starting points for your self-hosted Mattermost deployment, where user counts refer to the number of concurrent users for a given deployment. The number of concurrent numbers is commonly lower than the total number of user accounts.
 
-- `Up to 100 users </scale/scale-to-100-users.rst>`__
-- `Up to 1000 users </scale/scale-to-1000-users.rst>`__
-- `Up to 15000 users </scale/scale-to-15000-users.rst>`__
-- `Up to 25000 users </scale/scale-to-25000-users.rst>`__
-- `Up to 50000 users </scale/scale-to-50000-users.rst>`__
-- `Up to 70000 users </scale/scale-to-70000-users.rst>`__
-- `Up to 79000 users </scale/scale-to-79000-users.rst>`__
-- `Up to 88000 users </scale/scale-to-88000-users.rst>`__
+- `Up to 100 users </scale/scale-to-100-users.html>`__
+- `Up to 1000 users </scale/scale-to-1000-users.html>`__
+- `Up to 15000 users </scale/scale-to-15000-users.html>`__
+- `Up to 25000 users </scale/scale-to-25000-users.html>`__
+- `Up to 50000 users </scale/scale-to-50000-users.html>`__
+- `Up to 70000 users </scale/scale-to-70000-users.html>`__
+- `Up to 79000 users </scale/scale-to-79000-users.html>`__
+- `Up to 88000 users </scale/scale-to-88000-users.html>`__
 
 Testing methodology and updates
 --------------------------------
