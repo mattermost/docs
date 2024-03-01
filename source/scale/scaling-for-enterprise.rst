@@ -35,7 +35,7 @@ At a high level, each deployment size was fixed (Mattermost server node count/si
 
 Tests were defined by configuration of the actions executed by each simulated user (and the frequency of these actions) where the coordinator metrics define a health system under load. Tests were performed using the Mattermost v8.1 extended support release (ESR). Elasticsearch and job servers weren't used. All tests wtih more than a single app node had an NGINX proxy running in front of them.
 
-Full testing methodology, configuration, and setup is available. Sign up at `Mattermost Community <https://community.mattermost.com/>`__ and join the `Developers: Performance channel <https://community.mattermost.com/core/channels/developers-performance>`__.
+Full testing methodology, configuration, and setup is available. Visit the `Mattermost Community <https://community.mattermost.com/>`__ and join the `Developers: Performance channel <https://community.mattermost.com/core/channels/developers-performance>`__ for details.
 
 Mattermost load testing tools
 -----------------------------
