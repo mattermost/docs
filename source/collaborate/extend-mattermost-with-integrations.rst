@@ -6,7 +6,7 @@ Extend Mattermost with integrations
 Pre-packaged integrations
 -------------------------
 
-Mattermost includes the following pre-packaged integrations your organization can configure and use:
+The following Mattermost-supported integrations are pre-packaged and available for your organization to configure and use:
 
 - `GitHub <https://github.com/mattermost/mattermost-plugin-github/blob/master/README.md#installation>`__
 - `GitLab <https://github.com/mattermost/mattermost-plugin-gitlab#readme>`__
