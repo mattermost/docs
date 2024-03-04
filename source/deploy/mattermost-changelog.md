@@ -73,6 +73,7 @@ If you upgrade from a release earlier than v9.5, please read the other [Importan
  - v9.6 is built with Go ``v1.20.7``.
 
 ### Known Issues
+ - Drafts may still exist after sending the post [MM-57076](https://mattermost.atlassian.net/browse/MM-57076).
  - Draft is lost from the reply box when other user's root post is deleted [MM-56972](https://mattermost.atlassian.net/browse/MM-56972).
  - Users' initial status is not always loaded correctly [MM-56966](https://mattermost.atlassian.net/browse/MM-56966).
  - Status may sometimes get stuck as **Away** or **Offline** in High Availability mode with IP Hash turned off.
