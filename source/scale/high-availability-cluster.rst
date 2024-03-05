@@ -85,7 +85,6 @@ Configuration settings
             "ClusterName": "production",
             "OverrideHostname": "",
             "UseIpAddress": true,
-            "UseGossip": true,
             "ReadOnlyConfig": true,
             "GossipPort": 8074,
             "StreamingPort": 8075
@@ -477,7 +476,6 @@ When a server starts up, it can automatically discover other servers in the same
         "ClusterName": "production",
         "OverrideHostname": "",
         "UseIpAddress": true,
-        "UseGossip": true,
         "ReadOnlyConfig": true,
         "GossipPort": 8074,
         "StreamingPort": 8075
