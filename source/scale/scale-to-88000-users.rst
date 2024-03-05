@@ -1,4 +1,4 @@
-Scale Mattermost up to 79000 users
+Scale Mattermost up to 88000 users
 ==================================
 
 .. include:: ../_static/badges/ent-only.rst
