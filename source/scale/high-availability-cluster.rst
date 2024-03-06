@@ -85,10 +85,8 @@ Configuration settings
             "ClusterName": "production",
             "OverrideHostname": "",
             "UseIpAddress": true,
-            "UseGossip": true,
             "ReadOnlyConfig": true,
-            "GossipPort": 8074,
-            "StreamingPort": 8075
+            "GossipPort": 8074
     }
 
   For more details on these settings, see the `high availability configuration settings </configure/environment-configuration-settings.html#high-availability>`__ documentation.
@@ -477,10 +475,8 @@ When a server starts up, it can automatically discover other servers in the same
         "ClusterName": "production",
         "OverrideHostname": "",
         "UseIpAddress": true,
-        "UseGossip": true,
         "ReadOnlyConfig": true,
-        "GossipPort": 8074,
-        "StreamingPort": 8075
+        "GossipPort": 8074
     },
 
   For more information about these settings, see the `high availability configuration settings </configure/environment-configuration-settings.html#high-availability>`__ documentation.
