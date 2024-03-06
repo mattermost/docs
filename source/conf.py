@@ -1772,6 +1772,8 @@ redirects = {
         "https://docs.mattermost.com/manage/logging.html#syslog-target-configuration-options",
 "configure/configuration-in-mattermost-database.html":
         "https://docs.mattermost.com/configure/configuration-in-a-database.html",
+"configure/configuration-in-a-database.html":
+        "https://docs.mattermost.com/configure/store-configuration-in-your-database.html",
 
 # Deploy redirects
 "deploy/mobile-apps-faq.html":

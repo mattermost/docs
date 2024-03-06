@@ -14,7 +14,7 @@ This section of the guide is for system admins of self-hosted Mattermost servers
 
     Mattermost self-hosted billing </manage/self-hosted-billing>
     Mattermost error codes </manage/error-codes>
-    Store configuration in the database </configure/configuration-in-a-database>
+    Store configuration in your database </configure/configuration-in-a-database>
     Bulk loading data </onboard/bulk-loading-data>
     SMTP email setup </configure/smtp-email>
     Email templates </configure/email-templates>
