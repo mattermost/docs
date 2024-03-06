@@ -564,6 +564,31 @@ A list of all the machines in the cluster, such as ``["http://10.10.10.2", "http
 | This feature's ``config.json`` setting is ``"InterNodeUrls": []`` with string array input consisting of the machines in the cluster. |
 +--------------------------------------------------------------------------------------------------------------------------------------+
 
+Use gossip
+~~~~~~~~~~~~~~~
+
+*Removed in Mattermost v6.0*
+
+**True**: The server attempts to communicate via the gossip protocol over the gossip port specified.
+
+**False**: The server attempts to communicate over the streaming port.
+
++--------------------------------------------------------------------------------------------------------------+
+| This feature’s config.json setting is ``"UseExperimentalGossip": true`` with options ``true`` and ``false``. |
++--------------------------------------------------------------------------------------------------------------+
+
+
+Streaming port
+~~~~~~~~~~~~~~~
+
+*Deprecated. Not used in Mattermost v6.0 and later*
+
+The port used for streaming data between servers.
+
++-------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"StreamingPort": ":8075"`` with string input. |
++-------------------------------------------------------------------------------------------+
+
 ----
 
 REST API V3 settings
