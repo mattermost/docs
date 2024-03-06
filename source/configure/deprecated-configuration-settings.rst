@@ -573,10 +573,21 @@ Use gossip
 
 **False**: The server attempts to communicate over the streaming port.
 
-+--------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s config.json setting is ``"UseExperimentalGossip": true`` with options ``true`` and ``false``.                         |
-+--------------------------------------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------+
+| This feature’s config.json setting is ``"UseExperimentalGossip": true`` with options ``true`` and ``false``. |
++--------------------------------------------------------------------------------------------------------------+
 
+
+Streaming port
+~~~~~~~~~~~~~~~
+
+*Deprecated. Not used in Mattermost v6.0 and later*
+
+The port used for streaming data between servers.
+
++-------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"StreamingPort": ":8075"`` with string input. |
++-------------------------------------------------------------------------------------------+
 
 ----
 

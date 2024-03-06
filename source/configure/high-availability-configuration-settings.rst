@@ -197,28 +197,6 @@ Gossip port
   :environment: MM_CLUSTERSETTINGS_STREAMINGPORT
   :description: The port used for streaming data between servers. Default value is **8075**.
 
-Streaming port
-~~~~~~~~~~~~~~
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
-
-+-----------------------------------------------------------------+------------------------------------------------------------------------+
-| The port used for streaming data between servers.               | - System Config path: **Environment > High Availability**              |
-|                                                                 | - ``config.json`` setting: ``".ClusterSettings.StreamingPort: 8075",`` |
-| Numerical input. Default is **8075**.                           | - Environment variable: ``MM_CLUSTERSETTINGS_STREAMINGPORT``           |
-+-----------------------------------------------------------------+------------------------------------------------------------------------+
-
-.. config:setting:: ha-readonlyconfig
-  :displayname: Read only config (High Availability)
-  :systemconsole: N/A
-  :configjson: .ClusterSettings.ReadOnlyConfig
-  :environment: MM_CLUSTERSETTINGS_READONLYCONFIG
-
-  - **true**: **(Default)** Changes made to settings in the System Console are ignored.
-  - **false**: Changes made to settings in the System Console are written to ``config.json``.
-
 Read only config
 ~~~~~~~~~~~~~~~~
 
