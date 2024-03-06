@@ -215,13 +215,13 @@ Database configuration
 
   Specifying configuration setting values using Mattermost environment variables ensure that they always take precedent over any other configuration settings.
 
-For an AWS High Availability RDS cluster deployment, point the `datasource </configure/environment-configuration-settings.html#database-datasource>`__ configuration setting to the write/read endpoint at the **cluster** level to benefit from the AWS failover handling. AWS takes care of promoting different database nodes to be the write node. Mattermost doesn't need to manage this. 
+For an AWS High Availability RDS cluster deployment, point the `datasource </configure/environment-configuration-settings.html#database-datasource>`__ configuration setting to the write/read endpoint at the **cluster** level to benefit from the AWS failover handling. AWS takes care of promoting different database nodes to be the writer node. Mattermost doesn't need to manage this. 
 
 Use the `read replica </configure/environment-configuration-settings.html#database-readreplicas>`__ feature to scale the database. The Mattermost server can be set up to use one master database and one or more read replica databases. 
 
 .. note::
   
-  For an AWS High Availability RDS cluster deployment, don't hard-code the IP addresses. Point this configuration setting to the write/read endpoint at the **cluster** level. This will benefit from the AWS failover handling where AWS takes care of promoting different database nodes to be the write node. Mattermost doesn't need to manage this. 
+  For an AWS High Availability RDS cluster deployment, don't hard-code the IP addresses. Point this configuration setting to the write/read endpoint at the **cluster** level. This will benefit from the AWS failover handling where AWS takes care of promoting different database nodes to be the writer node. Mattermost doesn't need to manage this. 
 
 On large deployments, also consider using the `search replica </configure/environment-configuration-settings.html#search-replicas>`__ feature to isolate search queries onto one or more search replicas. A search replica is similar to a read replica, but is used only for handling search queries.
 

@@ -143,7 +143,7 @@ Data source
 | **AWS High Availablity RDS cluster deployments**                                                                                         |
 |                                                                                                                                          |
 | For an AWS High Availability RDS cluster deployment, point this configuration setting to the write/read endpoint at the **cluster**      |
-| level to benefit from the AWS failover handling. AWS takes care of promoting different database nodes to be the write node.              |
+| level to benefit from the AWS failover handling. AWS takes care of promoting different database nodes to be the writer node.             |
 | Mattermost doesn't need to manage this. See the                                                                                          |
 | `high availablility database configuration </scale/high-availability-cluster.html#database-configuration>`__ documentation for details.  |
 +------------------------------------------------------------+-----------------------------------------------------------------------------+
