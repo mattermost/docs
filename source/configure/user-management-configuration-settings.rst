@@ -53,11 +53,11 @@ Go to **System Console > User Management > Users** to access all user accounts. 
   
   From Mattermost v9.6, you can:
   
-  - Customize this page by showing or hiding user details, including email address, member duration, last login, activity, or post, number of days active, and number of messages posted. You can also control how many user records display on the page at a time.
-  - Search for specific users by entering a partial or full username, first name, or last name in the **Search** field and pressing :kbd:`Enter`.
+  - Customize this page by showing or hiding user details, including email address, member duration, last login, activity, or post, number of days active (PostgreSQL only), and number of messages posted (PostgreSQL only). You can also control how many user records display on the page at a time.
+  - Search for specific users by entering a partial or full username, first name, last name, or email address in the **Search** field and pressing :kbd:`Enter`.
   - Filter users by team, role, or status.
   - Filter users by activity timeframes, including the last 30 days, the previous month, and the last 6 months.
-  - Export user data as a CSV report. You'll receive the report as a direct message in Mattermost.
+  - Mattermost Enterprise and Professional customers can also export user data as a CSV report. You'll receive the report as a direct message in Mattermost.
 
 Use the API
 ^^^^^^^^^^^
