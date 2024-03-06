@@ -578,6 +578,17 @@ Use gossip
 +--------------------------------------------------------------------------------------------------------------------------------------+
 
 
+Streaming port
+~~~~~~~~~~~~~~~
+
+*Deprecated. Not used in Mattermost v6.0 and later*
+
+The port used for streaming data between servers.
+
++-------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"StreamingPort": ":8075"`` with string input. |
++-------------------------------------------------------------------------------------------+
+
 ----
 
 REST API V3 settings
