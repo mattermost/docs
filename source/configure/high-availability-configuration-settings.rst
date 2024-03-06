@@ -117,36 +117,6 @@ Use IP address
   - **true**: **(Default)** The server attempts to communicate via the gossip protocol over the gossip port specified.
   - **false**: The server attempts to communicate over the streaming port.
 
-Use gossip
-~~~~~~~~~~
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
-
-+-----------------------------------------------------------------+--------------------------------------------------------------------------------+
-| All cluster traffic uses the gossip protocol.                   | - System Config path: **Environment > High Availability**                      |
-|                                                                 | - ``config.json`` setting: ``".ClusterSettings.UseExperimentalGossip: true",`` |
-| - **true**: **(Default)** The server attempts to communicate    | - Environment variable: ``MM_CLUSTERSETTINGS_USEEXPERIMENTALGOSSIP``           |
-|   via the gossip protocol over the gossip port specified.       |                                                                                |
-| - **false**: The server attempts to communicate over the        |                                                                                |
-|   streaming port.                                               |                                                                                |
-+-----------------------------------------------------------------+--------------------------------------------------------------------------------+
-| **Notes**:                                                                                                                                       |
-|                                                                                                                                                  |
-| - Gossip clustering can no longer be disabled.                                                                                                   |
-| - The gossip port and gossip protocol are used to determine cluster health even when this setting is set to **false**.                           |
-+-----------------------------------------------------------------+--------------------------------------------------------------------------------+
-
-.. config:setting:: ha-gossipencryption
-  :displayname: Enable experimental gossip encryption (High Availability)
-  :systemconsole: Environment > High Availability
-  :configjson: .ClusterSettings.EnableExperimentalGossipEncryption
-  :environment: MM_CLUSTERSETTINGS_ENABLEEXPERIMENTALGOSSIPENCRYPTION
-
-  - **true**: All communication through the cluster using the gossip protocol will be encrypted.
-  - **false**: **(Default)** All communication using gossip protocol remains unencrypted.
-
 Enable experimental gossip encryption
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -226,28 +196,6 @@ Gossip port
   :configjson: .ClusterSettings.StreamingPort
   :environment: MM_CLUSTERSETTINGS_STREAMINGPORT
   :description: The port used for streaming data between servers. Default value is **8075**.
-
-Streaming port
-~~~~~~~~~~~~~~
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
-
-+-----------------------------------------------------------------+------------------------------------------------------------------------+
-| The port used for streaming data between servers.               | - System Config path: **Environment > High Availability**              |
-|                                                                 | - ``config.json`` setting: ``".ClusterSettings.StreamingPort: 8075",`` |
-| Numerical input. Default is **8075**.                           | - Environment variable: ``MM_CLUSTERSETTINGS_STREAMINGPORT``           |
-+-----------------------------------------------------------------+------------------------------------------------------------------------+
-
-.. config:setting:: ha-readonlyconfig
-  :displayname: Read only config (High Availability)
-  :systemconsole: N/A
-  :configjson: .ClusterSettings.ReadOnlyConfig
-  :environment: MM_CLUSTERSETTINGS_READONLYCONFIG
-
-  - **true**: **(Default)** Changes made to settings in the System Console are ignored.
-  - **false**: Changes made to settings in the System Console are written to ``config.json``.
 
 Read only config
 ~~~~~~~~~~~~~~~~
