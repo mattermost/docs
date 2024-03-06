@@ -10,7 +10,7 @@ Both self-hosted and Cloud admins can access the following configuration setting
 - `Apps <#apps>`__
 - `Calls <#calls>`__
 - `Google Calendar <#google-calendar>`__
-- `MS Teams <#ms-teams>`__
+- `Microsoft Teams <#ms-teams>`__
 - `Playbooks <#playbooks>`__
 - `User Satisfaction surveys <#user-satisfaction-surveys>`__
 - `Zoom <#zoom>`__
@@ -952,8 +952,8 @@ Google client secret
 
 ----
 
-MS Teams
---------
+Microsoft Teams (Beta)
+----------------------
 
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:

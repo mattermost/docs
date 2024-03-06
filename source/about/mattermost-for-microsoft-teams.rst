@@ -1,5 +1,5 @@
-Mattermost for Microsoft Teams
-==============================
+Mattermost for Microsoft Teams (Beta)
+=====================================
 
 .. include:: ../_static/badges/ent-cloud-selfhosted.rst
   :start-after: :nosearch:
@@ -15,6 +15,9 @@ Connect Mattermost with Microsoft Teams
 ---------------------------------------
 
 A connected Mattermost integration with Microsoft Teams enables direct message, group message, and chat synchronization as well as the ability to link and synchronize channel-based collaboration.
+
+.. image:: ../images/ms-teams-channel-sync-feb-2024.gif
+   :alt: An example of a Mattermost channel that is synced with a channel on Microsoft Teams.
 
 Install this integration by visiting the `install the Mattermost for Microsoft Teams plugin </about/install-mattermost-for-microsoft-teams-plugin.html>`__ documentation.
 

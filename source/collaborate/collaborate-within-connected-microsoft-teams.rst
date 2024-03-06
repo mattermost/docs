@@ -1,5 +1,5 @@
-Collaborate within Microsoft Teams
-==================================
+Collaborate within Microsoft Teams (Beta)
+=========================================
 
 .. include:: ../_static/badges/ent-cloud-selfhosted.rst
   :start-after: :nosearch:
@@ -41,6 +41,9 @@ You can start a direct or group message between Mattermost and Microsoft Teams u
 - Within Mattermost select the |plus-icon| icon next to **Direct Messages** in the left pane, then search for the user you want to message. Your direct or group conversation is visible in both Mattermost and Microsoft Teams.
 
 - Within Microsoft Teams, select **Chat > New chat**, and select the users you want to chat with. Your conversation is visible in both Mattermost and Microsoft Teams for all users who have connected their Mattermost user account to their Microsoft Teams user account.
+
+.. image:: ../images/ms-teams-dm-sync-feb-2024.gif
+   :alt: An example of a Mattermost direct message (DM) that is synced with a DM on Microsoft Teams.
 
 Collaborate through linked channels
 ------------------------------------

@@ -16,7 +16,7 @@ Deployment overview
 
 Please see the `Mattermost Deployment Overview </deploy/deployment-overview.html>`__ documentation for a summary of software systems whose requirements are described in this document.
 
-.. image:: ../images/network_diagram.png
+.. image:: ../images/network-diagram.svg
    :alt: Mattermost network diagram shows how the components can be deployed. Includes optional configurations for scaling for larger enterprise organizations.
 
 Software requirements
@@ -185,29 +185,3 @@ For Enterprise Edition deployments with a multi-server setup, we highly recommen
 - Grafana to visualize the system health metrics collected by Prometheus with the `performance monitoring feature </scale/performance-monitoring.html>`__. Grafana 5.0.0 and later is recommended.
 - Elasticsearch to support highly efficient database searches in a cluster environment. Elasticsearch 7.x is supported. `Learn more here </scale/elasticsearch.html>`__.
 - MinIO or AWS S3. Mattermost is compatible with object storage systems which implement the S3 API. Other S3-compatible systems may work, but are not officially supported. Learn more about file storage configuration options `in our documentation </configure/configuration-settings.html#file-storage>`__.
-
-Alternate storage calculations
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-As an alternative to recommended storage sizing above, you can forecast your own storage usage. Begin with a Mattermost server approximately 600 MB to 800 MB in size including operating system and database, then add the multiplied product of:
-
--  Estimated storage per user per month (see below), multiplied by 12 months in a year
--  Estimated mean average number of users in a year
--  A 1-2x safety factor
-
-**Estimated storage per user per month**
-
-File usage per user varies significantly across industries. The below benchmarks are recommended:
-
--  **Low usage teams** (1-5 MB/user/month)
-	- Primarily use text messages and links to communicate. Examples would include software development teams that heavily use web-based document creation and management tools, and therefore rarely upload files to the server.
-
--  **Medium usage teams** (5-25 MB/user/month)
-	- Use a mix of text messages as well as shared documents and images to communicate. Examples might include business teams that may commonly drag and drop screenshots, PDFs and Microsoft Office documents into Mattermost for sharing and review.
-
--  **High usage teams** (25-100 MB/user/month)
-	- Heaviest utilization comes from teams uploading a high number of large files into Mattermost on a regular basis. Examples include creative teams who share and store artwork and media with tags and commentary in a pipeline production process.
-
-*Example:* A 30-person team with medium usage (5-25 MB/user/month) with a safety factor of 2x would require between 3.5 GB (30 users \* 5 MB \* 12 months \* 2x safety factor) and 17.6 GB (30 users \* 25 MB \* 12 months \* 2x safety factor) of free space in the next year.
-
-It's recommended that you review storage utilization at least quarterly to ensure adequate free space is available.

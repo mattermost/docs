@@ -88,8 +88,13 @@ If you upgrade from a release earlier than v9.5, please read the other [Importan
 
 ## Release v9.5 - [Extended Support Release](https://docs.mattermost.com/upgrade/release-definitions.html#extended-support-release-esr)
 
+- **9.5.2, released 2024-03-06**
+  - Mattermost v9.5.2 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Mattermost v9.5.2 contains no database or functional changes.
+  - Fixed ``ChannelHasBeenCreated`` plugin hook not being called when a group channel was created.
 - **9.5.1, released 2024-02-16**
   - Mattermost v9.5.1 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Mattermost v9.5.1 contains no database or functional changes.
 - **9.5.0, released 2024-02-16**
   - Original 9.5.0 release.
 
@@ -182,7 +187,6 @@ See [this walkthrough video](https://www.youtube.com/watch?v=b1M2BGGF578&feature
  - v9.5 is built with Go ``v1.20.7``.
 
 ### Known Issues
- - The ``ChannelsHasBeenCreated`` plugin hook is not called for Group Messages [MM-56776](https://mattermost.atlassian.net/browse/MM-56776).
  - User autocomplete no longer stays closed after pressing ESC key [MM-56748](https://mattermost.atlassian.net/browse/MM-56748).
  - Status may sometimes get stuck as **Away** or **Offline** in High Availability mode with IP Hash turned off.
  - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
@@ -197,6 +201,9 @@ See [this walkthrough video](https://www.youtube.com/watch?v=b1M2BGGF578&feature
 
 ## Release v9.4 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
 
+- **9.4.4, released 2024-03-06**
+  - Mattermost v9.4.4 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Mattermost v9.4.4 contains no database or functional changes.
 - **9.4.3, released 2024-02-14**
   - Mattermost v9.4.3 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Mattermost v9.4.3 contains no database or functional changes.
@@ -285,6 +292,9 @@ See [this walkthrough video](https://www.youtube.com/watch?v=bEMp4vYLi6c&feature
 
 ## Release v9.3 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
 
+- **9.3.3, released 2024-03-06**
+  - Mattermost v9.3.3 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Mattermost v9.3.3 contains no database or functional changes.
 - **9.3.2, released 2024-02-14**
   - Mattermost v9.3.2 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Mattermost v9.3.2 contains no database or functional changes.
