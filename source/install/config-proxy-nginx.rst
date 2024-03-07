@@ -10,7 +10,7 @@ Configure NGINX as a proxy for Mattermost server
 NGINX is configured using a file in the ``/etc/nginx/sites-available`` directory. You need to create the file and then enable it. When creating the file, you need the IP address of your Mattermost server and the fully qualified domain name (FQDN) of your Mattermost website.
 
 1. Log in to the server that hosts NGINX and open a terminal window.
-2. Create a configuration file for Mattermost by running
+2. Create a configuration file for Mattermost by running the following command:
 
   ``sudo touch /etc/nginx/sites-available/mattermost`` on Ubuntu
   ``sudo touch /etc/nginx/conf.d/mattermost`` on RHEL 8
