@@ -10,7 +10,7 @@ Configure NGINX as a proxy for Mattermost server
 NGINX is configured using a file in the ``/etc/nginx/sites-available`` directory. You need to create the file and then enable it. When creating the file, you need the IP address of your Mattermost server and the fully qualified domain name (FQDN) of your Mattermost website.
 
 1. Log in to the server that hosts NGINX and open a terminal window.
-2. Create a configuration file for Mattermost by running 
+2. Create a configuration file for Mattermost by running the following command:
 
   ``sudo touch /etc/nginx/sites-available/mattermost`` on Ubuntu
   ``sudo touch /etc/nginx/conf.d/mattermost`` on RHEL 8
@@ -20,11 +20,11 @@ NGINX is configured using a file in the ``/etc/nginx/sites-available`` directory
 SSL and HTTP/2 with server push are enabled in the provided configuration example.
 
   .. note::
-  
+
     - If you're going to use Let's Encrypt to manage your SSL certificate, stop at step 3 and see the `NGINX HTTP/2 and SSL product documentation </install/config-ssl-http2-nginx.html>`__ for details.
     - You'll need valid SSL certificates in order for NGINX to pin the certificates properly. Additionally, your browser must have permissions to accept the certificate as a valid CA-signed certificate.
     - Note that the IP address included in the examples in this documentation may not match your network configuration.
-    - If you're running NGINX on the same machine as Mattermost, and NGINX resolves ``localhost`` to more than one IP address (IPv4 or IPv6), we recommend using ``127.0.0.1`` instead of ``localhost``. 
+    - If you're running NGINX on the same machine as Mattermost, and NGINX resolves ``localhost`` to more than one IP address (IPv4 or IPv6), we recommend using ``127.0.0.1`` instead of ``localhost``.
 
   .. code-block:: none
 
@@ -32,8 +32,6 @@ SSL and HTTP/2 with server push are enabled in the provided configuration exampl
        server 10.10.10.2:8065;
        keepalive 32;
     }
-
-    proxy_cache_path /var/cache/nginx levels=1:2 keys_zone=mattermost_cache:10m max_size=3g inactive=120m use_temp_path=off;
 
     server {
       listen 80 default_server;
@@ -105,11 +103,6 @@ SSL and HTTP/2 with server push are enabled in the provided configuration exampl
            proxy_buffers 256 16k;
            proxy_buffer_size 16k;
            proxy_read_timeout 600s;
-           proxy_cache mattermost_cache;
-           proxy_cache_revalidate on;
-           proxy_cache_min_uses 2;
-           proxy_cache_use_stale timeout;
-           proxy_cache_lock on;
            proxy_http_version 1.1;
            proxy_pass http://backend;
        }
