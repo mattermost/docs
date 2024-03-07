@@ -15,7 +15,7 @@ Although you can configure HTTP/2 without SSL, both Firefox and Chrome browsers 
 You can use any certificate that you want, but these instructions show you how to download and install certificates from `Let's Encrypt <https://letsencrypt.org/>`__, a free certificate authority.
 
 .. note::
-   
+
    If Let’s Encrypt is enabled, forward port 80 through a firewall, with `Forward80To443 </configure/configuration-settings.html#forward-port-80-to-443>`__ ``config.json`` setting set to ``true`` to complete the Let’s Encrypt certification. See the `Let's Encrypt/Certbot documentation <https://certbot.eff.org>`_ for additional assistance.
 
 1. Log in to the server that hosts NGINX and open a terminal window.
@@ -23,20 +23,18 @@ You can use any certificate that you want, but these instructions show you how t
 2. Open the your Mattermost ``nginx.conf`` file as *root* in a text editor, then update the ``{ip}`` address in the ``upstream backend`` to point towards Mattermost (such as ``127.0.0.1:8065``), and update the ``server_name`` to be your domain for Mattermost.
 
   .. note::
-   
+
    - On Ubuntu this file is located at ``/etc/nginx/sites-available/``. If you don't have this file, run ``sudo touch /etc/nginx/sites-available/mattermost``.
    - On CentOS/RHEL this file is located at ``/etc/nginx/conf.d/``. If you don't have this file, run ``sudo touch /etc/nginx/conf.d/mattermost``.
-   - Note that the IP address included in the examples in this documentation may not match your network configuration. 
-   - If you're running NGINX on the same machine as Mattermost, and NGINX resolves ``localhost`` to more than one IP address (IPv4 or IPv6), we recommend using ``127.0.0.1`` instead of ``localhost``. 
-   
+   - The IP address included in the examples in this documentation may not match your network configuration.
+   - If you're running NGINX on the same machine as Mattermost, and NGINX resolves ``localhost`` to more than one IP address (IPv4 or IPv6), we recommend using ``127.0.0.1`` instead of ``localhost``.
+
   .. code-block:: none
 
    upstream backend {
        server {ip}:8065;
        keepalive 32;
        }
-
-   proxy_cache_path /var/cache/nginx levels=1:2 keys_zone=mattermost_cache:10m max_size=3g inactive=120m use_temp_path=off;
 
    server {
        listen 80 default_server;
@@ -73,11 +71,6 @@ You can use any certificate that you want, but these instructions show you how t
            proxy_buffers 256 16k;
            proxy_buffer_size 16k;
            proxy_read_timeout 600s;
-           proxy_cache mattermost_cache;
-           proxy_cache_revalidate on;
-           proxy_cache_min_uses 2;
-           proxy_cache_use_stale timeout;
-           proxy_cache_lock on;
            proxy_http_version 1.1;
            proxy_pass http://backend;
        }
@@ -87,7 +80,7 @@ You can use any certificate that you want, but these instructions show you how t
 3. Remove the existing default sites-enabled file by running ``sudo rm /etc/nginx/sites-enabled/default`` (Ubuntu) or ``sudo rm /etc/nginx/conf.d/default`` (RHEL 8).
 
 4. Enable the Mattermost configuration by running ``sudo ln -s /etc/nginx/sites-available/mattermost /etc/nginx/sites-enabled/mattermost`` (Ubuntu) or ``sudo ln -s /etc/nginx/conf.d/mattermost /etc/nginx/conf.d/default.conf`` (RHEL 8).
-   
+
 5. Run ``sudo nginx -t`` to ensure your configuration is done properly. If you get an error, look into the NGINX config and make the needed changes to the file under ``/etc/nginx/sites-available/mattermost``.
 
 6. Restart NGINX by running ``sudo systemctl start nginx``.
@@ -105,9 +98,9 @@ You can use any certificate that you want, but these instructions show you how t
 11. Run the Let's Encrypt installer dry-run to ensure your DNS is configured properly by running ``sudo certbot certonly --dry-run``.
 
   This will prompt you to enter your email, accept the TOS, share your email, and select the domain you're activating certbot for. This will validate that your DNS points to this server properly and you are able to successfully generate a certificate. If this finishes successfully, proceed to step 12.
-  
+
 12. Run the Let's Encrypt installer by running ``sudo certbot``. This will run certbot and will automatically edit your NGINX config file for the site(s) selected.
-  
+
 13. Ensure your SSL is configured properly by running ``curl https://{your domain here}``
 
 14. Finally, we suggest editing your config file again to increase your SSL security settings above the default Let's Encrypt. This is the same file from Step 2 above. Edit it to look like the below:
@@ -156,11 +149,6 @@ You can use any certificate that you want, but these instructions show you how t
            proxy_buffers 256 16k;
            proxy_buffer_size 16k;
            proxy_read_timeout 600s;
-           proxy_cache mattermost_cache;
-           proxy_cache_revalidate on;
-           proxy_cache_min_uses 2;
-           proxy_cache_use_stale timeout;
-           proxy_cache_lock on;
            proxy_http_version 1.1;
            proxy_pass http://backend;
        }
@@ -301,7 +289,7 @@ Why does Certbot fail the http-01 challenge?
   http-01 challenge for yourdomain.com
   Cleaning up challenges
   Some challenges have failed.
-   
+
 If you see the above errors this is typically because Certbot wasn't able to access port 80. This can be due to a firewall or other DNS configuration. Make sure that your A/AAAA records are pointing to this server and your ``server_name`` within the NGINX config doesn't have a redirect.
 
 .. note::
