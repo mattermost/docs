@@ -27,7 +27,7 @@ You can use any certificate that you want, but these instructions show you how t
 
    - On Ubuntu this file is located at ``/etc/nginx/sites-available/``. If you don't have this file, run ``sudo touch /etc/nginx/sites-available/mattermost``.
    - On CentOS/RHEL this file is located at ``/etc/nginx/conf.d/``. If you don't have this file, run ``sudo touch /etc/nginx/conf.d/mattermost``.
-   - Note that the IP address included in the examples in this documentation may not match your network configuration.
+   - The IP address included in the examples in this documentation may not match your network configuration.
    - If you're running NGINX on the same machine as Mattermost, and NGINX resolves ``localhost`` to more than one IP address (IPv4 or IPv6), we recommend using ``127.0.0.1`` instead of ``localhost``.
 
   .. code-block:: none
