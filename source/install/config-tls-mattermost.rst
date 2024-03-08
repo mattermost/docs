@@ -7,14 +7,14 @@ Configure TLS on Mattermost server
 
 You have two options if you want users to connect with HTTPS:
 
-  1. Set up TLS on Mattermost server.
-  2. Install a proxy such as NGINX and set up TLS on the proxy.
+1. Set up TLS on Mattermost server.
+2. Install a proxy such as NGINX and set up TLS on the proxy.
 
 The easiest option is to set up TLS on the Mattermost Server, but if you expect to have more than 200 users, use a proxy for better performance. A proxy server also provides standard HTTP request logs.
 
 .. note::
 
-   Your Mattermost server must be accessible from the Let's Encrypt CA in order to verify your domain name and issue the certificate. Be sure to open your firewall and configure any reverse proxies to forward traffic to ports 80 and 443. More information can be found `at Let's Encrypt <https://letsencrypt.org/how-it-works/>`_.
+  Your Mattermost server must be accessible from the Let's Encrypt CA in order to verify your domain name and issue the certificate. Be sure to open your firewall and configure any reverse proxies to forward traffic to ports 80 and 443. More information can be found `at Let's Encrypt <https://letsencrypt.org/how-it-works/>`_.
 
 Configure TLS on the Mattermost server
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -46,20 +46,20 @@ The certificate is retrieved the first time that a client tries to connect to th
 To use your own certificate
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-    a. Change the **Use Let's Encrypt** setting to ``false``.
-    b. Change the **TLS Certificate File** setting to the location of the certificate file.
-    c. Change the **TLS Key File** setting to the location of the private key file.
-    d. Restart the Mattermost server for these changes to take effect.
+a. Change the **Use Let's Encrypt** setting to ``false``.
+b. Change the **TLS Certificate File** setting to the location of the certificate file.
+c. Change the **TLS Key File** setting to the location of the private key file.
+d. Restart the Mattermost server for these changes to take effect.
 
 .. note::
-  
+
   Password-protected certificates are not supported.
-   
+
 Use TLS on NGINX (as a proxy)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
-  
+
   Do not set up TLS on Mattermost before before doing so for NGINX. It breaks the connection as the TLS prevents it from successfully communicating with the Mattermost server.
 
 - NGINX will act as a forward proxy to encrypt the traffic between the client and Mattermost server. After installing the SSL certificate, the incoming traffic will be handled via NGINX on port 443 exposed to the internet, proxy to the Mattermost server running on port 80.

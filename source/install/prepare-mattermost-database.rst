@@ -15,7 +15,7 @@ To set up a PostgreSQL database for use by the Mattermost server:
 1. Log in to the server that will host the database, and install PostgreSQL. See the `PostgreSQL <https://www.postgresql.org/download/>`__ documentation for details. When the installation is complete, the PostgreSQL server is running, and a Linux user account called *postgres* has been created.
 
 2. Access PostgreSQL by running:
-    
+
   .. code-block:: none
     :class: mm-code-block 
 

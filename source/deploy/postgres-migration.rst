@@ -19,6 +19,7 @@ Required tools
    guide <https://pgloader.readthedocs.io/en/latest/install.html>`__.
 
 .. note::
+
    -  If you are using MySQL v8: Due to a `known bug <https://github.com/dimitri/pgloader/issues/1183>`__ in pgLoader compiled binaries, you need to compile pgLoader from the source. Please follow the steps `here <https://pgloader.readthedocs.io/en/latest/install.html#build-from-sources>`__ to build from the source.
    -  We have received reports that the pgloader Docker image can be limited in terms of memory resources. Please use pgloader directly instead of a Docker container. 
 
@@ -41,7 +42,7 @@ Before the migration
 -  Determine the migration window needed. This process requires you to stop the Mattermost Server during the migration.
 -  See the `schema-diffs <#schema-diffs>`__ section to ensure data compatibility between schemas.
 -  Prepare your PostgreSQL environment by creating a database and user. See the `database </install/prepare-mattermost-database.html>`__ documentation for details.
--  If you are planning to run an iterative migration (running the pgloader several times), please see :ref:`iterative-migrations` section.
+-  If you are planning to run an iterative migration (running the pgloader several times), please see the `iterative-migrations <#iterative-migrations>`__ section for details.
 
 Prepare target database
 -----------------------

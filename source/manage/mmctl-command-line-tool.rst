@@ -82,9 +82,9 @@ The mmctl tool comes bundled with Mattermost package. For customers that want to
 
 .. _install-mmctl-options:
 
-.. tab:: Using release package (Linux, macOS, Windows)
+.. tab:: Release package 
 
-   Starting with the release ``v8.0.0`` of Mattermost, you can download the mmctl builds at their release URL: ``https://releases.mattermost.com/mmctl/${MATTERMOST_VERSION}/${PLATFORM}_${ARCHITECTURE}.tar`` (for windows, substitute the ``.tar`` suffix with ``.zip``)
+   From Mattermost v8.0, if you're using a release page for Linux, macOS, or Windows, you can download the mmctl builds at their release URL: ``https://releases.mattermost.com/mmctl/${MATTERMOST_VERSION}/${PLATFORM}_${ARCHITECTURE}.tar`` (for windows, substitute the ``.tar`` suffix with ``.zip``)
 
    E.g. to download version ``v8.0.0`` of the mmctl amd64 build for linux, you can run the following:
 
@@ -96,7 +96,7 @@ The mmctl tool comes bundled with Mattermost package. For customers that want to
 
    For versions older than ``v8.0.0``, you can instead visit the `mmctl releases page <https://github.com/mattermost/mmctl/releases>`__ and download the appropriate release for your OS, and install the binary.
 
-.. tab:: Using go install (Linux, macOS, Windows)
+.. tab:: Go install 
 
    Use this option on Linux, macOS, and Windows if you have a ``go`` environment configured.
 
@@ -110,9 +110,9 @@ The mmctl tool comes bundled with Mattermost package. For customers that want to
       # For Mattermost versions < v8.0.0
       go install github.com/mattermost/mmctl@latest
 
-.. tab:: Use brew (Linux, macOS)
+.. tab:: Homebrew
 
-   **NB: this is not an officially supported method.** This installation channel is managed by the community, please refer to the `homebrew/homebrew-core repo <https://github.com/Homebrew/homebrew-core>`__ for reporting issues.
+   **On Linux or macOS, this isn't an officially supported method** This installation channel is managed by the community. Please refer to the `homebrew/homebrew-core repo <https://github.com/Homebrew/homebrew-core>`__ for reporting issues.
 
    Use this option on Linux and macOS if you have Homebrew installed.
 

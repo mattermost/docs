@@ -65,6 +65,7 @@ We need to create a Slack app in order to gather these contents. Follow these st
 4. Name the app **Slack Advanced Exporter** and select the workspace. You'll have to do this for every workspace. Then select **Create App**.
 5. Select **OAuth & Permissions** on the left-hand side of the screen. Then scroll down to **Scopes**.
 6. Under **Bot Token Scopes** type in and select the following scopes:
+
   - ``users:read``
   - ``users:read.email``
 

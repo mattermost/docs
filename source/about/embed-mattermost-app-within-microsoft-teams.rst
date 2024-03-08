@@ -1,3 +1,5 @@
+:orphan:
+
 Embed the Mattermost App within Microsoft Teams (Experimental)
 ==============================================================
 

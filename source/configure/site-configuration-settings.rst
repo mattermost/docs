@@ -1514,7 +1514,7 @@ Allow file uploads on mobile
  <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 +---------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
-| - **true**: **(Default)** Allows users to attach files to messages from mobile apps.              |  - System Config path: **Site Configuration > File Sharing and Downloads** |
+| - **true**: **(Default)** Allows users to attach files to messages from mobile apps.              | - System Config path: **Site Configuration > File Sharing and Downloads**  |
 | - **false**: Prevents users from attaching files (including images) to messages from mobile apps. | - ``config.json`` setting: ``.FileSettings.EnableMobileUpload: true``      |
 |                                                                                                   | - Environment variable: ``MM_FILESETTINGS_ENABLEMOBILEUPLOAD``             |
 +---------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+

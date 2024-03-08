@@ -28,7 +28,6 @@ There are multiple ways to install the Mattermost Kubernetes Operator. We recomm
 With Helm
 ^^^^^^^^^
 
-
 1. Install Helm. We recommend Helm v3.13.0 or later. For installation instructions, see the `Helm quickstart documentation <https://docs.helm.sh/using_helm/#quickstart>`__.
 2. Once Helm is installed and initialized, run the following:
 
@@ -213,7 +212,7 @@ Deploy Mattermost
 
     "accesskey", "Filestore access key.", "Yes"
     "secretkey", "Filestore secret key.", "Yes"
-    "metadata.name": "The name of the secret.", "Yes"
+    "metadata.name", "The name of the secret.", "Yes"
 
   Here's an example of a secret for Amazon S3:
 
