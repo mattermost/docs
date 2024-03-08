@@ -1,7 +1,7 @@
 .masthead {
     background-color: var(--denim);
     font-family: var(--font-trade);
-    padding: 40px 30px 160px;
+    padding: 100px 30px 160px;
 
     .container {
         max-width: 1100px;
@@ -61,6 +61,10 @@
     padding: 40px;
     margin-bottom: 16px;
     max-width: 1080px;
+
+    @media (max-width: 768px) {
+        padding: 24px;
+    }
 
     &.gray {
         background-color: var(--black-01);

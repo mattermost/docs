@@ -20,9 +20,11 @@ body {
     --black-01: #EBEBEF;
     --black-04: #5A6072;
     --black-05: #363A45;
+    --body: #363A45;
 }
 
 body:not([data-theme=light]) {
+    --body: #DDDDDD;
     --primary: #FFBC1F;
     --primary-rgb: 255, 188, 31;
     --color-highlight-on-target: rgb(255 212 112 / 32%);

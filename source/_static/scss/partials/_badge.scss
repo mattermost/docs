@@ -3,12 +3,15 @@
     align-items: center;
     gap: 8px;
     font-size: 14px;
+    flex-wrap: wrap;
+    margin: 8px 0;
 
     &.block {
         display: block;
     }
 
     p {
+        margin: 0;
         border-radius: 4px;
         font-family: var(--font-trade);
         align-items: center;

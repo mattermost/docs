@@ -11,9 +11,11 @@ body {
   --black-01: #EBEBEF;
   --black-04: #5A6072;
   --black-05: #363A45;
+  --body: #363A45;
 }
 
 body:not([data-theme=light]) {
+  --body: #DDDDDD;
   --primary: #FFBC1F;
   --primary-rgb: 255, 188, 31;
   --color-highlight-on-target: rgb(255 212 112 / 32%);
@@ -39,6 +41,26 @@ body:not([data-theme=light]) .site-header {
   background: #000;
 }
 
+@media (max-width: 67em) {
+  .mobile-header {
+    padding-left: 16px;
+    top: 60px;
+  }
+
+  .nav-container {
+    padding: 0;
+  }
+}
+@media (max-width: 770px) {
+  .notification-bar {
+    height: 48px;
+    align-items: center;
+  }
+
+  .notification-bar__close {
+    top: 0;
+  }
+}
 .sidebar-container {
   width: 272px;
   padding: 16px 0 0 16px;
@@ -47,7 +69,7 @@ body:not([data-theme=light]) .site-header {
 /* Theme Overrides */
 .sidebar-search-container {
   padding: 0 16px;
-  color: rgba(63, 67, 80, 0.6392156863);
+  color: #3F4350A3;
 }
 .sidebar-search-container:hover {
   background: transparent;
@@ -95,7 +117,7 @@ body:not([data-theme=light]) .site-header {
 }
 
 .sidebar-tree .toctree-l1 > .reference, .sidebar-tree .toctree-l1 > label .icon {
-  color: rgba(54, 58, 69, 0.7215686275);
+  color: #363A45B8;
 }
 
 body:not([data-theme=light]) .toc-tree li.scroll-current > .reference {
@@ -106,10 +128,10 @@ body:not([data-theme=light]) .sidebar-tree .current-page > a.current {
   background: rgba(255, 255, 255, 0.04);
 }
 body:not([data-theme=light]) .sidebar-tree .toctree-l1 > .reference, body:not([data-theme=light]) .sidebar-tree .toctree-l1 > label .icon {
-  color: rgba(255, 255, 255, 0.7215686275);
+  color: #FFFFFFB8;
 }
 body:not([data-theme=light]) .sidebar-search-container {
-  color: rgba(255, 255, 255, 0.6392156863);
+  color: #FFFFFFA3;
 }
 body:not([data-theme=light]) .site-header__col--logo {
   color: #fff;
@@ -119,6 +141,17 @@ body:not([data-theme=light]) .sidebar-search {
   background: rgba(255, 255, 255, 0.04);
 }
 
+@media (max-width: 67em) {
+  #__navigation:checked ~ .page .sidebar-drawer {
+    width: 80%;
+    max-width: 320px;
+  }
+
+  .sidebar-container {
+    padding: 0;
+    width: 100%;
+  }
+}
 h1, h2, h3, h4, h5, h6 {
   font-family: trade-gothic-next, sans-serif;
   font-weight: 800;
@@ -259,10 +292,15 @@ body:not([data-theme=light]) .highlight pre, body:not([data-theme=light]) .mm-co
   border-bottom-left-radius: 5px;
 }
 
+.mm-label-note {
+  font-style: italic;
+  font-size: 12px;
+}
+
 .masthead {
   background-color: var(--denim);
   font-family: var(--font-trade);
-  padding: 40px 30px 160px;
+  padding: 100px 30px 160px;
 }
 .masthead .container {
   max-width: 1100px;
@@ -289,6 +327,7 @@ body:not([data-theme=light]) .highlight pre, body:not([data-theme=light]) .mm-co
   .masthead {
     padding: 120px 70px 160px;
   }
+
   body.with-notification .masthead {
     padding: 60px 70px 160px;
   }
@@ -317,6 +356,11 @@ body:not([data-theme=light]) .highlight pre, body:not([data-theme=light]) .mm-co
   margin-bottom: 16px;
   max-width: 1080px;
 }
+@media (max-width: 768px) {
+  .masthead-cards-section {
+    padding: 24px;
+  }
+}
 .masthead-cards-section.gray {
   background-color: var(--black-01);
 }
@@ -325,7 +369,8 @@ body:not([data-theme=light]) .highlight pre, body:not([data-theme=light]) .mm-co
   font-size: 20px;
   font-style: normal;
   font-weight: 700;
-  line-height: 150%; /* 30px */
+  line-height: 150%;
+  /* 30px */
   margin: 0 0 28px;
 }
 
@@ -610,7 +655,7 @@ body:not([data-theme=light]) .c-thermometer-modal__footer .btn-primary {
 }
 
 .c-thermometer-modal__footer .btn-primary:hover, .c-thermometer-modal__footer .btn-primary:focus, .c-thermometer-modal__footer .btn-primary:active {
-  background: rgb(19, 93, 190);
+  background: #135dbe;
 }
 
 /* Thermometer Modal Ends */
@@ -666,9 +711,11 @@ body:not([data-theme=light]) .c-thermometer-modal__footer .btn-primary {
     justify-content: center;
     position: relative;
   }
+
   .c-thermometer__trigger {
     width: 270px;
   }
+
   .c-thermometer-popup {
     max-width: 100%;
     width: 100%;
@@ -680,11 +727,14 @@ body:not([data-theme=light]) .c-thermometer-modal__footer .btn-primary {
   align-items: center;
   gap: 8px;
   font-size: 14px;
+  flex-wrap: wrap;
+  margin: 8px 0;
 }
 .mm-plans-badge.block {
   display: block;
 }
 .mm-plans-badge p {
+  margin: 0;
   border-radius: 4px;
   font-family: var(--font-trade);
   align-items: center;
@@ -726,8 +776,23 @@ body:not([data-theme=light]) .mm-badge.mm-badge--note img {
   filter: invert(0%);
 }
 
-body.with-notification .toc-sticky, body.with-notification .main > .content, body.with-notification .sidebar-sticky {
+body {
+  font-family: var(--font-trade);
+  color: var(--body);
+}
+body.with-notification .page {
+  padding-top: 110px;
+}
+body.with-notification .toc-sticky, body.with-notification .main > .content {
   padding-top: 0px;
+}
+@media (max-width: 770px) {
+  body.with-notification .sidebar-sticky {
+    padding-top: 110px;
+  }
+}
+body.with-notification .mobile-header {
+  top: -15px;
 }
 body.with-notification header {
   top: 45px;
@@ -739,9 +804,10 @@ body.with-notification header {
 
 .page .main {
   display: flex;
+  max-width: 1210px;
 }
 .page .main .content {
-  width: auto;
+  width: 100%;
   min-width: 0;
 }
 .page .main .toc-drawer {
@@ -752,7 +818,10 @@ a {
   color: var(--primary);
 }
 
-.homepage .content {
+.page.homepage .main {
+  max-width: 100%;
+}
+.page.homepage .main .content {
   padding: 0;
   width: 100%;
 }
@@ -774,6 +843,15 @@ a {
 }
 
 @media (max-width: 67em) {
+  .page {
+    justify-content: flex-start;
+  }
+
+  .masthead {
+    padding-top: 100px;
+    padding-bottom: 120px;
+  }
+
   .theme-toggle-header {
     display: flex;
     padding: 0;
@@ -793,7 +871,8 @@ a {
   font-size: 22px;
   font-style: normal;
   font-weight: 400;
-  line-height: 150%; /* 33px */
+  line-height: 150%;
+  /* 33px */
   margin-top: 0;
 }
 

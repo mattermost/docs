@@ -21,3 +21,25 @@ body:not([data-theme="light"]) {
         background: #000;
     }
 }
+
+@media (max-width: 67em) {
+    .mobile-header {
+        padding-left: 16px;
+        top: 60px;
+    }
+
+    .nav-container {
+        padding: 0;
+    }
+}
+
+@media (max-width: 770px) {
+    .notification-bar {
+        height: 48px;
+        align-items: center;
+    }
+
+    .notification-bar__close {
+        top: 0;
+    }
+}

@@ -8,9 +8,26 @@
 @import "partials/_badge";
 
 body {
+    font-family: var(--font-trade);
+    color: var(--body);
+
     &.with-notification {
-        .toc-sticky, .main > .content, .sidebar-sticky {
+        .page {
+            padding-top: 110px;
+        }
+
+        .toc-sticky, .main > .content {
             padding-top: 0px;
+        }
+
+        .sidebar-sticky {
+            @media (max-width: 770px) {
+                padding-top: 110px;
+            }
+        }
+
+        .mobile-header {
+            top: -15px;
         }
 
         header {
@@ -21,14 +38,16 @@ body {
 
 .toc-sticky, .main > .content, .sidebar-sticky {
     padding-top: 75px;
+
 }
 
 .page {
     .main {
         display: flex;
+        max-width: 1210px;
 
         .content {
-            width: auto;
+            width: 100%;
             min-width: 0;
         }
 
@@ -42,9 +61,15 @@ a {
     color: var(--primary);
 }
 
-.homepage .content {
-    padding: 0;
-    width: 100%;
+.page.homepage {
+    .main {
+        max-width: 100%;
+
+        .content {
+            padding: 0;
+            width: 100%;
+        }
+    }
 }
 
 .main {
@@ -67,6 +92,15 @@ a {
 }
 
 @media (max-width: 67em) {
+    .page {
+        justify-content: flex-start;
+    }
+
+    .masthead {
+        padding-top: 100px;
+        padding-bottom: 120px;
+    }
+
     .theme-toggle-header {
         display: flex;
         padding: 0;
