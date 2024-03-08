@@ -54,6 +54,7 @@ Open Source Components
 Known Issues
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+- Error might be experienced when quitting v5.7 desktop app on MacOS Ventura `MM-57146 <https://mattermost.atlassian.net/browse/MM-57146>`_.
 - In the **Settings** modal, the search text in the **Check spelling** dropdown is not visible `MM-57089 <https://mattermost.atlassian.net/browse/MM-57089>`_.
 - Users seeing an endless "Loading..." screen when attempting to log in to the app may need to manually delete their cache directory. For MacOS it is located in ``/Users/<username>/Library/Containers/Mattermost/Data/Library/Application Support/Mattermost``, for Windows in ``Users/<username>/AppData/Roaming/Mattermost`` and for Linux in ``~/config/Mattermost`` (where ``~`` is the home directory).
 - On Linux, a left-click on the Mattermost tray icon doesn't open the app window but opens the tray menu.
