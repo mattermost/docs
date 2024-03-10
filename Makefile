@@ -12,6 +12,18 @@ SPHINXBUILD     ?= pipenv run sphinx-build
 SPHINXAUTOBUILD ?= pipenv run sphinx-autobuild
 AUTOBUILDOPTS   ?= -D=html_baseurl=http://127.0.0.1:8000
 
+# If we're not on Windows, check to see if 'mm_url_path_prefix' is included in SPHINXOPTS.
+# If it is included, extract the PR ID from the prefix and set the html_baseurl config
+# option to the preview environment.
+ifneq ($(OS),Windows_NT)
+ifeq ($(findstring mm_url_path_prefix,$(SPHINXOPTS)),mm_url_path_prefix)
+PATH_PREFIX = $(shell echo "$(SPHINXOPTS)" | grep -Eo 'mm_url_path_prefix=\/([0-9]+)' | cut -d / -f 2)
+SPHINXOPTS2 = $(SPHINXOPTS) -D html_baseurl=http://mattermost-docs-preview-pulls.s3-website-us-east-1.amazonaws.com/$(PATH_PREFIX)
+else
+SPHINXOPTS2 = $(SPHINXOPTS)
+endif
+endif
+
 # Put it first so that "make" without argument is like "make help".
 help:
 ifeq ($(OS),Windows_NT)
@@ -72,5 +84,5 @@ ifeq ($(OS),Windows_NT)
 	@CMD /C $(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O) -w "$(WARNINGSFILE)" 2>NUL
 else
 	@mkdir -p "$(BUILDDIR)"
-	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O) 2>>"$(WARNINGSFILE)"
+	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS2) $(O) 2>>"$(WARNINGSFILE)"
 endif
