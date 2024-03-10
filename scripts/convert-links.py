@@ -1,6 +1,8 @@
 import re
 from pathlib import Path
 
+LINK_PATTERN = r"([^>]?)`([^<]*) <([^>]*)>`__"
+
 
 def process_match(match: re.Match) -> str:
     match_prefix: str = match.group(1)
@@ -21,17 +23,23 @@ def process_match(match: re.Match) -> str:
 
 
 # grep command: grep -aEon '[^>]?`[^<]* <[^>]*>`__' xxxxx.rst
-link_pattern = r"([^>]?)`([^<]*) <([^>]*)>`__"
-# source_path = Path("/home/alan/src/docs-alan/source")
-# rst_files = sorted(source_path.glob("**/*.rst"))
-# for rst_file in rst_files:
-#     subbed_content = re.sub(link_pattern, process_match, rst_file.read_text("utf-8"))
+# rst_file = Path("source/getting-started/admin-onboarding-tasks.rst")
+# print(
+#     re.sub(
+#         LINK_PATTERN,
+#         process_match,
+#         rst_file.read_text("utf-8")
+#     )
+# )
 
-rst_file = Path("source/getting-started/admin-onboarding-tasks.rst")
-print(
-    re.sub(
-        link_pattern,
-        process_match,
-        rst_file.read_text("utf-8")
-    )
-)
+source_path = Path("source")
+rst_files = sorted(source_path.glob("**/*.rst"))
+print(f"Process {len(rst_files)} rST files")
+for rst_file in rst_files:
+    if "/_static/" in str(rst_file):
+        print(f"-  {rst_file}")
+        continue
+    print(f"o  {rst_file}")
+    subbed_content = re.sub(LINK_PATTERN, process_match, rst_file.read_text("utf-8"))
+    rst_file.write_text(subbed_content, "utf-8")
+print("done.")
