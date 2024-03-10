@@ -10,6 +10,7 @@ WARNINGSFILE    = $(BUILDDIR)/warnings.log
 SPHINXOPTS      ?= -j auto
 SPHINXBUILD     ?= pipenv run sphinx-build
 SPHINXAUTOBUILD ?= pipenv run sphinx-autobuild
+AUTOBUILDOPTS   ?= -D=html_baseurl=http://127.0.0.1:8000
 
 # Put it first so that "make" without argument is like "make help".
 help:
@@ -32,10 +33,10 @@ test:
 livehtml:
 ifeq ($(OS),Windows_NT)
 	@CMD /C IF NOT EXIST $(BUILDDIR) MD $(BUILDDIR)
-	@CMD /C $(SPHINXAUTOBUILD) "$(SOURCEDIR)" "$(BUILDDIR)/html" -d "$(BUILDDIR)/doctrees" $(SPHINXOPTS) $(O)
+	@CMD /C $(SPHINXAUTOBUILD) "$(SOURCEDIR)" "$(BUILDDIR)/html" -d "$(BUILDDIR)/doctrees" $(SPHINXOPTS) $(AUTOBUILDOPTS) $(O)
 else
 	@mkdir -p "$(BUILDDIR)"
-	@$(SPHINXAUTOBUILD) "$(SOURCEDIR)" "$(BUILDDIR)/html" -d "$(BUILDDIR)/doctrees" $(SPHINXOPTS) $(O)
+	@$(SPHINXAUTOBUILD) "$(SOURCEDIR)" "$(BUILDDIR)/html" -d "$(BUILDDIR)/doctrees" $(SPHINXOPTS) $(AUTOBUILDOPTS) $(O)
 endif
 
 # Run `make linkcheck` to check external links

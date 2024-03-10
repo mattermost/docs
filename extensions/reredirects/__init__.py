@@ -15,14 +15,14 @@ from typing import Mapping, Any, Optional
 CONFIG_HTML_BASEURL = "html_baseurl"
 # Configuration options
 CONFIG_OPTION_REDIRECTS = "redirects"
-CONFIG_OPTION_TEMPLATE_FILE = "redirect_html_template_file"
-CONFIG_MM_URL_PATH_PREFIX = "mm_url_path_prefix"
-CONFIG_WRITE_EXTENSIONLESS_PAGES = "redirect_write_extensionless_pages"
+CONFIG_OPTION_TEMPLATE_FILE = "redirects_html_template_file"
+CONFIG_OPTION_BASEURL = "redirects_baseurl"
+CONFIG_WRITE_EXTENSIONLESS_PAGES = "redirects_write_extensionless_pages"
 # Option defaults
 OPTION_REDIRECTS_DEFAULT: dict[str, str] = dict()
 OPTION_TEMPLATE_FILE_DEFAULT = None
 WRITE_EXTENSIONLESS_PAGES_DEFAULT = False
-MM_URL_PATH_PREFIX_DEFAULT = ""
+OPTION_BASEURL_DEFAULT = ""
 # Environment keys
 ENV_REDIRECTS_ENABLED = "redirects-enabled"
 ENV_COMPUTED_REDIRECTS = "computed-redirects"
@@ -49,10 +49,10 @@ def setup(app: Sphinx) -> dict[str, Any]:
     app.add_config_value(
         CONFIG_OPTION_TEMPLATE_FILE, OPTION_TEMPLATE_FILE_DEFAULT, "env"
     )
-    app.add_config_value(CONFIG_MM_URL_PATH_PREFIX, MM_URL_PATH_PREFIX_DEFAULT, "env")
     app.add_config_value(
         CONFIG_WRITE_EXTENSIONLESS_PAGES, WRITE_EXTENSIONLESS_PAGES_DEFAULT, "env"
     )
+    app.add_config_value(CONFIG_OPTION_BASEURL, OPTION_BASEURL_DEFAULT, "env")
     app.connect("builder-inited", builder_inited)
     app.connect("env-updated", env_updated)
     app.connect("html-page-context", html_page_context)
@@ -264,8 +264,12 @@ def compute_redirects(
     # read parameters from config
     html_baseurl: str = getattr(app.config, CONFIG_HTML_BASEURL)
     html_baseurl = html_baseurl.removesuffix("/")
-    mm_url_path_prefix: str = getattr(app.config, CONFIG_MM_URL_PATH_PREFIX)
-    mm_url_path_prefix = mm_url_path_prefix.removesuffix("/")
+    redirects_baseurl: str = getattr(app.config, CONFIG_OPTION_BASEURL)
+    redirects_baseurl = redirects_baseurl.removesuffix("/")
+    # If redirects_baseurl is the same as html_baseurl, don't check the redirect target
+    # for a baseurl to replace.
+    if redirects_baseurl == html_baseurl:
+        redirects_baseurl = ""
     # process each record in the redirects dict
     for source in redirects_option.keys():
         # split the URL on # so we get the path and page name + the fragment, if any
@@ -292,15 +296,16 @@ def compute_redirects(
         # add a new dict to redirect_map if the page has not been seen before
         if pagename not in computed_redirects:
             computed_redirects[pagename] = dict()
-        # if the target page has the same prefix as html_baseurl, remove the prefix so intra-site redirects work
-        target = redirects_option[source].removeprefix(html_baseurl)
-        # if the target is the empty string then the redirect is invalid. warn the user and continue on
+        # Get the target link of the redirect
+        target = redirects_option[source]
+        # If the target is the empty string then the redirect is invalid. warn the user and continue on.
         if target == "":
             logger.warning("compute_redirects(): empty target for source %s" % source)
             continue
-        # if mm_url_path_prefix is defined and the target path starts with '/', prepend it to the target path.
-        if mm_url_path_prefix != "" and target.startswith("/"):
-            target = mm_url_path_prefix + target
+        # If there is a redirects_baseurl defined and the target URL starts with that value, replace the
+        # value with that of html_baseurl.
+        if redirects_baseurl != "" and target.startswith(redirects_baseurl):
+            target = target.replace(redirects_baseurl, html_baseurl)
         # if there's no fragment then we're redirecting to the "default page", which is
         # the `pagename` without any fragment.
         if fragment == "":

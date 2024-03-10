@@ -12,8 +12,8 @@ from extensions.reredirects import (
     toctree_returns_none as ext_toctree_returns_none,
     CONFIG_OPTION_REDIRECTS,
     CONFIG_OPTION_TEMPLATE_FILE,
-    CONFIG_MM_URL_PATH_PREFIX,
     CONFIG_WRITE_EXTENSIONLESS_PAGES,
+    CONFIG_OPTION_BASEURL,
     CTX_HAS_FRAGMENT_REDIRECTS,
     CTX_FRAGMENT_REDIRECTS,
     DEFAULT_PAGE,
@@ -33,8 +33,8 @@ class TestSetup:
         assert result["parallel_write_safe"]
         assert hasattr(app.config, CONFIG_OPTION_REDIRECTS)
         assert hasattr(app.config, CONFIG_OPTION_TEMPLATE_FILE)
-        assert hasattr(app.config, CONFIG_MM_URL_PATH_PREFIX)
         assert hasattr(app.config, CONFIG_WRITE_EXTENSIONLESS_PAGES)
+        assert hasattr(app.config, CONFIG_OPTION_BASEURL)
 
 
 class TestBuilderInited:

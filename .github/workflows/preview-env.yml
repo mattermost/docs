@@ -30,7 +30,7 @@ jobs:
 
       - name: Build
         if: github.event.pull_request.head.repo.full_name == github.repository
-        run: make SPHINXOPTS="-j auto -D mm_url_path_prefix=/${{ steps.pr.outputs.id }}" html
+        run: make SPHINXOPTS="-j auto -D html_baseurl=http://mattermost-docs-preview-pulls.s3-website-us-east-1.amazonaws.com/${{ github.event.number }}" html
 
       - uses: shallwefootball/s3-upload-action@4350529f410221787ccf424e50133cbc1b52704e # v1.3.3
         name: Upload Preview Env

@@ -46,7 +46,7 @@ extensions = [
 
 sphinx_tabs_disable_tab_closing = True
 sphinx_tabs_disable_css_loading = False
-myst_enable_extensions = ["colon_fence",]
+myst_enable_extensions = ["colon_fence"]
 myst_heading_anchors = 3
 
 # Suppress particular classes of warnings
@@ -67,7 +67,20 @@ source_suffix = [".rst", ".md"]
 # source_encoding = 'utf-8-sig'
 
 # -- Page redirects -------------------------------------------------
-# Redirects using: https://pypi.org/project/sphinx-reredirects/
+
+# If `redirects_baseurl` is non-empty and the target of a redirect begins
+# with that value, the value of `html_baseurl` will replace that of
+# `redirects_baseurl`. The target will not be affected if `redirects_baseurl`
+# and `html_baseurl` have the same value.
+redirects_baseurl = "https://docs.mattermost.com/"
+
+# A redirect option which, when True, will write one extensionless page (i.e. without the .html extension)
+# for each redirect page that was written. This enables redirects for pages where the .html extension was not
+# specified in the URL and the underlying web server doesn't attempt to add .html when resolving the location
+# of the resource to send.
+redirects_write_extensionless_pages = False
+
+# A map of page redirects from doc to HTTPS link
 redirects = {
 
 # How to add redirects for docs.mattermost.com:
@@ -3355,17 +3368,6 @@ author = "Mattermost"
 # This is also used if you do content translation via gettext catalogs.
 # Usually you set "language" from the command line for these cases.
 # language = "en"
-
-# A path prefix which, when defined, is added to redirect target URLs after removing the
-# html_baseurl prefix. This allows redirects to function in Mattermost preview environments.
-# Target URLs that don't begin with '/' after removing the html_baseurl prefix are unaffected.
-mm_url_path_prefix = ""
-
-# A redirect option which, when True, will write one extensionless page (i.e. without the .html extension)
-# for each redirect page that was written. This enables redirects for pages where the .html extension was not
-# specified in the URL and the underlying web server doesn't attempt to add .html when resolving the location
-# of the resource to send.
-redirect_write_extensionless_pages = False
 
 # There are two options for replacing |today|: either, you set today to some
 # non-false value, then it is used:
