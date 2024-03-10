@@ -1,7 +1,7 @@
 Scale Mattermost up to 100 users
 ================================
 
-This page describes the Mattermost reference architecture designed for the load of up to 100 concurrent users. Unsure which reference architecture to use? See the `scaling for enterprise </scale/scaling-for-enterprise.html>`__ documentation for details.
+This page describes the Mattermost reference architecture designed for the load of up to 100 concurrent users. Unsure which reference architecture to use? See the :doc:`scaling for enterprise </scale/scaling-for-enterprise>` documentation for details.
 
 - **High Availability**: Not required
 - **Database Configuration**: Single
@@ -46,4 +46,4 @@ We strongly recommend that you review storage utilization at least quarterly to 
 Additional considerations
 -------------------------
 
-Smaller deployments, or deployments using the `Mattermost Omnibus installer </install/installing-mattermost-omnibus.html>`__, will need an increase in resources due to the fact the database is hosted on the same server as the Mattermost application.
+Smaller deployments, or deployments using the :doc:`Mattermost Omnibus installer </install/installing-mattermost-omnibus>`, will need an increase in resources due to the fact the database is hosted on the same server as the Mattermost application.

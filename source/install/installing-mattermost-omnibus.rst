@@ -109,7 +109,7 @@ Configure Mattermost Omnibus
 
 With Mattermost Omnibus, the Mattermost ``config.json`` file isn't used because Omnibus stores configuration in the database. The Omnibus platform itself requires a configuration of its own stored in ``/etc/mattermost/mmomni.yml``. This file contains the data that Omnibus needs to configure the platform, and connect all the services together.
 
-You’ll need to use ``mmctl`` to make changes to your Mattermost server configuration using ``mmctl --local config edit``. See the `mmctl </manage/mmctl-command-line-tool.html#mmctl-config-edit>`__ documentation for additional command details.
+You’ll need to use ``mmctl`` to make changes to your Mattermost server configuration using ``mmctl --local config edit``. See the :ref:`mmctl <manage/mmctl-command-line-tool:mmctl config edit>` documentation for additional command details.
 
 For Omnibus to work properly, some configuration parameters must remain unchanged, such as the port that Mattermost uses to run.
 
@@ -243,4 +243,4 @@ What ``mmomni`` commands are available?
 Where can I get help?
 ~~~~~~~~~~~~~~~~~~~~~
 
-If you have any problems installing Mattermost Omnibus, see the `troubleshooting guide </install/troubleshooting.html>`__ for common error messages, or `join the Mattermost user community for troubleshooting help <https://mattermost.com/pl/default-ask-mattermost-community/>`__.
+If you have any problems installing Mattermost Omnibus, see the :doc:`troubleshooting guide </install/troubleshooting>` for common error messages, or `join the Mattermost user community for troubleshooting help <https://mattermost.com/pl/default-ask-mattermost-community/>`__.

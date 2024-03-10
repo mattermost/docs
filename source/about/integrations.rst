@@ -40,14 +40,14 @@ You can deploy interactive bots to help users with processes and tasks with Matt
 
 Prebuilt bots are available on the `Mattermost Marketplace <https://mattermost.com/marketplace/>`__, or you can `configure your own bots <https://developers.mattermost.com/integrate/reference/bot-accounts/>`__.
 
-Learn about `Mattermost Hubot integration (hubot-matteruser on npm) <https://www.npmjs.com/package/hubot-matteruser>`__ and `other open source community bots available <https://integrations.mattermost.com/>`__ or you can `build your own </integrations/cloud-bot-accounts.html>`__.
+Learn about `Mattermost Hubot integration (hubot-matteruser on npm) <https://www.npmjs.com/package/hubot-matteruser>`__ and `other open source community bots available <https://integrations.mattermost.com/>`__ or you can :doc:`build your own </integrations/cloud-bot-accounts>`.
 
 Custom slash commands
 ---------------------
 
-A `slash command </collaborate/run-slash-commands.html>`__ is similar to an `outgoing webhooks <https://developers.mattermost.com/integrate/webhooks/outgoing/>`__, but instead of listening to a channel, it's used as a command tool in a channel.
+A :doc:`slash command </collaborate/run-slash-commands>` is similar to an `outgoing webhooks <https://developers.mattermost.com/integrate/webhooks/outgoing/>`__, but instead of listening to a channel, it's used as a command tool in a channel.
 
-Slash commands enable users to trigger custom actions, such as creating Jira tickets or GitHub pull requests within Mattermost channels. See the `built-in slash commands </collaborate/built-in-slash-commands.html>`__ product documentation and the `custom slash command <https://developers.mattermost.com/integrate/slash-commands/custom/>`__ developer documentation to learn more.
+Slash commands enable users to trigger custom actions, such as creating Jira tickets or GitHub pull requests within Mattermost channels. See the :doc:`built-in slash commands </collaborate/built-in-slash-commands>` product documentation and the `custom slash command <https://developers.mattermost.com/integrate/slash-commands/custom/>`__ developer documentation to learn more.
 
 .. tip::
     The Mattermost slash command format is compatible with Slack's format, so you can easily port commands from Slack. 

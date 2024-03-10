@@ -32,7 +32,7 @@ Configuration in database
 .. include:: ../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
-Self-hosted system configuration can be stored in the database. This changes the Mattermost binary from reading the default ``config.json`` file to reading the configuration settings stored within a configuration table in the database. See the `Mattermost database configuration </configure/configuration-in-your-database.html>`__ documentation for migration details.
+Self-hosted system configuration can be stored in the database. This changes the Mattermost binary from reading the default ``config.json`` file to reading the configuration settings stored within a configuration table in the database. See the :doc:`Mattermost database configuration </configure/store-configuration-in-your-database>` documentation for migration details.
 
 Environment variables
 ---------------------

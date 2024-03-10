@@ -41,7 +41,7 @@ Before the migration
 -  Confirm your Mattermost version. See the **About** modal for details. 
 -  Determine the migration window needed. This process requires you to stop the Mattermost Server during the migration.
 -  See the `schema-diffs <#schema-diffs>`__ section to ensure data compatibility between schemas.
--  Prepare your PostgreSQL environment by creating a database and user. See the `database </install/prepare-mattermost-database.html>`__ documentation for details.
+-  Prepare your PostgreSQL environment by creating a database and user. See the :doc:`database </install/prepare-mattermost-database>` documentation for details.
 -  If you are planning to run an iterative migration (running the pgloader several times), please see the `iterative-migrations <#iterative-migrations>`__ section for details.
 
 Prepare target database

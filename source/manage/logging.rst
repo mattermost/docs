@@ -19,10 +19,10 @@ Console logs feature verbose debug level log messages written to the console usi
 
 Customize the following console logs by going to **System Console > Environment > Logging** or by editing the ``config.json`` file directly:
 
-- `Stop outputting console logs </configure/environment-configuration-settings.html#output-logs-to-console>`__
-- `Adjust console log level </configure/environment-configuration-settings.html#console-log-level>`__ 
-- `Output console logs as plain text </configure/environment-configuration-settings.html#output-console-logs-as-json>`__ & `colorize plain text log level details </configure/environment-configuration-settings.html#colorize-plain-text-console-logs>`__
-- `Omit webhook debug messages </configure/environment-configuration-settings.html#enable-webhook-debugging>`__
+- :ref:`Stop outputting console logs <configure/environment-configuration-settings:output logs to console>`
+- :ref:`Adjust console log level <configure/environment-configuration-settings:console log level>` 
+- :ref:`Output console logs as plain text <configure/environment-configuration-settings:output console logs as json>` & :ref:`colorize plain text log level details <configure/environment-configuration-settings:colorize plain text console logs>`
+- :ref:`Omit webhook debug messages <configure/environment-configuration-settings:enable webhook debugging>`
 
 File logs
 ---------
@@ -118,14 +118,14 @@ By default, Mattermost doesn’t write audit logs locally to a file on the serve
 - Logs are recorded asynchronously to reduce latency to the caller, and are stored separately from general logging.
 - During short spans of inability to write to targets, the audit records buffer in memory with a configurable maximum record cap. Based on typical audit record volumes, it could take many minutes to fill the buffer. After that, the records are dropped, and the record drop event is logged.
 
-You can define `whether audit events are output to file </configure/experimental-configuration-settings.html#write-audit-files-locally>`__, `the name and path of the audit logging file </configure/experimental-configuration-settings.html#file-name>`__, the `maximum size of each file </configure/experimental-configuration-settings.html#file-max-size-mb>`__, the `maximum number of days before triggering a rotation </configure/experimental-configuration-settings.html#file-max-age-days>`__, the `maximum number of rotated files to keep </configure/experimental-configuration-settings.html#file-max-backups>`__, `whether files are compressed using GZIP </configure/experimental-configuration-settings.html#file-compress>`__, and `how many audit records can be queued/buffered </configure/experimental-configuration-settings.html#file-max-queue-size>`__ at any point in time when writing to a file.
+You can define :ref:`whether audit events are output to file <configure/experimental-configuration-settings:write audit files locally>`, :ref:`the name and path of the audit logging file <configure/experimental-configuration-settings:file name>`, the :ref:`maximum size of each file <configure/experimental-configuration-settings:file max size mb>`, the :ref:`maximum number of days before triggering a rotation <configure/experimental-configuration-settings:file max age days>`, the :ref:`maximum number of rotated files to keep <configure/experimental-configuration-settings:file max backups>`, :ref:`whether files are compressed using GZIP <configure/experimental-configuration-settings:file compress>`, and :ref:`how many audit records can be queued/buffered <configure/experimental-configuration-settings:file max queue size>` at any point in time when writing to a file.
 
 In addition, you can output audit log records to any combination of `console <#console-target-configuration-options>`__, `local file <#file-target-configuration-options>`__, `syslog <#syslog-target-configuration-options>`__, and `TCP socket <#tcp-target-configuration-options>`__ targets, each featuring additional customization. See `Advanced Logging <#advanced-logging>`__ for details.  
 
 .. warning::
     
     - From Mattermost v7.2, experimental audit logging beta is a breaking change from previous releases in cases where customers looking to parse previous audit logs with the new format.
-    - The format and content of an audit log record has changed to become standardized for all events using a `standard JSON schema </comply/embedded-json-audit-log-schema.html>`__.
+    - The format and content of an audit log record has changed to become standardized for all events using a :doc:`standard JSON schema </comply/embedded-json-audit-log-schema>`.
     - Existing tools which ingest or parse audit log records may need to be modified.
 
 ----
@@ -479,9 +479,9 @@ Yes. When updating the audit log configuration via REST API, mmctl, or System Co
 How do I omit incoming webhook details from the logs?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-See `enable-webhook-debugging </configure/environment-configuration-settings.html#enable-webhook-debugging>`__
+See :ref:`enable-webhook-debugging <configure/environment-configuration-settings:enable webhook debugging>`
 
 How do I adjust the maximum log field size?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-See `maximum-field-size </configure/environment-configuration-settings.html#maximum-field-size>`__
+See :ref:`maximum-field-size <configure/environment-configuration-settings:maximum field size>`

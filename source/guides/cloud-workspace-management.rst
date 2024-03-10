@@ -5,7 +5,7 @@ This section of the guide is for system admins of Mattermost Cloud deployments.
 
 .. tip::
     
-    If you're the admin for a Mattermost self-hosted workspace, see the `Self-hosted administration </guides/self-hosted-administration.html>`__ documentation.
+    If you're the admin for a Mattermost self-hosted workspace, see the :doc:`Self-hosted administration </guides/self-hosted-administration>` documentation.
 
 .. toctree::
     :maxdepth: 1

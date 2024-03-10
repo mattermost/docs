@@ -17,14 +17,14 @@ Once setup is complete, see the `get started <#get-started-with-the-plugin>`__ s
 Install the Mattermost Google Calendar plugin
 ---------------------------------------------
 
-To install the `Mattermost Google Calendar </plugins/mattermost-google-calendar>`__ plugin on your Mattermost server:
+To install the :doc:`Mattermost Google Calendar </plugins/mattermost-google-calendar>` plugin on your Mattermost server:
 
 1. Log in to your Mattermost workspace as a system administrator.
 2. Download the latest version of the plugin binary release compatible with Mattermost v8.x and later. 
 
   .. tip::
 
-    If you are using an earlier version of Mattermost, `follow our documentation </upgrade/upgrading-mattermost-server.html>`__ to upgrade to Mattermost v8.x or later.
+    If you are using an earlier version of Mattermost, :doc:`follow our documentation </upgrade/upgrading-mattermost-server>` to upgrade to Mattermost v8.x or later.
 
 Create a Google Calendar service
 --------------------------------
@@ -98,12 +98,12 @@ In Mattermost, configure the plugin by going to **System Console > Plugin Manage
 
 .. note::
 
-    Additional Mattermost Google Calendar configuration options are available for troubleshooting, including the admin log level of plugin logs, and  displaying full or partial context for admin log messages. See the `plugin configuration settings </configure/plugins-configuration-settings.html#google-calendar>`__ documentation for details.
+    Additional Mattermost Google Calendar configuration options are available for troubleshooting, including the admin log level of plugin logs, and  displaying full or partial context for admin log messages. See the :ref:`plugin configuration settings <configure/plugins-configuration-settings:google calendar>` documentation for details.
 
 Get started with the plugin
 ---------------------------
 
-See the `use Mattermost Google Calendar plugin </collaborate/use-mattermost-google-calendar-plugin>`__ documentation for details on how users can `link their Google Calendar to Mattermost </collaborate/use-mattermost-google-calendar-plugin.html#connect-your-google-calendar-account-to-mattermost>`__, `customize plugin preferences </collaborate/use-mattermost-google-calendar-plugin.html#customize-your-google-calendar-plugin>`__, and `create calendar events in Mattermost <collaborate/use-mattermost-google-calendar-plugin.html#create-a-calendar-event>`__ that are added to their Google Calendar automatically.
+See the :doc:`use Mattermost Google Calendar plugin </collaborate/use-mattermost-google-calendar-plugin>` documentation for details on how users can :ref:`link their Google Calendar to Mattermost <collaborate/use-mattermost-google-calendar-plugin:connect your google calendar account to mattermost>`, :ref:`customize plugin preferences <collaborate/use-mattermost-google-calendar-plugin:customize your google calendar plugin>`, and :ref:`create calendar events in Mattermost <collaborate/use-mattermost-google-calendar-plugin:create a calendar event>` that are added to their Google Calendar automatically.
 
 Troubleshooting
 ---------------

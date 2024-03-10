@@ -339,7 +339,7 @@ Enable HTTP cross-origin requests from specific domains.
 
 .. note::
 
-  Ensure you've entered your `Site URL </configure/environment-configuration-settings.html#site-url>`__ before enabling this setting to prevent losing access to the System Console after saving. If you lose access to the System Console after changing this setting, you can set your Site URL through the ``config.json`` file.
+  Ensure you've entered your :ref:`Site URL <configure/environment-configuration-settings:site url>` before enabling this setting to prevent losing access to the System Console after saving. If you lose access to the System Console after changing this setting, you can set your Site URL through the ``config.json`` file.
 
 +--------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"AllowCorsFrom": ""`` with string input. |

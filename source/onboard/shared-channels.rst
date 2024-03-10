@@ -8,7 +8,7 @@ Shared channels is an experimental feature that brings people together from mult
 
 Mattermost System Admins use slash commands to establish secure connections between Mattermost instances, then invite secured connections to shared channels.
 
-Shared channels behave like regular channels, offering the same user experience and functionality as public and private channels. All members using secure connections, including local members and remote members, can `send and receive messages </messaging/sending-receiving-messages.html>`__, `use emojis </help/messaging/emoji.html>`__ to react to messages, `share files </messaging/sharing-files.html>`__, and `search message history </messaging/searching-in-mattermost.html>`__. Content is synchronized in real-time across all participating Mattermost instances.
+Shared channels behave like regular channels, offering the same user experience and functionality as public and private channels. All members using secure connections, including local members and remote members, can :doc:`send and receive messages </collaborate/send-messages>`, :doc:`use emojis </collaborate/react-with-emojis-gifs>` to react to messages, :doc:`share files </collaborate/share-files-in-messages>`, and :doc:`search message history </collaborate/search-for-messages>`. Content is synchronized in real-time across all participating Mattermost instances.
 
 A channel’s permissions and access continues to be governed by each server separately. Channel moderation permissions can be applied to a shared channel and be in effect on the local Mattermost server while not being in effect on a remote Mattermost server.
 
@@ -17,9 +17,9 @@ Set up shared channels
 
 The process of sharing channels involves the following three steps:
 
-1. System Admins must enable shared channels functionality for their Mattermost instance. See our `Experimental Configuration Settings </configure/experimental-configuration-settings.html#enable-shared-channels>`__ documentation for details.
+1. System Admins must enable shared channels functionality for their Mattermost instance. See our :ref:`Experimental Configuration Settings <configure/experimental-configuration-settings:enable shared channels>` documentation for details.
 
-2. System Admins `use a slash command </messaging/executing-slash-commands.html>`__ to establish a secure and trusted relationship between other Mattermost Enterprise instances. This process involves creating a password-protected, encrypted invitation, creating a strong decryption password, then sending the invitation and password to the System Admin of a remote Mattermost instance. We strongly recommend that you share an invitation separately from its password to ensure that someone doesn't have all of the data necessary to take action if the message were compromised.
+2. System Admins :doc:`use a slash command </collaborate/run-slash-commands>` to establish a secure and trusted relationship between other Mattermost Enterprise instances. This process involves creating a password-protected, encrypted invitation, creating a strong decryption password, then sending the invitation and password to the System Admin of a remote Mattermost instance. We strongly recommend that you share an invitation separately from its password to ensure that someone doesn't have all of the data necessary to take action if the message were compromised.
 
 3. The remote System Admin receiving the invitation uses a slash command to `accept the invitation <#accept-a-secure-connection-invitation>`_.
 

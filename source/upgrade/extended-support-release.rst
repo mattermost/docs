@@ -17,7 +17,7 @@ What is the life cycle of an Extended Support Release?
 
 Mattermost provides an ESR when a significant number of new features and improvements have been added to the product, and have had sufficient time to stabilize. A new ESR is released twice a year, every February and August release. An ESR is supported for nine months to provide customers with enough time to test and upgrade to the next ESR.
 
-When an ESR is at the end of its life cycle, there will be announcements ahead of time to provide time for people to test, certify, and deploy a newer ESR version before support ends. After a release reaches its end-of-life, no further updates will be provided for that version. Please see `Release Lifecycle documentation </upgrade/release-lifecycle.html>`_ for a full list of lifecycles for each Mattermost release.
+When an ESR is at the end of its life cycle, there will be announcements ahead of time to provide time for people to test, certify, and deploy a newer ESR version before support ends. After a release reaches its end-of-life, no further updates will be provided for that version. Please see :doc:`Release Lifecycle documentation </upgrade/release-lifecycle>` for a full list of lifecycles for each Mattermost release.
 
 To receive updates about Extended Support Releases, sign up for our mailing list `here <https://eepurl.com/dCKn2P>`__.
 
@@ -39,7 +39,7 @@ If your organization prefers to have the newest features and improvements, Exten
 How do I install the Extended Support Release?
 ----------------------------------------------
 
-Follow our `install </guides/deployment.html#install-guides>`__ or `upgrade </upgrade/upgrading-mattermost-server.html>`__ guides. Please read the `best practices </upgrade/prepare-to-upgrade-mattermost.html#upgrade-best-practices)>`__ for upgrading. Please also follow the `important upgrade notes </upgrade/important-upgrade-notes.html>`_ for all the versions since the current ESR version you have currently installed. Please see `the changelog </install/self-managed-changelog.html>`_ for list of database, API, and ``config.json`` updates for each release.
+Follow our :ref:`install <guides/deployment:install guides>` or :doc:`upgrade </upgrade/upgrading-mattermost-server>` guides. Please read the :ref:`best practices <upgrade/prepare-to-upgrade-mattermost:upgrade best practices)>` for upgrading. Please also follow the :doc:`important upgrade notes </upgrade/important-upgrade-notes>` for all the versions since the current ESR version you have currently installed. Please see :doc:`the changelog </deploy/legacy-self-hosted-changelog>` for list of database, API, and ``config.json`` updates for each release.
 
 When downloading the Mattermost version, choose an Extended Support Release from the list below.
 
@@ -94,7 +94,7 @@ How do we notify customers about new and deprecated Extended Support Releases?
 
 For a new upcoming ESR, we send out an email announcement on or close to release day. We also add a reminder on our release announcement, changelog, and via a Forum post (`see example <https://forum.mattermost.com/t/upcoming-extended-support-release-updates/8526>`_).
 
-For a deprecated ESR, we send out an email announcement three months in advance. We also add reminders on our release announcements, changelogs, `important upgrade notes </upgrade/important-upgrade-notes.html>`_, and our `Forum site <https://forum.mattermost.com/>`_.
+For a deprecated ESR, we send out an email announcement three months in advance. We also add reminders on our release announcements, changelogs, :doc:`important upgrade notes </upgrade/important-upgrade-notes>`, and our `Forum site <https://forum.mattermost.com/>`_.
 
 To receive updates about Extended Support Releases, sign up for our mailing list `here <https://eepurl.com/dCKn2P>`_.
 
@@ -108,9 +108,9 @@ What Mobile and Desktop App versions are compatible with the latest ESR?
 
 Earlier 4.x versions of Mattermost Desktop App and earlier v1.x versions of the Mobile App are backwards compatible and are supported with our supported Extended Support Releases. However, for an optimal user experience and for latest security fixes, we strongly recommend upgrading both your Mattermost Desktop and Mobile Apps to the latest version.
 
-Please review the `Desktop App changelog </deploy/desktop-app-changelog.html>`_ and the `Mobile App changelog </deploy/mobile-app-changelog.html>`_ notes for any self-hosted version requirements for features and functionalities, as well as notes on security fixes.
+Please review the :doc:`Desktop App changelog </deploy/desktop-app-changelog>` and the :doc:`Mobile App changelog </deploy/mobile-app-changelog>` notes for any self-hosted version requirements for features and functionalities, as well as notes on security fixes.
 
-See more details in our `release lifecycle documentation </upgrade/release-lifecycle.html#desktop-and-mobile-app-server-compatibility>`_.
+See more details in our :ref:`release lifecycle documentation <upgrade/release-lifecycle:desktop and mobile app server compatibility>`.
 
 If we upgrade to the latest ESR with a legacy `E10 or E20 license key <https://docs.mattermost.com/about/editions-and-offerings.html#other-mattermost-plans>`_, will we have compatibility issues?
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

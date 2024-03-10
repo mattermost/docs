@@ -127,7 +127,7 @@ The migration is idempotent, meaning that you can run multiple imports that cont
 Option 1: Upload export via ``mmctl``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Ensure you have the Mattermost command line tool ``mmctl`` installed. This allows you to perform different tasks that communicate to Mattermost's API. You'll also want to `configure authentication </manage/mmctl-command-line-tool.html#mmctl-auth>`__ for the tool.
+Ensure you have the Mattermost command line tool ``mmctl`` installed. This allows you to perform different tasks that communicate to Mattermost's API. You'll also want to :ref:`configure authentication <manage/mmctl-command-line-tool:mmctl auth>` for the tool.
 
 To prepare our files to be uploaded to the server, we need to put both the ``.jsonl`` file and ``data`` folder together into a zip file.
 

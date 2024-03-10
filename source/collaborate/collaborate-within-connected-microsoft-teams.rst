@@ -8,7 +8,7 @@ Collaborate within Microsoft Teams (Beta)
   :alt: Open menus using the plus icon.
   :class: theme-icon
 
-The `Mattermost for Microsoft Teams plugin </about/mattermost-for-microsoft-teams.html>`__ integration enables you to collaborate with Microsoft Teams users without leaving Mattermost.
+The :doc:`Mattermost for Microsoft Teams plugin </about/mattermost-for-microsoft-teams>` integration enables you to collaborate with Microsoft Teams users without leaving Mattermost.
 
 .. include:: ../_static/badges/academy-msteams.rst
   :start-after: :nosearch:
@@ -37,7 +37,7 @@ Once you've connected your Mattermost account to your Microsoft Teams account, y
 Collaborate through messages
 ----------------------------
 
-You can start a direct or group message between Mattermost and Microsoft Teams users unless your Mattermost administrator has `disabled the ability to do so in the System Console </configure/plugins-configuration-settings.html#sync-direct-and-group-messages>`__. 
+You can start a direct or group message between Mattermost and Microsoft Teams users unless your Mattermost administrator has :ref:`disabled the ability to do so in the System Console <configure/plugins-configuration-settings:sync direct and group messages>`. 
 
 - Within Mattermost select the |plus-icon| icon next to **Direct Messages** in the left pane, then search for the user you want to message. Your direct or group conversation is visible in both Mattermost and Microsoft Teams.
 
@@ -65,10 +65,10 @@ Collaborate with colleagues
 
 You have many ways to collaborate with colleagues in linked channels using a web browser or the Mattermost desktop app, including:
 
-- `Send messages </collaborate/send-messages.html>`__ and `reply to messages <h/collaborate/reply-to-messages.html>`__
-- `Attach files to messages </collaborate/share-files-in-messages.html>`__
-- `Express yourself with emojis and GIFs </collaborate/react-with-emojis-gifs.html>`__
-- `Share complex systems data and formatted code </collaborate/format-messages.html>`__
-- `Edit or delete sent messages </collaborate/send-messages.html#edit-or-delete-messages>`__
+- :doc:`Send messages </collaborate/send-messages>` and :doc:`reply to messages <h/collaborate/reply-to-messages>`
+- :doc:`Attach files to messages </collaborate/share-files-in-messages>`
+- :doc:`Express yourself with emojis and GIFs </collaborate/react-with-emojis-gifs>`
+- :doc:`Share complex systems data and formatted code </collaborate/format-messages>`
+- :ref:`Edit or delete sent messages <collaborate/send-messages:edit or delete messages>`
 
 No matter which tool you use, your message is visible across both Mattermost and Microsoft Teams.

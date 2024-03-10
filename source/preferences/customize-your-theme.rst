@@ -31,7 +31,7 @@ To customize your Mattermost theme:
 Custom themes
 -------------
 
-Select **Custom Theme**, then expand the `Sidebar Styles </preferences/customize-your-theme.html#sidebar-styles>`__, `Center Channel Styles </preferences/customize-your-theme.html#center-channel-styles>`__, and `Link and Button Styles </preferences/customize-your-theme.html#link-and-button-styles>`__ options to customize individual interface colors, such as backgrounds, links, text, and borders. 
+Select **Custom Theme**, then expand the :ref:`Sidebar Styles <preferences/customize-your-theme:sidebar styles>`, :ref:`Center Channel Styles <preferences/customize-your-theme:center channel styles>`, and :ref:`Link and Button Styles <preferences/customize-your-theme:link and button styles>` options to customize individual interface colors, such as backgrounds, links, text, and borders. 
 
 Your custom theme changes are applied in Mattermost as you make them. Select **Save** to confirm your theme changes. Discard your changes by exiting the **Display Settings** window and selecting **Yes, Discard**.
 

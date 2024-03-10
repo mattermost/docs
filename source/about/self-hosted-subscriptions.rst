@@ -52,12 +52,12 @@ Mattermost installed
 
 On the Customer Portal **Subscriptions** page, select **Download License** to download the license key for your subscription. In Mattermost, follow the steps provided in **System Console > About > Edition and License** to apply your license key.
 
-You can also use the `mmctl </manage/mmctl-command-line-tool.html#mmctl-license>`__ to apply the license.
+You can also use the :ref:`mmctl <manage/mmctl-command-line-tool:mmctl license>` to apply the license.
 
 Mattermost not yet installed
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you haven't yet installed and deployed a Mattermost instance, visit the `Deployment Guide </deploy/deployment-overview.html>`__ to get started. For information on creating a system admin account, visit our `Administrator Tasks </getting-started/admin-onboarding-tasks.html>`__ documentation.
+If you haven't yet installed and deployed a Mattermost instance, visit the :doc:`Deployment Guide </deploy/deployment-overview>` to get started. For information on creating a system admin account, visit our :doc:`Administrator Tasks </getting-started/admin-onboarding-tasks>` documentation.
 
 View subscription information
 -----------------------------

@@ -12,7 +12,7 @@ Prepare your Mattermost MySQL database
 
 .. important::
     
-    PostgreSQL is our preferred database of choice. See the `database software </install/software-hardware-requirements.html#database-software>`__ documentation for details on database version support.
+    PostgreSQL is our preferred database of choice. See the :ref:`database software <install/software-hardware-requirements:database software>` documentation for details on database version support.
 
 Set up the Mattermost MySQL database
 ------------------------------------
@@ -68,7 +68,7 @@ Upgrade Mattermost
 
 .. tab:: Upgrade to v7.0
 
-  Self-hosted Mattermost customers using MySQL databases may notice the migration to release v7.0 taking longer than usual when there are a large number of rows in the ``FileInfo`` table. See the `important upgrade notes </upgrade/important-upgrade-notes.html>`__ documentation for details.
+  Self-hosted Mattermost customers using MySQL databases may notice the migration to release v7.0 taking longer than usual when there are a large number of rows in the ``FileInfo`` table. See the :doc:`important upgrade notes </upgrade/important-upgrade-notes>` documentation for details.
 
 .. tab:: Upgrade to v6.7
 
@@ -242,14 +242,14 @@ By default, Mattermost uses full text search support included in MySQL. Select t
 Perform searches in Chinese, Korean, and Japanese
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The best experience for searching in Chinese, Korean, and Japanese is to use MySQL 5.7.6 or later with special configuration. See the `Chinese, Japanese and Korean Search documentation </install/i18n.html>`__ for details.
+The best experience for searching in Chinese, Korean, and Japanese is to use MySQL 5.7.6 or later with special configuration. See the :doc:`Chinese, Japanese and Korean Search documentation </configure/enabling-chinese-japanese-korean-search>` for details.
 
 You can perform searches without this configuration by adding wildcards ``*`` to the end of search terms.
 
 Migrate from Bitnami to a self-hosted Mattermost deployment
 ------------------------------------------------------------
 
-If you're planning a migration from Bitnami to a self-hosted Mattermost installation with a MySQL database, read these notes in our migration guide: `Migrating from Bitnami </onboard/migrating-to-mattermost.html#migrating-from-bitnami>`__.
+If you're planning a migration from Bitnami to a self-hosted Mattermost installation with a MySQL database, read these notes in our migration guide: :ref:`Migrating from Bitnami <onboard/migrating-to-mattermost:migrating from bitnami>`.
 
 
 

@@ -64,7 +64,7 @@ By default, Mattermost shows you system messages when users join or leave channe
 Deactivate account
 ------------------
 
-You can deactivate your account if you access Mattermost using an email address and password, and when your system admin has `enabled your ability to do so </configure/experimental-configuration-settings.html#exp-enableaccountdeactivation>`__. Deactivating your account removes your ability to access Mattermost, and disables all email and mobile notifications.
+You can deactivate your account if you access Mattermost using an email address and password, and when your system admin has :ref:`enabled your ability to do so <configure/experimental-configuration-settings:exp enableaccountdeactivation>`. Deactivating your account removes your ability to access Mattermost, and disables all email and mobile notifications.
 
 .. important::
 
@@ -82,7 +82,7 @@ You can deactivate your account if you access Mattermost using an email address 
 Performance debugging
 ---------------------
 
-You can disable key Mattermost features temporarily to help isolate issues while debugging Mattermost, if your system admin `enables your ability to do so </configure/environment-configuration-settings.html#dev-enableclientdebugging>`__. We don't recommend leaving these settings enabled for an extended period of time as they can negatively impact your user experience.
+You can disable key Mattermost features temporarily to help isolate issues while debugging Mattermost, if your system admin :ref:`enables your ability to do so <configure/environment-configuration-settings:dev enableclientdebugging>`. We don't recommend leaving these settings enabled for an extended period of time as they can negatively impact your user experience.
 
 .. tab:: Web/Desktop
 
@@ -114,7 +114,7 @@ You can choose where to start viewing unread messages in all channels you're a m
 Allow message drafts to sync with the server
 --------------------------------------------
 
-By default, `message drafts </send-messages.html#draft-messages>`__ are synchronized on the Mattermost server and accessible everywhere you access Mattermost using a web browser or the desktop app. You can disable server-synchronized drafts and limit drafts to your current Mattermost client, if preferred.
+By default, :ref:`message drafts <send-messages:draft messages>` are synchronized on the Mattermost server and accessible everywhere you access Mattermost using a web browser or the desktop app. You can disable server-synchronized drafts and limit drafts to your current Mattermost client, if preferred.
 
 .. tab:: Web/Desktop
 
@@ -133,7 +133,7 @@ You can delete local Mattermost files from your mobile device using the mobile a
 
     Access **Settings** by tapping on your profile picture. Then, tap **Advanced Settings** and **Delete local files**.
 
-    Only data specific to the current Mattermost server is removed from your device. You'll need to repeat this process for each `Mattermost workspace you're connected to </preferences/connect-multiple-workspaces.html>`__ on the mobile app.
+    Only data specific to the current Mattermost server is removed from your device. You'll need to repeat this process for each :doc:`Mattermost workspace you're connected to </preferences/connect-multiple-workspaces>` on the mobile app.
 
 .. tab:: Web/Desktop
 

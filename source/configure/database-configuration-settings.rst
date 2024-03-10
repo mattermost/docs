@@ -107,8 +107,8 @@ Data source
 |       [...]                                                                                                                              |
 |    }                                                                                                                                     |
 |                                                                                                                                          |
-| **Note**: If you’re using MySQL 8.0 or later, the default collation has changed to ``utf8mb4_0900_ai_ci``. See our `Database Software    |
-| Requirements </install/software-hardware-requirements.html>`__ documentation for details on MySQL 8.0 support.                           |
+| **Note**: If you’re using MySQL 8.0 or later, the default collation has changed to ``utf8mb4_0900_ai_ci``. See our :doc:`Database Software    |
+| Requirements </install/software-hardware-requirements>` documentation for details on MySQL 8.0 support.                           |
 |                                                                                                                                          |
 | **To use TLS with MySQL databases**                                                                                                      |
 |                                                                                                                                          |
@@ -342,7 +342,7 @@ Disable database search
 
 +---------------------------------------------------------------+------------------------------------------------------------------------------+
 | When other search engines are configured, such as             | - System Config path: **Environment > Database**                             |
-| `Elasticsearch </scale/elasticsearch.html>`__,                | - ``config.json`` setting: ``".SqlSettings.DisableDatabaseSearch: false",``  |
+| :doc:`Elasticsearch </scale/elasticsearch>`,                | - ``config.json`` setting: ``".SqlSettings.DisableDatabaseSearch: false",``  |
 | the database can be disabled to perform searches.             | - Environment variable: ``MM_SQLSETTINGS_DISABLEDATABASESEARCH``             |
 |                                                               |                                                                              |
 | - **true**: Disables the use of the database to perform       |                                                                              |
@@ -353,8 +353,8 @@ Disable database search
 +---------------------------------------------------------------+------------------------------------------------------------------------------+
 | Search behavior in Mattermost depends on which search engines are enabled.                                                                   |
 |                                                                                                                                              |
-| - When `Elasticsearch </scale/elasticsearch.html>`__ is enabled, Mattermost will try to use it first.                                        |
-| - If Elasticsearch fails or is disabled, Mattermost will attempt to use `Bleve </deploy/bleve-search.html>`__, if enabled. If this occurs,   |
+| - When :doc:`Elasticsearch </scale/elasticsearch>` is enabled, Mattermost will try to use it first.                                        |
+| - If Elasticsearch fails or is disabled, Mattermost will attempt to use :doc:`Bleve </deploy/bleve-search>`, if enabled. If this occurs,   |
 |   you will see the warning ``Encountered error on SearchPostsInTeamForUser.``                                                                |
 | - If both Elasticsearch and Bleve fail or are disabled, Mattermost tries to search the database directly, if this is enabled.                |
 | - If all of the above methods fail or are disabled, the search results will be empty.                                                        |
@@ -481,7 +481,7 @@ Replica lag settings
 | **Notes**:                                                                                                                                |
 |                                                                                                                                           |
 | - The ``QueryAbsoluteLag`` and ``QueryTimeLag`` queries must return a single row.                                                         |
-| - To properly monitor this you must setup `performance monitoring </scale/performance-monitoring.html>`__ for Mattermost.                 |
+| - To properly monitor this you must setup :doc:`performance monitoring </scale/performance-monitoring>` for Mattermost.                 |
 +--------------------------------------------------------+----------------------------------------------------------------------------------+
 
 1. Configure the replica lag metric based on your database type. See the following tabs for details on configuring this for each database type.

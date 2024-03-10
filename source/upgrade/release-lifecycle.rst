@@ -7,7 +7,7 @@ Release Lifecycle
 What is a Release Lifecycle?
 -----------------------------
 
-During each monthly release, Mattermost backports high severity or high impact security fixes to the previous three monthly releases. `Extended Support Releases </upgrade/extended-support-release.html>`_ receive backports for security fixes and major bug fixes for the length of their life cycle.  Once a release life cycle has ended, it will no longer receive the security or major bug backports. We follow the same release cycle pattern for all upcoming releases.
+During each monthly release, Mattermost backports high severity or high impact security fixes to the previous three monthly releases. :doc:`Extended Support Releases </upgrade/extended-support-release>` receive backports for security fixes and major bug fixes for the length of their life cycle.  Once a release life cycle has ended, it will no longer receive the security or major bug backports. We follow the same release cycle pattern for all upcoming releases.
 
 .. important::
 
@@ -176,6 +176,6 @@ During each monthly release, Mattermost backports high severity or high impact s
 Desktop and mobile app compatibility
 -------------------------------------
 
-Mattermost desktop and mobile apps are backwards compatible; however, we strongly recommend updating to the latest version for an optimal user experience. The latest versions include the latest security fixes, and are compatible with the oldest supported `extended support release </upgrade/extended-support-release.html>`__ of Mattermost Server to ensure backwards compatibility.
+Mattermost desktop and mobile apps are backwards compatible; however, we strongly recommend updating to the latest version for an optimal user experience. The latest versions include the latest security fixes, and are compatible with the oldest supported :doc:`extended support release </upgrade/extended-support-release>` of Mattermost Server to ensure backwards compatibility.
 
-Please review the `desktop app changelog </deploy/desktop-app-changelog.html>`__ and the `mobile app changelog </deploy/mobile-app-changelog.html>`__ notes for any self-hosted or Cloud-specific version requirements for features and functionalities, as well as notes on security fixes.
+Please review the :doc:`desktop app changelog </deploy/desktop-app-changelog>` and the :doc:`mobile app changelog </deploy/mobile-app-changelog>` notes for any self-hosted or Cloud-specific version requirements for features and functionalities, as well as notes on security fixes.

@@ -20,7 +20,7 @@ Using the Mattermost desktop or mobile app, you can connect to multiple Mattermo
 
     If you're using the desktop app prior to release v5.0, individual servers display as separate tabs at the top of the window instead of the top left corner of the window as a list, and servers are managed by going to **… > File > Settings** on Windows and **Mattermost > Preferences** on Mac.
 
-  The **Server** list is located in the top left corner of the window and displays all servers available. Drag to reorder the servers in the list. You can also navigate the server options using `keyboard shortcuts </collaborate/keyboard-shortcuts.html>`__. From the **Server** list, you can add, edit, and remove servers.
+  The **Server** list is located in the top left corner of the window and displays all servers available. Drag to reorder the servers in the list. You can also navigate the server options using :doc:`keyboard shortcuts </collaborate/keyboard-shortcuts>`. From the **Server** list, you can add, edit, and remove servers.
   
   **Add a server**
   

@@ -31,13 +31,13 @@ Learn how to install, deploy, and scale Mattermost for teams and organizations o
 
 .. tip::
 
-  * See the `configuration settings </configure/configuration-settings.html>`__ documentation to learn more about customizing your production deployment.
+  * See the :doc:`configuration settings </configure/configuration-settings>` documentation to learn more about customizing your production deployment.
   
-  * Encountering issues with your deployment? See the `Deployment Troubleshooting </install/troubleshooting.html#deployment-troubleshooting>`__ or `high scale troubleshooting </deploy/high-scale-troubleshoot.html>`__ documentation for details.
+  * Encountering issues with your deployment? See the :ref:`Deployment Troubleshooting <install/troubleshooting:deployment troubleshooting>` or :doc:`high scale troubleshooting </deploy/high-scale-troubleshoot>` documentation for details.
 
 * :doc:`Prepare your Mattermost database </install/prepare-mattermost-database>` - Learn how to prepare and configure a database for Mattermost.
 * :doc:`Deploy on Ubuntu </install/install-ubuntu>` - Signed packages direct from Mattermost featuring a single command for install and upgrades.
-* `Deploy using Docker </install/install-docker.html#deploy-mattermost-on-docker-for-production-use>`__ - The fastest way to try Mattermost and a great single server installation option.
+* :ref:`Deploy using Docker <install/install-docker:deploy mattermost on docker for production use>` - The fastest way to try Mattermost and a great single server installation option.
 * :doc:`Deploy with a tarball </install/install-tar>` - Support for any Linux distribution.
 * :doc:`Deploy using Omnibus </install/installing-mattermost-omnibus>` - An entire Mattermost installation on a single server.
 * :doc:`Deploy using Kubernetes </install/install-kubernetes>` - Install using the Mattermost Helm Chart or Operator and simplified updates.

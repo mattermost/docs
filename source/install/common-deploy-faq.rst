@@ -28,4 +28,4 @@ Yes. Mattermost binds to 443 instead of 8065. The Mattermost binary requires the
 
 .. note::
 
-  - We highly recommend using a proxy in front of Mattermost server for up to 200 concurrent users. If you have fewer than 200 concurrent users, you can `set up TLS </install/setup-tls.html>`__. If you're exceeding 200 concurrent users, you'll need `a proxy </install/setup-nginx-proxy.html>`__, such as NGINX, in front of Mattermost to manage the traffic.
+  - We highly recommend using a proxy in front of Mattermost server for up to 200 concurrent users. If you have fewer than 200 concurrent users, you can :doc:`set up TLS </install/setup-tls>`. If you're exceeding 200 concurrent users, you'll need :doc:`a proxy </install/setup-nginx-proxy>`, such as NGINX, in front of Mattermost to manage the traffic.

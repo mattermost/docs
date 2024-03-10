@@ -4,7 +4,7 @@ Use case questions
 Does Mattermost support external guests?
 ----------------------------------------
 
-Yes, the Guest Account feature allows organizations to collaborate with external users within a controlled environment. See the `Guest Accounts documentation </onboard/guest-accounts.html>`__ for more information.
+Yes, the Guest Account feature allows organizations to collaborate with external users within a controlled environment. See the :doc:`Guest Accounts documentation </onboard/guest-accounts>` for more information.
 
 Can I use Mattermost for customer service?
 -------------------------------------------

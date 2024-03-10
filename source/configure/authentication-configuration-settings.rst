@@ -325,7 +325,7 @@ Enable forgot password link
 | - **false**: Hides the **Forgot Password** link from the Mattermost login page. | - Environment variable: ``MM_LDAPSETTINGS_FORGOTPASSWORDLINK``         |
 +---------------------------------------------------------------------------------+------------------------------------------------------------------------+
 | **Note**: You can customize the **Forgot Password** link URL by going to **Site Configuration > Customization > Forgot Password Custom Link**.           |
-| See the `configuration </configure/site-configuration-settings.html#forgot-password-custom-link>`__ documentation for details.                           |
+| See the :ref:`configuration <configure/site-configuration-settings:forgot password custom link>` documentation for details.                           |
 +---------------------------------------------------------------------------------+------------------------------------------------------------------------+
 
 ----

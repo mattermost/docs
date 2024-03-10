@@ -4,7 +4,7 @@ Building and distributing your own custom Mattermost mobile apps
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-You can build and distribute custom versions of the Mattermost mobile app. Choosing this approach means `you've decided not to use the mobile app Mattermost has made available </deploy/use-prebuilt-mobile-apps.html>`__ through public app stores. This also means that you've decided to `host your own push proxy service </deploy/mobile-hpns.html#host-your-own-push-proxy-service>`__.
+You can build and distribute custom versions of the Mattermost mobile app. Choosing this approach means :doc:`you've decided not to use the mobile app Mattermost has made available </deploy/use-prebuilt-mobile-apps>` through public app stores. This also means that you've decided to :ref:`host your own push proxy service <deploy/mobile-hpns:host your own push proxy service>`.
 
 This approach is recommended for:
 
@@ -14,7 +14,7 @@ This approach is recommended for:
 .. note::
    
    - A Mattermost Enterprise subscription plan (or a legacy Enterprise Edition license) is required to request assistance or troubleshooting help from `Mattermost Customer Support <https://mattermost.com/support/>`__ when building and deploying custom mobile apps. Customers on other Mattermost subscription plans can develop and deploy custom mobile apps, but can't request technical support assistance through Mattermost Customer Support.
-   - With the release of Mattermost mobile app v2.0, `mobile app v1.55 becomes the official extended support mobile release </upgrade/extended-support-release.html#mobile-app-v1-55-1-extended-support-release-esr>`__, and will be supported for an extended timeframe.
+   - With the release of Mattermost mobile app v2.0, :ref:`mobile app v1.55 becomes the official extended support mobile release <upgrade/extended-support-release:mobile app v1 55 1 extended support release esr>`, and will be supported for an extended timeframe.
 
 Deployment options
 ------------------
@@ -29,7 +29,7 @@ When you decide to build your own Mattermost mobile apps, you have multiple ways
 Setting up push notifications
 -----------------------------
 
-See our `Mobile Push Notifications </deploy/mobile-hpns.html>`__ documentation to learn about setting up push notifications for custom-built mobile apps.
+See our :doc:`Mobile Push Notifications </deploy/mobile-hpns>` documentation to learn about setting up push notifications for custom-built mobile apps.
 
 Developing and maintaining your custom app
 ------------------------------------------
@@ -71,8 +71,8 @@ Alternatively, you can use an EMM provider to push the application to the userâ€
 
 For additional details, see the following documentation:
 
-- `Deployment Using an EMM provider </deploy/deploy-mobile-apps-using-emm-provider.html>`__ to learn more about deploying your custom Mattermost Mobile apps through an EMM provider.
-- `Manage app configuration using AppConfig </deploy/mobile-appconfig.html>`__  to learn more about managing your app configuration using App Config, and the configuration options that can be sent from the EMM provider to Mattermost mobile apps.
+- :doc:`Deployment Using an EMM provider </deploy/deploy-mobile-apps-using-emm-provider>` to learn more about deploying your custom Mattermost Mobile apps through an EMM provider.
+- :doc:`Manage app configuration using AppConfig </deploy/mobile-appconfig>`  to learn more about managing your app configuration using App Config, and the configuration options that can be sent from the EMM provider to Mattermost mobile apps.
 
 Using public app stores
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -88,7 +88,7 @@ This update strategy should include:
 - Updating Mattermost Server.
 - Updating Mattermost mobile apps.
 
-We highly recommend you update your custom Mattermost mobile apps to incorporate any security or service releases. Prior to distribution, check any compatibility requirements for the mobile apps and the Mattermost server. Consult the `Mattermost mobile app changelog </deploy/mobile-app-changelog.html>`__ and the `Mattermost server changelog </install/self-managed-changelog.html>`__ for details.
+We highly recommend you update your custom Mattermost mobile apps to incorporate any security or service releases. Prior to distribution, check any compatibility requirements for the mobile apps and the Mattermost server. Consult the :doc:`Mattermost mobile app changelog </deploy/mobile-app-changelog>` and the :doc:`Mattermost server changelog </deploy/legacy-self-hosted-changelog>` for details.
 
 .. important::
 

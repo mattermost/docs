@@ -94,9 +94,9 @@ The message formatting toolbar offers the following formatting options:
 |                                                                   | |quotes-icon|           |
 |                                                                   | |code-icon|             |
 +-------------------------------------------------------------------+-------------------------+
-| `Add emojis or GIFs </collaborate/react-with-emojis-gifs.html>`__ | |emoji-icon|            |
+| :doc:`Add emojis or GIFs </collaborate/react-with-emojis-gifs>` | |emoji-icon|            |
 +-------------------------------------------------------------------+-------------------------+
-| `Set message priority </collaborate/message-priority.html>`__     | |message-priority-icon| |
+| :doc:`Set message priority </collaborate/message-priority>`     | |message-priority-icon| |
 +-------------------------------------------------------------------+-------------------------+
 
 Review how your message formatting will look when the message is sent by selecting the **Show/Hide Preview** |preview-icon| icon. Return to your draft message by selecting the icon again.
@@ -104,7 +104,7 @@ Review how your message formatting will look when the message is sent by selecti
 .. tip::
 
   - Hide the formatting options by selecting the **Show/Hide Formatting** |hide-formatting-icon| icon. Select the icon again to show the formatting options. 
-  - You can control whether post formatting is rendered within the message formatting editor. When disabled, raw text is shown. See the `Channels customization </preferences/manage-advanced-options>`__ documentation for details. 
+  - You can control whether post formatting is rendered within the message formatting editor. When disabled, raw text is shown. See the :doc:`Channels customization </preferences/manage-advanced-options>` documentation for details. 
  
 Use Markdown
 -------------
@@ -329,7 +329,7 @@ Renders as: ``monospace``.
 In-line images
 ~~~~~~~~~~~~~~
 
-In-line images are images added within lines of text. You can control whether all in-line images over 100px in height are automatically collapsed or expanded in messages by setting a `user preference </preferences/manage-your-display-options>`__, or by using the ``/collapse`` and ``/expand`` slash commands.
+In-line images are images added within lines of text. You can control whether all in-line images over 100px in height are automatically collapsed or expanded in messages by setting a :doc:`user preference </preferences/manage-your-display-options>`, or by using the ``/collapse`` and ``/expand`` slash commands.
 
 To add in-line images to text, use an exclamation mark ``!`` followed by the ``alt text`` in square brackets ``[ ]``, then the ``image URL`` in round brackets ``( )``. You can add hover text after the link by placing the text in quotes ``" "``.
 
@@ -457,7 +457,7 @@ Math Formulas
 
   .. note::
 
-    This feature is `disabled by default </configure/configuration-settings.html#enable-inline-latex-rendering>`__. Contact your system admin to enable this setting in **System Console > Site Configuration > Posts** to use this feature.
+    This feature is :ref:`disabled by default <configure/site-configuration-settings:enable inline latex rendering>`. Contact your system admin to enable this setting in **System Console > Site Configuration > Posts** to use this feature.
 
   .. code-block:: none
 
@@ -474,7 +474,7 @@ Math Formulas
 
   .. note::
 
-    This feature is `disabled by default </configure/configuration-settings.html#enable-latex-code-block-rendering>`__. Contact your system admin to enable this setting in **System Console > Site Configuration > Posts** to use this feature.
+    This feature is :ref:`disabled by default <configure/site-configuration-settings:enable latex code block rendering>`. Contact your system admin to enable this setting in **System Console > Site Configuration > Posts** to use this feature.
 
   .. code-block:: none
 

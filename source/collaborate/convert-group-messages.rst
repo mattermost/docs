@@ -12,7 +12,7 @@ From Mattermost v9.1, you can change the members of your group conversation by c
 
 .. note::
 
-    - Any member of an existing group message, except `guests </onboard/guest-accounts.html>`__, can convert that group message to a private channel.
+    - Any member of an existing group message, except :doc:`guests </onboard/guest-accounts>`, can convert that group message to a private channel.
     - Conversation history will be visible to all channel members.
     - All group message participants must share at least one team membership.
 

@@ -45,8 +45,8 @@ Enable publicly-shared boards
 |                                                                                                                                             |
 | - From Mattermost v7.7 through Mattermost v7.10, this configuration setting applies to Mattermost Boards available as an official           |
 |   in-product vertical.                                                                                                                      |
-| - See the `Focalboard <guides/focalboard-plugin.html>`__ documentation for details on `sharing boards links with other                      |
-|   users <boards/share-and-collaborate.html#share-a-board-publicly>`__.                                                                      |
+| - See the :doc:`Focalboard <guides/focalboard-plugin>` documentation for details on :ref:`sharing boards links with other                      |
+|   users <boards/share-and-collaborate:share a board publicly>`.                                                                      |
 | - Cloud admins can't modify this configuration setting.                                                                                     |
 +------------------------------------------------------+--------------------------------------------------------------------------------------+
 
@@ -261,7 +261,7 @@ Experimental sidebar features
 *Deprecated. Not used in Mattermost v5.32 and later*
 
 .. note::
-   This experimental configuration setting has been deprecated, and the ability to organize channels in the sidebar has been promoted to general availability from Mattermost v5.32. See the `Organizing Your Sidebar documentation </messaging/organizing-your-sidebar.html#customizing-your-sidebar>`__ for details on customizing the sidebar.
+   This experimental configuration setting has been deprecated, and the ability to organize channels in the sidebar has been promoted to general availability from Mattermost v5.32. See the :doc:`Organizing Your Sidebar documentation </preferences/customize-your-channel-sidebar>` for details on customizing the sidebar.
 
 **Disabled**: Users cannot access the experimental channel sidebar feature set.
 
@@ -301,7 +301,7 @@ Deprecated. Not used in Mattermost v6.0 and later.
 Town Square is read-only
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-From Mattermost v.6.0, this feature has been deprecated in favor of `channel moderation </manage/team-channel-members.html#channel-moderation>`__ which allows you to set any channel as read-only, including Town Square.
+From Mattermost v.6.0, this feature has been deprecated in favor of :ref:`channel moderation <manage/team-channel-members:channel moderation>` which allows you to set any channel as read-only, including Town Square.
 
 ----
 
@@ -438,7 +438,7 @@ Permission policy settings
 
 .. note::
 
-   Permission policy settings are available in Enterprise Edition E10 and E20. From v5.0, these settings are found in the `Advanced Permissions </onboard/advanced-permissions.html>`__ page instead of configuration settings.
+   Permission policy settings are available in Enterprise Edition E10 and E20. From v5.0, these settings are found in the :doc:`Advanced Permissions </onboard/advanced-permissions>` page instead of configuration settings.
 
 Enable sending team invites from
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -447,7 +447,7 @@ Enable sending team invites from
 
 .. note::
 
-   From v5.0 this has been replaced by advanced permissions which offers Admins a way to restrict actions in Mattermost to authorized users only. See the `Advanced Permissions documentation </onboard/advanced-permissions.html>`_ for more details.
+   From v5.0 this has been replaced by advanced permissions which offers Admins a way to restrict actions in Mattermost to authorized users only. See the :doc:`Advanced Permissions documentation </onboard/advanced-permissions>` for more details.
 
 Set policy on who can invite others to a team using the **Send Email Invite**, **Get Team Invite Link**, and **Add Members to Team** options on the product menu. If **Get Team Invite Link** is used to share a link, you can expire the invite code from **Team Settings > Invite Code** after the desired users have joined the team. Options include:
 
@@ -468,7 +468,7 @@ Enable public channel creation for
 
 .. note::
 
-   From v5.0 this has been replaced by advanced permissions which offers Admins a way to restrict actions in Mattermost to authorized users only. See the `Advanced Permissions documentation </onboard/advanced-permissions.html>`_ for more details.
+   From v5.0 this has been replaced by advanced permissions which offers Admins a way to restrict actions in Mattermost to authorized users only. See the :doc:`Advanced Permissions documentation </onboard/advanced-permissions>` for more details.
 
 Restrict the permission level required to create public channels.
 
@@ -489,7 +489,7 @@ Enable public channel renaming for
 
 .. note::
 
-   From v5.0 this has been replaced by advanced permissions which offers Admins a way to restrict actions in Mattermost to authorized users only. See the `Advanced Permissions documentation </onboard/advanced-permissions.html>`_ for more details.
+   From v5.0 this has been replaced by advanced permissions which offers Admins a way to restrict actions in Mattermost to authorized users only. See the :doc:`Advanced Permissions documentation </onboard/advanced-permissions>` for more details.
 
 Restrict the permission level required to rename and set the header or purpose for Public channels.
 
@@ -512,9 +512,9 @@ Enable public channel deletion for
 
 .. note::
 
-   From v5.0 this has been replaced by advanced permissions which offers Admins a way to restrict actions in Mattermost to authorized users only. See the `Advanced Permissions documentation </onboard/advanced-permissions.html>`_ for more details.
+   From v5.0 this has been replaced by advanced permissions which offers Admins a way to restrict actions in Mattermost to authorized users only. See the :doc:`Advanced Permissions documentation </onboard/advanced-permissions>` for more details.
 
-Restrict the permission level required to delete Public channels. Deleted channels can be recovered from the database using a `command line tool </manage/command-line-tools.html>`__.
+Restrict the permission level required to delete Public channels. Deleted channels can be recovered from the database using a :doc:`command line tool </manage/command-line-tools>`.
 
 **All channel members**: Allow all channel members to delete public channels.
 
@@ -535,7 +535,7 @@ Enable private channel creation for
 
 .. note::
 
-   From v5.0 this has been replaced by advanced permissions which offers Admins a way to restrict actions in Mattermost to authorized users only. See the `Advanced Permissions documentation </onboard/advanced-permissions.html>`_ for more details.
+   From v5.0 this has been replaced by advanced permissions which offers Admins a way to restrict actions in Mattermost to authorized users only. See the :doc:`Advanced Permissions documentation </onboard/advanced-permissions>` for more details.
 
 Restrict the permission level required to create private channels.
 
@@ -556,7 +556,7 @@ Enable private channel renaming for
 
 .. note::
 
-   From v5.0 this has been replaced by advanced permissions which offers Admins a way to restrict actions in Mattermost to authorized users only. See the `Advanced Permissions documentation </onboard/advanced-permissions.html>`_ for more details.
+   From v5.0 this has been replaced by advanced permissions which offers Admins a way to restrict actions in Mattermost to authorized users only. See the :doc:`Advanced Permissions documentation </onboard/advanced-permissions>` for more details.
 
 Restrict the permission level required to rename and set the header or purpose for Private channels.
 
@@ -579,7 +579,7 @@ Enable managing of private channel members for
 
 .. note::
 
-   From v5.0 this has been replaced by advanced permissions which offers Admins a way to restrict actions in Mattermost to authorized users only. See the `Advanced Permissions documentation </onboard/advanced-permissions.html>`_ for more details.
+   From v5.0 this has been replaced by advanced permissions which offers Admins a way to restrict actions in Mattermost to authorized users only. See the :doc:`Advanced Permissions documentation </onboard/advanced-permissions>` for more details.
 
 Set policy on who can add and remove members from Private channels.
 
@@ -602,9 +602,9 @@ Enable private channel deletion for
 
 .. note::
 
-   From v5.0 this has been replaced by advanced permissions which offers Admins a way to restrict actions in Mattermost to authorized users only. See the `Advanced Permissions documentation </onboard/advanced-permissions.html>`_ for more details.
+   From v5.0 this has been replaced by advanced permissions which offers Admins a way to restrict actions in Mattermost to authorized users only. See the :doc:`Advanced Permissions documentation </onboard/advanced-permissions>` for more details.
 
-Restrict the permission level required to delete Private channels. Deleted channels can be recovered from the database using a `command line tool </manage/command-line-tools.html>`__.
+Restrict the permission level required to delete Private channels. Deleted channels can be recovered from the database using a :doc:`command line tool </manage/command-line-tools>`.
 
 **All channel members**: Allow all channel members to delete private channels.
 
@@ -625,7 +625,7 @@ Allow which users to delete messages
 
 .. note::
 
-   From v5.0 this has been replaced by advanced permissions which offers Admins a way to restrict actions in Mattermost to authorized users only. See the `Advanced Permissions documentation </onboard/advanced-permissions.html>`_ for more details.
+   From v5.0 this has been replaced by advanced permissions which offers Admins a way to restrict actions in Mattermost to authorized users only. See the :doc:`Advanced Permissions documentation </onboard/advanced-permissions>` for more details.
 
 Restrict the permission level required to delete messages. Team Admins, Channel Admins, and System Admins can delete messages only in channels where they are members. Messages can be deleted any time.
 
@@ -646,7 +646,7 @@ Allow users to edit their messages
 
 .. note::
 
-   From v5.0 this has been replaced by advanced permissions which offers Admins a way to restrict actions in Mattermost to authorized users only. See the `Advanced Permissions documentation </onboard/advanced-permissions.html>`_ for more details.
+   From v5.0 this has been replaced by advanced permissions which offers Admins a way to restrict actions in Mattermost to authorized users only. See the :doc:`Advanced Permissions documentation </onboard/advanced-permissions>` for more details.
 
 Set the time limit that users have to edit their messages after posting.
 

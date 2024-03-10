@@ -8,7 +8,7 @@ Create channels
   :alt: Open menus using the plus icon.
   :class: theme-icon
 
-Anyone can create public channels, private channels, direct messages, and group messages unless the system admin has `restricted permissions to do so using advanced permissions </onboard/advanced-permissions.html>`__.
+Anyone can create public channels, private channels, direct messages, and group messages unless the system admin has :doc:`restricted permissions to do so using advanced permissions </onboard/advanced-permissions>`.
 
 .. tab:: Web/Desktop
 
@@ -21,7 +21,7 @@ Anyone can create public channels, private channels, direct messages, and group 
       :width: 400
 
   2. Enter a channel name.
-  3. Choose whether this is a public or private channel. See the `channel types </collaborate/channel-types.html>`__ documentation to learn more about public and private channels.
+  3. Choose whether this is a public or private channel. See the :doc:`channel types </collaborate/channel-types>` documentation to learn more about public and private channels.
   4. (Optional) Describe the channel's focus or purpose. This text is visible to all channel members in the channel header.
 
   **To start a direct or group message**
@@ -53,12 +53,12 @@ Anyone can create public channels, private channels, direct messages, and group 
 Automate with channel actions
 -----------------------------
 
-The person who creates a channel automatically becomes the channel admin. Channel admins using Mattermost in a web browser or the desktop app can access **Channel Actions** from the channel name drop-down menu in the center pane to set up automatic actions when users `join the channel </collaborate/join-leave-channels.html#join-a-channel>`__ or `post a message </collaborate/send-messages.html>`__ to the channel.
+The person who creates a channel automatically becomes the channel admin. Channel admins using Mattermost in a web browser or the desktop app can access **Channel Actions** from the channel name drop-down menu in the center pane to set up automatic actions when users :ref:`join the channel <collaborate/join-leave-channels:join a channel>` or :doc:`post a message </collaborate/send-messages>` to the channel.
 
 Automatic actions include:
 
 - Displaying a temporary welcome message for new channel members.
-- Automatically adding the channel to a `category in the user's channel sidebar </preferences/customize-your-channel-sidebar.html>`__.
+- Automatically adding the channel to a :doc:`category in the user's channel sidebar </preferences/customize-your-channel-sidebar>`.
 - Prompting to run a playbook based on the contents of a message.
 
-The `playbooks must be enabled </configure/plugins-configuration-settings.html#mattermost-playbooks>`__ for channel admins to use channel actions.
+The :ref:`playbooks must be enabled <configure/plugins-configuration-settings:mattermost playbooks>` for channel admins to use channel actions.

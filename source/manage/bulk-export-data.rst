@@ -5,22 +5,22 @@ Bulk export data
 
 .. tab:: Use mmctl
 
-  1. Create a full export file including attachments by running the `mmctl export create -- attachments </manage/mmctl-command-line-tool.html#mmctl-export-create>`__ command. See the `Mattermost workspace migration </manage/cloud-data-export.html#create-the-export>`__ documentation for details.
+  1. Create a full export file including attachments by running the :ref:`mmctl export create -- attachments <manage/mmctl-command-line-tool:mmctl export create>` command. See the :ref:`Mattermost workspace migration <manage/cloud-data-export:create the export>` documentation for details.
 
-  2. While the job is running, you can check its status by running the `mmctl export job show </manage/mmctl-command-line-tool.html#mmctl-export-job-show>`__ command.
+  2. While the job is running, you can check its status by running the :ref:`mmctl export job show <manage/mmctl-command-line-tool:mmctl export job show>` command.
 
   3. When the export job status is successful:
 
-    a. Identify the name of the completed export file by running the `mmctl export list </manage/mmctl-command-line-tool.html#mmctl-export-list>`__ command.
-    b. Download the export file to your local machine by running the `mmctl export download </manage/mmctl-command-line-tool.html#mmctl-export-download>`__ command.
+    a. Identify the name of the completed export file by running the :ref:`mmctl export list <manage/mmctl-command-line-tool:mmctl export list>` command.
+    b. Download the export file to your local machine by running the :ref:`mmctl export download <manage/mmctl-command-line-tool:mmctl export download>` command.
 
 .. tab:: Use CLI
 
   .. note:: 
     
-    From Mattermost v6.0, this command has been deprecated in favor of `mmctl export commands </manage/mmctl-command-line-tool.html#mmctl-export>`__ as the supported way to export data out of Mattermost.
+    From Mattermost v6.0, this command has been deprecated in favor of :ref:`mmctl export commands <manage/mmctl-command-line-tool:mmctl export>` as the supported way to export data out of Mattermost.
 
-  The export command runs in the `CLI </manage/command-line-tools.html>`__.  It has permissions to access all information in the Mattermost database.
+  The export command runs in the :doc:`CLI </manage/command-line-tools>`.  It has permissions to access all information in the Mattermost database.
 
   To run the export command:
 

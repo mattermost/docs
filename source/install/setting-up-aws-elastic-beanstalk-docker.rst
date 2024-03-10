@@ -26,7 +26,7 @@ The Elastic Beanstalk application creation process used here is the easy *Gettin
 Configuration Settings
 ----------------------
 
-See `Configuration Settings </configure/configuration-settings.html>`__ documentation to customize your deployment.
+See :doc:`Configuration Settings </configure/configuration-settings>` documentation to customize your deployment.
 
 (Recommended) Enable Email
 --------------------------

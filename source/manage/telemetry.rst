@@ -43,7 +43,7 @@ The following data is collected once every 24 hours:
 Opt out
 ~~~~~~~
 
-To opt out, you can disable this security update check feature for self-hosted deployments in the System Console by going to **Environment > SMTP > Enable Security Alerts**. See the `enable security alerts </configure/environment-configuration-settings.html#enable-security-alerts>`__ documentation for details. When this feature is disabled, you will not receive any security alerts.
+To opt out, you can disable this security update check feature for self-hosted deployments in the System Console by going to **Environment > SMTP > Enable Security Alerts**. See the :ref:`enable security alerts <configure/environment-configuration-settings:enable security alerts>` documentation for details. When this feature is disabled, you will not receive any security alerts.
 
 Error and diagnostics reporting feature
 ---------------------------------------
@@ -62,7 +62,7 @@ Mattermost error and diagnostic data is collected for the following purposes:
 Opt out
 ~~~~~~~
 
-To opt out, you can disable the error and diagnostics reporting feature for self-hosted deployments in the System Console by going to **Environment > Logging > Enable Diagnostics and Error Reporting**. See the `enable diagnostics and error reporting </configure/environment-configuration-settings.html#enable-diagnostics-and-error-reporting>`__ documentation for details.
+To opt out, you can disable the error and diagnostics reporting feature for self-hosted deployments in the System Console by going to **Environment > Logging > Enable Diagnostics and Error Reporting**. See the :ref:`enable diagnostics and error reporting <configure/environment-configuration-settings:enable diagnostics and error reporting>` documentation for details.
 
 Deployment and server configuration data
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -196,7 +196,7 @@ The following list details the types of Apps Framework metadata we collect:
 Android Mobile App performance monitoring
 -----------------------------------------
 
-To improve Android app performance, we are collecting trace events and device information, collectively known as metrics, to identify slow performing key areas. Those metrics will be sent only from users using Android app beta build starting in version v1.20, who are logged in to servers that allow sending `diagnostic information </configure/configuration-settings.html#enable-diagnostics-and-error-reporting>`__.
+To improve Android app performance, we are collecting trace events and device information, collectively known as metrics, to identify slow performing key areas. Those metrics will be sent only from users using Android app beta build starting in version v1.20, who are logged in to servers that allow sending :ref:`diagnostic information <configure/environment-configuration-settings:enable diagnostics and error reporting>`.
 
 Trace events
   Includes duration on how long the action took place like startup, team/channel switch, posts loading/update and channel drawer open/close. The naming convention is interpreted as ``[start observation]:[end observation]``, e.g. ``start:overall`` as from app start until fully rendered or ``post_list:thread`` as on press of post at post list until thread is opened.

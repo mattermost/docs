@@ -32,14 +32,14 @@ Create a OneLogin connection app for Mattermost SSO
 
     - **RelayState**: leave blank
     - **Audience**: leave blank
-    - **Recipient**: ``https://<your-mattermost-url>/login/sso/saml`` where ``https://<your-mattermost-url>`` should typically match the `Mattermost Site URL </configure/configuration-settings.html#site-url>`__.
+    - **Recipient**: ``https://<your-mattermost-url>/login/sso/saml`` where ``https://<your-mattermost-url>`` should typically match the :ref:`Mattermost Site URL <configure/environment-configuration-settings:site url>`.
     - **ACS (Consumer) URL Validator**: ``https:\/\/<your-mattermost-url>\/login\/sso\/saml``
     - **ACS (Consumer) URL**: ``https://<your-mattermost-url>/login/sso/saml``
 
   .. image:: ../../source/images/onelogin_3_configuration_1.png
      :alt: In OneLogin, select the Configuration tab to configure the SSO integration with required values.
   
-  b. In System Console,  `enable encryption </configure/configuration-settings.html#enable-encryption>`__, then select **Save**. You're redirected to the **Info** tab. From there, select the **Configuration** tab to access the **SAML Encryption** field.
+  b. In System Console,  :ref:`enable encryption <configure/authentication-configuration-settings:enable encryption>`, then select **Save**. You're redirected to the **Info** tab. From there, select the **Configuration** tab to access the **SAML Encryption** field.
 
   c. Paste the Public Key that you generated earlier into the **SAML Encryption** field at the bottom of the page. This field displays in OneLogin only when encryption is enabled in Mattermost.
 

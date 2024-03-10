@@ -8,12 +8,12 @@ Install the Mattermost for Microsoft Teams plugin (Beta)
 
 .. tip::
 
-  Looking to `embed Mattermost within Microsoft Teams </about/embed-mattermost-within-microsoft-teams.html>`__ instead?
+  Looking to :doc:`embed Mattermost within Microsoft Teams </about/embed-mattermost-within-microsoft-teams>` instead?
 
-To install the `Microsoft Teams plugin </configure/plugins-configuration-settings.html#ms-teams>`__ in Mattermost:
+To install the :ref:`Microsoft Teams plugin <configure/plugins-configuration-settings:ms teams>` in Mattermost:
 
 1. Log in to your Mattermost workspace as a system administrator.
-2. Download the latest version of `the plugin binary release <https://github.com/mattermost/mattermost-plugin-msteams/releases>`__, compatible with Mattermost v8.0.1 and later. If you are using an earlier version of Mattermost, `follow our documentation </upgrade/upgrading-mattermost-server.html>`__ to upgrade to Mattermost v8.0.1 or later.
+2. Download the latest version of `the plugin binary release <https://github.com/mattermost/mattermost-plugin-msteams/releases>`__, compatible with Mattermost v8.0.1 and later. If you are using an earlier version of Mattermost, :doc:`follow our documentation </upgrade/upgrading-mattermost-server>` to upgrade to Mattermost v8.0.1 or later.
 3. Go to **System Console > Plugins > Plugin Management > Upload Plugin**, and upload the plugin binary you downloaded in the previous step.
 4. Go to **System Console > Plugins > Plugin Management**. In the **Installed Plugins** section, scroll to **MS Teams**, and select **Enable Plugin**.
 
@@ -127,12 +127,12 @@ Mattermost admins can configure Mattermost to automatically prompt users to conn
 Configure the plugin
 --------------------
 
-Additional configuration settings are available for this plugin. See the `Microsoft Teams plugin configuration settings </configure/plugins-configuration-settings.html#ms-teams>`__ documentation for details.
+Additional configuration settings are available for this plugin. See the :ref:`Microsoft Teams plugin configuration settings <configure/plugins-configuration-settings:ms teams>` documentation for details.
 
 Monitor plugin performance
 --------------------------
 
-You can set up `performance monitoring </scale/performance-monitoring.html>`__ and `performance alerting </scale/performance-alerting.html>`__ for this plugin using Prometheus and Grafana.
+You can set up :doc:`performance monitoring </scale/performance-monitoring>` and :doc:`performance alerting </scale/performance-alerting>` for this plugin using Prometheus and Grafana.
 
 - Monitoring enables you to proactively review the overall health of the plugin, including database calls, HTTP requests, and API latency.
 - Alerting enables you to detect and take action as issues come up, such as the integration being offline.
@@ -149,7 +149,7 @@ Grafana dashboards `are available on GitHub <https://github.com/mattermost/matte
 Get started with the plugin
 ---------------------------
 
-See our `collaborate using the Microsoft Teams plugin </collaborate/collaborate-using-mattermost-for-microsoft-teams>`__ documentation for details on how to collaborate across both Mattermost and Microsoft Teams at the same time.
+See our :doc:`collaborate using the Microsoft Teams plugin </collaborate/collaborate-using-mattermost-for-microsoft-teams>` documentation for details on how to collaborate across both Mattermost and Microsoft Teams at the same time.
 
 Trobleshooting FAQ
 ------------------

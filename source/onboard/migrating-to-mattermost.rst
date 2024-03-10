@@ -6,17 +6,17 @@ Migration guide
 
 Thousands of organizations are moving to Mattermost for powerful, flexible, and easy-to-manage workplace collaboration. Mattermost deploys as a single Linux binary with PostgreSQL, and can scale from dozens to tens of thousands of users in a single channel.
 
-This guide summarizes different approaches to migrating to Mattermost from other tools, including `Slack </onboard/migrate-from-slack.html>`__, `HipChat </onboard/migrating-from-hipchat-to-mattermost.html>`__, `Jabber <#migrate-from-jabber>`__, `Pidgin <#migrate-from-pidgin>`__, `Bitnami <#migrate-from-bitnami>`__, and other `bespoke messaging solutions <#migrate-from-bespoke-messaging-solutions>`__, as well as `migrating Mattermost server <#migrate-mattermost-server>`__ to another server instance.
+This guide summarizes different approaches to migrating to Mattermost from other tools, including :doc:`Slack </onboard/migrate-from-slack>`, :ref:`HipChat <onboard/migrating-to-mattermost:migrating from slack>`, `Jabber <#migrate-from-jabber>`__, `Pidgin <#migrate-from-pidgin>`__, `Bitnami <#migrate-from-bitnami>`__, and other `bespoke messaging solutions <#migrate-from-bespoke-messaging-solutions>`__, as well as `migrating Mattermost server <#migrate-mattermost-server>`__ to another server instance.
 
 Migrate from Slack
 ------------------
 
-See the `Migrate from Slack </onboard/migrate-from-slack.html>`__ documentation for details on migrating from Slack to Mattermost.
+See the :doc:`Migrate from Slack </onboard/migrate-from-slack>` documentation for details on migrating from Slack to Mattermost.
 
 Migrate from HipChat 
 --------------------
 
-See the `Migrate from HipChat </onboard/migrating-from-hipchat-to-mattermost.html>`__ documentation for details on migrating from HipChat Server and HipChat Data Center to Mattermost.
+See the :ref:`Migrate from HipChat <onboard/migrating-to-mattermost:migrating from slack>` documentation for details on migrating from HipChat Server and HipChat Data Center to Mattermost.
 
 Migrate from Jabber
 -------------------
@@ -48,7 +48,7 @@ Migrating from bespoke messengers to Mattermost can be challenging. Because of t
 
 If your data in the bespoke messenger is vital, consider:
 
-1. `Mattermost bulk load tool </onboard/bulk-loading-data.html>`__: Use the Mattermost bulk load tool to ETL from your bespoke system to Mattermost.
+1. :doc:`Mattermost bulk load tool </onboard/bulk-loading-data>`: Use the Mattermost bulk load tool to ETL from your bespoke system to Mattermost.
 2. `Mattermost ETL framework from BrightScout <https://github.com/Brightscout/mattermost-etl>`__: Consider the Mattermost ETL framework from BrightScout to custom-configure an adapter to plug in to the Bulk Load tool mentioned above.
 3. **Legacy Slack import:** If you only recently switched from Slack to a bespoke tool, consider going back to import the data and users from the old Slack instance directly into Mattermost, leveraging the extensive support for Slack-import provided.
 4. **Export to Slack, then import to Mattermost:** `Export HipChat, Flowdock, Campfire, Chatwork, Hall, or CSV files to Slack <https://get.slack.help/hc/en-us/articles/201748703-Import-message-history>`__ and then export to a Slack export file and import the file into Mattermost.
@@ -68,8 +68,8 @@ Migrate Mattermost server
 
 The following instructions migrate Mattermost from one server to another by backing up and restoring the Mattermost database and ``config.json`` file. For these instructions SOURCE refers to the Mattermost server *from which* your system will be migrated and DESTINATION refers to the Mattermost server *to which* your system will be migrated.
 
-1. Back up your SOURCE Mattermost server. See `Backup and Disaster Recovery documentation </deploy/backup-disaster-recovery.html>`__.
-2. Upgrade your SOURCE Mattermost server to the latest major build version. See `Upgrading Mattermost Server documentation </upgrade/upgrading-mattermost-server.html>`__.
+1. Back up your SOURCE Mattermost server. See :doc:`Backup and Disaster Recovery documentation </deploy/backup-disaster-recovery>`.
+2. Upgrade your SOURCE Mattermost server to the latest major build version. See :doc:`Upgrading Mattermost Server documentation </upgrade/upgrading-mattermost-server>`.
 3. Install the latest major build of Mattermost server as your DESTINATION. 
 
   - Make sure your new instance is properly configured and tested. The database type (MySQL or PostgreSQL) and version of SOURCE and DESTINATION deployments need to match.
@@ -85,4 +85,4 @@ The following instructions migrate Mattermost from one server to another by back
 7. Start the DESTINATION deployment by running ``sudo start mattermost``. Then go to the **System Console**, make a minor change, and save it to upgrade your ``config.json`` schema to the latest version using default values for any new settings added.
 8. Test that the system is working by going to the URL of an existing team. You may need to refresh your Mattermost browser page in order to get the latest updates from the upgrade.
 
-Once your migration is complete and verified, you can optionally `upgrade the Team Edition of Mattermost to Enterprise Edition using the upgrade guide </upgrade/upgrading-mattermost-server.html#upgrading-team-edition-to-enterprise-edition>`__.
+Once your migration is complete and verified, you can optionally :ref:`upgrade the Team Edition of Mattermost to Enterprise Edition using the upgrade guide <upgrade/upgrading-mattermost-server:upgrading team edition to enterprise edition>`.

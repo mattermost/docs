@@ -29,7 +29,7 @@ Mattermost notifies you of new activity in the following ways:
 - **Badges**: In Mattermost, badges show you when you have unread messages and threads.
 
     - |dot-badge| A dot on the badge means you have unread activity in at least one channel you're a member of.
-    - |numbered-badge| A numbered badge means you have at least one unread `direct message </collaborate/channel-types.html#direct-messages>`__, `group message </collaborate/channel-types.html#group-messages>`__, `@mention </collaborate/mention-people.html>`__, or one of your keywords has triggered a notification.
+    - |numbered-badge| A numbered badge means you have at least one unread :ref:`direct message <collaborate/channel-types:direct messages>`, :ref:`group message <collaborate/channel-types:group messages>`, :doc:`@mention </collaborate/mention-people>`, or one of your keywords has triggered a notification.
 - **Banner alerts**: Pop-ups alert you to new activity.
 - **Push notifications**: Mobile app alert you to new activity when you're on the go.
 - **Sounds**: Audible sounds alert you to new activity.
@@ -62,7 +62,7 @@ On mobile, select the **Settings** |gear| icon and tap **Notifications**.
 
     **Incoming call sounds**
 
-    Want to hear a sound when a Mattermost call starts? If your Mattermost admin `enables this beta feature </configure/plugins-configuration-settings.html#enable-call-ringing-beta>`__, you can choose the sound that plays when a call is started within a direct or group message you're participating in by going to **Desktop notifications > Notification sound for incoming calls**.
+    Want to hear a sound when a Mattermost call starts? If your Mattermost admin :ref:`enables this beta feature <configure/plugins-configuration-settings:enable call ringing beta>`, you can choose the sound that plays when a call is started within a direct or group message you're participating in by going to **Desktop notifications > Notification sound for incoming calls**.
 
     You can disable incoming call sounds altogether if preferred.
 
@@ -76,7 +76,7 @@ On mobile, select the **Settings** |gear| icon and tap **Notifications**.
 
     **Group email notifications in batches**
 
-    Mattermost also supports the ability to group multiple email notifications together into a single email. If your Mattermost admin `enables this feature </configure/site-configuration-settings.html#notification-enableemailbatching>`__, you'll receive batches of notifications by email every 15 minutes, or as configured by your admin.
+    Mattermost also supports the ability to group multiple email notifications together into a single email. If your Mattermost admin :ref:`enables this feature <configure/site-configuration-settings:notification enableemailbatching>`, you'll receive batches of notifications by email every 15 minutes, or as configured by your admin.
 
 .. tab:: Mobile
 
@@ -120,14 +120,14 @@ On mobile, select the **Settings** |gear| icon and tap **Notifications**.
         
         From Mattermost v9.3, Mattermost Enterprise and Professional users interested calling attention to specific topics of interest across channels, at a glance, can do so without triggering notifications.
         
-        Using a web browser or the desktop app, passively track key terms by specifying single or multi-words to highlight in all channels you're a member of. Keywords and phrases are automatically highlighted based on your `Mattermost theme </preferences/customize-your-theme.html>`__.
+        Using a web browser or the desktop app, passively track key terms by specifying single or multi-words to highlight in all channels you're a member of. Keywords and phrases are automatically highlighted based on your :doc:`Mattermost theme </preferences/customize-your-theme>`.
 
         .. image:: ../images/keywords-highlighted.gif
           :alt: A walkthrough of setting keywords that are highlighted in Mattermost.
 
 .. tab:: Replies
 
-    If `Collapsed Reply Threads </collaborate/organize-conversations.html>`__ is disabled, you won't be notified in reply threads unless you're @mentioned. However, you can configure Mattermost to notify you when someone replies to a thread you started, or started or have participated in. Select **Reply notifications** to choose the option that works best for you. This setting is hidden when Collapsed Reply Threads is enabled.
+    If :doc:`Collapsed Reply Threads </collaborate/organize-conversations>` is disabled, you won't be notified in reply threads unless you're @mentioned. However, you can configure Mattermost to notify you when someone replies to a thread you started, or started or have participated in. Select **Reply notifications** to choose the option that works best for you. This setting is hidden when Collapsed Reply Threads is enabled.
 
     **Automatic replies**
 

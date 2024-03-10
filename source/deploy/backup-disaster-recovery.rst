@@ -51,7 +51,7 @@ Recovering from a failure using a backup is typically a manual process and will 
 High Availability deployment 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Deploying Mattermost in `High Availability mode </scale/high-availability-cluster.html>`__ allows for fast, automated recovery from component failure, such as a specific server running out of disk space or having a hardware issue, by running on redundant servers. Options include:
+Deploying Mattermost in :doc:`High Availability mode </scale/high-availability-cluster>` allows for fast, automated recovery from component failure, such as a specific server running out of disk space or having a hardware issue, by running on redundant servers. Options include:
 
 - Deploying redundant Mattermost servers, to protect against failures in the Mattermost server.
 - Deploying redundant databases, to protect against failures in the database.

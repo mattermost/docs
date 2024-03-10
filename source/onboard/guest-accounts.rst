@@ -34,7 +34,7 @@ Guest authentication
 
 Guests can access the Mattermost server via email invitation, and be authenticated using AD/LDAP or SAML 2.0.
 
-Before you proceed, ensure that the authentication method you wish to use is correctly configured on your server and enabled in Mattermost. For configuration steps and technical documentation, see `Active Directory/LDAP setup </onboard/ad-ldap.html>`_ and `SAML Single-Sign-On </onboard/sso-saml.html>`__.
+Before you proceed, ensure that the authentication method you wish to use is correctly configured on your server and enabled in Mattermost. For configuration steps and technical documentation, see :doc:`Active Directory/LDAP setup </onboard/ad-ldap>` and :doc:`SAML Single-Sign-On </onboard/sso-saml>`.
 
 Converting a member user to a guest won't change the channels they are in. However, they will be restricted from discovering additional channels and are unable to direct message/group message users outside of the channels they are in. They can be added to channels by system admins and other roles that have the correct permissions to invite guests.
 
@@ -91,7 +91,7 @@ Guest permission settings
 
 In Mattermost Enterprise and Professional, you can control which users can invite guests. By default, only the System Admins can invite guests.
 
-There are `additional permissions </onboard/advanced-permissions.html>`__ in Mattermost Enterprise that can be adjusted under **System Console > User Management > Permissions > System Scheme** to control a guest’s ability to:
+There are :doc:`additional permissions </onboard/advanced-permissions>` in Mattermost Enterprise that can be adjusted under **System Console > User Management > Permissions > System Scheme** to control a guest’s ability to:
 
  - Edit posts
  - Delete posts
@@ -101,7 +101,7 @@ There are `additional permissions </onboard/advanced-permissions.html>`__ in Mat
 Guest identification
 ---------------------
 
-Guests are identified with a **Guest** badge unless your system admin has `disabled guest badges </configure/authentication-configuration-settings.html#guest-access>`__. When visible, this badge is visible in various places in the Mattermost interface, such as on a guest’s profile and next to their name on user lists, including @mentions. Additionally, when badges are visible, and guests are added to a channel, a system message notifies other channel members that the added user is a guest.
+Guests are identified with a **Guest** badge unless your system admin has :ref:`disabled guest badges <configure/authentication-configuration-settings:guest access>`. When visible, this badge is visible in various places in the Mattermost interface, such as on a guest’s profile and next to their name on user lists, including @mentions. Additionally, when badges are visible, and guests are added to a channel, a system message notifies other channel members that the added user is a guest.
 
 Additionally, when guest badges are visible, channels containing guests display the message: *This channel has guests*.
 

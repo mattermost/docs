@@ -20,15 +20,15 @@ Custom groups (beta) reduce noise and improve focus by notifying the right peopl
 
 For example, perhaps you want to @mention a cross-functional team about a bug fixes needed for an upcoming feature release, without notifying everyone else in the channel. Using a custom group notifies the cross-functional team immediately, while keeping important stakeholders in the loop on the status of the feature release.
 
-Or perhaps you want to add a group of users to a team and a channel. When you @mention a custom group in a channel, Mattermost prompts you to add anyone from that custom group who isn't already a channel and team member. See the `invite people to your workspace </collaborate/invite-people.html>`__ documentation for details.
+Or perhaps you want to add a group of users to a team and a channel. When you @mention a custom group in a channel, Mattermost prompts you to add anyone from that custom group who isn't already a channel and team member. See the :doc:`invite people to your workspace </collaborate/invite-people>` documentation for details.
 
-Once a custom user group has been created, you can mention that group the same way you @mention another Mattermost member. See the `mention people in messages </collaborate/mention-people.html>`__ documentation for details.
+Once a custom user group has been created, you can mention that group the same way you @mention another Mattermost member. See the :doc:`mention people in messages </collaborate/mention-people>` documentation for details.
 
 .. note::
 
-  - System admins need to enable this feature. See our `Mattermost Configuration Settings </configure/configuration-settings.html#custom-user-groups>`__ documentation for details.
-  - From Mattermost v7.2, system admins can limit who can manage custom user groups through the Custom Group Manager system admin role. See the `system roles </onboard/system-admin-roles.html>`__ documentation for details.
-  - The ability to create custom user groups on mobile will be available in a future release. @mentions for custom user groups on mobile work the same as `LDAP-synced groups </collaborate/mention-people.html#groupname>`__.
+  - System admins need to enable this feature. See our :ref:`Mattermost Configuration Settings <configure/experimental-configuration-settings:custom user groups>` documentation for details.
+  - From Mattermost v7.2, system admins can limit who can manage custom user groups through the Custom Group Manager system admin role. See the :doc:`system roles </onboard/system-admin-roles>` documentation for details.
+  - The ability to create custom user groups on mobile will be available in a future release. @mentions for custom user groups on mobile work the same as :ref:`LDAP-synced groups <collaborate/mention-people:groupname>`.
 
 Create a custom group
 ---------------------

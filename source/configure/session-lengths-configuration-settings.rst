@@ -165,7 +165,7 @@ Session idle timeout
 |                                                                                                                                                       |
 | - This setting has no effect when `extend session length with activity <#extend-session-length-with-activity>`__ is set to **true**.                  |
 | - This setting applies to the webapp and the desktop app. For mobile apps, use an                                                                     |
-|   `EMM provider </deploy/deploy-mobile-apps-using-emm-provider.html>`__ to lock the app when not in use.                                              |
-| - In `high availability mode </scale/high-availability-cluster.html>`__, enable IP hash load balancing for reliable                                   |
+|   :doc:`EMM provider </deploy/deploy-mobile-apps-using-emm-provider>` to lock the app when not in use.                                              |
+| - In :doc:`high availability mode </scale/high-availability-cluster>`, enable IP hash load balancing for reliable                                   |
 |   timeout measurement.                                                                                                                                |
 +----------------------------------------------------------------+--------------------------------------------------------------------------------------+

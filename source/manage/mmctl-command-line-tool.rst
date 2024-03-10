@@ -4,7 +4,7 @@ mmctl command line tool
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-The mmctl is a CLI tool for the Mattermost server which is installed locally and uses the Mattermost API, but may also be used remotely. Authentication is done with either login credentials or an authentication token. This mmctl tool is included and replaces the `CLI </manage/command-line-tools.html>`__. The mmctl can currently be used alongside the Mattermost CLI tool. The Mattermost CLI tool will be deprecated in a future release.
+The mmctl is a CLI tool for the Mattermost server which is installed locally and uses the Mattermost API, but may also be used remotely. Authentication is done with either login credentials or an authentication token. This mmctl tool is included and replaces the :doc:`CLI </manage/command-line-tools>`. The mmctl can currently be used alongside the Mattermost CLI tool. The Mattermost CLI tool will be deprecated in a future release.
 
 Being installed locally enables System Admins for both self-hosted and Cloud Mattermost instances to run CLI commands even in instances where there's no access to the server (e.g., via SSH).
 
@@ -146,7 +146,7 @@ The API that the socket exposes follows the same specification that can be found
 Activating local mode
 ~~~~~~~~~~~~~~~~~~~~~
 
-To use local mode, the Mattermost server first needs to `have local mode enabled </configure/experimental-configuration-settings.html#enable-local-mode-for-mmctl>`_. When local mode is enabled, a socket is created at ``/var/tmp/mattermost_local.socket`` by default.
+To use local mode, the Mattermost server first needs to :ref:`have local mode enabled <configure/experimental-configuration-settings:enable local mode for mmctl>`. When local mode is enabled, a socket is created at ``/var/tmp/mattermost_local.socket`` by default.
 
 .. tip::
 
@@ -155,7 +155,7 @@ To use local mode, the Mattermost server first needs to `have local mode enabled
 Using local mode
 ~~~~~~~~~~~~~~~~
 
-You need to append ``--local`` to the command you want to use, or set the environment variable as ``MMCTL_LOCAL=true``. To use a socket file other than the default, you need to set the environment variable to ``MMCTL_LOCAL_SOCKET_PATH``. This file must match the `server configuration setting </configure/configuration-settings.html#enable-local-mode-socket-location>`_.
+You need to append ``--local`` to the command you want to use, or set the environment variable as ``MMCTL_LOCAL=true``. To use a socket file other than the default, you need to set the environment variable to ``MMCTL_LOCAL_SOCKET_PATH``. This file must match the :ref:`server configuration setting <configure/experimental-configuration-settings:enable local mode socket location>`.
 
 Running mmctl tests
 -------------------
@@ -943,7 +943,7 @@ mmctl channel delete
 Permanently delete channels along with all related information including posts from the database.
 
 .. note::
-   Requires the `Enable API Channel Deletion </configure/configuration-settings.html#enable-api-channel-deletion>`__ configuration setting to be enabled. If this configuration setting is disabled, attempting to delete the channel using mmctl fails.
+   Requires the :ref:`Enable API Channel Deletion <configure/experimental-configuration-settings:enable api channel deletion>` configuration setting to be enabled. If this configuration setting is disabled, attempting to delete the channel using mmctl fails.
 
 **Format**
 
@@ -1020,7 +1020,7 @@ List all Public, Private, and archived channels on specified teams. Archived cha
 mmctl channel make-private
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This command is deprecated in favour of `mmctl channel modify </manage/mmctl-command-line-tool.html#mmctl-channel-modify>`__ and the ``--private`` flag.
+This command is deprecated in favour of :ref:`mmctl channel modify <manage/mmctl-command-line-tool:mmctl channel modify>` and the ``--private`` flag.
 
 **Description**
 
@@ -1925,7 +1925,7 @@ Migrate a file-based configuration to (or from) a database-based configuration. 
 
 .. note::
 
-   - To change the store type to use the database, a System Admin needs to set a ``MM_CONFIG`` `environment variable </configure/configuration-in-your-database.html#create-an-environment-file>`_ and restart the Mattermost server.
+   - To change the store type to use the database, a System Admin needs to set a ``MM_CONFIG`` :ref:`environment variable <configure/configuration-in-your-database:create an environment file>` and restart the Mattermost server.
    - The ``migrate`` function requires local mode to be enabled.  To do this, add the following line to your Mattermost Environment file:
 
       .. code-block:: sh
@@ -5246,7 +5246,7 @@ mmctl team delete
 Permanently delete a team along with all related information including posts from the database.
 
 .. note::
-   Requires the `Enable API Team Deletion </configure/configuration-settings.html#enable-api-team-deletion>`__ configuration setting to be enabled. If this configuration setting is disabled, attempting to delete the team using mmctl fails.
+   Requires the :ref:`Enable API Team Deletion <configure/experimental-configuration-settings:enable api team deletion>` configuration setting to be enabled. If this configuration setting is disabled, attempting to delete the team using mmctl fails.
 
 **Format**
 
@@ -6000,7 +6000,7 @@ mmctl user delete
 Permanently delete users along with all related information including posts from the database.
 
 .. note::
-   Requires the `Enable API User Deletion </configure/configuration-settings.html#enable-api-user-deletion>`__ configuration setting to be enabled. If this configuration setting is disabled, attempting to delete the user using mmctl fails.
+   Requires the :ref:`Enable API User Deletion <configure/experimental-configuration-settings:enable api user deletion>` configuration setting to be enabled. If this configuration setting is disabled, attempting to delete the user using mmctl fails.
 
 **Format**
 

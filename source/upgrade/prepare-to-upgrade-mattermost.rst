@@ -4,7 +4,7 @@ Prepare to upgrade Mattermost
 .. include:: ../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
 
-In most cases, you can `upgrade Mattermost Server </upgrade/upgrading-mattermost-server.html>`__ in a few minutes. However, the upgrade can take longer depending on several factors, including the size and complexity of your installation, and the version that you're upgrading from. When planning an upgrade, it's worth confirming that your current database and operating system version are still supported. Details can be found on our `software and hardware requirements </install/software-hardware-requirements.html#server-software>`__ page.
+In most cases, you can :doc:`upgrade Mattermost Server </upgrade/upgrading-mattermost-server>` in a few minutes. However, the upgrade can take longer depending on several factors, including the size and complexity of your installation, and the version that you're upgrading from. When planning an upgrade, it's worth confirming that your current database and operating system version are still supported. Details can be found on our :ref:`software and hardware requirements <install/software-hardware-requirements:server software>` page.
 
 Upgrade Best Practices
 ----------------------
@@ -55,7 +55,7 @@ We strongly recommend that you:
 
 - Set up a maintenance window outside of working hours to mitigate the migration impact. 
 - Keep a backup of your database to ensure you can load a previous database snapshot if necessary.
-- Upgrade your instance of Mattermost to the latest `Extended Support Release (ESR) </upgrade/extended-support-release.html>`__ first before attempting to run the Mattermost v6.0 upgrade.
+- Upgrade your instance of Mattermost to the latest :doc:`Extended Support Release (ESR) </upgrade/extended-support-release>` first before attempting to run the Mattermost v6.0 upgrade.
 
 .. important::
 
@@ -75,7 +75,7 @@ For a complete breakdown of PostgreSQL queries, as well as their impact and dura
 Upgrade from releases older than v5.35
 ----------------------------------------
 
-Customers upgrading from a release older than Mattermost v5.35 should expect extended downtime when upgrading to v6.0 due to the introduction of backend database architecture introduced in v5.35. This upgrade path isn't recommended for large installations. We recommend upgrading to the latest `Extended Support Release (ESR) </upgrade/extended-support-release.html>`__ first before upgrading to Mattermost v6.0. See the `Mattermost changelog </install/self-managed-changelog.html>`__ documentation for additional details.
+Customers upgrading from a release older than Mattermost v5.35 should expect extended downtime when upgrading to v6.0 due to the introduction of backend database architecture introduced in v5.35. This upgrade path isn't recommended for large installations. We recommend upgrading to the latest :doc:`Extended Support Release (ESR) </upgrade/extended-support-release>` first before upgrading to Mattermost v6.0. See the :doc:`Mattermost changelog </deploy/legacy-self-hosted-changelog>` documentation for additional details.
 
 If you're upgrading from a version prior to Mattermost v5.0, you can't upgrade directly to v6.0. Instead, we strongly recommend approaching the upgrade in phases, starting with an upgrade to the latest ESR first, followed by the upgrade to v6.0. During the first phase of updates, you must also modify your service file to work with the binary changes introduced with the v5.0 release. Your execution directory should point to the Mattermost base directory (i.e. ``/opt/mattermost``), and your binary should point to the ``mattermost`` binary (i.e. ``/opt/mattermost/bin/mattermost``). 
 
@@ -116,9 +116,9 @@ Ensure you review the :doc:`important-upgrade-notes` for all intermediate releas
 Upgrade high availability deployments
 ---------------------------------------
 
-In `high availability </scale/high-availability-cluster.html>`__ environments, you should expect to schedule downtime for the upgrade to v6.0. Based on your database size and setup, the migration to v6.0 can take a significant amount of time, and may even lock the tables for posts which will prevent your users from posting or receiving messages until the migration is complete.
+In :doc:`high availability </scale/high-availability-cluster>` environments, you should expect to schedule downtime for the upgrade to v6.0. Based on your database size and setup, the migration to v6.0 can take a significant amount of time, and may even lock the tables for posts which will prevent your users from posting or receiving messages until the migration is complete.
 
-Ensure you review the `high availability cluster upgrade guide </scale/high-availability-cluster.html#upgrade-guide>`__, as well as the :doc:`important-upgrade-notes` to make sure you're aware of any actions you need to take before or after upgrading from your particular version.
+Ensure you review the :ref:`high availability cluster upgrade guide <scale/high-availability-cluster:upgrade guide>`, as well as the :doc:`important-upgrade-notes` to make sure you're aware of any actions you need to take before or after upgrading from your particular version.
 
 .. important::
 

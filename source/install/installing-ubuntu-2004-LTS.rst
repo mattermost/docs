@@ -19,7 +19,7 @@ Install a database
 
 .. note:: 
   
-  You only need one database: either PostgreSQL or MySQL. See the `database software </install/software-hardware-requirements.html#database-software>`__ documentation for details on database version support.
+  You only need one database: either PostgreSQL or MySQL. See the :ref:`database software <install/software-hardware-requirements:database software>` documentation for details on database version support.
 
 .. tab:: Install PostgreSQL
 

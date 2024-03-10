@@ -25,8 +25,8 @@ Site statistics
 | and playbooks.                                                | - Environment variable: N/A                                 |
 +---------------------------------------------------------------+-------------------------------------------------------------+
 | **Note**: Bots, deactivated users, and synthetic users in                                                                   |
-| `Microsoft Teams integrations </collaborate/collaborate-using-mattermost-for-microsoft-teams.html>`__                       |
-| and `shared channels users </onboard/shared-channels.html>`__, aren't counted towards the total number of activated users.  |
+| :doc:`Microsoft Teams integrations </collaborate/collaborate-within-connected-microsoft-teams>`                       |
+| and :doc:`shared channels users </onboard/shared-channels>`, aren't counted towards the total number of activated users.  |
 +---------------------------------------------------------------+-------------------------------------------------------------+
 
 ----
@@ -44,8 +44,8 @@ Team statistics
 | count of paid users (self-hosted only).                       | - Environment variable: N/A                                   |
 +---------------------------------------------------------------+---------------------------------------------------------------+
 | **Note**: Bots, deactivated users, and synthetic users in                                                                     |
-| `Microsoft Teams integrations </collaborate/collaborate-using-mattermost-for-microsoft-teams.html>`__                         |
-| and `shared channels users </onboard/shared-channels.html>`__, aren't counted towards the total number of active users.       |
+| :doc:`Microsoft Teams integrations </collaborate/collaborate-within-connected-microsoft-teams>`                         |
+| and :doc:`shared channels users </onboard/shared-channels>`, aren't counted towards the total number of active users.       |
 +---------------------------------------------------------------+---------------------------------------------------------------+
 
 ----

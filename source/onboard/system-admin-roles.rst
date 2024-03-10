@@ -17,7 +17,7 @@ A System Admin can configure the following system roles:
 
 - **System Manager:** The System Manager role has read/write permissions for management areas, such as user management and integrations (excluding permissions). This role has read only access to authentication, reporting, and license interfaces.
 - **User Manager:** The User Manager role is able to read/write to all the user management areas (excluding permissions). The authentication interface is read-only.
-- **Custom Group Manager** The Custom Group Manager role has permissions to `create, edit, restore, and delete custom user groups </collaborate/organize-using-custom-user-groups.html>`__. This role can be used to assign individual users the ability to manage custom groups when **Custom Groups** permissions are removed for **All Members** via **System Console > Permissions > Edit Scheme > Custom Groups**.
+- **Custom Group Manager** The Custom Group Manager role has permissions to :doc:`create, edit, restore, and delete custom user groups </collaborate/organize-using-custom-user-groups>`. This role can be used to assign individual users the ability to manage custom groups when **Custom Groups** permissions are removed for **All Members** via **System Console > Permissions > Edit Scheme > Custom Groups**.
 - **Viewer:** The Viewer role is able to view all areas of the System Console, but has no write access.
 
 When a user is assigned a system role, they have role-based access to the System Console and the API endpoints. Each role has a different set of default permissions, and what users can access or view depends on the role they've been assigned.
@@ -47,7 +47,7 @@ Assign system admin roles
 There are two ways to assign roles:
 
 1. In the System Console under **User Management > System Roles**.
-2. Using the `mmctl tool </manage/mmctl-command-line-tool.html>`__. This can be done either locally or remotely.
+2. Using the :doc:`mmctl tool </manage/mmctl-command-line-tool>`. This can be done either locally or remotely.
 
 +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
 | **You want to**                                   | **Using the System Console**                                                                                  | **Using mmctl**                                                                     |
@@ -88,7 +88,7 @@ System Admins can grant read/write access to other areas of the System Console, 
 There are two ways to assign roles:
 
 1. In the System Console under **User Management > System Roles**.
-2. Using the `mmctl tool </manage/mmctl-command-line-tool.html>`__. This can be done either locally or remotely.
+2. Using the :doc:`mmctl tool </manage/mmctl-command-line-tool>`. This can be done either locally or remotely.
 
 +--------------------------------------------------+---------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
 | **You want to**                                  | **Using the System Console**                                                                                  | **Using mmctl**                                                                     |                                                              

@@ -21,7 +21,7 @@ Follow these steps to configure the Mattermost server to use Bleve and generate 
 
 1. Open **System Console > Experimental > Bleve**.
 2. Set **Enable Bleve Indexing** to **true** to enable the other settings on the page.
-3. Set the directory path to use for storing Bleve indexes (e.g.: ``/var/opt/mattermost/bleveindexes``). The user running Mattermost should have permissions to access the directory. See our `Configuration Settings </configure/configuration-settings.html#bleve-settings>`__  documentation for details.
+3. Set the directory path to use for storing Bleve indexes (e.g.: ``/var/opt/mattermost/bleveindexes``). The user running Mattermost should have permissions to access the directory. See our :ref:`Configuration Settings <configure/configuration-settings:bleve settings>`  documentation for details.
 4. Save the configuration.
 5. Select **Index Now**. All users, channels, and posts in the database will be indexed oldest to newest.
 6. Set **Enable Bleve for search queries** to **true**.
@@ -29,7 +29,7 @@ Follow these steps to configure the Mattermost server to use Bleve and generate 
 
 .. note::
 
-  Search results for files shared before upgrading to Mattermost Server v5.35 may be incomplete until an extraction command is run using the `mmctl </manage/mmctl-command-line-tool.html#mmctl-extract>`__. After running this command, the search index must be rebuilt. Go to **System Console > Experimental > Bleve > Bulk Indexing**, then select **Index Now** to rebuild the search index to include older file contents.
+  Search results for files shared before upgrading to Mattermost Server v5.35 may be incomplete until an extraction command is run using the :ref:`mmctl <manage/mmctl-command-line-tool:mmctl extract>`. After running this command, the search index must be rebuilt. Go to **System Console > Experimental > Bleve > Bulk Indexing**, then select **Index Now** to rebuild the search index to include older file contents.
 
 Using Bleve search
 ------------------
@@ -42,4 +42,4 @@ The following conditions are applied when using Bleve search:
 How does search work with Bleve disabled?
 -------------------------------------------
 
-Mattermost performs full text searches against the database unless you have an `Enterprise license </about/deployments-and-editions.html#mattermost-enterprise>`__ and `Elasticsearch </scale/elasticsearch.html>`__ configured.
+Mattermost performs full text searches against the database unless you have an :ref:`Enterprise license <about/deployments-and-editions:mattermost enterprise>` and :doc:`Elasticsearch </scale/elasticsearch>` configured.

@@ -18,12 +18,12 @@ Mattermost keyboard shortcuts help you make a more efficient use of your keyboar
 .. tip::
 
   - In Mattermost, display a list of available keyboard shortcuts by pressing :kbd:`Ctrl` :kbd:`/` on Windows or Linux, pressing :kbd:`⌘` :kbd:`/` on macOS, or using the ``/shortcuts`` slash command.
-  - Additional keyboard shortcuts are available. See the `team keyboard shortcuts </collaborate/team-keyboard-shortcuts.html>`__ documentation for details.
+  - Additional keyboard shortcuts are available. See the :doc:`team keyboard shortcuts </collaborate/team-keyboard-shortcuts>` documentation for details.
 
 Channel navigation
 ------------------
 
-The following keyboard shortcuts for channels are supported in all `supported browsers </install/software-hardware-requirements.html#software-requirements>`__ and in the Mattermost desktop app.
+The following keyboard shortcuts for channels are supported in all :ref:`supported browsers <install/software-hardware-requirements:software requirements>` and in the Mattermost desktop app.
 
 +-------------------------------------+------------------------------+----------------------------------------------------------------------------------+
 | On Windows & Linux                  | On Mac                       | Description                                                                      |
@@ -63,7 +63,7 @@ The following keyboard shortcuts for channels are supported in all `supported br
 File uploads
 -------------
 
-The following keyboard shortcuts are supported in all `supported browsers </install/software-hardware-requirements.html#software-requirements>`__ and in the Mattermost desktop app.
+The following keyboard shortcuts are supported in all :ref:`supported browsers <install/software-hardware-requirements:software requirements>` and in the Mattermost desktop app.
 
 +-----------------------+--------------------+-----------------+
 | On Windows & Linux    | On Mac             | Description     |
@@ -74,7 +74,7 @@ The following keyboard shortcuts are supported in all `supported browsers </inst
 Messages
 --------
 
-The following keyboard shortcuts are supported in all `supported browsers </install/software-hardware-requirements.html#software-requirements>`__ and in the Mattermost desktop app.
+The following keyboard shortcuts are supported in all :ref:`supported browsers <install/software-hardware-requirements:software requirements>` and in the Mattermost desktop app.
 
 +-----------------------------------------------+--------------------------------------------+-----------------------------------------------------------+
 | On Windows & Linux                            | On Mac                                     | Description                                               |
@@ -99,7 +99,7 @@ The following keyboard shortcuts are supported in all `supported browsers </inst
 Message formatting
 --------------------
 
-The following keyboard shortcuts are supported in all `supported browsers </install/software-hardware-requirements.html#software-requirements>`__ and in the Mattermost desktop app.
+The following keyboard shortcuts are supported in all :ref:`supported browsers <install/software-hardware-requirements:software requirements>` and in the Mattermost desktop app.
 
 +-----------------------------------+-----------------------------+------------------------+
 | On Windows & Linux                | On Mac                      | Description            |
@@ -114,7 +114,7 @@ The following keyboard shortcuts are supported in all `supported browsers </inst
 Accessibility nagivation
 -------------------------
 
-The following keyboard shortcuts work in all `supported browsers </install/software-hardware-requirements.html#software-requirements>`__ and in the Mattermost desktop app.
+The following keyboard shortcuts work in all :ref:`supported browsers <install/software-hardware-requirements:software requirements>` and in the Mattermost desktop app.
 
 +----------------------------------------------+------------------------------------------+--------------------------------------------------+
 | On Windows & Linux                           | On Mac                                   | Description                                      |
@@ -137,7 +137,7 @@ The following keyboard shortcuts work in all `supported browsers </install/softw
 Calls
 ------
 
-The following keyboard shortcuts are supported in all `supported browsers </install/software-hardware-requirements.html#software-requirements>`__ and in the Mattermost desktop app when `calls </collaborate/make-calls.html>`_ are enabled.
+The following keyboard shortcuts are supported in all :ref:`supported browsers <install/software-hardware-requirements:software requirements>` and in the Mattermost desktop app when :doc:`calls </collaborate/make-calls>` are enabled.
 
 +-----------------------------------------------------------+--------------------------------------------------+-----------------------------------------------------------------------------------------+
 | On Windows & Linux                                        | On Mac                                           | Description                                                                             |
@@ -213,7 +213,7 @@ The following navigation keyboard shortcuts are supported only in the Mattermost
 Zoom in & zoom out display
 ---------------------------
 
-The following display keyboard shortcuts work in all `supported browsers </install/software-hardware-requirements.html#software-requirements>`__ and in the Mattermost desktop app.
+The following display keyboard shortcuts work in all :ref:`supported browsers <install/software-hardware-requirements:software requirements>` and in the Mattermost desktop app.
 
 +-------------------------------------+------------------------------+----------------------------------------+
 | On Windows & Linux                  | On macOS                     | Description                            |

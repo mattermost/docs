@@ -8,7 +8,7 @@ Add people to your workspace
   :alt: The Plus icon provides access to channel and direct message functionality.
   :class: theme-icon
 
-Getting people set up with a Mattermost account is typically something that admins do when deploying and configuring the Mattermost workspace. However, `team admins </collaborate/learn-about-roles.html#team-admin>`__ can also invite people, including `guests </onboard/guest-accounts.html>`__, to a Mattermost team via a `direct invite <#send-a-direct-invite>`__, a `public team invite link <#send-a-team-invite-link>`__.
+Getting people set up with a Mattermost account is typically something that admins do when deploying and configuring the Mattermost workspace. However, :ref:`team admins <collaborate/learn-about-roles:team admin>` can also invite people, including :doc:`guests </onboard/guest-accounts>`, to a Mattermost team via a `direct invite <#send-a-direct-invite>`__, a `public team invite link <#send-a-team-invite-link>`__.
 
 All users can add existing Mattermost users to a Mattermost team or channel, unless the system admin has restricted the ability for you to do so.
 
@@ -18,12 +18,12 @@ All users can add existing Mattermost users to a Mattermost team or channel, unl
 .. tip::
 
     - Add users to a channel by selecting the channel name and selecting **Add Members**. 
-    - Add groups of users to a channel or team by `creating a custom group </collaborate/organize-using-custom-user-groups.html>`__ and `@mentioning </collaborate/mention-people.html>`__ the custom group in a channel. 
+    - Add groups of users to a channel or team by :doc:`creating a custom group </collaborate/organize-using-custom-user-groups>` and :doc:`@mentioning </collaborate/mention-people>` the custom group in a channel. 
 
       - Mattermost prompts to you to add any users who aren't already members of that channel to the channel.
       - From Mattermost v9.1, you're given the option to add any users who aren't already members of that team to the team, if you have the permissions to do so.
 
-    - A `guest user </onboard/guest-accounts.html>`__ in Mattermost is a special role that is restricted to only the channels they have been invited to. When `guest access is enabled </configure/authentication-configuration-settings.html#guest-enable>`__ by the system admin, you can invite guests or users external to the organization, such as vendors or customers.
+    - A :doc:`guest user </onboard/guest-accounts>` in Mattermost is a special role that is restricted to only the channels they have been invited to. When :ref:`guest access is enabled <configure/authentication-configuration-settings:guest enable>` by the system admin, you can invite guests or users external to the organization, such as vendors or customers.
 
       - Once guests are invited to the team, you can add them to the channel.
 
@@ -35,7 +35,7 @@ Direct invites are invitation emails sent from your team's server directly to th
 .. note::
 
   - A System Admin can invalidate all active invitation links via **System Console > Authentication > Signup > Invalidate pending email invites**.
-  - If you can't invite others to the team, contact your system admin for assistance. You may not have sufficent permissions to do so, or `email invitations may not be enabled </configure/authentication-configuration-settings.html#signup-enableemailinvitations>`__.
+  - If you can't invite others to the team, contact your system admin for assistance. You may not have sufficent permissions to do so, or :ref:`email invitations may not be enabled <configure/authentication-configuration-settings:signup enableemailinvitations>`.
 
 .. tab:: Web/Desktop
 
@@ -66,7 +66,7 @@ You can share a unique URL that takes users to a Mattermost account creation pag
 
 .. note::
 
-  If you're unable to share links, contact your Mattermost system admin for assistance. An `SSL certificate (or a self-signed certificate) </onboard/ssl-client-certificate.html>`__ may be required for this functioanlity to work.
+  If you're unable to share links, contact your Mattermost system admin for assistance. An :doc:`SSL certificate (or a self-signed certificate) </onboard/ssl-client-certificate>` may be required for this functioanlity to work.
 
 .. tab:: Web/Desktop
 

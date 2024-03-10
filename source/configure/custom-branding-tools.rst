@@ -35,7 +35,7 @@ Upload a company logo or custom image representative of your site that is displa
 Custom brand text
 ~~~~~~~~~~~~~~~~~
 
-Write custom text to display your company tagline or a welcome prompt. Custom text will be shown below the custom brand image on the left side of site login page on desktop. You can format this text to a maximum of 500 characters using the same `Markdown formatting syntax </messaging/formatting-text.html>`__ as used in Mattermost messages.
+Write custom text to display your company tagline or a welcome prompt. Custom text will be shown below the custom brand image on the left side of site login page on desktop. You can format this text to a maximum of 500 characters using the same :doc:`Markdown formatting syntax </collaborate/format-messages>` as used in Mattermost messages.
 
 Site description
 ~~~~~~~~~~~~~~~~

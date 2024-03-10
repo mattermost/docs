@@ -19,22 +19,22 @@ A connected Mattermost integration with Microsoft Teams enables direct message, 
 .. image:: ../images/ms-teams-channel-sync-feb-2024.gif
    :alt: An example of a Mattermost channel that is synced with a channel on Microsoft Teams.
 
-Install this integration by visiting the `install the Mattermost for Microsoft Teams plugin </about/install-mattermost-for-microsoft-teams-plugin.html>`__ documentation.
+Install this integration by visiting the :doc:`install the Mattermost for Microsoft Teams plugin </about/install-mattermost-for-microsoft-teams-plugin>` documentation.
 
-Visit the `collaborate within a Microsoft Teams instance </collaborate/collaborate-within-connected-microsoft-teams.html>`__ to learn how to use this integration. 
+Visit the :doc:`collaborate within a Microsoft Teams instance </collaborate/collaborate-within-connected-microsoft-teams>` to learn how to use this integration. 
 
 Embed Mattermost within Mattermost Teams
 ----------------------------------------
 
 Embedding a Mattermost instance within a Microsoft Teams workspace across desktop and web clients enables Central IT organizations to provide an extended customization experience for technical and operational teams while staying firmly integrated into the Microsoft 365 all-employee platform.
 
-Embed Mattermost into Microsoft Teams by visiting the `embed Mattermost within Microsoft Teams </about/embed-mattermost-within-microsoft-teams.html>`__ documentation.
+Embed Mattermost into Microsoft Teams by visiting the :doc:`embed Mattermost within Microsoft Teams </about/embed-mattermost-within-microsoft-teams>` documentation.
 
 .. important::
 
-    You must `install the Microsoft Teams plugin in Mattermost </about/install-mattermost-for-microsoft-teams-plugin.html>`__ before you can embed the Mattermost app within Microsoft Teams.
+    You must :doc:`install the Microsoft Teams plugin in Mattermost </about/install-mattermost-for-microsoft-teams-plugin>` before you can embed the Mattermost app within Microsoft Teams.
 
-Visit the `collaborate in an embedded Microsoft Teams instance </collaborate/collaborate-within-embedded-microsoft-teams.html>`__ to learn how to use this integration.
+Visit the :doc:`collaborate in an embedded Microsoft Teams instance </collaborate/collaborate-within-embedded-microsoft-teams>` to learn how to use this integration.
 
 Benefits of embedding Mattermost
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

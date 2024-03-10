@@ -9,7 +9,7 @@ You can install Mattermost server in **Preview Mode** using the `Mattermost Dock
 
 .. important::
 
-    This local image is self-contained (i.e., it has an internal database and works out of the box). Dropping a container using this image removes data and configuration as expected. You can see the `configuration settings </configure/configuration-settings.html>`__ documentation to learn more about customizing your preview deployment.
+    This local image is self-contained (i.e., it has an internal database and works out of the box). Dropping a container using this image removes data and configuration as expected. You can see the :doc:`configuration settings </configure/configuration-settings>` documentation to learn more about customizing your preview deployment.
     
     However, **Preview Mode** shouldn't be used in a production environment, as it uses a known password string, contains other non-production configuration settings, has email disabled, keeps no persistent data (all data lives inside the container), and doesn't support upgrades. 
 

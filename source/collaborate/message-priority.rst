@@ -49,12 +49,12 @@ To enable persistent notifications for a message:
 .. note:: 
 
   - @channel, @all and @here mentions don't send persistent notifications.
-  - System admins can customize the maximum number of @mentions permitted, how frequently and how many persistent notifications are sent, as well as disable persistent notifications for all users, if preferred. By default, users are notified every 5 minutes for a total of 30 minutes. See the `configuration </configure/site-configuration-settings.html#persistent-notifications>`__ documentation for details.
+  - System admins can customize the maximum number of @mentions permitted, how frequently and how many persistent notifications are sent, as well as disable persistent notifications for all users, if preferred. By default, users are notified every 5 minutes for a total of 30 minutes. See the :ref:`configuration <configure/site-configuration-settings:persistent notifications>` documentation for details.
 
 Receive persistent notifications
 --------------------------------
 
-You must have desktop and/or mobile push notifications enabled to receive persistent notifications. How you're notified depends on your `notifications preferences </preferences/manage-your-notifications.html>`__ for desktop and mobile push notifications. You won't be notified when your availability is set to **Do Not Disturb**, or if you're `Out of Office </preferences/set-your-status-availability.html#set-your-availability>`__. Learn more about customizing how you receive notifications by visiting the `get notified </preferences/manage-your-notifications.html#get-notified>`__ documentation.
+You must have desktop and/or mobile push notifications enabled to receive persistent notifications. How you're notified depends on your :doc:`notifications preferences </preferences/manage-your-notifications>` for desktop and mobile push notifications. You won't be notified when your availability is set to **Do Not Disturb**, or if you're :ref:`Out of Office <preferences/set-your-status-availability:set your availability>`. Learn more about customizing how you receive notifications by visiting the :ref:`get notified <preferences/manage-your-notifications:get notified>` documentation.
 
 Urgent messages show a red mention badge which remains visibible until you view the message. Selecting the **Acknowledge** icon (when present) won't impact the urgent red mention badge.
 

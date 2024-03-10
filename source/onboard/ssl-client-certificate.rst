@@ -6,13 +6,13 @@ SSL client certificate setup (beta)
 
 Follow these steps to configure SSL client certificates for your browser and the Mattermost desktop apps on Windows, macOS, and Linux. SSL client certificates are not yet supported on the Mattermost mobile apps.
 
-Before you begin, follow the `official guides to install Mattermost </guides/administrator.html#installing-mattermost>`__ on your system, including NGINX configuration as a proxy with SSL and HTTP/2, and a valid SSL certificate such as Let's Encrypt.
+Before you begin, follow the :ref:`official guides to install Mattermost <guides/deployment:install guides>` on your system, including NGINX configuration as a proxy with SSL and HTTP/2, and a valid SSL certificate such as Let's Encrypt.
 
 For the purposes of this guide, the Mattermost server domain name is ``example.mattermost.com``, and the user account is ``mmuser`` with email ``mmuser@mattermost.com`` and password ``mmuser-password``.
 
 .. important::
   - Generating the client certificates in this section is optional if you have already generated them before.
-  - We strongly recommend configuring an SSL certificate (or a self-signed certificate) for security, privacy, compliance, as well as to avoid browser limitations that can prevent Mattermost product features from working that copy data using the user's local clipboard, including `sharing message links </collaborate/share-links.html#share-message-links>`__ and `inviting new members to teams </collaborate/invite-people.html#send-a-team-invite-link>`__. 
+  - We strongly recommend configuring an SSL certificate (or a self-signed certificate) for security, privacy, compliance, as well as to avoid browser limitations that can prevent Mattermost product features from working that copy data using the user's local clipboard, including :ref:`sharing message links <collaborate/share-links:share message links>` and :ref:`inviting new members to teams <collaborate/invite-people:send a team invite link>`. 
 
 Set up mutual TLS authentication for the web app
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -128,4 +128,4 @@ You should see the Mattermost login page. If you see:
 Troubleshooting
 ~~~~~~~~~~~~~~~~
 
-`Follow this process </install/troubleshooting.html>`__ to resolve configuration issues and to ask for help.
+:doc:`Follow this process </install/troubleshooting>` to resolve configuration issues and to ask for help.

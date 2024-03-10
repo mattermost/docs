@@ -85,7 +85,7 @@ Enable client debugging
 | - **false**: **(Default)** Those settings are     |                                                                                             |
 |   hidden and disabled.                            |                                                                                             |
 +---------------------------------------------------+---------------------------------------------------------------------------------------------+
-| See the `client debugging </preferences/manage-advanced-options.html#performance-debugging>`__ documentation to learn more.                     |
+| See the :ref:`client debugging <preferences/manage-advanced-options:performance debugging>` documentation to learn more.                     |
 +---------------------------------------------------+---------------------------------------------------------------------------------------------+
 
 .. config:setting:: dev-allowuntrustedinternalconnections
@@ -118,7 +118,7 @@ Allow untrusted internal connections
 |                                                                                                                                               |
 | - Integrations using webhooks, slash commands, or message actions. This prevents them from requesting endpoints within the local network.     |
 | - Link previews. When a link to a local network address is posted in a chat message, this prevents a link preview from being displayed.       |
-| - The local `image proxy </deploy/image-proxy.html>`__. If the local image proxy is enabled, images located on                                |
+| - The local :doc:`image proxy </deploy/image-proxy>`. If the local image proxy is enabled, images located on                                |
 |   the local network cannot be used by integrations or posted in chat messages.                                                                |
 +-----------------------------------------------+-----------------------------------------------------------------------------------------------+
 |                                                                                                                                               |

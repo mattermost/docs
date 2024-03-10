@@ -4,7 +4,7 @@ Communicate with messages and threads
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-`Sending messages </collaborate/send-messages.html>`__, `replying to messages </collaborate/reply-to-messages.html>`_, and `participating in conversation threads </collaborate/organize-conversations.html#start-or-reply-to-threads>`__ are important ways to keep conversations active with your team.
+:doc:`Sending messages </collaborate/send-messages>`, :doc:`replying to messages </collaborate/reply-to-messages>`, and :ref:`participating in conversation threads <collaborate/organize-conversations:start or reply to threads>` are important ways to keep conversations active with your team.
 
 Work with messages and threads
 -------------------------------

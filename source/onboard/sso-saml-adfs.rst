@@ -45,7 +45,7 @@ However, if you would like to set up encryption for your SAML connection, select
 
 	.. image:: ../../source/images/adfs_7_configure_certificate_encryption.png
 
-7. On the **Configure URL** screen, select **Enable Support for the SAML 2.0 WebSSO protocol**, then enter the **SAML 2.0 SSO service URL**, similar to ``https://<your-mattermost-url>/login/sso/saml`` where ``<your-mattermost-url>`` should typically match the `Mattermost Site URL </configure/configuration-settings.html#site-url>`__.
+7. On the **Configure URL** screen, select **Enable Support for the SAML 2.0 WebSSO protocol**, then enter the **SAML 2.0 SSO service URL**, similar to ``https://<your-mattermost-url>/login/sso/saml`` where ``<your-mattermost-url>`` should typically match the :ref:`Mattermost Site URL <configure/environment-configuration-settings:site url>`.
 
 	.. image:: ../../source/images/adfs_8_configure_url.png
 

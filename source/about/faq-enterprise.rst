@@ -23,7 +23,7 @@ Growing your Mattermost installation from supporting a team to supporting an ent
 
 **Functional Scaling:** Scaling from a team to an enterprise is like going from a "virtual office" to a "virtual campus". Advanced features like enterprise authentication, granular permissions, compliance and auditing, and advanced reporting become increasingly important as organizations grow beyond teams. Organizations needing this flexibility can easily upgrade from Mattermost Team Edition to Mattermost Enterprise Edition as well as downgrade without data loss, should their needs change.
 
-For more information on how Mattermost scales, technically, and functionally, please `contact the Enterprise team <https://mattermost.com/contact-us/>`__ and `read about scaling for Enterprise </scale/scaling-for-enterprise.html>`__.
+For more information on how Mattermost scales, technically, and functionally, please `contact the Enterprise team <https://mattermost.com/contact-us/>`__ and :doc:`read about scaling for Enterprise </scale/scaling-for-enterprise>`.
 
 What does it take to manage a Mattermost deployment?
 ----------------------------------------------------
@@ -68,14 +68,14 @@ Sixty days prior to expiry, System Administrators receive notifications that the
 How does the licensing key work?
 --------------------------------
 
-See our `frequently asked questions about licensing </about/licensing-and-subscription.html#frequently-asked-questions>`__.
+See our :ref:`frequently asked questions about licensing <about/licensing-and-subscription:frequently asked questions>`.
 
 Do you have a program for official non-profits and charities?
 -------------------------------------------------------------
 
-See our `frequently asked questions about licensing </about/licensing-and-subscription.html#frequently-asked-questions>`__.
+See our :ref:`frequently asked questions about licensing <about/licensing-and-subscription:frequently asked questions>`.
 
 Do you have discounted licenses for academic institutions?
 ----------------------------------------------------------
 
-See our `frequently asked questions about licensing </about/licensing-and-subscription.html#frequently-asked-questions>`__.
+See our :ref:`frequently asked questions about licensing <about/licensing-and-subscription:frequently asked questions>`.

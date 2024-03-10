@@ -17,7 +17,7 @@ Mattermost Software
 +====================================================+============================================================================================================================+===============================================================================================================================+============================================================================================================================+
 | Mattermost Team Edition (Open Source)              | Open Source **MIT License**.                                                                                               | `Mattermost Trademark Policy <https://mattermost.com/trademark-standards-of-use/>`__                                          | `Mattermost Server Privacy Policy <https://github.com/mattermost/mattermost/blob/master/server/build/PRIVACY_POLICY.md>`__ |
 |                                                    |                                                                                                                            |                                                                                                                               | with `GDPR Data Processing Addendum <https://mattermost.com/data-processing-addendum/>`__.                                 |
-|                                                    | Open Source Add-ons available under `Apache v2 and other licenses </about/subscription.html>`__.                           | `Mattermost Terms of Use <https://mattermost.com/terms-of-use/>`__                                                            |                                                                                                                            |
+|                                                    | Open Source Add-ons available under :doc:`Apache v2 and other licenses </about/subscription>`.                           | `Mattermost Terms of Use <https://mattermost.com/terms-of-use/>`__                                                            |                                                                                                                            |
 +----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+                                                                                                                            |
 | Mattermost Enterprise Edition with no subscription | `Commercial Enterprise Edition License <https://mattermost.com/enterprise-edition-license/>`__.                            | No subscription terms apply when operating without a subscription                                                             |                                                                                                                            |
 |                                                    |                                                                                                                            |                                                                                                                               |                                                                                                                            |
@@ -122,7 +122,7 @@ As we add enterprise-only functionality, we will update the license on affected 
 To which repositories does this apply?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-We plan to apply this license to the enterprise directories of our `Jira <https://github.com/mattermost/mattermost-plugin-jira>`__, `Microsoft Calendar <https://github.com/mattermost/mattermost-plugin-mscalendar>`__, and `Microsoft Teams Meetings <https://github.com/mattermost/mattermost-plugin-msteams-meetings>`__ plugins. We also intend to release `Playbooks </guides/repeatable-processes.html>`__ and `Channel Export <https://github.com/mattermost/mattermost-plugin-channel-export>`__ plugins under the Mattermost Source Available License. New, Mattermost-authored plugins will generally be released under the Mattermost Source Available License. When we update the licenses, we will release a new version and note the change in the ``README.md`` file of the GitHub repository and any release notes.
+We plan to apply this license to the enterprise directories of our `Jira <https://github.com/mattermost/mattermost-plugin-jira>`__, `Microsoft Calendar <https://github.com/mattermost/mattermost-plugin-mscalendar>`__, and `Microsoft Teams Meetings <https://github.com/mattermost/mattermost-plugin-msteams-meetings>`__ plugins. We also intend to release :doc:`Playbooks </guides/repeatable-processes>` and `Channel Export <https://github.com/mattermost/mattermost-plugin-channel-export>`__ plugins under the Mattermost Source Available License. New, Mattermost-authored plugins will generally be released under the Mattermost Source Available License. When we update the licenses, we will release a new version and note the change in the ``README.md`` file of the GitHub repository and any release notes.
 
 We expect to keep plugins without an enterprise component under our open source license. No licensing changes are planned to non-plugin repositories, such as `mattermost <https://github.com/mattermost/mattermost>`__ or `mattermost webapp <https://github.com/mattermost/mattermost/tree/master/webapp>`__.
 
@@ -264,7 +264,7 @@ Rebranding
 ^^^^^^^^^^
 
 - When you create a derivative version of Mattermost and share it with others as a product, you need to replace the Mattermost name and logo from the system, among other requirements, per the `Mattermost trademark policy <https://mattermost.com/trademark-standards-of-use/>`__.
-- You can rebrand your system using convenience tools for `custom branding </configure/configuration-settings.html#customization>`__.
+- You can rebrand your system using convenience tools for :ref:`custom branding <configure/configuration-settings:customization>`.
 - For advanced whitelabelling, and to whitelabel in Team Edition under MIT license without Enterprise Edition branding tools, you can manually update files on the Mattermost server `per product documentation. <https://github.com/mattermost/docs/issues/1006>`__ This can also be done without forking.
 
 Copyright and Licensing of ``/mattermost-server`` open source code
@@ -275,7 +275,7 @@ Copyright and Licensing of ``/mattermost-server`` open source code
 Other considerations
 ^^^^^^^^^^^^^^^^^^^^
 
-- Mattermost has a default `Terms of Use </configure/configuration-settings.html#terms-of-use-link>`__ agreement for the Terms of Use link at the bottom of login screen that should be incorporated into any additional Terms of Use you may add.
+- Mattermost has a default :ref:`Terms of Use <configure/site-configuration-settings:terms of use link>` agreement for the Terms of Use link at the bottom of login screen that should be incorporated into any additional Terms of Use you may add.
 
 - The Mattermost copyright notices on the user interface should remain.
 - There may be additional legal and regulatory issues to consider and we recommend you employ legal counsel to fully understand what's involved in creating and selling a derivative work.
@@ -290,7 +290,7 @@ Why does Mattermost have a discount for certain kinds of non-profits but not for
 
 While we welcome anyone to use the open source version of Mattermost Team Edition free of charge, Mattermost, Inc., like any software company, has specific discounting programs for its commercial Mattermost Enterprise Edition based on business objectives. Objectives of the discounting programs include the suitability of potential case studies, references, word-of-mouth promotion and public promotion of solutions, among many other factors.
 
-See our `License and Subscription </about/license-and-subscription.html#do-you-have-a-program-for-official-non-profits-open-source-projects-and-charities>`__ documentation for details.
+See our :ref:`License and Subscription <about/subscription:mattermost nonprofit license program>` documentation for details.
 
 Can I create a derivative work of the Mattermost /mattermost-server repository that is not open source?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

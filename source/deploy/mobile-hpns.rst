@@ -1,9 +1,9 @@
 Mobile push notifications
 =========================
 
-A push proxy is a key technology behind notification transmission that enables notifications between the server and a Mobile app. See our `Mobile Apps FAQ documentation </deploy/mobile-faq.html#how-do-push-notifications-work>`__ to learn more about how push notifications work.
+A push proxy is a key technology behind notification transmission that enables notifications between the server and a Mobile app. See our :ref:`Mobile Apps FAQ documentation <deploy/mobile-faq:how do push notifications work>` to learn more about how push notifications work.
 
-Mattermost offers a `Mattermost Push Notification Service (MPNS) </deploy/deployment-overview.html>`__ for Team Edition, Cloud, and Enterprise deployments.
+Mattermost offers a :doc:`Mattermost Push Notification Service (MPNS) </deploy/deployment-overview>` for Team Edition, Cloud, and Enterprise deployments.
 
 Test Push Notifications Service (TPNS)
 --------------------------------------
@@ -22,7 +22,7 @@ Enable TPNS
 
 To use the Mattermost TPNS, go to **System Console > Environment > Push Notification Server > Enable Push Notifications**, then select **Use TPNS connection to send notifications to iOS and Android apps**.
 
-See our `Testing Push Notifications </deploy/mobile-testing-notifications.html>`__ documentation to learn more about testing mobile push notifications.
+See our :doc:`Testing Push Notifications </deploy/mobile-testing-notifications>` documentation to learn more about testing mobile push notifications.
 
 .. note::
   - The TPNS only works with the pre-built mobile apps that Mattermost deploys through the Apple App Store and Google Play Store. If you have built your own mobile apps, you must also `host your own Mattermost push proxy service <#host-your-own-push-proxy-service>`_.  
@@ -56,7 +56,7 @@ Enable HPNS for existing deployments
 
 Configuring your existing Mattermost instance to use the Mattermost HPNS is a single, one-time step. 
 
-1. Follow the instructions to `install or upgrade to Enterprise Edition </install/ee-install.html>`__.
+1. Follow the instructions to :doc:`install or upgrade to Enterprise Edition </install/enterprise-install-upgrade>`.
 
 2. Go to **System Console > Environment > Push Notification Server**.
 
@@ -84,9 +84,9 @@ ID-only push notifications
 
 Mattermost Enterprise and Cloud customers can limit the data sent to Apple and Google through a configuration setting. 
 
-When enabled, a message containing only an ID is transmitted. Once the mobile client receives this ID, the message contents are loaded from the server, and are never transmitted through the Apple Push Notification Service (APNS) or Firebase Cloud Messaging (FCM). The contents of the message also won't reach the `Mattermost Push Notification Service (MPNS) </deploy/deployment-overview.html#push-notification-service>`__.
+When enabled, a message containing only an ID is transmitted. Once the mobile client receives this ID, the message contents are loaded from the server, and are never transmitted through the Apple Push Notification Service (APNS) or Firebase Cloud Messaging (FCM). The contents of the message also won't reach the :ref:`Mattermost Push Notification Service (MPNS) <deploy/deployment-overview:push notification service>`.
 
-See our `Configuration Settings </configure/configuration-settings.html#push-notification-contents>`__ documentation to learn more about the ID-only push notifications configuration setting. See our `Mobile Apps FAQ documentation </deploy/mobile-faq.html#how-can-i-use-id-only-push-notifications-to-protect-notification-content-from-being-exposed-to-third-party-services>`__ for details on using ID-only push notifications for data privacy.
+See our :ref:`Configuration Settings <configure/site-configuration-settings:push notification contents>` documentation to learn more about the ID-only push notifications configuration setting. See our :ref:`Mobile Apps FAQ documentation <deploy/mobile-faq:how can i use id only push notifications to protect notification content from being exposed to third party services>` for details on using ID-only push notifications for data privacy.
 
 Host your own push proxy service
 --------------------------------

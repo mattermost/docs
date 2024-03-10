@@ -4,7 +4,7 @@ Collaborate within embedded Microsoft Teams (Beta)
 .. include:: ../_static/badges/ent-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-The `Mattermost for Microsoft Teams plugin </about/mattermost-for-microsoft-teams.html>`__ enables you to collaborate with technical & operations teams seamlessly through the Mattermost app, without leaving Microsoft Teams.
+The :doc:`Mattermost for Microsoft Teams plugin </about/mattermost-for-microsoft-teams>` enables you to collaborate with technical & operations teams seamlessly through the Mattermost app, without leaving Microsoft Teams.
 
 Demonstration: Mattermost embedded in Microsoft Teams
 ------------------------------------------------------

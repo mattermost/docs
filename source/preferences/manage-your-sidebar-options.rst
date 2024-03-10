@@ -10,7 +10,7 @@ Manage your sidebar options
 
 To customize Mattermost channel sidebar options based on your preferences, select the gear icon |gear-icon| next to your profile picture, then go to **Sidebar**. 
 
-Your channel sidebar includes `enhanced sidebar features </preferences/customize-your-channel-sidebar.html>`__, including custom, collapsible channel categories, drag and drop, unread filtering, channel sorting options, and more.
+Your channel sidebar includes :doc:`enhanced sidebar features </preferences/customize-your-channel-sidebar>`, including custom, collapsible channel categories, drag and drop, unread filtering, channel sorting options, and more.
 
 .. note::
 
@@ -21,7 +21,7 @@ Your channel sidebar includes `enhanced sidebar features </preferences/customize
 Group unread channels separately
 --------------------------------
 
-You can control whether unread channels are grouped together separately in the channel sidebar, unless your system admin has    `disabled your ability to do so </configure/experimental-configuration-settings.html#group-unread-channels>`__.
+You can control whether unread channels are grouped together separately in the channel sidebar, unless your system admin has    :ref:`disabled your ability to do so <configure/experimental-configuration-settings:group unread channels>`.
 
 Select **Sidebar Settings > Group unread channels separately > Edit** to group unread channels at the top of the channel sidebar in an **Unreads** category.
 
@@ -32,4 +32,4 @@ You can set the default number of direct messages to show in the channel sidebar
 
 Select **Sidebar Settings > Number of direct messages to show > Edit** to define a default number of direct messages.
 
-You can update the number of direct messages displayed in the channel sidebar at any time, regardless of the default you set. See the `manage direct messages </collaborate/customize-your-channel-sidebar.html#manage-direct-messages>`__ documentation for details.
+You can update the number of direct messages displayed in the channel sidebar at any time, regardless of the default you set. See the :ref:`manage direct messages <collaborate/customize-your-channel-sidebar:manage direct messages>` documentation for details.

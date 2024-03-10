@@ -40,7 +40,7 @@ Include emojis and GIFs in messages
 
   .. tip::
 
-    Can't find the perfect emoji? You can `upload your own custom emoji <#upload-custom-emojis>`__ if your system admin has `enabled you to do so </configure/site-configuration-settings.html#emoji-enablecustom>`__.
+    Can't find the perfect emoji? You can `upload your own custom emoji <#upload-custom-emojis>`__ if your system admin has :ref:`enabled you to do so <configure/site-configuration-settings:emoji enablecustom>`.
 
 .. tab:: Mobile
 

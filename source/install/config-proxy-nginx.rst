@@ -20,7 +20,7 @@ SSL and HTTP/2 with server push are enabled in the provided configuration exampl
 
   .. note::
 
-    - If you're going to use Let's Encrypt to manage your SSL certificate, stop at step 3 and see the `NGINX HTTP/2 and SSL product documentation </install/config-ssl-http2-nginx.html>`__ for details.
+    - If you're going to use Let's Encrypt to manage your SSL certificate, stop at step 3 and see the :doc:`NGINX HTTP/2 and SSL product documentation </install/config-ssl-http2-nginx>` for details.
     - You'll need valid SSL certificates in order for NGINX to pin the certificates properly. Additionally, your browser must have permissions to accept the certificate as a valid CA-signed certificate.
     - Note that the IP address included in the examples in this documentation may not match your network configuration.
     - If you're running NGINX on the same machine as Mattermost, and NGINX resolves ``localhost`` to more than one IP address (IPv4 or IPv6), we recommend using ``127.0.0.1`` instead of ``localhost``.

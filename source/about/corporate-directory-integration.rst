@@ -18,7 +18,7 @@ Security features for authentication
 
 A core set of features is available with all authentication options to help increase security:
 
-- Ability to `set session length </configure/configuration-settings.html#session-lengths>`__ to define how long a user can use Mattermost before needing to re-enter credentials.
+- Ability to :ref:`set session length <configure/environment-configuration-settings:session lengths>` to define how long a user can use Mattermost before needing to re-enter credentials.
 - Ability for users to remotely sign out of devices.
 - Ability for IT admin to force sign out of a user from devices.
 - Ability to set rate limits on authentication API calls to deter password-guessing attacks.
@@ -28,7 +28,7 @@ A core set of features is available with all authentication options to help incr
 Active Directory/LDAP authentication
 ------------------------------------
 
-`AD/LDAP </onboard/ad-ldap.html>`__ is the most popular corporate directory integration option for deploying Mattermost behind a corporate firewall. Features include:
+:doc:`AD/LDAP </onboard/ad-ldap>` is the most popular corporate directory integration option for deploying Mattermost behind a corporate firewall. Features include:
 
 - Account creation using AD/LDAP credentials.
 - AD/LDAP user filters to define which users get access to Mattermost in the form of a query.
@@ -38,8 +38,8 @@ Active Directory/LDAP authentication
 - Synchronization with AD/LDAP to disable, enable, and update Mattermost users based on AD/LDAP.
 
 .. note:: 
-   - New user accounts are created when new users log in with their AD/LDAP credentials. You can optionally pre-create user accounts using the `bulk loading </onboard/bulk-loading-data.html>`__ tool.
-   - If you're using email or username and password authentication `users can switch to AD/LDAP manually </onboard/ad-ldap.html#getting-started>`__, and the `conversion to AD/LDAP can also be done using the `mmctl user migrate auth </manage/mmctl-command-line-tool.html#mmctl-user-migrate-auth>`__ command by an IT admin.
+   - New user accounts are created when new users log in with their AD/LDAP credentials. You can optionally pre-create user accounts using the :doc:`bulk loading </onboard/bulk-loading-data>` tool.
+   - If you're using email or username and password authentication :ref:`users can switch to AD/LDAP manually <onboard/ad-ldap:getting started>`, and the `conversion to AD/LDAP can also be done using the :ref:`mmctl user migrate auth <manage/mmctl-command-line-tool:mmctl user migrate auth>` command by an IT admin.
 
 For very large AD/LDAP instances you can also configure max page size to divide a Mattermost AD/LDAP query into several pieces to not overtax the authentication server when synchronizing.
 
@@ -48,13 +48,13 @@ Authentication options outside of a private network
 
 When deploying Mattermost to a DMZ location outside the security of a private network, additional authentication options include:
 
-- `Okta integration via SAML </onboard/sso-saml-okta.html>`__
-- `OneLogin integration via SAML </onboard/sso-saml-onelogin.html>`__
-- `Active Directory Federation Services via SAML </onboard/sso-saml-adfs.html>`__
-- `SAML 2.0 authentication </onboard/sso-saml.html>`__
-- `Google Apps </onboard/sso-google.html>`__
-- `Office 365 </onboard/sso-office.html>`__
-- `OpenID Connect </onboard/sso-openidconnect.html>`__
+- :doc:`Okta integration via SAML </onboard/sso-saml-okta>`
+- :doc:`OneLogin integration via SAML </onboard/sso-saml-onelogin>`
+- :doc:`Active Directory Federation Services via SAML </onboard/sso-saml-adfs>`
+- :doc:`SAML 2.0 authentication </onboard/sso-saml>`
+- :doc:`Google Apps </onboard/sso-google>`
+- :doc:`Office 365 </onboard/sso-office>`
+- :doc:`OpenID Connect </onboard/sso-openidconnect>`
 
 Generic OAuth is not currently supported.
 

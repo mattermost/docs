@@ -1,6 +1,6 @@
 :nosearch:
 
-Use the System Console or the `mmctl system supportpacket </manage/mmctl-command-line-tool.html#mmctl-system-supportpacket>`__ command to generate a Mattermost Support Packet that includes configuration information, logs, plugin details, and data on external dependencies. Confidential data, such as passwords, are automatically stripped.
+Use the System Console or the :ref:`mmctl system supportpacket <manage/mmctl-command-line-tool:mmctl system supportpacket>` command to generate a Mattermost Support Packet that includes configuration information, logs, plugin details, and data on external dependencies. Confidential data, such as passwords, are automatically stripped.
 
 A Mattermost Support Packet can contain the following files:
 
@@ -34,7 +34,7 @@ A Mattermost Support Packet can contain the following files:
 
 .. tab:: mmctl
 
-   Run the `mmctl system supportpacket </manage/mmctl-command-line-tool.html#mmctl-system-supportpacket>`__ command to generate and download a Support Packet to share with Mattermost Support.
+   Run the :ref:`mmctl system supportpacket <manage/mmctl-command-line-tool:mmctl system supportpacket>` command to generate and download a Support Packet to share with Mattermost Support.
 
    .. code-block:: none
 

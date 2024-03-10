@@ -28,7 +28,7 @@ Customize a theme
 
 Using Mattermost in a web browser or the desktop app, you can customize any of the standard themes by selecting a standard theme and then selecting **Custom Theme** to load the standard theme into the custom theme color selectors.
 
-Select **Custom Theme** to customize your theme colors and share them with others by copying and pasting theme vectors into the input box. Observe a live preview as you customize theme colors, then select **Save** to confirm your changes. Discard your changes by selecting **Cancel**, or by exiting the settings modal and selecting **Yes, Discard**. See the `customize your theme </preferences/customize-your-theme.html>`__ documentation to learn more about working with the custom theme color selectors.
+Select **Custom Theme** to customize your theme colors and share them with others by copying and pasting theme vectors into the input box. Observe a live preview as you customize theme colors, then select **Save** to confirm your changes. Discard your changes by selecting **Cancel**, or by exiting the settings modal and selecting **Yes, Discard**. See the :doc:`customize your theme </preferences/customize-your-theme>` documentation to learn more about working with the custom theme color selectors.
 
 .. tip::
   In Enterprise edition, if you are a member of multiple teams, you can optionally select the checkbox **Apply new theme to all my teams** to have the theme show up across teams. Otherwise, the changes will only apply to the current team.
@@ -45,7 +45,7 @@ Collapsed reply threads
 
 Collapsed Reply Threads offers an enhanced experience for users communicating in threads and replying to messages. Collapsed Reply Threads are generally available in Mattermost Cloud and from self-hosted Mattermost v7.0, and are enabled by default for all new Mattermost deployments. 
 
-Depending on how your System Admin has enabled **Collapsed Reply Threads** for your workspace, it may already be enabled for you, or you may be able to enable this feature for your account. See our `organize conversations using Collapsed Reply Threads </collaboration/organize-conversations.html>`__ documentation to learn more about working with Collapsed Reply Threads.
+Depending on how your System Admin has enabled **Collapsed Reply Threads** for your workspace, it may already be enabled for you, or you may be able to enable this feature for your account. See our :doc:`organize conversations using Collapsed Reply Threads </collaboration/organize-conversations>` documentation to learn more about working with Collapsed Reply Threads.
 
 .. tab:: Web/Desktop
 
@@ -71,7 +71,7 @@ You can customize how time is displayed in Mattermost.
 Teammate name display
 ---------------------
 
-You can customize how names are displayed in Mattermost unless your system admin has `disabled your ability to do so </configure/site-configuration-settings.html#users-lockteammatenamedisplay>`__.
+You can customize how names are displayed in Mattermost unless your system admin has :ref:`disabled your ability to do so <configure/site-configuration-settings:users lockteammatenamedisplay>`.
 
 .. tab:: Web/Desktop
     
@@ -84,7 +84,7 @@ You can customize how names are displayed in Mattermost unless your system admin
 Show online availability on profile images
 ------------------------------------------
 
-You can show or hide `availability </preferences/set-your-status-availability.html#set-your-availability>`__ on profile pictures in Mattermost.
+You can show or hide :ref:`availability <preferences/set-your-status-availability:set your availability>` on profile pictures in Mattermost.
 
 .. tab:: Web/Desktop
 
@@ -97,7 +97,7 @@ You can show or hide `availability </preferences/set-your-status-availability.ht
 Share last active time
 ----------------------
 
-By default, Mattermost shows when you were last online in your profile and in direct message channel headers, unless your system admin has `disabled this option </configure/site-configuration-settings.html#users-enablelastactivetime>`__.
+By default, Mattermost shows when you were last online in your profile and in direct message channel headers, unless your system admin has :ref:`disabled this option <configure/site-configuration-settings:users enablelastactivetime>`.
 
 .. tab:: Web/Desktop
 
@@ -127,7 +127,7 @@ You can control whether website link previews in Mattermost show a preview of th
 
 .. note::
 
-    Your system admin must `enable this feature </configure/site-configuration-settings.html#posts-enablelinkpreviews>`__. It's disabled by default. Once enabled, only the first web link in a message creates a preview of the website.
+    Your system admin must :ref:`enable this feature <configure/site-configuration-settings:posts enablelinkpreviews>`. It's disabled by default. Once enabled, only the first web link in a message creates a preview of the website.
 
 .. tab:: Web/Desktop
 
@@ -140,14 +140,14 @@ You can control whether website link previews in Mattermost show a preview of th
 Default appearance of image previews
 ------------------------------------
 
-When messages in Mattermost include images, you can control whether an image preview displays directly below the message for image attachments, image link previews, and `in-line images </collaborate/format-messages.html#in-line-images>`__ over 100px in height.
+When messages in Mattermost include images, you can control whether an image preview displays directly below the message for image attachments, image link previews, and :ref:`in-line images <collaborate/format-messages:in line images>` over 100px in height.
 
 .. tab:: Web/Desktop
 
     Select **Default Appearance of Image Previews > Edit** to expand or collapse all image links and image attachments.
 
     .. tip::
-        This setting can also be controlled using the `slash commands </collaborate/run-slash-commands.html>`__ ``/expand`` and ``/collapse``.
+        This setting can also be controlled using the :doc:`slash commands </collaborate/run-slash-commands>` ``/expand`` and ``/collapse``.
 
 .. tab:: Mobile
 

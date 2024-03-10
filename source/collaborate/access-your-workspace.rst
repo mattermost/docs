@@ -4,7 +4,7 @@ Access your workspace
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Mattermost is accessible through a URL link. You'll receive a link from your Mattermost system admin or through an email invitation. You can use that link in a web browser, or as a server connection in the `desktop app </collaborate/install-desktop-app.html>`__, the `mobile app for iOS </collaborate/install-ios-app.html>`__, or the `mobile app for Android </collaborate/install-android-app.html>`__.
+Mattermost is accessible through a URL link. You'll receive a link from your Mattermost system admin or through an email invitation. You can use that link in a web browser, or as a server connection in the :doc:`desktop app </collaborate/install-desktop-app>`, the :doc:`mobile app for iOS </collaborate/install-ios-app>`, or the :doc:`mobile app for Android </collaborate/install-android-app>`.
 
 .. tip::
 
@@ -25,7 +25,7 @@ Mattermost is accessible through a URL link. You'll receive a link from your Mat
 
   **Web browser**
 
-  1. Open a web browser. Review the `web browsers that Mattermost supports </install/software-hardware-requirements.html#pc-web>`__.
+  1. Open a web browser. Review the :ref:`web browsers that Mattermost supports <install/software-hardware-requirements:pc web>`.
   2. Copy and paste the Mattermost server link into the browser's address field.
   3. Enter your user credentials to log into Mattermost. 
 
@@ -36,8 +36,8 @@ Mattermost is accessible through a URL link. You'll receive a link from your Mat
   
   **Desktop app**
 
-  1. Download and install the Mattermost `desktop app </collaborate/install-desktop-app.html>`__.
-  2. When prompted, enter the Mattermost server link and a display name for the Mattermost instance. The display name is helpful in cases where you connect to multiple Mattermost instances. See the `server connections </preferences/connect-multiple-workspaces.html>`__ documentation for details.
+  1. Download and install the Mattermost :doc:`desktop app </collaborate/install-desktop-app>`.
+  2. When prompted, enter the Mattermost server link and a display name for the Mattermost instance. The display name is helpful in cases where you connect to multiple Mattermost instances. See the :doc:`server connections </preferences/connect-multiple-workspaces>` documentation for details.
   3. Enter your user credentials to log into Mattermost. 
   4. The team that displays first in the team sidebar opens. If you're not a member of a team yet, you're prompted to select a team to join.
 
@@ -47,8 +47,8 @@ Mattermost is accessible through a URL link. You'll receive a link from your Mat
 
 .. tab:: Mobile
 
-  1. Download and install the Mattermost `iOS mobile app </collaborate/install-ios-app.html>`__ or the `Android mobile app </collaborate/install-android-app.html>`__.
-  2. When prompted, enter the Mattermost server link and a display name for the Mattermost instance. The display name is helpful in cases where you connect to multiple Mattermost instances. See the `server connections </preferences/connect-multiple-workspaces.html>`__ documentation for details.
+  1. Download and install the Mattermost :doc:`iOS mobile app </collaborate/install-ios-app>` or the :doc:`Android mobile app </collaborate/install-android-app>`.
+  2. When prompted, enter the Mattermost server link and a display name for the Mattermost instance. The display name is helpful in cases where you connect to multiple Mattermost instances. See the :doc:`server connections </preferences/connect-multiple-workspaces>` documentation for details.
   3. Enter your user credentials to log into Mattermost. 
   4. The team that displays first in the team sidebar opens. If you're not a member of a team yet, you're prompted to select a team to join.
 
@@ -106,7 +106,7 @@ When enabled by your system admin, you may log in using your GitLab, Google, Off
 
   When enabled by your system admin, you can log in with your SAML credentials. This lets you use the same username and password for Mattermost that you use for various other company services. 
   
-  Mattermost officially supports `Okta </onboard/sso-saml-okta.html>`__, `OneLogin </onboard/sso-saml-onelogin.html>`__, and Microsoft ADFS as an identity provider (IDP) for SAML, but you may use other SAML IDPs as well. See our `SAML Single Sign-On documentation </onboard/sso-saml.html>`__ to learn more about configuring SAML for Mattermost.
+  Mattermost officially supports :doc:`Okta </onboard/sso-saml-okta>`, :doc:`OneLogin </onboard/sso-saml-onelogin>`, and Microsoft ADFS as an identity provider (IDP) for SAML, but you may use other SAML IDPs as well. See our :doc:`SAML Single Sign-On documentation </onboard/sso-saml>` to learn more about configuring SAML for Mattermost.
 
   .. image:: ../images/sign-in_with_saml.png
     :alt: Log in to Mattermost with your SAML credentials.

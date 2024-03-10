@@ -10,13 +10,13 @@ Install the Mattermost desktop app
 
 The Mattermost desktop app is available for Linux, Mac, and Windows operating systems. The Desktop App supports all the features of the web experience, plus the following features:
 
-- `Connect to multiple Mattermost servers </preferences/manage-desktop-app-server-connections.html>`__ from a single interface, and navigate between servers using keyboard shortcuts.
-- `Auto-start Mattermost </preferences/customize-desktop-app-experience.html>`__ when a user logs into their machine.
-- `Add Mattermost </preferences/customize-desktop-app-experience.html>`__ to the Windows Start menu, the Taskbar, the Dock, or the System Tray.
-- (Windows/macOS) `Deep link to the desktop app </preferences/customize-desktop-app-experience.html>`__ via the ``mattermost://`` protocol if the app is already installed.
-- (Linux) `Set up Desktop Entry </preferences/customize-desktop-app-experience.html>`__ for the application to more easily `integrate into a desktop environment <https://wiki.archlinux.org/index.php/Desktop_entries>`__.
+- :doc:`Connect to multiple Mattermost servers </preferences/manage-desktop-app-server-connections>` from a single interface, and navigate between servers using keyboard shortcuts.
+- :doc:`Auto-start Mattermost </preferences/customize-desktop-app-experience>` when a user logs into their machine.
+- :doc:`Add Mattermost </preferences/customize-desktop-app-experience>` to the Windows Start menu, the Taskbar, the Dock, or the System Tray.
+- (Windows/macOS) :doc:`Deep link to the desktop app </preferences/customize-desktop-app-experience>` via the ``mattermost://`` protocol if the app is already installed.
+- (Linux) :doc:`Set up Desktop Entry </preferences/customize-desktop-app-experience>` for the application to more easily `integrate into a desktop environment <https://wiki.archlinux.org/index.php/Desktop_entries>`__.
 
-See the `desktop app software requirements </install/software-hardware-requirements.html#desktop-apps>`__ for details on supported operating systems and releases.
+See the :ref:`desktop app software requirements <install/software-hardware-requirements:desktop apps>` for details on supported operating systems and releases.
 
 Install and update the Mattermost desktop app
 ---------------------------------------------
@@ -55,7 +55,7 @@ You can `download the desktop app directly from our Downloads page <https://matt
 
   **Disable automatic updates**      
   
-  Automatic desktop app updates can be disabled by configuring the supported group policy. See the `MSI installer and group policy documentation </install/desktop-msi-installer-and-group-policy-install.html>`__ for instructions on installing the Mattermost Desktop App via an MSI installer, and configuring supported group policies. Changes to group policies require you to restart Mattermost for those changes to take effect.
+  Automatic desktop app updates can be disabled by configuring the supported group policy. See the :doc:`MSI installer and group policy documentation </install/desktop-msi-installer-and-group-policy-install>` for instructions on installing the Mattermost Desktop App via an MSI installer, and configuring supported group policies. Changes to group policies require you to restart Mattermost for those changes to take effect.
 
 .. tab:: macOS
 
@@ -192,8 +192,8 @@ Additional documentation resources
 
 The following additional documentation resources are also available for the Mattermost desktop app:
 
-- `Desktop App changelog </deploy/desktop-app-changelog.html>`__
-- `Configure your Desktop App experience </preferences/customize-desktop-app-experience.html>`__
+- :doc:`Desktop App changelog </deploy/desktop-app-changelog>`
+- :doc:`Configure your Desktop App experience </preferences/customize-desktop-app-experience>`
 - `Source code <https://github.com/mattermost/desktop>`__
 - `Contributor’s guide <https://developers.mattermost.com/contribute/desktop>`__
 

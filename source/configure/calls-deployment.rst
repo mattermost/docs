@@ -41,8 +41,8 @@ Requirements
 Server
 ~~~~~~
 
-- Run Mattermost server on a secure (HTTPs) connection. This is a necessary requirement on the client to allow capturing devices (e.g., microphone, screen). See the `config TLS </install/config-tls-mattermost.html>`__ section for more info.
-- See `network requirements </configure/calls-deployment.html#network>`__ below.
+- Run Mattermost server on a secure (HTTPs) connection. This is a necessary requirement on the client to allow capturing devices (e.g., microphone, screen). See the :doc:`config TLS </install/config-tls-mattermost>` section for more info.
+- See :ref:`network requirements <configure/calls-deployment:network>` below.
 
 Client
 ~~~~~~
@@ -67,18 +67,18 @@ Network
 | STUN (Calls plugin or ``rtcd``) | 3478   | UDP (outgoing)  | Mattermost Instance(s) (Calls plugin) or ``rtcd`` service  | Configured STUN servers                  | (Optional) To allow for either Calls plugin or ``rtcd`` service to discover their instance public IP. Only needed if configuring STUN/TURN servers. This requirement does not apply when manually setting an IP or hostname through the |ice_host_override_link| config option.                                                                                                                                                                                                             |
 +---------------------------------+--------+-----------------+------------------------------------------------------------+------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-.. |ice_host_override_link| replace:: `ICE Host Override <plugins-configuration-settings.html#ice-host-override>`__
+.. |ice_host_override_link| replace:: :ref:`ICE Host Override <plugins-configuration-settings:ice host override>`
 
 Limitations
 -----------
 
 - In Mattermost Cloud, up to 200 participants per channel can join a call.
-- In Mattermost self-hosted deployments, the default maximum number of participants is unlimited. The recommended maximum number of participants per call is 200. This setting can be changed in **System Console > Plugin Management > Calls > Max call participants**. There's no limit to the total number of participants across all calls as the supported value greatly depends on instance resources. For more details, refer to the `performance section </configure/calls-deployment.html#performance>`__ below.
+- In Mattermost self-hosted deployments, the default maximum number of participants is unlimited. The recommended maximum number of participants per call is 200. This setting can be changed in **System Console > Plugin Management > Calls > Max call participants**. There's no limit to the total number of participants across all calls as the supported value greatly depends on instance resources. For more details, refer to the :ref:`performance section <configure/calls-deployment:performance>` below.
 
 Configuration
 -------------
 
-For Mattermost self-hosted customers, the calls plugin is pre-packaged, installed, and enabled. Configuration to allow end-users to use it can be found in the `System Console </configure/plugins-configuration-settings.html#calls>`__.
+For Mattermost self-hosted customers, the calls plugin is pre-packaged, installed, and enabled. Configuration to allow end-users to use it can be found in the :ref:`System Console <configure/plugins-configuration-settings:calls>`.
 
 Modes of operation
 ------------------
@@ -188,7 +188,7 @@ We provide a `load-test tool <https://github.com/mattermost/mattermost-plugin-ca
 Monitoring
 ~~~~~~~~~~
 
-Both the plugin and the external ``rtcd`` service expose some Prometheus metrics to monitor performance. We provide an `official dashboard <https://github.com/mattermost/mattermost-performance-assets/blob/master/grafana/mattermost-calls-performance-monitoring.json>`__ that can be imported in Grafana. You can refer to `Performance monitoring </scale/performance-monitoring.html>`__ for more information on how to set up Prometheus and visualize metrics through Grafana.
+Both the plugin and the external ``rtcd`` service expose some Prometheus metrics to monitor performance. We provide an `official dashboard <https://github.com/mattermost/mattermost-performance-assets/blob/master/grafana/mattermost-calls-performance-monitoring.json>`__ that can be imported in Grafana. You can refer to :doc:`Performance monitoring </scale/performance-monitoring>` for more information on how to set up Prometheus and visualize metrics through Grafana.
 
 Calls plugin metrics
 ^^^^^^^^^^^^^^^^^^^^
@@ -317,7 +317,7 @@ Horizontal scalability
 
 The supported way to enable horizontal scalability for Calls is through a form of DNS based load balancing. This can be achieved regardless of how the ``rtcd`` service is deployed (bare bone instance, Kubernetes, or an alternate way).
 
-In order for this to work, the `RTCD Service URL <plugins-configuration-settings.html#rtcd-service-url>`__ should point to a hostname that resolves to multiple IP addresses, each pointing to a running ``rtcd`` instance. The Mattermost Calls plugin will then automatically distribute calls amongst the available hosts.
+In order for this to work, the :ref:`RTCD Service URL <plugins-configuration-settings:rtcd service url>` should point to a hostname that resolves to multiple IP addresses, each pointing to a running ``rtcd`` instance. The Mattermost Calls plugin will then automatically distribute calls amongst the available hosts.
 
 The expected requirements are the following:
 
@@ -337,10 +337,10 @@ Before you can start recording and transcribing calls, you need to configure the
 .. note::
   If deploying the service in a Kubernetes cluster, refer to the later section on `Helm charts <#helm-charts>`__.
 
-Once the ``calls-offloader`` service is running, recordings should be explicitly enabled through the `Enable call recordings <plugins-configuration-settings.html#enable-call-recordings-beta>`__ config setting and the service's URL should be configured using `Job service URL <plugins-configuration-settings.html#job-service-url>`__.
+Once the ``calls-offloader`` service is running, recordings should be explicitly enabled through the :ref:`Enable call recordings <plugins-configuration-settings:enable call recordings beta>` config setting and the service's URL should be configured using :ref:`Job service URL <plugins-configuration-settings:job service url>`.
 
 
-Call transcriptions can be enabled through the `Enable call transcriptions <plugins-configuration-settings.html#enable-call-transcriptions-experimental>`__ config setting.
+Call transcriptions can be enabled through the :ref:`Enable call transcriptions <plugins-configuration-settings:enable call transcriptions experimental>` config setting.
 
 .. note::
   The call transcriptions functionality is available starting in Calls version v0.22.0
@@ -355,7 +355,7 @@ This is a sample diagram showing how the ``rtcd`` standalone service can be depl
 .. image:: ../images/calls-deployment-kubernetes.png
   :alt: A diagram of calls deployed in a Kubernetes cluster.
 
-If Mattermost isn't deployed in a Kubernetes cluster, and you want to use this deployment type, visit the `Kubernetes operator guide </install/mattermost-kubernetes-operator.html>`__.
+If Mattermost isn't deployed in a Kubernetes cluster, and you want to use this deployment type, visit the :doc:`Kubernetes operator guide </install/mattermost-kubernetes-operator>`.
 
 Helm Charts
 ~~~~~~~~~~~
@@ -418,7 +418,7 @@ Connectivity issues
 
 If calls are failing to connect or timing out, it's likely there could be a misconfiguration at either the plugin config or networking level.
 
-For example, the `RTC Server Port (UDP) <plugins-configuration-settings.html#rtc-server-port-udp>`__ or the `RTC Server Port (TCP) <plugins-configuration-settings.html#rtc-server-port-tcp>`__ may not be open or forwarded correctly.
+For example, the :ref:`RTC Server Port (UDP) <plugins-configuration-settings:rtc server port udp>` or the :ref:`RTC Server Port (TCP) <plugins-configuration-settings:rtc server port tcp>` may not be open or forwarded correctly.
 
 
 Connectivity checks
@@ -445,7 +445,7 @@ If connection succeeds, you should be able to send and receive text messages by 
    (or ``rtcd``) instance hosting the calls. When set, it should be the value of the |ice_host_override_link|
    config setting.
 
-   ``8443`` should be changed with the port configured in `RTC Server Port <plugins-configuration-settings.html#rtc-server-port-udp>`__.
+   ``8443`` should be changed with the port configured in :ref:`RTC Server Port <plugins-configuration-settings:rtc server port udp>`.
 
    The same checks can be performed to test connectivity through the TCP port using the same commands with ``-u`` flag removed.
 

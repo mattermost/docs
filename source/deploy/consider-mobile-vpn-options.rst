@@ -12,7 +12,7 @@ You need to set up a way to connect to your private network Mattermost instance,
 
 Depending on your security policies, we recommend deploying Mattermost behind a VPN and using a `per-app VPN <#id3>`_ with your EMM provider, or a mobile VPN client.
 
-Also consider deploying a mobile VPN client with multi-factor authentication (MFA) to your preferred login method, such as GitLab SSO with MFA, or run Mattermost Enterprise Edition with `multi-factor authentication (MFA) </onboard/multi-factor-authentication.html>`__ enabled.
+Also consider deploying a mobile VPN client with multi-factor authentication (MFA) to your preferred login method, such as GitLab SSO with MFA, or run Mattermost Enterprise Edition with :doc:`multi-factor authentication (MFA) </onboard/multi-factor-authentication>` enabled.
 
 Mobile VPN options
 ------------------
@@ -26,10 +26,10 @@ We recommend one of two options: `per-app VPN <#id3>`_ or a `device VPN <#id4>`_
 
 We also recommend you review the following commonly-asked questions about data security on mobile devices:
 
-- `How data is handled on a device after an account is deleted? </deploy/mobile-faq.html#how-is-data-handled-on-mobile-devices-after-a-user-account-is-deactivated>`__
-- `What post metadata is sent in mobile push notifications? </deploy/mobile-faq.html#what-post-metadata-is-sent-in-mobile-push-notifications>`__
-- `What are my options for securing the Mobile apps? </deploy/mobile-faq.html#what-are-my-options-for-securing-the-mobile-apps>`__
-- `What are my options for securing push notifications? </deploy/mobile-faq.html#what-are-my-options-for-securing-push-notifications>`__
+- :ref:`How data is handled on a device after an account is deleted? <deploy/mobile-faq:how is data handled on mobile devices after a user account is deactivated>`
+- :ref:`What post metadata is sent in mobile push notifications? <deploy/mobile-faq:what post metadata is sent in mobile push notifications>`
+- :ref:`What are my options for securing the Mobile apps? <deploy/mobile-faq:what are my options for securing the mobile apps>`
+- :ref:`What are my options for securing push notifications? <deploy/mobile-faq:what are my options for securing push notifications>`
 
 Per-app VPN
 ~~~~~~~~~~~
@@ -49,7 +49,7 @@ Connect via corporate proxy server
 
 Review the following commonly-asked questions about connecting through a corporate proxy server:
 
-- `How do I receive mobile push notifications if my IT policy requires the use of a corporate proxy server? </deploy/mobile-faq.html#how-do-i-receive-mobile-push-notification-if-my-it-policy-requires-the-use-of-a-corporate-proxy-server>`__
-- `Deploy Mattermost with connection restricted post-proxy relay in DMZ or a trusted cloud environment </deploy/mobile-faq.html#deploy-mattermost-with-connection-restricted-post-proxy-relay-in-dmz-or-a-trusted-cloud-environment>`__
-- `Whitelist Mattermost push notification proxy to bypass your corporate proxy server </deploy/mobile-faq.html#whitelist-mattermost-push-notification-proxy-to-bypass-your-corporate-proxy-server>`__
-- `Run App Store versions of the Mattermost Mobile apps </deploy/mobile-faq.html#run-app-store-versions-of-the-mattermost-mobile-apps>`__
+- :ref:`How do I receive mobile push notifications if my IT policy requires the use of a corporate proxy server? <deploy/mobile-faq:how do i receive mobile push notification if my it policy requires the use of a corporate proxy server>`
+- :ref:`Deploy Mattermost with connection restricted post-proxy relay in DMZ or a trusted cloud environment <deploy/mobile-faq:deploy mattermost with connection restricted post proxy relay in dmz or a trusted cloud environment>`
+- :ref:`Whitelist Mattermost push notification proxy to bypass your corporate proxy server <deploy/mobile-faq:whitelist mattermost push notification proxy to bypass your corporate proxy server>`
+- :ref:`Run App Store versions of the Mattermost Mobile apps <deploy/mobile-faq:run app store versions of the mattermost mobile apps>`

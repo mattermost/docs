@@ -27,7 +27,7 @@ Set Up a connection app for Mattermost Single Sign-On
 
 6. Enter **SAML Settings**, including:
 
- - **Single sign on URL:** ``https://<your-mattermost-url>/login/sso/saml`` where ``https://<your-mattermost-url>`` should typically match the `Mattermost Site URL </configure/configuration-settings.html#site-url>`__.
+ - **Single sign on URL:** ``https://<your-mattermost-url>/login/sso/saml`` where ``https://<your-mattermost-url>`` should typically match the :ref:`Mattermost Site URL <configure/environment-configuration-settings:site url>`.
  - **Audience URI:** For instance, ``mattermost``
  - **Name ID format:** ``unspecified``
  - **Application username:** ``Email``
@@ -45,7 +45,7 @@ Set Up a connection app for Mattermost Single Sign-On
 	.. image:: ../../source/images/okta_5_advanced_saml_settings.png
 	   :alt: In Advanced Settings, set the Assertion Encryption as Encrypted, then upload the generated Service Provider Public Certificate to the Encryption Certificate field
 
-9. Enter attribute statements used to map attributes between Okta and Mattermost. For more information on which attributes are configurable, see our `documentation on SAML configuration settings </configure/configuration-settings.html#saml>`__. Email and username attributes are required. For SAML with Okta, an `ID attribute </configure/configuration-settings.html#id-attribute>`__ is also required, and that ID must be mapped to ``user.id``. 
+9. Enter attribute statements used to map attributes between Okta and Mattermost. For more information on which attributes are configurable, see our :ref:`documentation on SAML configuration settings <configure/configuration-settings:saml>`. Email and username attributes are required. For SAML with Okta, an :ref:`ID attribute <configure/authentication-configuration-settings:id attribute>` is also required, and that ID must be mapped to ``user.id``. 
 
 	.. image:: ../../source/images/okta_6_attribute_statements.png
 	   :alt: Enter attribute statements used to map attributes between Okta and Mattermost. Email and username attributes are required. Okta also requires an ID attribute that must be mapped to user.id.
@@ -60,7 +60,7 @@ Set Up a connection app for Mattermost Single Sign-On
 
 11. Select **Finish**. 
 
-12. In the Mattermost System Console, go to **Authentication > SAML 2.0**, then set **Override SAML bind data with AD/LDAP information** to **false** if currently set to **true**. You can re-enable `this configuration setting </configure/configuration-settings.html#override-saml-bind-data-with-ad-ldap-information>`__ later when once setup is complete.
+12. In the Mattermost System Console, go to **Authentication > SAML 2.0**, then set **Override SAML bind data with AD/LDAP information** to **false** if currently set to **true**. You can re-enable :ref:`this configuration setting <configure/authentication-configuration-settings:override saml bind data with ad ldap information>` later when once setup is complete.
 
 13. On the next screen, select the **Sign On** tab, then select **View Setup Instructions**.
 

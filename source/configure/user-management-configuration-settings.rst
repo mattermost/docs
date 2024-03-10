@@ -22,12 +22,12 @@ Users
 
  <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
-Getting people set up with a Mattermost account is typically something that system admins do when deploying and configuring the Mattermost workspace. A Mattermost admin can `provision Mattermost users </onboard/user-provisioning-workflows.html>`__ using one or more of the following methods:
+Getting people set up with a Mattermost account is typically something that system admins do when deploying and configuring the Mattermost workspace. A Mattermost admin can :doc:`provision Mattermost users </onboard/user-provisioning-workflows>` using one or more of the following methods:
 
-- `Enable account creation </configure/authentication-configuration-settings.html#enable-account-creation>`__.
-- Use `mmctl user create </manage/mmctl-command-line-tool.html#mmctl-user-create>`__ or Mattermost `APIs <https://api.mattermost.com/#tag/users>`__ to create user accounts.
-- `Migrate user accounts </onboard/migrating-to-mattermost.html#migration-guide>`__ from other collaboration systems and `bulk load </onboard/bulk-loading-data.html>`__ that user data into Mattermost.
-- Connect an authentication service to assist with user provisioning, such as `AD/LDAP authentication </onboard/ad-ldap.html#active-directory-ldap-setup>`__ or `SAML authentication </onboard/sso-saml.html>`__.
+- :ref:`Enable account creation <configure/authentication-configuration-settings:enable account creation>`.
+- Use :ref:`mmctl user create <manage/mmctl-command-line-tool:mmctl user create>` or Mattermost `APIs <https://api.mattermost.com/#tag/users>`__ to create user accounts.
+- :ref:`Migrate user accounts <onboard/migrating-to-mattermost:migration guide>` from other collaboration systems and :doc:`bulk load </onboard/bulk-loading-data>` that user data into Mattermost.
+- Connect an authentication service to assist with user provisioning, such as :ref:`AD/LDAP authentication <onboard/ad-ldap:active directory ldap setup>` or :doc:`SAML authentication </onboard/sso-saml>`.
 
 +----------------------------------------------------------------+-------------------------------------------------------------+
 | Manage activated and deactivated users, revoke all user        | - System Config path: **User Management > Users**           |
@@ -78,7 +78,7 @@ Groups
 | to Mattermost groups.                                         | - ``config.json setting``: N/A                              |
 |                                                               | - Environment variable: N/A                                 |
 +---------------------------------------------------------------+-------------------------------------------------------------+
-| See the `AD/LDAP groups </onboard/ad-ldap-groups-synchronization.html>`__ documentation for                                 |
+| See the :doc:`AD/LDAP groups </onboard/ad-ldap-groups-synchronization>` documentation for                                 |
 | details.                                                                                                                    |
 +---------------------------------------------------------------+-------------------------------------------------------------+
 
@@ -96,8 +96,8 @@ Teams
 | teams.                                                        | - ``config.json setting``: N/A                              |
 |                                                               | - Environment variable: N/A                                 |
 +---------------------------------------------------------------+-------------------------------------------------------------+
-| See the `using AD/LDAP synchronized groups to manage team or private channel membership                                     |
-| </onboard/cloud-groups.html#using-ad-ldap-group-synchronization>`__ documentation for details.                              |
+| See the :ref:`using AD/LDAP synchronized groups to manage team or private channel membership                                     |
+| <onboard/cloud-groups:using ad ldap group synchronization>` documentation for details.                              |
 +---------------------------------------------------------------+-------------------------------------------------------------+
 
 ----
@@ -138,7 +138,7 @@ Permissions
 |                                                                     | - ``config.json setting``: N/A                              |
 |                                                                     | - Environment variable: N/A                                 |
 +---------------------------------------------------------------------+-------------------------------------------------------------+
-| See `advanced permissions </onboard/advanced-permissions.html>`__ documentation for details                                       |
+| See :doc:`advanced permissions </onboard/advanced-permissions>` documentation for details                                       |
 +---------------------------------------------------------------------+-------------------------------------------------------------+
 
 ----
@@ -155,5 +155,5 @@ System roles
 |                                                                      | - ``config.json setting``: N/A                             |
 |                                                                      | - Environment variable: N/A                                |
 +----------------------------------------------------------------------+------------------------------------------------------------+
-| See `additional system admin roles </onboard/system-admin-roles.html>`__ documentation for details                                |
+| See :doc:`additional system admin roles </onboard/system-admin-roles>` documentation for details                                |
 +----------------------------------------------------------------------+------------------------------------------------------------+

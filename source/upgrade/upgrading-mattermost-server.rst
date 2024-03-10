@@ -16,7 +16,7 @@ Before you begin
 
 **Read these instructions carefully from start to finish.** 
 
-Make sure that you understand how to `prepare for your upgrade </upgrade/prepare-to-upgrade-mattermost.html>`__, familiarize yourself with all `software and hardware requirements </install/software-hardware-requirements.html>`__, read the `important upgrade notes </upgrade/important-upgrade-notes.html>`__ and that you understand each step of the upgrade process documented below before starting a Mattermost upgrade. If you have questions or concerns, you can ask on the Mattermost forum at https://forum.mattermost.com/.
+Make sure that you understand how to :doc:`prepare for your upgrade </upgrade/prepare-to-upgrade-mattermost>`, familiarize yourself with all :doc:`software and hardware requirements </install/software-hardware-requirements>`, read the :doc:`important upgrade notes </upgrade/important-upgrade-notes>` and that you understand each step of the upgrade process documented below before starting a Mattermost upgrade. If you have questions or concerns, you can ask on the Mattermost forum at https://forum.mattermost.com/.
 
 **Gather the following information before starting the upgrade:**
 
@@ -119,11 +119,11 @@ Upgrade Mattermost Server
 
           sudo find mattermost/ mattermost/client/ -mindepth 1 -maxdepth 1 \! \( -type d \( -path mattermost/client -o -path mattermost/client/plugins -o -path mattermost/config -o -path mattermost/logs -o -path mattermost/plugins -o -path mattermost/data -o -path  mattermost/yourFolderHere \) -prune \) | sort
 
-     d. If you're using `Bleve search </deploy/bleve-search.html>`__, and the directory exists *within* the ``mattermost`` directory, the index directory path won't be preserved using the command above. 
+     d. If you're using :doc:`Bleve search </deploy/bleve-search>`, and the directory exists *within* the ``mattermost`` directory, the index directory path won't be preserved using the command above. 
 
         - You can either move the bleve index directory out from the ``mattermost`` directory before upgrading or, following an upgrade, you can copy the contents of the bleve index directory from the ``backup`` directory. 
         - You can then store that directory or re-index as preferred. 
-        - The bleve indexes can be migrated without reindexing between Mattermost versions. See our `Configuration Settings </configure/configuration-settings.html#bleve-settings-experimental>`__ documentation for details on configuring the bleve index directory.
+        - The bleve indexes can be migrated without reindexing between Mattermost versions. See our :ref:`Configuration Settings <configure/configuration-settings:bleve settings experimental>` documentation for details on configuring the bleve index directory.
 
      Once you've completed all of the steps above (where applicable), you're ready to execute the full command that includes ``xargs rm -r`` to delete the files. Note that the following example includes ``-o -path mattermost/yourFolderHere``:
 
@@ -171,7 +171,7 @@ Upgrade Mattermost Server
       sudo rm -r /tmp/mattermost-upgrade/
       sudo rm -i /tmp/mattermost*.gz
 
-13. If you're using a `high availability </scale/high-availability-cluster.html>`__ deployment, you need to apply the steps above on every node in your cluster. Once complete, the **Config File MD5** columns in the high availability section of the System Console should be green. If they're yellow, please ensure that all nodes have the same server version and the same configuration.
+13. If you're using a :doc:`high availability </scale/high-availability-cluster>` deployment, you need to apply the steps above on every node in your cluster. Once complete, the **Config File MD5** columns in the high availability section of the System Console should be green. If they're yellow, please ensure that all nodes have the same server version and the same configuration.
 
     If they continue to display as yellow, trigger a configuration propagation across the cluster by opening the System Console, changing a setting, and reverting it. This will enable the **Save** button for that page. Then, select **Save**. This will not change any configuration, but sends the existing configuration to all nodes in the cluster. 
 

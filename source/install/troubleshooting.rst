@@ -8,7 +8,7 @@ This document summarizes common troubleshooting issues and techniques.
 
 Depending on the type of error or problem you're experiencing, refer to the sections below for troubleshooting guidance. If you're a new user, it might help to go over the installation steps again to confirm the process.
 
-If you have a `paid subscription to a Mattermost offering </about/editions-and-offerings.html>`_, such as `Mattermost Professional </about/editions-and-offerings.html#mattermost-professional>`_ or `Mattermost Enterprise </about/editions-and-offerings.html#mattermost-enterprise>`_, you're entitled to open support tickets via our `online support portal <https://support.mattermost.com/hc/en-us/requests/new>`_. 
+If you have a :doc:`paid subscription to a Mattermost offering </about/editions-and-offerings>`, such as :ref:`Mattermost Professional <about/editions-and-offerings:mattermost professional>` or :ref:`Mattermost Enterprise <about/editions-and-offerings:mattermost enterprise>`, you're entitled to open support tickets via our `online support portal <https://support.mattermost.com/hc/en-us/requests/new>`_. 
 
 Additionally, peer-to-peer support is available for all Mattermost users in our `troubleshooting forum <https://forum.mattermost.com/c/trouble-shoot>`__ and on our `community server <https://community.mattermost.com/core/channels/peer-to-peer-help>`_. 
 
@@ -25,7 +25,7 @@ Deployment troubleshooting
 Docker deployments
 ~~~~~~~~~~~~~~~~~~
 
-If you're deploying the Mattermost server using Docker on an M1 Mac and encountering permission issues in the Docker container, `re-create the required directories and set their permissions </guides/deployment.html#deploy-mattermost-for-production-use>`__, then skip the following command:
+If you're deploying the Mattermost server using Docker on an M1 Mac and encountering permission issues in the Docker container, :ref:`re-create the required directories and set their permissions <guides/deployment:deploy mattermost for production use>`, then skip the following command:
 
 .. code:: bash
 
@@ -79,7 +79,7 @@ Some of these suggestions can be done directly, and others may need consultation
 Review Mattermost logs
 ----------------------
 
-You can access logs for Mattermost and use them for troubleshooting. These steps assume that you have `System Admin permissions </help/getting-started/managing-members.html#system-admin>`__.
+You can access logs for Mattermost and use them for troubleshooting. These steps assume that you have :ref:`System Admin permissions <help/getting-started/managing-members:system admin>`.
 
 Mattermost Server logs 
 ----------------------
@@ -94,7 +94,7 @@ The resulting server log file is called ``mattermost.log`` and can be opened wit
 
 If filesystem access is not possible, navigate to **System Console > Reporting > Server Logs** to locate the current system logs which can be copied to a file.
 
-You can find more on logging settings `here </configure/configuration-settings.html#standard-logging>`__.
+You can find more on logging settings :ref:`here <configure/environment-configuration-settings:logging>`.
 
 Mattermost Desktop App logs
 ---------------------------
@@ -148,7 +148,7 @@ Connect with another device
 Opening a support ticket for self-hosted deployments
 ----------------------------------------------------
 
-If you have a `paid subscription to a Mattermost offering </about/editions-and-offerings.html>`_, such as `Mattermost Professional </about/editions-and-offerings.html#mattermost-professional>`_ or `Mattermost Enterprise </about/editions-and-offerings.html#mattermost-enterprise>`_, you're entitled to open support tickets via our `online support portal <https://support.mattermost.com/hc/en-us/requests/new>`_. 
+If you have a :doc:`paid subscription to a Mattermost offering </about/editions-and-offerings>`, such as :ref:`Mattermost Professional <about/editions-and-offerings:mattermost professional>` or :ref:`Mattermost Enterprise <about/editions-and-offerings:mattermost enterprise>`, you're entitled to open support tickets via our `online support portal <https://support.mattermost.com/hc/en-us/requests/new>`_. 
 
 When opening a Support ticket as part of your paid subscription, it's important that you provide us with as much information as you can in a timely manner. Knowing what information is relevant can be confusing. We use the anagram C.L.U.E.S. to remember what we need:
 

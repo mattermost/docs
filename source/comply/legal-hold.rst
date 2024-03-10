@@ -23,7 +23,7 @@ How to carry out a legal hold
 Step 1: Upgrade to Mattermost Enterprise
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Legal hold is available in `Mattermost Enterprise </about/editions-and-offerings.html#mattermost-enterprise-edition>`__. Learn more about the Enterprise plan & request a quote online at https://mattermost.com/pricing/
+Legal hold is available in :ref:`Mattermost Enterprise <about/editions-and-offerings:mattermost enterprise edition>`. Learn more about the Enterprise plan & request a quote online at https://mattermost.com/pricing/
 
 Step 2: Establish a legal hold policy
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -41,13 +41,13 @@ Step 3: Enable legal hold in Mattermost
 1. In Mattermost, go to **System Console > Environment > File Storage**.
 2. Set the **File Storage System** to **Amazon S3**.
 3. Connect the Amazon S3 storage with Mattermost by specifying the S3 bucket name, prefix, AWS region, and hostname. You may optionally specify the access keys if using IAM roles.
-4. Learn more about file storage configuration options in our `product documentation </configure/environment-configuration-settings.html#file-storage>`__.
+4. Learn more about file storage configuration options in our :ref:`product documentation <configure/environment-configuration-settings:file storage>`.
 
 .. note::
 
     - For legal hold, only Amazon S3 is supported at this time, for increased reliability, compliance and automation capabilities.
     - Support for additional file storage options such as MinIO or local file storage are under consideration.
-    - You may also optionally use our API to preserve data for legal hold. See our `electronic discovery </comply/electronic-discovery.html#mattermost-restful-api>`__ product documentation to learn more.
+    - You may also optionally use our API to preserve data for legal hold. See our :ref:`electronic discovery <comply/electronic-discovery:mattermost restful api>` product documentation to learn more.
 
 2 - Enable compliance exports
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -60,7 +60,7 @@ The exports include information on channel member history at the time the messag
 2. Set **Enable Compliance Exports** to **true**.
 3. Set the **Compliance Export time**. Choose a time when fewer people are using your system, such as 2:00AM your local time.
 4. Set the export file format to **Actiance XML**.
-5. Learn more about compliance export configuration options in our `product documentation </comply/compliance-export.html>`__.
+5. Learn more about compliance export configuration options in our :doc:`product documentation </comply/compliance-export>`.
 
 .. note::
 
@@ -81,7 +81,7 @@ This is typically implemented alongside legal hold, though is not required.
 
 1. In Mattermost, go to **System Console > Compliance > Data Retention Policies**.
 2. Set either a **Global retention policy** that applies to all messages and files older in your system, or a **custom retention policy** for specific teams or channels.
-3. Learn more about data retention configuration options in our `product documentation </comply/data-retention-policy.html>`__.
+3. Learn more about data retention configuration options in our :doc:`product documentation </comply/data-retention-policy>`.
 
 Step 4: Identify custodians
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -140,4 +140,4 @@ Legal hold is an initial step to ensure relevant electronically stored informati
 How do I enable e-discovery for Mattermost?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Learn more about extracting data for e-discovery in our `product documentation </comply/electronic-discovery.html>`__.
+Learn more about extracting data for e-discovery in our :doc:`product documentation </comply/electronic-discovery>`.

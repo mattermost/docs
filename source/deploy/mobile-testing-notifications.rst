@@ -4,7 +4,7 @@ Testing push notifications
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Make sure to configure push notifications for your `pre-built mobile apps </deploy/use-prebuilt-mobile-apps.html>`__, or for `your custom built mobile apps </deploy/build-custom-mobile-apps.html>`__. 
+Make sure to configure push notifications for your :doc:`pre-built mobile apps </deploy/use-prebuilt-mobile-apps>`, or for :doc:`your custom built mobile apps </deploy/build-custom-mobile-apps>`. 
 
 Then use the following instructions to confirm push notifications are working properly.
 

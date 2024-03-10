@@ -8,7 +8,7 @@ Elasticsearch
 
  <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
-Elasticsearch provides enterprise-scale deployments with optimized search performance and prevents performance degradation and timeouts. The implementation uses `Elasticsearch <https://www.elastic.co>`__ v7.x as a distributed, RESTful search engine supporting highly efficient database searches in a `cluster environment </scale/high-availability-cluster.html>`__. 
+Elasticsearch provides enterprise-scale deployments with optimized search performance and prevents performance degradation and timeouts. The implementation uses `Elasticsearch <https://www.elastic.co>`__ v7.x as a distributed, RESTful search engine supporting highly efficient database searches in a :doc:`cluster environment </scale/high-availability-cluster>`. 
 
 .. important::
   
@@ -92,7 +92,7 @@ Follow these steps to configure Mattermost to use your Elasticsearch server, and
 
 .. tip::
 
-    Advanced Elasticsearch configuration settings for large deployments can be configured outside the System Console in the ``config.json`` file. See the `Elasticsearch configuration settings </configure/configuration-settings.html#elasticsearch>`__ documentation to learn more. 
+    Advanced Elasticsearch configuration settings for large deployments can be configured outside the System Console in the ``config.json`` file. See the :ref:`Elasticsearch configuration settings <configure/environment-configuration-settings:elasticsearch>` documentation to learn more. 
 
 1. Go to **System Console > Environment > Elasticsearch**.
 2. Set **Enable Elasticsearch Indexing** to ``true`` to enable the other the settings on the page. Once the configuration is saved, new posts made to the database are automatically indexed on the Elasticsearch server.
@@ -105,7 +105,7 @@ Follow these steps to configure Mattermost to use your Elasticsearch server, and
 
 .. tip::
 
-  From Mattermost v7.8, optional CA and client certificate configuration settings are available for use with basic auth credentials or to replace them. See the `Elasticsearch configuration settings </configure/environment-configuration-settings.html#elasticsearch>`__ documentation for details.
+  From Mattermost v7.8, optional CA and client certificate configuration settings are available for use with basic auth credentials or to replace them. See the :ref:`Elasticsearch configuration settings <configure/environment-configuration-settings:elasticsearch>` documentation for details.
 
 4. Select **Test Connection** and then select **Save**. If the server connection is unsuccessful you won't be able to save the configuration or enable searching with Elasticsearch.
 
@@ -121,10 +121,10 @@ Follow these steps to configure Mattermost to use your Elasticsearch server, and
 
 .. note::
 
-   - Additional advanced Elasticsearch settings for large deployments can be configured outside the System Console in the ``config.json`` file. Read the `Elasticsearch configuration settings </configure/configuration-settings.html#elasticsearch>`__ documentation to learn more.
+   - Additional advanced Elasticsearch settings for large deployments can be configured outside the System Console in the ``config.json`` file. Read the :ref:`Elasticsearch configuration settings <configure/environment-configuration-settings:elasticsearch>` documentation to learn more.
    - If your deployment has a large number of posts (typically in excess of one million but not strictly defined), the reindexing progress percentage may stay at 99% for a long time. The size of the data to be indexed is estimated, and on large databases, estimations can become inaccurate. While progress estimates may be inaccurate, and the progress percentage may appear stuck at near completion, indexing will continue behind the scenes until complete.
-   - Search results for files shared before upgrading to Mattermost Server v5.35 may be incomplete until an extraction command is run using the `mmctl </manage/mmctl-command-line-tool.html#mmctl-extract>`__. After running this command, the search index must be rebuilt. Go to **System Console > Environment > Elasticsearch > Bulk Indexing**, then select **Index Now** to rebuild the search index to include older file contents.
-   - For high post volume deployments, we strongly encourage you to read and properly configure the Mattermost `LiveIndexingBatchSize </configure/environment-configuration-settings.html#live-indexing-batch-size>`__ configuration setting.
+   - Search results for files shared before upgrading to Mattermost Server v5.35 may be incomplete until an extraction command is run using the :ref:`mmctl <manage/mmctl-command-line-tool:mmctl extract>`. After running this command, the search index must be rebuilt. Go to **System Console > Environment > Elasticsearch > Bulk Indexing**, then select **Index Now** to rebuild the search index to include older file contents.
+   - For high post volume deployments, we strongly encourage you to read and properly configure the Mattermost :ref:`LiveIndexingBatchSize <configure/environment-configuration-settings:live indexing batch size>` configuration setting.
     
 Limitations
 ------------
@@ -160,7 +160,7 @@ Yes. From Mattermost v6.7, the Elasticsearch indexing job is resumable. Stopping
 Can an index rollover policy be defined?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The `AggregatePostsAfterDays </configure/configuration-settings.html#aggregate-search-indexes>`__ configuration setting defines a cutoff value. All posts preceding this value are reindexed and aggregated into new and bigger indexes. The default setting is 365 days.
+The :ref:`AggregatePostsAfterDays <configure/environment-configuration-settings:aggregate search indexes.html>` configuration setting defines a cutoff value. All posts preceding this value are reindexed and aggregated into new and bigger indexes. The default setting is 365 days.
 
 Are there any new search features offered with Elasticsearch?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -177,7 +177,7 @@ How do I monitor system health of an Elasticsearch server?
 
 You can use this Prometheus exporter to monitor `various metrics <https://github.com/justwatchcom/elasticsearch_exporter#metrics>`__ about Elasticsearch: `justwatchcom/elasticsearch_exporter <https://github.com/justwatchcom/elasticsearch_exporter>`__.
 
-You can also refer to this `article about Elasticsearch performance monitoring <https://www.datadoghq.com/blog/monitor-elasticsearch-performance-metrics/#key-elasticsearch-performance-metrics-to-monitor>`__. It's not written specifically for Prometheus, which `Mattermost's performance monitoring </scale/performance-monitoring.html>`__ system uses, but has several tips and best practices.
+You can also refer to this `article about Elasticsearch performance monitoring <https://www.datadoghq.com/blog/monitor-elasticsearch-performance-metrics/#key-elasticsearch-performance-metrics-to-monitor>`__. It's not written specifically for Prometheus, which :doc:`Mattermost's performance monitoring </scale/performance-monitoring>` system uses, but has several tips and best practices.
  
 What form of data is sent to Elasticsearch?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

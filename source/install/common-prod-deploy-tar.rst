@@ -22,9 +22,9 @@ These instructions outline how to install Mattermost Server on a 64-bit Linux ho
 
 1. Install and configure a PostgreSQL or MySQL database. Refer to one of the guides below to deploy the database based on your operating system:
 
-   - `Ubuntu </install/installing-ubuntu-2004-LTS.html#install-a-database>`__
-   - `Debian </install/install-debian.html#install-a-database>`__
-   - `RHEL </install/install-rhel-8.html#install-a-database>`__
+   - :ref:`Ubuntu <install/installing-ubuntu-2004-LTS:install a database>`
+   - :ref:`Debian <install/install-debian:install a database>`
+   - :ref:`RHEL <install/install-rhel-8:install a database>`
 
 2. Log in to the server that will host Mattermost Server and open a terminal window.
 
@@ -184,4 +184,4 @@ These instructions outline how to install Mattermost Server on a 64-bit Linux ho
             
       sudo systemctl enable mattermost.service
 
-Once your Mattermost server is up and running, create your first Mattermost user, `invite more users </collaborate/manage-channel-members.html>`__, and explore the Mattermost platform. 
+Once your Mattermost server is up and running, create your first Mattermost user, :doc:`invite more users </collaborate/manage-channel-members>`, and explore the Mattermost platform. 

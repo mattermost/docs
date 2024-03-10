@@ -16,11 +16,11 @@ You can migrate your Cloud workspace data to a self-hosted deployment at any tim
 How does the process work?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Before you export and migrate your data, you must `install Mattermost </guides/deployment.html#install-guides>`_ on the server you’ll be using to run Mattermost. The migration is done using the mmctl CLI tool, which is a remote CLI tool for Mattermost that's installed locally and uses the Mattermost API. ``mmctl`` is pre-installed.
+Before you export and migrate your data, you must :ref:`install Mattermost <guides/deployment:install guides>` on the server you’ll be using to run Mattermost. The migration is done using the mmctl CLI tool, which is a remote CLI tool for Mattermost that's installed locally and uses the Mattermost API. ``mmctl`` is pre-installed.
 
-The `mmctl usage notes </manage/mmctl-command-line-tool.html#mmctl-usage-notes>`_ provide some additional context and information which you can reference before and during the process.
+The :ref:`mmctl usage notes <manage/mmctl-command-line-tool:mmctl usage notes>` provide some additional context and information which you can reference before and during the process.
 
-You'll be using the `mmctl export </manage/mmctl-command-line-tool.html#mmctl-export>`__ commands to export your Cloud data for channels, messages, users, etc. The export file is downloaded to a location specified in the export commands. Once the export is complete, you'll import the data into your self-hosted instance. 
+You'll be using the :ref:`mmctl export <manage/mmctl-command-line-tool:mmctl export>` commands to export your Cloud data for channels, messages, users, etc. The export file is downloaded to a location specified in the export commands. Once the export is complete, you'll import the data into your self-hosted instance. 
 
 Alternatively, you can export the data to an Amazon S3 cloud storage location in cases where an export is quite large and challenging to download from the Mattermost server. See the `create the export <#create-the-export>`__ section below for details.
 
@@ -94,22 +94,22 @@ Finally, it's time to take our export from the source server and use it as an im
 +-----------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
 | **Mattermost configuration setting**                                              | **Large file import recommendation**                                                                                          |
 +-----------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
-| `Maximum Users Per Team                                                           | Increase this value to a number that **exceeds** the maximum number of users, per team, in the import file.                   |
-| </configure/site-configuration-settings.html#max-users-per-team>`__               |                                                                                                                               |
+| :ref:`Maximum Users Per Team                                                           | Increase this value to a number that **exceeds** the maximum number of users, per team, in the import file.                   |
+| <configure/site-configuration-settings:max users per team>`               |                                                                                                                               |
 +-----------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
-| `Maximum File Size                                                                | Temporarily increase this value to be **larger** than the size of the import file.                                            |
-| </configure/environment-configuration-settings.html#maximum-file-size>`__         | Following a successful import, we strongly recommend reverting this value to a reasonable limit for daily expected usage.     |
+| :ref:`Maximum File Size                                                                | Temporarily increase this value to be **larger** than the size of the import file.                                            |
+| <configure/environment-configuration-settings:maximum file size>`         | Following a successful import, we strongly recommend reverting this value to a reasonable limit for daily expected usage.     |
 +-----------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
-| `Write Timeout                                                                    | Temporarily adjust this value based on import file speed and network path to enable the file to upload without timeouts.      |
-| </configure/environment-configuration-settings.html#write-timeout>`__             | Start with a value of **3600** and adjust if needed.                                                                          |
+| :ref:`Write Timeout                                                                    | Temporarily adjust this value based on import file speed and network path to enable the file to upload without timeouts.      |
+| <configure/environment-configuration-settings:write timeout>`             | Start with a value of **3600** and adjust if needed.                                                                          |
 |                                                                                   | Following a successful import, we strongly recommend reverting this setting to its initial or previous value.                 |
 +-----------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
-| `Read Timeout                                                                     | Temporarily adjust this value based on import file speed and network path to enable the file to upload without timeouts.      |
-| </configure/environment-configuration-settings.html#read-timeout>`__              | Start with a value of **3600** and adjust if needed.                                                                          |
+| :ref:`Read Timeout                                                                     | Temporarily adjust this value based on import file speed and network path to enable the file to upload without timeouts.      |
+| <configure/environment-configuration-settings:read timeout>`              | Start with a value of **3600** and adjust if needed.                                                                          |
 |                                                                                   | Following a successful import, we strongly recommend reverting this setting to its initial or previous value.                 |
 +-----------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
-| `Amazon S3 Request Timeout                                                        | If using cloud-based file storage, adjust this value to ensure your storage requests don't time out too soon.                 |
-| </configure/environment-configuration-settings.html#amazon-s3-request-timeout>`__ |                                                                                                                               |
+| :ref:`Amazon S3 Request Timeout                                                        | If using cloud-based file storage, adjust this value to ensure your storage requests don't time out too soon.                 |
+| <configure/environment-configuration-settings:amazon s3 request timeout>` |                                                                                                                               |
 +-----------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
 
 Next, log into the destination server using ``mmctl`` the same way you logged into the source server:

@@ -6,7 +6,7 @@ Desktop App deployment guide
 
 Mattermost desktop applications are available for Windows, macOS, and Linux operating systems.
 
-You can `download the apps directly from our download page <https://mattermost.com/apps>`__ and visit our `installation guides </install/desktop-app-install.html>`__ for help during setup and for troubleshooting tips.
+You can `download the apps directly from our download page <https://mattermost.com/apps>`__ and visit our :doc:`installation guides </collaborate/install-desktop-app>` for help during setup and for troubleshooting tips.
 
 This page provides a guide on how to customize and distribute your own Mattermost desktop app, and how to distribute the official Windows desktop app silently to end users, pre-configured with the server URL and other app settings.
 
@@ -21,7 +21,7 @@ You can customize and distribute your own Mattermost desktop application by conf
 ~~~~~~~~~~~~~~~~
 
   Description
-    List of server URLs and their display names added to the desktop app by default, which the user cannot modify. Users can still add servers `through the Server Management page </deploy/desktop-app.html#enableservermanagement>`__ unless ``enableServerManagement`` is set to ``false``. 
+    List of server URLs and their display names added to the desktop app by default, which the user cannot modify. Users can still add servers :ref:`through the Server Management page <deploy/desktop-app:enableservermanagement>` unless ``enableServerManagement`` is set to ``false``. 
     
     Expects an array of key-value pairs.
 
@@ -74,7 +74,7 @@ You can customize and distribute your own Mattermost desktop application by conf
 Windows App: Pre-configuration and silent deployment
 -----------------------------------------------------
 
-You can distribute the official Windows desktop app silently to end users, pre-configured with the server URL. You can also set all the `app settings </messaging/managing-desktop-app-options.html>`__ except for the **Start app on login** option.
+You can distribute the official Windows desktop app silently to end users, pre-configured with the server URL. You can also set all the :doc:`app settings </preferences/customize-desktop-app-experience>` except for the **Start app on login** option.
 
 1. Download the latest Windows installer from the `Mattermost download page <https://mattermost.com/apps>`__.
 

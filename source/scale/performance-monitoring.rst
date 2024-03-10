@@ -8,7 +8,7 @@ Performance monitoring
 
  <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
-Performance monitoring support enables a Mattermost server to track system health for large Enterprise deployments through integrations with `Prometheus <https://prometheus.io/>`__ and `Grafana <https://grafana.org/>`__. These integrations support data collection from several Mattermost servers, which is particularly useful if you're running Mattermost `in high availability mode </scale/high-availability-cluster.html>`__. Once you're tracking system health, you can `set up performance alerts </scale/performance-alerting.html>`__ on your Grafana dashboard.
+Performance monitoring support enables a Mattermost server to track system health for large Enterprise deployments through integrations with `Prometheus <https://prometheus.io/>`__ and `Grafana <https://grafana.org/>`__. These integrations support data collection from several Mattermost servers, which is particularly useful if you're running Mattermost :doc:`in high availability mode </scale/high-availability-cluster>`. Once you're tracking system health, you can :doc:`set up performance alerts </scale/performance-alerting>` on your Grafana dashboard.
 
 .. note::
 
@@ -56,7 +56,7 @@ Install Prometheus
 
 3. Replace the ``<hostname1>:<port>`` parameter with your Mattermost host IP address and port to scrape the data. It connects to ``/metrics`` using HTTP. 
 
-4. In the Mattermost System Console, go to **Environment > Performance Monitoring** to set **Enable Performance Monitoring** to **true**, then specify the **Listen Address** and select **Save**. See our `Configuration Settings </configure/configuration-settings.html#performance-monitoring>`__ documentation for details.
+4. In the Mattermost System Console, go to **Environment > Performance Monitoring** to set **Enable Performance Monitoring** to **true**, then specify the **Listen Address** and select **Save**. See our :ref:`Configuration Settings <configure/environment-configuration-settings:performance monitoring>` documentation for details.
 
 .. image:: ../images/perf_monitoring_system_console.png
   :scale: 70

@@ -49,9 +49,9 @@ Compose a message by typing into the text box at the bottom of the Mattermost sc
 
 .. tip::
   
-  - When you send messages in a channel, depending on the `channel actions configured </collaborate/create-channels.html>`__, specific words in the post can trigger a prompt to run a playbook. Access **Channel Actions** from the channel name drop-down menu in the center pane to see what automatic actions have been configured for the current channel.
+  - When you send messages in a channel, depending on the :doc:`channel actions configured </collaborate/create-channels>`, specific words in the post can trigger a prompt to run a playbook. Access **Channel Actions** from the channel name drop-down menu in the center pane to see what automatic actions have been configured for the current channel.
   - Using a RTL plugin, Mattermost can automatically detect and display messages written using right-to-left scripts, such as Arabic, Hebrew, or Persian. Your system admin must install the `RTL Plugin <https://github.com/QueraTeam/mattermost-rtl>`__ to enable this functionality.
-  - `Mattermost Professional or Enterprise <https://mattermost.com/pricing>`__ customers can `edit or delete messages <#edit-or-delete-messages>`__ after sending them if the system admin hasn't restricted the ability to do so using `advanced permissions </onboard/advanced-permissions.html>`__.
+  - `Mattermost Professional or Enterprise <https://mattermost.com/pricing>`__ customers can `edit or delete messages <#edit-or-delete-messages>`__ after sending them if the system admin hasn't restricted the ability to do so using :doc:`advanced permissions </onboard/advanced-permissions>`.
   
 Draft messages
 --------------
@@ -94,8 +94,8 @@ Do more with your messages
 
 Express yourself your way using the following message features:
 
-- `Set message priority </collaborate/message-priority.html>`__
-- `Format messages </collaborate/format-messages.html>`__
-- `Mention people </collaborate/mention-people.html>`__
-- `Share files </collaborate/share-files-in-messages.html>`__
-- `Share links to channels and messages </collaborate/share-links.html>`__
+- :doc:`Set message priority </collaborate/message-priority>`
+- :doc:`Format messages </collaborate/format-messages>`
+- :doc:`Mention people </collaborate/mention-people>`
+- :doc:`Share files </collaborate/share-files-in-messages>`
+- :doc:`Share links to channels and messages </collaborate/share-links>`

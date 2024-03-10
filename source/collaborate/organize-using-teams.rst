@@ -18,7 +18,7 @@ Organize using teams
 
 A team is a digital workspace where you and your teammates can collaborate in Mattermost. Depending on how Mattermost is set up in your organization, you can belong to one team or multiple teams.
 
-Users with the **Create Teams** permission can `create new teams <#create-a-team>`__ and `manage team settings </collaborate/team-settings.html>`__ for existing teams.
+Users with the **Create Teams** permission can `create new teams <#create-a-team>`__ and :doc:`manage team settings </collaborate/team-settings>` for existing teams.
 
 .. include:: ../_static/badges/academy-teams.rst
   :start-after: :nosearch:
@@ -86,9 +86,9 @@ The team URL is part of the web address that navigates to your team on the syste
 Join a team
 -----------
 
-You can join any team configured to `"allow anyone with an account on this server to join this team" </collaborate/team-settings.html#allow-anyone-to-join-this-team>`__, or when you receive an invitation to join.
+You can join any team configured to :ref:`"allow anyone with an account on this server to join this team" <collaborate/team-settings:allow anyone to join this team>`, or when you receive an invitation to join.
 
-If you haven't yet joined any teams in Mattermost, you're prompted to join available teams when you `log in to Mattermost </collaborate/access-your-workspace>`__.
+If you haven't yet joined any teams in Mattermost, you're prompted to join available teams when you :doc:`log in to Mattermost </collaborate/access-your-workspace>`.
 
 You can be a member of multiple teams at the same time. To join additional teams, select the current team name, choose **Join Another Team**, and select the name of the team you want to join.
 
@@ -100,7 +100,7 @@ Leave a team
 
 Users can also choose to remove themselves from a team, from **Team menu > Leave Team**. This will remove the user from the team, and from all public channels and private channels on the team.
 
-They will only be able to rejoin the team if it is set to `"Allow anyone with an account on this server to join this team" </collaborate/team-settings.html#allow-anyone-to-join-this-team>`__ team, or if they receive a new invite. If they do rejoin, they will no longer be a part of their old channels.
+They will only be able to rejoin the team if it is set to :ref:`"Allow anyone with an account on this server to join this team" <collaborate/team-settings:allow anyone to join this team>` team, or if they receive a new invite. If they do rejoin, they will no longer be a part of their old channels.
 
 Remove people from teams
 ------------------------
@@ -109,6 +109,6 @@ A Team Admin can remove a user from a team via **Team menu > Manage Members > Re
 
 When a user is removed from a team, the team will no longer show up in their team sidebar. If they currently have the team open, they are redirected to the first team that appears on their team sidebar. If they didn't belong to any other teams, the user is sent to the team selection page.
 
-Removing a user from the team does not deactivate the account. The user will still be able to log in to the site, and join other teams. They will also be able to rejoin the team they were removed from if they receive another invite, or if the team is set to `"Allow anyone with an account on this server to join this team" </collaborate/team-settings.html#allow-anyone-to-join-this-team>`__. If the user does rejoin the team, they will no longer belong to the channels they were previously a part of, and they will lose all Admin privileges if they had them previously.
+Removing a user from the team does not deactivate the account. The user will still be able to log in to the site, and join other teams. They will also be able to rejoin the team they were removed from if they receive another invite, or if the team is set to :ref:`"Allow anyone with an account on this server to join this team" <collaborate/team-settings:allow anyone to join this team>`. If the user does rejoin the team, they will no longer belong to the channels they were previously a part of, and they will lose all Admin privileges if they had them previously.
 
 A System Admin can also remove users from teams via **System Console > Users**, and selecting the dropdown beside a user entry and selecting **Manage Teams**. The list of teams an individual user belongs to can be viewed on the user's profile page via **System Console > Users** and selecting the member's name from the list provided in the **User Configuration** screen.

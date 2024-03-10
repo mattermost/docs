@@ -45,7 +45,7 @@ Here are different navigation options and types of channels to consider.
 Navigate channels using the keyboard
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Keyboard shortcuts allow users to jump between channels. See the `keyboard shortcuts </collaborate/keyboard-shortcuts.html>`__ documentation for all available keyboard shortcuts.
+Keyboard shortcuts allow users to jump between channels. See the :doc:`keyboard shortcuts </collaborate/keyboard-shortcuts>` documentation for all available keyboard shortcuts.
 
 Topic channels
 ~~~~~~~~~~~~~~
@@ -80,7 +80,7 @@ On an agenda item message, you can select ``[...] > Reply`` to leave comments ab
 
 3. Header links
 
-When meeting remotely, add persistent links to your video or audio conferencing solution, like Zoom, Google Hangouts, or BlueJeans in the channel header. See our `documentation </collaborate/channel-header-purpose>`__ to learn more about working with channel headers. 
+When meeting remotely, add persistent links to your video or audio conferencing solution, like Zoom, Google Hangouts, or BlueJeans in the channel header. See our :doc:`documentation </collaborate/channel-header-purpose>` to learn more about working with channel headers. 
 
 When it's time to meet, your team can select the conference link to connect.
 

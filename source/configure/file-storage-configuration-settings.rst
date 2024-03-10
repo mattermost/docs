@@ -169,7 +169,7 @@ Enable searching content of documents within ZIP files
 +---------------------------------------------------------------+----------------------------------------------------------------------------------------+
 | **Note**: Document content search within ZIP files is available, with mobile support coming soon.                                                      |
 | Searching document contents adds load to your server. For large deployments, or teams that share many large, text-heavy documents,                     |
-| we recommend you review our `hardware requirements </install/software-hardware-requirements.html#hardware-requirements>`__,                            |
+| we recommend you review our :ref:`hardware requirements <install/software-hardware-requirements:hardware requirements>`,                            |
 | and test enabling this feature in a staging environment before enabling it in a production environment.                                                |
 +---------------------------------------------------------------+----------------------------------------------------------------------------------------+
 

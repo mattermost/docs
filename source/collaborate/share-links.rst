@@ -57,4 +57,4 @@ Share message links
 .. note::
 
   - Message previews respect channel membership permissions, so they’re only visible to users who have access to the original message. If the link is to a message in a public channel, any member of the team can see the message preview. If the link is to a message in a private channel or direct message, only members in that channel can see the message preview.
-  - If you're unable to share links, contact your Mattermost system admin for assistance. An `SSL certificate (or a self-signed certificate) </onboard/ssl-client-certificate.html>`__ may be required for this functioanlity to work.
+  - If you're unable to share links, contact your Mattermost system admin for assistance. An :doc:`SSL certificate (or a self-signed certificate) </onboard/ssl-client-certificate>` may be required for this functioanlity to work.

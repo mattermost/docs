@@ -8,7 +8,7 @@ Announcement banner
 
  <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
-System Admins can display a notice that's visible to all users on the system via an announcement banner. The announcement banner is disabled by default, so System Admins must first `enable this feature </configure/configuration-settings.html#enable-announcement-banner>`__ within the System Console or via the ``config.json`` file.
+System Admins can display a notice that's visible to all users on the system via an announcement banner. The announcement banner is disabled by default, so System Admins must first :ref:`enable this feature <configure/site-configuration-settings:enable announcement banner>` within the System Console or via the ``config.json`` file.
 
 .. image:: ../images/announcement-banner-1106x272.png
   :width: 1106
@@ -22,7 +22,7 @@ System Admins can display a notice that's visible to all users on the system via
 .. image:: ../images/announcement-banner.png
   :alt: System Admins can display an announcement banner at the top of the user's screen.
 
-By default, users can dismiss the banner until they log in again or until you update the banner. You can `configure Mattermost to prevent users from dismissing the banner </configure/configuration-settings.html#allow-banner-dismissal>`__.
+By default, users can dismiss the banner until they log in again or until you update the banner. You can :ref:`configure Mattermost to prevent users from dismissing the banner <configure/site-configuration-settings:allow banner dismissal>`.
 
 Update the banner by either changing the text of the banner or by re-enabling the banner after it's been disabled. You can also control the text color and the background color.
 

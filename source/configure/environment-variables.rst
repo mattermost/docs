@@ -21,7 +21,7 @@ The name of the environment variable for any setting can be derived from the nam
 
 .. warning::
    
-   - Environment variables for Mattermost settings that are set within the active shell will take effect when migrating configuration. For more information, see the `configuration in a database </configure/configuration-in-your-database.html>`__ documentation.
+   - Environment variables for Mattermost settings that are set within the active shell will take effect when migrating configuration. For more information, see the :doc:`configuration in a database </configure/store-configuration-in-your-database>` documentation.
    - Database connection strings for the database read and search replicas need to be formatted using `URL encoding <https://www.w3schools.com/tags/ref_urlencode.asp>`__. Incorrectly formatted strings may cause some characters to terminate the string early, resulting in issues when the connection string is parsed.
    
 Override Mattermost license file

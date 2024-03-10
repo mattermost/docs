@@ -54,22 +54,22 @@ Mattermost supports features that ensure data management and data portability.
 Data management
 ^^^^^^^^^^^^^^^^
 
-- **Data Retention:** Use `data retention </comply/data-retention-policy.html>`__ to automatically erase data after a set period of time, a feature that meets the Right to Erasure principle. In Team Edition, you can use database scripts to achieve the same result.
-- **Profile Deletion:** Delete a user’s personal information via `mmctl user delete </manage/mmctl-command-line-tool.html#mmctl-user-delete>`__. This permanently deletes all user information including messages created by the user.
-- **Self-Hosted Push Notification Service:** Self-host your own push notification service, or deploy mobile apps with any EMM provider that supports `AppConfig <https://www.appconfig.org/members/>`__ to meet security and compliance policies. See `our Mobile App deployment documentation </deploy/mobile-overview.html>`__ to learn more.
+- **Data Retention:** Use :doc:`data retention </comply/data-retention-policy>` to automatically erase data after a set period of time, a feature that meets the Right to Erasure principle. In Team Edition, you can use database scripts to achieve the same result.
+- **Profile Deletion:** Delete a user’s personal information via :ref:`mmctl user delete <manage/mmctl-command-line-tool:mmctl user delete>`. This permanently deletes all user information including messages created by the user.
+- **Self-Hosted Push Notification Service:** Self-host your own push notification service, or deploy mobile apps with any EMM provider that supports `AppConfig <https://www.appconfig.org/members/>`__ to meet security and compliance policies. See :doc:`our Mobile App deployment documentation </deploy/mobile-overview>` to learn more.
 
 Data portability
 ^^^^^^^^^^^^^^^^^
 
-- **Data Import:** Use the `bulk loading tool </onboard/bulk-loading-data.html>`__ to migrate data from an existing messaging system, or for pre-populating a new installation with data. `Review this guide </onboard/migrating-from-hipchat-to-mattermost.html>`__ which summarizes the different approaches and meets the `Right to Data Portability <https://gdpr-info.eu/art-20-gdpr/>`__ principle.
-- **Data Export:** Use `compliance exports </comply/compliance-export.html>`__ to export conversations from public, private and direct message channels in XML or EML format. Those in Team Edition can export conversations directly from the database, both `in PostgreSQL <https://www.a2hosting.com/kb/developer-corner/postgresql/import-and-export-a-postgresql-database>`__ and `in MySQL <https://www.itworld.com/article/2833078/it-management/3-ways-to-import-and-export-a-mysql-database.html>`__.
+- **Data Import:** Use the :doc:`bulk loading tool </onboard/bulk-loading-data>` to migrate data from an existing messaging system, or for pre-populating a new installation with data. :ref:`Review this guide <onboard/migrating-to-mattermost:migrating from slack>` which summarizes the different approaches and meets the `Right to Data Portability <https://gdpr-info.eu/art-20-gdpr/>`__ principle.
+- **Data Export:** Use :doc:`compliance exports </comply/compliance-export>` to export conversations from public, private and direct message channels in XML or EML format. Those in Team Edition can export conversations directly from the database, both `in PostgreSQL <https://www.a2hosting.com/kb/developer-corner/postgresql/import-and-export-a-postgresql-database>`__ and `in MySQL <https://www.itworld.com/article/2833078/it-management/3-ways-to-import-and-export-a-mysql-database.html>`__.
 
 Accessibility compliance
 -------------------------
 
 Adherence with accessibility standards is assisted in the following ways:
 
-- **508 Compliance:** For U.S. public sector organizations seeking to confirm 508 compliance, Mattermost publicly shares its `Voluntary Product Accessibility Template (VPAT) online </about/vpat.html>`__.
+- **508 Compliance:** For U.S. public sector organizations seeking to confirm 508 compliance, Mattermost publicly shares its :doc:`Voluntary Product Accessibility Template (VPAT) online </about/vpat>`.
 - **WCAG 2.0L:** For meeting Web Contact Accessibility Guidelines 2.0 (WCAG), Mattermost has received a third-party "A" rating and is working towards an "AA" rating.
 - **ADA:** Mattermost compliance with the Americans with Disabilities Act (ADA) is achieved by offering the accessibility support detailed in the VPAT and WCAG 2.0 guidelines with Mattermost's online experience as the interface to accessibility tools.
 - **Remediation:** Any technical issue in a current or future product release that would prevent compliance with accessibility ratings stated in product documentation would be considered a product defect and Mattermost would welcome the `public filing of an issue report against the defect <https://handbook.mattermost.com/contributors/contributors/ways-to-contribute>`__ so that it may be resolved.
@@ -188,8 +188,8 @@ To be compliant with GDPR, do I need to remove message contents of email notific
 Based on our interpretation of GDPR, it is not required to hide message contents in email notifications to remain compliant for the following reasons:
 
 1. Every user has the ability to disable email notifications in **Settings**. Therefore, every user has the ultimate control over whether or not they want information sent via email. This option aligns with most other products, but we will follow updates on interpretations of GDPR closely to see if we need to make changes in this area.
-2. Mattermost offers `TLS encryption </configure/environment-configuration-settings.html#web-server-connection-security>`__ to protect communication between the Mattermost server and the SMTP email server.
-3. If you're uncertain whether the first two points cover GDPR compliance, you can `disable notifications completely </configure/configuration-settings.html#enable-email-notifications>`__ on your Mattermost server. To use Mattermost in production with no email notifications, you also need to `disable a "preview mode" notice banner </configure/configuration-settings.html#enable-preview-mode-banner>`__.
+2. Mattermost offers :ref:`TLS encryption <configure/environment-configuration-settings:web server connection security>` to protect communication between the Mattermost server and the SMTP email server.
+3. If you're uncertain whether the first two points cover GDPR compliance, you can :ref:`disable notifications completely <configure/site-configuration-settings:enable email notifications>` on your Mattermost server. To use Mattermost in production with no email notifications, you also need to :ref:`disable a "preview mode" notice banner <configure/site-configuration-settings:enable preview mode banner>`.
 
 What information is shared when I select **Contact us** on a Mattermost Admin Advisor notification?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -197,7 +197,7 @@ What information is shared when I select **Contact us** on a Mattermost Admin Ad
 Selecting **Contact us** in the Mattermost Admin Advisor will send some information to us. This may include the email address and name associated with your Mattermost account as well as the number of registered users on your system, the site URL, and a Mattermost diagnostic server ID number. This information is used to contact you as requested and to help us better understand your needs.
 
 .. note::
-    `Mattermost Admin Advisor notices are disabled </manage/in-product-notices.html#admin-advisor-notices>`__ in v5.35 and later.
+    :ref:`Mattermost Admin Advisor notices are disabled <manage/in-product-notices:admin advisor notices>` in v5.35 and later.
 
 Are the server access logs containing IP addresses a GDPR compliance issue?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

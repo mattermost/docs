@@ -36,24 +36,24 @@ Mattermost Server v8.0.0
 Mattermost Server v6.0.0
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-- `Legacy Command Line Tools </manage/command-line-tools.html>`__. Most commands have been replaced by `mmctl </manage/mmctl-command-line-tool.html>`_ and new commands have been added over the last few months, making this tool a full and robust replacement.
+- :doc:`Legacy Command Line Tools </manage/command-line-tools>`. Most commands have been replaced by :doc:`mmctl </manage/mmctl-command-line-tool>` and new commands have been added over the last few months, making this tool a full and robust replacement.
 - `Slack Import via the web app </administration/migrating.html?highlight=mmetl#migrating-from-slack-using-the-mattermost-web-app>`_. The Slack import tool accessible via the Team Setting menu is being replaced by the mmetl tool that is much more comprehensive for the types of data it can assist in uploading.
 - MySQL versions below 5.7.12. Minimum support will now be for 5.7.12. This version introduced a native JSON data type that lets us improve performance and scalability of several database fields (most notably Users and Posts props). Additionally, version 5.6 (our current minimum version) reached `EOL in February 2021 <https://www.mysql.com/support/eol-notice.html>`_.
 - Elasticsearch 5 and 6. `Versions 5.x reached EOL in March of 2019, and versions 6.x reached EOL in November 2020 <https://www.elastic.co/support/eol>`_. Our minimal supported version with Mattermost v6.0 will be Elasticsearch version 7.0.
 - Windows 7 reached `EOL in January 2020 <https://support.microsoft.com/en-us/windows/windows-7-support-ended-on-january-14-2020-b75d4580-2cc7-895a-2c9c-1466d9a53962>`_. We will no longer provide support for the desktop app issues on Windows 7.
-- `DisableLegacyMFAEndpoint </administration/config-settings.html#disable-legacy-mfa-api-endpoint>`_ configuration setting.
-- `Experimental Timezone </administration/config-settings.html#timezone>`_ configuration setting.
+- :ref:`DisableLegacyMFAEndpoint <administration/config-settings:disable legacy mfa api endpoint>` configuration setting.
+- :ref:`Experimental Timezone <configure/deprecated-configuration-settings:timezone>` configuration setting.
 - All legacy channel sidebar experimental configuration settings. We encourage customers using these settings to upgrade to v5.32 or later to access custom, collapsible channel categories among many other channel organization features. The settings being deprecated include:
   
-  - `EnableLegacySidebar </administration/config-settings.html#enable-legacy-sidebar>`_
-  - `ExperimentalTownSquareIsReadOnly </administration/config-settings.html#town-square-is-read-only-experimental>`_
-  - `ExperimentalHideTownSquareinLHS </administration/config-settings.html#town-square-is-hidden-in-left-hand-sidebar-experimental>`_
-  - `EnableXToLeaveChannelsFromLHS </administration/config-settings.html#enable-x-to-leave-channels-from-left-hand-sidebar-experimental>`_
-  - `CloseUnusedDirectMessages </administration/config-settings.html#autoclose-direct-messages-in-sidebar-experimental>`_
-  - `ExperimentalChannelOrganization </administration/config-settings.html#sidebar-organization>`_
-  - `ExperimentalChannelSidebarOrganization </administration/config-settings.html#experimental-sidebar-features>`_
+  - :ref:`EnableLegacySidebar <configure/deprecated-configuration-settings:enable legacy sidebar>`
+  - :ref:`ExperimentalTownSquareIsReadOnly <configure/deprecated-configuration-settings:town square is read only>`
+  - :ref:`ExperimentalHideTownSquareinLHS <configure/deprecated-configuration-settings:town square is hidden in left hand sidebar>`
+  - :ref:`EnableXToLeaveChannelsFromLHS <configure/deprecated-configuration-settings:enable x to leave channels from left hand sidebar>`
+  - :ref:`CloseUnusedDirectMessages <configure/deprecated-configuration-settings:autoclose direct messages in sidebar>`
+  - :ref:`ExperimentalChannelOrganization <configure/deprecated-configuration-settings:sidebar organization>`
+  - :ref:`ExperimentalChannelSidebarOrganization <configure/deprecated-configuration-settings:experimental sidebar features>`
 
-- `All configuration settings previously marked as “Deprecated” </administration/config-settings.html#deprecated-configuration-settings>`_.
+- :ref:`All configuration settings previously marked as “Deprecated” <configure/configuration-settings:deprecated configuration settings>`.
 - Changes to mattermost-server/model for naming consistency.
 
 Mattermost Server v5.38.0
@@ -89,7 +89,7 @@ Mattermost Server v5.12.0
 Mattermost Server v5.6.0
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- Removed support for WebRTC in beta, and replaced it with other video and audio calling solutions. Learn more in our `documentation </deployment/video-and-audio-calling.html>`_.
+- Removed support for WebRTC in beta, and replaced it with other video and audio calling solutions. Learn more in our :doc:`documentation </deployment/video-and-audio-calling>`.
 - Removed support for IE11 Mobile View due to low usage and instability in order to invest that effort in maintaining a high quality experience on other more used browsers. End users on IE11 will thus have an increased minimum screen size. Mobile View is still supported on Chrome, Firefox, Safari, Edge as well as the desktop apps.
 
 Mattermost Server v5.0.0
@@ -106,7 +106,7 @@ Mattermost Server v5.0.0
 Mattermost Server v4.9.0
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- A number of permissions configuration settings will be migrated to roles in the database, and changing their config.json values will no longer take effect. These permissions can still be modified by their respective System Console settings. See `changelog </install/self-managed-changelog.html>`_ for more details.
+- A number of permissions configuration settings will be migrated to roles in the database, and changing their config.json values will no longer take effect. These permissions can still be modified by their respective System Console settings. See :doc:`changelog </deploy/legacy-self-hosted-changelog>` for more details.
 
 Mattermost Server v4.0.0
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -123,7 +123,7 @@ Mattermost Server v4.0.0
 Mattermost Server v3.8.0
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- Old CLI tool (replaced by `an upgraded CLI tool </administration/command-line-tools.html>`_)
+- Old CLI tool (replaced by :doc:`an upgraded CLI tool </manage/command-line-tools>`)
 - APIv3 endpoints:
   
   - “GET at /channels/more” (replaced by “/channels/more/{offset}/{limit}”)

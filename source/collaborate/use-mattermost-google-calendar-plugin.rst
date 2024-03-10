@@ -4,11 +4,11 @@ Use the Mattermost Google Calendar plugin
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-`The Mattermost Google Calendar plugin </about/mattermost-google-calendar-integration.html>`__ enables you to manage events using a two-way integration between Mattermost and Google Calendar without leaving Mattermost.
+:doc:`The Mattermost Google Calendar plugin </about/mattermost-google-calendar-integration>` enables you to manage events using a two-way integration between Mattermost and Google Calendar without leaving Mattermost.
 
 .. note..
 
-  Your system admin needs to `set up this plugin </about/setup-mattermost-google-calendar-plugin.html>`__ before you can use it to manage your Google Calendar in Mattermost.
+  Your system admin needs to :doc:`set up this plugin </about/setup-mattermost-google-calendar-plugin>` before you can use it to manage your Google Calendar in Mattermost.
 
 Connect your Google Calendar account to Mattermost
 ---------------------------------------------------
@@ -28,7 +28,7 @@ Customize your Google Calendar plugin
 
 Mattermost prompts you to configure the plugin based on your personal preferences with the following options. You only need to complete this step once.
 
-- **Update status**: The plugin can update `your Mattermost availability </preferences/set-your-status-availability.html#set-your-availability>`__ when you have an event scheduled.
+- **Update status**: The plugin can update :ref:`your Mattermost availability <preferences/set-your-status-availability:set your availability>` when you have an event scheduled.
 - **Get Confirmation**: You can manually confirm every availability change, or the plugin can update your availability automatically.
 
   - If you select **Yes**, Mattermost confirms your availability update 5 minutes before each event starts. You'll also be prompted to change your availability back to **Online** once an event ends.
@@ -37,7 +37,7 @@ Mattermost prompts you to configure the plugin based on your personal preference
 - **Receive notifications during meetings**: During an event, your availability can be set to **Away** or **No Not Disturb** when you’re in a meeting. 
 
   - Set your availability to **Away** to clearly communicate to others in Mattermost that you're unavailable. You'll continue to receive desktop, email, and push notifications based on your Mattermost notification preferences.
-  - Set your availability to `Do Not Disturb </preferences/set-your-status-availability.html#set-your-availability-as-do-not-disturb>`__  to disable all desktop, email, and push notifications.
+  - Set your availability to :ref:`Do Not Disturb <preferences/set-your-status-availability:set your availability as do not disturb>`  to disable all desktop, email, and push notifications.
 
 - **Receive reminders**: You can choose to receive an event reminder 5 minutes before a meeting in a direct message.
 

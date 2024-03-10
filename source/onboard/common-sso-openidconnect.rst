@@ -1,6 +1,6 @@
 :nosearch:
 
-Mattermost provides OpenID Connect support for `GitLab </onboard/sso-gitlab.html>`__, `Google Apps </onboard/sso-google.html>`__, and `Office 365 </onboard/sso-office.html>`__. With OpenID Connect, users can also use their login to Keycloak, Atlassian Crowd, Apple, Microsoft, Salesforce, Auth0, Ory.sh, Facebook, Okta, OneLogin, and Azure AD, as well as others, as a Single Sign-on (SSO) service for team creation, account creation, and user login.
+Mattermost provides OpenID Connect support for :doc:`GitLab </onboard/sso-gitlab>`, :doc:`Google Apps </onboard/sso-google>`, and :doc:`Office 365 </onboard/sso-office>`. With OpenID Connect, users can also use their login to Keycloak, Atlassian Crowd, Apple, Microsoft, Salesforce, Auth0, Ory.sh, Facebook, Okta, OneLogin, and Azure AD, as well as others, as a Single Sign-on (SSO) service for team creation, account creation, and user login.
 
 Follow these steps to configure a service provider using OpenID Connect.
 
@@ -25,7 +25,7 @@ Step 2: Configure Mattermost for an OpenID Connect SSO
 
 .. note::
   - When Mattermost is configured to use OpenID Connect for user authentication, the following user attribute changes can't be made through the Mattermost API: first name, last name, or username. OpenID Connect must be the authoritative source for these user attributes.
-  - The **Discovery Endpoint** setting can be used to determine the connectivity and availability of arbitrary hosts. System admins concerned about this can use custom admin roles to limit access to modifying these settings. See the `system admin roles </onboard/system-admin-roles.html#edit-privileges-of-system-admin-roles-advanced>`__ documentation for details. 
+  - The **Discovery Endpoint** setting can be used to determine the connectivity and availability of arbitrary hosts. System admins concerned about this can use custom admin roles to limit access to modifying these settings. See the :ref:`system admin roles <onboard/system-admin-roles:edit privileges of system admin roles advanced>` documentation for details. 
   
 Frequently Asked Questions
 --------------------------
