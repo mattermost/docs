@@ -61,4 +61,4 @@ Automatic actions include:
 - Automatically adding the channel to a :doc:`category in the user's channel sidebar </preferences/customize-your-channel-sidebar>`.
 - Prompting to run a playbook based on the contents of a message.
 
-The :ref:`playbooks must be enabled <configure/plugins-configuration-settings:mattermost playbooks>` for channel admins to use channel actions.
+The :ref:`playbooks must be enabled <configure/plugins-configuration-settings:playbooks>` for channel admins to use channel actions.

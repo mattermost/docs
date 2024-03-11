@@ -34,7 +34,7 @@ Anyone using Mattermost can archive the public channels or private channels they
 Unarchive a channel
 -------------------
 
-System admins and Team admins can unarchive public channels or private channels they belonged to before they were archived. When a channel is unarchived, channel membership and all its content is restored, unless messages and files have been deleted based on the :ref:`data retention policy <configure/configuration-settings:data retention policies>`.
+System admins and Team admins can unarchive public channels or private channels they belonged to before they were archived. When a channel is unarchived, channel membership and all its content is restored, unless messages and files have been deleted based on the :ref:`data retention policy <configure/compliance-configuration-settings:data retention policies>`.
 
 .. tab:: Web/Desktop
 

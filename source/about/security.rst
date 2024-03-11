@@ -16,7 +16,7 @@ Private Cloud deployment with secure mobile apps
 - Mattermost can run entirely behind your firewall as a single Linux binary, as a Docker container, or on your Kubernetes cluster with a PostgreSQL database. Remote access can be enabled through the use of :ref:`VPN clients on PC and mobile devices <deploy/deployment-overview:behind a vpn>` so that Mattermost can be used outside your private network.
 - Mattermost mobile apps can be deployed to an :doc:`internal Enterprise App Store </deploy/deploy-mobile-apps-using-emm-provider>` by using source code available for Mattermost mobile apps and push notification service. 
 - Optionally, the provided Mattermost Mobile Apps can be used when the Mattermost server is reachable through the internet on port 443. In this configuration, you have the option of using compiled :doc:`iOS and Android applications in iTunes and Google Play provided by Mattermost, Inc. </deploy/mobile-hpns>` (Mattermost Enterprise and Mattermost Professional).
-- User sessions across web, PC, and mobile can be :ref:`remotely revoked through profile settings <messaging/manage-profile-settings:view and logout of active sessions>`, or via the System Console by deactivating accounts.
+- User sessions across web, PC, and mobile can be :doc:`remotely revoked through profile settings </preferences/manage-your-security-preferences>`, or via the System Console by deactivating accounts.
 - Mattermost apps can be packaged into leading Enterprise Mobility Management solutions including AirWatch and Blackberry through `AppDome <https://www.appdome.com/>`__.
 
 Centralized security and administration
@@ -39,7 +39,7 @@ Transmission security
 - Connections to Active Directory/LDAP can be optionally secured with TLS or stunnel (Mattermost Enterprise and Mattermost Professional).
 - Encryption-at-rest is available for messages via hardware and software disk encryption solutions applied to the Mattermost database, which resides on its own server within your infrastructure. To enable end user search and compliance reporting of message histories, Mattermost does not offer encryption within the database.
 - Encryption-at-rest is available for files stored via hardware and software disk encryption solutions applied to the server used for local storage or storage via MinIO.
-- Encryption-at-rest is available for files stored in Amazon's proprietary S3 system using server-side encryption with :ref:`Amazon S3-managed keys <configure/environment-configuration-settings:enable server side encryption for amazon s3>` (Mattermost Enterprise) when users choose not to use open source options.
+- Encryption-at-rest is available for files stored in Amazon's proprietary S3 system using server-side encryption with :ref:`Amazon S3-managed keys <configure/environment-configuration-settings:enable server-side encryption for amazon s3>` (Mattermost Enterprise) when users choose not to use open source options.
 - Option to :ref:`exclude message contents from push notifications <configure/site-configuration-settings:push notification contents>` to comply with strict compliance policies, such as US HIPAA standards.
 - Ability to exclude or include the :ref:`contents of messages in push notifications <configure/site-configuration-settings:push notification contents>` to avoid disclosure on locked mobile screens, and via relay servers from Apple and Google when sending notifications to iOS or Android mobile apps (relevant to compliance standards such as HIPAA).
 
@@ -50,7 +50,7 @@ Integrity and audit controls
 - Use an `antivirus plugin <https://github.com/mattermost/mattermost-plugin-antivirus>`__ to scan for viruses before uploading a file to Mattermost. Supports `ClamAV anti-virus software <https://www.clamav.net/>`__ across browser, Desktop App, and Mobile Apps.
 - Custom :doc:`data retention policies on messages and file uploads </comply/data-retention-policy>` is available (Mattermost Enterprise). A daily data deletion job can be scheduled that deletes messages from the database and user interface, and file uploads from local file storage or Amazon S3, which exceed the specified retention period.
 - The :ref:`output and archives of server logs <configure/environment-configuration-settings:file log directory>` can be saved to a directory of your choice. Mattermost server logs plus logs from your web proxy can provide an end-to-end history of system usage.
-- :doc:`Ad hoc compliance reports of messaging by user, date range, and keyword, including edited and deleted messages </comply/compliance-reporting-oversight>` are available (Mattermost Enterprise). To protect against unauthorized use, all ad hoc report requests are logged.
+- :doc:`Ad hoc compliance reports of messaging by user, date range, and keyword, including edited and deleted messages </comply/compliance-monitoring>` are available (Mattermost Enterprise). To protect against unauthorized use, all ad hoc report requests are logged.
 - Daily compliance reports compatible with third-party compliance solutions such as :doc:`Global Relay and Actiance </comply/compliance-export>` are also available (Mattermost Enterprise).
 
 Authentication safeguards
@@ -58,10 +58,10 @@ Authentication safeguards
 
 - To protect against brute force attacks, you can set :doc:`rate limiting on APIs </configure/environment-configuration-settings>`, varied by query frequency, memory store size, remote address, and headers.
 - Session length, session cache, and idle timeout can be :ref:`configured according to your internal policies <configure/environment-configuration-settings:session lengths>`, automatically forcing a user to re-login after a specified period of time.
-- Remotely :ref:`revoke user sessions <messaging/managing-account-settings:view and logout of active sessions>` across web, mobile devices, and native desktop apps. User sessions can also be revoked remotely by a System Admin in **System Console > Users**.
+- Remotely :doc:`revoke user sessions </preferences/manage-your-security-preferences>` across web, mobile devices, and native desktop apps. User sessions can also be revoked remotely by a System Admin in **System Console > Users**.
 - Session fixation, where an attacker can trick the user to authenticate with a known session cookie, does not affect Mattermost users as a new session cookie is set at each login.
-- Remotely reset user passwords via the System Console or via the :ref:`mmctl user reset-password <manage/mmctl-command-line-tool:mmctl user reset password>` command.
-- Mattermost supports integrated authentication with :doc:`Active Directory and LDAP </onboard/ad-ldap>` (Mattermost Enterprise and Mattermost Professional) as well as :doc:`SAML 2.0 SSO integration </onboard/sso-saml>` with providers including :ref:`Active Directory Federation Services <onboard/ad-ldap:configure ad ldap deployments with multiple domains>`,  :doc:`Okta </onboard/sso-saml-okta>`, among others (Mattermost Enterprise and Mattermost Professional).
+- Remotely reset user passwords via the System Console or via the :ref:`mmctl user reset-password <manage/mmctl-command-line-tool:mmctl user reset-password>` command.
+- Mattermost supports integrated authentication with :doc:`Active Directory and LDAP </onboard/ad-ldap>` (Mattermost Enterprise and Mattermost Professional) as well as :doc:`SAML 2.0 SSO integration </onboard/sso-saml>` with providers including :ref:`Active Directory Federation Services <onboard/ad-ldap:configure ad/ldap deployments with multiple domains>`,  :doc:`Okta </onboard/sso-saml-okta>`, among others (Mattermost Enterprise and Mattermost Professional).
 - The ability to require :doc:`multi-factor authentication </onboard/multi-factor-authentication>` is also available (Mattermost Enterprise and Mattermost Professional).
 
 Access control policy
@@ -79,10 +79,10 @@ Mattermost undergoes extensive penetration testing, security reviews, and `secur
 
 - Limit communications to specific users, private channels, or team-wide public channels.
 - Increase system security :ref:`by restricting email-based account creation to email addresses from a list of specific domains, <configure/authentication-configuration-settings:restrict account creation to specified email domains>` e.g. "corp.mattermost.com", "mattermost.com", etc."
-- Choose whether to restrict or enable :ref:`cross-origin requests <configure/integrations-configuration-settings:enable cross origin requests from>`.
+- Choose whether to restrict or enable :ref:`cross-origin requests <configure/integrations-configuration-settings:enable cross-origin requests from>`.
 - If sharing of public links for account creation or sharing of files and images are enabled, links can be invalidated via the System Console by :ref:`regenerating salts <configure/site-configuration-settings:public link salt>`.
-- Optionally add :ref:`advanced passwords requirements <configure/configuration-settings:password requirements>` with minimum numbers of symbols, numbers, lower, and uppercase letters.
-- Optionally restrict :ref:`creation, renaming, archiving of channels, Private channels, and integrations to Team Admins, System Admins, or end users <administration/config-settings:policy enterprise>` (Mattermost Enterprise and Mattermost Professional).
+- Optionally add :ref:`advanced passwords requirements <configure/authentication-configuration-settings:password requirements>` with minimum numbers of symbols, numbers, lower, and uppercase letters.
+- Optionally restrict :doc:`creation, renaming, archiving of channels, Private channels, and integrations to Team Admins, System Admins, or end users </onboard/advanced-permissions>` (Mattermost Enterprise and Mattermost Professional).
 
 Security updates
 -----------------

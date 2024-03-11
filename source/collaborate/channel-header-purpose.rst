@@ -28,7 +28,7 @@ Looking to rename an existing channel? See the :doc:`rename channels </collabora
 Channel purpose
 ---------------
 
-You're prompted to provide an optional channel purpose description when :doc:`creating a new channel in Mattermost </collaborate/create-channels>` visible when you select **View Info** |channel-info| for the channel. Any member of a channel can change a channel's purpose description, unless the system admin has :doc:`disabled the ability to do so <onboard/advanced-permissions>`.
+You're prompted to provide an optional channel purpose description when :doc:`creating a new channel in Mattermost </collaborate/create-channels>` visible when you select **View Info** |channel-info| for the channel. Any member of a channel can change a channel's purpose description, unless the system admin has :doc:`disabled the ability to do so </onboard/advanced-permissions>`.
 
 A channel purpose can be up to 250 characters in length, and is often used to help users decide whether to join that channel.
 
@@ -51,7 +51,7 @@ A channel purpose can be up to 250 characters in length, and is often used to he
 Channel header
 --------------
 
-A channel header refers to text that displays directly under a channel name at the top of the screen. Any channel member can change a channel header, unless the system admin has :doc:`disabled the ability to do so <onboard/advanced-permissions>`
+A channel header refers to text that displays directly under a channel name at the top of the screen. Any channel member can change a channel header, unless the system admin has :doc:`disabled the ability to do so </onboard/advanced-permissions>`
 
 A channel header can be up to 1024 characters in length, include Markdown formatting, and is often used to summarize the channel's focus or to provide links to frequently accessed documents, tools, or websites.
 

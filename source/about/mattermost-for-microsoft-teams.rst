@@ -28,7 +28,7 @@ Embed Mattermost within Mattermost Teams
 
 Embedding a Mattermost instance within a Microsoft Teams workspace across desktop and web clients enables Central IT organizations to provide an extended customization experience for technical and operational teams while staying firmly integrated into the Microsoft 365 all-employee platform.
 
-Embed Mattermost into Microsoft Teams by visiting the :doc:`embed Mattermost within Microsoft Teams </about/embed-mattermost-within-microsoft-teams>` documentation.
+Embed Mattermost into Microsoft Teams by visiting the :doc:`embed Mattermost within Microsoft Teams </about/embed-mattermost-app-within-microsoft-teams>` documentation.
 
 .. important::
 

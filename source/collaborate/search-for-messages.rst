@@ -58,7 +58,7 @@ Search for message and files
     
     System admins can extend file content search support for self-hosted deployments to include:
 
-    - :ref:`files shared before upgrading to Mattermost Server v5.35 <manage/command-line-tools:mattermost extract documents content>`.
+    - :ref:`files shared before upgrading to Mattermost Server v5.35 <manage/mmctl-command-line-tool:mmctl extract>`.
     - :ref:`DOC and RTF file formats <configure/environment-configuration-settings:enable document search by content>`.
     - :ref:`documents within ZIP files <configure/environment-configuration-settings:enable searching content of documents within zip files>`.
 

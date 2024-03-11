@@ -10,7 +10,7 @@ With the :doc:`Microsoft Teams plugin </about/mattermost-for-microsoft-teams>`, 
 
 .. important::
 
-    You must :doc:`install the Microsoft Teams plugin in Mattermost </plugins/install-mattermost-for-microsoft-teams-plugin>` before you can embed the Mattermost app within Microsoft Teams.
+    You must :doc:`install the Microsoft Teams plugin in Mattermost </about/install-mattermost-for-microsoft-teams-plugin>` before you can embed the Mattermost app within Microsoft Teams.
 
 To install the Mattermost app in Microsoft Teams:
 
@@ -40,7 +40,7 @@ Check out this `YouTube demo <https://youtu.be/MxegqqfErEg>`__, from Doug Lauder
 Get users started with the embedded app
 ----------------------------------------
 
-See our end user documentation for a :ref:`video walkthrough of using Mattermost embedded within Microsoft Teams <collaborate/collaborate-using-mattermost-for-microsoft-teams:demonstration mattermost embedded in microsoft teams>`.
+See our end user documentation for a :ref:`video walkthrough of using Mattermost embedded within Microsoft Teams <collaborate/collaborate-within-embedded-microsoft-teams:demonstration: mattermost embedded in microsoft teams>`.
 
 Benefits of the embedded app
 ----------------------------

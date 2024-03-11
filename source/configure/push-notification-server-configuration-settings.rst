@@ -44,7 +44,7 @@ Enable push notifications
 |   of two locations, including the United States and Germany. Mattermost Team Edition customers can use Mattermost's Test Push Notification       |
 |   server (TPNS).                                                                                                                                 |
 | - The TPNS is provided for testing push notifications prior to compiling your own service, and isn't available for Mattermost Cloud deployments. |
-|   Ensure you’re familiar with its :ref:`limitations <deploy/mobile-hpns:test push notifications service tpns>`.                                  |
+|   Ensure you’re familiar with its :ref:`limitations <deploy/mobile-hpns:test push notifications service (tpns)>`.                                |
 | - Review the :doc:`mobile push notifications </deploy/mobile-hpns>` and :doc:`mobile apps </deploy/build-custom-mobile-apps>` documentation,     |
 |   including guidance on compiling your own mobile apps and MPNS, before deploying to production.                                                 |
 | - To confirm push notifications are working, connect to the `Mattermost iOS App <https://apps.apple.com/us/app/mattermost/id1257222717>`__       |

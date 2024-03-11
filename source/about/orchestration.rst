@@ -88,4 +88,4 @@ Branding
 Upgrade 
 ~~~~~~~
 
-1. **Support upgrade of Mattermost**. Enable user interface or command line upgrade of a Mattermost deployment to latest version based on :ref:`upgrade procedure when Mattermost is embedded <developer/integration-faq:how should i automate the install and upgrade of mattermost when included in another application>`
+1. **Support upgrade of Mattermost**. Enable user interface or command line upgrade of a Mattermost deployment to latest version based on `upgrade procedure when Mattermost is embedded <https://developers.mattermost.com/integrate/faq/#how-should-i-automate-the-install-and-upgrade-of-mattermost-when-included-in-another-application>`__

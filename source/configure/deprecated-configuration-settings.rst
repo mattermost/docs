@@ -45,9 +45,6 @@ Enable publicly-shared boards
 |                                                                                                                                             |
 | - From Mattermost v7.7 through Mattermost v7.10, this configuration setting applies to Mattermost Boards available as an official           |
 |   in-product vertical.                                                                                                                      |
-| - See the :doc:`Focalboard <guides/focalboard-plugin>` documentation for details on :ref:`sharing boards links with other                   |
-|   users <boards/share-and-collaborate:share a board publicly>`.                                                                             |
-| - Cloud admins can't modify this configuration setting.                                                                                     |
 +------------------------------------------------------+--------------------------------------------------------------------------------------+
 
 Bleve settings

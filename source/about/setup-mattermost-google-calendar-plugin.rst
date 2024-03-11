@@ -17,7 +17,7 @@ Once setup is complete, see the `get started <#get-started-with-the-plugin>`__ s
 Install the Mattermost Google Calendar plugin
 ---------------------------------------------
 
-To install the :doc:`Mattermost Google Calendar </plugins/mattermost-google-calendar>` plugin on your Mattermost server:
+To install the :doc:`Mattermost Google Calendar </about/mattermost-google-calendar-integration>` plugin on your Mattermost server:
 
 1. Log in to your Mattermost workspace as a system administrator.
 2. Download the latest version of the plugin binary release compatible with Mattermost v8.x and later. 

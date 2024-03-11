@@ -68,14 +68,14 @@ Sixty days prior to expiry, System Administrators receive notifications that the
 How does the licensing key work?
 --------------------------------
 
-See our :ref:`frequently asked questions about licensing <about/licensing-and-subscription:frequently asked questions>`.
+See our :doc:`frequently asked questions about licensing </about/faq-license>`.
 
 Do you have a program for official non-profits and charities?
 -------------------------------------------------------------
 
-See our :ref:`frequently asked questions about licensing <about/licensing-and-subscription:frequently asked questions>`.
+See our :doc:`frequently asked questions about licensing </about/faq-license>`.
 
 Do you have discounted licenses for academic institutions?
 ----------------------------------------------------------
 
-See our :ref:`frequently asked questions about licensing <about/licensing-and-subscription:frequently asked questions>`.
+See our :doc:`frequently asked questions about licensing </about/faq-license>`.

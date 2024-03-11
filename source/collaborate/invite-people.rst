@@ -23,7 +23,7 @@ All users can add existing Mattermost users to a Mattermost team or channel, unl
       - Mattermost prompts to you to add any users who aren't already members of that channel to the channel.
       - From Mattermost v9.1, you're given the option to add any users who aren't already members of that team to the team, if you have the permissions to do so.
 
-    - A :doc:`guest user </onboard/guest-accounts>` in Mattermost is a special role that is restricted to only the channels they have been invited to. When :ref:`guest access is enabled <configure/authentication-configuration-settings:guest enable>` by the system admin, you can invite guests or users external to the organization, such as vendors or customers.
+    - A :doc:`guest user </onboard/guest-accounts>` in Mattermost is a special role that is restricted to only the channels they have been invited to. When :ref:`guest access is enabled <configure/authentication-configuration-settings:enable guest access>` by the system admin, you can invite guests or users external to the organization, such as vendors or customers.
 
       - Once guests are invited to the team, you can add them to the channel.
 
@@ -35,7 +35,7 @@ Direct invites are invitation emails sent from your team's server directly to th
 .. note::
 
   - A System Admin can invalidate all active invitation links via **System Console > Authentication > Signup > Invalidate pending email invites**.
-  - If you can't invite others to the team, contact your system admin for assistance. You may not have sufficent permissions to do so, or :ref:`email invitations may not be enabled <configure/authentication-configuration-settings:signup enableemailinvitations>`.
+  - If you can't invite others to the team, contact your system admin for assistance. You may not have sufficent permissions to do so, or :ref:`email invitations may not be enabled <configure/authentication-configuration-settings:enable email invitations>`.
 
 .. tab:: Web/Desktop
 

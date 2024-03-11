@@ -40,7 +40,7 @@ You can deploy interactive bots to help users with processes and tasks with Matt
 
 Prebuilt bots are available on the `Mattermost Marketplace <https://mattermost.com/marketplace/>`__, or you can `configure your own bots <https://developers.mattermost.com/integrate/reference/bot-accounts/>`__.
 
-Learn about `Mattermost Hubot integration (hubot-matteruser on npm) <https://www.npmjs.com/package/hubot-matteruser>`__ and `other open source community bots available <https://integrations.mattermost.com/>`__ or you can :doc:`build your own </integrations/cloud-bot-accounts>`.
+Learn about `Mattermost Hubot integration (hubot-matteruser on npm) <https://www.npmjs.com/package/hubot-matteruser>`__ and `other open source community bots available <https://integrations.mattermost.com/>`__ or you can `build your own <https://developers.mattermost.com/integrate/reference/bot-accounts/>`__.
 
 Custom slash commands
 ---------------------

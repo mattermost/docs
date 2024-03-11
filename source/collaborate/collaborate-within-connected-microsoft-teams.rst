@@ -65,7 +65,7 @@ Collaborate with colleagues
 
 You have many ways to collaborate with colleagues in linked channels using a web browser or the Mattermost desktop app, including:
 
-- :doc:`Send messages </collaborate/send-messages>` and :doc:`reply to messages <h/collaborate/reply-to-messages>`
+- :doc:`Send messages </collaborate/send-messages>` and :doc:`reply to messages </collaborate/reply-to-messages>`
 - :doc:`Attach files to messages </collaborate/share-files-in-messages>`
 - :doc:`Express yourself with emojis and GIFs </collaborate/react-with-emojis-gifs>`
 - :doc:`Share complex systems data and formatted code </collaborate/format-messages>`

@@ -67,7 +67,7 @@ Network
 | STUN (Calls plugin or ``rtcd``) | 3478   | UDP (outgoing)  | Mattermost Instance(s) (Calls plugin) or ``rtcd`` service  | Configured STUN servers                  | (Optional) To allow for either Calls plugin or ``rtcd`` service to discover their instance public IP. Only needed if configuring STUN/TURN servers. This requirement does not apply when manually setting an IP or hostname through the |ice_host_override_link| config option.                                                                                                                                                                                                             |
 +---------------------------------+--------+-----------------+------------------------------------------------------------+------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-.. |ice_host_override_link| replace:: :ref:`ICE Host Override <plugins-configuration-settings:ice host override>`
+.. |ice_host_override_link| replace:: :ref:`ICE Host Override <configure/plugins-configuration-settings:ice host override>`
 
 Limitations
 -----------
@@ -337,10 +337,10 @@ Before you can start recording and transcribing calls, you need to configure the
 .. note::
   If deploying the service in a Kubernetes cluster, refer to the later section on `Helm charts <#helm-charts>`__.
 
-Once the ``calls-offloader`` service is running, recordings should be explicitly enabled through the :ref:`Enable call recordings <plugins-configuration-settings:enable call recordings beta>` config setting and the service's URL should be configured using :ref:`Job service URL <plugins-configuration-settings:job service url>`.
+Once the ``calls-offloader`` service is running, recordings should be explicitly enabled through the :ref:`Enable call recordings <plugins-configuration-settings:enable call recordings (beta)>` config setting and the service's URL should be configured using :ref:`Job service URL <plugins-configuration-settings:job service url>`.
 
 
-Call transcriptions can be enabled through the :ref:`Enable call transcriptions <plugins-configuration-settings:enable call transcriptions experimental>` config setting.
+Call transcriptions can be enabled through the :ref:`Enable call transcriptions <plugins-configuration-settings:enable call transcriptions (experimental)>` config setting.
 
 .. note::
   The call transcriptions functionality is available starting in Calls version v0.22.0
@@ -418,7 +418,7 @@ Connectivity issues
 
 If calls are failing to connect or timing out, it's likely there could be a misconfiguration at either the plugin config or networking level.
 
-For example, the :ref:`RTC Server Port (UDP) <plugins-configuration-settings:rtc server port udp>` or the :ref:`RTC Server Port (TCP) <plugins-configuration-settings:rtc server port tcp>` may not be open or forwarded correctly.
+For example, the :ref:`RTC Server Port (UDP) <plugins-configuration-settings:rtc server port (udp)>` or the :ref:`RTC Server Port (TCP) <plugins-configuration-settings:rtc server port (tcp)>` may not be open or forwarded correctly.
 
 
 Connectivity checks
@@ -445,7 +445,7 @@ If connection succeeds, you should be able to send and receive text messages by 
    (or ``rtcd``) instance hosting the calls. When set, it should be the value of the |ice_host_override_link|
    config setting.
 
-   ``8443`` should be changed with the port configured in :ref:`RTC Server Port <plugins-configuration-settings:rtc server port udp>`.
+   ``8443`` should be changed with the port configured in :ref:`RTC Server Port <plugins-configuration-settings:rtc server port (udp)>`.
 
    The same checks can be performed to test connectivity through the TCP port using the same commands with ``-u`` flag removed.
 

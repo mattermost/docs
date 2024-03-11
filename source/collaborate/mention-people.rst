@@ -121,7 +121,7 @@ Confirmation dialog warnings
 
 When your system admin has configured Mattermost to require confirmations for @mentions, you must confirm any mention that will trigger notifications for more than five users before sending the notification.
 
-This confirmation dialog only appears when your system admin has configured this setting in the System Console. See our :ref:`configuration settings <configure/site-configuration-settings:show channel all or here confirmation dialog>` product documentation for details. This configuration setting is supported on the Mattermost Mobile App (from v1.34) if the :doc:`AD/LDAP groups </onboard/ad-ldap-groups-synchronization>` feature is enabled.
+This confirmation dialog only appears when your system admin has configured this setting in the System Console. See our :ref:`configuration settings <configure/site-configuration-settings:show @channel, @all, or @here confirmation dialog>` product documentation for details. This configuration setting is supported on the Mattermost Mobile App (from v1.34) if the :doc:`AD/LDAP groups </onboard/ad-ldap-groups-synchronization>` feature is enabled.
 
 Mention highlights
 ------------------

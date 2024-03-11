@@ -20,4 +20,4 @@ Take Mattermost wherever you go by installing the Mattermost mobile app on your 
 .. tip::
 
   - See the :doc:`access your workspace </collaborate/access-your-workspace>` documentation for additional details. 
-  - You can set up multi-factor authentication for Mattermost if your system admin has :ref:`enabled your ability to do so <configure/authentication-configuration-settings:enable multi factor authentication>`. See the :doc:`manage security preferences </preferences/manage-your-security-preferences>` documentation for details.
+  - You can set up multi-factor authentication for Mattermost if your system admin has :ref:`enabled your ability to do so <configure/authentication-configuration-settings:enable multi-factor authentication>`. See the :doc:`manage security preferences </preferences/manage-your-security-preferences>` documentation for details.

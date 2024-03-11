@@ -31,17 +31,17 @@ Channel members can choose to leave private channels at any time.
 Direct messages
 ---------------
 
-Direct messages conversations between 2 people. You can start a direct message with people on other teams :ref:`when enabled by the system admin <configure/site-configuration-settings:users restrictdirectmessage>`. Only members of the conversation can see direct messages and channel heading information, including the last active status of the other user. 
+Direct messages conversations between 2 people. You can start a direct message with people on other teams :ref:`unless the system admin has disabled your ability to do so <configure/site-configuration-settings:enable users to open direct message channels with>`. Only members of the conversation can see direct messages and channel heading information, including the last active status of the other user. 
 
 Direct messages increment the numbered badge and trigger a notification unless the direct message is muted, or your notifications are disabled. See the :doc:`notification documentation </preferences/manage-your-notifications>` for details on customizing notifications based on your preferences.
 
 Group messages
 --------------
 
-Group messages are conversations between 3 to 7 people. You can also start a group message with people on other teams when :ref:`enabled by the system admin <configure/site-configuration-settings:users restrictdirectmessage>`. Only members of the conversation can see group messages. Group messages always display a new message badge.
+Group messages are conversations between 3 to 7 people. You can also start a group message with people on other teams when :ref:`unless the system admin has disabled your ability to do so <configure/site-configuration-settings:enable users to open direct message channels with>`. Only members of the conversation can see group messages. Group messages always display a new message badge.
 
 From Mattermost v9.1, group messages increment the numbered badge and trigger a notification unless the direct message is muted, or your notifications are disabled. You can control how you're notified about group message conversations by going to **Settings > Notifications**. See the :doc:`notification documentation </preferences/manage-your-notifications>` to learn more.
 
 .. tip::
 
-   Want to have a group conversation with more than 7 people? You can :doc:`create a private channel </collaborate/create-channels>`. Alternatively, from Mattermost v9.1, you can :doc:`convert the group message to a private channel </collaborate/convert-onvert-group-messages>`.
+   Want to have a group conversation with more than 7 people? You can :doc:`create a private channel </collaborate/create-channels>`. Alternatively, from Mattermost v9.1, you can :doc:`convert the group message to a private channel </collaborate/convert-group-messages>`.

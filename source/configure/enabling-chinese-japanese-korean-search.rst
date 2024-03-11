@@ -112,9 +112,9 @@ Below is additional information on how to configure the database for different l
 
 Mattermost で日本語検索をするためにはデータベースの設定変更が必要です
 
-- :ref:`MySQL <install/requirements:database software>`
+- :ref:`MySQL <install/software-hardware-requirements:database software>`
 
-- `Postgres <https://github.com/mattermost/mattermost/issues/2159#issuecomment-206444074>`__
+- :ref:`Postgres <install/software-hardware-requirements:database software>`
 
 日本語(CJK)検索設定のドキュメントの改善にご協力ください
 

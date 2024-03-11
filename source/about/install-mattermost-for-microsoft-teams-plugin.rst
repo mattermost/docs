@@ -8,9 +8,9 @@ Install the Mattermost for Microsoft Teams plugin (Beta)
 
 .. tip::
 
-  Looking to :doc:`embed Mattermost within Microsoft Teams </about/embed-mattermost-within-microsoft-teams>` instead?
+  Looking to :doc:`embed Mattermost within Microsoft Teams </about/embed-mattermost-app-within-microsoft-teams>` instead?
 
-To install the :ref:`Microsoft Teams plugin <configure/plugins-configuration-settings:ms teams>` in Mattermost:
+To install the :ref:`Microsoft Teams plugin <configure/plugins-configuration-settings:microsoft teams (beta)>` in Mattermost:
 
 1. Log in to your Mattermost workspace as a system administrator.
 2. Download the latest version of `the plugin binary release <https://github.com/mattermost/mattermost-plugin-msteams/releases>`__, compatible with Mattermost v8.0.1 and later. If you are using an earlier version of Mattermost, :doc:`follow our documentation </upgrade/upgrading-mattermost-server>` to upgrade to Mattermost v8.0.1 or later.
@@ -127,7 +127,7 @@ Mattermost admins can configure Mattermost to automatically prompt users to conn
 Configure the plugin
 --------------------
 
-Additional configuration settings are available for this plugin. See the :ref:`Microsoft Teams plugin configuration settings <configure/plugins-configuration-settings:ms teams>` documentation for details.
+Additional configuration settings are available for this plugin. See the :ref:`Microsoft Teams plugin configuration settings <configure/plugins-configuration-settings:microsoft teams (beta)>` documentation for details.
 
 Monitor plugin performance
 --------------------------
@@ -149,7 +149,7 @@ Grafana dashboards `are available on GitHub <https://github.com/mattermost/matte
 Get started with the plugin
 ---------------------------
 
-See our :doc:`collaborate using the Microsoft Teams plugin </collaborate/collaborate-using-mattermost-for-microsoft-teams>` documentation for details on how to collaborate across both Mattermost and Microsoft Teams at the same time.
+See our :doc:`collaborate using the Microsoft Teams plugin </collaborate/collaborate-within-connected-microsoft-teams>` documentation for details on how to collaborate across both Mattermost and Microsoft Teams at the same time.
 
 Trobleshooting FAQ
 ------------------

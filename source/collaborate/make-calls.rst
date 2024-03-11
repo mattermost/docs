@@ -122,11 +122,11 @@ Transcribe recorded calls
 .. include:: ../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
-From Mattermost v9.4, and Mattermost mobile app v.2.13, call recordings can include text captions, and a transcription text file can be generated, unless your system admin has :ref:`disabled the ability to transcribe call recordings <configure/plugins-configuration-settings:enable call transcriptions experimental>`.
+From Mattermost v9.4, and Mattermost mobile app v.2.13, call recordings can include text captions, and a transcription text file can be generated, unless your system admin has :ref:`disabled the ability to transcribe call recordings <configure/plugins-configuration-settings:enable call transcriptions (experimental)>`.
 
 .. note::
 
-  :ref:`Call recording must be enabled <configure/plugins-configuration-settings:enable call recordings beta>` to enable recorded call transcriptions.
+  :ref:`Call recording must be enabled <configure/plugins-configuration-settings:enable call recordings (beta)>` to enable recorded call transcriptions.
 
 When call recording stops, the transcription file is posted in the call thread as a TXT file attachment. It's available to all users in the channel both during the call, and after the call has ended. Additionally, users viewing the call recording can show or hide text captions using the Closed Captioning option in the video player.
 
@@ -136,7 +136,7 @@ Frequently asked questions
 Can I set a ring tone for incoming calls?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Yes! From Mattermost v8.0 and Calls v0.17.0, desktop app and web users can go to **Settings > Notifications > Desktop Notifications** to enable Mattermost to alert you to incoming calls through direct or group messages with a specific ring tone and a desktop notification, unless the system admin has :ref:`disabled your ability to do so <plugins-configuration-settings:enable call ringing beta>`.
+Yes! From Mattermost v8.0 and Calls v0.17.0, desktop app and web users can go to **Settings > Notifications > Desktop Notifications** to enable Mattermost to alert you to incoming calls through direct or group messages with a specific ring tone and a desktop notification, unless the system admin has :ref:`disabled your ability to do so <plugins-configuration-settings:enable call ringing (beta)>`.
 
 Is video supported?
 ~~~~~~~~~~~~~~~~~~~

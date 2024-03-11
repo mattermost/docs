@@ -60,14 +60,14 @@ To join a public channel:
 
 .. tip::
 
-  When you join channels, depending on the :doc:`channel actions configured </collaborate/create-channels>`, you may see a welcome message, and channels may be added to :doc:`a category in your channel sidebar </collaborate/customize-your-channel-sidebar>` automatically. 
+  When you join channels, depending on the :doc:`channel actions configured </collaborate/create-channels>`, you may see a welcome message, and channels may be added to :doc:`a category in your channel sidebar </preferences/customize-your-channel-sidebar>` automatically. 
   Using Mattermost in a web browser or the desktop app, access **Channel Actions** from the channel name drop-down menu in the center pane to see what automatic actions have been configured.
 
 See the following documentation to learn more about working with channels:
 
 - :doc:`Create channels </collaborate/create-channels>`
-- :doc:`Find channels </collaborate/find-channels>`
-- :doc:`Customize your channel sidebar </collaborate/customize-your-channel-sidebar>`
+- :doc:`Browse channels </collaborate/browse-channels>`
+- :doc:`Customize your channel sidebar </preferences/customize-your-channel-sidebar>`
 
 Leave a channel
 ---------------
