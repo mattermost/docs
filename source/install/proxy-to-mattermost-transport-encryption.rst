@@ -27,7 +27,7 @@ In this scenario there is one Mattermost application server and one NGINX server
 Configuring NGINX
 -----------------
 
-On the NGINX server, connect to both servers with a sudo or root user. Open the Mattermost proxy configuration (Refer to :ref:`Configuring NGINX with SSL and HTTP/2 (End-User - Proxy) <install/install-rhel-6:configuring nginx with ssl and http 2>` for additional information) and search for the following line twice:
+On the NGINX server, connect to both servers with a sudo or root user. Open the Mattermost proxy configuration and search for the following line twice:
 
 .. code-block:: none
 

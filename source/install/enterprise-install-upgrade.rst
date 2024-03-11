@@ -61,7 +61,7 @@ GitLab Omnibus runs the open source Mattermost Team Edition. To upgrade to Matte
   
   sudo gitlab-ctl reconfigure
 
-2. Install Mattermost using :ref:`one of the guides above <install/ee-install:installing enterprise edition>`.
+2. Install Mattermost using one of the guides above.
 3. Migrate the database used by GitLab Mattermost for your new Enterprise Edition instance.
 4. (Optional) Set up `GitLab slash command integration <https://docs.gitlab.com/ee/user/project/integrations/mattermost_slash_commands.html>`__ with your Mattermost instance.
 
@@ -81,7 +81,7 @@ If you're running a Linux system with x86-64 architecture, you can convert Team 
 
   * If you're using Mattermost in a managed environment, such as GitLab Omnibus, and want to start an Enterprise Edition trial, you can use this tool. However if you plan to upgrade permanently and scale your production environment, we strongly recommend installing a new standalone server and following the appropriate :doc:`migration process </onboard/migrating-to-mattermost>`.
   * If you're using a modified version of Mattermost, using this tool will overwrite your changes and replace them with the official Enterprise Edition binary.
-  * For versions prior to v5.27, please follow :ref:`these upgrade instructions <upgrade/upgrading-mattermost-server:upgrading team edition to enterprise edition>`.
+  * For versions prior to v5.27, please follow :ref:`these upgrade instructions <upgrade/upgrading-mattermost-server:upgrade team edition to enterprise edition>`.
 
 Navigate to **Product menu > System Console > Edition and License** and select **Upgrade to Enterprise Edition**.
 

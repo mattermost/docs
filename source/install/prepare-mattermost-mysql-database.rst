@@ -249,7 +249,7 @@ You can perform searches without this configuration by adding wildcards ``*`` to
 Migrate from Bitnami to a self-hosted Mattermost deployment
 ------------------------------------------------------------
 
-If you're planning a migration from Bitnami to a self-hosted Mattermost installation with a MySQL database, read these notes in our migration guide: :ref:`Migrating from Bitnami <onboard/migrating-to-mattermost:migrating from bitnami>`.
+If you're planning a migration from Bitnami to a self-hosted Mattermost installation with a MySQL database, read these notes in our migration guide: :ref:`Migrating from Bitnami <onboard/migrating-to-mattermost:migrate from bitnami>`.
 
 
 

@@ -20,11 +20,10 @@ These instructions outline how to install Mattermost Server on a 64-bit Linux ho
 
 **Deploy Generic Linux**
 
-1. Install and configure a PostgreSQL or MySQL database. Refer to one of the guides below to deploy the database based on your operating system:
+1. Install and configure a PostgreSQL or MySQL database. See the following guides for details:
 
-   - :ref:`Ubuntu <install/installing-ubuntu-2004-LTS:install a database>`
-   - :ref:`Debian <install/install-debian:install a database>`
-   - :ref:`RHEL <install/install-rhel-8:install a database>`
+ - :doc:`Prepare your Mattermost PostgreSQL database </install/prepare-mattermost-database>`
+ - :doc:`Prepare your Mattermost MySQL database </install/prepare-mattermost-mysql-database>`
 
 2. Log in to the server that will host Mattermost Server and open a terminal window.
 

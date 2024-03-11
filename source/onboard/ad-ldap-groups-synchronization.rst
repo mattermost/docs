@@ -117,7 +117,7 @@ Channels are nested below the team they belong to in the team and channel list. 
 
 .. note::
 
-   - When a team is added, the ``Town Square`` and ``Off-Topic`` channels will also be added as default, as well as any default channels set in the :ref:`ExperimentalDefaultChannels config setting <configure/configuration-settings:default channels experimental>`.
+   - When a team is added, the ``Town Square`` and ``Off-Topic`` channels will also be added as default, as well as any default channels set in the :ref:`ExperimentalDefaultChannels config setting <configure/experimental-configuration-settings:default channels>`.
    - When a channel is added without setting the team explicitly, the team will be shown in the **Team and Channel Membership** listing, but it won't be added to the group specifically. Because of this dependency, when the channel is removed, the team will also be removed. Teams are listed in parentheses after the channel name in the channel selector.
 
 Synchronize teams and channels
@@ -334,7 +334,7 @@ You can do this by setting the team or channel management to synced groups inste
 How do I use AD/LDAP group sync with SAML?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-You can use AD/LDAP group sync with SAML by enabling :ref:`SAML Synchronization with AD/LDAP <onboard/sso-saml-okta:configure saml synchronization with ad ldap>`. You do not need to enable sign-in with LDAP for this feature to work.
+You can use AD/LDAP group sync with SAML by enabling :ref:`SAML Synchronization with AD/LDAP <onboard/sso-saml-okta:configure saml synchronization with ad/ldap>`. You do not need to enable sign-in with LDAP for this feature to work.
 
 However, it's critical that the unique Mattermost ID identifier that you have chosen as your attribute in your directory service (AD/LDAP) is the same for both the SAML and AD/LDAP configurations.
 

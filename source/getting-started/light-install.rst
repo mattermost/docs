@@ -52,7 +52,7 @@ Next, add people to your team by sending them an invitation:
 2. Select **Invite People** and enter the email addresses of the people you want to add.
 3. Select **Invite Members**.
 
-When the invitee receives the email with the link, it’s a single click to join your server, chat to you in the channel you’ve created, or create their own channels. More information about adding users is available :ref:`here <messaging/managing-members:managing members>`.
+When the invitee receives the email with the link, it’s a single click to join your server, chat to you in the channel you’ve created, or create their own channels. More information about adding users is available :doc:`here </collaborate/manage-channel-members>`.
 
 Create a notifications hub
 --------------------------

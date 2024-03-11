@@ -27,7 +27,7 @@ Getting people set up with a Mattermost account is typically something that syst
 - :ref:`Enable account creation <configure/authentication-configuration-settings:enable account creation>`.
 - Use :ref:`mmctl user create <manage/mmctl-command-line-tool:mmctl user create>` or Mattermost `APIs <https://api.mattermost.com/#tag/users>`__ to create user accounts.
 - :ref:`Migrate user accounts <onboard/migrating-to-mattermost:migration guide>` from other collaboration systems and :doc:`bulk load </onboard/bulk-loading-data>` that user data into Mattermost.
-- Connect an authentication service to assist with user provisioning, such as :ref:`AD/LDAP authentication <onboard/ad-ldap:active directory ldap setup>` or :doc:`SAML authentication </onboard/sso-saml>`.
+- Connect an authentication service to assist with user provisioning, such as :doc:`AD/LDAP authentication </onboard/ad-ldap>` or :doc:`SAML authentication </onboard/sso-saml>`.
 
 +----------------------------------------------------------------+-------------------------------------------------------------+
 | Manage activated and deactivated users, revoke all user        | - System Config path: **User Management > Users**           |
@@ -97,7 +97,7 @@ Teams
 |                                                               | - Environment variable: N/A                                 |
 +---------------------------------------------------------------+-------------------------------------------------------------+
 | See the :ref:`using AD/LDAP synchronized groups to manage team or private channel membership                                |
-| <onboard/cloud-groups:using ad ldap group synchronization>` documentation for details.                                      |
+| <onboard/ad-ldap-groups:synchronize ad/ldap groups to mattermost>` documentation for details.                               |
 +---------------------------------------------------------------+-------------------------------------------------------------+
 
 ----

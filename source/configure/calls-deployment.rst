@@ -317,7 +317,7 @@ Horizontal scalability
 
 The supported way to enable horizontal scalability for Calls is through a form of DNS based load balancing. This can be achieved regardless of how the ``rtcd`` service is deployed (bare bone instance, Kubernetes, or an alternate way).
 
-In order for this to work, the :ref:`RTCD Service URL <plugins-configuration-settings:rtcd service url>` should point to a hostname that resolves to multiple IP addresses, each pointing to a running ``rtcd`` instance. The Mattermost Calls plugin will then automatically distribute calls amongst the available hosts.
+In order for this to work, the :ref:`RTCD Service URL <configure/plugins-configuration-settings:rtcd service url>` should point to a hostname that resolves to multiple IP addresses, each pointing to a running ``rtcd`` instance. The Mattermost Calls plugin will then automatically distribute calls amongst the available hosts.
 
 The expected requirements are the following:
 
@@ -337,10 +337,10 @@ Before you can start recording and transcribing calls, you need to configure the
 .. note::
   If deploying the service in a Kubernetes cluster, refer to the later section on `Helm charts <#helm-charts>`__.
 
-Once the ``calls-offloader`` service is running, recordings should be explicitly enabled through the :ref:`Enable call recordings <plugins-configuration-settings:enable call recordings (beta)>` config setting and the service's URL should be configured using :ref:`Job service URL <plugins-configuration-settings:job service url>`.
+Once the ``calls-offloader`` service is running, recordings should be explicitly enabled through the :ref:`Enable call recordings <configure/plugins-configuration-settings:enable call recordings (beta)>` config setting and the service's URL should be configured using :ref:`Job service URL <configure/plugins-configuration-settings:job service url>`.
 
 
-Call transcriptions can be enabled through the :ref:`Enable call transcriptions <plugins-configuration-settings:enable call transcriptions (experimental)>` config setting.
+Call transcriptions can be enabled through the :ref:`Enable call transcriptions <configure/plugins-configuration-settings:enable call transcriptions (experimental)>` config setting.
 
 .. note::
   The call transcriptions functionality is available starting in Calls version v0.22.0
@@ -418,7 +418,7 @@ Connectivity issues
 
 If calls are failing to connect or timing out, it's likely there could be a misconfiguration at either the plugin config or networking level.
 
-For example, the :ref:`RTC Server Port (UDP) <plugins-configuration-settings:rtc server port (udp)>` or the :ref:`RTC Server Port (TCP) <plugins-configuration-settings:rtc server port (tcp)>` may not be open or forwarded correctly.
+For example, the :ref:`RTC Server Port (UDP) <configure/plugins-configuration-settings:rtc server port (udp)>` or the :ref:`RTC Server Port (TCP) <configure/plugins-configuration-settings:rtc server port (tcp)>` may not be open or forwarded correctly.
 
 
 Connectivity checks
@@ -445,7 +445,7 @@ If connection succeeds, you should be able to send and receive text messages by 
    (or ``rtcd``) instance hosting the calls. When set, it should be the value of the |ice_host_override_link|
    config setting.
 
-   ``8443`` should be changed with the port configured in :ref:`RTC Server Port <plugins-configuration-settings:rtc server port (udp)>`.
+   ``8443`` should be changed with the port configured in :ref:`RTC Server Port <configure/plugins-configuration-settings:rtc server port (udp)>`.
 
    The same checks can be performed to test connectivity through the TCP port using the same commands with ``-u`` flag removed.
 

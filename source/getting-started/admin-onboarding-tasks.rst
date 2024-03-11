@@ -29,7 +29,7 @@ These settings can also be set in the ``config.json`` file.  Please see our :doc
 3. Begin to onboard users by enabling account creation or by connecting an authentication service to assist with user provisioning.
 
 - Users can be pre-provisioned with migration and bulk loading data processes based on prior collaboration systems. Please see our :ref:`migration guide <onboard/migrating-to-mattermost:migration guide>` and :doc:`bulk loading documentation </onboard/bulk-loading-data>` for additional details.
-- :ref:`AD/LDAP authentication <onboard/ad-ldap:active directory ldap setup>` and :doc:`SAML authentication </onboard/sso-saml>` are available for some subscription plans, providing identity management, single sign-on, and automatic account provisioning.
+- :doc:`AD/LDAP authentication </onboard/ad-ldap>` and :doc:`SAML authentication </onboard/sso-saml>` are available for some subscription plans, providing identity management, single sign-on, and automatic account provisioning.
 
 If your organization requires more structure and project management artifacts for the implementation of Mattermost, please see our :doc:`Enterprise roll out checklist </getting-started/enterprise-roll-out-checklist>`.
 
@@ -51,7 +51,7 @@ Common tasks
   
 **Migrating to AD/LDAP or SAML from email-based authentication**
 
-- If you have Professional or Enterprise plans, you can migrate from email authentication to Active Directory/LDAP or to SAML Single Sign-on. To set up Active Directory/LDAP, see :ref:`Active Directory/LDAP Setup <onboard/ad-ldap:active directory ldap setup>`. To set up SAML Single Sign-on, see :doc:`SAML Single-Sign-On </onboard/sso-saml>`.
+- If you have Professional or Enterprise plans, you can migrate from email authentication to Active Directory/LDAP or to SAML Single Sign-on. To set up Active Directory/LDAP, see :doc:`Active Directory/LDAP Setup </onboard/ad-ldap>`. To set up SAML Single Sign-on, see :doc:`SAML Single-Sign-On </onboard/sso-saml>`.
 - After the new authentication method is enabled, existing users cannot use the new method until they go to **Settings > Security > Sign-in method** and select **Switch to using AD/LDAP** or **Switch to using SAML Single Sign-on**. After they have switched, they can no longer use their email and password to log in.  
   
 **Deactivating a user**
@@ -115,7 +115,7 @@ Enable full content push notifications, including the sender’s name, the chann
 
 .. note::
 
-  - Mattermost subscription plans allow you to :ref:`enable HPNS <deploy/mobile-hpns:hosted push notifications service hpns>` that includes production-level uptime SLAs.
+  - Mattermost subscription plans allow you to :ref:`enable HPNS <deploy/mobile-hpns:hosted push notifications service (hpns)>` that includes production-level uptime SLAs.
 
   - Mattermost Enterprise customers can :ref:`enable ID-Only push notifications <configure/site-configuration-settings:push notification contents>` so push notification content is not passed through Apple Push Notification Service (APNS) or Google Firebase Cloud Messaging (FCM) before reaching the device. The ID-only push notification setting `offers a high level of privacy <https://mattermost.com/blog/id-only-push-notifications/>`__ while allowing team members to benefit from mobile push notifications.
 
@@ -131,7 +131,7 @@ GIFs are animated images that can make messaging more fun and engaging. Enable u
 
 **7. Enable link previews**
 
-Link previews provide a visual glimpse of relevant content for links shared in messages. Enable link previews by setting **System Console > Posts > Enable Link Previews** to **true**. See the :ref:`Enable link previews <configure/site-configuration-settings:enable link previews>` configuration settings documentation for details.
+Link previews provide a visual glimpse of relevant content for links shared in messages. Enable link previews by setting **System Console > Posts > Enable Link Previews** to **true**. See the :ref:`Enable link previews <configure/site-configuration-settings:enable website link previews>` configuration settings documentation for details.
  
 **8. Enable batched email notifications**
 
@@ -145,4 +145,4 @@ Then, enable batched email notifications by setting **System Console > Notificat
 
 Mattermost Enterprise customers can enable :doc:`Elasticsearch </scale/elasticsearch>` for optimized search performance at enterprise-scale. Elasticsearch solves many known issues with full text database search, such as dots, dashes, and email addresses returning unexpected results.
 
-Enable Elasticsearch by setting **System Console > Elasticsearch > Enable Indexing** to **true**. See the :ref:`Elasticsearch <configure/environment-configuration-settings:elasticsearch>` configuration settings documentation for details. Enabling Elasticsearch requires :ref:`setting up an Elasticsearch server <scale/elasticsearch:setting up an elasticsearch server>`.
+Enable Elasticsearch by setting **System Console > Elasticsearch > Enable Indexing** to **true**. See the :ref:`Elasticsearch <configure/environment-configuration-settings:elasticsearch>` configuration settings documentation for details. Enabling Elasticsearch requires :ref:`setting up an Elasticsearch server <scale/elasticsearch:set up an elasticsearch server>`.

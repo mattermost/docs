@@ -28,7 +28,7 @@ The binary talks to a database, typically PostgreSQL, and a filestore.
 Push notification service
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The Mattermost :doc:`hosted push notification service </deploy/mobile-hpns>` can be used to send push notifications to mobile clients. Team Edition users can deploy the service using the Mattermost :ref:`test push notification service <deploy/mobile-hpns:test push notifications service tpns>` or :ref:`host their own push notification service <deploy/mobile-hpns:host your own push proxy service>` and :doc:`compile their mobile applications </deploy/build-custom-mobile-apps>` to use that service.
+The Mattermost :doc:`hosted push notification service </deploy/mobile-hpns>` can be used to send push notifications to mobile clients. Team Edition users can deploy the service using the Mattermost :ref:`test push notification service <deploy/mobile-hpns:test push notifications service (tpns)>` or :ref:`host their own push notification service <deploy/mobile-hpns:host your own push proxy service>` and :doc:`compile their mobile applications </deploy/build-custom-mobile-apps>` to use that service.
 
 Proxy
 ~~~~~
@@ -39,7 +39,7 @@ A proxy server is a server (a computer system or an application) that acts as an
 - **Performance:** In a High Availability configuration, the proxy server balances the network load across multiple Mattermost servers for optimized performance. A hardware proxy with dedicated devices for processing SSL encryption and decryption can also be used to increase performance.
 - **Monitoring**: A proxy server can monitor connection traffic and record traffic in standard audit logs that common monitoring tools like Kibana and Splunk can consume and report on. Some of the events that can be captured include file uploads and downloads, which are not tracked by the Mattermost server logging process.
 
-Mattermost provides documentation and support for the `NGINX proxy <https://www.nginx.com/>`__. For information on how to install and configure NGINX for your environment, see :ref:`our guide <guides/deployment:install guides>`. Mattermost also unofficially supports other proxies including `Apache 2 <https://forum.mattermost.com/t/configuring-apache2-as-a-proxy-for-mattermost-server/11938/3>`__.
+Mattermost provides documentation and support for the `NGINX proxy <https://www.nginx.com/>`__. For information on how to install and configure NGINX for your environment, see :doc:`our deployment guides </guides/deployment>`. Mattermost also unofficially supports other proxies including `Apache 2 <https://forum.mattermost.com/t/configuring-apache2-as-a-proxy-for-mattermost-server/11938/3>`__.
 
 .. image:: ../images/architecture_with_proxy.png
 

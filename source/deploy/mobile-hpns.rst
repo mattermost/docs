@@ -1,7 +1,7 @@
 Mobile push notifications
 =========================
 
-A push proxy is a key technology behind notification transmission that enables notifications between the server and a Mobile app. See our :ref:`Mobile Apps FAQ documentation <deploy/mobile-faq:how do push notifications work>` to learn more about how push notifications work.
+A push proxy is a key technology behind notification transmission that enables notifications between the server and a Mobile app. See our :ref:`Mobile Apps FAQ documentation <deploy/mobile-faq:how do push notifications work?>` to learn more about how push notifications work.
 
 Mattermost offers a :doc:`Mattermost Push Notification Service (MPNS) </deploy/deployment-overview>` for Team Edition, Cloud, and Enterprise deployments.
 
@@ -86,7 +86,7 @@ Mattermost Enterprise and Cloud customers can limit the data sent to Apple and G
 
 When enabled, a message containing only an ID is transmitted. Once the mobile client receives this ID, the message contents are loaded from the server, and are never transmitted through the Apple Push Notification Service (APNS) or Firebase Cloud Messaging (FCM). The contents of the message also won't reach the :ref:`Mattermost Push Notification Service (MPNS) <deploy/deployment-overview:push notification service>`.
 
-See our :ref:`Configuration Settings <configure/site-configuration-settings:push notification contents>` documentation to learn more about the ID-only push notifications configuration setting. See our :ref:`Mobile Apps FAQ documentation <deploy/mobile-faq:how can i use id only push notifications to protect notification content from being exposed to third party services>` for details on using ID-only push notifications for data privacy.
+See our :ref:`configuration settings <configure/site-configuration-settings:push notification contents>` documentation to learn more about the ID-only push notifications configuration setting. See our :ref:`Mobile Apps FAQ documentation <deploy/mobile-faq:how can i use id-only push notifications to protect notification content from being exposed to third party services?>` for details on using ID-only push notifications for data privacy.
 
 Host your own push proxy service
 --------------------------------

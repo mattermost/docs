@@ -16,7 +16,7 @@ You can migrate your Cloud workspace data to a self-hosted deployment at any tim
 How does the process work?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Before you export and migrate your data, you must :ref:`install Mattermost <guides/deployment:install guides>` on the server you’ll be using to run Mattermost. The migration is done using the mmctl CLI tool, which is a remote CLI tool for Mattermost that's installed locally and uses the Mattermost API. ``mmctl`` is pre-installed.
+Before you export and migrate your data, you must :doc:`install Mattermost </guides/deployment>` on the server you’ll be using to run Mattermost. The migration is done using the mmctl CLI tool, which is a remote CLI tool for Mattermost that's installed locally and uses the Mattermost API. ``mmctl`` is pre-installed.
 
 The :ref:`mmctl usage notes <manage/mmctl-command-line-tool:mmctl usage notes>` provide some additional context and information which you can reference before and during the process.
 

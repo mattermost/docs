@@ -32,7 +32,7 @@ There are two ways to set up AD/LDAP:
      - Next, configure AD/LDAP and then convert your System Admin account to use the AD/LDAP login method.
 
 2. **Configure AD/LDAP by editing ``config.json``**
-     - Edit ``config.json`` to enable AD/LDAP based on the :ref:`AD/LDAP settings documentation <configure/authentication-configuration-settings:ad ldap>`. When you log in to Mattermost the first user to log in with valid AD/LDAP credentials will be assigned the System Admin role.
+     - Edit ``config.json`` to enable AD/LDAP based on the :ref:`AD/LDAP settings documentation <configure/authentication-configuration-settings:ad/ldap>`. When you log in to Mattermost the first user to log in with valid AD/LDAP credentials will be assigned the System Admin role.
 
 Configure AD/LDAP login
 --------------------------
@@ -41,7 +41,7 @@ Configure AD/LDAP login
      - Create a new workspace and create an account using email and password, which is automatically assigned the **System Administrator** role since it is the first account created. You may also assign the role to another account.
 
 2. **Configure AD/LDAP.**
-     - Go to **System Console > Authentication > AD/LDAP** and fill in AD/LDAP settings based on the :ref:`configuration settings documentation <configure/authentication-configuration-settings:ad ldap>`.
+     - Go to **System Console > Authentication > AD/LDAP** and fill in AD/LDAP settings based on the :ref:`configuration settings documentation <configure/authentication-configuration-settings:ad/ldap>`.
 
 3. **Confirm that AD/LDAP sign-on is enabled.**
      - After AD/LDAP has been enabled, confirm that users can log in using AD/LDAP credentials.
@@ -79,7 +79,7 @@ To configure AD/LDAP synchronization with AD/LDAP sign-in:
 
 .. note::
    - Make sure that at least one LDAP user is in Mattermost or the sync will not complete.
-   - Synchronization with AD/LDAP settings in the System Console can be used to determine the connectivity and availability of arbitrary hosts. System admins concerned about this can use custom admin roles to limit access to modifying these settings. See the :ref:`system admin roles <onboard/system-admin-roles:edit privileges of system admin roles advanced>` documentation for details. 
+   - Synchronization with AD/LDAP settings in the System Console can be used to determine the connectivity and availability of arbitrary hosts. System admins concerned about this can use custom admin roles to limit access to modifying these settings. See the :ref:`system admin roles <onboard/additional-system-admin-roles:edit privileges of system admin roles (advanced)>` documentation for details. 
 
 
 Configure AD/LDAP sign-in using filters

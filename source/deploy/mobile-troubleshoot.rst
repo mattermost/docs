@@ -22,7 +22,7 @@ I see a “Connecting…” bar that does not go away
 
 If your app is working properly, you should see a grey “Connecting…” bar that clears or says “Connected” after the app reconnects.
 
-If you are seeing this message all the time, and your internet connection seems fine, ask your server administrator if the server uses NGINX or another webserver as a reverse proxy. If so, they should check that it is configured correctly for :ref:`supporting the websocket connection for APIv4 endpoints <install/install-ubuntu-1604:configuring nginx as a proxy for mattermost server>`.
+If you are seeing this message all the time, and your internet connection seems fine, ask your server administrator if the server uses NGINX or another webserver as a reverse proxy. If so, they should check that it is configured correctly for :ref:`supporting the websocket connection for APIv4 endpoints <install/installing-ubuntu-1804-LTS:configure nginx as a proxy for mattermost server>`.
 
 I’m not receiving push notifications on my device
 -------------------------------------------------

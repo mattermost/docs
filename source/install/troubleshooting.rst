@@ -25,7 +25,7 @@ Deployment troubleshooting
 Docker deployments
 ~~~~~~~~~~~~~~~~~~
 
-If you're deploying the Mattermost server using Docker on an M1 Mac and encountering permission issues in the Docker container, :ref:`re-create the required directories and set their permissions <guides/deployment:deploy mattermost for production use>`, then skip the following command:
+If you're deploying the Mattermost server using Docker on an M1 Mac and encountering permission issues in the Docker container, :ref:`re-create the required directories and set their permissions <install/install-docker:deploy mattermost on docker for production use>`, then skip the following command:
 
 .. code:: bash
 
@@ -79,7 +79,7 @@ Some of these suggestions can be done directly, and others may need consultation
 Review Mattermost logs
 ----------------------
 
-You can access logs for Mattermost and use them for troubleshooting. These steps assume that you have :ref:`System Admin permissions <help/getting-started/managing-members:system admin>`.
+You can access logs for Mattermost and use them for troubleshooting. These steps assume that you have appropriate :doc: `system admin permissions </onboard/advanced-permissions>` to do so. 
 
 Mattermost Server logs 
 ----------------------

@@ -22,7 +22,7 @@ The Mattermost Nonprofit License enables nonprofit and open-source organizations
 
 .. tip::
 
-  Nonprofit and open-source organizations that meet the :ref:`eligibility requirements <about/subscription:who's eligible>` can apply for the Mattermost Nonprofit license by `completing this form <https://support.mattermost.com/hc/en-us/requests/new?ticket_form_id=17664739497236>`__. Please note that it may take up to six weeks for us to respond to your request.
+  Nonprofit and open-source organizations that meet the `eligibility requirements <#who-s-eligible>`_ can apply for the Mattermost Nonprofit license by `completing this form <https://support.mattermost.com/hc/en-us/requests/new?ticket_form_id=17664739497236>`__. Please note that it may take up to six weeks for us to respond to your request.
 
 What's included?
 ~~~~~~~~~~~~~~~~~

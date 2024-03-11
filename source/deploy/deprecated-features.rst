@@ -41,12 +41,12 @@ Mattermost Server v6.0.0
 - MySQL versions below 5.7.12. Minimum support will now be for 5.7.12. This version introduced a native JSON data type that lets us improve performance and scalability of several database fields (most notably Users and Posts props). Additionally, version 5.6 (our current minimum version) reached `EOL in February 2021 <https://www.mysql.com/support/eol-notice.html>`_.
 - Elasticsearch 5 and 6. `Versions 5.x reached EOL in March of 2019, and versions 6.x reached EOL in November 2020 <https://www.elastic.co/support/eol>`_. Our minimal supported version with Mattermost v6.0 will be Elasticsearch version 7.0.
 - Windows 7 reached `EOL in January 2020 <https://support.microsoft.com/en-us/windows/windows-7-support-ended-on-january-14-2020-b75d4580-2cc7-895a-2c9c-1466d9a53962>`_. We will no longer provide support for the desktop app issues on Windows 7.
-- :ref:`DisableLegacyMFAEndpoint <administration/config-settings:disable legacy mfa api endpoint>` configuration setting.
+- :ref:`DisableLegacyMFAEndpoint <configure/deprecated-configuration-settings:disable legacy mfa api endpoint>` configuration setting.
 - :ref:`Experimental Timezone <configure/deprecated-configuration-settings:timezone>` configuration setting.
 - All legacy channel sidebar experimental configuration settings. We encourage customers using these settings to upgrade to v5.32 or later to access custom, collapsible channel categories among many other channel organization features. The settings being deprecated include:
   
   - :ref:`EnableLegacySidebar <configure/deprecated-configuration-settings:enable legacy sidebar>`
-  - :ref:`ExperimentalTownSquareIsReadOnly <configure/deprecated-configuration-settings:town square is read only>`
+  - :ref:`ExperimentalTownSquareIsReadOnly <configure/deprecated-configuration-settings:town square is read-only>`
   - :ref:`ExperimentalHideTownSquareinLHS <configure/deprecated-configuration-settings:town square is hidden in left hand sidebar>`
   - :ref:`EnableXToLeaveChannelsFromLHS <configure/deprecated-configuration-settings:enable x to leave channels from left hand sidebar>`
   - :ref:`CloseUnusedDirectMessages <configure/deprecated-configuration-settings:autoclose direct messages in sidebar>`
@@ -89,7 +89,7 @@ Mattermost Server v5.12.0
 Mattermost Server v5.6.0
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- Removed support for WebRTC in beta, and replaced it with other video and audio calling solutions. Learn more in our :doc:`documentation </deployment/video-and-audio-calling>`.
+- Removed support for WebRTC in beta, and replaced it with other video and audio calling solutions. 
 - Removed support for IE11 Mobile View due to low usage and instability in order to invest that effort in maintaining a high quality experience on other more used browsers. End users on IE11 will thus have an increased minimum screen size. Mobile View is still supported on Chrome, Firefox, Safari, Edge as well as the desktop apps.
 
 Mattermost Server v5.0.0

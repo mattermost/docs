@@ -163,7 +163,7 @@ The following options are available for securing your push notification service:
 
 4. Securing the Mattermost Apple App Store and Google Play apps:
 
-  - When using Mattermost mobile apps from the App Store and Google Play, purchase an annual subscription to Mattermost Professional or Enterprise to use Mattermost's :ref:`Hosted Push Notification Service (HPNS) <deploy/mobile-hpns:hosted push notifications service hpns>`.
+  - When using Mattermost mobile apps from the App Store and Google Play, purchase an annual subscription to Mattermost Professional or Enterprise to use Mattermost's :ref:`Hosted Push Notification Service (HPNS) <deploy/mobile-hpns:hosted push notifications service (hpns)>`.
 
 .. note:: 
 
@@ -297,7 +297,7 @@ Deploy Mattermost in a proxy-aware configuration with a pre-proxy relay
 
 The Mattermost push notification service is designed to send traffic directly to the `Apple Push Notification Service (APNS) <https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html#//apple_ref/doc/uid/TP40008194-CH8-SW1>`_ and `Google Fire Cloud Messaging (FCM) <https://firebase.google.com/docs/cloud-messaging>`_ services. 
 
-In a proxy-aware configuration, a :ref:`pre-proxy relay <overview/faq:what are pre proxy and post proxy relays>` accepts messages from the `Mattermost Push Proxy <https://developers.mattermost.com/contribute/mobile/push-notifications/service/>`_ and forwards them to a corporate proxy enforcing your internal IT requirements, before transmitting to their final destination.
+In a proxy-aware configuration, a pre-proxy relay accepts messages from the `Mattermost Push Proxy <https://developers.mattermost.com/contribute/mobile/push-notifications/service/>`_ and forwards them to a corporate proxy enforcing your internal IT requirements, before transmitting to their final destination.
 
 See a sample architectural overview below: 
 
@@ -315,7 +315,7 @@ Deploy Mattermost with connection restricted post-proxy relay in DMZ or a truste
 
 Some legacy corporate proxy configurations may be incompatible with the requirements of modern mobile architectures, such as the requirement of HTTP/2 requests from Apple to send push notifications to iOS devices.
 
-In this case, a :ref:`post-proxy relay <overview/faq:what are pre proxy and post proxy relays>` can be deployed to take messages from the Mattermost server passing through your corporate IT proxy in the incompatible format, e.g. HTTP/1.1, transform it to HTTP/2 and relay it to its final destination, either to the `Apple Push Notification Service (APNS) <https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html#//apple_ref/doc/uid/TP40008194-CH8-SW1>`_ and `Google Fire Cloud Messaging (FCM) <https://firebase.google.com/docs/cloud-messaging>`_ services. 
+In this case, a post-proxy relay can be deployed to take messages from the Mattermost server passing through your corporate IT proxy in the incompatible format, e.g. HTTP/1.1, transform it to HTTP/2 and relay it to its final destination, either to the `Apple Push Notification Service (APNS) <https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html#//apple_ref/doc/uid/TP40008194-CH8-SW1>`_ and `Google Fire Cloud Messaging (FCM) <https://firebase.google.com/docs/cloud-messaging>`_ services. 
 
 Ths **post-proxy relay** `can be configured using the Mattermost Push Proxy installation guide <https://developers.mattermost.com/contribute/mobile/push-notifications/service/>`_ with connection restrictions to meet your custom security and compliance requirements.
 

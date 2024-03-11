@@ -29,7 +29,7 @@ End users can securely share messages and files using a web-based Mattermost exp
 Mobile App experience
 ^^^^^^^^^^^^^^^^^^^^^^
 
-Native applications for iOS and Android are available for interacting with the Mattermost server and receiving encrypted push notifications from your private cloud. Organizations can use :ref:`a Hosted Push Notification Service <deploy/mobile-hpns:hosted push notifications service hpns>` with encrypted communications to mobile apps on the App Store and Google Play, or deploy to an :ref:`Enterprise App Store <deploy/mobile-hpns:mobile push notifications>` on your organization's private network. A :ref:`Test Push Notification Service <deploy/mobile-hpns:hosted push notifications service hpns>` is available for use while evaluating options.
+Native applications for iOS and Android are available for interacting with the Mattermost server and receiving encrypted push notifications from your private cloud. Organizations can use :ref:`a Hosted Push Notification Service <deploy/mobile-hpns:hosted push notifications service (hpns)>` with encrypted communications to mobile apps on the App Store and Google Play, or deploy to an :ref:`Enterprise App Store <deploy/mobile-hpns:mobile push notifications>` on your organization's private network. A :ref:`Test Push Notification Service <deploy/mobile-hpns:hosted push notifications service (hpns)>` is available for use while evaluating options.
 
 Mobile web experience
 ^^^^^^^^^^^^^^^^^^^^^
@@ -94,7 +94,7 @@ The :ref:`Mattermost Push Notification Service (MPNS) <deploy/mobile-hpns:enable
 1. Apple Push Notification Service to send notifications to the Mattermost iOS app.
 2. Google Push Notification Service to send notifications to the Mattermost Android app.
 
-If you're deploying mobile applications to an Enterprise App Store, your MPNS should be behind your firewall on your private network. If you're using mobile apps in the App Store and Google Play, you can relay notifications to mobile apps using the :ref:`Hosted Push Notification Service (HPNS) <deploy/mobile-hpns:hosted push notifications service hpns>`.
+If you're deploying mobile applications to an Enterprise App Store, your MPNS should be behind your firewall on your private network. If you're using mobile apps in the App Store and Google Play, you can relay notifications to mobile apps using the :ref:`Hosted Push Notification Service (HPNS) <deploy/mobile-hpns:hosted push notifications service (hpns)>`.
 
 HPNS does not connect to your mobile apps directly. It sends messages over an encrypted channel to Apple or Google which are relayed to the app users downloaded from the App Store or Google Play.
 

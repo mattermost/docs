@@ -26,10 +26,10 @@ We recommend one of two options: `per-app VPN <#id3>`_ or a `device VPN <#id4>`_
 
 We also recommend you review the following commonly-asked questions about data security on mobile devices:
 
-- :ref:`How data is handled on a device after an account is deleted? <deploy/mobile-faq:how is data handled on mobile devices after a user account is deactivated>`
-- :ref:`What post metadata is sent in mobile push notifications? <deploy/mobile-faq:what post metadata is sent in mobile push notifications>`
-- :ref:`What are my options for securing the Mobile apps? <deploy/mobile-faq:what are my options for securing the mobile apps>`
-- :ref:`What are my options for securing push notifications? <deploy/mobile-faq:what are my options for securing push notifications>`
+- :ref:`How data is handled on a device after an account is deleted? <deploy/mobile-faq:how is data handled on mobile devices after a user account is deactivated?>`
+- :ref:`What post metadata is sent in mobile push notifications? <deploy/mobile-faq:what post metadata is sent in mobile push notifications?>`
+- :ref:`What are my options for securing the Mobile apps? <deploy/mobile-faq:what are my options for securing the mobile apps?>`
+- :ref:`What are my options for securing push notifications? <deploy/mobile-faq:what are my options for securing push notifications?>`
 
 Per-app VPN
 ~~~~~~~~~~~
@@ -49,7 +49,7 @@ Connect via corporate proxy server
 
 Review the following commonly-asked questions about connecting through a corporate proxy server:
 
-- :ref:`How do I receive mobile push notifications if my IT policy requires the use of a corporate proxy server? <deploy/mobile-faq:how do i receive mobile push notification if my it policy requires the use of a corporate proxy server>`
-- :ref:`Deploy Mattermost with connection restricted post-proxy relay in DMZ or a trusted cloud environment <deploy/mobile-faq:deploy mattermost with connection restricted post proxy relay in dmz or a trusted cloud environment>`
+- :ref:`How do I receive mobile push notifications if my IT policy requires the use of a corporate proxy server? <deploy/mobile-faq:how do i receive mobile push notifications if my it policy requires the use of a corporate proxy server?>`
+- :ref:`Deploy Mattermost with connection restricted post-proxy relay in DMZ or a trusted cloud environment <deploy/mobile-faq:deploy mattermost with connection restricted post-proxy relay in dmz or a trusted cloud environment>`
 - :ref:`Whitelist Mattermost push notification proxy to bypass your corporate proxy server <deploy/mobile-faq:whitelist mattermost push notification proxy to bypass your corporate proxy server>`
 - :ref:`Run App Store versions of the Mattermost Mobile apps <deploy/mobile-faq:run app store versions of the mattermost mobile apps>`

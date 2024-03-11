@@ -21,7 +21,7 @@ You can customize and distribute your own Mattermost desktop application by conf
 ~~~~~~~~~~~~~~~~
 
   Description
-    List of server URLs and their display names added to the desktop app by default, which the user cannot modify. Users can still add servers :ref:`through the Server Management page <deploy/desktop-app:enableservermanagement>` unless ``enableServerManagement`` is set to ``false``. 
+    List of server URLs and their display names added to the desktop app by default, which the user cannot modify. Users can still add servers `through the Server Management page <#enableservermanagement>`_ unless ``enableServerManagement`` is set to ``false``. 
     
     Expects an array of key-value pairs.
 

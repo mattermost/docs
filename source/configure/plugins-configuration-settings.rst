@@ -421,7 +421,7 @@ ICE host override
 |   - A hostname (e.g. domain name) can be specified in this setting, but an IP address will be passed to clients. This means that a DNS resolution happens on the Mattermost instance which could result in a different IP address from the one the clients would see, causing connectivity to fail. When in doubt, we recommend using an IP address directly or confirming that the resolution on the host side reflects the one on the client.                           |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-.. |ice_host_override_link| replace:: :ref:`ICE Host Override <plugins-configuration-settings:ice host override>`
+.. |ice_host_override_link| replace:: :ref:`ICE Host Override <configure/plugins-configuration-settings:ice host override>`
 
 .. config:setting:: plugins-callsrtcdserviceurl
   :displayname: RTCD service URL (Plugins - Calls)
@@ -500,7 +500,7 @@ ICE servers configurations
 | - If hosting calls through the plugin (i.e. not using the |rtcd_service|) any configured STUN server may also be used to find the instance's public IP when none is provided through the |ice_host_override_link| option. |                                                                                                  |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
 
-.. |rtcd_service| replace:: :ref:`rtcd service <calls-deployment:the rtcd service>`
+.. |rtcd_service| replace:: :ref:`rtcd service <configure/calls-deployment:the rtcd service>`
 
 **Example**
  
@@ -728,7 +728,7 @@ Call recording quality
 |                                                                                                                             | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.calls.recordingquality``                                                                    |
 | The default is **Medium**. This is a required value.                                                                        |                                                                                                                                                                |
 +-----------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **Note**: The quality setting will affect the performance of the job service and the file size of recordings. Refer to the :ref:`deployment section <calls-deployment:configure recording and transcriptions>` for more information.                                                         |
+| **Note**: The quality setting will affect the performance of the job service and the file size of recordings. Refer to the :ref:`deployment section <configure/calls-deployment:configure recording and transcriptions>` for more information.                                               |
 +-----------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: plugins-enablecalltranscriptions
@@ -771,7 +771,7 @@ Transcriber model size
 |                                                                                                                                                                                                                                                                                                              | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.calls.transcribermodelsize``                                                                |
 | The default is **Base**. This is a required value.                                                                                                                                                                                                                                                           |                                                                                                                                                                |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **Note**: The model size setting will affect the performance of the job service. Refer to the :ref:`deployment section <calls-deployment:configure recording and transcriptions>` for more information. This setting is available starting in plugin version 0.22.                                                                                                                                                                                                            |
+| **Note**: The model size setting will affect the performance of the job service. Refer to the :ref:`configure/deployment section <calls-deployment:configure recording and transcriptions>` for more information. This setting is available starting in plugin version 0.22.                                                                                                                                                                                                  |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: plugins-callsenableipv6
