@@ -21,7 +21,7 @@ What database and filestore should I use for Mattermost?
 
 Always refer to the Mattermost server documentation for what databases and filestores are supported.
 
-The following documentation on :doc:`scaling for enterprise <scaling-for-enterprise>` is a good place to start.
+The following documentation on :doc:`scaling for enterprise </scale/scaling-for-enterprise>` is a good place to start.
 
 What are the Operator-Managed database and filestore options?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
