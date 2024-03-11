@@ -45,7 +45,7 @@ Mattermost is your preferred platform
 
 When Mattermost is preferred, you'll receive Microsoft Teams messages and notifications in Mattermost.
 
-We strongly recommend that you disable notifications in Microsoft Teams. If you don't, you'll receive duplicate message notifications in both platforms. See the `Microsoft Teams notifications documentation <https://support.microsoft.com/en-us/office/manage-notifications-in-microsoft-teams-1cc31834-5fe5-412b-8edb-43fecc78413d>`__ for details.
+We recommend that you disable notifications in Microsoft Teams. If you don't, you'll receive duplicate message notifications in both platforms. See the `Microsoft Teams notifications documentation <https://support.microsoft.com/en-us/office/manage-notifications-in-microsoft-teams-1cc31834-5fe5-412b-8edb-43fecc78413d>`__ for details.
 
 Microsoft Teams is your preferred platform
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
