@@ -185,7 +185,7 @@ Enable security alerts
 |   to be enabled.                                                |                                                                                  |
 | - **false**: Security alerts are disabled.                      |                                                                                  |
 +-----------------------------------------------------------------+----------------------------------------------------------------------------------+
-| See the :ref:`Telemetry <manage/telemetry:security update check feature>` documentation to learn more.                                          |
+| See the :ref:`Telemetry <manage/telemetry:security update check feature>` documentation to learn more.                                             |
 +-----------------------------------------------------------------+----------------------------------------------------------------------------------+
 
 .. config:setting:: smtp-servertimeout

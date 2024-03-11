@@ -112,9 +112,8 @@ Web server connection security
 | - **Not specified**: Mattermost will connect over an unsecure         | - Environment variable: ``MM_SERVICESETTINGS_CONNECTIONSECURITY``     |
 |   connection.                                                         |                                                                       |
 | - **TLS**: Encrypts the communication between Mattermost              |                                                                       |
-|   clients and your server. See the :doc:`configuring TLS on Mattermost     |                                                                       |
-|   </install/config-tls-mattermost>`                            |                                                                       |
-|   for more details                                                    |                                                                       |
+|   clients and your server. See the :doc:`configuring TLS on           |                                                                       |
+|   Mattermost </install/config-tls-mattermost>` for more details.      |                                                                       |
 +-----------------------------------------------------------------------+-----------------------------------------------------------------------+
 
 .. config:setting:: web-tlscertificatefile
@@ -178,7 +177,7 @@ Use Let's Encrypt
 
 +-----------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 | Enable the automatic retrieval of certificates from Let’s Encrypt.                            | - System Config path: **Environment > Web Server**                       |
-| See the :doc:`configuring TLS on Mattermost documentation </install/config-tls-mattermost>` | - ``config.json`` setting: ``".ServiceSettings.UseLetsEncrypt: false",`` |
+| See the :doc:`configuring TLS on Mattermost documentation </install/config-tls-mattermost>`   | - ``config.json`` setting: ``".ServiceSettings.UseLetsEncrypt: false",`` |
 | for more details on setting up Let’s Encrypt.                                                 | - Environment variable: ``MM_SERVICESETTINGS_USELETSENCRYPT``            |
 |                                                                                               |                                                                          |
 | - **true**: The certificate will be retrieved when a client                                   |                                                                          |
@@ -371,7 +370,7 @@ Managed resource paths
 +--------------------------------------------------------+-------------------------------------------------------------------------+
 | **Note:**                                                                                                                        |
 | When using the Mattermost Desktop App, additional configuration is required to open the link within the Desktop App instead of   |
-| in a browser. See the :doc:`desktop managed resources </install/desktop-app-managed-resources>`                                |
+| in a browser. See the :doc:`desktop managed resources </install/desktop-app-managed-resources>`                                  |
 | documentation for details.                                                                                                       |
 +--------------------------------------------------------+-------------------------------------------------------------------------+
 
@@ -411,8 +410,8 @@ Purge all caches
 | Select the **Purge All Caches** button in the System     |                                                               |
 | Console to purge all caches.                             |                                                               |
 +----------------------------------------------------------+---------------------------------------------------------------+
-| **Note**: Purging the caches may adversely impact performance. Deployments using :doc:`high availability clusters             |
-| </scale/high-availability-cluster>` will attempt to purge all the servers in the cluster                          |
+| **Note**: Purging the caches may adversely impact performance. Deployments using :doc:`high availability clusters        |
+| </scale/high-availability-cluster>` will attempt to purge all the servers in the cluster                                 |
 +----------------------------------------------------------+---------------------------------------------------------------+
 
 .. config:setting:: web-websocketurl

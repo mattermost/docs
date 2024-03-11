@@ -477,8 +477,8 @@ Aggregate search indexes
 |                                                               |                                                                                        |
 | Numerical input. Default is **365** days.                     |                                                                                        |
 +---------------------------------------------------------------+----------------------------------------------------------------------------------------+
-| **Note**: If you’re using :doc:`data retention </comply/data-retention-policy>` and                                                                  |
-| :doc:`Elasticsearch </scale/elasticsearch>`, configure this with a value greater than your data retention policy.                                    |
+| **Note**: If you’re using :doc:`data retention </comply/data-retention-policy>` and                                                                    |
+| :doc:`Elasticsearch </scale/elasticsearch>`, configure this with a value greater than your data retention policy.                                      |
 +---------------------------------------------------------------+----------------------------------------------------------------------------------------+
 
 .. config:setting:: elastic-postaggregatorstarttime

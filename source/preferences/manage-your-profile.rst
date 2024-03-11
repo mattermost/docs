@@ -40,8 +40,8 @@ Select your profile picture and select **Profile** to manage your Mattermost pro
 |                     | .. note::                                                                                       |
 |                     |                                                                                                 |
 |                     |   You won't be notified when someone types your nickname unless you add it to the **Words that  |
-|                     |   Trigger Mentions** notifications list as a :doc:`Notifications                                     |
-|                     |   </preferences/manage-your-notifications>` preference.                                  |
+|                     |   Trigger Mentions** notifications list as a :doc:`Notifications                                |
+|                     |   </preferences/manage-your-notifications>` preference.                                         |
 +---------------------+-------------------------------------------------------------------------------------------------+
 | Position            | (Optional) Position can be used to describe your role or job title.                             |
 |                     | Your position appears in the profile popup that displays when you select                        |

@@ -27,7 +27,7 @@ Enable image proxy
 |   external images.                                            |                                                                     |
 | - **false**: Disables the image proxy.                        |                                                                     |
 +---------------------------------------------------------------+---------------------------------------------------------------------+
-| See the :doc:`image proxy </deploy/image-proxy>` documentation to learn more.                                                     |
+| See the :doc:`image proxy </deploy/image-proxy>` documentation to learn more.                                                       |
 +---------------------------------------------------------------+---------------------------------------------------------------------+
 
 .. config:setting:: image-proxytype
@@ -54,7 +54,7 @@ Image proxy type
 |   as the image proxy.                                         |                                                                               |
 | - **atmos/camo**: An external atmos/camo image proxy is used. |                                                                               |
 +---------------------------------------------------------------+-------------------------------------------------------------------------------+
-| See the :doc:`image proxy </deploy/image-proxy>` documentation to learn more.                                                               |
+| See the :doc:`image proxy </deploy/image-proxy>` documentation to learn more.                                                                 |
 +---------------------------------------------------------------+-------------------------------------------------------------------------------+
 
 .. config:setting:: image-remoteimageproxyurl
@@ -96,5 +96,5 @@ Remote image proxy options
 | This setting isn't needed when using the **local** image      | - ``config.json setting``: ``".ImageProxySettings.RemoteImageProxyOptions",`` |
 | proxy type.                                                   | - Environment variable: ``MM_IMAGEPROXYSETTINGS_REMOTEIMAGEPROXYOPTIONS``     |
 +---------------------------------------------------------------+-------------------------------------------------------------------------------+
-| See the :doc:`image proxy </deploy/image-proxy>` documentation to learn more.                                                               |
+| See the :doc:`image proxy </deploy/image-proxy>` documentation to learn more.                                                                 |
 +---------------------------------------------------------------+-------------------------------------------------------------------------------+

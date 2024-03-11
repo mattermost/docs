@@ -78,7 +78,7 @@ Override hostname
 | - If left blank, Mattermost attempts to get the hostname from   |                                                                      |
 |   the operating system or uses the IP address.                  |                                                                      |
 +-----------------------------------------------------------------+----------------------------------------------------------------------+
-| See the :doc:`high availability cluster </scale/high-availability-cluster>` documentation for details.                               |
+| See the :doc:`high availability cluster </scale/high-availability-cluster>` documentation for details.                                 |
 +-----------------------------------------------------------------+----------------------------------------------------------------------+
 
 .. config:setting:: ha-useipaddress

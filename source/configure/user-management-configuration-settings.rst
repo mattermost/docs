@@ -78,7 +78,7 @@ Groups
 | to Mattermost groups.                                         | - ``config.json setting``: N/A                              |
 |                                                               | - Environment variable: N/A                                 |
 +---------------------------------------------------------------+-------------------------------------------------------------+
-| See the :doc:`AD/LDAP groups </onboard/ad-ldap-groups-synchronization>` documentation for                                 |
+| See the :doc:`AD/LDAP groups </onboard/ad-ldap-groups-synchronization>` documentation for                                   |
 | details.                                                                                                                    |
 +---------------------------------------------------------------+-------------------------------------------------------------+
 
@@ -96,8 +96,8 @@ Teams
 | teams.                                                        | - ``config.json setting``: N/A                              |
 |                                                               | - Environment variable: N/A                                 |
 +---------------------------------------------------------------+-------------------------------------------------------------+
-| See the :ref:`using AD/LDAP synchronized groups to manage team or private channel membership                                     |
-| <onboard/cloud-groups:using ad ldap group synchronization>` documentation for details.                              |
+| See the :ref:`using AD/LDAP synchronized groups to manage team or private channel membership                                |
+| <onboard/cloud-groups:using ad ldap group synchronization>` documentation for details.                                      |
 +---------------------------------------------------------------+-------------------------------------------------------------+
 
 ----
@@ -138,7 +138,7 @@ Permissions
 |                                                                     | - ``config.json setting``: N/A                              |
 |                                                                     | - Environment variable: N/A                                 |
 +---------------------------------------------------------------------+-------------------------------------------------------------+
-| See :doc:`advanced permissions </onboard/advanced-permissions>` documentation for details                                       |
+| See :doc:`advanced permissions </onboard/advanced-permissions>` documentation for details                                         |
 +---------------------------------------------------------------------+-------------------------------------------------------------+
 
 ----
@@ -155,5 +155,5 @@ System roles
 |                                                                      | - ``config.json setting``: N/A                             |
 |                                                                      | - Environment variable: N/A                                |
 +----------------------------------------------------------------------+------------------------------------------------------------+
-| See :doc:`additional system admin roles </onboard/system-admin-roles>` documentation for details                                |
+| See :doc:`additional system admin roles </onboard/system-admin-roles>` documentation for details                                  |
 +----------------------------------------------------------------------+------------------------------------------------------------+

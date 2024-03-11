@@ -259,7 +259,7 @@ Enable webhook debugging
 | - **false**: The contents of incoming         |                                                                              |
 |   webhooks aren’t printed to log files.       |                                                                              |
 +-----------------------------------------------+------------------------------------------------------------------------------+
-| **Note**: Enable debug logs by changing the :ref:`file log level <manage/logging:file logs>` to ``DEBUG`` to include      |
+| **Note**: Enable debug logs by changing the :ref:`file log level <manage/logging:file logs>` to ``DEBUG`` to include         |
 | the request body of incoming webhooks in logs.                                                                               |
 +-----------------------------------------------+------------------------------------------------------------------------------+
 
@@ -337,6 +337,6 @@ Enable diagnostics and error reporting
 | - **false**: Diagnostics and error reports   |                                                                         |
 |   aren't sent.                               |                                                                         |
 +----------------------------------------------+-------------------------------------------------------------------------+
-| **Note**: See the :ref:`telemetry <manage/telemetry:error and diagnostics reporting feature>` docummentation for    |
+| **Note**: See the :ref:`telemetry <manage/telemetry:error and diagnostics reporting feature>` docummentation for       |
 | details on the information Mattermost collects.                                                                        |
 +----------------------------------------------+-------------------------------------------------------------------------+

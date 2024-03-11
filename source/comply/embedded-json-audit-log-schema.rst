@@ -83,13 +83,13 @@ JSON data model
 |            |                              | Mattermost currently supports three log formats: plain, JSON, and `GELF <https://docs.graylog.org/docs/gelf>`__.                    |
 |            |                              |                                                                                                                                     |
 |            |                              | - Plain log format uses `RFC3339 <https://www.rfc-editor.org/rfc/rfc3339>`__ by default.                                            |
-|            |                              |   See the :ref:`plain log format configuration <manage/logging:plain log format configuration options>` documentation for        |
+|            |                              |   See the :ref:`plain log format configuration <manage/logging:plain log format configuration options>` documentation for           |
 |            |                              |   supported options.                                                                                                                |
 |            |                              | - JSON log format uses `RFC3339 <https://www.rfc-editor.org/rfc/rfc3339>`__ by default.                                             |
-|            |                              |   See the :ref:`JSON log format configuration <manage/logging:json log format configuration options>` documentation for          |
+|            |                              |   See the :ref:`JSON log format configuration <manage/logging:json log format configuration options>` documentation for             |
 |            |                              |   supported options.                                                                                                                |
 |            |                              | - GELF log format uses `unixtime <https://www.unixtimestamp.com/>`__.                                                               |
-|            |                              |   See the :ref:`GELF log format configuration <manage/logging:gelf log format configuration options>` documentation for          |
+|            |                              |   See the :ref:`GELF log format configuration <manage/logging:gelf log format configuration options>` documentation for             |
 |            |                              |   supported options.                                                                                                                |
 +------------+------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
 | event_name | string                       | Unique name and identifier of the event type taking place (e.g. ``getLogs`` ``requestRenewalLink``,                                 |
