@@ -10,7 +10,7 @@ Self-hosted can manage the following configuration settings in **System Console 
 - `Apps <#apps>`__
 - `Calls <#calls>`__
 - `Google Calendar <#google-calendar>`__
-- `Microsoft Teams <#ms-teams>`__
+- `MS Teams <#ms-teams>`__
 - `Playbooks <#playbooks>`__
 - `User Satisfaction surveys <#user-satisfaction-surveys>`__
 - `Zoom <#zoom>`__
@@ -955,8 +955,8 @@ Google client secret
 
 ----
 
-Microsoft Teams (Beta)
-----------------------
+MS Teams
+--------
 
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:

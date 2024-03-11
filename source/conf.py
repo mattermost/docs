@@ -2198,7 +2198,7 @@ redirects = {
 "install/install-kubernetes-cluster.html":
         "https://docs.mattermost.com/install/install-kubernetes.html",
 "install/install-kubernetes-mattermost":
-        "https://docs.mattermost.com/install/mattermost-kubernetes-operator",
+        "https://docs.mattermost.com/install/install-kubernetes.html",
 "install/install-kubernetes-operator.html":
         "https://docs.mattermost.com/install/install-kubernetes.html",
 "install/install-ubuntu-1804.html":
