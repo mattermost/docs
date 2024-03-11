@@ -1,5 +1,5 @@
-Collaborate within embedded Microsoft Teams (Beta)
-==================================================
+Collaborate within embedded Microsoft Teams
+===========================================
 
 .. include:: ../_static/badges/ent-cloud-selfhosted.rst
   :start-after: :nosearch:
