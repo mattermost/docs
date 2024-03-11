@@ -1,7 +1,5 @@
-:orphan:
-
-Install the Mattermost for Microsoft Teams plugin (Beta)
-========================================================
+Install the Mattermost for Microsoft Teams plugin
+=================================================
 
 .. include:: ../_static/badges/ent-cloud-selfhosted.rst
   :start-after: :nosearch:
