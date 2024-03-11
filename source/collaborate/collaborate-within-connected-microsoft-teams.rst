@@ -1,4 +1,4 @@
-Collaborate within Microsoft Teams (Beta)
+Collaborate within Microsoft Teams (Pilot)
 =========================================
 
 .. include:: ../_static/badges/ent-cloud-selfhosted.rst
