@@ -10,10 +10,6 @@ From Mattermost v9.2, see the [Mattermost Changelog](/deploy/mattermost-changelo
 - **Self-Hosted Releases Prior to v9.2**: See the [Mattermost Legacy Self-Hosted Changelog](/deploy/legacy-self-hosted-changelog) for details.
 ```
 
-```{contents} On ths page
-:depth: 2
-```
-
 ## Release 2023-11-01
 
 ### Bug Fixes

@@ -6,7 +6,7 @@ Install Mattermost on Kubernetes
 
 You can install and deploy a production-ready Mattermost system on a Kubernetes cluster using the Mattermost Kubernetes Operator in practically any environment with less IT overhead and more automation.
 
-You'll need a `Kubernetes cluster <https://kubernetes.io/docs/setup/>`__ running `a version that is currently supported with patch releases <https://kubernetes.io/releases/>`__,  Kubernetes CLI `kubectl <https://kubernetes.io/docs/reference/kubectl/overview/>`__ installed on local machine, and a basic understanding of Kubernetes concepts (such as deployments, pods) and actions (such as applying manifests, viewing pod logs). Running Mattermost in Kubernetes requires resources based on your total number of users. See the :doc:`Mattermost Kubernetes Operator </install/mattermost-kubernetes-operator>` documentation to learn more about the minimum Kubernetes cluster resources Mattermost requires at different scales.
+You'll need a `Kubernetes cluster <https://kubernetes.io/docs/setup/>`__ running `a version that is currently supported with patch releases <https://kubernetes.io/releases/>`__,  Kubernetes CLI `kubectl <https://kubernetes.io/docs/reference/kubectl/overview/>`__ installed on local machine, and a basic understanding of Kubernetes concepts (such as deployments, pods) and actions (such as applying manifests, viewing pod logs). Running Mattermost in Kubernetes requires resources based on your total number of users. See the :ref:`Mattermost Kubernetes Operator <install/install-kubernetes:mattermost operator>` documentation to learn more about the minimum Kubernetes cluster resources Mattermost requires at different scales.
 
 .. tip::
     

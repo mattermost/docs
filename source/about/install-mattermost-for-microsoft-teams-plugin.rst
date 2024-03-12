@@ -8,7 +8,7 @@ Install the Mattermost for Microsoft Teams plugin
 
   Looking to :doc:`embed Mattermost within Microsoft Teams </about/embed-mattermost-app-within-microsoft-teams>` instead?
 
-To install the :ref:`Microsoft Teams plugin <configure/plugins-configuration-settings:microsoft teams (beta)>` in Mattermost:
+To install the Microsoft Teams plugin in Mattermost:
 
 1. Log in to your Mattermost workspace as a system administrator.
 2. Download the latest version of `the plugin binary release <https://github.com/mattermost/mattermost-plugin-msteams/releases>`__, compatible with Mattermost v8.0.1 and later. If you are using an earlier version of Mattermost, :doc:`follow our documentation </upgrade/upgrading-mattermost-server>` to upgrade to Mattermost v8.0.1 or later.
@@ -125,7 +125,7 @@ Mattermost admins can configure Mattermost to automatically prompt users to conn
 Configure the plugin
 --------------------
 
-Additional configuration settings are available for this plugin. See the :ref:`Microsoft Teams plugin configuration settings <configure/plugins-configuration-settings:microsoft teams (beta)>` documentation for details.
+Additional configuration settings are available for this plugin. See the :ref:`Microsoft Teams plugin configuration settings <configure/plugins-configuration-settings:ms teams>` documentation for details.
 
 Monitor plugin performance
 --------------------------

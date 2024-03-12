@@ -32,12 +32,12 @@ However, IWA is not supported on the Mattermost Desktop Apps due to a limitation
 Can I provision and deprovision users who log in via SAML?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Yes, but this relies on AD/LDAP to do so. Currently, we do not support SCIM. See :ref:`"How do I deactivate users?" <onboard/ad-ldap:how do i deactivate users>` for more information. 
+Yes, but this relies on AD/LDAP to do so. Currently, we do not support SCIM. See :ref:`"How do I deactivate users?" <onboard/ad-ldap:how do i deactivate users?>` for more information. 
 
 How do I migrate users from one authentication method (e.g. email) to SAML?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-See the :ref:`mmctl user migrate-auth <manage/mmctl-command-line-tool:mmctl user migrate auth>` command documentation for details.
+See the :ref:`mmctl user migrate-auth <manage/mmctl-command-line-tool:mmctl user migrate-auth>` command documentation for details.
 
 How is SAML different from OAuth 2.0 and OpenId Connect?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

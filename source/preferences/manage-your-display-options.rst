@@ -71,7 +71,7 @@ You can customize how time is displayed in Mattermost.
 Teammate name display
 ---------------------
 
-You can customize how names are displayed in Mattermost unless your system admin has :ref:`disabled your ability to do so <configure/site-configuration-settings:users lockteammatenamedisplay>`.
+You can customize how names are displayed in Mattermost unless your system admin has :ref:`disabled your ability to do so <configure/site-configuration-settings:lock teammate name display>`.
 
 .. tab:: Web/Desktop
     
@@ -97,7 +97,7 @@ You can show or hide :ref:`availability <preferences/set-your-status-availabilit
 Share last active time
 ----------------------
 
-By default, Mattermost shows when you were last online in your profile and in direct message channel headers, unless your system admin has :ref:`disabled this option <configure/site-configuration-settings:users enablelastactivetime>`.
+By default, Mattermost shows when you were last online in your profile and in direct message channel headers, unless your system admin has :ref:`disabled this option <configure/site-configuration-settings:enable last active time>`.
 
 .. tab:: Web/Desktop
 
@@ -127,7 +127,7 @@ You can control whether website link previews in Mattermost show a preview of th
 
 .. note::
 
-    Your system admin must :ref:`enable this feature <configure/site-configuration-settings:posts enablelinkpreviews>`. It's disabled by default. Once enabled, only the first web link in a message creates a preview of the website.
+    Your system admin must :ref:`enable this feature <configure/site-configuration-settings:enable link previews>`. It's disabled by default. Once enabled, only the first web link in a message creates a preview of the website.
 
 .. tab:: Web/Desktop
 
@@ -140,7 +140,7 @@ You can control whether website link previews in Mattermost show a preview of th
 Default appearance of image previews
 ------------------------------------
 
-When messages in Mattermost include images, you can control whether an image preview displays directly below the message for image attachments, image link previews, and :ref:`in-line images <collaborate/format-messages:in line images>` over 100px in height.
+When messages in Mattermost include images, you can control whether an image preview displays directly below the message for image attachments, image link previews, and :ref:`in-line images <collaborate/format-messages:in-line images>` over 100px in height.
 
 .. tab:: Web/Desktop
 

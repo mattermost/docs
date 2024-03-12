@@ -11,10 +11,6 @@ From Mattermost v9.2, this changelog summarizes updates for the latest cloud and
 - **Cloud Releases Prior to v9.2**: See the [Mattermost Legacy Cloud Changelog](/deploy/legacy-cloud-changelog) for details.
 ```
 
-```{contents} On ths page
-:depth: 2
-```
-
 ## Release v9.5 - [Extended Support Release](https://docs.mattermost.com/upgrade/release-definitions.html#extended-support-release-esr)
 
 - **9.5.2, released 2024-03-06**

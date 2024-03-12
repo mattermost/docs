@@ -18,7 +18,7 @@ Select your profile picture, select **Profile**, and then select **Security** to
 |                      |   your SSO service account.                                                                            |
 +----------------------+--------------------------------------------------------------------------------------------------------+
 | Multi-factor         | If your system admin has enabled :ref:`multi-factor authentication                                     |
-| authentication (MFA) | <configure/authentication-configuration-settings:enable multi factor authentication>`                  |
+| authentication (MFA) | <configure/authentication-configuration-settings:enable multi-factor authentication>`                  |
 |                      | (MFA), you can require a passcode in addition to your password to log-in to your Mattermost account.   |
 |                      |                                                                                                        |
 |                      | You'll need to download a MFA passcode generation app, such as Google Authenticator or a similar app,  |
@@ -51,7 +51,7 @@ Select your profile picture, select **Profile**, and then select **Security** to
 |                      | 7. Select **Save**.                                                                                    |
 +----------------------+--------------------------------------------------------------------------------------------------------+
 | Sign-in method       | This option allows you to switch your login method between using email/username and password and       |
-|                      | :ref:`single sign-on credentials <collaborate/access-your-workspace:single sign on sso>`.              |
+|                      | :ref:`single sign-on credentials <collaborate/access-your-workspace:single sign-on sso>`.              |
 |                      |                                                                                                        |
 |                      | You can configure this setting using Mattermost in a web browser or using the desktop app.             |
 |                      |                                                                                                        |

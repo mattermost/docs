@@ -13,7 +13,7 @@ To configure SAML synchronization with AD/LDAP:
 1. Go to **System Console > Authentication > SAML 2.0**, then set **Enable Synchronizing SAML Accounts With AD/LDAP** to **true**.
 2. Go to  **System Console > Authentication > AD/LDAP**, then set **Enable Synchronization with AD/LDAP** to **true**.
 3. To ignore guest users when sychronizing, go to **System Console > Authentication > SAML 2.0**, then set **Ignore Guest Users when Synchronizing with AD/LDAP** to **true**. 
-4. Set the rest of the AD/LDAP settings based on :ref:`configuration settings documentation <configure/configuration-settings:ad ldap settings>` to connect Mattermost with your AD/LDAP server.
+4. Set the rest of the AD/LDAP settings based on :ref:`configuration settings documentation <configure/authentication-configuration-settings:ad/ldap settings>` to connect Mattermost with your AD/LDAP server.
 
  - If you don't want to enable AD/LDAP sign-in, go to **System Console > Authentication > AD/LDAP**, then set **Enable sign-in with AD/LDAP** to **false**.
 

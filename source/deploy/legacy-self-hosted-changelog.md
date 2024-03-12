@@ -10,10 +10,6 @@ From Mattermost v9.2, see the [Mattermost Changelog](/deploy/mattermost-changelo
 - **Cloud Releases Prior to v9.2**: See the [Mattermost Legacy Cloud Changelog](/deploy/legacy-cloud-changelog) for details.
 ```
 
-```{contents} On ths page
-:depth: 2
-```
-
 ----
 
 ## Release v9.1 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)

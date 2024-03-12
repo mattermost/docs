@@ -32,4 +32,4 @@ You can set the default number of direct messages to show in the channel sidebar
 
 Select **Sidebar Settings > Number of direct messages to show > Edit** to define a default number of direct messages.
 
-You can update the number of direct messages displayed in the channel sidebar at any time, regardless of the default you set. See the :ref:`manage direct messages <collaborate/customize-your-channel-sidebar:manage direct messages>` documentation for details.
+You can update the number of direct messages displayed in the channel sidebar at any time, regardless of the default you set. See the :ref:`manage direct messages <preferences/customize-your-channel-sidebar:manage direct messages>` documentation for details.

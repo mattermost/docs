@@ -6,7 +6,7 @@ Migration guide
 
 Thousands of organizations are moving to Mattermost for powerful, flexible, and easy-to-manage workplace collaboration. Mattermost deploys as a single Linux binary with PostgreSQL, and can scale from dozens to tens of thousands of users in a single channel.
 
-This guide summarizes different approaches to migrating to Mattermost from other tools, including :doc:`Slack </onboard/migrate-from-slack>`, :ref:`HipChat <onboard/migrating-to-mattermost:migrating from slack>`, `Jabber <#migrate-from-jabber>`__, `Pidgin <#migrate-from-pidgin>`__, `Bitnami <#migrate-from-bitnami>`__, and other `bespoke messaging solutions <#migrate-from-bespoke-messaging-solutions>`__, as well as `migrating Mattermost server <#migrate-mattermost-server>`__ to another server instance.
+This guide summarizes different approaches to migrating to Mattermost from other tools, including :doc:`Slack </onboard/migrate-from-slack>`, :doc:`HipChat </onboard/migrating-from-hipchat-to-mattermost>`, `Jabber <#migrate-from-jabber>`_, `Pidgin <#migrate-from-pidgin>`_, `Bitnami <#migrate-from-bitnami>`_, and other `bespoke messaging solutions <#migrate-from-bespoke-messaging-solutions>`_, as well as `migrating Mattermost server <#migrate-mattermost-server>`_ to another server instance.
 
 Migrate from Slack
 ------------------
@@ -16,7 +16,7 @@ See the :doc:`Migrate from Slack </onboard/migrate-from-slack>` documentation fo
 Migrate from HipChat 
 --------------------
 
-See the :ref:`Migrate from HipChat <onboard/migrating-to-mattermost:migrating from slack>` documentation for details on migrating from HipChat Server and HipChat Data Center to Mattermost.
+See the :doc:`Migrate from HipChat </onboard/migrating-from-hipchat-to-mattermost>` documentation for details on migrating from HipChat Server and HipChat Data Center to Mattermost.
 
 Migrate from Jabber
 -------------------
@@ -85,4 +85,4 @@ The following instructions migrate Mattermost from one server to another by back
 7. Start the DESTINATION deployment by running ``sudo start mattermost``. Then go to the **System Console**, make a minor change, and save it to upgrade your ``config.json`` schema to the latest version using default values for any new settings added.
 8. Test that the system is working by going to the URL of an existing team. You may need to refresh your Mattermost browser page in order to get the latest updates from the upgrade.
 
-Once your migration is complete and verified, you can optionally :ref:`upgrade the Team Edition of Mattermost to Enterprise Edition using the upgrade guide <upgrade/upgrading-mattermost-server:upgrading team edition to enterprise edition>`.
+Once your migration is complete and verified, you can optionally :ref:`upgrade the Team Edition of Mattermost to Enterprise Edition using the upgrade guide <upgrade/upgrade-mattermost-server:upgrading team edition to enterprise edition>`.

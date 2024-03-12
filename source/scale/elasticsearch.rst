@@ -160,7 +160,7 @@ Yes. From Mattermost v6.7, the Elasticsearch indexing job is resumable. Stopping
 Can an index rollover policy be defined?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The :ref:`AggregatePostsAfterDays <configure/environment-configuration-settings:aggregate search indexes.html>` configuration setting defines a cutoff value. All posts preceding this value are reindexed and aggregated into new and bigger indexes. The default setting is 365 days.
+The :ref:`AggregatePostsAfterDays <configure/environment-configuration-settings:aggregate search indexes>` configuration setting defines a cutoff value. All posts preceding this value are reindexed and aggregated into new and bigger indexes. The default setting is 365 days.
 
 Are there any new search features offered with Elasticsearch?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

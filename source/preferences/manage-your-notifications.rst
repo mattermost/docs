@@ -62,7 +62,7 @@ On mobile, select the **Settings** |gear| icon and tap **Notifications**.
 
     **Incoming call sounds**
 
-    Want to hear a sound when a Mattermost call starts? If your Mattermost admin :ref:`enables this beta feature <configure/plugins-configuration-settings:enable call ringing beta>`, you can choose the sound that plays when a call is started within a direct or group message you're participating in by going to **Desktop notifications > Notification sound for incoming calls**.
+    Want to hear a sound when a Mattermost call starts? If your Mattermost admin :ref:`enables this beta feature <configure/plugins-configuration-settings:enable call ringing (beta)>`, you can choose the sound that plays when a call is started within a direct or group message you're participating in by going to **Desktop notifications > Notification sound for incoming calls**.
 
     You can disable incoming call sounds altogether if preferred.
 
@@ -76,7 +76,7 @@ On mobile, select the **Settings** |gear| icon and tap **Notifications**.
 
     **Group email notifications in batches**
 
-    Mattermost also supports the ability to group multiple email notifications together into a single email. If your Mattermost admin :ref:`enables this feature <configure/site-configuration-settings:notification enableemailbatching>`, you'll receive batches of notifications by email every 15 minutes, or as configured by your admin.
+    Mattermost also supports the ability to group multiple email notifications together into a single email. If your Mattermost admin :ref:`enables this feature <configure/site-configuration-settings:enable email batching>`, you'll receive batches of notifications by email every 15 minutes, or as configured by your admin.
 
 .. tab:: Mobile
 

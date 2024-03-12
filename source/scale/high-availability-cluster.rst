@@ -119,7 +119,7 @@ You can do the same for the proxy server.
 Cluster discovery
 ^^^^^^^^^^^^^^^^^
 
-If you have non-standard (i.e. complex) network configurations, then you may need to use the :ref:`Override Hostname <configure/environment-configuration-settings:ha overridehostname>` setting to help the cluster nodes discover each other. The cluster settings in the config are removed from the config file hash for this reason, meaning you can have ``config.json`` files that are slightly different in high availability mode. The Override Hostname is intended to be different for each clustered node in ``config.json`` if you need to force discovery.
+If you have non-standard (i.e. complex) network configurations, then you may need to use the :ref:`Override Hostname <configure/environment-configuration-settings:override hostname>` setting to help the cluster nodes discover each other. The cluster settings in the config are removed from the config file hash for this reason, meaning you can have ``config.json`` files that are slightly different in high availability mode. The Override Hostname is intended to be different for each clustered node in ``config.json`` if you need to force discovery.
 
 If ``UseIpAddress`` is set to ``true``, it attempts to obtain the IP address by searching for the first non-local IP address (non-loop-back, non-localunicast, non-localmulticast network interface). It enumerates the network interfaces using the built-in go function `net.InterfaceAddrs() <https://golang.org/pkg/net/#InterfaceAddrs>`__. Otherwise it tries to get the hostname using the `os.Hostname() <https://golang.org/pkg/os/#Hostname>`__ built-in go function.
 
@@ -363,7 +363,7 @@ The process is based on a widely used `bully leader election algorithm <https://
 Job server
 ^^^^^^^^^^^
 
-Mattermost runs periodic tasks via the :ref:`job server <configure/configuration-settings:jobs>`. These tasks include:
+Mattermost runs periodic tasks via the :ref:`job server <configure/experimental-job-configuration-settings>`. These tasks include:
 
 - LDAP sync
 - Data retention
@@ -491,7 +491,7 @@ When a server starts up, it can automatically discover other servers in the same
 All cluster nodes must use a single protocol
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-All cluster traffic uses the gossip protocol. :ref:`Gossip clustering can no longer be disabled <configure/environment-configuration-settings:use gossip>`.
+All cluster traffic uses the gossip protocol. :ref:`Gossip clustering can no longer be disabled <configure/deprecated-configuration-settings:use gossip>`.
 
 When upgrading a high availability cluster, you can't upgrade other nodes in the cluster when one node isn't using the gossip protocol. You must use gossip to complete a high availability upgrade. Alternatively you can shut down all nodes and bring them all up individually following an upgrade.
 
@@ -547,7 +547,7 @@ App refreshes continuously
 
 When configuration settings are modified through the System Console, the client refreshes every time a user connects to a different app server. This occurs because the servers have different ``config.json`` files in a high availability cluster.
 
-Modify configuration settings directly through ``config.json`` :ref:`following these steps <scale/high-availability-cluster:updating configuration changes while operating continuously>`.
+Modify configuration settings directly through ``config.json`` :ref:`following these steps <scale/high-availability-cluster:update configuration changes while operating continuously>`.
 
 Messages do not post until after reloading
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
