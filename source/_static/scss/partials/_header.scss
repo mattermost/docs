@@ -1,7 +1,7 @@
 .site-header {
     @media (max-width:1350px) {
-    	padding: 0 24px;
-	}
+        padding: 0 24px;
+    }
 }
 
 .site-header__col--logo {
@@ -12,7 +12,7 @@
     }
 }
 
-body:not([data-theme="light"]) {
+body:not([data-custom-theme="light"]) {
     .site-header__col--logo {
         color: #fff;
     }

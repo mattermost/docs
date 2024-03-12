@@ -29,6 +29,7 @@
 
 .mm-badge {
     background: transparent;
+    margin-bottom: 8px;
 
     &.mm-badge--academy {
         background-color: var(--neutral-50);
@@ -51,7 +52,8 @@
 body:not([data-theme=light]) {
     .mm-plans-badge {
         p {
-            background-color: rgba(255,255,255, 0.08);
+            background-color: rgba(255, 255, 255, 0.08);
+
             img {
                 @include img-invert;
             }

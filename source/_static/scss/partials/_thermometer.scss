@@ -66,10 +66,12 @@
     flex: 1;
 }
 
-.c-thermometer__emojis a:hover, .c-thermometer__emojis a.selected {
+.c-thermometer__emojis a:hover,
+.c-thermometer__emojis a.selected {
     color: inherit;
     filter: grayscale(0);
 }
+
 /* Thermometer ends */
 
 /* Thermometer group */
@@ -77,6 +79,7 @@
     display: block;
     position: relative;
 }
+
 /* Thermometer group ends */
 
 /* Thermometer Modal */
@@ -93,7 +96,7 @@
     background: rgb(0 0 0 / 50%);
 }
 
-.c-thermometer-modal__container > div {
+.c-thermometer-modal__container>div {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -140,6 +143,7 @@
 }
 
 .c-thermometer-modal__content textarea {
+    color: inherit;
     border-radius: 4px;
     height: 142px;
     padding: 14px;
@@ -152,7 +156,7 @@
 }
 
 .c-thermometer-modal__content textarea:focus {
-    border-color:#166DE0;
+    border-color: #166DE0;
 }
 
 .c-thermometer-modal__footer {
@@ -182,7 +186,7 @@
     margin-left: 20px;
 }
 
-body:not([data-theme="light"]) {
+body:not([data-custom-theme="light"]) {
     .c-thermometer-modal__footer .btn {
         color: var(--primary);
     }
@@ -193,7 +197,9 @@ body:not([data-theme="light"]) {
     }
 }
 
-.c-thermometer-modal__footer .btn-primary:hover, .c-thermometer-modal__footer .btn-primary:focus, .c-thermometer-modal__footer .btn-primary:active {
+.c-thermometer-modal__footer .btn-primary:hover,
+.c-thermometer-modal__footer .btn-primary:focus,
+.c-thermometer-modal__footer .btn-primary:active {
     background: rgb(19, 93, 190);
 }
 
@@ -243,7 +249,7 @@ body:not([data-theme="light"]) {
     cursor: pointer;
 }
 
-.c-thermometer-popup__close:hover { }
+.c-thermometer-popup__close:hover {}
 
 /* Thermometer Confirmation Popup Ends */
 

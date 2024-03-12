@@ -5,12 +5,28 @@
 {{ super() }}
 {% include "partials/icons.html" %}
 
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
-<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
-<label class="overlay sidebar-overlay" for="__navigation">
+<input
+    type="checkbox"
+    class="sidebar-toggle"
+    name="__navigation"
+    id="__navigation"
+>
+<input
+    type="checkbox"
+    class="sidebar-toggle"
+    name="__toc"
+    id="__toc"
+>
+<label
+    class="overlay sidebar-overlay"
+    for="__navigation"
+>
     <div class="visually-hidden">Hide navigation sidebar</div>
 </label>
-<label class="overlay toc-overlay" for="__toc">
+<label
+    class="overlay toc-overlay"
+    for="__toc"
+>
     <div class="visually-hidden">Hide table of contents sidebar</div>
 </label>
 
@@ -27,7 +43,10 @@
 <div class="page homepage">
     <header class="mobile-header">
         <div class="header-left">
-            <label class="nav-overlay-icon" for="__navigation">
+            <label
+                class="nav-overlay-icon"
+                for="__navigation"
+            >
                 <div class="visually-hidden">Toggle site navigation sidebar</div>
                 <i class="icon"><svg>
                         <use href="#svg-menu"></use>
@@ -40,7 +59,10 @@
             </a>
         </div>
         <div class="header-right">
-            <label class="toc-overlay-icon toc-header-icon{% if furo_hide_toc %} no-toc{% endif %}" for="__toc">
+            <label
+                class="toc-overlay-icon toc-header-icon{% if furo_hide_toc %} no-toc{% endif %}"
+                for="__toc"
+            >
                 <div class="visually-hidden">Toggle table of contents sidebar</div>
                 <i class="icon"><svg>
                         <use href="#svg-toc"></use>
@@ -62,8 +84,14 @@
     <div class="main">
         <div class="content">
             <div class="article-container">
-                <a href="#" class="back-to-top muted-link">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <a
+                    href="#"
+                    class="back-to-top muted-link"
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                    >
                         <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
                     </svg>
                     <span>{% trans %}Back to top{% endtrans %}</span>
@@ -75,8 +103,10 @@
                     {{ warning("Got an unsupported value for 'top_of_page_button'") }}
                     {%- endif -%}
                     {#- Theme toggle -#}
-                    <label class="toc-overlay-icon toc-content-icon{% if furo_hide_toc %} no-toc{% endif %}"
-                        for="__toc">
+                    <label
+                        class="toc-overlay-icon toc-content-icon{% if furo_hide_toc %} no-toc{% endif %}"
+                        for="__toc"
+                    >
                         <div class="visually-hidden">Toggle table of contents sidebar</div>
                         <i class="icon"><svg>
                                 <use href="#svg-toc"></use>
@@ -102,7 +132,8 @@
                             </div>
 
                             <h1>Mattermost Documentation</h1>
-                            <h2 class="subhead">Technical resources to help admins, users, and developers leverage Mattermost</h2>
+                            <h2 class="subhead">Technical resources to help admins, users, and developers leverage
+                                Mattermost</h2>
                         </div>
                     </section>
 
@@ -111,20 +142,43 @@
                             <section class='masthead-cards-section gray'>
                                 <h2 class='masthead-h2'>Deploy, setup, and administration</h2>
                                 <div class='masthead-cards'>
-                                    <a href='overview/index.html' class="masthead-card">
+                                    <a
+                                        href='overview/index.html'
+                                        class="masthead-card"
+                                    >
                                         <div class="masthead-card__icon">
-                                            <img src="{{ pathto('_static/images/home/Overview.svg', 1) }}" alt="" class='light' width="50" height="50">
-                                            <img src="{{ pathto('_static/images/home/Overview-dark.svg', 1) }}" alt="" class='dark' width="50" height="50">
+                                            <img
+                                                src="{{ pathto('_static/images/home/Overview.svg', 1) }}"
+                                                alt=""
+                                                class='light'
+                                                width="50"
+                                                height="50"
+                                            >
+                                            <img
+                                                src="{{ pathto('_static/images/home/Overview-dark.svg', 1) }}"
+                                                alt=""
+                                                class='dark'
+                                                width="50"
+                                                height="50"
+                                            >
                                         </div>
                                         <div class='masthead-card__content'>
                                             <h4>Overview</h4>
-                                            <p>Learn about Mattermost products, capabilities, features, and licensing.</p>
+                                            <p>Learn about Mattermost products, capabilities, features, and licensing.
+                                            </p>
                                             <p class='link'>Get started »</p>
                                         </div>
                                     </a>
-                                    <a href='guides/deployment.html' class="masthead-card">
+                                    <a
+                                        href='guides/deployment.html'
+                                        class="masthead-card"
+                                    >
                                         <div class="masthead-card__icon">
-                                            <img src="{{ pathto('_static/images/home/Deploy.svg', 1) }}" alt="" width="44">
+                                            <img
+                                                src="{{ pathto('_static/images/home/Deploy.svg', 1) }}"
+                                                alt=""
+                                                width="44"
+                                            >
                                         </div>
                                         <div class='masthead-card__content'>
                                             <h4>Deploy</h4>
@@ -132,9 +186,17 @@
                                             <p class='link'>Get started »</p>
                                         </div>
                                     </a>
-                                    <a href='guides/administration.html' class="masthead-card">
+                                    <a
+                                        href='guides/administration.html'
+                                        class="masthead-card"
+                                    >
                                         <div class="masthead-card__icon">
-                                            <img src="{{ pathto('_static/images/home/Admin-Guide.svg', 1) }}" alt="" width="50" height="50">
+                                            <img
+                                                src="{{ pathto('_static/images/home/Admin-Guide.svg', 1) }}"
+                                                alt=""
+                                                width="50"
+                                                height="50"
+                                            >
                                         </div>
                                         <div class='masthead-card__content'>
                                             <h4>Admin guide</h4>
@@ -148,43 +210,81 @@
                             <section class='masthead-cards-section'>
                                 <h2 class='masthead-h2'>Use Mattermost</h2>
                                 <div class='masthead-cards'>
-                                    <a href='guides/collaborate.html' class="masthead-card">
+                                    <a
+                                        href='guides/collaborate.html'
+                                        class="masthead-card"
+                                    >
                                         <div class="masthead-card__icon">
-                                            <img src="{{ pathto('_static/images/home/Channels.svg', 1) }}" alt="" class='light' width="46">
-                                            <img src="{{ pathto('_static/images/home/Channels-dark.svg', 1) }}" alt="" class='dark' width="46">
+                                            <img
+                                                src="{{ pathto('_static/images/home/Channels.svg', 1) }}"
+                                                alt=""
+                                                class='light'
+                                                width="46"
+                                            >
+                                            <img
+                                                src="{{ pathto('_static/images/home/Channels-dark.svg', 1) }}"
+                                                alt=""
+                                                class='dark'
+                                                width="46"
+                                            >
                                         </div>
                                         <div class='masthead-card__content'>
                                             <h4>Connect and collaborate</h4>
-                                            <p>Bring your team together to collaborate freely without silos. Message, meet, talk, and screen share.</p>
+                                            <p>Bring your team together to collaborate freely without silos. Message,
+                                                meet, talk, and screen share.</p>
                                             <p class='link'>Get started »</p>
                                         </div>
                                     </a>
-                                    <a href='guides/repeatable-processes.html' class="masthead-card">
+                                    <a
+                                        href='guides/repeatable-processes.html'
+                                        class="masthead-card"
+                                    >
                                         <div class="masthead-card__icon">
-                                            <img src="{{ pathto('_static/images/home/Playbooks.svg', 1) }}" alt="" width="50" height="50">
+                                            <img
+                                                src="{{ pathto('_static/images/home/Playbooks.svg', 1) }}"
+                                                alt=""
+                                                width="50"
+                                                height="50"
+                                            >
                                         </div>
                                         <div class='masthead-card__content'>
                                             <h4>Build repeatable processes</h4>
-                                            <p>Most faster and make fewer mistakes with checklist-based automation that powers your team workflows.</p>
+                                            <p>Most faster and make fewer mistakes with checklist-based automation that
+                                                powers your team workflows.</p>
                                             <p class='link'>Get started »</p>
                                         </div>
                                     </a>
-                                    <a href='guides/preferences.html' class="masthead-card">
+                                    <a
+                                        href='guides/preferences.html'
+                                        class="masthead-card"
+                                    >
                                         <div class="masthead-card__icon">
-                                            <img src="{{ pathto('_static/images/home/CustomizeYourPreferences.svg', 1) }}" alt="" width="40">
+                                            <img
+                                                src="{{ pathto('_static/images/home/CustomizeYourPreferences.svg', 1) }}"
+                                                alt=""
+                                                width="40"
+                                            >
                                         </div>
                                         <div class='masthead-card__content'>
                                             <h4>Customize your preferences</h4>
-                                            <p>Match the way you work by adjusting your notification settings, changing your theme, or updating your profile settings.</p>
+                                            <p>Match the way you work by adjusting your notification settings, changing
+                                                your theme, or updating your profile settings.</p>
                                             <p class='link'>Get started »</p>
                                         </div>
                                     </a>
                                 </div>
                                 <h2 class='masthead-h2'>More resources</h2>
                                 <div class='masthead-cards'>
-                                    <a href='https://developers.mattermost.com/contribute/' class="masthead-card">
+                                    <a
+                                        href='https://developers.mattermost.com/contribute/'
+                                        class="masthead-card"
+                                    >
                                         <div class="masthead-card__icon">
-                                            <img src="{{ pathto('_static/images/home/Contribute.svg', 1) }}" alt="" width="48">
+                                            <img
+                                                src="{{ pathto('_static/images/home/Contribute.svg', 1) }}"
+                                                alt=""
+                                                width="48"
+                                            >
                                         </div>
                                         <div class='masthead-card__content'>
                                             <h4>Contribute</h4>
@@ -192,9 +292,16 @@
                                             <p class='link'>Get started »</p>
                                         </div>
                                     </a>
-                                    <a href='https://developers.mattermost.com/integrate/getting-started/' class="masthead-card">
+                                    <a
+                                        href='https://developers.mattermost.com/integrate/getting-started/'
+                                        class="masthead-card"
+                                    >
                                         <div class="masthead-card__icon">
-                                            <img src="{{ pathto('_static/images/home/IntegrateExtend.svg', 1) }}" alt="" width="32">
+                                            <img
+                                                src="{{ pathto('_static/images/home/IntegrateExtend.svg', 1) }}"
+                                                alt=""
+                                                width="32"
+                                            >
                                         </div>
                                         <div class='masthead-card__content'>
                                             <h4>Integrate and extend</h4>
@@ -202,9 +309,16 @@
                                             <p class='link'>Get started »</p>
                                         </div>
                                     </a>
-                                    <a href='/guides/get-help.html' class="masthead-card">
+                                    <a
+                                        href='/guides/get-help.html'
+                                        class="masthead-card"
+                                    >
                                         <div class="masthead-card__icon">
-                                            <img src="{{ pathto('_static/images/home/Help.svg', 1) }}" alt="" width="42">
+                                            <img
+                                                src="{{ pathto('_static/images/home/Help.svg', 1) }}"
+                                                alt=""
+                                                width="42"
+                                            >
                                         </div>
                                         <div class='masthead-card__content'>
                                             <h4>Get help</h4>
@@ -224,7 +338,10 @@
                 {% block footer %}
                 <div class="related-pages">
                     {% if next -%}
-                    <a class="next-page" href="{{ next.link }}">
+                    <a
+                        class="next-page"
+                        href="{{ next.link }}"
+                    >
                         <div class="page-info">
                             <div class="context">
                                 <span>{{ _("Next") }}</span>
@@ -237,7 +354,10 @@
                     </a>
                     {%- endif %}
                     {% if prev -%}
-                    <a class="prev-page" href="{{ prev.link }}">
+                    <a
+                        class="prev-page"
+                        href="{{ prev.link }}"
+                    >
                         <svg class="furo-related-icon">
                             <use href="#svg-arrow-right"></use>
                         </svg>
@@ -272,7 +392,10 @@
                         {% trans %}Made with {% endtrans -%}
                         {%- if show_sphinx -%}
                         {% trans %}<a href="https://www.sphinx-doc.org/">Sphinx</a> and {% endtrans -%}
-                        <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+                        <a
+                            class="muted-link"
+                            href="https://pradyunsg.me"
+                        >@pradyunsg</a>'s
                         {% endif -%}
                         {% trans %}
                         <a href="https://github.com/pradyunsg/furo">Furo</a>
@@ -290,30 +413,53 @@
                         <div class="icons">
                             {% if theme_footer_icons -%}
                             {% for icon_dict in theme_footer_icons -%}
-                            <a class="muted-link {{ icon_dict.class }}" href="{{ icon_dict.url }}"
-                                aria-label="{{ icon_dict.name }}">
+                            <a
+                                class="muted-link {{ icon_dict.class }}"
+                                href="{{ icon_dict.url }}"
+                                aria-label="{{ icon_dict.name }}"
+                            >
                                 {{- icon_dict.html -}}
                             </a>
                             {% endfor %}
                             {%- else -%}
                             {#- Show Read the Docs project -#}
                             {%- if READTHEDOCS and slug -%}
-                            <a class="muted-link" href="https://readthedocs.org/projects/{{ slug }}"
-                                aria-label="On Read the Docs">
-                                <svg x="0px" y="0px" viewBox="-125 217 360 360" xml:space="preserve">
-                                    <path fill="currentColor"
-                                        d="M39.2,391.3c-4.2,0.6-7.1,4.4-6.5,8.5c0.4,3,2.6,5.5,5.5,6.3 c0,0,18.5,6.1,50,8.7c25.3,2.1,54-1.8,54-1.8c4.2-0.1,7.5-3.6,7.4-7.8c-0.1-4.2-3.6-7.5-7.8-7.4c-0.5,0-1,0.1-1.5,0.2 c0,0-28.1,3.5-50.9,1.6c-30.1-2.4-46.5-7.9-46.5-7.9C41.7,391.3,40.4,391.1,39.2,391.3z M39.2,353.6c-4.2,0.6-7.1,4.4-6.5,8.5 c0.4,3,2.6,5.5,5.5,6.3c0,0,18.5,6.1,50,8.7c25.3,2.1,54-1.8,54-1.8c4.2-0.1,7.5-3.6,7.4-7.8c-0.1-4.2-3.6-7.5-7.8-7.4 c-0.5,0-1,0.1-1.5,0.2c0,0-28.1,3.5-50.9,1.6c-30.1-2.4-46.5-7.9-46.5-7.9C41.7,353.6,40.4,353.4,39.2,353.6z M39.2,315.9 c-4.2,0.6-7.1,4.4-6.5,8.5c0.4,3,2.6,5.5,5.5,6.3c0,0,18.5,6.1,50,8.7c25.3,2.1,54-1.8,54-1.8c4.2-0.1,7.5-3.6,7.4-7.8 c-0.1-4.2-3.6-7.5-7.8-7.4c-0.5,0-1,0.1-1.5,0.2c0,0-28.1,3.5-50.9,1.6c-30.1-2.4-46.5-7.9-46.5-7.9 C41.7,315.9,40.4,315.8,39.2,315.9z M39.2,278.3c-4.2,0.6-7.1,4.4-6.5,8.5c0.4,3,2.6,5.5,5.5,6.3c0,0,18.5,6.1,50,8.7 c25.3,2.1,54-1.8,54-1.8c4.2-0.1,7.5-3.6,7.4-7.8c-0.1-4.2-3.6-7.5-7.8-7.4c-0.5,0-1,0.1-1.5,0.2c0,0-28.1,3.5-50.9,1.6 c-30.1-2.4-46.5-7.9-46.5-7.9C41.7,278.2,40.4,278.1,39.2,278.3z M-13.6,238.5c-39.6,0.3-54.3,12.5-54.3,12.5v295.7 c0,0,14.4-12.4,60.8-10.5s55.9,18.2,112.9,19.3s71.3-8.8,71.3-8.8l0.8-301.4c0,0-25.6,7.3-75.6,7.7c-49.9,0.4-61.9-12.7-107.7-14.2 C-8.2,238.6-10.9,238.5-13.6,238.5z M19.5,257.8c0,0,24,7.9,68.3,10.1c37.5,1.9,75-3.7,75-3.7v267.9c0,0-19,10-66.5,6.6 C59.5,536.1,19,522.1,19,522.1L19.5,257.8z M-3.6,264.8c4.2,0,7.7,3.4,7.7,7.7c0,4.2-3.4,7.7-7.7,7.7c0,0-12.4,0.1-20,0.8 c-12.7,1.3-21.4,5.9-21.4,5.9c-3.7,2-8.4,0.5-10.3-3.2c-2-3.7-0.5-8.4,3.2-10.3c0,0,0,0,0,0c0,0,11.3-6,27-7.5 C-16,264.9-3.6,264.8-3.6,264.8z M-11,302.6c4.2-0.1,7.4,0,7.4,0c4.2,0.5,7.2,4.3,6.7,8.5c-0.4,3.5-3.2,6.3-6.7,6.7 c0,0-12.4,0.1-20,0.8c-12.7,1.3-21.4,5.9-21.4,5.9c-3.7,2-8.4,0.5-10.3-3.2c-2-3.7-0.5-8.4,3.2-10.3c0,0,11.3-6,27-7.5 C-20.5,302.9-15.2,302.7-11,302.6z M-3.6,340.2c4.2,0,7.7,3.4,7.7,7.7s-3.4,7.7-7.7,7.7c0,0-12.4-0.1-20,0.7 c-12.7,1.3-21.4,5.9-21.4,5.9c-3.7,2-8.4,0.5-10.3-3.2c-2-3.7-0.5-8.4,3.2-10.3c0,0,11.3-6,27-7.5C-16,340.1-3.6,340.2-3.6,340.2z" />
+                            <a
+                                class="muted-link"
+                                href="https://readthedocs.org/projects/{{ slug }}"
+                                aria-label="On Read the Docs"
+                            >
+                                <svg
+                                    x="0px"
+                                    y="0px"
+                                    viewBox="-125 217 360 360"
+                                    xml:space="preserve"
+                                >
+                                    <path
+                                        fill="currentColor"
+                                        d="M39.2,391.3c-4.2,0.6-7.1,4.4-6.5,8.5c0.4,3,2.6,5.5,5.5,6.3 c0,0,18.5,6.1,50,8.7c25.3,2.1,54-1.8,54-1.8c4.2-0.1,7.5-3.6,7.4-7.8c-0.1-4.2-3.6-7.5-7.8-7.4c-0.5,0-1,0.1-1.5,0.2 c0,0-28.1,3.5-50.9,1.6c-30.1-2.4-46.5-7.9-46.5-7.9C41.7,391.3,40.4,391.1,39.2,391.3z M39.2,353.6c-4.2,0.6-7.1,4.4-6.5,8.5 c0.4,3,2.6,5.5,5.5,6.3c0,0,18.5,6.1,50,8.7c25.3,2.1,54-1.8,54-1.8c4.2-0.1,7.5-3.6,7.4-7.8c-0.1-4.2-3.6-7.5-7.8-7.4 c-0.5,0-1,0.1-1.5,0.2c0,0-28.1,3.5-50.9,1.6c-30.1-2.4-46.5-7.9-46.5-7.9C41.7,353.6,40.4,353.4,39.2,353.6z M39.2,315.9 c-4.2,0.6-7.1,4.4-6.5,8.5c0.4,3,2.6,5.5,5.5,6.3c0,0,18.5,6.1,50,8.7c25.3,2.1,54-1.8,54-1.8c4.2-0.1,7.5-3.6,7.4-7.8 c-0.1-4.2-3.6-7.5-7.8-7.4c-0.5,0-1,0.1-1.5,0.2c0,0-28.1,3.5-50.9,1.6c-30.1-2.4-46.5-7.9-46.5-7.9 C41.7,315.9,40.4,315.8,39.2,315.9z M39.2,278.3c-4.2,0.6-7.1,4.4-6.5,8.5c0.4,3,2.6,5.5,5.5,6.3c0,0,18.5,6.1,50,8.7 c25.3,2.1,54-1.8,54-1.8c4.2-0.1,7.5-3.6,7.4-7.8c-0.1-4.2-3.6-7.5-7.8-7.4c-0.5,0-1,0.1-1.5,0.2c0,0-28.1,3.5-50.9,1.6 c-30.1-2.4-46.5-7.9-46.5-7.9C41.7,278.2,40.4,278.1,39.2,278.3z M-13.6,238.5c-39.6,0.3-54.3,12.5-54.3,12.5v295.7 c0,0,14.4-12.4,60.8-10.5s55.9,18.2,112.9,19.3s71.3-8.8,71.3-8.8l0.8-301.4c0,0-25.6,7.3-75.6,7.7c-49.9,0.4-61.9-12.7-107.7-14.2 C-8.2,238.6-10.9,238.5-13.6,238.5z M19.5,257.8c0,0,24,7.9,68.3,10.1c37.5,1.9,75-3.7,75-3.7v267.9c0,0-19,10-66.5,6.6 C59.5,536.1,19,522.1,19,522.1L19.5,257.8z M-3.6,264.8c4.2,0,7.7,3.4,7.7,7.7c0,4.2-3.4,7.7-7.7,7.7c0,0-12.4,0.1-20,0.8 c-12.7,1.3-21.4,5.9-21.4,5.9c-3.7,2-8.4,0.5-10.3-3.2c-2-3.7-0.5-8.4,3.2-10.3c0,0,0,0,0,0c0,0,11.3-6,27-7.5 C-16,264.9-3.6,264.8-3.6,264.8z M-11,302.6c4.2-0.1,7.4,0,7.4,0c4.2,0.5,7.2,4.3,6.7,8.5c-0.4,3.5-3.2,6.3-6.7,6.7 c0,0-12.4,0.1-20,0.8c-12.7,1.3-21.4,5.9-21.4,5.9c-3.7,2-8.4,0.5-10.3-3.2c-2-3.7-0.5-8.4,3.2-10.3c0,0,11.3-6,27-7.5 C-20.5,302.9-15.2,302.7-11,302.6z M-3.6,340.2c4.2,0,7.7,3.4,7.7,7.7s-3.4,7.7-7.7,7.7c0,0-12.4-0.1-20,0.7 c-12.7,1.3-21.4,5.9-21.4,5.9c-3.7,2-8.4,0.5-10.3-3.2c-2-3.7-0.5-8.4,3.2-10.3c0,0,11.3-6,27-7.5C-16,340.1-3.6,340.2-3.6,340.2z"
+                                    />
                                 </svg>
                             </a>
                             {%- endif -%}
                             {#- Show GitHub repository home -#}
                             {%- if READTHEDOCS and display_github and github_user != "None" and github_repo != "None"
                             -%}
-                            <a class="muted-link" href="https://github.com/{{ github_user }}/{{ github_repo }}"
-                                aria-label="On GitHub">
-                                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16">
-                                    <path fill-rule="evenodd"
-                                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z">
+                            <a
+                                class="muted-link"
+                                href="https://github.com/{{ github_user }}/{{ github_repo }}"
+                                aria-label="On GitHub"
+                            >
+                                <svg
+                                    stroke="currentColor"
+                                    fill="currentColor"
+                                    stroke-width="0"
+                                    viewBox="0 0 16 16"
+                                >
+                                    <path
+                                        fill-rule="evenodd"
+                                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"
+                                    >
                                     </path>
                                 </svg>
                             </a>
