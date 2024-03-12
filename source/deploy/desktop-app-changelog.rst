@@ -17,7 +17,7 @@ Release v5.7
 Compatibility
 ~~~~~~~~~~~~~~~
 
-- Desktop App is supported on any currently `supported Mattermost server version </upgrade/release-lifecycle.html>`__.
+- Desktop App is supported on any currently `supported Mattermost server version <https://docs.mattermost.com/upgrade/release-lifecycle.html>`__.
 - Updated Chromium minimum supported version to 120+.
 
 Improvements
