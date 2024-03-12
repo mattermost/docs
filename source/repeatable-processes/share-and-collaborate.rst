@@ -12,7 +12,7 @@ Permissions are provided using:
 * **System Scheme:** Applies permissions universally across all teams, channels, and playbooks.
 * **Team Override Schemes:** Allow admins to customize permissions for each team (available in Mattermost Professional and Enterprise).
 
-For more information about System and Team Override Schemes, refer to the `Advanced Permissions </onboard/advanced-permissions.html>`__ documentation.
+For more information about System and Team Override Schemes, refer to the :doc:`Advanced Permissions </onboard/advanced-permissions>` documentation.
 
 .. note::
 
