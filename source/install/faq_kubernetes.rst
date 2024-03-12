@@ -9,21 +9,31 @@ management and deployment.
 
 Helm is a tool used to deploy Kubernetes manifests to a cluster, but does not facilitate application management.
 
-Does the Mattermost Operator replace the Helm Chart?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+We provide a `helm chart <https://github.com/mattermost/mattermost-helm/tree/master/charts/mattermost-operator>`__ that can be used to to install the Mattermost Operator.
 
-No. Helm is a good mechanism to deploy operators and other applications but doesn't facilitate application management. 
+Does the Mattermost Operator replace the Mattermost Helm Chart?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Is minIO the only available storage option?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Although the Mattermost Operator is the recommended deployment option for running Mattermost in Kubernetes, a helm chart for directly deploying Mattermost resources is still available.
 
-No, other options and operators can be added.
+What database and filestore should I use for Mattermost?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Do I have to install a separate SQL server to use the Mattermost Operator?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Always refer to the Mattermost server documentation for what databases and filestores are supported.
 
-No, you can use the operator on top of your existing deployment without setting up another database. We will shortly
-be providing steps for this configuration.
+The following documentation on :doc:`scaling for enterprise </scale/scaling-for-enterprise>` is a good place to start.
+
+What are the Operator-Managed database and filestore options?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The Mattermost Operator provides an option to directly provision a database and filestore for a Mattermost installation to use,
+but this option is only meant for validation and testing. These options rely on specific releases of operators that we don't maintain.
+For production deployments of Mattermost, one of the other database and filestore configuration options should be chosen.
+
+In particular, the Operator-Managed database option relies on a MySQL operator and MySQL databases are now deprecated in Mattermost.
+
+Note that you can choose to manage your Mattermost database and filestore in Kubernetes with other operators, but these should
+be provisioned separately first and then connected to the Mattermost installation as ``external`` backends.
 
 Can you use blue-green deployments with different database schemas?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
