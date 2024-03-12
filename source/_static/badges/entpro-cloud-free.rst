@@ -9,7 +9,7 @@
 
 |plans-img| Available on `Enterprise and Professional <https://mattermost.com/pricing/>`__ plans
 
-|deployment-img| `Cloud <https://customers.mattermost.com/cloud/signup/>`__ and `self-hosted <https://mattermost.com/deploy/>`__ deployments
+|deployment-img| `Cloud <https://mattermost.com/sign-up/>`__ and `self-hosted <https://mattermost.com/deploy/>`__ deployments
 
 .. |plans-img| image:: ../_static/images/badges/flag_icon.svg
 
