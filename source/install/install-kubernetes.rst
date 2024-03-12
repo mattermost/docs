@@ -79,14 +79,19 @@ With Helm
 With Kubernetes CLI
 ^^^^^^^^^^^^^^^^^^^
 
-Operators are installed using ``kubectl``, and each operator is created in its own namespace. You can install and run multiple Mattermost installations in the same cluster using different namespaces. 
+``kubectl`` can be used to install the Mattermost Operator if using ``helm`` is not an option. 
 
-1. Install the Mattermost Operator:
+1. Create a namespace for the Mattermost Operator:
 
   .. code-block:: sh
     :class: mm-code-block 
 
     kubectl create ns mattermost-operator
+
+2. Install the Mattermost Operator:
+
+  .. code-block:: sh
+    :class: mm-code-block 
 
     kubectl apply -n mattermost-operator -f https://raw.githubusercontent.com/mattermost/mattermost-operator/master/docs/mattermost-operator/mattermost-operator.yaml
 
