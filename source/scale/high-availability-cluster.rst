@@ -42,7 +42,7 @@ To ensure your instance and configuration are compatible with high availability,
 1. Set up a new Mattermost server that uses an identical copy of the configuration file, ``config.json``. Verify the servers are functioning by hitting each independent server through its private IP address.
 2. Modify the ``config.json`` files on both servers to add ``ClusterSettings``. See the `high availability configuration settings </configure/environment-configuration-settings.html#high-availability>`__ documentation for details.
 3. Verify the configuration files are identical on both servers then restart each machine in the cluster.
-4. Modify your NGINX setup so that it proxies to both servers. For more information about this, see `proxy server configuration`_.
+4. Modify your NGINX setup so that it proxies to both servers. For more information about this, see `proxy server configuration <https://docs.mattermost.com/install/setup-nginx-proxy.html>`__ documentation for details.
 5. Open **System Console > Environment > High Availability** to verify that each machine in the cluster is communicating as expected with green status indicators. If not, investigate the log files for any extra information.
 
 Add a server to the cluster
@@ -57,7 +57,7 @@ Remove a server from the cluster
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. Back up your Mattermost database and the file storage location. For more information about backing up, see :doc:`../deploy/backup-disaster-recovery`.
-2. Modify your NGINX setup to remove the server. For information about this, see ``proxy server configuration`_.
+2. Modify your NGINX setup to remove the server. For information about this, see `proxy server configuration <https://docs.mattermost.com/install/setup-nginx-proxy.html>`__ documentation for details..
 3. Open **System Console > Environment > High Availability** to verify that all the machines remaining in the cluster are communicating as expected with green status indicators. If not, investigate the log files for any extra information.
 
 Configuration and compatibility

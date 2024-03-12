@@ -7,8 +7,8 @@ From Mattermost v9.2, this changelog summarizes updates for the latest cloud and
 
 - See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) documentation for details on upgrading.
 - See the [changelog in progress](https://bit.ly/2nK3cVf) for details about the upcoming release.
-- **Self-Hosted Releases Prior to v9.2**: See the [Mattermost Legacy Self-Hosted Changelog](/deploy/legacy-self-hosted-changelog) for details.
-- **Cloud Releases Prior to v9.2**: See the [Mattermost Legacy Cloud Changelog](/deploy/legacy-cloud-changelog) for details.
+- **Self-Hosted Releases Prior to v9.2**: See the [Mattermost Legacy Self-Hosted Changelog](https://docs.mattermost.com/deploy/legacy-self-hosted-changelog) for details.
+- **Cloud Releases Prior to v9.2**: See the [Mattermost Legacy Cloud Changelog](https://docs.mattermost.com/deploy/legacy-cloud-changelog) for details.
 ```
 
 ```{contents} On ths page

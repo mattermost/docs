@@ -60,7 +60,7 @@ A Mattermost Enterprise implementation consists of the following system componen
 
 The following diagram is a high-level illustration of the Mattermost platform and how its various components interact with each other within a network:
 
-.. image:: ../images/network_diagram.png
+.. image:: ../images/network_diagram.svg
    :alt: Mattermost network diagram shows how the various system components of the Mattermost platform interact with each other within a network deployment.
 
 **Reference**: https://docs.mattermost.com/deploy/deployment-overview.html
