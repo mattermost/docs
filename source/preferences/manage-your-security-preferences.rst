@@ -51,7 +51,7 @@ Select your profile picture, select **Profile**, and then select **Security** to
 |                      | 7. Select **Save**.                                                                                    |
 +----------------------+--------------------------------------------------------------------------------------------------------+
 | Sign-in method       | This option allows you to switch your login method between using email/username and password and       |
-|                      | :ref:`single sign-on credentials <collaborate/access-your-workspace:single sign-on sso>`.              |
+|                      | :ref:`single sign-on credentials <collaborate/access-your-workspace:single sign-on (sso)>`.            |
 |                      |                                                                                                        |
 |                      | You can configure this setting using Mattermost in a web browser or using the desktop app.             |
 |                      |                                                                                                        |

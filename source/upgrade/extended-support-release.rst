@@ -39,7 +39,7 @@ If your organization prefers to have the newest features and improvements, Exten
 How do I install the Extended Support Release?
 ----------------------------------------------
 
-Follow our :ref:`install <guides/deployment:install guides>` or :doc:`upgrade </upgrade/upgrading-mattermost-server>` guides. Please read the :ref:`best practices <upgrade/prepare-to-upgrade-mattermost:upgrade best practices)>` for upgrading. Please also follow the :doc:`important upgrade notes </upgrade/important-upgrade-notes>` for all the versions since the current ESR version you have currently installed. Please see :doc:`the changelog </deploy/legacy-self-hosted-changelog>` for list of database, API, and ``config.json`` updates for each release.
+Follow our :doc:`install </guides/deployment>` or :doc:`upgrade </upgrade/upgrading-mattermost-server>` guides. Please read the :ref:`best practices <upgrade/prepare-to-upgrade-mattermost:upgrade best practices>` for upgrading. Please also follow the :doc:`important upgrade notes </upgrade/important-upgrade-notes>` for all the versions since the current ESR version you have currently installed. Please see :doc:`the changelog </deploy/legacy-self-hosted-changelog>` for list of database, API, and ``config.json`` updates for each release.
 
 When downloading the Mattermost version, choose an Extended Support Release from the list below.
 
@@ -110,9 +110,9 @@ Earlier 4.x versions of Mattermost Desktop App and earlier v1.x versions of the 
 
 Please review the :doc:`Desktop App changelog </deploy/desktop-app-changelog>` and the :doc:`Mobile App changelog </deploy/mobile-app-changelog>` notes for any self-hosted version requirements for features and functionalities, as well as notes on security fixes.
 
-See more details in our :ref:`release lifecycle documentation <upgrade/release-lifecycle:desktop and mobile app server compatibility>`.
+See more details in our :ref:`release lifecycle documentation <upgrade/release-lifecycle:desktop and mobile app compatibility>`.
 
-If we upgrade to the latest ESR with a legacy `E10 or E20 license key <https://docs.mattermost.com/about/editions-and-offerings.html#other-mattermost-plans>`_, will we have compatibility issues?
+If we upgrade to the latest ESR with a legacy :ref:`E10 or E20 license key <about/editions-and-offerings:other mattermost plans>`_, will we have compatibility issues?
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 No. Your license key is decoupled from the Mattermost server version. You can freely upgrade to any ESR regardless of your license key or plan.

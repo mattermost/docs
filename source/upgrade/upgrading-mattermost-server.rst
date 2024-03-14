@@ -123,7 +123,7 @@ Upgrade Mattermost Server
 
         - You can either move the bleve index directory out from the ``mattermost`` directory before upgrading or, following an upgrade, you can copy the contents of the bleve index directory from the ``backup`` directory. 
         - You can then store that directory or re-index as preferred. 
-        - The bleve indexes can be migrated without reindexing between Mattermost versions. See our :ref:`Configuration Settings <configure/configuration-settings:bleve settings experimental>` documentation for details on configuring the bleve index directory.
+        - The bleve indexes can be migrated without reindexing between Mattermost versions. See our :ref:`Configuration Settings <configure/experimental-configuration-settings:experimental bleve configuration settings>` documentation for details on configuring the bleve index directory.
 
      Once you've completed all of the steps above (where applicable), you're ready to execute the full command that includes ``xargs rm -r`` to delete the files. Note that the following example includes ``-o -path mattermost/yourFolderHere``:
 

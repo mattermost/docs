@@ -45,7 +45,7 @@ Collapsed reply threads
 
 Collapsed Reply Threads offers an enhanced experience for users communicating in threads and replying to messages. Collapsed Reply Threads are generally available in Mattermost Cloud and from self-hosted Mattermost v7.0, and are enabled by default for all new Mattermost deployments. 
 
-Depending on how your System Admin has enabled **Collapsed Reply Threads** for your workspace, it may already be enabled for you, or you may be able to enable this feature for your account. See our :doc:`organize conversations using Collapsed Reply Threads </collaboration/organize-conversations>` documentation to learn more about working with Collapsed Reply Threads.
+Depending on how your System Admin has enabled **Collapsed Reply Threads** for your workspace, it may already be enabled for you, or you may be able to enable this feature for your account. See our :doc:`organize conversations using Collapsed Reply Threads </collaborate/organize-conversations>` documentation to learn more about working with Collapsed Reply Threads.
 
 .. tab:: Web/Desktop
 
@@ -71,7 +71,7 @@ You can customize how time is displayed in Mattermost.
 Teammate name display
 ---------------------
 
-You can customize how names are displayed in Mattermost unless your system admin has :ref:`disabled your ability to do so <configure/site-configuration-settings:lock teammate name display>`.
+You can customize how names are displayed in Mattermost unless your system admin has :ref:`disabled your ability to do so <configure/site-configuration-settings:lock teammate name display for all users>`.
 
 .. tab:: Web/Desktop
     
@@ -127,7 +127,7 @@ You can control whether website link previews in Mattermost show a preview of th
 
 .. note::
 
-    Your system admin must :ref:`enable this feature <configure/site-configuration-settings:enable link previews>`. It's disabled by default. Once enabled, only the first web link in a message creates a preview of the website.
+    Your system admin must :ref:`enable this feature <configure/site-configuration-settings:enable message link previews>`. It's disabled by default. Once enabled, only the first web link in a message creates a preview of the website.
 
 .. tab:: Web/Desktop
 

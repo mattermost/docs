@@ -3,7 +3,7 @@
 Frequently Asked Questions
 --------------------------
 
-How to bind authentication to ``Id`` attribute instead of email
+How to bind authentication to Id attribute instead of email
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Alternatively, you can use an ``Id`` attribute instead of email to bind the user.  We recommend choosing an ID that is unique and will not change over time.  

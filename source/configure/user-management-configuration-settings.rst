@@ -97,7 +97,7 @@ Teams
 |                                                               | - Environment variable: N/A                                 |
 +---------------------------------------------------------------+-------------------------------------------------------------+
 | See the :ref:`using AD/LDAP synchronized groups to manage team or private channel membership                                |
-| <onboard/ad-ldap-groups:synchronize ad-ldap groups to mattermost>` documentation for details.                               |
+| <onboard/ad-ldap-groups-synchronization:synchronize ad/ldap groups to mattermost>` documentation for details.               |
 +---------------------------------------------------------------+-------------------------------------------------------------+
 
 ----

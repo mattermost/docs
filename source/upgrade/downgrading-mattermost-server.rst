@@ -13,7 +13,7 @@ Run the following set of queries, specific to your database, to downgrade the sc
 
 .. important::
 
-  The performance impact of a downgrade from v6.0 is similar to the v6.0 database migration. See the :ref:`Upgrading Mattermost Server <upgrade/upgrading-mattermost-server:preparing to upgrade to the latest version>` documentation for details.
+  The performance impact of a downgrade from v6.0 is similar to the v6.0 database migration. See the :ref:`upgrade to Mattermost v6.0 <upgrade/prepare-to-upgrade-mattermost:upgrade to mattermost v6.0>` documentation for details.
 
 .. code-block:: sh
 

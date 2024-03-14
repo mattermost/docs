@@ -363,7 +363,7 @@ The process is based on a widely used `bully leader election algorithm <https://
 Job server
 ^^^^^^^^^^^
 
-Mattermost runs periodic tasks via the :ref:`job server <configure/experimental-job-configuration-settings>`. These tasks include:
+Mattermost runs periodic tasks via the :ref:`job server <configure/experimental-configuration-settings:experimental job configuration settings>`. These tasks include:
 
 - LDAP sync
 - Data retention
