@@ -27,4 +27,4 @@ jobs:
         path: build/html
     - name: cd/Upload artifacts to S3
       run: |
-        aws s3 cp build/html s3://docs.mattermost.com/ --recursive --cache-control no-cache --acl public-read --no-progress
+        aws s3 sync build/html s3://docs.mattermost.com/ --delete --cache-control no-cache --acl public-read --no-progress
