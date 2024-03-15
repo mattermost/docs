@@ -227,13 +227,13 @@ However, pursuant to Section (b) of Article 49 of GDPR, transfers of personal da
 Are you IPv6 compliant?
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-Yes, the Mattermost platform is compliant with IPv6 when Audio & Screen Sharing is disabled, both for our `self-hosted and Cloud offerings <https://docs.mattermost.com/about/editions-and-offerings.html>`__.
+Yes, the Mattermost platform is compliant with IPv6 when Audio & Screen Sharing is disabled, both for our :doc:`self-hosted and Cloud offerings </about/editions-and-offerings>`.
 
-We plan to add IPv6 compliance for `Audio & Screen Sharing <https://docs.mattermost.com/configure/calls-deployment.html>`__ in future.
+We plan to add IPv6 compliance for :doc:`Audio & Screen Sharing </configure/calls-deployment>` in future.
 
 Are you 508 compliant?
 ~~~~~~~~~~~~~~~~~~~~~~
 
 Yes, the Mattermost platform is compliant with 508.
 
-Learn more about our `VPAT Template for 508 compliance <https://docs.mattermost.com/about/vpat.html>`__, and `how Mattermost approaches accessibility in product development <https://mattermost.com/blog/mattermost-accessibility-for-the-visually-impaired/>`__.
+Learn more about our :doc:`VPAT Template for 508 compliance </about/vpat>`, and `how Mattermost approaches accessibility in product development <https://mattermost.com/blog/mattermost-accessibility-for-the-visually-impaired/>`__.

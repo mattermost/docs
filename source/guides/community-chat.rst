@@ -16,7 +16,7 @@ General channels
 Technical support channels
 --------------------------
 
-To familiarize yourself with our community support process, start by reading the `Get Help <https://docs.mattermost.com/guides/get-help.html>`__ documentation page.
+To familiarize yourself with our community support process, start by reading the :doc:`Get Help </guides/get-help>` documentation page.
 
 - `~Ask Anything <https://community.mattermost.com/core/channels/ask-anything>`__
 - `~Bugs <https://community.mattermost.com/core/channels/bugs>`__

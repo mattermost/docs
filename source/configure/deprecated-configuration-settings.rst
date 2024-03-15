@@ -416,7 +416,7 @@ Patch React DOM used by plugins
 
 This setting enables the patching of the React DOM library when loading web app plugins so that the plugin uses the version matching the web app. This should only be needed temporarily after upgrading to Mattermost v7.7 for plugins that have not been updated yet. Changes to this setting require a server restart before taking effect.
 
-See the `Important Upgrade Notes <https://docs.mattermost.com/upgrade/important-upgrade-notes.html>`__ for more information.
+See the :doc:`Important Upgrade Notes </upgrade/important-upgrade-notes>` for more information.
 
 **True**: Web app plugins that package their own version of React DOM are patched to instead use the version of React DOM provided by the web app.
 
@@ -790,7 +790,7 @@ Enable AD/LDAP group sync
 
 **False**: Disables AD/LDAP Group Sync and removes **User Management > Groups** from the System Console.
 
-For more information on AD/LDAP Group Sync, please see the `AD/LDAP Group Sync documentation <https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html>`__.
+For more information on AD/LDAP Group Sync, please see the :doc:`AD/LDAP Group Sync documentation </onboard/ad-ldap-groups-synchronization>`.
 
 +-----------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ExperimentalLdapGroupSync": false`` with options ``true`` and ``false``. |

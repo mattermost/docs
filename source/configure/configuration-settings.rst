@@ -24,7 +24,7 @@ Mattermost configuration settings are organized into the following categories wi
 - :doc:`Compliance configuration settings </configure/compliance-configuration-settings>`
 - :doc:`Experimental configuration settings </configure/experimental-configuration-settings>`
 
-In self-hosted Mattermost deployments, configuration settings are maintained in the ``config.json`` configuration file, located in the ``mattermost/config`` directory, or `stored in the database <https://docs.mattermost.com/configure/configuration-in-your-database.html>`__. System Admins managing self-hosted workspaces can also modify the ``config.json`` file directly using a text editor.
+In self-hosted Mattermost deployments, configuration settings are maintained in the ``config.json`` configuration file, located in the ``mattermost/config`` directory, or :doc:`stored in the database </configure/store-configuration-in-your-database>`. System Admins managing self-hosted workspaces can also modify the ``config.json`` file directly using a text editor.
 
 Configuration in database
 --------------------------
@@ -48,7 +48,7 @@ Configuration reload
 .. include:: ../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
-The “config watcher”, the mechanism that automatically reloads the ``config.json`` file, has been deprecated in favor of the `mmctl config reload <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-config-reload>`__ command that you must run to apply configuration changes you've made. This improves configuration performance and robustness.
+The “config watcher”, the mechanism that automatically reloads the ``config.json`` file, has been deprecated in favor of the :ref:`mmctl config reload <manage/mmctl-command-line-tool:mmctl config reload>` command that you must run to apply configuration changes you've made. This improves configuration performance and robustness.
 
 Deprecated configuration settings
 ---------------------------------

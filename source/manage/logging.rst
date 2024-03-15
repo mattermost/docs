@@ -31,10 +31,10 @@ File logs feature info level log messages including errors and information aroun
 
 Customize the following file logs by going to **System Console > Environment > Logging** or by editing the ``config.json`` file directly:
 
-- `Stop outputting file logs <https://docs.mattermost.com/configure/environment-configuration-settings.html#output-logs-to-file>`__
-- `Adjust file log level <https://docs.mattermost.com/configure/environment-configuration-settings.html#file-log-level>`__ 
-- `Output file logs as plain text <https://docs.mattermost.com/configure/environment-configuration-settings.html#output-file-logs-as-json>`__
-- `Change where the file is stored <https://docs.mattermost.com/configure/environment-configuration-settings.html#file-log-directory>`__
+- :ref:`Stop outputting file logs <configure/environment-configuration-settings:output logs to file>`
+- :ref:`Adjust file log level <configure/environment-configuration-settings:file log level>` 
+- :ref:`Output file logs as plain text <configure/environment-configuration-settings:output file logs as json>`
+- :ref:`Change where the file is stored <configure/environment-configuration-settings:file log directory>`
 
 You can optionally output log records to any combination of `console <#console-target-configuration-options>`__, `local file <#file-target-configuration-options>`__, `syslog <#syslog-target-configuration-options>`__, and `TCP socket <#tcp-target-configuration-options>`__ targets, each featuring additional customization. See `Advanced Logging <#advanced-logging>`__ for details.
 

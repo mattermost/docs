@@ -26,7 +26,7 @@ Mattermost Server v8.0.0
 
 - Removed ``ExperimentalSettings.PatchPluginsReactDOM``. If this setting was previously enabled, confirm that:
   - All Mattermost-supported plugins are updated to the latest versions.
-  - Any other plugins have been updated to support React 17. See the `Important Upgrade Notes <https://docs.mattermost.com/upgrade/important-upgrade-notes.html>`_ for v7.7 for more information.
+  - Any other plugins have been updated to support React 17. See the :doc:`Important Upgrade Notes </upgrade/important-upgrade-notes>` for v7.7 for more information.
 - Deprecated Insights for all new instances and for existing servers that upgrade to Mattermost v8.0.
 - Removed deprecated ``PermissionUseSlashCommands``.
 - Removed deprecated ``model.CommandArgs.Session``.
