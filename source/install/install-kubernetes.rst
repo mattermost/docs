@@ -223,7 +223,7 @@ Deploy Mattermost
 
     "accesskey", "Filestore access key.", "Yes"
     "secretkey", "Filestore secret key.", "Yes"
-    "metadata.name": "The name of the secret.", "Yes"
+    "metadata.name", "The name of the secret.", "Yes"
 
   Here's an example of a secret for Amazon S3:
 

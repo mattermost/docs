@@ -46,6 +46,8 @@ From Mattermost v9.4:
 Start a call
 ------------
 
+When you start a call, you automatically become the host. If the host of a multi-person call leaves that call, the next person who initially joined the call automatically becomes the host.
+
 .. tabs::
 
   .. tab:: Web/Desktop
@@ -116,7 +118,7 @@ Record a call
 .. include:: ../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
-From Mattermost v7.7, if you're the host of a meeting, you can record the call, unless your system admin has `disabled the host's ability to do so <https://docs.mattermost.com/configure/plugins-configuration-settings.html#enable-call-recordings-beta>`__.
+From Mattermost v7.7, if you're the host of a call, you can record that call, unless your system admin has `disabled the host's ability to do so <https://docs.mattermost.com/configure/plugins-configuration-settings.html#enable-call-recordings-beta>`__.
 
 Call recordings include audio, any screen sharing during the call, and `text captions <#add-captions-to-recorded-calls>`__, when enabled. The default setting for a recording is 60 minutes, but your system admin may `change the recording duration </configure/plugins-configuration-settings.html#maximum-call-recording-duration>`__ as needed. You'll receive a reminder 10 minutes before the recording limit is reached. If your call is going to continue beyond the recording limit, allow the first recording to complete, then start a new recording immediately after.
 

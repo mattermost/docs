@@ -202,7 +202,7 @@ Troubleshooting your Desktop App installation
 ----------------------------------------------
 
 Where is configuration stored locally?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The location of the Mattermost desktop app configuration file depends on the platform where you're running Mattermost (and, in the case of macOS, how you've chosen to install the app):
 
