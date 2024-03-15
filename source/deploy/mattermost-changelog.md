@@ -15,6 +15,80 @@ From Mattermost v9.2, this changelog summarizes updates for the latest cloud and
 :depth: 2
 ```
 
+## Release v9.7 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
+
+**Release day: April 16, 2024**
+
+```{Important}
+If you upgrade from a release earlier than v9.6, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
+```
+
+### Improvements
+
+#### User Interface (UI)
+ - Added Mattermost [AI plugin](https://github.com/mattermost/mattermost-plugin-ai) to pre-packaged plugins.
+ - Pre-packaged Calls version [v0.25.0](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v0.25.0).
+ - Pre-packaged GitHub plugin version [v2.2.0](https://github.com/mattermost/mattermost-plugin-github/releases/tag/v2.2.0).
+ - Upgraded ``@mattermost/client`` and ``@mattermost/types`` to support TypeScript v5.x.
+ - The first emoji is now auto-selected in the emoji picker.
+ - Added markdown support for batched email notifications.
+ - Users’ timezone is now used in batched email notifications.
+ - Removed a conflicting class (``help-text``) from the interactive dialog field description to resolve the black text color in the dark theme.
+ - Updated the user interface of **Team Settings** modal.
+ - Promoted Simplified Chinese to Beta, and downgraded Hungarian and Spanish languages to Beta.
+ - Improved the opening animation of the user settings modal.
+
+#### Administration
+ - Dropped pre-packaged plugins for unsupported OS and architectures.
+ - Implemented a new **Export Settings** page in the **System Console** to allow Cloud administrators to customize their dedicated export S3 buckets.
+ - LDAP job details are no longer shown until the job runs.
+ - Added more logging to the ``NotificationsLog``.
+ - A message is now logged if a user tries to login using a wrong password.
+ - Posts from deactivated users are now included in **Direct Message** channel exports. Also the ``--include-archived-channels`` flag is now respected for **Direct Message** channels.
+ - Changed the cache headers for file endpoints to cache privately for 24 hours, instead of not caching at all.
+ - Moved following functions from server to public utils:
+    - ``ResetReadTimeout``
+    - ``AppendMultipleStatementsFlag``
+    - ``SetupConnection``
+    - ``SanitizeDataSource``
+
+#### mmctl
+ - mmctl can now be used to download a Support Packet using ``--local mode``.
+ - mmctl system ping will now return detailed server status even if the server status is unhealthy.
+
+### Bug Fixes
+ - Fixed an issue where the Desktop App login flow would erroneously show the landing page for first time users.
+ - Fixed an issue where a right-hand side card was not reloaded when the card body was updated.
+ - Fixed an issue where ``en-AU`` language selection was not allowed.
+ - Fixed an issue with the position of text in the default profile picture.
+ - Fixed an issue with the group search to parse the display name.
+ - Fixed an issue where items with longer text did not widen the user guide dropdown to its max-width.
+ - Fixed an issue where the configuration could not be updated from the **System Console** in cloud environments.
+
+### config.json
+ - Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
+
+#### Changes to all plans:
+ - Under ``CloudSettings`` in ``config.json``:
+   - Added a new configuration setting ``Disable`` (via config.json, or environment variable), default ``false``. When set to ``true``, all requests to the Mattermost Customer Portal from a workspace will be disabled.
+
+### Open Source Components
+ - Added ``stylelint`` to https://github.com/mattermost/mattermost/.
+
+### Go Version
+ - v9.7 is built with Go ``v1.20.7``.
+
+### Known Issues
+ - Status may sometimes get stuck as **Away** or **Offline** in High Availability mode with IP Hash turned off.
+ - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
+ - Slack import through the CLI fails if email notifications are enabled.
+ - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
+ - The Playbooks left-hand sidebar doesn't update when a user is added to a run or playbook without a refresh.
+ - If a user isn't a member of a configured broadcast channel, posting a status update might fail without any error feedback. As a temporary workaround, join the configured broadcast channels, or remove those channels from the run configuration.
+ 
+### Contributors
+ - 
+
 ## Release v9.6 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
 
 **Release day: March 15, 2024**
