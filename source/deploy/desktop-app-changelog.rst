@@ -66,6 +66,7 @@ Contributors
 ~~~~~~~~~~~~~~
 
 - `BaumiCoder <https://github.com/BaumiCoder>`_, `ctlaltdieliet <https://github.com/ctlaltdieliet>`_, `devinbinnie <https://github.com/devinbinnie>`_, `larkox <https://github.com/larkox>`_.
+
 Release v5.5
 --------------
 
@@ -1742,8 +1743,7 @@ Mac
 Linux (Beta)
 ^^^^^^^^^^^^
 
-- [Ubuntu - 64 bit] `Right clicking taskbar icon and choosing Quit only minimizes the
-   app <https://github.com/mattermost/desktop/issues/90#issuecomment-233712183>`__
+- [Ubuntu - 64 bit] `Right clicking taskbar icon and choosing Quit only minimizes the app <https://github.com/mattermost/desktop/issues/90#issuecomment-233712183>`__
 - [Ubuntu - 64 bit] `Direct message notification pop ups do not properly render <https://github.com/mattermost/mattermost-server/issues/3589>`__
 
 Contributors

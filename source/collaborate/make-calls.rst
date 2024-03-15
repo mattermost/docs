@@ -97,7 +97,7 @@ Record a call
 .. include:: ../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
-From Mattermost v7.7, if you're the host of a meeting, you can record the call, unless your system admin has :ref:`disabled the host's ability to do so <configure/plugins-configuration-settings:enable call recordings beta>`.
+From Mattermost v7.7, if you're the host of a meeting, you can record the call, unless your system admin has :ref:`disabled the host's ability to do so <configure/plugins-configuration-settings:enable call recordings (beta)>`.
 
 Call recordings include audio, any screen sharing during the call, and `text captions <#add-captions-to-recorded-calls>`__, when enabled. The default setting for a recording is 60 minutes, but your system admin may :ref:`change the recording duration <configure/plugins-configuration-settings:maximum call recording duration>` as needed. You'll receive a reminder 10 minutes before the recording limit is reached. If your call is going to continue beyond the recording limit, allow the first recording to complete, then start a new recording immediately after.
 

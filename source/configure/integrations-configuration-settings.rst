@@ -145,7 +145,7 @@ The number of seconds to wait for external integration HTTP requests, before tim
 Enable integrations to override usernames
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**True**: Webhooks, slash commands, OAuth 2.0 apps, and other integrations such as :doc:`Zapier </integrations/zapier>`, will be allowed to change the username they are posting as. If no username is present, the username for the post is the same as it would be for a setting of ``False``.
+**True**: Webhooks, slash commands, OAuth 2.0 apps, and other integrations, will be allowed to change the username they are posting as. If no username is present, the username for the post is the same as it would be for a setting of ``False``.
 
 **False**: **(Default)** Custom slash commands can only post as the username of the user who used the slash command. OAuth 2.0 apps can only post as the username of the user who set up the integration. For incoming webhooks and outgoing webhooks, the username is "webhook". See https://developers.mattermost.com/integrate/other-integrations/ for more details.
 
@@ -165,7 +165,7 @@ Enable integrations to override usernames
 Enable integrations to override profile picture icons
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**True**: Webhooks, slash commands, and other integrations, such as :doc:`Zapier </integrations/zapier>`, will be allowed to change the profile picture they post with.
+**True**: Webhooks, slash commands, and other integrations, will be allowed to change the profile picture they post with.
 
 **False**: **(Default)** Webhooks, slash commands, and OAuth 2.0 apps can only post with the profile picture of the account they were set up with. See https://developers.mattermost.com/integrate/other-integrations/ for more details.
 
@@ -276,7 +276,7 @@ Enable GIF picker
 +------------------------------------------------------------------------------------------------------------+
 
 .. note::
-   :ref:`Link previews <configure/site-configuration-settings:enable link previews>` must be enabled in order to display GIF link previews. Mattermost deployments restricted to access behind a firewall must open port 443 to both https://api.gfycat.com/v1 and https://gfycat.com/<id> (for all request types) for this feature to work.
+   :ref:`Link previews <configure/site-configuration-settings:enable message link previews>` must be enabled in order to display GIF link previews. Mattermost deployments restricted to access behind a firewall must open port 443 to both https://api.gfycat.com/v1 and https://gfycat.com/<id> (for all request types) for this feature to work.
 
 .. config:setting:: integrate-gfycatapikey
   :displayname: Gfycat API key (Integrations)

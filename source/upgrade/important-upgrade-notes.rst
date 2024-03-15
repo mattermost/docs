@@ -143,7 +143,7 @@ Important Upgrade Notes
 |                                                    | Removed deprecated ``model.CommandArgs.Session``.                                                                                                                |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | For servers wanting to allow websockets to connect from origins other than the origin of the site URL, please set the ``ServiceSettings.AllowCorsFrom``          |
-|                                                    | :ref:`configuration setting <configure/integrations-configuration-settings:enable cross origin requests from>`. Also ensure that    |
+|                                                    | :ref:`configuration setting <configure/integrations-configuration-settings:enable cross-origin requests from>`. Also ensure that                                 |
 |                                                    | the ``siteURL`` is set correctly.                                                                                                                                |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | In v8.0 release, the following repositories are merged into one: ``mattermost-server``, ``mattermost-webapp`` and ``mmctl``.                                     |
@@ -172,7 +172,7 @@ Important Upgrade Notes
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | In v7.10.3, for servers wanting to allow websockets to connect from origins other than the origin of the site URL, please set the                                |
 |                                                    | ``ServiceSettings.AllowCorsFrom``                                                                                                                                |
-|                                                    | :ref:`configuration setting <configure/integrations-configuration-settings:enable cross origin requests from>`. Also ensure that    |
+|                                                    | :ref:`configuration setting <configure/integrations-configuration-settings:enable cross-origin requests from>`. Also ensure that                                 |
 |                                                    | the ``siteURL`` is set correctly.                                                                                                                                |
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v7.9                                               | Added a new index on ``Posts(OriginalId)``. For a database with 11.8 million posts, on a machine with a i7-11800H CPU (8 cores, 16 threads), 32GiB of RAM and    |
@@ -224,10 +224,10 @@ Important Upgrade Notes
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | In v7.9.5, for servers wanting to allow websockets to connect from origins other than the origin of the site URL, please set the                                 |
 |                                                    | ``ServiceSettings.AllowCorsFrom``                                                                                                                                |
-|                                                    | :ref:`configuration setting <configure/integrations-configuration-settings:enable cross origin requests from>`. Also ensure that    |
+|                                                    | :ref:`configuration setting <configure/integrations-configuration-settings:enable cross-origin requests from>`. Also ensure that                                 |
 |                                                    | the ``siteURL`` is set correctly.                                                                                                                                |
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| v7.8                                               | :ref:`Message Priority & Acknowledgement <configure/site-configuration-settings:message priority>` is now enabled by default       |
+| v7.8                                               | :ref:`Message Priority & Acknowledgement <configure/site-configuration-settings:message priority>` is now enabled by default                                     |
 |                                                    | for all instances. You may disable this feature in the System Console by going to **Posts > Message Priority** or via the config ``PostPriority`` setting.       |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | In v7.8.5, fixed an issue where a user would still see threads in the threads view of channels they have left. Migration execution time in MySQL: Query OK,      |
@@ -271,7 +271,7 @@ Important Upgrade Notes
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | In v7.8.7, for servers wanting to allow websockets to connect from origins other than the origin of the site URL, please set the                                 |
 |                                                    | ``ServiceSettings.AllowCorsFrom``                                                                                                                                |
-|                                                    | :ref:`configuration setting <configure/integrations-configuration-settings:enable cross origin requests from>`. Also ensure that    |
+|                                                    | :ref:`configuration setting <configure/integrations-configuration-settings:enable cross-origin requests from>`. Also ensure that                                 |
 |                                                    | the ``siteURL`` is set correctly.                                                                                                                                |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | In v7.8.11, improved performance on data retention ``DeleteOrphanedRows`` queries.                                                                               |
@@ -402,7 +402,7 @@ Important Upgrade Notes
 |                                                    | Starting with the Calls version shipping with v7.7, there's now a minimum version requirement when using the external RTCD service. This means that if Calls is  |
 |                                                    | configured to use the external service, customers need to upgrade RTCD first to at least version 0.8.0 or the plugin will fail to start.                         |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                                                    | In v7.7.2, :ref:`Message Priority & Acknowledgement <configure/site-configuration-settings:message priority>` is now enabled by    |
+|                                                    | In v7.7.2, :ref:`Message Priority & Acknowledgement <configure/site-configuration-settings:message priority>` is now enabled by                                  |
 |                                                    | default for all instances. You may disable this feature in the System Console by going to **Posts > Message Priority** or via the config ``PostPriority``        |
 |                                                    | setting.                                                                                                                                                         |
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -687,7 +687,7 @@ Important Upgrade Notes
 |                                                    | passwords for all the users who were generated during the bulk import process and whose password has not been changed even once.                                 |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | v5.35.0 introduces a new feature to search for files. Search results for files shared in the past may be incomplete until a                                      |
-|                                                    | :ref:`content extraction command <administration/command-line-tools:mattermost extract documents content>` is executed to extract                                |
+|                                                    | :ref:`content extraction command <manage/mmctl-command-line-tool:mmctl extract>` is executed to extract                                                          |
 |                                                    | and index the content of files already in the database. Instances running Elasticsearch or Bleve search backends will also need to execute a Bulk Indexing after |
 |                                                    | the content extraction is complete. Please see more details in `this blog post <https://mattermost.com/blog/file-search/>`_.                                     |
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+

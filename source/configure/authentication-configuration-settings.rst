@@ -67,7 +67,7 @@ Restrict account creation to specified email domains
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
-| This setting limits the email address domains that can be used to create a new account or team. You **must** set :ref:`Require Email Verification <configure/authentication-configuration-settings:require email verification>` to ``true`` for the restriction to function. This setting only affects email login. | - System Config path: **Authentication > Signup**                       |
+| This setting limits the email address domains that can be used to create a new account or team. You **must** set :ref:`Require Email Verification <configure/authentication-configuration-settings:require email verification>` to ``true`` for the restriction to function. This setting only affects email login.                | - System Config path: **Authentication > Signup**                       |
 |                                                                                                                                                                                                                                                                                                                                    | - ``config.json`` setting: ``.TeamSettings.RestrictCreationToDomains``  |
 | String input of a comma-separated list of domains, i.e. ``corp.mattermost.com, mattermost.com``                                                                                                                                                                                                                                    | - Environment variable: ``MM_TEAMSETTINGS_RESTRICTCREATIONTODOMAINS``   |
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
@@ -353,7 +353,7 @@ Enable multi-factor authentication
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+
-| - **true**: Users who sign-in with AD/LDAP or an email address have the option to add :doc:`multi-factor authentication </onboard/multi-factor-authentication>` to their accounts. | - System Config path: **Authentication > MFA**                                         |
+| - **true**: Users who sign-in with AD/LDAP or an email address have the option to add :doc:`multi-factor authentication </onboard/multi-factor-authentication>` to their accounts.                              | - System Config path: **Authentication > MFA**                                         |
 | - **false**: **(Default)** Disables multi-factor authentication.                                                                                                                                                | - ``config.json`` setting: ``.ServiceSettings.EnableMultifactorAuthentication: false`` |
 |                                                                                                                                                                                                                 | - Environment variable: ``MM_SERVICESETTINGS_ENABLEMULTIFACTORAUTHENTICATION``         |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+
@@ -726,7 +726,7 @@ Group filter
 |                                                                                                                                                                                                                                                  | - ``config.json`` setting: ``.LdapSettings.GroupFilter`` |
 | String input. Default is ``(|(objectClass=group)(objectClass=groupOfNames)(objectClass=groupOfUniqueNames))``.                                                                                                                                   | - Environment variable: ``MM_LDAPSETTINGS_GROUPFILTER``  |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------+
-| **Note**: This filter is only used when AD/LDAP Group Sync is enabled. See :doc:`AD/LDAP Group Sync </onboard/ad-ldap-groups-synchronization>` for more information.                                                                                                           |
+| **Note**: This filter is only used when AD/LDAP Group Sync is enabled. See :doc:`AD/LDAP Group Sync </onboard/ad-ldap-groups-synchronization>` for more information.                                                                                                                                        |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: ldap-enableadminfilter
@@ -792,7 +792,7 @@ Guest filter
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------+
 | This setting accepts an AD/LDAP filter to apply when searching for external users with Guest Access to Mattermost. Only users selected by the query can access Mattermost as Guests. | - System Config path: **Authentication > AD/LDAP**       |
 |                                                                                                                                                                                      | - ``config.json`` setting: ``.LdapSettings.GuestFilter`` |
-| See :doc:`Guest Accounts </onboard/guest-accounts>` for more information.                                                                               | - Environment variable: ``MM_LDAPSETTINGS_GUESTFILTER``  |
+| See :doc:`Guest Accounts </onboard/guest-accounts>` for more information.                                                                                                            | - Environment variable: ``MM_LDAPSETTINGS_GUESTFILTER``  |
 |                                                                                                                                                                                      |                                                          |
 | String input.                                                                                                                                                                        |                                                          |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------+
@@ -818,7 +818,7 @@ ID attribute
 |                                                                                                                                                                                                    |                                                                                                                                  |
 | String input.                                                                                                                                                                                      |                                                                                                                                  |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
-| **Note**: If a user's ID Attribute changes, a new Mattermost account is created that is not associated with the previous account. If you need to change this field after users have signed-in, use the :ref:`mmctl ldap idmigrate <manage/mmctl-command-line-tool:mmctl ldap idmigrate>` command.       |
+| **Note**: If a user's ID Attribute changes, a new Mattermost account is created that is not associated with the previous account. If you need to change this field after users have signed-in, use the :ref:`mmctl ldap idmigrate <manage/mmctl-command-line-tool:mmctl ldap idmigrate>` command.                                     |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: ldap-loginidattribute
@@ -1031,7 +1031,7 @@ Group display name attribute
 |                                                                                                  | - ``config.json`` setting: ``.LdapSettings.GroupDisplayNameAttribute``                                                                      |
 | String input.                                                                                    | - Environment variable: ``MM_LDAPSETTINGS_GROUPDISPLAYNAMEATTRIBUTE``                                                                       |
 +--------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| **Note**: This attribute is only used when AD/LDAP Group Sync is enabled and it is **required**.  See the :doc:`AD/LDAP Group Sync documentation </onboard/ad-ldap-groups-synchronization>` for more information. |
+| **Note**: This attribute is only used when AD/LDAP Group Sync is enabled and it is **required**.  See the :doc:`AD/LDAP Group Sync documentation </onboard/ad-ldap-groups-synchronization>` for more information.                              |
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: ldap-groupidattribute
@@ -1058,7 +1058,7 @@ Group ID attribute
 |                                                                                                              |                                                                                                                                 |
 | String input.                                                                                                |                                                                                                                                 |
 +--------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| **Note**: This attribute is only used when AD/LDAP Group Sync is enabled and it is **required**.  See the :doc:`AD/LDAP Group Sync documentation </onboard/ad-ldap-groups-synchronization>` for more information. |
+| **Note**: This attribute is only used when AD/LDAP Group Sync is enabled and it is **required**.  See the :doc:`AD/LDAP Group Sync documentation </onboard/ad-ldap-groups-synchronization>` for more information.                              |
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: ldap-syncinterval
@@ -1202,7 +1202,7 @@ Enable login with SAML
  <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 +---------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------+
-| - **true**: Enables sign-in with SAML. See :doc:`SAML Single Sign-On </onboard/sso-saml>` to learn more. | - System Config path: **Authentication > SAML 2.0**        |
+| - **true**: Enables sign-in with SAML. See :doc:`SAML Single Sign-On </onboard/sso-saml>` to learn more.                              | - System Config path: **Authentication > SAML 2.0**        |
 | - **false**: **(Default)** Disables sign-in with SAML.                                                                                | - ``config.json`` setting: ``.SamlSettings.Enable: false`` |
 |                                                                                                                                       | - Environment variable: ``MM_SAMLSETTINGS_ENABLE``         |
 +---------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------+
@@ -1230,7 +1230,7 @@ Enable synchronizing SAML accounts with AD/LDAP
 | - **true**: Mattermost updates configured Mattermost user attributes (ex. FirstName, Position, Email) with their values from AD/LDAP. This synchronization may deactivate Mattermost users or remove them from groups, teams, or channels. AD/LDAP synchronization must be enabled and configured through the settings under **Authentication > AD/LDAP**. | - System Config path: **Authentication > SAML 2.0**                    |
 | - **false**: **(Default)** Disables syncing of SAML-authenticated Mattermost users with AD/LDAP.                                                                                                                                                                                                                                                           | - ``config.json`` setting: ``.SamlSettings.EnableSyncWithLdap: false`` |
 |                                                                                                                                                                                                                                                                                                                                                            | - Environment variable: ``MM_SAMLSETTINGS_ENABLESYNCWITHLDAP``         |
-| See :doc:`AD/LDAP Setup </onboard/ad-ldap>` and :ref:`Advanced User Management <guides/administration:advanced user management>` to learn more.                                                                                                                                                 |                                                                        |
+| See :doc:`AD/LDAP Setup </onboard/ad-ldap>` to learn more.                                                                                                                                                                                                                                                                                                 |                                                                        |
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
 
 .. config:setting:: saml-ignoreguestsldapsync
@@ -1256,7 +1256,7 @@ Ignore guest users when synchronizing with AD/LDAP
 | - **true**: When syncing with the AD/LDAP server, Mattermost does not sync any information about SAML-authenticated Guest Users from the AD/LDAP server. Manage guest deactivation manually via **System Console > Users**.  | - System Config path: **Authentication > SAML 2.0**                      |
 | - **false**: **(Default)** Syncing Mattermost with the AD/LDAP server updates Guest User attributes and deactivates and removes SAML-authenticated accounts for Guest Users that are no longer active on the AD/LDAP server. | - ``config.json`` setting: ``.SamlSettings.IgnoreGuestsLdapSync: false`` |
 |                                                                                                                                                                                                                              | - Environment variable: ``MM_SAMLSETTINGS_IGNOREGUESTSLDAPSYNC``         |
-| For more information, see :doc:`AD/LDAP Setup </onboard/ad-ldap>` and :ref:`Advanced User Management <guides/administration:advanced user management>`.           |                                                                          |
+| For more information, see :doc:`AD/LDAP Setup </onboard/ad-ldap>` for details.                                                                                                                                               |                                                                          |
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. config:setting:: saml-overridebindwithldap
@@ -1282,7 +1282,7 @@ Override SAML bind data with AD/LDAP information
 | - **true**: If the SAML ID attribute is configured, Mattermost overrides the SAML ID attribute with the AD/LDAP ID attribute. If the SAML ID attribute is not present, Mattermost overrides the SAML Email attribute with the AD/LDAP Email attribute. | - System Config path: **Authentication > SAML 2.0**                               |
 | - **false**: **(Default)** Mattermost uses the email attribute to bind users to SAML.                                                                                                                                                                  | - ``config.json`` setting: ``.SamlSettings.EnableSyncWithLdapIncludeAuth: false`` |
 |                                                                                                                                                                                                                                                        | - Environment variable: ``MM_SAMLSETTINGS_ENABLESYNCWITHLDAPINCLUDEAUTH``         |
-| For more information, see :doc:`AD/LDAP Setup </onboard/ad-ldap>` and :ref:`Advanced User Management <guides/administration:advanced user management>`.                                     |                                                                                   |
+| For more information, see :doc:`AD/LDAP Setup </onboard/ad-ldap>` for details.                                                                                                                                                                         |                                                                                   |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------+
 | **Notes**:                                                                                                                                                                                                                                                                                                                                 |
 |  - This setting should be **false** unless LDAP sync is enabled.                                                                                                                                                                                                                                                                           |
@@ -1698,7 +1698,7 @@ Guest attribute
 +--------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
 | (Optional) This setting determines the SAML Assertion attribute used to apply a Guest role to users in Mattermost.       | - System Config path: **Authentication > SAML 2.0**             |
 |                                                                                                                          | - ``config.json`` setting: ``.SamlSettings.GuestAttribute``     |
-| See the :doc:`Guest Accounts documentation </onboard/guest-accounts>` for more information. | - Environment variable: ``MM_SAMLSETTINGS_GUESTATTRIBUTE``      |
+| See the :doc:`Guest Accounts documentation </onboard/guest-accounts>` for more information.                              | - Environment variable: ``MM_SAMLSETTINGS_GUESTATTRIBUTE``      |
 |                                                                                                                          |                                                                 |
 | String input.                                                                                                            |                                                                 |
 +--------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
@@ -2093,7 +2093,7 @@ Enable OAuth 2.0 authentication with Google
 | - **true**: Allows team and account creation using Google OAuth authentication. Input the **Client ID** and **Client Secret** credentials to configure. | - System Config path: **Authentication > OAuth 2.0**         |
 | - **false**: **(Default)** Disables Google OAuth authentication.                                                                                        | - ``config.json`` setting: ``.GoogleSettings.Enable: false`` |
 |                                                                                                                                                         | - Environment variable: ``MM_GOOGLESETTINGS_ENABLE``         |
-| See :doc:`Google Single Sign-On </onboard/sso-google>` implementation instructions.                                        |                                                              |
+| See :doc:`Google Single Sign-On </onboard/sso-google>` implementation instructions.                                                                     |                                                              |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
 
 .. config:setting:: oauth-googleclientid
@@ -2113,7 +2113,7 @@ Google OAuth 2.0 Client ID
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------+
 | This setting stores the OAuth Client ID from Google. Generate the ID by going to the **Credentials** section of the Google Cloud Platform APIs & Services menu and selecting **Create Credentials > OAuth client ID**. | - System Config path: **Authentication > OAuth 2.0** |
 |                                                                                                                                                                                                                        | - ``config.json`` setting: ``.GoogleSettings.Id``    |
-| See :doc:`Google Single Sign-On </onboard/sso-google>`  for instructions that can be used to implement Google OAuth or OpenID authentication.                                             | - Environment variable: ``MM_GOOGLESETTINGS_ID``     |
+| See :doc:`Google Single Sign-On </onboard/sso-google>`  for instructions that can be used to implement Google OAuth or OpenID authentication.                                                                          | - Environment variable: ``MM_GOOGLESETTINGS_ID``     |
 |                                                                                                                                                                                                                        |                                                      |
 | String input.                                                                                                                                                                                                          |                                                      |
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------+
@@ -2224,7 +2224,7 @@ Enable OAuth 2.0 Authentication with Office 365
 | - **false**: **(Default)** Disables Office 365 OAuth authentication.                | - ``config.json`` setting: ``.Office365Settings.Enable: false``|
 |                                                                                     | - Environment variable: ``MM_OFFICE365SETTINGS_ENABLE``        |
 +-------------------------------------------------------------------------------------+----------------------------------------------------------------+
-| **Note**: See the :doc:`Office 365 Single Sign-On </onboard/sso-office>` documentation for details.                     |
+| **Note**: See the :doc:`Office 365 Single Sign-On </onboard/sso-office>` documentation for details.                                                  |
 +------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Office 365 OAuth 2.0 Application ID
@@ -2246,7 +2246,7 @@ Office 365 OAuth 2.0 Application ID
 |                                                                                                                                                 | - ``config.json`` setting: ``.Office365Settings.Id`` |
 | String input.                                                                                                                                   | - Environment variable: ``MM_OFFICE365SETTINGS_ID``  |
 +-------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------+
-| **Note**: See the :doc:`Office 365 Single Sign-On </onboard/sso-office>` documentation for details.                                                                       |
+| **Note**: See the :doc:`Office 365 Single Sign-On </onboard/sso-office>` documentation for details.                                                                                                    |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Office 365 OAuth 2.0 Application secret password
@@ -2268,7 +2268,7 @@ Office 365 OAuth 2.0 Application secret password
 |                                                                                                                                                              | - ``config.json`` setting: ``.Office365Settings.Secret`` |
 | String input.                                                                                                                                                | - Environment variable: ``MM_OFFICE365SETTINGS_SECRET``  |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------+
-| **Note**: See the :doc:`Office 365 Single Sign-On </onboard/sso-office>` documentation for details.                                                                                        |
+| **Note**: See the :doc:`Office 365 Single Sign-On </onboard/sso-office>` documentation for details.                                                                                                                     |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------+
 
 Office 365 OAuth 2.0 Directory (tenant) ID
@@ -2290,7 +2290,7 @@ Office 365 OAuth 2.0 Directory (tenant) ID
 |                                                                                               | - ``config.json`` setting: ``.Office365Settings.DirectoryId`` |
 | String input.                                                                                 | - Environment variable: ``MM_OFFICE365SETTINGS_DIRECTORYID``  |
 +-----------------------------------------------------------------------------------------------+---------------------------------------------------------------+
-| **Note**: See the :doc:`Office 365 Single Sign-On </onboard/sso-office>` documentation for details.                              |
+| **Note**: See the :doc:`Office 365 Single Sign-On </onboard/sso-office>` documentation for details.                                                           |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
@@ -2408,7 +2408,7 @@ Enable OpenID Connect authentication with GitLab
 | - **false**: **(Default)** Disables GitLab OpenID Connect authentication.                | - ``config.json`` setting: ``.GitLabSettings.Enable: false`` |
 |                                                                                          | - Environment variable: ``MM_GITLABSETTINGS_ENABLE``         |
 +------------------------------------------------------------------------------------------+--------------------------------------------------------------+
-| **Note**: See the :doc:`GitLab Single Sign-On </onboard/sso-gitlab>` documentation for details.                            |
+| **Note**: See the :doc:`GitLab Single Sign-On </onboard/sso-gitlab>` documentation for details.                                                         |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 GitLab OpenID site URL
@@ -2431,7 +2431,7 @@ GitLab OpenID site URL
 |                                                                                         | - Environment variable: N/A                               |
 | String input.                                                                           |                                                           |
 +-----------------------------------------------------------------------------------------+-----------------------------------------------------------+
-| **Note**: See **Step 2** of the :doc:`GitLab Single Sign-On </onboard/sso-gitlab>` documentation for details.          |
+| **Note**: See **Step 2** of the :doc:`GitLab Single Sign-On </onboard/sso-gitlab>` documentation for details.                                       |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------+
 
 GitLab OpenID Discovery endpoint
@@ -2454,7 +2454,7 @@ GitLab OpenID Discovery endpoint
 |                                                                                     | - Environment variable: ``MM_GITLABSETTINGS_DISCOVERYENDPOINT`` |
 | String input. Default is ``https://gitlab.com/.well-known/openid-configuration``    |                                                                 |
 +-------------------------------------------------------------------------------------+-----------------------------------------------------------------+
-| **Note**: See **Step 2** of the :doc:`GitLab Single Sign-On </onboard/sso-gitlab>` documentation for details.            |
+| **Note**: See **Step 2** of the :doc:`GitLab Single Sign-On </onboard/sso-gitlab>` documentation for details.                                         |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 GitLab OpenID Client ID
@@ -2477,7 +2477,7 @@ GitLab OpenID Client ID
 |                                                                 | - Environment variable: ``MM_GITLABSETTINGS_ID``                         |
 | String input.                                                   |                                                                          |
 +-----------------------------------------------------------------+--------------------------------------------------------------------------+
-| **Note**: See **Step 2** of the :doc:`GitLab Single Sign-On </onboard/sso-gitlab>` documentation for details. |
+| **Note**: See **Step 2** of the :doc:`GitLab Single Sign-On </onboard/sso-gitlab>` documentation for details.                              |
 +--------------------------------------------------------------------------------------------------------------------------------------------+
 
 GitLab OpenID Client secret
@@ -2500,7 +2500,7 @@ GitLab OpenID Client secret
 |                                                                         | - Environment variable: ``MM_GITLABSETTINGS_SECRET``             |
 | String input.                                                           |                                                                  |
 +-------------------------------------------------------------------------+------------------------------------------------------------------+
-| **Note**: See **Step 2** of the :doc:`GitLab Single Sign-On </onboard/sso-gitlab>` documentation for details. |
+| **Note**: See **Step 2** of the :doc:`GitLab Single Sign-On </onboard/sso-gitlab>` documentation for details.                              |
 +--------------------------------------------------------------------------------------------------------------------------------------------+
 
 Google OpenID settings
@@ -2529,7 +2529,7 @@ Enable OpenID Connect authentication with Google
 | - **true**: Allows team and account creation using Google OpenID authentication.                                 | - System Config path: **Authentication > OpenID Connect**    |
 | - **false**: **(Default)** Disables Google OpenID authentication.                                                | - ``config.json`` setting: ``.GoogleSettings.Enable: false`` |
 |                                                                                                                  | - Environment variable: ``MM_GOOGLESETTINGS_ENABLE``         |
-| See :doc:`Google Single Sign-On </onboard/sso-google>` implementation instructions. |                                                              |
+| See :doc:`Google Single Sign-On </onboard/sso-google>` implementation instructions.                              |                                                              |
 +------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
 
 Google OpenID Discovery endpoint
@@ -2549,7 +2549,7 @@ Google OpenID Discovery endpoint
 +---------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
 | This setting is prepopulated with the Discovery Endpoint for Google OpenID Connect.                                                                     | - System Config path: **Authentication > OpenID Connect**        |
 |                                                                                                                                                         | - ``config.json`` setting: ``.GoogleSettings.DiscoveryEndpoint`` |
-| See :ref:`Configure Mattermost for Google Apps SSO <onboard/sso-google:step 3 configure mattermost for google apps sso>`. | - Environment variable: ``MM_GOOGLESETTINGS_DISCOVERYENDPOINT``  |
+| See :ref:`Configure Mattermost for Google Apps SSO <onboard/sso-google:step 3: configure mattermost for google apps sso>`.                              | - Environment variable: ``MM_GOOGLESETTINGS_DISCOVERYENDPOINT``  |
 |                                                                                                                                                         |                                                                  |
 | String input. Default is ``https://accounts.google.com/.well-known/openid-configuration``                                                               |                                                                  |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
@@ -2571,7 +2571,7 @@ Google OpenID Client ID
 +------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+
 | This setting stores the Client ID generated by Google.                                                           | - System Config path: **Authentication > OpenID Connect** |
 |                                                                                                                  | - ``config.json`` setting: ``.GoogleSettings.Id``         |
-| See :doc:`Google Single Sign-On </onboard/sso-google>` implementation instructions. | - Environment variable: ``MM_GOOGLESETTINGS_ID``          |
+| See :doc:`Google Single Sign-On </onboard/sso-google>` implementation instructions.                              | - Environment variable: ``MM_GOOGLESETTINGS_ID``          |
 |                                                                                                                  |                                                           |
 | String input.                                                                                                    |                                                           |
 +------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+
@@ -2593,7 +2593,7 @@ Google OpenID Client secret
 +-------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+
 | This setting stores the Client Secret generated by Google.                                                        | - System Config path: **Authentication > OpenID Connect** |
 |                                                                                                                   | - ``config.json`` setting: ``.GoogleSettings.Secret``     |
-| See :doc:`Google Single Sign-On </onboard/sso-google>`  implementation instructions. | - Environment variable: ``MM_GOOGLESETTINGS_SECRET``      |
+| See :doc:`Google Single Sign-On </onboard/sso-google>`  implementation instructions.                              | - Environment variable: ``MM_GOOGLESETTINGS_SECRET``      |
 |                                                                                                                   |                                                           |
 | String input.                                                                                                     |                                                           |
 +-------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+
@@ -2627,7 +2627,7 @@ Enable OpenID Connect authentication with Office 365
 | - **true**: Allows team and account creation using Office 365 OpenID Connect authentication.                         | - System Config path: **Authentication > OpenID Connect**       |
 | - **false**: **(Default)** Disables Office 365 OpenID Connect authentication.                                        | - ``config.json`` setting: ``.Office365Settings.Enable: false`` |
 |                                                                                                                      | - Environment variable: ``MM_OFFICE365SETTINGS_ENABLE``         |
-| See :doc:`Office 365 Single Sign-On </onboard/sso-office>` implementation instructions. |                                                                 |
+| See :doc:`Office 365 Single Sign-On </onboard/sso-office>` implementation instructions.                              |                                                                 |
 +----------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
 
 Office 365 OpenID Directory (tenant) ID
@@ -2647,7 +2647,7 @@ Office 365 OpenID Directory (tenant) ID
 +----------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------+
 | This setting holds the Directory (tenant) ID set for Mattermost through the Microsoft Azure Portal.                  | - System Config path: **Authentication > OpenID Connect**     |
 |                                                                                                                      | - ``config.json`` setting: ``.Office365Settings.DirectoryId`` |
-| See :doc:`Office 365 Single Sign-On </onboard/sso-office>` implementation instructions. | - Environment variable: ``MM_OFFICE365SETTINGS_DIRECTORYID``  |
+| See :doc:`Office 365 Single Sign-On </onboard/sso-office>` implementation instructions.                              | - Environment variable: ``MM_OFFICE365SETTINGS_DIRECTORYID``  |
 |                                                                                                                      |                                                               |
 | String input.                                                                                                        |                                                               |
 +----------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------+
@@ -2669,7 +2669,7 @@ Office 365 OpenID Discovery endpoint
 +----------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
 | This setting is prepopulated with the Discovery Endpoint for Office 365 OpenID Connect.                              | - System Config path: **Authentication > OpenID Connect**           |
 |                                                                                                                      | - ``config.json`` setting: ``.Office365Settings.DiscoveryEndpoint`` |
-| See :doc:`Office 365 Single Sign-On </onboard/sso-office>` implementation instructions. | - Environment variable: ``MM_OFFICE365SETTINGS_DISCOVERYENDPOINT``  |
+| See :doc:`Office 365 Single Sign-On </onboard/sso-office>` implementation instructions.                              | - Environment variable: ``MM_OFFICE365SETTINGS_DISCOVERYENDPOINT``  |
 |                                                                                                                      |                                                                     |
 | String input. Default is ``https://login.microsoftonline.com/common/v2.0/.well-known/openid-configuration``          |                                                                     |
 +----------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
@@ -2691,7 +2691,7 @@ Office 365 Client ID
 +----------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+
 | This setting stores the **Application (client) ID** generated through the Microsoft Azure Portal.                    | - System Config path: **Authentication > OpenID Connect** |
 |                                                                                                                      | - ``config.json`` setting: ``.Office365Settings.Id``      |
-| See :doc:`Office 365 Single Sign-On </onboard/sso-office>` implementation instructions. | - Environment variable: ``MM_OFFICE365SETTINGS_ID``       |
+| See :doc:`Office 365 Single Sign-On </onboard/sso-office>` implementation instructions.                              | - Environment variable: ``MM_OFFICE365SETTINGS_ID``       |
 |                                                                                                                      |                                                           |
 | String input.                                                                                                        |                                                           |
 +----------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+
@@ -2713,7 +2713,7 @@ Office 365 Client secret
 +----------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+
 | This setting stores the **Client Secret** generated through the Microsoft Azure Portal.                              | - System Config path: **Authentication > OpenID Connect** |
 |                                                                                                                      | - ``config.json`` setting: ``.Office365Settings.Secret``  |
-| See :doc:`Office 365 Single Sign-On </onboard/sso-office>` implementation instructions. | - Environment variable: ``MM_OFFICE365SETTINGS_SECRET``   |
+| See :doc:`Office 365 Single Sign-On </onboard/sso-office>` implementation instructions.                              | - Environment variable: ``MM_OFFICE365SETTINGS_SECRET``   |
 |                                                                                                                      |                                                           |
 | String input.                                                                                                        |                                                           |
 +----------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+
@@ -2747,7 +2747,7 @@ Enable OpenID Connect authentication with other service providers
 | - **true**: Allows team and account creation using other OpenID Connect service providers.                                      | - System Config path: **Authentication > OpenID Connect**    |
 | - **false**: **(Default)** Disables OpenID Connect authentication with other service providers.                                 | - ``config.json`` setting: ``.OpenIdSettings.Enable: false`` |
 |                                                                                                                                 | - Environment variable: ``MM_OPENIDSETTINGS_ENABLE``         |
-| See :doc:`OpenID Connect Single Sign-On </onboard/sso-openidconnect>` implementation instructions. |                                                              |
+| See :doc:`OpenID Connect Single Sign-On </onboard/sso-openidconnect>` implementation instructions.                              |                                                              |
 +---------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
 
 OpenID Connect (other) Button name
@@ -2809,7 +2809,7 @@ OpenID Connect (other) Discovery endpoint
 | The URL should be in the format of ``https://myopenid.provider.com/{my_organization}/                  | - ``config.json`` setting: ``.OpenIdSettings.DiscoveryEndpoint`` |
 | .well-known/openid-configuration``.                                                                    | - Environment variable: ``MM_OPENIDSETTINGS_DISCOVERYENDPOINT``  |
 |                                                                                                        |                                                                  |
-| See :doc:`OpenID Connect Single Sign-On </onboard/sso-openidconnect>`     |                                                                  |
+| See :doc:`OpenID Connect Single Sign-On </onboard/sso-openidconnect>`                                  |                                                                  |
 | implementation instructions.                                                                           |                                                                  |
 |                                                                                                        |                                                                  |
 | String input.                                                                                          |                                                                  |
@@ -2836,7 +2836,7 @@ OpenID Connect (other) Client ID
 +---------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+
 | This setting stores the Client ID from the OpenID provider.                                                                     | - System Config path: **Authentication > OpenID Connect** |
 |                                                                                                                                 | - ``config.json`` setting: ``.OpenIdSettings.Id``         |
-| See :doc:`OpenID Connect Single Sign-On </onboard/sso-openidconnect>` implementation instructions. | - Environment variable: ``MM_OPENIDSETTINGS_ID``          |
+| See :doc:`OpenID Connect Single Sign-On </onboard/sso-openidconnect>` implementation instructions.                              | - Environment variable: ``MM_OPENIDSETTINGS_ID``          |
 |                                                                                                                                 |                                                           |
 | String input.                                                                                                                   |                                                           |
 +---------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+
@@ -2858,7 +2858,7 @@ OpenID Connect (other) Client secret
 +---------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+
 | This setting stores the Client Secret from the OpenID provider.                                                                 | - System Config path: **Authentication > OpenID Connect** |
 |                                                                                                                                 | - ``config.json`` setting: ``.OpenIdSettings.Secret``     |
-| See :doc:`OpenID Connect Single Sign-On </onboard/sso-openidconnect>` implementation instructions. | - Environment variable: ``MM_OPENIDSETTINGS_SECRET``      |
+| See :doc:`OpenID Connect Single Sign-On </onboard/sso-openidconnect>` implementation instructions.                              | - Environment variable: ``MM_OPENIDSETTINGS_SECRET``      |
 |                                                                                                                                 |                                                           |
 | String input.                                                                                                                   |                                                           |
 +---------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+
@@ -2894,7 +2894,7 @@ Enable guest access
 | - **false**: **(Default)** Disables the guest account feature. | - ``config.json`` setting: ``.GuestAccountsSettings.Enable: false`` |
 |                                                                | - Environment variable: ``MM_GUESTACCOUNTSSETTINGS_ENABLE``         |
 +----------------------------------------------------------------+---------------------------------------------------------------------+
-| **Note**: See the :doc:`Guest Accounts </onboard/guest-accounts>` documentation for details.            |
+| **Note**: See the :doc:`Guest Accounts </onboard/guest-accounts>` documentation for details.                                         |
 +--------------------------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: guest-whitelistdomains
@@ -2960,6 +2960,6 @@ Show guest tag
 +-----------------------------------------------------------------+----------------------------------------------------------------------+
 | **Notes**:                                                                                                                             |
 |                                                                                                                                        |
-| - See the :doc:`guest accounts </onboard/guest-accounts>` documentation for details.                      |
+| - See the :doc:`guest accounts </onboard/guest-accounts>` documentation for details.                                                   |
 | - This configuration setting applies to all Mattermost clients, including web, desktop app, and mobile app.                            |
 +----------------------------------------------------------------------------------------------------------------------------------------+

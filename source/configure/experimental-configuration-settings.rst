@@ -743,7 +743,7 @@ Bulk index now
 
 Select **Index Now** to index all users, channels, and posts in the database from oldest to newest. Bleve is available during indexing, but search results may be incomplete until the indexing job is complete.
 
-You can configure the maximum time window used for a batch of posts being indexed. See the :ref:`Bulk Indexing Time Window Seconds <configure/configuration-settings:bulk indexing time window seconds>` documentation for details.
+You can configure the maximum time window used for a batch of posts being indexed. See the :ref:`Bulk Indexing Time Window Seconds <configure/environment-configuration-settings:bulk indexing time window>` documentation for details.
 
 Purge indexes
 ~~~~~~~~~~~~~
@@ -1726,7 +1726,7 @@ Group unread channels
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-This setting applies to the new sidebar only. You must disable the :ref:`Enable Legacy Sidebar <configure/configuration-settings:enable legacy sidebar>` configuration setting to see and enable this functionality in the System Console.
+This setting applies to the new sidebar only. You must disable the :ref:`Enable Legacy Sidebar <configure/deprecated-configuration-settings:enable legacy sidebar>` configuration setting to see and enable this functionality in the System Console.
 
 **Default Off**: Disables the unread channels sidebar section for all users by default. Users can enable it in **Settings > Sidebar > Group unread channels separately**.
 

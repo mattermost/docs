@@ -11,7 +11,7 @@ Training
 Documentation
 -------------
 
-- :doc:`Mattermost product documentation (here) </>` - read information for end users and administrators about deploying, managing, and using Mattermost.
+- `Mattermost product documentation (here) <https://docs.mattermost.com/>`__ - read information for end users and administrators about deploying, managing, and using Mattermost.
 - `Mattermost developer documentation <https://developers.mattermost.com/>`__ - read information for developer community members about integrating, extending, customizing, and contributing to Mattermost.
 - `Mattermost API reference <https://api.mattermost.com/>`__ - read information for developer community members about the Mattermost API used by Mattermost clients and third-party applications.
 

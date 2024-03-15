@@ -42,7 +42,7 @@ Global retention policy for messages
 
  <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
-Set how long Mattermost keeps messages across all teams and channels. Doesn't apply to custom retention policies. Requires the :ref:`global retention policy for messages <configure/configuration-settings:enable global retention policy for messages>` configuration setting to be set to ``true``.
+Set how long Mattermost keeps messages across all teams and channels. Doesn't apply to custom retention policies. Requires the :ref:`global retention policy for messages <configure/compliance-configuration-settings:global retention policy for messages>` configuration setting to be set to ``true``.
 
 By default, messages are kept forever. If **Hours**, **Days**, or **Years** is chosen, set how many hours, days, or years messages are kept in Mattermost. Messages older than the duration you set will be deleted nightly. The minimum message retention time is one hour.
 
@@ -68,7 +68,7 @@ Global retention policy for files
 
  <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
-Set how long Mattermost keeps files across all teams and channels. Doesn't apply to custom retention policies. Requires the :ref:`global retention policy for files <configure/configuration-settings:enable global retention policy for files>` configuration setting to be set to ``true``.
+Set how long Mattermost keeps files across all teams and channels. Doesn't apply to custom retention policies. Requires the :ref:`global retention policy for files <configure/compliance-configuration-settings:global retention policy for files>` configuration setting to be set to ``true``.
 
 By default, files are kept forever. If **Hours**, **Days**, or **Years** is chosen, set how many hours, days, or years files are kept in Mattermost. Files older than the duration you set will be deleted nightly. The minimum file retention time is one hour.
 
