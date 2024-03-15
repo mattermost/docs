@@ -214,7 +214,7 @@ Alternatively, you can use the mmctl tools to set the team to be managed by grou
 
 1. Ensure there is at least one group already associated to the team. You can view and add default teams to a group via **System Console > User Management > Groups > Group Configuration**. Please see more information on adding default teams and channels `here </onboard/ad-ldap-groups-synchronization.html#adding-default-teams-or-channels-for-the-group>`__. Additionally, you can use the mmctl to confirm if there is already a group associated to the team by running the `mmctl group team list </manage/mmctl-command-line-tool.html#mmctl-group-team-list>`__ command.
 2. Ensure **Team Settings > General > Allow any user with an account on this server to join this team** is set to **No**.
-3. Convert the team to have its membership managed by synchronized groups by running the `mmctl group team enable </manage/mmctl-command-line-tool.html#mmctl-group-team-enable>`__command.
+3. Convert the team to have its membership managed by synchronized groups by running the `mmctl group team enable </manage/mmctl-command-line-tool.html#mmctl-group-team-enable>`__ command.
 
 To manage membership of a private channel with synchronized groups:
 
