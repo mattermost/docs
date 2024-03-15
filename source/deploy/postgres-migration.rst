@@ -31,7 +31,7 @@ Required tools
 
    -  ``go install github.com/mattermost/morph/cmd/morph@v1``
 
--  Optinally install ``dbcmp`` to compare the data after a migration:
+-  Optionally install ``dbcmp`` to compare the data after a migration:
 
    -  ``go install github.com/mattermost/dbcmp/cmd/dbcmp@latest``
 
@@ -47,6 +47,7 @@ Before the migration
 -  See the `schema-diffs <#schema-diffs>`__ section to ensure data compatibility between schemas.
 -  Prepare your PostgreSQL environment by creating a database and user. See the `database </install/prepare-mattermost-database.html>`__ documentation for details.
 -  If you are planning to run an iterative migration (running the pgloader several times), please see :ref:`iterative-migrations` section.
+-  On `newer versions <https://www.postgresql.org/docs/release/15.0/>`__ of PostgreSQL, newly created users do not have access to ``public`` schema. The access should be explicitly granted by running ``GRANT ALL ON SCHEMA public to mmuser'``.
 
 Prepare target database
 -----------------------
@@ -60,62 +61,64 @@ Prepare target database
 
    morph apply up --driver postgres --dsn "postgres://user:pass@localhost:5432/<target_db_mame>?sslmode=disable" --path ./db/migrations/postgres --number -1
 
-\* After ``v8`` due to project re-organization, the migrations directory has been changed to ``./server/channels/db/migrations/postgres/`` relative to project root. Therefore ``cd`` into ``mattermost/server/channels``.
+\* After ``v8`` due to project re-organization, the migrations directory has been changed to ``./server/channels/db/migrations/postgres/`` relative to the project root. Therefore ``cd`` into ``mattermost/server/channels``.
 
 Schema diffs
 ------------
 
-Before the migration, due to differences between two schemas, some manual steps may be required for an error-free migration.
+Before the migration, due to differences between the two schemas, some manual steps may be required for an error-free migration.
 
 Text to character varying
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Since the Mattermost MySQL schema uses the ``text`` column type in the various tables instead of ``varchar`` representation in the PostgreSQL schema, we encourage you to check if the sizes are consistent within the PostgreSQL schema limits.
 
-================ ================ =====================
-Table            Column           Data type casting
-================ ================ =====================
-Audits           Action           text -> varchar(512)
-Audits           ExtraInfo        text -> varchar(1024)
-ClusterDiscovery HostName         text -> varchar(512)
-Commands         IconURL          text -> varchar(1024)
-Commands         AutoCompleteDesc text -> varchar(1024)
-Commands         AutoCompleteHint text -> varchar(1024)
-Compliances      Keywords         text -> varchar(512)
-Compliances      Emails           text -> varchar(1024)
-FileInfo         Path             text -> varchar(512)
-FileInfo         ThumbnailPath    text -> varchar(512)
-FileInfo         PreviewPath      text -> varchar(512)
-FileInfo         Name             text -> varchar(256)
-FileInfo         MimeType         text -> varchar(256)
-LinkMetadata     URL              text -> varchar(2048)
-RemoteClusters   SiteURL          text -> varchar(512)
-RemoteClusters   Topics           text -> varchar(512)
-Sessions         DeviceId         text -> varchar(512)
-Systems          Value            text -> varchar(1024)
-UploadSessions   FileName         text -> varchar(256)
-UploadSessions   Path             text -> varchar(512)
-================ ================ =====================
+================ ================ ===================== =============================================================================
+Table            Column           Data type casting     Consequence on deletion
+================ ================ ===================== =============================================================================
+Audits           Action           text -> varchar(512)  No side effect on how the application works (Affected row needs to be deleted).
+Audits           ExtraInfo        text -> varchar(1024) Same as above.
+ClusterDiscovery HostName         text -> varchar(512)  No side effect on how the application works (Affected row needs to be deleted).
+Commands         IconURL          text -> varchar(1024) The field can be deleted or updated with a new URL.
+Commands         AutoCompleteDesc text -> varchar(1024) The field can be deleted or rewritten.
+Commands         AutoCompleteHint text -> varchar(1024) The field can be either deleted or rewritten.
+Compliances      Keywords         text -> varchar(512)  The filter for compliance needs to be updated.
+Compliances      Emails           text -> varchar(1024) Same as above.
+FileInfo         Path             text -> varchar(512)  Previous links to this file won't work (The affected row needs to be deleted).
+FileInfo         ThumbnailPath    text -> varchar(512)  Same as above.
+FileInfo         PreviewPath      text -> varchar(512)  Same as above.
+FileInfo         Name             text -> varchar(256)  Same as above.
+FileInfo         MimeType         text -> varchar(256)  Same as above.
+LinkMetadata     URL              text -> varchar(2048) Previous links won't work (Affected row needs to be deleted).
+RemoteClusters   SiteURL          text -> varchar(512)  Previous remote cluster will be removed (Affected row needs to be deleted).
+RemoteClusters   Topics           text -> varchar(512)  The field can be removed.
+Sessions         DeviceId         text -> varchar(512)  Users will be logged out on these devices (The affected row needs to be deleted).
+Systems          Value            text -> varchar(1024) Edge case, ideally should never happen.
+UploadSessions   FileName         text -> varchar(256)  The upload session will be lost (The affected row needs to be deleted).
+UploadSessions   Path             text -> varchar(512)  Same as above.
+================ ================ ===================== =============================================================================
 
-As you can see, there are several occurrences where the schema can differ and data size constraints within the PostgreSQL schema can result in errors. Several reports have been received from our community that ``LinkMetadata`` and ``FileInfo`` tables had some overflows, so we recommend checking these tables in particular. Please do check if your data in the MySQL schema exceeds these limitations. You can check if there are any required deletions. For example, to do so in the ``Audits`` table/``Action`` column; run:
+As you can see, there are several occurrences where the schema can differ and data size constraints within the PostgreSQL schema can result in errors. Several reports have been received from our community that the ``LinkMetadata`` and ``FileInfo`` tables had some overflows, so we recommend checking these tables in particular. Please check if your data in the MySQL schema exceeds these limitations. You can check if there are any required deletions or updates. For example, to do so in the ``Audits`` table/``Action`` column; run:
 
 .. code:: sql
 
-   DELETE FROM mattermost.Audits where LENGTH(Action) > 512;
+   SELECT FROM mattermost.Audits where LENGTH(Action) > 512;
+
+Each table/row requires individual inspection hence we added the possible consequence of deletion.
 
 Full-text indexes
 ~~~~~~~~~~~~~~~~~
 
-It's possible that some words in the ``Posts`` and ``FileInfo`` tables can exceed the `limits of the maximum token length <https://www.postgresql.org/docs/11/textsearch-limitations.html>`__ for full text search indexing. In these cases, we recommend dropping the ``idx_posts_message_txt`` and ``idx_fileinfo_content_txt`` indexes from the PostgreSQL schema, and creating these indexes after the migration by running the following queries:
+It's possible that some words in the ``Posts`` and ``FileInfo`` tables can exceed the `limits of the maximum token length <https://www.postgresql.org/docs/11/textsearch-limitations.html>`__ for full-text search indexing. In these cases, we are dropping the ``idx_posts_message_txt`` and ``idx_fileinfo_content_txt`` indexes from the PostgreSQL schema, and creating these indexes after the migration by running the following queries:
 
-To drop indexes, run the following commands before the migration. Although these statements are included in the script, we recommend running these manually to prevent errors:
+Although these statements are included in the script, we recommend running these manually to prevent errors:
 
 .. code:: sql
 
    DROP INDEX IF EXISTS idx_posts_message_txt;
    DROP INDEX IF EXISTS idx_fileinfo_content_txt;
 
-Also make sure these indexes are re-created after the migration is completed. You can simply run the following queries to re-create these indexes:
+The following queries are added to the script to re-create these indexes after migration finishes:
 
 .. code:: sql
 
@@ -123,7 +126,7 @@ Also make sure these indexes are re-created after the migration is completed. Yo
    CREATE INDEX IF NOT EXISTS idx_fileinfo_content_txt ON {{ .source_schema }}.fileinfo USING gin(to_tsvector('english', content));
 
 .. note::
-   If any of the entries in your  ``Posts`` and ``FileInfo`` tables exceed the limit, ``pgloader`` will fail with ``ERROR:  string is too long for tsvector`` error while trying to create these indexes. You should remove these statements from the ``pgloader`` configuration.
+   If any of the entries in your  ``Posts`` and ``FileInfo`` tables exceed the limit, ``pgloader`` will fail with the ``ERROR:  string is too long for tsvector`` error while trying to create these indexes. You should manually remove these indexes.
 
 Artifacts may remain from previous configurations/versions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -134,15 +137,15 @@ Prior to ``v6.4``, Mattermost was using `golang-migrate <https://github.com/gola
 
    DROP TABLE mattermost.schema_migrations;
 
-Also, if you were previously utilizing a database for handling the Mattermost configuration, those tables should be removed from your MySQL database. Consider running following DDL to drop tables.
+Also, if you were previously utilizing a database for handling the `Mattermost configuration <https://docs.mattermost.com/configure/configuration-in-your-database.html>`__, those tables will not be migrated from your MySQL database with the migration `script <#migrate-the-data>`__. Please use ``mmctl config migrate`` tooling to `migrate your config <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-config-migrate>`__ to the target database. After migrating the config, we should also update the ``SqlSettings.DataSource`` and ``SqlSettings.DriverName`` fields to reflect new changes. To do so, in the Postgres database we should update the active configuration row:
 
 .. code:: sql
 
-   DROP TABLE ConfigurationFiles;
-   DROP TABLE Configurations;
-   DROP TABLE db_config_migrations;
+   SELECT * FROM Configurations WHERE Active = 't';
 
-Some community members have reported that they had ``description`` and ``nextsyncat`` columns in their ``SharedChannelRemotes`` table. These columns should be removed from the table. Consider running following DDL to drop the columns. (This migration will be added to future versions of Mattermost).
+You should update the ``SqlSettings.DataSource`` and ``SqlSettings.DriverName`` fields accordingly. Also, note that the ``MM_CONFIG``environment variable should point to the new DSN after the migration is completed.
+
+Some community members have reported that they had ``description`` and ``nextsyncat`` columns in their ``SharedChannelRemotes`` table. These columns should be removed from the table. Consider running the following DDL to drop the columns. (This migration will be added to future versions of Mattermost).
 
 .. code:: sql
 
@@ -152,6 +155,9 @@ Migrate the data
 ----------------
 
 Once we set the schema to a desired state, we can start migrating the **data** by running ``pgLoader`` \*\*
+
+.. note::
+   In the example below, the hosts for both databases are assumed to be in the same instance. Please update addresses accordingly if they are on different machines.
 
 \*\* Use the following configuration for the baseline of the data migration:
 
@@ -185,7 +191,7 @@ Once we set the schema to a desired state, we can start migrating the **data** b
         type tinyint when (<= precision 4) to boolean using tinyint-to-boolean,
         type json to jsonb drop typemod
 
-   EXCLUDING TABLE NAMES MATCHING ~<IR_>, ~<focalboard>, schema_migrations
+   EXCLUDING TABLE NAMES MATCHING ~<IR_>, ~<focalboard>, 'schema_migrations'
 
    BEFORE LOAD DO
         $$ ALTER SCHEMA public RENAME TO {{ .source_schema }}; $$,
@@ -211,7 +217,7 @@ Feel free to contribute to and/or report your findings through your migration to
 Compare the data
 ----------------
 
-We internally developed a tool to simplify the process of comparing contents of two databases. The ``dbcmp`` tool compares every table and reports whether if there is a diversion between two schemas.
+We internally developed a tool to simplify the process of comparing the contents of two databases. The ``dbcmp`` tool compares every table and reports whether there is a diversion between two schemas.
 
 The tool includes a few flags to run a comparison:
 
@@ -227,7 +233,7 @@ The tool includes a few flags to run a comparison:
          --target string     target database dsn
      -v, --version           version for dbcmp
 
-For our case we can simply run the following command:
+For our case, we can simply run the following command:
 
 .. code:: sh
 
@@ -235,7 +241,7 @@ For our case we can simply run the following command:
 
 Note that this migration guide only covers the tables for Mattermost products.
 
-Another exclusion we are making is in the ``db_migrations`` table which has a small difference (a typo in a single migration name) creates a diff. Since we created the PostgreSQL schema with morph, and the official ``mattermost`` source, we can skip it safely without concerns. On the other hand, ``systems`` table may contain additional diffs if there were extra keys added during some of the migrations. Consider excluding the ``systems`` table if you run into issues, and perform a manual comparison as the data in the ``systems`` table is relatively smaller in size.
+Another exclusion we are making is in the ``db_migrations`` table which has a small difference (a typo in a single migration name) and creates a diff. Since we created the PostgreSQL schema with morph, and the official ``mattermost`` source, we can skip it safely without concerns. On the other hand, ``systems`` table may contain additional diffs if there were extra keys added during some of the migrations. Consider excluding the ``systems`` table if you run into issues, and perform a manual comparison as the data in the ``systems`` table is relatively smaller in size.
 
 Plugin migrations
 -----------------
@@ -245,7 +251,7 @@ On the plugin side, we are going to take a different approach from what we have 
 Playbooks
 ~~~~~~~~~
 
-The ``pgloader`` configuration provided for Playbooks is based on ``v1.38.1`` and the plugin should be at least ``v1.36.0`` to perform migration.
+The ``pgloader`` configuration provided for Playbooks is based on ``v1.38.1`` and the plugin should be at least ``v1.36.0`` to perform the migration.
 
 Once we are ready to migrate, we can start migrating the **schema** and the **data**  by running ``pgLoader`` \*\*
 
@@ -416,11 +422,11 @@ Compare the plugin data
 Iterative migrations
 --------------------
 
-There are several steps in the pgloader configuration file that assume migration will take place in one go. If you are planning to run the migration over and over again, please complete the changes defined below:
+Several steps in the pgloader configuration file assume migration will take place in one go. If you are planning to run the migration over and over again, please complete the changes defined below:
 
--  Discard all of the statments defined in the ``BEFORE LOAD DO`` and ``AFTER LOAD DO`` sections.
--  Run the statments defined in ``BEFORE LOAD DO`` section only once before the migration.
--  Once the migration is completed, run the statments defined in the ``AFTER LOAD DO`` section manually.
+-  Discard all of the statements defined in the ``BEFORE LOAD DO`` and ``AFTER LOAD DO`` sections.
+-  Run the statements defined in ``BEFORE LOAD DO`` section only once before the migration.
+-  Once the migration is completed, run the statements defined in the ``AFTER LOAD DO`` section manually.
 
 Troubleshooting
 -----------------
@@ -428,7 +434,7 @@ Troubleshooting
 Unsupported authentication for MySQL
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you are facing an error due to authentication with MySQL v8, it may be related to a `known issue <https://github.com/dimitri/pgloader/issues/782>`__ with the pgLoader. The fix is to set default authentication method to ``mysql_native_password`` in your MySQL configuration. To do so, add the ``default-authentication-plugin=mysql_native_password`` value to your ``mysql.cnf`` file. Also do not forget to update your user to use this authentication method.
+If you are facing an error due to authentication with MySQL v8, it may be related to a `known issue <https://github.com/dimitri/pgloader/issues/782>`__ with the pgLoader. The fix is to set the default authentication method to ``mysql_native_password`` in your MySQL configuration. To do so, add the ``default-authentication-plugin=mysql_native_password`` value to your ``mysql.cnf`` file. Also, do not forget to update your user to use this authentication method.
 
 .. code:: sql
 
