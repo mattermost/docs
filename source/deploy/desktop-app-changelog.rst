@@ -7,12 +7,71 @@ This changelog summarizes updates to Mattermost desktop app releases for `Matter
     :backlinks: top
     :depth: 2
 
+Release v5.7
+--------------
+
+**Release Date: March 15, 2024**
+
+**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/latest>`_
+
+Compatibility
+~~~~~~~~~~~~~~~
+
+- Desktop App is supported on any currently `supported Mattermost server version <https://docs.mattermost.com/upgrade/release-lifecycle.html>`__.
+- Updated Chromium minimum supported version to 120+.
+
+Improvements
+~~~~~~~~~~~~~~~
+
+All Platforms
+^^^^^^^^^^^^^
+
+- Added a new **View > Developer Tools** submenu that contains items to access the developer tools for all desktop created windows.
+- Added a new menu item to open the developers tools for the Call widget window.
+- Reworked and updated the preload script to use an updated and more robust wep app API.
+- Promoted Simplified Chinese language to Beta.
+
+Architectural Changes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Major version upgrade of Electron to 28.2.2. Electron is the underlying technology used to build the Desktop App.
+
+Bug Fixes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+All Platforms
+^^^^^^^^^^^^^
+
+- Fixed an issue where the user's URL would be cleared after being entered in the **Add Server** modal.
+- Fixed an issue where users couldn't add a second server with a similar subpath as the configured server.
+- Fixed a potential crash in diagnostics.
+
+Open Source Components
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Added ``@aws-sdk/client-s3``, ``@aws-sdk/lib-storage`` and ``@mattermost/desktop-api``, and removed ``aws-sdk`` from https://github.com/mattermost/desktop.
+
+Known Issues
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Error might be experienced when quitting v5.7 desktop app on MacOS Ventura `MM-57146 <https://mattermost.atlassian.net/browse/MM-57146>`_.
+- In the **Settings** modal, the search text in the **Check spelling** dropdown is not visible `MM-57089 <https://mattermost.atlassian.net/browse/MM-57089>`_.
+- Users seeing an endless "Loading..." screen when attempting to log in to the app may need to manually delete their cache directory. For MacOS it is located in ``/Users/<username>/Library/Containers/Mattermost/Data/Library/Application Support/Mattermost``, for Windows in ``Users/<username>/AppData/Roaming/Mattermost`` and for Linux in ``~/config/Mattermost`` (where ``~`` is the home directory).
+- On Linux, a left-click on the Mattermost tray icon doesn't open the app window but opens the tray menu.
+- Crashes might be be experienced in some Linux desktop clients due to an upstream bug in the ``libnotifyapp`` library. A recommended workaround is to disable the Mattermost system tray icon via Desktop Settings.
+- On apps using GPO configurations, when adding a second server tab, it's possible to drag and drop tabs, but they'll jump back to the original position when releasing the mouse.
+
+Contributors
+~~~~~~~~~~~~~~
+
+- `ctlaltdieliet <https://github.com/ctlaltdieliet>`_, `devinbinnie <https://github.com/devinbinnie>`_, `hasancankucuk <https://github.com/hasancankucuk>`_, `streamer45 <https://github.com/streamer45>`_, `trivikr <https://github.com/trivikr>`_, `wiebel <https://github.com/wiebel>`_.
+
 Release v5.6
 --------------
 
 **Release Date: December 15, 2023**
 
-**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/latest>`_
+**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v5.6.0>`_
 
 Compatibility
 ~~~~~~~~~~~~~~~
