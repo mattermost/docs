@@ -11,7 +11,7 @@ Install Mattermost on Kubernetes
 
 You can install and deploy a production-ready Mattermost system on a Kubernetes cluster using the Mattermost Kubernetes Operator in practically any environment with less IT overhead and more automation.
 
-You'll need a `Kubernetes cluster <https://kubernetes.io/docs/setup/>`__ running `a version that is currently supported with patch releases <https://kubernetes.io/releases/>`__,  Kubernetes CLI `kubectl <https://kubernetes.io/docs/reference/kubectl/overview/>`__ installed on local machine, and a basic understanding of Kubernetes concepts (such as deployments, pods) and actions (such as applying manifests, viewing pod logs). Running Mattermost in Kubernetes requires resources based on your total number of users. See the `Mattermost Kubernetes Operator </install/mattermost-kubernetes-operator.html>`__ documentation to learn more about the minimum Kubernetes cluster resources Mattermost requires at different scales.
+You'll need a `Kubernetes cluster <https://kubernetes.io/docs/setup/>`__ running `a version that is currently supported with patch releases <https://kubernetes.io/releases/>`__,  Kubernetes CLI `kubectl <https://kubernetes.io/docs/reference/kubectl/overview/>`__ installed on local machine, and a basic understanding of Kubernetes concepts (such as deployments, pods) and actions (such as applying manifests, viewing pod logs). Running Mattermost in Kubernetes requires resources based on your total number of users. See the `Mattermost Kubernetes Operator </install/install-kubernetes.html#mattermost-operator>`__ documentation to learn more about the minimum Kubernetes cluster resources Mattermost requires at different scales.
 
 .. tip::
     
@@ -21,22 +21,79 @@ You'll need a `Kubernetes cluster <https://kubernetes.io/docs/setup/>`__ running
 Install the operators
 ---------------------
 
-Operators are installed using ``kubectl``, and each operator is created in its own namespace. You can install and run multiple Mattermost installations in the same cluster using different namespaces.
+Nginx Ingress Controller
+~~~~~~~~~~~~~~~~~~~~~~~~
+See the `Kubernetes deployment documentation <https://kubernetes.github.io/ingress-nginx/deploy/>`__ for details on installing the NGINX ingress controller in your Kubernetes cluster.
 
-1. Install NGINX ingress controller by following the instructions `here <https://kubernetes.github.io/ingress-nginx/deploy/>`__.
+Mattermost Operator
+~~~~~~~~~~~~~~~~~~~
 
-2. Install the Mattermost Operator:
+There are multiple ways to install the Mattermost Kubernetes Operator. We recommend deploying with Helm, but installation instructions via the Kubernetes CLI can also be found below.
+
+With Helm
+^^^^^^^^^
+
+
+1. Install Helm. We recommend Helm v3.13.0 or later. For installation instructions, see the `Helm quickstart documentation <https://docs.helm.sh/using_helm/#quickstart>`__.
+2. Once Helm is installed and initialized, run the following:
+
+  .. code-block:: sh
+    :class: mm-code-block 
+
+    helm repo add mattermost https://helm.mattermost.com
+
+3. Create a file named ``config.yaml``, then copy and paste the content of `the Mattermost operator file <https://github.com/mattermost/mattermost-helm/blob/master/charts/mattermost-operator/values.yaml>`__ into it.
+
+
+4. Create a namespace for the Mattermost Operator:
 
   .. code-block:: sh
     :class: mm-code-block 
 
     kubectl create ns mattermost-operator
 
+5. Install your preferred version of the Mattermost Operator using the following command:
+
+  .. code-block:: sh
+    :class: mm-code-block 
+
+    helm install <your-release-name> mattermost/mattermost-operator -n <namespace_name>
+
+  For example:
+
+  .. code-block:: sh
+    :class: mm-code-block 
+
+    helm install mattermost-operator mattermost/mattermost-operator -n mattermost-operator
+
+  To install with any customized configuration you've made in your ``config.yaml`` file, use the ``-f`` flag:
+
+  .. code-block:: sh
+    :class: mm-code-block 
+
+    helm install mattermost-operator mattermost/mattermost-operator -n mattermost-operator -f config.yaml
+
+  .. tip::
+      If no version is specified, the latest version of the Mattermost Operator will be installed.
+
+With Kubernetes CLI
+^^^^^^^^^^^^^^^^^^^
+
+``kubectl`` can be used to install the Mattermost Operator if using ``helm`` is not an option. 
+
+1. Create a namespace for the Mattermost Operator:
+
+  .. code-block:: sh
+    :class: mm-code-block 
+
+    kubectl create ns mattermost-operator
+
+2. Install the Mattermost Operator:
+
+  .. code-block:: sh
+    :class: mm-code-block 
+
     kubectl apply -n mattermost-operator -f https://raw.githubusercontent.com/mattermost/mattermost-operator/master/docs/mattermost-operator/mattermost-operator.yaml
-
-.. tip::
-
-    To install the operators using the Mattermost Operator Helm chart, follow the instructions `here <https://github.com/mattermost/mattermost-helm/tree/master/charts/mattermost-operator>`__. See the `Kubernetes YAML file <https://github.com/mattermost/mattermost-operator/blob/0f2c7b1a182598c4399449eb17a6557187175082/apis/mattermost/v1beta1/mattermost_types.go#L308C2-L309C14>`__ documentation within the ``mattermost`` GitHub repository for details on working with the YAML file.
 
 Deploy Mattermost
 -----------------
@@ -54,7 +111,7 @@ Deploy Mattermost
     stringData:
       license: <LICENSE_FILE_CONTENTS>
 
-2. Create an installation manifest file locally in a text editor by copying and pasting contenst from the Mattermost installation manifest, and adjusting fields for your configuration and environment. 
+2. Create an installation manifest file ``mattermost-installation.yaml`` locally, and open it with a text editor. Copy and paste the YAML structure below, and make any necessary adjustments for your configuration and environment. 
 
   .. code-block:: yaml
     :class: mm-code-block 
@@ -73,7 +130,8 @@ Deploy Mattermost
         version: <VERSION_HERE>                       # Select a recent supported version of Mattermost. Example = 9.3.0
         licenseSecret: ""                             # If you created a license secret in step 1, put the secret name here
     
-  Save the file as ``mattermost-installation.yaml``. While recommended file names are provided, your naming conventions may differ. 
+  .. note::
+    While file names are provided, your file names can be different. The file names in this tutorial are used for clarity and organization.
 
   Some of the most commonly-used fields include:
 
@@ -83,13 +141,43 @@ Deploy Mattermost
     "metadata.name", "The name of your Mattermost as it will be shown in Kubernetes. The shorter the better."
     "spec.size", "The size of your installation. This can be '100users', '1000users, '5000users', '10000users', or '25000users'."
     "spec.ingress.host", "The DNS for your Mattermost installation."
-    "spec.version", "The Mattermost version. Refer to `the version archive page <https://docs.mattermost.com/upgrade/version-archive.html>`__ when selecting a mattermost version."
-    "spec.licenseSecret", "The name of the Kubernetes secret containing your license (e.g. mattermost-license). Required for Enterprise deployments."
+    "spec.version", "The Mattermost version. Refer to `the version archive page <https://docs.mattermost.com/upgrade/version-archive.html>`__ when selecting a Mattermost version."
+    "spec.licenseSecret", "The name of the Kubernetes secret containing your license (e.g., mattermost-license). Required for Enterprise deployments."
     "spec.mattermostEnv", "List of custom environment variables for the Mattermost instance. Only required when tweaking Mattermost configuration is required."
-    
-  Additional fields are documented `in the example <https://github.com/mattermost/mattermost-operator/blob/master/docs/examples/mattermost_full.yaml>`__. If you have previous experience with Kubernetes Custom Resources, you can also check the `Custom Resource Definition <https://github.com/mattermost/mattermost-operator/blob/master/config/crd/bases/installation.mattermost.com_mattermosts.yaml>`__.
+    "spec.image", "Docker image for the Mattermost app servers."
+    "spec.imagePullPolicy", "Image Pull policy used by Mattermost deployment."
+    "spec.useServiceLoadBalancer", "Set to true to use AWS or Azure load balancers instead of an NGINX controller."
+    "spec.serviceAnnotations", "Service annotations to use with AWS or Azure load balancers."
+    "spec.ingress.enabled", "Indicates if Ingress should be created by Mattermost Operator."
+    "spec.ingress.annotations", "Custom annotations propagated to Ingress resource."
+    "spec.ingress.tlsSecret", "Name of a Secret that contains TLS certificates for the ingress."
+    "spec.database.external.secret", "Name of a Kubernetes secret containing connection string to an external database."
+    "spec.fileStore.external.url", "External File Storage URL."
+    "spec.fileStore.external.bucket", "File Storage bucket name."
+    "spec.fileStore.external.secret", "Name of a Kubernetes secret that contains credentials to external file storage."
+    "spec.elasticSearch.host", "Elasticsearch hostname."
+    "spec.elasticSearch.username", "Username to log into Elasticsearch."
+    "spec.elasticSearch.password", "Password to log into Elasticsearch."
+    "spec.scheduling.resources", "Resource requests and limits of pod and container (Kubernetes)."
+    "spec.scheduling.nodeSelector", "Node selector for assigning pods to nodes (Kubernetes)."
+    "spec.scheduling.affinity", "Affinity and anti-affinity for assigning pods to nodes (Kubernetes)."
 
-3. Create external database secret. The database secret needs to be created in the namespace that will hold the Mattermost installation. The secret should contain the following data:
+  More information on these additional fields can be found `in this example <https://github.com/mattermost/mattermost-operator/blob/master/docs/examples/mattermost_full.yaml>`__. If you have previous experience with Kubernetes Custom Resources, you can also check the `Custom Resource Definition <https://github.com/mattermost/mattermost-operator/blob/master/config/crd/bases/installation.mattermost.com_mattermosts.yaml>`__.
+
+3. Create a file ``mattermost-database-secret.yaml`` to house secrets related to your installation's database. The database secret needs to be created in the namespace that will hold the Mattermost installation. The secret should contain the following data:
+
+  .. code-block:: yaml
+
+    apiVersion: v1
+    data:
+      DB_CONNECTION_CHECK_URL: <DB_CONNECTION_CHECK_URL>
+      DB_CONNECTION_STRING: <DB_CONNECTION_STRING>
+      MM_SQLSETTINGS_DATASOURCEREPLICAS: <MM_SQLSETTINGS_DATASOURCEREPLICAS>
+    kind: Secret
+    metadata:
+      name: my-postgres-connection
+    type: Opaque
+
 
   .. csv-table::
     :header: "Key", "Description", "Required"
@@ -98,7 +186,7 @@ Deploy Mattermost
     "MM_SQLSETTINGS_DATASOURCEREPLICAS", "Connection string to read replicas of the database.", "No"
     "DB_CONNECTION_CHECK_URL", "The URL used for checking that the database is accessible.", "No"
 
-  Example secret for AWS Aurora compatible with PostgreSQL:
+  Here's an example of a secret for AWS Aurora with PostgreSQL:
 
   .. code-block:: yaml
     :class: mm-code-block 
@@ -117,15 +205,27 @@ Deploy Mattermost
 
     For PostgreSQL databases, the connection is checked with `pg_isready <https://www.postgresql.org/docs/9.3/app-pg-isready.html>`__ so the ``DB_CONNECTION_CHECK_URL`` is the same as connection string.
 
-4. Create external filestore secret. The filestore secret needs to be created in the namespace that will hold the Mattermost installation. The secret should contain the following data:
+4. Create a file ``mattermost-filestore-secret.yaml`` to house secrets related to your installation's filestore. The filestore secret needs to be created in the namespace that will hold the Mattermost installation. The secret should contain the following data:
+
+  .. code-block:: yaml
+
+    apiVersion: v1
+    data:
+      accesskey: <accesskey>
+      secretkey: <secretkey>
+    kind: Secret
+    metadata:
+      name: <name>
+    type: Opaque
 
   .. csv-table::
     :header: "Key", "Description", "Required"
 
     "accesskey", "Filestore access key.", "Yes"
     "secretkey", "Filestore secret key.", "Yes"
+    "metadata.name", "The name of the secret.", "Yes"
 
-  Example secret for AWS S3:
+  Here's an example of a secret for Amazon S3:
 
   .. code-block:: yaml
     :class: mm-code-block 
@@ -141,7 +241,10 @@ Deploy Mattermost
 
 5. Adjust installation manifest.
 
-  To instruct Mattermost Operator to use the external database, modify Mattermost manifest by adding the following fields:
+  .. tip::
+    For more information on where in the YAML structure to make the below updates, reference the supported fields in step 2.
+
+  In order for the Mattermost Operator to utilize your external database, you must modify the Mattermost manifest (inside the ``mattermost-installation.yaml`` file) by adding the following fields:
 
   .. code-block:: yaml
     :class: mm-code-block 
@@ -150,9 +253,9 @@ Deploy Mattermost
     ...
       database:
         external:
-          secret: my-postgres-connection
+          secret: <secret name> # The name of the secret containing the database connection string. You set this value in step 3. Example = my-postgres-connection
 
-  To instruct Mattermost Operator to use the external filestore, modify Mattermost manifest by adding the following fields:
+  Now, point the Mattermost Operator at your external filestore. Modify the Mattermost manifest (inside the ``mattermost-installation.yaml`` file) by adding the following fields:
 
   .. code-block:: yaml
     :class: mm-code-block 
@@ -163,7 +266,7 @@ Deploy Mattermost
         external:
           url: s3.amazonaws.com
           bucket: my-s3-bucket
-          secret: my-s3-iam-access-key
+          secret: <secret name> # The name of the secret containing the filestore access and secret keys. You set this value in step 4. Example = my-s3-iam-access-key
 
   Additionally when using Amazon S3, set the ``MM_FILESETTINGS_AMAZONS3SSE`` and ``MM_FILESETTINGS_AMAZONS3SSL`` environment variables to ``true``:
 
@@ -179,7 +282,7 @@ Deploy Mattermost
         - name: MM_FILESETTINGS_AMAZONS3SSL
           value: "true"
 
-  Example Mattermost manifest configured with both external databases and filestore:
+  If you've configured your Mattermost Enterprise Edition installation manifest with a custom PostgreSQL database, and an Amazon S3 filestore, your installation manifest should look something like this:
 
   .. code-block:: yaml
     :class: mm-code-block 
