@@ -81,7 +81,7 @@ The following instructions migrate Mattermost from one server to another by back
 
   - Copy the ``./data`` directory from SOURCE deployment to DESTINATION.
   - If you use a directory other than ``./data``, copy that directory instead.
-  
+
 7. Start the DESTINATION deployment by running ``sudo start mattermost``. Then go to the **System Console**, make a minor change, and save it to upgrade your ``config.json`` schema to the latest version using default values for any new settings added.
 8. Test that the system is working by going to the URL of an existing team. You may need to refresh your Mattermost browser page in order to get the latest updates from the upgrade.
 

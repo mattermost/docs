@@ -1,4 +1,5 @@
 :nosearch:
+.. _bulk-loading-data:
 
 Bulk load data
 ---------------

@@ -70,7 +70,7 @@ Local storage directory
   :systemconsole: Environment > File Storage
   :configjson: .FileSettings.MaxFileSize
   :environment: MM_FILESETTINGS_MAXFILESIZE
-  :description: The maximum file size, in bytes, for message attachments. Default value is **104857600** bytes (1 megabyte).
+  :description: The maximum file size, in bytes, for message attachments and plugin uploads. Default value is **104857600** bytes (1 megabyte).
 
 Maximum file size
 ~~~~~~~~~~~~~~~~~
@@ -80,8 +80,8 @@ Maximum file size
  <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
-| The maximum file size for message attachments.                | - System Config path: **Environment > File Storage**                     |
-| This value must be specified in megabytes in the              | - ``config.json`` setting: ``".FileSettings.MaxFileSize: 104857600",``   |
+| The maximum file size for message attachments and plugin      | - System Config path: **Environment > File Storage**                     |
+| uploads. This value must be specified in megabytes in the     | - ``config.json`` setting: ``".FileSettings.MaxFileSize: 104857600",``   |
 | System Console, and in bytes in the ``config.json`` file.     | - Environment variable: ``MM_FILESETTINGS_MAXFILESIZE``                  |
 |                                                               |                                                                          |
 | The default is ``104857600`` bytes (**1** megabyte).          |                                                                          |
@@ -89,10 +89,15 @@ Maximum file size
 | **Warning**: Verify server memory can support your setting choice. Large file sizes increase the risk of server crashes and failed       |
 | uploads due to network disruptions.                                                                                                      |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
-| **Note**: If you use a proxy or load balancer in front of Mattermost, the following proxy settings must be adjusted accordingly:         |
+| **Notes**:                                                                                                                               |
 |                                                                                                                                          |
-| - For NGINX, use ``client_max_body_size``.                                                                                               |
-| - For Apache use ``LimitRequestBody``.                                                                                                   |
+| - When `uploading plugin files </configure/plugins-configuration-settings.html#upload-plugin>`__, a ``Received invlaid response from     |
+|   the server`` error typically indicates that ``MaxFileSize`` isn't large enough to support the plugin file upload, and/or that proxy    |
+|   settings may not be sufficient.                                                                                                        |
+| - If you use a proxy or load balancer in front of Mattermost, the following proxy settings must be adjusted accordingly:                 |
+|                                                                                                                                          |
+|  - For NGINX, use ``client_max_body_size``.                                                                                              |
+|  - For Apache use ``LimitRequestBody``.                                                                                                  |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. config:setting:: file-enabledocsearchbycontent

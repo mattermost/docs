@@ -115,17 +115,9 @@ The tool outputs a `.jsonl <https://jsonlines.org/examples>`__ file containing a
 5. Import data into Mattermost
 ------------------------------
 
-We have two options to run the import process:
+You can upload the export through Mattermost's API from the server or from another computer using mmctl commands. The server will save the import in its file store before running the import (e.g. AWS S3), so there will be time spent uploading/downloading the file in this case. 
 
-1. Uploading the export through Mattermost's API, via command line ``mmctl`` from the server or from another computer. This option is required for Mattermost Cloud deployments.
-2. SSH into the Mattermost server's host, upload the export file to this server's file system somehow, and use the ``mattermost`` command to process the export file.
-
-For the first option, the server will save the import in its file store before running the import (e.g. AWS S3 if you are using that as your file store), so there will be time spent uploading/downloading the file in this case. Depending on system/environment specs, a 5GB import should be fine over ``mmctl`` import. Imports greater than 10GB should use the ``mattermost`` binary for import.
-
-The migration is idempotent, meaning that you can run multiple imports that contain the same posts, and there will not be duplicated created posts in Mattermost. Each post is imported with the correct user/author and ``created_at`` value from your Slack instance. Threads are kept in tact with the import.
-
-Option 1: Upload export via ``mmctl``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The migration is idempotent, meaning that you can run multiple imports that contain the same posts, and there won't be duplicated created posts in Mattermost. Each post is imported with the correct user/author and ``created_at`` value from your Slack instance. Threads are kept intact with the import.
 
 Ensure you have the Mattermost command line tool ``mmctl`` installed. This allows you to perform different tasks that communicate to Mattermost's API. You'll also want to :ref:`configure authentication <manage/mmctl-command-line-tool:mmctl auth>` for the tool.
 
@@ -159,19 +151,10 @@ Finally, run this command to view the status of the import process job. If the j
 
   mmctl import job show <JOB ID> --json
 
-Option 2: Use the ``mattermost`` command to run the export
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-First get the ``.jsonl`` file and ``data`` folder onto your server using something like ``scp``. Then you'll use the ``mattermost`` binary to process the bulk import data:
-
-.. code:: bash
-
-    mattermost import bulk ./mattermost_import.jsonl --import-path ./data --apply
-
 Debug imports
 ^^^^^^^^^^^^^
 
-If you choose the ``mmctl`` option above, you can use the ``mmctl import job show`` command to view any relevant errors that may have occurred. If you run into problems which the error message does not help to resolve, please try the second option of using the ``mattermost bulk import`` command. The ``mmctl`` import process does not give you any additional debugging information, even in the Mattermost server logs.
+You can use the ``mmctl import job show`` command to view any relevant errors that may have occurred.
 
 .. important::
     Note that if you are part of the user group being imported from Slack, your Mattermost profile must have a matching username and email to the corresponding ``user`` line of the ``jsonl`` file. You can manually edit the file to ensure it matches your Mattermost user.
