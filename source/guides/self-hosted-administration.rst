@@ -14,7 +14,7 @@ This section of the guide is for system admins of self-hosted Mattermost servers
 
     Mattermost self-hosted billing </manage/self-hosted-billing>
     Mattermost error codes </manage/error-codes>
-    Store configuration in the database </configure/configuration-in-a-database>
+    Store configuration in your database </configure/configuration-in-your-database>
     Bulk loading data </onboard/bulk-loading-data>
     SMTP email setup </configure/smtp-email>
     Email templates </configure/email-templates>
@@ -34,7 +34,7 @@ This section of the guide is for system admins of self-hosted Mattermost servers
 
 * :doc:`Mattermost self-hosted billing </manage/self-hosted-billing>` - Manage your Mattermost subscription.
 * :doc:`Mattermost error codes </manage/error-codes>` - Learn more about the error code you're encountering in Mattermost.
-* :doc:`Include configuration in the Mattermost database </configure/configuration-in-a-database>` - Store Mattermost configuration information in your database rather than as a JSON file. We recommend this for High Availability environments.
+* :doc:`Store configuration in your Mattermost database </configure/configuration-in-your-database>` - Store Mattermost configuration information in your database rather than as a JSON file. We recommend this for High Availability environments.
 * :doc:`Bulk loading data </onboard/bulk-loading-data>` - Import bulk data into Mattermost for teams, channels, users, post content, and more.
 * :doc:`SMTP email setup </configure/smtp-email>` - Connect to an email server to send emails for password resets and system notifications.
 * :doc:`Email templates </configure/email-templates>` - Alter the transactional emails Mattermost sends to your users.

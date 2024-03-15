@@ -4,13 +4,13 @@ Plugins configuration settings
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Both self-hosted and Cloud admins can access the following configuration settings in **System Console > Plugins**. Self-hosted admins can also edit the ``config.json`` file as described in the following tables. 
+Self-hosted can manage the following configuration settings in **System Console > Plugins** or by editing the ``config.json`` file as described in the following tables. 
 
 - `Plugin Management <#plugin-management>`__
 - `Apps <#apps>`__
 - `Calls <#calls>`__
 - `Google Calendar <#google-calendar>`__
-- `Microsoft Teams <#ms-teams>`__
+- `MS Teams <#ms-teams>`__
 - `Playbooks <#playbooks>`__
 - `User Satisfaction surveys <#user-satisfaction-surveys>`__
 - `Zoom <#zoom>`__
@@ -78,7 +78,7 @@ Automatic prepackaged plugins
 |                                                                                                                                                                                 | - Environment variable: ``MM_PLUGINSETTINGS_AUTOMATICPREPACKAGEDPLUGINS``        |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
 
-.. config:setting:: plugins-enableuploads
+.. config:setting:: plugins-upload
   :displayname: Upload Plugin (Plugins - Management)
   :systemconsole: Plugins > Plugin Management
   :configjson: EnableUploads
@@ -88,11 +88,14 @@ Upload Plugin
 ~~~~~~~~~~~~~
 
 +------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
-| - **true**:  Enables uploading of plugins from your local computer to your Mattermost server for all system admins.                | - System Config path: **Plugins > Plugin Management**                  |
+| - **true**:  Enables you to upload plugins from your local computer to your Mattermost server for all system admins.               | - System Config path: **Plugins > Plugin Management**                  |
 | - **false**: **(Default)** Disables uploading of plugins from your local computer to your Mattermost server for all system admins. | - ``config.json`` setting: ``.PluginSettings.EnableUploads: false``    |
 |                                                                                                                                    | - Environment variable: ``MM_PLUGINSETTINGS_ENABLEUPLOADS``            |
 +------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
-
+| **Note**: When plugin uploads are enabled, the error ``Received invlaid response from the server`` when uploading a plugin file typically indicates that the                                                |
+| `MaxFileSize </configure/environment-configuration-settings.html#maximum-file-size>`__ configuration setting isn't large enough to support the plugin file upload.                                          |
+| Additional proxy setting updateds may also be required.                                                                                                                                                     |
++------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
 
 .. config:setting:: plugins-enablemarketplace
   :displayname: Enable marketplace (Plugins - Management)
@@ -422,6 +425,31 @@ ICE host override
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. |ice_host_override_link| replace:: `ICE Host Override <plugins-configuration-settings.html#ice-host-override>`__
+
+.. config:setting:: plugins-callsicehostportoverride
+  :displayname: ICE host port override (Plugins - Calls)
+  :systemconsole: Plugins > Calls
+  :configjson: PluginSettings.Plugins.com.mattermost.calls.icehostportoverride
+  :environment: N/A
+  :description: An optional port number to be used as an override for host candidates in place of the one used to listen on.
+
+ICE host port override
+~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: ../_static/badges/selfhosted-only.rst
+  :start-after: :nosearch:
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+| This setting can be used to override the port used in the ICE host candidates that get advertised to clients when connecting to calls.                              | - System Config path: **Plugins > Calls**                                                              |
+|                                                                                                                                                                     | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.calls.icehostportoverride``         |
+|                                                                                                                                                                     | - Environment variable: N/A                                                                            |
+| This can be useful in case there are additional network components (e.g. NLBs) in front of the RTC server that may route the calls traffic through a different port.|                                                                                                        |
+| Changing this setting requires a plugin restart to take effect.                                                                                                     |                                                                                                        |
+|                                                                                                                                                                     |                                                                                                        |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+| **Note**: this value will apply to both UDP and TCP host candidates.                                                                                                                                                                                                         |
+|                                                                                                                                                                                                                                                                              |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: plugins-callsrtcdserviceurl
   :displayname: RTCD service URL (Plugins - Calls)
@@ -953,8 +981,8 @@ Google client secret
 
 ----
 
-Microsoft Teams (Beta)
-----------------------
+MS Teams
+--------
 
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:

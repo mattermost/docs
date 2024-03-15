@@ -355,7 +355,7 @@ This is a sample diagram showing how the ``rtcd`` standalone service can be depl
 .. image:: ../images/calls-deployment-kubernetes.png
   :alt: A diagram of calls deployed in a Kubernetes cluster.
 
-If Mattermost isn't deployed in a Kubernetes cluster, and you want to use this deployment type, visit the `Kubernetes operator guide </install/mattermost-kubernetes-operator.html>`__.
+If Mattermost isn't deployed in a Kubernetes cluster, and you want to use this deployment type, visit the `Kubernetes operator guide </install/install-kubernetes.html#mattermost-operator.html>`__.
 
 Helm Charts
 ~~~~~~~~~~~

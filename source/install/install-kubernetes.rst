@@ -11,7 +11,7 @@ Install Mattermost on Kubernetes
 
 You can install and deploy a production-ready Mattermost system on a Kubernetes cluster using the Mattermost Kubernetes Operator in practically any environment with less IT overhead and more automation.
 
-You'll need a `Kubernetes cluster <https://kubernetes.io/docs/setup/>`__ running `a version that is currently supported with patch releases <https://kubernetes.io/releases/>`__,  Kubernetes CLI `kubectl <https://kubernetes.io/docs/reference/kubectl/overview/>`__ installed on local machine, and a basic understanding of Kubernetes concepts (such as deployments, pods) and actions (such as applying manifests, viewing pod logs). Running Mattermost in Kubernetes requires resources based on your total number of users. See the `Mattermost Kubernetes Operator </install/mattermost-kubernetes-operator.html>`__ documentation to learn more about the minimum Kubernetes cluster resources Mattermost requires at different scales.
+You'll need a `Kubernetes cluster <https://kubernetes.io/docs/setup/>`__ running `a version that is currently supported with patch releases <https://kubernetes.io/releases/>`__,  Kubernetes CLI `kubectl <https://kubernetes.io/docs/reference/kubectl/overview/>`__ installed on local machine, and a basic understanding of Kubernetes concepts (such as deployments, pods) and actions (such as applying manifests, viewing pod logs). Running Mattermost in Kubernetes requires resources based on your total number of users. See the `Mattermost Kubernetes Operator </install/install-kubernetes.html#mattermost-operator>`__ documentation to learn more about the minimum Kubernetes cluster resources Mattermost requires at different scales.
 
 .. tip::
     
@@ -79,14 +79,19 @@ With Helm
 With Kubernetes CLI
 ^^^^^^^^^^^^^^^^^^^
 
-Operators are installed using ``kubectl``, and each operator is created in its own namespace. You can install and run multiple Mattermost installations in the same cluster using different namespaces. 
+``kubectl`` can be used to install the Mattermost Operator if using ``helm`` is not an option. 
 
-1. Install the Mattermost Operator:
+1. Create a namespace for the Mattermost Operator:
 
   .. code-block:: sh
     :class: mm-code-block 
 
     kubectl create ns mattermost-operator
+
+2. Install the Mattermost Operator:
+
+  .. code-block:: sh
+    :class: mm-code-block 
 
     kubectl apply -n mattermost-operator -f https://raw.githubusercontent.com/mattermost/mattermost-operator/master/docs/mattermost-operator/mattermost-operator.yaml
 
@@ -218,7 +223,7 @@ Deploy Mattermost
 
     "accesskey", "Filestore access key.", "Yes"
     "secretkey", "Filestore secret key.", "Yes"
-    "metadata.name": "The name of the secret.", "Yes"
+    "metadata.name", "The name of the secret.", "Yes"
 
   Here's an example of a secret for Amazon S3:
 
