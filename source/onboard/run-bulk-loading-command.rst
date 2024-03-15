@@ -1,5 +1,5 @@
-:nosearch:
 .. _bulk-loading-data:
+:nosearch:
 
 Bulk load data
 ---------------
