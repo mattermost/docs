@@ -56,6 +56,7 @@ mmctl commands
 - `mmctl team users`_ - Team User Management
 - `mmctl token`_ - Token Management
 - `mmctl user`_ - User Management
+- `mmctl user preference`_ - Manage User Preferences
 - `mmctl version`_ - Version Management
 - `mmctl webhook`_ - Webhook Management
 - `mmctl websocket`_ - Websocket Management
@@ -185,7 +186,6 @@ mmctl auth
 Manage the credentials and authentication methods of remote Mattermost instances.
 
    Child Commands
-
       - `mmctl auth clean`_ - Clean credentials
       - `mmctl auth current`_ - Display current credentials
       - `mmctl auth delete`_ - Delete authentication details
@@ -2091,6 +2091,10 @@ mmctl config set
 
 Set the value of a config setting by its name in dot notation. Accepts multiple values for array settings.
 
+.. note::
+
+   Mattermost plugin uploads can't be enabled through the API or using mmctl in local mode.
+
 **Format**
 
 .. code-block:: sh
@@ -2618,7 +2622,7 @@ mmctl extract job
 
 List and show content extraction jobs.
 
-Child Commands
+   Child Commands
       -  `mmctl extract job list`_ - List content extraction jobs
       -  `mmctl extract job show`_ - Show extract job
 
@@ -3864,7 +3868,7 @@ mmctl oauth
 
 Manage registered OAuth2 applications.
 
-Child Commands
+   Child Commands
       -  `mmctl oauth list`_ - Remove permissions from a role
 
 **Options**
@@ -4750,7 +4754,7 @@ mmctl saml
 
 SAML-related utilities.
 
-Child Commands
+   Child Commands
       -  `mmctl saml auth-data-reset`_ - Reset AuthData field to Email
 
 **Options**
@@ -5730,6 +5734,8 @@ Manage users.
       -  `mmctl user invite`_ - Invite user
       -  `mmctl user list`_ - List users
       -  `mmctl user migrate-auth`_ - Bulk migrate user accounts authentication type
+      -  `mmctl user preference`_ - Manage user preferences
+      -  `mmctl user promote`_ - Promote guests to users
       -  `mmctl user reset-password`_ - Reset user password
       -  `mmctl user resetmfa`_ - Reset a user's MFA token
       -  `mmctl user search`_ - Search for a user
@@ -6317,6 +6323,190 @@ Migrate accounts from one authentication provider to another. For example, you c
    --confirm      Confirm you really want to proceed with auto migration. (saml only)
    --force        Force the migration to occur even if there are duplicates on the LDAP server. Duplicates will not be migrated. (ldap only)
    -h, --help     help for migrate-auth
+
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+   --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
+   --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+   --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
+   --json                         the output format will be in json format
+   --local                        allows communicating with the server through a unix socket
+   --quiet                        prevent mmctl to generate output for the commands
+   --strict                       will only run commands if the mmctl version matches the server one
+   --suppress-warnings            disables printing warning messages
+
+mmctl user preference
+---------------------
+
+**Description**
+
+Manage user preferences.
+
+   Child Commands
+      - `mmctl user preference get`_ - Get a specific user preference
+      - `mmctl user preference list`_ - List user preferences
+      - `mmctl user preference set`_ - Set a specific user preference
+      - `mmctl user preference delete`_ - Delete a specific user preference
+
+**Options**
+
+.. code-block:: sh
+
+   -h, --help   help for auth
+
+mmctl user preference get
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Description**
+
+Get a specific user preference.
+
+**Format**
+
+.. code-block:: sh
+
+   mmctl user preference get --category [category] --name [name] [users] [flags]
+
+
+**Examples**
+
+.. code-block:: sh
+
+   preference get --category display_settings --name use_military_time user@example.com
+
+**Options**
+
+.. code-block:: sh
+
+   -c, --category string   The category of the preference
+   -h, --help              help for get
+   -n, --name string       The name of the preference
+
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+   --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
+   --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+   --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
+   --json                         the output format will be in json format
+   --local                        allows communicating with the server through a unix socket
+   --quiet                        prevent mmctl to generate output for the commands
+   --strict                       will only run commands if the mmctl version matches the server one
+   --suppress-warnings            disables printing warning messages
+
+mmctl user preference list
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Description**
+
+List user preferences.
+
+**Format**
+
+.. code-block:: sh
+
+   mmctl user preference list [--category category] [users] [flags]
+
+**Examples**
+
+.. code-block:: sh
+
+   preference list user@example.com
+
+**Options**
+
+.. code-block:: sh
+
+   -c, --category string   The optional category by which to filter
+   -h, --help              help for list
+
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+   --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
+   --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+   --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
+   --json                         the output format will be in json format
+   --local                        allows communicating with the server through a unix socket
+   --quiet                        prevent mmctl to generate output for the commands
+   --strict                       will only run commands if the mmctl version matches the server one
+   --suppress-warnings            disables printing warning messages
+
+mmctl user preference set
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Description**
+
+Set a specific user preference.
+
+**Format**
+
+.. code-block:: sh
+
+   mmctl user preference set --category [category] --name [name] --value [value] [users] [flags]
+
+**Examples**
+
+.. code-block:: sh
+
+   preference set --category display_settings --name use_military_time --value true user@example.com
+
+**Options**
+
+.. code-block:: sh
+
+   -c, --category string   The category of the preference
+   -h, --help              help for set
+   -n, --name string       The name of the preference
+   -v, --value string      The value of the preference
+
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+   --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
+   --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+   --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
+   --json                         the output format will be in json format
+   --local                        allows communicating with the server through a unix socket
+   --quiet                        prevent mmctl to generate output for the commands
+   --strict                       will only run commands if the mmctl version matches the server one
+   --suppress-warnings            disables printing warning messages
+
+mmctl user preference delete
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Description**
+
+Delete a specific user preference.
+
+**Format**
+
+.. code-block:: sh
+
+   mmctl user preference delete --category [category] --name [name] [users] [flags]
+
+**Examples**
+
+.. code-block:: sh
+
+   preference delete --category display_settings --name use_military_time user@example.com
+
+**Options**
+
+.. code-block:: sh
+
+   -c, --category string   The category of the preference
+   -h, --help              help for delete
+   -n, --name string       The name of the preference
 
 **Options inherited from parent commands**
 

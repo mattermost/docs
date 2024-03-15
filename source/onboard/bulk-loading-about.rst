@@ -1,5 +1,5 @@
-:nosearch:
 .. _about-bulk-loading-command:
+:nosearch:
 
 About the bulk loading command
 ------------------------------

@@ -1,5 +1,5 @@
-Collaborate within Microsoft Teams
-==================================
+Collaborate within Microsoft Teams (Pilot)
+==========================================
 
 .. include:: ../_static/badges/ent-cloud-selfhosted.rst
   :start-after: :nosearch:
@@ -55,13 +55,10 @@ When Microsoft Teams is preferred, you'll receive mesages from Mattermost in Mic
 Setup complete
 --------------
 
-Setup is complete! You're ready to collaborate across your organization, regardless of which platform you’re in. You have two ways to collaborate:
+Setup is complete! You're ready to collaborate across your organization. No matter which platform you use, your message is visible across both Mattermost and Microsoft Teams.
 
-- `Through direct and group messages <#collaborate-through-messages>`_
-- `Through linked channels <#collaborate-through-linked-channels>`_
-
-Collaborate through messages
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Get started
+-----------
 
 You can start a direct or group message between Mattermost and Microsoft Teams users unless your Mattermost administrator has `disabled the ability to do so in the System Console </configure/plugins-configuration-settings.html#sync-direct-and-group-messages>`__. 
 
@@ -71,30 +68,3 @@ You can start a direct or group message between Mattermost and Microsoft Teams u
 
 .. image:: ../images/ms-teams-dm-sync-feb-2024.gif
    :alt: An example of a Mattermost direct message (DM) that is synced with a DM on Microsoft Teams.
-
-Collaborate through linked channels
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Collaborating through linked channels starts with a Mattermost admin linking a Mattermost public or private channel to a Microsot Teams channel. 
-
-Link channels
-^^^^^^^^^^^^^^
-
-As a Mattermost channel admin, team admin, or system admin, run the following slash command in the channel you want to link: ``/msteams link``, then select the Microsoft Teams team and channel identifiers you want to link the current Mattermost channel to. Mattermost notifies you when the linking is complete or if the channel is already linked.
-
-.. tip:: 
-
-  Want to change an existing link? Unlink a current Mattermost channel using the ``/msteams unlink`` slash command, then relink to a new Microsoft Teams channel as needed.
-
-Collaborate with colleagues
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-You have many ways to collaborate with colleagues in linked channels using a web browser or the Mattermost desktop app, including:
-
-- `Send messages </collaborate/send-messages.html>`__ and `reply to messages <h/collaborate/reply-to-messages.html>`__
-- `Attach files to messages </collaborate/share-files-in-messages.html>`__
-- `Express yourself with emojis and GIFs </collaborate/react-with-emojis-gifs.html>`__
-- `Share complex systems data and formatted code </collaborate/format-messages.html>`__
-- `Edit or delete sent messages </collaborate/send-messages.html#edit-or-delete-messages>`__
-
-No matter which platform you use, your message is visible across both Mattermost and Microsoft Teams.

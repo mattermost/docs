@@ -134,11 +134,14 @@ Release v5.5
 --------------
 
 - **v5.5.1, released 2023-10-03**
+
  - Mattermost v5.5.1 contains low severity level security fixes. Upgrading is highly recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.com/security-vulnerability-report//>`__.
  - Upgraded to Electron v26.2.1, which mitigates ``CVE-2023-4863`` of the third-party library libwebp.
  - Fixed an issue where logging was stuck to ``info`` level.
  - Fixed an issue where the downloads dropdown would not open on auto-update notification.
+
 - **v5.5.0, released 2023-09-15**
+
  - Original v5.5.0 release
 
 **Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v5.5.1>`_
@@ -252,8 +255,11 @@ Release v5.3
 **Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v5.3.1>`_
 
 - **v5.3.1, released 2023-04-04**
+
  - Calls: fixed an issue where, after opening the calls popout then closing it (without leaving the call), subsequent clicks would cause a crash.
+
 - **v5.3.0, released 2023-03-30**
+
  - Original v5.3.0 release
 
 **Note:** Mattermost v5.3.0 contains a medium severity level security fix. Upgrading is highly recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.com/security-vulnerability-report//>`__.
@@ -326,6 +332,7 @@ Release v5.2
 **Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v5.2.2>`_
 
 - **v5.2.2, released 2022-12-06**
+
  - Added ARM64 build (beta) for Windows/Linux.
  - Fixed an issue on Windows installers where the onboarding screen was displayed even when there was a preconfigured server list `MM-48079 <https://mattermost.atlassian.net/browse/MM-48079>`_.
  - Fixed an issue where a crash could occur when a download list included corrupt data `MM-48483 <https://mattermost.atlassian.net/browse/MM-48483>`_.
@@ -334,12 +341,16 @@ Release v5.2
  - Fixed an issue where users could get stuck after finished the Getting Started flow `MM-48682 <https://mattermost.atlassian.net/browse/MM-48682>`_.
  - Fixed an issue where the window resize did not work on some windows machines `MM-48574 <https://mattermost.atlassian.net/browse/MM-48574>`_.
  - Fixed an issue on Windows where the three-dot menu remained focused after clicking elsewhere `MM-46424 <https://mattermost.atlassian.net/browse/MM-46424>`_.
+
 - **v5.2.1, released 2022-11-15**
+
  - Fixed an issue on ``.exe`` installers where the onboarding screen was still displayed even when there was a preconfigured server list `MM-48079 <https://mattermost.atlassian.net/browse/MM-48079>`_.
  - Fixed an issue where the default downloads location was not set on macOS `MM-48167 <https://mattermost.atlassian.net/browse/MM-48167>`_.
  - Fixed an issue where users were able to edit or remove a pre-configured server provided by GPO on Windows `MM-48184 <https://mattermost.atlassian.net/browse/MM-48184>`_.
  - Fixed an issue where the tray icon colour on Windows didn't obey the setting `MM-48080 <https://mattermost.atlassian.net/browse/MM-48080>`_.
+
 - **v5.2.0, released 2022-10-31**
+
  - Original v5.2.0 release
 
 Compatibility
@@ -425,13 +436,16 @@ Release v5.1
 **Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v5.1.1>`_
 
 - **v5.1.1, released 2022-06-27**
+
  - Upgraded to Electron v18.3.0.
  - Fixed an issue where a channel name matching the server subpath would not be navigable.
  - Fixed an issue where the ``hideOnStart`` setting didn't work.
  - Fixed an issue where the certificate error dialog box would reappear infinitely.
  - Fixed an issue where the first client certificate could not be selected.
  - Restored Windows ZIP builds.
+
 - **v5.1.0, released 2022-05-16**
+
  - Original v5.1.0 release
 
 **Note:** Mattermost v5.1.0 contains a low severity level security fix. Upgrading is highly recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.com/security-vulnerability-report//>`__.
@@ -474,19 +488,20 @@ All Platforms
 - Removed the reference to the flashing window on the Settings page to avoid confusion when the window doesn't flash.
 
 Architectural Changes
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
+~~~~~~~~~~~~~~~~~~~~~
 - Major version upgrade of Electron to v18.0.3. Electron is the underlying technology used to build the Desktop app.
 
 Bug Fixes
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~
 
 Linux
-^^^^^^^^^^^^^
+^^^^^^
+
 - Fixed an issue where the app window and taskbar did not flash when notifications were received.
 
 All Platforms
 ^^^^^^^^^^^^^
+
 - Fixed an issue where customized URIs were not supported on the desktop app.
 - Fixed an issue where parsed, but technically invalid URIs could not be opened in the browser.
 - Fixed an issue where a channel name with an asterisk at the front would cause unreads to return a false positive.
@@ -505,7 +520,7 @@ All Platforms
 - Fixed an issue where the URL view would persist once the user had moved their mouse off of an external URL.
 
 Known Issues
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~
 
 - On Linux, a left click on the tray icon doesn't open the app window but opens the tray menu.
 - Mattermost Desktop App v5.1.0 cannot be launched twice on Windows servers with the role "Remote Desktop Session Host".
@@ -524,18 +539,25 @@ Release v5.0
 **Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v5.0.4>`_
 
 - **v5.0.4, release 2022-02-04**
+
  - Fixed an issue where Desktop App toast notifications didn't work in v5.0.3.
  - Restored **Minimize to tray** option for Windows, and added the ability to override the tray icon color.
+
 - **v5.0.3, released 2022-02-01**
+
  - Fixed an issue where a user might get an erroneous "Your session has expired" error and be unable to login.
  - Fixed an issue where the app could crash while trying to reload a page that is currently loading.
  - Fixed an issue where OS-level shortcuts could cause an unexpected focus behavior in the app.
  - Fixed an issue where Linux users might not see the **Add Server** modal.
  - Fixed an issue that prevented the export channel log from being downloaded from Playbooks.
+
 - **v5.0.2, released 2021-11-15**
+
  - Fixed an issue where the Desktop app crashed intermittently when switching between tabs while a tab was loading.
  - Fixed an issue where the app didn't raise the window from the tray icon when clicking on the taskbar icon.
+
 - **v5.0.1, released 2021-10-22**
+
  - Fixed issue with desktop notification sounds not working correctly.
  - Fixed an issue where using a proxy server with the Desktop app caused the app to crash.
  - Fixed the new server modal not being accessible on Linux when no other servers existed.
@@ -543,10 +565,14 @@ Release v5.0
  - Fixed an issue with GPO and built-in servers not working correctly with Boards/Playbooks tabs.
  - Fixed an issue where the top bar buttons on Windows 8 were missing.
  - Reduced the size of some builds by removing unnecessary files.
+
 - **v5.0.0, released 2021-10-13**
+
  - Original v5.0.0 release
 
-**Note:** Mattermost v5.0.0 contains a low level security fix. Upgrading is highly recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.com/security-vulnerability-report//>`__.
+.. note::
+   
+    Mattermost v5.0.0 contains a low level security fix. Upgrading is highly recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.com/security-vulnerability-report//>`__.
 
 Compatibility
 ~~~~~~~~~~~~~~~
@@ -569,6 +595,7 @@ Improvements
 
 MacOS
 ^^^^^^
+
 - Made the window menu on macOS more consistent with system standards.
 
 All Platforms
@@ -625,21 +652,28 @@ Release v4.7
 **Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v4.7.2>`_
 
 - **v4.7.2, released 2021-09-13**
+
  - Upgraded to Electron v12.0.16.
  - Fixed an issue where the **Add Server** screen appeared on each startup on servers with GPO.
  - Fixed an issue where the window would flash on Windows and Linux when a new mention arrived regardless of the setting to turn it on/off.
  - Added desktop notifications for followed threads.
+
 - **v4.7.1, released 2021-08-03**
+
  - Mattermost v4.7.1 contains a medium level security fix. Upgrading is highly recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.com/security-vulnerability-report/>`__.
  - Added support to allow users to specify a different download location for Hunspell dictionaries.
  - Fixed an issue where the notification badge did not get cleared when reading a channel with unread messages until navigating away from the channel.
  - Fixed an issue where the top bar menu, and the minimize, maximize and close icons did not work on 4.7.0 on Windows 10 if GPU acceleration was disabled.
  - Reverted to Electron v12.0.1 to fix an issue where clicking in the searchbox to highlight search terms dragged the desktop window.
  - Fixed an issue to prevent a crash on malformed default download locations.
+
 - **v4.7.0, released 2021-06-23**
+
  - Original v4.7.0 release
 
-**Note:** Mattermost v4.7.0 contains low to medium level security fixes. Upgrading is highly recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.com/security-vulnerability-report/>`__.
+.. note::
+   
+   Mattermost v4.7.0 contains low to medium level security fixes. Upgrading is highly recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.com/security-vulnerability-report/>`__.
 
 Compatibility
 ~~~~~~~~~~~~~~~
@@ -684,21 +718,25 @@ Bug Fixes
 
 Windows
 ^^^^^^^^^^^^^
+
 - Fixed an issue where Windows desktop notifications did not auto-dismiss when another notification arrived.
 - Fixed an issue on Windows where the **Pin to Taskbar** icon got lost during an upgrade.
 - Fixed an issue with the MSI build that caused notifications to not open the application and navigate to the correct channel.
 
 MacOS
 ^^^^^^^^^^^^^
+
 - Fixed an issue where changing the theme from the **System Preferences** changed the tray icon, but the red/blue dot indicating unreads got removed.
 - Fixed an issue where there was an invisible Mattermost icon in the top menu bar.
 
 Linux
 ^^^^^^^^^^^^^
+
 - Fixed an issue where Shift+Alt moved the focus to the main menu instead of changing keyboard layout.
 
 All Platforms
 ^^^^^^^^^^^^^
+
 - Fixed an issue where special characters were not shown for server names using GPO.
 - Fixed an issue where the close/back button in permanent link media previews was missing.
 - Fixed an issue where the text input focus was lost when closing the **Settings** window.
@@ -710,6 +748,7 @@ All Platforms
 
 Known Issues
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 - The new spellchecker connects to Google servers for downloading updated dictionaries.
 - Unread messages icon may be missing from the taskbar on Windows following 4.7.0 upgrade `MM-37807 <https://mattermost.atlassian.net/browse/MM-37807>`_.
 - Clicking on **View > Find** doesn't work `MM-36606 <https://mattermost.atlassian.net/browse/MM-36606>`_.
@@ -724,6 +763,7 @@ Known Issues
 
 Contributors
 ~~~~~~~~~~~~~~
+
 - `devinbinnie <https://github.com/devinbinnie>`_, `FalseHonesty <https://github.com/FalseHonesty>`_, `nevyangelova <https://github.com/nevyangelova>`_, `petermcj <https://github.com/petermcj>`_, `wget <https://github.com/wget>`_, `Willyfrog <https://github.com/Willyfrog>`_.
 
 Release v4.6
@@ -749,6 +789,7 @@ Improvements
 
 All Platforms
 ^^^^^^^^^^^^^
+
 - Added a setting to be able to select different desktop notification sounds (Requires Mattermost server v5.28+).
 - ``Show Mattermost icon in the menu bar`` setting is now enabled by default for new installs on Mac, and ``Show icon in the notification area`` and ``Leave app running in the notification area when application window is closed`` settings are are now enabled by default for new installs on Ubuntu.
 - The default window frame and server tabs are now used on older Windows and Linux OS versions.
@@ -761,6 +802,7 @@ Bug Fixes
 
 All Platforms
 ^^^^^^^^^^^^^
+
 - Fixed an issue where the app window started as maximized when the "Start app on login" setting was enabled. The Desktop App no longer shows in the system tray and the parameter ``--hidden`` was removed. This setting is not respected when AppImage file (Unofficial) is used.
 - Fixed an issue where the **Add server** modal fields were missing the right-click menu.
 - Fixed an issue where users did not see the right-click menu with Copy and Paste options on the login page when using the desktop app to login to an external application.
@@ -771,6 +813,7 @@ All Platforms
 
 Known Issues
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 - Unlocking the Desktop App on macOS marks the currently viewed channel as read. `MM-31429 <https://mattermost.atlassian.net/browse/MM-31429>`_
 - On Ubuntu, auto-focus is lost when using ALT+TAB to switch between windows. `MM-29705 <https://mattermost.atlassian.net/browse/MM-29705>`_
 - Crashes might be be experienced in some Linux desktop clients. This is an upstream bug in the ``libnotifyapp`` library and a recommended workaround is to disable the system tray icon in the Desktop settings.
@@ -1655,15 +1698,15 @@ Improvements
 All Platforms
 ^^^^^^^^^^^^^
 
--  URL address is shown when hovering over links with a mouse
--  Added CTRL+SHIFT+MINUS as a shortcut for decreasing font size (zooming out)
--  Reduce upgrade issues by properly clearing cache when updating the desktop app to a new version (the application cache will be purged whenever the desktop app version changes)
--  When launching the app from the command line interface, unnecessary warning messages are no longer sent if connecting to a trusted https connection without a ``certificate.json`` file
+- URL address is shown when hovering over links with a mouse
+- Added CTRL+SHIFT+MINUS as a shortcut for decreasing font size (zooming out)
+- Reduce upgrade issues by properly clearing cache when updating the desktop app to a new version (the application cache will be purged whenever the desktop app version changes)
+- When launching the app from the command line interface, unnecessary warning messages are no longer sent if connecting to a trusted https connection without a ``certificate.json`` file
 
 Windows
 ^^^^^^^
 
--  Link addresses can now be copied and pasted inside the app
+- Link addresses can now be copied and pasted inside the app
 
 Bug Fixes
 ~~~~~~~~~
@@ -1671,26 +1714,26 @@ Bug Fixes
 All Platforms
 ^^^^^^^^^^^^^
 
--  YouTube previews now work, even if mixed content is allowed
--  Fixed an incorrect cursor mode for "Edit" and "Remove" buttons on the Settings page
--  Fixed an issue where "Zoom in/out" settings did not properly work
--  When disconnected from Mattermost, the "Cannot connect to Mattermost" page is now properly aligned at the top of the window
+- YouTube previews now work, even if mixed content is allowed
+- Fixed an incorrect cursor mode for "Edit" and "Remove" buttons on the Settings page
+- Fixed an issue where "Zoom in/out" settings did not properly work
+- When disconnected from Mattermost, the "Cannot connect to Mattermost" page is now properly aligned at the top of the window
 
 Windows
 ^^^^^^^
 
--  The menu bar option for "Redo" is now properly shown as CTRL+Y
+- The menu bar option for "Redo" is now properly shown as CTRL+Y
 
 Mac
 ^^^
 
--  Fixed an issue where the default download folder was ``Macintosh HD``
--  Removed an unexpected "Show Tab Bar" menu item on macOS 10.12
+- Fixed an issue where the default download folder was ``Macintosh HD``
+- Removed an unexpected "Show Tab Bar" menu item on macOS 10.12
 
 Linux (Beta)
 ^^^^^^^^^^^^
 
--  Fixed an issue where the option "Leave app running in notification area when the window is closed" was never enabled.
+- Fixed an issue where the option "Leave app running in notification area when the window is closed" was never enabled.
 
 Known Issues
 ~~~~~~~~~~~~
@@ -1698,40 +1741,40 @@ Known Issues
 All Platforms
 ^^^^^^^^^^^^^
 
--  `If you click twice on the tab bar, and then attempt to use the "Zoom in/out" to change font size, the app window doesn't render properly <https://github.com/mattermost/desktop/issues/334>`__
--  `Direct messages cause notification icons to appear on all team tabs, which don't clear until you click on each team <https://github.com/mattermost/desktop/issues/160>`__
--  `After right-clicking an image or a link, the "Copy Link" option sometimes moves around when clicking different places afterwards <https://github.com/mattermost/desktop/issues/340>`__
+- `If you click twice on the tab bar, and then attempt to use the "Zoom in/out" to change font size, the app window doesn't render properly <https://github.com/mattermost/desktop/issues/334>`__
+- `Direct messages cause notification icons to appear on all team tabs, which don't clear until you click on each team <https://github.com/mattermost/desktop/issues/160>`__
+- `After right-clicking an image or a link, the "Copy Link" option sometimes moves around when clicking different places afterwards <https://github.com/mattermost/desktop/issues/340>`__
 
 Windows
 ^^^^^^^
 
--  [Windows 7] `Sometimes the app tries to render clicked linked inside the app, instead of in a new browser tab <https://github.com/mattermost/desktop/issues/369>`__
+- [Windows 7] `Sometimes the app tries to render clicked linked inside the app, instead of in a new browser tab <https://github.com/mattermost/desktop/issues/369>`__
 
 Mac
 ^^^
 
--  `After uploading a file with a keyboard shortcut, focus isn't set back to the message box <https://github.com/mattermost/desktop/issues/341>`__
+- `After uploading a file with a keyboard shortcut, focus isn't set back to the message box <https://github.com/mattermost/desktop/issues/341>`__
 
 Linux (Beta)
 ^^^^^^^^^^^^
 
--  [Ubuntu - 64 bit] `Right clicking taskbar icon and choosing Quit only minimizes the
+- [Ubuntu - 64 bit] `Right clicking taskbar icon and choosing Quit only minimizes the
    app <https://github.com/mattermost/desktop/issues/90#issuecomment-233712183>`__
--  [Ubuntu - 64 bit] `Direct message notification pop ups do not properly render <https://github.com/mattermost/mattermost-server/issues/3589>`__
+- [Ubuntu - 64 bit] `Direct message notification pop ups do not properly render <https://github.com/mattermost/mattermost-server/issues/3589>`__
 
 Contributors
 ~~~~~~~~~~~~
 
 Many thanks to all our contributors. In alphabetical order:
 
--  `itsmartin <https://github.com/itsmartin>`__,
-   `jasonblais <https://github.com/jasonblais>`__,
-   `jcomack <https://github.com/jcomack>`__,
-   `jnugh <https://github.com/jnugh>`__,
-   `kytwb <https://github.com/kytwb>`__,
-   `magicmonty <https://github.com/magicmonty>`__,
-   `Razzeee <https://github.com/Razzeee>`__,
-   `yuya-oc <https://github.com/yuya-oc>`__
+- `itsmartin <https://github.com/itsmartin>`__,
+- `jasonblais <https://github.com/jasonblais>`__,
+- `jcomack <https://github.com/jcomack>`__,
+- `jnugh <https://github.com/jnugh>`__,
+- `kytwb <https://github.com/kytwb>`__,
+- `magicmonty <https://github.com/magicmonty>`__,
+- `Razzeee <https://github.com/Razzeee>`__,
+- `yuya-oc <https://github.com/yuya-oc>`__
 
 Thanks also to those who reported bugs that benefited the release, in alphabetical order:
 
@@ -1748,13 +1791,13 @@ This release contains a security update and it is highly recommended that users 
 
 Version number updated to 3.4 to make numbering consistent with Mattermost server and mobile app releases. This change will not imply monthly releases.
 
--  v3.4.1, released 2016-09-30
+- v3.4.1, released 2016-09-30
 
-   -  (Mac) Fixed an issue where the app window pops up second to foreground when a new message is received
+ - (Mac) Fixed an issue where the app window pops up second to foreground when a new message is received
 
--  v3.4.0, released 2016-09-22
+- v3.4.0, released 2016-09-22
 
-   -  Original v3.4 release
+   - Original v3.4 release
 
 Improvements
 ~~~~~~~~~~~~
@@ -1762,38 +1805,38 @@ Improvements
 All Platforms
 ^^^^^^^^^^^^^
 
--  Current team and channel name shown in window title bar
--  Team tab is bolded for unread messages and has a red dot with a count of unread mentions
--  Added new shortcuts:
+- Current team and channel name shown in window title bar
+- Team tab is bolded for unread messages and has a red dot with a count of unread mentions
+- Added new shortcuts:
 
-   -  CTRL+S; CMD+S on Mac: sets focus on the Mattermost search box
-   -  ALT+Left Arrow; CMD+[ on Mac: go to previous page in history
-   -  ALT+Right Arrow; CMD+] on Mac: go to next page in history
+ - CTRL+S; CMD+S on Mac: sets focus on the Mattermost search box
+ - ALT+Left Arrow; CMD+[ on Mac: go to previous page in history
+ - ALT+Right Arrow; CMD+] on Mac: go to next page in history
 
--  Upgraded the Settings page user interface
--  The app now tries to reconnect periodically if a page fails to load
--  Added validation for name and URL when adding a new team on the Settings page
+- Upgraded the Settings page user interface
+- The app now tries to reconnect periodically if a page fails to load
+- Added validation for name and URL when adding a new team on the Settings page
 
 Windows
 ^^^^^^^
 
--  Added access to the settings menu from the system tray icon
--  Only one instance of the desktop application will now load at a time
--  Added an option to configure whether a red badge is shown on taskbar icon for unread messages
+- Added access to the settings menu from the system tray icon
+- Only one instance of the desktop application will now load at a time
+- Added an option to configure whether a red badge is shown on taskbar icon for unread messages
 
 Mac
 ^^^
 
--  Added an option to configure whether a red badge is shown on taskbar icon for unread messages
+- Added an option to configure whether a red badge is shown on taskbar icon for unread messages
 
 Linux (Beta)
 ^^^^^^^^^^^^
 
--  Added an option to flash taskbar icon when a new message is received
--  Added a badge to count mentions on the taskbar icon (for Unity)
--  Added a script, ``create_desktop_file.sh`` to create ``Mattermost.desktop`` desktop entry to help `integrate the application into a desktop environment <https://wiki.archlinux.org/index.php/Desktop_entries>`__ more easily
--  Added access to the settings menu from the system tray icon
--  Only one instance of the desktop application will now load at a time
+- Added an option to flash taskbar icon when a new message is received
+- Added a badge to count mentions on the taskbar icon (for Unity)
+- Added a script, ``create_desktop_file.sh`` to create ``Mattermost.desktop`` desktop entry to help `integrate the application into a desktop environment <https://wiki.archlinux.org/index.php/Desktop_entries>`__ more easily
+- Added access to the settings menu from the system tray icon
+- Only one instance of the desktop application will now load at a time
 
 Bug Fixes
 ~~~~~~~~~
@@ -1801,27 +1844,27 @@ Bug Fixes
 All Platforms
 ^^^^^^^^^^^^^
 
--  Cut, copy and paste are shown in the user interface only when the commands are available
--  Copying link addresses now work properly
--  Saving images by right-clicking the image preview now works
--  Refreshing the app page no longer takes you to the team selection page, but keeps you on the current channel
--  Fixed an issue where the maximized state of the app window was lost in some cases
--  Fixed an issue where shortcuts didn't work when switching applications or tabs in some cases
+- Cut, copy and paste are shown in the user interface only when the commands are available
+- Copying link addresses now work properly
+- Saving images by right-clicking the image preview now works
+- Refreshing the app page no longer takes you to the team selection page, but keeps you on the current channel
+- Fixed an issue where the maximized state of the app window was lost in some cases
+- Fixed an issue where shortcuts didn't work when switching applications or tabs in some cases
 
 Windows
 ^^^^^^^
 
--  Removed misleading shortcuts from the system tray menu
--  Removed unclear desktop notifications when the application page fails to load
--  Fixed the Mattermost icon for desktop notifications in Windows 10
--  Fixed an issue where application icon at the top left of the window was pixelated
--  Fixed an issue where the application kept focus after closing the app window
+- Removed misleading shortcuts from the system tray menu
+- Removed unclear desktop notifications when the application page fails to load
+- Fixed the Mattermost icon for desktop notifications in Windows 10
+- Fixed an issue where application icon at the top left of the window was pixelated
+- Fixed an issue where the application kept focus after closing the app window
 
 Linux (Beta)
 ^^^^^^^^^^^^
 
--  Removed misleading shortcuts from the system tray menu
--  Removed unclear desktop notifications when the application page fails to load
+- Removed misleading shortcuts from the system tray menu
+- Removed unclear desktop notifications when the application page fails to load
 
 Known Issues
 ~~~~~~~~~~~~
@@ -1829,25 +1872,25 @@ Known Issues
 All Platforms
 ^^^^^^^^^^^^^
 
--  YouTube videos do not work if mixed content is enabled from app settings
+- YouTube videos do not work if mixed content is enabled from app settings
 
 Windows
 ^^^^^^^
 
--  Copying a link address and pasting it inside the app doesn't work
+- Copying a link address and pasting it inside the app doesn't work
 
 Linux (Beta)
 ^^^^^^^^^^^^
 
--  [Ubuntu - 64 bit] Right clicking taskbar icon and choosing **Quit** only minimizes the app
--  [Ubuntu - 64 bit] `Direct message notification comes as a streak of line instead of a pop up <https://github.com/mattermost/mattermost-server/issues/3589>`__
+- [Ubuntu - 64 bit] Right clicking taskbar icon and choosing **Quit** only minimizes the app
+- [Ubuntu - 64 bit] `Direct message notification comes as a streak of line instead of a pop up <https://github.com/mattermost/mattermost-server/issues/3589>`__
 
 Contributors
 ~~~~~~~~~~~~
 
 Many thanks to all our contributors. In alphabetical order:
 
--  `akashnimare <https://github.com/akashnimare>`__,
+- `akashnimare <https://github.com/akashnimare>`__,
    `asaadmahmood <https://github.com/asaadmahmood>`__,
    `jasonblais <https://github.com/jasonblais>`__,
    `jgis <https://github.com/jgis>`__,
@@ -1872,70 +1915,70 @@ Improvements
 All Platforms
 ^^^^^^^^^^^^^
 
--  Added auto-reloading when tab fails to load the team.
--  Added the ability to access all of your teams by right clicking the system tray icon.
+- Added auto-reloading when tab fails to load the team.
+- Added the ability to access all of your teams by right clicking the system tray icon.
 
 Menu Bar
 ''''''''
 
--  New Keyboard Shortcuts
+- New Keyboard Shortcuts
 
-   -  Adjust text size
+ - Adjust text size
 
-      -  CTRL+0 (Menu Bar -> View -> Actual Size): Reset the zoom level.
-      -  CTRL+PLUS (Menu Bar -> View -> Zoom In): Increase text size
-      -  CTRL+MINUS (Menu Bar -> View -> Zoom Out): Decrease text size
+   - CTRL+0 (Menu Bar -> View -> Actual Size): Reset the zoom level.
+   - CTRL+PLUS (Menu Bar -> View -> Zoom In): Increase text size
+   - CTRL+MINUS (Menu Bar -> View -> Zoom Out): Decrease text size
 
-   -  Control window
+ - Control window
 
-      -  CTRL+W (Menu Bar -> Window -> Close): On Linux, this minimizes the main window.
-      -  CTRL+M (Menu Bar -> Window -> Minimize)
+   - CTRL+W (Menu Bar -> Window -> Close): On Linux, this minimizes the main window.
+   - CTRL+M (Menu Bar -> Window -> Minimize)
 
-   -  Switch teams (these shotcuts also reopen the main window)
+ - Switch teams (these shotcuts also reopen the main window)
 
-      -  CTRL+{1-9} (Menu Bar -> Window -> [Team name]): Open the *n*-th tab.
-      -  CTRL+TAB or ALT+CMD+Right (Menu Bar -> Window -> Select Next Team): Switch to the next window.
-      -  CTRL+SHIFT+TAB or ALT+CMD+Left (Menu Bar -> Window -> Select Previous Team): Switch to the previous window.
-      -  Right click on the tray item, to see an overview of all your teams. You can also select one and jump right into it.
+   - CTRL+{1-9} (Menu Bar -> Window -> [Team name]): Open the *n*-th tab.
+   - CTRL+TAB or ALT+CMD+Right (Menu Bar -> Window -> Select Next Team): Switch to the next window.
+   - CTRL+SHIFT+TAB or ALT+CMD+Left (Menu Bar -> Window -> Select Previous Team): Switch to the previous window.
+   - Right click on the tray item, to see an overview of all your teams. You can also select one and jump right into it.
 
-   -  Added **Help** to the Menu Bar, which includes
+ - Added **Help** to the Menu Bar, which includes
 
-      -  Link to `Mattermost Docs <https://docs.mattermost.com>`__
-      -  Field to indicate the application version number.
+   - Link to `Mattermost Docs <https://docs.mattermost.com>`__
+   - Field to indicate the application version number.
 
 Settings Page
 '''''''''''''
 
--  Added a "+" button next to the **Teams** label, which allows you to add more teams.
--  Added the ability to edit team information by clicking on the pencil icon to the right of the team name.
+- Added a "+" button next to the **Teams** label, which allows you to add more teams.
+- Added the ability to edit team information by clicking on the pencil icon to the right of the team name.
 
 Windows
 ^^^^^^^
 
--  Added an installer for better install experience.
--  The app now minimizes to the system tray when application window is closed.
--  Added an option to launch application on login.
--  Added an option to blink the taskbar icon when a new message has arrived.
--  Added tooltip text for the system tray icon in order to show count of unread channels/mentions.
--  Added an option to toggle the app to minimize/restore when clicking on the system tray icon.
+- Added an installer for better install experience.
+- The app now minimizes to the system tray when application window is closed.
+- Added an option to launch application on login.
+- Added an option to blink the taskbar icon when a new message has arrived.
+- Added tooltip text for the system tray icon in order to show count of unread channels/mentions.
+- Added an option to toggle the app to minimize/restore when clicking on the system tray icon.
 
 Mac
 ^^^
 
--  Added colored badges to the menu icon when there are unread channels/mentions.
--  Added an option to minimize the app to the system tray when application window is closed.
+- Added colored badges to the menu icon when there are unread channels/mentions.
+- Added an option to minimize the app to the system tray when application window is closed.
 
 Linux (Beta)
 ^^^^^^^^^^^^
 
--  Added an option to show the icon on menu bar (requires libappindicator1 on Ubuntu).
--  Added an option to launch application on login.
--  Added an option to minimize the app to the system tray when application window is closed.
+- Added an option to show the icon on menu bar (requires libappindicator1 on Ubuntu).
+- Added an option to launch application on login.
+- Added an option to minimize the app to the system tray when application window is closed.
 
 Other Changes
 ~~~~~~~~~~~~~
 
--  Application license changed from MIT License to Apache License, Version 2.0.
+- Application license changed from MIT License to Apache License, Version 2.0.
 
 Bug Fixes
 ~~~~~~~~~
@@ -1943,18 +1986,18 @@ Bug Fixes
 All platforms
 ^^^^^^^^^^^^^
 
--  Fixed authentication dialog not working for proxy.
+- Fixed authentication dialog not working for proxy.
 
 Windows
 ^^^^^^^
 
--  Fixed the blurred system tray icon.
--  Fixed a redundant description appearing in the pinned start menu on Windows 7.
+- Fixed the blurred system tray icon.
+- Fixed a redundant description appearing in the pinned start menu on Windows 7.
 
 Mac
 ^^^
 
--  Fixed two icons appearing on a notification.
+- Fixed two icons appearing on a notification.
 
 Known Issues
 ~~~~~~~~~~~~
@@ -1962,15 +2005,15 @@ Known Issues
 Linux (Beta)
 ^^^^^^^^^^^^^
 
--  [Ubuntu - 64 bit] Right clicking taskbar icon and choosing **Quit** only minimizes the app
--  [Ubuntu - 64 bit] `Direct message notification comes as a streak of line instead of a pop up <https://github.com/mattermost/mattermost-server/issues/3589>`__
+- [Ubuntu - 64 bit] Right clicking taskbar icon and choosing **Quit** only minimizes the app
+- [Ubuntu - 64 bit] `Direct message notification comes as a streak of line instead of a pop up <https://github.com/mattermost/mattermost-server/issues/3589>`__
 
 Contributors
 ~~~~~~~~~~~~
 
 Many thanks to all our contributors. In alphabetical order:
 
--  `CarmDam <https://github.com/CarmDam>`__,
+- `CarmDam <https://github.com/CarmDam>`__,
    `it33 <https://github.com/it33>`__,
    `jasonblais <https://github.com/jasonblais>`__,
    `jnugh <https://github.com/jnugh>`__,
@@ -1988,15 +2031,15 @@ Release date: 2016-05-24
 
 This release contains a security update and it is highly recommended that users upgrade to this version.
 
--  v1.2.1, released 2016-05-24
+- v1.2.1, released 2016-05-24
 
-   -  Fixed an issue where "Electron" appeared in the title bar on startup.
-   -  Added a dialog to confirm use of non-http(s) protocols prior to opening links. For example, clicking on a link to ``file://test`` will open a dialog to confirm the user intended to open a file.
-   -  (Windows and OS X) Added a right-click menu option for tray icon to open the Desktop application.
+   - Fixed an issue where "Electron" appeared in the title bar on startup.
+   - Added a dialog to confirm use of non-http(s) protocols prior to opening links. For example, clicking on a link to ``file://test`` will open a dialog to confirm the user intended to open a file.
+   - (Windows and OS X) Added a right-click menu option for tray icon to open the Desktop application.
 
--  v1.2.0, released 2016-05-13
+- v1.2.0, released 2016-05-13
 
-   -  Original v1.2 release
+   - Original v1.2 release
 
 Improvements
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2004,19 +2047,19 @@ Improvements
 All Platforms
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
--  Improved the style for tab badges.
--  Added **Allow mixed content** option to render images with ``http://``.
--  Added the login dialog for ``http`` authentication.
+- Improved the style for tab badges.
+- Added **Allow mixed content** option to render images with ``http://``.
+- Added the login dialog for ``http`` authentication.
 
 Mac
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
--  Added an option to show a black dot indicating unread messages on the team tab bar.
+- Added an option to show a black dot indicating unread messages on the team tab bar.
 
 Linux
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
--  Added **.deb** packages to support installation.
+- Added **.deb** packages to support installation.
 
 Bug Fixes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2024,26 +2067,26 @@ Bug Fixes
 All Platforms
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
--  Node.js environment is enabled in the new window.
--  The link other than ``http://`` and ``https://`` is opened by clicking.
+- Node.js environment is enabled in the new window.
+- The link other than ``http://`` and ``https://`` is opened by clicking.
 
 Linux
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
--  Desktop notification is shown as a dialog on Ubuntu 16.04.
+- Desktop notification is shown as a dialog on Ubuntu 16.04.
 
 Known issues
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--  The shortcuts can't switch teams twice in a row.
--  The team pages are not correctly rendered until the window is resized when the zoom level is changed.
+- The shortcuts can't switch teams twice in a row.
+- The team pages are not correctly rendered until the window is resized when the zoom level is changed.
 
 Contributors
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Many thanks to all our contributors. In alphabetical order:
 
--  `asaadmahmood <https://github.com/asaadmahmood>`__,
+- `asaadmahmood <https://github.com/asaadmahmood>`__,
    `jeremycook <https://github.com/jeremycook>`__,
    `jnugh <https://github.com/jnugh>`__,
    `jwilander <https://github.com/jwilander>`__,
@@ -2058,14 +2101,14 @@ Release date: 2016-04-13
 
 This release contains a security update and it is highly recommended that users upgrade to this version.
 
--  v1.1.1, released 2016-04-13
+- v1.1.1, released 2016-04-13
 
-   -  If the specified team URL on the **Settings** page contains an additional space, the app now properly redirects to the team page
-   -  ALT+SHIFT now opens the menu on Cinnamon desktop environment.
+   - If the specified team URL on the **Settings** page contains an additional space, the app now properly redirects to the team page
+   - ALT+SHIFT now opens the menu on Cinnamon desktop environment.
 
--  v1.1.0, released 2016-03-30
+- v1.1.0, released 2016-03-30
 
-   -  Original v1.1 release
+   - Original v1.1 release
 
 The ``electron-mattermost`` project is now the official desktop application for the Mattermost open source project.
 
@@ -2075,16 +2118,16 @@ Changes
 All platforms
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
--  Rename project from ``electron-mattermost`` to ``desktop``
--  Rename the executable file from ``electron-mattermost`` to ``Mattermost``
--  The configuration directory is also different from previous versions.
--  Should execute following command to take over ``config.json``.
+- Rename project from ``electron-mattermost`` to ``desktop``
+- Rename the executable file from ``electron-mattermost`` to ``Mattermost``
+- The configuration directory is also different from previous versions.
+- Should execute following command to take over ``config.json``.
 
-   -  Windows:
+   - Windows:
       ``mkdir %APPDATA%\Mattermost and copy %APPDATA%\electron-mattermost\config.json %APPDATA%\Mattermost\config.json``
-   -  OS X:
+   - OS X:
       ``ditto ~/Library/Application\ Support/electron-mattermost/config.json ~/Library/Application\ Support/Mattermost/config.json``
-   -  Linux:
+   - Linux:
       ``mkdir -p ~/.config/Mattermost && cp ~/.config/electron-mattermost/config.json ~/.config/Mattermost/config.json``
 
 Improvements
@@ -2093,16 +2136,16 @@ Improvements
 All platforms
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
--  Refined the application icon.
--  Show error messages when the application fails to load the Mattermost server.
--  Show confirmation dialog to continue connection when there is a certificate error.
--  Added validation to check whether **Name** or **URL** are blank when adding or editing a team on the **Settings** page.
--  Added simple basic HTTP authentication (requires a command line).
+- Refined the application icon.
+- Show error messages when the application fails to load the Mattermost server.
+- Show confirmation dialog to continue connection when there is a certificate error.
+- Added validation to check whether **Name** or **URL** are blank when adding or editing a team on the **Settings** page.
+- Added simple basic HTTP authentication (requires a command line).
 
 Windows
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
--  Show a small circle on the tray icon when there are new messages.
+- Show a small circle on the tray icon when there are new messages.
 
 Bug Fixes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2110,14 +2153,14 @@ Bug Fixes
 Windows
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
--  **File** > **About** now shows the version number dialog.
+- **File** > **About** now shows the version number dialog.
 
 Linux
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
--  **File** > **About** now shows the version number dialog.
--  Ubuntu: Notifications now work properly.
--  The view mp longer crashes when freetype 2.6.3 is used on the system.
+- **File** > **About** now shows the version number dialog.
+- Ubuntu: Notifications now work properly.
+- The view mp longer crashes when freetype 2.6.3 is used on the system.
 
 Known issues
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2125,13 +2168,13 @@ Known issues
 All platforms
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
--  Basic authentication is not working and requires a command line.
--  Some keyboard shortcuts are missing (e.g. CTRL+W, CMD+PLUS).
+- Basic authentication is not working and requires a command line.
+- Some keyboard shortcuts are missing (e.g. CTRL+W, CMD+PLUS).
 
 Windows
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
--  Application does not appear properly in Windows volume mixer.
+- Application does not appear properly in Windows volume mixer.
 
 **List of releases before the project was promoted as the official
 desktop application for Mattermost.**

@@ -3,11 +3,11 @@
 This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/get-started/), an enterprise-grade SaaS offering hosted by Mattermost.
 
 ```{Important}
-From Mattermost v9.2, see the [Mattermost Changelog](/deploy/mattermost-changelog) page for details on the latest cloud and self-hosted versions of Mattermost to be [deployed and upgraded on infrastructure you control](https://docs.mattermost.com/guides/deployment.html).
+From Mattermost v9.2, see the [Mattermost Changelog](https://docs.mattermost.com/deploy/mattermost-changelog) page for details on the latest cloud and self-hosted versions of Mattermost to be [deployed and upgraded on infrastructure you control](https://docs.mattermost.com/guides/deployment.html).
 
 - See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) documentation for details on upgrading.
 - See the [changelog in progress](https://bit.ly/2nK3cVf) for details about the upcoming release.
-- **Self-Hosted Releases Prior to v9.2**: See the [Mattermost Legacy Self-Hosted Changelog](/deploy/legacy-self-hosted-changelog) for details.
+- **Self-Hosted Releases Prior to v9.2**: See the [Mattermost Legacy Self-Hosted Changelog](https://docs.mattermost.com/deploy/legacy-self-hosted-changelog) for details.
 ```
 
 ```{contents} On ths page
@@ -1103,7 +1103,7 @@ From Mattermost v9.2, see the [Mattermost Changelog](/deploy/mattermost-changelo
 
 ### Bug Fixes
  - Fixed an issue with a nil point exception error during imports.
- - Fixed an issue where users were unable to download a [Support Packet](/manage/generating-support-packet.html) using the Desktop App.
+ - Fixed an issue where users were unable to download a [Support Packet](https://docs.mattermost.com/manage/generating-support-packet.html) using the Desktop App.
  - Fixed an issue with the **Message forward** modal where the auto-complete in the comment box moved with the text cursor.
  - Fixed typos in some translations strings that caused some in-product links to be broken.
 
@@ -1215,7 +1215,7 @@ From Mattermost v9.2, see the [Mattermost Changelog](/deploy/mattermost-changelo
  - Navigate between teams in Boards with the new team switcher.
  - Set board and template permissions in the new **Share** setting.
  - Link boards to channels to automatically grant board permissions to channel members.
- - See [the documentation](/welcome/whats-new-in-v72.html) for more details.
+ - See [the documentation](https://docs.mattermost.com/welcome/whats-new-in-v72.html) for more details.
 
 ### Improvements
 
@@ -1470,10 +1470,10 @@ From Mattermost v9.2, see the [Mattermost Changelog](/deploy/mattermost-changelo
     - Maximum 5 saved views per board.
 
 #### Calls (Beta)
- - [Native voice calling and screen sharing](/channels/make-calls.html) is now available. This is a Channels-specific integration.
+ - [Native voice calling and screen sharing](https://docs.mattermost.com/channels/make-calls.html) is now available. This is a Channels-specific integration.
 
 #### Collapsed Reply Threads (General Availability)
- - [Collapsed Reply Threads](/channels/organize-conversations.html) is now generally available and enabled by default for all Cloud users. Administrators may disable it in **System Console > Posts**.
+ - [Collapsed Reply Threads](https://docs.mattermost.com/channels/organize-conversations.html) is now generally available and enabled by default for all Cloud users. Administrators may disable it in **System Console > Posts**.
 
 #### Apps Bar (Beta)
  - The channel header is now decluttered to make it more obvious how to access Calls, Playbooks, and Boards when viewing a channel. All channel header icons registered by plugins are moved to the new Apps Bar, while Calls remains in the channel header.
@@ -1487,7 +1487,7 @@ From Mattermost v9.2, see the [Mattermost Changelog](/deploy/mattermost-changelo
  - Romanian language support was downgraded to Beta.
 
 #### Administration
- - For all Cloud Workspaces, the default value for Collapsed Reply Threads in **System Console > Posts** is now set to **Always On**. You may choose a different [configuration](/configure/configuration-settings.html#collapsed-reply-threads) as desired.
+ - For all Cloud Workspaces, the default value for Collapsed Reply Threads in **System Console > Posts** is now set to **Always On**. You may choose a different [configuration](https://docs.mattermost.com/configure/configuration-settings.html#collapsed-reply-threads) as desired.
  - Mattermost Cloud Professional plan now includes a 250GB file storage limit.
  - Default password requirements have been loosened to eight characters and no numeric, casing, or special characters required by default. These requirements can be configured by the System Admin as needed via **System Console > Password**.
  - The Collapsed Reply Threads configuration option was moved in the **System Console** from **Experimental** to **Site Configuration > Posts**.
@@ -1554,7 +1554,7 @@ From Mattermost v9.2, see the [Mattermost Changelog](/deploy/mattermost-changelo
  - Mentions incorrectly show users as not in a channel [MM-44157](https://mattermost.atlassian.net/browse/MM-44157).
  - Channel switcher does not show cross team unreads on refresh [MM-44073](https://mattermost.atlassian.net/browse/MM-44073).
  - File upload might fail for SVG files [MM-38982](https://mattermost.atlassian.net/browse/MM-38982).
- - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](/messaging/organizing-conversations.html#known-issues).
+ - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
  - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
 ----
@@ -1581,7 +1581,7 @@ From Mattermost v9.2, see the [Mattermost Changelog](/deploy/mattermost-changelo
 
 ### Known Issues
  - File upload might fail for SVG files [MM-38982](https://mattermost.atlassian.net/browse/MM-38982).
- - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](/messaging/organizing-conversations.html#known-issues).
+ - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
  - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
 ----
@@ -1618,7 +1618,7 @@ From Mattermost v9.2, see the [Mattermost Changelog](/deploy/mattermost-changelo
  - Shortcut keys for **Add Reaction** and **Save** are missing in mobile web view [MM-42715](https://mattermost.atlassian.net/browse/MM-42715).
  - Image link previews may show a blank space [MM-40448](https://mattermost.atlassian.net/browse/MM-40448).
  - File upload might fail for SVG files [MM-38982](https://mattermost.atlassian.net/browse/MM-38982).
- - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](/messaging/organizing-conversations.html#known-issues).
+ - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
  - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
 ----
@@ -1651,7 +1651,7 @@ From Mattermost v9.2, see the [Mattermost Changelog](/deploy/mattermost-changelo
  - Shortcut keys for **Add Reaction** and **Save** are missing in mobile web view [MM-42715](https://mattermost.atlassian.net/browse/MM-42715).
  - Image link previews may show a blank space [MM-40448](https://mattermost.atlassian.net/browse/MM-40448).
  - File upload might fail for SVG files [MM-38982](https://mattermost.atlassian.net/browse/MM-38982).
- - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](/messaging/organizing-conversations.html#known-issues).
+ - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
  - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
 ----
@@ -1689,7 +1689,7 @@ From Mattermost v9.2, see the [Mattermost Changelog](/deploy/mattermost-changelo
  - Shortcut keys for **Add Reaction** and **Save** are missing in mobile web view [MM-42715](https://mattermost.atlassian.net/browse/MM-42715).
  - Image link previews may show a blank space [MM-40448](https://mattermost.atlassian.net/browse/MM-40448).
  - File upload might fail for SVG files [MM-38982](https://mattermost.atlassian.net/browse/MM-38982).
- - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](/messaging/organizing-conversations.html#known-issues).
+ - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
  - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
 ----
@@ -1741,7 +1741,7 @@ From Mattermost v9.2, see the [Mattermost Changelog](/deploy/mattermost-changelo
  - In compact message view, the inline post edit help text and emoji picker are not aligned [MM-42402](https://mattermost.atlassian.net/browse/MM-42402).
  - Image link previews may show a blank space [MM-40448](https://mattermost.atlassian.net/browse/MM-40448).
  - File upload might fail for SVG files [MM-38982](https://mattermost.atlassian.net/browse/MM-38982).
- - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](/messaging/organizing-conversations.html#known-issues).
+ - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
  - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
 ----
@@ -1791,7 +1791,7 @@ From Mattermost v9.2, see the [Mattermost Changelog](/deploy/mattermost-changelo
  - Image link previews may show a blank space [MM-40448](https://mattermost.atlassian.net/browse/MM-40448).
  - File upload might fail for SVG files [MM-38982](https://mattermost.atlassian.net/browse/MM-38982).
  - ``CMD+/`` does not close the shortcuts modal [MM-38971](https://mattermost.atlassian.net/browse/MM-38971).
- - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](/messaging/organizing-conversations.html#known-issues).
+ - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
  - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
 ----
@@ -1840,7 +1840,7 @@ From Mattermost v9.2, see the [Mattermost Changelog](/deploy/mattermost-changelo
  - File upload might fail for SVG files [MM-38982](https://mattermost.atlassian.net/browse/MM-38982).
  - ``CMD+/`` does not close the shortcuts modal [MM-38971](https://mattermost.atlassian.net/browse/MM-38971).
  - ``CTRL/CMD + SHIFT + A`` shortcut does not open **Settings** [MM-38236](https://mattermost.atlassian.net/browse/MM-38236).
- - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](/messaging/organizing-conversations.html#known-issues).
+ - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
  - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
 ----
@@ -1878,7 +1878,7 @@ From Mattermost v9.2, see the [Mattermost Changelog](/deploy/mattermost-changelo
  - File upload might fail for SVG files [MM-38982](https://mattermost.atlassian.net/browse/MM-38982).
  - ``CMD+/`` does not close the shortcuts modal [MM-38971](https://mattermost.atlassian.net/browse/MM-38971).
  - ``CTRL/CMD + SHIFT + A`` shortcut does not open **Settings** [MM-38236](https://mattermost.atlassian.net/browse/MM-38236).
- - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](/messaging/organizing-conversations.html#known-issues).
+ - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
  - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
 ----
@@ -1924,7 +1924,7 @@ From Mattermost v9.2, see the [Mattermost Changelog](/deploy/mattermost-changelo
  - File upload might fail for SVG files [MM-38982](https://mattermost.atlassian.net/browse/MM-38982).
  - ``CMD+/`` does not close the shortcuts modal [MM-38971](https://mattermost.atlassian.net/browse/MM-38971).
  - ``CTRL/CMD + SHIFT + A`` shortcut does not open **Settings** [MM-38236](https://mattermost.atlassian.net/browse/MM-38236).
- - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](/messaging/organizing-conversations.html#known-issues).
+ - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
  - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
 ----
@@ -1961,7 +1961,7 @@ From Mattermost v9.2, see the [Mattermost Changelog](/deploy/mattermost-changelo
  - File upload might fail for SVG files [MM-38982](https://mattermost.atlassian.net/browse/MM-38982).
  - ``CMD+/`` does not close the shortcuts modal [MM-38971](https://mattermost.atlassian.net/browse/MM-38971).
  - ``CTRL/CMD + SHIFT + A`` shortcut does not open **Settings** [MM-38236](https://mattermost.atlassian.net/browse/MM-38236).
- - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](/messaging/organizing-conversations.html#known-issues).
+ - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
  - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
 ----
@@ -1989,7 +1989,7 @@ From Mattermost v9.2, see the [Mattermost Changelog](/deploy/mattermost-changelo
  - File upload might fail for SVG files [MM-38982](https://mattermost.atlassian.net/browse/MM-38982).
  - ``CMD+/`` does not close the shortcuts modal [MM-38971](https://mattermost.atlassian.net/browse/MM-38971).
  - ``CTRL/CMD + SHIFT + A`` shortcut does not open **Settings** [MM-38236](https://mattermost.atlassian.net/browse/MM-38236).
- - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](/messaging/organizing-conversations.html#known-issues).
+ - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
  - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
 ----
@@ -2023,7 +2023,7 @@ From Mattermost v9.2, see the [Mattermost Changelog](/deploy/mattermost-changelo
  - File upload might fail for SVG files [MM-38982](https://mattermost.atlassian.net/browse/MM-38982).
  - ``CMD+/`` does not close the shortcuts modal [MM-38971](https://mattermost.atlassian.net/browse/MM-38971).
  - ``Ctrl/Cmd+Shift+A`` shortcut does not open **Account Settings** [MM-38236](https://mattermost.atlassian.net/browse/MM-38236).
- - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](/messaging/organizing-conversations.html#known-issues).
+ - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
  - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
 ----
@@ -2060,7 +2060,7 @@ From Mattermost v9.2, see the [Mattermost Changelog](/deploy/mattermost-changelo
  - ``CMD+/`` does not close the shortcuts modal [MM-38971](https://mattermost.atlassian.net/browse/MM-38971).
  - ``Ctrl/Cmd+Shift+A`` shortcut does not open **Account Settings** [MM-38236](https://mattermost.atlassian.net/browse/MM-38236).
  - Close button on the Invite People page is incorrectly themed [MM-37852](https://mattermost.atlassian.net/browse/MM-37852).
- - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](/messaging/organizing-conversations.html#known-issues).
+ - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
  - **Cloud > "Tips & Next Steps"** should not show an "Explore channels" section for guest users.
  - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
@@ -2117,7 +2117,7 @@ From Mattermost v9.2, see the [Mattermost Changelog](/deploy/mattermost-changelo
  - ``Ctrl/Cmd+Shift+A`` shortcut does not open **Account Settings** [MM-38236](https://mattermost.atlassian.net/browse/MM-38236).
  - Close button on the Invite People page is incorrectly themed [MM-37852](https://mattermost.atlassian.net/browse/MM-37852).
  - Indigo theme glitch may occur when returning from Playbooks [MM-38910](https://mattermost.atlassian.net/browse/MM-38910).
- - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](/messaging/organizing-conversations.html#known-issues).
+ - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
  - **Cloud > "Tips & Next Steps"** should not show an "Explore channels" section for guest users.
  - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
@@ -2193,7 +2193,7 @@ From Mattermost v9.2, see the [Mattermost Changelog](/deploy/mattermost-changelo
  - ``Ctrl/Cmd+Shift+A`` shortcut does not open **Account Settings** [MM-38236](https://mattermost.atlassian.net/browse/MM-38236).
  - Close button on invite people page is incorrectly themed [MM-37852](https://mattermost.atlassian.net/browse/MM-37852).
  - Indigo theme glitch may occur when returning from Playbooks [MM-38910](https://mattermost.atlassian.net/browse/MM-38910).
- - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](/messaging/organizing-conversations.html#known-issues).
+ - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
  - **Cloud > "Tips & Next Steps"** should not show an "Explore channels" section for guest users.
  - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
@@ -2212,7 +2212,7 @@ From Mattermost v9.2, see the [Mattermost Changelog](/deploy/mattermost-changelo
 
 #### Branding Changes
  - Added a new default brand theme named "Denim".
- - The existing theme names and colors, including "Mattermost", "Organization", "Mattermost Dark", and "Windows Dark" have been updated to the new "Denim", "Sapphire", "Indigo", & "Onyx" theme names and colours, respectively. Anyone using the existing themes will see slightly modified theme colors after their server or workspace is upgraded. The theme variables for the existing "Mattermost", "Organization", "Mattermost Dark", and "Windows Dark" themes will still be accessible in [our documentation](/messaging/customizing-theme-colors.html#custom-theme-examples), so a custom theme can be created with these theme variables if desired. Custom themes are unaffected by this change.
+ - The existing theme names and colors, including "Mattermost", "Organization", "Mattermost Dark", and "Windows Dark" have been updated to the new "Denim", "Sapphire", "Indigo", & "Onyx" theme names and colours, respectively. Anyone using the existing themes will see slightly modified theme colors after their server or workspace is upgraded. The theme variables for the existing "Mattermost", "Organization", "Mattermost Dark", and "Windows Dark" themes will still be accessible in [our documentation](https://docs.mattermost.com/messaging/customizing-theme-colors.html#custom-theme-examples), so a custom theme can be created with these theme variables if desired. Custom themes are unaffected by this change.
  - Added a new light theme named "Quartz" to the default available list of themes.
  - Updated email templates to the new branding.
 
@@ -2263,7 +2263,7 @@ From Mattermost v9.2, see the [Mattermost Changelog](/deploy/mattermost-changelo
 
 ### Known Issues
  - To exit Playbooks, uers can press the **Back** button or use a keyboard shortcut to go back.
- - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](/messaging/organizing-conversations.html#known-issues).
+ - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
  - Sometimes an "Unable to get role" error appears when changing a channel member role in **System Console > User Management > Channels**.
  - **Cloud > "Tips & Next Steps"** should not show an "Explore channels" section for guest users.
  - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
@@ -2307,7 +2307,7 @@ From Mattermost v9.2, see the [Mattermost Changelog](/deploy/mattermost-changelo
  - Fixed an issue with Collapsed Reply Threads (Beta) where replying to a thread caused users to re-follow the previously unfollowed thread.
 
 ### Known Issues
- - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](/messaging/organizing-conversations.html#known-issues).
+ - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
  - Sometimes an "Unable to get role" error appears when changing a channel member role in **System Console > User Management > Channels**.
  - **Cloud > "Tips & Next Steps"** should not show an "Explore channels" section for guest users.
  - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
@@ -2353,7 +2353,7 @@ From Mattermost v9.2, see the [Mattermost Changelog](/deploy/mattermost-changelo
    - Fixed an issue where the app crashed when switching to the Threads view after leaving a channel.
 
 ### Known Issues
- - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](/messaging/organizing-conversations.html#known-issues).
+ - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
  - Sometimes an "Unable to get role" error appears when changing a channel member role in **System Console > User Management > Channels**.
  - **Cloud > "Tips & Next Steps"** should not show an "Explore channels" section for guest users.
  - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
@@ -2379,7 +2379,7 @@ From Mattermost v9.2, see the [Mattermost Changelog](/deploy/mattermost-changelo
  - Added support for markdown in apps forms, interactive dialogs field descriptions, errors, and slash commands.
 
 ### Known Issues
- - Known issues related to the new collapsed reply threads (Beta) are [listed here](/messaging/organizing-conversations.html#known-issues).
+ - Known issues related to the new collapsed reply threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
  - Sometimes an "Unable to get role" error appears when changing a channel member role in **System Console > User Management > Channels**.
  - **Cloud > "Tips & Next Steps"** should not show an "Explore channels" section for guest users.
  - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
@@ -2392,7 +2392,7 @@ From Mattermost v9.2, see the [Mattermost Changelog](/deploy/mattermost-changelo
 
 #### Collapsed Reply Threads (Early Beta Access)
 
- - We're excited to give you early access to Collapsed Reply Threads (Beta). It can be enabled in the **System Console > Experimental > Collapsed Reply Threads (Beta)**. Learn more about the features and known issues in [our documentation](/help/messaging/organizing-conversations.html).
+ - We're excited to give you early access to Collapsed Reply Threads (Beta). It can be enabled in the **System Console > Experimental > Collapsed Reply Threads (Beta)**. Learn more about the features and known issues in [our documentation](https://docs.mattermost.com/help/messaging/organizing-conversations.html).
 
 #### Emoji Enhancements with Skin Tone Selection
  - Added support for emoji standard v13.0. Users now have the ability to choose various skin tones using the Mattermost emoji picker. Mobile support is planned for v1.45 Mobile App release (July 16th), so some emojis selected on desktop won't be visible on mobile apps.
@@ -2490,7 +2490,7 @@ From Mattermost v9.2, see the [Mattermost Changelog](/deploy/mattermost-changelo
  - Redesigned message notification emails.
 
 #### Administration
- - The default value of the [Support Email](/administration/config-settings.html#support-email) (previously ``_feedback@mattermost.com_``) has been removed. Admin Advisor will now prompt System Admins about missing configuration for the [Support Email](/administration/config-settings.html#support-email). This value is required, and it ensures Mattermost account requests are sent to the correct team for resolution.
+ - The default value of the [Support Email](https://docs.mattermost.com/administration/config-settings.html#support-email) (previously ``_feedback@mattermost.com_``) has been removed. Admin Advisor will now prompt System Admins about missing configuration for the [Support Email](https://docs.mattermost.com/administration/config-settings.html#support-email). This value is required, and it ensures Mattermost account requests are sent to the correct team for resolution.
  - The **Marketplace** button in the **Main Menu** is now displayed if the user has the ``sysconsole_write_plugins`` permission.
  - Added new feature discoveries in the System Console, including Data Retention Policy and OpenID Connect.
  - Added basic intra-cluster communication support for plugins.
