@@ -3,7 +3,7 @@ from pathlib import Path
 
 from source.conf import redirects
 
-LINK_PATTERN = r"([^>`]?)`([^<`]*)<([^>@ ]+)>`_[_]?"
+LINK_PATTERN = r"([^>`]?)`([^<`\n]*)<([^>@\n ]+)>`_[_]?"
 IGNORE_DIRECTORIES = [
     "_static",
     "archive",
@@ -28,8 +28,11 @@ def process_match(match: re.Match) -> str:
     match_prefix: str = match.group(1)
     link_description: str = match.group(2)
     link_url: str = match.group(3)
+    if link_url.startswith("https://docs.mattermost.com/"):  # and "|" not in link_url:
+        link_url = link_url.removeprefix("https://docs.mattermost.com")
+        # print(f"[hardcode] link_url ==> {link_url}")
     # skip the link if it's to an external location or to a different section of the page
-    if (
+    elif (
         link_url == "/"
         or link_url.startswith("#")
         or link_url.startswith("../")
