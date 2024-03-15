@@ -30,15 +30,15 @@ You can `download the desktop app directly from our Downloads page <https://matt
 
     **Install the Mattermost Desktop App**
 
-    1. Download the latest version of the Mattermost desktop app: `32/64-bit version of Windows <https://releases.mattermost.com/desktop/5.6.0/mattermost-desktop-setup-5.6.0-win.exe>`__
-    2. From the **\Downloads** folder, right-click on the file ``mattermost-desktop-setup-5.6.0-win.exe``, then select **Open** to start an installer for the app. Once finished, the Mattermost desktop app opens automatically.
+    1. Download the latest version of the Mattermost desktop app: `32/64-bit version of Windows <https://releases.mattermost.com/desktop/5.7.0/mattermost-desktop-setup-5.7.0-win.exe>`__
+    2. From the **\Downloads** folder, right-click on the file ``mattermost-desktop-setup-5.7.0-win.exe``, then select **Open** to start an installer for the app. Once finished, the Mattermost desktop app opens automatically.
 
     **MSI Installer and group policies (beta)**
 
     You can download the latest version of the Mattermost desktop app MSI installer (Beta):
 
-    - MSI for `64-bit version of Windows <https://releases.mattermost.com/desktop/5.6.0/mattermost-desktop-5.6.0-x64.msi>`__
-    - MSI for `32-bit version of Windows <https://releases.mattermost.com/desktop/5.6.0/mattermost-desktop-5.6.0-x86.msi>`__
+    - MSI for `64-bit version of Windows <https://releases.mattermost.com/desktop/5.7.0/mattermost-desktop-5.7.0-x64.msi>`__
+    - MSI for `32-bit version of Windows <https://releases.mattermost.com/desktop/5.7.0/mattermost-desktop-5.7.0-x86.msi>`__
 
     The following group policies are available:
 
@@ -72,8 +72,8 @@ You can `download the desktop app directly from our Downloads page <https://matt
     
     1. Download the latest version of the Mattermost desktop app:
       
-      - `Intel systems <https://releases.mattermost.com/desktop/5.6.0/mattermost-desktop-5.6.0-mac-x64.dmg>`__
-      - `M1 systems <https://releases.mattermost.com/desktop/5.6.0/mattermost-desktop-5.6.0-mac-m1.dmg>`__ (Beta)
+      - `Intel systems <https://releases.mattermost.com/desktop/5.7.0/mattermost-desktop-5.7.0-mac-x64.dmg>`__
+      - `M1 systems <https://releases.mattermost.com/desktop/5.7.0/mattermost-desktop-5.7.0-mac-m1.dmg>`__ (Beta)
 
     2. Double-click the download to open the disk image.
 
@@ -127,8 +127,8 @@ You can `download the desktop app directly from our Downloads page <https://matt
 
     1. Download the latest version of the Mattermost desktop app:
 
-      - 64-bit systems `mattermost-desktop-5.6.0-linux-x86_64.rpm <https://releases.mattermost.com/desktop/5.6.0/mattermost-desktop-5.6.0-linux-x86_64.rpm>`__
-      - 32-bit systems `mattermost-desktop-5.6.0-linux-i686.rpm <https://releases.mattermost.com/desktop/5.6.0/mattermost-desktop-5.6.0-linux-i686.rpm>`__
+      - 64-bit systems `mattermost-desktop-5.7.0-linux-x86_64.rpm <https://releases.mattermost.com/desktop/5.7.0/mattermost-desktop-5.7.0-linux-x86_64.rpm>`__
+      - 32-bit systems `mattermost-desktop-5.7.0-linux-i686.rpm <https://releases.mattermost.com/desktop/5.7.0/mattermost-desktop-5.7.0-linux-i686.rpm>`__
 
     2. At the command line, execute one of the following commands based on the package you downloaded:
 
@@ -136,13 +136,13 @@ You can `download the desktop app directly from our Downloads page <https://matt
       
         .. code-block:: none
 
-          sudo rpm -i mattermost-desktop-5.6.0-linux-x86_64.rpm
+          sudo rpm -i mattermost-desktop-5.7.0-linux-x86_64.rpm
 
       - 32-bit systems:
       
         .. code-block:: none
         
-          sudo rpm -i mattermost-desktop-5.6.0-linux-i686.rpm
+          sudo rpm -i mattermost-desktop-5.7.0-linux-i686.rpm
 
     3. Run Mattermost as a desktop app.
 
@@ -152,13 +152,13 @@ You can `download the desktop app directly from our Downloads page <https://matt
     
       .. code-block:: none
 
-        sudo rpm -u mattermost-desktop-5.6.0-linux-x86_64.rpm
+        sudo rpm -u mattermost-desktop-5.7.0-linux-x86_64.rpm
 
     - 32-bit systems:
     
       .. code-block:: none
  
-        sudo rpm -u mattermost-desktop-5.6.0-linux-i686.rpm
+        sudo rpm -u mattermost-desktop-5.7.0-linux-i686.rpm
 
     .. tip:: 
       You can review the current version of your desktop app by selecting the **More** |more-icon-vertical| icon located in the top left corner of the desktop app, then selecting **Help > Version...**.
@@ -169,8 +169,8 @@ You can `download the desktop app directly from our Downloads page <https://matt
 
     1. Download the latest version of the Mattermost desktop app:
 
-      - 64-bit systems: `mattermost-desktop-5.6.0-linux-x64.tar.gz <https://releases.mattermost.com/desktop/5.6.0/mattermost-desktop-5.6.0-linux-x64.tar.gz>`__
-      - 32-bit systems: `mattermost-desktop-5.6.0-linux-ia32.tar.gz <https://releases.mattermost.com/desktop/5.6.0/mattermost-desktop-5.6.0-linux-ia32.tar.gz>`__
+      - 64-bit systems: `mattermost-desktop-5.7.0-linux-x64.tar.gz <https://releases.mattermost.com/desktop/5.7.0/mattermost-desktop-5.7.0-linux-x64.tar.gz>`__
+      - 32-bit systems: `mattermost-desktop-5.7.0-linux-ia32.tar.gz <https://releases.mattermost.com/desktop/5.7.0/mattermost-desktop-5.7.0-linux-ia32.tar.gz>`__
 
     2. Extract the archive to a convenient location, then execute ``mattermost-desktop`` located inside the extracted directory.
 
