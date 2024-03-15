@@ -28,6 +28,8 @@ If you upgrade from a release earlier than v9.5, please read the other [Importan
 
 ### Improvements
 
+See [this walkthrough video](https://www.youtube.com/watch?v=hHd05qSnWDI) on some of the improvements in our latest release below.
+
 #### User Interface (UI)
  - Pre-packaged Calls version [v0.24.0](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v0.24.0).
  - Pre-packaged GitLab plugin version [v1.8.0](https://github.com/mattermost/mattermost-plugin-gitlab/releases/tag/v1.8.0).
