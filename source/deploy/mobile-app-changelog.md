@@ -15,6 +15,8 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
  - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
  - iPhone 5s devices and later with iOS 12.4+ is required.
 
+Note: Mattermost Mobile App v2.14.0 contains a low level security fix. Updating is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the Mattermost Responsible Disclosure Policy.
+
 ### Bug Fixes
  - Fixed an issue with switching to a **Direct Message** channel with a shared channel user (user from another server).
  - Fixed an issue with foldable devices where sometimes it wasn't possible to navigate to **Home** in the unfolded view.
