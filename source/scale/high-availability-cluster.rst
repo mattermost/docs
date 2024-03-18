@@ -12,10 +12,6 @@ A High availability cluster enables a Mattermost system to maintain service duri
 
 High availability in Mattermost consists of running redundant Mattermost application servers, redundant database servers, and redundant load balancers. The failure of any one of these components does not interrupt operation of the system.
 
-.. note::
-  
-  This document applies to Mattermost Server v4.0 and later.
-
 Requirements for continuous operation
 -------------------------------------
 
@@ -43,12 +39,11 @@ To ensure your instance and configuration are compatible with high availability,
   
   Back up your Mattermost database and file storage locations before configuring high availability. For more information about backing up, see :doc:`../deploy/backup-disaster-recovery`.
 
-1. Upgrade Mattermost Server to version 4.0 or later. See :doc:`../upgrade/upgrading-mattermost-server`.
-2. Set up a new Mattermost server with version 4.0 or later by following one of our **Install Guides**. This server must use an identical copy of the configuration file, ``config.json``. Verify the servers are functioning by hitting each independent server through its private IP address.
-3. Modify the ``config.json`` files on both servers to add ``ClusterSettings``. See the `high availability configuration settings </configure/environment-configuration-settings.html#high-availability>`__ documentation for details.
-4. Verify the configuration files are identical on both servers then restart each machine in the cluster.
-5. Modify your NGINX setup so that it proxies to both servers. For more information about this, see `proxy server configuration`_.
-6. Open **System Console > Environment > High Availability** to verify that each machine in the cluster is communicating as expected with green status indicators. If not, investigate the log files for any extra information.
+1. Set up a new Mattermost server that uses an identical copy of the configuration file, ``config.json``. Verify the servers are functioning by hitting each independent server through its private IP address.
+2. Modify the ``config.json`` files on both servers to add ``ClusterSettings``. See the `high availability configuration settings </configure/environment-configuration-settings.html#high-availability>`__ documentation for details.
+3. Verify the configuration files are identical on both servers then restart each machine in the cluster.
+4. Modify your NGINX setup so that it proxies to both servers. For more information about this, see `proxy server configuration <https://docs.mattermost.com/install/setup-nginx-proxy.html>`__ documentation for details.
+5. Open **System Console > Environment > High Availability** to verify that each machine in the cluster is communicating as expected with green status indicators. If not, investigate the log files for any extra information.
 
 Add a server to the cluster
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -62,7 +57,7 @@ Remove a server from the cluster
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. Back up your Mattermost database and the file storage location. For more information about backing up, see :doc:`../deploy/backup-disaster-recovery`.
-2. Modify your NGINX setup to remove the server. For information about this, see ``proxy server configuration`_.
+2. Modify your NGINX setup to remove the server. For information about this, see `proxy server configuration <https://docs.mattermost.com/install/setup-nginx-proxy.html>`__ documentation for details..
 3. Open **System Console > Environment > High Availability** to verify that all the machines remaining in the cluster are communicating as expected with green status indicators. If not, investigate the log files for any extra information.
 
 Configuration and compatibility
@@ -214,9 +209,23 @@ Migrating to NAS or S3 from local storage is beyond the scope of this document.
 Database configuration
 ^^^^^^^^^^^^^^^^^^^^^^
 
-Use the read replica feature to scale the database. The Mattermost server can be set up to use one master database and one or more read replica databases.
+.. tip::
 
-On large deployments, also consider using the search replica feature to isolate search queries onto one or more search replicas. A search replica is similar to a read replica, but is used only for handling search queries.
+  Specifying configuration setting values using Mattermost environment variables ensure that they always take precedent over any other configuration settings.
+
+For an AWS High Availability RDS cluster deployment, point the `datasource </configure/environment-configuration-settings.html#database-datasource>`__ configuration setting to the write/read endpoint at the **cluster** level to benefit from the AWS failover handling. AWS takes care of promoting different database nodes to be the writer node. Mattermost doesn't need to manage this. 
+
+Use the `read replica </configure/environment-configuration-settings.html#database-readreplicas>`__ feature to scale the database. The Mattermost server can be set up to use one master database and one or more read replica databases. 
+
+.. note::
+  
+  For an AWS High Availability RDS cluster deployment, don't hard-code the IP addresses. Point this configuration setting to the write/read endpoint at the **cluster** level. This will benefit from the AWS failover handling where AWS takes care of promoting different database nodes to be the writer node. Mattermost doesn't need to manage this. 
+
+On large deployments, also consider using the `search replica </configure/environment-configuration-settings.html#search-replicas>`__ feature to isolate search queries onto one or more search replicas. A search replica is similar to a read replica, but is used only for handling search queries.
+
+.. note::
+
+  For an AWS High Availability RDS cluster deployment, don't hard-code the IP addresses. Point this configuration setting directly to the underlying read-only node endpoints within the RDS cluster. We recommend circumventing the failover/load balancing that AWS/RDS takes care of (except for the write traffic). Mattermost has its own method of balancing the read-only connections, and can also balance those queries to the DataSource/write+read connection should those nodes fail. 
 
 Mattermost distributes queries as follows:
 
@@ -462,7 +471,7 @@ Apply upgrades during a period of low load. The system downtime is brief, and de
 Upgrade to version 4.0 and later
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-When a server starts up, it can automatically discover other servers in the same cluster. You can add and remove servers without the need to make changes to the configuration file, ``config.json``. To support this capability, new items were added to the ``ClusterSettings`` section of ``config.json``. When upgrading from v3.10 or earlier to v4.0 or later, you must manually add the new items to your existing ``config.json``.
+When a server starts up, it can automatically discover other servers in the same cluster. You can add and remove servers without the need to make changes to the configuration file, ``config.json``. To support this capability, new items were added to the ``ClusterSettings`` section of ``config.json``. 
 
 1. Review the upgrade procedure in :doc:`../upgrade/upgrading-mattermost-server`.
 2. Make a backup of your existing ``config.json`` file.

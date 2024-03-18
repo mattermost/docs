@@ -1,4 +1,4 @@
-Install a License Key
+Install a license key
 =====================
 
 .. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
@@ -33,12 +33,20 @@ You can use the System Console or the mmctl tools to add or change a Mattermost 
 Change an existing license key
 -------------------------------
 
-Make sure that the new license is for a number of users that is greater than or equal to the current total number of users on your system. To find the total number of users, go to **System Console > Reporting > Site Statistics**. The total number of users is displayed in the **Total Activated Users** field. The license is rejected if this value is greater than the value allowed by the license key.
+You don't need to wait for your current license key to expire before replacing it with a new license from Mattermost. However, ensure your new license is for a seat count that's greater than or equal to your current total number of Mattermost users. 
 
-Then, follow these steps to change your license key:
-        1. Go go **System Console > About > Edition and License**.
-        2. Select **Remove Enterprise License and Downgrade Server**. This clears the license from the server and refreshes the System Console.
-        3. Upload your license key file.
+.. tip::
+    
+    To find the total number of users, go to **System Console > Reporting > Site Statistics**. The total number of users is displayed in the **Total Activated Users** field. The license will be rejected if this value is greater than the value allowed by your license key.
+
+Follow these steps to change your license key:
+
+1. Go to **System Console > About > Edition and License**.
+2. From Mattermost v6.7, simply upload your new license key file. 
+
+.. note::
+    
+    If you're running a Mattermost release older than v6.7, select **Remove Enterprise License and Downgrade Server** to clear the license from the server and refresh the System Console first before uploading the new key.
 
 License key storage
 -------------------
