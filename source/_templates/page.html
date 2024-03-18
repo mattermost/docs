@@ -1,11 +1,16 @@
 {% extends "furo/page.html" %}
-{% block footer %}
+{% block extrahead -%}
+    {% include "google-tag-manager.html" %}
+    {{ super() }}
+{% endblock extrahead %}
+{% block footer -%}
     <div class="docs-feedback-block">
         {% include "feedback.html" %}
     </div>
     {{ super() }}
 {% endblock footer %}
 {% block body -%}
+    {% include "google-tag-manager-noscript.html" %}
     {% include "custom-nav.html" %}
     {{ super() }}
 {% endblock body %}
