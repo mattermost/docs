@@ -163,6 +163,25 @@ Some community members have reported that they had ``description`` and ``nextsyn
 
    ALTER TABLE SharedChannelRemotes DROP COLUMN description, DROP COLUMN nextsyncat;
 
+An error has been identified in the 96th migration that was previously released. Before proceeding with the migration, it is necessary to remove a specific column. To ensure the Threads table reaches the expected state, execute the following prepared statement:
+
+.. code:: sql
+
+   SET @preparedStatement = (SELECT IF(
+    (
+        SELECT COUNT(*) FROM INFORMATION_SCHEMA.COLUMNS
+        WHERE table_name = 'Threads'
+        AND table_schema = DATABASE()
+        AND column_name = 'TeamId'
+    ) > 0,
+    'ALTER TABLE Threads DROP COLUMN TeamId;',
+    'SELECT 1'
+   ));
+
+   PREPARE alterIfExists FROM @preparedStatement;
+   EXECUTE alterIfExists;
+   DEALLOCATE PREPARE alterIfExists;
+
 Migrate the data
 ----------------
 
