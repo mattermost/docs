@@ -7,13 +7,86 @@ From Mattermost v9.2, this changelog summarizes updates for the latest cloud and
 
 - See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) documentation for details on upgrading.
 - See the [changelog in progress](https://bit.ly/2nK3cVf) for details about the upcoming release.
-- **Self-Hosted Releases Prior to v9.2**: See the [Mattermost Legacy Self-Hosted Changelog](/deploy/legacy-self-hosted-changelog) for details.
-- **Cloud Releases Prior to v9.2**: See the [Mattermost Legacy Cloud Changelog](/deploy/legacy-cloud-changelog) for details.
+- **Self-Hosted Releases Prior to v9.2**: See the [Mattermost Legacy Self-Hosted Changelog](https://docs.mattermost.com/deploy/legacy-self-hosted-changelog) for details.
+- **Cloud Releases Prior to v9.2**: See the [Mattermost Legacy Cloud Changelog](https://docs.mattermost.com/deploy/legacy-cloud-changelog) for details.
 ```
 
 ```{contents} On ths page
 :depth: 2
 ```
+
+## Release v9.6 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
+
+**Release day: March 15, 2024**
+
+### Compatibility
+ - Updated minimum required Edge and Chrome versions to 120+.
+
+```{Important}
+If you upgrade from a release earlier than v9.5, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
+```
+
+### Improvements
+
+See [this walkthrough video](https://mattermost.com/video/changelog-v9-6/) on some of the improvements in our latest release below.
+
+#### User Interface (UI)
+ - Pre-packaged Calls version [v0.24.0](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v0.24.0).
+ - Pre-packaged GitLab plugin version [v1.8.0](https://github.com/mattermost/mattermost-plugin-gitlab/releases/tag/v1.8.0).
+ - Added the [Outgoing OAuth Connections](https://mattermost.com/pl/outgoing-oauth-connections) integration type.
+ - Re-designed the **System Console > User Management** screen, and added the ability to batch export users in CSV format (Professional and Enterprise plans). On MySQL, users cannot view live results of the batch export in the user interface.
+ - Improved the appearance of profile/account menus.
+ - Added support for checkbox types in the **System Console** settings.
+ - Added support for WebP image previews in the web app similar to PNG and other image formats.
+ - Several pre-packaged plugins were removed.
+
+#### Administration
+ - Removed some unused Redux actions and reducers, including ``state.entities.posts.selectedPostId``.
+ - Limited the number of user preference updates to 10 per call.
+ - Clarified that the LDAP profile picture setting is optional.
+
+#### mmctl
+ - Extended mmctl with support for user preferences.
+
+### Bug Fixes
+ - Fixed an issue with switching to a **Direct Message** channel with a shared channel user (user from another server).
+ - Fixed an issue with extra space getting added to code blocks in search results.
+ - Fixed an issue where deactivated members were not included in a favorited **Direct Message** channel export.
+ - Fixed an issue where password strength settings wouldn't be disabled if they were set through environment variables.
+ - Fixed an issue where post mentions would grow outside the viewport on small devices.
+ - Fixed an issue with draft removal after deleting the post.
+ - Fixed a markdown issue where, on some occasions, extra space was found before a list.
+ - Fixed an issue where a sender to a custom group would also receive the message notification themselves.
+ - Fixed a web app crash when a System Admin clicked on a link to a private channel that they were not a member of.
+ - Fixed ``ChannelHasBeenCreated`` plugin hook not being called when a group channel was created.
+ - Fixed thread notifications so that if a user had **Thread Reply Notifications** disabled for your account and **Automatically follow threads in this channel** enabled for a channel, the user wouldn't receive thread notifications for that channel per global setting.
+
+### config.json
+ - Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
+
+#### Changes to the Enterprise plan:
+ - Under ``ServiceSettings`` in ``config.json``:
+    - Added ``EnableOutgoingOAuthConnections`` configuration setting for Outgoing OAuth Connections integration type.
+
+### Open Source Components
+ - Added ``@floating-ui/react``, and removed ``@floating-ui/react-dom`` and ``@floating-ui/react-dom-interactions`` from https://github.com/mattermost/mattermost/.
+
+### Go Version
+ - v9.6 is built with Go ``v1.20.7``.
+
+### Known Issues
+ - Drafts may still exist after sending the post [MM-57076](https://mattermost.atlassian.net/browse/MM-57076).
+ - Draft is lost from the reply box when other user's root post is deleted [MM-56972](https://mattermost.atlassian.net/browse/MM-56972).
+ - Users' initial status is not always loaded correctly [MM-56966](https://mattermost.atlassian.net/browse/MM-56966).
+ - Status may sometimes get stuck as **Away** or **Offline** in High Availability mode with IP Hash turned off.
+ - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
+ - Slack import through the CLI fails if email notifications are enabled.
+ - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
+ - The Playbooks left-hand sidebar doesn't update when a user is added to a run or playbook without a refresh.
+ - If a user isn't a member of a configured broadcast channel, posting a status update might fail without any error feedback. As a temporary workaround, join the configured broadcast channels, or remove those channels from the run configuration.
+ 
+### Contributors
+ - [abdesslamhouioui](https://github.com/abdesslamhouioui), [agarciamontoro](https://github.com/agarciamontoro), [agnivade](https://github.com/agnivade), [Alpha-4](https://github.com/Alpha-4), [amyblais](https://github.com/amyblais), [andrleite](https://github.com/andrleite), [angeloskyratzakos](https://github.com/angeloskyratzakos), [apshada](https://github.com/apshada), [arush-vashishtha](https://github.com/arush-vashishtha), [asaadmahmood](https://github.com/asaadmahmood), [avas27JTG](https://github.com/avas27JTG), [ayusht2810](https://github.com/ayusht2810), [azigler](https://github.com/azigler), [BenCookie95](https://github.com/BenCookie95), [bewing](https://github.com/bewing), [calebroseland](https://github.com/calebroseland), [carydrew](https://github.com/carydrew), [Chlbek](https://translate.mattermost.com/user/Chlbek), [compiledsound](https://github.com/compiledsound), [cpatulea](https://github.com/cpatulea), [cpoile](https://github.com/cpoile), [crspeller](https://github.com/crspeller), [ctlaltdieliet](https://github.com/ctlaltdieliet), [cwarnermm](https://github.com/cwarnermm), [devinbinnie](https://github.com/devinbinnie), [DHaussermann](https://github.com/DHaussermann), [edu-ap](https://github.com/edu-ap), [Eleferen](https://translate.mattermost.com/user/Eleferen), [emdecr](https://github.com/emdecr), [enahum](https://github.com/enahum), [esarafianou](https://github.com/esarafianou), [ewwollesen](https://github.com/ewwollesen), [gabrieljackson](https://github.com/gabrieljackson), [gourav-varma](https://github.com/gourav-varma), [Gregesp](https://github.com/Gregesp), [grundleborg](https://github.com/grundleborg), [hannaparks](https://github.com/hannaparks), [hanzei](https://github.com/hanzei), [harshilsharma63](https://github.com/harshilsharma63), [hereje](https://github.com/hereje), [hmhealey](https://github.com/hmhealey), [iabdousd](https://github.com/iabdousd), [ifoukarakis](https://github.com/ifoukarakis), [isacikgoz](https://github.com/isacikgoz), [it33](https://github.com/it33), [jespino](https://github.com/jespino), [jlandells](https://github.com/jlandells), [johndavidlugtu](https://github.com/johndavidlugtu), [jones](https://translate.mattermost.com/user/jones), [jprusch](https://github.com/jprusch), [JulienTant](https://github.com/JulienTant), [juliovillalvazo](https://github.com/juliovillalvazo), [jwilander](https://github.com/jwilander), [kaakaa](https://github.com/kaakaa), [larkox](https://github.com/larkox), [lieut-data](https://github.com/lieut-data), [lucassabreu](https://github.com/lucassabreu), [lynn915](https://github.com/lynn915), [M-ZubairAhmed](https://github.com/M-ZubairAhmed), [majo](https://translate.mattermost.com/user/majo), [marianunez](https://github.com/marianunez), [master7](https://translate.mattermost.com/user/master7), [matt-w99](https://github.com/matt-w99), [matthew-w](https://translate.mattermost.com/user/matthew-w), [matthewbirtch](https://github.com/matthewbirtch), [mickmister](https://github.com/mickmister), [milotype](https://github.com/milotype), [MixeroTN](https://translate.mattermost.com/user/MixeroTN), [mjnagel](https://github.com/mjnagel), [morgancz](https://translate.mattermost.com/user/morgancz), [mvitale1989](https://github.com/mvitale1989), [nickmisasi](https://github.com/nickmisasi), [nokedajunky](https://github.com/nokedajunky), [olavinto](https://github.com/olavinto), [oOoBenoitoOo](https://github.com/oOoBenoitoOo), [phoinixgrr](https://github.com/phoinixgrr), [pvev](https://github.com/pvev), [raghavaggarwal2308](https://github.com/raghavaggarwal2308), [rOt779kVceSgL](https://translate.mattermost.com/user/rOt779kVceSgL), [sadohert](https://github.com/sadohert), [saturninoabril](https://github.com/saturninoabril), [sbishel](https://github.com/sbishel), [Sharuru](https://translate.mattermost.com/user/Sharuru), [sinansonmez](https://github.com/sinansonmez), [sohzm](https://github.com/sohzm), [sri-byte](https://github.com/sri-byte), [stafot](https://github.com/stafot), [streamer45](https://github.com/streamer45), [stylianosrigas](https://github.com/stylianosrigas), [svelle](https://github.com/svelle), [Syed-Ali-Abbas-Zaidi](https://github.com/Syed-Ali-Abbas-Zaidi), [TealWater](https://github.com/TealWater), [ThrRip](https://github.com/ThrRip), [titanventura](https://github.com/titanventura), [toninis](https://github.com/toninis), [trangology](https://github.com/trangology), [trivikr](https://github.com/trivikr), [tsabi](https://github.com/tsabi), [Utsav-Ladani](https://github.com/Utsav-Ladani), [varghesejose2020](https://github.com/varghesejose2020), [vidhisaini10](https://github.com/vidhisaini10), [wiggin77](https://github.com/wiggin77), [yasserfaraazkhan](https://github.com/yasserfaraazkhan), [yeoji](https://github.com/yeoji)
 
 ## Release v9.5 - [Extended Support Release](https://docs.mattermost.com/upgrade/release-definitions.html#extended-support-release-esr)
 

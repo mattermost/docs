@@ -3,6 +3,10 @@
 
 Configure logging by going to **System Console > Environment > Logging**, or by editing the ``config.json`` file as described in the following tables. Changes to configuration settings in this section require a server restart before taking effect.
 
+.. tip:: 
+  
+  You can manage additional logging configuration within the ``config.json`` file specifically for Mattermost notifications under ``NotificationLogSettings``. These settings are equivalent to the configuration settings available under ``LogSettings``.
+
 .. config:setting:: log-enableconsole
   :displayname: Output logs to console (Logging)
   :systemconsole: Environment > Logging

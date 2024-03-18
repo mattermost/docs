@@ -49,10 +49,10 @@ PC web
 .. csv-table::
     :header: "Browser", "Self-Hosted Technical Requirement", "Cloud Technical Requirement"
 
-    "Chrome", "v118+", "v118+"
+    "Chrome", "v120+", "v120+"
     "Firefox", "v115+", "v115+"
     "Safari", "v16.2+", "v16.2+"
-    "Edge", "v118+", "v118+"
+    "Edge", "v120+", "v120+"
 
 `*` Internet Explorer (IE11) is no longer supported. We recommend using the `Mattermost desktop app <https://mattermost.com/apps/>`_ or another supported browser. See `this forum post <https://forum.mattermost.com/t/mattermost-is-dropping-support-for-internet-explorer-ie11-in-v5-16/7575>`__ to learn more.
 
