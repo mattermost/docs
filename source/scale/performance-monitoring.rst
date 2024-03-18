@@ -1,5 +1,5 @@
-Performance monitoring
-======================
+Monitor performance using dashboards
+=====================================
 
 .. include:: ../_static/badges/ent-cloud-selfhosted.rst
   :start-after: :nosearch:

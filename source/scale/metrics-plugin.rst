@@ -1,5 +1,5 @@
-Mattermost Metrics plugin
-=========================
+Monitor performance using the Metrics plugin
+============================================
 
 .. include:: ../_static/badges/ent-cloud-selfhosted.rst
   :start-after: :nosearch:
@@ -7,7 +7,7 @@ Mattermost Metrics plugin
 .. |plus-icon| image:: ../images/plus_F0415.svg
   :alt: Open menus using the plus icon.
 
-The Mattermost Metrics plugin is an alternative tool to collect application metrics from Mattermost that doesn't require you to install and integrate `Prometheus <https://prometheus.io/>`__ and `Grafana <https://grafana.org/>`__ with Mattermost. 
+The `Mattermost Metrics plugin <https://github.com/mattermost/mattermost-plugin-metrics/>`__ is an alternative tool to collect application metrics from Mattermost that doesn't require you to install and integrate `Prometheus <https://prometheus.io/>`__ and `Grafana <https://grafana.org/>`__ with Mattermost.
 
 The Metrics plugin can be installed on Mattermost versions from v6.3 and collects and stores the :doc:`same performance monitoring metrics </scale/performance-monitoring-metrics>` as Prometheus, without having to deploy these third-party tools. Data is collected every minute and is stored where the plugin is running. The data is synchronized to either a cloud-based or local file store every hour, and retained for 15 days. 
 
