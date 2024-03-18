@@ -20,48 +20,49 @@ To streamline the migration process and alleviate any potential challenges, we h
 Required tools
 --------------
 
--  Install ``pgLoader``. See the official `installation
-   guide <https://pgloader.readthedocs.io/en/latest/install.html>`__.
+- Install ``pgLoader``. See the official `installation guide <https://pgloader.readthedocs.io/en/latest/install.html>`__.
 
 .. note::
-   -  If you are using MySQL v8: Due to a `known bug <https://github.com/dimitri/pgloader/issues/1183>`__ in pgLoader compiled binaries, you need to compile pgLoader from the source. Please follow the steps `here <https://pgloader.readthedocs.io/en/latest/install.html#build-from-sources>`__ to build from the source.
-   -  We have received reports that the pgloader Docker image can be limited in terms of memory resources. Please use pgloader directly instead of a Docker container. 
 
--  Install morph CLI by running the following command:
+   - If you are using MySQL v8: Due to a `known bug <https://github.com/dimitri/pgloader/issues/1183>`__ in pgLoader compiled binaries, you need to compile pgLoader from the source. Please follow the steps `here <https://pgloader.readthedocs.io/en/latest/install.html#build-from-sources>`__ to build from the source.
+   - We have received reports that the pgloader Docker image can be limited in terms of memory resources. Please use pgloader directly instead of a Docker container. 
 
-   -  ``go install github.com/mattermost/morph/cmd/morph@v1``
+- Install morph CLI by running the following command:
 
--  Optionally install ``dbcmp`` to compare the data after a migration:
+ - ``go install github.com/mattermost/morph/cmd/morph@v1``
 
-   -  ``go install github.com/mattermost/dbcmp/cmd/dbcmp@latest``
+- Optionally install ``dbcmp`` to compare the data after a migration:
+
+ - ``go install github.com/mattermost/dbcmp/cmd/dbcmp@latest``
 
 Before the migration
 --------------------
 
-.. note::
-   This guide requires a schema of v6.4 or later. So, if you have an earlier version and planning to migrate, please update your Mattermost Server to v6.4 at a minimum. 
+.. important::
 
--  Back up your MySQL data.
--  Confirm your Mattermost version. See the **About** modal for details. 
--  Determine the migration window needed. This process requires you to stop the Mattermost Server during the migration.
--  See the `schema-diffs <#schema-diffs>`__ section to ensure data compatibility between schemas.
--  Prepare your PostgreSQL environment by creating a database and user. See the `database </install/prepare-mattermost-database.html>`__ documentation for details.
--  If you are planning to run an iterative migration (running the pgloader several times), please see the `iterative-migrations <#iterative-migrations>`_ section.
--  On `newer versions <https://www.postgresql.org/docs/release/15.0/>`__ of PostgreSQL, newly created users do not have access to ``public`` schema. The access should be explicitly granted by running ``GRANT ALL ON SCHEMA public to mmuser'``.
+   This guide requires a schema of v6.4 or later. So, if you have an earlier version and planning to migrate, please update your Mattermost Server to v6.4 at a minimum.
+
+   - Back up your MySQL data.
+   - Confirm your Mattermost version. See the **About** modal for details. 
+   - Determine the migration window needed. This process requires you to stop the Mattermost Server during the migration.
+   - See the `schema-diffs <#schema-diffs>`__ section to ensure data compatibility between schemas.
+   - Prepare your PostgreSQL environment by creating a database and user. See the `database </install/prepare-mattermost-database.html>`__ documentation for details.
+   - If you are planning to run an iterative migration (running the pgloader several times), please see the `iterative-migrations <#iterative-migrations>`_ section.
+   - On `newer versions <https://www.postgresql.org/docs/release/15.0/>`__ of PostgreSQL, newly created users do not have access to ``public`` schema. The access should be explicitly granted by running ``GRANT ALL ON SCHEMA public to mmuser'``.
 
 Prepare target database
 -----------------------
 
--  Clone the ``mattermost`` repository for your specific version:
+- Clone the ``mattermost`` repository for your specific version:
    ``git clone -b <your current version (eg. release-7.8)> git@github.com:mattermost/mattermost.git --depth=1``
--  ``cd`` into ``mattermost`` project*.
--  Create a PostgreSQL database using morph CLI with the following command:
+- ``cd`` into ``mattermost`` project*.
+- Create a PostgreSQL database using morph CLI with the following command:
 
 .. code:: bash
 
    morph apply up --driver postgres --dsn "postgres://user:pass@localhost:5432/<target_db_mame>?sslmode=disable" --path ./db/migrations/postgres --number -1
 
-\* After ``v8`` due to project re-organization, the migrations directory has been changed to ``./server/channels/db/migrations/postgres/`` relative to the project root. Therefore ``cd`` into ``mattermost/server/channels``.
+\* After ``v8``, due to project re-organization, the migrations directory has been changed to ``./server/channels/db/migrations/postgres/`` relative to the project root. Therefore ``cd`` into ``mattermost/server/channels``.
 
 Schema diffs
 ------------
@@ -71,40 +72,51 @@ Before the migration, due to differences between the two schemas, some manual st
 Text to character varying
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Since the Mattermost MySQL schema uses the ``text`` column type in the various tables instead of ``varchar`` representation in the PostgreSQL schema, we encourage you to check if the sizes are consistent within the PostgreSQL schema limits.
+We encourage you to check if the sizes are consistent within the PostgreSQL schema limits since the Mattermost MySQL schema uses the ``text`` column type in the various tables instead of ``varchar`` representation in the PostgreSQL schema.
 
-================ ================ ===================== =============================================================================
-Table            Column           Data type casting     Consequence on deletion
-================ ================ ===================== =============================================================================
-Audits           Action           text -> varchar(512)  No side effect on how the application works (Affected row needs to be deleted).
-Audits           ExtraInfo        text -> varchar(1024) Same as above.
-ClusterDiscovery HostName         text -> varchar(512)  No side effect on how the application works (Affected row needs to be deleted).
-Commands         IconURL          text -> varchar(1024) The field can be deleted or updated with a new URL.
-Commands         AutoCompleteDesc text -> varchar(1024) The field can be deleted or rewritten.
-Commands         AutoCompleteHint text -> varchar(1024) The field can be either deleted or rewritten.
-Compliances      Keywords         text -> varchar(512)  The filter for compliance needs to be updated.
-Compliances      Emails           text -> varchar(1024) Same as above.
-FileInfo         Path             text -> varchar(512)  Previous links to this file won't work (The affected row needs to be deleted).
-FileInfo         ThumbnailPath    text -> varchar(512)  Same as above.
-FileInfo         PreviewPath      text -> varchar(512)  Same as above.
-FileInfo         Name             text -> varchar(256)  Same as above.
-FileInfo         MimeType         text -> varchar(256)  Same as above.
-LinkMetadata     URL              text -> varchar(2048) Previous links won't work (Affected row needs to be deleted).
-RemoteClusters   SiteURL          text -> varchar(512)  Previous remote cluster will be removed (Affected row needs to be deleted).
-RemoteClusters   Topics           text -> varchar(512)  The field can be removed.
-Sessions         DeviceId         text -> varchar(512)  Users will be logged out on these devices (The affected row needs to be deleted).
-Systems          Value            text -> varchar(1024) Edge case, ideally should never happen.
-UploadSessions   FileName         text -> varchar(256)  The upload session will be lost (The affected row needs to be deleted).
-UploadSessions   Path             text -> varchar(512)  Same as above.
-================ ================ ===================== =============================================================================
-
-As you can see, there are several occurrences where the schema can differ and data size constraints within the PostgreSQL schema can result in errors. Several reports have been received from our community that the ``LinkMetadata`` and ``FileInfo`` tables had some overflows, so we recommend checking these tables in particular. Please check if your data in the MySQL schema exceeds these limitations. You can check if there are any required deletions or updates. For example, to do so in the ``Audits`` table/``Action`` column; run:
+You can check if there are any required deletions or updates. For example, to do so in the ``Audits`` table/``Action`` column; run:
 
 .. code:: sql
 
    SELECT FROM mattermost.Audits where LENGTH(Action) > 512;
 
-Each table/row requires individual inspection hence we added the possible consequence of deletion.
+The following table shows the deletions or updates you can proceed with that don't incur further consequences. 
+
+================ ================ ===================== =============================================================================
+Table            Column           Data type casting     Consequence on deletion
+================ ================ ===================== =============================================================================
+Audits           Action           text -> varchar(512)  No side effect on how the application works (The affected row needs to be deleted).
+Audits           ExtraInfo        text -> varchar(1024) No side effect on how the application works (The affected row needs to be deleted).
+ClusterDiscovery HostName         text -> varchar(512)  No side effect on how the application works (The affected row needs to be deleted).
+Commands         IconURL          text -> varchar(1024) The field can be deleted or updated with a new URL.
+Commands         AutoCompleteDesc text -> varchar(1024) The field can be deleted or rewritten.
+Commands         AutoCompleteHint text -> varchar(1024) The field can be deleted or rewritten.
+RemoteClusters   Topics           text -> varchar(512)  The field can be removed.
+Systems          Value            text -> varchar(1024) Edge case, ideally should never happen.
+================ ================ ===================== =============================================================================
+
+The following table shows several occurrences where the schema can differ and data size constraints within the PostgreSQL schema can result in errors. Each table/row requires individual inspection hence we added the possible consequence of deletion.
+
+.. tip::
+
+   Several reports have been received from our community that the ``LinkMetadata`` and ``FileInfo`` tables had some overflows, so we recommend checking these tables in particular. Please check if your data in the MySQL schema exceeds these limitations. 
+
+================ ================ ===================== =============================================================================
+Table            Column           Data type casting     Consequence on deletion
+================ ================ ===================== =============================================================================
+Compliances      Keywords         text -> varchar(512)  The filter for compliance needs to be updated.
+Compliances      Emails           text -> varchar(1024) The filter for compliance needs to be updated.
+FileInfo         Path             text -> varchar(512)  Previous links to this file won't work (The affected row needs to be deleted).
+FileInfo         ThumbnailPath    text -> varchar(512)  Previous links to this file won't work (The affected row needs to be deleted).
+FileInfo         PreviewPath      text -> varchar(512)  Previous links to this file won't work (The affected row needs to be deleted).
+FileInfo         Name             text -> varchar(256)  Previous links to this file won't work (The affected row needs to be deleted).
+FileInfo         MimeType         text -> varchar(256)  Previous links to this file won't work (The affected row needs to be deleted).
+LinkMetadata     URL              text -> varchar(2048) Previous links to this file won't work (The affected row needs to be deleted).
+RemoteClusters   SiteURL          text -> varchar(512)  Previous remote cluster will be removed (The affected row needs to be deleted).
+Sessions         DeviceId         text -> varchar(512)  Users will be logged out on these devices (The affected row needs to be deleted).
+UploadSessions   FileName         text -> varchar(256)  The upload session will be lost (The affected row needs to be deleted).
+UploadSessions   Path             text -> varchar(512)  The upload session will be lost (The affected row needs to be deleted).
+================ ================ ===================== =============================================================================
 
 Full-text indexes
 ~~~~~~~~~~~~~~~~~
@@ -143,7 +155,7 @@ Also, if you were previously utilizing a database for handling the `Mattermost c
 
    SELECT * FROM Configurations WHERE Active = 't';
 
-You should update the ``SqlSettings.DataSource`` and ``SqlSettings.DriverName`` fields accordingly. Also, note that the ``MM_CONFIG``environment variable should point to the new DSN after the migration is completed.
+You should update the ``SqlSettings.DataSource`` and ``SqlSettings.DriverName`` fields accordingly. Also, note that the ``MM_CONFIG`` environment variable should point to the new DSN after the migration is completed.
 
 Some community members have reported that they had ``description`` and ``nextsyncat`` columns in their ``SharedChannelRemotes`` table. These columns should be removed from the table. Consider running the following DDL to drop the columns. (This migration will be added to future versions of Mattermost).
 
@@ -157,6 +169,7 @@ Migrate the data
 Once we set the schema to a desired state, we can start migrating the **data** by running ``pgLoader`` \*\*
 
 .. note::
+
    In the example below, the hosts for both databases are assumed to be in the same instance. Please update addresses accordingly if they are on different machines.
 
 \*\* Use the following configuration for the baseline of the data migration:
