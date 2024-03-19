@@ -1,7 +1,13 @@
 {# Templates should inherit from furo's base (furo/base.html) if at all possible. #}
 {% extends "furo/base.html" %}
 
+{% block extrahead -%}
+    {% include "google-tag-manager.html" %}
+    {{ super() }}
+{% endblock extrahead %}
+
 {% block body -%}
+{% include "google-tag-manager-noscript.html" %}
 {{ super() }}
 {% include "partials/icons.html" %}
 
