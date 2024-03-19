@@ -475,7 +475,7 @@ body:not([data-theme="light"]) {
 }
 
 /* NEW NAV DEFER */
-.site-header__col--menu .site-nav.active {
+.site-header__col--menu .site-nav.nav-is-active {
     display: block;
 }
 
@@ -1035,6 +1035,9 @@ body:not([data-theme="light"]) {
 	}
 	.site-nav-login .sub-menu__links--single:last-child {
 		margin-bottom: 5rem !important;
+	}
+    .site-nav-login .toplink-wrapper span {
+		display: none !important;
 	}
 }
 
