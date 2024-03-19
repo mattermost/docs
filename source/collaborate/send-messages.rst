@@ -6,15 +6,19 @@ Send messages
 
 .. |gear-icon| image:: ../images/settings-outline_F08BB.svg
   :alt: Select the Gear icon to open the Settings dialog.
+  :class: theme-icon
 
 .. |more-icon| image:: ../images/dots-horizontal_F01D8.svg
   :alt: Select the More icon to access additional message actions.
+  :class: theme-icon
 
 .. |send-icon| image:: ../images/send_F048A.svg
   :alt: Select the Send icon to post your message.
+  :class: theme-icon
 
-.. |smile-icon| image:: ../images/smile-icon.png
+.. |smile-icon| image:: ../images/emoticon-plus-outline_E80F.svg
   :alt: Use the Smile icon to add emojis to your message.
+  :class: theme-icon
 
 Enter a message in the text field, then select **Send** |send-icon| to send the message. You can include images and file attachments to your messages by:
 
@@ -24,32 +28,30 @@ Enter a message in the text field, then select **Send** |send-icon| to send the 
 
 .. |attachment| image:: ../images/paperclip_F03E2.svg
   :alt: Use the Attachment icon to add images or files to your messages.
-
+  :class: theme-icon
 
 Compose a message by typing into the text box at the bottom of the Mattermost screen, then select the **Send** |send-icon| icon.
 
-.. tabs::
+.. tab:: Web/Desktop
 
-  .. tab:: Web/Desktop
+  You can also use a keyboard to send messages:
+  
+  - Press :kbd:`Enter` on Windows or Linux, or :kbd:`↵` on Mac. 
+  - To create new text lines, press :kbd:`Shift` :kbd:`Enter` on Windows or Linux, or press :kbd:`⇧` :kbd:`↵` on Mac. 
 
-    You can also use a keyboard to send messages:
-    
-    - Press :kbd:`Enter` on Windows or Linux, or :kbd:`↵` on Mac. 
-    - To create new text lines, press :kbd:`Shift` :kbd:`Enter` on Windows or Linux, or press :kbd:`⇧` :kbd:`↵` on Mac. 
+  .. tip::
 
-    .. tip::
+    If you find you're accidentally sending messages too soon, you can configure Mattermost to require :kbd:`Shift` :kbd:`Enter` on Windows or Linux, or press :kbd:`⇧` :kbd:`↵` on Mac to send all messages. Select the **gear** |gear-icon| icon to go to **Settings**, then select **Advanced > Send messages on CTRL+ENTER**.
 
-      If you find you're accidentally sending messages too soon, you can configure Mattermost to require :kbd:`Shift` :kbd:`Enter` on Windows or Linux, or press :kbd:`⇧` :kbd:`↵` on Mac to send all messages. Select the **gear** |gear-icon| icon to go to **Settings**, then select **Advanced > Send messages on CTRL+ENTER**.
+.. tab:: Mobile
 
-  .. tab:: Mobile
-
-    Tap the **Smile** icon |smile-icon| to add emojis while composing your message.
+  Tap the **Smile** icon |smile-icon| to add emojis while composing your message.
 
 .. tip::
   
-  - When you send messages in a channel, depending on the `channel actions configured </collaborate/create-channels.html>`__, specific words in the post can trigger a prompt to run a playbook. Access **Channel Actions** from the channel name drop-down menu in the center pane to see what automatic actions have been configured for the current channel.
+  - When you send messages in a channel, depending on the :doc:`channel actions configured </collaborate/create-channels>`, specific words in the post can trigger a prompt to run a playbook. Access **Channel Actions** from the channel name drop-down menu in the center pane to see what automatic actions have been configured for the current channel.
   - Using a RTL plugin, Mattermost can automatically detect and display messages written using right-to-left scripts, such as Arabic, Hebrew, or Persian. Your system admin must install the `RTL Plugin <https://github.com/QueraTeam/mattermost-rtl>`__ to enable this functionality.
-  - `Mattermost Professional or Enterprise <https://mattermost.com/pricing>`__ customers can `edit or delete messages <#edit-or-delete-messages>`__ after sending them if the system admin hasn't restricted the ability to do so using `advanced permissions </onboard/advanced-permissions.html>`__.
+  - `Mattermost Professional or Enterprise <https://mattermost.com/pricing>`__ customers can `edit or delete messages <#edit-or-delete-messages>`__ after sending them if the system admin hasn't restricted the ability to do so using :doc:`advanced permissions </onboard/advanced-permissions>`.
   
 Draft messages
 --------------
@@ -92,8 +94,8 @@ Do more with your messages
 
 Express yourself your way using the following message features:
 
-- `Set message priority </collaborate/message-priority.html>`__
-- `Format messages </collaborate/format-messages.html>`__
-- `Mention people </collaborate/mention-people.html>`__
-- `Share files </collaborate/share-files-in-messages.html>`__
-- `Share links to channels and messages </collaborate/share-links.html>`__
+- :doc:`Set message priority </collaborate/message-priority>`
+- :doc:`Format messages </collaborate/format-messages>`
+- :doc:`Mention people </collaborate/mention-people>`
+- :doc:`Share files </collaborate/share-files-in-messages>`
+- :doc:`Share links to channels and messages </collaborate/share-links>`

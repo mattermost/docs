@@ -1,7 +1,7 @@
 OpenID Connect Single Sign-On
 ==============================
 
-.. include:: ../_static/badges/entpro-cloud-free.rst
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 .. raw:: html

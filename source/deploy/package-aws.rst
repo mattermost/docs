@@ -3,8 +3,8 @@ Package Apps for AWS Lambda
 
 Developers must prepare apps for deployment to AWS, which includes creating an app bundle and making the app runnable as an AWS Lambda function.
 
-App bundle
-----------
+App Bundle
+^^^^^^^^^^
 
 An app bundle is a convenient way to deliver an app to the Mattermost ecosystem. It provides a way to organize code and resources needed for an app to run. An app bundle is created by the developer of the app. Mattermost uses app bundles to deploy and install/uninstall apps.
 

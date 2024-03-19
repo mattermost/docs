@@ -4,14 +4,17 @@ Set message priority (beta)
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-.. |priority-icon| image:: ../images/Priority-Message-Icon.svg
+.. |priority-icon| image:: ../images/alert-circle-outline_F05D6.svg
   :alt: Select the Priority icon to mark new messages as important or urgent before sending them.
+  :class: theme-icon
 
 .. |acknowledge-button| image:: ../images/Ack-Button-Default.svg
   :alt: Select the Acknowledge button to indicate that you've read it and taken necessary action.
+  :class: theme-icon
 
 .. |acknowledged-icon| image:: ../images/Ack-Button-Active.svg
   :alt: Hover over the Acknowledged icon to see who has read and actioned the message. Select the icon to remove your acknowledgement within five minutes.
+  :class: theme-icon
 
 From Mattermost v7.7 and version v2.4 of the Mattermost mobile app, you can add a message priority label to root messages to make important messages requiring timely action or response more visible and less likely to be overlooked.
 
@@ -46,12 +49,12 @@ To enable persistent notifications for a message:
 .. note:: 
 
   - @channel, @all and @here mentions don't send persistent notifications.
-  - System admins can customize the maximum number of @mentions permitted, how frequently and how many persistent notifications are sent, as well as disable persistent notifications for all users, if preferred. By default, users are notified every 5 minutes for a total of 30 minutes. See the `configuration </configure/site-configuration-settings.html#persistent-notifications>`__ documentation for details.
+  - System admins can customize the maximum number of @mentions permitted, how frequently and how many persistent notifications are sent, as well as disable persistent notifications for all users, if preferred. By default, users are notified every 5 minutes for a total of 30 minutes. See the :ref:`configuration <configure/site-configuration-settings:persistent notifications>` documentation for details.
 
 Receive persistent notifications
 --------------------------------
 
-You must have desktop and/or mobile push notifications enabled to receive persistent notifications. How you're notified depends on your `notifications preferences </preferences/manage-your-notifications.html>`__ for desktop and mobile push notifications. You won't be notified when your availability is set to **Do Not Disturb**, or if you're `Out of Office </preferences/set-your-status-availability.html#set-your-availability>`__. Learn more about customizing how you receive notifications by visiting the `get notified </preferences/manage-your-notifications.html#get-notified>`__ documentation.
+You must have desktop and/or mobile push notifications enabled to receive persistent notifications. How you're notified depends on your :doc:`notifications preferences </preferences/manage-your-notifications>` for desktop and mobile push notifications. You won't be notified when your availability is set to **Do Not Disturb**, or if you're :ref:`Out of Office <preferences/set-your-status-availability:set your availability>`. Learn more about customizing how you receive notifications by visiting the :ref:`get notified <preferences/manage-your-notifications:get notified>` documentation.
 
 Urgent messages show a red mention badge which remains visibible until you view the message. Selecting the **Acknowledge** icon (when present) won't impact the urgent red mention badge.
 

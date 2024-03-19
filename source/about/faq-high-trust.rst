@@ -1,10 +1,6 @@
 High trust questions
 ====================
 
-.. contents:: On this page
-    :backlinks: top
-    :depth: 2
-
 What are the trust benefits of Mattermost compared to third-party SaaS systems that let customers manage their own encryption keys?
 -----------------------------------------------------------------------------------------------------------------------------------
 

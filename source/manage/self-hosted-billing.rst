@@ -7,4 +7,4 @@ When you upgrade to a Professional or Enterprise plan, you can enter the number 
 
 You can add new users to your deployment at any time. Every quarter, during the true-up review (section 3.5 License True-up Review of Software License Agreement, also referenced in docs), we check the license license seat count relative to number of activated users. If there's a difference, we'll provide you with a new invoice which is payable immediately.
 
-Please see the `self-hosted subscriptions documentation <https://docs.mattermost.com/about/self-hosted-subscriptions.html#buy-a-subscription>`_ for more detailed information.
+Please see the :ref:`self-hosted subscriptions documentation <about/self-hosted-subscriptions:buy a subscription>` for more detailed information.

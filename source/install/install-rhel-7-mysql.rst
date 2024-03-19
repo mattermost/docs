@@ -1,5 +1,4 @@
-:nosearch:
-..  _install-rhel-7-mysql:
+:orphan: :nosearch:
 
 Install MySQL database server
 ------------------------------
