@@ -55,9 +55,6 @@ $(document).ready(function () {
                 $(this).find('input[type=text]').focus();
             }
         });
-        // document.getElementById('hamburger').classList.remove('is-active');
-        // document.body.classList.remove('nav-open');
-        // document.getElementById('navigation').classList.remove('active');
     });
 
     if ($('.wy-menu-vertical li.current>a').length) {
@@ -71,16 +68,14 @@ $(document).ready(function () {
     // Fallback for when a notification CTA expires - ie. webinar happens
     const dateInFuture = (value) =>
         new Date().getTime() <= new Date(value).getTime();
-    const expiryDate = '2023-11-01T00:00:00-0500';
-    // 2023-11-01 @ 12am EST
+    const expiryDate = '2024-03-28T00:00:00-0500';
+    // 2024-03-28 @ 12am EST
     const fallback_url =
         'https://mattermost.com/solutions/mattermost-for-microsoft-teams/';
     const fallback_text = 'Learn more about Mattermost for Microsoft Teams »';
 
     if (!dateInFuture(expiryDate)) {
         if ($('.notification-bar').length) {
-            // $('.notification-bar').remove();
-            // $('body').removeClass('with-notification');
             $('.notification-bar__link').attr('href', fallback_url);
             $('.notification-bar__link').text(fallback_text);
         }
@@ -90,7 +85,7 @@ $(document).ready(function () {
     // So it will show up for new announcements
     // Keep "mm_notification_banner__" at the beginning of the key
     // Add system to clean out storage items that are no longer needed
-    let notification_banner_key = 'mm_notification_banner__inc-23';
+    let notification_banner_key = 'mm_notification_banner__webinar-mar-2024-cybersec';
     if (!dateInFuture(expiryDate)) {
         notification_banner_key = 'mm_notification_banner__fallback-mst';
     }
