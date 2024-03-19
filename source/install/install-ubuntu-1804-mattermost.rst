@@ -1,4 +1,5 @@
-:nosearch:
+:orphan: :nosearch:
+
 Install Mattermost Server
 --------------------------
 

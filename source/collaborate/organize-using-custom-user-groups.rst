@@ -6,27 +6,29 @@ Manage custom groups (beta)
 
 .. |more-icon-vertical| image:: ../images/dots-vertical_F01D9.svg
   :alt: Use the More icon in the top left corner to access Mattermost desktop apps customization settings.
+  :class: theme-icon
 
 .. |plus| image:: ../images/plus_F0415.svg
   :alt: The Plus icon provides access to channel and direct message functionality.
+  :class: theme-icon
 
 .. raw:: html
 
  <p class="mm-label-note">Not available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
-Custom groups (beta) reduce noise and improve focus by notifying the right people in a channel at the right time, while maintaining transparency for all members in that channel. Custom user groups let you notify up to 256 users at a time rather than notifying users individually. 
+Custom groups (beta) reduce noise and improve focus by notifying the right people in a channel at the right time, while maintaining transparency for all members in that channel. Custom user groups let you notify up to 256 users at a time rather than notifying users individually.
 
 For example, perhaps you want to @mention a cross-functional team about a bug fixes needed for an upcoming feature release, without notifying everyone else in the channel. Using a custom group notifies the cross-functional team immediately, while keeping important stakeholders in the loop on the status of the feature release.
 
-Or perhaps you want to add a group of users to a team and a channel. When you @mention a custom group in a channel, Mattermost prompts you to add anyone from that custom group who isn't already a channel and team member. See the `invite people to your workspace </collaborate/invite-people.html>`__ documentation for details.
+Or perhaps you want to add a group of users to a team and a channel. When you @mention a custom group in a channel, Mattermost prompts you to add anyone from that custom group who isn't already a channel and team member. See the :doc:`invite people to your workspace </collaborate/invite-people>` documentation for details.
 
-Once a custom user group has been created, you can mention that group the same way you @mention another Mattermost member. See the `mention people in messages </collaborate/mention-people.html>`__ documentation for details.
+Once a custom user group has been created, you can mention that group the same way you @mention another Mattermost member. See the :doc:`mention people in messages </collaborate/mention-people>` documentation for details.
 
 .. note::
-  
-  - System admins need to enable this feature. See our `Mattermost Configuration Settings </configure/configuration-settings.html#custom-user-groups>`__ documentation for details. 
-  - From Mattermost v7.2, system admins can limit who can manage custom user groups through the Custom Group Manager system admin role. See the `system roles </onboard/system-admin-roles.html>`__ documentation for details.
-  - The ability to create custom user groups on mobile will be available in a future release. @mentions for custom user groups on mobile work the same as `LDAP-synced groups </collaborate/mention-people.html#groupname>`__.
+
+  - System admins need to enable this feature. See our :ref:`Mattermost Configuration Settings <configure/site-configuration-settings:enable custom user groups (beta)>` documentation for details.
+  - From Mattermost v7.2, system admins can limit who can manage custom user groups through the Custom Group Manager system admin role. See the :doc:`system roles </onboard/system-admin-roles>` documentation for details.
+  - The ability to create custom user groups on mobile will be available in a future release. @mentions for custom user groups on mobile work the same as :ref:`LDAP-synced groups <collaborate/mention-people:@groupname>`.
 
 Create a custom group
 ---------------------
@@ -45,7 +47,7 @@ From Mattermost v7.8, using Mattermost in a web browser or the desktop app, sele
 Manage custom user groups
 -------------------------
 
-You can review and filter the list of custom groups, add people to an existing group, edit the group name or mention, leave the group, or archive the group. 
+You can review and filter the list of custom groups, add people to an existing group, edit the group name or mention, leave the group, or archive the group.
 
 To manage a custom user group in a web browser or the desktop app, select **User Groups** from the Products menu, then select the group you want to modify.
 
@@ -58,13 +60,13 @@ Review available groups
 Review a list of all available custom user groups, search for specific groups by name.
 
 .. tip::
-  
+
   You can filter the list of groups to display only groups you're a member of, or only archived groups.
 
 Change name or mention
 ~~~~~~~~~~~~~~~~~~~~~~
 
-1. From the **More Actions** |more-icon-vertical| icon to the right of any custom group, select **View Group**. 
+1. From the **More Actions** |more-icon-vertical| icon to the right of any custom group, select **View Group**.
 
   .. image:: ../images/manage-user-groups.png
     :alt: Access tools to manage your custom user groups.

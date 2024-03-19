@@ -52,8 +52,8 @@ Manage conversations
 Set your availability and status
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- Set `your availability </preferences/set-your-status-availability.html#set-your-availability>`__ using ``/away``, ``/offline``, ``/online``, or ``/dnd``
-- Set `a custom status </preferences/set-your-status-availability.html#set-a-custom-status>`__ using ``/status {emoji_name} {descriptive status_message}``, such as ``/status sick Feeling unwell and taking time off to recover``. Clear your current status using ``/status clear``.
+- Set :ref:`your availability <preferences/set-your-status-availability:set your availability>` using ``/away``, ``/offline``, ``/online``, or ``/dnd``
+- Set :ref:`a custom status <preferences/set-your-status-availability:set a custom status>` using ``/status {emoji_name} {descriptive status_message}``, such as ``/status sick Feeling unwell and taking time off to recover``. Clear your current status using ``/status clear``.
 
 Manage channels
 ~~~~~~~~~~~~~~~

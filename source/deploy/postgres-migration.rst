@@ -12,11 +12,6 @@ To streamline the migration process and alleviate any potential challenges, we h
 
    These guidelines are in development and we are working to streamline the migration process. We plan to improve this guide by updating it as new information becomes available. Please use this guide as a starting point and always backup your database before starting a migration.
 
-.. contents:: On this page
-  :backlinks: top
-  :local:
-  :depth: 1
-
 Required tools
 --------------
 
@@ -390,7 +385,7 @@ Once we are ready to migrate, we can start migrating the **schema** and the **da
 Focalboard
 ~~~~~~~~~~
 
-As of ``v9.0`` Boards will transition to being fully community supported as the Focalboard plugin. Hence this guide covers only the version ``v7.10.x`` of the schema. `Official announcement <https://docs.mattermost.com/deploy/deprecated-features.html#mattermost-server-v9-0-0>`__.
+As of ``v9.0`` Boards will transition to being fully community supported as the Focalboard plugin. Hence this guide covers only the version ``v7.10.x`` of the schema. :ref:`Official announcement <deploy/deprecated-features:mattermost server v9.0.0>`.
 
 Once we are ready to migrate, we can start migrating the **schema** and the **data**  by running ``pgLoader`` \*\*
 

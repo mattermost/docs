@@ -13,20 +13,7 @@ Mattermost Enterprise customers can also `record calls <#record-a-call>`__ and `
 
 .. note::
 
-  Mattermost Cloud users can start calling right out of the box. For Mattermost self-hosted deployments, System admins need to enable and configure the plugin `using the System Console </configure/plugins-configuration-settings.html#calls>`__.
-
-On this page:
-
-- `Join a call <#join-a-call>`__
-- `Start a call <#start-a-call>`__
-- `Share your screen <#share-screen>`__
-- `React using emojis <#emojis>`__
-- `Chat in a call <#chat-in-a-call>`__
-- `Record a call <#record-a-call>`__
-- `Transcribe a recorded call <#transcribe-recorded-calls>`__
-- `Frequently asked questions <#frequently-asked-questions>`__
-- `Troubleshooting <#troubleshooting>`__
-- `Debugging <#debugging>`__
+  Mattermost Cloud users can start calling right out of the box. For Mattermost self-hosted deployments, System admins need to enable and configure the plugin :ref:`using the System Console <configure/plugins-configuration-settings:calls>`.
 
 Join a call
 -----------
@@ -46,31 +33,27 @@ From Mattermost v9.4:
 Start a call
 ------------
 
-When you start a call, you automatically become the host. If the host of a multi-person call leaves that call, the next person who initially joined the call automatically becomes the host.
+.. tab:: Web/Desktop
 
-.. tabs::
-
-  .. tab:: Web/Desktop
-
-    To start a call, select **Start call** in the channel header. When you start a call in a channel, you're muted by default. In a direct or group message you're unmuted by default.
+  To start a call, select **Start call** in the channel header. When you start a call in a channel, you're muted by default. In a direct or group message you're unmuted by default.
     
-    .. tip::
+  .. tip::
       
-      - You can move the call widget to a different area of your screen.
-      - Alternatively, you can start a call using the ``/call start`` slash command.
+    - You can move the call widget to a different area of your screen.
+    - Alternatively, you can start a call using the ``/call start`` slash command.
 
-  .. tab:: Mobile
+.. tab:: Mobile
     
-    To start a call, go the channel info menu. Then tap **Start Call**.
+  To start a call, go the channel info menu. Then tap **Start Call**.
      
-    After starting the call, audio will come through the device's speaker or a Bluetooth device, if connected. On Android, audio output will automatically switch to a Bluetooth device if one is connected during a call. You can tap the **Speaker** icon to manually select the output device.
+  After starting the call, audio will come through the device's speaker or a Bluetooth device, if connected. On Android, audio output will automatically switch to a Bluetooth device if one is connected during a call. You can tap the **Speaker** icon to manually select the output device.
 
-    On iOS, audio will automatically come through a connected device. You can override this behavior by tapping the **Speaker** button. Audio will then come through the speaker. However, you cannot manually select an output device on iOS at this time.
+  On iOS, audio will automatically come through a connected device. You can override this behavior by tapping the **Speaker** button. Audio will then come through the speaker. However, you cannot manually select an output device on iOS at this time.
 
 Share your screen
 -----------------
 
-During a call, you can share your screen with other call participants, unless your system admin has `disabled your ability to do so </configure/plugins-configuration-settings.html#allow-screen-sharing>`__. 
+During a call, you can share your screen with other call participants, unless your system admin has :ref:`disabled your ability to do so <configure/plugins-configuration-settings:allow screen sharing>`. 
 
 .. note::
   
@@ -87,57 +70,51 @@ React using emojis
 
 You can use emojis to react during a call.
 
-.. tabs::
+.. tab:: Web/Desktop
 
-  .. tab:: Web/Desktop
+  Expand the call window using the arrows in the top-right of the call widget. From there, select the emoji icon to access frequently-used emojis or select additional emojis from the emoji picker.
 
-    Expand the call window using the arrows in the top-right of the call widget. From there, select the emoji icon to access frequently-used emojis or select additional emojis from the emoji picker.
-
-  .. tab:: Mobile
+.. tab:: Mobile
   
-    Expand the call window using the arrows in the top-right of the active call banner. From there, select **React**.
-      
+  Expand the call window using the arrows in the top-right of the active call banner. From there, select **React**.
+
 Chat in a call
 --------------
 
 A chat thread is created automatically for every new call.
 
-.. tabs::
+.. tab:: Web/Desktop
 
-  .. tab:: Web/Desktop
+  To do this, expand the call window using the arrows in the top-right of the call widget. From there, select the emoji icon to access frequently-used emojis or select additional emojis from the emoji picker.
 
-    To do this, expand the call window using the arrows in the top-right of the call widget. From there, select the emoji icon to access frequently-used emojis or select additional emojis from the emoji picker.
-
-  .. tab:: Mobile
+.. tab:: Mobile
   
-    To do this, expand the call window using the arrows in the top-right of the active call banner. Then select **More > Call Thread**.
-    
+  To do this, expand the call window using the arrows in the top-right of the active call banner. Then select **More > Call Thread**.
+
 Record a call
 -------------
 
 .. include:: ../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
-From Mattermost v7.7, if you're the host of a call, you can record that call, unless your system admin has `disabled the host's ability to do so <https://docs.mattermost.com/configure/plugins-configuration-settings.html#enable-call-recordings-beta>`__.
+From Mattermost v7.7, if you're the host of a meeting, you can record the call, unless your system admin has :ref:`disabled the host's ability to do so <configure/plugins-configuration-settings:enable call recordings (beta)>`.
 
-Call recordings include audio, any screen sharing during the call, and `text captions <#add-captions-to-recorded-calls>`__, when enabled. The default setting for a recording is 60 minutes, but your system admin may `change the recording duration </configure/plugins-configuration-settings.html#maximum-call-recording-duration>`__ as needed. You'll receive a reminder 10 minutes before the recording limit is reached. If your call is going to continue beyond the recording limit, allow the first recording to complete, then start a new recording immediately after.
+Call recordings include audio, any screen sharing during the call, and `text captions <#add-captions-to-recorded-calls>`__, when enabled. The default setting for a recording is 60 minutes, but your system admin may :ref:`change the recording duration <configure/plugins-configuration-settings:maximum call recording duration>` as needed. You'll receive a reminder 10 minutes before the recording limit is reached. If your call is going to continue beyond the recording limit, allow the first recording to complete, then start a new recording immediately after.
 
 When you stop recording, the recording file is posted in the call thread as an MP4 file attachment. It's available to all users in the channel both during the call, and after the call has ended.
 
 To record a call:
 
-.. tabs::
+.. tab:: Web/Desktop
 
-  .. tab:: Web/Desktop
+  1. Select **Start call** in the header of the channel, group message, or direct message.
+  2. Select the pop-out icon.
+  3. In the call widget, select the **Record** button.
+  4. To stop recording, select the **Record** button again.
 
-    1. Select **Start call** in the header of the channel, group message, or direct message.
-    2. Select the pop-out icon.
-    3. In the call widget, select the **Record** button.
-    4. To stop recording, select the **Record** button again.
-
-  .. tab:: Mobile
+.. tab:: Mobile
   
-    To start recording, use the ``/call recording start`` slash command. When you're finished recording, use the ``/call recording stop`` slash command. Alternatively, expand the call window using the arrows in the top-right of the active call banner. Then select the **Record** button. To finish, select the **Record** button again.
+  To start recording, use the ``/call recording start`` slash command. When you're finished recording, use the ``/call recording stop`` slash command. Alternatively, expand the call window using the arrows in the top-right of the active call banner. Then select the **Record** button. To finish, select the **Record** button again.
 
 Transcribe recorded calls
 --------------------------
@@ -145,11 +122,11 @@ Transcribe recorded calls
 .. include:: ../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
-From Mattermost v9.4, and Mattermost mobile app v.2.13, call recordings can include text captions, and a transcription text file can be generated, unless your system admin has `disabled the ability to transcribe call recordings <configure/plugins-configuration-settings.html#enable-call-transcriptions-experimental>`__.
+From Mattermost v9.4, and Mattermost mobile app v.2.13, call recordings can include text captions, and a transcription text file can be generated, unless your system admin has :ref:`disabled the ability to transcribe call recordings <configure/plugins-configuration-settings:enable call transcriptions (experimental)>`.
 
 .. note::
 
-  `Call recording must be enabled <configure/plugins-configuration-settings.html#enable-call-recordings-beta>`__ to enable recorded call transcriptions.
+  :ref:`Call recording must be enabled <configure/plugins-configuration-settings:enable call recordings (beta)>` to enable recorded call transcriptions.
 
 When call recording stops, the transcription file is posted in the call thread as a TXT file attachment. It's available to all users in the channel both during the call, and after the call has ended. Additionally, users viewing the call recording can show or hide text captions using the Closed Captioning option in the video player.
 
@@ -159,7 +136,7 @@ Frequently asked questions
 Can I set a ring tone for incoming calls?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Yes! From Mattermost v8.0 and Calls v0.17.0, desktop app and web users can go to **Settings > Notifications > Desktop Notifications** to enable Mattermost to alert you to incoming calls through direct or group messages with a specific ring tone and a desktop notification, unless the system admin has `disabled your ability to do so </plugins-configuration-settings.html#enable-call-ringing-beta>`__.
+Yes! From Mattermost v8.0 and Calls v0.17.0, desktop app and web users can go to **Settings > Notifications > Desktop Notifications** to enable Mattermost to alert you to incoming calls through direct or group messages with a specific ring tone and a desktop notification, unless the system admin has :ref:`disabled your ability to do so <configure/plugins-configuration-settings:enable call ringing (beta)>`.
 
 Is video supported?
 ~~~~~~~~~~~~~~~~~~~

@@ -5,7 +5,7 @@ This section of the guide is for system admins of self-hosted Mattermost servers
 
 .. tip::
     
-    If you're the admin for a Mattermost Cloud workspace, see the `Cloud workspace management </guides/cloud-workspace-management.html>`__ documentation.
+    If you're the admin for a Mattermost Cloud workspace, see the :doc:`Cloud workspace management </guides/cloud-workspace-management>` documentation.
 
 .. toctree::
     :maxdepth: 1

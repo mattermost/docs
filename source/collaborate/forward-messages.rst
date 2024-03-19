@@ -6,6 +6,7 @@ Forward messages
 
 .. |more-icon| image:: ../images/dots-horizontal_F01D8.svg
   :alt: When you hover over messages, you can access more message options from the More icon.
+  :class: theme-icon
 
 From Mattermost v7.2, using a web browser or the desktop app, you can forward messages in public channels to other public channels. From Mattermost v7.5, you can also forward messages from bots and webhooks. 
 

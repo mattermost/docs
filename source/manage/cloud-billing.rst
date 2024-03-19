@@ -20,4 +20,4 @@ When you upgrade, you'll need to indicate the number of user seats you have - th
 
 As this is an annual subscription, it renews automatically. You'll be reminded of the renewal ahead of time. You can choose to opt-out of automatic renewal. In this case, you'll be notified ahead of time, so that your subscription doesn't lapse.
 
-Please see the `Cloud subscriptions </about/cloud-subscriptions.html>`__ documentation for more detailed information on the Cloud billing process.
+Please see the :doc:`Cloud subscriptions </about/cloud-subscriptions>` documentation for more detailed information on the Cloud billing process.

@@ -1,7 +1,7 @@
 :orphan:
 :nosearch:
 
-Elasticsearch provides enterprise-scale deployments with optimized search performance and prevents performance degradation and timeouts. Learn more about `Elasticsearch </scale/elasticsearch.html>`__ in our product documentation.
+Elasticsearch provides enterprise-scale deployments with optimized search performance and prevents performance degradation and timeouts. Learn more about :doc:`Elasticsearch </scale/elasticsearch>` in our product documentation.
 
 You can configure the Elasticsearch environment in which Mattermost is deployed in **System Console > Environment > Elasticsearch**. You can also edit the ``config.json`` file as described in the following tables. Changes to configuration settings in this section require a server restart before taking effect.
 
@@ -477,8 +477,8 @@ Aggregate search indexes
 |                                                               |                                                                                        |
 | Numerical input. Default is **365** days.                     |                                                                                        |
 +---------------------------------------------------------------+----------------------------------------------------------------------------------------+
-| **Note**: If you’re using `data retention </comply/data-retention-policy.html>`__ and                                                                  |
-| `Elasticsearch </scale/elasticsearch.html>`__, configure this with a value greater than your data retention policy.                                    |
+| **Note**: If you’re using :doc:`data retention </comply/data-retention-policy>` and                                                                    |
+| :doc:`Elasticsearch </scale/elasticsearch>`, configure this with a value greater than your data retention policy.                                      |
 +---------------------------------------------------------------+----------------------------------------------------------------------------------------+
 
 .. config:setting:: elastic-postaggregatorstarttime
@@ -590,7 +590,7 @@ Live indexing batch size
 2. Decide the acceptable index window for your environment, and divide your average posts per minute by that. We suggest 10-20 seconds. Assuming you have ``600`` posts per minute on average, and you want to index every 20 seconds (``60 seconds / 20 seconds = 3```) you would calculate ``600 / 3`` to come to the number ``200``. After 200 posts, Mattermost will index the posts into Elasticsearch. So, on average, there would be a 20-second delay in searchability.
 
 3. Edit the ``config.json`` or run mmctl to modify the ``LiveIndexingBatchSize`` setting
-  
+
     **In the ``config.json``**
 
     .. code-block:: JSON
@@ -600,7 +600,6 @@ Live indexing batch size
           "LiveIndexingBatchSize": 200
         }
       }
-    
 
     **Via mmctl**
 

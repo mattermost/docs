@@ -8,6 +8,7 @@ Customize your Mattermost theme
 
 .. |gear-icon| image:: ../images/settings-outline_F08BB.svg
   :alt: Use the Settings icon to customize your Mattermost user experience.
+  :class: theme-icon
 
 The colors of the Mattermost user interface are customizable. You can choose from `five standard themes <#standard-themes>`__ designed by the Mattermost team, design your own theme based on a standard theme, or `import your theme colors from a Slack instance <#import-theme-from-slack>`__. Your theme changes apply to all teams you're a member of, and are visible across all Mattermost clients.
 
@@ -17,22 +18,20 @@ The colors of the Mattermost user interface are customizable. You can choose fro
 
 To customize your Mattermost theme:
 
-.. tabs::
+.. tab:: Web/desktop
 
-  .. tab:: Web/desktop
+	Select the **Settings** |gear-icon| icon, then go to **Display > Theme**. Select **Theme Colors** to choose from five standard themes designed by the Mattermost team. 
 
-    Select the **Settings** |gear-icon| icon, then go to **Display > Theme**. Select **Theme Colors** to choose from five standard themes designed by the Mattermost team. 
+	Using Mattermost in a browser or the desktop app, you can customize a standard theme further to truly make it your own. After selecting a standard theme, select **Custom Theme** and modify your color choices based on your preferences. See the `custom themes <#custom-themes>`__ documentation to learn what's configurable, and see the `custom theme examples <#custom-theme-examples>`__ documentation for inspiration.
 
-    Using Mattermost in a browser or the desktop app, you can customize a standard theme further to truly make it your own. After selecting a standard theme, select **Custom Theme** and modify your color choices based on your preferences. See the `custom themes <#custom-themes>`__ documentation to learn what's configurable, and see the `custom theme examples <#custom-theme-examples>`__ documentation for inspiration.
+.. tab:: Mobile
 
-  .. tab:: Mobile
-
-    Tap your profile picture, and select **Settings**, then go to **Display > Theme**.
+	Tap your profile picture, and select **Settings**, then go to **Display > Theme**.
 
 Custom themes
 -------------
 
-Select **Custom Theme**, then expand the `Sidebar Styles </preferences/customize-your-theme.html#sidebar-styles>`__, `Center Channel Styles </preferences/customize-your-theme.html#center-channel-styles>`__, and `Link and Button Styles </preferences/customize-your-theme.html#link-and-button-styles>`__ options to customize individual interface colors, such as backgrounds, links, text, and borders. 
+Select **Custom Theme**, then expand the :ref:`Sidebar Styles <preferences/customize-your-theme:sidebar styles>`, :ref:`Center Channel Styles <preferences/customize-your-theme:center channel styles>`, and :ref:`Link and Button Styles <preferences/customize-your-theme:link and button styles>` options to customize individual interface colors, such as backgrounds, links, text, and borders. 
 
 Your custom theme changes are applied in Mattermost as you make them. Select **Save** to confirm your theme changes. Discard your changes by exiting the **Display Settings** window and selecting **Yes, Discard**.
 
