@@ -1,5 +1,6 @@
 :orphan:
 :nosearch:
+
 .. This page is intentionally not accessible via the LHS navigation pane because it's being phased out in favor of a dedicated Tarball deploy page linked to the /download page of the website.
 
 .. include:: ../_static/badges/allplans-selfhosted.rst
@@ -19,15 +20,14 @@ These instructions outline how to install Mattermost Server on a 64-bit Linux ho
 
 **Deploy Generic Linux**
 
-1. Install and configure a PostgreSQL or MySQL database. Refer to one of the guides below to deploy the database based on your operating system:
+1. Install and configure a PostgreSQL or MySQL database. See the following guides for details:
 
-   - `Ubuntu </install/installing-ubuntu-2004-LTS.html#install-a-database>`__
-   - `Debian </install/install-debian.html#install-a-database>`__
-   - `RHEL </install/install-rhel-8.html#install-a-database>`__
+ - :doc:`Prepare your Mattermost PostgreSQL database </install/prepare-mattermost-database>`
+ - :doc:`Prepare your Mattermost MySQL database </install/prepare-mattermost-mysql-database>`
 
 2. Log in to the server that will host Mattermost Server and open a terminal window.
 
-3. Download `the latest version of the Mattermost Server <https://docs.mattermost.com/upgrade/version-archive.html>`__. In the following command, replace ``X.X.X`` with the version that you want to download:
+3. Download :doc:`the latest version of the Mattermost Server </upgrade/version-archive>`. In the following command, replace ``X.X.X`` with the version that you want to download:
   
    .. code:: bash
 
@@ -183,4 +183,4 @@ These instructions outline how to install Mattermost Server on a 64-bit Linux ho
             
       sudo systemctl enable mattermost.service
 
-Once your Mattermost server is up and running, create your first Mattermost user, `invite more users </collaborate/manage-channel-members.html>`__, and explore the Mattermost platform. 
+Once your Mattermost server is up and running, create your first Mattermost user, :doc:`invite more users </collaborate/manage-channel-members>`, and explore the Mattermost platform. 

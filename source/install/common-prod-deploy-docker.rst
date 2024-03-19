@@ -8,7 +8,7 @@ You'll need `Docker Engine <https://docs.docker.com/engine/install/>`__ and `Doc
 .. important::
 
    - The production configuration results in two separate containers: one for the database and one for the application. An optional third container results when using NGINX for reverse proxy.
-   - Encountering issues with your Docker deployment? See the `Docker deployment troubleshooting </install/troubleshooting.html#docker-deployments>`__ documentation for details.
+   - Encountering issues with your Docker deployment? See the :ref:`Docker deployment troubleshooting <install/troubleshooting:docker deployments>` documentation for details.
       
 1. In a terminal window, clone the repository and enter the directory.
 
@@ -108,4 +108,4 @@ You'll need `Docker Engine <https://docs.docker.com/engine/install/>`__ and `Doc
   
       sudo docker compose -f docker-compose.yml -f docker-compose.nginx.yml down
       
-7. Create your first Mattermost System Admin user, `invite more users </collaborate/manage-channel-members.html>`__, and explore the Mattermost platform. 
+7. Create your first Mattermost System Admin user, :doc:`invite more users </collaborate/manage-channel-members>`, and explore the Mattermost platform. 

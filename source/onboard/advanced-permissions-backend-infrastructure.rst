@@ -6,10 +6,6 @@ Advanced permissions: backend infrastructure
 
 This document outlines the backend server infrastructure for permissions in Mattermost and is recommended only for technical Admins or developers looking to make modifications to their installation.
 
-.. contents:: On this page
-  :backlinks: top
-  :local:
-
 Entity definitions
 ------------------
 
@@ -156,7 +152,7 @@ Permissions in Mattermost are a property of the server code base and are not cre
 +----------------------------------------------+---------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | create_post_ephermal                         | channel | Create an ephemeral message within a channel.                                                                                                                                                         |
 +----------------------------------------------+---------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| edit_post                                    | channel | Authors edit their own posts. Edit post time limit is controlled by the ``"PostEditTimeLimit"`` `config </configure/configuration-settings.html#post-edit-time-limit>`__.                             |
+| edit_post                                    | channel | Authors edit their own posts. Edit post time limit is controlled by the ``"PostEditTimeLimit"`` :ref:`config <configure/deprecated-configuration-settings:post edit time limit>`.                     |
 +----------------------------------------------+---------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | edit_others_posts                            | channel | Edit other users' posts.                                                                                                                                                                              |
 +----------------------------------------------+---------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+

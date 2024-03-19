@@ -19,11 +19,11 @@ Migrating from Slack to Mattermost involves the following steps:
 1. Prepare your Mattermost server
 ---------------------------------
 
-During the import process, we advise to create a new team for importing the Slack workspace data. If merging multiple Slack workspaces into a single team is the desired end-result, we recommend completing the import to separate teams, validating the results, then using `mmctl <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-channel-move>`__ to move channels between teams.
+During the import process, we advise to create a new team for importing the Slack workspace data. If merging multiple Slack workspaces into a single team is the desired end-result, we recommend completing the import to separate teams, validating the results, then using :ref:`mmctl <manage/mmctl-command-line-tool:mmctl channel move>` to move channels between teams.
 
 Also, system administrator roles will be overwritten if the usernames match and the user isn't an admin on the Slack workspace.
 
-Make sure you are running on a supported version of `Mattermost <https://docs.mattermost.com/upgrade/release-lifecycle.html/>`__ to benefit from the most up-to-date functionality and fixes.
+Make sure you are running on a supported version of :doc:`Mattermost </upgrade/release-lifecycle/>` to benefit from the most up-to-date functionality and fixes.
 
 2. Generate a Slack import
 --------------------------
@@ -119,7 +119,7 @@ You can upload the export through Mattermost's API from the server or from anoth
 
 The migration is idempotent, meaning that you can run multiple imports that contain the same posts, and there won't be duplicated created posts in Mattermost. Each post is imported with the correct user/author and ``created_at`` value from your Slack instance. Threads are kept intact with the import.
 
-To upload export via ``mmctl``, ensure you have the Mattermost command line tool ``mmctl`` installed. This allows you to perform different tasks that communicate to Mattermost's API. You'll also want to `configure authentication </manage/mmctl-command-line-tool.html#mmctl-auth>`__ for the tool.
+Ensure you have the Mattermost command line tool ``mmctl`` installed. This allows you to perform different tasks that communicate to Mattermost's API. You'll also want to :ref:`configure authentication <manage/mmctl-command-line-tool:mmctl auth>` for the tool.
 
 To prepare our files to be uploaded to the server, we need to put both the ``.jsonl`` file and ``data`` folder together into a zip file.
 
@@ -172,4 +172,4 @@ Use the imported team
 * During the import process, the emails and usernames from Slack are used to create new Mattermost accounts. If emails are not present in the Slack export archive, then placeholder values will be generated and the system admin will need to update these manually. We recommend administrators search the final import ``jsonl`` file for ``user`` lines for with ``@example.com`` in the email property to address and resolve the missing information prior to import.
 * Slack users can activate their new Mattermost accounts by using Mattermost's **Password Reset** screen with their email addresses from Slack to set new passwords for their Mattermost accounts.
 * Once logged in, Mattermost users will have access to previous Slack messages in the public channels imported from Slack.
-* Instructions on how to migrate user authenticatation to LDAP or SAML can be found `here <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-user-migrate-auth>`__.
+* Instructions on how to migrate user authenticatation to LDAP or SAML can be found :ref:`here <manage/mmctl-command-line-tool:mmctl user migrate-auth>`.

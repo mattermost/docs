@@ -17,7 +17,7 @@ This feature enables compliance exports to be produced from the System Console, 
 
 The exports include information on channel member history at the time the message was posted. Entries for deleted messages and files are included in CSV and Actiance reports. The deleted content is included in the compliance export. Global Relay reports include file deletion entries but message deletion entries are excluded.
 
-By default, Mattermost stores all message history providing an unlimited search history to admins and end users. In Mattermost Enterprise, you may set a `custom data retention policy </comply/data-retention-policy.html>`__ for how long messages and file uploads are kept in Mattermost channels and direct messages.
+By default, Mattermost stores all message history providing an unlimited search history to admins and end users. In Mattermost Enterprise, you may set a :doc:`custom data retention policy </comply/data-retention-policy>` for how long messages and file uploads are kept in Mattermost channels and direct messages.
 
 Enterprise deployments with a requirement to archive history beyond the data retention period can enable this add-on to export compliance reports to third-party systems. Integration with Actiance Vantage, Global Relay, and Proofpoint are currently supported, with integrations with other systems in the roadmap.
 
@@ -33,7 +33,7 @@ Use the following guides to configure exports for CSV, Actiance XML, or Global R
 .. note::
    
    - For self-hosted deployments, compliance exports are written to the ``exports`` subdirectory of the configured filestore in the chosen format. This will either be in the `Local Storage directory </configure/environment-configuration-settings.html#file-storage>` or the Mattermost S3 bucket if S3 storage is configured.
-   - Alternatively, you can specify an alternate filestore target and generate an S3 presigned URL for compliance exports. See the `dedicated export filestore target </configure/experimental-configuration-settings.html#enable-dedicated-export-filestore-target>`__ configuration settings documentation for details.
+   - Alternatively, you can specify an alternate filestore target and generate an S3 presigned URL for compliance exports. See the :ref:`dedicated export filestore target <configure/experimental-configuration-settings:enable dedicated export filestore target>` configuration settings documentation for details.
    - Compliance exports don't contain posts sent before the feature was enabled. For self-hosted deployments, you can export past history via the ``export`` :doc:`command line tool <../manage/command-line-tools>`. 
 
 CSV
@@ -100,7 +100,7 @@ If the compliance export job is run automatically, manually via the System Conso
 
 If the ``--exportFrom`` option is specified with the CLI command, all posts that have been made since the supplied timestamp will be exported.
 
-When run manually via the System Console, ``.csv`` and Actiance XML files are written to the ``exports`` subdirectory of the configured `Local Storage Directory </configure/configuration-settings.html#local-storage-directory>`__.  Files will be written to a folder with names based on an epoch time range. Global Relay EML export format files will be mailed to the configured email address when run manually.
+When run manually via the System Console, ``.csv`` and Actiance XML files are written to the ``exports`` subdirectory of the configured :ref:`Local Storage Directory <configure/environment-configuration-settings:local storage directory>`.  Files will be written to a folder with names based on an epoch time range. Global Relay EML export format files will be mailed to the configured email address when run manually.
 
 Is there a maximum row limit for CSV files?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

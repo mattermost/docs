@@ -6,18 +6,13 @@ User satisfaction surveys
 
 Feedback is used to measure user satisfaction and improve product quality by hearing directly from users. Please refer to our `privacy policy <https://github.com/mattermost/mattermost/blob/master/server/build/PRIVACY_POLICY.md>`_ for more information on the collection and use of information received through our services.
 
-.. contents:: On this page
-  :depth: 2
-  :local:
-  :backlinks: entry
-
 Administration
 --------------
 
 Is the survey enabled by default?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The user satisfaction survey is a pre-packaged plugin, and surveys are enabled by default on all servers. However, the plugin will not be activated on any servers that have `Error and Diagnostic Reporting </manage/telemetry.html>`_ disabled, meaning no surveys or data collection occurs.
+The user satisfaction survey is a pre-packaged plugin, and surveys are enabled by default on all servers. However, the plugin will not be activated on any servers that have :doc:`Error and Diagnostic Reporting </manage/telemetry>` disabled, meaning no surveys or data collection occurs.
 
 How can surveys be disabled?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
