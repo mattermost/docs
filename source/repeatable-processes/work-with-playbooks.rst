@@ -127,6 +127,9 @@ If you want to change the behavior of all future runs associated with the playbo
 Run metrics
 -----------
 
+.. include:: ../_static/badges/ent-only.rst
+  :start-after: :nosearch:
+
 The **Usage** tab in the playbooks dashboard provides run metrics for that playbook. These metrics are available to all viewers. It's not possible to edit or add to these metrics.
 
 Webhooks

@@ -25,6 +25,9 @@ Use the run timeline to help write an accurate retrospective. Events such as own
 Metrics
 -------
 
+.. include:: ../_static/badges/ent-only.rst
+  :start-after: :nosearch:
+
 Use metrics to identify key areas where you want to extract valuable insights by measuring performance and improvement. Metrics are enabled when you enable retrospectives. Calibrate the type of metric you want to measure, and once a run is finished you can view the output in the retrospective. You can have multiple metrics configured per playbook and you can edit them at any time. Metrics can be configured based on numeric, time, or value input.
 
 These metrics can be anything that's of interest to you and your team. For example, for a software release playbook you might want to have a metric tracking how many bugs were detected during a run. The output of the metrics you've added is provided in the retrospective. Over time, you can use metrics across retrospectives to examine anomalies and refine goals.
@@ -55,5 +58,8 @@ The lower half of the page shows a list of finished runs with metrics values. Yo
 
 Channel export
 ~~~~~~~~~~~~~~
+
+.. include:: ../_static/badges/ent-only.rst
+  :start-after: :nosearch:
 
 Exporting the contents of a channel requires the channel export plugin. See the `Channel Export plugin documentation <https://github.com/mattermost/mattermost-plugin-channel-export#readme>`_ for more information.
