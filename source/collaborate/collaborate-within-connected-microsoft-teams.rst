@@ -53,7 +53,7 @@ When Microsoft Teams is preferred, you'll receive mesages from Mattermost in Mic
 Setup complete
 --------------
 
-Setup is complete! You're ready to collaborate across your organization. No matter which platform you use, your message is visible across both Mattermost and Microsoft Teams.
+Setup is complete! You're ready to collaborate across your organization. Interact with colleagues in Microsoft Teams without having to leave Mattermost.
 
 Get started
 -----------
