@@ -19,7 +19,6 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
  - Bumped iOS SDK to v17.2.
 
 ### Bug Fixes
- - Fixed an issue where the search bar stayed on top after clearing the input in the **Search** screen.
  - Fixed an issue where opening a user avatar could cause a crash.
 
 ### Known Issues
