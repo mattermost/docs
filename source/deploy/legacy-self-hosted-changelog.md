@@ -7,11 +7,11 @@ nosearch: true
 [Mattermost](https://mattermost.com) is an open source platform for secure collaboration across the entire software development lifecycle. 
 
 ```{Important}
-From Mattermost v9.2, see the [Mattermost Changelog](https://docs.mattermost.com/deploy/mattermost-changelog) page for details on the latest cloud and self-hosted versions of Mattermost to be [deployed and upgraded on infrastructure you control](https://docs.mattermost.com/guides/deployment.html).
+From Mattermost v9.2, see the [Mattermost Changelog](https://docs.mattermost.com/deploy/mattermost-changelog.html) page for details on the latest cloud and self-hosted versions of Mattermost to be [deployed and upgraded on infrastructure you control](https://docs.mattermost.com/guides/deployment.html).
 
 - See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) documentation for details on upgrading.
 - See the [changelog in progress](https://bit.ly/2nK3cVf) for details about the upcoming release.
-- **Cloud Releases Prior to v9.2**: See the [Mattermost Legacy Cloud Changelog](https://docs.mattermost.com/deploy/legacy-cloud-changelog) for details.
+- **Cloud Releases Prior to v9.2**: See the [Mattermost Legacy Cloud Changelog](https://docs.mattermost.com/deploy/legacy-cloud-changelog.html) for details.
 ```
 
 ----
