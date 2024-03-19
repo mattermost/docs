@@ -66,7 +66,8 @@ If you've downloaded the `mattermost/docs` repository and are editing Mattermost
 The following software is required to build the documentation:
 
 - Git [[download]](https://git-scm.com/downloads)
-- Python 3.9 or later [[download]](https://www.python.org/downloads/)
+- Python 3.9 or later [[download]](https://www.python.org/downloads)
+- Pipenv [[download]](https://pipenv.pypa.io)
 
 ### Build instructions
 

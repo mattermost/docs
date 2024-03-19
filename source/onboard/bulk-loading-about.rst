@@ -1,5 +1,6 @@
-.. _about-bulk-loading-command:
+:orphan:
 :nosearch:
+.. _about-bulk-loading-command:
 
 About the bulk loading command
 ------------------------------

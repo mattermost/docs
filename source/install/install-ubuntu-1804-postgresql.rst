@@ -1,5 +1,4 @@
-:nosearch:
-.. _install-ubuntu-1804-postgresql:
+:orphan: :nosearch:
 
 Install PostgreSQL database server
 ----------------------------------

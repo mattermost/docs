@@ -1,3 +1,7 @@
+---
+nosearch: true
+---
+
 <!---This documentation page is intentionally missing from the LHS. You can safely ignore related build warnings.--->
 
 # gencert.sh for Mattermost

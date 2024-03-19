@@ -25,9 +25,9 @@ When planning for a mobile app deployment, you have two important decisions to m
 - What app will you deploy - a pre-built app or your own custom build?
 - How will you deploy it?
 
-Mattermost provides official mobile apps through public app stores including the `Apple App Store <https://www.apple.com/ca/app-store>`__ and the `Google Play Store <https://play.google.com/store>`__. These apps are referred to throughout this documentation as Mattermost's pre-built mobile apps. Using Mattermost's pre-built apps is the easiest and fastest approach since your users can download the apps from public app stores, or you can use an EMM provider to maintain full control over the distribution process or enforce or restrict specific security policies. See `Using Mattermost’s Pre-Built Apps </deploy/use-prebuilt-mobile-apps.html>`__ to learn more about using Mattermost pre-built apps.
+Mattermost provides official mobile apps through public app stores including the `Apple App Store <https://www.apple.com/ca/app-store>`__ and the `Google Play Store <https://play.google.com/store>`__. These apps are referred to throughout this documentation as Mattermost's pre-built mobile apps. Using Mattermost's pre-built apps is the easiest and fastest approach since your users can download the apps from public app stores, or you can use an EMM provider to maintain full control over the distribution process or enforce or restrict specific security policies. See :doc:`Using Mattermost’s Pre-Built Apps </deploy/use-prebuilt-mobile-apps>` to learn more about using Mattermost pre-built apps.
 
-If you want to control the app's look and feel, or host your own push proxy server, you can build your own mobile apps and manage your own app distribution. See `Building and Distributing Your Own Custom Mattermost Mobile Apps </deploy/build-custom-mobile-apps.html>`__ to learn more about working with custom built apps.
+If you want to control the app's look and feel, or host your own push proxy server, you can build your own mobile apps and manage your own app distribution. See :doc:`Building and Distributing Your Own Custom Mattermost Mobile Apps </deploy/build-custom-mobile-apps>` to learn more about working with custom built apps.
 
 The following table summarizes the key differences between these two approaches:
 
@@ -56,7 +56,7 @@ The following table summarizes the key differences between these two approaches:
 Technical and Security Requirements
 -----------------------------------
 
-See our `Supported Devices/Mobile Device Requirements </install/software-hardware-requirements.html#mobile-apps>`__ documentation for basic mobile device requirements, and our `Supported Mattermost Server Versions </deploy/mobile-app-changelog.html>`__ documentation for details on Mattermost Server minimum requirements. 
+See our :ref:`Supported Devices/Mobile Device Requirements <install/software-hardware-requirements:mobile apps>` documentation for basic mobile device requirements, and our :doc:`Supported Mattermost Server Versions </deploy/mobile-app-changelog>` documentation for details on Mattermost Server minimum requirements. 
 
 We recommend running the latest version of the Mattermost Server and the Mattermost Push Notification Service (MPNS) as they contain the most recent features and applicable security updates. 
 
@@ -65,13 +65,13 @@ If this isn't possible, we encourage you to be on the most recent Extended Suppo
 .. important::
   Not all provided updates are compatible with all previous versions of Mattermost. Updating only Mattermost Mobile Apps or updating the Mobile apps before updating Mattermost Server can result in compatibility issues.
 
-You should also start thinking about technical and security requirements in parallel with an implementation plan. Feel free to use our `implementation plan template </getting-started/implementation_plan.html>`__ available in the Mattermost documentation. 
+You should also start thinking about technical and security requirements in parallel with an implementation plan. Feel free to use our :doc:`implementation plan template </getting-started/implementation-plan>` available in the Mattermost documentation. 
 
 Also, start engaging your technical and security teams with the following questions:
 
 - Are there any known security or access requirements?
-- Is an `Enterprise Mobile Management (EMM) Provider </deploy/deploy-mobile-apps-using-emm-provider.html>`__ needed?
-- Is a `VPN connection required </deploy/consider-mobile-vpn-options.html>`__?
+- Is an :doc:`Enterprise Mobile Management (EMM) Provider </deploy/deploy-mobile-apps-using-emm-provider>` needed?
+- Is a :doc:`VPN connection required </deploy/consider-mobile-vpn-options>`?
 
 Asking questions like these requires you to pause before jumping into your Mattermost mobile project. However, it will help ensure you see a return on your investment.
 

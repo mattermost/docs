@@ -23,7 +23,7 @@ The local image proxy is available as part of the Mattermost server deployment. 
 
 .. note:: 
   
-  With the local image proxy enabled, requests for images hosted on the local network are now affected by the ``AllowUntrustedInternalConnections`` setting. See `documentation </configure/configuration-settings.html#allow-untrusted-internal-connections-to>`_ for more information or if you are seeing unintentionally blocked images.
+  With the local image proxy enabled, requests for images hosted on the local network are now affected by the ``AllowUntrustedInternalConnections`` setting. See :ref:`documentation <configure/environment-configuration-settings:allow untrusted internal connections>` for more information or if you are seeing unintentionally blocked images.
 
 .. _atmos-camo:
 

@@ -6,7 +6,7 @@ Using an outbound proxy
 .. include:: ../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
 
-In some scenarios, you may wish to use Mattermost behind a proxy. This can be used to do things such as monitoring outbound traffic from Mattermost or controlling which websites can appear in link previews and other embedded content. If you only want to use a proxy for images, the `image proxy </deploy/image-proxy.html>`__ is also an option.
+In some scenarios, you may wish to use Mattermost behind a proxy. This can be used to do things such as monitoring outbound traffic from Mattermost or controlling which websites can appear in link previews and other embedded content. If you only want to use a proxy for images, the :doc:`image proxy </deploy/image-proxy>` is also an option.
 
 Configuration
 -------------

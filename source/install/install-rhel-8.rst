@@ -1,5 +1,3 @@
-.. _install-rhel-8:
-
 Install Mattermost on RHEL
 ==========================
 
@@ -7,7 +5,7 @@ Install Mattermost on RHEL
 
     <div class="mm-badge mm-badge--combo">
 
-    <div class="mm-badge__plan-deploy">
+    <div class="mm-plans-badge block">
       <p>
         <img src="../_static/images/badges/flag_icon.svg" alt="" />
         <span>Available on <a href="https://mattermost.com/pricing/">all plans</a></span>
@@ -36,14 +34,9 @@ Install Mattermost on RHEL
 
   </div>
 
-.. contents:: On this page
-  :backlinks: top
-  :local:
-  :depth: 1
-
 .. note::
-  
-  You need a PostgreSQL database. See the `database preparation </install/prepare-mattermost-database.html>`__ documentation for details on this prerequisite.
+
+  You need a PostgreSQL database. See the :doc:`database preparation </install/prepare-mattermost-database>` documentation for details on this prerequisite.
 
 A Mattermost deployment includes 4 steps: `download <#download>`__, `install <#install>`__, `setup <#setup>`__, and `update <#updates>`__.
 
@@ -59,13 +52,13 @@ Install
 Ahead of installing the Mattermost Server, it’s good practice to update all your repositories and, where required, update existing packages by running the following commands:
 
 .. code-block:: none
-  :class: mm-code-block 
+  :class: mm-code-block
 
     sudo dnf update
 
 .. code-block:: none
-  :class: mm-code-block 
-    
+  :class: mm-code-block
+
     sudo dnf upgrade
 
 After any updates, and any system reboots, are complete, install the Mattermost Server.
@@ -82,7 +75,7 @@ Setup
 Updates
 -------
 
-Updating your Mattermost Server installation when using the tarball requires several manual steps. See the `upgrade Mattermost Server </upgrade/upgrading-mattermost-server.html>`__ documentation for details. 
+Updating your Mattermost Server installation when using the tarball requires several manual steps. See the :doc:`upgrade Mattermost Server </upgrade/upgrading-mattermost-server>` documentation for details.
 
 Remove Mattermost
 ------------------
@@ -90,7 +83,7 @@ Remove Mattermost
 If you wish to remove the Mattermost Server for any reason, you must stop the Mattermost Server, back up all important files, and then run this command:
 
 .. code-block:: none
-  :class: mm-code-block 
+  :class: mm-code-block
 
    sudo rm /opt/mattermost
 

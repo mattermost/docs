@@ -2,10 +2,6 @@
 
 This changelog summarizes updates to Mattermost mobile apps releases for [Mattermost](https://mattermost.com).
 
-```{contents} On this page
-:depth: 2
-```
-
 ## 2.14.0 Release
  - Release Date: March 15, 2024
  - Server Versions Supported: Server v8.1.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
@@ -187,6 +183,8 @@ Note: Mattermost Mobile App v2.10.1 contains a high level security fix. Updating
 ### Bug Fixes
  - Fixed an issue where a crash occurred when tapping on **Threads** when a message contained LaTex.
 
+----
+
 ## 2.9.0 Release
 - Release Date: October 16, 2023
 - Server Versions Supported: Server v7.8.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
@@ -214,6 +212,8 @@ Note: Mattermost Mobile App v2.10.1 contains a high level security fix. Updating
  - Users are unable to adjust the font size via the OS font size setting.
  - Some Google Pixel phones on Android 12+ might not continue past the login screen. This is a known issue with the OS, and the current workaround is to restart the device.
 
+----
+
 ## 2.8.2 Release
 - Release Date: Oct 10, 2023
 - Server Versions Supported: Server v7.8.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
@@ -222,9 +222,9 @@ Note: Mattermost Mobile App v2.10.1 contains a high level security fix. Updating
  - **Upgrade to server version v7.8.0 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/upgrade/extended-support-release.html) (ESR) v7.1.0 has ended and upgrading to server ESR v7.8.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
  - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
  - iPhone 5s devices and later with iOS 12.4+ is required.
-
-### Compatibility
  - Updated the iOS minimum supported version back to v12.4.
+
+----
 
 ## 2.8.1 Release
 - Release Date: October 2, 2023
@@ -234,11 +234,12 @@ Note: Mattermost Mobile App v2.10.1 contains a high level security fix. Updating
  - **Upgrade to server version v7.8.0 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/upgrade/extended-support-release.html) (ESR) v7.1.0 has ended and upgrading to server ESR v7.8.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
  - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
  - iPhone 5s devices and later with iOS 13.4+ is required.
-
-Note: Mattermost Mobile App v2.8.1 contains a high level security fix. Updating is recommended. Details will be posted on our security updates page 30 days after release as per the Mattermost Responsible Disclosure Policy.
-
-### Compatibility
  - Bumped the iOS minimum supported version to v13.4.
+
+```{Note} 
+Mattermost Mobile App v2.8.1 contains a high level security fix. Updating is recommended. Details will be posted on our security updates page 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+```
+
 
 ### Improvements
  - Added an alert showing when a deeplink is invalid.
@@ -246,6 +247,8 @@ Note: Mattermost Mobile App v2.8.1 contains a high level security fix. Updating 
 ### Bug Fixes
  - Fixed an issue where the app hanged when using the magic keyboard on iPadOS 17.
  - Patched the ``react-native-fast-image`` library which resulted in the transient dependency libwebp being updated and ``CVE-2023-4863`` being mitigated for iOS.
+
+----
 
 ## 2.8.0 Release
 - Release Date: September 15, 2023
@@ -256,7 +259,10 @@ Note: Mattermost Mobile App v2.8.1 contains a high level security fix. Updating 
  - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
  - iPhone 5s devices and later with iOS 12.1+ is required.
 
-Note: Mattermost Mobile App v2.8.0 contains a medium level security fix. Updating is recommended. Details will be posted on our security updates page 30 days after release as per the Mattermost Responsible Disclosure Policy.
+```{Note} 
+Mattermost Mobile App v2.8.0 contains a medium level security fix. Updating is recommended. Details will be posted on our security updates page 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+```
+
 
 ### Improvements
  - Calls: Added incoming call notifications for Direct Message and Group Message calls.
@@ -277,6 +283,8 @@ Note: Mattermost Mobile App v2.8.0 contains a medium level security fix. Updatin
  - The **Following** button in the Thread view wraps incorrectly [MM-54499](https://mattermost.atlassian.net/browse/MM-54499).
  - Users are unable to adjust the font size via the OS font size setting.
  - Some Google Pixel phones on Android 12+ might not continue past the login screen. This is a known issue with the OS, and the current workaround is to restart the device.
+
+----
 
 ## 2.7.0 Release
 - Release Date: August 16, 2023
@@ -308,6 +316,8 @@ Note: Mattermost Mobile App v2.8.0 contains a medium level security fix. Updatin
  - Users are unable to adjust the font size via the OS font size setting.
  - Some Google Pixel phones on Android 12+ might not continue past the login screen. This is a known issue with the OS, and the current workaround is to restart the device.
 
+----
+
 ## 2.6.0 Release
 - Release Date: July 14, 2023
 - Server Versions Supported: Server v7.8.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
@@ -338,6 +348,8 @@ Note: Mattermost Mobile App v2.8.0 contains a medium level security fix. Updatin
  - Users are unable to adjust the font size via the OS font size setting.
  - Some Google Pixel phones on Android 12+ might not continue past the login screen. This is a known issue with the OS, and the current workaround is to restart the device.
 
+----
+
 ## 2.5.1 Release
 - Release Date: June 23, 2023
 - Server Versions Supported: Server v7.8.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
@@ -347,11 +359,14 @@ Note: Mattermost Mobile App v2.8.0 contains a medium level security fix. Updatin
  - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
  - iPhone 5s devices and later with iOS 12.1+ is required.
 
-**Note:** Mattermost Mobile App v2.5.1 contains a high level security fix. Upgrading is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+```{Note} Mattermost Mobile App v2.5.1 contains a high level security fix. Upgrading is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+```
 
 ### Bug Fixes
  - Fixed an issue where reading a thread could lead to the phone and server to overwork.
  - Fixed the overlap between image attachments and the post footer with Collapsed Reply Threads enabled.
+
+----
 
 ## 2.5.0 Release
 - Release Date: June 16, 2023
@@ -384,6 +399,8 @@ Note: Mattermost Mobile App v2.8.0 contains a medium level security fix. Updatin
 ### Known Issues
  - Users are unable to adjust the font size via the OS font size setting.
  - Some Google Pixel phones on Android 12+ might not continue past the login screen. This is a known issue with the OS, and the current workaround is to restart the device.
+
+----
 
 ## 2.4.0 Release
 - Release Date: May 17, 2023
@@ -423,6 +440,8 @@ Note: Mattermost Mobile App v2.8.0 contains a medium level security fix. Updatin
  - Users are unable to adjust the font size via the OS font size setting.
  - Some Google Pixel phones on Android 12+ might not continue past the login screen. This is a known issue with the OS, and the current workaround is to restart the device.
 
+----
+
 ## 2.3.0 Release
 - Release Date: April 14, 2023
 - Server Versions Supported: Server v7.1.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
@@ -457,6 +476,8 @@ Note: Mattermost Mobile App v2.8.0 contains a medium level security fix. Updatin
 ### Known Issues
  - Users are unable to adjust the font size via the OS font size setting.
  - Some Google Pixel phones on Android 12+ might not continue past the login screen. This is a known issue with the OS, and the current workaround is to restart the device.
+
+----
 
 ## 2.2.0 Release
 - Release Date: March 17, 2023
@@ -498,6 +519,8 @@ Note: Mattermost Mobile App v2.8.0 contains a medium level security fix. Updatin
  - Moving posts with the Wrangler plugin causes database "Unique key" errors [MM-44960](https://mattermost.atlassian.net/browse/MM-44960).
  - Some pixel phones on Android 12+ might not go past the login screen. This is a known issue with the OS and the current workaround is to restart the device.
 
+----
+
 ## 2.1.0 Release
 - Release Date: February 16, 2023
 - Server Versions Supported: Server v7.1.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
@@ -533,6 +556,8 @@ Note: Mattermost Mobile App v2.8.0 contains a medium level security fix. Updatin
  - Drafts are lost when following a notification [MM-47373](https://mattermost.atlassian.net/browse/MM-47373).
  - Moving posts with the Wrangler plugin causes database "Unique key" errors [MM-44960](https://mattermost.atlassian.net/browse/MM-44960).
  - Some pixel phones on Android 12+ might not go past the login screen. This is a known issue with the OS and the current workaround is to restart the device.
+
+----
 
 ## 2.0.1 Release
 - Release Date: February 7, 2023
@@ -575,6 +600,8 @@ Note: Mattermost Mobile App v2.8.0 contains a medium level security fix. Updatin
  - Moving posts with the Wrangler plugin causes database "Unique key" errors [MM-44960](https://mattermost.atlassian.net/browse/MM-44960).
  - Some pixel phones on Android 12+ might not go past the login screen. This is a known issue with the OS and the current workaround is to restart the device.
 
+----
+
 ## 2.0.0 Release
 - Release Date: January 16, 2023
 - Server Versions Supported: Server v7.1.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
@@ -606,6 +633,8 @@ Users now gain a more reliable and feature-rich application, improving their exp
  - The app crashes when uploading a PDF file [MM-49707](https://mattermost.atlassian.net/browse/MM-49707).
  - The ``timeoutVPN`` values are not converted from milliseconds to seconds in v2 [MM-49722](https://mattermost.atlassian.net/browse/MM-49722).
 
+----
+
 ## 1.55.1 Release
 - Release Date: September 15, 2022
 - Server Versions Supported: Server v6.3.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
@@ -623,6 +652,8 @@ Users now gain a more reliable and feature-rich application, improving their exp
 ### Known Issues
  - Channel sidebar disappears sometimes when the channel categories are not fetched from the server.
  - Posts sometimes get stuck behind the post textbox on iPad.
+
+----
 
 ## 1.55.0 Release
 - Release Date: August 16, 2022
@@ -646,6 +677,8 @@ Users now gain a more reliable and feature-rich application, improving their exp
  - Channel sidebar disappears sometimes when the channel categories are not fetched from the server.
  - Posts sometimes get stuck behind the post textbox on iPad.
 
+----
+
 ## 1.54.0 Release
 - Release Date: July 15, 2022
 - Server Versions Supported: Server v6.3.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
@@ -668,6 +701,8 @@ Users now gain a more reliable and feature-rich application, improving their exp
  - Channel sidebar disappears sometimes when the channel categories are not fetched from the server.
  - Posts sometimes get stuck behind the post textbox on iPad.
 
+----
+
 ## 1.53.0 Release
 - Release Date: June 15, 2022
 - Server Versions Supported: Server v6.3.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
@@ -686,6 +721,8 @@ Users now gain a more reliable and feature-rich application, improving their exp
  - Channel sidebar disappears sometimes when the channel categories are not fetched from the server.
  - Posts sometimes get stuck behind the post textbox on iPad.
 
+----
+
 ## 1.52.0 Release
 - Release Date: May 16, 2022
 - Server Versions Supported: Server v6.3.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
@@ -703,6 +740,8 @@ Users now gain a more reliable and feature-rich application, improving their exp
  - Channel sidebar disappears sometimes when the channel categories are not fetched from the server.
  - Posts sometimes get stuck behind the post textbox on iPad.
 
+----
+
 ## 1.51.2 Release
 - Release Date: May 5, 2022
 - Server Versions Supported: Server v6.3.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
@@ -717,6 +756,8 @@ Users now gain a more reliable and feature-rich application, improving their exp
 #### All apps
  - Fixed an issue with Calls where multiple "Access to route for non-existent plugin" errors got logged in the server logs.
 
+----
+
 ## 1.51.1 Release
 - Release Date: April 22, 2022
 - Server Versions Supported: Server v6.3.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
@@ -730,6 +771,8 @@ Users now gain a more reliable and feature-rich application, improving their exp
 
 #### All apps
  - Fixed an issue with logging in when multiple SSO methods are enabled while email/password is disabled.
+
+----
 
 ## 1.51.0 Release
 - Release Date: April 16, 2022
@@ -767,6 +810,8 @@ Users now gain a more reliable and feature-rich application, improving their exp
  - Channel sidebar disappears sometimes when the channel categories are not fetched from the server.
  - Posts sometimes get stuck behind the post textbox on iPad.
 
+----
+
 ## 1.50.1 Release
 - Release Date: March 21, 2022
 - Server Versions Supported: Server v5.37.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
@@ -780,6 +825,8 @@ Users now gain a more reliable and feature-rich application, improving their exp
 
 #### All apps
  - Fixed an issue where Latex-formatted text caused the mobile app to crash.
+
+----
 
 ## 1.50.0 Release
 - Release Date: March 16, 2022
@@ -805,6 +852,8 @@ Users now gain a more reliable and feature-rich application, improving their exp
    - New messages banner should only count root posts.
    - Threads item unread state (bolding) does not persist when deleting documents and data.
 
+----
+
 ## 1.49.1 Release
 - Release Date: February 23, 2022.
 - Server Versions Supported: Server v5.37.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
@@ -818,6 +867,8 @@ Users now gain a more reliable and feature-rich application, improving their exp
 
 #### Android specific
  - Fixed an issue on Android where document files did not open.
+
+----
 
 ## 1.49.0 Release
 - Release Date: February 16, 2022
@@ -847,6 +898,8 @@ Users now gain a more reliable and feature-rich application, improving their exp
    - New messages banner should only count root posts.
    - Threads item unread state (bolding) does not persist when deleting documents and data.
 
+----
+
 ## 1.48.2 Release
 - Release Date: January 6, 2022
 - Server Versions Supported: Server v5.37.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
@@ -868,6 +921,8 @@ Users now gain a more reliable and feature-rich application, improving their exp
    - New messages banner should only count root posts.
    - Clicking on a permalink adds the thread replies in the channel view.
    - Threads item unread state (bolding) does not persist when deleting documents and data.
+
+----
 
 ## 1.48.1 Release
 - Release Date: December 15, 2021
@@ -892,6 +947,8 @@ Users now gain a more reliable and feature-rich application, improving their exp
    - New messages banner should only count root posts.
    - Clicking on a permalink adds the thread replies in the channel view.
    - Threads item unread state (bolding) does not persist when deleting documents and data.
+
+----
 
 ## 1.48.0 Release
 - Release Date: November 16, 2021
@@ -932,6 +989,8 @@ Users now gain a more reliable and feature-rich application, improving their exp
    - Clicking on a permalink adds the thread replies in the channel view.
    - Threads item unread state (bolding) does not persist when deleting documents and data.
 
+----
+
 ## 1.47.2 Release
 - Release Date: October 25, 2021
 - Server Versions Supported: Server v5.37.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
@@ -949,6 +1008,8 @@ Users now gain a more reliable and feature-rich application, improving their exp
 #### Android specific
  - Fixed a crash when switching channels or focusing the text input area on Android.
  - Fixed a crash while opening notifications on Android.
+
+----
 
 ## 1.47.1 Release
 - Release Date: October 19, 2021
@@ -968,6 +1029,8 @@ Users now gain a more reliable and feature-rich application, improving their exp
 #### iOS specific
  - Updated the iOS app icon to a flattened version.
  - Fixed a gesture conflict between the drawers and the post input on iOS.
+
+----
 
 ## 1.47.0 Release
 - Release Date: October 13, 2021
@@ -1035,6 +1098,8 @@ Users now gain a more reliable and feature-rich application, improving their exp
    - Clicking on a permalink adds the thread replies in the channel view.
    - Threads item unread state (bolding) does not persist when deleting documents and data.
 
+----
+
 ## 1.46.0 Release
 - Release Date: August 16, 2021
 - Server Versions Supported: Server v5.31.3+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
@@ -1094,6 +1159,8 @@ Users now gain a more reliable and feature-rich application, improving their exp
 ### Contributors
  - [anurag6713](https://github.com/anurag6713), [ashishbhate](https://github.com/ashishbhate), [enahum](https://github.com/enahum), [larkox](https://github.com/larkox), [manojmalik20](https://github.com/manojmalik20)
 
+----
+
 ## 1.45.1 Release
 - Release Date: July 20, 2021
 - Server Versions Supported: Server v5.31.3+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
@@ -1111,6 +1178,8 @@ Users now gain a more reliable and feature-rich application, improving their exp
 #### Android specific
  - Fixed Android push notifications so that they are now grouped by channel.
 
+----
+
 ## 1.45.0 Release
 - Release Date: July 16, 2021
 - Server Versions Supported: Server v5.31.3+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
@@ -1123,7 +1192,11 @@ Users now gain a more reliable and feature-rich application, improving their exp
 ### Highlights
 
 #### Emoji Enhancements with Skin Tone Selection
- - Added support for emoji standard v13.0 with Mattermost server v5.37. **Note: Due to the upgrade to Emoji 13.0, some emojis may be missing on Android older than 11 and iOS older than 14.2.**
+ - Added support for emoji standard v13.0 with Mattermost server v5.37. 
+
+```{Note} 
+Due to the upgrade to Emoji 13.0, some emojis may be missing on Android older than 11 and iOS older than 14.2.
+```
 
 #### English-Australian Language Support
  - Mattermost is now available in English-Australian.
@@ -1154,6 +1227,8 @@ Users now gain a more reliable and feature-rich application, improving their exp
 ### Known Issues
  - Android app doesn't group notifications properly [MM-37134](https://mattermost.atlassian.net/browse/MM-37134).
 
+----
+
 ## 1.44.1 Release
 - Release Date: June 28, 2021
 - Server Versions Supported: Server v5.31.3+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
@@ -1176,6 +1251,8 @@ Users now gain a more reliable and feature-rich application, improving their exp
  - Fixed an issue where a YouTube playback error could appear when clicking the thumbnail of a linked YouTube video.
  - Fixed an issue where the badge count on the app icon for iOS was incorrect.
 
+----
+
 ## 1.44.0 Release
 - Release Date: June 16, 2021
 - Server Versions Supported: Server v5.31.3+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
@@ -1185,7 +1262,9 @@ Users now gain a more reliable and feature-rich application, improving their exp
  - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
  - iPhone 5s devices and later with iOS 11+ is required.
 
-**Note:** Mattermost Mobile App v1.44.0 contains low to high level security fixes. Upgrading is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+```{Note} 
+Mattermost Mobile App v1.44.0 contains low to high level security fixes. Upgrading is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+```
 
 ### Highlights
 
@@ -1211,6 +1290,8 @@ Users now gain a more reliable and feature-rich application, improving their exp
  - When changing the custom status from the webapp while the Mobile App is in the background, the custom status does not get reflected on the Mobile App until you close and re-open the Mobile App.
  - Users will need to be on v5.31.3 for the "Unsupported server version" in-app notice to go away as [5.31.3 fixes an issue](https://docs.mattermost.com/install/self-managed-changelog.html#release-v5-31-esr) where the server version was reported as v5.30.0.
  - On iOS, a YouTube playback error may appear when clicking the thumbnail of a linked YouTube video. A workaround is to tap on the link to open the video in YouTube.
+
+----
 
 ## 1.43.0 Release
 - Release Date: May 16, 2021
@@ -1252,6 +1333,8 @@ Users now gain a more reliable and feature-rich application, improving their exp
  - On iOS, a YouTube playback error may appear when clicking the thumbnail of a linked YouTube video. A workaround is to tap on the link to open the video in YouTube.
  - The app has been reported to perform slowly on Android devices that run at 120fps instead of the normal 60fps.
 
+----
+
 ## 1.42.1 Release
 - Release Date: April 19, 2021
 - Server Versions Supported: Server v5.31.3+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
@@ -1268,6 +1351,8 @@ Users now gain a more reliable and feature-rich application, improving their exp
 
 #### iOS specific
  - Fixed an issue where the app crashed on launch.
+
+----
 
 ## 1.42.0 Release
 - Release Date: April 16, 2021
@@ -1304,6 +1389,8 @@ Users now gain a more reliable and feature-rich application, improving their exp
  - The app has been reported to perform slowly on Android devices that run at 120fps instead of the normal 60fps.
  - The last message in a channel is sometimes rendered behind the message box on iPad devices.
 
+----
+
 ## 1.41.1 Release
 - Release Date: April 7, 2021
 - Server Versions Supported: Server v5.25+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
@@ -1316,6 +1403,8 @@ Users now gain a more reliable and feature-rich application, improving their exp
 ### Bug Fixes
  - Fixed an issue where authenticating with any SAML provider opened the default browser, breaking the app VPN tunnel.
 
+----
+
 ## 1.41.0 Release
 - Release Date: March 16, 2021
 - Server Versions Supported: Server v5.25+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
@@ -1325,7 +1414,8 @@ Users now gain a more reliable and feature-rich application, improving their exp
  - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
  - iPhone 5s devices and later with iOS 11+ is required.
 
-**Note:** Mattermost Mobile App v1.41.0 contains a high level security fix. Upgrading is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+``` {Note}Mattermost Mobile App v1.41.0 contains a high level security fix. Upgrading is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+```
 
 ### Improvements
  - Refined animations for the new image gallery.
@@ -1344,6 +1434,8 @@ Users now gain a more reliable and feature-rich application, improving their exp
  - The app has been reported to perform slowly on Android devices that run at 120fps instead of the normal 60fps.
  - The last message in a channel is sometimes rendered behind the message box on iPad devices.
 
+----
+
 ## 1.40.0 Release
 - Release Date: February 25, 2021
 - Server Versions Supported: Server v5.25+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
@@ -1353,7 +1445,8 @@ Users now gain a more reliable and feature-rich application, improving their exp
  - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
  - iPhone 5s devices and later with iOS 11+ is required.
  
-**Note:** Mattermost Mobile App v1.40.0 contains a low level security fix. Upgrading is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+``` {Note}Mattermost Mobile App v1.40.0 contains a low level security fix. Upgrading is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+```
 
 ### Improvements
  - Added support for OpenID Connect (E20 Edition) - **This feature is available in Mattermost Cloud and will be available in upcoming server v5.33.0 (March 16th) release.**
@@ -1379,6 +1472,8 @@ Users now gain a more reliable and feature-rich application, improving their exp
  - On Pixel 4a, uploading PDFs crashes the app and sharing files does not work.
  - The app has been reported to perform slowly on Android devices that run at 120fps instead of the normal 60fps.
  - The last message in a channel is sometimes rendered behind the message box on iPad devices.
+
+----
 
 ## 1.39.0 Release
 - Release Date: January 16, 2021
@@ -1412,6 +1507,8 @@ Users now gain a more reliable and feature-rich application, improving their exp
  - In-app notification banner locks user interaction until the notification banner is dismissed.
  - The last message in a channel is sometimes rendered behind the message box on iPad devices.
 
+----
+
 ## 1.38.1 Release
 - Release Date: December 18, 2020
 - Server Versions Supported: Server v5.25+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
@@ -1434,7 +1531,9 @@ Users now gain a more reliable and feature-rich application, improving their exp
  - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).
  - iPhone 5s devices and later with iOS 11+ is required.
  
-**Note:** Support for landscape orientation was removed for non-tablet devices.
+```{Note} 
+Support for landscape orientation was removed for non-tablet devices.
+```
 
 ### Improvements
  - Added gallery user interface improvements.
@@ -1458,6 +1557,8 @@ Users now gain a more reliable and feature-rich application, improving their exp
  
 ### Known Issues
  - At-mention and slash command suggestion autocomplete modals block post draft.
+
+----
 
 ## 1.37.0 Release
 - Release Date: November 16, 2020
@@ -1486,6 +1587,8 @@ Users now gain a more reliable and feature-rich application, improving their exp
 #### Android specific
  - Fixed an issue where the Android app added autofill data in the chat box.
  - Fixed an issue where the Android app defaulted to Town Square after sharing a file outside of the app.
+
+----
 
 ## 1.36.0 Release
 - Release Date: October 16, 2020
@@ -1520,6 +1623,8 @@ Users now gain a more reliable and feature-rich application, improving their exp
 
 #### iOS specific
  - Fixed an issue where user received an error when opening links on iOS 14 when Safari was not set as the default browser.
+
+----
 
 ## 1.35.1 Release
 - Release Date: September 21, 2020
@@ -1572,6 +1677,8 @@ Users now gain a more reliable and feature-rich application, improving their exp
  
 ### Known Issues
  - Some Android devices running Android 11 may notice some choppiness in certain animations.
+
+----
 
 ## 1.34.1 Release
 - Release Date: August 27, 2020
@@ -1626,6 +1733,8 @@ Users now gain a more reliable and feature-rich application, improving their exp
  - Fixed an issue where user was unable to scroll or tap on emoji autocomplete in post **Edit** screen.
  - Fixed an issue where the channel list was not scrolled to the bottom when a new message was received while the keyboard was open.
 
+----
+
 ## 1.33.1 Release
 - Release Date: July 15, 2020
 - Server Versions Supported: Server v5.19+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
@@ -1637,6 +1746,8 @@ Users now gain a more reliable and feature-rich application, improving their exp
  
 ### Bug Fixes
  - Fixed an issue where the apps crashed when a malformed YouTube link was posted in a channel.
+
+----
 
 ## 1.33.0 Release
 - Release Date: July 16, 2020
@@ -1650,7 +1761,9 @@ Users now gain a more reliable and feature-rich application, improving their exp
 ### Breaking Changes
  - Starting with mobile app v1.33.0, users on server versions below v5.19 may experience issues with how attachments, link previews, reactions and embed data are displayed. Updating your server to v5.19 or later is required.
  
-**Note:** Mattermost Mobile App v1.33.0 contains a low level security fix. Upgrading is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+```{Note} 
+Mattermost Mobile App v1.33.0 contains a low level security fix. Upgrading is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+```
  
 ### Highlights
  -  System admins will now receive an in-app notification to upgrade their server version if they are running versions v5.18 and below.
@@ -1687,6 +1800,8 @@ Users now gain a more reliable and feature-rich application, improving their exp
  - Fixed an issue where the Enter key did not work in search when using an iPad with an external keyboard.
  - Fixed an issue where OAuth and SAML single sign-on (SSO) no longer required re-entering credentials after logging out and logging back in.
 
+----
+
 ## 1.32.2 Release
 - Release Date: June 26, 2020
 - Server Versions Supported: Server v5.19+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
@@ -1700,6 +1815,8 @@ Users now gain a more reliable and feature-rich application, improving their exp
  - Fixed an issue where some users on the v1.32.0 or v1.32.1 mobile apps authenticating with GitLab or Office365 Single Sign-On (SSO) to a Mattermost server using a subpath were unable to login to the app. Some users authenticating to Mattermost using SAML SSO with two-factor authentication or authenticating to Mattermost with an SSO provider that utilizes query strings as part of the authentication URLs were also impacted.
  - Fixed an issue where opening the app was causing an "Unexpected Error" due to a failed migration.
 
+----
+
 ## 1.32.1 Release
 - Release Date: June 25, 2020
 - Server Versions Supported: Server v5.19+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
@@ -1711,6 +1828,8 @@ Users now gain a more reliable and feature-rich application, improving their exp
 
 ### Bug Fixes
  - Fixed an issue where Android app cold start and channel switching were slow.
+
+----
 
 ## 1.32.0 Release
 - Release Date: June 16, 2020
@@ -1759,6 +1878,8 @@ Users now gain a more reliable and feature-rich application, improving their exp
 #### Known issues
  - Signing in with supported SSO methods (OKTA, OneLogin, GitLab and Office365) may fail to redirect on iOS 12. It is recommended to use iOS 13 if any issues are encountered.
 
+----
+
 ## 1.31.2 Release
 - Release Date: May 27, 2020
 - Server Versions Supported: Server v5.19+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
@@ -1772,6 +1893,8 @@ Mattermost Mobile App v1.31.2 contains a high level security fix. [Upgrading](ht
  
 ### Bug Fixes
  - Fixed an issue where file uploads failed due to a time out when the [Antivirus plugin](https://github.com/mattermost/mattermost-plugin-antivirus) was enabled.
+
+----
 
 ## 1.31.1 Release
 - Release Date: May 22, 2020
@@ -1816,6 +1939,8 @@ Mattermost Mobile App v1.31.2 contains a high level security fix. [Upgrading](ht
 #### Android specific
  - Fixed an issue where the keyboard did not close after editing a message.
 
+----
+
 ## 1.30.1 Release
 - Release Date: April 24, 2020
 - Server Versions Supported: Server v5.19+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
@@ -1840,6 +1965,8 @@ Mattermost Mobile App v1.31.2 contains a high level security fix. [Upgrading](ht
  - Fixed an issue where using backspace out of a conversation thread or a channel caused a forced logout.
  - Fixed an issue where a video upload attempt failed with an error.
 
+----
+
 ## 1.30.0 Release
 - Release Date: April 16, 2020
 - Server Versions Supported: Server v5.19+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
@@ -1850,9 +1977,10 @@ Mattermost Mobile App v1.31.2 contains a high level security fix. [Upgrading](ht
  
 Mattermost Mobile App v1.30.0 contains a high level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
  
-**Note:** v5.9.0 as our Extended Support Release (ESR) is coming to the end of its lifecycle and upgrading to 5.19.0 ESR or a later version is highly recommended. v5.19.0 will continue to be our current ESR until October 15, 2020. [Learn more in our forum post](https://forum.mattermost.com/t/upcoming-extended-support-release-updates/8526>).
-
-**Note:** [The Channel Moderation Settings feature](https://docs.mattermost.com/manage/team-channel-members.html#channel-moderation-e20) released in v5.22.0 is supported on mobile app versions v1.30 and later. In earlier versions of the mobile app, users who attempt to post or react to posts without proper permissions will see an error.
+``` {Note} 
+- v5.9.0 as our Extended Support Release (ESR) is coming to the end of its lifecycle and upgrading to 5.19.0 ESR or a later version is highly recommended. v5.19.0 will continue to be our current ESR until October 15, 2020. [Learn more in our forum post](https://forum.mattermost.com/t/upcoming-extended-support-release-updates/8526>).
+- [The Channel Moderation Settings feature](/manage/team-channel-members.html#channel-moderation-e20) released in v5.22.0 is supported on mobile app versions v1.30 and later. In earlier versions of the mobile app, users who attempt to post or react to posts without proper permissions will see an error.
+```
  
 ### Improvements
  - Significantly improved Android performance, including how quickly posts in the center screen are displayed.
@@ -1882,6 +2010,8 @@ Mattermost Mobile App v1.30.0 contains a high level security fix. [Upgrading](ht
  - Fixed an issue on Android where downloading a file or video was not reporting progress.
  - Fixed an issue on Android that was preventing to share content through the share extension.
 
+----
+
 ## 1.29.0 Release
 - Release Date: March 16, 2020
 - Server Versions Supported: Server v5.9+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
@@ -1890,9 +2020,10 @@ Mattermost Mobile App v1.30.0 contains a high level security fix. [Upgrading](ht
  - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).
  - iPhone 5s devices and later with iOS 11+ is required.
 
-**Note:** The persisted sidebar on Android tablets was removed in order to significantly improve the mobile app performance.
-
-**Note:** An issue was fixed where a user's status was set as online when replying to a message from a push notification. This fix only works in combination with server v5.20.0+.
+``` {Note} 
+- The persisted sidebar on Android tablets was removed in order to significantly improve the mobile app performance.
+- An issue was fixed where a user's status was set as online when replying to a message from a push notification. This fix only works in combination with server v5.20.0+.
+```
  
 ### Improvements
  - Significantly improved how quickly channels load when you open the app and when you switch between them.
@@ -1917,6 +2048,8 @@ Mattermost Mobile App v1.30.0 contains a high level security fix. [Upgrading](ht
  
 ### Known Issues
  - Some gender neutral emojis don't render as jumbo emojis.
+
+----
 
 ## 1.28.0 Release
 - Release Date: February 16, 2020
@@ -1958,6 +2091,8 @@ Mattermost Mobile App v1.30.0 contains a high level security fix. [Upgrading](ht
 ### Known Issues
  - Markdown tables are missing a header colour.
 
+----
+
 ## 1.27.1 Release
 - Release Date: January 21, 2020
 - Server Versions Supported: Server v5.9+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
@@ -1969,6 +2104,8 @@ Mattermost Mobile App v1.30.0 contains a high level security fix. [Upgrading](ht
 ### Bug Fixes
  - Fixed an issue where all previously auto-closed Direct Message channels were listed in the channel sidebar.
  - Fixed a regression affecting webapp and mobile apps where some users were experiencing client-side performance issues. This was mainly affecting users with more than 100 channels listed in the channel sidebar and with channels sorted alphabetically.
+
+----
 
 ## 1.27.0 Release
 - Release Date: January 16, 2020
@@ -1994,6 +2131,8 @@ Mattermost Mobile App v1.30.0 contains a high level security fix. [Upgrading](ht
 ### Known Issues
  - Text box obstructs bottom part of messages in Direct Message channels when opened from a notification banner. [MM-21276](https://mattermost.atlassian.net/browse/MM-21276)
 
+----
+
 ## 1.26.2 Release
 - Release Date: January 7, 2020
 - Server Versions Supported: Server v5.9+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
@@ -2004,6 +2143,8 @@ Mattermost Mobile App v1.30.0 contains a high level security fix. [Upgrading](ht
 
 ### Bug Fixes
  - Fixed an issue on iOS where the mobile app was not usable if ``inAppPincode`` was enabled.
+
+----
 
 ## 1.26.1 Release
 - Release Date: December 20, 2019
@@ -2016,6 +2157,8 @@ Mattermost Mobile App v1.30.0 contains a high level security fix. [Upgrading](ht
 ### Bug Fixes
  - Fixed a crash issue on Android and iOS on server versions prior to the v5.9.0 Extended Support Release (ESR).
  - Fixed a crash when connecting the WebSocket to a server with Cert Based Auth (CBA) enabled.
+
+----
 
 ## 1.26.0 Release
 - Release Date: December 16, 2019
@@ -2070,6 +2213,8 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
 - Fixed an issue where an asterisk appeared on the "Nickname" and "Position" fields in Edit Profile screen even though nickname is not handled through the login provider.
 - Fixed an issue where the filtered list for emojis opened above the edit box and behind the channel header when adding an emoji to channel header using ``:emoji:``.
 
+----
+
 ## 1.25.1 Release
 - Release Date: November 22, 2019
 - Server Versions Supported: Server v5.9+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
@@ -2083,6 +2228,8 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
  - Fixed a crash issue on Android caused by notification channels being unavailable in Android 7.
  - Fixed an issue on Android where Enterprise Mobility Management (EMM) blur app screen did not work.
  - Fixed an issue where changing team/channel when sharing several files closed the share dialog.
+
+----
 
 ## 1.25.0 Release
 - Release Date: November 16, 2019
@@ -2115,6 +2262,8 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
  
 ### Known Issues
  - App slows down when opening a channel with large number of animated emoji. [MM-15792](https://mattermost.atlassian.net/browse/MM-15792)
+
+----
 
 ## 1.24.0 Release
 - Release Date: October 16, 2019
@@ -2169,6 +2318,8 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
 ### Known Issues
  - App slows down when opening a channel with large number of animated emoji. [MM-15792](https://mattermost.atlassian.net/browse/MM-15792)
 
+----
+
 ## 1.23.1 Release
 - Release Date: September 27, 2019
 - Server Versions Supported: Server v5.9+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
@@ -2179,6 +2330,8 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
 
 ### Bug Fixes
  - Fixed issues causing the app to crash on some devices.
+
+----
 
 ## 1.23.0 Release
 - Release Date: September 16, 2019
@@ -2211,6 +2364,8 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
   - App slows down when opening a channel with large number of animated emoji. [MM-15792](https://mattermost.atlassian.net/browse/MM-15792)
   - When users are deactivated, they are not immediately removed from the mention auto-complete. [MM-17953](https://mattermost.atlassian.net/browse/MM-17953)
 
+----
+
 ## 1.22.1 Release
 - Release Date: August 23, 2019
 - Server Versions Supported: Server v5.9+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
@@ -2224,6 +2379,8 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
  - Fixed an issue on Android where push notification receipt delivery failed due to invalid server URL.
  - Fixed an issue where the apps crashed when launched via a notification.
  - Fixed an issue where posts made while the app was closed did not appear until refresh.
+
+----
 
 ## 1.22.0 Release
 - Release Date: August 16, 2019
@@ -2266,6 +2423,8 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
   - App slows down when opening a channel with large number of animated emoji. [MM-15792](https://mattermost.atlassian.net/browse/MM-15792)
   - Some Giphy actions do not work in ephemeral posts. [MM-17842](https://mattermost.atlassian.net/browse/MM-17842)
 
+----
+
 ## 1.21.2 Release
 - Release Date: August 1, 2019
 - Server Versions Supported: Server v5.9+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
@@ -2277,6 +2436,8 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
 ### Bug Fixes
  - Fixed an issue where the mobile apps logged out without a session expiry notification.
 
+----
+
 ## 1.21.1 Release
 - Release Date: July 22, 2019
 - Server Versions Supported: Server v5.9+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
@@ -2287,6 +2448,8 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
 
 ### Bug Fixes
  - Fixed an issue on Android where logging in using SSO failed when the Mattermost server was running on a subpath.
+
+----
 
 ## 1.21.0 Release
 - Release Date: July 16, 2019
@@ -2317,6 +2480,8 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
   - Buttons inside ephemeral posts are not clickable / functional on the mobile app. [MM-15084](https://mattermost.atlassian.net/browse/MM-15084)
   - Android apps slow down when opening a channel with large number of animated emoji. [MM-15792](https://mattermost.atlassian.net/browse/MM-15792)
 
+----
+
 ## 1.20.2 Release
 - Release Date: July 10, 2019
 - Server Versions Supported: Server v4.10+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
@@ -2330,6 +2495,8 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
  - Fixed an issue where Moto G7 devices were detected as tablets and showed a fixed width sidebar.
  - Fixed an issue where having the sidebar open at all times on tablets did not work on split view.
 
+----
+
 ## 1.20.1 Release
 - Release Date: June 21, 2019
 - Server Versions Supported: Server v4.10+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
@@ -2342,6 +2509,8 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
 ### Bug Fixes
  - Fixed an issue where some Android devices were crashing.
  - Fixed an issue where messages were missing after reconnecting the network.
+
+----
 
 ## 1.20.0 Release
 - Release Date: June 16, 2019
@@ -2388,6 +2557,8 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
   - Buttons inside ephemeral posts are not clickable / functional on the mobile app. [MM-15084](https://mattermost.atlassian.net/browse/MM-15084)
   - App slows down when opening a channel with large number of animated emoji. [MM-15792](https://mattermost.atlassian.net/browse/MM-15792)
  
+ ----
+
 ## 1.19.0 Release
 - Release Date: May 16, 2019
 - Server Versions Supported: Server v4.10+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
@@ -2411,6 +2582,8 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
 ### Known Issues
  - Buttons inside ephemeral posts are not clickable / functional on the mobile app.
 
+----
+
 ## 1.18.1 Release
 - Release Date: April 18, 2019
 - Server Versions Supported: Server v4.10+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
@@ -2423,6 +2596,8 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
 ### Bug Fixes 
  - Fixed a crash issue caused by a malformed post textbox localize string.
  - Fixed an issue where iOS crashed when trying to log in using SSO and the SSO provider set a cookie without an expiration date.
+
+----
 
 ## 1.18.0 Release
 - Release Date: April 16, 2019
@@ -2461,6 +2636,8 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
 ### Known Issues
  - Content for ephemeral messages is not displayed on Mattermost Mobile Apps.
 
+----
+
 ## 1.17.0 Release
 - Release Date: March 20, 2019
 - Server Versions Supported: Server v4.10+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
@@ -2489,6 +2666,8 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
  - Fixed an issue where the "No Internet Connection" banner did not always disappear when connection was re-estabilished.
  - Fixed an issue where opening channels with unreads had loading indicator placed above unread messages line.
 
+----
+
 ## 1.16.1 Release
 - Release Date: February 21, 2019
 - Server Versions Supported: Server v4.10+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
@@ -2500,7 +2679,9 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
 ### Bug Fixes
  - Fixed an issue where link previews and reactions weren't displayed when post metadata was disabled.
  - Fixed an issue on Android where the app crashed when sharing multiple files.
- 
+
+----
+
 ## 1.16.0 Release
 - Release Date: February 16, 2019
 - Server Versions Supported: Server v4.10+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
@@ -2528,6 +2709,8 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
  - Fixed an issue on Android where the user was not asked to authenticate to the app first when trying to share a photo, resulting in a white "Share modal" screen with a never-ending loading indicator.
  - Fixed an issue on iOS where push notifications were not preserved when opening the app via the Mattermost icon.
 
+----
+
 ## 1.15.2 Release
 - Release Date: January 16, 2019
 - Server Versions Supported: Server v4.10+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
@@ -2548,6 +2731,8 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
  - Fixed an issue where a quick double tap on switch of Channel Info created and extra on/off state.
  - Fixed an issue where iOS long press menu didn't have rounded corners.
 
+----
+
 ## 1.15.1 Release
 - Release Date: December 28, 2018
 - Server Versions Supported: Server v4.10+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
@@ -2559,6 +2744,8 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
  
 ### Bug Fixes
  - Fixed an issue preventing some users from logging in using OKTA.
+
+----
 
 ## 1.15.0 Release
 - Release Date: December 16, 2018
@@ -2595,6 +2782,8 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
  - Fixed an issue where "Close Channel" did not work properly when viewing two archived channels in a row.
  - Fixed an issue with "Critical Error" screen when trying to upload certain file types from "+" to the left of message input box.
 
+----
+
 ## 1.14.0 Release
 - Release Date: November 16, 2018
 - Server Versions Supported: Server v4.10+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
@@ -2616,6 +2805,7 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
 - Fixed an issue where the drawer was unable to close when showing the team list.
 - Fixed an issue where team sidebar showed + sign even without more teams to join.
 
+----
 
 ## 1.13.1 Release
 - Release Date: October 18, 2018
@@ -2625,6 +2815,8 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
 
 ### Bug Fixes
 - Fixed an issue preventing some users from authenticating using OKTA
+
+----
 
 ## v1.13.0 Release
 - Release Date: October 16, 2018
@@ -2664,6 +2856,8 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
 - Fixed an issue on Android where the keyboard sometimes overlapped the bottom of the post textbox.
 - Fixed an issue where there was no option to take video via "+" > "Take Photo or Video" on iOS.
 
+----
+
 ## v1.12.0 Release
 - Release Date: September 16, 2018
 - Server Versions Supported: Server v4.10+ is required, Self-Signed SSL Certificates are not supported
@@ -2688,6 +2882,7 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
 - Fixed an issue where archived channels sometimes remained in the drawer.
 - Fixed an issue where deactivated users were not marked as such in Direct Message search.
 
+----
 
 ## v1.11.0 Release
 - Release Date: August 16, 2018
@@ -2723,6 +2918,8 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
 - Fixed an issue where long usernames didn't wrap properly in the Account Settings menu.
 - Fixed an issue where DMs would not open if users were using "Jump To".
 - Fixed an issue where no message was displayed after removing a user from a channel with join/leave messages disabled.
+
+----
 
 ## v1.10.0 Release
 - Release Date: July 16, 2018
@@ -2764,7 +2961,9 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
  - Fixed an issue with being able to add own user to a Group Message channel.
  - Fixed an issue with not being able to reply from a push notification on iOS.
  - Fixed an issue where the app did not display Brazilian language.
- 
+
+----
+
 ## 1.9.3 Release
 - Release Date: July 04, 2018
 - Server Versions Supported: Server v4.0+ is required, Self-Signed SSL Certificates are not supported
@@ -2773,6 +2972,8 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
 
 - Fixed multiple issues causing app crashes
 - Fixed an issue on iOS devices with typing non-english characters in the post input box
+
+----
 
 ## 1.9.2 Release
 - Release Date: June 27, 2018
@@ -2790,6 +2991,8 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
 - Fixed an issue where files from the Microsoft app failed to upload
 - Fixed an issue on Android devices where sharing files changed the file extension of the attachment
 
+----
+
 ## 1.9.1 Release
 - Release Date: June 23, 2018
 - Server Versions Supported: Server v4.0+ is required, Self-Signed SSL Certificates are not supported
@@ -2798,6 +3001,8 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
 - Fixed an issue with typing lag on Android devices
 - Fixed an issue causing users to be logged out after upgrading to v1.9.0
 - Fixed an issue where the ``in:`` and ``from:`` modifiers were not being added to the search field
+
+----
 
 ## v1.9.0 Release
 - Release Date: June 16, 2018
@@ -2836,6 +3041,8 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
  - Fixed an issue where switching to a newly created channel from a push notification redirected a user to Town Square.
  - Fixed an issue where a public channel made private did not disappear automatically from clients not part of the channel.
 
+----
+
 ## v1.8.0 Release
 - Release Date: April 27, 2018
 - Server Versions Supported: Server v4.0+ is required, Self-Signed SSL Certificates are not supported
@@ -2868,6 +3075,8 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
 - Fixed an issue where private channels were listed in the public channels section of the channel autocomplete list
 - Fixed an issue where a profile images could not be updated from the app
 
+----
+
 ## v1.7.1 Release
 - Release Date: April 3, 2018
 - Server Versions Supported: Server v4.0+ is required, Self-Signed SSL Certificates are not supported
@@ -2875,6 +3084,8 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
 ### Bug Fixes
 - Fixed an issue where the iOS share extension sometimes crashed the Mattermost app
 - Fixed an issue preventing Markdown tables from rendering with some international characters 
+
+----
 
 ## v1.7.0 Release
 - Release Date: March 26, 2018
@@ -2913,6 +3124,8 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
 - Fixed an issue where logging into an account that is not on any team freezes the app
 - Fixed an issue on iOS causing the app to crash when taking a photo then attaching it to a post
 
+----
+
 ## v1.6.1 Release
 - Release Date: February 13, 2018
 - Server Versions Supported: Server v4.0+ is required, Self-Signed SSL Certificates are not supported
@@ -2921,6 +3134,8 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
 - Fixed an issue preventing the app from going to the correct channel when opened from a push notification
 - Fixed an issue on Android devices where the app could sometimes freeze on the launch screen
 - Fixed an issue on Samsung devices causing extra letters to be insterted when typing to filter user lists
+
+----
 
 ## v1.6.0 Release
 - Release Date: February 6, 2018
@@ -2947,10 +3162,14 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
 - Fixed an issue where posts would sometimes overlap
 - Fixed an issue where the app sometimes hangs on logout
 
+----
+
 ## v1.5.3 Release
 - Release Date: February 1, 2018
 - Server Versions Supported: Server v4.0+ is required, Self-Signed SSL Certificates are not supported
 - Fixed a login issue when connecting to servers running a Data Retention policy 
+
+----
 
 ## v1.5.2 Release
 - Release Date: January 12, 2018
@@ -2967,6 +3186,8 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
 - Fixed an issue with the mention badge flickering on the channel drawer icon when there were over 10 unread mentions
 - Fixed an issue with the app occasionally freezing when requesting the RefreshToken
 
+----
+
 ## v1.5.1 Release
 
 - Release Date: December 7, 2017
@@ -2976,6 +3197,8 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
 - Fixed an issue with the upgrade app screen showing with a transparent background
 - Fixed an issue with clearing or replying to notifications sometimes crashing the app on Android
 - Fixed an issue with the app sometimes crashing due to a missing function in the swiping control
+
+----
 
 ## v1.5 Release 
 
@@ -3009,6 +3232,8 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
 - Fixed an issue where the "Proceed" button on log in screen stopped working after pressing logout multiple times
 - HEIC images posted from iPhones now get converted to JPEG before uploading
 
+----
+
 ## v1.4.1 Release
 
 Release Date: Nov 15, 2017
@@ -3020,6 +3245,8 @@ Server Versions Supported: Server v4.0+ is required, Self-Signed SSL Certificate
 - Fixed issue with lag when pressing send button 
 - Fixed app crash when opening notification settings
 - Fixed various other bugs to reduce app crashes
+
+----
 
 ## v1.4 Release 
 
@@ -3034,6 +3261,8 @@ Server Versions Supported: Server v4.0+ is required, Self-Signed SSL Certificate
 ### Bug Fixes
 - Fixed issue with Android app sometimes showing a white screen when re-opening the app
 - Fixed an issue with orientation lock not working on Android 
+
+----
 
 ## v1.3 Release 
 
@@ -3069,6 +3298,8 @@ Server Versions Supported: Server v4.0+ is required, Self-Signed SSL Certificate
 - Fixed link rendering not working in certain cases
 - Fixed theme color issue with status bar on Android
 
+----
+
 ## v1.2 Release
 
 - Release Date: September 5, 2017 
@@ -3095,6 +3326,8 @@ Server Versions Supported: Server v4.0+ is required, Self-Signed SSL Certificate
 
 ### Known Issues
 - Using `+:emoji:` to react to a message is not yet supported 
+
+----
 
 ## v1.1 Release
 
@@ -3140,6 +3373,8 @@ Server Versions Supported: Server v4.0+ is required, Self-Signed SSL Certificate
 - Fixed create new public channel screen shown twice when trying to create a channel
 - Tapping on a post will no longer close the keyboard
 
+----
+
 ## v1.0.1 Release 
 
 - Release Date: July 20, 2017 
@@ -3149,6 +3384,8 @@ Server Versions Supported: Server v4.0+ is required, Self-Signed SSL Certificate
 - Huawei devices can now load messages
 - GitLab SSO now works if there is a trailing `/` in the server URL
 - Unsupported server versions now show a prompt clarifying that a server upgrade is necessary
+
+----
 
 ## v1.0 Release 
 
@@ -3191,6 +3428,8 @@ Server Versions Supported: Server v4.0+ is required, Self-Signed SSL Certificate
 
 Many thanks to all our contributors. In alphabetical order:
 - asaadmahmood, cpanato, csduarte, enahum, hmhealey, jarredwitt, JeffSchering, jasonblais, lfbrock, omar-dev, rthill
+
+----
 
 ## Beta Release
 

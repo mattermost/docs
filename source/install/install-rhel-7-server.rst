@@ -1,5 +1,4 @@
-:nosearch:
-..  _install-rhel-7-server:
+:orphan: :nosearch:
 
 Install Red Hat Enterprise Linux 7
 -----------------------------------

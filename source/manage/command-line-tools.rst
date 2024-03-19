@@ -8,7 +8,7 @@ In self-managed deployments, a ``mattermost`` command is available for configuri
 
 .. important::
 
-  From Mattermost v6.0, the majority of these CLI commands have been replaced with equivalents available using the `mmctl command line tool </manage/mmctl-command-line-tool.html>`__. However, `mattermost import </manage/command-line-tools.html#mattermost-import>`__ commands, `mattermost export </manage/command-line-tools.html#mattermost-export>`__ commands, and related subcommands, remain available and fully supported from Mattermost v6.0.
+  From Mattermost v6.0, the majority of these CLI commands have been replaced with equivalents available using the :doc:`mmctl command line tool </manage/mmctl-command-line-tool>`. However, :ref:`mattermost import <manage/command-line-tools:mattermost import>` commands, :ref:`mattermost export <manage/command-line-tools:mattermost export>` commands, and related subcommands, remain available and fully supported from Mattermost v6.0.
 
 These ``mattermost`` commands include the following functionality:
 
@@ -34,59 +34,57 @@ These ``mattermost`` commands include the following functionality:
 Use the CLI
 -----------
 
-.. tabs::
+.. tab:: Via Mattermost 
 
-  .. tab:: Via Mattermost 
+  To run the CLI commands, you must be in the Mattermost root directory. On a default installation of Mattermost, the root directory is ``/opt/mattermost``. If you followed our standard `installation process <../guides/administrator.html#installing-mattermost>`__, you must run the commands as the user ``mattermost``. The name of the executable is ``mattermost``, and it can be found in the ``/opt/mattermost/bin`` directory.
 
-    To run the CLI commands, you must be in the Mattermost root directory. On a default installation of Mattermost, the root directory is ``/opt/mattermost``. If you followed our standard `installation process <../guides/administrator.html#installing-mattermost>`__, you must run the commands as the user ``mattermost``. The name of the executable is ``mattermost``, and it can be found in the ``/opt/mattermost/bin`` directory.
+  For example, to get the Mattermost version on a default installation of Mattermost:
 
-    For example, to get the Mattermost version on a default installation of Mattermost:
+  .. code-block:: bash
 
-    .. code-block:: bash
+    cd /opt/mattermost/
+    sudo -u mattermost bin/mattermost version
 
-      cd /opt/mattermost/
-      sudo -u mattermost bin/mattermost version
+  .. note::
 
-    .. note::
+    - Ensure you run the Mattermost binary as the ``mattermost`` user. Running it as ``root`` user (for example) may cause complications with permissions as the binary initiates plugins and accesses various files when running CLI commands. Running the server as ``root`` may result in ownership of the plugins and files to be overwritten as well as other potential permissions errors.
+    - When running CLI commands on a Mattermost installation that has the configuration stored in the database, you might need to pass the database connection string as: 
 
-      - Ensure you run the Mattermost binary as the ``mattermost`` user. Running it as ``root`` user (for example) may cause complications with permissions as the binary initiates plugins and accesses various files when running CLI commands. Running the server as ``root`` may result in ownership of the plugins and files to be overwritten as well as other potential permissions errors.
-      - When running CLI commands on a Mattermost installation that has the configuration stored in the database, you might need to pass the database connection string as: 
+      .. code-block:: bash
 
-        .. code-block:: bash
- 
-          bin/mattermost --config="postgres://mmuser:mostest@localhost:5432/mattermost_test?sslmode=disable\u0026connect_timeout=10"
+        bin/mattermost --config="postgres://mmuser:mostest@localhost:5432/mattermost_test?sslmode=disable\u0026connect_timeout=10"
 
-  .. tab:: Via GitLab Omnibus
+.. tab:: Via GitLab Omnibus
 
-    On GitLab Omnibus, you must be in the following directory when you run CLI commands: ``/opt/gitlab/embedded/service/mattermost``. Also, you must run the commands as the user *mattermost* and specify the location of the configuration file. The executable is ``/opt/gitlab/embedded/bin/mattermost``.
+  On GitLab Omnibus, you must be in the following directory when you run CLI commands: ``/opt/gitlab/embedded/service/mattermost``. Also, you must run the commands as the user *mattermost* and specify the location of the configuration file. The executable is ``/opt/gitlab/embedded/bin/mattermost``.
 
-    For example, to get the Mattermost version on GitLab Omnibus:
+  For example, to get the Mattermost version on GitLab Omnibus:
 
-    .. code-block:: bash
+  .. code-block:: bash
 
-      cd /opt/gitlab/embedded/service/mattermost
-      sudo /opt/gitlab/embedded/bin/chpst -e /opt/gitlab/etc/mattermost/env -P -U mattermost:mattermost -u mattermost:mattermost /opt/gitlab/embedded/bin/mattermost version
+    cd /opt/gitlab/embedded/service/mattermost
+    sudo /opt/gitlab/embedded/bin/chpst -e /opt/gitlab/etc/mattermost/env -P -U mattermost:mattermost -u mattermost:mattermost /opt/gitlab/embedded/bin/mattermost version
 
-    .. note::
-   
-      The example commands on this documentation page are for a default installation of Mattermost. You must modify the commands so that they work on GitLab Omnibus.
+  .. note::
+  
+    The example commands on this documentation page are for a default installation of Mattermost. You must modify the commands so that they work on GitLab Omnibus.
 
-  .. tab:: Via Docker Install
+.. tab:: Via Docker Install
 
-    On Docker install, the ``/mattermost/bin`` directory was added to ``PATH``, so you can use the CLI directly with the ``docker exec`` command. Note that the container name may be ``mattermostdocker_app_1`` if you installed Mattermost with ``docker-compose.yml``.
+  On Docker install, the ``/mattermost/bin`` directory was added to ``PATH``, so you can use the CLI directly with the ``docker exec`` command. Note that the container name may be ``mattermostdocker_app_1`` if you installed Mattermost with ``docker-compose.yml``.
 
-    For example, to get the Mattermost version on a Docker Install:
+  For example, to get the Mattermost version on a Docker Install:
 
-    .. code-block:: bash
+  .. code-block:: bash
 
-      docker exec -it <your-mattermost-container-name> mattermost version
+    docker exec -it <your-mattermost-container-name> mattermost version
 
-  .. tab:: Via Docker Preview
+.. tab:: Via Docker Preview
 
-    The Docker Install tab details and command references below also apply to the `Mattermost docker preview image <https://github.com/mattermost/mattermost-docker-preview>`__.
+  The Docker Install tab details and command references below also apply to the `Mattermost docker preview image <https://github.com/mattermost/mattermost-docker-preview>`__.
 
 .. note::
-  - The CLI is run in a single node which bypasses the mechanisms that a `High Availability environment </scale/high-availability-cluster.html>`__ uses to perform actions across all nodes in the cluster. As a result, when running `CLI commands </manage/command-line-tools.html>`__ in a High Availability environment, tasks that change configuration settings require a server restart.
+  - The CLI is run in a single node which bypasses the mechanisms that a :doc:`High Availability environment </scale/high-availability-cluster>` uses to perform actions across all nodes in the cluster. As a result, when running :doc:`CLI commands </manage/command-line-tools>` in a High Availability environment, tasks that change configuration settings require a server restart.
   -  Parameters in CLI commands are order-specific.
   -  If special characters (``!``, ``|``, ``(``, ``)``, ``\``, ``'``, or ``"``) are used, the entire argument needs to be surrounded by single quotes, or the individual characters need to be escaped out.
 
@@ -258,7 +256,7 @@ Description
 
 Child Commands
   -  `mattermost export actiance`_ - Export data from Mattermost in Actiance XML format. Requires a Mattermost Enterprise subscription plan.
-  -  `mattermost export bulk`_ - Export data to a file compatible with the Mattermost `Bulk Import format </onboard/bulk-loading-data.html>`__. Deprecated in favor of `mmctl export commands </manage/mmctl-command-line-tool.html#mmctl-export>`__.
+  -  `mattermost export bulk`_ - Export data to a file compatible with the Mattermost :doc:`Bulk Import format </onboard/bulk-loading-data>`. Deprecated in favor of :ref:`mmctl export commands <manage/mmctl-command-line-tool:mmctl export>`.
   -  `mattermost export csv`_ - Export data from Mattermost in CSV format. Requires a Mattermost Enterprise subscription plan.
   -  `mattermost export global-relay-zip`_ - Export data from Mattermost into a ZIP file containing emails to send to Global Relay for debug and testing purposes only. Requires a Mattermost Enterprise subscription plan.
   -  `mattermost export schedule`_ - Schedule an export job
@@ -288,7 +286,7 @@ Options
 mattermost export bulk
 ~~~~~~~~~~~~~~~~~~~~~~
 
-From Mattermost v6.0, this command has been deprecated in favor of `mmctl export commands </manage/mmctl-command-line-tool.html#mmctl-export>`__ as the supported way to export data out of Mattermost.
+From Mattermost v6.0, this command has been deprecated in favor of :ref:`mmctl export commands <manage/mmctl-command-line-tool:mmctl export>` as the supported way to export data out of Mattermost.
 
 mattermost export csv
 ~~~~~~~~~~~~~~~~~~~~~
@@ -381,18 +379,18 @@ Description
   Import data into Mattermost.
 
 Child Command
-  -  `mattermost import bulk`_ - Import a Mattermost Bulk Import File. Deprecated in favor of `mmctl import commands </manage/mmctl-command-line-tool.html#mmctl-import>`__.
+  -  `mattermost import bulk`_ - Import a Mattermost Bulk Import File. Deprecated in favor of :ref:`mmctl import commands <manage/mmctl-command-line-tool:mmctl import>`.
   -  `mattermost import slack`_ - Import a team from Slack.
 
 mattermost import bulk
 ~~~~~~~~~~~~~~~~~~~~~~
 
-From Mattermost v6.0, this command has been deprecated in favor of `mmctl import commands </manage/mmctl-command-line-tool.html#mmctl-import>`__ as the supported way to import data into Mattermost.
+From Mattermost v6.0, this command has been deprecated in favor of :ref:`mmctl import commands <manage/mmctl-command-line-tool:mmctl import>` as the supported way to import data into Mattermost.
 
 mattermost import slack
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-See the `mmctl import commands </manage/mmctl-command-line-tool.html#mmctl-import>`__ documentation as the preferred way to import Slack data into Mattermost.
+See the :ref:`mmctl import commands <manage/mmctl-command-line-tool:mmctl import>` documentation as the preferred way to import Slack data into Mattermost.
 
 Description
   Import a team from a Slack export zip file.
@@ -445,7 +443,7 @@ mattermost version
 
 .. note::
 
-  From Mattermost v6.5, this CLI command no longer interacts with the database. The `mattermost db migrate </manage/command-line-tools.html#mattermost-db-migrate>`__ CLI command has been introduced to trigger schema migrations.
+  From Mattermost v6.5, this CLI command no longer interacts with the database. The :ref:`mattermost db migrate <manage/command-line-tools:mattermost db migrate>` CLI command has been introduced to trigger schema migrations.
 
 Desription
     Displays Mattermost version information.
@@ -463,7 +461,7 @@ Troubleshooting
 Executing a command hangs and doesn't complete
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you have Bleve search indexing enabled, temporarily disable it in **System Console > Experimental > Bleve** and run the command again. You can also optionally use the new `mmctl Command Line Tool </manage/mmctl-command-line-tool.html>`_.
+If you have Bleve search indexing enabled, temporarily disable it in **System Console > Experimental > Bleve** and run the command again. You can also optionally use the new :doc:`mmctl Command Line Tool </manage/mmctl-command-line-tool>`.
 
 Bleve does not support multiple processes opening and manipulating the same index. Therefore, if the Mattermost server is running, an attempt to run the CLI will lock when trying to open the indeces.
 
