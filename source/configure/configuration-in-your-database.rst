@@ -119,7 +119,7 @@ Here's a complete ``mattermost.service`` file with the ``EnvironmentFile`` line 
 Migrate configuration from ``config.json``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-You can use the `mmctl config migrate </manage/mmctl-command-line-tool.html#mmctl-config-migrate>`__ command to migrate the configuration.
+You can use the :ref:`mmctl config migrate <manage/mmctl-command-line-tool:mmctl config migrate>` command to migrate the configuration.
 
 .. note::
  
@@ -127,7 +127,7 @@ You can use the `mmctl config migrate </manage/mmctl-command-line-tool.html#mmct
 
 .. warning::
    
-   When migrating config, Mattermost will incorporate configuration from any existing ``MM_*`` environment variables set in the current shell. See `Environment Variables  </configure/configuration-settings.html>`_
+   When migrating config, Mattermost will incorporate configuration from any existing ``MM_*`` environment variables set in the current shell. See :doc:`Environment Variables  </configure/configuration-settings>`
    
 As with the environment file, you'll have to escape any single quotes in the database connection string. Also, any existing SAML certificates will be migrated into the database as well so they are available for all servers in the cluster.
 

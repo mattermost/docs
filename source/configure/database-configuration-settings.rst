@@ -107,8 +107,8 @@ Data source
 |       [...]                                                                                                                              |
 |    }                                                                                                                                     |
 |                                                                                                                                          |
-| **Note**: If you’re using MySQL 8.0 or later, the default collation has changed to ``utf8mb4_0900_ai_ci``. See our `Database Software    |
-| Requirements </install/software-hardware-requirements.html>`__ documentation for details on MySQL 8.0 support.                           |
+| **Note**: If you’re using MySQL 8.0 or later, the default collation has changed to ``utf8mb4_0900_ai_ci``. See our                       |
+| :doc:`Database Software Requirements </install/software-hardware-requirements>` documentation for details on MySQL 8.0 support.          |
 |                                                                                                                                          |
 | **To use TLS with MySQL databases**                                                                                                      |
 |                                                                                                                                          |
@@ -349,7 +349,7 @@ Disable database search
 
 +---------------------------------------------------------------+------------------------------------------------------------------------------+
 | When other search engines are configured, such as             | - System Config path: **Environment > Database**                             |
-| `Elasticsearch </scale/elasticsearch.html>`__,                | - ``config.json`` setting: ``".SqlSettings.DisableDatabaseSearch: false",``  |
+| :doc:`Elasticsearch </scale/elasticsearch>`,                  | - ``config.json`` setting: ``".SqlSettings.DisableDatabaseSearch: false",``  |
 | the database can be disabled to perform searches.             | - Environment variable: ``MM_SQLSETTINGS_DISABLEDATABASESEARCH``             |
 |                                                               |                                                                              |
 | - **true**: Disables the use of the database to perform       |                                                                              |
@@ -360,8 +360,8 @@ Disable database search
 +---------------------------------------------------------------+------------------------------------------------------------------------------+
 | Search behavior in Mattermost depends on which search engines are enabled.                                                                   |
 |                                                                                                                                              |
-| - When `Elasticsearch </scale/elasticsearch.html>`__ is enabled, Mattermost will try to use it first.                                        |
-| - If Elasticsearch fails or is disabled, Mattermost will attempt to use `Bleve </deploy/bleve-search.html>`__, if enabled. If this occurs,   |
+| - When :doc:`Elasticsearch </scale/elasticsearch>` is enabled, Mattermost will try to use it first.                                          |
+| - If Elasticsearch fails or is disabled, Mattermost will attempt to use :doc:`Bleve </deploy/bleve-search>`, if enabled. If this occurs,     |
 |   you will see the warning ``Encountered error on SearchPostsInTeamForUser.``                                                                |
 | - If both Elasticsearch and Bleve fail or are disabled, Mattermost tries to search the database directly, if this is enabled.                |
 | - If all of the above methods fail or are disabled, the search results will be empty.                                                        |
@@ -506,106 +506,103 @@ Replica lag settings
 | **Notes**:                                                                                                                                |
 |                                                                                                                                           |
 | - The ``QueryAbsoluteLag`` and ``QueryTimeLag`` queries must return a single row.                                                         |
-| - To properly monitor this you must setup `performance monitoring </scale/performance-monitoring.html>`__ for Mattermost.                 |
+| - To properly monitor this you must setup :doc:`performance monitoring </scale/performance-monitoring>` for Mattermost.                   |
 +--------------------------------------------------------+----------------------------------------------------------------------------------+
 
 1. Configure the replica lag metric based on your database type. See the following tabs for details on configuring this for each database type.
 
-  .. tabs::
+  .. tab:: AWS Aurora
 
-    .. tab:: AWS Aurora
+    Add the configuration highlighted below to your ``SqlSettings.ReplicaLagSettings`` array. You only need to add this once because replication statistics for AWS Aurora nodes are visible across all server instances that are members of the cluster. Be sure to change the ``DataSource`` to point to a single node in the group. 
 
-      Add the configuration highlighted below to your ``SqlSettings.ReplicaLagSettings`` array. You only need to add this once because replication statistics for AWS Aurora nodes are visible across all server instances that are members of the cluster. Be sure to change the ``DataSource`` to point to a single node in the group. 
+    For more information on Aurora replication stats, see the `AWS Aurora documentaion <https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora_global_db_instance_status.html>`__.
 
-      For more information on Aurora replication stats, see the `AWS Aurora documentaion <https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora_global_db_instance_status.html>`__.
+    **Example:**
 
-          **Example:**
+    .. code-block:: json
+      :emphasize-lines: 4,5,6,7,8
 
-          .. code-block:: json
-            :emphasize-lines: 4,5,6,7,8
-    
-            {
-              "SqlSettings": {
-                  "ReplicaLagSettings": [
-                    {
-                        "DataSource": "replica-1",
-                        "QueryAbsoluteLag": "select server_id, highest_lsn_rcvd-durable_lsn as bindiff from aurora_global_db_instance_status() where server_id=<>",
-                        "QueryTimeLag": "select server_id, visibility_lag_in_msec from aurora_global_db_instance_status() where server_id=<>"
-                    }
-                  ]
+      {
+        "SqlSettings": {
+            "ReplicaLagSettings": [
+              {
+                  "DataSource": "replica-1",
+                  "QueryAbsoluteLag": "select server_id, highest_lsn_rcvd-durable_lsn as bindiff from aurora_global_db_instance_status() where server_id=<>",
+                  "QueryTimeLag": "select server_id, visibility_lag_in_msec from aurora_global_db_instance_status() where server_id=<>"
               }
-            }
+            ]
+        }
+      }
 
-    .. tab:: MySQL Group Replication
+  .. tab:: MySQL Group Replication
 
-      Add the configuration highlighted below to your ``SqlSettings.ReplicaLagSettings`` array. You only need to add this once because replication statistics for all nodes are shared across all server instances that are members of the MySQL replication group. Be sure to change the ``DataSource`` to point to a single node in the group. 
+    Add the configuration highlighted below to your ``SqlSettings.ReplicaLagSettings`` array. You only need to add this once because replication statistics for all nodes are shared across all server instances that are members of the MySQL replication group. Be sure to change the ``DataSource`` to point to a single node in the group. 
 
-      For more information on group replication stats, see the `MySQL documentation <https://dev.mysql.com/doc/refman/8.0/en/group-replication-replication-group-member-stats.html>`__.
+    For more information on group replication stats, see the `MySQL documentation <https://dev.mysql.com/doc/refman/8.0/en/group-replication-replication-group-member-stats.html>`__.
 
-          **Example:**
+    **Example:**
 
-          .. code-block:: json
-            :emphasize-lines: 4,5,6,7,8
-    
-            {
-              "SqlSettings": {
-                  "ReplicaLagSettings": [
-                    {
-                        "DataSource": "replica-1",
-                        "QueryAbsoluteLag": "select member_id, count_transactions_remote_in_applier_queue FROM performance_schema.replication_group_member_stats where member_id=<>",
-                        "QueryTimeLag": ""
-                    }
-                  ]
+    .. code-block:: json
+      :emphasize-lines: 4,5,6,7,8
+
+      {
+        "SqlSettings": {
+            "ReplicaLagSettings": [
+              {
+                  "DataSource": "replica-1",
+                  "QueryAbsoluteLag": "select member_id, count_transactions_remote_in_applier_queue FROM performance_schema.replication_group_member_stats where member_id=<>",
+                  "QueryTimeLag": ""
               }
-            }
+            ]
+        }
+      }
 
-    .. tab:: PostgreSQL replication slots
+  .. tab:: PostgreSQL replication slots
 
-      1. Add the configuration highlighted below to your ``SqlSettings.ReplicaLagSettings`` array. This query should run against the **primary** node in your cluster, to do this change the ``DataSource`` to match the `SqlSettings.DataSource <#data-source>`__ setting you have configured. 
+    1. Add the configuration highlighted below to your ``SqlSettings.ReplicaLagSettings`` array. This query should run against the **primary** node in your cluster, to do this change the ``DataSource`` to match the `SqlSettings.DataSource <#data-source>`__ setting you have configured. 
 
-          For more information on pg_stat_replication, see the `PostgreSQL documentation <https://www.postgresql.org/docs/current/monitoring-stats.html#MONITORING-PG-STAT-REPLICATION-VIEW>`__.
+    For more information on pg_stat_replication, see the `PostgreSQL documentation <https://www.postgresql.org/docs/current/monitoring-stats.html#MONITORING-PG-STAT-REPLICATION-VIEW>`__.
 
-              **Example:**
+        **Example:**
 
-              .. code-block:: json
-                :emphasize-lines: 4,5,6,7,8
-        
-                {
-                  "SqlSettings": {
-                      "ReplicaLagSettings": [
-                        {
-                            "DataSource": "postgres://mmuser:password@localhost:5432/mattermost_test?sslmode=disable&connect_timeout=10.",
-                            "QueryAbsoluteLag": "select usename, pg_wal_lsn_diff(pg_current_wal_lsn(),replay_lsn) as metric from pg_stat_replication;",
-                            "QueryTimeLag": ""
-                        }
-                      ]
+        .. code-block:: json
+          :emphasize-lines: 4,5,6,7,8
+
+          {
+            "SqlSettings": {
+                "ReplicaLagSettings": [
+                  {
+                      "DataSource": "postgres://mmuser:password@localhost:5432/mattermost_test?sslmode=disable&connect_timeout=10.",
+                      "QueryAbsoluteLag": "select usename, pg_wal_lsn_diff(pg_current_wal_lsn(),replay_lsn) as metric from pg_stat_replication;",
+                      "QueryTimeLag": ""
                   }
-                }
+                ]
+            }
+          }
 
-      2. Grant permissions to the database user for ``pg_monitor``. This user should be the same user configured above in the ``DataSource`` string.
+    2. Grant permissions to the database user for ``pg_monitor``. This user should be the same user configured above in the ``DataSource`` string.
 
-          For more information on roles, see the `PostgreSQL documentation <https://www.postgresql.org/docs/10/default-roles.html>`__.
+      For more information on roles, see the `PostgreSQL documentation <https://www.postgresql.org/docs/10/default-roles.html>`__.
 
-          .. code-block:: bash
+      .. code-block:: bash
 
-            sudo -u postgres psql
-            postgres=# GRANT pg_monitor TO mmuser;
+        sudo -u postgres psql
+        postgres=# GRANT pg_monitor TO mmuser;
 
-      
 2. Save the config and restart all Mattermost nodes.
 3. Navigate to your Grafana instance monitoring Mattermost and open the `Mattermost Performance Monitoring v2 <https://grafana.com/grafana/dashboards/15582-mattermost-performance-monitoring-v2/>`__ dashboard.
 4. The ``QueryTimeLag`` chart is already setup for you utilizing the existing ``Replica Lag`` chart. If using ``QueryAbsoluteLag`` metric clone the ``Replica Lag`` chart and edit the query to use the below absolute lag metrics and modify the title to be ``Replica Lag Absolute``.
 
-    .. code-block:: none
+  .. code-block:: none
 
-      mattermost_db_replica_lag_abs{instance=~"$server"}
+    mattermost_db_replica_lag_abs{instance=~"$server"}
 
-    .. image::  ../../source/images/database-configuration-settings-replica-lag-grafana-1.jpg
-      :alt: A screenshot showing how to clone a chart within Grafana
+  .. image::  ../../source/images/database-configuration-settings-replica-lag-grafana-1.jpg
+    :alt: A screenshot showing how to clone a chart within Grafana
 
 
-    .. image:: ../../source/images/database-configuration-settings-replica-lag-grafana-2.jpg
-      :alt: A screenshot showing the specific edits to make to the cloned grafana chart.
+  .. image:: ../../source/images/database-configuration-settings-replica-lag-grafana-2.jpg
+    :alt: A screenshot showing the specific edits to make to the cloned grafana chart.
 
 
 .. config:setting:: database-replicamonitorintervalseconds

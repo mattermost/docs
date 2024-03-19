@@ -45,9 +45,6 @@ Enable publicly-shared boards
 |                                                                                                                                             |
 | - From Mattermost v7.7 through Mattermost v7.10, this configuration setting applies to Mattermost Boards available as an official           |
 |   in-product vertical.                                                                                                                      |
-| - See the `Focalboard <guides/focalboard-plugin.html>`__ documentation for details on `sharing boards links with other                      |
-|   users <boards/share-and-collaborate.html#share-a-board-publicly>`__.                                                                      |
-| - Cloud admins can't modify this configuration setting.                                                                                     |
 +------------------------------------------------------+--------------------------------------------------------------------------------------+
 
 Bleve settings
@@ -142,23 +139,7 @@ Supported for Mattermost server v5.1.0 and later, and Mattermost Mobile apps v1.
 Disable legacy MFA API endpoint
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. tabs::
-
-   .. tab:: Mattermost v6.0 onwards
-
-      Deprecated. Not used in Mattermost v6.0 and later.
-
-   .. tab:: Mattermost v5.39 and earlier
-
-      This setting isn't available in the System Console and can only be set in ``config.json``.
-
-      **True**: Disables the legacy ``checkMfa`` endpoint, which is only required for Mattermost mobile apps v1.16 or earlier when using multi-factor authentication (MFA). Recommended to set to ``true`` for additional security hardening.
-
-      **False**: Keeps the legacy ``checkMfa`` endpoint enabled to support mobile versions 1.16 and earlier. Keeping the endpoint enabled creates an information disclosure about whether a user has set up MFA.
-
-      +--------------------------------------------------------------------------------------------------------------+
-      | This feature's ``config.json`` setting is ``"DisableLegacyMFA": true,`` with options ``true`` and ``false``. |
-      +--------------------------------------------------------------------------------------------------------------+
+Deprecated. Not used in Mattermost v6.0 and later.
 
 ----
 
@@ -236,44 +217,12 @@ Enable team directory
 Allow team admins to edit others' posts
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. tabs::
-
-   .. tab:: Mattermost v6.0 onwards
-
-      Deprecated. Not used in Mattermost v6.0 and later.
-
-   .. tab:: Mattermost v5.39 and earlier
-
-      This permission is stored in the database and can be modified using the System Console user interface.
-
-      **True**: Team Admins and System Admins can edit other users' posts.
-
-      **False**: Only System Admins can edit other users' posts.
-
-      .. note::
-
-         System Admins and Team Admins can always delete other users' posts. This setting is only available for Team Edition servers. Enterprise Edition servers can use `Advanced Permissions </onboard/advanced-permissions.html>`__ to configure this permission.
+Deprecated. Not used in Mattermost v6.0 and later.
 
 Enable team creation
 ~~~~~~~~~~~~~~~~~~~~~
 
-.. tabs::
-
-   .. tab:: Mattermost v6.0 onwards
-
-      Deprecated. Not used in Mattermost v6.0 and later.
-
-   .. tab:: Mattermost v5.39 and earlier
-
-      After upgrading to v4.9 (released April 16, 2018), changing this ``config.json`` value no longer takes effect because this permission has been migrated to the database. This permission can be modified using the System Console user interface.
-
-      **True**: Ability to create a new team is enabled for all users.
-
-      **False**: Only System Admins can create teams from the team selection page. The **Create A New Team** button is hidden.
-
-      +---------------------------------------------------------------------------------------------------------------+
-      | This feature's ``config.json`` setting is ``"EnableTeamCreation": true`` with options ``true`` and ``false``. |
-      +---------------------------------------------------------------------------------------------------------------+
+Deprecated. Not used in Mattermost v6.0 and later.
 
 ----
 
@@ -301,25 +250,7 @@ Legacy sidebar settings
 Enable legacy sidebar
 ~~~~~~~~~~~~~~~~~~~~~
 
-.. tabs::
-
-   .. tab:: Mattermost v6.0 onwards
-
-      Deprecated. Not used in Mattermost v6.0 and later.
-
-   .. tab:: Mattermost v5.39 and earlier
-
-      *Not available in Mattermost Cloud*
-
-      This setting re-enables the legacy sidebar functionality for all users on this server. We strongly recommend System Admins disable this setting so users can access `enhanced sidebar features <https://mattermost.com/blog/custom-collapsible-channel-categories/>`__, including custom, collapsible channel categories, drag and drop, unread filtering, channel sorting options, and more.
-
-      **False**: Users can access all new channel sidebar features, including custom, collapsible channel categories, drag and drop, unread filtering, channel sorting options, and more. See `the documentation </messaging/organizing-your-sidebar.html>`_ for more information about these features.
-
-      **True**: When enabled, the legacy sidebar is enabled for all users on this server and users cannot access any new channel sidebar features. The legacy channel sidebar is scheduled to be deprecated, and is only recommended if your deployment is experiencing bugs or other issues with the new channel sidebar.
-
-      +----------------------------------------------------------------------------------------------------------------+
-      | This feature's ``config.json`` setting is ``"EnableLegacySidebar": false`` with options ``true`` or ``false``. |
-      +----------------------------------------------------------------------------------------------------------------+
+Deprecated. Not used in Mattermost v6.0 and later.
 
 Experimental sidebar features
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -327,7 +258,7 @@ Experimental sidebar features
 *Deprecated. Not used in Mattermost v5.32 and later*
 
 .. note::
-   This experimental configuration setting has been deprecated, and the ability to organize channels in the sidebar has been promoted to general availability from Mattermost v5.32. See the `Organizing Your Sidebar documentation </messaging/organizing-your-sidebar.html#customizing-your-sidebar>`__ for details on customizing the sidebar.
+   This experimental configuration setting has been deprecated, and the ability to organize channels in the sidebar has been promoted to general availability from Mattermost v5.32. See the :doc:`Organizing Your Sidebar documentation </preferences/customize-your-channel-sidebar>` for details on customizing the sidebar.
 
 **Disabled**: Users cannot access the experimental channel sidebar feature set.
 
@@ -342,89 +273,17 @@ Experimental sidebar features
 Sidebar organization
 ~~~~~~~~~~~~~~~~~~~~
 
-.. tabs::
-
-   .. tab:: Mattermost v6.0 onwards
-
-      Deprecated. Not used in Mattermost v6.0 and later.
-
-   .. tab:: Mattermost v5.39 and earlier
-
-      *Not available in Mattermost Cloud*
-
-      This setting applies to the legacy sidebar only. You must enable the `Enable Legacy Sidebar </configure/configuration-settings.html#enable-legacy-sidebar>`__ configuration setting to see and enable this functionality in the System Console.
-
-      .. note::
-
-         This experimental setting is not recommended for production environments. The new channel sidebar matches and exceeds the feature set offered by this configuration setting.
-
-      We strongly recommend that you leave the **Enable Legacy Sidebar** configuration setting disabled so users can access new channel sidebar features, including custom, collapsible channel categories, drag and drop, unread filtering, channel sorting options, and more. See `the channel sidebar documentation </messaging/organizing-your-sidebar.html#organizing-your-sidebar>`__ for more information about these features.
-
-      **True**: Enables channel sidebar organization options in **Settings > Sidebar > Channel grouping and sorting**. Includes options for grouping unread channels, sorting channels by most recent post, and combining all channel types into a single list.
-
-      **False**: Hides the channel sidebar organization options in **Settings > Sidebar > Channel grouping and sorting**.
-
-      +-----------------------------------------------------------------------------------------------------------------------------+
-      | This feature's ``config.json`` setting is ``"ExperimentalChannelOrganization": false`` with options ``true`` and ``false``. |
-      +-----------------------------------------------------------------------------------------------------------------------------+
+Deprecated. Not used in Mattermost v6.0 and later.
 
 Enable X to leave channels from left hand sidebar
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. tabs::
-
-   .. tab:: Mattermost v6.0 onwards
-
-      Deprecated. Not used in Mattermost v6.0 and later.
-
-   .. tab:: Mattermost v5.39 and earlier
-
-      *Not available in Mattermost Cloud*
-
-      This setting applies to the legacy sidebar only. You must first enable the `Enable Legacy Sidebar </configure/configuration-settings.html#enable-legacy-sidebar>`__ configuration setting if you want to see and enable this functionality in the System Console.
-
-      .. note::
-
-         This experimental setting is not recommended for production environments. The new channel sidebar matches and exceeds the feature set offered by this configuration setting.
-
-      We strongly recommend that you leave the **Enable Legacy Sidebar** configuration setting disabled so users can access new channel sidebar features, including custom, collapsible channel categories, drag and drop, unread filtering, channel sorting options, and more. See `the channel sidebar documentation </messaging/organizing-your-sidebar.html>`_ for more information about these features.
-
-      **True**: Users can leave public and private channels by clicking the "x" beside the channel name.
-
-      **False**: Users must use the **Leave Channel** option from the channel menu to leave channels.
-
-      +---------------------------------------------------------------------------------------------------------------------------+
-      | This feature's ``config.json`` setting is ``"EnableXToLeaveChannelsFromLHS": false`` with options ``true`` and ``false``. |
-      +---------------------------------------------------------------------------------------------------------------------------+
+Deprecated. Not used in Mattermost v6.0 and later.
 
 Autoclose direct messages in sidebar
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. tabs::
-
-   .. tab:: Mattermost v6.0 onwards
-
-      Deprecated. Not used in Mattermost v6.0 and later.
-
-   .. tab:: Mattermost v5.39 and earlier
-
-      *Not available in Mattermost Cloud*
-
-      This setting applies to the legacy sidebar only. You must enable the `Enable Legacy Sidebar </configure/configuration-settings.html#enable-legacy-sidebar>`__ configuration setting to see and enable this functionality in the System Console.
-
-      .. note::
-
-         This experimental setting is not recommended for production environments. The new channel sidebar matches and exceeds the feature set offered by this configuration setting.
-
-      We strongly recommend that you leave the **Enable Legacy Sidebar** configuration setting disabled so users can access new channel sidebar features, including custom, collapsible channel categories, drag and drop, unread filtering, channel sorting options, and more. See `the channel sidebar documentation </messaging/organizing-your-sidebar.html>`_ for more information about these features.
-
-      **True**: By default, direct message conversations with no activity for 7 days will be hidden from the sidebar. Users can disable this in **Settings > Sidebar**.
-
-      **False**: Conversations remain in the sidebar until they are manually closed.
-
-      +-----------------------------------------------------------------------------------------------------------------------+
-      | This feature's ``config.json`` setting is ``"CloseUnusedDirectMessages": false`` with options ``true`` and ``false``. |
-      +-----------------------------------------------------------------------------------------------------------------------+
+Deprecated. Not used in Mattermost v6.0 and later.
 
 ----
 
@@ -434,56 +293,12 @@ Town Square channel settings
 Town Square is hidden in left hand sidebar
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. tabs::
-
-   .. tab:: Mattermost v6.0 onwards
-
-      Deprecated. Not used in Mattermost v6.0 and later.
-
-   .. tab:: Mattermost v5.39 and earlier
-
-      .. raw:: html
-
-       <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
-      This setting applies to the legacy sidebar only. You must enable the `Enable Legacy Sidebar </configure/configuration-settings.html#enable-legacy-sidebar>`__ configuration setting to see and enable this functionality in the System Console.
-
-      .. note::
-
-         This experimental setting is not recommended for production environments. The new channel sidebar matches and exceeds the feature set offered by this configuration setting.
-
-      We strongly recommend that you leave the **Enable Legacy Sidebar** configuration setting disabled so users can access new channel sidebar features, including custom, collapsible channel categories, drag and drop, unread filtering, channel sorting options, and more. See `the channel sidebar documentation </messaging/organizing-your-sidebar.html>`_ for more information about these features.
-
-      **True**: Hides Town Square in the left-hand sidebar if there are no unread messages in the channel.
-
-      **False**: Town Square is always visible in the left-hand sidebar even if all messages have been read.
-
-      +-----------------------------------------------------------------------------------------------------------------------------+
-      | This feature's ``config.json`` setting is ``"ExperimentalHideTownSquareinLHS": false`` with options ``true`` and ``false``. |
-      +-----------------------------------------------------------------------------------------------------------------------------+
+Deprecated. Not used in Mattermost v6.0 and later.
 
 Town Square is read-only
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. tabs::
-
-   .. tab:: Mattermost v6.0 onwards
-
-      In Mattermost v.6.0, this feature has been deprecated in favor of `channel moderation </manage/team-channel-members.html#channel-moderation>`__ which allows you to set any channel as read-only, including Town Square.
-
-   .. tab:: Mattermost v5.39 and earlier
-
-      .. raw:: html
-
-       <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
-      **True**: Only System Admins can post in Town Square. Other members are not able to post, reply, upload files, react using emojis,  pin messages to Town Square, nor are they able to change the channel name, header, or purpose.
-
-      **False**: Anyone can post in Town Square.
-
-      +------------------------------------------------------------------------------------------------------------------------------+
-      | This feature's ``config.json`` setting is ``"ExperimentalTownSquareIsReadOnly": false`` with options ``true`` and ``false``. |
-      +------------------------------------------------------------------------------------------------------------------------------+
+From Mattermost v.6.0, this feature has been deprecated in favor of :ref:`channel moderation <manage/team-channel-members:channel moderation>` which allows you to set any channel as read-only, including Town Square.
 
 ----
 
@@ -493,29 +308,7 @@ Custom emoji settings
 Restrict custom emoji creation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. tabs::
-
-   .. tab:: Mattermost v6.0 onwards
-
-      Deprecated. Not used in Mattermost v6.0 and later.
-
-   .. tab:: Mattermost v5.39 and earlier
-
-      After upgrading to v4.9 (released April 16th, 2018) or later, changing the ``config.json`` value no longer has an effect because this setting has been migrated to the database. This setting can be modified using the System Console user interface.
-
-      .. raw:: html
-
-       <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
-      **Allow everyone to create custom emoji**: Allows everyone to add custom emojis from the emoji picker.
-
-      **Allow System and Team Admins to create custom emoji**: The **Custom Emoji** option is hidden from the emoji picker for users who are not System or Team Admins.
-
-      **Only allow System Admins to create custom emoji**: The **Custom Emoji** option is hidden from the emoji picker for users who are not System Admins.
-
-      +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-      | This feature's ``config.json`` setting is ``"RestrictCustomEmojiCreation": "all"`` with options ``"all"``, ``"admin"``, and ``"system_admin"`` for the above settings, respectively. |
-      +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+Deprecated. Not used in Mattermost v6.0 and later.
 
 ----
 
@@ -613,30 +406,8 @@ Integrations settings
 Restrict managing integrations to Admins
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. tabs::
+Deprecated. Not used in Mattermost v6.0 and later.
 
-   .. tab:: Mattermost v6.0 onwards
-
-      Deprecated. Not used in Mattermost v6.0 and later.
-
-   .. tab:: Mattermost v5.39 and earlier
-
-      After upgrading to v4.9 (released April 16th, 2018) or later, changing the ``config.json`` value no longer has an effect because this setting has been migrated to the database. This setting can be modified using the System Console user interface.
-
-      .. raw:: html
-
-       <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
-**True**: Webhooks and slash commands can only be created, edited, and viewed by Team and System Admins, and OAuth 2.0 applications by System Admins. Integrations are available to all users after they have been created by the Admin.
-
-**False**: Any team members can create webhooks, slash commands` and OAuth 2.0 applications from **Product menu > Integrations**.
-
-.. note::
-  OAuth 2.0 applications can be authorized by all users if they have the **Client ID** and **Client Secret** for an app setup on the server.
-
-+------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableOnlyAdminIntegrations": true`` with options ``true`` and ``false``. |
-+------------------------------------------------------------------------------------------------------------------------+
 
 Patch React DOM used by plugins
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -645,7 +416,7 @@ Patch React DOM used by plugins
 
 This setting enables the patching of the React DOM library when loading web app plugins so that the plugin uses the version matching the web app. This should only be needed temporarily after upgrading to Mattermost v7.7 for plugins that have not been updated yet. Changes to this setting require a server restart before taking effect.
 
-See the `Important Upgrade Notes <https://docs.mattermost.com/upgrade/important-upgrade-notes.html>`__ for more information.
+See the :doc:`Important Upgrade Notes </upgrade/important-upgrade-notes>` for more information.
 
 **True**: Web app plugins that package their own version of React DOM are patched to instead use the version of React DOM provided by the web app.
 
@@ -664,7 +435,7 @@ Permission policy settings
 
 .. note::
 
-   Permission policy settings are available in Enterprise Edition E10 and E20. From v5.0, these settings are found in the `Advanced Permissions </onboard/advanced-permissions.html>`__ page instead of configuration settings.
+   Permission policy settings are available in Enterprise Edition E10 and E20. From v5.0, these settings are found in the :doc:`Advanced Permissions </onboard/advanced-permissions>` page instead of configuration settings.
 
 Enable sending team invites from
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -673,7 +444,7 @@ Enable sending team invites from
 
 .. note::
 
-   From v5.0 this has been replaced by advanced permissions which offers Admins a way to restrict actions in Mattermost to authorized users only. See the `Advanced Permissions documentation </onboard/advanced-permissions.html>`_ for more details.
+   From v5.0 this has been replaced by advanced permissions which offers Admins a way to restrict actions in Mattermost to authorized users only. See the :doc:`Advanced Permissions documentation </onboard/advanced-permissions>` for more details.
 
 Set policy on who can invite others to a team using the **Send Email Invite**, **Get Team Invite Link**, and **Add Members to Team** options on the product menu. If **Get Team Invite Link** is used to share a link, you can expire the invite code from **Team Settings > Invite Code** after the desired users have joined the team. Options include:
 
@@ -694,7 +465,7 @@ Enable public channel creation for
 
 .. note::
 
-   From v5.0 this has been replaced by advanced permissions which offers Admins a way to restrict actions in Mattermost to authorized users only. See the `Advanced Permissions documentation </onboard/advanced-permissions.html>`_ for more details.
+   From v5.0 this has been replaced by advanced permissions which offers Admins a way to restrict actions in Mattermost to authorized users only. See the :doc:`Advanced Permissions documentation </onboard/advanced-permissions>` for more details.
 
 Restrict the permission level required to create public channels.
 
@@ -715,7 +486,7 @@ Enable public channel renaming for
 
 .. note::
 
-   From v5.0 this has been replaced by advanced permissions which offers Admins a way to restrict actions in Mattermost to authorized users only. See the `Advanced Permissions documentation </onboard/advanced-permissions.html>`_ for more details.
+   From v5.0 this has been replaced by advanced permissions which offers Admins a way to restrict actions in Mattermost to authorized users only. See the :doc:`Advanced Permissions documentation </onboard/advanced-permissions>` for more details.
 
 Restrict the permission level required to rename and set the header or purpose for Public channels.
 
@@ -738,9 +509,9 @@ Enable public channel deletion for
 
 .. note::
 
-   From v5.0 this has been replaced by advanced permissions which offers Admins a way to restrict actions in Mattermost to authorized users only. See the `Advanced Permissions documentation </onboard/advanced-permissions.html>`_ for more details.
+   From v5.0 this has been replaced by advanced permissions which offers Admins a way to restrict actions in Mattermost to authorized users only. See the :doc:`Advanced Permissions documentation </onboard/advanced-permissions>` for more details.
 
-Restrict the permission level required to delete Public channels. Deleted channels can be recovered from the database using a `command line tool </manage/command-line-tools.html>`__.
+Restrict the permission level required to delete Public channels. Deleted channels can be recovered from the database using a :doc:`command line tool </manage/command-line-tools>`.
 
 **All channel members**: Allow all channel members to delete public channels.
 
@@ -761,7 +532,7 @@ Enable private channel creation for
 
 .. note::
 
-   From v5.0 this has been replaced by advanced permissions which offers Admins a way to restrict actions in Mattermost to authorized users only. See the `Advanced Permissions documentation </onboard/advanced-permissions.html>`_ for more details.
+   From v5.0 this has been replaced by advanced permissions which offers Admins a way to restrict actions in Mattermost to authorized users only. See the :doc:`Advanced Permissions documentation </onboard/advanced-permissions>` for more details.
 
 Restrict the permission level required to create private channels.
 
@@ -782,7 +553,7 @@ Enable private channel renaming for
 
 .. note::
 
-   From v5.0 this has been replaced by advanced permissions which offers Admins a way to restrict actions in Mattermost to authorized users only. See the `Advanced Permissions documentation </onboard/advanced-permissions.html>`_ for more details.
+   From v5.0 this has been replaced by advanced permissions which offers Admins a way to restrict actions in Mattermost to authorized users only. See the :doc:`Advanced Permissions documentation </onboard/advanced-permissions>` for more details.
 
 Restrict the permission level required to rename and set the header or purpose for Private channels.
 
@@ -805,7 +576,7 @@ Enable managing of private channel members for
 
 .. note::
 
-   From v5.0 this has been replaced by advanced permissions which offers Admins a way to restrict actions in Mattermost to authorized users only. See the `Advanced Permissions documentation </onboard/advanced-permissions.html>`_ for more details.
+   From v5.0 this has been replaced by advanced permissions which offers Admins a way to restrict actions in Mattermost to authorized users only. See the :doc:`Advanced Permissions documentation </onboard/advanced-permissions>` for more details.
 
 Set policy on who can add and remove members from Private channels.
 
@@ -828,9 +599,9 @@ Enable private channel deletion for
 
 .. note::
 
-   From v5.0 this has been replaced by advanced permissions which offers Admins a way to restrict actions in Mattermost to authorized users only. See the `Advanced Permissions documentation </onboard/advanced-permissions.html>`_ for more details.
+   From v5.0 this has been replaced by advanced permissions which offers Admins a way to restrict actions in Mattermost to authorized users only. See the :doc:`Advanced Permissions documentation </onboard/advanced-permissions>` for more details.
 
-Restrict the permission level required to delete Private channels. Deleted channels can be recovered from the database using a `command line tool </manage/command-line-tools.html>`__.
+Restrict the permission level required to delete Private channels. Deleted channels can be recovered from the database using a :doc:`command line tool </manage/command-line-tools>`.
 
 **All channel members**: Allow all channel members to delete private channels.
 
@@ -851,7 +622,7 @@ Allow which users to delete messages
 
 .. note::
 
-   From v5.0 this has been replaced by advanced permissions which offers Admins a way to restrict actions in Mattermost to authorized users only. See the `Advanced Permissions documentation </onboard/advanced-permissions.html>`_ for more details.
+   From v5.0 this has been replaced by advanced permissions which offers Admins a way to restrict actions in Mattermost to authorized users only. See the :doc:`Advanced Permissions documentation </onboard/advanced-permissions>` for more details.
 
 Restrict the permission level required to delete messages. Team Admins, Channel Admins, and System Admins can delete messages only in channels where they are members. Messages can be deleted any time.
 
@@ -872,7 +643,7 @@ Allow users to edit their messages
 
 .. note::
 
-   From v5.0 this has been replaced by advanced permissions which offers Admins a way to restrict actions in Mattermost to authorized users only. See the `Advanced Permissions documentation </onboard/advanced-permissions.html>`_ for more details.
+   From v5.0 this has been replaced by advanced permissions which offers Admins a way to restrict actions in Mattermost to authorized users only. See the :doc:`Advanced Permissions documentation </onboard/advanced-permissions>` for more details.
 
 Set the time limit that users have to edit their messages after posting.
 
@@ -1019,7 +790,7 @@ Enable AD/LDAP group sync
 
 **False**: Disables AD/LDAP Group Sync and removes **User Management > Groups** from the System Console.
 
-For more information on AD/LDAP Group Sync, please see the `AD/LDAP Group Sync documentation <https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html>`__.
+For more information on AD/LDAP Group Sync, please see the :doc:`AD/LDAP Group Sync documentation </onboard/ad-ldap-groups-synchronization>`.
 
 +-----------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ExperimentalLdapGroupSync": false`` with options ``true`` and ``false``. |

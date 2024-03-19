@@ -6,53 +6,63 @@ Format messages
 
 .. |bold-icon| image:: ../images/format-bold_F0264.svg
   :alt: Bold message text using the Bold icon in the message formatting toolbar.
+  :class: theme-icon
 
 .. |italics-icon| image:: ../images/format-italic_F0277.svg
   :alt: Italicize message text using the Italic icon in the message formatting toolbar.
+  :class: theme-icon
 
 .. |strikeout-icon| image:: ../images/format-strikethrough-variant_F0281.svg
   :alt: Strike out message text using the Strikethrough icon in the message formatting toolbar.
+  :class: theme-icon
 
 .. |headings-icon| image:: ../images/format-header_E81D.svg
   :alt: Format message text as a heading using the Heading icon in the message formatting toolbar. Headings 1 through 6 are supported.
+  :class: theme-icon
 
 .. |links-icon| image:: ../images/link-variant_F0339.svg
   :alt: Add a message link using the Link icon in the message formatting toolbar.
+  :class: theme-icon
 
 .. |attachments-icon| image:: ../images/paperclip_F03E2.svg
   :alt: Add a message attachment using the Upload files icon in the message formatting toolbar.
+  :class: theme-icon
 
 .. |numbered-icon| image:: ../images/format-list-numbered_F027B.svg
   :alt: Format message text as a numbered list using the Numbered list icon in the message formatting toolbar.
+  :class: theme-icon
 
 .. |bullets-icon| image:: ../images/format-list-bulleted_F0279.svg
   :alt: Format message text as a bulleted list using the Bulleted list icon in the message formatting toolbar.
+  :class: theme-icon
 
 .. |quotes-icon| image:: ../images/format-quote-open_F0757.svg
   :alt: Format message text as a quotation using the Quote icon in the message formatting toolbar.
+  :class: theme-icon
 
 .. |code-icon| image:: ../images/code-tags_F0174.svg
   :alt: Format message text as code using the Code icon in the message formatting toolbar.
+  :class: theme-icon
 
 .. |emoji-icon| image:: ../images/emoticon-outline_F01F2.svg
   :alt: Add emojis or GIFs to message text using the Emoji/Gif picker icon in the message formatting toolbar.
+  :class: theme-icon
 
 .. |hide-formatting-icon| image:: ../images/format-letter-case_F0B34.svg
   :alt: Hide formatting options in the message formatting toolbar using the Show/Hide Formatting icon.
+  :class: theme-icon
 
 .. |preview-icon| image:: ../images/eye-outline_F06D0.svg
   :alt: Review your message text formatting using the Show/Hide preview icon in the message formatting toolbar.
+  :class: theme-icon
 
 .. |settings-icon| image:: ../images/settings-outline_F08BB.svg
   :alt: Access and manage your Channels settings using the Gear icon.
+  :class: theme-icon
 
-.. |message-priority-icon| image:: ../images/Priority-Message-Icon.svg
+.. |message-priority-icon| image:: ../images/alert-circle-outline_F05D6.svg
   :alt: Mark a message as important or urgent using the Priority Message icon.
-
-.. contents:: On this page
-  :backlinks: top
-  :local:
-  :depth: 2
+  :class: theme-icon
 
 .. include:: ../_static/badges/academy-message-formatting.rst
   :start-after: :nosearch:
@@ -69,14 +79,14 @@ From Mattermost v7.0, you can format your messages in Mattermost using the messa
 The message formatting toolbar offers the following formatting options:
 
 +-------------------------------------------------------------------+-------------------------+
-| **Formatting option**                                             | **Icon**                | 
+| **Formatting option**                                             | **Icon**                |
 +===================================================================+=========================+
 | `Bold, italicize, or strike out text <#use-markdown>`_            | |bold-icon|             |
-|                                                                   | |italics-icon|          | 
-|                                                                   | |strikeout-icon|        | 
+|                                                                   | |italics-icon|          |
+|                                                                   | |strikeout-icon|        |
 +-------------------------------------------------------------------+-------------------------+
 | Add `headings <#headings>`_, `links <#links>`_,                   | |headings-icon|         |
-| or attachments                                                    | |links-icon|            | 
+| or attachments                                                    | |links-icon|            |
 |                                                                   | |attachments-icon|      |
 +-------------------------------------------------------------------+-------------------------+
 | Format a numbered list, a bulleted list, quoted text, or          | |numbered-icon|         |
@@ -84,9 +94,9 @@ The message formatting toolbar offers the following formatting options:
 |                                                                   | |quotes-icon|           |
 |                                                                   | |code-icon|             |
 +-------------------------------------------------------------------+-------------------------+
-| `Add emojis or GIFs </collaborate/react-with-emojis-gifs.html>`__ | |emoji-icon|            |
+| :doc:`Add emojis or GIFs </collaborate/react-with-emojis-gifs>`   | |emoji-icon|            |
 +-------------------------------------------------------------------+-------------------------+
-| `Set message priority </collaborate/message-priority.html>`__     | |message-priority-icon| |
+| :doc:`Set message priority </collaborate/message-priority>`       | |message-priority-icon| |
 +-------------------------------------------------------------------+-------------------------+
 
 Review how your message formatting will look when the message is sent by selecting the **Show/Hide Preview** |preview-icon| icon. Return to your draft message by selecting the icon again.
@@ -94,7 +104,7 @@ Review how your message formatting will look when the message is sent by selecti
 .. tip::
 
   - Hide the formatting options by selecting the **Show/Hide Formatting** |hide-formatting-icon| icon. Select the icon again to show the formatting options. 
-  - You can control whether post formatting is rendered within the message formatting editor. When disabled, raw text is shown. See the `Channels customization </preferences/manage-advanced-options>`__ documentation for details. 
+  - You can control whether post formatting is rendered within the message formatting editor. When disabled, raw text is shown. See the :doc:`Channels customization </preferences/manage-advanced-options>` documentation for details. 
  
 Use Markdown
 -------------
@@ -282,6 +292,7 @@ Example:
       fmt.Println("Hello, 世界")
   }
   ```
+
 Renders as:
 
 **GitHub Theme**
@@ -318,7 +329,7 @@ Renders as: ``monospace``.
 In-line images
 ~~~~~~~~~~~~~~
 
-In-line images are images added within lines of text. You can control whether all in-line images over 100px in height are automatically collapsed or expanded in messages by setting a `user preference </preferences/manage-your-display-options>`__, or by using the ``/collapse`` and ``/expand`` slash commands.
+In-line images are images added within lines of text. You can control whether all in-line images over 100px in height are automatically collapsed or expanded in messages by setting a :doc:`user preference </preferences/manage-your-display-options>`, or by using the ``/collapse`` and ``/expand`` slash commands.
 
 To add in-line images to text, use an exclamation mark ``!`` followed by the ``alt text`` in square brackets ``[ ]``, then the ``image URL`` in round brackets ``( )``. You can add hover text after the link by placing the text in quotes ``" "``.
 
@@ -440,40 +451,38 @@ Renders as:
 Math Formulas
 ~~~~~~~~~~~~~
 
-.. tabs::
+.. tab:: Using Inline LaTeX
 
-  .. tab:: Using Inline LaTeX
+  You can create formulas that display inline using LaTeX. Use the dollar sign ($) symbol at the beginning and end of each formula.
 
-    You can create formulas that display inline using LaTeX. Use the dollar sign ($) symbol at the beginning and end of each formula.
+  .. note::
 
-    .. note::
+    This feature is :ref:`disabled by default <configure/site-configuration-settings:enable inline latex rendering>`. Contact your system admin to enable this setting in **System Console > Site Configuration > Posts** to use this feature.
 
-      This feature is `disabled by default </configure/configuration-settings.html#enable-inline-latex-rendering>`__. Contact your system admin to enable this setting in **System Console > Site Configuration > Posts** to use this feature.
+  .. code-block:: none
 
-    .. code-block:: none
+    $X_k = \sum_{n=0}^{2N-1} x_n \cos \left[\frac{\pi}{N} \left(n+\frac{1}{2}+\frac{N}{2}\right) \left(k+\frac{1}{2}\right) \right]$
 
-      $X_k = \sum_{n=0}^{2N-1} x_n \cos \left[\frac{\pi}{N} \left(n+\frac{1}{2}+\frac{N}{2}\right) \left(k+\frac{1}{2}\right) \right]$
-  
-    Renders as:
+  Renders as:
 
-    .. image:: ../images/latex-inline.png
-      :alt: An inline LaTeX math equation sample.
-      
-  .. tab:: Using LaTeX in Code Blocks
+  .. image:: ../images/latex-inline.png
+    :alt: An inline LaTeX math equation sample.
+    
+.. tab:: Using LaTeX in Code Blocks
 
-    Create formulas as code blocks by using LaTeX in a ``latex`` `code blocks <#code-blocks>`__. 
+  Create formulas as code blocks by using LaTeX in a ``latex`` `code blocks <#code-blocks>`__. 
 
-    .. note::
+  .. note::
 
-      This feature is `disabled by default </configure/configuration-settings.html#enable-latex-code-block-rendering>`__. Contact your system admin to enable this setting in **System Console > Site Configuration > Posts** to use this feature.
+    This feature is :ref:`disabled by default <configure/site-configuration-settings:enable latex code block rendering>`. Contact your system admin to enable this setting in **System Console > Site Configuration > Posts** to use this feature.
 
-    .. code-block:: none
+  .. code-block:: none
 
-      ```latex
-      X_k = \sum_{n=0}^{2N-1} x_n \cos \left[\frac{\pi}{N} \left(n+\frac{1}{2}+\frac{N}{2}\right) \left(k+\frac{1}{2}\right) \right]
-      ```
+    ```latex
+    X_k = \sum_{n=0}^{2N-1} x_n \cos \left[\frac{\pi}{N} \left(n+\frac{1}{2}+\frac{N}{2}\right) \left(k+\frac{1}{2}\right) \right]
+    ```
 
-    Renders as:
+  Renders as:
 
-    .. image:: ../images/latex-codeblock.png
-      :alt: A LaTeX code block math equation sample.
+  .. image:: ../images/latex-codeblock.png
+    :alt: A LaTeX code block math equation sample.

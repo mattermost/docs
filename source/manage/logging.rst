@@ -4,9 +4,6 @@ Mattermost logging
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-.. contents:: On this page
-    :depth: 2
-
 By default, all Mattermost editions write logs to both the console and to the ``mattermost.log`` file in a machine-readable JSON format.
 
 .. note::
@@ -22,10 +19,10 @@ Console logs feature verbose debug level log messages written to the console usi
 
 Customize the following console logs by going to **System Console > Environment > Logging** or by editing the ``config.json`` file directly:
 
-- `Stop outputting console logs </configure/environment-configuration-settings.html#output-logs-to-console>`__
-- `Adjust console log level </configure/environment-configuration-settings.html#console-log-level>`__ 
-- `Output console logs as plain text </configure/environment-configuration-settings.html#output-console-logs-as-json>`__ & `colorize plain text log level details </configure/environment-configuration-settings.html#colorize-plain-text-console-logs>`__
-- `Omit webhook debug messages </configure/environment-configuration-settings.html#enable-webhook-debugging>`__
+- :ref:`Stop outputting console logs <configure/environment-configuration-settings:output logs to console>`
+- :ref:`Adjust console log level <configure/environment-configuration-settings:console log level>` 
+- :ref:`Output console logs as plain text <configure/environment-configuration-settings:output console logs as json>` & :ref:`colorize plain text log level details <configure/environment-configuration-settings:colorize plain text console logs>`
+- :ref:`Omit webhook debug messages <configure/environment-configuration-settings:enable webhook debugging>`
 
 File logs
 ---------
@@ -34,10 +31,10 @@ File logs feature info level log messages including errors and information aroun
 
 Customize the following file logs by going to **System Console > Environment > Logging** or by editing the ``config.json`` file directly:
 
-- `Stop outputting file logs <https://docs.mattermost.com/configure/environment-configuration-settings.html#output-logs-to-file>`__
-- `Adjust file log level <https://docs.mattermost.com/configure/environment-configuration-settings.html#file-log-level>`__ 
-- `Output file logs as plain text <https://docs.mattermost.com/configure/environment-configuration-settings.html#output-file-logs-as-json>`__
-- `Change where the file is stored <https://docs.mattermost.com/configure/environment-configuration-settings.html#file-log-directory>`__
+- :ref:`Stop outputting file logs <configure/environment-configuration-settings:output logs to file>`
+- :ref:`Adjust file log level <configure/environment-configuration-settings:file log level>` 
+- :ref:`Output file logs as plain text <configure/environment-configuration-settings:output file logs as json>`
+- :ref:`Change where the file is stored <configure/environment-configuration-settings:file log directory>`
 
 You can optionally output log records to any combination of `console <#console-target-configuration-options>`__, `local file <#file-target-configuration-options>`__, `syslog <#syslog-target-configuration-options>`__, and `TCP socket <#tcp-target-configuration-options>`__ targets, each featuring additional customization. See `Advanced Logging <#advanced-logging>`__ for details.
 
@@ -121,14 +118,14 @@ By default, Mattermost doesn’t write audit logs locally to a file on the serve
 - Logs are recorded asynchronously to reduce latency to the caller, and are stored separately from general logging.
 - During short spans of inability to write to targets, the audit records buffer in memory with a configurable maximum record cap. Based on typical audit record volumes, it could take many minutes to fill the buffer. After that, the records are dropped, and the record drop event is logged.
 
-You can define `whether audit events are output to file </configure/experimental-configuration-settings.html#write-audit-files-locally>`__, `the name and path of the audit logging file </configure/experimental-configuration-settings.html#file-name>`__, the `maximum size of each file </configure/experimental-configuration-settings.html#file-max-size-mb>`__, the `maximum number of days before triggering a rotation </configure/experimental-configuration-settings.html#file-max-age-days>`__, the `maximum number of rotated files to keep </configure/experimental-configuration-settings.html#file-max-backups>`__, `whether files are compressed using GZIP </configure/experimental-configuration-settings.html#file-compress>`__, and `how many audit records can be queued/buffered </configure/experimental-configuration-settings.html#file-max-queue-size>`__ at any point in time when writing to a file.
+You can define :ref:`whether audit events are output to file <configure/experimental-configuration-settings:write audit files locally>`, :ref:`the name and path of the audit logging file <configure/experimental-configuration-settings:file name>`, the :ref:`maximum size of each file <configure/experimental-configuration-settings:file max size mb>`, the :ref:`maximum number of days before triggering a rotation <configure/experimental-configuration-settings:file max age days>`, the :ref:`maximum number of rotated files to keep <configure/experimental-configuration-settings:file max backups>`, :ref:`whether files are compressed using GZIP <configure/experimental-configuration-settings:file compress>`, and :ref:`how many audit records can be queued/buffered <configure/experimental-configuration-settings:file max queue size>` at any point in time when writing to a file.
 
 In addition, you can output audit log records to any combination of `console <#console-target-configuration-options>`__, `local file <#file-target-configuration-options>`__, `syslog <#syslog-target-configuration-options>`__, and `TCP socket <#tcp-target-configuration-options>`__ targets, each featuring additional customization. See `Advanced Logging <#advanced-logging>`__ for details.  
 
 .. warning::
     
     - From Mattermost v7.2, experimental audit logging beta is a breaking change from previous releases in cases where customers looking to parse previous audit logs with the new format.
-    - The format and content of an audit log record has changed to become standardized for all events using a `standard JSON schema </comply/embedded-json-audit-log-schema.html>`__.
+    - The format and content of an audit log record has changed to become standardized for all events using a :doc:`standard JSON schema </comply/embedded-json-audit-log-schema>`.
     - Existing tools which ingest or parse audit log records may need to be modified.
 
 ----
@@ -165,90 +162,88 @@ Configuring advanced logging includes the following steps:
 Define advanced log output
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. tabs::
+.. tab:: Multi-line JSON
 
-    .. tab:: Multi-line JSON
+    In the example below, file output is written to ``./logs/audit.log`` in plain text and includes all audit log levels & events. Older logs are kept for 1 day, and up to a total of 10 backup log files are kept at a time. Logs are rotated using gzip when the maximum size of the log file reaches 500 MB. A maximum of 1000 audit records can be queued/buffered while writing to the file.
 
-        In the example below, file output is written to ``./logs/audit.log`` in plain text and includes all audit log levels & events. Older logs are kept for 1 day, and up to a total of 10 backup log files are kept at a time. Logs are rotated using gzip when the maximum size of the log file reaches 500 MB. A maximum of 1000 audit records can be queued/buffered while writing to the file.
+    .. code-block:: JSON
 
-        .. code-block:: JSON
-
-            "AdvancedLoggingJSON": {
-                "file_1": {
-                    "Type": "file",
-                    "Format": "plain",
-                    "Levels": [
-                    { "id": 100, "name": "audit-api" },
-                    { "id": 101, "name": "audit-content" },
-                    { "id": 102, "name": "audit-permissions" },
-                    { "id": 103, "name": "audit-cli" }
-                    ],
-                    "Options": {
-                        "Compress": true,
-                        "Filename": "./logs/audit.log",
-                        "MaxAgeDays": 1,
-                        "MaxBackups": 10,
-                        "MaxSizeMB": 500
-                    },
-                    "MaxQueueSize": 1000
-                }
+        "AdvancedLoggingJSON": {
+            "file_1": {
+                "Type": "file",
+                "Format": "plain",
+                "Levels": [
+                { "id": 100, "name": "audit-api" },
+                { "id": 101, "name": "audit-content" },
+                { "id": 102, "name": "audit-permissions" },
+                { "id": 103, "name": "audit-cli" }
+                ],
+                "Options": {
+                    "Compress": true,
+                    "Filename": "./logs/audit.log",
+                    "MaxAgeDays": 1,
+                    "MaxBackups": 10,
+                    "MaxSizeMB": 500
+                },
+                    MaxQueueSize": 1000
             }
+        }
 
-    .. tab:: Filespec
+.. tab:: Filespec
 
-        Advanced logging configuration can be pointed to a filespec to another configuration file, rather than multi-line JSON, to keep the config.json file tidy:
+    Advanced logging configuration can be pointed to a filespec to another configuration file, rather than multi-line JSON, to keep the config.json file tidy:
 
-        .. code:: JSON
+    .. code:: JSON
 
-            "AdvancedLoggingJSON": "/path/to/audit_log_config.json"
+        "AdvancedLoggingJSON": "/path/to/audit_log_config.json"
 
-        The separate configuration file includes the multi-line JSON instead.
+    The separate configuration file includes the multi-line JSON instead.
 
-        In the example below, the first output is written to the console in plain text and includes all audit log levels, events, and command outputs. A pipe ``|`` delimiter is placed between fields. 
+    In the example below, the first output is written to the console in plain text and includes all audit log levels, events, and command outputs. A pipe ``|`` delimiter is placed between fields. 
 
-        A second output is written to ``./logs/audit.log`` in plain text in a machine-readable JSON format and includes all audit log levels, events, and command outputs. Older logs are kept for 1 day, and up to a total of 10 backup log files are kept at a time. Logs are rotated using GZIP when the maximum size of the log file reaches 500 MB. A maximum of 1000 audit records can be queued/buffered while writing to the file.
+    A second output is written to ``./logs/audit.log`` in plain text in a machine-readable JSON format and includes all audit log levels, events, and command outputs. Older logs are kept for 1 day, and up to a total of 10 backup log files are kept at a time. Logs are rotated using GZIP when the maximum size of the log file reaches 500 MB. A maximum of 1000 audit records can be queued/buffered while writing to the file.
 
-        Contents of ``audit_log_config.json`` file:
+    Contents of ``audit_log_config.json`` file:
 
-        .. code-block:: JSON
+    .. code-block:: JSON
 
-            {
-            "sample-console": {
-                "type": "console",
-                "format": "plain",
-                "format_options": {
+        {
+        "sample-console": {
+            "type": "console",
+            "format": "plain",
+            "format_options": {
                     "delim": " | "
-                },
-                "levels": [
-                { "id": 100, "name": "audit-api" },
-                { "id": 101, "name": "audit-content" },
-                { "id": 102, "name": "audit-permissions" },
-                { "id": 103, "name": "audit-cli" }
-                ],
-                "options": {
-                "out": "stdout"
-                },
-                "maxqueuesize": 1000
             },
-            "sample-file": {
-                "type": "file",
-                "format": "json",
-                "levels": [
-                { "id": 100, "name": "audit-api" },
-                { "id": 101, "name": "audit-content" },
-                { "id": 102, "name": "audit-permissions" },
-                { "id": 103, "name": "audit-cli" }
-                ],
-                "options": {
-                "compress": true,
-                "filename": "./logs/audit.log",
-                "max_age": 1,
-                "max_backups": 10,
-                "max_size": 500
-                },
-                "maxqueuesize": 1000
-            }
-            }
+            "levels": [
+            { "id": 100, "name": "audit-api" },
+            { "id": 101, "name": "audit-content" },
+            { "id": 102, "name": "audit-permissions" },
+            { "id": 103, "name": "audit-cli" }
+            ],
+            "options": {
+            "out": "stdout"
+            },
+            "maxqueuesize": 1000
+        },
+        "sample-file": {
+            "type": "file",
+            "format": "json",
+            "levels": [
+            { "id": 100, "name": "audit-api" },
+            { "id": 101, "name": "audit-content" },
+            { "id": 102, "name": "audit-permissions" },
+            { "id": 103, "name": "audit-cli" }
+            ],
+            "options": {
+            "compress": true,
+            "filename": "./logs/audit.log",
+            "max_age": 1,
+            "max_backups": 10,
+            "max_size": 500
+            },
+            "maxqueuesize": 1000
+        }
+        }
 
 Specify destination targets
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -484,9 +479,9 @@ Yes. When updating the audit log configuration via REST API, mmctl, or System Co
 How do I omit incoming webhook details from the logs?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-See `enable-webhook-debugging </configure/environment-configuration-settings.html#enable-webhook-debugging>`__
+See :ref:`enable-webhook-debugging <configure/environment-configuration-settings:enable webhook debugging>`
 
 How do I adjust the maximum log field size?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-See `maximum-field-size </configure/environment-configuration-settings.html#maximum-field-size>`__
+See :ref:`maximum-field-size <configure/environment-configuration-settings:maximum field size>`

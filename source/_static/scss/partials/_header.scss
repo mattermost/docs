@@ -1,0 +1,45 @@
+.site-header {
+    @media (max-width:1350px) {
+        padding: 0 24px;
+    }
+}
+
+.site-header__col--logo {
+    color: #1B1D21;
+
+    a {
+        color: inherit !important;
+    }
+}
+
+body:not([data-custom-theme="light"]) {
+    .site-header__col--logo {
+        color: #fff;
+    }
+
+    .site-header {
+        background: #000;
+    }
+}
+
+@media (max-width: 67em) {
+    .mobile-header {
+        padding-left: 16px;
+        top: 60px;
+    }
+
+    .nav-container {
+        padding: 0;
+    }
+}
+
+@media (max-width: 770px) {
+    .notification-bar {
+        height: 48px;
+        align-items: center;
+    }
+
+    .notification-bar__close {
+        top: 0;
+    }
+}

@@ -44,7 +44,7 @@ Create an OAuth application with GitLab
 
 The next part of the process is setting up the GitLab SSO integration.
 
-To create the OAuth application to allow Mattermost to use GitLab as the authentication provider, please follow the instructions `here </onboard/sso-gitlab.html>`__.
+To create the OAuth application to allow Mattermost to use GitLab as the authentication provider, please follow the instructions :doc:`here </onboard/sso-gitlab>`.
 
 Please take note of the ``Application ID``, ``Application Secret Key``, ``User API Endpoint``, ``Auth Endpoint`` and ``Token Endpoint`` settings, as these values will be used later.
 
@@ -75,7 +75,7 @@ Here's a light way to install it:
 
 Once you've deployed the GitLab instance, follow the instructions for the `initial login <https://docs.gitlab.com/charts/installation/deployment.html#initial-login>`__.
 
-If you're following a process other than the one provided and experience authentication and/or deployment issues, let us know in our `Troubleshooting forum </install/troubleshooting.html>`__ and we'll be happy to help.
+If you're following a process other than the one provided and experience authentication and/or deployment issues, let us know in our :doc:`Troubleshooting forum </install/troubleshooting>` and we'll be happy to help.
 
 Deploy Mattermost Team Edition Helm Chart with GitLab Helm Chart
 ----------------------------------------------------------------
@@ -94,7 +94,7 @@ Prerequisites:
   
 To deploy Mattermost Team Edition with GitLab Helm Chart, disable the running ``MySql`` chart and configure ``InitContainer`` and ``Environment variables`` in ``values.yaml``. The list below indicates the values that should be changed. Note that we assume the GitLab chart name is ``gitlab``.
 
-- ``<your-mattermost-domain>``: URL that users will use to access Mattermost, matching the `Site URL field </configure/configuration-settings.html#site-url>`__, e.g. ``mattermost.gitlab.example.com``.
+- ``<your-mattermost-domain>``: URL that users will use to access Mattermost, matching the :ref:`Site URL field <configure/environment-configuration-settings:site url>`, e.g. ``mattermost.gitlab.example.com``.
 - ``<name-of-your-tls-secret>``: A name to store the TLS certificate for your domains, e.g. ``mattermost-tls``.
 - ``<ingress-class>``: The ingress class. In a basic GitLab deployment, this is ``gitlab-nginx``.
 - ``<ingress-provider>``: The ingress provider. In a basic GitLab deployment, this is ``nginx``.

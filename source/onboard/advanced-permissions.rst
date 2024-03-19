@@ -11,7 +11,7 @@ Two permission schemes are provided in Mattermost:
 * **System Scheme**: Applies permissions universally across all teams and channels.
 * **Team Override Schemes**: Allow admins to customize permissions for each team (available in Mattermost Professional and Enterprise).
 
-This document describes the types of permissions that can be given to users of Mattermost using schemes as well as channel settings and roles. The `permissions backend documentation </onboard/advanced-permissions-backend-infrastructure.html>`__ provides additional technical details around permissions.
+This document describes the types of permissions that can be given to users of Mattermost using schemes as well as channel settings and roles. The :doc:`permissions backend documentation </onboard/advanced-permissions-backend-infrastructure>` provides additional technical details around permissions.
   
 Permissions structure
 ----------------------
@@ -44,7 +44,7 @@ Team override scheme
 
  <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
-On systems with multiple `Mattermost teams </collaborate/organize-using-teams.html#single-team-versus-multiple-teams>`__, each team may operate and collaborate in a unique way. Team Override Schemes give Admins the flexibility to tailor permissions to the needs of each team.
+On systems with multiple :ref:`Mattermost teams <collaborate/organize-using-teams:single team versus multiple teams>`, each team may operate and collaborate in a unique way. Team Override Schemes give Admins the flexibility to tailor permissions to the needs of each team.
 
 When you use this permission scheme:
 
@@ -64,7 +64,7 @@ The channel permissions interface is accessed in **System Console > User Managem
 Channel moderation
 ~~~~~~~~~~~~~~~~~~~
 
-This content has moved to `team and channel management </manage/team-channel-members.html>`__.
+This content has moved to :doc:`team and channel management </manage/team-channel-members>`.
 
 Supplementary roles
 ~~~~~~~~~~~~~~~~~~~~
@@ -214,14 +214,14 @@ Administration tools
 
 There are a number of API and mmctl tools available for admins to help in configuring and troubleshooting the permissions system:
 
-1. Reset all permissions to the default on new installations using the `mmctl permissions reset </manage/mmctl-command-line-tool.html#mmctl-permissions-reset>`__ command.
+1. Reset all permissions to the default on new installations using the :ref:`mmctl permissions reset <manage/mmctl-command-line-tool:mmctl permissions reset>` command.
 2. Use the `GetAllRoles <https://api.mattermost.com/#tag/roles/operation/GetAllRoles>`__ API endpoint to get a list of all roles.
-3. Add permissions to a role using the `mmctl permissions add </manage/mmctl-command-line-tool.html#mmctl-permissions-add>`__ command.
+3. Add permissions to a role using the :ref:`mmctl permissions add <manage/mmctl-command-line-tool:mmctl permissions add>` command.
 
 Backend infrastructure
 ----------------------
 
-Technical admins or developers looking for a deeper understanding of the permissions backend can refer to our `permissions backend documentation </onboard/advanced-permissions-backend-infrastructure.html>`__.
+Technical admins or developers looking for a deeper understanding of the permissions backend can refer to our :doc:`permissions backend documentation </onboard/advanced-permissions-backend-infrastructure>`.
 
 Glossary
 --------

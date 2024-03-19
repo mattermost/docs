@@ -1,49 +1,40 @@
-..  _docker-local-machine:
-
 Install Mattermost via Docker
 ==============================
 
 .. include:: ../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
 
-.. contents:: On this page
-  :backlinks: top
-  :local:
-  :depth: 1
-
 Install Docker
 ---------------
 
 If you don't have Docker installed, follow the instructions below based on your operating system:
 
-.. tabs::
+.. tab:: macOS
 
-  .. tab:: macOS
+  Install `Docker for Mac <https://docs.docker.com/installation/mac/>`__.
 
-    Install `Docker for Mac <https://docs.docker.com/installation/mac/>`__.
+.. tab:: Windows 10
 
-  .. tab:: Windows 10
+  Install `Docker for Windows <https://docs.docker.com/installation/windows/>`__.
 
-    Install `Docker for Windows <https://docs.docker.com/installation/windows/>`__.
+.. tab:: Ubuntu
 
-  .. tab:: Ubuntu
+  Follow the `Install Docker Engine on Ubuntu <https://docs.docker.com/engine/install/ubuntu/>`__ documentation, or you can use the Docker package from the Ubuntu repositories:
 
-    Follow the `Install Docker Engine on Ubuntu <https://docs.docker.com/engine/install/ubuntu/>`__ documentation, or you can use the Docker package from the Ubuntu repositories:
+  .. code:: bash
 
-    .. code:: bash
+    sudo apt update
+    sudo apt install docker.io
+    sudo systemctl start docker
 
-      sudo apt update
-      sudo apt install docker.io
-      sudo systemctl start docker
+.. tab:: Fedora
 
-  .. tab:: Fedora
+  Follow the `Install Docker Engine on Fedora <https://docs.docker.com/engine/installation/linux/fedora/>`__ documentation, or you can use the Moby package (Moby is the FOSS upstream project to Docker) from the Fedora repositories:
 
-    Follow the `Install Docker Engine on Fedora <https://docs.docker.com/engine/installation/linux/fedora/>`__ documentation, or you can use the Moby package (Moby is the FOSS upstream project to Docker) from the Fedora repositories:
+  .. code:: bash
 
-    .. code:: bash
-
-      sudo dnf install moby-engine
-      sudo systemctl start docker
+    sudo dnf install moby-engine
+    sudo systemctl start docker
 
 .. _Preview Mattermost on Docker:
 
@@ -53,7 +44,7 @@ If you don't have Docker installed, follow the instructions below based on your 
 Troubleshooting your preview deployment
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The **Preview Mode** Docker instance for Mattermost is designed for product evaluation, and sets ``SendEmailNotifications=false`` so the product can function without enabling email. See the `Configuration Settings </configure/configuration-settings.html>`__ documentation to customize your deployment.
+The **Preview Mode** Docker instance for Mattermost is designed for product evaluation, and sets ``SendEmailNotifications=false`` so the product can function without enabling email. See the :doc:`Configuration Settings </configure/configuration-settings>` documentation to customize your deployment.
 
 To update your Mattermost preview image and container, you must first stop and delete your existing **mattermost-preview** container by running the following commands:
 
@@ -137,4 +128,4 @@ For an in-depth guide to configuring the TLS certificate and key for Nginx, plea
 Further help
 ~~~~~~~~~~~~~
 
-If you encounter other problems while installing Mattermost, please refer to our `troubleshooting guide </install/troubleshooting.html>`__. 
+If you encounter other problems while installing Mattermost, please refer to our :doc:`troubleshooting guide </install/troubleshooting>`. 

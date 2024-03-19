@@ -1,4 +1,4 @@
-.. _install-rhel-7:
+:orphan: :nosearch:
 
 Installing Mattermost on RHEL 7
 =================================
@@ -19,10 +19,6 @@ You can also use these instructions to install Mattermost on CentOS 7, Oracle Li
 
 .. include:: install-common-intro.rst
   :start-after: :nosearch:
-
-.. contents:: Install and configure the components in the following order. Note that you need only one database, either PostgreSQL or MySQL.
-  :backlinks: top
-  :local:
 
 .. include:: install-rhel-7-server.rst
   :start-after: :nosearch:
