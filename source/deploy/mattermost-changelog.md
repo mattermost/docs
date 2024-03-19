@@ -66,7 +66,7 @@ If you upgrade from a release earlier than v9.6, please read the other [Importan
  - Fixed an issue where the configuration could not be updated from the **System Console** in cloud environments.
 
 ### config.json
- - Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
+A new setting option was added to ``config.json``. Below is a list of the addition and its default value on install. The setting can be modified in ``config.json``, or the System Console when available.
 
 #### Changes to all plans:
  - Under ``CloudSettings`` in ``config.json``:
