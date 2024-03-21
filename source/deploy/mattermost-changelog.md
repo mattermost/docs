@@ -43,7 +43,7 @@ If you upgrade from a release earlier than v9.6, please read the other [Importan
  - A message is now logged if a user tries to login using a wrong password.
  - Posts from deactivated users are now included in **Direct Message** channel exports. Also the ``--include-archived-channels`` flag is now respected for **Direct Message** channels.
  - Changed the cache headers for file endpoints to cache privately for 24 hours, instead of not caching at all.
- - Improved the performance of the ElasticSearch indexing job.
+ - Improved the performance of the ElasticSearch indexing job in PostgreSQL installations.
  - Moved following functions from server to public utils:
     - ``ResetReadTimeout``
     - ``AppendMultipleStatementsFlag``
