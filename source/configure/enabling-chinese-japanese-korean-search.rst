@@ -8,10 +8,7 @@ Chinese, Japanese and Korean search
 
 Enabling search for Chinese, Japanese and Korean (CJK) requires special configuration, since these languages do not contain spaces.
 
-- See `database requirements documentation </install/software-hardware-requirements.html>`__ for how to set up search for these languages.
-
-.. contents::
-    :backlinks: top
+See :doc:`database requirements documentation </install/software-hardware-requirements>` for how to set up search for these languages.
 
 Below is additional information on how to configure the database for different languages.
 
@@ -115,9 +112,9 @@ Below is additional information on how to configure the database for different l
 
 Mattermost で日本語検索をするためにはデータベースの設定変更が必要です
 
-- `MySQL </install/requirements.html#database-software>`__
+- :ref:`MySQL <install/software-hardware-requirements:database software>`
 
-- `Postgres <https://github.com/mattermost/mattermost/issues/2159#issuecomment-206444074>`__
+- :ref:`Postgres <install/software-hardware-requirements:database software>`
 
 日本語(CJK)検索設定のドキュメントの改善にご協力ください
 

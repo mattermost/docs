@@ -1,5 +1,4 @@
-:nosearch:
-.. _install-ubuntu-1804-mysql:
+:orphan: :nosearch:
 
 Install MySQL database server
 ------------------------------

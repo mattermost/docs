@@ -12,11 +12,6 @@ To streamline the migration process and alleviate any potential challenges, we h
 
    These guidelines are in development and we are working to streamline the migration process. We plan to improve this guide by updating it as new information becomes available. Please use this guide as a starting point and always backup your database before starting a migration.
 
-.. contents:: On this page
-  :backlinks: top
-  :local:
-  :depth: 1
-
 Required tools
 --------------
 
@@ -48,7 +43,7 @@ Before the migration
    - See the `schema-diffs <#schema-diffs>`__ section to ensure data compatibility between schemas.
    - Prepare your PostgreSQL environment by creating a database and user. See the `database </install/prepare-mattermost-database.html>`__ documentation for details.
    - If you are planning to run an iterative migration (running the pgloader several times), please see the `iterative-migrations <#iterative-migrations>`_ section.
-   - On `newer versions <https://www.postgresql.org/docs/release/15.0/>`__ of PostgreSQL, newly created users do not have access to ``public`` schema. The access should be explicitly granted by running ``GRANT ALL ON SCHEMA public to mmuser'``.
+   - On `newer versions <https://www.postgresql.org/docs/release/15.0/>`__ of PostgreSQL, newly created users do not have access to ``public`` schema. The access should be explicitly granted by running ``GRANT ALL ON SCHEMA public to mmuser``.
 
 Prepare target database
 -----------------------
@@ -390,7 +385,7 @@ Once we are ready to migrate, we can start migrating the **schema** and the **da
 Focalboard
 ~~~~~~~~~~
 
-As of ``v9.0`` Boards will transition to being fully community supported as the Focalboard plugin. Hence this guide covers only the version ``v7.10.x`` of the schema. `Official announcement <https://docs.mattermost.com/deploy/deprecated-features.html#mattermost-server-v9-0-0>`__.
+As of ``v9.0`` Boards will transition to being fully community supported as the Focalboard plugin. Hence this guide covers only the version ``v7.10.x`` of the schema. :ref:`Official announcement <deploy/deprecated-features:mattermost server v9.0.0>`.
 
 Once we are ready to migrate, we can start migrating the **schema** and the **data**  by running ``pgLoader`` \*\*
 

@@ -56,7 +56,7 @@ The person who creates a channel is assigned the Channel Admin role for that cha
 - Ability to assign the Channel Admin role to other members of the channel.
 - Ability to remove the Channel Admin role from other holders of the Channel Admin role.
 - Ability to remove members from the channel.
-- Ability to configure channel actions that automate tasks based on trigger conditions, such as `joining a channel </collaborate/join-leave-channels.html#join-a-channel>`__ or `sending a message </collaborate/send-messages.html>`__ in a channel.
+- Ability to configure channel actions that automate tasks based on trigger conditions, such as :ref:`joining a channel <collaborate/join-leave-channels:join a channel>` or :doc:`sending a message </collaborate/send-messages>` in a channel.
 
 Depending on your system configuration, channel admins can be granted special permissions by the system admin to rename and delete channels.
 
@@ -73,12 +73,12 @@ A guest is a role with restricted permissions. Guests enable organizations to co
 .. include:: /onboard/guest-account-access.rst
   :start-after: :nosearch:
 
-See the `guest accounts </onboard/guest-accounts.html>`__ documentation for details on working with guest accounts.
+See the :doc:`guest accounts </onboard/guest-accounts>` documentation for details on working with guest accounts.
 
 Deactivated
 -----------
 
-A system admin can deactivate user accounts via **System Console > Users**. A list of all users on the server can be searched and filtered to make finding users easier. Select the user's role and in the menu that opens, then select **Deactivate**. See the `deactivate user accounts admin </configure/user-management-configuration-settings.html#deactivate-user-accounts>`__ documentation for details.
+A system admin can deactivate user accounts via **System Console > Users**. A list of all users on the server can be searched and filtered to make finding users easier. Select the user's role and in the menu that opens, then select **Deactivate**. See the :ref:`deactivate user accounts admin <configure/user-management-configuration-settings:deactivate user accounts>` documentation for details.
 
 When **Deactivate** is selected, the user is logged out of the system, and receives an error message if they try to log back in. The user no longer appears in channel member lists, and they are removed from the team members list. A deactivated account can also be reactivated from the System Console, in which case the user rejoins channels and teams that they previously belonged to.
 

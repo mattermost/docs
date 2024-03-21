@@ -6,11 +6,9 @@ Collaborate within Microsoft Teams (Pilot)
 
 .. |plus-icon| image:: ../images/plus_F0415.svg
   :alt: Open menus using the plus icon.
+  :class: theme-icon
 
-The `Mattermost for Microsoft Teams plugin </about/mattermost-for-microsoft-teams.html>`__ integration enables you to collaborate with Microsoft Teams users without leaving Mattermost. Getting started with this integration includes 2 steps:
-
-- `Connecting your Mattermost account <#connect-your-mattermost-account-to-your-microsoft-teams-account>`_
-- `Selecting your preferred platform <#select-your-preferred-platform>`_
+The :doc:`Mattermost for Microsoft Teams plugin </about/mattermost-for-microsoft-teams>` integration enables you to collaborate with Microsoft Teams users without leaving Mattermost.
 
 .. include:: ../_static/badges/academy-msteams.rst
   :start-after: :nosearch:
@@ -50,7 +48,7 @@ We recommend that you disable notifications in Microsoft Teams. If you don't, yo
 Microsoft Teams is your preferred platform
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-When Microsoft Teams is preferred, you'll receive mesages from Mattermost in Microsoft Teams. Mattermost notifications are automatically muted for you to prevent duplicate notifications.
+When Microsoft Teams is preferred, you'll receive messages from Mattermost in Microsoft Teams. Mattermost notifications are automatically muted for you to prevent duplicate notifications.
 
 Setup complete
 --------------
@@ -60,7 +58,7 @@ Setup is complete! You're ready to collaborate across your organization. No matt
 Get started
 -----------
 
-You can start a direct or group message between Mattermost and Microsoft Teams users unless your Mattermost administrator has `disabled the ability to do so in the System Console </configure/plugins-configuration-settings.html#sync-direct-and-group-messages>`__. 
+You can start a direct or group message between Mattermost and Microsoft Teams users unless your Mattermost administrator has :ref:`disabled the ability to do so in the System Console <configure/plugins-configuration-settings:sync direct and group messages>`. 
 
 - Within Mattermost select the |plus-icon| icon next to **Direct Messages** in the left pane, then search for the user you want to message. Your direct or group conversation is visible in both Mattermost and Microsoft Teams.
 

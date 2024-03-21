@@ -4,7 +4,7 @@ mmctl command line tool
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-The mmctl is a CLI tool for the Mattermost server which is installed locally and uses the Mattermost API, but may also be used remotely. Authentication is done with either login credentials or an authentication token. This mmctl tool is included and replaces the `CLI </manage/command-line-tools.html>`__. The mmctl can currently be used alongside the Mattermost CLI tool. The Mattermost CLI tool will be deprecated in a future release.
+The mmctl is a CLI tool for the Mattermost server which is installed locally and uses the Mattermost API, but may also be used remotely. Authentication is done with either login credentials or an authentication token. This mmctl tool is included and replaces the :doc:`CLI </manage/command-line-tools>`. The mmctl can currently be used alongside the Mattermost CLI tool. The Mattermost CLI tool will be deprecated in a future release.
 
 Being installed locally enables System Admins for both self-hosted and Cloud Mattermost instances to run CLI commands even in instances where there's no access to the server (e.g., via SSH).
 
@@ -13,7 +13,7 @@ This feature was developed to a large extent by community contributions and we'd
 mmctl usage notes
 -----------------
 
-- System Admins have two ways to run ``mmctl`` commands: by downloading ``mmctl`` from the release URLs, which you can find in the :ref:`installation instructions <install-mmctl-options>`, or by building it directly, for which you can check the :ref:`build instructions <build-mmctl>` below. The source code lives in the `server/cmd/mmctl directory within the mattermost repository <https://github.com/mattermost/mattermost/tree/master/server/cmd/mmctl>`__.
+- System Admins have two ways to run ``mmctl`` commands: by downloading ``mmctl`` from the release URLs, which you can find in the `installation instructions <#install-mmctl>`__, or by building it directly, for which you can check the `build instructions <#build-mmctl>`__ below. The source code lives in the `server/cmd/mmctl directory within the mattermost repository <https://github.com/mattermost/mattermost/tree/master/server/cmd/mmctl>`__.
 - ``mmctl`` also comes bundled with the Mattermost distribution, and is located in the ``bin`` folder of the installation, next to the ``CLI``.
 
   - We recommend you add the path to the Mattermost ``bin`` folder into your ``$PATH`` environment variable. This ensures that you can run mmctl commands locally regardless of your current directory location.
@@ -65,16 +65,16 @@ mmctl commands
 
 .. code-block:: sh
 
-       --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
-       --disable-pager                disables paged output
-       -h, --help                     help for mmctl
-       --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
-       --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
-       --json                         the output format will be in json format
-       --local                        allows communicating with the server through a unix socket
-       --quiet                        prevent mmctl to generate output for the commands
-       --strict                       will only run commands if the mmctl version matches the server one
-       --suppress-warnings            disables printing warning messages
+   --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
+   -h, --help                     help for mmctl
+   --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+   --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
+   --json                         the output format will be in json format
+   --local                        allows communicating with the server through a unix socket
+   --quiet                        prevent mmctl to generate output for the commands
+   --strict                       will only run commands if the mmctl version matches the server one
+   --suppress-warnings            disables printing warning messages
 
 Install mmctl
 -------------
@@ -83,45 +83,43 @@ The mmctl tool comes bundled with Mattermost package. For customers that want to
 
 .. _install-mmctl-options:
 
-.. tabs::
+.. tab:: Release package 
 
-   .. tab:: Using release package (Linux, macOS, Windows)
+   From Mattermost v8.0, if you're using a release page for Linux, macOS, or Windows, you can download the mmctl builds at their release URL: ``https://releases.mattermost.com/mmctl/${MATTERMOST_VERSION}/${PLATFORM}_${ARCHITECTURE}.tar`` (for windows, substitute the ``.tar`` suffix with ``.zip``)
 
-      Starting with the release ``v8.0.0`` of Mattermost, you can download the mmctl builds at their release URL: ``https://releases.mattermost.com/mmctl/${MATTERMOST_VERSION}/${PLATFORM}_${ARCHITECTURE}.tar`` (for windows, substitute the ``.tar`` suffix with ``.zip``)
+   E.g. to download version ``v8.0.0`` of the mmctl amd64 build for linux, you can run the following:
 
-      E.g. to download version ``v8.0.0`` of the mmctl amd64 build for linux, you can run the following:
+   .. code-block:: sh
 
-      .. code-block:: sh
+      curl -vfsSL -O https://releases.mattermost.com/mmctl/v8.0.0/linux_amd64.tar
 
-         curl -vfsSL -O https://releases.mattermost.com/mmctl/v8.0.0/linux_amd64.tar
+   Supported platforms, and corresponding supported architectures, are: linux (amd64 and arm64), darwin (amd64 and arm64), windows (amd64 only).
 
-      Supported platforms, and corresponding supported architectures, are: linux (amd64 and arm64), darwin (amd64 and arm64), windows (amd64 only).
+   For versions older than ``v8.0.0``, you can instead visit the `mmctl releases page <https://github.com/mattermost/mmctl/releases>`__ and download the appropriate release for your OS, and install the binary.
 
-      For versions older than ``v8.0.0``, you can instead visit the `mmctl releases page <https://github.com/mattermost/mmctl/releases>`__ and download the appropriate release for your OS, and install the binary.
+.. tab:: Go install 
 
-   .. tab:: Using go install (Linux, macOS, Windows)
+   Use this option on Linux, macOS, and Windows if you have a ``go`` environment configured.
 
-      Use this option on Linux, macOS, and Windows if you have a ``go`` environment configured.
+   To build and install the mmctl binary in your `$GOPATH`, run the following command:
 
-      To build and install the mmctl binary in your `$GOPATH`, run the following command:
+   .. code-block:: sh
 
-      .. code-block:: sh
+      # For Mattermost versions >= v8.0.0
+      go install github.com/mattermost/mattermost/server/v8/cmd/mmctl@master
 
-         # For Mattermost versions >= v8.0.0
-         go install github.com/mattermost/mattermost/server/v8/cmd/mmctl@master
+      # For Mattermost versions < v8.0.0
+      go install github.com/mattermost/mmctl@latest
 
-         # For Mattermost versions < v8.0.0
-         go install github.com/mattermost/mmctl@latest
+.. tab:: Homebrew
 
-   .. tab:: Use brew (Linux, macOS)
+   **On Linux or macOS, this isn't an officially supported method** This installation channel is managed by the community. Please refer to the `homebrew/homebrew-core repo <https://github.com/Homebrew/homebrew-core>`__ for reporting issues.
 
-      **NB: this is not an officially supported method.** This installation channel is managed by the community, please refer to the `homebrew/homebrew-core repo <https://github.com/Homebrew/homebrew-core>`__ for reporting issues.
+   Use this option on Linux and macOS if you have Homebrew installed.
 
-      Use this option on Linux and macOS if you have Homebrew installed.
+   .. code-block:: sh
 
-      .. code-block:: sh
-
-         brew install mmctl
+      brew install mmctl
 
 Build mmctl
 ------------
@@ -149,7 +147,7 @@ The API that the socket exposes follows the same specification that can be found
 Activating local mode
 ~~~~~~~~~~~~~~~~~~~~~
 
-To use local mode, the Mattermost server first needs to `have local mode enabled </configure/experimental-configuration-settings.html#enable-local-mode-for-mmctl>`_. When local mode is enabled, a socket is created at ``/var/tmp/mattermost_local.socket`` by default.
+To use local mode, the Mattermost server first needs to :ref:`have local mode enabled <configure/experimental-configuration-settings:enable local mode for mmctl>`. When local mode is enabled, a socket is created at ``/var/tmp/mattermost_local.socket`` by default.
 
 .. tip::
 
@@ -158,7 +156,7 @@ To use local mode, the Mattermost server first needs to `have local mode enabled
 Using local mode
 ~~~~~~~~~~~~~~~~
 
-You need to append ``--local`` to the command you want to use, or set the environment variable as ``MMCTL_LOCAL=true``. To use a socket file other than the default, you need to set the environment variable to ``MMCTL_LOCAL_SOCKET_PATH``. This file must match the `server configuration setting </configure/configuration-settings.html#enable-local-mode-socket-location>`_.
+You need to append ``--local`` to the command you want to use, or set the environment variable as ``MMCTL_LOCAL=true``. To use a socket file other than the default, you need to set the environment variable to ``MMCTL_LOCAL_SOCKET_PATH``. This file must match the :ref:`server configuration setting <configure/experimental-configuration-settings:enable local mode socket location>`.
 
 Running mmctl tests
 -------------------
@@ -945,7 +943,7 @@ mmctl channel delete
 Permanently delete channels along with all related information including posts from the database.
 
 .. note::
-   Requires the `Enable API Channel Deletion </configure/configuration-settings.html#enable-api-channel-deletion>`__ configuration setting to be enabled. If this configuration setting is disabled, attempting to delete the channel using mmctl fails.
+   Requires the :ref:`Enable API Channel Deletion <configure/experimental-configuration-settings:enable api channel deletion>` configuration setting to be enabled. If this configuration setting is disabled, attempting to delete the channel using mmctl fails.
 
 **Format**
 
@@ -1022,7 +1020,7 @@ List all Public, Private, and archived channels on specified teams. Archived cha
 mmctl channel make-private
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This command is deprecated in favour of `mmctl channel modify </manage/mmctl-command-line-tool.html#mmctl-channel-modify>`__ and the ``--private`` flag.
+This command is deprecated in favour of :ref:`mmctl channel modify <manage/mmctl-command-line-tool:mmctl channel modify>` and the ``--private`` flag.
 
 **Description**
 
@@ -1927,7 +1925,7 @@ Migrate a file-based configuration to (or from) a database-based configuration. 
 
 .. note::
 
-   - To change the store type to use the database, a System Admin needs to set a ``MM_CONFIG`` `environment variable </configure/configuration-in-your-database.html#create-an-environment-file>`_ and restart the Mattermost server.
+   - To change the store type to use the database, a System Admin needs to set a ``MM_CONFIG`` :ref:`environment variable <configure/configuration-in-your-database:create an environment file>` and restart the Mattermost server.
    - The ``migrate`` function requires local mode to be enabled.  To do this, add the following line to your Mattermost Environment file:
 
       .. code-block:: sh
@@ -3531,21 +3529,21 @@ Validate an import file.
 
 .. code-block:: sh
 
-     mmctl import validate [filepath] [flags]
+   mmctl import validate [filepath] [flags]
 
 **Examples**
 
 .. code-block:: sh
 
-     import validate import_file.zip --team myteam --team myotherteam
+   import validate import_file.zip --team myteam --team myotherteam
 
 **Options**
 
 .. code-block:: sh
 
-      -h, --help              help for validate
-      --ignore-attachments    Don't check if the attached files are present in the archive
-      --team stringArray      Predefined team[s] to assume as already present on the destination server. Implies ``--check-missing-teams``. The flag can be repeated.
+   -h, --help              help for validate
+   --ignore-attachments    Don't check if the attached files are present in the archive
+   --team stringArray      Predefined team[s] to assume as already present on the destination server. Implies ``--check-missing-teams``. The flag can be repeated.
 
 **Options inherited from parent commands**
 
@@ -5076,7 +5074,7 @@ Generate and download a Support Packet of the Mattermost server to share with Ma
 
 .. code-block:: sh
 
-   system supportpacket
+   mmctl system supportpacket
 
 **Options**
 
@@ -5252,7 +5250,7 @@ mmctl team delete
 Permanently delete a team along with all related information including posts from the database.
 
 .. note::
-   Requires the `Enable API Team Deletion </configure/configuration-settings.html#enable-api-team-deletion>`__ configuration setting to be enabled. If this configuration setting is disabled, attempting to delete the team using mmctl fails.
+   Requires the :ref:`Enable API Team Deletion <configure/experimental-configuration-settings:enable api team deletion>` configuration setting to be enabled. If this configuration setting is disabled, attempting to delete the team using mmctl fails.
 
 **Format**
 
@@ -6008,7 +6006,7 @@ mmctl user delete
 Permanently delete users along with all related information including posts from the database.
 
 .. note::
-   Requires the `Enable API User Deletion </configure/configuration-settings.html#enable-api-user-deletion>`__ configuration setting to be enabled. If this configuration setting is disabled, attempting to delete the user using mmctl fails.
+   Requires the :ref:`Enable API User Deletion <configure/experimental-configuration-settings:enable api user deletion>` configuration setting to be enabled. If this configuration setting is disabled, attempting to delete the user using mmctl fails.
 
 **Format**
 

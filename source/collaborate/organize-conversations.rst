@@ -5,9 +5,8 @@ Organize conversations using Collapsed Reply Threads
   :start-after: :nosearch:
 
 .. |more-actions-icon| image:: ../images/dots-horizontal_F01D8.svg
-  :height: 24px
-  :width: 24px
   :alt: Access additional message actions using the More Actions icon.
+  :class: theme-icon
 
 Threads are a key part of the messaging experience in Mattermost. They're used to organize conversations and enable users to discuss topics without adding noise to channels or direct messages.
 
@@ -19,7 +18,7 @@ Collapsed Reply Threads offers an enhanced experience for users communicating in
 Start or reply to threads
 -------------------------
 
-`Replies to messages </collaborate/reply-to-messages.html>`__ are collapsed under the first message of a thread. 
+:doc:`Replies to messages </collaborate/reply-to-messages>` are collapsed under the first message of a thread. 
 
 .. tip:: 
     
@@ -32,31 +31,29 @@ Start or reply to threads
 Follow threads and messages
 ---------------------------
 
-You'll automatically follow every thread you participate or are mentioned in. You can manually follow particular messages and threads so that any reply activity triggers `notifications </preferences/manage-your-notifications.html>`__. Follow or unfollow any thread, at any time.
+You'll automatically follow every thread you participate or are mentioned in. You can manually follow particular messages and threads so that any reply activity triggers :doc:`notifications </preferences/manage-your-notifications>`. Follow or unfollow any thread, at any time.
 
 .. image:: ../images/crt-following-thread.png
    :alt: Follow threads to stay updated on replies to messages.
 
-.. tabs::
+.. tab:: Web/Desktop
 
-  .. tab:: Web/Desktop
+  Toggle the thread’s **Follow/Following** indicator, or select **Follow thread** from the **More Actions** |more-actions-icon| icon. 
+  
+  **Unfollow threads**
+  
+  If you’re no longer interested in a or message thread, unfollow it to stop receiving notifications. Viewing a thread without responding to it doesn’t automatically follow that thread.
 
-    Toggle the thread’s **Follow/Following** indicator, or select **Follow thread** from the **More Actions** |more-actions-icon| icon. 
-    
-    **Unfollow threads**
-    
-    If you’re no longer interested in a or message thread, unfollow it to stop receiving notifications. Viewing a thread without responding to it doesn’t automatically follow that thread.
+  .. image:: ../images/crt-following-thread.jpg
+    :alt: Follow, unfollow, and mark threads as unread from the More Actions icon.
 
-    .. image:: ../images/crt-following-thread.jpg
-      :alt: Follow, unfollow, and mark threads as unread from the More Actions icon.
+.. tab:: Mobile
 
-  .. tab:: Mobile
-
-    Long-press on a message to access message options, then tap **Follow Thread**. 
-    
-    **Unfollow threads**
-    
-    If you’re no longer interested in a or message thread, unfollow it to stop receiving notifications. Viewing a thread without responding to it doesn’t automatically follow that thread.
+  Long-press on a message to access message options, then tap **Follow Thread**. 
+  
+  **Unfollow threads**
+  
+  If you’re no longer interested in a or message thread, unfollow it to stop receiving notifications. Viewing a thread without responding to it doesn’t automatically follow that thread.
 
 .. tip::
   - Follow messages with no replies from the **More Actions** |more-actions-icon| icon to be notified if someone replies to the message later based on your notification preferences.
@@ -75,9 +72,9 @@ Select **Unreads** to filter your followed threads by only those with unread rep
 Enable Collapsed Reply Threads
 ------------------------------
 
-See our `configuration settings </configure/configuration-settings.html#collapsed-reply-threads>`__ documentation for details on configuring the default availability of collapsed reply threads. From Mattermost v7.0, Collapsed Reply Threads are enabled by default for all new Mattermost deployments.
+See our :ref:`configuration settings <configure/site-configuration-settings:collapsed reply threads>` documentation for details on configuring the default availability of collapsed reply threads. From Mattermost v7.0, Collapsed Reply Threads are enabled by default for all new Mattermost deployments.
 
-Depending on how your system admin has configured **Collapsed Reply Threads** for your workspace, it may already be enabled for you, or you may be able to `enable this feature for your account </preferences/manage-your-display-options.html#collapsed-reply-threads>`__ by going to **Settings > Display > Collapsed Reply Threads**.
+Depending on how your system admin has configured **Collapsed Reply Threads** for your workspace, it may already be enabled for you, or you may be able to :ref:`enable this feature for your account <preferences/manage-your-display-options:collapsed reply threads>` by going to **Settings > Display > Collapsed Reply Threads**.
 
 Tutorial video
 ---------------
@@ -91,7 +88,7 @@ Tutorial video
 Known issues
 ------------
 
-Collapsed Reply Threads was released as generally available in Mattermost v7.0, including significant server performance improvements and more flexible configuration options for system admins to enable the feature by default. We highly recommended `upgrading to Mattermost v7.0 </upgrade/upgrading-mattermost-server.html>`__ to take advantage of these configuration and performance enhancements.
+Collapsed Reply Threads was released as generally available in Mattermost v7.0, including significant server performance improvements and more flexible configuration options for system admins to enable the feature by default. We highly recommended :doc:`upgrading to Mattermost v7.0 </upgrade/upgrading-mattermost-server>` to take advantage of these configuration and performance enhancements.
 
 Customers running Collapsed Reply Threads in beta on Mattermost v6.7 or earlier will likely experience bugs and unoptimized server performance. Learn more about the `beta release performance considerations <https://support.mattermost.com/hc/en-us/articles/4413183568276>`__ applicable only to Mattermost v5.37 through v6.7 deployments.
 

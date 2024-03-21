@@ -10,7 +10,7 @@ Using AD/LDAP synchronized groups to manage team or private channel membership
 
  <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
-Mattermost groups created with `synchronized AD/LDAP groups </onboard/ad-ldap-groups-synchronization.html>`_ can be used to manage the membership of private teams and private channels. When a team or private channel is managed by synchronized groups, users will be added and removed based on their membership to the synchronized AD/LDAP group.
+Mattermost groups created with :doc:`synchronized AD/LDAP groups </onboard/ad-ldap-groups-synchronization>` can be used to manage the membership of private teams and private channels. When a team or private channel is managed by synchronized groups, users will be added and removed based on their membership to the synchronized AD/LDAP group.
 
 For instance, you may have an AD/LDAP group that contains your development team that you want to synchronize to a developer team.  By using this feature, new developers will get added to the team when they are added to the synchronized AD/LDAP group and they will be removed from the team when removed from the AD/LDAP group.
 
@@ -43,9 +43,9 @@ To manage membership of a private team with synchronized groups:
 
 Alternatively you can use the mmctl tools to set the team to be managed by groups:
 
-1. Ensure there's at least one group already associated to the team. You can view and add default teams to a group via **System Console > User Management > Groups > Group Configuration**. See the `mmctl group team list </manage/mmctl-command-line-tool.html#mmctl-group-team-list>`__ documentation for more information on adding default teams and channels and confirming whether if there is already a group associated to the team.
+1. Ensure there's at least one group already associated to the team. You can view and add default teams to a group via **System Console > User Management > Groups > Group Configuration**. See the :ref:`mmctl group team list <manage/mmctl-command-line-tool:mmctl group team list>` documentation for more information on adding default teams and channels and confirming whether if there is already a group associated to the team.
 2. Ensure **Team Settings > General > Allow any user with an account on this server to join this team** is set to ``No``.
-3. Convert the team to have its membership managed by synchronized groups by running the `mmctl group team enable </manage/mmctl-command-line-tool.html#mmctl-group-team-enable>`__ command.
+3. Convert the team to have its membership managed by synchronized groups by running the :ref:`mmctl group team enable <manage/mmctl-command-line-tool:mmctl group team enable>` command.
 
 To manage membership of a private channel with synchronized groups:
 
@@ -58,8 +58,8 @@ To manage membership of a private channel with synchronized groups:
 
 Alternatively you can use the mmctl tool to set a private channel to be managed by groups:
 
-1. Ensure there's at least one group already associated to the channel. You can view and add default channels to a group via **System Console > User Management > Groups > Group Configuration**. See our `AD/LDAP </onboard/ad-ldap-groups-synchronization.html#adding-default-teams-or-channels-for-the-group>`__ documentation for more information on adding default teams and channels. Additionally, you can use the mmctl  to view if there is already a group associated to the channel by running the `mmctl group channel list </manage/mmctl-command-line-tool.html#mmctl-group-channel-list>`__ command.
-2. Convert the team to have its membership managed by synchronized groups by running the `mmctl group channel enable </manage/mmctl-command-line-tool.html#mmctl-group-channel-enable>`__ command.
+1. Ensure there's at least one group already associated to the channel. You can view and add default channels to a group via **System Console > User Management > Groups > Group Configuration**. See our :ref:`AD/LDAP <onboard/ad-ldap-groups-synchronization:add default teams or channels for the group>` documentation for more information on adding default teams and channels. Additionally, you can use the mmctl  to view if there is already a group associated to the channel by running the :ref:`mmctl group channel list <manage/mmctl-command-line-tool:mmctl group channel list>` command.
+2. Convert the team to have its membership managed by synchronized groups by running the :ref:`mmctl group channel enable <manage/mmctl-command-line-tool:mmctl group channel enable>` command.
 
 Add or remove groups from teams
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -94,16 +94,16 @@ If the user is removed from a synchronized group and later readded to the group,
 Disabling group synchronized management of teams and private channels
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-To remove the management of members by synchronized groups in a team, disable **Sync Group Members** under **System Console > User Management > Teams > Team Management**, or run the `mmctl group team disable </manage/mmctl-command-line-tool.html#mmctl-group-team-disable>`__ command.
+To remove the management of members by synchronized groups in a team, disable **Sync Group Members** under **System Console > User Management > Teams > Team Management**, or run the :ref:`mmctl group team disable <manage/mmctl-command-line-tool:mmctl group team disable>` command.
 
-To remove the management of members by synchronized groups in a channel, disable **Sync Group Members** under **System Console > User Management > Channels > Channel Management**, or run the `mmctl group channel disable </manage/mmctl-command-line-tool.html#mmctl-group-channel-disable>`__ command.
+To remove the management of members by synchronized groups in a channel, disable **Sync Group Members** under **System Console > User Management > Channels > Channel Management**, or run the :ref:`mmctl group channel disable <manage/mmctl-command-line-tool:mmctl group channel disable>` command.
 
 Frequently asked questions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **Why aren’t public channels supported with this feature?**
 
-Public channels are available to all members to discover and join. Managing membership with synchronized groups removes the ability for public channels to be accessible to users on the team. Private channels typically require a more controlled membership management, which is why this feature applies to Private channels. Groups can be assigned to public teams and public channels as described in `this documentation </onboard/ad-ldap-groups-synchronization.html#adding-default-teams-or-channels-for-the-group>`_.
+Public channels are available to all members to discover and join. Managing membership with synchronized groups removes the ability for public channels to be accessible to users on the team. Private channels typically require a more controlled membership management, which is why this feature applies to Private channels. Groups can be assigned to public teams and public channels as described in :ref:`this documentation <onboard/ad-ldap-groups-synchronization:add default teams or channels for the group>`.
 
 **Does a team with its membership managed by groups have any effect on Public channel access?**
 

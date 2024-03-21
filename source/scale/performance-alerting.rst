@@ -8,7 +8,7 @@ Mattermost performance alerting guide
 
  <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
-Mattermost recommends using `Prometheus <https://prometheus.io/>`__ and `Grafana <https://grafana.org/>`__ to track performance metrics of the Mattermost application servers. The purpose of this guide is to help you set up alerts on your Grafana dashboard once you've `set up system health tracking </scale/performance-monitoring.html>`__.
+Mattermost recommends using `Prometheus <https://prometheus.io/>`__ and `Grafana <https://grafana.org/>`__ to track performance metrics of the Mattermost application servers. The purpose of this guide is to help you set up alerts on your Grafana dashboard once you've :doc:`set up system health tracking </scale/performance-monitoring>`.
 
 .. note:: 
   We highly recommend setting up performance alerting for deployments above 5,000 users, where additional servers have been added for performance load-balancing.
@@ -16,7 +16,7 @@ Mattermost recommends using `Prometheus <https://prometheus.io/>`__ and `Grafana
 Prerequisites
 -------------
 
-Set up performance monitoring for Mattermost. See our `Performance Monitoring </scale/performance-monitoring.html>`__ documentation to learn more.
+Set up performance monitoring for Mattermost. See our :doc:`Performance Monitoring </scale/performance-monitoring>` documentation to learn more.
 
 To get alerts, first set up a Notification Channel in Grafana. Here’s how you can set it up to automatically post alerts in Mattermost:
 
@@ -176,4 +176,4 @@ You can trace hooks and plugin API calls with Prometheus. Below are some example
 Other alerts
 -------------
 
-If you want more alerts, you can set them up on any of the Grafana charts you'd like. We recommend reviewing custom metrics listed on our `Performance Monitoring feature documentation </scale/performance-monitoring.html#statistics>`__.
+If you want more alerts, you can set them up on any of the Grafana charts you'd like. We recommend reviewing custom metrics listed on our :ref:`Performance Monitoring feature documentation <scale/performance-monitoring:statistics>`.

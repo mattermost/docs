@@ -14,26 +14,24 @@ App deployment
 
 - In **Mattermost Cloud**, all apps are deployed to the Marketplace by Mattermost staff. They can be installed onto a specific Mattermost instance using the ``/apps install listed`` command. No special configuration is required; the ``/apps install`` command should be enabled and functional by default.
 
-- **Self-managed Mattermost** installations can use external Apps as HTTP services that have already been deployed, or can deploy App bundles on self-managed hosting or serverless platforms. Currently, `AWS Lambda </deploy/deploy-aws>`__, `OpenFaaS </deploy/deploy-openfaas>`__, and Kubeless deployments are supported. The `appsctl` command can be used to deploy app bundles to these environments.
+- **Self-managed Mattermost** installations can use external Apps as HTTP services that have already been deployed, or can deploy App bundles on self-managed hosting or serverless platforms. Currently, :doc:`AWS Lambda </deploy/deploy-aws>`, :doc:`OpenFaaS </deploy/deploy-openfaas>`, and Kubeless deployments are supported. The `appsctl` command can be used to deploy app bundles to these environments.
 
-  Self-managed customers can also install external `HTTP </deploy/deploy-http>`__ apps, with no need to deploy them.
+  Self-managed customers can also install external :doc:`HTTP </deploy/deploy-http>` apps, with no need to deploy them.
 
   The ``appsctl`` CLI tool is provided to deploy AWS and OpenFaaS apps in self-managed environments. To install ``appsctl``, use the following command:
 
   .. code-block:: shell
 
-      go install github.com/mattermost/mattermost-plugin-apps/cmd/appsctl@latest
+    go install github.com/mattermost/mattermost-plugin-apps/cmd/appsctl@latest
 
 .. note::
 
-    If you have a self-hosted Mattermost instance running on AWS EC2, the default Golang version is 1.13.8.
+    If you have a self-hosted Mattermost instance running on AWS EC2, the default Golang version is 1.13.8. Because of this, the Golang install command will give an error stating:
 
-Because of this, the Golang install command will give an error stating:
+    .. code-block:: shell
 
-.. code-block:: shell
+        can't load package: package github.com/mattermost/mattermost-plugin-apps/cmd/appsctl@latest: cannot use path@version syntax in GOPATH mode
 
-    can't load package: package github.com/mattermost/mattermost-plugin-apps/cmd/appsctl@latest: cannot use path@version syntax in GOPATH mode
+    To fix this, update your Golang version to the latest release and run the command again. When deploying to AWS, the ``appsctl`` binary is present in the ``Home`` directory inside the ``go/bin`` folder.
 
-To fix this, update your Golang version to the latest release and run the command again. When deploying to AWS, the ``appsctl`` binary is present in the ``Home`` directory inside the ``go/bin`` folder.
-
-To use ``appsctl``, run the following command: ``./go/bin/appsctl``
+    To use ``appsctl``, run the following command: ``./go/bin/appsctl``

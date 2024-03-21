@@ -1,5 +1,4 @@
-:nosearch:
-.. _install-debian-mysql:
+:orphan: :nosearch:
 
 Install MySQL database server
 -----------------------------

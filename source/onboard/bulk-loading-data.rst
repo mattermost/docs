@@ -1,5 +1,3 @@
-.. _bulk-loading:
-
 Bulk loading data
 =================
 
@@ -27,11 +25,6 @@ You can import the following data types:
 - Custom emoji
 
 Importing additional types of posts is not yet supported.
-
-.. contents:: On this page
-  :backlinks: top
-  :local:
-  :depth: 2
 
 .. include:: bulk-loading-about.rst
   :start-after: :nosearch:
