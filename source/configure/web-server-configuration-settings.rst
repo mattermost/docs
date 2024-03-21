@@ -680,5 +680,5 @@ Cluster log timeout
 | Numerical input. Default is **2000** milliseconds      |                                                                                         |
 | (2 seconds).                                           |                                                                                         |
 +--------------------------------------------------------+-----------------------------------------------------------------------------------------+
-| See the :doc:`performance monitoring </scale/performance-monitoring>` documentation for details.                                                 |
+| See the :doc:`performance monitoring </scale/deploy-prometheus-grafana-for-performance-monitoring>` documentation for details.                   |
 +--------------------------------------------------------+-----------------------------------------------------------------------------------------+

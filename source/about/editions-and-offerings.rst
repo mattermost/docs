@@ -120,7 +120,7 @@ This offering includes all the features of Mattermost Professional, plus:
 - :doc:`Advanced collaboration with shared channels across Mattermost instances </onboard/shared-channels>`.
 - :doc:`High availability support with multi-node database deployment </scale/high-availability-cluster>`.
 - :doc:`Horizontal scaling through cluster-based deployment </scale/scaling-for-enterprise>`.
-- :doc:`Advanced performance monitoring </scale/performance-monitoring>`.
+- :doc:`Advanced performance monitoring </scale/deploy-prometheus-grafana-for-performance-monitoring>`.
 - `Eligibility for Premier Support add-on <https://mattermost.com/support/>`__.
 - 99% uptime SLA guarantee (Cloud only, via dedicated virtual secure Cloud add-on option).
 

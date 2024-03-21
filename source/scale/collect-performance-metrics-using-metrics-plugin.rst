@@ -7,11 +7,15 @@ Monitor performance using the Metrics plugin
 .. |plus-icon| image:: ../images/plus_F0415.svg
   :alt: Open menus using the plus icon.
 
-The `Mattermost Metrics plugin <https://github.com/mattermost/mattermost-plugin-metrics/>`__ is an alternative tool to collect application metrics from Mattermost that doesn't require you to install and integrate `Prometheus <https://prometheus.io/>`__ and `Grafana <https://grafana.org/>`__ with Mattermost.
+The `Mattermost Metrics plugin <https://github.com/mattermost/mattermost-plugin-metrics/>`__ is an alternative tool to collect application metrics from Mattermost that doesn't require you to install and integrate `Prometheus <https://prometheus.io/>`__ with Mattermost.
 
 The Metrics plugin can be installed on Mattermost versions from v6.3 and collects and stores the :doc:`same performance monitoring metrics </scale/performance-monitoring-metrics>` as Prometheus, without having to deploy these third-party tools. Data is collected every minute and is stored where the plugin is running. The data is synchronized to either a cloud-based or local file store every hour, and retained for 15 days. 
 
 Using the Mattermost Metrics plugin, you can download and share the collected data with Mattermost to understand application performance, troubleshoot system stability and performance, as well as inform route cause analysis.
+
+.. tip::
+
+   Already have Prometheus and Grafana deployed? You can also :doc: `use these tools to monitor performance of your Mattermost deployment </scale/deploy-prometheus-grafana-for-performance-monitoring>`.
 
 Install the Mattermost Metrics plugin
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

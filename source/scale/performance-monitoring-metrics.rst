@@ -7,17 +7,17 @@ Performance monitoring metrics
 Mattermost provides the following performance monitoring statistics to integrate with Prometheus and Grafana.
 
 Custom Mattermost metrics
-~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------
 
 The following is a list of custom Mattermost metrics that can be used to monitor your system's performance:
 
 API metrics
-^^^^^^^^^^^
+~~~~~~~~~~~
 
 - ``mattermost_api_time``: The total time in seconds to execute a given API handler.
 
 Caching metrics
-^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~
 
 - ``mattermost_cache_etag_hit_total``: The total number of ETag cache hits for a specific cache.
 - ``mattermost_cache_etag_miss_total``: The total number of ETag cache misses for an API call.
@@ -31,14 +31,14 @@ The above metrics can be used to calculate ETag and memory cache hit rates over 
    :alt: Example caching metrics, including Etag hit rate and mem cache hit rate, in a self-hosted Mattermost deployment.
 
 Cluster metrics
-^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~
 
 - ``mattermost_cluster_cluster_request_duration_seconds``:  The total duration in seconds of the inter-node cluster requests.
 - ``mattermost_cluster_cluster_requests_total``: The total number of inter-node requests.
 - ``mattermost_cluster_event_type_totals``: The total number of cluster requests sent for any type.
 
 Database metrics
-^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~
 
 - ``mattermost_db_master_connections_total``: The total number of connections to the master database.
 - ``mattermost_db_read_replica_connections_total``: The total number of connections to all the read replica databases.
@@ -48,7 +48,7 @@ Database metrics
 - ``mattermost_db_replica_lag_time``: The time taken for the replica to catch up.
 
 Database connection metrics
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - ``max_open_connections``: The maximum number of open connections to the database.
 - ``open_connections``: The number of established connections both in use and idle.
@@ -61,7 +61,7 @@ Database connection metrics
 - ``max_lifetime_closed_total``: The total number of connections closed due to the connection maximum lifetime configured.
 
 HTTP metrics
-^^^^^^^^^^^^
+~~~~~~~~~~~~
 
 - ``mattermost_http_errors_total``: The total number of http API errors.
 - ``mattermost_http_request_duration_seconds``: The total duration in seconds of the http API requests.
@@ -71,14 +71,14 @@ HTTP metrics
    :alt: Example HTTP metrics, including number of API errors per minute, number of API requests per minute, and mean request time per minute, in a self-hosted Mattermost deployment.
 
 Login and session metrics
-^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - ``mattermost_http_websockets_total`` The total number of WebSocket connections to the server.
 - ``mattermost_login_logins_fail_total``: The total number of failed logins.
 - ``mattermost_login_logins_total``: The total number of successful logins.
 
 Mattermost channels metrics
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - ``mattermost_post_broadcasts_total``: The total number of WebSocket broadcasts sent because a post was created.
 - ``mattermost_post_emails_sent_total``: The total number of emails sent because a post was created.
@@ -91,7 +91,7 @@ Mattermost channels metrics
    :alt: Example Mattermost channels metrics, including messages per minute, broadcasts per minute, emails sent per minute, mobile push notifications per minute, and number of file attachments per minute, in a self-hosted Mattermost deployment.
 
 Process metrics
-^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~
 
 - ``mattermost_process_cpu_seconds_total``: Total user and system CPU time spent in seconds.
 - ``mattermost_process_max_fds``: Maximum number of open file descriptors.
@@ -101,19 +101,19 @@ Process metrics
 - ``mattermost_process_virtual_memory_bytes``: Virtual memory size in bytes.
 
 Search metrics
-^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~
 
 - ``mattermost_search_posts_searches_duration_seconds_sum``: The total duration, in seconds, of search query requests.
 - ``mattermost_search_posts_searches_duration_seconds_count``: The total number of search query requests.
 
 WebSocket metrics
-^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~
 
 - ``mattermost_websocket_broadcasts_total``: The total number of WebSocket broadcasts sent by type.
 - ``mattermost_websocket_event_total``: The total number of WebSocket events sent by type.
     
 Logging metrics
-^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~
 
 - ``logger_queue_used``: Current logging queue level(s).
 - ``logger_logged_total``: The total number of logging records emitted.
@@ -122,7 +122,7 @@ Logging metrics
 - ``logger_blocked_total``: The total number of logging records blocked.
     
 Debugging metrics
-^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~
 
 - ``mattermost_system_server_start_time``: Server start time. Set to the current time on server start. 
 - ``mattermost_jobs_active``: Increment when a job starts and decrement when the job ends. 
@@ -148,7 +148,7 @@ Use annotations to streamline analysis when a job is long running, such as an LD
   Jobs where the runtime is less than the Prometheus polling interval are unlikely to be visible because Grafana is performing range queries over the raw Prometheus timeseries data, and rendering an event each time the value changes.
 
 Standard Go metrics
-~~~~~~~~~~~~~~~~~~~
+--------------------
 
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
