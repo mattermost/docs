@@ -35,7 +35,7 @@ Scale and monitor your Mattermost deployment.
  * :doc:`Scale up to 88000 users </scale/scale-to-88000-users>` - Learn how to scale Mattermost to up to 88000 users.
 * :doc:`High availability cluster </scale/high-availability-cluster>` - Maintain Mattermost service during outages and hardware failures with redundant infrastructure.
 * :doc:`Elasticsearch </scale/elasticsearch>` - Enhance search performance with Elasticsearch.
-* :doc:`Monitor performance using the Mattermost Metrics plugin </scale/metrics-plugin>` - Use the Mattermost Metrics Plugin for cases where Prometheus and Grafana aren't available.
+* :doc:`Monitor performance using the Mattermost Metrics plugin </scale/metrics-plugin>` - Use the Mattermost Metrics Plugin for cases where Prometheus isn't available.
 * :doc:`Monitor performance using dashboards </scale/performance-monitoring>` - Use Prometheus and Grafana to monitor the health and performance of your Mattermost cluster.
 * :doc:`Performance monitoring metrics </scale/performance-monitoring-metrics>` - The custom and standard Go metrics available for monitoring system performance.
 * :doc:`Mattermost performance alerting guide </scale/performance-alerting>` - Learn strategies and best practices for monitoring your Mattermost cluster. 
