@@ -17,8 +17,8 @@ Scale Mattermost
     Scale up to 88000 users </scale/scale-to-88000-users>
     High availability cluster </scale/high-availability-cluster>
     Elasticsearch </scale/elasticsearch>
-    Monitor performance using the Metrics plugin </scale/metrics-plugin>
-    Monitor performance using dashboards </scale/performance-monitoring>
+    Collect performance metrics using the Metrics plugin </scale/metrics-plugin>
+    Deploy Prometheus and Grafana for performance monitoring </scale/performance-monitoring>
     Performance monitoring metrics </scale/performance-monitoring-metrics>
     Mattermost performance alerting guide </scale/performance-alerting>
 
