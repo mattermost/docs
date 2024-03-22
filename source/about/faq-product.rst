@@ -105,10 +105,10 @@ Production Level Quality
 - Tested on several platforms
 
 Beta Level Quality
-- Support best-effort only. `Premier Support <https://mattermost.com/support/>`__ is recommended for use in production environments
+- Support best effort only. `Premier Support <https://mattermost.com/support/>`__ is recommended for use in production environments
 - Core functionality is stable, but iteration based on feedback is ongoing
 - Detailed documentation may not be available yet
-- Data schema may not be complete, and may require manual migrations to future versions
+- Data schema may not be complete and may require manual migrations to future versions
 
 Experimental Level Quality
 - Not recommended for use in production
@@ -116,3 +116,5 @@ Experimental Level Quality
 - Feature set covers a small or specific set of use cases. Additional use and edge cases will be added over time
 - Data loss can occur as data schemas and configurations may change
 - Minimal documentation is available
+
+Please see our `handbook <https://handbook.mattermost.com/operations/research-and-development/processes/feature-labels>`__ for a more detailed explanation of how we define feature labels. 
