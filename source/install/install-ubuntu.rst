@@ -64,7 +64,7 @@ In a terminal window, run the following command to add the Mattermost Server rep
 
     <button class="mm-button mm-code-copy__trigger" data-click-el="Button">
       <svg aria-hidden="true" width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="0.5" y="0.5" width="10.2972" height="10.8284" rx="0.5" stroke="white"/><rect x="6.1489" y="6.41418" width="10.2972" height="10.8284" rx="0.5" stroke="white"/></svg>
-      <span>Copy to clipboard<span>
+      <span>Copy to clipboard</span>
     </button>
 
   </div>
@@ -94,7 +94,7 @@ After any updates, and any system reboots, are complete, installing the Mattermo
 
     <button class="mm-button mm-code-copy__trigger" data-click-el="Button">
       <svg aria-hidden="true" width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="0.5" y="0.5" width="10.2972" height="10.8284" rx="0.5" stroke="white"/><rect x="6.1489" y="6.41418" width="10.2972" height="10.8284" rx="0.5" stroke="white"/></svg>
-      <span>Copy to clipboard<span>
+      <span>Copy to clipboard</span>
     </button>
 
   </div>
