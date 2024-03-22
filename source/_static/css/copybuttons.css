@@ -54,7 +54,7 @@
     opacity: 1;
     visibility: visible;
     top: unset;
-    bottom: -35px;
+    bottom: -40px;
 }
 
 @media (min-width: 960px) {
