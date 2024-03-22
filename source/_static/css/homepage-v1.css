@@ -46,7 +46,6 @@ body:not([data-custom-theme=light]) .site-header {
     padding-left: 16px;
     top: 60px;
   }
-
   .nav-container {
     padding: 0;
   }
@@ -56,7 +55,6 @@ body:not([data-custom-theme=light]) .site-header {
     height: 48px;
     align-items: center;
   }
-
   .notification-bar__close {
     top: 0;
   }
@@ -69,7 +67,7 @@ body:not([data-custom-theme=light]) .site-header {
 /* Theme Overrides */
 .sidebar-search-container {
   padding: 0 16px;
-  color: #3F4350A3;
+  color: rgba(63, 67, 80, 0.6392156863);
 }
 .sidebar-search-container:hover {
   background: transparent;
@@ -125,7 +123,7 @@ body:not([data-custom-theme=light]) .sidebar-search::selection {
 
 .sidebar-tree .toctree-l1 > .reference,
 .sidebar-tree .toctree-l1 > label .icon {
-  color: #363A45B8;
+  color: rgba(54, 58, 69, 0.7215686275);
 }
 
 body:not([data-custom-theme=light]) .toc-tree li.scroll-current > .reference {
@@ -137,10 +135,10 @@ body:not([data-custom-theme=light]) .sidebar-tree .current-page > a.current {
 }
 body:not([data-custom-theme=light]) .sidebar-tree .toctree-l1 > .reference,
 body:not([data-custom-theme=light]) .sidebar-tree .toctree-l1 > label .icon {
-  color: #FFFFFFB8;
+  color: rgba(255, 255, 255, 0.7215686275);
 }
 body:not([data-custom-theme=light]) .sidebar-search-container {
-  color: #FFFFFFA3;
+  color: rgba(255, 255, 255, 0.6392156863);
 }
 body:not([data-custom-theme=light]) .site-header__col--logo {
   color: #fff;
@@ -155,7 +153,6 @@ body:not([data-custom-theme=light]) .sidebar-search {
     width: 80%;
     max-width: 320px;
   }
-
   .sidebar-container {
     padding: 0;
     width: 100%;
@@ -356,7 +353,6 @@ body:not([data-custom-theme=light]) .mm-code-copy code pre {
   .masthead {
     padding: 120px 70px 160px;
   }
-
   body.with-notification .masthead {
     padding: 60px 70px 160px;
   }
@@ -688,7 +684,7 @@ body:not([data-custom-theme=light]) .c-thermometer-modal__footer .btn-primary {
 .c-thermometer-modal__footer .btn-primary:hover,
 .c-thermometer-modal__footer .btn-primary:focus,
 .c-thermometer-modal__footer .btn-primary:active {
-  background: #135dbe;
+  background: rgb(19, 93, 190);
 }
 
 /* Thermometer Modal Ends */
@@ -744,11 +740,9 @@ body:not([data-custom-theme=light]) .c-thermometer-modal__footer .btn-primary {
     justify-content: center;
     position: relative;
   }
-
   .c-thermometer__trigger {
     width: 270px;
   }
-
   .c-thermometer-popup {
     max-width: 100%;
     width: 100%;
@@ -884,12 +878,10 @@ a {
   .page {
     justify-content: flex-start;
   }
-
   .masthead {
     padding-top: 100px;
     padding-bottom: 120px;
   }
-
   .theme-toggle-header {
     display: flex;
     padding: 0;

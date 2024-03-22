@@ -12,10 +12,21 @@
     --black-05: #363A45;
 }
 
+section[id] {
+    scroll-margin-top: 100px;
+}
+
+@media (min-width: 767.98px) {
+    section[id] {
+        scroll-margin-top: 150px;
+    }
+}
+
 
 .pointer-events-none {
     pointer-events: none;
 }
+
 
 /* GRID */
 
