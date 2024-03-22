@@ -107,8 +107,8 @@ Production Level Quality
 Beta Level Quality
 - Support best effort only. `Premier Support <https://mattermost.com/support/>`__ is recommended for use in production environments
 - Core functionality is stable, but iteration based on feedback is ongoing
+- Full resolution and testing of all edge cases is still in progress 
 - Detailed documentation may not be available yet
-- Data schema may not be complete and may require manual migrations to future versions
 
 Experimental Level Quality
 - Not recommended for use in production
