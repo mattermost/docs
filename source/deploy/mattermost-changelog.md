@@ -23,7 +23,7 @@ If you upgrade from a release earlier than v9.6, please read the other [Importan
 
 #### User Interface (UI)
  - Added Mattermost [AI plugin](https://github.com/mattermost/mattermost-plugin-ai) to pre-packaged plugins.
- - Pre-packaged Calls version [v0.25.0](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v0.25.0).
+ - Pre-packaged Calls version [v0.25.1](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v0.25.1).
  - Pre-packaged GitHub plugin version [v2.2.0](https://github.com/mattermost/mattermost-plugin-github/releases/tag/v2.2.0).
  - Added a user limit enforcement.
  - Upgraded ``@mattermost/client`` and ``@mattermost/types`` to support TypeScript v5.x.
