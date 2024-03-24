@@ -12,14 +12,11 @@ body {
     color: var(--body);
 
     &.with-notification {
-        .page {
-            padding-top: 110px;
-        }
 
         .toc-sticky,
         .main>.content,
         .sidebar-sticky {
-            padding-top: 0px;
+            padding-top: 120px;
         }
 
         .sidebar-sticky {
