@@ -25,7 +25,6 @@ If you upgrade from a release earlier than v9.6, please read the other [Importan
  - Added Mattermost [AI plugin](https://github.com/mattermost/mattermost-plugin-ai) to pre-packaged plugins.
  - Pre-packaged Calls version [v0.25.1](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v0.25.1).
  - Pre-packaged GitHub plugin version [v2.2.0](https://github.com/mattermost/mattermost-plugin-github/releases/tag/v2.2.0).
- - Added a user limit enforcement.
  - Upgraded ``@mattermost/client`` and ``@mattermost/types`` to support TypeScript v5.x.
  - The first emoji is now auto-selected in the emoji picker.
  - Added markdown support for batched email notifications.
@@ -36,6 +35,7 @@ If you upgrade from a release earlier than v9.6, please read the other [Importan
  - Improved the opening animation of the user settings modal.
 
 #### Administration
+ - Enforced safety limit in compiled Team Edition and Enterprise Edition deployments when enterprise scale and access control automation features are unavailable and count of users who are registered and not deactivated exceeds 11,000. ERROR_SAFE_LIMITS_EXCEEDED.
  - Dropped pre-packaged plugins for unsupported OS and architectures.
  - Implemented a new **Export Settings** page in the **System Console** to allow Cloud administrators to customize their dedicated export S3 buckets.
  - LDAP job details are no longer shown until the job runs.
