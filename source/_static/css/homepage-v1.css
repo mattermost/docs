@@ -326,6 +326,15 @@ body:not([data-custom-theme=light]) .mm-code-copy code pre {
   font-size: 12px;
 }
 
+::-moz-selection {
+  /* Code for Firefox */
+  background: #DEEAFA;
+}
+
+::selection {
+  background: #DEEAFA;
+}
+
 .masthead {
   background-color: var(--denim);
   font-family: var(--font-trade);
