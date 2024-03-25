@@ -112,7 +112,7 @@ Please review the :doc:`Desktop App changelog </deploy/desktop-app-changelog>` a
 
 See more details in our :ref:`release lifecycle documentation <upgrade/release-lifecycle:desktop and mobile app compatibility>`.
 
-If we upgrade to the latest ESR with a legacy :ref:`E10 or E20 license key <about/editions-and-offerings:other mattermost plans>`_, will we have compatibility issues?
+If we upgrade to the latest ESR with a legacy `E10 or E20 license key <https://docs.mattermost.com/about/editions-and-offerings.html#other-mattermost-plans>`_, will we have compatibility issues?
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 No. Your license key is decoupled from the Mattermost server version. You can freely upgrade to any ESR regardless of your license key or plan.

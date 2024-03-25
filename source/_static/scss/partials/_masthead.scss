@@ -31,6 +31,7 @@
     .masthead {
         padding: 120px 70px 160px;
     }
+
     body.with-notification {
         .masthead {
             padding: 60px 70px 160px;
@@ -75,7 +76,8 @@
     font-size: 20px;
     font-style: normal;
     font-weight: 700;
-    line-height: 150%; /* 30px */
+    line-height: 150%;
+    /* 30px */
     margin: 0 0 28px;
 }
 
@@ -84,7 +86,7 @@
     gap: 20px;
     font-family: var(--font-trade);
 
-    & + .masthead-h2 {
+    &+.masthead-h2 {
         margin-top: 32px;
     }
 
@@ -155,7 +157,7 @@
 
 
 
-body:not([data-theme="light"]) {
+body:not([data-custom-theme="light"]) {
     .masthead {
         background-color: var(--black-05);
     }
@@ -185,4 +187,3 @@ body:not([data-theme="light"]) {
         }
     }
 }
-
