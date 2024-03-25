@@ -15,7 +15,7 @@ Mattermost Enterprise Edition
 
 Mattermost Enterprise Edition v9.6.1 - `View Changelog <https://docs.mattermost.com/deploy/mattermost-changelog.html#release-v9-6-feature-release>`__ - `Download <https://releases.mattermost.com/9.6.1/mattermost-9.6.1-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/9.6.1/mattermost-9.6.1-linux-amd64.tar.gz``
-  - SHA-256 Checksum: ``2623a896630f665975097591ab79a066c0214843af496f66c51c82c60c9e26e3``
+  - SHA-256 Checksum: ``eaa3c480f4b6b9c9a7e511eceeb93926c6446dba207a5868eb2e81b81a7f51a8``
   - GPG Signature: https://releases.mattermost.com/9.6.1/mattermost-9.6.1-linux-amd64.tar.gz.sig
 Mattermost Enterprise Edition v9.5.3 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/deploy/mattermost-changelog.html#release-v9-5-extended-support-release>`__ - `Download <https://releases.mattermost.com/9.5.3/mattermost-9.5.3-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/9.5.3/mattermost-9.5.3-linux-amd64.tar.gz``
@@ -364,7 +364,7 @@ We generally recommend installing Enterprise Edition, even if you don't currentl
 
 Mattermost Team Edition v9.6.1 - `View Changelog <https://docs.mattermost.com/deploy/mattermost-changelog.html#release-v9-6-feature-release>`__ - `Download <https://releases.mattermost.com/9.6.1/mattermost-team-9.6.1-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/9.6.1/mattermost-team-9.6.1-linux-amd64.tar.gz``
-  - SHA-256 Checksum: ``a60e2d3bd358a8d6b74eedb37e01ae7d278f8125bb7417e9b6a7b68a86e306e0``
+  - SHA-256 Checksum: ``ff3908dce8a068dd89742ed43c23a926177dabda0cdbdd7737a18fc7ced3a8eb``
   - GPG Signature: https://releases.mattermost.com/9.6.1/mattermost-team-9.6.1-linux-amd64.tar.gz.sig
 Mattermost Team Edition v9.5.3 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/deploy/mattermost-changelog.html#release-v9-5-extended-support-release>`__ - `Download <https://releases.mattermost.com/9.5.3/mattermost-team-9.5.3-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/9.5.3/mattermost-team-9.5.3-linux-amd64.tar.gz``
