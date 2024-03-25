@@ -828,6 +828,9 @@ body.with-notification .main > .content,
 body.with-notification .sidebar-sticky {
   padding-top: 120px;
 }
+body.with-notification .masthead {
+  padding-top: 160px;
+}
 @media (max-width: 770px) {
   body.with-notification .sidebar-sticky {
     padding-top: 110px;
