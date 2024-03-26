@@ -13,7 +13,7 @@ From Mattermost v9.2, this changelog summarizes updates for the latest cloud and
 
 ## Release v9.6 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
 
-- **9.6.1, released **
+- **9.6.1, released 2024-03-26**
   - Mattermost v9.6.1 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Mattermost v9.6.1 contains no database or functional changes.
   - Fixed an issue where the configuration could not be updated from the System Console in cloud environments.
@@ -89,7 +89,7 @@ See [this walkthrough video](https://mattermost.com/video/changelog-v9-6/) on so
 
 ## Release v9.5 - [Extended Support Release](https://docs.mattermost.com/upgrade/release-definitions.html#extended-support-release-esr)
 
-- **9.5.3, released **
+- **9.5.3, released 2024-03-26**
   - Mattermost v9.5.3 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Mattermost v9.5.3 contains no database or functional changes.
   - Improved the performance of the ElasticSearch indexing job in PostgreSQL installations.
@@ -206,7 +206,7 @@ See [this walkthrough video](https://www.youtube.com/watch?v=b1M2BGGF578&feature
 
 ## Release v9.4 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
 
-- **9.4.5, released **
+- **9.4.5, released 2024-03-26**
   - Mattermost v9.4.5 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Mattermost v9.4.5 contains no database or functional changes.
 - **9.4.4, released 2024-03-06**
