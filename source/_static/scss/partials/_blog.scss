@@ -182,3 +182,13 @@ body:not([data-custom-theme="light"]) {
     font-style: italic;
     font-size: 12px;
 }
+
+
+::-moz-selection {
+    /* Code for Firefox */
+    background: #DEEAFA;
+}
+
+::selection {
+    background: #DEEAFA;
+}

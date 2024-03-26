@@ -326,6 +326,15 @@ body:not([data-custom-theme=light]) .mm-code-copy code pre {
   font-size: 12px;
 }
 
+::-moz-selection {
+  /* Code for Firefox */
+  background: #DEEAFA;
+}
+
+::selection {
+  background: #DEEAFA;
+}
+
 .masthead {
   background-color: var(--denim);
   font-family: var(--font-trade);
@@ -814,13 +823,13 @@ body {
   font-family: var(--font-trade);
   color: var(--body);
 }
-body.with-notification .page {
-  padding-top: 110px;
-}
 body.with-notification .toc-sticky,
 body.with-notification .main > .content,
 body.with-notification .sidebar-sticky {
-  padding-top: 0px;
+  padding-top: 120px;
+}
+body.with-notification .masthead {
+  padding-top: 160px;
 }
 @media (max-width: 770px) {
   body.with-notification .sidebar-sticky {
