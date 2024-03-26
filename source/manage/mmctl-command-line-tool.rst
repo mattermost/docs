@@ -5074,7 +5074,7 @@ Generate and download a Support Packet of the Mattermost server to share with Ma
 
 .. code-block:: sh
 
-   system supportpacket
+   mmctl system supportpacket
 
 **Options**
 

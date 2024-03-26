@@ -48,7 +48,7 @@ We recommend that you disable notifications in Microsoft Teams. If you don't, yo
 Microsoft Teams is your preferred platform
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-When Microsoft Teams is preferred, you'll receive mesages from Mattermost in Microsoft Teams. Mattermost notifications are automatically muted for you to prevent duplicate notifications.
+When Microsoft Teams is preferred, you'll receive messages from Mattermost in Microsoft Teams. Mattermost notifications are automatically muted for you to prevent duplicate notifications.
 
 Setup complete
 --------------

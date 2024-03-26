@@ -326,6 +326,15 @@ body:not([data-custom-theme=light]) .mm-code-copy code pre {
   font-size: 12px;
 }
 
+::-moz-selection {
+  /* Code for Firefox */
+  background: #DEEAFA;
+}
+
+::selection {
+  background: #DEEAFA;
+}
+
 .masthead {
   background-color: var(--denim);
   font-family: var(--font-trade);
@@ -469,26 +478,26 @@ body:not([data-custom-theme=light]) .mm-code-copy code pre {
   color: var(--primary);
 }
 
-body:not([data-theme=light]) .masthead {
+body:not([data-custom-theme=light]) .masthead {
   background-color: var(--black-05);
 }
-body:not([data-theme=light]) .masthead-cards-section.gray {
+body:not([data-custom-theme=light]) .masthead-cards-section.gray {
   background: #24262B;
 }
-body:not([data-theme=light]) .masthead-card__icon {
+body:not([data-custom-theme=light]) .masthead-card__icon {
   background: var(--black-05);
   border-color: var(--black-04);
 }
-body:not([data-theme=light]) .masthead-card__icon .dark {
+body:not([data-custom-theme=light]) .masthead-card__icon .dark {
   display: block;
 }
-body:not([data-theme=light]) .masthead-card__icon .light {
+body:not([data-custom-theme=light]) .masthead-card__icon .light {
   display: none;
 }
-body:not([data-theme=light]) .masthead-card__content {
+body:not([data-custom-theme=light]) .masthead-card__content {
   color: rgba(255, 255, 255, 0.8);
 }
-body:not([data-theme=light]) .masthead-card__content .link {
+body:not([data-custom-theme=light]) .masthead-card__content .link {
   color: var(--primary);
 }
 
@@ -800,13 +809,13 @@ body:not([data-custom-theme=light]) .c-thermometer-modal__footer .btn-primary {
   filter: invert(100%);
 }
 
-body:not([data-theme=light]) .mm-plans-badge p {
+body:not([data-custom-theme=light]) .mm-plans-badge p {
   background-color: rgba(255, 255, 255, 0.08);
 }
-body:not([data-theme=light]) .mm-plans-badge p img {
+body:not([data-custom-theme=light]) .mm-plans-badge p img {
   filter: invert(100%);
 }
-body:not([data-theme=light]) .mm-badge.mm-badge--note img {
+body:not([data-custom-theme=light]) .mm-badge.mm-badge--note img {
   filter: invert(0%);
 }
 
@@ -814,13 +823,13 @@ body {
   font-family: var(--font-trade);
   color: var(--body);
 }
-body.with-notification .page {
-  padding-top: 110px;
-}
 body.with-notification .toc-sticky,
 body.with-notification .main > .content,
 body.with-notification .sidebar-sticky {
-  padding-top: 0px;
+  padding-top: 120px;
+}
+body.with-notification .masthead {
+  padding-top: 160px;
 }
 @media (max-width: 770px) {
   body.with-notification .sidebar-sticky {
