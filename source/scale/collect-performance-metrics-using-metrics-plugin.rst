@@ -15,7 +15,7 @@ Using the Mattermost Metrics plugin, you can download and share the collected da
 
 .. tip::
 
-   Already have Prometheus and Grafana deployed? You can also :doc: `use these tools to monitor performance of your Mattermost deployment </scale/deploy-prometheus-grafana-for-performance-monitoring>`.
+   Already have Prometheus and Grafana deployed? You can also :doc:`use these tools to monitor performance of your Mattermost deployment </scale/deploy-prometheus-grafana-for-performance-monitoring>`.
 
 Install the Mattermost Metrics plugin
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
