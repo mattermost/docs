@@ -396,24 +396,24 @@ Enable tutorial
 | This feature's ``config.json`` setting is ``"EnableTutorial": true`` with options ``true`` and ``false``.                                  |
 +--------------------------------------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: exp-enableonboarding
-  :displayname: Enable onboarding (Experimental)
+.. config:setting:: exp-enableonboardingflow
+  :displayname: Enable onboarding flow (Experimental)
   :systemconsole: Experimental > Features
-  :configjson: EnableOnboarding
+  :configjson: EnableOnboardingFlow
   :environment: N/A
 
   - **true**: **(Default)** New Mattermost users are shown key tasks to complete as part of initial onboarding.
   - **false**: User onboarding tasks are disabled. Users are placed in Town Square when they open Mattermost for the first time after account creation.
 
-Enable onboarding
-~~~~~~~~~~~~~~~~~
+Enable onboarding flow
+~~~~~~~~~~~~~~~~~~~~~~
 
 **True**: New Mattermost users are shown key tasks to complete as part of initial onboarding.
 
 **False**: User onboarding tasks are disabled. Users are placed in Town Square when they open Mattermost for the first time after account creation.
 
 +--------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableOnboarding": true`` with options ``true`` and ``false``.                                |
+| This feature's ``config.json`` setting is ``"EnableOnboardingFlow": true`` with options ``true`` and ``false``.                            |
 +--------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: exp-enableusertypingmessages
