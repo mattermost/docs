@@ -1297,8 +1297,8 @@ Indicates how many images can be decoded concurrently at once. The default value
 
 .. note::
 
-  - This configuration setting affects the total memory consumption of the server. The maximum memory of a single image is dictated by ``MaxImageResolution * 24 bytes``, where the maximum image resolution is 33MB. 
-  - Therefore, a good rule of thumb to follow is that ``33MB * MaxImageDecoderConcurrency * 24`` should be less than the allocated memory for image decoding. 
+  - This configuration setting affects the total memory consumption of the server. The maximum memory of a single image is dictated by ``MaxImageResolution * 24 bytes``, where the default maximum image resolution value is 33MB.
+  - Therefore, a good rule of thumb to follow is that ``33MB * MaxImageDecoderConcurrency * 24`` should be less than the total memory for the server. 
   - For example, if you have a 4-core server, you should leave aside at least ``33 * 4 * 24 = 3168MB`` memory for image processing. Otherwise, adjust the `MaxImageResolution <#maximum-image-resolution>`_ configuration setting to adjust the amount of memory needed for image processing.
 
 +--------------------------------------------------------------------------------------------------------+
