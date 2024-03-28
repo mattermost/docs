@@ -34,7 +34,7 @@ Site URL
 |   - Email notifications will contain broken links, and email batching will not work.                                          |
 |   - Authentication via OAuth 2.0, including GitLab, Google, and Office 365, will fail.                                        |
 |   - Plugins may not work as expected.                                                                                         |
-+---------------------------------------------------------------+---------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: web-listenaddress
   :displayname: Web server listen address (Web Server)
