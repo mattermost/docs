@@ -364,10 +364,10 @@ Deploy Mattermost
 
       kubectl -n mattermost port-forward svc/[YOUR_MATTERMOST_NAME] 8065:8065
 
-Mattermost CloudNative Bootstrapper
------------------------------------
+Mattermost CloudNative Bootstrapper (Sneak peek)
+------------------------------------------------
 
-Check out this `YouTube demo <https://youtu.be/OZJj0ObA-Lk>`__, by Nick Misasi, Senior Software Design Engineer, to learn about streamlining your Mattermost deployments on Kubernetes using the Mattermost CloudNative Bootstrapper.
+Check out this `YouTube sneak peek demo <https://youtu.be/OZJj0ObA-Lk>`__, by Nick Misasi, Senior Software Design Engineer, to learn about streamlining your Mattermost deployments on Kubernetes using the Mattermost CloudNative Bootstrapper.
 
 .. raw:: html
   
