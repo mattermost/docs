@@ -434,6 +434,9 @@ Websocket URL
 |                                                        | - Environment variable: ``MM_SERVICESETTINGS_WEBSOCKETURL``         |
 | String input.                                          |                                                                     |
 +--------------------------------------------------------+---------------------------------------------------------------------+
+| **Note**: We strongly recommend configuring a single websocket URL that matches the `Site URL <#site-url>`_ configuration    |
+| setting.                                                                                                                     |
++--------------------------------------------------------+---------------------------------------------------------------------+
 
 .. config:setting:: web-licensefilelocation
   :displayname: License file location (Web Server)

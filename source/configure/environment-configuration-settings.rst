@@ -22,6 +22,7 @@ Both self-hosted and Cloud admins can access the following configuration setting
 - `Session Lengths <#session-lengths>`__
 - `Performance Monitoring <#performance-monitoring>`__
 - `Developer <#developer>`__
+- `Cloud settings <#cloud-settings>`__
 
 ----
 
