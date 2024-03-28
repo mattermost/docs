@@ -13,6 +13,7 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
 
 ### Improvements
  - Bumped iOS SDK to v17.2.
+ - Added back the ability to connect the iOS app to servers without SSL.
 
 ### Bug Fixes
  - Fixed an issue where opening a user avatar could cause a crash.
