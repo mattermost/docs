@@ -109,7 +109,7 @@ Link metadata timeout
 Adds a configurable timeout for requests made to return link metadata. If the metadata is not returned before this timeout expires, the message will post without requiring metadata. This timeout covers the failure cases of broken URLs and bad content types on slow network connections.
 
 +---------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"LinkMetadataTimeoutMilliseconds": 5000`` with numerical input.                     |
+| This feature's ``config.json`` setting is ``"LinkMetadataTimeoutMilliseconds``: 5000`` with numerical input.                    |
 +---------------------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: exp-emailbatchbuffersize
@@ -124,8 +124,13 @@ Email batching buffer size
 
 Specify the maximum number of notifications batched into a single email.
 
+.. note::
+  
+  - We recommend increasing the buffer size from the default value if you see the following error in the Mattermost logs: ``Email batching job's receiving buffer was full. Please increase the EmailBatchingBufferSize. Falling back to sending immediate mail.`` Increasing this value will ensure emails are queued up, without impacting server performance.
+  - Notifications will be sent instantly if the queue of emails exceeds the `email batching interval <#id1>`_ configured. 
+
 +--------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``EmailBatchingBufferSize": 256`` with numerical input.                        |
+| This feature's ``config.json`` setting is ``EmailBatchingBufferSize``: 256`` with numerical input.                       |
 +--------------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: exp-emailbatchinterval
@@ -138,7 +143,13 @@ Specify the maximum number of notifications batched into a single email.
 Email batching interval
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-Specify the maximum frequency, in seconds, which the batching job checks for new notifications. Longer batching intervals will increase performance.
+Specify the maximum frequency, in seconds, which the batching job checks for new notifications. 
+
+.. note::
+
+  - We recommend decreasing the email batching interval from the default value if you see the following error in the Mattermost logs: ``Email batching job's receiving buffer was full. Please increase the EmailBatchingBufferSize. Falling back to sending immediate mail.``. 
+  - Longer batching intervals may increase performance.
+  - Notifications will be sent instantly if the `queue of emails <#email-batching-buffer-size>`_ exceeds the email batching interval configured. 
 
 +-----------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``EmailBatchingInterval": 30`` with numerical input.                        |
