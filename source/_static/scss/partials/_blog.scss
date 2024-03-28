@@ -191,11 +191,11 @@ table.align-default {
 
 ::-moz-selection {
     /* Code for Firefox */
-    background: hsla(42, 100%, 56%, 0.4);
+    background: hsla(42, 100%, 56%, 0.2);
 }
 
 ::selection {
-    background: hsla(42, 100%, 56%, 0.4);
+    background: hsla(42, 100%, 56%, 0.2);
 }
 
 body:not([data-custom-theme="light"]) {

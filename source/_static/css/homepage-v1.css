@@ -333,11 +333,11 @@ table.align-default {
 
 ::-moz-selection {
   /* Code for Firefox */
-  background: rgba(255, 188, 31, 0.4);
+  background: rgba(255, 188, 31, 0.2);
 }
 
 ::selection {
-  background: rgba(255, 188, 31, 0.4);
+  background: rgba(255, 188, 31, 0.2);
 }
 
 body:not([data-custom-theme=light]) ::-moz-selection {
