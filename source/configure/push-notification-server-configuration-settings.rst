@@ -97,6 +97,6 @@ Maximum notifications per channel
 | Numerical input. Default is **1000**.                           |                                                                                      |
 +-----------------------------------------------------------------+--------------------------------------------------------------------------------------+
 | **Note**: We recommend increasing this value a little at a time, monitoring system health by tracking :doc:`performance monitoring metrics             |
-| </scale/performance-monitoring>`, and only increasing this value if large channels have restricted permissions                                         |
+| </scale/deploy-prometheus-grafana-for-performance-monitoring>`, and only increasing this value if large channels have restricted permissions           |
 | controlling who can post to the channel, such as a read-only Town Square channel.                                                                      |
 +-----------------------------------------------------------------+--------------------------------------------------------------------------------------+

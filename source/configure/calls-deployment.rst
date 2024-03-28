@@ -188,7 +188,7 @@ We provide a `load-test tool <https://github.com/mattermost/mattermost-plugin-ca
 Monitoring
 ~~~~~~~~~~
 
-Both the plugin and the external ``rtcd`` service expose some Prometheus metrics to monitor performance. We provide an `official dashboard <https://github.com/mattermost/mattermost-performance-assets/blob/master/grafana/mattermost-calls-performance-monitoring.json>`__ that can be imported in Grafana. You can refer to :doc:`Performance monitoring </scale/performance-monitoring>` for more information on how to set up Prometheus and visualize metrics through Grafana.
+Both the plugin and the external ``rtcd`` service expose some Prometheus metrics to monitor performance. We provide an `official dashboard <https://github.com/mattermost/mattermost-performance-assets/blob/master/grafana/mattermost-calls-performance-monitoring.json>`__ that can be imported in Grafana. You can refer to :doc:`Performance monitoring </scale/deploy-prometheus-grafana-for-performance-monitoring>` for more information on how to set up Prometheus and visualize metrics through Grafana.
 
 Calls plugin metrics
 ^^^^^^^^^^^^^^^^^^^^

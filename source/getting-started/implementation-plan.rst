@@ -198,7 +198,7 @@ Implement backup procedures to protect data stored within the Mattermost databas
 
 Mattermost Enterprise supports integrated health and performance monitoring with Prometheus and Grafana. A guide to the statistics collected and reported on is available in the reference below:
 
-**Reference**: https://docs.mattermost.com/scale/performance-monitoring.html
+**Reference**: https://docs.mattermost.com/scale/deploy-prometheus-grafana-for-performance-monitoring.html
 
 3.3.9 AD/LDAP setup
 ^^^^^^^^^^^^^^^^^^^^
@@ -365,7 +365,7 @@ If the training will be provided by State staff, provide the course name(s) and 
 
 Available in Mattermost Enterprise.
 
-This section describes the performance monitoring tool and techniques and how it will be used to help decide if the implementation is successful: https://docs.mattermost.com/scale/performance-monitoring.html
+This section describes the performance monitoring tool and techniques and how it will be used to help decide if the implementation is successful: https://docs.mattermost.com/scale/deploy-prometheus-grafana-for-performance-monitoring.html
 
 4.4 Configuration management interface
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

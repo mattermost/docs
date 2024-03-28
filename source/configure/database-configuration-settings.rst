@@ -506,7 +506,8 @@ Replica lag settings
 | **Notes**:                                                                                                                                |
 |                                                                                                                                           |
 | - The ``QueryAbsoluteLag`` and ``QueryTimeLag`` queries must return a single row.                                                         |
-| - To properly monitor this you must setup :doc:`performance monitoring </scale/performance-monitoring>` for Mattermost.                   |
+| - To properly monitor this, you must setup :doc:`performance monitoring </scale/deploy-prometheus-grafana-for-performance-monitoring>`    |
+|   for Mattermost.                                                                                                                         |
 +--------------------------------------------------------+----------------------------------------------------------------------------------+
 
 1. Configure the replica lag metric based on your database type. See the following tabs for details on configuring this for each database type.

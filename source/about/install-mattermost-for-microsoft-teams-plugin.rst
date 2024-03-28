@@ -130,7 +130,7 @@ Additional configuration settings are available for this plugin. See the :ref:`M
 Monitor plugin performance
 --------------------------
 
-You can set up :doc:`performance monitoring </scale/performance-monitoring>` and :doc:`performance alerting </scale/performance-alerting>` for this plugin using Prometheus and Grafana.
+You can set up :doc:`performance monitoring </scale/deploy-prometheus-grafana-for-performance-monitoring>` and :doc:`performance alerting </scale/performance-alerting>` for this plugin using Prometheus and Grafana.
 
 - Monitoring enables you to proactively review the overall health of the plugin, including database calls, HTTP requests, and API latency.
 - Alerting enables you to detect and take action as issues come up, such as the integration being offline.
