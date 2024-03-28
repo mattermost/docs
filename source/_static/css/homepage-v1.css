@@ -326,13 +326,26 @@ body:not([data-custom-theme=light]) .mm-code-copy code pre {
   font-size: 12px;
 }
 
+table.align-default {
+  min-width: 500px;
+  overflow: auto;
+}
+
 ::-moz-selection {
   /* Code for Firefox */
-  background: #DEEAFA;
+  background: rgba(255, 188, 31, 0.4);
 }
 
 ::selection {
-  background: #DEEAFA;
+  background: rgba(255, 188, 31, 0.4);
+}
+
+body:not([data-custom-theme=light]) ::-moz-selection {
+  /* Code for Firefox */
+  background: rgba(0, 102, 235, 0.4);
+}
+body:not([data-custom-theme=light]) ::selection {
+  background: rgba(0, 102, 235, 0.4);
 }
 
 .masthead {
