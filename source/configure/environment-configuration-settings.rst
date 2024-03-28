@@ -166,33 +166,3 @@ Developer
 
 .. include:: developer-mode-configuration-settings.rst
     :start-after: :nosearch:
-
-Cloud settings
---------------
-
-.. config:setting:: cloud-disable
-  :displayname: Disable customer portal requests (Cloud)
-  :systemconsole: N/A
-  :configjson: .CloudSettings.Disable
-  :environment: MM_CLOUDSETTINGS_DISABLE
-  :description: Enable or disable server requests to the Mattermost Customer Portal.
-
-  - **true**: Server-side requests made to the customer portal are enabled, but will always fail in air-gapped and restricted environments.
-  - **false**: **(Default)** Server-side requests made to the customer portal are disabled.
-
-Disable Customer Portal requests
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-+-----------------------------------------------+---------------------------------------------------------------------------+
-| Enable or disable developer mode.             | - System Config path: **N/A**                                             |
-|                                               | - ``config.json setting``: ``".CloudSettings.Disable": false",``          |
-| - **true**: Server-side requests made to the  | - Environment variable: ``MM_CLOUDSETTINGS_DISABLE``                      |
-|   Mattermost Customer Portal are enabled,     |                                                                           |
-|   but will always fail in air-gapped and      |                                                                           |
-|   restricted deployment environments.         |                                                                           |
-| - **false**: **(Default)** Server-side        |                                                                           |
-|   requests made to the customer portal are    |                                                                           |
-|   disabled.                                   |                                                                           |
-+-----------------------------------------------+---------------------------------------------------------------------------+
-| **Note**: Cloud admins can’t modify this configuration setting.                                                           |
-+-----------------------------------------------+---------------------------------------------------------------------------+
