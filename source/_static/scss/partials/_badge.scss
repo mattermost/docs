@@ -49,7 +49,7 @@
     }
 }
 
-body:not([data-theme=light]) {
+body:not([data-custom-theme=light]) {
     .mm-plans-badge {
         p {
             background-color: rgba(255, 255, 255, 0.08);

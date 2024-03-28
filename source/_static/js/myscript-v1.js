@@ -145,9 +145,8 @@ $(document).ready(function () {
     });
 
     clickTouch(hamburger, () => {
-        console.log('asdasd');
         hamburger.classList.toggle('is-active');
         document.body.classList.toggle('nav-open');
-        document.getElementById('navigation').classList.toggle('active');
+        document.getElementById('navigation').classList.toggle('nav-is-active');
     });
 });
