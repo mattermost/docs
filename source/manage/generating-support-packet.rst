@@ -1,5 +1,5 @@
-Generating a support packet
-===========================
+Generate a support packet
+==========================
 
 .. include:: ../_static/badges/ent-pro-selfhosted.rst
   :start-after: :nosearch:

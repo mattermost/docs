@@ -2,6 +2,9 @@
 
 Use the System Console or the :ref:`mmctl system supportpacket <manage/mmctl-command-line-tool:mmctl system supportpacket>` command to generate a Mattermost Support Packet that includes configuration information, logs, plugin details, and data on external dependencies. Confidential data, such as passwords, are automatically stripped.
 
+Contents of a support packet
+----------------------------
+
 A Mattermost Support Packet can contain the following files:
 
 - ``mattermost.log``
@@ -15,7 +18,10 @@ A Mattermost Support Packet can contain the following files:
 
 .. note:: 
 
-   When present, the following information is santized during packet generation: ``LdapSettings.BindPassword``, ``FileSettings.PublicLinkSalt``, ``FileSettings.AmazonS3SecretAccessKey``, ``EmailSettings.SMTPPassword``, ``GitLabSettings.Secret``, ``GoogleSettings.Secret``, ``Office365Settings.Secret``, ``OpenIdSettings.Secret``, ``SqlSettings.DataSource``, ``SqlSettings.AtRestEncryptKey``, ``ElasticsearchSettings.Password``, ``All SqlSettings.DataSourceReplicas``, ``All SqlSettings.DataSourceSearchReplicas``, ``MessageExportSettings.GlobalRelaySettings.SmtpPassword``, ``ServiceSettings.GfycatApiSecret``, and ``ServiceSettings.SplitKey``. Plugins are not sanitized during packet generation.
+   LDAP groups are not included during Support Packet generation. Only ``LDAP Version`` and ``LDAP Vendor`` are included when present. These values are included in the ``support_packet.yaml`` file.
+
+Generate the support packet
+---------------------------
 
 .. tab:: Web/Desktop
 
@@ -26,12 +32,6 @@ A Mattermost Support Packet can contain the following files:
 
    2. Select **Download Support Packet**. A zip file is downloaded to the local machine. You'll be notified if any packet files are unavailable during packet generation. See the ``warning.txt`` file for details.
 
-   3. Sanitize any confidential details in the ``plugin.json`` file before sending the Support Packet to Mattermost Support. When sanitizing Support Packet data, replace details with example strings that contain the same special characters if possible, as special characters are common causes of configuration errors.
-
-   .. note::
-
-      LDAP groups are not included during Support Packet generation. Only ``LDAP Version`` and ``LDAP Vendor`` are included when present. These values are included in the ``support_packet.yaml`` file.
-
 .. tab:: mmctl
 
    Run the :ref:`mmctl system supportpacket <manage/mmctl-command-line-tool:mmctl system supportpacket>` command to generate and download a Support Packet to share with Mattermost Support.
@@ -41,6 +41,18 @@ A Mattermost Support Packet can contain the following files:
       go run ./cmd/mmctl system supportpacket
       Downloading Support Packet
       Downloaded Support Packet to mattermost_support_packet_.zip
+
+Santitize confidential data
+---------------------------
+
+When present, the following information is santized during packet generation: ``LdapSettings.BindPassword``, ``FileSettings.PublicLinkSalt``, ``FileSettings.AmazonS3SecretAccessKey``, ``EmailSettings.SMTPPassword``, ``GitLabSettings.Secret``, ``GoogleSettings.Secret``, ``Office365Settings.Secret``, ``OpenIdSettings.Secret``, ``SqlSettings.DataSource``, ``SqlSettings.AtRestEncryptKey``, ``ElasticsearchSettings.Password``, ``All SqlSettings.DataSourceReplicas``, ``All SqlSettings.DataSourceSearchReplicas``, ``MessageExportSettings.GlobalRelaySettings.SmtpPassword``, ``ServiceSettings.GfycatApiSecret``, and ``ServiceSettings.SplitKey``. Plugins are not sanitized during packet generation.
+
+Ensure you sanitize any additional confidential details in the ``plugin.json`` file before sharing it with Mattermost. Replace details with example strings that contain the same special characters if possible, as special characters are common causes of configuration errors.
+
+Share the packet with Mattermost
+--------------------------------
+
+Add the generated support packet to a Mattermost Support ticket, or share with with the Mattermost team you're working with.
 
 Go performance metrics
 ----------------------
