@@ -45,7 +45,6 @@ SSL and HTTP/2 with server push are enabled in the provided configuration exampl
 
        http2_push_preload on; # Enable HTTP/2 Server Push
 
-       ssl on;
        ssl_certificate /etc/letsencrypt/live/{domain-name}/fullchain.pem;
        ssl_certificate_key /etc/letsencrypt/live/{domain-name}/privkey.pem;
        ssl_session_timeout 1d;
