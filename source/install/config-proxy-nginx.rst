@@ -40,6 +40,7 @@ SSL and HTTP/2 with server push are enabled in the provided configuration exampl
 
     server {
        listen 443 ssl http2;
+       listen [::]:443 ssl http2;
        server_name    mattermost.example.com;
 
        http2_push_preload on; # Enable HTTP/2 Server Push
