@@ -188,6 +188,10 @@ table.align-default {
     overflow: auto;
 }
 
+table.align-default td {
+    min-width: 200px;
+}
+
 
 ::-moz-selection {
     /* Code for Firefox */
@@ -207,4 +211,9 @@ body:not([data-custom-theme="light"]) {
     ::selection {
         background: hsla(214, 100%, 46%, 0.4);
     }
+}
+
+
+.bg-white {
+    background: #fff;
 }

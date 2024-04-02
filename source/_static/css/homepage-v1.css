@@ -331,6 +331,10 @@ table.align-default {
   overflow: auto;
 }
 
+table.align-default td {
+  min-width: 200px;
+}
+
 ::-moz-selection {
   /* Code for Firefox */
   background: rgba(255, 188, 31, 0.2);
@@ -346,6 +350,10 @@ body:not([data-custom-theme=light]) ::-moz-selection {
 }
 body:not([data-custom-theme=light]) ::selection {
   background: rgba(0, 102, 235, 0.4);
+}
+
+.bg-white {
+  background: #fff;
 }
 
 .masthead {
