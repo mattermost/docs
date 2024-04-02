@@ -41,7 +41,7 @@ If you upgrade from a release earlier than v9.6, please read the other [Importan
  - Implemented a new **Export Settings** page in the **System Console** to allow Cloud administrators to customize their dedicated export S3 buckets.
  - LDAP job details are no longer shown until the job runs.
  - Added more logging to the ``NotificationsLog``.
- - A message is now logged if a user tries to login using a wrong password.
+ - A message is now logged when a user tries to log in using an incorrect password.
  - Posts from deactivated users are now included in **Direct Message** channel exports. Also the ``--include-archived-channels`` flag is now respected for **Direct Message** channels.
  - Changed the cache headers for file endpoints to cache privately for 24 hours, instead of not caching at all.
  - Improved the performance of the ElasticSearch indexing job in PostgreSQL installations.
