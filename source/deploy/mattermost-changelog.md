@@ -28,7 +28,7 @@ If you upgrade from a release earlier than v9.6, please read the other [Importan
  - Pre-packaged GitHub plugin version [v2.2.0](https://github.com/mattermost/mattermost-plugin-github/releases/tag/v2.2.0).
  - Upgraded ``@mattermost/client`` and ``@mattermost/types`` to support TypeScript v5.x.
  - The first emoji is now auto-selected in the emoji picker.
- - Added markdown support for batched email notifications.
+ - Added Markdown support for batched email notifications.
  - Users’ timezone is now used in batched email notifications.
  - Removed a conflicting class (``help-text``) from the interactive dialog field description to resolve the black text color in the dark theme.
  - Updated the user interface of **Team Settings** modal.
