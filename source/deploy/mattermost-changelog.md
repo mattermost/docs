@@ -36,7 +36,7 @@ If you upgrade from a release earlier than v9.6, please read the other [Importan
  - Improved the opening animation of the user settings modal.
 
 #### Administration
- - Enforced safety limit in compiled Team Edition and Enterprise Edition deployments when enterprise scale and access control automation features are unavailable and count of users who are registered and not deactivated exceeds 11,000. ERROR_SAFE_LIMITS_EXCEEDED.
+ - Enforced safety limit in compiled Team Edition and Enterprise Edition deployments when enterprise scale and access control automation features are unavailable, and when the count of users who are registered, but not deactivated, exceeds 11,000. ERROR_SAFE_LIMITS_EXCEEDED.
  - Dropped pre-packaged plugins for unsupported OS and architectures.
  - Implemented a new **Export Settings** page in the **System Console** to allow Cloud administrators to customize their dedicated export S3 buckets.
  - LDAP job details are no longer shown until the job runs.
