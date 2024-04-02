@@ -1,12 +1,12 @@
 User Guide: Mattermost AI Copilot Plugin
 ========================================
 
-This documentation outlines the AI-enhanced features available in the [Mattermost AI Copilot plugin](https://github.com/mattermost/mattermost-plugin-ai). For the corresponding configuration guide for administrators, refer to the :doc:`Mattermost AI Copilot admin documentation </guide/mattermost-ai-copilot-admin-guide>`.
+This documentation outlines the AI-enhanced features available in the `Mattermost AI Copilot plugin <https://github.com/mattermost/mattermost-plugin-ai>`_. For the corresponding configuration guide for administrators, refer to the `Mattermost AI Copilot admin documentation <../mattermost-ai-copilot-admin-guide>`_.
 
 The AI Right-Hand Sidebar (RHS) 
 -------------------------------
 
-.. note:: Access AI capabilities directly from the right-hand sidebar in Mattermost. Begin with suggested prompts or engage in a private thread with the AI for a tailored experience.
+.. tip:: Access AI capabilities directly from the right-hand sidebar in Mattermost. Begin with suggested prompts or engage in a private thread with the AI for a tailored experience.
 
 **Privately Chat with Your AI Copilot**
 
