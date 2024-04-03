@@ -92,7 +92,7 @@ SSL and HTTP/2 with server push are enabled in the provided configuration exampl
        }
 
        location / {
-           client_max_body_size 50M;
+           client_max_body_size 100M;
            proxy_set_header Connection "";
            proxy_set_header Host $http_host;
            proxy_set_header X-Real-IP $remote_addr;

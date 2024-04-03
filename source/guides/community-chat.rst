@@ -6,7 +6,7 @@ Connect with thousands of contributors, customers, partners, and users to build,
 General channels
 ----------------
 
-- `~Contributors <https://community.mattermost.com/core/chann0els/tickets>`__
+- `~Contributors <https://community.mattermost.com/core/channels/tickets>`__
 - `~Community Team <https://community.mattermost.com/core/channels/community-team>`__
 - `~Developers <https://community.mattermost.com/core/channels/developers>`__
 - `~New Channel Notifications <https://community.mattermost.com/core/channels/new-channel-notifications>`__
