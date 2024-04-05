@@ -2105,6 +2105,9 @@ Set the value of a config setting by its name in dot notation. Accepts multiple 
 
    mmctl config set SqlSettings.DriverName postgres
    mmctl config set SqlSettings.DataSourceReplicas "replica1" "replica2"
+   mmctl config set PluginSettings.Plugins.com.mattermost.calls.rtcdserviceurl "http://mattermost-rtcd"
+
+
 
 **Options**
 
