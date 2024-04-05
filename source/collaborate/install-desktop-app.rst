@@ -292,6 +292,11 @@ Append ``Mattermost.exe;`` to the Registry Key ``HKLM\SYSTEM\CurrentControlSet\S
 
 For further assistance, review the `Troubleshooting forum <https://forum.mattermost.com/c/trouble-shoot>`__ for previously reported errors, or `join the Mattermost user community for troubleshooting help <https://mattermost.com/pl/default-ask-mattermost-community/>`__.
 
+Can I uninstall the desktop app I installed using snap on Linux?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Yes. Run the following command from a terminal window: ``sudo snap remove mattermost-desktop``.
+
 Report Desktop App issues
 -------------------------
 
