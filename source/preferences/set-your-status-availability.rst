@@ -59,11 +59,15 @@ To set your availability, select your profile picture, then specify your availab
 +==================+===================================================================================================================+
 | |online|         | - Set automatically for you when you're active on Mattermost using a browser, the desktop app, or the mobile app. |
 |                  | - By default, notifications are sent to the browser, the desktop app, and the mobile app.                         |
+|                  | - Using the desktop app, any mouse or keyboard activity keeps your availabliliy set to **Online**.                |
 +------------------+-------------------------------------------------------------------------------------------------------------------+
-| |away|           | - Set automatically for you when you've been inactive for more than 5 minutes.                                    |
+| |away|           | - Set automatically for you when you've been inactive for more than 5 minutes. System admins can change this      | 
+|                  |   value using an experimental configuation setting called                                                         |
+|                  |   :ref:`user status away timeout <configure/experimental-configuration-settings:user status away timeout>`.       |
 |                  |                                                                                                                   |
-|                  |   - You're inactive when you're not: typing in or navigating between channels, switching to another browser tab,  |
-|                  |     or when you've minimized or moved the browser window to the background.                                       |
+|                  | - You're inactive in Mattermost when you're not: typing in or navigating between channels, switching to           |
+|                  |   another browser tab, or when you've minimized or moved the browser window to the background.                    |
+|                  |                                                                                                                   |
 |                  | - You can manually set yourself as **Away** any time.                                                             |
 |                  | - By default, notifications are sent to your Mattermost mobile app.                                               |
 +------------------+-------------------------------------------------------------------------------------------------------------------+
@@ -76,7 +80,7 @@ To set your availability, select your profile picture, then specify your availab
 |                  | - By default, notifications are sent to your Mattermost mobile app.                                               |
 +------------------+-------------------------------------------------------------------------------------------------------------------+
 
-Other members can see your availability anywhere they can see your name, such as the channel sidebar, within conversations, and within Direct Messages.
+Other members can see your availability anywhere they can see your name, such as the channel sidebar, within conversations, and within direct messages.
 
 Set your availability as Do Not Disturb
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
