@@ -15,6 +15,15 @@ Primary use cases include:
 
 Mattermost is used as a secure collaboration hub by technical and operational teams, with critical documents and data shared on a daily basis. Thus, legal hold is a key requirement for Enterprises and public sector organizations who have deployed Mattermost for their teams, to meet compliance & auditory requirements while minimizing risk.
 
+Legal hold demo (Sneak Peek)
+----------------------------
+
+Check out this `YouTube sneak peek demo <https://youtu.be/TBD>`__, by Doug Lauder, Senior Engineering Lead, to learn about Mattermost's legal hold workflow.
+
+.. raw:: html
+  
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/TBD" alt="Streamline Mattermost Deployments on Kubernetes" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
 Below are step-by-step instructions on how to carry out a legal hold for Mattermost with XML-formatted data, Amazon S3 file storage, and archiving and compliance tools, such as `Smarsh <https://www.smarsh.com/>`__.
 
 How to carry out a legal hold
