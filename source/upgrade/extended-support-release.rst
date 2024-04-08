@@ -49,9 +49,9 @@ What are the current supported Extended Support Release versions?
 +-------------+----------------+------------------+------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------+
 | Version     | Type           | Release Date     | End of Support   | Latest Dot Release Download link                                                           | Upgrade Notes                                       |
 +=============+================+==================+==================+============================================================================================+=====================================================+
-| 9.5         | Feature        | February 16, 2024| November 15, 2024| `9.5.2 <https://releases.mattermost.com/9.5.2/mattermost-9.5.2-linux-amd64.tar.gz>`_       |                                                     |
+| 9.5         | Feature        | February 16, 2024| November 15, 2024| `9.5.3 <https://releases.mattermost.com/9.5.3/mattermost-9.5.3-linux-amd64.tar.gz>`_       |                                                     |
 +-------------+----------------+------------------+------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------+
-| 8.1         | Feature        | August 16, 2023  | May 15, 2024     | `8.1.10 <https://releases.mattermost.com/8.1.10/mattermost-8.1.10-linux-amd64.tar.gz>`_    |                                                     |
+| 8.1         | Feature        | August 16, 2023  | May 15, 2024     | `8.1.12 <https://releases.mattermost.com/8.1.12/mattermost-8.1.12-linux-amd64.tar.gz>`_    |                                                     |
 +-------------+----------------+------------------+------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------+
 | 7.8         | Feature        | February 16, 2023| November 15, 2023| `7.8.15 <https://releases.mattermost.com/7.8.15/mattermost-7.8.15-linux-amd64.tar.gz>`_    |                                                     |
 +-------------+----------------+------------------+------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------+
@@ -112,7 +112,7 @@ Please review the :doc:`Desktop App changelog </deploy/desktop-app-changelog>` a
 
 See more details in our :ref:`release lifecycle documentation <upgrade/release-lifecycle:desktop and mobile app compatibility>`.
 
-If we upgrade to the latest ESR with a legacy :ref:`E10 or E20 license key <about/editions-and-offerings:other mattermost plans>`_, will we have compatibility issues?
+If we upgrade to the latest ESR with a legacy `E10 or E20 license key <https://docs.mattermost.com/about/editions-and-offerings.html#other-mattermost-plans>`_, will we have compatibility issues?
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 No. Your license key is decoupled from the Mattermost server version. You can freely upgrade to any ESR regardless of your license key or plan.
