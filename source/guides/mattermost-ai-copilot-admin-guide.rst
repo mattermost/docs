@@ -1,15 +1,17 @@
-Admin Guide: Mattermost AI Copilot Plugin
-=========================================
+Admin Guide: Mattermost AI Copilot
+==================================
 
 This document provides instructions for administrators to configure `Mattermost AI Copilot <https://github.com/mattermost/mattermost-plugin-ai>`_. For the corresponding user guide, refer to the `Mattermost AI Copilot end user documentation <../guides/mattermost-ai-copilot-user-guide.html>`_.
 
-For the best experience with Mattermost AI Copilot, we recommend using **Mattermost Server v9.6** or later. Mattermost AI Copilot is installed as a plugin and is compatible with the following `Mattermost server versions <https://docs.mattermost.com/deploy/mattermost-changelog.html>`_:
+Mattermost AI Copilot is already installed in **Mattermost Server >=v9.7** and can be enabled and configured via the steps below. If using **Mattermost Server <v9.7**, Mattermost AI Copilot can be `installed as a plugin from the repository <https://github.com/mattermost/mattermost-plugin-ai/releases>`_ and is compatible with the following `Mattermost server versions <https://docs.mattermost.com/deploy/mattermost-changelog.html>`_:
 
 - **v9.6** or later
 - **v9.5.2+** (Extended Support Release - ESR)
 - **v9.4.4+**
 - **v9.3.3+**
 - **v8.1.11+** (Extended Support Release - ESR)
+
+Once the plugin is installed and enabled, proceed with the configuration steps below.
 
 Configuration Steps
 -------------------
