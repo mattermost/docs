@@ -13,7 +13,11 @@ From Mattermost v9.2, this changelog summarizes updates for the latest cloud and
 
 ## Release v9.7 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
 
-**Release day: April 16, 2024**
+- **9.7.1, released 2024-04-16**
+  - Fixed an issue with a noisy log entry for permalink post notifications.
+  - Mattermost v9.7.1 contains no database or functional changes.
+- **9.7.0, released 2024-04-16**
+  - Original 9.7.0 release.
 
 ```{Important}
 If you upgrade from a release earlier than v9.6, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
