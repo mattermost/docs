@@ -275,8 +275,8 @@ Enable GIF picker
 | This feature's ``config.json`` setting is ``"EnableGifPicker": true`` with options ``true`` and ``false``. |
 +------------------------------------------------------------------------------------------------------------+
 
-.. note::
-   :ref:`Link previews <configure/site-configuration-settings:enable message link previews>` must be enabled in order to display GIF link previews. Mattermost deployments restricted to access behind a firewall must open port 443 to both https://api.gfycat.com/v1 and https://gfycat.com/<id> (for all request types) for this feature to work.
+.. important::
+   :ref:`Link previews <configure/site-configuration-settings:enable message link previews>` must be enabled in order to display GIF link previews. Mattermost deployments restricted to access behind a firewall must open port 443 to both ``https://api.gfycat.com/v1`` and ``https://gfycat.com/<id>`` (for all request types) for this feature to work.
 
 .. config:setting:: integrate-gfycatapikey
   :displayname: Gfycat API key (Integrations)
