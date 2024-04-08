@@ -1,9 +1,6 @@
 Scaling for Enterprise 
 ======================
 
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
-
 Mattermost is designed to scale from small teams hosted on a single server to large enterprises running in cluster-based, highly available deployment configurations.
 
 - Mattermost supports any 64-bit x86 processor architecture
