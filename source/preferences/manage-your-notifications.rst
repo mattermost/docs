@@ -112,9 +112,6 @@ On mobile, select the **Settings** |gear| icon and tap **Notifications**.
     .. image:: ../images/keywords-trigger-mentions.gif
       :alt: A walkthrough of setting keywords that trigger mentions in Mattermost.
 
-      .. raw:: html
-
-
     **Passively track keywords (no notification)**
 
     .. include:: ../_static/badges/ent-pro-only.rst
