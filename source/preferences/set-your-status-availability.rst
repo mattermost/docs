@@ -58,8 +58,8 @@ To set your availability, select your profile picture, then specify your availab
 | **Availability** | **Description**                                                                                                   |
 +==================+===================================================================================================================+
 | |online|         | - Set automatically for you when you're active on Mattermost using a browser, the desktop app, or the mobile app. |
+|                  | - When using the desktop app, any mouse or keyboard activity keeps your availabliliy set to **Online**.           |
 |                  | - By default, notifications are sent to the browser, the desktop app, and the mobile app.                         |
-|                  | - Using the desktop app, any mouse or keyboard activity keeps your availabliliy set to **Online**.                |
 +------------------+-------------------------------------------------------------------------------------------------------------------+
 | |away|           | - Set automatically for you when you've been inactive for more than 5 minutes. System admins can change this      | 
 |                  |   value using an experimental configuation setting called                                                         |
