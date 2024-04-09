@@ -39,21 +39,21 @@ You can `download the desktop app directly from our Downloads page <https://matt
     - MSI for `64-bit version of Windows <https://releases.mattermost.com/desktop/5.7.0/mattermost-desktop-5.7.0-x64.msi>`__
     - MSI for `32-bit version of Windows <https://releases.mattermost.com/desktop/5.7.0/mattermost-desktop-5.7.0-x86.msi>`__
 
-  The following group policies are available:
+  The following group policies are available supporting a state option of Not Configured, Enabled, or Disabled:
 
-  +--------------------------+------------------------------------------------------------+----------------------+----------------------------+------------------+
-  | Group policy             | Description                                                | Mattermost release   | Setting                    | State options    |
-  +==========================+============================================================+======================+============================+==================+
-  | Enable Server Management | If disabled, management of servers in the                  | v4.3 or later        | ``EnableServerManagement`` | - Not Configured |   
-  |                          | app settings are disabled.                                 |                      |                            | - Enabled        |
-  |                          |                                                            |                      |                            | - Disabled       |
-  +--------------------------+------------------------------------------------------------+----------------------+----------------------------+                  |
-  | Default Server List      | Define one or more default, permanent servers.             | v4.3 or later        | ``DefaultServerList``      |                  |
-  +--------------------------+------------------------------------------------------------+----------------------+----------------------------+                  |
-  | Automatic Updates        | If disabled, automatic Desktop App updates are disabled.   | v5.1 or later        | ``EnableAutoUpdates``      |                  |
-  +--------------------------+------------------------------------------------------------+----------------------+----------------------------+------------------+
+  +--------------------------+------------------------------------------------------------+----------------------+----------------------------+
+  | Group policy             | Description                                                | Mattermost release   | Setting                    |
+  +==========================+============================================================+======================+============================+
+  | Enable Server Management | If disabled, management of servers in the                  | v4.3 or later        | ``EnableServerManagement`` |
+  |                          | app settings are disabled.                                 |                      |                            |
+  |                          |                                                            |                      |                            |
+  +--------------------------+------------------------------------------------------------+----------------------+----------------------------+
+  | Default Server List      | Define one or more default, permanent servers.             | v4.3 or later        | ``DefaultServerList``      |
+  +--------------------------+------------------------------------------------------------+----------------------+----------------------------+
+  | Automatic Updates        | If disabled, automatic Desktop App updates are disabled.   | v5.1 or later        | ``EnableAutoUpdates``      |
+  +--------------------------+------------------------------------------------------------+----------------------+----------------------------+
 
-  **Disable automatic updates**      
+  **Disable automatic updates**
   
   Automatic desktop app updates can be disabled by configuring the supported group policy. See the :doc:`MSI installer and group policy documentation </install/desktop-msi-installer-and-group-policy-install>` for instructions on installing the Mattermost Desktop App via an MSI installer, and configuring supported group policies. Changes to group policies require you to restart Mattermost for those changes to take effect.
 
