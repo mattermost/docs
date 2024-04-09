@@ -18,13 +18,13 @@ Mattermost is used as a secure collaboration hub by technical and operational te
 Legal hold demo (Sneak Peek)
 ----------------------------
 
-Check out this `YouTube sneak peek demo <https://youtu.be/TBD>`__, by Doug Lauder, Senior Engineering Lead, to learn about Mattermost's legal hold workflow.
+Check out this `YouTube sneak peek demo <https://youtu.be/86c8NoOxlQw>`_ to learn about Mattermost's legal hold workflow.
 
 .. raw:: html
   
-   <iframe width="560" height="315" src="https://www.youtube.com/embed/TBD" alt="Streamline Mattermost Deployments on Kubernetes" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/86c8NoOxlQw" alt="Mattermost legal hold workflow" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
-Below are step-by-step instructions on how to carry out a legal hold for Mattermost with XML-formatted data, Amazon S3 file storage, and archiving and compliance tools, such as `Smarsh <https://www.smarsh.com/>`__.
+Below are step-by-step instructions on how to carry out a legal hold for Mattermost with XML-formatted data, Amazon S3 file storage, and archiving and compliance tools, such as `Smarsh <https://www.smarsh.com/>`_.
 
 How to carry out a legal hold
 -----------------------------
@@ -79,7 +79,7 @@ The exports include information on channel member history at the time the messag
 3 - Leverage compliance API in your DLP tool of choice
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Connect it directly to the Amazon S3 bucket where compliance exports are stored. Our recommended DLP tool of choice is `Smarsh <https://www.smarsh.com/>`__. Learn more about their legal hold & e-discovery processes in their `documentation <https://www.smarsh.com/platform/enterprise/discovery>`__.
+Connect it directly to the Amazon S3 bucket where compliance exports are stored. Our recommended DLP tool of choice is `Smarsh <https://www.smarsh.com/>`_. Learn more about their legal hold & e-discovery processes in their `documentation <https://www.smarsh.com/platform/enterprise/discovery>`_.
 
 You may optionally also use other tools that connect with Amazon S3, such as Active360, AwareHQ, Onna, or Trellix, though our team will be able to provide limited support using these tools.
 
