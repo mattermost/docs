@@ -103,7 +103,7 @@ Important Upgrade Notes
 |                                                    | The Channel Export and Apps plugins are now disabled by default.                                                                                                 |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | Apps Bar is now enabled by default for on-prem servers. ``ExperimentalSettings.EnableAppBar`` was also renamed to ``ExperimentalSettings.DisableAppBar``.        |
-|                                                    | See more details at https://docs.mattermost.com/configure/experimental-configuration-settings.html#disable-app-bar and at                                        |
+|                                                    | See more details at https://docs.mattermost.com/configure/experimental-configuration-settings.html#disable-apps-bar and at                                       |
 |                                                    | https://forum.mattermost.com/t/channel-header-plugin-changes/13551                                                                                               |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | In the main `server package`, the Go module path has changed from ``github.com/mattermost/mattermost-server/server/v8`` to                                       |
