@@ -26,13 +26,16 @@ Manage your notifications
 
 Mattermost notifies you of new activity in the following ways:
 
-- **Badges**: In Mattermost, badges show you when you have unread messages and threads.
+**Badges**: In Mattermost, badges show you when you have unread messages and threads.
 
-    - |dot-badge| A dot on the badge means you have unread activity in at least one channel you're a member of.
-    - |numbered-badge| A numbered badge means you have at least one unread :ref:`direct message <collaborate/channel-types:direct messages>`, :ref:`group message <collaborate/channel-types:group messages>`, :doc:`@mention </collaborate/mention-people>`, or one of your keywords has triggered a notification.
-- **Banner alerts**: Pop-ups alert you to new activity.
-- **Push notifications**: Mobile app alert you to new activity when you're on the go.
-- **Sounds**: Audible sounds alert you to new activity.
+  - |dot-badge| You have unread activity in at least one channel you're a member of.
+  - |numbered-badge| You have at least one unread :ref:`direct message <collaborate/channel-types:direct messages>`, :ref:`group message <collaborate/channel-types:group messages>`, :doc:`@mention </collaborate/mention-people>`, or a keyword triggered a notification.
+
+**Banner alerts**: Pop-ups alert you to new activity.
+
+**Push notifications**: Mobile app alert you to new activity when you're on the go.
+
+**Sounds**: Audible sounds alert you to new activity.
 
 .. include:: ../_static/badges/academy-notifications.rst
   :start-after: :nosearch:
@@ -96,7 +99,7 @@ On mobile, select the **Settings** |gear| icon and tap **Notifications**.
 
     If you prefer to always be notified, regardless of your user status, select **Mobile Push Notifications > Trigger push notifications when > Online, away or offline**.
 
-.. tab:: @mentions/keywords
+.. tab:: @mentions & keywords
 
     By default, you’re notified when you’re @mentioned in a message or a thread by your username or first name, or when a thread you’re following has a new response. For all other messages, the channel is highlighted to indicate unread messages.
 
@@ -104,41 +107,40 @@ On mobile, select the **Settings** |gear| icon and tap **Notifications**.
 
     **Customize notification keywords**
 
-        Using a web browser or the desktop app, customize any additional non case-sensitive keywords to trigger notifications. For example, you can receive notifications for all messages and threads related to a specific topic, project name, or customer. Separate multiple keywords using commas or by pressing :kbd:`Tab`, and use :kbd:`Backspace` to manage keywords.
+    Using a web browser or the desktop app, customize any additional non case-sensitive keywords to trigger notifications. For example, you can receive notifications for all messages and threads related to a specific topic, project name, or customer. Separate multiple keywords using commas or by pressing :kbd:`Tab`, and use :kbd:`Backspace` to manage keywords.
 
-        .. image:: ../images/keywords-trigger-mentions.gif
-          :alt: A walkthrough of setting keywords that trigger mentions in Mattermost.
+    .. image:: ../images/keywords-trigger-mentions.gif
+      :alt: A walkthrough of setting keywords that trigger mentions in Mattermost.
 
-        .. raw:: html
-          
-          <br/><br/>
+      .. raw:: html
 
-        **Passively track keywords (no notification)**
 
-        .. include:: ../_static/badges/ent-pro-only.rst
-            :start-after: :nosearch:
+    **Passively track keywords (no notification)**
+
+    .. include:: ../_static/badges/ent-pro-only.rst
+        :start-after: :nosearch:
         
-        From Mattermost v9.3, Mattermost Enterprise and Professional users interested calling attention to specific topics of interest across channels, at a glance, can do so without triggering notifications.
+    From Mattermost v9.3, Mattermost Enterprise and Professional users interested calling attention to specific topics of interest across channels, at a glance, can do so without triggering notifications.
         
-        Using a web browser or the desktop app, passively track key terms by specifying single or multi-words to highlight in all channels you're a member of. Keywords and phrases are automatically highlighted based on your :doc:`Mattermost theme </preferences/customize-your-theme>`.
+    Using a web browser or the desktop app, passively track key terms by specifying single or multi-words to highlight in all channels you're a member of. Keywords and phrases are automatically highlighted based on your :doc:`Mattermost theme </preferences/customize-your-theme>`.
 
-        .. image:: ../images/keywords-highlighted.gif
-          :alt: A walkthrough of setting keywords that are highlighted in Mattermost.
+    .. image:: ../images/keywords-highlighted.gif
+      :alt: A walkthrough of setting keywords that are highlighted in Mattermost.
 
 .. tab:: Replies
 
-    If :doc:`Collapsed Reply Threads </collaborate/organize-conversations>` is disabled, you won't be notified in reply threads unless you're @mentioned. However, you can configure Mattermost to notify you when someone replies to a thread you started, or started or have participated in. Select **Reply notifications** to choose the option that works best for you. This setting is hidden when Collapsed Reply Threads is enabled.
+    If :doc:`Collapsed Reply Threads </collaborate/organize-conversations>` are disabled, you won't be notified in reply threads unless you're @mentioned. However, you can configure Mattermost to notify you when someone replies to a thread you started, or started or have participated in. Select **Reply notifications** to choose the option that works best for you. This setting is hidden when Collapsed Reply Threads is enabled.
 
     **Automatic replies**
 
     Mattermost also supports the ability to automatically send custom replies to direct messages. If your Mattermost admin enables this experimental feature, you can go to **Automatic Direct Message Replies** to select **Enable** this feature and compose your message.
 
-    .. tab:: Per channel/category/group message
+.. tab:: Per-channel
 
-       You can set notification preferences at the channel level, including group messages, for every channel you're a member of. You have 2 ways to access channel preferences: 
+    You can set notification preferences at the channel level, including group messages, for every channel you're a member of. You have 2 ways to access channel preferences: 
        
-       - Select the channel name, then select **Notification Preferences**. 
-       - Or select the **View Info** |channel-info| icon, and select **Notification Preferences** in the right pane.
+    - Select the channel name, then select **Notification Preferences**. 
+    - Or select the **View Info** |channel-info| icon, and select **Notification Preferences** in the right pane.
 
     You can set notification preferences at the channel level for every channel you're a member of. You have 2 ways to access  channel preferences: 
 
@@ -168,13 +170,11 @@ On mobile, select the **Settings** |gear| icon and tap **Notifications**.
 
     When using Mattermost in a web browser or the desktop app, stop being notified for channel-wide @mentions, by selecting the **Ignore mentions for @channel, @here and @all** option. Mention notifications for channel-wide mentions are ignored, but the channel is marked as unread unless it's muted.
 
-    Using the mobile app:
+    - In the desktop app, your mobile push notification preferences use the same configuration as the desktop app by default. Clear the **Use the same notification setting as desktop** option to customize your push notification preferences. You can receive notifications for all new messages; mentions, direct messages, and keywords; or no notifications within the desktop app.
 
-       In the desktop app, your mobile push notification preferences use the same configuration as the desktop app by default. Clear the **Use the same notification setting as desktop** option to customize your push notification preferences. You can receive notifications for all new messages; mentions, direct messages, and keywords; or no notifications within the desktop app.
+    - In the mobile app, you're notified about all new messages by default. You can customize your mobile app notification preferences. You can receive notifications for all new messages, mentions only, or no notifications.
 
-       In the mobile app, you're notified about all new messages by default. You can customize your mobile app notification preferences. You can receive notifications for all new messages, mentions only, or no notifications.
-
-       Select **Reset to default** to return to global defaults.
+    - Select **Reset to default** to return to global defaults.
 
     **Desktop notifications**
 
