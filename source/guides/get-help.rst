@@ -11,30 +11,30 @@ Training
 Documentation
 -------------
 
-- `Mattermost product documentation <https://docs.mattermost.com/>`__ - read information for end users and administrators about deploying, managing, and using Mattermost.
-- `Mattermost developer documentation <https://developers.mattermost.com/>`__ - read information for developer community members about integrating, extending, customizing, and contributing to Mattermost.
-- `Mattermost API reference <https://api.mattermost.com/>`__ - read information for developer community members about the Mattermost API used by Mattermost clients and third-party applications.
+- `Mattermost product documentation <https://docs.mattermost.com/>`__ - Read information for end users and administrators about deploying, managing, and using Mattermost.
+- `Mattermost developer documentation <https://developers.mattermost.com/>`__ - Read information for developer community members about integrating, extending, customizing, and contributing to Mattermost.
+- `Mattermost API reference <https://api.mattermost.com/>`__ - Read information for developer community members about the Mattermost API used by Mattermost clients and third-party applications.
 
 Help Center
 -----------
 
-- `Mattermost Help Center <http://support.mattermost.com>`__ - access frequently asked questions and common troubleshooting tips.
+- `Mattermost Help Center <http://support.mattermost.com>`__ - Access frequently asked questions and common troubleshooting tips.
 
 Community server
 ----------------
 
-- `Mattermost Community server <https://community.mattermost.com>`__ - connect with thousands of contributors, customers, and users to build, share, and learn together. This server is our virtual office and is open to everyone. Please review our `Code of Conduct <https://handbook.mattermost.com/contributors/contributors/guidelines/contribution-guidelines>`__ before participating.
+- `Mattermost Community server <https://community.mattermost.com>`__ - Connect with thousands of contributors, customers, and users to build, share, and learn together. This server is our virtual office and is open to everyone. Please review our `Code of Conduct <https://handbook.mattermost.com/contributors/contributors/guidelines/contribution-guidelines>`__ before participating.
 
 Mattermost user forums
 ----------------------
 
-- `Troubleshooting forum <https://forum.mattermost.com/c/trouble-shoot/16>`__ - join our community forum for technical support. Please review our `Code of Conduct <https://handbook.mattermost.com/contributors/contributors/guidelines/contribution-guidelines>`__ before participating.
+- `Troubleshooting forum <https://forum.mattermost.com/c/trouble-shoot/16>`__ - Join our community forum for technical support. Please review our `Code of Conduct <https://handbook.mattermost.com/contributors/contributors/guidelines/contribution-guidelines>`__ before participating.
 
 Feedback
 --------
 
-- `Report a bug <https://developers.mattermost.com/contribute/why-contribute/#youve-found-a-bug>`__ - report bugs or other issues you encounter when using Mattermost to our development team.
-- `Propose a feature <https://mattermost.com/suggestions/>`__ - vote for feature proposals or submit your own.
+- `Report a bug <https://developers.mattermost.com/contribute/why-contribute/#youve-found-a-bug>`__ - Report bugs or other issues you encounter when using Mattermost to our development team.
+- `Propose a feature <https://mattermost.com/suggestions/>`__ - Vote for feature proposals or submit your own.
 
 Professional and enterprise support
 -----------------------------------

@@ -64,7 +64,7 @@ Mattermost Partnership Agreements
 +-----------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+
 | Partnership Agreement                                                       | Agreement                                                                                                         |
 +=============================================================================+===================================================================================================================+
-| Mattermost Authorized Reseller Agreement                                    | `Mattermost Authorized Reseller Agreement <https://mattermost.com/partners/>`__                                   |
+| Mattermost Authorized Reseller Agreement                                    | `Mattermost Authorized Reseller Agreement <https://mattermost.com/partners/>`_                                    |
 +-----------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+
 
 Mattermost Confidentiality Agreements
@@ -73,7 +73,7 @@ Mattermost Confidentiality Agreements
 +-----------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
 | Confidentiality Agreement                                                   | Agreement                                                                                                                             |
 +=============================================================================+=======================================================================================================================================+
-| Mattermost Mutual Non-Disclosure Agreement                                  | `Mattermost Mutual Non-Disclosure Agreement <https://docs.google.com/document/d/1Ev3VFjiJBKSf1D5Kmf2BScbHBgSQbMzTzOhY3Of28vY/edit>`__ |
+| Mattermost Mutual Non-Disclosure Agreement                                  | `Mattermost Mutual Non-Disclosure Agreement <https://docs.google.com/document/d/1Ev3VFjiJBKSf1D5Kmf2BScbHBgSQbMzTzOhY3Of28vY/edit>`_  |
 +-----------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
 
 Working for Mattermost
@@ -82,9 +82,9 @@ Working for Mattermost
 +-----------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
 | Service                                                                     | Terms and Conditions                                                                                                                             |
 +=============================================================================+==================================================================================================================================================+
-| Mattermost Professional Consulting Services                                 | `Mattermost Professional Consulting Services Agreement <https://docs.google.com/document/d/1tgEkO5Q-xqAgVEcx5Y-z28OC36HptpltKORpivQGLoY/edit>`__ |
+| Mattermost Professional Consulting Services                                 | `Mattermost Professional Consulting Services Agreement <https://docs.google.com/document/d/1tgEkO5Q-xqAgVEcx5Y-z28OC36HptpltKORpivQGLoY/edit>`_  |
 +-----------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| Mattermost Consulting                                                       | `Mattermost Consulting Terms <https://handbook.mattermost.com/operations/sales/partner-programs>`__                                              |
+| Mattermost Consulting                                                       | `Mattermost Consulting Terms <https://handbook.mattermost.com/operations/sales/partner-programs>`_                                               |
 +-----------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Source available licensing

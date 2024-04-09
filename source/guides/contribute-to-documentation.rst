@@ -6,10 +6,11 @@ Mattermost has a diverse community that extends well beyond code contributions. 
 How to get started
 ------------------
 
-The fastest way to get started with a documentation contribution is to find something you want to change in the documentation. This might be a typo or broken link, or something more extensive like revising or expanding content. Once you've found a page you want to update, select **Edit** in the top right corner of that page. 
+The fastest way to get started with a documentation contribution is to find something you want to change in the documentation. This might be a typo or broken link, or something more extensive like revising or expanding content. Once you've found a page you want to update, select the edit option |edit-on-github| located in the top right corner of that page. 
 
-.. image:: ../images/edit-on-github.png
+.. |edit-on-github| image:: ../images/edit-on-github.png
     :alt: Contribute to Mattermost documentation by selecting the Edit option located in the top right corner of any documentation page.
+    :class: theme-icon
 
 First-time contributor?
 -----------------------
