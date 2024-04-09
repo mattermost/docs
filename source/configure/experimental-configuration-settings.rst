@@ -404,7 +404,7 @@ Enable tutorial
 **False**: The tutorial is disabled. Users are placed in Town Square when they open Mattermost for the first time after account creation.
 
 +--------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableTutorial": true`` with options ``true`` and ``false``.                                  |
+| This feature's ``config.json`` setting is ``"ServiceSettings.EnableTutorial": true`` with options ``true`` and ``false``.                  |
 +--------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: exp-enableonboardingflow
@@ -424,7 +424,7 @@ Enable onboarding flow
 **False**: User onboarding tasks are disabled. Users are placed in Town Square when they open Mattermost for the first time after account creation.
 
 +--------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableOnboardingFlow": true`` with options ``true`` and ``false``.                            |
+| This feature's ``config.json`` setting is ``"ServiceSettings.EnableOnboardingFlow": true`` with options ``true`` and ``false``.            |
 +--------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: exp-enableusertypingmessages
