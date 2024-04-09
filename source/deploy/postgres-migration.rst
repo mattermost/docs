@@ -30,6 +30,16 @@ Required tools
 
  - ``go install github.com/mattermost/dbcmp/cmd/dbcmp@latest``
 
+System requirements and configurations
+--------------------------------------
+
+Before starting the migration process, it is essential to ensure that your system meets the necessary requirements for a smooth and efficient migration. The following system specifications and adjustments are recommended:
+
+- Ensure you have enough resources on system memory, 16GB of RAM is recommended for default values. In scenarios where system memory is insufficient, users can fine-tune pgLoader settings such as the number of workers, prefetch rows, and rows per range. These adjustments can help optimize resource utilization based on available system resources.
+- A multi-core processor with sufficient processing power is recommended for the migration process, especially when dealing with large datasets.
+- Ensure that there is enough disk space available for storing both the MySQL and PostgreSQL databases, as well as any temporary files generated during the migration process. The amount of required disk space depends on the size of the databases being migrated.
+- While not recommended, users may choose to manually drop indexes on the target PostgreSQL database before initiating the migration process. This approach can potentially accelerate the migration by reducing overhead with index builds during data insertion.
+
 Before the migration
 --------------------
 
