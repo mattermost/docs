@@ -30,7 +30,6 @@ If you upgrade from a release earlier than v9.6, please read the other [Importan
  - Pre-packaged Calls version [v0.25.1](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v0.25.1).
  - Pre-packaged Playbooks version [v1.39.2](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v1.39.2).
  - Pre-packaged GitHub plugin version [v2.2.0](https://github.com/mattermost/mattermost-plugin-github/releases/tag/v2.2.0).
- - Upgraded ``@mattermost/client`` and ``@mattermost/types`` to support TypeScript v5.x.
  - The first emoji is now auto-selected in the emoji picker.
  - Added Markdown support for batched email notifications.
  - Users’ timezone is now used in batched email notifications.
@@ -40,6 +39,7 @@ If you upgrade from a release earlier than v9.6, please read the other [Importan
  - Improved the opening animation of the user settings modal.
 
 #### Administration
+ - Upgraded ``@mattermost/client`` and ``@mattermost/types`` to support TypeScript v5.x.
  - Enforced safety limit in compiled Team Edition and Enterprise Edition deployments when enterprise scale and access control automation features are unavailable, and when the count of users who are registered, but not deactivated, exceeds 11,000. ERROR_SAFE_LIMITS_EXCEEDED.
  - Dropped pre-packaged plugins for unsupported OS and architectures.
  - Implemented a new **Export Settings** page in the **System Console** to allow Cloud administrators to customize their dedicated export S3 buckets.
