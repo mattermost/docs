@@ -22,6 +22,7 @@ Both self-hosted and Cloud admins can access the following configuration setting
 - `Session Lengths <#session-lengths>`__
 - `Performance Monitoring <#performance-monitoring>`__
 - `Developer <#developer>`__
+- `config. json-only settings <#config-json-only-settings>`__
 
 ----
 
@@ -166,11 +167,14 @@ Developer
 .. include:: developer-mode-configuration-settings.rst
     :start-after: :nosearch:
 
-Cloud settings
---------------
+config.json-only settings
+-------------------------
 
-.. config:setting:: cloud-disable
-  :displayname: Disable customer portal requests (Cloud)
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
+
+.. config:setting:: disable-customer-portal-requests
+  :displayname: Disable customer portal requests
   :systemconsole: N/A
   :configjson: .CloudSettings.Disable
   :environment: MM_CLOUDSETTINGS_DISABLE
@@ -183,7 +187,7 @@ Disable Customer Portal requests
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +-----------------------------------------------+---------------------------------------------------------------------------+
-| Enable or disable developer mode.             | - System Config path: **N/A**                                             |
+| Enable or disable customer portal requests.   | - System Config path: **N/A**                                             |
 |                                               | - ``config.json setting``: ``".CloudSettings.Disable": false",``          |
 | - **true**: Server-side requests made to the  | - Environment variable: ``MM_CLOUDSETTINGS_DISABLE``                      |
 |   Mattermost Customer Portal are enabled,     |                                                                           |
