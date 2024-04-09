@@ -6,15 +6,19 @@ Set your status and availability
 
 .. |online| image:: ../images/online.png
     :alt: Online availability status icon in Mattermost.
+    :class: theme-icon
 
 .. |away| image:: ../images/away.png
     :alt: Away availability status icon in Mattermost.
+    :class: theme-icon
 
 .. |dnd| image:: ../images/dnd.png
     :alt: Do Not Disturb availability status icon in Mattermost.
+    :class: theme-icon
 
 .. |offline| image:: ../images/offline.png
     :alt: Offline availability status icon in Mattermost.
+    :class: theme-icon
 
 Let your team know whether you're available by setting a :ref:`custom status <preferences/set-your-status-availability:set a custom status>` and your :ref:`availability <preferences/set-your-status-availability:set your availability>` in Mattermost. 
 
