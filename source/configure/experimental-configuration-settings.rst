@@ -2044,7 +2044,7 @@ When not set, every user is added to the ``off-topic`` and ``town-square`` chann
 
 .. note::
 
-   Even if ``town-square`` is not listed, every user is added to that channel after joining a new team.
+   Even if ``town-square`` and ``off-topic`` aren't listed, every user is added to these channels automatically when joining a new team.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ExperimentalDefaultChannels": []`` with string array input consisting of channel names, such as ``["announcement", "developers"]``. |
