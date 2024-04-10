@@ -1,7 +1,7 @@
 Extended Support Release
 ========================
 
-.. include:: ../_static/badges/allplans-selfhosted.rst
+.. include:: ../_static/badges/ent-selfhosted.rst
   :start-after: :nosearch:
 
 What is an Extended Support Release?
