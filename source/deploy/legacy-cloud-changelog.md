@@ -906,7 +906,7 @@ From Mattermost v9.2, see the [Mattermost Changelog](https://docs.mattermost.com
 
 ### Bug Fixes
  - Fixed an issue with incorrect mention counts in unread channels.
- - Fixed an issue where the cursor displayed as a pointer instead of as an arrow in embedded Youtube preview images.
+ - Fixed an issue where the cursor displayed as a pointer instead of as an arrow in embedded YouTube preview images.
  - Fixed an issue where formatting was applied to selected spaces after a word.
  - Fixed an issue where an error with an option to refetch data was not displayed and instead a blank screen was shown when there was a failure fetching Cloud data.
  - Fixed an issue where screen readers did not announce that the channel interface language dropdown in **Settings > Display > Language > Change** is a dropdown.
@@ -2490,7 +2490,7 @@ From Mattermost v9.2, see the [Mattermost Changelog](https://docs.mattermost.com
 
 ### Bug Fixes
  - Fixed an issue where users were unable to deactivate MFA for their accounts even if MFA was disabled on the server.
- - Fixed an issue where user settings on API could be set if LDAP Sync was on. For LDAP and SAML users, the following fields cannot be changed via the API if the corresponding LDAP/SAML attributes have been set: first name, last name, position, nickname, email, profile picture. For OAUTH users (i.e., Gitlab, Google, Office365 and OpenID), the following fields cannot be changed via the API: first name, last name. All users who authenticate via a method other than email cannot change their username via the API.
+ - Fixed an issue where user settings on API could be set if LDAP Sync was on. For LDAP and SAML users, the following fields cannot be changed via the API if the corresponding LDAP/SAML attributes have been set: first name, last name, position, nickname, email, profile picture. For OAUTH users (i.e., GitLab, Google, Office365 and OpenID), the following fields cannot be changed via the API: first name, last name. All users who authenticate via a method other than email cannot change their username via the API.
  - Fixed a possible panic on post creation when the collapsed threads feature was enabled.
  - Fixed a database deadlock that could happen if a sidebar category was updated and deleted at the same time.
  - Fixed an issue where the sidebar **Text Hover BG Theme** color didn’t work on the left-hand side.
