@@ -119,4 +119,4 @@ No. Your license key is decoupled from the Mattermost server version.
 
 We highly recommend working with your Mattermost Account Team to plan for a migration to our new plans, and to access the latest features such as persistent notifications, advanced compliance features, and call recordings.
 
-Please contact our `Sales team <https://mattermost.com/contact-us/>`_ with questions.
+Please contact our `Sales team <https://mattermost.com/contact-sales/>`_ with questions.

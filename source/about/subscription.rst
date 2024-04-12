@@ -12,7 +12,7 @@ Mattermost offers capabilities through **Mattermost Enterprise** and **Mattermos
 
 - Mattermost self-hosted deployments require a license subscription key to be applied to access features in the Professional or Enterprise plans via purchase options at https://mattermost.com/pricing/. 
 
-- Mattermost also offers purchase through a `self-service Customer Portal <https://customers.mattermost.com>`__ where you can purchase and manage your Mattermost self-hosted subscription. When you complete the purchase process, a license key is generated. Please see :doc:`Self-hosted subscriptions </about/self-hosted-subscriptions>` for more details.
+- Mattermost also offers purchase through a `self-service Customer Portal <https://customers.mattermost.com>`_ where you can purchase and manage your Mattermost self-hosted subscription. When you complete the purchase process, a license key is generated. Please see :doc:`Self-hosted subscriptions </about/self-hosted-subscriptions>` for more details.
 
 
 Mattermost Nonprofit License program
@@ -22,7 +22,7 @@ The Mattermost Nonprofit License enables nonprofit and open-source organizations
 
 .. tip::
 
-  Nonprofit and open-source organizations that meet the `eligibility requirements <#who-s-eligible>`_ can apply for the Mattermost Nonprofit license by `completing this form <https://support.mattermost.com/hc/en-us/requests/new?ticket_form_id=17664739497236>`__. Please note that it may take up to six weeks for us to respond to your request.
+  Nonprofit and open-source organizations that meet the `eligibility requirements <#who-s-eligible>`_ can apply for the Mattermost Nonprofit license by `completing this form <https://support.mattermost.com/hc/en-us/requests/new?ticket_form_id=17664739497236>`_. Please note that it may take up to six weeks for us to respond to your request.
 
 What's included?
 ~~~~~~~~~~~~~~~~~
@@ -42,14 +42,14 @@ Organizations applying for a non-profit license must meet **ALL** of the followi
 - Be willing to let us use their logo for promotional purposes.
 - Be willing to pay a $250 processing fee for a three-year, self-hosted Professional license contract for up to 1000 users.
 
-If your organization doesn’t fit this description, we suggest that you purchase a `commercial license <https://mattermost.com/pricing/>`__ instead.
+If your organization doesn’t fit this description, we suggest that you purchase a `commercial license <https://mattermost.com/pricing/>`_ instead.
 
 If you represent an open source community or project that is not hosted under a recognized nonprofit, but would like a commercial license for Mattermost, please email community@mattermost.com with your organization’s needs and requirements.
 
 How to apply?
 ~~~~~~~~~~~~~
 
-To apply for the Mattermost Nonprofit License, `please complete this form <https://support.mattermost.com/hc/en-us/requests/new?ticket_form_id=17664739497236>`__.
+To apply for the Mattermost Nonprofit License, `please complete this form <https://support.mattermost.com/hc/en-us/requests/new?ticket_form_id=17664739497236>`_.
 Please note that it may take up to six weeks for us to respond to your request.
 
 Mattermost educational license program
@@ -75,9 +75,9 @@ Frequently asked questions
 Are my credit card details safe?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-We use `Stripe <https://stripe.com/payments>`__ and `Solupay <https://www.solupay.com/>`__ to process credit card transactions. We do not store any credit card details at any stage. Payments made by credit card are authenticated using `3D Secure <https://www.sc.com/bn/ways-to-bank/3d-secure-faq/>`__, which is PCI-DSS compliant.
+We use `Stripe <https://stripe.com/payments>`_ and `Solupay <https://www.versapay.com/>`_ to process credit card transactions. We do not store any credit card details at any stage. Payments made by credit card are authenticated using `3D Secure <https://www.sc.com/bn/ways-to-bank/3d-secure-faq/>`_, which is PCI-DSS compliant.
 
-Should you wish to make payment using another method, please contact our `Billing team <mailto:AR@mattermost.com>`__.
+Should you wish to make payment using another method, please contact our `Billing team <mailto:AR@mattermost.com>`_.
 
 Why do I need to provide my name and physical address when purchasing a subscription?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -120,7 +120,7 @@ For the purpose of billing, a “user” is any account created in Mattermost th
 
 Bots, deactivated users, and synthetic users in :doc:`Microsoft Teams integrations </collaborate/collaborate-within-connected-microsoft-teams>` and :doc:`shared channels users </onboard/shared-channels>`, aren't counted towards the total number of activated users.
 
-You can review your user count, for billing purposes, by going to ** System Console > Site Statistics**, under **Total Activated Users**.
+You can review your user count, for billing purposes, by going to **System Console > Site Statistics**, under **Total Activated Users**.
 
 Do I need to pay for deactivated users?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
