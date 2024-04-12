@@ -25,6 +25,12 @@ Requirements
 | RDS Reader             | 2        | 16               | 1              | db.r6g.large     |
 +------------------------+----------+------------------+----------------+------------------+
 
+1,000 users on Enterprise - AWS
+-------------------------------
+
+.. image:: ../images/MattermostDeployment5kaws.png
+  :class: bg-white
+
 Lifetime storage
 ----------------
 
