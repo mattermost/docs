@@ -1131,7 +1131,7 @@ Known Issues
 
 - Users are unable to zoom in/out on the desktop app. This bug will be fixed after a major version upgrade of Electron to v6.0.0.
 - ``CMD+Z`` doesn't undo on the Mac desktop app.
-- Unable to exit full screen Youtube videos.
+- Unable to exit full screen YouTube videos.
 - "RIght-click + Copy" does not work.
 - Notifications appear in sequence rather than stacking on Windows.
 - Clicking on notifications when using the MSI installer(s) doesn't focus the app or the channel that triggered the notification.

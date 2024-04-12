@@ -43,7 +43,23 @@ Mattermost Omnibus packages the free, unlicensed Mattermost Enterprise version o
 Add the Mattermost PPA repositories
 -----------------------------------
 
-In a terminal window, run the following command
+.. important::
+
+  The GPG public key has changed. You can `import the new public key <https://deb.packages.mattermost.com/pubkey.gpg>`_ or run the automatic Mattermost PPA repository setup script provided below. Depending on your setup, additional steps may also be required, particularly for installations that didn't rely on the repository setup script. We recommend deleting the old key from ``/etc/apt/trusted.gpg.d`` before adding the apt repository.
+
+  - For Ubuntu distributions including Bionic and Focal: 
+
+    ``sudo rm /usr/share/keyrings/mattermost-archive-keyring.gpg``
+
+    ``curl -sL -o- https://deb.packages.mattermost.com/pubkey.gpg | gpg --dearmor | sudo tee /usr/share/keyrings/mattermost-archive-keyring.gpg >/dev/null``
+
+  - For Ubuntu Jammy:
+
+    ``sudo gpg --batch --delete-key A1B31D46F0F3A10B02CF2D44F8F2C31744774B28``
+
+    ``curl -sL -o- https://deb.packages.mattermost.com/pubkey.gpg |  sudo gpg --import``
+
+In a terminal window, run the following repository setup command:
 
 .. raw:: html
 

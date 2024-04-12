@@ -17,7 +17,7 @@ Download group policy and MSI installer files
    .. image:: ../images/desktop/msi_gpo/msi_gpo_installation_test_00001.png
       :alt: When downloading group policy and MIS installer files, ensure to use a Windows version that supports Edit group policy. 
 
-2. Navigate to the `Mattermost Desktop <https://github.com/mattermost/desktop>`__ repository on `Github.com <https://github.com/>`__.
+2. Navigate to the `Mattermost Desktop <https://github.com/mattermost/desktop>`__ repository on `GitHub.com <https://github.com/>`__.
 
    .. image:: ../images/desktop/msi_gpo/msi_gpo_installation_test_00002.png
       :alt: Go to the mattermost/desktop repository on GitHub.
