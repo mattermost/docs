@@ -17,7 +17,7 @@ ERROR_SAFETY_LIMITS_EXCEEDED
 
 This error happens in the free version of Mattermost when more than 10,000 users are registered on the server.
 
-The free version of Mattermost is intended for approximately 50 users, and should a deployment materially exceed this recommended size, administrators should seek to either `purchase a commercial license <https://mattermost.com/pricing/>`__ or apply for a `nonprofit license <https://mattermost.com/nonprofit/>`__.
+The free version of Mattermost is intended for approximately 50 users, and should a deployment materially exceed this recommended size, administrators should seek to either `purchase a commercial license <https://mattermost.com/pricing/>`_ or apply for a :ref:`nonprofit license <about/subscription:mattermost nonprofit license program>`.
 
 When usage grossly exceeds the recommended limit for users in a safe deployment, an error message is displayed and certain functionality may be limited.
 

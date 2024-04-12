@@ -13,6 +13,7 @@ Please see the :doc:`Mattermost Deployment Overview </deploy/deployment-overview
 
 .. image:: ../images/network-diagram.svg
    :alt: Mattermost network diagram shows how the components can be deployed. Includes optional configurations for scaling for larger enterprise organizations.
+   :class: bg-white
 
 Software requirements
 ---------------------
@@ -119,7 +120,7 @@ Search limitations on MySQL:
 MySQL 8 Support
 ^^^^^^^^^^^^^^^^
 
-In MySQL 8.0.4, the default authentication plugin was changed from ``mysql_native_password`` to ``caching_sha2_password`` (https://mysqlserverteam.com/mysql-8-0-4-new-default-authentication-plugin-caching_sha2_password/). Therefore, you will need to enable ``mysql_native_password`` by adding the following entry in your MySQL configuration file:
+In MySQL 8.0.4, the default authentication plugin was changed from ``mysql_native_password`` to ``caching_sha2_password``. Therefore, you will need to enable ``mysql_native_password`` by adding the following entry in your MySQL configuration file:
 
   .. code-block:: text
 

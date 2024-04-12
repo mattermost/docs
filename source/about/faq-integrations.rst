@@ -8,7 +8,7 @@ Mattermost is an open source, self-hosted alternative to proprietary SaaS servic
 
 While you're welcome to use the Mattermost source code under its open source license, Mattermost, Inc. does not offer support or technical advice for proprietary SaaS projects that result in customers potentially being paywalled from their data should they stop paying SaaS fees.
 
-To learn more about why we strongly believe that users and customers should always have access to their data, please read `why we created Mattermost <https://mattermost.com/about-us/>`__.
+To learn more about why we strongly believe that users and customers should always have access to their data, please read `why we created Mattermost <https://mattermost.com/about-us/>`_.
 
 What's the difference between incoming and outgoing webhooks?
 -------------------------------------------------------------
@@ -46,7 +46,7 @@ Mattermost doesn't currently support the ability to attach files to a post made 
 Where can I find existing integrations?
 ---------------------------------------
 
-[Visit the Mattermost Marketplace](https://mattermost.com/marketplace) to access open source integrations to common tools like Jira, Jenkins, and GitLab, along with interactive bot applications, and other communication tools that are freely available for use and customization. 
+Visit the `Mattermost Marketplace <https://mattermost.com/marketplace>`_ to access open source integrations to common tools like Jira, Jenkins, and GitLab, along with interactive bot applications, and other communication tools that are freely available for use and customization. 
 
 Alternatively, within Mattermost, when logged in as an Administrator, you can click on the "Marketplace" option in the main menu and easily install plugins or apps from there. 
 
@@ -58,6 +58,6 @@ For self-hosted deployments in small setups, you might host integrations on the 
 Where can I get more information about integrations?
 ----------------------------------------------------
 
-Come `join our Contributors community channel <https://community.mattermost.com/core/channels/tickets>`__ on our daily build server, where you can discuss questions with community members and the Mattermost core team. 
+Come `join our Contributors community channel <https://community.mattermost.com/core/channels/tickets>`_ on our daily build server, where you can discuss questions with community members and the Mattermost core team. 
 
-Join our `Developers channel <https://community.mattermost.com/core/channels/developers>`__ for technical discussions, and visit our `Integrations channel <https://community.mattermost.com/core/channels/integrations>`__ for all integrations and plugins discussions.
+Join our `Developers channel <https://community.mattermost.com/core/channels/developers>`_ for technical discussions, and visit our `Integrations channel <https://community.mattermost.com/core/channels/integrations>`_ for all integrations and plugins discussions.

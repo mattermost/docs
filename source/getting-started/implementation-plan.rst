@@ -62,6 +62,7 @@ The following diagram is a high-level illustration of the Mattermost platform an
 
 .. image:: ../images/network-diagram.svg
    :alt: Mattermost network diagram shows how the various system components of the Mattermost platform interact with each other within a network deployment.
+   :class: bg-white
 
 **Reference**: https://docs.mattermost.com/deploy/deployment-overview.html
 

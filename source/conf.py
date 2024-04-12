@@ -358,6 +358,8 @@ redirects = {
         "https://docs.mattermost.com/configure/site-configuration-settings.html#file-sharing-and-downloads",
 "administration/config-settings.html#allow-untrusted-internal-connections-to":
 	"https://docs.mattermost.com/configure/environment-configuration-settings.html#allow-untrusted-internal-connections",
+"administration/version-archive.html":
+	"https://docs.mattermost.com/upgrade/version-archive.html",
 
 # Boards redirects
 "boards/navigating-mattermost-boards.html":
