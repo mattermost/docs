@@ -153,7 +153,7 @@ Data source
   :systemconsole: Environment > Database
   :configjson: SqlSettings.MaxIdleConns
   :environment: MM_SQLSETTINGS_MAXIDLECONNS
-  :description: The maximum number of idle connections held open to the database. Default is **10**.
+  :description: The maximum number of idle connections held open to the database. Default is **20**.
 
 Maximum idle database connections
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
