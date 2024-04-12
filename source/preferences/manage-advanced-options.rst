@@ -129,12 +129,12 @@ Delete local files
 
 You can delete local Mattermost files from your mobile device using the mobile app.
 
+.. tab:: Web/Desktop
+
+    This option isn't applicable to the web or desktop app instance of Mattermost.
+
 .. tab:: Mobile
 
     Access **Settings** by tapping on your profile picture. Then, tap **Advanced Settings** and **Delete local files**.
 
     Only data specific to the current Mattermost server is removed from your device. You'll need to repeat this process for each :doc:`Mattermost workspace you're connected to </preferences/connect-multiple-workspaces>` on the mobile app.
-
-.. tab:: Web/Desktop
-
-    This option isn't applicable to the web or desktop app instance of Mattermost.

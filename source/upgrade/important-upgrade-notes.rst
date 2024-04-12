@@ -10,6 +10,7 @@ Important Upgrade Notes
    - Upgrading the Microsoft Teams Calling plugin to v2.0.0 requires users to reconnect their accounts.
    - When upgrading to 7.x from a 5.x release please make sure to upgrade to 5.37.10 first for the upgrade to complete successfully.
    - Disable global drafts. Admins can set the feature flag ``MM_FEATUREFLAGS_GLOBALDRAFTS`` to ``false`` to disable server-wide. It can't be disabled on a per-user basis. The code is located `here <https://github.com/mattermost/mattermost-server/blob/master/server/public/model/feature_flags.go#L74>`__.
+   - Mattermost plugins built with Go versions 1.22.0 and 1.22.1 do not work. Plugin developers should use go 1.22.2 or newer instead.
 
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | If you’re upgrading from a version earlier than... | Then...                                                                                                                                                          |
@@ -102,7 +103,7 @@ Important Upgrade Notes
 |                                                    | The Channel Export and Apps plugins are now disabled by default.                                                                                                 |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | Apps Bar is now enabled by default for on-prem servers. ``ExperimentalSettings.EnableAppBar`` was also renamed to ``ExperimentalSettings.DisableAppBar``.        |
-|                                                    | See more details at https://docs.mattermost.com/configure/experimental-configuration-settings.html#disable-app-bar and at                                        |
+|                                                    | See more details at https://docs.mattermost.com/configure/experimental-configuration-settings.html#disable-apps-bar and at                                       |
 |                                                    | https://forum.mattermost.com/t/channel-header-plugin-changes/13551                                                                                               |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | In the main `server package`, the Go module path has changed from ``github.com/mattermost/mattermost-server/server/v8`` to                                       |
