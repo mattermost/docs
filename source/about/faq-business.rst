@@ -47,7 +47,7 @@ Other considerations
 Will Mattermost complete questionnaires requiring confidential data without an NDA?
 -----------------------------------------------------------------------------------
 
-No, Mattermost will not complete questionnaires requiring confidential data without a non-disclosure agreement. You can find `Mattermost's standard mutual non-disclosure agreement online <https://docs.google.com/document/d/10Qc2kxxZGYNzp9b19oEhItRM01OPyrWRISJ2rbm1gvc/edit>`_.
+No, Mattermost will not complete questionnaires requiring confidential data without a non-disclosure agreement. You can find Mattermost's `standard mutual non-disclosure agreement <https://docs.google.com/document/d/10Qc2kxxZGYNzp9b19oEhItRM01OPyrWRISJ2rbm1gvc/edit>`_ online.
 
 Why does Mattermost have a discount for certain kinds of non-profits but not for others?
 ----------------------------------------------------------------------------------------
