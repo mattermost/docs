@@ -43,7 +43,23 @@ Mattermost Omnibus packages the free, unlicensed Mattermost Enterprise version o
 Add the Mattermost PPA repositories
 -----------------------------------
 
-In a terminal window, run the following command
+.. important::
+
+  The GPG public key has changed. You can `import the new public key <https://deb.packages.mattermost.com/pubkey.gpg>`_ or run the automatic Mattermost PPA repository setup script provided below. Depending on your setup, additional steps may also be required, particularly for installations that didn't rely on the repository setup script. We recommend deleting the old key from ``/etc/apt/trusted.gpg.d`` before adding the apt repository.
+
+  - For Ubuntu distributions including Bionic and Focal: 
+
+    ``sudo rm /usr/share/keyrings/mattermost-archive-keyring.gpg``
+
+    ``curl -sL -o- https://deb.packages.mattermost.com/pubkey.gpg | gpg --dearmor | sudo tee /usr/share/keyrings/mattermost-archive-keyring.gpg >/dev/null``
+
+  - For Ubuntu Jammy:
+
+    ``sudo gpg --batch --delete-key A1B31D46F0F3A10B02CF2D44F8F2C31744774B28``
+
+    ``curl -sL -o- https://deb.packages.mattermost.com/pubkey.gpg |  sudo gpg --import``
+
+In a terminal window, run the following repository setup command:
 
 .. raw:: html
 
@@ -58,7 +74,7 @@ In a terminal window, run the following command
 
     <button class="mm-button mm-code-copy__trigger" data-click-el="Button">
       <svg aria-hidden="true" width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="0.5" y="0.5" width="10.2972" height="10.8284" rx="0.5" stroke="white"/><rect x="6.1489" y="6.41418" width="10.2972" height="10.8284" rx="0.5" stroke="white"/></svg>
-      <span>Copy to clipboard<span>
+      <span>Copy to clipboard</span>
     </button>
 
   </div>
@@ -83,7 +99,7 @@ In a terminal window, run the following command to install Omnibus.
 
     <button class="mm-button mm-code-copy__trigger" data-click-el="Button">
       <svg aria-hidden="true" width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="0.5" y="0.5" width="10.2972" height="10.8284" rx="0.5" stroke="white"/><rect x="6.1489" y="6.41418" width="10.2972" height="10.8284" rx="0.5" stroke="white"/></svg>
-      <span>Copy to clipboard<span>
+      <span>Copy to clipboard</span>
     </button>
 
   </div>
@@ -145,7 +161,7 @@ Mattermost Omnibus is integrated with the apt package manager. When a new Matter
 
     <button class="mm-button mm-code-copy__trigger" data-click-el="Button">
       <svg aria-hidden="true" width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="0.5" y="0.5" width="10.2972" height="10.8284" rx="0.5" stroke="white"/><rect x="6.1489" y="6.41418" width="10.2972" height="10.8284" rx="0.5" stroke="white"/></svg>
-      <span>Copy to clipboard<span>
+      <span>Copy to clipboard</span>
     </button>
 
   </div>

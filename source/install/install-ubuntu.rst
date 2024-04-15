@@ -38,18 +38,32 @@ You can install the Mattermost Server using our ``.deb`` signed packages using t
 
 .. tip::
 
-  If you are running the Mattermost Server and database on a single system, we recommend the :doc:`Mattermost Omnibus install method </install/installing-mattermost-omnibus>` as this greatly reduces setup and ongoing maintenance.
+  - If you are running the Mattermost Server and database on a single system, we recommend the :doc:`Mattermost Omnibus install method </install/installing-mattermost-omnibus>` as this greatly reduces setup and ongoing maintenance.
 
-.. note::
-
-  You need a PostgreSQL database. See the :doc:`database preparation </install/prepare-mattermost-database>` documentation for details on this prerequisite.
+  - You need a PostgreSQL database. See the :doc:`database preparation </install/prepare-mattermost-database>` documentation for details on this prerequisite.
 
 A Mattermost deployment includes 4 steps: `add the PPA repository <#add-the-mattermost-server-ppa-repository>`__, `install <#install>`__, `setup <#setup>`__, and `update <#updates>`__.
 
 Add the Mattermost Server PPA repository
 ----------------------------------------
 
-In a terminal window, run the following command to add the Mattermost Server repositories:
+.. important::
+
+  The GPG public key has changed. You can `import the new public key <https://deb.packages.mattermost.com/pubkey.gpg>`_ or run the automatic Mattermost PPA repository setup script provided below. Depending on your setup, additional steps may also be required, particularly for installations that didn't rely on the repository setup script. We recommend deleting the old key from ``/etc/apt/trusted.gpg.d`` before adding the apt repository.
+
+  - For Ubuntu distributions including Bionic and Focal: 
+
+    ``sudo rm /usr/share/keyrings/mattermost-archive-keyring.gpg``
+
+    ``curl -sL -o- https://deb.packages.mattermost.com/pubkey.gpg | gpg --dearmor | sudo tee /usr/share/keyrings/mattermost-archive-keyring.gpg >/dev/null``
+
+  - For Ubuntu Jammy:
+
+    ``sudo gpg --batch --delete-key A1B31D46F0F3A10B02CF2D44F8F2C31744774B28``
+
+    ``curl -sL -o- https://deb.packages.mattermost.com/pubkey.gpg |  sudo gpg --import``
+
+In a terminal window, run the following repository setup command to add the Mattermost Server repositories:
 
 .. raw:: html
 
@@ -64,10 +78,12 @@ In a terminal window, run the following command to add the Mattermost Server rep
 
     <button class="mm-button mm-code-copy__trigger" data-click-el="Button">
       <svg aria-hidden="true" width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="0.5" y="0.5" width="10.2972" height="10.8284" rx="0.5" stroke="white"/><rect x="6.1489" y="6.41418" width="10.2972" height="10.8284" rx="0.5" stroke="white"/></svg>
-      <span>Copy to clipboard<span>
+      <span>Copy to clipboard</span>
     </button>
 
   </div>
+
+This command configures the repositories needed for a PostgreSQL database, configures an NGINX web server to act as a proxy, configures certbot to issue and renew the SSL certificate, and configures the Mattermost Omnibus repository so that you can run the install command.
 
 Install
 -------
@@ -94,7 +110,7 @@ After any updates, and any system reboots, are complete, installing the Mattermo
 
     <button class="mm-button mm-code-copy__trigger" data-click-el="Button">
       <svg aria-hidden="true" width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="0.5" y="0.5" width="10.2972" height="10.8284" rx="0.5" stroke="white"/><rect x="6.1489" y="6.41418" width="10.2972" height="10.8284" rx="0.5" stroke="white"/></svg>
-      <span>Copy to clipboard<span>
+      <span>Copy to clipboard</span>
     </button>
 
   </div>

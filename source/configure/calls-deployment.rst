@@ -33,7 +33,7 @@ Plugin components
 
 - **Calls plugin**: This is the main entry point and a requirement to enable channel calls.
 
-- **rtcd**: This is an optional service that can be deployed to offload all the functionality and data processing involved with the WebRTC connections. Read more about when and why to use `rctd <#the-rtcd-service>`__ below.
+- **rtcd**: This is an optional service that can be deployed to offload all the functionality and data processing involved with the WebRTC connections. Read more about when and why to use `rtcd <#the-rtcd-service>`__ below.
 
 Requirements
 ------------

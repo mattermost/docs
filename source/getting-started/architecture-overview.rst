@@ -139,36 +139,43 @@ Each AWS diagram represents a full High Availability deployment on Amazon Web Se
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: ../images/MattermostDeployment5kUsers.png
+  :class: bg-white
 
 5,000 users on Enterprise - AWS
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: ../images/MattermostDeployment5kaws.png
+  :class: bg-white
 
 10,000 users on Enterprise - General
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: ../images/MattermostDeployment10kUsers.png
+  :class: bg-white
 
 10,000 users on Enterprise - AWS
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: ../images/MattermostDeployment10kaws.png
+  :class: bg-white
 
 25,000 users on Enterprise - General
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: ../images/MattermostDeployment25kUsers.png
+  :class: bg-white
 
 25,000 users on Enterprise - AWS
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: ../images/MattermostDeployment25kaws.png
+  :class: bg-white
 
 50,000 users on Enterprise - AWS
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: ../images/MattermostDeployment50kaws.png
+  :class: bg-white
 
 Database with VIPs
 ~~~~~~~~~~~~~~~~~~
@@ -176,6 +183,7 @@ Database with VIPs
 The following diagram is a suggested configuration for Highly-Available databases through virtual IPs.
 
 .. image:: ../images/DatabasewithVIPs.png
+  :class: bg-white
 
 Load testing
 ~~~~~~~~~~~~
