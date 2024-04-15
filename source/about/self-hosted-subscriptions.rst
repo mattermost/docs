@@ -21,12 +21,12 @@ If your deployment doesn't have internet access, please continue to use the Cust
 Mattermost v7.6 and earlier releases
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you're using Mattermost v7.6 and below, you can buy a Mattermost subscription via the `Customer Portal page <https://customers.mattermost.com>`__. If you haven't created an account yet, follow the steps provided. Otherwise, you can log in with your existing credentials. When you buy a Mattermost subscription for a self-hosted deployment, you'll receive an activation license.
+If you're using Mattermost v7.6 and below, you can buy a Mattermost subscription via the `Customer Portal page <https://customers.mattermost.com>`_. If you haven't created an account yet, follow the steps provided. Otherwise, you can log in with your existing credentials. When you buy a Mattermost subscription for a self-hosted deployment, you'll receive an activation license.
 
 Once you're logged in:
 
-1. Choose a subscription, and enter the number of users in the **Order summary** field. This indicates the number of users you can have on this subscription's instance. For more information about how users are defined, see our `FAQ <https://mattermost.com/pricing-self-managed/#faq>`__.
-2. (Optional for Enterprise subscriptions) You can add `Premier Support <https://mattermost.com/support/>`__. This is an additional cost and is automatically added to your order total.
+1. Choose a subscription, and enter the number of users in the **Order summary** field. This indicates the number of users you can have on this subscription's instance. For more information about how users are defined, visit the `Mattermost pricing page <https://mattermost.com/pricing-self-managed/>`_ and frequently asked questions further down the page.
+2. (Optional for Enterprise subscriptions) You can add `Premier Support <https://mattermost.com/support/>`_. This is an additional cost and is automatically added to your order total.
 3. Select **Next Step**.
 4. Enter your billing and payment information.
 5. Accept the **Terms**.
@@ -62,7 +62,7 @@ If you haven't yet installed and deployed a Mattermost instance, visit the :doc:
 View subscription information
 -----------------------------
 
-Self-hosted subscriptions purchased via the `Customer Portal <https://customers.mattermost.com>`__ are stored and listed in the Customer Portal.
+Self-hosted subscriptions purchased via the `Customer Portal <https://customers.mattermost.com>`_ are stored and listed in the Customer Portal.
 
 Here you can view license details, including their start date, end date and licensed number of users, and have full access to your billing history, making it easier to manage purchases and renewal dates.
 
@@ -81,7 +81,7 @@ Subscription and licenses not purchased via the Customer Portal won't be listed.
 Add more users to your subscription
 -----------------------------------
 
-If you have a self-hosted license in the Customer Portal, you can add additional users to your subscription via the `Customer Portal page <https://customers.mattermost.com>`__.
+If you have a self-hosted license in the Customer Portal, you can add additional users to your subscription via the `Customer Portal page <https://customers.mattermost.com>`_.
 
 1. Select **Purchase additional seats**.
 2. Enter your account and billing details.
@@ -91,7 +91,7 @@ Once you have your updated license, upload it via **System Console > License and
 
 This process adds additional users to your existing subscription and is not a new license. Your license renewal date doesn't change when you add additional users and receive an updated license. Billing is pro-rated based on the time left in your billing cycle.
 
-If you don't have a self-hosted license in the Customer Portal and want to add users, `contact us <https://mattermost.com/contact-us/>`__.
+If you don't have a self-hosted license in the Customer Portal and want to add users, `contact us <https://mattermost.com/contact-us/>`_.
 
 Quarterly true-up reports
 -------------------------
@@ -103,7 +103,7 @@ We'll send you an email notice around the end of the quarter reminding you to se
 .. image:: ../images/true-up-schedule.png
    :alt: The timeframes followed for the true-up notifications.
 
-If you have more total activated users than you purchased in your annual subscription, your Customer Success Manager will provide you with a true-up quote for the new users added. The additional invoice will be pro-rated based on the number of months left in your subscription term, including the months for the calendar quarter for the time you pull the report. Mattermost won't provide downward adjustments. Mattermost will invoice based on Mattermost’s `current list prices <https://mattermost.com/pricing/>`__.
+If you have more total activated users than you purchased in your annual subscription, your Customer Success Manager will provide you with a true-up quote for the new users added. The additional invoice will be pro-rated based on the number of months left in your subscription term, including the months for the calendar quarter for the time you pull the report. Mattermost won't provide downward adjustments. Mattermost will invoice based on Mattermost’s `current list prices <https://mattermost.com/pricing/>`_.
 
 From Mattermost v7.9
 ~~~~~~~~~~~~~~~~~~~~
@@ -188,7 +188,7 @@ Can I use the same license key on multiple self-hosted servers?
 
 License keys for unlocking the advanced features in Mattermost can only be applied to a single deployment. A deployment consists of either a single Mattermost server or multiple linked Mattermost servers in a High Availability configuration with access to a single database.
 
-Customers who are eligible to purchase the `Premier Support add-on <https://mattermost.com/support/>`__ are licensed to run with a single deployment of Mattermost license key in production and up to four non-production deployments of Mattermost (for example: development, staging, user acceptance testing, etc.)
+Customers who are eligible to purchase the `Premier Support add-on <https://mattermost.com/support/>`_ are licensed to run with a single deployment of Mattermost license key in production and up to four non-production deployments of Mattermost (for example: development, staging, user acceptance testing, etc.)
 
 Is my license key available immediately?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -238,7 +238,7 @@ We currently support a single account/user per organization. The ability to add 
 Where can I find the license agreement for Mattermost Enterprise Edition?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Mattermost Enterprise Edition is the name for the binary of the Mattermost self-hosted Professional and Enterprise editions. This edition can be used for free without a license key as commercial software functionally equivalent to the open source Mattermost Team Edition licensed under MIT. When a license key is purchased and applied to Mattermost Enterprise Edition, additional features unlock. The license agreement for Mattermost Enterprise Edition is included in the software and also available `here <https://mattermost.com/enterprise-edition-license/>`__.
+Mattermost Enterprise Edition is the name for the binary of the Mattermost self-hosted Professional and Enterprise editions. This edition can be used for free without a license key as commercial software functionally equivalent to the open source Mattermost Team Edition licensed under MIT. When a license key is purchased and applied to Mattermost Enterprise Edition, additional features unlock. The license agreement for Mattermost Enterprise Edition is included in the software and also available `here <https://mattermost.com/enterprise-edition-license/>`_.
 
 How do I delete my Customer Portal account?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

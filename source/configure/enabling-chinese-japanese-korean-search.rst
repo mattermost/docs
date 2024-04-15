@@ -18,7 +18,7 @@ Below is additional information on how to configure the database for different l
 尽管在 Mattermost 8.0 更新后，官方推荐为了更好的性能请使用 PostgreSQL 作为后端数据库。
 
 但就目前而言，使用 MySQL 能够更容易的实现中文语言的全文搜索功能，在妥善配置 ngram 后，根据官方数据库构造重新生成索引即可达成。
-具体的操作方式，可参考： `Cannot search CJK contents <https://github.com/mattermost/mattermost/issues/2033#issuecomment-182336690>`__。
+具体的操作方式，可参考： `Cannot search CJK contents <https://github.com/mattermost/mattermost/issues/2033#issuecomment-182336690>`_。
 
 有关 PostgreSQL 的配置方式，请参考以下流程：
 
@@ -98,9 +98,9 @@ Below is additional information on how to configure the database for different l
 
     未尽事宜，可以参考以下链接：
 
-    - `SCWS 官方文档 <http://www.xunsearch.com/scws/docs.php>`__
-    - `Zhparser 官方文档 <https://github.com/amutu/zhparser/blob/master/README.md>`__
-    - `Mattermost 建表语句 <https://github.com/mattermost/mattermost/tree/master/server/channels/db/migrations/postgres>`__
+    - `SCWS 官方文档 <http://www.xunsearch.com/scws/docs.php>`_
+    - `Zhparser 官方文档 <https://github.com/amutu/zhparser/blob/master/README.md>`_
+    - `Mattermost 建表语句 <https://github.com/mattermost/mattermost/tree/master/server/channels/db/migrations/postgres>`_
 
 日本語 / Japanese
 -----------------
@@ -128,7 +128,7 @@ Qiita上で Mattermost のインストールおよび構成のガイドを提供
 
 이 문제에 대한 논의는 이 `이슈 <https://github.com/mattermost/mattermost/issues/2033>`_ 에서 시작되었습니다.
 
-한국어 버전 이용 시 문제점을 발견하면 `Localization 채널 <https://community.mattermost.com/core/channels/localization>`__ 또는 `한국어 채널 <https://community.mattermost.com/core/channels/i18n-korean>`__ 에서 의견을 제시할 수 있습니다.
+한국어 버전 이용 시 문제점을 발견하면 `Localization 채널 <https://community.mattermost.com/core/channels/localization>`_ 또는 `한국어 채널 <https://community.mattermost.com/core/channels/i18n-korean>`_ 에서 의견을 제시할 수 있습니다.
 
 검색을 위한 데이터베이스 설정
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -140,7 +140,7 @@ MySQL: MySQL에서는 전문 검색(Full-text search) 기능에 제한이 있기
 MySQL 해결 방법
 ~~~~~~~~~~~~~~~~~
 
-1. `n-gram parser <https://mysqlserverteam.com/innodb-%EC%A0%84%EB%AC%B8-%EA%B2%80%EC%83%89-n-gram-parser/>`__ 를 이용하기 위해서는 MySQL의 버전이 5.7.6 이상이어야 합니다.
+1. n-gram parser 를 이용하기 위해서는 MySQL의 버전이 5.7.6 이상이어야 합니다.
 
 2. MySQL의 구성 파일에서 n-gram의 최소 토큰 크기를 다음과 같이 설정합니다.
 
@@ -154,14 +154,14 @@ MySQL 해결 방법
 
 4. 일부 테이블의 전문 검색 색인을 다음과 같이 재구성합니다.
 
-- 게시물 검색을 위한 설정 ( `참조 <https://github.com/mattermost/mattermost/issues/2033#issuecomment-182336690>`__ )
+- 게시물 검색을 위한 설정 ( `참조 <https://github.com/mattermost/mattermost/issues/2033#issuecomment-182336690>`_ )
 
 .. code:: sql
 
     DROP INDEX idx_posts_message_txt ON Posts;
     CREATE FULLTEXT INDEX idx_posts_message_txt ON Posts (Message) WITH PARSER ngram;
 
-- 해시 태그 검색을 위한 설정 ( `참조 <https://github.com/mattermost/mattermost/pull/4555>`__ )
+- 해시 태그 검색을 위한 설정 ( `참조 <https://github.com/mattermost/mattermost/pull/4555>`_ )
 
 .. code:: sql
 

@@ -39,12 +39,11 @@ To ensure your instance and configuration are compatible with high availability,
   
   Back up your Mattermost database and file storage locations before configuring high availability. For more information about backing up, see :doc:`../deploy/backup-disaster-recovery`.
 
-1. Upgrade Mattermost Server to version 4.0 or later. See :doc:`../upgrade/upgrading-mattermost-server`.
-2. Set up a new Mattermost server with version 4.0 or later by following one of our **Install Guides**. This server must use an identical copy of the configuration file, ``config.json``. Verify the servers are functioning by hitting each independent server through its private IP address.
-3. Modify the ``config.json`` files on both servers to add ``ClusterSettings``. See the :ref:`high availability configuration settings <configure/environment-configuration-settings:high availability>` documentation for details.
-4. Verify the configuration files are identical on both servers then restart each machine in the cluster.
-5. Modify your NGINX setup so that it proxies to both servers. For more information about this, see `proxy server configuration`_.
-6. Open **System Console > Environment > High Availability** to verify that each machine in the cluster is communicating as expected with green status indicators. If not, investigate the log files for any extra information.
+1. Set up a new Mattermost server by following one of our **Install Guides**. This server must use an identical copy of the configuration file, ``config.json``. Verify the servers are functioning by hitting each independent server through its private IP address.
+2. Modify the ``config.json`` files on both servers to add ``ClusterSettings``. See the :ref:`high availability configuration settings <configure/environment-configuration-settings:high availability>` documentation for details.
+3. Verify the configuration files are identical on both servers then restart each machine in the cluster.
+4. Modify your NGINX setup so that it proxies to both servers. For more information about this, see `proxy server configuration`_.
+5. Open **System Console > Environment > High Availability** to verify that each machine in the cluster is communicating as expected with green status indicators. If not, investigate the log files for any extra information.
 
 Add a server to the cluster
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
