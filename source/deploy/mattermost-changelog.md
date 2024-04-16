@@ -25,6 +25,8 @@ If you upgrade from a release earlier than v9.6, please read the other [Importan
 
 ### Improvements
 
+See [this walkthrough video](https://mattermost.com/video/mattermost-v9-7-changelog/) on some of the improvements in our latest release below.
+
 #### User Interface (UI)
  - Added Mattermost [AI plugin](https://github.com/mattermost/mattermost-plugin-ai) to pre-packaged plugins.
  - Pre-packaged Calls version [v0.25.1](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v0.25.1).
