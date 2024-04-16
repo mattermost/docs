@@ -1,3 +1,5 @@
-AI Copilot plugin
-=================
+Integrate AI Copilot into Mattermost
+====================================
+
+
 
