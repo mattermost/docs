@@ -19,7 +19,9 @@ Sending messages, replying to messages, and participating in conversation thread
 Public channels
 ---------------
 
-Public channels are open to everyone on a team and are identified with a **Globe** |globe-icon| icon. New team members are automatically added to two public channels when they sign up: **Town Square** and **Off-Topic**. See the :doc:`Join and leave channels </collaborate/join-leave-channels>` documentation for details on discovering and joining other channels.
+Public channels are open to everyone on a team and are identified with a **Globe** |globe-icon| icon. New team members are automatically added to two public channels when they sign up: **Town Square** and **Off-Topic**.
+
+See the :doc:`Join and leave channels </collaborate/join-leave-channels>` documentation for details on discovering and joining other channels.
 
 Private channels
 ----------------

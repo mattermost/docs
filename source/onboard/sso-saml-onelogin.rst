@@ -68,7 +68,7 @@ Create a OneLogin connection app for Mattermost SSO
 
   Attribute parameters map attributes between OneLogin and Mattermost. For more information on which attributes are configurable, see our :ref:`documentation on SAML configuration settings <saml-enterprise>`.
 
-  *Email* attributes are required. For Mattermost servers running version 3.3 and earlier, ``FirstName`` and ``LastName`` attributes are also required.
+  *Email* attributes are required.
 
   a. Select the **Parameters** tab.
   b. Select **Add Parameter**.
@@ -142,8 +142,6 @@ Configure SAML Sign-On for Mattermost
 5. Set attributes for the SAML Assertions, which are used for updating user information in Mattermost.
 
   The **Email Atttribute** field and the **Username Attribute** field are required, and should match the values that you entered earlier when you configured the SAML Test Connector on OneLogin.
-
-  For Mattermost servers running version 3.3 and earlier, ``FirstName`` and ``LastName`` attributes are also required.
 
   .. image:: ../../source/images/okta_13_mattermost_attributes.png
      :alt: On the System Console SAML page, set attributes for the SAML Assertions used to update user information in Mattermost. Both Email Attribute and Username Attribute are required, and should match the values entered when configuring the SAML Test Connector in OneLogin.

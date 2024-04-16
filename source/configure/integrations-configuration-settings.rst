@@ -33,14 +33,14 @@ Access the following configuration settings in the System Console by going to **
 Enable incoming webhooks
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-Developers building integrations can create webhook URLs for public channels and private channels. Please see our `documentation page <https://developers.mattermost.com/integrate/webhooks/incoming/>`__ to learn about creating webhooks, viewing samples, and letting community know about integrations you've built.
+Developers building integrations can create webhook URLs for public channels and private channels. Please see our `documentation page <https://developers.mattermost.com/integrate/webhooks/incoming/>`_ to learn about creating webhooks, viewing samples, and letting community know about integrations you've built.
 
 **True**: Incoming webhooks are allowed. To manage incoming webhooks, select **Integrations** from the Mattermost Product menu. The webhook URLs created can be used by external applications to create posts in any public or private channels that you have access to.
 
 **False**: The **Integrations > Incoming Webhooks** section of the Mattermost Product menu is hidden and all incoming webhooks are disabled.
 
 .. important::
-   Security note: By enabling this feature, users may be able to perform `phishing attacks <https://en.wikipedia.org/wiki/Phishing>`__ by attempting to impersonate other users. To combat these attacks, a BOT tag appears next to all posts from a webhook. Enable at your own risk.
+   Security note: By enabling this feature, users may be able to perform `phishing attacks <https://en.wikipedia.org/wiki/Phishing>`_ by attempting to impersonate other users. To combat these attacks, a BOT tag appears next to all posts from a webhook. Enable at your own risk.
 
 +-------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableIncomingWebhooks": true`` with options ``true`` and ``false``. |
@@ -58,14 +58,14 @@ Developers building integrations can create webhook URLs for public channels and
 Enable outgoing webhooks
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-Developers building integrations can create webhook tokens for public channels. Trigger words are used to fire new message events to external integrations. For security reasons, outgoing webhooks are only available in public channels. Please see our `documentation page <https://developers.mattermost.com/integrate/webhooks/outgoing/>`__ to learn about creating webhooks and viewing samples.
+Developers building integrations can create webhook tokens for public channels. Trigger words are used to fire new message events to external integrations. For security reasons, outgoing webhooks are only available in public channels. Please see our `documentation page <https://developers.mattermost.com/integrate/webhooks/outgoing/>`_ to learn about creating webhooks and viewing samples.
 
 **True**: Outgoing webhooks will be allowed. To manage outgoing webhooks, select **Integrations** from the Mattermost Product menu.
 
 **False**: The **Integrations > Outgoing Webhooks** of the Mattermost Product menu is hidden and all outgoing webhooks are disabled.
 
 .. important::
-   Security note: By enabling this feature, users may be able to perform `phishing attacks <https://en.wikipedia.org/wiki/Phishing>`__ by attempting to impersonate other users. To combat these attacks, a BOT tag appears next to all posts from a webhook. Enable at your own risk.
+   Security note: By enabling this feature, users may be able to perform `phishing attacks <https://en.wikipedia.org/wiki/Phishing>`_ by attempting to impersonate other users. To combat these attacks, a BOT tag appears next to all posts from a webhook. Enable at your own risk.
 
 +-------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableOutgoingWebhooks": true`` with options ``true`` and ``false``. |
@@ -127,7 +127,7 @@ Enable OAuth 2.0 service provider
 Integration request timeout
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The number of seconds to wait for external integration HTTP requests, before timing out, including `custom slash commands <https://developers.mattermost.com/integrate/slash-commands/custom/>`__, `outgoing webhooks <https://developers.mattermost.com/integrate/webhooks/outgoing/>`__, `interactive messages <https://developers.mattermost.com/integrate/plugins/interactive-messages/>`__, and `interactive dialogs <https://developers.mattermost.com/integrate/plugins/interactive-dialogs/>`__. Increase this value if you have external integrations that can take some time to generate an HTTP response, or experience delayed responses due to latency.
+The number of seconds to wait for external integration HTTP requests, before timing out, including `custom slash commands <https://developers.mattermost.com/integrate/slash-commands/custom/>`_, `outgoing webhooks <https://developers.mattermost.com/integrate/webhooks/outgoing/>`_, `interactive messages <https://developers.mattermost.com/integrate/plugins/interactive-messages/>`_, and `interactive dialogs <https://developers.mattermost.com/integrate/plugins/interactive-dialogs/>`_. Increase this value if you have external integrations that can take some time to generate an HTTP response, or experience delayed responses due to latency.
 
 +------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"OutgoingIntegrationRequestsDefaultTimeout": 3``.  |
@@ -159,7 +159,7 @@ Enable integrations to override usernames
   :configjson: .ServiceSettings.EnablePostIconOverride
   :environment: MM_SERVICESETTINGS_ENABLEPOSTICONOVERRIDE
 
-  - **true**: Webhooks, slash commands, and other integrations, such as `Zapier <https://docs.mattermost.com/integrations/zapier.html>`__, will be allowed to change the profile picture they post with.
+  - **true**: Webhooks, slash commands, and other integrations, such as `Zapier <https://docs.mattermost.com/integrations/zapier.html>`_, will be allowed to change the profile picture they post with.
   - **false**: **(Default)** Webhooks, slash commands, and OAuth 2.0 apps can only post with the profile picture of the account they were set up with.
 
 Enable integrations to override profile picture icons
@@ -179,13 +179,13 @@ Enable integrations to override profile picture icons
   :configjson: .ServiceSettings.EnableUserAccessTokens
   :environment: MM_SERVICESETTINGS_ENABLEUSERACCESSTOKENS
 
-  - **true**: Users can create `personal access tokens <https://developers.mattermost.com/integrate/admin-guide/admin-personal-access-token/>`__ for integrations in **Profile > Security**.
+  - **true**: Users can create `personal access tokens <https://developers.mattermost.com/integrate/admin-guide/admin-personal-access-token/>`_ for integrations in **Profile > Security**.
   - **false**: **(Default)** Personal access tokens are disabled on the server.
 
 Enable personal access tokens
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**True**: Users can create `personal access tokens <https://developers.mattermost.com/integrate/admin-guide/admin-personal-access-token/>`__ for integrations in **Profile > Security**. They can be used to authenticate against the API and give full access to the account.
+**True**: Users can create `personal access tokens <https://developers.mattermost.com/integrate/admin-guide/admin-personal-access-token/>` for integrations in **Profile > Security**. They can be used to authenticate against the API and give full access to the account.
 
 To manage who can create personal access tokens or to search users by token ID, go to the **System Console > Users** page.
 
@@ -217,7 +217,7 @@ Access the following configuration settings in the System Console by going to **
 Enable bot account creation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**True**: **(Default for Cloud deployments)** Users can create bot accounts for integrations in **Integrations > Bot Accounts**. Bot accounts are similar to user accounts except they cannot be used to log in. See `documentation <https://developers.mattermost.com/integrate/admin-guide/admin-bot-accounts/>`__ to learn more.
+**True**: **(Default for Cloud deployments)** Users can create bot accounts for integrations in **Integrations > Bot Accounts**. Bot accounts are similar to user accounts except they cannot be used to log in. See `documentation <https://developers.mattermost.com/integrate/admin-guide/admin-bot-accounts/>`_ to learn more.
 
 **False**: **(Default for self-hosted deployments)** Bot accounts cannot be created through the user interface or the RESTful API. Plugins can still create and manage bot accounts.
 
@@ -275,8 +275,8 @@ Enable GIF picker
 | This feature's ``config.json`` setting is ``"EnableGifPicker": true`` with options ``true`` and ``false``. |
 +------------------------------------------------------------------------------------------------------------+
 
-.. note::
-   :ref:`Link previews <configure/site-configuration-settings:enable message link previews>` must be enabled in order to display GIF link previews. Mattermost deployments restricted to access behind a firewall must open port 443 to both https://api.gfycat.com/v1 and https://gfycat.com/<id> (for all request types) for this feature to work.
+.. important::
+   :ref:`Link previews <configure/site-configuration-settings:enable message link previews>` must be enabled in order to display GIF link previews. Mattermost deployments restricted to access behind a firewall must open port 443 to both ``https://api.gfycat.com/v1`` and ``https://gfycat.com/<id>`` (for all request types) for this feature to work.
 
 .. config:setting:: integrate-gfycatapikey
   :displayname: Gfycat API key (Integrations)
@@ -288,7 +288,7 @@ Enable GIF picker
 Gfycat API key
 ~~~~~~~~~~~~~~
 
-When blank, uses the default API key provided by Gfycat. Alternatively, a unique API key can be requested at https://developers.gfycat.com/signup/#/. Enter the client ID you receive via email to this field.
+When blank, uses the default API key provided by Gfycat.
 
 +-----------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"GfycatApiKey": "2_KtH_W5"`` with string input.   |

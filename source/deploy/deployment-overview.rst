@@ -8,10 +8,11 @@ The following Mattermost network diagram illustrates a private cloud deployment 
 
 .. image:: ../images/network-diagram.svg
    :alt: Mattermost network diagram shows how the components of a private cloud deployment could be deployed. Includes optional configurations for scaling for larger enterprise organizations.
+   :class: bg-white
 
 .. note::
 
-  GitLab Mattermost deployment is `documented separately <https://docs.gitlab.com/omnibus/gitlab-mattermost/>`__ and not included below.
+  GitLab Mattermost deployment is `documented separately <https://docs.gitlab.com/ee/integration/mattermost//>`__ and not included below.
 
 Requirements and installation guides
 -------------------------------------

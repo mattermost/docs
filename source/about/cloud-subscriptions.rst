@@ -17,7 +17,7 @@ Buy a Cloud subscription
 
 4. Click **Upgrade** to confirm.
 
-To upgrade to Mattermost Enterprise, `contact sales <https://mattermost.com/contact-sales/>`__.
+To upgrade to Mattermost Enterprise, `contact sales <https://mattermost.com/contact-sales/>`_.
 
 View subscription information
 -----------------------------
@@ -86,21 +86,21 @@ You will have to contact our sales team to upgrade to Mattermost Enterprise. You
 How do I cancel my subscription? 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you have an annual subscription to Mattermost Cloud Professional, or Mattermost Cloud Enterprise and you wish to cancel, please `contact us <https://customers.mattermost.com/cloud/contact-us>`__.
+If you have an annual subscription to Mattermost Cloud Professional, or Mattermost Cloud Enterprise and you wish to cancel, please `contact us <https://customers.mattermost.com/cloud/contact-us>`_.
 
 When will support for other regions be available?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Mattermost Cloud Enterprise will support data residency based on feedback from our customers.
 
-If you require your data to reside in an area outside of the United States, please contact the product team via `feedback-cloud@mattermost.com <feedback-cloud@mattermost.com>`__, or consider `deploying one of our Self-Hosted options <https://mattermost.com/deploy>`__ that provides full control of your data. You may also work with `one of our European partners <https://mattermost.com/partners>`__ for deploying and hosting your Mattermost server.
+If you require your data to reside in an area outside of the United States, please contact the product team via `feedback-cloud@mattermost.com <feedback-cloud@mattermost.com>`_, or consider `deploying one of our Self-Hosted options <https://mattermost.com/deploy>`_ that provides full control of your data. You may also work with `one of our European partners <https://mattermost.com/partners>`_ for deploying and hosting your Mattermost server.
 
 How is Mattermost Cloud secured?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Mattermost Cloud has encryption at-rest and in-transit. We're SOC2 Type 1 certified and working towards SOC2 Type 2.
 
-Mattermost Cloud Enterprise is available to be deployed in a secure, private environment within a dedicated cloud offering to a single customer. This architecture provides the isolation and security of an on-premises deployment while ensuring consistent performance and uptime of your Mattermost workspace. `Please contact Mattermost Sales for more information on this option <https://mattermost.com/contact-sales/>`__.
+Mattermost Cloud Enterprise is available to be deployed in a secure, private environment within a dedicated cloud offering to a single customer. This architecture provides the isolation and security of an on-premises deployment while ensuring consistent performance and uptime of your Mattermost workspace. Contact `Mattermost Sales <https://mattermost.com/contact-sales/>`_ for more information on this option.
 
 What are the alternatives, and why should I choose Mattermost Cloud?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -117,7 +117,7 @@ Mattermost Cloud Enterprise can be deployed as a dedicated Mattermost environmen
 How is customer data in Mattermost Cloud Enterprise encrypted?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Mattermost uses AWS-provided functionality to enable encryption-at-rest for both databases and file stores. See `Encrypting Amazon RDS resources - Amazon Relational Database Service <https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Encryption.html>`__ and `Protecting data using server-side encryption - Amazon Simple Storage Service <https://docs.aws.amazon.com/AmazonS3/latest/userguide/serv-side-encryption.html>`__ for details.
+Mattermost uses AWS-provided functionality to enable encryption-at-rest for both databases and file stores. See `Encrypting Amazon RDS resources - Amazon Relational Database Service <https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Encryption.html>`_ and `Protecting data using server-side encryption - Amazon Simple Storage Service <https://docs.aws.amazon.com/AmazonS3/latest/userguide/serv-side-encryption.html>`_ for details.
 
 Whether customer data should be stored in Mattermost Cloud depends heavily on the nature of the data and compliance requirements. We recommend that customers set up their own internal policies or controls around what can and cannot be put into Mattermost.
 
@@ -134,7 +134,7 @@ Mattermost Cloud is hosted in AWS `us-east-1` region. Cross-region failover is p
 What environments and rings are Cloud offerings deployed with?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Mattermost Cloud provides `three offerings <https://mattermost.com/pricing/>`__: Free, Professional, Enterprise, with a virtual private Cloud add-on available for Enterprise.
+Mattermost Cloud provides `three offerings <https://mattermost.com/pricing/>`_: Free, Professional, Enterprise, with a virtual private Cloud add-on available for Enterprise.
 
 These offerings are deployed in the following ways:
 

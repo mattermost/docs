@@ -26,7 +26,7 @@ CIDR (Classless Inter-Domain Routing) notation is used to specify a range of IP 
 
 .. tip::
 
-   For a more in-depth explanation of CIDR notation, refer to `this article </https://aws.amazon.com/what-is/cidr/>`__.
+   For a more in-depth explanation of CIDR notation, refer to `this article <https://aws.amazon.com/what-is/cidr/>`_.
 
 Configure IP filters
 ------------------------
@@ -77,7 +77,7 @@ Unable to access your workspace?
 
 If you are unable to access your workspace due to previously set IP filters, and you need to regain access to your workspace, your workspace owner can:
 
-1. Log in to the `Mattermost Customer Portal <https://customers.mattermost.com/>`__.
+1. Log in to the `Mattermost Customer Portal <https://customers.mattermost.com/>`_.
 2. Select the **IP Filtering** menu item in the left hand side bar.
 3. Select **Disable IP Filtering**.
 
@@ -90,4 +90,4 @@ Conclusion
 
 By configuring IP filters using CIDR notation, system admins can effectively manage access to the workspace, enhancing security by allowing access only from specified IP ranges.
 
-For any further assistance or queries, `contact our support team </https://mattermost.com/support/>`__.
+For any further assistance or queries, `contact our support team <https://mattermost.com/support/>`_.
