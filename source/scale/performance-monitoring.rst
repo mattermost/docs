@@ -283,6 +283,8 @@ where you can replace ``localhost`` with the server name. The profiling reports 
 - ``/debug/pprof/heap`` for heap profiling
 - ``/debug/pprof/threadcreate`` for threads profiling
 - ``/debug/pprof/block`` for block profiling
+- ``/debug/pprof/allocs`` for past memory allocations
+- ``/debug/pprof/mutex`` for logs of the holders of contended mutexes
 
 .. image:: ../images/perf_monitoring_go_metrics.png
    :alt: Example Go metrics for HTTP server runtime profiling data and system monitoring, including memory usage, Go routines, and garbage collection duration, in a self-hosted Mattermost deployment.

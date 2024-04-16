@@ -370,7 +370,6 @@ Use gossip
 | This feature’s config.json setting is ``"UseExperimentalGossip": true`` with options ``true`` and ``false``. |
 +--------------------------------------------------------------------------------------------------------------+
 
-
 Streaming port
 ~~~~~~~~~~~~~~~
 
@@ -381,6 +380,42 @@ The port used for streaming data between servers.
 +-------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"StreamingPort": ":8075"`` with string input. |
 +-------------------------------------------------------------------------------------------+
+
+Maximum idle connections for high availability
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+*Deprecated. Not used in Mattermost v7.0 and later*
+
++-----------------------------------------------------------------+------------------------------------------------------------------------+
+| The maximum number of idle connections held open from one       | - System Config path: N/A                                              |
+| server to all others in the cluster.                            | - ``config.json`` setting: ``".ClusterSettings.MaxIdleConns: 100,``    |
+|                                                                 | - Environment variable: ``MM_CLUSTERSETTINGS_MAXIDLECONNS``            |
+| Numerical input. Default is **100**.                            |                                                                        |
++-----------------------------------------------------------------+------------------------------------------------------------------------+
+
+Maximum idle connections per host
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+*Deprecated. Not used in Mattermost v7.0 and later*
+
++-----------------------------------------------------------------+------------------------------------------------------------------------------+
+| The maximum number of idle connections held open from one       | - System Config path: N/A                                                    |
+| server to another server in the cluster.                        | - ``config.json`` setting: ``".ClusterSettings.MaxIdleConnsPerHost: 128",``  |
+|                                                                 | - Environment variable: ``MM_CLUSTERSETTINGS_MAXIDLECONNSPERHOST``           |
+| Numerical input. Default is **128**.                            |                                                                              |
++-----------------------------------------------------------------+------------------------------------------------------------------------------+
+
+Idle connection timeout
+~~~~~~~~~~~~~~~~~~~~~~~
+
+*Deprecated. Not used in Mattermost v7.0 and later*
+
++-----------------------------------------------------------------+---------------------------------------------------------------------------------------+
+| The amount of time, in milliseconds, to leave an idle           | - System Config path: N/A                                                             |
+| connection open between servers in the cluster.                 | - ``config.json`` setting: ``".ClusterSettings.IdleConnTimeoutMilliseconds: 90000",`` |
+|                                                                 | - Environment variable: ``MM_CLUSTERSETTINGS_IDLECONNTIMEOUTMILLISECONDS``            |
+| Numerical input. Default is **90000**.                          |                                                                                       |
++-----------------------------------------------------------------+---------------------------------------------------------------------------------------+
 
 ----
 

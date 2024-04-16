@@ -6,15 +6,19 @@ Set your status and availability
 
 .. |online| image:: ../images/online.png
     :alt: Online availability status icon in Mattermost.
+    :class: theme-icon
 
 .. |away| image:: ../images/away.png
     :alt: Away availability status icon in Mattermost.
+    :class: theme-icon
 
 .. |dnd| image:: ../images/dnd.png
     :alt: Do Not Disturb availability status icon in Mattermost.
+    :class: theme-icon
 
 .. |offline| image:: ../images/offline.png
     :alt: Offline availability status icon in Mattermost.
+    :class: theme-icon
 
 Let your team know whether you're available by setting a :ref:`custom status <preferences/set-your-status-availability:set a custom status>` and your :ref:`availability <preferences/set-your-status-availability:set your availability>` in Mattermost. 
 
@@ -58,12 +62,16 @@ To set your availability, select your profile picture, then specify your availab
 | **Availability** | **Description**                                                                                                   |
 +==================+===================================================================================================================+
 | |online|         | - Set automatically for you when you're active on Mattermost using a browser, the desktop app, or the mobile app. |
+|                  | - When using the desktop app, any mouse or keyboard activity keeps your availabliliy set to **Online**.           |
 |                  | - By default, notifications are sent to the browser, the desktop app, and the mobile app.                         |
 +------------------+-------------------------------------------------------------------------------------------------------------------+
-| |away|           | - Set automatically for you when you've been inactive for more than 5 minutes.                                    |
+| |away|           | - Set automatically for you when you've been inactive for more than 5 minutes. System admins can change this      | 
+|                  |   value using an experimental configuation setting called                                                         |
+|                  |   :ref:`user status away timeout <configure/experimental-configuration-settings:user status away timeout>`.       |
 |                  |                                                                                                                   |
-|                  |   - You're inactive when you're not: typing in or navigating between channels, switching to another browser tab,  |
-|                  |     or when you've minimized or moved the browser window to the background.                                       |
+|                  | - You're inactive in Mattermost when you're not: typing in or navigating between channels, switching to           |
+|                  |   another browser tab, or when you've minimized or moved the browser window to the background.                    |
+|                  |                                                                                                                   |
 |                  | - You can manually set yourself as **Away** any time.                                                             |
 |                  | - By default, notifications are sent to your Mattermost mobile app.                                               |
 +------------------+-------------------------------------------------------------------------------------------------------------------+
@@ -76,7 +84,7 @@ To set your availability, select your profile picture, then specify your availab
 |                  | - By default, notifications are sent to your Mattermost mobile app.                                               |
 +------------------+-------------------------------------------------------------------------------------------------------------------+
 
-Other members can see your availability anywhere they can see your name, such as the channel sidebar, within conversations, and within Direct Messages.
+Other members can see your availability anywhere they can see your name, such as the channel sidebar, within conversations, and within direct messages.
 
 Set your availability as Do Not Disturb
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
