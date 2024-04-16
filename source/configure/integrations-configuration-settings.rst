@@ -122,7 +122,7 @@ Enable OAuth 2.0 service provider
   :systemconsole: Integrations > Integration Management
   :configjson: .ServiceSettings.OutgoingIntegrationRequestsDefaultTimeout
   :environment: MM_SERVICESETTINGS_OUTGOINGINTEGRATIONREQUESTDEFAULTTIMEOUT
-  :description: The number of seconds to wait for external integration HTTP requests, before timing out. Default value is **30 seconds**.
+  :description: The number of seconds to wait for external integration HTTP requests, before timing out. Default value is **3 seconds**.
 
 Integration request timeout
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -130,7 +130,7 @@ Integration request timeout
 The number of seconds to wait for external integration HTTP requests, before timing out, including `custom slash commands <https://developers.mattermost.com/integrate/slash-commands/custom/>`_, `outgoing webhooks <https://developers.mattermost.com/integrate/webhooks/outgoing/>`_, `interactive messages <https://developers.mattermost.com/integrate/plugins/interactive-messages/>`_, and `interactive dialogs <https://developers.mattermost.com/integrate/plugins/interactive-dialogs/>`_. Increase this value if you have external integrations that can take some time to generate an HTTP response, or experience delayed responses due to latency.
 
 +------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"OutgoingIntegrationRequestsDefaultTimeout": 30``. |
+| This feature's ``config.json`` setting is ``"OutgoingIntegrationRequestsDefaultTimeout": 3``.  |
 +------------------------------------------------------------------------------------------------+
 
 .. config:setting:: integrate-enableusernameoverride
