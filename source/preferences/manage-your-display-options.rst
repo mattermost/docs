@@ -45,7 +45,7 @@ Collapsed reply threads
 
 Collapsed Reply Threads offers an enhanced experience for users communicating in threads and replying to messages. Collapsed Reply Threads are generally available in Mattermost Cloud and from self-hosted Mattermost v7.0, and are enabled by default for all new Mattermost deployments. 
 
-Depending on how your System Admin has enabled **Collapsed Reply Threads** for your workspace, it may already be enabled for you, or you may be able to enable this feature for your account. See our :doc:`organize conversations using Collapsed Reply Threads </collaborate/organize-conversations>` documentation to learn more about working with Collapsed Reply Threads.
+Depending on how your system admin has :ref:`configured Collapsed Reply Threads <configure/site-configuration-settings:collapsed reply threads>` for your workspace, it may already be enabled for you, or you may be able to enable this feature for your account. See our :doc:`organize conversations using Collapsed Reply Threads </collaborate/organize-conversations>` documentation to learn more about working with Collapsed Reply Threads.
 
 .. tab:: Web/Desktop
 
