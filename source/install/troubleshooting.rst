@@ -79,7 +79,7 @@ Some of these suggestions can be done directly, and others may need consultation
 Review Mattermost logs
 ----------------------
 
-You can access logs for Mattermost and use them for troubleshooting. These steps assume that you have appropriate :doc: `system admin permissions </onboard/advanced-permissions>` to do so. 
+You can access logs for Mattermost and use them for troubleshooting. These steps assume that you have appropriate :doc:`system admin permissions </onboard/advanced-permissions>` to do so.
 
 Mattermost Server logs 
 ----------------------

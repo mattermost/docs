@@ -35,9 +35,9 @@ As we add enterprise-only functionality, we will update the license on affected 
 To which repositories does this apply?
 --------------------------------------
 
-We plan to apply this license to the enterprise directories of our `Jira <https://github.com/mattermost/mattermost-plugin-jira>`__, `Microsoft Calendar <https://github.com/mattermost/mattermost-plugin-mscalendar>`__, and `Microsoft Teams Meetings <https://github.com/mattermost/mattermost-plugin-msteams-meetings>`__ plugins. We also intend to release :doc:`Playbooks </guides/repeatable-processes>` and `Channel Export <https://github.com/mattermost/mattermost-plugin-channel-export>`__ plugins under the Mattermost Source Available License. New, Mattermost-authored plugins will generally be released under the Mattermost Source Available License. When we update the licenses, we will release a new version and note the change in the ``README.md`` file of the GitHub repository and any release notes.
+We plan to apply this license to the enterprise directories of our `Jira <https://github.com/mattermost/mattermost-plugin-jira>`_, `Microsoft Calendar <https://github.com/mattermost/mattermost-plugin-mscalendar>`_, and `Microsoft Teams Meetings <https://github.com/mattermost/mattermost-plugin-msteams-meetings>`_ plugins. We also intend to release :doc:`Playbooks </guides/repeatable-processes>` and `Channel Export <https://github.com/mattermost/mattermost-plugin-channel-export>`_ plugins under the Mattermost Source Available License. New, Mattermost-authored plugins will generally be released under the Mattermost Source Available License. When we update the licenses, we will release a new version and note the change in the ``README.md`` file of the GitHub repository and any release notes.
 
-We expect to keep plugins without an enterprise component under our open source license. No licensing changes are planned to non-plugin repositories, such as `mattermost <https://github.com/mattermost/mattermost>`__ or `mattermost webapp <https://github.com/mattermost/mattermost/tree/master/webapp>`__.
+We expect to keep plugins without an enterprise component under our open source license. No licensing changes are planned to non-plugin repositories, such as `mattermost <https://github.com/mattermost/mattermost>`_ or `mattermost webapp <https://github.com/mattermost/mattermost/tree/master/webapp>`_.
 
 Will the repositories be public?
 --------------------------------
@@ -49,17 +49,17 @@ Can I still contribute?
 
 Yes, we continue to welcome all contributions. Mattermost may select some contributions as enterprise features and license them under the Mattermost Source Available License. We will aim to communicate such decisions as early as possible in the contribution process.
 
-As with all Mattermost repositories, you will still need to sign the `Mattermost CLA <https://mattermost.com/contribute/>`__. We will not accept contributions without signing the Mattermost CLA.
+As with all Mattermost repositories, you will still need to sign the `Mattermost CLA <https://mattermost.com/mattermost-contributor-agreement/>`_. We will not accept contributions without signing the Mattermost CLA.
 
-Do I need to re-sign the `Mattermost CLA <https://mattermost.com/contribute/>`__?
+Do I need to re-sign the `Mattermost CLA <https://mattermost.com/mattermost-contributor-agreement/>`_?
 -------------------------------------------------------------------------------------------------------
 
-No, if you have already signed the `Mattermost CLA <https://mattermost.com/contribute/>`__, you do not need to sign it again.
+No, if you have already signed the `Mattermost CLA <https://mattermost.com/mattermost-contributor-agreement/>`_, you do not need to sign it again.
 
 Can I compile your plugins by myself?
 -------------------------------------
 
-Yes. If you have a Mattermost Enterprise Edition license, you are free to compile and use a plugin under the Mattermost Source Available License. Furthermore, if you are developing against or testing with such a plugin, you are free to compile and test a plugin even without a Mattermost Enterprise Edition license. Without an Enterprise Edition license, source available plugins may have reduced functionality or refuse to start altogether. Request a `trial license <https://mattermost.com/trial/>`__ if your testing requires access to enterprise functionality.
+Yes. If you have a Mattermost Enterprise Edition license, you are free to compile and use a plugin under the Mattermost Source Available License. Furthermore, if you are developing against or testing with such a plugin, you are free to compile and test a plugin even without a Mattermost Enterprise Edition license. Without an Enterprise Edition license, source available plugins may have reduced functionality or refuse to start altogether. Request a `trial license <https://mattermost.com/trial/>`_ if your testing requires access to enterprise functionality.
 
 Several of our customers value complete access to our source code and compile our plugins from source before deploying to their production servers. By adopting the Mattermost Source Available License, we can develop enterprise-only features in public without impacting this workflow.
 
@@ -76,7 +76,7 @@ Yes, the Mattermost Source Available License will only apply from the date it is
 Do I need to use the Mattermost Source Available License for plugins I create?
 ------------------------------------------------------------------------------
 
-You are free to license your own code as you see fit. We will not apply the Mattermost Source Available License either to the `starter-template <https://github.com/mattermost/mattermost-plugin-starter-template>`__ or `demo <https://github.com/mattermost/mattermost-plugin-demo>`__ plugins, leaving them under a permissive open source license to give you the freedom to develop your own plugins.
+You are free to license your own code as you see fit. We will not apply the Mattermost Source Available License either to the `starter-template <https://github.com/mattermost/mattermost-plugin-starter-template>`_ or `demo <https://github.com/mattermost/mattermost-plugin-demo>`_ plugins, leaving them under a permissive open source license to give you the freedom to develop your own plugins.
 
 Can I publish my own plugin and rely on enterprise specific functionality?
 --------------------------------------------------------------------------

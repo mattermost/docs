@@ -1,7 +1,7 @@
 Extended Support Release
 ========================
 
-.. include:: ../_static/badges/allplans-selfhosted.rst
+.. include:: ../_static/badges/ent-selfhosted.rst
   :start-after: :nosearch:
 
 What is an Extended Support Release?
@@ -19,7 +19,7 @@ Mattermost provides an ESR when a significant number of new features and improve
 
 When an ESR is at the end of its life cycle, there will be announcements ahead of time to provide time for people to test, certify, and deploy a newer ESR version before support ends. After a release reaches its end-of-life, no further updates will be provided for that version. Please see :doc:`Release Lifecycle documentation </upgrade/release-lifecycle>` for a full list of lifecycles for each Mattermost release.
 
-To receive updates about Extended Support Releases, sign up for our mailing list `here <https://eepurl.com/dCKn2P>`__.
+To receive updates about Extended Support Releases, sign up for our mailing list `here <https://eepurl.com/dCKn2P>`_.
 
 .. image:: ../images/ESR2_update.png
    :alt: Timeline-based chart showing the lifecycle of Mattermost Extended Support Releases and feature releases from last year and this year.
@@ -115,8 +115,8 @@ See more details in our :ref:`release lifecycle documentation <upgrade/release-l
 If we upgrade to the latest ESR with a legacy `E10 or E20 license key <https://docs.mattermost.com/about/editions-and-offerings.html#other-mattermost-plans>`_, will we have compatibility issues?
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-No. Your license key is decoupled from the Mattermost server version. You can freely upgrade to any ESR regardless of your license key or plan.
+No. Your license key is decoupled from the Mattermost server version. 
 
-However, we highly recommend working with your Mattermost Account Team to plan for a migration to our new plans, and to access the latest features such as persistent notifications, advanced compliance features, and call recordings.
+We highly recommend working with your Mattermost Account Team to plan for a migration to our new plans, and to access the latest features such as persistent notifications, advanced compliance features, and call recordings.
 
-Please contact our `Sales team <https://mattermost.com/contact-us/>`_ with questions.
+Please contact our `Sales team <https://mattermost.com/contact-sales/>`_ with questions.

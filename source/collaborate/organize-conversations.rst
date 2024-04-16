@@ -12,6 +12,8 @@ Threads are a key part of the messaging experience in Mattermost. They're used t
 
 Collapsed Reply Threads offers an enhanced experience for users communicating in threads and replying to messages that includes a unified threads inbox to read all conversations in one view. Threads improve the ability to process channel content, find, follow, and resume conversations more easily, and keep threaded conversations focused.
 
+All Mattermost users can create new threads, unless the system admin has :ref:`disabled the ability to do so <configure/site-configuration-settings:collapsed reply threads>`.
+
 .. image:: ../images/collapsed-reply-threads.gif
   :alt: Organize conversations using Collapsed Reply Threads.
 
