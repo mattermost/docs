@@ -8,7 +8,7 @@ Compliance export
 
  <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
-Enterprise deployments with a requirement to archive history beyond the data retention period can export compliance reports to third-party systems. Integration with Actiance Vantage, Global Relay, and Proofpoint are currently supported, with integrations with other systems in the roadmap.
+Enterprise deployments with a requirement to archive history beyond the data retention period can export compliance reports to third-party systems. Integration with Actiance Vantage, Global Relay, and Proofpoint are currently supported.
 
 By default, Mattermost stores all message history, providing an unlimited search history to admins and end users. In Mattermost Enterprise, you may set a :doc:`custom data retention policy </comply/data-retention-policy>` for how long messages and file uploads are kept in Mattermost channels and direct messages.
 
