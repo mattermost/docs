@@ -15,6 +15,9 @@ From Mattermost v9.2, this changelog summarizes updates for the latest cloud and
 
 **Release day: 2024-05-16**
 
+### Compatibility
+ - Updated minimum required Edge and Chrome versions to 122+.
+
 ```{Important}
 If you upgrade from a release earlier than v9.7, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
 ```
@@ -89,7 +92,7 @@ New setting option were added to ``config.json``. Below is a list of the additio
  - Under ``FileSettings`` in ``config.json``:
    - Added ``AmazonS3UploadPartSizeBytes`` and ``ExportAmazonS3UploadPartSizeBytes`` to control the part size used to upload files to an S3 store.
  - Under ``ServiceSettings`` in ``config.json``:
-   - Increased the default payload size limit (setting ``MaximumPayloadSizeBytes``) from 100 kB to 300 kB.
+   - Increased the default payload size limit (``MaximumPayloadSizeBytes``) from 100 kB to 300 kB.
  - Under ``ClusterSettings`` in ``config.json``:
    - Removed unused settings ``StreamingPort``, ``MaxIdleConns``, ``MaxIdleConnsPerHost`` and ``IdleConnTimeoutMilliseconds``.
 
