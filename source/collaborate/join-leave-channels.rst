@@ -74,6 +74,10 @@ Leave a channel
 
 When you leave a private channel, you must be re-added by another channel member to rejoin. You won't receive mention notifications from a channel if you're not a member of that channel.
 
+.. note::
+
+  All users are added to the **Off-Topic** and **Town Square** channels automatically. Users can't :ref:`archive <collaborate/archive-unarchive-channels:archive a channel>`, :ref:`unarchive <collaborate/archive-unarchive-channels:unarchive a channel>`, or leave these channels.
+
 .. tab:: Web/Desktop
 
   Select the channel name at the top of the center pane to access the drop-down menu, then select **Leave Channel**. 

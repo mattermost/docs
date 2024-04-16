@@ -6,7 +6,7 @@ Customizing Mattermost
 
 There are several ways to customize your Mattermost server. 
 
-If customizing Mattermost, please avoid branding that could be confused with the Mattermost brand. For example, it's okay to brand as "Healthcare Central" because it's a completely different brand. "Mattermost Healthcare Central" is not okay, because it can potentially be confused with the Mattermost brand. Please see the `Mattermost trademark guidelines <https://mattermost.com/trademark-standards-of-use/>`__ for details.
+If customizing Mattermost, please avoid branding that could be confused with the Mattermost brand. For example, it's okay to brand as "Healthcare Central" because it's a completely different brand. "Mattermost Healthcare Central" is not okay, because it can potentially be confused with the Mattermost brand. Please see the `Mattermost trademark guidelines <https://mattermost.com/trademark-standards-of-use/>`_ for details.
 
 While you're welcome to add your own copyright notice in the user interface if you feel it is warranted by your changes, we ask that you do not remove the Mattermost, Inc. copyright notice from the login footer or from the About dialog.
 
@@ -16,7 +16,7 @@ Mattermost Web App
 The Mattermost webapp is licensed under the Apache 2.0 license. To modify and use with the Mattermost server, you can:
 
 1. Install the Mattermost server by following one of our installation guides
-2. Fork the `mattermost <https://github.com/mattermost/mattermost>`__ repository
+2. Fork the `mattermost <https://github.com/mattermost/mattermost>`_ repository
 3. Go to the web app code located in the ``webapp`` directory and make your changes
 4. Run ``make package`` to create ``mattermost-webapp.tar.gz``
 5. Copy ``mattermost-webapp-tar.gz`` to the location Mattermost was installed in Step 1
@@ -45,7 +45,7 @@ The Mattermost mobile apps can be customized if you choose to build the apps you
 
 To brand the mobile apps: 
 
-1. Fork the `mattermost-mobile <https://github.com/mattermost/mattermost-mobile>`__ repository
+1. Fork the `mattermost-mobile <https://github.com/mattermost/mattermost-mobile>`_ repository
 2. Replace the name, images, and any key text strings
 3. :doc:`Compile the apps <../deploy/build-custom-mobile-apps>`
 4. Deploy the apps to an app store
@@ -59,7 +59,7 @@ The Mattermost desktop apps can be customized if you choose to build the apps yo
 
 To brand the desktop apps: 
 
-1. Fork the `mattermost/desktop <https://github.com/mattermost/desktop>`__ repository
+1. Fork the `mattermost/desktop <https://github.com/mattermost/desktop>`_ repository
 2. Replace the name, images, and any key text strings
-3. Refer to `this documentation <https://github.com/mattermost/desktop/blob/master/docs/development.md>`__ for help with compiling the apps
+3. Refer to `the Mattermost Developer documentation <https://developers.mattermost.com/contribute/more-info/desktop/>`_ for help with compiling the apps
 4. Share the desktop application with your users 

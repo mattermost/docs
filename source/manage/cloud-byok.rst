@@ -70,7 +70,7 @@ Requirements
 
 Considerations
 ~~~~~~~~~~~~~~~~~~~~~~~
-- Changing the AWS KMS key in the database necessitates downtime due to AWS Aurora's encryption `limitations. <https://repost.aws/knowledge-center/update-encryption-key-rds>`__
+- Changing the AWS KMS key in the database necessitates downtime due to AWS Aurora's encryption `limitations. <https://repost.aws/knowledge-center/update-encryption-key-rds>`_
 - Proper communication is essential for setting expectations and scheduling changes.
 
 Conclusion
@@ -78,4 +78,4 @@ Conclusion
 
 If you are a large enterprise with compliance requirements, or are working in highly-regulated industries, using Mattermost Cloud Dedicated with BYOK ensures full data control.
 
-For any further assistance or queries, `contact our support team </https://mattermost.com/support/>`__.
+For any further assistance or queries, `contact our support team <https://mattermost.com/support/>`_.
