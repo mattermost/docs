@@ -60,7 +60,7 @@ If you upgrade from a release earlier than v9.7, please read the other [Importan
  - Exposed a local-mode only API for reattaching plugins, primarily to facilitate mock-free unit testing.
  - Exposed ``UpdateUserRoles`` in ``pluginapi``.
  - Exposed ``pluginapi.ProfileImageBytes`` to simplify bot setup from a plugin.
- - API Changes: For ``POST /channels``, added a validation for ``display_name`` to not pass validation if the display name is empty.
+ - For ``POST /channels``, added a validation for ``display_name`` to not pass validation if the display name is empty.
 
 ### Bug Fixes
  - Fixed an issue with context cancellation for integration requests.
@@ -83,17 +83,19 @@ If you upgrade from a release earlier than v9.7, please read the other [Importan
  - Fixed an issue where end users were not allowed to fetch the group members list of groups that allow ``@-mentions``.
 
 ### config.json
-A new setting option was added to ``config.json``. Below is a list of the addition and its default value on install. The setting can be modified in ``config.json``, or the System Console when available.
+New setting option were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
 
 #### Changes to all plans:
- - Under ``CloudSettings`` in ``config.json``:
-   - Added new config settings ``FileSettings.AmazonS3UploadPartSizeBytes`` and ``FileSettings.ExportAmazonS3UploadPartSizeBytes`` to control the part size used to upload files to an S3 store.
-   - Removed the ``UseNewSAMLLibrary`` experimental setting.
+ - Under ``FileSettings`` in ``config.json``:
+   - Added ``AmazonS3UploadPartSizeBytes`` and ``ExportAmazonS3UploadPartSizeBytes`` to control the part size used to upload files to an S3 store.
+ - Under ``ServiceSettings`` in ``config.json``:
    - Increased the default payload size limit (setting ``MaximumPayloadSizeBytes``) from 100 kB to 300 kB.
-   - Removed unused cluster settings: ``StreamingPort``, ``MaxIdleConns``, ``MaxIdleConnsPerHost``, ``IdleConnTimeoutMilliseconds``.
+ - Under ``ClusterSettings`` in ``config.json``:
+   - Removed unused settings ``StreamingPort``, ``MaxIdleConns``, ``MaxIdleConnsPerHost`` and ``IdleConnTimeoutMilliseconds``.
 
-### Open Source Components
- - 
+ #### Changes to Professional and Enterprise plans:
+ - Under ``ExperimentalSettings`` in ``config.json``:
+   - Removed the ``UseNewSAMLLibrary`` experimental setting.
 
 ### Go Version
  - v9.8 is built with Go ``v1.21.0``.
