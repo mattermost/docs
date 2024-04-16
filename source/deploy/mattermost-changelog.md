@@ -11,6 +11,104 @@ From Mattermost v9.2, this changelog summarizes updates for the latest cloud and
 - **Cloud Releases Prior to v9.2**: See the [Mattermost Legacy Cloud Changelog](https://docs.mattermost.com/deploy/legacy-cloud-changelog.html) for details.
 ```
 
+## Release v9.8 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
+
+**Release day: 2024-05-16**
+
+```{Important}
+If you upgrade from a release earlier than v9.7, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
+```
+
+### Improvements
+
+#### User Interface (UI)
+ - Upgraded Nodejs to v20.11.
+ - Pre-packaged Playbooks version [v1.39.3](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v1.39.3).
+ - Pre-packaged GitLab plugin version [v1.8.1](https://github.com/mattermost/mattermost-plugin-gitlab/releases/tag/v1.8.1).
+ - Pre-packaged Calls version [v0.26.2](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v0.26.2).
+ - Combined Desktop and Mobile notifications in the user settings modal.
+ - Added a **Don't Clear** option for Do Not Disturb.
+ - Enhanced the user interface for channel introductions.
+ - Added an ephemeral message for non-team member mentions in channels.
+ - Added emoji tooltips on hover in post message.
+ - Made the appearance of several tooltips more consistent.
+ - Updated theme colors for onboarding tour points.
+ - Updated the right-hand side Thread view to use relative timestamps to be more consistent with the global Threads view.
+ - Added a total reply count to the right-hand side thread view.
+ - Added Channel Bookmarks (disabled by default).
+
+#### Administration
+ - Downloading a support packet is now extensible with plugins. If a plugin can add content to the support packet, it will be displayed in the commercial support modal. Administrators will have the option to include/exclude that from the support package.
+ - Added Channel Bookmarks permissions to the channel user role and to the channel moderation system.
+ - Added progress logs for attachments in bulk exports.
+ - Added a **System Console** option to rebuild Elasticsearch channels indexes.
+ - Obfuscated ``ReplicaLagSettings`` in the Support Packet.
+ - Improved license loading errors.
+ - Updated the keycloak docker configs and added a ``make`` command.
+ - Removed unused ``IsOAuth`` field from ``AppError``.
+ - ``bool`` is now used for ``license_is_tria``l in the Support Packet.
+ - Bulk export: added functionality to export roles and permissions schemes.
+ - A new flag (``extract-content``) was added to the mmctl import process that allows the server to skip content extraction during the import phase.
+
+### API Changes
+ - Added a create channel bookmark endpoint at ``/api/v4/channels/{channel_id}/bookmarks``.
+ - Added additional query params to channel endpoints to include channel bookmarks.
+ - Added update channel bookmark endpoint at ``/api/v4/channels/{channel_id}/bookmarks/{bookmark_id}``.
+ - Added list channel bookmarks endpoint at ``/api/v4/channels/{channel_id}/bookmarks``.
+ - Added delete channel bookmark endpoint at ``/api/v4/channels/{channel_id}/bookmarks/{bookmark_id}``.
+ - Added update channel bookmark sort order endpoint at ``/api/v4/channels/{channel_id}/bookmarks/{bookmark_id}/sort_order``.
+ - Exposed a local-mode only API for reattaching plugins, primarily to facilitate mock-free unit testing.
+ - Exposed ``UpdateUserRoles`` in ``pluginapi``.
+ - Exposed ``pluginapi.ProfileImageBytes`` to simplify bot setup from a plugin.
+ - API Changes: For ``POST /channels``, added a validation for ``display_name`` to not pass validation if the display name is empty.
+
+### Bug Fixes
+ - Fixed an issue with context cancellation for integration requests.
+ - Fixed an issue preventing the retrieval of SAML metadata.
+ - Fixed an issue causing an empty channel switcher after converting a Group Message to a private channel.
+ - Fixed an issue where System Admins were not allowed to LDAP sync SAML users when ``SamlSettings.EnableSyncWithLdap`` was true.
+ - Fixed an issue with markdown in the AD job status table.
+ - Fixed an issue with a control character in the group list modal.
+ - Fixed an issue where the auto-complete channels API returned archived channels in response.
+ - Fixed a crash issue in the **System Console**.
+ - Fixed an issue where links included in notifications were truncated and not clickable.
+ - Fixed using local requests instead of HTTP requests in the flow library.
+ - Fixed an issue where ``support_packet.yaml`` wasn’t generated even if an error occurred.
+ - Fixed an issue where outgoing webhooks did not trigger when using multiple callback URLs.
+ - Fixed an issue where it was not possible to clear plugin settings with a default value in the **System Console**.
+ - Fixed an issue where ``MaxUsersForStatistics`` wasn’t ignored when generating a Support Packet.
+ - Fixed an issue where the ``EnsureBot`` function did not recreate the bot if it had been manually deleted.
+ - Fixed an issue where users couldn't look up a user by their ID in the **System Console** anymore.
+ - Fixed an accessibility issue where the focus didn’t go back to the originating button when a modal was closed.
+ - Fixed an issue where end users were not allowed to fetch the group members list of groups that allow ``@-mentions``.
+
+### config.json
+A new setting option was added to ``config.json``. Below is a list of the addition and its default value on install. The setting can be modified in ``config.json``, or the System Console when available.
+
+#### Changes to all plans:
+ - Under ``CloudSettings`` in ``config.json``:
+   - Added new config settings ``FileSettings.AmazonS3UploadPartSizeBytes`` and ``FileSettings.ExportAmazonS3UploadPartSizeBytes`` to control the part size used to upload files to an S3 store.
+   - Removed the ``UseNewSAMLLibrary`` experimental setting.
+   - Increased the default payload size limit (setting ``MaximumPayloadSizeBytes``) from 100 kB to 300 kB.
+   - Removed unused cluster settings: ``StreamingPort``, ``MaxIdleConns``, ``MaxIdleConnsPerHost``, ``IdleConnTimeoutMilliseconds``.
+
+### Open Source Components
+ - 
+
+### Go Version
+ - v9.8 is built with Go ``v1.21.0``.
+
+### Known Issues
+ - Status may sometimes get stuck as **Away** or **Offline** in High Availability mode with IP Hash turned off.
+ - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
+ - Slack import through the CLI fails if email notifications are enabled.
+ - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
+ - The Playbooks left-hand sidebar doesn't update when a user is added to a run or playbook without a refresh.
+ - If a user isn't a member of a configured broadcast channel, posting a status update might fail without any error feedback. As a temporary workaround, join the configured broadcast channels, or remove those channels from the run configuration.
+ 
+### Contributors
+ - 
+
 ## Release v9.7 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
 
 - **9.7.1, released 2024-04-16**
