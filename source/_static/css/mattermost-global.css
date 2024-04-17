@@ -998,7 +998,8 @@ body:not([data-custom-theme="light"]) {
 
 @media (min-width:992px) {
     .site-header__col--menu .site-nav__hassubnav .sub-menu__developers {
-        right: 200px;
+        right: unset;
+        margin-left: -250px;
         padding: 40px 40px 20px;
     }
 
