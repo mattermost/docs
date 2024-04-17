@@ -383,6 +383,10 @@ body:not([data-custom-theme="light"]) .site-header__col--menu .site-nav__toplink
     stroke: #1c58d9;
 }
 
+body:not([data-custom-theme="light"]) .site-header__col--menu .site-nav__toplink>a:hover span svg path {
+    stroke: var(--marigold);
+}
+
 .site-header__col--menu .site-nav__button {
     border-bottom: none;
     margin: 0 auto;
@@ -1445,6 +1449,10 @@ body:not([data-custom-theme="light"]) .site-header__col--menu .site-nav__hassubn
     color: #1C58D9;
     font-size: 15px;
     text-decoration: none;
+}
+
+body:not([data-custom-theme="light"]) .sub-menu__customers .sub-menu__bottom-link a {
+    color: var(--marigold);
 }
 
 @media (min-width:992px) {
