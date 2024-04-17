@@ -1148,7 +1148,7 @@ Collapsed reply threads
 
 .. important::
 
-    Customers upgrading to v7.0 must review the `administrator’s guide to enabling Collapsed Reply Threads <https://support.mattermost.com/hc/en-us/articles/6880701948564>`__ prior to enabling this functionality.
+  Customers upgrading to v7.0 or later must review the `administrator’s guide to enabling Collapsed Reply Threads <https://support.mattermost.com/hc/en-us/articles/6880701948564>`__ prior to enabling this functionality.
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------+
 | - **Always On**: **(Default)** Enables :doc:`Collapsed Reply Threads </collaborate/organize-conversations>` on the server and for all users. This is the recommended configuration for optimal user experience and to ensure consistency in how users read and respond to threaded conversations. ``config.json`` setting: ``"always_on"`` | - System Config path: **Site Configuration > Posts**                                            |
@@ -1350,19 +1350,19 @@ Enable LaTeX code block rendering
   :configjson: .ServiceSettings.EnableInlineLatex
   :environment: MM_SERVICESETTINGS_ENABLEINLINELATEX
 
-  - **true**: **(Default)** Enables rendering of `LaTeX in message text <https://docs.mattermost.com/collaborate/format-messages.html#math-formulas>`__.
-  - **false**: Disables inline rendering of LaTeX. Instead, LaTeX in message text is highlighted.
+  - **true**: Enables rendering of `LaTeX in message text <https://docs.mattermost.com/collaborate/format-messages.html#math-formulas>`__.
+  - **false**: **(Default)** Disables inline rendering of LaTeX. Instead, LaTeX in message text is highlighted.
 
 Enable inline LaTeX rendering
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
-| - **true**: **(Default)** Enables rendering of :ref:`LaTeX in message text <collaborate/format-messages:math formulas>`.                                                                                           | - System Config path: **Site Configuration > Posts**                    |
-| - **false**: Disables inline rendering of LaTeX. Instead, LaTeX in message text is highlighted. LaTeX can also be rendered in a code block, if that feature is enabled. See **Enable LaTeX code block rendering**. | - ``config.json`` setting: ``.ServiceSettings.EnableInlineLatex: true`` |
-|                                                                                                                                                                                                                    | - Environment variable: ``MM_SERVICESETTINGS_ENABLEINLINELATEX``        |
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
-| **Warning**: Enabling LaTeX rendering is not recommended in environments where not all users are trusted.                                                                                                                                                                                    |
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| - **true**: Enables rendering of :ref:`LaTeX in message text <collaborate/format-messages:math formulas>`.              | - System Config path: **Site Configuration > Posts**                     |
+| - **false**: **(Default)** Disables inline rendering of LaTeX. Instead, LaTeX in message text is highlighted.           | - ``config.json`` setting: ``.ServiceSettings.EnableInlineLatex: false`` |
+|   LaTeX can also be rendered in a code block, if that feature is enabled. See **Enable LaTeX code block rendering**.    | - Environment variable: ``MM_SERVICESETTINGS_ENABLEINLINELATEX``         |
++-------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| **Warning**: Enabling LaTeX rendering isn't recommended in environments where not all users are trusted.                                                                                           |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: posts-customurlschemes
   :displayname: Custom URL schemes (Posts)
