@@ -324,11 +324,8 @@ kbd {
 }
 
 
-
-body:not([data-custom-theme="light"]) {
-    .site-header__col--menu .site-nav__toplink>a {
-        color: #FFFFFF;
-    }
+body:not([data-custom-theme="light"]) .site-header__col--menu .site-nav__toplink>a {
+    color: #FFFFFF;
 }
 
 
@@ -428,6 +425,14 @@ body:not([data-custom-theme="light"]) {
 }
 
 @media (max-width:991.98px) {
+    .site-header::-webkit-scrollbar {
+        display: none;
+        -ms-overflow-style: none;
+        /* IE and Edge */
+        scrollbar-width: none;
+        /* Firefox */
+    }
+
     .site-header__col--menu .site-nav__button {
         padding-bottom: 20px;
     }
@@ -531,6 +536,10 @@ body:not([data-custom-theme="light"]) {
     flex-direction: column;
     pointer-events: none;
     z-index: 2;
+}
+
+body:not([data-custom-theme="light"]) .site-header__col--menu .site-nav__hassubnav .sub-menu {
+    background-color: #000000;
 }
 
 @media (min-width:992px) {
@@ -681,12 +690,12 @@ body:not([data-custom-theme="light"]) {
 
 .site-header__col--menu .site-nav__hassubnav .sub-menu__links--single {
     list-style-type: none;
-    margin-bottom: 25px;
+    margin-bottom: 15px;
 }
 
 @media (max-width:991.98px) {
     .site-header__col--menu .site-nav__hassubnav .sub-menu__links--single {
-        margin-bottom: 30px;
+        margin-bottom: 15px;
     }
 }
 
@@ -698,6 +707,10 @@ body:not([data-custom-theme="light"]) {
     line-height: 150%;
     text-decoration: none;
     transition: color .3s ease-in-out;
+}
+
+body:not([data-custom-theme="light"]) .site-header__col--menu .site-nav__hassubnav .sub-menu__links--single a {
+    color: rgba(255, 255, 255, 0.72);
 }
 
 @media (min-width:992px) {
@@ -905,7 +918,7 @@ body:not([data-custom-theme="light"]) {
 }
 
 .site-header__col--menu .site-nav__hassubnav .sub-menu__products .sub-menu__links--single:not(:last-child) {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .site-header__col--menu .site-nav__hassubnav .sub-menu__products .mobile-spacer {
@@ -939,7 +952,7 @@ body:not([data-custom-theme="light"]) {
     .site-header__col--menu .site-nav__hassubnav .sub-menu__products .sub-menu__products__main {
         padding: 40px 40px 20px;
         display: grid;
-        grid-template-columns: 100px 140px;
+        grid-template-columns: 100px 170px;
         -moz-column-gap: 40px;
         column-gap: 40px;
     }
@@ -989,17 +1002,10 @@ body:not([data-custom-theme="light"]) {
     padding: 0;
 }
 
-@media (max-width:991.98px) {
-
-    .site-header__col--menu .site-nav__hassubnav .sub-menu__developers .sub-menu__link-col-header {
-        display: none;
-    }
-}
-
 @media (min-width:992px) {
     .site-header__col--menu .site-nav__hassubnav .sub-menu__developers {
         right: unset;
-        margin-left: -250px;
+        margin-left: -500px;
         padding: 40px 40px 20px;
     }
 
@@ -1022,6 +1028,10 @@ body:not([data-custom-theme="light"]) {
     .site-header__col--menu .site-nav__hassubnav .sub-menu__login .sub-menu__links-wrapper {
         margin: 0 24px;
     }
+
+    .sub-menu__link-col-header-space {
+        margin-top: 50px;
+    }
 }
 
 @media (min-width:992px) {
@@ -1035,6 +1045,10 @@ body:not([data-custom-theme="light"]) {
 
     .sub-menu__enterprise ul {
         padding: 0;
+    }
+
+    .sub-menu__header-flex-deploy {
+        margin-top: 30px !important;
     }
 }
 
@@ -1621,12 +1635,10 @@ footer.site-footer {
     color: #fff;
 }
 
-body:not([data-custom-theme="light"]) {
-    .mm-button.mm-button-solid.mm-button-blue {
-        background-color: var(--marigold);
-        border-color: var(--marigold);
-        color: #000000;
-    }
+body:not([data-custom-theme="light"]) .mm-button.mm-button-solid.mm-button-blue {
+    background-color: var(--marigold);
+    border-color: var(--marigold);
+    color: #000000;
 }
 
 
@@ -1649,16 +1661,14 @@ body:not([data-custom-theme="light"]) {
     border: 1px solid #043cb5;
 }
 
-body:not([data-custom-theme="light"]) {
-    .mm-button-outline--thin.mm-button-outline--thin-blue {
-        color: var(--marigold) !important;
-        border: 1px solid var(--marigold);
-    }
+body:not([data-custom-theme="light"]) .mm-button-outline--thin.mm-button-outline--thin-blue {
+    color: var(--marigold) !important;
+    border: 1px solid var(--marigold);
+}
 
-    .mm-button-outline--thin.mm-button-outline--thin-blue:hover {
-        color: #000000 !important;
-        background-color: var(--marigold);
-    }
+body:not([data-custom-theme="light"]) .mm-button-outline--thin.mm-button-outline--thin-blue:hover {
+    color: #000000 !important;
+    background-color: var(--marigold);
 }
 
 @media (max-width: 767px) {
