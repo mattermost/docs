@@ -49,7 +49,7 @@ If you upgrade from a release earlier than v9.7, please read the other [Importan
  - Improved license loading errors.
  - Updated the keycloak docker configs and added a ``make`` command.
  - Removed unused ``IsOAuth`` field from ``AppError``.
- - ``bool`` is now used for ``license_is_tria``l in the Support Packet.
+ - ``bool`` is now used for ``license_is_trial`` in the Support Packet.
  - Bulk export: added functionality to export roles and permissions schemes.
  - A new flag (``extract-content``) was added to the mmctl import process that allows the server to skip content extraction during the import phase.
 
