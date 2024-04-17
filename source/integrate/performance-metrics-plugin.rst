@@ -1,7 +1,8 @@
-Integrate performance metrics into Mattermost
+Extract performance metrics from Mattermost
 =============================================
 
-Enterprise only?
+.. include:: ../_static/badges/ent-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 Integrate performance metrics tools directly into Mattermost allows teams to receive real-time alerts and updates on key performance indicators (KPIs), system statuses, and other critical metrics. This immediacy ensures that teams can quickly respond to potential issues, maintain high levels of operational efficiency, and make data-driven decisions.
 
