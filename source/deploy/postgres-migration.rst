@@ -229,12 +229,12 @@ Once we set the schema to a desired state, we can start migrating the **data** b
         type tinyint when (<= precision 4) to boolean using tinyint-to-boolean,
         type json to jsonb drop typemod
 
-   EXCLUDING TABLE NAMES MATCHING ~<IR_>, ~<focalboard>, 'schema_migrations'
+   EXCLUDING TABLE NAMES MATCHING ~<IR_>, ~<focalboard>, 'schema_migrations', 'db_migrations'
 
    BEFORE LOAD DO
         $$ ALTER SCHEMA public RENAME TO {{ .source_schema }}; $$,
-        $$ DROP INDEX IF EXISTS idx_posts_message_txt; $$,
-        $$ DROP INDEX IF EXISTS idx_fileinfo_content_txt; $$
+        $$ DROP INDEX IF EXISTS {{ .source_schema }}.idx_posts_message_txt; $$,
+        $$ DROP INDEX IF EXISTS {{ .source_schema }}.idx_fileinfo_content_txt; $$
 
    AFTER LOAD DO
         $$ UPDATE {{ .source_schema }}.db_migrations set name='add_createat_to_teamembers' where version=92; $$,
