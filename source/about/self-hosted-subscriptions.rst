@@ -6,37 +6,6 @@ Buy a subscription
 
 To purchase a commercial subscription for Mattermost Professional or Mattermost Enterprise please visit: https://mattermost.com/pricing/
 
-For Mattermost v7.7 and later you can also buy a Mattermost subscription from within Mattermost:
-
-1. In Mattermost, select **View Plans** in the global header or via **System Console > View plans**.
-2. Select **Upgrade**. A minimum of ten users is required.
-3. Provide payment details.
-4. Enter the number of user seats you're purchasing. This number has to be equal to, or greater than, the current number of activated users in your Mattermost deployment.
-5. Select **Upgrade**.
-
-When your purchase is complete, a license is automatically applied to instance and your subscription is active immediately.
-
-If your deployment doesn't have internet access, please continue to use the Customer Portal or, contact our sales team for assistance.
-
-Mattermost v7.6 and earlier releases
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-If you're using Mattermost v7.6 and below, you can buy a Mattermost subscription via the `Customer Portal page <https://customers.mattermost.com>`_. If you haven't created an account yet, follow the steps provided. Otherwise, you can log in with your existing credentials. When you buy a Mattermost subscription for a self-hosted deployment, you'll receive an activation license.
-
-Once you're logged in:
-
-1. Choose a subscription, and enter the number of users in the **Order summary** field. This indicates the number of users you can have on this subscription's instance. For more information about how users are defined, visit the `Mattermost pricing page <https://mattermost.com/pricing-self-managed/>`_ and frequently asked questions further down the page.
-2. (Optional for Enterprise subscriptions) You can add `Premier Support <https://mattermost.com/support/>`_. This is an additional cost and is automatically added to your order total.
-3. Select **Next Step**.
-4. Enter your billing and payment information.
-5. Accept the **Terms**.
-6. Select **Complete**.
-7. Choose **Download the license key**.
-
-.. note::
-
-   If you experience any problems with your transaction, please contact our Support team via the Customer Portal. If possible, keep the error message/number that you received on hand as it may help with their investigation.
-
 Apply your license
 ------------------
 
@@ -50,7 +19,7 @@ System admin access is required in order to apply the license. If you're not a M
 Mattermost installed
 ~~~~~~~~~~~~~~~~~~~~
 
-On the Customer Portal **Subscriptions** page, select **Download License** to download the license key for your subscription. In Mattermost, follow the steps provided in **System Console > About > Edition and License** to apply your license key.
+Check your email for a purchase confirmation from Mattermost. Download the attached license. In Mattermost, follow the steps provided in **System Console > About > Edition and License** to apply your license key.
 
 You can also use the :ref:`mmctl <manage/mmctl-command-line-tool:mmctl license>` to apply the license.
 
@@ -59,39 +28,10 @@ Mattermost not yet installed
 
 If you haven't yet installed and deployed a Mattermost instance, visit the :doc:`Deployment Guide </deploy/deployment-overview>` to get started. For information on creating a system admin account, visit our :doc:`Administrator Tasks </getting-started/admin-onboarding-tasks>` documentation.
 
-View subscription information
------------------------------
-
-Self-hosted subscriptions purchased via the `Customer Portal <https://customers.mattermost.com>`_ are stored and listed in the Customer Portal.
-
-Here you can view license details, including their start date, end date and licensed number of users, and have full access to your billing history, making it easier to manage purchases and renewal dates.
-
-You can access your Customer Portal account to view information about your:
-
-- Subscription purchases
-- Licenses
-- Customer Portal account password
-- Organization information
-- Payment methods
-- Renewals
-- Activated users (available in a future release)
-
-Subscription and licenses not purchased via the Customer Portal won't be listed.
-
 Add more users to your subscription
 -----------------------------------
 
-If you have a self-hosted license in the Customer Portal, you can add additional users to your subscription via the `Customer Portal page <https://customers.mattermost.com>`_.
-
-1. Select **Purchase additional seats**.
-2. Enter your account and billing details.
-3. When the transaction is complete, select whether you'd like to download your updated license or having it emailed to you.completes, they will have to either
-
-Once you have your updated license, upload it via **System Console > License and Edition**.
-
-This process adds additional users to your existing subscription and is not a new license. Your license renewal date doesn't change when you add additional users and receive an updated license. Billing is pro-rated based on the time left in your billing cycle.
-
-If you don't have a self-hosted license in the Customer Portal and want to add users, `contact us <https://mattermost.com/contact-us/>`_.
+If at any time you'd like to add more users to your Mattermost subscription, `contact us <https://mattermost.com/contact-us/>`_.
 
 Quarterly true-up reports
 -------------------------
@@ -134,37 +74,7 @@ If you have a Mattermost deployment prior to v7.9, a system admin needs to take 
 Renew your subscription
 -----------------------
 
-From Mattermost Server v5.32, you can renew your self-hosted Mattermost subscription with a credit card if you have a standard Mattermost contract. When you renew your license, you can also increase the number of activated users.
-
-If you haven't upgraded to v5.32, contact Mattermost Support at support@mattermost.com to renew your license.
-
-If you're a reseller, have a non-standard contract, or want to adjust the number of activated users on your license during the license period, please contact Mattermost Sales at sales@mattermost.com.
-
-System admins will be alerted 60 days prior to license expiry via a banner in Mattermost. Select **Renew license now** to start the renewal process in the Customer Portal. You can also dismiss the banner and renew your license at a later date via **System Console > Edition and License**.
-
-When you select **Renew license now**, you're taken to the renewal page in the Customer Portal, which lists your license information and account details. This is pre-populated based on the email address associated with your existing license subscription.
-
-Process your license renewal
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-1. Enter your **Account Details**, **Additional Contact**, and **Payment Details**.
-2. Confirm the `Mattermost Edition <https://mattermost.com/pricing-self-managed>`_.
-
-  * You can upgrade within the Customer Portal, but it's not possible to downgrade.
-
-3. Confirm the listed number of activated users is correct. 
-
- * You can increase the number of licensed users, but you can't decrease it.
-
-4. Select **Complete purchase**. 
-
-An email with the new license key and information on how to upload the license in the System Console will be sent to the email address provided.
-
-You can watch a video overview of the renewal process on YouTube:
-
-.. raw:: html
-  
-   <iframe width="560" height="315" src="https://www.youtube.com/embed/Sz_1nhVufHY" alt="Video on self hosted subscription" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+System admins will be alerted 60 days prior to license expiry via a banner in Mattermost. You can also dismiss the banner and renew your license at a later date via **System Console > Edition and License**. To renew your license, please `contact sales <https://mattermost.com/contact-sales/>`_
 
 Frequently asked questions
 --------------------------
@@ -229,11 +139,6 @@ If there's a red expiry announcement banner stating: "Enterprise license is expi
 Once a new license is applied, the banner will no longer be visible.
 
 If you don't plan to renew your subscription, revoke the expired license in **System Console > Edition and License**.
-
-Can other members of my organization use the Customer Portal account to manage our subscription?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-We currently support a single account/user per organization. The ability to add multiple users per organization will be available in a future release.
 
 Where can I find the license agreement for Mattermost Enterprise Edition?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
