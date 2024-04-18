@@ -4,7 +4,7 @@ Self-hosted subscriptions
 Buy a subscription
 ------------------
 
-To purchase a commercial subscription for Mattermost Professional or Mattermost Enterprise please visit: https://mattermost.com/pricing/
+To purchase a commercial subscription for Mattermost Professional or Mattermost Enterprise, please visit our pricing page online: https://mattermost.com/pricing/
 
 Apply your license
 ------------------
@@ -144,13 +144,3 @@ Where can I find the license agreement for Mattermost Enterprise Edition?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Mattermost Enterprise Edition is the name for the binary of the Mattermost self-hosted Professional and Enterprise editions. This edition can be used for free without a license key as commercial software functionally equivalent to the open source Mattermost Team Edition licensed under MIT. When a license key is purchased and applied to Mattermost Enterprise Edition, additional features unlock. The license agreement for Mattermost Enterprise Edition is included in the software and also available `here <https://mattermost.com/enterprise-edition-license/>`_.
-
-How do I delete my Customer Portal account?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Please contact Mattermost Support for assistance with deleting your Customer Portal account.
-
-What happens to my subscription when I delete my account?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-When an account is deleted, the license key remains valid. When the subscription is close to expiring, you'll need to create a new profile in order to renew it.

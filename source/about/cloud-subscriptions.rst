@@ -39,7 +39,7 @@ You will have to contact our sales team to upgrade to Mattermost Enterprise. You
 How do I cancel my subscription? 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you have an annual subscription to Mattermost Cloud Professional, or Mattermost Cloud Enterprise and you wish to cancel, please `contact us <https://customers.mattermost.com/cloud/contact-us>`_.
+If you have an annual subscription to Mattermost Professional or Cloud Enterprise and you wish to cancel, please `contact sales <https://mattermost.com/contact-sales/>`_.
 
 When will support for other regions be available?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
