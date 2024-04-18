@@ -39,7 +39,7 @@ Active Directory/LDAP authentication
 
 .. note:: 
    - New user accounts are created when new users log in with their AD/LDAP credentials. You can optionally pre-create user accounts using the :doc:`bulk loading </onboard/bulk-loading-data>` tool.
-   - If you're using email or username and password authentication :ref:`users can switch to AD/LDAP manually <onboard/ad-ldap:getting started>`, and the conversion to AD/LDAP can also be done using the :ref:`mmctl user migrate auth <manage/mmctl-command-line-tool:mmctl user migrate auth>` command by an IT admin.
+   - If you're using email or username and password authentication :ref:`users can switch to AD/LDAP manually <onboard/ad-ldap:getting started>`, and the conversion to AD/LDAP can also be done using the :ref:`mmctl user migrate auth <manage/mmctl-command-line-tool:mmctl user migrate-auth>` command by an IT admin.
 
 For very large AD/LDAP instances you can also configure max page size to divide a Mattermost AD/LDAP query into several pieces to not overtax the authentication server when synchronizing.
 
