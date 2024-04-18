@@ -132,8 +132,8 @@ Although these statements are included in the script, we recommend running these
 
 .. code:: sql
 
-   DROP INDEX IF EXISTS idx_posts_message_txt;
-   DROP INDEX IF EXISTS idx_fileinfo_content_txt;
+   DROP INDEX IF EXISTS {{ .source_schema }}.idx_posts_message_txt;
+   DROP INDEX IF EXISTS {{ .source_schema }}.idx_fileinfo_content_txt;
 
 The following queries are added to the script to re-create these indexes after migration finishes:
 
