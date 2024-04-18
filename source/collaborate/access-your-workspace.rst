@@ -24,7 +24,7 @@ Mattermost is accessible through a URL link. You'll receive a link from your Mat
 
   **Web browser**
 
-  1. Open a web browser. Review the :ref:`web browsers that Mattermost supports <install/software-hardware-requirements:pc web>`.
+  1. Open a supported :ref:`web browser <install/software-hardware-requirements:pc web>`.
   2. Copy and paste the Mattermost server link into the browser's address field.
   3. Enter your user credentials to log into Mattermost. 
 
