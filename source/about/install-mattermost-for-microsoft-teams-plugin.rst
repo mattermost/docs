@@ -1,14 +1,9 @@
-Install the Mattermost for Microsoft Teams plugin
-=================================================
+:nosearch:
 
-.. include:: ../_static/badges/ent-cloud-selfhosted.rst
-  :start-after: :nosearch:
+Setup starts in Mattermost, moves to Microsoft Teams, and ends in Mattermost.
 
-.. tip::
-
-  Looking to :doc:`embed Mattermost within Microsoft Teams </about/embed-mattermost-app-within-microsoft-teams>` instead?
-
-To install the Microsoft Teams plugin in Mattermost:
+Install the Microsoft Teams integration in Mattermost
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. Log in to your Mattermost workspace as a system administrator.
 2. Download the latest version of `the plugin binary release <https://github.com/mattermost/mattermost-plugin-msteams/releases>`__, compatible with Mattermost v8.0.1 and later. If you are using an earlier version of Mattermost, :doc:`follow our documentation </upgrade/upgrading-mattermost-server>` to upgrade to Mattermost v8.0.1 or later.
@@ -16,12 +11,9 @@ To install the Microsoft Teams plugin in Mattermost:
 4. Go to **System Console > Plugins > Plugin Management**. In the **Installed Plugins** section, scroll to **MS Teams**, and select **Enable Plugin**.
 
 Set up an OAuth application in Azure
--------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Step 1: Create Mattermost App in Azure
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-1. Sign into `portal.azure.com <https://portal.azure.com>`__ using an admin Azure account.
+1. Sign into `portal.azure.com <https://portal.azure.com>`_ using an admin Azure account.
 2. Navigate to `App Registrations <https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RegisteredApps>`__.
 3. Select **New registration** at the top of the page.
 
@@ -88,8 +80,8 @@ Replace ``(MM_SITE_URL)`` with your Mattermost server's Site URL. Select **Regis
 
 14. Select **Grant admin consent for...** to grant the permissions for the application.
 
-Step 2: Create a user account to act as a bot
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Create a user account to act as a bot
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. Create a regular user account. We will connect this account later from the Mattermost side.
 2. This account is needed for creating messages on Microsoft Teams on behalf of users who are present in Mattermost but not on Microsoft Teams.
@@ -102,8 +94,8 @@ Step 2: Create a user account to act as a bot
   
   After you've connected the bot user to the account on Microsoft Teams, all the messages that are posted from the account on Microsoft Teams won't be synchronized back to Mattermost since it's a "bot", and messages from bots are ignored.
 
-Step 3: Ensure you have the metered APIs enabled (and the pay subscription associated to it)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Ensure you have the metered APIs enabled (and the pay subscription associated to it)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Follow the steps here: https://learn.microsoft.com/en-us/graph/metered-api-setup
 
@@ -113,8 +105,8 @@ Follow the steps here: https://learn.microsoft.com/en-us/graph/metered-api-setup
 
 You're all set for configuration inside Azure.
 
-Configure how users will connect accounts
-------------------------------------------
+Configure how users connect accounts
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Mattermost admins can configure Mattermost to automatically prompt users to connect their Mattermost user account to their Microsoft Teams user account on login.
 
@@ -122,15 +114,15 @@ Mattermost admins can configure Mattermost to automatically prompt users to conn
 2. Enable **Enforce connected accounts** to prompt users to connect if they haven't done so.
 3. (Optional) Enable **Allow to temporarily skip connect user** to allow users to skip the connection prompt temporarily. Users are prompted on refresh and login.
 
-Configure the plugin
---------------------
+Mattermost configuration
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Additional configuration settings are available for this plugin. See the :ref:`Microsoft Teams plugin configuration settings <configure/plugins-configuration-settings:ms teams>` documentation for details.
 
-Monitor plugin performance
---------------------------
+Monitor performance
+~~~~~~~~~~~~~~~~~~~~
 
-You can set up :doc:`performance monitoring </scale/performance-monitoring>` and :doc:`performance alerting </scale/performance-alerting>` for this plugin using Prometheus and Grafana.
+You can set up :doc:`performance monitoring </scale/performance-monitoring>` and :doc:`performance alerting </scale/performance-alerting>` for Microsoft Teams interoperability using Prometheus and Grafana.
 
 - Monitoring enables you to proactively review the overall health of the plugin, including database calls, HTTP requests, and API latency.
 - Alerting enables you to detect and take action as issues come up, such as the integration being offline.
@@ -143,26 +135,3 @@ Grafana dashboards `are available on GitHub <https://github.com/mattermost/matte
 .. note:: 
   
   Modifications will be necessary for self-hosted Mattermost deployments. See the `Get help <#get-help>`__ section below for details on how to contact us for assistance.
-
-Get started with the plugin
----------------------------
-
-See our :doc:`collaborate using the Microsoft Teams plugin </collaborate/collaborate-within-connected-microsoft-teams>` documentation for details on how to collaborate across both Mattermost and Microsoft Teams at the same time.
-
-Trobleshooting FAQ
-------------------
-
-**Can I connect my Mattermost account to a Microsoft Teams account of a different email address?**
-
-No. Currently, only accounts with the same email addresses are allowed to be connected. Specify the email address that matches your Mattermost account. 
-
-If connecting a Mattermost account to a Microsoft Teams account with a different email address is something your workspace requires, there is an open `GitHub issue <https://github.com/mattermost/mattermost-plugin-msteams/issues/519>`__ for you to share your feedback.
-
-Get help
---------
-
-If you face issues while installing this plugin, gather relevant information, including reproduction steps to accelerate troubleshooting. You're welcome to open a new issue in the `Mattermost for Microsoft Teams GitHub repository <https://github.com/mattermost/mattermost-plugin-msteams/issues/new>`__.
-
-- **Mattermost Commercial Customers (including Enterprise and Professional plans)**: Visit `Mattermost Support <https://mattermost.com/support/>`__ to `submit a support ticket <https://support.mattermost.com/hc/en-us/requests/new>`__.
-
-- **Mattermost Team Edition and Free customers** Visit the Mattermost `peer-to-peer troubleshooting forum <https://forum.mattermost.com/c/trouble-shoot/16>`__ where you can access the global Mattermost Community for assistance.

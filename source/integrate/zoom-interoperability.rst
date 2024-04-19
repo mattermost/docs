@@ -1,5 +1,5 @@
 Connect Zoom to Mattermost
-==============================
+===========================
 
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
@@ -14,9 +14,9 @@ Setup starts in Zoom and configuration ends in Mattermost.
 Register an OAuth app in Zoom
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-A Mattermost system admin must perform the following steps in Zoom.
+A Zoom system admin must perform the following steps in Zoom.
 
-Zoom supports OAuth authentication, and there are 2 types of OAuth Zoom Apps you can register: Account-Level and User-Level. You can use either type based on your organization's security and preferences.
+Zoom supports OAuth authentication, and there are 2 types of OAuth Zoom Apps you can register: **Account-Level** and **User-Level**. You can use either type based on your organization's security and preferences.
 
 - **Account-Level**: Individual users in Mattermost are verified by checking their Mattermost email and requesting their Personal Meeting ID via the Zoom API. The user's email address in both Mattermost and Zoom must match. Create a User Level Zoom app instead if you prefer that each user to authorize individually.
 - **User-Managed**: Individual users in Mattermost are required to authorize the Mattermost App to access their Zoom account. Create an Account-Level app instead if you prefer that an admin authorizes access on behalf of the whole Zoom organization.
@@ -74,7 +74,7 @@ Zoom supports OAuth authentication, and there are 2 types of OAuth Zoom Apps you
   If you've been using an older version of the Zoom plugin prior to release v1.4, you likely have a legacy webhook-type app configured in Zoom. 
 
   - Legacy webhook apps are no longer supported by Zoom or Mattermost and aren't compatible prior to release v1.4. 
-  You may experience issues with the meeting status message information not being updated when a meeting ends. This is because the webhook endpoint expects a JSON format request, and newer webhooks use different formats. 
+  - You may experience issues with the meeting status message information not being updated when a meeting ends. This is because the webhook endpoint expects a JSON format request, and newer webhooks use different formats. 
   - From version 1.4 of this integration, you can configure and associate your webhooks with an app you've already created. We recommend removing the previous webhook app before configuring a new webhook.
 
 Configure webhook events
@@ -100,7 +100,7 @@ A Mattermost system admin needs to enable and configure GitHub by going to **Sys
 - For self-hosted Mattermost deployments, enter the **Zoom URL** and **Zoom API URL** for the Zoom server when you're using a self-hosted private cloud or on-premises Zoom server, such as ``https://YOUR-ZOOM.com`` and ``https://api.YOUR-ZOOM.com/v2`` respectively, replacing ``YOUR-ZOOM`` with your Zoom server URL. Leave this field blank if you're using Zoom's vendor-hosted SaaS service.
 - If you've created an `account level Zoom app for Mattermost <#register-an-oauth-app-in-zoom>`__, set **OAuth by Account Level App** to **true**. Leave this value as **false** if you've created a user level Zoom app for Mattermost.
 - Connect your users to Zoom using OAuth. Enter the **Client ID** and **Client Secret** generated when `registering the oauth app in Zoom <#register-an-oauth-app-in-zoom>`__.
-- Select **Regenerate** next to the **At Rest Token Encryption Key** field.
+- Select **Regenerate** next to the **At Rest Token Encryption Key** field to generate an AES encryption key.
 - If you're configuring webhook events, or setting up deauthorization, select **Regenerate** next to the **Webhook Secret** field. Configure this secret as the **Zoom Webhook Secret** on the **Features** tab in Zoom.
 - Select **Save** to save your changes.
 

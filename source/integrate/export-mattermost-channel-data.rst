@@ -18,7 +18,7 @@ You need to be a Mattermost system admin to export channel data.
 For self-hosted deployments, enable channel exports in the System Console.
 
 1. Go to **System Console > Plugins > Plugin Management**.
-2. Under **Installed Plugins**, scroll to Channel Export, and select **Enable**.
+2. Under **Installed Plugins**, scroll to **Channel Export**, and select **Enable**.
 
 You can disable channel export in the System Console by going to **Plugins > Channel Export** or to **Plugin Management > Installed Plugins > Channel Export**.
 
@@ -26,10 +26,6 @@ Configure
 ---------
 
 Go to **System Console > Plugins > Plugin Management > Channel Export** to manage configuration settings for this plugin.
-
-.. Outstanding Engineering question: Does the following experimental config settings apply to this plugin?
-  - `Export output directory <https://docs.mattermost.com/configure/experimental-configuration-settings.html#export-output-directory>`__  
-  - `Export retention days <https://docs.mattermost.com/configure/experimental-configuration-settings.html#export-retention-days>`__ config settings apply to this plugin?
 
 Upgrade
 ~~~~~~~~
