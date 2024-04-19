@@ -86,7 +86,7 @@ The team URL is part of the web address that navigates to your team on the syste
 Join a team
 -----------
 
-You can join any team configured to :ref:`"allow anyone with an account on this server to join this team" <collaborate/team-settings:allow anyone to join this team>`, or when you receive an invitation to join.
+You can join any open teams, or join any team you receive an invitation to join.
 
 If you haven't yet joined any teams in Mattermost, you're prompted to join available teams when you :doc:`log in to Mattermost </collaborate/access-your-workspace>`.
 
@@ -100,7 +100,7 @@ Leave a team
 
 Users can also choose to remove themselves from a team, from **Team menu > Leave Team**. This will remove the user from the team, and from all public channels and private channels on the team.
 
-They will only be able to rejoin the team if it is set to :ref:`"Allow anyone with an account on this server to join this team" <collaborate/team-settings:allow anyone to join this team>` team, or if they receive a new invite. If they do rejoin, they will no longer be a part of their old channels.
+They will only be able to rejoin the team if it's open, or if they receive a new invitation. If they do rejoin, they will no longer be a part of their old channels.
 
 Remove people from teams
 ------------------------
