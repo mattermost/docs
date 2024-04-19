@@ -23,11 +23,12 @@ All Platforms
 ^^^^^^^^^^^^^
 
 - Moved the **Settings** window into a new modal.
+- Disabled the ``--inspect`` tag.
 
 Architectural Changes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- Major version upgrade of Electron to 29.3.0. Electron is the underlying technology used to build the Desktop App.
+- Minor version upgrade of Electron to 29.3.0. Electron is the underlying technology used to build the Desktop App.
 
 Bug Fixes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
