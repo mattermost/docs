@@ -2224,7 +2224,7 @@ redirects = {
 "install/install-kubernetes-operator.html":
         "https://docs.mattermost.com/install/install-kubernetes.html",
 "install/install-ubuntu-1804.html":
-        "https://docs.mattermost.com/install/installing-ubuntu-1804-LTS.html",
+        "https://docs.mattermost.com/install/install-ubuntu",
 "install/install-ubuntu-2004.html":
         "https://docs.mattermost.com/install/installing-ubuntu-2004-LTS.html",
 "install/install-mmte-helm-gitlab-helm.html":

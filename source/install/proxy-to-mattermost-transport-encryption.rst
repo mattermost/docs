@@ -19,7 +19,7 @@ Prerequisites
 Example environment
 -------------------
 
-In this scenario there is one Mattermost application server and one NGINX server, both running Ubuntu 18.04, with the following IPs:
+In this scenario there is one Mattermost application server and one NGINX server, both running Ubuntu 20.04, with the following IPs:
 
 - **transport-encryption-mattermost1:** 10.10.250.146
 - **transport-encryption-nginx:** 10.10.250.107

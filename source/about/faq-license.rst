@@ -139,7 +139,7 @@ Yes, we continue to welcome all contributions. Mattermost may select some contri
 As with all Mattermost repositories, you will still need to sign the `Mattermost CLA <https://mattermost.com/mattermost-contributor-agreement/>`_. We will not accept contributions without signing the Mattermost CLA.
 
 Do I need to re-sign the `Mattermost CLA <https://mattermost.com/mattermost-contributor-agreement/>`_?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 No, if you have already signed the `Mattermost CLA <https://mattermost.com/mattermost-contributor-agreement/>`_, you do not need to sign it again.
 
