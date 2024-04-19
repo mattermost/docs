@@ -105,7 +105,7 @@ New setting option were added to ``config.json``. Below is a list of the additio
  - v9.8 is built with Go ``v1.21.0``.
 
 ### Known Issues
- - Status may sometimes get stuck as **Away** or **Offline** in High Availability mode with IP Hash turned off.
+ - Status may sometimes get stuck as **Away** or **Offline** with IP Hash turned off.
  - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
  - Slack import through the CLI fails if email notifications are enabled.
  - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
