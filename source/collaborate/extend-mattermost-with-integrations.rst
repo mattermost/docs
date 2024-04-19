@@ -9,7 +9,7 @@ Interoperability with pre-packaged integrations
 The following Mattermost-supported integrations are pre-packaged and available for your Mattermost system admin to enable and configure for you to use:
 
 - :ref:`AI Copilot <path/page>`
-- :ref:`Export Mattermost channel data <integrate/export-channel-data:usage>`
+- :ref:`Export Mattermost channel data <integrate/export-mattermost-channel-data:usage>`
 - :ref:`GitHub <integrate/github-interoperability:usage>`
 - :ref:`GitLab <integrate/gitlab-interoperability:usage>`
 - :ref:`Jira <integrate/jira-interoperability:usage>`
