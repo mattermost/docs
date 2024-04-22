@@ -164,7 +164,7 @@ Maximum idle database connections
 
 +--------------------------------------------------------+------------------------------------------------------------------+
 | The maximum number of idle connections held open       | - System Config path: **Environment > Database**                 |
-| to the database.                                       | - ``config.json`` setting: ``".SqlSettings.MaxIdleConns": 10,``  |
+| to the database.                                       | - ``config.json`` setting: ``".SqlSettings.MaxIdleConns": 20,``  |
 |                                                        | - Environment variable: ``MM_SQLSETTINGS_MAXIDLECONNS``          |
 | Numerical input. Default is **20**.                    |                                                                  |
 +--------------------------------------------------------+------------------------------------------------------------------+
