@@ -153,7 +153,7 @@ Data source
   :systemconsole: Environment > Database
   :configjson: SqlSettings.MaxIdleConns
   :environment: MM_SQLSETTINGS_MAXIDLECONNS
-  :description: The maximum number of idle connections held open to the database. Default is **10**.
+  :description: The maximum number of idle connections held open to the database. Default is **20**.
 
 Maximum idle database connections
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -164,9 +164,9 @@ Maximum idle database connections
 
 +--------------------------------------------------------+------------------------------------------------------------------+
 | The maximum number of idle connections held open       | - System Config path: **Environment > Database**                 |
-| to the database.                                       | - ``config.json`` setting: ``".SqlSettings.MaxIdleConns": 10,``  |
+| to the database.                                       | - ``config.json`` setting: ``".SqlSettings.MaxIdleConns": 20,``  |
 |                                                        | - Environment variable: ``MM_SQLSETTINGS_MAXIDLECONNS``          |
-| Numerical input. Default is **10**.                    |                                                                  |
+| Numerical input. Default is **20**.                    |                                                                  |
 +--------------------------------------------------------+------------------------------------------------------------------+
 
 .. config:setting:: database-maxopenconnections
