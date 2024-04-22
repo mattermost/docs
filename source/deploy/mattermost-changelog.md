@@ -102,7 +102,7 @@ New setting option were added to ``config.json``. Below is a list of the additio
    - Removed the ``UseNewSAMLLibrary`` experimental setting.
 
 ### Go Version
- - v9.8 is built with Go ``v1.21.0``.
+ - v9.8 is built with Go ``v1.21.8``.
 
 ### Known Issues
  - Status may sometimes get stuck as **Away** or **Offline** with IP Hash turned off.
