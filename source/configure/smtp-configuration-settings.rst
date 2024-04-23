@@ -164,8 +164,8 @@ Skip server certificate verification
 .. config:setting:: smtp-enablesecurityalerts
   :displayname: Enable security alerts (SMTP)
   :systemconsole: Environment > SMTP
-  :configjson: .EmailSettings.EnableSecurityFixAlert
-  :environment: MM_EMAILSETTINGS_ENABLESECURITYFIXALERT
+  :configjson: .ServiceSettings.EnableSecurityFixAlert
+  :environment: MM_SERVICESETTINGS_ENABLESECURITYFIXALERT
 
   - **true**: **(Default)** System Admins are notified by email if a relevant security fix alert is announced. Requires email to be enabled.
   - **false**: Security alerts are disabled.
@@ -177,16 +177,16 @@ Enable security alerts
 
  <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
-+-----------------------------------------------------------------+----------------------------------------------------------------------------------+
-| Enable or disable security alerts.                              | - System Config path: **Environment > SMTP**                                     |
-|                                                                 | - ``config.json setting``: ``".EmailSettings.EnableSecurityFixAlert": true",``   |
-| - **true**: **(Default)** System Admins are notified by email   | - Environment variable: ``MM_EMAILSETTINGS_ENABLESECURITYFIXALERT``              |
-|   if a relevant security fix alert is announced. Requires email |                                                                                  |
-|   to be enabled.                                                |                                                                                  |
-| - **false**: Security alerts are disabled.                      |                                                                                  |
-+-----------------------------------------------------------------+----------------------------------------------------------------------------------+
-| See the :ref:`Telemetry <manage/telemetry:security update check feature>` documentation to learn more.                                             |
-+-----------------------------------------------------------------+----------------------------------------------------------------------------------+
++-----------------------------------------------------------------+------------------------------------------------------------------------------------+
+| Enable or disable security alerts.                              | - System Config path: **Environment > SMTP**                                       |
+|                                                                 | - ``config.json setting``: ``".ServiceSettings.EnableSecurityFixAlert": true",``   |
+| - **true**: **(Default)** System Admins are notified by email   | - Environment variable: ``MM_SERVICESETTINGS_ENABLESECURITYFIXALERT``              |
+|   if a relevant security fix alert is announced. Requires email |                                                                                    |
+|   to be enabled.                                                |                                                                                    |
+| - **false**: Security alerts are disabled.                      |                                                                                    |
++-----------------------------------------------------------------+------------------------------------------------------------------------------------+
+| See the :ref:`Telemetry <manage/telemetry:security update check feature>` documentation to learn more.                                               |
++-----------------------------------------------------------------+------------------------------------------------------------------------------------+
 
 .. config:setting:: smtp-servertimeout
   :displayname: SMTP server timeout (SMTP)
