@@ -364,6 +364,8 @@ redirects = {
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-channel-delete",
 "administration/version-archive.html":
 	"https://docs.mattermost.com/upgrade/version-archive.html",
+"administration/mmctl-cli-tool.html#local-mode":
+	"https://docs.mattermost.com/configure/experimental-configuration-settings.html#enable-local-mode-for-mmctl",
 
 # Boards redirects
 "boards/navigating-mattermost-boards.html":
