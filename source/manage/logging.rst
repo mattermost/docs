@@ -173,10 +173,10 @@ Define advanced log output
                 "Type": "file",
                 "Format": "plain",
                 "Levels": [
-                { "id": 100, "name": "audit-api" },
-                { "id": 101, "name": "audit-content" },
-                { "id": 102, "name": "audit-permissions" },
-                { "id": 103, "name": "audit-cli" }
+                    { "id": 100, "name": "audit-api" },
+                    { "id": 101, "name": "audit-content" },
+                    { "id": 102, "name": "audit-permissions" },
+                    { "id": 103, "name": "audit-cli" }
                 ],
                 "Options": {
                     "Compress": true,
@@ -185,7 +185,7 @@ Define advanced log output
                     "MaxBackups": 10,
                     "MaxSizeMB": 500
                 },
-                    MaxQueueSize": 1000
+                "MaxQueueSize": 1000
             }
         }
 
