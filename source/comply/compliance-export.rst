@@ -8,18 +8,21 @@ Compliance export
 
  <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
-This feature enables compliance exports to be produced from the System Console, containing all messages including:
+Enterprise deployments with a requirement to archive history beyond the data retention period can export compliance reports to third-party systems. Integration with Actiance Vantage, Global Relay, and Proofpoint are currently supported.
+
+By default, Mattermost stores all message history, providing an unlimited search history to admins and end users. In Mattermost Enterprise, you may set a :doc:`custom data retention policy </comply/data-retention-policy>` for how long messages and file uploads are kept in Mattermost channels and direct messages.
+
+Compliance exports are produced from the System Console, containing all messages including:
 
 - Messages sent in direct message channels
 - File uploads
 - Posts from plugins
 - Posts from bots/webhooks
 
-The exports include information on channel member history at the time the message was posted. Entries for deleted messages and files are included in CSV and Actiance reports. The deleted content is included in the compliance export. Global Relay reports include file deletion entries but message deletion entries are excluded.
+Exports include information on channel member history at the time the message was posted. 
 
-By default, Mattermost stores all message history providing an unlimited search history to admins and end users. In Mattermost Enterprise, you may set a :doc:`custom data retention policy </comply/data-retention-policy>` for how long messages and file uploads are kept in Mattermost channels and direct messages.
-
-Enterprise deployments with a requirement to archive history beyond the data retention period can enable this add-on to export compliance reports to third-party systems. Integration with Actiance Vantage, Global Relay, and Proofpoint are currently supported, with integrations with other systems in the roadmap.
+- Entries for deleted messages and files are included in CSV and Actiance reports. The deleted content is included in the compliance export. 
+- Global Relay reports include file deletion entries but message deletion entries are excluded.
 
 .. note::
   
@@ -28,11 +31,11 @@ Enterprise deployments with a requirement to archive history beyond the data ret
 Set up guide
 ------------
 
-Use the following guides to configure exports for CSV, Actiance XML, or Global Relay EML.
+Use the following guides to configure exports for `CSV <#csv>`__, `Actiance XML <#actiance-xml>`__, `Global Relay EML <#global-relay-eml>`__, or `Proofpoint <#proofpoint>`__.
 
 .. note::
-   
-   - For self-hosted deployments, compliance exports are written to the ``exports`` subdirectory of the configured filestore in the chosen format. This will either be in the `Local Storage directory </configure/environment-configuration-settings.html#file-storage>` or the Mattermost S3 bucket if S3 storage is configured.
+
+   - For self-hosted deployments, compliance exports are written to the ``exports`` subdirectory of the configured filestore in the chosen format. This will either be in the :ref:`Local Storage directory <configure/environment-configuration-settings:file storage>` or the Mattermost S3 bucket if S3 storage is configured.
    - Alternatively, you can specify an alternate filestore target and generate an S3 presigned URL for compliance exports. See the :ref:`dedicated export filestore target <configure/experimental-configuration-settings:enable dedicated export filestore target>` configuration settings documentation for details.
    - Compliance exports don't contain posts sent before the feature was enabled. For self-hosted deployments, you can export past history via the ``export`` :doc:`command line tool <../manage/command-line-tools>`. 
 
@@ -84,6 +87,19 @@ Once you've selected Global Relay EML as your file format, you can set up an int
    Messages larger than 250 MB will have their attachments removed because they are too large to send to Global Relay. An error is added to the server logs with id ``global_relay_attachments_removed``. It includes the post ID the attachments were removed from, as well as the attachment IDs. A `ticket is queued to better handle large messages <https://mattermost.atlassian.net/browse/MM-10038>`__.
 
 For more information on Global Relay archive system, see `their homepage <https://www.globalrelay.com/>`__.
+
+Proofpoint
+~~~~~~~~~~~
+
+1. Go to **System Console > Compliance > Compliance Export**.
+2. Set **Enable Compliance Export** to **true**.
+3. Set the **Compliance Export time**. This is the start time of the daily scheduled compliance export job and must be a 24-hour time stamp in the form HH:MM. Choose a time when fewer people are using your system.
+4. Set the **Export Format** to **GlobalRelay EML**.
+5. Select **Custom** for the **Global Relay Customer Account** to integrate with Proofpoint. 
+6. Set the **SMTP username**, **SMTP password**, **SMTP email address**, **SMTP Server Name**, and the **SMTP Server Port**, provided by Proofpoint. 
+7. Select **Save**.
+
+Now you can set up an integration with the Proofpoint archive system. For more information, see `Proofpoint Archive <https://www.proofpoint.com/us/products/archiving-and-compliance/archive>`__.
 
 Frequently Asked Questions (FAQ)
 --------------------------------

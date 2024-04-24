@@ -191,12 +191,12 @@ Gossip port
 | Numerical input. Default is **8074**.                           |                                                                     |
 +-----------------------------------------------------------------+---------------------------------------------------------------------+
 
-.. config:setting:: ha-streamingport
-  :displayname: Streaming port (High Availability)
-  :systemconsole: Environment > High Availability
-  :configjson: .ClusterSettings.StreamingPort
-  :environment: MM_CLUSTERSETTINGS_STREAMINGPORT
-  :description: The port used for streaming data between servers. Default value is **8075**.
+.. config:setting:: ha-readonlyconfig
+  :displayname: Read only config (High Availability)
+  :systemconsole: N/A
+  :configjson: .ClusterSettings.ReadOnlyConfig
+  :environment: MM_CLUSTERSETTINGS_READONLYCONFIG
+  :description: Configure whether changes made in the System Console are written to config.json or ignored. Default is ignored.
 
 Read only config
 ~~~~~~~~~~~~~~~~
@@ -280,66 +280,3 @@ Advertise address
 |                                                                 |                                                                        |
 | String input.                                                   |                                                                        |
 +-----------------------------------------------------------------+------------------------------------------------------------------------+
-
-.. config:setting:: ha-maxidleconnections
-  :displayname: Maximum idle connections for high availability (High Availability)
-  :systemconsole: N/A
-  :configjson: .ClusterSettings.MaxIdleConns
-  :environment: MM_CLUSTERSETTINGS_MAXIDLECONNS
-  :description: The maximum number of idle connections held open from one server to all others in the cluster. Default is **100** idle connections.
-
-Maximum idle connections for high availability
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
-
-+-----------------------------------------------------------------+------------------------------------------------------------------------+
-| The maximum number of idle connections held open from one       | - System Config path: N/A                                              |
-| server to all others in the cluster.                            | - ``config.json`` setting: ``".ClusterSettings.MaxIdleConns: 100,``    |
-|                                                                 | - Environment variable: ``MM_CLUSTERSETTINGS_MAXIDLECONNS``            |
-| Numerical input. Default is **100**.                            |                                                                        |
-+-----------------------------------------------------------------+------------------------------------------------------------------------+
-
-.. config:setting:: ha-maxidleconnectionsperhost
-  :displayname: Maximum idle connections per host (High Availability)
-  :systemconsole: N/A
-  :configjson: .ClusterSettings.MaxIdleConnsPerHost
-  :environment: MM_CLUSTERSETTINGS_MAXIDLECONNSPERHOST
-  :description: The maximum number of idle connections held open from one server to another server in the cluster. Default is **128** idle connections.
-
-Maximum idle connections per host
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
-
-+-----------------------------------------------------------------+------------------------------------------------------------------------------+
-| The maximum number of idle connections held open from one       | - System Config path: N/A                                                    |
-| server to another server in the cluster.                        | - ``config.json`` setting: ``".ClusterSettings.MaxIdleConnsPerHost: 128",``  |
-|                                                                 | - Environment variable: ``MM_CLUSTERSETTINGS_MAXIDLECONNSPERHOST``           |
-| Numerical input. Default is **128**.                            |                                                                              |
-+-----------------------------------------------------------------+------------------------------------------------------------------------------+
-
-.. config:setting:: ha-idleconnectiontimeout
-  :displayname: Idle connection timeout (High Availability)
-  :systemconsole: N/A
-  :configjson: .ClusterSettings.IdleConnTimeoutMilliseconds
-  :environment: MM_CLUSTERSETTINGS_IDLECONNTIMEOUTMILLISECONDS
-  :description: The amount of time, in milliseconds, to leave an idle connection open between servers in the cluster. Default is **90000** milliseconds.
-
-Idle connection timeout
-~~~~~~~~~~~~~~~~~~~~~~~
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
-
-+-----------------------------------------------------------------+---------------------------------------------------------------------------------------+
-| The amount of time, in milliseconds, to leave an idle           | - System Config path: N/A                                                             |
-| connection open between servers in the cluster.                 | - ``config.json`` setting: ``".ClusterSettings.IdleConnTimeoutMilliseconds: 90000",`` |
-|                                                                 | - Environment variable: ``MM_CLUSTERSETTINGS_IDLECONNTIMEOUTMILLISECONDS``            |
-| Numerical input. Default is **90000**.                          |                                                                                       |
-+-----------------------------------------------------------------+---------------------------------------------------------------------------------------+

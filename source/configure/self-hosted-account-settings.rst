@@ -10,4 +10,4 @@ Go to **System Console > About** to manage the following aspects of your self-ho
 - Manage your :doc:`product subscription </about/self-hosted-subscriptions>`.
 - :doc:`Upload a new license </upgrade/installing-license-key>`.
 - Remove a license to :doc:`downgrade the server </upgrade/downgrading-mattermost-server>`.
-- Contact the Mattermost Sales team for assistance.
+- Contact the `Mattermost Sales team <https://mattermost.com/contact-sales/>`_ for assistance.

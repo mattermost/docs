@@ -1,4 +1,5 @@
-:orphan: :nosearch:
+:orphan: 
+:nosearch:
 
 .. This page is intentionally not accessible via the LHS navigation pane because it's common content included on other docs pages.
 
@@ -10,5 +11,3 @@ For the database, you can install either PostgreSQL or MySQL. The proxy is NGINX
   If you have any problems installing Mattermost, see the :doc:`troubleshooting guide </install/troubleshooting>`, or `join the Mattermost user community for troubleshooting help <https://mattermost.com/pl/default-ask-mattermost-community/>`_.
   
   For help with inviting users to your system, see :doc:`inviting team members </collaborate/manage-channel-members>` and other :ref:`getting started information <getting-started/admin-onboarding-tasks:getting started tasks>`.
-  
-  To submit an improvement or correction to this page, select **Edit** in the top-right corner of the page.

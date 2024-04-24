@@ -312,6 +312,13 @@ Some caveats apply here. Web socket events (for example: emoji reactions, hand r
 
 In general, ``rtcd`` is the preferred solution for a performant and scalable deployment. With ``rtcd``, the Mattermost server will be minimally impacted when hosting a high number of calls.
 
+See the `Mattermost rtcd repository documentation <https://github.com/mattermost/rtcd/blob/master/README.md>`__ on GitHub for details on `how to run calls through the service <https://github.com/mattermost/rtcd/blob/master/docs/getting_started.md>`__, as well as:
+
+- `Key implementation details <https://github.com/mattermost/rtcd/blob/master/docs/implementation.md>`__
+- `Project structure <https://github.com/mattermost/rtcd/blob/master/docs/project_structure.md>`__
+- `Configuration overrides <https://github.com/mattermost/rtcd/blob/master/docs/env_config.md>`__
+- `Authentication flow <https://github.com/mattermost/rtcd/blob/master/docs/security.md>`__
+
 Horizontal scalability
 ~~~~~~~~~~~~~~~~~~~~~~
 

@@ -852,134 +852,71 @@ Enable call ringing (Beta)
 
 ----
 
-Google Calendar
-----------------
+.. config:setting:: integrations-gitlab
+  :displayname: GitLab interoperability (Plugins)
+  :systemconsole: Plugins > Zoom
+  :configjson: gitlab
+  :environment: N/A
+  :description: Connect your GitLab instance to your Mattermost instance.
 
-.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+GitLab
+------
+
+.. include:: ../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
 
-The Mattermost Google Calendar plugin enables a two-way integration between Mattermost and Google Calendar.
-
-Access the following configuration settings in the System Console by going to **Plugins > Google Calendar**.
-
-.. config:setting:: plugins-googlecalendarenable
-  :displayname: Enable plugin (Plugins - Google Calendar)
-  :systemconsole: Plugins > Google Calendar
-  :configjson: N/A
-  :environment: N/A
-
-  - **true**: Enables the Google Calendar plugin on your Mattermost workspace.
-  - **false**: Disables the Google Calendar plugin on your Mattermost workspace.
-
-Enable plugin
-~~~~~~~~~~~~~
-
-+--------------------------------------------------------------------------+------------------------------------------------------+
-| Enable the Mattermost Google Calendar plugin for all Mattermost teams.   | - System Config path: **Plugins > Google Calendar**  |
-|                                                                          | - ``config.json`` setting: N/A                       |
-| - **true**: Enables Google Calendar plugin on your Mattermost workspace. | - Environment variable: N/A                          |
-| - **false**: **(Default)** Disables the Google Calendar plugin.          |                                                      |
-+--------------------------------------------------------------------------+------------------------------------------------------+
-
-.. config:setting:: plugins-googlecalendaradminuserids
-  :displayname: Enable plugin (Plugins - Google Calendar)
-  :systemconsole: Plugins > Google Calendar
-  :configjson: N/A
-  :environment: N/A
-
-Admin user IDs
-~~~~~~~~~~~~~~
-
-+--------------------------------------------------------------------------+------------------------------------------------------+
-| A comma-separated list of users authorized to manage the plugin.         | - System Config path: **Plugins > Google Calendar**  |
-|                                                                          | - ``config.json`` setting: N/A                       |
-| Go to **System Console > User Management > Users** to access user IDs.   | - Environment variable: N/A                          |
-+--------------------------------------------------------------------------+------------------------------------------------------+
-
-.. config:setting:: plugins-googlecalendarcopypluginlogs
-  :displayname: Enable plugin (Plugins - Google Calendar)
-  :systemconsole: Plugins > Google Calendar
-  :configjson: N/A
-  :environment: N/A
-
-Copy plugin logs to admins, as bot messages
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-+--------------------------------------------------------------------------+------------------------------------------------------+
-| The level of detail in log events for the plugin.                        | - System Config path: **Plugins > Google Calendar**  |
-|                                                                          | - ``config.json`` setting: N/A                       |
-| Can be one of: **None**, **Debug**, **Info**, **Warning**, or **Error**. | - Environment variable: N/A                          |
-+--------------------------------------------------------------------------+------------------------------------------------------+
-
-.. config:setting:: plugins-googlecalendardisplayfullcontext
-  :displayname: Enable plugin (Plugins - Google Calendar)
-  :systemconsole: Plugins > Google Calendar
-  :configjson: N/A
-  :environment: N/A
-
-  - **true**: Displays full context for each admin log entry.
-  - **false**: Full context isn't displayed for each admin log entry.
-
-Display full context for each admin log message
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-+--------------------------------------------------------------------------+------------------------------------------------------+
-| Specify whether full context is displayed for log messages.              | - System Config path: **Plugins > Google Calendar**  |
-|                                                                          | - ``config.json`` setting: N/A                       |
-| - **true**: Displays full context for each admin log entry.              | - Environment variable: N/A                          |
-| - **false**: Full context isn't displayed for each admin log entry.      |                                                      |
-+--------------------------------------------------------------------------+------------------------------------------------------+
-
-.. config:setting:: plugins-googlecalendarencryptionkey
-  :displayname: Enable plugin (Plugins - Google Calendar)
-  :systemconsole: Plugins > Google Calendar
-  :configjson: N/A
-  :environment: N/A
-
-Encryption key
-~~~~~~~~~~~~~~
-
-+--------------------------------------------------------------------------+------------------------------------------------------+
-| The encryption key used to store data in the database.                   | - System Config path: **Plugins > Google Calendar**  |
-|                                                                          | - ``config.json`` setting: N/A                       |
-|                                                                          | - Environment variable: N/A                          |
-+--------------------------------------------------------------------------+------------------------------------------------------+
-| **Note**: Select **Regenerate** to generate a new encryption key. When you regenerate this value, all users will need to        |
-| `reconnect their Google Calendar with Mattermost </collaborate/use-mattermost-google-calendar-plugin.html#connect-your          |
-| google-calendar-account-to-mattermost>`__.                                                                                      |
-+--------------------------------------------------------------------------+------------------------------------------------------+
-
-.. config:setting:: plugins-googlecalendarappclientid
-  :displayname: Enable plugin (Plugins - Google Calendar)
-  :systemconsole: Plugins > Google Calendar
-  :configjson: N/A
-  :environment: N/A
-
-Google application client ID
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-+--------------------------------------------------------------------------+------------------------------------------------------+
-| The Google App Authentication Client ID.                                 | - System Config path: **Plugins > Google Calendar**  |
-|                                                                          | - ``config.json`` setting: N/A                       |
-|                                                                          | - Environment variable: N/A                          |
-+--------------------------------------------------------------------------+------------------------------------------------------+
-
-.. config:setting:: plugins-googlecalendarclientsecret
-  :displayname: Enable plugin (Plugins - Google Calendar)
-  :systemconsole: Plugins > Google Calendar
-  :configjson: N/A
-  :environment: N/A
-
-Google client secret
-~~~~~~~~~~~~~~~~~~~~~
-
-+--------------------------------------------------------------------------+------------------------------------------------------+
-| The Google App Authentication Client Secret.                             | - System Config path: **Plugins > Google Calendar**  |
-|                                                                          | - ``config.json`` setting: N/A                       |
-|                                                                          | - Environment variable: N/A                          |
-+--------------------------------------------------------------------------+------------------------------------------------------+
+See the :doc:`Connect GitLab to Mattermost </integrate/gitlab-interoperability>` product documentation for available :ref:`Mattermost configuration options <integrate/gitlab-interoperability:mattermost configuration>`.
 
 ----
+
+.. config:setting:: integrations-github
+  :displayname: GitHub interoperability (Plugins)
+  :systemconsole: Plugins > Zoom
+  :configjson: github
+  :environment: N/A
+  :description: Connect your GitHub instance to your Mattermost instance.
+
+GitHub
+------
+
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
+
+See the :doc:`Connect GitHub to Mattermost </integrate/github-interoperability>` product documentation for available :ref:`Mattermost configuration options <integrate/github-interoperability:mattermost configuration>`.
+
+----
+
+.. config:setting:: integrations-jira
+  :displayname: Jira interoperability (Plugins)
+  :systemconsole: Plugins > Jira
+  :configjson: jira
+  :environment: N/A
+  :description: Connect your Jira instance to your Mattermost instance.
+
+Jira
+----
+
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
+
+See the :doc:`Connect Jira to Mattermost </integrate/jira-interoperability>` product documentation for available :ref:`Mattermost configuration options <integrate/jira-interoperability:mattermost configuration>`.
+
+----
+
+.. config:setting:: integrations-legalhold
+  :displayname: Perform legal holds (Plugins)
+  :systemconsole: Plugins > Legal Hold
+  :configjson: legal-hold
+  :environment: N/A
+  :description: Perform legal holds in Mattermost.
+
+Legal hold
+----------
+
+.. include:: ../_static/badges/ent-cloud-selfhosted.rst
+  :start-after: :nosearch:
+
+See the :doc:`Perform legal holds </integrate/perform-legal-holds>` product documentation for available :ref:`Mattermost configuration options <integrate/perform-legal-holds:mattermost configuration>`.
 
 MS Teams
 --------
@@ -1302,6 +1239,21 @@ Buffer size for streaming files
 
 ----
 
+.. config:setting:: integrations-performance-metrics
+  :displayname: Monitor performance metrics (Plugins)
+  :systemconsole: Plugins > Mattermost Performance Metrics
+  :configjson: performance-metrics
+  :environment: N/A
+  :description: Monitor Mattermost performance metrics
+
+Performance metrics
+-------------------
+
+.. include:: ../_static/badges/ent-cloud-selfhosted.rst
+  :start-after: :nosearch:
+
+See the :doc:`Monitor performance metrics </integrate/monitor-performance-metrics>` product documentation for available :ref:`Mattermost configuration options <integrate/monitor-performance-metrics:mattermost configuration>`.
+
 Playbooks
 ----------
 
@@ -1412,197 +1364,49 @@ Enable user satisfaction survey
 
 ----
 
+.. config:setting:: integrations-servicenow
+  :displayname: ServiceNow interoperability (Plugins)
+  :systemconsole: Plugins > ServiceNow
+  :configjson: servicenow
+  :environment: N/A
+  :description: Connect your ServiceNow instance to your Mattermost instance.
+
+ServiceNow
+----------
+
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
+
+See the :doc:`Connect ServiceNow to Mattermost </integrate/servicenow-interoperability>` product documentation for available :ref:`Mattermost configuration options <integrate/servicenow-interoperability:mattermost configuration>`.
+
+
+----
+
+.. config:setting:: integrations-zoom
+  :displayname: Zoom interoperability (Plugins)
+  :systemconsole: Plugins > Zoom
+  :configjson: zoom
+  :environment: N/A
+  :description: Connect your Zoom instance to your Mattermost instance.
+
 Zoom
 ----
 
 .. include:: ../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
 
-This plugin allows team members to initiate a Zoom meeting with a single click. All participants in a channel can easily join the Zoom meeting and the shared link is updated when the meeting is over. See the `Zoom Plugin <https://github.com/mattermost/mattermost-plugin-zoom/blob/master/README.md#installation>`__ documentation for details.
+See the :doc:`Connect Zoom to Mattermost </integrate/zoom-interoperability>` product documentation for available :ref:`Mattermost configuration options <integrate/zoom-interoperability:mattermost configuration>`.
 
-.. note::
+----
 
-  To set up this plugin, you need to create a Zoom App using a Zoom Administrator account. See the `Zoom plugin <https://github.com/mattermost/mattermost-plugin-zoom/blob/master/README.md>`__ documentation for details. 
+config.json-only settings
+--------------------------
 
-Access the following configuration settings in the System Console by going to **Plugins > Zoom**.
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
-.. config:setting:: plugins-zoomenable
-  :displayname: Enable plugin (Plugins - Zoom)
-  :systemconsole: Plugins > Zoom
-  :configjson: N/A
-  :environment: N/A
-
-  - **true**: (Default) Enables the Zoom plugin on your Mattermost server.
-  - **false**: Disables the Zoom plugin on your Mattermost server.
-
-Enable plugin
-~~~~~~~~~~~~~
-
-+----------------------------------------------------------------------------+------------------------------------------+
-| - **true**: (Default) Enables the Zoom plugin on your Mattermost server.   | - System Config path: **Plugins > Zoom** |
-| - **false**: Disables the Zoom plugin on your Mattermost server.           |                                          |
-+----------------------------------------------------------------------------+------------------------------------------+
-
-.. config:setting:: plugins-zoomurl
-  :displayname: Zoom URL (Plugins - Zoom)
-  :systemconsole: Plugins > Zoom
-  :configjson: N/A
-  :environment: N/A
-  :description: Specify the URL for a self-hosted private cloud or on-premise Zoom server. Leave blank if you're using Zoom's vendor-hosted SaaS service.
-
-Zoom URL
-~~~~~~~~
-
-+----------------------------------------------------------------------------+------------------------------------------+
-| Specify the URL for a self-hosted private cloud or on-premise Zoom server. | - System Config path: **Plugins > Zoom** |
-| For example, **https://yourzoom.com**.                                     |                                          |
-| Leave blank if you're using Zoom's vendor-hosted SaaS service.             |                                          |
-+----------------------------------------------------------------------------+------------------------------------------+
-
-.. config:setting:: plugins-zoomapiurl
-  :displayname: Zoom API URL (Plugins - Zoom)
-  :systemconsole: Plugins > Zoom
-  :configjson: N/A
-  :environment: N/A
-  :description: Specify the API URL for a self-hosted private cloud or on-premise Zoom server. Leave blank if you're using Zoom's vendor-hosted SaaS service.
-
-Zoom API URL
-~~~~~~~~~~~~
-
-+---------------------------------------------------------------------------------+------------------------------------------+
-| Specify the API URL for a self-hosted private cloud or on-premises Zoom server. | - System Config path: **Plugins > Zoom** |
-| For example, **https://api.yourzoom.com/v2**.                                   |                                          |
-| Leave blank if you're using Zoom's vendor-hosted SaaS service.                  |                                          |
-+---------------------------------------------------------------------------------+------------------------------------------+
-
-.. config:setting:: plugins-zoomoauth
-  :displayname: Enable OAuth (Plugins - Zoom)
-  :systemconsole: Plugins > Zoom
-  :configjson: N/A
-  :environment: N/A
-
-  - **true**: OAuth will be used as the authentication means with Zoom.
-  - **false**: (Default) JWT will be used as the authentication means with Zoom.
-
-Enable OAuth
-~~~~~~~~~~~~
-
-+---------------------------------------------------------------------------------+------------------------------------------+
-| - **true**: OAuth will be used as the authentication means with Zoom.           | - System Config path: **Plugins > Zoom** |
-| - **false**: (Default) JWT will be used as the authentication means with Zoom.  |                                          |
-+---------------------------------------------------------------------------------+------------------------------------------+
-
-.. note::
-
-  If you are currently using a JWT Zoom application and switch to OAuth, all users will need to connect their Zoom account using OAuth the next time they try to start a meeting. See the `Zoom plugin <https://github.com/mattermost/mattermost-plugin-zoom#readme>`__ documentation for details.
-
-.. config:setting:: plugins-zoomoauthbyaccountlevel
-  :displayname: OAuth by account level app (Beta) (Plugins - Zoom)
-  :systemconsole: Plugins > Zoom
-  :configjson: 
-  :environment:
-
-  - **true**: Only an account administrator must log in. The rest of the users will use their e-mail to log in.
-  - **false**: (Default) All users must use their e-mail to log in.
-
-OAuth by account level app (Beta)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-+---------------------------------------------------------------------------------------------------------------+------------------------------------------+
-| - **true**: Only an account administrator must log in. The rest of the users will use their e-mail to log in. | - System Config path: **Plugins > Zoom** |
-| - **false**: (Default) All users must use their e-mail to log in.                                             |                                          |
-+---------------------------------------------------------------------------------------------------------------+------------------------------------------+
-
-.. config:setting:: plugins-zoomoauthclientid
-  :displayname: Zoom OAuth client ID (Plugins - Zoom)
-  :systemconsole: Plugins > Zoom
-  :configjson: N/A
-  :environment: N/A
-  :description: Specify the Client ID for the OAuth app registered with Zoom. Leave blank if not using OAuth.
-
-Zoom OAuth client ID
-~~~~~~~~~~~~~~~~~~~~
-
-+-----------------------------------------------------------------------------------------------+------------------------------------------+
-| Specify the Client ID for the OAuth app registered with Zoom. Leave blank if not using OAuth. | - System Config path: **Plugins > Zoom** |
-|                                                                                               |                                          |
-|                                                                                               |                                          |
-+-----------------------------------------------------------------------------------------------+------------------------------------------+
-
-.. config:setting:: plugins-zoomoauthclientsecret
-  :displayname: Zoom OAuth client secret (Plugins - Zoom)
-  :systemconsole: Plugins > Zoom
-  :configjson: N/A
-  :environment: N/A
-  :description: Specify the Client Secret for the OAuth app registered with Zoom. Leave blank if not using OAuth.
-
-Zoom OAuth client secret
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-+---------------------------------------------------------------------------------------------------+------------------------------------------+
-| Specify the Client Secret for the OAuth app registered with Zoom. Leave blank if not using OAuth. | - System Config path: **Plugins > Zoom** |
-+---------------------------------------------------------------------------------------------------+------------------------------------------+
-
-.. config:setting:: plugins-zoomatresttokenencryptionkey 
-  :displayname: At rest token encryption key (Plugins - Zoom)
-  :systemconsole: Plugins > Zoom
-  :configjson: N/A
-  :environment: N/A
-  :description: Generate an AES encryption key for the Zoom OAuth Token used to encrypt stored access tokens by selecting **Regenerate**. 
-
-At rest token encryption key
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-+---------------------------------------------------------------------------------------------------------------------------+------------------------------------------+
-| Generate an AES encryption key for the Zoom OAuth Token used to encrypt stored access tokens by selecting **Regenerate**. | - System Config path: **Plugins > Zoom** |
-| Regenerating the key invalidates your existing Zoom OAuth.                                                                |                                          |
-+---------------------------------------------------------------------------------------------------------------------------+------------------------------------------+
-
-.. config:setting:: plugins-zoomapikey
-  :displayname: API key (Plugins - Zoom)
-  :systemconsole: Plugins > Zoom
-  :configjson: 
-  :environment:
-  :description: Specify the API Key generated by Zoom used to create meetings and pull user data.
-
-API key
-~~~~~~~
-
-+-----------------------------------------------------------------------------------+------------------------------------------+
-| Specify the API Key generated by Zoom used to create meetings and pull user data. | - System Config path: **Plugins > Zoom** |
-+-----------------------------------------------------------------------------------+------------------------------------------+
-
-.. config:setting:: plugins-zoomapisecret
-  :displayname: API secret (Plugins - Zoom)
-  :systemconsole: Plugins > Zoom
-  :configjson: N/A
-  :environment: N/A
-  :description: Specify the API Secret generated by Zoom for your API key.
-
-API secret
-~~~~~~~~~~
-
-+------------------------------------------------------------+------------------------------------------+
-| Specify the API Secret generated by Zoom for your API key. | - System Config path: **Plugins > Zoom** |
-+------------------------------------------------------------+------------------------------------------+
-
-.. config:setting:: plugins-zoomwebhooksecret
-  :displayname: API secret (Plugins - Zoom)
-  :systemconsole: Plugins > Zoom
-  :configjson: N/A
-  :environment: N/A
-  :description: Generate a secret for the webhook URL endpoint used to authenticate the webhook to Mattermost.
-
-Webhook secret
-~~~~~~~~~~~~~~
-
-+------------------------------------------------------------------------------------------------+------------------------------------------+
-| Generate a secret for the webhook URL endpoint used to authenticate the webhook to Mattermost. | - System Config path: **Plugins > Zoom** |
-| Regenerating the secret invalidates your existing Zoom plugin.                                 |                                          |
-+------------------------------------------------------------------------------------------------+------------------------------------------+
-
-.. config:setting:: plugins-zoomsigpublickeyfile
-  :displayname: Signature public key file (Plugins - Zoom)
+.. config:setting:: plugins-sigpublickeyfile
+  :displayname: Signature public key file (Plugins)
   :systemconsole: N/A
   :configjson: SignaturePublicKeyFiles
   :environment: N/A
@@ -1619,8 +1423,8 @@ In addition to the Mattermost plugin signing key built into the server, each pub
 | This feature's ``config.json`` setting is ``"SignaturePublicKeyFiles": {}`` with string array input consisting of contents that are relative or absolute paths to signature files.              |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: plugins-zoomchimeraoauthproxyurl
-  :displayname: Chimera OAuth proxy URL (Plugins - Zoom)
+.. config:setting:: plugins-chimeraoauthproxyurl
+  :displayname: Chimera OAuth proxy URL (Plugins)
   :systemconsole: N/A
   :configjson: ChimeraOAuthProxyUrl
   :environment: N/A
