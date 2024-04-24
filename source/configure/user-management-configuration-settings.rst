@@ -134,7 +134,7 @@ Add or remove users from teams using the System Console.
 .. image:: ../images/add-user-to-team.png
   :alt: Add a user to a Mattermost team using the System Console.
 
-4. To remove the user from a specific team, select **More** |more-icon| associated that team name on the **User Cofiguration** page, and select **Remove from team**.
+4. To remove the user from a specific team, select **More** |more-icon| next to the team name, and select **Remove from team**.
 
 .. image:: ../images/remove-user-from-team.png
   :alt: Remove a user from a Mattermost team using the System Console.
