@@ -455,7 +455,7 @@ ICE host port override
   :displayname: RTCD service URL (Plugins - Calls)
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.Plugins.com.mattermost.calls.rtcdserviceurl
-  :environment: N/A
+  :environment: MM_CALLS_RTCD_URL
   :description: The URL to a running `rtcd <https://github.com/mattermost/rtcd>`__ service instance that will host the calls. When set (non empty) all the calls will be handled by this external service.
 
 RTCD service URL
