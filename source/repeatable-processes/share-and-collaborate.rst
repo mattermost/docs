@@ -105,4 +105,4 @@ Channel export
 .. include:: ../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
-System admins can export channel data. See the :doc:`export Mattermost channel data </comply/export-mattermost-channel-data>` documentation for details on enabling and using this fucntionality.
+System admins can export channel data. See the :doc:`export channel data </comply/export-mattermost-channel-data>` documentation for details on enabling and using this fucntionality.
