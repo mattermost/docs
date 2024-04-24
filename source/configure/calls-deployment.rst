@@ -13,7 +13,7 @@ This document provides information on how to successfully make the Calls plugin 
 - `Configuration <#configuration>`__
 - `Performance <#performance>`__
 - `RTCD Service <#the-rtcd-service>`__
-- `Configure recording, transcriptions, and live captions <#configure-recording-and-transcriptions>`__
+- `Configure recording, transcriptions, and live captions <#configure-recording-transcriptions-and-live-captions>`__
 - `Kubernetes deployments <#kubernetes-deployments>`__
 - `Frequently asked questions <#frequently-asked-questions>`__
 - `Troubleshooting <#troubleshooting>`__
