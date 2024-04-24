@@ -105,4 +105,4 @@ Channel export
 .. include:: ../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
-Exporting the contents of a channel requires the channel export plugin. See the `Channel Export plugin documentation <https://github.com/mattermost/mattermost-plugin-channel-export#readme>`__ for more information.
+System admins can export channel data. See the :doc:`export Mattermost channel data </comply/export-mattermost-channel-data>` documentation for details on enabling and using this fucntionality.

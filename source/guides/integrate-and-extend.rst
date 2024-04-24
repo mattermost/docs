@@ -6,13 +6,9 @@ Integrate and extend Mattermost
   :hidden:
   :titlesonly:
 
-    AI Copilot plugin </integrate/ai-copilot-plugin>
-    Channel Export plugin </integrate/export-mattermost-channel-data>
     GitHub plugin </integrate/github-interoperability>
     GitLab plugin </integrate/gitlab-interoperability>
     Jira </integrate/jira-interoperability>
-    Legal hold
-    Performance metrics
     Microsoft Teams </integrate/ms-teams-interoperability>
     ServiceNow </integrate/servicenow-interoperability>
     Zoom </integrate/zoom-interoperability>
@@ -24,13 +20,9 @@ Interoperability with pre-packaged integrations
 
 Your Mattermost deployment comes with the following integrations you can configure and use:
 
-* :doc:`AI Copilot plugin </integrate/ai-copilot-plugin>` - Connect and use the Mattermost AI Copilot integration.
-* :doc:`Channel Export plugin </integrate/export-mattermost-channel-data>` - Learn how to export channel data.
 * :doc:`GitHub interoperability </integrate/github-interoperability>` - Connect your GitHub instance to your Mattermost instance.
 * :doc:`GitLab interoperability </integrate/gitlab-interoperability>` - Connect your GitLab instance to your Mattermost instance.
 * :doc:`Jira interoperability </integrate/jira-interoperability>` - Connect your Jira instance to your Mattermost instance.
-* :doc:`Legal hold
-* :doc:`Performance metrics
 * :doc:`Microsoft Teams </integrate/ms-teams-interoperability>` - Connect your operational workflows through the Mattermost app while staying connected to an all-employee platform, all in one place.
 * :doc:`ServiceNow </integrate/servicenow-interoperability>` - Connect your ServiceNow to your Mattermost instance.
 * :doc:`Zoom plugin </integrate/zoom-interoperability>` - Learn how to connect your Zoom instance to your Mattermost instance.

@@ -9,8 +9,6 @@ Ensure important data isn't trapped in silos by migrating data between systems o
 Enable
 ------
 
-You need to be a Mattermost system admin to export channel data.
-
 .. note::
 
   For Mattermost Cloud deployments, no setup is required. See the `usage <#usage>`__ section below for details on exporting channel data.
@@ -35,9 +33,9 @@ We recommend upgrading this feature as new versions are released. Generally, upd
 Usage
 ------
 
-Use the ``/export`` slash command in a channel to export the current channel's message data into a CSV-formatted file.
+You need to be a Mattermost system admin to export channel data.
 
-.. Engineering questions: who can run this slash command -- admins only? what data is/isn't included? Is the admin prompted to download the CSV file?
+Use the ``/export`` slash command in a channel to export the current channel's message data into a CSV-formatted file.
 
 Get help
 --------
@@ -46,7 +44,7 @@ Mattermost customers can open a `Mattermost support case <https://mattermost.zen
 
 For questions, feedback, and assistance, join our pubic `Integrations and Apps channel <https://community.mattermost.com/core/channels/integrations>`_ on the `Mattermost Community Server <https://community.mattermost.com/>`_ for assistance, or join us on the  `Mattermost Discussion Forum <https://forum.mattermost.org/c/plugins>`_.
 
-Customize this plugin
----------------------
+Customize this integration
+--------------------------
 
 This plugin contains both a server and web app portion. See the `Channel Export plugin README documentation <https://github.com/mattermost/mattermost-plugin-channel-export?tab=readme-ov-file#development>`_ on GitHub for details. Visit the `Mattermost Developer Workflow <https://developers.mattermost.com/extend/plugins/developer-workflow/>`_ and `Mattermost Developer environment setup <https://developers.mattermost.com/extend/plugins/developer-setup/>`_ for information about developing, customizing, and extending Mattermost functionality.
