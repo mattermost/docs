@@ -482,7 +482,7 @@ RTCD service URL
   :displayname: Max call participants (Plugins - Calls)
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.Plugins.com.mattermost.calls.maxcallparticipants
-  :environment: N/A
+  :environment: MM_CALLS_MAX_PARTICIPANTS
   :description: The maximum number of participants that can join a single call. Default value is **0** (unlimited). The maximum recommended setting is 200.
 
 Max call participants
@@ -698,7 +698,7 @@ Enable call recordings (Beta)
   :displayname: Job service URL (Plugins - Calls)
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.Plugins.com.mattermost.calls.jobserviceurl
-  :environment: N/A
+  :environment: MM_CALLS_JOB_SERVICE_URL
   :description: The URL to a running job service where all the processing related to recordings happens.
   
 Job service URL
