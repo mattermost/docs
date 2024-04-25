@@ -364,6 +364,8 @@ redirects = {
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-channel-delete",
 "administration/version-archive.html":
 	"https://docs.mattermost.com/upgrade/version-archive.html",
+"administration/mmctl-cli-tool.html#local-mode":
+	"https://docs.mattermost.com/configure/experimental-configuration-settings.html#enable-local-mode-for-mmctl",
 
 # Boards redirects
 "boards/navigating-mattermost-boards.html":
@@ -2224,7 +2226,7 @@ redirects = {
 "install/install-kubernetes-operator.html":
         "https://docs.mattermost.com/install/install-kubernetes.html",
 "install/install-ubuntu-1804.html":
-        "https://docs.mattermost.com/install/installing-ubuntu-1804-LTS.html",
+        "https://docs.mattermost.com/install/install-ubuntu",
 "install/install-ubuntu-2004.html":
         "https://docs.mattermost.com/install/installing-ubuntu-2004-LTS.html",
 "install/install-mmte-helm-gitlab-helm.html":
