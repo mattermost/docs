@@ -27,7 +27,7 @@ Everyone who joins a Mattermost workspace is automatically added to two default 
 - **Off-Topic** is great for fun, social, non-work-related conversations.
 
 .. note::
-  All users are added to the **Off-Topic** and **Town Square** channels automatically. Users can't :ref:`archive <collaborate/archive-unarchive-channels:archive a channel>`, :ref:`unarchive <collaborate/archive-unarchive-channels:unarchive a channel>`, or :ref:`leave <collaborate/join-leave-channels:leave a channel>` these channels.
+  All users are added to the **Off-Topic** and **Town Square** channels automatically. Town Square can't be :ref:`archived <collaborate/archive-unarchive-channels:archive a channel>` or :doc:`converted to a private channel </collaborate/convert-public-channels>`, and users can't :ref:`leave <collaborate/join-leave-channels:leave a channel>` the Town Square channel.
 
 Channel sidebar
 ----------------

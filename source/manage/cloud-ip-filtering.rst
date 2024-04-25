@@ -75,11 +75,7 @@ To edit or remove an existing IP range from the whitelist:
 Unable to access your workspace?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you are unable to access your workspace due to previously set IP filters, and you need to regain access to your workspace, your workspace owner can:
-
-1. Log in to the `Mattermost Customer Portal <https://customers.mattermost.com/>`_.
-2. Select the **IP Filtering** menu item in the left hand side bar.
-3. Select **Disable IP Filtering**.
+If you are unable to access your workspace due to previously set IP filters, and you need to regain access to your workspace, `contact our support team <https://mattermost.com/support/>`_.
 
 .. note::
 
