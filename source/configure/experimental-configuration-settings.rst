@@ -109,7 +109,7 @@ Link metadata timeout
 Adds a configurable timeout for requests made to return link metadata. If the metadata is not returned before this timeout expires, the message will post without requiring metadata. This timeout covers the failure cases of broken URLs and bad content types on slow network connections.
 
 +---------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"LinkMetadataTimeoutMilliseconds": 5000`` with numerical input.                     |
+| This feature's ``config.json`` setting is ``"LinkMetadataTimeoutMilliseconds``: 5000`` with numerical input.                    |
 +---------------------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: exp-emailbatchbuffersize
@@ -124,8 +124,13 @@ Email batching buffer size
 
 Specify the maximum number of notifications batched into a single email.
 
+.. note::
+  
+  - We recommend increasing the buffer size from the default value if you see the following error in the Mattermost logs: ``Email batching job's receiving buffer was full. Please increase the EmailBatchingBufferSize. Falling back to sending immediate mail.`` Increasing this value will ensure emails are queued up, without impacting server performance.
+  - Notifications will be sent instantly if the queue of emails exceeds the `email batching interval <#id1>`_ configured. 
+
 +--------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``EmailBatchingBufferSize": 256`` with numerical input.                        |
+| This feature's ``config.json`` setting is ``EmailBatchingBufferSize``: 256`` with numerical input.                       |
 +--------------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: exp-emailbatchinterval
@@ -138,7 +143,13 @@ Specify the maximum number of notifications batched into a single email.
 Email batching interval
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-Specify the maximum frequency, in seconds, which the batching job checks for new notifications. Longer batching intervals will increase performance.
+Specify the maximum frequency, in seconds, which the batching job checks for new notifications. 
+
+.. note::
+
+  - We recommend decreasing the email batching interval from the default value if you see the following error in the Mattermost logs: ``Email batching job's receiving buffer was full. Please increase the EmailBatchingBufferSize. Falling back to sending immediate mail.``. 
+  - Longer batching intervals may increase performance.
+  - Notifications will be sent instantly if the `queue of emails <#email-batching-buffer-size>`_ exceeds the email batching interval configured. 
 
 +-----------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``EmailBatchingInterval": 30`` with numerical input.                        |
@@ -393,27 +404,27 @@ Enable tutorial
 **False**: The tutorial is disabled. Users are placed in Town Square when they open Mattermost for the first time after account creation.
 
 +--------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableTutorial": true`` with options ``true`` and ``false``.                                  |
+| This feature's ``config.json`` setting is ``"ServiceSettings.EnableTutorial": true`` with options ``true`` and ``false``.                  |
 +--------------------------------------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: exp-enableonboarding
-  :displayname: Enable onboarding (Experimental)
+.. config:setting:: exp-enableonboardingflow
+  :displayname: Enable onboarding flow (Experimental)
   :systemconsole: Experimental > Features
-  :configjson: EnableOnboarding
+  :configjson: EnableOnboardingFlow
   :environment: N/A
 
   - **true**: **(Default)** New Mattermost users are shown key tasks to complete as part of initial onboarding.
   - **false**: User onboarding tasks are disabled. Users are placed in Town Square when they open Mattermost for the first time after account creation.
 
-Enable onboarding
-~~~~~~~~~~~~~~~~~
+Enable onboarding flow
+~~~~~~~~~~~~~~~~~~~~~~
 
 **True**: New Mattermost users are shown key tasks to complete as part of initial onboarding.
 
 **False**: User onboarding tasks are disabled. Users are placed in Town Square when they open Mattermost for the first time after account creation.
 
 +--------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableOnboarding": true`` with options ``true`` and ``false``.                                |
+| This feature's ``config.json`` setting is ``"ServiceSettings.EnableOnboardingFlow": true`` with options ``true`` and ``false``.            |
 +--------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: exp-enableusertypingmessages
@@ -1297,7 +1308,9 @@ Indicates how many images can be decoded concurrently at once. The default value
 
 .. note::
 
-  This configuration setting affects the total memory consumption of the server. The maximum memory of a single image is dictated by ``MaxImageResolution * 24 bytes`` Therefore, a good rule of thumb to follow is that ``MaxImageResolution* MaxImageDecoderConcurrency * 24`` should be less than the allocated memory for image decoding.
+  - This configuration setting affects the total memory consumption of the server. The maximum memory of a single image is dictated by ``MaxImageResolution * 24 bytes``, where the default maximum image resolution value is 33MB.
+  - Therefore, a good rule of thumb to follow is that ``33MB * MaxImageDecoderConcurrency * 24`` should be less than the total memory for the server. 
+  - For example, if you have a 4-core server, you should leave aside at least ``33 * 4 * 24 = 3168MB`` memory for image processing. Otherwise, adjust the `MaxImageResolution <#maximum-image-resolution>`_ configuration setting to adjust the amount of memory needed for image processing.
 
 +--------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"MaxImageDecoderConcurrency": "-1"`` with numerical input. |
@@ -2031,7 +2044,7 @@ When not set, every user is added to the ``off-topic`` and ``town-square`` chann
 
 .. note::
 
-   Even if ``town-square`` is not listed, every user is added to that channel after joining a new team.
+   Even if ``town-square`` and ``off-topic`` aren't listed, every user is added to these channels automatically when joining a new team.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ExperimentalDefaultChannels": []`` with string array input consisting of channel names, such as ``["announcement", "developers"]``. |

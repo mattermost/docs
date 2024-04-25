@@ -56,13 +56,13 @@ Data management
 
 - **Data Retention:** Use :doc:`data retention </comply/data-retention-policy>` to automatically erase data after a set period of time, a feature that meets the Right to Erasure principle. In Team Edition, you can use database scripts to achieve the same result.
 - **Profile Deletion:** Delete a user’s personal information via :ref:`mmctl user delete <manage/mmctl-command-line-tool:mmctl user delete>`. This permanently deletes all user information including messages created by the user.
-- **Self-Hosted Push Notification Service:** Self-host your own push notification service, or deploy mobile apps with any EMM provider that supports `AppConfig <https://www.appconfig.org/members/>`_ to meet security and compliance policies. See :doc:`our Mobile App deployment documentation </deploy/mobile-overview>` to learn more.
+- **Self-Hosted Push Notification Service:** Self-host your own push notification service, or deploy mobile apps with any EMM provider that supports `AppConfig <https://www.appconfig.org/>`_ to meet security and compliance policies. See :doc:`our Mobile App deployment documentation </deploy/mobile-overview>` to learn more.
 
 Data portability
 ^^^^^^^^^^^^^^^^^
 
 - **Data Import:** Use the :doc:`bulk loading tool </onboard/bulk-loading-data>` to migrate data from an existing messaging system, or for pre-populating a new installation with data. :ref:`Review this guide <onboard/migrating-to-mattermost:migrate from slack>` which summarizes the different approaches and meets the `Right to Data Portability <https://gdpr-info.eu/art-20-gdpr/>`_ principle.
-- **Data Export:** Use :doc:`compliance exports </comply/compliance-export>` to export conversations from public, private and direct message channels in XML or EML format. Those in Team Edition can export conversations directly from the database, both `in PostgreSQL <https://www.a2hosting.com/kb/developer-corner/postgresql/import-and-export-a-postgresql-database>`_ and `in MySQL <https://www.itworld.com/article/2833078/it-management/3-ways-to-import-and-export-a-mysql-database.html>`_.
+- **Data Export:** Use :doc:`compliance exports </comply/compliance-export>` to export conversations from public, private and direct message channels in XML or EML format. Those in Team Edition can export conversations directly from the database, both in PostgreSQL and in MySQL.
 
 Accessibility compliance
 -------------------------
@@ -72,7 +72,7 @@ Adherence with accessibility standards is assisted in the following ways:
 - **508 Compliance:** For U.S. public sector organizations seeking to confirm 508 compliance, Mattermost publicly shares its :doc:`Voluntary Product Accessibility Template (VPAT) online </about/vpat>`.
 - **WCAG 2.0L:** For meeting Web Contact Accessibility Guidelines 2.0 (WCAG), Mattermost has received a third-party "A" rating and is working towards an "AA" rating.
 - **ADA:** Mattermost compliance with the Americans with Disabilities Act (ADA) is achieved by offering the accessibility support detailed in the VPAT and WCAG 2.0 guidelines with Mattermost's online experience as the interface to accessibility tools.
-- **Remediation:** Any technical issue in a current or future product release that would prevent compliance with accessibility ratings stated in product documentation would be considered a product defect and Mattermost would welcome the `public filing of an issue report against the defect <https://handbook.mattermost.com/contributors/contributors/ways-to-contribute>`_ so that it may be resolved.
+- **Remediation:** Any technical issue in a current or future product release that would prevent compliance with accessibility ratings stated in product documentation would be considered a product defect and Mattermost would welcome the `public filing of an issue report against the defect <https://developers.mattermost.com/contribute/why-contribute/#youve-found-a-bug>`_ so that it may be resolved.
 
 U.S. trade compliance 
 ---------------------
@@ -87,7 +87,7 @@ Mattermost, Inc. implements a number of controls and processes to comply with U.
 
 4. **Legal restrictions:** Our commercial software contains legal terms that apply to both administrators and end users prohibiting use that would violate U.S. trade laws.
 
-U.S. trade laws referenced here can be found online at: https://www.bis.doc.gov/ and https://ofac.treasury.gov/.
+U.S. trade laws referenced here can be found online at: https://www.bis.gov and https://ofac.treasury.gov/.
 
 If you feel your organization is miscategorized under U.S. trade laws or sanctions, please email compliance@mattermost.com. 
 
@@ -137,7 +137,7 @@ This overview is specific to the `U.S. Export Administration Regulations <https:
 General information
 ~~~~~~~~~~~~~~~~~~~~
 
-Start by taking a look at the `U.S. Bureau of Industry and Security <https://www.bis.doc.gov/>`_ website. Then, navigate to `Part 730 <https://www.bis.doc.gov/index.php/documents/regulation-docs/410-part-730-general-information/file>`_ of the U.S. Export Administration Regulations to understand what the regulations cover and what is “Subject to
+Start by taking a look at the `U.S. Bureau of Industry and Security <https://www.bis.gov/>`_ website. Then, navigate to `Part 730 <https://www.bis.doc.gov/index.php/documents/regulation-docs/410-part-730-general-information/file>`_ of the U.S. Export Administration Regulations to understand what the regulations cover and what is “Subject to
 the EAR” under `734.2 <https://www.bis.doc.gov/index.php/documents/regulation-docs/412-part-734-scope-of-the-export-administration-regulations/file>`_ (“export controlled”).
 
 Export classification and licensing

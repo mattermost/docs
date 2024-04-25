@@ -108,7 +108,7 @@ Much of the preparation work is focused on ensuring the environment is deployed 
 
 - Evaluate external network access requirements
  
- - The `Mattermost Marketplace <https://mattermost.com/marketplace>`__ is a service hosted by Mattermost that functions as a central place to store the current versions of available Mattermost integrations.  See :ref:`Enable Remote Marketplace <configure/plugins-configuration-settings:enable remote marketplace>` documentation for details about required external network access.
+ - The `Mattermost Marketplace <https://mattermost.com/marketplace>`_ is a service hosted by Mattermost that functions as a central place to store the current versions of available Mattermost integrations.  See :ref:`Enable Remote Marketplace <configure/plugins-configuration-settings:enable remote marketplace>` documentation for details about required external network access.
  - Mattermost supports external GIF providers. See :ref:`GIF Commands <configure/integrations-configuration-settings:enable gif picker>` configuration documentation for details about required external network access.
 
 3. Create development, staging, and production environments
@@ -232,7 +232,7 @@ Now that you have an environment in place, we recommend working through the foll
  - Recommendation: Start with fewer teams in your early roll out
  - Resource: https://docs.mattermost.com/messaging/organizing-channels.html 
 
-- Determine and create key channels to support your users. Town Square and Off-Topic are built in channels in every team
+- Determine and create key channels to support your users. Town Square and Off-Topic are automatically created channels available on every team
 
  - Recommendation: Add a “Support” channel for your users to escalate questions 
 
@@ -337,7 +337,6 @@ Now that you have an environment in place, we recommend working through the foll
 
  - mmctl Command Line Tool Resource: https://docs.mattermost.com/manage/mmctl-command-line-tool.html
  - Command Line Tools Resource: https://docs.mattermost.com/manage/command-line-tools.html
- - Database Scripts Resource: https://forum.mattermost.com/t/scripts-for-performing-discreet-tasks/13527 
 
 Review the roll out 
 ~~~~~~~~~~~~~~~~~~~
@@ -368,8 +367,6 @@ We recommend that you review your rollout on a cadence that matches your iterati
  - Review: Total posts, total teams, total channels, total group chats, total direct chats, top channels, top teams
 
 - Analyze usage by lines of business and peak usage times
-
- - Resources: https://forum.mattermost.com/t/scripts-for-performing-discreet-tasks/13527
 
 3. Analyze system performance
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
