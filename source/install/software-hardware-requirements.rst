@@ -97,7 +97,7 @@ Database software
 ^^^^^^^^^^^^^^^^^
 
 -  PostgreSQL 11.0+
--  MySQL 5.7.12, 8.0.12+ (see note below on MySQL 8 support)
+-  MySQL 8.0.12+ (see note below on MySQL 8 support)
 
 Amazon Aurora equivalents of both PostgreSQL and MySQL are also supported.
 
