@@ -117,7 +117,7 @@ Channels are nested below the team they belong to in the team and channel list. 
 
 .. note::
 
-   - When a team is added, the ``Town Square`` and ``Off-Topic`` channels will also be added as default, as well as any default channels set in the :ref:`ExperimentalDefaultChannels config setting <configure/experimental-configuration-settings:default channels>`.
+   - When a team is added, the ``Town Square`` and ``Off-Topic`` channels will also be created automatically, as well as any default channels set in the :ref:`ExperimentalDefaultChannels config setting <configure/experimental-configuration-settings:default channels>`.
    - When a channel is added without setting the team explicitly, the team will be shown in the **Team and Channel Membership** listing, but it won't be added to the group specifically. Because of this dependency, when the channel is removed, the team will also be removed. Teams are listed in parentheses after the channel name in the channel selector.
 
 Synchronize teams and channels
