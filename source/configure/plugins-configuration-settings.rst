@@ -455,7 +455,7 @@ ICE host port override
   :displayname: RTCD service URL (Plugins - Calls)
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.Plugins.com.mattermost.calls.rtcdserviceurl
-  :environment: N/A
+  :environment: MM_CALLS_RTCD_URL
   :description: The URL to a running `rtcd <https://github.com/mattermost/rtcd>`__ service instance that will host the calls. When set (non empty) all the calls will be handled by this external service.
 
 RTCD service URL
@@ -467,7 +467,7 @@ RTCD service URL
 +---------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | The URL to a running `rtcd <https://github.com/mattermost/rtcd>`__ service instance that will host the calls. | - System Config path: **Plugins > Calls**                                                                                                                 |
 |                                                                                                               | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.calls.rtcdserviceurl``                                                                 |
-|                                                                                                               | - Environment variable: N/A                                                                                                                               |
+|                                                                                                               | - Environment variable: ``MM_CALLS_RTCD_URL``                                                                                                             |
 | When set (non empty) all the calls will be handled by this external service.                                  |                                                                                                                                                           |
 |                                                                                                               |                                                                                                                                                           |
 | This is an optional field. Changing this setting requires a plugin restart to take effect.                    |                                                                                                                                                           |
@@ -482,7 +482,7 @@ RTCD service URL
   :displayname: Max call participants (Plugins - Calls)
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.Plugins.com.mattermost.calls.maxcallparticipants
-  :environment: N/A
+  :environment: MM_CALLS_MAX_PARTICIPANTS
   :description: The maximum number of participants that can join a single call. Default value is **0** (unlimited). The maximum recommended setting is 200.
 
 Max call participants
@@ -494,7 +494,7 @@ Max call participants
 +-----------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+
 | This setting limits the number of participants that can join a single call. | - System Config path: **Plugins > Calls**                                                                     |
 |                                                                             | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.calls.maxcallparticipants``                |
-|                                                                             | - Environment variable: N/A                                                                                   |
+|                                                                             | - Environment variable: ``MM_CALLS_MAX_PARTICIPANTS``                                                         |
 | Default is **0** (no limit).                                                |                                                                                                               |
 +-----------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+
 | **Note**: This setting is optional, but the recommended maximum number of participants is **200**.                                                                                          |
@@ -663,7 +663,7 @@ Enable simulcast for screen sharing (Experimental)
 +------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+
 | - **true**: Enables simulcast for screen sharing. This can help to improve screen sharing quality.                     | - System Config path: **Plugins > Calls**                                                                |
 | - **false**: Disables simulcast for screen sharing.                                                                    | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.calls.enablesimulcast``               |
-|                                                                                                                        | - Environment variable N/A                                                                               |
+|                                                                                                                        | - Environment variable: N/A                                                                              |
 +------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+
 | **Note**: This functionality has the following requirements:                                                                                                                                                                      |
 |                                                                                                                                                                                                                                   |
@@ -698,7 +698,7 @@ Enable call recordings (Beta)
   :displayname: Job service URL (Plugins - Calls)
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.Plugins.com.mattermost.calls.jobserviceurl
-  :environment: N/A
+  :environment: MM_CALLS_JOB_SERVICE_URL
   :description: The URL to a running job service where all the processing related to recordings happens.
   
 Job service URL
@@ -707,17 +707,19 @@ Job service URL
 .. include:: ../_static/badges/ent-selfhosted-only.rst
   :start-after: :nosearch:
 
-+------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| The URL to a running job service where all the processing related to recordings happens. The recorded files produced are stored in Mattermost. | - System Config path: **Plugins > Calls**                                                                                                                                                                                                                                                 |
-|                                                                                                                                                | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.calls.jobserviceurl``                                                                                                                                                                                                  |
-| This is a required field. Changing this setting requires a plugin restart to take effect.                                                      |                                                                                                                                                                                                                                                                                           |
-+------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **Note**:                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-|                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-| - The client will self-register the first time it connects to the service and store the authentication key in the database. If no client ID is explicitly provided, the diagnostic ID of the Mattermost installation will be used.                                                                                                                                                                                                         |
-| - The service URL supports credentials in the form ``http://clientID:authKey@hostname``. Alternatively these can be passed through environment overrides to the Mattermost server, namely ``MM_CALLS_JOB_SERVICE_CLIENT_ID`` and ``MM_CALLS_JOB_SERVICE_AUTH_KEY``.                                                                                                                                                                        |
-| - As of Calls v0.25 it's possible to override the site URL used by jobs to connect by setting the ``MM_CALLS_RECORDER_SITE_URL`` or ``MM_CALLS_TRANSCRIBER_SITE_URL`` environment variables respectively. This can be helpful to avoid the jobs from connecting through the public Site URL configured in Mattermost and thus potentially bypass the public network.                                                                       |
-+------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------+
+| The URL to a running job service where all the processing related to recordings happens. The recorded files produced are stored in Mattermost. | - System Config path: **Plugins > Calls**                                                            |
+|                                                                                                                                                | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.calls.jobserviceurl``             |
+| This is a required field. Changing this setting requires a plugin restart to take effect.                                                      | - Environment variable: ``MM_CALLS_JOB_SERVICE_URL``                                                 |
++------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------+
+| **Note**:                                                                                                                                                                                                                                             |
+|                                                                                                                                                                                                                                                       |
+| - The client will self-register the first time it connects to the service and store the authentication key in the database. If no client ID is explicitly provided, the diagnostic ID of the Mattermost installation will be used.                    |
+| - The service URL supports credentials in the form ``http://clientID:authKey@hostname``. Alternatively these can be passed through environment overrides to the Mattermost server, namely ``MM_CALLS_JOB_SERVICE_CLIENT_ID``                          |
+|   and ``MM_CALLS_JOB_SERVICE_AUTH_KEY``.                                                                                                                                                                                                              |
+| - As of Calls v0.25 it's possible to override the site URL used by jobs to connect by setting the ``MM_CALLS_RECORDER_SITE_URL`` or ``MM_CALLS_TRANSCRIBER_SITE_URL`` environment variables respectively. This can be helpful to avoid the jobs       |
+|   from connecting through the public Site URL configured in Mattermost and thus potentially bypass the public network.                                                                                                                                |
++------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: plugins-maximumcallrecordingduration
   :displayname: Maximum call recording duration (Plugins - Calls)
