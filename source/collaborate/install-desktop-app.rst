@@ -13,15 +13,15 @@ The Mattermost desktop app is available for Linux, Mac, and Windows operating sy
 - :doc:`Connect to multiple Mattermost servers </preferences/connect-multiple-workspaces>` from a single interface, and navigate between servers using keyboard shortcuts.
 - :doc:`Auto-start Mattermost </preferences/customize-desktop-app-experience>` when a user logs into their machine.
 - :doc:`Add Mattermost </preferences/customize-desktop-app-experience>` to the Windows Start menu, the Taskbar, the Dock, or the System Tray.
-- (Windows/macOS) :doc:`Deep link to the desktop app </preferences/customize-desktop-app-experience>` via the ``mattermost://`` protocol if the app is already installed.
-- (Linux) :doc:`Set up Desktop Entry </preferences/customize-desktop-app-experience>` for the application to more easily `integrate into a desktop environment <https://wiki.archlinux.org/index.php/Desktop_entries>`__.
+- :doc:`Deep link to the desktop app </preferences/customize-desktop-app-experience>` via the ``mattermost://`` protocol if the app is already installed. (Windows/macOS only)
+- :doc:`Set up Desktop Entry </preferences/customize-desktop-app-experience>` for the application to more easily `integrate into a desktop environment <https://wiki.archlinux.org/index.php/Desktop_entries>`_. (Linux only)
 
 See the :ref:`desktop app software requirements <install/software-hardware-requirements:desktop apps>` for details on supported operating systems and releases.
 
 Install and update the Mattermost desktop app
 ---------------------------------------------
 
-You can `download the desktop app directly from our Downloads page <https://mattermost.com/apps/>`__. You can also use the following installation guides for Linux, Mac, and Windows.
+You can download the `desktop app <https://mattermost.com/apps/>`_ directly from the Downloads page. You can also use the following installation guides for Linux, Mac, and Windows.
 
 .. tab:: Windows
 
@@ -29,31 +29,31 @@ You can `download the desktop app directly from our Downloads page <https://matt
 
   **Install the Mattermost Desktop App**
 
-    1. Download the latest version of the Mattermost desktop app: `32/64-bit version of Windows <https://releases.mattermost.com/desktop/5.7.0/mattermost-desktop-setup-5.7.0-win.exe>`__
+    1. Download the latest version of the Mattermost desktop app: `32/64-bit version of Windows <https://releases.mattermost.com/desktop/5.7.0/mattermost-desktop-setup-5.7.0-win.exe>`_
     2. From the **\Downloads** folder, right-click on the file ``mattermost-desktop-setup-5.7.0-win.exe``, then select **Open** to start an installer for the app. Once finished, the Mattermost desktop app opens automatically.
 
   **MSI Installer and group policies (beta)**
 
   You can download the latest version of the Mattermost desktop app MSI installer (Beta):
 
-    - MSI for `64-bit version of Windows <https://releases.mattermost.com/desktop/5.7.0/mattermost-desktop-5.7.0-x64.msi>`__
-    - MSI for `32-bit version of Windows <https://releases.mattermost.com/desktop/5.7.0/mattermost-desktop-5.7.0-x86.msi>`__
+    - MSI for `64-bit version of Windows <https://releases.mattermost.com/desktop/5.7.0/mattermost-desktop-5.7.0-x64.msi>`_
+    - MSI for `32-bit version of Windows <https://releases.mattermost.com/desktop/5.7.0/mattermost-desktop-5.7.0-x86.msi>`_
 
-  The following group policies are available:
+  The following group policies are available supporting a state option of Not Configured, Enabled, or Disabled:
 
-  +--------------------------+------------------------------------------------------------+----------------------+----------------------------+------------------+
-  | Group policy             | Description                                                | Mattermost release   | Setting                    | State options    |
-  +==========================+============================================================+======================+============================+==================+
-  | Enable Server Management | If disabled, management of servers in the                  | v4.3 or later        | ``EnableServerManagement`` | - Not Configured |   
-  |                          | app settings are disabled.                                 |                      |                            | - Enabled        |
-  |                          |                                                            |                      |                            | - Disabled       |
-  +--------------------------+------------------------------------------------------------+----------------------+----------------------------+                  |
-  | Default Server List      | Define one or more default, permanent servers.             | v4.3 or later        | ``DefaultServerList``      |                  |
-  +--------------------------+------------------------------------------------------------+----------------------+----------------------------+                  |
-  | Automatic Updates        | If disabled, automatic Desktop App updates are disabled.   | v5.1 or later        | ``EnableAutoUpdates``      |                  |
-  +--------------------------+------------------------------------------------------------+----------------------+----------------------------+------------------+
+  +--------------------------+------------------------------------------------------------+----------------------+----------------------------+
+  | Group policy             | Description                                                | Mattermost release   | Setting                    |
+  +==========================+============================================================+======================+============================+
+  | Enable Server Management | If disabled, management of servers in the                  | v4.3 or later        | ``EnableServerManagement`` |
+  |                          | app settings are disabled.                                 |                      |                            |
+  |                          |                                                            |                      |                            |
+  +--------------------------+------------------------------------------------------------+----------------------+----------------------------+
+  | Default Server List      | Define one or more default, permanent servers.             | v4.3 or later        | ``DefaultServerList``      |
+  +--------------------------+------------------------------------------------------------+----------------------+----------------------------+
+  | Automatic Updates        | If disabled, automatic Desktop App updates are disabled.   | v5.1 or later        | ``EnableAutoUpdates``      |
+  +--------------------------+------------------------------------------------------------+----------------------+----------------------------+
 
-  **Disable automatic updates**      
+  **Disable automatic updates**
   
   Automatic desktop app updates can be disabled by configuring the supported group policy. See the :doc:`MSI installer and group policy documentation </install/desktop-msi-installer-and-group-policy-install>` for instructions on installing the Mattermost Desktop App via an MSI installer, and configuring supported group policies. Changes to group policies require you to restart Mattermost for those changes to take effect.
 
@@ -63,16 +63,16 @@ You can `download the desktop app directly from our Downloads page <https://matt
 
   **Install from the App Store**
 
-  We recommend that you install the desktop app from the `App Store <https://apps.apple.com/app/mattermost-desktop/id1614666244>`__. When you install through the App Store, your desktop app updates automatically when a new release is available.
+  We recommend that you install the desktop app from the `App Store <https://apps.apple.com/app/mattermost-desktop/id1614666244>`_. When you install through the App Store, your desktop app updates automatically when a new release is available.
 
   **Download the Desktop App from GitHub**
 
-  You can `download the desktop app directly from our GitHub release page <https://github.com/mattermost/desktop/releases>`__. However, when you install the desktop app this way, you can't manually check for updates, and updates won't be installed automatically.
+  You can download the `desktop app <https://mattermost.com/apps/>`_ directly from the Downloads page. However, when you install the desktop app this way, you can't manually check for updates, and updates won't be installed automatically.
   
   1. Download the latest version of the Mattermost desktop app:
           
-     - `Intel systems <https://releases.mattermost.com/desktop/5.7.0/mattermost-desktop-5.7.0-mac-x64.dmg>`__
-     - `M1 systems <https://releases.mattermost.com/desktop/5.7.0/mattermost-desktop-5.7.0-mac-m1.dmg>`__ (Beta)
+     - `Intel systems <https://releases.mattermost.com/desktop/5.7.0/mattermost-desktop-5.7.0-mac-x64.dmg>`_
+     - `M1 systems <https://releases.mattermost.com/desktop/5.7.0/mattermost-desktop-5.7.0-mac-m1.dmg>`_ (Beta)
 
   2. Double-click the download to open the disk image.
 
@@ -83,7 +83,7 @@ You can `download the desktop app directly from our Downloads page <https://matt
 
 .. tab:: Ubuntu/Debian
 
-  Both a beta ``.deb`` package and an official APT repository is available for Debian 9 and for Ubuntu releases 18.04 LTS or later. Automatic app updates are supported and enabled. When a new version of the desktop app is released, your app updates automatically.
+  Both a beta ``.deb`` package and an official APT repository is available for Debian 9 and for Ubuntu releases 20.04 LTS or later. Automatic app updates are supported and enabled. When a new version of the desktop app is released, your app updates automatically.
 
   1. At the command line, set up the Mattermost repository on your system: 
 
@@ -105,7 +105,7 @@ You can `download the desktop app directly from our Downloads page <https://matt
 
   **Snapcraft package**
 
-  A snap is available for systems that have Snapcraft installed. Snapcraft is installed by default on Ubuntu 16.04 and later, but for most other Linux distributions you can install it manually. To install Snapcraft, see `Install snapd <https://snapcraft.io/docs/core/install>`__ on the Snapcraft website for details.
+  A snap is available for systems that have Snapcraft installed. Snapcraft is installed by default on Ubuntu 16.04 and later, but for most other Linux distributions you can install it manually. To install Snapcraft, see `Install snapd <https://snapcraft.io/docs/core/install>`_ on the Snapcraft website for details.
 
   1. At the command line, execute the following command: 
   
@@ -126,8 +126,8 @@ You can `download the desktop app directly from our Downloads page <https://matt
 
   1. Download the latest version of the Mattermost desktop app:
 
-      - 64-bit systems `mattermost-desktop-5.7.0-linux-x86_64.rpm <https://releases.mattermost.com/desktop/5.7.0/mattermost-desktop-5.7.0-linux-x86_64.rpm>`__
-      - 32-bit systems `mattermost-desktop-5.7.0-linux-i686.rpm <https://releases.mattermost.com/desktop/5.7.0/mattermost-desktop-5.7.0-linux-i686.rpm>`__
+      - 64-bit systems `mattermost-desktop-5.7.0-linux-x86_64.rpm <https://releases.mattermost.com/desktop/5.7.0/mattermost-desktop-5.7.0-linux-x86_64.rpm>`_
+      - 32-bit systems `mattermost-desktop-5.7.0-linux-i686.rpm <https://releases.mattermost.com/desktop/5.7.0/mattermost-desktop-5.7.0-linux-i686.rpm>`_
 
   2. At the command line, execute one of the following commands based on the package you downloaded:
 
@@ -168,8 +168,8 @@ You can `download the desktop app directly from our Downloads page <https://matt
 
   1. Download the latest version of the Mattermost desktop app:
 
-      - 64-bit systems: `mattermost-desktop-5.7.0-linux-x64.tar.gz <https://releases.mattermost.com/desktop/5.7.0/mattermost-desktop-5.7.0-linux-x64.tar.gz>`__
-      - 32-bit systems: `mattermost-desktop-5.7.0-linux-ia32.tar.gz <https://releases.mattermost.com/desktop/5.7.0/mattermost-desktop-5.7.0-linux-ia32.tar.gz>`__
+      - 64-bit systems: `mattermost-desktop-5.7.0-linux-x64.tar.gz <https://releases.mattermost.com/desktop/5.7.0/mattermost-desktop-5.7.0-linux-x64.tar.gz>`_
+      - 32-bit systems: `mattermost-desktop-5.7.0-linux-ia32.tar.gz <https://releases.mattermost.com/desktop/5.7.0/mattermost-desktop-5.7.0-linux-ia32.tar.gz>`_
 
   2. Extract the archive to a convenient location, then execute ``mattermost-desktop`` located inside the extracted directory.
 
@@ -194,8 +194,8 @@ The following additional documentation resources are also available for the Matt
 
 - :doc:`Desktop App changelog </deploy/desktop-app-changelog>`
 - :doc:`Configure your Desktop App experience </preferences/customize-desktop-app-experience>`
-- `Source code <https://github.com/mattermost/desktop>`__
-- `Contributor’s guide <https://developers.mattermost.com/contribute/desktop>`__
+- `Source code <https://github.com/mattermost/desktop>`_
+- `Contributor’s guide <https://developers.mattermost.com/contribute/desktop>`_
 
 Troubleshooting your Desktop App installation
 ----------------------------------------------
@@ -233,7 +233,7 @@ The app data might be corrupted. Remove all the files in ``%LOCALAPPDATA%\matter
 "The application "Mattermost" can't be opened" dialog
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-On macOS Catalina, this dialog can be triggered if the Mac Archive Utility is the default method for decompressing files. In this case using a third-party tool such as `Keka <https://www.keka.io>`__ or `Unarchiver <https://macpaw.com/the-unarchiver>`__ may resolve the problem.
+On macOS Catalina, this dialog can be triggered if the Mac Archive Utility is the default method for decompressing files. In this case using a third-party tool such as `Keka <https://www.keka.io>`_ or `Unarchiver <https://macpaw.com/the-unarchiver>`_ may resolve the problem.
 
 Desktop App window is black and doesn't load the page
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -244,7 +244,7 @@ Desktop App window is black and doesn't load the page
 4. Disable GPU hardware acceleration from **File > Settings** on Windows and Linux or **Mattermost > Settings** on macOS, and unselect **Use GPU hardware acceleration**.
 5. If you are using a special video driver, such as Optimus, try disabling it to see if the problem is resolved.
 
-If none of the above steps resolve the issue, please open a new ticket in the `Mattermost Troubleshooting Forum <https://forum.mattermost.com/t/how-to-use-the-troubleshooting-forum/150>`__.
+If none of the above steps resolve the issue, please open a new ticket in the `Troubleshooting forum <https://forum.mattermost.com/c/trouble-shoot>`_.
 
 Desktop App is not visible, but the Mattermost icon is in the Task Bar
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -290,12 +290,17 @@ Desktop app not responsive within Citrix Virtual Apps or Desktop Environment
 
 Append ``Mattermost.exe;`` to the Registry Key ``HKLM\SYSTEM\CurrentControlSet\Services\CtxUvi\UviProcessExcludes`` and reboot the system.
 
-For further assistance, review the `Troubleshooting forum <https://forum.mattermost.com/c/trouble-shoot>`__ for previously reported errors, or `join the Mattermost user community for troubleshooting help <https://mattermost.com/pl/default-ask-mattermost-community/>`__.
+For further assistance, review the `Troubleshooting forum <https://forum.mattermost.com/c/trouble-shoot>`_ for previously reported errors, or `join the Mattermost user community for troubleshooting help <https://mattermost.com/pl/default-ask-mattermost-community/>`_.
+
+Can I uninstall the desktop app I installed using snap on Linux?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Yes. Run the following command from a terminal window: ``sudo snap remove mattermost-desktop``.
 
 Report Desktop App issues
 -------------------------
 
-When reporting issues found in the Mattermost Desktop App, it's helpful to include the contents of the Developer Tools Console along with `the information on this page <https://support.mattermost.com/hc/en-us/articles/360060662492-Opening-a-Support-Ticket-for-Self-Managed-Deployments>`__. 
+When reporting issues found in the Mattermost Desktop App, it's helpful to include the contents of the Developer Tools Console along with `the information on this page <https://support.mattermost.com/hc/en-us/articles/360060662492-Opening-a-Support-Ticket-for-Self-Managed-Deployments>`_. 
 
 To access the Developer Tools Console:
 
@@ -308,5 +313,3 @@ To access the Developer Tools Console:
 You can open an additional set of developer tools for each server you have added to the desktop app. The tools can be opened by pasting this command in the Developer Tools Console you opened with the steps described above:
 
 ``document.getElementsByTagName("webview")[0].openDevTools();`` 
-
-To submit an improvement or correction to this documentation, select **Edit** at the top of this page.

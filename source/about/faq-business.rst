@@ -15,26 +15,26 @@ In contrast, Mattermost, as the copyright holder to the collection of the Matter
 How can I create an open source derivative work of Mattermost?
 --------------------------------------------------------------
 
-If you're looking to customize the look and feel of Mattermost, see `documentation on customization <https://github.com/mattermost/docs/issues/1006>`__. For advanced customization, the system's user experience is available in different repositories for web, mobile apps, and desktop apps and custom experiences can be developed and integrated with either Mattermost Team Edition or Mattermost Enterprise Edition via the system APIs and drivers.
+If you're looking to customize the look and feel of Mattermost, see `documentation on customization <https://github.com/mattermost/docs/issues/1006>`_. For advanced customization, the system's user experience is available in different repositories for web, mobile apps, and desktop apps and custom experiences can be developed and integrated with either Mattermost Team Edition or Mattermost Enterprise Edition via the system APIs and drivers.
 
 If, instead of using Mattermost Team Edition or Mattermost Enterprise Edition, you choose to compile your own version of the system using the open source code from ``/mattermost-server``, there are a number of factors to consider:
 
 Security
 ~~~~~~~~
 
-- If you run a fork of the Mattermost server, we highly recommend you only deploy the system securely behind a firewall and to pay close attention to `Mattermost security updates <https://mattermost.com/security-updates/>`__. Mattermost Team Edition and Mattermost Enterprise Edition release security update patches when reports of new attacks are received and verified. Mattermost waits until 14 days after a security patch is released before publicly detailing its nature so that users and customers can upgrade before the security vulnerability is widely known. A malicious user can potentially make use of Mattermost security disclosures to exploit a fork of Mattermost if the security upgrade is not promptly incorporated into the forked version.
+- If you run a fork of the Mattermost server, we highly recommend you only deploy the system securely behind a firewall and to pay close attention to `Mattermost security updates <https://mattermost.com/security-updates/>`_. Mattermost Team Edition and Mattermost Enterprise Edition release security update patches when reports of new attacks are received and verified. Mattermost waits until 14 days after a security patch is released before publicly detailing its nature so that users and customers can upgrade before the security vulnerability is widely known. A malicious user can potentially make use of Mattermost security disclosures to exploit a fork of Mattermost if the security upgrade is not promptly incorporated into the forked version.
 
 Rebranding
 ~~~~~~~~~~
 
-- When you create a derivative version of Mattermost and share it with others as a product, you need to replace the Mattermost name and logo from the system, among other requirements, per the `Mattermost trademark policy <https://mattermost.com/trademark-standards-of-use/>`__.
+- When you create a derivative version of Mattermost and share it with others as a product, you need to replace the Mattermost name and logo from the system, among other requirements, per the `Mattermost trademark policy <https://mattermost.com/trademark-standards-of-use/>`_.
 - You can rebrand your system using :doc:`custom branding tools </configure/custom-branding-tools>`.
-- For advanced whitelabelling, and to whitelabel in Team Edition under MIT license without Enterprise Edition branding tools, you can manually update files on the Mattermost server `per product documentation. <https://github.com/mattermost/docs/issues/1006>`__ This can also be done without forking.
+- For advanced whitelabelling, and to whitelabel in Team Edition under MIT license without Enterprise Edition branding tools, you can manually update files on the Mattermost server `per product documentation. <https://github.com/mattermost/docs/issues/1006>`_ This can also be done without forking.
 
 Copyright and Licensing of ``/mattermost-server`` open source code
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- Compiling and distributing your own version of the open source Mattermost ``/mattermost-server`` repo requires a) compliance with licenses in the repo, including `NOTICE.txt <https://github.com/mattermost/mattermost/blob/master/NOTICE.txt>`__, and b) the compiled version of the ``/mattermost-server`` source code should have the same open source license as the source code, `per our licensing policy </about/subscription.html/>`__.
+- Compiling and distributing your own version of the open source Mattermost ``/mattermost-server`` repo requires a) compliance with licenses in the repo, including `NOTICE.txt <https://github.com/mattermost/mattermost/blob/master/NOTICE.txt>`_, and b) the compiled version of the ``/mattermost-server`` source code should have the same open source license as the source code, :doc:`per our licensing policy </about/faq-license>`.
 
 Other considerations
 ~~~~~~~~~~~~~~~~~~~~
@@ -47,7 +47,7 @@ Other considerations
 Will Mattermost complete questionnaires requiring confidential data without an NDA?
 -----------------------------------------------------------------------------------
 
-No, Mattermost will not complete questionnaires requiring confidential data without a non-disclosure agreement. You can find `Mattermost's standard mutual non-disclosure agreement online <https://docs.google.com/document/d/10Qc2kxxZGYNzp9b19oEhItRM01OPyrWRISJ2rbm1gvc/edit>`__.
+No, Mattermost will not complete questionnaires requiring confidential data without a non-disclosure agreement. You can find Mattermost's `standard mutual non-disclosure agreement <https://docs.google.com/document/d/10Qc2kxxZGYNzp9b19oEhItRM01OPyrWRISJ2rbm1gvc/edit>`_ online.
 
 Why does Mattermost have a discount for certain kinds of non-profits but not for others?
 ----------------------------------------------------------------------------------------
@@ -59,7 +59,7 @@ See our :ref:`License and Subscription <about/subscription:mattermost nonprofit 
 Can I create a derivative work of the Mattermost /mattermost-server repository that is not open source?
 -------------------------------------------------------------------------------------------------------
 
-The Mattermost open source project was created by `a group of developers who had their data paywalled by a proprietary online messaging service <https://mattermost.com/about-us/>`__ and felt it was unfair.
+The Mattermost open source project was created by `a group of developers who had their data paywalled by a proprietary online messaging service <https://mattermost.com/about-us/>`_ and felt it was unfair.
 
 Because of this, the Mattermost /mattermost-server repository uses an open source license that requires derivative works to use the same open source license. This prevents the creation of derivative works that are not open source, and the situation where end users would not have access to the source code of the systems they use, and hence be at risk of "lock in".
 

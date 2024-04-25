@@ -13,6 +13,7 @@ Please see the :doc:`Mattermost Deployment Overview </deploy/deployment-overview
 
 .. image:: ../images/network-diagram.svg
    :alt: Mattermost network diagram shows how the components can be deployed. Includes optional configurations for scaling for larger enterprise organizations.
+   :class: bg-white
 
 Software requirements
 ---------------------
@@ -28,7 +29,7 @@ Desktop apps
 
     "Windows", "Windows 10+", "Windows 10+"
     "Mac", "macOS 11+", "macOS 11+"
-    "Linux", "Ubuntu LTS releases 18.04 or later", "Ubuntu LTS releases 18.04 or later"
+    "Linux", "Ubuntu LTS releases 22.04 or later", "Ubuntu LTS releases 22.04 or later"
 
 Though not officially supported, the Linux desktop app also runs on RHEL/CentOS 7+.
 
@@ -87,7 +88,7 @@ Server software
 Mattermost server operating system
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-- Ubuntu 18.04, Debian Buster, CentOS 6+, CentOS 7+, RedHat Enterprise Linux 7+, Oracle Linux 6+, Oracle Linux 7+.
+- Ubuntu, Debian Buster, CentOS 6+, CentOS 7+, RedHat Enterprise Linux 7+, Oracle Linux 6+, Oracle Linux 7+.
 - Using the Mattermost `Docker deployment <https://github.com/mattermost/docker>`__ on a Docker-compatible operating system (Linux-based OS) is still recommended.
 
 While community support exists for Fedora, FreeBSD, and Arch Linux, Mattermost does not currently include production support for these platforms.
@@ -96,7 +97,7 @@ Database software
 ^^^^^^^^^^^^^^^^^
 
 -  PostgreSQL 11.0+
--  MySQL 5.7.12, 8.0.12+ (see note below on MySQL 8 support)
+-  MySQL 8.0.12+ (see note below on MySQL 8 support)
 
 Amazon Aurora equivalents of both PostgreSQL and MySQL are also supported.
 
@@ -119,7 +120,7 @@ Search limitations on MySQL:
 MySQL 8 Support
 ^^^^^^^^^^^^^^^^
 
-In MySQL 8.0.4, the default authentication plugin was changed from ``mysql_native_password`` to ``caching_sha2_password`` (https://mysqlserverteam.com/mysql-8-0-4-new-default-authentication-plugin-caching_sha2_password/). Therefore, you will need to enable ``mysql_native_password`` by adding the following entry in your MySQL configuration file:
+In MySQL 8.0.4, the default authentication plugin was changed from ``mysql_native_password`` to ``caching_sha2_password``. Therefore, you will need to enable ``mysql_native_password`` by adding the following entry in your MySQL configuration file:
 
   .. code-block:: text
 

@@ -25,7 +25,7 @@ To use the Mattermost TPNS, go to **System Console > Environment > Push Notifica
 See our :doc:`Testing Push Notifications </deploy/mobile-testing-notifications>` documentation to learn more about testing mobile push notifications.
 
 .. note::
-  - The TPNS only works with the pre-built mobile apps that Mattermost deploys through the Apple App Store and Google Play Store. If you have built your own mobile apps, you must also `host your own Mattermost push proxy service <#host-your-own-push-proxy-service>`_.  
+  - The TPNS only works with the pre-built mobile apps that Mattermost deploys through the Apple App Store and Google Play Store. If you have built your own mobile apps, you must also `host your own Mattermost push proxy service <#host-your-own-push-proxy-service>`_.
   - You must ensure that the push proxy can be reached on the correct port. For TPNS, it's port 80 from the Mattermost server.
 
 Hosted Push Notifications Service (HPNS)
@@ -47,7 +47,7 @@ Mattermost Enterprise, Professional, and Cloud customers can use Mattermost's Ho
 - Out-of-box configuration for new servers means nothing is required to enable HPNS for new deployments. HPNS can be `enabled for existing deployments <#enable-hpns-for-existing-deployments>`_.
 
 .. note:: 
-  - The HPNS only works with pre-built apps Mattermost deploys through the Apple App Store and Google Play Store. If you build your own mobile apps, you must also `host your own Mattermost push proxy server <#id4>`_.
+  - The HPNS only works with pre-built apps Mattermost deploys through the Apple App Store and Google Play Store. If you build your own mobile apps, you must also `host your own Mattermost push proxy server <#host-your-own-push-proxy-service>`_.
   - You must ensure that the push proxy can be reached on the correct port. For HPNS, it's port 443 from the Mattermost server.
   - Mattermost doesn't store any notification data. Any data being stored is at the server level only, such as the ``device_id``, since the HPNS needs to know which device the notification must be sent to.
 

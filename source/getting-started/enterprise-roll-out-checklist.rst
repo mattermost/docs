@@ -9,31 +9,34 @@ This checklist is intended to serve as a guide to Enterprises who are rolling ou
 Checklist overview
 -------------------
 
-  - `Prepare for the roll out`_ 
+Prepare for the roll out
+~~~~~~~~~~~~~~~~~~~~~~~~
 
-   - `1. Define the roll out project`_ 
-   - `2. Validate essential security and compliance requirements`_ 
-   - `3. Create development, staging, and production environments`_ 
-   - `4. Configure and customize your Mattermost site`_  
-   - `5. Test production performance and redundancy`_ 
+- `1. Define the roll out project`_ 
+- `2. Validate essential security and compliance requirements`_ 
+- `3. Create development, staging, and production environments`_ 
+- `4. Configure and customize your Mattermost site`_  
+- `5. Test production performance and redundancy`_ 
 
-  - `Roll out Mattermost`_ 
+Roll out Mattermost
+~~~~~~~~~~~~~~~~~~~~
 
-   - `1. Define your team and channel strategy`_ 
-   - `2. Enable key integrations`_ 
-   - `3. Prepare for user onboarding`_ 
-   - `4. Deploy client apps`_  
-   - `5. Roll out to groups of users`_ 
-   - `6. Drive adoption`_ 
+- `1. Define your team and channel strategy`_ 
+- `2. Enable key integrations`_ 
+- `3. Prepare for user onboarding`_ 
+- `4. Deploy client apps`_  
+- `5. Roll out to groups of users`_ 
+- `6. Drive adoption`_ 
 
-  - `Review the roll out`_ 
+Review the roll out
+~~~~~~~~~~~~~~~~~~~
 
-   - `1. Review project charter success metrics`_ 
-   - `2. Review and analyze usage`_ 
-   - `3. Analyze system performance`_ 
-   - `4. Harden security`_  
-   - `5. Perform maintenance tasks`_ 
-   
+- `1. Review project charter success metrics`_ 
+- `2. Review and analyze usage`_ 
+- `3. Analyze system performance`_ 
+- `4. Harden security`_  
+- `5. Perform maintenance tasks`_ 
+
 Checklist details
 -------------------
 
@@ -105,8 +108,8 @@ Much of the preparation work is focused on ensuring the environment is deployed 
 
 - Evaluate external network access requirements
  
- - The `Mattermost Marketplace <https://mattermost.com/marketplace>`__ is a service hosted by Mattermost that functions as a central place to store the current versions of available Mattermost integrations.  See `Enable Remote Marketplace </configure/configuration-settings.html?#enable-remote-marketplace>`__ documentation for details about required external network access.
- - Mattermost supports external GIF providers. See `GIF Commands </configure/configuration-settings.html?#gif-commands>`__ configuration documentation for details about required external network access.
+ - The `Mattermost Marketplace <https://mattermost.com/marketplace>`_ is a service hosted by Mattermost that functions as a central place to store the current versions of available Mattermost integrations.  See :ref:`Enable Remote Marketplace <configure/plugins-configuration-settings:enable remote marketplace>` documentation for details about required external network access.
+ - Mattermost supports external GIF providers. See :ref:`GIF Commands <configure/integrations-configuration-settings:enable gif picker>` configuration documentation for details about required external network access.
 
 3. Create development, staging, and production environments
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -229,7 +232,7 @@ Now that you have an environment in place, we recommend working through the foll
  - Recommendation: Start with fewer teams in your early roll out
  - Resource: https://docs.mattermost.com/messaging/organizing-channels.html 
 
-- Determine and create key channels to support your users. Town Square and Off-Topic are built in channels in every team
+- Determine and create key channels to support your users. Town Square and Off-Topic are automatically created channels available on every team
 
  - Recommendation: Add a “Support” channel for your users to escalate questions 
 
@@ -334,7 +337,6 @@ Now that you have an environment in place, we recommend working through the foll
 
  - mmctl Command Line Tool Resource: https://docs.mattermost.com/manage/mmctl-command-line-tool.html
  - Command Line Tools Resource: https://docs.mattermost.com/manage/command-line-tools.html
- - Database Scripts Resource: https://forum.mattermost.com/t/scripts-for-performing-discreet-tasks/13527 
 
 Review the roll out 
 ~~~~~~~~~~~~~~~~~~~
@@ -365,8 +367,6 @@ We recommend that you review your rollout on a cadence that matches your iterati
  - Review: Total posts, total teams, total channels, total group chats, total direct chats, top channels, top teams
 
 - Analyze usage by lines of business and peak usage times
-
- - Resources: https://forum.mattermost.com/t/scripts-for-performing-discreet-tasks/13527
 
 3. Analyze system performance
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

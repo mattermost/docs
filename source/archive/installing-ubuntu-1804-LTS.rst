@@ -1,4 +1,7 @@
 :orphan:
+:nosearch:
+
+.. this page has been officially archived because Ubuntu 18.04 is no longer supported.
 
 Install Mattermost on Ubuntu 18.04 LTS
 =======================================

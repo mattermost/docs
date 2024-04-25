@@ -30,6 +30,16 @@ Required tools
 
  - ``go install github.com/mattermost/dbcmp/cmd/dbcmp@latest``
 
+System requirements and configurations
+--------------------------------------
+
+Before starting the migration process, it's essential to ensure that your system meets the necessary requirements for a smooth and efficient migration. We strongly recommend the following system specifications and adjustments:
+
+- Ensure you have enough system memory resources. 16GB of RAM is recommended as a default. In scenarios where system memory is insufficient, users can fine-tune pgLoader settings, such as the number of workers, prefetch rows, and rows per range. These adjustments can help optimize resource utilization based on available system resources.
+- A multi-core processor with sufficient processing power is recommended for the migration process, especially when dealing with large datasets.
+- Ensure that there is enough disk space available for storing both the MySQL and PostgreSQL databases, as well as any temporary files generated during the migration process. The amount of required disk space depends on the size of the databases being migrated.
+- To improve performance further, users may choose to manually drop indexes on the target PostgreSQL database before initiating the migration process. This approach can potentially accelerate the migration by reducing overhead with index builds during data insertion.
+
 Before the migration
 --------------------
 
@@ -122,8 +132,8 @@ Although these statements are included in the script, we recommend running these
 
 .. code:: sql
 
-   DROP INDEX IF EXISTS idx_posts_message_txt;
-   DROP INDEX IF EXISTS idx_fileinfo_content_txt;
+   DROP INDEX IF EXISTS {{ .source_schema }}.idx_posts_message_txt;
+   DROP INDEX IF EXISTS {{ .source_schema }}.idx_fileinfo_content_txt;
 
 The following queries are added to the script to re-create these indexes after migration finishes:
 
@@ -211,6 +221,7 @@ Once we set the schema to a desired state, we can start migrating the **data** b
    CAST column Channels.Type to "channel_type" drop typemod,
         column Teams.Type to "team_type" drop typemod,
         column UploadSessions.Type to "upload_session_type" drop typemod,
+        column ChannelBookmarks.Type to "channel_bookmark_type" drop typemod,
         column Drafts.Priority to text,
         type int when (= precision 11) to integer drop typemod,
         type bigint when (= precision 20) to bigint drop typemod,
@@ -218,12 +229,12 @@ Once we set the schema to a desired state, we can start migrating the **data** b
         type tinyint when (<= precision 4) to boolean using tinyint-to-boolean,
         type json to jsonb drop typemod
 
-   EXCLUDING TABLE NAMES MATCHING ~<IR_>, ~<focalboard>, 'schema_migrations'
+   EXCLUDING TABLE NAMES MATCHING ~<IR_>, ~<focalboard>, 'schema_migrations', 'db_migrations'
 
    BEFORE LOAD DO
         $$ ALTER SCHEMA public RENAME TO {{ .source_schema }}; $$,
-        $$ DROP INDEX IF EXISTS idx_posts_message_txt; $$,
-        $$ DROP INDEX IF EXISTS idx_fileinfo_content_txt; $$
+        $$ DROP INDEX IF EXISTS {{ .source_schema }}.idx_posts_message_txt; $$,
+        $$ DROP INDEX IF EXISTS {{ .source_schema }}.idx_fileinfo_content_txt; $$
 
    AFTER LOAD DO
         $$ UPDATE {{ .source_schema }}.db_migrations set name='add_createat_to_teamembers' where version=92; $$,

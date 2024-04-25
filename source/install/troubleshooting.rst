@@ -79,7 +79,7 @@ Some of these suggestions can be done directly, and others may need consultation
 Review Mattermost logs
 ----------------------
 
-You can access logs for Mattermost and use them for troubleshooting. These steps assume that you have appropriate :doc: `system admin permissions </onboard/advanced-permissions>` to do so. 
+You can access logs for Mattermost and use them for troubleshooting. These steps assume that you have appropriate :doc:`system admin permissions </onboard/advanced-permissions>` to do so.
 
 Mattermost Server logs 
 ----------------------
@@ -338,7 +338,7 @@ What information to include
 Because of this, having a complete picture of the servers and network that the Mattermost server operates in is key to solving problems. This includes (but is not limited to):
 
 - Mattermost version (e.g. 7.3.0, 7.8.3)
-- Server OS and version (e.g. RHEL7, Ubuntu 18.04)
+- Server OS and version (e.g. RHEL7, Ubuntu 20.04)
 - Any orchestration/automation used like Docker or Kubernetes
 - Reverse proxy and version (e.g. NGINX 1.16)
 - Database type and version (e.g. PostgreSQL 12.4)

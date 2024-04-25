@@ -11,7 +11,16 @@ Archive and unarchive channels
 Archive a channel
 -----------------
 
-Anyone using Mattermost can archive the public channels or private channels they belong to, unless the system admin has restricted the permissions to do so. System admins can archive channels in the System Console without needing to be a channel member. When a channel is archived, it's removed from the user interface, but a copy exists on the server in case it's needed for audit reasons at a later stage. Because a copy of the channel exists on the server, you can't reuse the URL of an archived channel when creating a new channel.
+You can delete a channel in Mattermost when it's no longer useful by archiving it. Anyone using Mattermost can archive the public channels or private channels they're a member of, unless the system admin has restricted the permissions to do so. 
+
+When a channel is archived, it's deleted from the user interface, but a copy exists on the server in case it's needed for audit reasons in the future, or in case you decide to restore the channel by `unarchiving it <#unarchive-a-channel>`__. 
+
+.. note::
+
+  - All users are added to the **Off-Topic** and **Town Square** channels automatically. Town Square can't be archived.
+  - System admins can archive channels in the System Console without needing to be a channel member.
+  - Because a copy of the channel exists on the server, you can't reuse the URL of an archived channel when :doc:`creating a new channel </collaborate/create-channels>`.
+  - Instead of archiving the channel, you can also leave it open and post a message in the channel saying it's considered archived, such as: ``# This channel is archived.``
 
 .. tab:: Web/Desktop
 
@@ -21,20 +30,16 @@ Anyone using Mattermost can archive the public channels or private channels they
 
   To archive a channel:
   
-  1. Tap the channel you want to archive.
+  1. Tap the channel you want to delete.
   2. Tap the **More** |more-icon| icon located in the top right corner of the app.
   3. Tap **View info**.
   4. Tap **Archive Channel**.
   5. Tap **Yes** to confirm.
 
-.. tip::
-
-  Instead of archiving, you can also leave the channel open and post a message in the channel saying it's considered archived, such as: ``# This channel is archived.``
-
 Unarchive a channel
 -------------------
 
-System admins and Team admins can unarchive public channels or private channels they belonged to before they were archived. When a channel is unarchived, channel membership and all its content is restored, unless messages and files have been deleted based on the :ref:`data retention policy <configure/compliance-configuration-settings:data retention policies>`.
+System admins and Team admins can restore archived channels. When a channel is unarchived, channel membership and all its content is restored, unless messages and files have been deleted based on the :ref:`data retention policy <configure/compliance-configuration-settings:data retention policies>`.
 
 .. tab:: Web/Desktop
 
@@ -55,4 +60,4 @@ System admins and Team admins can unarchive public channels or private channels 
 
 .. tip::
 
-  Alternatively, system admins can unarchive channels :ref:`via the mmctl <manage/mmctl-command-line-tool:mmctl channel unarchive>`. Team admins can unarchive channels `via the API <https://api.mattermost.com/#operation/RestoreChannel>`__.
+  Alternatively, system admins can unarchive channels :ref:`via the mmctl <manage/mmctl-command-line-tool:mmctl channel unarchive>`, and Team admins can unarchive channels `via the API <https://api.mattermost.com/#operation/RestoreChannel>`__.

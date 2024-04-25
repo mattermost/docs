@@ -169,7 +169,7 @@ Once your migration is complete and you’ve imported your data into your self-h
 
 .. note:: If you are using email/password authentication, your users must reset their passwords.
 
-If you encounter any issues or problems, please contact our Support team via https://customers.mattermost.com/cloud/contact-us, or through the `Mattermost Help Center <https://support.mattermost.com/>`_.
+If you encounter any issues or problems, `contact our support team <https://mattermost.com/support/>`_, or visit the `Mattermost Help Center <https://support.mattermost.com/>`_.
 
 Migrate from self-hosted to Cloud
 ----------------------------------

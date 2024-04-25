@@ -8,10 +8,10 @@ A playbook is a repeatable process that is measured and refined over time. For e
 
 Each playbook represents a recurring outcome or specific goal that your teams collaborate on to achieve, such as service outage recovery or customer onboarding. Playbooks are made up of:
 
-- `Checklists </repeatable-processes/customize-a-playbook.html#make-checklists>`__: The list of tasks to be completed for the run. Can be edited ad-hoc during a run.
-- `Templates </repeatable-processes/learn-about-templates.html#templates>`__: Used for frequently-used actions such as updates and reminders. You can create your own templates or use default ones.
-- `Automation actions </repeatable-processes/customize-a-playbook.html#actions>`__: Used for inviting members, creating webhooks, editing welcome messages, and more.
-- `Permissions </repeatable-processes/share-and-collaborate.html>`__: Manage permissions at the channel and at the playbook level.
+- :ref:`Checklists <repeatable-processes/work-with-playbooks:make checklists>`: The list of tasks to be completed for the run. Can be edited ad-hoc during a run.
+- :ref:`Templates <repeatable-processes/work-with-playbooks:templates>`: Used for frequently-used actions such as updates and reminders. You can create your own templates or use default ones.
+- :ref:`Automation actions <repeatable-processes/work-with-tasks:task actions>`: Used for inviting members, creating webhooks, editing welcome messages, and more.
+- :doc:`Permissions</repeatable-processes/share-and-collaborate>`: Manage permissions at the channel and at the playbook level.
 
 Teams run a playbook every time they want to orchestrate people, tools, and data to achieve that outcome as quickly as possible while providing visibility to stakeholders. 
 

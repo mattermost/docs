@@ -271,6 +271,11 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ## Release v8.1 - [Extended Support Release](https://docs.mattermost.com/upgrade/release-definitions.html#extended-support-release-esr)
 
+- **8.1.13, released 2024-04-25**
+  - Mattermost v8.1.13 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Mattermost v8.1.13 contains no database or functional changes.
+  - Pre-packaged Playbooks version [v1.39.3](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v1.39.3).
+  - Increased the default payload size limit (``MaximumPayloadSizeBytes``) from 100 kB to 300 kB.
 - **8.1.12, released 2024-03-26**
   - Mattermost v8.1.12 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Mattermost v8.1.12 contains no database or functional changes.
@@ -4334,7 +4339,7 @@ If you upgrade from a release earlier than v5.31, please read the other [Importa
  - Mattermost now gives users flexibility to organize channels and direct messages into custom, collapsible sidebar categories. Users gain full personalization of their sidebar to improve productivity, reduce clutter and focus on what matters. Learn more about [the new channel sidebar enhancements](https://mattermost.com/blog/custom-collapsible-channel-categories/).
 
 #### Self-serve renewals (E10 & E20 Editions)
- - Mattermost is introducing the ability to renew your self-managed E10 or E20 license subscription online with a credit card. This feature creates a frictionless experience for System Administrators to renew their license without the need to contact sales. The renewal process takes place in [the customer portal](https://customers.mattermost.com/signup) and only takes a few minutes to complete.
+ - Mattermost is introducing the ability to renew your self-managed E10 or E20 license subscription online with a credit card. This feature creates a frictionless experience for System Administrators to renew their license without the need to contact sales.
  
 #### Incident Collaboration v1.3.2 (E20 Edition)
  - Pre-packaged Incident Collaboration v1.3.2 offers a more specific incident status and centralized task list.
@@ -6338,7 +6343,7 @@ Mattermost v5.15.0 contains low level security fixes. [Upgrading](https://docs.m
  - Fixed some bugs related to the new [keyboard accessibility](https://docs.mattermost.com/help/getting-started/accessibility.html) feature.
  - Fixed an issue where the "@" sign was replaced with keyboard accessibility feature on Italian keyboard.
  - Fixed an issue where joining a new channel with few posts sometimes did not take the user to the bottom of the channel.
- - Fixed an issue where scroll pop sometimes occured with embedded Youtube links.
+ - Fixed an issue where scroll pop sometimes occured with embedded YouTube links.
  - Fixed an issue with stuttery dropdowns in Safari.
  - Fixed an issue where clicking on a post would highlight it after returning to the tab/window.
  - Fixed an issue where SVG attachments bled over into subsequent posts.
@@ -6566,7 +6571,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Post and comment boxes are expanding too early on Firefox.
  - Modifying config files causes compliance exports to run twice.
  - Using channel autocomplete while editing post causes current channel to be unread.
- - Scroll pop may occur with embedded Youtube links.
+ - Scroll pop may occur with embedded YouTube links.
  - Clicking on a post will highlight it after returning to the tab/window.
  - Plugin translation files are not updated on web-client when plugins are upgraded.
  - Changes to Account Settings are being saved even when user does not clicks on Save button.
@@ -12551,7 +12556,7 @@ The following config settings will only work on servers with an Enterprise Licen
 - Formatting of multiple lists in a row breaks markdown.
 - Hitting the URL of a private team you used to belong to shows a blank Team Selection page.
 - Accessing the System Console URL when logged out causes the browser to hang.
-- Youtube videos show as "Video not found" on Desktop App
+- YouTube videos show as "Video not found" on Desktop App
 - Search terms contained in hashtags are not highlighted in the search results.
 - Files sent in private messages to members in a different team are not accessible.
 - Center channel appears blank after initial page load on iOS.
@@ -12724,7 +12729,7 @@ The following config settings will only work on servers with an Enterprise Licen
 - On Firefox, System Console sidebar completely disappears when an AD/LDAP setting is saved
 - On Firefox, CTRL/CMD+U keyboard shortcut doesn't work
 - Copying and pasting an image from a browser doesn't work
-- Youtube videos continue playing when collapsed
+- YouTube videos continue playing when collapsed
 - Code theme under Account Settings > Display > Theme doesn't save unless entered in vectorized form
 - `/join` sometimes throws an error
 - When upgrading to 3.X, syntax highlighting using Solarized code theme is lost
@@ -12778,7 +12783,7 @@ Notes on patch releases:
 - v3.0.3, released 2016-05-27
    - Fixed an error with AD/LDAP signup if user already existed.
    - Fixed an error where setting language to one of the supported langugages caused a blank page.
-   - Fixed an error where upgrading team admins on the primary team with AD/LDAP and Gitlab accounts caused an error.
+   - Fixed an error where upgrading team admins on the primary team with AD/LDAP and GitLab accounts caused an error.
 - v3.0.2, released 2016-05-17
    - Security update to reduce information disclosure, thanks to Andreas Lindh for [reporting responsibly](https://mattermost.org/responsible-disclosure-policy/)
    - Fixed an error where, when using Postgres, attempting to log in with an AD/LDAP that has the same email address or username as an email-based account shows a confusing error message.

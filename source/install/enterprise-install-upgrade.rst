@@ -6,21 +6,14 @@ Enterprise install and upgrade
 .. include:: ../_static/badges/ent-selfhosted.rst
   :start-after: :nosearch:
 
-Mattermost Enterprise Edition is free to use in "team mode" without Enterprise features enabled. Mattermost offers two subscription plans, including Professional and Enterprise. You can `compare their features online <https://mattermost.com/pricing-feature-comparison/>`__.
+Mattermost Enterprise Edition is free to use in "team mode" without Enterprise features enabled. Mattermost offers two subscription plans, including Professional and Enterprise. You can `compare their features online <https://mattermost.com/pricing/>`_.
 
-Once you've downloaded and installed Mattermost, start an Enterprise trial via **Product menu > System Console > Edition and License > Start trial**. You can view `pricing and feature information <https://mattermost.com/pricing/>`__ and purchase a `license key online <https://customers.mattermost.com/login/>`__.
+Once you've downloaded and installed Mattermost, start an Enterprise trial via **Product menu > System Console > Edition and License > Start trial**. View pricing and feature information online, and `contact sales <https://mattermost.com/contact-sales/>`_ to purchase a `license key <https://mattermost.com/contact-sales/>`_.
 
 Installing Enterprise Edition
 -----------------------------
 
-To install Mattermost Enterprise Edition directly please use one of the following guides:
-
-* :doc:`Production Kubernetes Deployment </install/install-kubernetes>`
-* :doc:`Production Enterprise Edition on Ubuntu 18.04 </install/installing-ubuntu-1804-LTS>`
-* :doc:`Production Enterprise Edition on RHEL 7 </install/install-rhel-7>`
-* :doc:`Production Enterprise Edition on RHEL 8 </install/install-rhel-8>`
-* :doc:`Production Enterprise Edition on Debian Stretch </install/install-debian>`
-* `Production Enterprise Edition using Docker and Docker Compose <https://github.com/mattermost/docker>`__
+See the :doc:`Deploy Mattermost </guides/deployment>` page to install Mattermost Enterprise Edition.
 
 Upgrading to Mattermost Enterprise Edition
 --------------------------------------------
@@ -40,7 +33,7 @@ The open source Mattermost Team Edition is functionally identical to the commerc
 
 To enable unlocking Enterprise features, replace the Mattermost Team Edition binary with a Mattermost Enterprise Edition binary via an :doc:`upgrade procedure </upgrade/upgrading-mattermost-server>`.
 
-If you'd like to back up Mattermost prior to upgrading, :doc:`the migration guide </onboard/migrating-to-mattermost>`  outlines the process required to back up and restore your database.
+If you'd like to back up Mattermost prior to upgrading, :doc:`the migration guide </onboard/migrating-to-mattermost>` outlines the process required to back up and restore your database.
 
 Upgrading to Enterprise Edition in GitLab Omnibus
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -63,9 +56,9 @@ GitLab Omnibus runs the open source Mattermost Team Edition. To upgrade to Matte
 
 2. Install Mattermost using one of the guides above.
 3. Migrate the database used by GitLab Mattermost for your new Enterprise Edition instance.
-4. (Optional) Set up `GitLab slash command integration <https://docs.gitlab.com/ee/user/project/integrations/mattermost_slash_commands.html>`__ with your Mattermost instance.
+4. (Optional) Set up `GitLab slash command integration <https://docs.gitlab.com/ee/user/project/integrations/mattermost_slash_commands.html>`_ with your Mattermost instance.
 
-If you need to migrate Team Edition prior to install, :doc:`please follow the migration guide </onboard/migrating-to-mattermost>`.
+If you need to migrate Team Edition prior to install, :doc:`follow the migration guide </onboard/migrating-to-mattermost>`.
 
 Upgrading Enterprise Edition to a newer version
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
