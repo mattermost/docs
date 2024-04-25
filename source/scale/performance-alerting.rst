@@ -23,7 +23,7 @@ To get alerts, first set up a Notification Channel in Grafana. Here’s how you 
 1. In Mattermost:
 
   a. Create an Alerts channel.
-  b. Create an `incoming webhook <https://developers.mattermost.com/integrate/admin-guide/admin-webhooks-incoming/>`__ for the Alerts channel and copy the URL.
+  b. Create an `incoming webhook <https://developers.mattermost.com/integrate/webhooks/incoming/>`__ for the Alerts channel and copy the URL.
 
 2. In Grafana:
 
