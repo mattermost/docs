@@ -6,9 +6,9 @@ Enterprise install and upgrade
 .. include:: ../_static/badges/ent-selfhosted.rst
   :start-after: :nosearch:
 
-Mattermost Enterprise Edition is free to use in "team mode" without Enterprise features enabled. Mattermost offers two subscription plans, including Professional and Enterprise. You can `compare their features online <https://mattermost.com/pricing-feature-comparison/>`_.
+Mattermost Enterprise Edition is free to use in "team mode" without Enterprise features enabled. Mattermost offers two subscription plans, including Professional and Enterprise. You can `compare their features online <https://mattermost.com/pricing/>`_.
 
-Once you've downloaded and installed Mattermost, start an Enterprise trial via **Product menu > System Console > Edition and License > Start trial**. You can view `pricing and feature information <https://mattermost.com/pricing/>`_ and purchase a `license key online <https://customers.mattermost.com/login/>`_.
+Once you've downloaded and installed Mattermost, start an Enterprise trial via **Product menu > System Console > Edition and License > Start trial**. View pricing and feature information online, and `contact sales <https://mattermost.com/contact-sales/>`_ to purchase a `license key <https://mattermost.com/contact-sales/>`_.
 
 Installing Enterprise Edition
 -----------------------------
@@ -58,7 +58,7 @@ GitLab Omnibus runs the open source Mattermost Team Edition. To upgrade to Matte
 3. Migrate the database used by GitLab Mattermost for your new Enterprise Edition instance.
 4. (Optional) Set up `GitLab slash command integration <https://docs.gitlab.com/ee/user/project/integrations/mattermost_slash_commands.html>`_ with your Mattermost instance.
 
-If you need to migrate Team Edition prior to install, :doc:`please follow the migration guide </onboard/migrating-to-mattermost>`.
+If you need to migrate Team Edition prior to install, :doc:`follow the migration guide </onboard/migrating-to-mattermost>`.
 
 Upgrading Enterprise Edition to a newer version
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -1,7 +1,7 @@
 Contribute to this documentation
 ================================
 
-Mattermost has a diverse community that extends well beyond code contributions. If you're interested in contributing to Mattermost, why not help improve the documentation? Be sure to join the documentation community in `~DWG: Documentation Working Group <https://community.mattermost.com/core/channels/dwg-documentation-working-group>`_ so we can support and celebrate you!
+Mattermost has a diverse community that extends well beyond code contributions. If you're interested in contributing to Mattermost, why not help improve the documentation? Be sure to join the documentation community in `DWG: Documentation Working Group <https://community.mattermost.com/core/channels/dwg-documentation-working-group>`_ so we can support and celebrate you!
 
 How to get started
 ------------------
