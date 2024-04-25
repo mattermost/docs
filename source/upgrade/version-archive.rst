@@ -22,11 +22,11 @@ Mattermost Enterprise Edition v9.7.2 - `View Changelog <https://docs.mattermost.
   - GPG Signature: https://releases.mattermost.com/9.7.2/mattermost-9.7.2-linux-amd64.tar.gz.sig
 Mattermost Enterprise Edition v9.6.2 - `View Changelog <https://docs.mattermost.com/deploy/mattermost-changelog.html#release-v9-6-feature-release>`__ - `Download <https://releases.mattermost.com/9.6.2/mattermost-9.6.2-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/9.6.2/mattermost-9.6.2-linux-amd64.tar.gz``
-  - SHA-256 Checksum: ``eaa3c480f4b6b9c9a7e511eceeb93926c6446dba207a5868eb2e81b81a7f51a8``
+  - SHA-256 Checksum: ``de6f4dddc0696d292f41306ad10d5c4801bf1b018684ca73fe475831bafa4b14``
   - GPG Signature: https://releases.mattermost.com/9.6.2/mattermost-9.6.2-linux-amd64.tar.gz.sig
 Mattermost Enterprise Edition v9.5.4 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/deploy/mattermost-changelog.html#release-v9-5-extended-support-release>`__ - `Download <https://releases.mattermost.com/9.5.4/mattermost-9.5.4-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/9.5.4/mattermost-9.5.4-linux-amd64.tar.gz``
-  - SHA-256 Checksum: ``7f665aa7fd794cecb308ff7b0461a65e29b001ad664cfe36c37ed14e836402c4``
+  - SHA-256 Checksum: ``395abea6e6973c918e996f697205f6e0b5c17d82f3b9ccd163b286dad4016374``
   - GPG Signature: https://releases.mattermost.com/9.5.4/mattermost-9.5.4-linux-amd64.tar.gz.sig
 Mattermost Enterprise Edition v9.4.5 - `View Changelog <https://docs.mattermost.com/deploy/mattermost-changelog.html#release-v9-4-feature-release>`__ - `Download <https://releases.mattermost.com/9.4.5/mattermost-9.4.5-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/9.4.5/mattermost-9.4.5-linux-amd64.tar.gz``
@@ -375,11 +375,11 @@ Mattermost Team Edition v9.7.2 - `View Changelog <https://docs.mattermost.com/de
   - GPG Signature: https://releases.mattermost.com/9.7.2/mattermost-team-9.7.2-linux-amd64.tar.gz.sig
 Mattermost Team Edition v9.6.2 - `View Changelog <https://docs.mattermost.com/deploy/mattermost-changelog.html#release-v9-6-feature-release>`__ - `Download <https://releases.mattermost.com/9.6.2/mattermost-team-9.6.2-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/9.6.2/mattermost-team-9.6.2-linux-amd64.tar.gz``
-  - SHA-256 Checksum: ``ff3908dce8a068dd89742ed43c23a926177dabda0cdbdd7737a18fc7ced3a8eb``
+  - SHA-256 Checksum: ``f1369c05227c931df6b21afd67d7878a41fb9dadcce7bdf5103d9d5c39985db2``
   - GPG Signature: https://releases.mattermost.com/9.6.2/mattermost-team-9.6.2-linux-amd64.tar.gz.sig
 Mattermost Team Edition v9.5.4 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/deploy/mattermost-changelog.html#release-v9-5-extended-support-release>`__ - `Download <https://releases.mattermost.com/9.5.4/mattermost-team-9.5.4-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/9.5.4/mattermost-team-9.5.4-linux-amd64.tar.gz``
-  - SHA-256 Checksum: ``a5a6bae728d6e313d17057c986d3ea0193f2578e44c0209072e43a04afd6eef9``
+  - SHA-256 Checksum: ``d40e9f12150e3609d2e815da8e63f45207de95c72c5dc5e5047f9648b139e2ee``
   - GPG Signature: https://releases.mattermost.com/9.5.4/mattermost-team-9.5.4-linux-amd64.tar.gz.sig
 Mattermost Team Edition v9.4.5 - `View Changelog <https://docs.mattermost.com/deploy/mattermost-changelog.html#release-v9-4-feature-release>`__ - `Download <https://releases.mattermost.com/9.4.5/mattermost-team-9.4.5-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/9.4.5/mattermost-team-9.4.5-linux-amd64.tar.gz``
