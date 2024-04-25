@@ -6,18 +6,6 @@ Calls self-hosted deployment
 
 This document provides information on how to successfully make the Calls plugin work on self-hosted deployments. It also outlines some of the most common deployment strategies with example diagrams, and provides the deployment guidelines for the recording, transcription, and live captions service.
 
-- `Terminology <#terminology>`__
-- `Plugin components <#plugin-components>`__
-- `Requirements <#requirements>`__
-- `Limitations <#limitations>`__
-- `Configuration <#configuration>`__
-- `Performance <#performance>`__
-- `RTCD Service <#the-rtcd-service>`__
-- `Configure recording, transcriptions, and live captions <#configure-recording-transcriptions-and-live-captions>`__
-- `Kubernetes deployments <#kubernetes-deployments>`__
-- `Frequently asked questions <#frequently-asked-questions>`__
-- `Troubleshooting <#troubleshooting>`__
-
 Terminology
 -----------
 
