@@ -52,6 +52,9 @@ Enable plugins
 Require plugin signature
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
+.. include:: ../_static/badges/selfhosted-only.rst
+  :start-after: :nosearch:
+
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
 | - **true**: **(Default)** Enables plugin signature validation for managed and unmanaged plugins.                                                                                      | - System Config path: **Plugins > Plugin Management**                        |
 | - **false**: Disables plugin signature validation for managed and unmanaged plugins.                                                                                                  | -  ``config.json`` setting: ``.PluginSettings.RequirePluginSignature: true`` |
@@ -86,6 +89,9 @@ Automatic prepackaged plugins
 
 Upload Plugin
 ~~~~~~~~~~~~~
+
+.. include:: ../_static/badges/selfhosted-only.rst
+  :start-after: :nosearch:
 
 +------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
 | - **true**:  Enables you to upload plugins from your local computer to your Mattermost server for all system admins.               | - System Config path: **Plugins > Plugin Management**                  |
