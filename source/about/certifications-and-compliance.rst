@@ -72,7 +72,7 @@ Adherence with accessibility standards is assisted in the following ways:
 - **508 Compliance:** For U.S. public sector organizations seeking to confirm 508 compliance, Mattermost publicly shares its :doc:`Voluntary Product Accessibility Template (VPAT) online </about/vpat>`.
 - **WCAG 2.0L:** For meeting Web Contact Accessibility Guidelines 2.0 (WCAG), Mattermost has received a third-party "A" rating and is working towards an "AA" rating.
 - **ADA:** Mattermost compliance with the Americans with Disabilities Act (ADA) is achieved by offering the accessibility support detailed in the VPAT and WCAG 2.0 guidelines with Mattermost's online experience as the interface to accessibility tools.
-- **Remediation:** Any technical issue in a current or future product release that would prevent compliance with accessibility ratings stated in product documentation would be considered a product defect and Mattermost would welcome the `public filing of an issue report against the defect <https://handbook.mattermost.com/contributors/contributors/ways-to-contribute>`_ so that it may be resolved.
+- **Remediation:** Any technical issue in a current or future product release that would prevent compliance with accessibility ratings stated in product documentation would be considered a product defect and Mattermost would welcome the `public filing of an issue report against the defect <https://developers.mattermost.com/contribute/why-contribute/#youve-found-a-bug>`_ so that it may be resolved.
 
 U.S. trade compliance 
 ---------------------

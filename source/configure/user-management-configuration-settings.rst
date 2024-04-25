@@ -4,7 +4,11 @@ User management configuration settings
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Manage your Mattermost users including their access permissions, groups, teams, channels, as well as their access to the System Console. Configure this feature in the System Console by going to **User Management**:
+.. |more-icon| image:: ../images/dots-horizontal_F01D8.svg
+  :alt: You can access more options from the More icon.
+  :class: theme-icon
+
+Manage your Mattermost users including their access permissions, groups, teams, channels, as well as their access to the System Console. Access user management options in the System Console by going to **User Management**:
 
 - `Users <#users>`__
 - `Groups <#groups>`__
@@ -22,6 +26,11 @@ Users
 
  <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
+Mattermost system admins can provision and manage user accounts, team membership, roles and permissions, and update user email addresses.
+
+Provision users
+~~~~~~~~~~~~~~~
+
 Getting people set up with a Mattermost account is typically something that system admins do when deploying and configuring the Mattermost workspace. A Mattermost admin can :doc:`provision Mattermost users </onboard/user-provisioning-workflows>` using one or more of the following methods:
 
 - :ref:`Enable account creation <configure/authentication-configuration-settings:enable account creation>`.
@@ -29,59 +38,163 @@ Getting people set up with a Mattermost account is typically something that syst
 - :ref:`Migrate user accounts <onboard/migrating-to-mattermost:migration guide>` from other collaboration systems and :doc:`bulk load </onboard/bulk-loading-data>` that user data into Mattermost.
 - Connect an authentication service to assist with user provisioning, such as :doc:`AD/LDAP authentication </onboard/ad-ldap>` or :doc:`SAML authentication </onboard/sso-saml>`.
 
-+----------------------------------------------------------------+-------------------------------------------------------------+
-| Manage activated and deactivated users, revoke all user        | - System Config path: **User Management > Users**           |
-| sessions, access individual users to view their User ID,       | - ``config.json setting``: N/A                              |
-| add users to other teams, and view the teams they are on,      | - Environment variable: N/A                                 |
-| and what their role is on a team.                              |                                                             |
-+----------------------------------------------------------------+-------------------------------------------------------------+
-| **Note**: You can search for users by partial first name, last name, nickname, or username.                                  |
-+----------------------------------------------------------------+-------------------------------------------------------------+
+Find users
+~~~~~~~~~~
 
-Identify a User's ID
-~~~~~~~~~~~~~~~~~~~~~
+You can find a user using the System Console.
 
-Users can be specified in Mattermost by username or user ID. Usernames automatically resolve when a match is detected.
-System admins can identify a user's ID using the Mattermost API or mmctl.
+1. Go to **System Console > User Management > Users** to access all user accounts.
+2. Type the name of the user or the username or the user ID in the **Search users** box to find the particular user, if they exist.
 
-Use the System Console
-^^^^^^^^^^^^^^^^^^^^^^
-
-Go to **System Console > User Management > Users** to access all user accounts. Select a user to review their ID. 
+.. image:: ../images/find-users.png
+  :alt: Find a Mattermost user using the System Console.
 
 .. tip::
-  
+
   From Mattermost v9.6, you can:
-  
+
   - Customize this page by showing or hiding user details, including email address, member duration, last login, activity, or post, number of days active (PostgreSQL only), and number of messages posted (PostgreSQL only). You can also control how many user records display on the page at a time.
   - Search for specific users by entering a partial or full username, first name, last name, or email address in the **Search** field and pressing :kbd:`Enter`.
-  - Filter users by team, role, or status.
+
+Identify a User's ID
+^^^^^^^^^^^^^^^^^^^^
+
+Users can be specified in Mattermost by username or user ID. Usernames automatically resolve when a match is detected.
+You can identify a user's ID using the System Console, the Mattermost API, or mmctl.
+
+1. Go to **System Console > User Management > Users** to access all user accounts. 
+2. Select a **User** to review their ID in the User Configuration page. 
+
+.. image:: ../images/user-id.png
+  :alt: Find the User ID under User Management using the System Console.
+
+Alternatively, identify a user's ID using the Mattermost API or mmctl:
+
+- Using the Mattermost API, make an HTTP GET request to the following endpoint: ``https://your-mattermost-url/api/v4/users/username/username_here``. Replace ``your-mattermost-url`` with the URL of your Mattermost instance and ``username_here`` with the username you are looking for. The API response contains a JSON object that includes the user's ID among other details.
+- Using mmctl, in a terminal window, use the following command to list all users and their IDs: ``mmctl user list`` to return a list of user IDs.
+
+Filter user searches
+~~~~~~~~~~~~~~~~~~~~
+
+You can filter System Console user searches to narrow down results based on the team membership, role, and user status.
+
+1. Go to **System Console > User Management > Users** to access all user accounts.
+2. Select **Filters** located to the right of the **Search users** field to access available filter options.
+3. Select **Apply** to filter user search results.
+
+.. image:: ../images/user-search-filters.png
+  :alt: Filter the user list based on team membership, role, and user status using the System Console.
+
+.. tip::
+
+  From Mattermost v9.6, you can also:
+
   - Filter users by activity timeframes, including the last 30 days, the previous month, and the last 6 months.
-  - Mattermost Enterprise and Professional customers can also export user data as a CSV report. You'll receive the report as a direct message in Mattermost.
+  - Mattermost Enterprise and Professional customers can export user data as a CSV report. You'll receive the report as a direct message in Mattermost.
 
-Use the API
-^^^^^^^^^^^
+Activate or deactivate users
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Use the API when you want to automate user-related tasks, or integrate with external systems.
+To delete a user from your Mattermost deployment, you can deactivate the user's account. Deactivated users have an deactivated status, are logged out of Mattermost as soon as they are deactivated, and deactivated users can no longer log back in. You can manage the user's role, password, and email address while a user's account is deactivated.
 
-Make an HTTP GET request to the following endpoint: ``https://your-mattermost-url/api/v4/users/username/username_here``.
-Replace ``your-mattermost-url`` with the URL of your Mattermost instance and ``username_here`` with the username you are looking for.
+1. Go to **System Console > User Management > Users** to access all user accounts.
+2. Select a **User** that you wish to activate/deactivate.
+3. If the selected user is currently active, you can find the **Deactivate** button in the **User Configuration** page.
+4. Select **Deactivate**, and confirm the deactivation.
 
-The API response contains a JSON object that includes the user's ID among other details.
+.. image:: ../images/deactivate-user.png
+  :alt: Deactivate a user in Mattermost using the System Console.
 
-Use mmctl
-^^^^^^^^^
+5. If the user is deactivated, select **Activate** to re-activate the user.
 
-If you prefer command-line tools, Mattermost offers mmctl for system administration.
+.. image:: ../images/activate-user.png
+  :alt: Activate a user in Mattermost using the System Console.
 
-In a terminal window, use the following command to list all users and their IDs: ``mmctl user list`` to return a list of user IDs.
+Manage user's roles
+~~~~~~~~~~~~~~~~~~~~
 
-Deactivate user accounts
-~~~~~~~~~~~~~~~~~~~~~~~~
+Apply roles to users using the System Console. The current available roles are **System Admin** and **Member**.
 
-If you need to remove a user from your Mattermost deployment, you can deactivate the user account. Deactivated users have an deactivated status, are logged out of Mattermost as soon as they are deactivated, and deactivated users can no longer log back in. While a user account is deactivated, you can manage the user's role, password, and email address.
+1. Go to **System Console > User Management > Users** to access all user accounts.
+2. Under **Actions**, select **Manage roles**.
+3. Specify whether the user has the role of **System Admin** or **Member**, and then select **Save**.
 
-Deactivate a user account by selecting a user, then selecting **Deactivate**. You can re-activate that user account later by selecting **Activate**.
+.. image:: ../images/manage-roles.png
+  :alt: Manage a user's Mattermost role using the System Console.
+
+Manage user's teams
+~~~~~~~~~~~~~~~~~~~~
+
+Add or remove users from teams using the System Console.
+
+1. Go to **System Console > User Management > Users** to access all user accounts.
+2. Select the user you want to manage.
+3. You can include the user in one new team or a group of teams. Select **Add Team**, select one or more teams, and then select **Add**.
+
+.. image:: ../images/add-user-to-team.png
+  :alt: Add a user to a Mattermost team using the System Console.
+
+4. To remove the user from a specific team, select **More** |more-icon| next to the team name, and select **Remove from team**.
+
+.. image:: ../images/remove-user-from-team.png
+  :alt: Remove a user from a Mattermost team using the System Console.
+
+.. tip::
+  You can also remove the user from a specific team from the **Actions** column on the **Users** page. Select **Manage Teams**, and then select **Remove from Team** for applicable teams.
+
+Update user's email
+~~~~~~~~~~~~~~~~~~~
+
+Update the emails of users using the System Console.
+
+1. Go to **System Console > User Management > Users** to access all user accounts.
+2. Select the user, and enter a new email in the **Email** field.
+3. Select **Save**.
+
+.. image:: ../images/user-email-update.png
+  :alt: Update the email of a Mattermost user using the System Console.
+
+.. tip::
+  You can also update the email from the **Actions** column on the **Users** page. Select **Update email**, enter the new email for the user, and then select **Save**.
+
+Reset user's password
+~~~~~~~~~~~~~~~~~~~~~~
+
+Reset a user's password using the System Console.
+
+1. Go to **System Console > User Management > Users** to access all user accounts.
+2. Select the user from the list, and then select **Reset Password**.
+3. Enter a new password and select **Reset**.
+
+.. image:: ../images/user-password-reset.png
+  :alt: In System Console, Reset the password of a User under User Management.
+
+You can also reset the password using the **Actions** column for the specific user on the **Users** page. Select **Reset password** from the **Actions** column dropdown, enter the new password in the pop-up dialog box and select **Reset**.
+
+Revoke a user's session
+~~~~~~~~~~~~~~~~~~~~~~~
+
+Revoke the user sessions in case of an emergency to secure the user account using the System Console. This logs the user out of all devices.
+
+1. Go to **System Console > User Management > Users** to access all user accounts.
+2. Under the **Actions** column for the specific user, select **Remove sessions**.
+3. Select **Revoke** to remove all sessions for that user.
+
+.. image:: ../images/revoke-user-session.png
+  :alt: Revoke the sessions of a user using the System Console.
+
+Review user profile details
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+View user profile details using the System Console. Gather information including the user's ID, username, email, authentication method, and team memberships.
+
+1. Go to **System Console > User Management > Users** to access all user accounts.
+2. Select the user from the list, and browse user details.
+
+.. image:: ../images/user-profile-details.png
+  :alt: Review user details using the System Console
+
+
 
 ----
 
