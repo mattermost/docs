@@ -41,7 +41,7 @@ If you upgrade from a release earlier than v9.7, please read the other [Importan
  - Added Channel Bookmarks (disabled by default).
 
 #### Administration
- - Added safety limit error message in compiled Team Edition and Enterprise Edition deployments when enterprise scale and access control automation features are unavailable and message count exceeds 5 million posts. ERROR_SAFE_LIMITS_EXCEEDED.
+ - Added safety limit error message in compiled Team Edition and Enterprise Edition deployments when enterprise scale and access control automation features are unavailable, and message count exceeds 5 million posts. ERROR_SAFE_LIMITS_EXCEEDED.
  - Downloading a support packet is now extensible with plugins. If a plugin can add content to the support packet, it will be displayed in the commercial support modal. Administrators will have the option to include/exclude that from the support package.
  - Upgraded Nodejs to v20.11.
  - Added Channel Bookmarks permissions to the channel user role and to the channel moderation system.
@@ -70,8 +70,8 @@ If you upgrade from a release earlier than v9.7, please read the other [Importan
 ### Bug Fixes
  - Fixed an issue with context cancellation for integration requests.
  - Fixed an issue preventing the retrieval of SAML metadata.
- - Fixed an issue causing an empty channel switcher after converting a Group Message to a private channel.
- - Fixed an issue where System Admins were not allowed to LDAP sync SAML users when ``SamlSettings.EnableSyncWithLdap`` was true.
+ - Fixed an issue causing an empty channel switcher after converting a group message to a private channel.
+ - Fixed an issue where System Admins were not allowed to LDAP sync SAML users when ``SamlSettings.EnableSyncWithLdap`` was set to **true**.
  - Fixed an issue with markdown in the AD job status table.
  - Fixed an issue with a control character in the group list modal.
  - Fixed an issue where the auto-complete channels API returned archived channels in response.
