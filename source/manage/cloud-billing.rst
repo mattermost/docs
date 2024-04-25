@@ -4,15 +4,7 @@ Mattermost Cloud billing
 .. include:: ../_static/badges/allplans-cloud.rst
   :start-after: :nosearch:
 
-From February 2, 2023, Mattermost Cloud Professional and Enterprise plans are offered as an annual subscription service. Existing customers billed monthly will no longer be supported as of July 27, 2023.
-
-.. note:: 
-   
-   If you have an existing Cloud Professional monthly subscription, you have until July 27, 2023 to switch to annual billing:
-   
-   1. Go to **System Console > Subscription**. In the **Switch to an annual plan today** section select **Learn More**. A minimum of ten seats is required.
-   2. Fill in your payment information.
-   3. Select **Switch to annual billing**
+From February 2, 2023, Mattermost Cloud Enterprise plans are offered as an annual subscription service. Existing customers billed monthly will no longer be supported as of July 27, 2023.
 
 To upgrade to a Professional plan within Mattermost, select **View plans** in the header or in the System Console. For Enterprise plans, you need to `contact sales <https://mattermost.com/contact-sales/>`_.
 
