@@ -1,7 +1,7 @@
 :nosearch:
 
-Collaborate within Microsoft Teams (Pilot)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Collaborate within Microsoft Teams
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. |plus-icon| image:: ../images/plus_F0415.svg
   :alt: Open menus using the plus icon.

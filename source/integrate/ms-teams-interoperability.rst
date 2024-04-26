@@ -1,10 +1,10 @@
-Connect Microsoft Teams to Mattermost
-======================================
+Connect Microsoft Teams to Mattermost (Pilot)
+=============================================
 
 .. include:: ../_static/badges/ent-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-intro here
+Bridge communications between Mattermost and Microsoft Teams, transforming them into a unified platform. Empower your users to stay on their preferred platform while ensuring seamless, cross-functional collaboration and project alignment, while leveraging the strengths of both platforms without significantly increasing operational costs., 
 
 Setup
 -----

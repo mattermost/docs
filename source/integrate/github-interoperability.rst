@@ -6,6 +6,9 @@ Connect GitHub to Mattermost
 
 Minimize distractions and reduce context switching between your GitHub code repositories and your communication platform by integrating GitHub with Mattermost. Help your teams stay focused and productive with real-time updates on commits, pull requests, issues, and more directly from Mattermost channels.
 
+.. image:: ../images/github_mattermost.png
+  :alt: An example of the GitHub integration for Mattermost.
+
 Setup
 ------
 

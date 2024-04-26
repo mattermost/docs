@@ -4,13 +4,14 @@ Connect Jira to Mattermost
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Minimize distractions, reduce context switching between your project management tool and your communication platform integrating Jira with Mattermost. Create Jira issues directly from Mattermost conversations, attach messages to Jira issues, transition and assign Jira issues, and follow up on action items in real-time, directly from Mattermost channel subscriptions.
+Minimize distractions, reduce context switching between your project management tool and your communication platform by integrating Jira with Mattermost. Create Jira issues directly from Mattermost conversations, attach messages to Jira issues, transition and assign Jira issues, and follow up on action items in real-time, directly from Mattermost channel subscriptions.
 
 .. note::
 
   - You can control which events trigger notifications including issue creation, field-specific issue updates, reopened, resolved, or deleted issues, as well as new, updated, or deleted issue comments.
   - Jira Core and Jira Software products, for Server, Data Center, and Cloud platforms are supported, and tested with versions 7 and 8.
-  - From Jira v3.0, support for multiple Jira instances is supported with Mattermost Professional and Enterprise plans, configured using Administrator Slash Commands.
+  - Jira Service Management (formally known as Jira Service Desk) isn't supported.
+  - From v3.0 of this integration, support for multiple Jira instances is supported with Mattermost Professional and Enterprise plans, configured using Administrator Slash Commands.
 
 Setup
 ------
@@ -26,14 +27,14 @@ A Mattermost system admin must perform the following steps in Mattermost.
 2. Generate a **Webhook Secret** by selecting **Regenerate**.
 3. Configure Jira interoperabiilty preferences, then select **Save**.
 
-  - Enable or disable the user's ability to attach and create Jira issues in Mattermost. When enabled, you must also `install this Jira integration in your Jira instance <#install-integration-as-Jira-app>`__.
-  - Specify the Mattermost roles that can edit Jira subscriptions to control which Mattermost users can subscribe channels to Jira tickets.
-  - (Older Jira v2.4 or earlier deployments only) Specify the Jira groups allowed to edit Jira subscriptions as a comma-separated list of user group names. Leave blank to allow any Jira user the ability to create subscriptions. The user editing a subscription only needs to be a member of one of the listed groups.
-  - Enable or disable default subscription security level. When enabled, subscriptions only include issues that have a security level assigned when a security level has been included as a filter.
-  - Define any additional help text to display when users run the ``/jira help`` slash command.
-  - Show or hide issue descriptions and comments from subscription and webhook messages.
-  - Enable or disble slash command autocompletion to guide users through available ``/jira`` slash commands.
-  - Show or hide subscription name in notification messages posted to a channel.
+  - **Allow users to attach and create Jira issues in Mattermost**: Enable or disable the user's ability to attach and create Jira issues in Mattermost. When enabled, you must also `install this Jira integration in your Jira instance <#install-integration-as-Jira-app>`__.
+  - **Mattermost Roles Allowed to Edit Jira Subscriptions**: Specify the Mattermost roles that can edit Jira subscriptions to control which Mattermost users can subscribe channels to Jira tickets.
+  - **Jira Groups Allowed to Edit Jira Subscriptions**: (Applies to older Jira v2.4 or earlier deployments only) Specify the Jira groups allowed to edit Jira subscriptions as a comma-separated list of user group names. Leave blank to allow any Jira user the ability to create subscriptions. The user editing a subscription only needs to be a member of one of the listed groups.
+  - **Default Subscription Security Level to Empty**: Enable or disable default subscription security level. When enabled, subscriptions only include issues that have a security level assigned when a security level has been included as a filter.
+  - **Additional Help Text to be shown with Jira Help**: Define any additional help text to display when users run the ``/jira help`` slash command.
+  - **Hide issue descriptions and comments**: Show or hide issue descriptions and comments from subscription and webhook messages.
+  - **Enable slash command**: Enable or disble slash command autocompletion to guide users through available ``/jira`` slash commands.
+  - **Display Subscrition name in notifications**: Show or hide subscription name in notification messages posted to a channel.
 
 Install Jira integration in your Jira instance
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -42,6 +43,7 @@ To enable your users to create and manage Jira issues across Mattermost channels
 
 - For Jira Server or Data Center instances, run the ``/jira instance install server <YOUR-JIRA-URL>`` slash command in a Mattermost channel as a Mattermost system admin, then follow the steps posted to the channel, replacing ``YOUR-JIRA-URL`` with your Jira URL. This value must match the Jira server URL you use to log in. Run the ``/jira instance uninstall server <YOUR-JIRA-URL>`` slash command to disconnect Mattermost from your Jira Server or Data Center instance.
 - For Jira Cloud, run the  ``/jira instance install cloud <YOUR-JIRA-URL>`` slash command. Run the ``/jira instance uninstall cloud <YOUR-JIRA-URL>`` slash command to disconnect Mattermost from your Jira Cloud instance.
+- You must explicitly share the integration in your Jira instance by going to https://developer.atlassian.com/console/myapps, selecting **Distribution**, and sharing it with the organization.
 
 Configure webhooks in Jira
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -182,6 +184,9 @@ Create a Jira issue
 ^^^^^^^^^^^^^^^^^^^^
 
 Use the ``/jira issue create`` slash command to create a Jira issue without leaving Mattermost. You can prepopulate the issue's summary by running ``/jira issue create This is my issue's summary``. You're prompted to fill out the issue details.
+
+.. image:: ../images/github_mattermost.png
+  :alt: An example of the GitHub integration for Mattermost.
 
 Transition Jira issues
 ^^^^^^^^^^^^^^^^^^^^^^^

@@ -9,7 +9,7 @@ Integrate and extend Mattermost
     GitHub plugin </integrate/github-interoperability>
     GitLab plugin </integrate/gitlab-interoperability>
     Jira </integrate/jira-interoperability>
-    Microsoft Teams </integrate/ms-teams-interoperability>
+    Microsoft Teams interoperability </integrate/ms-teams-interoperability>
     ServiceNow </integrate/servicenow-interoperability>
     Zoom </integrate/zoom-interoperability>
 
@@ -23,9 +23,9 @@ Your Mattermost deployment comes with the following integrations you can configu
 * :doc:`GitHub interoperability </integrate/github-interoperability>` - Connect your GitHub instance to your Mattermost instance.
 * :doc:`GitLab interoperability </integrate/gitlab-interoperability>` - Connect your GitLab instance to your Mattermost instance.
 * :doc:`Jira interoperability </integrate/jira-interoperability>` - Connect your Jira instance to your Mattermost instance.
-* :doc:`Microsoft Teams </integrate/ms-teams-interoperability>` - Connect your operational workflows through the Mattermost app while staying connected to an all-employee platform, all in one place.
-* :doc:`ServiceNow </integrate/servicenow-interoperability>` - Connect your ServiceNow to your Mattermost instance.
-* :doc:`Zoom plugin </integrate/zoom-interoperability>` - Learn how to connect your Zoom instance to your Mattermost instance.
+* :doc:`Microsoft Teams interoperability </integrate/ms-teams-interoperability>` - Connect your operational workflows through the Mattermost app while staying connected to an all-employee platform, all in one place.
+* :doc:`ServiceNow interoperability </integrate/servicenow-interoperability>` - Connect your ServiceNow to your Mattermost instance.
+* :doc:`Zoom interoperability </integrate/zoom-interoperability>` - Learn how to connect your Zoom instance to your Mattermost instance.
 
 .. tip::
 

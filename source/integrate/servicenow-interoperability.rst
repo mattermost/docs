@@ -88,8 +88,8 @@ A Mattermost system admin must perform the following steps in Mattermost.
 1. Go to **System Console > Plugins > ServiceNow** to enable ServiceNow interoperability. 
 2. Configure ServiceNow interoperabiilty preferences, then select **Save**.
  
- - **ServiceNow Server Base URL**: Enter the base URL of your ServiceNow instance .
- - **ServiceNow Webhook Secret**: Regenerate the webhook secret for ServiceNow. Regenerating this key will stop the subscription notifications. See XXX to update the secret in the ServiceNow instance and start receiving notifications again.
+ - **ServiceNow Server Base URL**: Enter the base URL of your ServiceNow instance.
+ - **ServiceNow Webhook Secret**: Regenerate the webhook secret for ServiceNow. Regenerating this key will stop the subscription notifications. See the documentation on `creating an OAuth app in ServiceNow <#create-an-oauth-app-in-servicenow>`__ for details on updating the secret in the ServiceNow instance and start receiving notifications again.
  - **ServiceNow OAuth Client ID**: The clientID of your registered OAuth app in ServiceNow.
  - **ServiceNow OAuth Client Secret**: The client secret of your registered OAuth app in ServiceNow.
  - **Encryption Secret**: Select **Regenerate** to generate a new encryption secret. This encryption secret is used to encrypt and decrypt the OAuth token.
