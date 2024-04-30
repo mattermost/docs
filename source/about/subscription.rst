@@ -12,8 +12,6 @@ Mattermost offers capabilities through **Mattermost Enterprise** and **Mattermos
 
 - Mattermost self-hosted deployments require a license subscription key to be applied to access features in the Professional or Enterprise plans via purchase options at https://mattermost.com/pricing/. 
 
-- Mattermost also offers purchase through a `self-service Customer Portal <https://customers.mattermost.com>`_ where you can purchase and manage your Mattermost self-hosted subscription. When you complete the purchase process, a license key is generated. Please see :doc:`Self-hosted subscriptions </about/self-hosted-subscriptions>` for more details.
-
 
 Mattermost Nonprofit License program
 --------------------------------------
@@ -64,10 +62,6 @@ Enterprises can inquire about Mattermost Cloud Enterprise, a single-tenant cloud
 
 For more information, contact the Mattermost Sales organization at https://mattermost.com/contact-sales/
 
-Cloud-hosted Mattermost Professional  
-------------------------------------
-
-For small businesses, Mattermost Professional is available as a software-as-a-service product. More information is available at  :doc:`Cloud subscriptions </about/cloud-subscriptions>`.
 
 Frequently asked questions
 --------------------------
@@ -75,7 +69,7 @@ Frequently asked questions
 Are my credit card details safe?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-We use `Stripe <https://stripe.com/payments>`_ and `Solupay <https://www.versapay.com/>`_ to process credit card transactions. We do not store any credit card details at any stage. Payments made by credit card are authenticated using `3D Secure <https://www.sc.com/bn/ways-to-bank/3d-secure-faq/>`_, which is PCI-DSS compliant.
+We use `Solupay <https://www.versapay.com/>`_ to process credit card transactions. We do not store any credit card details at any stage. Payments made by credit card are authenticated using `3D Secure <https://www.sc.com/bn/ways-to-bank/3d-secure-faq/>`_, which is PCI-DSS compliant.
 
 Should you wish to make payment using another method, please contact our `Billing team <mailto:AR@mattermost.com>`_.
 

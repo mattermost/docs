@@ -185,7 +185,7 @@ Define advanced log output
                     "MaxBackups": 10,
                     "MaxSizeMB": 500
                 },
-                    MaxQueueSize": 1000
+                "MaxQueueSize": 1000
             }
         }
 
