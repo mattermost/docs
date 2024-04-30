@@ -13,7 +13,7 @@ From Mattermost v9.2, this changelog summarizes updates for the latest cloud and
 
 ## Release v9.7 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
 
-- **9.7.3, released **
+- **9.7.3, released 2024-04-30**
   - Fixed an issue where creating a Direct Message channel with synthetic users failed [MM-58019](https://mattermost.atlassian.net/browse/MM-58019).
 - **9.7.2, released 2024-04-25**
   - Mattermost v9.7.2 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
