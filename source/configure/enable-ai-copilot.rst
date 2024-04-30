@@ -1,5 +1,5 @@
-Enable AI Copilot
-==================
+Enable AI Copilot (Beta)
+========================
 
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
