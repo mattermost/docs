@@ -4339,7 +4339,7 @@ If you upgrade from a release earlier than v5.31, please read the other [Importa
  - Mattermost now gives users flexibility to organize channels and direct messages into custom, collapsible sidebar categories. Users gain full personalization of their sidebar to improve productivity, reduce clutter and focus on what matters. Learn more about [the new channel sidebar enhancements](https://mattermost.com/blog/custom-collapsible-channel-categories/).
 
 #### Self-serve renewals (E10 & E20 Editions)
- - Mattermost is introducing the ability to renew your self-managed E10 or E20 license subscription online with a credit card. This feature creates a frictionless experience for System Administrators to renew their license without the need to contact sales. The renewal process takes place in [the customer portal](https://customers.mattermost.com/signup) and only takes a few minutes to complete.
+ - Mattermost is introducing the ability to renew your self-managed E10 or E20 license subscription online with a credit card. This feature creates a frictionless experience for System Administrators to renew their license without the need to contact sales.
  
 #### Incident Collaboration v1.3.2 (E20 Edition)
  - Pre-packaged Incident Collaboration v1.3.2 offers a more specific incident status and centralized task list.
