@@ -1,8 +1,12 @@
 Connect ServiceNow to Mattermost
-====================================
+=================================
 
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
+
+.. |product-menu| image:: ../images/products_E82F.svg
+  :alt: The Product menu is located in the top left corner of the Mattermost screen.
+  :class: theme-icon
 
 Minimize distractions and reduce context switching by bridging the gap between IT service management (ITSM) and team communication. Create and manage incident reports, change requests, and service tickets, as well as manage event-driven notification subscriptions for ServiceNow record changes, in real-time, and automate routine tasks to decrease response times without leaving Mattermost.
 
@@ -85,23 +89,27 @@ Mattermost configuration
 
 A Mattermost system admin must perform the following steps in Mattermost.
 
-1. Go to **System Console > Plugins > ServiceNow** to enable ServiceNow interoperability. 
-2. Configure ServiceNow interoperabiilty preferences, then select **Save**.
- 
- - **ServiceNow Server Base URL**: Enter the base URL of your ServiceNow instance.
- - **ServiceNow Webhook Secret**: Regenerate the webhook secret for ServiceNow. Regenerating this key will stop the subscription notifications. See the documentation on `creating an OAuth app in ServiceNow <#create-an-oauth-app-in-servicenow>`__ for details on updating the secret in the ServiceNow instance and start receiving notifications again.
- - **ServiceNow OAuth Client ID**: The clientID of your registered OAuth app in ServiceNow.
- - **ServiceNow OAuth Client Secret**: The client secret of your registered OAuth app in ServiceNow.
- - **Encryption Secret**: Select **Regenerate** to generate a new encryption secret. This encryption secret is used to encrypt and decrypt the OAuth token.
- - **Download ServiceNow Update Set**: Download the update set XML file to upload to ServiceNow.
+Install the ServiceNow integration from the in-product App Marketplace:
+
+1. In Mattermost, from the Product menu |product-menu|, select **App Marketplace**.
+2. Search for or scroll to ServiceNow, and select **Install**.
+3. Once installed, select **Configure**. You're taken to the System Console.
+4. On the ServiceNow configuration page, enable and configure ServiceNow interoperability as follows, and then select **Save**:
+
+  - **ServiceNow Server Base URL**: Enter the base URL of your ServiceNow instance.
+  - **ServiceNow Webhook Secret**: Regenerate the webhook secret for ServiceNow. Regenerating this key will stop the subscription notifications. See the documentation on `creating an OAuth app in ServiceNow <#create-an-oauth-app-in-servicenow>`__ for details on updating the secret in the ServiceNow instance and start receiving notifications again.
+  - **ServiceNow OAuth Client ID**: The clientID of your registered OAuth app in ServiceNow.
+  - **ServiceNow OAuth Client Secret**: The client secret of your registered OAuth app in ServiceNow.
+  - **Encryption Secret**: Select **Regenerate** to generate a new encryption secret. This encryption secret is used to encrypt and decrypt the OAuth token.
+  - **Download ServiceNow Update Set**: Download the update set XML file to upload to ServiceNow.
 
 Enable
 ------
 
-Notify your teams that they can connect their ServiceNow accounts to Mattermost.
+Notify your teams that they can `connect their ServiceNow accounts to Mattermost <#connect-a-servicenow-account-to-mattermost>`__.
 
 Upgrade
-~~~~~~~
+-------
 
 We recommend updating this integration as new versions are released. Generally, updates are seamless and don't interrupt the user experience in Mattermost.
 Visit the `Releases page <https://github.com/mattermost/mattermost-plugin-servicenow/releases>`__ for the latest release, available releases, and compatibiilty considerations.
@@ -109,8 +117,12 @@ Visit the `Releases page <https://github.com/mattermost/mattermost-plugin-servic
 Usage
 -----
 
-Connect your ServiceNow account to Mattermost
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Users who want to use ServiceNow interconnectivity must connect a ServiceNow account to Mattermost. 
+
+Once connected, you'll receive direct messages from the ServiceNow bot in Mattermost for ServiceNow activity.
+
+Connect a ServiceNow account to Mattermost
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. In Mattermost, run the ``/servicenow connect`` slash command in any Mattermost channel to link your Mattermost account with your ServiceNow account. Follow the link into your ServiceNow instance, and select **Allow**. You can disconnect your accounts by running the ``/servicenow disconnect`` slash command.
 

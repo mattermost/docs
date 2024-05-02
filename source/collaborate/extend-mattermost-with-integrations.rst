@@ -12,9 +12,9 @@ Mattermost features
 ~~~~~~~~~~~~~~~~~~~~
 
 - :ref:`AI Copilot <collaborate/chat-with-ai-copilot:get started>`
-- :ref:`Export Mattermost channel data <integrate/export-mattermost-channel-data:usage>`
-- :ref:`Monitor performance metrics <integrate/monitor-performance-metrics:usage>`
-- :ref:`Perform legal holds <integrate/perform-legal-holds:usage>`
+- :ref:`Export Mattermost channel data <comply/export-mattermost-channel-data:usage>`
+- :ref:`Monitor performance metrics <scale/collect-performance-metrics:usage>`
+- :doc:`Perform legal holds </comply/legal-hold>`
 
 Mattermost interoperability
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~

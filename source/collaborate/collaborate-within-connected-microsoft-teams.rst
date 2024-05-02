@@ -1,7 +1,8 @@
+:orphan:
 :nosearch:
 
-Collaborate within Microsoft Teams
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Collaborate within Microsoft Teams (Beta)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. |plus-icon| image:: ../images/plus_F0415.svg
   :alt: Open menus using the plus icon.

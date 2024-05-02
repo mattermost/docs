@@ -13,20 +13,15 @@ Enable
 
   For Mattermost Cloud deployments, no setup is required. See the `usage <#usage>`__ section below for details on exporting channel data.
 
-For self-hosted deployments, enable channel exports in the System Console.
+For self-hosted deployments, a Mattermost system admin must perform the following steps in Mattermost.
 
-1. Go to **System Console > Plugins > Plugin Management**.
-2. Under **Installed Plugins**, scroll to **Channel Export**, and select **Enable**.
-
-You can disable channel export in the System Console by going to **Plugins > Channel Export** or to **Plugin Management > Installed Plugins > Channel Export**.
-
-Configure
----------
-
-Go to **System Console > Plugins > Plugin Management > Channel Export** to manage configuration settings for this plugin.
+1. Log in to your Mattermost workspace as a system administrator.
+2. Download the latest version of `the plugin binary release <https://github.com/mattermost/mattermost-channel-export/releases>`__, compatible with Mattermost v8.0.1 and later. If you are using an earlier version of Mattermost, :doc:`follow our documentation </upgrade/upgrading-mattermost-server>` to upgrade to Mattermost v8.0.1 or later.
+3. Go to **System Console > Plugins > Plugin Management > Upload Plugin**, and upload the plugin binary you downloaded in the previous step.
+4. Go to **System Console > Plugins > Plugin Management**. In the **Installed Plugins** section, scroll to **Channel Export**, enable the integration, and select **Save**.
 
 Upgrade
-~~~~~~~~
+-------
 
 We recommend upgrading this feature as new versions are released. Generally, updates are seamless and don't interrupt the user experience in Mattermost. Visit the `Releases page <https://github.com/mattermost/mattermost-plugin-channel-export/releases>`__ for the latest release, available releases, and compatibiilty considerations.
 

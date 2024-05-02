@@ -1,8 +1,12 @@
-Connect Microsoft Teams to Mattermost (Pilot)
+Connect Microsoft Teams to Mattermost (Beta)
 =============================================
 
 .. include:: ../_static/badges/ent-cloud-selfhosted.rst
   :start-after: :nosearch:
+
+.. |product-menu| image:: ../images/products_E82F.svg
+  :alt: The Product menu is located in the top left corner of the Mattermost screen.
+  :class: theme-icon
 
 Bridge communications between Mattermost and Microsoft Teams, transforming them into a unified platform. Empower your users to stay on their preferred platform while ensuring seamless, cross-functional collaboration and project alignment, while leveraging the strengths of both platforms without significantly increasing operational costs., 
 

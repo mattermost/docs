@@ -17,27 +17,23 @@ Download and share the collected data with Mattermost to understand application 
 
    Already have Prometheus and Grafana deployed? You can :doc:`use these tools to monitor performance of your Mattermost deployment </scale/deploy-prometheus-grafana-for-performance-monitoring>`.
 
-Enable
-------
+Mattermost configuration
+------------------------
 
 .. note::
 
   For Mattermost Cloud deployments, no setup is required. See the `usage <#usage>`__ section below for details on collecting performance metrics.
 
-For self-hosted deployments, enable performance metrics in the System Console.
+For a self-hosted Mattermost deployment, a Mattermost system admin must perform the following steps in Mattermost.
 
-1. Go to **System Console > Plugins > Plugin Management**.
-2. Under **Installed Plugins**, scroll to **Mattermost Metrics Plugin**, and select **Enable**.
-
-You can disable performance metrics collection in the System Console by going to **Plugins > Mattermost Metrics Plugin** or to **Plugin Management > Installed Plugins > Mattermost Metrics Plugin**.
-
-Configure
----------
-
-Go to **System Console > Plugins > Plugin Management > Mattermost Metrics Plugin** to manage configuration settings for this plugin.
+1. Log in to your Mattermost workspace as a system administrator.
+2. Download the latest version of `the plugin binary release <https://github.com/mattermost/mattermost-plugin-metrics/releases>`__, compatible with Mattermost v8.0.1 and later. If you are using an earlier version of Mattermost, :doc:`follow our documentation </upgrade/upgrading-mattermost-server>` to upgrade to Mattermost v8.0.1 or later.
+3. Go to **System Console > Plugins > Plugin Management > Upload Plugin**, and upload the plugin binary you downloaded in the previous step.
+4. Go to **System Console > Plugins > Plugin Management**. In the **Installed Plugins** section, scroll to **Mattermost Metrics Plugin**, and select **Enable Plugin**.
+5. Specify the path of the time-series database, and select **Save**.
 
 Upgrade
-~~~~~~~~
+-------
 
 We recommend upgrading this feature as new versions are released. Generally, updates are seamless and don't interrupt the user experience in Mattermost. Visit the `Releases page <https://github.com/mattermost/mattermost-plugin-metrics/releases>`__ for the latest release, available releases, and compatibiilty considerations.
 

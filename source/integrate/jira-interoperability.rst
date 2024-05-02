@@ -4,6 +4,10 @@ Connect Jira to Mattermost
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
+.. |product-menu| image:: ../images/products_E82F.svg
+  :alt: The Product menu is located in the top left corner of the Mattermost screen.
+  :class: theme-icon
+
 Minimize distractions, reduce context switching between your project management tool and your communication platform by integrating Jira with Mattermost. Create Jira issues directly from Mattermost conversations, attach messages to Jira issues, transition and assign Jira issues, and follow up on action items in real-time, directly from Mattermost channel subscriptions.
 
 .. note::
@@ -23,18 +27,22 @@ Mattermost configuration
 
 A Mattermost system admin must perform the following steps in Mattermost.
 
-1. Go to **System Console > Plugins > Jira** to enable Jira interoperability.
-2. Generate a **Webhook Secret** by selecting **Regenerate**.
-3. Configure Jira interoperabiilty preferences, then select **Save**.
+1. Install the Jira integration from the in-product App Marketplace:
 
-  - **Allow users to attach and create Jira issues in Mattermost**: Enable or disable the user's ability to attach and create Jira issues in Mattermost. When enabled, you must also `install this Jira integration in your Jira instance <#install-integration-as-Jira-app>`__.
-  - **Mattermost Roles Allowed to Edit Jira Subscriptions**: Specify the Mattermost roles that can edit Jira subscriptions to control which Mattermost users can subscribe channels to Jira tickets.
-  - **Jira Groups Allowed to Edit Jira Subscriptions**: (Applies to older Jira v2.4 or earlier deployments only) Specify the Jira groups allowed to edit Jira subscriptions as a comma-separated list of user group names. Leave blank to allow any Jira user the ability to create subscriptions. The user editing a subscription only needs to be a member of one of the listed groups.
-  - **Default Subscription Security Level to Empty**: Enable or disable default subscription security level. When enabled, subscriptions only include issues that have a security level assigned when a security level has been included as a filter.
-  - **Additional Help Text to be shown with Jira Help**: Define any additional help text to display when users run the ``/jira help`` slash command.
-  - **Hide issue descriptions and comments**: Show or hide issue descriptions and comments from subscription and webhook messages.
-  - **Enable slash command**: Enable or disble slash command autocompletion to guide users through available ``/jira`` slash commands.
-  - **Display Subscrition name in notifications**: Show or hide subscription name in notification messages posted to a channel.
+  a. In Mattermost, from the Product menu |product-menu|, select **App Marketplace**.
+  b. Search for or scroll to Jira, and select **Install**.
+  c. Once installed, select **Configure**. You're taken to the System Console.
+  d. On the Jira configuration page, enable and configure Jira interoperability as follows, and then select **Save**:
+
+    - Generate a **Webhook Secret** by selecting **Regenerate**.
+    - **Allow users to attach and create Jira issues in Mattermost**: Enable or disable the user's ability to attach and create Jira issues in Mattermost. When enabled, you must also `install this Jira integration in your Jira instance <#install-integration-as-Jira-app>`__.
+    - **Mattermost Roles Allowed to Edit Jira Subscriptions**: Specify the Mattermost roles that can edit Jira subscriptions to control which Mattermost users can subscribe channels to Jira tickets.
+    - **Jira Groups Allowed to Edit Jira Subscriptions**: (Applies to older Jira v2.4 or earlier deployments only) Specify the Jira groups allowed to edit Jira subscriptions as a comma-separated list of user group names. Leave blank to allow any Jira user the ability to create subscriptions. The user editing a subscription only needs to be a member of one of the listed groups.
+    - **Default Subscription Security Level to Empty**: Enable or disable default subscription security level. When enabled, subscriptions only include issues that have a security level assigned when a security level has been included as a filter.
+    - **Additional Help Text to be shown with Jira Help**: Define any additional help text to display when users run the ``/jira help`` slash command.
+    - **Hide issue descriptions and comments**: Show or hide issue descriptions and comments from subscription and webhook messages.
+    - **Enable slash command**: Enable or disble slash command autocompletion to guide users through available ``/jira`` slash commands.
+    - **Display Subscrition name in notifications**: Show or hide subscription name in notification messages posted to a channel.
 
 Install Jira integration in your Jira instance
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -72,9 +80,9 @@ If your organization's infrastructure is set up in such a way that your Mattermo
 
 3. Select **Create a WebHook** to create a new webhook. Enter a **Name** for the webhook, and add the Jira webhook URL ``https://MATTERMOST-SITE-URL/plugins/jira/webhook?secret=MATTERMOST-WEBHOOK-SECRET&team=MATTERMOST-TEAM-URL&channel=MATTERMOST-CHANNEL-URL`` (for Jira 2.1) as the URL.
 
-- Replace ``MATTERMOST-TEAM-URL`` and ``MATTERMOST-CHANNEL-URL`` with the Mattermost team URL and channel URL you want the Jira events to post to, using lowercase characters.
-- Replace ``MATTERMOST-SITE-URL`` with the site URL of your Mattermost instance.
-- Replace ``MATTERMOST-WEBHOOK-SECRET`` with the secret generated in Mattermost by going to **System Console > Plugins > Jira**.
+  - Replace ``MATTERMOST-TEAM-URL`` and ``MATTERMOST-CHANNEL-URL`` with the Mattermost team URL and channel URL you want the Jira events to post to, using lowercase characters.
+  - Replace ``MATTERMOST-SITE-URL`` with the site URL of your Mattermost instance.
+  - Replace ``MATTERMOST-WEBHOOK-SECRET`` with the secret generated in Mattermost by going to **System Console > Plugins > Jira**.
 
 For example, if the team URL is ``contributors``, channel URL is ``town-square``, site URL is ``https://community.mattermost.com``, and the generated webhook secret is ``MYSECRET``, the final webhook URL would be: ``https://community.mattermost.com/plugins/jira/webhook?secret=MYSECRET&team=contributors&channel=town-square``.
 
@@ -133,7 +141,7 @@ When any webhook event is received from Jira, and it matches a notification rule
 Enable
 ------
 
-Notify your teams that they can connect their Jira accounts to Mattermost.
+Notify your teams that they can `connect their Jira accounts to Mattermost <#connect-a-jira-account-to-mattermost>`__.
 
 Do more with Jira
 ~~~~~~~~~~~~~~~~~
@@ -149,18 +157,23 @@ Do more with Jira interoperabiilty as a Mattermost system admin by using the fol
 - ``/jira v2revert`` - Revert to the legacy V2 jira plugin data model.
 
 Upgrade
-~~~~~~~
+-------
 
-We recommend updating this integration as new versions are released. Generally, updates are seamless and don't interrupt the user experience in Mattermost.
-Visit the `Releases page <https://github.com/mattermost/mattermost-plugin-jira/releases>`__ for the latest release, available releases, and compatibiilty considerations.
+We recommend updating this integration as new versions are released. Generally, updates are seamless and don't interrupt the user experience in Mattermost. Visit the `Releases page <https://github.com/mattermost/mattermost-plugin-jira/releases>`__ for the latest release, available releases, and compatibiilty considerations.
 
 Usage
 -----
 
-Connect your Jira account to Mattermost
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Users who want to use Jira interconnectivity must connect a Jira account to Mattermost. 
 
-1. In Mattermost, run the ``/jira connect`` slash command in any Mattermost channel to link your Mattermost account with your Jira account. Follow the link into your Jira instance, and select **Allow**. You can disconnect your accounts by running the ``/jira disconnect`` slash command.
+Once connected, you'll receive direct messages from the Jira bot in Mattermost for Jira activity.
+
+Connect a Jira account to Mattermost
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1. In Mattermost, run the ``/jira connect`` slash command in any Mattermost channel to link your Mattermost account with your Jira account. Follow the link into your Jira instance, and select **Allow**. 
+
+Disconnect your accounts by running the ``/jira disconnect`` slash command.
 
 2. Once connected, run the ``/jira help`` slash command to see what you can do.
 
@@ -220,7 +233,7 @@ Why isn't the Jira plugin posting messages to Mattermost?
 
 Try the following troubleshooting steps:
 
-1. Confirm that your :ref:`Mattermost Site URL <configure/environment-configuration-settings:web site url>` is configured, and that the webhook created in Jira is pointing to this URL. To ensure the URL is correct, run the ``/jira webhook`` slash command, then copy the output and paste it into Jira's webhook setup page.
+1. Confirm that your :ref:`Mattermost Site URL <configure/environment-configuration-settings:site url>` is configured, and that the webhook created in Jira is pointing to this URL. To ensure the URL is correct, run the ``/jira webhook`` slash command, then copy the output and paste it into Jira's webhook setup page.
 
 2. If you specified a JQL query in your Jira webhook setup, paste the JQL to Jira issue search and make sure it returns results. If it doesn't, the query may be incorrect. Refer to the `Atlassian documentation <https://support.atlassian.com/jira-software-cloud/docs/what-is-advanced-search-in-jira-cloud/>`__ for help. A JQL query isn't required when setting up the webhook.
 

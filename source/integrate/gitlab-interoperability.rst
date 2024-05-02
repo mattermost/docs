@@ -4,14 +4,18 @@ Connect GitLab to Mattermost
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Minimize distractions and reduce context switching between your GitLab code repositories and your communication platform by integrating GitLab with Mattermost. Help your teams stay focused and productive with daily task summaries, real-time updates and notifications on new and closed merge requests, new and closed issues, and tag creation events, directly from Mattermost channel subscriptions.
+.. |product-menu| image:: ../images/products_E82F.svg
+  :alt: The Product menu is located in the top left corner of the Mattermost screen.
+  :class: theme-icon
 
-.. image:: ../images/gitlab_mattermost.png
-  :alt: An example of the GitLab integration for Mattermost.
+Minimize distractions and reduce context switching between your GitLab code repositories and your communication platform by integrating GitLab with Mattermost. Help your teams stay focused and productive with daily task summaries, real-time updates and notifications on new and closed merge requests, new and closed issues, and tag creation events, directly from Mattermost channel subscriptions.
 
 .. note::
   - You can also control which events trigger notifications beyond default events, including merges, issue comments, merge request comments, pipelines, and pull reviews.
   - Mattermost supports both Software-as-a-Service (SaaS) and on-premises versions of GitLab.
+
+.. image:: ../images/gitlab_mattermost.png
+  :alt: An example of the GitLab integration for Mattermost.
 
 Setup
 ------
@@ -31,12 +35,6 @@ A Mattermost system admin must perform the following steps in GitLab.
 
 3. Select ``api`` and ``read_user`` in **Scopes**.
 4. Save your changes. Copy the **Application ID** and **Secret** fields in the resulting screen.
-  - Authorization callback URL: ``https://YOUR-MATTERMOST-URL.COM/plugins/github/oauth/complete``, replacing ``https://YOUR-MATTERMOST-URL.COM`` with your Mattermost URL. 
-
-3. Submit these changes.
-4. Select **Generate a new client secret**, and enter your GitHub password to continue. 
-5. Copy the **Client ID** and **Client Secret** in the resulting screen. 
-6. Generate a **Webhook Secret** and **At Rest Encryption Key** by selecting **Generate**.
 
 Create a webhook in GitLab
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -50,33 +48,43 @@ Mattermost configuration
 
 A Mattermost system admin must perform the following steps in Mattermost.
 
-Go to **System Console > Plugins > GitHub** to finish configuration, then select **Save**.
+Install the GitHub integration from the in-product App Marketplace:
 
-- Enter the **GitLab URL**, **GitLab OAuth Client ID**, and **GitLab OAuth Client Secret** you obtained when `registering the OAuth app in GitLab <#register-an-oauth-app-in-GitLab>`__.
-- Generate a **Webhook Secret** and **At Rest Encryption Key** by selecting **Generate**.
-- (Optional) Lock the plugin to a single GitLab group by setting **GitLab Group** to the name of your GitLab group.
-- (Optional) Work with private repositories by enabling **Enable Private Repositories**. Affected users are notified once private repositories are enabled, and must reconnect their GitLab accounts to gain access to private repositories.
+1. In Mattermost, from the Product menu |product-menu|, select **App Marketplace**.
+2. Search for or scroll to GitLab, and select **Install**.
+3. Once installed, select **Configure**. You're taken to the System Console.
+4. On the GitLab configuration page, enable and configure GitLab interoperability as follows, and then select **Save**:
+
+ - Enter the **GitLab URL**, **GitLab OAuth Client ID**, and **GitLab OAuth Client Secret** you obtained when `registering the OAuth app in GitLab <#register-an-oauth-app-in-GitLab>`__.
+ - Generate a **Webhook Secret** and **At Rest Encryption Key** by selecting **Generate**.
+ - (Optional) **GitLab Group**: Lock the plugin to a single GitLab group.
+ - (Optional) **Enable Private Repositories**: Enable the ability to work with private repositories. Affected users are notified once private repositories are enabled, and must reconnect their GitLab accounts to gain access to private repositories.
 
 Enable
 ------
 
-Once all setup and configuration is complete, a Mattermost system admin can go to **System Console > Plugins > GitLab** to enable GitLab interoperability. Notify your teams that they can connect their GitLab accounts to Mattermost.
+Notify your teams that they can `connect their GitLab accounts to Mattermost <#connect-a-gitlab-account-to-mattermost>`__.
 
 Upgrade
-~~~~~~~
+-------
 
-We recommend updating this integration as new versions are released. Generally, updates are seamless and don't interrupt the user experience in Mattermost.
-Visit the `Releases page <https://github.com/mattermost/mattermost-plugin-gitlab/releases>`__ for the latest release, available releases, and compatibiilty considerations.
+We recommend updating this integration as new versions are released. Generally, updates are seamless and don't interrupt the user experience in Mattermost. Visit the `Releases page <https://github.com/mattermost/mattermost-plugin-gitlab/releases>`__ for the latest release, available releases, and compatibiilty considerations.
 
 Usage
 -----
 
-You must register an OAuth app in GitLab for Mattermost, and then connect your GitLab account to Mattermost to use GitLab interoperabilty. Once connected, you'll receive direct messages from the GitLab bot in Mattermost when someone mentions you, requests a review, comments on, or modifies one of your merge requests/issues, or assigns you to an issue on GitLab.
+Users who want to use GitLab interconnectivity must register an OAuth app in GitLab for Mattermost, and then connect a GitLab account to Mattermost. 
 
-Connect your GitLab account to Mattermost
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Once connected, you'll receive direct messages from the GitLab bot in Mattermost when someone mentions you, requests a review, comments on, or modifies one of your merge requests/issues, or assigns you to an issue on GitLab.
 
-Connect your GitLab account to Mattermost by running the ``/gitlab connect`` slash account. Disconnect your account by running the ``/gitlab disconnect`` slash comamnd. Run the ``/gitlab me`` slash command to review the connected GitLab account.
+Connect a GitLab account to Mattermost
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Run the ``/gitlab connect`` slash account in any Mattermost channel to link your Mattermost account with your GitLab account.
+
+Disconnect a GitLab account by running the ``/gitlab disconnect`` slash comamnd. Run the ``/gitlab me`` slash command to review which account is connected to GitLab.
+
+Once connected, run the ``/gitlab help`` slash command to see what you can do.
 
 Get started
 ~~~~~~~~~~~

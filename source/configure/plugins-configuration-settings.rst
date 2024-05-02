@@ -924,7 +924,7 @@ Legal hold
 .. include:: ../_static/badges/ent-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-See the :doc:`Perform legal holds </integrate/perform-legal-holds>` product documentation for available :ref:`Mattermost configuration options <integrate/perform-legal-holds:mattermost configuration>`.
+See the :doc:`Legal holds </comply/legal-hold>` product documentation for details.
 
 MS Teams
 --------
@@ -1260,7 +1260,7 @@ Performance metrics
 .. include:: ../_static/badges/ent-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-See the :doc:`Monitor performance metrics </integrate/monitor-performance-metrics>` product documentation for available :ref:`Mattermost configuration options <integrate/monitor-performance-metrics:mattermost configuration>`.
+See the :doc:`Monitor performance metrics </scale/collect-performance-metrics>` product documentation for available :ref:`Mattermost configuration options <scale/collect-performance-metrics:mattermost configuration>`.
 
 Playbooks
 ----------

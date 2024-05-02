@@ -6,12 +6,12 @@ Integrate and extend Mattermost
   :hidden:
   :titlesonly:
 
-    GitHub plugin </integrate/github-interoperability>
-    GitLab plugin </integrate/gitlab-interoperability>
-    Jira </integrate/jira-interoperability>
+    GitHub interoperability </integrate/github-interoperability>
+    GitLab interoperability </integrate/gitlab-interoperability>
+    Jira interoperability </integrate/jira-interoperability>
     Microsoft Teams interoperability </integrate/ms-teams-interoperability>
-    ServiceNow </integrate/servicenow-interoperability>
-    Zoom </integrate/zoom-interoperability>
+    ServiceNow interoperability </integrate/servicenow-interoperability>
+    Zoom interoperability </integrate/zoom-interoperability>
 
 Mattermost offers many ways to add product functionality, custom-tailor your workflows, and connect Mattermost to your mission-critical tools. 
 

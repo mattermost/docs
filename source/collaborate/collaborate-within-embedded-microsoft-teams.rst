@@ -1,3 +1,4 @@
+:orphan:
 :nosearch:
 
 Collaborate within embedded Microsoft Teams (Demo)

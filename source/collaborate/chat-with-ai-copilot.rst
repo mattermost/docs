@@ -52,7 +52,7 @@ To summarize a Mattermost call recording:
 .. image:: ../images/create-meeting-summary.png
   :alt: Select the Create meeting summary option to summarize your call recording in Mattermost.
 
-4. The meeting summary is generated for you in the call thread, and the summary is visible by all channel members.
+4. The meeting summary is generated and shared as a direct message with the person who requested the meeting summary.
 
 .. image:: ../images/copilot-Calls-Meeting-Summary.webp
   :alt: Easily share the updates from your Mattermost Calls with your team and broader organization by turning recordings into detailed summaries at the click of a button.

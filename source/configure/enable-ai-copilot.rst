@@ -9,8 +9,6 @@ Signficantly increase team productivity and decision-making speed by enhancing y
 Setup
 ------
 
-Setup starts in Mattermost, moves to Jira, and finishes in Mattermost.
-
 Mattermost AI Copilot comes preinstalled from Mattermost Server v9.7 or later. You need to be a Mattermost system admin to `enable it <#enable>`__ and `configure it <#mattermost-configuration>`__ using the System Console.
 
 .. note::
@@ -27,19 +25,20 @@ Mattermost AI Copilot comes preinstalled from Mattermost Server v9.7 or later. Y
 Enable
 ------
 
+Go to **System Console > Plugins > AI Copilot** to enable this feature.
+
 Once the plugin is installed and enabled, complete configuration in the System Console, then notify your teams that they can use the AI Copilot in any Mattermost team or channel.
 
 Mattermost configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-With extensive customization and extensibility options, tailor your AI Copilot to meet your specific needs, whether it's integrating with internal systems, customizing AI responses based on the team or project needs, or developing new capabilities that are unique to your operational requirements. Create custom integrations, workflows, and bots that leverage AI to meet your unique business needs.
+With extensive customization and extensibility options, you can tailor your AI Copilot to meet your specific needs, whether it's integrating with internal systems, customizing AI responses based on the team or project needs, or developing new capabilities that are unique to your operational requirements. You can also create custom integrations, workflows, and bots that leverage AI to meet your unique business needs.
 
-Configure the plugin by going to **System Console > Mattermost AI Copilot Plugin**. The following AI services are supported:
+Configure the plugin by going to **System Console > Plugins > AI Copilot**. The following AI services are supported:
 
 - `OpenAI <https://platform.openai.com/account/api-keys>`_
 - `Anthropic (Claude) <https://console.anthropic.com/account/keys>`_
 - `Azure OpenAI <https://learn.microsoft.com/en-us/azure/ai-services/openai/overview>`_
-- `Ask Sage <https://asksage.ai>`_
 - `OpenAI Compatible <https://github.com/go-skynet/LocalAI>`_
 
 .. tab:: Open AI
@@ -48,7 +47,7 @@ Configure the plugin by going to **System Console > Mattermost AI Copilot Plugin
   2. Select **OpenAI** in the **AI Service** dropdown.
   3. Enter your OpenAI API key in the **API Key** field.
   4. Enter a model name in the **Default Model** field, such as `gpt-4` or `gpt-3.5-turbo`.
-  5. *(Optional)* If using multiple organizations on OpenAI, specify your **Organization ID** to direct API usage and billing accordingly.
+  5. (Optional) If using multiple organizations on OpenAI, specify your **Organization ID** to direct API usage and billing accordingly.
 
 .. tab:: Anthropic (Claude)
 
@@ -68,15 +67,6 @@ Configure the plugin by going to **System Console > Mattermost AI Copilot Plugin
   5. Enter your Azure resource's URL in the **API URL** field.
   6. Input your Azure resource API key in the **API Key** field.
   7. Specify your model name in the **Default Model** field, for example, `gpt-3.5-turbo`.
-
-.. tab:: Ask Sage
-
-  Ask Sage is an experimental feature with certain limitations:
-
-  1. Obtain `access to Ask Sage <https://asksage.ai>`_.
-  2. Choose **Ask Sage** in the **AI Service** dropdown.
-  3. Enter your username and password for Ask Sage in the respective fields.
-  4. Specify a default model name, such as `gpt-4`.
 
 .. tab:: OpenAI Compatible
 

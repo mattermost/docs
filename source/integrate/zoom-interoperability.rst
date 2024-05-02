@@ -4,6 +4,10 @@ Connect Zoom to Mattermost
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
+.. |product-menu| image:: ../images/products_E82F.svg
+  :alt: The Product menu is located in the top left corner of the Mattermost screen.
+  :class: theme-icon
+
 Reduce friction and time lost to coordinating meetings and switching between apps by integrating Zoom with Mattermost. Make it easy for your teams to start both spontaneous and scheduled video calls directly from Mattermost channels.
 
 Setup
@@ -92,25 +96,31 @@ When a Zoom meeting ends, the original link shared in the channel can be changed
 Mattermost configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-Enable settings for overriding usernames and overriding profile picture icons.
+A Mattermost system admin must perform the following steps in Mattermost.
 
-A Mattermost system admin needs to enable and configure GitHub by going to **System Console > Plugins > Zoom**. 
+Install the Zoom integration from the in-product App Marketplace:
 
-- For Mattermost Cloud deployments, leave the **Zoom API URL** and **Zoom URL** fields blank.
-- For self-hosted Mattermost deployments, enter the **Zoom URL** and **Zoom API URL** for the Zoom server when you're using a self-hosted private cloud or on-premises Zoom server, such as ``https://YOUR-ZOOM.com`` and ``https://api.YOUR-ZOOM.com/v2`` respectively, replacing ``YOUR-ZOOM`` with your Zoom server URL. Leave this field blank if you're using Zoom's vendor-hosted SaaS service.
+1. In Mattermost, from the Product menu |product-menu|, select **App Marketplace**.
+2. Search for or scroll to Zoom, and select **Install**.
+3. Once installed, select **Configure**. You're taken to the System Console.
+4. On the Zoom configuration page, enable and configure Zoom interoperability as follows, and then select **Save**:
+
+  - For Mattermost Cloud deployments, leave the **Zoom API URL** and **Zoom URL** fields blank.
+  - For self-hosted Mattermost deployments, enter the **Zoom URL** and **Zoom API URL** for the Zoom server when you're using a self-hosted private cloud or on-premises Zoom server, such as ``https://YOUR-ZOOM.com`` and ``https://api.YOUR-ZOOM.com/v2`` respectively, replacing ``YOUR-ZOOM`` with your Zoom server URL. Leave this field blank if you're using Zoom's vendor-hosted SaaS service.
 - If you've created an `account level Zoom app for Mattermost <#register-an-oauth-app-in-zoom>`__, set **OAuth by Account Level App** to **true**. Leave this value as **false** if you've created a user level Zoom app for Mattermost.
-- Connect your users to Zoom using OAuth. Enter the **Client ID** and **Client Secret** generated when `registering the oauth app in Zoom <#register-an-oauth-app-in-zoom>`__.
-- Select **Regenerate** next to the **At Rest Token Encryption Key** field to generate an AES encryption key.
-- If you're configuring webhook events, or setting up deauthorization, select **Regenerate** next to the **Webhook Secret** field. Configure this secret as the **Zoom Webhook Secret** on the **Features** tab in Zoom.
-- Select **Save** to save your changes.
+
+  - Connect your users to Zoom using OAuth. Enter the **Client ID** and **Client Secret** generated when `registering the oauth app in Zoom <#register-an-oauth-app-in-zoom>`__.
+  - Select **Regenerate** next to the **At Rest Token Encryption Key** field to generate an AES encryption key.
+  - If you're configuring webhook events, or setting up deauthorization, select **Regenerate** next to the **Webhook Secret** field. Configure this secret as the **Zoom Webhook Secret** on the **Features** tab in Zoom.
+  - Select **Save** to save your changes.
 
 Enable
 ------
 
-Notify your teams that they can connect their GitHub accounts to Mattermost.
+Notify your teams that they can `connect their Zoom accounts to Mattermost <#usage>`__.
 
 Upgrade
-~~~~~~~
+-------
 
 We recommend updating this integration when new versions are released. Generally, updates are seamless and don't interrupt the user experience in Mattermost. Visit the `Releases page <https://github.com/mattermost/mattermost-plugin-zoom/releases>`__ for the latest release, available releases, and compatibiilty considerations.
 
