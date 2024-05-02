@@ -25,7 +25,6 @@ If you upgrade from a release earlier than v9.7, please read the other [Importan
 ### Improvements
 
 #### User Interface (UI)
- - Upgraded Nodejs to v20.11.
  - Pre-packaged Playbooks version [v1.39.3](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v1.39.3).
  - Pre-packaged GitLab plugin version [v1.8.1](https://github.com/mattermost/mattermost-plugin-gitlab/releases/tag/v1.8.1).
  - Pre-packaged Calls version [v0.26.2](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v0.26.2).
