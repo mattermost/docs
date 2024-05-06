@@ -8,7 +8,6 @@ Mattermost is accessible through a URL link. You'll receive a link from your Mat
 
 .. tip::
 
-  - Is your Mattermost hosted externally? You can access Cloud workspaces from the `Cloud Workspace Connection <https://customers.mattermost.com/cloud/connect-workspace>`__ page by specifying your company or domain name.
   - Can't find your Mattermost link? Ask your company's IT department or your Mattermost system admin for your organization's **Mattermost Site URL**. It'll look something like ``https://example.com/company/mattermost``, ``mattermost.yourcompanydomain.com``, or ``chat.yourcompanydomain.com``. These URLs could also end in ``.net``.
 
 .. toctree::
