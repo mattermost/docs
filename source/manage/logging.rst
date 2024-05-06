@@ -47,58 +47,58 @@ Define logging output in JSON format in the System Console by going to **Environ
 
     {
         "console1": {
-            "Type": "console",
-            "Format": "json",
-            "Levels": [
-                {"ID": 5, "Name": "debug", "Stacktrace": false},
-                {"ID": 4, "Name": "info", "Stacktrace": false, "color": 36},
-                {"ID": 3, "Name": "warn", "Stacktrace": false},
-                {"ID": 2, "Name": "error", "Stacktrace": true, "color": 31},
-                {"ID": 1, "Name": "fatal", "Stacktrace": true, "color": 31},
-                {"ID": 0, "Name": "panic", "Stacktrace": true, "color": 31},
-                {"ID": 10, "Name": "stdlog", "Stacktrace": false}
+            "type": "console",
+            "format": "json",
+            "levels": [
+                {"id": 5, "name": "debug", "stacktrace": false},
+                {"id": 4, "name": "info", "stacktrace": false, "color": 36},
+                {"id": 3, "name": "warn", "stacktrace": false},
+                {"id": 2, "name": "error", "stacktrace": true, "color": 31},
+                {"id": 1, "name": "fatal", "stacktrace": true, "color": 31},
+                {"id": 0, "name": "panic", "stacktrace": true, "color": 31},
+                {"id": 10, "name": "stdlog", "stacktrace": false}
             ],
-            "Options": {
-                "Out": "stdout"
+            "options": {
+                "out": "stdout"
             },
-            "MaxQueueSize": 1000
+            "maxqueuesize": 1000
         },
         "file1": {
-            "Type": "file",
-            "Format": "json",
-            "Levels": [
-                {"ID": 5, "Name": "debug", "Stacktrace": false},
-                {"ID": 4, "Name": "info", "Stacktrace": false},
-                {"ID": 3, "Name": "warn", "Stacktrace": false},
-                {"ID": 2, "Name": "error", "Stacktrace": true},
-                {"ID": 1, "Name": "fatal", "Stacktrace": true},
-                {"ID": 0, "Name": "panic", "Stacktrace": true}
+            "type": "file",
+            "format": "json",
+            "levels": [
+                {"id": 5, "name": "debug", "stacktrace": false},
+                {"id": 4, "name": "info", "stacktrace": false},
+                {"id": 3, "name": "warn", "stacktrace": false},
+                {"id": 2, "name": "error", "stacktrace": true},
+                {"id": 1, "name": "fatal", "stacktrace": true},
+                {"id": 0, "name": "panic", "stacktrace": true}
             ],
-            "Options": {
-                "Compress": true,
-                "Filename": "mattermost_logging.log",
-                "MaxAgeDays": 1,
-                "MaxBackups": 10,
-                "MaxSizeMB": 100 
+            "options": {
+                "filename": "mattermost_logging.log",
+                "max_size": 100,
+                "max_age": 1,
+                "max_backups": 10,
+                "compress": true,
             },
-            "MaxQueueSize": 1000
+            "maxqueuesize": 1000
         },
         "file2": {
-            "Type": "file",
-            "Format": "json",
-            "Levels": [
-                {"ID": 2, "Name": "error", "Stacktrace": true},
-                {"ID": 1, "Name": "fatal", "Stacktrace": true},
-                {"ID": 0, "Name": "panic", "Stacktrace": true}
+            "type": "file",
+            "format": "json",
+            "levels": [
+                {"id": 2, "name": "error", "stacktrace": true},
+                {"id": 1, "name": "fatal", "stacktrace": true},
+                {"id": 0, "name": "panic", "stacktrace": true}
             ],
-            "Options": {
-                "Compress": true,
-                "Filename": "mattermost_logging_errors.log", 
-                "MaxAgeDays": 30,
-                "MaxBackups": 10,
-                "MaxSizeMB": 100
+            "options": {
+                "filename": "mattermost_logging_errors.log", 
+                "max_size": 100,
+                "max_age": 30,
+                "max_backups": 10,
+                "compress": true
             },
-            "MaxQueueSize": 1000
+            "maxqueuesize": 1000
         }
     }
 
@@ -170,22 +170,22 @@ Define advanced log output
 
         "AdvancedLoggingJSON": {
             "file_1": {
-                "Type": "file",
-                "Format": "plain",
-                "Levels": [
+                "type": "file",
+                "format": "plain",
+                "levels": [
                     { "id": 100, "name": "audit-api" },
                     { "id": 101, "name": "audit-content" },
                     { "id": 102, "name": "audit-permissions" },
                     { "id": 103, "name": "audit-cli" }
                 ],
-                "Options": {
-                    "Compress": true,
-                    "Filename": "./logs/audit.log",
-                    "MaxAgeDays": 1,
-                    "MaxBackups": 10,
-                    "MaxSizeMB": 500
+                "options": {
+                    "compress": true,
+                    "filename": "./logs/audit.log",
+                    "max_age": 1,
+                    "max_backups": 10,
+                    "max_size": 500
                 },
-                "MaxQueueSize": 1000
+                "maxqueuesize": 1000
             }
         }
 
@@ -235,11 +235,11 @@ Define advanced log output
                     {"id": 103, "name": "audit-cli"}
                 ],
                 "options": {
-                    "compress": true,
                     "filename": "./logs/audit.log",
+                    "max_size": 500,
                     "max_age": 1,
                     "max_backups": 10,
-                    "max_size": 500
+                    "compress": true
                 },
                 "maxqueuesize": 1000
             }
