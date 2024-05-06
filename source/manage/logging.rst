@@ -417,20 +417,22 @@ Syslog target configuration options
 
 Syslog targets support local and remote syslog servers, with or without TLS transport. Syslog target support requires Mattermost Enterprise.
 
-+----------+----------+---------------------------------------------------------------------------------------------------------------------------------+
-| **Key**  | **Type** | **Description**                                                                                                                 |
-+----------+----------+---------------------------------------------------------------------------------------------------------------------------------+
-| host     | string   | IP or domain name of the server receiving the log records.                                                                      |
-+----------+----------+---------------------------------------------------------------------------------------------------------------------------------+
-| port     | number   | Port number for the server receiving the log records.                                                                           |
-+----------+----------+---------------------------------------------------------------------------------------------------------------------------------+
-| tls      | bool     | Create a TLS connection to the server receiving the log records. Default is ``false``.                                          |
-+----------+----------+---------------------------------------------------------------------------------------------------------------------------------+
-| cert     | string   | Path to a cert file (.pem) to be used when establishing a TLS connection to the server.                                         |
-+----------+----------+---------------------------------------------------------------------------------------------------------------------------------+
-| insecure | bool     | Mattermost accepts any certificate presented by the server, and any host name in that certificate. Default is ``false``.        |
-|          |          | **Note**: Should only be used in testing environments, and shouldn’t be used in production environments.                        |
-+----------+----------+---------------------------------------------------------------------------------------------------------------------------------+
++----------+----------+--------------------------------------------------------------------------------------------------------------------------+
+| **Key**  | **Type** | **Description**                                                                                                          |
++----------+----------+--------------------------------------------------------------------------------------------------------------------------+
+| host     | string   | IP or domain name of the server receiving the log records.                                                               |
++----------+----------+--------------------------------------------------------------------------------------------------------------------------+
+| port     | number   | Port number for the server receiving the log records.                                                                    |
++----------+----------+--------------------------------------------------------------------------------------------------------------------------+
+| tls      | bool     | Create a TLS connection to the server receiving the log records. Default is ``false``.                                   |
++----------+----------+--------------------------------------------------------------------------------------------------------------------------+
+| cert     | string   | Path to a cert file (.pem) to be used when establishing a TLS connection to the server.                                  |
++----------+----------+--------------------------------------------------------------------------------------------------------------------------+
+| insecure | bool     | Mattermost accepts any certificate presented by the server, and any host name in that certificate. Default is ``false``. |
+|          |          | **Note**: Should only be used in testing environments, and shouldn’t be used in production environments.                 |
++----------+----------+--------------------------------------------------------------------------------------------------------------------------+
+| tag      | string   | Syslog tag field.                                                                                                        |
++----------+----------+--------------------------------------------------------------------------------------------------------------------------+
 
 TCP target configuration options
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -440,22 +442,20 @@ TCP target configuration options
 
 The TCP socket targets can be configured with an IP address or domain name, port, and optional TLS certificate. TCP socket target support requires Mattermost Enterprise.
 
-+----------+----------+---------------------------------------------------------------------------------------------------------------------------------+
-| **Key**  | **Type** | **Description**                                                                                                                 |
-+----------+----------+---------------------------------------------------------------------------------------------------------------------------------+
-| host     | string   | IP or domain name of the server receiving the log records.                                                                      |
-+----------+----------+---------------------------------------------------------------------------------------------------------------------------------+
-| port     | number   | Port number for the server receiving the log records.                                                                           |
-+----------+----------+---------------------------------------------------------------------------------------------------------------------------------+
-| tls      | bool     | Create a TLS connection to the server receiving the log records. Default is ``false``.                                          |
-+----------+----------+---------------------------------------------------------------------------------------------------------------------------------+
-| cert     | string   | Path to a cert file (.pem) to be used when establishing a TLS connection to the server.                                         |
-+----------+----------+---------------------------------------------------------------------------------------------------------------------------------+
-| insecure | bool     | Mattermost accepts any certificate presented by the server, and any host name in that certificate. Default is ``false``.        |
-|          |          | **Note**: Should only be used in testing environments, and shouldn’t be used in production environments.                        |
-+----------+----------+---------------------------------------------------------------------------------------------------------------------------------+
-| tag      | string   | Syslog tag field.                                                                                                               |
-+----------+----------+---------------------------------------------------------------------------------------------------------------------------------+
++----------+----------+--------------------------------------------------------------------------------------------------------------------------+
+| **Key**  | **Type** | **Description**                                                                                                          |
++----------+----------+--------------------------------------------------------------------------------------------------------------------------+
+| host     | string   | IP or domain name of the server receiving the log records.                                                               |
++----------+----------+--------------------------------------------------------------------------------------------------------------------------+
+| port     | number   | Port number for the server receiving the log records.                                                                    |
++----------+----------+--------------------------------------------------------------------------------------------------------------------------+
+| tls      | bool     | Create a TLS connection to the server receiving the log records. Default is ``false``.                                   |
++----------+----------+--------------------------------------------------------------------------------------------------------------------------+
+| cert     | string   | Path to a cert file (.pem) to be used when establishing a TLS connection to the server.                                  |
++----------+----------+--------------------------------------------------------------------------------------------------------------------------+
+| insecure | bool     | Mattermost accepts any certificate presented by the server, and any host name in that certificate. Default is ``false``. |
+|          |          | **Note**: Should only be used in testing environments, and shouldn’t be used in production environments.                 |
++----------+----------+--------------------------------------------------------------------------------------------------------------------------+
 
 ---- 
 
