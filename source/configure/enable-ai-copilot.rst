@@ -27,14 +27,14 @@ Enable
 
 Go to **System Console > Plugins > AI Copilot** to enable this feature.
 
-Once the plugin is installed and enabled, complete configuration in the System Console, then notify your teams that they can use the AI Copilot in any Mattermost team or channel.
+Once the plugin is installed and enabled, complete configuration in the System Console as described below, then notify your teams that they can use the AI Copilot in any Mattermost team or channel.
 
 Mattermost configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 With extensive customization and extensibility options, you can tailor your AI Copilot to meet your specific needs, whether it's integrating with internal systems, customizing AI responses based on the team or project needs, or developing new capabilities that are unique to your operational requirements. You can also create custom integrations, workflows, and bots that leverage AI to meet your unique business needs.
 
-Configure the plugin by going to **System Console > Plugins > AI Copilot**. The following AI services are supported:
+Configure a large language model (LLM) for your AI Copilot integration by going to **System Console > Plugins > AI Copilot**. Mattermost supports the following LLMs:
 
 - `OpenAI <https://platform.openai.com/account/api-keys>`_
 - `Anthropic (Claude) <https://console.anthropic.com/account/keys>`_

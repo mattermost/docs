@@ -9,7 +9,6 @@ Self-hosted can manage the following configuration settings in **System Console 
 - `Plugin Management <#plugin-management>`__
 - `Apps <#apps>`__
 - `Calls <#calls>`__
-- `Google Calendar <#google-calendar>`__
 - `MS Teams <#ms-teams>`__
 - `Playbooks <#playbooks>`__
 - `User Satisfaction surveys <#user-satisfaction-surveys>`__
