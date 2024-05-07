@@ -173,10 +173,10 @@ Define advanced log output
                 "Type": "file",
                 "Format": "plain",
                 "Levels": [
-                { "id": 100, "name": "audit-api" },
-                { "id": 101, "name": "audit-content" },
-                { "id": 102, "name": "audit-permissions" },
-                { "id": 103, "name": "audit-cli" }
+                    { "id": 100, "name": "audit-api" },
+                    { "id": 101, "name": "audit-content" },
+                    { "id": 102, "name": "audit-permissions" },
+                    { "id": 103, "name": "audit-cli" }
                 ],
                 "Options": {
                     "Compress": true,
@@ -185,7 +185,7 @@ Define advanced log output
                     "MaxBackups": 10,
                     "MaxSizeMB": 500
                 },
-                    MaxQueueSize": 1000
+                "MaxQueueSize": 1000
             }
         }
 
@@ -208,41 +208,41 @@ Define advanced log output
     .. code-block:: JSON
 
         {
-        "sample-console": {
-            "type": "console",
-            "format": "plain",
-            "format_options": {
+            "sample-console": {
+                "type": "console",
+                "format": "plain",
+                "format_options": {
                     "delim": " | "
+                },
+                "levels": [
+                    {"id": 100, "name": "audit-api"},
+                    {"id": 101, "name": "audit-content"},
+                    {"id": 102, "name": "audit-permissions"},
+                    {"id": 103, "name": "audit-cli"}
+                ],
+                "options": {
+                    "out": "stdout"
+                },
+                "maxqueuesize": 1000
             },
-            "levels": [
-            { "id": 100, "name": "audit-api" },
-            { "id": 101, "name": "audit-content" },
-            { "id": 102, "name": "audit-permissions" },
-            { "id": 103, "name": "audit-cli" }
-            ],
-            "options": {
-            "out": "stdout"
-            },
-            "maxqueuesize": 1000
-        },
-        "sample-file": {
-            "type": "file",
-            "format": "json",
-            "levels": [
-            { "id": 100, "name": "audit-api" },
-            { "id": 101, "name": "audit-content" },
-            { "id": 102, "name": "audit-permissions" },
-            { "id": 103, "name": "audit-cli" }
-            ],
-            "options": {
-            "compress": true,
-            "filename": "./logs/audit.log",
-            "max_age": 1,
-            "max_backups": 10,
-            "max_size": 500
-            },
-            "maxqueuesize": 1000
-        }
+            "sample-file": {
+                "type": "file",
+                "format": "json",
+                "levels": [
+                    {"id": 100, "name": "audit-api"},
+                    {"id": 101, "name": "audit-content"},
+                    {"id": 102, "name": "audit-permissions"},
+                    {"id": 103, "name": "audit-cli"}
+                ],
+                "options": {
+                    "compress": true,
+                    "filename": "./logs/audit.log",
+                    "max_age": 1,
+                    "max_backups": 10,
+                    "max_size": 500
+                },
+                "maxqueuesize": 1000
+            }
         }
 
 Specify destination targets
@@ -485,3 +485,30 @@ How do I adjust the maximum log field size?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 See :ref:`maximum-field-size <configure/environment-configuration-settings:maximum field size>`
+
+How can I configure Advanced logging via environment variables?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The ``MM_LOGSETTINGS_ADVANCEDLOGGINGJSON`` environment variable is used to configure Advanced logging . You can use ``jq`` to generate the JSON payload, e.g.
+
+.. code-block:: shell
+
+    export MM_LOGSETTINGS_ADVANCEDLOGGINGJSON=$(jq -n -c '{
+        "console1": {
+            "Type": "console",
+            "Format": "json",
+            "Levels": [
+                {"ID": 5, "Name": "debug", "Stacktrace": false},
+                {"ID": 4, "Name": "info", "Stacktrace": false, "color": 36},
+                {"ID": 3, "Name": "warn", "Stacktrace": false},
+                {"ID": 2, "Name": "error", "Stacktrace": true, "color": 31},
+                {"ID": 1, "Name": "fatal", "Stacktrace": true, "color": 31},
+                {"ID": 0, "Name": "panic", "Stacktrace": true, "color": 31},
+                {"ID": 10, "Name": "stdlog", "Stacktrace": false}
+            ],
+            "Options": {
+                "Out": "stdout"
+            },
+            "MaxQueueSize": 1000
+        }
+    }')
