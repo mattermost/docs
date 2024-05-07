@@ -583,7 +583,7 @@ redirects = {
 "channels/collaborate-using-mattermost-for-microsoft-teams.html":
         "https://docs.mattermost.com/collaborate/collaborate-using-mattermost-for-microsoft-teams.html",
 "channels/use-mattermost-google-calendar-plugin.html":
-        "https://docs.mattermost.com/collaborate/use-mattermost-google-calendar-plugin.html",
+        "https://github.com/mattermost/mattermost-plugin-google-calendar/docs/usage.html",
 "channels/channel-types.html#public-channels":
         "https://docs.mattermost.com/collaborate/channel-types.html#public-channels",
 "channels/channel-types.html#private-channels":
@@ -769,13 +769,13 @@ redirects = {
 "channels/collaborate-using-mattermost-for-microsoft-teams.html#demonstration-mattermost-embedded-in-microsoft-teams":
         "https://docs.mattermost.com/collaborate/collaborate-using-mattermost-for-microsoft-teams.html#demonstration-mattermost-embedded-in-microsoft-teams",
 "channels/use-mattermost-google-calendar-plugin.html#connect-your-google-calendar-account-to-mattermost":
-        "https://docs.mattermost.com/collaborate/use-mattermost-google-calendar-plugin.html#connect-your-google-calendar-account-to-mattermost",
+        "https://github.com/mattermost/mattermost-plugin-google-calendar/docs/usage.html",
 "channels/use-mattermost-google-calendar-plugin.html#customize-your-google-calendar-plugin":
-        "https://docs.mattermost.com/collaborate/use-mattermost-google-calendar-plugin.html#customize-your-google-calendar-plugin",
+        "https://github.com/mattermost/mattermost-plugin-google-calendar/docs/usage.html",
 "channels/use-mattermost-google-calendar-plugin.html#create-a-calendar-event":
-        "https://docs.mattermost.com/collaborate/use-mattermost-google-calendar-plugin.html#create-a-calendar-event",
+        "https://github.com/mattermost/mattermost-plugin-google-calendar/docs/usage.html",
 "channels/use-mattermost-google-calendar-plugin.html#review-your-upcoming-events":
-        "https://docs.mattermost.com/collaborate/use-mattermost-google-calendar-plugin.html#review-your-upcoming-events",
+        "https://github.com/mattermost/mattermost-plugin-google-calendar/docs/usage.html",
 "channels/about-teams-channels-messages.html":
         "https://docs.mattermost.com/guides/collaborate.html",
 "channels/find-channels.html#revisit-recent-channels":
