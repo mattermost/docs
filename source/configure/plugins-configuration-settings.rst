@@ -926,7 +926,7 @@ Legal hold
 See the :doc:`Legal holds </comply/legal-hold>` product documentation for details.
 
 MS Teams
---------
+---------
 
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
@@ -966,13 +966,13 @@ Enable plugin
   :systemconsole: Plugins > MS Teams
   :configjson: N/A
   :environment: N/A
-  :description: Specify the Microsoft Teams Tenant ID.
+  :description: Specify the Microsoft Teams Tenant ID from the Azure portal.
 
 Tenant ID
 ~~~~~~~~~~
 
 +------------------------------------------------------------------------+---------------------------------------------------+
-| Specify the Microsoft Teams Tenant ID.                                 | - System Config path: **Plugins > MS Teams**      |
+| Specify the Microsoft Teams Tenant ID from the Azure portal.           | - System Config path: **Plugins > MS Teams**      |
 |                                                                        | - ``config.json`` setting: N/A                    |
 |                                                                        | - Environment variable: N/A                       |
 +------------------------------------------------------------------------+---------------------------------------------------+
@@ -982,14 +982,14 @@ Tenant ID
   :systemconsole: Plugins > MS Teams
   :configjson: N/A
   :environment: N/A
-  :description: Specify the Microsoft Teams Client ID.
+  :description: Specify the Microsoft Teams Client ID of your registered OAuth app in the Azure portal.
 
 Client ID
 ~~~~~~~~~
 
 +------------------------------------------------------------------------+---------------------------------------------------+
-| Specify the Microsoft Teams Client ID.                                 | - System Config path: **Plugins > MS Teams**      |
-|                                                                        | - ``config.json`` setting: N/A                    |
+| Specify the Microsoft Teams Client ID of your registered OAuth         | - System Config path: **Plugins > MS Teams**      |
+| app in the Azure portal.                                               | - ``config.json`` setting: N/A                    |
 |                                                                        | - Environment variable: N/A                       |
 +------------------------------------------------------------------------+---------------------------------------------------+
 
@@ -998,31 +998,32 @@ Client ID
   :systemconsole: Plugins > MS Teams
   :configjson: N/A
   :environment: N/A
-  :description: Specify the Microsoft Teams Client Secret.
+  :description: Specify the client secret of your registered OAuth app in Azure portal.
 
 Client secret
 ~~~~~~~~~~~~~~
 
-+------------------------------------------------------------------------+---------------------------------------------------+
-| Specify the Microsoft Teams Client Secret.                             | - System Config path: **Plugins > MS Teams**      |
-|                                                                        | - ``config.json`` setting: N/A                    |
-| Alpha-numeric value.                                                   | - Environment variable: N/A                       |
-+------------------------------------------------------------------------+---------------------------------------------------+
++-------------------------------------------------------------------------+---------------------------------------------------+
+| Specify the client secret of your registered OAuth app in Azure portal. | - System Config path: **Plugins > MS Teams**      |
+|                                                                         | - ``config.json`` setting: N/A                    |
+| Alpha-numeric value.                                                    | - Environment variable: N/A                       |
++-------------------------------------------------------------------------+---------------------------------------------------+
 
 .. config:setting:: plugins-msteamsgenerateatrestencryptionkey
   :displayname: At rest encryption key (Plugins - MS Teams)
   :systemconsole: Plugins > MS Teams
   :configjson: N/A
   :environment: N/A
-  :description: Generate the AES encryption key used to encrypt sotred access tokens.
+  :description: Regenerate a new encryption secret. This encryption secret will be used to encrypt and decrypt the OAuth token.
 
 At rest encryption key
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 +------------------------------------------------------------------------+---------------------------------------------------+
-| Generate the AES encryption key used to encrypt sotred access tokens.  | - System Config path: **Plugins > MS Teams**      |
-|                                                                        | - ``config.json`` setting: N/A                    |
-| Alpha-numeric value.                                                   | - Environment variable: N/A                       |
+| Regenerate a new encryption secret. This encryption secret will be     | - System Config path: **Plugins > MS Teams**      |
+| used to encrypt and decrypt the OAuth token.                           | - ``config.json`` setting: N/A                    |
+|                                                                        | - Environment variable: N/A                       |
+| Alpha-numeric value.                                                   |                                                   |
 +------------------------------------------------------------------------+---------------------------------------------------+
 | **Note**: Select **Regenerate** to generate a new key.                                                                     |
 +------------------------------------------------------------------------+---------------------------------------------------+
@@ -1045,22 +1046,57 @@ Webhook secret
 | **Note**: Select **Regenerate** to generate a new key.                                                                     |
 +------------------------------------------------------------------------+---------------------------------------------------+
 
+.. config:setting:: plugins-msteamscertificatepublic
+  :displayname: Certificate public (Plugins - MS Teams)
+  :systemconsole: Plugins > MS Teams
+  :configjson: N/A
+  :environment: N/A
+  :description: This configuration is for setting the public certificate for enabling certificate-based subscriptions on MS Graph.
+
+Certificate public
+~~~~~~~~~~~~~~~~~~
+
++------------------------------------------------------------------------+---------------------------------------------------+
+| This configuration is for setting the public certificate for enabling  | - System Config path: **Plugins > MS Teams**      |
+| certificate-based subscriptions on MS Graph.                           | - ``config.json`` setting: N/A                    |
+|                                                                        | - Environment variable: N/A                       |
++------------------------------------------------------------------------+---------------------------------------------------+
+
+.. config:setting:: plugins-msteamscertificatekey
+  :displayname: Certificate key (Plugins - MS Teams)
+  :systemconsole: Plugins > MS Teams
+  :configjson: N/A
+  :environment: N/A
+  :description: This configuration is for setting the private key of the certificate for enabling certificate-based subscriptions. Enter both the public part and private key of the certificate.
+
+Certificate key
+~~~~~~~~~~~~~~~
+
++------------------------------------------------------------------------+---------------------------------------------------+
+| This configuration is for setting the private key of the certificate   | - System Config path: **Plugins > MS Teams**      |
+| for enabling certificate-based subscriptions.                          | - ``config.json`` setting: N/A                    |
+|                                                                        | - Environment variable: N/A                       |
++------------------------------------------------------------------------+---------------------------------------------------+
+| **Note**: For enabling certificate-based subscriptions, enter both the public part and private key of the certificate.     |
++------------------------------------------------------------------------+---------------------------------------------------+
+
 .. config:setting:: plugins-msteamsuseevaluationapipaymodel
   :displayname: Use the evaluation API pay model (Plugins - MS Teams)
   :systemconsole: Plugins > MS Teams
   :configjson: N/A
   :environment: N/A
 
-  - **true**: Enables the evaluation API pay model.
+  - **true**: Enables the evaluation API pay model. Enable this only for testing purposes. You need the pay model to be able to support enough message notifications to work in a real world scenario.
   - **false**: Disables the evaluation API pay model.
 
 Use the evaluation API pay model
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +------------------------------------------------------------------------+---------------------------------------------------+
-| Enable the evaluation API pay model to receive a limited number of     | - System Config path: **Plugins > MS Teams**      |
-| change notifications. Ensure you keep the number of notifications low. | - ``config.json`` setting: N/A                    |
-|                                                                        | - Environment variable: N/A                       |
+| Enable this only for testing purposes. You need the pay model to be    | - System Config path: **Plugins > MS Teams**      |
+| able to support enough message notifications to work in a real         | - ``config.json`` setting: N/A                    |
+| world scenario.                                                        | - Environment variable: N/A                       |
+|                                                                        |                                                   |
 | - **true**: Enables the evaluation API pay model.                      |                                                   |
 | - **false**: **(Default)** Disables the evaluation API pay model.      |                                                   |
 +------------------------------------------------------------------------+---------------------------------------------------+
@@ -1242,6 +1278,96 @@ Buffer size for streaming files
 | attachment files from Microsoft Teams to Mattermost.                | - ``config.json`` setting: N/A                           |
 |                                                                     | - Environment variable: N/A                              |
 | Numerical value. Default is **20** MiB.                             |                                                          |
++---------------------------------------------------------------------+----------------------------------------------------------+
+
+.. config:setting:: plugins-msteamsmaxconnectedusers
+  :displayname: Max connected users (Plugins - MS Teams)
+  :systemconsole: Plugins > MS Teams
+  :configjson: N/A
+  :environment: N/A
+  :description: Specify the maximum number of users that can connect to their Microsoft Teams account.
+
+Max connected users
+~~~~~~~~~~~~~~~~~~~
+
++---------------------------------------------------------------------+----------------------------------------------------------+
+| Specify the maximum number of users that can connect to their       | - System Config path: **Plugins > MS Teams**             |
+| Microsoft Teams account. Once connected, the user is added to a     | - ``config.json`` setting: N/A                           |
+| whitelist and may disconnect and reconnect at any time.             | - Environment variable: N/A                              |
+|                                                                     |                                                          |
+| Numerical value. Default is **100**.                                |                                                          |
++---------------------------------------------------------------------+----------------------------------------------------------+
+
+.. config:setting:: plugins-msteamssyncautopromotesyntheticusers
+  :displayname: Automatically promote synthentic users (Plugins - MS Teams)
+  :systemconsole: Plugins > MS Teams
+  :configjson: N/A
+  :environment: N/A
+
+  - **true**: **(Default)** Synthetic users are automatically promoted.
+  - **false**: Synthetic users aren't automatically promoted.
+
+Automatically promote synthetic users
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++-----------------------------------------------------------------------+----------------------------------------------------------+
+| Automatically promote synthetic users when they log in for the        | - System Config path: **Plugins > MS Teams**             |
+| first time.                                                           | - ``config.json`` setting: N/A                           |
+|                                                                       | - Environment variable: N/A                              |
+| - **true**: **(Default)** Synthetic users are automatically promoted. |                                                          |
+| - **false**: Synthetic users aren't automatically promoted.           |                                                          |
++-----------------------------------------------------------------------+----------------------------------------------------------+
+
+.. config:setting:: plugins-msteamssyncdisablesyncmsginfra
+  :displayname: Disable using the sync msg infrastructure for tracking message changes (Plugins - MS Teams)
+  :systemconsole: Plugins > MS Teams
+  :configjson: N/A
+  :environment: N/A
+
+  - **true**: **(Default)** Synchronized message infrastructure is disabled.
+  - **false**: Synchronized message infrastructure is enabled.
+
+Disable using the sync msg infrastructure for tracking message changes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++---------------------------------------------------------------------+----------------------------------------------------------+
+| Disables synchronized message infrastructure.                       | - System Config path: **Plugins > MS Teams**             |
+|                                                                     | - ``config.json`` setting: N/A                           |
+| - **true**: Synchronized message infrastructure is disabled.        | - Environment variable: N/A                              |
+| - **false**: **(Default)** Synchronized message infrastructure      |                                                          |
+|   is enabled.                                                       |                                                          |
++---------------------------------------------------------------------+----------------------------------------------------------+
+
+.. config:setting:: plugins-msteamssyntheticuserauthservice
+  :displayname: Synthetic user auth service (Plugins - MS Teams)
+  :systemconsole: Plugins > MS Teams
+  :configjson: N/A
+  :environment: N/A
+  :description: Specify the authentication service to be used when creating or updating synthetic users. This value should match the service used for member user access to Mattermost.
+
+Synthentic user auth service
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++---------------------------------------------------------------------+----------------------------------------------------------+
+| Specify the authentication service to be used when creating or      | - System Config path: **Plugins > MS Teams**             |
+| updating synthetic users. This value should match the service used  | - ``config.json`` setting: N/A                           |
+| for member user access to Mattermost.                               | - Environment variable: N/A                              |
++---------------------------------------------------------------------+----------------------------------------------------------+
+
+.. config:setting:: plugins-msteamssyntheticuserauthdata
+  :displayname: Synthetic user auth data (Plugins - MS Teams)
+  :systemconsole: Plugins > MS Teams
+  :configjson: N/A
+  :environment: N/A
+  :description: Specify the Microsoft Teams user property to use as the authentication identifier. For AD/LDAP and SAML, the identifier's value should match the value provided by the ID attribute.
+
+Synthetic user auth data
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++---------------------------------------------------------------------+----------------------------------------------------------+
+| Specify the Microsoft Teams user property to use as the             | - System Config path: **Plugins > MS Teams**             |
+| authentication identifier. For AD/LDAP and SAML, the identifier's   | - ``config.json`` setting: N/A                           |
+| value should match the value provided by the ID attribute.          | - Environment variable: N/A                              |
 +---------------------------------------------------------------------+----------------------------------------------------------+
 
 ----

@@ -5,6 +5,10 @@ Setup starts in Mattermost, moves to Microsoft Teams, and ends in Mattermost.
 Install the Microsoft Teams integration in Mattermost
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+.. important::
+
+  These installation instructions assume you already have a Mattermost instance running PostgreSQL. Note that this Mattermost integration doesn't support MySQL databases.
+
 1. Log in to your Mattermost workspace as a system administrator.
 2. Download the latest version of `the plugin binary release <https://github.com/mattermost/mattermost-plugin-msteams/releases>`__, compatible with Mattermost v8.0.1 and later. If you are using an earlier version of Mattermost, :doc:`follow our documentation </upgrade/upgrading-mattermost-server>` to upgrade to Mattermost v8.0.1 or later.
 3. Go to **System Console > Plugins > Plugin Management > Upload Plugin**, and upload the plugin binary you downloaded in the previous step.
@@ -90,9 +94,7 @@ Create a user account to act as a bot
    .. image:: ../images/teams-user-as-bot.png
     :alt: In Microsoft Teams, create a user account to act as a bot.
 
-.. note::
-  
-  After you've connected the bot user to the account on Microsoft Teams, all the messages that are posted from the account on Microsoft Teams won't be synchronized back to Mattermost since it's a "bot", and messages from bots are ignored.
+Run the ``/msteams connect-bot`` slash command to connect the bot account. Once connected to the account on Microsoft Teams, all the messages that are posted from the account on Microsoft Teams won't be synchronized back to Mattermost since it's a "bot", and messages from bots are ignored.
 
 Ensure you have the metered APIs enabled (and the pay subscription associated to it)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -135,3 +137,13 @@ Grafana dashboards `are available on GitHub <https://github.com/mattermost/matte
 .. note:: 
   
   Modifications will be necessary for self-hosted Mattermost deployments. See the `Get help <#get-help>`__ section below for details on how to contact us for assistance.
+
+System admin slash commands
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Once Microsoft Teams interoperability is enabled, the following slash commands are available for Mattermost system admins by typing the commands into the Mattermost message text box, and selecting **Send**:
+
+- ``/msteams connect-bot``: Connect the bot account in Mattermost to an account in Microsoft Teams.
+- ``/msteams disconnect-bot``: Disconnect the bot account in Mattermost from the Microsoft Teams account.
+- ``/msteams show-links``: Show all the currently active links including the Mattermost team, Mattermost channel, Microsoft Teams team, and Microsoft Teams channel.
+- ``/msteams promote``: Promote a synthetic user to a normal user. This command takes two parameters i.e. ``current_username`` and the ``new_username``. The promoted user must reset their password or request assistance from the admin in order to log in to Mattermost. After promoting the user, the user will be counted under the Mattermost license.

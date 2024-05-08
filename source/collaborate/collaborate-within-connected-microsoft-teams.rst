@@ -23,6 +23,7 @@ To use the Microsoft Teams plugin, you must connect your Mattermost user account
 
 .. note::
 
+  - If you're not prompted to connect your account, you can use the ``/msteams connect`` slash command to do so.
   - To change which accounts are linked, in Mattermost, disconnect the current account by running the slash command ``/msteams disconnect`` within the Mattermost message text box. Then, re-connect a new Mattermost account to a new Microsoft Teams account by running the Mattermost slash command ``/msteams connect``.
   - If your Microsoft Teams user account is removed from Microsoft Teams, your linked Mattermost user account will also be removed the next time user accounts are synchronized across the two platforms.
 
@@ -60,9 +61,20 @@ Get started
 
 You can start a direct or group message between Mattermost and Microsoft Teams users unless your Mattermost administrator has :ref:`disabled the ability to do so in the System Console <configure/plugins-configuration-settings:sync direct and group messages>`. 
 
-- Within Mattermost select the |plus-icon| icon next to **Direct Messages** in the left pane, then search for the user you want to message. Your direct or group conversation is visible in both Mattermost and Microsoft Teams.
+- Within Mattermost, select the |plus-icon| icon next to **Direct Messages** in the left pane, then search for the user you want to message. Your direct or group conversation is visible in both Mattermost and Microsoft Teams.
 
 - Within Microsoft Teams, select **Chat > New chat**, and select the users you want to chat with. Your conversation is visible in both Mattermost and Microsoft Teams for all users who have connected their Mattermost user account to their Microsoft Teams user account.
 
 .. image:: ../images/ms-teams-dm-sync-feb-2024.gif
    :alt: An example of a Mattermost direct message (DM) that is synced with a DM on Microsoft Teams.
+
+Mattermost Slash commands
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+You can run the following Mattermost slash commands by typing the commands into the Mattermost message text box, and selecting **Send**:
+
+- ``/msteams connect``: Connect your Mattermost account to Microsoft Teams account.
+- ``/msteams disconnect``: Disconnect your Mattermost account from Microsoft Teams account.
+- ``/msteams link``: Link the currently active Mattermost channel with an Microsoft Teams channel. You must be a Mattermost channel admins to use this slash command, and you must have your Mattermost account connected with Microsoft Teams. This command takes two arguments: ``Microsoft Teams team ID`` and ``channel ID``, which you can get from command autocomplete.
+- ``/msteams unlink``: Unlink the currently active Mattermost channel with the Microsoft Teams channel. You must be a Mattermost channel admin to run this slash command, but you don't need to have your Mattermost account connected to Microsoft Teams.
+- ``/msteams show``: Show the link of the currently active Mattermost channel, including the team name and channel name of Microsoft Teams to which the currently active Mattermost channel is linked.

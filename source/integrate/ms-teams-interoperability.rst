@@ -19,21 +19,55 @@ Setup
 Usage
 -----
 
-.. include:: /collaborate/collaborate-within-connected-microsoft-teams.rst
-    :start-after: :nosearch:
-
-.. include:: /collaborate/collaborate-within-embedded-microsoft-teams.rst
-    :start-after: :nosearch:
+See the :doc:`collaborate within connected microsoft teams </collaborate/collaborate-within-connected-microsoft-teams>` product documentation to get started using Microsoft Teams interoperability.
 
 Frequently asked questions
 --------------------------
 
-Can I connect my Mattermost account to a Microsoft Teams account of a different email address?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Can users connect their Mattermost account to a different Microsoft Teams account?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 No. Currently, only accounts with the same email addresses are allowed to be connected. Specify the email address that matches your Mattermost account. 
 
 If connecting a Mattermost account to a Microsoft Teams account with a different email address is something your workspace requires, there is an open `GitHub issue <https://github.com/mattermost/mattermost-plugin-msteams/issues/519>`__ for you to share your feedback.
+
+How is encryption handled at rest and in motion?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Everything is stored in the Mattermost databases. AES encryption is used to encrypt the MS Teams auth/access token. Other encryption at rest would be dependent on how the Mattermost instance is setup. All communication between the plugin and MS Teams/Graph API are conducted over SSL/HTTPS.
+
+Are there any database or network security considerations?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+There is nothing specific to the plugin that is beyond what would apply to a Mattermost instance.
+
+Are there any compliance considerations (ie. GDPR, PCI)?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+There is nothing specific to the plugin that is beyond what would apply to a Mattermost instance.
+
+How often will users sync from Microsoft Teams to Mattermost?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The frequency of user synchronizing is customizable within the System Console's plugin configuration page.
+
+Is a service account required for this integration to sync users from MS Teams to Mattermost?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+No. User synchronizing is done by the "application" itself.
+
+Can I embed Mattermost within Microsoft Teams?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Yes. See the :doc:`collaborate within embedded microsoft teams </collaborate/collaborate-within-embedded-microsoft-teams>` documentation to learn more.
+
+How is this integration architectured?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+See the following diagram showing the architecture for this Mattermost integration:
+
+.. images:: ../images/brightscout-msteams-sync-v1.0.png
+  :alt: Mattermost for Microsoft Teams interoperability architecture diagram, version 1.0.
 
 Get help
 --------
