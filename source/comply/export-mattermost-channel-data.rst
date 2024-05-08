@@ -18,7 +18,7 @@ For self-hosted deployments, a Mattermost system admin must perform the followin
 1. Log in to your Mattermost workspace as a system administrator.
 2. Download the latest version of `the plugin binary release <https://github.com/mattermost/mattermost-plugin-channel-export/releases>`__, compatible with Mattermost v8.0.1 and later. If you are using an earlier version of Mattermost, :doc:`follow our documentation </upgrade/upgrading-mattermost-server>` to upgrade to Mattermost v8.0.1 or later.
 3. Go to **System Console > Plugins > Plugin Management > Upload Plugin**, and upload the plugin binary you downloaded in the previous step.
-4. Go to **System Console > Plugins > Plugin Management**. In the **Installed Plugins** section, scroll to **Channel Export**, enable the integration, and select **Save**.
+4. Go to **System Console > Plugins > Plugin Management**. In the **Installed Plugins** section, scroll to **Channel Export**, and select **Enable**.
 
 Upgrade
 -------
