@@ -491,3 +491,30 @@ How do I adjust the maximum log field size?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 See :ref:`maximum-field-size <configure/environment-configuration-settings:maximum field size>`
+
+How can I configure Advanced logging via environment variables?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The ``MM_LOGSETTINGS_ADVANCEDLOGGINGJSON`` environment variable is used to configure Advanced logging . You can use ``jq`` to generate the JSON payload, e.g.
+
+.. code-block:: shell
+
+    export MM_LOGSETTINGS_ADVANCEDLOGGINGJSON=$(jq -n -c '{
+        "console1": {
+            "Type": "console",
+            "Format": "json",
+            "Levels": [
+                {"ID": 5, "Name": "debug", "Stacktrace": false},
+                {"ID": 4, "Name": "info", "Stacktrace": false, "color": 36},
+                {"ID": 3, "Name": "warn", "Stacktrace": false},
+                {"ID": 2, "Name": "error", "Stacktrace": true, "color": 31},
+                {"ID": 1, "Name": "fatal", "Stacktrace": true, "color": 31},
+                {"ID": 0, "Name": "panic", "Stacktrace": true, "color": 31},
+                {"ID": 10, "Name": "stdlog", "Stacktrace": false}
+            ],
+            "Options": {
+                "Out": "stdout"
+            },
+            "MaxQueueSize": 1000
+        }
+    }')
