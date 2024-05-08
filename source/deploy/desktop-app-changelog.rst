@@ -46,6 +46,7 @@ All Platforms
 - Fixed an issue where right-clicking on **Save Image** crashed the app.
 - Fixed an issue where typing in the local server followed by a port would trip up the URL validation.
 - Fixed an issue where restoring the window from the tray icon could cause a strange state if the window was previously maximized.
+- Fixed the permission prompt to **Deny** on closing the dialog.
 
 Open Source Components
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
