@@ -41,8 +41,8 @@ A Mattermost system admin must perform the following steps in Mattermost.
     - **Default Subscription Security Level to Empty**: Enable or disable default subscription security level. When enabled, subscriptions only include issues that have a security level assigned when a security level has been included as a filter.
     - **Additional Help Text to be shown with Jira Help**: Define any additional help text to display when users run the ``/jira help`` slash command.
     - **Hide issue descriptions and comments**: Show or hide issue descriptions and comments from subscription and webhook messages.
-    - **Enable slash command**: Enable or disble slash command autocompletion to guide users through available ``/jira`` slash commands.
-    - **Display Subscrition name in notifications**: Show or hide subscription name in notification messages posted to a channel.
+    - **Enable slash command**: Enable or disable slash command autocompletion to guide users through available ``/jira`` slash commands.
+    - **Display Subscription name in notifications**: Show or hide subscription name in notification messages posted to a channel.
 
 Install Jira integration in your Jira instance
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
