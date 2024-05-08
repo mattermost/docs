@@ -1214,35 +1214,35 @@ Prompt interval for DMs and GMs
   :systemconsole: Plugins > MS Teams
   :configjson: N/A
   :environment: N/A
-  :description: Specify the maximum file size, in megabytes (MB), of attachments that can be loaded into memory. Attachment files larger than this value will be streamed from Microsoft Teams to Mattermost.
+  :description: Specify the maximum file size, in mebibytes (MiB), of attachments that can be loaded into memory. Attachment files larger than this value will be streamed from Microsoft Teams to Mattermost.
 
 Maximum size of attachments to support complete one time download
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+--------------------------------------------------------------------+----------------------------------------------------------+
-| Specify the maximum file size, in megabytes (MB), of attachments   | - System Config path: **Plugins > MS Teams**             |
-| that can be loaded into memory. Attachment files larger than       | - ``config.json`` setting: N/A                           |
-| this value will be streamed from Microsoft Teams to Mattermost.    | - Environment variable: N/A                              |
-|                                                                    |                                                          |
-| Numerical value. Default is **20** MB.                             |                                                          |
-+--------------------------------------------------------------------+----------------------------------------------------------+
++---------------------------------------------------------------------+----------------------------------------------------------+
+| Specify the maximum file size, in mebibytes (MiB), of attachments   | - System Config path: **Plugins > MS Teams**             |
+| that can be loaded into memory. Attachment files larger than        | - ``config.json`` setting: N/A                           |
+| this value will be streamed from Microsoft Teams to Mattermost.     | - Environment variable: N/A                              |
+|                                                                     |                                                          |
+| Numerical value. Default is **20** MiB.                             |                                                          |
++---------------------------------------------------------------------+----------------------------------------------------------+
 
 .. config:setting:: plugins-msteamsbuffer
   :displayname: Buffer size for streaming files (Plugins - MS Teams)
   :systemconsole: Plugins > MS Teams
   :configjson: N/A
   :environment: N/A
-  :description: Specify the buffer size, in megabytes (MB), for streaming attachment files from Microsoft Teams to Mattermost.
+  :description: Specify the buffer size, in mebibytes (MiB), for streaming attachment files from Microsoft Teams to Mattermost.
 
 Buffer size for streaming files
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+--------------------------------------------------------------------+----------------------------------------------------------+
-| Specify the buffer size, in megabytes (MB), for streaming          | - System Config path: **Plugins > MS Teams**             |
-| attachment files from Microsoft Teams to Mattermost.               | - ``config.json`` setting: N/A                           |
-|                                                                    | - Environment variable: N/A                              |
-| Numerical value. Default is **20** MB.                             |                                                          |
-+--------------------------------------------------------------------+----------------------------------------------------------+
++---------------------------------------------------------------------+----------------------------------------------------------+
+| Specify the buffer size, in mebibytes (MiB), for streaming          | - System Config path: **Plugins > MS Teams**             |
+| attachment files from Microsoft Teams to Mattermost.                | - ``config.json`` setting: N/A                           |
+|                                                                     | - Environment variable: N/A                              |
+| Numerical value. Default is **20** MiB.                             |                                                          |
++---------------------------------------------------------------------+----------------------------------------------------------+
 
 ----
 
