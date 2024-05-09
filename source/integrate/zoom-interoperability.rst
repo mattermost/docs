@@ -30,48 +30,39 @@ Zoom supports OAuth authentication, and there are 2 types of OAuth Zoom Apps you
   Complete the following steps to create an account-level Zoom app for Mattermost.
 
   1. Go to https://marketplace.zoom.us/ and log in as an admin.
-  2. In the top left, select **Develop** and then select **Build App**.
-  3. Under **Choose your app type**, select **OAuth**.
-  4. Enter a name for your app.
+  2. In the top right, select **Develop** and then select **Build App**.
+  3. On top, select **Development**. Choose **Production** if publishing to the marketplace.
+  4. Select the **Edit** icon to edit the name of the app.  
   5. Choose **Account-level app** as the app type.
+  6. Find your **Client ID** and **Client Secret**. You'll need these values when you set up Mattermost to use this integration.
+  7. Enter a valid **OAuth Redirect URL**, ``https://SITEURL/plugins/zoom/oauth2/complete``, and add the same URL under **Add Allow List**. ``SITEURL`` should be your Mattermost server URL (defined as ``Site URL``).
+  8. To add user scopes to the app, select **Scopes**, and add the following scopes: ``meeting:read:meeting:admin``, ``meeting:write:meeting:admin``,and ``user:read:user:admin``.
+  9. To set up a deauthorization URL to deauthorize users directly from Zoom, go to the **App Listing** tab, and then select **Link & Support**. Under **Deauthorization Notification**, enter a valid **Endpoint URL** ``https://YOUR-MATTERMOST-URL.COM/plugins/zoom/deauthorization?secret=WEBHOOKSECRET``, replacing ``https://YOUR-MATTERMOST-URL.COM`` with your Mattermost URL. ``WEBHOOKSECRET`` is generated during `Mattermost configuration <#mattermost-configuration>`__.
   6. Choose whether to publish this app on Zoom Marketplace. In most cases you'll want this disabled. See notes below for details on publishing the app on the Zoom Marketplace.
   7. Select **Create**.
 
   .. note::
 
-    - To publish the account level Zoom app on the Zoom Marketplace, go to the **App Credentials** tab on the left.
-      - Copy the production values for **Client ID** and **Client Secret**. You'll provide these values during `Mattermost configuration <#mattermost-configuration>`__.
-
-      - Enter a valid **Redirect URL for OAuth** ``https://YOUR-MATTERMOST-URL.COM/plugins/zoom/oauth2/complete``, replacing ``https://YOUR-MATTERMOST-URL.COM`` with your Mattermost URL. This value must match the Mattermost server URL you use to log in.
-      - Add the same ``https://YOUR-MATTERMOST-URL.COM`` under **Add Allow List**.
-      - To set up a deauthorization URL to deauthorize users directly from Zoom, go to the **Information** tab on the left. Under **Deauthorization Notification**, enter a valid **Endpoint URL** ``https://YOUR-MATTERMOST-URL.COM/plugins/zoom/deauthorization?secret=WEBHOOKSECRET``, replacing ``https://YOUR-MATTERMOST-URL.COM`` with your Mattermost URL. ``WEBHOOKSECRET`` is generated during `Mattermost configuration <#mattermost-configuration>`__.
-
-    - To add user scopes to the OAuth app, go to the **Scopes** tab on the left. Add the following scopes: ``meeting:read:meeting:admin``, ``meeting:write:meeting:admin``,and ``user:read:user:admin``.
-    - Zoom has one last option called **Install**. There is no need to perform this action. However, if you perform this action inadvertently, you'll see an error on Mattermost. This is expected.
+    Zoom has one last option called **Install**. There is no need to perform this action. However, if you perform this action inadvertently, you'll see an error on Mattermost. This is expected.
 
 .. tab:: User-Managed
 
   Complete the following steps to create a user-managed Zoom app for Mattermost. 
 
   1. Go to https://marketplace.zoom.us/ and log in as an admin.
-  2. In the top left, select **Develop** and then select **Build Legacy App**.
-  3. Under **Choose your app type**, select **OAuth**.
-  4. Enter a name for your app.
+  2. In the top right, select **Develop** and then select **Build App**.
+  3. On top, select **Development**. Choose **Production** if publishing to the marketplace.
+  4. Select the **Edit** icon to edit the name of the app.
   5. Choose **User-managed app** as the app type.
-  6. Choose whether topublish this app on Zoom Marketplace. In most cases you'll want this disabled. See notes below for details on publishing the app on the Zoom Marketplace.
-  7. Select **Create**.
+  6. Find your **Client ID** and **Client Secret**. You'll need these values when you set up Mattermost to use this integration.
+  7. Enter a valid **OAuth Redirect URL**, ``https://SITEURL/plugins/zoom/oauth2/complete``, and add the same URL under **Add Allow List**. ``SITEURL`` should be your Mattermost server URL (defined as ``Site URL``).
+  8. To add user scopes to the app, select **Scopes**, and add the following scopes: ``meeting:read:meeting``, ``meeting:write:meeting``,and ``user:read:user``.
+  9. To set up a deauthorization URL to deauthorize users directly from Zoom, go to the **App Listing** tab, and then select **Link & Support**. Under **Deauthorization Notification**, enter a valid **Endpoint URL** ``https://YOUR-MATTERMOST-URL.COM/plugins/zoom/deauthorization?secret=WEBHOOKSECRET``, replacing ``https://YOUR-MATTERMOST-URL.COM`` with your Mattermost URL. ``WEBHOOKSECRET`` is generated during `Mattermost configuration <#mattermost-configuration>`__.
+  10. Select **Create**.
 
   .. note::
 
-    - To publish the user level Zoom app on the Zoom Marketplace, go to the **App Credentials** tab on the left.
-
-      - Copy the production values for **Client ID** and **Client Secret**. You'll provide these values during `Mattermost configuration <#mattermost-configuration>`__.
-      - Enter a valid **Redirect URL for OAuth** ``https://YOUR-MATTERMOST-URL.COM/plugins/zoom/oauth2/complete``, replacing ``https://YOUR-MATTERMOST-URL.COM`` with your Mattermost URL. This value must match the Mattermost server URL you use to log in.
-      - Add the same ``https://YOUR-MATTERMOST-URL.COM`` under **Add Allow List**.
-      - To set up a deauthorization URL to deauthorize users directly from Zoom, go to the **Information** tab on the left. Under **Deauthorization Notification**, enter a valid **Endpoint URL** ``https://YOUR-MATTERMOST-URL.COM/plugins/zoom/deauthorization?secret=WEBHOOKSECRET``, replacing ``https://YOUR-MATTERMOST-URL.COM`` with your Mattermost URL. ``WEBHOOKSECRET`` is generated during `Mattermost configuration <#mattermost-configuration>`__.
-
-    - To add user scopes to the OAuth app, go to the **Scopes** tab on the left. Add the following scopes: ``meeting:read:meeting``, ``meeting:write:meeting``,and ``user:read:user``.
-    - Zoom has one last option called **Install**. There is no need to perform this action. However, if you perform this action inadvertently, you'll see an error on Mattermost. This is expected.
+    Zoom has one last option called **Install**. There is no need to perform this action. However, if you perform this action inadvertently, you'll see an error on Mattermost. This is expected.
 
 .. important::
 
@@ -87,11 +78,10 @@ Configure webhook events
 When a Zoom meeting ends, the original link shared in the channel can be changed to indicate the meeting has ended and how long it lasted. To enable this functionality, create a webhook subscription in Zoom that tells the Mattermost server every time a meeting ends. The Mattermost server then updates the original Zoom message.
 
 1. While logged in to https://marketplace.zoom.us/ as an admin, go to the **Feature** tab on the left.
-2. Enable **Event Subscriptions**.
+2. Under **Features**, select **Access**.
 3. Select **Add New Event Subscription**, and give it a name, such as ``Meeting Ended``.
 4. Enter a valid **Event notification endpoint URL** ``https://SITEURL/plugins/zoom/webhook?secret=WEBHOOKSECRET``, replacing ``https://YOUR-MATTERMOST-URL.COM`` with your Mattermost URL. ``WEBHOOKSECRET`` is generated during `Mattermost configuration <#mattermost-configuration>`__.
-5. Select **Add events**, and then select the **End Meeting** event.
-6. Select **Done** and then save your app.
+5. Select **Save** and then save your app.
 
 Mattermost configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -149,6 +139,6 @@ Customize
 This integration contains both a server and web app portion.
 
 - Server: Inside the ``/server`` directory, you'll find the Go files that make up the server-side of the integration. Within there, build the plugin like you would any other Go application.
-- Web App: Inside the ``/webapp`` directory, you will find the JS and React files that make up the client-side of the integration. Within there, modify files and components as necessary. Test your syntax by running ``npm run build``.
+- Web App: Inside the ``/webapp`` directory, you will find the JS and React files that make up the client-side of the plugin. Within there, modify files and components as necessary. Test your syntax by running ``npm run build``.
 
 Visit the `Mattermost Developer Workflow <https://developers.mattermost.com/extend/plugins/developer-workflow/>`__ and `Mattermost Developer environment setup <https://developers.mattermost.com/extend/plugins/developer-setup/>`_ for information about developing, customizing, and extending Mattermost functionality.
