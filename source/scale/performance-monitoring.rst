@@ -178,6 +178,7 @@ Login and session metrics
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 - ``mattermost_http_websockets_total`` The total number of open WebSocket connections to the server.
+
 .. note::
   Starting in Mattermost version 9.9, this value includes any potentially unauthenticated connections. Furthermore, this metric comes with an ``origin_client`` label that can be used to see the distribution of connections from different client types (i.e. web, mobile, and desktop).
 - ``mattermost_login_logins_fail_total``: The total number of failed logins.
