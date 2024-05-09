@@ -110,6 +110,10 @@ redirects = {
         "https://github.com/mattermost/openops#readme",
 "about/install-mattermost-app-in-microsoft-teams.html":
         "https://docs.mattermost.com/about/embed-mattermost-within-microsoft-teams",
+"about/mattermost-google-calendar-integration.html":
+        "https://github.com/mattermost/mattermost-plugin-google-calendar/blob/master/README.md",
+"about/setup-mattermost-google-calendar-plugin.html":
+        "https://github.com/mattermost/mattermost-plugin-google-calendar/blob/master/README.md",
 
 # Administration redirects
 "administration/announcement-banner.html":
@@ -824,6 +828,8 @@ redirects = {
 # Collaborate redirects
 "collaborate/collaborate-using-mattermost-for-microsoft-teams.html":
         "https://docs.mattermost.com/collaborate/collaborate-within-connected-microsoft-teams.html",
+"collaborate/use-mattermost-google-calendar-plugin.html":
+        "https://github.com/mattermost/mattermost-plugin-google-calendar/blob/master/README.md",
 
 # Compliance redirects
 "comply/compliance-reporting-oversight":
