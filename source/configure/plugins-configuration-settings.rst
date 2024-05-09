@@ -861,7 +861,7 @@ Enable call ringing (Beta)
 
 .. config:setting:: integrations-gitlab
   :displayname: GitLab interoperability (Plugins)
-  :systemconsole: Plugins > Zoom
+  :systemconsole: Plugins > GitHub
   :configjson: gitlab
   :environment: N/A
   :description: Connect your GitLab instance to your Mattermost instance.
@@ -877,8 +877,8 @@ See the :doc:`Connect GitLab to Mattermost </integrate/gitlab-interoperability>`
 ----
 
 .. config:setting:: integrations-github
-  :displayname: GitHub interoperability (Plugins)
-  :systemconsole: Plugins > Zoom
+  :displayname: GitHub interoperability (Plugins > GitHub)
+  :systemconsole: Plugins > GitHub
   :configjson: github
   :environment: N/A
   :description: Connect your GitHub instance to your Mattermost instance.
@@ -894,7 +894,7 @@ See the :doc:`Connect GitHub to Mattermost </integrate/github-interoperability>`
 ----
 
 .. config:setting:: integrations-jira
-  :displayname: Jira interoperability (Plugins)
+  :displayname: Jira interoperability (Plugins > Jira)
   :systemconsole: Plugins > Jira
   :configjson: jira
   :environment: N/A
@@ -911,7 +911,7 @@ See the :doc:`Connect Jira to Mattermost </integrate/jira-interoperability>` pro
 ----
 
 .. config:setting:: integrations-legalhold
-  :displayname: Perform legal holds (Plugins)
+  :displayname: Perform legal holds (Plugins > Legal Hold)
   :systemconsole: Plugins > Legal Hold
   :configjson: legal-hold
   :environment: N/A
@@ -924,6 +924,8 @@ Legal hold
   :start-after: :nosearch:
 
 See the :doc:`Legal holds </comply/legal-hold>` product documentation for details.
+
+----
 
 MS Teams
 ---------

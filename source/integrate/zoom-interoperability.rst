@@ -107,6 +107,7 @@ Install the Zoom integration from the in-product App Marketplace:
 
   - For Mattermost Cloud deployments, leave the **Zoom API URL** and **Zoom URL** fields blank.
   - For self-hosted Mattermost deployments, enter the **Zoom URL** and **Zoom API URL** for the Zoom server when you're using a self-hosted private cloud or on-premises Zoom server, such as ``https://YOUR-ZOOM.com`` and ``https://api.YOUR-ZOOM.com/v2`` respectively, replacing ``YOUR-ZOOM`` with your Zoom server URL. Leave this field blank if you're using Zoom's vendor-hosted SaaS service.
+
 - If you've created an `account level Zoom app for Mattermost <#register-an-oauth-app-in-zoom>`__, set **OAuth by Account Level App** to **true**. Leave this value as **false** if you've created a user level Zoom app for Mattermost.
 
   - Connect your users to Zoom using OAuth. Enter the **Client ID** and **Client Secret** generated when `registering the oauth app in Zoom <#register-an-oauth-app-in-zoom>`__.
@@ -147,7 +148,7 @@ Customize
 
 This integration contains both a server and web app portion.
 
-- Server: Inside the ``/server`` directory, you'll find the Go files that make up the server-side of the plugin. Within there, build the plugin like you would any other Go application.
-- Web App: Inside the ``/webapp`` directory, you will find the JS and React files that make up the client-side of the plugin. Within there, modify files and components as necessary. Test your syntax by running ``npm run build``.
+- Server: Inside the ``/server`` directory, you'll find the Go files that make up the server-side of the integration. Within there, build the plugin like you would any other Go application.
+- Web App: Inside the ``/webapp`` directory, you will find the JS and React files that make up the client-side of the integration. Within there, modify files and components as necessary. Test your syntax by running ``npm run build``.
 
 Visit the `Mattermost Developer Workflow <https://developers.mattermost.com/extend/plugins/developer-workflow/>`__ and `Mattermost Developer environment setup <https://developers.mattermost.com/extend/plugins/developer-setup/>`_ for information about developing, customizing, and extending Mattermost functionality.

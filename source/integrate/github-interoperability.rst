@@ -86,7 +86,7 @@ A Mattermost system admin must perform the following steps in Mattermost.
 
     - Enter the **GitHub OAuth Client ID** and **GitHub OAuth Client Secret** obtained during registration
     - Regenerate the **At Rest Encryption Key** by selecting **Regenerate**.
-    - (Optional) **GitHub Organization**: Lock the plugin to a single GitHub organization by specifying the name of your GitHub organization.
+    - (Optional) **GitHub Organization**: Lock the integration to a single GitHub organization by specifying the name of your GitHub organization.
     - (GitHub Enterprise Only): Set **Enterprise Base URL** and **Enterprise Upload URL** values to your GitHub Enterprise URLs, e.g. ``https://github.example.com``. These values are often the same.
     - (Mattermost desktop app only) **Display Notification Counters in Left Sidebar**: Display or hide GitHub notification counters in the Mattermost sidebar.
     - (Optional) **Enable Private Repositories**: Enable the ability to work with private repositories. Affected users are notified once private repositories are enabled, and must reconnect their GitHub accounts to gain access to private repositories.
@@ -168,8 +168,8 @@ How do I send notifications when a certain label is applied?
 
 If you want to send notifications to a Mattermost channel when **Severity/Critical** label is applied to any issue in the ``mattermost/mattermost-plugin-github`` repository, run the following slash command to subscribe to these notifications: ``/github subscriptions add mattermost/mattermost-plugin-github issues,label:"Severity/Critical"``
 
-How does the plugin save user data for each connected GitHub user?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+How does the integration save user data for each connected GitHub user?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 GitHub user tokens are AES-encrypted with an **At Rest Encryption Key** configured in Mattermost. Once encrypted, the tokens are saved in the ``PluginKeyValueStore`` table in your Mattermost database.
 

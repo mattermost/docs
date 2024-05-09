@@ -29,7 +29,7 @@ Create an OAuth app in ServiceNow
 Upload the update set in ServiceNow
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Changing your ServiceNow instance to support subscriptions, record changes, and send change notifications to Mattermost is done by a Mattermost and ServiceNow system admin using an `update set <https://docs.servicenow.com/bundle/sandiego-application-development/page/build/system-update-sets/concept/system-update-sets.html>`_. Once created, you can download the update set from Mattermost and upload it into ServiceNow. 
+Changing your ServiceNow instance to support subscriptions, record changes, and send change notifications to Mattermost is done by a Mattermost and ServiceNow system admin using an `update set <https://docs.servicenow.com/bundle/washingtondc-application-development/page/build/system-update-sets/concept/system-update-sets.html>`_. Once created, you can download the update set from Mattermost and upload it into ServiceNow. 
 
 1. In the Mattermost System Console, download the update set XML file.
 2. In your ServiceNow instance, go to **All > System Update Sets > Retrieved Update Sets**.

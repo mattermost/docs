@@ -69,10 +69,29 @@ A Mattermost system admin and a Jira system admin must perform the following ste
 
 6. Select **Save**.
 
+Manage channel subscriptions in Mattermost
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The Channel Subscription modal provides easy access for Mattermost channel admins to set up which notifications they want to receive per channel. In any channel, run the ``jira /subscribe`` slash command, and configure the following options:
+
+- Configure what Jira notifications are sent to the current channel.
+- Specify filters including: affects versions, epic link, fix versions, labels, and priority.
+- Specify custom fields including: checkboxes, labels, radio buttons, and select list (single or multiple choice). 
+- Review the approximate JQL output generated. This is not guaranteed to be valid JQL and is only shown as a reference to what the query may look like if converted to JQL.
+
+Run the ``/jira subscribe list`` slash command to display all subscription rules set up across all channels and teams on your Mattermost instance.
+
+.. note::
+
+  - A user must meet the criteria of both the Mattermost user settings and Jira group settings in order to edit subscriptions. If you can subscribe channels to Jira events, you can also set up rules that define when a particular event with certain criteria are met in Jira that trigger a notification is sent to a particular channel.
+  - These subscription rules can specify the Jira Project, Event Type, Issue Type, and can filter out issues with certain values. 
+  - When a user is setting up a notification subscription, they'll only see the projects and issue types they have access to within Jira. If they can't see a project in Jira, it won't be displayed as an option for that particular user when they are trying to set up a subscription in Mattermost.
+  - If your organization's infrastructure is set up in such a way that your Mattermost instance can't connect to your Jira instance, channel subscriptions won't be avaialable. Instead, use `legacy Webhooks <#legacy-jira-webhooks>`__ instead to allow a Jira webhook to post to a specific channel.
+
 Legacy Jira webhooks
 ^^^^^^^^^^^^^^^^^^^^
 
-If your organization's infrastructure is set up in such a way that your Mattermost instance can't connect to your Jira instance, you won't be able to subscribe Mattermost channels. You'll need to use legacy webhooks instead.
+If your Mattermost instance can't connect to your Jira instance, you won't be able to subscribe Mattermost channels. You'll need to use legacy webhooks instead.
 
 1. To generate the webhook URL for a specific channel, run the  ``/jira webhook`` slash command, and use the URL output in the **Legacy Webhooks** section of the output.
 
@@ -108,25 +127,6 @@ Here's an example of a webhook configured to create a post for comment events: `
   
   Any previously configured webhooks set up in Jira that point to specific channels are supported and will continue to work.
 
-Manage channel subscriptions in Mattermost
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-The Channel Subscription modal provides easy access for Mattermost channel admins to set up which notifications they want to receive per channel. In any channel, run the ``jira /subscribe`` slash command, and configure the following options:
-
-- Configure what Jira notifications are sent to the current channel.
-- Specify filters including: affects versions, epic link, fix versions, labels, and priority.
-- Specify custom fields including: checkboxes, labels, radio buttons, and select list (single or multiple choice). 
-- Review the approximate JQL output generated. This is not guaranteed to be valid JQL and is only shown as a reference to what the query may look like if converted to JQL.
-
-Run the ``/jira subscribe list`` slash command to display all subscription rules set up across all channels and teams on your Mattermost instance.
-
-.. note::
-
-  - A user must meet the criteria of both the Mattermost user settings and Jira group settings in order to edit subscriptions. If you can subscribe channels to Jira events, you can also set up rules that define when a particular event with certain criteria are met in Jira that trigger a notification is sent to a particular channel.
-  - These subscription rules can specify the Jira Project, Event Type, Issue Type, and can filter out issues with certain values. 
-  - When a user is setting up a notification subscription, they'll only see the projects and issue types they have access to within Jira. If they can't see a project in Jira, it won't be displayed as an option for that particular user when they are trying to set up a subscription in Mattermost.
-  - If your organization's infrastructure is set up in such a way that your Mattermost instance can't connect to your Jira instance, channel subscriptions won't be avaialable. Instead, use `legacy Webhooks <#legacy-jira-webhooks>`__ instead to allow a Jira webhook to post to a specific channel.
-
 Manage notifications
 ~~~~~~~~~~~~~~~~~~~~
 
@@ -154,7 +154,7 @@ Do more with Jira interoperabiilty as a Mattermost system admin by using the fol
 - ``/jira instance v2 <YOUR-JIRA-URL>`` - Set the Jira instance to process legacy "v2" webhooks and subscriptions (which aren't prefixed with the instance ID).
 - ``/jira stats`` - Display usage statistics.
 - ``/jira webhook [--instance=<YOUR-JIRA-URL>]`` - Display the Mattermost webhook that receive JQL queries.
-- ``/jira v2revert`` - Revert to the legacy V2 jira plugin data model.
+- ``/jira v2revert`` - Revert to the legacy V2 jira integration data model.
 
 Upgrade
 -------
@@ -173,16 +173,18 @@ Connect a Jira account to Mattermost
 
 1. In Mattermost, run the ``/jira connect`` slash command in any Mattermost channel to link your Mattermost account with your Jira account. Follow the link into your Jira instance, and select **Allow**. 
 
-Disconnect your accounts by running the ``/jira disconnect`` slash command.
-
 2. Once connected, run the ``/jira help`` slash command to see what you can do.
+
+.. tip::
+
+  Disconnect your accounts by running the ``/jira disconnect`` slash command.
 
 Get started 
 ~~~~~~~~~~~
 
 Here are some common slash commands you can get started with:
 
-- ``/jira info`` - Display information about the current user and the Jira plugin
+- ``/jira info`` - Display information about the current user and the Jira integration
 - ``/jira connect [jiraURL]`` - Connect your Mattermost account to your Jira account
 - ``/jira disconnect [jiraURL]`` - Disconnect your Mattermost account from your Jira account
 - ``/jira issue assign [issue-key] [assignee]`` - Change the assignee of a Jira issue
@@ -209,7 +211,7 @@ Transition issues without leaving Mattermost by using the ``/jira transition <is
 .. note::
 
   - States and issue transitions are based on your Jira project workflow configuration. If an invalid state is entered, an ephemeral message is returned mentioning that the state couldn't be found.
-  - Partial matches are supported. For example, running the  ``/jira transition EXT-20 in`` slash command transitions the issue to an ``in progress`` state. However, if your Jira instance includes states of both ``in review`` and ``in progress``, the plugin bot will prompt you to clarify which state you want.
+  - Partial matches are supported. For example, running the  ``/jira transition EXT-20 in`` slash command transitions the issue to an ``in progress`` state. However, if your Jira instance includes states of both ``in review`` and ``in progress``, the Jira integration bot will prompt you to clarify which state you want.
 
 Assign Jira issues
 ^^^^^^^^^^^^^^^^^^
@@ -226,10 +228,10 @@ Frequenly asked questions
 How do I disable Jira interoperability?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-You can disable the Jira plugin at any time from Mattermost by going to **System Console > Plugins > Jira**. Once disabled, any webhook requests coming from Jira are ignored, and users can't create Jira issues from Mattermost. 
+You can disable the Jira integration at any time from Mattermost by going to **System Console > Plugins > Jira**. Once disabled, any webhook requests coming from Jira are ignored, and users can't create Jira issues from Mattermost. 
 
-Why isn't the Jira plugin posting messages to Mattermost?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Why isn't the Jira integration posting messages to Mattermost?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Try the following troubleshooting steps:
 
@@ -241,13 +243,13 @@ If you're using legacy webhooks:
 
 - Confirm the team URL and channel URL you specified in the Jira webhook URL match up with the path shown in your browser when visiting the channel.
 - Only events described in the Legacy Webhook documentation are supported.
-- Use a curl command to make a POST request to the webhook URL. If curl command completes with a ``200 OK`` response, the plugin is configured correctly. For instance, you can run the following command:
+- Use a curl command to make a POST request to the webhook URL. If curl command completes with a ``200 OK`` response, the integration is configured correctly. For instance, you can run the following command:
 
 .. code:: none
   
   curl -X POST -v "https://<YOUR-MATTERMOST-URL>/plugins/jira/webhook?secret=<YOUR-SECRET>&team=<YOUR-TEAM>&channel=<YOUR-CHANNEL>&user_id=admin&user_key=admin" --data '{"event":"some_jira_event"}'
 
-Replace ``<YOUR-MATTERMOST-URL>``, ``<YOUR-SECRET>``, ``<YOUR-TEAM>``, and ``<YOUR-SECRET>`` with your setup when configuring the Jira plugin. The curl command won't post a message in your Mattermost channel.
+Replace ``<YOUR-MATTERMOST-URL>``, ``<YOUR-SECRET>``, ``<YOUR-TEAM>``, and ``<YOUR-SECRET>`` with your setup when configuring the Jira integration. The curl command won't post a message in your Mattermost channel.
 
 Can admins restrict who can create or attach Mattermost messages to Jira issues?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -264,14 +266,14 @@ Any messages in a channel can be seen by all users of that channel. Subscription
 Why must every user authenticate with Jira?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The authentication with Jira lets the JiraBot provide personal notifications for each Mattermost/Jira user whenever they are mentioned on an issue, comment on an issue, or have an issue assigned to them. Additionally, the plugin uses their authentication information to perform actions on their behalf. Tasks such as searching, viewing, creating, assigning, and transitioning issues all abide by the permissions granted to the user within Jira.
+The authentication with Jira lets the JiraBot provide personal notifications for each Mattermost/Jira user whenever they are mentioned on an issue, comment on an issue, or have an issue assigned to them. Additionally, the integration uses their authentication information to perform actions on their behalf. Tasks such as searching, viewing, creating, assigning, and transitioning issues all abide by the permissions granted to the user within Jira.
 
 Users will need to temporarily enable third-party cookies in their browser during the Jira authentication process.
 
 What does the error message ``'/(name)' not found`` mean?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you see the error ``'/(name)' not found`` in Mattermost, disable Jira interoperability, check the log file looking for messages that refer to plugins and health check fail, such as ``ExecuteCommand``, etc. And consider setting Mattermost log settings to DEBUG to enable debug logging and give more verbose error events in the Mattermost system log. Then try re-enabling Jira interoperability and review the log file for clues.
+If you see the error ``'/(name)' not found`` in Mattermost, disable the Jira integration, check the log file looking for messages that refer to plugins and health check fail, such as ``ExecuteCommand``, etc. And consider setting Mattermost log settings to DEBUG to enable debug logging and give more verbose error events in the Mattermost system log. Then try re-enabling Jira interoperability and review the log file for clues.
 
 Debug logging can cause log files to expand substantially, and may adversely impact the server performance. Keep an eye on your server logs, or only enable it temporarily or in development environments, and not production enviornments.
 

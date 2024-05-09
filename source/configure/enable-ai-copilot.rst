@@ -14,7 +14,7 @@ Mattermost AI Copilot comes preinstalled from Mattermost Server v9.7 or later. Y
 .. note::
   If you're running Mattermost Server v9.6 or earlier, AI Copilot must be installed using the `latest binary available for download from the plugin repository <https://github.com/mattermost/mattermost-plugin-ai/releases>`_ . For an optimized user experience and compatibility, we recommend using AI Copilot with Mattermost v9.7 and later.
   
-  The AI Copilot plugin is compatible with the following :doc:`Mattermost Server versions </deploy/mattermost-changelog>`:
+  The AI Copilot integration is compatible with the following :doc:`Mattermost Server versions </deploy/mattermost-changelog>`:
 
   - v9.6 or later
   - v9.5.2+ (Extended Support Release - ESR)
@@ -27,7 +27,7 @@ Enable
 
 Go to **System Console > Plugins > AI Copilot** to enable this feature.
 
-Once the plugin is installed and enabled, complete configuration in the System Console as described below, then notify your teams that they can use the AI Copilot in any Mattermost team or channel.
+Once the integration is installed and enabled, complete configuration in the System Console as described below, then notify your teams that they can use the AI Copilot in any Mattermost team or channel.
 
 Mattermost configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~

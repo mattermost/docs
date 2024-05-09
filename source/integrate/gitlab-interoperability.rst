@@ -57,7 +57,7 @@ Install the GitHub integration from the in-product App Marketplace:
 
  - Enter the **GitLab URL**, **GitLab OAuth Client ID**, and **GitLab OAuth Client Secret** you obtained when `registering the OAuth app in GitLab <#register-an-oauth-app-in-GitLab>`__.
  - Generate a **Webhook Secret** and **At Rest Encryption Key** by selecting **Generate**.
- - (Optional) **GitLab Group**: Lock the plugin to a single GitLab group.
+ - (Optional) **GitLab Group**: Lock the integration to a single GitLab group.
  - (Optional) **Enable Private Repositories**: Enable the ability to work with private repositories. Affected users are notified once private repositories are enabled, and must reconnect their GitLab accounts to gain access to private repositories.
 
 Enable
@@ -115,7 +115,7 @@ For each project you want to receive notifications for or subscribe to, create a
     - Add the webhook.
 
 
-Run the  ``/gitlab settings [setting] [value]`` slash command to update your preferences for the plugin:
+Run the  ``/gitlab settings [setting] [value]`` slash command to update your preferences for the integration:
 
 - Turn personal notifications on or off.
 - Turn reminders on or off when you connect initially each day.

@@ -7,7 +7,6 @@ Unified communication
    :titlesonly:
 
    /about/mattermost-for-microsoft-teams.rst
-   /about/mattermost-google-calendar-integration.rst
 
 Mattermost's Unified Communication solution is designed to provide an extended collaboration experience for technical and operational teams to teams on other collaboration systems.
 

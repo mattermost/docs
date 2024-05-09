@@ -99,10 +99,10 @@ You can do this by duplicating a playbook in the Playbooks screen. Select the **
 
 To import a playbook, go to the Playbooks screen, and select **Import**. Choose the team you’re importing to, then select the JSON file. You can also export any playbook to JSON to easily share with other Mattermost servers.
 
-Channel export
---------------
+Export channel data
+--------------------
 
 .. include:: ../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
-System admins can export channel data. See the :doc:`export channel data </comply/export-mattermost-channel-data>` documentation for details on enabling and using this fucntionality.
+See the :doc:`export channel data </comply/export-mattermost-channel-data>` documentation for details on working with channel export functionality.
