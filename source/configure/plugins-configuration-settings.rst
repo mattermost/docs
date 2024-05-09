@@ -9,7 +9,6 @@ Self-hosted can manage the following configuration settings in **System Console 
 - `Plugin Management <#plugin-management>`__
 - `Apps <#apps>`__
 - `Calls <#calls>`__
-- `Google Calendar <#google-calendar>`__
 - `MS Teams <#ms-teams>`__
 - `Playbooks <#playbooks>`__
 - `User Satisfaction surveys <#user-satisfaction-surveys>`__
@@ -860,137 +859,76 @@ Enable call ringing (Beta)
 
 ----
 
-Google Calendar
-----------------
+.. config:setting:: integrations-gitlab
+  :displayname: GitLab interoperability (Plugins)
+  :systemconsole: Plugins > GitHub
+  :configjson: gitlab
+  :environment: N/A
+  :description: Connect your GitLab instance to your Mattermost instance.
 
-.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+GitLab
+------
+
+.. include:: ../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
 
-The Mattermost Google Calendar plugin enables a two-way integration between Mattermost and Google Calendar.
+See the :doc:`Connect GitLab to Mattermost </integrate/gitlab-interoperability>` product documentation for available :ref:`Mattermost configuration options <integrate/gitlab-interoperability:mattermost configuration>`.
 
-Access the following configuration settings in the System Console by going to **Plugins > Google Calendar**.
+----
 
-.. config:setting:: plugins-googlecalendarenable
-  :displayname: Enable plugin (Plugins - Google Calendar)
-  :systemconsole: Plugins > Google Calendar
-  :configjson: N/A
+.. config:setting:: integrations-github
+  :displayname: GitHub interoperability (Plugins > GitHub)
+  :systemconsole: Plugins > GitHub
+  :configjson: github
   :environment: N/A
+  :description: Connect your GitHub instance to your Mattermost instance.
 
-  - **true**: Enables the Google Calendar plugin on your Mattermost workspace.
-  - **false**: Disables the Google Calendar plugin on your Mattermost workspace.
+GitHub
+------
 
-Enable plugin
-~~~~~~~~~~~~~
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
-+--------------------------------------------------------------------------+------------------------------------------------------+
-| Enable the Mattermost Google Calendar plugin for all Mattermost teams.   | - System Config path: **Plugins > Google Calendar**  |
-|                                                                          | - ``config.json`` setting: N/A                       |
-| - **true**: Enables Google Calendar plugin on your Mattermost workspace. | - Environment variable: N/A                          |
-| - **false**: **(Default)** Disables the Google Calendar plugin.          |                                                      |
-+--------------------------------------------------------------------------+------------------------------------------------------+
+See the :doc:`Connect GitHub to Mattermost </integrate/github-interoperability>` product documentation for available :ref:`Mattermost configuration options <integrate/github-interoperability:mattermost configuration>`.
 
-.. config:setting:: plugins-googlecalendaradminuserids
-  :displayname: Enable plugin (Plugins - Google Calendar)
-  :systemconsole: Plugins > Google Calendar
-  :configjson: N/A
+----
+
+.. config:setting:: integrations-jira
+  :displayname: Jira interoperability (Plugins > Jira)
+  :systemconsole: Plugins > Jira
+  :configjson: jira
   :environment: N/A
+  :description: Connect your Jira instance to your Mattermost instance.
 
-Admin user IDs
-~~~~~~~~~~~~~~
+Jira
+----
 
-+--------------------------------------------------------------------------+------------------------------------------------------+
-| A comma-separated list of users authorized to manage the plugin.         | - System Config path: **Plugins > Google Calendar**  |
-|                                                                          | - ``config.json`` setting: N/A                       |
-| Go to **System Console > User Management > Users** to access user IDs.   | - Environment variable: N/A                          |
-+--------------------------------------------------------------------------+------------------------------------------------------+
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
-.. config:setting:: plugins-googlecalendarcopypluginlogs
-  :displayname: Enable plugin (Plugins - Google Calendar)
-  :systemconsole: Plugins > Google Calendar
-  :configjson: N/A
+See the :doc:`Connect Jira to Mattermost </integrate/jira-interoperability>` product documentation for available :ref:`Mattermost configuration options <integrate/jira-interoperability:mattermost configuration>`.
+
+----
+
+.. config:setting:: integrations-legalhold
+  :displayname: Perform legal holds (Plugins > Legal Hold)
+  :systemconsole: Plugins > Legal Hold
+  :configjson: legal-hold
   :environment: N/A
+  :description: Perform legal holds in Mattermost.
 
-Copy plugin logs to admins, as bot messages
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Legal hold
+----------
 
-+--------------------------------------------------------------------------+------------------------------------------------------+
-| The level of detail in log events for the plugin.                        | - System Config path: **Plugins > Google Calendar**  |
-|                                                                          | - ``config.json`` setting: N/A                       |
-| Can be one of: **None**, **Debug**, **Info**, **Warning**, or **Error**. | - Environment variable: N/A                          |
-+--------------------------------------------------------------------------+------------------------------------------------------+
+.. include:: ../_static/badges/ent-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
-.. config:setting:: plugins-googlecalendardisplayfullcontext
-  :displayname: Enable plugin (Plugins - Google Calendar)
-  :systemconsole: Plugins > Google Calendar
-  :configjson: N/A
-  :environment: N/A
-
-  - **true**: Displays full context for each admin log entry.
-  - **false**: Full context isn't displayed for each admin log entry.
-
-Display full context for each admin log message
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-+--------------------------------------------------------------------------+------------------------------------------------------+
-| Specify whether full context is displayed for log messages.              | - System Config path: **Plugins > Google Calendar**  |
-|                                                                          | - ``config.json`` setting: N/A                       |
-| - **true**: Displays full context for each admin log entry.              | - Environment variable: N/A                          |
-| - **false**: Full context isn't displayed for each admin log entry.      |                                                      |
-+--------------------------------------------------------------------------+------------------------------------------------------+
-
-.. config:setting:: plugins-googlecalendarencryptionkey
-  :displayname: Enable plugin (Plugins - Google Calendar)
-  :systemconsole: Plugins > Google Calendar
-  :configjson: N/A
-  :environment: N/A
-
-Encryption key
-~~~~~~~~~~~~~~
-
-+--------------------------------------------------------------------------+------------------------------------------------------+
-| The encryption key used to store data in the database.                   | - System Config path: **Plugins > Google Calendar**  |
-|                                                                          | - ``config.json`` setting: N/A                       |
-|                                                                          | - Environment variable: N/A                          |
-+--------------------------------------------------------------------------+------------------------------------------------------+
-| **Note**: Select **Regenerate** to generate a new encryption key. When you regenerate this value, all users will need to        |
-| `reconnect their Google Calendar with Mattermost </collaborate/use-mattermost-google-calendar-plugin.html#connect-your          |
-| google-calendar-account-to-mattermost>`__.                                                                                      |
-+--------------------------------------------------------------------------+------------------------------------------------------+
-
-.. config:setting:: plugins-googlecalendarappclientid
-  :displayname: Enable plugin (Plugins - Google Calendar)
-  :systemconsole: Plugins > Google Calendar
-  :configjson: N/A
-  :environment: N/A
-
-Google application client ID
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-+--------------------------------------------------------------------------+------------------------------------------------------+
-| The Google App Authentication Client ID.                                 | - System Config path: **Plugins > Google Calendar**  |
-|                                                                          | - ``config.json`` setting: N/A                       |
-|                                                                          | - Environment variable: N/A                          |
-+--------------------------------------------------------------------------+------------------------------------------------------+
-
-.. config:setting:: plugins-googlecalendarclientsecret
-  :displayname: Enable plugin (Plugins - Google Calendar)
-  :systemconsole: Plugins > Google Calendar
-  :configjson: N/A
-  :environment: N/A
-
-Google client secret
-~~~~~~~~~~~~~~~~~~~~~
-
-+--------------------------------------------------------------------------+------------------------------------------------------+
-| The Google App Authentication Client Secret.                             | - System Config path: **Plugins > Google Calendar**  |
-|                                                                          | - ``config.json`` setting: N/A                       |
-|                                                                          | - Environment variable: N/A                          |
-+--------------------------------------------------------------------------+------------------------------------------------------+
+See the :doc:`Legal holds </comply/legal-hold>` product documentation for details.
 
 ----
 
 MS Teams
---------
+---------
 
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
@@ -1030,13 +968,13 @@ Enable plugin
   :systemconsole: Plugins > MS Teams
   :configjson: N/A
   :environment: N/A
-  :description: Specify the Microsoft Teams Tenant ID.
+  :description: Specify the Microsoft Teams Tenant ID from the Azure portal.
 
 Tenant ID
 ~~~~~~~~~~
 
 +------------------------------------------------------------------------+---------------------------------------------------+
-| Specify the Microsoft Teams Tenant ID.                                 | - System Config path: **Plugins > MS Teams**      |
+| Specify the Microsoft Teams Tenant ID from the Azure portal.           | - System Config path: **Plugins > MS Teams**      |
 |                                                                        | - ``config.json`` setting: N/A                    |
 |                                                                        | - Environment variable: N/A                       |
 +------------------------------------------------------------------------+---------------------------------------------------+
@@ -1046,14 +984,14 @@ Tenant ID
   :systemconsole: Plugins > MS Teams
   :configjson: N/A
   :environment: N/A
-  :description: Specify the Microsoft Teams Client ID.
+  :description: Specify the Microsoft Teams Client ID of your registered OAuth app in the Azure portal.
 
 Client ID
 ~~~~~~~~~
 
 +------------------------------------------------------------------------+---------------------------------------------------+
-| Specify the Microsoft Teams Client ID.                                 | - System Config path: **Plugins > MS Teams**      |
-|                                                                        | - ``config.json`` setting: N/A                    |
+| Specify the Microsoft Teams Client ID of your registered OAuth         | - System Config path: **Plugins > MS Teams**      |
+| app in the Azure portal.                                               | - ``config.json`` setting: N/A                    |
 |                                                                        | - Environment variable: N/A                       |
 +------------------------------------------------------------------------+---------------------------------------------------+
 
@@ -1062,31 +1000,32 @@ Client ID
   :systemconsole: Plugins > MS Teams
   :configjson: N/A
   :environment: N/A
-  :description: Specify the Microsoft Teams Client Secret.
+  :description: Specify the client secret of your registered OAuth app in Azure portal.
 
 Client secret
 ~~~~~~~~~~~~~~
 
-+------------------------------------------------------------------------+---------------------------------------------------+
-| Specify the Microsoft Teams Client Secret.                             | - System Config path: **Plugins > MS Teams**      |
-|                                                                        | - ``config.json`` setting: N/A                    |
-| Alpha-numeric value.                                                   | - Environment variable: N/A                       |
-+------------------------------------------------------------------------+---------------------------------------------------+
++-------------------------------------------------------------------------+---------------------------------------------------+
+| Specify the client secret of your registered OAuth app in Azure portal. | - System Config path: **Plugins > MS Teams**      |
+|                                                                         | - ``config.json`` setting: N/A                    |
+| Alpha-numeric value.                                                    | - Environment variable: N/A                       |
++-------------------------------------------------------------------------+---------------------------------------------------+
 
 .. config:setting:: plugins-msteamsgenerateatrestencryptionkey
   :displayname: At rest encryption key (Plugins - MS Teams)
   :systemconsole: Plugins > MS Teams
   :configjson: N/A
   :environment: N/A
-  :description: Generate the AES encryption key used to encrypt sotred access tokens.
+  :description: Regenerate a new encryption secret. This encryption secret will be used to encrypt and decrypt the OAuth token.
 
 At rest encryption key
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 +------------------------------------------------------------------------+---------------------------------------------------+
-| Generate the AES encryption key used to encrypt sotred access tokens.  | - System Config path: **Plugins > MS Teams**      |
-|                                                                        | - ``config.json`` setting: N/A                    |
-| Alpha-numeric value.                                                   | - Environment variable: N/A                       |
+| Regenerate a new encryption secret. This encryption secret will be     | - System Config path: **Plugins > MS Teams**      |
+| used to encrypt and decrypt the OAuth token.                           | - ``config.json`` setting: N/A                    |
+|                                                                        | - Environment variable: N/A                       |
+| Alpha-numeric value.                                                   |                                                   |
 +------------------------------------------------------------------------+---------------------------------------------------+
 | **Note**: Select **Regenerate** to generate a new key.                                                                     |
 +------------------------------------------------------------------------+---------------------------------------------------+
@@ -1109,22 +1048,57 @@ Webhook secret
 | **Note**: Select **Regenerate** to generate a new key.                                                                     |
 +------------------------------------------------------------------------+---------------------------------------------------+
 
+.. config:setting:: plugins-msteamscertificatepublic
+  :displayname: Certificate public (Plugins - MS Teams)
+  :systemconsole: Plugins > MS Teams
+  :configjson: N/A
+  :environment: N/A
+  :description: This configuration is for setting the public certificate for enabling certificate-based subscriptions on MS Graph.
+
+Certificate public
+~~~~~~~~~~~~~~~~~~
+
++------------------------------------------------------------------------+---------------------------------------------------+
+| This configuration is for setting the public certificate for enabling  | - System Config path: **Plugins > MS Teams**      |
+| certificate-based subscriptions on MS Graph.                           | - ``config.json`` setting: N/A                    |
+|                                                                        | - Environment variable: N/A                       |
++------------------------------------------------------------------------+---------------------------------------------------+
+
+.. config:setting:: plugins-msteamscertificatekey
+  :displayname: Certificate key (Plugins - MS Teams)
+  :systemconsole: Plugins > MS Teams
+  :configjson: N/A
+  :environment: N/A
+  :description: This configuration is for setting the private key of the certificate for enabling certificate-based subscriptions. Enter both the public part and private key of the certificate.
+
+Certificate key
+~~~~~~~~~~~~~~~
+
++------------------------------------------------------------------------+---------------------------------------------------+
+| This configuration is for setting the private key of the certificate   | - System Config path: **Plugins > MS Teams**      |
+| for enabling certificate-based subscriptions.                          | - ``config.json`` setting: N/A                    |
+|                                                                        | - Environment variable: N/A                       |
++------------------------------------------------------------------------+---------------------------------------------------+
+| **Note**: For enabling certificate-based subscriptions, enter both the public part and private key of the certificate.     |
++------------------------------------------------------------------------+---------------------------------------------------+
+
 .. config:setting:: plugins-msteamsuseevaluationapipaymodel
   :displayname: Use the evaluation API pay model (Plugins - MS Teams)
   :systemconsole: Plugins > MS Teams
   :configjson: N/A
   :environment: N/A
 
-  - **true**: Enables the evaluation API pay model.
+  - **true**: Enables the evaluation API pay model. Enable this only for testing purposes. You need the pay model to be able to support enough message notifications to work in a real world scenario.
   - **false**: Disables the evaluation API pay model.
 
 Use the evaluation API pay model
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +------------------------------------------------------------------------+---------------------------------------------------+
-| Enable the evaluation API pay model to receive a limited number of     | - System Config path: **Plugins > MS Teams**      |
-| change notifications. Ensure you keep the number of notifications low. | - ``config.json`` setting: N/A                    |
-|                                                                        | - Environment variable: N/A                       |
+| Enable this only for testing purposes. You need the pay model to be    | - System Config path: **Plugins > MS Teams**      |
+| able to support enough message notifications to work in a real         | - ``config.json`` setting: N/A                    |
+| world scenario.                                                        | - Environment variable: N/A                       |
+|                                                                        |                                                   |
 | - **true**: Enables the evaluation API pay model.                      |                                                   |
 | - **false**: **(Default)** Disables the evaluation API pay model.      |                                                   |
 +------------------------------------------------------------------------+---------------------------------------------------+
@@ -1308,7 +1282,112 @@ Buffer size for streaming files
 | Numerical value. Default is **20** MiB.                             |                                                          |
 +---------------------------------------------------------------------+----------------------------------------------------------+
 
+.. config:setting:: plugins-msteamsmaxconnectedusers
+  :displayname: Max connected users (Plugins - MS Teams)
+  :systemconsole: Plugins > MS Teams
+  :configjson: N/A
+  :environment: N/A
+  :description: Specify the maximum number of users that can connect to their Microsoft Teams account.
+
+Max connected users
+~~~~~~~~~~~~~~~~~~~
+
++---------------------------------------------------------------------+----------------------------------------------------------+
+| Specify the maximum number of users that can connect to their       | - System Config path: **Plugins > MS Teams**             |
+| Microsoft Teams account. Once connected, the user is added to a     | - ``config.json`` setting: N/A                           |
+| whitelist and may disconnect and reconnect at any time.             | - Environment variable: N/A                              |
+|                                                                     |                                                          |
+| Numerical value. Default is **100**.                                |                                                          |
++---------------------------------------------------------------------+----------------------------------------------------------+
+
+.. config:setting:: plugins-msteamssyncautopromotesyntheticusers
+  :displayname: Automatically promote synthentic users (Plugins - MS Teams)
+  :systemconsole: Plugins > MS Teams
+  :configjson: N/A
+  :environment: N/A
+
+  - **true**: **(Default)** Synthetic users are automatically promoted.
+  - **false**: Synthetic users aren't automatically promoted.
+
+Automatically promote synthetic users
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++-----------------------------------------------------------------------+----------------------------------------------------------+
+| Automatically promote synthetic users when they log in for the        | - System Config path: **Plugins > MS Teams**             |
+| first time.                                                           | - ``config.json`` setting: N/A                           |
+|                                                                       | - Environment variable: N/A                              |
+| - **true**: **(Default)** Synthetic users are automatically promoted. |                                                          |
+| - **false**: Synthetic users aren't automatically promoted.           |                                                          |
++-----------------------------------------------------------------------+----------------------------------------------------------+
+
+.. config:setting:: plugins-msteamssyncdisablesyncmsginfra
+  :displayname: Disable using the sync msg infrastructure for tracking message changes (Plugins - MS Teams)
+  :systemconsole: Plugins > MS Teams
+  :configjson: N/A
+  :environment: N/A
+
+  - **true**: **(Default)** Synchronized message infrastructure is disabled.
+  - **false**: Synchronized message infrastructure is enabled.
+
+Disable using the sync msg infrastructure for tracking message changes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++---------------------------------------------------------------------+----------------------------------------------------------+
+| Disables synchronized message infrastructure.                       | - System Config path: **Plugins > MS Teams**             |
+|                                                                     | - ``config.json`` setting: N/A                           |
+| - **true**: Synchronized message infrastructure is disabled.        | - Environment variable: N/A                              |
+| - **false**: **(Default)** Synchronized message infrastructure      |                                                          |
+|   is enabled.                                                       |                                                          |
++---------------------------------------------------------------------+----------------------------------------------------------+
+
+.. config:setting:: plugins-msteamssyntheticuserauthservice
+  :displayname: Synthetic user auth service (Plugins - MS Teams)
+  :systemconsole: Plugins > MS Teams
+  :configjson: N/A
+  :environment: N/A
+  :description: Specify the authentication service to be used when creating or updating synthetic users. This value should match the service used for member user access to Mattermost.
+
+Synthentic user auth service
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++---------------------------------------------------------------------+----------------------------------------------------------+
+| Specify the authentication service to be used when creating or      | - System Config path: **Plugins > MS Teams**             |
+| updating synthetic users. This value should match the service used  | - ``config.json`` setting: N/A                           |
+| for member user access to Mattermost.                               | - Environment variable: N/A                              |
++---------------------------------------------------------------------+----------------------------------------------------------+
+
+.. config:setting:: plugins-msteamssyntheticuserauthdata
+  :displayname: Synthetic user auth data (Plugins - MS Teams)
+  :systemconsole: Plugins > MS Teams
+  :configjson: N/A
+  :environment: N/A
+  :description: Specify the Microsoft Teams user property to use as the authentication identifier. For AD/LDAP and SAML, the identifier's value should match the value provided by the ID attribute.
+
+Synthetic user auth data
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++---------------------------------------------------------------------+----------------------------------------------------------+
+| Specify the Microsoft Teams user property to use as the             | - System Config path: **Plugins > MS Teams**             |
+| authentication identifier. For AD/LDAP and SAML, the identifier's   | - ``config.json`` setting: N/A                           |
+| value should match the value provided by the ID attribute.          | - Environment variable: N/A                              |
++---------------------------------------------------------------------+----------------------------------------------------------+
+
 ----
+
+.. config:setting:: integrations-performance-metrics
+  :displayname: Monitor performance metrics (Plugins)
+  :systemconsole: Plugins > Mattermost Performance Metrics
+  :configjson: performance-metrics
+  :environment: N/A
+  :description: Monitor Mattermost performance metrics
+
+Performance metrics
+-------------------
+
+.. include:: ../_static/badges/ent-cloud-selfhosted.rst
+  :start-after: :nosearch:
+
+See the :doc:`Monitor performance metrics </scale/collect-performance-metrics>` product documentation for available :ref:`Mattermost configuration options <scale/collect-performance-metrics:mattermost configuration>`.
 
 Playbooks
 ----------
@@ -1420,197 +1499,49 @@ Enable user satisfaction survey
 
 ----
 
+.. config:setting:: integrations-servicenow
+  :displayname: ServiceNow interoperability (Plugins)
+  :systemconsole: Plugins > ServiceNow
+  :configjson: servicenow
+  :environment: N/A
+  :description: Connect your ServiceNow instance to your Mattermost instance.
+
+ServiceNow
+----------
+
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
+
+See the :doc:`Connect ServiceNow to Mattermost </integrate/servicenow-interoperability>` product documentation for available :ref:`Mattermost configuration options <integrate/servicenow-interoperability:mattermost configuration>`.
+
+
+----
+
+.. config:setting:: integrations-zoom
+  :displayname: Zoom interoperability (Plugins)
+  :systemconsole: Plugins > Zoom
+  :configjson: zoom
+  :environment: N/A
+  :description: Connect your Zoom instance to your Mattermost instance.
+
 Zoom
 ----
 
 .. include:: ../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
 
-This plugin allows team members to initiate a Zoom meeting with a single click. All participants in a channel can easily join the Zoom meeting and the shared link is updated when the meeting is over. See the `Zoom Plugin <https://github.com/mattermost/mattermost-plugin-zoom/blob/master/README.md#installation>`__ documentation for details.
+See the :doc:`Connect Zoom to Mattermost </integrate/zoom-interoperability>` product documentation for available :ref:`Mattermost configuration options <integrate/zoom-interoperability:mattermost configuration>`.
 
-.. note::
+----
 
-  To set up this plugin, you need to create a Zoom App using a Zoom Administrator account. See the `Zoom plugin <https://github.com/mattermost/mattermost-plugin-zoom/blob/master/README.md>`__ documentation for details. 
+config.json-only settings
+--------------------------
 
-Access the following configuration settings in the System Console by going to **Plugins > Zoom**.
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
-.. config:setting:: plugins-zoomenable
-  :displayname: Enable plugin (Plugins - Zoom)
-  :systemconsole: Plugins > Zoom
-  :configjson: N/A
-  :environment: N/A
-
-  - **true**: (Default) Enables the Zoom plugin on your Mattermost server.
-  - **false**: Disables the Zoom plugin on your Mattermost server.
-
-Enable plugin
-~~~~~~~~~~~~~
-
-+----------------------------------------------------------------------------+------------------------------------------+
-| - **true**: (Default) Enables the Zoom plugin on your Mattermost server.   | - System Config path: **Plugins > Zoom** |
-| - **false**: Disables the Zoom plugin on your Mattermost server.           |                                          |
-+----------------------------------------------------------------------------+------------------------------------------+
-
-.. config:setting:: plugins-zoomurl
-  :displayname: Zoom URL (Plugins - Zoom)
-  :systemconsole: Plugins > Zoom
-  :configjson: N/A
-  :environment: N/A
-  :description: Specify the URL for a self-hosted private cloud or on-premise Zoom server. Leave blank if you're using Zoom's vendor-hosted SaaS service.
-
-Zoom URL
-~~~~~~~~
-
-+----------------------------------------------------------------------------+------------------------------------------+
-| Specify the URL for a self-hosted private cloud or on-premise Zoom server. | - System Config path: **Plugins > Zoom** |
-| For example, **https://yourzoom.com**.                                     |                                          |
-| Leave blank if you're using Zoom's vendor-hosted SaaS service.             |                                          |
-+----------------------------------------------------------------------------+------------------------------------------+
-
-.. config:setting:: plugins-zoomapiurl
-  :displayname: Zoom API URL (Plugins - Zoom)
-  :systemconsole: Plugins > Zoom
-  :configjson: N/A
-  :environment: N/A
-  :description: Specify the API URL for a self-hosted private cloud or on-premise Zoom server. Leave blank if you're using Zoom's vendor-hosted SaaS service.
-
-Zoom API URL
-~~~~~~~~~~~~
-
-+---------------------------------------------------------------------------------+------------------------------------------+
-| Specify the API URL for a self-hosted private cloud or on-premises Zoom server. | - System Config path: **Plugins > Zoom** |
-| For example, **https://api.yourzoom.com/v2**.                                   |                                          |
-| Leave blank if you're using Zoom's vendor-hosted SaaS service.                  |                                          |
-+---------------------------------------------------------------------------------+------------------------------------------+
-
-.. config:setting:: plugins-zoomoauth
-  :displayname: Enable OAuth (Plugins - Zoom)
-  :systemconsole: Plugins > Zoom
-  :configjson: N/A
-  :environment: N/A
-
-  - **true**: OAuth will be used as the authentication means with Zoom.
-  - **false**: (Default) JWT will be used as the authentication means with Zoom.
-
-Enable OAuth
-~~~~~~~~~~~~
-
-+---------------------------------------------------------------------------------+------------------------------------------+
-| - **true**: OAuth will be used as the authentication means with Zoom.           | - System Config path: **Plugins > Zoom** |
-| - **false**: (Default) JWT will be used as the authentication means with Zoom.  |                                          |
-+---------------------------------------------------------------------------------+------------------------------------------+
-
-.. note::
-
-  If you are currently using a JWT Zoom application and switch to OAuth, all users will need to connect their Zoom account using OAuth the next time they try to start a meeting. See the `Zoom plugin <https://github.com/mattermost/mattermost-plugin-zoom#readme>`__ documentation for details.
-
-.. config:setting:: plugins-zoomoauthbyaccountlevel
-  :displayname: OAuth by account level app (Beta) (Plugins - Zoom)
-  :systemconsole: Plugins > Zoom
-  :configjson: 
-  :environment:
-
-  - **true**: Only an account administrator must log in. The rest of the users will use their e-mail to log in.
-  - **false**: (Default) All users must use their e-mail to log in.
-
-OAuth by account level app (Beta)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-+---------------------------------------------------------------------------------------------------------------+------------------------------------------+
-| - **true**: Only an account administrator must log in. The rest of the users will use their e-mail to log in. | - System Config path: **Plugins > Zoom** |
-| - **false**: (Default) All users must use their e-mail to log in.                                             |                                          |
-+---------------------------------------------------------------------------------------------------------------+------------------------------------------+
-
-.. config:setting:: plugins-zoomoauthclientid
-  :displayname: Zoom OAuth client ID (Plugins - Zoom)
-  :systemconsole: Plugins > Zoom
-  :configjson: N/A
-  :environment: N/A
-  :description: Specify the Client ID for the OAuth app registered with Zoom. Leave blank if not using OAuth.
-
-Zoom OAuth client ID
-~~~~~~~~~~~~~~~~~~~~
-
-+-----------------------------------------------------------------------------------------------+------------------------------------------+
-| Specify the Client ID for the OAuth app registered with Zoom. Leave blank if not using OAuth. | - System Config path: **Plugins > Zoom** |
-|                                                                                               |                                          |
-|                                                                                               |                                          |
-+-----------------------------------------------------------------------------------------------+------------------------------------------+
-
-.. config:setting:: plugins-zoomoauthclientsecret
-  :displayname: Zoom OAuth client secret (Plugins - Zoom)
-  :systemconsole: Plugins > Zoom
-  :configjson: N/A
-  :environment: N/A
-  :description: Specify the Client Secret for the OAuth app registered with Zoom. Leave blank if not using OAuth.
-
-Zoom OAuth client secret
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-+---------------------------------------------------------------------------------------------------+------------------------------------------+
-| Specify the Client Secret for the OAuth app registered with Zoom. Leave blank if not using OAuth. | - System Config path: **Plugins > Zoom** |
-+---------------------------------------------------------------------------------------------------+------------------------------------------+
-
-.. config:setting:: plugins-zoomatresttokenencryptionkey 
-  :displayname: At rest token encryption key (Plugins - Zoom)
-  :systemconsole: Plugins > Zoom
-  :configjson: N/A
-  :environment: N/A
-  :description: Generate an AES encryption key for the Zoom OAuth Token used to encrypt stored access tokens by selecting **Regenerate**. 
-
-At rest token encryption key
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-+---------------------------------------------------------------------------------------------------------------------------+------------------------------------------+
-| Generate an AES encryption key for the Zoom OAuth Token used to encrypt stored access tokens by selecting **Regenerate**. | - System Config path: **Plugins > Zoom** |
-| Regenerating the key invalidates your existing Zoom OAuth.                                                                |                                          |
-+---------------------------------------------------------------------------------------------------------------------------+------------------------------------------+
-
-.. config:setting:: plugins-zoomapikey
-  :displayname: API key (Plugins - Zoom)
-  :systemconsole: Plugins > Zoom
-  :configjson: 
-  :environment:
-  :description: Specify the API Key generated by Zoom used to create meetings and pull user data.
-
-API key
-~~~~~~~
-
-+-----------------------------------------------------------------------------------+------------------------------------------+
-| Specify the API Key generated by Zoom used to create meetings and pull user data. | - System Config path: **Plugins > Zoom** |
-+-----------------------------------------------------------------------------------+------------------------------------------+
-
-.. config:setting:: plugins-zoomapisecret
-  :displayname: API secret (Plugins - Zoom)
-  :systemconsole: Plugins > Zoom
-  :configjson: N/A
-  :environment: N/A
-  :description: Specify the API Secret generated by Zoom for your API key.
-
-API secret
-~~~~~~~~~~
-
-+------------------------------------------------------------+------------------------------------------+
-| Specify the API Secret generated by Zoom for your API key. | - System Config path: **Plugins > Zoom** |
-+------------------------------------------------------------+------------------------------------------+
-
-.. config:setting:: plugins-zoomwebhooksecret
-  :displayname: API secret (Plugins - Zoom)
-  :systemconsole: Plugins > Zoom
-  :configjson: N/A
-  :environment: N/A
-  :description: Generate a secret for the webhook URL endpoint used to authenticate the webhook to Mattermost.
-
-Webhook secret
-~~~~~~~~~~~~~~
-
-+------------------------------------------------------------------------------------------------+------------------------------------------+
-| Generate a secret for the webhook URL endpoint used to authenticate the webhook to Mattermost. | - System Config path: **Plugins > Zoom** |
-| Regenerating the secret invalidates your existing Zoom plugin.                                 |                                          |
-+------------------------------------------------------------------------------------------------+------------------------------------------+
-
-.. config:setting:: plugins-zoomsigpublickeyfile
-  :displayname: Signature public key file (Plugins - Zoom)
+.. config:setting:: plugins-sigpublickeyfile
+  :displayname: Signature public key file (Plugins)
   :systemconsole: N/A
   :configjson: SignaturePublicKeyFiles
   :environment: N/A
@@ -1627,8 +1558,8 @@ In addition to the Mattermost plugin signing key built into the server, each pub
 | This feature's ``config.json`` setting is ``"SignaturePublicKeyFiles": {}`` with string array input consisting of contents that are relative or absolute paths to signature files.              |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: plugins-zoomchimeraoauthproxyurl
-  :displayname: Chimera OAuth proxy URL (Plugins - Zoom)
+.. config:setting:: plugins-chimeraoauthproxyurl
+  :displayname: Chimera OAuth proxy URL (Plugins)
   :systemconsole: N/A
   :configjson: ChimeraOAuthProxyUrl
   :environment: N/A

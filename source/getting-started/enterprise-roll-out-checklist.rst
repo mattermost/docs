@@ -214,11 +214,11 @@ Much of the preparation work is focused on ensuring the environment is deployed 
 
  - Set up Prometheus and Grafana to monitor performance
 
-  - Resource: https://docs.mattermost.com/scale/performance-monitoring.html 
+  - Resource: https://docs.mattermost.com/scale/deploy-prometheus-grafana-for-performance-monitoring.html 
 
  - Set up alerts in Grafana
 
-  - Resource: https://docs.mattermost.com/scale/performance-monitoring.html 
+  - Resource: https://docs.mattermost.com/scale/deploy-prometheus-grafana-for-performance-monitoring.html
 
 Roll out Mattermost
 ~~~~~~~~~~~~~~~~~~~
