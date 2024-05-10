@@ -15,11 +15,11 @@ To streamline the migration process and alleviate any potential challenges, we h
 Required tools
 --------------
 
-- Install ``pgLoader``. See the official `installation guide <https://pgloader.readthedocs.io/en/latest/install.html>`__.
+- Install ``pgloader``. See the official `installation guide <https://pgloader.readthedocs.io/en/latest/install.html>`__.
 
 .. note::
 
-   - If you are using MySQL v8: Due to a `known bug <https://github.com/dimitri/pgloader/issues/1183>`__ in pgLoader compiled binaries, you need to compile pgLoader from the source. Please follow the steps `here <https://pgloader.readthedocs.io/en/latest/install.html#build-from-sources>`__ to build from the source.
+   - If you are using MySQL v8: Due to a `known bug <https://github.com/dimitri/pgloader/issues/1183>`__ in pgLoader-compiled binaries, you need to compile pgLoader from the source. Please follow the steps `here <https://pgloader.readthedocs.io/en/latest/install.html#build-from-sources>`__ to build from the source.
    - We have received reports that the pgloader Docker image can be limited in terms of memory resources. Please use pgloader directly instead of a Docker container. 
 
 - Install morph CLI by running the following command:
@@ -190,7 +190,7 @@ An error has been identified in the 96th migration that was previously released.
 Migrate the data
 ----------------
 
-Once we set the schema to a desired state, we can start migrating the **data** by running ``pgLoader`` \*\*
+Once we set the schema to a desired state, we can start migrating the **data** by running ``pgloader`` \*\*
 
 .. note::
 
@@ -244,11 +244,11 @@ Once we set the schema to a desired state, we can start migrating the **data** b
         $$ SELECT pg_catalog.set_config('search_path', '"$user", public', false); $$,
         $$ ALTER USER {{ .pg_user }} SET SEARCH_PATH TO 'public'; $$;
 
-Once you save this configuration file, e.g. ``migration.load``, you can run the ``pgLoader`` with the following command:
+Once you save this configuration file, e.g. ``migration.load``, you can run the ``pgloader`` with the following command:
 
 .. code:: bash
 
-   pgLoader migration.load > migration.log
+   pgloader migration.load > migration.log
 
 Feel free to contribute to and/or report your findings through your migration to us.
 
@@ -291,7 +291,7 @@ Playbooks
 
 The ``pgloader`` configuration provided for Playbooks is based on ``v1.38.1`` and the plugin should be at least ``v1.36.0`` to perform the migration.
 
-Once we are ready to migrate, we can start migrating the **schema** and the **data**  by running ``pgLoader`` \*\*
+Once we are ready to migrate, we can start migrating the **schema** and the **data**  by running ``pgloader`` \*\*
 
 \*\* Use the following configuration for the baseline of the data migration:
 
@@ -391,14 +391,14 @@ Once we are ready to migrate, we can start migrating the **schema** and the **da
 
 .. code:: bash
 
-   pgLoader playbooks.load > playbooks_migration.log
+   pgloader playbooks.load > playbooks_migration.log
 
 Focalboard
 ~~~~~~~~~~
 
 As of ``v9.0`` Boards will transition to being fully community supported as the Focalboard plugin. Hence this guide covers only the version ``v7.10.x`` of the schema. :ref:`Official announcement <deploy/deprecated-features:mattermost server v9.0.0>`.
 
-Once we are ready to migrate, we can start migrating the **schema** and the **data**  by running ``pgLoader`` \*\*
+Once we are ready to migrate, we can start migrating the **schema** and the **data**  by running ``pgloader`` \*\*
 
 \*\* Use the following configuration for the baseline of the data migration:
 
@@ -448,7 +448,7 @@ Once we are ready to migrate, we can start migrating the **schema** and the **da
 
 .. code:: bash
 
-   pgLoader focalboard.load > focalboard_migration.log
+   pgloader focalboard.load > focalboard_migration.log
 
 Compare the plugin data
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -472,7 +472,7 @@ Troubleshooting
 Unsupported authentication for MySQL
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you are facing an error due to authentication with MySQL v8, it may be related to a `known issue <https://github.com/dimitri/pgloader/issues/782>`__ with the pgLoader. The fix is to set the default authentication method to ``mysql_native_password`` in your MySQL configuration. To do so, add the ``default-authentication-plugin=mysql_native_password`` value to your ``mysql.cnf`` file. Also, do not forget to update your user to use this authentication method.
+If you are facing an error due to authentication with MySQL v8, it may be related to a `known issue <https://github.com/dimitri/pgloader/issues/782>`__ with pgLoader. The fix is to set the default authentication method to ``mysql_native_password`` in your MySQL configuration. To do so, add the ``default-authentication-plugin=mysql_native_password`` value to your ``mysql.cnf`` file. Also, do not forget to update your user to use this authentication method.
 
 .. code:: sql
 
