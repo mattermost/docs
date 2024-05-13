@@ -456,3 +456,21 @@ Amazon S3 request timeout
 |                                                               | - Environment variable: ``MM_FILESETTINGS_AMAZONS3REQUESTTIMEOUTMILLISECONDS``          |
 | Default is 30000 (30 seconds).                                |                                                                                         |
 +---------------------------------------------------------------+-----------------------------------------------------------------------------------------+
+
+.. config:setting:: file-maxpayloadsize
+  :displayname: Maximum payload size (File Storage)
+  :systemconsole: N/A
+  :configjson: .FileSettings.MaximumPayloadSizeBytes
+  :environment: MM_FILESETTINGS_MAXIMUMPAYLOADSIZEBYTES
+  :description: The payload size, in bytes, of API endpoints passing in arrays. Default is 300000.
+
+Maximum payload size
+~~~~~~~~~~~~~~~~~~~~
+
++-----------------------------------------------------------+----------------------------------------------------------------------------------+
+| The maximum payload size, in bytes, of API endpoints      | - System Config path: N/A                                                        |
+| passing in arrays.                                        | - ``config.json`` setting: ``".FileSettings.MaximumPayloadSizeBytes: 300000",``  |
+|                                                           | - Environment variable: ``MM_FILESETTINGS_MAXIMUMPAYLOADSIZEBYTES``              |
+|                                                           |                                                                                  |
+| Numerical value. Default is **300000** (300 kB).          |                                                                                  |
++-----------------------------------------------------------+----------------------------------------------------------------------------------+
