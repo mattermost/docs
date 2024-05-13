@@ -110,6 +110,10 @@ redirects = {
         "https://github.com/mattermost/openops#readme",
 "about/install-mattermost-app-in-microsoft-teams.html":
         "https://docs.mattermost.com/about/embed-mattermost-within-microsoft-teams",
+"about/mattermost-google-calendar-integration.html":
+        "https://github.com/mattermost/mattermost-plugin-google-calendar/blob/master/README.md",
+"about/setup-mattermost-google-calendar-plugin.html":
+        "https://github.com/mattermost/mattermost-plugin-google-calendar/blob/master/README.md",
 
 # Administration redirects
 "administration/announcement-banner.html":
@@ -219,7 +223,7 @@ redirects = {
 "administration/performance-alerting-guide.html":
         "https://docs.mattermost.com/scale/peformance-alerting.html",
 "administration/performance-alerting-guide":
-        "https://docs.mattermost.com/scale/performance-monitoring.html",
+        "https://docs.mattermost.com/scale/deploy-prometheus-grafana-for-performance-monitoring.html",
 "administration/plugins.html":
         "https://developers.mattermost.com/integrate/admin-guide/admin-plugins-beta/",
 "administration/prev-config-settings.html":
@@ -583,7 +587,7 @@ redirects = {
 "channels/collaborate-using-mattermost-for-microsoft-teams.html":
         "https://docs.mattermost.com/collaborate/collaborate-using-mattermost-for-microsoft-teams.html",
 "channels/use-mattermost-google-calendar-plugin.html":
-        "https://docs.mattermost.com/collaborate/use-mattermost-google-calendar-plugin.html",
+        "https://github.com/mattermost/mattermost-plugin-google-calendar/docs/usage.html",
 "channels/channel-types.html#public-channels":
         "https://docs.mattermost.com/collaborate/channel-types.html#public-channels",
 "channels/channel-types.html#private-channels":
@@ -769,13 +773,13 @@ redirects = {
 "channels/collaborate-using-mattermost-for-microsoft-teams.html#demonstration-mattermost-embedded-in-microsoft-teams":
         "https://docs.mattermost.com/collaborate/collaborate-using-mattermost-for-microsoft-teams.html#demonstration-mattermost-embedded-in-microsoft-teams",
 "channels/use-mattermost-google-calendar-plugin.html#connect-your-google-calendar-account-to-mattermost":
-        "https://docs.mattermost.com/collaborate/use-mattermost-google-calendar-plugin.html#connect-your-google-calendar-account-to-mattermost",
+        "https://github.com/mattermost/mattermost-plugin-google-calendar/docs/usage.html",
 "channels/use-mattermost-google-calendar-plugin.html#customize-your-google-calendar-plugin":
-        "https://docs.mattermost.com/collaborate/use-mattermost-google-calendar-plugin.html#customize-your-google-calendar-plugin",
+        "https://github.com/mattermost/mattermost-plugin-google-calendar/docs/usage.html",
 "channels/use-mattermost-google-calendar-plugin.html#create-a-calendar-event":
-        "https://docs.mattermost.com/collaborate/use-mattermost-google-calendar-plugin.html#create-a-calendar-event",
+        "https://github.com/mattermost/mattermost-plugin-google-calendar/docs/usage.html",
 "channels/use-mattermost-google-calendar-plugin.html#review-your-upcoming-events":
-        "https://docs.mattermost.com/collaborate/use-mattermost-google-calendar-plugin.html#review-your-upcoming-events",
+        "https://github.com/mattermost/mattermost-plugin-google-calendar/docs/usage.html",
 "channels/about-teams-channels-messages.html":
         "https://docs.mattermost.com/guides/collaborate.html",
 "channels/find-channels.html#revisit-recent-channels":
@@ -824,6 +828,8 @@ redirects = {
 # Collaborate redirects
 "collaborate/collaborate-using-mattermost-for-microsoft-teams.html":
         "https://docs.mattermost.com/collaborate/collaborate-within-connected-microsoft-teams.html",
+"collaborate/use-mattermost-google-calendar-plugin.html":
+        "https://github.com/mattermost/mattermost-plugin-google-calendar/blob/master/README.md",
 
 # Compliance redirects
 "comply/compliance-reporting-oversight":
@@ -1867,7 +1873,7 @@ redirects = {
 "deployment/team-channel-management.html#profile":
 	"https://docs.mattermost.com/manage/team-channel-members.html#profile",
 "deployment/metrics.html":
-	"https://docs.mattermost.com/scale/performance-monitoring.html",
+	"https://docs.mattermost.com/scale/deploy-prometheus-grafana-for-performance-monitoring.html",
 "deployment/mobile-app-deployment.html":
 	"https://docs.mattermost.com/deploy/mobile-overview.html",
 "deployment/on-boarding.html":
@@ -3193,6 +3199,46 @@ redirects = {
         "https://handbook.mattermost.com",
 "process/working-at-mattermost.html":
 	"https://handbook.mattermost.com/operations/workplace/people/working-at-mattermost/onboarding/engineer-onboarding",
+
+# Scale redirects
+"scale/performance-monitoring.html":
+        "https://docs.mattermost.com/scale/deploy-prometheus-grafana-for-performance-monitoring.html",
+"scale/performance-monitoring.html#statistics":
+        "https://docs.mattermost.com/scale/performance-monitoring-metrics.html",
+"scale/performance-monitoring.html#custom-mattermost-metrics":
+        "https://docs.mattermost.com/scale/performance-monitoring-metrics.html#custom-mattermost-metrics",
+"scale/performance-monitoring.html#api-metrics":
+        "https://docs.mattermost.com/scale/performance-monitoring-metrics.html#api-metrics",
+"scale/performance-monitoring.html#caching-metrics":
+        "https://docs.mattermost.com/scale/performance-monitoring-metrics.html#caching-metrics",
+"scale/performance-monitoring.html#cluster-metrics":
+        "https://docs.mattermost.com/scale/performance-monitoring-metrics.html#cluster-metrics",
+"scale/performance-monitoring.html#database-metrics":
+        "https://docs.mattermost.com/scale/performance-monitoring-metrics.html#database-metrics",
+"scale/performance-monitoring.html#database-connection-metrics":
+        "https://docs.mattermost.com/scale/performance-monitoring-metrics.html#database-connection-metrics",
+"scale/performance-monitoring.html#http-metrics":
+        "https://docs.mattermost.com/scale/performance-monitoring-metrics.html#http-metrics",
+"scale/performance-monitoring.html#login-and-session-metrics":
+        "https://docs.mattermost.com/scale/performance-monitoring-metrics.html#login-and-session-metrics",
+"scale/performance-monitoring.html#mattermost-channels-metrics":
+        "https://docs.mattermost.com/scale/performance-monitoring-metrics.html#mattermost-channels-metrics",
+"scale/performance-monitoring.html#process-metrics":
+        "https://docs.mattermost.com/scale/performance-monitoring-metrics.html#process-metrics",
+"scale/performance-monitoring.html#search-metrics":
+        "https://docs.mattermost.com/scale/performance-monitoring-metrics.html#search-metrics",
+"scale/performance-monitoring.html#websocket-metrics":
+        "https://docs.mattermost.com/scale/performance-monitoring-metrics.html#websocket-metrics",
+"scale/performance-monitoring.html#logging-metrics":
+        "https://docs.mattermost.com/scale/performance-monitoring-metrics.html#logging-metrics",
+"scale/performance-monitoring.html#debugging-metrics":
+        "https://docs.mattermost.com/scale/performance-monitoring-metrics.html#debugging-metrics",
+"scale/performance-monitoring.html#standard-go-metrics":
+        "https://docs.mattermost.com/scale/performance-monitoring-metrics.html#standard-go-metrics",
+"scale/performance-monitoring.html#frequently-asked-questions":
+        "https://docs.mattermost.com/scale/performance-monitoring-metrics.html#frequently-asked-questions",
+"scale/performance-monitoring.html#why-are-chart-labels-difficult-to-distinguish":
+        "https://docs.mattermost.com/scale/performance-monitoring-metrics.html#why-are-chart-labels-difficult-to-distinguish",
 
 # Upgrade redirects
 "upgrade/upgrading-mattermost-server.html#prepare-to-upgrade-to-the-latest-version":
