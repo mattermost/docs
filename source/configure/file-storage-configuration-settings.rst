@@ -418,6 +418,65 @@ Enable Amazon S3 debugging
 | Select the **Test Connection** button in the System Console to validate the settings and ensure the user can access the server.          |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 
+.. config:setting:: file-amazons3requesttimeoutmilliseconds
+  :displayname: Amazon S3 request timeout (File Storage)
+  :systemconsole: N/A
+  :configjson: .FileSettings.AmazonS3RequestTimeoutMilliseconds
+  :environment: MM_FILESETTINGS_AMAZONS3REQUESTTIMEOUTMILLISECONDS
+  :description: Amount of time, in milliseconds, before requests to Amazon S3 time out. Default value is 30000 (30 seconds).
+
+Amazon S3 request timeout 
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
++---------------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| The amount of time, in milliseconds, before requests to       | - System Config path: N/A                                                               |
+| Amazon S3 storage time out.                                   | - ``config.json`` setting: ``".FileSettings.AmazonS3RequestTimeoutMilliseconds: 30000`` |
+|                                                               | - Environment variable: ``MM_FILESETTINGS_AMAZONS3REQUESTTIMEOUTMILLISECONDS``          |
+| Default is 30000 (30 seconds).                                |                                                                                         |
++---------------------------------------------------------------+-----------------------------------------------------------------------------------------+
+
+.. config:setting:: file-amazons3uploadpartsizebytes
+  :displayname: Amazon S3 upload part size (File Storage)
+  :systemconsole: N/A
+  :configjson: .FileSettings.AmazonS3UploadPartSizeBytes
+  :environment: MM_FILESETTINGS_AMAZONS3UPLOADPARTSIZEBYTES
+  :description: The size, in bytes, of each part in a multi-part upload to Amazon S3. Default value is 5242880 (5MB).
+
+Amazon S3 upload part size
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++---------------------------------------------------------------+---------------------------------------------------------------------------------------+
+| The size, in bytes, of each part in a multi-part              | - System Config path: N/A                                                             |
+| upload to Amazon S3.                                          | - ``config.json`` setting: ``".FileSettings.AmazonS3UploadPartSizeBytes: 5242880``    |
+|                                                               | - Environment variable: ``MM_FILESETTINGS_AMAZONS3UPLOADPARTSIZEBYTES``               |
+| Numeric value. Default is 5242880 (5MB).                      |                                                                                       |
++---------------------------------------------------------------+---------------------------------------------------------------------------------------+
+| **Note**: A smaller part size results in more parts to manage, which can increase overhead while being more reliable for networks with less stable    |
+| connections. A larger part size reduces the number of upload parts, but requires more stable network conditions, and can increase the impact of any   |
+| failures requiring parts to be re-uploaded.                                                                                                           |
++---------------------------------------------------------------+---------------------------------------------------------------------------------------+
+
+.. config:setting:: file-exportamazons3uploadpartsizebytes
+  :displayname: Export Amazon S3 upload part size (File Storage)
+  :systemconsole: N/A
+  :configjson: .FileSettings.ExportAmazonS3UploadPartSizeBytes
+  :environment: MM_FILESETTINGS_EXPORTAMAZONS3UPLOADPARTSIZEBYTES
+  :description: The size, in bytes, of each part in a multi-part exported to Amazon S3. Default value is 104857600 (100MB).
+
+Amazon S3 exported upload part size
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++---------------------------------------------------------------+--------------------------------------------------------------------------------------------+
+| The size, in bytes, of each part in a multi-part              | - System Config path: N/A                                                                  |
+| exported to Amazon S3.                                        | - ``config.json`` setting: ``".FileSettings.ExportAmazonS3UploadPartSizeBytes: 104857600`` |
+|                                                               | - Environment variable: ``MM_FILESETTINGS_EXPORTAMAZONS3UPLOADPARTSIZEBYTES``              |
+| Numeric value. Default is 104857600 (100MB).                  |                                                                                            |
++---------------------------------------------------------------+--------------------------------------------------------------------------------------------+
+| **Note**: A smaller part size results in more parts to manage, which can increase overhead while being more reliable for networks with less stable         |
+| connections. A larger part size reduces the number of exported parts, but requires more stable network conditions, and can increase the impact of any      |
+| failures requiring parts to be re-exported.                                                                                                                |
++---------------------------------------------------------------+--------------------------------------------------------------------------------------------+
+
 .. config:setting:: file-initialfont
   :displayname: Initial font (File Storage)
   :systemconsole: N/A
@@ -439,20 +498,3 @@ Initial font
 | A string with the font file name. Default is                  |                                                                                |
 | **nunito-bold.ttf**.                                          |                                                                                |
 +---------------------------------------------------------------+--------------------------------------------------------------------------------+
-
-.. config:setting:: file-amazons3requesttimeoutmilliseconds
-  :displayname: Amazon S3 request timeout (File Storage)
-  :systemconsole: N/A
-  :configjson: .FileSettings.AmazonS3RequestTimeoutMilliseconds
-  :environment: MM_FILESETTINGS_AMAZONS3REQUESTTIMEOUTMILLISECONDS
-  :description: Amount of time, in milliseconds, before requests to Amazon S3 time out. Default value is 30000 (30 seconds).
-
-Amazon S3 request timeout 
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-+---------------------------------------------------------------+-----------------------------------------------------------------------------------------+
-| The amount of time, in milliseconds, before requests to       | - System Config path: N/A                                                               |
-| Amazon S3 storage time out.                                   | - ``config.json`` setting: ``".FileSettings.AmazonS3RequestTimeoutMilliseconds: 30000`` |
-|                                                               | - Environment variable: ``MM_FILESETTINGS_AMAZONS3REQUESTTIMEOUTMILLISECONDS``          |
-| Default is 30000 (30 seconds).                                |                                                                                         |
-+---------------------------------------------------------------+-----------------------------------------------------------------------------------------+
