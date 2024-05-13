@@ -2957,6 +2957,8 @@ redirects = {
         "https://docs.mattermost.com/onboard/migrating-to-mattermost.html#use-the-mattermost-web-app-deprecated",
 "onboard/migrating-to-mattermost.html#migrating-from-slack-using-the-mattermost-mmetl-tool-and-bulk-import":
         "https://docs.mattermost.com/onboard/migrating-to-mattermost.html#use-the-mattermost-mmetl-tool-and-bulk-import",
+"onboard/migrating-to-mattermost.html#migrate-mattermost-server":
+        "https://docs.mattermost.com/onboard/migrate-mattermost-from-one-server-to-another",
 
 # Overview redirects
 "overview/architecture.html":
