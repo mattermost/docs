@@ -1804,6 +1804,8 @@ redirects = {
         "https://docs.mattermost.com/configure/configuration-in-your-database.html",
 "configure/configuration-in-your-database.html":
         "https://docs.mattermost.com/configure/store-configuration-in-your-database.html",
+"configure/environment-configuration-settings.html#database-maxidleconnections":
+        "https://docs.mattermost.com/configure/deprecated-configuration-settings.html#database-maxidleconnections",
 
 # Deploy redirects
 "deploy/mobile-apps-faq.html":
