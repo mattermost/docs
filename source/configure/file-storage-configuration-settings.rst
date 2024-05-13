@@ -451,9 +451,8 @@ Amazon S3 upload part size
 |                                                               | - Environment variable: ``MM_FILESETTINGS_AMAZONS3UPLOADPARTSIZEBYTES``               |
 | Numeric value. Default is 5242880 (5MB).                      |                                                                                       |
 +---------------------------------------------------------------+---------------------------------------------------------------------------------------+
-| **Note**: A smaller part size results in more parts to manage, which can increase overhead while being more reliable for networks with less stable    |
-| connections. A larger part size reduces the number of upload parts, but requires more stable network conditions, and can increase the impact of any   |
-| failures requiring parts to be re-uploaded.                                                                                                           |
+| **Note**: A smaller part size can result in more requests and an increase in latency, while a larger part size can result in more memory              |
+| being allocated.                                                                                                                                      |
 +---------------------------------------------------------------+---------------------------------------------------------------------------------------+
 
 .. config:setting:: file-exportamazons3uploadpartsizebytes
@@ -472,9 +471,7 @@ Amazon S3 exported upload part size
 |                                                               | - Environment variable: ``MM_FILESETTINGS_EXPORTAMAZONS3UPLOADPARTSIZEBYTES``              |
 | Numeric value. Default is 104857600 (100MB).                  |                                                                                            |
 +---------------------------------------------------------------+--------------------------------------------------------------------------------------------+
-| **Note**: A smaller part size results in more parts to manage, which can increase overhead while being more reliable for networks with less stable         |
-| connections. A larger part size reduces the number of exported parts, but requires more stable network conditions, and can increase the impact of any      |
-| failures requiring parts to be re-exported.                                                                                                                |
+| **Note**: A smaller part size can result in more requests and an increase in latency, while a larger part size can result in more memory being allocated.  |
 +---------------------------------------------------------------+--------------------------------------------------------------------------------------------+
 
 .. config:setting:: file-initialfont
