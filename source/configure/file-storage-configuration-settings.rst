@@ -527,8 +527,8 @@ Maximum payload size
 | The maximum payload size in bytes for all APIs except     | - System Config path: N/A                                                        |
 | APIs that receive a file as an input.                     | - ``config.json`` setting: ``".FileSettings.MaximumPayloadSizeBytes: 300000",``  |
 |                                                           | - Environment variable: ``MM_FILESETTINGS_MAXIMUMPAYLOADSIZEBYTES``              |
-| For example, the upload attachment API or the API to      |
-| upload a custom emoji.                                    |
+| For example, the upload attachment API or the API to      |                                                                                  |
+| upload a custom emoji.                                    |                                                                                  |
 |                                                           |                                                                                  |
 | Numerical value. Default is **300000** (300 kB).          |                                                                                  |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------+
