@@ -33,7 +33,7 @@ Access the following configuration settings in the System Console by going to **
 Enable incoming webhooks
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-Developers building integrations can create webhook URLs for public channels and private channels. Please see our `documentation page <https://developers.mattermost.com/integrate/webhooks/incoming/>`_ to learn about creating webhooks, viewing samples, and letting community know about integrations you've built.
+Developers building integrations can create webhook URLs for public channels and private channels. See the `incoming webhooks <https://developers.mattermost.com/integrate/webhooks/incoming/>`_ developer documentation to learn about creating webhooks, viewing samples, and letting community know about integrations you've built.
 
 **True**: Incoming webhooks are allowed. To manage incoming webhooks, select **Integrations** from the Mattermost Product menu. The webhook URLs created can be used by external applications to create posts in any public or private channels that you have access to.
 
@@ -58,7 +58,7 @@ Developers building integrations can create webhook URLs for public channels and
 Enable outgoing webhooks
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-Developers building integrations can create webhook tokens for public channels. Trigger words are used to fire new message events to external integrations. For security reasons, outgoing webhooks are only available in public channels. Please see our `documentation page <https://developers.mattermost.com/integrate/webhooks/outgoing/>`_ to learn about creating webhooks and viewing samples.
+Developers building integrations can create webhook tokens for public channels. Trigger words are used to fire new message events to external integrations. For security reasons, outgoing webhooks are only available in public channels. See the `outgoing webhooks <https://developers.mattermost.com/integrate/webhooks/outgoing/>`_ developer documentation to learn about creating webhooks and viewing samples.
 
 **True**: Outgoing webhooks will be allowed. To manage outgoing webhooks, select **Integrations** from the Mattermost Product menu.
 
