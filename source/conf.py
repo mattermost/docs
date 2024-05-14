@@ -1611,9 +1611,9 @@ redirects = {
 "configure/configuration-settings.html#enable-gif-picker":
         "https://docs.mattermost.com/configure/integrations-configuration-settings.html#enable-gif-picker",
 "configure/configuration-settings.html#gfycat-api-key":
-        "https://docs.mattermost.com/configure/integrations-configuration-settings.html#gfycat-api-key",
+        "https://docs.mattermost.com/configure/integrations-configuration-settings.html#gif-beta",
 "configure/configuration-settings.html#gfycat-api-secret":
-        "https://docs.mattermost.com/configure/integrations-configuration-settings.html#gfycat-api-secret",
+        "https://docs.mattermost.com/configure/integrations-configuration-settings.html#gif-beta",
 "configure/configuration-settings.html#enable-cross-origin-requests-from":
         "https://docs.mattermost.com/configure/integrations-configuration-settings.html#enable-cross-origin-requests-from",
 "configure/configuration-settings.html#cors-exposed-headers":
