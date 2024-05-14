@@ -518,7 +518,7 @@ Amazon S3 request timeout
   :systemconsole: N/A
   :configjson: .FileSettings.MaximumPayloadSizeBytes
   :environment: MM_FILESETTINGS_MAXIMUMPAYLOADSIZEBYTES
-  :description: The payload size, in bytes, of API endpoints passing in arrays. Default is 300000.
+  :description: The maximum payload size in bytes for all APIs except APIs that receive a file as an input, for example, the upload attachment API or the API to upload a custom emoji. Default is 300000.
 
 Maximum payload size
 ~~~~~~~~~~~~~~~~~~~~
