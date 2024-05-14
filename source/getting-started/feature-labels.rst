@@ -6,23 +6,17 @@ Mattermost’s feature labels serve as indicators of the status, maturity, and s
 Experimental
 -------------
 
-Feature is an early Proof of Concept (POC) with an unstable codebase, minimal QA, and potential UI issues. Security reviews are incomplete, making it unsuitable for production. Distribution of the solution is limited, and our Cloud environments are typically not eligible to use experimental features. Caution is advised as the solution may be discarded if its value is not proven.
-
-Experimental features aren't recommended for use in production. The feature set covers a small or a specific set of use cases, and additional use and edge cases will be added over time. Data loss can occur as data schemas and configurations may change, and minimal documentation is available.
+Feature is an early Proof of Concept (POC) with an unstable codebase, minimal QA covering a small or specific set of use cases, and potential UI issues. Security reviews are incomplete, making it unsuitable for production. Distribution of the solution is limited, and our Cloud environments are typically not eligible to use experimental features. Data loss can occur as data schemas and configurations may change, and minimal documentation is available. Caution is advised as the solution may be discarded if its value is not proven.
 
 Beta
 -----
 
-Feature is in active development towards General Availability. Not fully complete, but reviewed by our security team, adoption is suitable for a small set of customers behind a feature flag. Identified bugs are fixed on a best effort basis, and no major breaking changes are anticipated. Beta is a transitional stage, meaning the solution is maturing but requires careful consideration in a full production deployment as scale and client availability may vary.
-
-`Premier Support <https://mattermost.com/support/>`__ is recommended when using beta features in production environments. Core functionality is stable, but iteration based on feedback is ongoing, full testing of all edge cases is still in progress , and detailed documentation may not be available yet.
+Feature is in active development towards General Availability. Not fully complete, but reviewed by our security team, adoption is suitable for a small set of customers behind a feature flag. Identified bugs are fixed on a best effort basis, and no major breaking changes are anticipated, full testing is in progress, and detailed documentation may not be available. Beta is a transitional stage, meaning the solution is maturing but requires careful consideration in a full production deployment as scale and client availability may vary. `Premier Support <https://mattermost.com/support/>`__ is recommended when using beta features in production environments. 
 
 General Availability
 ---------------------
 
-Feature has undergone thorough validation and testing. It is feature-complete, meets quality standards, and has successfully passed security reviews. General Availability features are suitable for widespread production deployment and adoption, as they offer stability and reliability, with no expected changes that could disrupt functionality or scalability.
-
-General availability features have production-level quality, are recommended for use in production environments, have detailed product documentation available, are tested in several platforms, and are eligible for commercial support.
+Feature has undergone thorough validation and testing and has production-level quality. It is feature-complete, meets quality standards, has successfully passed security reviews, and has detailed product documentation available. General Availability features are suitable for widespread production deployment and adoption, and are eligible for commercial support, as they offer stability and reliability, with no expected changes that could disrupt functionality or scalability.
 
 Deprecated
 -----------
