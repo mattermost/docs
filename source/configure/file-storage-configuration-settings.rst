@@ -495,3 +495,41 @@ Initial font
 | A string with the font file name. Default is                  |                                                                                |
 | **nunito-bold.ttf**.                                          |                                                                                |
 +---------------------------------------------------------------+--------------------------------------------------------------------------------+
+
+.. config:setting:: file-amazons3requesttimeoutmilliseconds
+  :displayname: Amazon S3 request timeout (File Storage)
+  :systemconsole: N/A
+  :configjson: .FileSettings.AmazonS3RequestTimeoutMilliseconds
+  :environment: MM_FILESETTINGS_AMAZONS3REQUESTTIMEOUTMILLISECONDS
+  :description: Amount of time, in milliseconds, before requests to Amazon S3 time out. Default value is 30000 (30 seconds).
+
+Amazon S3 request timeout 
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
++---------------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| The amount of time, in milliseconds, before requests to       | - System Config path: N/A                                                               |
+| Amazon S3 storage time out.                                   | - ``config.json`` setting: ``".FileSettings.AmazonS3RequestTimeoutMilliseconds: 30000`` |
+|                                                               | - Environment variable: ``MM_FILESETTINGS_AMAZONS3REQUESTTIMEOUTMILLISECONDS``          |
+| Default is 30000 (30 seconds).                                |                                                                                         |
++---------------------------------------------------------------+-----------------------------------------------------------------------------------------+
+
+.. config:setting:: file-maxpayloadsize
+  :displayname: Maximum payload size (File Storage)
+  :systemconsole: N/A
+  :configjson: .FileSettings.MaximumPayloadSizeBytes
+  :environment: MM_FILESETTINGS_MAXIMUMPAYLOADSIZEBYTES
+  :description: The maximum payload size in bytes for all APIs except APIs that receive a file as an input. For example, the upload attachment API or the API to upload a custom emoji. Default is 300000.
+
+Maximum payload size
+~~~~~~~~~~~~~~~~~~~~
+
++-----------------------------------------------------------+----------------------------------------------------------------------------------+
+| The maximum payload size in bytes for all APIs except     | - System Config path: N/A                                                        |
+| APIs that receive a file as an input.                     | - ``config.json`` setting: ``".FileSettings.MaximumPayloadSizeBytes: 300000",``  |
+|                                                           | - Environment variable: ``MM_FILESETTINGS_MAXIMUMPAYLOADSIZEBYTES``              |
+| For example, the upload attachment API or the API to      |                                                                                  |
+| upload a custom emoji.                                    |                                                                                  |
+|                                                           |                                                                                  |
+| Numerical value. Default is **300000** (300 kB).          |                                                                                  |
++-----------------------------------------------------------+----------------------------------------------------------------------------------+
+
