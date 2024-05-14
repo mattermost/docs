@@ -35,7 +35,7 @@ File storage system
 |   the specified local file directory.                         |                                                                          |
 | - **amazons3**: Files and images are stored on Amazon S3      |                                                                          |
 |   based on the access key, bucket, and region fields          |                                                                          |
-|   provided. The driver is compatible with MinIO (beta)        |                                                                          |
+|   provided. The driver is compatible with MinIO (Beta)        |                                                                          |
 |   and Digital Ocean Spaces.                                   |                                                                          |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 

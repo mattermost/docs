@@ -660,7 +660,7 @@ Important Upgrade Notes
 | v5.37.0                                            | The ``platform`` binary and “--platform” flag have been removed. If you are using the “--platform” flag or are using the ``platform`` binary directly to run     |
 |                                                    | the Mattermost server application via a systemd file or custom script, you will be required to use only the mattermost binary.                                   |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                                                    | `Collapsed Reply Threads <https://mattermost.com/blog/collapsed-reply-threads-beta/>`__ are available as beta in Mattermost Server                               |
+|                                                    | `Collapsed Reply Threads <https://mattermost.com/blog/collapsed-reply-threads-beta/>`__ are available as Beta in Mattermost Server                               |
 |                                                    | v5.37 and later. It’s expected that you may experience bugs as we stabilize the feature. In particular, please be aware of                                       |
 |                                                    | :ref:`the known issues documented here <collaborate/organize-conversations:known issues>`.                                                                       |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+

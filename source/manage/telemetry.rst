@@ -196,7 +196,7 @@ The following list details the types of Apps Framework metadata we collect:
 Android Mobile App performance monitoring
 -----------------------------------------
 
-To improve Android app performance, we are collecting trace events and device information, collectively known as metrics, to identify slow performing key areas. Those metrics will be sent only from users using Android app beta build starting in version v1.20, who are logged in to servers that allow sending :ref:`diagnostic information <configure/environment-configuration-settings:enable diagnostics and error reporting>`.
+To improve Android app performance, we are collecting trace events and device information, collectively known as metrics, to identify slow performing key areas. Those metrics will be sent only from users using the Android app Beta build starting in version v1.20, who are logged in to servers that allow sending :ref:`diagnostic information <configure/environment-configuration-settings:enable diagnostics and error reporting>`.
 
 Trace events
   Includes duration on how long the action took place like startup, team/channel switch, posts loading/update and channel drawer open/close. The naming convention is interpreted as ``[start observation]:[end observation]``, e.g. ``start:overall`` as from app start until fully rendered or ``post_list:thread`` as on press of post at post list until thread is opened.

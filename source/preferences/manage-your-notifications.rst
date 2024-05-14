@@ -60,6 +60,7 @@ On mobile, select the **Settings** |gear| icon and tap **Notifications**.
     In supported web browsers, the tab's favicon also notifies you of unread messages with an asterisk (*) and a message count.
 
     **Want different notifications on mobile?**
+    
     To personalize your notification preferences for the mobile app, select **Desktop and mobile notifications**, and then select **Use different settings for my mobile devices** to define how mobile notifications are triggered, when they're triggered based on you being online, away, or offline, and whether they include replies to threads you're following.
 
     **Getting too many notifications?**
@@ -71,6 +72,8 @@ On mobile, select the **Settings** |gear| icon and tap **Notifications**.
 .. tab:: Desktop notification sounds
 
     By default, desktop message notifications include audible sounds. You can change or disable these sounds if preferred. Go to **Desktop notification sounds > Message notification sound** to choose a different sound, or disable this option to turn off desktop notification sounds, if preferred.
+
+    Want to hear a sound when a Mattermost call starts? If your Mattermost admin :ref:`enables this Beta feature <configure/plugins-configuration-settings:enable call ringing (beta)>`, you can choose the sound that plays when a call is started within a direct or group message you're participating in by going to **Desktop notifications > Notification sound for incoming calls**.
 
     **Do you want incoming call sounds?**
 
