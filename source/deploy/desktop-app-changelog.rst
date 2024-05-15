@@ -10,6 +10,10 @@ Release v5.8
 
 **Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/latest>`_
 
+.. note::
+
+   Mattermost v5.8.0 contains low to medium severity level security fixes. Upgrading is highly recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.com/security-vulnerability-report//>`__.
+
 Compatibility
 ~~~~~~~~~~~~~~~
 
